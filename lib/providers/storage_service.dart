@@ -12,7 +12,9 @@ class StorageService {
   Future<List<ShoppingList>> loadLists() async {
     final prefs = await SharedPreferences.getInstance();
     final jsonString = prefs.getString(_keyLists);
-    if (jsonString == null) return [];
+    if (jsonString == null) {
+      return [];
+    }
 
     final List<dynamic> jsonList = jsonDecode(jsonString);
     return jsonList.map((json) => ShoppingList.fromJson(json)).toList();
@@ -28,7 +30,9 @@ class StorageService {
   Future<List<ShoppingItem>> loadItems(String listId) async {
     final prefs = await SharedPreferences.getInstance();
     final jsonString = prefs.getString(_keyItems);
-    if (jsonString == null) return [];
+    if (jsonString == null) {
+      return [];
+    }
 
     final List<dynamic> jsonList = jsonDecode(jsonString);
     final allItems = jsonList.map((json) => ShoppingItem.fromJson(json)).toList();
@@ -56,7 +60,9 @@ class StorageService {
   Future<void> deleteItemsFromList(String listId) async {
     final prefs = await SharedPreferences.getInstance();
     final jsonString = prefs.getString(_keyItems);
-    if (jsonString == null) return;
+    if (jsonString == null) {
+      return;
+    }
 
     final List<dynamic> jsonList = jsonDecode(jsonString);
     final allItems = jsonList.map((json) => ShoppingItem.fromJson(json)).toList();

@@ -8,8 +8,8 @@ class CurrentListId extends _$CurrentListId {
   final _storage = StorageService();
 
   @override
-  Future<String?> build() async {
-    return await _storage.getCurrentListId();
+  Future<String?> build() {
+    return _storage.getCurrentListId();
   }
 
   Future<void> setCurrentList(String listId) async {

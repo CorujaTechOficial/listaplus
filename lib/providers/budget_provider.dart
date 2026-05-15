@@ -1,13 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'storage_service.dart';
 
 part 'budget_provider.g.dart';
 
 @riverpod
 class Budget extends _$Budget {
-  final _storage = StorageService();
-
   @override
   Future<double?> build(String listId) async {
     // Load budget for specific list

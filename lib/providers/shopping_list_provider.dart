@@ -1,5 +1,4 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:uuid/uuid.dart';
 import '../models/shopping_item.dart';
 import '../models/category.dart';
 import 'storage_service.dart';
@@ -9,11 +8,10 @@ part 'shopping_list_provider.g.dart';
 @riverpod
 class ShoppingListItems extends _$ShoppingListItems {
   final _storage = StorageService();
-  final _uuid = const Uuid();
 
   @override
-  Future<List<ShoppingItem>> build(String listId) async {
-    return await _storage.loadItems(listId);
+  Future<List<ShoppingItem>> build(String listId) {
+    return _storage.loadItems(listId);
   }
 
   Future<void> addItem({

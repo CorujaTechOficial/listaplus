@@ -9,8 +9,8 @@ class ShoppingLists extends _$ShoppingLists {
   final _storage = StorageService();
 
   @override
-  Future<List<ShoppingList>> build() async {
-    return await _storage.loadLists();
+  Future<List<ShoppingList>> build() {
+    return _storage.loadLists();
   }
 
   Future<ShoppingList> createList(String name, {double? budget}) async {
