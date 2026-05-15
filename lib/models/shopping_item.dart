@@ -16,6 +16,23 @@ class ShoppingItem {
         createdAt = createdAt ?? DateTime.now(),
         updatedAt = updatedAt ?? DateTime.now();
 
+  factory ShoppingItem.fromJson(Map<String, dynamic> json) {
+    return ShoppingItem(
+      id: json['id'] as String,
+      shoppingListId: json['shoppingListId'] as String,
+      name: json['name'] as String,
+      quantity: json['quantity'] as int,
+      category: Category.values.firstWhere(
+        (e) => e.name == json['category'],
+        orElse: () => Category.others,
+      ),
+      estimatedPrice: json['estimatedPrice'] as double?,
+      isPurchased: json['isPurchased'] as bool? ?? false,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
+    );
+  }
+
   final String id;
   final String shoppingListId;
   final String name;
@@ -47,23 +64,6 @@ class ShoppingItem {
       isPurchased: isPurchased ?? this.isPurchased,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
-    );
-  }
-
-  factory ShoppingItem.fromJson(Map<String, dynamic> json) {
-    return ShoppingItem(
-      id: json['id'] as String,
-      shoppingListId: json['shoppingListId'] as String,
-      name: json['name'] as String,
-      quantity: json['quantity'] as int,
-      category: Category.values.firstWhere(
-        (e) => e.name == json['category'],
-        orElse: () => Category.others,
-      ),
-      estimatedPrice: json['estimatedPrice'] as double?,
-      isPurchased: json['isPurchased'] as bool? ?? false,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
   }
 

@@ -1,12 +1,6 @@
 import 'package:uuid/uuid.dart';
 
 class ShoppingList {
-  final String id;
-  final String name;
-  final double? budget;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-
   ShoppingList({
     String? id,
     required this.name,
@@ -16,6 +10,22 @@ class ShoppingList {
   })  : id = id ?? const Uuid().v4(),
         createdAt = createdAt ?? DateTime.now(),
         updatedAt = updatedAt ?? DateTime.now();
+
+  factory ShoppingList.fromJson(Map<String, dynamic> json) {
+    return ShoppingList(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      budget: json['budget'] as double?,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
+    );
+  }
+
+  final String id;
+  final String name;
+  final double? budget;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   ShoppingList copyWith({
     String? id,
@@ -30,16 +40,6 @@ class ShoppingList {
       budget: budget ?? this.budget,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
-    );
-  }
-
-  factory ShoppingList.fromJson(Map<String, dynamic> json) {
-    return ShoppingList(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      budget: json['budget'] as double?,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
   }
 
