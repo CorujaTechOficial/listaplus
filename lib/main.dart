@@ -28,15 +28,11 @@ class ListLoader extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currentListIdAsync = ref.watch(currentListIdProvider);
-    final listsAsync = ref.watch(shoppingListsProvider);
 
     return currentListIdAsync.when(
       data: (listId) {
         if (listId == null) {
-          // Check if there are any lists
-          return listsAsync.value == null || listsAsync.value!.isEmpty
-              ? const NoListsScreen()
-              : const NoListsScreen();
+          return const NoListsScreen();
         }
         return HomeScreen(listId: listId);
       },
@@ -68,6 +64,7 @@ class NoListsScreen extends ConsumerWidget {
                 );
                 if (name != null && name.isNotEmpty) {
                   await ref.read(shoppingListsProvider.notifier).createList(name);
+                  ref.invalidate(currentListIdProvider);
                 }
               },
               child: const Text('Criar Primeira Lista'),

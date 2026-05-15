@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/budget_provider.dart';
+import '../providers/current_list_provider.dart';
 import '../widgets/shopping_item_tile.dart';
 import '../widgets/add_item_dialog.dart';
 import '../widgets/empty_state.dart';
@@ -46,6 +47,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 final items = itemsAsync.value ?? [];
                 final totalSpent = items
                     .where((i) => i.isPurchased && i.estimatedPrice != null)
+                    // ignore: prefer_int_literals
                     .fold(0.0, (sum, i) => sum + i.estimatedPrice!);
                 final budget = budgetAsync.value!;
                 final progress = (totalSpent / budget).clamp(0.0, 1.0);
@@ -77,7 +79,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             icon: const Icon(Icons.account_balance_wallet),
             onPressed: () => _showBudgetDialog(context, budgetAsync.value),
           ),
-          PopupMenuButton(
+          PopupMenuButton(icon: const Icon(Icons.more_vert),
             itemBuilder: (_) => [
               const PopupMenuItem(
                 value: 'clear',
@@ -113,7 +115,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               title: Text(list.name),
               trailing: widget.listId == list.id ? const Icon(Icons.check) : null,
               onTap: () {
-                ref.read(shoppingListsProvider.notifier).setCurrentList(list.id);
+                ref.read(currentListIdProvider.notifier).setCurrentList(list.id);
                 Navigator.pop(context);
               },
             )) ?? [],
@@ -128,6 +130,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 );
                 if (name != null && name.isNotEmpty) {
                   await ref.read(shoppingListsProvider.notifier).createList(name);
+                  ref.invalidate(currentListIdProvider);
+                }
+                if (context.mounted) {
+                  Navigator.pop(context);
                 }
               },
             ),
@@ -136,7 +142,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
       body: itemsAsync.when(
         data: (items) {
-          if (items.isEmpty) return const EmptyState();
+          if (items.isEmpty) {
+            return const EmptyState();
+          }
 
           // Apply filter
           Iterable<ShoppingItem> filtered = items;
@@ -161,15 +169,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           }
 
           // Calculate totals
+          // ignore: prefer_int_literals
           final totalEstimated = items.fold(0.0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
           final totalPurchased = items
               .where((i) => i.isPurchased && i.estimatedPrice != null)
+              // ignore: prefer_int_literals
               .fold(0.0, (sum, i) => sum + i.estimatedPrice! * i.quantity);
 
           return Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   children: [
                     FilterBar(

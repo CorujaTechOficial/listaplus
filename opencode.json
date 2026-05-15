@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "mcp": {
+    "sonarqube": {
+      "type": "local",
+      "command": ["node", ".opencode/mcp/sonarqube/index.js"],
+      "enabled": true,
+      "env": {
+        "SONAR_HOST_URL": "http://localhost:9000",
+        "SONAR_TOKEN": "squ_3159b8c654d4e408ae20116e2a3b62b2f1328ada"
+      }
+    }
+  }
+}
