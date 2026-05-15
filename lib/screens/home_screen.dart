@@ -1,0 +1,209 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/shopping_list_provider.dart';
+import '../providers/budget_provider.dart';
+import '../widgets/shopping_item_tile.dart';
+import '../widgets/add_item_dialog.dart';
+import '../widgets/empty_state.dart';
+import '../widgets/budget_dialog.dart';
+import '../widgets/filter_bar.dart';
+import '../models/shopping_item.dart';
+
+class HomeScreen extends ConsumerStatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  FilterType _filter = FilterType.all;
+  SortType _sort = SortType.date;
+
+  @override
+  Widget build(BuildContext context) {
+    final itemsAsync = ref.watch(shoppingListProvider);
+    final budgetAsync = ref.watch(budgetProvider);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Minha Lista de Compras'),
+            if (budgetAsync.value != null)
+              Builder(builder: (context) {
+                final items = itemsAsync.value ?? [];
+                final totalSpent = items
+                    .where((i) => i.isPurchased && i.estimatedPrice != null)
+                    .fold(0.0, (sum, i) => sum + i.estimatedPrice!);
+                final budget = budgetAsync.value!;
+                final progress = (totalSpent / budget).clamp(0.0, 1.0);
+                return Column(
+                  children: [
+                    const SizedBox(height: 4),
+                    LinearProgressIndicator(value: progress, minHeight: 4),
+                    Text(
+                      'R\$ ${totalSpent.toStringAsFixed(0)} / R\$ ${budget.toStringAsFixed(0)}',
+                      style: const TextStyle(fontSize: 12),
+                    ),
+                  ],
+                );
+              }),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              final items = itemsAsync.value ?? [];
+              showSearch(
+                context: context,
+                delegate: ShoppingSearchDelegate(items),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.account_balance_wallet),
+            onPressed: () => _showBudgetDialog(context, budgetAsync.value),
+          ),
+          PopupMenuButton(
+            itemBuilder: (_) => [
+              const PopupMenuItem(
+                value: 'clear',
+                child: Text('Limpar lista'),
+              ),
+            ],
+            onSelected: (value) async {
+              if (value == 'clear') {
+                final confirm = await showDialog<bool>(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('Confirmar'),
+                    content: const Text('Remover todos os itens?'),
+                    actions: [
+                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancelar')),
+                      TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Remover')),
+                    ],
+                  ),
+                );
+                if (confirm == true && context.mounted) {
+                  await ref.read(shoppingListProvider.notifier).clearAll();
+                }
+              }
+            },
+          ),
+        ],
+      ),
+      body: itemsAsync.when(
+        data: (items) {
+          if (items.isEmpty) return const EmptyState();
+
+          // Apply filter
+          Iterable<ShoppingItem> filtered = items;
+          if (_filter == FilterType.pending) {
+            filtered = filtered.where((i) => !i.isPurchased);
+          } else if (_filter == FilterType.purchased) {
+            filtered = filtered.where((i) => i.isPurchased);
+          }
+
+          // Apply sort
+          final sorted = filtered.toList();
+          switch (_sort) {
+            case SortType.name:
+              sorted.sort((a, b) => a.name.compareTo(b.name));
+              break;
+            case SortType.category:
+              sorted.sort((a, b) => a.category.name.compareTo(b.category.name));
+              break;
+            case SortType.date:
+              sorted.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+              break;
+          }
+
+          // Calculate totals
+          final totalEstimated = items.fold(0.0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+          final totalPurchased = items
+              .where((i) => i.isPurchased && i.estimatedPrice != null)
+              .fold(0.0, (sum, i) => sum + i.estimatedPrice! * i.quantity);
+
+          return Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    FilterBar(
+                      filter: _filter,
+                      sort: _sort,
+                      onFilterChanged: (f) => setState(() => _filter = f),
+                      onSortChanged: (s) => setState(() => _sort = s),
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Estimado: R\$ ${totalEstimated.toStringAsFixed(2)}'),
+                        Text('Comprado: R\$ ${totalPurchased.toStringAsFixed(2)}'),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: sorted.length,
+                  itemBuilder: (context, index) => ShoppingItemTile(item: sorted[index]),
+                ),
+              ),
+            ],
+          );
+        },
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => Center(child: Text('Erro: $e')),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showDialog(context: context, builder: (_) => const AddItemDialog()),
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  void _showBudgetDialog(BuildContext context, double? currentBudget) {
+    showDialog(
+      context: context,
+      builder: (_) => BudgetDialog(currentBudget: currentBudget),
+    );
+  }
+}
+
+class ShoppingSearchDelegate extends SearchDelegate<String> {
+  final List<ShoppingItem> items;
+
+  ShoppingSearchDelegate(this.items);
+
+  @override
+  List<Widget> buildActions(BuildContext context) => [
+        IconButton(icon: const Icon(Icons.clear), onPressed: () => query = ''),
+      ];
+
+  @override
+  Widget buildLeading(BuildContext context) => IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => close(context, ''),
+      );
+
+  @override
+  Widget buildResults(BuildContext context) => _buildResults();
+
+  @override
+  Widget buildSuggestions(BuildContext context) => _buildResults();
+
+  Widget _buildResults() {
+    final results = items.where((i) => i.name.toLowerCase().contains(query.toLowerCase())).toList();
+    return ListView.builder(
+      itemCount: results.length,
+      itemBuilder: (context, index) => ShoppingItemTile(item: results[index]),
+    );
+  }
+}
