@@ -4,10 +4,10 @@ import '../providers/shopping_list_provider.dart';
 import '../models/shopping_item.dart';
 
 class ShoppingItemTile extends ConsumerWidget {
+  const ShoppingItemTile({super.key, required this.listId, required this.item});
+
   final String listId;
   final ShoppingItem item;
-
-  const ShoppingItemTile({super.key, required this.listId, required this.item});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

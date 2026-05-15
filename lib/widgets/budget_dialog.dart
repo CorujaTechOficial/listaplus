@@ -3,9 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/budget_provider.dart';
 
 class BudgetDialog extends ConsumerStatefulWidget {
+  const BudgetDialog({super.key, required this.listId, this.currentBudget});
+
   final String listId;
   final double? currentBudget;
-  const BudgetDialog({super.key, required this.listId, this.currentBudget});
 
   @override
   ConsumerState<BudgetDialog> createState() => _BudgetDialogState();

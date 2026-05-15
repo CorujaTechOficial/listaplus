@@ -4,8 +4,9 @@ import '../models/category.dart';
 import '../providers/shopping_list_provider.dart';
 
 class AddItemDialog extends ConsumerStatefulWidget {
-  final String listId;
   const AddItemDialog({super.key, required this.listId});
+
+  final String listId;
 
   @override
   ConsumerState<AddItemDialog> createState() => _AddItemDialogState();

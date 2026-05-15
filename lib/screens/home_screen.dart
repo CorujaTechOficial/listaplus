@@ -13,8 +13,9 @@ import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  final String listId;
   const HomeScreen({super.key, required this.listId});
+
+  final String listId;
 
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
@@ -216,9 +217,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 }
 
 class ShoppingSearchDelegate extends SearchDelegate<String> {
-  final List<ShoppingItem> items;
-
   ShoppingSearchDelegate(this.items);
+
+  final List<ShoppingItem> items;
 
   @override
   List<Widget> buildActions(BuildContext context) => [

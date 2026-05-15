@@ -4,11 +4,6 @@ enum FilterType { all, pending, purchased }
 enum SortType { name, category, date }
 
 class FilterBar extends StatefulWidget {
-  final FilterType filter;
-  final SortType sort;
-  final ValueChanged<FilterType> onFilterChanged;
-  final ValueChanged<SortType> onSortChanged;
-
   const FilterBar({
     super.key,
     required this.filter,
@@ -16,6 +11,11 @@ class FilterBar extends StatefulWidget {
     required this.onFilterChanged,
     required this.onSortChanged,
   });
+
+  final FilterType filter;
+  final SortType sort;
+  final ValueChanged<FilterType> onFilterChanged;
+  final ValueChanged<SortType> onSortChanged;
 
   @override
   State<FilterBar> createState() => _FilterBarState();

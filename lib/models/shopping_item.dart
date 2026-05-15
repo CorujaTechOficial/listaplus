@@ -2,16 +2,6 @@ import 'package:uuid/uuid.dart';
 import 'category.dart';
 
 class ShoppingItem {
-  final String id;
-  final String shoppingListId;
-  final String name;
-  final int quantity;
-  final Category category;
-  final double? estimatedPrice;
-  final bool isPurchased;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-
   ShoppingItem({
     String? id,
     required this.shoppingListId,
@@ -25,6 +15,16 @@ class ShoppingItem {
   })  : id = id ?? const Uuid().v4(),
         createdAt = createdAt ?? DateTime.now(),
         updatedAt = updatedAt ?? DateTime.now();
+
+  final String id;
+  final String shoppingListId;
+  final String name;
+  final int quantity;
+  final Category category;
+  final double? estimatedPrice;
+  final bool isPurchased;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   ShoppingItem copyWith({
     String? id,
@@ -50,20 +50,6 @@ class ShoppingItem {
     );
   }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'shoppingListId': shoppingListId,
-      'name': name,
-      'quantity': quantity,
-      'category': category.name,
-      'estimatedPrice': estimatedPrice,
-      'isPurchased': isPurchased,
-      'createdAt': createdAt.toIso8601String(),
-      'updatedAt': updatedAt.toIso8601String(),
-    };
-  }
-
   factory ShoppingItem.fromJson(Map<String, dynamic> json) {
     return ShoppingItem(
       id: json['id'] as String,
@@ -79,5 +65,19 @@ class ShoppingItem {
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'shoppingListId': shoppingListId,
+      'name': name,
+      'quantity': quantity,
+      'category': category.name,
+      'estimatedPrice': estimatedPrice,
+      'isPurchased': isPurchased,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
+    };
   }
 }

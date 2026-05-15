@@ -1,30 +1,64 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:shopping_list/main.dart';
+import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/models/shopping_item.dart';
+import 'package:test/test.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  test('ShoppingItem model roundtrip', () {
+    final item = ShoppingItem(
+      shoppingListId: 'list-1',
+      name: 'Maçã',
+      quantity: 2,
+      category: Category.fruits,
+      estimatedPrice: 3.50,
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    final json = item.toJson();
+    final restored = ShoppingItem.fromJson(json);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(restored.name, 'Maçã');
+    expect(restored.quantity, 2);
+    expect(restored.category, Category.fruits);
+    expect(restored.estimatedPrice, 3.50);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  test('ShoppingItem copyWith updates only specified fields', () {
+    final item = ShoppingItem(
+      shoppingListId: 'list-1',
+      name: 'Pão',
+      quantity: 1,
+      category: Category.bakery,
+    );
+
+    final updated = item.copyWith(name: 'Pão Integral', isPurchased: true);
+
+    expect(updated.name, 'Pão Integral');
+    expect(updated.isPurchased, true);
+    expect(updated.quantity, 1);
+    expect(updated.category, Category.bakery);
+  });
+
+  test('ShoppingItem default values', () {
+    final item = ShoppingItem(
+      shoppingListId: 'list-1',
+      name: 'Leite',
+      quantity: 1,
+      category: Category.beverages,
+    );
+
+    expect(item.isPurchased, false);
+    expect(item.estimatedPrice, isNull);
+    expect(item.id, isNotEmpty);
+  });
+
+  test('Category enum has correct labels', () {
+    expect(Category.fruits.label, 'Frutas');
+    expect(Category.cleaning.label, 'Limpeza');
+    expect(Category.beverages.label, 'Bebidas');
+    expect(Category.bakery.label, 'Padaria');
+    expect(Category.others.label, 'Outros');
+  });
+
+  test('Category values count', () {
+    expect(Category.values.length, 5);
   });
 }
