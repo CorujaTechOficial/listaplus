@@ -9,7 +9,9 @@ import 'package:shopping_list/main.dart' as app;
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/widgets/empty_state.dart';
+import 'package:shopping_list/widgets/shopping_item_tile.dart';
 
 Future<void> cleanStorage() async {
   final prefs = await SharedPreferences.getInstance();
@@ -269,6 +271,148 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Item da A'), findsOneWidget);
+    });
+  });
+
+  group('Unidade de medida', () {
+    setUp(() async {
+      await cleanStorage();
+    });
+
+    testWidgets('adiciona item com kg e exibe no tile', (tester) async {
+      await tester.pumpApp();
+
+      await tester.tap(find.text('Criar Primeira Lista'));
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextField), 'Compras');
+      await tester.tap(find.text('Criar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextFormField).first, 'Arroz');
+
+      await tester.tap(find.byType(DropdownButtonFormField<Unit>));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('kg').last);
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Adicionar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Arroz'), findsOneWidget);
+      expect(find.textContaining('1kg'), findsOneWidget);
+    });
+  });
+
+  group('Limpar comprados', () {
+    setUp(() async {
+      await cleanStorage();
+    });
+
+    testWidgets('remove apenas itens comprados', (tester) async {
+      await tester.pumpApp();
+
+      await tester.tap(find.text('Criar Primeira Lista'));
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextField), 'Compras');
+      await tester.tap(find.text('Criar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextFormField).first, 'Item A');
+      await tester.tap(find.text('Adicionar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextFormField).first, 'Item B');
+      await tester.tap(find.text('Adicionar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Item A'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Limpar comprados'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Item A'), findsNothing);
+      expect(find.text('Item B'), findsOneWidget);
+    });
+  });
+
+  group('Compartilhar', () {
+    setUp(() async {
+      await cleanStorage();
+    });
+
+    testWidgets('menu compartilhar está presente', (tester) async {
+      await tester.pumpApp();
+
+      await tester.tap(find.text('Criar Primeira Lista'));
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextField), 'Compras');
+      await tester.tap(find.text('Criar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextFormField).first, 'Item');
+      await tester.tap(find.text('Adicionar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Compartilhar'), findsOneWidget);
+    });
+  });
+
+  group('Ordenação manual', () {
+    setUp(() async {
+      await cleanStorage();
+    });
+
+    testWidgets('altera ordenação para Manual', (tester) async {
+      await tester.pumpApp();
+
+      await tester.tap(find.text('Criar Primeira Lista'));
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextField), 'Compras');
+      await tester.tap(find.text('Criar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextFormField).first, 'Item A');
+      await tester.tap(find.text('Adicionar'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextFormField).first, 'Item B');
+      await tester.tap(find.text('Adicionar'));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ShoppingItemTile), findsNWidgets(2));
+
+      await tester.tap(find.text('Data'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Manual').last);
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ShoppingItemTile), findsNWidgets(2));
+      expect(find.text('Item A'), findsOneWidget);
+      expect(find.text('Item B'), findsOneWidget);
     });
   });
 }
