@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'providers/current_list_provider.dart';
 import 'providers/shopping_lists_provider.dart';
 import 'screens/home_screen.dart';
+import 'widgets/create_list_dialog.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -63,20 +64,7 @@ class NoListsScreen extends ConsumerWidget {
               onPressed: () async {
                 final name = await showDialog<String>(
                   context: context,
-                  builder: (_) => AlertDialog(
-                    title: const Text('Criar Lista'),
-                    content: TextField(
-                      decoration: const InputDecoration(labelText: 'Nome da lista'),
-                      autofocus: true,
-                    ),
-                    actions: [
-                      TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
-                      ElevatedButton(
-                        onPressed: () => Navigator.pop(context, 'Minha Lista'),
-                        child: const Text('Criar'),
-                      ),
-                    ],
-                  ),
+                  builder: (_) => const CreateListDialog(),
                 );
                 if (name != null && name.isNotEmpty) {
                   await ref.read(shoppingListsProvider.notifier).createList(name);

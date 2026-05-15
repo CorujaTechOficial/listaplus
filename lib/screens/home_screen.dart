@@ -8,6 +8,7 @@ import '../widgets/add_item_dialog.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/budget_dialog.dart';
 import '../widgets/filter_bar.dart';
+import '../widgets/create_list_dialog.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 
@@ -122,20 +123,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               onTap: () async {
                 final name = await showDialog<String>(
                   context: context,
-                  builder: (_) => AlertDialog(
-                    title: const Text('Nova Lista'),
-                    content: TextField(
-                      decoration: const InputDecoration(labelText: 'Nome da lista'),
-                      autofocus: true,
-                    ),
-                    actions: [
-                      TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
-                      ElevatedButton(
-                        onPressed: () => Navigator.pop(context, 'Nova Lista'),
-                        child: const Text('Criar'),
-                      ),
-                    ],
-                  ),
+                  builder: (_) => const CreateListDialog(),
                 );
                 if (name != null && name.isNotEmpty) {
                   await ref.read(shoppingListsProvider.notifier).createList(name);
