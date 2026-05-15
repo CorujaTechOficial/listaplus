@@ -4,7 +4,8 @@ import '../models/category.dart';
 import '../providers/shopping_list_provider.dart';
 
 class AddItemDialog extends ConsumerStatefulWidget {
-  const AddItemDialog({super.key});
+  final String listId;
+  const AddItemDialog({super.key, required this.listId});
 
   @override
   ConsumerState<AddItemDialog> createState() => _AddItemDialogState();
@@ -68,7 +69,8 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
         ElevatedButton(
           onPressed: () async {
             if (_formKey.currentState!.validate()) {
-              await ref.read(shoppingListProvider.notifier).addItem(
+              await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItem(
+                    listId: widget.listId,
                     name: _nameController.text,
                     quantity: int.parse(_quantityController.text),
                     category: _selectedCategory,

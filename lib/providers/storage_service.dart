@@ -1,18 +1,38 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../models/shopping_list.dart';
 import '../models/shopping_item.dart';
 
 class StorageService {
+  static const _keyLists = 'shopping_lists';
   static const _keyItems = 'shopping_items';
-  static const _keyBudget = 'monthly_budget';
+  static const _keyCurrentList = 'current_list_id';
 
-  Future<List<ShoppingItem>> loadItems() async {
+  // Lists
+  Future<List<ShoppingList>> loadLists() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString(_keyLists);
+    if (jsonString == null) return [];
+
+    final List<dynamic> jsonList = jsonDecode(jsonString);
+    return jsonList.map((json) => ShoppingList.fromJson(json)).toList();
+  }
+
+  Future<void> saveLists(List<ShoppingList> lists) async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = jsonEncode(lists.map((e) => e.toJson()).toList());
+    await prefs.setString(_keyLists, jsonString);
+  }
+
+  // Items
+  Future<List<ShoppingItem>> loadItems(String listId) async {
     final prefs = await SharedPreferences.getInstance();
     final jsonString = prefs.getString(_keyItems);
     if (jsonString == null) return [];
 
     final List<dynamic> jsonList = jsonDecode(jsonString);
-    return jsonList.map((json) => ShoppingItem.fromJson(json)).toList();
+    final allItems = jsonList.map((json) => ShoppingItem.fromJson(json)).toList();
+    return allItems.where((item) => item.shoppingListId == listId).toList();
   }
 
   Future<void> saveItems(List<ShoppingItem> items) async {
@@ -21,13 +41,27 @@ class StorageService {
     await prefs.setString(_keyItems, jsonString);
   }
 
-  Future<double?> loadBudget() async {
+  // Current list
+  Future<String?> getCurrentListId() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getDouble(_keyBudget);
+    return prefs.getString(_keyCurrentList);
   }
 
-  Future<void> saveBudget(double budget) async {
+  Future<void> setCurrentListId(String listId) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble(_keyBudget, budget);
+    await prefs.setString(_keyCurrentList, listId);
+  }
+
+  // Delete all items from a list
+  Future<void> deleteItemsFromList(String listId) async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString(_keyItems);
+    if (jsonString == null) return;
+
+    final List<dynamic> jsonList = jsonDecode(jsonString);
+    final allItems = jsonList.map((json) => ShoppingItem.fromJson(json)).toList();
+    final remaining = allItems.where((item) => item.shoppingListId != listId).toList();
+    
+    await prefs.setString(_keyItems, jsonEncode(remaining.map((e) => e.toJson()).toList()));
   }
 }

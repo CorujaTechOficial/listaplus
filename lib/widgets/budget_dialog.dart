@@ -3,8 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/budget_provider.dart';
 
 class BudgetDialog extends ConsumerStatefulWidget {
+  final String listId;
   final double? currentBudget;
-  const BudgetDialog({super.key, this.currentBudget});
+  const BudgetDialog({super.key, required this.listId, this.currentBudget});
 
   @override
   ConsumerState<BudgetDialog> createState() => _BudgetDialogState();
@@ -43,7 +44,7 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
         if (widget.currentBudget != null)
           TextButton(
             onPressed: () {
-              ref.read(budgetProvider.notifier).clearBudget();
+              ref.read(budgetProvider(widget.listId).notifier).clearBudget(widget.listId);
               Navigator.pop(context);
             },
             child: const Text('Remover'),
@@ -53,7 +54,7 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
           onPressed: () {
             final value = double.tryParse(_controller.text);
             if (value != null && value > 0) {
-              ref.read(budgetProvider.notifier).setBudget(value);
+              ref.read(budgetProvider(widget.listId).notifier).setBudget(widget.listId, value);
               Navigator.pop(context);
             }
           },

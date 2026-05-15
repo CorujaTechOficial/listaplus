@@ -7,22 +7,24 @@ import 'storage_service.dart';
 part 'shopping_list_provider.g.dart';
 
 @riverpod
-class ShoppingList extends _$ShoppingList {
+class ShoppingListItems extends _$ShoppingListItems {
   final _storage = StorageService();
   final _uuid = const Uuid();
 
   @override
-  Future<List<ShoppingItem>> build() async {
-    return await _storage.loadItems();
+  Future<List<ShoppingItem>> build(String listId) async {
+    return await _storage.loadItems(listId);
   }
 
   Future<void> addItem({
+    required String listId,
     required String name,
     required int quantity,
     required Category category,
     double? estimatedPrice,
   }) async {
     final newItem = ShoppingItem(
+      shoppingListId: listId,
       name: name,
       quantity: quantity,
       category: category,

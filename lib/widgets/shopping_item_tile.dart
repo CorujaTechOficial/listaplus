@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/shopping_item.dart';
 import '../providers/shopping_list_provider.dart';
+import '../models/shopping_item.dart';
 
 class ShoppingItemTile extends ConsumerWidget {
+  final String listId;
   final ShoppingItem item;
 
-  const ShoppingItemTile({super.key, required this.item});
+  const ShoppingItemTile({super.key, required this.listId, required this.item});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,7 +20,7 @@ class ShoppingItemTile extends ConsumerWidget {
         padding: const EdgeInsets.only(right: 20),
         child: const Icon(Icons.delete, color: Colors.white),
       ),
-      onDismissed: (_) => ref.read(shoppingListProvider.notifier).removeItem(item.id),
+      onDismissed: (_) => ref.read(shoppingListItemsProvider(listId).notifier).removeItem(item.id),
       child: CheckboxListTile(
         value: item.isPurchased,
         title: Text(
@@ -37,7 +38,7 @@ class ShoppingItemTile extends ConsumerWidget {
           icon: const Icon(Icons.edit),
           onPressed: () => _showEditDialog(context, ref),
         ),
-        onChanged: (_) => ref.read(shoppingListProvider.notifier).togglePurchased(item.id),
+        onChanged: (_) => ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id),
       ),
     );
   }

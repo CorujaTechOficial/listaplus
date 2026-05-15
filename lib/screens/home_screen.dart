@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/budget_provider.dart';
 import '../widgets/shopping_item_tile.dart';
@@ -8,9 +9,11 @@ import '../widgets/empty_state.dart';
 import '../widgets/budget_dialog.dart';
 import '../widgets/filter_bar.dart';
 import '../models/shopping_item.dart';
+import '../models/shopping_list.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({super.key});
+  final String listId;
+  const HomeScreen({super.key, required this.listId});
 
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
@@ -22,15 +25,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final itemsAsync = ref.watch(shoppingListProvider);
-    final budgetAsync = ref.watch(budgetProvider);
+    final itemsAsync = ref.watch(shoppingListItemsProvider(widget.listId));
+    final budgetAsync = ref.watch(budgetProvider(widget.listId));
+    final listsAsync = ref.watch(shoppingListsProvider);
+    final currentList = listsAsync.value?.firstWhere(
+      (l) => l.id == widget.listId,
+      orElse: () => ShoppingList(name: 'Lista'),
+    );
 
     return Scaffold(
       appBar: AppBar(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Minha Lista de Compras'),
+            Text(currentList?.name ?? 'Lista de Compras'),
             if (budgetAsync.value != null)
               Builder(builder: (context) {
                 final items = itemsAsync.value ?? [];
@@ -88,12 +96,54 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                 );
                 if (confirm == true && context.mounted) {
-                  await ref.read(shoppingListProvider.notifier).clearAll();
+                  await ref.read(shoppingListItemsProvider(widget.listId).notifier).clearAll();
                 }
               }
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(child: Text('Minhas Listas')),
+            ...listsAsync.value?.map((list) => ListTile(
+              title: Text(list.name),
+              trailing: widget.listId == list.id ? const Icon(Icons.check) : null,
+              onTap: () {
+                ref.read(shoppingListsProvider.notifier).setCurrentList(list.id);
+                Navigator.pop(context);
+              },
+            )) ?? [],
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.add),
+              title: const Text('Nova Lista'),
+              onTap: () async {
+                final name = await showDialog<String>(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('Nova Lista'),
+                    content: TextField(
+                      decoration: const InputDecoration(labelText: 'Nome da lista'),
+                      autofocus: true,
+                    ),
+                    actions: [
+                      TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
+                      ElevatedButton(
+                        onPressed: () => Navigator.pop(context, 'Nova Lista'),
+                        child: const Text('Criar'),
+                      ),
+                    ],
+                  ),
+                );
+                if (name != null && name.isNotEmpty) {
+                  await ref.read(shoppingListsProvider.notifier).createList(name);
+                }
+              },
+            ),
+          ],
+        ),
       ),
       body: itemsAsync.when(
         data: (items) {
@@ -153,7 +203,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               Expanded(
                 child: ListView.builder(
                   itemCount: sorted.length,
-                  itemBuilder: (context, index) => ShoppingItemTile(item: sorted[index]),
+                  itemBuilder: (context, index) => ShoppingItemTile(listId: widget.listId, item: sorted[index]),
                 ),
               ),
             ],
@@ -163,7 +213,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         error: (e, _) => Center(child: Text('Erro: $e')),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(context: context, builder: (_) => const AddItemDialog()),
+        onPressed: () => showDialog(context: context, builder: (_) => AddItemDialog(listId: widget.listId)),
         child: const Icon(Icons.add),
       ),
     );
@@ -172,7 +222,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void _showBudgetDialog(BuildContext context, double? currentBudget) {
     showDialog(
       context: context,
-      builder: (_) => BudgetDialog(currentBudget: currentBudget),
+      builder: (_) => BudgetDialog(listId: widget.listId, currentBudget: currentBudget),
     );
   }
 }
@@ -203,7 +253,7 @@ class ShoppingSearchDelegate extends SearchDelegate<String> {
     final results = items.where((i) => i.name.toLowerCase().contains(query.toLowerCase())).toList();
     return ListView.builder(
       itemCount: results.length,
-      itemBuilder: (context, index) => ShoppingItemTile(item: results[index]),
+      itemBuilder: (context, index) => ShoppingItemTile(listId: '', item: results[index]),
     );
   }
 }
