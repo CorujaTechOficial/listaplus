@@ -12,7 +12,7 @@ class ShoppingItemTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Dismissible(
-      key: Key(item.id),
+      key: ValueKey('dismiss_${item.id}'),
       direction: DismissDirection.endToStart,
       background: Container(
         color: Colors.red,
@@ -31,7 +31,7 @@ class ShoppingItemTile extends ConsumerWidget {
           ),
         ),
         subtitle: Text(
-          '${item.quantity}x ${item.category.label}'
+          '${item.quantity}${item.unit.label} ${item.category.label}'
           '${item.estimatedPrice != null ? ' • R\$ ${item.estimatedPrice!.toStringAsFixed(2)}' : ''}',
         ),
         secondary: IconButton(

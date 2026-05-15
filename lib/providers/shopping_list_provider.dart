@@ -1,6 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../models/shopping_item.dart';
 import '../models/category.dart';
+import '../models/unit.dart';
 import 'storage_service.dart';
 
 part 'shopping_list_provider.g.dart';
@@ -19,6 +20,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     required String name,
     required int quantity,
     required Category category,
+    Unit unit = Unit.un,
     double? estimatedPrice,
   }) async {
     final newItem = ShoppingItem(
@@ -26,6 +28,7 @@ class ShoppingListItems extends _$ShoppingListItems {
       name: name,
       quantity: quantity,
       category: category,
+      unit: unit,
       estimatedPrice: estimatedPrice,
     );
 
@@ -69,5 +72,23 @@ class ShoppingListItems extends _$ShoppingListItems {
   Future<void> clearAll() async {
     state = const AsyncValue.data([]);
     await _storage.saveItems([]);
+  }
+
+  Future<void> clearPurchased() async {
+    final items = state.value ?? [];
+    final updated = items.where((item) => !item.isPurchased).toList();
+    state = AsyncValue.data(updated);
+    await _storage.saveItems(updated);
+  }
+
+  Future<void> reorderItem(int oldIndex, int newIndex) async {
+    final items = <ShoppingItem>[...(state.value ?? [])];
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+    final item = items.removeAt(oldIndex);
+    items.insert(newIndex, item);
+    state = AsyncValue.data(items);
+    await _storage.saveItems(items);
   }
 }

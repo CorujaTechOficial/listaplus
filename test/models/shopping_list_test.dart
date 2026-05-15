@@ -1,9 +1,23 @@
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/models/unit.dart';
 import 'package:test/test.dart';
 
 void main() {
+  group('Unit', () {
+    test('has labels', () {
+      expect(Unit.un.label, 'un');
+      expect(Unit.kg.label, 'kg');
+      expect(Unit.L.label, 'L');
+      expect(Unit.pack.label, 'pacote');
+    });
+
+    test('default is un', () {
+      expect(Unit.values.first, Unit.un);
+    });
+  });
+
   group('ShoppingList', () {
     test('default constructor generates id and dates', () {
       final list = ShoppingList(name: 'Mercado');
@@ -97,6 +111,7 @@ void main() {
         name: 'Leite',
         quantity: 3,
         category: Category.beverages,
+        unit: Unit.L,
         estimatedPrice: 8.50,
         isPurchased: true,
         createdAt: DateTime(2026, 5, 1),
@@ -110,10 +125,48 @@ void main() {
       expect(restored.name, 'Leite');
       expect(restored.quantity, 3);
       expect(restored.category, Category.beverages);
+      expect(restored.unit, Unit.L);
       expect(restored.estimatedPrice, 8.50);
       expect(restored.isPurchased, true);
       expect(restored.createdAt, DateTime(2026, 5, 1));
       expect(restored.updatedAt, DateTime(2026, 5, 2));
+    });
+
+    test('unit defaults to un', () {
+      final item = ShoppingItem(
+        shoppingListId: 'l1',
+        name: 'Arroz',
+        quantity: 1,
+        category: Category.others,
+      );
+      expect(item.unit, Unit.un);
+    });
+
+    test('fromJson handles missing unit', () {
+      final json = {
+        'id': 'item-2',
+        'shoppingListId': 'list-1',
+        'name': 'Pão',
+        'quantity': 6,
+        'category': 'bakery',
+        'estimatedPrice': null,
+        'createdAt': '2026-05-01T00:00:00.000',
+        'updatedAt': '2026-05-02T00:00:00.000',
+      };
+      final item = ShoppingItem.fromJson(json);
+      expect(item.unit, Unit.un);
+    });
+
+    test('copyWith updates unit', () {
+      final item = ShoppingItem(
+        shoppingListId: 'l1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.fruits,
+      );
+      final copied = item.copyWith(unit: Unit.kg);
+      expect(copied.unit, Unit.kg);
+      expect(copied.name, 'Item');
     });
 
     test('fromJson handles null estimatedPrice and missing isPurchased', () {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:share_plus/share_plus.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/budget_provider.dart';
@@ -82,12 +83,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           PopupMenuButton(icon: const Icon(Icons.more_vert),
             itemBuilder: (_) => [
               const PopupMenuItem(
+                value: 'clear_purchased',
+                child: Text('Limpar comprados'),
+              ),
+              const PopupMenuItem(
                 value: 'clear',
                 child: Text('Limpar lista'),
               ),
+              const PopupMenuItem(
+                value: 'share',
+                child: Text('Compartilhar'),
+              ),
             ],
             onSelected: (value) async {
-              if (value == 'clear') {
+              final items = itemsAsync.value ?? [];
+              if (value == 'clear_purchased') {
+                await ref.read(shoppingListItemsProvider(widget.listId).notifier).clearPurchased();
+              } else if (value == 'clear') {
                 final confirm = await showDialog<bool>(
                   context: context,
                   builder: (_) => AlertDialog(
@@ -102,6 +114,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 if (confirm == true && context.mounted) {
                   await ref.read(shoppingListItemsProvider(widget.listId).notifier).clearAll();
                 }
+              } else if (value == 'share') {
+                await _shareList(items, currentList?.name);
               }
             },
           ),
@@ -166,6 +180,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             case SortType.date:
               sorted.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
               break;
+            case SortType.manual:
+              break;
           }
 
           // Calculate totals
@@ -200,10 +216,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: sorted.length,
-                  itemBuilder: (context, index) => ShoppingItemTile(listId: widget.listId, item: sorted[index]),
-                ),
+                child: _sort == SortType.manual
+                    ? ReorderableListView.builder(
+                        itemCount: sorted.length,
+                        itemBuilder: (context, index) =>
+                            ShoppingItemTile(key: ValueKey(sorted[index].id), listId: widget.listId, item: sorted[index]),
+                        onReorder: (oldIndex, newIndex) {
+                          ref.read(shoppingListItemsProvider(widget.listId).notifier).reorderItem(oldIndex, newIndex);
+                        },
+                      )
+                    : ListView.builder(
+                        itemCount: sorted.length,
+                        itemBuilder: (context, index) =>
+                            ShoppingItemTile(key: ValueKey(sorted[index].id), listId: widget.listId, item: sorted[index]),
+                      ),
               ),
             ],
           );
@@ -223,6 +249,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       context: context,
       builder: (_) => BudgetDialog(listId: widget.listId, currentBudget: currentBudget),
     );
+  }
+
+  Future<void> _shareList(List<ShoppingItem> items, String? listName) async {
+    if (items.isEmpty) {
+      return;
+    }
+    final text = items.asMap().entries.map((e) {
+      final i = e.value;
+      return '${e.key + 1}. ${i.name} — ${i.quantity}${i.unit.label} (${i.category.label})${i.estimatedPrice != null ? ' R\$${i.estimatedPrice!.toStringAsFixed(2)}' : ''}';
+    }).join('\n');
+    await SharePlus.instance.share(ShareParams(text: text, subject: listName ?? 'Lista de Compras'));
   }
 }
 

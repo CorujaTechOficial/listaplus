@@ -145,6 +145,76 @@ void main() {
       expect(remaining, isEmpty);
     });
 
+    test('clearPurchased removes only purchased items', () async {
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Pendente',
+        quantity: 1,
+        category: Category.others,
+      );
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Comprado',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final items = await container.read(shoppingListItemsProvider('list-1').future);
+      await container.read(shoppingListItemsProvider('list-1').notifier).togglePurchased(items.last.id);
+
+      await container.read(shoppingListItemsProvider('list-1').notifier).clearPurchased();
+
+      final remaining = await container.read(shoppingListItemsProvider('list-1').future);
+      expect(remaining.length, 1);
+      expect(remaining.first.name, 'Pendente');
+    });
+
+    test('reorderItem moves item down (oldIndex < newIndex)', () async {
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Item A',
+        quantity: 1,
+        category: Category.others,
+      );
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Item B',
+        quantity: 1,
+        category: Category.others,
+      );
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Item C',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      await container.read(shoppingListItemsProvider('list-1').notifier).reorderItem(0, 2);
+      final items = await container.read(shoppingListItemsProvider('list-1').future);
+      expect(items[0].name, 'Item B');
+      expect(items[1].name, 'Item A');
+      expect(items[2].name, 'Item C');
+    });
+
+    test('reorderItem moves item up (oldIndex > newIndex)', () async {
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Item A',
+        quantity: 1,
+        category: Category.others,
+      );
+      await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
+        listId: 'list-1',
+        name: 'Item B',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      await container.read(shoppingListItemsProvider('list-1').notifier).reorderItem(1, 0);
+      final items = await container.read(shoppingListItemsProvider('list-1').future);
+      expect(items.first.name, 'Item B');
+    });
+
     test('clearAll removes all items from list', () async {
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',

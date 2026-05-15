@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 enum FilterType { all, pending, purchased }
-enum SortType { name, category, date }
+enum SortType { name, category, date, manual }
 
 class FilterBar extends StatefulWidget {
   const FilterBar({
@@ -42,6 +42,7 @@ class _FilterBarState extends State<FilterBar> {
             DropdownMenuItem(value: SortType.name, child: Text('Nome')),
             DropdownMenuItem(value: SortType.category, child: Text('Categoria')),
             DropdownMenuItem(value: SortType.date, child: Text('Data')),
+            DropdownMenuItem(value: SortType.manual, child: Text('Manual')),
           ],
           onChanged: (v) => v != null ? widget.onSortChanged(v) : null,
         ),

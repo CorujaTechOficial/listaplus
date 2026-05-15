@@ -15,6 +15,7 @@ import 'package:shopping_list/screens/home_screen.dart' as screens;
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/providers/current_list_provider.dart';
 
 Widget wrapWithProviders(Widget child) {
@@ -55,7 +56,7 @@ void main() {
       ));
 
       expect(find.text('Maçã'), findsOneWidget);
-      expect(find.textContaining('3x Frutas'), findsOneWidget);
+      expect(find.textContaining('3un Frutas'), findsOneWidget);
       expect(find.textContaining('R\$ 2.50'), findsOneWidget);
     });
 
@@ -72,7 +73,7 @@ void main() {
       ));
 
       expect(find.text('Pão'), findsOneWidget);
-      expect(find.text('1x Padaria'), findsOneWidget);
+      expect(find.text('1un Padaria'), findsOneWidget);
     });
 
     testWidgets('shows purchased state with line-through style', (tester) async {
@@ -208,6 +209,22 @@ void main() {
       await tester.pumpAndSettle();
       expect(result, SortType.category);
     });
+
+    testWidgets('manual sort option exists', (tester) async {
+      await tester.pumpWidget(wrapWithApp(Scaffold(
+        body: FilterBar(
+          filter: FilterType.all,
+          sort: SortType.name,
+          onFilterChanged: (_) {},
+          onSortChanged: (_) {},
+        ),
+      )));
+
+      await tester.tap(find.text('Nome'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Manual'), findsOneWidget);
+    });
   });
 
   group('AddItemDialog', () {
@@ -238,6 +255,7 @@ void main() {
       expect(find.text('Adicionar'), findsOneWidget);
       expect(find.byType(TextFormField), findsNWidgets(3));
       expect(find.byType(DropdownButtonFormField<Category>), findsOneWidget);
+      expect(find.byType(DropdownButtonFormField<Unit>), findsOneWidget);
     });
 
     testWidgets('validates empty name field', (tester) async {
@@ -264,6 +282,17 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Adicionar Item'), findsNothing);
+    });
+
+    testWidgets('can select a different unit', (tester) async {
+      await openDialog(tester);
+
+      await tester.tap(find.byType(DropdownButtonFormField<Unit>));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('kg').last);
+      await tester.pumpAndSettle();
+
+      expect(find.text('kg'), findsAtLeastNWidgets(1));
     });
   });
 
@@ -580,6 +609,123 @@ void main() {
 
       expect(find.byType(EmptyState), findsOneWidget);
     });
+
+    testWidgets('clear purchased removes only purchased items', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final pending = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Pendente',
+        quantity: 1,
+        category: Category.others,
+        isPurchased: false,
+      );
+      final purchased = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Comprado',
+        quantity: 1,
+        category: Category.others,
+        isPurchased: true,
+      );
+
+      SharedPreferences.setMockInitialValues({
+        'shopping_lists': jsonEncode([list.toJson()]),
+        'shopping_items': jsonEncode([pending.toJson(), purchased.toJson()]),
+        'current_list_id': 'list-1',
+      });
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Pendente'), findsOneWidget);
+      expect(find.text('Comprado'), findsOneWidget);
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Limpar comprados'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Pendente'), findsOneWidget);
+      expect(find.text('Comprado'), findsNothing);
+    });
+
+    testWidgets('compartilhar shares the list', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      SharedPreferences.setMockInitialValues({
+        'shopping_lists': jsonEncode([list.toJson()]),
+        'shopping_items': jsonEncode([item.toJson()]),
+        'current_list_id': 'list-1',
+      });
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Compartilhar'));
+      await tester.pumpAndSettle();
+      // Não lança exceção (share_plus é silenciado em teste)
+    });
+
+    testWidgets('manual sort shows items in ReorderableListView', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final itemA = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item A',
+        quantity: 1,
+        category: Category.others,
+      );
+      final itemB = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item B',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      SharedPreferences.setMockInitialValues({
+        'shopping_lists': jsonEncode([list.toJson()]),
+        'shopping_items': jsonEncode([itemA.toJson(), itemB.toJson()]),
+        'current_list_id': 'list-1',
+      });
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Data'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Manual').last);
+      await tester.pumpAndSettle();
+
+      expect(find.text('Item A'), findsOneWidget);
+      expect(find.text('Item B'), findsOneWidget);
+
+      // Trigger reorder via long-press + drag
+      final firstTile = find.byType(ShoppingItemTile).first;
+      final center = tester.getCenter(firstTile);
+      final gesture = await tester.startGesture(center);
+      await tester.pump(const Duration(milliseconds: 500));
+      await gesture.moveBy(const Offset(0, 80));
+      await tester.pump(const Duration(milliseconds: 300));
+      await gesture.up();
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ShoppingItemTile), findsNWidgets(2));
+    });
+
 
     testWidgets('shows budget progress bar when budget is set', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');

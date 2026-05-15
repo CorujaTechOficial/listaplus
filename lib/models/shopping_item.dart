@@ -1,5 +1,6 @@
 import 'package:uuid/uuid.dart';
 import 'category.dart';
+import 'unit.dart';
 
 class ShoppingItem {
   ShoppingItem({
@@ -8,6 +9,7 @@ class ShoppingItem {
     required this.name,
     required this.quantity,
     required this.category,
+    this.unit = Unit.un,
     this.estimatedPrice,
     this.isPurchased = false,
     DateTime? createdAt,
@@ -26,6 +28,9 @@ class ShoppingItem {
         (e) => e.name == json['category'],
         orElse: () => Category.others,
       ),
+      unit: json['unit'] != null
+          ? Unit.values.firstWhere((e) => e.name == json['unit'], orElse: () => Unit.un)
+          : Unit.un,
       estimatedPrice: json['estimatedPrice'] as double?,
       isPurchased: json['isPurchased'] as bool? ?? false,
       createdAt: DateTime.parse(json['createdAt'] as String),
@@ -38,6 +43,7 @@ class ShoppingItem {
   final String name;
   final int quantity;
   final Category category;
+  final Unit unit;
   final double? estimatedPrice;
   final bool isPurchased;
   final DateTime createdAt;
@@ -49,6 +55,7 @@ class ShoppingItem {
     String? name,
     int? quantity,
     Category? category,
+    Unit? unit,
     double? estimatedPrice,
     bool? isPurchased,
     DateTime? createdAt,
@@ -60,6 +67,7 @@ class ShoppingItem {
       name: name ?? this.name,
       quantity: quantity ?? this.quantity,
       category: category ?? this.category,
+      unit: unit ?? this.unit,
       estimatedPrice: estimatedPrice ?? this.estimatedPrice,
       isPurchased: isPurchased ?? this.isPurchased,
       createdAt: createdAt ?? this.createdAt,
@@ -74,6 +82,7 @@ class ShoppingItem {
       'name': name,
       'quantity': quantity,
       'category': category.name,
+      'unit': unit.name,
       'estimatedPrice': estimatedPrice,
       'isPurchased': isPurchased,
       'createdAt': createdAt.toIso8601String(),

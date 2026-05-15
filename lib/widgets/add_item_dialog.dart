@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/category.dart';
+import '../models/unit.dart';
 import '../providers/shopping_list_provider.dart';
 
 class AddItemDialog extends ConsumerStatefulWidget {
@@ -18,6 +19,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
   final _quantityController = TextEditingController(text: '1');
   final _priceController = TextEditingController();
   Category _selectedCategory = Category.others;
+  Unit _selectedUnit = Unit.un;
 
   @override
   void dispose() {
@@ -42,11 +44,28 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                 decoration: const InputDecoration(labelText: 'Nome do item'),
                 validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
               ),
-              TextFormField(
-                controller: _quantityController,
-                decoration: const InputDecoration(labelText: 'Quantidade'),
-                keyboardType: TextInputType.number,
-                validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _quantityController,
+                      decoration: const InputDecoration(labelText: 'Quantidade'),
+                      keyboardType: TextInputType.number,
+                      validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: DropdownButtonFormField<Unit>(
+                      value: _selectedUnit,
+                      decoration: const InputDecoration(labelText: 'Unidade'),
+                      items: Unit.values.map((u) {
+                        return DropdownMenuItem(value: u, child: Text(u.label));
+                      }).toList(),
+                      onChanged: (v) => setState(() => _selectedUnit = v!),
+                    ),
+                  ),
+                ],
               ),
               DropdownButtonFormField<Category>(
                 value: _selectedCategory,
@@ -75,6 +94,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                     name: _nameController.text,
                     quantity: int.parse(_quantityController.text),
                     category: _selectedCategory,
+                    unit: _selectedUnit,
                     estimatedPrice: double.tryParse(_priceController.text),
                   );
               if (context.mounted) {
