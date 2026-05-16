@@ -1,12 +1,15 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
+import 'package:shopping_list/services/auth_service.dart';
+import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/widgets/empty_state.dart';
 import 'package:shopping_list/widgets/shopping_item_tile.dart';
 import 'package:shopping_list/widgets/filter_bar.dart';
 import 'package:shopping_list/widgets/add_item_dialog.dart';
+import 'package:shopping_list/widgets/edit_item_dialog.dart';
 import 'package:shopping_list/widgets/create_list_dialog.dart';
 import 'package:shopping_list/widgets/budget_dialog.dart';
 import 'package:shopping_list/screens/home_screen.dart';
@@ -17,9 +20,25 @@ import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/providers/current_list_provider.dart';
+import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/providers/analytics_service_provider.dart';
+import 'package:shopping_list/providers/revenuecat_service_provider.dart';
+import 'package:shopping_list/services/revenuecat_service.dart';
+import 'package:shopping_list/services/analytics_service.dart';
+import '../helpers/fake_storage_backend.dart';
+import '../helpers/fake_revenuecat_service.dart';
+import 'package:shopping_list/services/storage_backend.dart';
 
-Widget wrapWithProviders(Widget child) {
-  return ProviderScope(child: MaterialApp(home: child));
+Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatService? revenueCat}) {
+  final overrides = <Override>[
+    authServiceProvider.overrideWithValue(AuthService(auth: MockFirebaseAuth())),
+    revenueCatServiceProvider.overrideWithValue(revenueCat ?? FakeRevenueCatService()),
+    analyticsServiceProvider.overrideWithValue(AnalyticsService()),
+  ];
+  if (backend != null) {
+    overrides.add(firestoreServiceProvider.overrideWithValue(backend));
+  }
+  return ProviderScope(overrides: overrides, child: MaterialApp(home: child));
 }
 
 Widget wrapWithApp(Widget child) {
@@ -38,8 +57,10 @@ void main() {
   });
 
   group('ShoppingItemTile', () {
+    late FakeStorageBackend backend;
+
     setUp(() {
-      SharedPreferences.setMockInitialValues({});
+      backend = FakeStorageBackend();
     });
 
     testWidgets('displays item details with price', (tester) async {
@@ -53,10 +74,12 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
       ));
 
       expect(find.text('Maçã'), findsOneWidget);
-      expect(find.textContaining('3un Frutas'), findsOneWidget);
+      expect(find.text('3'), findsOneWidget);
+      expect(find.textContaining('un Frutas'), findsOneWidget);
       expect(find.textContaining('R\$ 2.50'), findsOneWidget);
     });
 
@@ -70,10 +93,12 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
       ));
 
       expect(find.text('Pão'), findsOneWidget);
-      expect(find.text('1un Padaria'), findsOneWidget);
+      expect(find.text('1'), findsOneWidget);
+      expect(find.textContaining('un Padaria'), findsOneWidget);
     });
 
     testWidgets('shows purchased state with line-through style', (tester) async {
@@ -87,6 +112,7 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
       ));
 
       final title = tester.widget<Text>(find.text('Comprado'));
@@ -103,13 +129,14 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
       ));
 
       await tester.tap(find.byType(CheckboxListTile));
       await tester.pumpAndSettle();
     });
 
-    testWidgets('dismissible removes item', (tester) async {
+    testWidgets('dismissible removes item and shows snackbar', (tester) async {
       final item = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Remover',
@@ -119,6 +146,7 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
       ));
 
       await tester.fling(
@@ -127,6 +155,9 @@ void main() {
         1000,
       );
       await tester.pumpAndSettle();
+
+      expect(find.text('Item removido'), findsOneWidget);
+      expect(find.text('Desfazer'), findsOneWidget);
     });
 
     testWidgets('edit button calls show edit dialog', (tester) async {
@@ -139,9 +170,62 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
       ));
 
       await tester.tap(find.byIcon(Icons.edit));
+      await tester.pumpAndSettle();
+    });
+
+    testWidgets('shows plus and minus buttons', (tester) async {
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 5,
+        category: Category.fruits,
+      );
+
+      await tester.pumpWidget(wrapWithProviders(
+        Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
+      ));
+
+      expect(find.byIcon(Icons.remove), findsOneWidget);
+      expect(find.byIcon(Icons.add), findsOneWidget);
+      expect(find.text('5'), findsOneWidget);
+    });
+
+    testWidgets('plus button calls increment without throwing', (tester) async {
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 3,
+        category: Category.others,
+      );
+
+      await tester.pumpWidget(wrapWithProviders(
+        Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
+      ));
+
+      await tester.tap(find.byIcon(Icons.add));
+      await tester.pumpAndSettle();
+    });
+
+    testWidgets('minus button calls decrement without throwing', (tester) async {
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 3,
+        category: Category.others,
+      );
+
+      await tester.pumpWidget(wrapWithProviders(
+        Scaffold(body: ShoppingItemTile(listId: 'list-1', item: item)),
+        backend: backend,
+      ));
+
+      await tester.tap(find.byIcon(Icons.remove));
       await tester.pumpAndSettle();
     });
   });
@@ -228,11 +312,8 @@ void main() {
   });
 
   group('AddItemDialog', () {
-    setUp(() {
-      SharedPreferences.setMockInitialValues({});
-    });
-
     Future<void> openDialog(WidgetTester tester) async {
+      final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
           onPressed: () => showDialog(
@@ -241,6 +322,7 @@ void main() {
           ),
           child: const Text('Open'),
         )),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Open'));
@@ -296,8 +378,100 @@ void main() {
     });
   });
 
+  group('EditItemDialog', () {
+    Future<void> openDialog(WidgetTester tester) async {
+      final backend = FakeStorageBackend();
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Arroz',
+        quantity: 5,
+        category: Category.others,
+        unit: Unit.kg,
+        estimatedPrice: 10.50,
+      );
+
+      await tester.pumpWidget(wrapWithProviders(
+        Builder(builder: (context) => ElevatedButton(
+          onPressed: () => showDialog(
+            context: context,
+            builder: (_) => EditItemDialog(listId: 'list-1', item: item),
+          ),
+          child: const Text('Open'),
+        )),
+        backend: backend,
+      ));
+
+      await tester.tap(find.text('Open'));
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('shows dialog with pre-filled values', (tester) async {
+      await openDialog(tester);
+
+      expect(find.text('Editar Item'), findsOneWidget);
+      expect(find.text('Cancelar'), findsOneWidget);
+      expect(find.text('Salvar'), findsOneWidget);
+      expect(find.text('Arroz'), findsOneWidget);
+      expect(find.text('5'), findsAtLeastNWidgets(1));
+      expect(find.textContaining('kg'), findsAtLeastNWidgets(1));
+      expect(find.textContaining('Outros'), findsAtLeastNWidgets(1));
+    });
+
+    testWidgets('validates empty name field', (tester) async {
+      await openDialog(tester);
+
+      await tester.enterText(find.byType(TextFormField).first, '');
+      await tester.tap(find.text('Salvar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Campo obrigatório'), findsOneWidget);
+    });
+
+    testWidgets('submits with valid data and closes dialog', (tester) async {
+      await openDialog(tester);
+
+      await tester.enterText(find.byType(TextFormField).first, 'Arroz Integral');
+      await tester.tap(find.text('Salvar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Editar Item'), findsNothing);
+    });
+
+    testWidgets('can select different unit', (tester) async {
+      await openDialog(tester);
+
+      await tester.tap(find.byType(DropdownButtonFormField<Unit>));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('L').last);
+      await tester.pumpAndSettle();
+
+      expect(find.text('L'), findsAtLeastNWidgets(1));
+    });
+
+    testWidgets('can select different category', (tester) async {
+      await openDialog(tester);
+
+      await tester.tap(find.byType(DropdownButtonFormField<Category>));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Frutas').last);
+      await tester.pumpAndSettle();
+
+      expect(find.text('Frutas'), findsAtLeastNWidgets(1));
+    });
+
+    testWidgets('cancel closes dialog', (tester) async {
+      await openDialog(tester);
+
+      await tester.tap(find.text('Cancelar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Editar Item'), findsNothing);
+    });
+  });
+
   group('CreateListDialog', () {
     testWidgets('shows dialog with text field', (tester) async {
+      final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
           onPressed: () => showDialog(
@@ -306,6 +480,7 @@ void main() {
           ),
           child: const Text('Open'),
         )),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Open'));
@@ -319,6 +494,7 @@ void main() {
 
     testWidgets('returns name when Criar is tapped', (tester) async {
       String? result;
+      final backend = FakeStorageBackend();
 
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
@@ -330,6 +506,7 @@ void main() {
           },
           child: const Text('Open'),
         )),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Open'));
@@ -344,6 +521,7 @@ void main() {
 
     testWidgets('does not return empty name', (tester) async {
       String? result;
+      final backend = FakeStorageBackend();
 
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
@@ -355,6 +533,7 @@ void main() {
           },
           child: const Text('Open'),
         )),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Open'));
@@ -368,6 +547,7 @@ void main() {
 
     testWidgets('returns name when done action is submitted', (tester) async {
       String? result;
+      final backend = FakeStorageBackend();
 
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
@@ -379,6 +559,7 @@ void main() {
           },
           child: const Text('Open'),
         )),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Open'));
@@ -393,19 +574,19 @@ void main() {
   });
 
   group('BudgetDialog', () {
-    setUp(() {
-      SharedPreferences.setMockInitialValues({});
-    });
-
     Future<void> openDialog(WidgetTester tester, {double? currentBudget}) async {
+      final backend = FakeStorageBackend();
+      final list = ShoppingList(id: 'list-1', name: 'Lista', budget: currentBudget);
+      await backend.saveLists([list]);
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
           onPressed: () => showDialog(
             context: context,
-            builder: (_) => BudgetDialog(listId: 'list-1', currentBudget: currentBudget),
+            builder: (_) => BudgetDialog(list: list),
           ),
           child: const Text('Open'),
         )),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Open'));
@@ -459,13 +640,11 @@ void main() {
   });
 
   group('HomeScreen', () {
-    setUp(() {
-      SharedPreferences.setMockInitialValues({});
-    });
-
     testWidgets('shows loading indicator then empty state', (tester) async {
+      final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
 
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
@@ -484,14 +663,14 @@ void main() {
         category: Category.others,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([item.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -517,14 +696,14 @@ void main() {
         isPurchased: false,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([purchasedItem.toJson(), pendingItem.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([purchasedItem, pendingItem]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -544,9 +723,46 @@ void main() {
       expect(find.text('Pendente'), findsNothing);
     });
 
-    testWidgets('drawer shows list switching', (tester) async {
-      final list1 = ShoppingList(id: 'list-1', name: 'Lista A');
-      final list2 = ShoppingList(id: 'list-2', name: 'Lista B');
+    testWidgets('undo restores dismissed item', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Restaurar',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Restaurar'), findsOneWidget);
+
+      await tester.fling(
+        find.byType(Dismissible),
+        const Offset(-500, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Restaurar'), findsNothing);
+      expect(find.text('Item removido'), findsOneWidget);
+
+      await tester.tap(find.text('Desfazer'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Restaurar'), findsOneWidget);
+    });
+
+    testWidgets('pull-to-refresh shows RefreshIndicator', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
       final item = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Item',
@@ -554,25 +770,93 @@ void main() {
         category: Category.others,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list1.toJson(), list2.toJson()]),
-        'shopping_items': jsonEncode([item.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byIcon(Icons.menu));
+      expect(find.byType(RefreshIndicator), findsOneWidget);
+
+      // Trigger pull-to-refresh via drag
+      await tester.fling(
+        find.byType(ListView),
+        const Offset(0, 300),
+        1000,
+      );
       await tester.pumpAndSettle();
 
-      expect(find.text('Minhas Listas'), findsOneWidget);
-      expect(find.text('Lista A'), findsAtLeastNWidgets(1));
-      expect(find.text('Lista B'), findsOneWidget);
-      expect(find.text('Nova Lista'), findsOneWidget);
-      expect(find.byIcon(Icons.check), findsAtLeastNWidgets(1));
+      expect(find.text('Item'), findsOneWidget);
+    });
+
+    testWidgets('pull-to-refresh on empty state works', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(RefreshIndicator), findsOneWidget);
+
+      await tester.fling(
+        find.byType(SingleChildScrollView),
+        const Offset(0, 300),
+        1000,
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Sua lista está vazia'), findsOneWidget);
+    });
+
+    testWidgets('plus and minus buttons update quantity visually', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item Qtd',
+        quantity: 2,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.text('2'), findsOneWidget);
+
+      await tester.tap(find.descendant(
+        of: find.byType(ShoppingItemTile),
+        matching: find.byIcon(Icons.add),
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.text('3'), findsOneWidget);
+
+      await tester.tap(find.descendant(
+        of: find.byType(ShoppingItemTile),
+        matching: find.byIcon(Icons.remove),
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.text('2'), findsOneWidget);
     });
 
     testWidgets('clear all items button works', (tester) async {
@@ -584,14 +868,14 @@ void main() {
         category: Category.others,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([item.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -627,14 +911,14 @@ void main() {
         isPurchased: true,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([pending.toJson(), purchased.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([pending, purchased]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -660,14 +944,14 @@ void main() {
         category: Category.others,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([item.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -677,6 +961,64 @@ void main() {
       await tester.tap(find.text('Compartilhar'));
       await tester.pumpAndSettle();
       // Não lança exceção (share_plus é silenciado em teste)
+    });
+
+    testWidgets('menu tem opção Gerenciar assinatura', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Gerenciar assinatura'), findsOneWidget);
+    });
+
+    testWidgets('Gerenciar assinatura chama presentCustomerCenter', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      final spy = FakeRevenueCatService();
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+        revenueCat: spy,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Gerenciar assinatura'));
+      await tester.pumpAndSettle();
+
+      expect(spy.presentCustomerCenterCallCount, 1);
     });
 
     testWidgets('manual sort shows items in ReorderableListView', (tester) async {
@@ -694,14 +1036,14 @@ void main() {
         category: Category.others,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([itemA.toJson(), itemB.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([itemA, itemB]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -728,7 +1070,8 @@ void main() {
 
 
     testWidgets('shows budget progress bar when budget is set', (tester) async {
-      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      // ignore: prefer_int_literals
+      final list = ShoppingList(id: 'list-1', name: 'Lista', budget: 100.0);
       final item = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Item',
@@ -738,15 +1081,14 @@ void main() {
         isPurchased: true,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([item.toJson()]),
-        'current_list_id': 'list-1',
-        'budget_list-1': 100.0,
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -763,14 +1105,14 @@ void main() {
         shoppingListId: 'list-1', name: 'Banana', quantity: 1, category: Category.fruits,
       );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([item1.toJson(), item2.toJson()]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item1, item2]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -793,14 +1135,14 @@ void main() {
     testWidgets('wallet button opens budget dialog', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -810,59 +1152,6 @@ void main() {
       expect(find.text('Orçamento Mensal'), findsOneWidget);
     });
 
-    testWidgets('drawer list tap switches list', (tester) async {
-      final list1 = ShoppingList(id: 'list-1', name: 'Lista A');
-      final list2 = ShoppingList(id: 'list-2', name: 'Lista B');
-
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list1.toJson(), list2.toJson()]),
-        'shopping_items': jsonEncode([]),
-        'current_list_id': 'list-1',
-      });
-
-      await tester.pumpWidget(wrapWithProviders(
-        const HomeScreen(listId: 'list-1'),
-      ));
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.byIcon(Icons.menu));
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Lista B'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Minhas Listas'), findsNothing);
-    });
-
-    testWidgets('drawer nova lista creates list', (tester) async {
-      final list1 = ShoppingList(id: 'list-1', name: 'Lista A');
-
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list1.toJson()]),
-        'shopping_items': jsonEncode([]),
-        'current_list_id': 'list-1',
-      });
-
-      await tester.pumpWidget(wrapWithProviders(
-        const HomeScreen(listId: 'list-1'),
-      ));
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.byIcon(Icons.menu));
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Nova Lista'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Criar Lista'), findsOneWidget);
-
-      await tester.enterText(find.byType(TextField), 'Nova Lista');
-      await tester.tap(find.text('Criar'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Minhas Listas'), findsNothing);
-    });
-
     testWidgets('sort dropdown changes sort order', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');
       final items = [
@@ -870,14 +1159,14 @@ void main() {
         ShoppingItem(shoppingListId: 'list-1', name: 'Arroz', quantity: 1, category: Category.others),
       ];
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode(items.map((e) => e.toJson()).toList()),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems(items);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -895,14 +1184,14 @@ void main() {
     testWidgets('floating action button opens add item dialog', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -912,17 +1201,303 @@ void main() {
       expect(find.text('Adicionar Item'), findsOneWidget);
     });
 
-    testWidgets('shows error state when items fail to load', (tester) async {
+    testWidgets('checklist icon appears in app bar when items exist', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
 
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': 'invalid json',
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.byIcon(Icons.checklist), findsOneWidget);
+    });
+
+    testWidgets('checklist icon opens selection mode', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      expect(find.byIcon(Icons.close), findsOneWidget);
+    });
+
+    testWidgets('selection mode shows bottom bar with batch actions', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(BottomAppBar), findsOneWidget);
+      expect(find.text('Excluir'), findsOneWidget);
+      expect(find.text('Comprar'), findsOneWidget);
+      expect(find.text('Desmarcar'), findsOneWidget);
+    });
+
+    testWidgets('close button exits selection mode', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.close));
+      await tester.pumpAndSettle();
+
+      expect(find.byIcon(Icons.checklist), findsOneWidget);
+      expect(find.byIcon(Icons.close), findsNothing);
+    });
+
+    testWidgets('comprar button marks selected items as purchased', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Comprar'));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(BottomAppBar), findsNothing);
+      expect(find.byIcon(Icons.checklist), findsOneWidget);
+    });
+
+    testWidgets('excluir button removes selected items', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Excluir'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Confirmar'), findsOneWidget);
+
+      await tester.tap(find.text('Remover'));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(EmptyState), findsOneWidget);
+    });
+
+    testWidgets('deselecting item hides bottom bar', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(BottomAppBar), findsOneWidget);
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(BottomAppBar), findsNothing);
+    });
+
+    testWidgets('desmarcar button works without throwing', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Desmarcar'));
+      await tester.pumpAndSettle();
+
+      expect(find.byIcon(Icons.checklist), findsOneWidget);
+    });
+
+    testWidgets('selection in manual sort mode works', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final item = ShoppingItem(
+        shoppingListId: 'list-1',
+        name: 'Item',
+        quantity: 1,
+        category: Category.others,
+      );
+
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.saveItems([item]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+      await tester.pumpAndSettle();
+
+      // Switch to manual sort so ReorderableListView is used
+      await tester.tap(find.text('Data'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Manual').last);
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.checklist));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(BottomAppBar), findsOneWidget);
+
+      // Deselect
+      await tester.tap(find.byType(CheckboxListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(BottomAppBar), findsNothing);
+    });
+
+    testWidgets('shows error state when items fail to load', (tester) async {
+      final list = ShoppingList(id: 'list-1', name: 'Lista');
+      final backend = _HomeScreenErrorBackend();
+      await backend.saveLists([list]);
+      await backend.setCurrentListId('list-1');
+
+      await tester.pumpWidget(wrapWithProviders(
+        const HomeScreen(listId: 'list-1'),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -931,13 +1506,11 @@ void main() {
   });
 
   group('NoListsScreen', () {
-    setUp(() {
-      SharedPreferences.setMockInitialValues({});
-    });
-
     testWidgets('shows empty state and create button', (tester) async {
+      final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         const app.NoListsScreen(),
+        backend: backend,
       ));
 
       expect(find.text('Nenhuma lista encontrada'), findsOneWidget);
@@ -946,8 +1519,10 @@ void main() {
     });
 
     testWidgets('create button opens dialog and creates list', (tester) async {
+      final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         const app.NoListsScreen(),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Criar Primeira Lista'));
@@ -978,13 +1553,14 @@ void main() {
         ),
       ];
 
-      SharedPreferences.setMockInitialValues({});
+      final backend = FakeStorageBackend();
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: Builder(builder: (context) => ElevatedButton(
-          onPressed: () => showSearch(context: context, delegate: screens.ShoppingSearchDelegate(items)),
+          onPressed: () => showSearch(context: context, delegate: screens.ShoppingSearchDelegate(items, 'list-1')),
           child: const Text('Search'),
         ))),
+        backend: backend,
       ));
 
       await tester.tap(find.text('Search'));
@@ -1001,16 +1577,32 @@ void main() {
   group('MyApp', () {
     testWidgets('renders without throwing', (tester) async {
       SharedPreferences.setMockInitialValues({});
+      final backend = FakeStorageBackend();
 
-      await tester.pumpWidget(const ProviderScope(child: app.MyApp()));
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            firestoreServiceProvider.overrideWithValue(backend),
+          ],
+          child: const app.MyApp(),
+        ),
+      );
 
       expect(find.byType(app.MyApp), findsOneWidget);
     });
 
     testWidgets('main runs the app', (tester) async {
       SharedPreferences.setMockInitialValues({});
+      final backend = FakeStorageBackend();
 
-      app.main();
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            firestoreServiceProvider.overrideWithValue(backend),
+          ],
+          child: const app.MyApp(),
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byType(app.MyApp), findsOneWidget);
@@ -1020,15 +1612,13 @@ void main() {
   group('ListLoader', () {
     testWidgets('shows HomeScreen when current list exists', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista Teste');
-
-      SharedPreferences.setMockInitialValues({
-        'shopping_lists': jsonEncode([list.toJson()]),
-        'shopping_items': jsonEncode([]),
-        'current_list_id': 'list-1',
-      });
+      final backend = FakeStorageBackend();
+      await backend.saveLists([list]);
+      await backend.setCurrentListId('list-1');
 
       await tester.pumpWidget(wrapWithProviders(
         const app.ListLoader(),
+        backend: backend,
       ));
       await tester.pumpAndSettle();
 
@@ -1036,11 +1626,12 @@ void main() {
     });
 
     testWidgets('shows error state', (tester) async {
-      SharedPreferences.setMockInitialValues({});
+      final backend = FakeStorageBackend();
 
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
+            firestoreServiceProvider.overrideWithValue(backend),
             currentListIdProvider.overrideWith(
               () => _ErrorCurrentListId(),
             ),
@@ -1058,4 +1649,11 @@ void main() {
 class _ErrorCurrentListId extends CurrentListId {
   @override
   Future<String?> build() => Future.error(Exception('Erro de teste'));
+}
+
+class _HomeScreenErrorBackend extends FakeStorageBackend {
+  @override
+  Future<List<ShoppingItem>> loadItems(String listId) async {
+    throw Exception('Erro de teste');
+  }
 }

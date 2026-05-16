@@ -20,7 +20,7 @@ class ShoppingItem {
 
   factory ShoppingItem.fromJson(Map<String, dynamic> json) {
     return ShoppingItem(
-      id: json['id'] as String,
+      id: json['id'] != null ? json['id'] as String : null,
       shoppingListId: json['shoppingListId'] as String,
       name: json['name'] as String,
       quantity: json['quantity'] as int,

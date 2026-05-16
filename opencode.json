@@ -10,6 +10,14 @@
         "SONAR_HOST_URL": "http://localhost:9000",
         "SONAR_TOKEN": "squ_3159b8c654d4e408ae20116e2a3b62b2f1328ada"
       }
+    },
+    "revenuecat": {
+      "type": "remote",
+      "url": "https://mcp.revenuecat.ai/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer sk_rPutwmaGEEYkMrZxzhPugFlrOYvBf"
+      }
     }
   }
 }

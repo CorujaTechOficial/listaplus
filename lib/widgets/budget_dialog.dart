@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/budget_provider.dart';
+import '../models/shopping_list.dart';
+import '../providers/shopping_lists_provider.dart';
 
 class BudgetDialog extends ConsumerStatefulWidget {
-  const BudgetDialog({super.key, required this.listId, this.currentBudget});
+  const BudgetDialog({super.key, required this.list});
 
-  final String listId;
-  final double? currentBudget;
+  final ShoppingList list;
 
   @override
   ConsumerState<BudgetDialog> createState() => _BudgetDialogState();
@@ -19,7 +19,7 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
   void initState() {
     super.initState();
     _controller = TextEditingController(
-      text: widget.currentBudget?.toStringAsFixed(2) ?? '',
+      text: widget.list.budget?.toStringAsFixed(2) ?? '',
     );
   }
 
@@ -42,10 +42,12 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
       ),
       actions: [
-        if (widget.currentBudget != null)
+        if (widget.list.budget != null)
           TextButton(
             onPressed: () {
-              ref.read(budgetProvider(widget.listId).notifier).clearBudget(widget.listId);
+              ref.read(shoppingListsProvider.notifier).updateList(
+                widget.list.copyWith(budget: null, updatedAt: DateTime.now()),
+              );
               Navigator.pop(context);
             },
             child: const Text('Remover'),
@@ -55,7 +57,9 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
           onPressed: () {
             final value = double.tryParse(_controller.text);
             if (value != null && value > 0) {
-              ref.read(budgetProvider(widget.listId).notifier).setBudget(widget.listId, value);
+              ref.read(shoppingListsProvider.notifier).updateList(
+                widget.list.copyWith(budget: value, updatedAt: DateTime.now()),
+              );
               Navigator.pop(context);
             }
           },

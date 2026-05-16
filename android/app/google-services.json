@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "246425107759",
+    "project_id": "listaplus-6547b",
+    "storage_bucket": "listaplus-6547b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246425107759:android:00e1e4509e7c636c20f5da",
+        "android_client_info": {
+          "package_name": "br.com.curujatech.listaplus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMjcIy_Og9-pLFU7RwMoKnhvV5peYAUzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
