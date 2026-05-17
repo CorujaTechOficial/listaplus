@@ -6,12 +6,14 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 import 'providers/current_list_provider.dart';
 import 'providers/dark_mode_provider.dart';
 import 'providers/theme_color_provider.dart';
 import 'providers/shopping_lists_provider.dart';
 import 'screens/home_screen.dart';
 import 'widgets/create_list_dialog.dart';
+import 'widgets/init_error_screen.dart';
 import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
 
@@ -20,30 +22,52 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  await SentryFlutter.init(
+    (options) {
+      options.dsn = 'https://9184f2e057e7fbaf76629e15c561594f@o4511401835298816.ingest.us.sentry.io/4511401865904128';
+      options.sendDefaultPii = true;
+      options.enableLogs = true;
+      options.tracesSampleRate = 1.0;
+    },
+    appRunner: () => _runApp(),
+  );
+}
+
+Future<void> _runApp() async {
+  FlutterError.onError = (details) {
+    Sentry.captureException(details.exception, stackTrace: details.stack);
+    FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+  };
   PlatformDispatcher.instance.onError = (error, stack) {
+    Sentry.captureException(error, stackTrace: stack);
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
 
-  final userCredential = await FirebaseAuth.instance.signInAnonymously();
-  final uid = userCredential.user!.uid;
-
-  final revenueCat = RevenueCatServiceImpl();
-  await revenueCat.init('goog_lUoZUpDVyhVroFRzwgArMnFxIQv');
-
   try {
-    await Purchases.logIn(uid);
-  } on Exception catch (_) {}
+    final userCredential = await FirebaseAuth.instance.signInAnonymously();
+    final uid = userCredential.user!.uid;
 
-  runApp(
-    ProviderScope(
-      overrides: [
-        revenueCatServiceProvider.overrideWithValue(revenueCat),
-      ],
-      child: const MyApp(),
-    ),
-  );
+    final revenueCat = RevenueCatServiceImpl();
+    await revenueCat.init('goog_lUoZUpDVyhVroFRzwgArMnFxIQv');
+
+    try {
+      await Purchases.logIn(uid);
+    } on Exception catch (_) {}
+
+    runApp(
+      ProviderScope(
+        overrides: [
+          revenueCatServiceProvider.overrideWithValue(revenueCat),
+        ],
+        child: const MyApp(),
+      ),
+    );
+  } on Object catch (e, stack) {
+    await Sentry.captureException(e, stackTrace: stack);
+    await FirebaseCrashlytics.instance.recordError(e, stack, fatal: false);
+    runApp(InitErrorScreen(e));
+  }
 }
 // coverage:ignore-end
 

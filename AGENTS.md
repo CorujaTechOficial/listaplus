@@ -16,17 +16,33 @@
   `PopupMenuButton` must use `icon: const Icon(Icons.more_vert)` for macOS test compat.
 - **Models**: `ShoppingList` (budget field), `ShoppingItem`, `Category` (Frutas/Limpeza/Bebidas/Padaria/Outros),
   `Unit` (un/kg/g/L/mL/pacote). `ShoppingItem.unit` defaults to `Unit.un`.
-- **Build env**: NDK 27.0.12077973, Kotlin 2.0.21, AGP 8.7.0, minSdk=24. `JAVA_HOME` must point to JDK 17.
-- **Analytics & Crash**: Firebase Analytics via `AnalyticsService`. Crashlytics via `firebase_crashlytics`.
-  `main.dart` installs `FlutterError.onError` + `PlatformDispatcher.onError` → Crashlytics. Events: `paywall_viewed`,
-  `paywall_purchase_completed`, `paywall_restore_completed`, `paywall_dismissed`, `customer_center_opened`,
-  `upgrade_tapped` (com source), `premium_feature_accessed`. Override with `AnalyticsService()` (no Firebase) in tests.
+- **Error observability**: Dual — Sentry (`sentry_flutter: ^9.20.0`, DSN in `SentryFlutter.init`) + Firebase Crashlytics.
+  `SentryFlutter.init` wraps `appRunner`; `FlutterError.onError` + `PlatformDispatcher.onError` send to both.
+  Sentry config: `tracesSampleRate: 1.0`, `enableLogs: true`, `sendDefaultPii: true`.
+- **Analytics**: Firebase Analytics via `AnalyticsService`. Events: `paywall_viewed`, `paywall_purchase_completed`,
+  `paywall_restore_completed`, `paywall_dismissed`, `customer_center_opened`, `upgrade_tapped` (com source),
+  `premium_feature_accessed`. Override with `AnalyticsService()` (no Firebase) in tests.
 - **Privacy & Terms**: Firebase Hosting: `https://listaplus-6547b.web.app/privacidade.html` e `termos.html`.
+
+## Build & Android Config
+
+```sh
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.19/libexec/openjdk.jdk/Contents/Home
+flutter build appbundle --release
+# AAB output: build/app/outputs/bundle/release/app-release.aab
+```
+
+- NDK 27.0.12077973, Kotlin 2.1.20, AGP 8.7.0, compileSdk=36, minSdk=24.
+- `MainActivity.kt` **must** be in `android/app/src/main/kotlin/br/com/curujatech/listaplus/MainActivity.kt`
+  with `package br.com.curujatech.listaplus` — package must match `applicationId` in `build.gradle.kts`.
+  If wrong, crash: `ClassNotFoundException` for `MainActivity` on startup.
+- Keystore: `~/upload-keystore.jks` (alias: `upload`). Signing config in `android/key.properties`.
+- Version + build number: `version: x.y.z+b` in `pubspec.yaml`. Both must be incremented on each release.
+- Google Play: Track `internal`. Service account: `~/play-console-sa.json`.
 
 ## Commands
 
 ```sh
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.19/libexec/openjdk.jdk/Contents/Home
 flutter analyze --fatal-infos
 flutter test --coverage
 dart run build_runner build --delete-conflicting-outputs
@@ -68,15 +84,22 @@ python3 scripts/generate_icons.py
 - `ReorderableListView.onReorder`: `newIndex -= 1` when `oldIndex < newIndex`. Provider's `reorderItem` mirrors this.
 - `context.mounted` guard necessary after `ref.invalidate` + `Navigator.pop` in PopupMenuButton callbacks.
 
+## MCP Servers (opencode.json)
+
+| Server | Type | Purpose |
+|---|---|---|
+| Sentry | remote (OAuth) | Issues, traces, events |
+| Firebase | local (`npx firebase-tools mcp`) | Crashlytics, Firebase ops |
+| RevenueCat | remote | Subscriptions, products |
+| SonarQube | local | Code quality |
+
 ## Secrets & Config
 
 - **RevenueCat API key** (in `main.dart`): `goog_lUoZUpDVyhVroFRzwgArMnFxIQv`
-- **Google Play**: Track `internal` (v1.0.0+2). AAB: `build/app/outputs/bundle/release/app-release.aab`
-- **Keystore**: `~/upload-keystore.jks` (alias: `upload`)
-- **Service account**: `~/play-console-sa.json`
+- **Sentry DSN**: `https://9184f2e057e7fbaf76629e15c561594f@o4511401835298816.ingest.us.sentry.io/4511401865904128`
 - **Customer Center**: `RevenueCatUI.presentCustomerCenter()` accessible via "Gerenciar assinatura" in HomeScreen PopupMenuButton
 - **SonarQube**: local `http://localhost:9000`, token in `opencode.json`
-- **RevenueCat MCP**: remote at `mcp.revenuecat.ai`, configured in `opencode.json`
+- **Firebase project**: `listaplus-6547b`
 
 ## Legacy / Dead Code
 

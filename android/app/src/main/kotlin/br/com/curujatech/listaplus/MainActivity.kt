@@ -1,4 +1,4 @@
-package com.corujatech.shopping_list
+package br.com.curujatech.listaplus
 
 import io.flutter.embedding.android.FlutterActivity
 

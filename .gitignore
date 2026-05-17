@@ -53,3 +53,9 @@ tests.output
 
 # SonarQube scanner working directory
 .scannerwork/
+
+# Generated coverage reports
+coverage/
+
+# Firebase local cache
+.firebase/
