@@ -95,6 +95,10 @@
 
   "@_Settings": "description: Settings Screen",
   "settingsAppBar": "Settings",
+  "language": "Language",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "System default",
   "appearance": "Appearance",
   "light": "Light",
   "system": "System",

@@ -13,14 +13,18 @@ class FilterBar extends StatefulWidget {
     super.key,
     required this.filter,
     required this.sort,
+    required this.isGrouped,
     required this.onFilterChanged,
     required this.onSortChanged,
+    required this.onGroupedChanged,
   });
 
   final FilterType filter;
   final SortType sort;
+  final bool isGrouped;
   final ValueChanged<FilterType> onFilterChanged;
   final ValueChanged<SortType> onSortChanged;
+  final ValueChanged<bool> onGroupedChanged;
 
   @override
   State<FilterBar> createState() => _FilterBarState();
@@ -37,38 +41,56 @@ class _FilterBarState extends State<FilterBar> {
         Expanded(
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: SegmentedButton<FilterType>(
-          segments: [
-            ButtonSegment(
-              value: FilterType.all,
-              label: Text(l10n.filterAll),
-              icon: const Icon(Icons.list, size: 16),
-            ),
-            ButtonSegment(
-              value: FilterType.pending,
-              label: Text(l10n.filterPending),
-              icon: const Icon(Icons.pending, size: 16),
-            ),
-            ButtonSegment(
-              value: FilterType.purchased,
-              label: Text(l10n.filterPurchased),
-              icon: const Icon(Icons.check_circle, size: 16),
-            ),
-          ],
-              selected: {widget.filter},
-              onSelectionChanged: (s) {
-                HapticFeedback.selectionClick();
-                widget.onFilterChanged(s.first);
-              },
-              style: SegmentedButton.styleFrom(
-                visualDensity: VisualDensity.compact,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(RadiusTokens.sm),
+            child: Row(
+              children: [
+                _FilterChip(
+                  label: l10n.filterAll,
+                  icon: Icons.list,
+                  selected: widget.filter == FilterType.all,
+                  onTap: () {
+                    HapticFeedback.selectionClick();
+                    widget.onFilterChanged(FilterType.all);
+                  },
+                  theme: theme,
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: Spacing.xxs),
-              ),
+                const SizedBox(width: Spacing.xs),
+                _FilterChip(
+                  label: l10n.filterPending,
+                  icon: Icons.pending,
+                  selected: widget.filter == FilterType.pending,
+                  onTap: () {
+                    HapticFeedback.selectionClick();
+                    widget.onFilterChanged(FilterType.pending);
+                  },
+                  theme: theme,
+                ),
+                const SizedBox(width: Spacing.xs),
+                _FilterChip(
+                  label: l10n.filterPurchased,
+                  icon: Icons.check_circle,
+                  selected: widget.filter == FilterType.purchased,
+                  onTap: () {
+                    HapticFeedback.selectionClick();
+                    widget.onFilterChanged(FilterType.purchased);
+                  },
+                  theme: theme,
+                ),
+              ],
             ),
           ),
+        ),
+        const SizedBox(width: Spacing.xs),
+        IconButton(
+          onPressed: () {
+            HapticFeedback.selectionClick();
+            widget.onGroupedChanged(!widget.isGrouped);
+          },
+          icon: Icon(
+            widget.isGrouped ? Icons.grid_view : Icons.view_agenda_outlined,
+            size: 20,
+            color: widget.isGrouped ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
+          ),
+          tooltip: 'Agrupar por Categoria',
         ),
         const SizedBox(width: Spacing.xs),
         Container(
@@ -112,6 +134,71 @@ class _FilterBarState extends State<FilterBar> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _FilterChip extends StatelessWidget {
+  const _FilterChip({
+    required this.label,
+    required this.icon,
+    required this.selected,
+    required this.onTap,
+    required this.theme,
+  });
+
+  final String label;
+  final IconData icon;
+  final bool selected;
+  final VoidCallback onTap;
+  final ThemeData theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(RadiusTokens.full),
+        child: AnimatedContainer(
+          duration: DurationTokens.fast,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            color: selected
+                ? theme.colorScheme.secondaryContainer
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(RadiusTokens.full),
+            border: Border.all(
+              color: selected
+                  ? theme.colorScheme.secondary.withValues(alpha: 0.5)
+                  : theme.colorScheme.outlineVariant,
+              width: 1,
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                icon,
+                size: 16,
+                color: selected
+                    ? theme.colorScheme.onSecondaryContainer
+                    : theme.colorScheme.onSurfaceVariant,
+              ),
+              const SizedBox(width: 4),
+              Text(
+                label,
+                style: theme.textTheme.labelMedium?.copyWith(
+                  fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+                  color: selected
+                      ? theme.colorScheme.onSecondaryContainer
+                      : theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

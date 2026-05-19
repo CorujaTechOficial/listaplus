@@ -99,6 +99,14 @@ class FakeStorageBackend implements StorageBackend {
     _userData['themeMode'] = mode;
   }
 
+  @override
+  Future<String?> getLocale() async => _userData['locale'] as String?;
+
+  @override
+  Future<void> setLocale(String locale) async {
+    _userData['locale'] = locale;
+  }
+
   final Map<String, Map<String, dynamic>> _sharedLists = {};
 
   @override

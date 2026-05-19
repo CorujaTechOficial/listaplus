@@ -3,6 +3,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
 import '../providers/auth_service_provider.dart';
 
@@ -33,12 +34,26 @@ class AuthScreen extends ConsumerWidget {
                   size: 48,
                   color: theme.colorScheme.primary,
                 ),
+              ).animate().fadeIn(duration: DurationTokens.normal).scale(
+                begin: const Offset(0, 0),
+                end: const Offset(1, 1),
+                duration: DurationTokens.normal,
+                curve: Curves.easeOutBack,
               ),
               const SizedBox(height: Spacing.lg),
               Text(
                 l10n.loginPrompt,
                 textAlign: TextAlign.center,
                 style: theme.textTheme.titleLarge,
+              ).animate().fadeIn(
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 200),
+              ).slideY(
+                begin: 0.2,
+                end: 0,
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 200),
+                curve: Curves.easeOut,
               ),
               const SizedBox(height: Spacing.xl),
               SizedBox(
@@ -48,6 +63,15 @@ class AuthScreen extends ConsumerWidget {
                   label: Text(l10n.signInGoogle),
                   onPressed: () => _signInWithGoogle(context, ref),
                 ),
+              ).animate().fadeIn(
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 300),
+              ).slideY(
+                begin: 0.2,
+                end: 0,
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 300),
+                curve: Curves.easeOut,
               ),
               const SizedBox(height: Spacing.md),
               if (Platform.isIOS || Platform.isMacOS)
@@ -58,11 +82,23 @@ class AuthScreen extends ConsumerWidget {
                     label: Text(l10n.signInApple),
                     onPressed: () => _signInWithApple(context, ref),
                   ),
+                ).animate().fadeIn(
+                  duration: DurationTokens.fast,
+                  delay: const Duration(milliseconds: 400),
+                ).slideY(
+                  begin: 0.2,
+                  end: 0,
+                  duration: DurationTokens.fast,
+                  delay: const Duration(milliseconds: 400),
+                  curve: Curves.easeOut,
                 ),
               const SizedBox(height: Spacing.xl),
               TextButton(
                 onPressed: () => Navigator.pop(context),
                 child: Text(l10n.continueAsGuest),
+              ).animate().fadeIn(
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 500),
               ),
             ],
           ),

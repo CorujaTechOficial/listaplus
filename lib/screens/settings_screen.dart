@@ -3,9 +3,11 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../providers/dark_mode_provider.dart';
+import '../providers/locale_provider.dart';
 import '../providers/theme_color_provider.dart';
 import '../models/premium_feature.dart';
 import '../theme/tokens.dart';
+import '../theme/page_transitions.dart';
 import 'theme_selection_screen.dart';
 import 'budget_dashboard_screen.dart';
 import 'backup_screen.dart';
@@ -64,9 +66,41 @@ class SettingsScreen extends ConsumerWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute<void>(builder: (_) => const ThemeSelectionScreen()),
+                fadeSlideRoute<void>(const ThemeSelectionScreen()),
               );
             },
+          ),
+          const Divider(),
+          _SectionHeader(title: l10n.language),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
+            child: SegmentedButton<String>(
+              segments: [
+                ButtonSegment(
+                  value: '',
+                  icon: const Icon(Icons.settings_outlined),
+                  label: Text(l10n.languageSystem),
+                ),
+                ButtonSegment(
+                  value: 'pt_BR',
+                  icon: const Icon(Icons.language),
+                  label: Text(l10n.languagePortuguese),
+                ),
+                ButtonSegment(
+                  value: 'en',
+                  icon: const Icon(Icons.language),
+                  label: Text(l10n.languageEnglish),
+                ),
+              ],
+              selected: {ref.watch(localeSettingProvider).valueOrNull ?? ''},
+              onSelectionChanged: (Set<String> selected) {
+                final locale = selected.first;
+                ref.read(localeSettingProvider.notifier).setLocale(
+                  locale.isEmpty ? null : locale,
+                );
+              },
+              showSelectedIcon: false,
+            ),
           ),
           const Divider(),
           _SectionHeader(title: l10n.finance),
@@ -78,7 +112,7 @@ class SettingsScreen extends ConsumerWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute<void>(builder: (_) => const BudgetDashboardScreen()),
+                fadeSlideRoute<void>(const BudgetDashboardScreen()),
               );
             },
           ),
@@ -92,7 +126,7 @@ class SettingsScreen extends ConsumerWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute<void>(builder: (_) => const BackupScreen()),
+                fadeSlideRoute<void>(const BackupScreen()),
               );
             },
           ),

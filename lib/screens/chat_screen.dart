@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../models/chat_message.dart';
 import '../providers/chat_provider.dart';
 import '../providers/premium_provider.dart';
+import '../theme/tokens.dart';
+import '../theme/page_transitions.dart';
 import '../widgets/premium_gate.dart';
 import 'paywall_screen.dart';
 
@@ -72,7 +75,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         // coverage:ignore-start
         onUpgrade: () => Navigator.push(
           context,
-          MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
+          fadeSlideRoute<void>(const PaywallScreen()),
         ),
         // coverage:ignore-end
       );
@@ -158,7 +161,14 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                       return const TypingIndicator();
                     }
                     final message = messages[index];
-                    return ChatBubble(message: message);
+                    return ChatBubble(message: message).animate().fadeIn(
+                      duration: DurationTokens.fast,
+                    ).slideX(
+                      begin: message.role == 'user' ? 0.3 : -0.3,
+                      end: 0,
+                      duration: DurationTokens.fast,
+                      curve: Curves.easeOut,
+                    );
                   },
                 );
               },
@@ -282,10 +292,68 @@ class TypingIndicator extends StatelessWidget {
           ),
         ),
         child: const SizedBox(
-          width: 30,
-          child: LinearProgressIndicator(minHeight: 2),
+          width: 40,
+          child: _AnimatedTypingDots(),
         ),
       ),
+    );
+  }
+}
+
+class _AnimatedTypingDots extends StatefulWidget {
+  const _AnimatedTypingDots();
+
+  @override
+  State<_AnimatedTypingDots> createState() => _AnimatedTypingDotsState();
+}
+
+class _AnimatedTypingDotsState extends State<_AnimatedTypingDots>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(3, (i) {
+        return AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            final delay = i * 200;
+            final t = (_controller.value * 1200 - delay).clamp(0, 600) / 600;
+            final size = Tween<double>(begin: 6, end: 10).transform(
+              Curves.easeInOut.transform(t),
+            );
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              child: Container(
+                width: size,
+                height: size,
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.onSurfaceVariant,
+                  shape: BoxShape.circle,
+                ),
+              ),
+            );
+          },
+        );
+      }),
     );
   }
 }

@@ -34,7 +34,9 @@ class ShoppingItemTile extends ConsumerWidget {
 
     final tileContent = Padding(
       padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: Spacing.xxs),
-      child: Container(
+      child: AnimatedContainer(
+        duration: DurationTokens.fast,
+        curve: Curves.easeOut,
         decoration: BoxDecoration(
           color: isDark
               ? const Color(0xFF1A1D24)
@@ -123,6 +125,7 @@ class ShoppingItemTile extends ConsumerWidget {
               ),
               IconButton(
                 icon: Icon(Icons.edit_outlined, size: 18, color: theme.colorScheme.onSurfaceVariant),
+                // ignore: unawaited_futures
                 onPressed: () => _showEditDialog(context, ref),
                 visualDensity: VisualDensity.compact,
                 padding: EdgeInsets.zero,
@@ -142,8 +145,30 @@ class ShoppingItemTile extends ConsumerWidget {
 
     return Dismissible(
       key: ValueKey('dismiss_${item.id}'),
-      direction: DismissDirection.endToStart,
+      direction: isPurchased ? DismissDirection.endToStart : DismissDirection.horizontal,
+      confirmDismiss: (direction) async {
+        if (direction == DismissDirection.startToEnd) {
+          await HapticFeedback.mediumImpact();
+          await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
+          return false; // Don't actually dismiss the widget
+        }
+        return true;
+      },
       background: Container(
+        margin: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: Spacing.xxs),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.primary,
+          borderRadius: BorderRadius.circular(RadiusTokens.md),
+        ),
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.only(left: Spacing.lg),
+        child: Icon(
+          isPurchased ? Icons.remove_done : Icons.done_all,
+          color: theme.colorScheme.onPrimary,
+          size: 22,
+        ),
+      ),
+      secondaryBackground: Container(
         margin: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: Spacing.xxs),
         decoration: BoxDecoration(
           color: theme.colorScheme.error,
@@ -153,20 +178,22 @@ class ShoppingItemTile extends ConsumerWidget {
         padding: const EdgeInsets.only(right: Spacing.lg),
         child: Icon(Icons.delete_outline, color: theme.colorScheme.onError, size: 22),
       ),
-      onDismissed: (_) {
-        HapticFeedback.mediumImpact();
-        final removedItem = item;
-        final notifier = ref.read(shoppingListItemsProvider(listId).notifier);
-        notifier.removeItem(item.id);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.itemRemoved),
-            action: SnackBarAction(
-              label: l10n.undo,
-              onPressed: () => notifier.restoreItem(removedItem),
+      onDismissed: (direction) {
+        if (direction == DismissDirection.endToStart) {
+          HapticFeedback.mediumImpact();
+          final removedItem = item;
+          final notifier = ref.read(shoppingListItemsProvider(listId).notifier);
+          notifier.removeItem(item.id);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n.itemRemoved),
+              action: SnackBarAction(
+                label: l10n.undo,
+                onPressed: () => notifier.restoreItem(removedItem),
+              ),
             ),
-          ),
-        );
+          );
+        }
       },
       child: tile,
     );

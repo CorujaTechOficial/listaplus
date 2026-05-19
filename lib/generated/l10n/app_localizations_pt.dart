@@ -260,6 +260,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settingsAppBar => 'Configurações';
 
   @override
+  String get language => 'Idioma';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Padrão do sistema';
+
+  @override
   String get appearance => 'Aparência';
 
   @override
@@ -985,6 +997,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get settingsAppBar => 'Configurações';
+
+  @override
+  String get language => 'Idioma';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Padrão do sistema';
 
   @override
   String get appearance => 'Aparência';

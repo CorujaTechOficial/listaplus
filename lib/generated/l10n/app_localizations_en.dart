@@ -260,6 +260,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsAppBar => 'Settings';
 
   @override
+  String get language => 'Language';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'System default';
+
+  @override
   String get appearance => 'Appearance';
 
   @override

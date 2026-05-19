@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../providers/ad_service_provider.dart';
+import '../theme/tokens.dart';
 
 class BannerAdWidget extends ConsumerStatefulWidget {
   const BannerAdWidget({super.key});
@@ -53,18 +54,23 @@ class _BannerAdWidgetState extends ConsumerState<BannerAdWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_isLoaded || _bannerAd == null) {
-      return const SizedBox(height: 50);
-    }
-    return Container(
-      color: Theme.of(context).colorScheme.surface,
-      child: Center(
-        child: SizedBox(
-          width: _bannerAd!.size.width.toDouble(),
-          height: _bannerAd!.size.height.toDouble(),
-          child: AdWidget(ad: _bannerAd!),
-        ),
-      ),
+    final showAd = _isLoaded && _bannerAd != null;
+    return AnimatedCrossFade(
+      duration: DurationTokens.normal,
+      crossFadeState: showAd ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+      firstChild: const SizedBox(height: 50),
+      secondChild: showAd
+          ? Container(
+              color: Theme.of(context).colorScheme.surface,
+              child: Center(
+                child: SizedBox(
+                  width: _bannerAd!.size.width.toDouble(),
+                  height: _bannerAd!.size.height.toDouble(),
+                  child: AdWidget(ad: _bannerAd!),
+                ),
+              ),
+            )
+          : const SizedBox(height: 50),
     );
   }
 }

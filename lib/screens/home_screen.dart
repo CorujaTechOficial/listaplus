@@ -4,19 +4,22 @@ import 'package:flutter/services.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
 import '../theme/colors.dart';
+import '../theme/page_transitions.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/revenuecat_service_provider.dart';
 import '../widgets/shopping_item_tile.dart';
-import '../widgets/add_item_dialog.dart';
+import '../widgets/quick_add_bar.dart';
 import '../widgets/banner_ad_widget.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/budget_dialog.dart';
 import '../widgets/filter_bar.dart';
 import '../widgets/rewarded_ad_button.dart';
 import '../widgets/shimmer_list.dart';
+import '../models/category.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../providers/share_provider.dart';
@@ -40,8 +43,10 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   FilterType _filter = FilterType.all;
-  SortType _sort = SortType.date;
+  SortType _sort = SortType.manual;
   bool _selectionMode = false;
+  bool _isGrouped = true;
+  bool _shoppingMode = false;
   final Set<String> _selectedIds = {};
 
   @override
@@ -98,16 +103,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           const SizedBox(height: Spacing.xxs),
                           ClipRRect(
                             borderRadius: BorderRadius.circular(RadiusTokens.xxs),
-                            child: LinearProgressIndicator(
-                              value: progress,
-                              minHeight: 6,
-                              backgroundColor: isDark
-                                  ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
-                                  : theme.colorScheme.surfaceContainerHighest,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                progress >= 1
-                                    ? theme.colorScheme.error
-                                    : theme.colorScheme.primary,
+                            child: TweenAnimationBuilder<double>(
+                              tween: Tween(begin: 0, end: progress),
+                              duration: DurationTokens.normal,
+                              curve: Curves.easeOut,
+                              builder: (context, value, _) => LinearProgressIndicator(
+                                value: value,
+                                minHeight: 6,
+                                backgroundColor: isDark
+                                    ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
+                                    : theme.colorScheme.surfaceContainerHighest,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  progress >= 1
+                                      ? theme.colorScheme.error
+                                      : theme.colorScheme.primary,
+                                ),
                               ),
                             ),
                           ),
@@ -132,6 +142,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
               ]
             : [
+                IconButton(
+                  icon: Icon(_shoppingMode ? Icons.shopping_cart : Icons.shopping_cart_outlined),
+                  onPressed: () {
+                    HapticFeedback.mediumImpact();
+                    setState(() {
+                      _shoppingMode = !_shoppingMode;
+                      if (_shoppingMode) {
+                        _filter = FilterType.pending;
+                      } else {
+                        _filter = FilterType.all;
+                      }
+                    });
+                  },
+                  tooltip: 'Modo Compras',
+                ),
                 IconButton(
                   icon: const Icon(Icons.checklist),
                   onPressed: () =>
@@ -279,7 +304,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         if (context.mounted) {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
+                            fadeSlideRoute<void>(const PaywallScreen()),
                           );
                         }
                         return;
@@ -340,32 +365,30 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                      } else if (value == 'import_code') {
                        await _importSharedList();
                      } else if (value == 'list_assistant') {
-                        if (context.mounted) {
+                         if (context.mounted) {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute<void>(
-                              builder: (_) => ChatScreen(
+                            fadeSlideRoute<void>(
+                              ChatScreen(
                                 listId: widget.listId,
                                 listName: currentList?.name,
                               ),
                             ),
                           );
                         }
-                     } else if (value == 'global_assistant') {
-                        if (context.mounted) {
+                      } else if (value == 'global_assistant') {
+                         if (context.mounted) {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute<void>(
-                              builder: (_) => const ChatScreen(),
-                            ),
+                            fadeSlideRoute<void>(const ChatScreen()),
                           );
                         }
-                     } else if (value == 'upgrade') {
+                      } else if (value == 'upgrade') {
                       await ref.read(analyticsServiceProvider).logUpgradeTapped('menu');
                       if (context.mounted) {
                         await Navigator.push(
                           context,
-                          MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
+                          fadeSlideRoute<void>(const PaywallScreen()),
                         );
                       }
                     } else if (value == 'manage_subscription') {
@@ -383,7 +406,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       if (context.mounted) {
                         await Navigator.push(
                           context,
-                          MaterialPageRoute<void>(builder: (_) => const SettingsScreen()),
+                          fadeSlideRoute<void>(const SettingsScreen()),
                         );
                       }
                     }
@@ -416,19 +439,52 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             filtered = filtered.where((i) => i.isPurchased);
           }
 
-          final sorted = filtered.toList();
-          switch (_sort) {
-            case SortType.name:
-              sorted.sort((a, b) => a.name.compareTo(b.name));
-              break;
-            case SortType.category:
-              sorted.sort((a, b) => a.category.name.compareTo(b.category.name));
-              break;
-            case SortType.date:
-              sorted.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
-              break;
-            case SortType.manual:
-              break;
+          final baseList = filtered.toList();
+          
+          // Separate pending and purchased to keep purchased at the bottom
+          final pending = baseList.where((i) => !i.isPurchased).toList();
+          final purchased = baseList.where((i) => i.isPurchased).toList();
+
+          void applySort(List<ShoppingItem> list) {
+            switch (_sort) {
+              case SortType.name:
+                list.sort((a, b) => a.name.compareTo(b.name));
+                break;
+              case SortType.category:
+                list.sort((a, b) => a.category.name.compareTo(b.category.name));
+                break;
+              case SortType.date:
+                list.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+                break;
+              case SortType.manual:
+                break;
+            }
+          }
+
+          applySort(pending);
+          applySort(purchased);
+
+          final sorted = [...pending, ...purchased];
+
+          // Prepare grouped items if needed
+          final List<dynamic> listItems = [];
+          if (_isGrouped && _sort == SortType.category) {
+            Category? lastCategory;
+            for (final item in pending) {
+              if (item.category != lastCategory) {
+                listItems.add(item.category);
+                lastCategory = item.category;
+              }
+              listItems.add(item);
+            }
+            if (purchased.isNotEmpty) {
+              listItems.add(l10n.filterPurchased);
+              for (final item in purchased) {
+                listItems.add(item);
+              }
+            }
+          } else {
+             listItems.addAll(sorted);
           }
 
           // ignore: prefer_int_literals
@@ -457,70 +513,141 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
                 child: Column(
                   children: [
-                    FilterBar(
-                      filter: _filter,
-                      sort: _sort,
-                      onFilterChanged: (f) => setState(() => _filter = f),
-                      onSortChanged: (s) => setState(() => _sort = s),
-                    ),
-                    const SizedBox(height: Spacing.sm),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.15)
-                            : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
-                        borderRadius: BorderRadius.circular(RadiusTokens.sm),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            l10n.estimated,
-                            style: theme.textTheme.bodySmall?.copyWith(
-                              fontWeight: FontWeight.w500,
+                    if (!_shoppingMode) ...[
+                      const SizedBox(height: Spacing.sm),
+                      Builder(builder: (context) {
+                        final total = items.length;
+                        final purchased = items.where((i) => i.isPurchased).length;
+                        final progress = total > 0 ? purchased / total : 0.0;
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '${l10n.filterPurchased}: $purchased / $total',
+                                  style: theme.textTheme.labelSmall?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: theme.colorScheme.primary,
+                                  ),
+                                ),
+                                Text(
+                                  '${(progress * 100).toStringAsFixed(0)}%',
+                                  style: theme.textTheme.labelSmall?.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    color: theme.colorScheme.primary,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          Text(
-                            'R\$ ${totalEstimated.toStringAsFixed(2)}',
-                            style: theme.textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.w700,
-                              fontFeatures: [const FontFeature.tabularFigures()],
+                            const SizedBox(height: 4),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(RadiusTokens.full),
+                              child: LinearProgressIndicator(
+                                value: progress,
+                                minHeight: 8,
+                                backgroundColor: theme.colorScheme.primary.withValues(alpha: 0.1),
+                                valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        );
+                      }),
+                      const SizedBox(height: Spacing.md),
+                      FilterBar(
+                        filter: _filter,
+                        sort: _sort,
+                        isGrouped: _isGrouped,
+                        onFilterChanged: (f) => setState(() => _filter = f),
+                        onSortChanged: (s) => setState(() => _sort = s),
+                        onGroupedChanged: (bool g) => setState(() => _isGrouped = g),
                       ),
-                    ),
-                    const SizedBox(height: Spacing.xxs),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? theme.colorScheme.primaryContainer.withValues(alpha: 0.1)
-                            : theme.colorScheme.primaryContainer.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(RadiusTokens.sm),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            l10n.alreadyPurchased,
-                            style: theme.textTheme.bodySmall?.copyWith(
-                              fontWeight: FontWeight.w500,
-                              color: theme.colorScheme.primary,
+                      const SizedBox(height: Spacing.sm),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.15)
+                              : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+                          borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              l10n.estimated,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'R\$ ${totalPurchased.toStringAsFixed(2)}',
-                            style: theme.textTheme.titleSmall?.copyWith(
-                              color: theme.colorScheme.primary,
-                              fontWeight: FontWeight.w700,
-                              fontFeatures: [const FontFeature.tabularFigures()],
+                            Text(
+                              'R\$ ${totalEstimated.toStringAsFixed(2)}',
+                              style: theme.textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w700,
+                                fontFeatures: [const FontFeature.tabularFigures()],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: Spacing.xxs),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? theme.colorScheme.primaryContainer.withValues(alpha: 0.1)
+                              : theme.colorScheme.primaryContainer.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              l10n.alreadyPurchased,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                fontWeight: FontWeight.w500,
+                                color: theme.colorScheme.primary,
+                              ),
+                            ),
+                            Text(
+                              'R\$ ${totalPurchased.toStringAsFixed(2)}',
+                              style: theme.textTheme.titleSmall?.copyWith(
+                                color: theme.colorScheme.primary,
+                                fontWeight: FontWeight.w700,
+                                fontFeatures: [const FontFeature.tabularFigures()],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ] else ...[
+                       // Shopping Mode Minimal Summary
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           Text(
+                             'MODO COMPRAS',
+                             style: theme.textTheme.labelSmall?.copyWith(
+                               fontWeight: FontWeight.w900,
+                               letterSpacing: 2,
+                               color: theme.colorScheme.primary,
+                             ),
+                           ),
+                           Builder(builder: (context) {
+                             final total = items.length;
+                             final purchased = items.where((i) => i.isPurchased).length;
+                             return Text(
+                               '$purchased / $total',
+                               style: theme.textTheme.titleSmall?.copyWith(
+                                 fontWeight: FontWeight.w800,
+                                 color: theme.colorScheme.primary,
+                               ),
+                             );
+                           }),
+                         ],
+                       ),
+                    ],
                   ],
                 ),
               ),
@@ -531,25 +658,28 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ref.invalidate(shoppingListItemsProvider(widget.listId));
                     await ref.read(shoppingListItemsProvider(widget.listId).future);
                   },
-                  child: _sort == SortType.manual
+                  child: _sort == SortType.manual && !_isGrouped
                       ? ReorderableListView.builder(
-                          itemCount: sorted.length,
-                          itemBuilder: (context, index) => ShoppingItemTile(
-                            key: ValueKey(sorted[index].id),
-                            listId: widget.listId,
-                            item: sorted[index],
-                            selectionMode: _selectionMode,
-                            isSelected: _selectedIds.contains(sorted[index].id),
-                            onSelectionChanged: (selected) {
-                              setState(() {
-                                if (selected) {
-                                  _selectedIds.add(sorted[index].id);
-                                } else {
-                                  _selectedIds.remove(sorted[index].id);
-                                }
-                              });
-                            },
-                          ),
+                          itemCount: listItems.length,
+                          itemBuilder: (context, index) {
+                            final item = listItems[index] as ShoppingItem;
+                            return ShoppingItemTile(
+                              key: ValueKey(item.id),
+                              listId: widget.listId,
+                              item: item,
+                              selectionMode: _selectionMode,
+                              isSelected: _selectedIds.contains(item.id),
+                              onSelectionChanged: (selected) {
+                                setState(() {
+                                  if (selected) {
+                                    _selectedIds.add(item.id);
+                                  } else {
+                                    _selectedIds.remove(item.id);
+                                  }
+                                });
+                              },
+                            );
+                          },
                           onReorder: (oldIndex, newIndex) {
                             HapticFeedback.mediumImpact();
                             ref
@@ -558,41 +688,142 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           },
                         )
                       : ListView.builder(
-                          itemCount: sorted.length,
+                          itemCount: listItems.length,
                           padding: const EdgeInsets.only(bottom: Spacing.xs),
-                          itemBuilder: (context, index) => ShoppingItemTile(
-                            key: ValueKey(sorted[index].id),
-                            listId: widget.listId,
-                            item: sorted[index],
-                            selectionMode: _selectionMode,
-                            isSelected: _selectedIds.contains(sorted[index].id),
-                            onSelectionChanged: (selected) {
-                              setState(() {
-                                if (selected) {
-                                  _selectedIds.add(sorted[index].id);
-                                } else {
-                                  _selectedIds.remove(sorted[index].id);
-                                }
-                              });
-                            },
-                          ),
+                          itemBuilder: (context, index) {
+                            final dynamic item = listItems[index];
+                            
+                            if (item is Category) {
+                              return Padding(
+                                padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.md, Spacing.md, Spacing.xs),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      AppColors.categoryIcons[item.label] ?? Icons.category_outlined,
+                                      size: 14,
+                                      color: theme.colorScheme.primary,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      item.localizedLabel(l10n).toUpperCase(),
+                                      style: theme.textTheme.labelSmall?.copyWith(
+                                        color: theme.colorScheme.primary,
+                                        fontWeight: FontWeight.w800,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Divider(
+                                        color: theme.colorScheme.primary.withValues(alpha: 0.1),
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ).animate().fadeIn(duration: DurationTokens.fast);
+                            }
+
+                            if (item is String) {
+                              return Padding(
+                                padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.md, Spacing.md, Spacing.xs),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      item.toUpperCase(),
+                                      style: theme.textTheme.labelSmall?.copyWith(
+                                        color: theme.colorScheme.onSurfaceVariant,
+                                        fontWeight: FontWeight.w800,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Divider(
+                                        color: theme.colorScheme.outlineVariant.withValues(alpha: 0.1),
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ).animate().fadeIn(duration: DurationTokens.fast);
+                            }
+
+                            final shoppingItem = item as ShoppingItem;
+                            return ShoppingItemTile(
+                              key: ValueKey(shoppingItem.id),
+                              listId: widget.listId,
+                              item: shoppingItem,
+                              selectionMode: _selectionMode,
+                              isSelected: _selectedIds.contains(shoppingItem.id),
+                              onSelectionChanged: (selected) {
+                                setState(() {
+                                  if (selected) {
+                                    _selectedIds.add(shoppingItem.id);
+                                  } else {
+                                    _selectedIds.remove(shoppingItem.id);
+                                  }
+                                });
+                              },
+                            ).animate().fadeIn(
+                              duration: DurationTokens.fast,
+                              delay: Duration(milliseconds: index * 10),
+                            ).slideY(
+                              begin: 0.05,
+                              end: 0,
+                              duration: DurationTokens.fast,
+                              curve: Curves.easeOut,
+                            );
+                          },
                         ),
                 ),
               ),
+              if (!_selectionMode && !_shoppingMode) QuickAddBar(listId: widget.listId),
+              if (_shoppingMode)
+                SafeArea(
+                  top: false,
+                  child: Padding(
+                    padding: const EdgeInsets.all(Spacing.md),
+                    child: FilledButton.icon(
+                      onPressed: () {
+                        HapticFeedback.mediumImpact();
+                        setState(() {
+                          _shoppingMode = false;
+                          _filter = FilterType.all;
+                        });
+                      },
+                      icon: const Icon(Icons.check),
+                      label: Text(l10n.complete.toUpperCase()),
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size.fromHeight(56),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(RadiusTokens.md),
+                        ),
+                      ),
+                    ),
+                  ),
+                ).animate().slideY(begin: 1, end: 0, curve: Curves.easeOut),
             ],
           );
         },
         loading: () => const ShimmerList(),
         error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
       ),
-      floatingActionButton: _selectionMode
-          ? null
-          : FloatingActionButton(
-              onPressed: () =>
-                  showDialog<void>(context: context, builder: (_) => AddItemDialog(listId: widget.listId)),
-              child: const Icon(Icons.add),
-            ),
-      bottomNavigationBar: _selectionMode && _selectedIds.isNotEmpty
+      bottomNavigationBar: AnimatedSwitcher(
+        duration: DurationTokens.fast,
+        switchInCurve: Curves.easeOut,
+        switchOutCurve: Curves.easeIn,
+        transitionBuilder: (child, animation) => FadeTransition(
+          opacity: animation,
+          child: SlideTransition(
+            position: Tween<Offset>(
+              begin: const Offset(0, 0.5),
+              end: Offset.zero,
+            ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
+            child: child,
+          ),
+        ),
+        child: _selectionMode && _selectedIds.isNotEmpty
           ? BottomAppBar(
               color: isDark ? const Color(0xFF1A1D24) : theme.colorScheme.surfaceContainerLow,
               child: Row(
@@ -638,6 +869,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           : !isPremium
               ? const SafeArea(child: BannerAdWidget())
               : null
+      ),
     );
   }
 

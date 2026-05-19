@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
@@ -30,12 +31,24 @@ class PremiumGate extends StatelessWidget {
                 Icons.lock,
                 size: 64,
                 color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.5),
+              ).animate().shake(
+                duration: DurationTokens.slow,
+                delay: const Duration(milliseconds: 300),
               ),
               const SizedBox(height: Spacing.md),
               Text(
                 description,
                 style: theme.textTheme.titleMedium,
                 textAlign: TextAlign.center,
+              ).animate().fadeIn(
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 200),
+              ).slideY(
+                begin: 0.2,
+                end: 0,
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 200),
+                curve: Curves.easeOut,
               ),
               const SizedBox(height: Spacing.xs),
               Text(
@@ -43,12 +56,24 @@ class PremiumGate extends StatelessWidget {
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
+              ).animate().fadeIn(
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 300),
               ),
               const SizedBox(height: Spacing.md),
               FilledButton.tonalIcon(
                 onPressed: onUpgrade,
                 icon: const Icon(Icons.workspace_premium),
                 label: Text(l10n.upgrade),
+              ).animate().fadeIn(
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 400),
+              ).scale(
+                begin: const Offset(0.8, 0.8),
+                end: const Offset(1, 1),
+                duration: DurationTokens.fast,
+                delay: const Duration(milliseconds: 400),
+                curve: Curves.easeOutBack,
               ),
             ],
           ),

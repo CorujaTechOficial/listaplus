@@ -13,6 +13,7 @@ import 'theme/tokens.dart';
 import 'providers/ad_service_provider.dart';
 import 'providers/current_list_provider.dart';
 import 'providers/dark_mode_provider.dart';
+import 'providers/locale_provider.dart';
 import 'providers/theme_color_provider.dart';
 import 'providers/shopping_lists_provider.dart';
 import 'screens/home_screen.dart';
@@ -24,6 +25,8 @@ import 'services/ad_service_impl.dart';
 import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
 import 'providers/update_service_provider.dart';
+
+import 'dart:math';
 
 // coverage:ignore-start
 Future<void> main() async {
@@ -41,6 +44,29 @@ Future<void> main() async {
   );
 }
 
+Future<UserCredential> _signInWithRetry() async {
+  const maxRetries = 5;
+  const baseDelay = Duration(milliseconds: 500);
+  var attempt = 0;
+  while (true) {
+    try {
+      return await FirebaseAuth.instance.signInAnonymously();
+    } on Object catch (e) {
+      attempt++;
+      if (attempt >= maxRetries) {
+        rethrow;
+      }
+      if (e is FirebaseAuthException && e.code == 'unknown') {
+        final delay = baseDelay * pow(2, attempt - 1).toInt();
+        final jitter = Random().nextInt(100);
+        await Future<void>.delayed(delay + Duration(milliseconds: jitter));
+        continue;
+      }
+      rethrow;
+    }
+  }
+}
+
 Future<void> _runApp() async {
   FlutterError.onError = (details) {
     Sentry.captureException(details.exception, stackTrace: details.stack);
@@ -53,7 +79,7 @@ Future<void> _runApp() async {
   };
 
   try {
-    final userCredential = await FirebaseAuth.instance.signInAnonymously();
+    final userCredential = await _signInWithRetry();
     final uid = userCredential.user!.uid;
 
     final adService = AdServiceImpl();
@@ -90,6 +116,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final darkModeAsync = ref.watch(darkModeProvider);
     final themeColorAsync = ref.watch(themeColorProvider);
+    final localeAsync = ref.watch(localeSettingProvider);
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
     final colorSeed = Color(themeColorAsync.value ?? Colors.green.toARGB32());
 
@@ -100,6 +127,17 @@ class MyApp extends ConsumerWidget {
       themeMode: themeMode,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      localeResolutionCallback: (locale, supportedLocales) {
+        final savedLocale = localeAsync.valueOrNull;
+        if (savedLocale != null && savedLocale.isNotEmpty) {
+          final parts = savedLocale.split('_');
+          if (parts.length == 2) {
+            return Locale(parts[0], parts[1]);
+          }
+          return Locale(parts[0]);
+        }
+        return null;
+      },
       home: const MainShell(),
     );
   }

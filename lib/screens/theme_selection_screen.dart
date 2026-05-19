@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
+import '../theme/page_transitions.dart';
 import '../models/premium_feature.dart';
 import '../providers/theme_color_provider.dart';
 import '../providers/premium_provider.dart';
@@ -48,7 +50,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
                       }
                       Navigator.push(
                         context,
-                        MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
+                        fadeSlideRoute<void>(const PaywallScreen()),
                       );
                     }
                   : () {
@@ -70,21 +72,35 @@ class ThemeSelectionScreen extends ConsumerWidget {
                     Positioned(
                       top: 8,
                       right: 8,
-                      child: Icon(
-                        Icons.check_circle,
-                        color: option.color,
-                      ),
+                      child: Icon(Icons.check_circle, color: option.color),
+                    ).animate().scale(
+                      begin: const Offset(0.5, 0.5),
+                      end: const Offset(1, 1),
+                      duration: DurationTokens.fast,
+                      curve: Curves.easeOutBack,
                     ),
                   if (isLocked)
                     const Positioned(
                       top: 8,
                       left: 8,
                       child: Icon(Icons.lock, size: 18, color: Colors.grey),
+                    ).animate().shake(
+                      duration: DurationTokens.normal,
+                      delay: Duration(milliseconds: index * 50 + 200),
                     ),
                 ],
               ),
             ),
-          );
+          ).animate().fadeIn(
+            duration: DurationTokens.fast,
+            delay: Duration(milliseconds: index * 60),
+          ).slideY(
+            begin: 0.2,
+            end: 0,
+            duration: DurationTokens.fast,
+            delay: Duration(milliseconds: index * 60),
+            curve: Curves.easeOut,
+          ); // ignore: prefer_const_constructors
         },
       ),
     );

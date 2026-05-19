@@ -260,8 +260,10 @@ void main() {
         body: FilterBar(
           filter: FilterType.all,
           sort: SortType.name,
+          isGrouped: true,
           onFilterChanged: (_) {},
           onSortChanged: (_) {},
+          onGroupedChanged: (_) {},
         ),
       )));
 
@@ -279,8 +281,10 @@ void main() {
           return FilterBar(
             filter: result,
             sort: SortType.name,
+            isGrouped: true,
             onFilterChanged: (f) => setState(() => result = f),
             onSortChanged: (_) {},
+            onGroupedChanged: (_) {},
           );
         }),
       )));
@@ -305,8 +309,10 @@ void main() {
         body: FilterBar(
           filter: FilterType.all,
           sort: result,
+          isGrouped: true,
           onFilterChanged: (_) {},
           onSortChanged: (s) => result = s,
+          onGroupedChanged: (_) {},
         ),
       )));
 
@@ -323,8 +329,10 @@ void main() {
         body: FilterBar(
           filter: FilterType.all,
           sort: SortType.name,
+          isGrouped: true,
           onFilterChanged: (_) {},
           onSortChanged: (_) {},
+          onGroupedChanged: (_) {},
         ),
       )));
 

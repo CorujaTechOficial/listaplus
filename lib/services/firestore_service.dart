@@ -53,6 +53,32 @@ class FirestoreService implements StorageBackend {
     }
   }
 
+  static Stream<T> _retryStream<T>(Stream<T> Function() fn) {
+    return Stream<T>.multi((controller) {
+      void subscribe() {
+        var attempt = 0;
+        fn().listen(
+          controller.add,
+          onError: (Object e) {
+            attempt++;
+            if (attempt >= _maxRetries || !_isTransientError(e)) {
+              controller.addError(e);
+              return;
+            }
+            final delay = _baseDelay * pow(2, attempt - 1).toInt();
+            final jitter = Random().nextInt(100);
+            Future<void>.delayed(delay + Duration(milliseconds: jitter)).then((_) {
+              subscribe();
+            });
+          },
+          onDone: controller.close,
+          cancelOnError: false,
+        );
+      }
+      subscribe();
+    });
+  }
+
   @override
   Future<List<ShoppingList>> loadLists() async {
     return _retry(() async {
@@ -66,11 +92,11 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<List<ShoppingList>> watchLists() {
-    return _db
+    return _retryStream(() => _db
         .collection('users').doc(_uid).collection('lists')
         .orderBy('updatedAt', descending: true)
         .snapshots()
-        .map((snap) => snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList());
+        .map((snap) => snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList()));
   }
 
   @override
@@ -107,11 +133,11 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<List<ShoppingItem>> watchItems(String listId) {
-    return _db
+    return _retryStream(() => _db
         .collection('users').doc(_uid).collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
-        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList());
+        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList()));
   }
 
   @override
@@ -197,6 +223,17 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Future<String?> getLocale() async {
+    final data = await getUserData();
+    return data?['locale'] as String?;
+  }
+
+  @override
+  Future<void> setLocale(String locale) async {
+    await updateUserData({'locale': locale});
+  }
+
+  @override
   Future<void> saveSharedList(String code, Map<String, dynamic> data) async {
     return _retry(() async {
       await _db.collection('sharedLists').doc(code).set(data);
@@ -232,10 +269,10 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<Map<String, String>> watchSharedListRefs() {
-    return _db
+    return _retryStream(() => _db
         .collection('users').doc(_uid).collection('sharedLists')
         .snapshots()
-        .map((snap) => {for (final doc in snap.docs) doc.id: doc.data()['ownerUid'] as String});
+        .map((snap) => {for (final doc in snap.docs) doc.id: doc.data()['ownerUid'] as String}));
   }
 
   @override
@@ -262,10 +299,10 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<ShoppingList?> watchListFromUser(String ownerUid, String listId) {
-    return _db
+    return _retryStream(() => _db
         .collection('users').doc(ownerUid).collection('lists').doc(listId)
         .snapshots()
-        .map((doc) => doc.exists ? ShoppingList.fromJson(doc.data()!) : null);
+        .map((doc) => doc.exists ? ShoppingList.fromJson(doc.data()!) : null));
   }
 
   @override
@@ -281,11 +318,11 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<List<ShoppingItem>> watchItemsFromUser(String ownerUid, String listId) {
-    return _db
+    return _retryStream(() => _db
         .collection('users').doc(ownerUid).collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
-        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList());
+        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList()));
   }
 
   @override

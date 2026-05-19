@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/shopping_list.dart';
 import '../models/shopping_item.dart';
 import '../theme/tokens.dart';
+import '../theme/page_transitions.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/monthly_budget_provider.dart';
@@ -55,7 +56,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                   }
                   Navigator.push(
                     context,
-                    MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
+                    fadeSlideRoute<void>(const PaywallScreen()),
                   );
                 },
                 icon: const Icon(Icons.workspace_premium),
@@ -147,19 +148,24 @@ class _BudgetBody extends ConsumerWidget {
                     ),
                     if (monthlyBudget != null && monthlyBudget > 0) ...[
                       const SizedBox(height: Spacing.sm),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(RadiusTokens.sm),
-                        child: LinearProgressIndicator(
-                          value: (totalSpent / monthlyBudget).clamp(0.0, 1.0),
-                          minHeight: 8,
-                          backgroundColor: theme.colorScheme.surfaceContainerHighest,
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            (totalSpent / monthlyBudget) >= 1
-                                ? theme.colorScheme.error
-                                : theme.colorScheme.primary,
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                            child: TweenAnimationBuilder<double>(
+                              tween: Tween(begin: 0, end: (totalSpent / monthlyBudget).clamp(0.0, 1.0)),
+                              duration: DurationTokens.normal,
+                              curve: Curves.easeOut,
+                              builder: (context, value, _) => LinearProgressIndicator(
+                                value: value,
+                                minHeight: 8,
+                                backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  (totalSpent / monthlyBudget) >= 1
+                                      ? theme.colorScheme.error
+                                      : theme.colorScheme.primary,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
                     ],
                     const SizedBox(height: Spacing.md),
                     Text(

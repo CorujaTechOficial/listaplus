@@ -19,6 +19,8 @@ abstract class StorageBackend {
   Future<void> setIsPremium(bool value);
   Future<String?> getThemeMode();
   Future<void> setThemeMode(String mode);
+  Future<String?> getLocale();
+  Future<void> setLocale(String locale);
   Future<Map<String, dynamic>?> getUserData();
   Future<void> updateUserData(Map<String, dynamic> data);
   Future<void> saveSharedList(String code, Map<String, dynamic> data);

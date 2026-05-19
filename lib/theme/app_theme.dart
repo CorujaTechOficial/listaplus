@@ -5,6 +5,60 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'tokens.dart';
 
+TextStyle _nunito({
+  double? fontSize,
+  FontWeight? fontWeight,
+  Color? color,
+  double? letterSpacing,
+  double? height,
+}) {
+  try {
+    return GoogleFonts.nunito(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      letterSpacing: letterSpacing,
+      height: height,
+    );
+  } on Object {
+    return TextStyle(
+      fontFamily: 'Nunito',
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      letterSpacing: letterSpacing,
+      height: height,
+    );
+  }
+}
+
+TextStyle _inter({
+  double? fontSize,
+  FontWeight? fontWeight,
+  Color? color,
+  double? letterSpacing,
+  double? height,
+}) {
+  try {
+    return GoogleFonts.inter(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      letterSpacing: letterSpacing,
+      height: height,
+    );
+  } on Object {
+    return TextStyle(
+      fontFamily: 'Inter',
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      letterSpacing: letterSpacing,
+      height: height,
+    );
+  }
+}
+
 class AppTheme {
   AppTheme._();
 
@@ -54,7 +108,7 @@ class AppTheme {
         scrolledUnderElevation: isDark ? 0 : 2,
         backgroundColor: isDark ? Color(0xFF0F1116) : Color(0xFFF8F9FA),
         surfaceTintColor: Colors.transparent,
-        titleTextStyle: GoogleFonts.nunito(
+        titleTextStyle: _nunito(
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: colorScheme.onSurface,
@@ -120,10 +174,33 @@ class AppTheme {
         ),
         elevation: 6,
       ),
+      navigationBarTheme: NavigationBarThemeData(
+        height: 64,
+        elevation: 0,
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+        indicatorShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.md)),
+        ),
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          final isSelected = states.contains(WidgetState.selected);
+          return _nunito(
+            fontSize: 12,
+            fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+            color: isSelected ? colorScheme.primary : colorScheme.onSurfaceVariant,
+          );
+        }),
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          final isSelected = states.contains(WidgetState.selected);
+          return IconThemeData(
+            size: 22,
+            color: isSelected ? colorScheme.onPrimaryContainer : colorScheme.onSurfaceVariant,
+          );
+        }),
+      ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
-        selectedLabelStyle: GoogleFonts.nunito(fontWeight: FontWeight.w700),
-        unselectedLabelStyle: GoogleFonts.nunito(fontWeight: FontWeight.w500),
+        selectedLabelStyle: _nunito(fontWeight: FontWeight.w700),
+        unselectedLabelStyle: _nunito(fontWeight: FontWeight.w500),
       ),
       dropdownMenuTheme: DropdownMenuThemeData(
         inputDecorationTheme: InputDecorationTheme(
@@ -146,73 +223,73 @@ class AppTheme {
         ),
       ),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.nunito(
+        displayLarge: _nunito(
           fontSize: 32,
           fontWeight: FontWeight.w800,
           color: colorScheme.onSurface,
           letterSpacing: -0.5,
         ),
-        displayMedium: GoogleFonts.nunito(
+        displayMedium: _nunito(
           fontSize: 28,
           fontWeight: FontWeight.w800,
           color: colorScheme.onSurface,
           letterSpacing: -0.5,
         ),
-        headlineLarge: GoogleFonts.nunito(
+        headlineLarge: _nunito(
           fontSize: 24,
           fontWeight: FontWeight.w700,
           color: colorScheme.onSurface,
           letterSpacing: -0.3,
         ),
-        headlineMedium: GoogleFonts.nunito(
+        headlineMedium: _nunito(
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: colorScheme.onSurface,
           letterSpacing: -0.2,
         ),
-        titleLarge: GoogleFonts.nunito(
+        titleLarge: _nunito(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: colorScheme.onSurface,
         ),
-        titleMedium: GoogleFonts.nunito(
+        titleMedium: _nunito(
           fontSize: 16,
           fontWeight: FontWeight.w600,
           color: colorScheme.onSurface,
         ),
-        titleSmall: GoogleFonts.nunito(
+        titleSmall: _nunito(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: colorScheme.onSurface,
         ),
-        bodyLarge: GoogleFonts.inter(
+        bodyLarge: _inter(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           color: colorScheme.onSurface,
           height: 1.5,
         ),
-        bodyMedium: GoogleFonts.inter(
+        bodyMedium: _inter(
           fontSize: 14,
           fontWeight: FontWeight.w400,
           color: colorScheme.onSurface,
           height: 1.4,
         ),
-        bodySmall: GoogleFonts.inter(
+        bodySmall: _inter(
           fontSize: 12,
           fontWeight: FontWeight.w400,
           color: colorScheme.onSurfaceVariant,
         ),
-        labelLarge: GoogleFonts.inter(
+        labelLarge: _inter(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: colorScheme.onSurface,
         ),
-        labelMedium: GoogleFonts.inter(
+        labelMedium: _inter(
           fontSize: 12,
           fontWeight: FontWeight.w600,
           color: colorScheme.onSurface,
         ),
-        labelSmall: GoogleFonts.inter(
+        labelSmall: _inter(
           fontSize: 11,
           fontWeight: FontWeight.w600,
           color: colorScheme.onSurfaceVariant,

@@ -120,17 +120,29 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
             const SizedBox(width: Spacing.sm),
             FilledButton.tonalIcon(
               onPressed: _isLoading ? null : _loadAndShowAd,
-              icon: _isLoading
-                  ? SizedBox(
-                      width: 16,
-                      height: 16,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        color: theme.colorScheme.onSecondaryContainer,
-                      ),
-                    )
-                  : const Icon(Icons.play_circle_outline, size: 20),
-              label: Text(_isLoading ? l10n.loading : l10n.watch),
+              icon: AnimatedSwitcher(
+                duration: DurationTokens.fast,
+                transitionBuilder: (child, animation) => FadeTransition(opacity: animation, child: child),
+                child: _isLoading
+                    ? SizedBox(
+                        key: const ValueKey('loading'),
+                        width: 16,
+                        height: 16,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: theme.colorScheme.onSecondaryContainer,
+                        ),
+                      )
+                    : const Icon(Icons.play_circle_outline, size: 20, key: ValueKey('play')),
+              ),
+              label: AnimatedSwitcher(
+                duration: DurationTokens.fast,
+                transitionBuilder: (child, animation) => FadeTransition(opacity: animation, child: child),
+                child: Text(
+                  _isLoading ? l10n.loading : l10n.watch,
+                  key: ValueKey(_isLoading),
+                ),
+              ),
             ),
           ],
         ),

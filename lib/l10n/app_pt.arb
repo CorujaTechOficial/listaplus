@@ -77,6 +77,10 @@
   "pantryEditTitle": "Editar {name}",
 
   "settingsAppBar": "Configurações",
+  "language": "Idioma",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Padrão do sistema",
   "appearance": "Aparência",
   "light": "Claro",
   "system": "Sistema",

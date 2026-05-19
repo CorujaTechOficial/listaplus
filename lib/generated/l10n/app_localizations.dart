@@ -534,6 +534,30 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get settingsAppBar;
 
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @languagePortuguese.
+  ///
+  /// In en, this message translates to:
+  /// **'Português (Brasil)'**
+  String get languagePortuguese;
+
+  /// No description provided for @languageEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageEnglish;
+
+  /// No description provided for @languageSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get languageSystem;
+
   /// No description provided for @appearance.
   ///
   /// In en, this message translates to:

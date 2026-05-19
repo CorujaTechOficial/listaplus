@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
+import '../theme/page_transitions.dart';
 import '../widgets/premium_gate.dart';
 import '../providers/backup_provider.dart';
 import '../providers/premium_provider.dart';
@@ -28,7 +29,7 @@ class BackupScreen extends ConsumerWidget {
           }
           Navigator.push(
             context,
-            MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
+            fadeSlideRoute<void>(const PaywallScreen()),
           );
         },
       );

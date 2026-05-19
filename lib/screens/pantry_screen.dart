@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
 import '../theme/colors.dart';
 import '../providers/pantry_items_provider.dart';
@@ -88,12 +89,26 @@ class PantryScreen extends ConsumerWidget {
                         ),
                       ],
                     ),
-                  ),
+                  ).animate().slideY(
+                    begin: -1,
+                    end: 0,
+                    duration: DurationTokens.normal,
+                    curve: Curves.easeOutBack,
+                  ).fadeIn(duration: DurationTokens.fast),
                 Expanded(
                   child: ListView.builder(
                     padding: const EdgeInsets.only(top: Spacing.xs, bottom: Spacing.md),
                     itemCount: items.length,
-                    itemBuilder: (context, index) => _PantryItemTile(item: items[index]),
+                    itemBuilder: (context, index) => _PantryItemTile(item: items[index]).animate().fadeIn(
+                      duration: DurationTokens.fast,
+                      delay: Duration(milliseconds: index * 40),
+                    ).slideY(
+                      begin: 0.15,
+                      end: 0,
+                      duration: DurationTokens.fast,
+                      delay: Duration(milliseconds: index * 40),
+                      curve: Curves.easeOut,
+                    ),
                   ),
                 ),
               ],
@@ -109,6 +124,14 @@ class PantryScreen extends ConsumerWidget {
           builder: (_) => const AddPantryItemDialog(),
         ),
         child: const Icon(Icons.add),
+      ).animate().fadeIn(
+        duration: DurationTokens.slow,
+        delay: DurationTokens.normal,
+      ).scale(
+        begin: const Offset(0, 0),
+        end: const Offset(1, 1),
+        duration: DurationTokens.normal,
+        curve: Curves.easeOutBack,
       ),
     );
   }
@@ -314,13 +337,18 @@ class _PantryItemTile extends ConsumerWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(RadiusTokens.xxs),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 8,
-                        backgroundColor: isDark
-                            ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
-                            : theme.colorScheme.surfaceContainerHighest,
-                        valueColor: AlwaysStoppedAnimation<Color>(barColor),
+                      child: TweenAnimationBuilder<double>(
+                        tween: Tween(begin: 0, end: progress),
+                        duration: DurationTokens.normal,
+                        curve: Curves.easeOut,
+                        builder: (context, value, _) => LinearProgressIndicator(
+                          value: value,
+                          minHeight: 8,
+                          backgroundColor: isDark
+                              ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
+                              : theme.colorScheme.surfaceContainerHighest,
+                          valueColor: AlwaysStoppedAnimation<Color>(barColor),
+                        ),
                       ),
                     ),
                     const SizedBox(height: Spacing.xxs),
