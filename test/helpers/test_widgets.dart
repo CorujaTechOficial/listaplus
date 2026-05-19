@@ -8,10 +8,12 @@ import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
+import 'package:shopping_list/providers/ai_service_provider.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/services/storage_backend.dart';
 import 'fake_ad_service.dart';
 import 'fake_revenuecat_service.dart';
+import 'fake_ai_service.dart';
 
 Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatService? revenueCat}) {
   final overrides = <Override>[
@@ -19,6 +21,7 @@ Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatServi
     revenueCatServiceProvider.overrideWithValue(revenueCat ?? FakeRevenueCatService()),
     analyticsServiceProvider.overrideWithValue(AnalyticsService()),
     adServiceProvider.overrideWithValue(FakeAdService()),
+    aiServiceProvider.overrideWithValue(FakeAiService()),
   ];
   if (backend != null) {
     overrides.add(firestoreServiceProvider.overrideWithValue(backend));

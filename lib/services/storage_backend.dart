@@ -1,5 +1,6 @@
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
+import '../models/chat_message.dart';
 
 abstract class StorageBackend {
   Future<List<ShoppingList>> loadLists();
@@ -26,4 +27,8 @@ abstract class StorageBackend {
   Future<ShoppingList?> loadListFromUser(String ownerUid, String listId);
   Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId);
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items);
+
+  Future<List<ChatMessage>> loadChatMessages(String? listId);
+  Future<void> saveChatMessage(String? listId, ChatMessage message);
+  Future<void> clearChatHistory(String? listId);
 }

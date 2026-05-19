@@ -21,6 +21,13 @@ This document provides foundational mandates and essential context for the **Lis
         - Entitlement: `lista_plus_pro`.
         - Packages: `$rc_monthly`, `$rc_annual`, `$rc_lifetime`.
     - **AdMob:** Banner and rewarded ads.
+- **AI Assistant (Kilo AI Gateway):**
+    - **Service:** `KiloAiService` via `dart_openai`.
+    - **Gateway:** `https://api.kilo.ai/api/gateway`.
+    - **Models:** `anthropic/claude-3-5-sonnet` (Default).
+    - **Sessions:** Persistent in Firestore (`chat_messages` subcollection).
+    - **Context:** Automatic injection of list items into system prompts.
+    - **Auth:** Requires `KILO_API_KEY` via `--dart-define` or environment.
 - **Observability:**
     - **Sentry:** Error tracking and performance monitoring.
     - **Firebase Crashlytics:** Fatal crash reporting.

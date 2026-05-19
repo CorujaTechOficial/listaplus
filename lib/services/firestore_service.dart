@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
+import '../models/chat_message.dart';
 import 'storage_backend.dart';
 
 class FirestoreService implements StorageBackend {
@@ -20,8 +21,8 @@ class FirestoreService implements StorageBackend {
   String get _uid => _auth.currentUser!.uid;
 // coverage:ignore-start
 
-  static const _maxRetries = 3;
-  static const _baseDelay = Duration(milliseconds: 200);
+  static const _maxRetries = 5;
+  static const _baseDelay = Duration(milliseconds: 500);
 
   static bool _isTransientError(Object error) {
     if (error is FirebaseException) {
@@ -250,6 +251,45 @@ class FirestoreService implements StorageBackend {
       final itemsRef = _db.collection('users').doc(ownerUid).collection('items');
       for (final item in items) {
         batch.set(itemsRef.doc(item.id), item.toJson());
+      }
+      await batch.commit();
+    });
+  }
+
+  @override
+  Future<List<ChatMessage>> loadChatMessages(String? listId) async {
+    return _retry(() async {
+      final collection = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+      
+      final snap = await collection.orderBy('timestamp', descending: false).get();
+      return snap.docs.map((d) => ChatMessage.fromJson(d.data())).toList();
+    });
+  }
+
+  @override
+  Future<void> saveChatMessage(String? listId, ChatMessage message) async {
+    return _retry(() async {
+      final collection = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+      
+      await collection.doc(message.id).set(message.toJson());
+    });
+  }
+
+  @override
+  Future<void> clearChatHistory(String? listId) async {
+    return _retry(() async {
+      final collection = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+      
+      final snap = await collection.get();
+      final batch = _db.batch();
+      for (final doc in snap.docs) {
+        batch.delete(doc.reference);
       }
       await batch.commit();
     });

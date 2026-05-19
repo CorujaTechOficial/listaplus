@@ -1,3 +1,4 @@
+import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/services/storage_backend.dart';
@@ -7,6 +8,7 @@ class FakeStorageBackend implements StorageBackend {
   final List<ShoppingItem> _items = [];
   String? _currentListId;
   final Map<String, dynamic> _userData = {};
+  final Map<String?, List<ChatMessage>> _chatMessages = {};
 
   @override
   Future<List<ShoppingList>> loadLists() async => List.unmodifiable(_lists);
@@ -133,5 +135,21 @@ class FakeStorageBackend implements StorageBackend {
     final affectedListIds = items.map((i) => i.shoppingListId).toSet();
     _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
     _items.addAll(items);
+  }
+
+  @override
+  Future<List<ChatMessage>> loadChatMessages(String? listId) async {
+    return List.unmodifiable(_chatMessages[listId] ?? []);
+  }
+
+  @override
+  Future<void> saveChatMessage(String? listId, ChatMessage message) async {
+    _chatMessages[listId] ??= [];
+    _chatMessages[listId]!.add(message);
+  }
+
+  @override
+  Future<void> clearChatHistory(String? listId) async {
+    _chatMessages[listId]?.clear();
   }
 }

@@ -23,6 +23,7 @@ import '../providers/premium_provider.dart';
 import '../providers/current_list_provider.dart';
 import '../providers/analytics_service_provider.dart';
 import 'paywall_screen.dart';
+import 'chat_screen.dart';
 import '../widgets/list_switcher_sheet.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -172,6 +173,26 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         value: 'import_code',
                         child: Text('Importar via código'),
                       ),
+                      const PopupMenuItem(
+                        value: 'list_assistant',
+                        child: Row(
+                          children: [
+                            Icon(Icons.auto_awesome, size: 18),
+                            SizedBox(width: 8),
+                            Flexible(child: Text('Assistente desta lista')),
+                          ],
+                        ),
+                      ),
+                      const PopupMenuItem(
+                        value: 'global_assistant',
+                        child: Row(
+                          children: [
+                            Icon(Icons.assistant, size: 18),
+                            SizedBox(width: 8),
+                            Flexible(child: Text('Assistente geral')),
+                          ],
+                        ),
+                      ),
                     ];
                     if (!isPremium) {
                     items.add(const PopupMenuDivider());
@@ -294,6 +315,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       }
                      } else if (value == 'import_code') {
                        await _importSharedList();
+                     } else if (value == 'list_assistant') {
+                        if (context.mounted) {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ChatScreen(
+                                listId: widget.listId,
+                                listName: currentList?.name,
+                              ),
+                            ),
+                          );
+                        }
+                     } else if (value == 'global_assistant') {
+                        if (context.mounted) {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const ChatScreen(),
+                            ),
+                          );
+                        }
                      } else if (value == 'upgrade') {
                       await ref.read(analyticsServiceProvider).logUpgradeTapped('menu');
                       if (context.mounted) {

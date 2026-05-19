@@ -44,5 +44,15 @@ service cloud.firestore {
     match /sharedLists/{code} {
       allow read, write: if isAuthenticated();
     }
+
+    // Chat messages per list — owner or shared user can R/W
+    match /users/{uid}/lists/{listId}/chat_messages/{messageId} {
+      allow read, write: if isOwner(uid) || hasSharedRef(listId);
+    }
+
+    // Global chat messages — owner only
+    match /users/{uid}/global_chat_messages/{messageId} {
+      allow read, write: if isOwner(uid);
+    }
   }
 }

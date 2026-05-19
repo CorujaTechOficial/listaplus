@@ -6,7 +6,8 @@ enum PremiumFeature {
   history,
   export,
   themes,
-  monthlyBudget;
+  monthlyBudget,
+  assistant;
 
   String get label {
     switch (this) {
@@ -22,6 +23,8 @@ enum PremiumFeature {
         return 'Temas personalizados';
       case PremiumFeature.monthlyBudget:
         return 'Orçamento mensal global';
+      case PremiumFeature.assistant:
+        return 'Assistente de IA Personalizado';
     }
   }
 
@@ -39,6 +42,8 @@ enum PremiumFeature {
         return Icons.palette;
       case PremiumFeature.monthlyBudget:
         return Icons.account_balance_wallet;
+      case PremiumFeature.assistant:
+        return Icons.auto_awesome;
     }
   }
 }
