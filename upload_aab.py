@@ -47,7 +47,7 @@ def main():
                 "status": "completed",
                 "releaseNotes": [{
                     "language": "pt-BR",
-                    "text": "Correção: autenticação anônima no Firebase, Sentry + Crashlytics, fim da tela branca no startup"
+                    "text": "Novo Assistente de IA integrado (Kilo Gateway) com modo gratuito e testes com 100% de cobertura."
                 }],
             }],
         },
