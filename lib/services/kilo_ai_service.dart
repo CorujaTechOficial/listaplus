@@ -6,7 +6,7 @@ import 'ai_service.dart';
 class KiloAiService implements AiService {
   KiloAiService({
     required String apiKey,
-    this.model = 'anthropic/claude-3-5-sonnet',
+    this.model = 'kilo-auto/free',
   }) {
     OpenAI.apiKey = apiKey;
     OpenAI.baseUrl = 'https://api.kilo.ai/api/gateway';
