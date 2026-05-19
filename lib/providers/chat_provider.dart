@@ -56,12 +56,23 @@ class ChatSession extends _$ChatSession {
     }
 
     try {
-      final assistantMessage = await aiService.getChatCompletion(
+      final stream = aiService.getChatCompletionStream(
         state.value ?? [],
         systemPrompt: systemPrompt,
       );
 
+      var assistantMessage = ChatMessage(role: 'assistant', content: '');
       state = AsyncValue.data([...state.value!, assistantMessage]);
+
+      await for (final chunk in stream) {
+        assistantMessage = assistantMessage.copyWith(
+          content: assistantMessage.content + chunk,
+        );
+        
+        final history = state.value!;
+        state = AsyncValue.data([...history.sublist(0, history.length - 1), assistantMessage]);
+      }
+
       await firestoreService.saveChatMessage(listId, assistantMessage);
       // coverage:ignore-start
     } on Exception catch (_) {

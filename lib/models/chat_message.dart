@@ -45,6 +45,20 @@ class ChatMessage {
   final String content;
   final DateTime timestamp;
 
+  ChatMessage copyWith({
+    String? id,
+    String? role,
+    String? content,
+    DateTime? timestamp,
+  }) {
+    return ChatMessage(
+      id: id ?? this.id,
+      role: role ?? this.role,
+      content: content ?? this.content,
+      timestamp: timestamp ?? this.timestamp,
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

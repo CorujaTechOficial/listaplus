@@ -65,7 +65,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Suggest some milk'), findsOneWidget);
-      expect(find.text('Fake response'), findsOneWidget);
+      expect(find.text('Fake streamed response'), findsOneWidget);
     });
 
     testWidgets('clear history button works', (tester) async {
