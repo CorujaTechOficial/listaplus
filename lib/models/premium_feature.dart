@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 enum PremiumFeature {
   unlimitedLists,
@@ -7,7 +8,8 @@ enum PremiumFeature {
   export,
   themes,
   monthlyBudget,
-  assistant;
+  assistant,
+  pantry;
 
   String get label {
     switch (this) {
@@ -25,6 +27,29 @@ enum PremiumFeature {
         return 'Orçamento mensal global';
       case PremiumFeature.assistant:
         return 'Assistente de IA Personalizado';
+      case PremiumFeature.pantry:
+        return 'Dispensa ilimitada';
+    }
+  }
+
+  String localizedLabel(AppLocalizations l10n) {
+    switch (this) {
+      case PremiumFeature.unlimitedLists:
+        return l10n.prefUnlimitedLists;
+      case PremiumFeature.sharing:
+        return l10n.prefSharing;
+      case PremiumFeature.history:
+        return l10n.prefFullHistory;
+      case PremiumFeature.export:
+        return l10n.prefExportData;
+      case PremiumFeature.themes:
+        return l10n.prefCustomThemes;
+      case PremiumFeature.monthlyBudget:
+        return l10n.prefMonthlyBudget;
+      case PremiumFeature.assistant:
+        return l10n.prefAIAssistant;
+      case PremiumFeature.pantry:
+        return l10n.prefUnlimitedPantry;
     }
   }
 
@@ -44,6 +69,8 @@ enum PremiumFeature {
         return Icons.account_balance_wallet;
       case PremiumFeature.assistant:
         return Icons.auto_awesome;
+      case PremiumFeature.pantry:
+        return Icons.inventory_2;
     }
   }
 }

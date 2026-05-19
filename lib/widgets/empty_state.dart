@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class EmptyState extends StatelessWidget {
   const EmptyState({
@@ -17,6 +18,7 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
@@ -46,7 +48,7 @@ class EmptyState extends StatelessWidget {
                 .scale(delay: const Duration(milliseconds: 200), duration: const Duration(milliseconds: 400), curve: Curves.easeOutBack),
             const SizedBox(height: Spacing.lg),
             Text(
-              title ?? 'Sua lista está vazia',
+              title ?? l10n.emptyListTitle,
               style: theme.textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -57,7 +59,7 @@ class EmptyState extends StatelessWidget {
                 .slideY(begin: 0.2, end: 0, duration: const Duration(milliseconds: 500), curve: Curves.easeOut),
             const SizedBox(height: Spacing.xs),
             Text(
-              subtitle ?? 'Adicione itens para começar',
+              subtitle ?? l10n.emptyListSubtitle,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),

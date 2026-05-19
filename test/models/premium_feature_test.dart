@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 
 void main() {
   group('PremiumFeature', () {
-    test('has 7 values', () {
-      expect(PremiumFeature.values.length, 7);
+    test('has 8 values', () {
+      expect(PremiumFeature.values.length, 8);
     });
 
     test('labels match expectations', () {
@@ -16,6 +16,7 @@ void main() {
       expect(PremiumFeature.themes.label, 'Temas personalizados');
       expect(PremiumFeature.monthlyBudget.label, 'Orçamento mensal global');
       expect(PremiumFeature.assistant.label, 'Assistente de IA Personalizado');
+      expect(PremiumFeature.pantry.label, 'Dispensa ilimitada');
     });
 
     test('icons match expectations', () {
@@ -26,6 +27,7 @@ void main() {
       expect(PremiumFeature.themes.icon, Icons.palette);
       expect(PremiumFeature.monthlyBudget.icon, Icons.account_balance_wallet);
       expect(PremiumFeature.assistant.icon, Icons.auto_awesome);
+      expect(PremiumFeature.pantry.icon, Icons.inventory_2);
     });
   });
 

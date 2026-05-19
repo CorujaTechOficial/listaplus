@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
+import '../models/pantry_item.dart';
 import 'storage_backend.dart';
 
 class FirestoreService implements StorageBackend {
@@ -47,7 +48,7 @@ class FirestoreService implements StorageBackend {
         }
         final delay = _baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
-        await Future.delayed(delay + Duration(milliseconds: jitter));
+        await Future<void>.delayed(delay + Duration(milliseconds: jitter));
       }
     }
   }
@@ -61,6 +62,15 @@ class FirestoreService implements StorageBackend {
           .get();
       return snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList();
     });
+  }
+
+  @override
+  Stream<List<ShoppingList>> watchLists() {
+    return _db
+        .collection('users').doc(_uid).collection('lists')
+        .orderBy('updatedAt', descending: true)
+        .snapshots()
+        .map((snap) => snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList());
   }
 
   @override
@@ -93,6 +103,15 @@ class FirestoreService implements StorageBackend {
           .get();
       return snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList();
     });
+  }
+
+  @override
+  Stream<List<ShoppingItem>> watchItems(String listId) {
+    return _db
+        .collection('users').doc(_uid).collection('items')
+        .where('shoppingListId', isEqualTo: listId)
+        .snapshots()
+        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList());
   }
 
   @override
@@ -212,6 +231,14 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Stream<Map<String, String>> watchSharedListRefs() {
+    return _db
+        .collection('users').doc(_uid).collection('sharedLists')
+        .snapshots()
+        .map((snap) => {for (final doc in snap.docs) doc.id: doc.data()['ownerUid'] as String});
+  }
+
+  @override
   Future<void> removeSharedListRef(String listId) async {
     return _retry(() async {
       await _db
@@ -234,6 +261,14 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Stream<ShoppingList?> watchListFromUser(String ownerUid, String listId) {
+    return _db
+        .collection('users').doc(ownerUid).collection('lists').doc(listId)
+        .snapshots()
+        .map((doc) => doc.exists ? ShoppingList.fromJson(doc.data()!) : null);
+  }
+
+  @override
   Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId) async {
     return _retry(() async {
       final snap = await _db
@@ -245,6 +280,15 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Stream<List<ShoppingItem>> watchItemsFromUser(String ownerUid, String listId) {
+    return _db
+        .collection('users').doc(ownerUid).collection('items')
+        .where('shoppingListId', isEqualTo: listId)
+        .snapshots()
+        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList());
+  }
+
+  @override
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
     return _retry(() async {
       final batch = _db.batch();
@@ -253,6 +297,38 @@ class FirestoreService implements StorageBackend {
         batch.set(itemsRef.doc(item.id), item.toJson());
       }
       await batch.commit();
+    });
+  }
+
+  @override
+  Future<List<PantryItem>> loadPantryItems() async {
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(_uid).collection('pantry')
+          .orderBy('updatedAt', descending: true)
+          .get();
+      return snap.docs.map((d) => PantryItem.fromJson(d.data())).toList();
+    });
+  }
+
+  @override
+  Future<void> savePantryItems(List<PantryItem> items) async {
+    return _retry(() async {
+      final batch = _db.batch();
+      final pantryRef = _db.collection('users').doc(_uid).collection('pantry');
+      for (final item in items) {
+        batch.set(pantryRef.doc(item.id), item.toJson());
+      }
+      await batch.commit();
+    });
+  }
+
+  @override
+  Future<void> deletePantryItem(String id) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('pantry').doc(id)
+          .delete();
     });
   }
 

@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -15,12 +16,14 @@ import 'providers/dark_mode_provider.dart';
 import 'providers/theme_color_provider.dart';
 import 'providers/shopping_lists_provider.dart';
 import 'screens/home_screen.dart';
+import 'screens/pantry_screen.dart';
 import 'widgets/create_list_dialog.dart';
 import 'widgets/empty_state.dart';
 import 'widgets/init_error_screen.dart';
 import 'services/ad_service_impl.dart';
 import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
+import 'providers/update_service_provider.dart';
 
 // coverage:ignore-start
 Future<void> main() async {
@@ -95,7 +98,63 @@ class MyApp extends ConsumerWidget {
       theme: AppTheme.light(colorSeed),
       darkTheme: AppTheme.dark(colorSeed),
       themeMode: themeMode,
-      home: const ListLoader(),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: const MainShell(),
+    );
+  }
+}
+
+class MainShell extends ConsumerStatefulWidget {
+  const MainShell({super.key});
+
+  @override
+  ConsumerState<MainShell> createState() => _MainShellState();
+}
+
+class _MainShellState extends ConsumerState<MainShell> {
+  int _currentTab = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        ref.read(updateServiceProvider).checkForUpdates();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(
+          child: IndexedStack(
+            index: _currentTab,
+            children: const [
+              ListLoader(),
+              PantryScreen(),
+            ],
+          ),
+        ),
+        NavigationBar(
+          selectedIndex: _currentTab,
+          onDestinationSelected: (index) => setState(() => _currentTab = index),
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.list_alt_outlined),
+              selectedIcon: Icon(Icons.list_alt),
+              label: 'Listas',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.inventory_2_outlined),
+              selectedIcon: Icon(Icons.inventory_2),
+              label: 'Dispensa',
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

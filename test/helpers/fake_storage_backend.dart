@@ -1,17 +1,28 @@
+import 'dart:async';
+import 'package:rxdart/rxdart.dart';
 import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/shopping_list.dart';
+import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/services/storage_backend.dart';
 
 class FakeStorageBackend implements StorageBackend {
   final List<ShoppingList> _lists = [];
   final List<ShoppingItem> _items = [];
+  final List<PantryItem> _pantryItems = [];
   String? _currentListId;
   final Map<String, dynamic> _userData = {};
   final Map<String?, List<ChatMessage>> _chatMessages = {};
 
+  final _listsController = BehaviorSubject<List<ShoppingList>>.seeded([]);
+  final _itemsController = BehaviorSubject<List<ShoppingItem>>.seeded([]);
+  final _sharedRefsController = BehaviorSubject<Map<String, String>>.seeded({});
+
   @override
   Future<List<ShoppingList>> loadLists() async => List.unmodifiable(_lists);
+
+  @override
+  Stream<List<ShoppingList>> watchLists() => _listsController.stream;
 
   @override
   Future<void> saveLists(List<ShoppingList> lists) async {
@@ -19,11 +30,13 @@ class FakeStorageBackend implements StorageBackend {
       _lists.removeWhere((l) => l.id == list.id);
       _lists.add(list);
     }
+    _listsController.add(List.unmodifiable(_lists));
   }
 
   @override
   Future<void> deleteList(String listId) async {
     _lists.removeWhere((l) => l.id == listId);
+    _listsController.add(List.unmodifiable(_lists));
   }
 
   @override
@@ -32,19 +45,26 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Stream<List<ShoppingItem>> watchItems(String listId) {
+    return _itemsController.stream.map((items) => items.where((i) => i.shoppingListId == listId).toList());
+  }
+
+  @override
   Future<void> saveItems(List<ShoppingItem> items) async {
     if (items.isEmpty) {
       _items.clear();
-      return;
+    } else {
+      final affectedListIds = items.map((i) => i.shoppingListId).toSet();
+      _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
+      _items.addAll(items);
     }
-    final affectedListIds = items.map((i) => i.shoppingListId).toSet();
-    _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
-    _items.addAll(items);
+    _itemsController.add(List.unmodifiable(_items));
   }
 
   @override
   Future<void> deleteItemsFromList(String listId) async {
     _items.removeWhere((i) => i.shoppingListId == listId);
+    _itemsController.add(List.unmodifiable(_items));
   }
 
   @override
@@ -100,6 +120,7 @@ class FakeStorageBackend implements StorageBackend {
   @override
   Future<void> saveSharedListRef(String listId, String ownerUid) async {
     _sharedListRefs[listId] = ownerUid;
+    _sharedRefsController.add(Map.unmodifiable(_sharedListRefs));
   }
 
   @override
@@ -108,8 +129,12 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Stream<Map<String, String>> watchSharedListRefs() => _sharedRefsController.stream;
+
+  @override
   Future<void> removeSharedListRef(String listId) async {
     _sharedListRefs.remove(listId);
+    _sharedRefsController.add(Map.unmodifiable(_sharedListRefs));
   }
 
   @override
@@ -122,19 +147,56 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Stream<ShoppingList?> watchListFromUser(String ownerUid, String listId) {
+    return _listsController.stream.map((lists) {
+      final list = lists.where((l) => l.id == listId).firstOrNull;
+      if (list == null) {
+        return null;
+      }
+      return list.copyWith(ownerUid: ownerUid);
+    });
+  }
+
+  @override
   Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId) async {
     return List.unmodifiable(_items.where((i) => i.shoppingListId == listId));
+  }
+
+  @override
+  Stream<List<ShoppingItem>> watchItemsFromUser(String ownerUid, String listId) {
+    return _itemsController.stream.map((items) => items.where((i) => i.shoppingListId == listId).toList());
   }
 
   @override
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
     if (items.isEmpty) {
       _items.clear();
+    } else {
+      final affectedListIds = items.map((i) => i.shoppingListId).toSet();
+      _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
+      _items.addAll(items);
+    }
+    _itemsController.add(List.unmodifiable(_items));
+  }
+
+  @override
+  Future<List<PantryItem>> loadPantryItems() async => List.unmodifiable(_pantryItems);
+
+  @override
+  Future<void> savePantryItems(List<PantryItem> items) async {
+    if (items.isEmpty) {
+      _pantryItems.clear();
       return;
     }
-    final affectedListIds = items.map((i) => i.shoppingListId).toSet();
-    _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
-    _items.addAll(items);
+    for (final item in items) {
+      _pantryItems.removeWhere((p) => p.id == item.id);
+      _pantryItems.add(item);
+    }
+  }
+
+  @override
+  Future<void> deletePantryItem(String id) async {
+    _pantryItems.removeWhere((p) => p.id == id);
   }
 
   @override

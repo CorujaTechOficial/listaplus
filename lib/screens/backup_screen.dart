@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
 import '../widgets/premium_gate.dart';
@@ -12,13 +13,14 @@ class BackupScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isPremium = ref.watch(premiumProvider).value ?? false;
 
     if (!isPremium) {
       return PremiumGate(
-        title: 'Backup',
-        description: 'Backup e exportação é premium',
+        title: l10n.backupTitle,
+        description: l10n.backupPremiumDescription,
         onUpgrade: () {
           ref.read(analyticsServiceProvider).logUpgradeTapped('backup');
           if (!context.mounted) {
@@ -26,14 +28,14 @@ class BackupScreen extends ConsumerWidget {
           }
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (_) => const PaywallScreen()),
+            MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
           );
         },
       );
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Backup')),
+      appBar: AppBar(title: Text(l10n.backupNav)),
       body: Padding(
         padding: const EdgeInsets.all(Spacing.md),
         child: Column(
@@ -41,8 +43,8 @@ class BackupScreen extends ConsumerWidget {
             Card(
               child: ListTile(
                 leading: Icon(Icons.upload, color: theme.colorScheme.primary),
-                title: const Text('Exportar dados'),
-                subtitle: const Text('Salvar todas as listas como JSON'),
+                title: Text(l10n.exportData),
+                subtitle: Text(l10n.exportDataSubtitle),
                 trailing: Icon(
                   Icons.chevron_right,
                   color: theme.colorScheme.onSurfaceVariant,
@@ -53,13 +55,13 @@ class BackupScreen extends ConsumerWidget {
                     await backup.shareBackup();
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Backup exportado!')),
+                        SnackBar(content: Text(l10n.backupExported)),
                       );
                     }
                   } on Exception catch (e) {
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Erro: $e')),
+                        SnackBar(content: Text(l10n.error(e.toString()))),
                       );
                     }
                   }
@@ -70,8 +72,8 @@ class BackupScreen extends ConsumerWidget {
             Card(
               child: ListTile(
                 leading: Icon(Icons.download, color: theme.colorScheme.primary),
-                title: const Text('Importar dados'),
-                subtitle: const Text('Restaurar listas de um JSON'),
+                title: Text(l10n.importData),
+                subtitle: Text(l10n.importDataSubtitle),
                 trailing: Icon(
                   Icons.chevron_right,
                   color: theme.colorScheme.onSurfaceVariant,
@@ -81,22 +83,22 @@ class BackupScreen extends ConsumerWidget {
                   final jsonString = await showDialog<String>(
                     context: context,
                     builder: (_) => AlertDialog(
-                      title: const Text('Importar JSON'),
+                      title: Text(l10n.importJsonTitle),
                       content: TextField(
                         controller: controller,
                         maxLines: 8,
-                        decoration: const InputDecoration(
-                          hintText: 'Cole o JSON do backup aqui...',
+                        decoration: InputDecoration(
+                          hintText: l10n.importJsonHint,
                         ),
                       ),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
-                          child: const Text('Cancelar'),
+                          child: Text(l10n.cancel),
                         ),
                         TextButton(
                           onPressed: () => Navigator.pop(context, controller.text),
-                          child: const Text('Importar'),
+                          child: Text(l10n.import),
                         ),
                       ],
                     ),
@@ -113,7 +115,7 @@ class BackupScreen extends ConsumerWidget {
                     } on Exception catch (e) {
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Erro: $e')),
+                          SnackBar(content: Text(l10n.error(e.toString()))),
                         );
                       }
                     }

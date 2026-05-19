@@ -1,0 +1,51 @@
+name: SonarQube
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sonar:
+    name: SonarQube analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.x
+
+      - run: flutter pub get
+
+      - name: flutter analyze + export issues
+        run: |
+          flutter analyze --fatal-infos 2>&1 || true
+          ./scripts/flutter-analyze-to-sonar.sh
+
+      - name: flutter test + coverage
+        run: flutter test --machine --coverage > tests.output
+
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL || 'http://localhost:9000' }}
+        with:
+          args: >
+            -Dsonar.projectKey=shopping_list
+            -Dsonar.projectName="Shopping List - CorujaTech"
+            -Dsonar.projectVersion=1.0.0
+            -Dsonar.sources=lib
+            -Dsonar.tests=test
+            -Dsonar.sourceEncoding=UTF-8
+            -Dsonar.dart.analyzer.mode=FLUTTER
+            -Dsonar.flutter.tests.reportPath=tests.output
+            -Dsonar.flutter.coverage.reportPath=coverage/lcov.info
+            -Dsonar.externalIssuesReportPaths=flutter_analyze_issues.json
+            -Dsonar.exclusions="**/*.g.dart,**/generated/**,test/**,flutter_analyze_issues.json"

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'package:flutter/services.dart';
 import '../theme/tokens.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 enum FilterType { all, pending, purchased }
 
@@ -28,6 +29,7 @@ class FilterBar extends StatefulWidget {
 class _FilterBarState extends State<FilterBar> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     return Row(
@@ -36,23 +38,23 @@ class _FilterBarState extends State<FilterBar> {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: SegmentedButton<FilterType>(
-              segments: const [
-                ButtonSegment(
-                  value: FilterType.all,
-                  label: Text('Todos'),
-                  icon: Icon(Icons.list, size: 16),
-                ),
-                ButtonSegment(
-                  value: FilterType.pending,
-                  label: Text('Pendentes'),
-                  icon: Icon(Icons.pending, size: 16),
-                ),
-                ButtonSegment(
-                  value: FilterType.purchased,
-                  label: Text('Comprados'),
-                  icon: Icon(Icons.check_circle, size: 16),
-                ),
-              ],
+          segments: [
+            ButtonSegment(
+              value: FilterType.all,
+              label: Text(l10n.filterAll),
+              icon: const Icon(Icons.list, size: 16),
+            ),
+            ButtonSegment(
+              value: FilterType.pending,
+              label: Text(l10n.filterPending),
+              icon: const Icon(Icons.pending, size: 16),
+            ),
+            ButtonSegment(
+              value: FilterType.purchased,
+              label: Text(l10n.filterPurchased),
+              icon: const Icon(Icons.check_circle, size: 16),
+            ),
+          ],
               selected: {widget.filter},
               onSelectionChanged: (s) {
                 HapticFeedback.selectionClick();
@@ -93,11 +95,11 @@ class _FilterBarState extends State<FilterBar> {
                 style: theme.textTheme.labelMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
-                items: const [
-                  DropdownMenuItem(value: SortType.name, child: Text('Nome')),
-                  DropdownMenuItem(value: SortType.category, child: Text('Categoria')),
-                  DropdownMenuItem(value: SortType.date, child: Text('Data')),
-                  DropdownMenuItem(value: SortType.manual, child: Text('Manual')),
+                items: [
+                  DropdownMenuItem(value: SortType.name, child: Text(l10n.sortName)),
+                  DropdownMenuItem(value: SortType.category, child: Text(l10n.sortCategory)),
+                  DropdownMenuItem(value: SortType.date, child: Text(l10n.sortDate)),
+                  DropdownMenuItem(value: SortType.manual, child: Text(l10n.sortManual)),
                 ],
                 onChanged: (v) {
                   if (v != null) {

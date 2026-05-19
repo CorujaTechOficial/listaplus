@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import 'package:shopping_list/providers/ad_service_provider.dart';
@@ -26,9 +27,22 @@ Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatServi
   if (backend != null) {
     overrides.add(firestoreServiceProvider.overrideWithValue(backend));
   }
-  return ProviderScope(overrides: overrides, child: MaterialApp(home: child));
+  return ProviderScope(
+    overrides: overrides,
+    child: MaterialApp(
+      locale: const Locale('pt', 'BR'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: child,
+    ),
+  );
 }
 
 Widget wrapWithApp(Widget child) {
-  return MaterialApp(home: child);
+  return MaterialApp(
+    locale: const Locale('pt', 'BR'),
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    supportedLocales: AppLocalizations.supportedLocales,
+    home: child,
+  );
 }

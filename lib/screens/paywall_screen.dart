@@ -1,5 +1,6 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
@@ -13,11 +14,12 @@ class PaywallScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final analytics = ref.read(analyticsServiceProvider);
     ref.read(analyticsServiceProvider).logPaywallViewed();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista Plus Premium')),
+      appBar: AppBar(title: Text(l10n.paywallTitle)),
       body: SafeArea(
         child: PaywallView(
           onPurchaseCompleted: (CustomerInfo customerInfo, StoreTransaction transaction) {
@@ -34,14 +36,14 @@ class PaywallScreen extends ConsumerWidget {
             Sentry.captureException(error);
             FirebaseCrashlytics.instance.recordError(error, null, fatal: false);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Erro ao processar compra. Tente novamente.')),
+              SnackBar(content: Text(l10n.purchaseError)),
             );
           },
           onRestoreError: (PurchasesError error) {
             Sentry.captureException(error);
             FirebaseCrashlytics.instance.recordError(error, null, fatal: false);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Erro ao restaurar compras. Tente novamente.')),
+              SnackBar(content: Text(l10n.restoreError)),
             );
           },
           onDismiss: () {

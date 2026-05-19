@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/widgets/empty_state.dart';
@@ -45,11 +46,24 @@ Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatServi
   if (backend != null) {
     overrides.add(firestoreServiceProvider.overrideWithValue(backend));
   }
-  return ProviderScope(overrides: overrides, child: MaterialApp(home: child));
+  return ProviderScope(
+    overrides: overrides,
+    child: MaterialApp(
+      locale: const Locale('pt', 'BR'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: child,
+    ),
+  );
 }
 
 Widget wrapWithApp(Widget child) {
-  return MaterialApp(home: child);
+  return MaterialApp(
+    locale: const Locale('pt', 'BR'),
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    supportedLocales: AppLocalizations.supportedLocales,
+    home: child,
+  );
 }
 
 void main() {
@@ -326,7 +340,7 @@ void main() {
       final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
-          onPressed: () => showDialog(
+          onPressed: () => showDialog<void>(
             context: context,
             builder: (_) => const AddItemDialog(listId: 'list-1'),
           ),
@@ -402,7 +416,7 @@ void main() {
 
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
-          onPressed: () => showDialog(
+          onPressed: () => showDialog<void>(
             context: context,
             builder: (_) => EditItemDialog(listId: 'list-1', item: item),
           ),
@@ -484,7 +498,7 @@ void main() {
       final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
-          onPressed: () => showDialog(
+          onPressed: () => showDialog<void>(
             context: context,
             builder: (_) => const CreateListDialog(),
           ),
@@ -590,7 +604,7 @@ void main() {
       await backend.saveLists([list]);
       await tester.pumpWidget(wrapWithProviders(
         Builder(builder: (context) => ElevatedButton(
-          onPressed: () => showDialog(
+          onPressed: () => showDialog<void>(
             context: context,
             builder: (_) => BudgetDialog(list: list),
           ),
@@ -1672,7 +1686,7 @@ class _ErrorCurrentListId extends CurrentListId {
 
 class _HomeScreenErrorBackend extends FakeStorageBackend {
   @override
-  Future<List<ShoppingItem>> loadItems(String listId) async {
-    throw Exception('Erro de teste');
+  Stream<List<ShoppingItem>> watchItems(String listId) {
+    return Stream.error(Exception('Erro de teste'));
   }
 }

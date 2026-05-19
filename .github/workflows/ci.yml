@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  analyze:
+    name: flutter analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.x
+      - run: flutter pub get
+      - run: flutter analyze --fatal-infos
+
+  test:
+    name: flutter test --coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.x
+      - run: flutter pub get
+      - run: flutter test --coverage
+      - name: Check coverage (100% source-only)
+        run: |
+          COVERAGE=$(awk -F: '/^SF:/ {f=$2} /^LF:/ && f !~ /\.g\.dart$/ {lf+=$2} /^LH:/ && f !~ /\.g\.dart$/ {lh+=$2} END {printf "%.1f", (lh/lf)*100}' coverage/lcov.info)
+          echo "Cobertura: ${COVERAGE}%"
+          if [ "$(printf "%.0f" "$COVERAGE")" -lt 100 ]; then
+            echo "✘ Cobertura ${COVERAGE}% < 100%"
+            exit 1
+          fi
+          echo "✔ Cobertura 100%"
+
+  build:
+    name: flutter build web
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.x
+      - run: flutter pub get
+      - run: flutter build web --release

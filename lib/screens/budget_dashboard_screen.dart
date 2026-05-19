@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../models/shopping_list.dart';
+import '../models/shopping_item.dart';
 import '../theme/tokens.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
@@ -14,12 +17,13 @@ class BudgetDashboardScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isPremium = ref.watch(premiumProvider).value ?? false;
 
     if (!isPremium) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Orçamento Mensal')),
+        appBar: AppBar(title: Text(l10n.budgetAppBar)),
         bottomNavigationBar: const SafeArea(child: BannerAdWidget()),
         body: Center(
           child: Column(
@@ -32,12 +36,12 @@ class BudgetDashboardScreen extends ConsumerWidget {
               ),
               const SizedBox(height: Spacing.md),
               Text(
-                'Orçamento mensal global é premium',
+                l10n.budgetPremiumLocked,
                 style: theme.textTheme.titleMedium,
               ),
               const SizedBox(height: Spacing.xs),
               Text(
-                'Faça upgrade para desbloquear',
+                l10n.budgetUpgradePrompt,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
@@ -51,11 +55,11 @@ class BudgetDashboardScreen extends ConsumerWidget {
                   }
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const PaywallScreen()),
+                    MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
                   );
                 },
                 icon: const Icon(Icons.workspace_premium),
-                label: const Text('Fazer upgrade'),
+                label: Text(l10n.upgrade),
               ),
             ],
           ),
@@ -64,7 +68,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Orçamento Mensal')),
+      appBar: AppBar(title: Text(l10n.budgetAppBar)),
       body: _BudgetBody(),
     );
   }
@@ -73,6 +77,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
 class _BudgetBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final listsAsync = ref.watch(shoppingListsProvider);
     final monthlyBudgetAsync = ref.watch(monthlyBudgetProvider);
@@ -80,12 +85,12 @@ class _BudgetBody extends ConsumerWidget {
     return listsAsync.when(
       data: (lists) => monthlyBudgetAsync.when(
         data: (monthlyBudget) =>
-            _buildContent(context, ref, theme, lists, monthlyBudget),
+            _buildContent(context, ref, theme, lists, monthlyBudget, l10n),
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Erro: $e')),
+        error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
       ),
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (e, _) => Center(child: Text('Erro: $e')),
+      error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
     );
   }
 
@@ -93,13 +98,14 @@ class _BudgetBody extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
     ThemeData theme,
-    List lists,
+    List<ShoppingList> lists,
     double? monthlyBudget,
+    AppLocalizations l10n,
   ) {
     var totalSpent = 0.0;
     var totalEstimated = 0.0;
 
-    final itemsFutures = lists.map((list) {
+    final itemsFutures = lists.map((ShoppingList list) {
       return ref.read(shoppingListItemsProvider(list.id).future);
     }).toList();
 
@@ -107,9 +113,9 @@ class _BudgetBody extends ConsumerWidget {
       future: Future.wait(itemsFutures),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          final allItems = snapshot.data as List;
-          for (final items in allItems) {
-            for (final item in items) {
+          final allItems = snapshot.data as List<List<ShoppingItem>>;
+          for (final List<ShoppingItem> items in allItems) {
+            for (final ShoppingItem item in items) {
               totalEstimated += (item.estimatedPrice ?? 0) * item.quantity;
               if (item.isPurchased && item.estimatedPrice != null) {
                 totalSpent += item.estimatedPrice! * item.quantity;
@@ -127,14 +133,14 @@ class _BudgetBody extends ConsumerWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Orçamento Mensal',
+                      l10n.monthlyBudgetTitle,
                       style: theme.textTheme.titleLarge,
                     ),
                     const SizedBox(height: Spacing.md),
                     Text(
                       monthlyBudget != null
-                          ? 'R\$ ${totalSpent.toStringAsFixed(2)} / R\$ ${monthlyBudget.toStringAsFixed(2)}'
-                          : 'Nenhum orçamento definido',
+                          ? l10n.budgetAmountSpent(totalSpent.toStringAsFixed(2), monthlyBudget.toStringAsFixed(2))
+                          : l10n.noBudgetDefined,
                       style: theme.textTheme.headlineMedium?.copyWith(
                         fontWeight: FontWeight.w700,
                       ),
@@ -157,7 +163,7 @@ class _BudgetBody extends ConsumerWidget {
                     ],
                     const SizedBox(height: Spacing.md),
                     Text(
-                      'Total estimado: R\$ ${totalEstimated.toStringAsFixed(2)}',
+                      l10n.totalEstimated('R\$ ${totalEstimated.toStringAsFixed(2)}'),
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
@@ -165,7 +171,7 @@ class _BudgetBody extends ConsumerWidget {
                     const SizedBox(height: Spacing.sm),
                     TextButton.icon(
                       icon: const Icon(Icons.edit, size: 18),
-                      label: const Text('Definir orçamento'),
+                      label: Text(l10n.setBudgetButton),
                       onPressed: () => _setBudget(context, ref, monthlyBudget),
                     ),
                   ],
@@ -174,11 +180,11 @@ class _BudgetBody extends ConsumerWidget {
             ),
             const SizedBox(height: Spacing.md),
             Text(
-              'Listas',
+              l10n.budgetLists,
               style: theme.textTheme.titleMedium,
             ),
             const SizedBox(height: Spacing.sm),
-            ...lists.map((list) {
+            ...lists.map((ShoppingList list) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: Spacing.xs),
                 child: Card(
@@ -203,29 +209,30 @@ class _BudgetBody extends ConsumerWidget {
     WidgetRef ref,
     double? currentBudget,
   ) async {
+    final l10n = AppLocalizations.of(context)!;
     final controller = TextEditingController(
       text: currentBudget?.toStringAsFixed(2) ?? '',
     );
     final value = await showDialog<double>(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('Orçamento Mensal'),
+        title: Text(l10n.setBudgetTitle),
         content: TextField(
           controller: controller,
           keyboardType: TextInputType.number,
-          decoration: const InputDecoration(labelText: 'Valor (R\$)'),
+          decoration: InputDecoration(labelText: l10n.budgetValueLabel),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancelar'),
+            child: Text(l10n.cancel),
           ),
           TextButton(
             onPressed: () {
               final v = double.tryParse(controller.text);
               Navigator.pop(context, v);
             },
-            child: const Text('Salvar'),
+            child: Text(l10n.save),
           ),
         ],
       ),

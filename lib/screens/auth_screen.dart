@@ -1,6 +1,7 @@
 import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
 import '../providers/auth_service_provider.dart';
@@ -11,9 +12,10 @@ class AuthScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista Plus')),
+      appBar: AppBar(title: Text(l10n.listaPlusTitle)),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(Spacing.xl),
@@ -34,7 +36,7 @@ class AuthScreen extends ConsumerWidget {
               ),
               const SizedBox(height: Spacing.lg),
               Text(
-                'Faça login para desbloquear\nrecursos premium',
+                l10n.loginPrompt,
                 textAlign: TextAlign.center,
                 style: theme.textTheme.titleLarge,
               ),
@@ -43,7 +45,7 @@ class AuthScreen extends ConsumerWidget {
                 width: double.infinity,
                 child: FilledButton.icon(
                   icon: const Icon(Icons.g_mobiledata),
-                  label: const Text('Entrar com Google'),
+                  label: Text(l10n.signInGoogle),
                   onPressed: () => _signInWithGoogle(context, ref),
                 ),
               ),
@@ -53,14 +55,14 @@ class AuthScreen extends ConsumerWidget {
                   width: double.infinity,
                   child: FilledButton.icon(
                     icon: const Icon(Icons.apple),
-                    label: const Text('Entrar com Apple'),
+                    label: Text(l10n.signInApple),
                     onPressed: () => _signInWithApple(context, ref),
                   ),
                 ),
               const SizedBox(height: Spacing.xl),
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text('Continuar como visitante'),
+                child: Text(l10n.continueAsGuest),
               ),
             ],
           ),
@@ -70,6 +72,7 @@ class AuthScreen extends ConsumerWidget {
   }
 
   Future<void> _signInWithGoogle(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context)!;
     final authService = ref.read(authServiceProvider);
     try {
       final user = await authService.signInWithGoogle();
@@ -79,13 +82,14 @@ class AuthScreen extends ConsumerWidget {
     } on Exception catch (e) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erro ao fazer login: $e')),
+          SnackBar(content: Text(l10n.loginError(e.toString()))),
         );
       }
     }
   }
 
   Future<void> _signInWithApple(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context)!;
     final authService = ref.read(authServiceProvider);
     try {
       final user = await authService.signInWithApple();
@@ -95,7 +99,7 @@ class AuthScreen extends ConsumerWidget {
     } on Exception catch (e) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erro ao fazer login: $e')),
+          SnackBar(content: Text(l10n.loginError(e.toString()))),
         );
       }
     }

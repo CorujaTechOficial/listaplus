@@ -5,6 +5,7 @@ import '../models/category.dart';
 import '../models/unit.dart';
 import '../models/shopping_item.dart';
 import '../providers/shopping_list_provider.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class EditItemDialog extends ConsumerStatefulWidget {
   const EditItemDialog({super.key, required this.listId, required this.item});
@@ -63,8 +64,9 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: const Text('Editar Item'),
+      title: Text(l10n.editItem),
       content: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -105,9 +107,9 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                   return TextFormField(
                     controller: textEditingController,
                     focusNode: focusNode,
-                    decoration: const InputDecoration(labelText: 'Nome do item'),
+                    decoration: InputDecoration(labelText: l10n.itemName),
                     onFieldSubmitted: (String value) => onFieldSubmitted(), // coverage:ignore-line
-                    validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+                    validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
                   );
                 },
               ),
@@ -117,16 +119,16 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                   Expanded(
                     child: TextFormField(
                       controller: _quantityController,
-                      decoration: const InputDecoration(labelText: 'Quantidade'),
+                      decoration: InputDecoration(labelText: l10n.quantityFull),
                       keyboardType: TextInputType.number,
-                      validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+                      validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
                     ),
                   ),
                   const SizedBox(width: Spacing.sm),
                   Expanded(
                     child: DropdownButtonFormField<Unit>(
                       value: _selectedUnit,
-                      decoration: const InputDecoration(labelText: 'Unidade'),
+                      decoration: InputDecoration(labelText: l10n.unit),
                       items: Unit.values.map((u) {
                         return DropdownMenuItem(value: u, child: Text(u.label));
                       }).toList(),
@@ -138,7 +140,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
               const SizedBox(height: Spacing.sm),
               DropdownButtonFormField<Category>(
                 value: _selectedCategory,
-                decoration: const InputDecoration(labelText: 'Categoria'),
+                decoration: InputDecoration(labelText: l10n.category),
                 items: Category.values.map((cat) {
                   return DropdownMenuItem(value: cat, child: Text(cat.label));
                 }).toList(),
@@ -147,7 +149,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
               const SizedBox(height: Spacing.sm),
               TextFormField(
                 controller: _priceController,
-                decoration: const InputDecoration(labelText: 'Preço estimado (R\$)'),
+                decoration: InputDecoration(labelText: l10n.estimatedPrice),
                 keyboardType: const TextInputType.numberWithOptions(decimal: true),
               ),
             ],
@@ -155,7 +157,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
+        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.cancel)),
         ElevatedButton(
           onPressed: () async {
             if (_formKey.currentState!.validate()) {
@@ -175,7 +177,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
               }
             }
           },
-          child: const Text('Salvar'),
+          child: Text(l10n.save),
         ),
       ],
     );

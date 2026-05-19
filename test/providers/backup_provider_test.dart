@@ -34,7 +34,7 @@ void main() {
       final json = await service.exportToJson();
       final data = jsonDecode(json) as Map<String, dynamic>;
       expect(data['version'], 1);
-      expect(data['lists'], {});
+      expect(data['lists'], <String, dynamic>{});
       expect(data['exportedAt'], isA<String>());
     });
 
@@ -97,7 +97,7 @@ void main() {
         'lists': {
           list.id: {
             'list': list.toJson(),
-            'items': [],
+            'items': <Map<String, dynamic>>[],
           },
         },
       });
@@ -117,8 +117,8 @@ void main() {
         'version': 1,
         'exportedAt': DateTime.now().toIso8601String(),
         'lists': {
-          listA.id: {'list': listA.toJson(), 'items': []},
-          listB.id: {'list': listB.toJson(), 'items': []},
+          listA.id: {'list': listA.toJson(), 'items': <Map<String, dynamic>>[]},
+          listB.id: {'list': listB.toJson(), 'items': <Map<String, dynamic>>[]},
         },
       });
 

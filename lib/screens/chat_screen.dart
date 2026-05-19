@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/chat_message.dart';
 import '../providers/chat_provider.dart';
@@ -61,16 +62,17 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isPremium = ref.watch(premiumProvider).valueOrNull ?? false;
 
     if (!isPremium) {
       return PremiumGate(
-        title: 'Assistente de IA',
-        description: 'Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.',
+        title: l10n.aiAssistant,
+        description: l10n.aiAssistantDescription,
         // coverage:ignore-start
         onUpgrade: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => const PaywallScreen()),
+          MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
         ),
         // coverage:ignore-end
       );
@@ -81,21 +83,21 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.listName ?? 'Assistente Geral'),
+        title: Text(widget.listName ?? l10n.generalAssistant),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_sweep),
             onPressed: () {
-              showDialog(
+              showDialog<void>(
                 context: context,
                 builder: (context) => AlertDialog(
-                  title: const Text('Limpar Histórico'),
-                  content: const Text('Deseja apagar todas as mensagens desta sessão?'),
+                  title: Text(l10n.clearHistory),
+                  content: Text(l10n.clearHistoryConfirm),
                   actions: [
                     // coverage:ignore-start
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text('Cancelar'),
+                      child: Text(l10n.cancel),
                     ),
                     // coverage:ignore-end
                     TextButton(
@@ -103,7 +105,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                         ref.read(chatSessionProvider(widget.listId).notifier).clearHistory();
                         Navigator.pop(context);
                       },
-                      child: const Text('Limpar'),
+                      child: Text(l10n.clear),
                     ),
                   ],
                 ),
@@ -126,18 +128,18 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                         const SizedBox(height: 16),
                         Text(
                           widget.listId != null
-                              ? 'Como posso ajudar com sua lista?'
-                              : 'Como posso ajudar com suas compras hoje?',
+                              ? l10n.listHelp
+                              : l10n.generalHelp,
                           textAlign: TextAlign.center,
                           style: theme.textTheme.titleMedium,
                         ),
                         const SizedBox(height: 8),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 32),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 32),
                           child: Text(
-                            'Peça sugestões de itens, receitas or dicas de economia.',
+                            l10n.chatSubtitle,
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.grey),
+                            style: const TextStyle(color: Colors.grey),
                           ),
                         ),
                       ],
@@ -161,7 +163,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                 );
               },
               loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Center(child: Text('Erro ao carregar chat: $e')), // coverage:ignore-line
+              error: (e, _) => Center(child: Text(l10n.chatError(e.toString()))), // coverage:ignore-line
             ),
           ),
           _buildInput(),
@@ -171,6 +173,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   }
 
   Widget _buildInput() {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -190,7 +193,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
               child: TextField(
                 controller: _textController,
                 decoration: InputDecoration(
-                  hintText: 'Digite sua mensagem...',
+                  hintText: l10n.chatHint,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(24),
                     borderSide: BorderSide.none,

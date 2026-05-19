@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/tokens.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class PremiumGate extends StatelessWidget {
   const PremiumGate({
@@ -15,6 +16,7 @@ class PremiumGate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(title)),
@@ -37,7 +39,7 @@ class PremiumGate extends StatelessWidget {
               ),
               const SizedBox(height: Spacing.xs),
               Text(
-                'Faça upgrade para desbloquear',
+                l10n.premiumUpgrade,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
@@ -46,7 +48,7 @@ class PremiumGate extends StatelessWidget {
               FilledButton.tonalIcon(
                 onPressed: onUpgrade,
                 icon: const Icon(Icons.workspace_premium),
-                label: const Text('Fazer upgrade'),
+                label: Text(l10n.upgrade),
               ),
             ],
           ),

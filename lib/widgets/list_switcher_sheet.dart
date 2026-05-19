@@ -6,6 +6,7 @@ import '../providers/current_list_provider.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../theme/tokens.dart';
 import 'create_list_dialog.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class ListSwitcherSheet extends ConsumerStatefulWidget {
   const ListSwitcherSheet({super.key, required this.currentListId});
@@ -17,8 +18,11 @@ class ListSwitcherSheet extends ConsumerStatefulWidget {
 }
 
 class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
+  bool _showArchived = false;
+
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final listsAsync = ref.watch(shoppingListsProvider);
     final theme = Theme.of(context);
 
@@ -36,12 +40,17 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
               child: Row(
                 children: [
                   Text(
-                    'Minhas Listas',
+                    _showArchived ? l10n.listHistory : l10n.myLists,
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   const Spacer(),
+                  IconButton(
+                    icon: Icon(_showArchived ? Icons.list_alt : Icons.history),
+                    tooltip: _showArchived ? l10n.viewActive : l10n.viewHistory,
+                    onPressed: () => setState(() => _showArchived = !_showArchived),
+                  ),
                   IconButton(
                     icon: const Icon(Icons.close),
                     onPressed: () => Navigator.pop(context),
@@ -50,71 +59,107 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
               ),
             ),
             const Divider(height: 1),
-            if (listsAsync.value case final lists?)
-              Flexible(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: lists.length,
-                  itemBuilder: (context, index) {
-                    final list = lists[index];
-                    final isCurrent = list.id == widget.currentListId;
-                    return ListTile(
-                      leading: Icon(
-                        list.isShared ? Icons.group : (isCurrent ? Icons.check_circle : Icons.circle_outlined),
-                        color: list.isShared
-                            ? theme.colorScheme.tertiary
-                            : (isCurrent
-                                ? theme.colorScheme.primary
-                                : theme.colorScheme.onSurfaceVariant),
-                      ),
-                      title: Text(
-                        list.name,
-                        style: TextStyle(
-                          fontWeight:
-                              isCurrent ? FontWeight.w700 : FontWeight.normal,
+            if (listsAsync.value case final allLists?)
+              Builder(builder: (context) {
+                final lists = allLists.where((l) => l.isArchived == _showArchived).toList();
+                
+                if (lists.isEmpty) {
+                  return Padding(
+                    padding: const EdgeInsets.all(Spacing.xl),
+                    child: Center(
+                      child: Text(
+                        _showArchived ? l10n.noArchivedLists : l10n.noActiveLists,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
                         ),
                       ),
-                      subtitle: list.isShared
-                          ? Text(
-                              'Compartilhada',
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: theme.colorScheme.tertiary,
+                    ),
+                  );
+                }
+
+                return Flexible(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: lists.length,
+                    itemBuilder: (context, index) {
+                      final list = lists[index];
+                      final isCurrent = list.id == widget.currentListId;
+                      return ListTile(
+                        leading: Icon(
+                          _showArchived 
+                              ? Icons.archive_outlined
+                              : (list.isShared ? Icons.group : (isCurrent ? Icons.check_circle : Icons.circle_outlined)),
+                          color: _showArchived
+                              ? theme.colorScheme.onSurfaceVariant
+                              : (list.isShared
+                                  ? theme.colorScheme.tertiary
+                                  : (isCurrent
+                                      ? theme.colorScheme.primary
+                                      : theme.colorScheme.onSurfaceVariant)),
+                        ),
+                        title: Text(
+                          list.name,
+                          style: TextStyle(
+                            fontWeight:
+                                isCurrent ? FontWeight.w700 : FontWeight.normal,
+                          ),
+                        ),
+                        subtitle: _showArchived && list.archivedAt != null
+                            ? Text(
+                                l10n.completedOn('${list.archivedAt!.day}/${list.archivedAt!.month}/${list.archivedAt!.year}'),
+                                style: theme.textTheme.bodySmall,
+                              )
+                            : list.isShared
+                                ? Text(
+                                    l10n.sharedLabel,
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: theme.colorScheme.tertiary,
+                                    ),
+                                  )
+                                : null,
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (_showArchived)
+                              IconButton(
+                                icon: const Icon(Icons.unarchive_outlined, size: 20),
+                                tooltip: l10n.restore,
+                                onPressed: () => _unarchiveList(list),
                               ),
-                            )
-                          : null,
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (list.isShared)
-                            IconButton(
-                              icon: Icon(
-                                Icons.remove_circle_outline,
-                                size: 20,
-                                color: theme.colorScheme.error,
+                            if (list.isShared)
+                              IconButton(
+                                icon: Icon(
+                                  Icons.remove_circle_outline,
+                                  size: 20,
+                                  color: theme.colorScheme.error,
+                                ),
+                                tooltip: l10n.removeSharedTooltip,
+                                onPressed: () => _removeSharedList(list),
+                              )
+                            else ...[
+                              IconButton(
+                                icon: const Icon(Icons.edit_outlined, size: 20),
+                                tooltip: 'Renomear',
+                                onPressed: () => _renameList(list),
                               ),
-                              onPressed: () => _removeSharedList(list),
-                            )
-                          else ...[
-                            IconButton(
-                              icon: const Icon(Icons.edit_outlined, size: 20),
-                              onPressed: () => _renameList(list),
-                            ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.delete_outline,
-                                size: 20,
-                                color: theme.colorScheme.error,
+                              IconButton(
+                                icon: Icon(
+                                  Icons.delete_outline,
+                                  size: 20,
+                                  color: theme.colorScheme.error,
+                                ),
+                                tooltip: l10n.delete,
+                                onPressed: () => _deleteList(list),
                               ),
-                              onPressed: () => _deleteList(list),
-                            ),
+                            ],
                           ],
-                        ],
-                      ),
-                      onTap: isCurrent ? null : () => _switchList(list.id),
-                    );
-                  },
-                ),
-              )
+                        ),
+                        onTap: (isCurrent || _showArchived) ? null : () => _switchList(list.id),
+                      );
+                    },
+                  ),
+                );
+              })
             else
               const Padding(
                 padding: EdgeInsets.all(Spacing.xl),
@@ -126,13 +171,17 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
               child: FilledButton.tonalIcon(
                 onPressed: _createList,
                 icon: const Icon(Icons.add),
-                label: const Text('Criar nova lista'),
+                label: Text(l10n.createNewList),
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _unarchiveList(ShoppingList list) {
+    ref.read(shoppingListsProvider.notifier).unarchiveList(list.id);
   }
 
   void _switchList(String listId) {
@@ -187,23 +236,23 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
   Future<void> _deleteList(ShoppingList list) async {
     final confirm = await showDialog<bool>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Excluir lista'),
-        content: Text(
-          'Tem certeza que deseja excluir "${list.name}"? '
-          'Todos os itens serão removidos.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancelar'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text('Excluir'),
-          ),
-        ],
-      ),
+      builder: (_) {
+        final dl10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(dl10n.deleteListTitle),
+          content: Text(dl10n.deleteListContent(list.name)),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: Text(dl10n.cancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, true),
+              child: Text(dl10n.delete),
+            ),
+          ],
+        );
+      },
     );
     if (confirm != true) {
       return;
@@ -222,23 +271,23 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
   Future<void> _removeSharedList(ShoppingList list) async {
     final confirm = await showDialog<bool>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Remover lista compartilhada'),
-        content: Text(
-          'Remover "${list.name}" da sua lista de listas? '
-          'A lista original não será afetada.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancelar'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text('Remover'),
-          ),
-        ],
-      ),
+      builder: (_) {
+        final dl10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(dl10n.removeSharedListTitle),
+          content: Text(dl10n.removeSharedListContent(list.name)),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: Text(dl10n.cancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, true),
+              child: Text(dl10n.remove),
+            ),
+          ],
+        );
+      },
     );
     if (confirm != true) {
       return;

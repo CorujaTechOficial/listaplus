@@ -1,0 +1,176 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../models/pantry_item.dart';
+import '../models/category.dart';
+import '../models/unit.dart';
+import 'firestore_service_provider.dart';
+import 'premium_provider.dart';
+
+part 'pantry_items_provider.g.dart';
+
+const int freePantryLimit = 10;
+
+@riverpod
+class PantryItems extends _$PantryItems {
+  @override
+  Future<List<PantryItem>> build() async {
+    final service = ref.watch(firestoreServiceProvider);
+    return service.loadPantryItems();
+  }
+
+  Future<void> addItem({
+    required String name,
+    required int idealQuantity,
+    int currentQuantity = 0,
+    Category category = Category.others,
+    Unit unit = Unit.un,
+    double? estimatedPrice,
+    bool trackStock = true,
+  }) async {
+    final isPremium = ref.read(premiumProvider).value ?? false;
+    final currentItems = state.value ?? [];
+
+    if (!isPremium && currentItems.length >= freePantryLimit) {
+      throw Exception('Limite de $freePantryLimit itens na dispensa no plano gratuito. Faça upgrade para adicionar mais.');
+    }
+
+    final service = ref.read(firestoreServiceProvider);
+    final newItem = PantryItem(
+      name: name,
+      idealQuantity: idealQuantity,
+      currentQuantity: currentQuantity,
+      category: category,
+      unit: unit,
+      estimatedPrice: estimatedPrice,
+      trackStock: trackStock,
+    );
+
+    state = AsyncValue.data([...currentItems, newItem]);
+    await service.savePantryItems(state.value ?? []);
+  }
+
+  Future<void> updateItem(PantryItem item) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((e) => e.id == item.id ? item : e).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> removeItem(String id) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.where((item) => item.id != id).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> setCurrentQuantity(String id, int quantity) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((item) {
+      if (item.id == id) {
+        return item.copyWith(
+          currentQuantity: quantity.clamp(0, item.idealQuantity),
+          updatedAt: DateTime.now(),
+        );
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> incrementCurrent(String id) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((item) {
+      if (item.id == id && item.currentQuantity < item.idealQuantity) {
+        return item.copyWith(
+          currentQuantity: item.currentQuantity + 1,
+          updatedAt: DateTime.now(),
+        );
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> decrementCurrent(String id) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((item) {
+      if (item.id == id && item.currentQuantity > 0) {
+        return item.copyWith(
+          currentQuantity: item.currentQuantity - 1,
+          updatedAt: DateTime.now(),
+        );
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> consumeItem(String id) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((item) {
+      if (item.id == id && item.currentQuantity > 0) {
+        return item.copyWith(
+          currentQuantity: item.currentQuantity - 1,
+          updatedAt: DateTime.now(),
+        );
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> restockItem(String id, int amount) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((item) {
+      if (item.id == id) {
+        return item.copyWith(
+          currentQuantity: (item.currentQuantity + amount).clamp(0, item.idealQuantity),
+          updatedAt: DateTime.now(),
+        );
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> setIdealQuantity(String id, int quantity) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    final updated = items.map((item) {
+      if (item.id == id) {
+        return item.copyWith(
+          idealQuantity: quantity.clamp(1, 999),
+          updatedAt: DateTime.now(),
+        );
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    await service.savePantryItems(updated);
+  }
+
+  Future<void> clearAll() async {
+    final service = ref.read(firestoreServiceProvider);
+    state = const AsyncValue.data([]);
+    await service.savePantryItems([]);
+  }
+}

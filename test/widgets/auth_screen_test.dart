@@ -23,7 +23,7 @@ void main() {
             builder: (_) => Scaffold(
               body: ElevatedButton(
                 onPressed: () =>
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => const AuthScreen())),
+                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) => const AuthScreen())),
                 child: const Text('Abrir Login'),
               ),
             ),

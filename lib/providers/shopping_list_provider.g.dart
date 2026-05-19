@@ -142,13 +142,13 @@ class _ListOwnerProviderElement extends AutoDisposeProviderElement<String?>
   String get listId => (origin as ListOwnerProvider).listId;
 }
 
-String _$shoppingListItemsHash() => r'3cf020dd2d4fbb5307de0ed9272c28c46a3af267';
+String _$shoppingListItemsHash() => r'ca6fee760e40b1850ad05a575f2f79a0f0c10e33';
 
 abstract class _$ShoppingListItems
-    extends BuildlessAutoDisposeAsyncNotifier<List<ShoppingItem>> {
+    extends BuildlessAutoDisposeStreamNotifier<List<ShoppingItem>> {
   late final String listId;
 
-  FutureOr<List<ShoppingItem>> build(String listId);
+  Stream<List<ShoppingItem>> build(String listId);
 }
 
 /// See also [ShoppingListItems].
@@ -190,7 +190,7 @@ class ShoppingListItemsFamily extends Family<AsyncValue<List<ShoppingItem>>> {
 /// See also [ShoppingListItems].
 class ShoppingListItemsProvider
     extends
-        AutoDisposeAsyncNotifierProviderImpl<
+        AutoDisposeStreamNotifierProviderImpl<
           ShoppingListItems,
           List<ShoppingItem>
         > {
@@ -223,7 +223,7 @@ class ShoppingListItemsProvider
   final String listId;
 
   @override
-  FutureOr<List<ShoppingItem>> runNotifierBuild(
+  Stream<List<ShoppingItem>> runNotifierBuild(
     covariant ShoppingListItems notifier,
   ) {
     return notifier.build(listId);
@@ -246,7 +246,10 @@ class ShoppingListItemsProvider
   }
 
   @override
-  AutoDisposeAsyncNotifierProviderElement<ShoppingListItems, List<ShoppingItem>>
+  AutoDisposeStreamNotifierProviderElement<
+    ShoppingListItems,
+    List<ShoppingItem>
+  >
   createElement() {
     return _ShoppingListItemsProviderElement(this);
   }
@@ -268,14 +271,14 @@ class ShoppingListItemsProvider
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 mixin ShoppingListItemsRef
-    on AutoDisposeAsyncNotifierProviderRef<List<ShoppingItem>> {
+    on AutoDisposeStreamNotifierProviderRef<List<ShoppingItem>> {
   /// The parameter `listId` of this provider.
   String get listId;
 }
 
 class _ShoppingListItemsProviderElement
     extends
-        AutoDisposeAsyncNotifierProviderElement<
+        AutoDisposeStreamNotifierProviderElement<
           ShoppingListItems,
           List<ShoppingItem>
         >

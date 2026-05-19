@@ -7,6 +7,8 @@ class ShoppingList {
     required this.name,
     this.budget,
     this.ownerUid,
+    this.isArchived = false,
+    this.archivedAt,
     DateTime? createdAt,
     DateTime? updatedAt,
   })  : id = id ?? const Uuid().v4(),
@@ -19,6 +21,10 @@ class ShoppingList {
       name: json['name'] as String,
       budget: json['budget'] as double?,
       ownerUid: json['ownerUid'] as String?,
+      isArchived: json['isArchived'] as bool? ?? false,
+      archivedAt: json['archivedAt'] != null
+          ? DateTime.parse(json['archivedAt'] as String)
+          : null,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
@@ -28,6 +34,8 @@ class ShoppingList {
   final String name;
   final double? budget;
   final String? ownerUid;
+  final bool isArchived;
+  final DateTime? archivedAt;
 
   bool get isShared => ownerUid != null;
 
@@ -39,6 +47,8 @@ class ShoppingList {
     String? name,
     double? budget,
     String? ownerUid,
+    bool? isArchived,
+    DateTime? archivedAt,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
@@ -47,6 +57,8 @@ class ShoppingList {
       name: name ?? this.name,
       budget: budget ?? this.budget,
       ownerUid: ownerUid ?? this.ownerUid,
+      isArchived: isArchived ?? this.isArchived,
+      archivedAt: archivedAt ?? this.archivedAt,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -58,6 +70,8 @@ class ShoppingList {
       'name': name,
       'budget': budget,
       'ownerUid': ownerUid,
+      'isArchived': isArchived,
+      'archivedAt': archivedAt?.toIso8601String(),
       'createdAt': createdAt.toIso8601String(),
       'updatedAt': updatedAt.toIso8601String(),
     };

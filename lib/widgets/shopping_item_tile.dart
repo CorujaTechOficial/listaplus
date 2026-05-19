@@ -7,6 +7,7 @@ import '../theme/colors.dart';
 import '../providers/shopping_list_provider.dart';
 import '../models/shopping_item.dart';
 import 'edit_item_dialog.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class ShoppingItemTile extends ConsumerWidget {
   const ShoppingItemTile({
@@ -26,6 +27,7 @@ class ShoppingItemTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final isPurchased = item.isPurchased;
@@ -158,9 +160,9 @@ class ShoppingItemTile extends ConsumerWidget {
         notifier.removeItem(item.id);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Item removido'),
+            content: Text(l10n.itemRemoved),
             action: SnackBarAction(
-              label: 'Desfazer',
+              label: l10n.undo,
               onPressed: () => notifier.restoreItem(removedItem),
             ),
           ),
@@ -171,7 +173,7 @@ class ShoppingItemTile extends ConsumerWidget {
   }
 
   void _showEditDialog(BuildContext context, WidgetRef ref) {
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (_) => EditItemDialog(listId: listId, item: item),
     );

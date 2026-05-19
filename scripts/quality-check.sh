@@ -36,7 +36,7 @@ cd "$PROJECT_DIR"
 # ═════════════════════════════════════════════════════════════════════════════
 # PASSO 1 — flutter analyze (fatal em qualquer issue)
 # ═════════════════════════════════════════════════════════════════════════════
-step "1/5  flutter analyze — zero tolerance"
+step "1/6  flutter analyze — zero tolerance"
 
 if ! command -v flutter &>/dev/null; then
   err "flutter não encontrado no PATH"
@@ -52,9 +52,24 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 2 — flutter test --coverage
+# PASSO 2 — Firestore Security Rules validation
 # ═════════════════════════════════════════════════════════════════════════════
-step "2/5  flutter test --coverage — mínimo 100%"
+step "2/6  firebase firestore:validate — Security Rules"
+
+if command -v npx &>/dev/null && npx -y firebase-tools@latest --version &>/dev/null; then
+  npx -y firebase-tools@latest firestore:validate --project listaplus-6547b 2>&1 && {
+    ok "Firestore rules OK"
+  } || {
+    err "Firestore rules validation falhou"
+  }
+else
+  warn "firebase-tools não encontrado — pulando validação"
+fi
+
+# ═════════════════════════════════════════════════════════════════════════════
+# PASSO 3 — flutter test --coverage
+# ═════════════════════════════════════════════════════════════════════════════
+step "3/6  flutter test --coverage — mínimo 100%"
 
 if ! command -v flutter &>/dev/null; then
   err "flutter não encontrado no PATH"
@@ -93,9 +108,9 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 3 — flutter build (todas as plataformas disponíveis)
+# PASSO 4 — flutter build (todas as plataformas disponíveis)
 # ═════════════════════════════════════════════════════════════════════════════
-step "3/5  flutter build web"
+step "4/6  flutter build web"
 
 if ! command -v flutter &>/dev/null; then
   err "flutter não encontrado no PATH"
@@ -108,9 +123,9 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 4 — sonar-scanner (envia análise com issues Dart)
+# PASSO 5 — sonar-scanner (envia análise com issues Dart)
 # ═════════════════════════════════════════════════════════════════════════════
-step "4/5  sonar-scanner"
+step "5/6  sonar-scanner"
 
 SONAR_ARGS=(
   -Dsonar.projectKey=shopping_list
@@ -150,9 +165,9 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 5 — Validação cruzada SonarQube Quality Gate
+# PASSO 6 — Validação cruzada SonarQube Quality Gate
 # ═════════════════════════════════════════════════════════════════════════════
-step "5/5  Quality Gate do SonarQube"
+step "6/6  Quality Gate do SonarQube"
 
 if [ -n "$SONAR_TOKEN" ]; then
   # Aguarda processamento e consulta o Quality Gate

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
 import '../models/premium_feature.dart';
@@ -12,6 +13,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final currentColorAsync = ref.watch(themeColorProvider);
     final isPremiumAsync = ref.watch(premiumProvider);
@@ -19,7 +21,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
     final isPremium = isPremiumAsync.value ?? false;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Temas')),
+      appBar: AppBar(title: Text(l10n.prefCustomThemes)),
       body: GridView.builder(
         padding: const EdgeInsets.all(Spacing.md),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -46,7 +48,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
                       }
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => const PaywallScreen()),
+                        MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
                       );
                     }
                   : () {

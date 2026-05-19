@@ -6,6 +6,7 @@ import '../theme/tokens.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
 import '../providers/shopping_list_provider.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class AddItemDialog extends ConsumerStatefulWidget {
   const AddItemDialog({super.key, required this.listId});
@@ -51,6 +52,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
@@ -72,7 +74,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
             ),
           ),
           const SizedBox(width: Spacing.sm),
-          const Text('Adicionar Item'),
+          Text(l10n.addItem),
         ],
       ),
       content: Form(
@@ -110,13 +112,13 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                   return TextFormField(
                     controller: textEditingController,
                     focusNode: focusNode,
-                    decoration: const InputDecoration(
-                      labelText: 'Nome do item',
-                      prefixIcon: Icon(Icons.shopping_bag_outlined),
+                    decoration: InputDecoration(
+                      labelText: l10n.itemName,
+                      prefixIcon: const Icon(Icons.shopping_bag_outlined),
                     ),
                     autofocus: true,
                     onFieldSubmitted: (String value) => onFieldSubmitted(),
-                    validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+                    validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
                   );
                 },
               ),
@@ -126,21 +128,21 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                   Expanded(
                     child: TextFormField(
                       controller: _quantityController,
-                      decoration: const InputDecoration(
-                        labelText: 'Qtd',
-                        prefixIcon: Icon(Icons.numbers),
+                      decoration: InputDecoration(
+                        labelText: l10n.quantityShort,
+                        prefixIcon: const Icon(Icons.numbers),
                       ),
                       keyboardType: TextInputType.number,
-                      validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+                    validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
                     ),
                   ),
                   const SizedBox(width: Spacing.sm),
                   Expanded(
                     child: DropdownButtonFormField<Unit>(
                       value: _selectedUnit,
-                      decoration: const InputDecoration(
-                        labelText: 'Unidade',
-                        prefixIcon: Icon(Icons.straighten),
+                      decoration: InputDecoration(
+                        labelText: l10n.unit,
+                        prefixIcon: const Icon(Icons.straighten),
                       ),
                       items: Unit.values.map((u) {
                         return DropdownMenuItem(value: u, child: Text(u.label));
@@ -153,9 +155,9 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
               const SizedBox(height: Spacing.sm),
               DropdownButtonFormField<Category>(
                 value: _selectedCategory,
-                decoration: const InputDecoration(
-                  labelText: 'Categoria',
-                  prefixIcon: Icon(Icons.category_outlined),
+                decoration: InputDecoration(
+                  labelText: l10n.category,
+                  prefixIcon: const Icon(Icons.category_outlined),
                 ),
                 items: Category.values.map((cat) {
                   return DropdownMenuItem(value: cat, child: Text(cat.label));
@@ -165,9 +167,9 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
               const SizedBox(height: Spacing.sm),
               TextFormField(
                 controller: _priceController,
-                decoration: const InputDecoration(
-                  labelText: 'Preço estimado (R\$)',
-                  prefixIcon: Icon(Icons.payments_outlined),
+                decoration: InputDecoration(
+                  labelText: l10n.estimatedPrice,
+                  prefixIcon: const Icon(Icons.payments_outlined),
                 ),
                 keyboardType: const TextInputType.numberWithOptions(decimal: true),
               ),
@@ -178,7 +180,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancelar'),
+          child: Text(l10n.cancel),
         ),
         FilledButton(
           onPressed: () async {
@@ -198,7 +200,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
               }
             }
           },
-          child: const Text('Adicionar'),
+          child: Text(l10n.add),
         ),
       ],
       actionsPadding: const EdgeInsets.fromLTRB(Spacing.md, 0, Spacing.md, Spacing.md),

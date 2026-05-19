@@ -5,6 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../providers/ad_service_provider.dart';
 import '../providers/credits_provider.dart';
 import '../theme/tokens.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class RewardedAdButton extends ConsumerStatefulWidget {
   const RewardedAdButton({super.key});
@@ -25,7 +26,7 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
     if (!ref.read(adServiceProvider).isAvailable) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Anúncios indisponíveis no momento.')),
+          SnackBar(content: Text(AppLocalizations.of(context)!.adsUnavailable)),
         );
       }
       return;
@@ -48,7 +49,7 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
           if (mounted) {
             setState(() => _isLoading = false);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Erro ao carregar anúncio. Tente novamente.')),
+              SnackBar(content: Text(AppLocalizations.of(context)!.adLoadError)),
             );
           }
         },
@@ -65,7 +66,7 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
         ad.dispose();
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Erro ao exibir anúncio.')),
+            SnackBar(content: Text(AppLocalizations.of(context)!.adDisplayError)),
           );
         }
       },
@@ -76,8 +77,8 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
         ref.read(creditsProvider.notifier).extendBy24h();
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('+24h de Premium!'),
+            SnackBar(
+              content: Text(AppLocalizations.of(context)!.premium24h),
               behavior: SnackBarBehavior.floating,
             ),
           );
@@ -88,6 +89,7 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
 
     return Card(
@@ -102,12 +104,12 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Ganhe Premium grátis!',
+                    l10n.earnPremium,
                     style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    'Assista um vídeo e ganhe 24h de Premium',
+                    l10n.watchAdDescription,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
@@ -128,7 +130,7 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
                       ),
                     )
                   : const Icon(Icons.play_circle_outline, size: 20),
-              label: Text(_isLoading ? 'Carregando...' : 'Assistir'),
+              label: Text(_isLoading ? l10n.loading : l10n.watch),
             ),
           ],
         ),

@@ -17,7 +17,7 @@ void main() {
           builder: (_) => Scaffold(
             body: ElevatedButton(
               onPressed: () =>
-                Navigator.push(context, MaterialPageRoute(builder: (_) => const PaywallScreen())),
+                Navigator.push<void>(context, MaterialPageRoute(builder: (_) => const PaywallScreen())),
               child: const Text('Abrir Premium'),
             ),
           ),

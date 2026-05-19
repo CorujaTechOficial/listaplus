@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'package:flutter/services.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 import '../theme/tokens.dart';
@@ -22,8 +23,10 @@ import '../providers/share_provider.dart';
 import '../providers/premium_provider.dart';
 import '../providers/current_list_provider.dart';
 import '../providers/analytics_service_provider.dart';
+import '../providers/app_review_service_provider.dart';
 import 'paywall_screen.dart';
 import 'chat_screen.dart';
+import 'settings_screen.dart';
 import '../widgets/list_switcher_sheet.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -43,6 +46,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final itemsAsync = ref.watch(shoppingListItemsProvider(widget.listId));
@@ -56,9 +60,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: _selectionMode
-            ? Text(
-                '${_selectedIds.length} selecionado${_selectedIds.length != 1 ? 's' : ''}',
-              )
+            ? Text(l10n.selectedItems(_selectedIds.length))
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -153,43 +155,53 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   icon: const Icon(Icons.more_vert),
                   itemBuilder: (_) {
                     final items = <PopupMenuEntry<String>>[
-                      const PopupMenuItem(
-                        value: 'clear_purchased',
-                        child: Text('Limpar comprados'),
-                      ),
-                      const PopupMenuItem(
-                        value: 'clear',
-                        child: Text('Limpar lista'),
-                      ),
-                      const PopupMenuItem(
-                        value: 'share',
-                        child: Text('Compartilhar'),
-                      ),
-                      const PopupMenuItem(
-                        value: 'share_code',
-                        child: Text('Compartilhar via código'),
-                      ),
-                      const PopupMenuItem(
-                        value: 'import_code',
-                        child: Text('Importar via código'),
-                      ),
-                      const PopupMenuItem(
-                        value: 'list_assistant',
+                      PopupMenuItem(
+                        value: 'archive',
                         child: Row(
                           children: [
-                            Icon(Icons.auto_awesome, size: 18),
-                            SizedBox(width: 8),
-                            Flexible(child: Text('Assistente desta lista')),
+                            const Icon(Icons.archive_outlined, size: 18),
+                            const SizedBox(width: 8),
+                            Text(l10n.completePurchase),
                           ],
                         ),
                       ),
-                      const PopupMenuItem(
+                      PopupMenuItem(
+                        value: 'clear_purchased',
+                        child: Text(l10n.clearPurchased),
+                      ),
+                      PopupMenuItem(
+                        value: 'clear',
+                        child: Text(l10n.clearList),
+                      ),
+                      PopupMenuItem(
+                        value: 'share',
+                        child: Text(l10n.share),
+                      ),
+                      PopupMenuItem(
+                        value: 'share_code',
+                        child: Text(l10n.shareViaCode),
+                      ),
+                      PopupMenuItem(
+                        value: 'import_code',
+                        child: Text(l10n.importViaCode),
+                      ),
+                      PopupMenuItem(
+                        value: 'list_assistant',
+                        child: Row(
+                          children: [
+                            const Icon(Icons.auto_awesome, size: 18),
+                            const SizedBox(width: 8),
+                            Flexible(child: Text(l10n.listAssistant)),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
                         value: 'global_assistant',
                         child: Row(
                           children: [
-                            Icon(Icons.assistant, size: 18),
-                            SizedBox(width: 8),
-                            Flexible(child: Text('Assistente geral')),
+                            const Icon(Icons.assistant, size: 18),
+                            const SizedBox(width: 8),
+                            Flexible(child: Text(l10n.globalAssistant)),
                           ],
                         ),
                       ),
@@ -197,27 +209,39 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     if (!isPremium) {
                     items.add(const PopupMenuDivider());
                     items.add(
-                      const PopupMenuItem(
+                      PopupMenuItem(
                         value: 'upgrade',
                         child: Row(
                           children: [
-                            Icon(Icons.workspace_premium, size: 18, color: AppColors.premiumAmber),
-                            SizedBox(width: 8),
-                            Flexible(child: Text('Tornar-se Premium')),
+                            const Icon(Icons.workspace_premium, size: 18, color: AppColors.premiumAmber),
+                            const SizedBox(width: 8),
+                            Flexible(child: Text(l10n.becomePremium)),
                           ],
                         ),
                       ),
                     );
                     }
-                    items.add(const PopupMenuItem(
+                    items.add(PopupMenuItem(
                       value: 'manage_subscription',
-                      child: Text('Gerenciar assinatura'),
+                      child: Text(l10n.manageSubscription),
+                    ));
+                    items.add(PopupMenuItem(
+                      value: 'settings',
+                      child: Row(
+                        children: [
+                          const Icon(Icons.settings, size: 18),
+                          const SizedBox(width: 8),
+                          Text(l10n.settingsAppBar),
+                        ],
+                      ),
                     ));
                     return items;
                   },
                   onSelected: (value) async {
                     final items = itemsAsync.value ?? [];
-                    if (value == 'clear_purchased') {
+                    if (value == 'archive') {
+                      await _archiveList();
+                    } else if (value == 'clear_purchased') {
                       await ref
                           .read(shoppingListItemsProvider(widget.listId).notifier)
                           .clearPurchased();
@@ -225,16 +249,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       final confirm = await showDialog<bool>(
                         context: context,
                         builder: (_) => AlertDialog(
-                          title: const Text('Confirmar'),
-                          content: const Text('Remover todos os itens?'),
+                          title: Text(l10n.confirm),
+                          content: Text(l10n.confirmClearList),
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.pop(context, false),
-                              child: const Text('Cancelar'),
+                              child: Text(l10n.cancel),
                             ),
                             TextButton(
                               onPressed: () => Navigator.pop(context, true),
-                              child: const Text('Remover'),
+                              child: Text(l10n.remove),
                             ),
                           ],
                         ),
@@ -255,7 +279,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         if (context.mounted) {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (_) => const PaywallScreen()),
+                            MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
                           );
                         }
                         return;
@@ -264,14 +288,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         final shareService = ref.read(shareServiceProvider);
                         final code = await shareService.createShareCode(widget.listId);
                         if (context.mounted) {
-                          await showDialog(
+                          await showDialog<void>(
                             context: context,
                             builder: (_) => AlertDialog(
-                              title: const Text('Compartilhar Lista'),
+                              title: Text(l10n.shareListTitle),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const Text('Compartilhe este código:'),
+                                  Text(l10n.shareThisCode),
                                   const SizedBox(height: Spacing.md),
                                   Container(
                                     padding: const EdgeInsets.all(Spacing.md),
@@ -292,7 +316,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               if (!isPremium) const RewardedAdButton(),
               const SizedBox(height: Spacing.xs),
                                   Text(
-                                    'Válido por tempo limitado',
+                                    l10n.validForLimitedTime,
                                     style: theme.textTheme.bodySmall,
                                   ),
                                 ],
@@ -300,7 +324,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               actions: [
                                 TextButton(
                                   onPressed: () => Navigator.pop(context),
-                                  child: const Text('Fechar'),
+                                  child: Text(l10n.close),
                                 ),
                               ],
                             ),
@@ -309,7 +333,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       } on Exception catch (e) {
                         if (context.mounted) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Erro: $e')),
+                            SnackBar(content: Text(l10n.error(e.toString()))),
                           );
                         }
                       }
@@ -319,7 +343,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         if (context.mounted) {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            MaterialPageRoute<void>(
                               builder: (_) => ChatScreen(
                                 listId: widget.listId,
                                 listName: currentList?.name,
@@ -331,7 +355,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         if (context.mounted) {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            MaterialPageRoute<void>(
                               builder: (_) => const ChatScreen(),
                             ),
                           );
@@ -341,7 +365,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       if (context.mounted) {
                         await Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => const PaywallScreen()),
+                          MaterialPageRoute<void>(builder: (_) => const PaywallScreen()),
                         );
                       }
                     } else if (value == 'manage_subscription') {
@@ -351,9 +375,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       } on Exception catch (e) {
                         if (context.mounted) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Erro: $e')),
+                            SnackBar(content: Text(l10n.error(e.toString()))),
                           );
                         }
+                      }
+                    } else if (value == 'settings') {
+                      if (context.mounted) {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(builder: (_) => const SettingsScreen()),
+                        );
                       }
                     }
                   },
@@ -445,7 +476,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Estimado',
+                            l10n.estimated,
                             style: theme.textTheme.bodySmall?.copyWith(
                               fontWeight: FontWeight.w500,
                             ),
@@ -473,7 +504,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Já comprado',
+                            l10n.alreadyPurchased,
                             style: theme.textTheme.bodySmall?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: theme.colorScheme.primary,
@@ -552,13 +583,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           );
         },
         loading: () => const ShimmerList(),
-        error: (e, _) => Center(child: Text('Erro: $e')),
+        error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
       ),
       floatingActionButton: _selectionMode
           ? null
           : FloatingActionButton(
               onPressed: () =>
-                  showDialog(context: context, builder: (_) => AddItemDialog(listId: widget.listId)),
+                  showDialog<void>(context: context, builder: (_) => AddItemDialog(listId: widget.listId)),
               child: const Icon(Icons.add),
             ),
       bottomNavigationBar: _selectionMode && _selectedIds.isNotEmpty
@@ -570,7 +601,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   TextButton.icon(
                     icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
                     label: Text(
-                      'Excluir',
+                      l10n.delete,
                       style: TextStyle(color: theme.colorScheme.error),
                     ),
                     onPressed: () => _deleteSelected(),
@@ -583,7 +614,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   TextButton.icon(
                     icon: Icon(Icons.check_circle_outline, color: theme.colorScheme.primary),
                     label: Text(
-                      'Comprar',
+                      l10n.buy,
                       style: TextStyle(color: theme.colorScheme.primary),
                     ),
                     onPressed: () => _markSelected(true),
@@ -596,7 +627,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   TextButton.icon(
                     icon: Icon(Icons.undo, color: theme.colorScheme.onSurfaceVariant),
                     label: Text(
-                      'Desmarcar',
+                      l10n.unmark,
                       style: TextStyle(color: theme.colorScheme.onSurfaceVariant),
                     ),
                     onPressed: () => _markSelected(false),
@@ -623,19 +654,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _deleteSelected() async {
+    final l10n = AppLocalizations.of(context)!;
     final confirm = await showDialog<bool>(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('Confirmar'),
-        content: Text('Remover ${_selectedIds.length} item(ns)?'),
+        title: Text(l10n.confirm),
+        content: Text(l10n.confirmDeleteItems(_selectedIds.length)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancelar'),
+            child: Text(l10n.cancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Remover'),
+            child: Text(l10n.remove),
           ),
         ],
       ),
@@ -659,21 +691,54 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     _exitSelectionMode();
   }
 
+  Future<void> _archiveList() async {
+    final l10n = AppLocalizations.of(context)!;
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(l10n.completePurchase),
+        content: Text(l10n.confirmArchiveContent),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(l10n.complete),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true && context.mounted) {
+      await ref.read(shoppingListsProvider.notifier).archiveList(widget.listId);
+      await ref.read(appReviewServiceProvider).registerArchiveAndRequestReview();
+      if (context.mounted) {
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.listArchived)),
+        );
+      }
+    }
+  }
+
   void _showBudgetDialog(BuildContext context, ShoppingList list) {
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (_) => BudgetDialog(list: list),
     );
   }
 
   void _showListSwitcher() {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       builder: (_) => ListSwitcherSheet(currentListId: widget.listId),
     );
   }
 
   Future<void> _shareList(List<ShoppingItem> items, String? listName) async {
+    final l10n = AppLocalizations.of(context)!;
     if (items.isEmpty) {
       return;
     }
@@ -681,31 +746,32 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       final i = e.value;
       return '${e.key + 1}. ${i.name} — ${i.quantity}${i.unit.label} (${i.category.label})${i.estimatedPrice != null ? ' R\$${i.estimatedPrice!.toStringAsFixed(2)}' : ''}';
     }).join('\n');
-    await SharePlus.instance.share(ShareParams(text: text, subject: listName ?? 'Lista de Compras'));
+    await SharePlus.instance.share(ShareParams(text: text, subject: listName ?? l10n.shareSubject));
   }
 
   Future<void> _importSharedList() async {
+    final l10n = AppLocalizations.of(context)!;
     final codeController = TextEditingController();
     final code = await showDialog<String>(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('Importar Lista'),
+        title: Text(l10n.importListTitle),
         content: TextField(
           controller: codeController,
           textCapitalization: TextCapitalization.characters,
-          decoration: const InputDecoration(
-            hintText: 'Digite o código',
-            border: OutlineInputBorder(),
+          decoration: InputDecoration(
+            hintText: l10n.enterCodeHint,
+            border: const OutlineInputBorder(),
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancelar'),
+            child: Text(l10n.cancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, codeController.text.trim()),
-            child: const Text('Importar'),
+            child: Text(l10n.import),
           ),
         ],
       ),
@@ -720,7 +786,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       if (context.mounted) {
         // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${result.listName} adicionada!')),
+          SnackBar(content: Text(l10n.listAdded(result.listName))),
         );
       }
       ref.invalidate(shoppingListsProvider);
@@ -729,7 +795,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       if (context.mounted) {
         // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erro: $e')),
+          SnackBar(content: Text(l10n.error(e.toString()))),
         );
       }
     }

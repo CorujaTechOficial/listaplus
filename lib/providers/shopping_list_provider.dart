@@ -20,13 +20,13 @@ String? listOwner(Ref ref, String listId) {
 @riverpod
 class ShoppingListItems extends _$ShoppingListItems {
   @override
-  Future<List<ShoppingItem>> build(String listId) async {
+  Stream<List<ShoppingItem>> build(String listId) {
     final service = ref.watch(firestoreServiceProvider);
     final ownerUid = ref.watch(listOwnerProvider(listId));
     if (ownerUid != null) {
-      return service.loadItemsFromUser(ownerUid, listId);
+      return service.watchItemsFromUser(ownerUid, listId);
     }
-    return service.loadItems(listId);
+    return service.watchItems(listId);
   }
 
   String? _ownerUid() {
@@ -53,8 +53,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     );
 
     final currentItems = state.value ?? [];
-    state = AsyncValue.data([...currentItems, newItem]);
-    await _saveItems(service, state.value ?? []);
+    await _saveItems(service, [...currentItems, newItem]);
   }
 
   Future<void> togglePurchased(String id) async {
@@ -70,7 +69,6 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
 
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
@@ -79,7 +77,6 @@ class ShoppingListItems extends _$ShoppingListItems {
     final items = state.value ?? [];
     final updated = items.where((item) => item.id != id).toList();
 
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
@@ -88,15 +85,13 @@ class ShoppingListItems extends _$ShoppingListItems {
     final items = state.value ?? [];
     final updated = items.map((e) => e.id == item.id ? item : e).toList();
 
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
   Future<void> restoreItem(ShoppingItem item) async {
     final service = ref.read(firestoreServiceProvider);
     final currentItems = state.value ?? [];
-    state = AsyncValue.data([...currentItems, item]);
-    await _saveItems(service, state.value ?? []);
+    await _saveItems(service, [...currentItems, item]);
   }
 
   Future<void> incrementQuantity(String id) async {
@@ -108,7 +103,6 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
       return item;
     }).toList();
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
@@ -121,13 +115,11 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
       return item;
     }).toList();
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
   Future<void> clearAll() async {
     final service = ref.read(firestoreServiceProvider);
-    state = const AsyncValue.data([]);
     await _saveItems(service, []);
   }
 
@@ -135,7 +127,6 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     final updated = items.where((item) => !item.isPurchased).toList();
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
@@ -143,7 +134,6 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     final updated = items.where((item) => !ids.contains(item.id)).toList();
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
@@ -159,7 +149,6 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
       return item;
     }).toList();
-    state = AsyncValue.data(updated);
     await _saveItems(service, updated);
   }
 
@@ -171,7 +160,6 @@ class ShoppingListItems extends _$ShoppingListItems {
     }
     final item = items.removeAt(oldIndex);
     items.insert(newIndex, item);
-    state = AsyncValue.data(items);
     await _saveItems(service, items);
   }
 

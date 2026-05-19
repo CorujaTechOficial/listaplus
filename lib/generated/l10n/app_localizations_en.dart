@@ -1,0 +1,732 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
+class AppLocalizationsEn extends AppLocalizations {
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get appTitle => 'Shopping List';
+
+  @override
+  String get lists => 'Lists';
+
+  @override
+  String get pantry => 'Pantry';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get create => 'Create';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get import => 'Import';
+
+  @override
+  String get rename => 'Rename';
+
+  @override
+  String get upgrade => 'Upgrade';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String error(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get purchaseError => 'Error processing purchase. Try again.';
+
+  @override
+  String get restoreError => 'Error restoring purchases. Try again.';
+
+  @override
+  String get loading => 'Loading...';
+
+  @override
+  String get fieldRequired => 'Required field';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count selected',
+      one: '$count selected',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'Estimated';
+
+  @override
+  String get alreadyPurchased => 'Already purchased';
+
+  @override
+  String get clearList => 'Clear list';
+
+  @override
+  String get clearPurchased => 'Clear purchased';
+
+  @override
+  String get share => 'Share';
+
+  @override
+  String get shareViaCode => 'Share via code';
+
+  @override
+  String get importViaCode => 'Import via code';
+
+  @override
+  String get listAssistant => 'List assistant';
+
+  @override
+  String get globalAssistant => 'Global assistant';
+
+  @override
+  String get becomePremium => 'Become Premium';
+
+  @override
+  String get manageSubscription => 'Manage subscription';
+
+  @override
+  String get completePurchase => 'Complete purchase';
+
+  @override
+  String get confirmClearList => 'Remove all items?';
+
+  @override
+  String get shareListTitle => 'Share List';
+
+  @override
+  String get shareThisCode => 'Share this code:';
+
+  @override
+  String get validForLimitedTime => 'Valid for limited time';
+
+  @override
+  String get importListTitle => 'Import List';
+
+  @override
+  String get enterCodeHint => 'Enter the code';
+
+  @override
+  String get confirmArchiveTitle => 'Complete Purchase';
+
+  @override
+  String get confirmArchiveContent => 'Complete this purchase and archive the list?';
+
+  @override
+  String get complete => 'Complete';
+
+  @override
+  String get listArchived => 'List archived successfully!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName added!';
+  }
+
+  @override
+  String get buy => 'Buy';
+
+  @override
+  String get unmark => 'Unmark';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return 'Remove $count item(s)?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'Confirm';
+
+  @override
+  String confirmContent(int count) {
+    return 'Remove $count item(s)?';
+  }
+
+  @override
+  String get archiveList => 'Archive list';
+
+  @override
+  String get pantryAppBar => 'Pantry';
+
+  @override
+  String get generateShoppingList => 'Generate shopping list';
+
+  @override
+  String get pantryEmpty => 'Empty pantry';
+
+  @override
+  String get pantryEmptySubtitle => 'Add products you want to keep at home';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit item(s) need to be bought';
+  }
+
+  @override
+  String get noItemsToBuy => 'No items need to be bought';
+
+  @override
+  String get newPantryList => 'Pantry Shopping';
+
+  @override
+  String get newListTitle => 'New Shopping List';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count item(s) will be added';
+  }
+
+  @override
+  String get listNameLabel => 'List name';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'List \"$name\" created with $count items';
+  }
+
+  @override
+  String get noTracking => 'No tracking';
+
+  @override
+  String get markAsPurchased => 'Mark as purchased';
+
+  @override
+  String editPantryItem(String name) {
+    return 'Edit $name';
+  }
+
+  @override
+  String get idealQuantity => 'Ideal quantity';
+
+  @override
+  String get currentQuantity => 'Current quantity';
+
+  @override
+  String get consumed => 'Consumed';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name restocked to $quantity $unit';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return 'Remove \"$name\" from pantry?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return 'Edit $name';
+  }
+
+  @override
+  String get settingsAppBar => 'Settings';
+
+  @override
+  String get appearance => 'Appearance';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get system => 'System';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get themeColor => 'Theme color';
+
+  @override
+  String get finance => 'Finance';
+
+  @override
+  String get monthlyBudgetNav => 'Monthly budget';
+
+  @override
+  String get budgetSubtitle => 'Track your monthly spending';
+
+  @override
+  String get data => 'Data';
+
+  @override
+  String get backupNav => 'Backup';
+
+  @override
+  String get backupSubtitle => 'Export or import your data';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get privacy => 'Privacy';
+
+  @override
+  String get termsOfUse => 'Terms of use';
+
+  @override
+  String get backupTitle => 'Backup';
+
+  @override
+  String get backupPremiumDescription => 'Backup and export is a premium feature';
+
+  @override
+  String get exportData => 'Export data';
+
+  @override
+  String get exportDataSubtitle => 'Save all lists as JSON';
+
+  @override
+  String get importData => 'Import data';
+
+  @override
+  String get importDataSubtitle => 'Restore lists from a JSON';
+
+  @override
+  String get importJsonTitle => 'Import JSON';
+
+  @override
+  String get importJsonHint => 'Paste the backup JSON here...';
+
+  @override
+  String get backupExported => 'Backup exported!';
+
+  @override
+  String get budgetAppBar => 'Monthly Budget';
+
+  @override
+  String get budgetPremiumLocked => 'Global monthly budget is premium';
+
+  @override
+  String get budgetUpgradePrompt => 'Upgrade to unlock';
+
+  @override
+  String get noBudgetDefined => 'No budget set';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'Total estimated: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'Set budget';
+
+  @override
+  String get budgetLists => 'Lists';
+
+  @override
+  String get budgetValueLabel => 'Amount (R\$)';
+
+  @override
+  String get setBudgetTitle => 'Monthly Budget';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String get filterPending => 'Pending';
+
+  @override
+  String get filterPurchased => 'Purchased';
+
+  @override
+  String get sortName => 'Name';
+
+  @override
+  String get sortCategory => 'Category';
+
+  @override
+  String get sortDate => 'Date';
+
+  @override
+  String get sortManual => 'Manual';
+
+  @override
+  String get addItem => 'Add Item';
+
+  @override
+  String get itemName => 'Item name';
+
+  @override
+  String get quantityShort => 'Qty';
+
+  @override
+  String get unit => 'Unit';
+
+  @override
+  String get category => 'Category';
+
+  @override
+  String get estimatedPrice => 'Estimated price (R\$)';
+
+  @override
+  String get addItemPrice => 'Estimated price';
+
+  @override
+  String get editItem => 'Edit Item';
+
+  @override
+  String get quantityFull => 'Quantity';
+
+  @override
+  String get editItemPrice => 'Estimated price';
+
+  @override
+  String get addToPantry => 'Add to Pantry';
+
+  @override
+  String get productName => 'Product name';
+
+  @override
+  String get idealQty => 'Ideal qty';
+
+  @override
+  String get currentQty => 'Current qty';
+
+  @override
+  String get trackStock => 'Track stock';
+
+  @override
+  String get trackStockActive => 'Appears in shopping suggestions';
+
+  @override
+  String get trackStockInactive => 'Does not generate shopping suggestion';
+
+  @override
+  String get createListDialog => 'Create List';
+
+  @override
+  String get renameListDialog => 'Rename List';
+
+  @override
+  String get listHistory => 'List History';
+
+  @override
+  String get myLists => 'My Lists';
+
+  @override
+  String get viewActive => 'View Active';
+
+  @override
+  String get viewHistory => 'View History';
+
+  @override
+  String get noArchivedLists => 'No archived lists';
+
+  @override
+  String get noActiveLists => 'No active lists';
+
+  @override
+  String completedOn(String date) {
+    return 'Completed on $date';
+  }
+
+  @override
+  String get sharedLabel => 'Shared';
+
+  @override
+  String get restore => 'Restore';
+
+  @override
+  String get removeSharedTooltip => 'Remove';
+
+  @override
+  String get deleteListTitle => 'Delete list';
+
+  @override
+  String deleteListContent(String name) {
+    return 'Are you sure you want to delete \"$name\"? All items will be removed.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'Remove shared list';
+
+  @override
+  String removeSharedListContent(String name) {
+    return 'Remove \"$name\" from your lists? The original list will not be affected.';
+  }
+
+  @override
+  String get createNewList => 'Create new list';
+
+  @override
+  String get aiAssistant => 'AI Assistant';
+
+  @override
+  String get aiAssistantDescription => 'Get smart suggestions, recipes and personalized tips with our AI assistant.';
+
+  @override
+  String get generalAssistant => 'General Assistant';
+
+  @override
+  String get clearHistory => 'Clear History';
+
+  @override
+  String get clearHistoryConfirm => 'Clear all messages in this session?';
+
+  @override
+  String get chatHint => 'Type your message...';
+
+  @override
+  String chatError(String error) {
+    return 'Error loading chat: $error';
+  }
+
+  @override
+  String get listHelp => 'How can I help with your list?';
+
+  @override
+  String get generalHelp => 'How can I help with your shopping today?';
+
+  @override
+  String get chatSubtitle => 'Ask for item suggestions, recipes or saving tips.';
+
+  @override
+  String get aiError => 'Sorry, an error occurred processing your request. Check your connection or try again later.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt => 'Log in to unlock\npremium features';
+
+  @override
+  String get signInGoogle => 'Sign in with Google';
+
+  @override
+  String get signInApple => 'Sign in with Apple';
+
+  @override
+  String get continueAsGuest => 'Continue as guest';
+
+  @override
+  String loginError(String error) {
+    return 'Login error: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'Upgrade to unlock';
+
+  @override
+  String get earnPremium => 'Earn free Premium!';
+
+  @override
+  String get watchAdDescription => 'Watch a video and earn 24h of Premium';
+
+  @override
+  String get watch => 'Watch';
+
+  @override
+  String get adsUnavailable => 'Ads unavailable at the moment.';
+
+  @override
+  String get adLoadError => 'Error loading ad. Try again.';
+
+  @override
+  String get adDisplayError => 'Error displaying ad.';
+
+  @override
+  String get premium24h => '+24h of Premium!';
+
+  @override
+  String get itemRemoved => 'Item removed';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get emptyListTitle => 'Your list is empty';
+
+  @override
+  String get emptyListSubtitle => 'Add items to get started';
+
+  @override
+  String get noListFoundTitle => 'No lists found';
+
+  @override
+  String get noListFoundSubtitle => 'Create your first list to get started';
+
+  @override
+  String get createFirstList => 'Create First List';
+
+  @override
+  String get listBudgetTitle => 'List Budget';
+
+  @override
+  String get budgetAmountLabel => 'Budget amount';
+
+  @override
+  String get removeBudget => 'Remove';
+
+  @override
+  String get prefUnlimitedLists => 'Unlimited lists';
+
+  @override
+  String get prefSharing => 'Share lists';
+
+  @override
+  String get prefFullHistory => 'Full history';
+
+  @override
+  String get prefExportData => 'Export data';
+
+  @override
+  String get prefCustomThemes => 'Custom themes';
+
+  @override
+  String get prefMonthlyBudget => 'Global monthly budget';
+
+  @override
+  String get prefAIAssistant => 'Personal AI Assistant';
+
+  @override
+  String get prefUnlimitedPantry => 'Unlimited pantry';
+
+  @override
+  String get themeGreen => 'Green';
+
+  @override
+  String get themeBlue => 'Blue';
+
+  @override
+  String get themePurple => 'Purple';
+
+  @override
+  String get themeRed => 'Red';
+
+  @override
+  String get themeOrange => 'Orange';
+
+  @override
+  String get themePink => 'Pink';
+
+  @override
+  String get themeIndigo => 'Indigo';
+
+  @override
+  String get themeAmber => 'Amber';
+
+  @override
+  String get themeTeal => 'Teal';
+
+  @override
+  String get themeBrown => 'Brown';
+
+  @override
+  String get catFruits => 'Fruits';
+
+  @override
+  String get catCleaning => 'Cleaning';
+
+  @override
+  String get catBeverages => 'Beverages';
+
+  @override
+  String get catBakery => 'Bakery';
+
+  @override
+  String get catOthers => 'Others';
+
+  @override
+  String get unitPack => 'pack';
+
+  @override
+  String get shareSubject => 'Shopping List';
+
+  @override
+  String get monthlyBudgetTitle => 'Monthly Budget';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'Delete list';
+
+  @override
+  String get pantryItemRemoved => 'Item removed';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: '$deficit items need to be bought',
+      one: '$deficit item needs to be bought',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'Cart total';
+
+  @override
+  String get restockLabel => 'Restock';
+
+  @override
+  String get adFree => 'Ad free';
+
+  @override
+  String get advancedFeatures => 'Advanced features';
+
+  @override
+  String get selectAll => 'Select all';
+
+  @override
+  String get deselectAll => 'Deselect all';
+
+  @override
+  String get monthlyBudgetAppBar => 'Monthly Budget';
+
+  @override
+  String get budgetEditTitle => 'Monthly Budget';
+}
