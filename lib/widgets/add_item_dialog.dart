@@ -17,6 +17,23 @@ class AddItemDialog extends ConsumerStatefulWidget {
 }
 
 class _AddItemDialogState extends ConsumerState<AddItemDialog> {
+  static const List<String> _commonProducts = [
+    'Abacaxi', 'Absorvente', 'Achocolatado', 'Açúcar', 'Água Sanitária', 'Alface',
+    'Alho', 'Amaciante', 'Amendoim', 'Arroz', 'Azeite', 'Azeitona', 'Bacon',
+    'Balas', 'Banana', 'Batata', 'Batata Palha', 'Biscoito', 'Bolacha', 'Bolo',
+    'Brócolis', 'Café', 'Carne', 'Cebola', 'Cenoura', 'Cerveja', 'Chá', 'Chocolate',
+    'Condicionador', 'Couve', 'Creme de Leite', 'Creme Dental', 'Desinfetante',
+    'Desodorante', 'Detergente', 'Ervilha', 'Esponja de Aço', 'Extrato de Tomate',
+    'Farinha de Mandioca', 'Farinha de Trigo', 'Feijão', 'Fósforo', 'Frango',
+    'Frios', 'Gelatina', 'Goma de Mascar', 'Hambúrguer', 'Hidratante', 'Iogurte',
+    'Leite', 'Leite Condensado', 'Limão', 'Linguiça', 'Macarrão', 'Maçã',
+    'Maionese', 'Mamão', 'Manteiga', 'Margarina', 'Manga', 'Melancia', 'Melão',
+    'Milho', 'Molho de Tomate', 'Mortadela', 'Óleo', 'Ovos', 'Pão', 'Papel Higiênico',
+    'Papel Toalha', 'Peixe', 'Pera', 'Pipoca', 'Pizza', 'Presunto', 'Queijo',
+    'Refrigerante', 'Sabão em Barra', 'Sabão em Pó', 'Sabonete', 'Salgadinho',
+    'Salsicha', 'Sal', 'Shampoo', 'Sorvete', 'Suco', 'Tomate', 'Uva', 'Vinagre',
+  ];
+
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _quantityController = TextEditingController(text: '1');
@@ -64,14 +81,44 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextFormField(
-                controller: _nameController,
-                decoration: const InputDecoration(
-                  labelText: 'Nome do item',
-                  prefixIcon: Icon(Icons.shopping_bag_outlined),
-                ),
-                autofocus: true,
-                validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+              Autocomplete<String>(
+                optionsBuilder: (TextEditingValue textEditingValue) {
+                  if (textEditingValue.text.isEmpty) {
+                    return const Iterable<String>.empty();
+                  }
+                  final query = textEditingValue.text.toLowerCase();
+                  return _commonProducts.where((String option) {
+                    return option.toLowerCase().contains(query);
+                  });
+                },
+                onSelected: (String selection) {
+                  _nameController.text = selection;
+                },
+                fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
+                  textEditingController.addListener(() {
+                    if (_nameController.text != textEditingController.text) {
+                      _nameController.text = textEditingController.text;
+                    }
+                  });
+                  
+                  _nameController.addListener(() {
+                    if (textEditingController.text != _nameController.text) {
+                      textEditingController.text = _nameController.text;
+                    }
+                  });
+
+                  return TextFormField(
+                    controller: textEditingController,
+                    focusNode: focusNode,
+                    decoration: const InputDecoration(
+                      labelText: 'Nome do item',
+                      prefixIcon: Icon(Icons.shopping_bag_outlined),
+                    ),
+                    autofocus: true,
+                    onFieldSubmitted: (String value) => onFieldSubmitted(),
+                    validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
+                  );
+                },
               ),
               const SizedBox(height: Spacing.sm),
               Row(
