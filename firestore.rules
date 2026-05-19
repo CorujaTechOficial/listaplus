@@ -1,0 +1,48 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return request.auth.uid == uid;
+    }
+
+    function hasSharedRef(listId) {
+      return exists(
+        /databases/$(database)/documents/users/$(request.auth.uid)/sharedLists/$(listId)
+      );
+    }
+
+    // User profile doc
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Owned lists — owner can R/W
+    match /users/{uid}/lists/{listId} {
+      allow read, write: if isOwner(uid) || hasSharedRef(listId);
+    }
+
+    // Items — owner can R/W; shared users can R/W items belonging to a shared list
+    match /users/{uid}/items/{itemId} {
+      allow read, write: if isOwner(uid)
+        || hasSharedRef(
+          get(/databases/$(database)/documents/users/$(uid)/items/$(itemId)).data.shoppingListId
+        );
+    }
+
+    // Shared list references for each user
+    match /users/{uid}/sharedLists/{listId} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Share codes — any authenticated user can create/read
+    match /sharedLists/{code} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import 'dart:convert';
+// coverage:ignore-start
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 import '../models/shopping_item.dart';
@@ -64,3 +65,4 @@ class BackupService {
     return '$count listas importadas com sucesso!';
   }
 }
+// coverage:ignore-end

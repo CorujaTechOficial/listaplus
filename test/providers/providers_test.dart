@@ -9,6 +9,9 @@ import 'package:shopping_list/providers/dark_mode_provider.dart';
 import 'package:shopping_list/providers/premium_provider.dart';
 import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/providers/credits_provider.dart';
+import 'package:shopping_list/providers/monthly_budget_provider.dart';
+import 'package:shopping_list/providers/theme_color_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/category.dart';
@@ -507,11 +510,14 @@ void main() {
   group('Premium (riverpod)', () {
     late ProviderContainer container;
     late FakeRevenueCatService fakeRevenueCat;
+    late FakeStorageBackend fakeBackend;
 
     setUp(() {
       fakeRevenueCat = FakeRevenueCatService();
+      fakeBackend = FakeStorageBackend();
       container = ProviderContainer(overrides: [
         revenueCatServiceProvider.overrideWithValue(fakeRevenueCat),
+        firestoreServiceProvider.overrideWithValue(fakeBackend),
       ]);
     });
 
@@ -529,6 +535,124 @@ void main() {
       container.invalidate(premiumProvider);
       final isPremium = await container.read(premiumProvider.future);
       expect(isPremium, true);
+    });
+
+    test('build returns true when credits are active', () async {
+      final date = DateTime.now().add(const Duration(hours: 1));
+      await fakeBackend.updateUserData({'premiumUntil': date.toIso8601String()});
+      container.invalidate(premiumProvider);
+
+      final isPremium = await container.read(premiumProvider.future);
+      expect(isPremium, true);
+    });
+  });
+
+  group('Credits (riverpod)', () {
+    late ProviderContainer container;
+    late FakeStorageBackend fakeBackend;
+
+    setUp(() {
+      fakeBackend = FakeStorageBackend();
+      container = ProviderContainer(overrides: [
+        firestoreServiceProvider.overrideWithValue(fakeBackend),
+      ]);
+    });
+    test('build returns null when no premiumUntil exists', () async {
+      final credits = await container.read(creditsProvider.future);
+      expect(credits, null);
+    });
+
+    test('build returns DateTime when premiumUntil exists', () async {
+      final date = DateTime(2026, 5, 19);
+      await fakeBackend.updateUserData({'premiumUntil': date.toIso8601String()});
+      container.invalidate(creditsProvider);
+      
+      final credits = await container.read(creditsProvider.future);
+      expect(credits, date);
+    });
+
+    test('extendBy24h updates storage and invalidates providers', () async {
+      final now = DateTime.now();
+      await container.read(creditsProvider.notifier).extendBy24h();
+      
+      final credits = await container.read(creditsProvider.future);
+      expect(credits!.isAfter(now), true);
+      expect(credits.difference(now).inHours >= 23, true);
+    });
+
+    test('getActiveDays returns 0 when null', () async {
+      final days = await container.read(creditsProvider.notifier).getActiveDays();
+      expect(days, 0);
+    });
+
+    test('getActiveDays returns correct count', () async {
+      final futureDate = DateTime.now().add(const Duration(days: 2));
+      await fakeBackend.updateUserData({'premiumUntil': futureDate.toIso8601String()});
+      container.invalidate(creditsProvider);
+
+      final days = await container.read(creditsProvider.notifier).getActiveDays();
+      expect(days, 2);
+    });
+  });
+  group('MonthlyBudget (riverpod)', () {
+    late ProviderContainer container;
+    late FakeStorageBackend fakeBackend;
+
+    setUp(() {
+      fakeBackend = FakeStorageBackend();
+      container = ProviderContainer(overrides: [
+        firestoreServiceProvider.overrideWithValue(fakeBackend),
+      ]);
+    });
+
+    tearDown(() {
+      container.dispose();
+    });
+
+    test('build returns null when no budget exists', () async {
+      final budget = await container.read(monthlyBudgetProvider.future);
+      expect(budget, null);
+    });
+
+    test('setBudget saves to storage', () async {
+      await container.read(monthlyBudgetProvider.notifier).setBudget(500);
+      final budget = await container.read(monthlyBudgetProvider.future);
+      expect(budget, 500);
+    });
+
+    test('removeBudget clears from storage', () async {
+      await container.read(monthlyBudgetProvider.notifier).setBudget(500);
+      await container.read(monthlyBudgetProvider.notifier).setBudget(null);
+      final budget = await container.read(monthlyBudgetProvider.future);
+      expect(budget, null);
+    });
+  });
+
+  group('ThemeColor (riverpod)', () {
+    late ProviderContainer container;
+    late FakeStorageBackend fakeBackend;
+
+    setUp(() {
+      fakeBackend = FakeStorageBackend();
+      container = ProviderContainer(overrides: [
+        firestoreServiceProvider.overrideWithValue(fakeBackend),
+      ]);
+    });
+
+    tearDown(() {
+      container.dispose();
+    });
+
+    test('build returns default color when none saved', () async {
+      final color = await container.read(themeColorProvider.future);
+      expect(color, Colors.green.toARGB32());
+    });
+
+    test('setColor updates storage', () async {
+      final newColor = Colors.blue.toARGB32();
+      await container.read(themeColorProvider.notifier).setColor(newColor);
+      final color = await container.read(themeColorProvider.future);
+      expect(color, newColor);
     });
   });
 }

@@ -7,6 +7,7 @@ import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/widgets/empty_state.dart';
 import 'package:shopping_list/widgets/shopping_item_tile.dart';
+import 'package:shopping_list/widgets/shimmer_list.dart';
 import 'package:shopping_list/widgets/filter_bar.dart';
 import 'package:shopping_list/widgets/add_item_dialog.dart';
 import 'package:shopping_list/widgets/edit_item_dialog.dart';
@@ -21,10 +22,12 @@ import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/providers/current_list_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/providers/ad_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/services/analytics_service.dart';
+import '../helpers/fake_ad_service.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 import 'package:shopping_list/services/storage_backend.dart';
@@ -34,6 +37,7 @@ Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatServi
     authServiceProvider.overrideWithValue(AuthService(auth: MockFirebaseAuth())),
     revenueCatServiceProvider.overrideWithValue(revenueCat ?? FakeRevenueCatService()),
     analyticsServiceProvider.overrideWithValue(AnalyticsService()),
+    adServiceProvider.overrideWithValue(FakeAdService()),
   ];
   if (backend != null) {
     overrides.add(firestoreServiceProvider.overrideWithValue(backend));
@@ -49,6 +53,7 @@ void main() {
   group('EmptyState', () {
     testWidgets('displays empty list message and icon', (tester) async {
       await tester.pumpWidget(wrapWithApp(const EmptyState()));
+      await tester.pumpAndSettle();
 
       expect(find.text('Sua lista está vazia'), findsOneWidget);
       expect(find.text('Adicione itens para começar'), findsOneWidget);
@@ -79,8 +84,9 @@ void main() {
 
       expect(find.text('Maçã'), findsOneWidget);
       expect(find.text('3'), findsOneWidget);
-      expect(find.textContaining('un Frutas'), findsOneWidget);
-      expect(find.textContaining('R\$ 2.50'), findsOneWidget);
+      expect(find.text('un'), findsOneWidget);
+      expect(find.text('Frutas'), findsOneWidget);
+      expect(find.text('R\$ 2.50'), findsOneWidget);
     });
 
     testWidgets('displays item without price', (tester) async {
@@ -98,7 +104,8 @@ void main() {
 
       expect(find.text('Pão'), findsOneWidget);
       expect(find.text('1'), findsOneWidget);
-      expect(find.textContaining('un Padaria'), findsOneWidget);
+      expect(find.text('un'), findsOneWidget);
+      expect(find.text('Padaria'), findsOneWidget);
     });
 
     testWidgets('shows purchased state with line-through style', (tester) async {
@@ -132,7 +139,7 @@ void main() {
         backend: backend,
       ));
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
     });
 
@@ -173,7 +180,7 @@ void main() {
         backend: backend,
       ));
 
-      await tester.tap(find.byIcon(Icons.edit));
+      await tester.tap(find.byIcon(Icons.edit_outlined));
       await tester.pumpAndSettle();
     });
 
@@ -596,7 +603,7 @@ void main() {
     testWidgets('shows dialog with input field', (tester) async {
       await openDialog(tester);
 
-      expect(find.text('Orçamento Mensal'), findsOneWidget);
+      expect(find.text('Orçamento da Lista'), findsOneWidget);
       expect(find.text('Salvar'), findsOneWidget);
       expect(find.text('Cancelar'), findsOneWidget);
       expect(find.text('Remover'), findsNothing);
@@ -609,7 +616,7 @@ void main() {
       await tester.tap(find.text('Salvar'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Orçamento Mensal'), findsNothing);
+      expect(find.text('Orçamento da Lista'), findsNothing);
     });
 
     testWidgets('shows remove button when budget exists', (tester) async {
@@ -625,7 +632,7 @@ void main() {
       await tester.tap(find.text('Remover'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Orçamento Mensal'), findsNothing);
+      expect(find.text('Orçamento da Lista'), findsNothing);
     });
 
     testWidgets('does not save invalid value', (tester) async {
@@ -635,19 +642,19 @@ void main() {
       await tester.tap(find.text('Salvar'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Orçamento Mensal'), findsOneWidget);
+      expect(find.text('Orçamento da Lista'), findsOneWidget);
     });
   });
 
   group('HomeScreen', () {
-    testWidgets('shows loading indicator then empty state', (tester) async {
+    testWidgets('shows shimmer then empty state', (tester) async {
       final backend = FakeStorageBackend();
       await tester.pumpWidget(wrapWithProviders(
         const HomeScreen(listId: 'list-1'),
         backend: backend,
       ));
 
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+      expect(find.byType(ShimmerList), findsOneWidget);
 
       await tester.pumpAndSettle();
 
@@ -1149,7 +1156,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.account_balance_wallet));
       await tester.pumpAndSettle();
 
-      expect(find.text('Orçamento Mensal'), findsOneWidget);
+      expect(find.text('Orçamento da Lista'), findsOneWidget);
     });
 
     testWidgets('sort dropdown changes sort order', (tester) async {
@@ -1273,7 +1280,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       expect(find.byType(BottomAppBar), findsOneWidget);
@@ -1305,6 +1312,14 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
+      await tester.tap(find.descendant(
+        of: find.byType(ShoppingItemTile),
+        matching: find.byType(Checkbox),
+      ));
+      await tester.pumpAndSettle();
+
+      expect(find.byIcon(Icons.close), findsOneWidget);
+
       await tester.tap(find.byIcon(Icons.close));
       await tester.pumpAndSettle();
 
@@ -1335,7 +1350,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Comprar'));
@@ -1368,7 +1383,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Excluir'));
@@ -1405,12 +1420,12 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       expect(find.byType(BottomAppBar), findsOneWidget);
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       expect(find.byType(BottomAppBar), findsNothing);
@@ -1439,7 +1454,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Desmarcar'));
@@ -1477,13 +1492,13 @@ void main() {
       await tester.tap(find.byIcon(Icons.checklist));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       expect(find.byType(BottomAppBar), findsOneWidget);
 
       // Deselect
-      await tester.tap(find.byType(CheckboxListTile));
+      await tester.tap(find.byType(Checkbox));
       await tester.pumpAndSettle();
 
       expect(find.byType(BottomAppBar), findsNothing);
@@ -1512,6 +1527,7 @@ void main() {
         const app.NoListsScreen(),
         backend: backend,
       ));
+      await tester.pumpAndSettle();
 
       expect(find.text('Nenhuma lista encontrada'), findsOneWidget);
       expect(find.text('Criar Primeira Lista'), findsOneWidget);

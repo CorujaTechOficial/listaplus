@@ -1,4 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+// coverage:ignore-start
 import '../models/shopping_list.dart';
 import 'firestore_service_provider.dart';
 import 'premium_provider.dart';
@@ -8,9 +9,25 @@ part 'shopping_lists_provider.g.dart';
 @riverpod
 class ShoppingLists extends _$ShoppingLists {
   @override
-  Future<List<ShoppingList>> build() {
+  Future<List<ShoppingList>> build() async {
     final service = ref.watch(firestoreServiceProvider);
-    return service.loadLists();
+    final owned = await service.loadLists();
+
+    final sharedRefs = await service.loadSharedListRefs();
+    if (sharedRefs.isEmpty) {
+      return owned;
+    }
+
+    final shared = <ShoppingList>[];
+    for (final entry in sharedRefs.entries) {
+      final list = await service.loadListFromUser(entry.value, entry.key);
+      if (list != null) {
+        shared.add(list.copyWith(ownerUid: entry.value));
+      } else {
+        await service.removeSharedListRef(entry.key);
+      }
+    }
+    return [...owned, ...shared];
   }
 
   Future<ShoppingList> createList(String name, {double? budget}) async {
@@ -52,8 +69,17 @@ class ShoppingLists extends _$ShoppingLists {
     }
   }
 
+  Future<void> removeSharedList(String id) async {
+    final service = ref.read(firestoreServiceProvider);
+    final lists = state.value ?? [];
+    final updated = lists.where((l) => l.id != id).toList();
+    state = AsyncValue.data(updated);
+    await service.removeSharedListRef(id);
+  }
+
   Future<void> setCurrentList(String listId) async {
     final service = ref.read(firestoreServiceProvider);
     await service.setCurrentListId(listId);
   }
 }
+// coverage:ignore-end

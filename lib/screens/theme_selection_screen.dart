@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../theme/tokens.dart';
 import '../models/premium_feature.dart';
 import '../providers/theme_color_provider.dart';
 import '../providers/premium_provider.dart';
@@ -11,6 +12,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
     final currentColorAsync = ref.watch(themeColorProvider);
     final isPremiumAsync = ref.watch(premiumProvider);
     final currentColor = currentColorAsync.value ?? Colors.green.toARGB32();
@@ -19,12 +21,12 @@ class ThemeSelectionScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Temas')),
       body: GridView.builder(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(Spacing.md),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 1.5,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
+          crossAxisSpacing: Spacing.sm,
+          mainAxisSpacing: Spacing.sm,
         ),
         itemCount: ThemeOption.options.length,
         itemBuilder: (context, index) {
@@ -35,10 +37,13 @@ class ThemeSelectionScreen extends ConsumerWidget {
           return Card(
             color: isSelected ? option.color.withValues(alpha: 0.2) : null,
             child: InkWell(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(RadiusTokens.md),
               onTap: isLocked
                   ? () {
                       ref.read(analyticsServiceProvider).logUpgradeTapped('theme');
+                      if (!context.mounted) {
+                        return;
+                      }
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const PaywallScreen()),
@@ -54,16 +59,19 @@ class ThemeSelectionScreen extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.circle, color: option.color, size: 40),
-                        const SizedBox(height: 8),
-                        Text(option.name),
+                        const SizedBox(height: Spacing.xs),
+                        Text(option.name, style: theme.textTheme.labelLarge),
                       ],
                     ),
                   ),
                   if (isSelected)
-                    const Positioned(
+                    Positioned(
                       top: 8,
                       right: 8,
-                      child: Icon(Icons.check_circle),
+                      child: Icon(
+                        Icons.check_circle,
+                        color: option.color,
+                      ),
                     ),
                   if (isLocked)
                     const Positioned(

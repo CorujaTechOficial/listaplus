@@ -92,4 +92,46 @@ class FakeStorageBackend implements StorageBackend {
     }
     return Map<String, dynamic>.from(data);
   }
+
+  final Map<String, String> _sharedListRefs = {};
+
+  @override
+  Future<void> saveSharedListRef(String listId, String ownerUid) async {
+    _sharedListRefs[listId] = ownerUid;
+  }
+
+  @override
+  Future<Map<String, String>> loadSharedListRefs() async {
+    return Map.unmodifiable(_sharedListRefs);
+  }
+
+  @override
+  Future<void> removeSharedListRef(String listId) async {
+    _sharedListRefs.remove(listId);
+  }
+
+  @override
+  Future<ShoppingList?> loadListFromUser(String ownerUid, String listId) async {
+    final list = _lists.where((l) => l.id == listId).firstOrNull;
+    if (list == null) {
+      return null;
+    }
+    return list.copyWith(ownerUid: ownerUid);
+  }
+
+  @override
+  Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId) async {
+    return List.unmodifiable(_items.where((i) => i.shoppingListId == listId));
+  }
+
+  @override
+  Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
+    if (items.isEmpty) {
+      _items.clear();
+      return;
+    }
+    final affectedListIds = items.map((i) => i.shoppingListId).toSet();
+    _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
+    _items.addAll(items);
+  }
 }

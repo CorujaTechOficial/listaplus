@@ -36,7 +36,26 @@ def main():
     version_code = bundle_response["versionCode"]
     print(f"AAB enviado. Version code: {version_code}")
 
-    # 3. Commit da edit
+    # 3. Atribui ao track internal
+    track_request = service.edits().tracks().update(
+        packageName=PACKAGE_NAME,
+        editId=edit_id,
+        track="internal",
+        body={
+            "releases": [{
+                "versionCodes": [version_code],
+                "status": "completed",
+                "releaseNotes": [{
+                    "language": "pt-BR",
+                    "text": "Correção: autenticação anônima no Firebase, Sentry + Crashlytics, fim da tela branca no startup"
+                }],
+            }],
+        },
+    )
+    track_response = track_request.execute()
+    print(f"Track internal atualizado: {track_response['track']}")
+
+    # 4. Commit da edit
     commit_request = service.edits().commit(
         packageName=PACKAGE_NAME, editId=edit_id,
     )

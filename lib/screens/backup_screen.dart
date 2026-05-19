@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../theme/tokens.dart';
+import '../widgets/premium_gate.dart';
 import '../providers/backup_provider.dart';
 import '../providers/premium_provider.dart';
 import '../providers/analytics_service_provider.dart';
@@ -10,46 +12,41 @@ class BackupScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
     final isPremium = ref.watch(premiumProvider).value ?? false;
 
     if (!isPremium) {
-      return Scaffold(
-        appBar: AppBar(title: const Text('Backup')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(Icons.lock, size: 64, color: Colors.grey),
-              const SizedBox(height: 16),
-              const Text('Backup e exportação é premium'),
-              const SizedBox(height: 8),
-              ElevatedButton(
-                onPressed: () {
-                  ref.read(analyticsServiceProvider).logUpgradeTapped('backup');
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const PaywallScreen()),
-                  );
-                },
-                child: const Text('Fazer upgrade'),
-              ),
-            ],
-          ),
-        ),
+      return PremiumGate(
+        title: 'Backup',
+        description: 'Backup e exportação é premium',
+        onUpgrade: () {
+          ref.read(analyticsServiceProvider).logUpgradeTapped('backup');
+          if (!context.mounted) {
+            return;
+          }
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const PaywallScreen()),
+          );
+        },
       );
     }
 
     return Scaffold(
       appBar: AppBar(title: const Text('Backup')),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(Spacing.md),
         child: Column(
           children: [
             Card(
               child: ListTile(
-                leading: const Icon(Icons.upload),
+                leading: Icon(Icons.upload, color: theme.colorScheme.primary),
                 title: const Text('Exportar dados'),
                 subtitle: const Text('Salvar todas as listas como JSON'),
+                trailing: Icon(
+                  Icons.chevron_right,
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
                 onTap: () async {
                   final backup = ref.read(backupProvider);
                   try {
@@ -69,12 +66,16 @@ class BackupScreen extends ConsumerWidget {
                 },
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: Spacing.xs),
             Card(
               child: ListTile(
-                leading: const Icon(Icons.download),
+                leading: Icon(Icons.download, color: theme.colorScheme.primary),
                 title: const Text('Importar dados'),
                 subtitle: const Text('Restaurar listas de um JSON'),
+                trailing: Icon(
+                  Icons.chevron_right,
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
                 onTap: () async {
                   final controller = TextEditingController();
                   final jsonString = await showDialog<String>(
@@ -86,7 +87,6 @@ class BackupScreen extends ConsumerWidget {
                         maxLines: 8,
                         decoration: const InputDecoration(
                           hintText: 'Cole o JSON do backup aqui...',
-                          border: OutlineInputBorder(),
                         ),
                       ),
                       actions: [

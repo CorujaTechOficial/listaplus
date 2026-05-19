@@ -7,13 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
+import 'theme/app_theme.dart';
+import 'theme/tokens.dart';
+import 'providers/ad_service_provider.dart';
 import 'providers/current_list_provider.dart';
 import 'providers/dark_mode_provider.dart';
 import 'providers/theme_color_provider.dart';
 import 'providers/shopping_lists_provider.dart';
 import 'screens/home_screen.dart';
 import 'widgets/create_list_dialog.dart';
+import 'widgets/empty_state.dart';
 import 'widgets/init_error_screen.dart';
+import 'services/ad_service_impl.dart';
 import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
 
@@ -48,6 +53,9 @@ Future<void> _runApp() async {
     final userCredential = await FirebaseAuth.instance.signInAnonymously();
     final uid = userCredential.user!.uid;
 
+    final adService = AdServiceImpl();
+    await adService.initialize();
+
     final revenueCat = RevenueCatServiceImpl();
     await revenueCat.init('goog_lUoZUpDVyhVroFRzwgArMnFxIQv');
 
@@ -59,6 +67,7 @@ Future<void> _runApp() async {
       ProviderScope(
         overrides: [
           revenueCatServiceProvider.overrideWithValue(revenueCat),
+          adServiceProvider.overrideWithValue(adService),
         ],
         child: const MyApp(),
       ),
@@ -83,8 +92,8 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       title: 'Lista de Compras',
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: colorSeed),
-      darkTheme: ThemeData(useMaterial3: true, colorSchemeSeed: colorSeed, brightness: Brightness.dark),
+      theme: AppTheme.light(colorSeed),
+      darkTheme: AppTheme.dark(colorSeed),
       themeMode: themeMode,
       home: const ListLoader(),
     );
@@ -118,27 +127,33 @@ class NoListsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.list_alt, size: 80, color: Colors.grey),
-            const SizedBox(height: 16),
-            const Text('Nenhuma lista encontrada'),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () async {
-                final name = await showDialog<String>(
-                  context: context,
-                  builder: (_) => const CreateListDialog(),
-                );
-                if (name != null && name.isNotEmpty) {
-                  await ref.read(shoppingListsProvider.notifier).createList(name);
-                  ref.invalidate(currentListIdProvider);
-                }
-              },
-              child: const Text('Criar Primeira Lista'),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(Spacing.xl),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const EmptyState(
+                icon: Icons.list_alt,
+                title: 'Nenhuma lista encontrada',
+                subtitle: 'Crie sua primeira lista para começar',
+              ),
+              const SizedBox(height: Spacing.lg),
+              FilledButton.tonalIcon(
+                onPressed: () async {
+                  final name = await showDialog<String>(
+                    context: context,
+                    builder: (_) => const CreateListDialog(),
+                  );
+                  if (name != null && name.isNotEmpty) {
+                    await ref.read(shoppingListsProvider.notifier).createList(name);
+                    ref.invalidate(currentListIdProvider);
+                  }
+                },
+                icon: const Icon(Icons.add),
+                label: const Text('Criar Primeira Lista'),
+              ),
+            ],
+          ),
         ),
       ),
     );

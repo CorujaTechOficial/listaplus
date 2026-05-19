@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../theme/tokens.dart';
 
 class CreateListDialog extends ConsumerStatefulWidget {
   const CreateListDialog({super.key, this.initialName});
@@ -30,11 +31,14 @@ class _CreateListDialogState extends ConsumerState<CreateListDialog> {
     final isRename = widget.initialName != null;
     return AlertDialog(
       title: Text(isRename ? 'Renomear Lista' : 'Criar Lista'),
-      content: TextField(
-        controller: _controller,
-        decoration: const InputDecoration(labelText: 'Nome da lista'),
-        autofocus: true,
-        onSubmitted: (_) => _submit(),
+      content: Padding(
+        padding: const EdgeInsets.only(top: Spacing.xs),
+        child: TextField(
+          controller: _controller,
+          decoration: const InputDecoration(labelText: 'Nome da lista'),
+          autofocus: true,
+          onSubmitted: (_) => _submit(),
+        ),
       ),
       actions: [
         TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),

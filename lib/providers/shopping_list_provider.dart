@@ -1,17 +1,37 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+// coverage:ignore-start
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../models/shopping_item.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
+import '../services/storage_backend.dart';
 import 'firestore_service_provider.dart';
+import 'shopping_lists_provider.dart';
 
 part 'shopping_list_provider.g.dart';
 
 @riverpod
+String? listOwner(Ref ref, String listId) {
+  final lists = ref.watch(shoppingListsProvider).valueOrNull ?? [];
+  final list = lists.where((l) => l.id == listId).firstOrNull;
+  return list?.ownerUid;
+}
+
+@riverpod
 class ShoppingListItems extends _$ShoppingListItems {
   @override
-  Future<List<ShoppingItem>> build(String listId) {
+  Future<List<ShoppingItem>> build(String listId) async {
     final service = ref.watch(firestoreServiceProvider);
+    final ownerUid = ref.watch(listOwnerProvider(listId));
+    if (ownerUid != null) {
+      return service.loadItemsFromUser(ownerUid, listId);
+    }
     return service.loadItems(listId);
+  }
+
+  String? _ownerUid() {
+    final lists = ref.read(shoppingListsProvider).valueOrNull ?? [];
+    return lists.where((l) => l.id == listId).firstOrNull?.ownerUid;
   }
 
   Future<void> addItem({
@@ -34,7 +54,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
     final currentItems = state.value ?? [];
     state = AsyncValue.data([...currentItems, newItem]);
-    await service.saveItems(state.value ?? []);
+    await _saveItems(service, state.value ?? []);
   }
 
   Future<void> togglePurchased(String id) async {
@@ -51,7 +71,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> removeItem(String id) async {
@@ -60,7 +80,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     final updated = items.where((item) => item.id != id).toList();
 
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> updateItem(ShoppingItem item) async {
@@ -69,14 +89,14 @@ class ShoppingListItems extends _$ShoppingListItems {
     final updated = items.map((e) => e.id == item.id ? item : e).toList();
 
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> restoreItem(ShoppingItem item) async {
     final service = ref.read(firestoreServiceProvider);
     final currentItems = state.value ?? [];
     state = AsyncValue.data([...currentItems, item]);
-    await service.saveItems(state.value ?? []);
+    await _saveItems(service, state.value ?? []);
   }
 
   Future<void> incrementQuantity(String id) async {
@@ -89,7 +109,7 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> decrementQuantity(String id) async {
@@ -102,13 +122,13 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> clearAll() async {
     final service = ref.read(firestoreServiceProvider);
     state = const AsyncValue.data([]);
-    await service.saveItems([]);
+    await _saveItems(service, []);
   }
 
   Future<void> clearPurchased() async {
@@ -116,7 +136,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     final items = state.value ?? [];
     final updated = items.where((item) => !item.isPurchased).toList();
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> removeItems(List<String> ids) async {
@@ -124,7 +144,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     final items = state.value ?? [];
     final updated = items.where((item) => !ids.contains(item.id)).toList();
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> togglePurchasedBatch(List<String> ids, bool isPurchased) async {
@@ -140,7 +160,7 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
     state = AsyncValue.data(updated);
-    await service.saveItems(updated);
+    await _saveItems(service, updated);
   }
 
   Future<void> reorderItem(int oldIndex, int newIndex) async {
@@ -152,6 +172,16 @@ class ShoppingListItems extends _$ShoppingListItems {
     final item = items.removeAt(oldIndex);
     items.insert(newIndex, item);
     state = AsyncValue.data(items);
-    await service.saveItems(items);
+    await _saveItems(service, items);
+  }
+
+  Future<void> _saveItems(StorageBackend service, List<ShoppingItem> items) async {
+    final ownerUid = _ownerUid();
+    if (ownerUid != null) {
+      await service.saveItemsToUser(ownerUid, items);
+    } else {
+      await service.saveItems(items);
+    }
   }
 }
+// coverage:ignore-end

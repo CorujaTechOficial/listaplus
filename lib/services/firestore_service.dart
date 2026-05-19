@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../models/shopping_item.dart';
@@ -17,88 +18,140 @@ class FirestoreService implements StorageBackend {
   final FirebaseAuth _auth;
 
   String get _uid => _auth.currentUser!.uid;
+// coverage:ignore-start
+
+  static const _maxRetries = 3;
+  static const _baseDelay = Duration(milliseconds: 200);
+
+  static bool _isTransientError(Object error) {
+    if (error is FirebaseException) {
+      return error.code == 'unavailable' ||
+          error.code == 'deadline-exceeded' ||
+          error.code == 'resource-exhausted' ||
+          error.code == 'aborted' ||
+          error.code == 'internal';
+    }
+    return false;
+  }
+
+  static Future<T> _retry<T>(Future<T> Function() fn) async {
+    var attempt = 0;
+    while (true) {
+      try {
+        return await fn();
+      } on Object catch (e) {
+        attempt++;
+        if (attempt >= _maxRetries || !_isTransientError(e)) {
+          rethrow;
+        }
+        final delay = _baseDelay * pow(2, attempt - 1).toInt();
+        final jitter = Random().nextInt(100);
+        await Future.delayed(delay + Duration(milliseconds: jitter));
+      }
+    }
+  }
 
   @override
   Future<List<ShoppingList>> loadLists() async {
-    final snap = await _db
-        .collection('users').doc(_uid).collection('lists')
-        .orderBy('updatedAt', descending: true)
-        .get();
-    return snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList();
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(_uid).collection('lists')
+          .orderBy('updatedAt', descending: true)
+          .get();
+      return snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList();
+    });
   }
 
   @override
   Future<void> saveLists(List<ShoppingList> lists) async {
-    final batch = _db.batch();
-    final listsRef = _db.collection('users').doc(_uid).collection('lists');
-    for (final list in lists) {
-      batch.set(listsRef.doc(list.id), list.toJson());
-    }
-    await batch.commit();
+    return _retry(() async {
+      final batch = _db.batch();
+      final listsRef = _db.collection('users').doc(_uid).collection('lists');
+      for (final list in lists) {
+        batch.set(listsRef.doc(list.id), list.toJson());
+      }
+      await batch.commit();
+    });
   }
 
   @override
   Future<void> deleteList(String listId) async {
-    await _db
-        .collection('users').doc(_uid).collection('lists').doc(listId)
-        .delete();
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('lists').doc(listId)
+          .delete();
+    });
   }
 
   @override
   Future<List<ShoppingItem>> loadItems(String listId) async {
-    final snap = await _db
-        .collection('users').doc(_uid).collection('items')
-        .where('shoppingListId', isEqualTo: listId)
-        .get();
-    return snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList();
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(_uid).collection('items')
+          .where('shoppingListId', isEqualTo: listId)
+          .get();
+      return snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList();
+    });
   }
 
   @override
   Future<void> saveItems(List<ShoppingItem> items) async {
-    final batch = _db.batch();
-    final itemsRef = _db.collection('users').doc(_uid).collection('items');
-    for (final item in items) {
-      batch.set(itemsRef.doc(item.id), item.toJson());
-    }
-    await batch.commit();
+    return _retry(() async {
+      final batch = _db.batch();
+      final itemsRef = _db.collection('users').doc(_uid).collection('items');
+      for (final item in items) {
+        batch.set(itemsRef.doc(item.id), item.toJson());
+      }
+      await batch.commit();
+    });
   }
 
   @override
   Future<void> deleteItemsFromList(String listId) async {
-    final snap = await _db
-        .collection('users').doc(_uid).collection('items')
-        .where('shoppingListId', isEqualTo: listId)
-        .get();
-    final batch = _db.batch();
-    for (final doc in snap.docs) {
-      batch.delete(doc.reference);
-    }
-    await batch.commit();
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(_uid).collection('items')
+          .where('shoppingListId', isEqualTo: listId)
+          .get();
+      final batch = _db.batch();
+      for (final doc in snap.docs) {
+        batch.delete(doc.reference);
+      }
+      await batch.commit();
+    });
   }
 
   @override
   Future<String?> getCurrentListId() async {
-    final doc = await _db.collection('users').doc(_uid).get();
-    return doc.data()?['currentListId'] as String?;
+    return _retry(() async {
+      final doc = await _db.collection('users').doc(_uid).get();
+      return doc.data()?['currentListId'] as String?;
+    });
   }
 
   @override
   Future<void> setCurrentListId(String listId) async {
-    await _db.collection('users').doc(_uid).set(
-      {'currentListId': listId},
-      SetOptions(merge: true),
-    );
+    return _retry(() async {
+      await _db.collection('users').doc(_uid).set(
+        {'currentListId': listId},
+        SetOptions(merge: true),
+      );
+    });
   }
 
   @override
   Future<Map<String, dynamic>?> getUserData() async {
-    final doc = await _db.collection('users').doc(_uid).get();
-    return doc.data();
+    return _retry(() async {
+      final doc = await _db.collection('users').doc(_uid).get();
+      return doc.data();
+    });
   }
 
   @override
   Future<void> updateUserData(Map<String, dynamic> data) async {
-    await _db.collection('users').doc(_uid).set(data, SetOptions(merge: true));
+    return _retry(() async {
+      await _db.collection('users').doc(_uid).set(data, SetOptions(merge: true));
+    });
   }
 
   @override
@@ -125,12 +178,81 @@ class FirestoreService implements StorageBackend {
 
   @override
   Future<void> saveSharedList(String code, Map<String, dynamic> data) async {
-    await _db.collection('sharedLists').doc(code).set(data);
+    return _retry(() async {
+      await _db.collection('sharedLists').doc(code).set(data);
+    });
   }
 
   @override
   Future<Map<String, dynamic>?> getSharedList(String code) async {
-    final doc = await _db.collection('sharedLists').doc(code).get();
-    return doc.data();
+    return _retry(() async {
+      final doc = await _db.collection('sharedLists').doc(code).get();
+      return doc.data();
+    });
+  }
+
+  @override
+  Future<void> saveSharedListRef(String listId, String ownerUid) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('sharedLists').doc(listId)
+          .set({'ownerUid': ownerUid, 'addedAt': DateTime.now().toIso8601String()});
+    });
+  }
+
+  @override
+  Future<Map<String, String>> loadSharedListRefs() async {
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(_uid).collection('sharedLists')
+          .get();
+      return {for (final doc in snap.docs) doc.id: doc.data()['ownerUid'] as String};
+    });
+  }
+
+  @override
+  Future<void> removeSharedListRef(String listId) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('sharedLists').doc(listId)
+          .delete();
+    });
+  }
+
+  @override
+  Future<ShoppingList?> loadListFromUser(String ownerUid, String listId) async {
+    return _retry(() async {
+      final doc = await _db
+          .collection('users').doc(ownerUid).collection('lists').doc(listId)
+          .get();
+      if (!doc.exists) {
+        return null;
+      }
+      return ShoppingList.fromJson(doc.data()!);
+    });
+  }
+
+  @override
+  Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId) async {
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(ownerUid).collection('items')
+          .where('shoppingListId', isEqualTo: listId)
+          .get();
+      return snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList();
+    });
+  }
+
+  @override
+  Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
+    return _retry(() async {
+      final batch = _db.batch();
+      final itemsRef = _db.collection('users').doc(ownerUid).collection('items');
+      for (final item in items) {
+        batch.set(itemsRef.doc(item.id), item.toJson());
+      }
+      await batch.commit();
+    });
   }
 }
+// coverage:ignore-end

@@ -6,7 +6,7 @@ part of 'shopping_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$shoppingListItemsHash() => r'0954025e4b10130a5b1122d46a7b6453f2928ac6';
+String _$listOwnerHash() => r'847070c964f902b49bffd20bc6992faea5465253';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -28,6 +28,121 @@ class _SystemHash {
     return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
   }
 }
+
+/// See also [listOwner].
+@ProviderFor(listOwner)
+const listOwnerProvider = ListOwnerFamily();
+
+/// See also [listOwner].
+class ListOwnerFamily extends Family<String?> {
+  /// See also [listOwner].
+  const ListOwnerFamily();
+
+  /// See also [listOwner].
+  ListOwnerProvider call(String listId) {
+    return ListOwnerProvider(listId);
+  }
+
+  @override
+  ListOwnerProvider getProviderOverride(covariant ListOwnerProvider provider) {
+    return call(provider.listId);
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'listOwnerProvider';
+}
+
+/// See also [listOwner].
+class ListOwnerProvider extends AutoDisposeProvider<String?> {
+  /// See also [listOwner].
+  ListOwnerProvider(String listId)
+    : this._internal(
+        (ref) => listOwner(ref as ListOwnerRef, listId),
+        from: listOwnerProvider,
+        name: r'listOwnerProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$listOwnerHash,
+        dependencies: ListOwnerFamily._dependencies,
+        allTransitiveDependencies: ListOwnerFamily._allTransitiveDependencies,
+        listId: listId,
+      );
+
+  ListOwnerProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.listId,
+  }) : super.internal();
+
+  final String listId;
+
+  @override
+  Override overrideWith(String? Function(ListOwnerRef provider) create) {
+    return ProviderOverride(
+      origin: this,
+      override: ListOwnerProvider._internal(
+        (ref) => create(ref as ListOwnerRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        listId: listId,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeProviderElement<String?> createElement() {
+    return _ListOwnerProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is ListOwnerProvider && other.listId == listId;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, listId.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin ListOwnerRef on AutoDisposeProviderRef<String?> {
+  /// The parameter `listId` of this provider.
+  String get listId;
+}
+
+class _ListOwnerProviderElement extends AutoDisposeProviderElement<String?>
+    with ListOwnerRef {
+  _ListOwnerProviderElement(super.provider);
+
+  @override
+  String get listId => (origin as ListOwnerProvider).listId;
+}
+
+String _$shoppingListItemsHash() => r'3cf020dd2d4fbb5307de0ed9272c28c46a3af267';
 
 abstract class _$ShoppingListItems
     extends BuildlessAutoDisposeAsyncNotifier<List<ShoppingItem>> {

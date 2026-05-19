@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../theme/tokens.dart';
 import '../models/shopping_list.dart';
 import '../providers/shopping_lists_provider.dart';
 
@@ -32,14 +33,17 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Orçamento Mensal'),
-      content: TextField(
-        controller: _controller,
-        decoration: const InputDecoration(
-          labelText: 'Valor do orçamento (R\$)',
-          prefixText: 'R\$ ',
+      title: const Text('Orçamento da Lista'),
+      content: Padding(
+        padding: const EdgeInsets.only(top: Spacing.xs),
+        child: TextField(
+          controller: _controller,
+          decoration: const InputDecoration(
+            labelText: 'Valor do orçamento',
+            prefixText: 'R\$ ',
+          ),
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
         ),
-        keyboardType: const TextInputType.numberWithOptions(decimal: true),
       ),
       actions: [
         if (widget.list.budget != null)
@@ -50,7 +54,10 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
               );
               Navigator.pop(context);
             },
-            child: const Text('Remover'),
+            child: Text(
+              'Remover',
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
+            ),
           ),
         TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
         ElevatedButton(

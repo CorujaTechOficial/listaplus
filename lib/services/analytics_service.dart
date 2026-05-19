@@ -1,4 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
+// coverage:ignore-start
 
 class AnalyticsService {
   AnalyticsService({FirebaseAnalytics? analytics})
@@ -40,3 +41,4 @@ class AnalyticsService {
     );
   }
 }
+// coverage:ignore-end

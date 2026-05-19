@@ -19,4 +19,11 @@ abstract class StorageBackend {
   Future<void> updateUserData(Map<String, dynamic> data);
   Future<void> saveSharedList(String code, Map<String, dynamic> data);
   Future<Map<String, dynamic>?> getSharedList(String code);
+
+  Future<void> saveSharedListRef(String listId, String ownerUid);
+  Future<Map<String, String>> loadSharedListRefs();
+  Future<void> removeSharedListRef(String listId);
+  Future<ShoppingList?> loadListFromUser(String ownerUid, String listId);
+  Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId);
+  Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items);
 }

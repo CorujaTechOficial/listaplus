@@ -1,9 +1,8 @@
 import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/shopping_item.dart';
+import 'auth_service_provider.dart';
 import 'firestore_service_provider.dart';
 import 'shopping_lists_provider.dart';
-import 'shopping_list_provider.dart';
 
 final shareServiceProvider = Provider<ShareService>((ref) {
   return ShareService(ref);
@@ -28,43 +27,32 @@ class ShareService {
     final service = _ref.read(firestoreServiceProvider);
     final lists = await service.loadLists();
     final list = lists.firstWhere((l) => l.id == listId);
-    final items = await service.loadItems(listId);
+    final uid = _ref.read(authServiceProvider).currentUser!.uid;
     final code = _generateCode();
 
     await service.saveSharedList(code, {
-      'ownerName': 'Usuário',
-      'listName': list.name,
+      'ownerUid': uid,
       'listId': listId,
-      'items': items.map((i) => i.toJson()).toList(),
+      'listName': list.name,
       'createdAt': DateTime.now().toIso8601String(),
     });
     return code;
   }
 
-  Future<String> importSharedList(String code) async {
+  Future<({String listId, String listName})> importSharedList(String code) async {
     final service = _ref.read(firestoreServiceProvider);
     final data = await service.getSharedList(code);
     if (data == null) {
       throw Exception('Código inválido ou lista não encontrada.');
     }
 
+    final ownerUid = data['ownerUid'] as String;
+    final listId = data['listId'] as String;
     final listName = data['listName'] as String;
-    final itemsData = data['items'] as List<dynamic>;
 
-    final newList = await _ref.read(shoppingListsProvider.notifier).createList(
-      '$listName (compartilhada)',
-    );
+    await service.saveSharedListRef(listId, ownerUid);
+    _ref.invalidate(shoppingListsProvider);
 
-    if (itemsData.isNotEmpty) {
-      final items = itemsData.map((i) {
-        final itemMap = Map<String, dynamic>.from(i as Map<String, dynamic>);
-        itemMap.remove('id');
-        itemMap['shoppingListId'] = newList.id;
-        return ShoppingItem.fromJson(itemMap);
-      }).toList();
-      await service.saveItems(items);
-      _ref.invalidate(shoppingListItemsProvider(newList.id));
-    }
-    return '$listName importada com sucesso!';
+    return (listId: listId, listName: listName);
   }
 }

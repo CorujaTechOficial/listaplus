@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../theme/tokens.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
 import '../models/shopping_item.dart';
@@ -58,6 +59,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                 decoration: const InputDecoration(labelText: 'Nome do item'),
                 validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
               ),
+              const SizedBox(height: Spacing.sm),
               Row(
                 children: [
                   Expanded(
@@ -68,7 +70,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                       validator: (v) => v == null || v.isEmpty ? 'Campo obrigatório' : null,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: Spacing.sm),
                   Expanded(
                     child: DropdownButtonFormField<Unit>(
                       value: _selectedUnit,
@@ -81,6 +83,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                   ),
                 ],
               ),
+              const SizedBox(height: Spacing.sm),
               DropdownButtonFormField<Category>(
                 value: _selectedCategory,
                 decoration: const InputDecoration(labelText: 'Categoria'),
@@ -89,6 +92,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                 }).toList(),
                 onChanged: (v) => setState(() => _selectedCategory = v!),
               ),
+              const SizedBox(height: Spacing.sm),
               TextFormField(
                 controller: _priceController,
                 decoration: const InputDecoration(labelText: 'Preço estimado (R\$)'),
@@ -111,7 +115,9 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                 estimatedPrice: double.tryParse(_priceController.text),
                 updatedAt: DateTime.now(),
               );
-              await ref.read(shoppingListItemsProvider(widget.listId).notifier).updateItem(updated);
+              await ref
+                  .read(shoppingListItemsProvider(widget.listId).notifier)
+                  .updateItem(updated);
               if (context.mounted) {
                 Navigator.pop(context);
               }

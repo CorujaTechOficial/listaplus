@@ -1,7 +1,10 @@
+import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/providers/share_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/providers/auth_service_provider.dart';
+import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/category.dart';
@@ -17,6 +20,14 @@ void main() {
       fakeBackend = FakeStorageBackend();
       container = ProviderContainer(overrides: [
         firestoreServiceProvider.overrideWithValue(fakeBackend),
+        authServiceProvider.overrideWithValue(
+          AuthService(
+            auth: MockFirebaseAuth(
+              signedIn: true,
+              mockUser: MockUser(uid: 'test-user-123'),
+            ),
+          ),
+        ),
       ]);
       testList = ShoppingList(name: 'Compartilhavel');
     });
@@ -44,26 +55,21 @@ void main() {
       expect(saved!['listName'], 'Compartilhavel');
     });
 
-    test('createShareCode saves items', () async {
+    test('createShareCode saves metadata only', () async {
       await fakeBackend.saveLists([testList]);
-      final item = ShoppingItem(
-        name: 'Macarrão',
-        shoppingListId: testList.id,
-        quantity: 2,
-        category: Category.others,
-      );
-      await fakeBackend.saveItems([item]);
 
       final service = container.read(shareServiceProvider);
       final code = await service.createShareCode(testList.id);
 
       final saved = await fakeBackend.getSharedList(code);
-      final itemsData = saved!['items'] as List<dynamic>;
-      expect(itemsData.length, 1);
-      expect(itemsData.first['name'], 'Macarrão');
+      expect(saved, isNotNull);
+      expect(saved!['listId'], testList.id);
+      expect(saved['listName'], 'Compartilhavel');
+      expect(saved['ownerUid'], isNotNull);
+      expect(saved.containsKey('items'), false);
     });
 
-    test('importSharedList with valid code creates a new list', () async {
+    test('importSharedList with valid code saves shared ref', () async {
       await fakeBackend.saveLists([testList]);
       final item = ShoppingItem(
         name: 'Feijão',
@@ -78,11 +84,12 @@ void main() {
 
       final importService = container.read(shareServiceProvider);
       final result = await importService.importSharedList(code);
-      expect(result, contains('Compartilhavel'));
-      expect(result, contains('importada com sucesso'));
 
-      final lists = await fakeBackend.loadLists();
-      expect(lists.any((l) => l.name.contains('Compartilhavel')), true);
+      expect(result.listId, testList.id);
+      expect(result.listName, 'Compartilhavel');
+
+      final refs = await fakeBackend.loadSharedListRefs();
+      expect(refs, containsPair(testList.id, 'test-user-123'));
     });
 
     test('importSharedList with invalid code throws', () async {
