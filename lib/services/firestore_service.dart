@@ -61,7 +61,10 @@ class FirestoreService implements StorageBackend {
       var attempt = 0;
       void subscribe() {
         sub = fn().listen(
-          controller.add,
+          (event) {
+            attempt = 0; // Fix #62: Reset attempt on success
+            controller.add(event);
+          },
           onError: (Object e) {
             attempt++;
             if (attempt >= _maxRetries || !_isTransientError(e)) {
@@ -91,7 +94,11 @@ class FirestoreService implements StorageBackend {
           .collection('users').doc(_uid).collection('lists')
           .orderBy('updatedAt', descending: true)
           .get();
-      return snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return ShoppingList.fromJson(data);
+      }).toList();
     });
   }
 
@@ -101,7 +108,20 @@ class FirestoreService implements StorageBackend {
         .collection('users').doc(_uid).collection('lists')
         .orderBy('updatedAt', descending: true)
         .snapshots()
-        .map((snap) => snap.docs.map((d) => ShoppingList.fromJson(d.data())).toList()));
+        .map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return ShoppingList.fromJson(data);
+        }).toList()));
+  }
+
+  @override
+  Future<void> saveList(ShoppingList list) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('lists').doc(list.id)
+          .set(list.toJson());
+    });
   }
 
   @override
@@ -132,7 +152,11 @@ class FirestoreService implements StorageBackend {
           .collection('users').doc(_uid).collection('items')
           .where('shoppingListId', isEqualTo: listId)
           .get();
-      return snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return ShoppingItem.fromJson(data);
+      }).toList();
     });
   }
 
@@ -142,7 +166,29 @@ class FirestoreService implements StorageBackend {
         .collection('users').doc(_uid).collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
-        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList()));
+        .map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return ShoppingItem.fromJson(data);
+        }).toList()));
+  }
+
+  @override
+  Future<void> saveItem(ShoppingItem item) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('items').doc(item.id)
+          .set(item.toJson());
+    });
+  }
+
+  @override
+  Future<void> deleteItem(String listId, String itemId) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('items').doc(itemId)
+          .delete();
+    });
   }
 
   @override
@@ -169,11 +215,17 @@ class FirestoreService implements StorageBackend {
           .collection('users').doc(_uid).collection('items')
           .where('shoppingListId', isEqualTo: listId)
           .get();
-      final batch = _db.batch();
-      for (final doc in snap.docs) {
-        batch.delete(doc.reference);
+      
+      final docs = snap.docs;
+      const limit = 500;
+      for (var i = 0; i < docs.length; i += limit) {
+        final batch = _db.batch();
+        final chunk = docs.sublist(i, (i + limit) > docs.length ? docs.length : i + limit);
+        for (final doc in chunk) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
       }
-      await batch.commit();
     });
   }
 
@@ -211,6 +263,32 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Future<void> extendPremiumBy24h() async {
+    return _retry(() async {
+      final docRef = _db.collection('users').doc(_uid);
+      await _db.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        final currentStr = doc.data()?['premiumUntil'] as String?;
+        final now = DateTime.now();
+
+        var current = now;
+        if (currentStr != null) {
+          final parsed = DateTime.tryParse(currentStr) ?? now;
+          if (parsed.isAfter(now)) {
+            current = parsed;
+          }
+        }
+
+        final maxUntil = now.add(const Duration(days: 7));
+        final newUntil = current.add(const Duration(hours: 24));
+        final capped = newUntil.isAfter(maxUntil) ? maxUntil : newUntil;
+
+        transaction.set(docRef, {'premiumUntil': capped.toIso8601String()}, SetOptions(merge: true));
+      });
+    });
+  }
+
+  @override
   Future<bool> getIsPremium() async {
     final data = await getUserData();
     return data?['isPremium'] as bool? ?? false;
@@ -239,7 +317,7 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
-  Future<void> setLocale(String locale) async {
+  Future<void> setLocale(String? locale) async {
     await updateUserData({'locale': locale});
   }
 
@@ -303,7 +381,9 @@ class FirestoreService implements StorageBackend {
       if (!doc.exists) {
         return null;
       }
-      return ShoppingList.fromJson(doc.data()!);
+      final data = doc.data()!;
+      data['id'] = doc.id;
+      return ShoppingList.fromJson(data);
     });
   }
 
@@ -312,7 +392,14 @@ class FirestoreService implements StorageBackend {
     return _retryStream(() => _db
         .collection('users').doc(ownerUid).collection('lists').doc(listId)
         .snapshots()
-        .map((doc) => doc.exists ? ShoppingList.fromJson(doc.data()!) : null));
+        .map((doc) {
+          if (!doc.exists) {
+            return null;
+          }
+          final data = doc.data()!;
+          data['id'] = doc.id;
+          return ShoppingList.fromJson(data);
+        }));
   }
 
   @override
@@ -322,7 +409,11 @@ class FirestoreService implements StorageBackend {
           .collection('users').doc(ownerUid).collection('items')
           .where('shoppingListId', isEqualTo: listId)
           .get();
-      return snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return ShoppingItem.fromJson(data);
+      }).toList();
     });
   }
 
@@ -332,7 +423,29 @@ class FirestoreService implements StorageBackend {
         .collection('users').doc(ownerUid).collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
-        .map((snap) => snap.docs.map((d) => ShoppingItem.fromJson(d.data())).toList()));
+        .map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return ShoppingItem.fromJson(data);
+        }).toList()));
+  }
+
+  @override
+  Future<void> saveItemToUser(String ownerUid, ShoppingItem item) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(ownerUid).collection('items').doc(item.id)
+          .set(item.toJson());
+    });
+  }
+
+  @override
+  Future<void> deleteItemFromUser(String ownerUid, String listId, String itemId) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(ownerUid).collection('items').doc(itemId)
+          .delete();
+    });
   }
 
   @override
@@ -359,7 +472,20 @@ class FirestoreService implements StorageBackend {
           .collection('users').doc(_uid).collection('pantry')
           .orderBy('updatedAt', descending: true)
           .get();
-      return snap.docs.map((d) => PantryItem.fromJson(d.data())).toList();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return PantryItem.fromJson(data);
+      }).toList();
+    });
+  }
+
+  @override
+  Future<void> savePantryItem(PantryItem item) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('pantry').doc(item.id)
+          .set(item.toJson());
     });
   }
 
@@ -431,14 +557,17 @@ class FirestoreService implements StorageBackend {
     List<QueryDocumentSnapshot<Map<String, dynamic>>> existingDocs,
     List<ShoppingItem> items,
   ) async {
-    final deleteOps = existingDocs.length;
+    final newItemIds = items.map((i) => i.id).toSet();
+    final docsToDelete = existingDocs.where((doc) => !newItemIds.contains(doc.id)).toList();
+
+    final deleteOps = docsToDelete.length;
     final setOps = items.length;
     final totalOps = deleteOps + setOps;
     const limit = 500;
 
     if (totalOps <= limit) {
       final batch = _db.batch();
-      for (final doc in existingDocs) {
+      for (final doc in docsToDelete) {
         batch.delete(doc.reference);
       }
       for (final item in items) {
@@ -451,7 +580,7 @@ class FirestoreService implements StorageBackend {
     if (deleteOps > 0) {
       for (var i = 0; i < deleteOps; i += limit) {
         final batch = _db.batch();
-        final chunk = existingDocs.sublist(i, (i + limit) > deleteOps ? deleteOps : i + limit);
+        final chunk = docsToDelete.sublist(i, (i + limit) > deleteOps ? deleteOps : i + limit);
         for (final doc in chunk) {
           batch.delete(doc.reference);
         }

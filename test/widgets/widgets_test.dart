@@ -8,7 +8,6 @@ import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/widgets/empty_state.dart';
 import 'package:shopping_list/widgets/shopping_item_tile.dart';
-import 'package:shopping_list/widgets/shimmer_list.dart';
 import 'package:shopping_list/widgets/filter_bar.dart';
 import 'package:shopping_list/widgets/add_item_dialog.dart';
 import 'package:shopping_list/widgets/edit_item_dialog.dart';

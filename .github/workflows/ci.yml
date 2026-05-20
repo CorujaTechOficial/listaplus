@@ -16,7 +16,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.x
+          flutter-version: '3.29.3'
       - run: flutter pub get
       - run: flutter analyze --fatal-infos
 
@@ -29,7 +29,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.x
+          flutter-version: '3.29.3'
       - run: flutter pub get
       - run: flutter test --coverage
       - name: Check coverage (100% source-only)
@@ -42,7 +42,7 @@ jobs:
           fi
           echo "✔ Cobertura 100%"
 
-  build:
+  build-web:
     name: flutter build web
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -51,6 +51,24 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.x
+          flutter-version: '3.29.3'
       - run: flutter pub get
       - run: flutter build web --release
+
+  build-android:
+    name: flutter build appbundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.29.3'
+      - run: flutter pub get
+      - name: Build Android App Bundle (debug signing)
+        run: flutter build appbundle --debug

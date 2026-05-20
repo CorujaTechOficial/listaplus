@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'package:flutter/services.dart';
@@ -82,9 +84,9 @@ class ShoppingItemTile extends ConsumerWidget {
                       }
                     : (v) async {
                         if (v == true) {
-                          HapticFeedback.mediumImpact();
+                          unawaited(HapticFeedback.mediumImpact());
                         } else {
-                          HapticFeedback.lightImpact();
+                          unawaited(HapticFeedback.lightImpact());
                         }
                         await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
                         if (v == true && context.mounted) {
@@ -139,7 +141,7 @@ class ShoppingItemTile extends ConsumerWidget {
                           const SizedBox(width: Spacing.xxs),
                           _PriceBadge(
                             price: item.estimatedPrice!,
-                            previousPrice: ref.read(priceHistoryProvider.notifier).getPreviousPrice(item.name),
+                            previousPrice: ref.watch(priceHistoryProvider)[item.name.trim().toLowerCase()],
                           ),
                         ],
                       ],
@@ -149,7 +151,6 @@ class ShoppingItemTile extends ConsumerWidget {
               ),
               IconButton(
                 icon: Icon(Icons.edit_outlined, size: 18, color: theme.colorScheme.onSurfaceVariant),
-                // ignore: unawaited_futures
                 onPressed: () => _showEditDialog(context, ref),
                 visualDensity: VisualDensity.compact,
                 padding: EdgeInsets.zero,
@@ -207,15 +208,17 @@ class ShoppingItemTile extends ConsumerWidget {
           final removedItem = item;
           final notifier = ref.read(shoppingListItemsProvider(listId).notifier);
           notifier.removeItem(item.id);
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.itemRemoved),
-              action: SnackBarAction(
-                label: l10n.undo,
-                onPressed: () => notifier.restoreItem(removedItem),
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(l10n.itemRemoved),
+                action: SnackBarAction(
+                  label: l10n.undo,
+                  onPressed: () => notifier.restoreItem(removedItem),
+                ),
               ),
-            ),
-          );
+            );
+          }
         }
       },
       child: tileContent,

@@ -6,7 +6,7 @@ part of 'current_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$currentListIdHash() => r'af14fb42dbd8a7899edb0c7da8abb0aacde5ebd7';
+String _$currentListIdHash() => r'b9802e9062478f139f133d3ea6527c827263d6af';
 
 /// See also [CurrentListId].
 @ProviderFor(CurrentListId)

@@ -27,11 +27,16 @@ class ChatSession extends _$ChatSession {
     );
 
     // Update local state immediately
-    final currentHistory = state.value ?? [];
-    state = AsyncValue.data([...currentHistory, userMessage]);
+    final previousHistory = state.value ?? [];
+    state = AsyncValue.data([...previousHistory, userMessage]);
     
     // Save user message to Firestore
-    await firestoreService.saveChatMessage(listId, userMessage);
+    try {
+      await firestoreService.saveChatMessage(listId, userMessage);
+    } on Exception {
+      state = AsyncValue.data(previousHistory);
+      return;
+    }
 
     // Prepare context
     String systemPrompt;
@@ -55,34 +60,36 @@ class ChatSession extends _$ChatSession {
       systemPrompt = _buildGlobalSystemPrompt(allItems);
     }
 
+    var assistantMessage = ChatMessage(role: 'assistant', content: '');
     try {
       final stream = aiService.getChatCompletionStream(
-        state.value ?? [],
+        [...previousHistory, userMessage],
         systemPrompt: systemPrompt,
       );
 
-      var assistantMessage = ChatMessage(role: 'assistant', content: '');
-      final baseHistory = state.value ?? currentHistory;
-      state = AsyncValue.data([...baseHistory, assistantMessage]);
+      state = AsyncValue.data([...state.value ?? [], assistantMessage]);
 
       await for (final chunk in stream) {
         assistantMessage = assistantMessage.copyWith(
           content: assistantMessage.content + chunk,
         );
 
-        final safeHistory = state.value ?? [];
-        state = AsyncValue.data([...safeHistory.sublist(0, safeHistory.length - 1), assistantMessage]);
+        final currentSafeHistory = state.value ?? [];
+        state = AsyncValue.data(
+          currentSafeHistory.map((msg) => msg.id == assistantMessage.id ? assistantMessage : msg).toList(),
+        );
       }
 
       await firestoreService.saveChatMessage(listId, assistantMessage);
       // coverage:ignore-start
-    } on Exception catch (_) {
+    } on Exception {
       final safeHistory = state.value ?? [];
+      final filteredHistory = safeHistory.where((msg) => msg.id != assistantMessage.id).toList();
       final errorMessage = ChatMessage(
         role: 'assistant',
         content: 'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.',
       );
-      state = AsyncValue.data([...safeHistory, errorMessage]);
+      state = AsyncValue.data([...filteredHistory, errorMessage]);
     }
     // coverage:ignore-end
   }

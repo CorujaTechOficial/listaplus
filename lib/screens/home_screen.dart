@@ -1,9 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:confetti/confetti.dart';
-import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:excel/excel.dart' as ex;
@@ -28,19 +29,22 @@ import '../widgets/banner_ad_widget.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/budget_dialog.dart';
 import '../widgets/filter_bar.dart';
-import '../widgets/rewarded_ad_button.dart';
 import '../models/category.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
+import '../models/chat_message.dart';
+import '../models/premium_feature.dart';
 import '../providers/share_provider.dart';
 import '../providers/premium_provider.dart';
 import '../providers/analytics_service_provider.dart';
 import '../providers/app_review_service_provider.dart';
+import '../providers/ai_service_provider.dart';
 import 'paywall_screen.dart';
 import 'chat_screen.dart';
 import 'settings_screen.dart';
 import '../widgets/list_switcher_sheet.dart';
 import '../widgets/add_item_dialog.dart';
+import 'dart:convert';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key, required this.listId});
@@ -68,20 +72,104 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _simulateAiOrganization() async {
-    setState(() => _isAiOrganizing = true);
-    HapticFeedback.mediumImpact();
+    setState(() {
+      _isAiOrganizing = true;
+    });
+    unawaited(HapticFeedback.mediumImpact());
     
-    await Future<void>.delayed(const Duration(seconds: 2));
-    
-    if (mounted) {
-      setState(() => _isAiOrganizing = false);
-      HapticFeedback.heavyImpact();
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Lista organizada magicamente por categorias! ✨'),
-          behavior: SnackBarBehavior.floating,
-        ),
+    try {
+      final itemsAsync = ref.read(shoppingListItemsProvider(widget.listId));
+      final items = itemsAsync.value ?? [];
+      if (items.isEmpty) {
+        if (mounted) {
+          setState(() {
+            _isAiOrganizing = false;
+          });
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Sua lista está vazia! Adicione itens primeiro. ℹ️'),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        }
+        return;
+      }
+
+      final itemNames = items.map((i) => i.name).toList();
+      const systemPrompt = "Você é um assistente especialista em organização de listas de compras. Sua tarefa é categorizar cada item da lista fornecida em uma das seguintes categorias válidas: 'fruits' (para Frutas), 'cleaning' (para Limpeza/Higiene), 'beverages' (para Bebidas/Laticínios), 'bakery' (para Padaria/Pães/Bolos) ou 'others' (para Outros/Diversos). Retorne APENAS um objeto JSON válido onde as chaves são os nomes exatos dos itens e os valores são as chaves da categoria correspondente (fruits, cleaning, beverages, bakery, others). Não inclua nenhuma explicação ou texto fora do JSON.";
+      
+      final aiService = ref.read(aiServiceProvider);
+      final response = await aiService.getChatCompletion(
+        [
+          ChatMessage(
+            role: 'user',
+            content: 'Itens para categorizar: ${jsonEncode(itemNames)}',
+          ),
+        ],
+        systemPrompt: systemPrompt,
       );
+
+      final cleanContent = response.content
+          .replaceAll('```json', '')
+          .replaceAll('```', '')
+          .trim();
+      
+      final Map<String, dynamic> categorization = jsonDecode(cleanContent) as Map<String, dynamic>;
+
+      final updatedItems = items.map((item) {
+        final categoryKey = categorization[item.name]?.toString();
+        Category? newCategory;
+        if (categoryKey != null) {
+          switch (categoryKey) {
+            case 'fruits':
+              newCategory = Category.fruits;
+              break;
+            case 'cleaning':
+              newCategory = Category.cleaning;
+              break;
+            case 'beverages':
+              newCategory = Category.beverages;
+              break;
+            case 'bakery':
+              newCategory = Category.bakery;
+              break;
+            case 'others':
+              newCategory = Category.others;
+              break;
+          }
+        }
+        if (newCategory != null) {
+          return item.copyWith(category: newCategory, updatedAt: DateTime.now());
+        }
+        return item;
+      }).toList();
+
+      await ref.read(shoppingListItemsProvider(widget.listId).notifier).updateItems(updatedItems);
+
+      if (mounted) {
+        setState(() {
+          _isAiOrganizing = false;
+        });
+        unawaited(HapticFeedback.heavyImpact());
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Lista organizada magicamente por categorias! ✨'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+    } on Exception catch (e) {
+      if (mounted) {
+        setState(() {
+          _isAiOrganizing = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Erro ao organizar com IA: ${e.toString()}'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
     }
   }
 
@@ -298,13 +386,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           ],
                         ),
                       ),
-                      PopupMenuItem(
+                      const PopupMenuItem(
                         value: 'ai_organize',
                         child: Row(
                           children: [
-                            const Icon(Icons.auto_awesome_motion, size: 18, color: Colors.blue),
-                            const SizedBox(width: 8),
-                            const Flexible(child: Text('Organização Inteligente')),
+                            Icon(Icons.auto_awesome_motion, size: 18, color: Colors.blue),
+                            SizedBox(width: 8),
+                            Flexible(child: Text('Organização Inteligente')),
                           ],
                         ),
                       ),
@@ -388,18 +476,38 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     } else if (value == 'share_list') {
                       _showShareBottomSheet(items, currentList?.name);
                     } else if (value == 'ai_organize') {
-                      await _simulateAiOrganization();
+                      if (isPremium) {
+                        await _simulateAiOrganization();
+                      } else {
+                        await ref.read(analyticsServiceProvider).logPremiumFeatureAccessed(PremiumFeature.assistant.name);
+                        if (context.mounted) {
+                          await Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const PaywallScreen()),
+                          );
+                        }
+                      }
                     } else if (value == 'ai_assistant') {
-                      if (context.mounted) {
-                        await Navigator.push(
-                          context,
-                          fadeSlideRoute<void>(
-                            ChatScreen(
-                              listId: widget.listId,
-                              listName: currentList?.name,
+                      if (isPremium) {
+                        if (context.mounted) {
+                          await Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(
+                              ChatScreen(
+                                listId: widget.listId,
+                                listName: currentList?.name,
+                              ),
                             ),
-                          ),
-                        );
+                          );
+                        }
+                      } else {
+                        await ref.read(analyticsServiceProvider).logPremiumFeatureAccessed(PremiumFeature.assistant.name);
+                        if (context.mounted) {
+                          await Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const PaywallScreen()),
+                          );
+                        }
                       }
                     } else if (value == 'upgrade') {
                       await ref.read(analyticsServiceProvider).logUpgradeTapped('menu');
@@ -663,8 +771,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               isSelected: _selectedIds.contains(shoppingItem.id),
                               onSelectionChanged: (selected) {
                                 if (selected) {
-                                  _selectedIds.add(shoppingItem.id);
-                                  _enterSelectionMode();
+                                  setState(() {
+                                    _selectedIds.add(shoppingItem.id);
+                                    _enterSelectionMode();
+                                  });
                                 } else {
                                   setState(() {
                                     _selectedIds.remove(shoppingItem.id);
@@ -877,15 +987,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Color _getColorForProgress(double progress, ThemeData theme) {
-    if (progress >= 1.0) return theme.colorScheme.error;
-    if (progress >= 0.9) return Colors.deepOrange;
-    if (progress >= 0.75) return Colors.orange;
-    if (progress >= 0.5) return Colors.amber;
+    if (progress >= 1.0) {
+      return theme.colorScheme.error;
+    }
+    if (progress >= 0.9) {
+      return Colors.deepOrange;
+    }
+    if (progress >= 0.75) {
+      return Colors.orange;
+    }
+    if (progress >= 0.5) {
+      return Colors.amber;
+    }
     return theme.colorScheme.primary;
   }
 
   void _enterSelectionMode() {
-    HapticFeedback.mediumImpact();
+    unawaited(HapticFeedback.mediumImpact());
     setState(() => _selectionMode = true);
   }
 
@@ -969,7 +1087,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     if (confirm == true && context.mounted) {
       _confettiController.play();
       await Future<void>.delayed(const Duration(milliseconds: 500));
-      if (!context.mounted) return;
+      if (!context.mounted) {
+        return;
+      }
       await ref.read(shoppingListsProvider.notifier).archiveList(widget.listId);
       await ref.read(appReviewServiceProvider).registerArchiveAndRequestReview();
       if (context.mounted) {
@@ -1011,7 +1131,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final isPremium = ref.read(premiumProvider).value ?? false;
+    final isPremium = await ref.read(premiumProvider.future);
 
     if (!isPremium) {
       await ref.read(analyticsServiceProvider).logUpgradeTapped('share_code');
@@ -1055,7 +1175,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                 ),
               ),
-              if (!isPremium) const RewardedAdButton(),
               const SizedBox(height: Spacing.xs),
               Text(
                 l10n.validForLimitedTime,

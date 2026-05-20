@@ -26,18 +26,21 @@ void main() {
     });
 
     test('setBudget sets a value', () async {
+      await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(500);
       final budget = await container.read(monthlyBudgetProvider.future);
       expect(budget, 500);
     });
 
     test('setBudget persists to backend', () async {
+      await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(250.50);
       final userData = await fakeBackend.getUserData();
       expect(userData!['monthlyBudget'], 250.50);
     });
 
     test('setBudget with null removes budget', () async {
+      await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(500);
       await container.read(monthlyBudgetProvider.notifier).setBudget(null);
       final budget = await container.read(monthlyBudgetProvider.future);

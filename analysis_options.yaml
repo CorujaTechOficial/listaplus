@@ -104,9 +104,6 @@ analyzer:
     strict-casts: true
     strict-inference: true
     strict-raw-types: true
-  strong-mode:
-    implicit-casts: false
-    implicit-dynamic: false
   errors:
     dead_code: warning
     missing_required_param: error

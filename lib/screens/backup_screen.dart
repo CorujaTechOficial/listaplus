@@ -80,29 +80,9 @@ class BackupScreen extends ConsumerWidget {
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
                 onTap: () async {
-                  final controller = TextEditingController();
                   final jsonString = await showDialog<String>(
                     context: context,
-                    builder: (_) => AlertDialog(
-                      title: Text(l10n.importJsonTitle),
-                      content: TextField(
-                        controller: controller,
-                        maxLines: 8,
-                        decoration: InputDecoration(
-                          hintText: l10n.importJsonHint,
-                        ),
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: Text(l10n.cancel),
-                        ),
-                        TextButton(
-                          onPressed: () => Navigator.pop(context, controller.text),
-                          child: Text(l10n.import),
-                        ),
-                      ],
-                    ),
+                    builder: (_) => const _ImportBackupDialog(),
                   );
                   if (jsonString != null && jsonString.isNotEmpty && context.mounted) {
                     final backup = ref.read(backupProvider);
@@ -127,6 +107,48 @@ class BackupScreen extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ImportBackupDialog extends StatefulWidget {
+  const _ImportBackupDialog();
+
+  @override
+  State<_ImportBackupDialog> createState() => _ImportBackupDialogState();
+}
+
+class _ImportBackupDialogState extends State<_ImportBackupDialog> {
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return AlertDialog(
+      title: Text(l10n.importJsonTitle),
+      content: TextField(
+        controller: _controller,
+        maxLines: 8,
+        decoration: InputDecoration(
+          hintText: l10n.importJsonHint,
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(l10n.cancel),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context, _controller.text),
+          child: Text(l10n.import),
+        ),
+      ],
     );
   }
 }

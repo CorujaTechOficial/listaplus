@@ -1,24 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 import 'package:shopping_list/screens/achievements_screen.dart';
-
-Widget wrapWithProviders(Widget child) {
-  return ProviderScope(
-    child: MaterialApp(
-      home: child,
-    ),
-  );
-}
+import '../helpers/test_widgets.dart';
+import '../helpers/fake_storage_backend.dart';
 
 void main() {
   group('AchievementsScreen', () {
     testWidgets('shows zero stats initially', (tester) async {
-      SharedPreferences.setMockInitialValues({});
+      final backend = FakeStorageBackend();
 
-      await tester.pumpWidget(wrapWithProviders(const AchievementsScreen()));
+      await tester.pumpWidget(wrapWithProviders(const AchievementsScreen(), backend: backend));
       await tester.pumpAndSettle();
 
       expect(find.text('Itens Comprados'), findsOneWidget);
@@ -32,16 +22,15 @@ void main() {
     });
 
     testWidgets('shows correct stats from SharedPreferences', (tester) async {
+      final backend = FakeStorageBackend();
       final mockData = {
         'totalItemsBought': 15,
         'totalSavings': 150.50,
         'currentStreak': 8,
       };
-      SharedPreferences.setMockInitialValues({
-        'user_stats_data': json.encode(mockData)
-      });
+      await backend.updateUserData({'userStats': mockData});
 
-      await tester.pumpWidget(wrapWithProviders(const AchievementsScreen()));
+      await tester.pumpWidget(wrapWithProviders(const AchievementsScreen(), backend: backend));
       await tester.pumpAndSettle();
 
       expect(find.text('15'), findsOneWidget);

@@ -66,118 +66,130 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final isPremium = ref.watch(premiumProvider).valueOrNull ?? false;
+    final premiumAsync = ref.watch(premiumProvider);
 
-    if (!isPremium) {
-      return PremiumGate(
-        title: l10n.aiAssistant,
-        description: l10n.aiAssistantDescription,
-        // coverage:ignore-start
-        onUpgrade: () => Navigator.push(
-          context,
-          fadeSlideRoute<void>(const PaywallScreen()),
-        ),
-        // coverage:ignore-end
-      );
-    }
+    return premiumAsync.when(
+      data: (isPremium) {
+        if (!isPremium) {
+          return PremiumGate(
+            title: l10n.aiAssistant,
+            description: l10n.aiAssistantDescription,
+            // coverage:ignore-start
+            onUpgrade: () => Navigator.push(
+              context,
+              fadeSlideRoute<void>(const PaywallScreen()),
+            ),
+            // coverage:ignore-end
+          );
+        }
 
-    final chatState = ref.watch(chatSessionProvider(widget.listId));
-    final theme = Theme.of(context);
+        final chatState = ref.watch(chatSessionProvider(widget.listId));
+        final theme = Theme.of(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.listName ?? l10n.generalAssistant),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.delete_sweep),
-            onPressed: () {
-              showDialog<void>(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(l10n.clearHistory),
-                  content: Text(l10n.clearHistoryConfirm),
-                  actions: [
-                    // coverage:ignore-start
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text(l10n.cancel),
-                    ),
-                    // coverage:ignore-end
-                    TextButton(
-                      onPressed: () {
-                        ref.read(chatSessionProvider(widget.listId).notifier).clearHistory();
-                        Navigator.pop(context);
-                      },
-                      child: Text(l10n.clear),
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: chatState.when(
-              data: (messages) {
-                if (messages.isEmpty) {
-                  return Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.auto_awesome, size: 64, color: theme.colorScheme.primary),
-                        const SizedBox(height: 16),
-                        Text(
-                          widget.listId != null
-                              ? l10n.listHelp
-                              : l10n.generalHelp,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.titleMedium,
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(widget.listName ?? l10n.generalAssistant),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.delete_sweep),
+                onPressed: () {
+                  showDialog<void>(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text(l10n.clearHistory),
+                      content: Text(l10n.clearHistoryConfirm),
+                      actions: [
+                        // coverage:ignore-start
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(l10n.cancel),
                         ),
-                        const SizedBox(height: 8),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 32),
-                          child: Text(
-                            l10n.chatSubtitle,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(color: Colors.grey),
-                          ),
+                        // coverage:ignore-end
+                        TextButton(
+                          onPressed: () {
+                            ref.read(chatSessionProvider(widget.listId).notifier).clearHistory();
+                            Navigator.pop(context);
+                          },
+                          child: Text(l10n.clear),
                         ),
                       ],
                     ),
                   );
-                }
-
-                WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
-
-                return ListView.builder(
-                  controller: _scrollController,
-                  padding: const EdgeInsets.all(16),
-                  itemCount: messages.length + (_isSending ? 1 : 0),
-                  itemBuilder: (context, index) {
-                    if (index == messages.length) {
-                      return const TypingIndicator();
+                },
+              ),
+            ],
+          ),
+          body: Column(
+            children: [
+              Expanded(
+                child: chatState.when(
+                  data: (messages) {
+                    if (messages.isEmpty) {
+                      return Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.auto_awesome, size: 64, color: theme.colorScheme.primary),
+                            const SizedBox(height: 16),
+                            Text(
+                              widget.listId != null
+                                  ? l10n.listHelp
+                                  : l10n.generalHelp,
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.titleMedium,
+                            ),
+                            const SizedBox(height: 8),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 32),
+                              child: Text(
+                                l10n.chatSubtitle,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(color: Colors.grey),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
                     }
-                    final message = messages[index];
-                    return ChatBubble(message: message).animate().fadeIn(
-                      duration: DurationTokens.fast,
-                    ).slideX(
-                      begin: message.role == 'user' ? 0.3 : -0.3,
-                      end: 0,
-                      duration: DurationTokens.fast,
-                      curve: Curves.easeOut,
+
+                    WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
+
+                    return ListView.builder(
+                      controller: _scrollController,
+                      padding: const EdgeInsets.all(16),
+                      itemCount: messages.length + (_isSending ? 1 : 0),
+                      itemBuilder: (context, index) {
+                        if (index == messages.length) {
+                          return const TypingIndicator();
+                        }
+                        final message = messages[index];
+                        return ChatBubble(message: message).animate().fadeIn(
+                          duration: DurationTokens.fast,
+                        ).slideX(
+                          begin: message.role == 'user' ? 0.3 : -0.3,
+                          end: 0,
+                          duration: DurationTokens.fast,
+                          curve: Curves.easeOut,
+                        );
+                      },
                     );
                   },
-                );
-              },
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Center(child: Text(l10n.chatError(e.toString()))), // coverage:ignore-line
-            ),
+                  loading: () => const Center(child: CircularProgressIndicator()),
+                  error: (e, _) => Center(child: Text(l10n.chatError(e.toString()))), // coverage:ignore-line
+                ),
+              ),
+              _buildInput(),
+            ],
           ),
-          _buildInput(),
-        ],
+        );
+      },
+      loading: () => Scaffold(
+        appBar: AppBar(title: Text(widget.listName ?? l10n.generalAssistant)),
+        body: const Center(child: CircularProgressIndicator()),
+      ),
+      error: (e, _) => Scaffold(
+        appBar: AppBar(title: Text(widget.listName ?? l10n.generalAssistant)),
+        body: Center(child: Text(l10n.chatError(e.toString()))),
       ),
     );
   }

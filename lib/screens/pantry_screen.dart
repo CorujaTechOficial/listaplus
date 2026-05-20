@@ -425,62 +425,95 @@ class _PantryItemTile extends ConsumerWidget {
   }
 
   void _showEditDialog(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final idealController = TextEditingController(text: item.idealQuantity.toString());
-    final currentController = TextEditingController(text: item.currentQuantity.toString());
-
     showDialog<void>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: Text(l10n.editPantryItem(item.name)),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: idealController,
-              decoration: InputDecoration(
-                labelText: l10n.idealQuantity,
-                border: const OutlineInputBorder(),
+      builder: (_) => _EditPantryItemDialog(item: item),
+    );
+  }
+}
+
+class _EditPantryItemDialog extends StatefulWidget {
+  const _EditPantryItemDialog({required this.item});
+  final PantryItem item;
+
+  @override
+  State<_EditPantryItemDialog> createState() => _EditPantryItemDialogState();
+}
+
+class _EditPantryItemDialogState extends State<_EditPantryItemDialog> {
+  late final TextEditingController _idealController;
+  late final TextEditingController _currentController;
+
+  @override
+  void initState() {
+    super.initState();
+    _idealController = TextEditingController(text: widget.item.idealQuantity.toString());
+    _currentController = TextEditingController(text: widget.item.currentQuantity.toString());
+  }
+
+  @override
+  void dispose() {
+    _idealController.dispose();
+    _currentController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer(
+      builder: (context, ref, _) {
+        final l10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(l10n.editPantryItem(widget.item.name)),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: _idealController,
+                decoration: InputDecoration(
+                  labelText: l10n.idealQuantity,
+                  border: const OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.number,
               ),
-              keyboardType: TextInputType.number,
+              const SizedBox(height: Spacing.sm),
+              TextField(
+                controller: _currentController,
+                decoration: InputDecoration(
+                  labelText: l10n.currentQuantity,
+                  border: const OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(l10n.cancel),
             ),
-            const SizedBox(height: Spacing.sm),
-            TextField(
-              controller: currentController,
-              decoration: InputDecoration(
-                labelText: l10n.currentQuantity,
-                border: const OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.number,
+            FilledButton(
+              onPressed: () async {
+                final ideal = int.tryParse(_idealController.text);
+                final current = int.tryParse(_currentController.text);
+                if (ideal != null && current != null) {
+                  await ref.read(pantryItemsProvider.notifier).updateItem(
+                        widget.item.copyWith(
+                          idealQuantity: ideal.clamp(1, 999),
+                          currentQuantity: current.clamp(0, 999),
+                          updatedAt: DateTime.now(),
+                        ),
+                      );
+                  if (context.mounted) {
+                    Navigator.pop(context);
+                  }
+                }
+              },
+              child: Text(l10n.save),
             ),
           ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(l10n.cancel),
-          ),
-          FilledButton(
-            onPressed: () async {
-              final ideal = int.tryParse(idealController.text);
-              final current = int.tryParse(currentController.text);
-              if (ideal != null && current != null) {
-                await ref.read(pantryItemsProvider.notifier).updateItem(
-                  item.copyWith(
-                    idealQuantity: ideal.clamp(1, 999),
-                    currentQuantity: current.clamp(0, 999),
-                    updatedAt: DateTime.now(),
-                  ),
-                );
-                if (context.mounted) {
-                  Navigator.pop(context);
-                }
-              }
-            },
-            child: Text(l10n.save),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

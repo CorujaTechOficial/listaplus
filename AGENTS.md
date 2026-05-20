@@ -16,8 +16,8 @@
   `--dart-define=KILO_API_KEY=xxx`. Chat sessions persisted in Firestore `chat_messages` subcollection.
 - **RevenueCat**: API key via `--dart-define=REVENUECAT_API_KEY=xxx` (default fallback `goog_lUoZUpDVyhVroFRzwgArMnFxIQv`).
 - **Observability**: Sentry + Firebase Crashlytics (dual). `SentryFlutter.init` wraps `appRunner`;
-  `FlutterError.onError` + `PlatformDispatcher.onError` send to both. Sentry: `tracesSampleRate: 1.0`,
-  `enableLogs: true`, `sendDefaultPii: true`.
+  `FlutterError.onError` + `PlatformDispatcher.onError` send to both. Sentry: `tracesSampleRate: 0.2`,
+  `enableLogs: true`, `sendDefaultPii: false`.
 - **Analytics**: Firebase Analytics via `AnalyticsService`. Events: `paywall_viewed`, `paywall_purchase_completed`,
   `paywall_restore_completed`, `paywall_dismissed`, `customer_center_opened`, `upgrade_tapped`,
   `premium_feature_accessed`. Override with `AnalyticsService()` (no Firebase) in tests.
@@ -67,8 +67,8 @@ Runs `flutter analyze --fatal-infos` before each commit.
 
 ## CI (`.github/workflows/`)
 
-- `ci.yml`: 3 jobs — `analyze` (flutter analyze), `test` (flutter test --coverage + awk 100% check), `build` (flutter build web)
-- `sonar.yml`: SonarQube scan on push/PR to main. Exports `flutter analyze` issues via `scripts/flutter-analyze-to-sonar.sh`.
+- `ci.yml`: 4 jobs — `analyze` (flutter analyze), `test` (flutter test --coverage + awk 100% check), `build-web` (flutter build web), `build-android` (flutter build appbundle --debug). Flutter pinado em `3.29.3`.
+- `sonar.yml`: SonarQube scan on push/PR to main. Exports `flutter analyze` issues via `scripts/flutter-analyze-to-sonar.sh`. Versão extraída dinamicamente do `pubspec.yaml`.
 
 ## custom_lints Package (`custom_lints/`)
 
@@ -101,7 +101,7 @@ Must compile clean: `cd custom_lints && dart analyze lib/` → "No issues found!
 - `prefer_int_literals` false positive with `fold(0.0, ...)` — suppress with `// ignore: prefer_int_literals`.
 - `*.g.dart` excluded from analysis, coverage, and SonarQube.
 - `find.byIcon(Icons.add)` returns 2 (FAB + tile "+") — use `find.descendant(of: find.byType(ShoppingItemTile), matching: find.byIcon(Icons.add))` in tile tests.
-- `ShoppingItemTile`: checkbox = selection, not purchase. No `Dismissible`.
+- `ShoppingItemTile`: checkbox = selection (in selection mode) or purchase toggle (normal mode). Has `Dismissible` for swipe-to-delete and swipe-to-toggle.
 - `container.read(premiumProvider.future)` may return stale after entitlement change — `container.invalidate(premiumProvider)` then re-read.
 - `ReorderableListView.onReorder`: `newIndex -= 1` when `oldIndex < newIndex`. Provider's `reorderItem` mirrors this.
 - `context.mounted` guard necessary after `ref.invalidate` + `Navigator.pop` in PopupMenuButton callbacks.

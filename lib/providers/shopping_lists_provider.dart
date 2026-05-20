@@ -42,75 +42,97 @@ class ShoppingLists extends _$ShoppingLists {
   }
 
   Future<ShoppingList> createList(String name, {double? budget}) async {
-    final isPremium = ref.read(premiumProvider).value ?? false;
+    final isPremium = await ref.read(premiumProvider.future);
     final currentLists = state.value ?? [];
+    final activeListsCount = currentLists.where((l) => !l.isArchived).length;
 
-    if (!isPremium && currentLists.length >= 3) {
-      throw Exception('Limite de 3 listas no plano gratuito. Faça upgrade para criar mais.');
+    if (!isPremium && activeListsCount >= 3) {
+      throw Exception('Limite de 3 listas ativas no plano gratuito. Arquive ou exclua uma lista ativa para criar mais.');
     }
 
     final service = ref.read(firestoreServiceProvider);
     final newList = ShoppingList(name: name, budget: budget);
     
-    // We don't update state manually anymore, let the stream handle it
-    await service.saveLists([...currentLists, newList]);
-    await service.setCurrentListId(newList.id);
-    return newList;
+    try {
+      await service.saveList(newList);
+      await service.setCurrentListId(newList.id);
+      return newList;
+    } on Exception catch (e) {
+      throw Exception('Erro ao criar lista: $e');
+    }
   }
 
   Future<void> updateList(ShoppingList list) async {
     final service = ref.read(firestoreServiceProvider);
-    final lists = state.value ?? [];
-    final updated = lists.map((l) => l.id == list.id ? list : l).toList();
-    await service.saveLists(updated);
+    try {
+      await service.saveList(list);
+    } on Exception catch (e) {
+      throw Exception('Erro ao atualizar lista: $e');
+    }
   }
 
   Future<void> deleteList(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final lists = state.value ?? [];
-    final updated = lists.where((l) => l.id != id).toList();
     
-    await service.deleteList(id);
-    await service.saveLists(updated);
-    await service.deleteItemsFromList(id);
-    
-    final newCurrent = updated.isNotEmpty ? updated.first.id : null;
-    if (newCurrent != null) {
-      await service.setCurrentListId(newCurrent);
+    try {
+      await service.deleteItemsFromList(id);
+      await service.deleteList(id);
+      
+      final updatedLists = lists.where((l) => l.id != id).toList();
+      final newCurrent = updatedLists.isNotEmpty ? updatedLists.first.id : null;
+      if (newCurrent != null) {
+        await service.setCurrentListId(newCurrent);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao excluir lista: $e');
     }
   }
 
   Future<void> removeSharedList(String id) async {
     final service = ref.read(firestoreServiceProvider);
-    await service.removeSharedListRef(id);
+    try {
+      await service.removeSharedListRef(id);
+    } on Exception catch (e) {
+      throw Exception('Erro ao remover lista compartilhada: $e');
+    }
   }
 
   Future<void> setCurrentList(String listId) async {
     final service = ref.read(firestoreServiceProvider);
-    await service.setCurrentListId(listId);
+    try {
+      await service.setCurrentListId(listId);
+    } on Exception catch (e) {
+      throw Exception('Erro ao definir lista atual: $e');
+    }
   }
 
   Future<void> archiveList(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final lists = state.value ?? [];
     final list = lists.where((l) => l.id == id).firstOrNull;
-    if (list == null) return;
-    final updatedList = list.copyWith(isArchived: true, archivedAt: DateTime.now());
-    final updated = lists.map((l) => l.id == id ? updatedList : l).toList();
+    if (list == null) {
+      return;
+    }
     
-    await service.saveLists(updated);
+    final updatedList = list.copyWith(isArchived: true, archivedAt: DateTime.now());
+    try {
+      await service.saveList(updatedList);
 
-    final currentId = await service.getCurrentListId();
-    if (currentId == id) {
-      final activeLists = updated.where((l) => !l.isArchived).toList();
-      final newCurrent = activeLists.isNotEmpty ? activeLists.first.id : null;
-      if (newCurrent != null) {
-        await service.setCurrentListId(newCurrent);
-        ref.invalidate(currentListIdProvider);
-      } else {
-        await service.setCurrentListId(null);
-        ref.invalidate(currentListIdProvider);
+      final currentId = await service.getCurrentListId();
+      if (currentId == id) {
+        final activeLists = lists.where((l) => l.id != id && !l.isArchived).toList();
+        final newCurrent = activeLists.isNotEmpty ? activeLists.first.id : null;
+        if (newCurrent != null) {
+          await service.setCurrentListId(newCurrent);
+          ref.invalidate(currentListIdProvider);
+        } else {
+          await service.setCurrentListId(null);
+          ref.invalidate(currentListIdProvider);
+        }
       }
+    } on Exception catch (e) {
+      throw Exception('Erro ao arquivar lista: $e');
     }
   }
 
@@ -118,10 +140,16 @@ class ShoppingLists extends _$ShoppingLists {
     final service = ref.read(firestoreServiceProvider);
     final lists = state.value ?? [];
     final list = lists.where((l) => l.id == id).firstOrNull;
-    if (list == null) return;
+    if (list == null) {
+      return;
+    }
+    
     final updatedList = list.copyWith(isArchived: false, archivedAt: null);
-    final updated = lists.map((l) => l.id == id ? updatedList : l).toList();
-    await service.saveLists(updated);
+    try {
+      await service.saveList(updatedList);
+    } on Exception catch (e) {
+      throw Exception('Erro ao desarquivar lista: $e');
+    }
   }
 }
 // coverage:ignore-end

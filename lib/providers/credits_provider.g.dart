@@ -6,7 +6,7 @@ part of 'credits_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$creditsHash() => r'63c220477e92aadfe2b7342c10171de3c4c62d06';
+String _$creditsHash() => r'84da63c91e92e7fcc5de65ae1aafa2db5ffa8342';
 
 /// See also [Credits].
 @ProviderFor(Credits)

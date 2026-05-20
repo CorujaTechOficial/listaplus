@@ -6,7 +6,7 @@ part of 'monthly_budget_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$monthlyBudgetHash() => r'a1bc5e9a39ffb2bb9caf4b0043062c2c5d7be398';
+String _$monthlyBudgetHash() => r'e5aef7ed24346bd3fe0c5e60f3db01e361752e48';
 
 /// See also [MonthlyBudget].
 @ProviderFor(MonthlyBudget)

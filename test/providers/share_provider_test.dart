@@ -8,18 +8,23 @@ import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import '../helpers/fake_storage_backend.dart';
+import '../helpers/fake_revenuecat_service.dart';
 
 void main() {
   group('ShareService', () {
     late ProviderContainer container;
     late FakeStorageBackend fakeBackend;
+    late FakeRevenueCatService fakeRc;
     late ShoppingList testList;
 
     setUp(() {
       fakeBackend = FakeStorageBackend();
+      fakeRc = FakeRevenueCatService()..setIsPremium(true);
       container = ProviderContainer(overrides: [
         firestoreServiceProvider.overrideWithValue(fakeBackend),
+        revenueCatServiceProvider.overrideWithValue(fakeRc),
         authServiceProvider.overrideWithValue(
           AuthService(
             auth: MockFirebaseAuth(

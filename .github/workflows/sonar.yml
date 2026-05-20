@@ -19,7 +19,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.x
+          flutter-version: '3.29.3'
 
       - run: flutter pub get
 
@@ -31,6 +31,12 @@ jobs:
       - name: flutter test + coverage
         run: flutter test --machine --coverage > tests.output
 
+      - name: Extract version from pubspec
+        id: version
+        run: |
+          VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //' | cut -d'+' -f1 | tr -d ' ')
+          echo "app_version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v5
         env:
@@ -40,7 +46,7 @@ jobs:
           args: >
             -Dsonar.projectKey=shopping_list
             -Dsonar.projectName="Shopping List - CorujaTech"
-            -Dsonar.projectVersion=1.0.0
+            -Dsonar.projectVersion=${{ steps.version.outputs.app_version }}
             -Dsonar.sources=lib
             -Dsonar.tests=test
             -Dsonar.sourceEncoding=UTF-8

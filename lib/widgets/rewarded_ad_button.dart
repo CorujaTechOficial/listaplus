@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,14 +38,17 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
 
     final adUnitId = ref.read(adServiceProvider).rewardedAdUnitId;
 
-    // ignore: unawaited_futures
-    RewardedAd.load(
+    unawaited(RewardedAd.load(
       adUnitId: adUnitId,
       request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
-          setState(() => _isLoading = false);
-          _showAd(ad);
+          if (mounted) {
+            setState(() => _isLoading = false);
+            _showAd(ad);
+          } else {
+            ad.dispose();
+          }
         },
         onAdFailedToLoad: (error) {
           if (mounted) {
@@ -54,7 +59,7 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
           }
         },
       ),
-    );
+    ));
   }
 
   void _showAd(RewardedAd ad) {

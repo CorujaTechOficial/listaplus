@@ -69,5 +69,39 @@ class AdServiceImpl implements AdService {
 
   @override
   bool get isAvailable => _initialized;
+
+  @override
+  Future<void> showRewardedAd({
+    required void Function() onUserEarnedReward,
+    required void Function() onAdFailedToLoad,
+    required void Function() onAdClosed,
+  }) async {
+    await RewardedAd.load(
+      adUnitId: rewardedAdUnitId,
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (RewardedAd ad) {
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (RewardedAd ad) {
+              ad.dispose();
+              onAdClosed();
+            },
+            onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
+              ad.dispose();
+              onAdFailedToLoad();
+            },
+          );
+          ad.show(
+            onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
+              onUserEarnedReward();
+            },
+          );
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          onAdFailedToLoad();
+        },
+      ),
+    );
+  }
 }
 // coverage:ignore-end

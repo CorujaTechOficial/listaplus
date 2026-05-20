@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // coverage:ignore-start
@@ -5,7 +7,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../models/shopping_item.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
-import '../services/storage_backend.dart';
 import 'firestore_service_provider.dart';
 import 'shopping_lists_provider.dart';
 import 'item_history_provider.dart';
@@ -61,104 +62,198 @@ class ShoppingListItems extends _$ShoppingListItems {
       estimatedPrice: estimatedPrice,
     );
 
-    final currentItems = state.value ?? [];
-    await _saveItems(service, [...currentItems, newItem]);
-    
-    // Track in history
-    ref.read(itemHistoryProvider.notifier).trackItem(name);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemToUser(ownerUid, newItem);
+      } else {
+        await service.saveItem(newItem);
+      }
+      
+      // Track in history
+      unawaited(ref.read(itemHistoryProvider.notifier).trackItem(name));
+    } on Exception catch (e) {
+      throw Exception('Erro ao adicionar item: $e');
+    }
   }
 
   Future<void> togglePurchased(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
-    ShoppingItem? toggledItem;
-    final updated = items.map((item) {
-      if (item.id == id) {
-        toggledItem = item.copyWith(
-          isPurchased: !item.isPurchased,
-          updatedAt: DateTime.now(),
-        );
-        return toggledItem!;
-      }
-      return item;
-    }).toList();
+    final item = items.where((i) => i.id == id).firstOrNull;
+    if (item == null) {
+      return;
+    }
 
-    await _saveItems(service, updated);
-    
-    // Record stats if newly purchased
-    if (toggledItem?.isPurchased == true) {
-      ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: 1);
+    final toggledItem = item.copyWith(
+      isPurchased: !item.isPurchased,
+      updatedAt: DateTime.now(),
+    );
+
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemToUser(ownerUid, toggledItem);
+      } else {
+        await service.saveItem(toggledItem);
+      }
+      
+      // Record stats if newly purchased
+      if (toggledItem.isPurchased) {
+        unawaited(ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: 1));
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao alternar status do item: $e');
     }
   }
 
   Future<void> removeItem(String id) async {
     final service = ref.read(firestoreServiceProvider);
-    final items = state.value ?? [];
-    final updated = items.where((item) => item.id != id).toList();
-
-    await _saveItems(service, updated);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.deleteItemFromUser(ownerUid, listId, id);
+      } else {
+        await service.deleteItem(listId, id);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao remover item: $e');
+    }
   }
 
   Future<void> updateItem(ShoppingItem item) async {
     final service = ref.read(firestoreServiceProvider);
-    final items = state.value ?? [];
-    final updated = items.map((e) => e.id == item.id ? item : e).toList();
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemToUser(ownerUid, item);
+      } else {
+        await service.saveItem(item);
+      }
+      
+      // Update price history
+      if (item.estimatedPrice != null) {
+        unawaited(ref.read(priceHistoryProvider.notifier).updatePrice(item.name, item.estimatedPrice!));
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao atualizar item: $e');
+    }
+  }
 
-    await _saveItems(service, updated);
-    
-    // Update price history
-    if (item.estimatedPrice != null) {
-      ref.read(priceHistoryProvider.notifier).updatePrice(item.name, item.estimatedPrice!);
+  Future<void> updateItems(List<ShoppingItem> items) async {
+    final service = ref.read(firestoreServiceProvider);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, items);
+      } else {
+        await service.saveItems(items);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao atualizar itens: $e');
     }
   }
 
   Future<void> restoreItem(ShoppingItem item) async {
     final service = ref.read(firestoreServiceProvider);
-    final currentItems = state.value ?? [];
-    await _saveItems(service, [...currentItems, item]);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemToUser(ownerUid, item);
+      } else {
+        await service.saveItem(item);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao restaurar item: $e');
+    }
   }
 
   Future<void> incrementQuantity(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
-    final updated = items.map((item) {
-      if (item.id == id) {
-        return item.copyWith(quantity: item.quantity + 1, updatedAt: DateTime.now());
+    final item = items.where((i) => i.id == id).firstOrNull;
+    if (item == null) {
+      return;
+    }
+
+    final updatedItem = item.copyWith(quantity: item.quantity + 1, updatedAt: DateTime.now());
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemToUser(ownerUid, updatedItem);
+      } else {
+        await service.saveItem(updatedItem);
       }
-      return item;
-    }).toList();
-    await _saveItems(service, updated);
+    } on Exception catch (e) {
+      throw Exception('Erro ao aumentar quantidade: $e');
+    }
   }
 
   Future<void> decrementQuantity(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
-    final updated = items.map((item) {
-      if (item.id == id && item.quantity > 1) {
-        return item.copyWith(quantity: item.quantity - 1, updatedAt: DateTime.now());
+    final item = items.where((i) => i.id == id).firstOrNull;
+    if (item == null || item.quantity <= 1) {
+      return;
+    }
+
+    final updatedItem = item.copyWith(quantity: item.quantity - 1, updatedAt: DateTime.now());
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemToUser(ownerUid, updatedItem);
+      } else {
+        await service.saveItem(updatedItem);
       }
-      return item;
-    }).toList();
-    await _saveItems(service, updated);
+    } on Exception catch (e) {
+      throw Exception('Erro ao diminuir quantidade: $e');
+    }
   }
 
   Future<void> clearAll() async {
     final service = ref.read(firestoreServiceProvider);
-    await _saveItems(service, []);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, []);
+      } else {
+        await service.saveItems([]);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao limpar lista: $e');
+    }
   }
 
   Future<void> clearPurchased() async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     final updated = items.where((item) => !item.isPurchased).toList();
-    await _saveItems(service, updated);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, updated);
+      } else {
+        await service.saveItems(updated);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao limpar itens comprados: $e');
+    }
   }
 
   Future<void> removeItems(List<String> ids) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     final updated = items.where((item) => !ids.contains(item.id)).toList();
-    await _saveItems(service, updated);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, updated);
+      } else {
+        await service.saveItems(updated);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao remover itens: $e');
+    }
   }
 
   Future<void> togglePurchasedBatch(List<String> ids, bool isPurchased) async {
@@ -167,7 +262,9 @@ class ShoppingListItems extends _$ShoppingListItems {
     int newlyPurchased = 0;
     final updated = items.map((item) {
       if (ids.contains(item.id)) {
-        if (!item.isPurchased && isPurchased) newlyPurchased++;
+        if (!item.isPurchased && isPurchased) {
+          newlyPurchased++;
+        }
         return item.copyWith(
           isPurchased: isPurchased,
           updatedAt: DateTime.now(),
@@ -175,10 +272,20 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
       return item;
     }).toList();
-    await _saveItems(service, updated);
+    
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, updated);
+      } else {
+        await service.saveItems(updated);
+      }
 
-    if (newlyPurchased > 0) {
-      ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: newlyPurchased);
+      if (newlyPurchased > 0) {
+        unawaited(ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: newlyPurchased));
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao alternar itens: $e');
     }
   }
 
@@ -190,15 +297,16 @@ class ShoppingListItems extends _$ShoppingListItems {
     }
     final item = items.removeAt(oldIndex);
     items.insert(newIndex, item);
-    await _saveItems(service, items);
-  }
-
-  Future<void> _saveItems(StorageBackend service, List<ShoppingItem> items) async {
-    final ownerUid = await _ownerUid();
-    if (ownerUid != null) {
-      await service.saveItemsToUser(ownerUid, items);
-    } else {
-      await service.saveItems(items);
+    
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, items);
+      } else {
+        await service.saveItems(items);
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao reordenar item: $e');
     }
   }
 }

@@ -18,7 +18,10 @@ enum ChatRole {
   }
 
   static ChatRole fromString(String value) {
-    return ChatRole.values.firstWhere((r) => r.value == value);
+    return ChatRole.values.firstWhere(
+      (r) => r.value == value,
+      orElse: () => ChatRole.user,
+    );
   }
 }
 

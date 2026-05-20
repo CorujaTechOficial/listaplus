@@ -26,7 +26,13 @@ class DarkMode extends _$DarkMode {
 
   Future<void> setMode(ThemeMode mode) async {
     final service = ref.read(firestoreServiceProvider);
-    await service.setThemeMode(mode.name);
+    final previous = state.value;
     state = AsyncValue.data(mode);
+    try {
+      await service.setThemeMode(mode.name);
+    } on Exception {
+      state = AsyncValue.data(previous ?? ThemeMode.system);
+      rethrow;
+    }
   }
 }

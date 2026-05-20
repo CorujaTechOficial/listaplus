@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/screens/chat_screen.dart';
 import 'package:shopping_list/models/chat_message.dart';
-import 'package:shopping_list/providers/chat_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';

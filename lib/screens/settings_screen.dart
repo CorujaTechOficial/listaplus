@@ -26,7 +26,8 @@ class SettingsScreen extends ConsumerWidget {
     final theme = Theme.of(context);
     final darkModeAsync = ref.watch(darkModeProvider);
     final currentThemeMode = darkModeAsync.value ?? ThemeMode.system;
-    final isPremium = ref.watch(premiumProvider).value ?? false;
+    final premiumAsync = ref.watch(premiumProvider);
+    final localeAsync = ref.watch(localeSettingProvider);
     final isPt = Localizations.localeOf(context).languageCode == 'pt';
 
     return Scaffold(
@@ -34,41 +35,51 @@ class SettingsScreen extends ConsumerWidget {
       body: ListView(
         children: [
           _SectionHeader(title: isPt ? 'Assinatura' : 'Subscription'),
-          if (isPremium)
-            ListTile(
-              leading: const Icon(Icons.workspace_premium, color: AppColors.premiumAmber),
-              title: Text(isPt ? 'Lista Plus Pro ativo' : 'Lista Plus Pro active'),
-              subtitle: Text(l10n.manageSubscription),
-              trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
-              onTap: () async {
-                try {
-                  await ref.read(analyticsServiceProvider).logCustomerCenterOpened();
-                  await ref.read(revenueCatServiceProvider).presentCustomerCenter();
-                } on Exception catch (e) {
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text(l10n.error(e.toString()))),
-                    );
-                  }
-                }
-              },
-            )
-          else
-            ListTile(
-              leading: Icon(Icons.workspace_premium_outlined, color: theme.colorScheme.primary),
-              title: Text(l10n.becomePremium),
-              subtitle: Text(isPt ? 'Desbloqueie listas ilimitadas, IA e mais' : 'Unlock unlimited lists, AI and more'),
-              trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
-              onTap: () async {
-                await ref.read(analyticsServiceProvider).logUpgradeTapped('settings');
-                if (context.mounted) {
-                  await Navigator.push(
-                    context,
-                    fadeSlideRoute<void>(const PaywallScreen()),
-                  );
-                }
-              },
+          premiumAsync.when(
+            data: (isPremium) => isPremium
+                ? ListTile(
+                    leading: const Icon(Icons.workspace_premium, color: AppColors.premiumAmber),
+                    title: Text(isPt ? 'Lista Plus Pro ativo' : 'Lista Plus Pro active'),
+                    subtitle: Text(l10n.manageSubscription),
+                    trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+                    onTap: () async {
+                      try {
+                        await ref.read(analyticsServiceProvider).logCustomerCenterOpened();
+                        await ref.read(revenueCatServiceProvider).presentCustomerCenter();
+                      } on Exception catch (e) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(l10n.error(e.toString()))),
+                          );
+                        }
+                      }
+                    },
+                  )
+                : ListTile(
+                    leading: Icon(Icons.workspace_premium_outlined, color: theme.colorScheme.primary),
+                    title: Text(l10n.becomePremium),
+                    subtitle: Text(isPt ? 'Desbloqueie listas ilimitadas, IA e mais' : 'Unlock unlimited lists, AI and more'),
+                    trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+                    onTap: () async {
+                      await ref.read(analyticsServiceProvider).logUpgradeTapped('settings');
+                      if (context.mounted) {
+                        await Navigator.push(
+                          context,
+                          fadeSlideRoute<void>(const PaywallScreen()),
+                        );
+                      }
+                    },
+                  ),
+            loading: () => const ListTile(
+              leading: CircularProgressIndicator.adaptive(),
+              title: Text('Carregando assinatura...'),
             ),
+            error: (e, _) => ListTile(
+              leading: const Icon(Icons.error_outline, color: Colors.red),
+              title: const Text('Erro ao carregar assinatura'),
+              subtitle: Text(e.toString()),
+            ),
+          ),
           const Divider(),
           _SectionHeader(title: l10n.appearance),
           Padding(
@@ -118,30 +129,27 @@ class SettingsScreen extends ConsumerWidget {
           _SectionHeader(title: l10n.language),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
-            child: SegmentedButton<String>(
+            child: SegmentedButton<String?>(
               segments: [
-                ButtonSegment(
-                  value: '',
+                ButtonSegment<String?>(
+                  value: null,
                   icon: const Icon(Icons.settings_outlined),
                   label: Text(l10n.languageSystem),
                 ),
-                ButtonSegment(
+                const ButtonSegment<String?>(
                   value: 'pt_BR',
-                  icon: const Icon(Icons.language),
-                  label: Text(l10n.languagePortuguese),
+                  icon: Icon(Icons.language),
+                  label: Text('Português'),
                 ),
-                ButtonSegment(
+                const ButtonSegment<String?>(
                   value: 'en',
-                  icon: const Icon(Icons.language),
-                  label: Text(l10n.languageEnglish),
+                  icon: Icon(Icons.language),
+                  label: Text('English'),
                 ),
               ],
-              selected: {ref.watch(localeSettingProvider).valueOrNull ?? ''},
-              onSelectionChanged: (Set<String> selected) {
-                final locale = selected.first;
-                ref.read(localeSettingProvider.notifier).setLocale(
-                  locale.isEmpty ? null : locale,
-                );
+              selected: {localeAsync.valueOrNull},
+              onSelectionChanged: (Set<String?> selected) {
+                ref.read(localeSettingProvider.notifier).setLocale(selected.first);
               },
               showSelectedIcon: false,
             ),
@@ -153,11 +161,22 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(l10n.monthlyBudgetNav),
             subtitle: Text(l10n.budgetSubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
-            onTap: () {
-              Navigator.push(
-                context,
-                fadeSlideRoute<void>(const BudgetDashboardScreen()),
-              );
+            onTap: () async {
+              final isPremium = premiumAsync.valueOrNull ?? false;
+              if (isPremium) {
+                await Navigator.push(
+                  context,
+                  fadeSlideRoute<void>(const BudgetDashboardScreen()),
+                );
+              } else {
+                await ref.read(analyticsServiceProvider).logPremiumFeatureAccessed(PremiumFeature.monthlyBudget.name);
+                if (context.mounted) {
+                  await Navigator.push(
+                    context,
+                    fadeSlideRoute<void>(const PaywallScreen()),
+                  );
+                }
+              }
             },
           ),
           const Divider(),
@@ -167,11 +186,22 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(l10n.backupNav),
             subtitle: Text(l10n.backupSubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
-            onTap: () {
-              Navigator.push(
-                context,
-                fadeSlideRoute<void>(const BackupScreen()),
-              );
+            onTap: () async {
+              final isPremium = premiumAsync.valueOrNull ?? false;
+              if (isPremium) {
+                await Navigator.push(
+                  context,
+                  fadeSlideRoute<void>(const BackupScreen()),
+                );
+              } else {
+                await ref.read(analyticsServiceProvider).logPremiumFeatureAccessed(PremiumFeature.export.name);
+                if (context.mounted) {
+                  await Navigator.push(
+                    context,
+                    fadeSlideRoute<void>(const PaywallScreen()),
+                  );
+                }
+              }
             },
           ),
           const Divider(),

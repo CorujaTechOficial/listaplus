@@ -27,25 +27,40 @@ android {
     defaultConfig {
         applicationId = "br.com.curujatech.listaplus"
         minSdk = 24
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = 35
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        val dartEnvironmentVariables = project.properties["dart-defines"]?.toString()?.split(",")?.associate {
+            val parts = String(java.util.Base64.getDecoder().decode(it)).split("=", limit = 2)
+            if (parts.size == 2) parts[0] to parts[1] else parts[0] to ""
+        } ?: emptyMap()
+        manifestPlaceholders["admobAppId"] = dartEnvironmentVariables["ADMOB_APP_ID"] ?: "ca-app-pub-3940256099942544~3347511713"
     }
 
     signingConfigs {
         create("release") {
-            val keyProps = Properties()
-            keyProps.load(FileInputStream(rootProject.file("key.properties")))
-            storeFile = file(keyProps.getProperty("storeFile"))
-            storePassword = keyProps.getProperty("storePassword")
-            keyAlias = keyProps.getProperty("keyAlias")
-            keyPassword = keyProps.getProperty("keyPassword")
+            val keyPropsFile = rootProject.file("key.properties")
+            if (keyPropsFile.exists()) {
+                val keyProps = Properties()
+                keyProps.load(FileInputStream(keyPropsFile))
+                storeFile = file(keyProps.getProperty("storeFile"))
+                storePassword = keyProps.getProperty("storePassword")
+                keyAlias = keyProps.getProperty("keyAlias")
+                keyPassword = keyProps.getProperty("keyPassword")
+            }
         }
     }
 
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }

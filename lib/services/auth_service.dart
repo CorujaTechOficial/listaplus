@@ -39,7 +39,15 @@ class AuthService {
     final user = _auth.currentUser;
     UserCredential result;
     if (user != null && user.isAnonymous) {
-      result = await user.linkWithCredential(credential);
+      try {
+        result = await user.linkWithCredential(credential);
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'credential-already-in-use') {
+          result = await _auth.signInWithCredential(credential);
+        } else {
+          rethrow;
+        }
+      }
     } else {
       result = await _auth.signInWithCredential(credential);
     }
@@ -66,8 +74,17 @@ class AuthService {
 
     final user = _auth.currentUser;
     if (user != null && user.isAnonymous) {
-      final result = await user.linkWithCredential(oauthCredential);
-      return result.user;
+      try {
+        final result = await user.linkWithCredential(oauthCredential);
+        return result.user;
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'credential-already-in-use') {
+          final result = await _auth.signInWithCredential(oauthCredential);
+          return result.user;
+        } else {
+          rethrow;
+        }
+      }
     }
 
     final result = await _auth.signInWithCredential(oauthCredential);
@@ -77,7 +94,17 @@ class AuthService {
   Future<void> signOut() async {
     await _auth.signOut();
     await _googleSignIn.signOut();
-    await _auth.signInAnonymously();
+    try {
+      await _auth.signInAnonymously();
+    } on Exception catch (e) {
+      // If anonymous sign in fails after sign out, we can't do much but log it
+      // In a real app we might show a retry button or force a full login
+      assert(() {
+        // ignore: avoid_print
+        print('AuthService: Failed to sign in anonymously after sign out: $e');
+        return true;
+      }());
+    }
   }
 }
 // coverage:ignore-end

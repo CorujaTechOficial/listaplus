@@ -15,4 +15,14 @@ class FakeAdService implements AdService {
 
   @override
   bool get isAvailable => false;
+
+  @override
+  Future<void> showRewardedAd({
+    required void Function() onUserEarnedReward,
+    required void Function() onAdFailedToLoad,
+    required void Function() onAdClosed,
+  }) async {
+    onUserEarnedReward();
+    onAdClosed();
+  }
 }

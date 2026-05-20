@@ -1,13 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
+import 'firestore_service_provider.dart';
 
 part 'price_history_provider.g.dart';
 
 @riverpod
 class PriceHistory extends _$PriceHistory {
-  static const _key = 'item_price_history';
-
   @override
   Map<String, double> build() {
     _loadHistory();
@@ -15,11 +12,11 @@ class PriceHistory extends _$PriceHistory {
   }
 
   Future<void> _loadHistory() async {
-    final prefs = await SharedPreferences.getInstance();
-    final jsonString = prefs.getString(_key);
-    if (jsonString != null) {
-      final decoded = json.decode(jsonString) as Map<String, dynamic>;
-      state = decoded.map((key, value) => MapEntry(key, (value as num).toDouble()));
+    final service = ref.read(firestoreServiceProvider);
+    final data = await service.getUserData();
+    if (data != null && data['priceHistory'] != null) {
+      final history = data['priceHistory'] as Map<String, dynamic>;
+      state = history.map((key, value) => MapEntry(key, (value as num).toDouble()));
     }
   }
 
@@ -34,8 +31,8 @@ class PriceHistory extends _$PriceHistory {
     
     state = current;
     
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_key, json.encode(state));
+    final service = ref.read(firestoreServiceProvider);
+    await service.updateUserData({'priceHistory': state});
   }
 
   double? getPreviousPrice(String name) {

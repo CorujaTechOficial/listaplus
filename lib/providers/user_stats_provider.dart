@@ -1,6 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
+import 'firestore_service_provider.dart';
 
 part 'user_stats_provider.g.dart';
 
@@ -11,6 +10,15 @@ class UserStats {
     this.currentStreak = 0,
     this.lastPurchaseDate,
   });
+
+  factory UserStats.fromJson(Map<String, dynamic> json) => UserStats(
+        totalItemsBought: (json['totalItemsBought'] as num?)?.toInt() ?? 0,
+        totalSavings: (json['totalSavings'] as num?)?.toDouble() ?? 0.0,
+        currentStreak: (json['currentStreak'] as num?)?.toInt() ?? 0,
+        lastPurchaseDate: json['lastPurchaseDate'] != null
+            ? DateTime.parse(json['lastPurchaseDate'] as String)
+            : null,
+      );
 
   final int totalItemsBought;
   final double totalSavings;
@@ -37,21 +45,10 @@ class UserStats {
         'currentStreak': currentStreak,
         'lastPurchaseDate': lastPurchaseDate?.toIso8601String(),
       };
-
-  factory UserStats.fromJson(Map<String, dynamic> json) => UserStats(
-        totalItemsBought: (json['totalItemsBought'] as num?)?.toInt() ?? 0,
-        totalSavings: (json['totalSavings'] as num?)?.toDouble() ?? 0.0,
-        currentStreak: (json['currentStreak'] as num?)?.toInt() ?? 0,
-        lastPurchaseDate: json['lastPurchaseDate'] != null
-            ? DateTime.parse(json['lastPurchaseDate'] as String)
-            : null,
-      );
 }
 
 @riverpod
 class UserStatsNotifier extends _$UserStatsNotifier {
-  static const _key = 'user_stats_data';
-
   @override
   UserStats build() {
     _loadStats();
@@ -59,10 +56,10 @@ class UserStatsNotifier extends _$UserStatsNotifier {
   }
 
   Future<void> _loadStats() async {
-    final prefs = await SharedPreferences.getInstance();
-    final jsonString = prefs.getString(_key);
-    if (jsonString != null) {
-      state = UserStats.fromJson(json.decode(jsonString) as Map<String, dynamic>);
+    final service = ref.read(firestoreServiceProvider);
+    final data = await service.getUserData();
+    if (data != null && data['userStats'] != null) {
+      state = UserStats.fromJson(data['userStats'] as Map<String, dynamic>);
     }
   }
 
@@ -91,7 +88,7 @@ class UserStatsNotifier extends _$UserStatsNotifier {
       lastPurchaseDate: now,
     );
 
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_key, json.encode(state.toJson()));
+    final service = ref.read(firestoreServiceProvider);
+    await service.updateUserData({'userStats': state.toJson()});
   }
 }

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'auth_service_provider.dart';
 import 'firestore_service_provider.dart';
+import 'premium_provider.dart';
 import 'shopping_lists_provider.dart';
 
 final shareServiceProvider = Provider<ShareService>((ref) {
@@ -12,7 +13,7 @@ class ShareService {
   ShareService(this._ref);
 
   final Ref _ref;
-  final _random = Random();
+  final _random = Random.secure();
 
   String _generateCode() {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -24,6 +25,11 @@ class ShareService {
   }
 
   Future<String> createShareCode(String listId) async {
+    final isPremium = await _ref.read(premiumProvider.future);
+    if (!isPremium) {
+      throw Exception('Apenas usuários Premium podem compartilhar listas.');
+    }
+
     final service = _ref.read(firestoreServiceProvider);
     final lists = await service.loadLists();
     final list = lists.where((l) => l.id == listId).firstOrNull;
@@ -41,7 +47,9 @@ class ShareService {
     do {
       code = _generateCode();
       final existing = await service.getSharedList(code);
-      if (existing == null) break;
+      if (existing == null) {
+        break;
+      }
       attempts++;
       if (attempts >= 10) {
         throw Exception('Erro ao gerar código único. Tente novamente.');

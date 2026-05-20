@@ -14,7 +14,13 @@ class MonthlyBudget extends _$MonthlyBudget {
 
   Future<void> setBudget(double? budget) async {
     final service = ref.read(firestoreServiceProvider);
-    await service.updateUserData({'monthlyBudget': budget});
+    final previous = state.value;
     state = AsyncValue.data(budget);
+    try {
+      await service.updateUserData({'monthlyBudget': budget});
+    } on Exception {
+      state = AsyncValue.data(previous);
+      rethrow;
+    }
   }
 }

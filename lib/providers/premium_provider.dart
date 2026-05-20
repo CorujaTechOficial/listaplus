@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'credits_provider.dart';
@@ -10,21 +11,45 @@ const String listaPlusProEntitlement = 'lista_plus_pro';
 @riverpod
 class Premium extends _$Premium {
   @override
-  Future<bool> build() async {
-    try {
-      final revenueCat = ref.watch(revenueCatServiceProvider);
-      if (await revenueCat.isEntitlementActive(listaPlusProEntitlement)) {
-        return true;
-      }
+  Stream<bool> build() {
+    final revenueCat = ref.watch(revenueCatServiceProvider);
+    final controller = StreamController<bool>();
 
-      final credits = await ref.read(creditsProvider.future);
-      if (credits != null && credits.isAfter(DateTime.now())) {
-        return true;
+    Future<void> check() async {
+      if (controller.isClosed) {
+        return;
       }
-
-      return false;
-    } on PurchasesError {
-      return false;
+      try {
+        final active = await revenueCat.isEntitlementActive(listaPlusProEntitlement);
+        if (active) {
+          controller.add(true);
+        } else {
+          final credits = await ref.read(creditsProvider.future);
+          controller.add(credits != null && credits.isAfter(DateTime.now()));
+        }
+      } on Exception {
+        if (!controller.isClosed) {
+          controller.add(false);
+        }
+      }
     }
+
+    // Initial check
+    unawaited(check());
+
+    // Listen to RC updates
+    void listener(CustomerInfo info) => unawaited(check());
+    revenueCat.addCustomerInfoUpdateListener(listener);
+    
+    // Listen to credits changes
+    final creditsSub = ref.listen(creditsProvider, (_, __) => unawaited(check()));
+
+    ref.onDispose(() {
+      revenueCat.removeCustomerInfoUpdateListener(listener);
+      creditsSub.close();
+      controller.close();
+    });
+
+    return controller.stream.distinct();
   }
 }

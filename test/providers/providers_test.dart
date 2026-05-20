@@ -473,12 +473,14 @@ void main() {
     });
 
     test('setMode changes to dark', () async {
+      await container.read(darkModeProvider.future);
       await container.read(darkModeProvider.notifier).setMode(ThemeMode.dark);
       final mode = await container.read(darkModeProvider.future);
       expect(mode, ThemeMode.dark);
     });
 
     test('setMode changes to light', () async {
+      await container.read(darkModeProvider.future);
       await container.read(darkModeProvider.notifier).setMode(ThemeMode.light);
       final mode = await container.read(darkModeProvider.future);
       expect(mode, ThemeMode.light);
@@ -619,12 +621,14 @@ void main() {
     });
 
     test('setBudget saves to storage', () async {
+      await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(500);
       final budget = await container.read(monthlyBudgetProvider.future);
       expect(budget, 500);
     });
 
     test('removeBudget clears from storage', () async {
+      await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(500);
       await container.read(monthlyBudgetProvider.notifier).setBudget(null);
       final budget = await container.read(monthlyBudgetProvider.future);
@@ -653,6 +657,7 @@ void main() {
     });
 
     test('setColor updates storage', () async {
+      await container.read(themeColorProvider.future);
       const newColor = Colors.blue;
       await container.read(themeColorProvider.notifier).setColor(newColor);
       final color = await container.read(themeColorProvider.future);

@@ -25,6 +25,13 @@ class FakeStorageBackend implements StorageBackend {
   Stream<List<ShoppingList>> watchLists() => _listsController.stream;
 
   @override
+  Future<void> saveList(ShoppingList list) async {
+    _lists.removeWhere((l) => l.id == list.id);
+    _lists.add(list);
+    _listsController.add(List.unmodifiable(_lists));
+  }
+
+  @override
   Future<void> saveLists(List<ShoppingList> lists) async {
     for (final list in lists) {
       _lists.removeWhere((l) => l.id == list.id);
@@ -47,6 +54,19 @@ class FakeStorageBackend implements StorageBackend {
   @override
   Stream<List<ShoppingItem>> watchItems(String listId) {
     return _itemsController.stream.map((items) => items.where((i) => i.shoppingListId == listId).toList());
+  }
+
+  @override
+  Future<void> saveItem(ShoppingItem item) async {
+    _items.removeWhere((i) => i.id == item.id);
+    _items.add(item);
+    _itemsController.add(List.unmodifiable(_items));
+  }
+
+  @override
+  Future<void> deleteItem(String listId, String itemId) async {
+    _items.removeWhere((i) => i.id == itemId && i.shoppingListId == listId);
+    _itemsController.add(List.unmodifiable(_items));
   }
 
   @override
@@ -84,6 +104,26 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Future<void> extendPremiumBy24h() async {
+    final currentStr = _userData['premiumUntil'] as String?;
+    final now = DateTime.now();
+
+    var current = now;
+    if (currentStr != null) {
+      final parsed = DateTime.tryParse(currentStr) ?? now;
+      if (parsed.isAfter(now)) {
+        current = parsed;
+      }
+    }
+
+    final maxUntil = now.add(const Duration(days: 7));
+    final newUntil = current.add(const Duration(hours: 24));
+    final capped = newUntil.isAfter(maxUntil) ? maxUntil : newUntil;
+
+    _userData['premiumUntil'] = capped.toIso8601String();
+  }
+
+  @override
   Future<bool> getIsPremium() async => _userData['isPremium'] as bool? ?? false;
 
   @override
@@ -103,7 +143,7 @@ class FakeStorageBackend implements StorageBackend {
   Future<String?> getLocale() async => _userData['locale'] as String?;
 
   @override
-  Future<void> setLocale(String locale) async {
+  Future<void> setLocale(String? locale) async {
     _userData['locale'] = locale;
   }
 
@@ -176,6 +216,19 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Future<void> saveItemToUser(String ownerUid, ShoppingItem item) async {
+    _items.removeWhere((i) => i.id == item.id);
+    _items.add(item);
+    _itemsController.add(List.unmodifiable(_items));
+  }
+
+  @override
+  Future<void> deleteItemFromUser(String ownerUid, String listId, String itemId) async {
+    _items.removeWhere((i) => i.id == itemId && i.shoppingListId == listId);
+    _itemsController.add(List.unmodifiable(_items));
+  }
+
+  @override
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
     final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
     if (listId != null) {
@@ -189,6 +242,12 @@ class FakeStorageBackend implements StorageBackend {
 
   @override
   Future<List<PantryItem>> loadPantryItems() async => List.unmodifiable(_pantryItems);
+
+  @override
+  Future<void> savePantryItem(PantryItem item) async {
+    _pantryItems.removeWhere((p) => p.id == item.id);
+    _pantryItems.add(item);
+  }
 
   @override
   Future<void> savePantryItems(List<PantryItem> items) async {

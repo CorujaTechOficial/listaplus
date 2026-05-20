@@ -51,4 +51,43 @@ class FakeRevenueCatService implements RevenueCatService {
   void removeCustomerInfoUpdateListener(void Function(CustomerInfo) listener) {
     _listeners.remove(listener);
   }
+
+  @override
+  Future<List<PaywallPackage>> getPaywallPackages() async {
+    return [
+      PaywallPackage(
+        identifier: 'monthly',
+        priceString: 'R\$ 14.90',
+        title: 'Mensal',
+        description: 'Acesso total por 1 mês',
+      ),
+      PaywallPackage(
+        identifier: 'annual',
+        priceString: 'R\$ 99.90',
+        title: 'Anual',
+        description: 'Acesso total por 1 ano (Melhor valor)',
+      ),
+      PaywallPackage(
+        identifier: 'lifetime',
+        priceString: 'R\$ 299.90',
+        title: 'Vitalício',
+        description: 'Acesso total para sempre',
+      ),
+    ];
+  }
+
+  @override
+  Future<CustomerInfo> purchasePackage(PaywallPackage package) async {
+    _isPremium = true;
+    // Return a subclass/fake of CustomerInfo since it doesn't have a public default constructor.
+    return _FakeCustomerInfo();
+  }
+}
+
+class _FakeCustomerInfo implements CustomerInfo {
+  @override
+  EntitlementInfos get entitlements => const EntitlementInfos({}, {});
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

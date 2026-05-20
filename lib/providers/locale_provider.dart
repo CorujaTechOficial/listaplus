@@ -17,7 +17,13 @@ class LocaleSetting extends _$LocaleSetting {
 
   Future<void> setLocale(String? locale) async {
     final service = ref.read(firestoreServiceProvider);
-    await service.setLocale(locale ?? '');
+    final previous = state.value;
     state = AsyncValue.data(locale);
+    try {
+      await service.setLocale(locale);
+    } on Exception {
+      state = AsyncValue.data(previous);
+      rethrow;
+    }
   }
 }

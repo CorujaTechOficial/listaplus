@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -9,7 +10,6 @@ import '../theme/tokens.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
 import '../providers/shopping_list_provider.dart';
-import '../providers/item_history_provider.dart';
 import 'add_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
@@ -40,7 +40,6 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     'Salsicha', 'Sal', 'Shampoo', 'Sorvete', 'Suco', 'Tomate', 'Uva', 'Vinagre',
   ];
 
-  final _controller = TextEditingController();
   final _focusNode = FocusNode();
   bool _isAdding = false;
   late stt.SpeechToText _speech;
@@ -54,12 +53,11 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
 
   @override
   void dispose() {
-    _controller.dispose();
     _focusNode.dispose();
     super.dispose();
   }
 
-  Future<void> _scanBarcode(TextEditingController autocompleteController) async {
+  Future<void> _scanBarcode(TextEditingController controller) async {
     final result = await showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
@@ -67,36 +65,43 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     );
 
     if (result != null && result.isNotEmpty) {
-      autocompleteController.text = 'Produto $result';
-      _controller.text = 'Produto $result';
-      HapticFeedback.heavyImpact();
+      controller.text = 'Produto $result';
+      unawaited(HapticFeedback.heavyImpact());
     }
   }
 
-  Future<void> _listen(TextEditingController autocompleteController) async {
+  Future<void> _listen(TextEditingController controller) async {
     if (!_isListening) {
       final status = await Permission.microphone.request();
       if (status.isGranted) {
         final available = await _speech.initialize(
           onStatus: (val) {
             if (val == 'done' || val == 'notListening') {
-              if (mounted) setState(() => _isListening = false);
+              if (mounted) {
+                setState(() => _isListening = false);
+              }
             }
           },
           onError: (val) {
-            if (mounted) setState(() => _isListening = false);
+            if (mounted) {
+              setState(() => _isListening = false);
+            }
           },
         );
         if (available) {
           setState(() => _isListening = true);
+          if (!mounted) {
+            return;
+          }
+          final locale = Localizations.localeOf(context);
           await _speech.listen(
             onResult: (val) {
               setState(() {
-                autocompleteController.text = val.recognizedWords;
-                _controller.text = val.recognizedWords;
+                controller.text = val.recognizedWords;
               });
             },
-            localeId: 'pt_BR',
+            // ignore: deprecated_member_use
+            localeId: locale.toString(),
           );
         }
       }
@@ -106,14 +111,14 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     }
   }
 
-  Future<void> _submit(TextEditingController autocompleteController) async {
-    final name = autocompleteController.text.trim();
+  Future<void> _submit(TextEditingController controller) async {
+    final name = controller.text.trim();
     if (name.isEmpty || _isAdding) {
       return;
     }
 
     setState(() => _isAdding = true);
-    HapticFeedback.lightImpact();
+    unawaited(HapticFeedback.lightImpact());
 
     try {
       await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItem(
@@ -123,8 +128,7 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
             category: Category.others,
             unit: Unit.un,
           );
-      autocompleteController.clear();
-      _controller.clear();
+      controller.clear();
       _focusNode.requestFocus();
     } finally {
       if (mounted) {
@@ -175,7 +179,9 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
               return option.toLowerCase().contains(textEditingValue.text.toLowerCase());
             });
           },
-          onSelected: (selection) => _submit(TextEditingController(text: selection)),
+          onSelected: (selection) {
+            // Internal Autocomplete controller handles string update
+          },
           fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
             return Row(
               children: [
@@ -215,7 +221,9 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                                     }
                                   })
                                    .scaleY(
+                                     // ignore: prefer_int_literals
                                      begin: 0.5, 
+                                     // ignore: prefer_int_literals
                                      end: 2.0, 
                                      duration: Duration(milliseconds: 300 + (index * 100)),
                                      curve: Curves.easeInOut
@@ -376,7 +384,9 @@ class _BarcodeScannerSheetState extends State<_BarcodeScannerSheet> {
             child: MobileScanner(
               controller: controller,
               onDetect: (capture) {
-                if (_hasScanned) return;
+                if (_hasScanned) {
+                  return;
+                }
                 final List<Barcode> barcodes = capture.barcodes;
                 for (final barcode in barcodes) {
                   if (barcode.rawValue != null) {

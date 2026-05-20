@@ -48,6 +48,37 @@ class RevenueCatServiceImpl implements RevenueCatService {
   @override
   void removeCustomerInfoUpdateListener(void Function(CustomerInfo) listener) {
     _listeners.remove(listener);
+    if (_listeners.isEmpty) {
+      Purchases.removeCustomerInfoUpdateListener(_onCustomerInfoUpdate);
+    }
+  }
+
+  @override
+  Future<List<PaywallPackage>> getPaywallPackages() async {
+    final offerings = await Purchases.getOfferings();
+    final currentOffering = offerings.current;
+    if (currentOffering == null) {
+      return [];
+    }
+    return currentOffering.availablePackages.map((pkg) {
+      return PaywallPackage(
+        identifier: pkg.packageType.name, // using packageType name (e.g. monthly, annual, lifetime)
+        priceString: pkg.storeProduct.priceString,
+        title: pkg.storeProduct.title,
+        description: pkg.storeProduct.description,
+        rawPackage: pkg,
+      );
+    }).toList();
+  }
+
+  @override
+  Future<CustomerInfo> purchasePackage(PaywallPackage package) async {
+    if (package.rawPackage == null) {
+      throw ArgumentError('Pacote nativo do RevenueCat não encontrado.');
+    }
+    // ignore: deprecated_member_use
+    final result = await Purchases.purchasePackage(package.rawPackage!);
+    return result.customerInfo;
   }
 }
 // coverage:ignore-end

@@ -1,13 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
+import 'firestore_service_provider.dart';
 
 part 'item_history_provider.g.dart';
 
 @riverpod
 class ItemHistory extends _$ItemHistory {
-  static const _key = 'item_addition_history';
-
   @override
   Map<String, int> build() {
     _loadHistory();
@@ -15,11 +12,11 @@ class ItemHistory extends _$ItemHistory {
   }
 
   Future<void> _loadHistory() async {
-    final prefs = await SharedPreferences.getInstance();
-    final jsonString = prefs.getString(_key);
-    if (jsonString != null) {
-      final decoded = json.decode(jsonString) as Map<String, dynamic>;
-      state = decoded.map((key, value) => MapEntry(key, value as int));
+    final service = ref.read(firestoreServiceProvider);
+    final data = await service.getUserData();
+    if (data != null && data['itemHistory'] != null) {
+      final history = data['itemHistory'] as Map<String, dynamic>;
+      state = history.map((key, value) => MapEntry(key, value as int));
     }
   }
 
@@ -34,8 +31,8 @@ class ItemHistory extends _$ItemHistory {
     
     state = current;
     
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_key, json.encode(state));
+    final service = ref.read(firestoreServiceProvider);
+    await service.updateUserData({'itemHistory': state});
   }
 
   List<String> getFrequentItems({int limit = 10}) {

@@ -58,7 +58,7 @@ void main() {
         category: Category.fruits,
         unit: Unit.kg,
         quantity: 1,
-        estimatedPrice: 10.0,
+        estimatedPrice: 10.0, // ignore: prefer_int_literals
       );
       await backend.saveItems([item]);
 
@@ -80,7 +80,7 @@ void main() {
           category: Category.fruits,
           unit: Unit.kg,
           quantity: 2,
-          estimatedPrice: 10.0,
+          estimatedPrice: 10.0, // ignore: prefer_int_literals
           isPurchased: true,
         ),
         ShoppingItem(
@@ -89,7 +89,7 @@ void main() {
           category: Category.cleaning,
           unit: Unit.un,
           quantity: 1,
-          estimatedPrice: 5.0,
+          estimatedPrice: 5.0, // ignore: prefer_int_literals
           isPurchased: true,
         ),
       ];

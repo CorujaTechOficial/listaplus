@@ -13,7 +13,13 @@ class CurrentListId extends _$CurrentListId {
 
   Future<void> setCurrentList(String listId) async {
     final service = ref.read(firestoreServiceProvider);
+    final previous = state.value;
     state = AsyncValue.data(listId);
-    await service.setCurrentListId(listId);
+    try {
+      await service.setCurrentListId(listId);
+    } on Exception {
+      state = AsyncValue.data(previous);
+      rethrow;
+    }
   }
 }

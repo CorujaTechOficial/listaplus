@@ -7,18 +7,22 @@ class KiloAiService implements AiService {
   KiloAiService({
     required String apiKey,
     this.model = 'kilo-auto/free',
-  }) {
-    OpenAI.apiKey = apiKey;
+  }) : _apiKey = apiKey;
+
+  final String _apiKey;
+  final String model;
+
+  void _ensureConfig() {
+    OpenAI.apiKey = _apiKey;
     OpenAI.baseUrl = 'https://api.kilo.ai/api/gateway';
   }
-
-  final String model;
 
   @override
   Future<ChatMessage> getChatCompletion(
     List<ChatMessage> history, {
     String? systemPrompt,
   }) async {
+    _ensureConfig();
     final messages = <OpenAIChatCompletionChoiceMessageModel>[];
 
     if (systemPrompt != null) {
@@ -60,6 +64,7 @@ class KiloAiService implements AiService {
     List<ChatMessage> history, {
     String? systemPrompt,
   }) async* {
+    _ensureConfig();
     final messages = <OpenAIChatCompletionChoiceMessageModel>[];
 
     if (systemPrompt != null) {

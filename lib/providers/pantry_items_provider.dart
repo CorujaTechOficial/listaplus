@@ -26,7 +26,7 @@ class PantryItems extends _$PantryItems {
     double? estimatedPrice,
     bool trackStock = true,
   }) async {
-    final isPremium = ref.read(premiumProvider).value ?? false;
+    final isPremium = await ref.read(premiumProvider.future);
     final currentItems = state.value ?? [];
 
     if (!isPremium && currentItems.length >= freePantryLimit) {
@@ -47,7 +47,7 @@ class PantryItems extends _$PantryItems {
     final updatedItems = [...currentItems, newItem];
     state = AsyncValue.data(updatedItems);
     try {
-      await service.savePantryItems(updatedItems);
+      await service.savePantryItem(newItem);
     } on Exception {
       state = AsyncValue.data(currentItems);
       rethrow;
@@ -61,7 +61,7 @@ class PantryItems extends _$PantryItems {
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      await service.savePantryItem(item);
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -75,7 +75,7 @@ class PantryItems extends _$PantryItems {
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      await service.deletePantryItem(id);
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -85,19 +85,23 @@ class PantryItems extends _$PantryItems {
   Future<void> setCurrentQuantity(String id, int quantity) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    PantryItem? updatedItem;
     final updated = items.map((item) {
       if (item.id == id) {
-        return item.copyWith(
+        updatedItem = item.copyWith(
           currentQuantity: quantity.clamp(0, item.idealQuantity),
           updatedAt: DateTime.now(),
         );
+        return updatedItem!;
       }
       return item;
     }).toList();
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -107,19 +111,23 @@ class PantryItems extends _$PantryItems {
   Future<void> incrementCurrent(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    PantryItem? updatedItem;
     final updated = items.map((item) {
       if (item.id == id && item.currentQuantity < item.idealQuantity) {
-        return item.copyWith(
+        updatedItem = item.copyWith(
           currentQuantity: item.currentQuantity + 1,
           updatedAt: DateTime.now(),
         );
+        return updatedItem!;
       }
       return item;
     }).toList();
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -129,19 +137,23 @@ class PantryItems extends _$PantryItems {
   Future<void> decrementCurrent(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    PantryItem? updatedItem;
     final updated = items.map((item) {
       if (item.id == id && item.currentQuantity > 0) {
-        return item.copyWith(
+        updatedItem = item.copyWith(
           currentQuantity: item.currentQuantity - 1,
           updatedAt: DateTime.now(),
         );
+        return updatedItem!;
       }
       return item;
     }).toList();
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -151,19 +163,23 @@ class PantryItems extends _$PantryItems {
   Future<void> consumeItem(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    PantryItem? updatedItem;
     final updated = items.map((item) {
       if (item.id == id && item.currentQuantity > 0) {
-        return item.copyWith(
+        updatedItem = item.copyWith(
           currentQuantity: item.currentQuantity - 1,
           updatedAt: DateTime.now(),
         );
+        return updatedItem!;
       }
       return item;
     }).toList();
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -173,19 +189,23 @@ class PantryItems extends _$PantryItems {
   Future<void> restockItem(String id, int amount) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    PantryItem? updatedItem;
     final updated = items.map((item) {
       if (item.id == id) {
-        return item.copyWith(
+        updatedItem = item.copyWith(
           currentQuantity: (item.currentQuantity + amount).clamp(0, item.idealQuantity),
           updatedAt: DateTime.now(),
         );
+        return updatedItem!;
       }
       return item;
     }).toList();
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
@@ -195,19 +215,23 @@ class PantryItems extends _$PantryItems {
   Future<void> setIdealQuantity(String id, int quantity) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    PantryItem? updatedItem;
     final updated = items.map((item) {
       if (item.id == id) {
-        return item.copyWith(
+        updatedItem = item.copyWith(
           idealQuantity: quantity.clamp(1, 999),
           updatedAt: DateTime.now(),
         );
+        return updatedItem!;
       }
       return item;
     }).toList();
 
     state = AsyncValue.data(updated);
     try {
-      await service.savePantryItems(updated);
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
     } on Exception {
       state = AsyncValue.data(items);
       rethrow;
