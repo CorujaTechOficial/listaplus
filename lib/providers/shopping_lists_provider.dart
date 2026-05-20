@@ -93,7 +93,8 @@ class ShoppingLists extends _$ShoppingLists {
   Future<void> archiveList(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final lists = state.value ?? [];
-    final list = lists.firstWhere((l) => l.id == id);
+    final list = lists.where((l) => l.id == id).firstOrNull;
+    if (list == null) return;
     final updatedList = list.copyWith(isArchived: true, archivedAt: DateTime.now());
     final updated = lists.map((l) => l.id == id ? updatedList : l).toList();
     
@@ -107,7 +108,7 @@ class ShoppingLists extends _$ShoppingLists {
         await service.setCurrentListId(newCurrent);
         ref.invalidate(currentListIdProvider);
       } else {
-        await service.setCurrentListId(''); 
+        await service.setCurrentListId(null);
         ref.invalidate(currentListIdProvider);
       }
     }
@@ -116,7 +117,8 @@ class ShoppingLists extends _$ShoppingLists {
   Future<void> unarchiveList(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final lists = state.value ?? [];
-    final list = lists.firstWhere((l) => l.id == id);
+    final list = lists.where((l) => l.id == id).firstOrNull;
+    if (list == null) return;
     final updatedList = list.copyWith(isArchived: false, archivedAt: null);
     final updated = lists.map((l) => l.id == id ? updatedList : l).toList();
     await service.saveLists(updated);

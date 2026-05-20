@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../providers/shopping_list_provider.dart';
 import '../theme/tokens.dart';
-import '../models/shopping_item.dart';
 import '../theme/colors.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
@@ -17,11 +16,10 @@ class BudgetDashboardScreen extends ConsumerWidget {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
     
-    // If no listId provided, we could sum all lists, but let's assume one for now
     if (listId == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Dashboard')),
-        body: const Center(child: Text('Selecione uma lista para ver o dashboard.')),
+        appBar: AppBar(title: Text(l10n.budgetDashboardTitle)),
+        body: Center(child: Text(l10n.selectListForDashboard)),
       );
     }
 
@@ -29,12 +27,12 @@ class BudgetDashboardScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Análise de Gastos'),
+        title: Text(l10n.spendingAnalysis),
       ),
       body: itemsAsync.when(
         data: (items) {
           if (items.isEmpty) {
-            return const Center(child: Text('Nenhum item na lista para analisar.'));
+            return Center(child: Text(l10n.noItemsToAnalyze));
           }
 
           final Map<String, double> categorySpending = {};
@@ -49,7 +47,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
           }
 
           if (totalSpent == 0) {
-            return const Center(child: Text('Marque itens como comprados para ver a análise.'));
+            return Center(child: Text(l10n.markItemsToSeeAnalysis));
           }
 
           final sortedCategories = categorySpending.entries.toList()
@@ -64,7 +62,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Gasto Total',
+                        l10n.totalSpending,
                         style: theme.textTheme.titleMedium,
                       ),
                       const SizedBox(height: Spacing.xs),
@@ -105,7 +103,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
               ),
               const SizedBox(height: Spacing.xl),
               Text(
-                'Gastos por Categoria',
+                l10n.spendingByCategory,
                 style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: Spacing.md),
@@ -142,7 +140,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
           );
         },
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Erro: $e')),
+        error: (e, _) => Center(child: Text(l10n.errorGeneric('$e'))),
       ),
     );
   }

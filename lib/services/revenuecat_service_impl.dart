@@ -8,13 +8,13 @@ class RevenueCatServiceImpl implements RevenueCatService {
 
   @override
   Future<void> init(String apiKey) async {
-    await Purchases.setLogLevel(LogLevel.debug);
+    await Purchases.setLogLevel(LogLevel.warn);
     await Purchases.configure(PurchasesConfiguration(apiKey));
     Purchases.addCustomerInfoUpdateListener(_onCustomerInfoUpdate);
   }
 
   void _onCustomerInfoUpdate(CustomerInfo customerInfo) {
-    for (final listener in _listeners) {
+    for (final listener in List.of(_listeners)) {
       listener(customerInfo);
     }
   }

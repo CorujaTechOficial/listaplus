@@ -44,8 +44,14 @@ class PantryItems extends _$PantryItems {
       trackStock: trackStock,
     );
 
-    state = AsyncValue.data([...currentItems, newItem]);
-    await service.savePantryItems(state.value ?? []);
+    final updatedItems = [...currentItems, newItem];
+    state = AsyncValue.data(updatedItems);
+    try {
+      await service.savePantryItems(updatedItems);
+    } on Exception {
+      state = AsyncValue.data(currentItems);
+      rethrow;
+    }
   }
 
   Future<void> updateItem(PantryItem item) async {
@@ -54,7 +60,12 @@ class PantryItems extends _$PantryItems {
     final updated = items.map((e) => e.id == item.id ? item : e).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> removeItem(String id) async {
@@ -63,7 +74,12 @@ class PantryItems extends _$PantryItems {
     final updated = items.where((item) => item.id != id).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> setCurrentQuantity(String id, int quantity) async {
@@ -80,7 +96,12 @@ class PantryItems extends _$PantryItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> incrementCurrent(String id) async {
@@ -97,7 +118,12 @@ class PantryItems extends _$PantryItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> decrementCurrent(String id) async {
@@ -114,7 +140,12 @@ class PantryItems extends _$PantryItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> consumeItem(String id) async {
@@ -131,7 +162,12 @@ class PantryItems extends _$PantryItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> restockItem(String id, int amount) async {
@@ -148,7 +184,12 @@ class PantryItems extends _$PantryItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> setIdealQuantity(String id, int quantity) async {
@@ -165,12 +206,23 @@ class PantryItems extends _$PantryItems {
     }).toList();
 
     state = AsyncValue.data(updated);
-    await service.savePantryItems(updated);
+    try {
+      await service.savePantryItems(updated);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 
   Future<void> clearAll() async {
     final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
     state = const AsyncValue.data([]);
-    await service.savePantryItems([]);
+    try {
+      await service.savePantryItems([]);
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
   }
 }

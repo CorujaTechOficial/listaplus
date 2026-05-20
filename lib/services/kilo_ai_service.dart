@@ -46,7 +46,8 @@ class KiloAiService implements AiService {
       messages: messages,
     );
 
-    final response = chatCompletion.choices.first.message.content?.first.text ?? '';
+    final choice = chatCompletion.choices.firstOrNull;
+    final response = choice?.message.content?.firstOrNull?.text ?? '';
 
     return ChatMessage(
       role: 'assistant',
@@ -87,11 +88,12 @@ class KiloAiService implements AiService {
     );
 
     yield* chatStream.map((event) {
-      final content = event.choices.first.delta.content;
+      final choice = event.choices.firstOrNull;
+      final content = choice?.delta.content;
       if (content == null || content.isEmpty) {
         return '';
       }
-      return content.first?.text ?? '';
+      return content.firstOrNull?.text ?? '';
     });
   }
 }

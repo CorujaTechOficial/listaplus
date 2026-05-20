@@ -26,14 +26,20 @@ class AuthService {
     }
 
     final googleAuth = await googleUser.authentication;
+    final accessToken = googleAuth.accessToken;
+    final idToken = googleAuth.idToken;
+    if (accessToken == null || idToken == null) {
+      return null;
+    }
     final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
+      accessToken: accessToken,
+      idToken: idToken,
     );
 
+    final user = _auth.currentUser;
     UserCredential result;
-    if (_auth.currentUser?.isAnonymous == true) {
-      result = await _auth.currentUser!.linkWithCredential(credential);
+    if (user != null && user.isAnonymous) {
+      result = await user.linkWithCredential(credential);
     } else {
       result = await _auth.signInWithCredential(credential);
     }
@@ -48,13 +54,19 @@ class AuthService {
       ],
     );
 
+    final identityToken = appleCredential.identityToken;
+    final authorizationCode = appleCredential.authorizationCode;
+    if (identityToken == null) {
+      return null;
+    }
     final oauthCredential = OAuthProvider('apple.com').credential(
-      idToken: appleCredential.identityToken,
-      accessToken: appleCredential.authorizationCode,
+      idToken: identityToken,
+      accessToken: authorizationCode,
     );
 
-    if (_auth.currentUser?.isAnonymous == true) {
-      final result = await _auth.currentUser!.linkWithCredential(oauthCredential);
+    final user = _auth.currentUser;
+    if (user != null && user.isAnonymous) {
+      final result = await user.linkWithCredential(oauthCredential);
       return result.user;
     }
 

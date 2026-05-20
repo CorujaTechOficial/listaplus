@@ -71,10 +71,13 @@ class UserStatsNotifier extends _$UserStatsNotifier {
     int newStreak = state.currentStreak;
     
     if (state.lastPurchaseDate != null) {
-      final difference = now.difference(state.lastPurchaseDate!).inDays;
-      if (difference == 1) {
+      final last = state.lastPurchaseDate!;
+      final todayDate = DateTime(now.year, now.month, now.day);
+      final lastDate = DateTime(last.year, last.month, last.day);
+      final diffDays = todayDate.difference(lastDate).inDays;
+      if (diffDays == 1) {
         newStreak++;
-      } else if (difference > 1) {
+      } else if (diffDays > 1) {
         newStreak = 1;
       }
     } else {

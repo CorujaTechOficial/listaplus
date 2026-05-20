@@ -62,26 +62,27 @@ class ChatSession extends _$ChatSession {
       );
 
       var assistantMessage = ChatMessage(role: 'assistant', content: '');
-      state = AsyncValue.data([...state.value!, assistantMessage]);
+      final baseHistory = state.value ?? currentHistory;
+      state = AsyncValue.data([...baseHistory, assistantMessage]);
 
       await for (final chunk in stream) {
         assistantMessage = assistantMessage.copyWith(
           content: assistantMessage.content + chunk,
         );
-        
-        final history = state.value!;
-        state = AsyncValue.data([...history.sublist(0, history.length - 1), assistantMessage]);
+
+        final safeHistory = state.value ?? [];
+        state = AsyncValue.data([...safeHistory.sublist(0, safeHistory.length - 1), assistantMessage]);
       }
 
       await firestoreService.saveChatMessage(listId, assistantMessage);
       // coverage:ignore-start
     } on Exception catch (_) {
-      // Handle error (maybe add an error message to chat)
+      final safeHistory = state.value ?? [];
       final errorMessage = ChatMessage(
         role: 'assistant',
         content: 'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.',
       );
-      state = AsyncValue.data([...state.value!, errorMessage]);
+      state = AsyncValue.data([...safeHistory, errorMessage]);
     }
     // coverage:ignore-end
   }

@@ -338,6 +338,7 @@ class _BarcodeScannerSheet extends StatefulWidget {
 
 class _BarcodeScannerSheetState extends State<_BarcodeScannerSheet> {
   final MobileScannerController controller = MobileScannerController();
+  bool _hasScanned = false;
 
   @override
   void dispose() {
@@ -375,9 +376,11 @@ class _BarcodeScannerSheetState extends State<_BarcodeScannerSheet> {
             child: MobileScanner(
               controller: controller,
               onDetect: (capture) {
+                if (_hasScanned) return;
                 final List<Barcode> barcodes = capture.barcodes;
                 for (final barcode in barcodes) {
                   if (barcode.rawValue != null) {
+                    _hasScanned = true;
                     Navigator.pop(context, barcode.rawValue);
                     break;
                   }

@@ -31,7 +31,7 @@ class ShoppingItem {
       unit: json['unit'] != null
           ? Unit.values.firstWhere((e) => e.name == json['unit'], orElse: () => Unit.un)
           : Unit.un,
-      estimatedPrice: json['estimatedPrice'] as double?,
+      estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       isPurchased: json['isPurchased'] as bool? ?? false,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
@@ -49,6 +49,8 @@ class ShoppingItem {
   final DateTime createdAt;
   final DateTime updatedAt;
 
+  static const _sentinel = Object();
+
   ShoppingItem copyWith({
     String? id,
     String? shoppingListId,
@@ -56,7 +58,7 @@ class ShoppingItem {
     int? quantity,
     Category? category,
     Unit? unit,
-    double? estimatedPrice,
+    Object? estimatedPrice = _sentinel,
     bool? isPurchased,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -68,7 +70,7 @@ class ShoppingItem {
       quantity: quantity ?? this.quantity,
       category: category ?? this.category,
       unit: unit ?? this.unit,
-      estimatedPrice: estimatedPrice ?? this.estimatedPrice,
+      estimatedPrice: identical(estimatedPrice, _sentinel) ? this.estimatedPrice : estimatedPrice as double?,
       isPurchased: isPurchased ?? this.isPurchased,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,

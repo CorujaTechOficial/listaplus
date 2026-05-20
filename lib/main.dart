@@ -37,11 +37,11 @@ Future<void> main() async {
   await SentryFlutter.init(
     (options) {
       options.dsn = 'https://9184f2e057e7fbaf76629e15c561594f@o4511401835298816.ingest.us.sentry.io/4511401865904128';
-      options.sendDefaultPii = true;
+      options.sendDefaultPii = false;
       options.enableLogs = true;
-      options.tracesSampleRate = 1.0;
-      options.replay.sessionSampleRate = 1.0;
-      options.replay.onErrorSampleRate = 1.0;
+      options.tracesSampleRate = 0.2;
+      options.replay.sessionSampleRate = 0.0;
+      options.replay.onErrorSampleRate = 0.2;
       options.beforeSend = (event, hint) {
         final exceptions = event.exceptions;
         if (exceptions != null && exceptions.isNotEmpty) {
@@ -70,17 +70,19 @@ Future<UserCredential> _signInWithRetry() async {
   while (true) {
     try {
       return await FirebaseAuth.instance.signInAnonymously();
-    } on Object catch (e) {
+    } on FirebaseAuthException catch (e) {
       attempt++;
       if (attempt >= maxRetries) {
         rethrow;
       }
-      if (e is FirebaseAuthException && e.code == 'unknown') {
+      if (e.code == 'unknown') {
         final delay = baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
         await Future<void>.delayed(delay + Duration(milliseconds: jitter));
         continue;
       }
+      rethrow;
+    } on Exception {
       rethrow;
     }
   }
@@ -105,7 +107,9 @@ Future<void> _runApp() async {
     await adService.initialize();
 
     final revenueCat = RevenueCatServiceImpl();
-    await revenueCat.init('goog_lUoZUpDVyhVroFRzwgArMnFxIQv');
+    await revenueCat.init(
+      const String.fromEnvironment('REVENUECAT_API_KEY', defaultValue: 'goog_lUoZUpDVyhVroFRzwgArMnFxIQv'),
+    );
 
     try {
       await Purchases.logIn(uid);

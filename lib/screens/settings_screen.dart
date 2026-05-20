@@ -179,7 +179,7 @@ class SettingsScreen extends ConsumerWidget {
           ListTile(
             leading: Icon(Icons.info_outline, color: theme.colorScheme.onSurfaceVariant),
             title: Text(l10n.version),
-            subtitle: const Text('1.0.15+15'),
+            subtitle: Text('${l10n.version} 1.0.15+15'),
           ),
           ListTile(
             leading: Icon(Icons.privacy_tip_outlined, color: theme.colorScheme.onSurfaceVariant),

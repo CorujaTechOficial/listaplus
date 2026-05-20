@@ -26,9 +26,27 @@ class ShareService {
   Future<String> createShareCode(String listId) async {
     final service = _ref.read(firestoreServiceProvider);
     final lists = await service.loadLists();
-    final list = lists.firstWhere((l) => l.id == listId);
-    final uid = _ref.read(authServiceProvider).currentUser!.uid;
-    final code = _generateCode();
+    final list = lists.where((l) => l.id == listId).firstOrNull;
+    if (list == null) {
+      throw Exception('Lista não encontrada.');
+    }
+    final user = _ref.read(authServiceProvider).currentUser;
+    if (user == null) {
+      throw Exception('Usuário não autenticado.');
+    }
+    final uid = user.uid;
+
+    String code;
+    var attempts = 0;
+    do {
+      code = _generateCode();
+      final existing = await service.getSharedList(code);
+      if (existing == null) break;
+      attempts++;
+      if (attempts >= 10) {
+        throw Exception('Erro ao gerar código único. Tente novamente.');
+      }
+    } while (true);
 
     await service.saveSharedList(code, {
       'ownerUid': uid,

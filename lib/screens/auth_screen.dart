@@ -1,5 +1,4 @@
-import 'dart:io' show Platform;
-
+import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -74,7 +73,7 @@ class AuthScreen extends ConsumerWidget {
                 curve: Curves.easeOut,
               ),
               const SizedBox(height: Spacing.md),
-              if (Platform.isIOS || Platform.isMacOS)
+              if (!kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS))
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton.icon(

@@ -5,6 +5,8 @@ import 'package:share_plus/share_plus.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import 'firestore_service_provider.dart';
+import 'shopping_lists_provider.dart';
+import 'shopping_list_provider.dart';
 
 final backupProvider = Provider<BackupService>((ref) {
   return BackupService(ref);
@@ -62,6 +64,8 @@ class BackupService {
       }
       count++;
     }
+    _ref.invalidate(shoppingListsProvider);
+    _ref.invalidate(shoppingListItemsProvider);
     return '$count listas importadas com sucesso!';
   }
 }

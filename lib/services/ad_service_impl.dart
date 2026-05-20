@@ -68,6 +68,6 @@ class AdServiceImpl implements AdService {
   bool get isTestMode => _isTestMode;
 
   @override
-  bool get isAvailable => true;
+  bool get isAvailable => _initialized;
 }
 // coverage:ignore-end

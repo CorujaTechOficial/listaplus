@@ -432,6 +432,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get addToPantry => 'Adicionar à Dispensa';
 
   @override
+  String addToPantryPrompt(String name) {
+    return 'Deseja adicionar \"$name\" à sua Dispensa?';
+  }
+
+  @override
+  String get yes => 'Sim';
+
+  @override
   String get productName => 'Nome do produto';
 
   @override
@@ -741,6 +749,51 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get budgetEditTitle => 'Orçamento Mensal';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard => 'Selecione uma lista para ver o dashboard.';
+
+  @override
+  String get spendingAnalysis => 'Análise de Gastos';
+
+  @override
+  String get noItemsToAnalyze => 'Nenhum item na lista para analisar.';
+
+  @override
+  String get markItemsToSeeAnalysis => 'Marque itens como comprados para ver a análise.';
+
+  @override
+  String get totalSpending => 'Gasto Total';
+
+  @override
+  String get spendingByCategory => 'Gastos por Categoria';
+
+  @override
+  String get achievements => 'Conquistas';
+
+  @override
+  String get exportPdfExcel => 'Exportar PDF/Excel';
+
+  @override
+  String get exportPdf => 'Exportar como PDF';
+
+  @override
+  String get exportExcel => 'Exportar como Excel';
+
+  @override
+  String get organizingAi => 'ORGANIZANDO COM IA...';
+
+  @override
+  String get yesLabel => 'Sim';
+
+  @override
+  String get noLabel => 'Não';
+
+  @override
+  String get shareListText => 'Minha Lista de Compras';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -1171,6 +1224,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get addToPantry => 'Adicionar à Dispensa';
 
   @override
+  String addToPantryPrompt(String name) {
+    return 'Deseja adicionar \"$name\" à sua Dispensa?';
+  }
+
+  @override
+  String get yes => 'Sim';
+
+  @override
   String get productName => 'Nome do produto';
 
   @override
@@ -1480,4 +1541,49 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get budgetEditTitle => 'Orçamento Mensal';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard => 'Selecione uma lista para ver o dashboard.';
+
+  @override
+  String get spendingAnalysis => 'Análise de Gastos';
+
+  @override
+  String get noItemsToAnalyze => 'Nenhum item na lista para analisar.';
+
+  @override
+  String get markItemsToSeeAnalysis => 'Marque itens como comprados para ver a análise.';
+
+  @override
+  String get totalSpending => 'Gasto Total';
+
+  @override
+  String get spendingByCategory => 'Gastos por Categoria';
+
+  @override
+  String get achievements => 'Conquistas';
+
+  @override
+  String get exportPdfExcel => 'Exportar PDF/Excel';
+
+  @override
+  String get exportPdf => 'Exportar como PDF';
+
+  @override
+  String get exportExcel => 'Exportar como Excel';
+
+  @override
+  String get organizingAi => 'ORGANIZANDO COM IA...';
+
+  @override
+  String get yesLabel => 'Sim';
+
+  @override
+  String get noLabel => 'Não';
+
+  @override
+  String get shareListText => 'Minha Lista de Compras';
 }

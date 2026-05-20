@@ -165,6 +165,9 @@
 
   "@_AddPantry": "description: Add Pantry Item Dialog",
   "addToPantry": "Add to Pantry",
+  "addToPantryPrompt": "Add \"{name}\" to your Pantry?",
+  "@addToPantryPrompt": { "placeholders": { "name": { "type": "String" } } },
+  "yes": "Yes",
   "productName": "Product name",
   "idealQty": "Ideal qty",
   "currentQty": "Current qty",
@@ -300,5 +303,20 @@
   "selectAll": "Select all",
   "deselectAll": "Deselect all",
   "monthlyBudgetAppBar": "Monthly Budget",
-  "budgetEditTitle": "Monthly Budget"
+  "budgetEditTitle": "Monthly Budget",
+  "budgetDashboardTitle": "Dashboard",
+  "selectListForDashboard": "Select a list to view the dashboard.",
+  "spendingAnalysis": "Spending Analysis",
+  "noItemsToAnalyze": "No items in the list to analyze.",
+  "markItemsToSeeAnalysis": "Mark items as purchased to see the analysis.",
+  "totalSpending": "Total Spent",
+  "spendingByCategory": "Spending by Category",
+  "achievements": "Achievements",
+  "exportPdfExcel": "Export PDF/Excel",
+  "exportPdf": "Export as PDF",
+  "exportExcel": "Export as Excel",
+  "organizingAi": "ORGANIZING WITH AI...",
+  "yesLabel": "Yes",
+  "noLabel": "No",
+  "shareListText": "My Shopping List"
 }

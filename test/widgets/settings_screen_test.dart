@@ -4,10 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/screens/settings_screen.dart';
 import 'package:shopping_list/screens/theme_selection_screen.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/providers/dark_mode_provider.dart';
-import 'package:shopping_list/providers/locale_provider.dart';
-import 'package:shopping_list/providers/theme_color_provider.dart';
-import 'package:shopping_list/providers/premium_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
@@ -49,7 +45,7 @@ void main() {
 
       expect(find.text('Aparência'), findsOneWidget);
       expect(find.text('Idioma'), findsOneWidget);
-      expect(find.text('Finanças'), findsOneWidget);
+      expect(find.text('Financeiro'), findsOneWidget);
       expect(find.text('Dados'), findsOneWidget);
       expect(find.text('Sobre'), findsOneWidget);
     });
@@ -58,11 +54,9 @@ void main() {
       await tester.pumpWidget(wrapWithProviders(const SettingsScreen()));
       await tester.pumpAndSettle();
 
-      // Find Dark button segment
       await tester.tap(find.text('Escuro'));
       await tester.pumpAndSettle();
 
-      // Verify pref (via provider state indirectly or checking the widget)
       final segmentedButton = tester.widget<SegmentedButton<ThemeMode>>(find.byType(SegmentedButton<ThemeMode>).first);
       expect(segmentedButton.selected, {ThemeMode.dark});
     });
@@ -71,8 +65,7 @@ void main() {
       await tester.pumpWidget(wrapWithProviders(const SettingsScreen()));
       await tester.pumpAndSettle();
 
-      // Find English button segment (last SegmentedButton usually)
-      await tester.tap(find.text('Inglês'));
+      await tester.tap(find.text('English'));
       await tester.pumpAndSettle();
 
       final segmentedButton = tester.widget<SegmentedButton<String>>(find.byType(SegmentedButton<String>).last);

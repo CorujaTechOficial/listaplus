@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // coverage:ignore-start
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -36,7 +37,8 @@ class ShoppingListItems extends _$ShoppingListItems {
     try {
       final lists = await ref.read(shoppingListsProvider.future);
       return lists.where((l) => l.id == listId).firstOrNull?.ownerUid;
-    } on Exception {
+    } on Exception catch (e) {
+      debugPrint('Error fetching ownerUid for list $listId: $e');
       return null;
     }
   }

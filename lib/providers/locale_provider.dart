@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'firestore_service_provider.dart';
 
@@ -11,7 +10,7 @@ class LocaleSetting extends _$LocaleSetting {
     try {
       final service = ref.watch(firestoreServiceProvider);
       return service.getLocale();
-    } on FirebaseException {
+    } on Exception {
       return null;
     }
   }

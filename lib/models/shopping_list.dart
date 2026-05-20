@@ -19,7 +19,7 @@ class ShoppingList {
     return ShoppingList(
       id: json['id'] as String,
       name: json['name'] as String,
-      budget: json['budget'] as double?,
+      budget: (json['budget'] as num?)?.toDouble(),
       ownerUid: json['ownerUid'] as String?,
       isArchived: json['isArchived'] as bool? ?? false,
       archivedAt: json['archivedAt'] != null
@@ -42,23 +42,25 @@ class ShoppingList {
   final DateTime createdAt;
   final DateTime updatedAt;
 
+  static const _sentinel = Object();
+
   ShoppingList copyWith({
     String? id,
     String? name,
-    double? budget,
-    String? ownerUid,
+    Object? budget = _sentinel,
+    Object? ownerUid = _sentinel,
     bool? isArchived,
-    DateTime? archivedAt,
+    Object? archivedAt = _sentinel,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
     return ShoppingList(
       id: id ?? this.id,
       name: name ?? this.name,
-      budget: budget ?? this.budget,
-      ownerUid: ownerUid ?? this.ownerUid,
+      budget: identical(budget, _sentinel) ? this.budget : budget as double?,
+      ownerUid: identical(ownerUid, _sentinel) ? this.ownerUid : ownerUid as String?,
       isArchived: isArchived ?? this.isArchived,
-      archivedAt: archivedAt ?? this.archivedAt,
+      archivedAt: identical(archivedAt, _sentinel) ? this.archivedAt : archivedAt as DateTime?,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );

@@ -870,6 +870,18 @@ abstract class AppLocalizations {
   /// **'Add to Pantry'**
   String get addToPantry;
 
+  /// No description provided for @addToPantryPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Add \"{name}\" to your Pantry?'**
+  String addToPantryPrompt(String name);
+
+  /// No description provided for @yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
   /// No description provided for @productName.
   ///
   /// In en, this message translates to:
@@ -1451,6 +1463,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Monthly Budget'**
   String get budgetEditTitle;
+
+  /// No description provided for @budgetDashboardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dashboard'**
+  String get budgetDashboardTitle;
+
+  /// No description provided for @selectListForDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a list to view the dashboard.'**
+  String get selectListForDashboard;
+
+  /// No description provided for @spendingAnalysis.
+  ///
+  /// In en, this message translates to:
+  /// **'Spending Analysis'**
+  String get spendingAnalysis;
+
+  /// No description provided for @noItemsToAnalyze.
+  ///
+  /// In en, this message translates to:
+  /// **'No items in the list to analyze.'**
+  String get noItemsToAnalyze;
+
+  /// No description provided for @markItemsToSeeAnalysis.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark items as purchased to see the analysis.'**
+  String get markItemsToSeeAnalysis;
+
+  /// No description provided for @totalSpending.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Spent'**
+  String get totalSpending;
+
+  /// No description provided for @spendingByCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Spending by Category'**
+  String get spendingByCategory;
+
+  /// No description provided for @achievements.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements'**
+  String get achievements;
+
+  /// No description provided for @exportPdfExcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Export PDF/Excel'**
+  String get exportPdfExcel;
+
+  /// No description provided for @exportPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as PDF'**
+  String get exportPdf;
+
+  /// No description provided for @exportExcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as Excel'**
+  String get exportExcel;
+
+  /// No description provided for @organizingAi.
+  ///
+  /// In en, this message translates to:
+  /// **'ORGANIZING WITH AI...'**
+  String get organizingAi;
+
+  /// No description provided for @yesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yesLabel;
+
+  /// No description provided for @noLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get noLabel;
+
+  /// No description provided for @shareListText.
+  ///
+  /// In en, this message translates to:
+  /// **'My Shopping List'**
+  String get shareListText;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

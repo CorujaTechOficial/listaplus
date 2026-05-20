@@ -71,7 +71,7 @@ class FakeStorageBackend implements StorageBackend {
   Future<String?> getCurrentListId() async => _currentListId;
 
   @override
-  Future<void> setCurrentListId(String listId) async {
+  Future<void> setCurrentListId(String? listId) async {
     _currentListId = listId;
   }
 

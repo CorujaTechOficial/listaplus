@@ -230,11 +230,12 @@ class ShoppingItemTile extends ConsumerWidget {
   }
 
   void _askToAddToPantry(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Deseja adicionar "${item.name}" à sua Dispensa?'),
+        content: Text(l10n.addToPantryPrompt(item.name)),
         action: SnackBarAction(
-          label: 'SIM',
+          label: l10n.yes,
           onPressed: () {
             ref.read(pantryItemsProvider.notifier).addItem(
               name: item.name,

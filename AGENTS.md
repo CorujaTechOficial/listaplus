@@ -14,6 +14,7 @@
   (7/10 premium), monthly budget, backup export, share by code.
 - **AI Chat**: Kilo AI Gateway (`api.kilo.ai`) via `dart_openai`. Requires `KILO_API_KEY` passed as
   `--dart-define=KILO_API_KEY=xxx`. Chat sessions persisted in Firestore `chat_messages` subcollection.
+- **RevenueCat**: API key via `--dart-define=REVENUECAT_API_KEY=xxx` (default fallback `goog_lUoZUpDVyhVroFRzwgArMnFxIQv`).
 - **Observability**: Sentry + Firebase Crashlytics (dual). `SentryFlutter.init` wraps `appRunner`;
   `FlutterError.onError` + `PlatformDispatcher.onError` send to both. Sentry: `tracesSampleRate: 1.0`,
   `enableLogs: true`, `sendDefaultPii: true`.

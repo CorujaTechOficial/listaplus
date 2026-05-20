@@ -31,7 +31,7 @@ class PantryItem {
       unit: json['unit'] != null
           ? Unit.values.firstWhere((e) => e.name == json['unit'], orElse: () => Unit.un)
           : Unit.un,
-      estimatedPrice: json['estimatedPrice'] as double?,
+      estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       trackStock: json['trackStock'] as bool? ?? true,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
@@ -52,6 +52,8 @@ class PantryItem {
   int get deficit => (idealQuantity - currentQuantity).clamp(0, idealQuantity);
   bool get needsRestock => deficit > 0;
 
+  static const _sentinel = Object();
+
   PantryItem copyWith({
     String? id,
     String? name,
@@ -59,7 +61,7 @@ class PantryItem {
     int? currentQuantity,
     Category? category,
     Unit? unit,
-    double? estimatedPrice,
+    Object? estimatedPrice = _sentinel,
     bool? trackStock,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -71,7 +73,7 @@ class PantryItem {
       currentQuantity: currentQuantity ?? this.currentQuantity,
       category: category ?? this.category,
       unit: unit ?? this.unit,
-      estimatedPrice: estimatedPrice ?? this.estimatedPrice,
+      estimatedPrice: identical(estimatedPrice, _sentinel) ? this.estimatedPrice : estimatedPrice as double?,
       trackStock: trackStock ?? this.trackStock,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,

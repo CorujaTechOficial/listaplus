@@ -15,7 +15,7 @@ class Credits extends _$Credits {
     if (premiumUntil == null) {
       return null;
     }
-    return DateTime.parse(premiumUntil);
+    return DateTime.tryParse(premiumUntil);
   }
 
   Future<void> extendBy24h() async {
@@ -26,7 +26,7 @@ class Credits extends _$Credits {
 
     var current = now;
     if (currentStr != null) {
-      final parsed = DateTime.parse(currentStr);
+      final parsed = DateTime.tryParse(currentStr) ?? now;
       if (parsed.isAfter(now)) {
         current = parsed;
       }

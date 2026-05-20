@@ -12,13 +12,7 @@ class UpdateService {
     try {
       final info = await InAppUpdate.checkForUpdate();
       if (info.updateAvailability == UpdateAvailability.updateAvailable) {
-        // Start flexible update
-        final result = await InAppUpdate.startFlexibleUpdate();
-        
-        if (result == AppUpdateResult.success) {
-          // Once downloaded, prompt to install
-          await InAppUpdate.completeFlexibleUpdate();
-        }
+        await InAppUpdate.startFlexibleUpdate();
       }
     } on Object catch (e) {
       // Fail silently in non-Play Store environments or if API fails

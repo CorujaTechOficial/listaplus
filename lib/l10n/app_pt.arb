@@ -139,6 +139,8 @@
   "editItemPrice": "Preço estimado",
 
   "addToPantry": "Adicionar à Dispensa",
+  "addToPantryPrompt": "Deseja adicionar \"{name}\" à sua Dispensa?",
+  "yes": "Sim",
   "productName": "Nome do produto",
   "idealQty": "Qtd ideal",
   "currentQty": "Qtd atual",
@@ -251,5 +253,20 @@
   "selectAll": "Selecionar tudo",
   "deselectAll": "Desselecionar tudo",
   "monthlyBudgetAppBar": "Orçamento Mensal",
-  "budgetEditTitle": "Orçamento Mensal"
+  "budgetEditTitle": "Orçamento Mensal",
+  "budgetDashboardTitle": "Dashboard",
+  "selectListForDashboard": "Selecione uma lista para ver o dashboard.",
+  "spendingAnalysis": "Análise de Gastos",
+  "noItemsToAnalyze": "Nenhum item na lista para analisar.",
+  "markItemsToSeeAnalysis": "Marque itens como comprados para ver a análise.",
+  "totalSpending": "Gasto Total",
+  "spendingByCategory": "Gastos por Categoria",
+  "achievements": "Conquistas",
+  "exportPdfExcel": "Exportar PDF/Excel",
+  "exportPdf": "Exportar como PDF",
+  "exportExcel": "Exportar como Excel",
+  "organizingAi": "ORGANIZANDO COM IA...",
+  "yesLabel": "Sim",
+  "noLabel": "Não",
+  "shareListText": "Minha Lista de Compras"
 }

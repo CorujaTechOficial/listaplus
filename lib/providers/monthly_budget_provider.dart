@@ -9,7 +9,7 @@ class MonthlyBudget extends _$MonthlyBudget {
   Future<double?> build() async {
     final service = ref.watch(firestoreServiceProvider);
     final data = await service.getUserData();
-    return data?['monthlyBudget'] as double?;
+    return (data?['monthlyBudget'] as num?)?.toDouble();
   }
 
   Future<void> setBudget(double? budget) async {

@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:io';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/shopping_item.dart';
@@ -30,6 +32,9 @@ class FirestoreService implements StorageBackend {
           error.code == 'aborted' ||
           error.code == 'internal';
     }
+    if (error is SocketException || error is HttpException || error is TimeoutException) {
+      return true;
+    }
     return false;
   }
 
@@ -52,9 +57,10 @@ class FirestoreService implements StorageBackend {
 
   static Stream<T> _retryStream<T>(Stream<T> Function() fn) {
     return Stream<T>.multi((controller) {
+      StreamSubscription<T>? sub;
+      var attempt = 0;
       void subscribe() {
-        var attempt = 0;
-        fn().listen(
+        sub = fn().listen(
           controller.add,
           onError: (Object e) {
             attempt++;
@@ -65,6 +71,7 @@ class FirestoreService implements StorageBackend {
             final delay = _baseDelay * pow(2, attempt - 1).toInt();
             final jitter = Random().nextInt(100);
             Future<void>.delayed(delay + Duration(milliseconds: jitter)).then((_) {
+              sub?.cancel();
               subscribe();
             });
           },
@@ -73,6 +80,7 @@ class FirestoreService implements StorageBackend {
         );
       }
       subscribe();
+      controller.onCancel = () => sub?.cancel();
     });
   }
 
@@ -143,19 +151,14 @@ class FirestoreService implements StorageBackend {
       final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
       final itemsRef = _db.collection('users').doc(_uid).collection('items');
 
-      final batch = _db.batch();
       if (listId != null) {
         final existingSnap = await itemsRef
             .where('shoppingListId', isEqualTo: listId)
             .get();
-        for (final doc in existingSnap.docs) {
-          batch.delete(doc.reference);
-        }
+        await _commitBatchInChunks(itemsRef, existingSnap.docs, items);
+      } else {
+        await _commitBatchInChunks(itemsRef, [], items);
       }
-      for (final item in items) {
-        batch.set(itemsRef.doc(item.id), item.toJson());
-      }
-      await batch.commit();
     });
   }
 
@@ -183,7 +186,7 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
-  Future<void> setCurrentListId(String listId) async {
+  Future<void> setCurrentListId(String? listId) async {
     return _retry(() async {
       await _db.collection('users').doc(_uid).set(
         {'currentListId': listId},
@@ -338,19 +341,14 @@ class FirestoreService implements StorageBackend {
       final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
       final itemsRef = _db.collection('users').doc(ownerUid).collection('items');
 
-      final batch = _db.batch();
       if (listId != null) {
         final existingSnap = await itemsRef
             .where('shoppingListId', isEqualTo: listId)
             .get();
-        for (final doc in existingSnap.docs) {
-          batch.delete(doc.reference);
-        }
+        await _commitBatchInChunks(itemsRef, existingSnap.docs, items);
+      } else {
+        await _commitBatchInChunks(itemsRef, [], items);
       }
-      for (final item in items) {
-        batch.set(itemsRef.doc(item.id), item.toJson());
-      }
-      await batch.commit();
     });
   }
 
@@ -417,12 +415,59 @@ class FirestoreService implements StorageBackend {
           : _db.collection('users').doc(_uid).collection('global_chat_messages');
       
       final snap = await collection.get();
+      final docs = snap.docs;
+      for (var i = 0; i < docs.length; i += 500) {
+        final batch = _db.batch();
+        for (final doc in docs.sublist(i, (i + 500) > docs.length ? docs.length : i + 500)) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      }
+    });
+  }
+
+  Future<void> _commitBatchInChunks(
+    CollectionReference itemsRef,
+    List<QueryDocumentSnapshot<Map<String, dynamic>>> existingDocs,
+    List<ShoppingItem> items,
+  ) async {
+    final deleteOps = existingDocs.length;
+    final setOps = items.length;
+    final totalOps = deleteOps + setOps;
+    const limit = 500;
+
+    if (totalOps <= limit) {
       final batch = _db.batch();
-      for (final doc in snap.docs) {
+      for (final doc in existingDocs) {
         batch.delete(doc.reference);
       }
+      for (final item in items) {
+        batch.set(itemsRef.doc(item.id), item.toJson());
+      }
       await batch.commit();
-    });
+      return;
+    }
+
+    if (deleteOps > 0) {
+      for (var i = 0; i < deleteOps; i += limit) {
+        final batch = _db.batch();
+        final chunk = existingDocs.sublist(i, (i + limit) > deleteOps ? deleteOps : i + limit);
+        for (final doc in chunk) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      }
+    }
+    if (setOps > 0) {
+      for (var i = 0; i < setOps; i += limit) {
+        final batch = _db.batch();
+        final chunk = items.sublist(i, (i + limit) > setOps ? setOps : i + limit);
+        for (final item in chunk) {
+          batch.set(itemsRef.doc(item.id), item.toJson());
+        }
+        await batch.commit();
+      }
+    }
   }
 }
 // coverage:ignore-end

@@ -13,7 +13,7 @@ abstract class StorageBackend {
   Future<void> saveItems(List<ShoppingItem> items);
   Future<void> deleteItemsFromList(String listId);
   Future<String?> getCurrentListId();
-  Future<void> setCurrentListId(String listId);
+  Future<void> setCurrentListId(String? listId);
 
   Future<bool> getIsPremium();
   Future<void> setIsPremium(bool value);

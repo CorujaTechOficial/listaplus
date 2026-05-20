@@ -27,17 +27,19 @@ service cloud.firestore {
       allow read, write: if isOwner(uid);
     }
 
-    // Owned lists — owner can R/W
+    // Owned lists — owner can R/W; shared users can read
     match /users/{uid}/lists/{listId} {
-      allow read, write: if isOwner(uid) || hasSharedRef(listId);
+      allow read: if isOwner(uid) || hasSharedRef(listId);
+      allow write: if isOwner(uid);
     }
 
-    // Items — owner can R/W; shared users can R/W items belonging to a shared list
+    // Items — owner can R/W; shared users can read items of shared lists
     match /users/{uid}/items/{itemId} {
-      allow read, write: if isOwner(uid)
+      allow read: if isOwner(uid)
         || hasSharedRef(
           get(/databases/$(database)/documents/users/$(uid)/items/$(itemId)).data.shoppingListId
         );
+      allow write: if isOwner(uid);
     }
 
     // Shared list references for each user
@@ -45,9 +47,11 @@ service cloud.firestore {
       allow read, write: if isOwner(uid);
     }
 
-    // Share codes — any authenticated user can create/read
+    // Share codes — any authenticated user can read; only create, no overwrite
     match /sharedLists/{code} {
-      allow read, write: if isAuthenticated();
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update, delete: if false;
     }
 
     // Chat messages per list — owner or shared user can R/W

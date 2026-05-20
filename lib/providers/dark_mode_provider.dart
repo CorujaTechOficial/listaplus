@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'firestore_service_provider.dart';
@@ -20,7 +19,7 @@ class DarkMode extends _$DarkMode {
         default:
           return ThemeMode.system;
       }
-    } on FirebaseException {
+    } on Exception {
       return ThemeMode.system;
     }
   }

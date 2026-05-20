@@ -432,6 +432,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addToPantry => 'Add to Pantry';
 
   @override
+  String addToPantryPrompt(String name) {
+    return 'Add \"$name\" to your Pantry?';
+  }
+
+  @override
+  String get yes => 'Yes';
+
+  @override
   String get productName => 'Product name';
 
   @override
@@ -741,4 +749,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get budgetEditTitle => 'Monthly Budget';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard => 'Select a list to view the dashboard.';
+
+  @override
+  String get spendingAnalysis => 'Spending Analysis';
+
+  @override
+  String get noItemsToAnalyze => 'No items in the list to analyze.';
+
+  @override
+  String get markItemsToSeeAnalysis => 'Mark items as purchased to see the analysis.';
+
+  @override
+  String get totalSpending => 'Total Spent';
+
+  @override
+  String get spendingByCategory => 'Spending by Category';
+
+  @override
+  String get achievements => 'Achievements';
+
+  @override
+  String get exportPdfExcel => 'Export PDF/Excel';
+
+  @override
+  String get exportPdf => 'Export as PDF';
+
+  @override
+  String get exportExcel => 'Export as Excel';
+
+  @override
+  String get organizingAi => 'ORGANIZING WITH AI...';
+
+  @override
+  String get yesLabel => 'Yes';
+
+  @override
+  String get noLabel => 'No';
+
+  @override
+  String get shareListText => 'My Shopping List';
 }

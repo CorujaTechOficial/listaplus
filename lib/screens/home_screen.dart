@@ -98,10 +98,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final isDark = theme.brightness == Brightness.dark;
     final itemsAsync = ref.watch(shoppingListItemsProvider(widget.listId));
     final listsAsync = ref.watch(shoppingListsProvider);
-    final currentList = listsAsync.value?.firstWhere(
+    final currentList = listsAsync.value?.where(
       (l) => l.id == widget.listId,
-      orElse: () => ShoppingList(name: 'Lista'),
-    );
+    ).firstOrNull;
     final isPremium = ref.watch(premiumProvider).value ?? false;
 
     return Scaffold(
@@ -275,7 +274,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           children: [
                             const Icon(Icons.emoji_events_outlined, size: 18, color: Colors.orange),
                             const SizedBox(width: 8),
-                            Flexible(child: Text('Conquistas')),
+                            Flexible(child: Text(l10n.achievements)),
                           ],
                         ),
                       ),
@@ -285,7 +284,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           children: [
                             const Icon(Icons.file_download_outlined, size: 18),
                             const SizedBox(width: 8),
-                            Flexible(child: Text('Exportar PDF/Excel')),
+                            Flexible(child: Text(l10n.exportPdfExcel)),
                           ],
                         ),
                       ),
@@ -353,7 +352,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       await _archiveList();
                     } else if (value == 'achievements') {
                       if (context.mounted) {
-                        Navigator.push(context, fadeSlideRoute<void>(const AchievementsScreen()));
+                        await Navigator.push(context, fadeSlideRoute<void>(const AchievementsScreen()));
                       }
                     } else if (value == 'export') {
                       _showExportOptions(items);
@@ -560,8 +559,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               isSelected: _selectedIds.contains(item.id),
                               onSelectionChanged: (selected) {
                                 if (selected) {
-                                  _selectedIds.add(item.id);
-                                  _enterSelectionMode();
+                                  setState(() {
+                                    _selectedIds.add(item.id);
+                                    _selectionMode = true;
+                                  });
+                                  HapticFeedback.mediumImpact();
                                 } else {
                                   setState(() {
                                     _selectedIds.remove(item.id);
@@ -764,7 +766,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), curve: Curves.easeInOut),
                    const SizedBox(height: Spacing.xl),
                    Text(
-                     'ORGANIZANDO COM IA...',
+                      l10n.organizingAi,
                      style: theme.textTheme.labelLarge?.copyWith(
                        fontWeight: FontWeight.w900,
                        letterSpacing: 2,
@@ -931,8 +933,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         .togglePurchasedBatch(_selectedIds.toList(), isPurchased);
     
     if (isPurchased) {
-      final items = ref.read(shoppingListItemsProvider(widget.listId)).value ?? [];
-      final pendingCount = items.where((i) => !i.isPurchased && !_selectedIds.contains(i.id)).length;
+      ref.invalidate(shoppingListItemsProvider(widget.listId));
+      final updatedItems = await ref.read(shoppingListItemsProvider(widget.listId).future);
+      final pendingCount = updatedItems.where((i) => !i.isPurchased && !_selectedIds.contains(i.id)).length;
       if (pendingCount == 0) {
         if (!WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding')) {
           _confettiController.play();
@@ -1082,13 +1085,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     showModalBottomSheet<void>(
       context: context,
       builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
         return SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
                 leading: const Icon(Icons.picture_as_pdf, color: Colors.red),
-                title: const Text('Exportar como PDF'),
+                title: Text(l10n.exportPdf),
                 onTap: () {
                   Navigator.pop(context);
                   _exportPdf(items);
@@ -1096,7 +1100,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
               ListTile(
                 leading: const Icon(Icons.table_chart, color: Colors.green),
-                title: const Text('Exportar como Excel'),
+                title: Text(l10n.exportExcel),
                 onTap: () {
                   Navigator.pop(context);
                   _exportExcel(items);
@@ -1110,13 +1114,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _exportPdf(List<ShoppingItem> items) async {
+    final l10n = AppLocalizations.of(context)!;
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
         build: (context) => pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [
-            pw.Text('Lista de Compras', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold)),
+            pw.Text(l10n.shareListText, style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold)),
             pw.Divider(),
             pw.SizedBox(height: 20),
             ...items.map((item) => pw.Row(
@@ -1135,6 +1140,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _exportExcel(List<ShoppingItem> items) async {
+    final l10n = AppLocalizations.of(context)!;
     final excel = ex.Excel.createExcel();
     final sheet = excel['Shopping List'];
     
@@ -1146,7 +1152,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ex.IntCellValue(item.quantity),
         ex.TextCellValue(item.unit.name),
         ex.DoubleCellValue(item.estimatedPrice ?? 0),
-        ex.TextCellValue(item.isPurchased ? 'Sim' : 'Não'),
+        ex.TextCellValue(item.isPurchased ? l10n.yesLabel : l10n.noLabel),
       ]);
     }
 
@@ -1155,7 +1161,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       final tempDir = await getTemporaryDirectory();
       final file = File('${tempDir.path}/lista_compras.xlsx');
       await file.writeAsBytes(bytes);
-      await Share.shareXFiles([XFile(file.path)], text: 'Minha Lista de Compras');
+      await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], text: l10n.shareListText));
     }
   }
 
@@ -1296,7 +1302,7 @@ class _SummaryCard extends ConsumerWidget {
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 800),
                         curve: Curves.fastOutSlowIn,
-                        width: 120 * itemsProgress,
+                        width: 120 * itemsProgress.clamp(0.0, 1.0),
                         height: 8,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
