@@ -23,6 +23,13 @@ class AnalyticsService {
     await _analytics?.logEvent(name: 'paywall_dismissed');
   }
 
+  Future<void> logPaywallError(String code) async {
+    await _analytics?.logEvent(
+      name: 'paywall_error',
+      parameters: {'error_code': code},
+    );
+  }
+
   Future<void> logCustomerCenterOpened() async {
     await _analytics?.logEvent(name: 'customer_center_opened');
   }

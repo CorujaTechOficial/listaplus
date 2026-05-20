@@ -1,5 +1,4 @@
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/shopping_item.dart';
@@ -10,16 +9,11 @@ void main() {
   const testUid = 'test-user-123';
 
   late FakeFirebaseFirestore fakeFirestore;
-  late MockFirebaseAuth mockAuth;
   late FirestoreService service;
 
   setUp(() {
     fakeFirestore = FakeFirebaseFirestore();
-    mockAuth = MockFirebaseAuth(
-      mockUser: MockUser(uid: testUid),
-      signedIn: true,
-    );
-    service = FirestoreService(firestore: fakeFirestore, auth: mockAuth);
+    service = FirestoreService(firestore: fakeFirestore, uid: testUid);
   });
 
   group('FirestoreService lists', () {

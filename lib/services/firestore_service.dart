@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
@@ -11,15 +10,13 @@ class FirestoreService implements StorageBackend {
   // coverage:ignore-start
   FirestoreService({
     FirebaseFirestore? firestore,
-    FirebaseAuth? auth,
+    required String uid,
   })  : _db = firestore ?? FirebaseFirestore.instance,
-        _auth = auth ?? FirebaseAuth.instance;
+        _uid = uid;
   // coverage:ignore-end
 
   final FirebaseFirestore _db;
-  final FirebaseAuth _auth;
-
-  String get _uid => _auth.currentUser!.uid;
+  final String _uid;
 // coverage:ignore-start
 
   static const _maxRetries = 5;
@@ -143,8 +140,18 @@ class FirestoreService implements StorageBackend {
   @override
   Future<void> saveItems(List<ShoppingItem> items) async {
     return _retry(() async {
-      final batch = _db.batch();
+      final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
       final itemsRef = _db.collection('users').doc(_uid).collection('items');
+
+      final batch = _db.batch();
+      if (listId != null) {
+        final existingSnap = await itemsRef
+            .where('shoppingListId', isEqualTo: listId)
+            .get();
+        for (final doc in existingSnap.docs) {
+          batch.delete(doc.reference);
+        }
+      }
       for (final item in items) {
         batch.set(itemsRef.doc(item.id), item.toJson());
       }
@@ -328,8 +335,18 @@ class FirestoreService implements StorageBackend {
   @override
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
     return _retry(() async {
-      final batch = _db.batch();
+      final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
       final itemsRef = _db.collection('users').doc(ownerUid).collection('items');
+
+      final batch = _db.batch();
+      if (listId != null) {
+        final existingSnap = await itemsRef
+            .where('shoppingListId', isEqualTo: listId)
+            .get();
+        for (final doc in existingSnap.docs) {
+          batch.delete(doc.reference);
+        }
+      }
       for (final item in items) {
         batch.set(itemsRef.doc(item.id), item.toJson());
       }

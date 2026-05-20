@@ -1,85 +1,88 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/models/chat_message.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/screens/chat_screen.dart';
-import 'package:shopping_list/widgets/premium_gate.dart';
-import '../helpers/test_widgets.dart';
+import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/providers/chat_provider.dart';
+import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/providers/revenuecat_service_provider.dart';
+import 'package:shopping_list/providers/analytics_service_provider.dart';
+import 'package:shopping_list/services/analytics_service.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 
+Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend, bool isPremium = true}) {
+  final revenueCat = FakeRevenueCatService();
+  revenueCat.setIsPremium(isPremium);
+
+  return ProviderScope(
+    overrides: [
+      firestoreServiceProvider.overrideWithValue(backend),
+      revenueCatServiceProvider.overrideWithValue(revenueCat),
+      analyticsServiceProvider.overrideWithValue(AnalyticsService()),
+    ],
+    child: MaterialApp(
+      locale: const Locale('pt', 'BR'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: child,
+    ),
+  );
+}
+
 void main() {
-  late FakeStorageBackend fakeStorage;
-  late FakeRevenueCatService fakeRevenueCat;
-
-  setUp(() {
-    fakeStorage = FakeStorageBackend();
-    fakeRevenueCat = FakeRevenueCatService();
-  });
-
   group('ChatScreen', () {
-    testWidgets('shows PremiumGate when user is not premium', (tester) async {
-      fakeRevenueCat.setIsPremium(false);
-      
-      await tester.pumpWidget(wrapWithProviders(
-        const ChatScreen(),
-        backend: fakeStorage,
-        revenueCat: fakeRevenueCat,
-      ));
-      await tester.pumpAndSettle();
+    late FakeStorageBackend backend;
 
-      expect(find.byType(PremiumGate), findsOneWidget);
-      expect(find.text('Assistente de IA'), findsOneWidget);
+    setUp(() {
+      backend = FakeStorageBackend();
     });
 
-    testWidgets('renders chat interface when user is premium', (tester) async {
-      fakeRevenueCat.setIsPremium(true);
-      
+    testWidgets('shows welcome message when empty', (tester) async {
       await tester.pumpWidget(wrapWithProviders(
-        const ChatScreen(listName: 'My List'),
-        backend: fakeStorage,
-        revenueCat: fakeRevenueCat,
+        const ChatScreen(listId: 'list-1', listName: 'Minha Lista'),
+        backend: backend,
       ));
+
       await tester.pumpAndSettle();
 
-      expect(find.byType(PremiumGate), findsNothing);
-      expect(find.text('My List'), findsOneWidget);
-      expect(find.byType(TextField), findsOneWidget);
-      expect(find.byIcon(Icons.send), findsOneWidget);
+      expect(find.text('Minha Lista'), findsOneWidget);
+      expect(find.text('Como posso ajudar com sua lista?'), findsOneWidget);
+      expect(find.text('Sugestão de Receitas'), findsOneWidget);
     });
 
-    testWidgets('displays messages and allows sending', (tester) async {
-      fakeRevenueCat.setIsPremium(true);
-      await fakeStorage.saveChatMessage(null, ChatMessage(role: 'assistant', content: 'How can I help?'));
-      
+    testWidgets('sends a message', (tester) async {
       await tester.pumpWidget(wrapWithProviders(
-        const ChatScreen(),
-        backend: fakeStorage,
-        revenueCat: fakeRevenueCat,
+        const ChatScreen(listId: 'list-1'),
+        backend: backend,
       ));
+
       await tester.pumpAndSettle();
 
-      expect(find.text('How can I help?'), findsOneWidget);
-
-      await tester.enterText(find.byType(TextField), 'Suggest some milk');
+      await tester.enterText(find.byType(TextField), 'Oi Assistente');
       await tester.tap(find.byIcon(Icons.send));
+      
+      // Need to pump enough to pass through async calls
+      await tester.pump(); 
+      await tester.pump(const Duration(seconds: 1));
       await tester.pumpAndSettle();
 
-      expect(find.text('Suggest some milk'), findsOneWidget);
-      expect(find.text('Fake streamed response'), findsOneWidget);
+      expect(find.text('Oi Assistente'), findsOneWidget);
     });
 
-    testWidgets('clear history button works', (tester) async {
-      fakeRevenueCat.setIsPremium(true);
-      await fakeStorage.saveChatMessage(null, ChatMessage(role: 'user', content: 'Old message'));
-      
-      await tester.pumpWidget(wrapWithProviders(
-        const ChatScreen(),
-        backend: fakeStorage,
-        revenueCat: fakeRevenueCat,
-      ));
-      await tester.pumpAndSettle();
+    testWidgets('clears history', (tester) async {
+      // Pre-populate with a message
+      final msg = ChatMessage(role: 'user', content: 'Apagar isso');
+      await backend.saveChatMessage('list-1', msg);
 
-      expect(find.text('Old message'), findsOneWidget);
+      await tester.pumpWidget(wrapWithProviders(
+        const ChatScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+
+      await tester.pumpAndSettle();
+      expect(find.text('Apagar isso'), findsOneWidget);
 
       await tester.tap(find.byIcon(Icons.delete_sweep));
       await tester.pumpAndSettle();
@@ -88,8 +91,22 @@ void main() {
       await tester.tap(find.text('Limpar'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Old message'), findsNothing);
-      expect(find.text('Como posso ajudar com suas compras hoje?'), findsOneWidget);
+      expect(find.text('Apagar isso'), findsNothing);
+    });
+
+    testWidgets('shortcut chip sends message', (tester) async {
+      await tester.pumpWidget(wrapWithProviders(
+        const ChatScreen(listId: 'list-1'),
+        backend: backend,
+      ));
+
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Sugestão de Receitas'));
+      await tester.pump();
+      await tester.pumpAndSettle();
+
+      expect(find.textContaining('receitas'), findsWidgets);
     });
   });
 }

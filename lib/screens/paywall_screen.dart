@@ -1,10 +1,8 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 import '../providers/premium_provider.dart';
 import '../providers/analytics_service_provider.dart';
 
@@ -33,15 +31,13 @@ class PaywallScreen extends ConsumerWidget {
             ref.invalidate(premiumProvider);
           },
           onPurchaseError: (PurchasesError error) {
-            Sentry.captureException(error);
-            FirebaseCrashlytics.instance.recordError(error, null, fatal: false);
+            analytics.logPaywallError(error.code.name);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(l10n.purchaseError)),
             );
           },
           onRestoreError: (PurchasesError error) {
-            Sentry.captureException(error);
-            FirebaseCrashlytics.instance.recordError(error, null, fatal: false);
+            analytics.logPaywallError(error.code.name);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(l10n.restoreError)),
             );

@@ -5,12 +5,17 @@ import 'package:url_launcher/url_launcher.dart';
 import '../providers/dark_mode_provider.dart';
 import '../providers/locale_provider.dart';
 import '../providers/theme_color_provider.dart';
+import '../providers/premium_provider.dart';
+import '../providers/revenuecat_service_provider.dart';
+import '../providers/analytics_service_provider.dart';
 import '../models/premium_feature.dart';
 import '../theme/tokens.dart';
+import '../theme/colors.dart';
 import '../theme/page_transitions.dart';
 import 'theme_selection_screen.dart';
 import 'budget_dashboard_screen.dart';
 import 'backup_screen.dart';
+import 'paywall_screen.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -21,11 +26,50 @@ class SettingsScreen extends ConsumerWidget {
     final theme = Theme.of(context);
     final darkModeAsync = ref.watch(darkModeProvider);
     final currentThemeMode = darkModeAsync.value ?? ThemeMode.system;
+    final isPremium = ref.watch(premiumProvider).value ?? false;
+    final isPt = Localizations.localeOf(context).languageCode == 'pt';
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.settingsAppBar)),
       body: ListView(
         children: [
+          _SectionHeader(title: isPt ? 'Assinatura' : 'Subscription'),
+          if (isPremium)
+            ListTile(
+              leading: const Icon(Icons.workspace_premium, color: AppColors.premiumAmber),
+              title: Text(isPt ? 'Lista Plus Pro ativo' : 'Lista Plus Pro active'),
+              subtitle: Text(l10n.manageSubscription),
+              trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+              onTap: () async {
+                try {
+                  await ref.read(analyticsServiceProvider).logCustomerCenterOpened();
+                  await ref.read(revenueCatServiceProvider).presentCustomerCenter();
+                } on Exception catch (e) {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(l10n.error(e.toString()))),
+                    );
+                  }
+                }
+              },
+            )
+          else
+            ListTile(
+              leading: Icon(Icons.workspace_premium_outlined, color: theme.colorScheme.primary),
+              title: Text(l10n.becomePremium),
+              subtitle: Text(isPt ? 'Desbloqueie listas ilimitadas, IA e mais' : 'Unlock unlimited lists, AI and more'),
+              trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+              onTap: () async {
+                await ref.read(analyticsServiceProvider).logUpgradeTapped('settings');
+                if (context.mounted) {
+                  await Navigator.push(
+                    context,
+                    fadeSlideRoute<void>(const PaywallScreen()),
+                  );
+                }
+              },
+            ),
+          const Divider(),
           _SectionHeader(title: l10n.appearance),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
@@ -59,7 +103,7 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(l10n.themeColor),
             subtitle: Text(
               ThemeOption.fromColorValue(
-                ref.watch(themeColorProvider).value ?? Colors.green.toARGB32(),
+                ref.watch(themeColorProvider).valueOrNull?.toARGB32() ?? const Color(0xFF4CAF50).toARGB32(),
               ).name,
             ),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),

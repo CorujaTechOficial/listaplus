@@ -1,4 +1,5 @@
 import 'dart:ui' show PlatformDispatcher;
+import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,6 +9,8 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:dynamic_color/dynamic_color.dart';
+import 'package:quick_actions/quick_actions.dart';
 import 'theme/app_theme.dart';
 import 'theme/tokens.dart';
 import 'providers/ad_service_provider.dart';
@@ -26,8 +29,6 @@ import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
 import 'providers/update_service_provider.dart';
 
-import 'dart:math';
-
 // coverage:ignore-start
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +40,24 @@ Future<void> main() async {
       options.sendDefaultPii = true;
       options.enableLogs = true;
       options.tracesSampleRate = 1.0;
+      options.replay.sessionSampleRate = 1.0;
+      options.replay.onErrorSampleRate = 1.0;
+      options.beforeSend = (event, hint) {
+        final exceptions = event.exceptions;
+        if (exceptions != null && exceptions.isNotEmpty) {
+          final type = exceptions.first.type;
+          if (type == 'PurchasesError') {
+            return null;
+          }
+          if (type == '_Exception') {
+            final value = exceptions.first.value;
+            if (value != null && value.contains('Failed to load font')) {
+              return null;
+            }
+          }
+        }
+        return event;
+      };
     },
     appRunner: () => _runApp(),
   );
@@ -90,15 +109,19 @@ Future<void> _runApp() async {
 
     try {
       await Purchases.logIn(uid);
-    } on Exception catch (_) {}
+    } on Exception catch (e) {
+      await Sentry.captureException(e);
+    }
 
     runApp(
-      ProviderScope(
-        overrides: [
-          revenueCatServiceProvider.overrideWithValue(revenueCat),
-          adServiceProvider.overrideWithValue(adService),
-        ],
-        child: const MyApp(),
+      SentryWidget(
+        child: ProviderScope(
+          overrides: [
+            revenueCatServiceProvider.overrideWithValue(revenueCat),
+            adServiceProvider.overrideWithValue(adService),
+          ],
+          child: const MyApp(),
+        ),
       ),
     );
   } on Object catch (e, stack) {
@@ -118,27 +141,48 @@ class MyApp extends ConsumerWidget {
     final themeColorAsync = ref.watch(themeColorProvider);
     final localeAsync = ref.watch(localeSettingProvider);
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
-    final colorSeed = Color(themeColorAsync.value ?? Colors.green.toARGB32());
+    final colorSeed = themeColorAsync.valueOrNull ?? const Color(0xFF4CAF50);
 
-    return MaterialApp(
-      title: 'Lista de Compras',
-      theme: AppTheme.light(colorSeed),
-      darkTheme: AppTheme.dark(colorSeed),
-      themeMode: themeMode,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      localeResolutionCallback: (locale, supportedLocales) {
-        final savedLocale = localeAsync.valueOrNull;
-        if (savedLocale != null && savedLocale.isNotEmpty) {
-          final parts = savedLocale.split('_');
-          if (parts.length == 2) {
-            return Locale(parts[0], parts[1]);
-          }
-          return Locale(parts[0]);
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) {
+        ColorScheme lightColorScheme;
+        ColorScheme darkColorScheme;
+
+        if (lightDynamic != null && darkDynamic != null) {
+          lightColorScheme = lightDynamic.harmonized();
+          darkColorScheme = darkDynamic.harmonized();
+        } else {
+          lightColorScheme = ColorScheme.fromSeed(
+            seedColor: colorSeed,
+            brightness: Brightness.light,
+          );
+          darkColorScheme = ColorScheme.fromSeed(
+            seedColor: colorSeed,
+            brightness: Brightness.dark,
+          );
         }
-        return null;
+
+        return MaterialApp(
+          title: 'Lista Plus',
+          theme: AppTheme.fromColorScheme(lightColorScheme),
+          darkTheme: AppTheme.fromColorScheme(darkColorScheme),
+          themeMode: themeMode,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          localeResolutionCallback: (locale, supportedLocales) {
+            final savedLocale = localeAsync.valueOrNull;
+            if (savedLocale != null && savedLocale.isNotEmpty) {
+              final parts = savedLocale.split('_');
+              if (parts.length == 2) {
+                return Locale(parts[0], parts[1]);
+              }
+              return Locale(parts[0]);
+            }
+            return null;
+          },
+          home: const MainShell(),
+        );
       },
-      home: const MainShell(),
     );
   }
 }
@@ -152,10 +196,22 @@ class MainShell extends ConsumerStatefulWidget {
 
 class _MainShellState extends ConsumerState<MainShell> {
   int _currentTab = 0;
+  final QuickActions _quickActions = const QuickActions();
 
   @override
   void initState() {
     super.initState();
+    _quickActions.setShortcutItems(<ShortcutItem>[
+      const ShortcutItem(type: 'action_add', localizedTitle: 'Adicionar Item', icon: 'icon_add'),
+      const ShortcutItem(type: 'action_pantry', localizedTitle: 'Ver Dispensa', icon: 'icon_pantry'),
+    ]);
+    _quickActions.initialize((shortcutType) {
+      if (shortcutType == 'action_add') {
+        // We'll need a way to open the add dialog on the current list
+      } else if (shortcutType == 'action_pantry') {
+        setState(() => _currentTab = 1);
+      }
+    });
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         ref.read(updateServiceProvider).checkForUpdates();
@@ -165,34 +221,30 @@ class _MainShellState extends ConsumerState<MainShell> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: IndexedStack(
-            index: _currentTab,
-            children: const [
-              ListLoader(),
-              PantryScreen(),
-            ],
+    return Scaffold(
+      body: IndexedStack(
+        index: _currentTab,
+        children: const [
+          ListLoader(),
+          PantryScreen(),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _currentTab,
+        onDestinationSelected: (index) => setState(() => _currentTab = index),
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.list_alt_outlined),
+            selectedIcon: Icon(Icons.list_alt),
+            label: 'Listas',
           ),
-        ),
-        NavigationBar(
-          selectedIndex: _currentTab,
-          onDestinationSelected: (index) => setState(() => _currentTab = index),
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Icons.list_alt_outlined),
-              selectedIcon: Icon(Icons.list_alt),
-              label: 'Listas',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.inventory_2_outlined),
-              selectedIcon: Icon(Icons.inventory_2),
-              label: 'Dispensa',
-            ),
-          ],
-        ),
-      ],
+          NavigationDestination(
+            icon: Icon(Icons.inventory_2_outlined),
+            selectedIcon: Icon(Icons.inventory_2),
+            label: 'Dispensa',
+          ),
+        ],
+      ),
     );
   }
 }

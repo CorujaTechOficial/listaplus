@@ -2,7 +2,6 @@
 // coverage:ignore-start
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'tokens.dart';
 
 TextStyle _nunito({
@@ -12,24 +11,14 @@ TextStyle _nunito({
   double? letterSpacing,
   double? height,
 }) {
-  try {
-    return GoogleFonts.nunito(
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: color,
-      letterSpacing: letterSpacing,
-      height: height,
-    );
-  } on Object {
-    return TextStyle(
-      fontFamily: 'Nunito',
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: color,
-      letterSpacing: letterSpacing,
-      height: height,
-    );
-  }
+  return TextStyle(
+    fontFamily: 'Nunito',
+    fontSize: fontSize,
+    fontWeight: fontWeight,
+    color: color,
+    letterSpacing: letterSpacing,
+    height: height,
+  );
 }
 
 TextStyle _inter({
@@ -39,24 +28,14 @@ TextStyle _inter({
   double? letterSpacing,
   double? height,
 }) {
-  try {
-    return GoogleFonts.inter(
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: color,
-      letterSpacing: letterSpacing,
-      height: height,
-    );
-  } on Object {
-    return TextStyle(
-      fontFamily: 'Inter',
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: color,
-      letterSpacing: letterSpacing,
-      height: height,
-    );
-  }
+  return TextStyle(
+    fontFamily: 'Inter',
+    fontSize: fontSize,
+    fontWeight: fontWeight,
+    color: color,
+    letterSpacing: letterSpacing,
+    height: height,
+  );
 }
 
 class AppTheme {
@@ -77,6 +56,10 @@ class AppTheme {
       brightness: Brightness.dark,
     );
 
+    return _buildTheme(colorScheme);
+  }
+
+  static ThemeData fromColorScheme(ColorScheme colorScheme) {
     return _buildTheme(colorScheme);
   }
 

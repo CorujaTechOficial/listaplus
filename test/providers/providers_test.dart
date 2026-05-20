@@ -15,10 +15,14 @@ import 'package:shopping_list/providers/theme_color_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/category.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences.setMockInitialValues({});
+
   group('ShoppingLists (riverpod)', () {
     late ProviderContainer container;
     late FakeStorageBackend fakeBackend;
@@ -645,14 +649,14 @@ void main() {
 
     test('build returns default color when none saved', () async {
       final color = await container.read(themeColorProvider.future);
-      expect(color, Colors.green.toARGB32());
+      expect(color.toARGB32(), const Color(0xFF4CAF50).toARGB32());
     });
 
     test('setColor updates storage', () async {
-      final newColor = Colors.blue.toARGB32();
+      const newColor = Colors.blue;
       await container.read(themeColorProvider.notifier).setColor(newColor);
       final color = await container.read(themeColorProvider.future);
-      expect(color, newColor);
+      expect(color.toARGB32(), newColor.toARGB32());
     });
   });
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/shopping_list.dart';
 import '../providers/current_list_provider.dart';
+import '../providers/share_provider.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../theme/tokens.dart';
 import 'create_list_dialog.dart';
@@ -97,11 +98,17 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                                       ? theme.colorScheme.primary
                                       : theme.colorScheme.onSurfaceVariant)),
                         ),
-                        title: Text(
-                          list.name,
-                          style: TextStyle(
-                            fontWeight:
-                                isCurrent ? FontWeight.w700 : FontWeight.normal,
+                        title: Hero(
+                          tag: 'list_name_${list.id}',
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Text(
+                              list.name,
+                              style: TextStyle(
+                                fontWeight:
+                                    isCurrent ? FontWeight.w700 : FontWeight.normal,
+                              ),
+                            ),
                           ),
                         ),
                         subtitle: _showArchived && list.archivedAt != null
@@ -167,11 +174,25 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
               ),
             const Divider(height: 1),
             Padding(
-              padding: const EdgeInsets.all(Spacing.md),
-              child: FilledButton.tonalIcon(
-                onPressed: _createList,
-                icon: const Icon(Icons.add),
-                label: Text(l10n.createNewList),
+              padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: _importSharedList,
+                      icon: const Icon(Icons.cloud_download_outlined),
+                      label: Text(l10n.importViaCode),
+                    ),
+                  ),
+                  const SizedBox(width: Spacing.sm),
+                  Expanded(
+                    child: FilledButton.icon(
+                      onPressed: _createList,
+                      icon: const Icon(Icons.add),
+                      label: Text(l10n.createNewList),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -302,6 +323,62 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
     if (list.id == widget.currentListId) {
       Navigator.pop(context);
       ref.invalidate(currentListIdProvider);
+    }
+  }
+
+  Future<void> _importSharedList() async {
+    final l10n = AppLocalizations.of(context)!;
+    final codeController = TextEditingController();
+    final code = await showDialog<String>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(l10n.importListTitle),
+        content: TextField(
+          controller: codeController,
+          textCapitalization: TextCapitalization.characters,
+          decoration: InputDecoration(
+            hintText: l10n.enterCodeHint,
+            border: const OutlineInputBorder(),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, codeController.text.trim()),
+            child: Text(l10n.import),
+          ),
+        ],
+      ),
+    );
+    codeController.dispose();
+    if (code == null || code.isEmpty) {
+      return;
+    }
+    if (!mounted) {
+      return;
+    }
+    try {
+      final shareService = ref.read(shareServiceProvider);
+      final result = await shareService.importSharedList(code);
+      if (!mounted) {
+        return;
+      }
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.listAdded(result.listName))),
+      );
+      Navigator.pop(context); // Close switcher sheet
+      ref.invalidate(shoppingListsProvider);
+      await ref.read(currentListIdProvider.notifier).setCurrentList(result.listId);
+    } on Exception catch (e) {
+      if (!mounted) {
+        return;
+      }
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.error(e.toString()))),
+      );
     }
   }
 }

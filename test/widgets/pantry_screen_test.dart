@@ -310,5 +310,153 @@ void main() {
       await pumpScreen(tester);
       expect(find.byIcon(Icons.shopping_cart), findsNothing);
     });
+
+    testWidgets('can pull to refresh on empty state', (tester) async {
+      await pumpScreen(tester);
+      await tester.fling(find.byType(SingleChildScrollView).first, const Offset(0, 300), 1000);
+      await tester.pumpAndSettle();
+      expect(find.text('Dispensa vazia'), findsOneWidget);
+    });
+
+    testWidgets('can pull to refresh on list state', (tester) async {
+      final item = PantryItem(
+        id: 'pantry-1',
+        name: 'Arroz',
+        idealQuantity: 5,
+        currentQuantity: 3,
+        category: Category.others,
+      );
+      await backend.savePantryItems([item]);
+      await pumpScreen(tester);
+
+      await tester.fling(find.byType(ListView), const Offset(0, 300), 1000);
+      await tester.pumpAndSettle();
+      expect(find.text('Arroz'), findsOneWidget);
+    });
+
+    testWidgets('generate shopping list shows snackbar when no items need purchase', (tester) async {
+      final item = PantryItem(
+        id: 'pantry-1',
+        name: 'Arroz',
+        idealQuantity: 5,
+        currentQuantity: 5, // No deficit
+        category: Category.others,
+      );
+      await backend.savePantryItems([item]);
+      await pumpScreen(tester);
+
+      await tester.tap(find.byIcon(Icons.shopping_cart));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Nenhum item precisa ser comprado'), findsOneWidget);
+    });
+
+    testWidgets('generate shopping list opens dialog and creates list', (tester) async {
+      final item = PantryItem(
+        id: 'pantry-1',
+        name: 'Arroz',
+        idealQuantity: 5,
+        currentQuantity: 2,
+        category: Category.others,
+      );
+      await backend.savePantryItems([item]);
+      await pumpScreen(tester);
+
+      // Tap shopping cart icon in AppBar
+      await tester.tap(find.byIcon(Icons.shopping_cart));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Nova Lista de Compras'), findsOneWidget);
+      expect(find.textContaining('item(ns) serão adicionados'), findsOneWidget);
+
+      await tester.tap(find.text('Criar'));
+      await tester.pumpAndSettle();
+
+      final lists = await backend.loadLists();
+      expect(lists.length, 1);
+      
+      final listItems = await backend.loadItems(lists.first.id);
+      expect(listItems.length, 1);
+      expect(listItems.first.name, 'Arroz');
+      expect(listItems.first.quantity, 3); // Deficit
+    });
+
+    testWidgets('edit pantry item', (tester) async {
+      final item = PantryItem(
+        id: 'pantry-1',
+        name: 'Arroz',
+        idealQuantity: 5,
+        currentQuantity: 2,
+        category: Category.others,
+      );
+      await backend.savePantryItems([item]);
+      await pumpScreen(tester);
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Editar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Editar Arroz'), findsOneWidget);
+
+      // Change ideal and current quantity
+      await tester.enterText(find.byType(TextField).at(0), '10');
+      await tester.enterText(find.byType(TextField).at(1), '8');
+      
+      await tester.tap(find.text('Salvar'));
+      await tester.pumpAndSettle();
+
+      final items = await backend.loadPantryItems();
+      expect(items.first.idealQuantity, 10);
+      expect(items.first.currentQuantity, 8);
+    });
+
+    testWidgets('delete pantry item', (tester) async {
+      final item = PantryItem(
+        id: 'pantry-1',
+        name: 'Arroz',
+        idealQuantity: 5,
+        currentQuantity: 2,
+        category: Category.others,
+      );
+      await backend.savePantryItems([item]);
+      await pumpScreen(tester);
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Remover'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Remover "Arroz" da dispensa?'), findsOneWidget);
+      
+      await tester.tap(find.text('Remover').last); // The button
+      await tester.pumpAndSettle();
+
+      final items = await backend.loadPantryItems();
+      expect(items, isEmpty);
+    });
+
+    testWidgets('restock pantry item', (tester) async {
+      final item = PantryItem(
+        id: 'pantry-1',
+        name: 'Arroz',
+        idealQuantity: 5,
+        currentQuantity: 2,
+        category: Category.others,
+      );
+      await backend.savePantryItems([item]);
+      await pumpScreen(tester);
+
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Marcar como comprado'));
+      await tester.pumpAndSettle();
+
+      final items = await backend.loadPantryItems();
+      expect(items.first.currentQuantity, 5); // Restocked to ideal
+    });
   });
 }

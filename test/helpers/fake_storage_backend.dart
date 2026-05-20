@@ -51,13 +51,13 @@ class FakeStorageBackend implements StorageBackend {
 
   @override
   Future<void> saveItems(List<ShoppingItem> items) async {
-    if (items.isEmpty) {
-      _items.clear();
+    final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
+    if (listId != null) {
+      _items.removeWhere((i) => i.shoppingListId == listId);
     } else {
-      final affectedListIds = items.map((i) => i.shoppingListId).toSet();
-      _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
-      _items.addAll(items);
+      _items.clear();
     }
+    _items.addAll(items);
     _itemsController.add(List.unmodifiable(_items));
   }
 
@@ -177,13 +177,13 @@ class FakeStorageBackend implements StorageBackend {
 
   @override
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
-    if (items.isEmpty) {
-      _items.clear();
+    final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
+    if (listId != null) {
+      _items.removeWhere((i) => i.shoppingListId == listId);
     } else {
-      final affectedListIds = items.map((i) => i.shoppingListId).toSet();
-      _items.removeWhere((i) => affectedListIds.contains(i.shoppingListId));
-      _items.addAll(items);
+      _items.clear();
     }
+    _items.addAll(items);
     _itemsController.add(List.unmodifiable(_items));
   }
 

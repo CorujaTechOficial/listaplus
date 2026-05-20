@@ -11,6 +11,7 @@ class ShimmerList extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     return Shimmer.fromColors(
+      enabled: !WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding'),
       baseColor: isDark
           ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3)
           : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),

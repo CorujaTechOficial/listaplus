@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
 import '../theme/colors.dart';
 import '../providers/shopping_list_provider.dart';
+import '../providers/price_history_provider.dart';
+import '../providers/pantry_items_provider.dart';
 import '../models/shopping_item.dart';
 import 'edit_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -32,9 +34,18 @@ class ShoppingItemTile extends ConsumerWidget {
     final isDark = theme.brightness == Brightness.dark;
     final isPurchased = item.isPurchased;
 
-    final tileContent = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: Spacing.xxs),
-      child: AnimatedContainer(
+    final tileContent = InkWell(
+      onTap: selectionMode ? () => onSelectionChanged?.call(!isSelected) : null,
+      onLongPress: selectionMode
+          ? null
+          : () {
+              HapticFeedback.mediumImpact();
+              onSelectionChanged?.call(true);
+            },
+      borderRadius: BorderRadius.circular(RadiusTokens.md),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: Spacing.xxs),
+        child: AnimatedContainer(
         duration: DurationTokens.fast,
         curve: Curves.easeOut,
         decoration: BoxDecoration(
@@ -65,10 +76,20 @@ class ShoppingItemTile extends ConsumerWidget {
               _AnimatedCheckbox(
                 value: selectionMode ? isSelected : isPurchased,
                 onChanged: selectionMode
-                    ? (v) => onSelectionChanged?.call(v ?? false)
-                    : (_) {
-                        HapticFeedback.lightImpact();
-                        ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
+                    ? (v) {
+                        HapticFeedback.selectionClick();
+                        onSelectionChanged?.call(v ?? false);
+                      }
+                    : (v) async {
+                        if (v == true) {
+                          HapticFeedback.mediumImpact();
+                        } else {
+                          HapticFeedback.lightImpact();
+                        }
+                        await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
+                        if (v == true && context.mounted) {
+                          _askToAddToPantry(context, ref);
+                        }
                       },
                 isPurchased: !selectionMode && isPurchased,
               ),
@@ -116,7 +137,10 @@ class ShoppingItemTile extends ConsumerWidget {
                         ),
                         if (item.estimatedPrice != null) ...[
                           const SizedBox(width: Spacing.xxs),
-                          _PriceBadge(price: item.estimatedPrice!),
+                          _PriceBadge(
+                            price: item.estimatedPrice!,
+                            previousPrice: ref.read(priceHistoryProvider.notifier).getPreviousPrice(item.name),
+                          ),
                         ],
                       ],
                     ),
@@ -135,12 +159,11 @@ class ShoppingItemTile extends ConsumerWidget {
           ),
         ),
       ),
-    );
+    ),
+  );
 
-    final tile = selectionMode ? tileContent : tileContent;
-
-    if (selectionMode) {
-      return tile;
+  if (selectionMode) {
+      return tileContent;
     }
 
     return Dismissible(
@@ -195,7 +218,7 @@ class ShoppingItemTile extends ConsumerWidget {
           );
         }
       },
-      child: tile,
+      child: tileContent,
     );
   }
 
@@ -203,6 +226,27 @@ class ShoppingItemTile extends ConsumerWidget {
     showDialog<void>(
       context: context,
       builder: (_) => EditItemDialog(listId: listId, item: item),
+    );
+  }
+
+  void _askToAddToPantry(BuildContext context, WidgetRef ref) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Deseja adicionar "${item.name}" à sua Dispensa?'),
+        action: SnackBarAction(
+          label: 'SIM',
+          onPressed: () {
+            ref.read(pantryItemsProvider.notifier).addItem(
+              name: item.name,
+              idealQuantity: item.quantity,
+              currentQuantity: item.quantity,
+              category: item.category,
+              unit: item.unit,
+              estimatedPrice: item.estimatedPrice,
+            );
+          },
+        ),
+      ),
     );
   }
 }
@@ -367,34 +411,58 @@ class _ItemMetaBadge extends StatelessWidget {
 }
 
 class _PriceBadge extends StatelessWidget {
-  const _PriceBadge({required this.price});
+  const _PriceBadge({required this.price, this.previousPrice});
 
   final double price;
+  final double? previousPrice;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final primaryColor = theme.colorScheme.primary;
+    
+    Color badgeColor = primaryColor;
+    IconData? trendIcon;
+    
+    if (previousPrice != null) {
+      if (price > previousPrice!) {
+        badgeColor = theme.colorScheme.error;
+        trendIcon = Icons.trending_up;
+      } else if (price < previousPrice!) {
+        badgeColor = Colors.green;
+        trendIcon = Icons.trending_down;
+      }
+    }
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: 3),
       decoration: BoxDecoration(
         color: isDark
-            ? primaryColor.withValues(alpha: 0.15)
-            : primaryColor.withValues(alpha: 0.08),
+            ? badgeColor.withValues(alpha: 0.15)
+            : badgeColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(RadiusTokens.xxs),
         border: Border.all(
-          color: primaryColor.withValues(alpha: isDark ? 0.3 : 0.2),
+          color: badgeColor.withValues(alpha: isDark ? 0.3 : 0.2),
           width: 0.5,
         ),
       ),
-      child: Text(
-        'R\$ ${price.toStringAsFixed(2)}',
-        style: theme.textTheme.labelSmall?.copyWith(
-          color: primaryColor,
-          fontWeight: FontWeight.w700,
-          fontFeatures: [const FontFeature.tabularFigures()],
-        ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (trendIcon != null) ...[
+            Icon(trendIcon, size: 10, color: badgeColor),
+            const SizedBox(width: 2),
+          ],
+          Text(
+            'R\$ ${price.toStringAsFixed(2)}',
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: badgeColor,
+              fontWeight: FontWeight.w700,
+              fontFeatures: [const FontFeature.tabularFigures()],
+            ),
+          ),
+        ],
       ),
     );
   }

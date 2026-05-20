@@ -6,6 +6,27 @@ import 'ad_service.dart';
 class AdServiceImpl implements AdService {
   bool _initialized = false;
 
+  static const String _bannerAndroid = String.fromEnvironment(
+    'ADMOB_BANNER_ANDROID',
+    defaultValue: 'ca-app-pub-3940256099942544/6300978111',
+  );
+  static const String _bannerIOS = String.fromEnvironment(
+    'ADMOB_BANNER_IOS',
+    defaultValue: 'ca-app-pub-3940256099942544/2934735716',
+  );
+  static const String _rewardedAndroid = String.fromEnvironment(
+    'ADMOB_REWARDED_ANDROID',
+    defaultValue: 'ca-app-pub-3940256099942544/5224354917',
+  );
+  static const String _rewardedIOS = String.fromEnvironment(
+    'ADMOB_REWARDED_IOS',
+    defaultValue: 'ca-app-pub-3940256099942544/1712485313',
+  );
+  static const bool _isTestMode = bool.fromEnvironment(
+    'ADMOB_IS_TEST',
+    defaultValue: true,
+  );
+
   @override
   Future<void> initialize() async {
     if (_initialized) {
@@ -23,7 +44,10 @@ class AdServiceImpl implements AdService {
       }
       return 'ca-app-pub-3940256099942544/2934735716';
     }
-    return 'ca-app-pub-3940256099942544/6300978111';
+    if (Platform.isAndroid) {
+      return _bannerAndroid;
+    }
+    return _bannerIOS;
   }
 
   @override
@@ -34,11 +58,14 @@ class AdServiceImpl implements AdService {
       }
       return 'ca-app-pub-3940256099942544/1712485313';
     }
-    return 'ca-app-pub-3940256099942544/5224354917';
+    if (Platform.isAndroid) {
+      return _rewardedAndroid;
+    }
+    return _rewardedIOS;
   }
 
   @override
-  bool get isTestMode => true;
+  bool get isTestMode => _isTestMode;
 
   @override
   bool get isAvailable => true;

@@ -7,6 +7,9 @@ import '../models/unit.dart';
 import '../services/storage_backend.dart';
 import 'firestore_service_provider.dart';
 import 'shopping_lists_provider.dart';
+import 'item_history_provider.dart';
+import 'price_history_provider.dart';
+import 'user_stats_provider.dart';
 
 part 'shopping_list_provider.g.dart';
 
@@ -29,9 +32,13 @@ class ShoppingListItems extends _$ShoppingListItems {
     return service.watchItems(listId);
   }
 
-  String? _ownerUid() {
-    final lists = ref.read(shoppingListsProvider).valueOrNull ?? [];
-    return lists.where((l) => l.id == listId).firstOrNull?.ownerUid;
+  Future<String?> _ownerUid() async {
+    try {
+      final lists = await ref.read(shoppingListsProvider.future);
+      return lists.where((l) => l.id == listId).firstOrNull?.ownerUid;
+    } on Exception {
+      return null;
+    }
   }
 
   Future<void> addItem({
@@ -54,22 +61,32 @@ class ShoppingListItems extends _$ShoppingListItems {
 
     final currentItems = state.value ?? [];
     await _saveItems(service, [...currentItems, newItem]);
+    
+    // Track in history
+    ref.read(itemHistoryProvider.notifier).trackItem(name);
   }
 
   Future<void> togglePurchased(String id) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    ShoppingItem? toggledItem;
     final updated = items.map((item) {
       if (item.id == id) {
-        return item.copyWith(
+        toggledItem = item.copyWith(
           isPurchased: !item.isPurchased,
           updatedAt: DateTime.now(),
         );
+        return toggledItem!;
       }
       return item;
     }).toList();
 
     await _saveItems(service, updated);
+    
+    // Record stats if newly purchased
+    if (toggledItem?.isPurchased == true) {
+      ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: 1);
+    }
   }
 
   Future<void> removeItem(String id) async {
@@ -86,6 +103,11 @@ class ShoppingListItems extends _$ShoppingListItems {
     final updated = items.map((e) => e.id == item.id ? item : e).toList();
 
     await _saveItems(service, updated);
+    
+    // Update price history
+    if (item.estimatedPrice != null) {
+      ref.read(priceHistoryProvider.notifier).updatePrice(item.name, item.estimatedPrice!);
+    }
   }
 
   Future<void> restoreItem(ShoppingItem item) async {
@@ -140,8 +162,10 @@ class ShoppingListItems extends _$ShoppingListItems {
   Future<void> togglePurchasedBatch(List<String> ids, bool isPurchased) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
+    int newlyPurchased = 0;
     final updated = items.map((item) {
       if (ids.contains(item.id)) {
+        if (!item.isPurchased && isPurchased) newlyPurchased++;
         return item.copyWith(
           isPurchased: isPurchased,
           updatedAt: DateTime.now(),
@@ -150,6 +174,10 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
     await _saveItems(service, updated);
+
+    if (newlyPurchased > 0) {
+      ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: newlyPurchased);
+    }
   }
 
   Future<void> reorderItem(int oldIndex, int newIndex) async {
@@ -164,7 +192,7 @@ class ShoppingListItems extends _$ShoppingListItems {
   }
 
   Future<void> _saveItems(StorageBackend service, List<ShoppingItem> items) async {
-    final ownerUid = _ownerUid();
+    final ownerUid = await _ownerUid();
     if (ownerUid != null) {
       await service.saveItemsToUser(ownerUid, items);
     } else {

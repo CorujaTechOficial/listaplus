@@ -22,6 +22,11 @@ service cloud.firestore {
       allow read, write: if isOwner(uid);
     }
 
+    // Pantry items — owner only
+    match /users/{uid}/pantry/{pantryItemId} {
+      allow read, write: if isOwner(uid);
+    }
+
     // Owned lists — owner can R/W
     match /users/{uid}/lists/{listId} {
       allow read, write: if isOwner(uid) || hasSharedRef(listId);

@@ -184,50 +184,116 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
 
   Widget _buildInput() {
     final l10n = AppLocalizations.of(context)!;
-    return Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 5,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                controller: _textController,
-                decoration: InputDecoration(
-                  hintText: l10n.chatHint,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(24),
-                    borderSide: BorderSide.none,
+    final theme = Theme.of(context);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (ref.watch(chatSessionProvider(widget.listId)).value?.isEmpty ?? true)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _ShortcutChip(
+                    label: 'Sugestão de Receitas',
+                    icon: Icons.restaurant_menu,
+                    onTap: () {
+                      _textController.text = 'Sugira receitas com os itens da minha lista.';
+                      _sendMessage();
+                    },
                   ),
-                  filled: true,
-                  fillColor: Colors.grey.withValues(alpha: 0.1),
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  const SizedBox(width: 8),
+                  _ShortcutChip(
+                    label: 'Dicas de Economia',
+                    icon: Icons.savings_outlined,
+                    onTap: () {
+                      _textController.text = 'Como economizar nesta compra?';
+                      _sendMessage();
+                    },
+                  ),
+                  const SizedBox(width: 8),
+                  _ShortcutChip(
+                    label: 'Organizar Corredores',
+                    icon: Icons.map_outlined,
+                    onTap: () {
+                      _textController.text = 'Organize por corredores de mercado.';
+                      _sendMessage();
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surface,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 5,
+                offset: const Offset(0, -2),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _textController,
+                    decoration: InputDecoration(
+                      hintText: l10n.chatHint,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(24),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.withValues(alpha: 0.1),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    ),
+                    onSubmitted: (_) => _sendMessage(),
+                  ),
                 ),
-                // coverage:ignore-start
-                onSubmitted: (_) => _sendMessage(),
-                // coverage:ignore-end
-              ),
+                const SizedBox(width: 8),
+                CircleAvatar(
+                  backgroundColor: theme.colorScheme.primary,
+                  child: IconButton(
+                    icon: const Icon(Icons.send, color: Colors.white),
+                    onPressed: _sendMessage,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 8),
-            CircleAvatar(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-              child: IconButton(
-                icon: const Icon(Icons.send, color: Colors.white),
-                onPressed: _sendMessage,
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+      ],
+    );
+  }
+}
+
+class _ShortcutChip extends StatelessWidget {
+  const _ShortcutChip({
+    required this.label,
+    required this.icon,
+    required this.onTap,
+  });
+
+  final String label;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return ActionChip(
+      avatar: Icon(icon, size: 16, color: theme.colorScheme.primary),
+      label: Text(label, style: theme.textTheme.labelMedium),
+      onPressed: onTap,
+      backgroundColor: theme.colorScheme.primaryContainer.withValues(alpha: 0.3),
+      side: BorderSide.none,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
     );
   }
 }

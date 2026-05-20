@@ -55,22 +55,25 @@ class _BannerAdWidgetState extends ConsumerState<BannerAdWidget> {
   @override
   Widget build(BuildContext context) {
     final showAd = _isLoaded && _bannerAd != null;
-    return AnimatedCrossFade(
-      duration: DurationTokens.normal,
-      crossFadeState: showAd ? CrossFadeState.showSecond : CrossFadeState.showFirst,
-      firstChild: const SizedBox(height: 50),
-      secondChild: showAd
-          ? Container(
-              color: Theme.of(context).colorScheme.surface,
-              child: Center(
-                child: SizedBox(
-                  width: _bannerAd!.size.width.toDouble(),
-                  height: _bannerAd!.size.height.toDouble(),
-                  child: AdWidget(ad: _bannerAd!),
-                ),
-              ),
-            )
-          : const SizedBox(height: 50),
+    return SizedBox(
+      height: 50,
+      child: AnimatedCrossFade(
+        duration: DurationTokens.normal,
+        crossFadeState: showAd ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+        firstChild: const SizedBox(height: 50),
+        secondChild: Container(
+          color: Theme.of(context).colorScheme.surface,
+          child: Center(
+            child: showAd
+                ? SizedBox(
+                    width: _bannerAd!.size.width.toDouble(),
+                    height: _bannerAd!.size.height.toDouble(),
+                    child: AdWidget(ad: _bannerAd!),
+                  )
+                : const SizedBox(height: 50),
+          ),
+        ),
+      ),
     );
   }
 }

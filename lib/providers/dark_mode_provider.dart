@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'firestore_service_provider.dart';
@@ -8,15 +9,19 @@ part 'dark_mode_provider.g.dart';
 class DarkMode extends _$DarkMode {
   @override
   Future<ThemeMode> build() async {
-    final service = ref.watch(firestoreServiceProvider);
-    final value = await service.getThemeMode();
-    switch (value) {
-      case 'dark':
-        return ThemeMode.dark;
-      case 'light':
-        return ThemeMode.light;
-      default:
-        return ThemeMode.system;
+    try {
+      final service = ref.watch(firestoreServiceProvider);
+      final value = await service.getThemeMode();
+      switch (value) {
+        case 'dark':
+          return ThemeMode.dark;
+        case 'light':
+          return ThemeMode.light;
+        default:
+          return ThemeMode.system;
+      }
+    } on FirebaseException {
+      return ThemeMode.system;
     }
   }
 
