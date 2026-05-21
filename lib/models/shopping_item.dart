@@ -20,10 +20,10 @@ class ShoppingItem {
 
   factory ShoppingItem.fromJson(Map<String, dynamic> json) {
     return ShoppingItem(
-      id: json['id'] != null ? json['id'] as String : null,
-      shoppingListId: json['shoppingListId'] as String,
-      name: json['name'] as String,
-      quantity: json['quantity'] as int,
+      id: json['id'] as String?,
+      shoppingListId: json['shoppingListId'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      quantity: (json['quantity'] as num?)?.toInt() ?? 1,
       category: Category.values.firstWhere(
         (e) => e.name == json['category'],
         orElse: () => Category.others,
@@ -33,9 +33,20 @@ class ShoppingItem {
           : Unit.un,
       estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       isPurchased: json['isPurchased'] as bool? ?? false,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      createdAt: _parseDate(json['createdAt']),
+      updatedAt: _parseDate(json['updatedAt']),
     );
+  }
+
+  static DateTime _parseDate(dynamic value) {
+    if (value == null) {
+      return DateTime.now();
+    }
+    if (value is DateTime) {
+      return value;
+    }
+    final parsed = DateTime.tryParse(value.toString());
+    return parsed ?? DateTime.now();
   }
 
   final String id;

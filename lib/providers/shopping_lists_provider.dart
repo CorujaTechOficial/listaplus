@@ -42,8 +42,8 @@ class ShoppingLists extends _$ShoppingLists {
   }
 
   Future<ShoppingList> createList(String name, {double? budget}) async {
-    final isPremium = await ref.read(premiumProvider.future);
     final currentLists = state.value ?? [];
+    final isPremium = await ref.read(premiumProvider.future);
     final activeListsCount = currentLists.where((l) => !l.isArchived).length;
 
     if (!isPremium && activeListsCount >= 3) {
@@ -76,8 +76,10 @@ class ShoppingLists extends _$ShoppingLists {
     final lists = state.value ?? [];
     
     try {
-      await service.deleteItemsFromList(id);
+      // Delete list first, then items. If list deletion fails, nothing changes.
+      // If item deletion fails after list deletion, orphan items exist but aren't referenced.
       await service.deleteList(id);
+      await service.deleteItemsFromList(id);
       
       final updatedLists = lists.where((l) => l.id != id).toList();
       final newCurrent = updatedLists.isNotEmpty ? updatedLists.first.id : null;
@@ -121,7 +123,9 @@ class ShoppingLists extends _$ShoppingLists {
 
       final currentId = await service.getCurrentListId();
       if (currentId == id) {
-        final activeLists = lists.where((l) => l.id != id && !l.isArchived).toList();
+        // Re-read fresh state after save to avoid stale data
+        final freshLists = state.value ?? lists;
+        final activeLists = freshLists.where((l) => l.id != id && !l.isArchived).toList();
         final newCurrent = activeLists.isNotEmpty ? activeLists.first.id : null;
         if (newCurrent != null) {
           await service.setCurrentListId(newCurrent);

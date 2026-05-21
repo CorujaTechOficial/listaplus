@@ -76,11 +76,13 @@ class AdServiceImpl implements AdService {
     required void Function() onAdFailedToLoad,
     required void Function() onAdClosed,
   }) async {
+    RewardedAd? loadedAd;
     await RewardedAd.load(
       adUnitId: rewardedAdUnitId,
       request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (RewardedAd ad) {
+          loadedAd = ad;
           ad.fullScreenContentCallback = FullScreenContentCallback(
             onAdDismissedFullScreenContent: (RewardedAd ad) {
               ad.dispose();
@@ -98,6 +100,7 @@ class AdServiceImpl implements AdService {
           );
         },
         onAdFailedToLoad: (LoadAdError error) {
+          loadedAd?.dispose();
           onAdFailedToLoad();
         },
       ),

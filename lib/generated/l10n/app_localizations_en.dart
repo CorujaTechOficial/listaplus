@@ -794,4 +794,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareListText => 'My Shopping List';
+
+  @override
+  String get emptyListAddItems => 'Your list is empty! Add items first. ℹ️';
+
+  @override
+  String get listOrganizedMagic => 'List magically organized by categories! ✨';
+
+  @override
+  String get shoppingMode => 'Shopping Mode';
+
+  @override
+  String get smartOrganization => 'Smart Organization';
+
+  @override
+  String get savings => 'Savings';
+
+  @override
+  String get shoppingModeHeader => 'SHOPPING MODE';
+
+  @override
+  String get shareAsText => 'Send items as formatted text';
+
+  @override
+  String get shareRealtime => 'Real-time sync with other people';
 }

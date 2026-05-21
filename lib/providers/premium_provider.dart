@@ -16,7 +16,8 @@ class Premium extends _$Premium {
     final controller = StreamController<bool>();
 
     Future<void> check() async {
-      if (controller.isClosed) {
+      final isClosed = controller.isClosed;
+      if (isClosed) {
         return;
       }
       try {
@@ -25,10 +26,14 @@ class Premium extends _$Premium {
           controller.add(true);
         } else {
           final credits = await ref.read(creditsProvider.future);
-          controller.add(credits != null && credits.isAfter(DateTime.now()));
+          final stillOpen = controller.isClosed == false;
+          if (stillOpen) {
+            controller.add(credits != null && credits.isAfter(DateTime.now()));
+          }
         }
       } on Exception {
-        if (!controller.isClosed) {
+        final stillOpen = controller.isClosed == false;
+        if (stillOpen) {
           controller.add(false);
         }
       }

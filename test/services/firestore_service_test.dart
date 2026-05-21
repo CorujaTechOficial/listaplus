@@ -196,17 +196,6 @@ void main() {
       expect(data?['isPremium'], true);
     });
 
-    test('getIsPremium returns false initially', () async {
-      final isPremium = await service.getIsPremium();
-      expect(isPremium, false);
-    });
-
-    test('setIsPremium persists to backend', () async {
-      await service.setIsPremium(true);
-      final isPremium = await service.getIsPremium();
-      expect(isPremium, true);
-    });
-
     test('getThemeMode returns null initially', () async {
       final mode = await service.getThemeMode();
       expect(mode, isNull);

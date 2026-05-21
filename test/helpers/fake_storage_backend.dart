@@ -124,14 +124,6 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
-  Future<bool> getIsPremium() async => _userData['isPremium'] as bool? ?? false;
-
-  @override
-  Future<void> setIsPremium(bool value) async {
-    _userData['isPremium'] = value;
-  }
-
-  @override
   Future<String?> getThemeMode() async => _userData['themeMode'] as String?;
 
   @override

@@ -794,6 +794,30 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get shareListText => 'Minha Lista de Compras';
+
+  @override
+  String get emptyListAddItems => 'Sua lista está vazia! Adicione itens primeiro. ℹ️';
+
+  @override
+  String get listOrganizedMagic => 'Lista organizada magicamente por categorias! ✨';
+
+  @override
+  String get shoppingMode => 'Modo Compras';
+
+  @override
+  String get smartOrganization => 'Organização Inteligente';
+
+  @override
+  String get savings => 'Economia';
+
+  @override
+  String get shoppingModeHeader => 'MODO COMPRAS';
+
+  @override
+  String get shareAsText => 'Enviar itens como texto formatado';
+
+  @override
+  String get shareRealtime => 'Sincronizar em tempo real com outras pessoas';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -1586,4 +1610,28 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get shareListText => 'Minha Lista de Compras';
+
+  @override
+  String get emptyListAddItems => 'Sua lista está vazia! Adicione itens primeiro. ℹ️';
+
+  @override
+  String get listOrganizedMagic => 'Lista organizada magicamente por categorias! ✨';
+
+  @override
+  String get shoppingMode => 'Modo Compras';
+
+  @override
+  String get smartOrganization => 'Organização Inteligente';
+
+  @override
+  String get savings => 'Economia';
+
+  @override
+  String get shoppingModeHeader => 'MODO COMPRAS';
+
+  @override
+  String get shareAsText => 'Enviar itens como texto formatado';
+
+  @override
+  String get shareRealtime => 'Sincronizar em tempo real com outras pessoas';
 }

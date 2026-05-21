@@ -163,7 +163,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
             if (_formKey.currentState!.validate()) {
               final updated = widget.item.copyWith(
                 name: _nameController.text,
-                quantity: int.parse(_quantityController.text),
+                quantity: int.tryParse(_quantityController.text) ?? 1,
                 category: _selectedCategory,
                 unit: _selectedUnit,
                 estimatedPrice: double.tryParse(_priceController.text),

@@ -16,7 +16,7 @@ class ItemHistory extends _$ItemHistory {
     final data = await service.getUserData();
     if (data != null && data['itemHistory'] != null) {
       final history = data['itemHistory'] as Map<String, dynamic>;
-      state = history.map((key, value) => MapEntry(key, value as int));
+      state = history.map((key, value) => MapEntry(key, (value as num).toInt()));
     }
   }
 

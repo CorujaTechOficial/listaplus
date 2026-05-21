@@ -190,7 +190,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
               await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItem(
                     listId: widget.listId,
                     name: _nameController.text,
-                    quantity: int.parse(_quantityController.text),
+                    quantity: int.tryParse(_quantityController.text) ?? 1,
                     category: _selectedCategory,
                     unit: _selectedUnit,
                     estimatedPrice: double.tryParse(_priceController.text),

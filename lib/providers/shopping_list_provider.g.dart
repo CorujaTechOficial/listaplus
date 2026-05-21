@@ -142,7 +142,7 @@ class _ListOwnerProviderElement extends AutoDisposeProviderElement<String?>
   String get listId => (origin as ListOwnerProvider).listId;
 }
 
-String _$shoppingListItemsHash() => r'0d70f92729fa7eca998875e6f15c875530ace462';
+String _$shoppingListItemsHash() => r'ecd9893dcda91bfe8c0c3f3b476428e716d51e6a';
 
 abstract class _$ShoppingListItems
     extends BuildlessAutoDisposeStreamNotifier<List<ShoppingItem>> {

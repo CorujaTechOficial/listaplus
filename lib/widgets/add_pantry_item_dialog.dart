@@ -220,7 +220,7 @@ class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
               try {
                 await ref.read(pantryItemsProvider.notifier).addItem(
                   name: _nameController.text,
-                  idealQuantity: int.parse(_idealController.text),
+                  idealQuantity: int.tryParse(_idealController.text) ?? 2,
                   currentQuantity: int.tryParse(_currentController.text) ?? 0,
                   category: _selectedCategory,
                   unit: _selectedUnit,

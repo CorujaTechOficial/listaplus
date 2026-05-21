@@ -17,17 +17,28 @@ class ShoppingList {
 
   factory ShoppingList.fromJson(Map<String, dynamic> json) {
     return ShoppingList(
-      id: json['id'] as String,
-      name: json['name'] as String,
+      id: json['id'] as String? ?? '',
+      name: json['name'] as String? ?? '',
       budget: (json['budget'] as num?)?.toDouble(),
       ownerUid: json['ownerUid'] as String?,
       isArchived: json['isArchived'] as bool? ?? false,
       archivedAt: json['archivedAt'] != null
-          ? DateTime.parse(json['archivedAt'] as String)
+          ? DateTime.tryParse(json['archivedAt'] as String)
           : null,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      createdAt: _parseDate(json['createdAt']),
+      updatedAt: _parseDate(json['updatedAt']),
     );
+  }
+
+  static DateTime _parseDate(dynamic value) {
+    if (value == null) {
+      return DateTime.now();
+    }
+    if (value is DateTime) {
+      return value;
+    }
+    final parsed = DateTime.tryParse(value.toString());
+    return parsed ?? DateTime.now();
   }
 
   final String id;

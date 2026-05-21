@@ -1,5 +1,6 @@
 import java.util.Properties
 import java.io.FileInputStream
+import java.util.Base64
 
 plugins {
     id("com.android.application")
@@ -31,8 +32,8 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
 
-        val dartEnvironmentVariables = project.properties["dart-defines"]?.toString()?.split(",")?.associate {
-            val parts = String(java.util.Base64.getDecoder().decode(it)).split("=", limit = 2)
+        val dartEnvironmentVariables: Map<String, String> = project.properties["dart-defines"]?.toString()?.split(",")?.associate {
+            val parts = String(Base64.getDecoder().decode(it)).split("=", limit = 2)
             if (parts.size == 2) parts[0] to parts[1] else parts[0] to ""
         } ?: emptyMap()
         manifestPlaceholders["admobAppId"] = dartEnvironmentVariables["ADMOB_APP_ID"] ?: "ca-app-pub-3940256099942544~3347511713"

@@ -149,7 +149,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                             else ...[
                               IconButton(
                                 icon: const Icon(Icons.edit_outlined, size: 20),
-                                tooltip: 'Renomear',
+                                tooltip: l10n.rename,
                                 onPressed: () => _renameList(list),
                               ),
                               IconButton(
@@ -358,56 +358,59 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
 
     final l10n = AppLocalizations.of(context)!;
     final codeController = TextEditingController();
-    final code = await showDialog<String>(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: Text(l10n.importListTitle),
-        content: TextField(
-          controller: codeController,
-          textCapitalization: TextCapitalization.characters,
-          decoration: InputDecoration(
-            hintText: l10n.enterCodeHint,
-            border: const OutlineInputBorder(),
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(l10n.cancel),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(context, codeController.text.trim()),
-            child: Text(l10n.import),
-          ),
-        ],
-      ),
-    );
-    codeController.dispose();
-    if (code == null || code.isEmpty) {
-      return;
-    }
-    if (!mounted) {
-      return;
-    }
     try {
-      final shareService = ref.read(shareServiceProvider);
-      final result = await shareService.importSharedList(code);
+      final code = await showDialog<String>(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text(l10n.importListTitle),
+          content: TextField(
+            controller: codeController,
+            textCapitalization: TextCapitalization.characters,
+            decoration: InputDecoration(
+              hintText: l10n.enterCodeHint,
+              border: const OutlineInputBorder(),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(l10n.cancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(context, codeController.text.trim()),
+              child: Text(l10n.import),
+            ),
+          ],
+        ),
+      );
+      if (code == null || code.isEmpty) {
+        return;
+      }
       if (!mounted) {
         return;
       }
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.listAdded(result.listName))),
-      );
-      Navigator.pop(context); // Close switcher sheet
-      ref.invalidate(shoppingListsProvider);
-      await ref.read(currentListIdProvider.notifier).setCurrentList(result.listId);
-    } on Exception catch (e) {
-      if (!mounted) {
-        return;
+      try {
+        final shareService = ref.read(shareServiceProvider);
+        final result = await shareService.importSharedList(code);
+        if (!mounted) {
+          return;
+        }
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.listAdded(result.listName))),
+        );
+        Navigator.pop(context);
+        ref.invalidate(shoppingListsProvider);
+        await ref.read(currentListIdProvider.notifier).setCurrentList(result.listId);
+      } on Exception catch (e) {
+        if (!mounted) {
+          return;
+        }
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.error(e.toString()))),
+        );
       }
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.error(e.toString()))),
-      );
+    } finally {
+      codeController.dispose();
     }
   }
 }

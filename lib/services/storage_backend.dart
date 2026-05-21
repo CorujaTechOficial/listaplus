@@ -18,8 +18,6 @@ abstract class StorageBackend {
   Future<String?> getCurrentListId();
   Future<void> setCurrentListId(String? listId);
 
-  Future<bool> getIsPremium();
-  Future<void> setIsPremium(bool value);
   Future<String?> getThemeMode();
   Future<void> setThemeMode(String mode);
   Future<String?> getLocale();

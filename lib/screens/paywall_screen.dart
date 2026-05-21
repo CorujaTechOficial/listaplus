@@ -5,10 +5,8 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
-import 'package:shopping_list/providers/ad_service_provider.dart';
-import 'package:shopping_list/providers/credits_provider.dart';
-import 'package:shopping_list/providers/premium_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
+import 'package:shopping_list/providers/premium_provider.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -118,67 +116,6 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     }
   }
 
-  Future<void> _watchAd() async {
-    setState(() {
-      _isPurchasing = true;
-    });
-
-    try {
-      await ref.read(adServiceProvider).showRewardedAd(
-        onUserEarnedReward: () async {
-          await ref.read(creditsProvider.notifier).extendBy24h();
-          if (mounted) {
-            _showCelebrationDialog();
-          }
-        },
-        onAdFailedToLoad: () {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Falha ao carregar o anúncio. Tente novamente mais tarde.')),
-            );
-          }
-        },
-        onAdClosed: () {
-          if (mounted) {
-            setState(() {
-              _isPurchasing = false;
-            });
-          }
-        },
-      );
-    } on Exception {
-      if (mounted) {
-        setState(() {
-          _isPurchasing = false;
-        });
-      }
-    }
-  }
-
-  void _showCelebrationDialog() {
-    showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Parabéns! 🎉'),
-          content: const Text(
-            'Você ganhou 24 horas de acesso total ao Lista Plus Pro! Todos os recursos Premium estão liberados.',
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Começar a usar'),
-              onPressed: () {
-                Navigator.of(context).pop(); // pop dialog
-                Navigator.of(context).pop(true); // pop paywall
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   Widget _buildHeader(ThemeData theme) {
     return Container(
       width: double.infinity,
@@ -195,6 +132,22 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       padding: const EdgeInsets.symmetric(horizontal: Spacing.xl, vertical: Spacing.xl),
       child: Column(
         children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xs),
+            decoration: BoxDecoration(
+              color: AppColors.premiumAmber,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Text(
+              '7 DIAS GRÁTIS',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          const SizedBox(height: Spacing.md),
           const Icon(
             Icons.workspace_premium,
             size: 64,
@@ -386,9 +339,16 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                 ),
               ),
               child: const Text(
-                'Assinar Agora',
+                'Começar 7 dias grátis',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
+            ),
+          ),
+          const SizedBox(height: Spacing.xs),
+          Text(
+            'Cancele quando quiser. Sem compromisso.',
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.7),
             ),
           ),
         ],
@@ -408,62 +368,6 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       return 'Plano Mensal';
     }
     return id;
-  }
-
-  Widget _buildRewardedAdSection(ThemeData theme) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: theme.colorScheme.secondary.withValues(alpha: 0.3)),
-          borderRadius: BorderRadius.circular(16),
-          color: theme.colorScheme.secondaryContainer.withValues(alpha: 0.1),
-        ),
-        padding: const EdgeInsets.all(Spacing.md),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Icon(Icons.ondemand_video, color: theme.colorScheme.secondary),
-                const SizedBox(width: Spacing.sm),
-                Expanded(
-                  child: Text(
-                    'Prefere testar grátis?',
-                    style: theme.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: Spacing.xs),
-            Text(
-              'Assista a um vídeo curto e ganhe 24 horas de acesso completo a todos os recursos do Lista Plus PRO.',
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-            const SizedBox(height: Spacing.sm),
-            SizedBox(
-              width: double.infinity,
-              height: 40,
-              child: OutlinedButton.icon(
-                onPressed: _watchAd,
-                icon: const Icon(Icons.play_circle_fill),
-                label: const Text('Assistir Vídeo Premium'),
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: theme.colorScheme.secondary,
-                  side: BorderSide(color: theme.colorScheme.secondary),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   Widget _buildFooterLinks(ThemeData theme) {
@@ -551,9 +455,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                     )
                   else
                     _buildPackagesList(theme),
-                  const SizedBox(height: Spacing.md),
-                  _buildRewardedAdSection(theme),
-                  const SizedBox(height: Spacing.xl),
+                  const SizedBox(height: Spacing.lg),
                   _buildFooterLinks(theme),
                   const SizedBox(height: Spacing.xl),
                 ],

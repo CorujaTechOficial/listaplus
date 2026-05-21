@@ -318,5 +318,14 @@
   "organizingAi": "ORGANIZING WITH AI...",
   "yesLabel": "Yes",
   "noLabel": "No",
-  "shareListText": "My Shopping List"
+  "shareListText": "My Shopping List",
+  "emptyListAddItems": "Your list is empty! Add items first. ℹ️",
+  "listOrganizedMagic": "List magically organized by categories! ✨",
+  "shoppingMode": "Shopping Mode",
+  "smartOrganization": "Smart Organization",
+  "savings": "Savings",
+  "shoppingModeHeader": "SHOPPING MODE",
+  "shareAsText": "Send items as formatted text",
+  "shareRealtime": "Real-time sync with other people",
+  "rename": "Rename"
 }

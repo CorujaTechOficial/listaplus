@@ -54,6 +54,13 @@ class _BannerAdWidgetState extends ConsumerState<BannerAdWidget> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen(adServiceProvider, (_, __) {
+      _bannerAd?.dispose();
+      _bannerAd = null;
+      _isLoaded = false;
+      _tryLoadAd();
+    });
+
     final showAd = _isLoaded && _bannerAd != null;
     return SizedBox(
       height: 50,

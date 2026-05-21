@@ -19,8 +19,10 @@ import 'providers/dark_mode_provider.dart';
 import 'providers/locale_provider.dart';
 import 'providers/theme_color_provider.dart';
 import 'providers/shopping_lists_provider.dart';
+import 'providers/onboarding_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/pantry_screen.dart';
+import 'screens/onboarding_screen.dart';
 import 'widgets/create_list_dialog.dart';
 import 'widgets/empty_state.dart';
 import 'widgets/init_error_screen.dart';
@@ -141,53 +143,133 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final onboardingAsync = ref.watch(onboardingProvider);
     final darkModeAsync = ref.watch(darkModeProvider);
     final themeColorAsync = ref.watch(themeColorProvider);
     final localeAsync = ref.watch(localeSettingProvider);
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
     final colorSeed = themeColorAsync.valueOrNull ?? const Color(0xFF4CAF50);
 
-    return DynamicColorBuilder(
-      builder: (lightDynamic, darkDynamic) {
-        ColorScheme lightColorScheme;
-        ColorScheme darkColorScheme;
-
-        if (lightDynamic != null && darkDynamic != null) {
-          lightColorScheme = lightDynamic.harmonized();
-          darkColorScheme = darkDynamic.harmonized();
-        } else {
-          lightColorScheme = ColorScheme.fromSeed(
-            seedColor: colorSeed,
-            brightness: Brightness.light,
-          );
-          darkColorScheme = ColorScheme.fromSeed(
-            seedColor: colorSeed,
-            brightness: Brightness.dark,
+    return onboardingAsync.when(
+      data: (hasSeen) {
+        if (!hasSeen) {
+          return _buildOnboardingShell(
+            themeMode: themeMode,
+            colorSeed: colorSeed,
+            localeAsync: localeAsync,
           );
         }
+        return _buildMainShell(
+          themeMode: themeMode,
+          colorSeed: colorSeed,
+          localeAsync: localeAsync,
+        );
+      },
+      loading: () => _buildLoadingShell(
+        themeMode: themeMode,
+        colorSeed: colorSeed,
+        localeAsync: localeAsync,
+      ),
+      error: (_, __) => _buildMainShell(
+        themeMode: themeMode,
+        colorSeed: colorSeed,
+        localeAsync: localeAsync,
+      ),
+    );
+  }
 
+  Widget _buildOnboardingShell({
+    required ThemeMode themeMode,
+    required Color colorSeed,
+    required AsyncValue<String?> localeAsync,
+  }) {
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) {
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed);
         return MaterialApp(
           title: 'Lista Plus',
-          theme: AppTheme.fromColorScheme(lightColorScheme),
-          darkTheme: AppTheme.fromColorScheme(darkColorScheme),
+          theme: AppTheme.fromColorScheme(colorSchemes.$1),
+          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          localeResolutionCallback: (locale, supportedLocales) {
-            final savedLocale = localeAsync.valueOrNull;
-            if (savedLocale != null && savedLocale.isNotEmpty) {
-              final parts = savedLocale.split('_');
-              if (parts.length == 2) {
-                return Locale(parts[0], parts[1]);
-              }
-              return Locale(parts[0]);
-            }
-            return null;
-          },
+          localeResolutionCallback: _localeResolver(localeAsync),
+          home: const OnboardingScreen(),
+        );
+      },
+    );
+  }
+
+  Widget _buildMainShell({
+    required ThemeMode themeMode,
+    required Color colorSeed,
+    required AsyncValue<String?> localeAsync,
+  }) {
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) {
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed);
+        return MaterialApp(
+          title: 'Lista Plus',
+          theme: AppTheme.fromColorScheme(colorSchemes.$1),
+          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
+          themeMode: themeMode,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          localeResolutionCallback: _localeResolver(localeAsync),
           home: const MainShell(),
         );
       },
     );
+  }
+
+  Widget _buildLoadingShell({
+    required ThemeMode themeMode,
+    required Color colorSeed,
+    required AsyncValue<String?> localeAsync,
+  }) {
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) {
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed);
+        return MaterialApp(
+          title: 'Lista Plus',
+          theme: AppTheme.fromColorScheme(colorSchemes.$1),
+          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
+          themeMode: themeMode,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          localeResolutionCallback: _localeResolver(localeAsync),
+          home: const Scaffold(body: Center(child: CircularProgressIndicator())),
+        );
+      },
+    );
+  }
+
+  (ColorScheme, ColorScheme) _buildColorSchemes(
+    ColorScheme? lightDynamic,
+    ColorScheme? darkDynamic,
+    Color colorSeed,
+  ) {
+    if (lightDynamic != null && darkDynamic != null) {
+      return (lightDynamic.harmonized(), darkDynamic.harmonized());
+    }
+    return (
+      ColorScheme.fromSeed(seedColor: colorSeed, brightness: Brightness.light),
+      ColorScheme.fromSeed(seedColor: colorSeed, brightness: Brightness.dark),
+    );
+  }
+
+  LocaleResolutionCallback _localeResolver(AsyncValue<String?> localeAsync) {
+    return (locale, supportedLocales) {
+      final savedLocale = localeAsync.valueOrNull;
+      if (savedLocale != null && savedLocale.isNotEmpty) {
+        final parts = savedLocale.split('_');
+        if (parts.length == 2) {
+          return Locale(parts[0], parts[1]);
+        }
+        return Locale(parts[0]);
+      }
+      return null;
+    };
   }
 }
 
@@ -211,7 +293,8 @@ class _MainShellState extends ConsumerState<MainShell> {
     ]);
     _quickActions.initialize((shortcutType) {
       if (shortcutType == 'action_add') {
-        // We'll need a way to open the add dialog on the current list
+        // TODO: Open add item dialog on the current list when navigation
+        // infrastructure supports it from outside the widget tree.
       } else if (shortcutType == 'action_pantry') {
         setState(() => _currentTab = 1);
       }

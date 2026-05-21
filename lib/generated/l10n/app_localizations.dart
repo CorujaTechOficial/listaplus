@@ -1553,6 +1553,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My Shopping List'**
   String get shareListText;
+
+  /// No description provided for @emptyListAddItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Your list is empty! Add items first. ℹ️'**
+  String get emptyListAddItems;
+
+  /// No description provided for @listOrganizedMagic.
+  ///
+  /// In en, this message translates to:
+  /// **'List magically organized by categories! ✨'**
+  String get listOrganizedMagic;
+
+  /// No description provided for @shoppingMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping Mode'**
+  String get shoppingMode;
+
+  /// No description provided for @smartOrganization.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Organization'**
+  String get smartOrganization;
+
+  /// No description provided for @savings.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings'**
+  String get savings;
+
+  /// No description provided for @shoppingModeHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'SHOPPING MODE'**
+  String get shoppingModeHeader;
+
+  /// No description provided for @shareAsText.
+  ///
+  /// In en, this message translates to:
+  /// **'Send items as formatted text'**
+  String get shareAsText;
+
+  /// No description provided for @shareRealtime.
+  ///
+  /// In en, this message translates to:
+  /// **'Real-time sync with other people'**
+  String get shareRealtime;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

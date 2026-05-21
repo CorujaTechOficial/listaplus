@@ -36,11 +36,22 @@ class ChatMessage {
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) {
     return ChatMessage(
-      id: json['id'] as String,
-      role: json['role'] as String,
-      content: json['content'] as String,
-      timestamp: DateTime.parse(json['timestamp'] as String),
+      id: json['id'] as String? ?? '',
+      role: json['role'] as String? ?? 'user',
+      content: json['content'] as String? ?? '',
+      timestamp: _parseDate(json['timestamp']),
     );
+  }
+
+  static DateTime _parseDate(dynamic value) {
+    if (value == null) {
+      return DateTime.now();
+    }
+    if (value is DateTime) {
+      return value;
+    }
+    final parsed = DateTime.tryParse(value.toString());
+    return parsed ?? DateTime.now();
   }
 
   final String id;

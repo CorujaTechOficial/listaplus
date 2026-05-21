@@ -268,5 +268,14 @@
   "organizingAi": "ORGANIZANDO COM IA...",
   "yesLabel": "Sim",
   "noLabel": "Não",
-  "shareListText": "Minha Lista de Compras"
+  "shareListText": "Minha Lista de Compras",
+  "emptyListAddItems": "Sua lista está vazia! Adicione itens primeiro. ℹ️",
+  "listOrganizedMagic": "Lista organizada magicamente por categorias! ✨",
+  "shoppingMode": "Modo Compras",
+  "smartOrganization": "Organização Inteligente",
+  "savings": "Economia",
+  "shoppingModeHeader": "MODO COMPRAS",
+  "shareAsText": "Enviar itens como texto formatado",
+  "shareRealtime": "Sincronizar em tempo real com outras pessoas",
+  "rename": "Renomear"
 }

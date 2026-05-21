@@ -72,6 +72,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _simulateAiOrganization() async {
+    final l10n = AppLocalizations.of(context)!;
     setState(() {
       _isAiOrganizing = true;
     });
@@ -86,8 +87,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             _isAiOrganizing = false;
           });
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Sua lista está vazia! Adicione itens primeiro. ℹ️'),
+            SnackBar(
+              content: Text(l10n.emptyListAddItems),
               behavior: SnackBarBehavior.floating,
             ),
           );
@@ -152,8 +153,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         });
         unawaited(HapticFeedback.heavyImpact());
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Lista organizada magicamente por categorias! ✨'),
+          SnackBar(
+            content: Text(l10n.listOrganizedMagic),
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -260,7 +261,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 ),
                               ),
                               const SizedBox(height: 2),
-                              Text(
+                                Text(
                                 'R\$ ${totalSpent.toStringAsFixed(0)} / R\$ ${budget.toStringAsFixed(0)}',
                                 style: theme.textTheme.bodySmall?.copyWith(
                                   fontWeight: FontWeight.w700,
@@ -299,15 +300,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       }
                     });
                   },
-                  tooltip: 'Modo Compras',
+                  tooltip: l10n.shoppingMode,
                 ),
                 IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {
-                    final items = itemsAsync.value ?? [];
                     showSearch(
                       context: context,
-                      delegate: ShoppingSearchDelegate(items, widget.listId),
+                      delegate: ShoppingSearchDelegate(widget.listId),
                     );
                   },
                 ),
@@ -386,13 +386,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           ],
                         ),
                       ),
-                      const PopupMenuItem(
+                      PopupMenuItem(
                         value: 'ai_organize',
                         child: Row(
                           children: [
-                            Icon(Icons.auto_awesome_motion, size: 18, color: Colors.blue),
-                            SizedBox(width: 8),
-                            Flexible(child: Text('Organização Inteligente')),
+                            const Icon(Icons.auto_awesome_motion, size: 18, color: Colors.blue),
+                            const SizedBox(width: 8),
+                            Flexible(child: Text(l10n.smartOrganization)),
                           ],
                         ),
                       ),
@@ -1046,14 +1046,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Future<void> _markSelected(bool isPurchased) async {
     // ignore: unawaited_futures
     HapticFeedback.lightImpact();
+    final idsToToggle = _selectedIds.toList();
     await ref
         .read(shoppingListItemsProvider(widget.listId).notifier)
-        .togglePurchasedBatch(_selectedIds.toList(), isPurchased);
+        .togglePurchasedBatch(idsToToggle, isPurchased);
     
     if (isPurchased) {
       ref.invalidate(shoppingListItemsProvider(widget.listId));
       final updatedItems = await ref.read(shoppingListItemsProvider(widget.listId).future);
-      final pendingCount = updatedItems.where((i) => !i.isPurchased && !_selectedIds.contains(i.id)).length;
+      final pendingCount = updatedItems.where((i) => !i.isPurchased && !idsToToggle.contains(i.id)).length;
       if (pendingCount == 0) {
         if (!WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding')) {
           _confettiController.play();
@@ -1094,8 +1095,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       await ref.read(appReviewServiceProvider).registerArchiveAndRequestReview();
       if (context.mounted) {
         // ignore: use_build_context_synchronously
+        final archiveL10n = AppLocalizations.of(context)!;
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.listArchived)),
+          SnackBar(content: Text(archiveL10n.listArchived)),
         );
       }
     }
@@ -1308,7 +1311,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ListTile(
                   leading: const Icon(Icons.text_fields),
                   title: Text(l10n.share),
-                  subtitle: const Text('Enviar itens como texto formatado'),
+                  subtitle: Text(l10n.shareAsText),
                   onTap: () {
                     Navigator.pop(context);
                     _shareList(items, listName);
@@ -1317,7 +1320,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ListTile(
                   leading: const Icon(Icons.cloud_sync, color: AppColors.premiumAmber),
                   title: Text(l10n.shareViaCode),
-                  subtitle: const Text('Sincronizar em tempo real com outras pessoas'),
+                  subtitle: Text(l10n.shareRealtime),
                   onTap: () async {
                     Navigator.pop(context);
                     await _shareViaCode();
@@ -1446,7 +1449,7 @@ class _SummaryCard extends ConsumerWidget {
               ),
               InkWell(
                 onTap: () {
-                  final listId = ref.read(currentListIdProvider).value;
+                  final listId = ref.watch(currentListIdProvider).value;
                   if (listId != null) {
                     Navigator.push(
                       context,
@@ -1495,7 +1498,7 @@ class _SummaryCard extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                           ),
                           child: Text(
-                            'Economia: R\$ ${(totalEstimated - totalPurchasedValue).toStringAsFixed(2)}',
+                            '${l10n.savings}: R\$ ${(totalEstimated - totalPurchasedValue).toStringAsFixed(2)}',
                             style: theme.textTheme.labelSmall?.copyWith(
                               color: Colors.green,
                               fontWeight: FontWeight.w800,
@@ -1541,6 +1544,7 @@ class _ShoppingModeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context)!;
 
     return Container(
       width: double.infinity,
@@ -1565,7 +1569,7 @@ class _ShoppingModeHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'MODO COMPRAS',
+                      l10n.shoppingModeHeader,
                       style: theme.textTheme.labelSmall?.copyWith(
                         fontWeight: FontWeight.w900,
                         letterSpacing: 1.5,
@@ -1601,9 +1605,8 @@ class _ShoppingModeHeader extends StatelessWidget {
 }
 
 class ShoppingSearchDelegate extends SearchDelegate<String> {
-  ShoppingSearchDelegate(this.items, this.listId);
+  ShoppingSearchDelegate(this.listId);
 
-  final List<ShoppingItem> items;
   final String listId;
 
   @override
@@ -1618,20 +1621,24 @@ class ShoppingSearchDelegate extends SearchDelegate<String> {
       );
 
   @override
-  Widget buildResults(BuildContext context) => _buildResults();
+  Widget buildResults(BuildContext context) => _buildResults(context);
 
   @override
-  Widget buildSuggestions(BuildContext context) => _buildResults();
+  Widget buildSuggestions(BuildContext context) => _buildResults(context);
 
-  Widget _buildResults() {
-    final results = items
-        .where((i) => i.name.toLowerCase().contains(query.toLowerCase()))
-        .toList();
-    return ListView.builder(
-      itemCount: results.length,
-      itemBuilder: (context, index) =>
-          ShoppingItemTile(listId: listId, item: results[index]),
-    );
+  Widget _buildResults(BuildContext context) {
+    return Consumer(builder: (context, ref, _) {
+      final itemsAsync = ref.watch(shoppingListItemsProvider(listId));
+      final items = itemsAsync.value ?? [];
+      final results = items
+          .where((i) => i.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+      return ListView.builder(
+        itemCount: results.length,
+        itemBuilder: (context, index) =>
+            ShoppingItemTile(listId: listId, item: results[index]),
+      );
+    });
   }
 }
 // coverage:ignore-end

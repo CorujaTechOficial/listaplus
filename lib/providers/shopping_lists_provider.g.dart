@@ -6,7 +6,7 @@ part of 'shopping_lists_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$shoppingListsHash() => r'c9bb854b50b6de68089699ffeb2b481555971516';
+String _$shoppingListsHash() => r'95dfe5696689d4e83db9070b8fc44a6846a45327';
 
 /// See also [ShoppingLists].
 @ProviderFor(ShoppingLists)

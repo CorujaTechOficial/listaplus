@@ -6,7 +6,7 @@ part of 'theme_color_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$themeColorHash() => r'e9bf8e43ef0e96194e5c17f359bd8a001d99b707';
+String _$themeColorHash() => r'9841e527a53003ab7b2c797d56ef9661e0d34d66';
 
 /// See also [ThemeColor].
 @ProviderFor(ThemeColor)

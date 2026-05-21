@@ -72,7 +72,10 @@ class UserStatsNotifier extends _$UserStatsNotifier {
       final todayDate = DateTime(now.year, now.month, now.day);
       final lastDate = DateTime(last.year, last.month, last.day);
       final diffDays = todayDate.difference(lastDate).inDays;
-      if (diffDays == 1) {
+      if (diffDays == 0) {
+        // Same day, streak doesn't change
+        newStreak = state.currentStreak;
+      } else if (diffDays == 1) {
         newStreak++;
       } else if (diffDays > 1) {
         newStreak = 1;

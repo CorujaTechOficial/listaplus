@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // coverage:ignore-start
@@ -71,7 +69,10 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
       
       // Track in history
-      unawaited(ref.read(itemHistoryProvider.notifier).trackItem(name));
+      // ignore: unawaited_futures
+      ref.read(itemHistoryProvider.notifier).trackItem(name).catchError((Object e) {
+        debugPrint('Failed to track item history: $e');
+      });
     } on Exception catch (e) {
       throw Exception('Erro ao adicionar item: $e');
     }
@@ -90,6 +91,12 @@ class ShoppingListItems extends _$ShoppingListItems {
       updatedAt: DateTime.now(),
     );
 
+    // Optimistic update
+    final previousState = state.value;
+    state = AsyncValue.data(
+      items.map((i) => i.id == id ? toggledItem : i).toList(),
+    );
+
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -98,11 +105,16 @@ class ShoppingListItems extends _$ShoppingListItems {
         await service.saveItem(toggledItem);
       }
       
-      // Record stats if newly purchased
       if (toggledItem.isPurchased) {
-        unawaited(ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: 1));
+        // ignore: unawaited_futures
+        ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: 1).catchError((Object e) {
+          debugPrint('Failed to record purchase stats: $e');
+        });
       }
     } on Exception catch (e) {
+      if (previousState != null) {
+        state = AsyncValue.data(previousState);
+      }
       throw Exception('Erro ao alternar status do item: $e');
     }
   }
@@ -133,7 +145,10 @@ class ShoppingListItems extends _$ShoppingListItems {
       
       // Update price history
       if (item.estimatedPrice != null) {
-        unawaited(ref.read(priceHistoryProvider.notifier).updatePrice(item.name, item.estimatedPrice!));
+        // ignore: unawaited_futures
+        ref.read(priceHistoryProvider.notifier).updatePrice(item.name, item.estimatedPrice!).catchError((Object e) {
+          debugPrint('Failed to update price history: $e');
+        });
       }
     } on Exception catch (e) {
       throw Exception('Erro ao atualizar item: $e');
@@ -177,6 +192,11 @@ class ShoppingListItems extends _$ShoppingListItems {
     }
 
     final updatedItem = item.copyWith(quantity: item.quantity + 1, updatedAt: DateTime.now());
+    final previousState = state.value;
+    state = AsyncValue.data(
+      items.map((i) => i.id == id ? updatedItem : i).toList(),
+    );
+
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -185,6 +205,9 @@ class ShoppingListItems extends _$ShoppingListItems {
         await service.saveItem(updatedItem);
       }
     } on Exception catch (e) {
+      if (previousState != null) {
+        state = AsyncValue.data(previousState);
+      }
       throw Exception('Erro ao aumentar quantidade: $e');
     }
   }
@@ -198,6 +221,11 @@ class ShoppingListItems extends _$ShoppingListItems {
     }
 
     final updatedItem = item.copyWith(quantity: item.quantity - 1, updatedAt: DateTime.now());
+    final previousState = state.value;
+    state = AsyncValue.data(
+      items.map((i) => i.id == id ? updatedItem : i).toList(),
+    );
+
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -206,6 +234,9 @@ class ShoppingListItems extends _$ShoppingListItems {
         await service.saveItem(updatedItem);
       }
     } on Exception catch (e) {
+      if (previousState != null) {
+        state = AsyncValue.data(previousState);
+      }
       throw Exception('Erro ao diminuir quantidade: $e');
     }
   }
@@ -215,9 +246,9 @@ class ShoppingListItems extends _$ShoppingListItems {
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
-        await service.saveItemsToUser(ownerUid, []);
+        await service.deleteItemsFromList(listId);
       } else {
-        await service.saveItems([]);
+        await service.deleteItemsFromList(listId);
       }
     } on Exception catch (e) {
       throw Exception('Erro ao limpar lista: $e');
@@ -228,14 +259,29 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     final updated = items.where((item) => !item.isPurchased).toList();
+    final removedIds = items.where((item) => item.isPurchased).map((i) => i.id).toSet();
+    if (removedIds.isEmpty) {
+      return;
+    }
+
+    final previousState = state.value;
+    state = AsyncValue.data(updated);
+
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
-        await service.saveItemsToUser(ownerUid, updated);
+        for (final id in removedIds) {
+          await service.deleteItemFromUser(ownerUid, listId, id);
+        }
       } else {
-        await service.saveItems(updated);
+        for (final id in removedIds) {
+          await service.deleteItem(listId, id);
+        }
       }
     } on Exception catch (e) {
+      if (previousState != null) {
+        state = AsyncValue.data(previousState);
+      }
       throw Exception('Erro ao limpar itens comprados: $e');
     }
   }
@@ -244,14 +290,24 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     final updated = items.where((item) => !ids.contains(item.id)).toList();
+    final previousState = state.value;
+    state = AsyncValue.data(updated);
+
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
-        await service.saveItemsToUser(ownerUid, updated);
+        for (final id in ids) {
+          await service.deleteItemFromUser(ownerUid, listId, id);
+        }
       } else {
-        await service.saveItems(updated);
+        for (final id in ids) {
+          await service.deleteItem(listId, id);
+        }
       }
     } on Exception catch (e) {
+      if (previousState != null) {
+        state = AsyncValue.data(previousState);
+      }
       throw Exception('Erro ao remover itens: $e');
     }
   }
@@ -273,6 +329,9 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
     
+    final previousState = state.value;
+    state = AsyncValue.data(updated);
+
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -282,9 +341,15 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
 
       if (newlyPurchased > 0) {
-        unawaited(ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: newlyPurchased));
+        // ignore: unawaited_futures
+        ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: newlyPurchased).catchError((Object e) {
+          debugPrint('Failed to record batch purchase stats: $e');
+        });
       }
     } on Exception catch (e) {
+      if (previousState != null) {
+        state = AsyncValue.data(previousState);
+      }
       throw Exception('Erro ao alternar itens: $e');
     }
   }

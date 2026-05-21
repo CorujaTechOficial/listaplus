@@ -1547,7 +1547,8 @@ void main() {
 
   group('Search delegate', () {
     testWidgets('filters items by query', (tester) async {
-      final items = [
+      final backend = FakeStorageBackend();
+      await backend.saveItems([
         ShoppingItem(
           shoppingListId: 'list-1',
           name: 'Maçã',
@@ -1560,13 +1561,11 @@ void main() {
           quantity: 2,
           category: Category.fruits,
         ),
-      ];
-
-      final backend = FakeStorageBackend();
+      ]);
 
       await tester.pumpWidget(wrapWithProviders(
         Scaffold(body: Builder(builder: (context) => ElevatedButton(
-          onPressed: () => showSearch(context: context, delegate: screens.ShoppingSearchDelegate(items, 'list-1')),
+          onPressed: () => showSearch(context: context, delegate: screens.ShoppingSearchDelegate('list-1')),
           child: const Text('Search'),
         ))),
         backend: backend,
@@ -1585,7 +1584,7 @@ void main() {
 
   group('MyApp', () {
     testWidgets('renders without throwing', (tester) async {
-      SharedPreferences.setMockInitialValues({});
+      SharedPreferences.setMockInitialValues({'has_seen_onboarding': true});
       final backend = FakeStorageBackend();
 
       await tester.pumpWidget(
@@ -1602,7 +1601,7 @@ void main() {
     });
 
     testWidgets('main runs the app', (tester) async {
-      SharedPreferences.setMockInitialValues({});
+      SharedPreferences.setMockInitialValues({'has_seen_onboarding': true});
       final backend = FakeStorageBackend();
 
       await tester.pumpWidget(
