@@ -510,9 +510,7 @@ class ToolExecutor {
   Future<ToolResult> _consumePantryItem(Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
     final quantity = args['quantity'] != null ? (args['quantity'] as num).toInt() : 1;
-    for (var i = 0; i < quantity; i++) {
-      await _ref.read(pantryItemsProvider.notifier).consumeItem(itemId);
-    }
+    await _ref.read(pantryItemsProvider.notifier).consumeItemMultiple(itemId, quantity);
     return const ToolResult(toolCallId: '', content: 'Item consumido da despensa.');
   }
 

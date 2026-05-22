@@ -186,6 +186,35 @@ class PantryItems extends _$PantryItems {
     }
   }
 
+  Future<void> consumeItemMultiple(String id, int quantity) async {
+    final service = ref.read(firestoreServiceProvider);
+    final items = state.value ?? [];
+    PantryItem? updatedItem;
+    final updated = items.map((item) {
+      if (item.id == id && item.currentQuantity > 0) {
+        final decrement = quantity > item.currentQuantity
+            ? item.currentQuantity
+            : quantity;
+        updatedItem = item.copyWith(
+          currentQuantity: item.currentQuantity - decrement,
+          updatedAt: DateTime.now(),
+        );
+        return updatedItem!;
+      }
+      return item;
+    }).toList();
+
+    state = AsyncValue.data(updated);
+    try {
+      if (updatedItem != null) {
+        await service.savePantryItem(updatedItem!);
+      }
+    } on Exception {
+      state = AsyncValue.data(items);
+      rethrow;
+    }
+  }
+
   Future<void> restockItem(String id, int amount) async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
