@@ -1,11 +1,13 @@
+import 'dart:async' show unawaited;
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../generated/l10n/app_localizations.dart';
 import '../models/chat_message.dart';
 import '../providers/chat_provider.dart';
+import 'animated_typing_dots.dart';
 import '../providers/premium_provider.dart';
 import '../models/ai_usage.dart';
 import '../providers/ai_usage_provider.dart';
@@ -92,6 +94,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     final isLowCredits = !isPremium && remaining > 0 && remaining <= 3;
 
     final chatState = ref.watch(chatSessionProvider(widget.listId));
+    final isStreaming = ref.watch<bool>(chatStreamingProvider);
 
     return Column(
       children: [
@@ -164,7 +167,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                     duration: DurationTokens.fast,
                     curve: Curves.easeOut,
                   )),
-                  if (_isSending) const TypingIndicator(),
+                  if (_isSending && !isStreaming) const TypingIndicator(),
                 ],
               );
             },
@@ -611,7 +614,7 @@ class _GroupChatBubble extends ConsumerWidget {
         styleSheet: userStyle,
         onTapLink: (text, href, title) {
           if (href != null) {
-            launchUrl(Uri.parse(href));
+            unawaited(launchUrl(Uri.parse(href), mode: LaunchMode.externalApplication));
           }
         },
       );
@@ -628,7 +631,7 @@ class _GroupChatBubble extends ConsumerWidget {
       styleSheet: aiStyle,
       onTapLink: (text, href, title) {
         if (href != null) {
-          launchUrl(Uri.parse(href));
+          unawaited(launchUrl(Uri.parse(href), mode: LaunchMode.externalApplication));
         }
       },
     );
@@ -669,68 +672,9 @@ class TypingIndicator extends StatelessWidget {
         ),
         child: const SizedBox(
           width: 36,
-          child: _AnimatedTypingDots(),
+          child: AnimatedTypingDots(),
         ),
       ),
     );
-  }
-}
-
-class _AnimatedTypingDots extends StatefulWidget {
-  const _AnimatedTypingDots();
-
-  @override
-  State<_AnimatedTypingDots> createState() => _AnimatedTypingDotsState();
-}
-
-class _AnimatedTypingDotsState extends State<_AnimatedTypingDots>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-      return Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(3, (i) {
-          return AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              final delay = i * 200;
-              final t = (_controller.value * 1200 - delay).clamp(0, 600) / 600;
-              final size = Tween<double>(begin: 5, end: 9).transform(
-                Curves.easeInOut.transform(t),
-              );
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 1.5),
-                child: Container(
-                  width: size,
-                  height: size,
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.onSurfaceVariant,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              );
-            },
-          );
-        }),
-      );
   }
 }

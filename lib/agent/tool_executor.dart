@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/category.dart';
-import '../models/shopping_item.dart';
 import '../models/unit.dart';
 import '../providers/backup_provider.dart';
 import '../providers/current_list_provider.dart';
@@ -169,12 +168,12 @@ class ToolExecutor {
     if (currentId != null) {
       return currentId;
     }
-    final lists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
+    final lists = await _ref.read(shoppingListsProvider.future);
     return lists.isNotEmpty ? lists.first.id : null;
   }
 
   Future<ToolResult> _getLists() async {
-    final lists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
+    final lists = await _ref.read(shoppingListsProvider.future);
     if (lists.isEmpty) {
       return const ToolResult(
         toolCallId: '',
@@ -199,7 +198,7 @@ class ToolExecutor {
         content: 'Nenhuma lista selecionada. Crie ou selecione uma lista primeiro.',
       );
     }
-    final lists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
+    final lists = await _ref.read(shoppingListsProvider.future);
     final list = lists.where((l) => l.id == currentId).firstOrNull;
     if (list == null) {
       return const ToolResult(toolCallId: '', content: 'Lista atual não encontrada.');
@@ -229,7 +228,7 @@ class ToolExecutor {
   Future<ToolResult> _renameList(Map<String, dynamic> args) async {
     final listId = args['listId'] as String;
     final name = args['name'] as String;
-    final lists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
+    final lists = await _ref.read(shoppingListsProvider.future);
     final list = lists.where((l) => l.id == listId).firstOrNull;
     if (list == null) {
       return const ToolResult(
@@ -270,7 +269,7 @@ class ToolExecutor {
         success: false,
       );
     }
-    final items = _ref.read(shoppingListItemsProvider(listId)).valueOrNull ?? [];
+    final items = await _ref.read(shoppingListItemsProvider(listId).future);
     if (items.isEmpty) {
       return const ToolResult(toolCallId: '', content: 'A lista está vazia.');
     }
@@ -307,20 +306,32 @@ class ToolExecutor {
     );
   }
 
-  Future<ToolResult> _updateItem(Map<String, dynamic> args) async {
-    final itemId = args['itemId'] as String;
-    final allLists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
-    ShoppingItem? foundItem;
-    String? foundListId;
+  Future<Map<String, String>> _buildItemIndex() async {
+    final allLists = await _ref.read(shoppingListsProvider.future);
+    final index = <String, String>{};
     for (final list in allLists) {
-      final items = _ref.read(shoppingListItemsProvider(list.id)).valueOrNull ?? [];
-      final match = items.where((i) => i.id == itemId).firstOrNull;
-      if (match != null) {
-        foundItem = match;
-        foundListId = list.id;
-        break;
+      final items = await _ref.read(shoppingListItemsProvider(list.id).future);
+      for (final item in items) {
+        index[item.id] = list.id;
       }
     }
+    return index;
+  }
+
+  Future<ToolResult> _updateItem(Map<String, dynamic> args) async {
+    final itemId = args['itemId'] as String;
+    final itemIndex = await _buildItemIndex();
+    final foundListId = itemIndex[itemId];
+    if (foundListId == null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
+    }
+
+    final items = await _ref.read(shoppingListItemsProvider(foundListId).future);
+    final foundItem = items.where((i) => i.id == itemId).firstOrNull;
     if (foundItem == null) {
       return const ToolResult(
         toolCallId: '',
@@ -346,45 +357,42 @@ class ToolExecutor {
       updated = updated.copyWith(estimatedPrice: (args['estimatedPrice'] as num).toDouble());
     }
 
-    await _ref.read(shoppingListItemsProvider(foundListId!).notifier).updateItem(updated);
+    await _ref.read(shoppingListItemsProvider(foundListId).notifier).updateItem(updated);
     return const ToolResult(toolCallId: '', content: 'Item atualizado com sucesso.');
   }
 
   Future<ToolResult> _removeItem(Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
-    final allLists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
-    for (final list in allLists) {
-      final items = _ref.read(shoppingListItemsProvider(list.id)).valueOrNull ?? [];
-      if (items.any((i) => i.id == itemId)) {
-        await _ref.read(shoppingListItemsProvider(list.id).notifier).removeItem(itemId);
-        return const ToolResult(toolCallId: '', content: 'Item removido com sucesso.');
-      }
+    final itemIndex = await _buildItemIndex();
+    final listId = itemIndex[itemId];
+    if (listId == null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
-    return const ToolResult(
-      toolCallId: '',
-      content: 'Item não encontrado.',
-      success: false,
-    );
+    await _ref.read(shoppingListItemsProvider(listId).notifier).removeItem(itemId);
+    return const ToolResult(toolCallId: '', content: 'Item removido com sucesso.');
   }
 
   Future<ToolResult> _togglePurchased(Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
-    final allLists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
-    for (final list in allLists) {
-      final items = _ref.read(shoppingListItemsProvider(list.id)).valueOrNull ?? [];
-      if (items.any((i) => i.id == itemId)) {
-        await _ref.read(shoppingListItemsProvider(list.id).notifier).togglePurchased(itemId);
-        final item = items.where((i) => i.id == itemId).first;
-        return ToolResult(
-          toolCallId: '',
-          content: 'Item "${item.name}" marcado como ${item.isPurchased ? "comprado" : "não comprado"}.',
-        );
-      }
+    final itemIndex = await _buildItemIndex();
+    final listId = itemIndex[itemId];
+    if (listId == null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
-    return const ToolResult(
+    await _ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(itemId);
+    final items = await _ref.read(shoppingListItemsProvider(listId).future);
+    final item = items.where((i) => i.id == itemId).first;
+    return ToolResult(
       toolCallId: '',
-      content: 'Item não encontrado.',
-      success: false,
+      content: 'Item "${item.name}" marcado como ${item.isPurchased ? "comprado" : "não comprado"}.',
     );
   }
 
@@ -392,14 +400,16 @@ class ToolExecutor {
     final idsStr = args['itemIds'] as String;
     final isPurchased = args['isPurchased'] as bool;
     final ids = idsStr.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList();
-    final allLists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
-    for (final list in allLists) {
-      final items = _ref.read(shoppingListItemsProvider(list.id)).valueOrNull ?? [];
-      final listIds = items.map((i) => i.id).toSet();
-      final matchingIds = ids.where((id) => listIds.contains(id)).toList();
-      if (matchingIds.isNotEmpty) {
-        await _ref.read(shoppingListItemsProvider(list.id).notifier).togglePurchasedBatch(matchingIds, isPurchased);
+    final itemIndex = await _buildItemIndex();
+    final idsByList = <String, List<String>>{};
+    for (final id in ids) {
+      final listId = itemIndex[id];
+      if (listId != null) {
+        idsByList.putIfAbsent(listId, () => []).add(id);
       }
+    }
+    for (final entry in idsByList.entries) {
+      await _ref.read(shoppingListItemsProvider(entry.key).notifier).togglePurchasedBatch(entry.value, isPurchased);
     }
     final action = isPurchased ? 'comprados' : 'não comprados';
     return ToolResult(
@@ -410,28 +420,24 @@ class ToolExecutor {
 
   Future<ToolResult> _incrementQuantity(Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
-    final allLists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
-    for (final list in allLists) {
-      final items = _ref.read(shoppingListItemsProvider(list.id)).valueOrNull ?? [];
-      if (items.any((i) => i.id == itemId)) {
-        await _ref.read(shoppingListItemsProvider(list.id).notifier).incrementQuantity(itemId);
-        return const ToolResult(toolCallId: '', content: 'Quantidade aumentada.');
-      }
+    final itemIndex = await _buildItemIndex();
+    final listId = itemIndex[itemId];
+    if (listId == null) {
+      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
     }
-    return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+    await _ref.read(shoppingListItemsProvider(listId).notifier).incrementQuantity(itemId);
+    return const ToolResult(toolCallId: '', content: 'Quantidade aumentada.');
   }
 
   Future<ToolResult> _decrementQuantity(Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
-    final allLists = _ref.read(shoppingListsProvider).valueOrNull ?? [];
-    for (final list in allLists) {
-      final items = _ref.read(shoppingListItemsProvider(list.id)).valueOrNull ?? [];
-      if (items.any((i) => i.id == itemId)) {
-        await _ref.read(shoppingListItemsProvider(list.id).notifier).decrementQuantity(itemId);
-        return const ToolResult(toolCallId: '', content: 'Quantidade diminuída.');
-      }
+    final itemIndex = await _buildItemIndex();
+    final listId = itemIndex[itemId];
+    if (listId == null) {
+      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
     }
-    return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+    await _ref.read(shoppingListItemsProvider(listId).notifier).decrementQuantity(itemId);
+    return const ToolResult(toolCallId: '', content: 'Quantidade diminuída.');
   }
 
   Future<ToolResult> _clearPurchased(Map<String, dynamic> args) async {
@@ -457,7 +463,7 @@ class ToolExecutor {
   // --- Pantry ---
 
   Future<ToolResult> _getPantryItems() async {
-    final items = _ref.read(pantryItemsProvider).valueOrNull ?? [];
+    final items = await _ref.read(pantryItemsProvider.future);
     if (items.isEmpty) {
       return const ToolResult(toolCallId: '', content: 'A despensa está vazia.');
     }
@@ -491,7 +497,7 @@ class ToolExecutor {
 
   Future<ToolResult> _updatePantryItem(Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
-    final items = _ref.read(pantryItemsProvider).valueOrNull ?? [];
+    final items = await _ref.read(pantryItemsProvider.future);
     final item = items.where((i) => i.id == itemId).firstOrNull;
     if (item == null) {
       return const ToolResult(toolCallId: '', content: 'Item não encontrado na despensa.', success: false);

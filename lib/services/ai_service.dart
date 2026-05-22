@@ -31,4 +31,9 @@ abstract class AiService {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
   });
+
+  Stream<String> getChatCompletionStreamWithTools(
+    List<Map<String, dynamic>> messages, {
+    String? systemPrompt,
+  });
 }

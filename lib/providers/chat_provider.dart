@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart' show debugPrint;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../agent/tool.dart';
 import '../agent/tool_executor.dart';
@@ -16,6 +17,15 @@ import 'shopping_lists_provider.dart';
 part 'chat_provider.g.dart';
 
 const int _maxToolRounds = 5;
+
+final chatStreamingProvider = StateProvider<bool>((ref) => false);
+
+class _AgentResult {
+  _AgentResult({required this.messages, required this.fallbackText});
+
+  final List<Map<String, dynamic>> messages;
+  final String fallbackText;
+}
 
 @riverpod
 class ChatSession extends _$ChatSession {
@@ -47,21 +57,19 @@ class ChatSession extends _$ChatSession {
     String systemPrompt;
     final currentListId = listId;
     if (currentListId != null) {
-      final items = ref
-              .read(shoppingListItemsProvider(currentListId))
-              .valueOrNull ??
-          [];
-      final list = (ref.read(shoppingListsProvider).valueOrNull ?? [])
-          .where((l) => l.id == currentListId)
-          .firstOrNull;
-
+      final lists =
+          await ref.read(shoppingListsProvider.future);
+      final list = lists.where((l) => l.id == currentListId).firstOrNull;
+      final items =
+          await ref.read(shoppingListItemsProvider(currentListId).future);
       systemPrompt = _buildListSystemPrompt(list, items);
     } else {
-      final lists = ref.read(shoppingListsProvider).valueOrNull ?? [];
+      final lists =
+          await ref.read(shoppingListsProvider.future);
       final allItems = <String, List<ShoppingItem>>{};
       for (final l in lists) {
         final items =
-            ref.read(shoppingListItemsProvider(l.id)).valueOrNull ?? [];
+            await ref.read(shoppingListItemsProvider(l.id).future);
         allItems[l.name] = items;
       }
       systemPrompt = _buildGlobalSystemPrompt(allItems);
@@ -76,49 +84,102 @@ class ChatSession extends _$ChatSession {
     final tools = AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
     final executor = ToolExecutor(ref);
 
-    String finalText;
+    _AgentResult agentResult;
     try {
-      finalText = await _agentLoop(aiService, executor, apiMessages,
+      agentResult = await _agentLoop(aiService, executor, apiMessages,
           systemPrompt: systemPrompt, tools: tools);
     } on Exception catch (e, stackTrace) {
       debugPrint('[AgentLoop] ERRO no loop principal: $e');
       debugPrint('[AgentLoop] StackTrace: $stackTrace');
-      finalText =
+      const errorMsg =
           'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
+      final errorMessage = ChatMessage(role: 'assistant', content: errorMsg);
+      state = AsyncValue.data([...state.value ?? [], errorMessage]);
+      try {
+        await firestoreService.saveChatMessage(listId, errorMessage);
+      } on Exception {
+        // Silently fail
+      }
+      return;
     }
 
-    final assistantMessage = ChatMessage(role: 'assistant', content: finalText);
+    ref.read(chatStreamingProvider.notifier).state = true;
 
-    state = AsyncValue.data([...state.value ?? [], assistantMessage]);
+    final tempMessage = ChatMessage(role: 'assistant', content: '');
+    state = AsyncValue.data([...state.value ?? [], tempMessage]);
+
+    String finalText;
+    try {
+      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt);
+    } on Exception catch (e) {
+      debugPrint('[StreamResponse] Erro no streaming: $e');
+      finalText = agentResult.fallbackText;
+    }
+
+    if (finalText.isEmpty) {
+      finalText = agentResult.fallbackText;
+    }
+
+    ref.read(chatStreamingProvider.notifier).state = false;
+
+    final finalMessage = ChatMessage(
+      role: 'assistant',
+      content: finalText,
+      id: tempMessage.id,
+      timestamp: tempMessage.timestamp,
+    );
+    final updatedMessages = <ChatMessage>[...state.value ?? []];
+    updatedMessages[updatedMessages.length - 1] = finalMessage;
+    state = AsyncValue.data(updatedMessages);
 
     try {
-      await firestoreService.saveChatMessage(listId, assistantMessage);
+      await firestoreService.saveChatMessage(listId, finalMessage);
     } on Exception {
       // Silently fail saving assistant message
     }
   }
 
-  Future<String> _agentLoop(
+  Future<_AgentResult> _agentLoop(
     AiService aiService,
     ToolExecutor executor,
     List<Map<String, dynamic>> messages, {
     required String systemPrompt,
     required List<Map<String, dynamic>> tools,
   }) async {
+    const maxRetries = 2;
+    const delays = [Duration(seconds: 1), Duration(seconds: 3)];
+
+    Future<AiResponse> callWithRetry() async {
+      for (var attempt = 0; attempt <= maxRetries; attempt++) {
+        try {
+          return await aiService.getChatCompletionWithTools(
+            messages,
+            systemPrompt: systemPrompt,
+            tools: tools,
+          );
+        } on Exception {
+          if (attempt == maxRetries) {
+            rethrow;
+          }
+          await Future<void>.delayed(delays[attempt]);
+        }
+      }
+      throw Exception('Unreachable');
+    }
+
     debugPrint('[AgentLoop] Iniciando com $_maxToolRounds rounds máximos, ${tools.length} ferramentas');
     for (var round = 0; round < _maxToolRounds; round++) {
       debugPrint('[AgentLoop] Round $round — enviando requisição para IA...');
-      final response = await aiService.getChatCompletionWithTools(
-        messages,
-        systemPrompt: systemPrompt,
-        tools: tools,
-      );
+      final response = await callWithRetry();
 
       debugPrint('[AgentLoop] Round $round — resposta recebida. toolCalls=${response.toolCalls.length}, content.length=${response.content?.length ?? 0}');
 
       if (!response.hasToolCalls) {
-        debugPrint('[AgentLoop] Round $round — sem tool calls, retornando conteúdo.');
-        return response.content ?? '';
+        debugPrint('[AgentLoop] Round $round — sem tool calls. Final text pronto para streaming.');
+        return _AgentResult(
+          messages: messages,
+          fallbackText: response.content ?? '',
+        );
       }
 
       messages.add({
@@ -143,16 +204,41 @@ class ChatSession extends _$ChatSession {
     }
 
     debugPrint('[AgentLoop] Atingido limite de $_maxToolRounds rounds — tentando fallback...');
-    final fallbackResponse = await aiService.getChatCompletionWithTools(
-      messages,
-      systemPrompt: systemPrompt,
-      tools: tools,
-    );
+    final fallbackResponse = await callWithRetry();
 
     final fallbackText = fallbackResponse.content ??
         'Não foi possível processar após várias tentativas.';
     debugPrint('[AgentLoop] Fallback concluído. content.length=${fallbackText.length}');
-    return fallbackText;
+    return _AgentResult(messages: messages, fallbackText: fallbackText);
+  }
+
+  Future<String> _streamResponse(
+    AiService aiService,
+    List<Map<String, dynamic>> messages,
+    String systemPrompt,
+  ) async {
+    final buffer = StringBuffer();
+    try {
+      await for (final token in aiService.getChatCompletionStreamWithTools(
+        messages,
+        systemPrompt: systemPrompt,
+      )) {
+        buffer.write(token);
+        final msgs = state.value ?? [];
+        if (msgs.isNotEmpty && msgs.last.role == 'assistant') {
+          state = AsyncValue.data([
+            ...msgs.sublist(0, msgs.length - 1),
+            msgs.last.copyWith(content: buffer.toString()),
+          ]);
+        }
+      }
+    } on Exception catch (e) {
+      debugPrint('[StreamResponse] Erro no streaming: $e');
+      if (buffer.isEmpty) {
+        rethrow;
+      }
+    }
+    return buffer.toString();
   }
 
   Future<void> clearHistory() async {
@@ -208,7 +294,7 @@ class ChatSession extends _$ChatSession {
         if (listId == null) {
           return;
         }
-        final items = ref.read(shoppingListItemsProvider(listId)).valueOrNull ?? [];
+        final items = await ref.read(shoppingListItemsProvider(listId).future);
         if (items.isEmpty) {
           return;
         }
@@ -232,17 +318,21 @@ class ChatSession extends _$ChatSession {
   String _buildListSystemPrompt(
       ShoppingList? list, List<ShoppingItem> items) {
     final listName = list?.name ?? 'Lista de Compras';
-    final itemsStr = items
+    const maxItems = 30;
+    final displayItems = items.take(maxItems);
+    final itemsStr = displayItems
         .map((i) =>
             '- ${i.name} (${i.quantity} ${i.unit.label})${i.isPurchased ? ' [Comprado]' : ''}')
         .join('\n');
+    final overflow =
+        items.length > maxItems ? '\n... e mais ${items.length - maxItems} itens (total: ${items.length})' : '';
 
     return '''Você é um assistente inteligente com CONTROLE TOTAL sobre a lista de compras do usuário.
 
 Contexto atual: lista "$listName".
 
 Itens atuais na lista:
-$itemsStr
+$itemsStr$overflow
 
 VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
 - Adicionar, remover, editar itens
@@ -262,12 +352,25 @@ Se precisar de informações adicionais para executar uma ação, use as ferrame
         'Você é um assistente inteligente com CONTROLE TOTAL sobre o app de compras do usuário.\n';
     context += 'O usuário possui as seguintes listas:\n\n';
 
-    allItems.forEach((listName, items) {
-      context += 'Lista: $listName\n';
-      context +=
-          items.map((i) => '  - ${i.name} (${i.quantity} ${i.unit.label})').join('\n');
-      context += '\n\n';
-    });
+    const maxItems = 30;
+    int totalItems = 0;
+    for (final entry in allItems.entries) {
+      totalItems += entry.value.length;
+    }
+
+    if (totalItems <= maxItems) {
+      allItems.forEach((listName, items) {
+        context += 'Lista: $listName (${items.length} itens)\n';
+        context +=
+            items.map((i) => '  - ${i.name} (${i.quantity} ${i.unit.label})').join('\n');
+        context += '\n\n';
+      });
+    } else {
+      allItems.forEach((listName, items) {
+        context += '- $listName (${items.length} itens)\n';
+      });
+      context += '\nUse a ferramenta get_items para consultar os itens de uma lista específica.\n\n';
+    }
 
     context += '''
 VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:

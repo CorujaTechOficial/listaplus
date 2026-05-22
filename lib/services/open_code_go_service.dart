@@ -146,6 +146,81 @@ class OpenCodeGoService implements AiService {
   }
 
   @override
+  Stream<String> getChatCompletionStreamWithTools(
+    List<Map<String, dynamic>> messages, {
+    String? systemPrompt,
+  }) async* {
+    final fullMessages = <Map<String, dynamic>>[];
+    if (systemPrompt != null) {
+      fullMessages.add({'role': 'system', 'content': systemPrompt});
+    }
+    fullMessages.addAll(messages);
+
+    final body = <String, dynamic>{
+      'model': model,
+      'messages': fullMessages,
+      'stream': true,
+    };
+
+    final request = http.Request('POST', Uri.parse(_baseUrl))
+      ..headers.addAll(_headers())
+      ..body = jsonEncode(body);
+
+    final client = http.Client();
+    http.StreamedResponse response;
+
+    try {
+      response = await client.send(request).timeout(const Duration(seconds: 30));
+    } on TimeoutException {
+      client.close();
+      return;
+    } on Exception {
+      client.close();
+      return;
+    }
+
+    if (response.statusCode != 200) {
+      client.close();
+      return;
+    }
+
+    final stream = response.stream
+        .transform(utf8.decoder)
+        .transform(const LineSplitter());
+
+    await for (final line in stream) {
+      if (!line.startsWith('data: ')) {
+        continue;
+      }
+
+      final data = line.substring(6).trim();
+      if (data == '[DONE]') {
+        break;
+      }
+
+      try {
+        final json = jsonDecode(data) as Map<String, dynamic>;
+        final choice = (json['choices'] as List?)?.firstOrNull;
+        if (choice == null) {
+          continue;
+        }
+        final delta = choice['delta'] as Map<String, dynamic>?;
+        if (delta == null) {
+          continue;
+        }
+        final content = delta['content'] as String?;
+        if (content != null && content.isNotEmpty) {
+          yield content;
+        }
+      } on FormatException {
+        // Skip malformed JSON chunks
+      }
+    }
+
+    client.close();
+  }
+
+  @override
   Future<AiResponse> getChatCompletionWithTools(
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,

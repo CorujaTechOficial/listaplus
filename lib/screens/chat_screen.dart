@@ -1,3 +1,4 @@
+import 'dart:async' show unawaited;
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -10,6 +11,7 @@ import '../providers/premium_provider.dart';
 import '../theme/tokens.dart';
 import '../theme/page_transitions.dart';
 import '../widgets/premium_gate.dart';
+import '../widgets/animated_typing_dots.dart';
 import 'paywall_screen.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {
@@ -86,6 +88,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         }
 
         final chatState = ref.watch(chatSessionProvider(widget.listId));
+        final isStreaming = ref.watch<bool>(chatStreamingProvider);
         final theme = Theme.of(context);
 
         return Scaffold(
@@ -121,67 +124,71 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
               ),
             ],
           ),
-          body: Column(
-            children: [
-              Expanded(
-                child: chatState.when(
-                  data: (messages) {
-                    if (messages.isEmpty) {
-                      return Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.auto_awesome, size: 64, color: theme.colorScheme.primary),
-                            const SizedBox(height: 16),
-                            Text(
-                              widget.listId != null
-                                  ? l10n.listHelp
-                                  : l10n.generalHelp,
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.titleMedium,
-                            ),
-                            const SizedBox(height: 8),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 32),
-                              child: Text(
-                                l10n.chatSubtitle,
+          body: SafeArea(
+            child: Column(
+              children: [
+                Expanded(
+                  child: chatState.when(
+                    data: (messages) {
+                      if (messages.isEmpty) {
+                        return Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.auto_awesome, size: 64, color: theme.colorScheme.primary),
+                              const SizedBox(height: 16),
+                              Text(
+                                widget.listId != null
+                                    ? l10n.listHelp
+                                    : l10n.generalHelp,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(color: Colors.grey),
+                                style: theme.textTheme.titleMedium,
                               ),
-                            ),
-                          ],
-                        ),
-                      );
-                    }
-
-                    WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
-
-                    return ListView.builder(
-                      controller: _scrollController,
-                      padding: const EdgeInsets.all(16),
-                      itemCount: messages.length + (_isSending ? 1 : 0),
-                      itemBuilder: (context, index) {
-                        if (index == messages.length) {
-                          return const TypingIndicator();
-                        }
-                        final message = messages[index];
-                        return ChatBubble(message: message).animate().fadeIn(
-                          duration: DurationTokens.fast,
-                        ).slideX(
-                          begin: message.role == 'user' ? 0.3 : -0.3,
-                          end: 0,
-                          duration: DurationTokens.fast,
-                          curve: Curves.easeOut,
+                              const SizedBox(height: 8),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 32),
+                                child: Text(
+                                  l10n.chatSubtitle,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(color: Colors.grey),
+                                ),
+                              ),
+                            ],
+                          ),
                         );
-                      },
-                    );
-                  },
-                  loading: () => const Center(child: CircularProgressIndicator()),
-                  error: (e, _) => Center(child: Text(l10n.chatError(e.toString()))), // coverage:ignore-line
+                      }
+
+                      WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
+
+                      final showTyping = _isSending && !isStreaming;
+
+                      return ListView.builder(
+                        controller: _scrollController,
+                        padding: const EdgeInsets.all(16),
+                        itemCount: messages.length + (showTyping ? 1 : 0),
+                        itemBuilder: (context, index) {
+                          if (index == messages.length) {
+                            return const TypingIndicator();
+                          }
+                          final message = messages[index];
+                          return ChatBubble(message: message).animate().fadeIn(
+                            duration: DurationTokens.fast,
+                          ).slideX(
+                            begin: message.role == 'user' ? 0.3 : -0.3,
+                            end: 0,
+                            duration: DurationTokens.fast,
+                            curve: Curves.easeOut,
+                          );
+                        },
+                      );
+                    },
+                    loading: () => const Center(child: CircularProgressIndicator()),
+                    error: (e, _) => Center(child: Text(l10n.chatError(e.toString()))), // coverage:ignore-line
+                  ),
                 ),
-              ),
-              _buildInput(),
-            ],
+                _buildInput(),
+              ],
+            ),
           ),
         );
       },
@@ -402,7 +409,7 @@ class _UserMarkdownContent extends StatelessWidget {
       styleSheet: style,
       onTapLink: (text, href, title) {
         if (href != null) {
-          launchUrl(Uri.parse(href));
+          unawaited(launchUrl(Uri.parse(href), mode: LaunchMode.externalApplication));
         }
       },
     );
@@ -428,7 +435,7 @@ class _AiMarkdownContent extends StatelessWidget {
       styleSheet: style,
       onTapLink: (text, href, title) {
         if (href != null) {
-          launchUrl(Uri.parse(href));
+          unawaited(launchUrl(Uri.parse(href), mode: LaunchMode.externalApplication));
         }
       },
     );
@@ -456,67 +463,9 @@ class TypingIndicator extends StatelessWidget {
         ),
         child: const SizedBox(
           width: 40,
-          child: _AnimatedTypingDots(),
+          child: AnimatedTypingDots(),
         ),
       ),
-    );
-  }
-}
-
-class _AnimatedTypingDots extends StatefulWidget {
-  const _AnimatedTypingDots();
-
-  @override
-  State<_AnimatedTypingDots> createState() => _AnimatedTypingDotsState();
-}
-
-class _AnimatedTypingDotsState extends State<_AnimatedTypingDots>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: List.generate(3, (i) {
-        return AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            final delay = i * 200;
-            final t = (_controller.value * 1200 - delay).clamp(0, 600) / 600;
-            final size = Tween<double>(begin: 6, end: 10).transform(
-              Curves.easeInOut.transform(t),
-            );
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: Container(
-                width: size,
-                height: size,
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.onSurfaceVariant,
-                  shape: BoxShape.circle,
-                ),
-              ),
-            );
-          },
-        );
-      }),
     );
   }
 }
