@@ -119,6 +119,7 @@ class PantryScreen extends ConsumerWidget {
         error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'pantry_fab',
         onPressed: () => showDialog<void>(
           context: context,
           builder: (_) => const AddPantryItemDialog(),

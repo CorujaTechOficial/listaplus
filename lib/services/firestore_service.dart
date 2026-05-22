@@ -6,6 +6,7 @@ import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
 import '../models/pantry_item.dart';
+import 'logger_service.dart';
 import 'storage_backend.dart';
 
 class FirestoreService implements StorageBackend {
@@ -38,18 +39,20 @@ class FirestoreService implements StorageBackend {
     return false;
   }
 
-  static Future<T> _retry<T>(Future<T> Function() fn) async {
+  static Future<T> _retry<T>(Future<T> Function() fn, {String? label}) async {
     var attempt = 0;
     while (true) {
       try {
         return await fn();
       } on Object catch (e) {
         attempt++;
+        LoggerService.error(e, message: 'Firestore._retry falhou (tentativa $attempt/$_maxRetries)${label != null ? " [$label]" : ""}');
         if (attempt >= _maxRetries || !_isTransientError(e)) {
           rethrow;
         }
         final delay = _baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
+        LoggerService.log('Firestore._retry: tentativa $attempt, delay=${delay.inMilliseconds}ms (label=$label)', tag: 'FirestoreService');
         await Future<void>.delayed(delay + Duration(milliseconds: jitter));
       }
     }
@@ -93,6 +96,7 @@ class FirestoreService implements StorageBackend {
 
   @override
   Future<List<ShoppingList>> loadLists() async {
+    LoggerService.log('loadLists', tag: 'FirestoreService');
     return _retry(() async {
       final snap = await _db
           .collection('users').doc(_uid).collection('lists')
@@ -103,29 +107,35 @@ class FirestoreService implements StorageBackend {
         data['id'] = d.id;
         return ShoppingList.fromJson(data);
       }).toList();
-    });
+    }, label: 'loadLists');
   }
 
   @override
   Stream<List<ShoppingList>> watchLists() {
+    LoggerService.log('watchLists iniciado', tag: 'FirestoreService');
     return _retryStream(() => _db
         .collection('users').doc(_uid).collection('lists')
         .orderBy('updatedAt', descending: true)
         .snapshots()
-        .map((snap) => snap.docs.map((d) {
-          final data = d.data();
-          data['id'] = d.id;
-          return ShoppingList.fromJson(data);
-        }).toList()));
+        .map((snap) {
+          LoggerService.log('watchLists: ${snap.docs.length} listas recebidas', tag: 'FirestoreService');
+          return snap.docs.map((d) {
+            final data = d.data();
+            data['id'] = d.id;
+            return ShoppingList.fromJson(data);
+          }).toList();
+        }));
   }
 
   @override
   Future<void> saveList(ShoppingList list) async {
+    LoggerService.log('saveList: id=${list.id}, name=${list.name}', tag: 'FirestoreService');
     return _retry(() async {
       await _db
           .collection('users').doc(_uid).collection('lists').doc(list.id)
           .set(list.toJson());
-    });
+      LoggerService.log('saveList: ok id=${list.id}', tag: 'FirestoreService');
+    }, label: 'saveList(${list.id})');
   }
 
   @override
@@ -146,11 +156,13 @@ class FirestoreService implements StorageBackend {
 
   @override
   Future<void> deleteList(String listId) async {
+    LoggerService.log('deleteList: id=$listId', tag: 'FirestoreService');
     return _retry(() async {
       await _db
           .collection('users').doc(_uid).collection('lists').doc(listId)
           .delete();
-    });
+      LoggerService.log('deleteList: ok id=$listId', tag: 'FirestoreService');
+    }, label: 'deleteList($listId)');
   }
 
   @override
@@ -218,6 +230,7 @@ class FirestoreService implements StorageBackend {
 
   @override
   Future<void> deleteItemsFromList(String listId) async {
+    LoggerService.log('deleteItemsFromList: listId=$listId', tag: 'FirestoreService');
     return _retry(() async {
       final snap = await _db
           .collection('users').doc(_uid).collection('items')
@@ -225,6 +238,7 @@ class FirestoreService implements StorageBackend {
           .get();
       
       final docs = snap.docs;
+      LoggerService.log('deleteItemsFromList: ${docs.length} itens para deletar', tag: 'FirestoreService');
       const limit = 500;
       for (var i = 0; i < docs.length; i += limit) {
         final batch = _db.batch();
@@ -234,25 +248,30 @@ class FirestoreService implements StorageBackend {
         }
         await batch.commit();
       }
-    });
+      LoggerService.log('deleteItemsFromList: ok', tag: 'FirestoreService');
+    }, label: 'deleteItemsFromList($listId)');
   }
 
   @override
   Future<String?> getCurrentListId() async {
     return _retry(() async {
       final doc = await _db.collection('users').doc(_uid).get();
-      return doc.data()?['currentListId'] as String?;
-    });
+      final listId = doc.data()?['currentListId'] as String?;
+      LoggerService.log('getCurrentListId: $listId', tag: 'FirestoreService');
+      return listId;
+    }, label: 'getCurrentListId');
   }
 
   @override
   Future<void> setCurrentListId(String? listId) async {
+    LoggerService.log('setCurrentListId: listId=$listId', tag: 'FirestoreService');
     return _retry(() async {
       await _db.collection('users').doc(_uid).set(
         {'currentListId': listId},
         SetOptions(merge: true),
       );
-    });
+      LoggerService.log('setCurrentListId: ok', tag: 'FirestoreService');
+    }, label: 'setCurrentListId($listId)');
   }
 
   @override
@@ -591,6 +610,29 @@ class FirestoreService implements StorageBackend {
         }
         await batch.commit();
       }
+    });
+  }
+
+  @override
+  Future<Map<String, dynamic>?> getAiUsage() async {
+    return _retry(() async {
+      final doc = await _db.collection('users').doc(_uid).get();
+      final data = doc.data();
+      if (data == null) {
+        return null;
+      }
+      final aiUsage = data['aiUsage'];
+      if (aiUsage is Map<String, dynamic>) {
+        return aiUsage;
+      }
+      return null;
+    });
+  }
+
+  @override
+  Future<void> saveAiUsage(Map<String, dynamic> data) async {
+    return _retry(() async {
+      await _db.collection('users').doc(_uid).set({'aiUsage': data}, SetOptions(merge: true));
     });
   }
 

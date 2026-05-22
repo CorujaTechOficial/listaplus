@@ -1601,6 +1601,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Real-time sync with other people'**
   String get shareRealtime;
+
+  /// No description provided for @quickRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick recipe'**
+  String get quickRecipe;
+
+  /// No description provided for @economyTips.
+  ///
+  /// In en, this message translates to:
+  /// **'Economy tips'**
+  String get economyTips;
+
+  /// No description provided for @organizeAisles.
+  ///
+  /// In en, this message translates to:
+  /// **'Organize by aisles'**
+  String get organizeAisles;
+
+  /// No description provided for @recipeSuggestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe suggestion'**
+  String get recipeSuggestion;
+
+  /// No description provided for @aiCreditsRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'{remaining} credits remaining'**
+  String aiCreditsRemaining(int remaining);
+
+  /// No description provided for @addAllToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add all to list'**
+  String get addAllToList;
+
+  /// No description provided for @organizeByAisles.
+  ///
+  /// In en, this message translates to:
+  /// **'Organize by aisles'**
+  String get organizeByAisles;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

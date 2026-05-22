@@ -258,6 +258,16 @@ class FakeStorageBackend implements StorageBackend {
     _pantryItems.removeWhere((p) => p.id == id);
   }
 
+  Map<String, dynamic>? _aiUsage;
+
+  @override
+  Future<Map<String, dynamic>?> getAiUsage() async => _aiUsage;
+
+  @override
+  Future<void> saveAiUsage(Map<String, dynamic> data) async {
+    _aiUsage = data;
+  }
+
   @override
   Future<List<ChatMessage>> loadChatMessages(String? listId) async {
     return List.unmodifiable(_chatMessages[listId] ?? []);

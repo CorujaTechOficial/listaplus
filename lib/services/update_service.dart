@@ -16,7 +16,12 @@ class UpdateService {
       }
     } on Object catch (e) {
       // Fail silently in non-Play Store environments or if API fails
-      debugPrint('InAppUpdate Error: $e');
+      final msg = e.toString();
+      if (msg.contains('ERROR_APP_NOT_OWNED') || msg.contains('-10')) {
+        debugPrint('InAppUpdate: App não instalado via Play Store — ignorando.');
+      } else {
+        debugPrint('InAppUpdate Error: $e');
+      }
     }
   }
   // coverage:ignore-end

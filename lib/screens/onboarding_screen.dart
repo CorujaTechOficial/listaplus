@@ -195,10 +195,6 @@ class OnboardingScreen extends ConsumerWidget {
 
   Future<void> _enterApp(BuildContext context, WidgetRef ref) async {
     await ref.read(onboardingProvider.notifier).markAsSeen();
-    if (!context.mounted) {
-      return;
-    }
-    Navigator.of(context).pop();
   }
 }
 

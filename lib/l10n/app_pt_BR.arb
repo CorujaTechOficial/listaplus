@@ -277,5 +277,14 @@
   "shoppingModeHeader": "MODO COMPRAS",
   "shareAsText": "Enviar itens como texto formatado",
   "shareRealtime": "Sincronizar em tempo real com outras pessoas",
-  "rename": "Renomear"
+  "rename": "Renomear",
+
+  "quickRecipe": "Receita rápida",
+  "economyTips": "Dicas de economia",
+  "organizeAisles": "Organizar por corredores",
+  "recipeSuggestion": "Sugestão de receita",
+  "aiCreditsRemaining": "{remaining} créditos restantes",
+  "@aiCreditsRemaining": { "placeholders": { "remaining": { "type": "int" } } },
+  "addAllToList": "Adicionar tudo à lista",
+  "organizeByAisles": "Organizar por corredores"
 }

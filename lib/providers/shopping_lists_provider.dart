@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 // coverage:ignore-start
 import '../models/shopping_list.dart';
+import '../services/logger_service.dart';
 import 'firestore_service_provider.dart';
 import 'premium_provider.dart';
 import 'current_list_provider.dart';
@@ -42,51 +43,83 @@ class ShoppingLists extends _$ShoppingLists {
   }
 
   Future<ShoppingList> createList(String name, {double? budget}) async {
+    LoggerService.log('createList iniciado: nome="$name", budget=$budget', tag: 'ShoppingLists');
+
     final currentLists = state.value ?? [];
-    final isPremium = await ref.read(premiumProvider.future);
+    final isPremium = await ref.read(premiumProvider.future).timeout(
+      const Duration(seconds: 5),
+      onTimeout: () {
+        LoggerService.log('createList: timeout ao verificar premium — assumindo false', tag: 'ShoppingLists');
+        return false;
+      },
+    );
     final activeListsCount = currentLists.where((l) => !l.isArchived).length;
 
+    LoggerService.log('createList: isPremium=$isPremium, activeListsCount=$activeListsCount, totalLists=${currentLists.length}', tag: 'ShoppingLists');
+
     if (!isPremium && activeListsCount >= 3) {
+      LoggerService.info('createList bloqueado: limite gratuito atingido');
       throw Exception('Limite de 3 listas ativas no plano gratuito. Arquive ou exclua uma lista ativa para criar mais.');
     }
 
     final service = ref.read(firestoreServiceProvider);
     final newList = ShoppingList(name: name, budget: budget);
+
+    LoggerService.log('createList: novoLista.id=${newList.id}', tag: 'ShoppingLists');
     
     try {
       await service.saveList(newList);
+      LoggerService.log('createList: saveList ok', tag: 'ShoppingLists');
       await service.setCurrentListId(newList.id);
+      LoggerService.log('createList: setCurrentListId ok', tag: 'ShoppingLists');
       return newList;
-    } on Exception catch (e) {
+    } on Exception catch (e, s) {
+      LoggerService.error(e, stackTrace: s, message: 'Erro ao criar lista', extra: {
+        'listName': name,
+        'listId': newList.id,
+        'budget': budget?.toString(),
+        'activeListsCount': activeListsCount.toString(),
+        'isPremium': isPremium.toString(),
+      });
       throw Exception('Erro ao criar lista: $e');
     }
   }
 
   Future<void> updateList(ShoppingList list) async {
+    LoggerService.log('updateList: id=${list.id}, name=${list.name}', tag: 'ShoppingLists');
     final service = ref.read(firestoreServiceProvider);
     try {
       await service.saveList(list);
-    } on Exception catch (e) {
+      LoggerService.log('updateList: ok', tag: 'ShoppingLists');
+    } on Exception catch (e, s) {
+      LoggerService.error(e, stackTrace: s, message: 'Erro ao atualizar lista', extra: {
+        'listId': list.id,
+        'listName': list.name,
+      });
       throw Exception('Erro ao atualizar lista: $e');
     }
   }
 
   Future<void> deleteList(String id) async {
+    LoggerService.log('deleteList: id=$id', tag: 'ShoppingLists');
     final service = ref.read(firestoreServiceProvider);
     final lists = state.value ?? [];
     
     try {
-      // Delete list first, then items. If list deletion fails, nothing changes.
-      // If item deletion fails after list deletion, orphan items exist but aren't referenced.
       await service.deleteList(id);
+      LoggerService.log('deleteList: deleteList ok', tag: 'ShoppingLists');
       await service.deleteItemsFromList(id);
+      LoggerService.log('deleteList: deleteItemsFromList ok', tag: 'ShoppingLists');
       
       final updatedLists = lists.where((l) => l.id != id).toList();
       final newCurrent = updatedLists.isNotEmpty ? updatedLists.first.id : null;
       if (newCurrent != null) {
         await service.setCurrentListId(newCurrent);
       }
-    } on Exception catch (e) {
+    } on Exception catch (e, s) {
+      LoggerService.error(e, stackTrace: s, message: 'Erro ao excluir lista', extra: {
+        'listId': id,
+      });
       throw Exception('Erro ao excluir lista: $e');
     }
   }

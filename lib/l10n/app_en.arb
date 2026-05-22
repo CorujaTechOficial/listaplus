@@ -327,5 +327,15 @@
   "shoppingModeHeader": "SHOPPING MODE",
   "shareAsText": "Send items as formatted text",
   "shareRealtime": "Real-time sync with other people",
-  "rename": "Rename"
+  "rename": "Rename",
+
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Quick recipe",
+  "economyTips": "Economy tips",
+  "organizeAisles": "Organize by aisles",
+  "recipeSuggestion": "Recipe suggestion",
+  "aiCreditsRemaining": "{remaining} credits remaining",
+  "@aiCreditsRemaining": { "placeholders": { "remaining": { "type": "int" } } },
+  "addAllToList": "Add all to list",
+  "organizeByAisles": "Organize by aisles"
 }

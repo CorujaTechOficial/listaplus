@@ -818,6 +818,29 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get shareRealtime => 'Sincronizar em tempo real com outras pessoas';
+
+  @override
+  String get quickRecipe => 'Receita rápida';
+
+  @override
+  String get economyTips => 'Dicas de economia';
+
+  @override
+  String get organizeAisles => 'Organizar por corredores';
+
+  @override
+  String get recipeSuggestion => 'Sugestão de receita';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return '$remaining créditos restantes';
+  }
+
+  @override
+  String get addAllToList => 'Adicionar tudo à lista';
+
+  @override
+  String get organizeByAisles => 'Organizar por corredores';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -1634,4 +1657,27 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get shareRealtime => 'Sincronizar em tempo real com outras pessoas';
+
+  @override
+  String get quickRecipe => 'Receita rápida';
+
+  @override
+  String get economyTips => 'Dicas de economia';
+
+  @override
+  String get organizeAisles => 'Organizar por corredores';
+
+  @override
+  String get recipeSuggestion => 'Sugestão de receita';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return '$remaining créditos restantes';
+  }
+
+  @override
+  String get addAllToList => 'Adicionar tudo à lista';
+
+  @override
+  String get organizeByAisles => 'Organizar por corredores';
 }

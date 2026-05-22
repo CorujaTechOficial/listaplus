@@ -48,4 +48,7 @@ abstract class StorageBackend {
   Future<List<ChatMessage>> loadChatMessages(String? listId);
   Future<void> saveChatMessage(String? listId, ChatMessage message);
   Future<void> clearChatHistory(String? listId);
+
+  Future<Map<String, dynamic>?> getAiUsage();
+  Future<void> saveAiUsage(Map<String, dynamic> data);
 }

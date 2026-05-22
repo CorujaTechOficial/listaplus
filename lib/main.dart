@@ -22,18 +22,20 @@ import 'providers/shopping_lists_provider.dart';
 import 'providers/onboarding_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/pantry_screen.dart';
+import 'screens/ai_home_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'widgets/create_list_dialog.dart';
 import 'widgets/empty_state.dart';
 import 'widgets/init_error_screen.dart';
 import 'services/ad_service_impl.dart';
+import 'services/logger_service.dart';
 import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
 import 'providers/update_service_provider.dart';
 
 // coverage:ignore-start
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  SentryWidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
   await SentryFlutter.init(
@@ -77,7 +79,13 @@ Future<UserCredential> _signInWithRetry() async {
       if (attempt >= maxRetries) {
         rethrow;
       }
-      if (e.code == 'unknown') {
+      const retryableCodes = <String>{
+        'unknown',
+        'network-request-failed',
+        'too-many-requests',
+        'internal-error',
+      };
+      if (retryableCodes.contains(e.code)) {
         final delay = baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
         await Future<void>.delayed(delay + Duration(milliseconds: jitter));
@@ -314,6 +322,7 @@ class _MainShellState extends ConsumerState<MainShell> {
         children: const [
           ListLoader(),
           PantryScreen(),
+          AiHomeScreen(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
@@ -329,6 +338,11 @@ class _MainShellState extends ConsumerState<MainShell> {
             icon: Icon(Icons.inventory_2_outlined),
             selectedIcon: Icon(Icons.inventory_2),
             label: 'Dispensa',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.auto_awesome_outlined),
+            selectedIcon: Icon(Icons.auto_awesome),
+            label: 'Assistente',
           ),
         ],
       ),
@@ -363,10 +377,11 @@ class NoListsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: Center(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(Spacing.xl),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               const EmptyState(
                 icon: Icons.list_alt,
@@ -381,8 +396,17 @@ class NoListsScreen extends ConsumerWidget {
                     builder: (_) => const CreateListDialog(),
                   );
                   if (name != null && name.isNotEmpty) {
-                    await ref.read(shoppingListsProvider.notifier).createList(name);
-                    ref.invalidate(currentListIdProvider);
+                    try {
+                      await ref.read(shoppingListsProvider.notifier).createList(name);
+                      ref.invalidate(currentListIdProvider);
+                    } on Exception catch (e, s) {
+                      LoggerService.error(e, stackTrace: s, message: 'NoListsScreen: erro ao criar lista');
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Erro ao criar lista: $e')),
+                        );
+                      }
+                    }
                   }
                 },
                 icon: const Icon(Icons.add),

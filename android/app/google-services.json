@@ -12,7 +12,28 @@
           "package_name": "br.com.curujatech.listaplus"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "246425107759-a14da1fsudsmf945r7sr5dob1sfvhcgv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.curujatech.listaplus",
+            "certificate_hash": "0ddc18a55940b07849686ffc846f5284ee7951e6"
+          }
+        },
+        {
+          "client_id": "246425107759-isl5924fjhvf0bkthqmb861u3nrsarr5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.curujatech.listaplus",
+            "certificate_hash": "08a4ae6f7113566bfe22de7e960144ee6d853009"
+          }
+        },
+        {
+          "client_id": "246425107759-cgugi6nj5h606vfjt7idaq7sppstpg60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBMjcIy_Og9-pLFU7RwMoKnhvV5peYAUzg"
@@ -20,7 +41,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246425107759-cgugi6nj5h606vfjt7idaq7sppstpg60.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "246425107759-7o3jgc17jml0km6ip8ktnk2cr1b209kg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.curujatech.listaplus"
+              }
+            }
+          ]
         }
       }
     }

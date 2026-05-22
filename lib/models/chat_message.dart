@@ -31,6 +31,9 @@ class ChatMessage {
     required this.role,
     required this.content,
     DateTime? timestamp,
+    this.senderName,
+    this.senderUid,
+    this.actions,
   })  : id = id ?? const Uuid().v4(),
         timestamp = timestamp ?? DateTime.now();
 
@@ -40,6 +43,9 @@ class ChatMessage {
       role: json['role'] as String? ?? 'user',
       content: json['content'] as String? ?? '',
       timestamp: _parseDate(json['timestamp']),
+      senderName: json['senderName'] as String?,
+      senderUid: json['senderUid'] as String?,
+      actions: json['actions'] as Map<String, dynamic>?,
     );
   }
 
@@ -58,18 +64,27 @@ class ChatMessage {
   final String role;
   final String content;
   final DateTime timestamp;
+  final String? senderName;
+  final String? senderUid;
+  final Map<String, dynamic>? actions;
 
   ChatMessage copyWith({
     String? id,
     String? role,
     String? content,
     DateTime? timestamp,
+    String? senderName,
+    String? senderUid,
+    Map<String, dynamic>? actions,
   }) {
     return ChatMessage(
       id: id ?? this.id,
       role: role ?? this.role,
       content: content ?? this.content,
       timestamp: timestamp ?? this.timestamp,
+      senderName: senderName ?? this.senderName,
+      senderUid: senderUid ?? this.senderUid,
+      actions: actions ?? this.actions,
     );
   }
 
@@ -79,6 +94,9 @@ class ChatMessage {
       'role': role,
       'content': content,
       'timestamp': timestamp.toIso8601String(),
+      if (senderName != null) 'senderName': senderName,
+      if (senderUid != null) 'senderUid': senderUid,
+      if (actions != null) 'actions': actions,
     };
   }
 }

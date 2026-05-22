@@ -916,6 +916,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       floatingActionButton: (_shoppingMode || _selectionMode)
           ? null
           : FloatingActionButton(
+              heroTag: 'home_fab',
               onPressed: () => showDialog<void>(
                 context: context,
                 builder: (_) => AddItemDialog(listId: widget.listId),

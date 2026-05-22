@@ -818,4 +818,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareRealtime => 'Real-time sync with other people';
+
+  @override
+  String get quickRecipe => 'Quick recipe';
+
+  @override
+  String get economyTips => 'Economy tips';
+
+  @override
+  String get organizeAisles => 'Organize by aisles';
+
+  @override
+  String get recipeSuggestion => 'Recipe suggestion';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return '$remaining credits remaining';
+  }
+
+  @override
+  String get addAllToList => 'Add all to list';
+
+  @override
+  String get organizeByAisles => 'Organize by aisles';
 }

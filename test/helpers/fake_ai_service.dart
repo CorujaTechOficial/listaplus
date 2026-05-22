@@ -22,4 +22,13 @@ class FakeAiService implements AiService {
     yield 'streamed ';
     yield 'response';
   }
+
+  @override
+  Future<AiResponse> getChatCompletionWithTools(
+    List<Map<String, dynamic>> messages, {
+    String? systemPrompt,
+    List<Map<String, dynamic>>? tools,
+  }) async {
+    return const AiResponse(content: 'Fake tool response');
+  }
 }
