@@ -290,7 +290,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                 Expanded(
                   child: TextField(
                     controller: _textController,
-                    enabled: canSend,
+                    enabled: canSend && !_isSending,
                     decoration: InputDecoration(
                       hintText: canSend ? l10n.chatHint : 'Limite de mensagens atingido',
                       border: OutlineInputBorder(
@@ -298,12 +298,12 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                         borderSide: BorderSide.none,
                       ),
                       filled: true,
-                      fillColor: canSend
-                          ? Colors.grey.withValues(alpha: 0.1)
-                          : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
+                      fillColor: !canSend
+                          ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3)
+                          : Colors.grey.withValues(alpha: 0.1),
                       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    onSubmitted: canSend ? (_) => _sendMessage() : null,
+                    onSubmitted: canSend && !_isSending ? (_) => _sendMessage() : null,
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -311,13 +311,22 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                   backgroundColor: canSend
                       ? theme.colorScheme.primary
                       : theme.colorScheme.surfaceContainerHighest,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.send,
-                      color: canSend ? Colors.white : theme.colorScheme.onSurfaceVariant,
-                    ),
-                    onPressed: canSend && !_isSending ? _sendMessage : null,
-                  ),
+                  child: _isSending
+                      ? const SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          ),
+                        )
+                      : IconButton(
+                          icon: Icon(
+                            Icons.send,
+                            color: canSend ? Colors.white : theme.colorScheme.onSurfaceVariant,
+                          ),
+                          onPressed: canSend ? _sendMessage : null,
+                        ),
                 ),
               ],
             ),

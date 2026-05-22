@@ -66,13 +66,10 @@ class OpenCodeGoService implements AiService {
     final body = jsonDecode(response.body) as Map<String, dynamic>;
     final choice = (body['choices'] as List?)?.firstOrNull;
     final content = (choice?['message']?['content'] as String?) ?? '';
-    final reasoningContent = (choice?['message']?['reasoning_content'] as String?) ?? '';
 
     return ChatMessage(
       role: 'assistant',
-      content: reasoningContent.isNotEmpty && content.isEmpty
-          ? reasoningContent
-          : content,
+      content: content,
     );
   }
 
@@ -194,9 +191,7 @@ class OpenCodeGoService implements AiService {
 
     final content = message['content'] as String?;
     final reasoningContent = message['reasoning_content'] as String?;
-    final responseText = reasoningContent != null && reasoningContent.isNotEmpty && (content == null || content.isEmpty)
-        ? reasoningContent
-        : content;
+    final responseText = content ?? '';
 
     final rawToolCalls = message['tool_calls'] as List<dynamic>?;
     if (rawToolCalls != null && rawToolCalls.isNotEmpty) {

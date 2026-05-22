@@ -257,6 +257,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                 Expanded(
                   child: TextField(
                     controller: _textController,
+                    enabled: !_isSending,
                     decoration: InputDecoration(
                       hintText: l10n.chatHint,
                       border: OutlineInputBorder(
@@ -267,16 +268,25 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                       fillColor: Colors.grey.withValues(alpha: 0.1),
                       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    onSubmitted: (_) => _sendMessage(),
+                    onSubmitted: !_isSending ? (_) => _sendMessage() : null,
                   ),
                 ),
                 const SizedBox(width: 8),
                 CircleAvatar(
                   backgroundColor: theme.colorScheme.primary,
-                  child: IconButton(
-                    icon: const Icon(Icons.send, color: Colors.white),
-                    onPressed: _sendMessage,
-                  ),
+                  child: _isSending
+                      ? const SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          ),
+                        )
+                      : IconButton(
+                          icon: const Icon(Icons.send, color: Colors.white),
+                          onPressed: _sendMessage,
+                        ),
                 ),
               ],
             ),
