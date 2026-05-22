@@ -214,7 +214,27 @@ class ChatSession extends _$ChatSession {
           }
         }
       case 'organize':
-        break;
+        final listId = this.listId;
+        if (listId == null) {
+          return;
+        }
+        final items = ref.read(shoppingListItemsProvider(listId)).valueOrNull ?? [];
+        if (items.isEmpty) {
+          return;
+        }
+        final categoryOrder = {
+          Category.fruits: 0,
+          Category.cleaning: 1,
+          Category.beverages: 2,
+          Category.bakery: 3,
+          Category.others: 4,
+        };
+        final sorted = List<ShoppingItem>.from(items)
+          ..sort((a, b) => categoryOrder[a.category]!
+              .compareTo(categoryOrder[b.category]!));
+        await ref
+            .read(shoppingListItemsProvider(listId).notifier)
+            .updateItems(sorted);
     }
   }
 

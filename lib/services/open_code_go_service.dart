@@ -54,7 +54,7 @@ class OpenCodeGoService implements AiService {
         'model': model,
         'messages': messages,
       }),
-    );
+    ).timeout(const Duration(seconds: 30));
 
     if (response.statusCode != 200) {
       return ChatMessage(
@@ -95,7 +95,11 @@ class OpenCodeGoService implements AiService {
     http.StreamedResponse response;
 
     try {
-      response = await client.send(request);
+      response = await client.send(request).timeout(const Duration(seconds: 30));
+    } on TimeoutException {
+      client.close();
+      yield 'Desculpe, a requisição excedeu o tempo limite.';
+      return;
     } on Exception {
       client.close();
       yield 'Desculpe, ocorreu um erro de conexão.';
@@ -168,7 +172,7 @@ class OpenCodeGoService implements AiService {
       Uri.parse(_baseUrl),
       headers: _headers(),
       body: jsonEncode(body),
-    );
+    ).timeout(const Duration(seconds: 30));
 
     if (response.statusCode != 200) {
       debugPrint('[OpenCodeGo] API error ${response.statusCode}: ${response.body}');
