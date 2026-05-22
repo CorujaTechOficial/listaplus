@@ -365,7 +365,7 @@ class ToolExecutor {
         final item = items.where((i) => i.id == itemId).first;
         return ToolResult(
           toolCallId: '',
-          content: 'Item "${item.name}" marcado como ${item.isPurchased ? "não comprado" : "comprado"}.',
+          content: 'Item "${item.name}" marcado como ${item.isPurchased ? "comprado" : "não comprado"}.',
         );
       }
     }
