@@ -12,16 +12,14 @@
   `$rc_monthly` R$14.90, `$rc_annual` R$99.90, `$rc_lifetime` R$299.90). AdMob (banner + rewarded).
 - **Premium gating**: `premiumProvider` — max 3 lists free, unlimited premium. Premium also unlocks custom themes
   (7/10 premium), monthly budget, backup export, share by code.
-- **AI Chat**: Kilo AI Gateway (`api.kilo.ai`) via `dart_openai`. Requires `KILO_API_KEY` passed as
-  `--dart-define=KILO_API_KEY=xxx`. Chat sessions persisted in Firestore `chat_messages` subcollection.
-- **Agent de Controle Total**: O chat de IA agora é um **agente com tool calling** (function calling).
+- **AI Chat**: Chat com tool calling via `lib/agent/`. Sessões persistidas no Firestore (`chat_messages` subcollection).
+- **Agent de Controle Total**: O chat de IA é um **agente com tool calling** (function calling).
   Ele pode executar ações diretamente no app via `lib/agent/`:
   - `tool.dart`: Definições de 34+ ferramentas (listas, itens, despensa, orçamento, compartilhar, config, backup)
   - `tool_executor.dart`: Bridge entre AI e providers — executa cada tool contra o Riverpod real
   - `chat_provider.dart`: Loop agente (`_agentLoop`) — chama AI → executa tools → repete até resposta final
   - `AiService.getChatCompletionWithTools()`: Método que aceita `tools` no request e retorna `tool_calls`
-  - Ambos `OpenCodeGoService` e `KiloAiService` implementam o suporte a tools
-  - DeepSeek-v4-flash (OpenCodeGo) tem suporte nativo a function calling; Kilo AI (kilo-auto/free) pode não suportar
+  - `OpenCodeGoService` implementa suporte a tools (DeepSeek-v4-flash com function calling nativo)
 - **RevenueCat**: API key via `--dart-define=REVENUECAT_API_KEY=xxx` (default fallback `goog_lUoZUpDVyhVroFRzwgArMnFxIQv`).
 - **Observability**: Sentry + Firebase Crashlytics (dual). `SentryFlutter.init` wraps `appRunner`;
   `FlutterError.onError` + `PlatformDispatcher.onError` send to both. Sentry: `tracesSampleRate: 0.2`,

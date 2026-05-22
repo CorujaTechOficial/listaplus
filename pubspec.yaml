@@ -58,7 +58,6 @@ dependencies:
   flutter_svg: ^2.2.2
   google_fonts: ^6.3.2
   google_mobile_ads: ^5.1.0
-  dart_openai: ^5.1.0
   in_app_update: ^4.2.5
   rxdart: ^0.28.0
   confetti: ^0.8.0
