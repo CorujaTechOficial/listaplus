@@ -9,6 +9,7 @@ import '../providers/current_list_provider.dart';
 import '../providers/dark_mode_provider.dart';
 import '../providers/monthly_budget_provider.dart';
 import '../providers/pantry_items_provider.dart';
+import '../providers/premium_provider.dart';
 import '../providers/share_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/shopping_lists_provider.dart';
@@ -20,6 +21,17 @@ class ToolExecutor {
   final Ref _ref;
 
   Future<ToolResult> execute(AgentToolCall call) async {
+    if (AgentTools.premiumToolNames.contains(call.name)) {
+      final isPremium = _ref.read(premiumProvider).value ?? false;
+      if (!isPremium) {
+        return ToolResult(
+          toolCallId: call.id,
+          content: 'Esta funcionalidade requer assinatura Premium.',
+          success: false,
+        );
+      }
+    }
+
     try {
       switch (call.name) {
         // --- List tools ---

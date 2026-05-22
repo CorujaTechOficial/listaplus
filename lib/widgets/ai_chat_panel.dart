@@ -69,10 +69,10 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     _textController.clear();
 
     try {
+      await ref.read(chatSessionProvider(widget.listId).notifier).sendMessage(text);
       if (!isPremium) {
         await ref.read(aiUsageStateProvider.notifier).recordMessage();
       }
-      await ref.read(chatSessionProvider(widget.listId).notifier).sendMessage(text);
       _scrollToBottom();
     } finally {
       if (mounted) {

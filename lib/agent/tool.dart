@@ -113,6 +113,15 @@ class ToolResult {
 }
 
 class AgentTools {
+  static const Set<String> premiumToolNames = {
+    'get_budget',
+    'set_budget',
+    'create_share_code',
+    'import_shared_list',
+    'export_backup',
+    'import_backup',
+  };
+
   static List<AgentTool> get all => [
         ..._listTools,
         ..._itemTools,
