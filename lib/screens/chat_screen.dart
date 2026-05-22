@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/chat_message.dart';
 import '../providers/chat_provider.dart';
 import '../providers/premium_provider.dart';
@@ -339,13 +341,86 @@ class ChatBubble extends StatelessWidget {
             bottomRight: Radius.circular(isUser ? 0 : 16),
           ),
         ),
-        child: Text(
-          message.content,
-          style: TextStyle(
-            color: isUser ? Colors.white : null,
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (isUser)
+              _UserMarkdownContent(content: message.content)
+            else
+              _AiMarkdownContent(content: message.content),
+          ],
         ),
       ),
+    );
+  }
+}
+
+class _UserMarkdownContent extends StatelessWidget {
+  const _UserMarkdownContent({required this.content});
+
+  final String content;
+
+  @override
+  Widget build(BuildContext context) {
+    final style = MarkdownStyleSheet(
+      a: const TextStyle(color: Colors.white70, decoration: TextDecoration.underline),
+      p: const TextStyle(color: Colors.white),
+      code: TextStyle(
+        fontFamily: 'monospace',
+        fontSize: 13,
+        color: Colors.white,
+        backgroundColor: Colors.white.withValues(alpha: 0.15),
+      ),
+      h1: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+      h2: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+      h3: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16),
+      em: const TextStyle(fontStyle: FontStyle.italic, color: Colors.white),
+      strong: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+      listBullet: const TextStyle(color: Colors.white),
+      codeblockDecoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      horizontalRuleDecoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(color: Colors.white.withValues(alpha: 0.3)),
+        ),
+      ),
+    );
+    return MarkdownBody(
+      data: content,
+      styleSheet: style,
+      onTapLink: (text, href, title) {
+        if (href != null) {
+          launchUrl(Uri.parse(href));
+        }
+      },
+    );
+  }
+}
+
+class _AiMarkdownContent extends StatelessWidget {
+  const _AiMarkdownContent({required this.content});
+
+  final String content;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = MarkdownStyleSheet.fromTheme(theme).copyWith(
+      codeblockDecoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(6),
+      ),
+    );
+    return MarkdownBody(
+      data: content,
+      styleSheet: style,
+      onTapLink: (text, href, title) {
+        if (href != null) {
+          launchUrl(Uri.parse(href));
+        }
+      },
     );
   }
 }

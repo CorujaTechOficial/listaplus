@@ -87,19 +87,9 @@ class ChatSession extends _$ChatSession {
           'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
     }
 
-    var assistantMessage = ChatMessage(role: 'assistant', content: '');
+    final assistantMessage = ChatMessage(role: 'assistant', content: finalText);
 
     state = AsyncValue.data([...state.value ?? [], assistantMessage]);
-
-    assistantMessage = assistantMessage.copyWith(content: finalText);
-
-    final currentSafeHistory = state.value ?? [];
-    state = AsyncValue.data(
-      currentSafeHistory
-          .map(
-              (msg) => msg.id == assistantMessage.id ? assistantMessage : msg)
-          .toList(),
-    );
 
     try {
       await firestoreService.saveChatMessage(listId, assistantMessage);
