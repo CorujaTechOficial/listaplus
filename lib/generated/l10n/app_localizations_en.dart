@@ -39,6 +39,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get edit => 'Edit';
 
   @override
+  String get copy => 'Copy';
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get regenerate => 'Regenerate';
+
+  @override
+  String get copiedToClipboard => 'Copied to clipboard';
+
+  @override
   String get confirm => 'Confirm';
 
   @override
@@ -77,6 +89,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fieldRequired => 'Required field';
+
+  @override
+  String get addedFeedback => 'Added!';
 
   @override
   String selectedItems(int count) {
@@ -823,10 +838,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quickRecipe => 'Quick recipe';
 
   @override
+  String get quickRecipePrompt => 'Suggest recipes with items from my list.';
+
+  @override
   String get economyTips => 'Economy tips';
 
   @override
+  String get economyTipsPrompt => 'How can I save money on this purchase?';
+
+  @override
   String get organizeAisles => 'Organize by aisles';
+
+  @override
+  String get organizeAislesPrompt => 'Organize by market aisles.';
 
   @override
   String get recipeSuggestion => 'Recipe suggestion';

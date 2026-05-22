@@ -193,4 +193,19 @@
 - Firebase rules: `sharedLists/{code}` agora só `create`, não `update`/`delete`
 - `shared_preferences` mantido (ainda usado por 4 providers)
 - CI: Flutter pinado em `3.29.3`, job Android adicionado
-- `purchases_flutter` e `purchases_ui_flutter` alinhados em `^9.16.1`
+- `purchases_flutter` e `purchases_ui_flutter` alinhadas em `^9.16.1`
+
+## Sessão 8 — UX, Gamificação e Monetização (Teaser Effect)
+
+- [x] **#124** — **Efeito Teaser (Blurry Paywall)**: Implementado `isTeaser` no `ChatMessage`. Se o usuário não tem créditos, o assistente gera uma resposta fictícia com `ShaderMask` (fade/blur) e botão "Desbloquear Resposta Completa".
+- [x] **#125** — **Gamificação (Barra de Energia)**: `_LowCreditsBanner` removido e substituído por uma barra de "Energia da IA" discreta no `_HeaderRow`. Cores dinâmicas (Verde > 5, Amarelo 3-5, Laranja 1-2).
+- [x] **#126** — **Paywall Animado**: Adicionado efeito de brilho animado (`Shimmer`) ao banner de paywall no chat para aumentar a taxa de conversão visual.
+- [x] **#127** — **Input Sempre Ativo**: Campo de texto do chat não é mais bloqueado quando os créditos acabam, permitindo que o usuário experimente o "Teaser" e sinta o valor da IA.
+- [x] **#128** — **Teste de Integração**: Criado `test/widgets/teaser_test.dart` para validar a barra de energia e o comportamento do teaser.
+
+- [x] **#130** — `ai_chat_panel.dart` refatorado com `HapticFeedback` em todos os botões de ação e streaming "glued".
+- [x] **#131** — **Atalhos Dinâmicos**: Implementado `_getDynamicShortcuts` que analisa itens da lista (ex: carne + carvão = churrasco) para sugerir prompts contextuais.
+- [x] **#132** — **Feedback de Ação**: Criado `_ActionButton` stateful que muda para "Adicionados!" com ícone verde por 2 segundos após clique em ações da IA.
+- [x] **#133** — Adicionado `addedFeedback` ao `app_pt_BR.arb`, `app_pt.arb` e `app_en.arb`.
+- [x] **#134** — **Efeito Backdrop (Foco)**: `AiHomeScreen` refatorada com `Stack` e `BackdropFilter` (blur/dim) quando a lista de compras está expandida, melhorando o foco visual.
+- [x] **#135** — **Modernização de Bubbles**: Bolhas da IA agora possuem borda com gradiente sutil e um ícone `Icons.auto_awesome` animado e destacado no topo do balão.

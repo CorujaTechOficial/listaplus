@@ -280,6 +280,11 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Future<void> deleteChatMessage(String? listId, String messageId) async {
+    _chatMessages[listId]?.removeWhere((m) => m.id == messageId);
+  }
+
+  @override
   Future<void> clearChatHistory(String? listId) async {
     _chatMessages[listId]?.clear();
   }

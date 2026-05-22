@@ -1,5 +1,7 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../models/shopping_item.dart';
 import '../providers/chat_provider.dart';
 import '../providers/current_list_provider.dart';
@@ -10,6 +12,7 @@ import '../theme/tokens.dart';
 import '../widgets/ai_chat_panel.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/create_list_dialog.dart';
+import '../widgets/shopping_item_tile.dart';
 
 class AiHomeScreen extends ConsumerStatefulWidget {
   const AiHomeScreen({super.key});
@@ -20,6 +23,7 @@ class AiHomeScreen extends ConsumerStatefulWidget {
 
 class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   bool _listExpanded = false;
+  bool _isMarketMode = false;
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +107,11 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
         title: Text(listName ?? 'Lista de Compras'),
         actions: [
           IconButton(
+            icon: Icon(_isMarketMode ? Icons.chat_bubble_outline : Icons.shopping_basket),
+            onPressed: () => setState(() => _isMarketMode = !_isMarketMode),
+            tooltip: _isMarketMode ? 'Voltar para o Chat' : 'Modo Mercado',
+          ),
+          IconButton(
             icon: const Icon(Icons.delete_sweep),
             onPressed: () {
               ref.read(chatSessionProvider(listId).notifier).clearHistory();
@@ -113,23 +122,54 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
       ),
       body: Stack(
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: _listExpanded ? 220 : 60),
-            child: AiChatPanel(
+          if (_isMarketMode)
+            _CompactListCard(
               listId: listId,
-              listName: listName,
-            ),
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: _CompactListCard(
               items: items,
-              expanded: _listExpanded,
-              onToggle: () => setState(() => _listExpanded = !_listExpanded),
+              expanded: true,
+              isMarketMode: true,
+              onToggle: () => setState(() => _isMarketMode = false),
+            )
+          else ...[
+            // Chat Panel is the main background
+            Positioned.fill(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: AiChatPanel(
+                  listId: listId,
+                  listName: listName,
+                ),
+              ),
             ),
-          ),
+            
+            // Backdrop blur when list is expanded
+            if (_listExpanded)
+              Positioned.fill(
+                child: GestureDetector(
+                  onTap: () => setState(() => _listExpanded = false),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+                    child: Container(
+                      color: Colors.black.withValues(alpha: 0.3),
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 200.ms),
+
+            // Shopping List Card at the top
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: _CompactListCard(
+                listId: listId,
+                items: items,
+                expanded: _listExpanded,
+                isMarketMode: false,
+                onToggle: () => setState(() => _listExpanded = !_listExpanded),
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -138,13 +178,17 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
 
 class _CompactListCard extends StatelessWidget {
   const _CompactListCard({
+    required this.listId,
     required this.items,
     required this.expanded,
+    required this.isMarketMode,
     required this.onToggle,
   });
 
+  final String listId;
   final List<ShoppingItem> items;
   final bool expanded;
+  final bool isMarketMode;
   final VoidCallback onToggle;
 
   @override
@@ -152,181 +196,205 @@ class _CompactListCard extends StatelessWidget {
     final theme = Theme.of(context);
     final purchased = items.where((i) => i.isPurchased).length;
     final total = items.length;
+    final allPurchased = total > 0 && purchased == total;
 
-    return GestureDetector(
-      onTap: onToggle,
-      child: AnimatedContainer(
-        duration: DurationTokens.fast,
-        curve: Curves.easeOut,
-        margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, 0),
-        padding: const EdgeInsets.all(Spacing.sm),
-        decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(RadiusTokens.lg),
-          border: Border.all(
-            color: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+    return AnimatedSize(
+      duration: DurationTokens.normal,
+      curve: Curves.easeInOut,
+      child: GestureDetector(
+        onTap: isMarketMode ? null : onToggle,
+        child: Container(
+          width: double.infinity,
+          margin: EdgeInsets.fromLTRB(
+            isMarketMode ? 0 : Spacing.md,
+            isMarketMode ? 0 : Spacing.sm,
+            isMarketMode ? 0 : Spacing.md,
+            isMarketMode ? 0 : Spacing.xs,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.06),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.primaryContainer,
-                    borderRadius: BorderRadius.circular(RadiusTokens.sm),
+          padding: const EdgeInsets.all(Spacing.sm),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surfaceContainerLow,
+            borderRadius: BorderRadius.circular(isMarketMode ? 0 : RadiusTokens.lg),
+            border: isMarketMode
+                ? null
+                : Border.all(
+                    color: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
                   ),
-                  child: Icon(
-                    Icons.shopping_cart,
-                    size: 16,
-                    color: theme.colorScheme.onPrimaryContainer,
-                  ),
-                ),
-                const SizedBox(width: Spacing.sm),
-                Text(
-                  'Lista de Compras',
-                  style: theme.textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const Spacer(),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.secondaryContainer,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Text(
-                    '$purchased/$total',
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: theme.colorScheme.onSecondaryContainer,
+            boxShadow: isMarketMode
+                ? null
+                : [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.06),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
                     ),
-                  ),
-                ),
-                const SizedBox(width: Spacing.xs),
-                AnimatedRotation(
-                  turns: expanded ? 0.5 : 0,
-                  duration: DurationTokens.fast,
-                  child: Icon(
-                    Icons.expand_more,
-                    size: 20,
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
-            ),
-            // Expanded list
-            AnimatedCrossFade(
-              firstChild: const SizedBox.shrink(),
-              secondChild: items.isEmpty
-                  ? Padding(
-                      padding: const EdgeInsets.only(top: Spacing.sm),
+                  ],
+          ),
+          child: Column(
+            mainAxisSize: isMarketMode ? MainAxisSize.max : MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Header
+              if (!isMarketMode)
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.primaryContainer,
+                        borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                      ),
+                      child: Icon(
+                        Icons.shopping_cart,
+                        size: 16,
+                        color: theme.colorScheme.onPrimaryContainer,
+                      ),
+                    ),
+                    const SizedBox(width: Spacing.sm),
+                    Text(
+                      'Lista de Compras',
+                      style: theme.textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.secondaryContainer,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                       child: Text(
-                        'Nenhum item na lista',
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
+                        '$purchased/$total',
+                        style: theme.textTheme.labelSmall?.copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: theme.colorScheme.onSecondaryContainer,
                         ),
                       ),
-                    )
-                  : ConstrainedBox(
-                      constraints: const BoxConstraints(maxHeight: 160),
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        padding: const EdgeInsets.only(top: Spacing.sm),
-                        itemCount: items.length,
-                        itemBuilder: (context, index) {
-                          final item = items[index];
-                          final isLast = index == items.length - 1;
-                          return _CompactItemRow(
-                            item: item,
-                            showDivider: !isLast,
-                          );
-                        },
+                    ),
+                    const SizedBox(width: Spacing.xs),
+                    AnimatedRotation(
+                      turns: expanded ? 0.5 : 0,
+                      duration: DurationTokens.fast,
+                      child: Icon(
+                        Icons.expand_more,
+                        size: 20,
+                        color: theme.colorScheme.onSurfaceVariant,
                       ),
                     ),
-              crossFadeState: expanded
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
-              duration: DurationTokens.fast,
-            ),
-          ],
+                  ],
+                ),
+              if (isMarketMode)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: Spacing.sm, horizontal: Spacing.md),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Modo Mercado',
+                                  style: theme.textTheme.headlineSmall?.copyWith(
+                                    fontWeight: FontWeight.w900,
+                                    color: theme.colorScheme.primary,
+                                  ),
+                                ),
+                                Text(
+                                  '$purchased de $total itens comprados',
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    color: theme.colorScheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          if (allPurchased)
+                            const Icon(Icons.check_circle, color: Colors.green, size: 32)
+                                .animate()
+                                .scale(duration: 400.ms, curve: Curves.easeOutBack),
+                        ],
+                      ),
+                      const SizedBox(height: Spacing.sm),
+                      LinearProgressIndicator(
+                        value: total > 0 ? purchased / total : 0,
+                        borderRadius: BorderRadius.circular(RadiusTokens.full),
+                        minHeight: 10,
+                        backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                      ),
+                    ],
+                  ),
+                ),
+              // Expanded list
+              if (expanded)
+                items.isEmpty
+                    ? Padding(
+                        padding: const EdgeInsets.all(Spacing.lg),
+                        child: Center(
+                          child: Text(
+                            'Nenhum item na lista',
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      )
+                    : isMarketMode
+                        ? Expanded(
+                            child: ListView.builder(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: Spacing.md,
+                                horizontal: Spacing.sm,
+                              ),
+                              itemCount: items.length,
+                              itemBuilder: (context, index) {
+                                final item = items[index];
+                                return ShoppingItemTile(
+                                  listId: listId,
+                                  item: item,
+                                  viewMode: ShoppingItemViewMode.market,
+                                );
+                              },
+                            ),
+                          )
+                        : ConstrainedBox(
+                            constraints: const BoxConstraints(maxHeight: 200),
+                            child: ListView.builder(
+                              shrinkWrap: true,
+                              padding: const EdgeInsets.symmetric(vertical: Spacing.xs),
+                              itemCount: items.length,
+                              itemBuilder: (context, index) {
+                                final item = items[index];
+                                return ShoppingItemTile(
+                                  listId: listId,
+                                  item: item,
+                                  viewMode: ShoppingItemViewMode.compact,
+                                );
+                              },
+                            ),
+                          ),
+              if (isMarketMode && allPurchased)
+                Padding(
+                  padding: const EdgeInsets.all(Spacing.md),
+                  child: FilledButton.icon(
+                    onPressed: () => onToggle(), // Effectively exits market mode
+                    icon: const Icon(Icons.done_all),
+                    label: const Text('Concluir Compras'),
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 54),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(RadiusTokens.md),
+                      ),
+                    ),
+                  ),
+                ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
+            ],
+          ),
         ),
       ),
-    );
-  }
-}
-
-class _CompactItemRow extends StatelessWidget {
-  const _CompactItemRow({
-    required this.item,
-    this.showDivider = true,
-  });
-
-  final ShoppingItem item;
-  final bool showDivider;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Row(
-          children: [
-            Icon(
-              item.isPurchased
-                  ? Icons.check_circle
-                  : Icons.radio_button_unchecked,
-              size: 16,
-              color: item.isPurchased
-                  ? theme.colorScheme.primary
-                  : theme.colorScheme.onSurfaceVariant,
-            ),
-            const SizedBox(width: Spacing.sm),
-            Expanded(
-              child: Text(
-                item.name,
-                style: theme.textTheme.bodySmall?.copyWith(
-                  decoration: item.isPurchased
-                      ? TextDecoration.lineThrough
-                      : null,
-                  color: item.isPurchased
-                      ? theme.colorScheme.onSurfaceVariant
-                      : theme.colorScheme.onSurface,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Text(
-              '${item.quantity} ${item.unit.label}',
-              style: theme.textTheme.labelSmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
-        if (showDivider)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            child: Divider(
-              height: 1,
-              color: theme.colorScheme.outlineVariant.withValues(alpha: 0.2),
-            ),
-          ),
-      ],
     );
   }
 }

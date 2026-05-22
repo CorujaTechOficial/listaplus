@@ -5,8 +5,8 @@ import '../services/open_code_go_service.dart';
 import 'api_key_provider.dart';
 
 final aiServiceProvider = Provider<AiService>((ref) {
-  final apiKeyAsync = ref.watch(runtimeApiKeyProvider);
-  final apiKey = apiKeyAsync.valueOrNull ?? '';
-  return OpenCodeGoService(apiKey: apiKey);
+  return OpenCodeGoService(
+    getApiKey: () => ref.read(runtimeApiKeyProvider.future),
+  );
 });
 // coverage:ignore-end

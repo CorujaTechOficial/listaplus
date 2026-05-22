@@ -76,11 +76,18 @@ class FakeRevenueCatService implements RevenueCatService {
     ];
   }
 
+  void notifyListeners(CustomerInfo info) {
+    for (final listener in _listeners) {
+      listener(info);
+    }
+  }
+
   @override
   Future<CustomerInfo> purchasePackage(PaywallPackage package) async {
     _isPremium = true;
-    // Return a subclass/fake of CustomerInfo since it doesn't have a public default constructor.
-    return _FakeCustomerInfo();
+    final info = _FakeCustomerInfo();
+    notifyListeners(info);
+    return info;
   }
 }
 

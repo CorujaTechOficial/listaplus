@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -99,6 +100,15 @@ Future<UserCredential> _signInWithRetry() async {
 }
 
 Future<void> _runApp() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.transparent,
+      statusBarColor: Colors.transparent,
+    ),
+  );
+
   FlutterError.onError = (details) {
     Sentry.captureException(details.exception, stackTrace: details.stack);
     FirebaseCrashlytics.instance.recordFlutterFatalError(details);
@@ -320,9 +330,9 @@ class _MainShellState extends ConsumerState<MainShell> {
       body: IndexedStack(
         index: _currentTab,
         children: const [
-          ListLoader(),
-          PantryScreen(),
           AiHomeScreen(),
+          PantryScreen(),
+          ListLoader(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
@@ -330,9 +340,9 @@ class _MainShellState extends ConsumerState<MainShell> {
         onDestinationSelected: (index) => setState(() => _currentTab = index),
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.list_alt_outlined),
-            selectedIcon: Icon(Icons.list_alt),
-            label: 'Listas',
+            icon: Icon(Icons.auto_awesome_outlined),
+            selectedIcon: Icon(Icons.auto_awesome),
+            label: 'Assistente',
           ),
           NavigationDestination(
             icon: Icon(Icons.inventory_2_outlined),
@@ -340,9 +350,9 @@ class _MainShellState extends ConsumerState<MainShell> {
             label: 'Dispensa',
           ),
           NavigationDestination(
-            icon: Icon(Icons.auto_awesome_outlined),
-            selectedIcon: Icon(Icons.auto_awesome),
-            label: 'Assistente',
+            icon: Icon(Icons.list_alt_outlined),
+            selectedIcon: Icon(Icons.list_alt),
+            label: 'Listas',
           ),
         ],
       ),

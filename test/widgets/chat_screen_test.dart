@@ -46,9 +46,9 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      expect(find.text('Minha Lista'), findsOneWidget);
+      expect(find.descendant(of: find.byType(AppBar), matching: find.text('Minha Lista')), findsOneWidget);
       expect(find.text('Como posso ajudar com sua lista?'), findsOneWidget);
-      expect(find.text('Sugestão de Receitas'), findsOneWidget);
+      expect(find.text('Receita rápida'), findsOneWidget);
     });
 
     testWidgets('sends a message', (tester) async {
@@ -101,7 +101,7 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Sugestão de Receitas'));
+      await tester.tap(find.text('Receita rápida'));
       await tester.pump();
       await tester.pumpAndSettle();
 

@@ -1,58 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import '../utils/test_utils.dart';
 
-class AnimatedTypingDots extends StatefulWidget {
+class AnimatedTypingDots extends StatelessWidget {
   const AnimatedTypingDots({super.key});
-
-  @override
-  State<AnimatedTypingDots> createState() => _AnimatedTypingDotsState();
-}
-
-class _AnimatedTypingDotsState extends State<AnimatedTypingDots>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(3, (i) {
-        return AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            final delay = i * 200;
-            final t = (_controller.value * 1200 - delay).clamp(0, 600) / 600;
-            final size = Tween<double>(begin: 5, end: 9).transform(
-              Curves.easeInOut.transform(t),
-            );
-            return Container(
-              width: size,
-              height: size,
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              decoration: BoxDecoration(
-                color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.7),
-                shape: BoxShape.circle,
-              ),
-            );
-          },
-        );
-      }),
+    final dotColor = theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.5);
+
+    return RepaintBoundary(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: List.generate(3, (i) {
+          return Container(
+            width: 6,
+            height: 6,
+            margin: const EdgeInsets.symmetric(horizontal: 2),
+            decoration: BoxDecoration(
+              color: dotColor,
+              shape: BoxShape.circle,
+            ),
+          ).animate(onPlay: (c) => isTestMode ? null : c.repeat()).scale(
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.3, 1.3),
+            duration: 600.ms,
+            delay: (i * 200).ms,
+            curve: Curves.easeInOut,
+          ).then().scale(
+            begin: const Offset(1.3, 1.3),
+            end: const Offset(0.8, 0.8),
+            duration: 600.ms,
+          );
+        }),
+      ),
     );
   }
 }

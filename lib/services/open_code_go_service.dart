@@ -9,19 +9,22 @@ import 'ai_service.dart';
 // coverage:ignore-start
 class OpenCodeGoService implements AiService {
   OpenCodeGoService({
-    required String apiKey,
+    required Future<String> Function() getApiKey,
     this.model = 'deepseek-v4-flash',
-  }) : _apiKey = apiKey;
+  }) : _getApiKey = getApiKey;
 
-  final String _apiKey;
+  final Future<String> Function() _getApiKey;
   final String model;
 
   static const _baseUrl = 'https://opencode.ai/zen/go/v1/chat/completions';
 
-  Map<String, String> _headers() => {
-        'Authorization': 'Bearer $_apiKey',
-        'Content-Type': 'application/json',
-      };
+  Future<Map<String, String>> _headers() async {
+    final apiKey = await _getApiKey();
+    return {
+      'Authorization': 'Bearer $apiKey',
+      'Content-Type': 'application/json',
+    };
+  }
 
   List<Map<String, dynamic>> _buildMessages(
     List<ChatMessage> history, {
@@ -49,7 +52,7 @@ class OpenCodeGoService implements AiService {
 
     final response = await http.post(
       Uri.parse(_baseUrl),
-      headers: _headers(),
+      headers: await _headers(),
       body: jsonEncode({
         'model': model,
         'messages': messages,
@@ -81,7 +84,7 @@ class OpenCodeGoService implements AiService {
     final messages = _buildMessages(history, systemPrompt: systemPrompt);
 
     final request = http.Request('POST', Uri.parse(_baseUrl))
-      ..headers.addAll(_headers())
+      ..headers.addAll(await _headers())
       ..body = jsonEncode({
         'model': model,
         'messages': messages,
@@ -149,6 +152,7 @@ class OpenCodeGoService implements AiService {
   Stream<String> getChatCompletionStreamWithTools(
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
+    List<Map<String, dynamic>>? tools,
   }) async* {
     final fullMessages = <Map<String, dynamic>>[];
     if (systemPrompt != null) {
@@ -161,9 +165,12 @@ class OpenCodeGoService implements AiService {
       'messages': fullMessages,
       'stream': true,
     };
+    if (tools != null && tools.isNotEmpty) {
+      body['tools'] = tools;
+    }
 
     final request = http.Request('POST', Uri.parse(_baseUrl))
-      ..headers.addAll(_headers())
+      ..headers.addAll(await _headers())
       ..body = jsonEncode(body);
 
     final client = http.Client();
@@ -242,7 +249,7 @@ class OpenCodeGoService implements AiService {
 
     final response = await http.post(
       Uri.parse(_baseUrl),
-      headers: _headers(),
+      headers: await _headers(),
       body: jsonEncode(body),
     ).timeout(const Duration(seconds: 30));
 

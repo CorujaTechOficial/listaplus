@@ -1,7 +1,20 @@
 import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/services/ai_service.dart';
+import 'dart:collection';
 
 class FakeAiService implements AiService {
+  final Queue<AiResponse> _responses = Queue<AiResponse>();
+  final List<String> _streamTokens = [];
+
+  void setNextResponse(AiResponse response) {
+    _responses.add(response);
+  }
+
+  void setStreamTokens(List<String> tokens) {
+    _streamTokens.clear();
+    _streamTokens.addAll(tokens);
+  }
+
   @override
   Future<ChatMessage> getChatCompletion(
     List<ChatMessage> history, {
@@ -29,6 +42,9 @@ class FakeAiService implements AiService {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
   }) async {
+    if (_responses.isNotEmpty) {
+      return _responses.removeFirst();
+    }
     return const AiResponse(content: 'Fake tool response');
   }
 
@@ -36,9 +52,16 @@ class FakeAiService implements AiService {
   Stream<String> getChatCompletionStreamWithTools(
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
+    List<Map<String, dynamic>>? tools,
   }) async* {
-    yield 'Fake ';
-    yield 'streamed ';
-    yield 'response';
+    if (_streamTokens.isNotEmpty) {
+      for (final token in _streamTokens) {
+        yield token;
+      }
+    } else {
+      yield 'Fake ';
+      yield 'streamed ';
+      yield 'response';
+    }
   }
 }

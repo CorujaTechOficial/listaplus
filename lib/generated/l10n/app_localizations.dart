@@ -156,6 +156,30 @@ abstract class AppLocalizations {
   /// **'Edit'**
   String get edit;
 
+  /// No description provided for @copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get copy;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// No description provided for @regenerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Regenerate'**
+  String get regenerate;
+
+  /// No description provided for @copiedToClipboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied to clipboard'**
+  String get copiedToClipboard;
+
   /// No description provided for @confirm.
   ///
   /// In en, this message translates to:
@@ -227,6 +251,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Required field'**
   String get fieldRequired;
+
+  /// No description provided for @addedFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Added!'**
+  String get addedFeedback;
 
   /// No description provided for @selectedItems.
   ///
@@ -1608,17 +1638,35 @@ abstract class AppLocalizations {
   /// **'Quick recipe'**
   String get quickRecipe;
 
+  /// No description provided for @quickRecipePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggest recipes with items from my list.'**
+  String get quickRecipePrompt;
+
   /// No description provided for @economyTips.
   ///
   /// In en, this message translates to:
   /// **'Economy tips'**
   String get economyTips;
 
+  /// No description provided for @economyTipsPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'How can I save money on this purchase?'**
+  String get economyTipsPrompt;
+
   /// No description provided for @organizeAisles.
   ///
   /// In en, this message translates to:
   /// **'Organize by aisles'**
   String get organizeAisles;
+
+  /// No description provided for @organizeAislesPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Organize by market aisles.'**
+  String get organizeAislesPrompt;
 
   /// No description provided for @recipeSuggestion.
   ///

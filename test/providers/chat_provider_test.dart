@@ -10,6 +10,7 @@ import '../helpers/fake_ai_service.dart';
 import '../helpers/fake_storage_backend.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   late ProviderContainer container;
   late FakeStorageBackend fakeStorage;
   late FakeAiService fakeAi;

@@ -25,7 +25,7 @@ class FirestoreService implements StorageBackend {
   static const _maxRetries = 5;
   static const _baseDelay = Duration(milliseconds: 500);
 
-  static bool _isTransientError(Object error) {
+  static bool isTransientError(Object error) {
     if (error is FirebaseException) {
       return error.code == 'unavailable' ||
           error.code == 'deadline-exceeded' ||
@@ -46,10 +46,11 @@ class FirestoreService implements StorageBackend {
         return await fn();
       } on Object catch (e) {
         attempt++;
-        LoggerService.error(e, message: 'Firestore._retry falhou (tentativa $attempt/$_maxRetries)${label != null ? " [$label]" : ""}');
-        if (attempt >= _maxRetries || !_isTransientError(e)) {
+        if (attempt >= _maxRetries || !isTransientError(e)) {
+          LoggerService.error(e, message: 'Firestore._retry falhou após $attempt tentativas${label != null ? " [$label]" : ""}');
           rethrow;
         }
+        LoggerService.log('Firestore._retry: tentativa $attempt/$_maxRetries falhou - $e${label != null ? " [$label]" : ""}', tag: 'FirestoreService');
         final delay = _baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
         LoggerService.log('Firestore._retry: tentativa $attempt, delay=${delay.inMilliseconds}ms (label=$label)', tag: 'FirestoreService');
@@ -70,7 +71,7 @@ class FirestoreService implements StorageBackend {
           },
           onError: (Object e) {
             attempt++;
-            if (attempt >= _maxRetries || !_isTransientError(e)) {
+            if (attempt >= _maxRetries || !isTransientError(e)) {
               controller.addError(e);
               return;
             }
@@ -587,10 +588,31 @@ class FirestoreService implements StorageBackend {
   Future<void> saveChatMessage(String? listId, ChatMessage message) async {
     return _retry(() async {
       final collection = listId != null
-          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          ? _db
+              .collection('users')
+              .doc(_uid)
+              .collection('lists')
+              .doc(listId)
+              .collection('chat_messages')
           : _db.collection('users').doc(_uid).collection('global_chat_messages');
-      
+
       await collection.doc(message.id).set(message.toJson());
+    });
+  }
+
+  @override
+  Future<void> deleteChatMessage(String? listId, String messageId) async {
+    return _retry(() async {
+      final collection = listId != null
+          ? _db
+              .collection('users')
+              .doc(_uid)
+              .collection('lists')
+              .doc(listId)
+              .collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+
+      await collection.doc(messageId).delete();
     });
   }
 

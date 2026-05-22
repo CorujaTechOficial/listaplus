@@ -39,6 +39,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get edit => 'Editar';
 
   @override
+  String get copy => 'Copiar';
+
+  @override
+  String get retry => 'Tentar novamente';
+
+  @override
+  String get regenerate => 'Regerar';
+
+  @override
+  String get copiedToClipboard => 'Copiado para a área de transferência';
+
+  @override
   String get confirm => 'Confirmar';
 
   @override
@@ -77,6 +89,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get fieldRequired => 'Campo obrigatório';
+
+  @override
+  String get addedFeedback => 'Adicionados!';
 
   @override
   String selectedItems(int count) {
@@ -823,10 +838,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quickRecipe => 'Receita rápida';
 
   @override
+  String get quickRecipePrompt => 'Sugira receitas com os itens da minha lista.';
+
+  @override
   String get economyTips => 'Dicas de economia';
 
   @override
+  String get economyTipsPrompt => 'Como economizar nesta compra?';
+
+  @override
   String get organizeAisles => 'Organizar por corredores';
+
+  @override
+  String get organizeAislesPrompt => 'Organize por corredores de mercado.';
 
   @override
   String get recipeSuggestion => 'Sugestão de receita';
@@ -878,6 +902,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get edit => 'Editar';
 
   @override
+  String get copy => 'Copiar';
+
+  @override
+  String get retry => 'Tentar novamente';
+
+  @override
+  String get regenerate => 'Regerar';
+
+  @override
+  String get copiedToClipboard => 'Copiado para a área de transferência';
+
+  @override
   String get confirm => 'Confirmar';
 
   @override
@@ -916,6 +952,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get fieldRequired => 'Campo obrigatório';
+
+  @override
+  String get addedFeedback => 'Adicionados!';
 
   @override
   String selectedItems(int count) {
@@ -1662,10 +1701,19 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get quickRecipe => 'Receita rápida';
 
   @override
+  String get quickRecipePrompt => 'Sugira receitas com os itens da minha lista.';
+
+  @override
   String get economyTips => 'Dicas de economia';
 
   @override
+  String get economyTipsPrompt => 'Como economizar nesta compra?';
+
+  @override
   String get organizeAisles => 'Organizar por corredores';
+
+  @override
+  String get organizeAislesPrompt => 'Organize por corredores de mercado.';
 
   @override
   String get recipeSuggestion => 'Sugestão de receita';

@@ -34,6 +34,10 @@ class ChatMessage {
     this.senderName,
     this.senderUid,
     this.actions,
+    this.suggestedReplies,
+    this.isError = false,
+    this.isTeaser = false,
+    this.feedback, // null = none, 1 = like, -1 = dislike
   })  : id = id ?? const Uuid().v4(),
         timestamp = timestamp ?? DateTime.now();
 
@@ -46,6 +50,10 @@ class ChatMessage {
       senderName: json['senderName'] as String?,
       senderUid: json['senderUid'] as String?,
       actions: json['actions'] as Map<String, dynamic>?,
+      suggestedReplies: (json['suggestedReplies'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      isError: json['isError'] as bool? ?? false,
+      isTeaser: json['isTeaser'] as bool? ?? false,
+      feedback: json['feedback'] as int?,
     );
   }
 
@@ -67,6 +75,10 @@ class ChatMessage {
   final String? senderName;
   final String? senderUid;
   final Map<String, dynamic>? actions;
+  final List<String>? suggestedReplies;
+  final bool isError;
+  final bool isTeaser;
+  final int? feedback;
 
   ChatMessage copyWith({
     String? id,
@@ -76,6 +88,10 @@ class ChatMessage {
     String? senderName,
     String? senderUid,
     Map<String, dynamic>? actions,
+    List<String>? suggestedReplies,
+    bool? isError,
+    bool? isTeaser,
+    int? feedback,
   }) {
     return ChatMessage(
       id: id ?? this.id,
@@ -85,6 +101,10 @@ class ChatMessage {
       senderName: senderName ?? this.senderName,
       senderUid: senderUid ?? this.senderUid,
       actions: actions ?? this.actions,
+      suggestedReplies: suggestedReplies ?? this.suggestedReplies,
+      isError: isError ?? this.isError,
+      isTeaser: isTeaser ?? this.isTeaser,
+      feedback: feedback ?? this.feedback,
     );
   }
 
@@ -97,6 +117,10 @@ class ChatMessage {
       if (senderName != null) 'senderName': senderName,
       if (senderUid != null) 'senderUid': senderUid,
       if (actions != null) 'actions': actions,
+      if (suggestedReplies != null) 'suggestedReplies': suggestedReplies,
+      'isError': isError,
+      'isTeaser': isTeaser,
+      if (feedback != null) 'feedback': feedback,
     };
   }
 }

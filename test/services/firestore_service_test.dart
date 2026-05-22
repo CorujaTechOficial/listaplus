@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/models/category.dart';
@@ -205,6 +208,52 @@ void main() {
       await service.setThemeMode('dark');
       final mode = await service.getThemeMode();
       expect(mode, 'dark');
+    });
+  });
+
+  group('FirestoreService retry e transient errors', () {
+    test('isTransientError retorna true para FirebaseException unavailable', () {
+      final error = FirebaseException(plugin: 'firestore', code: 'unavailable', message: 'Service unavailable');
+      expect(FirestoreService.isTransientError(error), isTrue);
+    });
+
+    test('isTransientError retorna true para FirebaseException deadline-exceeded', () {
+      final error = FirebaseException(plugin: 'firestore', code: 'deadline-exceeded', message: 'Timeout');
+      expect(FirestoreService.isTransientError(error), isTrue);
+    });
+
+    test('isTransientError retorna true para SocketException', () {
+      const error = SocketException('Connection refused');
+      expect(FirestoreService.isTransientError(error), isTrue);
+    });
+
+    test('isTransientError retorna true para HttpException', () {
+      // ignore: prefer_const_constructors
+      final error = HttpException('Connection closed');
+      expect(FirestoreService.isTransientError(error), isTrue);
+    });
+
+    test('isTransientError retorna true para TimeoutException', () {
+      final error = TimeoutException('Timed out');
+      expect(FirestoreService.isTransientError(error), isTrue);
+    });
+
+    test('isTransientError retorna false para FirebaseException permission-denied', () {
+      final error = FirebaseException(plugin: 'firestore', code: 'permission-denied', message: 'No permission');
+      expect(FirestoreService.isTransientError(error), isFalse);
+    });
+
+    test('isTransientError retorna false para Exception genérica', () {
+      final error = Exception('Something went wrong');
+      expect(FirestoreService.isTransientError(error), isFalse);
+    });
+
+    test('deleteList em documento inexistente não lança exceção', () async {
+      await service.deleteList('non-existent-id');
+    });
+
+    test('deleteItem em documento inexistente não lança exceção', () async {
+      await service.deleteItem('list-1', 'non-existent-item');
     });
   });
 }
