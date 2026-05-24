@@ -33,7 +33,7 @@ void main() {
     });
 
     test('toJson produces correct map', () {
-      final model = ShoppingListModel(id: '1', name: 'Test', budget: 50.0);
+      final model = ShoppingListModel(id: '1', name: 'Test', budget: 50);
       final json = model.toJson();
       expect(json['id'], '1');
       expect(json['name'], 'Test');

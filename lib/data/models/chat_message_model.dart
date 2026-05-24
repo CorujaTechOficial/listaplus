@@ -20,8 +20,12 @@ class ChatMessageModel {
   }
 
   static DateTime _parseDate(dynamic value) {
-    if (value == null) return DateTime.now();
-    if (value is DateTime) return value;
+    if (value == null) {
+      return DateTime.now();
+    }
+    if (value is DateTime) {
+      return value;
+    }
     return DateTime.tryParse(value.toString()) ?? DateTime.now();
   }
 
