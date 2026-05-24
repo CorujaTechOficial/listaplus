@@ -9,14 +9,16 @@ void main() {
       expect(Category.cleaning.name, 'cleaning');
       expect(Category.beverages.name, 'beverages');
       expect(Category.bakery.name, 'bakery');
+      expect(Category.meat.name, 'meat');
       expect(Category.others.name, 'others');
     });
 
-    test('localizedLabel returns correct string', () {
+    test('label returns correct string', () {
       expect(Category.fruits.label, 'Frutas');
       expect(Category.cleaning.label, 'Limpeza');
       expect(Category.beverages.label, 'Bebidas');
       expect(Category.bakery.label, 'Padaria');
+      expect(Category.meat.label, 'Carnes');
       expect(Category.others.label, 'Outros');
     });
 
