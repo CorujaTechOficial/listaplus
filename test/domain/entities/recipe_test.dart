@@ -19,5 +19,12 @@ void main() {
       expect(copy.description, 'Fácil');
       expect(copy.prepTime, 30);
     });
+
+    test('copyWith clears description with null', () {
+      final recipe = Recipe(id: '1', name: 'Bolo', description: 'Fácil', prepTime: 30);
+      final copy = recipe.copyWith(description: null, prepTime: null);
+      expect(copy.description, isNull);
+      expect(copy.prepTime, isNull);
+    });
   });
 }

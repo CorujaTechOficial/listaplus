@@ -18,5 +18,11 @@ void main() {
       expect(copy.mealType, 'lunch');
       expect(copy.recipeId, 'r1');
     });
+
+    test('copyWith clears mealType with null', () {
+      final plan = MealPlan(id: '1', recipeId: 'r1', date: DateTime(2026, 5, 25), mealType: 'lunch');
+      final copy = plan.copyWith(mealType: null);
+      expect(copy.mealType, isNull);
+    });
   });
 }
