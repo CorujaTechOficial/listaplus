@@ -1,8 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/auth_service.dart';
-
 // coverage:ignore-start
-final authServiceProvider = Provider<AuthService>((ref) {
-  return AuthService();
-});
+export 'package:shopping_list/core/providers/auth_provider.dart' show authServiceProvider;
 // coverage:ignore-end

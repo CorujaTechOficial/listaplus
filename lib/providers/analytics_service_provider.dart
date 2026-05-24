@@ -1,9 +1,3 @@
 // coverage:ignore-start
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/analytics_service.dart';
-
-final analyticsServiceProvider = Provider<AnalyticsService>((ref) {
-  return AnalyticsService(analytics: FirebaseAnalytics.instance);
-});
+export 'package:shopping_list/core/providers/analytics_provider.dart' show analyticsServiceProvider;
 // coverage:ignore-end
