@@ -25,5 +25,17 @@ void main() {
       expect(copy.id, '1');
       expect(copy.shoppingListId, 'list1');
     });
+
+    test('copyWith sets estimatedPrice', () {
+      final item = ShoppingItem(id: '1', shoppingListId: 'list1', name: 'Item');
+      final copy = item.copyWith(estimatedPrice: 10.0);
+      expect(copy.estimatedPrice, 10.0);
+    });
+
+    test('copyWith clears estimatedPrice with null', () {
+      final item = ShoppingItem(id: '1', shoppingListId: 'list1', name: 'Item', estimatedPrice: 10.0);
+      final copy = item.copyWith(estimatedPrice: null);
+      expect(copy.estimatedPrice, isNull);
+    });
   });
 }
