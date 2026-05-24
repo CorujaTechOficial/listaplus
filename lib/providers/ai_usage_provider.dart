@@ -17,7 +17,7 @@ class AiUsageState extends _$AiUsageState {
   }
 
   Future<void> recordMessage() async {
-    final current = state.valueOrNull ?? AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
+    final current = state.value ?? AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
     final updated = current.recordMessage();
     state = AsyncValue.data(updated);
     final service = ref.read(firestoreServiceProvider);
@@ -25,7 +25,7 @@ class AiUsageState extends _$AiUsageState {
   }
 
   bool canSend() {
-    final current = state.valueOrNull;
+    final current = state.value;
     if (current == null) {
       return true;
     }

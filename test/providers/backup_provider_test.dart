@@ -5,7 +5,6 @@ import 'package:shopping_list/providers/backup_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/models/category.dart';
 import '../helpers/fake_storage_backend.dart';
 
 void main() {
@@ -45,7 +44,7 @@ void main() {
         name: 'Banana',
         shoppingListId: list.id,
         quantity: 3,
-        category: Category.fruits,
+        categoryId: 'fruits',
       );
       await fakeBackend.saveItems([item]);
 
@@ -63,7 +62,7 @@ void main() {
         name: 'Arroz',
         shoppingListId: list.id,
         quantity: 2,
-        category: Category.others,
+        categoryId: 'others',
       );
       final exportJson = jsonEncode({
         'version': 1,
@@ -137,7 +136,7 @@ void main() {
         name: 'Item Original',
         shoppingListId: list.id,
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await fakeBackend.saveItems([item]);
 

@@ -7,10 +7,10 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../theme/tokens.dart';
-import '../models/category.dart';
 import '../models/unit.dart';
 import '../providers/shopping_list_provider.dart';
-import 'add_item_dialog.dart';
+import '../constants/common_products.dart';
+import 'styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class QuickAddBar extends ConsumerStatefulWidget {
@@ -23,23 +23,6 @@ class QuickAddBar extends ConsumerStatefulWidget {
 }
 
 class _QuickAddBarState extends ConsumerState<QuickAddBar> {
-  static const List<String> _commonProducts = [
-    'Abacaxi', 'Absorvente', 'Achocolatado', 'Açúcar', 'Água Sanitária', 'Alface',
-    'Alho', 'Amaciante', 'Amendoim', 'Arroz', 'Azeite', 'Azeitona', 'Bacon',
-    'Balas', 'Banana', 'Batata', 'Batata Palha', 'Biscoito', 'Bolacha', 'Bolo',
-    'Brócolis', 'Café', 'Carne', 'Cebola', 'Cenoura', 'Cerveja', 'Chá', 'Chocolate',
-    'Condicionador', 'Couve', 'Creme de Leite', 'Creme Dental', 'Desinfetante',
-    'Desodorante', 'Detergente', 'Ervilha', 'Esponja de Aço', 'Extrato de Tomate',
-    'Farinha de Mandioca', 'Farinha de Trigo', 'Feijão', 'Fósforo', 'Frango',
-    'Frios', 'Gelatina', 'Goma de Mascar', 'Hambúrguer', 'Hidratante', 'Iogurte',
-    'Leite', 'Leite Condensado', 'Limão', 'Linguiça', 'Macarrão', 'Maçã',
-    'Maionese', 'Mamão', 'Manteiga', 'Margarina', 'Manga', 'Melancia', 'Melão',
-    'Milho', 'Molho de Tomate', 'Mortadela', 'Óleo', 'Ovos', 'Pão', 'Papel Higiênico',
-    'Papel Toalha', 'Peixe', 'Pera', 'Pipoca', 'Pizza', 'Presunto', 'Queijo',
-    'Refrigerante', 'Sabão em Barra', 'Sabão em Pó', 'Sabonete', 'Salgadinho',
-    'Salsicha', 'Sal', 'Shampoo', 'Sorvete', 'Suco', 'Tomate', 'Uva', 'Vinagre',
-  ];
-
   final _focusNode = FocusNode();
   bool _isAdding = false;
   late stt.SpeechToText _speech;
@@ -125,7 +108,7 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
             listId: widget.listId,
             name: name,
             quantity: 1,
-            category: Category.others,
+            categoryId: 'others',
             unit: Unit.un,
           );
       controller.clear();
@@ -144,54 +127,50 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     final isDark = theme.brightness == Brightness.dark;
 
     return Container(
-      margin: EdgeInsets.fromLTRB(
-        Spacing.md,
-        0,
-        Spacing.md,
-        Spacing.md + MediaQuery.of(context).viewInsets.bottom,
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF232730) : Colors.white,
-        borderRadius: BorderRadius.circular(RadiusTokens.full),
+        color: theme.colorScheme.surface,
+        border: Border(
+          top: BorderSide(
+            color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
+            width: 1,
+          ),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+            color: Colors.black.withAlpha((0.05 * 255).toInt()),
+            blurRadius: 10,
+            offset: const Offset(0, -2),
           ),
         ],
-        border: Border.all(
-          color: isDark
-              ? theme.colorScheme.outlineVariant.withValues(alpha: 0.1)
-              : theme.colorScheme.outlineVariant.withValues(alpha: 0.2),
-          width: 1,
-        ),
       ),
       child: SafeArea(
         top: false,
-        child: Autocomplete<String>(
+        child: StyledAutocomplete(
           optionsBuilder: (textEditingValue) {
             if (textEditingValue.text.isEmpty) {
               return const Iterable<String>.empty();
             }
-            return _commonProducts.where((option) {
+            return commonProducts.where((option) {
               return option.toLowerCase().contains(textEditingValue.text.toLowerCase());
             });
-          },
-          onSelected: (selection) {
-            // Internal Autocomplete controller handles string update
           },
           fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
             return Row(
               children: [
-                const SizedBox(width: 8),
                 Expanded(
                   child: TextField(
                     controller: textEditingController,
                     focusNode: focusNode,
                     decoration: InputDecoration(
                       hintText: l10n.addItem,
+                      filled: true,
+                      fillColor: isDark ? const Color(0xFF232730) : Colors.grey.withAlpha((0.1 * 255).toInt()),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(24),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                       prefixIcon: Icon(
                         Icons.add_shopping_cart,
                         size: 20,
@@ -244,58 +223,32 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                           ),
                         ],
                       ),
-                      border: InputBorder.none,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 14),
                     ),
                     textInputAction: TextInputAction.send,
                     onSubmitted: (_) => _submit(textEditingController),
                     enabled: !_isAdding,
                   ),
                 ),
-                IconButton(
-                  onPressed: () => showDialog<void>(
-                    context: context,
-                    builder: (_) => AddItemDialog(listId: widget.listId),
-                  ),
-                  icon: const Icon(Icons.tune, size: 20),
-                  tooltip: l10n.addItem,
-                ),
-                const SizedBox(width: 4),
+                const SizedBox(width: 8),
                 GestureDetector(
                   onTap: _isAdding ? null : () => _submit(textEditingController),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      color: _isAdding ? theme.colorScheme.surfaceContainerHighest : theme.colorScheme.primary,
-                      shape: BoxShape.circle,
-                      boxShadow: _isAdding ? null : [
-                        BoxShadow(
-                          color: theme.colorScheme.primary.withValues(alpha: 0.3),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: _isAdding
-                          ? const SizedBox(
-                              width: 20,
-                              height: 20,
-                              child: CircularProgressIndicator(strokeWidth: 2.5, color: Colors.white),
-                            )
-                          : const Icon(Icons.arrow_upward, size: 22, color: Colors.white),
-                    ),
+                  child: CircleAvatar(
+                    backgroundColor: _isAdding ? theme.colorScheme.surfaceContainerHighest : theme.colorScheme.primary,
+                    child: _isAdding
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2.5, color: Colors.white),
+                          )
+                        : const Icon(Icons.arrow_upward, size: 22, color: Colors.white),
                   ),
                 ),
-                const SizedBox(width: 4),
               ],
             );
           },
         ),
       ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.5, end: 0, curve: Curves.easeOut);
+    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
   }
 }
 

@@ -7,7 +7,6 @@ import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
@@ -80,7 +79,7 @@ void main() {
         name: 'Feijão',
         shoppingListId: testList.id,
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await fakeBackend.saveItems([item]);
 

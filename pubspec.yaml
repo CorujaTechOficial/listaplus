@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.26+26
+version: 1.0.55+55
 
 environment:
   sdk: ^3.7.0
@@ -32,39 +32,41 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.20.2
 
   cupertino_icons: ^1.0.8
-  riverpod: ^2.4.9
-  flutter_riverpod: ^2.4.9
-  riverpod_annotation: ^2.3.3
+  riverpod: ^3.0.3
+  flutter_riverpod: ^3.0.3
+  riverpod_annotation: ^3.0.3
   shared_preferences: ^2.2.2
   uuid: ^4.0.0
-  share_plus: ^11.0.0
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+  share_plus: ^13.1.0
   url_launcher: ^6.3.2
-  firebase_core: ^3.12.1
-  firebase_remote_config: ^5.2.0
-  firebase_analytics: ^11.6.0
-  firebase_crashlytics: ^4.3.0
-  cloud_firestore: ^5.6.6
-  firebase_auth: ^5.5.2
-  google_sign_in: ^6.3.0
-  sign_in_with_apple: ^6.1.0
-  purchases_flutter: ^9.16.1
-  purchases_ui_flutter: ^9.16.1
+  firebase_core: ^4.9.0
+  firebase_remote_config: ^6.5.1
+  firebase_analytics: ^12.4.1
+  firebase_crashlytics: ^5.2.2
+  cloud_firestore: ^6.4.1
+  firebase_auth: ^6.5.1
+  firebase_performance: ^0.11.4+1
+  google_sign_in: ^7.2.0
+  sign_in_with_apple: ^8.0.0
+  purchases_flutter: ^10.1.1
+  purchases_ui_flutter: ^10.1.1
   sentry_flutter: ^9.20.0
   in_app_review: ^2.0.9
   shimmer: ^3.0.0
   flutter_animate: ^4.5.2
   flutter_svg: ^2.2.2
-  google_fonts: ^6.3.2
-  google_mobile_ads: ^5.1.0
+  google_fonts: ^8.1.0
   in_app_update: ^4.2.5
   rxdart: ^0.28.0
   confetti: ^0.8.0
   speech_to_text: ^7.4.0
   permission_handler: ^12.0.1
-  fl_chart: ^0.69.2
+  fl_chart: ^1.2.0
   mobile_scanner: ^7.2.0
   pdf: ^3.11.3
   printing: ^5.14.3
@@ -72,31 +74,32 @@ dependencies:
   path_provider: ^2.1.5
   flutter_staggered_animations: ^1.1.1
   sticky_headers: ^0.3.0+2
-  skeletonizer: ^1.4.3
+  skeletonizer: ^2.1.3
   dynamic_color: ^1.8.1
   lottie: ^3.3.0
   quick_actions: ^1.1.0
-  introduction_screen: ^3.1.14
+  introduction_screen: ^4.0.0
   flutter_markdown: ^0.7.6
   http: ^1.2.0
   flutter_highlighter: ^0.1.1
   highlight: ^0.7.0
   markdown: ^7.3.0
+  record: ^6.2.0
+  audio_waveforms: ^2.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  integration_test:
-    sdk: flutter
-  test: ^1.25.0
-  flutter_lints: ^5.0.0
-  build_runner: ^2.4.7
-  riverpod_generator: ^2.3.9
-  fake_cloud_firestore: ^3.0.0
-  firebase_auth_mocks: ^0.14.2
-  custom_lint: ^0.7.0
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.15
+  riverpod_generator: ^3.0.3
+  fake_cloud_firestore: ^4.1.1
+  firebase_auth_mocks: ^0.15.2
+  custom_lint: ^0.8.1
   custom_lints:
     path: custom_lints/
+  integration_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

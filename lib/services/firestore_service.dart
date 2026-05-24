@@ -2,10 +2,12 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
 import '../models/pantry_item.dart';
+import '../models/category_data.dart';
 import 'logger_service.dart';
 import 'storage_backend.dart';
 
@@ -15,15 +17,21 @@ class FirestoreService implements StorageBackend {
     FirebaseFirestore? firestore,
     required String uid,
   })  : _db = firestore ?? FirebaseFirestore.instance,
-        _uid = uid;
+        _uid = uid {
+    debugPrint('FirestoreService initialized for UID: $_uid');
+    // Enable persistence for better offline behavior
+    _db.settings = const Settings(persistenceEnabled: true, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
+  }
   // coverage:ignore-end
 
   final FirebaseFirestore _db;
   final String _uid;
 // coverage:ignore-start
 
-  static const _maxRetries = 5;
-  static const _baseDelay = Duration(milliseconds: 500);
+  static const _maxRetries = 3;
+  static const _baseDelay = Duration(milliseconds: 300);
+  static const _operationTimeout = Duration(seconds: 15);
+  static const _streamTimeout = Duration(seconds: 20);
 
   static bool isTransientError(Object error) {
     if (error is FirebaseException) {
@@ -43,7 +51,7 @@ class FirestoreService implements StorageBackend {
     var attempt = 0;
     while (true) {
       try {
-        return await fn();
+        return await fn().timeout(_operationTimeout);
       } on Object catch (e) {
         attempt++;
         if (attempt >= _maxRetries || !isTransientError(e)) {
@@ -53,51 +61,56 @@ class FirestoreService implements StorageBackend {
         LoggerService.log('Firestore._retry: tentativa $attempt/$_maxRetries falhou - $e${label != null ? " [$label]" : ""}', tag: 'FirestoreService');
         final delay = _baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
-        LoggerService.log('Firestore._retry: tentativa $attempt, delay=${delay.inMilliseconds}ms (label=$label)', tag: 'FirestoreService');
         await Future<void>.delayed(delay + Duration(milliseconds: jitter));
       }
     }
   }
 
-  static Stream<T> _retryStream<T>(Stream<T> Function() fn) {
-    return Stream<T>.multi((controller) {
-      StreamSubscription<T>? sub;
-      var attempt = 0;
-      Future<void> subscribe() async {
-        sub = fn().listen(
-          (event) {
-            attempt = 0;
-            controller.add(event);
-          },
-          onError: (Object e) {
-            attempt++;
-            if (attempt >= _maxRetries || !isTransientError(e)) {
-              controller.addError(e);
-              return;
-            }
-            final delay = _baseDelay * pow(2, attempt - 1).toInt();
-            final jitter = Random().nextInt(100);
-            sub?.cancel();
-            Future<void>.delayed(delay + Duration(milliseconds: jitter)).then((_) {
-              subscribe();
-            }).catchError((Object err) {
-              controller.addError(err);
-            });
-          },
-          onDone: controller.close,
-          cancelOnError: false,
-        );
+  Stream<T> _wrapStream<T>(Stream<T> stream, {String? label}) {
+    bool hasEmitted = false;
+    final controller = StreamController<T>();
+    
+    Timer? timeoutTimer = Timer(_streamTimeout, () {
+      if (!hasEmitted && !controller.isClosed) {
+        LoggerService.log('Firestore Stream Timeout ($label) para UID: $_uid', tag: 'FirestoreService');
+        controller.addError(TimeoutException('Tempo esgotado ao conectar com o servidor ($label). Verifique sua conexão.'));
       }
-      subscribe().catchError((Object err) {
-        controller.addError(err);
-      });
-      controller.onCancel = () => sub?.cancel();
     });
+
+    final sub = stream.listen(
+      (data) {
+        hasEmitted = true;
+        timeoutTimer?.cancel();
+        if (!controller.isClosed) {
+          controller.add(data);
+        }
+      },
+      onError: (Object e) {
+        timeoutTimer?.cancel();
+        LoggerService.error(e, message: 'Firestore Stream Error ($label)');
+        if (!controller.isClosed) {
+          controller.addError(e);
+        }
+      },
+      onDone: () {
+        timeoutTimer?.cancel();
+        if (!controller.isClosed) {
+          controller.close();
+        }
+      },
+      cancelOnError: false,
+    );
+
+    controller.onCancel = () {
+      timeoutTimer?.cancel();
+      sub.cancel();
+    };
+
+    return controller.stream;
   }
 
   @override
   Future<List<ShoppingList>> loadLists() async {
-    LoggerService.log('loadLists', tag: 'FirestoreService');
     return _retry(() async {
       final snap = await _db
           .collection('users').doc(_uid).collection('lists')
@@ -113,30 +126,24 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<List<ShoppingList>> watchLists() {
-    LoggerService.log('watchLists iniciado', tag: 'FirestoreService');
-    return _retryStream(() => _db
+    final stream = _db
         .collection('users').doc(_uid).collection('lists')
-        .orderBy('updatedAt', descending: true)
         .snapshots()
-        .map((snap) {
-          LoggerService.log('watchLists: ${snap.docs.length} listas recebidas', tag: 'FirestoreService');
-          return snap.docs.map((d) {
-            final data = d.data();
-            data['id'] = d.id;
-            return ShoppingList.fromJson(data);
-          }).toList();
-        }));
+        .map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return ShoppingList.fromJson(data);
+        }).toList());
+    return _wrapStream(stream, label: 'watchLists');
   }
 
   @override
   Future<void> saveList(ShoppingList list) async {
-    LoggerService.log('saveList: id=${list.id}, name=${list.name}', tag: 'FirestoreService');
     return _retry(() async {
       await _db
           .collection('users').doc(_uid).collection('lists').doc(list.id)
           .set(list.toJson());
-      LoggerService.log('saveList: ok id=${list.id}', tag: 'FirestoreService');
-    }, label: 'saveList(${list.id})');
+    }, label: 'saveList');
   }
 
   @override
@@ -157,13 +164,11 @@ class FirestoreService implements StorageBackend {
 
   @override
   Future<void> deleteList(String listId) async {
-    LoggerService.log('deleteList: id=$listId', tag: 'FirestoreService');
     return _retry(() async {
       await _db
           .collection('users').doc(_uid).collection('lists').doc(listId)
           .delete();
-      LoggerService.log('deleteList: ok id=$listId', tag: 'FirestoreService');
-    }, label: 'deleteList($listId)');
+    }, label: 'deleteList');
   }
 
   @override
@@ -183,7 +188,7 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<List<ShoppingItem>> watchItems(String listId) {
-    return _retryStream(() => _db
+    final stream = _db
         .collection('users').doc(_uid).collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
@@ -191,7 +196,8 @@ class FirestoreService implements StorageBackend {
           final data = d.data();
           data['id'] = d.id;
           return ShoppingItem.fromJson(data);
-        }).toList()));
+        }).toList());
+    return _wrapStream(stream, label: 'watchItems');
   }
 
   @override
@@ -231,7 +237,6 @@ class FirestoreService implements StorageBackend {
 
   @override
   Future<void> deleteItemsFromList(String listId) async {
-    LoggerService.log('deleteItemsFromList: listId=$listId', tag: 'FirestoreService');
     return _retry(() async {
       final snap = await _db
           .collection('users').doc(_uid).collection('items')
@@ -239,7 +244,6 @@ class FirestoreService implements StorageBackend {
           .get();
       
       final docs = snap.docs;
-      LoggerService.log('deleteItemsFromList: ${docs.length} itens para deletar', tag: 'FirestoreService');
       const limit = 500;
       for (var i = 0; i < docs.length; i += limit) {
         final batch = _db.batch();
@@ -249,30 +253,25 @@ class FirestoreService implements StorageBackend {
         }
         await batch.commit();
       }
-      LoggerService.log('deleteItemsFromList: ok', tag: 'FirestoreService');
-    }, label: 'deleteItemsFromList($listId)');
+    }, label: 'deleteItemsFromList');
   }
 
   @override
   Future<String?> getCurrentListId() async {
     return _retry(() async {
       final doc = await _db.collection('users').doc(_uid).get();
-      final listId = doc.data()?['currentListId'] as String?;
-      LoggerService.log('getCurrentListId: $listId', tag: 'FirestoreService');
-      return listId;
+      return doc.data()?['currentListId'] as String?;
     }, label: 'getCurrentListId');
   }
 
   @override
   Future<void> setCurrentListId(String? listId) async {
-    LoggerService.log('setCurrentListId: listId=$listId', tag: 'FirestoreService');
     return _retry(() async {
       await _db.collection('users').doc(_uid).set(
         {'currentListId': listId},
         SetOptions(merge: true),
       );
-      LoggerService.log('setCurrentListId: ok', tag: 'FirestoreService');
-    }, label: 'setCurrentListId($listId)');
+    }, label: 'setCurrentListId');
   }
 
   @override
@@ -291,27 +290,19 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
-  Future<void> extendPremiumBy24h() async {
+  Future<void> updatePreference(String key, String value) async {
     return _retry(() async {
-      final docRef = _db.collection('users').doc(_uid);
-      await _db.runTransaction((transaction) async {
-        final doc = await transaction.get(docRef);
-        final currentStr = doc.data()?['premiumUntil'] as String?;
-        final now = DateTime.now();
+      await _db.collection('users').doc(_uid).set({
+        'preferences': {key: value}
+      }, SetOptions(merge: true));
+    });
+  }
 
-        var current = now;
-        if (currentStr != null) {
-          final parsed = DateTime.tryParse(currentStr) ?? now;
-          if (parsed.isAfter(now)) {
-            current = parsed;
-          }
-        }
-
-        final maxUntil = now.add(const Duration(days: 7));
-        final newUntil = current.add(const Duration(hours: 24));
-        final capped = newUntil.isAfter(maxUntil) ? maxUntil : newUntil;
-
-        transaction.set(docRef, {'premiumUntil': capped.toIso8601String()}, SetOptions(merge: true));
+  @override
+  Future<void> deletePreference(String key) async {
+    return _retry(() async {
+      await _db.collection('users').doc(_uid).update({
+        'preferences.$key': FieldValue.delete(),
       });
     });
   }
@@ -338,6 +329,8 @@ class FirestoreService implements StorageBackend {
     await updateUserData({'locale': locale});
   }
 
+  // --- Sharing logic ---
+
   @override
   Future<void> saveSharedList(String code, Map<String, dynamic> data) async {
     return _retry(() async {
@@ -358,26 +351,8 @@ class FirestoreService implements StorageBackend {
     return _retry(() async {
       await _db
           .collection('users').doc(_uid).collection('sharedLists').doc(listId)
-          .set({'ownerUid': ownerUid, 'addedAt': DateTime.now().toIso8601String()});
+          .set({'ownerUid': ownerUid, 'listId': listId});
     });
-  }
-
-  @override
-  Future<Map<String, String>> loadSharedListRefs() async {
-    return _retry(() async {
-      final snap = await _db
-          .collection('users').doc(_uid).collection('sharedLists')
-          .get();
-      return {for (final doc in snap.docs) doc.id: doc.data()['ownerUid'] as String? ?? ''};
-    });
-  }
-
-  @override
-  Stream<Map<String, String>> watchSharedListRefs() {
-    return _retryStream(() => _db
-        .collection('users').doc(_uid).collection('sharedLists')
-        .snapshots()
-        .map((snap) => {for (final doc in snap.docs) doc.id: doc.data()['ownerUid'] as String? ?? ''}));
   }
 
   @override
@@ -390,14 +365,43 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Future<Map<String, String>> loadSharedListRefs() async {
+    return _retry(() async {
+      final snap = await _db
+          .collection('users').doc(_uid).collection('sharedLists')
+          .get();
+      final Map<String, String> refs = {};
+      for (final d in snap.docs) {
+        final data = d.data();
+        refs[d.id] = data['ownerUid'] as String;
+      }
+      return refs;
+    });
+  }
+
+  @override
+  Stream<Map<String, String>> watchSharedListRefs() {
+    final stream = _db
+        .collection('users').doc(_uid).collection('sharedLists')
+        .snapshots()
+        .map((snap) {
+          final Map<String, String> refs = {};
+          for (final d in snap.docs) {
+            final data = d.data();
+            refs[d.id] = data['ownerUid'] as String;
+          }
+          return refs;
+        });
+    return _wrapStream(stream, label: 'watchSharedListRefs');
+  }
+
+  @override
   Future<ShoppingList?> loadListFromUser(String ownerUid, String listId) async {
     return _retry(() async {
       final doc = await _db
           .collection('users').doc(ownerUid).collection('lists').doc(listId)
           .get();
-      if (!doc.exists) {
-        return null;
-      }
+      if (!doc.exists) return null;
       final data = doc.data()!;
       data['id'] = doc.id;
       return ShoppingList.fromJson(data);
@@ -406,17 +410,16 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<ShoppingList?> watchListFromUser(String ownerUid, String listId) {
-    return _retryStream(() => _db
+    final stream = _db
         .collection('users').doc(ownerUid).collection('lists').doc(listId)
         .snapshots()
         .map((doc) {
-          if (!doc.exists) {
-            return null;
-          }
+          if (!doc.exists) return null;
           final data = doc.data()!;
           data['id'] = doc.id;
           return ShoppingList.fromJson(data);
-        }));
+        });
+    return _wrapStream(stream, label: 'watchListFromUser');
   }
 
   @override
@@ -436,7 +439,7 @@ class FirestoreService implements StorageBackend {
 
   @override
   Stream<List<ShoppingItem>> watchItemsFromUser(String ownerUid, String listId) {
-    return _retryStream(() => _db
+    final stream = _db
         .collection('users').doc(ownerUid).collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
@@ -444,7 +447,8 @@ class FirestoreService implements StorageBackend {
           final data = d.data();
           data['id'] = d.id;
           return ShoppingItem.fromJson(data);
-        }).toList()));
+        }).toList());
+    return _wrapStream(stream, label: 'watchItemsFromUser');
   }
 
   @override
@@ -468,13 +472,11 @@ class FirestoreService implements StorageBackend {
   @override
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
     return _retry(() async {
-      final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
       final itemsRef = _db.collection('users').doc(ownerUid).collection('items');
-
+      final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
+      
       if (listId != null) {
-        final existingSnap = await itemsRef
-            .where('shoppingListId', isEqualTo: listId)
-            .get();
+        final existingSnap = await itemsRef.where('shoppingListId', isEqualTo: listId).get();
         await _commitBatchInChunks(itemsRef, existingSnap.docs, items);
       } else {
         await _commitBatchInChunks(itemsRef, [], items);
@@ -482,13 +484,12 @@ class FirestoreService implements StorageBackend {
     });
   }
 
+  // --- Pantry items ---
+
   @override
   Future<List<PantryItem>> loadPantryItems() async {
     return _retry(() async {
-      final snap = await _db
-          .collection('users').doc(_uid).collection('pantry')
-          .orderBy('updatedAt', descending: true)
-          .get();
+      final snap = await _db.collection('users').doc(_uid).collection('pantry').get();
       return snap.docs.map((d) {
         final data = d.data();
         data['id'] = d.id;
@@ -500,9 +501,7 @@ class FirestoreService implements StorageBackend {
   @override
   Future<void> savePantryItem(PantryItem item) async {
     return _retry(() async {
-      await _db
-          .collection('users').doc(_uid).collection('pantry').doc(item.id)
-          .set(item.toJson());
+      await _db.collection('users').doc(_uid).collection('pantry').doc(item.id).set(item.toJson());
     });
   }
 
@@ -511,127 +510,57 @@ class FirestoreService implements StorageBackend {
     return _retry(() async {
       final pantryRef = _db.collection('users').doc(_uid).collection('pantry');
       final existingSnap = await pantryRef.get();
-      final existingDocs = existingSnap.docs;
-      await _commitPantryBatchInChunks(pantryRef, existingDocs, items);
+      
+      final newItemIds = items.map((i) => i.id).toSet();
+      final docsToDelete = existingSnap.docs.where((doc) => !newItemIds.contains(doc.id)).toList();
+
+      const limit = 500;
+      final totalOps = docsToDelete.length + items.length;
+      
+      if (totalOps <= limit) {
+        final batch = _db.batch();
+        for (final doc in docsToDelete) {
+          batch.delete(doc.reference);
+        }
+        for (final item in items) {
+          batch.set(pantryRef.doc(item.id), item.toJson());
+        }
+        await batch.commit();
+      } else {
+        await _commitPantryBatchInChunks(pantryRef, docsToDelete, items);
+      }
     });
   }
 
   Future<void> _commitPantryBatchInChunks(
     CollectionReference pantryRef,
-    List<QueryDocumentSnapshot<Map<String, dynamic>>> existingDocs,
+    List<QueryDocumentSnapshot<Map<String, dynamic>>> docsToDelete,
     List<PantryItem> items,
   ) async {
-    final newItemIds = items.map((i) => i.id).toSet();
-    final docsToDelete = existingDocs.where((doc) => !newItemIds.contains(doc.id)).toList();
-
-    final deleteOps = docsToDelete.length;
-    final setOps = items.length;
-    final totalOps = deleteOps + setOps;
+    final allDeletes = docsToDelete.map((d) => d.reference).toList();
     const limit = 500;
-
-    if (totalOps <= limit) {
+    for (var i = 0; i < allDeletes.length; i += limit) {
       final batch = _db.batch();
-      for (final doc in docsToDelete) {
-        batch.delete(doc.reference);
+      final chunk = allDeletes.sublist(i, (i + limit) > allDeletes.length ? allDeletes.length : i + limit);
+      for (final ref in chunk) {
+        batch.delete(ref);
       }
-      for (final item in items) {
+      await batch.commit();
+    }
+    for (var i = 0; i < items.length; i += limit) {
+      final batch = _db.batch();
+      final chunk = items.sublist(i, (i + limit) > items.length ? items.length : i + limit);
+      for (final item in chunk) {
         batch.set(pantryRef.doc(item.id), item.toJson());
       }
       await batch.commit();
-      return;
-    }
-
-    if (deleteOps > 0) {
-      for (var i = 0; i < deleteOps; i += limit) {
-        final batch = _db.batch();
-        final chunk = docsToDelete.sublist(i, (i + limit) > deleteOps ? deleteOps : i + limit);
-        for (final doc in chunk) {
-          batch.delete(doc.reference);
-        }
-        await batch.commit();
-      }
-    }
-    if (setOps > 0) {
-      for (var i = 0; i < setOps; i += limit) {
-        final batch = _db.batch();
-        final chunk = items.sublist(i, (i + limit) > setOps ? setOps : i + limit);
-        for (final item in chunk) {
-          batch.set(pantryRef.doc(item.id), item.toJson());
-        }
-        await batch.commit();
-      }
     }
   }
 
   @override
   Future<void> deletePantryItem(String id) async {
     return _retry(() async {
-      await _db
-          .collection('users').doc(_uid).collection('pantry').doc(id)
-          .delete();
-    });
-  }
-
-  @override
-  Future<List<ChatMessage>> loadChatMessages(String? listId) async {
-    return _retry(() async {
-      final collection = listId != null
-          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-      
-      final snap = await collection.orderBy('timestamp', descending: false).get();
-      return snap.docs.map((d) => ChatMessage.fromJson(d.data())).toList();
-    });
-  }
-
-  @override
-  Future<void> saveChatMessage(String? listId, ChatMessage message) async {
-    return _retry(() async {
-      final collection = listId != null
-          ? _db
-              .collection('users')
-              .doc(_uid)
-              .collection('lists')
-              .doc(listId)
-              .collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-
-      await collection.doc(message.id).set(message.toJson());
-    });
-  }
-
-  @override
-  Future<void> deleteChatMessage(String? listId, String messageId) async {
-    return _retry(() async {
-      final collection = listId != null
-          ? _db
-              .collection('users')
-              .doc(_uid)
-              .collection('lists')
-              .doc(listId)
-              .collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-
-      await collection.doc(messageId).delete();
-    });
-  }
-
-  @override
-  Future<void> clearChatHistory(String? listId) async {
-    return _retry(() async {
-      final collection = listId != null
-          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-      
-      final snap = await collection.get();
-      final docs = snap.docs;
-      for (var i = 0; i < docs.length; i += 500) {
-        final batch = _db.batch();
-        for (final doc in docs.sublist(i, (i + 500) > docs.length ? docs.length : i + 500)) {
-          batch.delete(doc.reference);
-        }
-        await batch.commit();
-      }
+      await _db.collection('users').doc(_uid).collection('pantry').doc(id).delete();
     });
   }
 
@@ -639,22 +568,225 @@ class FirestoreService implements StorageBackend {
   Future<Map<String, dynamic>?> getAiUsage() async {
     return _retry(() async {
       final doc = await _db.collection('users').doc(_uid).get();
-      final data = doc.data();
-      if (data == null) {
-        return null;
-      }
-      final aiUsage = data['aiUsage'];
-      if (aiUsage is Map<String, dynamic>) {
-        return aiUsage;
-      }
-      return null;
+      return doc.data()?['aiUsage'] as Map<String, dynamic>?;
     });
   }
 
   @override
   Future<void> saveAiUsage(Map<String, dynamic> data) async {
     return _retry(() async {
-      await _db.collection('users').doc(_uid).set({'aiUsage': data}, SetOptions(merge: true));
+      await _db.collection('users').doc(_uid).set({
+        'aiUsage': data
+      }, SetOptions(merge: true));
+    });
+  }
+
+  @override
+  Future<List<ChatMessage>> loadChatMessages(String? listId) async {
+    return _retry(() async {
+      final coll = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+          
+      final snap = await coll.orderBy('timestamp').get();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return ChatMessage.fromJson(data);
+      }).toList();
+    });
+  }
+
+  @override
+  Future<void> saveChatMessage(String? listId, ChatMessage message) async {
+    return _retry(() async {
+      final coll = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+          
+      await coll.doc(message.id).set(message.toJson());
+    });
+  }
+
+  @override
+  Future<void> deleteChatMessage(String? listId, String messageId) async {
+    return _retry(() async {
+      final coll = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+          
+      await coll.doc(messageId).delete();
+    });
+  }
+
+  @override
+  Future<void> clearChatHistory(String? listId) async {
+    return _retry(() async {
+      final coll = listId != null
+          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
+          : _db.collection('users').doc(_uid).collection('global_chat_messages');
+          
+      final snap = await coll.get();
+      const limit = 500;
+      for (var i = 0; i < snap.docs.length; i += limit) {
+        final batch = _db.batch();
+        final chunk = snap.docs.sublist(i, (i + limit) > snap.docs.length ? snap.docs.length : i + limit);
+        for (final doc in chunk) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      }
+    });
+  }
+
+  @override
+  Future<List<CategoryData>> loadCategories() async {
+    return _retry(() async {
+      final snap = await _db.collection('users').doc(_uid).collection('categories').get();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return CategoryData.fromJson(data);
+      }).toList();
+    });
+  }
+
+  @override
+  Stream<List<CategoryData>> watchCategories() {
+    final stream = _db
+        .collection('users').doc(_uid).collection('categories')
+        .snapshots()
+        .map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return CategoryData.fromJson(data);
+        }).toList());
+    return _wrapStream(stream, label: 'watchCategories');
+  }
+
+  @override
+  Future<void> saveCategory(CategoryData cat) async {
+    return _retry(() async {
+      await _db.collection('users').doc(_uid).collection('categories').doc(cat.id).set(cat.toJson());
+    });
+  }
+
+  @override
+  Future<void> deleteCategory(String categoryId) async {
+    return _retry(() async {
+      await _db.collection('users').doc(_uid).collection('categories').doc(categoryId).delete();
+    });
+  }
+
+  @override
+  Future<void> saveCategories(List<CategoryData> categories) async {
+    return _retry(() async {
+      final catRef = _db.collection('users').doc(_uid).collection('categories');
+      final existingSnap = await catRef.get();
+      final newCatIds = categories.map((c) => c.id).toSet();
+      final docsToDelete = existingSnap.docs.where((doc) => !newCatIds.contains(doc.id)).toList();
+      const limit = 500;
+      final totalOps = docsToDelete.length + categories.length;
+      if (totalOps <= limit) {
+        final batch = _db.batch();
+        for (final doc in docsToDelete) batch.delete(doc.reference);
+        for (final cat in categories) batch.set(catRef.doc(cat.id), cat.toJson());
+        await batch.commit();
+      } else {
+        for (final doc in docsToDelete) await doc.reference.delete();
+        for (final cat in categories) await catRef.doc(cat.id).set(cat.toJson());
+      }
+    });
+  }
+
+  @override
+  Future<List<Map<String, dynamic>>> loadRecipes() async {
+    return _retry(() async {
+      final snap = await _db.collection('users').doc(_uid).collection('recipes').orderBy('createdAt', descending: true).get();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return data;
+      }).toList();
+    });
+  }
+
+  @override
+  Stream<List<Map<String, dynamic>>> watchRecipes() {
+    final stream = _db
+        .collection('users').doc(_uid).collection('recipes')
+        .snapshots()
+        .map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return data;
+        }).toList());
+    return _wrapStream(stream, label: 'watchRecipes');
+  }
+
+  @override
+  Future<void> saveRecipe(Map<String, dynamic> recipe) async {
+    return _retry(() async {
+      final id = recipe['id'] as String;
+      await _db
+          .collection('users').doc(_uid).collection('recipes').doc(id)
+          .set(recipe);
+    });
+  }
+
+  @override
+  Future<void> deleteRecipe(String id) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('recipes').doc(id)
+          .delete();
+    });
+  }
+
+  @override
+  Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end}) async {
+    return _retry(() async {
+      var query = _db.collection('users').doc(_uid).collection('meal_plans') as Query<Map<String, dynamic>>;
+      if (start != null) query = query.where('date', isGreaterThanOrEqualTo: start.toIso8601String());
+      if (end != null) query = query.where('date', isLessThanOrEqualTo: end.toIso8601String());
+      final snap = await query.get();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return data;
+      }).toList();
+    }, label: 'loadMealPlans');
+  }
+
+  @override
+  Stream<List<Map<String, dynamic>>> watchMealPlans({DateTime? start, DateTime? end}) {
+    var query = _db.collection('users').doc(_uid).collection('meal_plans') as Query<Map<String, dynamic>>;
+    if (start != null) query = query.where('date', isGreaterThanOrEqualTo: start.toIso8601String());
+    if (end != null) query = query.where('date', isLessThanOrEqualTo: end.toIso8601String());
+    final stream = query.snapshots().map((snap) => snap.docs.map((d) {
+          final data = d.data();
+          data['id'] = d.id;
+          return data;
+        }).toList());
+    return _wrapStream(stream, label: 'watchMealPlans');
+  }
+
+  @override
+  Future<void> saveMealPlan(Map<String, dynamic> mealPlan) async {
+    return _retry(() async {
+      final id = mealPlan['id'] as String;
+      await _db
+          .collection('users').doc(_uid).collection('meal_plans').doc(id)
+          .set(mealPlan);
+    });
+  }
+
+  @override
+  Future<void> deleteMealPlan(String id) async {
+    return _retry(() async {
+      await _db
+          .collection('users').doc(_uid).collection('meal_plans').doc(id)
+          .delete();
     });
   }
 
@@ -665,43 +797,27 @@ class FirestoreService implements StorageBackend {
   ) async {
     final newItemIds = items.map((i) => i.id).toSet();
     final docsToDelete = existingDocs.where((doc) => !newItemIds.contains(doc.id)).toList();
-
-    final deleteOps = docsToDelete.length;
-    final setOps = items.length;
-    final totalOps = deleteOps + setOps;
     const limit = 500;
-
+    final totalOps = docsToDelete.length + items.length;
     if (totalOps <= limit) {
       final batch = _db.batch();
-      for (final doc in docsToDelete) {
-        batch.delete(doc.reference);
-      }
-      for (final item in items) {
-        batch.set(itemsRef.doc(item.id), item.toJson());
-      }
+      for (final doc in docsToDelete) batch.delete(doc.reference);
+      for (final item in items) batch.set(itemsRef.doc(item.id), item.toJson());
       await batch.commit();
       return;
     }
-
-    if (deleteOps > 0) {
-      for (var i = 0; i < deleteOps; i += limit) {
-        final batch = _db.batch();
-        final chunk = docsToDelete.sublist(i, (i + limit) > deleteOps ? deleteOps : i + limit);
-        for (final doc in chunk) {
-          batch.delete(doc.reference);
-        }
-        await batch.commit();
-      }
+    final allDeleteRefs = docsToDelete.map((d) => d.reference).toList();
+    for (var i = 0; i < allDeleteRefs.length; i += limit) {
+      final batch = _db.batch();
+      final chunk = allDeleteRefs.sublist(i, (i + limit) > allDeleteRefs.length ? allDeleteRefs.length : i + limit);
+      for (final ref in chunk) batch.delete(ref);
+      await batch.commit();
     }
-    if (setOps > 0) {
-      for (var i = 0; i < setOps; i += limit) {
-        final batch = _db.batch();
-        final chunk = items.sublist(i, (i + limit) > setOps ? setOps : i + limit);
-        for (final item in chunk) {
-          batch.set(itemsRef.doc(item.id), item.toJson());
-        }
-        await batch.commit();
-      }
+    for (var i = 0; i < items.length; i += limit) {
+      final batch = _db.batch();
+      final chunk = items.sublist(i, (i + limit) > items.length ? items.length : i + limit);
+      for (final item in chunk) batch.set(itemsRef.doc(item.id), item.toJson());
+      await batch.commit();
     }
   }
 }

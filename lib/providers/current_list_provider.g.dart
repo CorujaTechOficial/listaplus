@@ -6,22 +6,50 @@ part of 'current_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$currentListIdHash() => r'b9802e9062478f139f133d3ea6527c827263d6af';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [CurrentListId].
 @ProviderFor(CurrentListId)
-final currentListIdProvider =
-    AutoDisposeAsyncNotifierProvider<CurrentListId, String?>.internal(
-      CurrentListId.new,
-      name: r'currentListIdProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$currentListIdHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+const currentListIdProvider = CurrentListIdProvider._();
 
-typedef _$CurrentListId = AutoDisposeAsyncNotifier<String?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class CurrentListIdProvider
+    extends $AsyncNotifierProvider<CurrentListId, String?> {
+  const CurrentListIdProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'currentListIdProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$currentListIdHash();
+
+  @$internal
+  @override
+  CurrentListId create() => CurrentListId();
+}
+
+String _$currentListIdHash() => r'55f7367e3748d7b40368ceaf53069ee2a01bb45a';
+
+abstract class _$CurrentListId extends $AsyncNotifier<String?> {
+  FutureOr<String?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<String?>, String?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<String?>, String?>,
+              AsyncValue<String?>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

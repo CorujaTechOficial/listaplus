@@ -3,13 +3,14 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/tokens.dart';
-import '../theme/colors.dart';
 import '../providers/pantry_items_provider.dart';
 import '../providers/pantry_suggestions_provider.dart';
 import '../providers/shopping_lists_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/current_list_provider.dart';
 import '../models/pantry_item.dart';
+import '../models/category_data.dart';
+import '../providers/categories_provider.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/add_pantry_item_dialog.dart';
 
@@ -27,7 +28,7 @@ class PantryScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(l10n.pantryAppBar),
         actions: [
-          if (pantryAsync.valueOrNull?.isNotEmpty == true)
+          if (pantryAsync.value?.isNotEmpty == true)
             IconButton(
               icon: const Icon(Icons.shopping_cart),
               tooltip: l10n.generateShoppingList,
@@ -73,8 +74,8 @@ class PantryScreen extends ConsumerWidget {
                     padding: const EdgeInsets.all(Spacing.sm),
                     decoration: BoxDecoration(
                       color: isDark
-                          ? theme.colorScheme.tertiaryContainer.withValues(alpha: 0.15)
-                          : theme.colorScheme.tertiaryContainer.withValues(alpha: 0.3),
+                          ? theme.colorScheme.tertiaryContainer.withAlpha((0.15 * 255).toInt())
+                          : theme.colorScheme.tertiaryContainer.withAlpha((0.3 * 255).toInt()),
                       borderRadius: BorderRadius.circular(RadiusTokens.md),
                     ),
                     child: Row(
@@ -151,71 +152,90 @@ class PantryScreen extends ConsumerWidget {
 
     final theme = Theme.of(context);
     final nameController = TextEditingController(text: l10n.newPantryList);
-    final listName = await showDialog<String>(
+    await showDialog<void>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: Text(l10n.newListTitle),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              l10n.itemsWillBeAdded(suggestions.length),
-              style: theme.textTheme.bodyMedium,
+      builder: (ctx) {
+        var isCreating = false;
+        return StatefulBuilder(
+          builder: (context, setDialogState) => AlertDialog(
+            title: Text(l10n.newListTitle),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  l10n.itemsWillBeAdded(suggestions.length),
+                  style: theme.textTheme.bodyMedium,
+                ),
+                const SizedBox(height: Spacing.sm),
+                TextField(
+                  controller: nameController,
+                  enabled: !isCreating,
+                  decoration: InputDecoration(
+                    labelText: l10n.listNameLabel,
+                    border: const OutlineInputBorder(),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: Spacing.sm),
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                labelText: l10n.listNameLabel,
-                border: const OutlineInputBorder(),
+            actions: [
+              TextButton(
+                onPressed: isCreating ? null : () => Navigator.pop(ctx),
+                child: Text(l10n.cancel),
               ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(l10n.cancel),
+              FilledButton(
+                onPressed: isCreating
+                    ? null
+                    : () async {
+                        final name = nameController.text.trim();
+                        if (name.isEmpty) {
+                          return;
+                        }
+                        setDialogState(() => isCreating = true);
+                        try {
+                          final newList = await ref.read(shoppingListsProvider.notifier).createList(name);
+                          final itemsNotifier = ref.read(shoppingListItemsProvider(newList.id).notifier);
+                          for (final suggestion in suggestions) {
+                            await itemsNotifier.addItem(
+                              listId: newList.id,
+                              name: suggestion.name,
+                              quantity: suggestion.quantity,
+                              categoryId: suggestion.categoryId,
+                              unit: suggestion.unit,
+                              estimatedPrice: suggestion.estimatedPrice,
+                            );
+                          }
+                          await ref.read(currentListIdProvider.notifier).setCurrentList(newList.id);
+                          if (ctx.mounted) {
+                            ScaffoldMessenger.of(ctx).showSnackBar(
+                              SnackBar(content: Text(l10n.listCreated(newList.name, suggestions.length))),
+                            );
+                          }
+                          if (ctx.mounted) {
+                            Navigator.pop(ctx, name);
+                          }
+                        } on Exception catch (e) {
+                          if (ctx.mounted) {
+                            setDialogState(() => isCreating = false);
+                            ScaffoldMessenger.of(ctx).showSnackBar(
+                              SnackBar(content: Text(l10n.error(e.toString()))),
+                            );
+                          }
+                        }
+                      },
+                child: isCreating
+                    ? const SizedBox(
+                        width: 18,
+                        height: 18,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Text(l10n.create),
+              ),
+            ],
           ),
-          FilledButton(
-            onPressed: () => Navigator.pop(context, nameController.text.trim()),
-            child: Text(l10n.create),
-          ),
-        ],
-      ),
+        );
+      },
     );
     nameController.dispose();
-
-    if (listName == null || listName.isEmpty) {
-      return;
-    }
-
-    try {
-      final newList = await ref.read(shoppingListsProvider.notifier).createList(listName);
-      final itemsNotifier = ref.read(shoppingListItemsProvider(newList.id).notifier);
-      for (final suggestion in suggestions) {
-        await itemsNotifier.addItem(
-          listId: newList.id,
-          name: suggestion.name,
-          quantity: suggestion.quantity,
-          category: suggestion.category,
-          unit: suggestion.unit,
-          estimatedPrice: suggestion.estimatedPrice,
-        );
-      }
-      await ref.read(currentListIdProvider.notifier).setCurrentList(newList.id);
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.listCreated(newList.name, suggestions.length))),
-        );
-      }
-    } on Exception catch (e) {
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.error(e.toString()))),
-        );
-      }
-    }
   }
 }
 
@@ -232,6 +252,11 @@ class _PantryItemTile extends ConsumerWidget {
     final progress = item.idealQuantity > 0
         ? item.currentQuantity / item.idealQuantity
         : 0.0;
+    final categoriesAsync = ref.watch(categoriesProvider);
+    final cats = categoriesAsync.value ?? <CategoryData>[];
+    final categoriesMap = <String, CategoryData>{
+      for (final cat in cats) cat.id: cat,
+    };
 
     final Color barColor;
     if (progress >= 0.8) {
@@ -243,43 +268,43 @@ class _PantryItemTile extends ConsumerWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.xxs),
+      padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: 2),
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(Spacing.sm),
+          padding: const EdgeInsets.all(Spacing.xs),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
                   Container(
-                    width: 36,
-                    height: 36,
+                    width: 28,
+                    height: 28,
                     decoration: BoxDecoration(
-                      color: AppColors.categoryColors[item.category.label]?.withValues(alpha: isDark ? 0.2 : 0.15) ?? theme.colorScheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                      color: categoriesMap[item.categoryId]?.colorValue.withAlpha(((isDark ? 0.2 : 0.15) * 255).toInt()) ?? theme.colorScheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                     ),
                     child: Icon(
-                      AppColors.categoryIcons[item.category.label] ?? Icons.category,
-                      size: 18,
-                      color: AppColors.categoryColors[item.category.label] ?? theme.colorScheme.onSurfaceVariant,
+                      categoriesMap[item.categoryId]?.icon ?? Icons.category,
+                      size: 14,
+                      color: categoriesMap[item.categoryId]?.colorValue ?? theme.colorScheme.onSurfaceVariant,
                     ),
                   ),
-                  const SizedBox(width: Spacing.sm),
+                  const SizedBox(width: Spacing.xs),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           item.name,
-                          style: theme.textTheme.titleSmall?.copyWith(
+                          style: theme.textTheme.bodyMedium?.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         if (!item.trackStock)
                           Text(
                             l10n.noTracking,
-                            style: theme.textTheme.bodySmall?.copyWith(
+                            style: theme.textTheme.labelSmall?.copyWith(
                               color: theme.colorScheme.onSurfaceVariant,
                               fontStyle: FontStyle.italic,
                             ),
@@ -288,7 +313,7 @@ class _PantryItemTile extends ConsumerWidget {
                     ),
                   ),
                   PopupMenuButton<String>(
-                    icon: const Icon(Icons.more_vert, size: 20),
+                    icon: const Icon(Icons.more_vert, size: 18),
                     itemBuilder: (_) => [
                       PopupMenuItem(value: 'edit', child: Text(l10n.edit)),
                       if (item.trackStock && item.deficit > 0)
@@ -331,7 +356,7 @@ class _PantryItemTile extends ConsumerWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: Spacing.sm),
+              const SizedBox(height: Spacing.xxs),
               if (item.trackStock)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -344,20 +369,20 @@ class _PantryItemTile extends ConsumerWidget {
                         curve: Curves.easeOut,
                         builder: (context, value, _) => LinearProgressIndicator(
                           value: value,
-                          minHeight: 8,
+                          minHeight: 6,
                           backgroundColor: isDark
-                              ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
+                              ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.2 * 255).toInt())
                               : theme.colorScheme.surfaceContainerHighest,
                           valueColor: AlwaysStoppedAnimation<Color>(barColor),
                         ),
                       ),
                     ),
-                    const SizedBox(height: Spacing.xxs),
+                    const SizedBox(height: 2),
                     Row(
                       children: [
                         Text(
                           '${item.currentQuantity} / ${item.idealQuantity} ${item.unit.label}',
-                          style: theme.textTheme.bodySmall?.copyWith(
+                          style: theme.textTheme.labelSmall?.copyWith(
                             fontWeight: FontWeight.w500,
                             fontFeatures: [const FontFeature.tabularFigures()],
                           ),
@@ -366,14 +391,14 @@ class _PantryItemTile extends ConsumerWidget {
                         if (item.deficit > 0)
                           Text(
                             'Faltam ${item.deficit}',
-                            style: theme.textTheme.bodySmall?.copyWith(
+                            style: theme.textTheme.labelSmall?.copyWith(
                               color: barColor,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                       ],
                     ),
-                    const SizedBox(height: Spacing.xs),
+                    const SizedBox(height: 2),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -383,33 +408,32 @@ class _PantryItemTile extends ConsumerWidget {
                               ? null
                               : () => ref.read(pantryItemsProvider.notifier).decrementCurrent(item.id),
                         ),
-                        const SizedBox(width: Spacing.xs),
-                        Text(
-                          '${item.currentQuantity}',
-                          style: theme.textTheme.titleSmall?.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontFeatures: [const FontFeature.tabularFigures()],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: Text(
+                            '${item.currentQuantity}',
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              fontFeatures: [const FontFeature.tabularFigures()],
+                            ),
                           ),
                         ),
-                        const SizedBox(width: Spacing.xs),
                         _QuantityIconButton(
                           icon: Icons.add,
-                          onPressed: item.currentQuantity >= item.idealQuantity
-                              ? null
-                              : () => ref.read(pantryItemsProvider.notifier).incrementCurrent(item.id),
+                          onPressed: () => ref.read(pantryItemsProvider.notifier).incrementCurrent(item.id),
                         ),
-                        const SizedBox(width: Spacing.sm),
+                        const SizedBox(width: Spacing.xs),
                         TextButton.icon(
                           onPressed: item.currentQuantity <= 0
                               ? null
                               : () => ref.read(pantryItemsProvider.notifier).consumeItem(item.id),
-                          icon: Icon(Icons.arrow_downward, size: 16, color: theme.colorScheme.error),
+                          icon: Icon(Icons.arrow_downward, size: 14, color: theme.colorScheme.error),
                           label: Text(
                             l10n.consumed,
-                            style: TextStyle(color: theme.colorScheme.error),
+                            style: TextStyle(color: theme.colorScheme.error, fontSize: 12),
                           ),
                           style: TextButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(horizontal: Spacing.sm),
+                            padding: const EdgeInsets.symmetric(horizontal: 6),
                             minimumSize: Size.zero,
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
@@ -530,8 +554,8 @@ class _QuantityIconButton extends StatelessWidget {
     final theme = Theme.of(context);
     return Material(
       color: onPressed != null
-          ? theme.colorScheme.secondaryContainer.withValues(alpha: 0.5)
-          : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
+          ? theme.colorScheme.secondaryContainer.withAlpha((0.5 * 255).toInt())
+          : theme.colorScheme.surfaceContainerHighest.withAlpha((0.3 * 255).toInt()),
       borderRadius: BorderRadius.circular(RadiusTokens.sm),
       child: InkWell(
         onTap: onPressed,
@@ -543,7 +567,7 @@ class _QuantityIconButton extends StatelessWidget {
             size: 18,
             color: onPressed != null
                 ? theme.colorScheme.onSecondaryContainer
-                : theme.colorScheme.onSurface.withValues(alpha: 0.3),
+                : theme.colorScheme.onSurface.withAlpha((0.3 * 255).toInt()),
           ),
         ),
       ),

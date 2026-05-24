@@ -16,11 +16,17 @@ class LoggerService {
   }) {
     final msg = message ?? '${exception.runtimeType}: $exception';
     debugPrint('[ERROR] $msg');
+    if (extra != null) {
+      debugPrint('[ERROR] Extra: $extra');
+    }
 
+    // ignore: deprecated_member_use
     Sentry.captureEvent(
       SentryEvent(
         message: SentryMessage(msg),
         level: SentryLevel.error,
+        // ignore: deprecated_member_use
+        extra: extra,
       ),
       stackTrace: stackTrace,
     );
@@ -29,6 +35,7 @@ class LoggerService {
       exception,
       stackTrace,
       fatal: false,
+      information: extra?.entries.map((e) => '${e.key}=${e.value}').toList() ?? const <Object>[],
     );
   }
 

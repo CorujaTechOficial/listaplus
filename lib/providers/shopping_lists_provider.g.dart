@@ -6,24 +6,51 @@ part of 'shopping_lists_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$shoppingListsHash() => r'7a4869235b41e9b50dc4cba9a17d96d3f3aa62ae';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [ShoppingLists].
 @ProviderFor(ShoppingLists)
-final shoppingListsProvider = AutoDisposeStreamNotifierProvider<
-  ShoppingLists,
-  List<ShoppingList>
->.internal(
-  ShoppingLists.new,
-  name: r'shoppingListsProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$shoppingListsHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const shoppingListsProvider = ShoppingListsProvider._();
 
-typedef _$ShoppingLists = AutoDisposeStreamNotifier<List<ShoppingList>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class ShoppingListsProvider
+    extends $StreamNotifierProvider<ShoppingLists, List<ShoppingList>> {
+  const ShoppingListsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'shoppingListsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$shoppingListsHash();
+
+  @$internal
+  @override
+  ShoppingLists create() => ShoppingLists();
+}
+
+String _$shoppingListsHash() => r'f0e2953e5dbe2b9081022a93ec13b35010e768c5';
+
+abstract class _$ShoppingLists extends $StreamNotifier<List<ShoppingList>> {
+  Stream<List<ShoppingList>> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref =
+        this.ref as $Ref<AsyncValue<List<ShoppingList>>, List<ShoppingList>>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<List<ShoppingList>>, List<ShoppingList>>,
+              AsyncValue<List<ShoppingList>>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

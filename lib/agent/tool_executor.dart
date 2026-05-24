@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../services/logger_service.dart';
 
-import '../models/category.dart';
 import '../models/unit.dart';
+import '../providers/firestore_service_provider.dart';
 import '../providers/backup_provider.dart';
 import '../providers/current_list_provider.dart';
 import '../providers/dark_mode_provider.dart';
 import '../providers/monthly_budget_provider.dart';
+import '../providers/user_profile_provider.dart';
 import '../providers/pantry_items_provider.dart';
 import '../providers/premium_provider.dart';
 import '../providers/share_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/shopping_lists_provider.dart';
+import '../providers/recipes_provider.dart';
+import '../providers/meal_plans_provider.dart';
+import '../models/recipe.dart';
+import '../models/meal_plan.dart';
+import '../models/shopping_item.dart';
+import 'package:uuid/uuid.dart';
+import 'dart:convert';
+import '../models/interactive_artifact.dart';
 import 'tool.dart';
 
 class ToolExecutor {
@@ -108,12 +118,38 @@ class ToolExecutor {
           return _getTheme();
         case 'set_theme':
           return _setTheme(call.arguments);
+        case 'save_user_preference':
+          return _saveUserPreference(call.arguments);
+        case 'delete_user_preference':
+          return _deleteUserPreference(call.arguments);
+        case 'get_user_profile':
+          return _getUserProfile();
+        case 'update_user_profile':
+          return _updateUserProfile(call.arguments);
 
         // --- Backup tools ---
         case 'export_backup':
           return _exportBackup();
         case 'import_backup':
           return _importBackup(call.arguments);
+        case 'generate_artifact':
+          return _generateArtifact(call.arguments);
+
+        // --- Recipe tools ---
+        case 'get_recipes':
+          return _getRecipes(call.arguments);
+        case 'create_recipe':
+          return _createRecipe(call.arguments);
+        case 'delete_recipe':
+          return _deleteRecipe(call.arguments);
+
+        // --- Meal Planner tools ---
+        case 'get_meal_plan':
+          return _getMealPlan(call.arguments);
+        case 'schedule_meal':
+          return _scheduleMeal(call.arguments);
+        case 'remove_meal_plan_entry':
+          return _removeMealPlanEntry(call.arguments);
 
         default:
           return ToolResult(
@@ -122,27 +158,18 @@ class ToolExecutor {
             success: false,
           );
       }
-    } on Exception catch (e) {
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[ToolExecutor] Error executing ${call.name}', extra: {
+        'operation': 'execute_tool',
+        'toolName': call.name,
+        'toolId': call.id,
+        'arguments': call.arguments,
+      });
       return ToolResult(
         toolCallId: call.id,
         content: 'Erro ao executar ${call.name}: $e',
         success: false,
       );
-    }
-  }
-
-  Category _category(String label) {
-    switch (label) {
-      case 'Frutas':
-        return Category.fruits;
-      case 'Limpeza':
-        return Category.cleaning;
-      case 'Bebidas':
-        return Category.beverages;
-      case 'Padaria':
-        return Category.bakery;
-      default:
-        return Category.others;
     }
   }
 
@@ -278,7 +305,7 @@ class ToolExecutor {
       final item = items[i];
       final status = item.isPurchased ? '✅' : '⬜';
       final price = item.estimatedPrice != null ? ' R\$${item.estimatedPrice!.toStringAsFixed(2)}' : '';
-      result.writeln('$i. $status ${item.name} (${item.quantity} ${item.unit.label}) [${item.category.label}]$price');
+      result.writeln('$i. $status ${item.name} (${item.quantity} ${item.unit.label}) [${item.categoryId}]$price');
     }
     return ToolResult(toolCallId: '', content: result.toString());
   }
@@ -290,19 +317,25 @@ class ToolExecutor {
     final unitLabel = args['unit'] as String?;
     final categoryLabel = args['category'] as String?;
     final price = args['estimatedPrice'] != null ? (args['estimatedPrice'] as num).toDouble() : null;
+    final itemId = const Uuid().v4();
 
     await _ref.read(shoppingListItemsProvider(listId).notifier).addItem(
           listId: listId,
           name: name,
           quantity: quantity,
-          category: categoryLabel != null ? _category(categoryLabel) : Category.others,
+          categoryId: categoryLabel ?? 'others',
           unit: unitLabel != null ? _unit(unitLabel) : Unit.un,
           estimatedPrice: price,
+          id: itemId,
         );
 
     return ToolResult(
       toolCallId: '',
       content: 'Item "$name" adicionado com sucesso!',
+      resultData: {
+        'itemId': itemId,
+        'listId': listId,
+      },
     );
   }
 
@@ -351,14 +384,21 @@ class ToolExecutor {
       updated = updated.copyWith(unit: _unit(args['unit'] as String));
     }
     if (args['category'] != null) {
-      updated = updated.copyWith(category: _category(args['category'] as String));
+      updated = updated.copyWith(categoryId: args['category'] as String);
     }
     if (args['estimatedPrice'] != null) {
       updated = updated.copyWith(estimatedPrice: (args['estimatedPrice'] as num).toDouble());
     }
 
     await _ref.read(shoppingListItemsProvider(foundListId).notifier).updateItem(updated);
-    return const ToolResult(toolCallId: '', content: 'Item atualizado com sucesso.');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Item atualizado com sucesso.',
+      resultData: {
+        'previousState': foundItem.toJson(),
+        'listId': foundListId,
+      },
+    );
   }
 
   Future<ToolResult> _removeItem(Map<String, dynamic> args) async {
@@ -372,8 +412,24 @@ class ToolExecutor {
         success: false,
       );
     }
+    final items = await _ref.read(shoppingListItemsProvider(listId).future);
+    final foundItem = items.where((i) => i.id == itemId).firstOrNull;
+    if (foundItem == null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
+    }
     await _ref.read(shoppingListItemsProvider(listId).notifier).removeItem(itemId);
-    return const ToolResult(toolCallId: '', content: 'Item removido com sucesso.');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Item removido com sucesso.',
+      resultData: {
+        'previousState': foundItem.toJson(),
+        'listId': listId,
+      },
+    );
   }
 
   Future<ToolResult> _togglePurchased(Map<String, dynamic> args) async {
@@ -387,12 +443,25 @@ class ToolExecutor {
         success: false,
       );
     }
-    await _ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(itemId);
     final items = await _ref.read(shoppingListItemsProvider(listId).future);
-    final item = items.where((i) => i.id == itemId).first;
+    final foundItem = items.where((i) => i.id == itemId).firstOrNull;
+    if (foundItem == null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
+    }
+    await _ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(itemId);
+    final updatedItems = await _ref.read(shoppingListItemsProvider(listId).future);
+    final item = updatedItems.where((i) => i.id == itemId).first;
     return ToolResult(
       toolCallId: '',
       content: 'Item "${item.name}" marcado como ${item.isPurchased ? "comprado" : "não comprado"}.',
+      resultData: {
+        'previousState': foundItem.toJson(),
+        'listId': listId,
+      },
     );
   }
 
@@ -408,6 +477,18 @@ class ToolExecutor {
         idsByList.putIfAbsent(listId, () => []).add(id);
       }
     }
+    
+    final previousStates = <Map<String, dynamic>>[];
+    for (final listId in idsByList.keys) {
+      final items = await _ref.read(shoppingListItemsProvider(listId).future);
+      final listIds = idsByList[listId]!;
+      for (final item in items) {
+        if (listIds.contains(item.id)) {
+          previousStates.add(item.toJson());
+        }
+      }
+    }
+
     for (final entry in idsByList.entries) {
       await _ref.read(shoppingListItemsProvider(entry.key).notifier).togglePurchasedBatch(entry.value, isPurchased);
     }
@@ -415,6 +496,9 @@ class ToolExecutor {
     return ToolResult(
       toolCallId: '',
       content: '${ids.length} itens marcados como $action.',
+      resultData: {
+        'previousStates': previousStates,
+      },
     );
   }
 
@@ -488,7 +572,7 @@ class ToolExecutor {
           idealQuantity: idealQty,
           currentQuantity: currentQty,
           unit: unitLabel != null ? _unit(unitLabel) : Unit.un,
-          category: categoryLabel != null ? _category(categoryLabel) : Category.others,
+          categoryId: categoryLabel ?? 'others',
           estimatedPrice: price,
         );
 
@@ -513,7 +597,7 @@ class ToolExecutor {
       updated = updated.copyWith(unit: _unit(args['unit'] as String));
     }
     if (args['category'] != null) {
-      updated = updated.copyWith(category: _category(args['category'] as String));
+      updated = updated.copyWith(categoryId: args['category'] as String);
     }
     await _ref.read(pantryItemsProvider.notifier).updateItem(updated);
     return const ToolResult(toolCallId: '', content: 'Item da despensa atualizado.');
@@ -559,8 +643,15 @@ class ToolExecutor {
 
   Future<ToolResult> _setBudget(Map<String, dynamic> args) async {
     final budget = (args['budget'] as num).toDouble();
+    final previousBudget = await _ref.read(monthlyBudgetProvider.future);
     await _ref.read(monthlyBudgetProvider.notifier).setBudget(budget);
-    return ToolResult(toolCallId: '', content: 'Orçamento mensal definido como R\$${budget.toStringAsFixed(2)}.');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Orçamento mensal definido como R\$${budget.toStringAsFixed(2)}.',
+      resultData: {
+        'previousBudget': previousBudget,
+      },
+    );
   }
 
   // --- Share ---
@@ -605,6 +696,52 @@ class ToolExecutor {
     return ToolResult(toolCallId: '', content: 'Tema alterado para $mode.');
   }
 
+  Future<ToolResult> _saveUserPreference(Map<String, dynamic> args) async {
+    final key = args['key'] as String;
+    final value = args['value'] as String;
+    await _ref.read(firestoreServiceProvider).updatePreference(key, value);
+    return ToolResult(
+      toolCallId: '',
+      content: 'Preferência "$key" salva como "$value".',
+    );
+  }
+
+  Future<ToolResult> _deleteUserPreference(Map<String, dynamic> args) async {
+    final key = args['key'] as String;
+    await _ref.read(firestoreServiceProvider).deletePreference(key);
+    return ToolResult(
+      toolCallId: '',
+      content: 'Preferência "$key" removida.',
+    );
+  }
+
+  Future<ToolResult> _getUserProfile() async {
+    final profile = await _ref.read(userProfileProvider.future);
+    final profileStr = profile.toString();
+    if (profile.isEmpty) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Nenhuma preferência de perfil configurada ainda.',
+      );
+    }
+    return ToolResult(toolCallId: '', content: profileStr);
+  }
+
+  Future<ToolResult> _updateUserProfile(Map<String, dynamic> args) async {
+    final current = await _ref.read(userProfileProvider.future);
+    final updated = current.copyWith(
+      preferredStore: args['preferredStore'] as String?,
+      dietaryRestrictions: args['dietaryRestrictions'] as String?,
+      avoidedStores: args['avoidedStores'] as String?,
+      notes: args['notes'] as String?,
+    );
+    await _ref.read(userProfileServiceProvider).updateProfile(updated);
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Perfil atualizado com sucesso.',
+    );
+  }
+
   // --- Backup ---
 
   Future<ToolResult> _exportBackup() async {
@@ -617,4 +754,174 @@ class ToolExecutor {
     final result = await _ref.read(backupProvider).importFromJson(json);
     return ToolResult(toolCallId: '', content: result);
   }
+
+  Future<ToolResult> _generateArtifact(Map<String, dynamic> args) async {
+    final title = args['title'] as String;
+    final icon = args['icon'] as String;
+    final description = args['description'] as String?;
+
+    // Parse controls
+    final controlsJson = args['controls'] as String;
+    final List<dynamic> controlsRaw = jsonDecode(controlsJson) as List<dynamic>;
+    final controls = controlsRaw.map((e) {
+      return ArtifactControl.fromJson(Map<String, dynamic>.from(e as Map));
+    }).toList();
+
+    // Parse items
+    final itemsJson = args['items'] as String;
+    final List<dynamic> itemsRaw = jsonDecode(itemsJson) as List<dynamic>;
+    final items = itemsRaw.map((e) {
+      return ArtifactItem.fromJson(Map<String, dynamic>.from(e as Map));
+    }).toList();
+
+    final baseServings = (args['baseServings'] as num?)?.toDouble() ?? 1.0;
+    final budget = (args['budget'] as num?)?.toDouble();
+    final showBudgetBar = args['showBudgetBar'] as bool? ?? false;
+    final commitLabel = args['commitLabel'] as String? ?? 'Adicionar à Lista';
+
+    final commitModeStr = args['commitMode'] as String? ?? 'addAll';
+    final commitMode = ArtifactCommitMode.fromString(commitModeStr);
+
+    final artifact = InteractiveArtifact(
+      title: title,
+      icon: icon,
+      description: description,
+      controls: controls,
+      items: items,
+      baseServings: baseServings,
+      budget: budget,
+      showBudgetBar: showBudgetBar,
+      commitLabel: commitLabel,
+      commitMode: commitMode,
+    );
+
+    return ToolResult(
+      toolCallId: '',
+      content: 'Artefato "$title" gerado com sucesso.',
+      resultData: {
+        'artifact': artifact.toJson(),
+      },
+    );
+  }
+
+  // --- Recipes ---
+
+  Future<ToolResult> _getRecipes(Map<String, dynamic> args) async {
+    final query = args['query'] as String?;
+    final recipes = await _ref.read(recipesProvider.future);
+    
+    var filtered = recipes;
+    if (query != null && query.isNotEmpty) {
+      filtered = recipes.where((r) => r.name.toLowerCase().contains(query.toLowerCase())).toList();
+    }
+
+    if (filtered.isEmpty) {
+      return const ToolResult(toolCallId: '', content: 'Nenhuma receita encontrada.');
+    }
+
+    final result = StringBuffer('Minhas Receitas:\n');
+    for (final recipe in filtered) {
+      result.writeln('- ${recipe.name} (ID: ${recipe.id}): ${recipe.description}');
+    }
+    return ToolResult(toolCallId: '', content: result.toString());
+  }
+
+  Future<ToolResult> _createRecipe(Map<String, dynamic> args) async {
+    final name = args['name'] as String;
+    final description = args['description'] as String;
+    final ingredientsJson = args['ingredients'] as String;
+    final instructionsStr = args['instructions'] as String;
+    final prepTime = (args['prepTimeMinutes'] as num?)?.toInt() ?? 30;
+
+    final List<dynamic> ingredientsRaw = jsonDecode(ingredientsJson) as List<dynamic>;
+    final ingredients = ingredientsRaw.map((e) {
+      final data = Map<String, dynamic>.from(e as Map);
+      return ShoppingItem(
+        id: const Uuid().v4(),
+        shoppingListId: '',
+        name: data['name'] as String,
+        quantity: (data['quantity'] as num).toInt(),
+        unit: _unit(data['unit'] as String? ?? 'un'),
+        categoryId: data['category'] as String? ?? 'others',
+        createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
+      );
+    }).toList();
+
+    final instructions = instructionsStr.split(RegExp(r'[;,]')).map((s) => s.trim()).where((s) => s.isNotEmpty).toList();
+
+    final recipe = Recipe(
+      id: const Uuid().v4(),
+      name: name,
+      description: description,
+      ingredients: ingredients,
+      instructions: instructions,
+      prepTimeMinutes: prepTime,
+      createdAt: DateTime.now(),
+    );
+
+    await _ref.read(recipesProvider.notifier).saveRecipe(recipe);
+    return ToolResult(toolCallId: '', content: 'Receita "$name" salva com sucesso!');
+  }
+
+  Future<ToolResult> _deleteRecipe(Map<String, dynamic> args) async {
+    final id = args['recipeId'] as String;
+    await _ref.read(recipesProvider.notifier).deleteRecipe(id);
+    return const ToolResult(toolCallId: '', content: 'Receita excluída.');
+  }
+
+  // --- Meal Planner ---
+
+  Future<ToolResult> _getMealPlan(Map<String, dynamic> args) async {
+    final startStr = args['startDate'] as String?;
+    final endStr = args['endDate'] as String?;
+    
+    final start = startStr != null ? DateTime.parse(startStr) : null;
+    final end = endStr != null ? DateTime.parse(endStr) : null;
+
+    final plans = await _ref.read(mealPlansProvider(start: start, end: end).future);
+    
+    if (plans.isEmpty) {
+      return const ToolResult(toolCallId: '', content: 'Nenhuma refeição agendada para este período.');
+    }
+
+    final result = StringBuffer('Planejamento de Refeições:\n');
+    for (final plan in plans) {
+      final date = '${plan.date.day}/${plan.date.month}/${plan.date.year}';
+      result.writeln('- $date (${plan.mealType.name}): ${plan.recipeName} (${plan.servings} porções)');
+    }
+    return ToolResult(toolCallId: '', content: result.toString());
+  }
+
+  Future<ToolResult> _scheduleMeal(Map<String, dynamic> args) async {
+    final recipeId = args['recipeId'] as String;
+    final dateStr = args['date'] as String;
+    final mealTypeStr = args['mealType'] as String;
+    final servings = (args['servings'] as num?)?.toInt() ?? 1;
+
+    final recipes = await _ref.read(recipesProvider.future);
+    final recipe = recipes.where((r) => r.id == recipeId).firstOrNull;
+    
+    if (recipe == null) {
+      return const ToolResult(toolCallId: '', content: 'Receita não encontrada.', success: false);
+    }
+
+    final mealPlan = MealPlan(
+      id: const Uuid().v4(),
+      date: DateTime.parse(dateStr),
+      recipeId: recipeId,
+      recipeName: recipe.name,
+      servings: servings,
+      mealType: MealType.values.firstWhere((e) => e.name == mealTypeStr, orElse: () => MealType.lunch),
+    );
+
+    await _ref.read(mealPlansProvider().notifier).saveMealPlan(mealPlan);
+    return const ToolResult(toolCallId: '', content: 'Refeição agendada com sucesso!');
+    }
+
+    Future<ToolResult> _removeMealPlanEntry(Map<String, dynamic> args) async {
+    final id = args['mealPlanId'] as String;
+    await _ref.read(mealPlansProvider().notifier).deleteMealPlan(id);
+    return const ToolResult(toolCallId: '', content: 'Entrada do planejamento removida.');
+    }
 }

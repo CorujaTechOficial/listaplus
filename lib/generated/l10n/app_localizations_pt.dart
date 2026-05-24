@@ -162,7 +162,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get confirmArchiveTitle => 'Concluir Compra';
 
   @override
-  String get confirmArchiveContent => 'Deseja concluir esta compra e arquivar a lista?';
+  String get confirmArchiveContent =>
+      'Deseja concluir esta compra e arquivar a lista?';
 
   @override
   String get complete => 'Concluir';
@@ -207,7 +208,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get pantryEmpty => 'Dispensa vazia';
 
   @override
-  String get pantryEmptySubtitle => 'Adicione produtos que você quer manter em casa';
+  String get pantryEmptySubtitle =>
+      'Adicione produtos que você quer manter em casa';
 
   @override
   String itemsNeedPurchase(int deficit) {
@@ -533,7 +535,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get aiAssistant => 'Assistente de IA';
 
   @override
-  String get aiAssistantDescription => 'Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.';
+  String get aiAssistantDescription =>
+      'Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.';
 
   @override
   String get generalAssistant => 'Assistente Geral';
@@ -542,7 +545,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get clearHistory => 'Limpar Histórico';
 
   @override
-  String get clearHistoryConfirm => 'Deseja apagar todas as mensagens desta sessão?';
+  String get clearHistoryConfirm =>
+      'Deseja apagar todas as mensagens desta sessão?';
 
   @override
   String get chatHint => 'Digite sua mensagem...';
@@ -559,10 +563,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get generalHelp => 'Como posso ajudar com suas compras hoje?';
 
   @override
-  String get chatSubtitle => 'Peça sugestões de itens, receitas or dicas de economia.';
+  String get chatSubtitle =>
+      'Peça sugestões de itens, receitas or dicas de economia.';
 
   @override
-  String get aiError => 'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
+  String get aiError =>
+      'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
 
   @override
   String get listaPlusTitle => 'Lista Plus';
@@ -589,27 +595,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get premiumUpgrade => 'Faça upgrade para desbloquear';
-
-  @override
-  String get earnPremium => 'Ganhe Premium grátis!';
-
-  @override
-  String get watchAdDescription => 'Assista um vídeo e ganhe 24h de Premium';
-
-  @override
-  String get watch => 'Assistir';
-
-  @override
-  String get adsUnavailable => 'Anúncios indisponíveis no momento.';
-
-  @override
-  String get adLoadError => 'Erro ao carregar anúncio. Tente novamente.';
-
-  @override
-  String get adDisplayError => 'Erro ao exibir anúncio.';
-
-  @override
-  String get premium24h => '+24h de Premium!';
 
   @override
   String get itemRemoved => 'Item removido';
@@ -664,6 +649,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get prefUnlimitedPantry => 'Dispensa ilimitada';
+
+  @override
+  String get prefInteractiveArtifacts => 'Artefatos Interativos da IA';
 
   @override
   String get themeGreen => 'Verde';
@@ -748,9 +736,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get restockLabel => 'Reabastecer';
 
   @override
-  String get adFree => 'Sem anúncios';
-
-  @override
   String get advancedFeatures => 'Recursos avançados';
 
   @override
@@ -769,7 +754,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get budgetDashboardTitle => 'Dashboard';
 
   @override
-  String get selectListForDashboard => 'Selecione uma lista para ver o dashboard.';
+  String get selectListForDashboard =>
+      'Selecione uma lista para ver o dashboard.';
 
   @override
   String get spendingAnalysis => 'Análise de Gastos';
@@ -778,7 +764,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noItemsToAnalyze => 'Nenhum item na lista para analisar.';
 
   @override
-  String get markItemsToSeeAnalysis => 'Marque itens como comprados para ver a análise.';
+  String get markItemsToSeeAnalysis =>
+      'Marque itens como comprados para ver a análise.';
 
   @override
   String get totalSpending => 'Gasto Total';
@@ -811,10 +798,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get shareListText => 'Minha Lista de Compras';
 
   @override
-  String get emptyListAddItems => 'Sua lista está vazia! Adicione itens primeiro. ℹ️';
+  String get emptyListAddItems =>
+      'Sua lista está vazia! Adicione itens primeiro. ℹ️';
 
   @override
-  String get listOrganizedMagic => 'Lista organizada magicamente por categorias! ✨';
+  String get listOrganizedMagic =>
+      'Lista organizada magicamente por categorias! ✨';
 
   @override
   String get shoppingMode => 'Modo Compras';
@@ -838,7 +827,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quickRecipe => 'Receita rápida';
 
   @override
-  String get quickRecipePrompt => 'Sugira receitas com os itens da minha lista.';
+  String get quickRecipePrompt =>
+      'Sugira receitas com os itens da minha lista.';
 
   @override
   String get economyTips => 'Dicas de economia';
@@ -865,11 +855,33 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get organizeByAisles => 'Organizar por corredores';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Digitar por voz (Grátis)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'Comando de voz com IA (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'Comando de Voz com IA';
+
+  @override
+  String get voiceCommandContent =>
+      'Fale naturalmente para gerenciar sua lista!\n\nExemplos:\n• \'Adicione pão, queijo e presunto\'\n• \'Remova o sabão em pó\'\n• \'Mude o tema para azul\'\n\nEste é um recurso exclusivo do Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Ver Planos';
+
+  @override
+  String get itemsAddedSuccess => 'Itens adicionados à lista!';
+
+  @override
+  String get viewList => 'Ver lista';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
 class AppLocalizationsPtBr extends AppLocalizationsPt {
-  AppLocalizationsPtBr(): super('pt_BR');
+  AppLocalizationsPtBr() : super('pt_BR');
 
   @override
   String get appTitle => 'Lista de Compras';
@@ -1025,7 +1037,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get confirmArchiveTitle => 'Concluir Compra';
 
   @override
-  String get confirmArchiveContent => 'Deseja concluir esta compra e arquivar a lista?';
+  String get confirmArchiveContent =>
+      'Deseja concluir esta compra e arquivar a lista?';
 
   @override
   String get complete => 'Concluir';
@@ -1070,7 +1083,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get pantryEmpty => 'Dispensa vazia';
 
   @override
-  String get pantryEmptySubtitle => 'Adicione produtos que você quer manter em casa';
+  String get pantryEmptySubtitle =>
+      'Adicione produtos que você quer manter em casa';
 
   @override
   String itemsNeedPurchase(int deficit) {
@@ -1396,7 +1410,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get aiAssistant => 'Assistente de IA';
 
   @override
-  String get aiAssistantDescription => 'Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.';
+  String get aiAssistantDescription =>
+      'Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.';
 
   @override
   String get generalAssistant => 'Assistente Geral';
@@ -1405,7 +1420,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get clearHistory => 'Limpar Histórico';
 
   @override
-  String get clearHistoryConfirm => 'Deseja apagar todas as mensagens desta sessão?';
+  String get clearHistoryConfirm =>
+      'Deseja apagar todas as mensagens desta sessão?';
 
   @override
   String get chatHint => 'Digite sua mensagem...';
@@ -1422,10 +1438,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get generalHelp => 'Como posso ajudar com suas compras hoje?';
 
   @override
-  String get chatSubtitle => 'Peça sugestões de itens, receitas or dicas de economia.';
+  String get chatSubtitle =>
+      'Peça sugestões de itens, receitas or dicas de economia.';
 
   @override
-  String get aiError => 'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
+  String get aiError =>
+      'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
 
   @override
   String get listaPlusTitle => 'Lista Plus';
@@ -1452,27 +1470,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get premiumUpgrade => 'Faça upgrade para desbloquear';
-
-  @override
-  String get earnPremium => 'Ganhe Premium grátis!';
-
-  @override
-  String get watchAdDescription => 'Assista um vídeo e ganhe 24h de Premium';
-
-  @override
-  String get watch => 'Assistir';
-
-  @override
-  String get adsUnavailable => 'Anúncios indisponíveis no momento.';
-
-  @override
-  String get adLoadError => 'Erro ao carregar anúncio. Tente novamente.';
-
-  @override
-  String get adDisplayError => 'Erro ao exibir anúncio.';
-
-  @override
-  String get premium24h => '+24h de Premium!';
 
   @override
   String get itemRemoved => 'Item removido';
@@ -1527,6 +1524,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get prefUnlimitedPantry => 'Dispensa ilimitada';
+
+  @override
+  String get prefInteractiveArtifacts => 'Artefatos Interativos da IA';
 
   @override
   String get themeGreen => 'Verde';
@@ -1611,9 +1611,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get restockLabel => 'Reabastecer';
 
   @override
-  String get adFree => 'Sem anúncios';
-
-  @override
   String get advancedFeatures => 'Recursos avançados';
 
   @override
@@ -1632,7 +1629,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get budgetDashboardTitle => 'Dashboard';
 
   @override
-  String get selectListForDashboard => 'Selecione uma lista para ver o dashboard.';
+  String get selectListForDashboard =>
+      'Selecione uma lista para ver o dashboard.';
 
   @override
   String get spendingAnalysis => 'Análise de Gastos';
@@ -1641,7 +1639,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get noItemsToAnalyze => 'Nenhum item na lista para analisar.';
 
   @override
-  String get markItemsToSeeAnalysis => 'Marque itens como comprados para ver a análise.';
+  String get markItemsToSeeAnalysis =>
+      'Marque itens como comprados para ver a análise.';
 
   @override
   String get totalSpending => 'Gasto Total';
@@ -1674,10 +1673,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get shareListText => 'Minha Lista de Compras';
 
   @override
-  String get emptyListAddItems => 'Sua lista está vazia! Adicione itens primeiro. ℹ️';
+  String get emptyListAddItems =>
+      'Sua lista está vazia! Adicione itens primeiro. ℹ️';
 
   @override
-  String get listOrganizedMagic => 'Lista organizada magicamente por categorias! ✨';
+  String get listOrganizedMagic =>
+      'Lista organizada magicamente por categorias! ✨';
 
   @override
   String get shoppingMode => 'Modo Compras';
@@ -1701,7 +1702,8 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get quickRecipe => 'Receita rápida';
 
   @override
-  String get quickRecipePrompt => 'Sugira receitas com os itens da minha lista.';
+  String get quickRecipePrompt =>
+      'Sugira receitas com os itens da minha lista.';
 
   @override
   String get economyTips => 'Dicas de economia';
@@ -1728,4 +1730,26 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get organizeByAisles => 'Organizar por corredores';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Digitar por voz (Grátis)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'Comando de voz com IA (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'Comando de Voz com IA';
+
+  @override
+  String get voiceCommandContent =>
+      'Fale naturalmente para gerenciar sua lista!\n\nExemplos:\n• \'Adicione pão, queijo e presunto\'\n• \'Remova o sabão em pó\'\n• \'Mude o tema para azul\'\n\nEste é um recurso exclusivo do Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Ver Planos';
+
+  @override
+  String get itemsAddedSuccess => 'Itens adicionados à lista!';
+
+  @override
+  String get viewList => 'Ver lista';
 }

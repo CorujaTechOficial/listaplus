@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
-import '../models/category.dart';
+import '../providers/categories_provider.dart';
 import '../models/unit.dart';
 import '../providers/pantry_items_provider.dart';
+import '../constants/common_products.dart';
+import 'styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class AddPantryItemDialog extends ConsumerStatefulWidget {
@@ -15,29 +17,12 @@ class AddPantryItemDialog extends ConsumerStatefulWidget {
 }
 
 class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
-  static const List<String> _commonProducts = [
-    'Abacaxi', 'Absorvente', 'Achocolatado', 'Açúcar', 'Água Sanitária', 'Alface',
-    'Alho', 'Amaciante', 'Amendoim', 'Arroz', 'Azeite', 'Azeitona', 'Bacon',
-    'Balas', 'Banana', 'Batata', 'Batata Palha', 'Biscoito', 'Bolacha', 'Bolo',
-    'Brócolis', 'Café', 'Carne', 'Cebola', 'Cenoura', 'Cerveja', 'Chá', 'Chocolate',
-    'Condicionador', 'Couve', 'Creme de Leite', 'Creme Dental', 'Desinfetante',
-    'Desodorante', 'Detergente', 'Ervilha', 'Esponja de Aço', 'Extrato de Tomate',
-    'Farinha de Mandioca', 'Farinha de Trigo', 'Feijão', 'Fósforo', 'Frango',
-    'Frios', 'Gelatina', 'Goma de Mascar', 'Hambúrguer', 'Hidratante', 'Iogurte',
-    'Leite', 'Leite Condensado', 'Limão', 'Linguiça', 'Macarrão', 'Maçã',
-    'Maionese', 'Mamão', 'Manteiga', 'Margarina', 'Manga', 'Melancia', 'Melão',
-    'Milho', 'Molho de Tomate', 'Mortadela', 'Óleo', 'Ovos', 'Pão', 'Papel Higiênico',
-    'Papel Toalha', 'Peixe', 'Pera', 'Pipoca', 'Pizza', 'Presunto', 'Queijo',
-    'Refrigerante', 'Sabão em Barra', 'Sabão em Pó', 'Sabonete', 'Salgadinho',
-    'Salsicha', 'Sal', 'Shampoo', 'Sorvete', 'Suco', 'Tomate', 'Uva', 'Vinagre',
-  ];
-
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _idealController = TextEditingController(text: '2');
   final _currentController = TextEditingController(text: '0');
   final _priceController = TextEditingController();
-  Category _selectedCategory = Category.others;
+  String _selectedCategoryId = 'others';
   Unit _selectedUnit = Unit.un;
   bool _trackStock = true;
 
@@ -63,8 +48,8 @@ class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
             padding: const EdgeInsets.all(Spacing.xs),
             decoration: BoxDecoration(
               color: isDark
-                  ? theme.colorScheme.primaryContainer.withValues(alpha: 0.15)
-                  : theme.colorScheme.primaryContainer.withValues(alpha: 0.3),
+                  ? theme.colorScheme.primaryContainer.withAlpha((0.15 * 255).toInt())
+                  : theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt()),
               borderRadius: BorderRadius.circular(RadiusTokens.sm),
             ),
             child: Icon(
@@ -83,13 +68,13 @@ class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Autocomplete<String>(
+              StyledAutocomplete(
                 optionsBuilder: (TextEditingValue textEditingValue) {
                   if (textEditingValue.text.isEmpty) {
                     return const Iterable<String>.empty();
                   }
                   final query = textEditingValue.text.toLowerCase();
-                  return _commonProducts.where((String option) {
+                  return commonProducts.where((String option) {
                     return option.toLowerCase().contains(query);
                   });
                 },
@@ -154,7 +139,7 @@ class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
                 children: [
                   Expanded(
                     child: DropdownButtonFormField<Unit>(
-                      value: _selectedUnit,
+                      initialValue: _selectedUnit,
                       decoration: InputDecoration(
                         labelText: l10n.unit,
                         prefixIcon: const Icon(Icons.straighten),
@@ -167,16 +152,16 @@ class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
                   ),
                   const SizedBox(width: Spacing.sm),
                   Expanded(
-                    child: DropdownButtonFormField<Category>(
-                      value: _selectedCategory,
+                    child: DropdownButtonFormField<String>(
+                      initialValue: _selectedCategoryId,
                       decoration: InputDecoration(
                         labelText: l10n.category,
                         prefixIcon: const Icon(Icons.category_outlined),
                       ),
-                      items: Category.values.map((cat) {
-                        return DropdownMenuItem(value: cat, child: Text(cat.label));
+                      items: (ref.watch(categoriesProvider).value ?? []).map((cat) {
+                        return DropdownMenuItem(value: cat.id, child: Text(cat.name));
                       }).toList(),
-                      onChanged: (v) => setState(() => _selectedCategory = v!),
+                      onChanged: (v) => setState(() => _selectedCategoryId = v!),
                     ),
                   ),
                 ],
@@ -222,7 +207,7 @@ class _AddPantryItemDialogState extends ConsumerState<AddPantryItemDialog> {
                   name: _nameController.text,
                   idealQuantity: int.tryParse(_idealController.text) ?? 2,
                   currentQuantity: int.tryParse(_currentController.text) ?? 0,
-                  category: _selectedCategory,
+                  categoryId: _selectedCategoryId,
                   unit: _selectedUnit,
                   estimatedPrice: double.tryParse(_priceController.text),
                   trackStock: _trackStock,

@@ -2,6 +2,7 @@ import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
 import '../models/pantry_item.dart';
+import '../models/category_data.dart';
 
 abstract class StorageBackend {
   Future<List<ShoppingList>> loadLists();
@@ -24,7 +25,8 @@ abstract class StorageBackend {
   Future<void> setLocale(String? locale);
   Future<Map<String, dynamic>?> getUserData();
   Future<void> updateUserData(Map<String, dynamic> data);
-  Future<void> extendPremiumBy24h();
+  Future<void> updatePreference(String key, String value);
+  Future<void> deletePreference(String key);
   Future<void> saveSharedList(String code, Map<String, dynamic> data);
   Future<Map<String, dynamic>?> getSharedList(String code);
 
@@ -52,4 +54,20 @@ abstract class StorageBackend {
 
   Future<Map<String, dynamic>?> getAiUsage();
   Future<void> saveAiUsage(Map<String, dynamic> data);
+
+  Future<List<CategoryData>> loadCategories();
+  Stream<List<CategoryData>> watchCategories();
+  Future<void> saveCategory(CategoryData cat);
+  Future<void> deleteCategory(String categoryId);
+  Future<void> saveCategories(List<CategoryData> categories);
+
+  Future<List<Map<String, dynamic>>> loadRecipes();
+  Stream<List<Map<String, dynamic>>> watchRecipes();
+  Future<void> saveRecipe(Map<String, dynamic> recipe);
+  Future<void> deleteRecipe(String id);
+
+  Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end});
+  Stream<List<Map<String, dynamic>>> watchMealPlans({DateTime? start, DateTime? end});
+  Future<void> saveMealPlan(Map<String, dynamic> mealPlan);
+  Future<void> deleteMealPlan(String id);
 }

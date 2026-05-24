@@ -25,7 +25,7 @@ class AuthScreen extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.all(Spacing.md),
                 decoration: BoxDecoration(
-                  color: theme.colorScheme.primaryContainer.withValues(alpha: 0.3),
+                  color: theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt()),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(

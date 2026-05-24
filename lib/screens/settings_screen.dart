@@ -15,7 +15,13 @@ import '../theme/page_transitions.dart';
 import 'theme_selection_screen.dart';
 import 'budget_dashboard_screen.dart';
 import 'backup_screen.dart';
+import 'manage_categories_screen.dart';
 import 'paywall_screen.dart';
+import 'user_profile_screen.dart';
+import '../providers/ai_config_provider.dart';
+import '../models/ai_config.dart';
+import 'chat_history_screen.dart';
+
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -29,6 +35,9 @@ class SettingsScreen extends ConsumerWidget {
     final premiumAsync = ref.watch(premiumProvider);
     final localeAsync = ref.watch(localeSettingProvider);
     final isPt = Localizations.localeOf(context).languageCode == 'pt';
+    final aiConfigAsync = ref.watch(aiConfigStateProvider);
+    final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'auto_awesome');
+
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.settingsAppBar)),
@@ -81,6 +90,20 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
           const Divider(),
+          _SectionHeader(title: isPt ? 'Perfil' : 'Profile'),
+          ListTile(
+            leading: Icon(Icons.person_outline, color: theme.colorScheme.primary),
+            title: const Text('Meu Perfil'),
+            subtitle: const Text('Preferências pessoais para o assistente IA'),
+            trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeSlideRoute<void>(const UserProfileScreen()),
+              );
+            },
+          ),
+          const Divider(),
           _SectionHeader(title: l10n.appearance),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
@@ -114,7 +137,7 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(l10n.themeColor),
             subtitle: Text(
               ThemeOption.fromColorValue(
-                ref.watch(themeColorProvider).valueOrNull?.toARGB32() ?? const Color(0xFF4CAF50).toARGB32(),
+                ref.watch(themeColorProvider).value?.toARGB32() ?? const Color(0xFF4CAF50).toARGB32(),
               ).name,
             ),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
@@ -125,6 +148,41 @@ class SettingsScreen extends ConsumerWidget {
               );
             },
           ),
+          ListTile(
+            leading: Icon(aiConfig.iconData, color: theme.colorScheme.primary),
+            title: Text(isPt ? 'Personalizar Assistente IA' : 'Customize AI Assistant'),
+            subtitle: Text(aiConfig.name),
+            trailing: premiumAsync.value == true
+                ? Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant)
+                : Icon(Icons.lock_outline, color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt())),
+            onTap: () async {
+              final isPremium = premiumAsync.value ?? false;
+              if (isPremium) {
+                _showCustomizeAiDialog(context, ref, aiConfig, isPt);
+              } else {
+                await ref.read(analyticsServiceProvider).logPremiumFeatureAccessed(PremiumFeature.assistant.name);
+                if (context.mounted) {
+                  await Navigator.push(
+                    context,
+                    fadeSlideRoute<void>(const PaywallScreen()),
+                  );
+                }
+              }
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.history, color: theme.colorScheme.primary),
+            title: Text(isPt ? 'Histórico do Assistente' : 'Assistant History'),
+            subtitle: Text(isPt ? 'Ver e pesquisar conversas anteriores' : 'View and search past conversations'),
+            trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeSlideRoute<void>(const ChatHistoryScreen()),
+              );
+            },
+          ),
+
           const Divider(),
           _SectionHeader(title: l10n.language),
           Padding(
@@ -147,7 +205,7 @@ class SettingsScreen extends ConsumerWidget {
                   label: Text('English'),
                 ),
               ],
-              selected: {localeAsync.valueOrNull},
+              selected: {localeAsync.value},
               onSelectionChanged: (Set<String?> selected) {
                 ref.read(localeSettingProvider.notifier).setLocale(selected.first);
               },
@@ -162,7 +220,7 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.budgetSubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
             onTap: () async {
-              final isPremium = premiumAsync.valueOrNull ?? false;
+              final isPremium = premiumAsync.value ?? false;
               if (isPremium) {
                 await Navigator.push(
                   context,
@@ -187,7 +245,7 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(l10n.backupSubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
             onTap: () async {
-              final isPremium = premiumAsync.valueOrNull ?? false;
+              final isPremium = premiumAsync.value ?? false;
               if (isPremium) {
                 await Navigator.push(
                   context,
@@ -202,6 +260,18 @@ class SettingsScreen extends ConsumerWidget {
                   );
                 }
               }
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.category_outlined, color: theme.colorScheme.primary),
+            title: const Text('Categorias'),
+            subtitle: const Text('Gerenciar categorias de itens'),
+            trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeSlideRoute<void>(const ManageCategoriesScreen()),
+              );
             },
           ),
           const Divider(),
@@ -235,6 +305,121 @@ class SettingsScreen extends ConsumerWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void _showCustomizeAiDialog(BuildContext context, WidgetRef ref, AiConfig currentConfig, bool isPt) {
+    final nameController = TextEditingController(text: currentConfig.name);
+    String selectedIconKey = currentConfig.iconKey;
+
+    showDialog<void>(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            final theme = Theme.of(context);
+            final icons = [
+              (key: 'auto_awesome', icon: Icons.auto_awesome),
+              (key: 'smart_toy', icon: Icons.smart_toy),
+              (key: 'psychology', icon: Icons.psychology),
+              (key: 'support_agent', icon: Icons.support_agent),
+              (key: 'face', icon: Icons.face),
+            ];
+
+            return AlertDialog(
+              title: Text(isPt ? 'Personalizar Assistente' : 'Customize Assistant'),
+              content: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextField(
+                      controller: nameController,
+                      decoration: InputDecoration(
+                        labelText: isPt ? 'Nome do Assistente' : 'Assistant Name',
+                        border: const OutlineInputBorder(),
+                      ),
+                      maxLength: 20,
+                    ),
+                    const SizedBox(height: Spacing.md),
+                    Text(
+                      isPt ? 'Escolha um Ícone:' : 'Choose an Icon:',
+                      style: theme.textTheme.titleSmall,
+                    ),
+                    const SizedBox(height: Spacing.xs),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: icons.map((item) {
+                        final isSelected = selectedIconKey == item.key;
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedIconKey = item.key;
+                            });
+                          },
+                          borderRadius: BorderRadius.circular(24),
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: isSelected
+                                    ? theme.colorScheme.primary
+                                    : Colors.transparent,
+                                width: 2,
+                              ),
+                              color: isSelected
+                                  ? theme.colorScheme.primaryContainer
+                                  : Colors.transparent,
+                            ),
+                            child: Icon(
+                              item.icon,
+                              color: isSelected
+                                  ? theme.colorScheme.onPrimaryContainer
+                                  : theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(isPt ? 'Cancelar' : 'Cancel'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    final newName = nameController.text.trim();
+                    if (newName.isNotEmpty) {
+                      try {
+                        await ref.read(aiConfigStateProvider.notifier).updateConfig(
+                          name: newName,
+                          iconKey: selectedIconKey,
+                        );
+                        if (context.mounted) {
+                          Navigator.pop(context);
+                        }
+                      } on Exception catch (e) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(e.toString())),
+                          );
+                        }
+                      }
+                    }
+                  },
+                  child: Text(isPt ? 'Salvar' : 'Save'),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }

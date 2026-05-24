@@ -122,8 +122,8 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            theme.colorScheme.primary.withValues(alpha: 0.8),
-            theme.colorScheme.tertiary.withValues(alpha: 0.6),
+            theme.colorScheme.primary.withAlpha((0.8 * 255).toInt()),
+            theme.colorScheme.tertiary.withAlpha((0.6 * 255).toInt()),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -166,7 +166,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             'Desbloqueie todo o poder da organização inteligente',
             textAlign: TextAlign.center,
             style: theme.textTheme.bodyMedium?.copyWith(
-              color: Colors.white.withValues(alpha: 0.9),
+              color: Colors.white.withAlpha((0.9 * 255).toInt()),
             ),
           ),
         ],
@@ -267,11 +267,11 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: isSelected ? theme.colorScheme.primary : theme.colorScheme.outline.withValues(alpha: 0.3),
+                      color: isSelected ? theme.colorScheme.primary : theme.colorScheme.outline.withAlpha((0.3 * 255).toInt()),
                       width: isSelected ? 2 : 1,
                     ),
                     borderRadius: BorderRadius.circular(16),
-                    color: isSelected ? theme.colorScheme.primaryContainer.withValues(alpha: 0.1) : null,
+                    color: isSelected ? theme.colorScheme.primaryContainer.withAlpha((0.1 * 255).toInt()) : null,
                   ),
                   padding: const EdgeInsets.all(Spacing.md),
                   child: Row(
@@ -348,7 +348,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           Text(
             'Cancele quando quiser. Sem compromisso.',
             style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.7),
+              color: theme.colorScheme.onSurfaceVariant.withAlpha((0.7 * 255).toInt()),
             ),
           ),
         ],

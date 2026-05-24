@@ -8,7 +8,7 @@ class AuthService {
     FirebaseAuth? auth,
     GoogleSignIn? googleSignIn,
   })  : _auth = auth ?? FirebaseAuth.instance,
-        _googleSignIn = googleSignIn ?? GoogleSignIn();
+        _googleSignIn = googleSignIn ?? GoogleSignIn.instance;
 
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
@@ -20,19 +20,14 @@ class AuthService {
   bool get isAnonymous => _auth.currentUser?.isAnonymous ?? true;
 
   Future<User?> signInWithGoogle() async {
-    final googleUser = await _googleSignIn.signIn();
-    if (googleUser == null) {
-      return null;
-    }
+    final googleUser = await _googleSignIn.authenticate();
 
-    final googleAuth = await googleUser.authentication;
-    final accessToken = googleAuth.accessToken;
+    final googleAuth = googleUser.authentication;
     final idToken = googleAuth.idToken;
-    if (accessToken == null || idToken == null) {
+    if (idToken == null) {
       return null;
     }
     final credential = GoogleAuthProvider.credential(
-      accessToken: accessToken,
       idToken: idToken,
     );
 

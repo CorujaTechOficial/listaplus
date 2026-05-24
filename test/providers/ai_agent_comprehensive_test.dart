@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/agent/tool.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/providers/chat_provider.dart';
 import 'package:shopping_list/providers/shopping_list_provider.dart';
 import 'package:shopping_list/providers/shopping_lists_provider.dart';
@@ -104,9 +103,9 @@ void main() {
       final list = await container.read(shoppingListsProvider.notifier).createList('Mercado');
       final listId = list.id;
       final itemNotifier = container.read(shoppingListItemsProvider(listId).notifier);
-      await itemNotifier.addItem(listId: listId, name: 'Arroz', quantity: 1, category: Category.others);
-      await itemNotifier.addItem(listId: listId, name: 'Feijão', quantity: 1, category: Category.others);
-      await itemNotifier.addItem(listId: listId, name: 'Carne', quantity: 1, category: Category.others);
+      await itemNotifier.addItem(listId: listId, name: 'Arroz', quantity: 1, categoryId: 'others');
+      await itemNotifier.addItem(listId: listId, name: 'Feijão', quantity: 1, categoryId: 'others');
+      await itemNotifier.addItem(listId: listId, name: 'Carne', quantity: 1, categoryId: 'others');
       
       final initialItems = await container.read(shoppingListItemsProvider(listId).future);
       final arrozId = initialItems[0].id;
@@ -146,7 +145,7 @@ void main() {
       expect(items[0].name, 'Carne');
 
       // 3. Reorder Items (Add one more first)
-      await itemNotifier.addItem(listId: listId, name: 'Ovos', quantity: 12, category: Category.others);
+      await itemNotifier.addItem(listId: listId, name: 'Ovos', quantity: 12, categoryId: 'others');
       fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(

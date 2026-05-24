@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod/riverpod.dart' show Override;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -18,20 +19,19 @@ import 'package:shopping_list/main.dart' as app;
 import 'package:shopping_list/screens/home_screen.dart' as screens;
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/shopping_list.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/providers/current_list_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
-import 'package:shopping_list/providers/ad_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/providers/ai_service_provider.dart';
+import 'package:shopping_list/providers/categories_provider.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/services/analytics_service.dart';
-import '../helpers/fake_ad_service.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 import '../helpers/fake_ai_service.dart';
+import '../helpers/fake_categories_notifier.dart';
 import 'package:shopping_list/services/storage_backend.dart';
 
 Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatService? revenueCat}) {
@@ -39,8 +39,8 @@ Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatServi
     authServiceProvider.overrideWithValue(AuthService(auth: MockFirebaseAuth())),
     revenueCatServiceProvider.overrideWithValue(revenueCat ?? FakeRevenueCatService()),
     analyticsServiceProvider.overrideWithValue(AnalyticsService()),
-    adServiceProvider.overrideWithValue(FakeAdService()),
     aiServiceProvider.overrideWithValue(FakeAiService()),
+    categoriesProvider.overrideWith(() => FakeCategoriesNotifier()),
   ];
   if (backend != null) {
     overrides.add(firestoreServiceProvider.overrideWithValue(backend));
@@ -89,7 +89,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Maçã',
         quantity: 3,
-        category: Category.fruits,
+        categoryId: 'fruits',
         estimatedPrice: 2.50,
       );
 
@@ -110,7 +110,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Pão',
         quantity: 1,
-        category: Category.bakery,
+        categoryId: 'bakery',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -129,7 +129,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Comprado',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
         isPurchased: true,
       );
 
@@ -147,7 +147,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item Teste',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -164,7 +164,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Remover',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -188,7 +188,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Editável',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -205,7 +205,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 5,
-        category: Category.fruits,
+        categoryId: 'fruits',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -223,7 +223,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 3,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -240,7 +240,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 3,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       await tester.pumpWidget(wrapWithProviders(
@@ -367,7 +367,7 @@ void main() {
       expect(find.text('Cancelar'), findsOneWidget);
       expect(find.text('Adicionar'), findsOneWidget);
       expect(find.byType(TextFormField), findsNWidgets(3));
-      expect(find.byType(DropdownButtonFormField<Category>), findsOneWidget);
+      expect(find.byType(DropdownButtonFormField<String>), findsOneWidget);
       expect(find.byType(DropdownButtonFormField<Unit>), findsOneWidget);
     });
 
@@ -386,7 +386,7 @@ void main() {
 
       await tester.enterText(find.byType(TextFormField).first, 'Arroz');
 
-      await tester.tap(find.byType(DropdownButtonFormField<Category>));
+      await tester.tap(find.byType(DropdownButtonFormField<String>));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Frutas').last);
       await tester.pumpAndSettle();
@@ -416,7 +416,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Arroz',
         quantity: 5,
-        category: Category.others,
+        categoryId: 'others',
         unit: Unit.kg,
         estimatedPrice: 10.50,
       );
@@ -482,7 +482,7 @@ void main() {
     testWidgets('can select different category', (tester) async {
       await openDialog(tester);
 
-      await tester.tap(find.byType(DropdownButtonFormField<Category>));
+      await tester.tap(find.byType(DropdownButtonFormField<String>));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Frutas').last);
       await tester.pumpAndSettle();
@@ -692,7 +692,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Arroz',
         quantity: 5,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -717,14 +717,14 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Comprado',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
         isPurchased: true,
       );
       final pendingItem = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Pendente',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
         isPurchased: false,
       );
 
@@ -761,7 +761,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Restaurar',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -799,7 +799,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -858,7 +858,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item Qtd',
         quantity: 2,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -897,7 +897,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -932,14 +932,14 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Pendente',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
         isPurchased: false,
       );
       final purchased = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Comprado',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
         isPurchased: true,
       );
 
@@ -973,7 +973,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1001,7 +1001,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1033,7 +1033,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1068,13 +1068,13 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final itemB = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Item B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1114,7 +1114,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
         estimatedPrice: 10,
         isPurchased: true,
       );
@@ -1143,10 +1143,10 @@ void main() {
     testWidgets('search button opens search delegate', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');
       final item1 = ShoppingItem(
-        shoppingListId: 'list-1', name: 'Maçã', quantity: 1, category: Category.fruits,
+        shoppingListId: 'list-1', name: 'Maçã', quantity: 1, categoryId: 'fruits',
       );
       final item2 = ShoppingItem(
-        shoppingListId: 'list-1', name: 'Banana', quantity: 1, category: Category.fruits,
+        shoppingListId: 'list-1', name: 'Banana', quantity: 1, categoryId: 'fruits',
       );
 
       final backend = FakeStorageBackend();
@@ -1202,8 +1202,8 @@ void main() {
     testWidgets('sort dropdown changes sort order', (tester) async {
       final list = ShoppingList(id: 'list-1', name: 'Lista');
       final items = [
-        ShoppingItem(shoppingListId: 'list-1', name: 'Banana', quantity: 1, category: Category.fruits),
-        ShoppingItem(shoppingListId: 'list-1', name: 'Arroz', quantity: 1, category: Category.others),
+        ShoppingItem(shoppingListId: 'list-1', name: 'Banana', quantity: 1, categoryId: 'fruits'),
+        ShoppingItem(shoppingListId: 'list-1', name: 'Arroz', quantity: 1, categoryId: 'others'),
       ];
 
       final backend = FakeStorageBackend();
@@ -1259,7 +1259,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1285,7 +1285,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1314,7 +1314,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1345,7 +1345,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1375,7 +1375,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1409,7 +1409,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1440,7 +1440,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1469,7 +1469,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final backend = FakeStorageBackend();
@@ -1553,13 +1553,13 @@ void main() {
           shoppingListId: 'list-1',
           name: 'Maçã',
           quantity: 1,
-          category: Category.fruits,
+          categoryId: 'fruits',
         ),
         ShoppingItem(
           shoppingListId: 'list-1',
           name: 'Banana',
           quantity: 2,
-          category: Category.fruits,
+          categoryId: 'fruits',
         ),
       ]);
 

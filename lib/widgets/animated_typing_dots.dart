@@ -8,7 +8,7 @@ class AnimatedTypingDots extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final dotColor = theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.5);
+    final dotColor = theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt());
 
     return RepaintBoundary(
       child: Row(

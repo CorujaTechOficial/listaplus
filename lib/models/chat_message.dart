@@ -1,4 +1,5 @@
 import 'package:uuid/uuid.dart';
+import 'interactive_artifact.dart';
 
 // coverage:ignore-start
 enum ChatRole {
@@ -38,6 +39,8 @@ class ChatMessage {
     this.isError = false,
     this.isTeaser = false,
     this.feedback, // null = none, 1 = like, -1 = dislike
+    this.executionSteps,
+    this.artifact,
   })  : id = id ?? const Uuid().v4(),
         timestamp = timestamp ?? DateTime.now();
 
@@ -54,6 +57,14 @@ class ChatMessage {
       isError: json['isError'] as bool? ?? false,
       isTeaser: json['isTeaser'] as bool? ?? false,
       feedback: json['feedback'] as int?,
+      executionSteps: (json['executionSteps'] as List<dynamic>?)
+          ?.map((e) => AgentStep.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+      artifact: json['artifact'] != null
+          ? InteractiveArtifact.fromJson(
+              Map<String, dynamic>.from(json['artifact'] as Map),
+            )
+          : null,
     );
   }
 
@@ -79,6 +90,8 @@ class ChatMessage {
   final bool isError;
   final bool isTeaser;
   final int? feedback;
+  final List<AgentStep>? executionSteps;
+  final InteractiveArtifact? artifact;
 
   ChatMessage copyWith({
     String? id,
@@ -92,6 +105,8 @@ class ChatMessage {
     bool? isError,
     bool? isTeaser,
     int? feedback,
+    List<AgentStep>? executionSteps,
+    InteractiveArtifact? artifact,
   }) {
     return ChatMessage(
       id: id ?? this.id,
@@ -105,6 +120,8 @@ class ChatMessage {
       isError: isError ?? this.isError,
       isTeaser: isTeaser ?? this.isTeaser,
       feedback: feedback ?? this.feedback,
+      executionSteps: executionSteps ?? this.executionSteps,
+      artifact: artifact ?? this.artifact,
     );
   }
 
@@ -121,6 +138,89 @@ class ChatMessage {
       'isError': isError,
       'isTeaser': isTeaser,
       if (feedback != null) 'feedback': feedback,
+      if (executionSteps != null)
+        'executionSteps': executionSteps!.map((e) => e.toJson()).toList(),
+      if (artifact != null) 'artifact': artifact!.toJson(),
+    };
+  }
+}
+
+enum AgentStepStatus {
+  pending,
+  running,
+  success,
+  error,
+  undone;
+
+  String get value {
+    switch (this) {
+      case AgentStepStatus.pending:
+        return 'pending';
+      case AgentStepStatus.running:
+        return 'running';
+      case AgentStepStatus.success:
+        return 'success';
+      case AgentStepStatus.error:
+        return 'error';
+      case AgentStepStatus.undone:
+        return 'undone';
+    }
+  }
+
+  static AgentStepStatus fromString(String value) {
+    return AgentStepStatus.values.firstWhere(
+      (s) {
+        return s.value == value;
+      },
+      orElse: () {
+        return AgentStepStatus.pending;
+      },
+    );
+  }
+}
+
+class AgentStep {
+  AgentStep({
+    required this.id,
+    required this.description,
+    required this.status,
+    this.resultData,
+  });
+
+  factory AgentStep.fromJson(Map<String, dynamic> json) {
+    return AgentStep(
+      id: json['id'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      status: AgentStepStatus.fromString(json['status'] as String? ?? 'pending'),
+      resultData: json['resultData'] != null ? Map<String, dynamic>.from(json['resultData'] as Map) : null,
+    );
+  }
+
+  final String id;
+  final String description;
+  final AgentStepStatus status;
+  final Map<String, dynamic>? resultData;
+
+  AgentStep copyWith({
+    String? id,
+    String? description,
+    AgentStepStatus? status,
+    Map<String, dynamic>? resultData,
+  }) {
+    return AgentStep(
+      id: id ?? this.id,
+      description: description ?? this.description,
+      status: status ?? this.status,
+      resultData: resultData ?? this.resultData,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'description': description,
+      'status': status.value,
+      if (resultData != null) 'resultData': resultData,
     };
   }
 }

@@ -62,7 +62,8 @@ import 'app_localizations_pt.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -70,7 +71,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,18 +84,19 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('pt'),
-    Locale('pt', 'BR')
+    Locale('pt', 'BR'),
   ];
 
   /// Main app title
@@ -1164,48 +1167,6 @@ abstract class AppLocalizations {
   /// **'Upgrade to unlock'**
   String get premiumUpgrade;
 
-  /// No description provided for @earnPremium.
-  ///
-  /// In en, this message translates to:
-  /// **'Earn free Premium!'**
-  String get earnPremium;
-
-  /// No description provided for @watchAdDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Watch a video and earn 24h of Premium'**
-  String get watchAdDescription;
-
-  /// No description provided for @watch.
-  ///
-  /// In en, this message translates to:
-  /// **'Watch'**
-  String get watch;
-
-  /// No description provided for @adsUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'Ads unavailable at the moment.'**
-  String get adsUnavailable;
-
-  /// No description provided for @adLoadError.
-  ///
-  /// In en, this message translates to:
-  /// **'Error loading ad. Try again.'**
-  String get adLoadError;
-
-  /// No description provided for @adDisplayError.
-  ///
-  /// In en, this message translates to:
-  /// **'Error displaying ad.'**
-  String get adDisplayError;
-
-  /// No description provided for @premium24h.
-  ///
-  /// In en, this message translates to:
-  /// **'+24h of Premium!'**
-  String get premium24h;
-
   /// No description provided for @itemRemoved.
   ///
   /// In en, this message translates to:
@@ -1313,6 +1274,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unlimited pantry'**
   String get prefUnlimitedPantry;
+
+  /// No description provided for @prefInteractiveArtifacts.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive AI Artifacts'**
+  String get prefInteractiveArtifacts;
 
   /// No description provided for @themeGreen.
   ///
@@ -1457,12 +1424,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restock'**
   String get restockLabel;
-
-  /// No description provided for @adFree.
-  ///
-  /// In en, this message translates to:
-  /// **'Ad free'**
-  String get adFree;
 
   /// No description provided for @advancedFeatures.
   ///
@@ -1691,9 +1652,52 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Organize by aisles'**
   String get organizeByAisles;
+
+  /// No description provided for @voiceTranscriptionTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice typing (Free)'**
+  String get voiceTranscriptionTooltip;
+
+  /// No description provided for @aiVoiceCommandTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Voice Command (Premium)'**
+  String get aiVoiceCommandTooltip;
+
+  /// No description provided for @voiceCommandTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Voice Command'**
+  String get voiceCommandTitle;
+
+  /// No description provided for @voiceCommandContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak naturally to manage your list!\n\nExamples:\n• \'Add bread, cheese, and ham\'\n• \'Remove laundry detergent\'\n• \'Change theme to blue\'\n\nThis is an exclusive feature of Lista Plus Premium.'**
+  String get voiceCommandContent;
+
+  /// No description provided for @voiceCommandPlanBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'View Plans'**
+  String get voiceCommandPlanBtn;
+
+  /// No description provided for @itemsAddedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Items successfully added to list!'**
+  String get itemsAddedSuccess;
+
+  /// No description provided for @viewList.
+  ///
+  /// In en, this message translates to:
+  /// **'View list'**
+  String get viewList;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -1702,34 +1706,38 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'pt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['en', 'pt'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-
   // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
-    case 'pt': {
-  switch (locale.countryCode) {
-    case 'BR': return AppLocalizationsPtBr();
-   }
-  break;
-   }
+    case 'pt':
+      {
+        switch (locale.countryCode) {
+          case 'BR':
+            return AppLocalizationsPtBr();
+        }
+        break;
+      }
   }
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return AppLocalizationsEn();
-    case 'pt': return AppLocalizationsPt();
+    case 'en':
+      return AppLocalizationsEn();
+    case 'pt':
+      return AppLocalizationsPt();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
+    'that was used.',
   );
 }

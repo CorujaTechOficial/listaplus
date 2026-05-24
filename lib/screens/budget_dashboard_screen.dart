@@ -3,8 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../providers/shopping_list_provider.dart';
 import '../theme/tokens.dart';
-import '../theme/colors.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import '../models/category_data.dart';
+import '../providers/categories_provider.dart';
 
 class BudgetDashboardScreen extends ConsumerWidget {
   const BudgetDashboardScreen({super.key, this.listId});
@@ -24,6 +25,11 @@ class BudgetDashboardScreen extends ConsumerWidget {
     }
 
     final itemsAsync = ref.watch(shoppingListItemsProvider(listId!));
+    final categoriesAsync = ref.watch(categoriesProvider);
+    final cats = categoriesAsync.value ?? <CategoryData>[];
+    final categoriesMap = <String, CategoryData>{
+      for (final cat in cats) cat.id: cat,
+    };
 
     return Scaffold(
       appBar: AppBar(
@@ -41,7 +47,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
           for (final item in items) {
             if (item.isPurchased && item.estimatedPrice != null) {
               final cost = item.estimatedPrice! * item.quantity;
-              categorySpending[item.category.label] = (categorySpending[item.category.label] ?? 0) + cost;
+              categorySpending[item.categoryId] = (categorySpending[item.categoryId] ?? 0) + cost;
               totalSpent += cost;
             }
           }
@@ -88,7 +94,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                         value: e.value,
                         title: '${percentage.toStringAsFixed(0)}%',
                         radius: 50,
-                        color: AppColors.categoryColors[e.key] ?? theme.colorScheme.secondary,
+                        color: categoriesMap[e.key]?.colorValue ?? theme.colorScheme.secondary,
                         titleStyle: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
@@ -111,14 +117,14 @@ class BudgetDashboardScreen extends ConsumerWidget {
                 final percentage = (e.value / totalSpent) * 100;
                 return ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: AppColors.categoryColors[e.key] ?? theme.colorScheme.secondary,
-                    child: Icon(AppColors.categoryIcons[e.key] ?? Icons.category, color: Colors.white, size: 18),
+                    backgroundColor: categoriesMap[e.key]?.colorValue ?? theme.colorScheme.secondary,
+                    child: Icon(categoriesMap[e.key]?.icon ?? Icons.category, color: Colors.white, size: 18),
                   ),
                   title: Text(e.key),
                   subtitle: LinearProgressIndicator(
                     value: percentage / 100,
                     backgroundColor: theme.colorScheme.surfaceContainerHighest,
-                    valueColor: AlwaysStoppedAnimation(AppColors.categoryColors[e.key] ?? theme.colorScheme.secondary),
+                    valueColor: AlwaysStoppedAnimation(categoriesMap[e.key]?.colorValue ?? theme.colorScheme.secondary),
                   ),
                   trailing: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

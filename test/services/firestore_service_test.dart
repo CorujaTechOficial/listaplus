@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/services/firestore_service.dart';
@@ -84,7 +83,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Arroz',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await service.saveItems([item]);
 
@@ -98,13 +97,13 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item1',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final item2 = ShoppingItem(
         shoppingListId: 'list-2',
         name: 'Item2',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await service.saveItems([item1, item2]);
 
@@ -118,7 +117,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Arroz',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await service.saveItems([item]);
 
@@ -136,13 +135,13 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Item1',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final item2 = ShoppingItem(
         shoppingListId: 'list-2',
         name: 'Item2',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await service.saveItems([item1, item2]);
       await service.deleteItemsFromList('list-1');

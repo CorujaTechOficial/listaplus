@@ -9,7 +9,8 @@ enum PremiumFeature {
   themes,
   monthlyBudget,
   assistant,
-  pantry;
+  pantry,
+  interactiveArtifacts;
 
   String get label {
     switch (this) {
@@ -29,6 +30,8 @@ enum PremiumFeature {
         return 'Assistente de IA Personalizado';
       case PremiumFeature.pantry:
         return 'Dispensa ilimitada';
+      case PremiumFeature.interactiveArtifacts:
+        return 'Artefatos Interativos da IA';
     }
   }
 
@@ -50,6 +53,8 @@ enum PremiumFeature {
         return l10n.prefAIAssistant;
       case PremiumFeature.pantry:
         return l10n.prefUnlimitedPantry;
+      case PremiumFeature.interactiveArtifacts:
+        return l10n.prefInteractiveArtifacts;
     }
   }
 
@@ -71,6 +76,8 @@ enum PremiumFeature {
         return Icons.auto_awesome;
       case PremiumFeature.pantry:
         return Icons.inventory_2;
+      case PremiumFeature.interactiveArtifacts:
+        return Icons.dashboard_customize;
     }
   }
 }

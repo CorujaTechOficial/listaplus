@@ -8,7 +8,7 @@ class AchievementsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final stats = ref.watch(userStatsNotifierProvider);
+    final stats = ref.watch(userStatsProvider);
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -90,7 +90,7 @@ class AchievementsScreen extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.all(Spacing.sm),
               decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
+                color: color.withAlpha((0.1 * 255).toInt()),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: color),
@@ -131,17 +131,17 @@ class _AchievementBadge extends StatelessWidget {
           width: 80,
           height: 80,
           decoration: BoxDecoration(
-            color: unlocked ? color.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+            color: unlocked ? color.withAlpha((0.2 * 255).toInt()) : Colors.grey.withAlpha((0.1 * 255).toInt()),
             shape: BoxShape.circle,
             border: Border.all(
-              color: unlocked ? color : Colors.grey.withValues(alpha: 0.3),
+              color: unlocked ? color : Colors.grey.withAlpha((0.3 * 255).toInt()),
               width: 2,
             ),
           ),
           child: Icon(
             icon,
             size: 40,
-            color: unlocked ? color : Colors.grey.withValues(alpha: 0.5),
+            color: unlocked ? color : Colors.grey.withAlpha((0.5 * 255).toInt()),
           ),
         ),
         const SizedBox(height: 8),

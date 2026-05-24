@@ -195,13 +195,6 @@
 
   "premiumUpgrade": "Faça upgrade para desbloquear",
 
-  "earnPremium": "Ganhe Premium grátis!",
-  "watchAdDescription": "Assista um vídeo e ganhe 24h de Premium",
-  "watch": "Assistir",
-  "adsUnavailable": "Anúncios indisponíveis no momento.",
-  "adLoadError": "Erro ao carregar anúncio. Tente novamente.",
-  "adDisplayError": "Erro ao exibir anúncio.",
-  "premium24h": "+24h de Premium!",
 
   "itemRemoved": "Item removido",
   "undo": "Desfazer",
@@ -224,6 +217,7 @@
   "prefMonthlyBudget": "Orçamento mensal global",
   "prefAIAssistant": "Assistente de IA Personalizado",
   "prefUnlimitedPantry": "Dispensa ilimitada",
+  "prefInteractiveArtifacts": "Artefatos Interativos da IA",
 
   "themeGreen": "Verde",
   "themeBlue": "Azul",
@@ -253,7 +247,6 @@
   "pantryItemRemoved": "Item removido",
   "cartTotal": "Total do carrinho",
   "restockLabel": "Reabastecer",
-  "adFree": "Sem anúncios",
   "advancedFeatures": "Recursos avançados",
   "selectAll": "Selecionar tudo",
   "deselectAll": "Desselecionar tudo",
@@ -294,5 +287,12 @@
   "aiCreditsRemaining": "{remaining} créditos restantes",
   "@aiCreditsRemaining": { "placeholders": { "remaining": { "type": "int" } } },
   "addAllToList": "Adicionar tudo à lista",
-  "organizeByAisles": "Organizar por corredores"
+  "organizeByAisles": "Organizar por corredores",
+  "voiceTranscriptionTooltip": "Digitar por voz (Grátis)",
+  "aiVoiceCommandTooltip": "Comando de voz com IA (Premium)",
+  "voiceCommandTitle": "Comando de Voz com IA",
+  "voiceCommandContent": "Fale naturalmente para gerenciar sua lista!\n\nExemplos:\n• 'Adicione pão, queijo e presunto'\n• 'Remova o sabão em pó'\n• 'Mude o tema para azul'\n\nEste é um recurso exclusivo do Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Ver Planos",
+  "itemsAddedSuccess": "Itens adicionados à lista!",
+  "viewList": "Ver lista"
 }

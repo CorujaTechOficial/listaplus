@@ -25,11 +25,11 @@ import '../providers/current_list_provider.dart';
 import 'budget_dashboard_screen.dart';
 import '../widgets/shopping_item_tile.dart';
 import '../widgets/quick_add_bar.dart';
-import '../widgets/banner_ad_widget.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/budget_dialog.dart';
 import '../widgets/filter_bar.dart';
-import '../models/category.dart';
+import '../models/category_data.dart';
+import '../providers/categories_provider.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
@@ -42,6 +42,7 @@ import '../providers/ai_service_provider.dart';
 import 'paywall_screen.dart';
 import 'chat_screen.dart';
 import 'settings_screen.dart';
+import 'user_profile_screen.dart';
 import '../widgets/list_switcher_sheet.dart';
 import '../widgets/add_item_dialog.dart';
 import 'dart:convert';
@@ -63,6 +64,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   bool _isGrouped = true;
   bool _shoppingMode = false;
   bool _isAiOrganizing = false;
+  bool _isSummaryExpanded = true;
   final Set<String> _selectedIds = {};
 
   @override
@@ -119,28 +121,28 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
       final updatedItems = items.map((item) {
         final categoryKey = categorization[item.name]?.toString();
-        Category? newCategory;
+        String? newCategory;
         if (categoryKey != null) {
           switch (categoryKey) {
             case 'fruits':
-              newCategory = Category.fruits;
+              newCategory = 'fruits';
               break;
             case 'cleaning':
-              newCategory = Category.cleaning;
+              newCategory = 'cleaning';
               break;
             case 'beverages':
-              newCategory = Category.beverages;
+              newCategory = 'beverages';
               break;
             case 'bakery':
-              newCategory = Category.bakery;
+              newCategory = 'bakery';
               break;
             case 'others':
-              newCategory = Category.others;
+              newCategory = 'others';
               break;
           }
         }
         if (newCategory != null) {
-          return item.copyWith(category: newCategory, updatedAt: DateTime.now());
+          return item.copyWith(categoryId: newCategory, updatedAt: DateTime.now());
         }
         return item;
       }).toList();
@@ -191,6 +193,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       (l) => l.id == widget.listId,
     ).firstOrNull;
     final isPremium = ref.watch(premiumProvider).value ?? false;
+    final categoriesAsync = ref.watch(categoriesProvider);
+    final cats = categoriesAsync.value ?? <CategoryData>[];
+    final categoriesMap = <String, CategoryData>{
+      for (final cat in cats) cat.id: cat,
+    };
 
     return Scaffold(
       appBar: AppBar(
@@ -252,7 +259,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                     value: value,
                                     minHeight: 6,
                                     backgroundColor: isDark
-                                        ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
+                                        ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.2 * 255).toInt())
                                         : theme.colorScheme.surfaceContainerHighest,
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                       _getColorForProgress(progress, theme),
@@ -422,6 +429,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         ),
                       );
                     }
+                    items.add(const PopupMenuItem(
+                      value: 'profile',
+                      child: Row(
+                        children: [
+                          Icon(Icons.person_outline, size: 18),
+                          SizedBox(width: 8),
+                          Flexible(child: Text('Perfil')),
+                        ],
+                      ),
+                    ));
                     items.add(PopupMenuItem(
                       value: 'settings',
                       child: Row(
@@ -517,6 +534,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           fadeSlideRoute<void>(const PaywallScreen()),
                         );
                       }
+                    } else if (value == 'profile') {
+                      if (context.mounted) {
+                        await Navigator.push(
+                          context,
+                          fadeSlideRoute<void>(const UserProfileScreen()),
+                        );
+                      }
                     } else if (value == 'settings') {
                       if (context.mounted) {
                         await Navigator.push(
@@ -533,29 +557,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         children: [
           itemsAsync.when(
             data: (items) {
-              if (items.isEmpty) {
-                return Column(
-                  children: [
-                    Expanded(
-                      child: RefreshIndicator(
-                        onRefresh: () async {
-                          ref.invalidate(shoppingListItemsProvider(widget.listId));
-                          await ref.read(shoppingListItemsProvider(widget.listId).future);
-                        },
-                        child: SingleChildScrollView(
-                          physics: const AlwaysScrollableScrollPhysics(),
-                          child: SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.6,
-                            child: EmptyState(listId: widget.listId),
-                          ),
-                        ),
-                      ),
-                    ),
-                    if (!_selectionMode && !_shoppingMode) QuickAddBar(listId: widget.listId),
-                  ],
-                );
-              }
-
           Iterable<ShoppingItem> filtered = items;
           if (_filter == FilterType.pending) {
             filtered = filtered.where((i) => !i.isPurchased);
@@ -575,7 +576,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 list.sort((a, b) => a.name.compareTo(b.name));
                 break;
               case SortType.category:
-                list.sort((a, b) => a.category.name.compareTo(b.category.name));
+                list.sort((a, b) => a.categoryId.compareTo(b.categoryId));
                 break;
               case SortType.date:
                 list.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
@@ -593,11 +594,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           // Prepare grouped items if needed
           final List<dynamic> listItems = [];
           if (_isGrouped && _sort == SortType.category) {
-            Category? lastCategory;
+            String? lastCategory;
             for (final item in pending) {
-              if (item.category != lastCategory) {
-                listItems.add(item.category);
-                lastCategory = item.category;
+              if (item.categoryId != lastCategory) {
+                final cat = categoriesMap[item.categoryId];
+                if (cat != null) {
+                  listItems.add(cat);
+                }
+                lastCategory = item.categoryId;
               }
               listItems.add(item);
             }
@@ -624,7 +628,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
           return Column(
             children: [
-              if (!_shoppingMode)
+              if (!_shoppingMode && items.isNotEmpty)
                 Padding(
                   padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, 0),
                   child: _SummaryCard(
@@ -636,12 +640,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     filter: _filter,
                     sort: _sort,
                     isGrouped: _isGrouped,
+                    isExpanded: _isSummaryExpanded,
                     onFilterChanged: (f) => setState(() => _filter = f),
                     onSortChanged: (s) => setState(() => _sort = s),
                     onGroupedChanged: (g) => setState(() => _isGrouped = g),
+                    onToggleExpanded: () => setState(() => _isSummaryExpanded = !_isSummaryExpanded),
                   ),
                 )
-              else
+              else if (_shoppingMode)
                 _ShoppingModeHeader(
                   purchasedCount: purchasedItemsCount,
                   totalCount: totalItemsCount,
@@ -654,7 +660,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ref.invalidate(shoppingListItemsProvider(widget.listId));
                     await ref.read(shoppingListItemsProvider(widget.listId).future);
                   },
-                  child: _sort == SortType.manual && !_isGrouped
+                  child: items.isEmpty 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: EmptyState(listId: widget.listId),
+                        ),
+                      )
+                    : _sort == SortType.manual && !_isGrouped
                       ? ReorderableListView.builder(
                           itemCount: listItems.length,
                           itemBuilder: (context, index) {
@@ -683,7 +697,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               },
                             );
                           },
-                          onReorder: (oldIndex, newIndex) {
+                          onReorderItem: (oldIndex, newIndex) {
                             HapticFeedback.mediumImpact();
                             ref
                                 .read(shoppingListItemsProvider(widget.listId).notifier)
@@ -696,7 +710,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           itemBuilder: (context, index) {
                             final dynamic item = listItems[index];
                             
-                            if (item is Category) {
+                            if (item is CategoryData) {
                               return StickyHeader(
                                 header: Container(
                                   width: double.infinity,
@@ -705,13 +719,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   child: Row(
                                     children: [
                                       Icon(
-                                        AppColors.categoryIcons[item.label] ?? Icons.category_outlined,
+                                        item.icon,
                                         size: 14,
                                         color: theme.colorScheme.primary,
                                       ),
                                       const SizedBox(width: 8),
                                       Text(
-                                        item.localizedLabel(l10n).toUpperCase(),
+                                        item.name.toUpperCase(),
                                         style: theme.textTheme.labelSmall?.copyWith(
                                           color: theme.colorScheme.primary,
                                           fontWeight: FontWeight.w800,
@@ -721,7 +735,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                       const SizedBox(width: 8),
                                       Expanded(
                                         child: Divider(
-                                          color: theme.colorScheme.primary.withValues(alpha: 0.1),
+                                          color: theme.colorScheme.primary.withAlpha((0.1 * 255).toInt()),
                                           thickness: 1,
                                         ),
                                       ),
@@ -751,7 +765,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                       const SizedBox(width: 8),
                                       Expanded(
                                         child: Divider(
-                                          color: theme.colorScheme.outlineVariant.withValues(alpha: 0.1),
+                                          color: theme.colorScheme.outlineVariant.withAlpha((0.1 * 255).toInt()),
                                           thickness: 1,
                                         ),
                                       ),
@@ -797,7 +811,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         ),
                 ),
               ),
-              if (!_selectionMode && !_shoppingMode) QuickAddBar(listId: widget.listId),
+              if (!_selectionMode) QuickAddBar(listId: widget.listId),
               if (_shoppingMode)
                 SafeArea(
                   top: false,
@@ -825,26 +839,55 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ],
           );
         },
-        loading: () => Skeletonizer(
-          child: ListView.builder(
-            itemCount: 8,
-            padding: const EdgeInsets.all(Spacing.md),
-            itemBuilder: (context, index) => Card(
-              margin: const EdgeInsets.only(bottom: Spacing.sm),
-              child: ListTile(
-                leading: const CircleAvatar(),
-                title: Container(width: 150, height: 12, color: Colors.grey),
-                subtitle: Container(width: 80, height: 10, color: Colors.grey),
-              ),
+        loading: () => const Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: Spacing.md),
+                Text('Carregando itens da lista...'),
+              ],
             ),
           ),
         ),
-        error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
+        error: (e, stack) {
+          debugPrint('[HomeScreen] Error loading items: $e');
+          return Scaffold(
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(Spacing.xl),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.cloud_off, color: Colors.red, size: 48),
+                    const SizedBox(height: Spacing.md),
+                    Text(
+                      'Erro ao sincronizar itens',
+                      style: theme.textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: Spacing.xs),
+                    Text(
+                      e.toString().replaceFirst('Exception: ', ''),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: Spacing.lg),
+                    FilledButton.icon(
+                      onPressed: () => ref.invalidate(shoppingListItemsProvider(widget.listId)),
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Tentar Novamente'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
        ),
        if (_isAiOrganizing)
          Positioned.fill(
            child: Container(
-             color: theme.colorScheme.primary.withValues(alpha: 0.1),
+             color: theme.colorScheme.primary.withAlpha((0.1 * 255).toInt()),
              child: Center(
                child: Column(
                  mainAxisSize: MainAxisSize.min,
@@ -852,11 +895,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                    Container(
                      padding: const EdgeInsets.all(Spacing.xl),
                      decoration: BoxDecoration(
-                       color: theme.colorScheme.surface.withValues(alpha: 0.9),
+                       color: theme.colorScheme.surface.withAlpha((0.9 * 255).toInt()),
                        shape: BoxShape.circle,
                        boxShadow: [
                          BoxShadow(
-                           color: theme.colorScheme.primary.withValues(alpha: 0.2),
+                           color: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt()),
                            blurRadius: 30,
                            spreadRadius: 10,
                          ),
@@ -954,7 +997,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   Container(
                     width: 1,
                     height: 24,
-                    color: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+                    color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
                   ),
                   TextButton.icon(
                     icon: Icon(Icons.check_circle_outline, color: theme.colorScheme.primary),
@@ -967,7 +1010,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   Container(
                     width: 1,
                     height: 24,
-                    color: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+                    color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
                   ),
                   TextButton.icon(
                     icon: Icon(Icons.undo, color: theme.colorScheme.onSurfaceVariant),
@@ -980,9 +1023,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ],
               ),
             )
-          : !isPremium
-              ? const SafeArea(child: BannerAdWidget())
-              : null
+          : null
       ),
     );
   }
@@ -1126,7 +1167,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     }
     final text = items.asMap().entries.map((e) {
       final i = e.value;
-      return '${e.key + 1}. ${i.name} — ${i.quantity}${i.unit.label} (${i.category.label})${i.estimatedPrice != null ? ' R\$${i.estimatedPrice!.toStringAsFixed(2)}' : ''}';
+      final catName = CategoryData.defaults.firstWhere(
+        (c) => c.id == i.categoryId,
+        orElse: () => CategoryData.defaults.last,
+      ).name;
+      return '${e.key + 1}. ${i.name} — ${i.quantity}${i.unit.label} ($catName)${i.estimatedPrice != null ? ' R\$${i.estimatedPrice!.toStringAsFixed(2)}' : ''}';
     }).join('\n');
     await SharePlus.instance.share(ShareParams(text: text, subject: listName ?? l10n.shareSubject));
   }
@@ -1167,8 +1212,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 padding: const EdgeInsets.all(Spacing.md),
                 decoration: BoxDecoration(
                   color: isDark
-                      ? theme.colorScheme.primaryContainer.withValues(alpha: 0.15)
-                      : theme.colorScheme.primaryContainer.withValues(alpha: 0.3),
+                      ? theme.colorScheme.primaryContainer.withAlpha((0.15 * 255).toInt())
+                      : theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt()),
                   borderRadius: BorderRadius.circular(RadiusTokens.md),
                 ),
                 child: SelectableText(
@@ -1346,9 +1391,11 @@ class _SummaryCard extends ConsumerWidget {
     required this.filter,
     required this.sort,
     required this.isGrouped,
+    required this.isExpanded,
     required this.onFilterChanged,
     required this.onSortChanged,
     required this.onGroupedChanged,
+    required this.onToggleExpanded,
   });
 
   final int totalItemsCount;
@@ -1359,9 +1406,11 @@ class _SummaryCard extends ConsumerWidget {
   final FilterType filter;
   final SortType sort;
   final bool isGrouped;
+  final bool isExpanded;
   final ValueChanged<FilterType> onFilterChanged;
   final ValueChanged<SortType> onSortChanged;
   final ValueChanged<bool> onGroupedChanged;
+  final VoidCallback onToggleExpanded;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -1377,76 +1426,98 @@ class _SummaryCard extends ConsumerWidget {
         boxShadow: isDark
             ? [
                 BoxShadow(
-                  color: theme.colorScheme.primary.withValues(alpha: 0.05),
+                  color: theme.colorScheme.primary.withAlpha((0.05 * 255).toInt()),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 )
               ]
             : [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
+                  color: Colors.black.withAlpha((0.05 * 255).toInt()),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
               ],
         border: Border.all(
           color: isDark
-              ? theme.colorScheme.outlineVariant.withValues(alpha: 0.15)
-              : theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+              ? theme.colorScheme.outlineVariant.withAlpha((0.15 * 255).toInt())
+              : theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
           width: isDark ? 0.5 : 1,
         ),
       ),
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${l10n.filterPurchased}: $purchasedItemsCount / $totalItemsCount',
-                    style: theme.textTheme.labelMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: theme.colorScheme.primary,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Stack(
-                    children: [
-                      Container(
-                        width: 120,
-                        height: 8,
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.primary.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(RadiusTokens.full),
-                        ),
-                      ),
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 800),
-                        curve: Curves.fastOutSlowIn,
-                        width: 120 * itemsProgress.clamp(0.0, 1.0),
-                        height: 8,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              theme.colorScheme.primary,
-                              theme.colorScheme.primary.withValues(alpha: 0.7),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(RadiusTokens.full),
-                          boxShadow: [
-                            BoxShadow(
-                              color: theme.colorScheme.primary.withValues(alpha: 0.3),
-                              blurRadius: 4,
-                              offset: const Offset(0, 2),
+              Expanded(
+                child: InkWell(
+                  onTap: onToggleExpanded,
+                  borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 2),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              '${l10n.filterPurchased}: $purchasedItemsCount / $totalItemsCount',
+                              style: theme.textTheme.labelMedium?.copyWith(
+                                fontWeight: FontWeight.w700,
+                                color: theme.colorScheme.primary,
+                              ),
+                            ),
+                            const SizedBox(width: 4),
+                            AnimatedRotation(
+                              turns: isExpanded ? 0.5 : 0,
+                              duration: DurationTokens.fast,
+                              child: Icon(
+                                Icons.expand_more,
+                                size: 16,
+                                color: theme.colorScheme.onSurfaceVariant,
+                              ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 6),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 120,
+                              height: 8,
+                              decoration: BoxDecoration(
+                                color: theme.colorScheme.primary.withAlpha((0.1 * 255).toInt()),
+                                borderRadius: BorderRadius.circular(RadiusTokens.full),
+                              ),
+                            ),
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 800),
+                              curve: Curves.fastOutSlowIn,
+                              width: 120 * itemsProgress.clamp(0.0, 1.0),
+                              height: 8,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    theme.colorScheme.primary,
+                                    theme.colorScheme.primary.withAlpha((0.7 * 255).toInt()),
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(RadiusTokens.full),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: theme.colorScheme.primary.withAlpha((0.3 * 255).toInt()),
+                                    blurRadius: 4,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ],
+                ),
               ),
               InkWell(
                 onTap: () {
@@ -1462,26 +1533,19 @@ class _SummaryCard extends ConsumerWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xs),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.primary.withValues(alpha: 0.05),
+                    color: theme.colorScheme.primary.withAlpha((0.05 * 255).toInt()),
                     borderRadius: BorderRadius.circular(RadiusTokens.md),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'R\$ ${totalPurchasedValue.toStringAsFixed(2)}',
-                            style: theme.textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.w900,
-                              color: theme.colorScheme.primary,
-                              fontFeatures: [const FontFeature.tabularFigures()],
-                            ),
-                          ),
-                          const SizedBox(width: 4),
-                          Icon(Icons.arrow_forward_ios, size: 12, color: theme.colorScheme.primary),
-                        ],
+                      Text(
+                        'R\$ ${totalPurchasedValue.toStringAsFixed(2)}',
+                        style: theme.textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w900,
+                          color: theme.colorScheme.primary,
+                          fontFeatures: [const FontFeature.tabularFigures()],
+                        ),
                       ),
                       Text(
                         '${l10n.estimated}: R\$ ${totalEstimated.toStringAsFixed(2)}',
@@ -1495,7 +1559,7 @@ class _SummaryCard extends ConsumerWidget {
                           margin: const EdgeInsets.only(top: 4),
                           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                           decoration: BoxDecoration(
-                            color: Colors.green.withValues(alpha: 0.1),
+                            color: Colors.green.withAlpha((0.1 * 255).toInt()),
                             borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                           ),
                           child: Text(
@@ -1513,16 +1577,26 @@ class _SummaryCard extends ConsumerWidget {
               ),
             ],
           ),
-          const SizedBox(height: Spacing.md),
-          const Divider(height: 1),
-          const SizedBox(height: Spacing.sm),
-          FilterBar(
-            filter: filter,
-            sort: sort,
-            isGrouped: isGrouped,
-            onFilterChanged: onFilterChanged,
-            onSortChanged: onSortChanged,
-            onGroupedChanged: onGroupedChanged,
+          AnimatedCrossFade(
+            duration: DurationTokens.normal,
+            crossFadeState: isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            firstChild: const SizedBox(width: double.infinity),
+            secondChild: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: Spacing.md),
+                const Divider(height: 1),
+                const SizedBox(height: Spacing.sm),
+                FilterBar(
+                  filter: filter,
+                  sort: sort,
+                  isGrouped: isGrouped,
+                  onFilterChanged: onFilterChanged,
+                  onSortChanged: onSortChanged,
+                  onGroupedChanged: onGroupedChanged,
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -1551,10 +1625,10 @@ class _ShoppingModeHeader extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
       decoration: BoxDecoration(
-        color: theme.colorScheme.primaryContainer.withValues(alpha: isDark ? 0.2 : 0.4),
+        color: theme.colorScheme.primaryContainer.withAlpha(((isDark ? 0.2 : 0.4) * 255).toInt()),
         border: Border(
           bottom: BorderSide(
-            color: theme.colorScheme.primary.withValues(alpha: 0.2),
+            color: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt()),
           ),
         ),
       ),
@@ -1592,7 +1666,7 @@ class _ShoppingModeHeader extends StatelessWidget {
                   child: LinearProgressIndicator(
                     value: progress,
                     minHeight: 8,
-                    backgroundColor: theme.colorScheme.primary.withValues(alpha: 0.1),
+                    backgroundColor: theme.colorScheme.primary.withAlpha((0.1 * 255).toInt()),
                     valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
                   ),
                 ),

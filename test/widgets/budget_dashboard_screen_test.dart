@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/screens/budget_dashboard_screen.dart';
@@ -55,7 +54,7 @@ void main() {
       final item = ShoppingItem(
         shoppingListId: 'list-1',
         name: 'Apple',
-        category: Category.fruits,
+        categoryId: 'fruits',
         unit: Unit.kg,
         quantity: 1,
         estimatedPrice: 10.0, // ignore: prefer_int_literals
@@ -77,7 +76,7 @@ void main() {
         ShoppingItem(
           shoppingListId: 'list-1',
           name: 'Apple',
-          category: Category.fruits,
+          categoryId: 'fruits',
           unit: Unit.kg,
           quantity: 2,
           estimatedPrice: 10.0, // ignore: prefer_int_literals
@@ -86,7 +85,7 @@ void main() {
         ShoppingItem(
           shoppingListId: 'list-1',
           name: 'Soap',
-          category: Category.cleaning,
+          categoryId: 'cleaning',
           unit: Unit.un,
           quantity: 1,
           estimatedPrice: 5.0, // ignore: prefer_int_literals

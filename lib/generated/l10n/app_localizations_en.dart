@@ -162,7 +162,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmArchiveTitle => 'Complete Purchase';
 
   @override
-  String get confirmArchiveContent => 'Complete this purchase and archive the list?';
+  String get confirmArchiveContent =>
+      'Complete this purchase and archive the list?';
 
   @override
   String get complete => 'Complete';
@@ -335,7 +336,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupTitle => 'Backup';
 
   @override
-  String get backupPremiumDescription => 'Backup and export is a premium feature';
+  String get backupPremiumDescription =>
+      'Backup and export is a premium feature';
 
   @override
   String get exportData => 'Export data';
@@ -533,7 +535,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiAssistant => 'AI Assistant';
 
   @override
-  String get aiAssistantDescription => 'Get smart suggestions, recipes and personalized tips with our AI assistant.';
+  String get aiAssistantDescription =>
+      'Get smart suggestions, recipes and personalized tips with our AI assistant.';
 
   @override
   String get generalAssistant => 'General Assistant';
@@ -559,10 +562,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get generalHelp => 'How can I help with your shopping today?';
 
   @override
-  String get chatSubtitle => 'Ask for item suggestions, recipes or saving tips.';
+  String get chatSubtitle =>
+      'Ask for item suggestions, recipes or saving tips.';
 
   @override
-  String get aiError => 'Sorry, an error occurred processing your request. Check your connection or try again later.';
+  String get aiError =>
+      'Sorry, an error occurred processing your request. Check your connection or try again later.';
 
   @override
   String get listaPlusTitle => 'Lista Plus';
@@ -589,27 +594,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get premiumUpgrade => 'Upgrade to unlock';
-
-  @override
-  String get earnPremium => 'Earn free Premium!';
-
-  @override
-  String get watchAdDescription => 'Watch a video and earn 24h of Premium';
-
-  @override
-  String get watch => 'Watch';
-
-  @override
-  String get adsUnavailable => 'Ads unavailable at the moment.';
-
-  @override
-  String get adLoadError => 'Error loading ad. Try again.';
-
-  @override
-  String get adDisplayError => 'Error displaying ad.';
-
-  @override
-  String get premium24h => '+24h of Premium!';
 
   @override
   String get itemRemoved => 'Item removed';
@@ -664,6 +648,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get prefUnlimitedPantry => 'Unlimited pantry';
+
+  @override
+  String get prefInteractiveArtifacts => 'Interactive AI Artifacts';
 
   @override
   String get themeGreen => 'Green';
@@ -748,9 +735,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get restockLabel => 'Restock';
 
   @override
-  String get adFree => 'Ad free';
-
-  @override
   String get advancedFeatures => 'Advanced features';
 
   @override
@@ -778,7 +762,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noItemsToAnalyze => 'No items in the list to analyze.';
 
   @override
-  String get markItemsToSeeAnalysis => 'Mark items as purchased to see the analysis.';
+  String get markItemsToSeeAnalysis =>
+      'Mark items as purchased to see the analysis.';
 
   @override
   String get totalSpending => 'Total Spent';
@@ -865,4 +850,26 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get organizeByAisles => 'Organize by aisles';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Voice typing (Free)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'AI Voice Command (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'AI Voice Command';
+
+  @override
+  String get voiceCommandContent =>
+      'Speak naturally to manage your list!\n\nExamples:\n• \'Add bread, cheese, and ham\'\n• \'Remove laundry detergent\'\n• \'Change theme to blue\'\n\nThis is an exclusive feature of Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'View Plans';
+
+  @override
+  String get itemsAddedSuccess => 'Items successfully added to list!';
+
+  @override
+  String get viewList => 'View list';
 }

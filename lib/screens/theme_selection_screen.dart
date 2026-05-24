@@ -31,7 +31,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
         itemBuilder: (context, index) {
           final option = ThemeOption.options[index];
           final color = option.color;
-          final isSelected = currentColorAsync.valueOrNull?.toARGB32() == color.toARGB32();
+          final isSelected = currentColorAsync.value?.toARGB32() == color.toARGB32();
 
           return InkWell(
             onTap: () {
@@ -53,7 +53,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
                         : null,
                     boxShadow: [
                       BoxShadow(
-                        color: color.withValues(alpha: 0.3),
+                        color: color.withAlpha((0.3 * 255).toInt()),
                         blurRadius: 8,
                         offset: const Offset(0, 4),
                       ),

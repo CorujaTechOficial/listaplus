@@ -46,20 +46,26 @@ class ShoppingLists extends _$ShoppingLists {
     LoggerService.log('createList iniciado: nome="$name", budget=$budget', tag: 'ShoppingLists');
 
     final currentLists = state.value ?? [];
-    final isPremium = await ref.read(premiumProvider.future).timeout(
-      const Duration(seconds: 5),
-      onTimeout: () {
-        LoggerService.log('createList: timeout ao verificar premium — assumindo false', tag: 'ShoppingLists');
-        return false;
-      },
-    );
     final activeListsCount = currentLists.where((l) => !l.isArchived).length;
 
-    LoggerService.log('createList: isPremium=$isPremium, activeListsCount=$activeListsCount, totalLists=${currentLists.length}', tag: 'ShoppingLists');
+    bool isPremium = false;
+    if (activeListsCount >= 3) {
+      try {
+        isPremium = await ref.read(premiumProvider.future).timeout(
+          const Duration(seconds: 3),
+          onTimeout: () {
+            LoggerService.log('createList: timeout ao verificar premium — assumindo false', tag: 'ShoppingLists');
+            return false;
+          },
+        );
+      } catch (e) {
+        LoggerService.log('createList: erro ao verificar premium ($e) — assumindo false', tag: 'ShoppingLists');
+      }
 
-    if (!isPremium && activeListsCount >= 3) {
-      LoggerService.info('createList bloqueado: limite gratuito atingido');
-      throw Exception('Limite de 3 listas ativas no plano gratuito. Arquive ou exclua uma lista ativa para criar mais.');
+      if (!isPremium) {
+        LoggerService.info('createList bloqueado: limite gratuito atingido');
+        throw Exception('Limite de 3 listas ativas atingido. Arquive ou exclua uma lista antiga ou torne-se Premium!');
+      }
     }
 
     final service = ref.read(firestoreServiceProvider);
@@ -70,8 +76,16 @@ class ShoppingLists extends _$ShoppingLists {
     try {
       await service.saveList(newList);
       LoggerService.log('createList: saveList ok', tag: 'ShoppingLists');
+      
       await service.setCurrentListId(newList.id);
       LoggerService.log('createList: setCurrentListId ok', tag: 'ShoppingLists');
+      
+      // CRITICAL FIX: Only use ref if the notifier is still mounted.
+      // This prevents "Cannot use Ref after it has been disposed" errors.
+      if (ref.mounted) {
+        ref.invalidate(currentListIdProvider);
+      }
+      
       return newList;
     } on Exception catch (e, s) {
       LoggerService.error(e, stackTrace: s, message: 'Erro ao criar lista', extra: {
@@ -81,7 +95,7 @@ class ShoppingLists extends _$ShoppingLists {
         'activeListsCount': activeListsCount.toString(),
         'isPremium': isPremium.toString(),
       });
-      throw Exception('Erro ao criar lista: $e');
+      throw Exception('Erro ao conectar com o servidor: $e');
     }
   }
 
@@ -116,6 +130,10 @@ class ShoppingLists extends _$ShoppingLists {
       if (newCurrent != null) {
         await service.setCurrentListId(newCurrent);
       }
+      
+      if (ref.mounted) {
+        ref.invalidate(currentListIdProvider);
+      }
     } on Exception catch (e, s) {
       LoggerService.error(e, stackTrace: s, message: 'Erro ao excluir lista', extra: {
         'listId': id,
@@ -137,6 +155,9 @@ class ShoppingLists extends _$ShoppingLists {
     final service = ref.read(firestoreServiceProvider);
     try {
       await service.setCurrentListId(listId);
+      if (ref.mounted) {
+        ref.read(currentListIdProvider.notifier).setCurrentList(listId);
+      }
     } on Exception catch (e) {
       throw Exception('Erro ao definir lista atual: $e');
     }
@@ -156,15 +177,12 @@ class ShoppingLists extends _$ShoppingLists {
 
       final currentId = await service.getCurrentListId();
       if (currentId == id) {
-        // Re-read fresh state after save to avoid stale data
         final freshLists = state.value ?? lists;
         final activeLists = freshLists.where((l) => l.id != id && !l.isArchived).toList();
         final newCurrent = activeLists.isNotEmpty ? activeLists.first.id : null;
-        if (newCurrent != null) {
-          await service.setCurrentListId(newCurrent);
-          ref.invalidate(currentListIdProvider);
-        } else {
-          await service.setCurrentListId(null);
+        await service.setCurrentListId(newCurrent);
+        
+        if (ref.mounted) {
           ref.invalidate(currentListIdProvider);
         }
       }

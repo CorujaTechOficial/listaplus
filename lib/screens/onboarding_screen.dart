@@ -102,7 +102,7 @@ class OnboardingScreen extends ConsumerWidget {
                 size: const Size.square(10),
                 activeSize: const Size(22, 10),
                 activeColor: theme.colorScheme.primary,
-                color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.3),
+                color: theme.colorScheme.onSurfaceVariant.withAlpha((0.3 * 255).toInt()),
                 spacing: const EdgeInsets.symmetric(horizontal: 4),
                 activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
@@ -123,7 +123,7 @@ class OnboardingScreen extends ConsumerWidget {
         width: 120,
         height: 120,
         decoration: BoxDecoration(
-          color: page.iconColor.withValues(alpha: 0.1),
+          color: page.iconColor.withAlpha((0.1 * 255).toInt()),
           shape: BoxShape.circle,
         ),
         child: Center(
@@ -173,7 +173,7 @@ class OnboardingScreen extends ConsumerWidget {
           Text(
             'Cancele quando quiser. Sem compromisso.',
             style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.7),
+              color: theme.colorScheme.onSurfaceVariant.withAlpha((0.7 * 255).toInt()),
             ),
           ),
         ],

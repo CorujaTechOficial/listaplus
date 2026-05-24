@@ -105,11 +105,13 @@ class ToolResult {
     required this.toolCallId,
     required this.content,
     this.success = true,
+    this.resultData,
   });
 
   final String toolCallId;
   final String content;
   final bool success;
+  final Map<String, dynamic>? resultData;
 }
 
 class AgentTools {
@@ -120,16 +122,148 @@ class AgentTools {
     'import_shared_list',
     'export_backup',
     'import_backup',
+    'generate_artifact',
   };
 
   static List<AgentTool> get all => [
         ..._listTools,
         ..._itemTools,
         ..._pantryTools,
+        ..._recipeTools,
+        ..._mealPlannerTools,
         ..._budgetTools,
         ..._shareTools,
         ..._configTools,
         ..._backupTools,
+        ..._artifactTools,
+      ];
+
+  static List<AgentTool> get _recipeTools => [
+        const AgentTool(
+          name: 'get_recipes',
+          description: 'Obtém a lista de receitas salvas do usuário',
+          parameters: [
+            AgentToolParameter(
+              name: 'query',
+              type: 'string',
+              description: 'Termo de busca opcional para filtrar pelo nome da receita',
+              required: false,
+            ),
+          ],
+        ),
+        const AgentTool(
+          name: 'create_recipe',
+          description: 'Cria uma nova receita no livro de receitas do usuário. '
+              'Inclua ingredientes detalhados e instruções passo a passo.',
+          parameters: [
+            AgentToolParameter(
+              name: 'name',
+              type: 'string',
+              description: 'Nome da receita',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'description',
+              type: 'string',
+              description: 'Breve descrição da receita',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'ingredients',
+              type: 'string',
+              description: 'JSON string de lista de itens. Estrutura: [{"name": "string", "quantity": num, "unit": "un|kg|g|L|mL|pacote", "category": "Frutas|Limpeza|Bebidas|Padaria|Outros"}]',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'instructions',
+              type: 'string',
+              description: 'Lista de strings contendo os passos da receita (separados por ponto e vírgula ou vírgula)',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'prepTimeMinutes',
+              type: 'number',
+              description: 'Tempo de preparo em minutos',
+              required: false,
+            ),
+          ],
+        ),
+        const AgentTool(
+          name: 'delete_recipe',
+          description: 'Exclui uma receita do livro de receitas',
+          parameters: [
+            AgentToolParameter(
+              name: 'recipeId',
+              type: 'string',
+              description: 'ID da receita a ser excluída',
+              required: true,
+            ),
+          ],
+        ),
+      ];
+
+  static List<AgentTool> get _mealPlannerTools => [
+        const AgentTool(
+          name: 'get_meal_plan',
+          description: 'Obtém o planejamento de refeições para um período específico',
+          parameters: [
+            AgentToolParameter(
+              name: 'startDate',
+              type: 'string',
+              description: 'Data de início (ISO 8601)',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'endDate',
+              type: 'string',
+              description: 'Data de fim (ISO 8601)',
+              required: false,
+            ),
+          ],
+        ),
+        const AgentTool(
+          name: 'schedule_meal',
+          description: 'Agenda uma receita para um dia e tipo de refeição específicos no planejador.',
+          parameters: [
+            AgentToolParameter(
+              name: 'recipeId',
+              type: 'string',
+              description: 'ID da receita',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'date',
+              type: 'string',
+              description: 'Data da refeição (ISO 8601)',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'mealType',
+              type: 'string',
+              description: 'Tipo de refeição',
+              required: true,
+              enumValues: ['breakfast', 'lunch', 'dinner', 'snack'],
+            ),
+            AgentToolParameter(
+              name: 'servings',
+              type: 'number',
+              description: 'Número de porções',
+              required: false,
+            ),
+          ],
+        ),
+        const AgentTool(
+          name: 'remove_meal_plan_entry',
+          description: 'Remove uma entrada do planejamento de refeições',
+          parameters: [
+            AgentToolParameter(
+              name: 'mealPlanId',
+              type: 'string',
+              description: 'ID da entrada no planejamento',
+              required: true,
+            ),
+          ],
+        ),
       ];
 
   static List<AgentTool> get _listTools => [
@@ -659,6 +793,84 @@ class AgentTools {
             ),
           ],
         ),
+        const AgentTool(
+          name: 'save_user_preference',
+          description: 'Salva uma preferência ou informação pessoal do usuário '
+              'aprendida durante a conversa (ex: restrições alimentares, '
+              'mercados preferidos, nome, preferências de categorias). '
+              'Use sempre que o usuário compartilhar uma preferência pessoal '
+              'para que ela não seja esquecida entre as conversas.',
+          parameters: [
+            AgentToolParameter(
+              name: 'key',
+              type: 'string',
+              description:
+                  'Chave da preferência em snake_case (ex: restricao_alimentar, '
+                  'mercado_evitar, nome)',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'value',
+              type: 'string',
+              description:
+                  'Valor da preferência (ex: vegano, Mercado X, João)',
+              required: true,
+            ),
+          ],
+        ),
+        const AgentTool(
+          name: 'delete_user_preference',
+          description:
+              'Remove uma preferência do usuário salva anteriormente',
+          parameters: [
+            AgentToolParameter(
+              name: 'key',
+              type: 'string',
+              description: 'Chave da preferência a ser removida',
+              required: true,
+            ),
+          ],
+        ),
+        const AgentTool(
+          name: 'get_user_profile',
+          description: 'Obtém o perfil completo do usuário com todas as '
+              'preferências estruturadas (mercado preferido, restrições '
+              'alimentares, mercados a evitar, observações). '
+              'Use no início da conversa para personalizar as respostas.',
+          parameters: [],
+        ),
+        const AgentTool(
+          name: 'update_user_profile',
+          description: 'Atualiza campos estruturados do perfil do usuário. '
+              'Use quando o usuário fornecer informações sobre preferências '
+              'pessoais que se encaixam nos campos do perfil.',
+          parameters: [
+            AgentToolParameter(
+              name: 'preferredStore',
+              type: 'string',
+              description: 'Mercado preferido do usuário (ex: Supermercado X)',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'dietaryRestrictions',
+              type: 'string',
+              description: 'Restrições alimentares (ex: vegano, vegetariano, sem glúten)',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'avoidedStores',
+              type: 'string',
+              description: 'Mercados a evitar (ex: Mercado Y, Mercado Z)',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'notes',
+              type: 'string',
+              description: 'Observações ou outras preferências',
+              required: false,
+            ),
+          ],
+        ),
       ];
 
   static List<AgentTool> get _backupTools => [
@@ -676,6 +888,83 @@ class AgentTools {
               type: 'string',
               description: 'JSON completo do backup',
               required: true,
+            ),
+          ],
+        ),
+      ];
+
+  static List<AgentTool> get _artifactTools => [
+        const AgentTool(
+          name: 'generate_artifact',
+          description: 'Gera um artefato interativo e reativo de interface (GenUI) no chat. '
+              'Permite criar calculadoras de eventos (churrasco, festa), otimização de orçamentos, '
+              'sugestão de receitas integradas com a despensa, etc. O artefato possui controles interativos (sliders, switches, etc.) '
+              'e uma lista de itens associada que atualiza dinamicamente conforme os controles são alterados.',
+          parameters: [
+            AgentToolParameter(
+              name: 'title',
+              type: 'string',
+              description: 'Título do artefato (ex: "Churrasco da Galera", "Receita de Estrogonofe")',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'icon',
+              type: 'string',
+              description: 'Um emoji ou ícone curto representando o artefato (ex: "🔥", "🍳", "💰", "🎂")',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'description',
+              type: 'string',
+              description: 'Descrição amigável explicando o propósito do artefato',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'controls',
+              type: 'string',
+              description: 'JSON string contendo a lista de controles interativos. Cada controle deve ter a estrutura: '
+                  '{"id": "string", "type": "slider|stepper|toggle|select", "label": "string", "value": dynamic, '
+                  '"min": num, "max": num, "step": num, "options": ["string"], "affectsMultiplier": bool, "filtersItems": bool}',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'items',
+              type: 'string',
+              description: 'JSON string contendo a lista de itens. Cada item deve ter a estrutura: '
+                  '{"name": "string", "baseQuantity": num, "unit": "un|kg|g|L|mL|pacote", "category": "Frutas|Limpeza|Bebidas|Padaria|Outros", '
+                  '"estimatedPrice": num, "isAvailable": bool, "conditions": {"controlId": expectedValue}, '
+                  '"alternatives": [{"name": "string", "quantity": num, "unit": "string", "estimatedPrice": num}]}',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'baseServings',
+              type: 'number',
+              description: 'Quantidade base de pessoas ou porções para a qual as quantidades de itens foram calculadas (ex: 10.0)',
+              required: true,
+            ),
+            AgentToolParameter(
+              name: 'budget',
+              type: 'number',
+              description: 'Orçamento máximo sugerido ou planejado em reais (opcional)',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'showBudgetBar',
+              type: 'boolean',
+              description: 'Se true, renderiza uma barra de orçamento reativa comparando o custo com o budget',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'commitLabel',
+              type: 'string',
+              description: 'Texto personalizado para o botão de confirmação (ex: "Sincronizar Churrasco", "Comprar Ingredientes Faltantes")',
+              required: false,
+            ),
+            AgentToolParameter(
+              name: 'commitMode',
+              type: 'string',
+              description: 'Modo de inserção na lista: "addAll" (adiciona todos os itens visíveis) ou "addMissing" (adiciona apenas os que não estão disponíveis)',
+              required: false,
             ),
           ],
         ),

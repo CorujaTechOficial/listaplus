@@ -233,15 +233,6 @@
   "@_Premium": "description: Premium gating",
   "premiumUpgrade": "Upgrade to unlock",
 
-  "@_RewardedAd": "description: Rewarded Ad",
-  "earnPremium": "Earn free Premium!",
-  "watchAdDescription": "Watch a video and earn 24h of Premium",
-  "watch": "Watch",
-  "adsUnavailable": "Ads unavailable at the moment.",
-  "adLoadError": "Error loading ad. Try again.",
-  "adDisplayError": "Error displaying ad.",
-  "premium24h": "+24h of Premium!",
-
   "@_Tile": "description: Shopping Item Tile",
   "itemRemoved": "Item removed",
   "undo": "Undo",
@@ -267,6 +258,7 @@
   "prefMonthlyBudget": "Global monthly budget",
   "prefAIAssistant": "Personal AI Assistant",
   "prefUnlimitedPantry": "Unlimited pantry",
+  "prefInteractiveArtifacts": "Interactive AI Artifacts",
 
   "@_ThemeOptions": "description: Theme Color Names",
   "themeGreen": "Green",
@@ -303,7 +295,6 @@
   "@deficitItems": { "placeholders": { "deficit": { "type": "int" } } },
   "cartTotal": "Cart total",
   "restockLabel": "Restock",
-  "adFree": "Ad free",
   "advancedFeatures": "Advanced features",
   "selectAll": "Select all",
   "deselectAll": "Deselect all",
@@ -345,5 +336,12 @@
   "aiCreditsRemaining": "{remaining} credits remaining",
   "@aiCreditsRemaining": { "placeholders": { "remaining": { "type": "int" } } },
   "addAllToList": "Add all to list",
-  "organizeByAisles": "Organize by aisles"
+  "organizeByAisles": "Organize by aisles",
+  "voiceTranscriptionTooltip": "Voice typing (Free)",
+  "aiVoiceCommandTooltip": "AI Voice Command (Premium)",
+  "voiceCommandTitle": "AI Voice Command",
+  "voiceCommandContent": "Speak naturally to manage your list!\n\nExamples:\n• 'Add bread, cheese, and ham'\n• 'Remove laundry detergent'\n• 'Change theme to blue'\n\nThis is an exclusive feature of Lista Plus Premium.",
+  "voiceCommandPlanBtn": "View Plans",
+  "itemsAddedSuccess": "Items successfully added to list!",
+  "viewList": "View list"
 }

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,11 +8,11 @@ import '../providers/chat_provider.dart';
 import '../providers/current_list_provider.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/shopping_lists_provider.dart';
-import '../services/logger_service.dart';
 import '../theme/tokens.dart';
 import '../widgets/ai_chat_panel.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/create_list_dialog.dart';
+import '../widgets/list_switcher_sheet.dart';
 import '../widgets/shopping_item_tile.dart';
 
 class AiHomeScreen extends ConsumerStatefulWidget {
@@ -62,25 +63,16 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
               ),
               const SizedBox(height: Spacing.lg),
               FilledButton.tonalIcon(
-                onPressed: () async {
-                  final messenger = ScaffoldMessenger.maybeOf(context);
-                  final name = await showDialog<String>(
+                onPressed: () {
+                  showDialog<void>(
                     context: context,
-                    builder: (_) => const CreateListDialog(),
+                    builder: (_) => CreateListDialog(
+                      onCreate: (name) async {
+                        await ref.read(shoppingListsProvider.notifier).createList(name);
+                        ref.invalidate(currentListIdProvider);
+                      },
+                    ),
                   );
-                  if (name != null && name.isNotEmpty) {
-                    try {
-                      await ref.read(shoppingListsProvider.notifier).createList(name);
-                      ref.invalidate(currentListIdProvider);
-                    } on Exception catch (e, s) {
-                      LoggerService.error(e, stackTrace: s, message: 'AiHomeScreen: erro ao criar lista');
-                      if (messenger != null) {
-                        messenger.showSnackBar(
-                          SnackBar(content: Text('Erro ao criar lista: $e')),
-                        );
-                      }
-                    }
-                  }
                 },
                 icon: const Icon(Icons.add),
                 label: const Text('Criar Primeira Lista'),
@@ -93,19 +85,39 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   }
 
   Widget _buildChat(String listId) {
+    final theme = Theme.of(context);
     final listAsync = ref.watch(shoppingListsProvider);
-    final listName = listAsync.valueOrNull
+    final listName = listAsync.value
         ?.where((l) => l.id == listId)
         .firstOrNull
         ?.name;
 
     final itemsAsync = ref.watch(shoppingListItemsProvider(listId));
-    final items = itemsAsync.valueOrNull ?? [];
+    final items = itemsAsync.value ?? [];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(listName ?? 'Lista de Compras'),
+        title: Row(
+          children: [
+            Hero(
+              tag: 'ai_assistant_icon_$listId',
+              child: Icon(Icons.auto_awesome, size: 20, color: theme.colorScheme.primary),
+            ),
+            const SizedBox(width: Spacing.sm),
+            Text(listName ?? 'Lista de Compras'),
+          ],
+        ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.swap_horiz),
+            onPressed: () {
+              showModalBottomSheet<void>(
+                context: context,
+                builder: (_) => ListSwitcherSheet(currentListId: listId),
+              );
+            },
+            tooltip: 'Trocar lista',
+          ),
           IconButton(
             icon: Icon(_isMarketMode ? Icons.chat_bubble_outline : Icons.shopping_basket),
             onPressed: () => setState(() => _isMarketMode = !_isMarketMode),
@@ -138,6 +150,18 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 child: AiChatPanel(
                   listId: listId,
                   listName: listName,
+                  onItemsAdded: () {
+                    setState(() {
+                      _listExpanded = true;
+                    });
+                    Timer(const Duration(seconds: 3), () {
+                      if (mounted) {
+                        setState(() {
+                          _listExpanded = false;
+                        });
+                      }
+                    });
+                  },
                 ),
               ),
             ),
@@ -150,7 +174,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
                     child: Container(
-                      color: Colors.black.withValues(alpha: 0.3),
+                      color: Colors.black.withAlpha((0.3 * 255).toInt()),
                     ),
                   ),
                 ),
@@ -172,6 +196,55 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
           ],
         ],
       ),
+      floatingActionButton: _isMarketMode
+          ? FloatingActionButton(
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (context) {
+                    return DraggableScrollableSheet(
+                      initialChildSize: 0.75,
+                      minChildSize: 0.4,
+                      maxChildSize: 0.95,
+                      builder: (context, scrollController) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.surface,
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(16),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.symmetric(vertical: 8),
+                                width: 40,
+                                height: 4,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).colorScheme.outlineVariant,
+                                  borderRadius: BorderRadius.circular(2),
+                                ),
+                              ),
+                              Expanded(
+                                child: AiChatPanel(
+                                  listId: listId,
+                                  listName: listName,
+                                  compact: true,
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                );
+              },
+              child: const Icon(Icons.chat),
+            )
+          : null,
     );
   }
 }
@@ -218,13 +291,13 @@ class _CompactListCard extends StatelessWidget {
             border: isMarketMode
                 ? null
                 : Border.all(
-                    color: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+                    color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
                   ),
             boxShadow: isMarketMode
                 ? null
                 : [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.06),
+                      color: Colors.black.withAlpha((0.06 * 255).toInt()),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
@@ -238,19 +311,11 @@ class _CompactListCard extends StatelessWidget {
               if (!isMarketMode)
                 Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(RadiusTokens.sm),
-                      ),
-                      child: Icon(
-                        Icons.shopping_cart,
-                        size: 16,
-                        color: theme.colorScheme.onPrimaryContainer,
-                      ),
+                    Hero(
+                      tag: 'ai_assistant_icon_$listId',
+                      child: Icon(Icons.auto_awesome, size: 14, color: theme.colorScheme.primary),
                     ),
-                    const SizedBox(width: Spacing.sm),
+                    const SizedBox(width: Spacing.xs),
                     Text(
                       'Lista de Compras',
                       style: theme.textTheme.titleSmall?.copyWith(
@@ -292,6 +357,11 @@ class _CompactListCard extends StatelessWidget {
                     children: [
                       Row(
                         children: [
+                          Hero(
+                            tag: 'ai_assistant_icon_$listId',
+                            child: Icon(Icons.auto_awesome, size: 24, color: theme.colorScheme.primary),
+                          ),
+                          const SizedBox(width: Spacing.sm),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

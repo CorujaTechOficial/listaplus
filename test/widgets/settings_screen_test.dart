@@ -10,12 +10,10 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
-import 'package:shopping_list/providers/ad_service_provider.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/fake_revenuecat_service.dart';
 import '../helpers/fake_storage_backend.dart';
-import '../helpers/fake_ad_service.dart';
 
 Widget wrapWithProviders(Widget child, {bool isPremium = false}) {
   final revenueCat = FakeRevenueCatService();
@@ -27,7 +25,6 @@ Widget wrapWithProviders(Widget child, {bool isPremium = false}) {
       revenueCatServiceProvider.overrideWithValue(revenueCat),
       analyticsServiceProvider.overrideWithValue(AnalyticsService()),
       firestoreServiceProvider.overrideWithValue(backend),
-      adServiceProvider.overrideWithValue(FakeAdService()),
     ],
     child: MaterialApp(
       locale: const Locale('pt', 'BR'),
@@ -51,7 +48,11 @@ void main() {
 
       expect(find.text('Aparência'), findsOneWidget);
       expect(find.text('Idioma'), findsOneWidget);
-      expect(find.text('Financeiro'), findsOneWidget);
+
+      final financeiroFinder = find.text('Financeiro');
+      await tester.dragUntilVisible(financeiroFinder, find.byType(ListView), const Offset(0, -100));
+      await tester.pumpAndSettle();
+      expect(financeiroFinder, findsOneWidget);
 
       await tester.drag(find.byType(ListView), const Offset(0, -400));
       await tester.pumpAndSettle();
@@ -75,7 +76,11 @@ void main() {
       await tester.pumpWidget(wrapWithProviders(const SettingsScreen()));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('English'));
+      final englishFinder = find.text('English');
+      await tester.dragUntilVisible(englishFinder, find.byType(ListView), const Offset(0, -100));
+      await tester.pumpAndSettle();
+
+      await tester.tap(englishFinder);
       await tester.pumpAndSettle();
 
       final segmentedButton = tester.widget<SegmentedButton<String?>>(find.byType(SegmentedButton<String?>).last);

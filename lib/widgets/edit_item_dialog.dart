@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
-import '../models/category.dart';
+import '../providers/categories_provider.dart';
 import '../models/unit.dart';
 import '../models/shopping_item.dart';
 import '../providers/shopping_list_provider.dart';
+import '../constants/common_products.dart';
+import 'styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class EditItemDialog extends ConsumerStatefulWidget {
@@ -18,28 +20,11 @@ class EditItemDialog extends ConsumerStatefulWidget {
 }
 
 class _EditItemDialogState extends ConsumerState<EditItemDialog> {
-  static const List<String> _commonProducts = [
-    'Abacaxi', 'Absorvente', 'Achocolatado', 'Açúcar', 'Água Sanitária', 'Alface',
-    'Alho', 'Amaciante', 'Amendoim', 'Arroz', 'Azeite', 'Azeitona', 'Bacon',
-    'Balas', 'Banana', 'Batata', 'Batata Palha', 'Biscoito', 'Bolacha', 'Bolo',
-    'Brócolis', 'Café', 'Carne', 'Cebola', 'Cenoura', 'Cerveja', 'Chá', 'Chocolate',
-    'Condicionador', 'Couve', 'Creme de Leite', 'Creme Dental', 'Desinfetante',
-    'Desodorante', 'Detergente', 'Ervilha', 'Esponja de Aço', 'Extrato de Tomate',
-    'Farinha de Mandioca', 'Farinha de Trigo', 'Feijão', 'Fósforo', 'Frango',
-    'Frios', 'Gelatina', 'Goma de Mascar', 'Hambúrguer', 'Hidratante', 'Iogurte',
-    'Leite', 'Leite Condensado', 'Limão', 'Linguiça', 'Macarrão', 'Maçã',
-    'Maionese', 'Mamão', 'Manteiga', 'Margarina', 'Manga', 'Melancia', 'Melão',
-    'Milho', 'Molho de Tomate', 'Mortadela', 'Óleo', 'Ovos', 'Pão', 'Papel Higiênico',
-    'Papel Toalha', 'Peixe', 'Pera', 'Pipoca', 'Pizza', 'Presunto', 'Queijo',
-    'Refrigerante', 'Sabão em Barra', 'Sabão em Pó', 'Sabonete', 'Salgadinho',
-    'Salsicha', 'Sal', 'Shampoo', 'Sorvete', 'Suco', 'Tomate', 'Uva', 'Vinagre',
-  ];
-
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _nameController;
   late final TextEditingController _quantityController;
   late final TextEditingController _priceController;
-  late Category _selectedCategory;
+  late String _selectedCategoryId;
   late Unit _selectedUnit;
 
   @override
@@ -50,7 +35,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
     _priceController = TextEditingController(
       text: widget.item.estimatedPrice?.toStringAsFixed(2) ?? '',
     );
-    _selectedCategory = widget.item.category;
+    _selectedCategoryId = widget.item.categoryId;
     _selectedUnit = widget.item.unit;
   }
 
@@ -73,14 +58,14 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Autocomplete<String>(
+              StyledAutocomplete(
                 initialValue: TextEditingValue(text: _nameController.text),
                 optionsBuilder: (TextEditingValue textEditingValue) {
                   if (textEditingValue.text.isEmpty) {
                     return const Iterable<String>.empty();
                   }
                   final query = textEditingValue.text.toLowerCase();
-                  return _commonProducts.where((String option) {
+                  return commonProducts.where((String option) {
                     return option.toLowerCase().contains(query);
                   });
                 },
@@ -127,7 +112,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                   const SizedBox(width: Spacing.sm),
                   Expanded(
                     child: DropdownButtonFormField<Unit>(
-                      value: _selectedUnit,
+                      initialValue: _selectedUnit,
                       decoration: InputDecoration(labelText: l10n.unit),
                       items: Unit.values.map((u) {
                         return DropdownMenuItem(value: u, child: Text(u.label));
@@ -138,13 +123,13 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                 ],
               ),
               const SizedBox(height: Spacing.sm),
-              DropdownButtonFormField<Category>(
-                value: _selectedCategory,
+              DropdownButtonFormField<String>(
+                initialValue: _selectedCategoryId,
                 decoration: InputDecoration(labelText: l10n.category),
-                items: Category.values.map((cat) {
-                  return DropdownMenuItem(value: cat, child: Text(cat.label));
+                items: (ref.watch(categoriesProvider).value ?? []).map((cat) {
+                  return DropdownMenuItem(value: cat.id, child: Text(cat.name));
                 }).toList(),
-                onChanged: (v) => setState(() => _selectedCategory = v!),
+                onChanged: (v) => setState(() => _selectedCategoryId = v!),
               ),
               const SizedBox(height: Spacing.sm),
               TextFormField(
@@ -164,7 +149,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
               final updated = widget.item.copyWith(
                 name: _nameController.text,
                 quantity: int.tryParse(_quantityController.text) ?? 1,
-                category: _selectedCategory,
+                categoryId: _selectedCategoryId,
                 unit: _selectedUnit,
                 estimatedPrice: double.tryParse(_priceController.text),
                 updatedAt: DateTime.now(),

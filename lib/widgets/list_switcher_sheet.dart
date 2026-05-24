@@ -227,30 +227,19 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
       return;
     }
 
-    final name = await showDialog<String>(
+    var created = false;
+    await showDialog<void>(
       context: context,
-      builder: (_) => const CreateListDialog(),
+      builder: (_) => CreateListDialog(
+        onCreate: (name) async {
+          await ref.read(shoppingListsProvider.notifier).createList(name);
+          ref.invalidate(currentListIdProvider);
+          created = true;
+        },
+      ),
     );
-    if (name == null || name.isEmpty) {
-      return;
-    }
-    if (!mounted) {
-      return;
-    }
-    try {
-      await ref.read(shoppingListsProvider.notifier).createList(name);
-      if (!mounted) {
-        return;
-      }
+    if (mounted && created) {
       Navigator.pop(context);
-      ref.invalidate(currentListIdProvider);
-    } on Exception catch (e) {
-      if (!mounted) {
-        return;
-      }
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.toString())),
-      );
     }
   }
 

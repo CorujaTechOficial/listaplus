@@ -10,7 +10,6 @@ import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/widgets/empty_state.dart';
 import 'package:shopping_list/widgets/shopping_item_tile.dart';
@@ -194,7 +193,7 @@ void main() {
         name: 'Item da A',
         shoppingListId: listA.id,
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await backend.saveLists([listA, listB]);
       await backend.saveItems([itemA]);

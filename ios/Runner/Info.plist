@@ -49,7 +49,5 @@
 	<string>Precisamos acessar o microfone para adicionar itens por voz.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Precisamos do reconhecimento de voz para converter sua fala em itens da lista.</string>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~3347511713</string>
 </dict>
 </plist>

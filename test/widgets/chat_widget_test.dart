@@ -12,6 +12,8 @@ import 'package:shopping_list/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/providers/onboarding_provider.dart';
 import 'package:shopping_list/screens/ai_home_screen.dart';
 import 'package:shopping_list/models/shopping_list.dart';
+import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/providers/chat_provider.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 import '../helpers/fake_ai_service.dart';
@@ -58,6 +60,7 @@ void main() {
       // 1. Send Message
       final input = find.byType(TextField).last;
       await tester.enterText(input, 'Olá assistente');
+      await tester.pump();
       await tester.tap(find.byIcon(Icons.send));
       await tester.pump(); // Start sending
       
@@ -142,13 +145,10 @@ void main() {
       await tester.pumpAndSettle();
 
       // O texto deve sumir do input
-      expect(find.text('Pão de Queijo'), findsNothing);
+      final textField = tester.widget<TextField>(find.byType(TextField).last);
+      expect(textField.controller?.text.isEmpty, isTrue);
 
-      // Expandir a lista para ver o item
-      await tester.tap(find.text('Lista de Compras'));
-      await tester.pumpAndSettle();
-
-      // O item deve aparecer na lista (CompactListCard)
+      // O item deve aparecer na lista (CompactListCard) - expanded automatically
       expect(find.text('Pão de Queijo'), findsOneWidget);
     });
 
@@ -234,11 +234,82 @@ void main() {
       // Envia mensagem para renderizar bolha do usuário com avatar
       final input = find.byType(TextField).last;
       await tester.enterText(input, 'Teste');
+      await tester.pump();
       await tester.tap(find.byIcon(Icons.send));
       await tester.pumpAndSettle(const Duration(seconds: 1));
 
       // Verifica que não crashou (a mensagem do usuário aparece)
       expect(find.text('Teste'), findsOneWidget);
+    });
+
+    testWidgets('shows Snackbar and expands list card when add_items action button is clicked', (tester) async {
+      final backend = FakeStorageBackend();
+      await backend.setLocale('pt_BR');
+      final list = ShoppingList(id: 'test-list', name: 'Lista Teste');
+      await backend.saveLists([list]);
+      await backend.setCurrentListId(list.id);
+
+      final revenueCat = FakeRevenueCatService();
+      revenueCat.setIsPremium(true);
+
+      late ProviderContainer container;
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            firestoreServiceProvider.overrideWithValue(backend),
+            revenueCatServiceProvider.overrideWithValue(revenueCat),
+            authServiceProvider.overrideWithValue(AuthService(auth: MockFirebaseAuth())),
+            aiServiceProvider.overrideWithValue(FakeAiService()),
+            onboardingProvider.overrideWith(() => FakeOnboarding()),
+          ],
+          child: Consumer(
+            builder: (context, ref, child) {
+              container = ProviderScope.containerOf(context);
+              return const app.MyApp();
+            },
+          ),
+        ),
+      );
+
+      await tester.pumpAndSettle();
+
+      // Navigate to Assistente tab
+      await tester.tap(find.text('Assistente'));
+      await tester.pumpAndSettle();
+
+      // Ensure AiHomeScreen is loaded and chat panel is visible
+      expect(find.byType(AiChatPanel), findsOneWidget);
+
+      // Manually add a chat message with add_items action
+      final chatNotifier = container.read(chatSessionProvider(list.id).notifier);
+      await chatNotifier.addMessage(ChatMessage(
+        id: 'msg-action',
+        role: 'assistant',
+        content: 'Aqui está sua sugestão:',
+        actions: {
+          'add_items': [
+            {'name': 'Maçã', 'quantity': 5, 'unit': 'un', 'category': 'fruits'},
+          ],
+        },
+      ));
+      await tester.pumpAndSettle();
+
+      // Find the action button "Add all to list"
+      final addButton = find.text('Add all to list');
+      expect(addButton, findsOneWidget);
+
+      // Tap the action button
+      await tester.tap(addButton);
+      await tester.pump();
+      await tester.pumpAndSettle();
+
+      // 1. Verify confirmation Snackbar is shown
+      expect(find.text('Items successfully added to list!'), findsOneWidget);
+      expect(find.text('View list'), findsOneWidget);
+
+      // 2. Verify that items were added to the list and list card auto-expanded (showing the item)
+      expect(find.text('Maçã'), findsOneWidget);
     });
   });
 

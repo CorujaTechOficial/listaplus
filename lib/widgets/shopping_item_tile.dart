@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
-import '../theme/colors.dart';
 import '../providers/shopping_list_provider.dart';
 import '../providers/price_history_provider.dart';
 import '../providers/pantry_items_provider.dart';
+import '../providers/categories_provider.dart';
 import '../models/shopping_item.dart';
+import '../models/category_data.dart';
 import 'edit_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
@@ -46,6 +47,10 @@ class ShoppingItemTile extends ConsumerWidget {
     final isCompact = viewMode == ShoppingItemViewMode.compact;
     final isMarket = viewMode == ShoppingItemViewMode.market;
 
+    final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
+    final categoryMap = <String, CategoryData>{for (final c in categories) c.id: c};
+    final cat = categoryMap[item.categoryId];
+
     final tileContent = InkWell(
       onTap: selectionMode
           ? () => onSelectionChanged?.call(!isSelected)
@@ -79,15 +84,15 @@ class ShoppingItemTile extends ConsumerWidget {
                 ? null
                 : Border.all(
                     color: isPurchased
-                        ? theme.colorScheme.outlineVariant.withValues(alpha: 0.15)
-                        : theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+                        ? theme.colorScheme.outlineVariant.withAlpha((0.15 * 255).toInt())
+                        : theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
                     width: isDark ? 0.5 : 1,
                   ),
             boxShadow: (isDark || isCompact || isMarket)
                 ? null
                 : [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.04),
+                      color: Colors.black.withAlpha((0.04 * 255).toInt()),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),
@@ -134,7 +139,7 @@ class ShoppingItemTile extends ConsumerWidget {
                         style: (isCompact ? theme.textTheme.bodyMedium : theme.textTheme.titleMedium)?.copyWith(
                           decoration: !selectionMode && isPurchased ? TextDecoration.lineThrough : null,
                           color: !selectionMode && isPurchased
-                              ? theme.colorScheme.onSurface.withValues(alpha: 0.5)
+                              ? theme.colorScheme.onSurface.withAlpha((0.5 * 255).toInt())
                               : theme.colorScheme.onSurface,
                           fontWeight: (isCompact || isPurchased) ? FontWeight.w400 : FontWeight.w600,
                           height: 1.2,
@@ -166,10 +171,9 @@ class ShoppingItemTile extends ConsumerWidget {
                               if (!isMarket) ...[
                                 const SizedBox(width: Spacing.xxs),
                                 _ItemMetaBadge(
-                                  label: item.category.label,
-                                  icon: AppColors.categoryIcons[item.category.label],
-                                  color: AppColors.categoryColors[item.category.label] ??
-                                      theme.colorScheme.tertiary,
+                                  label: cat?.name ?? item.categoryId,
+                                  icon: cat?.icon,
+                                  color: cat?.colorValue ?? theme.colorScheme.tertiary,
                                 ),
                               ],
                               if (item.estimatedPrice != null) ...[
@@ -304,7 +308,7 @@ class ShoppingItemTile extends ConsumerWidget {
               name: item.name,
               idealQuantity: item.quantity,
               currentQuantity: item.quantity,
-              category: item.category,
+              categoryId: item.categoryId,
               unit: item.unit,
               estimatedPrice: item.estimatedPrice,
             );
@@ -348,7 +352,7 @@ class _AnimatedCheckbox extends StatelessWidget {
                 ? theme.colorScheme.primary
                 : null,
             side: BorderSide(
-              color: theme.colorScheme.outline.withValues(alpha: 0.5),
+              color: theme.colorScheme.outline.withAlpha((0.5 * 255).toInt()),
               width: 1.5,
             ),
           ),
@@ -379,11 +383,11 @@ class _QuantityControl extends StatelessWidget {
       height: isMarket ? 36 : 28,
       decoration: BoxDecoration(
         color: isDark
-            ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.15)
-            : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),
+            ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.15 * 255).toInt())
+            : theme.colorScheme.surfaceContainerHighest.withAlpha((0.6 * 255).toInt()),
         borderRadius: BorderRadius.circular(RadiusTokens.sm),
         border: Border.all(
-          color: theme.colorScheme.outlineVariant.withValues(alpha: 0.2),
+          color: theme.colorScheme.outlineVariant.withAlpha((0.2 * 255).toInt()),
           width: 0.5,
         ),
       ),
@@ -466,11 +470,11 @@ class _ItemMetaBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: 3),
       decoration: BoxDecoration(
         color: isDark
-            ? color.withValues(alpha: 0.15)
-            : color.withValues(alpha: 0.1),
+            ? color.withAlpha((0.15 * 255).toInt())
+            : color.withAlpha((0.1 * 255).toInt()),
         borderRadius: BorderRadius.circular(RadiusTokens.xxs),
         border: Border.all(
-          color: color.withValues(alpha: isDark ? 0.25 : 0.2),
+          color: color.withAlpha(((isDark ? 0.25 : 0.2) * 255).toInt()),
           width: 0.5,
         ),
       ),
@@ -524,11 +528,11 @@ class _PriceBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: 3),
       decoration: BoxDecoration(
         color: isDark
-            ? badgeColor.withValues(alpha: 0.15)
-            : badgeColor.withValues(alpha: 0.08),
+            ? badgeColor.withAlpha((0.15 * 255).toInt())
+            : badgeColor.withAlpha((0.08 * 255).toInt()),
         borderRadius: BorderRadius.circular(RadiusTokens.xxs),
         border: Border.all(
-          color: badgeColor.withValues(alpha: isDark ? 0.3 : 0.2),
+          color: badgeColor.withAlpha(((isDark ? 0.3 : 0.2) * 255).toInt()),
           width: 0.5,
         ),
       ),

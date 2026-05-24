@@ -30,7 +30,7 @@ class PremiumGate extends StatelessWidget {
               Icon(
                 Icons.lock,
                 size: 64,
-                color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.5),
+                color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
               ).animate().shake(
                 duration: DurationTokens.slow,
                 delay: const Duration(milliseconds: 300),

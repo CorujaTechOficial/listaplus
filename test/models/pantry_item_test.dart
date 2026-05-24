@@ -1,4 +1,3 @@
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:test/test.dart';
@@ -11,7 +10,7 @@ void main() {
       expect(item.name, 'Arroz');
       expect(item.idealQuantity, 5);
       expect(item.currentQuantity, 0);
-      expect(item.category, Category.others);
+      expect(item.categoryId, 'others');
       expect(item.unit, Unit.un);
       expect(item.estimatedPrice, isNull);
       expect(item.trackStock, true);
@@ -25,7 +24,7 @@ void main() {
         name: 'Feijão',
         idealQuantity: 3,
         currentQuantity: 1,
-        category: Category.fruits,
+        categoryId: 'fruits',
         unit: Unit.kg,
         estimatedPrice: 8.50,
         trackStock: true,
@@ -39,7 +38,7 @@ void main() {
       expect(restored.name, 'Feijão');
       expect(restored.idealQuantity, 3);
       expect(restored.currentQuantity, 1);
-      expect(restored.category, Category.fruits);
+      expect(restored.categoryId, 'fruits');
       expect(restored.unit, Unit.kg);
       expect(restored.estimatedPrice, 8.50);
       expect(restored.trackStock, true);
@@ -86,7 +85,7 @@ void main() {
         'updatedAt': '2026-05-02T00:00:00.000',
       };
       final item = PantryItem.fromJson(json);
-      expect(item.category, Category.others);
+      expect(item.categoryId, 'others');
     });
 
     test('fromJson falls back to un for unknown unit', () {
@@ -127,14 +126,14 @@ void main() {
         name: 'Item',
         idealQuantity: 5,
         currentQuantity: 2,
-        category: Category.fruits,
+        categoryId: 'fruits',
       );
-      final updated = original.copyWith(category: Category.bakery, currentQuantity: 4);
+      final updated = original.copyWith(categoryId: 'bakery', currentQuantity: 4);
 
       expect(updated.name, 'Item');
       expect(updated.idealQuantity, 5);
       expect(updated.currentQuantity, 4);
-      expect(updated.category, Category.bakery);
+      expect(updated.categoryId, 'bakery');
     });
 
     test('deficit returns 0 when current >= ideal', () {

@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../providers/shopping_list_provider.dart';
-import '../models/category.dart';
 import '../models/unit.dart';
 import 'add_item_dialog.dart';
 
@@ -47,7 +46,7 @@ class EmptyState extends ConsumerWidget {
                   width: 160,
                   height: 160,
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.primaryContainer.withValues(alpha: isDark ? 0.05 : 0.1),
+                    color: theme.colorScheme.primaryContainer.withAlpha(((isDark ? 0.05 : 0.1) * 255).toInt()),
                     shape: BoxShape.circle,
                   ),
                 ).animate(onPlay: (controller) {
@@ -72,7 +71,7 @@ class EmptyState extends ConsumerWidget {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: theme.colorScheme.primary.withValues(alpha: 0.3),
+                        color: theme.colorScheme.primary.withAlpha((0.3 * 255).toInt()),
                         blurRadius: 20,
                         spreadRadius: 2,
                       ),
@@ -138,7 +137,7 @@ class EmptyState extends ConsumerWidget {
                         listId: listId!,
                         name: entry.value,
                         quantity: 1,
-                        category: Category.others,
+                        categoryId: 'others',
                         unit: Unit.un,
                       );
                     },

@@ -9,7 +9,7 @@
   User data (`themeMode`, `isPremium`, `currentListId`) in `users/{uid}` doc. `sharedLists/{code}` for share-by-code.
 - **Monetization**: RevenueCat via `purchases_flutter`. UID linked via `Purchases.logIn(uid)` in `main.dart`.
   Entitlement: `lista_plus_pro`, offering: `default_play` with 3 packages:
-  `$rc_monthly` R$14.90, `$rc_annual` R$99.90, `$rc_lifetime` R$299.90). AdMob (banner + rewarded).
+  `$rc_monthly` R$14.90, `$rc_annual` R$99.90, `$rc_lifetime` R$299.90).
 - **Premium gating**: `premiumProvider` — max 3 lists free, unlimited premium. Premium also unlocks custom themes
   (7/10 premium), monthly budget, backup export, share by code.
 - **AI Chat**: Chat com tool calling via `lib/agent/`. Sessões persistidas no Firestore (`chat_messages` subcollection).

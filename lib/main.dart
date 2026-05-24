@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -14,7 +15,6 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'theme/app_theme.dart';
 import 'theme/tokens.dart';
-import 'providers/ad_service_provider.dart';
 import 'providers/current_list_provider.dart';
 import 'providers/dark_mode_provider.dart';
 import 'providers/locale_provider.dart';
@@ -23,21 +23,39 @@ import 'providers/shopping_lists_provider.dart';
 import 'providers/onboarding_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/pantry_screen.dart';
+import 'screens/recipes_screen.dart';
+import 'screens/meal_planner_screen.dart';
 import 'screens/ai_home_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'widgets/create_list_dialog.dart';
 import 'widgets/empty_state.dart';
 import 'widgets/init_error_screen.dart';
-import 'services/ad_service_impl.dart';
-import 'services/logger_service.dart';
 import 'services/revenuecat_service_impl.dart';
 import 'providers/revenuecat_service_provider.dart';
 import 'providers/update_service_provider.dart';
 
 // coverage:ignore-start
+/// Observer to catch and report Riverpod errors to Sentry and Crashlytics.
+base class AppProviderObserver extends ProviderObserver {
+  @override
+  void providerDidFail(
+    ProviderObserverContext context,
+    Object error,
+    StackTrace stackTrace,
+  ) {
+    final providerName = context.provider.name ?? context.provider.runtimeType.toString();
+    debugPrint('Riverpod Error in $providerName: $error');
+    Sentry.captureException(error, stackTrace: stackTrace);
+    FirebaseCrashlytics.instance.recordError(error, stackTrace, reason: 'Riverpod Provider Error: $providerName');
+  }
+}
+
 Future<void> main() async {
   SentryWidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  
+  // Ensure Crashlytics is enabled in release
+  await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
 
   await SentryFlutter.init(
     (options) {
@@ -51,6 +69,7 @@ Future<void> main() async {
         final exceptions = event.exceptions;
         if (exceptions != null && exceptions.isNotEmpty) {
           final type = exceptions.first.type;
+          // Don't filter out essential errors, only specific expected noisy ones
           if (type == 'PurchasesError') {
             return null;
           }
@@ -102,6 +121,9 @@ Future<UserCredential> _signInWithRetry() async {
 Future<void> _runApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
+  await GoogleSignIn.instance.initialize();
+  
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent,
@@ -109,22 +131,40 @@ Future<void> _runApp() async {
     ),
   );
 
+  // Global Flutter error handler
   FlutterError.onError = (details) {
+    FlutterError.dumpErrorToConsole(details);
     Sentry.captureException(details.exception, stackTrace: details.stack);
     FirebaseCrashlytics.instance.recordFlutterFatalError(details);
   };
+
+  // Asynchronous error handler (non-Flutter)
   PlatformDispatcher.instance.onError = (error, stack) {
+    debugPrint('PlatformDispatcher Error: $error');
     Sentry.captureException(error, stackTrace: stack);
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
 
+  // Render error handler
+  ErrorWidget.builder = (details) {
+    FlutterError.dumpErrorToConsole(details);
+    Sentry.captureException(details.exception, stackTrace: details.stack);
+    FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+    return const Center(
+      child: Padding(
+        padding: EdgeInsets.all(24),
+        child: Text(
+          'Ops! Algo deu errado ao renderizar esta tela.',
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  };
+
   try {
     final userCredential = await _signInWithRetry();
     final uid = userCredential.user!.uid;
-
-    final adService = AdServiceImpl();
-    await adService.initialize();
 
     final revenueCat = RevenueCatServiceImpl();
     await revenueCat.init(
@@ -133,24 +173,26 @@ Future<void> _runApp() async {
 
     try {
       await Purchases.logIn(uid);
-    } on Exception catch (e) {
-      await Sentry.captureException(e);
+    } on Exception catch (e, s) {
+      await Sentry.captureException(e, stackTrace: s);
+      await FirebaseCrashlytics.instance.recordError(e, s, reason: 'RevenueCat LogIn Error');
     }
 
     runApp(
       SentryWidget(
         child: ProviderScope(
+          observers: [AppProviderObserver()],
           overrides: [
             revenueCatServiceProvider.overrideWithValue(revenueCat),
-            adServiceProvider.overrideWithValue(adService),
           ],
           child: const MyApp(),
         ),
       ),
     );
   } on Object catch (e, stack) {
+    debugPrint('Initialization Fatal Error: $e');
     await Sentry.captureException(e, stackTrace: stack);
-    await FirebaseCrashlytics.instance.recordError(e, stack, fatal: false);
+    await FirebaseCrashlytics.instance.recordError(e, stack, fatal: true, reason: 'App Initialization Error');
     runApp(InitErrorScreen(e));
   }
 }
@@ -166,7 +208,7 @@ class MyApp extends ConsumerWidget {
     final themeColorAsync = ref.watch(themeColorProvider);
     final localeAsync = ref.watch(localeSettingProvider);
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
-    final colorSeed = themeColorAsync.valueOrNull ?? const Color(0xFF4CAF50);
+    final colorSeed = themeColorAsync.value ?? const Color(0xFF4CAF50);
 
     return onboardingAsync.when(
       data: (hasSeen) {
@@ -188,11 +230,15 @@ class MyApp extends ConsumerWidget {
         colorSeed: colorSeed,
         localeAsync: localeAsync,
       ),
-      error: (_, __) => _buildMainShell(
-        themeMode: themeMode,
-        colorSeed: colorSeed,
-        localeAsync: localeAsync,
-      ),
+      error: (error, stack) {
+        Sentry.captureException(error, stackTrace: stack);
+        FirebaseCrashlytics.instance.recordError(error, stack, reason: 'MyApp.onboarding error');
+        return _buildMainShell(
+          themeMode: themeMode,
+          colorSeed: colorSeed,
+          localeAsync: localeAsync,
+        );
+      },
     );
   }
 
@@ -278,7 +324,7 @@ class MyApp extends ConsumerWidget {
 
   LocaleResolutionCallback _localeResolver(AsyncValue<String?> localeAsync) {
     return (locale, supportedLocales) {
-      final savedLocale = localeAsync.valueOrNull;
+      final savedLocale = localeAsync.value;
       if (savedLocale != null && savedLocale.isNotEmpty) {
         final parts = savedLocale.split('_');
         if (parts.length == 2) {
@@ -331,6 +377,8 @@ class _MainShellState extends ConsumerState<MainShell> {
         index: _currentTab,
         children: const [
           AiHomeScreen(),
+          RecipesScreen(),
+          MealPlannerScreen(),
           PantryScreen(),
           ListLoader(),
         ],
@@ -342,7 +390,17 @@ class _MainShellState extends ConsumerState<MainShell> {
           NavigationDestination(
             icon: Icon(Icons.auto_awesome_outlined),
             selectedIcon: Icon(Icons.auto_awesome),
-            label: 'Assistente',
+            label: 'IA',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.restaurant_menu_outlined),
+            selectedIcon: Icon(Icons.restaurant_menu),
+            label: 'Receitas',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.calendar_month_outlined),
+            selectedIcon: Icon(Icons.calendar_month),
+            label: 'Cardápio',
           ),
           NavigationDestination(
             icon: Icon(Icons.inventory_2_outlined),
@@ -375,7 +433,40 @@ class ListLoader extends ConsumerWidget {
         return HomeScreen(listId: listId);
       },
       loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (e, _) => Scaffold(body: Center(child: Text('Erro: $e'))),
+      error: (e, stack) {
+        debugPrint('[ListLoader] Error loading current list: $e');
+        Sentry.captureException(e, stackTrace: stack);
+        FirebaseCrashlytics.instance.recordError(e, stack, reason: 'ListLoader error');
+        return Scaffold(
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(Spacing.xl),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.error_outline, color: Colors.red, size: 48),
+                  const SizedBox(height: Spacing.md),
+                  Text(
+                    'Erro ao carregar listas',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: Spacing.xs),
+                  Text(
+                    e.toString().replaceFirst('Exception: ', '').replaceFirst('StateError: ', ''),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: Spacing.lg),
+                  FilledButton.icon(
+                    onPressed: () => ref.invalidate(currentListIdProvider),
+                    icon: const Icon(Icons.refresh),
+                    label: const Text('Tentar Novamente'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -400,24 +491,16 @@ class NoListsScreen extends ConsumerWidget {
               ),
               const SizedBox(height: Spacing.lg),
               FilledButton.tonalIcon(
-                onPressed: () async {
-                  final name = await showDialog<String>(
+                onPressed: () {
+                  showDialog<void>(
                     context: context,
-                    builder: (_) => const CreateListDialog(),
+                    builder: (_) => CreateListDialog(
+                      onCreate: (name) async {
+                        await ref.read(shoppingListsProvider.notifier).createList(name);
+                        ref.invalidate(currentListIdProvider);
+                      },
+                    ),
                   );
-                  if (name != null && name.isNotEmpty) {
-                    try {
-                      await ref.read(shoppingListsProvider.notifier).createList(name);
-                      ref.invalidate(currentListIdProvider);
-                    } on Exception catch (e, s) {
-                      LoggerService.error(e, stackTrace: s, message: 'NoListsScreen: erro ao criar lista');
-                      if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Erro ao criar lista: $e')),
-                        );
-                      }
-                    }
-                  }
                 },
                 icon: const Icon(Icons.add),
                 label: const Text('Criar Primeira Lista'),

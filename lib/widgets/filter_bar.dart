@@ -35,51 +35,41 @@ class _FilterBarState extends State<FilterBar> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+
     return Row(
       children: [
         Expanded(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                _FilterChip(
-                  label: l10n.filterAll,
-                  icon: Icons.list,
-                  selected: widget.filter == FilterType.all,
-                  onTap: () {
-                    HapticFeedback.selectionClick();
-                    widget.onFilterChanged(FilterType.all);
-                  },
-                  theme: theme,
-                ),
-                const SizedBox(width: Spacing.xs),
-                _FilterChip(
-                  label: l10n.filterPending,
-                  icon: Icons.pending,
-                  selected: widget.filter == FilterType.pending,
-                  onTap: () {
-                    HapticFeedback.selectionClick();
-                    widget.onFilterChanged(FilterType.pending);
-                  },
-                  theme: theme,
-                ),
-                const SizedBox(width: Spacing.xs),
-                _FilterChip(
-                  label: l10n.filterPurchased,
-                  icon: Icons.check_circle,
-                  selected: widget.filter == FilterType.purchased,
-                  onTap: () {
-                    HapticFeedback.selectionClick();
-                    widget.onFilterChanged(FilterType.purchased);
-                  },
-                  theme: theme,
-                ),
-              ],
+          child: SegmentedButton<FilterType>(
+            segments: [
+              ButtonSegment(
+                value: FilterType.all,
+                label: Text(l10n.filterAll),
+                icon: const Icon(Icons.list, size: 16),
+              ),
+              ButtonSegment(
+                value: FilterType.pending,
+                label: Text(l10n.filterPending),
+                icon: const Icon(Icons.pending, size: 16),
+              ),
+              ButtonSegment(
+                value: FilterType.purchased,
+                label: Text(l10n.filterPurchased),
+                icon: const Icon(Icons.check_circle, size: 16),
+              ),
+            ],
+            selected: {widget.filter},
+            onSelectionChanged: (Set<FilterType> selected) {
+              HapticFeedback.selectionClick();
+              widget.onFilterChanged(selected.first);
+            },
+            showSelectedIcon: false,
+            style: const ButtonStyle(
+              visualDensity: VisualDensity.compact,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
           ),
         ),
-        const SizedBox(width: Spacing.xs),
+        const SizedBox(width: 4),
         IconButton(
           onPressed: () {
             HapticFeedback.selectionClick();
@@ -92,16 +82,13 @@ class _FilterBarState extends State<FilterBar> {
           ),
           tooltip: 'Agrupar por Categoria',
         ),
-        const SizedBox(width: Spacing.xs),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: 2),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
           decoration: BoxDecoration(
-            color: isDark
-                ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.15)
-                : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+            color: theme.colorScheme.surfaceContainerHighest.withAlpha((0.5 * 255).toInt()),
             borderRadius: BorderRadius.circular(RadiusTokens.sm),
             border: Border.all(
-              color: theme.colorScheme.outlineVariant.withValues(alpha: 0.2),
+              color: theme.colorScheme.outlineVariant.withAlpha((0.2 * 255).toInt()),
               width: 0.5,
             ),
           ),
@@ -109,7 +96,7 @@ class _FilterBarState extends State<FilterBar> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(Icons.sort, size: 16, color: theme.colorScheme.onSurfaceVariant),
-              const SizedBox(width: Spacing.xxs),
+              const SizedBox(width: 4),
               DropdownButton<SortType>(
                 value: widget.sort,
                 underline: const SizedBox(),
@@ -134,71 +121,6 @@ class _FilterBarState extends State<FilterBar> {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _FilterChip extends StatelessWidget {
-  const _FilterChip({
-    required this.label,
-    required this.icon,
-    required this.selected,
-    required this.onTap,
-    required this.theme,
-  });
-
-  final String label;
-  final IconData icon;
-  final bool selected;
-  final VoidCallback onTap;
-  final ThemeData theme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(RadiusTokens.full),
-        child: AnimatedContainer(
-          duration: DurationTokens.fast,
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-          decoration: BoxDecoration(
-            color: selected
-                ? theme.colorScheme.secondaryContainer
-                : Colors.transparent,
-            borderRadius: BorderRadius.circular(RadiusTokens.full),
-            border: Border.all(
-              color: selected
-                  ? theme.colorScheme.secondary.withValues(alpha: 0.5)
-                  : theme.colorScheme.outlineVariant,
-              width: 1,
-            ),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                icon,
-                size: 16,
-                color: selected
-                    ? theme.colorScheme.onSecondaryContainer
-                    : theme.colorScheme.onSurfaceVariant,
-              ),
-              const SizedBox(width: 4),
-              Text(
-                label,
-                style: theme.textTheme.labelMedium?.copyWith(
-                  fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-                  color: selected
-                      ? theme.colorScheme.onSecondaryContainer
-                      : theme.colorScheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

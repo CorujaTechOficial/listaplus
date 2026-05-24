@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/models/premium_feature.dart';
+import 'package:shopping_list/generated/l10n/app_localizations_pt.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('PremiumFeature', () {
-    test('has 8 values', () {
-      expect(PremiumFeature.values.length, 8);
+    test('has 9 values', () {
+      expect(PremiumFeature.values.length, 9);
     });
 
     test('labels match expectations', () {
@@ -17,6 +18,7 @@ void main() {
       expect(PremiumFeature.monthlyBudget.label, 'Orçamento mensal global');
       expect(PremiumFeature.assistant.label, 'Assistente de IA Personalizado');
       expect(PremiumFeature.pantry.label, 'Dispensa ilimitada');
+      expect(PremiumFeature.interactiveArtifacts.label, 'Artefatos Interativos da IA');
     });
 
     test('icons match expectations', () {
@@ -28,6 +30,20 @@ void main() {
       expect(PremiumFeature.monthlyBudget.icon, Icons.account_balance_wallet);
       expect(PremiumFeature.assistant.icon, Icons.auto_awesome);
       expect(PremiumFeature.pantry.icon, Icons.inventory_2);
+      expect(PremiumFeature.interactiveArtifacts.icon, Icons.dashboard_customize);
+    });
+
+    test('localizedLabels match expectations', () {
+      final l10n = AppLocalizationsPtBr();
+      expect(PremiumFeature.unlimitedLists.localizedLabel(l10n), 'Listas ilimitadas');
+      expect(PremiumFeature.sharing.localizedLabel(l10n), 'Compartilhar listas');
+      expect(PremiumFeature.history.localizedLabel(l10n), 'Histórico completo');
+      expect(PremiumFeature.export.localizedLabel(l10n), 'Exportar dados');
+      expect(PremiumFeature.themes.localizedLabel(l10n), 'Temas personalizados');
+      expect(PremiumFeature.monthlyBudget.localizedLabel(l10n), 'Orçamento mensal global');
+      expect(PremiumFeature.assistant.localizedLabel(l10n), 'Assistente de IA Personalizado');
+      expect(PremiumFeature.pantry.localizedLabel(l10n), 'Dispensa ilimitada');
+      expect(PremiumFeature.interactiveArtifacts.localizedLabel(l10n), 'Artefatos Interativos da IA');
     });
   });
 

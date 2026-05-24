@@ -7,8 +7,10 @@ list(APPEND FLUTTER_PLUGIN_LIST
   dynamic_color
   firebase_auth
   firebase_core
+  firebase_remote_config
   permission_handler_windows
   printing
+  record_windows
   sentry_flutter
   share_plus
   speech_to_text_windows

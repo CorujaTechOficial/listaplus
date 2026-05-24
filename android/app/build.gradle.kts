@@ -9,12 +9,13 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
 }
 
 android {
     namespace = "br.com.curujatech.listaplus"
     compileSdk = 36
-    ndkVersion = "27.0.12077973"
+    ndkVersion = "28.2.13676358"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -28,15 +29,9 @@ android {
     defaultConfig {
         applicationId = "br.com.curujatech.listaplus"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-
-        val dartEnvironmentVariables: Map<String, String> = project.properties["dart-defines"]?.toString()?.split(",")?.associate {
-            val parts = String(Base64.getDecoder().decode(it)).split("=", limit = 2)
-            if (parts.size == 2) parts[0] to parts[1] else parts[0] to ""
-        } ?: emptyMap()
-        manifestPlaceholders["admobAppId"] = dartEnvironmentVariables["ADMOB_APP_ID"] ?: "ca-app-pub-3940256099942544~3347511713"
     }
 
     signingConfigs {
@@ -62,6 +57,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            ndk {
+                debugSymbolLevel = "none"
+            }
         }
     }
 }

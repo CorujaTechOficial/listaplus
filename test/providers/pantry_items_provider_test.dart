@@ -4,7 +4,6 @@ import 'package:shopping_list/providers/pantry_items_provider.dart';
 import 'package:shopping_list/providers/premium_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/unit.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
@@ -38,7 +37,7 @@ void main() {
       await container.read(pantryItemsProvider.notifier).addItem(
         name: 'Arroz',
         idealQuantity: 5,
-        category: Category.others,
+        categoryId: 'others',
         unit: Unit.kg,
       );
       final items = await fakeBackend.loadPantryItems();
@@ -172,7 +171,7 @@ void main() {
       expect(updated.first.currentQuantity, 7);
     });
 
-    test('restockItem clamps to ideal quantity', () async {
+    test('restockItem can exceed ideal quantity', () async {
       await container.read(pantryItemsProvider.future);
       await container.read(pantryItemsProvider.notifier).addItem(
         name: 'Item',
@@ -183,7 +182,7 @@ void main() {
       await container.read(pantryItemsProvider.notifier).restockItem(items.first.id, 20);
 
       final updated = await fakeBackend.loadPantryItems();
-      expect(updated.first.currentQuantity, 10);
+      expect(updated.first.currentQuantity, 22);
     });
 
     test('setIdealQuantity updates ideal quantity', () async {

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:http/http.dart' as http;
+import 'logger_service.dart';
 import '../agent/tool.dart';
 import '../models/chat_message.dart';
 import 'ai_service.dart';
@@ -43,6 +43,20 @@ class OpenCodeGoService implements AiService {
     return messages;
   }
 
+  bool _hasAudio(List<Map<String, dynamic>> messages) {
+    for (final msg in messages) {
+      final content = msg['content'];
+      if (content is List) {
+        for (final item in content) {
+          if (item is Map && item['type'] == 'input_audio') {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   @override
   Future<ChatMessage> getChatCompletion(
     List<ChatMessage> history, {
@@ -50,11 +64,12 @@ class OpenCodeGoService implements AiService {
   }) async {
     final messages = _buildMessages(history, systemPrompt: systemPrompt);
 
+    final requestModel = _hasAudio(messages) ? 'google/gemini-2.5-flash' : model;
     final response = await http.post(
       Uri.parse(_baseUrl),
       headers: await _headers(),
       body: jsonEncode({
-        'model': model,
+        'model': requestModel,
         'messages': messages,
       }),
     ).timeout(const Duration(seconds: 30));
@@ -83,10 +98,11 @@ class OpenCodeGoService implements AiService {
   }) async* {
     final messages = _buildMessages(history, systemPrompt: systemPrompt);
 
+    final requestModel = _hasAudio(messages) ? 'google/gemini-2.5-flash' : model;
     final request = http.Request('POST', Uri.parse(_baseUrl))
       ..headers.addAll(await _headers())
       ..body = jsonEncode({
-        'model': model,
+        'model': requestModel,
         'messages': messages,
         'stream': true,
       });
@@ -97,16 +113,35 @@ class OpenCodeGoService implements AiService {
     try {
       response = await client.send(request).timeout(const Duration(seconds: 30));
     } on TimeoutException {
+      LoggerService.error(TimeoutException('Request timed out'), message: '[OpenCodeGo] Stream timeout', extra: {
+        'operation': 'stream_timeout',
+        'model': requestModel,
+        'timeoutSeconds': 30,
+        'hasAudio': _hasAudio(messages),
+      });
       client.close();
       yield 'Desculpe, a requisição excedeu o tempo limite.';
       return;
-    } on Exception {
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[OpenCodeGo] Stream connection error', extra: {
+        'operation': 'stream_connection_error',
+        'model': requestModel,
+        'baseUrl': _baseUrl,
+        'hasAudio': _hasAudio(messages),
+      });
       client.close();
       yield 'Desculpe, ocorreu um erro de conexão.';
       return;
     }
 
     if (response.statusCode != 200) {
+      final responseBody = await response.stream.bytesToString();
+      LoggerService.error(Exception('HTTP ${response.statusCode}'), message: '[OpenCodeGo] Stream API error', extra: {
+        'operation': 'stream_api_error',
+        'httpStatus': response.statusCode,
+        'model': requestModel,
+        'responseBody': responseBody.substring(0, responseBody.length.clamp(0, 500)),
+      });
       client.close();
       yield 'Erro na API: ${response.statusCode}';
       return;
@@ -160,8 +195,9 @@ class OpenCodeGoService implements AiService {
     }
     fullMessages.addAll(messages);
 
+    final requestModel = _hasAudio(fullMessages) ? 'google/gemini-2.5-flash' : model;
     final body = <String, dynamic>{
-      'model': model,
+      'model': requestModel,
       'messages': fullMessages,
       'stream': true,
     };
@@ -179,14 +215,36 @@ class OpenCodeGoService implements AiService {
     try {
       response = await client.send(request).timeout(const Duration(seconds: 30));
     } on TimeoutException {
+      LoggerService.error(TimeoutException('Request timed out'), message: '[OpenCodeGo] StreamWithTools timeout', extra: {
+        'operation': 'stream_with_tools_timeout',
+        'model': requestModel,
+        'timeoutSeconds': 30,
+        'toolsCount': tools?.length ?? 0,
+        'hasAudio': _hasAudio(fullMessages),
+      });
       client.close();
       return;
-    } on Exception {
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[OpenCodeGo] StreamWithTools connection error', extra: {
+        'operation': 'stream_with_tools_connection_error',
+        'model': requestModel,
+        'baseUrl': _baseUrl,
+        'toolsCount': tools?.length ?? 0,
+        'hasAudio': _hasAudio(fullMessages),
+      });
       client.close();
       return;
     }
 
     if (response.statusCode != 200) {
+      final responseBody = await response.stream.bytesToString();
+      LoggerService.error(Exception('HTTP ${response.statusCode}'), message: '[OpenCodeGo] StreamWithTools API error', extra: {
+        'operation': 'stream_with_tools_api_error',
+        'httpStatus': response.statusCode,
+        'model': requestModel,
+        'toolsCount': tools?.length ?? 0,
+        'responseBody': responseBody.substring(0, responseBody.length.clamp(0, 500)),
+      });
       client.close();
       return;
     }
@@ -239,8 +297,9 @@ class OpenCodeGoService implements AiService {
     }
     fullMessages.addAll(messages);
 
+    final requestModel = _hasAudio(fullMessages) ? 'google/gemini-2.5-flash' : model;
     final body = <String, dynamic>{
-      'model': model,
+      'model': requestModel,
       'messages': fullMessages,
     };
     if (tools != null && tools.isNotEmpty) {
@@ -254,7 +313,13 @@ class OpenCodeGoService implements AiService {
     ).timeout(const Duration(seconds: 30));
 
     if (response.statusCode != 200) {
-      debugPrint('[OpenCodeGo] API error ${response.statusCode}: ${response.body}');
+      LoggerService.error(Exception('HTTP ${response.statusCode}'), message: '[OpenCodeGo] getChatCompletionWithTools API error', extra: {
+        'operation': 'chat_completion_api_error',
+        'httpStatus': response.statusCode,
+        'model': requestModel,
+        'toolsCount': tools?.length ?? 0,
+        'responseBody': response.body.substring(0, response.body.length.clamp(0, 500)),
+      });
       return AiResponse(
         content: 'Erro na API: ${response.statusCode}',
       );

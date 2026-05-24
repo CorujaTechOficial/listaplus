@@ -1,6 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../models/pantry_item.dart';
-import '../models/category.dart';
 import '../models/unit.dart';
 import 'firestore_service_provider.dart';
 import 'premium_provider.dart';
@@ -21,7 +20,7 @@ class PantryItems extends _$PantryItems {
     required String name,
     required int idealQuantity,
     int currentQuantity = 0,
-    Category category = Category.others,
+    String categoryId = 'others',
     Unit unit = Unit.un,
     double? estimatedPrice,
     bool trackStock = true,
@@ -38,7 +37,7 @@ class PantryItems extends _$PantryItems {
       name: name,
       idealQuantity: idealQuantity,
       currentQuantity: currentQuantity,
-      category: category,
+      categoryId: categoryId,
       unit: unit,
       estimatedPrice: estimatedPrice,
       trackStock: trackStock,
@@ -89,7 +88,7 @@ class PantryItems extends _$PantryItems {
     final updated = items.map((item) {
       if (item.id == id) {
         updatedItem = item.copyWith(
-          currentQuantity: quantity.clamp(0, item.idealQuantity),
+          currentQuantity: quantity.clamp(0, 9999),
           updatedAt: DateTime.now(),
         );
         return updatedItem!;
@@ -113,7 +112,7 @@ class PantryItems extends _$PantryItems {
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
-      if (item.id == id && item.currentQuantity < item.idealQuantity) {
+      if (item.id == id) {
         updatedItem = item.copyWith(
           currentQuantity: item.currentQuantity + 1,
           updatedAt: DateTime.now(),
@@ -222,7 +221,7 @@ class PantryItems extends _$PantryItems {
     final updated = items.map((item) {
       if (item.id == id) {
         updatedItem = item.copyWith(
-          currentQuantity: (item.currentQuantity + amount).clamp(0, item.idealQuantity),
+          currentQuantity: (item.currentQuantity + amount).clamp(0, 9999),
           updatedAt: DateTime.now(),
         );
         return updatedItem!;

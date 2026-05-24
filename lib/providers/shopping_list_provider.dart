@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart' show debugPrint;
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 // coverage:ignore-start
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../models/shopping_item.dart';
-import '../models/category.dart';
 import '../models/unit.dart';
 import 'firestore_service_provider.dart';
 import 'shopping_lists_provider.dart';
@@ -15,7 +13,7 @@ part 'shopping_list_provider.g.dart';
 
 @riverpod
 String? listOwner(Ref ref, String listId) {
-  final lists = ref.watch(shoppingListsProvider).valueOrNull ?? [];
+  final lists = ref.watch(shoppingListsProvider).value ?? [];
   final list = lists.where((l) => l.id == listId).firstOrNull;
   return list?.ownerUid;
 }
@@ -46,16 +44,18 @@ class ShoppingListItems extends _$ShoppingListItems {
     required String listId,
     required String name,
     required int quantity,
-    required Category category,
+    required String categoryId,
     Unit unit = Unit.un,
     double? estimatedPrice,
+    String? id,
   }) async {
     final service = ref.read(firestoreServiceProvider);
     final newItem = ShoppingItem(
+      id: id,
       shoppingListId: listId,
       name: name,
       quantity: quantity,
-      category: category,
+      categoryId: categoryId,
       unit: unit,
       estimatedPrice: estimatedPrice,
     );
@@ -107,7 +107,7 @@ class ShoppingListItems extends _$ShoppingListItems {
       
       if (toggledItem.isPurchased) {
         // ignore: unawaited_futures
-        ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: 1).catchError((Object e) {
+        ref.read(userStatsProvider.notifier).recordPurchase(itemCount: 1).catchError((Object e) {
           debugPrint('Failed to record purchase stats: $e');
         });
       }
@@ -342,7 +342,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
       if (newlyPurchased > 0) {
         // ignore: unawaited_futures
-        ref.read(userStatsNotifierProvider.notifier).recordPurchase(itemCount: newlyPurchased).catchError((Object e) {
+        ref.read(userStatsProvider.notifier).recordPurchase(itemCount: newlyPurchased).catchError((Object e) {
           debugPrint('Failed to record batch purchase stats: $e');
         });
       }
@@ -357,9 +357,6 @@ class ShoppingListItems extends _$ShoppingListItems {
   Future<void> reorderItem(int oldIndex, int newIndex) async {
     final service = ref.read(firestoreServiceProvider);
     final items = <ShoppingItem>[...(state.value ?? [])];
-    if (oldIndex < newIndex) {
-      newIndex -= 1;
-    }
     final item = items.removeAt(oldIndex);
     items.insert(newIndex, item);
     

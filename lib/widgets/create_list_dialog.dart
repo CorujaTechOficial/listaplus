@@ -4,9 +4,10 @@ import '../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class CreateListDialog extends ConsumerStatefulWidget {
-  const CreateListDialog({super.key, this.initialName});
+  const CreateListDialog({super.key, this.initialName, this.onCreate});
 
   final String? initialName;
+  final Future<void> Function(String name)? onCreate;
 
   @override
   ConsumerState<CreateListDialog> createState() => _CreateListDialogState();
@@ -14,6 +15,7 @@ class CreateListDialog extends ConsumerStatefulWidget {
 
 class _CreateListDialogState extends ConsumerState<CreateListDialog> {
   late final TextEditingController _controller;
+  bool _isCreating = false;
 
   @override
   void initState() {
@@ -39,23 +41,54 @@ class _CreateListDialogState extends ConsumerState<CreateListDialog> {
           controller: _controller,
           decoration: InputDecoration(labelText: l10n.listNameLabel),
           autofocus: true,
+          enabled: !_isCreating,
           onSubmitted: (_) => _submit(),
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.cancel)),
+        TextButton(
+          onPressed: _isCreating ? null : () => Navigator.pop(context),
+          child: Text(l10n.cancel),
+        ),
         ElevatedButton(
           onPressed: _submit,
-          child: Text(isRename ? l10n.save : l10n.create),
+          child: _isCreating
+              ? const SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : Text(isRename ? l10n.save : l10n.create),
         ),
       ],
     );
   }
 
-  void _submit() {
+  Future<void> _submit() async {
     final name = _controller.text.trim();
-    if (name.isNotEmpty) {
+    if (name.isEmpty) {
+      return;
+    }
+
+    final onCreate = widget.onCreate;
+    if (onCreate == null) {
       Navigator.pop(context, name);
+      return;
+    }
+
+    setState(() => _isCreating = true);
+    try {
+      await onCreate(name);
+      if (mounted) {
+        Navigator.pop(context);
+      }
+    } on Exception catch (e) {
+      if (mounted) {
+        setState(() => _isCreating = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString().replaceFirst('Exception: ', ''))),
+        );
+      }
     }
   }
 }

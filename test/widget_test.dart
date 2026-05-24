@@ -1,4 +1,4 @@
-import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:test/test.dart';
 
@@ -8,7 +8,7 @@ void main() {
       shoppingListId: 'list-1',
       name: 'Maçã',
       quantity: 2,
-      category: Category.fruits,
+      categoryId: 'fruits',
       estimatedPrice: 3.50,
     );
 
@@ -17,7 +17,7 @@ void main() {
 
     expect(restored.name, 'Maçã');
     expect(restored.quantity, 2);
-    expect(restored.category, Category.fruits);
+    expect(restored.categoryId, 'fruits');
     expect(restored.estimatedPrice, 3.50);
   });
 
@@ -26,7 +26,7 @@ void main() {
       shoppingListId: 'list-1',
       name: 'Pão',
       quantity: 1,
-      category: Category.bakery,
+      categoryId: 'bakery',
     );
 
     final updated = item.copyWith(name: 'Pão Integral', isPurchased: true);
@@ -34,7 +34,7 @@ void main() {
     expect(updated.name, 'Pão Integral');
     expect(updated.isPurchased, true);
     expect(updated.quantity, 1);
-    expect(updated.category, Category.bakery);
+    expect(updated.categoryId, 'bakery');
   });
 
   test('ShoppingItem default values', () {
@@ -42,7 +42,7 @@ void main() {
       shoppingListId: 'list-1',
       name: 'Leite',
       quantity: 1,
-      category: Category.beverages,
+      categoryId: 'beverages',
     );
 
     expect(item.isPurchased, false);
@@ -50,15 +50,15 @@ void main() {
     expect(item.id, isNotEmpty);
   });
 
-  test('Category enum has correct labels', () {
-    expect(Category.fruits.label, 'Frutas');
-    expect(Category.cleaning.label, 'Limpeza');
-    expect(Category.beverages.label, 'Bebidas');
-    expect(Category.bakery.label, 'Padaria');
-    expect(Category.others.label, 'Outros');
+  test('CategoryData defaults have correct names', () {
+    expect(CategoryData.defaults.firstWhere((c) => c.id == 'fruits').name, 'Frutas');
+    expect(CategoryData.defaults.firstWhere((c) => c.id == 'cleaning').name, 'Limpeza');
+    expect(CategoryData.defaults.firstWhere((c) => c.id == 'beverages').name, 'Bebidas');
+    expect(CategoryData.defaults.firstWhere((c) => c.id == 'bakery').name, 'Padaria');
+    expect(CategoryData.defaults.firstWhere((c) => c.id == 'others').name, 'Outros');
   });
 
-  test('Category values count', () {
-    expect(Category.values.length, 5);
+  test('CategoryData defaults count', () {
+    expect(CategoryData.defaults.length, 20);
   });
 }

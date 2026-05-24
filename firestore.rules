@@ -27,24 +27,32 @@ service cloud.firestore {
       allow read, write: if isAuthenticated() && isOwner(uid);
     }
 
+    // Categories — owner only
+    match /users/{uid}/categories/{categoryId} {
+      allow read, write: if isAuthenticated() && isOwner(uid);
+    }
+
     // Owned lists — owner can R/W; shared users can read
     match /users/{uid}/lists/{listId} {
       allow read: if isAuthenticated() && (isOwner(uid) || hasSharedRef(listId));
       allow write: if isAuthenticated() && isOwner(uid);
     }
 
-    // Items — owner can R/W; shared users can read items of shared lists
+    // Items — owner can R/W; shared users can read/write items of shared lists
     match /users/{uid}/items/{itemId} {
+      // For read/watch, we allow if owner OR if user has a shared ref to the list this item belongs to.
+      // Note: queries must include .where('shoppingListId', '==', listId) for this to work efficiently.
       allow read: if isAuthenticated() && (
-        isOwner(uid) ||
-        (
-          request.auth != null &&
-          hasSharedRef(
-            get(/databases/$(database)/documents/users/$(uid)/items/$(itemId)).data.shoppingListId
-          )
-        )
+        isOwner(uid) || 
+        (resource != null && hasSharedRef(resource.data.shoppingListId))
       );
-      allow write: if isAuthenticated() && isOwner(uid);
+      
+      // For write/create/update, we allow if owner OR if user has a shared ref to the target list.
+      allow write: if isAuthenticated() && (
+        isOwner(uid) || 
+        (request.resource != null && hasSharedRef(request.resource.data.shoppingListId)) ||
+        (resource != null && hasSharedRef(resource.data.shoppingListId))
+      );
     }
 
     // Shared list references for each user

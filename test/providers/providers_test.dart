@@ -9,12 +9,10 @@ import 'package:shopping_list/providers/dark_mode_provider.dart';
 import 'package:shopping_list/providers/premium_provider.dart';
 import 'package:shopping_list/providers/auth_service_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
-import 'package:shopping_list/providers/credits_provider.dart';
 import 'package:shopping_list/providers/monthly_budget_provider.dart';
 import 'package:shopping_list/providers/theme_color_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/services/auth_service.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
@@ -150,7 +148,7 @@ void main() {
         listId: 'list-1',
         name: 'Maçã',
         quantity: 5,
-        category: Category.fruits,
+        categoryId: 'fruits',
       );
       final items = await fakeBackend.loadItems('list-1');
       expect(items.length, 1);
@@ -163,7 +161,7 @@ void main() {
         listId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final itemsBefore = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).togglePurchased(itemsBefore.first.id);
@@ -178,7 +176,7 @@ void main() {
         listId: 'list-1',
         name: 'Remover',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).removeItem(items.first.id);
@@ -193,13 +191,13 @@ void main() {
         listId: 'list-1',
         name: 'Pendente',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'Comprado',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).togglePurchased(items.last.id);
@@ -216,19 +214,19 @@ void main() {
         listId: 'list-1',
         name: 'Item A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'Item B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'Item C',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).reorderItem(0, 2);
       final items = await fakeBackend.loadItems('list-1');
@@ -243,13 +241,13 @@ void main() {
         listId: 'list-1',
         name: 'Item A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'Item B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       await container.read(shoppingListItemsProvider('list-1').notifier).reorderItem(1, 0);
@@ -263,13 +261,13 @@ void main() {
         listId: 'list-1',
         name: 'A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).clearAll();
 
@@ -283,7 +281,7 @@ void main() {
         listId: 'list-1',
         name: 'Original',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       final modified = items.first.copyWith(name: 'Modificado');
@@ -299,7 +297,7 @@ void main() {
         listId: 'list-1',
         name: 'Item',
         quantity: 3,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).incrementQuantity(items.first.id);
@@ -313,7 +311,7 @@ void main() {
         listId: 'list-1',
         name: 'Item',
         quantity: 3,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).decrementQuantity(items.first.id);
@@ -327,7 +325,7 @@ void main() {
         listId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).decrementQuantity(items.first.id);
@@ -341,19 +339,19 @@ void main() {
         listId: 'list-1',
         name: 'A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'C',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       final ids = [items[0].id, items[2].id];
@@ -370,13 +368,13 @@ void main() {
         listId: 'list-1',
         name: 'A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       final ids = items.map((e) => e.id).toList();
@@ -392,13 +390,13 @@ void main() {
         listId: 'list-1',
         name: 'A',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
         name: 'B',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       final ids = items.map((e) => e.id).toList();
@@ -415,7 +413,7 @@ void main() {
         listId: 'list-1',
         name: 'Item',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       final items = await fakeBackend.loadItems('list-1');
       await container.read(shoppingListItemsProvider('list-1').notifier).removeItem(items.first.id);
@@ -437,13 +435,13 @@ void main() {
         listId: 'list-1',
         name: 'Item da 1',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       await container.read(shoppingListItemsProvider('list-2').notifier).addItem(
         listId: 'list-2',
         name: 'Item da 2',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
 
       final list1 = await fakeBackend.loadItems('list-1');
@@ -553,53 +551,6 @@ void main() {
     });
   });
 
-  group('Credits (riverpod)', () {
-    late ProviderContainer container;
-    late FakeStorageBackend fakeBackend;
-
-    setUp(() {
-      fakeBackend = FakeStorageBackend();
-      container = ProviderContainer(overrides: [
-        firestoreServiceProvider.overrideWithValue(fakeBackend),
-      ]);
-    });
-    test('build returns null when no premiumUntil exists', () async {
-      final credits = await container.read(creditsProvider.future);
-      expect(credits, null);
-    });
-
-    test('build returns DateTime when premiumUntil exists', () async {
-      final date = DateTime(2026, 5, 19);
-      await fakeBackend.updateUserData({'premiumUntil': date.toIso8601String()});
-      container.invalidate(creditsProvider);
-      
-      final credits = await container.read(creditsProvider.future);
-      expect(credits, date);
-    });
-
-    test('extendBy24h updates storage and invalidates providers', () async {
-      final now = DateTime.now();
-      await container.read(creditsProvider.notifier).extendBy24h();
-      
-      final credits = await container.read(creditsProvider.future);
-      expect(credits!.isAfter(now), true);
-      expect(credits.difference(now).inHours >= 23, true);
-    });
-
-    test('getActiveDays returns 0 when null', () async {
-      final days = await container.read(creditsProvider.notifier).getActiveDays();
-      expect(days, 0);
-    });
-
-    test('getActiveDays returns correct count', () async {
-      final futureDate = DateTime.now().add(const Duration(days: 2));
-      await fakeBackend.updateUserData({'premiumUntil': futureDate.toIso8601String()});
-      container.invalidate(creditsProvider);
-
-      final days = await container.read(creditsProvider.notifier).getActiveDays();
-      expect(days, 2);
-    });
-  });
   group('MonthlyBudget (riverpod)', () {
     late ProviderContainer container;
     late FakeStorageBackend fakeBackend;

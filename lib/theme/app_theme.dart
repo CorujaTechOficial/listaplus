@@ -72,15 +72,15 @@ class AppTheme {
       scaffoldBackgroundColor: isDark
           ? Color(0xFF0F1116)
           : Color(0xFFF8F9FA),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: isDark ? 0 : 1,
-        shadowColor: isDark ? Colors.transparent : colorScheme.shadow.withValues(alpha: 0.08),
+        shadowColor: isDark ? Colors.transparent : colorScheme.shadow.withAlpha((0.08 * 255).toInt()),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.md)),
           side: BorderSide(
             color: isDark
-                ? colorScheme.outlineVariant.withValues(alpha: 0.15)
-                : colorScheme.outlineVariant.withValues(alpha: 0.3),
+                ? colorScheme.outlineVariant.withAlpha((0.15 * 255).toInt())
+                : colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
             width: isDark ? 0.5 : 1,
           ),
         ),
@@ -105,15 +105,15 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: isDark
-            ? colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
-            : colorScheme.surfaceContainerHighest.withValues(alpha: 0.4),
+            ? colorScheme.surfaceContainerHighest.withAlpha((0.2 * 255).toInt())
+            : colorScheme.surfaceContainerHighest.withAlpha((0.4 * 255).toInt()),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.sm)),
-          borderSide: BorderSide(color: colorScheme.outline.withValues(alpha: 0.3)),
+          borderSide: BorderSide(color: colorScheme.outline.withAlpha((0.3 * 255).toInt())),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.sm)),
-          borderSide: BorderSide(color: colorScheme.outline.withValues(alpha: 0.3)),
+          borderSide: BorderSide(color: colorScheme.outline.withAlpha((0.3 * 255).toInt())),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.sm)),
@@ -141,7 +141,7 @@ class AppTheme {
           padding: const EdgeInsets.symmetric(horizontal: Spacing.xs),
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.xl)),
         ),
@@ -189,8 +189,8 @@ class AppTheme {
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: isDark
-              ? colorScheme.surfaceContainerHighest.withValues(alpha: 0.2)
-              : colorScheme.surfaceContainerHighest.withValues(alpha: 0.4),
+              ? colorScheme.surfaceContainerHighest.withAlpha((0.2 * 255).toInt())
+              : colorScheme.surfaceContainerHighest.withAlpha((0.4 * 255).toInt()),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.sm)),
           ),

@@ -11,14 +11,20 @@ class CurrentListId extends _$CurrentListId {
     return service.getCurrentListId();
   }
 
-  Future<void> setCurrentList(String listId) async {
+  Future<void> setCurrentList(String? listId) async {
     final service = ref.read(firestoreServiceProvider);
+    
+    // Optimistic update
     final previous = state.value;
     state = AsyncValue.data(listId);
+    
     try {
       await service.setCurrentListId(listId);
     } on Exception {
-      state = AsyncValue.data(previous);
+      // Revert on failure, but only if still mounted
+      if (ref.mounted) {
+        state = AsyncValue.data(previous);
+      }
       rethrow;
     }
   }

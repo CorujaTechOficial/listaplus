@@ -1,5 +1,4 @@
 import 'package:uuid/uuid.dart';
-import 'category.dart';
 import 'unit.dart';
 
 class PantryItem {
@@ -8,7 +7,7 @@ class PantryItem {
     required this.name,
     required this.idealQuantity,
     this.currentQuantity = 0,
-    this.category = Category.others,
+    this.categoryId = 'others',
     this.unit = Unit.un,
     this.estimatedPrice,
     this.trackStock = true,
@@ -19,15 +18,42 @@ class PantryItem {
         updatedAt = updatedAt ?? DateTime.now();
 
   factory PantryItem.fromJson(Map<String, dynamic> json) {
+    final rawCategory = json['category'];
+    String resolvedId;
+    if (rawCategory is String) {
+      final enumNames = {
+        'fruits',
+        'cleaning',
+        'beverages',
+        'bakery',
+        'others',
+        'meat',
+        'dairy',
+        'vegetables',
+        'grains',
+        'hygiene',
+        'frozen',
+        'canned',
+        'seasonings',
+        'sweets',
+        'alcohol',
+        'fish',
+        'cold_cuts',
+        'utilities',
+        'pet',
+        'baby',
+      };
+      resolvedId = enumNames.contains(rawCategory) ? rawCategory : 'others';
+    } else {
+      resolvedId = 'others';
+    }
+
     return PantryItem(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       idealQuantity: (json['idealQuantity'] as num?)?.toInt() ?? 1,
       currentQuantity: (json['currentQuantity'] as num?)?.toInt() ?? 0,
-      category: Category.values.firstWhere(
-        (e) => e.name == json['category'],
-        orElse: () => Category.others,
-      ),
+      categoryId: resolvedId,
       unit: json['unit'] != null
           ? Unit.values.firstWhere((e) => e.name == json['unit'], orElse: () => Unit.un)
           : Unit.un,
@@ -53,7 +79,7 @@ class PantryItem {
   final String name;
   final int idealQuantity;
   final int currentQuantity;
-  final Category category;
+  final String categoryId;
   final Unit unit;
   final double? estimatedPrice;
   final bool trackStock;
@@ -70,7 +96,7 @@ class PantryItem {
     String? name,
     int? idealQuantity,
     int? currentQuantity,
-    Category? category,
+    String? categoryId,
     Unit? unit,
     Object? estimatedPrice = _sentinel,
     bool? trackStock,
@@ -82,7 +108,7 @@ class PantryItem {
       name: name ?? this.name,
       idealQuantity: idealQuantity ?? this.idealQuantity,
       currentQuantity: currentQuantity ?? this.currentQuantity,
-      category: category ?? this.category,
+      categoryId: categoryId ?? this.categoryId,
       unit: unit ?? this.unit,
       estimatedPrice: identical(estimatedPrice, _sentinel) ? this.estimatedPrice : estimatedPrice as double?,
       trackStock: trackStock ?? this.trackStock,
@@ -97,7 +123,7 @@ class PantryItem {
       'name': name,
       'idealQuantity': idealQuantity,
       'currentQuantity': currentQuantity,
-      'category': category.name,
+      'category': categoryId,
       'unit': unit.name,
       'estimatedPrice': estimatedPrice,
       'trackStock': trackStock,

@@ -1,29 +1,56 @@
 import 'dart:async' show unawaited;
+import 'dart:convert' show base64Encode;
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/services.dart' show HapticFeedback;
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../services/logger_service.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../agent/tool.dart';
 import '../agent/tool_executor.dart';
 import '../services/ai_service.dart';
 import '../models/chat_message.dart';
-import '../models/category.dart';
 import '../models/unit.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
+import '../models/interactive_artifact.dart';
 import 'ai_service_provider.dart';
 import 'firestore_service_provider.dart';
+import 'user_profile_provider.dart';
 import 'shopping_list_provider.dart';
 import 'shopping_lists_provider.dart';
+import 'monthly_budget_provider.dart';
 
 part 'chat_provider.g.dart';
 
 const int _maxToolRounds = 5;
 const int _maxHistoryMessages = 20;
 
-final chatStreamingProvider = StateProvider.family<bool, String?>((ref, id) => false);
-final chatThinkingProvider = StateProvider.family<bool, String?>((ref, id) => false);
-final chatActivityProvider = StateProvider.family<String?, String?>((ref, id) => null);
+@riverpod
+class ChatStreaming extends _$ChatStreaming {
+  @override
+  bool build(String? id) => false;
+  void setState(bool value) => state = value;
+}
+
+@riverpod
+class ChatThinking extends _$ChatThinking {
+  @override
+  bool build(String? id) => false;
+  void setState(bool value) => state = value;
+}
+
+@riverpod
+class ChatActivity extends _$ChatActivity {
+  @override
+  String? build(String? id) => null;
+  void setState(String? value) => state = value;
+}
+
+@riverpod
+class ChatStreamingText extends _$ChatStreamingText {
+  @override
+  String? build(String? id) => null;
+  void setState(String? value) => state = value;
+}
 
 class _AgentResult {
   _AgentResult({required this.messages, required this.fallbackText});
@@ -61,7 +88,246 @@ class ChatSession extends _$ChatSession {
     }
   }
 
-  Future<void> _sendMessageInternal(String content) async {
+  Future<void> sendVoiceMessage(List<int> audioBytes, String format) async {
+    if (_currentTask != null) {
+      debugPrint('[ChatSession] Ignorando mensagem concorrente.');
+      return;
+    }
+
+    _isCancelled = false;
+    final task = _sendMessageInternal('🎙️ Mensagem de voz', audioBytes: audioBytes, audioFormat: format);
+    _currentTask = task;
+    try {
+      await task;
+    } finally {
+      if (_currentTask == task) {
+        _currentTask = null;
+      }
+    }
+  }
+
+  void _updateAssistantMessage({
+    String? content,
+    List<AgentStep>? executionSteps,
+    bool? isError,
+    List<String>? suggestedReplies,
+    InteractiveArtifact? artifact,
+  }) {
+    final currentList = state.value ?? [];
+    if (currentList.isEmpty) {
+      return;
+    }
+    final lastIndex = currentList.length - 1;
+    final lastMsg = currentList[lastIndex];
+    if (lastMsg.role != 'assistant') {
+      return;
+    }
+
+    final updated = lastMsg.copyWith(
+      content: content,
+      executionSteps: executionSteps,
+      isError: isError,
+      suggestedReplies: suggestedReplies,
+      artifact: artifact,
+    );
+
+    final newList = List<ChatMessage>.from(currentList);
+    newList[lastIndex] = updated;
+    state = AsyncValue.data(newList);
+  }
+
+  String _friendlyToolDescription(AgentToolCall toolCall) {
+    final name = toolCall.name;
+    final args = toolCall.arguments;
+    switch (name) {
+      case 'get_lists':
+        return 'Buscando listas de compras';
+      case 'get_current_list':
+        return 'Identificando lista atual';
+      case 'set_current_list':
+        return 'Definindo lista atual';
+      case 'create_list':
+        return 'Criando lista "${args['name']}"';
+      case 'rename_list':
+        return 'Renomeando lista';
+      case 'delete_list':
+        return 'Excluindo lista';
+      case 'archive_list':
+        return 'Arquivando lista';
+      case 'unarchive_list':
+        return 'Desarquivando lista';
+      case 'get_items':
+        return 'Buscando itens da lista';
+      case 'add_item':
+        return 'Adicionando item "${args['name']}"';
+      case 'update_item':
+        return 'Atualizando item "${args['name'] ?? ''}"';
+      case 'remove_item':
+        return 'Removendo item';
+      case 'toggle_purchased':
+        return 'Alternando marcação de item';
+      case 'toggle_purchased_batch':
+        final idsStr = args['itemIds'] as String? ?? '';
+        final count = idsStr.split(',').where((s) {
+          return s.trim().isNotEmpty;
+        }).length;
+        final action = (args['isPurchased'] as bool? ?? false) ? 'Marcar' : 'Desmarcar';
+        return '$action $count itens como comprados';
+      case 'increment_quantity':
+        return 'Aumentando quantidade';
+      case 'decrement_quantity':
+        return 'Diminuindo quantidade';
+      case 'clear_purchased':
+        return 'Limpando itens comprados';
+      case 'clear_all_items':
+        return 'Limpando lista';
+      case 'reorder_items':
+        return 'Reordenando itens';
+      case 'get_pantry_items':
+        return 'Buscando itens da despensa';
+      case 'add_pantry_item':
+        return 'Adicionando item "${args['name']}" à despensa';
+      case 'update_pantry_item':
+        return 'Atualizando item da despensa';
+      case 'remove_pantry_item':
+        return 'Removendo item da despensa';
+      case 'consume_pantry_item':
+        return 'Consumindo item da despensa';
+      case 'restock_pantry_item':
+        return 'Reabastecendo despensa';
+      case 'clear_pantry':
+        return 'Limpando despensa';
+      case 'get_budget':
+        return 'Buscando orçamento';
+      case 'set_budget':
+        final budget = args['budget'] != null ? (args['budget'] as num).toDouble() : 0.0;
+        return 'Definindo orçamento para R\$${budget.toStringAsFixed(2)}';
+      case 'create_share_code':
+        return 'Criando código de compartilhamento';
+      case 'import_shared_list':
+        return 'Importando lista compartilhada';
+      case 'get_theme':
+        return 'Consultando tema atual';
+      case 'set_theme':
+        return 'Alterando tema';
+      case 'export_backup':
+        return 'Exportando backup';
+      case 'import_backup':
+        return 'Importando backup';
+      case 'generate_artifact':
+        return 'Gerando interface interativa';
+      case 'get_recipes':
+        return 'Buscando suas receitas';
+      case 'create_recipe':
+        return 'Salvando nova receita';
+      case 'delete_recipe':
+        return 'Excluindo receita';
+      case 'get_meal_plan':
+        return 'Consultando seu cardápio';
+      case 'schedule_meal':
+        return 'Agendando refeição no cardápio';
+      case 'remove_meal_plan_entry':
+        return 'Removendo refeição do cardápio';
+      default:
+        return 'Executando ferramenta $name';
+    }
+  }
+
+  Future<void> undoMessageActions(String messageId) async {
+    final messages = state.value ?? [];
+    final index = messages.indexWhere((m) {
+      return m.id == messageId;
+    });
+    if (index == -1) {
+      return;
+    }
+
+    final message = messages[index];
+    final steps = message.executionSteps;
+    if (steps == null || steps.isEmpty) {
+      return;
+    }
+
+    final updatedSteps = List<AgentStep>.from(steps);
+    
+    for (int i = updatedSteps.length - 1; i >= 0; i--) {
+      final step = updatedSteps[i];
+      if (step.status != AgentStepStatus.success) {
+        continue;
+      }
+
+      final resultData = step.resultData;
+      if (resultData == null) {
+        continue;
+      }
+
+      try {
+        final listId = resultData['listId'] as String?;
+        
+        if (resultData.containsKey('itemId') && listId != null) {
+          final itemId = resultData['itemId'] as String;
+          await ref.read(shoppingListItemsProvider(listId).notifier).removeItem(itemId);
+          updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
+        } else if (resultData.containsKey('previousState') && listId != null) {
+          final previousState = Map<String, dynamic>.from(resultData['previousState'] as Map);
+          final item = ShoppingItem.fromJson(previousState);
+          await ref.read(shoppingListItemsProvider(listId).notifier).restoreItem(item);
+          updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
+        } else if (resultData.containsKey('previousStates')) {
+          final previousStates = resultData['previousStates'] as List<dynamic>;
+          final items = previousStates.map((e) {
+            return ShoppingItem.fromJson(Map<String, dynamic>.from(e as Map));
+          }).toList();
+          
+          final itemsByList = <String, List<ShoppingItem>>{};
+          for (final item in items) {
+            itemsByList.putIfAbsent(item.shoppingListId, () {
+              return [];
+            }).add(item);
+          }
+          
+          for (final entry in itemsByList.entries) {
+            await ref.read(shoppingListItemsProvider(entry.key).notifier).updateItems(entry.value);
+          }
+          updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
+        } else if (resultData.containsKey('previousBudget')) {
+          final previousBudgetNum = resultData['previousBudget'] as num?;
+          final previousBudget = previousBudgetNum?.toDouble();
+          await ref.read(monthlyBudgetProvider.notifier).setBudget(previousBudget);
+          updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
+        }
+      } on Exception catch (e, st) {
+        LoggerService.error(e, stackTrace: st, message: '[Undo] Error rolling back step ${step.id}', extra: {
+          'operation': 'undo_step',
+          'stepId': step.id,
+          'stepName': step.description,
+          'listId': listId,
+          'stepStatus': step.status.name,
+        });
+      }
+    }
+
+    final updatedMessage = message.copyWith(executionSteps: updatedSteps);
+    final newList = List<ChatMessage>.from(messages);
+    newList[index] = updatedMessage;
+    state = AsyncValue.data(newList);
+
+      try {
+        await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
+      } on Exception catch (e, st) {
+        LoggerService.error(e, stackTrace: st, message: '[Undo] Failed to save updated chat message', extra: {
+          'operation': 'undo_save_message',
+          'listId': listId,
+          'messageId': updatedMessage.id,
+        });
+      }
+  }
+
+  Future<void> _sendMessageInternal(
+    String content, {
+    List<int>? audioBytes,
+    String? audioFormat,
+  }) async {
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
 
@@ -74,11 +340,17 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data([...previousHistory, userMessage]);
 
     try {
-      await firestoreService.saveChatMessage(listId, userMessage);
-    } on Exception {
-      state = AsyncValue.data(previousHistory);
-      return;
-    }
+        await firestoreService.saveChatMessage(listId, userMessage);
+      } on Exception catch (e, st) {
+        LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save user message', extra: {
+          'operation': 'save_user_message',
+          'listId': listId,
+          'messageLength': content.length,
+          'hasAudio': audioBytes != null,
+        });
+        state = AsyncValue.data(previousHistory);
+        return;
+      }
 
     final apiMessages = <Map<String, dynamic>>[];
     // Limita o histórico para não estourar limites de tokens e manter performance
@@ -89,44 +361,78 @@ class ChatSession extends _$ChatSession {
     for (final msg in historyToSync) {
       apiMessages.add({'role': msg.role, 'content': msg.content});
     }
-    apiMessages.add({'role': 'user', 'content': content});
+
+    if (audioBytes != null && audioFormat != null) {
+      final base64Audio = base64Encode(audioBytes);
+      apiMessages.add({
+        'role': 'user',
+        'content': [
+          {'type': 'text', 'text': content},
+          {
+            'type': 'input_audio',
+            'input_audio': {
+              'data': base64Audio,
+              'format': audioFormat,
+            }
+          }
+        ],
+      });
+    } else {
+      apiMessages.add({'role': 'user', 'content': content});
+    }
 
     final tools = AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
     final executor = ToolExecutor(ref);
 
+    final assistantMessage = ChatMessage(
+      role: 'assistant',
+      content: '',
+      executionSteps: [],
+    );
+    state = AsyncValue.data([...state.value ?? [], assistantMessage]);
+
     _AgentResult agentResult;
     try {
-      ref.read(chatThinkingProvider(listId).notifier).state = true;
-      ref.read(chatActivityProvider(listId).notifier).state = 'Analisando sua solicitação...';
+      ref.read(chatThinkingProvider(listId).notifier).setState(true);
+      ref.read(chatActivityProvider(listId).notifier).setState('Analisando sua solicitação...');
       agentResult = await _agentLoop(aiService, executor, apiMessages, tools: tools);
       if (_isCancelled) {
         return;
       }
     } on Exception catch (e, stackTrace) {
-      ref.read(chatThinkingProvider(listId).notifier).state = false;
-      ref.read(chatActivityProvider(listId).notifier).state = null;
-      debugPrint('[AgentLoop] ERRO no loop principal: $e');
-      debugPrint('[AgentLoop] StackTrace: $stackTrace');
+      LoggerService.error(e, stackTrace: stackTrace, message: '[AgentLoop] ERRO no loop principal', extra: {
+        'operation': 'agent_loop',
+        'listId': listId,
+        'messageLength': content.length,
+        'historyLength': previousHistory.length,
+        'hasAudio': audioBytes != null,
+      });
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+      ref.read(chatThinkingProvider(listId).notifier).setState(false);
+      ref.read(chatActivityProvider(listId).notifier).setState(null);
       const errorMsg =
           'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
-      final errorMessage = ChatMessage(role: 'assistant', content: errorMsg, isError: true);
-      state = AsyncValue.data([...state.value ?? [], errorMessage]);
-      try {
-        await firestoreService.saveChatMessage(listId, errorMessage);
-      } on Exception {
-        // Silently fail
+      _updateAssistantMessage(content: errorMsg, isError: true);
+      final lastMsg = state.value?.lastOrNull;
+      if (lastMsg != null) {
+        try {
+          await firestoreService.saveChatMessage(listId, lastMsg);
+        } on Exception catch (e2, st2) {
+          LoggerService.error(e2, stackTrace: st2, message: '[AgentLoop] Failed to save error message', extra: {
+            'operation': 'save_error_message',
+            'listId': listId,
+            'errorContent': lastMsg.content.substring(0, lastMsg.content.length.clamp(0, 200)),
+          });
+        }
       }
       return;
     } finally {
-      ref.read(chatThinkingProvider(listId).notifier).state = false;
-      ref.read(chatActivityProvider(listId).notifier).state = null;
+      ref.read(chatThinkingProvider(listId).notifier).setState(false);
+      ref.read(chatActivityProvider(listId).notifier).setState(null);
     }
 
-    ref.read(chatStreamingProvider(listId).notifier).state = true;
+    ref.read(chatStreamingProvider(listId).notifier).setState(true);
     unawaited(HapticFeedback.lightImpact());
-
-    final tempMessage = ChatMessage(role: 'assistant', content: '');
-    state = AsyncValue.data([...state.value ?? [], tempMessage]);
 
     String finalText;
     bool isError = false;
@@ -134,11 +440,18 @@ class ChatSession extends _$ChatSession {
       final systemPrompt = await _getCurrentSystemPrompt();
       finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools);
       if (_isCancelled) {
-        ref.read(chatStreamingProvider(listId).notifier).state = false;
+        ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+        ref.read(chatStreamingProvider(listId).notifier).setState(false);
         return;
       }
-    } on Exception catch (e) {
-      debugPrint('[StreamResponse] Erro no streaming: $e');
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[StreamResponse] Erro no streaming', extra: {
+        'operation': 'stream_response',
+        'listId': listId,
+        'fallbackText': agentResult.fallbackText.substring(0, agentResult.fallbackText.length.clamp(0, 200)),
+        'hasToolCalls': agentResult.messages.any((m) => m['tool_calls'] != null),
+      });
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       finalText = agentResult.fallbackText;
       isError = true;
     }
@@ -148,39 +461,37 @@ class ChatSession extends _$ChatSession {
       isError = true;
     }
 
-    ref.read(chatStreamingProvider(listId).notifier).state = false;
+    ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+    ref.read(chatStreamingProvider(listId).notifier).setState(false);
     unawaited(HapticFeedback.mediumImpact());
 
-    final finalMessage = ChatMessage(
-      role: 'assistant',
-      content: finalText,
-      id: tempMessage.id,
-      timestamp: tempMessage.timestamp,
-      isError: isError,
-      suggestedReplies: _generateSuggestedReplies(finalText, listId),
-    );
-    final updatedMessages = <ChatMessage>[...state.value ?? []];
-    if (updatedMessages.isNotEmpty) {
+    final lastMsg = state.value?.lastOrNull;
+    if (lastMsg != null) {
+      final finalMessage = lastMsg.copyWith(
+        content: finalText,
+        isError: isError,
+        suggestedReplies: _generateSuggestedReplies(finalText, listId),
+      );
+      final updatedMessages = <ChatMessage>[...state.value ?? []];
       updatedMessages[updatedMessages.length - 1] = finalMessage;
       state = AsyncValue.data(updatedMessages);
-    } else {
-      state = AsyncValue.data([finalMessage]);
-    }
 
-    try {
-      await firestoreService.saveChatMessage(listId, finalMessage);
-    } on Exception {
-      // Silently fail saving assistant message
+      try {
+        await firestoreService.saveChatMessage(listId, finalMessage);
+      } on Exception {
+        // Silently fail saving assistant message
+      }
     }
   }
 
   Future<String> _getCurrentSystemPrompt() async {
+    String prompt;
     final currentListId = listId;
     if (currentListId != null) {
       final lists = await ref.read(shoppingListsProvider.future);
       final list = lists.where((l) => l.id == currentListId).firstOrNull;
       final items = await ref.read(shoppingListItemsProvider(currentListId).future);
-      return _buildListSystemPrompt(list, items);
+      prompt = _buildListSystemPrompt(list, items);
     } else {
       final lists = await ref.read(shoppingListsProvider.future);
       final allItems = <String, List<ShoppingItem>>{};
@@ -188,8 +499,39 @@ class ChatSession extends _$ChatSession {
         final items = await ref.read(shoppingListItemsProvider(l.id).future);
         allItems[l.name] = items;
       }
-      return _buildGlobalSystemPrompt(allItems);
+      prompt = _buildGlobalSystemPrompt(allItems);
     }
+
+    try {
+      final profile = await ref.read(userProfileProvider.future);
+      if (!profile.isEmpty) {
+        final fields = <String>[];
+        if (profile.preferredStore != null && profile.preferredStore!.isNotEmpty) {
+          fields.add('Mercado preferido: ${profile.preferredStore}');
+        }
+        if (profile.dietaryRestrictions != null && profile.dietaryRestrictions!.isNotEmpty) {
+          fields.add('Restrição alimentar: ${profile.dietaryRestrictions}');
+        }
+        if (profile.avoidedStores != null && profile.avoidedStores!.isNotEmpty) {
+          fields.add('Mercados a evitar: ${profile.avoidedStores}');
+        }
+        if (profile.notes != null && profile.notes!.isNotEmpty) {
+          fields.add('Observações: ${profile.notes}');
+        }
+        if (fields.isNotEmpty) {
+          prompt += '\n\nPerfil do Usuário:\n${fields.map((f) => '- $f').join('\n')}\n'
+              'Lembre-se desse perfil ao sugerir itens, receitas ou ações. '
+              'Use get_user_profile para consultar o perfil completo, '
+              'update_user_profile para atualizar campos do perfil, '
+              'save_user_preference para salvar preferências diversas '
+              'e delete_user_preference para remover preferências.';
+        }
+      }
+    } on Exception {
+      // Silently ignore — profile is not critical
+    }
+
+    return prompt;
   }
 
   Future<void> retryMessage() async {
@@ -197,7 +539,7 @@ class ChatSession extends _$ChatSession {
       return;
     }
     
-    final messages = state.valueOrNull ?? [];
+    final messages = state.value ?? [];
     if (messages.isEmpty) {
       return;
     }
@@ -227,11 +569,12 @@ class ChatSession extends _$ChatSession {
   void cancelRequest() {
     _isCancelled = true;
     _currentTask = null;
-    ref.read(chatStreamingProvider(listId).notifier).state = false;
-    ref.read(chatThinkingProvider(listId).notifier).state = false;
+    ref.read(chatStreamingProvider(listId).notifier).setState(false);
+    ref.read(chatThinkingProvider(listId).notifier).setState(false);
+    ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
 
     // Remove the temp empty message if it exists
-    final messages = state.valueOrNull ?? [];
+    final messages = state.value ?? [];
     if (messages.isNotEmpty &&
         messages.last.role == 'assistant' &&
         messages.last.content.isEmpty) {
@@ -291,15 +634,57 @@ class ChatSession extends _$ChatSession {
             response.toolCalls.map((tc) => tc.toJson()).toList(),
       });
 
+      final currentMsg = state.value?.lastOrNull;
+      final currentSteps = List<AgentStep>.from(currentMsg?.executionSteps ?? []);
+
+      final newSteps = response.toolCalls.map((tc) {
+        return AgentStep(
+          id: tc.id,
+          description: _friendlyToolDescription(tc),
+          status: AgentStepStatus.pending,
+        );
+      }).toList();
+
+      currentSteps.addAll(newSteps);
+      _updateAssistantMessage(executionSteps: currentSteps);
+
       for (final toolCall in response.toolCalls) {
         debugPrint('[AgentLoop] Round $round — executando ferramenta: ${toolCall.name}(args: ${toolCall.arguments})');
         
-        // Update activity description based on tool name
         _updateActivityForTool(toolCall.name);
         unawaited(HapticFeedback.selectionClick());
+
+        final runningSteps = (state.value?.lastOrNull?.executionSteps ?? [])
+            .map((step) {
+              return step.id == toolCall.id ? step.copyWith(status: AgentStepStatus.running) : step;
+            })
+            .toList();
+        _updateAssistantMessage(executionSteps: runningSteps);
         
         final result = await executor.execute(toolCall);
         debugPrint('[AgentLoop] Round $round — resultado de ${toolCall.name}: ${result.content.substring(0, result.content.length.clamp(0, 200))}');
+
+        final finishedSteps = (state.value?.lastOrNull?.executionSteps ?? [])
+            .map((step) {
+              return step.id == toolCall.id
+                  ? step.copyWith(
+                      status: result.success ? AgentStepStatus.success : AgentStepStatus.error,
+                      resultData: result.resultData,
+                    )
+                  : step;
+            })
+            .toList();
+        if (toolCall.name == 'generate_artifact' && result.success && result.resultData != null) {
+          final artifactJson = result.resultData!['artifact'] as Map<String, dynamic>;
+          final artifact = InteractiveArtifact.fromJson(artifactJson);
+          _updateAssistantMessage(
+            executionSteps: finishedSteps,
+            artifact: artifact,
+          );
+        } else {
+          _updateAssistantMessage(executionSteps: finishedSteps);
+        }
+
         messages.add({
           'role': 'tool',
           'tool_call_id': toolCall.id,
@@ -347,10 +732,16 @@ class ChatSession extends _$ChatSession {
       case 'add_pantry_item':
         activity = 'Adicionando à despensa...';
         break;
+      case 'create_recipe':
+        activity = 'Salvando receita...';
+        break;
+      case 'schedule_meal':
+        activity = 'Organizando seu cardápio...';
+        break;
       default:
         activity = 'Processando...';
     }
-    ref.read(chatActivityProvider(listId).notifier).state = activity;
+    ref.read(chatActivityProvider(listId).notifier).setState(activity);
   }
 
   Future<String> _streamResponse(
@@ -370,7 +761,6 @@ class ChatSession extends _$ChatSession {
         systemPrompt: systemPrompt,
         tools: tools,
       )) {
-        // Se já estamos suprimindo, acumulamos no tagBuffer e checamos se fechou
         if (isSuppressing) {
           tagBuffer.write(token);
           if (tagBuffer.toString().contains('</｜｜DSML｜｜tool_calls>')) {
@@ -380,11 +770,9 @@ class ChatSession extends _$ChatSession {
           continue;
         }
 
-        // Lógica de detecção de início de supressão
         if (token.contains('<｜｜DSML｜｜')) {
           isSuppressing = true;
           tagBuffer.write(token);
-          // Checa se já fechou no mesmo token
           if (tagBuffer.toString().contains('</｜｜DSML｜｜tool_calls>')) {
             isSuppressing = false;
             tagBuffer.clear();
@@ -392,14 +780,12 @@ class ChatSession extends _$ChatSession {
           continue;
         }
 
-        // Caso especial: o token pode ser apenas parte de uma tag (ex: "<")
         if (token.startsWith('<') || tagBuffer.isNotEmpty) {
           tagBuffer.write(token);
           final currentTag = tagBuffer.toString();
           
           if (currentTag.contains('<｜｜DSML｜｜')) {
             isSuppressing = true;
-            // Checa se já fechou
             if (currentTag.contains('</｜｜DSML｜｜tool_calls>')) {
               isSuppressing = false;
               tagBuffer.clear();
@@ -407,35 +793,25 @@ class ChatSession extends _$ChatSession {
             continue;
           }
           
-          // Se o buffer ficar muito grande e não parecer uma tag, liberamos
           if (currentTag.length > 100) {
             buffer.write(currentTag);
             tagBuffer.clear();
           } else if (currentTag.endsWith('>') || currentTag.endsWith('\n')) {
-            // Se fechou uma tag ou linha que não é DSML, liberamos
             buffer.write(currentTag);
             tagBuffer.clear();
           }
-          // Caso contrário, continuamos acumulando no tagBuffer
         } else {
           buffer.write(token);
         }
 
-        // Throttling: Atualiza o estado apenas a cada 60ms ou se for o fim
         final now = DateTime.now();
         if (tagBuffer.isEmpty && (now.difference(lastUpdate).inMilliseconds > 60)) {
           lastUpdate = now;
-          final msgs = state.value ?? [];
-          if (msgs.isNotEmpty && msgs.last.role == 'assistant') {
-            state = AsyncValue.data([
-              ...msgs.sublist(0, msgs.length - 1),
-              msgs.last.copyWith(content: buffer.toString()),
-            ]);
-          }
+          ref.read(chatStreamingTextProvider(listId).notifier).setState(buffer.toString());
         }
       }
       
-      // Flush final obrigatório se sobrou algo ou se o buffer final é diferente do estado
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       final msgs = state.value ?? [];
       if (msgs.isNotEmpty && msgs.last.role == 'assistant') {
         state = AsyncValue.data([
@@ -443,8 +819,14 @@ class ChatSession extends _$ChatSession {
           msgs.last.copyWith(content: buffer.toString()),
         ]);
       }
-    } on Exception catch (e) {
-      debugPrint('[StreamResponse] Erro no streaming: $e');
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[StreamResponse] Erro no streaming interno', extra: {
+        'operation': 'stream_response_inner',
+        'listId': listId,
+        'bufferLength': buffer.length,
+        'bufferPreview': buffer.toString().substring(0, buffer.length.clamp(0, 100)),
+      });
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       if (buffer.isEmpty) {
         rethrow;
       }
@@ -463,15 +845,22 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data([...previousMessages, message]);
     
     try {
-      await ref.read(firestoreServiceProvider).saveChatMessage(listId, message);
-    } on Exception {
-      // Silently fail
-    }
+        await ref.read(firestoreServiceProvider).saveChatMessage(listId, message);
+      } on Exception catch (e, st) {
+        LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save addMessage', extra: {
+          'operation': 'add_message',
+          'listId': listId,
+          'messageRole': message.role,
+          'messageLength': message.content.length,
+        });
+      }
   }
 
   Future<void> setFeedback(String messageId, int? feedback) async {
-    final messages = state.valueOrNull ?? [];
-    final index = messages.indexWhere((m) => m.id == messageId);
+    final messages = state.value ?? [];
+    final index = messages.indexWhere((m) {
+      return m.id == messageId;
+    });
     if (index == -1) {
       return;
     }
@@ -482,10 +871,15 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data(updatedMessages);
 
     try {
-      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
-    } on Exception {
-      // Silently fail
-    }
+        await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
+      } on Exception catch (e, st) {
+        LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save feedback', extra: {
+          'operation': 'set_feedback',
+          'listId': listId,
+          'messageId': messageId,
+          'feedback': feedback,
+        });
+      }
   }
 
   Future<void> regenerate(String messageId) async {
@@ -493,13 +887,14 @@ class ChatSession extends _$ChatSession {
       return;
     }
 
-    final messages = state.valueOrNull ?? [];
-    final index = messages.indexWhere((m) => m.id == messageId);
+    final messages = state.value ?? [];
+    final index = messages.indexWhere((m) {
+      return m.id == messageId;
+    });
     if (index == -1) {
       return;
     }
 
-    // Find the previous user message
     int userMessageIndex = -1;
     for (int i = index - 1; i >= 0; i--) {
       if (messages[i].role == 'user') {
@@ -514,17 +909,14 @@ class ChatSession extends _$ChatSession {
 
     final userContent = messages[userMessageIndex].content;
 
-    // Remove from the assistant message onwards
     final newMessages = messages.sublist(0, index);
     state = AsyncValue.data(newMessages);
 
-    // Delete removed messages from Firestore
     final firestore = ref.read(firestoreServiceProvider);
     for (int i = index; i < messages.length; i++) {
       unawaited(firestore.deleteChatMessage(listId, messages[i].id));
     }
 
-    // Trigger AI response for the existing user message
     _isCancelled = false;
     final task = _sendAssistantResponse(userContent);
     _currentTask = task;
@@ -554,52 +946,70 @@ class ChatSession extends _$ChatSession {
     final tools = AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
     final executor = ToolExecutor(ref);
 
+    final assistantMessage = ChatMessage(
+      role: 'assistant',
+      content: '',
+      executionSteps: [],
+    );
+    state = AsyncValue.data([...state.value ?? [], assistantMessage]);
+
     _AgentResult agentResult;
     try {
-      ref.read(chatThinkingProvider(listId).notifier).state = true;
-      ref.read(chatActivityProvider(listId).notifier).state = 'Analisando sua solicitação...';
+      ref.read(chatThinkingProvider(listId).notifier).setState(true);
+      ref.read(chatActivityProvider(listId).notifier).setState('Analisando sua solicitação...');
       agentResult = await _agentLoop(aiService, executor, apiMessages, tools: tools);
       if (_isCancelled) {
         return;
       }
-    } on Exception catch (e) {
-      ref.read(chatThinkingProvider(listId).notifier).state = false;
-      ref.read(chatActivityProvider(listId).notifier).state = null;
-      debugPrint('[AgentLoop] ERRO no loop principal: $e');
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[Regenerate] AgentLoop error', extra: {
+        'operation': 'regenerate_agent_loop',
+        'listId': listId,
+        'contentLength': content.length,
+        'historyLength': previousHistory.length,
+      });
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+      ref.read(chatThinkingProvider(listId).notifier).setState(false);
+      ref.read(chatActivityProvider(listId).notifier).setState(null);
       const errorMsg = 'Desculpe, ocorreu um erro ao processar sua solicitação.';
-      final errorMessage = ChatMessage(role: 'assistant', content: errorMsg, isError: true);
-      state = AsyncValue.data([...state.value ?? [], errorMessage]);
+      _updateAssistantMessage(content: errorMsg, isError: true);
       return;
     } finally {
-      ref.read(chatThinkingProvider(listId).notifier).state = false;
-      ref.read(chatActivityProvider(listId).notifier).state = null;
+      ref.read(chatThinkingProvider(listId).notifier).setState(false);
+      ref.read(chatActivityProvider(listId).notifier).setState(null);
     }
 
-    ref.read(chatStreamingProvider(listId).notifier).state = true;
+    ref.read(chatStreamingProvider(listId).notifier).setState(true);
     unawaited(HapticFeedback.lightImpact());
-
-    final tempMessage = ChatMessage(role: 'assistant', content: '');
-    state = AsyncValue.data([...state.value ?? [], tempMessage]);
 
     String finalText;
     bool isError = false;
     try {
       final systemPrompt = await _getCurrentSystemPrompt();
       finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools);
-    } on Exception {
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[Regenerate] StreamResponse error', extra: {
+        'operation': 'regenerate_stream_response',
+        'listId': listId,
+        'contentLength': content.length,
+        'fallbackText': agentResult.fallbackText.substring(0, agentResult.fallbackText.length.clamp(0, 200)),
+      });
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       finalText = agentResult.fallbackText;
       isError = true;
     }
 
-    ref.read(chatStreamingProvider(listId).notifier).state = false;
-    final finalMessage = tempMessage.copyWith(
-      content: finalText.isEmpty ? agentResult.fallbackText : finalText,
-      isError: isError || finalText.isEmpty,
-      suggestedReplies: _generateSuggestedReplies(finalText, listId),
-    );
+    ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+    ref.read(chatStreamingProvider(listId).notifier).setState(false);
     
-    final updatedMessages = <ChatMessage>[...state.value ?? []];
-    if (updatedMessages.isNotEmpty) {
+    final lastMsg = state.value?.lastOrNull;
+    if (lastMsg != null) {
+      final finalMessage = lastMsg.copyWith(
+        content: finalText.isEmpty ? agentResult.fallbackText : finalText,
+        isError: isError || finalText.isEmpty,
+        suggestedReplies: _generateSuggestedReplies(finalText, listId),
+      );
+      final updatedMessages = <ChatMessage>[...state.value ?? []];
       updatedMessages[updatedMessages.length - 1] = finalMessage;
       state = AsyncValue.data(updatedMessages);
       unawaited(firestoreService.saveChatMessage(listId, finalMessage));
@@ -607,7 +1017,7 @@ class ChatSession extends _$ChatSession {
   }
 
   Future<void> executeAction(String messageId, String action) async {
-    final messages = state.valueOrNull ?? [];
+    final messages = state.value ?? [];
     final message = messages.where((m) => m.id == messageId).firstOrNull;
     if (message == null || message.actions == null) {
       return;
@@ -632,18 +1042,13 @@ class ChatSession extends _$ChatSession {
                       orElse: () => Unit.un,
                     )
                   : Unit.un;
-              final category = catStr != null
-                  ? Category.values.firstWhere(
-                      (c) => c.name == catStr,
-                      orElse: () => Category.others,
-                    )
-                  : Category.others;
+              final categoryId = catStr ?? 'others';
               await itemNotifier.addItem(
                 listId: listId,
                 name: itemData['name'] as String? ?? '',
                 quantity: (itemData['quantity'] as num?)?.toInt() ?? 1,
                 unit: unit,
-                category: category,
+                categoryId: categoryId,
               );
             }
           }
@@ -658,15 +1063,15 @@ class ChatSession extends _$ChatSession {
           return;
         }
         final categoryOrder = {
-          Category.fruits: 0,
-          Category.cleaning: 1,
-          Category.beverages: 2,
-          Category.bakery: 3,
-          Category.others: 4,
+          'fruits': 0,
+          'cleaning': 1,
+          'beverages': 2,
+          'bakery': 3,
+          'others': 4,
         };
         final sorted = List<ShoppingItem>.from(items)
-          ..sort((a, b) => categoryOrder[a.category]!
-              .compareTo(categoryOrder[b.category]!));
+          ..sort((a, b) => categoryOrder[a.categoryId]!
+              .compareTo(categoryOrder[b.categoryId]!));
         await ref
             .read(shoppingListItemsProvider(listId).notifier)
             .updateItems(sorted);
@@ -717,22 +1122,38 @@ class ChatSession extends _$ChatSession {
     final overflow =
         items.length > maxItems ? '\n... e mais ${items.length - maxItems} itens (total: ${items.length})' : '';
 
-    return '''Você é um assistente inteligente com CONTROLE TOTAL sobre a lista de compras do usuário.
+    return '''Você é um assistente inteligente com CONTROLE TOTAL sobre o app do usuário.
 
 Contexto atual: lista "$listName".
 
 Itens atuais na lista:
 $itemsStr$overflow
 
+GERAÇÃO DE INTERFACE INTERATIVA (GEN UI):
+Você possui a ferramenta avançada `generate_artifact` para instanciar interfaces reativas/interativas (Gen UI) diretamente no chat do usuário.
+Use essa ferramenta sempre que detectar intenções de:
+1. Planejamento de Evento/Churrasco: Calcule quantidades por número de pessoas (ex: churrasco, jantar, festa). Crie controles de sliders para adultos/crianças, etc.
+2. Otimização de Orçamento: Ofereça opções de substituição mais baratas (alternativas de swap) para o usuário decidir na hora (ex: "Trocar Picanha por Alcatra").
+3. Sugestão de Receitas da Despensa: Monte um artefato com itens que o usuário já tem na despensa (isAvailable: true) e itens faltantes (isAvailable: false).
+
+A IA tem criatividade total. Defina controles (sliders, steppers, toggles, selects) e condições de exibição de itens livremente usando os parâmetros de `generate_artifact`.
+NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferramenta `generate_artifact`. Após rodar a ferramenta, você pode descrever textualmente a sugestão abaixo.
+
 VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
 - Adicionar, remover, editar itens
 - Marcar/desmarcar comprados
 - Gerenciar listas (criar, renomear, arquivar, excluir)
 - Gerenciar despensa
+- Gerenciar RECEITAS (criar, buscar, excluir)
+- Planejar CARDÁPIO/REFEIÇÕES (agendar, consultar)
 - Controlar orçamento e configurações
 
 Sempre que o usuário pedir uma ação, USE as ferramentas adequadas em vez de apenas sugerir.
 NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no corpo da mensagem. Use sempre a funcionalidade nativa de ferramentas do sistema.
+
+MEMÓRIA E PREFERÊNCIAS:
+Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
+
 Explique o que você fez de forma concisa e amigável em português.
 
 Se precisar de informações adicionais para executar uma ação, use as ferramentas de consulta primeiro.''';
@@ -764,16 +1185,31 @@ Se precisar de informações adicionais para executar uma ação, use as ferrame
     }
 
     context += '''
+GERAÇÃO DE INTERFACE INTERATIVA (GEN UI):
+Você possui a ferramenta avançada `generate_artifact` para instanciar interfaces reativas/interativas (Gen UI) diretamente no chat do usuário.
+Use essa ferramenta sempre que detectar intenções de:
+1. Planejamento de Evento/Churrasco: Calcule quantidades por número de pessoas (ex: churrasco, jantar, festa). Crie controles de sliders para adultos/crianças, etc.
+2. Otimização de Orçamento: Ofereça opções de substituição mais baratas (alternativas de swap) para o usuário decidir na hora (ex: "Trocar Picanha por Alcatra").
+3. Sugestão de Receitas da Despensa: Monte um artefato com itens que o usuário já tem na despensa (isAvailable: true) e itens faltantes (isAvailable: false).
+
+A IA tem criatividade total. Defina controles (sliders, steppers, toggles, selects) e condições de exibição de itens livremente usando os parâmetros de `generate_artifact`.
+NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferramenta `generate_artifact`. Após rodar a ferramenta, você pode descrever textualmente a sugestão abaixo.
+
 VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
 - Gerenciar listas (criar, renomear, arquivar, excluir)
 - Adicionar, remover, editar itens em qualquer lista
 - Gerenciar despensa
+- Gerenciar RECEITAS e CARDÁPIO (planner)
 - Controlar orçamento, tema e configurações
 - Compartilhar listas
 - Exportar/importar backup
 
 Sempre que o usuário pedir uma ação, USE as ferramentas adequadas.
 NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no corpo da mensagem. Use sempre a funcionalidade nativa de ferramentas do sistema.
+
+MEMÓRIA E PREFERÊNCIAS:
+Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
+
 Explique o que você fez de forma concisa e amigável em português.''';
 
     return context;

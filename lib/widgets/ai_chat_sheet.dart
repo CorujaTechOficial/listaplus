@@ -34,7 +34,7 @@ class AiChatSheet extends ConsumerWidget {
               borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
+                  color: Colors.black.withAlpha((0.1 * 255).toInt()),
                   blurRadius: 20,
                   offset: const Offset(0, -5),
                 ),

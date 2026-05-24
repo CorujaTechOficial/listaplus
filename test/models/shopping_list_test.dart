@@ -1,6 +1,5 @@
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/models/category.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:test/test.dart';
 
@@ -89,7 +88,7 @@ void main() {
         shoppingListId: 'l1',
         name: 'Arroz',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       expect(item.id, isNotEmpty);
     });
@@ -99,7 +98,7 @@ void main() {
         shoppingListId: 'l1',
         name: 'Feijão',
         quantity: 2,
-        category: Category.others,
+        categoryId: 'others',
       );
       expect(item.isPurchased, false);
     });
@@ -110,7 +109,7 @@ void main() {
         shoppingListId: 'list-1',
         name: 'Leite',
         quantity: 3,
-        category: Category.beverages,
+        categoryId: 'beverages',
         unit: Unit.L,
         estimatedPrice: 8.50,
         isPurchased: true,
@@ -124,7 +123,7 @@ void main() {
       expect(restored.shoppingListId, 'list-1');
       expect(restored.name, 'Leite');
       expect(restored.quantity, 3);
-      expect(restored.category, Category.beverages);
+      expect(restored.categoryId, 'beverages');
       expect(restored.unit, Unit.L);
       expect(restored.estimatedPrice, 8.50);
       expect(restored.isPurchased, true);
@@ -137,7 +136,7 @@ void main() {
         shoppingListId: 'l1',
         name: 'Arroz',
         quantity: 1,
-        category: Category.others,
+        categoryId: 'others',
       );
       expect(item.unit, Unit.un);
     });
@@ -162,7 +161,7 @@ void main() {
         shoppingListId: 'l1',
         name: 'Item',
         quantity: 1,
-        category: Category.fruits,
+        categoryId: 'fruits',
       );
       final copied = item.copyWith(unit: Unit.kg);
       expect(copied.unit, Unit.kg);
@@ -183,7 +182,7 @@ void main() {
       final item = ShoppingItem.fromJson(json);
       expect(item.estimatedPrice, isNull);
       expect(item.isPurchased, false);
-      expect(item.category, Category.bakery);
+      expect(item.categoryId, 'bakery');
     });
 
     test('fromJson falls back to others for unknown category', () {
@@ -197,7 +196,7 @@ void main() {
         'updatedAt': '2026-05-02T00:00:00.000',
       };
       final item = ShoppingItem.fromJson(json);
-      expect(item.category, Category.others);
+      expect(item.categoryId, 'others');
     });
 
     test('copyWith respects null parameters', () {
@@ -205,7 +204,7 @@ void main() {
         shoppingListId: 'l1',
         name: 'Item',
         quantity: 1,
-        category: Category.fruits,
+        categoryId: 'fruits',
       );
       final copied = item.copyWith();
       expect(copied.name, 'Item');

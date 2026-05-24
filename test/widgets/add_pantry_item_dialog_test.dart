@@ -6,13 +6,10 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
-import 'package:shopping_list/providers/ad_service_provider.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import 'package:shopping_list/models/unit.dart';
-import 'package:shopping_list/models/category.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
-import '../helpers/fake_ad_service.dart';
 
 Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend}) {
   return ProviderScope(
@@ -20,7 +17,6 @@ Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend}) {
       firestoreServiceProvider.overrideWithValue(backend),
       revenueCatServiceProvider.overrideWithValue(FakeRevenueCatService()),
       analyticsServiceProvider.overrideWithValue(AnalyticsService()),
-      adServiceProvider.overrideWithValue(FakeAdService()),
     ],
     child: MaterialApp(
       locale: const Locale('pt', 'BR'),
@@ -48,7 +44,7 @@ void main() {
       expect(find.text('Adicionar à Dispensa'), findsOneWidget);
       expect(find.byType(TextFormField), findsNWidgets(4)); // Name, Ideal, Current, Price
       expect(find.byType(DropdownButtonFormField<Unit>), findsOneWidget); // Unit
-      expect(find.byType(DropdownButtonFormField<Category>), findsOneWidget); // Category
+      expect(find.byType(DropdownButtonFormField<String>), findsOneWidget); // Category
       expect(find.byType(SwitchListTile), findsOneWidget);
     });
 

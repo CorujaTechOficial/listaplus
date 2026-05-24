@@ -3,29 +3,17 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/screens/home_screen.dart';
 import 'package:shopping_list/screens/paywall_screen.dart';
-import 'package:shopping_list/widgets/banner_ad_widget.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/providers/premium_provider.dart';
-import 'package:shopping_list/providers/credits_provider.dart';
 import 'package:shopping_list/providers/revenuecat_service_provider.dart';
 import 'package:shopping_list/providers/firestore_service_provider.dart';
 import 'package:shopping_list/providers/analytics_service_provider.dart';
-import 'package:shopping_list/providers/ad_service_provider.dart';
 import 'package:shopping_list/providers/ai_service_provider.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../helpers/fake_revenuecat_service.dart';
 import '../helpers/fake_storage_backend.dart';
-import '../helpers/fake_ad_service.dart';
 import '../helpers/fake_ai_service.dart';
-
-class FakeCredits extends Credits {
-  FakeCredits(this._value);
-  final DateTime? _value;
-
-  @override
-  Future<DateTime?> build() async => _value;
-}
 
 void main() {
   group('Premium Features UI', () {
@@ -47,9 +35,7 @@ void main() {
         overrides: [
           revenueCatServiceProvider.overrideWithValue(fakeRevenueCat),
           firestoreServiceProvider.overrideWithValue(fakeBackend),
-          creditsProvider.overrideWith(() => FakeCredits(null)),
           analyticsServiceProvider.overrideWithValue(AnalyticsService()),
-          adServiceProvider.overrideWithValue(FakeAdService()),
           aiServiceProvider.overrideWithValue(FakeAiService()),
         ],
         child: MaterialApp(
@@ -60,26 +46,6 @@ void main() {
         ),
       );
     }
-
-    testWidgets('shows banner ad when not premium', (tester) async {
-      await tester.pumpWidget(wrap(HomeScreen(listId: testList.id), isPremium: false));
-      
-      final container = ProviderScope.containerOf(tester.element(find.byType(HomeScreen)));
-      await tester.runAsync(() => container.read(premiumProvider.future));
-      await tester.pumpAndSettle();
-
-      expect(find.byType(BannerAdWidget), findsOneWidget);
-    });
-
-    testWidgets('hides banner ad when premium', (tester) async {
-      await tester.pumpWidget(wrap(HomeScreen(listId: testList.id), isPremium: true));
-      
-      final container = ProviderScope.containerOf(tester.element(find.byType(HomeScreen)));
-      await tester.runAsync(() => container.read(premiumProvider.future));
-      await tester.pumpAndSettle();
-
-      expect(find.byType(BannerAdWidget), findsNothing);
-    });
 
     testWidgets('ai assistant menu item leads to paywall when free', (tester) async {
       await tester.pumpWidget(wrap(HomeScreen(listId: testList.id), isPremium: false));

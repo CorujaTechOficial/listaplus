@@ -13,10 +13,10 @@ class ShimmerList extends StatelessWidget {
     return Shimmer.fromColors(
       enabled: !WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding'),
       baseColor: isDark
-          ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3)
-          : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),
+          ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.3 * 255).toInt())
+          : theme.colorScheme.surfaceContainerHighest.withAlpha((0.6 * 255).toInt()),
       highlightColor: isDark
-          ? theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5)
+          ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.5 * 255).toInt())
           : theme.colorScheme.surfaceContainerHighest,
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
