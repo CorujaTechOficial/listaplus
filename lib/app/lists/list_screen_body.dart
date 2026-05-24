@@ -39,12 +39,12 @@ import '../../models/chat_message.dart';
 import '../../models/premium_feature.dart';
 import '../../models/shopping_item.dart';
 import '../../models/shopping_list.dart';
-import '../screens/achievements_screen.dart';
-import '../screens/budget_dashboard_screen.dart';
-import '../screens/chat_screen.dart';
-import '../screens/paywall_screen.dart';
-import '../screens/settings_screen.dart';
-import '../screens/user_profile_screen.dart';
+import '../../screens/achievements_screen.dart';
+import '../../screens/budget_dashboard_screen.dart';
+import '../../screens/chat_screen.dart';
+import '../../screens/paywall_screen.dart';
+import '../../screens/settings_screen.dart';
+import '../../screens/user_profile_screen.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
