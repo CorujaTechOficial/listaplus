@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../tools/tool_core.dart';
-import '../../../../providers/share_provider.dart';
+import 'package:shopping_list/app/lists/providers/share_provider.dart';
 
 class ShareExecutor {
   const ShareExecutor();

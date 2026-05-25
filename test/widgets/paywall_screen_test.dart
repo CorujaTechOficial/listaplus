@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/screens/paywall_screen.dart';
+import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import '../helpers/test_widgets.dart';
 import '../helpers/fake_revenuecat_service.dart';

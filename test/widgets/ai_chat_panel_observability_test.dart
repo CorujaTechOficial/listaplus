@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/models/shopping_list.dart';
-import 'package:shopping_list/widgets/ai_chat_panel.dart';
+import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/test_widgets.dart';
 

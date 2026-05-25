@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/screens/achievements_screen.dart';
+import 'package:shopping_list/app/settings/screens/achievements_screen.dart';
 import '../helpers/test_widgets.dart';
 import '../helpers/fake_storage_backend.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../theme/tokens.dart';
 import '../../../models/shopping_list.dart';
-import '../../../providers/shopping_lists_provider.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class BudgetDialog extends ConsumerStatefulWidget {

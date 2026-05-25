@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/providers/premium_provider.dart';
-import 'package:shopping_list/providers/revenuecat_service_provider.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import '../helpers/fake_revenuecat_service.dart';
 

@@ -5,8 +5,8 @@ import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
-import 'package:shopping_list/providers/item_history_provider.dart';
-import 'package:shopping_list/providers/user_stats_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_history_provider.dart';
+import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 
 part 'item_providers.g.dart';
 

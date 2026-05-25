@@ -7,8 +7,8 @@ import 'pantry_executor.dart';
 import 'budget_executor.dart';
 import 'share_executor.dart';
 import 'config_executor.dart';
-import '../../../../providers/premium_provider.dart';
-import '../../../../services/logger_service.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/services/logger_service.dart';
 
 class ToolExecutor {
   ToolExecutor(Ref ref) : _container = ref.container;

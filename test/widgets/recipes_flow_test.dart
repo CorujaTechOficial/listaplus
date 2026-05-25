@@ -2,10 +2,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/providers/recipes_provider.dart';
-import 'package:shopping_list/screens/recipes_screen.dart';
+import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
+import 'package:shopping_list/app/recipes/screens/recipes_screen.dart';
 import 'package:shopping_list/services/storage_backend.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/models/recipe.dart';
 import '../helpers/test_widgets.dart';
 

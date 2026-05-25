@@ -1,4 +1,4 @@
-import '../agent/tool.dart';
+import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 import '../models/chat_message.dart';
 
 class AiResponse {

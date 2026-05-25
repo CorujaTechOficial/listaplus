@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import '../../../providers/shopping_list_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../models/unit.dart';
 import 'add_item_dialog.dart';
 

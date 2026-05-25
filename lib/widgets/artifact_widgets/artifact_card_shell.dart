@@ -4,11 +4,11 @@ import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/interactive_artifact.dart';
-import '../../providers/artifact_state_provider.dart';
-import '../../providers/current_list_provider.dart';
+import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import '../../theme/tokens.dart';
 import '../../utils/test_utils.dart';
-import '../../generated/l10n/app_localizations.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class ArtifactCardShell extends ConsumerStatefulWidget {
   const ArtifactCardShell({

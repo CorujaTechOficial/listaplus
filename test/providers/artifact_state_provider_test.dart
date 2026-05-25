@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/models/interactive_artifact.dart';
 import 'package:shopping_list/models/unit.dart';
-import 'package:shopping_list/providers/artifact_state_provider.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import '../helpers/fake_storage_backend.dart';
 
 void main() {

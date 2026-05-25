@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../tools/tool_core.dart';
-import '../../../../providers/current_list_provider.dart';
-import '../../../../providers/shopping_lists_provider.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
 
 class ListExecutor {
   const ListExecutor();

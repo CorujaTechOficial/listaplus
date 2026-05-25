@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/providers/voice_input_provider.dart';
-import 'package:shopping_list/providers/chat_provider.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
-import 'package:shopping_list/providers/ai_service_provider.dart';
+import 'package:shopping_list/app/settings/providers/settings_providers.dart';
+import 'package:shopping_list/app/ai/providers/chat_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_ai_service.dart';
 

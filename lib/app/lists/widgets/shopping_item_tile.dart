@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../theme/tokens.dart';
-import '../../../providers/shopping_list_provider.dart';
-import '../../../providers/price_history_provider.dart';
-import '../../../providers/pantry_items_provider.dart';
-import '../../../providers/categories_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
+import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import '../../../models/shopping_item.dart';
 import '../../../models/category_data.dart';
-import '../../../widgets/edit_item_dialog.dart';
+import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 enum ShoppingItemViewMode {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/interactive_artifact.dart';
-import '../../providers/artifact_state_provider.dart';
+import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
 import '../../theme/tokens.dart';
 
 class ArtifactContentRenderer extends ConsumerWidget {

@@ -3,9 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/agent/tool.dart';
 import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/models/shopping_list.dart';
-import 'package:shopping_list/providers/chat_provider.dart';
-import 'package:shopping_list/providers/ai_service_provider.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/app/ai/providers/chat_provider.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/services/ai_service.dart';
 import '../helpers/fake_storage_backend.dart';
 

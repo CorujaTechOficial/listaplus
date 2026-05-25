@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import '../tools/tool_core.dart';
-import '../../../../models/unit.dart';
-import '../../../../providers/current_list_provider.dart';
-import '../../../../providers/shopping_lists_provider.dart';
-import '../../../../providers/shopping_list_provider.dart';
+import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 
 class ItemExecutor {
   const ItemExecutor();

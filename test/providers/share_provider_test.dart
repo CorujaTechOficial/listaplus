@@ -1,13 +1,13 @@
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/providers/share_provider.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
-import 'package:shopping_list/providers/auth_service_provider.dart';
+import 'package:shopping_list/app/lists/providers/share_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/core/providers/auth_provider.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/providers/revenuecat_service_provider.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 

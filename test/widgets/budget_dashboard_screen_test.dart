@@ -3,10 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/unit.dart';
-import 'package:shopping_list/screens/budget_dashboard_screen.dart';
+import 'package:shopping_list/app/settings/screens/budget_dashboard_screen.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../helpers/fake_storage_backend.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 
 Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend}) {
   return ProviderScope(

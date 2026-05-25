@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'logger_service.dart';
-import '../agent/tool.dart';
+import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 import '../models/chat_message.dart';
 import 'ai_service.dart';
 

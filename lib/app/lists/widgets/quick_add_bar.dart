@@ -8,9 +8,9 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../../../theme/tokens.dart';
 import '../../../models/unit.dart';
-import '../../../providers/shopping_list_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../constants/common_products.dart';
-import '../../../widgets/styled_autocomplete.dart';
+import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class QuickAddBar extends ConsumerStatefulWidget {

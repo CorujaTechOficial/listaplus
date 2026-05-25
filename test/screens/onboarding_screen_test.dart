@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/screens/onboarding_screen.dart';
-import 'package:shopping_list/providers/analytics_service_provider.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_screen.dart';
+import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 

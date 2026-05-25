@@ -116,3 +116,33 @@ Must compile clean: `cd custom_lints && dart analyze lib/` → "No issues found!
 
 - `shared_preferences` still in `pubspec.yaml` but only used by `widgets_test.dart` (`SharedPreferences.setMockInitialValues`).
 - `StorageService` (old SharedPreferences backend) already removed.
+
+## Feature Locations (Fase 2 Refactoring)
+
+Screens e widgets também foram migrados para `app/` via Strangler Fig:
+- `lib/app/ai/screens/` — `ai_home_screen.dart`, `chat_screen.dart`, `chat_history_screen.dart`
+- `lib/app/ai/widgets/` — `ai_chat_panel.dart`
+- `lib/app/lists/screens/` — `list_screen_body.dart` (no topo de `app/lists/`)
+- `lib/app/lists/widgets/` — 8 widgets (shopping_item_tile, quick_add_bar, filter_bar, etc.)
+- `lib/app/pantry/screens/` — `pantry_screen.dart`
+- `lib/app/pantry/widgets/` — `add_pantry_item_dialog.dart`
+- `lib/app/recipes/screens/` — `recipes_screen.dart`
+- `lib/app/recipes/widgets/` — `add_recipe_dialog.dart`
+- `lib/app/meal_planner/screens/` — `meal_planner_screen.dart`
+- `lib/app/auth/screens/` — `auth_screen.dart`
+- `lib/app/onboarding/screens/` — `onboarding_screen.dart`
+- `lib/app/settings/screens/` — 7 screens (settings, backup, budget_dashboard, theme_selection, user_profile, manage_categories, achievements)
+- `lib/screens/` — todos os 17 arquivos são re-exports — não editar conteúdo aqui
+- `lib/widgets/` — todos os 11 arquivos são re-exports — não editar conteúdo aqui
+
+## Provider Locations (Fase 2 Refactoring)
+
+Providers foram consolidados em diretórios feature-based via Strangler Fig:
+- `lib/app/lists/providers/` — `list_providers.dart`, `item_providers.dart`, `categories_provider.dart`, `share_provider.dart`, `item_history_provider.dart`
+- `lib/app/ai/providers/` — `chat_providers.dart`, `ai_config_providers.dart`, `artifact_state_provider.dart`
+- `lib/app/pantry/providers/` — `pantry_providers.dart`
+- `lib/app/recipes/providers/` — `recipes_providers.dart`
+- `lib/app/meal_planner/providers/` — `meal_planner_providers.dart`
+- `lib/app/settings/providers/` — `settings_providers.dart`, `backup_providers.dart`
+- `lib/core/providers/` — `firebase_providers.dart`, `monetization_providers.dart`, `analytics_provider.dart`, `auth_provider.dart`, `preferences_providers.dart`, `misc_providers.dart`
+- `lib/providers/` — todos os 45 arquivos são re-exports (export `package:shopping_list/...`) — não editar conteúdo aqui

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/widgets/init_error_screen.dart';
+import 'package:shopping_list/core/widgets/init_error_screen.dart';
 
 void main() {
   group('InitErrorScreen', () {

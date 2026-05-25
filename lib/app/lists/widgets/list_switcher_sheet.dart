@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 // coverage:ignore-start
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../models/shopping_list.dart';
-import '../../../providers/current_list_provider.dart';
-import '../../../providers/share_provider.dart';
-import '../../../providers/shopping_lists_provider.dart';
-import '../../../providers/premium_provider.dart';
-import '../../../screens/paywall_screen.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/share_provider.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import '../../../theme/page_transitions.dart';
 import '../../../theme/tokens.dart';
 import 'create_list_dialog.dart';

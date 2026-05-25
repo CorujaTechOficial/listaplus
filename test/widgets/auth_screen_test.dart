@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/screens/auth_screen.dart';
+import 'package:shopping_list/app/auth/screens/auth_screen.dart';
 import '../helpers/test_widgets.dart';
 
 void main() {

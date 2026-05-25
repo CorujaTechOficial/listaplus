@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../theme/tokens.dart';
-import '../../../providers/categories_provider.dart';
+import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import '../../../models/unit.dart';
-import '../../../providers/shopping_list_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../constants/common_products.dart';
-import '../../../widgets/styled_autocomplete.dart';
+import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class AddItemDialog extends ConsumerStatefulWidget {

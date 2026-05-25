@@ -4,16 +4,16 @@ import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/services/analytics_service.dart';
-import 'package:shopping_list/providers/auth_service_provider.dart';
-import 'package:shopping_list/providers/analytics_service_provider.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
-import 'package:shopping_list/providers/revenuecat_service_provider.dart';
-import 'package:shopping_list/providers/ai_service_provider.dart';
+import 'package:shopping_list/core/providers/auth_provider.dart';
+import 'package:shopping_list/core/providers/analytics_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/services/storage_backend.dart';
 import 'fake_revenuecat_service.dart';
 import 'fake_ai_service.dart';
-import 'package:shopping_list/providers/categories_provider.dart';
+import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'fake_categories_notifier.dart';
 
 Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatService? revenueCat}) {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/providers/monthly_budget_provider.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/app/settings/providers/settings_providers.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import '../helpers/fake_storage_backend.dart';
 
 void main() {

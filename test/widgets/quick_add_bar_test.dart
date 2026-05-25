@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/widgets/quick_add_bar.dart';
-import 'package:shopping_list/widgets/add_item_dialog.dart';
+import 'package:shopping_list/app/lists/widgets/quick_add_bar.dart';
+import 'package:shopping_list/app/lists/widgets/add_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/fake_storage_backend.dart';
 

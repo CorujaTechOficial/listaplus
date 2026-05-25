@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../tools/tool_core.dart';
-import '../../../../models/unit.dart';
-import '../../../../providers/pantry_items_provider.dart';
+import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 
 class PantryExecutor {
   const PantryExecutor();

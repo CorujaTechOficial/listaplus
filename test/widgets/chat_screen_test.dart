@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/screens/chat_screen.dart';
+import 'package:shopping_list/app/ai/screens/chat_screen.dart';
 import 'package:shopping_list/models/chat_message.dart';
-import 'package:shopping_list/providers/firestore_service_provider.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/providers/revenuecat_service_provider.dart';
-import 'package:shopping_list/providers/analytics_service_provider.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';

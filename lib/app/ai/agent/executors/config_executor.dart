@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import '../tools/tool_core.dart';
-import '../../../../models/unit.dart';
-import '../../../../models/recipe.dart';
-import '../../../../models/meal_plan.dart';
-import '../../../../models/shopping_item.dart';
-import '../../../../models/interactive_artifact.dart';
-import '../../../../providers/firestore_service_provider.dart';
-import '../../../../providers/dark_mode_provider.dart';
-import '../../../../providers/user_profile_provider.dart';
-import '../../../../providers/backup_provider.dart';
-import '../../../../providers/recipes_provider.dart';
-import '../../../../providers/meal_plans_provider.dart';
+import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/models/recipe.dart';
+import 'package:shopping_list/models/meal_plan.dart';
+import 'package:shopping_list/models/shopping_item.dart';
+import 'package:shopping_list/models/interactive_artifact.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/app/settings/providers/settings_providers.dart';
+import 'package:shopping_list/app/settings/providers/backup_providers.dart';
+import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
+import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 
 class ConfigExecutor {
   const ConfigExecutor();

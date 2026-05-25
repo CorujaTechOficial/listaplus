@@ -1,5 +1,5 @@
 import 'package:shopping_list/models/ai_usage.dart';
-import 'package:shopping_list/providers/ai_usage_provider.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 
 class FakeAiUsageState extends AiUsageState {
   @override
