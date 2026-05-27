@@ -4,7 +4,7 @@ import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 void main() {
   group('AgentToolParameter', () {
     test('creates with all fields', () {
-      final param = AgentToolParameter(
+      const param = AgentToolParameter(
         name: 'test_param',
         type: 'string',
         description: 'A test parameter',
@@ -18,7 +18,7 @@ void main() {
     });
 
     test('creates with enum values', () {
-      final param = AgentToolParameter(
+      const param = AgentToolParameter(
         name: 'mode',
         type: 'string',
         description: 'Mode selection',
@@ -29,7 +29,7 @@ void main() {
     });
 
     test('defaults required to false', () {
-      final param = AgentToolParameter(
+      const param = AgentToolParameter(
         name: 'opt',
         type: 'string',
         description: 'Optional',
@@ -40,7 +40,7 @@ void main() {
 
   group('AgentTool', () {
     test('creates with name and description', () {
-      final tool = AgentTool(
+      const tool = AgentTool(
         name: 'test_tool',
         description: 'A test tool',
       );
@@ -50,7 +50,7 @@ void main() {
     });
 
     test('creates with parameters', () {
-      final tool = AgentTool(
+      const tool = AgentTool(
         name: 'test_tool',
         description: 'A test tool',
         parameters: [
@@ -62,7 +62,7 @@ void main() {
     });
 
     test('toOpenAIFunction returns correct format', () {
-      final tool = AgentTool(
+      const tool = AgentTool(
         name: 'test_tool',
         description: 'A test tool',
         parameters: [
@@ -81,7 +81,7 @@ void main() {
     });
 
     test('toOpenAIFunction includes enum values', () {
-      final tool = AgentTool(
+      const tool = AgentTool(
         name: 'enum_tool',
         description: 'Has enum',
         parameters: [
@@ -100,7 +100,7 @@ void main() {
     });
 
     test('toOpenAIFunction handles no required params', () {
-      final tool = AgentTool(
+      const tool = AgentTool(
         name: 'no_req',
         description: 'No required params',
         parameters: [
@@ -169,7 +169,7 @@ void main() {
 
   group('ToolResult', () {
     test('creates with success', () {
-      final result = ToolResult(
+      const result = ToolResult(
         toolCallId: 'call_1',
         content: 'Done!',
         success: true,
@@ -181,7 +181,7 @@ void main() {
     });
 
     test('creates with resultData', () {
-      final result = ToolResult(
+      const result = ToolResult(
         toolCallId: 'call_1',
         content: 'Done!',
         success: true,

@@ -4,7 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/models/category_data.dart';
+import 'package:shopping_list/domain/entities/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 
 class BudgetDashboardScreen extends ConsumerWidget {
@@ -120,7 +120,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                     backgroundColor: categoriesMap[e.key]?.colorValue ?? theme.colorScheme.secondary,
                     child: Icon(categoriesMap[e.key]?.icon ?? Icons.category, color: Colors.white, size: 18),
                   ),
-                  title: Text(e.key),
+                  title: Text(categoriesMap[e.key]?.name ?? e.key),
                   subtitle: LinearProgressIndicator(
                     value: percentage / 100,
                     backgroundColor: theme.colorScheme.surfaceContainerHighest,

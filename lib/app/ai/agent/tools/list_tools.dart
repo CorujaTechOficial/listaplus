@@ -1,16 +1,16 @@
 import 'tool_core.dart';
 
-final getListsTool = const AgentTool(
+const getListsTool = AgentTool(
   name: 'get_lists',
   description: 'Lista todas as listas de compras do usuário, incluindo arquivadas e compartilhadas',
 );
 
-final getCurrentListTool = const AgentTool(
+const getCurrentListTool = AgentTool(
   name: 'get_current_list',
   description: 'Obtém a lista de compras atualmente selecionada',
 );
 
-final setCurrentListTool = const AgentTool(
+const setCurrentListTool = AgentTool(
   name: 'set_current_list',
   description: 'Define qual lista de compras é a atual/ativa',
   parameters: [
@@ -23,7 +23,7 @@ final setCurrentListTool = const AgentTool(
   ],
 );
 
-final createListTool = const AgentTool(
+const createListTool = AgentTool(
   name: 'create_list',
   description: 'Cria uma nova lista de compras',
   parameters: [
@@ -42,7 +42,7 @@ final createListTool = const AgentTool(
   ],
 );
 
-final renameListTool = const AgentTool(
+const renameListTool = AgentTool(
   name: 'rename_list',
   description: 'Renomeia uma lista de compras existente',
   parameters: [
@@ -61,7 +61,7 @@ final renameListTool = const AgentTool(
   ],
 );
 
-final deleteListTool = const AgentTool(
+const deleteListTool = AgentTool(
   name: 'delete_list',
   description: 'Exclui permanentemente uma lista de compras e todos os seus itens',
   parameters: [
@@ -74,7 +74,7 @@ final deleteListTool = const AgentTool(
   ],
 );
 
-final archiveListTool = const AgentTool(
+const archiveListTool = AgentTool(
   name: 'archive_list',
   description: 'Arquiva uma lista de compras (esconde da visualização principal)',
   parameters: [
@@ -87,7 +87,7 @@ final archiveListTool = const AgentTool(
   ],
 );
 
-final unarchiveListTool = const AgentTool(
+const unarchiveListTool = AgentTool(
   name: 'unarchive_list',
   description: 'Desarquiva uma lista de compras (restaura à visualização principal)',
   parameters: [
@@ -100,7 +100,7 @@ final unarchiveListTool = const AgentTool(
   ],
 );
 
-final allListTools = [
+const allListTools = [
   getListsTool,
   getCurrentListTool,
   setCurrentListTool,

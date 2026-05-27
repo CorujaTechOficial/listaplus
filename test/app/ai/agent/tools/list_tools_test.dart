@@ -5,52 +5,52 @@ import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 void main() {
   group('List tools', () {
     test('get_lists has correct name and no parameters', () {
-      final tool = getListsTool;
+      const tool = getListsTool;
       expect(tool.name, 'get_lists');
       expect(tool.description, isNotEmpty);
       expect(tool.parameters, isEmpty);
     });
 
     test('get_current_list has correct name', () {
-      final tool = getCurrentListTool;
+      const tool = getCurrentListTool;
       expect(tool.name, 'get_current_list');
       expect(tool.parameters, isEmpty);
     });
 
     test('set_current_list has listId parameter', () {
-      final tool = setCurrentListTool;
+      const tool = setCurrentListTool;
       expect(tool.name, 'set_current_list');
       expect(tool.parameters.any((p) => p.name == 'listId' && p.required), true);
     });
 
     test('create_list has name and optional budget', () {
-      final tool = createListTool;
+      const tool = createListTool;
       expect(tool.name, 'create_list');
       expect(tool.parameters.any((p) => p.name == 'name' && p.required), true);
       expect(tool.parameters.any((p) => p.name == 'budget' && !p.required && p.type == 'number'), true);
     });
 
     test('rename_list has listId and name', () {
-      final tool = renameListTool;
+      const tool = renameListTool;
       expect(tool.name, 'rename_list');
       expect(tool.parameters.any((p) => p.name == 'listId' && p.required), true);
       expect(tool.parameters.any((p) => p.name == 'name' && p.required), true);
     });
 
     test('delete_list has listId parameter', () {
-      final tool = deleteListTool;
+      const tool = deleteListTool;
       expect(tool.name, 'delete_list');
       expect(tool.parameters.any((p) => p.name == 'listId' && p.required), true);
     });
 
     test('archive_list has listId parameter', () {
-      final tool = archiveListTool;
+      const tool = archiveListTool;
       expect(tool.name, 'archive_list');
       expect(tool.parameters.any((p) => p.name == 'listId' && p.required), true);
     });
 
     test('unarchive_list has listId parameter', () {
-      final tool = unarchiveListTool;
+      const tool = unarchiveListTool;
       expect(tool.name, 'unarchive_list');
       expect(tool.parameters.any((p) => p.name == 'listId' && p.required), true);
     });

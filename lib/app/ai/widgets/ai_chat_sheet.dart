@@ -57,8 +57,6 @@ class AiChatSheet extends ConsumerWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: Row(
                     children: [
-                      Icon(Icons.auto_awesome, color: theme.colorScheme.primary, size: 20),
-                      const SizedBox(width: 8),
                       Text(
                         'Assistente IA',
                         style: theme.textTheme.titleSmall?.copyWith(

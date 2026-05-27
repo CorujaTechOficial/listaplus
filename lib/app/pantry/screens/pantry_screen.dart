@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,9 +6,8 @@ import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
-import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/models/pantry_item.dart';
-import 'package:shopping_list/models/category_data.dart';
+import 'package:shopping_list/domain/entities/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
@@ -26,6 +24,11 @@ class PantryScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+          tooltip: l10n.openMenu,
+        ),
         title: Text(l10n.pantryAppBar),
         actions: [
           if (pantryAsync.value?.isNotEmpty == true)
@@ -82,10 +85,12 @@ class PantryScreen extends ConsumerWidget {
                       children: [
                         Icon(Icons.info_outline, size: 18, color: theme.colorScheme.tertiary),
                         const SizedBox(width: Spacing.xs),
-                        Text(
-                          l10n.itemsNeedPurchase(deficitItems),
-                          style: theme.textTheme.bodySmall?.copyWith(
-                            fontWeight: FontWeight.w600,
+                        Expanded(
+                          child: Text(
+                            l10n.itemsNeedPurchase(deficitItems),
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ],

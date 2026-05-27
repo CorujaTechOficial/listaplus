@@ -1,0 +1,237 @@
+<h2>Redesign da Aba IA — 3 Abordagens</h2>
+<p class="subtitle">Como tornar a tela mais amigavel e visualmente limpa. Clique na que mais te agrada.</p>
+
+<div class="section">
+  <p class="label">Estado atual — problemas principais</p>
+  <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+    <span style="background:#ff3b3020;color:#ff3b30;padding:4px 10px;border-radius:6px;font-size:0.8rem;">Header duplicado (AppBar + _HeaderRow)</span>
+    <span style="background:#ff3b3020;color:#ff3b30;padding:4px 10px;border-radius:6px;font-size:0.8rem;">Barra de energia minuscula (60x4px, fonte 8px)</span>
+    <span style="background:#ff3b3020;color:#ff3b30;padding:4px 10px;border-radius:6px;font-size:0.8rem;">Empty state sobrecarregado</span>
+    <span style="background:#ff3b3020;color:#ff3b30;padding:4px 10px;border-radius:6px;font-size:0.8rem;">Bubbles sem avatar da IA</span>
+    <span style="background:#ff3b3020;color:#ff3b30;padding:4px 10px;border-radius:6px;font-size:0.8rem;">Feedback buttons duplicados</span>
+    <span style="background:#ff3b3020;color:#ff3b30;padding:4px 10px;border-radius:6px;font-size:0.8rem;">Strings hardcoded (violando l10n)</span>
+  </div>
+</div>
+
+<div class="cards">
+  <!-- Approach A -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1rem;background:#f0f7f0;">
+      <div style="width:200px;height:380px;background:white;border-radius:20px;border:2px solid #e0e0e0;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+        <!-- Status bar -->
+        <div style="height:24px;background:#4CAF50;display:flex;align-items:center;justify-content:center;">
+          <span style="color:white;font-size:9px;font-weight:600;">9:41</span>
+        </div>
+        <!-- AppBar -->
+        <div style="background:#4CAF50;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="color:white;font-size:11px;">🤖</span>
+            <span style="color:white;font-size:11px;font-weight:700;">Minha Lista</span>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <span style="color:white;font-size:10px;">⇄</span>
+            <span style="color:white;font-size:10px;">🗑</span>
+          </div>
+        </div>
+        <!-- Compact list pill -->
+        <div style="padding:6px 12px;">
+          <div style="background:#E8F5E9;border-radius:12px;padding:6px 10px;display:flex;align-items:center;justify-content:space-between;border:1px solid #C8E6C9;">
+            <div style="display:flex;align-items:center;gap:4px;">
+              <span style="font-size:8px;">🛒</span>
+              <span style="font-size:8px;font-weight:700;color:#2E7D32;">3/8 itens</span>
+            </div>
+            <span style="font-size:8px;color:#66BB6A;">R$ 142,30 ▾</span>
+          </div>
+        </div>
+        <!-- Chat area -->
+        <div style="flex:1;padding:8px 12px;overflow:hidden;">
+          <!-- User bubble -->
+          <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
+            <div style="background:#4CAF50;color:white;padding:6px 10px;border-radius:10px;max-width:75%;font-size:8px;">
+              Me ajuda a economizar nessa compra?
+            </div>
+          </div>
+          <!-- AI bubble with avatar -->
+          <div style="display:flex;gap:6px;align-items:flex-start;margin-bottom:8px;">
+            <div style="width:20px;height:20px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:8px;">🤖</div>
+            <div style="background:#F5F5F5;padding:6px 10px;border-radius:10px;max-width:75%;font-size:8px;border:1px solid #E0E0E0;">
+              <div style="font-weight:700;color:#4CAF50;font-size:7px;margin-bottom:2px;">Lista Plus IA</div>
+              Claro! Analisei sua lista e encontrei 5 dicas para economizar até R$ 38...
+            </div>
+          </div>
+          <!-- Action buttons -->
+          <div style="display:flex;gap:4px;margin-left:26px;margin-bottom:8px;">
+            <div style="background:#E8F5E9;padding:3px 6px;border-radius:6px;font-size:7px;color:#2E7D32;">👍</div>
+            <div style="background:#F5F5F5;padding:3px 6px;border-radius:6px;font-size:7px;color:#999;">👎</div>
+            <div style="background:#F5F5F5;padding:3px 6px;border-radius:6px;font-size:7px;color:#999;">📋</div>
+          </div>
+        </div>
+        <!-- Input bar -->
+        <div style="padding:8px 12px;border-top:1px solid #E0E0E0;display:flex;gap:6px;align-items:center;">
+          <div style="flex:1;background:#F5F5F5;border-radius:20px;padding:6px 10px;font-size:8px;color:#999;border:1px solid #E0E0E0;">Pergunte algo...</div>
+          <div style="width:28px;height:28px;background:#4CAF50;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:white;font-size:10px;">↑</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A) Chat Limpo</h3>
+      <p>Remove o _HeaderRow interno. Lista vira um pill compacto no topo. Bubbles com avatar da IA. Feedback unificado fora do bubble. Empty state simplificado com orb + 2 sugestoes max.</p>
+      <div class="pros-cons" style="margin-top:0.75rem;">
+        <div class="pros"><h4>Pros</h4><ul><li>Maximo espaco para chat</li><li>Visual limpo e focado</li><li>Menos informacao competing</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Energia IA menos visivel</li><li>Lista sempre colapsada</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Approach B -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1rem;background:#f0f0f7;">
+      <div style="width:200px;height:380px;background:white;border-radius:20px;border:2px solid #e0e0e0;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+        <!-- Status bar -->
+        <div style="height:24px;background:#4CAF50;display:flex;align-items:center;justify-content:center;">
+          <span style="color:white;font-size:9px;font-weight:600;">9:41</span>
+        </div>
+        <!-- AppBar with energy -->
+        <div style="background:#4CAF50;padding:8px 12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="color:white;font-size:11px;">🤖</span>
+              <span style="color:white;font-size:11px;font-weight:700;">Minha Lista</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="background:rgba(255,255,255,0.2);border-radius:8px;padding:2px 6px;display:flex;align-items:center;gap:3px;">
+                <span style="font-size:7px;color:white;">⚡</span>
+                <div style="width:30px;height:3px;background:rgba(255,255,255,0.3);border-radius:2px;overflow:hidden;">
+                  <div style="width:70%;height:100%;background:#A5D6A7;border-radius:2px;"></div>
+                </div>
+              </div>
+              <span style="color:white;font-size:10px;">⇄</span>
+            </div>
+          </div>
+        </div>
+        <!-- List card hero -->
+        <div style="padding:8px 12px;">
+          <div style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border-radius:14px;padding:10px;border:1px solid #A5D6A7;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span style="font-size:9px;font-weight:800;color:#1B5E20;">🛒 Lista de Compras</span>
+              <span style="font-size:8px;background:#4CAF50;color:white;padding:2px 6px;border-radius:8px;font-weight:700;">3/8</span>
+            </div>
+            <div style="height:4px;background:rgba(0,0,0,0.1);border-radius:2px;overflow:hidden;">
+              <div style="width:37%;height:100%;background:#4CAF50;border-radius:2px;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:4px;">
+              <span style="font-size:7px;color:#2E7D32;">R$ 142,30 estimado</span>
+              <span style="font-size:7px;color:#2E7D32;">Ver itens ▾</span>
+            </div>
+          </div>
+        </div>
+        <!-- Chat area -->
+        <div style="flex:1;padding:8px 12px;overflow:hidden;">
+          <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
+            <div style="background:#4CAF50;color:white;padding:6px 10px;border-radius:10px;max-width:75%;font-size:8px;">
+              Me ajuda a economizar?
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;align-items:flex-start;">
+            <div style="width:20px;height:20px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:8px;">🤖</div>
+            <div style="background:#F5F5F5;padding:6px 10px;border-radius:10px;max-width:75%;font-size:8px;border:1px solid #E0E0E0;">
+              Claro! Encontrei 5 dicas...
+            </div>
+          </div>
+        </div>
+        <!-- Input -->
+        <div style="padding:8px 12px;border-top:1px solid #E0E0E0;display:flex;gap:6px;align-items:center;">
+          <div style="flex:1;background:#F5F5F5;border-radius:20px;padding:6px 10px;font-size:8px;color:#999;">Pergunte algo...</div>
+          <div style="width:28px;height:28px;background:#4CAF50;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:white;font-size:10px;">↑</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B) List Hero</h3>
+      <p>Energia IA sobe para o AppBar. Lista vira card hero com progresso e custo. Chat abaixo com bubbles limpos. Lista colapsa ao scrollar. Melhor hierarquia visual.</p>
+      <div class="pros-cons" style="margin-top:0.75rem;">
+        <div class="pros"><h4>Pros</h4><ul><li>Lista sempre visivel</li><li>Energia no AppBar (sem duplicar)</li><li>Progresso claro e imediato</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Menos espaco para chat</li><li>Scroll mais frequente</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Approach C -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1rem;background:#f7f0f0;">
+      <div style="width:200px;height:380px;background:white;border-radius:20px;border:2px solid #e0e0e0;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+        <!-- Status bar -->
+        <div style="height:24px;background:#4CAF50;display:flex;align-items:center;justify-content:center;">
+          <span style="color:white;font-size:9px;font-weight:600;">9:41</span>
+        </div>
+        <!-- AppBar minimal -->
+        <div style="background:#4CAF50;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="color:white;font-size:11px;">🤖</span>
+            <span style="color:white;font-size:11px;font-weight:700;">Assistente IA</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <div style="background:rgba(255,255,255,0.2);border-radius:8px;padding:2px 6px;">
+              <span style="font-size:7px;color:white;">⚡ 7 msgs</span>
+            </div>
+            <span style="color:white;font-size:10px;">⋮</span>
+          </div>
+        </div>
+        <!-- Full chat area -->
+        <div style="flex:1;padding:8px 12px;overflow:hidden;">
+          <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
+            <div style="background:#4CAF50;color:white;padding:6px 10px;border-radius:10px;max-width:80%;font-size:8px;">
+              Me ajuda a economizar?
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;align-items:flex-start;margin-bottom:6px;">
+            <div style="width:22px;height:22px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;">🤖</div>
+            <div style="background:#F5F5F5;padding:8px 10px;border-radius:12px;max-width:80%;font-size:8px;border:1px solid #E0E0E0;">
+              <div style="font-weight:700;color:#4CAF50;font-size:7px;margin-bottom:3px;">Lista Plus IA</div>
+              Claro! Analisei sua lista e encontrei 5 dicas para economizar ate R$ 38...
+              <div style="margin-top:6px;display:flex;gap:4px;">
+                <div style="background:#E8F5E9;padding:3px 6px;border-radius:6px;font-size:7px;color:#2E7D32;border:1px solid #C8E6C9;">+ Adicionar a lista</div>
+                <div style="background:#FFF3E0;padding:3px 6px;border-radius:6px;font-size:7px;color:#E65100;border:1px solid #FFE0B2;">📊 Organizar</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:4px;margin-left:28px;">
+            <div style="font-size:7px;color:#999;">👍 👎 📋 🔄</div>
+          </div>
+        </div>
+        <!-- Floating list button -->
+        <div style="position:absolute;bottom:52px;right:12px;">
+          <div style="background:#4CAF50;color:white;padding:4px 8px;border-radius:12px;font-size:7px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            🛒 3/8
+          </div>
+        </div>
+        <!-- Input -->
+        <div style="padding:8px 12px;border-top:1px solid #E0E0E0;display:flex;gap:6px;align-items:center;">
+          <div style="flex:1;background:#F5F5F5;border-radius:20px;padding:6px 10px;font-size:8px;color:#999;">Pergunte algo...</div>
+          <div style="width:28px;height:28px;background:#4CAF50;border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:white;font-size:10px;">↑</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C) Chat Imersivo</h3>
+      <p>Chat fullscreen. Lista vira FAB flutuante (pill "3/8"). AppBar mostra contador de msgs. Bubbles maiores com acoes inline. Energia IA no AppBar como badge. Maximo foco na conversa.</p>
+      <div class="pros-cons" style="margin-top:0.75rem;">
+        <div class="pros"><h4>Pros</h4><ul><li>Imersivo, foco total no chat</li><li>Lista acessivel via FAB</li><li>Mais espaco util</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Lista oculta por padrao</li><li>FAB pode atrapalhar scroll</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:2rem;">
+  <p class="label">Recomendacao</p>
+  <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:1rem;">
+    <p style="font-size:0.9rem;">Recomendo a <strong>Opcao B (List Hero)</strong> como base, combinando elementos da A (feedback unificado) e C (AppBar mais limpo). A lista como hero card da contexto imediato sem roubar espaco do chat, e a energia da IA no AppBar elimina a duplicacao de headers.</p>
+  </div>
+</div>

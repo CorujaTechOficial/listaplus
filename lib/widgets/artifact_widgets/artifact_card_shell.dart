@@ -94,6 +94,8 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                         fontWeight: FontWeight.bold,
                         color: theme.colorScheme.onSurface,
                       ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     if (widget.artifact.description != null) ...[
                       const SizedBox(height: Spacing.xxs),
@@ -102,6 +104,8 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ],

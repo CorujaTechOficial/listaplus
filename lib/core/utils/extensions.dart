@@ -1,3 +1,5 @@
+import 'package:characters/characters.dart';
+
 extension DateTimeExtensions on DateTime {
   String toISODate() {
     return '${year.toString().padLeft(4, '0')}-'
@@ -11,6 +13,7 @@ extension StringExtensions on String {
     if (isEmpty) {
       return this;
     }
-    return '${this[0].toUpperCase()}${substring(1)}';
+    final chars = characters;
+    return '${chars.first.toUpperCase()}${chars.skip(1)}';
   }
 }

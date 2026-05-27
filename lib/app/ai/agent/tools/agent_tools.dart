@@ -8,13 +8,12 @@ import 'budget_tools.dart';
 import 'share_tools.dart';
 import 'config_tools.dart';
 import 'artifact_tools.dart';
+import 'system_tools.dart';
 
 class AgentTools {
   static const Set<String> premiumToolNames = {
     'get_budget',
     'set_budget',
-    'create_share_code',
-    'import_shared_list',
     'export_backup',
     'import_backup',
     'generate_artifact',
@@ -30,5 +29,6 @@ class AgentTools {
     ...allShareTools,
     ...allConfigTools,
     ...allArtifactTools,
+    ...allSystemTools,
   ];
 }

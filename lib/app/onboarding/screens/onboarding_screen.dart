@@ -52,6 +52,8 @@ class OnboardingScreen extends ConsumerWidget {
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
         ),
         bodyWidget: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Spacing.xl),
@@ -61,6 +63,8 @@ class OnboardingScreen extends ConsumerWidget {
               color: theme.colorScheme.onSurfaceVariant,
             ),
             textAlign: TextAlign.center,
+            maxLines: 5,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         decoration: const PageDecoration(

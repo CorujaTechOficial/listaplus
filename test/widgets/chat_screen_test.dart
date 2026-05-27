@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/ai/screens/chat_screen.dart';
-import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/domain/entities/chat_message.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/services/analytics_service.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
+import '../helpers/fake_ai_service.dart';
 
 Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend, bool isPremium = true}) {
   final revenueCat = FakeRevenueCatService();
@@ -20,6 +22,7 @@ Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend, boo
       firestoreServiceProvider.overrideWithValue(backend),
       revenueCatServiceProvider.overrideWithValue(revenueCat),
       analyticsServiceProvider.overrideWithValue(AnalyticsService()),
+      aiServiceProvider.overrideWithValue(FakeAiService()),
     ],
     child: MaterialApp(
       locale: const Locale('pt', 'BR'),
@@ -60,7 +63,8 @@ void main() {
       await tester.pumpAndSettle();
 
       await tester.enterText(find.byType(TextField), 'Oi Assistente');
-      await tester.tap(find.byIcon(Icons.send));
+      await tester.pump();
+      await tester.tap(find.byKey(const ValueKey('chat_send_button')));
       
       // Need to pump enough to pass through async calls
       await tester.pump(); 

@@ -1,0 +1,562 @@
+{
+  "@@locale": "zu",
+  "appTitle": "Uhlu Lwezinto Okumele Uzithenge",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Izinhlu",
+  "pantry": "Iphanta",
+  "@_Common": "description: Common actions",
+  "cancel": "Khansela",
+  "save": "Londoloza",
+  "create": "Dala",
+  "add": "Engeza",
+  "remove": "Susa",
+  "delete": "Susa",
+  "edit": "Hlela",
+  "copy": "Kopisha",
+  "retry": "Zama futhi",
+  "regenerate": "Khiqa kabusha",
+  "copiedToClipboard": "Kukopishelwe kubuntu",
+  "confirm": "Qinisekisa",
+  "close": "Vala",
+  "import": "Ngenisa",
+  "rename": "Qamba kabusha",
+  "upgrade": "Thuthukisa",
+  "clear": "Sula",
+  "error": "Iphutha: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Iphutha: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Iphutha ekucubungulweni kokuthenga. Zama futhi.",
+  "restoreError": "Iphutha ekubuyiseleni izinto ezithengiwe. Zama futhi.",
+  "loading": "Iyalayisha...",
+  "fieldRequired": "Inkambu edingekayo",
+  "addedFeedback": "Yengeziwe!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} ikhethiwe} other{{count} zikhethiwe}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Okulinganiselwe",
+  "alreadyPurchased": "Sesithengiwe",
+  "clearList": "Sula uhlu",
+  "clearPurchased": "Sula okuthengiwe",
+  "share": "Yabelana",
+  "shareViaCode": "Yabelana ngekhodi",
+  "importViaCode": "Ngenisa ngekhodi",
+  "listAssistant": "Umsizi wohlu",
+  "globalAssistant": "Umsizi jikelele",
+  "becomePremium": "Yiba yi-Premium",
+  "manageSubscription": "Phatha ubulungu",
+  "completePurchase": "Qedela ukuthenga",
+  "confirmClearList": "Susa zonke izinto?",
+  "shareListTitle": "Yabelana ngohlu",
+  "shareThisCode": "Yabelana ngaleli khodi:",
+  "validForLimitedTime": "Isebenza isikhathi esilinganiselwe",
+  "importListTitle": "Ngenisa uhlu",
+  "enterCodeHint": "Faka ikhodi",
+  "confirmArchiveTitle": "Qedela Ukuthenga",
+  "confirmArchiveContent": "Qedela lokhu kuthenga bese ugcina uhlu?",
+  "complete": "Qedela",
+  "listArchived": "Uhlu lugcinwe ngempumelelo!",
+  "listAdded": "{listName} ingeziwe!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Thenga",
+  "unmark": "Susa uphawu",
+  "confirmDeleteItems": "Susa izinto ezi-{count}?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Qinisekisa",
+  "confirmContent": "Susa izinto ezi-{count}?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Gcina uhlu",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Iphanta",
+  "generateShoppingList": "Dala uhlu lokuthenga",
+  "pantryEmpty": "Iphanta engenalutho",
+  "pantryEmptySubtitle": "Engeza imikhiqizo ofuna ukuba nayo ekhaya",
+  "itemsNeedPurchase": "Izinto ezi-{deficit} zidinga ukuthengwa",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Azikho izinto ezidinga ukuthengwa",
+  "newPantryList": "Ukuthenga kwephanta",
+  "newListTitle": "Uhlu olusha lokuthenga",
+  "itemsWillBeAdded": "Izinto ezi-{count} zizongezwa",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Igama lohlu",
+  "listCreated": "Uhlu \"{name}\" ludalwe ngezinto ezi-{count}",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Akukho ukulandelela",
+  "markAsPurchased": "Maka njengokuthengiwe",
+  "editPantryItem": "Hlela {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Inani elifanele",
+  "currentQuantity": "Inani lamanje",
+  "consumed": "Kusetshenzisiwe",
+  "restocked": "{name} igcwalise kabusha yaba ngu-{quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Susa \"{name}\" ephanta?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Hlela {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Izilungiselelo",
+  "language": "Ulimi",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Okujwayelekile kwesistimu",
+  "appearance": "Ukubukeka",
+  "light": "Ukukhanya",
+  "system": "Isistimu",
+  "dark": "Ubumnyama",
+  "themeColor": "Umbala wetimu",
+  "finance": "Izezimali",
+  "monthlyBudgetNav": "Isabelomali senyanga",
+  "budgetSubtitle": "Landelela ukusetshenziswa kwakho kwemali kwanyanga zonke",
+  "data": "Idatha",
+  "backupNav": "Isipele",
+  "backupSubtitle": "Khipha noma ngenisa idatha yakho",
+  "about": "Mayelana",
+  "version": "Inguqulo",
+  "privacy": "Ubumfihlo",
+  "termsOfUse": "Imigomo yokusebenzisa",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Isipele",
+  "backupPremiumDescription": "Isipele nokukhipha idatha kuyisici se-premium",
+  "exportData": "Khipha idatha",
+  "exportDataSubtitle": "Londoloza zonke izinhlu njenge-JSON",
+  "importData": "Ngenisa idatha",
+  "importDataSubtitle": "Buyisela izinhlu ezivela ku-JSON",
+  "importJsonTitle": "Ngenisa i-JSON",
+  "importJsonHint": "Namathisela i-JSON yesipele lapha...",
+  "backupExported": "Isipele sikhiphiwe!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Isabelomali Senyanga",
+  "budgetPremiumLocked": "Isabelomali sonyaka sonke siyi-premium",
+  "budgetUpgradePrompt": "Thuthukisa ukuze uvule",
+  "noBudgetDefined": "Asikho isabelomali esimisiwe",
+  "totalEstimated": "Isamba esilinganiselwe: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Setha isabelomali",
+  "budgetLists": "Izinhlu",
+  "budgetValueLabel": "Inani",
+  "setBudgetTitle": "Isabelomali Senyanga",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Zonke",
+  "filterPending": "Okusalile",
+  "filterPurchased": "Okuthengiwe",
+  "sortName": "Igama",
+  "sortCategory": "Isigaba",
+  "sortDate": "Usuku",
+  "sortManual": "Okwenziwa ngesandla",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Engeza Into",
+  "itemName": "Igama lento",
+  "quantityShort": "Inani",
+  "unit": "Iyunithi",
+  "category": "Isigaba",
+  "estimatedPrice": "Intengo elinganiselwe",
+  "addItemPrice": "Intengo elinganiselwe",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Hlela Into",
+  "quantityFull": "Ubuningi",
+  "editItemPrice": "Intengo elinganiselwe",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Engeza ePhanta",
+  "addToPantryPrompt": "Engeza \"{name}\" ePhanta lakho?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Yebo",
+  "productName": "Igama lomkhiqizo",
+  "idealQty": "Ubuningi obufanele",
+  "currentQty": "Ubuningi bamanje",
+  "trackStock": "Landelela isitoko",
+  "trackStockActive": "Ivela eziphakamisweni zokuthenga",
+  "trackStockInactive": "Ayikhiqizi isiphakamiso sokuthenga",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Dala Uhlu",
+  "renameListDialog": "Qamba Kabusha Uhlu",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Umlando Wohlu",
+  "myLists": "Izinhlu Zami",
+  "viewActive": "Buka Okusebenzayo",
+  "viewHistory": "Buka Umlando",
+  "noArchivedLists": "Azikho izinhlu ezigciniwe",
+  "noActiveLists": "Azikho izinhlu ezisebenzayo",
+  "completedOn": "Kuqedelwe {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Kwabelwana ngaso",
+  "restore": "Buyisela",
+  "removeSharedTooltip": "Susa",
+  "deleteListTitle": "Susa uhlu",
+  "deleteListContent": "Uqinisekile ukuthi ufuna ukususa \"{name}\"? Zonke izinto zizosuswa.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Susa uhlu okwabelwana ngalo",
+  "removeSharedListContent": "Susa \"{name}\" ezinhlelweni zakho? Uhlu lwangempela ngeke luthintwe.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Dala uhlu olusha",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "Umsizi we-AI",
+  "aiAssistantDescription": "Thola iziphakamiso ezihlakaniphile, izindlela zokupheka namathiphu enzelwe wena ngomsizi wethu we-AI.",
+  "generalAssistant": "Umsizi Ojwayelekile",
+  "clearHistory": "Sula Umlando",
+  "clearHistoryConfirm": "Sula yonke imiyalezo kulesi seshini?",
+  "chatHint": "Bhala umyalezo wakho...",
+  "chatError": "Iphutha ekulayisheni ingxoxo: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Ngingakusiza kanjani ngohlu lwakho?",
+  "generalHelp": "Ngingakusiza kanjani ngokuthenga kwakho namuhla?",
+  "chatSubtitle": "Cela iziphakamiso zezinto, izindlela zokupheka noma amathiphu okonga.",
+  "aiError": "Uxolo, kube nephutha ekucubunguleni isicelo sakho. Bheka ukuxhumana kwakho noma uzame futhi kamuva.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Ngena ukuze uvule\nizici ze-premium",
+  "signInGoogle": "Ngena nge-Google",
+  "signInApple": "Ngena nge-Apple",
+  "continueAsGuest": "Qhubeka njengesivakashi",
+  "loginError": "Iphutha lokungena: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Thuthukisa ukuze uvule",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Into isusiwe",
+  "undo": "Hlehlisa",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Uhlu lwakho alunalutho",
+  "emptyListSubtitle": "Engeza izinto ukuze uqale",
+  "noListFoundTitle": "Azikho izinhlu ezitholakele",
+  "noListFoundSubtitle": "Dala uhlu lwakho lokuqala ukuze uqale",
+  "createFirstList": "Dala Uhlu Lokuqala",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Isabelomali sohlu",
+  "budgetAmountLabel": "Inani lesabelomali",
+  "removeBudget": "Susa",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Izinhlu ezingenamkhawulo",
+  "prefSharing": "Yabelana ngezinhlu",
+  "prefFullHistory": "Umlando ogcwele",
+  "prefExportData": "Khipha idatha",
+  "prefCustomThemes": "Izitimu ezenziwe ngokwezifiso",
+  "prefMonthlyBudget": "Isabelomali sonyaka sonke",
+  "prefAIAssistant": "Umsizi we-AI wakho siqu",
+  "prefUnlimitedPantry": "Iphanta engenamkhawulo",
+  "prefInteractiveArtifacts": "Ama-AI Artifact asebenzisanayo",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Okuluhlaza",
+  "themeBlue": "Okuluhlaza okwesibhakabhaka",
+  "themePurple": "Okunsomi",
+  "themeRed": "Okubomvu",
+  "themeOrange": "Okusawolintshi",
+  "themePink": "Okumpompo",
+  "themeIndigo": "I-indigo",
+  "themeAmber": "I-amber",
+  "themeTeal": "I-teal",
+  "themeBrown": "Okunsundu",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Izithelo",
+  "catCleaning": "Ukuhlanza",
+  "catBeverages": "Iziphuzo",
+  "catBakery": "Ibhikawozi",
+  "catOthers": "Okunye",
+  "@_Unit": "description: Unit",
+  "unitPack": "iphakethe",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Uhlu Lokuthenga",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Isabelomali Senyanga",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Susa uhlu",
+  "pantryItemRemoved": "Into isusiwe",
+  "deficitItems": "{deficit,plural, one{Into eyi-{deficit} idinga ukuthengwa} other{Izinto ezi-{deficit} zidinga ukuthengwa}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Isamba senkalishi",
+  "restockLabel": "Gcwalisa kabusha",
+  "advancedFeatures": "Izici ezithuthukile",
+  "selectAll": "Khetha konke",
+  "deselectAll": "Susa ukukhetha konke",
+  "monthlyBudgetAppBar": "Isabelomali Senyanga",
+  "budgetEditTitle": "Isabelomali Senyanga",
+  "budgetDashboardTitle": "Ideshibhodi",
+  "selectListForDashboard": "Khetha uhlu ukuze ubuke ideshibhodi.",
+  "spendingAnalysis": "Ukuhlaziywa Kwemali Esetshenzisiwe",
+  "noItemsToAnalyze": "Azikho izinto ohlwini okumele zihlaziywe.",
+  "markItemsToSeeAnalysis": "Maka izinto njengezithengiwe ukuze ubone ukuhlaziywa.",
+  "totalSpending": "Imali Esetshenzisiwe Isiyonke",
+  "spendingByCategory": "Imali Esetshenzisiwe Ngesigaba",
+  "achievements": "Impumelelo",
+  "exportPdfExcel": "Khipha i-PDF/Excel",
+  "exportPdf": "Khipha njenge-PDF",
+  "exportExcel": "Khipha njenge-Excel",
+  "organizingAi": "UKUHLELA NGE-AI...",
+  "yesLabel": "Yebo",
+  "noLabel": "Cha",
+  "shareListText": "Uhlu Lwami Lokuthenga",
+  "emptyListAddItems": "Uhlu lwakho alunalutho! Engeza izinto kuqala. ℹ️",
+  "listOrganizedMagic": "Uhlu luhlelwe ngokuyisimanga ngezigaba! ✨",
+  "shoppingMode": "Imodi Yokuthenga",
+  "smartOrganization": "Ukuhlela Okuhlakaniphile",
+  "savings": "Ukonga",
+  "shoppingModeHeader": "IMODI YOKUTHENGA",
+  "shareAsText": "Thumela izinto njengombhalo ohleliwe",
+  "shareRealtime": "Ukuvumelanisa ngesikhathi sangempela nabanye abantu",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Iresiphi esheshayo",
+  "quickRecipePrompt": "Phakamisa izindlela zokupheka ngezinto ezisohlwini lwami.",
+  "economyTips": "Amathiphu okonga",
+  "economyTipsPrompt": "Ngingayonga kanjani imali kulokhu kuthenga?",
+  "organizeAisles": "Hlela ngemihlandela",
+  "organizeAislesPrompt": "Hlela ngemihlandela yemakethe.",
+  "recipeSuggestion": "Isiphakamiso seresiphi",
+  "aiCreditsRemaining": "Kusele amakhredithi angu-{remaining}",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Engeza konke ohlwini",
+  "organizeByAisles": "Hlela ngemihlandela",
+  "voiceTranscriptionTooltip": "Ukuthayipha ngezwi (Mahhala)",
+  "aiVoiceCommandTooltip": "Umyalo Wezwi we-AI (Premium)",
+  "voiceCommandTitle": "Umyalo Wezwi we-AI",
+  "voiceCommandContent": "Khuluma ngokwemvelo ukuze uphethe uhlu lwakho!\n\nIzibonelo:\n• 'Engeza isinkwa, ushizi, ne-ham'\n• 'Susa i-laundry detergent'\n• 'Shintsha itimu ibe luhlaza okwesibhakabhaka'\n\nLesi yisici esikhethekile se-Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Buka Amapulani",
+  "itemsAddedSuccess": "Izinto zingeziwe ohlwini ngempumelelo!",
+  "viewList": "Buka uhlu",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Thumela Impendulo",
+  "feedbackPrompt": "Yini ongathanda ukuyabelana ngayo?",
+  "feedbackTypeBug": "Bika Isiphazamisi",
+  "feedbackTypeBugHint": "Okuthile akusebenzi",
+  "feedbackTypeSuggestion": "Isiphakamiso",
+  "feedbackTypeSuggestionHint": "Umqondo wokuthuthukisa uhlelo",
+  "feedbackTypeTranslation": "Inkinga Yokuhumusha",
+  "feedbackTypeTranslationHint": "Ukuhumusha okungalungile noma okungazwakali",
+  "feedbackTypeFeature": "Isicelo Sesici",
+  "feedbackTypeFeatureHint": "Isici ongathanda ukusibona",
+  "feedbackTypeOther": "Okunye",
+  "feedbackTypeOtherHint": "Olunye uhlobo lwempendulo",
+  "feedbackHint": "Chaza impendulo yakho ngemininingwane...",
+  "feedbackSend": "Thumela Impendulo",
+  "feedbackSending": "Iyathumela...",
+  "feedbackThankYou": "Ngiyabonga!",
+  "feedbackThankYouMessage": "Impendulo yakho isitholakele futhi isisiza ukuthuthukisa i-Lista Plus yawo wonke umuntu.",
+  "feedbackBack": "Emuva",
+  "feedbackError": "Iphutha lokuthumela: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Zama futhi",
+  "feedbackSettingsTitle": "Thumela Impendulo",
+  "feedbackSettingsSubtitle": "Bika iziphazamisi, phakamisa izinto zokwenza ngcono, noma ulungise ukuhumusha",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

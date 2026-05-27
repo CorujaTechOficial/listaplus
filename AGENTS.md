@@ -1,148 +1,147 @@
-# Lista Plus — `br.com.curujatech.listaplus` (pt-BR, Android)
+# Lista Plus — `br.com.curujatech.listaplus` (Android)
 
 ## Architecture
 
-- **State**: Riverpod w/ codegen (`@riverpod` → `*.g.dart`). After editing a `@riverpod` class, run:
+- **State**: Riverpod 3.x w/ codegen (`@riverpod` → `*.g.dart`). Run after editing:
   `dart run build_runner build --delete-conflicting-outputs`
-- **Backend**: Firebase Firestore via `FirestoreService implements StorageBackend`. Anonymous auth in `main.dart`.
-  Paths: `users/{uid}/lists/{listId}`, `users/{uid}/items/{itemId}` (filtered by `shoppingListId`).
-  User data (`themeMode`, `isPremium`, `currentListId`) in `users/{uid}` doc. `sharedLists/{code}` for share-by-code.
-- **Monetization**: RevenueCat via `purchases_flutter`. UID linked via `Purchases.logIn(uid)` in `main.dart`.
-  Entitlement: `lista_plus_pro`, offering: `default_play` with 3 packages:
-  `$rc_monthly` R$14.90, `$rc_annual` R$99.90, `$rc_lifetime` R$299.90).
-- **Premium gating**: `premiumProvider` — max 3 lists free, unlimited premium. Premium also unlocks custom themes
-  (7/10 premium), monthly budget, backup export, share by code.
-- **AI Chat**: Chat com tool calling via `lib/agent/`. Sessões persistidas no Firestore (`chat_messages` subcollection).
-- **Agent de Controle Total**: O chat de IA é um **agente com tool calling** (function calling).
-  Ele pode executar ações diretamente no app via `lib/agent/`:
-  - `tool.dart`: Definições de 34+ ferramentas (listas, itens, despensa, orçamento, compartilhar, config, backup)
-  - `tool_executor.dart`: Bridge entre AI e providers — executa cada tool contra o Riverpod real
-  - `chat_provider.dart`: Loop agente (`_agentLoop`) — chama AI → executa tools → repete até resposta final
-  - `AiService.getChatCompletionWithTools()`: Método que aceita `tools` no request e retorna `tool_calls`
-  - `OpenCodeGoService` implementa suporte a tools (DeepSeek-v4-flash com function calling nativo)
-- **RevenueCat**: API key via `--dart-define=REVENUECAT_API_KEY=xxx` (default fallback `goog_lUoZUpDVyhVroFRzwgArMnFxIQv`).
-- **Observability**: Sentry + Firebase Crashlytics (dual). `SentryFlutter.init` wraps `appRunner`;
-  `FlutterError.onError` + `PlatformDispatcher.onError` send to both. Sentry: `tracesSampleRate: 0.2`,
-  `enableLogs: true`, `sendDefaultPii: false`.
-- **Analytics**: Firebase Analytics via `AnalyticsService`. Events: `paywall_viewed`, `paywall_purchase_completed`,
-  `paywall_restore_completed`, `paywall_dismissed`, `customer_center_opened`, `upgrade_tapped`,
-  `premium_feature_accessed`. Override with `AnalyticsService()` (no Firebase) in tests.
-- **Design**: Material Design 3, green `colorSchemeSeed`. HomeScreen has `PopupMenuButton` (no drawer).
-  `PopupMenuButton` must use `icon: const Icon(Icons.more_vert)` for macOS test compat.
-- **Models**: `ShoppingList` (budget field), `ShoppingItem`, `Category` (Frutas/Limpeza/Bebidas/Padaria/Outros),
-  `Unit` (un/kg/g/L/mL/pacote). `ShoppingItem.unit` defaults to `Unit.un`.
-- **Privacy & Terms**: Firebase Hosting at `https://listaplus-6547b.web.app/privacidade.html` e `termos.html`.
+- **Backend**: Firebase Firestore via `FirestoreService implements StorageBackend`.
+  Paths: `users/{uid}/lists/{listId}`, `users/{uid}/items/{itemId}` (filtered by `shoppingListId`),
+  `users/{uid}`, `sharedLists/{code}`, plus `pantry`, `categories`, `recipes`, `meal_plans` collections.
+- **Auth**: Anonymous + Google Sign-In via Firebase Auth. RevenueCat UID synced reactively in `_setupAuthSync()` (`main.dart`). `AuthService.signOut()` re-logs-in anonymously — do NOT also call `signInAnonymously()` from the auth stream listener (duplicate race).
+- **Monetization**: RevenueCat (`purchases_flutter`). UID linked via `Purchases.logIn(uid)`.
+  Entitlement: `lista_plus_pro`. Offering: `default_play` with 3 packages:
+  `$rc_monthly` R$14.90, `$rc_annual` R$99.90, `$rc_lifetime` R$299.90.
+  API key via `--dart-define=REVENUECAT_API_KEY=xxx`.
+- **Premium gating**: `premiumProvider` (RevenueCat-only, no Firestore credit check). Max 3 lists free.
+- **AI Agent**: Chat with tool calling (45+ tools). `lib/app/ai/agent/tools/tool_core.dart`
+  defines tools, `lib/app/ai/agent/executors/tool_executor.dart` runs them against providers.
+  `AiService.getChatCompletionWithTools()` returns `tool_calls`. `OpenCodeGoService` implements DeepSeek-v4-flash
+  with streaming via SSE, using `AiCancellationToken` that closes the HTTP client (`client.close()`) on cancel.
+- **Observability**: Sentry + Firebase Crashlytics (dual).
+- **Analytics**: Firebase Analytics via `AnalyticsService()`. Override with `AnalyticsService()` (no Firebase) in tests.
+- **Design**: Material Design 3, green `colorSchemeSeed`. `PopupMenuButton` must use `icon: const Icon(Icons.more_vert)`.
+
+## Code Layout
+
+- `lib/app/*/screens/` — feature screens
+- `lib/app/*/providers/` — Riverpod providers
+- `lib/app/*/widgets/` — feature widgets
+- `lib/models/` — 14 model files (canonical source for all shared types)
+- `lib/domain/entities/` — 7 real entity files + 6 re-exports
+- `lib/services/` — `FirestoreService`, `AuthService`, `RevenueCatService`, `OpenCodeGoService`
+- `lib/core/providers/` — cross-cutting providers (firebase, auth, monetization, analytics, preferences)
+- `lib/screens/home_screen.dart` — the one remaining original screen, **not** a re-export
+- `lib/widgets/` — only `artifact_widgets/` subdirectory remains
+- `lib/providers/` — **empty**; all migrated to `lib/app/*/providers/`
+
+## Localization (l10n)
+
+`lib/l10n/` has 123 ARB files covering 86 locales. Template: `app_en.arb` (289 keys).
+All locales have **genuine translations** (zero English placeholders). 6 English regional variants exist for spelling conventions.
+- Run after editing ARB: `flutter gen-l10n` (generates to `lib/generated/l10n/`)
+- Config: `l10n.yaml` (arb-dir, output-dir, etc.)
+- `pubspec.yaml` has `generate: true` for Flutter l10n
+- `AppLocalizations.of(context)!` used throughout
+- Always preserve ICU plural syntax and `{placeholder}` variables in translations
+
+### 🔴 CRITICAL: Never hardcode display strings
+
+**Every** user-facing string MUST go through `AppLocalizations.of(context)!`.
+- NEVER use `const Text('...')` or hardcoded strings in widgets/screens
+- NEVER use `'...'` as labels, hints, subtitles, button text, dialog messages, error messages, or snackbars
+- All new text MUST be added to `lib/l10n/app_en.arb` first, then `flutter gen-l10n`
+- Even "temporary" or "obvious" text counts — this is a 86-locale app
+- Exception: brand name "Lista Plus", icons, and purely decorative elements
+
+Rule of thumb: if a user can see it, it goes in the ARB.
+
+### Play Console Auto-Translate
+
+The app ships with translations for **all 86 locales** via ARBs. If you enable Play Console "App translations" (Grow > Translations), it will attempt to auto-translate strings already present in the AAB, causing conflicts. **Recommendation**: disable Play Console auto-translate for app strings (ARB is the sole source). If enabled, expect errors for locales where ARBs already provide translations.
 
 ## Commands
 
 ```sh
-flutter analyze --fatal-infos          # zero-tolerance, must pass clean
-flutter test --coverage                 # 100% mandatory on lib/ (source only)
+flutter analyze --fatal-infos        # CI uses Flutter 3.29.3 (local ~3.44, ~289 infos)
+flutter test                          # 440+ test cases, 0 tolerated failures
 dart run build_runner build --delete-conflicting-outputs   # after @riverpod edits
 dart run build_runner watch --delete-conflicting-outputs   # watch mode
-SONAR_TOKEN=squ_xxx ./scripts/quality-check.sh  # full pipeline
-python3 scripts/generate_icons.py       # generate app icons
-python3 create_subscriptions.py         # create RevenueCat subscriptions
-python3 update_prices.py               # update subscription prices
-python3 upload_aab.py                  # upload to Google Play internal track
+flutter gen-l10n                      # after editing ARB files in lib/l10n/
+bash .githooks/setup.sh               # enable pre-commit hook (flutter analyze)
+flutter build appbundle --no-tree-shake-icons   # appbundle (category Icons are non-const in category_data.dart)
 ```
 
-`quality-check.sh` order: analyze → firestore:validate → test/coverage → build web → sonar-scanner → quality gate.
+## Play Store Deployment
 
-### Build & Android
+- **Service account**: `/Users/absondutragalvao/play-console-sa.json` (or `Downloads/listaplus-6547b-e019add29823.json`)
+- **Scripts** in project root:
+  - `upload_aab.py` — upload AAB to internal track
+  - `update_store_listings.py` — bulk-update store listing translations via API
+  - `update_full_descriptions.py` — set full descriptions per locale
+  - `create_subscriptions.py` — create Play Store subscription products
+  - `update_prices.py` — update Play Store subscription prices
+- **Assets**: `store_assets/` (icons, feature graphic), generated by `scripts/generate_icons.py`
+- **Version**: `pubspec.yaml` → `version: 1.0.56+56`; `android/local.properties` mirrors
 
-```sh
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.19/libexec/openjdk.jdk/Contents/Home
-flutter build appbundle --release
-# AAB output: build/app/outputs/bundle/release/app-release.aab
-```
+## opencode.json MCPs
 
-- NDK 27.0.12077973, Kotlin 2.1.20, AGP 8.7.0, compileSdk=36, minSdk=24.
-- `MainActivity.kt` must be at `android/app/src/main/kotlin/br/com/curujatech/listaplus/MainActivity.kt`
-  with `package br.com.curujatech.listaplus`.
-- Keystore: `~/upload-keystore.jks` (alias: `upload`), signing config in `android/key.properties`.
-- Version + build number: `version: x.y.z+b` in `pubspec.yaml`. Both incremented on each release.
-- Google Play: Track `internal`, service account at `~/play-console-sa.json`.
+- **SonarQube**: local MCP via `node .opencode/mcp/sonarqube/index.js`
+- **RevenueCat**: remote MCP at `https://mcp.revenuecat.ai/mcp`
+- **Firebase**: local MCP via `npx firebase-tools mcp`
 
-### Pre-commit Hook
+## CI (`.github/workflows/ci.yml`)
 
-```sh
-bash .githooks/setup.sh   # git config core.hooksPath .githooks
-```
-Runs `flutter analyze --fatal-infos` before each commit.
-
-## CI (`.github/workflows/`)
-
-- `ci.yml`: 4 jobs — `analyze` (flutter analyze), `test` (flutter test --coverage + awk 100% check), `build-web` (flutter build web), `build-android` (flutter build appbundle --debug). Flutter pinado em `3.29.3`.
-- `sonar.yml`: SonarQube scan on push/PR to main. Exports `flutter analyze` issues via `scripts/flutter-analyze-to-sonar.sh`. Versão extraída dinamicamente do `pubspec.yaml`.
+- Flutter pinned at `3.29.3`.
+- 4 jobs: `analyze` (flutter analyze --fatal-infos), `test` (coverage + awk 100% check on lib/ source),
+  `build-web`, `build-android` (debug appbundle).
+- Coverage excludes `.g.dart`, `main.dart`, `*_provider.dart`, `revenuecat_service_impl.dart`,
+  `analytics_service.dart`, `PaywallScreen`, `AuthScreen`, `AuthService`, `FirestoreService` constructor fallbacks.
 
 ## custom_lints Package (`custom_lints/`)
 
-3 custom lint rules (enabled in `analysis_options.yaml`):
-- `avoid_raw_firebase_outside_service` — ERROR if `FirebaseFirestore.instance` or `FirebaseAuth.instance` used outside `/services/`
-- `prefer_abstract_service_type` — ERROR if `Provider<XxxImpl>` used instead of abstract type
-- `prefer_correct_popup_menu_icon` — ERROR if `PopupMenuButton` doesn't use `Icons.more_vert`
+3 custom lint rules (in `analysis_options.yaml` via `custom_lint`):
+- `avoid_raw_firebase_outside_service` — ERROR if FirebaseFirestore/FirebaseAuth.instance outside `/services/`
+- `prefer_abstract_service_type` — ERROR if `Provider<XxxImpl>` instead of abstract type
+- `prefer_correct_popup_menu_icon` — ERROR if `PopupMenuButton` lacks `Icons.more_vert`
 
-Must compile clean: `cd custom_lints && dart analyze lib/` → "No issues found!"
+Must compile: `cd custom_lints && dart analyze lib/` → "No issues found!"
 
-## Testing
+## Lint Rules (Strict)
 
-- **Provider tests**: `ProviderContainer` + Fakes (`FakeStorageBackend`, `FakeRevenueCatService`).
-- **Widget tests**: `wrapWithProviders(child, backend:, revenueCat:)` helper.
-  - **Both** `test/helpers/test_widgets.dart` and `test/widgets/widgets_test.dart` have their own `wrapWithProviders`.
-    When adding a new provider override, update **both** files.
-  - Both override `revenueCatServiceProvider` (FakeRevenueCatService) and `analyticsServiceProvider` (AnalyticsService()) by default.
-- **FirestoreService tests**: `FakeFirebaseFirestore` + `MockFirebaseAuth` (via `fake_cloud_firestore`, `firebase_auth_mocks`).
-- **PaywallScreen tests**: Minimal (app bar + navigation only). `PaywallView` from RevenueCatUI doesn't render in test env.
+`strict-casts`, `strict-inference`, `strict-raw-types` — explicit types everywhere.
+`always_put_control_body_on_new_line` — `if (x) return y;` fails.
+`prefer_int_literals` false positive with `fold(0.0, ...)` — suppress with `// ignore: prefer_int_literals`.
+`*.g.dart` excluded from analysis, coverage, and SonarQube.
+
+## Test Gotchas
+
+- **Riverpod 3.x auto-dispose race**: `container.read(provider.future)` creates a temp listener that
+  auto-disposes on return before first async emission completes → `Bad state: disposed during loading`.
+  **Fix**: `container.listen(provider, (_, __) {})` before `await container.read(provider.future)`.
+  Code paths that read async providers (agent loop, etc.) need this for all providers consumed.
+- **FakeFirebaseFirestore 4.x**: `settings=` setter removed. `FirestoreService` constructor
+  wraps `_db.settings = ...` in try-catch so tests pass without it.
+- **Widget test helpers**: Both `test/helpers/test_widgets.dart` and `test/widgets/widgets_test.dart`
+  define `wrapWithProviders()`. Update BOTH when adding provider overrides.
+  Both override `revenueCatServiceProvider` (FakeRevenueCatService) and `analyticsServiceProvider`
+  (AnalyticsService()) by default.
+- **`find.byIcon(Icons.add)`** returns 2 (FAB + tile "+") → use
+  `find.descendant(of: find.byType(ShoppingItemTile), matching: find.byIcon(Icons.add))`.
+- **`ShoppingItemTile`**: checkbox = selection (selection mode) or purchase toggle (normal mode). Has `Dismissible`.
+- **`premiumProvider`** cache: may return stale after entitlement change. Call `container.invalidate(premiumProvider)` then re-read.
+- **Widget send button**: Uses `ValueKey('chat_send_button')`, not `find.byIcon(Icons.send)`.
 - **Integration tests** (`integration_test/app_test.dart`) are **BROKEN** — skip them.
-- **Coverage**: 100% mandatory on source-only (`.g.dart` excluded). `// coverage:ignore-start/end` markers cannot have trailing text.
-- **Coverage-excluded** (via markers): `main.dart`, `*_provider.dart` (for firestore, revenuecat, analytics services),
-  `revenuecat_service_impl.dart`, `analytics_service.dart`, `PaywallScreen`, `AuthScreen`, `AuthService`,
-  `FirestoreService` constructor fallbacks.
+- **PaywallScreen**: Minimal-only in tests; `PaywallView` from RevenueCatUI doesn't render in test env.
+- **ReorderableListView.onReorder**: `newIndex -= 1` when `oldIndex < newIndex`.
+- **`context.mounted`** guard necessary after `ref.invalidate` + `Navigator.pop` in PopupMenuButton callbacks.
 
-## Lint Gotchas
+## Known Bugs & Gotchas
 
-- `strict-casts`, `strict-inference`, `strict-raw-types` — explicit types everywhere.
-- `always_put_control_body_on_new_line` — `if (x) return y;` fails.
-- `prefer_int_literals` false positive with `fold(0.0, ...)` — suppress with `// ignore: prefer_int_literals`.
-- `*.g.dart` excluded from analysis, coverage, and SonarQube.
-- `find.byIcon(Icons.add)` returns 2 (FAB + tile "+") — use `find.descendant(of: find.byType(ShoppingItemTile), matching: find.byIcon(Icons.add))` in tile tests.
-- `ShoppingItemTile`: checkbox = selection (in selection mode) or purchase toggle (normal mode). Has `Dismissible` for swipe-to-delete and swipe-to-toggle.
-- `container.read(premiumProvider.future)` may return stale after entitlement change — `container.invalidate(premiumProvider)` then re-read.
-- `ReorderableListView.onReorder`: `newIndex -= 1` when `oldIndex < newIndex`. Provider's `reorderItem` mirrors this.
-- `context.mounted` guard necessary after `ref.invalidate` + `Navigator.pop` in PopupMenuButton callbacks.
-
-## Legacy / Dead Code
-
-- `shared_preferences` still in `pubspec.yaml` but only used by `widgets_test.dart` (`SharedPreferences.setMockInitialValues`).
-- `StorageService` (old SharedPreferences backend) already removed.
-
-## Feature Locations (Fase 2 Refactoring)
-
-Screens e widgets também foram migrados para `app/` via Strangler Fig:
-- `lib/app/ai/screens/` — `ai_home_screen.dart`, `chat_screen.dart`, `chat_history_screen.dart`
-- `lib/app/ai/widgets/` — `ai_chat_panel.dart`
-- `lib/app/lists/screens/` — `list_screen_body.dart` (no topo de `app/lists/`)
-- `lib/app/lists/widgets/` — 8 widgets (shopping_item_tile, quick_add_bar, filter_bar, etc.)
-- `lib/app/pantry/screens/` — `pantry_screen.dart`
-- `lib/app/pantry/widgets/` — `add_pantry_item_dialog.dart`
-- `lib/app/recipes/screens/` — `recipes_screen.dart`
-- `lib/app/recipes/widgets/` — `add_recipe_dialog.dart`
-- `lib/app/meal_planner/screens/` — `meal_planner_screen.dart`
-- `lib/app/auth/screens/` — `auth_screen.dart`
-- `lib/app/onboarding/screens/` — `onboarding_screen.dart`
-- `lib/app/settings/screens/` — 7 screens (settings, backup, budget_dashboard, theme_selection, user_profile, manage_categories, achievements)
-- `lib/screens/` — todos os 17 arquivos são re-exports — não editar conteúdo aqui
-- `lib/widgets/` — todos os 11 arquivos são re-exports — não editar conteúdo aqui
-
-## Provider Locations (Fase 2 Refactoring)
-
-Providers foram consolidados em diretórios feature-based via Strangler Fig:
-- `lib/app/lists/providers/` — `list_providers.dart`, `item_providers.dart`, `categories_provider.dart`, `share_provider.dart`, `item_history_provider.dart`
-- `lib/app/ai/providers/` — `chat_providers.dart`, `ai_config_providers.dart`, `artifact_state_provider.dart`
-- `lib/app/pantry/providers/` — `pantry_providers.dart`
-- `lib/app/recipes/providers/` — `recipes_providers.dart`
-- `lib/app/meal_planner/providers/` — `meal_planner_providers.dart`
-- `lib/app/settings/providers/` — `settings_providers.dart`, `backup_providers.dart`
-- `lib/core/providers/` — `firebase_providers.dart`, `monetization_providers.dart`, `analytics_provider.dart`, `auth_provider.dart`, `preferences_providers.dart`, `misc_providers.dart`
-- `lib/providers/` — todos os 45 arquivos são re-exports (export `package:shopping_list/...`) — não editar conteúdo aqui
+- **`--no-tree-shake-icons`**: category icons use dynamic `IconData(iconCodepoint)` in `category_data.dart:33`. Build with `--no-tree-shake-icons` or refactor to constants.
+- **Chat provider imports**: `chat_provider.dart` accesses `premiumProvider`, `authProvider`, `userStatsProvider`, `packageInfoProvider`. When these providers move, update the imports in `chat_provider.dart` accordingly.
+- **undoMessageActions partial Firestore**: the undo loop reverses step actions in reverse order. If a step fails mid-loop, earlier steps already committed to Firestore — a best-effort reverse of applied undos is attempted, but total atomicity requires Firestore batch operations.
+- **QuickActions**: `action_add` shortcut was removed because no navigation infrastructure exists to show dialogs outside the widget tree. Only `action_pantry` (switches to tab 1) is active.
+- **switch fall-through**: `executeAction` in `chat_provider.dart` must have explicit `break` between `case 'add_items'` and `case 'organize'` or Dart will consider it fall-through.
+- **agent loop cancel**: `_agentLoop` checks `_isCancelled` between rounds and tool executions. Without this, canceled requests could continue phantom rounds.
+- **clearHistory + active task**: `clearHistory()` must call `cancelRequest()` first to abort any in-flight AI request before clearing state.
+- **streaming buffer**: after the SSE stream loop ends, flush remaining tokens to `chatStreamingTextProvider` before setting it to null to avoid visual jumps.

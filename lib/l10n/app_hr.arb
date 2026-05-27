@@ -1,0 +1,536 @@
+{
+  "@@locale": "hr",
+  "appTitle": "Popis za kupovinu",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Popisi",
+  "pantry": "Ostava",
+  "cancel": "Odustani",
+  "save": "Spremi",
+  "create": "Stvori",
+  "add": "Dodaj",
+  "remove": "Ukloni",
+  "delete": "Izbriši",
+  "edit": "Uredi",
+  "copy": "Kopiraj",
+  "retry": "Pokušaj ponovno",
+  "regenerate": "Regeneriraj",
+  "copiedToClipboard": "Kopirano u međuspremnik",
+  "confirm": "Potvrdi",
+  "close": "Zatvori",
+  "import": "Uvezi",
+  "rename": "Preimenuj",
+  "upgrade": "Nadogradi",
+  "clear": "Očisti",
+  "error": "Greška: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Greška: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Greška u obradi kupnje. Pokušaj ponovno.",
+  "restoreError": "Greška u obnavljanju kupnji. Pokušaj ponovno.",
+  "loading": "Učitavanje...",
+  "fieldRequired": "Obavezno polje",
+  "addedFeedback": "Dodano!",
+  "selectedItems": "{count,plural, one{Odabrano {count}} few{Odabrano {count}} other{Odabrano {count}}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Procijenjeno",
+  "alreadyPurchased": "Već kupljeno",
+  "clearList": "Očisti popis",
+  "clearPurchased": "Očisti kupljeno",
+  "share": "Podijeli",
+  "shareViaCode": "Podijeli putem koda",
+  "importViaCode": "Uvezi putem koda",
+  "listAssistant": "Pomoćnik za popis",
+  "globalAssistant": "Globalni pomoćnik",
+  "becomePremium": "Postani Premium",
+  "manageSubscription": "Upravljanje pretplatom",
+  "completePurchase": "Dovrši kupnju",
+  "confirmClearList": "Ukloniti sve stavke?",
+  "shareListTitle": "Podijeli popis",
+  "shareThisCode": "Podijeli ovaj kod:",
+  "validForLimitedTime": "Vrijedi ograničeno vrijeme",
+  "importListTitle": "Uvezi popis",
+  "enterCodeHint": "Unesi kod",
+  "confirmArchiveTitle": "Dovrši kupnju",
+  "confirmArchiveContent": "Dovršiti ovu kupnju i arhivirati popis?",
+  "complete": "Dovrši",
+  "listArchived": "Popis uspješno arhiviran!",
+  "listAdded": "{listName} dodan!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Kupi",
+  "unmark": "Odznači",
+  "confirmDeleteItems": "Ukloniti {count} stavku(i)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Potvrdi",
+  "confirmContent": "Ukloniti {count} stavku(i)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Arhiviraj popis",
+  "pantryAppBar": "Ostava",
+  "generateShoppingList": "Generiraj popis za kupnju",
+  "pantryEmpty": "Prazna ostava",
+  "pantryEmptySubtitle": "Dodaj proizvode koje želiš imati kod kuće",
+  "itemsNeedPurchase": "{deficit} stavku(i) treba kupiti",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Nema stavki za kupnju",
+  "newPantryList": "Kupnja za ostavu",
+  "newListTitle": "Novi popis za kupnju",
+  "itemsWillBeAdded": "{count} stavku(i) će biti dodano",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Naziv popisa",
+  "listCreated": "Popis \"{name}\" stvoren s {count} stavki",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Bez praćenja",
+  "markAsPurchased": "Označi kao kupljeno",
+  "editPantryItem": "Uredi {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Idealna količina",
+  "currentQuantity": "Trenutna količina",
+  "consumed": "Potrošeno",
+  "restocked": "{name} nadopunjeno na {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Ukloniti \"{name}\" iz ostave?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Uredi {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsAppBar": "Postavke",
+  "language": "Jezik",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Zadano sustava",
+  "appearance": "Izgled",
+  "light": "Svijetlo",
+  "system": "Sustav",
+  "dark": "Tamno",
+  "themeColor": "Boja teme",
+  "finance": "Financije",
+  "monthlyBudgetNav": "Mjesečni proračun",
+  "budgetSubtitle": "Prati svoju mjesečnu potrošnju",
+  "data": "Podaci",
+  "backupNav": "Sigurnosna kopija",
+  "backupSubtitle": "Izvezi ili uvezi svoje podatke",
+  "about": "O nama",
+  "version": "Verzija",
+  "privacy": "Privatnost",
+  "termsOfUse": "Uvjeti korištenja",
+  "backupTitle": "Sigurnosna kopija",
+  "backupPremiumDescription": "Sigurnosna kopija i izvoz su Premium značajka",
+  "exportData": "Izvezi podatke",
+  "exportDataSubtitle": "Spremi sve popise kao JSON",
+  "importData": "Uvezi podatke",
+  "importDataSubtitle": "Vrati popise iz JSON-a",
+  "importJsonTitle": "Uvezi JSON",
+  "importJsonHint": "Zalijepi JSON sigurnosne kopije ovdje...",
+  "backupExported": "Sigurnosna kopija izvezena!",
+  "budgetAppBar": "Mjesečni proračun",
+  "budgetPremiumLocked": "Globalni mjesečni proračun je Premium",
+  "budgetUpgradePrompt": "Nadogradi za otključavanje",
+  "noBudgetDefined": "Nije postavljen proračun",
+  "totalEstimated": "Ukupno procijenjeno: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Postavi proračun",
+  "budgetLists": "Popisi",
+  "budgetValueLabel": "Iznos",
+  "setBudgetTitle": "Mjesečni proračun",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "filterAll": "Sve",
+  "filterPending": "Na čekanju",
+  "filterPurchased": "Kupljeno",
+  "sortName": "Naziv",
+  "sortCategory": "Kategorija",
+  "sortDate": "Datum",
+  "sortManual": "Ručno",
+  "addItem": "Dodaj stavku",
+  "itemName": "Naziv stavke",
+  "quantityShort": "Kol",
+  "unit": "Jedinica",
+  "category": "Kategorija",
+  "estimatedPrice": "Procijenjena cijena",
+  "addItemPrice": "Procijenjena cijena",
+  "editItem": "Uredi stavku",
+  "quantityFull": "Količina",
+  "editItemPrice": "Procijenjena cijena",
+  "addToPantry": "Dodaj u ostavu",
+  "addToPantryPrompt": "Dodati \"{name}\" u tvoju ostavu?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Da",
+  "productName": "Naziv proizvoda",
+  "idealQty": "Idealna kol",
+  "currentQty": "Trenutna kol",
+  "trackStock": "Prati zalihe",
+  "trackStockActive": "Pojavljuje se u prijedlozima za kupnju",
+  "trackStockInactive": "Ne generira prijedlog za kupnju",
+  "createListDialog": "Stvori popis",
+  "renameListDialog": "Preimenuj popis",
+  "listHistory": "Povijest popisa",
+  "myLists": "Moji popisi",
+  "viewActive": "Pregledaj aktivne",
+  "viewHistory": "Pregledaj povijest",
+  "noArchivedLists": "Nema arhiviranih popisa",
+  "noActiveLists": "Nema aktivnih popisa",
+  "completedOn": "Dovršeno {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Podijeljeno",
+  "restore": "Vrati",
+  "removeSharedTooltip": "Ukloni",
+  "deleteListTitle": "Izbriši popis",
+  "deleteListContent": "Jesi li siguran da želiš izbrisati \"{name}\"? Sve stavke će biti uklonjene.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Ukloni podijeljeni popis",
+  "removeSharedListContent": "Ukloniti \"{name}\" s tvojih popisa? Originalni popis neće biti pogođen.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Stvori novi popis",
+  "aiAssistant": "AI pomoćnik",
+  "aiAssistantDescription": "Dobij pametne prijedloge, recepte i personalizirane savjete s našim AI pomoćnikom.",
+  "generalAssistant": "Opći pomoćnik",
+  "clearHistory": "Očisti povijest",
+  "clearHistoryConfirm": "Izbrisati sve poruke u ovoj sesiji?",
+  "chatHint": "Upiši svoju poruku...",
+  "chatError": "Greška u učitavanju chata: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Kako mogu pomoći s tvojim popisom?",
+  "generalHelp": "Kako mogu pomoći s tvojom današnjom kupovinom?",
+  "chatSubtitle": "Zatraži prijedloge stavki, recepte ili savjete za uštedu.",
+  "aiError": "Oprosti, došlo je do greške u obradi tvog zahtjeva. Provjeri svoju vezu ili pokušaj ponovno kasnije.",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Prijavi se za otključavanje\nPremium značajki",
+  "signInGoogle": "Prijava s Googleom",
+  "signInApple": "Prijava s Appleom",
+  "continueAsGuest": "Nastavi kao gost",
+  "loginError": "Greška pri prijavi: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallTitle": "Lista Plus Premium",
+  "premiumUpgrade": "Nadogradi za otključavanje",
+  "itemRemoved": "Stavka uklonjena",
+  "undo": "Poništi",
+  "emptyListTitle": "Tvoj popis je prazan",
+  "emptyListSubtitle": "Dodaj stavke za početak",
+  "noListFoundTitle": "Nema pronađenih popisa",
+  "noListFoundSubtitle": "Stvori svoj prvi popis za početak",
+  "createFirstList": "Stvori prvi popis",
+  "listBudgetTitle": "Proračun popisa",
+  "budgetAmountLabel": "Iznos proračuna",
+  "removeBudget": "Ukloni",
+  "prefUnlimitedLists": "Neograničeni popisi",
+  "prefSharing": "Dijeljenje popisa",
+  "prefFullHistory": "Puna povijest",
+  "prefExportData": "Izvoz podataka",
+  "prefCustomThemes": "Prilagođene teme",
+  "prefMonthlyBudget": "Globalni mjesečni proračun",
+  "prefAIAssistant": "Osobni AI pomoćnik",
+  "prefUnlimitedPantry": "Neograničena ostava",
+  "prefInteractiveArtifacts": "Interaktivni AI artefakti",
+  "themeGreen": "Zelena",
+  "themeBlue": "Plava",
+  "themePurple": "Ljubičasta",
+  "themeRed": "Crvena",
+  "themeOrange": "Narančasta",
+  "themePink": "Ružičasta",
+  "themeIndigo": "Indigo",
+  "themeAmber": "Jantar",
+  "themeTeal": "Teal",
+  "themeBrown": "Smeđa",
+  "catFruits": "Voće",
+  "catCleaning": "Čišćenje",
+  "catBeverages": "Pića",
+  "catBakery": "Pekara",
+  "catOthers": "Ostalo",
+  "unitPack": "paket",
+  "shareSubject": "Popis za kupovinu",
+  "monthlyBudgetTitle": "Mjesečni proračun",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Izbriši popis",
+  "pantryItemRemoved": "Stavka uklonjena",
+  "deficitItems": "{deficit,plural, one{{deficit} stavku treba kupiti} few{{deficit} stavke treba kupiti} other{{deficit} stavki treba kupiti}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Ukupno košarica",
+  "restockLabel": "Nadopuni",
+  "advancedFeatures": "Napredne značajke",
+  "selectAll": "Odaberi sve",
+  "deselectAll": "Poništi odabir",
+  "monthlyBudgetAppBar": "Mjesečni proračun",
+  "budgetEditTitle": "Mjesečni proračun",
+  "budgetDashboardTitle": "Nadzorna ploča",
+  "selectListForDashboard": "Odaberi popis za prikaz nadzorne ploče.",
+  "spendingAnalysis": "Analiza potrošnje",
+  "noItemsToAnalyze": "Nema stavki u popisu za analizu.",
+  "markItemsToSeeAnalysis": "Označi stavke kao kupljene za prikaz analize.",
+  "totalSpending": "Ukupno potrošeno",
+  "spendingByCategory": "Potrošnja po kategoriji",
+  "achievements": "Postignuća",
+  "exportPdfExcel": "Izvezi PDF/Excel",
+  "exportPdf": "Izvezi kao PDF",
+  "exportExcel": "Izvezi kao Excel",
+  "organizingAi": "ORGANIZIRANJE S AI...",
+  "yesLabel": "Da",
+  "noLabel": "Ne",
+  "shareListText": "Moj popis za kupovinu",
+  "emptyListAddItems": "Tvoj popis je prazan! Prvo dodaj stavke. ℹ️",
+  "listOrganizedMagic": "Popis čarobno organiziran po kategorijama! ✨",
+  "shoppingMode": "Način kupnje",
+  "smartOrganization": "Pametna organizacija",
+  "savings": "Ušteda",
+  "shoppingModeHeader": "NAČIN KUPNJE",
+  "shareAsText": "Pošalji stavke kao formatirani tekst",
+  "shareRealtime": "Sinkronizacija u stvarnom vremenu s drugim osobama",
+  "quickRecipe": "Brzi recept",
+  "quickRecipePrompt": "Predloži recepte sa stavkama s mog popisa.",
+  "economyTips": "Savjeti za uštedu",
+  "economyTipsPrompt": "Kako mogu uštedjeti na ovoj kupnji?",
+  "organizeAisles": "Organiziraj po prolazima",
+  "organizeAislesPrompt": "Organiziraj po prolazima trgovine.",
+  "recipeSuggestion": "Prijedlog recepta",
+  "aiCreditsRemaining": "Preostalo {remaining} kredita",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Dodaj sve na popis",
+  "organizeByAisles": "Organiziraj po prolazima",
+  "voiceTranscriptionTooltip": "Glasovno tipkanje (Besplatno)",
+  "aiVoiceCommandTooltip": "AI glasovna naredba (Premium)",
+  "voiceCommandTitle": "AI glasovna naredba",
+  "voiceCommandContent": "Govori prirodno za upravljanje svojim popisom!\n\nPrimjeri:\n• 'Dodaj kruh, sir i šunku'\n• 'Ukloni deterdžent za rublje'\n• 'Promijeni temu u plavu'\n\nOvo je ekskluzivna značajka Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Pogledaj planove",
+  "itemsAddedSuccess": "Stavke uspješno dodane na popis!",
+  "viewList": "Pogledaj popis",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Pošalji povratne informacije",
+  "feedbackPrompt": "Što želite podijeliti?",
+  "feedbackTypeBug": "Prijavi grešku",
+  "feedbackTypeBugHint": "Nešto ne radi",
+  "feedbackTypeSuggestion": "Prijedlog",
+  "feedbackTypeSuggestionHint": "Ideja za poboljšanje aplikacije",
+  "feedbackTypeTranslation": "Problem s prijevodom",
+  "feedbackTypeTranslationHint": "Netočan ili nespretan prijevod",
+  "feedbackTypeFeature": "Zahtjev za značajku",
+  "feedbackTypeFeatureHint": "Značajka koju želite vidjeti",
+  "feedbackTypeOther": "Ostalo",
+  "feedbackTypeOtherHint": "Druga vrsta povratnih informacija",
+  "feedbackHint": "Opišite svoje povratne informacije detaljno...",
+  "feedbackSend": "Pošalji povratne informacije",
+  "feedbackSending": "Slanje...",
+  "feedbackThankYou": "Hvala vam!",
+  "feedbackThankYouMessage": "Vaše povratne informacije su primljene i pomažu nam poboljšati Lista Plus za sve.",
+  "feedbackBack": "Natrag",
+  "feedbackError": "Greška pri slanju: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Pokušaj ponovno",
+  "feedbackSettingsTitle": "Pošalji povratne informacije",
+  "feedbackSettingsSubtitle": "Prijavite greške, predložite poboljšanja ili ispravite prijevode",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

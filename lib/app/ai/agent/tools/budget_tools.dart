@@ -1,11 +1,11 @@
 import 'tool_core.dart';
 
-final getBudgetTool = const AgentTool(
+const getBudgetTool = AgentTool(
   name: 'get_budget',
   description: 'Obtém o orçamento mensal configurado',
 );
 
-final setBudgetTool = const AgentTool(
+const setBudgetTool = AgentTool(
   name: 'set_budget',
   description: 'Define o orçamento mensal de compras',
   parameters: [

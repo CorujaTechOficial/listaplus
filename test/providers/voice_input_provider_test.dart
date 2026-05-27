@@ -1,5 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
@@ -24,6 +26,12 @@ void main() {
           aiServiceProvider.overrideWithValue(fakeAi),
         ],
       );
+      container.listen(voiceInputProvider, (_, _) {});
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+      container.listen(chatSessionProvider(null), (_, _) {});
+      container.listen(chatThinkingProvider(null), (_, _) {});
+      container.listen(chatActivityProvider(null), (_, _) {});
     });
 
     tearDown(() {
@@ -52,7 +60,10 @@ void main() {
     });
 
     test('stopRecordingAndSend sends voice message and resets to idle', () async {
-      container.listen(chatSessionProvider('list1'), (_, __) {});
+      container.listen(chatSessionProvider('list1'), (_, _) {});
+      container.listen(voiceInputProvider, (_, _) {});
+      container.listen(chatThinkingProvider('list1'), (_, _) {});
+      container.listen(chatActivityProvider('list1'), (_, _) {});
       await container.read(chatSessionProvider('list1').future);
 
       await container.read(voiceInputProvider.notifier).startRecording();

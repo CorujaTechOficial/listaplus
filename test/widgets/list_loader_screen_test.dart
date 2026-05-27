@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod/riverpod.dart' show Override;
+import 'package:flutter_riverpod/flutter_riverpod.dart' show ProviderScope;
+import 'package:riverpod_annotation/riverpod_annotation.dart' show Override;
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/auth_service.dart';

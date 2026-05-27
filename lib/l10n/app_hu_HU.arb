@@ -1,0 +1,562 @@
+{
+  "@@locale": "hu_HU",
+  "appTitle": "Bevásárlólista",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Listák",
+  "pantry": "Kamra",
+  "@_Common": "description: Common actions",
+  "cancel": "Mégse",
+  "save": "Mentés",
+  "create": "Létrehozás",
+  "add": "Hozzáadás",
+  "remove": "Eltávolítás",
+  "delete": "Törlés",
+  "edit": "Szerkesztés",
+  "copy": "Másolás",
+  "retry": "Újra",
+  "regenerate": "Újragenerálás",
+  "copiedToClipboard": "Vágólapra másolva",
+  "confirm": "Megerősítés",
+  "close": "Bezárás",
+  "import": "Importálás",
+  "rename": "Átnevezés",
+  "upgrade": "Frissítés",
+  "clear": "Törlés",
+  "error": "Hiba: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Hiba: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Hiba a vásárlás feldolgozása közben. Próbálja újra.",
+  "restoreError": "Hiba a vásárlások visszaállítása közben. Próbálja újra.",
+  "loading": "Betöltés...",
+  "fieldRequired": "Kötelező mező",
+  "addedFeedback": "Hozzáadva!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} kiválasztva} other{{count} kiválasztva}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Becsült",
+  "alreadyPurchased": "Már megvásárolva",
+  "clearList": "Lista törlése",
+  "clearPurchased": "Megvásároltak törlése",
+  "share": "Megosztás",
+  "shareViaCode": "Megosztás kóddal",
+  "importViaCode": "Importálás kóddal",
+  "listAssistant": "Lista asszisztens",
+  "globalAssistant": "Globális asszisztens",
+  "becomePremium": "Legyen Premium",
+  "manageSubscription": "Előfizetés kezelése",
+  "completePurchase": "Vásárlás befejezése",
+  "confirmClearList": "Összes elem eltávolítása?",
+  "shareListTitle": "Lista megosztása",
+  "shareThisCode": "Ossza meg ezt a kódot:",
+  "validForLimitedTime": "Korlátozott ideig érvényes",
+  "importListTitle": "Lista importálása",
+  "enterCodeHint": "Írja be a kódot",
+  "confirmArchiveTitle": "Vásárlás befejezése",
+  "confirmArchiveContent": "Befejezi ezt a vásárlást és archiválja a listát?",
+  "complete": "Befejezés",
+  "listArchived": "Lista sikeresen archiválva!",
+  "listAdded": "{listName} hozzáadva!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Vásárlás",
+  "unmark": "Jelölés eltávolítása",
+  "confirmDeleteItems": "{count} elem eltávolítása?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Megerősítés",
+  "confirmContent": "{count} elem eltávolítása?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Lista archiválása",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Kamra",
+  "generateShoppingList": "Bevásárlólista generálása",
+  "pantryEmpty": "Üres kamra",
+  "pantryEmptySubtitle": "Adja hozzá a termékeket, amelyeket otthon szeretne tartani",
+  "itemsNeedPurchase": "{deficit} terméket kell vásárolni",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Nincs vásárolandó termék",
+  "newPantryList": "Kamra bevásárlás",
+  "newListTitle": "Új bevásárlólista",
+  "itemsWillBeAdded": "{count} elem kerül hozzáadásra",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Lista neve",
+  "listCreated": "A(z) \"{name}\" lista létrehozva {count} elemmel",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Nincs nyomonkövetés",
+  "markAsPurchased": "Megvásároltnak jelölés",
+  "editPantryItem": "{name} szerkesztése",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ideális mennyiség",
+  "currentQuantity": "Jelenlegi mennyiség",
+  "consumed": "Elfogyasztva",
+  "restocked": "{name} feltöltve: {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "\"{name}\" eltávolítása a kamrából?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "{name} szerkesztése",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Beállítások",
+  "language": "Nyelv",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Rendszer alapértelmezett",
+  "appearance": "Megjelenés",
+  "light": "Világos",
+  "system": "Rendszer",
+  "dark": "Sötét",
+  "themeColor": "Téma színe",
+  "finance": "Pénzügyek",
+  "monthlyBudgetNav": "Havi költségvetés",
+  "budgetSubtitle": "Kövesse nyomon havi kiadásait",
+  "data": "Adatok",
+  "backupNav": "Biztonsági mentés",
+  "backupSubtitle": "Adatok exportálása vagy importálása",
+  "about": "Névjegy",
+  "version": "Verzió",
+  "privacy": "Adatvédelem",
+  "termsOfUse": "Felhasználási feltételek",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Biztonsági mentés",
+  "backupPremiumDescription": "A biztonsági mentés és exportálás prémium funkció",
+  "exportData": "Adatok exportálása",
+  "exportDataSubtitle": "Összes lista mentése JSON-ként",
+  "importData": "Adatok importálása",
+  "importDataSubtitle": "Listák visszaállítása JSON-ból",
+  "importJsonTitle": "JSON importálása",
+  "importJsonHint": "Illessze be a biztonsági mentés JSON-t ide...",
+  "backupExported": "Biztonsági mentés exportálva!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Havi költségvetés",
+  "budgetPremiumLocked": "A globális havi költségvetés prémium",
+  "budgetUpgradePrompt": "Frissítsen a feloldáshoz",
+  "noBudgetDefined": "Nincs költségvetés beállítva",
+  "totalEstimated": "Becsült összesen: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Költségvetés beállítása",
+  "budgetLists": "Listák",
+  "budgetValueLabel": "Összeg",
+  "setBudgetTitle": "Havi költségvetés",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Összes",
+  "filterPending": "Függőben",
+  "filterPurchased": "Megvásárolva",
+  "sortName": "Név",
+  "sortCategory": "Kategória",
+  "sortDate": "Dátum",
+  "sortManual": "Kézi",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Elem hozzáadása",
+  "itemName": "Elem neve",
+  "quantityShort": "Menny.",
+  "unit": "Egység",
+  "category": "Kategória",
+  "estimatedPrice": "Becsült ár",
+  "addItemPrice": "Becsült ár",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Elem szerkesztése",
+  "quantityFull": "Mennyiség",
+  "editItemPrice": "Becsült ár",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Hozzáadás a kamrához",
+  "addToPantryPrompt": "\"{name}\" hozzáadása a kamrához?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Igen",
+  "productName": "Termék neve",
+  "idealQty": "Ideális menny.",
+  "currentQty": "Jelenlegi menny.",
+  "trackStock": "Készlet követése",
+  "trackStockActive": "Megjelenik a vásárlási javaslatokban",
+  "trackStockInactive": "Nem generál vásárlási javaslatot",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Lista létrehozása",
+  "renameListDialog": "Lista átnevezése",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Lista előzmények",
+  "myLists": "Listáim",
+  "viewActive": "Aktívak megtekintése",
+  "viewHistory": "Előzmények megtekintése",
+  "noArchivedLists": "Nincsenek archivált listák",
+  "noActiveLists": "Nincsenek aktív listák",
+  "completedOn": "Befejezve: {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Megosztott",
+  "restore": "Visszaállítás",
+  "removeSharedTooltip": "Eltávolítás",
+  "deleteListTitle": "Lista törlése",
+  "deleteListContent": "Biztosan törli a(z) \"{name}\" listát? Minden elem eltávolításra kerül.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Megosztott lista eltávolítása",
+  "removeSharedListContent": "Eltávolítja a(z) \"{name}\" listát a listáiból? Az eredeti lista nem változik.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Új lista létrehozása",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI asszisztens",
+  "aiAssistantDescription": "Kapjon intelligens javaslatokat, recepteket és személyre szabott tippeket AI asszisztensünktől.",
+  "generalAssistant": "Általános asszisztens",
+  "clearHistory": "Előzmények törlése",
+  "clearHistoryConfirm": "Minden üzenet törlése ebben a munkamenetben?",
+  "chatHint": "Írja be az üzenetét...",
+  "chatError": "Hiba a chat betöltésekor: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Miben segíthetek a listájával?",
+  "generalHelp": "Miben segíthetek a mai bevásárlásban?",
+  "chatSubtitle": "Kérdezzen termékajánlatokat, recepteket vagy megtakarítási tippeket.",
+  "aiError": "Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Jelentkezzen be a prémium\nfunkciók feloldásához",
+  "signInGoogle": "Bejelentkezés Google-lal",
+  "signInApple": "Bejelentkezés Apple-lel",
+  "continueAsGuest": "Folytatás vendégként",
+  "loginError": "Bejelentkezési hiba: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Frissítsen a feloldáshoz",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Elem eltávolítva",
+  "undo": "Visszavonás",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "A lista üres",
+  "emptyListSubtitle": "Adjon hozzá elemeket a kezdéshez",
+  "noListFoundTitle": "Nincs lista",
+  "noListFoundSubtitle": "Hozza létre az első listát a kezdéshez",
+  "createFirstList": "Első lista létrehozása",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Lista költségvetés",
+  "budgetAmountLabel": "Költségvetés összege",
+  "removeBudget": "Eltávolítás",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Korlátlan listák",
+  "prefSharing": "Listák megosztása",
+  "prefFullHistory": "Teljes előzmények",
+  "prefExportData": "Adatok exportálása",
+  "prefCustomThemes": "Egyedi témák",
+  "prefMonthlyBudget": "Globális havi költségvetés",
+  "prefAIAssistant": "Személyes AI asszisztens",
+  "prefUnlimitedPantry": "Korlátlan kamra",
+  "prefInteractiveArtifacts": "Interaktív AI tartalmak",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Zöld",
+  "themeBlue": "Kék",
+  "themePurple": "Lila",
+  "themeRed": "Piros",
+  "themeOrange": "Narancs",
+  "themePink": "Rózsaszín",
+  "themeIndigo": "Indigó",
+  "themeAmber": "Borostyán",
+  "themeTeal": "Kékeszöld",
+  "themeBrown": "Barna",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Gyümölcsök",
+  "catCleaning": "Tisztítás",
+  "catBeverages": "Italok",
+  "catBakery": "Pékáru",
+  "catOthers": "Egyéb",
+  "@_Unit": "description: Unit",
+  "unitPack": "csomag",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Bevásárlólista",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Havi költségvetés",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Lista törlése",
+  "pantryItemRemoved": "Elem eltávolítva",
+  "deficitItems": "{deficit,plural, one{{deficit} terméket kell vásárolni} other{{deficit} terméket kell vásárolni}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Kosár összesen",
+  "restockLabel": "Feltöltés",
+  "advancedFeatures": "Speciális funkciók",
+  "selectAll": "Összes kiválasztása",
+  "deselectAll": "Összes kijelölése megszüntetése",
+  "monthlyBudgetAppBar": "Havi költségvetés",
+  "budgetEditTitle": "Havi költségvetés",
+  "budgetDashboardTitle": "Irányítópult",
+  "selectListForDashboard": "Válasszon egy listát az irányítópult megtekintéséhez.",
+  "spendingAnalysis": "Kiadáselemzés",
+  "noItemsToAnalyze": "Nincsenek elemezhető elemek a listában.",
+  "markItemsToSeeAnalysis": "Jelölje meg a termékeket vásároltként az elemzés megtekintéséhez.",
+  "totalSpending": "Összes kiadás",
+  "spendingByCategory": "Kiadások kategória szerint",
+  "achievements": "Eredmények",
+  "exportPdfExcel": "Exportálás PDF/Excel formátumba",
+  "exportPdf": "Exportálás PDF-ként",
+  "exportExcel": "Exportálás Excel-ként",
+  "organizingAi": "RENDEZÉS AI-JAL...",
+  "yesLabel": "Igen",
+  "noLabel": "Nem",
+  "shareListText": "Bevásárlólistám",
+  "emptyListAddItems": "A lista üres! Először adjon hozzá elemeket. ℹ️",
+  "listOrganizedMagic": "Lista varázslatosan kategóriákba rendezve! ✨",
+  "shoppingMode": "Bevásárló mód",
+  "smartOrganization": "Intelligens rendezés",
+  "savings": "Megtakarítás",
+  "shoppingModeHeader": "BEVÁSÁRLÓ MÓD",
+  "shareAsText": "Elemek küldése formázott szövegként",
+  "shareRealtime": "Valós idejű szinkronizálás másokkal",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Gyors recept",
+  "quickRecipePrompt": "Ajánljon recepteket a listám elemeiből.",
+  "economyTips": "Megtakarítási tippek",
+  "economyTipsPrompt": "Hogyan takaríthatok meg pénzt ezen a vásárláson?",
+  "organizeAisles": "Rendezés sorok szerint",
+  "organizeAislesPrompt": "Rendezze a piac sorai szerint.",
+  "recipeSuggestion": "Receptjavaslat",
+  "aiCreditsRemaining": "{remaining} kredit maradt",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Összes hozzáadása a listához",
+  "organizeByAisles": "Rendezés sorok szerint",
+  "voiceTranscriptionTooltip": "Hangos gépelés (Ingyenes)",
+  "aiVoiceCommandTooltip": "AI hangparancs (Prémium)",
+  "voiceCommandTitle": "AI hangparancs",
+  "voiceCommandContent": "Beszéljen természetesen a lista kezeléséhez!\n\nPéldák:\n• 'Kenyér, sajt és sonka hozzáadása'\n• 'Mosószer eltávolítása'\n• 'Téma váltása kékre'\n\nEz a Lista Plus Premium exkluzív funkciója.",
+  "voiceCommandPlanBtn": "Csomagok megtekintése",
+  "itemsAddedSuccess": "Elemek sikeresen hozzáadva a listához!",
+  "viewList": "Lista megtekintése",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Visszajelzés küldése",
+  "feedbackPrompt": "Mit szeretnél megosztani?",
+  "feedbackTypeBug": "Hiba bejelentése",
+  "feedbackTypeBugHint": "Valami nem működik",
+  "feedbackTypeSuggestion": "Javaslat",
+  "feedbackTypeSuggestionHint": "Ötlet az alkalmazás fejlesztésére",
+  "feedbackTypeTranslation": "Fordítási hiba",
+  "feedbackTypeTranslationHint": "Helytelen vagy természetellenes fordítás",
+  "feedbackTypeFeature": "Funkciókérés",
+  "feedbackTypeFeatureHint": "Funkció, amit szívesen látnál",
+  "feedbackTypeOther": "Egyéb",
+  "feedbackTypeOtherHint": "Egyéb típusú visszajelzés",
+  "feedbackHint": "Írd le részletesen a visszajelzésed...",
+  "feedbackSend": "Visszajelzés küldése",
+  "feedbackSending": "Küldés...",
+  "feedbackThankYou": "Köszönjük!",
+  "feedbackThankYouMessage": "A visszajelzésed megérkezett, és segít nekünk a Lista Plus fejlesztésében mindenki számára.",
+  "feedbackBack": "Vissza",
+  "feedbackError": "Hiba a küldés során: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Újrapróbálkozás",
+  "feedbackSettingsTitle": "Visszajelzés küldése",
+  "feedbackSettingsSubtitle": "Hibák bejelentése, fejlesztési javaslatok vagy fordítások javítása",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

@@ -330,6 +330,11 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Future<String?> uploadRecipeImage(String recipeId, String filePath) async {
+    return null;
+  }
+
+  @override
   Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end}) async {
     return _filterPlans(_mealPlans, start, end);
   }
@@ -360,4 +365,11 @@ class FakeStorageBackend implements StorageBackend {
     }
     return filtered;
   }
+
+  @override
+  Future<void> saveFeedback(Map<String, dynamic> feedbackData) async {
+    _feedback.add(feedbackData);
+  }
 }
+
+final _feedback = <Map<String, dynamic>>[];

@@ -16,6 +16,15 @@ class AppReviewService {
   static const _archiveCountKey = 'archivedListsCount';
   static const _reviewRequestedKey = 'reviewRequested';
 
+  Future<void> requestReview() async {
+    final isAvailable = await _inAppReview.isAvailable();
+    if (isAvailable) {
+      await _inAppReview.requestReview();
+      await _storage.updateUserData({_reviewRequestedKey: true});
+      await _analytics?.logEvent(name: 'in_app_review_requested_by_ai');
+    }
+  }
+
   Future<void> registerArchiveAndRequestReview() async {
     final userData = await _storage.getUserData() ?? {};
     

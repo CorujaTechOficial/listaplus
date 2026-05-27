@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
-import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 import '../helpers/test_widgets.dart';
@@ -10,7 +9,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('AiChatPanel Voice Input Tests', () {
-    testWidgets('free user is redirected to PaywallScreen on mic tap', (WidgetTester tester) async {
+    testWidgets('free user is shown snackbar with Pro link on mic tap', (WidgetTester tester) async {
       final backend = FakeStorageBackend();
       final revenueCat = FakeRevenueCatService();
       revenueCat.setIsPremium(false);
@@ -27,22 +26,20 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      // Find the mic button in input footer
       final micButton = find.byKey(const ValueKey('chat_mic_button'));
       expect(micButton, findsOneWidget);
 
       await tester.tap(micButton);
-      await tester.pumpAndSettle();
+      await tester.pump();
 
-      // Should show explanation dialog
-      expect(find.text('Comando de Voz com IA'), findsOneWidget);
+      // Should show snackbar with basic dictation info
+      expect(
+        find.text('Comandos de voz avançados são Pro. Ativando ditado básico...'),
+        findsOneWidget,
+      );
 
-      // Tap plans button to go to paywall
-      await tester.tap(find.text('Ver Planos'));
-      await tester.pumpAndSettle();
-
-      // Should open PaywallScreen
-      expect(find.byType(PaywallScreen), findsOneWidget);
+      // Verify the snackbar action label exists
+      expect(find.text('Ver Pro'), findsOneWidget);
     });
 
     testWidgets('premium user toggles active recording, cancels and sends', (WidgetTester tester) async {
@@ -69,7 +66,7 @@ void main() {
       await tester.tap(micButton);
       await tester.pumpAndSettle();
 
-      // Active recording overlay should render
+      // Active recording indicator should render (compact voice bar)
       expect(find.text('Escuta Ativa'), findsOneWidget);
       expect(find.byKey(const ValueKey('voice_cancel_button')), findsOneWidget);
       expect(find.byKey(const ValueKey('voice_stop_button')), findsOneWidget);
@@ -78,10 +75,10 @@ void main() {
       await tester.tap(find.byKey(const ValueKey('voice_cancel_button')));
       await tester.pumpAndSettle();
 
-      // Overlay should disappear
+      // Indicator should disappear
       expect(find.text('Escuta Ativa'), findsNothing);
 
-      // Tap mic again to record and send
+      // Tap mic again to record
       await tester.tap(micButton);
       await tester.pumpAndSettle();
       expect(find.text('Escuta Ativa'), findsOneWidget);
@@ -90,7 +87,7 @@ void main() {
       await tester.tap(find.byKey(const ValueKey('voice_stop_button')));
       await tester.pumpAndSettle();
 
-      // Overlay should disappear and status is idle
+      // Indicator should disappear after sending
       expect(find.text('Escuta Ativa'), findsNothing);
     });
   });

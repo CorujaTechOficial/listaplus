@@ -1,0 +1,562 @@
+{
+  "@@locale": "km_KH",
+  "appTitle": "បញ្ជីដើរទិញឥវ៉ាន់",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "បញ្ជី",
+  "pantry": "ទូដាក់អាហារ",
+  "@_Common": "description: Common actions",
+  "cancel": "បោះបង់",
+  "save": "រក្សាទុក",
+  "create": "បង្កើត",
+  "add": "បន្ថែម",
+  "remove": "ដកចេញ",
+  "delete": "លុប",
+  "edit": "កែសម្រួល",
+  "copy": "ចម្លង",
+  "retry": "ព្យាយាមម្តងទៀត",
+  "regenerate": "បង្កើតឡើងវិញ",
+  "copiedToClipboard": "បានចម្លងទៅក្តារតម្បៀតខ្ទាស់",
+  "confirm": "បញ្ជាក់",
+  "close": "បិទ",
+  "import": "នាំចូល",
+  "rename": "ប្តូរឈ្មោះ",
+  "upgrade": "ធ្វើឱ្យប្រសើរ",
+  "clear": "សម្អាត",
+  "error": "កំហុស: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "កំហុស: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "មានកំហុសក្នុងការដំណើរការការទិញ។ សូមព្យាយាមម្តងទៀត។",
+  "restoreError": "មានកំហុសក្នុងការស្ដារការទិញ។ សូមព្យាយាមម្តងទៀត។",
+  "loading": "កំពុងផ្ទុក...",
+  "fieldRequired": "វាលចាំបាច់",
+  "addedFeedback": "បានបន្ថែម!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} បានជ្រើស} other{{count} បានជ្រើស}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "ប៉ាន់ស្មាន",
+  "alreadyPurchased": "បានទិញរួច",
+  "clearList": "សម្អាតបញ្ជី",
+  "clearPurchased": "សម្អាតអ្វីដែលបានទិញ",
+  "share": "ចែករំលែក",
+  "shareViaCode": "ចែករំលែកតាមរយៈកូដ",
+  "importViaCode": "នាំចូលតាមរយៈកូដ",
+  "listAssistant": "ជំនួយការបញ្ជី",
+  "globalAssistant": "ជំនួយការសកល",
+  "becomePremium": "ក្លាយជា Premium",
+  "manageSubscription": "គ្រប់គ្រងការជាវ",
+  "completePurchase": "បញ្ចប់ការទិញ",
+  "confirmClearList": "លុបធាតុទាំងអស់?",
+  "shareListTitle": "ចែករំលែកបញ្ជី",
+  "shareThisCode": "ចែករំលែកកូដនេះ:",
+  "validForLimitedTime": "មានសុពលភាពក្នុងរយៈពេលកំណត់",
+  "importListTitle": "នាំចូលបញ្ជី",
+  "enterCodeHint": "បញ្ចូលកូដ",
+  "confirmArchiveTitle": "បញ្ចប់ការទិញ",
+  "confirmArchiveContent": "បញ្ចប់ការទិញនេះ និងទុកក្នុងប័ណ្ណសារ?",
+  "complete": "បញ្ចប់",
+  "listArchived": "បញ្ជីបានទុកក្នុងប័ណ្ណសារដោយជោគជ័យ!",
+  "listAdded": "{listName} បានបន្ថែម!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "ទិញ",
+  "unmark": "ដកសញ្ញាសម្គាល់",
+  "confirmDeleteItems": "លុប {count} ធាតុ?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "បញ្ជាក់",
+  "confirmContent": "លុប {count} ធាតុ?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "ទុកបញ្ជីក្នុងប័ណ្ណសារ",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "ទូដាក់អាហារ",
+  "generateShoppingList": "បង្កើតបញ្ជីដើរទិញឥវ៉ាន់",
+  "pantryEmpty": "ទូដាក់អាហារទទេ",
+  "pantryEmptySubtitle": "បន្ថែមផលិតផលដែលអ្នកចង់ទុកនៅផ្ទះ",
+  "itemsNeedPurchase": "{deficit} ធាតុចាំបាច់ត្រូវទិញ",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "គ្មានធាតុចាំបាច់ត្រូវទិញទេ",
+  "newPantryList": "ការដើរទិញឥវ៉ាន់បន្ថែម",
+  "newListTitle": "បញ្ជីដើរទិញឥវ៉ាន់ថ្មី",
+  "itemsWillBeAdded": "{count} ធាតុនឹងត្រូវបានបន្ថែម",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "ឈ្មោះបញ្ជី",
+  "listCreated": "បញ្ជី \"{name}\" ត្រូវបានបង្កើតដោយមាន {count} ធាតុ",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "គ្មានការតាមដាន",
+  "markAsPurchased": "សម្គាល់ថាបានទិញ",
+  "editPantryItem": "កែសម្រួល {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "បរិមាណដ៏ល្អ",
+  "currentQuantity": "បរិមាណបច្ចុប្បន្ន",
+  "consumed": "បានប្រើប្រាស់",
+  "restocked": "{name} ត្រូវបានស្តុកវិញដល់ {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "លុប \"{name}\" ពីទូដាក់អាហារ?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "កែសម្រួល {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "ការកំណត់",
+  "language": "ភាសា",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "លំនាំដើមប្រព័ន្ធ",
+  "appearance": "រូបរាង",
+  "light": "ភ្លឺ",
+  "system": "ប្រព័ន្ធ",
+  "dark": "ងងឹត",
+  "themeColor": "ពណ៌ប្រធានបទ",
+  "finance": "ហិរញ្ញវត្ថុ",
+  "monthlyBudgetNav": "ថវិកាប្រចាំខែ",
+  "budgetSubtitle": "តាមដានការចំណាយប្រចាំខែរបស់អ្នក",
+  "data": "ទិន្នន័យ",
+  "backupNav": "បម្រុងទុក",
+  "backupSubtitle": "នាំចេញ ឬនាំចូលទិន្នន័យរបស់អ្នក",
+  "about": "អំពី",
+  "version": "កំណែ",
+  "privacy": "ឯកជនភាព",
+  "termsOfUse": "លក្ខខណ្ឌនៃការប្រើប្រាស់",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "បម្រុងទុក",
+  "backupPremiumDescription": "ការបម្រុងទុក និងនាំចេញជាមុខងារពិសេស",
+  "exportData": "នាំចេញទិន្នន័យ",
+  "exportDataSubtitle": "រក្សាទុកបញ្ជីទាំងអស់ជា JSON",
+  "importData": "នាំចូលទិន្នន័យ",
+  "importDataSubtitle": "ស្តារបញ្ជីពី JSON",
+  "importJsonTitle": "នាំចូល JSON",
+  "importJsonHint": "បិទភ្ជាប់ JSON បម្រុងទុកនៅទីនេះ...",
+  "backupExported": "បាននាំចេញបម្រុងទុក!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "ថវិកាប្រចាំខែ",
+  "budgetPremiumLocked": "ថវិកាប្រចាំខែសកលជាមុខងារពិសេស",
+  "budgetUpgradePrompt": "ធ្វើឱ្យប្រសើរដើម្បីដោះសោ",
+  "noBudgetDefined": "មិនទាន់កំណត់ថវិកា",
+  "totalEstimated": "សរុបប៉ាន់ស្មាន: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "កំណត់ថវិកា",
+  "budgetLists": "បញ្ជី",
+  "budgetValueLabel": "ចំនួនទឹកប្រាក់",
+  "setBudgetTitle": "ថវិកាប្រចាំខែ",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "ទាំងអស់",
+  "filterPending": "កំពុងរង់ចាំ",
+  "filterPurchased": "បានទិញ",
+  "sortName": "ឈ្មោះ",
+  "sortCategory": "ប្រភេទ",
+  "sortDate": "កាលបរិច្ឆេទ",
+  "sortManual": "ដោយដៃ",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "បន្ថែមធាតុ",
+  "itemName": "ឈ្មោះធាតុ",
+  "quantityShort": "បរិមាណ",
+  "unit": "ឯកតា",
+  "category": "ប្រភេទ",
+  "estimatedPrice": "តម្លៃប៉ាន់ស្មាន",
+  "addItemPrice": "តម្លៃប៉ាន់ស្មាន",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "កែសម្រួលធាតុ",
+  "quantityFull": "បរិមាណ",
+  "editItemPrice": "តម្លៃប៉ាន់ស្មាន",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "បន្ថែមទៅទូដាក់អាហារ",
+  "addToPantryPrompt": "បន្ថែម \"{name}\" ទៅទូដាក់អាហាររបស់អ្នក?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "បាទ/ចាស",
+  "productName": "ឈ្មោះផលិតផល",
+  "idealQty": "បរិមាណដ៏ល្អ",
+  "currentQty": "បរិមាណបច្ចុប្បន្ន",
+  "trackStock": "តាមដានស្តុក",
+  "trackStockActive": "បង្ហាញក្នុងការណែនាំការដើរទិញឥវ៉ាន់",
+  "trackStockInactive": "មិនបង្កើតការណែនាំការដើរទិញឥវ៉ាន់",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "បង្កើតបញ្ជី",
+  "renameListDialog": "ប្តូរឈ្មោះបញ្ជី",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "ប្រវត្តិបញ្ជី",
+  "myLists": "បញ្ជីរបស់ខ្ញុំ",
+  "viewActive": "មើលសកម្ម",
+  "viewHistory": "មើលប្រវត្តិ",
+  "noArchivedLists": "គ្មានបញ្ជីក្នុងប័ណ្ណសារ",
+  "noActiveLists": "គ្មានបញ្ជីសកម្ម",
+  "completedOn": "បានបញ្ចប់នៅ {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "បានចែករំលែក",
+  "restore": "ស្តារ",
+  "removeSharedTooltip": "ដកចេញ",
+  "deleteListTitle": "លុបបញ្ជី",
+  "deleteListContent": "តើអ្នកប្រាកដថាចង់លុប \"{name}\" ទេ? ធាតុទាំងអស់នឹងត្រូវបានលុប។",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "ដកបញ្ជីដែលបានចែករំលែកចេញ",
+  "removeSharedListContent": "ដក \"{name}\" ពីបញ្ជីរបស់អ្នក? បញ្ជីដើមនឹងមិនប៉ះពាល់ទេ។",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "បង្កើតបញ្ជីថ្មី",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "ជំនួយការ AI",
+  "aiAssistantDescription": "ទទួលបានការណែនាំឆ្លាតវៃ រូបមន្ត និងគន្លឹះផ្ទាល់ខ្លួនជាមួយជំនួយការ AI របស់យើង។",
+  "generalAssistant": "ជំនួយការទូទៅ",
+  "clearHistory": "សម្អាតប្រវត្តិ",
+  "clearHistoryConfirm": "សម្អាតសារទាំងអស់ក្នុងវគ្គនេះ?",
+  "chatHint": "វាយសាររបស់អ្នក...",
+  "chatError": "កំហុសក្នុងការផ្ទុកជជែក: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "តើខ្ញុំអាចជួយអ្វីជាមួយបញ្ជីរបស់អ្នក?",
+  "generalHelp": "តើខ្ញុំអាចជួយអ្វីជាមួយការដើរទិញឥវ៉ាន់របស់អ្នកថ្ងៃនេះ?",
+  "chatSubtitle": "សួររកការណែនាំធាតុ រូបមន្ត ឬគន្លឹះសន្សំប្រាក់។",
+  "aiError": "សូមទោស មានកំហុសក្នុងការដំណើរការសំណើរបស់អ្នក។ សូមពិនិត្យការតភ្ជាប់របស់អ្នក ឬព្យាយាមម្តងទៀតពេលក្រោយ។",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "ចូលដើម្បីដោះសោ\nមុខងារពិសេស",
+  "signInGoogle": "ចូលជាមួយ Google",
+  "signInApple": "ចូលជាមួយ Apple",
+  "continueAsGuest": "បន្តជាភ្ញៀវ",
+  "loginError": "កំហុសការចូល: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "ធ្វើឱ្យប្រសើរដើម្បីដោះសោ",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "ធាតុត្រូវបានដកចេញ",
+  "undo": "មិនធ្វើវិញ",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "បញ្ជីរបស់អ្នកទទេ",
+  "emptyListSubtitle": "បន្ថែមធាតុដើម្បីចាប់ផ្តើម",
+  "noListFoundTitle": "រកមិនឃើញបញ្ជី",
+  "noListFoundSubtitle": "បង្កើតបញ្ជីដំបូងរបស់អ្នកដើម្បីចាប់ផ្តើម",
+  "createFirstList": "បង្កើតបញ្ជីដំបូង",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "ថវិកាបញ្ជី",
+  "budgetAmountLabel": "ចំនួនថវិកា",
+  "removeBudget": "ដកចេញ",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "បញ្ជីគ្មានដែនកំណត់",
+  "prefSharing": "ចែករំលែកបញ្ជី",
+  "prefFullHistory": "ប្រវត្តិពេញលេញ",
+  "prefExportData": "នាំចេញទិន្នន័យ",
+  "prefCustomThemes": "ប្រធានបទផ្ទាល់ខ្លួន",
+  "prefMonthlyBudget": "ថវិកាប្រចាំខែសកល",
+  "prefAIAssistant": "ជំនួយការ AI ផ្ទាល់ខ្លួន",
+  "prefUnlimitedPantry": "ទូដាក់អាហារគ្មានដែនកំណត់",
+  "prefInteractiveArtifacts": "AI អន្តរកម្ម",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "បៃតង",
+  "themeBlue": "ខៀវ",
+  "themePurple": "ស្វាយ",
+  "themeRed": "ក្រហម",
+  "themeOrange": "ទឹកក្រូច",
+  "themePink": "ផ្កាឈូក",
+  "themeIndigo": "ខៀវចាស់",
+  "themeAmber": "លឿងខ្ចី",
+  "themeTeal": "បៃតងខៀវ",
+  "themeBrown": "ត្នោត",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "ផ្លែឈើ",
+  "catCleaning": "សម្អាត",
+  "catBeverages": "ភេសជ្ជៈ",
+  "catBakery": "នំប៉័ង",
+  "catOthers": "ផ្សេងៗ",
+  "@_Unit": "description: Unit",
+  "unitPack": "កញ្ចប់",
+  "@_Share": "description: Sharing",
+  "shareSubject": "បញ្ជីដើរទិញឥវ៉ាន់",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "ថវិកាប្រចាំខែ",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "លុបបញ្ជី",
+  "pantryItemRemoved": "ធាតុត្រូវបានដកចេញ",
+  "deficitItems": "{deficit,plural, one{{deficit} ធាតុចាំបាច់ត្រូវទិញ} other{{deficit} ធាតុចាំបាច់ត្រូវទិញ}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "សរុបកន្ត្រក",
+  "restockLabel": "ស្តុកវិញ",
+  "advancedFeatures": "មុខងារកម្រិតខ្ពស់",
+  "selectAll": "ជ្រើសរើសទាំងអស់",
+  "deselectAll": "ដកការជ្រើសរើសទាំងអស់",
+  "monthlyBudgetAppBar": "ថវិកាប្រចាំខែ",
+  "budgetEditTitle": "ថវិកាប្រចាំខែ",
+  "budgetDashboardTitle": "ផ្ទាំងគ្រប់គ្រង",
+  "selectListForDashboard": "ជ្រើសរើសបញ្ជីដើម្បីមើលផ្ទាំងគ្រប់គ្រង។",
+  "spendingAnalysis": "ការវិភាគការចំណាយ",
+  "noItemsToAnalyze": "គ្មានធាតុក្នុងបញ្ជីដើម្បីវិភាគទេ។",
+  "markItemsToSeeAnalysis": "សម្គាល់ធាតុថាបានទិញដើម្បីមើលការវិភាគ។",
+  "totalSpending": "ការចំណាយសរុប",
+  "spendingByCategory": "ការចំណាយតាមប្រភេទ",
+  "achievements": "សមិទ្ធផល",
+  "exportPdfExcel": "នាំចេញ PDF/Excel",
+  "exportPdf": "នាំចេញជា PDF",
+  "exportExcel": "នាំចេញជា Excel",
+  "organizingAi": "កំពុងរៀបចំជាមួយ AI...",
+  "yesLabel": "បាទ/ចាស",
+  "noLabel": "ទេ",
+  "shareListText": "បញ្ជីដើរទិញឥវ៉ាន់របស់ខ្ញុំ",
+  "emptyListAddItems": "បញ្ជីរបស់អ្នកទទេ! បន្ថែមធាតុជាមុនសិន។ ℹ️",
+  "listOrganizedMagic": "បញ្ជីត្រូវបានរៀបចំតាមប្រភេទដោយវេទមន្ត! ✨",
+  "shoppingMode": "របៀបដើរទិញឥវ៉ាន់",
+  "smartOrganization": "ការរៀបចំឆ្លាតវៃ",
+  "savings": "ការសន្សំ",
+  "shoppingModeHeader": "របៀបដើរទិញឥវ៉ាន់",
+  "shareAsText": "ផ្ញើធាតុជាអត្ថបទដែលបានធ្វើទ្រង់ទ្រាយ",
+  "shareRealtime": "ធ្វើសមកាលកម្មតាមពេលជាក់ស្តែងជាមួយអ្នកដទៃ",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "រូបមន្តរហ័ស",
+  "quickRecipePrompt": "ណែនាំរូបមន្តជាមួយធាតុពីបញ្ជីរបស់ខ្ញុំ។",
+  "economyTips": "គន្លឹះសន្សំប្រាក់",
+  "economyTipsPrompt": "តើខ្ញុំអាចសន្សំប្រាក់លើការទិញនេះដោយរបៀបណា?",
+  "organizeAisles": "រៀបចំតាមធ្នើរ",
+  "organizeAislesPrompt": "រៀបចំតាមធ្នើរផ្សារ។",
+  "recipeSuggestion": "ការណែនាំរូបមន្ត",
+  "aiCreditsRemaining": "{remaining} ឥណទាននៅសល់",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "បន្ថែមទាំងអស់ទៅបញ្ជី",
+  "organizeByAisles": "រៀបចំតាមធ្នើរ",
+  "voiceTranscriptionTooltip": "វាយដោយសំឡេង (ឥតគិតថ្លៃ)",
+  "aiVoiceCommandTooltip": "ពាក្យបញ្ជាសំឡេង AI (ពិសេស)",
+  "voiceCommandTitle": "ពាក្យបញ្ជាសំឡេង AI",
+  "voiceCommandContent": "និយាយដោយធម្មជាតិដើម្បីគ្រប់គ្រងបញ្ជីរបស់អ្នក!\n\nឧទាហរណ៍:\n• 'បន្ថែមនំប៉័ង ឈីស និងសាច់ក្រក'\n• 'ដកសាប៊ូបោកខោអាវចេញ'\n• 'ប្តូរប្រធានបទទៅជាពណ៌ខៀវ'\n\nនេះជាមុខងារផ្តាច់មុខរបស់ Lista Plus Premium។",
+  "voiceCommandPlanBtn": "មើលគម្រោង",
+  "itemsAddedSuccess": "ធាតុត្រូវបានបន្ថែមទៅបញ្ជីដោយជោគជ័យ!",
+  "viewList": "មើលបញ្ជី",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "ផ្ញើមតិកែលម្អ",
+  "feedbackPrompt": "តើអ្នកចង់ចែករំលែកអ្វី?",
+  "feedbackTypeBug": "រាយការណ៍កំហុស",
+  "feedbackTypeBugHint": "មានអ្វីមួយមិនដំណើរការ",
+  "feedbackTypeSuggestion": "សំណូមពរ",
+  "feedbackTypeSuggestionHint": "គំនិតកែលម្អកម្មវិធី",
+  "feedbackTypeTranslation": "បញ្ហាការបកប្រែ",
+  "feedbackTypeTranslationHint": "ការបកប្រែមិនត្រឹមត្រូវ ឬមិនធម្មជាតិ",
+  "feedbackTypeFeature": "ស្នើសុំមុខងារ",
+  "feedbackTypeFeatureHint": "មុខងារដែលអ្នកចង់ឃើញ",
+  "feedbackTypeOther": "ផ្សេងៗ",
+  "feedbackTypeOtherHint": "ប្រភេទមតិកែលម្អផ្សេងទៀត",
+  "feedbackHint": "ពិពណ៌នាលម្អិតអំពីមតិកែលម្អរបស់អ្នក...",
+  "feedbackSend": "ផ្ញើមតិកែលម្អ",
+  "feedbackSending": "កំពុងផ្ញើ...",
+  "feedbackThankYou": "សូមអរគុណ!",
+  "feedbackThankYouMessage": "មតិកែលម្អរបស់អ្នកត្រូវបានទទួល និងជួយយើងកែលម្អ Lista Plus សម្រាប់អ្នករាល់គ្នា។",
+  "feedbackBack": "ត្រឡប់",
+  "feedbackError": "កំហុសក្នុងការផ្ញើ៖ {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "ព្យាយាមម្តងទៀត",
+  "feedbackSettingsTitle": "ផ្ញើមតិកែលម្អ",
+  "feedbackSettingsSubtitle": "រាយការណ៍កំហុស ស្នើសុំការកែលម្អ ឬកែការបកប្រែ",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

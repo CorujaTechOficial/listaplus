@@ -77,7 +77,7 @@ class FakeRevenueCatService implements RevenueCatService {
   }
 
   void notifyListeners(CustomerInfo info) {
-    for (final listener in _listeners) {
+    for (final listener in [..._listeners]) {
       listener(info);
     }
   }

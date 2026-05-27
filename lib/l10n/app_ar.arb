@@ -1,0 +1,562 @@
+{
+  "@@locale": "ar",
+  "appTitle": "قائمة التسوق",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "القوائم",
+  "pantry": "المخزن",
+  "@_Common": "description: Common actions",
+  "cancel": "إلغاء",
+  "save": "حفظ",
+  "create": "إنشاء",
+  "add": "إضافة",
+  "remove": "إزالة",
+  "delete": "حذف",
+  "edit": "تعديل",
+  "copy": "نسخ",
+  "retry": "إعادة المحاولة",
+  "regenerate": "إعادة إنشاء",
+  "copiedToClipboard": "تم النسخ إلى الحافظة",
+  "confirm": "تأكيد",
+  "close": "إغلاق",
+  "import": "استيراد",
+  "rename": "إعادة تسمية",
+  "upgrade": "ترقية",
+  "clear": "مسح",
+  "error": "خطأ: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "خطأ: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "خطأ في معالجة الشراء. حاول مرة أخرى.",
+  "restoreError": "خطأ في استعادة المشتريات. حاول مرة أخرى.",
+  "loading": "جارٍ التحميل...",
+  "fieldRequired": "حقل مطلوب",
+  "addedFeedback": "تمت الإضافة!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, zero{{count} مختارة} one{{count} مختارة} two{{count} مختارة} few{{count} مختارة} many{{count} مختارة} other{{count} مختارة}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "تقديري",
+  "alreadyPurchased": "تم شراؤه مسبقاً",
+  "clearList": "مسح القائمة",
+  "clearPurchased": "مسح المشتريات",
+  "share": "مشاركة",
+  "shareViaCode": "مشاركة عبر الرمز",
+  "importViaCode": "استيراد عبر الرمز",
+  "listAssistant": "مساعد القائمة",
+  "globalAssistant": "المساعد العام",
+  "becomePremium": "اشتراك بريميوم",
+  "manageSubscription": "إدارة الاشتراك",
+  "completePurchase": "إتمام الشراء",
+  "confirmClearList": "إزالة جميع العناصر؟",
+  "shareListTitle": "مشاركة القائمة",
+  "shareThisCode": "شارك هذا الرمز:",
+  "validForLimitedTime": "صالح لفترة محدودة",
+  "importListTitle": "استيراد قائمة",
+  "enterCodeHint": "أدخل الرمز",
+  "confirmArchiveTitle": "إتمام الشراء",
+  "confirmArchiveContent": "إتمام هذا الشراء وأرشفة القائمة؟",
+  "complete": "إتمام",
+  "listArchived": "تم أرشفة القائمة بنجاح!",
+  "listAdded": "تمت إضافة {listName}!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "شراء",
+  "unmark": "إلغاء التحديد",
+  "confirmDeleteItems": "إزالة {count} عنصر؟",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "تأكيد",
+  "confirmContent": "إزالة {count} عنصر؟",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "أرشفة القائمة",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "المخزن",
+  "generateShoppingList": "إنشاء قائمة تسوق",
+  "pantryEmpty": "المخزن فارغ",
+  "pantryEmptySubtitle": "أضف المنتجات التي ترغب في الاحتفاظ بها في المنزل",
+  "itemsNeedPurchase": "{deficit} عنصر بحاجة للشراء",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "لا توجد عناصر بحاجة للشراء",
+  "newPantryList": "تسوق المخزن",
+  "newListTitle": "قائمة تسوق جديدة",
+  "itemsWillBeAdded": "سيتم إضافة {count} عنصر",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "اسم القائمة",
+  "listCreated": "تم إنشاء القائمة \"{name}\" مع {count} عناصر",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "بدون تتبع",
+  "markAsPurchased": "تحديد كمشتري",
+  "editPantryItem": "تعديل {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "الكمية المثالية",
+  "currentQuantity": "الكمية الحالية",
+  "consumed": "تم الاستهلاك",
+  "restocked": "تم إعادة تخزين {name} إلى {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "إزالة \"{name}\" من المخزن؟",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "تعديل {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "الإعدادات",
+  "language": "اللغة",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "إعدادات النظام",
+  "appearance": "المظهر",
+  "light": "فاتح",
+  "system": "النظام",
+  "dark": "داكن",
+  "themeColor": "لون السمة",
+  "finance": "المالية",
+  "monthlyBudgetNav": "الميزانية الشهرية",
+  "budgetSubtitle": "تتبع إنفاقك الشهري",
+  "data": "البيانات",
+  "backupNav": "النسخ الاحتياطي",
+  "backupSubtitle": "تصدير أو استيراد بياناتك",
+  "about": "حول",
+  "version": "الإصدار",
+  "privacy": "الخصوصية",
+  "termsOfUse": "شروط الاستخدام",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "النسخ الاحتياطي",
+  "backupPremiumDescription": "النسخ الاحتياطي والتصدير ميزة بريميوم",
+  "exportData": "تصدير البيانات",
+  "exportDataSubtitle": "حفظ جميع القوائم بصيغة JSON",
+  "importData": "استيراد البيانات",
+  "importDataSubtitle": "استعادة القوائم من ملف JSON",
+  "importJsonTitle": "استيراد JSON",
+  "importJsonHint": "الصق JSON الاحتياطي هنا...",
+  "backupExported": "تم تصدير النسخ الاحتياطي!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "الميزانية الشهرية",
+  "budgetPremiumLocked": "الميزانية الشهرية العالمية ميزة بريميوم",
+  "budgetUpgradePrompt": "قم بالترقية لفتح الميزة",
+  "noBudgetDefined": "لم يتم تعيين ميزانية",
+  "totalEstimated": "الإجمالي التقديري: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "تعيين الميزانية",
+  "budgetLists": "القوائم",
+  "budgetValueLabel": "المبلغ",
+  "setBudgetTitle": "الميزانية الشهرية",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "الكل",
+  "filterPending": "معلقة",
+  "filterPurchased": "تم شراؤها",
+  "sortName": "الاسم",
+  "sortCategory": "الفئة",
+  "sortDate": "التاريخ",
+  "sortManual": "يدوي",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "إضافة عنصر",
+  "itemName": "اسم العنصر",
+  "quantityShort": "الكمية",
+  "unit": "الوحدة",
+  "category": "الفئة",
+  "estimatedPrice": "السعر التقديري",
+  "addItemPrice": "السعر التقديري",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "تعديل العنصر",
+  "quantityFull": "الكمية",
+  "editItemPrice": "السعر التقديري",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "إضافة إلى المخزن",
+  "addToPantryPrompt": "إضافة \"{name}\" إلى المخزن؟",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "نعم",
+  "productName": "اسم المنتج",
+  "idealQty": "الكمية المثالية",
+  "currentQty": "الكمية الحالية",
+  "trackStock": "تتبع المخزون",
+  "trackStockActive": "يظهر في اقتراحات التسوق",
+  "trackStockInactive": "لا يُنشئ اقتراح شراء",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "إنشاء قائمة",
+  "renameListDialog": "إعادة تسمية القائمة",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "سجل القوائم",
+  "myLists": "قوائمي",
+  "viewActive": "عرض النشطة",
+  "viewHistory": "عرض السجل",
+  "noArchivedLists": "لا توجد قوائم مؤرشفة",
+  "noActiveLists": "لا توجد قوائم نشطة",
+  "completedOn": "تم الإكمال في {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "مشاركة",
+  "restore": "استعادة",
+  "removeSharedTooltip": "إزالة",
+  "deleteListTitle": "حذف القائمة",
+  "deleteListContent": "هل أنت متأكد من حذف \"{name}\"؟ سيتم إزالة جميع العناصر.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "إزالة القائمة المشتركة",
+  "removeSharedListContent": "إزالة \"{name}\" من قوائمك؟ القائمة الأصلية لن تتأثر.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "إنشاء قائمة جديدة",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "مساعد الذكاء الاصطناعي",
+  "aiAssistantDescription": "احصل على اقتراحات ذكية ووصفات ونصائح مخصصة مع مساعد الذكاء الاصطناعي.",
+  "generalAssistant": "المساعد العام",
+  "clearHistory": "مسح السجل",
+  "clearHistoryConfirm": "مسح جميع الرسائل في هذه الجلسة؟",
+  "chatHint": "اكتب رسالتك...",
+  "chatError": "خطأ في تحميل الدردشة: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "كيف يمكنني المساعدة في قائمتك؟",
+  "generalHelp": "كيف يمكنني المساعدة في تسوقك اليوم؟",
+  "chatSubtitle": "اطلب اقتراحات عناصر أو وصفات أو نصائح للتوفير.",
+  "aiError": "عذراً، حدث خطأ أثناء معالجة طلبك. تحقق من اتصالك أو حاول مرة أخرى لاحقاً.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "سجل الدخول لفتح\nالميزات المميزة",
+  "signInGoogle": "تسجيل الدخول باستخدام Google",
+  "signInApple": "تسجيل الدخول باستخدام Apple",
+  "continueAsGuest": "المتابعة كضيف",
+  "loginError": "خطأ في تسجيل الدخول: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus بريميوم",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "قم بالترقية لفتح الميزة",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "تمت إزالة العنصر",
+  "undo": "تراجع",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "قائمتك فارغة",
+  "emptyListSubtitle": "أضف عناصر للبدء",
+  "noListFoundTitle": "لم يتم العثور على قوائم",
+  "noListFoundSubtitle": "أنشئ قائمتك الأولى للبدء",
+  "createFirstList": "إنشاء أول قائمة",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "ميزانية القائمة",
+  "budgetAmountLabel": "مبلغ الميزانية",
+  "removeBudget": "إزالة",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "قوائم غير محدودة",
+  "prefSharing": "مشاركة القوائم",
+  "prefFullHistory": "السجل الكامل",
+  "prefExportData": "تصدير البيانات",
+  "prefCustomThemes": "سمات مخصصة",
+  "prefMonthlyBudget": "الميزانية الشهرية العالمية",
+  "prefAIAssistant": "مساعد ذكاء اصطناعي شخصي",
+  "prefUnlimitedPantry": "مخزن غير محدود",
+  "prefInteractiveArtifacts": "أعمال تفاعلية للذكاء الاصطناعي",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "أخضر",
+  "themeBlue": "أزرق",
+  "themePurple": "أرجواني",
+  "themeRed": "أحمر",
+  "themeOrange": "برتقالي",
+  "themePink": "وردي",
+  "themeIndigo": "نيلي",
+  "themeAmber": "عنبر",
+  "themeTeal": "شرشيري",
+  "themeBrown": "بني",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "فواكه",
+  "catCleaning": "تنظيف",
+  "catBeverages": "مشروبات",
+  "catBakery": "مخبوزات",
+  "catOthers": "أخرى",
+  "@_Unit": "description: Unit",
+  "unitPack": "حزمة",
+  "@_Share": "description: Sharing",
+  "shareSubject": "قائمة التسوق",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "الميزانية الشهرية",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "حذف القائمة",
+  "pantryItemRemoved": "تمت إزالة العنصر",
+  "deficitItems": "{deficit,plural, zero{{deficit} عنصر بحاجة للشراء} one{{deficit} عنصر بحاجة للشراء} two{{deficit} عنصر بحاجة للشراء} few{{deficit} عناصر بحاجة للشراء} many{{deficit} عنصراً بحاجة للشراء} other{{deficit} عنصر بحاجة للشراء}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "إجمالي السلة",
+  "restockLabel": "إعادة تخزين",
+  "advancedFeatures": "ميزات متقدمة",
+  "selectAll": "تحديد الكل",
+  "deselectAll": "إلغاء تحديد الكل",
+  "monthlyBudgetAppBar": "الميزانية الشهرية",
+  "budgetEditTitle": "الميزانية الشهرية",
+  "budgetDashboardTitle": "لوحة المعلومات",
+  "selectListForDashboard": "اختر قائمة لعرض لوحة المعلومات.",
+  "spendingAnalysis": "تحليل الإنفاق",
+  "noItemsToAnalyze": "لا توجد عناصر في القائمة لتحليلها.",
+  "markItemsToSeeAnalysis": "حدد العناصر كمشتريات لرؤية التحليل.",
+  "totalSpending": "إجمالي الإنفاق",
+  "spendingByCategory": "الإنفاق حسب الفئة",
+  "achievements": "الإنجازات",
+  "exportPdfExcel": "تصدير PDF/Excel",
+  "exportPdf": "تصدير كـ PDF",
+  "exportExcel": "تصدير كـ Excel",
+  "organizingAi": "جارٍ التنظيم بالذكاء الاصطناعي...",
+  "yesLabel": "نعم",
+  "noLabel": "لا",
+  "shareListText": "قائمة التسوق الخاصة بي",
+  "emptyListAddItems": "قائمتك فارغة! أضف عناصر أولاً. ℹ️",
+  "listOrganizedMagic": "تم تنظيم القائمة بسحر حسب الفئات! ✨",
+  "shoppingMode": "وضع التسوق",
+  "smartOrganization": "تنظيم ذكي",
+  "savings": "توفير",
+  "shoppingModeHeader": "وضع التسوق",
+  "shareAsText": "إرسال العناصر كنص منسق",
+  "shareRealtime": "مزامنة فورية مع الآخرين",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "وصفة سريعة",
+  "quickRecipePrompt": "اقترح وصفات باستخدام عناصر من قائمتي.",
+  "economyTips": "نصائح للتوفير",
+  "economyTipsPrompt": "كيف يمكنني توفير المال في هذه المشتريات؟",
+  "organizeAisles": "تنظيم حسب الممرات",
+  "organizeAislesPrompt": "نظم حسب ممرات المتجر.",
+  "recipeSuggestion": "اقتراح وصفة",
+  "aiCreditsRemaining": "{remaining} رصيد متبقي",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "إضافة الكل إلى القائمة",
+  "organizeByAisles": "تنظيم حسب الممرات",
+  "voiceTranscriptionTooltip": "إدخال صوتي (مجاني)",
+  "aiVoiceCommandTooltip": "أمر صوتي بالذكاء الاصطناعي (بريميوم)",
+  "voiceCommandTitle": "أمر صوتي بالذكاء الاصطناعي",
+  "voiceCommandContent": "تحدث بشكل طبيعي لإدارة قائمتك!\n\nأمثلة:\n• 'أضف خبزاً وجبناً ولحماً'\n• 'أزل مسحوق الغسيل'\n• 'غيّر السمة إلى الأزرق'\n\nهذه ميزة حصرية من Lista Plus Premium.",
+  "voiceCommandPlanBtn": "عرض الخطط",
+  "itemsAddedSuccess": "تمت إضافة العناصر إلى القائمة بنجاح!",
+  "viewList": "عرض القائمة",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "إرسال ملاحظات",
+  "feedbackPrompt": "ما الذي تود مشاركته؟",
+  "feedbackTypeBug": "الإبلاغ عن خطأ",
+  "feedbackTypeBugHint": "شيء لا يعمل",
+  "feedbackTypeSuggestion": "اقتراح",
+  "feedbackTypeSuggestionHint": "فكرة لتحسين التطبيق",
+  "feedbackTypeTranslation": "مشكلة ترجمة",
+  "feedbackTypeTranslationHint": "ترجمة غير صحيحة أو غير مناسبة",
+  "feedbackTypeFeature": "طلب ميزة",
+  "feedbackTypeFeatureHint": "ميزة ترغب في رؤيتها",
+  "feedbackTypeOther": "أخرى",
+  "feedbackTypeOtherHint": "نوع آخر من الملاحظات",
+  "feedbackHint": "صف ملاحظاتك بالتفصيل...",
+  "feedbackSend": "إرسال الملاحظات",
+  "feedbackSending": "جارٍ الإرسال...",
+  "feedbackThankYou": "شكراً لك!",
+  "feedbackThankYouMessage": "تم استلام ملاحظاتك، وهي تساعدنا في تحسين Lista Plus للجميع.",
+  "feedbackBack": "رجوع",
+  "feedbackError": "خطأ في الإرسال: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "حاول مرة أخرى",
+  "feedbackSettingsTitle": "إرسال ملاحظات",
+  "feedbackSettingsSubtitle": "الإبلاغ عن أخطاء، اقتراح تحسينات، أو إصلاح ترجمات",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

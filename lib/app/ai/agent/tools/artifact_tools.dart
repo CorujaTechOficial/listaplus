@@ -1,6 +1,6 @@
 import 'tool_core.dart';
 
-final generateArtifactTool = const AgentTool(
+const generateArtifactTool = AgentTool(
   name: 'generate_artifact',
   description: 'Gera um artefato interativo e reativo de interface (GenUI) no chat. '
       'Permite criar calculadoras de eventos (churrasco, festa), otimização de orçamentos, '

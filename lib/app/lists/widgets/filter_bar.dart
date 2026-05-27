@@ -97,25 +97,29 @@ class _FilterBarState extends State<FilterBar> {
             children: [
               Icon(Icons.sort, size: 16, color: theme.colorScheme.onSurfaceVariant),
               const SizedBox(width: 4),
-              DropdownButton<SortType>(
-                value: widget.sort,
-                underline: const SizedBox(),
-                borderRadius: BorderRadius.circular(RadiusTokens.sm),
-                style: theme.textTheme.labelMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
+              SizedBox(
+                width: 120,
+                child: DropdownButton<SortType>(
+                  value: widget.sort,
+                  underline: const SizedBox(),
+                  borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                  isExpanded: true,
+                  style: theme.textTheme.labelMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                  items: [
+                    DropdownMenuItem(value: SortType.name, child: Text(l10n.sortName, overflow: TextOverflow.ellipsis)),
+                    DropdownMenuItem(value: SortType.category, child: Text(l10n.sortCategory, overflow: TextOverflow.ellipsis)),
+                    DropdownMenuItem(value: SortType.date, child: Text(l10n.sortDate, overflow: TextOverflow.ellipsis)),
+                    DropdownMenuItem(value: SortType.manual, child: Text(l10n.sortManual, overflow: TextOverflow.ellipsis)),
+                  ],
+                  onChanged: (v) {
+                    if (v != null) {
+                      HapticFeedback.selectionClick();
+                      widget.onSortChanged(v);
+                    }
+                  },
                 ),
-                items: [
-                  DropdownMenuItem(value: SortType.name, child: Text(l10n.sortName)),
-                  DropdownMenuItem(value: SortType.category, child: Text(l10n.sortCategory)),
-                  DropdownMenuItem(value: SortType.date, child: Text(l10n.sortDate)),
-                  DropdownMenuItem(value: SortType.manual, child: Text(l10n.sortManual)),
-                ],
-                onChanged: (v) {
-                  if (v != null) {
-                    HapticFeedback.selectionClick();
-                    widget.onSortChanged(v);
-                  }
-                },
               ),
             ],
           ),

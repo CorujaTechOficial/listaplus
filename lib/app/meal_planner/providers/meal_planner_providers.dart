@@ -14,7 +14,7 @@ class MealPlans extends _$MealPlans {
   Future<List<MealPlan>> build({DateTime? start, DateTime? end}) async {
     final service = ref.watch(firestoreServiceProvider);
 
-    _subscription?.cancel();
+    unawaited(_subscription?.cancel());
 
     final completer = Completer<List<MealPlan>>();
 

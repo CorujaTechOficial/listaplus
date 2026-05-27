@@ -45,7 +45,7 @@ class Premium extends _$Premium {
     try {
       final active = await revenueCat.isEntitlementActive(listaPlusProEntitlement);
       return active;
-    } catch (e) {
+    } on Object catch (e) {
       LoggerService.log('PremiumProvider: erro ao verificar entitlement: $e', tag: 'Premium');
       return false;
     }

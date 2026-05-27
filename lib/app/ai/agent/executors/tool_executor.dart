@@ -7,6 +7,7 @@ import 'pantry_executor.dart';
 import 'budget_executor.dart';
 import 'share_executor.dart';
 import 'config_executor.dart';
+import 'system_executor.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/services/logger_service.dart';
 
@@ -23,6 +24,7 @@ class ToolExecutor {
   final BudgetExecutor _budgetExecutor = const BudgetExecutor();
   final ShareExecutor _shareExecutor = const ShareExecutor();
   final ConfigExecutor _configExecutor = const ConfigExecutor();
+  final SystemExecutor _systemExecutor = const SystemExecutor();
 
   Future<ToolResult> execute(AgentToolCall call) async {
     if (AgentTools.premiumToolNames.contains(call.name)) {
@@ -145,6 +147,16 @@ class ToolExecutor {
           return _configExecutor.scheduleMeal(_container, call.arguments);
         case 'remove_meal_plan_entry':
           return _configExecutor.removeMealPlanEntry(_container, call.arguments);
+
+        // --- System tools ---
+        case 'open_paywall':
+          return _systemExecutor.openPaywall(_container);
+        case 'request_app_review':
+          return _systemExecutor.requestAppReview(_container);
+        case 'prompt_app_update':
+          return _systemExecutor.promptAppUpdate(_container);
+        case 'generate_referral_link':
+          return _systemExecutor.generateReferralLink(_container);
 
         default:
           return ToolResult(

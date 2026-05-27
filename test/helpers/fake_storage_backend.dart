@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:rxdart/rxdart.dart';
-import 'package:shopping_list/models/category_data.dart';
-import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/domain/entities/category_data.dart';
+import 'package:shopping_list/domain/entities/chat_message.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/models/pantry_item.dart';
@@ -330,6 +330,11 @@ class FakeStorageBackend implements StorageBackend {
   }
 
   @override
+  Future<String?> uploadRecipeImage(String recipeId, String filePath) async {
+    return null;
+  }
+
+  @override
   Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end}) async {
     return _filterPlans(_mealPlans, start, end);
   }
@@ -360,4 +365,11 @@ class FakeStorageBackend implements StorageBackend {
     }
     return filtered;
   }
+
+  @override
+  Future<void> saveFeedback(Map<String, dynamic> feedbackData) async {
+    _feedback.add(feedbackData);
+  }
 }
+
+final _feedback = <Map<String, dynamic>>[];

@@ -1,11 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/domain/entities/chat_message.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import '../helpers/fake_ai_service.dart';
@@ -43,7 +44,10 @@ void main() {
     });
 
     test('sendMessage updates state and saves to firestore', () async {
-      container.listen(chatSessionProvider('list1'), (_, __) {});
+      container.listen(chatSessionProvider('list1'), (_, _) {});
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+      container.listen(userProfileProvider, (_, _) {});
       await container.read(chatSessionProvider('list1').future);
 
       // Mock some items for context
@@ -63,7 +67,10 @@ void main() {
     });
 
     test('clearHistory removes all messages', () async {
-      container.listen(chatSessionProvider('list1'), (_, __) {});
+      container.listen(chatSessionProvider('list1'), (_, _) {});
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+      container.listen(userProfileProvider, (_, _) {});
       await container.read(chatSessionProvider('list1').future);
       await container.read(chatSessionProvider('list1').notifier).sendMessage('Hi');
       await container.read(chatSessionProvider('list1').notifier).clearHistory();
@@ -76,7 +83,10 @@ void main() {
     });
 
     test('global chat uses global system prompt', () async {
-      container.listen(chatSessionProvider(null), (_, __) {});
+      container.listen(chatSessionProvider(null), (_, _) {});
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+      container.listen(userProfileProvider, (_, _) {});
       await container.read(chatSessionProvider(null).future);
 
       final list = ShoppingList(id: 'list1', name: 'Market');
@@ -94,7 +104,10 @@ void main() {
       test('does nothing when message has no execution steps', () async {
         final msg = ChatMessage(id: 'msg1', role: 'assistant', content: 'Did nothing');
         await fakeStorage.saveChatMessage('list1', msg);
-        container.listen(chatSessionProvider('list1'), (_, __) {});
+        container.listen(chatSessionProvider('list1'), (_, _) {});
+        container.listen(shoppingListsProvider, (_, _) {});
+        container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+        container.listen(userProfileProvider, (_, _) {});
         await container.read(chatSessionProvider('list1').future);
 
         await container.read(chatSessionProvider('list1').notifier).undoMessageActions('msg1');
@@ -130,7 +143,10 @@ void main() {
         );
 
         await fakeStorage.saveChatMessage('list1', msg);
-        container.listen(chatSessionProvider('list1'), (_, __) {});
+        container.listen(chatSessionProvider('list1'), (_, _) {});
+        container.listen(shoppingListsProvider, (_, _) {});
+        container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+        container.listen(userProfileProvider, (_, _) {});
         await container.read(chatSessionProvider('list1').future);
 
         final itemsBefore = await fakeStorage.loadItems('list1');
@@ -172,7 +188,10 @@ void main() {
         );
 
         await fakeStorage.saveChatMessage('list1', msg);
-        container.listen(chatSessionProvider('list1'), (_, __) {});
+        container.listen(chatSessionProvider('list1'), (_, _) {});
+        container.listen(shoppingListsProvider, (_, _) {});
+        container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+        container.listen(userProfileProvider, (_, _) {});
         await container.read(chatSessionProvider('list1').future);
 
         final itemsBefore = await fakeStorage.loadItems('list1');
@@ -225,7 +244,10 @@ void main() {
         );
 
         await fakeStorage.saveChatMessage('list1', msg);
-        container.listen(chatSessionProvider('list1'), (_, __) {});
+        container.listen(chatSessionProvider('list1'), (_, _) {});
+        container.listen(shoppingListsProvider, (_, _) {});
+        container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+        container.listen(userProfileProvider, (_, _) {});
         await container.read(chatSessionProvider('list1').future);
 
         await container.read(chatSessionProvider('list1').notifier).undoMessageActions('msg-3');
@@ -243,8 +265,11 @@ void main() {
         await fakeStorage.saveLists([list]);
 
         // Listen to monthlyBudgetProvider to keep it active
-        container.listen(monthlyBudgetProvider, (_, __) {});
+        container.listen(monthlyBudgetProvider, (_, _) {});
         await container.read(monthlyBudgetProvider.future);
+        container.listen(shoppingListsProvider, (_, _) {});
+        container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+        container.listen(userProfileProvider, (_, _) {});
 
         final step = AgentStep(
           id: 'step-4',
@@ -260,7 +285,7 @@ void main() {
         );
 
         await fakeStorage.saveChatMessage('list1', msg);
-        container.listen(chatSessionProvider('list1'), (_, __) {});
+        container.listen(chatSessionProvider('list1'), (_, _) {});
         await container.read(chatSessionProvider('list1').future);
 
         await container.read(chatSessionProvider('list1').notifier).undoMessageActions('msg-4');

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:characters/characters.dart';
 import 'package:http/http.dart' as http;
 import 'logger_service.dart';
 import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
@@ -61,40 +62,52 @@ class OpenCodeGoService implements AiService {
   Future<ChatMessage> getChatCompletion(
     List<ChatMessage> history, {
     String? systemPrompt,
+    AiCancellationToken? cancelToken,
   }) async {
     final messages = _buildMessages(history, systemPrompt: systemPrompt);
 
     final requestModel = _hasAudio(messages) ? 'google/gemini-2.5-flash' : model;
-    final response = await http.post(
-      Uri.parse(_baseUrl),
-      headers: await _headers(),
-      body: jsonEncode({
-        'model': requestModel,
-        'messages': messages,
-      }),
-    ).timeout(const Duration(seconds: 30));
+    final client = http.Client();
+    
+    cancelToken?.onCancel(() {
+      client.close();
+    });
 
-    if (response.statusCode != 200) {
+    try {
+      final response = await client.post(
+        Uri.parse(_baseUrl),
+        headers: await _headers(),
+        body: jsonEncode({
+          'model': requestModel,
+          'messages': messages,
+        }),
+      ).timeout(const Duration(seconds: 30));
+
+      if (response.statusCode != 200) {
+        return ChatMessage(
+          role: 'assistant',
+          content: 'Erro na API: ${response.statusCode}',
+        );
+      }
+
+      final body = jsonDecode(response.body) as Map<String, dynamic>;
+      final choice = (body['choices'] as List?)?.firstOrNull;
+      final content = (choice?['message']?['content'] as String?) ?? '';
+
       return ChatMessage(
         role: 'assistant',
-        content: 'Erro na API: ${response.statusCode}',
+        content: content,
       );
+    } finally {
+      client.close();
     }
-
-    final body = jsonDecode(response.body) as Map<String, dynamic>;
-    final choice = (body['choices'] as List?)?.firstOrNull;
-    final content = (choice?['message']?['content'] as String?) ?? '';
-
-    return ChatMessage(
-      role: 'assistant',
-      content: content,
-    );
   }
 
   @override
   Stream<String> getChatCompletionStream(
     List<ChatMessage> history, {
     String? systemPrompt,
+    AiCancellationToken? cancelToken,
   }) async* {
     final messages = _buildMessages(history, systemPrompt: systemPrompt);
 
@@ -108,6 +121,10 @@ class OpenCodeGoService implements AiService {
       });
 
     final client = http.Client();
+    cancelToken?.onCancel(() {
+      client.close();
+    });
+
     http.StreamedResponse response;
 
     try {
@@ -123,6 +140,10 @@ class OpenCodeGoService implements AiService {
       yield 'Desculpe, a requisição excedeu o tempo limite.';
       return;
     } on Exception catch (e, st) {
+      if (cancelToken?.isCancelled == true) {
+        client.close();
+        return;
+      }
       LoggerService.error(e, stackTrace: st, message: '[OpenCodeGo] Stream connection error', extra: {
         'operation': 'stream_connection_error',
         'model': requestModel,
@@ -140,7 +161,7 @@ class OpenCodeGoService implements AiService {
         'operation': 'stream_api_error',
         'httpStatus': response.statusCode,
         'model': requestModel,
-        'responseBody': responseBody.substring(0, responseBody.length.clamp(0, 500)),
+        'responseBody': responseBody.characters.take(500).toString(),
       });
       client.close();
       yield 'Erro na API: ${response.statusCode}';
@@ -151,36 +172,41 @@ class OpenCodeGoService implements AiService {
         .transform(utf8.decoder)
         .transform(const LineSplitter());
 
-    await for (final line in stream) {
-      if (!line.startsWith('data: ')) {
-        continue;
-      }
-
-      final data = line.substring(6).trim();
-      if (data == '[DONE]') {
-        break;
-      }
-
-      try {
-        final json = jsonDecode(data) as Map<String, dynamic>;
-        final choice = (json['choices'] as List?)?.firstOrNull;
-        if (choice == null) {
+    try {
+      await for (final line in stream) {
+        if (cancelToken?.isCancelled == true) {
+          break;
+        }
+        if (!line.startsWith('data: ')) {
           continue;
         }
-        final delta = choice['delta'] as Map<String, dynamic>?;
-        if (delta == null) {
-          continue;
+
+        final data = line.substring(6).trim();
+        if (data == '[DONE]') {
+          break;
         }
-        final content = delta['content'] as String?;
-        if (content != null && content.isNotEmpty) {
-          yield content;
+
+        try {
+          final json = jsonDecode(data) as Map<String, dynamic>;
+          final choice = (json['choices'] as List?)?.firstOrNull;
+          if (choice == null) {
+            continue;
+          }
+          final delta = choice['delta'] as Map<String, dynamic>?;
+          if (delta == null) {
+            continue;
+          }
+          final content = delta['content'] as String?;
+          if (content != null && content.isNotEmpty) {
+            yield content;
+          }
+        } on FormatException {
+          // Skip malformed JSON chunks
         }
-      } on FormatException {
-        // Skip malformed JSON chunks
       }
+    } finally {
+      client.close();
     }
-
-    client.close();
   }
 
   @override
@@ -188,6 +214,7 @@ class OpenCodeGoService implements AiService {
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
+    AiCancellationToken? cancelToken,
   }) async* {
     final fullMessages = <Map<String, dynamic>>[];
     if (systemPrompt != null) {
@@ -210,6 +237,10 @@ class OpenCodeGoService implements AiService {
       ..body = jsonEncode(body);
 
     final client = http.Client();
+    cancelToken?.onCancel(() {
+      client.close();
+    });
+
     http.StreamedResponse response;
 
     try {
@@ -225,6 +256,10 @@ class OpenCodeGoService implements AiService {
       client.close();
       return;
     } on Exception catch (e, st) {
+      if (cancelToken?.isCancelled == true) {
+        client.close();
+        return;
+      }
       LoggerService.error(e, stackTrace: st, message: '[OpenCodeGo] StreamWithTools connection error', extra: {
         'operation': 'stream_with_tools_connection_error',
         'model': requestModel,
@@ -243,7 +278,7 @@ class OpenCodeGoService implements AiService {
         'httpStatus': response.statusCode,
         'model': requestModel,
         'toolsCount': tools?.length ?? 0,
-        'responseBody': responseBody.substring(0, responseBody.length.clamp(0, 500)),
+        'responseBody': responseBody.characters.take(500).toString(),
       });
       client.close();
       return;
@@ -253,36 +288,41 @@ class OpenCodeGoService implements AiService {
         .transform(utf8.decoder)
         .transform(const LineSplitter());
 
-    await for (final line in stream) {
-      if (!line.startsWith('data: ')) {
-        continue;
-      }
-
-      final data = line.substring(6).trim();
-      if (data == '[DONE]') {
-        break;
-      }
-
-      try {
-        final json = jsonDecode(data) as Map<String, dynamic>;
-        final choice = (json['choices'] as List?)?.firstOrNull;
-        if (choice == null) {
+    try {
+      await for (final line in stream) {
+        if (cancelToken?.isCancelled == true) {
+          break;
+        }
+        if (!line.startsWith('data: ')) {
           continue;
         }
-        final delta = choice['delta'] as Map<String, dynamic>?;
-        if (delta == null) {
-          continue;
+
+        final data = line.substring(6).trim();
+        if (data == '[DONE]') {
+          break;
         }
-        final content = delta['content'] as String?;
-        if (content != null && content.isNotEmpty) {
-          yield content;
+
+        try {
+          final json = jsonDecode(data) as Map<String, dynamic>;
+          final choice = (json['choices'] as List?)?.firstOrNull;
+          if (choice == null) {
+            continue;
+          }
+          final delta = choice['delta'] as Map<String, dynamic>?;
+          if (delta == null) {
+            continue;
+          }
+          final content = delta['content'] as String?;
+          if (content != null && content.isNotEmpty) {
+            yield content;
+          }
+        } on FormatException {
+          // Skip malformed JSON chunks
         }
-      } on FormatException {
-        // Skip malformed JSON chunks
       }
+    } finally {
+      client.close();
     }
-
-    client.close();
   }
 
   @override
@@ -290,6 +330,7 @@ class OpenCodeGoService implements AiService {
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
+    AiCancellationToken? cancelToken,
   }) async {
     final fullMessages = <Map<String, dynamic>>[];
     if (systemPrompt != null) {
@@ -306,52 +347,61 @@ class OpenCodeGoService implements AiService {
       body['tools'] = tools;
     }
 
-    final response = await http.post(
-      Uri.parse(_baseUrl),
-      headers: await _headers(),
-      body: jsonEncode(body),
-    ).timeout(const Duration(seconds: 30));
+    final client = http.Client();
+    cancelToken?.onCancel(() {
+      client.close();
+    });
 
-    if (response.statusCode != 200) {
-      LoggerService.error(Exception('HTTP ${response.statusCode}'), message: '[OpenCodeGo] getChatCompletionWithTools API error', extra: {
-        'operation': 'chat_completion_api_error',
-        'httpStatus': response.statusCode,
-        'model': requestModel,
-        'toolsCount': tools?.length ?? 0,
-        'responseBody': response.body.substring(0, response.body.length.clamp(0, 500)),
-      });
-      return AiResponse(
-        content: 'Erro na API: ${response.statusCode}',
-      );
+    try {
+      final response = await client.post(
+        Uri.parse(_baseUrl),
+        headers: await _headers(),
+        body: jsonEncode(body),
+      ).timeout(const Duration(seconds: 30));
+
+      if (response.statusCode != 200) {
+        LoggerService.error(Exception('HTTP ${response.statusCode}'), message: '[OpenCodeGo] getChatCompletionWithTools API error', extra: {
+          'operation': 'chat_completion_api_error',
+          'httpStatus': response.statusCode,
+          'model': requestModel,
+          'toolsCount': tools?.length ?? 0,
+          'responseBody': response.body.characters.take(500).toString(),
+        });
+        return AiResponse(
+          content: 'Erro na API: ${response.statusCode}',
+        );
+      }
+
+      final data = jsonDecode(response.body) as Map<String, dynamic>;
+      final choice = (data['choices'] as List?)?.firstOrNull;
+      if (choice == null) {
+        return const AiResponse(content: 'Resposta vazia da API.');
+      }
+
+      final message = choice['message'] as Map<String, dynamic>?;
+      if (message == null) {
+        return const AiResponse(content: 'Resposta inválida da API.');
+      }
+
+      final content = message['content'] as String?;
+      final reasoningContent = message['reasoning_content'] as String?;
+      final responseText = content ?? '';
+
+      final rawToolCalls = message['tool_calls'] as List<dynamic>?;
+      if (rawToolCalls != null && rawToolCalls.isNotEmpty) {
+        final toolCalls = rawToolCalls
+            .map((tc) => AgentToolCall.fromJson(tc as Map<String, dynamic>))
+            .toList();
+        return AiResponse(
+          toolCalls: toolCalls,
+          reasoningContent: reasoningContent,
+        );
+      }
+
+      return AiResponse(content: responseText);
+    } finally {
+      client.close();
     }
-
-    final data = jsonDecode(response.body) as Map<String, dynamic>;
-    final choice = (data['choices'] as List?)?.firstOrNull;
-    if (choice == null) {
-      return const AiResponse(content: 'Resposta vazia da API.');
-    }
-
-    final message = choice['message'] as Map<String, dynamic>?;
-    if (message == null) {
-      return const AiResponse(content: 'Resposta inválida da API.');
-    }
-
-    final content = message['content'] as String?;
-    final reasoningContent = message['reasoning_content'] as String?;
-    final responseText = content ?? '';
-
-    final rawToolCalls = message['tool_calls'] as List<dynamic>?;
-    if (rawToolCalls != null && rawToolCalls.isNotEmpty) {
-      final toolCalls = rawToolCalls
-          .map((tc) => AgentToolCall.fromJson(tc as Map<String, dynamic>))
-          .toList();
-      return AiResponse(
-        toolCalls: toolCalls,
-        reasoningContent: reasoningContent,
-      );
-    }
-
-    return AiResponse(content: responseText);
   }
 }
 // coverage:ignore-end

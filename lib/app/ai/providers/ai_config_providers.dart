@@ -2,8 +2,8 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
-import 'package:shopping_list/models/ai_config.dart';
-import 'package:shopping_list/models/ai_usage.dart';
+import 'package:shopping_list/domain/entities/ai_config.dart';
+import 'package:shopping_list/domain/entities/ai_usage.dart';
 import 'package:shopping_list/services/ai_service.dart';
 import 'package:shopping_list/services/open_code_go_service.dart';
 
@@ -17,13 +17,13 @@ class AiConfigState extends _$AiConfigState {
       final service = ref.watch(firestoreServiceProvider);
       final data = await service.getUserData();
       if (data == null) {
-        return const AiConfig(name: 'IA', iconKey: 'auto_awesome');
+        return const AiConfig(name: 'IA', iconKey: 'smart_toy');
       }
       final name = data['aiName'] as String? ?? 'IA';
-      final iconKey = data['aiAvatarIcon'] as String? ?? 'auto_awesome';
+      final iconKey = data['aiAvatarIcon'] as String? ?? 'smart_toy';
       return AiConfig(name: name, iconKey: iconKey);
     } on Exception {
-      return const AiConfig(name: 'IA', iconKey: 'auto_awesome');
+      return const AiConfig(name: 'IA', iconKey: 'smart_toy');
     }
   }
 

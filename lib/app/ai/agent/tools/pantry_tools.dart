@@ -1,11 +1,11 @@
 import 'tool_core.dart';
 
-final getPantryItemsTool = const AgentTool(
+const getPantryItemsTool = AgentTool(
   name: 'get_pantry_items',
   description: 'Lista todos os itens da despensa/estoque',
 );
 
-final addPantryItemTool = const AgentTool(
+const addPantryItemTool = AgentTool(
   name: 'add_pantry_item',
   description: 'Adiciona um item à despensa',
   parameters: [
@@ -24,7 +24,7 @@ final addPantryItemTool = const AgentTool(
   ],
 );
 
-final updatePantryItemTool = const AgentTool(
+const updatePantryItemTool = AgentTool(
   name: 'update_pantry_item',
   description: 'Atualiza os dados de um item da despensa',
   parameters: [
@@ -42,7 +42,7 @@ final updatePantryItemTool = const AgentTool(
   ],
 );
 
-final removePantryItemTool = const AgentTool(
+const removePantryItemTool = AgentTool(
   name: 'remove_pantry_item',
   description: 'Remove um item da despensa',
   parameters: [
@@ -50,7 +50,7 @@ final removePantryItemTool = const AgentTool(
   ],
 );
 
-final consumePantryItemTool = const AgentTool(
+const consumePantryItemTool = AgentTool(
   name: 'consume_pantry_item',
   description: 'Consome/usa uma quantidade de um item da despensa',
   parameters: [
@@ -59,7 +59,7 @@ final consumePantryItemTool = const AgentTool(
   ],
 );
 
-final restockPantryItemTool = const AgentTool(
+const restockPantryItemTool = AgentTool(
   name: 'restock_pantry_item',
   description: 'Reabastece/recompõe o estoque de um item na despensa',
   parameters: [
@@ -68,12 +68,12 @@ final restockPantryItemTool = const AgentTool(
   ],
 );
 
-final clearPantryTool = const AgentTool(
+const clearPantryTool = AgentTool(
   name: 'clear_pantry',
   description: 'Limpa TODOS os itens da despensa',
 );
 
-final allPantryTools = [
+const allPantryTools = [
   getPantryItemsTool,
   addPantryItemTool,
   updatePantryItemTool,

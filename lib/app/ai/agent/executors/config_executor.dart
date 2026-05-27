@@ -176,11 +176,24 @@ class ConfigExecutor {
   }
 
   Future<ToolResult> createRecipe(ProviderContainer container, Map<String, dynamic> args) async {
-    final name = args['name'] as String;
+    final name = (args['name'] as String).trim();
     final description = args['description'] as String;
     final ingredientsJson = args['ingredients'] as String;
     final instructionsStr = args['instructions'] as String;
     final prepTime = (args['prepTimeMinutes'] as num?)?.toInt() ?? 30;
+
+    final existing = await container.read(recipesProvider.future);
+    final duplicate = existing.cast<Recipe?>().firstWhere(
+      (r) => r!.name.trim().toLowerCase() == name.toLowerCase(),
+      orElse: () => null,
+    );
+    if (duplicate != null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Já existe uma receita com este nome. Use um nome diferente ou edite a receita existente.',
+        success: false,
+      );
+    }
 
     final List<dynamic> ingredientsRaw = jsonDecode(ingredientsJson) as List<dynamic>;
     final ingredients = ingredientsRaw.map((e) {
@@ -210,7 +223,11 @@ class ConfigExecutor {
     );
 
     await container.read(recipesProvider.notifier).saveRecipe(recipe);
-    return ToolResult(toolCallId: '', content: 'Receita "$name" salva com sucesso!');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Receita "$name" salva com sucesso!',
+      resultData: {'recipeId': recipe.id, 'recipeName': recipe.name},
+    );
   }
 
   Future<ToolResult> deleteRecipe(ProviderContainer container, Map<String, dynamic> args) async {

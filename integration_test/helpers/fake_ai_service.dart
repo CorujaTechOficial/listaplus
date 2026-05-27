@@ -19,6 +19,7 @@ class FakeAiService implements AiService {
   Future<ChatMessage> getChatCompletion(
     List<ChatMessage> history, {
     String? systemPrompt,
+    AiCancellationToken? cancelToken,
   }) async {
     return ChatMessage(
       role: 'assistant',
@@ -30,6 +31,7 @@ class FakeAiService implements AiService {
   Stream<String> getChatCompletionStream(
     List<ChatMessage> history, {
     String? systemPrompt,
+    AiCancellationToken? cancelToken,
   }) async* {
     yield 'Fake ';
     yield 'streamed ';
@@ -41,6 +43,7 @@ class FakeAiService implements AiService {
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
+    AiCancellationToken? cancelToken,
   }) async {
     if (_responses.isNotEmpty) {
       return _responses.removeFirst();
@@ -53,6 +56,7 @@ class FakeAiService implements AiService {
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
+    AiCancellationToken? cancelToken,
   }) async* {
     if (_streamTokens.isNotEmpty) {
       for (final token in _streamTokens) {

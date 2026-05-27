@@ -3,8 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
-import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/domain/entities/unit.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
 
@@ -21,6 +20,8 @@ void main() {
         firestoreServiceProvider.overrideWithValue(fakeBackend),
         revenueCatServiceProvider.overrideWithValue(fakeRevenueCat),
       ]);
+      container.listen(pantryItemsProvider, (_, _) {});
+      container.listen(premiumProvider, (_, _) {});
     });
 
     tearDown(() {

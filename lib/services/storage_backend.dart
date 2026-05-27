@@ -65,9 +65,12 @@ abstract class StorageBackend {
   Stream<List<Map<String, dynamic>>> watchRecipes();
   Future<void> saveRecipe(Map<String, dynamic> recipe);
   Future<void> deleteRecipe(String id);
+  Future<String?> uploadRecipeImage(String recipeId, String filePath);
 
   Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end});
   Stream<List<Map<String, dynamic>>> watchMealPlans({DateTime? start, DateTime? end});
   Future<void> saveMealPlan(Map<String, dynamic> mealPlan);
   Future<void> deleteMealPlan(String id);
+
+  Future<void> saveFeedback(Map<String, dynamic> feedbackData);
 }

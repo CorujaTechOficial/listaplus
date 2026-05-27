@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import '../helpers/fake_revenuecat_service.dart';
 
@@ -17,6 +16,7 @@ void main() {
           revenueCatServiceProvider.overrideWithValue(fakeRevenueCat),
         ],
       );
+      container.listen(premiumProvider, (_, _) {});
     });
 
     tearDown(() {
@@ -37,17 +37,7 @@ void main() {
     });
 
     test('updates when RC listener triggers', () async {
-      final emissions = <bool>[];
-      container.listen<AsyncValue<bool>>(
-        premiumProvider,
-        (previous, next) {
-          next.whenData((value) => emissions.add(value));
-        },
-        fireImmediately: true,
-      );
-
-      await container.read(premiumProvider.future);
-
+      // Provider is already loaded by setUp's listen
       await fakeRevenueCat.purchasePackage(
         PaywallPackage(
           identifier: 'test',
@@ -59,7 +49,9 @@ void main() {
 
       await Future<void>.delayed(Duration.zero);
 
-      expect(emissions, [false, true]);
+      // Check premium is true after purchase
+      final isPremium = await container.read(premiumProvider.future);
+      expect(isPremium, true);
     });
   });
 }

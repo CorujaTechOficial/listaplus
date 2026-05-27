@@ -1,0 +1,562 @@
+{
+  "@@locale": "ta_IN",
+  "appTitle": "ஷாப்பிங் பட்டியல்",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "பட்டியல்கள்",
+  "pantry": "சரக்கறை",
+  "@_Common": "description: Common actions",
+  "cancel": "ரத்துசெய்",
+  "save": "சேமி",
+  "create": "உருவாக்கு",
+  "add": "சேர்",
+  "remove": "அகற்று",
+  "delete": "நீக்கு",
+  "edit": "திருத்து",
+  "copy": "நகலெடு",
+  "retry": "மீண்டும் முயற்சி",
+  "regenerate": "மீண்டும் உருவாக்கு",
+  "copiedToClipboard": "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது",
+  "confirm": "உறுதிப்படுத்து",
+  "close": "மூடு",
+  "import": "இறக்குமதி",
+  "rename": "மறுபெயரிடு",
+  "upgrade": "மேம்படுத்து",
+  "clear": "அழி",
+  "error": "பிழை: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "பிழை: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "கொள்முதலைச் செயலாக்குவதில் பிழை. மீண்டும் முயற்சிக்கவும்.",
+  "restoreError": "கொள்முதல்களை மீட்டெடுப்பதில் பிழை. மீண்டும் முயற்சிக்கவும்.",
+  "loading": "ஏற்றுகிறது...",
+  "fieldRequired": "தேவையான புலம்",
+  "addedFeedback": "சேர்க்கப்பட்டது!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} தேர்ந்தெடுக்கப்பட்டது} other{{count} தேர்ந்தெடுக்கப்பட்டன}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "மதிப்பிடப்பட்டது",
+  "alreadyPurchased": "ஏற்கனவே வாங்கப்பட்டது",
+  "clearList": "பட்டியலை அழி",
+  "clearPurchased": "வாங்கியவற்றை அழி",
+  "share": "பகிர்",
+  "shareViaCode": "குறியீடு மூலம் பகிர்",
+  "importViaCode": "குறியீடு மூலம் இறக்குமதி",
+  "listAssistant": "பட்டியல் உதவியாளர்",
+  "globalAssistant": "உலகளாவிய உதவியாளர்",
+  "becomePremium": "பிரீமியமாகுங்கள்",
+  "manageSubscription": "சந்தாவை நிர்வகி",
+  "completePurchase": "கொள்முதலை முடி",
+  "confirmClearList": "அனைத்து பொருட்களையும் அகற்றவா?",
+  "shareListTitle": "பட்டியலைப் பகிர்",
+  "shareThisCode": "இந்த குறியீட்டைப் பகிரவும்:",
+  "validForLimitedTime": "குறிப்பிட்ட காலத்திற்கு மட்டும் செல்லுபடியாகும்",
+  "importListTitle": "பட்டியலை இறக்குமதி செய்",
+  "enterCodeHint": "குறியீட்டை உள்ளிடுக",
+  "confirmArchiveTitle": "கொள்முதலை முடி",
+  "confirmArchiveContent": "இந்த கொள்முதலை முடித்து பட்டியலை காப்பகப்படுத்தவா?",
+  "complete": "முடி",
+  "listArchived": "பட்டியல் வெற்றிகரமாக காப்பகப்படுத்தப்பட்டது!",
+  "listAdded": "{listName} சேர்க்கப்பட்டது!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "வாங்கு",
+  "unmark": "குறியை நீக்கு",
+  "confirmDeleteItems": "{count} பொருள்(களை) அகற்றவா?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "உறுதிப்படுத்து",
+  "confirmContent": "{count} பொருள்(களை) அகற்றவா?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "பட்டியலை காப்பகப்படுத்து",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "சரக்கறை",
+  "generateShoppingList": "ஷாப்பிங் பட்டியலை உருவாக்கு",
+  "pantryEmpty": "காலி சரக்கறை",
+  "pantryEmptySubtitle": "நீங்கள் வீட்டில் வைத்திருக்க விரும்பும் பொருட்களைச் சேர்க்கவும்",
+  "itemsNeedPurchase": "{deficit} பொருள்(கள்) வாங்கப்பட வேண்டும்",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "வாங்க வேண்டிய பொருட்கள் எதுவும் இல்லை",
+  "newPantryList": "சரக்கறை ஷாப்பிங்",
+  "newListTitle": "புதிய ஷாப்பிங் பட்டியல்",
+  "itemsWillBeAdded": "{count} பொருள்(கள்) சேர்க்கப்படும்",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "பட்டியல் பெயர்",
+  "listCreated": "\"{name}\" பட்டியல் {count} பொருட்களுடன் உருவாக்கப்பட்டது",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "கண்காணிப்பு இல்லை",
+  "markAsPurchased": "வாங்கியதாகக் குறி",
+  "editPantryItem": "{name}ஐத் திருத்து",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "உகந்த அளவு",
+  "currentQuantity": "தற்போதைய அளவு",
+  "consumed": "நுகரப்பட்டது",
+  "restocked": "{name} {quantity} {unit} ஆக மீண்டும் நிரப்பப்பட்டது",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "\"{name}\"ஐ சரக்கறையிலிருந்து அகற்றவா?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "{name}ஐத் திருத்து",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "அமைப்புகள்",
+  "language": "மொழி",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "கணினி இயல்புநிலை",
+  "appearance": "தோற்றம்",
+  "light": "ஒளி",
+  "system": "கணினி",
+  "dark": "இருள்",
+  "themeColor": "தீம் நிறம்",
+  "finance": "நிதி",
+  "monthlyBudgetNav": "மாதாந்திர பட்ஜெட்",
+  "budgetSubtitle": "உங்கள் மாதாந்திர செலவுகளைக் கண்காணிக்கவும்",
+  "data": "தரவு",
+  "backupNav": "காப்புப்பிரதி",
+  "backupSubtitle": "உங்கள் தரவை ஏற்றுமதி அல்லது இறக்குமதி செய்யவும்",
+  "about": "பற்றி",
+  "version": "பதிப்பு",
+  "privacy": "தனியுரிமை",
+  "termsOfUse": "பயன்பாட்டு விதிமுறைகள்",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "காப்புப்பிரதி",
+  "backupPremiumDescription": "காப்புப்பிரதி மற்றும் ஏற்றுமதி ஒரு பிரீமியம் அம்சம்",
+  "exportData": "தரவை ஏற்றுமதி செய்",
+  "exportDataSubtitle": "அனைத்து பட்டியல்களையும் JSON ஆக சேமிக்கவும்",
+  "importData": "தரவை இறக்குமதி செய்",
+  "importDataSubtitle": "JSON இலிருந்து பட்டியல்களை மீட்டெடுக்கவும்",
+  "importJsonTitle": "JSON ஐ இறக்குமதி செய்",
+  "importJsonHint": "காப்புப்பிரதி JSON ஐ இங்கே ஒட்டவும்...",
+  "backupExported": "காப்புப்பிரதி ஏற்றுமதி செய்யப்பட்டது!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "மாதாந்திர பட்ஜெட்",
+  "budgetPremiumLocked": "உலகளாவிய மாதாந்திர பட்ஜெட் பிரீமியம் அம்சம்",
+  "budgetUpgradePrompt": "திறக்க மேம்படுத்தவும்",
+  "noBudgetDefined": "பட்ஜெட் எதுவும் அமைக்கப்படவில்லை",
+  "totalEstimated": "மொத்த மதிப்பீடு: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "பட்ஜெட்டை அமை",
+  "budgetLists": "பட்டியல்கள்",
+  "budgetValueLabel": "தொகை",
+  "setBudgetTitle": "மாதாந்திர பட்ஜெட்",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "அனைத்தும்",
+  "filterPending": "நிலுவையில்",
+  "filterPurchased": "வாங்கப்பட்டவை",
+  "sortName": "பெயர்",
+  "sortCategory": "வகை",
+  "sortDate": "தேதி",
+  "sortManual": "கைமுறை",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "பொருளைச் சேர்",
+  "itemName": "பொருளின் பெயர்",
+  "quantityShort": "அளவு",
+  "unit": "அலகு",
+  "category": "வகை",
+  "estimatedPrice": "மதிப்பிடப்பட்ட விலை",
+  "addItemPrice": "மதிப்பிடப்பட்ட விலை",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "பொருளைத் திருத்து",
+  "quantityFull": "அளவு",
+  "editItemPrice": "மதிப்பிடப்பட்ட விலை",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "சரக்கறையில் சேர்",
+  "addToPantryPrompt": "\"{name}\"ஐ உங்கள் சரக்கறையில் சேர்க்கவா?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "ஆம்",
+  "productName": "பொருளின் பெயர்",
+  "idealQty": "உகந்த அளவு",
+  "currentQty": "தற்போதைய அளவு",
+  "trackStock": "இருப்பைக் கண்காணி",
+  "trackStockActive": "ஷாப்பிங் பரிந்துரைகளில் தோன்றும்",
+  "trackStockInactive": "ஷாப்பிங் பரிந்துரையை உருவாக்காது",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "பட்டியலை உருவாக்கு",
+  "renameListDialog": "பட்டியலை மறுபெயரிடு",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "பட்டியல் வரலாறு",
+  "myLists": "எனது பட்டியல்கள்",
+  "viewActive": "செயலில் உள்ளவற்றைப் பார்",
+  "viewHistory": "வரலாற்றைப் பார்",
+  "noArchivedLists": "காப்பகப்படுத்தப்பட்ட பட்டியல்கள் இல்லை",
+  "noActiveLists": "செயலில் உள்ள பட்டியல்கள் இல்லை",
+  "completedOn": "{date} அன்று முடிக்கப்பட்டது",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "பகிரப்பட்டது",
+  "restore": "மீட்டெடு",
+  "removeSharedTooltip": "அகற்று",
+  "deleteListTitle": "பட்டியலை நீக்கு",
+  "deleteListContent": "\"{name}\"ஐ நிச்சயமாக நீக்க விரும்புகிறீர்களா? அனைத்து பொருட்களும் அகற்றப்படும்.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "பகிரப்பட்ட பட்டியலை அகற்று",
+  "removeSharedListContent": "\"{name}\"ஐ உங்கள் பட்டியல்களிலிருந்து அகற்றவா? அசல் பட்டியல் பாதிக்கப்படாது.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "புதிய பட்டியலை உருவாக்கு",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI உதவியாளர்",
+  "aiAssistantDescription": "எங்கள் AI உதவியாளருடன் ஸ்மார்ட் பரிந்துரைகள், சமையல் குறிப்புகள் மற்றும் தனிப்பயனாக்கப்பட்ட உதவிக்குறிப்புகளைப் பெறுங்கள்.",
+  "generalAssistant": "பொது உதவியாளர்",
+  "clearHistory": "வரலாற்றை அழி",
+  "clearHistoryConfirm": "இந்த அமர்வில் உள்ள அனைத்து செய்திகளையும் அழிக்கவா?",
+  "chatHint": "உங்கள் செய்தியைத் தட்டச்சு செய்க...",
+  "chatError": "அரட்டையை ஏற்றுவதில் பிழை: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "உங்கள் பட்டியலில் எப்படி உதவ முடியும்?",
+  "generalHelp": "இன்று உங்கள் ஷாப்பிங்கில் எப்படி உதவ முடியும்?",
+  "chatSubtitle": "பொருள் பரிந்துரைகள், சமையல் குறிப்புகள் அல்லது சேமிப்பு உதவிக்குறிப்புகளைக் கேளுங்கள்.",
+  "aiError": "மன்னிக்கவும், உங்கள் கோரிக்கையைச் செயலாக்குவதில் பிழை ஏற்பட்டது. உங்கள் இணைப்பைச் சரிபார்த்து அல்லது பின்னர் மீண்டும் முயற்சிக்கவும்.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "பிரீமியம் அம்சங்களைத்\nதிறக்க உள்நுழைக",
+  "signInGoogle": "Google மூலம் உள்நுழைக",
+  "signInApple": "Apple மூலம் உள்நுழைக",
+  "continueAsGuest": "விருந்தினராகத் தொடர்க",
+  "loginError": "உள்நுழைவு பிழை: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "திறக்க மேம்படுத்தவும்",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "பொருள் அகற்றப்பட்டது",
+  "undo": "செயல்தவிர்",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "உங்கள் பட்டியல் காலியாக உள்ளது",
+  "emptyListSubtitle": "தொடங்க பொருட்களைச் சேர்க்கவும்",
+  "noListFoundTitle": "பட்டியல்கள் எதுவும் காணப்படவில்லை",
+  "noListFoundSubtitle": "தொடங்க உங்கள் முதல் பட்டியலை உருவாக்கவும்",
+  "createFirstList": "முதல் பட்டியலை உருவாக்கு",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "பட்டியல் பட்ஜெட்",
+  "budgetAmountLabel": "பட்ஜெட் தொகை",
+  "removeBudget": "அகற்று",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "வரம்பற்ற பட்டியல்கள்",
+  "prefSharing": "பட்டியல்களைப் பகிர்க",
+  "prefFullHistory": "முழு வரலாறு",
+  "prefExportData": "தரவை ஏற்றுமதி செய்",
+  "prefCustomThemes": "தனிப்பயன் தீம்கள்",
+  "prefMonthlyBudget": "உலகளாவிய மாதாந்திர பட்ஜெட்",
+  "prefAIAssistant": "தனிப்பட்ட AI உதவியாளர்",
+  "prefUnlimitedPantry": "வரம்பற்ற சரக்கறை",
+  "prefInteractiveArtifacts": "ஊடாடும் AI கலைப்பொருட்கள்",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "பச்சை",
+  "themeBlue": "நீலம்",
+  "themePurple": "ஊதா",
+  "themeRed": "சிவப்பு",
+  "themeOrange": "ஆரஞ்சு",
+  "themePink": "இளஞ்சிவப்பு",
+  "themeIndigo": "இண்டிகோ",
+  "themeAmber": "அம்பர்",
+  "themeTeal": "டீல்",
+  "themeBrown": "பழுப்பு",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "பழங்கள்",
+  "catCleaning": "சுத்தம்",
+  "catBeverages": "பானங்கள்",
+  "catBakery": "பேக்கரி",
+  "catOthers": "மற்றவை",
+  "@_Unit": "description: Unit",
+  "unitPack": "கட்டு",
+  "@_Share": "description: Sharing",
+  "shareSubject": "ஷாப்பிங் பட்டியல்",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "மாதாந்திர பட்ஜெட்",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "பட்டியலை நீக்கு",
+  "pantryItemRemoved": "பொருள் அகற்றப்பட்டது",
+  "deficitItems": "{deficit,plural, one{{deficit} பொருள் வாங்கப்பட வேண்டும்} other{{deficit} பொருட்கள் வாங்கப்பட வேண்டும்}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "வண்டி மொத்தம்",
+  "restockLabel": "மீண்டும் நிரப்பு",
+  "advancedFeatures": "மேம்பட்ட அம்சங்கள்",
+  "selectAll": "அனைத்தையும் தேர்ந்தெடு",
+  "deselectAll": "அனைத்தையும் தேர்ந்தெடுக்காமல் விடு",
+  "monthlyBudgetAppBar": "மாதாந்திர பட்ஜெட்",
+  "budgetEditTitle": "மாதாந்திர பட்ஜெட்",
+  "budgetDashboardTitle": "டாஷ்போர்டு",
+  "selectListForDashboard": "டாஷ்போர்டைப் பார்க்க ஒரு பட்டியலைத் தேர்ந்தெடுக்கவும்.",
+  "spendingAnalysis": "செலவு பகுப்பாய்வு",
+  "noItemsToAnalyze": "பகுப்பாய்வு செய்ய பட்டியலில் பொருட்கள் எதுவும் இல்லை.",
+  "markItemsToSeeAnalysis": "பகுப்பாய்வைப் பார்க்க பொருட்களை வாங்கியதாகக் குறிக்கவும்.",
+  "totalSpending": "மொத்த செலவு",
+  "spendingByCategory": "வகை வாரியாக செலவு",
+  "achievements": "சாதனைகள்",
+  "exportPdfExcel": "PDF/Excel ஏற்றுமதி",
+  "exportPdf": "PDF ஆக ஏற்றுமதி",
+  "exportExcel": "Excel ஆக ஏற்றுமதி",
+  "organizingAi": "AI உடன் ஒழுங்கமைக்கிறது...",
+  "yesLabel": "ஆம்",
+  "noLabel": "இல்லை",
+  "shareListText": "எனது ஷாப்பிங் பட்டியல்",
+  "emptyListAddItems": "உங்கள் பட்டியல் காலியாக உள்ளது! முதலில் பொருட்களைச் சேர்க்கவும். ℹ️",
+  "listOrganizedMagic": "பட்டியல் வகைகளால் மாயமாக ஒழுங்கமைக்கப்பட்டது! ✨",
+  "shoppingMode": "ஷாப்பிங் முறை",
+  "smartOrganization": "ஸ்மார்ட் ஒழுங்கமைப்பு",
+  "savings": "சேமிப்புகள்",
+  "shoppingModeHeader": "ஷாப்பிங் முறை",
+  "shareAsText": "பொருட்களை வடிவமைக்கப்பட்ட உரையாக அனுப்புக",
+  "shareRealtime": "மற்றவர்களுடன் நிகழ்நேர ஒத்திசைவு",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "விரைவான சமையல்",
+  "quickRecipePrompt": "எனது பட்டியலில் உள்ள பொருட்களுடன் சமையல் குறிப்புகளைப் பரிந்துரைக்கவும்.",
+  "economyTips": "சிக்கன உதவிக்குறிப்புகள்",
+  "economyTipsPrompt": "இந்த கொள்முதலில் நான் எப்படி பணத்தை மிச்சப்படுத்தலாம்?",
+  "organizeAisles": "இடைகழிகள் வாரியாக ஒழுங்கமை",
+  "organizeAislesPrompt": "சந்தை இடைகழிகள் வாரியாக ஒழுங்கமைக்கவும்.",
+  "recipeSuggestion": "சமையல் பரிந்துரை",
+  "aiCreditsRemaining": "{remaining} கிரெடிட்கள் மீதம்",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "அனைத்தையும் பட்டியலில் சேர்",
+  "organizeByAisles": "இடைகழிகள் வாரியாக ஒழுங்கமை",
+  "voiceTranscriptionTooltip": "குரல் தட்டச்சு (இலவசம்)",
+  "aiVoiceCommandTooltip": "AI குரல் கட்டளை (பிரீமியம்)",
+  "voiceCommandTitle": "AI குரல் கட்டளை",
+  "voiceCommandContent": "உங்கள் பட்டியலை நிர்வகிக்க இயற்கையாகப் பேசுங்கள்!\n\nஎடுத்துக்காட்டுகள்:\n• 'ரொட்டி, சீஸ் மற்றும் ஹாம் சேர்க்கவும்'\n• 'சலவை சோப்பை அகற்றவும்'\n• 'தீத்தை நீலமாக மாற்றவும்'\n\nஇது Lista Plus Premium இன் பிரத்யேக அம்சமாகும்.",
+  "voiceCommandPlanBtn": "திட்டங்களைப் பார்",
+  "itemsAddedSuccess": "பொருட்கள் பட்டியலில் வெற்றிகரமாக சேர்க்கப்பட்டன!",
+  "viewList": "பட்டியலைப் பார்",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "கருத்தை அனுப்புக",
+  "feedbackPrompt": "நீங்கள் எதைப் பகிர விரும்புகிறீர்கள்?",
+  "feedbackTypeBug": "பிழையைப் புகாரளிக்கவும்",
+  "feedbackTypeBugHint": "ஏதோ வேலை செய்யவில்லை",
+  "feedbackTypeSuggestion": "பரிந்துரை",
+  "feedbackTypeSuggestionHint": "பயன்பாட்டை மேம்படுத்தும் யோசனை",
+  "feedbackTypeTranslation": "மொழிபெயர்ப்பு சிக்கல்",
+  "feedbackTypeTranslationHint": "தவறான அல்லது இயற்கையற்ற மொழிபெயர்ப்பு",
+  "feedbackTypeFeature": "அம்சக் கோரிக்கை",
+  "feedbackTypeFeatureHint": "நீங்கள் பார்க்க விரும்பும் அம்சம்",
+  "feedbackTypeOther": "மற்றவை",
+  "feedbackTypeOtherHint": "மற்ற வகை கருத்து",
+  "feedbackHint": "உங்கள் கருத்தை விரிவாக விவரிக்கவும்...",
+  "feedbackSend": "கருத்தை அனுப்புக",
+  "feedbackSending": "அனுப்புகிறது...",
+  "feedbackThankYou": "நன்றி!",
+  "feedbackThankYouMessage": "உங்கள் கருத்து பெறப்பட்டது, மேலும் இது Lista Plus ஐ அனைவருக்கும் மேம்படுத்த உதவுகிறது.",
+  "feedbackBack": "பின்",
+  "feedbackError": "அனுப்புவதில் பிழை: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "மீண்டும் முயற்சிக்கவும்",
+  "feedbackSettingsTitle": "கருத்தை அனுப்புக",
+  "feedbackSettingsSubtitle": "பிழைகளைப் புகாரளிக்கவும், மேம்பாடுகளைப் பரிந்துரைக்கவும் அல்லது மொழிபெயர்ப்புகளைச் சரிசெய்யவும்",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

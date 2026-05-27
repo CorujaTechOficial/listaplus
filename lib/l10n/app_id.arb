@@ -1,0 +1,562 @@
+{
+  "@@locale": "id",
+  "appTitle": "Daftar Belanja",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Daftar",
+  "pantry": "Dapur",
+  "@_Common": "description: Common actions",
+  "cancel": "Batal",
+  "save": "Simpan",
+  "create": "Buat",
+  "add": "Tambah",
+  "remove": "Hapus",
+  "delete": "Hapus",
+  "edit": "Sunting",
+  "copy": "Salin",
+  "retry": "Coba lagi",
+  "regenerate": "Hasilkan ulang",
+  "copiedToClipboard": "Disalin ke papan klip",
+  "confirm": "Konfirmasi",
+  "close": "Tutup",
+  "import": "Impor",
+  "rename": "Ganti nama",
+  "upgrade": "Tingkatkan",
+  "clear": "Bersihkan",
+  "error": "Kesalahan: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Kesalahan: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Kesalahan memproses pembelian. Coba lagi.",
+  "restoreError": "Kesalahan memulihkan pembelian. Coba lagi.",
+  "loading": "Memuat...",
+  "fieldRequired": "Kolom wajib",
+  "addedFeedback": "Ditambahkan!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count} dipilih",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Estimasi",
+  "alreadyPurchased": "Sudah dibeli",
+  "clearList": "Bersihkan daftar",
+  "clearPurchased": "Hapus yang sudah dibeli",
+  "share": "Bagikan",
+  "shareViaCode": "Bagikan melalui kode",
+  "importViaCode": "Impor melalui kode",
+  "listAssistant": "Asisten daftar",
+  "globalAssistant": "Asisten global",
+  "becomePremium": "Jadi Premium",
+  "manageSubscription": "Kelola langganan",
+  "completePurchase": "Selesaikan pembelian",
+  "confirmClearList": "Hapus semua item?",
+  "shareListTitle": "Bagikan Daftar",
+  "shareThisCode": "Bagikan kode ini:",
+  "validForLimitedTime": "Berlaku untuk waktu terbatas",
+  "importListTitle": "Impor Daftar",
+  "enterCodeHint": "Masukkan kode",
+  "confirmArchiveTitle": "Selesaikan Pembelian",
+  "confirmArchiveContent": "Selesaikan pembelian ini dan arsipkan daftar?",
+  "complete": "Selesai",
+  "listArchived": "Daftar berhasil diarsipkan!",
+  "listAdded": "{listName} ditambahkan!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Beli",
+  "unmark": "Hapus tanda",
+  "confirmDeleteItems": "Hapus {count} item?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Konfirmasi",
+  "confirmContent": "Hapus {count} item?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Arsipkan daftar",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Dapur",
+  "generateShoppingList": "Buat daftar belanja",
+  "pantryEmpty": "Dapur kosong",
+  "pantryEmptySubtitle": "Tambahkan produk yang ingin Anda simpan di rumah",
+  "itemsNeedPurchase": "{deficit} item perlu dibeli",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Tidak ada item yang perlu dibeli",
+  "newPantryList": "Belanja Dapur",
+  "newListTitle": "Daftar Belanja Baru",
+  "itemsWillBeAdded": "{count} item akan ditambahkan",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Nama daftar",
+  "listCreated": "Daftar \"{name}\" dibuat dengan {count} item",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Tanpa pelacakan",
+  "markAsPurchased": "Tandai sudah dibeli",
+  "editPantryItem": "Sunting {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Jumlah ideal",
+  "currentQuantity": "Jumlah saat ini",
+  "consumed": "Dikonsumsi",
+  "restocked": "{name} diisi ulang menjadi {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Hapus \"{name}\" dari dapur?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Sunting {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Pengaturan",
+  "language": "Bahasa",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Default sistem",
+  "appearance": "Tampilan",
+  "light": "Terang",
+  "system": "Sistem",
+  "dark": "Gelap",
+  "themeColor": "Warna tema",
+  "finance": "Keuangan",
+  "monthlyBudgetNav": "Anggaran bulanan",
+  "budgetSubtitle": "Lacak pengeluaran bulanan Anda",
+  "data": "Data",
+  "backupNav": "Cadangan",
+  "backupSubtitle": "Ekspor atau impor data Anda",
+  "about": "Tentang",
+  "version": "Versi",
+  "privacy": "Privasi",
+  "termsOfUse": "Syarat penggunaan",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Cadangan",
+  "backupPremiumDescription": "Cadangan dan ekspor adalah fitur premium",
+  "exportData": "Ekspor data",
+  "exportDataSubtitle": "Simpan semua daftar sebagai JSON",
+  "importData": "Impor data",
+  "importDataSubtitle": "Pulihkan daftar dari JSON",
+  "importJsonTitle": "Impor JSON",
+  "importJsonHint": "Tempel JSON cadangan di sini...",
+  "backupExported": "Cadangan berhasil diekspor!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Anggaran Bulanan",
+  "budgetPremiumLocked": "Anggaran bulanan global adalah premium",
+  "budgetUpgradePrompt": "Tingkatkan untuk membuka",
+  "noBudgetDefined": "Belum ada anggaran",
+  "totalEstimated": "Total estimasi: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Atur anggaran",
+  "budgetLists": "Daftar",
+  "budgetValueLabel": "Jumlah",
+  "setBudgetTitle": "Anggaran Bulanan",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Semua",
+  "filterPending": "Tertunda",
+  "filterPurchased": "Dibeli",
+  "sortName": "Nama",
+  "sortCategory": "Kategori",
+  "sortDate": "Tanggal",
+  "sortManual": "Manual",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Tambah Item",
+  "itemName": "Nama item",
+  "quantityShort": "Jml",
+  "unit": "Satuan",
+  "category": "Kategori",
+  "estimatedPrice": "Estimasi harga",
+  "addItemPrice": "Estimasi harga",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Sunting Item",
+  "quantityFull": "Jumlah",
+  "editItemPrice": "Estimasi harga",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Tambahkan ke Dapur",
+  "addToPantryPrompt": "Tambahkan \"{name}\" ke Dapur?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Ya",
+  "productName": "Nama produk",
+  "idealQty": "Jml ideal",
+  "currentQty": "Jml saat ini",
+  "trackStock": "Lacak stok",
+  "trackStockActive": "Muncul dalam saran belanja",
+  "trackStockInactive": "Tidak menghasilkan saran belanja",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Buat Daftar",
+  "renameListDialog": "Ganti Nama Daftar",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Riwayat Daftar",
+  "myLists": "Daftar Saya",
+  "viewActive": "Lihat Aktif",
+  "viewHistory": "Lihat Riwayat",
+  "noArchivedLists": "Tidak ada daftar yang diarsipkan",
+  "noActiveLists": "Tidak ada daftar aktif",
+  "completedOn": "Selesai pada {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Dibagikan",
+  "restore": "Pulihkan",
+  "removeSharedTooltip": "Hapus",
+  "deleteListTitle": "Hapus daftar",
+  "deleteListContent": "Anda yakin ingin menghapus \"{name}\"? Semua item akan dihapus.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Hapus daftar bersama",
+  "removeSharedListContent": "Hapus \"{name}\" dari daftar Anda? Daftar asli tidak akan terpengaruh.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Buat daftar baru",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "Asisten AI",
+  "aiAssistantDescription": "Dapatkan saran pintar, resep, dan tips personal dengan asisten AI kami.",
+  "generalAssistant": "Asisten Umum",
+  "clearHistory": "Hapus Riwayat",
+  "clearHistoryConfirm": "Hapus semua pesan dalam sesi ini?",
+  "chatHint": "Ketik pesan Anda...",
+  "chatError": "Kesalahan memuat chat: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Bagaimana saya bisa membantu dengan daftar Anda?",
+  "generalHelp": "Bagaimana saya bisa membantu belanja Anda hari ini?",
+  "chatSubtitle": "Minta saran item, resep, atau tips hemat.",
+  "aiError": "Maaf, terjadi kesalahan memproses permintaan Anda. Periksa koneksi Anda atau coba lagi nanti.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Masuk untuk membuka\nfitur premium",
+  "signInGoogle": "Masuk dengan Google",
+  "signInApple": "Masuk dengan Apple",
+  "continueAsGuest": "Lanjutkan sebagai tamu",
+  "loginError": "Kesalahan masuk: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Tingkatkan untuk membuka",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Item dihapus",
+  "undo": "Urungkan",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Daftar Anda kosong",
+  "emptyListSubtitle": "Tambahkan item untuk memulai",
+  "noListFoundTitle": "Tidak ada daftar ditemukan",
+  "noListFoundSubtitle": "Buat daftar pertama Anda untuk memulai",
+  "createFirstList": "Buat Daftar Pertama",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Anggaran Daftar",
+  "budgetAmountLabel": "Jumlah anggaran",
+  "removeBudget": "Hapus",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Daftar tak terbatas",
+  "prefSharing": "Bagikan daftar",
+  "prefFullHistory": "Riwayat lengkap",
+  "prefExportData": "Ekspor data",
+  "prefCustomThemes": "Tema kustom",
+  "prefMonthlyBudget": "Anggaran bulanan global",
+  "prefAIAssistant": "Asisten AI Pribadi",
+  "prefUnlimitedPantry": "Dapur tak terbatas",
+  "prefInteractiveArtifacts": "Artefak AI Interaktif",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Hijau",
+  "themeBlue": "Biru",
+  "themePurple": "Ungu",
+  "themeRed": "Merah",
+  "themeOrange": "Oranye",
+  "themePink": "Merah Muda",
+  "themeIndigo": "Nila",
+  "themeAmber": "Kuning",
+  "themeTeal": "Teal",
+  "themeBrown": "Coklat",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Buah",
+  "catCleaning": "Kebersihan",
+  "catBeverages": "Minuman",
+  "catBakery": "Roti",
+  "catOthers": "Lainnya",
+  "@_Unit": "description: Unit",
+  "unitPack": "bungkus",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Daftar Belanja",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Anggaran Bulanan",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Hapus daftar",
+  "pantryItemRemoved": "Item dihapus",
+  "deficitItems": "{deficit} item perlu dibeli",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Total keranjang",
+  "restockLabel": "Isi ulang",
+  "advancedFeatures": "Fitur lanjutan",
+  "selectAll": "Pilih semua",
+  "deselectAll": "Batalkan pilihan semua",
+  "monthlyBudgetAppBar": "Anggaran Bulanan",
+  "budgetEditTitle": "Anggaran Bulanan",
+  "budgetDashboardTitle": "Dasbor",
+  "selectListForDashboard": "Pilih daftar untuk melihat dasbor.",
+  "spendingAnalysis": "Analisis Pengeluaran",
+  "noItemsToAnalyze": "Tidak ada item dalam daftar untuk dianalisis.",
+  "markItemsToSeeAnalysis": "Tandai item sebagai dibeli untuk melihat analisis.",
+  "totalSpending": "Total Pengeluaran",
+  "spendingByCategory": "Pengeluaran per Kategori",
+  "achievements": "Pencapaian",
+  "exportPdfExcel": "Ekspor PDF/Excel",
+  "exportPdf": "Ekspor sebagai PDF",
+  "exportExcel": "Ekspor sebagai Excel",
+  "organizingAi": "MENGORGANISASI DENGAN AI...",
+  "yesLabel": "Ya",
+  "noLabel": "Tidak",
+  "shareListText": "Daftar Belanja Saya",
+  "emptyListAddItems": "Daftar Anda kosong! Tambahkan item terlebih dahulu. ℹ️",
+  "listOrganizedMagic": "Daftar secara ajaib diatur berdasarkan kategori! ✨",
+  "shoppingMode": "Mode Belanja",
+  "smartOrganization": "Organisasi Pintar",
+  "savings": "Penghematan",
+  "shoppingModeHeader": "MODE BELANJA",
+  "shareAsText": "Kirim item sebagai teks terformat",
+  "shareRealtime": "Sinkronisasi real-time dengan orang lain",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Resep cepat",
+  "quickRecipePrompt": "Sarankan resep dengan item dari daftar saya.",
+  "economyTips": "Tips hemat",
+  "economyTipsPrompt": "Bagaimana saya bisa menghemat uang untuk pembelian ini?",
+  "organizeAisles": "Atur berdasarkan lorong",
+  "organizeAislesPrompt": "Atur berdasarkan lorong pasar.",
+  "recipeSuggestion": "Saran resep",
+  "aiCreditsRemaining": "{remaining} kredit tersisa",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Tambahkan semua ke daftar",
+  "organizeByAisles": "Atur berdasarkan lorong",
+  "voiceTranscriptionTooltip": "Ketik suara (Gratis)",
+  "aiVoiceCommandTooltip": "Perintah Suara AI (Premium)",
+  "voiceCommandTitle": "Perintah Suara AI",
+  "voiceCommandContent": "Bicaralah secara alami untuk mengelola daftar Anda!\n\nContoh:\n• 'Tambahkan roti, keju, dan ham'\n• 'Hapus deterjen pakaian'\n• 'Ubah tema menjadi biru'\n\nIni adalah fitur eksklusif Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Lihat Paket",
+  "itemsAddedSuccess": "Item berhasil ditambahkan ke daftar!",
+  "viewList": "Lihat daftar",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Kirim Masukan",
+  "feedbackPrompt": "Apa yang ingin Anda bagikan?",
+  "feedbackTypeBug": "Laporkan Bug",
+  "feedbackTypeBugHint": "Sesuatu tidak berfungsi",
+  "feedbackTypeSuggestion": "Saran",
+  "feedbackTypeSuggestionHint": "Ide untuk meningkatkan aplikasi",
+  "feedbackTypeTranslation": "Masalah Terjemahan",
+  "feedbackTypeTranslationHint": "Terjemahan salah atau tidak alami",
+  "feedbackTypeFeature": "Permintaan Fitur",
+  "feedbackTypeFeatureHint": "Fitur yang ingin Anda lihat",
+  "feedbackTypeOther": "Lainnya",
+  "feedbackTypeOtherHint": "Jenis masukan lainnya",
+  "feedbackHint": "Jelaskan masukan Anda secara detail...",
+  "feedbackSend": "Kirim Masukan",
+  "feedbackSending": "Mengirim...",
+  "feedbackThankYou": "Terima Kasih!",
+  "feedbackThankYouMessage": "Masukan Anda telah diterima dan membantu kami meningkatkan Lista Plus untuk semua orang.",
+  "feedbackBack": "Kembali",
+  "feedbackError": "Kesalahan mengirim: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Coba lagi",
+  "feedbackSettingsTitle": "Kirim Masukan",
+  "feedbackSettingsSubtitle": "Laporkan bug, sarankan perbaikan, atau perbaiki terjemahan",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

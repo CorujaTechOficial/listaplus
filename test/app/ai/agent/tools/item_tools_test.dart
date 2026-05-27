@@ -16,13 +16,13 @@ void main() {
     });
 
     test('get_items has optional listId', () {
-      final tool = getItemsTool;
+      const tool = getItemsTool;
       expect(tool.name, 'get_items');
       expect(tool.parameters.any((p) => p.name == 'listId' && !p.required), true);
     });
 
     test('add_item has all required params', () {
-      final tool = addItemTool;
+      const tool = addItemTool;
       expect(tool.name, 'add_item');
       expect(tool.parameters.any((p) => p.name == 'listId' && p.required), true);
       expect(tool.parameters.any((p) => p.name == 'name' && p.required), true);

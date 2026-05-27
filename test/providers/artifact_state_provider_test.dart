@@ -1,8 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/models/interactive_artifact.dart';
-import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/domain/entities/interactive_artifact.dart';
+import 'package:shopping_list/domain/entities/unit.dart';
 import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import '../helpers/fake_storage_backend.dart';
 
@@ -19,6 +20,12 @@ void main() {
         firestoreServiceProvider.overrideWithValue(fakeStorage),
       ],
     );
+    container.listen(artifactStateProvider('art1'), (_, _) {});
+    container.listen(artifactStateProvider('art_edge'), (_, _) {});
+    container.listen(artifactStateProvider('art_bool_mult'), (_, _) {});
+    container.listen(shoppingListItemsProvider('list1'), (_, _) {});
+    container.listen(shoppingListItemsProvider('list_temp'), (_, _) {});
+    container.listen(shoppingListItemsProvider('list_edge'), (_, _) {});
   });
 
   tearDown(() {

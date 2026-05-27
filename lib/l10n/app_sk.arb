@@ -1,0 +1,562 @@
+{
+  "@@locale": "sk",
+  "appTitle": "Nákupný zoznam",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Zoznamy",
+  "pantry": "Spiž",
+  "@_Common": "description: Common actions",
+  "cancel": "Zrušiť",
+  "save": "Uložiť",
+  "create": "Vytvoriť",
+  "add": "Pridať",
+  "remove": "Odstrániť",
+  "delete": "Vymazať",
+  "edit": "Upraviť",
+  "copy": "Kopírovať",
+  "retry": "Skúsiť znova",
+  "regenerate": "Regenerovať",
+  "copiedToClipboard": "Skopírované do schránky",
+  "confirm": "Potvrdiť",
+  "close": "Zavrieť",
+  "import": "Importovať",
+  "rename": "Premenovať",
+  "upgrade": "Inovovať",
+  "clear": "Vyčistiť",
+  "error": "Chyba: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Chyba: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Chyba pri spracovaní nákupu. Skúste znova.",
+  "restoreError": "Chyba pri obnovení nákupov. Skúste znova.",
+  "loading": "Načítava sa...",
+  "fieldRequired": "Povinné pole",
+  "addedFeedback": "Pridané!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{Vybraný {count}} few{Vybrané {count}} many{Vybratých {count}} other{Vybraté {count}}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Odhad",
+  "alreadyPurchased": "Už zakúpené",
+  "clearList": "Vyčistiť zoznam",
+  "clearPurchased": "Odstrániť zakúpené",
+  "share": "Zdieľať",
+  "shareViaCode": "Zdieľať cez kód",
+  "importViaCode": "Importovať cez kód",
+  "listAssistant": "Asistent zoznamu",
+  "globalAssistant": "Globálny asistent",
+  "becomePremium": "Staňte sa Premium",
+  "manageSubscription": "Spravovať predplatné",
+  "completePurchase": "Dokončiť nákup",
+  "confirmClearList": "Odstrániť všetky položky?",
+  "shareListTitle": "Zdieľať zoznam",
+  "shareThisCode": "Zdieľajte tento kód:",
+  "validForLimitedTime": "Platné na obmedzený čas",
+  "importListTitle": "Importovať zoznam",
+  "enterCodeHint": "Zadajte kód",
+  "confirmArchiveTitle": "Dokončiť nákup",
+  "confirmArchiveContent": "Dokončiť tento nákup a archivovať zoznam?",
+  "complete": "Dokončiť",
+  "listArchived": "Zoznam úspešne archivovaný!",
+  "listAdded": "{listName} pridaný!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Kúpiť",
+  "unmark": "Zrušiť označenie",
+  "confirmDeleteItems": "Odstrániť {count} položku(y/iek)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Potvrdiť",
+  "confirmContent": "Odstrániť {count} položku(y/iek)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Archivovať zoznam",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Spiž",
+  "generateShoppingList": "Generovať nákupný zoznam",
+  "pantryEmpty": "Prázdna spižiareň",
+  "pantryEmptySubtitle": "Pridajte produkty, ktoré chcete mať doma",
+  "itemsNeedPurchase": "{deficit} položku(y/iek) treba kúpiť",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Žiadne položky na kúpu",
+  "newPantryList": "Nákup zo spiže",
+  "newListTitle": "Nový nákupný zoznam",
+  "itemsWillBeAdded": "{count} položku(y/iek) bude pridaných",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Názov zoznamu",
+  "listCreated": "Zoznam \"{name}\" vytvorený s {count} položkami",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Bez sledovania",
+  "markAsPurchased": "Označiť ako kúpené",
+  "editPantryItem": "Upraviť {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ideálne množstvo",
+  "currentQuantity": "Aktuálne množstvo",
+  "consumed": "Spotrebované",
+  "restocked": "{name} doplnené na {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Odstrániť \"{name}\" zo spiže?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Upraviť {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Nastavenia",
+  "language": "Jazyk",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Predvolené systémové",
+  "appearance": "Vzhľad",
+  "light": "Svetlý",
+  "system": "Systém",
+  "dark": "Tmavý",
+  "themeColor": "Farba témy",
+  "finance": "Financie",
+  "monthlyBudgetNav": "Mesačný rozpočet",
+  "budgetSubtitle": "Sledujte svoje mesačné výdavky",
+  "data": "Dáta",
+  "backupNav": "Záloha",
+  "backupSubtitle": "Exportujte alebo importujte svoje dáta",
+  "about": "O aplikácii",
+  "version": "Verzia",
+  "privacy": "Súkromie",
+  "termsOfUse": "Podmienky používania",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Záloha",
+  "backupPremiumDescription": "Záloha a export je prémiová funkcia",
+  "exportData": "Exportovať dáta",
+  "exportDataSubtitle": "Uložiť všetky zoznamy ako JSON",
+  "importData": "Importovať dáta",
+  "importDataSubtitle": "Obnoviť zoznamy z JSON",
+  "importJsonTitle": "Importovať JSON",
+  "importJsonHint": "Vložte JSON zálohy sem...",
+  "backupExported": "Záloha exportovaná!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Mesačný rozpočet",
+  "budgetPremiumLocked": "Globálny mesačný rozpočet je prémiový",
+  "budgetUpgradePrompt": "Inovujte pre odomknutie",
+  "noBudgetDefined": "Rozpočet nie je nastavený",
+  "totalEstimated": "Celkový odhad: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Nastaviť rozpočet",
+  "budgetLists": "Zoznamy",
+  "budgetValueLabel": "Suma",
+  "setBudgetTitle": "Mesačný rozpočet",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Všetky",
+  "filterPending": "Čakajúce",
+  "filterPurchased": "Zakúpené",
+  "sortName": "Názov",
+  "sortCategory": "Kategória",
+  "sortDate": "Dátum",
+  "sortManual": "Manuálne",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Pridať položku",
+  "itemName": "Názov položky",
+  "quantityShort": "Množ.",
+  "unit": "Jednotka",
+  "category": "Kategória",
+  "estimatedPrice": "Odhadovaná cena",
+  "addItemPrice": "Odhadovaná cena",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Upraviť položku",
+  "quantityFull": "Množstvo",
+  "editItemPrice": "Odhadovaná cena",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Pridať do spiže",
+  "addToPantryPrompt": "Pridať \"{name}\" do vašej spiže?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Áno",
+  "productName": "Názov produktu",
+  "idealQty": "Ideálne množ.",
+  "currentQty": "Aktuálne množ.",
+  "trackStock": "Sledovať zásoby",
+  "trackStockActive": "Zobrazuje sa v nákupných návrhoch",
+  "trackStockInactive": "Negeneruje nákupný návrh",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Vytvoriť zoznam",
+  "renameListDialog": "Premenovať zoznam",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "História zoznamov",
+  "myLists": "Moje zoznamy",
+  "viewActive": "Zobraziť aktívne",
+  "viewHistory": "Zobraziť históriu",
+  "noArchivedLists": "Žiadne archivované zoznamy",
+  "noActiveLists": "Žiadne aktívne zoznamy",
+  "completedOn": "Dokončené {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Zdieľané",
+  "restore": "Obnoviť",
+  "removeSharedTooltip": "Odstrániť",
+  "deleteListTitle": "Vymazať zoznam",
+  "deleteListContent": "Ste si istí, že chcete vymazať \"{name}\"? Všetky položky budú odstránené.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Odstrániť zdieľaný zoznam",
+  "removeSharedListContent": "Odstrániť \"{name}\" z vašich zoznamov? Pôvodný zoznam zostane nedotknutý.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Vytvoriť nový zoznam",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI asistent",
+  "aiAssistantDescription": "Získajte inteligentné návrhy, recepty a personalizované tipy s naším AI asistentom.",
+  "generalAssistant": "Všeobecný asistent",
+  "clearHistory": "Vyčistiť históriu",
+  "clearHistoryConfirm": "Vymazať všetky správy v tejto relácii?",
+  "chatHint": "Napíšte svoju správu...",
+  "chatError": "Chyba pri načítaní chatu: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Ako vám môžem pomôcť s vaším zoznamom?",
+  "generalHelp": "Ako vám dnes môžem pomôcť s nákupom?",
+  "chatSubtitle": "Pýtajte sa na návrhy položiek, recepty alebo tipy na šetrenie.",
+  "aiError": "Prepáčte, pri spracovaní vašej požiadavky sa vyskytla chyba. Skontrolujte pripojenie alebo skúste znova neskôr.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Prihláste sa pre odomknutie\nprémiových funkcií",
+  "signInGoogle": "Prihlásiť sa cez Google",
+  "signInApple": "Prihlásiť sa cez Apple",
+  "continueAsGuest": "Pokračovať ako hosť",
+  "loginError": "Chyba prihlásenia: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Inovujte pre odomknutie",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Položka odstránená",
+  "undo": "Vrátiť",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Váš zoznam je prázdny",
+  "emptyListSubtitle": "Pridajte položky pre začiatok",
+  "noListFoundTitle": "Nenašli sa žiadne zoznamy",
+  "noListFoundSubtitle": "Vytvorte svoj prvý zoznam pre začiatok",
+  "createFirstList": "Vytvoriť prvý zoznam",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Rozpočet zoznamu",
+  "budgetAmountLabel": "Suma rozpočtu",
+  "removeBudget": "Odstrániť",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Neobmedzené zoznamy",
+  "prefSharing": "Zdieľať zoznamy",
+  "prefFullHistory": "Plná história",
+  "prefExportData": "Exportovať dáta",
+  "prefCustomThemes": "Vlastné témy",
+  "prefMonthlyBudget": "Globálny mesačný rozpočet",
+  "prefAIAssistant": "Osobný AI asistent",
+  "prefUnlimitedPantry": "Neobmedzená spižeň",
+  "prefInteractiveArtifacts": "Interaktívne AI artefakty",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Zelená",
+  "themeBlue": "Modrá",
+  "themePurple": "Fialová",
+  "themeRed": "Červená",
+  "themeOrange": "Oranžová",
+  "themePink": "Ružová",
+  "themeIndigo": "Indigová",
+  "themeAmber": "Jantárová",
+  "themeTeal": "Tyrkysová",
+  "themeBrown": "Hnedá",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Ovocie",
+  "catCleaning": "Čistenie",
+  "catBeverages": "Nápoje",
+  "catBakery": "Pečivo",
+  "catOthers": "Ostatné",
+  "@_Unit": "description: Unit",
+  "unitPack": "balenie",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Nákupný zoznam",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Mesačný rozpočet",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Vymazať zoznam",
+  "pantryItemRemoved": "Položka odstránená",
+  "deficitItems": "{deficit,plural, one{{deficit} položku treba kúpiť} few{{deficit} položky treba kúpiť} many{{deficit} položiek treba kúpiť} other{{deficit} položiek treba kúpiť}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Celkom v košíku",
+  "restockLabel": "Doplniť",
+  "advancedFeatures": "Pokročilé funkcie",
+  "selectAll": "Vybrať všetko",
+  "deselectAll": "Zrušiť výber",
+  "monthlyBudgetAppBar": "Mesačný rozpočet",
+  "budgetEditTitle": "Mesačný rozpočet",
+  "budgetDashboardTitle": "Panel",
+  "selectListForDashboard": "Vyberte zoznam pre zobrazenie panelu.",
+  "spendingAnalysis": "Analýza výdavkov",
+  "noItemsToAnalyze": "V zozname nie sú položky na analýzu.",
+  "markItemsToSeeAnalysis": "Označte položky ako kúpené pre zobrazenie analýzy.",
+  "totalSpending": "Celkové výdavky",
+  "spendingByCategory": "Výdavky podľa kategórie",
+  "achievements": "Úspechy",
+  "exportPdfExcel": "Exportovať PDF/Excel",
+  "exportPdf": "Exportovať ako PDF",
+  "exportExcel": "Exportovať ako Excel",
+  "organizingAi": "ORGANIZOVANIE POMOCOU AI...",
+  "yesLabel": "Áno",
+  "noLabel": "Nie",
+  "shareListText": "Môj nákupný zoznam",
+  "emptyListAddItems": "Váš zoznam je prázdny! Najprv pridajte položky. ℹ️",
+  "listOrganizedMagic": "Zoznam kúzelne usporiadaný podľa kategórií! ✨",
+  "shoppingMode": "Režim nakupovania",
+  "smartOrganization": "Inteligentné usporiadanie",
+  "savings": "Úspory",
+  "shoppingModeHeader": "REŽIM NAKUPOVANIA",
+  "shareAsText": "Poslať položky ako formátovaný text",
+  "shareRealtime": "Synchronizácia v reálnom čase s ďalšími ľuďmi",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Rýchly recept",
+  "quickRecipePrompt": "Navrhni recepty s položkami z môjho zoznamu.",
+  "economyTips": "Tipy na šetrenie",
+  "economyTipsPrompt": "Ako môžem ušetriť na tomto nákupe?",
+  "organizeAisles": "Usporiadať podľa uličiek",
+  "organizeAislesPrompt": "Usporiadať podľa obchodných uličiek.",
+  "recipeSuggestion": "Návrh receptu",
+  "aiCreditsRemaining": "Zostáva {remaining} kreditov",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Pridať všetko do zoznamu",
+  "organizeByAisles": "Usporiadať podľa uličiek",
+  "voiceTranscriptionTooltip": "Hlasové písanie (Zadarmo)",
+  "aiVoiceCommandTooltip": "AI hlasový príkaz (Premium)",
+  "voiceCommandTitle": "AI hlasový príkaz",
+  "voiceCommandContent": "Hovorte prirodzene pre správu svojho zoznamu!\n\nPríklady:\n• 'Pridaj chlieb, syr a šunku'\n• 'Odstráň prací prášok'\n• 'Zmeň tému na modrú'\n\nToto je exkluzívna funkcia Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Zobraziť plány",
+  "itemsAddedSuccess": "Položky úspešne pridané do zoznamu!",
+  "viewList": "Zobraziť zoznam",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Poslať spätnú väzbu",
+  "feedbackPrompt": "Čo by ste chceli zdieľať?",
+  "feedbackTypeBug": "Nahlásiť chybu",
+  "feedbackTypeBugHint": "Niečo nefunguje",
+  "feedbackTypeSuggestion": "Návrh",
+  "feedbackTypeSuggestionHint": "Nápad na zlepšenie aplikácie",
+  "feedbackTypeTranslation": "Problém s prekladom",
+  "feedbackTypeTranslationHint": "Nesprávny alebo neprirodzený preklad",
+  "feedbackTypeFeature": "Požiadavka na funkciu",
+  "feedbackTypeFeatureHint": "Funkcia, ktorú by ste chceli vidieť",
+  "feedbackTypeOther": "Iné",
+  "feedbackTypeOtherHint": "Iný typ spätnej väzby",
+  "feedbackHint": "Podrobne popíšte svoju spätnú väzbu...",
+  "feedbackSend": "Odoslať spätnú väzbu",
+  "feedbackSending": "Odosiela sa...",
+  "feedbackThankYou": "Ďakujeme!",
+  "feedbackThankYouMessage": "Vaša spätná väzba bola prijatá a pomáha nám zlepšovať Lista Plus pre všetkých.",
+  "feedbackBack": "Späť",
+  "feedbackError": "Chyba pri odosielaní: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Skúsiť znova",
+  "feedbackSettingsTitle": "Poslať spätnú väzbu",
+  "feedbackSettingsSubtitle": "Nahlásiť chyby, navrhnúť zlepšenia alebo opraviť preklady",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

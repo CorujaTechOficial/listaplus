@@ -1,0 +1,562 @@
+{
+  "@@locale": "fil",
+  "appTitle": "Listahan ng Pamimili",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Mga Listahan",
+  "pantry": "Dispatch",
+  "@_Common": "description: Common actions",
+  "cancel": "Kanselahin",
+  "save": "I-save",
+  "create": "Gumawa",
+  "add": "Idagdag",
+  "remove": "Alisin",
+  "delete": "Burahin",
+  "edit": "I-edit",
+  "copy": "Kopyahin",
+  "retry": "Subukan muli",
+  "regenerate": "Muling buuin",
+  "copiedToClipboard": "Nakopya sa clipboard",
+  "confirm": "Kumpirmahin",
+  "close": "Isara",
+  "import": "I-import",
+  "rename": "Palitan ng pangalan",
+  "upgrade": "Mag-upgrade",
+  "clear": "Linisin",
+  "error": "Error: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Error: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Error sa pagproseso ng pagbili. Subukan muli.",
+  "restoreError": "Error sa pag-restore ng mga pagbili. Subukan muli.",
+  "loading": "Naglo-load...",
+  "fieldRequired": "Kinakailangang field",
+  "addedFeedback": "Naidagdag!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} ang napili} other{{count} ang napili}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Tantiya",
+  "alreadyPurchased": "Nabili na",
+  "clearList": "Linisin ang listahan",
+  "clearPurchased": "Linisin ang mga nabili",
+  "share": "Ibahagi",
+  "shareViaCode": "Ibahagi sa pamamagitan ng code",
+  "importViaCode": "I-import sa pamamagitan ng code",
+  "listAssistant": "Katulong ng listahan",
+  "globalAssistant": "Pangkalahatang katulong",
+  "becomePremium": "Maging Premium",
+  "manageSubscription": "Pamahalaan ang subscription",
+  "completePurchase": "Kumpletuhin ang pagbili",
+  "confirmClearList": "Alisin lahat ng item?",
+  "shareListTitle": "Ibahagi ang Listahan",
+  "shareThisCode": "Ibahagi ang code na ito:",
+  "validForLimitedTime": "May bisa sa limitadong panahon",
+  "importListTitle": "I-import ang Listahan",
+  "enterCodeHint": "Ilagay ang code",
+  "confirmArchiveTitle": "Kumpletuhin ang Pagbili",
+  "confirmArchiveContent": "Kumpletuhin ang pagbiling ito at i-archive ang listahan?",
+  "complete": "Kumpletuhin",
+  "listArchived": "Matagumpay na na-archive ang listahan!",
+  "listAdded": "Naidagdag ang {listName}!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Bumili",
+  "unmark": "Alisin ang marka",
+  "confirmDeleteItems": "Alisin ang {count} item?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Kumpirmahin",
+  "confirmContent": "Alisin ang {count} item?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "I-archive ang listahan",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Dispatch",
+  "generateShoppingList": "Gumawa ng listahan ng pamimili",
+  "pantryEmpty": "Walang laman ang dispatch",
+  "pantryEmptySubtitle": "Idagdag ang mga produktong gusto mong itabi sa bahay",
+  "itemsNeedPurchase": "{deficit} item ang kailangang bilhin",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Walang item na kailangang bilhin",
+  "newPantryList": "Pamili mula sa Dispatch",
+  "newListTitle": "Bagong Listahan ng Pamimili",
+  "itemsWillBeAdded": "{count} item ang idadagdag",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Pangalan ng listahan",
+  "listCreated": "Ang listahang \"{name}\" ay ginawa na may {count} item",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Walang pagsubaybay",
+  "markAsPurchased": "Markahan bilang nabili",
+  "editPantryItem": "I-edit ang {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Tamang dami",
+  "currentQuantity": "Kasalukuyang dami",
+  "consumed": "Nagamit na",
+  "restocked": "Ang {name} ay ni-restock sa {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Alisin ang \"{name}\" sa dispatch?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "I-edit ang {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Mga Setting",
+  "language": "Wika",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Default ng system",
+  "appearance": "Itsura",
+  "light": "Maliwanag",
+  "system": "System",
+  "dark": "Madilim",
+  "themeColor": "Kulay ng tema",
+  "finance": "Pananalapi",
+  "monthlyBudgetNav": "Buwanang badyet",
+  "budgetSubtitle": "Subaybayan ang iyong buwanang paggastos",
+  "data": "Data",
+  "backupNav": "Backup",
+  "backupSubtitle": "I-export o i-import ang iyong data",
+  "about": "Tungkol",
+  "version": "Bersyon",
+  "privacy": "Privacy",
+  "termsOfUse": "Mga tuntunin ng paggamit",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Backup",
+  "backupPremiumDescription": "Ang backup at pag-export ay isang premium na feature",
+  "exportData": "I-export ang data",
+  "exportDataSubtitle": "I-save ang lahat ng listahan bilang JSON",
+  "importData": "I-import ang data",
+  "importDataSubtitle": "I-restore ang mga listahan mula sa JSON",
+  "importJsonTitle": "I-import ang JSON",
+  "importJsonHint": "I-paste ang backup na JSON dito...",
+  "backupExported": "Na-export ang backup!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Buwanang Badyet",
+  "budgetPremiumLocked": "Ang pandaigdigang buwanang badyet ay premium",
+  "budgetUpgradePrompt": "Mag-upgrade para ma-unlock",
+  "noBudgetDefined": "Walang nakatakdang badyet",
+  "totalEstimated": "Kabuuang tantiya: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Itakda ang badyet",
+  "budgetLists": "Mga Listahan",
+  "budgetValueLabel": "Halaga",
+  "setBudgetTitle": "Buwanang Badyet",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Lahat",
+  "filterPending": "Nakabinbin",
+  "filterPurchased": "Nabili na",
+  "sortName": "Pangalan",
+  "sortCategory": "Kategorya",
+  "sortDate": "Petsa",
+  "sortManual": "Manual",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Magdagdag ng Item",
+  "itemName": "Pangalan ng item",
+  "quantityShort": "Dami",
+  "unit": "Unit",
+  "category": "Kategorya",
+  "estimatedPrice": "Tantiya sa presyo",
+  "addItemPrice": "Tantiya sa presyo",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "I-edit ang Item",
+  "quantityFull": "Dami",
+  "editItemPrice": "Tantiya sa presyo",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Idagdag sa Dispatch",
+  "addToPantryPrompt": "Idagdag ang \"{name}\" sa iyong Dispatch?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Oo",
+  "productName": "Pangalan ng produkto",
+  "idealQty": "Tamang dami",
+  "currentQty": "Kasalukuyang dami",
+  "trackStock": "Subaybayan ang stock",
+  "trackStockActive": "Lumalabas sa mga mungkahi sa pamimili",
+  "trackStockInactive": "Hindi lumilikha ng mungkahi sa pamimili",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Gumawa ng Listahan",
+  "renameListDialog": "Palitan ang Pangalan ng Listahan",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Kasaysayan ng Listahan",
+  "myLists": "Aking mga Listahan",
+  "viewActive": "Tingnan ang Aktibo",
+  "viewHistory": "Tingnan ang Kasaysayan",
+  "noArchivedLists": "Walang naka-archive na listahan",
+  "noActiveLists": "Walang aktibong listahan",
+  "completedOn": "Natapos noong {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Ibinahagi",
+  "restore": "I-restore",
+  "removeSharedTooltip": "Alisin",
+  "deleteListTitle": "Burahin ang listahan",
+  "deleteListContent": "Sigurado ka bang gusto mong burahin ang \"{name}\"? Ang lahat ng item ay aalisin.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Alisin ang ibinahaging listahan",
+  "removeSharedListContent": "Alisin ang \"{name}\" sa iyong mga listahan? Ang orihinal na listahan ay hindi maaapektuhan.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Gumawa ng bagong listahan",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI Assistant",
+  "aiAssistantDescription": "Kumuha ng matatalinong mungkahi, recipe at personal na tip gamit ang aming AI assistant.",
+  "generalAssistant": "Pangkalahatang Assistant",
+  "clearHistory": "Linisin ang Kasaysayan",
+  "clearHistoryConfirm": "Linisin lahat ng mensahe sa session na ito?",
+  "chatHint": "I-type ang iyong mensahe...",
+  "chatError": "Error sa pag-load ng chat: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Paano ako makakatulong sa iyong listahan?",
+  "generalHelp": "Paano ako makakatulong sa iyong pamimili ngayon?",
+  "chatSubtitle": "Humiling ng mga mungkahi sa item, recipe o tip sa pagtitipid.",
+  "aiError": "Paumanhin, may error sa pagproseso ng iyong kahilingan. Suriin ang iyong koneksyon o subukan muli mamaya.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Mag-log in upang i-unlock\nang mga premium na feature",
+  "signInGoogle": "Mag-sign in gamit ang Google",
+  "signInApple": "Mag-sign in gamit ang Apple",
+  "continueAsGuest": "Magpatuloy bilang bisita",
+  "loginError": "Error sa pag-login: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Mag-upgrade para ma-unlock",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Naalis ang item",
+  "undo": "I-undo",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Walang laman ang iyong listahan",
+  "emptyListSubtitle": "Magdagdag ng mga item para makapagsimula",
+  "noListFoundTitle": "Walang nakitang listahan",
+  "noListFoundSubtitle": "Gawin ang iyong unang listahan para makapagsimula",
+  "createFirstList": "Gumawa ng Unang Listahan",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Badyet ng Listahan",
+  "budgetAmountLabel": "Halaga ng badyet",
+  "removeBudget": "Alisin",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Walang limitasyong listahan",
+  "prefSharing": "Ibahagi ang mga listahan",
+  "prefFullHistory": "Buong kasaysayan",
+  "prefExportData": "I-export ang data",
+  "prefCustomThemes": "Mga custom na tema",
+  "prefMonthlyBudget": "Pandaigdigang buwanang badyet",
+  "prefAIAssistant": "Personal na AI Assistant",
+  "prefUnlimitedPantry": "Walang limitasyong dispatch",
+  "prefInteractiveArtifacts": "Interactive na AI Artifacts",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Berde",
+  "themeBlue": "Asul",
+  "themePurple": "Lila",
+  "themeRed": "Pula",
+  "themeOrange": "Kahel",
+  "themePink": "Rosas",
+  "themeIndigo": "Indigo",
+  "themeAmber": "Amber",
+  "themeTeal": "Teal",
+  "themeBrown": "Kayumanggi",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Mga Prutas",
+  "catCleaning": "Paglilinis",
+  "catBeverages": "Mga Inumin",
+  "catBakery": "Panaderya",
+  "catOthers": "Iba pa",
+  "@_Unit": "description: Unit",
+  "unitPack": "pack",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Listahan ng Pamimili",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Buwanang Badyet",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Burahin ang listahan",
+  "pantryItemRemoved": "Naalis ang item",
+  "deficitItems": "{deficit,plural, one{{deficit} item ang kailangang bilhin} other{{deficit} item ang kailangang bilhin}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Kabuuan ng cart",
+  "restockLabel": "Mag-restock",
+  "advancedFeatures": "Mga advanced na feature",
+  "selectAll": "Piliin lahat",
+  "deselectAll": "Alisin lahat ng pagpili",
+  "monthlyBudgetAppBar": "Buwanang Badyet",
+  "budgetEditTitle": "Buwanang Badyet",
+  "budgetDashboardTitle": "Dashboard",
+  "selectListForDashboard": "Pumili ng listahan para tingnan ang dashboard.",
+  "spendingAnalysis": "Pagsusuri ng Paggastos",
+  "noItemsToAnalyze": "Walang item sa listahan para suriin.",
+  "markItemsToSeeAnalysis": "Markahan ang mga item bilang nabili para makita ang pagsusuri.",
+  "totalSpending": "Kabuuang Nagastos",
+  "spendingByCategory": "Paggastos ayon sa Kategorya",
+  "achievements": "Mga Nakamit",
+  "exportPdfExcel": "I-export ang PDF/Excel",
+  "exportPdf": "I-export bilang PDF",
+  "exportExcel": "I-export bilang Excel",
+  "organizingAi": "NAGSASA-AYOS GAMIT ANG AI...",
+  "yesLabel": "Oo",
+  "noLabel": "Hindi",
+  "shareListText": "Aking Listahan ng Pamimili",
+  "emptyListAddItems": "Walang laman ang iyong listahan! Magdagdag muna ng mga item. ℹ️",
+  "listOrganizedMagic": "Mahiwagang naayos ang listahan ayon sa mga kategorya! ✨",
+  "shoppingMode": "Mode ng Pamimili",
+  "smartOrganization": "Matalinong Organisasyon",
+  "savings": "Mga Natipid",
+  "shoppingModeHeader": "MODE NG PAMIMILI",
+  "shareAsText": "Ipadala ang mga item bilang naka-format na teksto",
+  "shareRealtime": "Real-time na sync sa ibang tao",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Mabilis na recipe",
+  "quickRecipePrompt": "Magmungkahi ng mga recipe gamit ang mga item mula sa aking listahan.",
+  "economyTips": "Mga tip sa pagtitipid",
+  "economyTipsPrompt": "Paano ako makakatipid sa pagbilhing ito?",
+  "organizeAisles": "Ayusin ayon sa mga aisle",
+  "organizeAislesPrompt": "Ayusin ayon sa mga aisle ng palengke.",
+  "recipeSuggestion": "Mungkahing recipe",
+  "aiCreditsRemaining": "{remaining} natitirang credits",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Idagdag lahat sa listahan",
+  "organizeByAisles": "Ayusin ayon sa mga aisle",
+  "voiceTranscriptionTooltip": "Pag-type gamit ang boses (Libre)",
+  "aiVoiceCommandTooltip": "AI Voice Command (Premium)",
+  "voiceCommandTitle": "AI Voice Command",
+  "voiceCommandContent": "Magsalita nang natural para pamahalaan ang iyong listahan!\n\nMga Halimbawa:\n• 'Magdagdag ng tinapay, keso, at hamon'\n• 'Alisin ang detergent'\n• 'Palitan ang tema sa asul'\n\nIto ay isang eksklusibong feature ng Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Tingnan ang mga Plano",
+  "itemsAddedSuccess": "Matagumpay na naidagdag ang mga item sa listahan!",
+  "viewList": "Tingnan ang listahan",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Magpadala ng Feedback",
+  "feedbackPrompt": "Ano ang nais mong ibahagi?",
+  "feedbackTypeBug": "Mag-ulat ng Bug",
+  "feedbackTypeBugHint": "May hindi gumagana",
+  "feedbackTypeSuggestion": "Mungkahi",
+  "feedbackTypeSuggestionHint": "Ideya para mapabuti ang app",
+  "feedbackTypeTranslation": "Isyu sa Pagsasalin",
+  "feedbackTypeTranslationHint": "Mali o awkward na pagsasalin",
+  "feedbackTypeFeature": "Kahilingan ng Feature",
+  "feedbackTypeFeatureHint": "Feature na gusto mong makita",
+  "feedbackTypeOther": "Iba pa",
+  "feedbackTypeOtherHint": "Iba pang uri ng feedback",
+  "feedbackHint": "Ilarawan ang iyong feedback nang detalyado...",
+  "feedbackSend": "Ipadala ang Feedback",
+  "feedbackSending": "Ipinapadala...",
+  "feedbackThankYou": "Salamat!",
+  "feedbackThankYouMessage": "Natanggap ang iyong feedback at tinutulungan kaming pagbutihin ang Lista Plus para sa lahat.",
+  "feedbackBack": "Bumalik",
+  "feedbackError": "Error sa pagpapadala: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Subukan muli",
+  "feedbackSettingsTitle": "Magpadala ng Feedback",
+  "feedbackSettingsSubtitle": "Mag-ulat ng bug, magmungkahi ng pagpapabuti, o ayusin ang mga pagsasalin",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

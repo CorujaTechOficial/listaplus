@@ -1,0 +1,562 @@
+{
+  "@@locale": "be",
+  "appTitle": "Спіс пакупак",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Спісы",
+  "pantry": "Кладоўка",
+  "@_Common": "description: Common actions",
+  "cancel": "Адмяніць",
+  "save": "Захаваць",
+  "create": "Стварыць",
+  "add": "Дадаць",
+  "remove": "Выдаліць",
+  "delete": "Выдаліць",
+  "edit": "Рэдагаваць",
+  "copy": "Капіяваць",
+  "retry": "Паўтарыць",
+  "regenerate": "Перагенераваць",
+  "copiedToClipboard": "Скапіявана ў буфер абмену",
+  "confirm": "Пацвердзіць",
+  "close": "Закрыць",
+  "import": "Імпартаваць",
+  "rename": "Перайменаваць",
+  "upgrade": "Абнавіць",
+  "clear": "Ачысціць",
+  "error": "Памылка: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Памылка: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Памылка апрацоўкі пакупкі. Паспрабуйце зноў.",
+  "restoreError": "Памылка аднаўлення пакупак. Паспрабуйце зноў.",
+  "loading": "Загрузка...",
+  "fieldRequired": "Абавязковае поле",
+  "addedFeedback": "Дададзена!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{Выбраны {count}} few{Выбраны {count}} many{Выбрана {count}} other{Выбрана {count}}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Прыблізна",
+  "alreadyPurchased": "Ужо набыта",
+  "clearList": "Ачысціць спіс",
+  "clearPurchased": "Ачысціць набытае",
+  "share": "Падзяліцца",
+  "shareViaCode": "Падзяліцца праз код",
+  "importViaCode": "Імпартаваць праз код",
+  "listAssistant": "Памочнік спісу",
+  "globalAssistant": "Глабальны памочнік",
+  "becomePremium": "Станьце Premium",
+  "manageSubscription": "Кіраваць падпіскай",
+  "completePurchase": "Завяршыць пакупку",
+  "confirmClearList": "Выдаліць усе элементы?",
+  "shareListTitle": "Падзяліцца Спісам",
+  "shareThisCode": "Падзяліцеся гэтым кодам:",
+  "validForLimitedTime": "Сапраўдны на абмежаваны час",
+  "importListTitle": "Імпартаваць Спіс",
+  "enterCodeHint": "Увядзіце код",
+  "confirmArchiveTitle": "Завяршыць Пакупку",
+  "confirmArchiveContent": "Завяршыць гэту пакупку і архіваваць спіс?",
+  "complete": "Завяршыць",
+  "listArchived": "Спіс паспяхова архіваваны!",
+  "listAdded": "{listName} дададзены!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Купіць",
+  "unmark": "Зняць пазнаку",
+  "confirmDeleteItems": "Выдаліць {count} элемент(ы)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Пацвердзіць",
+  "confirmContent": "Выдаліць {count} элемент(ы)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Архіваваць спіс",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Кладоўка",
+  "generateShoppingList": "Стварыць спіс пакупак",
+  "pantryEmpty": "Пустая кладоўка",
+  "pantryEmptySubtitle": "Дадавайце прадукты, якія хочаце мець дома",
+  "itemsNeedPurchase": "{deficit} элемент(ы) трэба набыць",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Няма элементаў для пакупкі",
+  "newPantryList": "Пакупка з Кладоўкі",
+  "newListTitle": "Новы Спіс Пакупак",
+  "itemsWillBeAdded": "{count} элемент(ы) будзе дададзена",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Назва спісу",
+  "listCreated": "Спіс \"{name}\" створаны з {count} элементамі",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Без адсочвання",
+  "markAsPurchased": "Пазначыць як набыта",
+  "editPantryItem": "Рэдагаваць {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ідэальная колькасць",
+  "currentQuantity": "Бягучая колькасць",
+  "consumed": "Спажыта",
+  "restocked": "{name} папоўнена да {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Выдаліць \"{name}\" з кладоўкі?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Рэдагаваць {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Налады",
+  "language": "Мова",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Сістэмная па змаўчанні",
+  "appearance": "Выгляд",
+  "light": "Светлая",
+  "system": "Сістэмная",
+  "dark": "Цёмная",
+  "themeColor": "Колер тэмы",
+  "finance": "Фінансы",
+  "monthlyBudgetNav": "Месяцовы бюджэт",
+  "budgetSubtitle": "Адсочвайце свае месяцовыя выдаткі",
+  "data": "Дадзеныя",
+  "backupNav": "Рэзервовае капіраванне",
+  "backupSubtitle": "Экспартуйце або імпартуйце свае дадзеныя",
+  "about": "Пра праграму",
+  "version": "Версія",
+  "privacy": "Канфідэнцыяльнасць",
+  "termsOfUse": "Умовы выкарыстання",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Рэзервовае капіраванне",
+  "backupPremiumDescription": "Рэзервовае капіраванне і экспарт - гэта прэміум-функцыя",
+  "exportData": "Экспартаваць дадзеныя",
+  "exportDataSubtitle": "Захаваць усе спісы як JSON",
+  "importData": "Імпартаваць дадзеныя",
+  "importDataSubtitle": "Аднавіць спісы з JSON",
+  "importJsonTitle": "Імпартаваць JSON",
+  "importJsonHint": "Устаўце JSON рэзервовай копіі сюды...",
+  "backupExported": "Рэзервовая копія экспартавана!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Месяцовы Бюджэт",
+  "budgetPremiumLocked": "Глабальны месяцовы бюджэт - гэта прэміум",
+  "budgetUpgradePrompt": "Абнавіце, каб разблакаваць",
+  "noBudgetDefined": "Бюджэт не ўсталяваны",
+  "totalEstimated": "Агулам прыблізна: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Усталяваць бюджэт",
+  "budgetLists": "Спісы",
+  "budgetValueLabel": "Сума",
+  "setBudgetTitle": "Месяцовы Бюджэт",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Усе",
+  "filterPending": "Чакае",
+  "filterPurchased": "Набыта",
+  "sortName": "Назва",
+  "sortCategory": "Катэгорыя",
+  "sortDate": "Дата",
+  "sortManual": "Уручную",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Дадаць Элемент",
+  "itemName": "Назва элемента",
+  "quantityShort": "Кольк",
+  "unit": "Адзінка",
+  "category": "Катэгорыя",
+  "estimatedPrice": "Прыблізны кошт",
+  "addItemPrice": "Прыблізны кошт",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Рэдагаваць Элемент",
+  "quantityFull": "Колькасць",
+  "editItemPrice": "Прыблізны кошт",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Дадаць у Кладоўку",
+  "addToPantryPrompt": "Дадаць \"{name}\" у Вашу кладоўку?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Так",
+  "productName": "Назва прадукту",
+  "idealQty": "Ідэальная кольк",
+  "currentQty": "Бягучая кольк",
+  "trackStock": "Адсочваць запас",
+  "trackStockActive": "З'яўляецца ў прапановах пакупак",
+  "trackStockInactive": "Не стварае прапанову пакупкі",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Стварыць Спіс",
+  "renameListDialog": "Перайменаваць Спіс",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Гісторыя Спісаў",
+  "myLists": "Мае Спісы",
+  "viewActive": "Паглядзець Актыўныя",
+  "viewHistory": "Паглядзець Гісторыю",
+  "noArchivedLists": "Няма архіваваных спісаў",
+  "noActiveLists": "Няма актыўных спісаў",
+  "completedOn": "Завершана {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Агульны",
+  "restore": "Аднавіць",
+  "removeSharedTooltip": "Выдаліць",
+  "deleteListTitle": "Выдаліць спіс",
+  "deleteListContent": "Вы ўпэўнены, што хочаце выдаліць \"{name}\"? Усе элементы будуць выдалены.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Выдаліць агульны спіс",
+  "removeSharedListContent": "Выдаліць \"{name}\" з вашых спісаў? Арыгінальны спіс не будзе закрануты.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Стварыць новы спіс",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI Памочнік",
+  "aiAssistantDescription": "Атрымлівайце разумныя прапановы, рэцэпты і персанальныя парады з нашым AI-памочнікам.",
+  "generalAssistant": "Агульны Памочнік",
+  "clearHistory": "Ачысціць Гісторыю",
+  "clearHistoryConfirm": "Ачысціць усе паведамленні ў гэтай сесіі?",
+  "chatHint": "Напішыце паведамленне...",
+  "chatError": "Памылка загрузкі чата: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Чым я магу дапамагчы з вашым спісам?",
+  "generalHelp": "Чым я магу дапамагчы з вашымі пакупкамі сёння?",
+  "chatSubtitle": "Пытайцеся пра прапановы тавараў, рэцэпты або парады па эканоміі.",
+  "aiError": "Прабачце, адбылася памылка пры апрацоўцы вашага запыту. Праверце падключэнне або паспрабуйце пазней.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Увайдзіце, каб разблакаваць\nпрэміум-функцыі",
+  "signInGoogle": "Увайсці з Google",
+  "signInApple": "Увайсці з Apple",
+  "continueAsGuest": "Працягнуць як госць",
+  "loginError": "Памылка ўваходу: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Абнавіце, каб разблакаваць",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Элемент выдалены",
+  "undo": "Адмяніць",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Ваш спіс пусты",
+  "emptyListSubtitle": "Дадайце элементы, каб пачаць",
+  "noListFoundTitle": "Спісы не знойдзены",
+  "noListFoundSubtitle": "Стварыце свой першы спіс, каб пачаць",
+  "createFirstList": "Стварыць Першы Спіс",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Бюджэт Спісу",
+  "budgetAmountLabel": "Сума бюджэту",
+  "removeBudget": "Выдаліць",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Бязмежныя спісы",
+  "prefSharing": "Абагульваць спісы",
+  "prefFullHistory": "Поўная гісторыя",
+  "prefExportData": "Экспартаваць дадзеныя",
+  "prefCustomThemes": "Уласныя тэмы",
+  "prefMonthlyBudget": "Глабальны месяцовы бюджэт",
+  "prefAIAssistant": "Персанальны AI Памочнік",
+  "prefUnlimitedPantry": "Бязмежная кладоўка",
+  "prefInteractiveArtifacts": "Інтэрактыўныя AI Артэфакты",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Зялёны",
+  "themeBlue": "Сіні",
+  "themePurple": "Фіялетавы",
+  "themeRed": "Чырвоны",
+  "themeOrange": "Аранжавы",
+  "themePink": "Ружовы",
+  "themeIndigo": "Індыга",
+  "themeAmber": "Бурштынавы",
+  "themeTeal": "Бірузовы",
+  "themeBrown": "Карычневы",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Садавіна",
+  "catCleaning": "Чыстка",
+  "catBeverages": "Напоі",
+  "catBakery": "Выпечка",
+  "catOthers": "Іншае",
+  "@_Unit": "description: Unit",
+  "unitPack": "упак",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Спіс Пакупак",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Месяцовы Бюджэт",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Выдаліць спіс",
+  "pantryItemRemoved": "Элемент выдалены",
+  "deficitItems": "{deficit,plural, one{{deficit} элемент трэба набыць} few{{deficit} элементы трэба набыць} many{{deficit} элементаў трэба набыць} other{{deficit} элементаў трэба набыць}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Агулам кошык",
+  "restockLabel": "Папоўніць",
+  "advancedFeatures": "Пашыраныя функцыі",
+  "selectAll": "Выбраць усе",
+  "deselectAll": "Адмяніць выбар усіх",
+  "monthlyBudgetAppBar": "Месяцовы Бюджэт",
+  "budgetEditTitle": "Месяцовы Бюджэт",
+  "budgetDashboardTitle": "Панэль кіравання",
+  "selectListForDashboard": "Выберыце спіс для прагляду панэлі кіравання.",
+  "spendingAnalysis": "Аналіз Выдаткаў",
+  "noItemsToAnalyze": "Няма элементаў у спісе для аналізу.",
+  "markItemsToSeeAnalysis": "Пазначце элементы як набытыя, каб убачыць аналіз.",
+  "totalSpending": "Агульныя Выдаткі",
+  "spendingByCategory": "Выдаткі па Катэгорыях",
+  "achievements": "Дасягненні",
+  "exportPdfExcel": "Экспартаваць PDF/Excel",
+  "exportPdf": "Экспартаваць як PDF",
+  "exportExcel": "Экспартаваць як Excel",
+  "organizingAi": "АРГАНІЗАЦЫЯ З AI...",
+  "yesLabel": "Так",
+  "noLabel": "Не",
+  "shareListText": "Мой Спіс Пакупак",
+  "emptyListAddItems": "Ваш спіс пусты! Спачатку дадайце элементы. ℹ️",
+  "listOrganizedMagic": "Спіс магічна арганізаваны па катэгорыях! ✨",
+  "shoppingMode": "Рэжым Пакупак",
+  "smartOrganization": "Разумная Арганізацыя",
+  "savings": "Эканомія",
+  "shoppingModeHeader": "РЭЖЫМ ПАКУПАК",
+  "shareAsText": "Адправіць элементы як фарматаваны тэкст",
+  "shareRealtime": "Сінхранізацыя ў рэальным часе з іншымі людзьмі",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Хуткі рэцэпт",
+  "quickRecipePrompt": "Прапануйце рэцэпты з элементамі майго спісу.",
+  "economyTips": "Парады па эканоміі",
+  "economyTipsPrompt": "Як я магу зэканоміць на гэтай пакупцы?",
+  "organizeAisles": "Арганізаваць па аддзелах",
+  "organizeAislesPrompt": "Арганізаваць па крамных аддзелах.",
+  "recipeSuggestion": "Прапанова рэцэпту",
+  "aiCreditsRemaining": "{remaining} крэдытаў засталося",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Дадаць усё ў спіс",
+  "organizeByAisles": "Арганізаваць па аддзелах",
+  "voiceTranscriptionTooltip": "Галасавы набор (Бясплатна)",
+  "aiVoiceCommandTooltip": "AI Галасавая Каманда (Premium)",
+  "voiceCommandTitle": "AI Галасавая Каманда",
+  "voiceCommandContent": "Размаўляйце натуральна, каб кіраваць вашым спісам!\n\nПрыклады:\n• 'Дадаць хлеб, сыр і вяндліну'\n• 'Выдаліць пральны парашок'\n• 'Змяніць тэму на сінюю'\n\nГэта эксклюзіўная функцыя Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Паглядзець Планы",
+  "itemsAddedSuccess": "Элементы паспяхова дададзены ў спіс!",
+  "viewList": "Паглядзець спіс",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Адправіць Зваротную Сувязь",
+  "feedbackPrompt": "Што вы хацелі б падзяліцца?",
+  "feedbackTypeBug": "Паведаміць Пра Памылку",
+  "feedbackTypeBugHint": "Нешта не працуе",
+  "feedbackTypeSuggestion": "Прапанова",
+  "feedbackTypeSuggestionHint": "Ідэя па паляпшэнні праграмы",
+  "feedbackTypeTranslation": "Праблема Перакладу",
+  "feedbackTypeTranslationHint": "Няправільны або няўдалы пераклад",
+  "feedbackTypeFeature": "Запыт Функцыі",
+  "feedbackTypeFeatureHint": "Функцыя, якую вы хацелі б бачыць",
+  "feedbackTypeOther": "Іншае",
+  "feedbackTypeOtherHint": "Іншы тып зваротнай сувязі",
+  "feedbackHint": "Апішыце вашу зваротную сувязь падрабязна...",
+  "feedbackSend": "Адправіць Зваротную Сувязь",
+  "feedbackSending": "Адпраўка...",
+  "feedbackThankYou": "Дзякуй!",
+  "feedbackThankYouMessage": "Ваша зваротная сувязь атрымана і дапамагае нам палепшыць Lista Plus для ўсіх.",
+  "feedbackBack": "Назад",
+  "feedbackError": "Памылка адпраўкі: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Паўтарыць",
+  "feedbackSettingsTitle": "Адправіць Зваротную Сувязь",
+  "feedbackSettingsSubtitle": "Паведамляйце пра памылкі, прапаноўвайце паляпшэнні або выпраўляйце пераклады",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

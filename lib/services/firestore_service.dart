@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
@@ -20,7 +21,11 @@ class FirestoreService implements StorageBackend {
         _uid = uid {
     debugPrint('FirestoreService initialized for UID: $_uid');
     // Enable persistence for better offline behavior
-    _db.settings = const Settings(persistenceEnabled: true, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
+    try {
+      _db.settings = const Settings(persistenceEnabled: true, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
+    } on Object catch (_) {
+      // Ignored — FakeFirebaseFirestore (test) doesn't expose a settings setter.
+    }
   }
   // coverage:ignore-end
 
@@ -70,7 +75,7 @@ class FirestoreService implements StorageBackend {
     bool hasEmitted = false;
     final controller = StreamController<T>();
     
-    Timer? timeoutTimer = Timer(_streamTimeout, () {
+    final Timer timeoutTimer = Timer(_streamTimeout, () {
       if (!hasEmitted && !controller.isClosed) {
         LoggerService.log('Firestore Stream Timeout ($label) para UID: $_uid', tag: 'FirestoreService');
         controller.addError(TimeoutException('Tempo esgotado ao conectar com o servidor ($label). Verifique sua conexão.'));
@@ -80,20 +85,20 @@ class FirestoreService implements StorageBackend {
     final sub = stream.listen(
       (data) {
         hasEmitted = true;
-        timeoutTimer?.cancel();
+        timeoutTimer.cancel();
         if (!controller.isClosed) {
           controller.add(data);
         }
       },
       onError: (Object e) {
-        timeoutTimer?.cancel();
+        timeoutTimer.cancel();
         LoggerService.error(e, message: 'Firestore Stream Error ($label)');
         if (!controller.isClosed) {
           controller.addError(e);
         }
       },
       onDone: () {
-        timeoutTimer?.cancel();
+        timeoutTimer.cancel();
         if (!controller.isClosed) {
           controller.close();
         }
@@ -102,7 +107,7 @@ class FirestoreService implements StorageBackend {
     );
 
     controller.onCancel = () {
-      timeoutTimer?.cancel();
+      timeoutTimer.cancel();
       sub.cancel();
     };
 
@@ -401,7 +406,9 @@ class FirestoreService implements StorageBackend {
       final doc = await _db
           .collection('users').doc(ownerUid).collection('lists').doc(listId)
           .get();
-      if (!doc.exists) return null;
+          if (!doc.exists) {
+            return null;
+          }
       final data = doc.data()!;
       data['id'] = doc.id;
       return ShoppingList.fromJson(data);
@@ -414,7 +421,9 @@ class FirestoreService implements StorageBackend {
         .collection('users').doc(ownerUid).collection('lists').doc(listId)
         .snapshots()
         .map((doc) {
-          if (!doc.exists) return null;
+      if (!doc.exists) {
+        return null;
+      }
           final data = doc.data()!;
           data['id'] = doc.id;
           return ShoppingList.fromJson(data);
@@ -509,52 +518,20 @@ class FirestoreService implements StorageBackend {
   Future<void> savePantryItems(List<PantryItem> items) async {
     return _retry(() async {
       final pantryRef = _db.collection('users').doc(_uid).collection('pantry');
-      final existingSnap = await pantryRef.get();
       
-      final newItemIds = items.map((i) => i.id).toSet();
-      final docsToDelete = existingSnap.docs.where((doc) => !newItemIds.contains(doc.id)).toList();
-
+      // Sincronização Cirúrgica: Apenas salvamos o que foi enviado.
+      // A deleção deve ser tratada individualmente por deletePantryItem
+      // para evitar condições de corrida em ambientes multi-sessão.
       const limit = 500;
-      final totalOps = docsToDelete.length + items.length;
-      
-      if (totalOps <= limit) {
+      for (var i = 0; i < items.length; i += limit) {
         final batch = _db.batch();
-        for (final doc in docsToDelete) {
-          batch.delete(doc.reference);
-        }
-        for (final item in items) {
+        final chunk = items.sublist(i, (i + limit) > items.length ? items.length : i + limit);
+        for (final item in chunk) {
           batch.set(pantryRef.doc(item.id), item.toJson());
         }
         await batch.commit();
-      } else {
-        await _commitPantryBatchInChunks(pantryRef, docsToDelete, items);
       }
     });
-  }
-
-  Future<void> _commitPantryBatchInChunks(
-    CollectionReference pantryRef,
-    List<QueryDocumentSnapshot<Map<String, dynamic>>> docsToDelete,
-    List<PantryItem> items,
-  ) async {
-    final allDeletes = docsToDelete.map((d) => d.reference).toList();
-    const limit = 500;
-    for (var i = 0; i < allDeletes.length; i += limit) {
-      final batch = _db.batch();
-      final chunk = allDeletes.sublist(i, (i + limit) > allDeletes.length ? allDeletes.length : i + limit);
-      for (final ref in chunk) {
-        batch.delete(ref);
-      }
-      await batch.commit();
-    }
-    for (var i = 0; i < items.length; i += limit) {
-      final batch = _db.batch();
-      final chunk = items.sublist(i, (i + limit) > items.length ? items.length : i + limit);
-      for (final item in chunk) {
-        batch.set(pantryRef.doc(item.id), item.toJson());
-      }
-      await batch.commit();
-    }
   }
 
   @override
@@ -682,19 +659,18 @@ class FirestoreService implements StorageBackend {
   Future<void> saveCategories(List<CategoryData> categories) async {
     return _retry(() async {
       final catRef = _db.collection('users').doc(_uid).collection('categories');
-      final existingSnap = await catRef.get();
-      final newCatIds = categories.map((c) => c.id).toSet();
-      final docsToDelete = existingSnap.docs.where((doc) => !newCatIds.contains(doc.id)).toList();
+      
+      // Sincronização Cirúrgica: Salvamos os estados atuais das categorias.
+      // Evitamos deletar o que não está na lista local para não apagar categorias
+      // criadas simultaneamente em outros dispositivos ou sessões.
       const limit = 500;
-      final totalOps = docsToDelete.length + categories.length;
-      if (totalOps <= limit) {
+      for (var i = 0; i < categories.length; i += limit) {
         final batch = _db.batch();
-        for (final doc in docsToDelete) batch.delete(doc.reference);
-        for (final cat in categories) batch.set(catRef.doc(cat.id), cat.toJson());
+        final chunk = categories.sublist(i, (i + limit) > categories.length ? categories.length : i + limit);
+        for (final cat in chunk) {
+          batch.set(catRef.doc(cat.id), cat.toJson());
+        }
         await batch.commit();
-      } else {
-        for (final doc in docsToDelete) await doc.reference.delete();
-        for (final cat in categories) await catRef.doc(cat.id).set(cat.toJson());
       }
     });
   }
@@ -744,11 +720,28 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Future<String?> uploadRecipeImage(String recipeId, String filePath) async {
+    try {
+      final ref = FirebaseStorage.instance
+          .ref('users/$_uid/recipe_images/$recipeId');
+      await ref.putFile(File(filePath));
+      return await ref.getDownloadURL();
+    } on Object catch (e) {
+      LoggerService.error(e, message: 'uploadRecipeImage: erro ao fazer upload');
+      return null;
+    }
+  }
+
+  @override
   Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end}) async {
     return _retry(() async {
       var query = _db.collection('users').doc(_uid).collection('meal_plans') as Query<Map<String, dynamic>>;
-      if (start != null) query = query.where('date', isGreaterThanOrEqualTo: start.toIso8601String());
-      if (end != null) query = query.where('date', isLessThanOrEqualTo: end.toIso8601String());
+      if (start != null) {
+        query = query.where('date', isGreaterThanOrEqualTo: start.toIso8601String());
+      }
+      if (end != null) {
+        query = query.where('date', isLessThanOrEqualTo: end.toIso8601String());
+      }
       final snap = await query.get();
       return snap.docs.map((d) {
         final data = d.data();
@@ -761,8 +754,12 @@ class FirestoreService implements StorageBackend {
   @override
   Stream<List<Map<String, dynamic>>> watchMealPlans({DateTime? start, DateTime? end}) {
     var query = _db.collection('users').doc(_uid).collection('meal_plans') as Query<Map<String, dynamic>>;
-    if (start != null) query = query.where('date', isGreaterThanOrEqualTo: start.toIso8601String());
-    if (end != null) query = query.where('date', isLessThanOrEqualTo: end.toIso8601String());
+    if (start != null) {
+      query = query.where('date', isGreaterThanOrEqualTo: start.toIso8601String());
+    }
+    if (end != null) {
+      query = query.where('date', isLessThanOrEqualTo: end.toIso8601String());
+    }
     final stream = query.snapshots().map((snap) => snap.docs.map((d) {
           final data = d.data();
           data['id'] = d.id;
@@ -801,8 +798,12 @@ class FirestoreService implements StorageBackend {
     final totalOps = docsToDelete.length + items.length;
     if (totalOps <= limit) {
       final batch = _db.batch();
-      for (final doc in docsToDelete) batch.delete(doc.reference);
-      for (final item in items) batch.set(itemsRef.doc(item.id), item.toJson());
+      for (final doc in docsToDelete) {
+        batch.delete(doc.reference);
+      }
+      for (final item in items) {
+        batch.set(itemsRef.doc(item.id), item.toJson());
+      }
       await batch.commit();
       return;
     }
@@ -810,15 +811,26 @@ class FirestoreService implements StorageBackend {
     for (var i = 0; i < allDeleteRefs.length; i += limit) {
       final batch = _db.batch();
       final chunk = allDeleteRefs.sublist(i, (i + limit) > allDeleteRefs.length ? allDeleteRefs.length : i + limit);
-      for (final ref in chunk) batch.delete(ref);
+      for (final ref in chunk) {
+        batch.delete(ref);
+      }
       await batch.commit();
     }
     for (var i = 0; i < items.length; i += limit) {
       final batch = _db.batch();
       final chunk = items.sublist(i, (i + limit) > items.length ? items.length : i + limit);
-      for (final item in chunk) batch.set(itemsRef.doc(item.id), item.toJson());
+      for (final item in chunk) {
+        batch.set(itemsRef.doc(item.id), item.toJson());
+      }
       await batch.commit();
     }
+  }
+
+  @override
+  Future<void> saveFeedback(Map<String, dynamic> feedbackData) async {
+    return _retry(() async {
+      await _db.collection('feedback').add(feedbackData);
+    }, label: 'saveFeedback');
   }
 }
 // coverage:ignore-end

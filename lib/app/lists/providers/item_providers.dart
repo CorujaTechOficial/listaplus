@@ -2,7 +2,7 @@
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/domain/entities/unit.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_history_provider.dart';
@@ -54,7 +54,7 @@ class PriceHistory extends _$PriceHistory {
   }
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 class ShoppingListItems extends _$ShoppingListItems {
   @override
   Stream<List<ShoppingItem>> build(String listId) {
@@ -126,11 +126,6 @@ class ShoppingListItems extends _$ShoppingListItems {
       updatedAt: DateTime.now(),
     );
 
-    final previousState = state.value;
-    state = AsyncValue.data(
-      items.map((i) => i.id == id ? toggledItem : i).toList(),
-    );
-
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -146,9 +141,6 @@ class ShoppingListItems extends _$ShoppingListItems {
         });
       }
     } on Exception catch (e) {
-      if (previousState != null) {
-        state = AsyncValue.data(previousState);
-      }
       throw Exception('Erro ao alternar status do item: $e');
     }
   }
@@ -291,14 +283,10 @@ class ShoppingListItems extends _$ShoppingListItems {
   Future<void> clearPurchased() async {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
-    final updated = items.where((item) => !item.isPurchased).toList();
     final removedIds = items.where((item) => item.isPurchased).map((i) => i.id).toSet();
     if (removedIds.isEmpty) {
       return;
     }
-
-    final previousState = state.value;
-    state = AsyncValue.data(updated);
 
     try {
       final ownerUid = await _ownerUid();
@@ -312,20 +300,12 @@ class ShoppingListItems extends _$ShoppingListItems {
         }
       }
     } on Exception catch (e) {
-      if (previousState != null) {
-        state = AsyncValue.data(previousState);
-      }
       throw Exception('Erro ao limpar itens comprados: $e');
     }
   }
 
   Future<void> removeItems(List<String> ids) async {
     final service = ref.read(firestoreServiceProvider);
-    final items = state.value ?? [];
-    final updated = items.where((item) => !ids.contains(item.id)).toList();
-    final previousState = state.value;
-    state = AsyncValue.data(updated);
-
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -338,9 +318,6 @@ class ShoppingListItems extends _$ShoppingListItems {
         }
       }
     } on Exception catch (e) {
-      if (previousState != null) {
-        state = AsyncValue.data(previousState);
-      }
       throw Exception('Erro ao remover itens: $e');
     }
   }
@@ -362,9 +339,6 @@ class ShoppingListItems extends _$ShoppingListItems {
       return item;
     }).toList();
 
-    final previousState = state.value;
-    state = AsyncValue.data(updated);
-
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -380,9 +354,6 @@ class ShoppingListItems extends _$ShoppingListItems {
         });
       }
     } on Exception catch (e) {
-      if (previousState != null) {
-        state = AsyncValue.data(previousState);
-      }
       throw Exception('Erro ao alternar itens: $e');
     }
   }
@@ -391,7 +362,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     final items = <ShoppingItem>[...(state.value ?? [])];
     final item = items.removeAt(oldIndex);
-    items.insert(newIndex, item);
+    items.insert(newIndex > oldIndex ? newIndex - 1 : newIndex, item);
 
     try {
       final ownerUid = await _ownerUid();

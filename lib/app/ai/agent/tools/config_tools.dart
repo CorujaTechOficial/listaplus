@@ -1,11 +1,11 @@
 import 'tool_core.dart';
 
-final getThemeTool = const AgentTool(
+const getThemeTool = AgentTool(
   name: 'get_theme',
   description: 'Obtém o tema atual (claro, escuro ou sistema)',
 );
 
-final setThemeTool = const AgentTool(
+const setThemeTool = AgentTool(
   name: 'set_theme',
   description: 'Altera o tema do aplicativo',
   parameters: [
@@ -16,7 +16,7 @@ final setThemeTool = const AgentTool(
   ],
 );
 
-final saveUserPreferenceTool = const AgentTool(
+const saveUserPreferenceTool = AgentTool(
   name: 'save_user_preference',
   description: 'Salva uma preferência ou informação pessoal do usuário '
       'aprendida durante a conversa (ex: restrições alimentares, '
@@ -37,7 +37,7 @@ final saveUserPreferenceTool = const AgentTool(
   ],
 );
 
-final deleteUserPreferenceTool = const AgentTool(
+const deleteUserPreferenceTool = AgentTool(
   name: 'delete_user_preference',
   description: 'Remove uma preferência do usuário salva anteriormente',
   parameters: [
@@ -45,7 +45,7 @@ final deleteUserPreferenceTool = const AgentTool(
   ],
 );
 
-final getUserProfileTool = const AgentTool(
+const getUserProfileTool = AgentTool(
   name: 'get_user_profile',
   description: 'Obtém o perfil completo do usuário com todas as '
       'preferências estruturadas (mercado preferido, restrições '
@@ -53,7 +53,7 @@ final getUserProfileTool = const AgentTool(
       'Use no início da conversa para personalizar as respostas.',
 );
 
-final updateUserProfileTool = const AgentTool(
+const updateUserProfileTool = AgentTool(
   name: 'update_user_profile',
   description: 'Atualiza campos estruturados do perfil do usuário. '
       'Use quando o usuário fornecer informações sobre preferências '
@@ -66,12 +66,12 @@ final updateUserProfileTool = const AgentTool(
   ],
 );
 
-final exportBackupTool = const AgentTool(
+const exportBackupTool = AgentTool(
   name: 'export_backup',
   description: 'Exporta todos os dados do usuário como JSON',
 );
 
-final importBackupTool = const AgentTool(
+const importBackupTool = AgentTool(
   name: 'import_backup',
   description: 'Importa dados de um backup JSON',
   parameters: [
@@ -79,7 +79,7 @@ final importBackupTool = const AgentTool(
   ],
 );
 
-final allConfigTools = [
+const allConfigTools = [
   getThemeTool,
   setThemeTool,
   saveUserPreferenceTool,

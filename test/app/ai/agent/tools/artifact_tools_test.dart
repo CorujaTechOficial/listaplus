@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/app/ai/agent/tools/artifact_tools.dart';
-import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 
 void main() {
   group('Artifact tools', () {
@@ -10,7 +9,7 @@ void main() {
     });
 
     test('generate_artifact has all parameters', () {
-      final tool = generateArtifactTool;
+      const tool = generateArtifactTool;
       expect(tool.parameters.any((p) => p.name == 'title' && p.required), true);
       expect(tool.parameters.any((p) => p.name == 'icon' && p.required), true);
       expect(tool.parameters.any((p) => p.name == 'controls' && p.required), true);

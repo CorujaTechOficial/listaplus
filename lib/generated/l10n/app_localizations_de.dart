@@ -1,0 +1,2241 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for German (`de`).
+class AppLocalizationsDe extends AppLocalizations {
+  AppLocalizationsDe([String locale = 'de']) : super(locale);
+
+  @override
+  String get appTitle => 'Einkaufsliste';
+
+  @override
+  String get lists => 'Listen';
+
+  @override
+  String get pantry => 'Vorrat';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get save => 'Speichern';
+
+  @override
+  String get create => 'Erstellen';
+
+  @override
+  String get add => 'Hinzufügen';
+
+  @override
+  String get remove => 'Entfernen';
+
+  @override
+  String get delete => 'Löschen';
+
+  @override
+  String get edit => 'Bearbeiten';
+
+  @override
+  String get copy => 'Kopieren';
+
+  @override
+  String get retry => 'Wiederholen';
+
+  @override
+  String get regenerate => 'Neu generieren';
+
+  @override
+  String get copiedToClipboard => 'In die Zwischenablage kopiert';
+
+  @override
+  String get confirm => 'Bestätigen';
+
+  @override
+  String get close => 'Schließen';
+
+  @override
+  String get import => 'Importieren';
+
+  @override
+  String get rename => 'Umbenennen';
+
+  @override
+  String get upgrade => 'Upgrade';
+
+  @override
+  String get clear => 'Leeren';
+
+  @override
+  String error(String message) {
+    return 'Fehler: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'Fehler: $message';
+  }
+
+  @override
+  String get purchaseError =>
+      'Fehler bei der Kaufabwicklung. Bitte versuche es erneut.';
+
+  @override
+  String get restoreError =>
+      'Fehler beim Wiederherstellen der Käufe. Bitte versuche es erneut.';
+
+  @override
+  String get loading => 'Laden...';
+
+  @override
+  String get fieldRequired => 'Pflichtfeld';
+
+  @override
+  String get addedFeedback => 'Hinzugefügt!';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ausgewählt',
+      one: '$count ausgewählt',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'Geschätzt';
+
+  @override
+  String get alreadyPurchased => 'Bereits gekauft';
+
+  @override
+  String get clearList => 'Liste leeren';
+
+  @override
+  String get clearPurchased => 'Gekauftes leeren';
+
+  @override
+  String get share => 'Teilen';
+
+  @override
+  String get shareViaCode => 'Per Code teilen';
+
+  @override
+  String get importViaCode => 'Per Code importieren';
+
+  @override
+  String get listAssistant => 'Listen-Assistent';
+
+  @override
+  String get globalAssistant => 'Globaler Assistent';
+
+  @override
+  String get becomePremium => 'Premium werden';
+
+  @override
+  String get manageSubscription => 'Abonnement verwalten';
+
+  @override
+  String get completePurchase => 'Kauf abschließen';
+
+  @override
+  String get confirmClearList => 'Alle Artikel entfernen?';
+
+  @override
+  String get shareListTitle => 'Liste teilen';
+
+  @override
+  String get shareThisCode => 'Diesen Code teilen:';
+
+  @override
+  String get validForLimitedTime => 'Begrenzt gültig';
+
+  @override
+  String get importListTitle => 'Liste importieren';
+
+  @override
+  String get enterCodeHint => 'Code eingeben';
+
+  @override
+  String get confirmArchiveTitle => 'Kauf abschließen';
+
+  @override
+  String get confirmArchiveContent =>
+      'Diesen Kauf abschließen und die Liste archivieren?';
+
+  @override
+  String get complete => 'Abschließen';
+
+  @override
+  String get listArchived => 'Liste erfolgreich archiviert!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName hinzugefügt!';
+  }
+
+  @override
+  String get buy => 'Kaufen';
+
+  @override
+  String get unmark => 'Markierung aufheben';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return '$count Artikel entfernen?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'Bestätigen';
+
+  @override
+  String confirmContent(int count) {
+    return '$count Artikel entfernen?';
+  }
+
+  @override
+  String get archiveList => 'Liste archivieren';
+
+  @override
+  String get pantryAppBar => 'Vorrat';
+
+  @override
+  String get generateShoppingList => 'Einkaufsliste erstellen';
+
+  @override
+  String get pantryEmpty => 'Vorrat leer';
+
+  @override
+  String get pantryEmptySubtitle =>
+      'Füge Produkte hinzu, die du zu Hause behalten möchtest';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit Artikel müssen gekauft werden';
+  }
+
+  @override
+  String get noItemsToBuy => 'Keine Artikel müssen gekauft werden';
+
+  @override
+  String get newPantryList => 'Vorratseinkauf';
+
+  @override
+  String get newListTitle => 'Neue Einkaufsliste';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count Artikel werden hinzugefügt';
+  }
+
+  @override
+  String get listNameLabel => 'Listenname';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'Liste \"$name\" mit $count Artikeln erstellt';
+  }
+
+  @override
+  String get noTracking => 'Keine Verfolgung';
+
+  @override
+  String get markAsPurchased => 'Als gekauft markieren';
+
+  @override
+  String editPantryItem(String name) {
+    return '$name bearbeiten';
+  }
+
+  @override
+  String get idealQuantity => 'Ideale Menge';
+
+  @override
+  String get currentQuantity => 'Aktuelle Menge';
+
+  @override
+  String get consumed => 'Verbraucht';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name auf $quantity $unit aufgefüllt';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return '\"$name\" aus dem Vorrat entfernen?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return '$name bearbeiten';
+  }
+
+  @override
+  String get settingsAppBar => 'Einstellungen';
+
+  @override
+  String get language => 'Sprache';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Systemstandard';
+
+  @override
+  String get appearance => 'Erscheinungsbild';
+
+  @override
+  String get light => 'Hell';
+
+  @override
+  String get system => 'System';
+
+  @override
+  String get dark => 'Dunkel';
+
+  @override
+  String get themeColor => 'Designfarbe';
+
+  @override
+  String get finance => 'Finanzen';
+
+  @override
+  String get monthlyBudgetNav => 'Monatsbudget';
+
+  @override
+  String get budgetSubtitle => 'Verfolge deine monatlichen Ausgaben';
+
+  @override
+  String get data => 'Daten';
+
+  @override
+  String get backupNav => 'Backup';
+
+  @override
+  String get backupSubtitle => 'Exportiere oder importiere deine Daten';
+
+  @override
+  String get about => 'Über';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get privacy => 'Datenschutz';
+
+  @override
+  String get termsOfUse => 'Nutzungsbedingungen';
+
+  @override
+  String get backupTitle => 'Backup';
+
+  @override
+  String get backupPremiumDescription =>
+      'Backup und Export sind eine Premium-Funktion';
+
+  @override
+  String get exportData => 'Daten exportieren';
+
+  @override
+  String get exportDataSubtitle => 'Alle Listen als JSON speichern';
+
+  @override
+  String get importData => 'Daten importieren';
+
+  @override
+  String get importDataSubtitle =>
+      'Listen aus einer JSON-Datei wiederherstellen';
+
+  @override
+  String get importJsonTitle => 'JSON importieren';
+
+  @override
+  String get importJsonHint => 'Füge das Backup-JSON hier ein...';
+
+  @override
+  String get backupExported => 'Backup exportiert!';
+
+  @override
+  String get budgetAppBar => 'Monatsbudget';
+
+  @override
+  String get budgetPremiumLocked => 'Globales Monatsbudget ist Premium';
+
+  @override
+  String get budgetUpgradePrompt => 'Upgrade zum Freischalten';
+
+  @override
+  String get noBudgetDefined => 'Kein Budget festgelegt';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'Gesamt geschätzt: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'Budget festlegen';
+
+  @override
+  String get budgetLists => 'Listen';
+
+  @override
+  String get budgetValueLabel => 'Betrag';
+
+  @override
+  String get setBudgetTitle => 'Monatsbudget';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'Alle';
+
+  @override
+  String get filterPending => 'Ausstehend';
+
+  @override
+  String get filterPurchased => 'Gekauft';
+
+  @override
+  String get sortName => 'Name';
+
+  @override
+  String get sortCategory => 'Kategorie';
+
+  @override
+  String get sortDate => 'Datum';
+
+  @override
+  String get sortManual => 'Manuell';
+
+  @override
+  String get addItem => 'Artikel hinzufügen';
+
+  @override
+  String get itemName => 'Artikelname';
+
+  @override
+  String get quantityShort => 'Menge';
+
+  @override
+  String get unit => 'Einheit';
+
+  @override
+  String get category => 'Kategorie';
+
+  @override
+  String get estimatedPrice => 'Geschätzter Preis';
+
+  @override
+  String get addItemPrice => 'Geschätzter Preis';
+
+  @override
+  String get editItem => 'Artikel bearbeiten';
+
+  @override
+  String get quantityFull => 'Menge';
+
+  @override
+  String get editItemPrice => 'Geschätzter Preis';
+
+  @override
+  String get addToPantry => 'Zum Vorrat hinzufügen';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return '\"$name\" zu deinem Vorrat hinzufügen?';
+  }
+
+  @override
+  String get yes => 'Ja';
+
+  @override
+  String get productName => 'Produktname';
+
+  @override
+  String get idealQty => 'Ideale Menge';
+
+  @override
+  String get currentQty => 'Aktuelle Menge';
+
+  @override
+  String get trackStock => 'Lagerbestand verfolgen';
+
+  @override
+  String get trackStockActive => 'Erscheint in Einkaufsvorschlägen';
+
+  @override
+  String get trackStockInactive => 'Erzeugt keinen Einkaufsvorschlag';
+
+  @override
+  String get createListDialog => 'Liste erstellen';
+
+  @override
+  String get renameListDialog => 'Liste umbenennen';
+
+  @override
+  String get listHistory => 'Listenverlauf';
+
+  @override
+  String get myLists => 'Meine Listen';
+
+  @override
+  String get viewActive => 'Aktive anzeigen';
+
+  @override
+  String get viewHistory => 'Verlauf anzeigen';
+
+  @override
+  String get noArchivedLists => 'Keine archivierten Listen';
+
+  @override
+  String get noActiveLists => 'Keine aktiven Listen';
+
+  @override
+  String completedOn(String date) {
+    return 'Abgeschlossen am $date';
+  }
+
+  @override
+  String get sharedLabel => 'Geteilt';
+
+  @override
+  String get restore => 'Wiederherstellen';
+
+  @override
+  String get removeSharedTooltip => 'Entfernen';
+
+  @override
+  String get deleteListTitle => 'Liste löschen';
+
+  @override
+  String deleteListContent(String name) {
+    return 'Bist du sicher, dass du \"$name\" löschen möchtest? Alle Artikel werden entfernt.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'Geteilte Liste entfernen';
+
+  @override
+  String removeSharedListContent(String name) {
+    return '\"$name\" aus deinen Listen entfernen? Die Originalliste bleibt erhalten.';
+  }
+
+  @override
+  String get createNewList => 'Neue Liste erstellen';
+
+  @override
+  String get aiAssistant => 'KI-Assistent';
+
+  @override
+  String get aiAssistantDescription =>
+      'Hole dir mit unserem KI-Assistenten intelligente Vorschläge, Rezepte und persönliche Tipps.';
+
+  @override
+  String get generalAssistant => 'Allgemeiner Assistent';
+
+  @override
+  String get clearHistory => 'Verlauf löschen';
+
+  @override
+  String get clearHistoryConfirm =>
+      'Alle Nachrichten in dieser Sitzung löschen?';
+
+  @override
+  String get chatHint => 'Gib deine Nachricht ein...';
+
+  @override
+  String chatError(String error) {
+    return 'Fehler beim Laden des Chats: $error';
+  }
+
+  @override
+  String get listHelp => 'Wie kann ich mit deiner Liste helfen?';
+
+  @override
+  String get generalHelp => 'Wie kann ich dir heute beim Einkaufen helfen?';
+
+  @override
+  String get chatSubtitle =>
+      'Frage nach Artikelvorschlägen, Rezepten oder Spartipps.';
+
+  @override
+  String get aiError =>
+      'Entschuldigung, bei der Verarbeitung deiner Anfrage ist ein Fehler aufgetreten. Überprüfe deine Verbindung oder versuche es später erneut.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt =>
+      'Melde dich an, um\nPremium-Funktionen freizuschalten';
+
+  @override
+  String get signInGoogle => 'Mit Google anmelden';
+
+  @override
+  String get signInApple => 'Mit Apple anmelden';
+
+  @override
+  String get continueAsGuest => 'Als Gast fortfahren';
+
+  @override
+  String loginError(String error) {
+    return 'Anmeldefehler: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'Upgrade zum Freischalten';
+
+  @override
+  String get itemRemoved => 'Artikel entfernt';
+
+  @override
+  String get undo => 'Rückgängig';
+
+  @override
+  String get emptyListTitle => 'Deine Liste ist leer';
+
+  @override
+  String get emptyListSubtitle => 'Füge Artikel hinzu, um zu beginnen';
+
+  @override
+  String get noListFoundTitle => 'Keine Listen gefunden';
+
+  @override
+  String get noListFoundSubtitle =>
+      'Erstelle deine erste Liste, um zu beginnen';
+
+  @override
+  String get createFirstList => 'Erste Liste erstellen';
+
+  @override
+  String get listBudgetTitle => 'Listenbudget';
+
+  @override
+  String get budgetAmountLabel => 'Budgetbetrag';
+
+  @override
+  String get removeBudget => 'Entfernen';
+
+  @override
+  String get prefUnlimitedLists => 'Unbegrenzte Listen';
+
+  @override
+  String get prefSharing => 'Listen teilen';
+
+  @override
+  String get prefFullHistory => 'Vollständiger Verlauf';
+
+  @override
+  String get prefExportData => 'Daten exportieren';
+
+  @override
+  String get prefCustomThemes => 'Benutzerdefinierte Designs';
+
+  @override
+  String get prefMonthlyBudget => 'Globales Monatsbudget';
+
+  @override
+  String get prefAIAssistant => 'Persönlicher KI-Assistent';
+
+  @override
+  String get prefUnlimitedPantry => 'Unbegrenzter Vorrat';
+
+  @override
+  String get prefInteractiveArtifacts => 'Interaktive KI-Artefakte';
+
+  @override
+  String get themeGreen => 'Grün';
+
+  @override
+  String get themeBlue => 'Blau';
+
+  @override
+  String get themePurple => 'Lila';
+
+  @override
+  String get themeRed => 'Rot';
+
+  @override
+  String get themeOrange => 'Orange';
+
+  @override
+  String get themePink => 'Pink';
+
+  @override
+  String get themeIndigo => 'Indigo';
+
+  @override
+  String get themeAmber => 'Bernstein';
+
+  @override
+  String get themeTeal => 'Blaugrün';
+
+  @override
+  String get themeBrown => 'Braun';
+
+  @override
+  String get catFruits => 'Obst';
+
+  @override
+  String get catCleaning => 'Reinigung';
+
+  @override
+  String get catBeverages => 'Getränke';
+
+  @override
+  String get catBakery => 'Backwaren';
+
+  @override
+  String get catOthers => 'Sonstiges';
+
+  @override
+  String get unitPack => 'Packung';
+
+  @override
+  String get shareSubject => 'Einkaufsliste';
+
+  @override
+  String get monthlyBudgetTitle => 'Monatsbudget';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'Liste löschen';
+
+  @override
+  String get pantryItemRemoved => 'Artikel entfernt';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: '$deficit Artikel müssen gekauft werden',
+      one: '$deficit Artikel muss gekauft werden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'Warenkorb gesamt';
+
+  @override
+  String get restockLabel => 'Auffüllen';
+
+  @override
+  String get advancedFeatures => 'Erweiterte Funktionen';
+
+  @override
+  String get selectAll => 'Alle auswählen';
+
+  @override
+  String get deselectAll => 'Alle abwählen';
+
+  @override
+  String get monthlyBudgetAppBar => 'Monatsbudget';
+
+  @override
+  String get budgetEditTitle => 'Monatsbudget';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard =>
+      'Wähle eine Liste aus, um das Dashboard anzuzeigen.';
+
+  @override
+  String get spendingAnalysis => 'Ausgabenanalyse';
+
+  @override
+  String get noItemsToAnalyze => 'Keine Artikel in der Liste zum Analysieren.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'Markiere Artikel als gekauft, um die Analyse zu sehen.';
+
+  @override
+  String get totalSpending => 'Gesamtausgaben';
+
+  @override
+  String get spendingByCategory => 'Ausgaben nach Kategorie';
+
+  @override
+  String get achievements => 'Erfolge';
+
+  @override
+  String get exportPdfExcel => 'PDF/Excel exportieren';
+
+  @override
+  String get exportPdf => 'Als PDF exportieren';
+
+  @override
+  String get exportExcel => 'Als Excel exportieren';
+
+  @override
+  String get organizingAi => 'ORGANISIERE MIT KI...';
+
+  @override
+  String get yesLabel => 'Ja';
+
+  @override
+  String get noLabel => 'Nein';
+
+  @override
+  String get shareListText => 'Meine Einkaufsliste';
+
+  @override
+  String get emptyListAddItems =>
+      'Deine Liste ist leer! Füge zuerst Artikel hinzu. ℹ️';
+
+  @override
+  String get listOrganizedMagic =>
+      'Liste wie von Zauberhand nach Kategorien organisiert! ✨';
+
+  @override
+  String get shoppingMode => 'Einkaufsmodus';
+
+  @override
+  String get smartOrganization => 'Intelligente Organisation';
+
+  @override
+  String get savings => 'Ersparnis';
+
+  @override
+  String get shoppingModeHeader => 'EINKAUFSMODUS';
+
+  @override
+  String get shareAsText => 'Artikel als formatierten Text senden';
+
+  @override
+  String get shareRealtime => 'Echtzeit-Synchronisation mit anderen Personen';
+
+  @override
+  String get quickRecipe => 'Schnelles Rezept';
+
+  @override
+  String get quickRecipePrompt =>
+      'Schlage Rezepte mit Artikeln aus meiner Liste vor.';
+
+  @override
+  String get economyTips => 'Spartipps';
+
+  @override
+  String get economyTipsPrompt =>
+      'Wie kann ich bei diesem Einkauf Geld sparen?';
+
+  @override
+  String get organizeAisles => 'Nach Gängen organisieren';
+
+  @override
+  String get organizeAislesPrompt => 'Nach Supermarkt-Gängen organisieren.';
+
+  @override
+  String get recipeSuggestion => 'Rezeptvorschlag';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return '$remaining Credits übrig';
+  }
+
+  @override
+  String get addAllToList => 'Alle zur Liste hinzufügen';
+
+  @override
+  String get organizeByAisles => 'Nach Gängen organisieren';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Spracheingabe (Kostenlos)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'KI-Sprachbefehl (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'KI-Sprachbefehl';
+
+  @override
+  String get voiceCommandContent =>
+      'Sprich natürlich, um deine Liste zu verwalten!\n\nBeispiele:\n• \'Füge Brot, Käse und Schinken hinzu\'\n• \'Entferne Waschmittel\'\n• \'Ändere das Design zu Blau\'\n\nDies ist eine exklusive Funktion von Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Pläne ansehen';
+
+  @override
+  String get itemsAddedSuccess => 'Artikel erfolgreich zur Liste hinzugefügt!';
+
+  @override
+  String get viewList => 'Liste anzeigen';
+
+  @override
+  String get feedbackTitle => 'Feedback senden';
+
+  @override
+  String get feedbackPrompt => 'Was möchtest du mitteilen?';
+
+  @override
+  String get feedbackTypeBug => 'Fehler melden';
+
+  @override
+  String get feedbackTypeBugHint => 'Etwas funktioniert nicht';
+
+  @override
+  String get feedbackTypeSuggestion => 'Vorschlag';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'Idee zur Verbesserung der App';
+
+  @override
+  String get feedbackTypeTranslation => 'Übersetzungsproblem';
+
+  @override
+  String get feedbackTypeTranslationHint =>
+      'Falsche oder ungeschickte Übersetzung';
+
+  @override
+  String get feedbackTypeFeature => 'Funktionswunsch';
+
+  @override
+  String get feedbackTypeFeatureHint => 'Funktion, die du dir wünschst';
+
+  @override
+  String get feedbackTypeOther => 'Sonstiges';
+
+  @override
+  String get feedbackTypeOtherHint => 'Andere Art von Feedback';
+
+  @override
+  String get feedbackHint => 'Beschreibe dein Feedback ausführlich...';
+
+  @override
+  String get feedbackSend => 'Feedback senden';
+
+  @override
+  String get feedbackSending => 'Senden...';
+
+  @override
+  String get feedbackThankYou => 'Vielen Dank!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'Dein Feedback wurde empfangen und hilft uns, Lista Plus für alle zu verbessern.';
+
+  @override
+  String get feedbackBack => 'Zurück';
+
+  @override
+  String feedbackError(String error) {
+    return 'Fehler beim Senden: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'Erneut versuchen';
+
+  @override
+  String get feedbackSettingsTitle => 'Feedback senden';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'Fehler melden, Verbesserungen vorschlagen oder Übersetzungen korrigieren';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Open menu';
+
+  @override
+  String get viewRecipe => 'View Recipe';
+
+  @override
+  String get recipeCreated => 'Recipe created!';
+
+  @override
+  String get editRecipe => 'Edit';
+
+  @override
+  String get deleteRecipe => 'Delete';
+
+  @override
+  String get deleteRecipeConfirm => 'Delete this recipe?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+  }
+
+  @override
+  String get ingredients => 'Ingredients';
+
+  @override
+  String get instructions => 'Instructions';
+
+  @override
+  String get prepTime => 'Prep time';
+
+  @override
+  String get recipeSaved => 'Recipe saved!';
+
+  @override
+  String get noRecipesSaved => 'No recipes saved';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Create your first custom recipe by tapping the button below.';
+
+  @override
+  String get myRecipes => 'My Recipes';
+
+  @override
+  String get newRecipe => 'New Recipe';
+
+  @override
+  String get loadingRecipes => 'Loading your recipes...';
+
+  @override
+  String get errorLoadingRecipes => 'Error loading recipes';
+
+  @override
+  String get addIngredient => 'Add ingredient';
+
+  @override
+  String get saveRecipe => 'Save';
+
+  @override
+  String get recipeName => 'Recipe name';
+
+  @override
+  String get shortDescription => 'Short description';
+
+  @override
+  String get prepTimeMinutes => 'Prep time (minutes)';
+
+  @override
+  String get instructionsHint => 'Type one step per line...';
+
+  @override
+  String get addPhoto => 'Add photo';
+
+  @override
+  String get imageUrlPlaceholder => 'Or paste an image URL';
+
+  @override
+  String get tags => 'Tags';
+
+  @override
+  String get recipeTags => 'Recipe tags';
+
+  @override
+  String get suggestedTags => 'Suggested';
+
+  @override
+  String get searchRecipes => 'Search recipes...';
+
+  @override
+  String get filterByTag => 'Filter by tag';
+
+  @override
+  String get allTags => 'All';
+
+  @override
+  String get recipeDeleted => 'Recipe deleted';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get editRecipeTitle => 'Edit Recipe';
+
+  @override
+  String get newRecipeTitle => 'New Recipe';
+
+  @override
+  String get requiredField => 'Required';
+
+  @override
+  String get chooseImageSource => 'Choose image source';
+
+  @override
+  String get gallery => 'Gallery';
+
+  @override
+  String get enterUrl => 'Enter URL';
+
+  @override
+  String get recipeImage => 'Recipe image';
+
+  @override
+  String get removeImage => 'Remove image';
+}
+
+/// The translations for German, as used in Germany (`de_DE`).
+class AppLocalizationsDeDe extends AppLocalizationsDe {
+  AppLocalizationsDeDe() : super('de_DE');
+
+  @override
+  String get appTitle => 'Einkaufsliste';
+
+  @override
+  String get lists => 'Listen';
+
+  @override
+  String get pantry => 'Vorrat';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get save => 'Speichern';
+
+  @override
+  String get create => 'Erstellen';
+
+  @override
+  String get add => 'Hinzufügen';
+
+  @override
+  String get remove => 'Entfernen';
+
+  @override
+  String get delete => 'Löschen';
+
+  @override
+  String get edit => 'Bearbeiten';
+
+  @override
+  String get copy => 'Kopieren';
+
+  @override
+  String get retry => 'Wiederholen';
+
+  @override
+  String get regenerate => 'Neu generieren';
+
+  @override
+  String get copiedToClipboard => 'In die Zwischenablage kopiert';
+
+  @override
+  String get confirm => 'Bestätigen';
+
+  @override
+  String get close => 'Schließen';
+
+  @override
+  String get import => 'Importieren';
+
+  @override
+  String get rename => 'Umbenennen';
+
+  @override
+  String get upgrade => 'Upgrade';
+
+  @override
+  String get clear => 'Leeren';
+
+  @override
+  String error(String message) {
+    return 'Fehler: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'Fehler: $message';
+  }
+
+  @override
+  String get purchaseError =>
+      'Fehler bei der Kaufabwicklung. Bitte versuche es erneut.';
+
+  @override
+  String get restoreError =>
+      'Fehler beim Wiederherstellen der Käufe. Bitte versuche es erneut.';
+
+  @override
+  String get loading => 'Laden...';
+
+  @override
+  String get fieldRequired => 'Pflichtfeld';
+
+  @override
+  String get addedFeedback => 'Hinzugefügt!';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ausgewählt',
+      one: '$count ausgewählt',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'Geschätzt';
+
+  @override
+  String get alreadyPurchased => 'Bereits gekauft';
+
+  @override
+  String get clearList => 'Liste leeren';
+
+  @override
+  String get clearPurchased => 'Gekauftes leeren';
+
+  @override
+  String get share => 'Teilen';
+
+  @override
+  String get shareViaCode => 'Per Code teilen';
+
+  @override
+  String get importViaCode => 'Per Code importieren';
+
+  @override
+  String get listAssistant => 'Listen-Assistent';
+
+  @override
+  String get globalAssistant => 'Globaler Assistent';
+
+  @override
+  String get becomePremium => 'Premium werden';
+
+  @override
+  String get manageSubscription => 'Abonnement verwalten';
+
+  @override
+  String get completePurchase => 'Kauf abschließen';
+
+  @override
+  String get confirmClearList => 'Alle Artikel entfernen?';
+
+  @override
+  String get shareListTitle => 'Liste teilen';
+
+  @override
+  String get shareThisCode => 'Diesen Code teilen:';
+
+  @override
+  String get validForLimitedTime => 'Begrenzt gültig';
+
+  @override
+  String get importListTitle => 'Liste importieren';
+
+  @override
+  String get enterCodeHint => 'Code eingeben';
+
+  @override
+  String get confirmArchiveTitle => 'Kauf abschließen';
+
+  @override
+  String get confirmArchiveContent =>
+      'Diesen Kauf abschließen und die Liste archivieren?';
+
+  @override
+  String get complete => 'Abschließen';
+
+  @override
+  String get listArchived => 'Liste erfolgreich archiviert!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName hinzugefügt!';
+  }
+
+  @override
+  String get buy => 'Kaufen';
+
+  @override
+  String get unmark => 'Markierung aufheben';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return '$count Artikel entfernen?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'Bestätigen';
+
+  @override
+  String confirmContent(int count) {
+    return '$count Artikel entfernen?';
+  }
+
+  @override
+  String get archiveList => 'Liste archivieren';
+
+  @override
+  String get pantryAppBar => 'Vorrat';
+
+  @override
+  String get generateShoppingList => 'Einkaufsliste erstellen';
+
+  @override
+  String get pantryEmpty => 'Vorrat leer';
+
+  @override
+  String get pantryEmptySubtitle =>
+      'Füge Produkte hinzu, die du zu Hause behalten möchtest';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit Artikel müssen gekauft werden';
+  }
+
+  @override
+  String get noItemsToBuy => 'Keine Artikel müssen gekauft werden';
+
+  @override
+  String get newPantryList => 'Vorratseinkauf';
+
+  @override
+  String get newListTitle => 'Neue Einkaufsliste';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count Artikel werden hinzugefügt';
+  }
+
+  @override
+  String get listNameLabel => 'Listenname';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'Liste \"$name\" mit $count Artikeln erstellt';
+  }
+
+  @override
+  String get noTracking => 'Keine Verfolgung';
+
+  @override
+  String get markAsPurchased => 'Als gekauft markieren';
+
+  @override
+  String editPantryItem(String name) {
+    return '$name bearbeiten';
+  }
+
+  @override
+  String get idealQuantity => 'Ideale Menge';
+
+  @override
+  String get currentQuantity => 'Aktuelle Menge';
+
+  @override
+  String get consumed => 'Verbraucht';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name auf $quantity $unit aufgefüllt';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return '\"$name\" aus dem Vorrat entfernen?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return '$name bearbeiten';
+  }
+
+  @override
+  String get settingsAppBar => 'Einstellungen';
+
+  @override
+  String get language => 'Sprache';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Systemstandard';
+
+  @override
+  String get appearance => 'Erscheinungsbild';
+
+  @override
+  String get light => 'Hell';
+
+  @override
+  String get system => 'System';
+
+  @override
+  String get dark => 'Dunkel';
+
+  @override
+  String get themeColor => 'Designfarbe';
+
+  @override
+  String get finance => 'Finanzen';
+
+  @override
+  String get monthlyBudgetNav => 'Monatsbudget';
+
+  @override
+  String get budgetSubtitle => 'Verfolge deine monatlichen Ausgaben';
+
+  @override
+  String get data => 'Daten';
+
+  @override
+  String get backupNav => 'Backup';
+
+  @override
+  String get backupSubtitle => 'Exportiere oder importiere deine Daten';
+
+  @override
+  String get about => 'Über';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get privacy => 'Datenschutz';
+
+  @override
+  String get termsOfUse => 'Nutzungsbedingungen';
+
+  @override
+  String get backupTitle => 'Backup';
+
+  @override
+  String get backupPremiumDescription =>
+      'Backup und Export sind eine Premium-Funktion';
+
+  @override
+  String get exportData => 'Daten exportieren';
+
+  @override
+  String get exportDataSubtitle => 'Alle Listen als JSON speichern';
+
+  @override
+  String get importData => 'Daten importieren';
+
+  @override
+  String get importDataSubtitle =>
+      'Listen aus einer JSON-Datei wiederherstellen';
+
+  @override
+  String get importJsonTitle => 'JSON importieren';
+
+  @override
+  String get importJsonHint => 'Füge das Backup-JSON hier ein...';
+
+  @override
+  String get backupExported => 'Backup exportiert!';
+
+  @override
+  String get budgetAppBar => 'Monatsbudget';
+
+  @override
+  String get budgetPremiumLocked => 'Globales Monatsbudget ist Premium';
+
+  @override
+  String get budgetUpgradePrompt => 'Upgrade zum Freischalten';
+
+  @override
+  String get noBudgetDefined => 'Kein Budget festgelegt';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'Gesamt geschätzt: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'Budget festlegen';
+
+  @override
+  String get budgetLists => 'Listen';
+
+  @override
+  String get budgetValueLabel => 'Betrag';
+
+  @override
+  String get setBudgetTitle => 'Monatsbudget';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'Alle';
+
+  @override
+  String get filterPending => 'Ausstehend';
+
+  @override
+  String get filterPurchased => 'Gekauft';
+
+  @override
+  String get sortName => 'Name';
+
+  @override
+  String get sortCategory => 'Kategorie';
+
+  @override
+  String get sortDate => 'Datum';
+
+  @override
+  String get sortManual => 'Manuell';
+
+  @override
+  String get addItem => 'Artikel hinzufügen';
+
+  @override
+  String get itemName => 'Artikelname';
+
+  @override
+  String get quantityShort => 'Menge';
+
+  @override
+  String get unit => 'Einheit';
+
+  @override
+  String get category => 'Kategorie';
+
+  @override
+  String get estimatedPrice => 'Geschätzter Preis';
+
+  @override
+  String get addItemPrice => 'Geschätzter Preis';
+
+  @override
+  String get editItem => 'Artikel bearbeiten';
+
+  @override
+  String get quantityFull => 'Menge';
+
+  @override
+  String get editItemPrice => 'Geschätzter Preis';
+
+  @override
+  String get addToPantry => 'Zum Vorrat hinzufügen';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return '\"$name\" zu deinem Vorrat hinzufügen?';
+  }
+
+  @override
+  String get yes => 'Ja';
+
+  @override
+  String get productName => 'Produktname';
+
+  @override
+  String get idealQty => 'Ideale Menge';
+
+  @override
+  String get currentQty => 'Aktuelle Menge';
+
+  @override
+  String get trackStock => 'Lagerbestand verfolgen';
+
+  @override
+  String get trackStockActive => 'Erscheint in Einkaufsvorschlägen';
+
+  @override
+  String get trackStockInactive => 'Erzeugt keinen Einkaufsvorschlag';
+
+  @override
+  String get createListDialog => 'Liste erstellen';
+
+  @override
+  String get renameListDialog => 'Liste umbenennen';
+
+  @override
+  String get listHistory => 'Listenverlauf';
+
+  @override
+  String get myLists => 'Meine Listen';
+
+  @override
+  String get viewActive => 'Aktive anzeigen';
+
+  @override
+  String get viewHistory => 'Verlauf anzeigen';
+
+  @override
+  String get noArchivedLists => 'Keine archivierten Listen';
+
+  @override
+  String get noActiveLists => 'Keine aktiven Listen';
+
+  @override
+  String completedOn(String date) {
+    return 'Abgeschlossen am $date';
+  }
+
+  @override
+  String get sharedLabel => 'Geteilt';
+
+  @override
+  String get restore => 'Wiederherstellen';
+
+  @override
+  String get removeSharedTooltip => 'Entfernen';
+
+  @override
+  String get deleteListTitle => 'Liste löschen';
+
+  @override
+  String deleteListContent(String name) {
+    return 'Bist du sicher, dass du \"$name\" löschen möchtest? Alle Artikel werden entfernt.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'Geteilte Liste entfernen';
+
+  @override
+  String removeSharedListContent(String name) {
+    return '\"$name\" aus deinen Listen entfernen? Die Originalliste bleibt erhalten.';
+  }
+
+  @override
+  String get createNewList => 'Neue Liste erstellen';
+
+  @override
+  String get aiAssistant => 'KI-Assistent';
+
+  @override
+  String get aiAssistantDescription =>
+      'Hole dir mit unserem KI-Assistenten intelligente Vorschläge, Rezepte und persönliche Tipps.';
+
+  @override
+  String get generalAssistant => 'Allgemeiner Assistent';
+
+  @override
+  String get clearHistory => 'Verlauf löschen';
+
+  @override
+  String get clearHistoryConfirm =>
+      'Alle Nachrichten in dieser Sitzung löschen?';
+
+  @override
+  String get chatHint => 'Gib deine Nachricht ein...';
+
+  @override
+  String chatError(String error) {
+    return 'Fehler beim Laden des Chats: $error';
+  }
+
+  @override
+  String get listHelp => 'Wie kann ich mit deiner Liste helfen?';
+
+  @override
+  String get generalHelp => 'Wie kann ich dir heute beim Einkaufen helfen?';
+
+  @override
+  String get chatSubtitle =>
+      'Frage nach Artikelvorschlägen, Rezepten oder Spartipps.';
+
+  @override
+  String get aiError =>
+      'Entschuldigung, bei der Verarbeitung deiner Anfrage ist ein Fehler aufgetreten. Überprüfe deine Verbindung oder versuche es später erneut.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt =>
+      'Melde dich an, um\nPremium-Funktionen freizuschalten';
+
+  @override
+  String get signInGoogle => 'Mit Google anmelden';
+
+  @override
+  String get signInApple => 'Mit Apple anmelden';
+
+  @override
+  String get continueAsGuest => 'Als Gast fortfahren';
+
+  @override
+  String loginError(String error) {
+    return 'Anmeldefehler: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'Upgrade zum Freischalten';
+
+  @override
+  String get itemRemoved => 'Artikel entfernt';
+
+  @override
+  String get undo => 'Rückgängig';
+
+  @override
+  String get emptyListTitle => 'Deine Liste ist leer';
+
+  @override
+  String get emptyListSubtitle => 'Füge Artikel hinzu, um zu beginnen';
+
+  @override
+  String get noListFoundTitle => 'Keine Listen gefunden';
+
+  @override
+  String get noListFoundSubtitle =>
+      'Erstelle deine erste Liste, um zu beginnen';
+
+  @override
+  String get createFirstList => 'Erste Liste erstellen';
+
+  @override
+  String get listBudgetTitle => 'Listenbudget';
+
+  @override
+  String get budgetAmountLabel => 'Budgetbetrag';
+
+  @override
+  String get removeBudget => 'Entfernen';
+
+  @override
+  String get prefUnlimitedLists => 'Unbegrenzte Listen';
+
+  @override
+  String get prefSharing => 'Listen teilen';
+
+  @override
+  String get prefFullHistory => 'Vollständiger Verlauf';
+
+  @override
+  String get prefExportData => 'Daten exportieren';
+
+  @override
+  String get prefCustomThemes => 'Benutzerdefinierte Designs';
+
+  @override
+  String get prefMonthlyBudget => 'Globales Monatsbudget';
+
+  @override
+  String get prefAIAssistant => 'Persönlicher KI-Assistent';
+
+  @override
+  String get prefUnlimitedPantry => 'Unbegrenzter Vorrat';
+
+  @override
+  String get prefInteractiveArtifacts => 'Interaktive KI-Artefakte';
+
+  @override
+  String get themeGreen => 'Grün';
+
+  @override
+  String get themeBlue => 'Blau';
+
+  @override
+  String get themePurple => 'Lila';
+
+  @override
+  String get themeRed => 'Rot';
+
+  @override
+  String get themeOrange => 'Orange';
+
+  @override
+  String get themePink => 'Pink';
+
+  @override
+  String get themeIndigo => 'Indigo';
+
+  @override
+  String get themeAmber => 'Bernstein';
+
+  @override
+  String get themeTeal => 'Blaugrün';
+
+  @override
+  String get themeBrown => 'Braun';
+
+  @override
+  String get catFruits => 'Obst';
+
+  @override
+  String get catCleaning => 'Reinigung';
+
+  @override
+  String get catBeverages => 'Getränke';
+
+  @override
+  String get catBakery => 'Backwaren';
+
+  @override
+  String get catOthers => 'Sonstiges';
+
+  @override
+  String get unitPack => 'Packung';
+
+  @override
+  String get shareSubject => 'Einkaufsliste';
+
+  @override
+  String get monthlyBudgetTitle => 'Monatsbudget';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'Liste löschen';
+
+  @override
+  String get pantryItemRemoved => 'Artikel entfernt';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: '$deficit Artikel müssen gekauft werden',
+      one: '$deficit Artikel muss gekauft werden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'Warenkorb gesamt';
+
+  @override
+  String get restockLabel => 'Auffüllen';
+
+  @override
+  String get advancedFeatures => 'Erweiterte Funktionen';
+
+  @override
+  String get selectAll => 'Alle auswählen';
+
+  @override
+  String get deselectAll => 'Alle abwählen';
+
+  @override
+  String get monthlyBudgetAppBar => 'Monatsbudget';
+
+  @override
+  String get budgetEditTitle => 'Monatsbudget';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard =>
+      'Wähle eine Liste aus, um das Dashboard anzuzeigen.';
+
+  @override
+  String get spendingAnalysis => 'Ausgabenanalyse';
+
+  @override
+  String get noItemsToAnalyze => 'Keine Artikel in der Liste zum Analysieren.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'Markiere Artikel als gekauft, um die Analyse zu sehen.';
+
+  @override
+  String get totalSpending => 'Gesamtausgaben';
+
+  @override
+  String get spendingByCategory => 'Ausgaben nach Kategorie';
+
+  @override
+  String get achievements => 'Erfolge';
+
+  @override
+  String get exportPdfExcel => 'PDF/Excel exportieren';
+
+  @override
+  String get exportPdf => 'Als PDF exportieren';
+
+  @override
+  String get exportExcel => 'Als Excel exportieren';
+
+  @override
+  String get organizingAi => 'ORGANISIERE MIT KI...';
+
+  @override
+  String get yesLabel => 'Ja';
+
+  @override
+  String get noLabel => 'Nein';
+
+  @override
+  String get shareListText => 'Meine Einkaufsliste';
+
+  @override
+  String get emptyListAddItems =>
+      'Deine Liste ist leer! Füge zuerst Artikel hinzu. ℹ️';
+
+  @override
+  String get listOrganizedMagic =>
+      'Liste wie von Zauberhand nach Kategorien organisiert! ✨';
+
+  @override
+  String get shoppingMode => 'Einkaufsmodus';
+
+  @override
+  String get smartOrganization => 'Intelligente Organisation';
+
+  @override
+  String get savings => 'Ersparnis';
+
+  @override
+  String get shoppingModeHeader => 'EINKAUFSMODUS';
+
+  @override
+  String get shareAsText => 'Artikel als formatierten Text senden';
+
+  @override
+  String get shareRealtime => 'Echtzeit-Synchronisation mit anderen Personen';
+
+  @override
+  String get quickRecipe => 'Schnelles Rezept';
+
+  @override
+  String get quickRecipePrompt =>
+      'Schlage Rezepte mit Artikeln aus meiner Liste vor.';
+
+  @override
+  String get economyTips => 'Spartipps';
+
+  @override
+  String get economyTipsPrompt =>
+      'Wie kann ich bei diesem Einkauf Geld sparen?';
+
+  @override
+  String get organizeAisles => 'Nach Gängen organisieren';
+
+  @override
+  String get organizeAislesPrompt => 'Nach Supermarkt-Gängen organisieren.';
+
+  @override
+  String get recipeSuggestion => 'Rezeptvorschlag';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return '$remaining Credits übrig';
+  }
+
+  @override
+  String get addAllToList => 'Alle zur Liste hinzufügen';
+
+  @override
+  String get organizeByAisles => 'Nach Gängen organisieren';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Spracheingabe (Kostenlos)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'KI-Sprachbefehl (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'KI-Sprachbefehl';
+
+  @override
+  String get voiceCommandContent =>
+      'Sprich natürlich, um deine Liste zu verwalten!\n\nBeispiele:\n• \'Füge Brot, Käse und Schinken hinzu\'\n• \'Entferne Waschmittel\'\n• \'Ändere das Design zu Blau\'\n\nDies ist eine exklusive Funktion von Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Pläne ansehen';
+
+  @override
+  String get itemsAddedSuccess => 'Artikel erfolgreich zur Liste hinzugefügt!';
+
+  @override
+  String get viewList => 'Liste anzeigen';
+
+  @override
+  String get feedbackTitle => 'Feedback senden';
+
+  @override
+  String get feedbackPrompt => 'Was möchtest du mitteilen?';
+
+  @override
+  String get feedbackTypeBug => 'Fehler melden';
+
+  @override
+  String get feedbackTypeBugHint => 'Etwas funktioniert nicht';
+
+  @override
+  String get feedbackTypeSuggestion => 'Vorschlag';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'Idee zur Verbesserung der App';
+
+  @override
+  String get feedbackTypeTranslation => 'Übersetzungsproblem';
+
+  @override
+  String get feedbackTypeTranslationHint =>
+      'Falsche oder unpassende Übersetzung';
+
+  @override
+  String get feedbackTypeFeature => 'Funktionswunsch';
+
+  @override
+  String get feedbackTypeFeatureHint => 'Funktion, die du dir wünschst';
+
+  @override
+  String get feedbackTypeOther => 'Sonstiges';
+
+  @override
+  String get feedbackTypeOtherHint => 'Andere Art von Feedback';
+
+  @override
+  String get feedbackHint => 'Beschreibe dein Feedback im Detail...';
+
+  @override
+  String get feedbackSend => 'Feedback senden';
+
+  @override
+  String get feedbackSending => 'Wird gesendet...';
+
+  @override
+  String get feedbackThankYou => 'Vielen Dank!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'Dein Feedback wurde empfangen und hilft uns, Lista Plus für alle zu verbessern.';
+
+  @override
+  String get feedbackBack => 'Zurück';
+
+  @override
+  String feedbackError(String error) {
+    return 'Fehler beim Senden: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'Erneut versuchen';
+
+  @override
+  String get feedbackSettingsTitle => 'Feedback senden';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'Fehler melden, Verbesserungen vorschlagen oder Übersetzungen korrigieren';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+}

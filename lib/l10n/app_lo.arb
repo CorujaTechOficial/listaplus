@@ -1,0 +1,562 @@
+{
+  "@@locale": "lo",
+  "appTitle": "ລາຍການຊື້ເຄື່ອງ",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "ລາຍການ",
+  "pantry": "ຕູ້ເຄື່ອງໃຊ້",
+  "@_Common": "description: Common actions",
+  "cancel": "ຍົກເລີກ",
+  "save": "ບັນທຶກ",
+  "create": "ສ້າງ",
+  "add": "ເພີ່ມ",
+  "remove": "ລຶບອອກ",
+  "delete": "ລຶບ",
+  "edit": "ແກ້ໄຂ",
+  "copy": "ສຳເນົາ",
+  "retry": "ລອງໃໝ່",
+  "regenerate": "ສ້າງໃໝ່",
+  "copiedToClipboard": "ສຳເນົາໄປທີ່ຄລິບບອດແລ້ວ",
+  "confirm": "ຢືນຢັນ",
+  "close": "ປິດ",
+  "import": "ນຳເຂົ້າ",
+  "rename": "ປ່ຽນຊື່",
+  "upgrade": "ອັບເກຣດ",
+  "clear": "ລ້າງ",
+  "error": "ຂໍ້ຜິດພາດ: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "ຂໍ້ຜິດພາດ: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "ຂໍ້ຜິດພາດໃນການຊຳລະເງິນ. ກະລຸນາລອງໃໝ່.",
+  "restoreError": "ຂໍ້ຜິດພາດໃນການກູ້ຄືນ. ກະລຸນາລອງໃໝ່.",
+  "loading": "ກຳລັງໂຫຼດ...",
+  "fieldRequired": "ຊ່ອງທີ່ຕ້ອງການ",
+  "addedFeedback": "ເພີ່ມແລ້ວ!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "ເລືອກ {count} ລາຍການ",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "ປະມານ",
+  "alreadyPurchased": "ຊື້ແລ້ວ",
+  "clearList": "ລ້າງລາຍການ",
+  "clearPurchased": "ລ້າງທີ່ຊື້ແລ້ວ",
+  "share": "ແບ່ງປັນ",
+  "shareViaCode": "ແບ່ງປັນຜ່ານລະຫັດ",
+  "importViaCode": "ນຳເຂົ້າຜ່ານລະຫັດ",
+  "listAssistant": "ຜູ້ຊ່ວຍລາຍການ",
+  "globalAssistant": "ຜູ້ຊ່ວຍທົ່ວໄປ",
+  "becomePremium": "ກາຍເປັນ Premium",
+  "manageSubscription": "ຈັດການການສະໝັກ",
+  "completePurchase": "ຊຳລະເງິນໃຫ້ສຳເລັດ",
+  "confirmClearList": "ລຶບທຸກລາຍການອອກ?",
+  "shareListTitle": "ແບ່ງປັນລາຍການ",
+  "shareThisCode": "ແບ່ງປັນລະຫັດນີ້:",
+  "validForLimitedTime": "ໃຊ້ໄດ້ໃນເວລາຈຳກັດ",
+  "importListTitle": "ນຳເຂົ້າລາຍການ",
+  "enterCodeHint": "ປ້ອນລະຫັດ",
+  "confirmArchiveTitle": "ຊຳລະເງິນໃຫ້ສຳເລັດ",
+  "confirmArchiveContent": "ຊຳລະເງິນນີ້ໃຫ້ສຳເລັດ ແລະ ເກັບລາຍການໃສ່ບ່ອນເກັບ?",
+  "complete": "ສຳເລັດ",
+  "listArchived": "ເກັບລາຍການໃສ່ບ່ອນເກັບສຳເລັດແລ້ວ!",
+  "listAdded": "ເພີ່ມ {listName} ແລ້ວ!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "ຊື້",
+  "unmark": "ຍົກເລີກເຄື່ອງໝາຍ",
+  "confirmDeleteItems": "ລຶບ {count} ລາຍການ?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "ຢືນຢັນ",
+  "confirmContent": "ລຶບ {count} ລາຍການ?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "ເກັບລາຍການ",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "ຕູ້ເຄື່ອງໃຊ້",
+  "generateShoppingList": "ສ້າງລາຍການຊື້ເຄື່ອງ",
+  "pantryEmpty": "ຕູ້ເຄື່ອງໃຊ້ວ່າງ",
+  "pantryEmptySubtitle": "ເພີ່ມສິນຄ້າທີ່ທ່ານຕ້ອງການເກັບໄວ້ໃນເຮືອນ",
+  "itemsNeedPurchase": "{deficit} ລາຍການທີ່ຕ້ອງຊື້",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "ບໍ່ມີລາຍການທີ່ຕ້ອງຊື້",
+  "newPantryList": "ຊື້ເຄື່ອງຈາກຕູ້ເຄື່ອງໃຊ້",
+  "newListTitle": "ລາຍການຊື້ເຄື່ອງໃໝ່",
+  "itemsWillBeAdded": "{count} ລາຍການຈະຖືກເພີ່ມ",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "ຊື່ລາຍການ",
+  "listCreated": "ສ້າງລາຍການ \"{name}\" ດ້ວຍ {count} ລາຍການແລ້ວ",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "ບໍ່ຕິດຕາມ",
+  "markAsPurchased": "ໝາຍວ່າຊື້ແລ້ວ",
+  "editPantryItem": "ແກ້ໄຂ {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "ປະລິມານທີ່ຕ້ອງການ",
+  "currentQuantity": "ປະລິມານປັດຈຸບັນ",
+  "consumed": "ບໍລິໂພກແລ້ວ",
+  "restocked": "ເຕີມ {name} ເປັນ {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "ລຶບ \"{name}\" ອອກຈາກຕູ້ເຄື່ອງໃຊ້?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "ແກ້ໄຂ {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "ການຕັ້ງຄ່າ",
+  "language": "ພາສາ",
+  "languagePortuguese": "ພາສາປອກຕຸຍການ (ບຣາຊິວ)",
+  "languageEnglish": "ພາສາອັງກິດ",
+  "languageSystem": "ຄ່າເລີ່ມຕົ້ນຂອງລະບົບ",
+  "appearance": "ຮູບລັກສະນະ",
+  "light": "ສະຫວ່າງ",
+  "system": "ລະບົບ",
+  "dark": "ມືດ",
+  "themeColor": "ສີຊຸດຮູບແບບ",
+  "finance": "ການເງິນ",
+  "monthlyBudgetNav": "ງົບປະມານປະຈຳເດືອນ",
+  "budgetSubtitle": "ຕິດຕາມການໃຊ້ຈ່າຍປະຈຳເດືອນຂອງທ່ານ",
+  "data": "ຂໍ້ມູນ",
+  "backupNav": "ສຳຮອງ",
+  "backupSubtitle": "ສົ່ງອອກ ຫຼື ນຳເຂົ້າຂໍ້ມູນຂອງທ່ານ",
+  "about": "ກ່ຽວກັບ",
+  "version": "ເວີຊັນ",
+  "privacy": "ຄວາມເປັນສ່ວນຕົວ",
+  "termsOfUse": "ເງື່ອນໄຂການໃຊ້ງານ",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "ສຳຮອງ",
+  "backupPremiumDescription": "ການສຳຮອງ ແລະ ສົ່ງອອກແມ່ນຟີເຈີຣ໌ Premium",
+  "exportData": "ສົ່ງອອກຂໍ້ມູນ",
+  "exportDataSubtitle": "ບັນທຶກທຸກລາຍການເປັນ JSON",
+  "importData": "ນຳເຂົ້າຂໍ້ມູນ",
+  "importDataSubtitle": "ກູ້ຄືນລາຍການຈາກ JSON",
+  "importJsonTitle": "ນຳເຂົ້າ JSON",
+  "importJsonHint": "ວາງ JSON ສຳຮອງບ່ອນນີ້...",
+  "backupExported": "ສົ່ງອອກສຳຮອງແລ້ວ!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "ງົບປະມານປະຈຳເດືອນ",
+  "budgetPremiumLocked": "ງົບປະມານປະຈຳເດືອນທົ່ວໄປແມ່ນ Premium",
+  "budgetUpgradePrompt": "ອັບເກຣດເພື່ອປົດລັອກ",
+  "noBudgetDefined": "ບໍ່ໄດ້ຕັ້ງງົບປະມານ",
+  "totalEstimated": "ປະມານລວມ: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "ຕັ້ງງົບປະມານ",
+  "budgetLists": "ລາຍການ",
+  "budgetValueLabel": "ຈຳນວນເງິນ",
+  "setBudgetTitle": "ງົບປະມານປະຈຳເດືອນ",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "ທັງໝົດ",
+  "filterPending": "ທີ່ລໍຖ້າ",
+  "filterPurchased": "ຊື້ແລ້ວ",
+  "sortName": "ຊື່",
+  "sortCategory": "ໝວດ",
+  "sortDate": "ວັນທີ",
+  "sortManual": "ດ້ວຍມື",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "ເພີ່ມລາຍການ",
+  "itemName": "ຊື່ລາຍການ",
+  "quantityShort": "ຈຳນວນ",
+  "unit": "ຫົວໜ່ວຍ",
+  "category": "ໝວດ",
+  "estimatedPrice": "ລາຄາປະມານ",
+  "addItemPrice": "ລາຄາປະມານ",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "ແກ້ໄຂລາຍການ",
+  "quantityFull": "ຈຳນວນ",
+  "editItemPrice": "ລາຄາປະມານ",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "ເພີ່ມໃສ່ຕູ້ເຄື່ອງໃຊ້",
+  "addToPantryPrompt": "ເພີ່ມ \"{name}\" ໃສ່ຕູ້ເຄື່ອງໃຊ້ຂອງທ່ານ?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "ແມ່ນ",
+  "productName": "ຊື່ສິນຄ້າ",
+  "idealQty": "ຈຳນວນທີ່ຕ້ອງການ",
+  "currentQty": "ຈຳນວນປັດຈຸບັນ",
+  "trackStock": "ຕິດຕາມສະຕັອກ",
+  "trackStockActive": "ສະແດງໃນຄຳແນະນຳການຊື້ເຄື່ອງ",
+  "trackStockInactive": "ບໍ່ສ້າງຄຳແນະນຳການຊື້ເຄື່ອງ",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "ສ້າງລາຍການ",
+  "renameListDialog": "ປ່ຽນຊື່ລາຍການ",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "ປະຫວັດລາຍການ",
+  "myLists": "ລາຍການຂອງຂ້ອຍ",
+  "viewActive": "ເບິ່ງທີ່ໃຊ້ງານ",
+  "viewHistory": "ເບິ່ງປະຫວັດ",
+  "noArchivedLists": "ບໍ່ມີລາຍການທີ່ເກັບໄວ້",
+  "noActiveLists": "ບໍ່ມີລາຍການທີ່ໃຊ້ງານ",
+  "completedOn": "ສຳເລັດເມື່ອ {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "ແບ່ງປັນ",
+  "restore": "ກູ້ຄືນ",
+  "removeSharedTooltip": "ລຶບອອກ",
+  "deleteListTitle": "ລຶບລາຍການ",
+  "deleteListContent": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ \"{name}\"? ທຸກລາຍການຈະຖືກລຶບອອກ.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "ລຶບລາຍການທີ່ແບ່ງປັນ",
+  "removeSharedListContent": "ລຶບ \"{name}\" ອອກຈາກລາຍການຂອງທ່ານ? ລາຍການຕົ້ນສະບັບຈະບໍ່ຖືກກະທົບ.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "ສ້າງລາຍການໃໝ່",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "ຜູ້ຊ່ວຍ AI",
+  "aiAssistantDescription": "ຮັບຄຳແນະນຳອັດສະລິຍະ ສູດອາຫານ ແລະ ຄຳແນະນຳສ່ວນຕົວກັບຜູ້ຊ່ວຍ AI ຂອງພວກເຮົາ.",
+  "generalAssistant": "ຜູ້ຊ່ວຍທົ່ວໄປ",
+  "clearHistory": "ລ້າງປະຫວັດ",
+  "clearHistoryConfirm": "ລ້າງຂໍ້ຄວາມທັງໝົດໃນເຊສຊັນນີ້?",
+  "chatHint": "ພິມຂໍ້ຄວາມຂອງທ່ານ...",
+  "chatError": "ຂໍ້ຜິດພາດໃນການໂຫຼດການສົນທະນາ: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "ຂ້ອຍສາມາດຊ່ວຍທ່ານກ່ຽວກັບລາຍການຂອງທ່ານແນວໃດ?",
+  "generalHelp": "ຂ້ອຍສາມາດຊ່ວຍທ່ານກ່ຽວກັບການຊື້ເຄື່ອງມື້ນີ້ແນວໃດ?",
+  "chatSubtitle": "ຖາມຫາຄຳແນະນຳລາຍການ ສູດອາຫານ ຫຼື ຄຳແນະນຳການປະຫຍັດເງິນ.",
+  "aiError": "ຂໍອະໄພ ມີຂໍ້ຜິດພາດໃນການດຳເນີນການຕາມຄຳຂໍຂອງທ່ານ. ກະລຸນາກວດສອບການເຊື່ອມຕໍ່ ຫຼື ລອງໃໝ່ພາຍຫຼັງ.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "ເຂົ້າສູ່ລະບົບເພື່ອປົດລັອກ\nຟີເຈີຣ໌ Premium",
+  "signInGoogle": "ເຂົ້າສູ່ລະບົບດ້ວຍ Google",
+  "signInApple": "ເຂົ້າສູ່ລະບົບດ້ວຍ Apple",
+  "continueAsGuest": "ສືບຕໍ່ໃນຖານະແຂກ",
+  "loginError": "ຂໍ້ຜິດພາດໃນການເຂົ້າສູ່ລະບົບ: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "ອັບເກຣດເພື່ອປົດລັອກ",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "ລາຍການຖືກລຶບອອກ",
+  "undo": "ຍົກເລີກ",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "ລາຍການຂອງທ່ານວ່າງ",
+  "emptyListSubtitle": "ເພີ່ມລາຍການເພື່ອເລີ່ມຕົ້ນ",
+  "noListFoundTitle": "ບໍ່ພົບລາຍການ",
+  "noListFoundSubtitle": "ສ້າງລາຍການທຳອິດຂອງທ່ານເພື່ອເລີ່ມຕົ້ນ",
+  "createFirstList": "ສ້າງລາຍການທຳອິດ",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "ງົບປະມານລາຍການ",
+  "budgetAmountLabel": "ຈຳນວນງົບປະມານ",
+  "removeBudget": "ລຶບອອກ",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "ລາຍການບໍ່ຈຳກັດ",
+  "prefSharing": "ແບ່ງປັນລາຍການ",
+  "prefFullHistory": "ປະຫວັດເຕັມ",
+  "prefExportData": "ສົ່ງອອກຂໍ້ມູນ",
+  "prefCustomThemes": "ຊຸດຮູບແບບທີ່ກຳນົດເອງ",
+  "prefMonthlyBudget": "ງົບປະມານປະຈຳເດືອນທົ່ວໄປ",
+  "prefAIAssistant": "ຜູ້ຊ່ວຍ AI ສ່ວນຕົວ",
+  "prefUnlimitedPantry": "ຕູ້ເຄື່ອງໃຊ້ບໍ່ຈຳກັດ",
+  "prefInteractiveArtifacts": "AI Artifacts ແບບໂຕ້ຕອບ",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "ຂຽວ",
+  "themeBlue": "ຟ້າ",
+  "themePurple": "ມ່ວງ",
+  "themeRed": "ແດງ",
+  "themeOrange": "ສົ້ມ",
+  "themePink": "ບົວ",
+  "themeIndigo": "ຄາມ",
+  "themeAmber": "ອຳພັນ",
+  "themeTeal": "ຂຽວຟ້າ",
+  "themeBrown": "ນ້ຳຕານ",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "ໝາກໄມ້",
+  "catCleaning": "ທຳຄວາມສະອາດ",
+  "catBeverages": "ເຄື່ອງດື່ມ",
+  "catBakery": "ເບເກີຣີ",
+  "catOthers": "ອື່ນໆ",
+  "@_Unit": "description: Unit",
+  "unitPack": "ຊອງ",
+  "@_Share": "description: Sharing",
+  "shareSubject": "ລາຍການຊື້ເຄື່ອງ",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "ງົບປະມານປະຈຳເດືອນ",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "ລຶບລາຍການ",
+  "pantryItemRemoved": "ລາຍການຖືກລຶບອອກ",
+  "deficitItems": "{deficit} ລາຍການທີ່ຕ້ອງຊື້",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "ລວມກະຕ່າ",
+  "restockLabel": "ເຕີມສະຕັອກ",
+  "advancedFeatures": "ຟີເຈີຣ໌ຂັ້ນສູງ",
+  "selectAll": "ເລືອກທັງໝົດ",
+  "deselectAll": "ຍົກເລີກການເລືອກທັງໝົດ",
+  "monthlyBudgetAppBar": "ງົບປະມານປະຈຳເດືອນ",
+  "budgetEditTitle": "ງົບປະມານປະຈຳເດືອນ",
+  "budgetDashboardTitle": "ແດດຊະບອດ",
+  "selectListForDashboard": "ເລືອກລາຍການເພື່ອເບິ່ງແດດຊະບອດ.",
+  "spendingAnalysis": "ການວິເຄາະການໃຊ້ຈ່າຍ",
+  "noItemsToAnalyze": "ບໍ່ມີລາຍການໃນລາຍການເພື່ອວິເຄາະ.",
+  "markItemsToSeeAnalysis": "ໝາຍລາຍການວ່າຊື້ແລ້ວເພື່ອເບິ່ງການວິເຄາະ.",
+  "totalSpending": "ການໃຊ້ຈ່າຍທັງໝົດ",
+  "spendingByCategory": "ການໃຊ້ຈ່າຍຕາມໝວດ",
+  "achievements": "ຜົນສຳເລັດ",
+  "exportPdfExcel": "ສົ່ງອອກ PDF/Excel",
+  "exportPdf": "ສົ່ງອອກເປັນ PDF",
+  "exportExcel": "ສົ່ງອອກເປັນ Excel",
+  "organizingAi": "ກຳລັງຈັດລະບຽບດ້ວຍ AI...",
+  "yesLabel": "ແມ່ນ",
+  "noLabel": "ບໍ່",
+  "shareListText": "ລາຍການຊື້ເຄື່ອງຂອງຂ້ອຍ",
+  "emptyListAddItems": "ລາຍການຂອງທ່ານວ່າງ! ເພີ່ມລາຍການກ່ອນ.",
+  "listOrganizedMagic": "ລາຍການຖືກຈັດລະບຽບຕາມໝວດຢ່າງມະຫັດສະຈັນ!",
+  "shoppingMode": "ໂໝດຊື້ເຄື່ອງ",
+  "smartOrganization": "ການຈັດລະບຽບອັດສະລິຍະ",
+  "savings": "ການປະຫຍັດ",
+  "shoppingModeHeader": "ໂໝດຊື້ເຄື່ອງ",
+  "shareAsText": "ສົ່ງລາຍການເປັນຂໍ້ຄວາມທີ່ຈັດຮູບແບບ",
+  "shareRealtime": "ຊິງຄ໌ແບບສົດໆກັບຜູ້ອື່ນ",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "ສູດອາຫານດ່ວນ",
+  "quickRecipePrompt": "ແນະນຳສູດອາຫານດ້ວຍລາຍການຈາກລາຍການຂອງຂ້ອຍ.",
+  "economyTips": "ຄຳແນະນຳການປະຫຍັດ",
+  "economyTipsPrompt": "ຂ້ອຍຈະປະຫຍັດເງິນໃນການຊື້ນີ້ໄດ້ແນວໃດ?",
+  "organizeAisles": "ຈັດລະບຽບຕາມແຖວ",
+  "organizeAislesPrompt": "ຈັດລະບຽບຕາມແຖວຕະຫຼາດ.",
+  "recipeSuggestion": "ຄຳແນະນຳສູດອາຫານ",
+  "aiCreditsRemaining": "ຍັງເຫຼືອ {remaining} ເຄຣດິດ",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "ເພີ່ມທັງໝົດໃສ່ລາຍການ",
+  "organizeByAisles": "ຈັດລະບຽບຕາມແຖວ",
+  "voiceTranscriptionTooltip": "ພິມດ້ວຍສຽງ (ຟຣີ)",
+  "aiVoiceCommandTooltip": "ຄຳສັ່ງສຽງ AI (Premium)",
+  "voiceCommandTitle": "ຄຳສັ່ງສຽງ AI",
+  "voiceCommandContent": "ເວົ້າຢ່າງທຳມະຊາດເພື່ອຈັດການລາຍການຂອງທ່ານ!\n\nຕົວຢ່າງ:\n• 'ເພີ່ມເຂົ້າຈີ່ ເນີຍແຂງ ແລະ ແຮມ'\n• 'ລຶບຜົງຊັກຟອກ'\n• 'ປ່ຽນຊຸດຮູບແບບເປັນສີຟ້າ'\n\nນີ້ແມ່ນຟີເຈີຣ໌ສະເພາະຂອງ Lista Plus Premium.",
+  "voiceCommandPlanBtn": "ເບິ່ງແຜນ",
+  "itemsAddedSuccess": "ເພີ່ມລາຍການໃສ່ລາຍການສຳເລັດແລ້ວ!",
+  "viewList": "ເບິ່ງລາຍການ",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "ສົ່ງຄຳຕິຊົມ",
+  "feedbackPrompt": "ທ່ານຕ້ອງການແບ່ງປັນຫຍັງ?",
+  "feedbackTypeBug": "ລາຍງານຂໍ້ຜິດພາດ",
+  "feedbackTypeBugHint": "ບາງຢ່າງບໍ່ຖືກຕ້ອງ",
+  "feedbackTypeSuggestion": "ຄຳແນະນຳ",
+  "feedbackTypeSuggestionHint": "ແນວຄວາມຄິດເພື່ອປັບປຸງແອັບ",
+  "feedbackTypeTranslation": "ບັນຫາການແປ",
+  "feedbackTypeTranslationHint": "ການແປບໍ່ຖືກຕ້ອງ ຫຼື ບໍ່ເໝາະສົມ",
+  "feedbackTypeFeature": "ຂໍຟີເຈີຣ໌",
+  "feedbackTypeFeatureHint": "ຟີເຈີຣ໌ທີ່ທ່ານຢາກເຫັນ",
+  "feedbackTypeOther": "ອື່ນໆ",
+  "feedbackTypeOtherHint": "ຄຳຕິຊົມປະເພດອື່ນ",
+  "feedbackHint": "ອະທິບາຍຄຳຕິຊົມຂອງທ່ານໃຫ້ລະອຽດ...",
+  "feedbackSend": "ສົ່ງຄຳຕິຊົມ",
+  "feedbackSending": "ກຳລັງສົ່ງ...",
+  "feedbackThankYou": "ຂອບໃຈ!",
+  "feedbackThankYouMessage": "ຄຳຕິຊົມຂອງທ່ານໄດ້ຮັບແລ້ວ ແລະ ຊ່ວຍພວກເຮົາປັບປຸງ Lista Plus ສຳລັບທຸກຄົນ.",
+  "feedbackBack": "ກັບ",
+  "feedbackError": "ຂໍ້ຜິດພາດໃນການສົ່ງ: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "ລອງໃໝ່",
+  "feedbackSettingsTitle": "ສົ່ງຄຳຕິຊົມ",
+  "feedbackSettingsSubtitle": "ລາຍງານຂໍ້ຜິດພາດ, ແນະນຳການປັບປຸງ, ຫຼື ແກ້ໄຂການແປ",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

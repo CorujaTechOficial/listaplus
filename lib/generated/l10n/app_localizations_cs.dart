@@ -1,0 +1,2227 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Czech (`cs`).
+class AppLocalizationsCs extends AppLocalizations {
+  AppLocalizationsCs([String locale = 'cs']) : super(locale);
+
+  @override
+  String get appTitle => 'Nákupní seznam';
+
+  @override
+  String get lists => 'Seznamy';
+
+  @override
+  String get pantry => 'Spižírna';
+
+  @override
+  String get cancel => 'Zrušit';
+
+  @override
+  String get save => 'Uložit';
+
+  @override
+  String get create => 'Vytvořit';
+
+  @override
+  String get add => 'Přidat';
+
+  @override
+  String get remove => 'Odebrat';
+
+  @override
+  String get delete => 'Smazat';
+
+  @override
+  String get edit => 'Upravit';
+
+  @override
+  String get copy => 'Kopírovat';
+
+  @override
+  String get retry => 'Zkusit znovu';
+
+  @override
+  String get regenerate => 'Znovu vygenerovat';
+
+  @override
+  String get copiedToClipboard => 'Zkopírováno do schránky';
+
+  @override
+  String get confirm => 'Potvrdit';
+
+  @override
+  String get close => 'Zavřít';
+
+  @override
+  String get import => 'Importovat';
+
+  @override
+  String get rename => 'Přejmenovat';
+
+  @override
+  String get upgrade => 'Upgradovat';
+
+  @override
+  String get clear => 'Vyčistit';
+
+  @override
+  String error(String message) {
+    return 'Chyba: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'Chyba: $message';
+  }
+
+  @override
+  String get purchaseError => 'Chyba při zpracování nákupu. Zkus to znovu.';
+
+  @override
+  String get restoreError => 'Chyba při obnově nákupů. Zkus to znovu.';
+
+  @override
+  String get loading => 'Načítání...';
+
+  @override
+  String get fieldRequired => 'Povinné pole';
+
+  @override
+  String get addedFeedback => 'Přidáno!';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Vybráno $count',
+      many: 'Vybráno $count',
+      few: 'Vybrány $count',
+      one: 'Vybrán $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'Odhadováno';
+
+  @override
+  String get alreadyPurchased => 'Již zakoupeno';
+
+  @override
+  String get clearList => 'Vyčistit seznam';
+
+  @override
+  String get clearPurchased => 'Vyčistit zakoupené';
+
+  @override
+  String get share => 'Sdílet';
+
+  @override
+  String get shareViaCode => 'Sdílet pomocí kódu';
+
+  @override
+  String get importViaCode => 'Importovat pomocí kódu';
+
+  @override
+  String get listAssistant => 'Asistent seznamu';
+
+  @override
+  String get globalAssistant => 'Globální asistent';
+
+  @override
+  String get becomePremium => 'Staň se Premium';
+
+  @override
+  String get manageSubscription => 'Spravovat předplatné';
+
+  @override
+  String get completePurchase => 'Dokončit nákup';
+
+  @override
+  String get confirmClearList => 'Odebrat všechny položky?';
+
+  @override
+  String get shareListTitle => 'Sdílet seznam';
+
+  @override
+  String get shareThisCode => 'Sdílej tento kód:';
+
+  @override
+  String get validForLimitedTime => 'Platí po omezenou dobu';
+
+  @override
+  String get importListTitle => 'Importovat seznam';
+
+  @override
+  String get enterCodeHint => 'Zadej kód';
+
+  @override
+  String get confirmArchiveTitle => 'Dokončit nákup';
+
+  @override
+  String get confirmArchiveContent =>
+      'Dokončit tento nákup a archivovat seznam?';
+
+  @override
+  String get complete => 'Dokončit';
+
+  @override
+  String get listArchived => 'Seznam úspěšně archivován!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName přidán!';
+  }
+
+  @override
+  String get buy => 'Koupit';
+
+  @override
+  String get unmark => 'Odznačit';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return 'Odebrat $count položku(y)?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'Potvrdit';
+
+  @override
+  String confirmContent(int count) {
+    return 'Odebrat $count položku(y)?';
+  }
+
+  @override
+  String get archiveList => 'Archivovat seznam';
+
+  @override
+  String get pantryAppBar => 'Spižírna';
+
+  @override
+  String get generateShoppingList => 'Vygenerovat nákupní seznam';
+
+  @override
+  String get pantryEmpty => 'Prázdná spižírna';
+
+  @override
+  String get pantryEmptySubtitle => 'Přidej produkty, které chceš mít doma';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit položku(y) je třeba koupit';
+  }
+
+  @override
+  String get noItemsToBuy => 'Žádné položky ke koupi';
+
+  @override
+  String get newPantryList => 'Nákup pro spižírnu';
+
+  @override
+  String get newListTitle => 'Nový nákupní seznam';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count položek bude přidáno';
+  }
+
+  @override
+  String get listNameLabel => 'Název seznamu';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'Seznam \"$name\" vytvořen s $count položkami';
+  }
+
+  @override
+  String get noTracking => 'Bez sledování';
+
+  @override
+  String get markAsPurchased => 'Označit jako zakoupené';
+
+  @override
+  String editPantryItem(String name) {
+    return 'Upravit $name';
+  }
+
+  @override
+  String get idealQuantity => 'Ideální množství';
+
+  @override
+  String get currentQuantity => 'Aktuální množství';
+
+  @override
+  String get consumed => 'Spotřebováno';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name doplněno na $quantity $unit';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return 'Odebrat \"$name\" ze spižírny?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return 'Upravit $name';
+  }
+
+  @override
+  String get settingsAppBar => 'Nastavení';
+
+  @override
+  String get language => 'Jazyk';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Výchozí systém';
+
+  @override
+  String get appearance => 'Vzhled';
+
+  @override
+  String get light => 'Světlý';
+
+  @override
+  String get system => 'Systém';
+
+  @override
+  String get dark => 'Tmavý';
+
+  @override
+  String get themeColor => 'Barva motivu';
+
+  @override
+  String get finance => 'Finance';
+
+  @override
+  String get monthlyBudgetNav => 'Měsíční rozpočet';
+
+  @override
+  String get budgetSubtitle => 'Sleduj své měsíční výdaje';
+
+  @override
+  String get data => 'Data';
+
+  @override
+  String get backupNav => 'Záloha';
+
+  @override
+  String get backupSubtitle => 'Exportuj nebo importuj svá data';
+
+  @override
+  String get about => 'O aplikaci';
+
+  @override
+  String get version => 'Verze';
+
+  @override
+  String get privacy => 'Soukromí';
+
+  @override
+  String get termsOfUse => 'Podmínky použití';
+
+  @override
+  String get backupTitle => 'Záloha';
+
+  @override
+  String get backupPremiumDescription =>
+      'Zálohování a export je prémiová funkce';
+
+  @override
+  String get exportData => 'Exportovat data';
+
+  @override
+  String get exportDataSubtitle => 'Uložit všechny seznamy jako JSON';
+
+  @override
+  String get importData => 'Importovat data';
+
+  @override
+  String get importDataSubtitle => 'Obnovit seznamy z JSON';
+
+  @override
+  String get importJsonTitle => 'Importovat JSON';
+
+  @override
+  String get importJsonHint => 'Vlož sem JSON zálohy...';
+
+  @override
+  String get backupExported => 'Záloha exportována!';
+
+  @override
+  String get budgetAppBar => 'Měsíční rozpočet';
+
+  @override
+  String get budgetPremiumLocked => 'Globální měsíční rozpočet je Premium';
+
+  @override
+  String get budgetUpgradePrompt => 'Upgraduj pro odemknutí';
+
+  @override
+  String get noBudgetDefined => 'Není nastaven rozpočet';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'Celkem odhadováno: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'Nastavit rozpočet';
+
+  @override
+  String get budgetLists => 'Seznamy';
+
+  @override
+  String get budgetValueLabel => 'Částka';
+
+  @override
+  String get setBudgetTitle => 'Měsíční rozpočet';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'Vše';
+
+  @override
+  String get filterPending => 'Čekající';
+
+  @override
+  String get filterPurchased => 'Zakoupené';
+
+  @override
+  String get sortName => 'Název';
+
+  @override
+  String get sortCategory => 'Kategorie';
+
+  @override
+  String get sortDate => 'Datum';
+
+  @override
+  String get sortManual => 'Ručně';
+
+  @override
+  String get addItem => 'Přidat položku';
+
+  @override
+  String get itemName => 'Název položky';
+
+  @override
+  String get quantityShort => 'Mn';
+
+  @override
+  String get unit => 'Jednotka';
+
+  @override
+  String get category => 'Kategorie';
+
+  @override
+  String get estimatedPrice => 'Odhadovaná cena';
+
+  @override
+  String get addItemPrice => 'Odhadovaná cena';
+
+  @override
+  String get editItem => 'Upravit položku';
+
+  @override
+  String get quantityFull => 'Množství';
+
+  @override
+  String get editItemPrice => 'Odhadovaná cena';
+
+  @override
+  String get addToPantry => 'Přidat do spižírny';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return 'Přidat \"$name\" do tvé spižírny?';
+  }
+
+  @override
+  String get yes => 'Ano';
+
+  @override
+  String get productName => 'Název produktu';
+
+  @override
+  String get idealQty => 'Ideální mn';
+
+  @override
+  String get currentQty => 'Aktuální mn';
+
+  @override
+  String get trackStock => 'Sledovat zásoby';
+
+  @override
+  String get trackStockActive => 'Objevuje se v návrzích nákupu';
+
+  @override
+  String get trackStockInactive => 'Negeneruje návrh nákupu';
+
+  @override
+  String get createListDialog => 'Vytvořit seznam';
+
+  @override
+  String get renameListDialog => 'Přejmenovat seznam';
+
+  @override
+  String get listHistory => 'Historie seznamů';
+
+  @override
+  String get myLists => 'Mé seznamy';
+
+  @override
+  String get viewActive => 'Zobrazit aktivní';
+
+  @override
+  String get viewHistory => 'Zobrazit historii';
+
+  @override
+  String get noArchivedLists => 'Žádné archivované seznamy';
+
+  @override
+  String get noActiveLists => 'Žádné aktivní seznamy';
+
+  @override
+  String completedOn(String date) {
+    return 'Dokončeno $date';
+  }
+
+  @override
+  String get sharedLabel => 'Sdíleno';
+
+  @override
+  String get restore => 'Obnovit';
+
+  @override
+  String get removeSharedTooltip => 'Odebrat';
+
+  @override
+  String get deleteListTitle => 'Smazat seznam';
+
+  @override
+  String deleteListContent(String name) {
+    return 'Opravdu chceš smazat \"$name\"? Všechny položky budou odstraněny.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'Odebrat sdílený seznam';
+
+  @override
+  String removeSharedListContent(String name) {
+    return 'Odebrat \"$name\" z tvých seznamů? Původní seznam zůstane nedotčen.';
+  }
+
+  @override
+  String get createNewList => 'Vytvořit nový seznam';
+
+  @override
+  String get aiAssistant => 'AI asistent';
+
+  @override
+  String get aiAssistantDescription =>
+      'Získej chytré návrhy, recepty a personalizované tipy s naším AI asistentem.';
+
+  @override
+  String get generalAssistant => 'Obecný asistent';
+
+  @override
+  String get clearHistory => 'Vyčistit historii';
+
+  @override
+  String get clearHistoryConfirm => 'Smazat všechny zprávy v této relaci?';
+
+  @override
+  String get chatHint => 'Napiš svou zprávu...';
+
+  @override
+  String chatError(String error) {
+    return 'Chyba při načítání chatu: $error';
+  }
+
+  @override
+  String get listHelp => 'Jak mohu pomoci s tvým seznamem?';
+
+  @override
+  String get generalHelp => 'Jak mohu dnes pomoci s tvým nákupem?';
+
+  @override
+  String get chatSubtitle =>
+      'Požádej o návrhy položek, recepty nebo tipy na úsporu.';
+
+  @override
+  String get aiError =>
+      'Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt => 'Přihlas se pro odemknutí\nprémiových funkcí';
+
+  @override
+  String get signInGoogle => 'Přihlásit se přes Google';
+
+  @override
+  String get signInApple => 'Přihlásit se přes Apple';
+
+  @override
+  String get continueAsGuest => 'Pokračovat jako host';
+
+  @override
+  String loginError(String error) {
+    return 'Chyba přihlášení: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'Upgraduj pro odemknutí';
+
+  @override
+  String get itemRemoved => 'Položka odebrána';
+
+  @override
+  String get undo => 'Zpět';
+
+  @override
+  String get emptyListTitle => 'Tvůj seznam je prázdný';
+
+  @override
+  String get emptyListSubtitle => 'Přidej položky pro začátek';
+
+  @override
+  String get noListFoundTitle => 'Nenalezeny žádné seznamy';
+
+  @override
+  String get noListFoundSubtitle => 'Vytvoř svůj první seznam pro začátek';
+
+  @override
+  String get createFirstList => 'Vytvořit první seznam';
+
+  @override
+  String get listBudgetTitle => 'Rozpočet seznamu';
+
+  @override
+  String get budgetAmountLabel => 'Částka rozpočtu';
+
+  @override
+  String get removeBudget => 'Odebrat';
+
+  @override
+  String get prefUnlimitedLists => 'Neomezené seznamy';
+
+  @override
+  String get prefSharing => 'Sdílení seznamů';
+
+  @override
+  String get prefFullHistory => 'Plná historie';
+
+  @override
+  String get prefExportData => 'Export dat';
+
+  @override
+  String get prefCustomThemes => 'Vlastní motivy';
+
+  @override
+  String get prefMonthlyBudget => 'Globální měsíční rozpočet';
+
+  @override
+  String get prefAIAssistant => 'Osobní AI asistent';
+
+  @override
+  String get prefUnlimitedPantry => 'Neomezená spižírna';
+
+  @override
+  String get prefInteractiveArtifacts => 'Interaktivní AI artefakty';
+
+  @override
+  String get themeGreen => 'Zelená';
+
+  @override
+  String get themeBlue => 'Modrá';
+
+  @override
+  String get themePurple => 'Fialová';
+
+  @override
+  String get themeRed => 'Červená';
+
+  @override
+  String get themeOrange => 'Oranžová';
+
+  @override
+  String get themePink => 'Růžová';
+
+  @override
+  String get themeIndigo => 'Indigo';
+
+  @override
+  String get themeAmber => 'Jantar';
+
+  @override
+  String get themeTeal => 'Tyrkysová';
+
+  @override
+  String get themeBrown => 'Hnědá';
+
+  @override
+  String get catFruits => 'Ovoce';
+
+  @override
+  String get catCleaning => 'Úklid';
+
+  @override
+  String get catBeverages => 'Nápoje';
+
+  @override
+  String get catBakery => 'Pekařství';
+
+  @override
+  String get catOthers => 'Ostatní';
+
+  @override
+  String get unitPack => 'balení';
+
+  @override
+  String get shareSubject => 'Nákupní seznam';
+
+  @override
+  String get monthlyBudgetTitle => 'Měsíční rozpočet';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'Smazat seznam';
+
+  @override
+  String get pantryItemRemoved => 'Položka odebrána';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: '$deficit položek je třeba koupit',
+      many: '$deficit položek je třeba koupit',
+      few: '$deficit položky je třeba koupit',
+      one: '$deficit položku je třeba koupit',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'Celkem košík';
+
+  @override
+  String get restockLabel => 'Doplnit';
+
+  @override
+  String get advancedFeatures => 'Pokročilé funkce';
+
+  @override
+  String get selectAll => 'Vybrat vše';
+
+  @override
+  String get deselectAll => 'Zrušit výběr';
+
+  @override
+  String get monthlyBudgetAppBar => 'Měsíční rozpočet';
+
+  @override
+  String get budgetEditTitle => 'Měsíční rozpočet';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard => 'Vyber seznam pro zobrazení dashboardu.';
+
+  @override
+  String get spendingAnalysis => 'Analýza výdajů';
+
+  @override
+  String get noItemsToAnalyze => 'V seznamu nejsou žádné položky k analýze.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'Označ položky jako zakoupené pro zobrazení analýzy.';
+
+  @override
+  String get totalSpending => 'Celkem utraceno';
+
+  @override
+  String get spendingByCategory => 'Výdaje podle kategorie';
+
+  @override
+  String get achievements => 'Úspěchy';
+
+  @override
+  String get exportPdfExcel => 'Exportovat PDF/Excel';
+
+  @override
+  String get exportPdf => 'Exportovat jako PDF';
+
+  @override
+  String get exportExcel => 'Exportovat jako Excel';
+
+  @override
+  String get organizingAi => 'ORGANIZOVÁNÍ S AI...';
+
+  @override
+  String get yesLabel => 'Ano';
+
+  @override
+  String get noLabel => 'Ne';
+
+  @override
+  String get shareListText => 'Můj nákupní seznam';
+
+  @override
+  String get emptyListAddItems =>
+      'Tvůj seznam je prázdný! Nejprve přidej položky. ℹ️';
+
+  @override
+  String get listOrganizedMagic =>
+      'Seznam kouzelně uspořádán podle kategorií! ✨';
+
+  @override
+  String get shoppingMode => 'Nákupní režim';
+
+  @override
+  String get smartOrganization => 'Chytrá organizace';
+
+  @override
+  String get savings => 'Úspory';
+
+  @override
+  String get shoppingModeHeader => 'NÁKUPNÍ REŽIM';
+
+  @override
+  String get shareAsText => 'Odeslat položky jako formátovaný text';
+
+  @override
+  String get shareRealtime => 'Synchronizace v reálném čase s ostatními';
+
+  @override
+  String get quickRecipe => 'Rychlý recept';
+
+  @override
+  String get quickRecipePrompt => 'Navrhni recepty s položkami z mého seznamu.';
+
+  @override
+  String get economyTips => 'Tipy na úsporu';
+
+  @override
+  String get economyTipsPrompt => 'Jak mohu ušetřit na tomto nákupu?';
+
+  @override
+  String get organizeAisles => 'Uspořádat podle uliček';
+
+  @override
+  String get organizeAislesPrompt => 'Uspořádat podle uliček obchodu.';
+
+  @override
+  String get recipeSuggestion => 'Návrh receptu';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return 'Zbývá $remaining kreditů';
+  }
+
+  @override
+  String get addAllToList => 'Přidat vše do seznamu';
+
+  @override
+  String get organizeByAisles => 'Uspořádat podle uliček';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Hlasové psaní (Zdarma)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'AI hlasový příkaz (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'AI hlasový příkaz';
+
+  @override
+  String get voiceCommandContent =>
+      'Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• \'Přidej chléb, sýr a šunku\'\n• \'Odeber prací prášek\'\n• \'Změň motiv na modrý\'\n\nToto je exkluzivní funkce Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Zobrazit plány';
+
+  @override
+  String get itemsAddedSuccess => 'Položky úspěšně přidány do seznamu!';
+
+  @override
+  String get viewList => 'Zobrazit seznam';
+
+  @override
+  String get feedbackTitle => 'Odeslat zpětnou vazbu';
+
+  @override
+  String get feedbackPrompt => 'Co byste chtěli sdílet?';
+
+  @override
+  String get feedbackTypeBug => 'Nahlásit chybu';
+
+  @override
+  String get feedbackTypeBugHint => 'Něco nefunguje';
+
+  @override
+  String get feedbackTypeSuggestion => 'Návrh';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'Nápad na vylepšení aplikace';
+
+  @override
+  String get feedbackTypeTranslation => 'Problém s překladem';
+
+  @override
+  String get feedbackTypeTranslationHint => 'Nesprávný nebo neobratný překlad';
+
+  @override
+  String get feedbackTypeFeature => 'Žádost o funkci';
+
+  @override
+  String get feedbackTypeFeatureHint => 'Funkce, kterou byste rádi viděli';
+
+  @override
+  String get feedbackTypeOther => 'Jiné';
+
+  @override
+  String get feedbackTypeOtherHint => 'Jiný typ zpětné vazby';
+
+  @override
+  String get feedbackHint => 'Popište svou zpětnou vazbu podrobně...';
+
+  @override
+  String get feedbackSend => 'Odeslat zpětnou vazbu';
+
+  @override
+  String get feedbackSending => 'Odesílání...';
+
+  @override
+  String get feedbackThankYou => 'Děkujeme!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat Lista Plus pro všechny.';
+
+  @override
+  String get feedbackBack => 'Zpět';
+
+  @override
+  String feedbackError(String error) {
+    return 'Chyba při odesílání: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'Zkusit znovu';
+
+  @override
+  String get feedbackSettingsTitle => 'Odeslat zpětnou vazbu';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'Hlaste chyby, navrhujte vylepšení nebo opravujte překlady';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Open menu';
+
+  @override
+  String get viewRecipe => 'View Recipe';
+
+  @override
+  String get recipeCreated => 'Recipe created!';
+
+  @override
+  String get editRecipe => 'Edit';
+
+  @override
+  String get deleteRecipe => 'Delete';
+
+  @override
+  String get deleteRecipeConfirm => 'Delete this recipe?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+  }
+
+  @override
+  String get ingredients => 'Ingredients';
+
+  @override
+  String get instructions => 'Instructions';
+
+  @override
+  String get prepTime => 'Prep time';
+
+  @override
+  String get recipeSaved => 'Recipe saved!';
+
+  @override
+  String get noRecipesSaved => 'No recipes saved';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Create your first custom recipe by tapping the button below.';
+
+  @override
+  String get myRecipes => 'My Recipes';
+
+  @override
+  String get newRecipe => 'New Recipe';
+
+  @override
+  String get loadingRecipes => 'Loading your recipes...';
+
+  @override
+  String get errorLoadingRecipes => 'Error loading recipes';
+
+  @override
+  String get addIngredient => 'Add ingredient';
+
+  @override
+  String get saveRecipe => 'Save';
+
+  @override
+  String get recipeName => 'Recipe name';
+
+  @override
+  String get shortDescription => 'Short description';
+
+  @override
+  String get prepTimeMinutes => 'Prep time (minutes)';
+
+  @override
+  String get instructionsHint => 'Type one step per line...';
+
+  @override
+  String get addPhoto => 'Add photo';
+
+  @override
+  String get imageUrlPlaceholder => 'Or paste an image URL';
+
+  @override
+  String get tags => 'Tags';
+
+  @override
+  String get recipeTags => 'Recipe tags';
+
+  @override
+  String get suggestedTags => 'Suggested';
+
+  @override
+  String get searchRecipes => 'Search recipes...';
+
+  @override
+  String get filterByTag => 'Filter by tag';
+
+  @override
+  String get allTags => 'All';
+
+  @override
+  String get recipeDeleted => 'Recipe deleted';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get editRecipeTitle => 'Edit Recipe';
+
+  @override
+  String get newRecipeTitle => 'New Recipe';
+
+  @override
+  String get requiredField => 'Required';
+
+  @override
+  String get chooseImageSource => 'Choose image source';
+
+  @override
+  String get gallery => 'Gallery';
+
+  @override
+  String get enterUrl => 'Enter URL';
+
+  @override
+  String get recipeImage => 'Recipe image';
+
+  @override
+  String get removeImage => 'Remove image';
+}
+
+/// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
+class AppLocalizationsCsCz extends AppLocalizationsCs {
+  AppLocalizationsCsCz() : super('cs_CZ');
+
+  @override
+  String get appTitle => 'Nákupní seznam';
+
+  @override
+  String get lists => 'Seznamy';
+
+  @override
+  String get pantry => 'Spižírna';
+
+  @override
+  String get cancel => 'Zrušit';
+
+  @override
+  String get save => 'Uložit';
+
+  @override
+  String get create => 'Vytvořit';
+
+  @override
+  String get add => 'Přidat';
+
+  @override
+  String get remove => 'Odebrat';
+
+  @override
+  String get delete => 'Smazat';
+
+  @override
+  String get edit => 'Upravit';
+
+  @override
+  String get copy => 'Kopírovat';
+
+  @override
+  String get retry => 'Zkusit znovu';
+
+  @override
+  String get regenerate => 'Znovu vygenerovat';
+
+  @override
+  String get copiedToClipboard => 'Zkopírováno do schránky';
+
+  @override
+  String get confirm => 'Potvrdit';
+
+  @override
+  String get close => 'Zavřít';
+
+  @override
+  String get import => 'Importovat';
+
+  @override
+  String get rename => 'Přejmenovat';
+
+  @override
+  String get upgrade => 'Upgradovat';
+
+  @override
+  String get clear => 'Vyčistit';
+
+  @override
+  String error(String message) {
+    return 'Chyba: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'Chyba: $message';
+  }
+
+  @override
+  String get purchaseError => 'Chyba při zpracování nákupu. Zkus to znovu.';
+
+  @override
+  String get restoreError => 'Chyba při obnově nákupů. Zkus to znovu.';
+
+  @override
+  String get loading => 'Načítání...';
+
+  @override
+  String get fieldRequired => 'Povinné pole';
+
+  @override
+  String get addedFeedback => 'Přidáno!';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Vybráno $count',
+      many: 'Vybráno $count',
+      few: 'Vybrány $count',
+      one: 'Vybrán $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'Odhadováno';
+
+  @override
+  String get alreadyPurchased => 'Již zakoupeno';
+
+  @override
+  String get clearList => 'Vyčistit seznam';
+
+  @override
+  String get clearPurchased => 'Vyčistit zakoupené';
+
+  @override
+  String get share => 'Sdílet';
+
+  @override
+  String get shareViaCode => 'Sdílet pomocí kódu';
+
+  @override
+  String get importViaCode => 'Importovat pomocí kódu';
+
+  @override
+  String get listAssistant => 'Asistent seznamu';
+
+  @override
+  String get globalAssistant => 'Globální asistent';
+
+  @override
+  String get becomePremium => 'Staň se Premium';
+
+  @override
+  String get manageSubscription => 'Spravovat předplatné';
+
+  @override
+  String get completePurchase => 'Dokončit nákup';
+
+  @override
+  String get confirmClearList => 'Odebrat všechny položky?';
+
+  @override
+  String get shareListTitle => 'Sdílet seznam';
+
+  @override
+  String get shareThisCode => 'Sdílej tento kód:';
+
+  @override
+  String get validForLimitedTime => 'Platí po omezenou dobu';
+
+  @override
+  String get importListTitle => 'Importovat seznam';
+
+  @override
+  String get enterCodeHint => 'Zadej kód';
+
+  @override
+  String get confirmArchiveTitle => 'Dokončit nákup';
+
+  @override
+  String get confirmArchiveContent =>
+      'Dokončit tento nákup a archivovat seznam?';
+
+  @override
+  String get complete => 'Dokončit';
+
+  @override
+  String get listArchived => 'Seznam úspěšně archivován!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName přidán!';
+  }
+
+  @override
+  String get buy => 'Koupit';
+
+  @override
+  String get unmark => 'Odznačit';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return 'Odebrat $count položku(y)?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'Potvrdit';
+
+  @override
+  String confirmContent(int count) {
+    return 'Odebrat $count položku(y)?';
+  }
+
+  @override
+  String get archiveList => 'Archivovat seznam';
+
+  @override
+  String get pantryAppBar => 'Spižírna';
+
+  @override
+  String get generateShoppingList => 'Vygenerovat nákupní seznam';
+
+  @override
+  String get pantryEmpty => 'Prázdná spižírna';
+
+  @override
+  String get pantryEmptySubtitle => 'Přidej produkty, které chceš mít doma';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit položku(y) je třeba koupit';
+  }
+
+  @override
+  String get noItemsToBuy => 'Žádné položky ke koupi';
+
+  @override
+  String get newPantryList => 'Nákup pro spižírnu';
+
+  @override
+  String get newListTitle => 'Nový nákupní seznam';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count položek bude přidáno';
+  }
+
+  @override
+  String get listNameLabel => 'Název seznamu';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'Seznam \"$name\" vytvořen s $count položkami';
+  }
+
+  @override
+  String get noTracking => 'Bez sledování';
+
+  @override
+  String get markAsPurchased => 'Označit jako zakoupené';
+
+  @override
+  String editPantryItem(String name) {
+    return 'Upravit $name';
+  }
+
+  @override
+  String get idealQuantity => 'Ideální množství';
+
+  @override
+  String get currentQuantity => 'Aktuální množství';
+
+  @override
+  String get consumed => 'Spotřebováno';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name doplněno na $quantity $unit';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return 'Odebrat \"$name\" ze spižírny?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return 'Upravit $name';
+  }
+
+  @override
+  String get settingsAppBar => 'Nastavení';
+
+  @override
+  String get language => 'Jazyk';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Výchozí systém';
+
+  @override
+  String get appearance => 'Vzhled';
+
+  @override
+  String get light => 'Světlý';
+
+  @override
+  String get system => 'Systém';
+
+  @override
+  String get dark => 'Tmavý';
+
+  @override
+  String get themeColor => 'Barva motivu';
+
+  @override
+  String get finance => 'Finance';
+
+  @override
+  String get monthlyBudgetNav => 'Měsíční rozpočet';
+
+  @override
+  String get budgetSubtitle => 'Sleduj své měsíční výdaje';
+
+  @override
+  String get data => 'Data';
+
+  @override
+  String get backupNav => 'Záloha';
+
+  @override
+  String get backupSubtitle => 'Exportuj nebo importuj svá data';
+
+  @override
+  String get about => 'O aplikaci';
+
+  @override
+  String get version => 'Verze';
+
+  @override
+  String get privacy => 'Soukromí';
+
+  @override
+  String get termsOfUse => 'Podmínky použití';
+
+  @override
+  String get backupTitle => 'Záloha';
+
+  @override
+  String get backupPremiumDescription =>
+      'Zálohování a export je prémiová funkce';
+
+  @override
+  String get exportData => 'Exportovat data';
+
+  @override
+  String get exportDataSubtitle => 'Uložit všechny seznamy jako JSON';
+
+  @override
+  String get importData => 'Importovat data';
+
+  @override
+  String get importDataSubtitle => 'Obnovit seznamy z JSON';
+
+  @override
+  String get importJsonTitle => 'Importovat JSON';
+
+  @override
+  String get importJsonHint => 'Vlož sem JSON zálohy...';
+
+  @override
+  String get backupExported => 'Záloha exportována!';
+
+  @override
+  String get budgetAppBar => 'Měsíční rozpočet';
+
+  @override
+  String get budgetPremiumLocked => 'Globální měsíční rozpočet je Premium';
+
+  @override
+  String get budgetUpgradePrompt => 'Upgraduj pro odemknutí';
+
+  @override
+  String get noBudgetDefined => 'Není nastaven rozpočet';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'Celkem odhadováno: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'Nastavit rozpočet';
+
+  @override
+  String get budgetLists => 'Seznamy';
+
+  @override
+  String get budgetValueLabel => 'Částka';
+
+  @override
+  String get setBudgetTitle => 'Měsíční rozpočet';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'Vše';
+
+  @override
+  String get filterPending => 'Čekající';
+
+  @override
+  String get filterPurchased => 'Zakoupené';
+
+  @override
+  String get sortName => 'Název';
+
+  @override
+  String get sortCategory => 'Kategorie';
+
+  @override
+  String get sortDate => 'Datum';
+
+  @override
+  String get sortManual => 'Ručně';
+
+  @override
+  String get addItem => 'Přidat položku';
+
+  @override
+  String get itemName => 'Název položky';
+
+  @override
+  String get quantityShort => 'Mn';
+
+  @override
+  String get unit => 'Jednotka';
+
+  @override
+  String get category => 'Kategorie';
+
+  @override
+  String get estimatedPrice => 'Odhadovaná cena';
+
+  @override
+  String get addItemPrice => 'Odhadovaná cena';
+
+  @override
+  String get editItem => 'Upravit položku';
+
+  @override
+  String get quantityFull => 'Množství';
+
+  @override
+  String get editItemPrice => 'Odhadovaná cena';
+
+  @override
+  String get addToPantry => 'Přidat do spižírny';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return 'Přidat \"$name\" do tvé spižírny?';
+  }
+
+  @override
+  String get yes => 'Ano';
+
+  @override
+  String get productName => 'Název produktu';
+
+  @override
+  String get idealQty => 'Ideální mn';
+
+  @override
+  String get currentQty => 'Aktuální mn';
+
+  @override
+  String get trackStock => 'Sledovat zásoby';
+
+  @override
+  String get trackStockActive => 'Objevuje se v návrzích nákupu';
+
+  @override
+  String get trackStockInactive => 'Negeneruje návrh nákupu';
+
+  @override
+  String get createListDialog => 'Vytvořit seznam';
+
+  @override
+  String get renameListDialog => 'Přejmenovat seznam';
+
+  @override
+  String get listHistory => 'Historie seznamů';
+
+  @override
+  String get myLists => 'Mé seznamy';
+
+  @override
+  String get viewActive => 'Zobrazit aktivní';
+
+  @override
+  String get viewHistory => 'Zobrazit historii';
+
+  @override
+  String get noArchivedLists => 'Žádné archivované seznamy';
+
+  @override
+  String get noActiveLists => 'Žádné aktivní seznamy';
+
+  @override
+  String completedOn(String date) {
+    return 'Dokončeno $date';
+  }
+
+  @override
+  String get sharedLabel => 'Sdíleno';
+
+  @override
+  String get restore => 'Obnovit';
+
+  @override
+  String get removeSharedTooltip => 'Odebrat';
+
+  @override
+  String get deleteListTitle => 'Smazat seznam';
+
+  @override
+  String deleteListContent(String name) {
+    return 'Opravdu chceš smazat \"$name\"? Všechny položky budou odstraněny.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'Odebrat sdílený seznam';
+
+  @override
+  String removeSharedListContent(String name) {
+    return 'Odebrat \"$name\" z tvých seznamů? Původní seznam zůstane nedotčen.';
+  }
+
+  @override
+  String get createNewList => 'Vytvořit nový seznam';
+
+  @override
+  String get aiAssistant => 'AI asistent';
+
+  @override
+  String get aiAssistantDescription =>
+      'Získej chytré návrhy, recepty a personalizované tipy s naším AI asistentem.';
+
+  @override
+  String get generalAssistant => 'Obecný asistent';
+
+  @override
+  String get clearHistory => 'Vyčistit historii';
+
+  @override
+  String get clearHistoryConfirm => 'Smazat všechny zprávy v této relaci?';
+
+  @override
+  String get chatHint => 'Napiš svou zprávu...';
+
+  @override
+  String chatError(String error) {
+    return 'Chyba při načítání chatu: $error';
+  }
+
+  @override
+  String get listHelp => 'Jak mohu pomoci s tvým seznamem?';
+
+  @override
+  String get generalHelp => 'Jak mohu dnes pomoci s tvým nákupem?';
+
+  @override
+  String get chatSubtitle =>
+      'Požádej o návrhy položek, recepty nebo tipy na úsporu.';
+
+  @override
+  String get aiError =>
+      'Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt => 'Přihlas se pro odemknutí\nprémiových funkcí';
+
+  @override
+  String get signInGoogle => 'Přihlásit se přes Google';
+
+  @override
+  String get signInApple => 'Přihlásit se přes Apple';
+
+  @override
+  String get continueAsGuest => 'Pokračovat jako host';
+
+  @override
+  String loginError(String error) {
+    return 'Chyba přihlášení: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'Upgraduj pro odemknutí';
+
+  @override
+  String get itemRemoved => 'Položka odebrána';
+
+  @override
+  String get undo => 'Zpět';
+
+  @override
+  String get emptyListTitle => 'Tvůj seznam je prázdný';
+
+  @override
+  String get emptyListSubtitle => 'Přidej položky pro začátek';
+
+  @override
+  String get noListFoundTitle => 'Nenalezeny žádné seznamy';
+
+  @override
+  String get noListFoundSubtitle => 'Vytvoř svůj první seznam pro začátek';
+
+  @override
+  String get createFirstList => 'Vytvořit první seznam';
+
+  @override
+  String get listBudgetTitle => 'Rozpočet seznamu';
+
+  @override
+  String get budgetAmountLabel => 'Částka rozpočtu';
+
+  @override
+  String get removeBudget => 'Odebrat';
+
+  @override
+  String get prefUnlimitedLists => 'Neomezené seznamy';
+
+  @override
+  String get prefSharing => 'Sdílení seznamů';
+
+  @override
+  String get prefFullHistory => 'Plná historie';
+
+  @override
+  String get prefExportData => 'Export dat';
+
+  @override
+  String get prefCustomThemes => 'Vlastní motivy';
+
+  @override
+  String get prefMonthlyBudget => 'Globální měsíční rozpočet';
+
+  @override
+  String get prefAIAssistant => 'Osobní AI asistent';
+
+  @override
+  String get prefUnlimitedPantry => 'Neomezená spižírna';
+
+  @override
+  String get prefInteractiveArtifacts => 'Interaktivní AI artefakty';
+
+  @override
+  String get themeGreen => 'Zelená';
+
+  @override
+  String get themeBlue => 'Modrá';
+
+  @override
+  String get themePurple => 'Fialová';
+
+  @override
+  String get themeRed => 'Červená';
+
+  @override
+  String get themeOrange => 'Oranžová';
+
+  @override
+  String get themePink => 'Růžová';
+
+  @override
+  String get themeIndigo => 'Indigo';
+
+  @override
+  String get themeAmber => 'Jantar';
+
+  @override
+  String get themeTeal => 'Tyrkysová';
+
+  @override
+  String get themeBrown => 'Hnědá';
+
+  @override
+  String get catFruits => 'Ovoce';
+
+  @override
+  String get catCleaning => 'Úklid';
+
+  @override
+  String get catBeverages => 'Nápoje';
+
+  @override
+  String get catBakery => 'Pekařství';
+
+  @override
+  String get catOthers => 'Ostatní';
+
+  @override
+  String get unitPack => 'balení';
+
+  @override
+  String get shareSubject => 'Nákupní seznam';
+
+  @override
+  String get monthlyBudgetTitle => 'Měsíční rozpočet';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'Smazat seznam';
+
+  @override
+  String get pantryItemRemoved => 'Položka odebrána';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: '$deficit položek je třeba koupit',
+      many: '$deficit položek je třeba koupit',
+      few: '$deficit položky je třeba koupit',
+      one: '$deficit položku je třeba koupit',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'Celkem košík';
+
+  @override
+  String get restockLabel => 'Doplnit';
+
+  @override
+  String get advancedFeatures => 'Pokročilé funkce';
+
+  @override
+  String get selectAll => 'Vybrat vše';
+
+  @override
+  String get deselectAll => 'Zrušit výběr';
+
+  @override
+  String get monthlyBudgetAppBar => 'Měsíční rozpočet';
+
+  @override
+  String get budgetEditTitle => 'Měsíční rozpočet';
+
+  @override
+  String get budgetDashboardTitle => 'Dashboard';
+
+  @override
+  String get selectListForDashboard => 'Vyber seznam pro zobrazení dashboardu.';
+
+  @override
+  String get spendingAnalysis => 'Analýza výdajů';
+
+  @override
+  String get noItemsToAnalyze => 'V seznamu nejsou žádné položky k analýze.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'Označ položky jako zakoupené pro zobrazení analýzy.';
+
+  @override
+  String get totalSpending => 'Celkem utraceno';
+
+  @override
+  String get spendingByCategory => 'Výdaje podle kategorie';
+
+  @override
+  String get achievements => 'Úspěchy';
+
+  @override
+  String get exportPdfExcel => 'Exportovat PDF/Excel';
+
+  @override
+  String get exportPdf => 'Exportovat jako PDF';
+
+  @override
+  String get exportExcel => 'Exportovat jako Excel';
+
+  @override
+  String get organizingAi => 'ORGANIZOVÁNÍ S AI...';
+
+  @override
+  String get yesLabel => 'Ano';
+
+  @override
+  String get noLabel => 'Ne';
+
+  @override
+  String get shareListText => 'Můj nákupní seznam';
+
+  @override
+  String get emptyListAddItems =>
+      'Tvůj seznam je prázdný! Nejprve přidej položky. ℹ️';
+
+  @override
+  String get listOrganizedMagic =>
+      'Seznam kouzelně uspořádán podle kategorií! ✨';
+
+  @override
+  String get shoppingMode => 'Nákupní režim';
+
+  @override
+  String get smartOrganization => 'Chytrá organizace';
+
+  @override
+  String get savings => 'Úspory';
+
+  @override
+  String get shoppingModeHeader => 'NÁKUPNÍ REŽIM';
+
+  @override
+  String get shareAsText => 'Odeslat položky jako formátovaný text';
+
+  @override
+  String get shareRealtime => 'Synchronizace v reálném čase s ostatními';
+
+  @override
+  String get quickRecipe => 'Rychlý recept';
+
+  @override
+  String get quickRecipePrompt => 'Navrhni recepty s položkami z mého seznamu.';
+
+  @override
+  String get economyTips => 'Tipy na úsporu';
+
+  @override
+  String get economyTipsPrompt => 'Jak mohu ušetřit na tomto nákupu?';
+
+  @override
+  String get organizeAisles => 'Uspořádat podle uliček';
+
+  @override
+  String get organizeAislesPrompt => 'Uspořádat podle uliček obchodu.';
+
+  @override
+  String get recipeSuggestion => 'Návrh receptu';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return 'Zbývá $remaining kreditů';
+  }
+
+  @override
+  String get addAllToList => 'Přidat vše do seznamu';
+
+  @override
+  String get organizeByAisles => 'Uspořádat podle uliček';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Hlasové psaní (Zdarma)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'AI hlasový příkaz (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'AI hlasový příkaz';
+
+  @override
+  String get voiceCommandContent =>
+      'Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• \'Přidej chléb, sýr a šunku\'\n• \'Odeber prací prášek\'\n• \'Změň motiv na modrý\'\n\nToto je exkluzivní funkce Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Zobrazit plány';
+
+  @override
+  String get itemsAddedSuccess => 'Položky úspěšně přidány do seznamu!';
+
+  @override
+  String get viewList => 'Zobrazit seznam';
+
+  @override
+  String get feedbackTitle => 'Odeslat zpětnou vazbu';
+
+  @override
+  String get feedbackPrompt => 'Co byste chtěli sdílet?';
+
+  @override
+  String get feedbackTypeBug => 'Nahlásit chybu';
+
+  @override
+  String get feedbackTypeBugHint => 'Něco nefunguje';
+
+  @override
+  String get feedbackTypeSuggestion => 'Návrh';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'Nápad na vylepšení aplikace';
+
+  @override
+  String get feedbackTypeTranslation => 'Problém s překladem';
+
+  @override
+  String get feedbackTypeTranslationHint => 'Nesprávný nebo nevhodný překlad';
+
+  @override
+  String get feedbackTypeFeature => 'Žádost o funkci';
+
+  @override
+  String get feedbackTypeFeatureHint => 'Funkce, kterou byste rádi viděli';
+
+  @override
+  String get feedbackTypeOther => 'Jiné';
+
+  @override
+  String get feedbackTypeOtherHint => 'Jiný typ zpětné vazby';
+
+  @override
+  String get feedbackHint => 'Popište svou zpětnou vazbu podrobně...';
+
+  @override
+  String get feedbackSend => 'Odeslat zpětnou vazbu';
+
+  @override
+  String get feedbackSending => 'Odesílání...';
+
+  @override
+  String get feedbackThankYou => 'Děkujeme!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat Lista Plus pro všechny.';
+
+  @override
+  String get feedbackBack => 'Zpět';
+
+  @override
+  String feedbackError(String error) {
+    return 'Chyba při odesílání: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'Zkusit znovu';
+
+  @override
+  String get feedbackSettingsTitle => 'Odeslat zpětnou vazbu';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'Nahlaste chyby, navrhněte vylepšení nebo opravte překlady';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+}

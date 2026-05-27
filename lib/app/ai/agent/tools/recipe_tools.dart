@@ -1,6 +1,6 @@
 import 'tool_core.dart';
 
-final getRecipesTool = const AgentTool(
+const getRecipesTool = AgentTool(
   name: 'get_recipes',
   description: 'Obtém a lista de receitas salvas do usuário',
   parameters: [
@@ -11,10 +11,11 @@ final getRecipesTool = const AgentTool(
   ],
 );
 
-final createRecipeTool = const AgentTool(
+const createRecipeTool = AgentTool(
   name: 'create_recipe',
   description: 'Cria uma nova receita no livro de receitas do usuário. '
-      'Inclua ingredientes detalhados e instruções passo a passo.',
+      'Inclua ingredientes detalhados e instruções passo a passo. '
+      'Antes de criar, use get_recipes para verificar se já existe uma receita com o mesmo nome.',
   parameters: [
     AgentToolParameter(name: 'name', type: 'string', description: 'Nome da receita', required: true),
     AgentToolParameter(name: 'description', type: 'string', description: 'Breve descrição da receita', required: true),
@@ -33,7 +34,7 @@ final createRecipeTool = const AgentTool(
   ],
 );
 
-final deleteRecipeTool = const AgentTool(
+const deleteRecipeTool = AgentTool(
   name: 'delete_recipe',
   description: 'Exclui uma receita do livro de receitas',
   parameters: [
@@ -41,4 +42,4 @@ final deleteRecipeTool = const AgentTool(
   ],
 );
 
-final allRecipeTools = [getRecipesTool, createRecipeTool, deleteRecipeTool];
+const allRecipeTools = [getRecipesTool, createRecipeTool, deleteRecipeTool];

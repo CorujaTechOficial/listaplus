@@ -5,7 +5,6 @@ import 'package:shopping_list/screens/home_screen.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';

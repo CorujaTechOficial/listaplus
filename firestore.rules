@@ -76,5 +76,21 @@ service cloud.firestore {
     match /users/{uid}/global_chat_messages/{messageId} {
       allow read, write: if isAuthenticated() && isOwner(uid);
     }
+
+    // Recipes — owner only
+    match /users/{uid}/recipes/{recipeId} {
+      allow read, write: if isAuthenticated() && isOwner(uid);
+    }
+
+    // Meal plans — owner only
+    match /users/{uid}/meal_plans/{planId} {
+      allow read, write: if isAuthenticated() && isOwner(uid);
+    }
+
+    // App feedback — any authenticated user can create
+    match /feedback/{feedbackId} {
+      allow create: if isAuthenticated();
+      allow read, update, delete: if false;
+    }
   }
 }

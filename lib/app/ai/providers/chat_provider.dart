@@ -1,5 +1,8 @@
 import 'dart:async' show unawaited;
-import 'dart:convert' show base64Encode;
+import 'dart:convert' show base64Encode, jsonDecode, jsonEncode;
+import 'package:shopping_list/domain/entities/suggested_reply.dart';
+import 'package:characters/characters.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -18,7 +21,9 @@ import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
-import 'package:shopping_list/app/settings/providers/settings_providers.dart';
+import 'package:shopping_list/core/providers/auth_provider.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/misc_providers.dart';
 
 part 'chat_provider.g.dart';
 
@@ -60,13 +65,21 @@ class _AgentResult {
   final String fallbackText;
 }
 
+typedef _UndoCallback = Future<void> Function();
+
 @riverpod
 class ChatSession extends _$ChatSession {
   bool _isCancelled = false;
+  AiCancellationToken? _cancelToken;
   Future<void>? _currentTask;
 
   @override
   Future<List<ChatMessage>> build(String? listId) async {
+    ref.onDispose(() {
+      _isCancelled = true;
+      _cancelToken?.cancel();
+      _currentTask = null;
+    });
     final service = ref.watch(firestoreServiceProvider);
     return service.loadChatMessages(listId);
   }
@@ -78,6 +91,7 @@ class ChatSession extends _$ChatSession {
     }
 
     _isCancelled = false;
+    _cancelToken = AiCancellationToken();
     final task = _sendMessageInternal(content);
     _currentTask = task;
     try {
@@ -85,6 +99,7 @@ class ChatSession extends _$ChatSession {
     } finally {
       if (_currentTask == task) {
         _currentTask = null;
+        _cancelToken = null;
       }
     }
   }
@@ -96,6 +111,7 @@ class ChatSession extends _$ChatSession {
     }
 
     _isCancelled = false;
+    _cancelToken = AiCancellationToken();
     final task = _sendMessageInternal('🎙️ Mensagem de voz', audioBytes: audioBytes, audioFormat: format);
     _currentTask = task;
     try {
@@ -103,6 +119,7 @@ class ChatSession extends _$ChatSession {
     } finally {
       if (_currentTask == task) {
         _currentTask = null;
+        _cancelToken = null;
       }
     }
   }
@@ -111,8 +128,9 @@ class ChatSession extends _$ChatSession {
     String? content,
     List<AgentStep>? executionSteps,
     bool? isError,
-    List<String>? suggestedReplies,
+    List<SuggestedReply>? suggestedReplies,
     InteractiveArtifact? artifact,
+    Map<String, dynamic>? actions,
   }) {
     final currentList = state.value ?? [];
     if (currentList.isEmpty) {
@@ -130,6 +148,7 @@ class ChatSession extends _$ChatSession {
       isError: isError,
       suggestedReplies: suggestedReplies,
       artifact: artifact,
+      actions: actions,
     );
 
     final newList = List<ChatMessage>.from(currentList);
@@ -229,6 +248,14 @@ class ChatSession extends _$ChatSession {
         return 'Agendando refeição no cardápio';
       case 'remove_meal_plan_entry':
         return 'Removendo refeição do cardápio';
+      case 'open_paywall':
+        return 'Abrindo tela de assinatura';
+      case 'request_app_review':
+        return 'Solicitando sua avaliação';
+      case 'prompt_app_update':
+        return 'Verificando atualizações';
+      case 'generate_referral_link':
+        return 'Gerando seu link de indicação';
       default:
         return 'Executando ferramenta $name';
     }
@@ -250,7 +277,8 @@ class ChatSession extends _$ChatSession {
     }
 
     final updatedSteps = List<AgentStep>.from(steps);
-    
+    final reverseCallbacks = <_UndoCallback>[];
+
     for (int i = updatedSteps.length - 1; i >= 0; i--) {
       final step = updatedSteps[i];
       if (step.status != AgentStepStatus.success) {
@@ -264,37 +292,60 @@ class ChatSession extends _$ChatSession {
 
       try {
         final listId = resultData['listId'] as String?;
-        
+
         if (resultData.containsKey('itemId') && listId != null) {
           final itemId = resultData['itemId'] as String;
+          final currentItems = await ref.read(shoppingListItemsProvider(listId).future);
+          final originalItem = currentItems.where((i) => i.id == itemId).firstOrNull;
           await ref.read(shoppingListItemsProvider(listId).notifier).removeItem(itemId);
+          if (originalItem != null) {
+            final capturedItem = originalItem;
+            reverseCallbacks.add(() async {
+              await ref.read(shoppingListItemsProvider(capturedItem.shoppingListId).notifier).restoreItem(capturedItem);
+            });
+          }
           updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
         } else if (resultData.containsKey('previousState') && listId != null) {
           final previousState = Map<String, dynamic>.from(resultData['previousState'] as Map);
           final item = ShoppingItem.fromJson(previousState);
+          final currentItems = List<ShoppingItem>.from(
+            await ref.read(shoppingListItemsProvider(listId).future),
+          );
           await ref.read(shoppingListItemsProvider(listId).notifier).restoreItem(item);
+          reverseCallbacks.add(() async {
+            await ref.read(shoppingListItemsProvider(listId).notifier).updateItems(currentItems);
+          });
           updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
         } else if (resultData.containsKey('previousStates')) {
           final previousStates = resultData['previousStates'] as List<dynamic>;
           final items = previousStates.map((e) {
             return ShoppingItem.fromJson(Map<String, dynamic>.from(e as Map));
           }).toList();
-          
+
           final itemsByList = <String, List<ShoppingItem>>{};
           for (final item in items) {
             itemsByList.putIfAbsent(item.shoppingListId, () {
               return [];
             }).add(item);
           }
-          
+
           for (final entry in itemsByList.entries) {
             await ref.read(shoppingListItemsProvider(entry.key).notifier).updateItems(entry.value);
           }
+          reverseCallbacks.add(() async {
+            for (final entry in itemsByList.entries) {
+              await ref.read(shoppingListItemsProvider(entry.key).notifier).updateItems(entry.value);
+            }
+          });
           updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
         } else if (resultData.containsKey('previousBudget')) {
           final previousBudgetNum = resultData['previousBudget'] as num?;
           final previousBudget = previousBudgetNum?.toDouble();
+          final currentBudget = ref.read(monthlyBudgetProvider).asData?.value;
           await ref.read(monthlyBudgetProvider.notifier).setBudget(previousBudget);
+          reverseCallbacks.add(() async {
+            await ref.read(monthlyBudgetProvider.notifier).setBudget(currentBudget);
+          });
           updatedSteps[i] = step.copyWith(status: AgentStepStatus.undone);
         }
       } on Exception catch (e, st) {
@@ -305,6 +356,15 @@ class ChatSession extends _$ChatSession {
           'listId': listId,
           'stepStatus': step.status.name,
         });
+        // Reverse already-applied undos to avoid partial Firestore state
+        for (final reverse in reverseCallbacks.reversed) {
+          try {
+            await reverse();
+          } on Exception {
+            // Best-effort reverse; log is already captured above
+          }
+        }
+        break;
       }
     }
 
@@ -313,16 +373,17 @@ class ChatSession extends _$ChatSession {
     newList[index] = updatedMessage;
     state = AsyncValue.data(newList);
 
-      try {
-        await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
-      } on Exception catch (e, st) {
-        LoggerService.error(e, stackTrace: st, message: '[Undo] Failed to save updated chat message', extra: {
-          'operation': 'undo_save_message',
-          'listId': listId,
-          'messageId': updatedMessage.id,
-        });
-      }
+    try {
+      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[Undo] Failed to save updated chat message', extra: {
+        'operation': 'undo_save_message',
+        'listId': listId,
+        'messageId': updatedMessage.id,
+      });
+    }
   }
+
 
   Future<void> _sendMessageInternal(
     String content, {
@@ -396,11 +457,11 @@ class ChatSession extends _$ChatSession {
     try {
       ref.read(chatThinkingProvider(listId).notifier).setState(true);
       ref.read(chatActivityProvider(listId).notifier).setState('Analisando sua solicitação...');
-      agentResult = await _agentLoop(aiService, executor, apiMessages, tools: tools);
+      agentResult = await _agentLoop(aiService, executor, apiMessages, tools: tools, cancelToken: _cancelToken);
       if (_isCancelled) {
         return;
       }
-    } on Exception catch (e, stackTrace) {
+    } on Object catch (e, stackTrace) {
       LoggerService.error(e, stackTrace: stackTrace, message: '[AgentLoop] ERRO no loop principal', extra: {
         'operation': 'agent_loop',
         'listId': listId,
@@ -422,7 +483,7 @@ class ChatSession extends _$ChatSession {
           LoggerService.error(e2, stackTrace: st2, message: '[AgentLoop] Failed to save error message', extra: {
             'operation': 'save_error_message',
             'listId': listId,
-            'errorContent': lastMsg.content.substring(0, lastMsg.content.length.clamp(0, 200)),
+            'errorContent': lastMsg.content.characters.take(200).toString(),
           });
         }
       }
@@ -439,17 +500,17 @@ class ChatSession extends _$ChatSession {
     bool isError = false;
     try {
       final systemPrompt = await _getCurrentSystemPrompt();
-      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools);
+      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools, cancelToken: _cancelToken);
       if (_isCancelled) {
         ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
         ref.read(chatStreamingProvider(listId).notifier).setState(false);
         return;
       }
-    } on Exception catch (e, st) {
+    } on Object catch (e, st) {
       LoggerService.error(e, stackTrace: st, message: '[StreamResponse] Erro no streaming', extra: {
         'operation': 'stream_response',
         'listId': listId,
-        'fallbackText': agentResult.fallbackText.substring(0, agentResult.fallbackText.length.clamp(0, 200)),
+        'fallbackText': agentResult.fallbackText.characters.take(200).toString(),
         'hasToolCalls': agentResult.messages.any((m) => m['tool_calls'] != null),
       });
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
@@ -468,10 +529,16 @@ class ChatSession extends _$ChatSession {
 
     final lastMsg = state.value?.lastOrNull;
     if (lastMsg != null) {
+      final extracted = _extractSuggestionsFromText(finalText);
+      final displayText = extracted.text;
+      final llmSuggestions = extracted.suggestions;
+      final suggestions = llmSuggestions ?? _generateSuggestedReplies(displayText, listId)
+          ?.map((s) => SuggestedReply(label: s, prompt: s, icon: 'chat'))
+          .toList();
       final finalMessage = lastMsg.copyWith(
-        content: finalText,
+        content: displayText,
         isError: isError,
-        suggestedReplies: _generateSuggestedReplies(finalText, listId),
+        suggestedReplies: suggestions,
       );
       final updatedMessages = <ChatMessage>[...state.value ?? []];
       updatedMessages[updatedMessages.length - 1] = finalMessage;
@@ -486,12 +553,35 @@ class ChatSession extends _$ChatSession {
   }
 
   Future<String> _getCurrentSystemPrompt() async {
+    final isPremium = await ref.read(premiumProvider.future);
+    final authState = ref.read(authProvider);
+    final user = authState.value;
+    final creationDate = user?.metadata.creationTime ?? DateTime.now();
+    final daysOfUse = DateTime.now().difference(creationDate).inDays;
+    
+    final userStats = ref.read(userStatsProvider);
+    final totalBought = userStats.totalItemsBought;
+    final streak = userStats.currentStreak;
+
+    final currentLocale = Intl.getCurrentLocale();
+
+    String appVersion = '1.0.0';
+    try {
+      final packageInfo = await ref.read(packageInfoProvider.future);
+      appVersion = packageInfo.version;
+    } on Exception {
+      // Ignore
+    }
+
     String prompt;
     final currentListId = listId;
+    int totalItemsCount = 0;
+
     if (currentListId != null) {
       final lists = await ref.read(shoppingListsProvider.future);
       final list = lists.where((l) => l.id == currentListId).firstOrNull;
       final items = await ref.read(shoppingListItemsProvider(currentListId).future);
+      totalItemsCount = items.length;
       prompt = _buildListSystemPrompt(list, items);
     } else {
       final lists = await ref.read(shoppingListsProvider.future);
@@ -499,9 +589,72 @@ class ChatSession extends _$ChatSession {
       for (final l in lists) {
         final items = await ref.read(shoppingListItemsProvider(l.id).future);
         allItems[l.name] = items;
+        totalItemsCount += items.length;
       }
       prompt = _buildGlobalSystemPrompt(allItems);
     }
+
+    final today = DateFormat('EEEE, dd/MM/yyyy', currentLocale).format(DateTime.now());
+
+    // Injetar Contexto de Status do Usuário
+    final userContext = '''
+\n--- STATUS DO USUÁRIO ---
+- Plano: ${isPremium ? 'Premium (Pro)' : 'Gratuito'}
+- Idioma do App: $currentLocale
+- Data atual: $today
+- Total de itens em todas as listas: $totalItemsCount
+- Itens comprados (histórico): $totalBought
+- Dias de uso do app: $daysOfUse dias
+- Streak de compras (dias seguidos): $streak dias
+- Versão do App: $appVersion
+--------------------------
+''';
+
+    prompt = userContext + prompt;
+
+    // Adicionar instruções de idioma
+    prompt += '''
+
+IMPORTANTE SOBRE O IDIOMA:
+O idioma de interface do usuário é $currentLocale. Você DEVE responder SEMPRE no idioma que o usuário utilizar para falar com você.
+Se ele falar em inglês, responda em inglês. Se falar em português, responda em português.
+Se o idioma do usuário for diferente de $currentLocale, use o idioma do usuário, mas mantenha termos técnicos do app conforme a interface.
+''';
+
+    // Sugestões contextuais geradas pela IA
+    prompt += '''
+
+GERAÇÃO DE SUGESTÕES:
+Ao final de cada resposta, inclua um bloco de sugestões prevendo o que o usuário vai querer fazer em seguida:
+
+[SUGGESTIONS]
+[{"label":"Texto do botão","prompt":"Texto a enviar quando tocar","icon":"add_shopping_cart"},{"label":"Ver receita","prompt":"Mostre a receita completa","icon":"menu_book"}]
+[/SUGGESTIONS]
+
+Regras:
+- Sempre 2-3 sugestões.
+- label: curto (<30 chars), acionável.
+- prompt: frase completa que será enviada ao tocar.
+- icon: escolha de add_shopping_cart, receipt_long, restaurant_menu, menu_book, local_fire_department, eco, cleaning_services, savings, trending_up, cake, shopping_cart, check_circle, delete, edit, share, map, search, lightbulb, tips_and_updates, organize, kitchen, grocery, calendar_month, schedule, group_add, archive, checklist, nutrition, price_check, repeat, star, timer, today.
+- Baseie as sugestões no contexto da conversa, nos itens da lista e no perfil do usuário.
+- Se não houver sugestões relevantes, omita o bloco.''';
+
+    // Adicionar instruções de gamificação
+    if (streak > 1 || totalBought > 10) {
+      prompt += '\nGAMIFICAÇÃO: Elogie o usuário pelo seu streak de $streak dias ou por ter comprado $totalBought itens no total. Faça-o se sentir um mestre da organização!';
+    }
+
+    // Adicionar instruções de ferramentas de sistema
+    prompt += '''
+
+AÇÕES DE SISTEMA:
+Você tem ferramentas especiais para interagir com o sistema do app:
+- `open_paywall`: Se o usuário for 'Gratuito' e tentar usar funções Pro (orçamento, compartilhamento, backup, Gen UI avançada) ou se demonstrar interesse em ajudar o app financeiramente, abra a tela de planos.
+- `request_app_review`: Se o usuário elogiar muito o app ou agradecer por uma ajuda valiosa, peça uma avaliação.
+- `prompt_app_update`: Se houver dúvidas sobre bugs ou novas funções, sugira atualizar.
+- `generate_referral_link`: Sugira isso se o usuário quiser Premium mas não puder pagar no momento. Explique que é um sistema 'Ganha-Ganha': ele ganha 7 dias de Pro e o amigo convidado também ganha 7 dias para testar.
+
+Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
     try {
       final profile = await ref.read(userProfileProvider.future);
@@ -540,6 +693,21 @@ class ChatSession extends _$ChatSession {
       return;
     }
     
+    _isCancelled = false;
+    _cancelToken = AiCancellationToken();
+    final task = _retryMessageInternal();
+    _currentTask = task;
+    try {
+      await task;
+    } finally {
+      if (_currentTask == task) {
+        _currentTask = null;
+        _cancelToken = null;
+      }
+    }
+  }
+
+  Future<void> _retryMessageInternal() async {
     final messages = state.value ?? [];
     if (messages.isEmpty) {
       return;
@@ -556,19 +724,24 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data(newMessages);
 
     // Encontra a última mensagem do usuário
-    final lastUserMessage = newMessages.lastWhere((m) => m.role == 'user', orElse: () => ChatMessage(role: 'user', content: ''));
-    if (lastUserMessage.content.isNotEmpty) {
+    final lastUserMessageIndex = newMessages.lastIndexWhere((m) => m.role == 'user');
+    if (lastUserMessageIndex != -1) {
+      final lastUserMessage = newMessages[lastUserMessageIndex];
       final content = lastUserMessage.content;
-      newMessages.removeLast();
-      await ref.read(firestoreServiceProvider).deleteChatMessage(listId, lastUserMessage.id);
-      state = AsyncValue.data(newMessages);
       
-      await sendMessage(content);
+      if (content.isNotEmpty) {
+        newMessages.removeAt(lastUserMessageIndex);
+        await ref.read(firestoreServiceProvider).deleteChatMessage(listId, lastUserMessage.id);
+        state = AsyncValue.data(newMessages);
+        
+        await _sendMessageInternal(content);
+      }
     }
   }
 
   void cancelRequest() {
     _isCancelled = true;
+    _cancelToken?.cancel();
     _currentTask = null;
     ref.read(chatStreamingProvider(listId).notifier).setState(false);
     ref.read(chatThinkingProvider(listId).notifier).setState(false);
@@ -588,6 +761,7 @@ class ChatSession extends _$ChatSession {
     ToolExecutor executor,
     List<Map<String, dynamic>> messages, {
     required List<Map<String, dynamic>> tools,
+    AiCancellationToken? cancelToken,
   }) async {
     const maxRetries = 2;
     const delays = [Duration(seconds: 1), Duration(seconds: 3)];
@@ -599,8 +773,9 @@ class ChatSession extends _$ChatSession {
             messages,
             systemPrompt: systemPrompt,
             tools: tools,
+            cancelToken: cancelToken,
           );
-        } on Exception {
+        } catch (_) {
           if (attempt == maxRetries) {
             rethrow;
           }
@@ -612,6 +787,9 @@ class ChatSession extends _$ChatSession {
 
     debugPrint('[AgentLoop] Iniciando com $_maxToolRounds rounds máximos, ${tools.length} ferramentas');
     for (var round = 0; round < _maxToolRounds; round++) {
+      if (_isCancelled || (cancelToken?.isCancelled ?? false)) {
+        break;
+      }
       final systemPrompt = await _getCurrentSystemPrompt();
       debugPrint('[AgentLoop] Round $round — enviando requisição para IA...');
       final response = await callWithRetry(systemPrompt);
@@ -650,6 +828,9 @@ class ChatSession extends _$ChatSession {
       _updateAssistantMessage(executionSteps: currentSteps);
 
       for (final toolCall in response.toolCalls) {
+        if (_isCancelled || (cancelToken?.isCancelled ?? false)) {
+        break;
+      }
         debugPrint('[AgentLoop] Round $round — executando ferramenta: ${toolCall.name}(args: ${toolCall.arguments})');
         
         _updateActivityForTool(toolCall.name);
@@ -663,7 +844,7 @@ class ChatSession extends _$ChatSession {
         _updateAssistantMessage(executionSteps: runningSteps);
         
         final result = await executor.execute(toolCall);
-        debugPrint('[AgentLoop] Round $round — resultado de ${toolCall.name}: ${result.content.substring(0, result.content.length.clamp(0, 200))}');
+        debugPrint('[AgentLoop] Round $round — resultado de ${toolCall.name}: ${result.content.characters.take(200)}');
 
         final finishedSteps = (state.value?.lastOrNull?.executionSteps ?? [])
             .map((step) {
@@ -675,7 +856,17 @@ class ChatSession extends _$ChatSession {
                   : step;
             })
             .toList();
-        if (toolCall.name == 'generate_artifact' && result.success && result.resultData != null) {
+        if (toolCall.name == 'create_recipe' && result.success && result.resultData != null) {
+          final recipeId = result.resultData!['recipeId'] as String?;
+          if (recipeId != null) {
+            _updateAssistantMessage(
+              executionSteps: finishedSteps,
+              actions: {'view_recipe': recipeId},
+            );
+          } else {
+            _updateAssistantMessage(executionSteps: finishedSteps);
+          }
+        } else if (toolCall.name == 'generate_artifact' && result.success && result.resultData != null) {
           final artifactJson = result.resultData!['artifact'] as Map<String, dynamic>;
           final artifact = InteractiveArtifact.fromJson(artifactJson);
           _updateAssistantMessage(
@@ -686,10 +877,13 @@ class ChatSession extends _$ChatSession {
           _updateAssistantMessage(executionSteps: finishedSteps);
         }
 
+        final toolContent = result.resultData != null
+            ? '${result.content}\n\nDADOS: ${jsonEncode(result.resultData)}'
+            : result.content;
         messages.add({
           'role': 'tool',
           'tool_call_id': toolCall.id,
-          'content': result.content,
+          'content': toolContent,
         });
       }
     }
@@ -749,8 +943,9 @@ class ChatSession extends _$ChatSession {
     AiService aiService,
     List<Map<String, dynamic>> messages,
     String systemPrompt,
-    List<Map<String, dynamic>> tools,
-  ) async {
+    List<Map<String, dynamic>> tools, {
+    AiCancellationToken? cancelToken,
+  }) async {
     final buffer = StringBuffer();
     final tagBuffer = StringBuffer();
     bool isSuppressing = false;
@@ -761,6 +956,7 @@ class ChatSession extends _$ChatSession {
         messages,
         systemPrompt: systemPrompt,
         tools: tools,
+        cancelToken: cancelToken,
       )) {
         if (isSuppressing) {
           tagBuffer.write(token);
@@ -812,6 +1008,7 @@ class ChatSession extends _$ChatSession {
         }
       }
       
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(buffer.toString());
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       final msgs = state.value ?? [];
       if (msgs.isNotEmpty && msgs.last.role == 'assistant') {
@@ -825,7 +1022,7 @@ class ChatSession extends _$ChatSession {
         'operation': 'stream_response_inner',
         'listId': listId,
         'bufferLength': buffer.length,
-        'bufferPreview': buffer.toString().substring(0, buffer.length.clamp(0, 100)),
+        'bufferPreview': buffer.toString().characters.take(100).toString(),
       });
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       if (buffer.isEmpty) {
@@ -836,6 +1033,7 @@ class ChatSession extends _$ChatSession {
   }
 
   Future<void> clearHistory() async {
+    cancelRequest();
     final firestoreService = ref.read(firestoreServiceProvider);
     await firestoreService.clearChatHistory(listId);
     state = const AsyncValue.data([]);
@@ -846,15 +1044,17 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data([...previousMessages, message]);
     
     try {
-        await ref.read(firestoreServiceProvider).saveChatMessage(listId, message);
-      } on Exception catch (e, st) {
-        LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save addMessage', extra: {
-          'operation': 'add_message',
-          'listId': listId,
-          'messageRole': message.role,
-          'messageLength': message.content.length,
-        });
-      }
+      await ref.read(firestoreServiceProvider).saveChatMessage(listId, message);
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save addMessage', extra: {
+        'operation': 'add_message',
+        'listId': listId,
+        'messageRole': message.role,
+        'messageLength': message.content.length,
+      });
+      // Rollback
+      state = AsyncValue.data(previousMessages);
+    }
   }
 
   Future<void> setFeedback(String messageId, int? feedback) async {
@@ -866,28 +1066,45 @@ class ChatSession extends _$ChatSession {
       return;
     }
 
+    final previousMessages = List<ChatMessage>.from(messages);
     final updatedMessage = messages[index].copyWith(feedback: feedback);
     final updatedMessages = List<ChatMessage>.from(messages);
     updatedMessages[index] = updatedMessage;
     state = AsyncValue.data(updatedMessages);
 
     try {
-        await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
-      } on Exception catch (e, st) {
-        LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save feedback', extra: {
-          'operation': 'set_feedback',
-          'listId': listId,
-          'messageId': messageId,
-          'feedback': feedback,
-        });
-      }
+      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
+    } on Exception catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save feedback', extra: {
+        'operation': 'set_feedback',
+        'listId': listId,
+        'messageId': messageId,
+        'feedback': feedback,
+      });
+      // Rollback
+      state = AsyncValue.data(previousMessages);
+    }
   }
-
   Future<void> regenerate(String messageId) async {
     if (_currentTask != null) {
       return;
     }
 
+    _isCancelled = false;
+    _cancelToken = AiCancellationToken();
+    final task = _regenerateInternal(messageId);
+    _currentTask = task;
+    try {
+      await task;
+    } finally {
+      if (_currentTask == task) {
+        _currentTask = null;
+        _cancelToken = null;
+      }
+    }
+  }
+
+  Future<void> _regenerateInternal(String messageId) async {
     final messages = state.value ?? [];
     final index = messages.indexWhere((m) {
       return m.id == messageId;
@@ -918,16 +1135,7 @@ class ChatSession extends _$ChatSession {
       unawaited(firestore.deleteChatMessage(listId, messages[i].id));
     }
 
-    _isCancelled = false;
-    final task = _sendAssistantResponse(userContent);
-    _currentTask = task;
-    try {
-      await task;
-    } finally {
-      if (_currentTask == task) {
-        _currentTask = null;
-      }
-    }
+    await _sendAssistantResponse(userContent);
   }
 
   Future<void> _sendAssistantResponse(String content) async {
@@ -958,11 +1166,11 @@ class ChatSession extends _$ChatSession {
     try {
       ref.read(chatThinkingProvider(listId).notifier).setState(true);
       ref.read(chatActivityProvider(listId).notifier).setState('Analisando sua solicitação...');
-      agentResult = await _agentLoop(aiService, executor, apiMessages, tools: tools);
+      agentResult = await _agentLoop(aiService, executor, apiMessages, tools: tools, cancelToken: _cancelToken);
       if (_isCancelled) {
         return;
       }
-    } on Exception catch (e, st) {
+    } on Object catch (e, st) {
       LoggerService.error(e, stackTrace: st, message: '[Regenerate] AgentLoop error', extra: {
         'operation': 'regenerate_agent_loop',
         'listId': listId,
@@ -987,13 +1195,13 @@ class ChatSession extends _$ChatSession {
     bool isError = false;
     try {
       final systemPrompt = await _getCurrentSystemPrompt();
-      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools);
-    } on Exception catch (e, st) {
+      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools, cancelToken: _cancelToken);
+    } on Object catch (e, st) {
       LoggerService.error(e, stackTrace: st, message: '[Regenerate] StreamResponse error', extra: {
         'operation': 'regenerate_stream_response',
         'listId': listId,
         'contentLength': content.length,
-        'fallbackText': agentResult.fallbackText.substring(0, agentResult.fallbackText.length.clamp(0, 200)),
+        'fallbackText': agentResult.fallbackText.characters.take(200).toString(),
       });
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       finalText = agentResult.fallbackText;
@@ -1005,10 +1213,17 @@ class ChatSession extends _$ChatSession {
     
     final lastMsg = state.value?.lastOrNull;
     if (lastMsg != null) {
+      final displayContent = finalText.isEmpty ? agentResult.fallbackText : finalText;
+      final extracted = _extractSuggestionsFromText(displayContent);
+      final displayText = extracted.text;
+      final llmSuggestions = extracted.suggestions;
+      final suggestions = llmSuggestions ?? _generateSuggestedReplies(displayText, listId)
+          ?.map((s) => SuggestedReply(label: s, prompt: s, icon: 'chat'))
+          .toList();
       final finalMessage = lastMsg.copyWith(
-        content: finalText.isEmpty ? agentResult.fallbackText : finalText,
+        content: displayText,
         isError: isError || finalText.isEmpty,
-        suggestedReplies: _generateSuggestedReplies(finalText, listId),
+        suggestedReplies: suggestions,
       );
       final updatedMessages = <ChatMessage>[...state.value ?? []];
       updatedMessages[updatedMessages.length - 1] = finalMessage;
@@ -1054,6 +1269,7 @@ class ChatSession extends _$ChatSession {
             }
           }
         }
+        break;
       case 'organize':
         final listId = this.listId;
         if (listId == null) {
@@ -1076,6 +1292,35 @@ class ChatSession extends _$ChatSession {
         await ref
             .read(shoppingListItemsProvider(listId).notifier)
             .updateItems(sorted);
+    }
+  }
+
+  ({String text, List<SuggestedReply>? suggestions}) _extractSuggestionsFromText(String content) {
+    if (content.isEmpty) {
+      return (text: content, suggestions: null);
+    }
+
+    const startTag = '[SUGGESTIONS]\n';
+    const endTag = '\n[/SUGGESTIONS]';
+
+    final startIdx = content.indexOf(startTag);
+    final endIdx = content.indexOf(endTag);
+
+    if (startIdx == -1 || endIdx == -1 || endIdx <= startIdx) {
+      return (text: content, suggestions: null);
+    }
+
+    final jsonStr = content.substring(startIdx + startTag.length, endIdx).trim();
+    final cleanText = content.replaceRange(startIdx, endIdx + endTag.length, '').trim();
+
+    try {
+      final parsed = jsonDecode(jsonStr) as List<dynamic>;
+      final suggestions = parsed.map((e) {
+        return SuggestedReply.fromJson(Map<String, dynamic>.from(e as Map));
+      }).toList();
+      return (text: cleanText, suggestions: suggestions);
+    } on Object catch (_) {
+      return (text: content, suggestions: null);
     }
   }
 
@@ -1102,7 +1347,6 @@ class ChatSession extends _$ChatSession {
       replies.add('Criar nova lista');
     }
 
-    // Add generic ones if needed
     if (replies.length < 2) {
       replies.add('Obrigado!');
     }
@@ -1154,6 +1398,12 @@ NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no co
 
 MEMÓRIA E PREFERÊNCIAS:
 Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
+
+⚠️ REGRAS ANTI-DUPLICAÇÃO (SIGA ESTRITAMENTE):
+- Antes de adicionar itens de uma receita à lista, SEMPRE use get_items primeiro para ver o que já existe na lista
+- Se um item já estiver na lista com o mesmo nome (ex: "Arroz" já existe), NÃO crie um novo — o sistema automaticamente incrementa a quantidade. Apenas confirme ao usuário.
+- Se uma receita com o mesmo nome já existir, NÃO crie outra. Informe o usuário e ofereça editar a existente ou usar outro nome.
+- NUNCA use clear_all_items a menos que o usuário peça EXPLICITAMENTE para limpar/esvaziar a lista. Não use para substituir itens ou reorganizar.
 
 Explique o que você fez de forma concisa e amigável em português.
 
@@ -1210,6 +1460,12 @@ NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no co
 
 MEMÓRIA E PREFERÊNCIAS:
 Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
+
+⚠️ REGRAS ANTI-DUPLICAÇÃO (SIGA ESTRITAMENTE):
+- Antes de adicionar itens de uma receita à lista, SEMPRE use get_items primeiro para ver o que já existe na lista
+- Se um item já estiver na lista com o mesmo nome (ex: "Arroz" já existe), NÃO crie um novo — o sistema automaticamente incrementa a quantidade. Apenas confirme ao usuário.
+- Se uma receita com o mesmo nome já existir, NÃO crie outra. Informe o usuário e ofereça editar a existente ou usar outro nome.
+- NUNCA use clear_all_items a menos que o usuário peça EXPLICITAMENTE para limpar/esvaziar a lista. Não use para substituir itens ou reorganizar.
 
 Explique o que você fez de forma concisa e amigável em português.''';
 

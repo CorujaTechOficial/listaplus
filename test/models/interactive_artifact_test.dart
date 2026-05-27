@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/models/interactive_artifact.dart';
+import 'package:shopping_list/domain/entities/interactive_artifact.dart';
 
 void main() {
   group('ArtifactControlType', () {

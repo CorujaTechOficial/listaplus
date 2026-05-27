@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class MealPlannerScreen extends ConsumerStatefulWidget {
@@ -27,9 +28,15 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
         : DateTime(_focusedDay.year, _focusedDay.month + 1, 0);
 
     final mealPlansAsync = ref.watch(mealPlansProvider(start: start, end: end));
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+          tooltip: l10n.openMenu,
+        ),
         title: const Text('Planejador de Refeições'),
         actions: [
           IconButton(

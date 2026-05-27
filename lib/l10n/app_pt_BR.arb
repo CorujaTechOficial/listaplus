@@ -3,7 +3,6 @@
   "appTitle": "Lista de Compras",
   "lists": "Listas",
   "pantry": "Dispensa",
-
   "cancel": "Cancelar",
   "save": "Salvar",
   "create": "Criar",
@@ -28,7 +27,6 @@
   "loading": "Carregando...",
   "fieldRequired": "Campo obrigatório",
   "addedFeedback": "Adicionados!",
-
   "selectedItems": "{count,plural, one{{count} selecionado} other{{count} selecionados}}",
   "estimated": "Estimado",
   "alreadyPurchased": "Já comprado",
@@ -59,7 +57,6 @@
   "confirmDeleteTitle": "Confirmar",
   "confirmContent": "Remover {count} item(ns)?",
   "archiveList": "Concluir Compra",
-
   "pantryAppBar": "Dispensa",
   "generateShoppingList": "Gerar lista de compras",
   "pantryEmpty": "Dispensa vazia",
@@ -80,7 +77,6 @@
   "restocked": "{name} reabastecido para {quantity} {unit}",
   "confirmRemovePantry": "Remover \"{name}\" da dispensa?",
   "pantryEditTitle": "Editar {name}",
-
   "settingsAppBar": "Configurações",
   "language": "Idioma",
   "languagePortuguese": "Português (Brasil)",
@@ -101,7 +97,6 @@
   "version": "Versão",
   "privacy": "Privacidade",
   "termsOfUse": "Termos de uso",
-
   "backupTitle": "Backup",
   "backupPremiumDescription": "Backup e exportação é premium",
   "exportData": "Exportar dados",
@@ -111,7 +106,6 @@
   "importJsonTitle": "Importar JSON",
   "importJsonHint": "Cole o JSON do backup aqui...",
   "backupExported": "Backup exportado!",
-
   "budgetAppBar": "Orçamento Mensal",
   "budgetPremiumLocked": "Orçamento mensal global é premium",
   "budgetUpgradePrompt": "Faça upgrade para desbloquear",
@@ -122,7 +116,6 @@
   "budgetValueLabel": "Valor (R$)",
   "setBudgetTitle": "Orçamento Mensal",
   "budgetAmountSpent": "{spent} / {budget}",
-
   "filterAll": "Todos",
   "filterPending": "Pendentes",
   "filterPurchased": "Comprados",
@@ -130,7 +123,6 @@
   "sortCategory": "Categoria",
   "sortDate": "Data",
   "sortManual": "Manual",
-
   "addItem": "Adicionar Item",
   "itemName": "Nome do item",
   "quantityShort": "Qtd",
@@ -138,11 +130,9 @@
   "category": "Categoria",
   "estimatedPrice": "Preço estimado (R$)",
   "addItemPrice": "Preço estimado",
-
   "editItem": "Editar Item",
   "quantityFull": "Quantidade",
   "editItemPrice": "Preço estimado",
-
   "addToPantry": "Adicionar à Dispensa",
   "addToPantryPrompt": "Deseja adicionar \"{name}\" à sua Dispensa?",
   "yes": "Sim",
@@ -152,10 +142,8 @@
   "trackStock": "Rastrear estoque",
   "trackStockActive": "Aparece na sugestão de compras",
   "trackStockInactive": "Não gera sugestão de compra",
-
   "createListDialog": "Criar Lista",
   "renameListDialog": "Renomear Lista",
-
   "listHistory": "Histórico de Listas",
   "myLists": "Minhas Listas",
   "viewActive": "Ver Ativas",
@@ -171,7 +159,6 @@
   "removeSharedListTitle": "Remover lista compartilhada",
   "removeSharedListContent": "Remover \"{name}\" da sua lista de listas? A lista original não será afetada.",
   "createNewList": "Criar nova lista",
-
   "aiAssistant": "Assistente de IA",
   "aiAssistantDescription": "Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.",
   "generalAssistant": "Assistente Geral",
@@ -183,32 +170,24 @@
   "generalHelp": "Como posso ajudar com suas compras hoje?",
   "chatSubtitle": "Peça sugestões de itens, receitas or dicas de economia.",
   "aiError": "Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.",
-
   "listaPlusTitle": "Lista Plus",
   "loginPrompt": "Faça login para desbloquear\nrecursos premium",
   "signInGoogle": "Entrar com Google",
   "signInApple": "Entrar com Apple",
   "continueAsGuest": "Continuar como visitante",
   "loginError": "Erro ao fazer login: {error}",
-
   "paywallTitle": "Lista Plus Premium",
-
   "premiumUpgrade": "Faça upgrade para desbloquear",
-
-
   "itemRemoved": "Item removido",
   "undo": "Desfazer",
-
   "emptyListTitle": "Sua lista está vazia",
   "emptyListSubtitle": "Adicione itens para começar",
   "noListFoundTitle": "Nenhuma lista encontrada",
   "noListFoundSubtitle": "Crie sua primeira lista para começar",
   "createFirstList": "Criar Primeira Lista",
-
   "listBudgetTitle": "Orçamento da Lista",
   "budgetAmountLabel": "Valor do orçamento",
   "removeBudget": "Remover",
-
   "prefUnlimitedLists": "Listas ilimitadas",
   "prefSharing": "Compartilhar listas",
   "prefFullHistory": "Histórico completo",
@@ -218,7 +197,6 @@
   "prefAIAssistant": "Assistente de IA Personalizado",
   "prefUnlimitedPantry": "Dispensa ilimitada",
   "prefInteractiveArtifacts": "Artefatos Interativos da IA",
-
   "themeGreen": "Verde",
   "themeBlue": "Azul",
   "themePurple": "Roxo",
@@ -229,17 +207,13 @@
   "themeAmber": "Âmbar",
   "themeTeal": "Teal",
   "themeBrown": "Marrom",
-
   "catFruits": "Frutas",
   "catCleaning": "Limpeza",
   "catBeverages": "Bebidas",
   "catBakery": "Padaria",
   "catOthers": "Outros",
-
   "unitPack": "pacote",
-
   "shareSubject": "Lista de Compras",
-
   "monthlyBudgetTitle": "Orçamento Mensal",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "deficitItems": "{deficit,plural, one{{deficit} item precisa ser comprado} other{{deficit} itens precisam ser comprados}}",
@@ -275,8 +249,6 @@
   "shoppingModeHeader": "MODO COMPRAS",
   "shareAsText": "Enviar itens como texto formatado",
   "shareRealtime": "Sincronizar em tempo real com outras pessoas",
-  "rename": "Renomear",
-
   "quickRecipe": "Receita rápida",
   "quickRecipePrompt": "Sugira receitas com os itens da minha lista.",
   "economyTips": "Dicas de economia",
@@ -285,7 +257,13 @@
   "organizeAislesPrompt": "Organize por corredores de mercado.",
   "recipeSuggestion": "Sugestão de receita",
   "aiCreditsRemaining": "{remaining} créditos restantes",
-  "@aiCreditsRemaining": { "placeholders": { "remaining": { "type": "int" } } },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "addAllToList": "Adicionar tudo à lista",
   "organizeByAisles": "Organizar por corredores",
   "voiceTranscriptionTooltip": "Digitar por voz (Grátis)",
@@ -294,5 +272,86 @@
   "voiceCommandContent": "Fale naturalmente para gerenciar sua lista!\n\nExemplos:\n• 'Adicione pão, queijo e presunto'\n• 'Remova o sabão em pó'\n• 'Mude o tema para azul'\n\nEste é um recurso exclusivo do Lista Plus Premium.",
   "voiceCommandPlanBtn": "Ver Planos",
   "itemsAddedSuccess": "Itens adicionados à lista!",
-  "viewList": "Ver lista"
+  "viewList": "Ver lista",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Enviar Feedback",
+  "feedbackPrompt": "O que você gostaria de compartilhar?",
+  "feedbackTypeBug": "Relatar Bug",
+  "feedbackTypeBugHint": "Algo não está funcionando",
+  "feedbackTypeSuggestion": "Sugestão",
+  "feedbackTypeSuggestionHint": "Ideia para melhorar o app",
+  "feedbackTypeTranslation": "Problema de Tradução",
+  "feedbackTypeTranslationHint": "Tradução incorreta ou não natural",
+  "feedbackTypeFeature": "Pedido de Funcionalidade",
+  "feedbackTypeFeatureHint": "Funcionalidade que você gostaria de ver",
+  "feedbackTypeOther": "Outro",
+  "feedbackTypeOtherHint": "Outro tipo de feedback",
+  "feedbackHint": "Descreva seu feedback em detalhes...",
+  "feedbackSend": "Enviar Feedback",
+  "feedbackSending": "Enviando...",
+  "feedbackThankYou": "Obrigado!",
+  "feedbackThankYouMessage": "Seu feedback foi recebido e nos ajuda a melhorar o Lista Plus para todos.",
+  "feedbackBack": "Voltar",
+  "feedbackError": "Erro ao enviar: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Tentar novamente",
+  "feedbackSettingsTitle": "Enviar Feedback",
+  "feedbackSettingsSubtitle": "Relatar bugs, sugerir melhorias ou corrigir traduções",
+  "viewItems": "Ver itens",
+  "addDirectToList": "Adicionar direto na lista",
+  "unlockFullResponse": "Desbloquear Resposta Completa",
+  "listening": "Ouvindo...",
+  "viewPro": "Ver Pro",
+  "errorOscillation": "Isso pode ocorrer devido a oscilações de rede ou indisponibilidade temporária. Por favor, tente novamente.",
+  "viewDetails": "Ver Detalhes",
+  "marketMode": "Modo Mercado",
+  "longHistoryWarning": "Histórico longo: o assistente foca nas últimas mensagens para otimizar o desempenho.",
+  "howCanIHelp": "Como posso ajudar?",
+  "itemsPurchasedShort": "{purchased}/{total} comprados",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Perguntas sugeridas:",
+  "noItemsInList": "Nenhum item na lista",
+  "estimatedCost": "Estimado",
+  "chatSubtitleShort": "Pergunte sobre preços, receitas, organização...",
+  "voiceProFeature": "Comandos de voz avançados são Pro. Ativando ditado básico...",
+  "aiEnergy": "Energia da IA",
+  "switchList": "Trocar lista",
+  "finishShopping": "Concluir Compras",
+  "welcomeAiAssistant": "Bem-vindo ao Assistente IA",
+  "errorLoadingChat": "Ops! Algo deu errado ao carregar o chat.",
+  "noMessagesFound": "Nenhuma mensagem encontrada",
+  "activeListening": "Escuta Ativa",
+  "backToChat": "Voltar para o Chat",
+  "quickReplies": "Respostas rápidas:",
+  "createListToStartAi": "Crie uma lista de compras para começar a usar o chat inteligente.",
+  "searchInConversation": "Pesquisar na conversa...",
+  "shoppingAssistant": "Assistente de compras",
+  "whatToDoWithItem": "O que deseja fazer com este item?",
+  "itemsPurchasedCount": "{purchased} de {total} comprados",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Verifique sua conexão ou tente novamente mais tarde."
 }

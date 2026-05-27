@@ -15,7 +15,7 @@ class FakeGoogleSignInAccount extends Fake implements GoogleSignInAccount {
       : _throwError = throwError;
 
   @override
-  Future<GoogleSignInAuthentication> get authentication async {
+  GoogleSignInAuthentication get authentication {
     final error = _throwError;
     if (error != null) {
       throw error;
@@ -26,11 +26,10 @@ class FakeGoogleSignInAccount extends Fake implements GoogleSignInAccount {
 
 class FakeGoogleSignInAuthentication extends Fake
     implements GoogleSignInAuthentication {
-  @override
-  String? get accessToken => 'fake-access-token';
+  String get accessToken => 'fake-access-token';
 
   @override
-  String? get idToken => 'fake-id-token';
+  String get idToken => 'fake-id-token';
 }
 
 class FakeGoogleSignIn extends Fake implements GoogleSignIn {
@@ -48,14 +47,27 @@ class FakeGoogleSignIn extends Fake implements GoogleSignIn {
         _signInError = signInError,
         _signOutError = signOutError;
 
-  @override
-  Future<GoogleSignInAccount?> signIn() async {
+  Future<GoogleSignInAccount?> signIn({List<String>? scopes}) async {
     signInCallCount++;
     final error = _signInError;
     if (error != null) {
       throw error;
     }
     return _account;
+  }
+
+  @override
+  Future<GoogleSignInAccount> authenticate({List<String> scopeHint = const <String>[]}) async {
+    signInCallCount++;
+    final error = _signInError;
+    if (error != null) {
+      throw error;
+    }
+    final account = _account;
+    if (account == null) {
+      throw Exception('Sign in cancelled');
+    }
+    return account;
   }
 
   @override
@@ -143,13 +155,14 @@ void main() {
       fakeAccount = FakeGoogleSignInAccount(fakeAuthTokens);
     });
 
-    test('returns null when Google sign-in is cancelled', () async {
+    test('throws when Google sign-in is cancelled', () async {
       final googleSignIn = FakeGoogleSignIn(account: null);
       final service = AuthService(auth: mockAuth, googleSignIn: googleSignIn);
 
-      final result = await service.signInWithGoogle();
-
-      expect(result, isNull);
+      expect(
+        () async => service.signInWithGoogle(),
+        throwsA(isA<Exception>()),
+      );
       expect(googleSignIn.signInCallCount, 1);
     });
 

@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print, deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod/riverpod.dart' show Override;
+import 'package:flutter_riverpod/flutter_riverpod.dart' show ProviderScope;
+import 'package:riverpod_annotation/riverpod_annotation.dart' show Override;
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
@@ -48,6 +48,13 @@ Widget wrapWithProviders(Widget child, {StorageBackend? backend, RevenueCatServi
 
 void main() {
   testWidgets('debug layout', (tester) async {
+    // Flush any pending animation timers at test end
+    addTearDown(() async {
+      for (int i = 0; i < 5; i++) {
+        await tester.pump(const Duration(milliseconds: 50));
+      }
+    });
+
     final list = ShoppingList(id: 'list-1', name: 'Compras do Mês');
     final item = ShoppingItem(
       shoppingListId: 'list-1',
@@ -66,7 +73,10 @@ void main() {
       backend: backend,
     ));
     
-    // Single pump to avoid shimmer timeout
+    await tester.pump();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    // Final pump to flush any remaining animation timers
     await tester.pump();
 
     // Check layout

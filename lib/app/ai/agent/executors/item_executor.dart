@@ -2,9 +2,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import '../tools/tool_core.dart';
 import 'package:shopping_list/models/unit.dart';
-import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 
 class ItemExecutor {
   const ItemExecutor();
@@ -57,7 +58,13 @@ class ItemExecutor {
         success: false,
       );
     }
-    final items = await container.read(shoppingListItemsProvider(listId).future);
+    final service = container.read(firestoreServiceProvider);
+    final lists = await container.read(shoppingListsProvider.future);
+    final list = lists.where((l) => l.id == listId).firstOrNull;
+    final ownerUid = list?.ownerUid;
+    final items = ownerUid != null
+        ? await service.loadItemsFromUser(ownerUid, listId)
+        : await service.loadItems(listId);
     final itemsJson = items.map((i) => i.toJson()).toList();
     return ToolResult(
       toolCallId: '',
@@ -68,13 +75,30 @@ class ItemExecutor {
 
   Future<ToolResult> addItem(ProviderContainer container, Map<String, dynamic> args) async {
     final listId = args['listId'] as String;
-    final name = args['name'] as String;
+    final name = (args['name'] as String).trim();
     final quantity = (args['quantity'] as num?)?.toInt() ?? 1;
     final unitLabel = args['unit'] as String?;
     final categoryLabel = args['category'] as String?;
     final price = args['estimatedPrice'] != null ? (args['estimatedPrice'] as num).toDouble() : null;
-    final itemId = const Uuid().v4();
 
+    final items = await container.read(shoppingListItemsProvider(listId).future);
+    final existingItem = items.cast<ShoppingItem?>().firstWhere(
+      (item) => item!.name.trim().toLowerCase() == name.toLowerCase(),
+      orElse: () => null,
+    );
+    if (existingItem != null) {
+      final updatedItem = existingItem.copyWith(
+        quantity: existingItem.quantity + quantity,
+      );
+      await container.read(shoppingListItemsProvider(listId).notifier).updateItem(updatedItem);
+      return ToolResult(
+        toolCallId: '',
+        content: 'Item "$name" já estava na lista. Quantidade incrementada para ${updatedItem.quantity}.',
+        resultData: {'itemId': existingItem.id, 'listId': listId, 'wasDuplicate': true},
+      );
+    }
+
+    final itemId = const Uuid().v4();
     await container.read(shoppingListItemsProvider(listId).notifier).addItem(
       listId: listId,
       name: name,

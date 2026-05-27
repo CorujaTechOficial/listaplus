@@ -1,0 +1,562 @@
+{
+  "@@locale": "th",
+  "appTitle": "รายการช้อปปิ้ง",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "รายการ",
+  "pantry": "ตู้กับข้าว",
+  "@_Common": "description: Common actions",
+  "cancel": "ยกเลิก",
+  "save": "บันทึก",
+  "create": "สร้าง",
+  "add": "เพิ่ม",
+  "remove": "ลบออก",
+  "delete": "ลบ",
+  "edit": "แก้ไข",
+  "copy": "คัดลอก",
+  "retry": "ลองอีกครั้ง",
+  "regenerate": "สร้างใหม่",
+  "copiedToClipboard": "คัดลอกไปยังคลิปบอร์ดแล้ว",
+  "confirm": "ยืนยัน",
+  "close": "ปิด",
+  "import": "นำเข้า",
+  "rename": "เปลี่ยนชื่อ",
+  "upgrade": "อัปเกรด",
+  "clear": "ล้าง",
+  "error": "ข้อผิดพลาด: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "ข้อผิดพลาด: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "เกิดข้อผิดพลาดในการดำเนินการซื้อ กรุณาลองอีกครั้ง",
+  "restoreError": "เกิดข้อผิดพลาดในการกู้คืนการซื้อ กรุณาลองอีกครั้ง",
+  "loading": "กำลังโหลด...",
+  "fieldRequired": "จำเป็นต้องกรอก",
+  "addedFeedback": "เพิ่มแล้ว!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "เลือก {count} รายการ",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "ประมาณการ",
+  "alreadyPurchased": "ซื้อแล้ว",
+  "clearList": "ล้างรายการ",
+  "clearPurchased": "ล้างที่ซื้อแล้ว",
+  "share": "แชร์",
+  "shareViaCode": "แชร์ผ่านโค้ด",
+  "importViaCode": "นำเข้าผ่านโค้ด",
+  "listAssistant": "ผู้ช่วยรายการ",
+  "globalAssistant": "ผู้ช่วยทั่วไป",
+  "becomePremium": "เป็นพรีเมียม",
+  "manageSubscription": "จัดการการสมัครสมาชิก",
+  "completePurchase": "ดำเนินการซื้อให้เสร็จ",
+  "confirmClearList": "ลบรายการทั้งหมด?",
+  "shareListTitle": "แชร์รายการ",
+  "shareThisCode": "แชร์โค้ดนี้:",
+  "validForLimitedTime": "ใช้ได้ภายในเวลาที่กำหนด",
+  "importListTitle": "นำเข้ารายการ",
+  "enterCodeHint": "ป้อนโค้ด",
+  "confirmArchiveTitle": "ดำเนินการซื้อให้เสร็จ",
+  "confirmArchiveContent": "ดำเนินการซื้อนี้และเก็บรายการ?",
+  "complete": "เสร็จสิ้น",
+  "listArchived": "เก็บรายการสำเร็จแล้ว!",
+  "listAdded": "เพิ่ม {listName} แล้ว!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "ซื้อ",
+  "unmark": "ยกเลิกเครื่องหมาย",
+  "confirmDeleteItems": "ลบ {count} รายการ?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "ยืนยัน",
+  "confirmContent": "ลบ {count} รายการ?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "เก็บรายการ",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "ตู้กับข้าว",
+  "generateShoppingList": "สร้างรายการช้อปปิ้ง",
+  "pantryEmpty": "ตู้กับข้าวว่าง",
+  "pantryEmptySubtitle": "เพิ่มสินค้าที่คุณต้องการมีไว้ที่บ้าน",
+  "itemsNeedPurchase": "ต้องซื้อ {deficit} รายการ",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "ไม่มีรายการที่ต้องซื้อ",
+  "newPantryList": "ช้อปปิ้งในตู้กับข้าว",
+  "newListTitle": "รายการช้อปปิ้งใหม่",
+  "itemsWillBeAdded": "จะเพิ่ม {count} รายการ",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "ชื่อรายการ",
+  "listCreated": "สร้างรายการ \"{name}\" พร้อม {count} รายการแล้ว",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "ไม่ติดตาม",
+  "markAsPurchased": "ทำเครื่องหมายว่าซื้อแล้ว",
+  "editPantryItem": "แก้ไข {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "ปริมาณที่เหมาะสม",
+  "currentQuantity": "ปริมาณปัจจุบัน",
+  "consumed": "บริโภคแล้ว",
+  "restocked": "เติม {name} เป็น {quantity} {unit} แล้ว",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "ลบ \"{name}\" ออกจากตู้กับข้าว?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "แก้ไข {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "การตั้งค่า",
+  "language": "ภาษา",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "ค่าเริ่มต้นของระบบ",
+  "appearance": "ลักษณะ",
+  "light": "สว่าง",
+  "system": "ระบบ",
+  "dark": "มืด",
+  "themeColor": "สีธีม",
+  "finance": "การเงิน",
+  "monthlyBudgetNav": "งบประมาณรายเดือน",
+  "budgetSubtitle": "ติดตามค่าใช้จ่ายรายเดือนของคุณ",
+  "data": "ข้อมูล",
+  "backupNav": "สำรองข้อมูล",
+  "backupSubtitle": "ส่งออกหรือนำเข้าข้อมูลของคุณ",
+  "about": "เกี่ยวกับ",
+  "version": "เวอร์ชัน",
+  "privacy": "ความเป็นส่วนตัว",
+  "termsOfUse": "ข้อกำหนดในการใช้งาน",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "สำรองข้อมูล",
+  "backupPremiumDescription": "การสำรองและส่งออกข้อมูลเป็นฟีเจอร์พรีเมียม",
+  "exportData": "ส่งออกข้อมูล",
+  "exportDataSubtitle": "บันทึกรายการทั้งหมดเป็น JSON",
+  "importData": "นำเข้าข้อมูล",
+  "importDataSubtitle": "กู้คืนรายการจาก JSON",
+  "importJsonTitle": "นำเข้า JSON",
+  "importJsonHint": "วาง JSON ที่สำรองไว้ที่นี่...",
+  "backupExported": "ส่งออกข้อมูลสำรองแล้ว!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "งบประมาณรายเดือน",
+  "budgetPremiumLocked": "งบประมาณรายเดือนโดยรวมเป็นฟีเจอร์พรีเมียม",
+  "budgetUpgradePrompt": "อัปเกรดเพื่อปลดล็อก",
+  "noBudgetDefined": "ไม่ได้ตั้งงบประมาณ",
+  "totalEstimated": "ประมาณการรวม: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "ตั้งงบประมาณ",
+  "budgetLists": "รายการ",
+  "budgetValueLabel": "จำนวนเงิน",
+  "setBudgetTitle": "งบประมาณรายเดือน",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "ทั้งหมด",
+  "filterPending": "รอดำเนินการ",
+  "filterPurchased": "ซื้อแล้ว",
+  "sortName": "ชื่อ",
+  "sortCategory": "หมวดหมู่",
+  "sortDate": "วันที่",
+  "sortManual": "ด้วยตนเอง",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "เพิ่มรายการ",
+  "itemName": "ชื่อรายการ",
+  "quantityShort": "จำนวน",
+  "unit": "หน่วย",
+  "category": "หมวดหมู่",
+  "estimatedPrice": "ราคาประมาณ",
+  "addItemPrice": "ราคาประมาณ",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "แก้ไขรายการ",
+  "quantityFull": "ปริมาณ",
+  "editItemPrice": "ราคาประมาณ",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "เพิ่มในตู้กับข้าว",
+  "addToPantryPrompt": "เพิ่ม \"{name}\" ในตู้กับข้าวของคุณ?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "ใช่",
+  "productName": "ชื่อสินค้า",
+  "idealQty": "ปริมาณที่เหมาะสม",
+  "currentQty": "ปริมาณปัจจุบัน",
+  "trackStock": "ติดตามสต็อก",
+  "trackStockActive": "แสดงในคำแนะนำการช้อปปิ้ง",
+  "trackStockInactive": "ไม่สร้างคำแนะนำการช้อปปิ้ง",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "สร้างรายการ",
+  "renameListDialog": "เปลี่ยนชื่อรายการ",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "ประวัติรายการ",
+  "myLists": "รายการของฉัน",
+  "viewActive": "ดูที่ใช้งานอยู่",
+  "viewHistory": "ดูประวัติ",
+  "noArchivedLists": "ไม่มีรายการที่เก็บแล้ว",
+  "noActiveLists": "ไม่มีรายการที่ใช้งานอยู่",
+  "completedOn": "เสร็จสิ้นเมื่อ {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "แชร์แล้ว",
+  "restore": "กู้คืน",
+  "removeSharedTooltip": "ลบออก",
+  "deleteListTitle": "ลบรายการ",
+  "deleteListContent": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{name}\"? รายการทั้งหมดจะถูกลบออก",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "ลบรายการที่แชร์",
+  "removeSharedListContent": "ลบ \"{name}\" ออกจากรายการของคุณ? รายการต้นฉบับจะไม่ได้รับผลกระทบ",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "สร้างรายการใหม่",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "ผู้ช่วย AI",
+  "aiAssistantDescription": "รับคำแนะนำอัจฉริยะ สูตรอาหาร และเคล็ดลับส่วนตัวกับผู้ช่วย AI ของเรา",
+  "generalAssistant": "ผู้ช่วยทั่วไป",
+  "clearHistory": "ล้างประวัติ",
+  "clearHistoryConfirm": "ล้างข้อความทั้งหมดในเซสชันนี้?",
+  "chatHint": "พิมพ์ข้อความของคุณ...",
+  "chatError": "ข้อผิดพลาดในการโหลดแชท: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "จะช่วยคุณเกี่ยวกับรายการของคุณได้อย่างไร?",
+  "generalHelp": "วันนี้จะช่วยคุณเกี่ยวกับการช้อปปิ้งได้อย่างไร?",
+  "chatSubtitle": "สอบถามคำแนะนำรายการ สูตรอาหาร หรือเคล็ดลับประหยัดเงิน",
+  "aiError": "ขออภัย เกิดข้อผิดพลาดในการประมวลผลคำขอของคุณ โปรดตรวจสอบการเชื่อมต่อของคุณหรือลองอีกครั้งในภายหลัง",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "เข้าสู่ระบบเพื่อปลดล็อก\nฟีเจอร์พรีเมียม",
+  "signInGoogle": "เข้าสู่ระบบด้วย Google",
+  "signInApple": "เข้าสู่ระบบด้วย Apple",
+  "continueAsGuest": "ดำเนินการต่อในฐานะแขก",
+  "loginError": "ข้อผิดพลาดในการเข้าสู่ระบบ: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "อัปเกรดเพื่อปลดล็อก",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "ลบรายการแล้ว",
+  "undo": "เลิกทำ",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "รายการของคุณว่างเปล่า",
+  "emptyListSubtitle": "เพิ่มรายการเพื่อเริ่มต้น",
+  "noListFoundTitle": "ไม่พบรายการ",
+  "noListFoundSubtitle": "สร้างรายการแรกของคุณเพื่อเริ่มต้น",
+  "createFirstList": "สร้างรายการแรก",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "งบประมาณรายการ",
+  "budgetAmountLabel": "วงเงินงบประมาณ",
+  "removeBudget": "ลบออก",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "รายการไม่จำกัด",
+  "prefSharing": "แชร์รายการ",
+  "prefFullHistory": "ประวัติทั้งหมด",
+  "prefExportData": "ส่งออกข้อมูล",
+  "prefCustomThemes": "ธีมที่กำหนดเอง",
+  "prefMonthlyBudget": "งบประมาณรายเดือนโดยรวม",
+  "prefAIAssistant": "ผู้ช่วย AI ส่วนตัว",
+  "prefUnlimitedPantry": "ตู้กับข้าวไม่จำกัด",
+  "prefInteractiveArtifacts": "สิ่งประดิษฐ์ AI แบบโต้ตอบ",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "เขียว",
+  "themeBlue": "น้ำเงิน",
+  "themePurple": "ม่วง",
+  "themeRed": "แดง",
+  "themeOrange": "ส้ม",
+  "themePink": "ชมพู",
+  "themeIndigo": "คราม",
+  "themeAmber": "อำพัน",
+  "themeTeal": "ทีล",
+  "themeBrown": "น้ำตาล",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "ผลไม้",
+  "catCleaning": "ทำความสะอาด",
+  "catBeverages": "เครื่องดื่ม",
+  "catBakery": "เบเกอรี่",
+  "catOthers": "อื่นๆ",
+  "@_Unit": "description: Unit",
+  "unitPack": "แพ็ค",
+  "@_Share": "description: Sharing",
+  "shareSubject": "รายการช้อปปิ้ง",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "งบประมาณรายเดือน",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "ลบรายการ",
+  "pantryItemRemoved": "ลบรายการแล้ว",
+  "deficitItems": "ต้องซื้อ {deficit} รายการ",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "ยอดรวมตะกร้า",
+  "restockLabel": "เติมสต็อก",
+  "advancedFeatures": "ฟีเจอร์ขั้นสูง",
+  "selectAll": "เลือกทั้งหมด",
+  "deselectAll": "ยกเลิกการเลือกทั้งหมด",
+  "monthlyBudgetAppBar": "งบประมาณรายเดือน",
+  "budgetEditTitle": "งบประมาณรายเดือน",
+  "budgetDashboardTitle": "แดชบอร์ด",
+  "selectListForDashboard": "เลือกรายการเพื่อดูแดชบอร์ด",
+  "spendingAnalysis": "การวิเคราะห์ค่าใช้จ่าย",
+  "noItemsToAnalyze": "ไม่มีรายการในรายการที่ต้องวิเคราะห์",
+  "markItemsToSeeAnalysis": "ทำเครื่องหมายรายการว่าซื้อแล้วเพื่อดูการวิเคราะห์",
+  "totalSpending": "ค่าใช้จ่ายทั้งหมด",
+  "spendingByCategory": "ค่าใช้จ่ายตามหมวดหมู่",
+  "achievements": "ความสำเร็จ",
+  "exportPdfExcel": "ส่งออก PDF/Excel",
+  "exportPdf": "ส่งออกเป็น PDF",
+  "exportExcel": "ส่งออกเป็น Excel",
+  "organizingAi": "กำลังจัดระเบียบด้วย AI...",
+  "yesLabel": "ใช่",
+  "noLabel": "ไม่",
+  "shareListText": "รายการช้อปปิ้งของฉัน",
+  "emptyListAddItems": "รายการของคุณว่างเปล่า! โปรดเพิ่มรายการก่อน ℹ️",
+  "listOrganizedMagic": "จัดระเบียบรายการตามหมวดหมู่อย่างมหัศจรรย์! ✨",
+  "shoppingMode": "โหมดช้อปปิ้ง",
+  "smartOrganization": "การจัดระเบียบอัจฉริยะ",
+  "savings": "การประหยัด",
+  "shoppingModeHeader": "โหมดช้อปปิ้ง",
+  "shareAsText": "ส่งรายการเป็นข้อความที่จัดรูปแบบแล้ว",
+  "shareRealtime": "ซิงค์แบบเรียลไทม์กับผู้อื่น",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "สูตรด่วน",
+  "quickRecipePrompt": "แนะนำสูตรอาหารด้วยรายการจากรายการของฉัน",
+  "economyTips": "เคล็ดลับประหยัด",
+  "economyTipsPrompt": "ฉันจะประหยัดเงินในการซื้อครั้งนี้ได้อย่างไร?",
+  "organizeAisles": "จัดเรียงตามโซน",
+  "organizeAislesPrompt": "จัดเรียงตามโซนในร้าน",
+  "recipeSuggestion": "คำแนะนำสูตรอาหาร",
+  "aiCreditsRemaining": "เหลือ {remaining} เครดิต",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "เพิ่มทั้งหมดในรายการ",
+  "organizeByAisles": "จัดเรียงตามโซน",
+  "voiceTranscriptionTooltip": "พิมพ์ด้วยเสียง (ฟรี)",
+  "aiVoiceCommandTooltip": "คำสั่งเสียง AI (พรีเมียม)",
+  "voiceCommandTitle": "คำสั่งเสียง AI",
+  "voiceCommandContent": "พูดอย่างเป็นธรรมชาติเพื่อจัดการรายการของคุณ!\n\nตัวอย่าง:\n• 'เพิ่มขนมปัง ชีส และแฮม'\n• 'ลบน้ำยาซักผ้า'\n• 'เปลี่ยนธีมเป็นสีน้ำเงิน'\n\nนี่คือฟีเจอร์พิเศษของ Lista Plus Premium",
+  "voiceCommandPlanBtn": "ดูแผน",
+  "itemsAddedSuccess": "เพิ่มรายการในรายการสำเร็จแล้ว!",
+  "viewList": "ดูรายการ",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "ส่งความคิดเห็น",
+  "feedbackPrompt": "คุณต้องการแบ่งปันอะไร?",
+  "feedbackTypeBug": "รายงานข้อบกพร่อง",
+  "feedbackTypeBugHint": "มีบางอย่างทำงานไม่ถูกต้อง",
+  "feedbackTypeSuggestion": "ข้อเสนอแนะ",
+  "feedbackTypeSuggestionHint": "ไอเดียในการปรับปรุงแอป",
+  "feedbackTypeTranslation": "ปัญหาการแปล",
+  "feedbackTypeTranslationHint": "การแปลที่ไม่ถูกต้องหรือไม่เป็นธรรมชาติ",
+  "feedbackTypeFeature": "ขอคุณสมบัติ",
+  "feedbackTypeFeatureHint": "คุณสมบัติที่คุณอยากให้มี",
+  "feedbackTypeOther": "อื่นๆ",
+  "feedbackTypeOtherHint": "ความคิดเห็นประเภทอื่น",
+  "feedbackHint": "อธิบายความคิดเห็นของคุณโดยละเอียด...",
+  "feedbackSend": "ส่งความคิดเห็น",
+  "feedbackSending": "กำลังส่ง...",
+  "feedbackThankYou": "ขอบคุณ!",
+  "feedbackThankYouMessage": "ความคิดเห็นของคุณได้รับแล้วและช่วยให้เราปรับปรุง Lista Plus สำหรับทุกคน",
+  "feedbackBack": "กลับ",
+  "feedbackError": "ข้อผิดพลาดในการส่ง: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "ลองอีกครั้ง",
+  "feedbackSettingsTitle": "ส่งความคิดเห็น",
+  "feedbackSettingsSubtitle": "รายงานข้อบกพร่อง แนะนำการปรับปรุง หรือแก้ไขการแปล",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

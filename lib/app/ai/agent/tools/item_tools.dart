@@ -1,6 +1,6 @@
 import 'tool_core.dart';
 
-final getItemsTool = const AgentTool(
+const getItemsTool = AgentTool(
   name: 'get_items',
   description: 'Lista os itens de uma lista de compras. Se nenhum listId for informado, usa a lista atual.',
   parameters: [
@@ -13,9 +13,10 @@ final getItemsTool = const AgentTool(
   ],
 );
 
-final addItemTool = const AgentTool(
+const addItemTool = AgentTool(
   name: 'add_item',
-  description: 'Adiciona um item à lista de compras',
+  description: 'Adiciona um item à lista de compras. '
+      'Se um item com o mesmo nome já existir na lista, a quantidade será automaticamente incrementada em vez de criar um item duplicado.',
   parameters: [
     AgentToolParameter(name: 'listId', type: 'string', description: 'ID da lista', required: true),
     AgentToolParameter(name: 'name', type: 'string', description: 'Nome do item', required: true),
@@ -32,7 +33,7 @@ final addItemTool = const AgentTool(
   ],
 );
 
-final updateItemTool = const AgentTool(
+const updateItemTool = AgentTool(
   name: 'update_item',
   description: 'Atualiza os dados de um item existente',
   parameters: [
@@ -51,7 +52,7 @@ final updateItemTool = const AgentTool(
   ],
 );
 
-final removeItemTool = const AgentTool(
+const removeItemTool = AgentTool(
   name: 'remove_item',
   description: 'Remove um item da lista de compras',
   parameters: [
@@ -59,7 +60,7 @@ final removeItemTool = const AgentTool(
   ],
 );
 
-final togglePurchasedTool = const AgentTool(
+const togglePurchasedTool = AgentTool(
   name: 'toggle_purchased',
   description: 'Alterna o status de comprado/não comprado de um item',
   parameters: [
@@ -67,7 +68,7 @@ final togglePurchasedTool = const AgentTool(
   ],
 );
 
-final togglePurchasedBatchTool = const AgentTool(
+const togglePurchasedBatchTool = AgentTool(
   name: 'toggle_purchased_batch',
   description: 'Marca ou desmarca múltiplos itens como comprados de uma vez',
   parameters: [
@@ -82,7 +83,7 @@ final togglePurchasedBatchTool = const AgentTool(
   ],
 );
 
-final incrementQuantityTool = const AgentTool(
+const incrementQuantityTool = AgentTool(
   name: 'increment_quantity',
   description: 'Aumenta em 1 a quantidade de um item',
   parameters: [
@@ -90,7 +91,7 @@ final incrementQuantityTool = const AgentTool(
   ],
 );
 
-final decrementQuantityTool = const AgentTool(
+const decrementQuantityTool = AgentTool(
   name: 'decrement_quantity',
   description: 'Diminui em 1 a quantidade de um item (mínimo 1)',
   parameters: [
@@ -98,7 +99,7 @@ final decrementQuantityTool = const AgentTool(
   ],
 );
 
-final clearPurchasedTool = const AgentTool(
+const clearPurchasedTool = AgentTool(
   name: 'clear_purchased',
   description: 'Remove todos os itens marcados como comprados de uma lista',
   parameters: [
@@ -106,15 +107,17 @@ final clearPurchasedTool = const AgentTool(
   ],
 );
 
-final clearAllItemsTool = const AgentTool(
+const clearAllItemsTool = AgentTool(
   name: 'clear_all_items',
-  description: 'Remove TODOS os itens de uma lista de compras',
+  description: '⚠️ PERIGOSO: Remove TODOS os itens de uma lista de compras. '
+      'USE APENAS quando o usuário pedir EXPLICITAMENTE para limpar/esvaziar/deletar todos os itens. '
+      'NUNCA use esta ferramenta para substituir itens ou reorganizar a lista.',
   parameters: [
     AgentToolParameter(name: 'listId', type: 'string', description: 'ID da lista', required: true),
   ],
 );
 
-final reorderItemsTool = const AgentTool(
+const reorderItemsTool = AgentTool(
   name: 'reorder_items',
   description: 'Reordena um item dentro da lista movendo de uma posição para outra',
   parameters: [
@@ -124,7 +127,7 @@ final reorderItemsTool = const AgentTool(
   ],
 );
 
-final allItemTools = [
+const allItemTools = [
   getItemsTool,
   addItemTool,
   updateItemTool,

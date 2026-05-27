@@ -1,0 +1,562 @@
+{
+  "@@locale": "fa_AF",
+  "appTitle": "لیست خرید",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "لیست‌ها",
+  "pantry": "انباری",
+  "@_Common": "description: Common actions",
+  "cancel": "لغو",
+  "save": "ذخیره",
+  "create": "ایجاد",
+  "add": "افزودن",
+  "remove": "حذف",
+  "delete": "پاک کردن",
+  "edit": "ویرایش",
+  "copy": "کپی",
+  "retry": "تلاش مجدد",
+  "regenerate": "بازتولید",
+  "copiedToClipboard": "در کلیپ‌بورد کپی شد",
+  "confirm": "تأیید",
+  "close": "بستن",
+  "import": "وارد کردن",
+  "rename": "تغییر نام",
+  "upgrade": "ارتقا",
+  "clear": "پاک کردن",
+  "error": "خطا: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "خطا: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "خطا در پردازش خرید. دوباره تلاش کنید.",
+  "restoreError": "خطا در بازیابی خریدها. دوباره تلاش کنید.",
+  "loading": "در حال بارگذاری...",
+  "fieldRequired": "فیلد الزامی",
+  "addedFeedback": "افزوده شد!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} انتخاب شده} other{{count} انتخاب شده}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "تخمینی",
+  "alreadyPurchased": "قبلاً خریداری شده",
+  "clearList": "پاک کردن لیست",
+  "clearPurchased": "پاک کردن خریداری‌شده‌ها",
+  "share": "اشتراک‌گذاری",
+  "shareViaCode": "اشتراک‌گذاری با کد",
+  "importViaCode": "وارد کردن با کد",
+  "listAssistant": "دستیار لیست",
+  "globalAssistant": "دستیار عمومی",
+  "becomePremium": "پریمیوم شوید",
+  "manageSubscription": "مدیریت اشتراک",
+  "completePurchase": "تکمیل خرید",
+  "confirmClearList": "همه موارد حذف شوند؟",
+  "shareListTitle": "اشتراک‌گذاری لیست",
+  "shareThisCode": "این کد را به اشتراک بگذارید:",
+  "validForLimitedTime": "معتبر برای مدت محدود",
+  "importListTitle": "وارد کردن لیست",
+  "enterCodeHint": "کد را وارد کنید",
+  "confirmArchiveTitle": "تکمیل خرید",
+  "confirmArchiveContent": "این خرید تکمیل و لیست بایگانی شود؟",
+  "complete": "تکمیل",
+  "listArchived": "لیست با موفقیت بایگانی شد!",
+  "listAdded": "{listName} اضافه شد!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "خرید",
+  "unmark": "لغو علامت",
+  "confirmDeleteItems": "{count} آیتم حذف شود؟",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "تأیید",
+  "confirmContent": "{count} آیتم حذف شود؟",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "بایگانی لیست",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "انباری",
+  "generateShoppingList": "ایجاد لیست خرید",
+  "pantryEmpty": "انباری خالی است",
+  "pantryEmptySubtitle": "محصولاتی را که می‌خواهید در خانه داشته باشید اضافه کنید",
+  "itemsNeedPurchase": "{deficit} آیتم باید خریداری شود",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "هیچ آیتمی نیاز به خرید ندارد",
+  "newPantryList": "خرید از انباری",
+  "newListTitle": "لیست خرید جدید",
+  "itemsWillBeAdded": "{count} آیتم اضافه خواهد شد",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "نام لیست",
+  "listCreated": "لیست \"{name}\" با {count} آیتم ایجاد شد",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "بدون پیگیری",
+  "markAsPurchased": "علامت‌گذاری به عنوان خریداری شده",
+  "editPantryItem": "ویرایش {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "مقدار ایده‌آل",
+  "currentQuantity": "مقدار فعلی",
+  "consumed": "مصرف شده",
+  "restocked": "{name} به {quantity} {unit} شارژ شد",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "\"{name}\" از انباری حذف شود؟",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "ویرایش {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "تنظیمات",
+  "language": "زبان",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "پیش‌فرض سیستم",
+  "appearance": "ظاهر",
+  "light": "روشن",
+  "system": "سیستم",
+  "dark": "تاریک",
+  "themeColor": "رنگ تم",
+  "finance": "مالی",
+  "monthlyBudgetNav": "بودجه ماهانه",
+  "budgetSubtitle": "هزینه‌های ماهانه خود را پیگیری کنید",
+  "data": "داده‌ها",
+  "backupNav": "پشتیبان‌گیری",
+  "backupSubtitle": "داده‌های خود را صادر یا وارد کنید",
+  "about": "درباره",
+  "version": "نسخه",
+  "privacy": "حریم خصوصی",
+  "termsOfUse": "شرایط استفاده",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "پشتیبان‌گیری",
+  "backupPremiumDescription": "پشتیبان‌گیری و صادر کردن یک ویژگی پریمیوم است",
+  "exportData": "صادر کردن داده‌ها",
+  "exportDataSubtitle": "ذخیره همه لیست‌ها به صورت JSON",
+  "importData": "وارد کردن داده‌ها",
+  "importDataSubtitle": "بازیابی لیست‌ها از یک JSON",
+  "importJsonTitle": "وارد کردن JSON",
+  "importJsonHint": "JSON پشتیبان را اینجا بچسبانید...",
+  "backupExported": "پشتیبان صادر شد!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "بودجه ماهانه",
+  "budgetPremiumLocked": "بودجه ماهانه سراسری یک ویژگی پریمیوم است",
+  "budgetUpgradePrompt": "برای باز کردن قفل ارتقا دهید",
+  "noBudgetDefined": "بودجه‌ای تنظیم نشده",
+  "totalEstimated": "مجموع تخمینی: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "تنظیم بودجه",
+  "budgetLists": "لیست‌ها",
+  "budgetValueLabel": "مبلغ",
+  "setBudgetTitle": "بودجه ماهانه",
+  "budgetAmountSpent": "{spent} از {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "همه",
+  "filterPending": "در انتظار",
+  "filterPurchased": "خریداری شده",
+  "sortName": "نام",
+  "sortCategory": "دسته‌بندی",
+  "sortDate": "تاریخ",
+  "sortManual": "دستی",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "افزودن آیتم",
+  "itemName": "نام آیتم",
+  "quantityShort": "تعداد",
+  "unit": "واحد",
+  "category": "دسته‌بندی",
+  "estimatedPrice": "قیمت تخمینی",
+  "addItemPrice": "قیمت تخمینی",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "ویرایش آیتم",
+  "quantityFull": "مقدار",
+  "editItemPrice": "قیمت تخمینی",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "افزودن به انباری",
+  "addToPantryPrompt": "\"{name}\" به انباری شما اضافه شود؟",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "بله",
+  "productName": "نام محصول",
+  "idealQty": "مقدار ایده‌آل",
+  "currentQty": "مقدار فعلی",
+  "trackStock": "پیگیری موجودی",
+  "trackStockActive": "در پیشنهادات خرید نمایش داده می‌شود",
+  "trackStockInactive": "پیشنهاد خرید ایجاد نمی‌کند",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "ایجاد لیست",
+  "renameListDialog": "تغییر نام لیست",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "تاریخچه لیست",
+  "myLists": "لیست‌های من",
+  "viewActive": "مشاهده فعال‌ها",
+  "viewHistory": "مشاهده تاریخچه",
+  "noArchivedLists": "هیچ لیست بایگانی شده‌ای وجود ندارد",
+  "noActiveLists": "هیچ لیست فعالی وجود ندارد",
+  "completedOn": "تکمیل شده در {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "اشتراک‌گذاری شده",
+  "restore": "بازیابی",
+  "removeSharedTooltip": "حذف",
+  "deleteListTitle": "حذف لیست",
+  "deleteListContent": "آیا مطمئن هستید که می‌خواهید \"{name}\" را حذف کنید؟ همه آیتم‌ها حذف خواهند شد.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "حذف لیست اشتراک‌گذاری شده",
+  "removeSharedListContent": "\"{name}\" از لیست‌های شما حذف شود؟ لیست اصلی تحت تأثیر قرار نخواهد گرفت.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "ایجاد لیست جدید",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "دستیار هوش مصنوعی",
+  "aiAssistantDescription": "با دستیار هوش مصنوعی ما پیشنهادات هوشمند، دستور پخت و نکات شخصی دریافت کنید.",
+  "generalAssistant": "دستیار عمومی",
+  "clearHistory": "پاک کردن تاریخچه",
+  "clearHistoryConfirm": "همه پیام‌های این جلسه پاک شود؟",
+  "chatHint": "پیام خود را بنویسید...",
+  "chatError": "خطا در بارگذاری چت: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "چگونه می‌توانم با لیست شما کمک کنم؟",
+  "generalHelp": "امروز چگونه می‌توانم در خرید شما کمک کنم؟",
+  "chatSubtitle": "برای پیشنهاد آیتم، دستور پخت یا نکات صرفه‌جویی بپرسید.",
+  "aiError": "متأسفانه، خطایی در پردازش درخواست شما رخ داد. اتصال خود را بررسی کنید یا بعداً دوباره تلاش کنید.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "لیستا پلاس",
+  "loginPrompt": "برای دسترسی به ویژگی‌های\nپریمیوم وارد شوید",
+  "signInGoogle": "ورود با گوگل",
+  "signInApple": "ورود با اپل",
+  "continueAsGuest": "ادامه به عنوان مهمان",
+  "loginError": "خطای ورود: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "لیستا پلاس پریمیوم",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "برای باز کردن قفل ارتقا دهید",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "آیتم حذف شد",
+  "undo": "واگردانی",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "لیست شما خالی است",
+  "emptyListSubtitle": "برای شروع، آیتم اضافه کنید",
+  "noListFoundTitle": "لیستی یافت نشد",
+  "noListFoundSubtitle": "اولین لیست خود را ایجاد کنید",
+  "createFirstList": "ایجاد اولین لیست",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "بودجه لیست",
+  "budgetAmountLabel": "مبلغ بودجه",
+  "removeBudget": "حذف",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "لیست‌های نامحدود",
+  "prefSharing": "اشتراک‌گذاری لیست‌ها",
+  "prefFullHistory": "تاریخچه کامل",
+  "prefExportData": "صادر کردن داده‌ها",
+  "prefCustomThemes": "تم‌های سفارشی",
+  "prefMonthlyBudget": "بودجه ماهانه سراسری",
+  "prefAIAssistant": "دستیار هوش مصنوعی شخصی",
+  "prefUnlimitedPantry": "انباری نامحدود",
+  "prefInteractiveArtifacts": "محصولات تعاملی هوش مصنوعی",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "سبز",
+  "themeBlue": "آبی",
+  "themePurple": "بنفش",
+  "themeRed": "قرمز",
+  "themeOrange": "نارنجی",
+  "themePink": "صورتی",
+  "themeIndigo": "نیلی",
+  "themeAmber": "کهربایی",
+  "themeTeal": "فیروزه‌ای",
+  "themeBrown": "قهوه‌ای",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "میوه‌ها",
+  "catCleaning": "نظافت",
+  "catBeverages": "نوشیدنی‌ها",
+  "catBakery": "نان‌وایی",
+  "catOthers": "سایر",
+  "@_Unit": "description: Unit",
+  "unitPack": "بسته",
+  "@_Share": "description: Sharing",
+  "shareSubject": "لیست خرید",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "بودجه ماهانه",
+  "monthlyBudgetSpent": "{spent} از {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "حذف لیست",
+  "pantryItemRemoved": "آیتم حذف شد",
+  "deficitItems": "{deficit,plural, one{{deficit} آیتم باید خریداری شود} other{{deficit} آیتم باید خریداری شود}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "مجموع سبد خرید",
+  "restockLabel": "شارژ مجدد",
+  "advancedFeatures": "ویژگی‌های پیشرفته",
+  "selectAll": "انتخاب همه",
+  "deselectAll": "لغو انتخاب همه",
+  "monthlyBudgetAppBar": "بودجه ماهانه",
+  "budgetEditTitle": "بودجه ماهانه",
+  "budgetDashboardTitle": "داشبورد",
+  "selectListForDashboard": "یک لیست را برای مشاهده داشبورد انتخاب کنید.",
+  "spendingAnalysis": "تحلیل هزینه",
+  "noItemsToAnalyze": "هیچ آیتمی در لیست برای تحلیل وجود ندارد.",
+  "markItemsToSeeAnalysis": "آیتم‌ها را به عنوان خریداری شده علامت‌گذاری کنید تا تحلیل را ببینید.",
+  "totalSpending": "مجموع هزینه",
+  "spendingByCategory": "هزینه بر اساس دسته‌بندی",
+  "achievements": "دستاوردها",
+  "exportPdfExcel": "صادر کردن PDF/Excel",
+  "exportPdf": "صادر کردن به صورت PDF",
+  "exportExcel": "صادر کردن به صورت Excel",
+  "organizingAi": "در حال سازماندهی با هوش مصنوعی...",
+  "yesLabel": "بله",
+  "noLabel": "خیر",
+  "shareListText": "لیست خرید من",
+  "emptyListAddItems": "لیست شما خالی است! ابتدا آیتم اضافه کنید. ℹ️",
+  "listOrganizedMagic": "لیست به صورت جادویی بر اساس دسته‌بندی سازماندهی شد! ✨",
+  "shoppingMode": "حالت خرید",
+  "smartOrganization": "سازماندهی هوشمند",
+  "savings": "صرفه‌جویی",
+  "shoppingModeHeader": "حالت خرید",
+  "shareAsText": "ارسال آیتم‌ها به صورت متن فرمت‌شده",
+  "shareRealtime": "همگام‌سازی هم‌زمان با دیگران",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "دستور پخت سریع",
+  "quickRecipePrompt": "دستور پخت با آیتم‌های لیست من پیشنهاد کن.",
+  "economyTips": "نکات صرفه‌جویی",
+  "economyTipsPrompt": "چگونه می‌توانم در این خرید پول صرفه‌جویی کنم؟",
+  "organizeAisles": "سازماندهی بر اساس راهرو",
+  "organizeAislesPrompt": "بر اساس راهروهای فروشگاه سازماندهی کن.",
+  "recipeSuggestion": "پیشنهاد دستور پخت",
+  "aiCreditsRemaining": "{remaining} اعتبار باقی‌مانده",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "افزودن همه به لیست",
+  "organizeByAisles": "سازماندهی بر اساس راهرو",
+  "voiceTranscriptionTooltip": "تایپ صوتی (رایگان)",
+  "aiVoiceCommandTooltip": "فرمان صوتی هوش مصنوعی (پریمیوم)",
+  "voiceCommandTitle": "فرمان صوتی هوش مصنوعی",
+  "voiceCommandContent": "به طور طبیعی صحبت کنید تا لیست خود را مدیریت کنید!\n\nنمونه‌ها:\n• 'نان، پنیر و ژامبون اضافه کن'\n• 'مواد شوینده را حذف کن'\n• 'تم را به آبی تغییر بده'\n\nاین یک ویژگی انحصاری لیستا پلاس پریمیوم است.",
+  "voiceCommandPlanBtn": "مشاهده طرح‌ها",
+  "itemsAddedSuccess": "آیتم‌ها با موفقیت به لیست اضافه شدند!",
+  "viewList": "مشاهده لیست",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "ارسال بازخورد",
+  "feedbackPrompt": "چه چیزی می‌خواهید به اشتراک بگذارید؟",
+  "feedbackTypeBug": "گزارش باگ",
+  "feedbackTypeBugHint": "چیزی کار نمی‌کند",
+  "feedbackTypeSuggestion": "پیشنهاد",
+  "feedbackTypeSuggestionHint": "ایده برای بهبود برنامه",
+  "feedbackTypeTranslation": "مشکل ترجمه",
+  "feedbackTypeTranslationHint": "ترجمه نادرست یا نامناسب",
+  "feedbackTypeFeature": "درخواست ویژگی",
+  "feedbackTypeFeatureHint": "ویژگی که دوست دارید ببینید",
+  "feedbackTypeOther": "سایر",
+  "feedbackTypeOtherHint": "سایر انواع بازخورد",
+  "feedbackHint": "بازخورد خود را به طور کامل توضیح دهید...",
+  "feedbackSend": "ارسال بازخورد",
+  "feedbackSending": "در حال ارسال...",
+  "feedbackThankYou": "متشکرم!",
+  "feedbackThankYouMessage": "بازخورد شما دریافت شد و به ما کمک می‌کند تا لیستا پلاس را برای همه بهبود دهیم.",
+  "feedbackBack": "بازگشت",
+  "feedbackError": "خطا در ارسال: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "تلاش مجدد",
+  "feedbackSettingsTitle": "ارسال بازخورد",
+  "feedbackSettingsSubtitle": "گزارش باگ، پیشنهاد بهبود، یا اصلاح ترجمه‌ها",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

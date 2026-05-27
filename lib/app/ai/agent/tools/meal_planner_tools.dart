@@ -1,6 +1,6 @@
 import 'tool_core.dart';
 
-final getMealPlanTool = const AgentTool(
+const getMealPlanTool = AgentTool(
   name: 'get_meal_plan',
   description: 'Obtém o planejamento de refeições para um período específico',
   parameters: [
@@ -9,7 +9,7 @@ final getMealPlanTool = const AgentTool(
   ],
 );
 
-final scheduleMealTool = const AgentTool(
+const scheduleMealTool = AgentTool(
   name: 'schedule_meal',
   description: 'Agenda uma receita para um dia e tipo de refeição específicos no planejador.',
   parameters: [
@@ -23,7 +23,7 @@ final scheduleMealTool = const AgentTool(
   ],
 );
 
-final removeMealPlanEntryTool = const AgentTool(
+const removeMealPlanEntryTool = AgentTool(
   name: 'remove_meal_plan_entry',
   description: 'Remove uma entrada do planejamento de refeições',
   parameters: [
@@ -31,4 +31,4 @@ final removeMealPlanEntryTool = const AgentTool(
   ],
 );
 
-final allMealPlannerTools = [getMealPlanTool, scheduleMealTool, removeMealPlanEntryTool];
+const allMealPlannerTools = [getMealPlanTool, scheduleMealTool, removeMealPlanEntryTool];

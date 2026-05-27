@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
+import 'package:shopping_list/core/providers/auth_provider.dart';
+import 'package:shopping_list/services/auth_service.dart';
 import 'package:shopping_list/services/analytics_service.dart';
-import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/domain/entities/unit.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
+import 'package:shopping_list/app/lists/providers/categories_provider.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import '../helpers/fake_storage_backend.dart';
 import '../helpers/fake_revenuecat_service.dart';
+import '../helpers/fake_ai_service.dart';
+import '../helpers/fake_categories_notifier.dart';
 
 Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend}) {
   return ProviderScope(
@@ -17,14 +25,28 @@ Widget wrapWithProviders(Widget child, {required FakeStorageBackend backend}) {
       firestoreServiceProvider.overrideWithValue(backend),
       revenueCatServiceProvider.overrideWithValue(FakeRevenueCatService()),
       analyticsServiceProvider.overrideWithValue(AnalyticsService()),
+      authServiceProvider.overrideWithValue(AuthService(auth: MockFirebaseAuth())),
+      aiServiceProvider.overrideWithValue(FakeAiService()),
+      categoriesProvider.overrideWith(() => FakeCategoriesNotifier()),
     ],
     child: MaterialApp(
       locale: const Locale('pt', 'BR'),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(body: child),
+      home: _ProviderKeeper(child: Scaffold(body: child)),
     ),
   );
+}
+
+class _ProviderKeeper extends ConsumerWidget {
+  const _ProviderKeeper({required this.child});
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(shoppingListsProvider);
+    return child;
+  }
 }
 
 void main() {
@@ -35,7 +57,17 @@ void main() {
       backend = FakeStorageBackend();
     });
 
+    Future<void> setLargeScreen(WidgetTester tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+    }
+
     testWidgets('renders all fields', (tester) async {
+      await setLargeScreen(tester);
       await tester.pumpWidget(wrapWithProviders(
         const AddPantryItemDialog(),
         backend: backend,
@@ -49,6 +81,7 @@ void main() {
     });
 
     testWidgets('shows error when name is empty', (tester) async {
+      await setLargeScreen(tester);
       await tester.pumpWidget(wrapWithProviders(
         const AddPantryItemDialog(),
         backend: backend,
@@ -61,6 +94,7 @@ void main() {
     });
 
     testWidgets('adds item successfully', (tester) async {
+      await setLargeScreen(tester);
       await tester.pumpWidget(wrapWithProviders(
         const AddPantryItemDialog(),
         backend: backend,
@@ -84,6 +118,7 @@ void main() {
     });
 
     testWidgets('can toggle track stock', (tester) async {
+      await setLargeScreen(tester);
       await tester.pumpWidget(wrapWithProviders(
         const AddPantryItemDialog(),
         backend: backend,

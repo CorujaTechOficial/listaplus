@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
-import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/domain/entities/unit.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';

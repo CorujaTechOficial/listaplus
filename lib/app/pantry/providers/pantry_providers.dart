@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/models/pantry_item.dart';
-import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/domain/entities/unit.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 
 part 'pantry_providers.g.dart';

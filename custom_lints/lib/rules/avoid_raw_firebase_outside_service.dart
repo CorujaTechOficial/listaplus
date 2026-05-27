@@ -15,7 +15,7 @@ class AvoidRawFirebaseOutsideService extends DartLintRule {
   @override
   void run(
     CustomLintResolver resolver,
-    ErrorReporter reporter,
+    DiagnosticReporter reporter,
     CustomLintContext context,
   ) {
     final path = resolver.path;
@@ -33,7 +33,7 @@ class AvoidRawFirebaseOutsideService extends DartLintRule {
 
   void _checkFirebaseAccess(
     PrefixedIdentifier node,
-    ErrorReporter reporter,
+    DiagnosticReporter reporter,
   ) {
     if (node.prefix.name == 'FirebaseFirestore' &&
         node.identifier.name == 'instance') {

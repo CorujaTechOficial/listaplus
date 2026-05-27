@@ -1,0 +1,265 @@
+<h2>Design Detalhado — Abordagem B (List Hero)</h2>
+<p class="subtitle">Mockup refinado com todas as mudancas propostas. Cada secao esta numerada.</p>
+
+<div class="split">
+  <!-- LEFT: Empty State -->
+  <div class="mockup" data-choice="empty-state" onclick="toggleSelect(this)">
+    <div class="mockup-header">1. Empty State (chat vazio)</div>
+    <div class="mockup-body" style="padding:0;">
+      <div style="width:100%;background:white;display:flex;flex-direction:column;min-height:500px;">
+        <!-- AppBar -->
+        <div style="background:#4CAF50;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="color:white;font-size:16px;">🤖</span>
+            <div>
+              <div style="color:white;font-size:14px;font-weight:700;">Minha Lista</div>
+              <div style="color:rgba(255,255,255,0.7);font-size:10px;">Assistente de compras</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="background:rgba(255,255,255,0.2);border-radius:10px;padding:3px 8px;display:flex;align-items:center;gap:4px;">
+              <span style="font-size:10px;color:white;">⚡</span>
+              <div style="width:36px;height:4px;background:rgba(255,255,255,0.3);border-radius:2px;overflow:hidden;">
+                <div style="width:70%;height:100%;background:#A5D6A7;border-radius:2px;"></div>
+              </div>
+              <span style="font-size:9px;color:white;font-weight:600;">7</span>
+            </div>
+            <span style="color:white;font-size:14px;cursor:pointer;">⇄</span>
+            <span style="color:white;font-size:14px;cursor:pointer;">⋮</span>
+          </div>
+        </div>
+
+        <!-- List Hero Card -->
+        <div style="padding:12px 16px 8px;">
+          <div style="background:linear-gradient(135deg,#E8F5E9 0%,#C8E6C9 100%);border-radius:16px;padding:14px;border:1px solid #A5D6A7;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span style="font-size:14px;">🛒</span>
+                <span style="font-size:13px;font-weight:800;color:#1B5E20;">Lista de Compras</span>
+              </div>
+              <span style="font-size:11px;background:#4CAF50;color:white;padding:3px 10px;border-radius:10px;font-weight:700;">3/8</span>
+            </div>
+            <div style="height:6px;background:rgba(0,0,0,0.1);border-radius:3px;overflow:hidden;margin-bottom:6px;">
+              <div style="width:37%;height:100%;background:#4CAF50;border-radius:3px;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#2E7D32;font-weight:600;">R$ 142,30 estimado</span>
+              <span style="font-size:11px;color:#2E7D32;cursor:pointer;font-weight:600;">Ver itens ▾</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty state content -->
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;">
+          <!-- Orb -->
+          <div style="width:64px;height:64px;background:radial-gradient(circle,#4CAF50 0%,#81C784 50%,transparent 70%);border-radius:50%;margin-bottom:16px;opacity:0.8;"></div>
+          <div style="font-size:16px;font-weight:700;color:#333;margin-bottom:4px;text-align:center;">Como posso te ajudar?</div>
+          <div style="font-size:12px;color:#888;margin-bottom:20px;text-align:center;">Pergunte sobre precos, receitas, organizacao...</div>
+          
+          <!-- 2 suggestion cards only -->
+          <div style="width:100%;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#FAFAFA;border:1px solid #E0E0E0;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;">
+              <span style="font-size:16px;">💰</span>
+              <div style="flex:1;">
+                <div style="font-size:12px;font-weight:600;color:#333;">Dicas de economia</div>
+                <div style="font-size:10px;color:#999;">Como gastar menos nesta compra</div>
+              </div>
+              <span style="font-size:10px;color:#CCC;">→</span>
+            </div>
+            <div style="background:#FAFAFA;border:1px solid #E0E0E0;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;">
+              <span style="font-size:16px;">🍱</span>
+              <div style="flex:1;">
+                <div style="font-size:12px;font-weight:600;color:#333;">Marmitas da semana</div>
+                <div style="font-size:10px;color:#999;">Planejar refeicoes com economia</div>
+              </div>
+              <span style="font-size:10px;color:#CCC;">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input bar -->
+        <div style="padding:10px 16px;border-top:1px solid #E8E8E8;display:flex;gap:8px;align-items:center;background:white;">
+          <div style="flex:1;background:#F5F5F5;border-radius:24px;padding:10px 16px;font-size:13px;color:#BBB;border:1px solid #E8E8E8;">Pergunte algo...</div>
+          <div style="width:40px;height:40px;background:#4CAF50;border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="color:white;font-size:16px;">🎤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Conversation State -->
+  <div class="mockup" data-choice="conversation" onclick="toggleSelect(this)">
+    <div class="mockup-header">2. Conversa em andamento</div>
+    <div class="mockup-body" style="padding:0;">
+      <div style="width:100%;background:white;display:flex;flex-direction:column;min-height:500px;">
+        <!-- AppBar (same) -->
+        <div style="background:#4CAF50;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="color:white;font-size:16px;">🤖</span>
+            <div>
+              <div style="color:white;font-size:14px;font-weight:700;">Minha Lista</div>
+              <div style="color:rgba(255,255,255,0.7);font-size:10px;">Assistente de compras</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="background:rgba(255,255,255,0.2);border-radius:10px;padding:3px 8px;display:flex;align-items:center;gap:4px;">
+              <span style="font-size:10px;color:white;">⚡</span>
+              <div style="width:36px;height:4px;background:rgba(255,255,255,0.3);border-radius:2px;overflow:hidden;">
+                <div style="width:70%;height:100%;background:#A5D6A7;border-radius:2px;"></div>
+              </div>
+              <span style="font-size:9px;color:white;font-weight:600;">7</span>
+            </div>
+            <span style="color:white;font-size:14px;">⇄</span>
+            <span style="color:white;font-size:14px;">⋮</span>
+          </div>
+        </div>
+
+        <!-- Collapsed list pill -->
+        <div style="padding:8px 16px 4px;">
+          <div style="background:#F1F8E9;border-radius:12px;padding:6px 12px;display:flex;align-items:center;justify-content:space-between;border:1px solid #DCEDC8;cursor:pointer;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="font-size:11px;">🛒</span>
+              <span style="font-size:11px;font-weight:700;color:#33691E;">3/8 comprados</span>
+              <span style="font-size:10px;color:#689F38;">• R$ 142,30</span>
+            </div>
+            <span style="font-size:10px;color:#689F38;">▾</span>
+          </div>
+        </div>
+
+        <!-- Chat messages -->
+        <div style="flex:1;padding:8px 16px;overflow:hidden;">
+          <!-- User bubble -->
+          <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+            <div style="max-width:80%;">
+              <div style="background:#4CAF50;color:white;padding:10px 14px;border-radius:16px 16px 4px 16px;font-size:13px;line-height:1.5;">
+                Me ajuda a economizar nessa compra?
+              </div>
+              <div style="text-align:right;margin-top:2px;font-size:9px;color:#BBB;">14:32</div>
+            </div>
+          </div>
+
+          <!-- AI bubble with avatar -->
+          <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:4px;">
+            <div style="width:28px;height:28px;background:#E8F5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;border:1px solid #C8E6C9;">🤖</div>
+            <div style="max-width:80%;">
+              <div style="font-size:10px;font-weight:600;color:#4CAF50;margin-bottom:3px;">Lista Plus IA</div>
+              <div style="background:#F5F5F5;padding:10px 14px;border-radius:4px 16px 16px 16px;font-size:13px;line-height:1.5;color:#333;border:1px solid #E8E8E8;">
+                Claro! Analisei sua lista e encontrei <strong>5 dicas</strong> para economizar ate <strong>R$ 38,50</strong>:
+                <br><br>
+                1. 🍌 Troque banana prata por nanica (-R$ 4)
+                <br>
+                2. 🧴 Marca propria de detergente (-R$ 6)
+                <br>
+                3. ...
+              </div>
+            </div>
+          </div>
+
+          <!-- Action row (unified, outside bubble) -->
+          <div style="display:flex;gap:6px;margin-left:36px;margin-bottom:4px;">
+            <div style="background:#E8F5E9;padding:5px 10px;border-radius:8px;font-size:11px;color:#2E7D32;cursor:pointer;font-weight:600;border:1px solid #C8E6C9;">+ Adicionar a lista</div>
+            <div style="background:#FFF3E0;padding:5px 10px;border-radius:8px;font-size:11px;color:#E65100;cursor:pointer;font-weight:600;border:1px solid #FFE0B2;">📊 Organizar</div>
+          </div>
+
+          <!-- Feedback row -->
+          <div style="display:flex;gap:8px;margin-left:36px;align-items:center;">
+            <span style="font-size:9px;color:#BBB;">14:32</span>
+            <span style="font-size:12px;cursor:pointer;color:#4CAF50;">👍</span>
+            <span style="font-size:12px;cursor:pointer;color:#CCC;">👎</span>
+            <span style="font-size:12px;cursor:pointer;color:#CCC;">📋</span>
+            <span style="font-size:10px;cursor:pointer;color:#4CAF50;font-weight:600;">🔄 Regenerar</span>
+          </div>
+        </div>
+
+        <!-- Shortcut chips -->
+        <div style="padding:4px 16px;display:flex;gap:6px;overflow:hidden;">
+          <div style="background:#F5F5F5;padding:5px 10px;border-radius:16px;font-size:10px;color:#666;white-space:nowrap;border:1px solid #E8E8E8;">💰 Itens mais caros?</div>
+          <div style="background:#F5F5F5;padding:5px 10px;border-radius:16px;font-size:10px;color:#666;white-space:nowrap;border:1px solid #E8E8E8;">🔄 Substitutos baratos?</div>
+        </div>
+
+        <!-- Input bar -->
+        <div style="padding:10px 16px;border-top:1px solid #E8E8E8;display:flex;gap:8px;align-items:center;background:white;">
+          <div style="flex:1;background:#F5F5F5;border-radius:24px;padding:10px 16px;font-size:13px;color:#BBB;border:1px solid #E8E8E8;">Pergunte algo...</div>
+          <div style="width:40px;height:40px;background:#4CAF50;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:white;font-size:16px;">🎤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:2rem;">
+  <h3>Mudancas por secao</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
+    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:1rem;">
+      <h4 style="color:var(--accent);font-size:0.85rem;margin-bottom:0.5rem;">AppBar (novo)</h4>
+      <ul style="font-size:0.8rem;color:var(--text-secondary);margin-left:1rem;">
+        <li>Nome da lista + subtitulo "Assistente de compras"</li>
+        <li>Energia IA como badge com barra + numero</li>
+        <li>Trocar lista (⇄) e menu (⋮) com historico, busca, limpar</li>
+        <li>Remove o _HeaderRow interno do AiChatPanel</li>
+      </ul>
+    </div>
+    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:1rem;">
+      <h4 style="color:var(--accent);font-size:0.85rem;margin-bottom:0.5rem;">List Hero Card</h4>
+      <ul style="font-size:0.8rem;color:var(--text-secondary);margin-left:1rem;">
+        <li>Card com gradiente verde, progresso e custo</li>
+        <li>Colapsa em pill ao scrollar (3/8 + custo)</li>
+        <li>Expande ao tocar (substitui _CompactListCard)</li>
+        <li>Modo Mercado mantido</li>
+      </ul>
+    </div>
+    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:1rem;">
+      <h4 style="color:var(--accent);font-size:0.85rem;margin-bottom:0.5rem;">Chat Bubbles</h4>
+      <ul style="font-size:0.8rem;color:var(--text-secondary);margin-left:1rem;">
+        <li>IA com avatar circular + nome acima</li>
+        <li>Acoes (adicionar, organizar) fora do bubble</li>
+        <li>Feedback unificado: 1 linha (hora, like, dislike, copy, regenerar)</li>
+        <li>Remove feedback duplicado dentro do bubble</li>
+      </ul>
+    </div>
+    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:1rem;">
+      <h4 style="color:var(--accent);font-size:0.85rem;margin-bottom:0.5rem;">Empty State + Input</h4>
+      <ul style="font-size:0.8rem;color:var(--text-secondary);margin-left:1rem;">
+        <li>Orb menor (64px), titulo + subtitulo</li>
+        <li>Apenas 2 sugestoes (era 3)</li>
+        <li>Input com border-radius maior (pill)</li>
+        <li>Shortcut chips acima do input mantidos</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:1.5rem;">
+  <h3>Strings hardcoded → l10n (obrigatorio)</h3>
+  <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:1rem;">
+    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+      <tr style="border-bottom:1px solid var(--border);">
+        <th style="text-align:left;padding:6px;color:var(--text-secondary);">Atual (hardcoded)</th>
+        <th style="text-align:left;padding:6px;color:var(--text-secondary);">Nova chave ARB</th>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:6px;">"Energia da IA"</td>
+        <td style="padding:6px;"><code>aiEnergy</code></td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:6px;">"Pesquisar na conversa..."</td>
+        <td style="padding:6px;"><code>searchInConversation</code></td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:6px;">"Nenhuma mensagem encontrada"</td>
+        <td style="padding:6px;"><code>noMessagesFound</code></td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:6px;">"Regenerar"</td>
+        <td style="padding:6px;"><code>regenerate</code></td>
+      </tr>
+      <tr>
+        <td style="padding:6px;">"Perguntas sugeridas:"</td>
+        <td style="padding:6px;"><code>suggestedQuestions</code></td>
+      </tr>
+    </table>
+  </div>
+</div>

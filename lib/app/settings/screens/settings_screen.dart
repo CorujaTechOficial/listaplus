@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
-import 'package:shopping_list/models/premium_feature.dart';
+import 'package:shopping_list/domain/entities/premium_feature.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
@@ -16,8 +16,9 @@ import 'package:shopping_list/app/settings/screens/manage_categories_screen.dart
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
-import 'package:shopping_list/models/ai_config.dart';
+import 'package:shopping_list/domain/entities/ai_config.dart';
 import 'package:shopping_list/app/ai/screens/chat_history_screen.dart';
+import 'package:shopping_list/app/settings/screens/feedback_screen.dart';
 
 
 class SettingsScreen extends ConsumerWidget {
@@ -33,12 +34,12 @@ class SettingsScreen extends ConsumerWidget {
     final localeAsync = ref.watch(localeSettingProvider);
     final isPt = Localizations.localeOf(context).languageCode == 'pt';
     final aiConfigAsync = ref.watch(aiConfigStateProvider);
-    final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'auto_awesome');
+    final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'smart_toy');
 
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.settingsAppBar)),
-      body: ListView(
+      body: SafeArea(child: ListView(
         children: [
           _SectionHeader(title: isPt ? 'Assinatura' : 'Subscription'),
           premiumAsync.when(
@@ -146,7 +147,6 @@ class SettingsScreen extends ConsumerWidget {
             },
           ),
           ListTile(
-            leading: Icon(aiConfig.iconData, color: theme.colorScheme.primary),
             title: Text(isPt ? 'Personalizar Assistente IA' : 'Customize AI Assistant'),
             subtitle: Text(aiConfig.name),
             trailing: premiumAsync.value == true
@@ -279,6 +279,18 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text('${l10n.version} 1.0.15+15'),
           ),
           ListTile(
+            leading: Icon(Icons.feedback_outlined, color: theme.colorScheme.primary),
+            title: Text(l10n.feedbackSettingsTitle),
+            subtitle: Text(l10n.feedbackSettingsSubtitle),
+            trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<void>(builder: (_) => const FeedbackScreen()),
+              );
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.privacy_tip_outlined, color: theme.colorScheme.onSurfaceVariant),
             title: Text(l10n.privacy),
             trailing: Icon(Icons.open_in_new, color: theme.colorScheme.onSurfaceVariant, size: 18),
@@ -302,6 +314,7 @@ class SettingsScreen extends ConsumerWidget {
           ),
         ],
       ),
+      ),
     );
   }
 
@@ -316,7 +329,6 @@ class SettingsScreen extends ConsumerWidget {
           builder: (context, setState) {
             final theme = Theme.of(context);
             final icons = [
-              (key: 'auto_awesome', icon: Icons.auto_awesome),
               (key: 'smart_toy', icon: Icons.smart_toy),
               (key: 'psychology', icon: Icons.psychology),
               (key: 'support_agent', icon: Icons.support_agent),

@@ -1,18 +1,28 @@
 import 'dart:async';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
+import 'package:shopping_list/models/ai_usage.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/lists/widgets/create_list_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/list_switcher_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/shopping_item_tile.dart';
+import 'package:shopping_list/app/ai/providers/system_action_provider.dart';
+import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:shopping_list/core/providers/misc_providers.dart';
+import 'package:shopping_list/theme/page_transitions.dart';
+
+import 'package:share_plus/share_plus.dart';
+import 'package:shopping_list/app/recipes/screens/recipe_detail_screen.dart';
 
 class AiHomeScreen extends ConsumerStatefulWidget {
   const AiHomeScreen({super.key});
@@ -24,6 +34,38 @@ class AiHomeScreen extends ConsumerStatefulWidget {
 class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   bool _listExpanded = false;
   bool _isMarketMode = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Listen to system actions from the AI agent
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        ref.listenManual(systemActionProvider, (previous, next) {
+          if (next == null) {
+            return;
+          }
+          _handleSystemAction(next);
+        });
+      }
+    });
+  }
+
+  void _handleSystemAction(SystemActionType action) {
+    switch (action) {
+      case SystemActionType.openPaywall:
+        Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
+      case SystemActionType.requestReview:
+        ref.read(appReviewServiceProvider).requestReview();
+      case SystemActionType.promptUpdate:
+        ref.read(updateServiceProvider).checkForUpdates();
+      case SystemActionType.shareReferral:
+        SharePlus.instance.share(ShareParams(
+          text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+          subject: 'Ganhe 7 dias de Lista Plus Premium!',
+        ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +88,9 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   }
 
   Widget _buildNoList() {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: const Text('Assistente IA')),
+      appBar: AppBar(title: Text(l10n.aiAssistant)),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(Spacing.xl),
@@ -55,10 +98,9 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const EmptyState(
-                icon: Icons.smart_toy,
-                title: 'Bem-vindo ao Assistente IA',
-                subtitle: 'Crie uma lista de compras para começar a usar o chat inteligente.',
+              EmptyState(
+                title: l10n.welcomeAiAssistant,
+                subtitle: l10n.createListToStartAi,
               ),
               const SizedBox(height: Spacing.lg),
               FilledButton.tonalIcon(
@@ -74,7 +116,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                   );
                 },
                 icon: const Icon(Icons.add),
-                label: const Text('Criar Primeira Lista'),
+                label: Text(l10n.createFirstList),
               ),
             ],
           ),
@@ -84,6 +126,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   }
 
   Widget _buildChat(String listId) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final listAsync = ref.watch(shoppingListsProvider);
     final listName = listAsync.value
@@ -93,20 +136,92 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
 
     final itemsAsync = ref.watch(shoppingListItemsProvider(listId));
     final items = itemsAsync.value ?? [];
+    final purchased = items.where((i) => i.isPurchased).length;
+    final total = items.length;
+
+    final isPremium = ref.watch(premiumProvider).value ?? false;
+    final aiUsageAsync = ref.watch(aiUsageStateProvider);
+    final remaining = aiUsageAsync.value?.remainingDaily ?? 0;
+    final progress = (remaining / AiUsageLimits.dailyLimit).clamp(0.0, 1.0);
+    final energyColor = remaining > 5
+        ? Colors.green
+        : (remaining > 2 ? Colors.amber : Colors.orange);
+
+    // ignore: prefer_int_literals
+    final totalValue = items.fold(0.0, (sum, item) => sum + (item.estimatedPrice ?? 0) * item.quantity);
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+          tooltip: l10n.openMenu,
+        ),
+        titleSpacing: 0,
         title: Row(
           children: [
-            Hero(
-              tag: 'ai_assistant_icon_$listId',
-              child: Icon(Icons.auto_awesome, size: 20, color: theme.colorScheme.primary),
-            ),
             const SizedBox(width: Spacing.sm),
-            Text(listName ?? 'Lista de Compras'),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    listName ?? l10n.aiAssistant,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    l10n.shoppingAssistant,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                      fontSize: 11,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
         actions: [
+          if (!isPremium && aiUsageAsync.hasValue)
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.primaryContainer.withAlpha((0.5 * 255).toInt()),
+                borderRadius: BorderRadius.circular(RadiusTokens.md),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.bolt, size: 14, color: theme.colorScheme.primary),
+                  const SizedBox(width: 4),
+                  SizedBox(
+                    width: 36,
+                    height: 4,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(2),
+                      child: LinearProgressIndicator(
+                        value: progress,
+                        backgroundColor: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt()),
+                        valueColor: AlwaysStoppedAnimation<Color>(energyColor),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    '$remaining',
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      color: theme.colorScheme.primary,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 10,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           IconButton(
             icon: const Icon(Icons.swap_horiz),
             onPressed: () {
@@ -115,83 +230,169 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 builder: (_) => ListSwitcherSheet(currentListId: listId),
               );
             },
-            tooltip: 'Trocar lista',
+            tooltip: l10n.switchList,
           ),
-          IconButton(
-            icon: Icon(_isMarketMode ? Icons.chat_bubble_outline : Icons.shopping_basket),
-            onPressed: () => setState(() => _isMarketMode = !_isMarketMode),
-            tooltip: _isMarketMode ? 'Voltar para o Chat' : 'Modo Mercado',
-          ),
-          IconButton(
-            icon: const Icon(Icons.delete_sweep),
-            onPressed: () {
-              ref.read(chatSessionProvider(listId).notifier).clearHistory();
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.more_vert),
+            onSelected: (value) {
+              if (value == 'market') {
+                setState(() => _isMarketMode = !_isMarketMode);
+              } else if (value == 'clear') {
+                ref.read(chatSessionProvider(listId).notifier).clearHistory();
+              }
             },
-            tooltip: 'Limpar histórico',
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'market',
+                child: Row(
+                  children: [
+                    Icon(_isMarketMode ? Icons.chat_bubble_outline : Icons.shopping_basket, size: 20),
+                    const SizedBox(width: Spacing.sm),
+                    Text(_isMarketMode ? l10n.backToChat : l10n.marketMode),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'clear',
+                child: Row(
+                  children: [
+                    const Icon(Icons.delete_sweep, size: 20),
+                    const SizedBox(width: Spacing.sm),
+                    Text(l10n.clearHistory),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          if (_isMarketMode)
-            _CompactListCard(
+      body: _isMarketMode
+          ? _ListHeroCard(
               listId: listId,
               items: items,
+              purchased: purchased,
+              total: total,
+              totalValue: totalValue,
               expanded: true,
               isMarketMode: true,
               onToggle: () => setState(() => _isMarketMode = false),
             )
-          else ...[
-            Positioned.fill(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 60),
-                child: AiChatPanel(
-                  listId: listId,
-                  listName: listName,
-                  onItemsAdded: () {
-                    setState(() {
-                      _listExpanded = true;
-                    });
-                    Timer(const Duration(seconds: 3), () {
-                      if (mounted) {
-                        setState(() {
-                          _listExpanded = false;
-                        });
-                      }
-                    });
-                  },
-                ),
-              ),
-            ),
-            
-            if (_listExpanded)
-              Positioned.fill(
-                child: GestureDetector(
-                  onTap: () => setState(() => _listExpanded = false),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-                    child: Container(
-                      color: Colors.black.withAlpha((0.3 * 255).toInt()),
+          : Column(
+              children: [
+                GestureDetector(
+                  onTap: () => setState(() => _listExpanded = !_listExpanded),
+                  child: AnimatedContainer(
+                    duration: DurationTokens.fast,
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: _listExpanded
+                          ? theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt())
+                          : Colors.transparent,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.shopping_basket, size: 16, color: theme.colorScheme.primary),
+                        const SizedBox(width: 8),
+                        Text(
+                          l10n.itemsPurchasedShort(purchased, total),
+                          style: theme.textTheme.labelMedium?.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: theme.colorScheme.onSurface,
+                          ),
+                        ),
+                        if (totalValue > 0) ...[
+                          const SizedBox(width: 8),
+                          Text(
+                            'R\$ ${totalValue.toStringAsFixed(2)}',
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                              fontSize: 11,
+                            ),
+                          ),
+                        ],
+                        const Spacer(),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(
+                              width: 64,
+                              height: 3,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(2),
+                                child: LinearProgressIndicator(
+                                  value: total > 0 ? purchased / total : 0.0,
+                                  backgroundColor: theme.colorScheme.primary.withAlpha((0.15 * 255).toInt()),
+                                  valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            AnimatedRotation(
+                              turns: _listExpanded ? 0.5 : 0,
+                              duration: DurationTokens.fast,
+                              curve: Curves.easeInOutBack,
+                              child: Icon(
+                                Icons.expand_more,
+                                size: 20,
+                                color: theme.colorScheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ).animate().fadeIn(duration: 200.ms),
-
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: _CompactListCard(
-                listId: listId,
-                items: items,
-                expanded: _listExpanded,
-                isMarketMode: false,
-                onToggle: () => setState(() => _listExpanded = !_listExpanded),
-              ),
+                AnimatedSize(
+                  duration: DurationTokens.normal,
+                  curve: Curves.easeInOut,
+                  alignment: Alignment.topCenter,
+                  child: _listExpanded
+                      ? ConstrainedBox(
+                          constraints: const BoxConstraints(maxHeight: 200),
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            itemCount: items.length,
+                            itemBuilder: (context, index) {
+                              return ShoppingItemTile(
+                                listId: listId,
+                                item: items[index],
+                              ).animate().fadeIn(
+                                duration: 200.ms,
+                                delay: (index * 30).ms,
+                              );
+                            },
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                ),
+                Expanded(
+                  child: AiChatPanel(
+                    listId: listId,
+                    listName: listName,
+                    onItemsAdded: () {
+                      setState(() {
+                        _listExpanded = true;
+                      });
+                      Timer(const Duration(seconds: 3), () {
+                        if (mounted) {
+                          setState(() {
+                            _listExpanded = false;
+                          });
+                        }
+                      });
+                    },
+                    onNavigateToRecipe: (recipeId) {
+                      Navigator.push(
+                        context,
+                        fadeSlideRoute<void>(RecipeDetailScreen(recipeId: recipeId)),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-          ],
-        ],
-      ),
       floatingActionButton: _isMarketMode
           ? FloatingActionButton(
               onPressed: () {
@@ -245,10 +446,13 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   }
 }
 
-class _CompactListCard extends StatelessWidget {
-  const _CompactListCard({
+class _ListHeroCard extends StatelessWidget {
+  const _ListHeroCard({
     required this.listId,
     required this.items,
+    required this.purchased,
+    required this.total,
+    required this.totalValue,
     required this.expanded,
     required this.isMarketMode,
     required this.onToggle,
@@ -256,205 +460,237 @@ class _CompactListCard extends StatelessWidget {
 
   final String listId;
   final List<ShoppingItem> items;
+  final int purchased;
+  final int total;
+  final double totalValue;
   final bool expanded;
   final bool isMarketMode;
   final VoidCallback onToggle;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final purchased = items.where((i) => i.isPurchased).length;
-    final total = items.length;
     final allPurchased = total > 0 && purchased == total;
+    final progress = total > 0 ? purchased / total : 0.0;
+
+    if (isMarketMode) {
+      return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(Spacing.md),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              theme.colorScheme.primaryContainer,
+              theme.colorScheme.secondaryContainer,
+            ],
+          ),
+        ),
+        child: SafeArea(
+          bottom: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                    Icon(Icons.shopping_basket, size: 24, color: theme.colorScheme.primary),
+                  const SizedBox(width: Spacing.sm),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.marketMode,
+                          style: theme.textTheme.headlineSmall?.copyWith(
+                            fontWeight: FontWeight.w900,
+                            color: theme.colorScheme.primary,
+                          ),
+                        ),
+                        Text(
+                          l10n.itemsPurchasedCount(purchased, total),
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (allPurchased)
+                    const Icon(Icons.check_circle, color: Colors.green, size: 32)
+                        .animate()
+                        .scale(duration: 400.ms, curve: Curves.easeOutBack),
+                ],
+              ),
+              const SizedBox(height: Spacing.sm),
+              LinearProgressIndicator(
+                value: progress,
+                borderRadius: BorderRadius.circular(RadiusTokens.full),
+                minHeight: 10,
+                backgroundColor: theme.colorScheme.surfaceContainerHighest,
+              ),
+              if (expanded) ...[
+                const SizedBox(height: Spacing.md),
+                Expanded(
+                  child: items.isEmpty
+                      ? Center(
+                          child: Text(
+                            l10n.noItemsInList,
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        )
+                      : ListView.builder(
+                          padding: const EdgeInsets.symmetric(vertical: Spacing.xs),
+                          itemCount: items.length,
+                          itemBuilder: (context, index) {
+                            return ShoppingItemTile(
+                              listId: listId,
+                              item: items[index],
+                            );
+                          },
+                        ),
+                ),
+                if (allPurchased)
+                  Padding(
+                    padding: const EdgeInsets.only(top: Spacing.md),
+                    child: FilledButton.icon(
+                      onPressed: onToggle,
+                      icon: const Icon(Icons.done_all),
+                      label: Text(l10n.finishShopping),
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size(double.infinity, 54),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(RadiusTokens.md),
+                        ),
+                      ),
+                    ),
+                  ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
+              ],
+            ],
+          ),
+        ),
+      );
+    }
 
     return AnimatedSize(
       duration: DurationTokens.normal,
       curve: Curves.easeInOut,
       child: GestureDetector(
-        onTap: isMarketMode ? null : onToggle,
+        onTap: onToggle,
         child: Container(
           width: double.infinity,
-          margin: EdgeInsets.fromLTRB(
-            isMarketMode ? 0 : Spacing.md,
-            isMarketMode ? 0 : Spacing.sm,
-            isMarketMode ? 0 : Spacing.md,
-            isMarketMode ? 0 : Spacing.xs,
-          ),
+          margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, Spacing.xs),
           padding: const EdgeInsets.all(Spacing.sm),
           decoration: BoxDecoration(
-            color: theme.colorScheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(isMarketMode ? 0 : RadiusTokens.lg),
-            border: isMarketMode
-                ? null
-                : Border.all(
-                    color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
-                  ),
-            boxShadow: isMarketMode
-                ? null
-                : [
-                    BoxShadow(
-                      color: Colors.black.withAlpha((0.06 * 255).toInt()),
-                      blurRadius: 12,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                theme.colorScheme.primaryContainer.withAlpha((0.6 * 255).toInt()),
+                theme.colorScheme.secondaryContainer.withAlpha((0.4 * 255).toInt()),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(RadiusTokens.lg),
+            border: Border.all(
+              color: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt()),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withAlpha((0.06 * 255).toInt()),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           child: Column(
-            mainAxisSize: isMarketMode ? MainAxisSize.max : MainAxisSize.min,
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (!isMarketMode)
-                Row(
-                  children: [
-                    Hero(
-                      tag: 'ai_assistant_icon_$listId',
-                      child: Icon(Icons.auto_awesome, size: 14, color: theme.colorScheme.primary),
-                    ),
-                    const SizedBox(width: Spacing.xs),
-                    Text(
-                      'Lista de Compras',
-                      style: theme.textTheme.titleSmall?.copyWith(
+              Row(
+                children: [
+                    Icon(Icons.shopping_basket, size: 16, color: theme.colorScheme.primary),
+                  const SizedBox(width: Spacing.xs),
+                  Expanded(
+                    child: Text(
+                      l10n.itemsPurchasedShort(purchased, total),
+                      style: theme.textTheme.labelMedium?.copyWith(
                         fontWeight: FontWeight.w700,
+                        color: theme.colorScheme.onPrimaryContainer,
                       ),
                     ),
-                    const Spacer(),
+                  ),
+                  if (totalValue > 0) ...[
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.secondaryContainer,
-                        borderRadius: BorderRadius.circular(12),
+                        color: theme.colorScheme.primary.withAlpha((0.15 * 255).toInt()),
+                        borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                       ),
                       child: Text(
-                        '$purchased/$total',
+                        'R\$ ${totalValue.toStringAsFixed(2)}',
                         style: theme.textTheme.labelSmall?.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: theme.colorScheme.onSecondaryContainer,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: theme.colorScheme.primary,
                         ),
                       ),
                     ),
                     const SizedBox(width: Spacing.xs),
-                    AnimatedRotation(
-                      turns: expanded ? 0.5 : 0,
-                      duration: DurationTokens.fast,
-                      child: Icon(
-                        Icons.expand_more,
-                        size: 20,
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
                   ],
-                ),
-              if (isMarketMode)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: Spacing.sm, horizontal: Spacing.md),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Hero(
-                            tag: 'ai_assistant_icon_$listId',
-                            child: Icon(Icons.auto_awesome, size: 24, color: theme.colorScheme.primary),
-                          ),
-                          const SizedBox(width: Spacing.sm),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Modo Mercado',
-                                  style: theme.textTheme.headlineSmall?.copyWith(
-                                    fontWeight: FontWeight.w900,
-                                    color: theme.colorScheme.primary,
-                                  ),
-                                ),
-                                Text(
-                                  '$purchased de $total itens comprados',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    color: theme.colorScheme.onSurfaceVariant,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          if (allPurchased)
-                            const Icon(Icons.check_circle, color: Colors.green, size: 32)
-                                .animate()
-                                .scale(duration: 400.ms, curve: Curves.easeOutBack),
-                        ],
-                      ),
-                      const SizedBox(height: Spacing.sm),
-                      LinearProgressIndicator(
-                        value: total > 0 ? purchased / total : 0,
-                        borderRadius: BorderRadius.circular(RadiusTokens.full),
-                        minHeight: 10,
-                        backgroundColor: theme.colorScheme.surfaceContainerHighest,
-                      ),
-                    ],
+                  AnimatedRotation(
+                    turns: expanded ? 0.5 : 0,
+                    duration: DurationTokens.fast,
+                    child: Icon(
+                      Icons.expand_more,
+                      size: 20,
+                      color: theme.colorScheme.onPrimaryContainer,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: Spacing.xs),
+              SizedBox(
+                height: 4,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(2),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    backgroundColor: theme.colorScheme.primary.withAlpha((0.15 * 255).toInt()),
+                    valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
                   ),
                 ),
-              if (expanded)
-                items.isEmpty
-                    ? Padding(
-                        padding: const EdgeInsets.all(Spacing.lg),
+              ),
+              if (expanded) ...[
+                const SizedBox(height: Spacing.sm),
+                if (items.isEmpty) Padding(
+                        padding: const EdgeInsets.all(Spacing.md),
                         child: Center(
                           child: Text(
-                            'Nenhum item na lista',
+                            l10n.noItemsInList,
                             style: theme.textTheme.bodyMedium?.copyWith(
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
                           ),
                         ),
-                      )
-                    : isMarketMode
-                        ? Expanded(
-                            child: ListView.builder(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: Spacing.md,
-                                horizontal: Spacing.sm,
-                              ),
-                              itemCount: items.length,
-                              itemBuilder: (context, index) {
-                                final item = items[index];
-                                return ShoppingItemTile(
-                                  listId: listId,
-                                  item: item,
-                                  viewMode: ShoppingItemViewMode.market,
-                                );
-                              },
-                            ),
-                          )
-                        : ConstrainedBox(
-                            constraints: const BoxConstraints(maxHeight: 200),
-                            child: ListView.builder(
-                              shrinkWrap: true,
-                              padding: const EdgeInsets.symmetric(vertical: Spacing.xs),
-                              itemCount: items.length,
-                              itemBuilder: (context, index) {
-                                final item = items[index];
-                                return ShoppingItemTile(
-                                  listId: listId,
-                                  item: item,
-                                  viewMode: ShoppingItemViewMode.compact,
-                                );
-                              },
-                            ),
-                          ),
-              if (isMarketMode && allPurchased)
-                Padding(
-                  padding: const EdgeInsets.all(Spacing.md),
-                  child: FilledButton.icon(
-                    onPressed: () => onToggle(),
-                    icon: const Icon(Icons.done_all),
-                    label: const Text('Concluir Compras'),
-                    style: FilledButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 54),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(RadiusTokens.md),
+                      ) else ConstrainedBox(
+                        constraints: const BoxConstraints(maxHeight: 200),
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          padding: const EdgeInsets.symmetric(vertical: Spacing.xs),
+                          itemCount: items.length,
+                          itemBuilder: (context, index) {
+                            return ShoppingItemTile(
+                              listId: listId,
+                              item: items[index],
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                  ),
-                ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
+              ],
             ],
           ),
         ),

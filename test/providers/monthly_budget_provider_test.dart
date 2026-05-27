@@ -14,6 +14,7 @@ void main() {
       container = ProviderContainer(overrides: [
         firestoreServiceProvider.overrideWithValue(fakeBackend),
       ]);
+      container.listen(monthlyBudgetProvider, (_, _) {});
     });
 
     tearDown(() {

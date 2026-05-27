@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/models/premium_feature.dart';
+import 'package:shopping_list/domain/entities/premium_feature.dart';
 import 'package:shopping_list/generated/l10n/app_localizations_pt.dart';
 import 'package:test/test.dart';
 
@@ -28,7 +28,7 @@ void main() {
       expect(PremiumFeature.export.icon, Icons.backup);
       expect(PremiumFeature.themes.icon, Icons.palette);
       expect(PremiumFeature.monthlyBudget.icon, Icons.account_balance_wallet);
-      expect(PremiumFeature.assistant.icon, Icons.auto_awesome);
+      expect(PremiumFeature.assistant.icon, Icons.smart_toy);
       expect(PremiumFeature.pantry.icon, Icons.inventory_2);
       expect(PremiumFeature.interactiveArtifacts.icon, Icons.dashboard_customize);
     });

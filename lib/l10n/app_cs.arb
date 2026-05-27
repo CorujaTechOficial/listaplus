@@ -1,0 +1,536 @@
+{
+  "@@locale": "cs",
+  "appTitle": "Nákupní seznam",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Seznamy",
+  "pantry": "Spižírna",
+  "cancel": "Zrušit",
+  "save": "Uložit",
+  "create": "Vytvořit",
+  "add": "Přidat",
+  "remove": "Odebrat",
+  "delete": "Smazat",
+  "edit": "Upravit",
+  "copy": "Kopírovat",
+  "retry": "Zkusit znovu",
+  "regenerate": "Znovu vygenerovat",
+  "copiedToClipboard": "Zkopírováno do schránky",
+  "confirm": "Potvrdit",
+  "close": "Zavřít",
+  "import": "Importovat",
+  "rename": "Přejmenovat",
+  "upgrade": "Upgradovat",
+  "clear": "Vyčistit",
+  "error": "Chyba: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Chyba: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Chyba při zpracování nákupu. Zkus to znovu.",
+  "restoreError": "Chyba při obnově nákupů. Zkus to znovu.",
+  "loading": "Načítání...",
+  "fieldRequired": "Povinné pole",
+  "addedFeedback": "Přidáno!",
+  "selectedItems": "{count,plural, one{Vybrán {count}} few{Vybrány {count}} many{Vybráno {count}} other{Vybráno {count}}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Odhadováno",
+  "alreadyPurchased": "Již zakoupeno",
+  "clearList": "Vyčistit seznam",
+  "clearPurchased": "Vyčistit zakoupené",
+  "share": "Sdílet",
+  "shareViaCode": "Sdílet pomocí kódu",
+  "importViaCode": "Importovat pomocí kódu",
+  "listAssistant": "Asistent seznamu",
+  "globalAssistant": "Globální asistent",
+  "becomePremium": "Staň se Premium",
+  "manageSubscription": "Spravovat předplatné",
+  "completePurchase": "Dokončit nákup",
+  "confirmClearList": "Odebrat všechny položky?",
+  "shareListTitle": "Sdílet seznam",
+  "shareThisCode": "Sdílej tento kód:",
+  "validForLimitedTime": "Platí po omezenou dobu",
+  "importListTitle": "Importovat seznam",
+  "enterCodeHint": "Zadej kód",
+  "confirmArchiveTitle": "Dokončit nákup",
+  "confirmArchiveContent": "Dokončit tento nákup a archivovat seznam?",
+  "complete": "Dokončit",
+  "listArchived": "Seznam úspěšně archivován!",
+  "listAdded": "{listName} přidán!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Koupit",
+  "unmark": "Odznačit",
+  "confirmDeleteItems": "Odebrat {count} položku(y)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Potvrdit",
+  "confirmContent": "Odebrat {count} položku(y)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Archivovat seznam",
+  "pantryAppBar": "Spižírna",
+  "generateShoppingList": "Vygenerovat nákupní seznam",
+  "pantryEmpty": "Prázdná spižírna",
+  "pantryEmptySubtitle": "Přidej produkty, které chceš mít doma",
+  "itemsNeedPurchase": "{deficit} položku(y) je třeba koupit",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Žádné položky ke koupi",
+  "newPantryList": "Nákup pro spižírnu",
+  "newListTitle": "Nový nákupní seznam",
+  "itemsWillBeAdded": "{count} položek bude přidáno",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Název seznamu",
+  "listCreated": "Seznam \"{name}\" vytvořen s {count} položkami",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Bez sledování",
+  "markAsPurchased": "Označit jako zakoupené",
+  "editPantryItem": "Upravit {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ideální množství",
+  "currentQuantity": "Aktuální množství",
+  "consumed": "Spotřebováno",
+  "restocked": "{name} doplněno na {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Odebrat \"{name}\" ze spižírny?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Upravit {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsAppBar": "Nastavení",
+  "language": "Jazyk",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Výchozí systém",
+  "appearance": "Vzhled",
+  "light": "Světlý",
+  "system": "Systém",
+  "dark": "Tmavý",
+  "themeColor": "Barva motivu",
+  "finance": "Finance",
+  "monthlyBudgetNav": "Měsíční rozpočet",
+  "budgetSubtitle": "Sleduj své měsíční výdaje",
+  "data": "Data",
+  "backupNav": "Záloha",
+  "backupSubtitle": "Exportuj nebo importuj svá data",
+  "about": "O aplikaci",
+  "version": "Verze",
+  "privacy": "Soukromí",
+  "termsOfUse": "Podmínky použití",
+  "backupTitle": "Záloha",
+  "backupPremiumDescription": "Zálohování a export je prémiová funkce",
+  "exportData": "Exportovat data",
+  "exportDataSubtitle": "Uložit všechny seznamy jako JSON",
+  "importData": "Importovat data",
+  "importDataSubtitle": "Obnovit seznamy z JSON",
+  "importJsonTitle": "Importovat JSON",
+  "importJsonHint": "Vlož sem JSON zálohy...",
+  "backupExported": "Záloha exportována!",
+  "budgetAppBar": "Měsíční rozpočet",
+  "budgetPremiumLocked": "Globální měsíční rozpočet je Premium",
+  "budgetUpgradePrompt": "Upgraduj pro odemknutí",
+  "noBudgetDefined": "Není nastaven rozpočet",
+  "totalEstimated": "Celkem odhadováno: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Nastavit rozpočet",
+  "budgetLists": "Seznamy",
+  "budgetValueLabel": "Částka",
+  "setBudgetTitle": "Měsíční rozpočet",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "filterAll": "Vše",
+  "filterPending": "Čekající",
+  "filterPurchased": "Zakoupené",
+  "sortName": "Název",
+  "sortCategory": "Kategorie",
+  "sortDate": "Datum",
+  "sortManual": "Ručně",
+  "addItem": "Přidat položku",
+  "itemName": "Název položky",
+  "quantityShort": "Mn",
+  "unit": "Jednotka",
+  "category": "Kategorie",
+  "estimatedPrice": "Odhadovaná cena",
+  "addItemPrice": "Odhadovaná cena",
+  "editItem": "Upravit položku",
+  "quantityFull": "Množství",
+  "editItemPrice": "Odhadovaná cena",
+  "addToPantry": "Přidat do spižírny",
+  "addToPantryPrompt": "Přidat \"{name}\" do tvé spižírny?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Ano",
+  "productName": "Název produktu",
+  "idealQty": "Ideální mn",
+  "currentQty": "Aktuální mn",
+  "trackStock": "Sledovat zásoby",
+  "trackStockActive": "Objevuje se v návrzích nákupu",
+  "trackStockInactive": "Negeneruje návrh nákupu",
+  "createListDialog": "Vytvořit seznam",
+  "renameListDialog": "Přejmenovat seznam",
+  "listHistory": "Historie seznamů",
+  "myLists": "Mé seznamy",
+  "viewActive": "Zobrazit aktivní",
+  "viewHistory": "Zobrazit historii",
+  "noArchivedLists": "Žádné archivované seznamy",
+  "noActiveLists": "Žádné aktivní seznamy",
+  "completedOn": "Dokončeno {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Sdíleno",
+  "restore": "Obnovit",
+  "removeSharedTooltip": "Odebrat",
+  "deleteListTitle": "Smazat seznam",
+  "deleteListContent": "Opravdu chceš smazat \"{name}\"? Všechny položky budou odstraněny.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Odebrat sdílený seznam",
+  "removeSharedListContent": "Odebrat \"{name}\" z tvých seznamů? Původní seznam zůstane nedotčen.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Vytvořit nový seznam",
+  "aiAssistant": "AI asistent",
+  "aiAssistantDescription": "Získej chytré návrhy, recepty a personalizované tipy s naším AI asistentem.",
+  "generalAssistant": "Obecný asistent",
+  "clearHistory": "Vyčistit historii",
+  "clearHistoryConfirm": "Smazat všechny zprávy v této relaci?",
+  "chatHint": "Napiš svou zprávu...",
+  "chatError": "Chyba při načítání chatu: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Jak mohu pomoci s tvým seznamem?",
+  "generalHelp": "Jak mohu dnes pomoci s tvým nákupem?",
+  "chatSubtitle": "Požádej o návrhy položek, recepty nebo tipy na úsporu.",
+  "aiError": "Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Přihlas se pro odemknutí\nprémiových funkcí",
+  "signInGoogle": "Přihlásit se přes Google",
+  "signInApple": "Přihlásit se přes Apple",
+  "continueAsGuest": "Pokračovat jako host",
+  "loginError": "Chyba přihlášení: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallTitle": "Lista Plus Premium",
+  "premiumUpgrade": "Upgraduj pro odemknutí",
+  "itemRemoved": "Položka odebrána",
+  "undo": "Zpět",
+  "emptyListTitle": "Tvůj seznam je prázdný",
+  "emptyListSubtitle": "Přidej položky pro začátek",
+  "noListFoundTitle": "Nenalezeny žádné seznamy",
+  "noListFoundSubtitle": "Vytvoř svůj první seznam pro začátek",
+  "createFirstList": "Vytvořit první seznam",
+  "listBudgetTitle": "Rozpočet seznamu",
+  "budgetAmountLabel": "Částka rozpočtu",
+  "removeBudget": "Odebrat",
+  "prefUnlimitedLists": "Neomezené seznamy",
+  "prefSharing": "Sdílení seznamů",
+  "prefFullHistory": "Plná historie",
+  "prefExportData": "Export dat",
+  "prefCustomThemes": "Vlastní motivy",
+  "prefMonthlyBudget": "Globální měsíční rozpočet",
+  "prefAIAssistant": "Osobní AI asistent",
+  "prefUnlimitedPantry": "Neomezená spižírna",
+  "prefInteractiveArtifacts": "Interaktivní AI artefakty",
+  "themeGreen": "Zelená",
+  "themeBlue": "Modrá",
+  "themePurple": "Fialová",
+  "themeRed": "Červená",
+  "themeOrange": "Oranžová",
+  "themePink": "Růžová",
+  "themeIndigo": "Indigo",
+  "themeAmber": "Jantar",
+  "themeTeal": "Tyrkysová",
+  "themeBrown": "Hnědá",
+  "catFruits": "Ovoce",
+  "catCleaning": "Úklid",
+  "catBeverages": "Nápoje",
+  "catBakery": "Pekařství",
+  "catOthers": "Ostatní",
+  "unitPack": "balení",
+  "shareSubject": "Nákupní seznam",
+  "monthlyBudgetTitle": "Měsíční rozpočet",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Smazat seznam",
+  "pantryItemRemoved": "Položka odebrána",
+  "deficitItems": "{deficit,plural, one{{deficit} položku je třeba koupit} few{{deficit} položky je třeba koupit} many{{deficit} položek je třeba koupit} other{{deficit} položek je třeba koupit}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Celkem košík",
+  "restockLabel": "Doplnit",
+  "advancedFeatures": "Pokročilé funkce",
+  "selectAll": "Vybrat vše",
+  "deselectAll": "Zrušit výběr",
+  "monthlyBudgetAppBar": "Měsíční rozpočet",
+  "budgetEditTitle": "Měsíční rozpočet",
+  "budgetDashboardTitle": "Dashboard",
+  "selectListForDashboard": "Vyber seznam pro zobrazení dashboardu.",
+  "spendingAnalysis": "Analýza výdajů",
+  "noItemsToAnalyze": "V seznamu nejsou žádné položky k analýze.",
+  "markItemsToSeeAnalysis": "Označ položky jako zakoupené pro zobrazení analýzy.",
+  "totalSpending": "Celkem utraceno",
+  "spendingByCategory": "Výdaje podle kategorie",
+  "achievements": "Úspěchy",
+  "exportPdfExcel": "Exportovat PDF/Excel",
+  "exportPdf": "Exportovat jako PDF",
+  "exportExcel": "Exportovat jako Excel",
+  "organizingAi": "ORGANIZOVÁNÍ S AI...",
+  "yesLabel": "Ano",
+  "noLabel": "Ne",
+  "shareListText": "Můj nákupní seznam",
+  "emptyListAddItems": "Tvůj seznam je prázdný! Nejprve přidej položky. ℹ️",
+  "listOrganizedMagic": "Seznam kouzelně uspořádán podle kategorií! ✨",
+  "shoppingMode": "Nákupní režim",
+  "smartOrganization": "Chytrá organizace",
+  "savings": "Úspory",
+  "shoppingModeHeader": "NÁKUPNÍ REŽIM",
+  "shareAsText": "Odeslat položky jako formátovaný text",
+  "shareRealtime": "Synchronizace v reálném čase s ostatními",
+  "quickRecipe": "Rychlý recept",
+  "quickRecipePrompt": "Navrhni recepty s položkami z mého seznamu.",
+  "economyTips": "Tipy na úsporu",
+  "economyTipsPrompt": "Jak mohu ušetřit na tomto nákupu?",
+  "organizeAisles": "Uspořádat podle uliček",
+  "organizeAislesPrompt": "Uspořádat podle uliček obchodu.",
+  "recipeSuggestion": "Návrh receptu",
+  "aiCreditsRemaining": "Zbývá {remaining} kreditů",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Přidat vše do seznamu",
+  "organizeByAisles": "Uspořádat podle uliček",
+  "voiceTranscriptionTooltip": "Hlasové psaní (Zdarma)",
+  "aiVoiceCommandTooltip": "AI hlasový příkaz (Premium)",
+  "voiceCommandTitle": "AI hlasový příkaz",
+  "voiceCommandContent": "Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• 'Přidej chléb, sýr a šunku'\n• 'Odeber prací prášek'\n• 'Změň motiv na modrý'\n\nToto je exkluzivní funkce Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Zobrazit plány",
+  "itemsAddedSuccess": "Položky úspěšně přidány do seznamu!",
+  "viewList": "Zobrazit seznam",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Odeslat zpětnou vazbu",
+  "feedbackPrompt": "Co byste chtěli sdílet?",
+  "feedbackTypeBug": "Nahlásit chybu",
+  "feedbackTypeBugHint": "Něco nefunguje",
+  "feedbackTypeSuggestion": "Návrh",
+  "feedbackTypeSuggestionHint": "Nápad na vylepšení aplikace",
+  "feedbackTypeTranslation": "Problém s překladem",
+  "feedbackTypeTranslationHint": "Nesprávný nebo neobratný překlad",
+  "feedbackTypeFeature": "Žádost o funkci",
+  "feedbackTypeFeatureHint": "Funkce, kterou byste rádi viděli",
+  "feedbackTypeOther": "Jiné",
+  "feedbackTypeOtherHint": "Jiný typ zpětné vazby",
+  "feedbackHint": "Popište svou zpětnou vazbu podrobně...",
+  "feedbackSend": "Odeslat zpětnou vazbu",
+  "feedbackSending": "Odesílání...",
+  "feedbackThankYou": "Děkujeme!",
+  "feedbackThankYouMessage": "Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat Lista Plus pro všechny.",
+  "feedbackBack": "Zpět",
+  "feedbackError": "Chyba při odesílání: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Zkusit znovu",
+  "feedbackSettingsTitle": "Odeslat zpětnou vazbu",
+  "feedbackSettingsSubtitle": "Hlaste chyby, navrhujte vylepšení nebo opravujte překlady",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

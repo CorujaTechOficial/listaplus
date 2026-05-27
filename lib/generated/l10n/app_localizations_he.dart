@@ -1,0 +1,2217 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Hebrew (`he`).
+class AppLocalizationsHe extends AppLocalizations {
+  AppLocalizationsHe([String locale = 'he']) : super(locale);
+
+  @override
+  String get appTitle => 'רשימת קניות';
+
+  @override
+  String get lists => 'רשימות';
+
+  @override
+  String get pantry => 'מזווה';
+
+  @override
+  String get cancel => 'ביטול';
+
+  @override
+  String get save => 'שמירה';
+
+  @override
+  String get create => 'יצירה';
+
+  @override
+  String get add => 'הוספה';
+
+  @override
+  String get remove => 'הסרה';
+
+  @override
+  String get delete => 'מחיקה';
+
+  @override
+  String get edit => 'עריכה';
+
+  @override
+  String get copy => 'העתקה';
+
+  @override
+  String get retry => 'ניסיון חוזר';
+
+  @override
+  String get regenerate => 'יצירה מחדש';
+
+  @override
+  String get copiedToClipboard => 'הועתק ללוח';
+
+  @override
+  String get confirm => 'אישור';
+
+  @override
+  String get close => 'סגירה';
+
+  @override
+  String get import => 'ייבוא';
+
+  @override
+  String get rename => 'שינוי שם';
+
+  @override
+  String get upgrade => 'שדרוג';
+
+  @override
+  String get clear => 'ניקוי';
+
+  @override
+  String error(String message) {
+    return 'שגיאה: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'שגיאה: $message';
+  }
+
+  @override
+  String get purchaseError => 'שגיאה בעיבוד הרכישה. נסה שוב.';
+
+  @override
+  String get restoreError => 'שגיאה בשחזור רכישות. נסה שוב.';
+
+  @override
+  String get loading => 'טוען...';
+
+  @override
+  String get fieldRequired => 'שדה חובה';
+
+  @override
+  String get addedFeedback => 'נוסף!';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'נבחרו $count',
+      many: 'נבחרו $count',
+      two: 'נבחרו $count',
+      one: 'נבחר $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'מוערך';
+
+  @override
+  String get alreadyPurchased => 'כבר נרכש';
+
+  @override
+  String get clearList => 'נקה רשימה';
+
+  @override
+  String get clearPurchased => 'נקה נרכשים';
+
+  @override
+  String get share => 'שיתוף';
+
+  @override
+  String get shareViaCode => 'שיתוף באמצעות קוד';
+
+  @override
+  String get importViaCode => 'ייבוא באמצעות קוד';
+
+  @override
+  String get listAssistant => 'עוזר רשימה';
+
+  @override
+  String get globalAssistant => 'עוזר כללי';
+
+  @override
+  String get becomePremium => 'היה Premium';
+
+  @override
+  String get manageSubscription => 'ניהול מינוי';
+
+  @override
+  String get completePurchase => 'השלם רכישה';
+
+  @override
+  String get confirmClearList => 'להסיר את כל הפריטים?';
+
+  @override
+  String get shareListTitle => 'שיתוף רשימה';
+
+  @override
+  String get shareThisCode => 'שתף קוד זה:';
+
+  @override
+  String get validForLimitedTime => 'תקף לזמן מוגבל';
+
+  @override
+  String get importListTitle => 'ייבוא רשימה';
+
+  @override
+  String get enterCodeHint => 'הכנס את הקוד';
+
+  @override
+  String get confirmArchiveTitle => 'השלם רכישה';
+
+  @override
+  String get confirmArchiveContent => 'להשלים רכישה זו ולארכב את הרשימה?';
+
+  @override
+  String get complete => 'השלם';
+
+  @override
+  String get listArchived => 'הרשימה אורכבה בהצלחה!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName נוסף!';
+  }
+
+  @override
+  String get buy => 'קנה';
+
+  @override
+  String get unmark => 'הסר סימון';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return 'להסיר $count פריט(ים)?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'אישור';
+
+  @override
+  String confirmContent(int count) {
+    return 'להסיר $count פריט(ים)?';
+  }
+
+  @override
+  String get archiveList => 'ארכוב רשימה';
+
+  @override
+  String get pantryAppBar => 'מזווה';
+
+  @override
+  String get generateShoppingList => 'צור רשימת קניות';
+
+  @override
+  String get pantryEmpty => 'מזווה ריק';
+
+  @override
+  String get pantryEmptySubtitle => 'הוסף מוצרים שאתה רוצה להחזיק בבית';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit פריט(ים) צריך/צריכים להירכש';
+  }
+
+  @override
+  String get noItemsToBuy => 'אין פריטים שצריך לקנות';
+
+  @override
+  String get newPantryList => 'קניית מזווה';
+
+  @override
+  String get newListTitle => 'רשימת קניות חדשה';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count פריט(ים) יתווספו';
+  }
+
+  @override
+  String get listNameLabel => 'שם הרשימה';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'הרשימה \"$name\" נוצרה עם $count פריטים';
+  }
+
+  @override
+  String get noTracking => 'ללא מעקב';
+
+  @override
+  String get markAsPurchased => 'סמן כנרכש';
+
+  @override
+  String editPantryItem(String name) {
+    return 'ערוך $name';
+  }
+
+  @override
+  String get idealQuantity => 'כמות אידיאלית';
+
+  @override
+  String get currentQuantity => 'כמות נוכחית';
+
+  @override
+  String get consumed => 'נצרך';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name חודש ל-$quantity $unit';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return 'להסיר את \"$name\" מהמזווה?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return 'ערוך $name';
+  }
+
+  @override
+  String get settingsAppBar => 'הגדרות';
+
+  @override
+  String get language => 'שפה';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'ברירת מחדל של המערכת';
+
+  @override
+  String get appearance => 'מראה';
+
+  @override
+  String get light => 'בהיר';
+
+  @override
+  String get system => 'מערכת';
+
+  @override
+  String get dark => 'כהה';
+
+  @override
+  String get themeColor => 'צבע נושא';
+
+  @override
+  String get finance => 'כספים';
+
+  @override
+  String get monthlyBudgetNav => 'תקציב חודשי';
+
+  @override
+  String get budgetSubtitle => 'עקוב אחר ההוצאות החודשיות שלך';
+
+  @override
+  String get data => 'נתונים';
+
+  @override
+  String get backupNav => 'גיבוי';
+
+  @override
+  String get backupSubtitle => 'ייצא או ייבא את הנתונים שלך';
+
+  @override
+  String get about => 'אודות';
+
+  @override
+  String get version => 'גרסה';
+
+  @override
+  String get privacy => 'פרטיות';
+
+  @override
+  String get termsOfUse => 'תנאי שימוש';
+
+  @override
+  String get backupTitle => 'גיבוי';
+
+  @override
+  String get backupPremiumDescription => 'גיבוי וייצוא הם תכונת Premium';
+
+  @override
+  String get exportData => 'ייצא נתונים';
+
+  @override
+  String get exportDataSubtitle => 'שמור את כל הרשימות כ-JSON';
+
+  @override
+  String get importData => 'ייבא נתונים';
+
+  @override
+  String get importDataSubtitle => 'שחזר רשימות מ-JSON';
+
+  @override
+  String get importJsonTitle => 'ייבא JSON';
+
+  @override
+  String get importJsonHint => 'הדבק את JSON הגיבוי כאן...';
+
+  @override
+  String get backupExported => 'הגיבוי יוצא!';
+
+  @override
+  String get budgetAppBar => 'תקציב חודשי';
+
+  @override
+  String get budgetPremiumLocked => 'תקציב חודשי גלובלי הוא Premium';
+
+  @override
+  String get budgetUpgradePrompt => 'שדרג כדי לפתוח';
+
+  @override
+  String get noBudgetDefined => 'לא הוגדר תקציב';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'סה\"כ מוערך: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'הגדר תקציב';
+
+  @override
+  String get budgetLists => 'רשימות';
+
+  @override
+  String get budgetValueLabel => 'סכום';
+
+  @override
+  String get setBudgetTitle => 'תקציב חודשי';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'הכל';
+
+  @override
+  String get filterPending => 'ממתין';
+
+  @override
+  String get filterPurchased => 'נרכש';
+
+  @override
+  String get sortName => 'שם';
+
+  @override
+  String get sortCategory => 'קטגוריה';
+
+  @override
+  String get sortDate => 'תאריך';
+
+  @override
+  String get sortManual => 'ידני';
+
+  @override
+  String get addItem => 'הוסף פריט';
+
+  @override
+  String get itemName => 'שם הפריט';
+
+  @override
+  String get quantityShort => 'כמות';
+
+  @override
+  String get unit => 'יחידה';
+
+  @override
+  String get category => 'קטגוריה';
+
+  @override
+  String get estimatedPrice => 'מחיר משוער';
+
+  @override
+  String get addItemPrice => 'מחיר משוער';
+
+  @override
+  String get editItem => 'ערוך פריט';
+
+  @override
+  String get quantityFull => 'כמות';
+
+  @override
+  String get editItemPrice => 'מחיר משוער';
+
+  @override
+  String get addToPantry => 'הוסף למזווה';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return 'להוסיף את \"$name\" למזווה שלך?';
+  }
+
+  @override
+  String get yes => 'כן';
+
+  @override
+  String get productName => 'שם המוצר';
+
+  @override
+  String get idealQty => 'כמות אידיאלית';
+
+  @override
+  String get currentQty => 'כמות נוכחית';
+
+  @override
+  String get trackStock => 'מעקב מלאי';
+
+  @override
+  String get trackStockActive => 'מופיע בהצעות קנייה';
+
+  @override
+  String get trackStockInactive => 'לא יוצר הצעת קנייה';
+
+  @override
+  String get createListDialog => 'צור רשימה';
+
+  @override
+  String get renameListDialog => 'שנה שם רשימה';
+
+  @override
+  String get listHistory => 'היסטוריית רשימות';
+
+  @override
+  String get myLists => 'הרשימות שלי';
+
+  @override
+  String get viewActive => 'צפה בפעילות';
+
+  @override
+  String get viewHistory => 'צפה בהיסטוריה';
+
+  @override
+  String get noArchivedLists => 'אין רשימות בארכיון';
+
+  @override
+  String get noActiveLists => 'אין רשימות פעילות';
+
+  @override
+  String completedOn(String date) {
+    return 'הושלם בתאריך $date';
+  }
+
+  @override
+  String get sharedLabel => 'משותף';
+
+  @override
+  String get restore => 'שחזר';
+
+  @override
+  String get removeSharedTooltip => 'הסר';
+
+  @override
+  String get deleteListTitle => 'מחק רשימה';
+
+  @override
+  String deleteListContent(String name) {
+    return 'האם אתה בטוח שברצונך למחוק את \"$name\"? כל הפריטים יוסרו.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'הסר רשימה משותפת';
+
+  @override
+  String removeSharedListContent(String name) {
+    return 'להסיר את \"$name\" מהרשימות שלך? הרשימה המקורית לא תושפע.';
+  }
+
+  @override
+  String get createNewList => 'צור רשימה חדשה';
+
+  @override
+  String get aiAssistant => 'עוזר AI';
+
+  @override
+  String get aiAssistantDescription =>
+      'קבל הצעות חכמות, מתכונים וטיפים מותאמים אישית עם עוזר ה-AI שלנו.';
+
+  @override
+  String get generalAssistant => 'עוזר כללי';
+
+  @override
+  String get clearHistory => 'נקה היסטוריה';
+
+  @override
+  String get clearHistoryConfirm => 'למחוק את כל ההודעות בפגישה זו?';
+
+  @override
+  String get chatHint => 'הקלד את ההודעה שלך...';
+
+  @override
+  String chatError(String error) {
+    return 'שגיאה בטעינת הצ\'אט: $error';
+  }
+
+  @override
+  String get listHelp => 'איך אני יכול לעזור עם הרשימה שלך?';
+
+  @override
+  String get generalHelp => 'איך אני יכול לעזור עם הקניות שלך היום?';
+
+  @override
+  String get chatSubtitle => 'בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.';
+
+  @override
+  String get aiError =>
+      'מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt => 'התחבר כדי לפתוח\nתכונות Premium';
+
+  @override
+  String get signInGoogle => 'התחבר עם Google';
+
+  @override
+  String get signInApple => 'התחבר עם Apple';
+
+  @override
+  String get continueAsGuest => 'המשך כאורח';
+
+  @override
+  String loginError(String error) {
+    return 'שגיאת התחברות: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'שדרג כדי לפתוח';
+
+  @override
+  String get itemRemoved => 'הפריט הוסר';
+
+  @override
+  String get undo => 'בטל';
+
+  @override
+  String get emptyListTitle => 'הרשימה שלך ריקה';
+
+  @override
+  String get emptyListSubtitle => 'הוסף פריטים כדי להתחיל';
+
+  @override
+  String get noListFoundTitle => 'לא נמצאו רשימות';
+
+  @override
+  String get noListFoundSubtitle => 'צור את הרשימה הראשונה שלך כדי להתחיל';
+
+  @override
+  String get createFirstList => 'צור רשימה ראשונה';
+
+  @override
+  String get listBudgetTitle => 'תקציב הרשימה';
+
+  @override
+  String get budgetAmountLabel => 'סכום התקציב';
+
+  @override
+  String get removeBudget => 'הסר';
+
+  @override
+  String get prefUnlimitedLists => 'רשימות ללא הגבלה';
+
+  @override
+  String get prefSharing => 'שתף רשימות';
+
+  @override
+  String get prefFullHistory => 'היסטוריה מלאה';
+
+  @override
+  String get prefExportData => 'ייצא נתונים';
+
+  @override
+  String get prefCustomThemes => 'ערכות נושא מותאמות';
+
+  @override
+  String get prefMonthlyBudget => 'תקציב חודשי גלובלי';
+
+  @override
+  String get prefAIAssistant => 'עוזר AI אישי';
+
+  @override
+  String get prefUnlimitedPantry => 'מזווה ללא הגבלה';
+
+  @override
+  String get prefInteractiveArtifacts => 'ארטיפקטים אינטראקטיביים של AI';
+
+  @override
+  String get themeGreen => 'ירוק';
+
+  @override
+  String get themeBlue => 'כחול';
+
+  @override
+  String get themePurple => 'סגול';
+
+  @override
+  String get themeRed => 'אדום';
+
+  @override
+  String get themeOrange => 'כתום';
+
+  @override
+  String get themePink => 'ורוד';
+
+  @override
+  String get themeIndigo => 'אינדיגו';
+
+  @override
+  String get themeAmber => 'ענבר';
+
+  @override
+  String get themeTeal => 'טיל';
+
+  @override
+  String get themeBrown => 'חום';
+
+  @override
+  String get catFruits => 'פירות';
+
+  @override
+  String get catCleaning => 'ניקיון';
+
+  @override
+  String get catBeverages => 'משקאות';
+
+  @override
+  String get catBakery => 'מאפייה';
+
+  @override
+  String get catOthers => 'אחר';
+
+  @override
+  String get unitPack => 'חבילה';
+
+  @override
+  String get shareSubject => 'רשימת קניות';
+
+  @override
+  String get monthlyBudgetTitle => 'תקציב חודשי';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'מחק רשימה';
+
+  @override
+  String get pantryItemRemoved => 'הפריט הוסר';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: 'יש לרכוש $deficit פריטים',
+      many: 'יש לרכוש $deficit פריטים',
+      two: 'יש לרכוש $deficit פריטים',
+      one: 'יש לרכוש $deficit פריט',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'סה\"כ בעגלה';
+
+  @override
+  String get restockLabel => 'חידוש מלאי';
+
+  @override
+  String get advancedFeatures => 'תכונות מתקדמות';
+
+  @override
+  String get selectAll => 'בחר הכל';
+
+  @override
+  String get deselectAll => 'בטל בחירה';
+
+  @override
+  String get monthlyBudgetAppBar => 'תקציב חודשי';
+
+  @override
+  String get budgetEditTitle => 'תקציב חודשי';
+
+  @override
+  String get budgetDashboardTitle => 'לוח מחוונים';
+
+  @override
+  String get selectListForDashboard => 'בחר רשימה כדי לראות את לוח המחוונים.';
+
+  @override
+  String get spendingAnalysis => 'ניתוח הוצאות';
+
+  @override
+  String get noItemsToAnalyze => 'אין פריטים ברשימה לניתוח.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'סמן פריטים כנרכשים כדי לראות את הניתוח.';
+
+  @override
+  String get totalSpending => 'סה\"כ הוצאות';
+
+  @override
+  String get spendingByCategory => 'הוצאות לפי קטגוריה';
+
+  @override
+  String get achievements => 'הישגים';
+
+  @override
+  String get exportPdfExcel => 'ייצא PDF/Excel';
+
+  @override
+  String get exportPdf => 'ייצא כ-PDF';
+
+  @override
+  String get exportExcel => 'ייצא כ-Excel';
+
+  @override
+  String get organizingAi => 'מארגן עם AI...';
+
+  @override
+  String get yesLabel => 'כן';
+
+  @override
+  String get noLabel => 'לא';
+
+  @override
+  String get shareListText => 'רשימת הקניות שלי';
+
+  @override
+  String get emptyListAddItems => 'הרשימה שלך ריקה! הוסף פריטים תחילה. ℹ️';
+
+  @override
+  String get listOrganizedMagic => 'הרשימה אורגנה בקסם לפי קטגוריות! ✨';
+
+  @override
+  String get shoppingMode => 'מצב קניות';
+
+  @override
+  String get smartOrganization => 'ארגון חכם';
+
+  @override
+  String get savings => 'חיסכון';
+
+  @override
+  String get shoppingModeHeader => 'מצב קניות';
+
+  @override
+  String get shareAsText => 'שלח פריטים כטקסט מעוצב';
+
+  @override
+  String get shareRealtime => 'סנכרון בזמן אמת עם אנשים אחרים';
+
+  @override
+  String get quickRecipe => 'מתכון מהיר';
+
+  @override
+  String get quickRecipePrompt => 'הצע מתכונים עם פריטים מהרשימה שלי.';
+
+  @override
+  String get economyTips => 'טיפים לחיסכון';
+
+  @override
+  String get economyTipsPrompt => 'איך אני יכול לחסוך כסף ברכישה זו?';
+
+  @override
+  String get organizeAisles => 'ארגן לפי מעברים';
+
+  @override
+  String get organizeAislesPrompt => 'ארגן לפי מעברים בסופר.';
+
+  @override
+  String get recipeSuggestion => 'הצעת מתכון';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return 'נותרו $remaining נקודות זכות';
+  }
+
+  @override
+  String get addAllToList => 'הוסף הכל לרשימה';
+
+  @override
+  String get organizeByAisles => 'ארגן לפי מעברים';
+
+  @override
+  String get voiceTranscriptionTooltip => 'הקלדה קולית (חינם)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'פקודה קולית AI (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'פקודה קולית AI';
+
+  @override
+  String get voiceCommandContent =>
+      'דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• \'הוסף לחם, גבינה ונקניק\'\n• \'הסר אבקת כביסה\'\n• \'שנה נושא לכחול\'\n\nזוהי תכונה בלעדית של Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'צפה בתוכניות';
+
+  @override
+  String get itemsAddedSuccess => 'הפריטים נוספו בהצלחה לרשימה!';
+
+  @override
+  String get viewList => 'צפה ברשימה';
+
+  @override
+  String get feedbackTitle => 'שלח משוב';
+
+  @override
+  String get feedbackPrompt => 'מה תרצה לשתף?';
+
+  @override
+  String get feedbackTypeBug => 'דווח על באג';
+
+  @override
+  String get feedbackTypeBugHint => 'משהו לא עובד';
+
+  @override
+  String get feedbackTypeSuggestion => 'הצעה';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'רעיון לשיפור האפליקציה';
+
+  @override
+  String get feedbackTypeTranslation => 'בעיית תרגום';
+
+  @override
+  String get feedbackTypeTranslationHint => 'תרגום לא נכון או לא טבעי';
+
+  @override
+  String get feedbackTypeFeature => 'בקשת תכונה';
+
+  @override
+  String get feedbackTypeFeatureHint => 'תכונה שהיית רוצה לראות';
+
+  @override
+  String get feedbackTypeOther => 'אחר';
+
+  @override
+  String get feedbackTypeOtherHint => 'סוג משוב אחר';
+
+  @override
+  String get feedbackHint => 'תאר את המשוב שלך בפירוט...';
+
+  @override
+  String get feedbackSend => 'שלח משוב';
+
+  @override
+  String get feedbackSending => 'שולח...';
+
+  @override
+  String get feedbackThankYou => 'תודה!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'המשוב שלך התקבל ועוזר לנו לשפר את Lista Plus עבור כולם.';
+
+  @override
+  String get feedbackBack => 'חזור';
+
+  @override
+  String feedbackError(String error) {
+    return 'שגיאה בשליחה: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'נסה שוב';
+
+  @override
+  String get feedbackSettingsTitle => 'שלח משוב';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'דווח על באגים, הצע שיפורים או תקן תרגומים';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Open menu';
+
+  @override
+  String get viewRecipe => 'View Recipe';
+
+  @override
+  String get recipeCreated => 'Recipe created!';
+
+  @override
+  String get editRecipe => 'Edit';
+
+  @override
+  String get deleteRecipe => 'Delete';
+
+  @override
+  String get deleteRecipeConfirm => 'Delete this recipe?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+  }
+
+  @override
+  String get ingredients => 'Ingredients';
+
+  @override
+  String get instructions => 'Instructions';
+
+  @override
+  String get prepTime => 'Prep time';
+
+  @override
+  String get recipeSaved => 'Recipe saved!';
+
+  @override
+  String get noRecipesSaved => 'No recipes saved';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Create your first custom recipe by tapping the button below.';
+
+  @override
+  String get myRecipes => 'My Recipes';
+
+  @override
+  String get newRecipe => 'New Recipe';
+
+  @override
+  String get loadingRecipes => 'Loading your recipes...';
+
+  @override
+  String get errorLoadingRecipes => 'Error loading recipes';
+
+  @override
+  String get addIngredient => 'Add ingredient';
+
+  @override
+  String get saveRecipe => 'Save';
+
+  @override
+  String get recipeName => 'Recipe name';
+
+  @override
+  String get shortDescription => 'Short description';
+
+  @override
+  String get prepTimeMinutes => 'Prep time (minutes)';
+
+  @override
+  String get instructionsHint => 'Type one step per line...';
+
+  @override
+  String get addPhoto => 'Add photo';
+
+  @override
+  String get imageUrlPlaceholder => 'Or paste an image URL';
+
+  @override
+  String get tags => 'Tags';
+
+  @override
+  String get recipeTags => 'Recipe tags';
+
+  @override
+  String get suggestedTags => 'Suggested';
+
+  @override
+  String get searchRecipes => 'Search recipes...';
+
+  @override
+  String get filterByTag => 'Filter by tag';
+
+  @override
+  String get allTags => 'All';
+
+  @override
+  String get recipeDeleted => 'Recipe deleted';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get editRecipeTitle => 'Edit Recipe';
+
+  @override
+  String get newRecipeTitle => 'New Recipe';
+
+  @override
+  String get requiredField => 'Required';
+
+  @override
+  String get chooseImageSource => 'Choose image source';
+
+  @override
+  String get gallery => 'Gallery';
+
+  @override
+  String get enterUrl => 'Enter URL';
+
+  @override
+  String get recipeImage => 'Recipe image';
+
+  @override
+  String get removeImage => 'Remove image';
+}
+
+/// The translations for Hebrew, as used in Israel (`he_IL`).
+class AppLocalizationsHeIl extends AppLocalizationsHe {
+  AppLocalizationsHeIl() : super('he_IL');
+
+  @override
+  String get appTitle => 'רשימת קניות';
+
+  @override
+  String get lists => 'רשימות';
+
+  @override
+  String get pantry => 'מזווה';
+
+  @override
+  String get cancel => 'ביטול';
+
+  @override
+  String get save => 'שמירה';
+
+  @override
+  String get create => 'יצירה';
+
+  @override
+  String get add => 'הוספה';
+
+  @override
+  String get remove => 'הסרה';
+
+  @override
+  String get delete => 'מחיקה';
+
+  @override
+  String get edit => 'עריכה';
+
+  @override
+  String get copy => 'העתקה';
+
+  @override
+  String get retry => 'ניסיון חוזר';
+
+  @override
+  String get regenerate => 'יצירה מחדש';
+
+  @override
+  String get copiedToClipboard => 'הועתק ללוח';
+
+  @override
+  String get confirm => 'אישור';
+
+  @override
+  String get close => 'סגירה';
+
+  @override
+  String get import => 'ייבוא';
+
+  @override
+  String get rename => 'שינוי שם';
+
+  @override
+  String get upgrade => 'שדרוג';
+
+  @override
+  String get clear => 'ניקוי';
+
+  @override
+  String error(String message) {
+    return 'שגיאה: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'שגיאה: $message';
+  }
+
+  @override
+  String get purchaseError => 'שגיאה בעיבוד הרכישה. נסה שוב.';
+
+  @override
+  String get restoreError => 'שגיאה בשחזור רכישות. נסה שוב.';
+
+  @override
+  String get loading => 'טוען...';
+
+  @override
+  String get fieldRequired => 'שדה חובה';
+
+  @override
+  String get addedFeedback => 'נוסף!';
+
+  @override
+  String selectedItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'נבחרו $count',
+      many: 'נבחרו $count',
+      two: 'נבחרו $count',
+      one: 'נבחר $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get estimated => 'מוערך';
+
+  @override
+  String get alreadyPurchased => 'כבר נרכש';
+
+  @override
+  String get clearList => 'נקה רשימה';
+
+  @override
+  String get clearPurchased => 'נקה נרכשים';
+
+  @override
+  String get share => 'שיתוף';
+
+  @override
+  String get shareViaCode => 'שיתוף באמצעות קוד';
+
+  @override
+  String get importViaCode => 'ייבוא באמצעות קוד';
+
+  @override
+  String get listAssistant => 'עוזר רשימה';
+
+  @override
+  String get globalAssistant => 'עוזר כללי';
+
+  @override
+  String get becomePremium => 'היה Premium';
+
+  @override
+  String get manageSubscription => 'ניהול מינוי';
+
+  @override
+  String get completePurchase => 'השלם רכישה';
+
+  @override
+  String get confirmClearList => 'להסיר את כל הפריטים?';
+
+  @override
+  String get shareListTitle => 'שיתוף רשימה';
+
+  @override
+  String get shareThisCode => 'שתף קוד זה:';
+
+  @override
+  String get validForLimitedTime => 'תקף לזמן מוגבל';
+
+  @override
+  String get importListTitle => 'ייבוא רשימה';
+
+  @override
+  String get enterCodeHint => 'הכנס את הקוד';
+
+  @override
+  String get confirmArchiveTitle => 'השלם רכישה';
+
+  @override
+  String get confirmArchiveContent => 'להשלים רכישה זו ולארכב את הרשימה?';
+
+  @override
+  String get complete => 'השלם';
+
+  @override
+  String get listArchived => 'הרשימה אורכבה בהצלחה!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName נוסף!';
+  }
+
+  @override
+  String get buy => 'קנה';
+
+  @override
+  String get unmark => 'הסר סימון';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return 'להסיר $count פריט(ים)?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'אישור';
+
+  @override
+  String confirmContent(int count) {
+    return 'להסיר $count פריט(ים)?';
+  }
+
+  @override
+  String get archiveList => 'ארכוב רשימה';
+
+  @override
+  String get pantryAppBar => 'מזווה';
+
+  @override
+  String get generateShoppingList => 'צור רשימת קניות';
+
+  @override
+  String get pantryEmpty => 'מזווה ריק';
+
+  @override
+  String get pantryEmptySubtitle => 'הוסף מוצרים שאתה רוצה להחזיק בבית';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit פריט(ים) צריך/צריכים להירכש';
+  }
+
+  @override
+  String get noItemsToBuy => 'אין פריטים שצריך לקנות';
+
+  @override
+  String get newPantryList => 'קניית מזווה';
+
+  @override
+  String get newListTitle => 'רשימת קניות חדשה';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count פריט(ים) יתווספו';
+  }
+
+  @override
+  String get listNameLabel => 'שם הרשימה';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'הרשימה \"$name\" נוצרה עם $count פריטים';
+  }
+
+  @override
+  String get noTracking => 'ללא מעקב';
+
+  @override
+  String get markAsPurchased => 'סמן כנרכש';
+
+  @override
+  String editPantryItem(String name) {
+    return 'ערוך $name';
+  }
+
+  @override
+  String get idealQuantity => 'כמות אידיאלית';
+
+  @override
+  String get currentQuantity => 'כמות נוכחית';
+
+  @override
+  String get consumed => 'נצרך';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name חודש ל-$quantity $unit';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return 'להסיר את \"$name\" מהמזווה?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return 'ערוך $name';
+  }
+
+  @override
+  String get settingsAppBar => 'הגדרות';
+
+  @override
+  String get language => 'שפה';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'ברירת מחדל של המערכת';
+
+  @override
+  String get appearance => 'מראה';
+
+  @override
+  String get light => 'בהיר';
+
+  @override
+  String get system => 'מערכת';
+
+  @override
+  String get dark => 'כהה';
+
+  @override
+  String get themeColor => 'צבע נושא';
+
+  @override
+  String get finance => 'כספים';
+
+  @override
+  String get monthlyBudgetNav => 'תקציב חודשי';
+
+  @override
+  String get budgetSubtitle => 'עקוב אחר ההוצאות החודשיות שלך';
+
+  @override
+  String get data => 'נתונים';
+
+  @override
+  String get backupNav => 'גיבוי';
+
+  @override
+  String get backupSubtitle => 'ייצא או ייבא את הנתונים שלך';
+
+  @override
+  String get about => 'אודות';
+
+  @override
+  String get version => 'גרסה';
+
+  @override
+  String get privacy => 'פרטיות';
+
+  @override
+  String get termsOfUse => 'תנאי שימוש';
+
+  @override
+  String get backupTitle => 'גיבוי';
+
+  @override
+  String get backupPremiumDescription => 'גיבוי וייצוא הם תכונת Premium';
+
+  @override
+  String get exportData => 'ייצא נתונים';
+
+  @override
+  String get exportDataSubtitle => 'שמור את כל הרשימות כ-JSON';
+
+  @override
+  String get importData => 'ייבא נתונים';
+
+  @override
+  String get importDataSubtitle => 'שחזר רשימות מ-JSON';
+
+  @override
+  String get importJsonTitle => 'ייבא JSON';
+
+  @override
+  String get importJsonHint => 'הדבק את JSON הגיבוי כאן...';
+
+  @override
+  String get backupExported => 'הגיבוי יוצא!';
+
+  @override
+  String get budgetAppBar => 'תקציב חודשי';
+
+  @override
+  String get budgetPremiumLocked => 'תקציב חודשי גלובלי הוא Premium';
+
+  @override
+  String get budgetUpgradePrompt => 'שדרג כדי לפתוח';
+
+  @override
+  String get noBudgetDefined => 'לא הוגדר תקציב';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'סה\"כ מוערך: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'הגדר תקציב';
+
+  @override
+  String get budgetLists => 'רשימות';
+
+  @override
+  String get budgetValueLabel => 'סכום';
+
+  @override
+  String get setBudgetTitle => 'תקציב חודשי';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'הכל';
+
+  @override
+  String get filterPending => 'ממתין';
+
+  @override
+  String get filterPurchased => 'נרכש';
+
+  @override
+  String get sortName => 'שם';
+
+  @override
+  String get sortCategory => 'קטגוריה';
+
+  @override
+  String get sortDate => 'תאריך';
+
+  @override
+  String get sortManual => 'ידני';
+
+  @override
+  String get addItem => 'הוסף פריט';
+
+  @override
+  String get itemName => 'שם הפריט';
+
+  @override
+  String get quantityShort => 'כמות';
+
+  @override
+  String get unit => 'יחידה';
+
+  @override
+  String get category => 'קטגוריה';
+
+  @override
+  String get estimatedPrice => 'מחיר משוער';
+
+  @override
+  String get addItemPrice => 'מחיר משוער';
+
+  @override
+  String get editItem => 'ערוך פריט';
+
+  @override
+  String get quantityFull => 'כמות';
+
+  @override
+  String get editItemPrice => 'מחיר משוער';
+
+  @override
+  String get addToPantry => 'הוסף למזווה';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return 'להוסיף את \"$name\" למזווה שלך?';
+  }
+
+  @override
+  String get yes => 'כן';
+
+  @override
+  String get productName => 'שם המוצר';
+
+  @override
+  String get idealQty => 'כמות אידיאלית';
+
+  @override
+  String get currentQty => 'כמות נוכחית';
+
+  @override
+  String get trackStock => 'מעקב מלאי';
+
+  @override
+  String get trackStockActive => 'מופיע בהצעות קנייה';
+
+  @override
+  String get trackStockInactive => 'לא יוצר הצעת קנייה';
+
+  @override
+  String get createListDialog => 'צור רשימה';
+
+  @override
+  String get renameListDialog => 'שנה שם רשימה';
+
+  @override
+  String get listHistory => 'היסטוריית רשימות';
+
+  @override
+  String get myLists => 'הרשימות שלי';
+
+  @override
+  String get viewActive => 'צפה בפעילות';
+
+  @override
+  String get viewHistory => 'צפה בהיסטוריה';
+
+  @override
+  String get noArchivedLists => 'אין רשימות בארכיון';
+
+  @override
+  String get noActiveLists => 'אין רשימות פעילות';
+
+  @override
+  String completedOn(String date) {
+    return 'הושלם בתאריך $date';
+  }
+
+  @override
+  String get sharedLabel => 'משותף';
+
+  @override
+  String get restore => 'שחזר';
+
+  @override
+  String get removeSharedTooltip => 'הסר';
+
+  @override
+  String get deleteListTitle => 'מחק רשימה';
+
+  @override
+  String deleteListContent(String name) {
+    return 'האם אתה בטוח שברצונך למחוק את \"$name\"? כל הפריטים יוסרו.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'הסר רשימה משותפת';
+
+  @override
+  String removeSharedListContent(String name) {
+    return 'להסיר את \"$name\" מהרשימות שלך? הרשימה המקורית לא תושפע.';
+  }
+
+  @override
+  String get createNewList => 'צור רשימה חדשה';
+
+  @override
+  String get aiAssistant => 'עוזר AI';
+
+  @override
+  String get aiAssistantDescription =>
+      'קבל הצעות חכמות, מתכונים וטיפים מותאמים אישית עם עוזר ה-AI שלנו.';
+
+  @override
+  String get generalAssistant => 'עוזר כללי';
+
+  @override
+  String get clearHistory => 'נקה היסטוריה';
+
+  @override
+  String get clearHistoryConfirm => 'למחוק את כל ההודעות בפגישה זו?';
+
+  @override
+  String get chatHint => 'הקלד את ההודעה שלך...';
+
+  @override
+  String chatError(String error) {
+    return 'שגיאה בטעינת הצ\'אט: $error';
+  }
+
+  @override
+  String get listHelp => 'איך אני יכול לעזור עם הרשימה שלך?';
+
+  @override
+  String get generalHelp => 'איך אני יכול לעזור עם הקניות שלך היום?';
+
+  @override
+  String get chatSubtitle => 'בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.';
+
+  @override
+  String get aiError =>
+      'מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt => 'התחבר כדי לפתוח תכונות Premium';
+
+  @override
+  String get signInGoogle => 'התחבר עם Google';
+
+  @override
+  String get signInApple => 'התחבר עם Apple';
+
+  @override
+  String get continueAsGuest => 'המשך כאורח';
+
+  @override
+  String loginError(String error) {
+    return 'שגיאת התחברות: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'שדרג כדי לפתוח';
+
+  @override
+  String get itemRemoved => 'הפריט הוסר';
+
+  @override
+  String get undo => 'בטל';
+
+  @override
+  String get emptyListTitle => 'הרשימה שלך ריקה';
+
+  @override
+  String get emptyListSubtitle => 'הוסף פריטים כדי להתחיל';
+
+  @override
+  String get noListFoundTitle => 'לא נמצאו רשימות';
+
+  @override
+  String get noListFoundSubtitle => 'צור את הרשימה הראשונה שלך כדי להתחיל';
+
+  @override
+  String get createFirstList => 'צור רשימה ראשונה';
+
+  @override
+  String get listBudgetTitle => 'תקציב הרשימה';
+
+  @override
+  String get budgetAmountLabel => 'סכום התקציב';
+
+  @override
+  String get removeBudget => 'הסר';
+
+  @override
+  String get prefUnlimitedLists => 'רשימות ללא הגבלה';
+
+  @override
+  String get prefSharing => 'שתף רשימות';
+
+  @override
+  String get prefFullHistory => 'היסטוריה מלאה';
+
+  @override
+  String get prefExportData => 'ייצא נתונים';
+
+  @override
+  String get prefCustomThemes => 'ערכות נושא מותאמות';
+
+  @override
+  String get prefMonthlyBudget => 'תקציב חודשי גלובלי';
+
+  @override
+  String get prefAIAssistant => 'עוזר AI אישי';
+
+  @override
+  String get prefUnlimitedPantry => 'מזווה ללא הגבלה';
+
+  @override
+  String get prefInteractiveArtifacts => 'ארטיפקטים אינטראקטיביים של AI';
+
+  @override
+  String get themeGreen => 'ירוק';
+
+  @override
+  String get themeBlue => 'כחול';
+
+  @override
+  String get themePurple => 'סגול';
+
+  @override
+  String get themeRed => 'אדום';
+
+  @override
+  String get themeOrange => 'כתום';
+
+  @override
+  String get themePink => 'ורוד';
+
+  @override
+  String get themeIndigo => 'אינדיגו';
+
+  @override
+  String get themeAmber => 'ענבר';
+
+  @override
+  String get themeTeal => 'טיל';
+
+  @override
+  String get themeBrown => 'חום';
+
+  @override
+  String get catFruits => 'פירות';
+
+  @override
+  String get catCleaning => 'ניקיון';
+
+  @override
+  String get catBeverages => 'משקאות';
+
+  @override
+  String get catBakery => 'מאפייה';
+
+  @override
+  String get catOthers => 'אחר';
+
+  @override
+  String get unitPack => 'חבילה';
+
+  @override
+  String get shareSubject => 'רשימת קניות';
+
+  @override
+  String get monthlyBudgetTitle => 'תקציב חודשי';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'מחק רשימה';
+
+  @override
+  String get pantryItemRemoved => 'הפריט הוסר';
+
+  @override
+  String deficitItems(int deficit) {
+    String _temp0 = intl.Intl.pluralLogic(
+      deficit,
+      locale: localeName,
+      other: 'יש לרכוש $deficit פריטים',
+      many: 'יש לרכוש $deficit פריטים',
+      two: 'יש לרכוש $deficit פריטים',
+      one: 'יש לרכוש $deficit פריט',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cartTotal => 'סה\"כ בעגלה';
+
+  @override
+  String get restockLabel => 'חידוש מלאי';
+
+  @override
+  String get advancedFeatures => 'תכונות מתקדמות';
+
+  @override
+  String get selectAll => 'בחר הכל';
+
+  @override
+  String get deselectAll => 'בטל בחירה';
+
+  @override
+  String get monthlyBudgetAppBar => 'תקציב חודשי';
+
+  @override
+  String get budgetEditTitle => 'תקציב חודשי';
+
+  @override
+  String get budgetDashboardTitle => 'לוח מחוונים';
+
+  @override
+  String get selectListForDashboard => 'בחר רשימה כדי לראות את לוח המחוונים.';
+
+  @override
+  String get spendingAnalysis => 'ניתוח הוצאות';
+
+  @override
+  String get noItemsToAnalyze => 'אין פריטים ברשימה לניתוח.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'סמן פריטים כנרכשים כדי לראות את הניתוח.';
+
+  @override
+  String get totalSpending => 'סה\"כ הוצאות';
+
+  @override
+  String get spendingByCategory => 'הוצאות לפי קטגוריה';
+
+  @override
+  String get achievements => 'הישגים';
+
+  @override
+  String get exportPdfExcel => 'ייצא PDF/Excel';
+
+  @override
+  String get exportPdf => 'ייצא כ-PDF';
+
+  @override
+  String get exportExcel => 'ייצא כ-Excel';
+
+  @override
+  String get organizingAi => 'מארגן עם AI...';
+
+  @override
+  String get yesLabel => 'כן';
+
+  @override
+  String get noLabel => 'לא';
+
+  @override
+  String get shareListText => 'רשימת הקניות שלי';
+
+  @override
+  String get emptyListAddItems => 'הרשימה שלך ריקה! הוסף פריטים תחילה. ℹ️';
+
+  @override
+  String get listOrganizedMagic => 'הרשימה אורגנה בקסם לפי קטגוריות! ✨';
+
+  @override
+  String get shoppingMode => 'מצב קניות';
+
+  @override
+  String get smartOrganization => 'ארגון חכם';
+
+  @override
+  String get savings => 'חיסכון';
+
+  @override
+  String get shoppingModeHeader => 'מצב קניות';
+
+  @override
+  String get shareAsText => 'שלח פריטים כטקסט מעוצב';
+
+  @override
+  String get shareRealtime => 'סנכרון בזמן אמת עם אנשים אחרים';
+
+  @override
+  String get quickRecipe => 'מתכון מהיר';
+
+  @override
+  String get quickRecipePrompt => 'הצע מתכונים עם פריטים מהרשימה שלי.';
+
+  @override
+  String get economyTips => 'טיפים לחיסכון';
+
+  @override
+  String get economyTipsPrompt => 'איך אני יכול לחסוך כסף ברכישה זו?';
+
+  @override
+  String get organizeAisles => 'ארגן לפי מעברים';
+
+  @override
+  String get organizeAislesPrompt => 'ארגן לפי מעברים בסופר.';
+
+  @override
+  String get recipeSuggestion => 'הצעת מתכון';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return 'נותרו $remaining נקודות זכות';
+  }
+
+  @override
+  String get addAllToList => 'הוסף הכל לרשימה';
+
+  @override
+  String get organizeByAisles => 'ארגן לפי מעברים';
+
+  @override
+  String get voiceTranscriptionTooltip => 'הקלדה קולית (חינם)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'פקודה קולית AI (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'פקודה קולית AI';
+
+  @override
+  String get voiceCommandContent =>
+      'דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• \'הוסף לחם, גבינה ונקניק\'\n• \'הסר אבקת כביסה\'\n• \'שנה נושא לכחול\'\n\nזוהי תכונה בלעדית של Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'צפה בתוכניות';
+
+  @override
+  String get itemsAddedSuccess => 'הפריטים נוספו בהצלחה לרשימה!';
+
+  @override
+  String get viewList => 'צפה ברשימה';
+
+  @override
+  String get feedbackTitle => 'שלח משוב';
+
+  @override
+  String get feedbackPrompt => 'מה תרצה לשתף?';
+
+  @override
+  String get feedbackTypeBug => 'דווח על באג';
+
+  @override
+  String get feedbackTypeBugHint => 'משהו לא עובד';
+
+  @override
+  String get feedbackTypeSuggestion => 'הצעה';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'רעיון לשיפור האפליקציה';
+
+  @override
+  String get feedbackTypeTranslation => 'בעיית תרגום';
+
+  @override
+  String get feedbackTypeTranslationHint => 'תרגום שגוי או לא טבעי';
+
+  @override
+  String get feedbackTypeFeature => 'בקשת תכונה';
+
+  @override
+  String get feedbackTypeFeatureHint => 'תכונה שהיית רוצה לראות';
+
+  @override
+  String get feedbackTypeOther => 'אחר';
+
+  @override
+  String get feedbackTypeOtherHint => 'סוג משוב אחר';
+
+  @override
+  String get feedbackHint => 'תאר את המשוב שלך בפירוט...';
+
+  @override
+  String get feedbackSend => 'שלח משוב';
+
+  @override
+  String get feedbackSending => 'שולח...';
+
+  @override
+  String get feedbackThankYou => 'תודה!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'המשוב שלך התקבל ועוזר לנו לשפר את Lista Plus לכולם.';
+
+  @override
+  String get feedbackBack => 'חזור';
+
+  @override
+  String feedbackError(String error) {
+    return 'שגיאה בשליחה: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'נסה שוב';
+
+  @override
+  String get feedbackSettingsTitle => 'שלח משוב';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'דווח על באגים, הצע שיפורים או תקן תרגומים';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+}

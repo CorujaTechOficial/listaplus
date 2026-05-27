@@ -5,8 +5,77 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_af.dart';
+import 'app_localizations_am.dart';
+import 'app_localizations_ar.dart';
+import 'app_localizations_az.dart';
+import 'app_localizations_be.dart';
+import 'app_localizations_bg.dart';
+import 'app_localizations_bn.dart';
+import 'app_localizations_ca.dart';
+import 'app_localizations_cs.dart';
+import 'app_localizations_da.dart';
+import 'app_localizations_de.dart';
+import 'app_localizations_el.dart';
 import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_et.dart';
+import 'app_localizations_eu.dart';
+import 'app_localizations_fa.dart';
+import 'app_localizations_fi.dart';
+import 'app_localizations_fil.dart';
+import 'app_localizations_fr.dart';
+import 'app_localizations_gl.dart';
+import 'app_localizations_gu.dart';
+import 'app_localizations_he.dart';
+import 'app_localizations_hi.dart';
+import 'app_localizations_hr.dart';
+import 'app_localizations_hu.dart';
+import 'app_localizations_hy.dart';
+import 'app_localizations_id.dart';
+import 'app_localizations_is.dart';
+import 'app_localizations_it.dart';
+import 'app_localizations_ja.dart';
+import 'app_localizations_ka.dart';
+import 'app_localizations_kk.dart';
+import 'app_localizations_km.dart';
+import 'app_localizations_kn.dart';
+import 'app_localizations_ko.dart';
+import 'app_localizations_ky.dart';
+import 'app_localizations_lo.dart';
+import 'app_localizations_lt.dart';
+import 'app_localizations_lv.dart';
+import 'app_localizations_mk.dart';
+import 'app_localizations_ml.dart';
+import 'app_localizations_mn.dart';
+import 'app_localizations_mr.dart';
+import 'app_localizations_ms.dart';
+import 'app_localizations_my.dart';
+import 'app_localizations_ne.dart';
+import 'app_localizations_nl.dart';
+import 'app_localizations_no.dart';
+import 'app_localizations_pa.dart';
+import 'app_localizations_pl.dart';
 import 'app_localizations_pt.dart';
+import 'app_localizations_rm.dart';
+import 'app_localizations_ro.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_si.dart';
+import 'app_localizations_sk.dart';
+import 'app_localizations_sl.dart';
+import 'app_localizations_sq.dart';
+import 'app_localizations_sr.dart';
+import 'app_localizations_sv.dart';
+import 'app_localizations_sw.dart';
+import 'app_localizations_ta.dart';
+import 'app_localizations_te.dart';
+import 'app_localizations_th.dart';
+import 'app_localizations_tr.dart';
+import 'app_localizations_uk.dart';
+import 'app_localizations_ur.dart';
+import 'app_localizations_vi.dart';
+import 'app_localizations_zh.dart';
+import 'app_localizations_zu.dart';
 
 // ignore_for_file: type=lint
 
@@ -94,9 +163,129 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('af'),
+    Locale('am'),
+    Locale('ar'),
+    Locale('az'),
+    Locale('be'),
+    Locale('bg'),
+    Locale('bn'),
+    Locale('bn', 'BD'),
+    Locale('ca'),
+    Locale('cs'),
+    Locale('cs', 'CZ'),
+    Locale('da'),
+    Locale('da', 'DK'),
+    Locale('de'),
+    Locale('de', 'DE'),
+    Locale('el'),
+    Locale('el', 'GR'),
     Locale('en'),
+    Locale('en', 'AU'),
+    Locale('en', 'CA'),
+    Locale('en', 'GB'),
+    Locale('en', 'IN'),
+    Locale('en', 'SG'),
+    Locale('en', 'ZA'),
+    Locale('es'),
+    Locale('es', '419'),
+    Locale('es', 'ES'),
+    Locale('es', 'US'),
+    Locale('et'),
+    Locale('eu'),
+    Locale('fa'),
+    Locale('fa', 'AE'),
+    Locale('fa', 'AF'),
+    Locale('fa', 'IR'),
+    Locale('fi'),
+    Locale('fi', 'FI'),
+    Locale('fil'),
+    Locale('fr'),
+    Locale('fr', 'CA'),
+    Locale('fr', 'FR'),
+    Locale('gl'),
+    Locale('gl', 'ES'),
+    Locale('gu'),
+    Locale('he'),
+    Locale('hi'),
+    Locale('hi', 'IN'),
+    Locale('hr'),
+    Locale('hu'),
+    Locale('hu', 'HU'),
+    Locale('hy'),
+    Locale('id'),
+    Locale('is'),
+    Locale('is', 'IS'),
+    Locale('it'),
+    Locale('it', 'IT'),
+    Locale('he', 'IL'),
+    Locale('ja'),
+    Locale('ja', 'JP'),
+    Locale('ka'),
+    Locale('ka', 'GE'),
+    Locale('kk'),
+    Locale('km'),
+    Locale('km', 'KH'),
+    Locale('kn'),
+    Locale('kn', 'IN'),
+    Locale('ko'),
+    Locale('ko', 'KR'),
+    Locale('ky'),
+    Locale('ky', 'KG'),
+    Locale('lo'),
+    Locale('lo', 'LA'),
+    Locale('lt'),
+    Locale('lv'),
+    Locale('mk'),
+    Locale('mk', 'MK'),
+    Locale('ml'),
+    Locale('ml', 'IN'),
+    Locale('mn'),
+    Locale('mn', 'MN'),
+    Locale('mr'),
+    Locale('mr', 'IN'),
+    Locale('ms'),
+    Locale('ms', 'MY'),
+    Locale('my'),
+    Locale('ne'),
+    Locale('ne', 'NP'),
+    Locale('nl'),
+    Locale('nl', 'NL'),
+    Locale('no'),
+    Locale('no', 'NO'),
+    Locale('pa'),
+    Locale('pl'),
+    Locale('pl', 'PL'),
     Locale('pt'),
     Locale('pt', 'BR'),
+    Locale('pt', 'PT'),
+    Locale('rm'),
+    Locale('ro'),
+    Locale('ru'),
+    Locale('ru', 'RU'),
+    Locale('si'),
+    Locale('sk'),
+    Locale('sl'),
+    Locale('sq'),
+    Locale('sr'),
+    Locale('sv'),
+    Locale('sv', 'SE'),
+    Locale('sw'),
+    Locale('ta'),
+    Locale('ta', 'IN'),
+    Locale('te'),
+    Locale('te', 'IN'),
+    Locale('th'),
+    Locale('tr'),
+    Locale('tr', 'TR'),
+    Locale('uk'),
+    Locale('ur'),
+    Locale('vi'),
+    Locale('zh'),
+    Locale('zh', 'CN'),
+    Locale('zh', 'HK'),
+    Locale('zh', 'TW'),
+    Locale('zu'),
   ];
 
   /// Main app title
@@ -1694,6 +1883,570 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View list'**
   String get viewList;
+
+  /// No description provided for @feedbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback'**
+  String get feedbackTitle;
+
+  /// No description provided for @feedbackPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to share?'**
+  String get feedbackPrompt;
+
+  /// No description provided for @feedbackTypeBug.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Bug'**
+  String get feedbackTypeBug;
+
+  /// No description provided for @feedbackTypeBugHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Something is not working'**
+  String get feedbackTypeBugHint;
+
+  /// No description provided for @feedbackTypeSuggestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggestion'**
+  String get feedbackTypeSuggestion;
+
+  /// No description provided for @feedbackTypeSuggestionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Idea to improve the app'**
+  String get feedbackTypeSuggestionHint;
+
+  /// No description provided for @feedbackTypeTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Translation Issue'**
+  String get feedbackTypeTranslation;
+
+  /// No description provided for @feedbackTypeTranslationHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect or awkward translation'**
+  String get feedbackTypeTranslationHint;
+
+  /// No description provided for @feedbackTypeFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature Request'**
+  String get feedbackTypeFeature;
+
+  /// No description provided for @feedbackTypeFeatureHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature you would like to see'**
+  String get feedbackTypeFeatureHint;
+
+  /// No description provided for @feedbackTypeOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get feedbackTypeOther;
+
+  /// No description provided for @feedbackTypeOtherHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Other type of feedback'**
+  String get feedbackTypeOtherHint;
+
+  /// No description provided for @feedbackHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your feedback in detail...'**
+  String get feedbackHint;
+
+  /// No description provided for @feedbackSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback'**
+  String get feedbackSend;
+
+  /// No description provided for @feedbackSending.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending...'**
+  String get feedbackSending;
+
+  /// No description provided for @feedbackThankYou.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank You!'**
+  String get feedbackThankYou;
+
+  /// No description provided for @feedbackThankYouMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your feedback has been received and helps us improve Lista Plus for everyone.'**
+  String get feedbackThankYouMessage;
+
+  /// No description provided for @feedbackBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get feedbackBack;
+
+  /// No description provided for @feedbackError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error sending: {error}'**
+  String feedbackError(String error);
+
+  /// No description provided for @feedbackRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get feedbackRetry;
+
+  /// No description provided for @feedbackSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback'**
+  String get feedbackSettingsTitle;
+
+  /// No description provided for @feedbackSettingsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Report bugs, suggest improvements or fix translations'**
+  String get feedbackSettingsSubtitle;
+
+  /// No description provided for @aiEnergy.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Energy'**
+  String get aiEnergy;
+
+  /// No description provided for @searchInConversation.
+  ///
+  /// In en, this message translates to:
+  /// **'Search in conversation...'**
+  String get searchInConversation;
+
+  /// No description provided for @noMessagesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No messages found'**
+  String get noMessagesFound;
+
+  /// No description provided for @suggestedQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested questions:'**
+  String get suggestedQuestions;
+
+  /// No description provided for @shoppingAssistant.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping assistant'**
+  String get shoppingAssistant;
+
+  /// No description provided for @itemsPurchasedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{purchased} of {total} purchased'**
+  String itemsPurchasedCount(int purchased, int total);
+
+  /// No description provided for @estimatedCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated'**
+  String get estimatedCost;
+
+  /// No description provided for @viewItems.
+  ///
+  /// In en, this message translates to:
+  /// **'View items'**
+  String get viewItems;
+
+  /// No description provided for @noItemsInList.
+  ///
+  /// In en, this message translates to:
+  /// **'No items in the list'**
+  String get noItemsInList;
+
+  /// No description provided for @longHistoryWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Long history: the assistant focuses on the latest messages for better performance.'**
+  String get longHistoryWarning;
+
+  /// No description provided for @listening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening...'**
+  String get listening;
+
+  /// No description provided for @addDirectToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add directly to list'**
+  String get addDirectToList;
+
+  /// No description provided for @unlockFullResponse.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Full Response'**
+  String get unlockFullResponse;
+
+  /// No description provided for @switchList.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch list'**
+  String get switchList;
+
+  /// No description provided for @marketMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Market Mode'**
+  String get marketMode;
+
+  /// No description provided for @backToChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Chat'**
+  String get backToChat;
+
+  /// No description provided for @finishShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish Shopping'**
+  String get finishShopping;
+
+  /// No description provided for @welcomeAiAssistant.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to AI Assistant'**
+  String get welcomeAiAssistant;
+
+  /// No description provided for @createListToStartAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a shopping list to start using the smart chat.'**
+  String get createListToStartAi;
+
+  /// No description provided for @howCanIHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'How can I help?'**
+  String get howCanIHelp;
+
+  /// No description provided for @chatSubtitleShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about prices, recipes, organization...'**
+  String get chatSubtitleShort;
+
+  /// No description provided for @itemsPurchasedShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{purchased}/{total} purchased'**
+  String itemsPurchasedShort(int purchased, int total);
+
+  /// No description provided for @quickReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick replies:'**
+  String get quickReplies;
+
+  /// No description provided for @voiceProFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced voice commands are Pro. Enabling basic dictation...'**
+  String get voiceProFeature;
+
+  /// No description provided for @viewPro.
+  ///
+  /// In en, this message translates to:
+  /// **'View Pro'**
+  String get viewPro;
+
+  /// No description provided for @errorLoadingChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Oops! Something went wrong loading the chat.'**
+  String get errorLoadingChat;
+
+  /// No description provided for @errorLoadingChatSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your connection or try again later.'**
+  String get errorLoadingChatSubtitle;
+
+  /// No description provided for @errorOscillation.
+  ///
+  /// In en, this message translates to:
+  /// **'This may occur due to network oscillations or temporary unavailability. Please try again.'**
+  String get errorOscillation;
+
+  /// No description provided for @activeListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Listening'**
+  String get activeListening;
+
+  /// No description provided for @whatToDoWithItem.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to do with this item?'**
+  String get whatToDoWithItem;
+
+  /// No description provided for @viewDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'View Details'**
+  String get viewDetails;
+
+  /// No description provided for @openMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'Open menu'**
+  String get openMenu;
+
+  /// No description provided for @viewRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'View Recipe'**
+  String get viewRecipe;
+
+  /// No description provided for @recipeCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe created!'**
+  String get recipeCreated;
+
+  /// No description provided for @editRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editRecipe;
+
+  /// No description provided for @deleteRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteRecipe;
+
+  /// No description provided for @deleteRecipeConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this recipe?'**
+  String get deleteRecipeConfirm;
+
+  /// No description provided for @deleteRecipeConfirmMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete \"{recipeName}\"? This action cannot be undone.'**
+  String deleteRecipeConfirmMsg(String recipeName);
+
+  /// No description provided for @ingredients.
+  ///
+  /// In en, this message translates to:
+  /// **'Ingredients'**
+  String get ingredients;
+
+  /// No description provided for @instructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Instructions'**
+  String get instructions;
+
+  /// No description provided for @prepTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Prep time'**
+  String get prepTime;
+
+  /// No description provided for @recipeSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe saved!'**
+  String get recipeSaved;
+
+  /// No description provided for @noRecipesSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'No recipes saved'**
+  String get noRecipesSaved;
+
+  /// No description provided for @noRecipesSavedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your first custom recipe by tapping the button below.'**
+  String get noRecipesSavedHint;
+
+  /// No description provided for @myRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'My Recipes'**
+  String get myRecipes;
+
+  /// No description provided for @newRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'New Recipe'**
+  String get newRecipe;
+
+  /// No description provided for @loadingRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading your recipes...'**
+  String get loadingRecipes;
+
+  /// No description provided for @errorLoadingRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading recipes'**
+  String get errorLoadingRecipes;
+
+  /// No description provided for @addIngredient.
+  ///
+  /// In en, this message translates to:
+  /// **'Add ingredient'**
+  String get addIngredient;
+
+  /// No description provided for @saveRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get saveRecipe;
+
+  /// No description provided for @recipeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe name'**
+  String get recipeName;
+
+  /// No description provided for @shortDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Short description'**
+  String get shortDescription;
+
+  /// No description provided for @prepTimeMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Prep time (minutes)'**
+  String get prepTimeMinutes;
+
+  /// No description provided for @instructionsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type one step per line...'**
+  String get instructionsHint;
+
+  /// No description provided for @addPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Add photo'**
+  String get addPhoto;
+
+  /// No description provided for @imageUrlPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Or paste an image URL'**
+  String get imageUrlPlaceholder;
+
+  /// No description provided for @tags.
+  ///
+  /// In en, this message translates to:
+  /// **'Tags'**
+  String get tags;
+
+  /// No description provided for @recipeTags.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe tags'**
+  String get recipeTags;
+
+  /// No description provided for @suggestedTags.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested'**
+  String get suggestedTags;
+
+  /// No description provided for @searchRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Search recipes...'**
+  String get searchRecipes;
+
+  /// No description provided for @filterByTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by tag'**
+  String get filterByTag;
+
+  /// No description provided for @allTags.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allTags;
+
+  /// No description provided for @recipeDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe deleted'**
+  String get recipeDeleted;
+
+  /// No description provided for @saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save changes'**
+  String get saveChanges;
+
+  /// No description provided for @editRecipeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Recipe'**
+  String get editRecipeTitle;
+
+  /// No description provided for @newRecipeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New Recipe'**
+  String get newRecipeTitle;
+
+  /// No description provided for @requiredField.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get requiredField;
+
+  /// No description provided for @chooseImageSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose image source'**
+  String get chooseImageSource;
+
+  /// No description provided for @gallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery'**
+  String get gallery;
+
+  /// No description provided for @enterUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter URL'**
+  String get enterUrl;
+
+  /// No description provided for @recipeImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe image'**
+  String get recipeImage;
+
+  /// No description provided for @removeImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove image'**
+  String get removeImage;
 }
 
 class _AppLocalizationsDelegate
@@ -1706,8 +2459,79 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'pt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'af',
+    'am',
+    'ar',
+    'az',
+    'be',
+    'bg',
+    'bn',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'el',
+    'en',
+    'es',
+    'et',
+    'eu',
+    'fa',
+    'fi',
+    'fil',
+    'fr',
+    'gl',
+    'gu',
+    'he',
+    'hi',
+    'hr',
+    'hu',
+    'hy',
+    'id',
+    'is',
+    'it',
+    'ja',
+    'ka',
+    'kk',
+    'km',
+    'kn',
+    'ko',
+    'ky',
+    'lo',
+    'lt',
+    'lv',
+    'mk',
+    'ml',
+    'mn',
+    'mr',
+    'ms',
+    'my',
+    'ne',
+    'nl',
+    'no',
+    'pa',
+    'pl',
+    'pt',
+    'rm',
+    'ro',
+    'ru',
+    'si',
+    'sk',
+    'sl',
+    'sq',
+    'sr',
+    'sv',
+    'sw',
+    'ta',
+    'te',
+    'th',
+    'tr',
+    'uk',
+    'ur',
+    'vi',
+    'zh',
+    'zu',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -1716,11 +2540,341 @@ class _AppLocalizationsDelegate
 AppLocalizations lookupAppLocalizations(Locale locale) {
   // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
+    case 'bn':
+      {
+        switch (locale.countryCode) {
+          case 'BD':
+            return AppLocalizationsBnBd();
+        }
+        break;
+      }
+    case 'cs':
+      {
+        switch (locale.countryCode) {
+          case 'CZ':
+            return AppLocalizationsCsCz();
+        }
+        break;
+      }
+    case 'da':
+      {
+        switch (locale.countryCode) {
+          case 'DK':
+            return AppLocalizationsDaDk();
+        }
+        break;
+      }
+    case 'de':
+      {
+        switch (locale.countryCode) {
+          case 'DE':
+            return AppLocalizationsDeDe();
+        }
+        break;
+      }
+    case 'el':
+      {
+        switch (locale.countryCode) {
+          case 'GR':
+            return AppLocalizationsElGr();
+        }
+        break;
+      }
+    case 'en':
+      {
+        switch (locale.countryCode) {
+          case 'AU':
+            return AppLocalizationsEnAu();
+          case 'CA':
+            return AppLocalizationsEnCa();
+          case 'GB':
+            return AppLocalizationsEnGb();
+          case 'IN':
+            return AppLocalizationsEnIn();
+          case 'SG':
+            return AppLocalizationsEnSg();
+          case 'ZA':
+            return AppLocalizationsEnZa();
+        }
+        break;
+      }
+    case 'es':
+      {
+        switch (locale.countryCode) {
+          case '419':
+            return AppLocalizationsEs419();
+          case 'ES':
+            return AppLocalizationsEsEs();
+          case 'US':
+            return AppLocalizationsEsUs();
+        }
+        break;
+      }
+    case 'fa':
+      {
+        switch (locale.countryCode) {
+          case 'AE':
+            return AppLocalizationsFaAe();
+          case 'AF':
+            return AppLocalizationsFaAf();
+          case 'IR':
+            return AppLocalizationsFaIr();
+        }
+        break;
+      }
+    case 'fi':
+      {
+        switch (locale.countryCode) {
+          case 'FI':
+            return AppLocalizationsFiFi();
+        }
+        break;
+      }
+    case 'fr':
+      {
+        switch (locale.countryCode) {
+          case 'CA':
+            return AppLocalizationsFrCa();
+          case 'FR':
+            return AppLocalizationsFrFr();
+        }
+        break;
+      }
+    case 'gl':
+      {
+        switch (locale.countryCode) {
+          case 'ES':
+            return AppLocalizationsGlEs();
+        }
+        break;
+      }
+    case 'he':
+      {
+        switch (locale.countryCode) {
+          case 'IL':
+            return AppLocalizationsHeIl();
+        }
+        break;
+      }
+    case 'hi':
+      {
+        switch (locale.countryCode) {
+          case 'IN':
+            return AppLocalizationsHiIn();
+        }
+        break;
+      }
+    case 'hu':
+      {
+        switch (locale.countryCode) {
+          case 'HU':
+            return AppLocalizationsHuHu();
+        }
+        break;
+      }
+    case 'is':
+      {
+        switch (locale.countryCode) {
+          case 'IS':
+            return AppLocalizationsIsIs();
+        }
+        break;
+      }
+    case 'it':
+      {
+        switch (locale.countryCode) {
+          case 'IT':
+            return AppLocalizationsItIt();
+        }
+        break;
+      }
+    case 'ja':
+      {
+        switch (locale.countryCode) {
+          case 'JP':
+            return AppLocalizationsJaJp();
+        }
+        break;
+      }
+    case 'ka':
+      {
+        switch (locale.countryCode) {
+          case 'GE':
+            return AppLocalizationsKaGe();
+        }
+        break;
+      }
+    case 'km':
+      {
+        switch (locale.countryCode) {
+          case 'KH':
+            return AppLocalizationsKmKh();
+        }
+        break;
+      }
+    case 'kn':
+      {
+        switch (locale.countryCode) {
+          case 'IN':
+            return AppLocalizationsKnIn();
+        }
+        break;
+      }
+    case 'ko':
+      {
+        switch (locale.countryCode) {
+          case 'KR':
+            return AppLocalizationsKoKr();
+        }
+        break;
+      }
+    case 'ky':
+      {
+        switch (locale.countryCode) {
+          case 'KG':
+            return AppLocalizationsKyKg();
+        }
+        break;
+      }
+    case 'lo':
+      {
+        switch (locale.countryCode) {
+          case 'LA':
+            return AppLocalizationsLoLa();
+        }
+        break;
+      }
+    case 'mk':
+      {
+        switch (locale.countryCode) {
+          case 'MK':
+            return AppLocalizationsMkMk();
+        }
+        break;
+      }
+    case 'ml':
+      {
+        switch (locale.countryCode) {
+          case 'IN':
+            return AppLocalizationsMlIn();
+        }
+        break;
+      }
+    case 'mn':
+      {
+        switch (locale.countryCode) {
+          case 'MN':
+            return AppLocalizationsMnMn();
+        }
+        break;
+      }
+    case 'mr':
+      {
+        switch (locale.countryCode) {
+          case 'IN':
+            return AppLocalizationsMrIn();
+        }
+        break;
+      }
+    case 'ms':
+      {
+        switch (locale.countryCode) {
+          case 'MY':
+            return AppLocalizationsMsMy();
+        }
+        break;
+      }
+    case 'ne':
+      {
+        switch (locale.countryCode) {
+          case 'NP':
+            return AppLocalizationsNeNp();
+        }
+        break;
+      }
+    case 'nl':
+      {
+        switch (locale.countryCode) {
+          case 'NL':
+            return AppLocalizationsNlNl();
+        }
+        break;
+      }
+    case 'no':
+      {
+        switch (locale.countryCode) {
+          case 'NO':
+            return AppLocalizationsNoNo();
+        }
+        break;
+      }
+    case 'pl':
+      {
+        switch (locale.countryCode) {
+          case 'PL':
+            return AppLocalizationsPlPl();
+        }
+        break;
+      }
     case 'pt':
       {
         switch (locale.countryCode) {
           case 'BR':
             return AppLocalizationsPtBr();
+          case 'PT':
+            return AppLocalizationsPtPt();
+        }
+        break;
+      }
+    case 'ru':
+      {
+        switch (locale.countryCode) {
+          case 'RU':
+            return AppLocalizationsRuRu();
+        }
+        break;
+      }
+    case 'sv':
+      {
+        switch (locale.countryCode) {
+          case 'SE':
+            return AppLocalizationsSvSe();
+        }
+        break;
+      }
+    case 'ta':
+      {
+        switch (locale.countryCode) {
+          case 'IN':
+            return AppLocalizationsTaIn();
+        }
+        break;
+      }
+    case 'te':
+      {
+        switch (locale.countryCode) {
+          case 'IN':
+            return AppLocalizationsTeIn();
+        }
+        break;
+      }
+    case 'tr':
+      {
+        switch (locale.countryCode) {
+          case 'TR':
+            return AppLocalizationsTrTr();
+        }
+        break;
+      }
+    case 'zh':
+      {
+        switch (locale.countryCode) {
+          case 'CN':
+            return AppLocalizationsZhCn();
+          case 'HK':
+            return AppLocalizationsZhHk();
+          case 'TW':
+            return AppLocalizationsZhTw();
         }
         break;
       }
@@ -1728,10 +2882,148 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'af':
+      return AppLocalizationsAf();
+    case 'am':
+      return AppLocalizationsAm();
+    case 'ar':
+      return AppLocalizationsAr();
+    case 'az':
+      return AppLocalizationsAz();
+    case 'be':
+      return AppLocalizationsBe();
+    case 'bg':
+      return AppLocalizationsBg();
+    case 'bn':
+      return AppLocalizationsBn();
+    case 'ca':
+      return AppLocalizationsCa();
+    case 'cs':
+      return AppLocalizationsCs();
+    case 'da':
+      return AppLocalizationsDa();
+    case 'de':
+      return AppLocalizationsDe();
+    case 'el':
+      return AppLocalizationsEl();
     case 'en':
       return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'et':
+      return AppLocalizationsEt();
+    case 'eu':
+      return AppLocalizationsEu();
+    case 'fa':
+      return AppLocalizationsFa();
+    case 'fi':
+      return AppLocalizationsFi();
+    case 'fil':
+      return AppLocalizationsFil();
+    case 'fr':
+      return AppLocalizationsFr();
+    case 'gl':
+      return AppLocalizationsGl();
+    case 'gu':
+      return AppLocalizationsGu();
+    case 'he':
+      return AppLocalizationsHe();
+    case 'hi':
+      return AppLocalizationsHi();
+    case 'hr':
+      return AppLocalizationsHr();
+    case 'hu':
+      return AppLocalizationsHu();
+    case 'hy':
+      return AppLocalizationsHy();
+    case 'id':
+      return AppLocalizationsId();
+    case 'is':
+      return AppLocalizationsIs();
+    case 'it':
+      return AppLocalizationsIt();
+    case 'ja':
+      return AppLocalizationsJa();
+    case 'ka':
+      return AppLocalizationsKa();
+    case 'kk':
+      return AppLocalizationsKk();
+    case 'km':
+      return AppLocalizationsKm();
+    case 'kn':
+      return AppLocalizationsKn();
+    case 'ko':
+      return AppLocalizationsKo();
+    case 'ky':
+      return AppLocalizationsKy();
+    case 'lo':
+      return AppLocalizationsLo();
+    case 'lt':
+      return AppLocalizationsLt();
+    case 'lv':
+      return AppLocalizationsLv();
+    case 'mk':
+      return AppLocalizationsMk();
+    case 'ml':
+      return AppLocalizationsMl();
+    case 'mn':
+      return AppLocalizationsMn();
+    case 'mr':
+      return AppLocalizationsMr();
+    case 'ms':
+      return AppLocalizationsMs();
+    case 'my':
+      return AppLocalizationsMy();
+    case 'ne':
+      return AppLocalizationsNe();
+    case 'nl':
+      return AppLocalizationsNl();
+    case 'no':
+      return AppLocalizationsNo();
+    case 'pa':
+      return AppLocalizationsPa();
+    case 'pl':
+      return AppLocalizationsPl();
     case 'pt':
       return AppLocalizationsPt();
+    case 'rm':
+      return AppLocalizationsRm();
+    case 'ro':
+      return AppLocalizationsRo();
+    case 'ru':
+      return AppLocalizationsRu();
+    case 'si':
+      return AppLocalizationsSi();
+    case 'sk':
+      return AppLocalizationsSk();
+    case 'sl':
+      return AppLocalizationsSl();
+    case 'sq':
+      return AppLocalizationsSq();
+    case 'sr':
+      return AppLocalizationsSr();
+    case 'sv':
+      return AppLocalizationsSv();
+    case 'sw':
+      return AppLocalizationsSw();
+    case 'ta':
+      return AppLocalizationsTa();
+    case 'te':
+      return AppLocalizationsTe();
+    case 'th':
+      return AppLocalizationsTh();
+    case 'tr':
+      return AppLocalizationsTr();
+    case 'uk':
+      return AppLocalizationsUk();
+    case 'ur':
+      return AppLocalizationsUr();
+    case 'vi':
+      return AppLocalizationsVi();
+    case 'zh':
+      return AppLocalizationsZh();
+    case 'zu':
+      return AppLocalizationsZu();
   }
 
   throw FlutterError(

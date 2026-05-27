@@ -1,0 +1,562 @@
+{
+  "@@locale": "lv",
+  "appTitle": "Iepirkumu saraksts",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Saraksti",
+  "pantry": "Pieliekamais",
+  "@_Common": "description: Common actions",
+  "cancel": "Atcelt",
+  "save": "Saglabāt",
+  "create": "Izveidot",
+  "add": "Pievienot",
+  "remove": "Noņemt",
+  "delete": "Dzēst",
+  "edit": "Rediģēt",
+  "copy": "Kopēt",
+  "retry": "Mēģināt vēlreiz",
+  "regenerate": "Atjaunot",
+  "copiedToClipboard": "Nokopēts starpliktuvē",
+  "confirm": "Apstiprināt",
+  "close": "Aizvērt",
+  "import": "Importēt",
+  "rename": "Pārsaukt",
+  "upgrade": "Jaunināt",
+  "clear": "Notīrīt",
+  "error": "Kļūda: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Kļūda: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Kļūda, apstrādājot pirkumu. Mēģiniet vēlreiz.",
+  "restoreError": "Kļūda, atjaunojot pirkumus. Mēģiniet vēlreiz.",
+  "loading": "Ielādē...",
+  "fieldRequired": "Obligāts lauks",
+  "addedFeedback": "Pievienots!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, zero{Izvēlēti 0 vienumi} one{Izvēlēts {count} vienums} other{Izvēlēti {count} vienumi}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Aptuveni",
+  "alreadyPurchased": "Jau iegādāts",
+  "clearList": "Notīrīt sarakstu",
+  "clearPurchased": "Notīrīt iegādāto",
+  "share": "Dalīties",
+  "shareViaCode": "Dalīties ar kodu",
+  "importViaCode": "Importēt ar kodu",
+  "listAssistant": "Saraksta palīgs",
+  "globalAssistant": "Globālais palīgs",
+  "becomePremium": "Kļūt par Premium",
+  "manageSubscription": "Pārvaldīt abonementu",
+  "completePurchase": "Pabeigt pirkumu",
+  "confirmClearList": "Noņemt visus vienumus?",
+  "shareListTitle": "Dalīties ar sarakstu",
+  "shareThisCode": "Dalieties ar šo kodu:",
+  "validForLimitedTime": "Derīgs ierobežotu laiku",
+  "importListTitle": "Importēt sarakstu",
+  "enterCodeHint": "Ievadiet kodu",
+  "confirmArchiveTitle": "Pabeigt pirkumu",
+  "confirmArchiveContent": "Pabeigt šo pirkumu un arhivēt sarakstu?",
+  "complete": "Pabeigt",
+  "listArchived": "Saraksts veiksmīgi arhivēts!",
+  "listAdded": "{listName} pievienots!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Pirkt",
+  "unmark": "Noņemt atzīmi",
+  "confirmDeleteItems": "Noņemt {count} vienumu(s)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Apstiprināt",
+  "confirmContent": "Noņemt {count} vienumu(s)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Arhivēt sarakstu",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Pieliekamais",
+  "generateShoppingList": "Ģenerēt iepirkumu sarakstu",
+  "pantryEmpty": "Tukšs pieliekamais",
+  "pantryEmptySubtitle": "Pievienojiet produktus, kurus vēlaties turēt mājās",
+  "itemsNeedPurchase": "{deficit} vienums(-i) jāiegādājas",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Nav jāiegādājas neviens vienums",
+  "newPantryList": "Pieliekamā iepirkums",
+  "newListTitle": "Jauns iepirkumu saraksts",
+  "itemsWillBeAdded": "Tiks pievienots {count} vienums(-i)",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Saraksta nosaukums",
+  "listCreated": "Saraksts \"{name}\" izveidots ar {count} vienumiem",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Bez izsekošanas",
+  "markAsPurchased": "Atzīmēt kā iegādātu",
+  "editPantryItem": "Rediģēt {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ideālais daudzums",
+  "currentQuantity": "Pašreizējais daudzums",
+  "consumed": "Patērēts",
+  "restocked": "{name} papildināts līdz {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Noņemt \"{name}\" no pieliekamā?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Rediģēt {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Iestatījumi",
+  "language": "Valoda",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Sistēmas noklusējums",
+  "appearance": "Izskats",
+  "light": "Gaišs",
+  "system": "Sistēma",
+  "dark": "Tumšs",
+  "themeColor": "Tēmas krāsa",
+  "finance": "Finanses",
+  "monthlyBudgetNav": "Mēneša budžets",
+  "budgetSubtitle": "Sekojiet līdzi saviem ikmēneša izdevumiem",
+  "data": "Dati",
+  "backupNav": "Rezerves kopija",
+  "backupSubtitle": "Eksportējiet vai importējiet savus datus",
+  "about": "Par",
+  "version": "Versija",
+  "privacy": "Privātums",
+  "termsOfUse": "Lietošanas noteikumi",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Rezerves kopija",
+  "backupPremiumDescription": "Rezerves kopēšana un eksportēšana ir premium funkcija",
+  "exportData": "Eksportēt datus",
+  "exportDataSubtitle": "Saglabāt visus sarakstus kā JSON",
+  "importData": "Importēt datus",
+  "importDataSubtitle": "Atjaunot sarakstus no JSON",
+  "importJsonTitle": "Importēt JSON",
+  "importJsonHint": "Ielīmējiet rezerves JSON šeit...",
+  "backupExported": "Rezerves kopija eksportēta!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Mēneša budžets",
+  "budgetPremiumLocked": "Globālais mēneša budžets ir premium",
+  "budgetUpgradePrompt": "Jauniniet, lai atbloķētu",
+  "noBudgetDefined": "Nav iestatīts budžets",
+  "totalEstimated": "Aptuvenā kopsumma: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Iestatīt budžetu",
+  "budgetLists": "Saraksti",
+  "budgetValueLabel": "Summa",
+  "setBudgetTitle": "Mēneša budžets",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Visi",
+  "filterPending": "Gaida",
+  "filterPurchased": "Iegādāts",
+  "sortName": "Nosaukums",
+  "sortCategory": "Kategorija",
+  "sortDate": "Datums",
+  "sortManual": "Manuāli",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Pievienot vienumu",
+  "itemName": "Vienuma nosaukums",
+  "quantityShort": "Daudz.",
+  "unit": "Vienība",
+  "category": "Kategorija",
+  "estimatedPrice": "Aptuvenā cena",
+  "addItemPrice": "Aptuvenā cena",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Rediģēt vienumu",
+  "quantityFull": "Daudzums",
+  "editItemPrice": "Aptuvenā cena",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Pievienot pieliekamajam",
+  "addToPantryPrompt": "Pievienot \"{name}\" jūsu pieliekamajam?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Jā",
+  "productName": "Produkta nosaukums",
+  "idealQty": "Ideālais daudz.",
+  "currentQty": "Pašreizējais daudz.",
+  "trackStock": "Sekot krājumam",
+  "trackStockActive": "Parādās iepirkumu ieteikumos",
+  "trackStockInactive": "Neģenerē iepirkumu ieteikumus",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Izveidot sarakstu",
+  "renameListDialog": "Pārsaukt sarakstu",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Sarakstu vēsture",
+  "myLists": "Mani saraksti",
+  "viewActive": "Skatīt aktīvos",
+  "viewHistory": "Skatīt vēsturi",
+  "noArchivedLists": "Nav arhivētu sarakstu",
+  "noActiveLists": "Nav aktīvu sarakstu",
+  "completedOn": "Pabeigts {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Kopīgots",
+  "restore": "Atjaunot",
+  "removeSharedTooltip": "Noņemt",
+  "deleteListTitle": "Dzēst sarakstu",
+  "deleteListContent": "Vai tiešām vēlaties dzēst \"{name}\"? Visi vienumi tiks noņemti.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Noņemt kopīgoto sarakstu",
+  "removeSharedListContent": "Noņemt \"{name}\" no jūsu sarakstiem? Oriģinālais saraksts netiks ietekmēts.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Izveidot jaunu sarakstu",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI palīgs",
+  "aiAssistantDescription": "Saņemiet gudrus ieteikumus, receptes un personalizētus padomus ar mūsu AI palīgu.",
+  "generalAssistant": "Vispārējais palīgs",
+  "clearHistory": "Notīrīt vēsturi",
+  "clearHistoryConfirm": "Notīrīt visus ziņojumus šajā sesijā?",
+  "chatHint": "Ierakstiet savu ziņojumu...",
+  "chatError": "Kļūda, ielādējot tērzēšanu: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Kā es varu palīdzēt ar jūsu sarakstu?",
+  "generalHelp": "Kā es varu palīdzēt ar jūsu iepirkšanos šodien?",
+  "chatSubtitle": "Jautājiet par vienumu ieteikumiem, receptēm vai taupīšanas padomiem.",
+  "aiError": "Atvainojiet, radās kļūda, apstrādājot jūsu pieprasījumu. Pārbaudiet savienojumu vai mēģiniet vēlreiz vēlāk.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Pierakstieties, lai atbloķētu\npremium funkcijas",
+  "signInGoogle": "Pierakstīties ar Google",
+  "signInApple": "Pierakstīties ar Apple",
+  "continueAsGuest": "Turpināt kā viesis",
+  "loginError": "Pierakstīšanās kļūda: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Jauniniet, lai atbloķētu",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Vienums noņemts",
+  "undo": "Atsaukt",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Jūsu saraksts ir tukšs",
+  "emptyListSubtitle": "Pievienojiet vienumus, lai sāktu",
+  "noListFoundTitle": "Nav atrasts neviens saraksts",
+  "noListFoundSubtitle": "Izveidojiet savu pirmo sarakstu, lai sāktu",
+  "createFirstList": "Izveidot pirmo sarakstu",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Saraksta budžets",
+  "budgetAmountLabel": "Budžeta summa",
+  "removeBudget": "Noņemt",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Neierobežoti saraksti",
+  "prefSharing": "Kopīgot sarakstus",
+  "prefFullHistory": "Pilna vēsture",
+  "prefExportData": "Eksportēt datus",
+  "prefCustomThemes": "Pielāgotas tēmas",
+  "prefMonthlyBudget": "Globālais mēneša budžets",
+  "prefAIAssistant": "Personīgais AI palīgs",
+  "prefUnlimitedPantry": "Neierobežots pieliekamais",
+  "prefInteractiveArtifacts": "Interaktīvi AI artefakti",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Zaļš",
+  "themeBlue": "Zils",
+  "themePurple": "Violets",
+  "themeRed": "Sarkans",
+  "themeOrange": "Oranžs",
+  "themePink": "Rozā",
+  "themeIndigo": "Indigo",
+  "themeAmber": "Dzintars",
+  "themeTeal": "Tirkīzzils",
+  "themeBrown": "Brūns",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Augļi",
+  "catCleaning": "Tīrīšana",
+  "catBeverages": "Dzērieni",
+  "catBakery": "Maiznīca",
+  "catOthers": "Citi",
+  "@_Unit": "description: Unit",
+  "unitPack": "iepakojums",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Iepirkumu saraksts",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Mēneša budžets",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Dzēst sarakstu",
+  "pantryItemRemoved": "Vienums noņemts",
+  "deficitItems": "{deficit,plural, zero{0 vienumi jāiegādājas} one{{deficit} vienums jāiegādājas} other{{deficit} vienumi jāiegādājas}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Groza kopsumma",
+  "restockLabel": "Papildināt",
+  "advancedFeatures": "Papildu funkcijas",
+  "selectAll": "Izvēlēties visu",
+  "deselectAll": "Noņemt izvēli",
+  "monthlyBudgetAppBar": "Mēneša budžets",
+  "budgetEditTitle": "Mēneša budžets",
+  "budgetDashboardTitle": "Panelis",
+  "selectListForDashboard": "Izvēlieties sarakstu, lai skatītu paneli.",
+  "spendingAnalysis": "Izdevumu analīze",
+  "noItemsToAnalyze": "Sarakstā nav vienumu, ko analizēt.",
+  "markItemsToSeeAnalysis": "Atzīmējiet vienumus kā iegādātus, lai redzētu analīzi.",
+  "totalSpending": "Kopējie izdevumi",
+  "spendingByCategory": "Izdevumi pēc kategorijas",
+  "achievements": "Sasniegumi",
+  "exportPdfExcel": "Eksportēt PDF/Excel",
+  "exportPdf": "Eksportēt kā PDF",
+  "exportExcel": "Eksportēt kā Excel",
+  "organizingAi": "ORGANIZĒ AR AI...",
+  "yesLabel": "Jā",
+  "noLabel": "Nē",
+  "shareListText": "Mans iepirkumu saraksts",
+  "emptyListAddItems": "Jūsu saraksts ir tukšs! Vispirms pievienojiet vienumus. ℹ️",
+  "listOrganizedMagic": "Saraksts maģiski sakārtots kategorijās! ✨",
+  "shoppingMode": "Iepirkšanās režīms",
+  "smartOrganization": "Viedā organizācija",
+  "savings": "Ietaupījums",
+  "shoppingModeHeader": "IEPIRKŠANĀS REŽĪMS",
+  "shareAsText": "Sūtīt vienumus kā formatētu tekstu",
+  "shareRealtime": "Reāllaika sinhronizācija ar citiem",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Ātrā recepte",
+  "quickRecipePrompt": "Iesakiet receptes ar maniem saraksta vienumiem.",
+  "economyTips": "Taupīšanas padomi",
+  "economyTipsPrompt": "Kā es varu ietaupīt naudu šim pirkumam?",
+  "organizeAisles": "Sakārtot pa ejām",
+  "organizeAislesPrompt": "Sakārtot pa tirgus ejām.",
+  "recipeSuggestion": "Receptes ieteikums",
+  "aiCreditsRemaining": "Atlikuši {remaining} kredīti",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Pievienot visu sarakstam",
+  "organizeByAisles": "Sakārtot pa ejām",
+  "voiceTranscriptionTooltip": "Balss ievade (Bezmaksas)",
+  "aiVoiceCommandTooltip": "AI balss komanda (Premium)",
+  "voiceCommandTitle": "AI balss komanda",
+  "voiceCommandContent": "Runājiet dabiski, lai pārvaldītu savu sarakstu!\n\nPiemēri:\n• 'Pievienot maizi, sieru un šķiņķi'\n• 'Noņemt veļas mazgāšanas līdzekli'\n• 'Mainīt tēmu uz zilu'\n\nŠī ir Lista Plus Premium ekskluzīva funkcija.",
+  "voiceCommandPlanBtn": "Skatīt plānus",
+  "itemsAddedSuccess": "Vienumi veiksmīgi pievienoti sarakstam!",
+  "viewList": "Skatīt sarakstu",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Nosūtīt atsauksmi",
+  "feedbackPrompt": "Ar ko vēlaties dalīties?",
+  "feedbackTypeBug": "Ziņot par kļūdu",
+  "feedbackTypeBugHint": "Kaut kas nedarbojas",
+  "feedbackTypeSuggestion": "Ieteikums",
+  "feedbackTypeSuggestionHint": "Ideja, kā uzlabot lietotni",
+  "feedbackTypeTranslation": "Tulkojuma problēma",
+  "feedbackTypeTranslationHint": "Nepareizs vai neveikls tulkojums",
+  "feedbackTypeFeature": "Funkcijas pieprasījums",
+  "feedbackTypeFeatureHint": "Funkcija, kuru vēlaties redzēt",
+  "feedbackTypeOther": "Cits",
+  "feedbackTypeOtherHint": "Cits atsauksmes veids",
+  "feedbackHint": "Aprakstiet savu atsauksmi detalizēti...",
+  "feedbackSend": "Nosūtīt atsauksmi",
+  "feedbackSending": "Sūta...",
+  "feedbackThankYou": "Paldies!",
+  "feedbackThankYouMessage": "Jūsu atsauksme ir saņemta un palīdz mums uzlabot Lista Plus visiem.",
+  "feedbackBack": "Atpakaļ",
+  "feedbackError": "Sūtīšanas kļūda: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Mēģināt vēlreiz",
+  "feedbackSettingsTitle": "Nosūtīt atsauksmi",
+  "feedbackSettingsSubtitle": "Ziņot par kļūdām, ieteikt uzlabojumus vai labot tulkojumus",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

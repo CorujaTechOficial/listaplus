@@ -1,0 +1,536 @@
+{
+  "@@locale": "ca",
+  "appTitle": "Llista de la Compra",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Llistes",
+  "pantry": "Rebost",
+  "cancel": "Cancel·lar",
+  "save": "Guardar",
+  "create": "Crear",
+  "add": "Afegir",
+  "remove": "Eliminar",
+  "delete": "Suprimir",
+  "edit": "Editar",
+  "copy": "Copiar",
+  "retry": "Reintentar",
+  "regenerate": "Regenerar",
+  "copiedToClipboard": "Copiat al porta-retalls",
+  "confirm": "Confirmar",
+  "close": "Tancar",
+  "import": "Importar",
+  "rename": "Renombrar",
+  "upgrade": "Millorar",
+  "clear": "Netejar",
+  "error": "Error: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Error: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Error en processar la compra. Torna-ho a provar.",
+  "restoreError": "Error en restaurar les compres. Torna-ho a provar.",
+  "loading": "Carregant...",
+  "fieldRequired": "Camp obligatori",
+  "addedFeedback": "Afegit!",
+  "selectedItems": "{count,plural, one{{count} seleccionat} other{{count} seleccionats}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Estimat",
+  "alreadyPurchased": "Ja comprat",
+  "clearList": "Netejar llista",
+  "clearPurchased": "Netejar comprats",
+  "share": "Compartir",
+  "shareViaCode": "Compartir via codi",
+  "importViaCode": "Importar via codi",
+  "listAssistant": "Assistent de llista",
+  "globalAssistant": "Assistent global",
+  "becomePremium": "Fes-te Premium",
+  "manageSubscription": "Gestionar subscripció",
+  "completePurchase": "Completar compra",
+  "confirmClearList": "Eliminar tots els articles?",
+  "shareListTitle": "Compartir llista",
+  "shareThisCode": "Comparteix aquest codi:",
+  "validForLimitedTime": "Vàlid per temps limitat",
+  "importListTitle": "Importar llista",
+  "enterCodeHint": "Introdueix el codi",
+  "confirmArchiveTitle": "Completar compra",
+  "confirmArchiveContent": "Completar aquesta compra i arxivar la llista?",
+  "complete": "Completar",
+  "listArchived": "Llista arxivada correctament!",
+  "listAdded": "{listName} afegida!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Comprar",
+  "unmark": "Desmarcar",
+  "confirmDeleteItems": "Eliminar {count} article(s)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Confirmar",
+  "confirmContent": "Eliminar {count} article(s)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Arxivar llista",
+  "pantryAppBar": "Rebost",
+  "generateShoppingList": "Generar llista de compra",
+  "pantryEmpty": "Rebost buit",
+  "pantryEmptySubtitle": "Afegeix productes que vulguis tenir a casa",
+  "itemsNeedPurchase": "{deficit} article(s) necessiten comprar-se",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "No cal comprar cap article",
+  "newPantryList": "Compra de rebost",
+  "newListTitle": "Nova llista de compra",
+  "itemsWillBeAdded": "{count} article(s) s'afegiran",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Nom de la llista",
+  "listCreated": "Llista \"{name}\" creada amb {count} articles",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Sense seguiment",
+  "markAsPurchased": "Marcar com a comprat",
+  "editPantryItem": "Editar {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Quantitat ideal",
+  "currentQuantity": "Quantitat actual",
+  "consumed": "Consumit",
+  "restocked": "{name} reabastit a {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Eliminar \"{name}\" del rebost?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Editar {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsAppBar": "Configuració",
+  "language": "Idioma",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Per defecte del sistema",
+  "appearance": "Aparença",
+  "light": "Clar",
+  "system": "Sistema",
+  "dark": "Fosc",
+  "themeColor": "Color del tema",
+  "finance": "Finances",
+  "monthlyBudgetNav": "Pressupost mensual",
+  "budgetSubtitle": "Controla les teves despeses mensuals",
+  "data": "Dades",
+  "backupNav": "Còpia de seguretat",
+  "backupSubtitle": "Exporta o importa les teves dades",
+  "about": "Quant a",
+  "version": "Versió",
+  "privacy": "Privacitat",
+  "termsOfUse": "Termes d'ús",
+  "backupTitle": "Còpia de seguretat",
+  "backupPremiumDescription": "La còpia de seguretat i l'exportació són una funció Premium",
+  "exportData": "Exportar dades",
+  "exportDataSubtitle": "Guardar totes les llistes com a JSON",
+  "importData": "Importar dades",
+  "importDataSubtitle": "Restaurar llistes des d'un JSON",
+  "importJsonTitle": "Importar JSON",
+  "importJsonHint": "Enganxa el JSON de còpia de seguretat aquí...",
+  "backupExported": "Còpia de seguretat exportada!",
+  "budgetAppBar": "Pressupost mensual",
+  "budgetPremiumLocked": "El pressupost mensual global és Premium",
+  "budgetUpgradePrompt": "Millora per desbloquejar",
+  "noBudgetDefined": "Cap pressupost definit",
+  "totalEstimated": "Total estimat: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Definir pressupost",
+  "budgetLists": "Llistes",
+  "budgetValueLabel": "Import",
+  "setBudgetTitle": "Pressupost mensual",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "filterAll": "Tots",
+  "filterPending": "Pendents",
+  "filterPurchased": "Comprats",
+  "sortName": "Nom",
+  "sortCategory": "Categoria",
+  "sortDate": "Data",
+  "sortManual": "Manual",
+  "addItem": "Afegir article",
+  "itemName": "Nom de l'article",
+  "quantityShort": "Quant",
+  "unit": "Unitat",
+  "category": "Categoria",
+  "estimatedPrice": "Preu estimat",
+  "addItemPrice": "Preu estimat",
+  "editItem": "Editar article",
+  "quantityFull": "Quantitat",
+  "editItemPrice": "Preu estimat",
+  "addToPantry": "Afegir al rebost",
+  "addToPantryPrompt": "Afegir \"{name}\" al teu rebost?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Sí",
+  "productName": "Nom del producte",
+  "idealQty": "Quant ideal",
+  "currentQty": "Quant actual",
+  "trackStock": "Seguir estoc",
+  "trackStockActive": "Apareix en suggeriments de compra",
+  "trackStockInactive": "No genera suggeriment de compra",
+  "createListDialog": "Crear llista",
+  "renameListDialog": "Renombrar llista",
+  "listHistory": "Historial de llistes",
+  "myLists": "Les meves llistes",
+  "viewActive": "Veure actives",
+  "viewHistory": "Veure historial",
+  "noArchivedLists": "No hi ha llistes arxivades",
+  "noActiveLists": "No hi ha llistes actives",
+  "completedOn": "Completada el {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Compartida",
+  "restore": "Restaurar",
+  "removeSharedTooltip": "Eliminar",
+  "deleteListTitle": "Suprimir llista",
+  "deleteListContent": "Estàs segur que vols suprimir \"{name}\"? Tots els articles s'eliminaran.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Eliminar llista compartida",
+  "removeSharedListContent": "Eliminar \"{name}\" de les teves llistes? La llista original no es veurà afectada.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Crear nova llista",
+  "aiAssistant": "Assistent d'IA",
+  "aiAssistantDescription": "Obtén suggeriments intel·ligents, receptes i consells personalitzats amb el nostre assistent d'IA.",
+  "generalAssistant": "Assistent general",
+  "clearHistory": "Netejar historial",
+  "clearHistoryConfirm": "Netejar tots els missatges d'aquesta sessió?",
+  "chatHint": "Escriu el teu missatge...",
+  "chatError": "Error en carregar el xat: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Com puc ajudar-te amb la teva llista?",
+  "generalHelp": "Com puc ajudar-te amb les teves compres avui?",
+  "chatSubtitle": "Demana suggeriments d'articles, receptes o consells d'estalvi.",
+  "aiError": "Ho sentim, s'ha produït un error en processar la teva sol·licitud. Comprova la teva connexió o torna-ho a provar més tard.",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Inicia sessió per desbloquejar\nfuncions Premium",
+  "signInGoogle": "Iniciar sessió amb Google",
+  "signInApple": "Iniciar sessió amb Apple",
+  "continueAsGuest": "Continuar com a convidat",
+  "loginError": "Error d'inici de sessió: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallTitle": "Lista Plus Premium",
+  "premiumUpgrade": "Millora per desbloquejar",
+  "itemRemoved": "Article eliminat",
+  "undo": "Desfer",
+  "emptyListTitle": "La teva llista està buida",
+  "emptyListSubtitle": "Afegeix articles per començar",
+  "noListFoundTitle": "No s'han trobat llistes",
+  "noListFoundSubtitle": "Crea la teva primera llista per començar",
+  "createFirstList": "Crear primera llista",
+  "listBudgetTitle": "Pressupost de la llista",
+  "budgetAmountLabel": "Import del pressupost",
+  "removeBudget": "Eliminar",
+  "prefUnlimitedLists": "Llistes il·limitades",
+  "prefSharing": "Compartir llistes",
+  "prefFullHistory": "Historial complet",
+  "prefExportData": "Exportar dades",
+  "prefCustomThemes": "Temes personalitzats",
+  "prefMonthlyBudget": "Pressupost mensual global",
+  "prefAIAssistant": "Assistent d'IA personal",
+  "prefUnlimitedPantry": "Rebost il·limitat",
+  "prefInteractiveArtifacts": "Artefactes interactius d'IA",
+  "themeGreen": "Verd",
+  "themeBlue": "Blau",
+  "themePurple": "Porpra",
+  "themeRed": "Vermell",
+  "themeOrange": "Taronja",
+  "themePink": "Rosa",
+  "themeIndigo": "Índigo",
+  "themeAmber": "Ambre",
+  "themeTeal": "Xarxet",
+  "themeBrown": "Marró",
+  "catFruits": "Fruites",
+  "catCleaning": "Neteja",
+  "catBeverages": "Begudes",
+  "catBakery": "Fleca",
+  "catOthers": "Altres",
+  "unitPack": "paquet",
+  "shareSubject": "Llista de la compra",
+  "monthlyBudgetTitle": "Pressupost mensual",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Suprimir llista",
+  "pantryItemRemoved": "Article eliminat",
+  "deficitItems": "{deficit,plural, one{{deficit} article necessita comprar-se} other{{deficit} articles necessiten comprar-se}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Total del carretó",
+  "restockLabel": "Reabastir",
+  "advancedFeatures": "Funcions avançades",
+  "selectAll": "Seleccionar tot",
+  "deselectAll": "Desseleccionar tot",
+  "monthlyBudgetAppBar": "Pressupost mensual",
+  "budgetEditTitle": "Pressupost mensual",
+  "budgetDashboardTitle": "Tauler",
+  "selectListForDashboard": "Selecciona una llista per veure el tauler.",
+  "spendingAnalysis": "Anàlisi de despeses",
+  "noItemsToAnalyze": "No hi ha articles a la llista per analitzar.",
+  "markItemsToSeeAnalysis": "Marca els articles com a comprats per veure l'anàlisi.",
+  "totalSpending": "Despesa total",
+  "spendingByCategory": "Despeses per categoria",
+  "achievements": "Assoliments",
+  "exportPdfExcel": "Exportar PDF/Excel",
+  "exportPdf": "Exportar com a PDF",
+  "exportExcel": "Exportar com a Excel",
+  "organizingAi": "ORGANITZANT AMB IA...",
+  "yesLabel": "Sí",
+  "noLabel": "No",
+  "shareListText": "La meva llista de la compra",
+  "emptyListAddItems": "La teva llista és buida! Afegeix articles primer. ℹ️",
+  "listOrganizedMagic": "Llista organitzada màgicament per categories! ✨",
+  "shoppingMode": "Mode compra",
+  "smartOrganization": "Organització intel·ligent",
+  "savings": "Estalvis",
+  "shoppingModeHeader": "MODE COMPRA",
+  "shareAsText": "Enviar articles com a text formatat",
+  "shareRealtime": "Sincronització en temps real amb altres persones",
+  "quickRecipe": "Recepta ràpida",
+  "quickRecipePrompt": "Suggereix receptes amb articles de la meva llista.",
+  "economyTips": "Consells d'estalvi",
+  "economyTipsPrompt": "Com puc estalviar diners en aquesta compra?",
+  "organizeAisles": "Organitzar per passadissos",
+  "organizeAislesPrompt": "Organitza per passadissos del mercat.",
+  "recipeSuggestion": "Suggeriment de recepta",
+  "aiCreditsRemaining": "{remaining} crèdits restants",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Afegir tot a la llista",
+  "organizeByAisles": "Organitzar per passadissos",
+  "voiceTranscriptionTooltip": "Escriptura per veu (Gratuït)",
+  "aiVoiceCommandTooltip": "Comandament de veu IA (Premium)",
+  "voiceCommandTitle": "Comandament de veu IA",
+  "voiceCommandContent": "Parla de manera natural per gestionar la teva llista!\n\nExemples:\n• 'Afegeix pa, formatge i pernil'\n• 'Elimina el detergent'\n• 'Canvia el tema a blau'\n\nAquesta és una funció exclusiva de Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Veure plans",
+  "itemsAddedSuccess": "Articles afegits correctament a la llista!",
+  "viewList": "Veure llista",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Enviar comentaris",
+  "feedbackPrompt": "Què voleu compartir?",
+  "feedbackTypeBug": "Informar d'un error",
+  "feedbackTypeBugHint": "Alguna cosa no funciona",
+  "feedbackTypeSuggestion": "Suggeriment",
+  "feedbackTypeSuggestionHint": "Idea per millorar l'aplicació",
+  "feedbackTypeTranslation": "Problema de traducció",
+  "feedbackTypeTranslationHint": "Traducció incorrecta o poc natural",
+  "feedbackTypeFeature": "Sol·licitud de funció",
+  "feedbackTypeFeatureHint": "Funció que us agradaria veure",
+  "feedbackTypeOther": "Altres",
+  "feedbackTypeOtherHint": "Altres tipus de comentaris",
+  "feedbackHint": "Descriviu els vostres comentaris en detall...",
+  "feedbackSend": "Enviar comentaris",
+  "feedbackSending": "Enviant...",
+  "feedbackThankYou": "Gràcies!",
+  "feedbackThankYouMessage": "Els vostres comentaris s'han rebut i ens ajuden a millorar Lista Plus per a tothom.",
+  "feedbackBack": "Enrere",
+  "feedbackError": "Error en enviar: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Torna-ho a provar",
+  "feedbackSettingsTitle": "Enviar comentaris",
+  "feedbackSettingsSubtitle": "Informeu d'errors, suggeriu millores o corregiu traduccions",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

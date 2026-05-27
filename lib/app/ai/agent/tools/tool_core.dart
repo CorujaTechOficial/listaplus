@@ -108,11 +108,6 @@ class ToolResult {
     this.resultData,
   });
 
-  final String toolCallId;
-  final String content;
-  final bool success;
-  final Map<String, dynamic>? resultData;
-
   factory ToolResult.fromSuccess(
     String content, {
     String toolCallId = '',
@@ -127,4 +122,9 @@ class ToolResult {
   }) {
     return ToolResult(toolCallId: toolCallId, content: content, success: false);
   }
+
+  final String toolCallId;
+  final String content;
+  final bool success;
+  final Map<String, dynamic>? resultData;
 }

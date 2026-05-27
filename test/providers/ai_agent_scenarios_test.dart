@@ -1,11 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/agent/tool.dart';
-import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/domain/entities/chat_message.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/services/ai_service.dart';
 import '../helpers/fake_storage_backend.dart';
 
@@ -20,12 +22,12 @@ class MockAiService implements AiService {
   int _responseIndex = 0;
 
   @override
-  Future<ChatMessage> getChatCompletion(List<ChatMessage> history, {String? systemPrompt}) async {
+  Future<ChatMessage> getChatCompletion(List<ChatMessage> history, {String? systemPrompt, AiCancellationToken? cancelToken}) async {
     return ChatMessage(role: 'assistant', content: 'Not implemented');
   }
 
   @override
-  Stream<String> getChatCompletionStream(List<ChatMessage> history, {String? systemPrompt}) async* {
+  Stream<String> getChatCompletionStream(List<ChatMessage> history, {String? systemPrompt, AiCancellationToken? cancelToken}) async* {
     for (final token in streamTokens) {
       yield token;
     }
@@ -36,6 +38,7 @@ class MockAiService implements AiService {
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
+    AiCancellationToken? cancelToken,
   }) async {
     if (_responseIndex < responses.length) {
       return responses[_responseIndex++];
@@ -48,6 +51,7 @@ class MockAiService implements AiService {
     List<Map<String, dynamic>> messages, {
     String? systemPrompt,
     List<Map<String, dynamic>>? tools,
+    AiCancellationToken? cancelToken,
   }) async* {
     for (final token in streamTokens) {
       yield token;
@@ -72,7 +76,7 @@ void main() {
     test('scenario: multi-tool call in one turn', () async {
       final mockAi = MockAiService(
         responses: [
-          const AiResponse(
+          AiResponse(
             toolCalls: [
               AgentToolCall(id: '1', name: 'add_item', arguments: {'listId': 'l1', 'name': 'Milk', 'quantity': 1}),
               AgentToolCall(id: '2', name: 'add_item', arguments: {'listId': 'l1', 'name': 'Bread', 'quantity': 2}),
@@ -89,6 +93,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       await fakeStorage.saveLists([ShoppingList(id: 'l1', name: 'Market')]);
       
@@ -104,12 +110,12 @@ void main() {
     test('scenario: sequential tool calls (rounds)', () async {
       final mockAi = MockAiService(
         responses: [
-          const AiResponse(
+          AiResponse(
             toolCalls: [
               AgentToolCall(id: '1', name: 'get_lists', arguments: {}),
             ],
           ),
-          const AiResponse(
+          AiResponse(
             toolCalls: [
               AgentToolCall(id: '2', name: 'add_item', arguments: {'listId': 'l1', 'name': 'Eggs', 'quantity': 12}),
             ],
@@ -125,6 +131,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       await fakeStorage.saveLists([ShoppingList(id: 'l1', name: 'Market')]);
 
@@ -153,6 +161,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await container.read(chatSessionProvider(null).future);
@@ -180,6 +190,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await container.read(chatSessionProvider(null).future);
@@ -206,6 +218,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await container.read(chatSessionProvider(null).future);
@@ -240,6 +254,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await container.read(chatSessionProvider(null).future);
@@ -278,6 +294,8 @@ void main() {
           aiServiceProvider.overrideWithValue(mockAi),
         ],
       );
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(shoppingListItemsProvider('l1'), (_, _) {});
 
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await container.read(chatSessionProvider(null).future);

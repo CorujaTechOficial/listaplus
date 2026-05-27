@@ -47,7 +47,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Aparência'), findsOneWidget);
-      expect(find.text('Idioma'), findsOneWidget);
+      expect(find.text('Perfil'), findsOneWidget);
 
       final financeiroFinder = find.text('Financeiro');
       await tester.dragUntilVisible(financeiroFinder, find.byType(ListView), const Offset(0, -100));

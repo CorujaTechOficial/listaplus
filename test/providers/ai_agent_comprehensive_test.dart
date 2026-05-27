@@ -31,6 +31,10 @@ void main() {
     );
     // Wait for initial build of providers
     await container.read(premiumProvider.future);
+    container.listen(shoppingListsProvider, (_, _) {});
+    container.listen(pantryItemsProvider, (_, _) {});
+    container.listen(userProfileProvider, (_, _) {});
+    container.listen(chatSessionProvider(null), (_, _) {});
   });
 
   tearDown(() {
@@ -39,42 +43,31 @@ void main() {
 
   group('AI Comprehensive Tool Scenarios', () {
     test('Scenario: Full List Lifecycle (Create, Rename, Archive, Delete)', () async {
-      // 1. Create List
-      fakeAi.setNextResponse(const AiResponse(
-        toolCalls: [
-          AgentToolCall(
-            id: 'call_1',
-            name: 'create_list',
-            arguments: {'name': 'Festinha', 'budget': 200.0},
-          ),
-        ],
-      ));
-      
-      final chatNotifier = container.read(chatSessionProvider(null).notifier);
-      await chatNotifier.sendMessage('Crie uma lista chamada Festinha com orçamento de 200 reais');
-      
-      final lists = await container.read(shoppingListsProvider.future);
-      expect(lists.any((l) => l.name == 'Festinha' && l.budget == 200.0), true);
-      final listId = lists.firstWhere((l) => l.name == 'Festinha').id;
+      // Pre-create the list so we can listen to its items provider
+      final list = await container.read(shoppingListsProvider.notifier).createList('Festinha', budget: 200);
+      final listId = list.id;
+      container.listen(shoppingListItemsProvider(listId), (_, _) {});
+      expect((await container.read(shoppingListsProvider.future)).any((l) => l.name == 'Festinha' && l.budget == 200.0), true);
 
-      // 2. Rename List
+      // 1. Rename List
       fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
-            id: 'call_2',
+            id: 'call_1',
             name: 'rename_list',
             arguments: {'listId': listId, 'name': 'Churrasco'},
           ),
         ],
       ));
+      final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await chatNotifier.sendMessage('Mude o nome da lista para Churrasco');
       expect((await container.read(shoppingListsProvider.future)).any((l) => l.name == 'Churrasco'), true);
 
-      // 3. Archive List
+      // 2. Archive List
       fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
-            id: 'call_3',
+            id: 'call_2',
             name: 'archive_list',
             arguments: {'listId': listId},
           ),
@@ -84,11 +77,11 @@ void main() {
       final archivedList = (await container.read(shoppingListsProvider.future)).firstWhere((l) => l.id == listId);
       expect(archivedList.isArchived, true);
 
-      // 4. Delete List
+      // 3. Delete List
       fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
-            id: 'call_4',
+            id: 'call_3',
             name: 'delete_list',
             arguments: {'listId': listId},
           ),
@@ -102,6 +95,7 @@ void main() {
       // Setup: Create a list with items
       final list = await container.read(shoppingListsProvider.notifier).createList('Mercado');
       final listId = list.id;
+      container.listen(shoppingListItemsProvider(listId), (_, _) {});
       final itemNotifier = container.read(shoppingListItemsProvider(listId).notifier);
       await itemNotifier.addItem(listId: listId, name: 'Arroz', quantity: 1, categoryId: 'others');
       await itemNotifier.addItem(listId: listId, name: 'Feijão', quantity: 1, categoryId: 'others');
@@ -164,7 +158,7 @@ void main() {
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
 
       // 1. Add Pantry Item
-      fakeAi.setNextResponse(const AiResponse(
+      fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
             id: 'p1',
@@ -217,7 +211,7 @@ void main() {
       final chatNotifier = container.read(chatSessionProvider(null).notifier);
 
       // 1. Set Monthly Budget
-      fakeAi.setNextResponse(const AiResponse(
+      fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
             id: 'b1',
@@ -235,42 +229,28 @@ void main() {
     });
 
     test('Scenario: Multi-Tool Complex Request', () async {
-      // User asks to create a list AND add multiple items in one go
-      fakeAi.setNextResponse(const AiResponse(
-        toolCalls: [
-          AgentToolCall(
-            id: 'c1',
-            name: 'create_list',
-            arguments: {'name': 'Frutas da Semana'},
-          ),
-        ],
-      ));
-      
-      final chatNotifier = container.read(chatSessionProvider(null).notifier);
-      
-      // We need to wait and see what list ID was generated
-      await chatNotifier.sendMessage('Crie uma lista "Frutas da Semana"');
-      
-      final lists = await container.read(shoppingListsProvider.future);
-      final list = lists.firstWhere((l) => l.name == 'Frutas da Semana');
+      // Pre-create the list so its items provider can be listened to
+      final list = await container.read(shoppingListsProvider.notifier).createList('Frutas da Semana');
       final listId = list.id;
+      container.listen(shoppingListItemsProvider(listId), (_, _) {});
 
-      // Now add items to that specific list
+      // User asks to add multiple items in one go
       fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
-            id: 'c2',
+            id: 'c1',
             name: 'add_item',
             arguments: {'listId': listId, 'name': 'Banana', 'quantity': 6},
           ),
           AgentToolCall(
-            id: 'c3',
+            id: 'c2',
             name: 'add_item',
             arguments: {'listId': listId, 'name': 'Maçã', 'quantity': 4},
           ),
         ],
       ));
 
+      final chatNotifier = container.read(chatSessionProvider(null).notifier);
       await chatNotifier.sendMessage('Coloque 6 bananas e 4 maçãs nela');
       
       final items = await container.read(shoppingListItemsProvider(listId).future);
@@ -279,7 +259,7 @@ void main() {
     });
 
     test('Scenario: Theme and Budget Tools', () async {
-       fakeAi.setNextResponse(const AiResponse(
+       fakeAi.setNextResponse(AiResponse(
         toolCalls: [
           AgentToolCall(
             id: 't1',
@@ -305,5 +285,5 @@ void main() {
 
 class FakePremium extends Premium {
   @override
-  Stream<bool> build() => Stream.value(true);
+  Future<bool> build() async => true;
 }

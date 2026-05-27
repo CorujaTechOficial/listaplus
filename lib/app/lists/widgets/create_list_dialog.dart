@@ -4,10 +4,10 @@ import '../../../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class CreateListDialog extends ConsumerStatefulWidget {
-  final String? initialName;
-  final Future<void> Function(String name)? onCreate;
 
   const CreateListDialog({super.key, this.initialName, this.onCreate});
+  final String? initialName;
+  final Future<void> Function(String name)? onCreate;
 
   @override
   ConsumerState<CreateListDialog> createState() => _CreateListDialogState();

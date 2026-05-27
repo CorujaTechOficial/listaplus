@@ -208,4 +208,18 @@
 - [x] **#132** — **Feedback de Ação**: Criado `_ActionButton` stateful que muda para "Adicionados!" com ícone verde por 2 segundos após clique em ações da IA.
 - [x] **#133** — Adicionado `addedFeedback` ao `app_pt_BR.arb`, `app_pt.arb` e `app_en.arb`.
 - [x] **#134** — **Efeito Backdrop (Foco)**: `AiHomeScreen` refatorada com `Stack` e `BackdropFilter` (blur/dim) quando a lista de compras está expandida, melhorando o foco visual.
-- [x] **#135** — **Modernização de Bubbles**: Bolhas da IA agora possuem borda com gradiente sutil e um ícone `Icons.auto_awesome` animado e destacado no topo do balão.
+- [x] **#135** — Modernização de Bubbles: Bolhas da IA agora possuem borda com gradiente sutil e um ícone `Icons.auto_awesome` animado e destacado no topo do balão.
+- [x] **#136** — Fatal Exception: `libflutter.so` not found em dispositivos Android (ABI mismatch/packaging issue)
+    - Fix: Restauração de `compileSdk`/`targetSdk` para 36 e `ndkVersion` para 28 (exigido por dependências como `sentry` e `androidx`).
+    - Fix: Adição explícita de `abiFilters` (`armeabi-v7a`, `arm64-v8a`, `x86_64`) no `build.gradle.kts`.
+    - Fix: Forçar extração de bibliotecas nativas (`android:extractNativeLibs="true"` no `AndroidManifest.xml`).
+    - Build: Versão incrementada para `1.0.58+58`. AAB gerado com sucesso em `build/app/outputs/bundle/release/app-release.aab` (utilizando `--no-tree-shake-icons`).
+
+## Sessão 9 — Atualização de Versão e Build
+
+- [x] **#137** — **Versão Incrementada**: Atualizado `pubspec.yaml` para `1.0.59+59`.
+- [x] **#138** — **Correção de Compilação**:
+    - Removido parâmetro `viewMode` de `ShoppingItemTile` em `AiHomeScreen` (legado de refatoração MD3).
+    - Adicionado import de `AppColors` em `ListScreenBody`.
+- [x] **#139** — **Build de Produção**: AAB gerado com sucesso em `build/app/outputs/bundle/release/app-release.aab` via `gradlew bundleRelease` (bypass de erro de stripping do Flutter 3.44).
+

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui' show PlatformDispatcher;
 import 'dart:math';
 
@@ -17,10 +18,9 @@ import 'theme/app_theme.dart';
 import 'theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/app/lists/providers/list_providers.dart';
-import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/app/settings/screens/settings_screen.dart';
+import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
+import 'package:shopping_list/theme/page_transitions.dart';
 import 'screens/home_screen.dart';
 import 'package:shopping_list/app/pantry/screens/pantry_screen.dart';
 import 'package:shopping_list/app/recipes/screens/recipes_screen.dart';
@@ -148,9 +148,13 @@ Future<void> _runApp() async {
 
   // Render error handler
   ErrorWidget.builder = (details) {
-    FlutterError.dumpErrorToConsole(details);
-    Sentry.captureException(details.exception, stackTrace: details.stack);
-    FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+    try {
+      FlutterError.dumpErrorToConsole(details);
+      Sentry.captureException(details.exception, stackTrace: details.stack);
+      FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+    } on Object catch (_) {
+      // Ignore secondary errors during error handling
+    }
     return const Center(
       child: Padding(
         padding: EdgeInsets.all(24),
@@ -163,20 +167,19 @@ Future<void> _runApp() async {
   };
 
   try {
-    final userCredential = await _signInWithRetry();
-    final uid = userCredential.user!.uid;
+    if (FirebaseAuth.instance.currentUser == null) {
+      await _signInWithRetry().timeout(const Duration(seconds: 10), onTimeout: () {
+        debugPrint('Auth Sync: Timeout ao tentar login anônimo. Seguindo...');
+        return FirebaseAuth.instance.signInAnonymously(); // One last try
+      });
+    }
 
     final revenueCat = RevenueCatServiceImpl();
     await revenueCat.init(
       const String.fromEnvironment('REVENUECAT_API_KEY', defaultValue: 'goog_lUoZUpDVyhVroFRzwgArMnFxIQv'),
-    );
-
-    try {
-      await Purchases.logIn(uid);
-    } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
-      await FirebaseCrashlytics.instance.recordError(e, s, reason: 'RevenueCat LogIn Error');
-    }
+    ).timeout(const Duration(seconds: 5), onTimeout: () {
+      debugPrint('Initialization: Timeout ao iniciar RevenueCat. Seguindo...');
+    });
 
     runApp(
       SentryWidget(
@@ -198,11 +201,38 @@ Future<void> _runApp() async {
 }
 // coverage:ignore-end
 
-class MyApp extends ConsumerWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    _setupAuthSync();
+  }
+
+  void _setupAuthSync() {
+    FirebaseAuth.instance.authStateChanges().listen((user) async {
+      if (user != null) {
+        debugPrint('Auth Sync: Usuário logado (${user.uid}). Sincronizando RevenueCat...');
+        try {
+          await Purchases.logIn(user.uid);
+        } on Object catch (e, s) {
+          debugPrint('Auth Sync Error: Erro ao sincronizar RevenueCat: $e');
+          unawaited(Sentry.captureException(e, stackTrace: s));
+        }
+      } else {
+        debugPrint('Auth Sync: Usuário deslogado. RevenueCat será sincronizado no próximo login.');
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final onboardingAsync = ref.watch(onboardingProvider);
     final darkModeAsync = ref.watch(darkModeProvider);
     final themeColorAsync = ref.watch(themeColorProvider);
@@ -332,7 +362,14 @@ class MyApp extends ConsumerWidget {
         }
         return Locale(parts[0]);
       }
-      return null;
+      if (locale != null) {
+        for (final supported in supportedLocales) {
+          if (supported.languageCode == locale.languageCode) {
+            return supported;
+          }
+        }
+      }
+      return const Locale('en');
     };
   }
 }
@@ -345,6 +382,7 @@ class MainShell extends ConsumerStatefulWidget {
 }
 
 class _MainShellState extends ConsumerState<MainShell> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _currentTab = 0;
   final QuickActions _quickActions = const QuickActions();
 
@@ -352,14 +390,10 @@ class _MainShellState extends ConsumerState<MainShell> {
   void initState() {
     super.initState();
     _quickActions.setShortcutItems(<ShortcutItem>[
-      const ShortcutItem(type: 'action_add', localizedTitle: 'Adicionar Item', icon: 'icon_add'),
       const ShortcutItem(type: 'action_pantry', localizedTitle: 'Ver Dispensa', icon: 'icon_pantry'),
     ]);
     _quickActions.initialize((shortcutType) {
-      if (shortcutType == 'action_add') {
-        // TODO: Open add item dialog on the current list when navigation
-        // infrastructure supports it from outside the widget tree.
-      } else if (shortcutType == 'action_pantry') {
+      if (shortcutType == 'action_pantry') {
         setState(() => _currentTab = 1);
       }
     });
@@ -372,7 +406,93 @@ class _MainShellState extends ConsumerState<MainShell> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(
+        child: Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewPadding.bottom,
+          ),
+          child: NavigationDrawer(
+          selectedIndex: _currentTab,
+          onDestinationSelected: (index) {
+            setState(() => _currentTab = index);
+            Navigator.pop(context);
+          },
+          header: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                child: Row(
+                  children: [
+                    Icon(Icons.shopping_cart, color: theme.colorScheme.primary),
+                    const SizedBox(width: 12),
+                    Text(
+                      'Lista Plus',
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(indent: 16, endIndent: 16, color: theme.colorScheme.outlineVariant),
+            ],
+          ),
+          footer: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Divider(indent: 16, endIndent: 16, color: theme.colorScheme.outlineVariant),
+              ListTile(
+                leading: const Icon(Icons.person_outline),
+                title: const Text('Perfil'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context, fadeSlideRoute<void>(const UserProfileScreen()));
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings_outlined),
+                title: Text(l10n.settingsAppBar),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context, fadeSlideRoute<void>(const SettingsScreen()));
+                },
+              ),
+            ],
+          ),
+          children: [
+            const NavigationDrawerDestination(
+              icon: Icon(Icons.smart_toy_outlined),
+              selectedIcon: Icon(Icons.smart_toy),
+              label: Text('IA'),
+            ),
+            const NavigationDrawerDestination(
+              icon: Icon(Icons.restaurant_menu_outlined),
+              selectedIcon: Icon(Icons.restaurant_menu),
+              label: Text('Receitas'),
+            ),
+            const NavigationDrawerDestination(
+              icon: Icon(Icons.calendar_month_outlined),
+              selectedIcon: Icon(Icons.calendar_month),
+              label: Text('Cardápio'),
+            ),
+            NavigationDrawerDestination(
+              icon: const Icon(Icons.inventory_2_outlined),
+              selectedIcon: const Icon(Icons.inventory_2),
+              label: Text(l10n.pantry),
+            ),
+            NavigationDrawerDestination(
+              icon: const Icon(Icons.list_alt_outlined),
+              selectedIcon: const Icon(Icons.list_alt),
+              label: Text(l10n.myLists),
+            ),
+          ],
+        ),
+      ),
+      ),
       body: IndexedStack(
         index: _currentTab,
         children: const [
@@ -381,37 +501,6 @@ class _MainShellState extends ConsumerState<MainShell> {
           MealPlannerScreen(),
           PantryScreen(),
           ListLoader(),
-        ],
-      ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _currentTab,
-        onDestinationSelected: (index) => setState(() => _currentTab = index),
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.auto_awesome_outlined),
-            selectedIcon: Icon(Icons.auto_awesome),
-            label: 'IA',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.restaurant_menu_outlined),
-            selectedIcon: Icon(Icons.restaurant_menu),
-            label: 'Receitas',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.calendar_month_outlined),
-            selectedIcon: Icon(Icons.calendar_month),
-            label: 'Cardápio',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.inventory_2_outlined),
-            selectedIcon: Icon(Icons.inventory_2),
-            label: 'Dispensa',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.list_alt_outlined),
-            selectedIcon: Icon(Icons.list_alt),
-            label: 'Listas',
-          ),
         ],
       ),
     );

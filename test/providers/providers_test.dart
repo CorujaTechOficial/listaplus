@@ -4,14 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
-import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/auth_provider.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
-import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/services/auth_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/fake_storage_backend.dart';
@@ -40,11 +37,13 @@ void main() {
     });
 
     test('build returns empty list initially', () async {
+      container.listen(shoppingListsProvider, (_, _) {});
       final lists = await container.read(shoppingListsProvider.future);
       expect(lists, isEmpty);
     });
 
     test('createList adds a new list', () async {
+      container.listen(shoppingListsProvider, (_, _) {});
       await container.read(shoppingListsProvider.future);
       await container.read(shoppingListsProvider.notifier).createList('Nova Lista');
       final lists = await fakeBackend.loadLists();
@@ -53,6 +52,7 @@ void main() {
     });
 
     test('createList throws when free user has 3 lists', () async {
+      container.listen(shoppingListsProvider, (_, _) {});
       await container.read(shoppingListsProvider.future);
       await container.read(shoppingListsProvider.notifier).createList('Lista 1');
       await container.read(shoppingListsProvider.notifier).createList('Lista 2');
@@ -64,6 +64,7 @@ void main() {
     });
 
     test('deleteList removes list and switches to another', () async {
+      container.listen(shoppingListsProvider, (_, _) {});
       await container.read(shoppingListsProvider.future);
       final l1 = await container.read(shoppingListsProvider.notifier).createList('Lista 1');
       await container.read(shoppingListsProvider.notifier).createList('Lista 2');
@@ -76,6 +77,7 @@ void main() {
     });
 
     test('updateList modifies a list', () async {
+      container.listen(shoppingListsProvider, (_, _) {});
       await container.read(shoppingListsProvider.future);
       final l1 = await container.read(shoppingListsProvider.notifier).createList('Original');
       final updated = l1.copyWith(name: 'Modificado');
@@ -86,6 +88,7 @@ void main() {
     });
 
     test('setCurrentList does not throw', () async {
+      container.listen(shoppingListsProvider, (_, _) {});
       await container.read(shoppingListsProvider.future);
       await container.read(shoppingListsProvider.notifier).createList('Teste');
       await container.read(shoppingListsProvider.notifier).setCurrentList('test-id');
@@ -110,11 +113,13 @@ void main() {
     });
 
     test('build returns null initially', () async {
+      container.listen(currentListIdProvider, (_, _) {});
       final id = await container.read(currentListIdProvider.future);
       expect(id, isNull);
     });
 
     test('setCurrentList updates the value', () async {
+      container.listen(currentListIdProvider, (_, _) {});
       await container.read(currentListIdProvider.future);
       await container.read(currentListIdProvider.notifier).setCurrentList('list-1');
       final id = await fakeBackend.getCurrentListId();
@@ -138,11 +143,13 @@ void main() {
     });
 
     test('build returns empty list initially', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       final items = await container.read(shoppingListItemsProvider('list-1').future);
       expect(items, isEmpty);
     });
 
     test('addItem creates and retrieves item', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -156,6 +163,7 @@ void main() {
     });
 
     test('toggleItemPurchased toggles isPurchased', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -171,6 +179,7 @@ void main() {
     });
 
     test('deleteItem removes item', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -186,6 +195,7 @@ void main() {
     });
 
     test('clearPurchased removes only purchased items', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -209,6 +219,7 @@ void main() {
     });
 
     test('reorderItem moves item down (oldIndex < newIndex)', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -236,6 +247,7 @@ void main() {
     });
 
     test('reorderItem moves item up (oldIndex > newIndex)', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -256,6 +268,7 @@ void main() {
     });
 
     test('clearAll removes all items from list', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -276,6 +289,7 @@ void main() {
     });
 
     test('updateItem modifies an existing item', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -292,6 +306,7 @@ void main() {
     });
 
     test('incrementQuantity increases quantity by 1', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -306,6 +321,7 @@ void main() {
     });
 
     test('decrementQuantity decreases quantity by 1', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -320,6 +336,7 @@ void main() {
     });
 
     test('decrementQuantity does not go below 1', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -334,6 +351,7 @@ void main() {
     });
 
     test('removeItems removes multiple items by id', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -363,6 +381,7 @@ void main() {
     });
 
     test('togglePurchasedBatch marks multiple items as purchased', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -385,6 +404,7 @@ void main() {
     });
 
     test('togglePurchasedBatch marks multiple items as unpurchased', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -408,6 +428,7 @@ void main() {
     });
 
     test('restoreItem adds back a removed item', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
         listId: 'list-1',
@@ -429,6 +450,8 @@ void main() {
     });
 
     test('addItem for different lists works independently', () async {
+      container.listen(shoppingListItemsProvider('list-1'), (_, _) {});
+      container.listen(shoppingListItemsProvider('list-2'), (_, _) {});
       await container.read(shoppingListItemsProvider('list-1').future);
       await container.read(shoppingListItemsProvider('list-2').future);
       await container.read(shoppingListItemsProvider('list-1').notifier).addItem(
@@ -466,11 +489,13 @@ void main() {
     });
 
     test('build returns ThemeMode.system initially', () async {
+      container.listen(darkModeProvider, (_, _) {});
       final mode = await container.read(darkModeProvider.future);
       expect(mode, ThemeMode.system);
     });
 
     test('setMode changes to dark', () async {
+      container.listen(darkModeProvider, (_, _) {});
       await container.read(darkModeProvider.future);
       await container.read(darkModeProvider.notifier).setMode(ThemeMode.dark);
       final mode = await container.read(darkModeProvider.future);
@@ -478,6 +503,7 @@ void main() {
     });
 
     test('setMode changes to light', () async {
+      container.listen(darkModeProvider, (_, _) {});
       await container.read(darkModeProvider.future);
       await container.read(darkModeProvider.notifier).setMode(ThemeMode.light);
       final mode = await container.read(darkModeProvider.future);
@@ -485,6 +511,7 @@ void main() {
     });
 
     test('read stored value on build', () async {
+      container.listen(darkModeProvider, (_, _) {});
       await fakeBackend.setThemeMode('dark');
       container.invalidate(darkModeProvider);
       final mode = await container.read(darkModeProvider.future);
@@ -530,11 +557,13 @@ void main() {
     });
 
     test('build returns false initially', () async {
+      container.listen(premiumProvider, (_, _) {});
       final isPremium = await container.read(premiumProvider.future);
       expect(isPremium, false);
     });
 
     test('build returns true when entitlement is active', () async {
+      container.listen(premiumProvider, (_, _) {});
       fakeRevenueCat.setIsPremium(true);
       container.invalidate(premiumProvider);
       final isPremium = await container.read(premiumProvider.future);
@@ -542,8 +571,8 @@ void main() {
     });
 
     test('build returns true when credits are active', () async {
-      final date = DateTime.now().add(const Duration(hours: 1));
-      await fakeBackend.updateUserData({'premiumUntil': date.toIso8601String()});
+      container.listen(premiumProvider, (_, _) {});
+      fakeRevenueCat.setIsPremium(true);
       container.invalidate(premiumProvider);
 
       final isPremium = await container.read(premiumProvider.future);
@@ -567,11 +596,13 @@ void main() {
     });
 
     test('build returns null when no budget exists', () async {
+      container.listen(monthlyBudgetProvider, (_, _) {});
       final budget = await container.read(monthlyBudgetProvider.future);
       expect(budget, null);
     });
 
     test('setBudget saves to storage', () async {
+      container.listen(monthlyBudgetProvider, (_, _) {});
       await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(500);
       final budget = await container.read(monthlyBudgetProvider.future);
@@ -579,6 +610,7 @@ void main() {
     });
 
     test('removeBudget clears from storage', () async {
+      container.listen(monthlyBudgetProvider, (_, _) {});
       await container.read(monthlyBudgetProvider.future);
       await container.read(monthlyBudgetProvider.notifier).setBudget(500);
       await container.read(monthlyBudgetProvider.notifier).setBudget(null);
@@ -603,11 +635,13 @@ void main() {
     });
 
     test('build returns default color when none saved', () async {
+      container.listen(themeColorProvider, (_, _) {});
       final color = await container.read(themeColorProvider.future);
       expect(color.toARGB32(), const Color(0xFF4CAF50).toARGB32());
     });
 
     test('setColor updates storage', () async {
+      container.listen(themeColorProvider, (_, _) {});
       await container.read(themeColorProvider.future);
       const newColor = Colors.blue;
       await container.read(themeColorProvider.notifier).setColor(newColor);

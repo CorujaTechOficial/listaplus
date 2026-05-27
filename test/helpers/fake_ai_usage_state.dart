@@ -1,4 +1,4 @@
-import 'package:shopping_list/models/ai_usage.dart';
+import 'package:shopping_list/domain/entities/ai_usage.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 
 class FakeAiUsageState extends AiUsageState {

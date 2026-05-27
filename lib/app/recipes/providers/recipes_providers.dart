@@ -14,7 +14,7 @@ class Recipes extends _$Recipes {
   Future<List<Recipe>> build() async {
     final service = ref.watch(firestoreServiceProvider);
 
-    _subscription?.cancel();
+    unawaited(_subscription?.cancel());
 
     final completer = Completer<List<Recipe>>();
 
@@ -57,5 +57,15 @@ class Recipes extends _$Recipes {
   Future<void> deleteRecipe(String id) async {
     final service = ref.read(firestoreServiceProvider);
     await service.deleteRecipe(id);
+  }
+
+  Future<void> updateRecipe(Recipe recipe) async {
+    final service = ref.read(firestoreServiceProvider);
+    await service.saveRecipe(recipe.toJson());
+  }
+
+  Future<String?> uploadRecipeImage(String recipeId, String filePath) async {
+    final service = ref.read(firestoreServiceProvider);
+    return service.uploadRecipeImage(recipeId, filePath);
   }
 }

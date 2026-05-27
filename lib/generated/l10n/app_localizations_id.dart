@@ -1,0 +1,1167 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Indonesian (`id`).
+class AppLocalizationsId extends AppLocalizations {
+  AppLocalizationsId([String locale = 'id']) : super(locale);
+
+  @override
+  String get appTitle => 'Daftar Belanja';
+
+  @override
+  String get lists => 'Daftar';
+
+  @override
+  String get pantry => 'Dapur';
+
+  @override
+  String get cancel => 'Batal';
+
+  @override
+  String get save => 'Simpan';
+
+  @override
+  String get create => 'Buat';
+
+  @override
+  String get add => 'Tambah';
+
+  @override
+  String get remove => 'Hapus';
+
+  @override
+  String get delete => 'Hapus';
+
+  @override
+  String get edit => 'Sunting';
+
+  @override
+  String get copy => 'Salin';
+
+  @override
+  String get retry => 'Coba lagi';
+
+  @override
+  String get regenerate => 'Hasilkan ulang';
+
+  @override
+  String get copiedToClipboard => 'Disalin ke papan klip';
+
+  @override
+  String get confirm => 'Konfirmasi';
+
+  @override
+  String get close => 'Tutup';
+
+  @override
+  String get import => 'Impor';
+
+  @override
+  String get rename => 'Ganti nama';
+
+  @override
+  String get upgrade => 'Tingkatkan';
+
+  @override
+  String get clear => 'Bersihkan';
+
+  @override
+  String error(String message) {
+    return 'Kesalahan: $message';
+  }
+
+  @override
+  String errorGeneric(String message) {
+    return 'Kesalahan: $message';
+  }
+
+  @override
+  String get purchaseError => 'Kesalahan memproses pembelian. Coba lagi.';
+
+  @override
+  String get restoreError => 'Kesalahan memulihkan pembelian. Coba lagi.';
+
+  @override
+  String get loading => 'Memuat...';
+
+  @override
+  String get fieldRequired => 'Kolom wajib';
+
+  @override
+  String get addedFeedback => 'Ditambahkan!';
+
+  @override
+  String selectedItems(int count) {
+    return '$count dipilih';
+  }
+
+  @override
+  String get estimated => 'Estimasi';
+
+  @override
+  String get alreadyPurchased => 'Sudah dibeli';
+
+  @override
+  String get clearList => 'Bersihkan daftar';
+
+  @override
+  String get clearPurchased => 'Hapus yang sudah dibeli';
+
+  @override
+  String get share => 'Bagikan';
+
+  @override
+  String get shareViaCode => 'Bagikan melalui kode';
+
+  @override
+  String get importViaCode => 'Impor melalui kode';
+
+  @override
+  String get listAssistant => 'Asisten daftar';
+
+  @override
+  String get globalAssistant => 'Asisten global';
+
+  @override
+  String get becomePremium => 'Jadi Premium';
+
+  @override
+  String get manageSubscription => 'Kelola langganan';
+
+  @override
+  String get completePurchase => 'Selesaikan pembelian';
+
+  @override
+  String get confirmClearList => 'Hapus semua item?';
+
+  @override
+  String get shareListTitle => 'Bagikan Daftar';
+
+  @override
+  String get shareThisCode => 'Bagikan kode ini:';
+
+  @override
+  String get validForLimitedTime => 'Berlaku untuk waktu terbatas';
+
+  @override
+  String get importListTitle => 'Impor Daftar';
+
+  @override
+  String get enterCodeHint => 'Masukkan kode';
+
+  @override
+  String get confirmArchiveTitle => 'Selesaikan Pembelian';
+
+  @override
+  String get confirmArchiveContent =>
+      'Selesaikan pembelian ini dan arsipkan daftar?';
+
+  @override
+  String get complete => 'Selesai';
+
+  @override
+  String get listArchived => 'Daftar berhasil diarsipkan!';
+
+  @override
+  String listAdded(String listName) {
+    return '$listName ditambahkan!';
+  }
+
+  @override
+  String get buy => 'Beli';
+
+  @override
+  String get unmark => 'Hapus tanda';
+
+  @override
+  String confirmDeleteItems(int count) {
+    return 'Hapus $count item?';
+  }
+
+  @override
+  String get confirmDeleteTitle => 'Konfirmasi';
+
+  @override
+  String confirmContent(int count) {
+    return 'Hapus $count item?';
+  }
+
+  @override
+  String get archiveList => 'Arsipkan daftar';
+
+  @override
+  String get pantryAppBar => 'Dapur';
+
+  @override
+  String get generateShoppingList => 'Buat daftar belanja';
+
+  @override
+  String get pantryEmpty => 'Dapur kosong';
+
+  @override
+  String get pantryEmptySubtitle =>
+      'Tambahkan produk yang ingin Anda simpan di rumah';
+
+  @override
+  String itemsNeedPurchase(int deficit) {
+    return '$deficit item perlu dibeli';
+  }
+
+  @override
+  String get noItemsToBuy => 'Tidak ada item yang perlu dibeli';
+
+  @override
+  String get newPantryList => 'Belanja Dapur';
+
+  @override
+  String get newListTitle => 'Daftar Belanja Baru';
+
+  @override
+  String itemsWillBeAdded(int count) {
+    return '$count item akan ditambahkan';
+  }
+
+  @override
+  String get listNameLabel => 'Nama daftar';
+
+  @override
+  String listCreated(String name, int count) {
+    return 'Daftar \"$name\" dibuat dengan $count item';
+  }
+
+  @override
+  String get noTracking => 'Tanpa pelacakan';
+
+  @override
+  String get markAsPurchased => 'Tandai sudah dibeli';
+
+  @override
+  String editPantryItem(String name) {
+    return 'Sunting $name';
+  }
+
+  @override
+  String get idealQuantity => 'Jumlah ideal';
+
+  @override
+  String get currentQuantity => 'Jumlah saat ini';
+
+  @override
+  String get consumed => 'Dikonsumsi';
+
+  @override
+  String restocked(String name, int quantity, String unit) {
+    return '$name diisi ulang menjadi $quantity $unit';
+  }
+
+  @override
+  String confirmRemovePantry(String name) {
+    return 'Hapus \"$name\" dari dapur?';
+  }
+
+  @override
+  String pantryEditTitle(String name) {
+    return 'Sunting $name';
+  }
+
+  @override
+  String get settingsAppBar => 'Pengaturan';
+
+  @override
+  String get language => 'Bahasa';
+
+  @override
+  String get languagePortuguese => 'Português (Brasil)';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageSystem => 'Default sistem';
+
+  @override
+  String get appearance => 'Tampilan';
+
+  @override
+  String get light => 'Terang';
+
+  @override
+  String get system => 'Sistem';
+
+  @override
+  String get dark => 'Gelap';
+
+  @override
+  String get themeColor => 'Warna tema';
+
+  @override
+  String get finance => 'Keuangan';
+
+  @override
+  String get monthlyBudgetNav => 'Anggaran bulanan';
+
+  @override
+  String get budgetSubtitle => 'Lacak pengeluaran bulanan Anda';
+
+  @override
+  String get data => 'Data';
+
+  @override
+  String get backupNav => 'Cadangan';
+
+  @override
+  String get backupSubtitle => 'Ekspor atau impor data Anda';
+
+  @override
+  String get about => 'Tentang';
+
+  @override
+  String get version => 'Versi';
+
+  @override
+  String get privacy => 'Privasi';
+
+  @override
+  String get termsOfUse => 'Syarat penggunaan';
+
+  @override
+  String get backupTitle => 'Cadangan';
+
+  @override
+  String get backupPremiumDescription =>
+      'Cadangan dan ekspor adalah fitur premium';
+
+  @override
+  String get exportData => 'Ekspor data';
+
+  @override
+  String get exportDataSubtitle => 'Simpan semua daftar sebagai JSON';
+
+  @override
+  String get importData => 'Impor data';
+
+  @override
+  String get importDataSubtitle => 'Pulihkan daftar dari JSON';
+
+  @override
+  String get importJsonTitle => 'Impor JSON';
+
+  @override
+  String get importJsonHint => 'Tempel JSON cadangan di sini...';
+
+  @override
+  String get backupExported => 'Cadangan berhasil diekspor!';
+
+  @override
+  String get budgetAppBar => 'Anggaran Bulanan';
+
+  @override
+  String get budgetPremiumLocked => 'Anggaran bulanan global adalah premium';
+
+  @override
+  String get budgetUpgradePrompt => 'Tingkatkan untuk membuka';
+
+  @override
+  String get noBudgetDefined => 'Belum ada anggaran';
+
+  @override
+  String totalEstimated(String amount) {
+    return 'Total estimasi: $amount';
+  }
+
+  @override
+  String get setBudgetButton => 'Atur anggaran';
+
+  @override
+  String get budgetLists => 'Daftar';
+
+  @override
+  String get budgetValueLabel => 'Jumlah';
+
+  @override
+  String get setBudgetTitle => 'Anggaran Bulanan';
+
+  @override
+  String budgetAmountSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get filterAll => 'Semua';
+
+  @override
+  String get filterPending => 'Tertunda';
+
+  @override
+  String get filterPurchased => 'Dibeli';
+
+  @override
+  String get sortName => 'Nama';
+
+  @override
+  String get sortCategory => 'Kategori';
+
+  @override
+  String get sortDate => 'Tanggal';
+
+  @override
+  String get sortManual => 'Manual';
+
+  @override
+  String get addItem => 'Tambah Item';
+
+  @override
+  String get itemName => 'Nama item';
+
+  @override
+  String get quantityShort => 'Jml';
+
+  @override
+  String get unit => 'Satuan';
+
+  @override
+  String get category => 'Kategori';
+
+  @override
+  String get estimatedPrice => 'Estimasi harga';
+
+  @override
+  String get addItemPrice => 'Estimasi harga';
+
+  @override
+  String get editItem => 'Sunting Item';
+
+  @override
+  String get quantityFull => 'Jumlah';
+
+  @override
+  String get editItemPrice => 'Estimasi harga';
+
+  @override
+  String get addToPantry => 'Tambahkan ke Dapur';
+
+  @override
+  String addToPantryPrompt(String name) {
+    return 'Tambahkan \"$name\" ke Dapur?';
+  }
+
+  @override
+  String get yes => 'Ya';
+
+  @override
+  String get productName => 'Nama produk';
+
+  @override
+  String get idealQty => 'Jml ideal';
+
+  @override
+  String get currentQty => 'Jml saat ini';
+
+  @override
+  String get trackStock => 'Lacak stok';
+
+  @override
+  String get trackStockActive => 'Muncul dalam saran belanja';
+
+  @override
+  String get trackStockInactive => 'Tidak menghasilkan saran belanja';
+
+  @override
+  String get createListDialog => 'Buat Daftar';
+
+  @override
+  String get renameListDialog => 'Ganti Nama Daftar';
+
+  @override
+  String get listHistory => 'Riwayat Daftar';
+
+  @override
+  String get myLists => 'Daftar Saya';
+
+  @override
+  String get viewActive => 'Lihat Aktif';
+
+  @override
+  String get viewHistory => 'Lihat Riwayat';
+
+  @override
+  String get noArchivedLists => 'Tidak ada daftar yang diarsipkan';
+
+  @override
+  String get noActiveLists => 'Tidak ada daftar aktif';
+
+  @override
+  String completedOn(String date) {
+    return 'Selesai pada $date';
+  }
+
+  @override
+  String get sharedLabel => 'Dibagikan';
+
+  @override
+  String get restore => 'Pulihkan';
+
+  @override
+  String get removeSharedTooltip => 'Hapus';
+
+  @override
+  String get deleteListTitle => 'Hapus daftar';
+
+  @override
+  String deleteListContent(String name) {
+    return 'Anda yakin ingin menghapus \"$name\"? Semua item akan dihapus.';
+  }
+
+  @override
+  String get removeSharedListTitle => 'Hapus daftar bersama';
+
+  @override
+  String removeSharedListContent(String name) {
+    return 'Hapus \"$name\" dari daftar Anda? Daftar asli tidak akan terpengaruh.';
+  }
+
+  @override
+  String get createNewList => 'Buat daftar baru';
+
+  @override
+  String get aiAssistant => 'Asisten AI';
+
+  @override
+  String get aiAssistantDescription =>
+      'Dapatkan saran pintar, resep, dan tips personal dengan asisten AI kami.';
+
+  @override
+  String get generalAssistant => 'Asisten Umum';
+
+  @override
+  String get clearHistory => 'Hapus Riwayat';
+
+  @override
+  String get clearHistoryConfirm => 'Hapus semua pesan dalam sesi ini?';
+
+  @override
+  String get chatHint => 'Ketik pesan Anda...';
+
+  @override
+  String chatError(String error) {
+    return 'Kesalahan memuat chat: $error';
+  }
+
+  @override
+  String get listHelp => 'Bagaimana saya bisa membantu dengan daftar Anda?';
+
+  @override
+  String get generalHelp =>
+      'Bagaimana saya bisa membantu belanja Anda hari ini?';
+
+  @override
+  String get chatSubtitle => 'Minta saran item, resep, atau tips hemat.';
+
+  @override
+  String get aiError =>
+      'Maaf, terjadi kesalahan memproses permintaan Anda. Periksa koneksi Anda atau coba lagi nanti.';
+
+  @override
+  String get listaPlusTitle => 'Lista Plus';
+
+  @override
+  String get loginPrompt => 'Masuk untuk membuka\nfitur premium';
+
+  @override
+  String get signInGoogle => 'Masuk dengan Google';
+
+  @override
+  String get signInApple => 'Masuk dengan Apple';
+
+  @override
+  String get continueAsGuest => 'Lanjutkan sebagai tamu';
+
+  @override
+  String loginError(String error) {
+    return 'Kesalahan masuk: $error';
+  }
+
+  @override
+  String get paywallTitle => 'Lista Plus Premium';
+
+  @override
+  String get premiumUpgrade => 'Tingkatkan untuk membuka';
+
+  @override
+  String get itemRemoved => 'Item dihapus';
+
+  @override
+  String get undo => 'Urungkan';
+
+  @override
+  String get emptyListTitle => 'Daftar Anda kosong';
+
+  @override
+  String get emptyListSubtitle => 'Tambahkan item untuk memulai';
+
+  @override
+  String get noListFoundTitle => 'Tidak ada daftar ditemukan';
+
+  @override
+  String get noListFoundSubtitle => 'Buat daftar pertama Anda untuk memulai';
+
+  @override
+  String get createFirstList => 'Buat Daftar Pertama';
+
+  @override
+  String get listBudgetTitle => 'Anggaran Daftar';
+
+  @override
+  String get budgetAmountLabel => 'Jumlah anggaran';
+
+  @override
+  String get removeBudget => 'Hapus';
+
+  @override
+  String get prefUnlimitedLists => 'Daftar tak terbatas';
+
+  @override
+  String get prefSharing => 'Bagikan daftar';
+
+  @override
+  String get prefFullHistory => 'Riwayat lengkap';
+
+  @override
+  String get prefExportData => 'Ekspor data';
+
+  @override
+  String get prefCustomThemes => 'Tema kustom';
+
+  @override
+  String get prefMonthlyBudget => 'Anggaran bulanan global';
+
+  @override
+  String get prefAIAssistant => 'Asisten AI Pribadi';
+
+  @override
+  String get prefUnlimitedPantry => 'Dapur tak terbatas';
+
+  @override
+  String get prefInteractiveArtifacts => 'Artefak AI Interaktif';
+
+  @override
+  String get themeGreen => 'Hijau';
+
+  @override
+  String get themeBlue => 'Biru';
+
+  @override
+  String get themePurple => 'Ungu';
+
+  @override
+  String get themeRed => 'Merah';
+
+  @override
+  String get themeOrange => 'Oranye';
+
+  @override
+  String get themePink => 'Merah Muda';
+
+  @override
+  String get themeIndigo => 'Nila';
+
+  @override
+  String get themeAmber => 'Kuning';
+
+  @override
+  String get themeTeal => 'Teal';
+
+  @override
+  String get themeBrown => 'Coklat';
+
+  @override
+  String get catFruits => 'Buah';
+
+  @override
+  String get catCleaning => 'Kebersihan';
+
+  @override
+  String get catBeverages => 'Minuman';
+
+  @override
+  String get catBakery => 'Roti';
+
+  @override
+  String get catOthers => 'Lainnya';
+
+  @override
+  String get unitPack => 'bungkus';
+
+  @override
+  String get shareSubject => 'Daftar Belanja';
+
+  @override
+  String get monthlyBudgetTitle => 'Anggaran Bulanan';
+
+  @override
+  String monthlyBudgetSpent(String spent, String budget) {
+    return '$spent / $budget';
+  }
+
+  @override
+  String get deleteListConfirm => 'Hapus daftar';
+
+  @override
+  String get pantryItemRemoved => 'Item dihapus';
+
+  @override
+  String deficitItems(int deficit) {
+    return '$deficit item perlu dibeli';
+  }
+
+  @override
+  String get cartTotal => 'Total keranjang';
+
+  @override
+  String get restockLabel => 'Isi ulang';
+
+  @override
+  String get advancedFeatures => 'Fitur lanjutan';
+
+  @override
+  String get selectAll => 'Pilih semua';
+
+  @override
+  String get deselectAll => 'Batalkan pilihan semua';
+
+  @override
+  String get monthlyBudgetAppBar => 'Anggaran Bulanan';
+
+  @override
+  String get budgetEditTitle => 'Anggaran Bulanan';
+
+  @override
+  String get budgetDashboardTitle => 'Dasbor';
+
+  @override
+  String get selectListForDashboard => 'Pilih daftar untuk melihat dasbor.';
+
+  @override
+  String get spendingAnalysis => 'Analisis Pengeluaran';
+
+  @override
+  String get noItemsToAnalyze =>
+      'Tidak ada item dalam daftar untuk dianalisis.';
+
+  @override
+  String get markItemsToSeeAnalysis =>
+      'Tandai item sebagai dibeli untuk melihat analisis.';
+
+  @override
+  String get totalSpending => 'Total Pengeluaran';
+
+  @override
+  String get spendingByCategory => 'Pengeluaran per Kategori';
+
+  @override
+  String get achievements => 'Pencapaian';
+
+  @override
+  String get exportPdfExcel => 'Ekspor PDF/Excel';
+
+  @override
+  String get exportPdf => 'Ekspor sebagai PDF';
+
+  @override
+  String get exportExcel => 'Ekspor sebagai Excel';
+
+  @override
+  String get organizingAi => 'MENGORGANISASI DENGAN AI...';
+
+  @override
+  String get yesLabel => 'Ya';
+
+  @override
+  String get noLabel => 'Tidak';
+
+  @override
+  String get shareListText => 'Daftar Belanja Saya';
+
+  @override
+  String get emptyListAddItems =>
+      'Daftar Anda kosong! Tambahkan item terlebih dahulu. ℹ️';
+
+  @override
+  String get listOrganizedMagic =>
+      'Daftar secara ajaib diatur berdasarkan kategori! ✨';
+
+  @override
+  String get shoppingMode => 'Mode Belanja';
+
+  @override
+  String get smartOrganization => 'Organisasi Pintar';
+
+  @override
+  String get savings => 'Penghematan';
+
+  @override
+  String get shoppingModeHeader => 'MODE BELANJA';
+
+  @override
+  String get shareAsText => 'Kirim item sebagai teks terformat';
+
+  @override
+  String get shareRealtime => 'Sinkronisasi real-time dengan orang lain';
+
+  @override
+  String get quickRecipe => 'Resep cepat';
+
+  @override
+  String get quickRecipePrompt =>
+      'Sarankan resep dengan item dari daftar saya.';
+
+  @override
+  String get economyTips => 'Tips hemat';
+
+  @override
+  String get economyTipsPrompt =>
+      'Bagaimana saya bisa menghemat uang untuk pembelian ini?';
+
+  @override
+  String get organizeAisles => 'Atur berdasarkan lorong';
+
+  @override
+  String get organizeAislesPrompt => 'Atur berdasarkan lorong pasar.';
+
+  @override
+  String get recipeSuggestion => 'Saran resep';
+
+  @override
+  String aiCreditsRemaining(int remaining) {
+    return '$remaining kredit tersisa';
+  }
+
+  @override
+  String get addAllToList => 'Tambahkan semua ke daftar';
+
+  @override
+  String get organizeByAisles => 'Atur berdasarkan lorong';
+
+  @override
+  String get voiceTranscriptionTooltip => 'Ketik suara (Gratis)';
+
+  @override
+  String get aiVoiceCommandTooltip => 'Perintah Suara AI (Premium)';
+
+  @override
+  String get voiceCommandTitle => 'Perintah Suara AI';
+
+  @override
+  String get voiceCommandContent =>
+      'Bicaralah secara alami untuk mengelola daftar Anda!\n\nContoh:\n• \'Tambahkan roti, keju, dan ham\'\n• \'Hapus deterjen pakaian\'\n• \'Ubah tema menjadi biru\'\n\nIni adalah fitur eksklusif Lista Plus Premium.';
+
+  @override
+  String get voiceCommandPlanBtn => 'Lihat Paket';
+
+  @override
+  String get itemsAddedSuccess => 'Item berhasil ditambahkan ke daftar!';
+
+  @override
+  String get viewList => 'Lihat daftar';
+
+  @override
+  String get feedbackTitle => 'Kirim Masukan';
+
+  @override
+  String get feedbackPrompt => 'Apa yang ingin Anda bagikan?';
+
+  @override
+  String get feedbackTypeBug => 'Laporkan Bug';
+
+  @override
+  String get feedbackTypeBugHint => 'Sesuatu tidak berfungsi';
+
+  @override
+  String get feedbackTypeSuggestion => 'Saran';
+
+  @override
+  String get feedbackTypeSuggestionHint => 'Ide untuk meningkatkan aplikasi';
+
+  @override
+  String get feedbackTypeTranslation => 'Masalah Terjemahan';
+
+  @override
+  String get feedbackTypeTranslationHint => 'Terjemahan salah atau tidak alami';
+
+  @override
+  String get feedbackTypeFeature => 'Permintaan Fitur';
+
+  @override
+  String get feedbackTypeFeatureHint => 'Fitur yang ingin Anda lihat';
+
+  @override
+  String get feedbackTypeOther => 'Lainnya';
+
+  @override
+  String get feedbackTypeOtherHint => 'Jenis masukan lainnya';
+
+  @override
+  String get feedbackHint => 'Jelaskan masukan Anda secara detail...';
+
+  @override
+  String get feedbackSend => 'Kirim Masukan';
+
+  @override
+  String get feedbackSending => 'Mengirim...';
+
+  @override
+  String get feedbackThankYou => 'Terima Kasih!';
+
+  @override
+  String get feedbackThankYouMessage =>
+      'Masukan Anda telah diterima dan membantu kami meningkatkan Lista Plus untuk semua orang.';
+
+  @override
+  String get feedbackBack => 'Kembali';
+
+  @override
+  String feedbackError(String error) {
+    return 'Kesalahan mengirim: $error';
+  }
+
+  @override
+  String get feedbackRetry => 'Coba lagi';
+
+  @override
+  String get feedbackSettingsTitle => 'Kirim Masukan';
+
+  @override
+  String get feedbackSettingsSubtitle =>
+      'Laporkan bug, sarankan perbaikan, atau perbaiki terjemahan';
+
+  @override
+  String get aiEnergy => 'AI Energy';
+
+  @override
+  String get searchInConversation => 'Search in conversation...';
+
+  @override
+  String get noMessagesFound => 'No messages found';
+
+  @override
+  String get suggestedQuestions => 'Suggested questions:';
+
+  @override
+  String get shoppingAssistant => 'Shopping assistant';
+
+  @override
+  String itemsPurchasedCount(int purchased, int total) {
+    return '$purchased of $total purchased';
+  }
+
+  @override
+  String get estimatedCost => 'Estimated';
+
+  @override
+  String get viewItems => 'View items';
+
+  @override
+  String get noItemsInList => 'No items in the list';
+
+  @override
+  String get longHistoryWarning =>
+      'Long history: the assistant focuses on the latest messages for better performance.';
+
+  @override
+  String get listening => 'Listening...';
+
+  @override
+  String get addDirectToList => 'Add directly to list';
+
+  @override
+  String get unlockFullResponse => 'Unlock Full Response';
+
+  @override
+  String get switchList => 'Switch list';
+
+  @override
+  String get marketMode => 'Market Mode';
+
+  @override
+  String get backToChat => 'Back to Chat';
+
+  @override
+  String get finishShopping => 'Finish Shopping';
+
+  @override
+  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+
+  @override
+  String get createListToStartAi =>
+      'Create a shopping list to start using the smart chat.';
+
+  @override
+  String get howCanIHelp => 'How can I help?';
+
+  @override
+  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+
+  @override
+  String itemsPurchasedShort(int purchased, int total) {
+    return '$purchased/$total purchased';
+  }
+
+  @override
+  String get quickReplies => 'Quick replies:';
+
+  @override
+  String get voiceProFeature =>
+      'Advanced voice commands are Pro. Enabling basic dictation...';
+
+  @override
+  String get viewPro => 'View Pro';
+
+  @override
+  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+
+  @override
+  String get errorLoadingChatSubtitle =>
+      'Check your connection or try again later.';
+
+  @override
+  String get errorOscillation =>
+      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+
+  @override
+  String get activeListening => 'Active Listening';
+
+  @override
+  String get whatToDoWithItem => 'What would you like to do with this item?';
+
+  @override
+  String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Open menu';
+
+  @override
+  String get viewRecipe => 'View Recipe';
+
+  @override
+  String get recipeCreated => 'Recipe created!';
+
+  @override
+  String get editRecipe => 'Edit';
+
+  @override
+  String get deleteRecipe => 'Delete';
+
+  @override
+  String get deleteRecipeConfirm => 'Delete this recipe?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+  }
+
+  @override
+  String get ingredients => 'Ingredients';
+
+  @override
+  String get instructions => 'Instructions';
+
+  @override
+  String get prepTime => 'Prep time';
+
+  @override
+  String get recipeSaved => 'Recipe saved!';
+
+  @override
+  String get noRecipesSaved => 'No recipes saved';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Create your first custom recipe by tapping the button below.';
+
+  @override
+  String get myRecipes => 'My Recipes';
+
+  @override
+  String get newRecipe => 'New Recipe';
+
+  @override
+  String get loadingRecipes => 'Loading your recipes...';
+
+  @override
+  String get errorLoadingRecipes => 'Error loading recipes';
+
+  @override
+  String get addIngredient => 'Add ingredient';
+
+  @override
+  String get saveRecipe => 'Save';
+
+  @override
+  String get recipeName => 'Recipe name';
+
+  @override
+  String get shortDescription => 'Short description';
+
+  @override
+  String get prepTimeMinutes => 'Prep time (minutes)';
+
+  @override
+  String get instructionsHint => 'Type one step per line...';
+
+  @override
+  String get addPhoto => 'Add photo';
+
+  @override
+  String get imageUrlPlaceholder => 'Or paste an image URL';
+
+  @override
+  String get tags => 'Tags';
+
+  @override
+  String get recipeTags => 'Recipe tags';
+
+  @override
+  String get suggestedTags => 'Suggested';
+
+  @override
+  String get searchRecipes => 'Search recipes...';
+
+  @override
+  String get filterByTag => 'Filter by tag';
+
+  @override
+  String get allTags => 'All';
+
+  @override
+  String get recipeDeleted => 'Recipe deleted';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get editRecipeTitle => 'Edit Recipe';
+
+  @override
+  String get newRecipeTitle => 'New Recipe';
+
+  @override
+  String get requiredField => 'Required';
+
+  @override
+  String get chooseImageSource => 'Choose image source';
+
+  @override
+  String get gallery => 'Gallery';
+
+  @override
+  String get enterUrl => 'Enter URL';
+
+  @override
+  String get recipeImage => 'Recipe image';
+
+  @override
+  String get removeImage => 'Remove image';
+}
