@@ -194,6 +194,42 @@ class SettingsScreen extends ConsumerWidget {
           ),
 
           const Divider(),
+          _SectionHeader(title: l10n.settingsDefaultScreen),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.settingsDefaultScreenSubtitle,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                SegmentedButton<String>(
+                  segments: [
+                    ButtonSegment(
+                      value: 'list',
+                      label: Text(l10n.settingsScreenList),
+                      icon: const Icon(Icons.list_alt),
+                    ),
+                    ButtonSegment(
+                      value: 'chat',
+                      label: Text(l10n.settingsScreenChat),
+                      icon: const Icon(Icons.chat),
+                    ),
+                  ],
+                  selected: {ref.watch(defaultScreenProvider).asData?.value ?? 'list'},
+                  onSelectionChanged: (selected) {
+                    ref.read(defaultScreenProvider.notifier).setScreen(selected.first);
+                  },
+                  showSelectedIcon: false,
+                ),
+              ],
+            ),
+          ),
+          const Divider(),
           ListTile(
             leading: Icon(Icons.language, color: theme.colorScheme.primary),
             title: Text(l10n.language),
