@@ -283,6 +283,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get languageSystem => 'Default sistem';
 
   @override
+  String get chooseLanguage => 'Pilih Bahasa';
+
+  @override
+  String get searchLanguage => 'Cari bahasa...';
+
+  @override
   String get appearance => 'Tampilan';
 
   @override
@@ -296,6 +302,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get themeColor => 'Warna tema';
+
+  @override
+  String get dynamicColors => 'Warna dinamis';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Gunakan warna berdasarkan wallpaper Anda';
 
   @override
   String get finance => 'Keuangan';
@@ -1040,128 +1053,246 @@ class AppLocalizationsId extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Buka menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Lihat Resep';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Resep dibuat!';
 
   @override
   String get editRecipe => 'Edit';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Hapus';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Hapus resep ini?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Apakah Anda yakin ingin menghapus \"$recipeName\"? Tindakan ini tidak dapat dibatalkan.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Bahan-bahan';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instruksi';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Waktu persiapan';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Resep disimpan!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Tidak ada resep yang disimpan';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Buat resep kustom pertama Anda dengan mengetuk tombol di bawah.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Resep Saya';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Resep Baru';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Memuat resep Anda...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Gagal memuat resep';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Tambah bahan';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Simpan';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Nama resep';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Deskripsi singkat';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Waktu persiapan (menit)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Ketik satu langkah per baris...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Tambah foto';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Atau tempel URL gambar';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tag';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Tag resep';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Disarankan';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Cari resep...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filter berdasarkan tag';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Semua';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Resep dihapus';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Simpan perubahan';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Edit Resep';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Resep Baru';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Wajib diisi';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Pilih sumber gambar';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galeri';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Masukkan URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Gambar resep';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Hapus gambar';
+
+  @override
+  String get mealPlannerTitle => 'Perencana Makan';
+
+  @override
+  String get mealPlannerViewMonthly => 'Tampilan bulanan';
+
+  @override
+  String get mealPlannerViewWeekly => 'Tampilan mingguan';
+
+  @override
+  String get mealPlannerNoMeals => 'Belum ada rencana makan';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Ketuk hari untuk menambah makanan';
+
+  @override
+  String get mealPlannerLoading => 'Memuat rencana makan...';
+
+  @override
+  String get mealPlannerError => 'Gagal memuat rencana makan';
+
+  @override
+  String get mealPlannerAddMeal => 'Tambah Makanan';
+
+  @override
+  String get mealPlannerEditMeal => 'Edit Makanan';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Hapus makanan';
+
+  @override
+  String get mealPlannerMealDeleted => 'Makanan dihapus';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porsi',
+      one: '$count porsi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porsi';
+
+  @override
+  String get mealPlannerNoteLabel => 'Catatan (opsional)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Pilih resep';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Cari resep...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Resep tidak ditemukan';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Buat resep di tab Resep terlebih dahulu';
+
+  @override
+  String get mealPlannerSave => 'Tambah ke rencana';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count dari $total makanan terencana';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Buat daftar belanja';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Tambahkan semua bahan dari rencana makan minggu ini ke daftar belanja Anda?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count bahan telah ditambahkan ke daftar Anda!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Tidak ada bahan untuk ditambahkan. Buat rencana makan dengan resep terlebih dahulu.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Buat daftar belanja terlebih dahulu.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Sarapan';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Makan Siang';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Makan Malam';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Cemilan';
+
+  @override
+  String get mealPlannerDateLabel => 'Tanggal';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Belum ada rencana untuk minggu ini';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Ketuk hari apa saja untuk mulai merencanakan makanan Anda!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes mnt';
+  }
 }

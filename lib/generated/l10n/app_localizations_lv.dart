@@ -289,6 +289,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get languageSystem => 'Sistēmas noklusējums';
 
   @override
+  String get chooseLanguage => 'Izvēlēties valodu';
+
+  @override
+  String get searchLanguage => 'Meklēt valodu...';
+
+  @override
   String get appearance => 'Izskats';
 
   @override
@@ -302,6 +308,13 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get themeColor => 'Tēmas krāsa';
+
+  @override
+  String get dynamicColors => 'Dinamiskās krāsas';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Izmantot krāsas, pamatojoties uz tapetēm';
 
   @override
   String get finance => 'Finanses';
@@ -1052,128 +1065,248 @@ class AppLocalizationsLv extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Atvērt izvēlni';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Skatīt recepti';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recepte izveidota!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Rediģēt';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Dzēst';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Dzēst šo recepti?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Vai tiešām vēlaties dzēst \"$recipeName\"? Šo darbību nevar atsaukt.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Sastāvdaļas';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Norādījumi';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Gatavošanas laiks';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Recepte saglabāta!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nav saglabātu recepšu';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Izveidojiet savu pirmo pielāgoto recepti, pieskaroties zemāk esošajai pogai.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Manas receptes';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Jauna recepte';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Ielādē jūsu receptes...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Kļūda, ielādējot receptes';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Pievienot sastāvdaļu';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Saglabāt';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Receptes nosaukums';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Īss apraksts';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Gatavošanas laiks (minūtes)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Ierakstiet vienu soli rindā...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Pievienot fotoattēlu';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Vai ielīmēt attēla URL';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Birkas';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Receptes birkas';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Ieteiktie';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Meklēt receptes...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrēt pēc birkas';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Visas';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Recepte dzēsta';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Saglabāt izmaiņas';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Rediģēt recepti';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Jauna recepte';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Obligāts';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Izvēlēties attēla avotu';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galerija';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Ievadīt URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Receptes attēls';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Noņemt attēlu';
+
+  @override
+  String get mealPlannerTitle => 'Maltīšu plānotājs';
+
+  @override
+  String get mealPlannerViewMonthly => 'Mēneša skats';
+
+  @override
+  String get mealPlannerViewWeekly => 'Nedēļas skats';
+
+  @override
+  String get mealPlannerNoMeals => 'Nav plānotu maltīšu';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Pieskarieties dienai, lai pievienotu maltīti';
+
+  @override
+  String get mealPlannerLoading => 'Ielādē maltīšu plānu...';
+
+  @override
+  String get mealPlannerError => 'Kļūda, ielādējot maltīšu plānu';
+
+  @override
+  String get mealPlannerAddMeal => 'Pievienot maltīti';
+
+  @override
+  String get mealPlannerEditMeal => 'Rediģēt maltīti';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Noņemt maltīti';
+
+  @override
+  String get mealPlannerMealDeleted => 'Maltīte noņemta';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porcijas',
+      one: '$count porcija',
+      zero: '$count porcijas',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porcijas';
+
+  @override
+  String get mealPlannerNoteLabel => 'Piezīme (pēc izvēles)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Izvēlieties recepti';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Meklēt receptes...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Receptes nav atrastas';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Vispirms izveidojiet receptes cilnē Receptes';
+
+  @override
+  String get mealPlannerSave => 'Pievienot plānam';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Saplanotas $count no $total maltītēm';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Ģenerēt iepirkumu sarakstu';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Pievienot visas sastāvdaļas no plānotajām šīs nedēļas maltītēm iepirkumu sarakstam?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count sastāvdaļa(-as) pievienota jūsu sarakstam!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Nav sastāvdaļu, ko pievienot. Vispirms plānojiet maltītes ar receptēm.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Vispirms izveidojiet iepirkumu sarakstu.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Brokastis';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Pusdienas';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Vakariņas';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Uzkodas';
+
+  @override
+  String get mealPlannerDateLabel => 'Datums';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Šai nedēļai nekas nav plānots';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Pieskarieties jebkurai dienai, lai sāktu plānot maltītes!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

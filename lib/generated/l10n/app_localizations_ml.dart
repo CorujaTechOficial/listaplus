@@ -291,6 +291,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get languageSystem => 'സിസ്റ്റം ഡിഫോൾട്ട്';
 
   @override
+  String get chooseLanguage => 'ഭാഷ തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get searchLanguage => 'ഭാഷ തിരയുക...';
+
+  @override
   String get appearance => 'രൂപഭാവം';
 
   @override
@@ -304,6 +310,13 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get themeColor => 'തീം നിറം';
+
+  @override
+  String get dynamicColors => 'ഡൈനാമിക് നിറങ്ങൾ';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'നിങ്ങളുടെ വാൾപേപ്പറിനെ അടിസ്ഥാനമാക്കിയുള്ള നിറങ്ങൾ ഉപയോഗിക്കുക';
 
   @override
   String get finance => 'ഫിനാൻസ്';
@@ -1058,130 +1071,251 @@ class AppLocalizationsMl extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'മെനു തുറക്കുക';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'റെസിപ്പി കാണുക';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'റെസിപ്പി തയ്യാറാക്കി!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'എഡിറ്റ് ചെയ്യുക';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'ഡിലീറ്റ് ചെയ്യുക';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'ഈ റെസിപ്പി ഡിലീറ്റ് ചെയ്യണോ?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\" ഡിലീറ്റ് ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ? ഈ പ്രവർത്തനം റദ്ദാക്കാൻ കഴിയില്ല.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'ചേരുവകൾ';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'നിർദ്ദേശങ്ങൾ';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'തയ്യാറാക്കുന്ന സമയം';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'റെസിപ്പി സേവ് ചെയ്തു!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'റെസിപ്പികളൊന്നും സേവ് ചെയ്തിട്ടില്ല';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'താഴെയുള്ള ബട്ടൺ അമർത്തി നിങ്ങളുടെ ആദ്യത്തെ റെസിപ്പി നിർമ്മിക്കുക.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'എന്റെ റെസിപ്പികൾ';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'പുതിയ റെസിപ്പി';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'നിങ്ങളുടെ റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നു...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നതിൽ പിശക്';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'ചേരുവ ചേർക്കുക';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'സേവ് ചെയ്യുക';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'റെസിപ്പിയുടെ പേര്';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'ലഘുവിവരണം';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'തയ്യാറാക്കുന്ന സമയം (മിനിറ്റ്)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint =>
+      'ഓരോ വരിയിലും ഒരു ഘട്ടം വീതം ടൈപ്പ് ചെയ്യുക...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'ഫോട്ടോ ചേർക്കുക';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder =>
+      'അല്ലെങ്കിൽ ഒരു ചിത്രത്തിന്റെ URL ഒട്ടിക്കുക';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'ടാഗുകൾ';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'റെസിപ്പി ടാഗുകൾ';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'നിർദ്ദേശിച്ചവ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'റെസിപ്പികൾ തിരയുക...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'ടാഗ് അനുസരിച്ച് ഫിൽട്ടർ ചെയ്യുക';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'എല്ലാം';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'റെസിപ്പി ഡിലീറ്റ് ചെയ്തു';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'മാറ്റങ്ങൾ സേവ് ചെയ്യുക';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'റെസിപ്പി എഡിറ്റ് ചെയ്യുക';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'പുതിയ റെസിപ്പി';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'ആവശ്യമാണ്';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'ചിത്രത്തിന്റെ ഉറവിടം തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'ഗാലറി';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL നൽകുക';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'റെസിപ്പിയുടെ ചിത്രം';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'ചിത്രം ഒഴിവാക്കുക';
+
+  @override
+  String get mealPlannerTitle => 'മീൽ പ്ലാനർ';
+
+  @override
+  String get mealPlannerViewMonthly => 'മാസത്തെ കാഴ്ച';
+
+  @override
+  String get mealPlannerViewWeekly => 'ആഴ്ചയിലെ കാഴ്ച';
+
+  @override
+  String get mealPlannerNoMeals => 'ഭക്ഷണങ്ങളൊന്നും പ്ലാൻ ചെയ്തിട്ടില്ല';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'ഒരു ദിവസം തിരഞ്ഞെടുത്ത് ഭക്ഷണം ചേർക്കുക';
+
+  @override
+  String get mealPlannerLoading => 'ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നു...';
+
+  @override
+  String get mealPlannerError => 'ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നതിൽ പിശക്';
+
+  @override
+  String get mealPlannerAddMeal => 'ഭക്ഷണം ചേർക്കുക';
+
+  @override
+  String get mealPlannerEditMeal => 'ഭക്ഷണം എഡിറ്റ് ചെയ്യുക';
+
+  @override
+  String get mealPlannerDeleteMeal => 'ഭക്ഷണം ഒഴിവാക്കുക';
+
+  @override
+  String get mealPlannerMealDeleted => 'ഭക്ഷണം ഒഴിവാക്കി';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count വിളമ്പലുകൾ',
+      one: '$count വിളമ്പൽ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'വിളമ്പലുകൾ';
+
+  @override
+  String get mealPlannerNoteLabel => 'കുറിപ്പ് (നിർബന്ധമില്ലാത്തത്)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ഒരു റെസിപ്പി തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get mealPlannerSearchRecipes => 'റെസിപ്പികൾ തിരയുക...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'റെസിപ്പികളൊന്നും കണ്ടെത്തിയില്ല';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ആദ്യം റെസിപ്പീസ് ടാബിൽ റെസിപ്പികൾ നിർമ്മിക്കുക';
+
+  @override
+  String get mealPlannerSave => 'പ്ലാനിലേക്ക് ചേർക്കുക';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total-ൽ $count ഭക്ഷണം പ്ലാൻ ചെയ്തു';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ഷോപ്പിംഗ് ലിസ്റ്റ് തയ്യാറാക്കുക';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'ഈ ആഴ്ചയിലെ പ്ലാൻ ചെയ്ത ഭക്ഷണങ്ങളിലെ എല്ലാ ചേരുവകളും നിങ്ങളുടെ ഷോപ്പിംഗ് ലിസ്റ്റിലേക്ക് ചേർക്കണോ?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ചേരുവകൾ നിങ്ങളുടെ ലിസ്റ്റിൽ ചേർത്തു!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ചേർക്കാൻ ചേരുവകളൊന്നുമില്ല. ആദ്യം റെസിപ്പികൾ ഉൾപ്പെടുത്തി ഭക്ഷണം പ്ലാൻ ചെയ്യുക.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'ആദ്യം ഒരു ഷോപ്പിംഗ് ലിസ്റ്റ് നിർമ്മിക്കുക.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'പ്രഭാതഭക്ഷണം';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ഉച്ചഭക്ഷണം';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'അത്താഴം';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'ലഘുഭക്ഷണം';
+
+  @override
+  String get mealPlannerDateLabel => 'തീയതി';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ഈ ആഴ്ചയിൽ പ്ലാൻ ചെയ്തവ ഒന്നുമില്ല';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'നിങ്ങളുടെ ഭക്ഷണം പ്ലാൻ ചെയ്യാൻ ഏതെങ്കിലും ദിവസം തിരഞ്ഞെടുക്കുക!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes മിനിറ്റ്';
+  }
 }
 
 /// The translations for Malayalam, as used in India (`ml_IN`).
@@ -1471,6 +1605,12 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
   String get languageSystem => 'സിസ്റ്റം ഡിഫോൾട്ട്';
 
   @override
+  String get chooseLanguage => 'ഭാഷ തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get searchLanguage => 'ഭാഷ തിരയുക...';
+
+  @override
   String get appearance => 'രൂപഭാവം';
 
   @override
@@ -1484,6 +1624,13 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get themeColor => 'തീം നിറം';
+
+  @override
+  String get dynamicColors => 'ഡൈനാമിക് നിറങ്ങൾ';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'നിങ്ങളുടെ വാൾപേപ്പറിനെ അടിസ്ഥാനമാക്കിയുള്ള നിറങ്ങൾ ഉപയോഗിക്കുക';
 
   @override
   String get finance => 'ഫിനാൻസ്';
@@ -2236,4 +2383,251 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'മെനു തുറക്കുക';
+
+  @override
+  String get viewRecipe => 'റെസിപ്പി കാണുക';
+
+  @override
+  String get recipeCreated => 'റെസിപ്പി തയ്യാറാക്കി!';
+
+  @override
+  String get editRecipe => 'എഡിറ്റ് ചെയ്യുക';
+
+  @override
+  String get deleteRecipe => 'ഡിലീറ്റ് ചെയ്യുക';
+
+  @override
+  String get deleteRecipeConfirm => 'ഈ റെസിപ്പി ഡിലീറ്റ് ചെയ്യണോ?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return '\"$recipeName\" ഡിലീറ്റ് ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ? ഈ പ്രവർത്തനം റദ്ദാക്കാൻ കഴിയില്ല.';
+  }
+
+  @override
+  String get ingredients => 'ചേരുവകൾ';
+
+  @override
+  String get instructions => 'നിർദ്ദേശങ്ങൾ';
+
+  @override
+  String get prepTime => 'തയ്യാറാക്കുന്ന സമയം';
+
+  @override
+  String get recipeSaved => 'റെസിപ്പി സേവ് ചെയ്തു!';
+
+  @override
+  String get noRecipesSaved => 'റെസിപ്പികളൊന്നും സേവ് ചെയ്തിട്ടില്ല';
+
+  @override
+  String get noRecipesSavedHint =>
+      'താഴെയുള്ള ബട്ടൺ അമർത്തി നിങ്ങളുടെ ആദ്യത്തെ റെസിപ്പി നിർമ്മിക്കുക.';
+
+  @override
+  String get myRecipes => 'എന്റെ റെസിപ്പികൾ';
+
+  @override
+  String get newRecipe => 'പുതിയ റെസിപ്പി';
+
+  @override
+  String get loadingRecipes => 'നിങ്ങളുടെ റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നു...';
+
+  @override
+  String get errorLoadingRecipes => 'റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നതിൽ പിശക്';
+
+  @override
+  String get addIngredient => 'ചേരുവ ചേർക്കുക';
+
+  @override
+  String get saveRecipe => 'സേവ് ചെയ്യുക';
+
+  @override
+  String get recipeName => 'റെസിപ്പിയുടെ പേര്';
+
+  @override
+  String get shortDescription => 'ലഘുവിവരണം';
+
+  @override
+  String get prepTimeMinutes => 'തയ്യാറാക്കുന്ന സമയം (മിനിറ്റ്)';
+
+  @override
+  String get instructionsHint =>
+      'ഓരോ വരിയിലും ഒരു ഘട്ടം വീതം ടൈപ്പ് ചെയ്യുക...';
+
+  @override
+  String get addPhoto => 'ഫോട്ടോ ചേർക്കുക';
+
+  @override
+  String get imageUrlPlaceholder =>
+      'അല്ലെങ്കിൽ ഒരു ചിത്രത്തിന്റെ URL ഒട്ടിക്കുക';
+
+  @override
+  String get tags => 'ടാഗുകൾ';
+
+  @override
+  String get recipeTags => 'റെസിപ്പി ടാഗുകൾ';
+
+  @override
+  String get suggestedTags => 'നിർദ്ദേശിച്ചവ';
+
+  @override
+  String get searchRecipes => 'റെസിപ്പികൾ തിരയുക...';
+
+  @override
+  String get filterByTag => 'ടാഗ് അനുസരിച്ച് ഫിൽട്ടർ ചെയ്യുക';
+
+  @override
+  String get allTags => 'എല്ലാം';
+
+  @override
+  String get recipeDeleted => 'റെസിപ്പി ഡിലീറ്റ് ചെയ്തു';
+
+  @override
+  String get saveChanges => 'മാറ്റങ്ങൾ സേവ് ചെയ്യുക';
+
+  @override
+  String get editRecipeTitle => 'റെസിപ്പി എഡിറ്റ് ചെയ്യുക';
+
+  @override
+  String get newRecipeTitle => 'പുതിയ റെസിപ്പി';
+
+  @override
+  String get requiredField => 'ആവശ്യമാണ്';
+
+  @override
+  String get chooseImageSource => 'ചിത്രത്തിന്റെ ഉറവിടം തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get gallery => 'ഗാലറി';
+
+  @override
+  String get enterUrl => 'URL നൽകുക';
+
+  @override
+  String get recipeImage => 'റെസിപ്പിയുടെ ചിത്രം';
+
+  @override
+  String get removeImage => 'ചിത്രം ഒഴിവാക്കുക';
+
+  @override
+  String get mealPlannerTitle => 'മീൽ പ്ലാനർ';
+
+  @override
+  String get mealPlannerViewMonthly => 'മാസത്തെ കാഴ്ച';
+
+  @override
+  String get mealPlannerViewWeekly => 'ആഴ്ചയിലെ കാഴ്ച';
+
+  @override
+  String get mealPlannerNoMeals => 'ഭക്ഷണങ്ങളൊന്നും പ്ലാൻ ചെയ്തിട്ടില്ല';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'ഒരു ദിവസം തിരഞ്ഞെടുത്ത് ഭക്ഷണം ചേർക്കുക';
+
+  @override
+  String get mealPlannerLoading => 'ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നു...';
+
+  @override
+  String get mealPlannerError => 'ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നതിൽ പിശക്';
+
+  @override
+  String get mealPlannerAddMeal => 'ഭക്ഷണം ചേർക്കുക';
+
+  @override
+  String get mealPlannerEditMeal => 'ഭക്ഷണം എഡിറ്റ് ചെയ്യുക';
+
+  @override
+  String get mealPlannerDeleteMeal => 'ഭക്ഷണം ഒഴിവാക്കുക';
+
+  @override
+  String get mealPlannerMealDeleted => 'ഭക്ഷണം ഒഴിവാക്കി';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count വിളമ്പലുകൾ',
+      one: '$count വിളമ്പൽ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'വിളമ്പലുകൾ';
+
+  @override
+  String get mealPlannerNoteLabel => 'കുറിപ്പ് (നിർബന്ധമില്ലാത്തത്)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ഒരു റെസിപ്പി തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get mealPlannerSearchRecipes => 'റെസിപ്പികൾ തിരയുക...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'റെസിപ്പികളൊന്നും കണ്ടെത്തിയില്ല';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ആദ്യം റെസിപ്പീസ് ടാബിൽ റെസിപ്പികൾ നിർമ്മിക്കുക';
+
+  @override
+  String get mealPlannerSave => 'പ്ലാനിലേക്ക് ചേർക്കുക';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total-ൽ $count ഭക്ഷണം പ്ലാൻ ചെയ്തു';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ഷോപ്പിംഗ് ലിസ്റ്റ് തയ്യാറാക്കുക';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'ഈ ആഴ്ചയിലെ പ്ലാൻ ചെയ്ത ഭക്ഷണങ്ങളിലെ എല്ലാ ചേരുവകളും നിങ്ങളുടെ ഷോപ്പിംഗ് ലിസ്റ്റിലേക്ക് ചേർക്കണോ?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ചേരുവകൾ നിങ്ങളുടെ ലിസ്റ്റിൽ ചേർത്തു!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ചേർക്കാൻ ചേരുവകളൊന്നുമില്ല. ആദ്യം റെസിപ്പികൾ ഉൾപ്പെടുത്തി ഭക്ഷണം പ്ലാൻ ചെയ്യുക.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'ആദ്യം ഒരു ഷോപ്പിംഗ് ലിസ്റ്റ് നിർമ്മിക്കുക.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'പ്രഭാതഭക്ഷണം';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ഉച്ചഭക്ഷണം';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'അത്താഴം';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'ലഘുഭക്ഷണം';
+
+  @override
+  String get mealPlannerDateLabel => 'തീയതി';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ഈ ആഴ്ചയിൽ പ്ലാൻ ചെയ്തവ ഒന്നുമില്ല';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'നിങ്ങളുടെ ഭക്ഷണം പ്ലാൻ ചെയ്യാൻ ഏതെങ്കിലും ദിവസം തിരഞ്ഞെടുക്കുക!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes മിനിറ്റ്';
+  }
 }

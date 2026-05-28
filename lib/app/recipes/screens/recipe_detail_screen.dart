@@ -52,8 +52,9 @@ class RecipeDetailScreen extends ConsumerWidget {
           },
         ),
       ),
-      body: recipesAsync.when(
-        data: (recipes) {
+      body: SafeArea(
+        child: recipesAsync.when(
+          data: (recipes) {
           final recipe = recipes.where((r) => r.id == recipeId).firstOrNull;
           if (recipe == null) {
             return Center(
@@ -82,6 +83,7 @@ class RecipeDetailScreen extends ConsumerWidget {
             ),
           ),
         ),
+      ),
       ),
     );
   }

@@ -281,6 +281,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get languageSystem => 'システムデフォルト';
 
   @override
+  String get chooseLanguage => '言語を選択';
+
+  @override
+  String get searchLanguage => '言語を検索...';
+
+  @override
   String get appearance => '外観';
 
   @override
@@ -294,6 +300,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get themeColor => 'テーマカラー';
+
+  @override
+  String get dynamicColors => 'ダイナミックカラー';
+
+  @override
+  String get dynamicColorsSubtitle => '壁紙に基づいた色を使用する';
 
   @override
   String get finance => '財務';
@@ -1028,130 +1040,243 @@ class AppLocalizationsJa extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'メニューを開く';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'レシピを見る';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'レシピを作成しました！';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => '編集';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => '削除';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'このレシピを削除しますか？';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '「$recipeName」を削除してもよろしいですか？この操作は取り消せません。';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => '材料';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => '作り方';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => '調理時間';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'レシピを保存しました！';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => '保存されたレシピはありません';
 
   @override
-  String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+  String get noRecipesSavedHint => '下のボタンをタップして、最初のカスタムレシピを作成しましょう。';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'マイレシピ';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => '新しいレシピ';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'レシピを読み込み中...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'レシピの読み込みエラー';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => '材料を追加';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => '保存';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'レシピ名';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => '短い説明';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => '調理時間（分）';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => '1行に1ステップずつ入力...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => '写真を追加';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'または画像のURLを貼り付け';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'タグ';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'レシピのタグ';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'おすすめ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'レシピを検索...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'タグで絞り込む';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'すべて';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'レシピを削除しました';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => '変更を保存';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'レシピを編集';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => '新しいレシピ';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => '必須';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => '画像ソースを選択';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'ギャラリー';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URLを入力';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'レシピ画像';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => '画像を削除';
+
+  @override
+  String get mealPlannerTitle => '献立プランナー';
+
+  @override
+  String get mealPlannerViewMonthly => '月間表示';
+
+  @override
+  String get mealPlannerViewWeekly => '週間表示';
+
+  @override
+  String get mealPlannerNoMeals => '食事の予定なし';
+
+  @override
+  String get mealPlannerNoMealsHint => '日付をタップして食事を追加';
+
+  @override
+  String get mealPlannerLoading => '食事プランを読み込み中...';
+
+  @override
+  String get mealPlannerError => '食事プランの読み込みエラー';
+
+  @override
+  String get mealPlannerAddMeal => '食事を追加';
+
+  @override
+  String get mealPlannerEditMeal => '食事を編集';
+
+  @override
+  String get mealPlannerDeleteMeal => '食事を削除';
+
+  @override
+  String get mealPlannerMealDeleted => '食事を削除しました';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人分',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => '分量（人分）';
+
+  @override
+  String get mealPlannerNoteLabel => 'メモ（任意）';
+
+  @override
+  String get mealPlannerSelectRecipe => 'レシピを選択';
+
+  @override
+  String get mealPlannerSearchRecipes => 'レシピを検索...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'レシピが見つかりません';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'まず「レシピ」タブでレシピを作成してください';
+
+  @override
+  String get mealPlannerSave => 'プランに追加';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total食中$count食を計画済み';
+  }
+
+  @override
+  String get mealPlannerGenerateList => '買い物リストを生成';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      '今週の予定された食事のすべての材料を買い物リストに追加しますか？';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count個の材料をリストに追加しました！';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      '追加する材料がありません。まずレシピを含む食事を計画してください。';
+
+  @override
+  String get mealPlannerGenerateListNoList => '買い物リストを先に作成してください。';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => '朝食';
+
+  @override
+  String get mealPlannerMealTypeLunch => '昼食';
+
+  @override
+  String get mealPlannerMealTypeDinner => '夕食';
+
+  @override
+  String get mealPlannerMealTypeSnack => '間食';
+
+  @override
+  String get mealPlannerDateLabel => '日付';
+
+  @override
+  String get mealPlannerWeekEmpty => '今週の予定はありません';
+
+  @override
+  String get mealPlannerWeekEmptyHint => '日付をタップして食事の計画を始めましょう！';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes分';
+  }
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -1431,6 +1556,12 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get languageSystem => 'システムデフォルト';
 
   @override
+  String get chooseLanguage => '言語を選択';
+
+  @override
+  String get searchLanguage => '言語を検索...';
+
+  @override
   String get appearance => '外観';
 
   @override
@@ -1444,6 +1575,12 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get themeColor => 'テーマカラー';
+
+  @override
+  String get dynamicColors => 'ダイナミックカラー';
+
+  @override
+  String get dynamicColorsSubtitle => '壁紙に基づいた色を使用する';
 
   @override
   String get finance => '財務';
@@ -2176,4 +2313,243 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'メニューを開く';
+
+  @override
+  String get viewRecipe => 'レシピを見る';
+
+  @override
+  String get recipeCreated => 'レシピを作成しました！';
+
+  @override
+  String get editRecipe => '編集';
+
+  @override
+  String get deleteRecipe => '削除';
+
+  @override
+  String get deleteRecipeConfirm => 'このレシピを削除しますか？';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return '「$recipeName」を削除してもよろしいですか？この操作は取り消せません。';
+  }
+
+  @override
+  String get ingredients => '材料';
+
+  @override
+  String get instructions => '作り方';
+
+  @override
+  String get prepTime => '調理時間';
+
+  @override
+  String get recipeSaved => 'レシピを保存しました！';
+
+  @override
+  String get noRecipesSaved => '保存されたレシピはありません';
+
+  @override
+  String get noRecipesSavedHint => '下のボタンをタップして、最初のカスタムレシピを作成しましょう。';
+
+  @override
+  String get myRecipes => 'マイレシピ';
+
+  @override
+  String get newRecipe => '新しいレシピ';
+
+  @override
+  String get loadingRecipes => 'レシピを読み込み中...';
+
+  @override
+  String get errorLoadingRecipes => 'レシピの読み込みエラー';
+
+  @override
+  String get addIngredient => '材料を追加';
+
+  @override
+  String get saveRecipe => '保存';
+
+  @override
+  String get recipeName => 'レシピ名';
+
+  @override
+  String get shortDescription => '短い説明';
+
+  @override
+  String get prepTimeMinutes => '調理時間（分）';
+
+  @override
+  String get instructionsHint => '1行に1ステップずつ入力...';
+
+  @override
+  String get addPhoto => '写真を追加';
+
+  @override
+  String get imageUrlPlaceholder => 'または画像のURLを貼り付け';
+
+  @override
+  String get tags => 'タグ';
+
+  @override
+  String get recipeTags => 'レシピのタグ';
+
+  @override
+  String get suggestedTags => 'おすすめ';
+
+  @override
+  String get searchRecipes => 'レシピを検索...';
+
+  @override
+  String get filterByTag => 'タグで絞り込む';
+
+  @override
+  String get allTags => 'すべて';
+
+  @override
+  String get recipeDeleted => 'レシピを削除しました';
+
+  @override
+  String get saveChanges => '変更を保存';
+
+  @override
+  String get editRecipeTitle => 'レシピを編集';
+
+  @override
+  String get newRecipeTitle => '新しいレシピ';
+
+  @override
+  String get requiredField => '必須';
+
+  @override
+  String get chooseImageSource => '画像ソースを選択';
+
+  @override
+  String get gallery => 'ギャラリー';
+
+  @override
+  String get enterUrl => 'URLを入力';
+
+  @override
+  String get recipeImage => 'レシピ画像';
+
+  @override
+  String get removeImage => '画像を削除';
+
+  @override
+  String get mealPlannerTitle => '献立プランナー';
+
+  @override
+  String get mealPlannerViewMonthly => '月間表示';
+
+  @override
+  String get mealPlannerViewWeekly => '週間表示';
+
+  @override
+  String get mealPlannerNoMeals => '食事の予定なし';
+
+  @override
+  String get mealPlannerNoMealsHint => '日付をタップして食事を追加';
+
+  @override
+  String get mealPlannerLoading => '食事プランを読み込み中...';
+
+  @override
+  String get mealPlannerError => '食事プランの読み込みエラー';
+
+  @override
+  String get mealPlannerAddMeal => '食事を追加';
+
+  @override
+  String get mealPlannerEditMeal => '食事を編集';
+
+  @override
+  String get mealPlannerDeleteMeal => '食事を削除';
+
+  @override
+  String get mealPlannerMealDeleted => '食事を削除しました';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人分',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => '分量（人分）';
+
+  @override
+  String get mealPlannerNoteLabel => 'メモ（任意）';
+
+  @override
+  String get mealPlannerSelectRecipe => 'レシピを選択';
+
+  @override
+  String get mealPlannerSearchRecipes => 'レシピを検索...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'レシピが見つかりません';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'まず「レシピ」タブでレシピを作成してください';
+
+  @override
+  String get mealPlannerSave => 'プランに追加';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total食中$count食を計画済み';
+  }
+
+  @override
+  String get mealPlannerGenerateList => '買い物リストを生成';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      '今週の予定された食事のすべての材料を買い物リストに追加しますか？';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count個の材料をリストに追加しました！';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      '追加する材料がありません。まずレシピを含む食事を計画してください。';
+
+  @override
+  String get mealPlannerGenerateListNoList => '買い物リストを先に作成してください。';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => '朝食';
+
+  @override
+  String get mealPlannerMealTypeLunch => '昼食';
+
+  @override
+  String get mealPlannerMealTypeDinner => '夕食';
+
+  @override
+  String get mealPlannerMealTypeSnack => '間食';
+
+  @override
+  String get mealPlannerDateLabel => '日付';
+
+  @override
+  String get mealPlannerWeekEmpty => '今週の予定はありません';
+
+  @override
+  String get mealPlannerWeekEmptyHint => '日付をタップして食事の計画を始めましょう！';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes分';
+  }
 }

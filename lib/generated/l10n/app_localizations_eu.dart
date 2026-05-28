@@ -290,6 +290,12 @@ class AppLocalizationsEu extends AppLocalizations {
   String get languageSystem => 'Sistemaren lehenetsia';
 
   @override
+  String get chooseLanguage => 'Hautatu hizkuntza';
+
+  @override
+  String get searchLanguage => 'Bilatu hizkuntza...';
+
+  @override
   String get appearance => 'Itxura';
 
   @override
@@ -303,6 +309,13 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get themeColor => 'Gaiaren kolorea';
+
+  @override
+  String get dynamicColors => 'Kolore dinamikoak';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Erabili zure hondo-irudian oinarritutako koloreak';
 
   @override
   String get finance => 'Finantzak';
@@ -1054,128 +1067,247 @@ class AppLocalizationsEu extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Ireki menua';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Ikusi errezeta';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Errezeta sortuta!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Editatu';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Ezabatu';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Errezeta hau ezabatu?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Ziur zaude \"$recipeName\" ezabatu nahi duzula? Ekintza hau ezin da desegin.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Osagaiak';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Argibideak';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Prestatze denbora';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Errezeta gordeta!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Ez dago errezetarik gordeta';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Sortu zure lehen errezeta pertsonalizatua beheko botoia sakatuz.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Nire errezetak';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Errezeta berria';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Zure errezetak kargatzen...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Errorea errezetak kargatzean';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Gehitu osagaia';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Gorde';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Errezetaren izena';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Deskribapen laburra';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Prestatze denbora (minutuak)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Idatzi urrats bat lerroko...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Gehitu argazkia';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Edo itsatsi irudi baten URLa';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Etiketak';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Errezetaren etiketak';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Iradokitakoak';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Bilatu errezetak...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtratu etiketaren arabera';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Denak';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Errezeta ezabatuta';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Gorde aldaketak';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Editatu errezeta';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Errezeta berria';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Beharrezkoa';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Hautatu irudiaren jatorria';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galeria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Sartu URLa';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Errezetaren irudia';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Kendu irudia';
+
+  @override
+  String get mealPlannerTitle => 'Otorduen planifikatzailea';
+
+  @override
+  String get mealPlannerViewMonthly => 'Hileko ikuspegia';
+
+  @override
+  String get mealPlannerViewWeekly => 'Asteko ikuspegia';
+
+  @override
+  String get mealPlannerNoMeals => 'Ez dago otordurik planifikatuta';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Sakatu egun bat otordu bat gehitzeko';
+
+  @override
+  String get mealPlannerLoading => 'Otorduen plana kargatzen...';
+
+  @override
+  String get mealPlannerError => 'Errorea otorduen plana kargatzean';
+
+  @override
+  String get mealPlannerAddMeal => 'Gehitu otordua';
+
+  @override
+  String get mealPlannerEditMeal => 'Editatu otordua';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Kendu otordua';
+
+  @override
+  String get mealPlannerMealDeleted => 'Otordua kenduta';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ano',
+      one: '$count ano',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Anoak';
+
+  @override
+  String get mealPlannerNoteLabel => 'Oharra (aukerakoa)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Hautatu errezeta bat';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Bilatu errezetak...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Ez da errezetarik aurkitu';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Sortu errezetak Errezetak fitxan lehenik';
+
+  @override
+  String get mealPlannerSave => 'Gehitu planera';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total otordu planifikatuta';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Sortu erosketa zerrenda';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Gehitu aste honetako otorduetako osagai guztiak erosketa zerrendara?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '¡$count osagai gehitu dira zerrendara!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Ez dago osagairik gehitzeko. Planifikatu otorduak errezetekin lehenik.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Sortu erosketa zerrenda bat lehenik.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Gosaria';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Bazkaria';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Afaria';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Askaria';
+
+  @override
+  String get mealPlannerDateLabel => 'Data';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'Ez dago ezer planifikatuta aste honetarako';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Sakatu edozein egun otorduak planifikatzen hasteko!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

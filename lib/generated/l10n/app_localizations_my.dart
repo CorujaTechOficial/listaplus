@@ -284,6 +284,12 @@ class AppLocalizationsMy extends AppLocalizations {
   String get languageSystem => 'စနစ်မူလ';
 
   @override
+  String get chooseLanguage => 'ဘာသာစကားရွေးချယ်ပါ';
+
+  @override
+  String get searchLanguage => 'ဘာသာစကားရှာဖွေရန်...';
+
+  @override
   String get appearance => 'အသွင်အပြင်';
 
   @override
@@ -297,6 +303,13 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get themeColor => 'အပြင်အဆင်အရောင်';
+
+  @override
+  String get dynamicColors => 'Dynamic အရောင်များ';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'သင်၏ wallpaper ပေါ်မူတည်၍ အရောင်များကို အသုံးပြုပါ';
 
   @override
   String get finance => 'ဘဏ္ဍာရေး';
@@ -1043,128 +1056,240 @@ class AppLocalizationsMy extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'မီနူးဖွင့်ရန်';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'ဟင်းချက်နည်းကြည့်ရှုရန်';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'ဟင်းချက်နည်း ဖန်တီးပြီးပါပြီ!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'ပြင်ဆင်ရန်';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'ဖျက်ရန်';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'ဤဟင်းချက်နည်းကို ဖျက်မလား?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\" ကို ဖျက်ရန် သေချာပါသလား? ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍မရပါ။';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'ပါဝင်ပစ္စည်းများ';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'ညွှန်ကြားချက်များ';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'ပြင်ဆင်ချိန်';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'ဟင်းချက်နည်း သိမ်းဆည်းပြီးပါပြီ!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'သိမ်းဆည်းထားသော ဟင်းချက်နည်းမရှိပါ';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'အောက်ပါခလုတ်ကို နှိပ်ပြီး သင်၏ ပထမဆုံး ကိုယ်ပိုင်ဟင်းချက်နည်းကို ဖန်တီးပါ။';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'ကျွန်ုပ်၏ ဟင်းချက်နည်းများ';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'ဟင်းချက်နည်းအသစ်';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'ဟင်းချက်နည်းများ ပြသနေသည်...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'ဟင်းချက်နည်းများ ပြသရာတွင် အမှားရှိနေသည်';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'ပါဝင်ပစ္စည်းထည့်ရန်';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'သိမ်းဆည်းရန်';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'ဟင်းချက်နည်းအမည်';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'အကျဉ်းချုပ် ဖော်ပြချက်';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'ပြင်ဆင်ချိန် (မိနစ်)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'တစ်ကြောင်းလျှင် အဆင့်တစ်ခုစီ ရိုက်ထည့်ပါ...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'ဓာတ်ပုံထည့်ရန်';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'သို့မဟုတ် ပုံ URL ကို ကူးထည့်ပါ';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tag များ';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'ဟင်းချက်နည်း Tag များ';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'အကြံပြုချက်များ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'ဟင်းချက်နည်းများ ရှာဖွေရန်...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Tag ဖြင့် စစ်ထုတ်ရန်';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'အားလုံး';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'ဟင်းချက်နည်း ဖျက်ပြီးပါပြီ';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'ပြောင်းလဲမှုများကို သိမ်းဆည်းရန်';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'ဟင်းချက်နည်းပြင်ဆင်ရန်';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'ဟင်းချက်နည်းအသစ်';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'လိုအပ်သည်';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'ဓာတ်ပုံအရင်းအမြစ်ရွေးချယ်ပါ';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'ပြခန်း';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL ထည့်ပါ';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'ဟင်းချက်နည်းပုံ';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'ပုံဖယ်ရှားရန်';
+
+  @override
+  String get mealPlannerTitle => 'အစားအစာအစီအစဉ်';
+
+  @override
+  String get mealPlannerViewMonthly => 'လစဉ်ကြည့်ရှုမှု';
+
+  @override
+  String get mealPlannerViewWeekly => 'အပတ်စဉ်ကြည့်ရှုမှု';
+
+  @override
+  String get mealPlannerNoMeals => 'စီစဉ်ထားသော အစားအစာမရှိပါ';
+
+  @override
+  String get mealPlannerNoMealsHint => 'အစားအစာထည့်ရန် ရက်စွဲတစ်ခုကို နှိပ်ပါ';
+
+  @override
+  String get mealPlannerLoading => 'အစားအစာအစီအစဉ် ပြသနေသည်...';
+
+  @override
+  String get mealPlannerError => 'အစားအစာအစီအစဉ် ပြသရာတွင် အမှားရှိနေသည်';
+
+  @override
+  String get mealPlannerAddMeal => 'အစားအစာထည့်ရန်';
+
+  @override
+  String get mealPlannerEditMeal => 'အစားအစာပြင်ဆင်ရန်';
+
+  @override
+  String get mealPlannerDeleteMeal => 'အစားအစာဖယ်ရှားရန်';
+
+  @override
+  String get mealPlannerMealDeleted => 'အစားအစာကို ဖယ်ရှားပြီးပါပြီ';
+
+  @override
+  String mealPlannerServings(int count) {
+    return '$count ယောက်စာ';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'လူဦးရေ';
+
+  @override
+  String get mealPlannerNoteLabel => 'မှတ်စု (ရွေးချယ်နိုင်သည်)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ဟင်းချက်နည်းတစ်ခု ရွေးချယ်ပါ';
+
+  @override
+  String get mealPlannerSearchRecipes => 'ဟင်းချက်နည်းများ ရှာဖွေရန်...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'ဟင်းချက်နည်း မတွေ့ပါ';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'အရင်ဆုံး Recipes tab တွင် ဟင်းချက်နည်းများ ဖန်တီးပါ';
+
+  @override
+  String get mealPlannerSave => 'အစီအစဉ်သို့ ထည့်ရန်';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'အစားအစာ $total ခုတွင် $count ခု စီစဉ်ပြီး';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ဈေးဝယ်စာရင်းထုတ်ရန်';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'ယခုတစ်ပတ်အတွက် စီစဉ်ထားသော အစားအစာများမှ ပါဝင်ပစ္စည်းများအားလုံးကို သင်၏ဈေးဝယ်စာရင်းသို့ ထည့်မလား?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'သင်၏စာရင်းထဲသို့ ပါဝင်ပစ္စည်း $count ခု ထည့်ပြီးပါပြီ!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ထည့်ရန် ပါဝင်ပစ္စည်းမရှိပါ။ အရင်ဆုံး ဟင်းချက်နည်းများဖြင့် အစားအစာများကို စီစဉ်ပါ။';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'အရင်ဆုံး ဈေးဝယ်စာရင်းတစ်ခု ဖန်တီးပါ။';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'မနက်စာ';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'နေ့လယ်စာ';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ညစာ';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'သရေစာ';
+
+  @override
+  String get mealPlannerDateLabel => 'ရက်စွဲ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ယခုတစ်ပတ်အတွက် စီစဉ်ထားသည်များ မရှိပါ';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'အစားအစာများ စတင်စီစဉ်ရန် မည်သည့်ရက်ကိုမဆို နှိပ်ပါ!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes မိနစ်';
+  }
 }

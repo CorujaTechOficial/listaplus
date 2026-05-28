@@ -17,12 +17,11 @@ import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/theme/colors.dart';
 import '../../theme/page_transitions.dart';
+import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import '../../theme/tokens.dart';
-import 'package:shopping_list/app/lists/widgets/add_item_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/budget_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/lists/widgets/filter_bar.dart';
-import 'package:shopping_list/app/lists/widgets/list_switcher_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/quick_add_bar.dart';
 import 'package:shopping_list/app/lists/widgets/shopping_item_tile.dart';
 import '../../models/category_data.dart';
@@ -57,14 +56,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
   void dispose() {
     _confettiController.dispose();
     super.dispose();
-  }
-
-  void _showAddItemDialog() {
-    showDialog<void>(context: context, builder: (_) => AddItemDialog(listId: widget.listId));
-  }
-
-  void _showListSwitcher() {
-    showModalBottomSheet<void>(context: context, builder: (_) => ListSwitcherSheet(currentListId: widget.listId));
   }
 
   void _showSortOptions() {
@@ -240,42 +231,17 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
-              SliverAppBar.large(
+              SliverAppBar(
                 backgroundColor: theme.colorScheme.surface,
                 surfaceTintColor: Colors.transparent,
-                stretch: true,
-                centerTitle: true,
+                pinned: true,
+                floating: true,
                 leading: IconButton(
                   icon: const Icon(Icons.menu),
                   onPressed: () => Scaffold.of(context).openDrawer(),
                   tooltip: l10n.openMenu,
                 ),
-                title: InkWell(
-                  onTap: _showListSwitcher,
-                  borderRadius: BorderRadius.circular(RadiusTokens.full),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: theme.colorScheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(RadiusTokens.full),
-                      border: Border.all(color: theme.colorScheme.outlineVariant, width: 0.5),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            currentList?.name ?? l10n.appTitle,
-                            style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const SizedBox(width: 4),
-                        Icon(Icons.unfold_more, size: 16, color: theme.colorScheme.primary),
-                      ],
-                    ),
-                  ),
-                ),
+                title: AppBarListSelector(currentListId: widget.listId),
                 actions: [
                   if (_selectionMode)
                     IconButton(icon: const Icon(Icons.delete_outline), onPressed: _deleteSelected)
@@ -333,82 +299,90 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                     ),
                   ],
                 ],
-              ),
-              if (items.isNotEmpty)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              '${purchased.length} de ${items.length} itens',
-                              style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                            ),
-                            Text(
-                              'Total: R\$ ${totalEstimated.toStringAsFixed(2)}',
-                              style: theme.textTheme.labelLarge?.copyWith(
-                                color: theme.colorScheme.primary,
-                                fontWeight: FontWeight.bold,
+                bottom: items.isEmpty
+                    ? null
+                    : PreferredSize(
+                        preferredSize: const Size.fromHeight(110),
+                        child: Container(
+                          color: theme.colorScheme.surface,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          '${purchased.length} de ${items.length} itens',
+                                          style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                                        ),
+                                        Text(
+                                          'Total: R\$ ${totalEstimated.toStringAsFixed(2)}',
+                                          style: theme.textTheme.labelLarge?.copyWith(
+                                            color: theme.colorScheme.primary,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(height: 8),
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(RadiusTokens.full),
+                                      child: LinearProgressIndicator(
+                                        value: progress,
+                                        minHeight: 4,
+                                        backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(RadiusTokens.full),
-                          child: LinearProgressIndicator(
-                            value: progress,
-                            minHeight: 4,
-                            backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                child: Row(
+                                  children: [
+                                    FilterChip(
+                                      label: Text(l10n.filterAll),
+                                      selected: _filter == FilterType.all,
+                                      onSelected: (s) => setState(() => _filter = FilterType.all),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    FilterChip(
+                                      label: Text(l10n.filterPending),
+                                      selected: _filter == FilterType.pending,
+                                      onSelected: (s) => setState(() => _filter = FilterType.pending),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    FilterChip(
+                                      label: Text(l10n.filterPurchased),
+                                      selected: _filter == FilterType.purchased,
+                                      onSelected: (s) => setState(() => _filter = FilterType.purchased),
+                                    ),
+                                    const SizedBox(width: 12),
+                                    Container(width: 1, height: 24, color: theme.colorScheme.outlineVariant),
+                                    const SizedBox(width: 12),
+                                    ActionChip(
+                                      avatar: const Icon(Icons.sort, size: 16),
+                                      label: Text(_getSortLabel()),
+                                      onPressed: _showSortOptions,
+                                      side: BorderSide.none,
+                                      backgroundColor: theme.colorScheme.surfaceContainerLow,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
+                      ),
+              ),
               if (items.isEmpty)
                 SliverFillRemaining(hasScrollBody: true, child: EmptyState(listId: widget.listId))
               else ...[
-                SliverToBoxAdapter(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: Row(
-                      children: [
-                        FilterChip(
-                          label: Text(l10n.filterAll),
-                          selected: _filter == FilterType.all,
-                          onSelected: (s) => setState(() => _filter = FilterType.all),
-                        ),
-                        const SizedBox(width: 8),
-                        FilterChip(
-                          label: Text(l10n.filterPending),
-                          selected: _filter == FilterType.pending,
-                          onSelected: (s) => setState(() => _filter = FilterType.pending),
-                        ),
-                        const SizedBox(width: 8),
-                        FilterChip(
-                          label: Text(l10n.filterPurchased),
-                          selected: _filter == FilterType.purchased,
-                          onSelected: (s) => setState(() => _filter = FilterType.purchased),
-                        ),
-                        const SizedBox(width: 12),
-                        Container(width: 1, height: 24, color: theme.colorScheme.outlineVariant),
-                        const SizedBox(width: 12),
-                        ActionChip(
-                          avatar: const Icon(Icons.sort, size: 16),
-                          label: Text(_getSortLabel()),
-                          onPressed: _showSortOptions,
-                          side: BorderSide.none,
-                          backgroundColor: theme.colorScheme.surfaceContainerLow,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
                   SliverList(
                     delegate: SliverChildBuilderDelegate(
@@ -460,25 +434,22 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
             ],
           );
         },
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => const SafeArea(child: Center(child: CircularProgressIndicator())),
         error: (e, s) {
           debugPrint('Error: $e');
-          return Center(child: Text(e.toString()));
+          return SafeArea(child: Center(child: Text(e.toString())));
         },
       ),
       floatingActionButton: _selectionMode
           ? FloatingActionButton.extended(
+              heroTag: null,
               onPressed: () => _markSelected(true),
               icon: const Icon(Icons.check),
               label: Text(l10n.buy),
               backgroundColor: theme.colorScheme.primary,
               foregroundColor: theme.colorScheme.onPrimary,
             )
-          : FloatingActionButton.extended(
-              onPressed: _showAddItemDialog,
-              icon: const Icon(Icons.add),
-              label: Text(l10n.addItem),
-            ),
+          : null,
       bottomNavigationBar: _selectionMode
           ? BottomAppBar(
               child: Row(

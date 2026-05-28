@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Bæta við hráefni",
+  "addPhoto": "Bæta við mynd",
+  "allTags": "Allt",
+  "chooseImageSource": "Veldu mynduppsprettu",
+  "chooseLanguage": "Veldu tungumál",
+  "deleteRecipe": "Eyða",
+  "deleteRecipeConfirm": "Eyða þessari uppskrift?",
+  "deleteRecipeConfirmMsg": "Ertu viss um að þú viljir eyða „{recipeName}“? Ekki er hægt að afturkalla þessa aðgerð.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Breytilegir litir",
+  "dynamicColorsSubtitle": "Nota liti byggða á veggfóðrinu þínu",
+  "editRecipe": "Breyta",
+  "editRecipeTitle": "Breyta uppskrift",
+  "enterUrl": "Sláðu inn vefslóð",
+  "errorLoadingRecipes": "Villa við að hlaða uppskriftum",
+  "filterByTag": "Sía eftir merki",
+  "gallery": "Galéria",
+  "imageUrlPlaceholder": "Eða límdu inn vefslóð myndar",
+  "ingredients": "Hráefni",
+  "instructions": "Leiðbeiningar",
+  "instructionsHint": "Skrifaðu eitt skref á hverja línu...",
+  "loadingRecipes": "Hleður uppskriftunum þínum...",
+  "mealPlannerAddMeal": "Bæta við máltíð",
+  "mealPlannerDateLabel": "Dagsetning",
+  "mealPlannerDeleteMeal": "Fjarlægja máltíð",
+  "mealPlannerEditMeal": "Breyta máltíð",
+  "mealPlannerError": "Villa við að hlaða matseðli",
+  "mealPlannerGenerateList": "Gera innkaupalista",
+  "mealPlannerGenerateListConfirm": "Bæta öllu hráefni úr fyrirhuguðum máltíðum vikunnar á innkaupalistann þinn?",
+  "mealPlannerGenerateListEmpty": "Engu hráefni til að bæta við. Skipuleggðu máltíðir með uppskriftum fyrst.",
+  "mealPlannerGenerateListNoList": "Búðu til innkaupalista fyrst.",
+  "mealPlannerGenerateListSuccess": "{count} hráefni bætt við listann þinn!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Hleður matseðli...",
+  "mealPlannerMealDeleted": "Máltíð fjarlægð",
+  "mealPlannerMealTypeBreakfast": "Morgunmatur",
+  "mealPlannerMealTypeDinner": "Kvöldmatur",
+  "mealPlannerMealTypeLunch": "Hádegismatur",
+  "mealPlannerMealTypeSnack": "Millimál",
+  "mealPlannerNoMeals": "Engar máltíðir áætlaðar",
+  "mealPlannerNoMealsHint": "Smelltu á dag til að bæta við máltíð",
+  "mealPlannerNoRecipesFound": "Engar uppskriftir fundust",
+  "mealPlannerNoRecipesHint": "Búðu til uppskriftir í Uppskriftir flipanum fyrst",
+  "mealPlannerNoteLabel": "Athugasemd (valfrjálst)",
+  "mealPlannerPrepTime": "{minutes} mín",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Bæta við áætlun",
+  "mealPlannerSearchRecipes": "Leita í uppskriftum...",
+  "mealPlannerSelectRecipe": "Veldu uppskrift",
+  "mealPlannerServings": "{count,plural, one{{count} skammtur} other{{count} skammtar}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Skammtar",
+  "mealPlannerTitle": "Matseðill",
+  "mealPlannerViewMonthly": "Mánaðarlegt yfirlit",
+  "mealPlannerViewWeekly": "Vikulegt yfirlit",
+  "mealPlannerWeekEmpty": "Ekkert áætlað fyrir þessa viku",
+  "mealPlannerWeekEmptyHint": "Smelltu á hvaða dag sem er til að byrja að skipuleggja máltíðirnar þínar!",
+  "mealPlannerWeekProgress": "{count} af {total} máltíðum áætlaðar",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Mínar uppskriftir",
+  "newRecipe": "Ný uppskrift",
+  "newRecipeTitle": "Ný uppskrift",
+  "noRecipesSaved": "Engar uppskriftir vistaðar",
+  "noRecipesSavedHint": "Búðu til þína fyrstu sérsniðnu uppskrift með því að smella á hnappinn hér að neðan.",
+  "openMenu": "Opna valmynd",
+  "prepTime": "Undirbúningstími",
+  "prepTimeMinutes": "Undirbúningstími (mínútur)",
+  "recipeCreated": "Uppskrift búin til!",
+  "recipeDeleted": "Uppskrift eytt",
+  "recipeImage": "Mynd af uppskrift",
+  "recipeName": "Heiti uppskriftar",
+  "recipeSaved": "Uppskrift vistuð!",
+  "recipeTags": "Merki uppskriftar",
+  "removeImage": "Fjarlægja mynd",
+  "requiredField": "Reitur áskilinn",
+  "saveChanges": "Vista breytingar",
+  "saveRecipe": "Vista",
+  "searchLanguage": "Leita að tungumáli...",
+  "searchRecipes": "Leita í uppskriftum...",
+  "shortDescription": "Stutt lýsing",
+  "suggestedTags": "Tillögur",
+  "tags": "Merki",
+  "viewRecipe": "Skoða uppskrift"
 }

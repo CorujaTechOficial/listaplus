@@ -283,6 +283,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get languageSystem => 'Järjestelmän oletus';
 
   @override
+  String get chooseLanguage => 'Valitse kieli';
+
+  @override
+  String get searchLanguage => 'Hae kieltä...';
+
+  @override
   String get appearance => 'Ulkoasu';
 
   @override
@@ -296,6 +302,12 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get themeColor => 'Teeman väri';
+
+  @override
+  String get dynamicColors => 'Dynaamiset värit';
+
+  @override
+  String get dynamicColorsSubtitle => 'Käytä taustakuvan mukaisia värejä';
 
   @override
   String get finance => 'Talous';
@@ -1039,130 +1051,247 @@ class AppLocalizationsFi extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Avaa valikko';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Näytä resepti';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Resepti luotu!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Muokkaa';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Poista';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Poistetaanko tämä resepti?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Haluatko varmasti poistaa reseptin \"$recipeName\"? Tätä toimintoa ei voi peruuttaa.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ainekset';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Ohjeet';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Valmistusaika';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Resepti tallennettu!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Ei tallennettuja reseptejä';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Luo ensimmäinen mukautettu reseptisi napauttamalla alla olevaa painiketta.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Omat reseptit';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Uusi resepti';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Ladataan reseptejäsi...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Virhe ladattaessa reseptejä';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Lisää ainesosa';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Tallenna';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Reseptin nimi';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Lyhyt kuvaus';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Valmistusaika (minuuttia)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Kirjoita yksi vaihe riville...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Lisää kuva';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Tai liitä kuvan URL';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tunnisteet';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Reseptin tunnisteet';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Ehdotetut';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Hae reseptejä...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Suodata tunnisteella';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Kaikki';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Resepti poistettu';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Tallenna muutokset';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Muokkaa reseptiä';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Uusi resepti';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Pakollinen';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Valitse kuvan lähde';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galleria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Anna URL-osoite';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Reseptin kuva';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Poista kuva';
+
+  @override
+  String get mealPlannerTitle => 'Ateriasuunnittelija';
+
+  @override
+  String get mealPlannerViewMonthly => 'Kuukausinäkymä';
+
+  @override
+  String get mealPlannerViewWeekly => 'Viikkonäkymä';
+
+  @override
+  String get mealPlannerNoMeals => 'Ei suunniteltuja aterioita';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Napauta päivää lisätäksesi aterian';
+
+  @override
+  String get mealPlannerLoading => 'Ladataan ateriasuunnitelmaa...';
+
+  @override
+  String get mealPlannerError => 'Virhe ladattaessa ateriasuunnitelmaa';
+
+  @override
+  String get mealPlannerAddMeal => 'Lisää ateria';
+
+  @override
+  String get mealPlannerEditMeal => 'Muokkaa ateriaa';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Poista ateria';
+
+  @override
+  String get mealPlannerMealDeleted => 'Ateria poistettu';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count annosta',
+      one: '$count annos',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Annokset';
+
+  @override
+  String get mealPlannerNoteLabel => 'Huomautus (valinnainen)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Valitse resepti';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Hae reseptejä...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Reseptejä ei löytynyt';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Luo reseptejä ensin Reseptit-välilehdellä';
+
+  @override
+  String get mealPlannerSave => 'Lisää suunnitelmaan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total ateriaa suunniteltu';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Luo ostoslista';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Lisätäänkö kaikki tämän viikon aterioiden ainekset ostoslistallesi?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ainesosaa lisätty listallesi!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Ei lisättäviä aineksia. Suunnittele ensin aterioita resepteillä.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Luo ensin ostoslista.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Aamiainen';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Lounas';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Illallinen';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Välipala';
+
+  @override
+  String get mealPlannerDateLabel => 'Päivämäärä';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Ei mitään suunniteltua tälle viikolle';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Napauta mitä tahansa päivää aloittaaksesi aterioiden suunnittelun!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }
 
 /// The translations for Finnish, as used in Finland (`fi_FI`).
@@ -1444,6 +1573,12 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get languageSystem => 'Järjestelmän oletus';
 
   @override
+  String get chooseLanguage => 'Valitse kieli';
+
+  @override
+  String get searchLanguage => 'Hae kieltä...';
+
+  @override
   String get appearance => 'Ulkoasu';
 
   @override
@@ -1457,6 +1592,12 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get themeColor => 'Teeman väri';
+
+  @override
+  String get dynamicColors => 'Dynaamiset värit';
+
+  @override
+  String get dynamicColorsSubtitle => 'Käytä taustakuvan mukaisia värejä';
 
   @override
   String get finance => 'Talous';
@@ -2197,4 +2338,247 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Avaa valikko';
+
+  @override
+  String get viewRecipe => 'Näytä resepti';
+
+  @override
+  String get recipeCreated => 'Resepti luotu!';
+
+  @override
+  String get editRecipe => 'Muokkaa';
+
+  @override
+  String get deleteRecipe => 'Poista';
+
+  @override
+  String get deleteRecipeConfirm => 'Poistetaanko tämä resepti?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Haluatko varmasti poistaa reseptin \"$recipeName\"? Tätä toimintoa ei voi peruuttaa.';
+  }
+
+  @override
+  String get ingredients => 'Ainekset';
+
+  @override
+  String get instructions => 'Ohjeet';
+
+  @override
+  String get prepTime => 'Valmistusaika';
+
+  @override
+  String get recipeSaved => 'Resepti tallennettu!';
+
+  @override
+  String get noRecipesSaved => 'Ei tallennettuja reseptejä';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Luo ensimmäinen mukautettu reseptisi napauttamalla alla olevaa painiketta.';
+
+  @override
+  String get myRecipes => 'Omat reseptit';
+
+  @override
+  String get newRecipe => 'Uusi resepti';
+
+  @override
+  String get loadingRecipes => 'Ladataan reseptejäsi...';
+
+  @override
+  String get errorLoadingRecipes => 'Virhe ladattaessa reseptejä';
+
+  @override
+  String get addIngredient => 'Lisää ainesosa';
+
+  @override
+  String get saveRecipe => 'Tallenna';
+
+  @override
+  String get recipeName => 'Reseptin nimi';
+
+  @override
+  String get shortDescription => 'Lyhyt kuvaus';
+
+  @override
+  String get prepTimeMinutes => 'Valmistusaika (minuuttia)';
+
+  @override
+  String get instructionsHint => 'Kirjoita yksi vaihe riville...';
+
+  @override
+  String get addPhoto => 'Lisää kuva';
+
+  @override
+  String get imageUrlPlaceholder => 'Tai liitä kuvan URL';
+
+  @override
+  String get tags => 'Tunnisteet';
+
+  @override
+  String get recipeTags => 'Reseptin tunnisteet';
+
+  @override
+  String get suggestedTags => 'Ehdotetut';
+
+  @override
+  String get searchRecipes => 'Hae reseptejä...';
+
+  @override
+  String get filterByTag => 'Suodata tunnisteella';
+
+  @override
+  String get allTags => 'Kaikki';
+
+  @override
+  String get recipeDeleted => 'Resepti poistettu';
+
+  @override
+  String get saveChanges => 'Tallenna muutokset';
+
+  @override
+  String get editRecipeTitle => 'Muokkaa reseptiä';
+
+  @override
+  String get newRecipeTitle => 'Uusi resepti';
+
+  @override
+  String get requiredField => 'Pakollinen';
+
+  @override
+  String get chooseImageSource => 'Valitse kuvan lähde';
+
+  @override
+  String get gallery => 'Galleria';
+
+  @override
+  String get enterUrl => 'Anna URL-osoite';
+
+  @override
+  String get recipeImage => 'Reseptin kuva';
+
+  @override
+  String get removeImage => 'Poista kuva';
+
+  @override
+  String get mealPlannerTitle => 'Ateriasuunnittelija';
+
+  @override
+  String get mealPlannerViewMonthly => 'Kuukausinäkymä';
+
+  @override
+  String get mealPlannerViewWeekly => 'Viikkonäkymä';
+
+  @override
+  String get mealPlannerNoMeals => 'Ei suunniteltuja aterioita';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Napauta päivää lisätäksesi aterian';
+
+  @override
+  String get mealPlannerLoading => 'Ladataan ateriasuunnitelmaa...';
+
+  @override
+  String get mealPlannerError => 'Virhe ladattaessa ateriasuunnitelmaa';
+
+  @override
+  String get mealPlannerAddMeal => 'Lisää ateria';
+
+  @override
+  String get mealPlannerEditMeal => 'Muokkaa ateriaa';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Poista ateria';
+
+  @override
+  String get mealPlannerMealDeleted => 'Ateria poistettu';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count annosta',
+      one: '$count annos',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Annokset';
+
+  @override
+  String get mealPlannerNoteLabel => 'Huomautus (valinnainen)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Valitse resepti';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Hae reseptejä...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Reseptejä ei löytynyt';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Luo reseptejä ensin Reseptit-välilehdellä';
+
+  @override
+  String get mealPlannerSave => 'Lisää suunnitelmaan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total ateriaa suunniteltu';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Luo ostoslista';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Lisätäänkö kaikki tämän viikon aterioiden ainekset ostoslistallesi?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ainesosaa lisätty listallesi!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Ei lisättäviä aineksia. Suunnittele ensin aterioita resepteillä.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Luo ensin ostoslista.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Aamiainen';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Lounas';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Illallinen';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Välipala';
+
+  @override
+  String get mealPlannerDateLabel => 'Päivämäärä';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Ei mitään suunniteltua tälle viikolle';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Napauta mitä tahansa päivää aloittaaksesi aterioiden suunnittelun!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

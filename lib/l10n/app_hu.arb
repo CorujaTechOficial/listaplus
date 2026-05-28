@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Hozzávaló hozzáadása",
+  "addPhoto": "Fotó hozzáadása",
+  "allTags": "Összes",
+  "chooseImageSource": "Képforrás kiválasztása",
+  "chooseLanguage": "Nyelv kiválasztása",
+  "deleteRecipe": "Törlés",
+  "deleteRecipeConfirm": "Törli ezt a receptet?",
+  "deleteRecipeConfirmMsg": "Biztosan törölni szeretné a(z) \"{recipeName}\" receptet? Ez a művelet nem vonható vissza.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Dinamikus színek",
+  "dynamicColorsSubtitle": "Színek használata a háttérkép alapján",
+  "editRecipe": "Szerkesztés",
+  "editRecipeTitle": "Recept szerkesztése",
+  "enterUrl": "URL megadása",
+  "errorLoadingRecipes": "Hiba a receptek betöltésekor",
+  "filterByTag": "Szűrés címke szerint",
+  "gallery": "Galéria",
+  "imageUrlPlaceholder": "Vagy illesszen be egy kép URL-t",
+  "ingredients": "Hozzávalók",
+  "instructions": "Útmutató",
+  "instructionsHint": "Gépeljen be egy lépést soronként...",
+  "loadingRecipes": "Receptek betöltése...",
+  "mealPlannerAddMeal": "Étkezés hozzáadása",
+  "mealPlannerDateLabel": "Dátum",
+  "mealPlannerDeleteMeal": "Étkezés eltávolítása",
+  "mealPlannerEditMeal": "Étkezés szerkesztése",
+  "mealPlannerError": "Hiba az étrend betöltésekor",
+  "mealPlannerGenerateList": "Bevásárlólista generálása",
+  "mealPlannerGenerateListConfirm": "Hozzáadja a heti tervezett étkezések összes hozzávalóját a bevásárlólistához?",
+  "mealPlannerGenerateListEmpty": "Nincsenek hozzáadható hozzávalók. Előbb tervezzen étkezéseket receptekkel.",
+  "mealPlannerGenerateListNoList": "Előbb hozzon létre egy bevásárlólistát.",
+  "mealPlannerGenerateListSuccess": "{count} hozzávaló hozzáadva a listához!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Étrend betöltése...",
+  "mealPlannerMealDeleted": "Étkezés eltávolítva",
+  "mealPlannerMealTypeBreakfast": "Reggeli",
+  "mealPlannerMealTypeDinner": "Vacsora",
+  "mealPlannerMealTypeLunch": "Ebéd",
+  "mealPlannerMealTypeSnack": "Tízórai/Uzsonna",
+  "mealPlannerNoMeals": "Nincsenek tervezett étkezések",
+  "mealPlannerNoMealsHint": "Koppintson egy napra az étkezés hozzáadásához",
+  "mealPlannerNoRecipesFound": "Nem találhatók receptek",
+  "mealPlannerNoRecipesHint": "Előbb hozzon létre recepteket a Receptek fülön",
+  "mealPlannerNoteLabel": "Megjegyzés (opcionális)",
+  "mealPlannerPrepTime": "{minutes} perc",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Hozzáadás a tervhez",
+  "mealPlannerSearchRecipes": "Receptek keresése...",
+  "mealPlannerSelectRecipe": "Válasszon receptet",
+  "mealPlannerServings": "{count,plural, one{{count} adag} other{{count} adag}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Adagok",
+  "mealPlannerTitle": "Étrendtervező",
+  "mealPlannerViewMonthly": "Havi nézet",
+  "mealPlannerViewWeekly": "Heti nézet",
+  "mealPlannerWeekEmpty": "Nincs semmi tervezve erre a hétre",
+  "mealPlannerWeekEmptyHint": "Koppintson bármelyik napra az étkezések tervezésének megkezdéséhez!",
+  "mealPlannerWeekProgress": "{count} / {total} étkezés megtervezve",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Receptjeim",
+  "newRecipe": "Új recept",
+  "newRecipeTitle": "Új recept",
+  "noRecipesSaved": "Nincsenek mentett receptek",
+  "noRecipesSavedHint": "Hozza létre első egyedi receptjét az alábbi gombra koppintva.",
+  "openMenu": "Menü megnyitása",
+  "prepTime": "Elkészítési idő",
+  "prepTimeMinutes": "Elkészítési idő (perc)",
+  "recipeCreated": "Recept létrehozva!",
+  "recipeDeleted": "Recept törölve",
+  "recipeImage": "Recept képe",
+  "recipeName": "Recept neve",
+  "recipeSaved": "Recept mentve!",
+  "recipeTags": "Recept címkék",
+  "removeImage": "Kép eltávolítása",
+  "requiredField": "Kötelező",
+  "saveChanges": "Módosítások mentése",
+  "saveRecipe": "Mentés",
+  "searchLanguage": "Nyelv keresése...",
+  "searchRecipes": "Receptek keresése...",
+  "shortDescription": "Rövid leírás",
+  "suggestedTags": "Javasolt",
+  "tags": "Címkék",
+  "viewRecipe": "Recept megtekintése"
 }

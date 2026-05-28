@@ -291,6 +291,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get languageSystem => 'Rendszer alapértelmezett';
 
   @override
+  String get chooseLanguage => 'Nyelv kiválasztása';
+
+  @override
+  String get searchLanguage => 'Nyelv keresése...';
+
+  @override
   String get appearance => 'Megjelenés';
 
   @override
@@ -304,6 +310,12 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get themeColor => 'Téma színe';
+
+  @override
+  String get dynamicColors => 'Dinamikus színek';
+
+  @override
+  String get dynamicColorsSubtitle => 'Színek használata a háttérkép alapján';
 
   @override
   String get finance => 'Pénzügyek';
@@ -1055,130 +1067,249 @@ class AppLocalizationsHu extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Menü megnyitása';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Recept megtekintése';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recept létrehozva!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Szerkesztés';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Törlés';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Törli ezt a receptet?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Biztosan törölni szeretné a(z) \"$recipeName\" receptet? Ez a művelet nem vonható vissza.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Hozzávalók';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Útmutató';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Elkészítési idő';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Recept mentve!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nincsenek mentett receptek';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Hozza létre első egyedi receptjét az alábbi gombra koppintva.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Receptjeim';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Új recept';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Receptek betöltése...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Hiba a receptek betöltésekor';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Hozzávaló hozzáadása';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Mentés';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Recept neve';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Rövid leírás';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Elkészítési idő (perc)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Gépeljen be egy lépést soronként...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Fotó hozzáadása';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Vagy illesszen be egy kép URL-t';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Címkék';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Recept címkék';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Javasolt';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Receptek keresése...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Szűrés címke szerint';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Összes';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Recept törölve';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Módosítások mentése';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Recept szerkesztése';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Új recept';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Kötelező';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Képforrás kiválasztása';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galéria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL megadása';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Recept képe';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Kép eltávolítása';
+
+  @override
+  String get mealPlannerTitle => 'Étrendtervező';
+
+  @override
+  String get mealPlannerViewMonthly => 'Havi nézet';
+
+  @override
+  String get mealPlannerViewWeekly => 'Heti nézet';
+
+  @override
+  String get mealPlannerNoMeals => 'Nincsenek tervezett étkezések';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Koppintson egy napra az étkezés hozzáadásához';
+
+  @override
+  String get mealPlannerLoading => 'Étrend betöltése...';
+
+  @override
+  String get mealPlannerError => 'Hiba az étrend betöltésekor';
+
+  @override
+  String get mealPlannerAddMeal => 'Étkezés hozzáadása';
+
+  @override
+  String get mealPlannerEditMeal => 'Étkezés szerkesztése';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Étkezés eltávolítása';
+
+  @override
+  String get mealPlannerMealDeleted => 'Étkezés eltávolítva';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count adag',
+      one: '$count adag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Adagok';
+
+  @override
+  String get mealPlannerNoteLabel => 'Megjegyzés (opcionális)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Válasszon receptet';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Receptek keresése...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Nem találhatók receptek';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Előbb hozzon létre recepteket a Receptek fülön';
+
+  @override
+  String get mealPlannerSave => 'Hozzáadás a tervhez';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total étkezés megtervezve';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Bevásárlólista generálása';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Hozzáadja a heti tervezett étkezések összes hozzávalóját a bevásárlólistához?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count hozzávaló hozzáadva a listához!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Nincsenek hozzáadható hozzávalók. Előbb tervezzen étkezéseket receptekkel.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Előbb hozzon létre egy bevásárlólistát.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Reggeli';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Ebéd';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Vacsora';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Tízórai/Uzsonna';
+
+  @override
+  String get mealPlannerDateLabel => 'Dátum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Nincs semmi tervezve erre a hétre';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Koppintson bármelyik napra az étkezések tervezésének megkezdéséhez!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes perc';
+  }
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -1468,6 +1599,12 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get languageSystem => 'Rendszer alapértelmezett';
 
   @override
+  String get chooseLanguage => 'Nyelv kiválasztása';
+
+  @override
+  String get searchLanguage => 'Nyelv keresése...';
+
+  @override
   String get appearance => 'Megjelenés';
 
   @override
@@ -1481,6 +1618,12 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get themeColor => 'Téma színe';
+
+  @override
+  String get dynamicColors => 'Dinamikus színek';
+
+  @override
+  String get dynamicColorsSubtitle => 'Színek használata a háttérkép alapján';
 
   @override
   String get finance => 'Pénzügyek';
@@ -2230,4 +2373,249 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Menü megnyitása';
+
+  @override
+  String get viewRecipe => 'Recept megtekintése';
+
+  @override
+  String get recipeCreated => 'Recept létrehozva!';
+
+  @override
+  String get editRecipe => 'Szerkesztés';
+
+  @override
+  String get deleteRecipe => 'Törlés';
+
+  @override
+  String get deleteRecipeConfirm => 'Törli ezt a receptet?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Biztosan törölni szeretné a(z) \"$recipeName\" receptet? Ez a művelet nem vonható vissza.';
+  }
+
+  @override
+  String get ingredients => 'Hozzávalók';
+
+  @override
+  String get instructions => 'Útmutató';
+
+  @override
+  String get prepTime => 'Elkészítési idő';
+
+  @override
+  String get recipeSaved => 'Recept mentve!';
+
+  @override
+  String get noRecipesSaved => 'Nincsenek mentett receptek';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Hozza létre első egyedi receptjét az alábbi gombra koppintva.';
+
+  @override
+  String get myRecipes => 'Receptjeim';
+
+  @override
+  String get newRecipe => 'Új recept';
+
+  @override
+  String get loadingRecipes => 'Receptek betöltése...';
+
+  @override
+  String get errorLoadingRecipes => 'Hiba a receptek betöltésekor';
+
+  @override
+  String get addIngredient => 'Hozzávaló hozzáadása';
+
+  @override
+  String get saveRecipe => 'Mentés';
+
+  @override
+  String get recipeName => 'Recept neve';
+
+  @override
+  String get shortDescription => 'Rövid leírás';
+
+  @override
+  String get prepTimeMinutes => 'Elkészítési idő (perc)';
+
+  @override
+  String get instructionsHint => 'Gépeljen be egy lépést soronként...';
+
+  @override
+  String get addPhoto => 'Fotó hozzáadása';
+
+  @override
+  String get imageUrlPlaceholder => 'Vagy illesszen be egy kép URL-t';
+
+  @override
+  String get tags => 'Címkék';
+
+  @override
+  String get recipeTags => 'Recept címkék';
+
+  @override
+  String get suggestedTags => 'Javasolt';
+
+  @override
+  String get searchRecipes => 'Receptek keresése...';
+
+  @override
+  String get filterByTag => 'Szűrés címke szerint';
+
+  @override
+  String get allTags => 'Összes';
+
+  @override
+  String get recipeDeleted => 'Recept törölve';
+
+  @override
+  String get saveChanges => 'Módosítások mentése';
+
+  @override
+  String get editRecipeTitle => 'Recept szerkesztése';
+
+  @override
+  String get newRecipeTitle => 'Új recept';
+
+  @override
+  String get requiredField => 'Kötelező';
+
+  @override
+  String get chooseImageSource => 'Képforrás kiválasztása';
+
+  @override
+  String get gallery => 'Galéria';
+
+  @override
+  String get enterUrl => 'URL megadása';
+
+  @override
+  String get recipeImage => 'Recept képe';
+
+  @override
+  String get removeImage => 'Kép eltávolítása';
+
+  @override
+  String get mealPlannerTitle => 'Étrendtervező';
+
+  @override
+  String get mealPlannerViewMonthly => 'Havi nézet';
+
+  @override
+  String get mealPlannerViewWeekly => 'Heti nézet';
+
+  @override
+  String get mealPlannerNoMeals => 'Nincsenek tervezett étkezések';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Koppintson egy napra az étkezés hozzáadásához';
+
+  @override
+  String get mealPlannerLoading => 'Étrend betöltése...';
+
+  @override
+  String get mealPlannerError => 'Hiba az étrend betöltésekor';
+
+  @override
+  String get mealPlannerAddMeal => 'Étkezés hozzáadása';
+
+  @override
+  String get mealPlannerEditMeal => 'Étkezés szerkesztése';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Étkezés eltávolítása';
+
+  @override
+  String get mealPlannerMealDeleted => 'Étkezés eltávolítva';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count adag',
+      one: '$count adag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Adagok';
+
+  @override
+  String get mealPlannerNoteLabel => 'Megjegyzés (opcionális)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Válasszon receptet';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Receptek keresése...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Nem találhatók receptek';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Előbb hozzon létre recepteket a Receptek fülön';
+
+  @override
+  String get mealPlannerSave => 'Hozzáadás a tervhez';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total étkezés megtervezve';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Bevásárlólista generálása';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Hozzáadja a heti tervezett étkezések összes hozzávalóját a bevásárlólistához?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count hozzávaló hozzáadva a listához!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Nincsenek hozzáadható hozzávalók. Előbb tervezzen étkezéseket receptekkel.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Előbb hozzon létre egy bevásárlólistát.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Reggeli';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Ebéd';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Vacsora';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Tízórai/Uzsonna';
+
+  @override
+  String get mealPlannerDateLabel => 'Dátum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Nincs semmi tervezve erre a hétre';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Koppintson bármelyik napra az étkezések tervezésének megkezdéséhez!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes perc';
+  }
 }

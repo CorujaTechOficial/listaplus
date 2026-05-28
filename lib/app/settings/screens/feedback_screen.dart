@@ -73,7 +73,9 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
             },
           ),
         ),
-        body: _sent ? _buildThankYou(theme, l10n) : _buildForm(theme, l10n),
+        body: SafeArea(
+          child: _sent ? _buildThankYou(theme, l10n) : _buildForm(theme, l10n),
+        ),
       ),
     );
   }

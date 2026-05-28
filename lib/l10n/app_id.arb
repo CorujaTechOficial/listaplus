@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Tambah bahan",
+  "addPhoto": "Tambah foto",
+  "allTags": "Semua",
+  "chooseImageSource": "Pilih sumber gambar",
+  "chooseLanguage": "Pilih Bahasa",
+  "deleteRecipe": "Hapus",
+  "deleteRecipeConfirm": "Hapus resep ini?",
+  "deleteRecipeConfirmMsg": "Apakah Anda yakin ingin menghapus \"{recipeName}\"? Tindakan ini tidak dapat dibatalkan.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Warna dinamis",
+  "dynamicColorsSubtitle": "Gunakan warna berdasarkan wallpaper Anda",
+  "editRecipe": "Edit",
+  "editRecipeTitle": "Edit Resep",
+  "enterUrl": "Masukkan URL",
+  "errorLoadingRecipes": "Gagal memuat resep",
+  "filterByTag": "Filter berdasarkan tag",
+  "gallery": "Galeri",
+  "imageUrlPlaceholder": "Atau tempel URL gambar",
+  "ingredients": "Bahan-bahan",
+  "instructions": "Instruksi",
+  "instructionsHint": "Ketik satu langkah per baris...",
+  "loadingRecipes": "Memuat resep Anda...",
+  "mealPlannerAddMeal": "Tambah Makanan",
+  "mealPlannerDateLabel": "Tanggal",
+  "mealPlannerDeleteMeal": "Hapus makanan",
+  "mealPlannerEditMeal": "Edit Makanan",
+  "mealPlannerError": "Gagal memuat rencana makan",
+  "mealPlannerGenerateList": "Buat daftar belanja",
+  "mealPlannerGenerateListConfirm": "Tambahkan semua bahan dari rencana makan minggu ini ke daftar belanja Anda?",
+  "mealPlannerGenerateListEmpty": "Tidak ada bahan untuk ditambahkan. Buat rencana makan dengan resep terlebih dahulu.",
+  "mealPlannerGenerateListNoList": "Buat daftar belanja terlebih dahulu.",
+  "mealPlannerGenerateListSuccess": "{count} bahan telah ditambahkan ke daftar Anda!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Memuat rencana makan...",
+  "mealPlannerMealDeleted": "Makanan dihapus",
+  "mealPlannerMealTypeBreakfast": "Sarapan",
+  "mealPlannerMealTypeDinner": "Makan Malam",
+  "mealPlannerMealTypeLunch": "Makan Siang",
+  "mealPlannerMealTypeSnack": "Cemilan",
+  "mealPlannerNoMeals": "Belum ada rencana makan",
+  "mealPlannerNoMealsHint": "Ketuk hari untuk menambah makanan",
+  "mealPlannerNoRecipesFound": "Resep tidak ditemukan",
+  "mealPlannerNoRecipesHint": "Buat resep di tab Resep terlebih dahulu",
+  "mealPlannerNoteLabel": "Catatan (opsional)",
+  "mealPlannerPrepTime": "{minutes} mnt",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Tambah ke rencana",
+  "mealPlannerSearchRecipes": "Cari resep...",
+  "mealPlannerSelectRecipe": "Pilih resep",
+  "mealPlannerServings": "{count,plural, one{{count} porsi} other{{count} porsi}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Porsi",
+  "mealPlannerTitle": "Perencana Makan",
+  "mealPlannerViewMonthly": "Tampilan bulanan",
+  "mealPlannerViewWeekly": "Tampilan mingguan",
+  "mealPlannerWeekEmpty": "Belum ada rencana untuk minggu ini",
+  "mealPlannerWeekEmptyHint": "Ketuk hari apa saja untuk mulai merencanakan makanan Anda!",
+  "mealPlannerWeekProgress": "{count} dari {total} makanan terencana",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Resep Saya",
+  "newRecipe": "Resep Baru",
+  "newRecipeTitle": "Resep Baru",
+  "noRecipesSaved": "Tidak ada resep yang disimpan",
+  "noRecipesSavedHint": "Buat resep kustom pertama Anda dengan mengetuk tombol di bawah.",
+  "openMenu": "Buka menu",
+  "prepTime": "Waktu persiapan",
+  "prepTimeMinutes": "Waktu persiapan (menit)",
+  "recipeCreated": "Resep dibuat!",
+  "recipeDeleted": "Resep dihapus",
+  "recipeImage": "Gambar resep",
+  "recipeName": "Nama resep",
+  "recipeSaved": "Resep disimpan!",
+  "recipeTags": "Tag resep",
+  "removeImage": "Hapus gambar",
+  "requiredField": "Wajib diisi",
+  "saveChanges": "Simpan perubahan",
+  "saveRecipe": "Simpan",
+  "searchLanguage": "Cari bahasa...",
+  "searchRecipes": "Cari resep...",
+  "shortDescription": "Deskripsi singkat",
+  "suggestedTags": "Disarankan",
+  "tags": "Tag",
+  "viewRecipe": "Lihat Resep"
 }

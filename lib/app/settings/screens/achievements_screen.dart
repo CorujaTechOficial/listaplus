@@ -13,7 +13,8 @@ class AchievementsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Minhas Conquistas')),
-      body: ListView(
+      body: SafeArea(
+        child: ListView(
         padding: const EdgeInsets.all(Spacing.md),
         children: [
           _buildStatCard(
@@ -76,6 +77,7 @@ class AchievementsScreen extends ConsumerWidget {
             ],
           ),
         ],
+      ),
       ),
     );
   }

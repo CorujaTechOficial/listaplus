@@ -290,6 +290,12 @@ class AppLocalizationsFil extends AppLocalizations {
   String get languageSystem => 'Default ng system';
 
   @override
+  String get chooseLanguage => 'Pumili ng Wika';
+
+  @override
+  String get searchLanguage => 'Maghanap ng wika...';
+
+  @override
   String get appearance => 'Itsura';
 
   @override
@@ -303,6 +309,13 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get themeColor => 'Kulay ng tema';
+
+  @override
+  String get dynamicColors => 'Dynamic na mga kulay';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Gumamit ng mga kulay base sa iyong wallpaper';
 
   @override
   String get finance => 'Pananalapi';
@@ -1057,128 +1070,247 @@ class AppLocalizationsFil extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Buksan ang menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Tingnan ang Recipe';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recipe na gawa na!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'I-edit';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Burahin';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Burahin ang recipe na ito?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Sigurado ka bang gusto mong burahin ang \"$recipeName\"? Ang aksyong ito ay hindi na maaaring bawiin.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Mga Sahog';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Mga Instruksyon';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Oras ng paghahanda';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Recipe na-save na!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Walang naka-save na mga recipe';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Gumawa ng iyong unang custom na recipe sa pamamagitan ng pag-tap sa button sa ibaba.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Aking mga Recipe';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Bagong Recipe';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Naglo-load ng iyong mga recipe...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Error sa paglo-load ng mga recipe';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Magdagdag ng sahog';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'I-save';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Pangalan ng recipe';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Maikling deskripsyon';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Oras ng paghahanda (minuto)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Mag-type ng isang hakbang bawat linya...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Magdagdag ng larawan';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'O i-paste ang URL ng larawan';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Mga Tag';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Mga tag ng recipe';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Iminumungkahi';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Maghanap ng mga recipe...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'I-filter ayon sa tag';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Lahat';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Recipe na burado na';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'I-save ang mga pagbabago';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'I-edit ang Recipe';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Bagong Recipe';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Kinakailangan';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Pumili ng pagkukunan ng larawan';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galerya';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Ilagay ang URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Larawan ng recipe';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Alisin ang larawan';
+
+  @override
+  String get mealPlannerTitle => 'Meal Planner';
+
+  @override
+  String get mealPlannerViewMonthly => 'Buwanang view';
+
+  @override
+  String get mealPlannerViewWeekly => 'Lingguhang view';
+
+  @override
+  String get mealPlannerNoMeals => 'Walang nakaplanong pagkain';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'I-tap ang isang araw para magdagdag ng pagkain';
+
+  @override
+  String get mealPlannerLoading => 'Naglo-load ng meal plan...';
+
+  @override
+  String get mealPlannerError => 'Error sa paglo-load ng meal plan';
+
+  @override
+  String get mealPlannerAddMeal => 'Magdagdag ng Pagkain';
+
+  @override
+  String get mealPlannerEditMeal => 'I-edit ang Pagkain';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Alisin ang pagkain';
+
+  @override
+  String get mealPlannerMealDeleted => 'Naalis na ang pagkain';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count servings',
+      one: '$count serving',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Mga Serving';
+
+  @override
+  String get mealPlannerNoteLabel => 'Nota (opsyonal)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Pumili ng recipe';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Maghanap ng mga recipe...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Walang nahanap na mga recipe';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Gumawa muna ng mga recipe sa tab na Mga Recipe';
+
+  @override
+  String get mealPlannerSave => 'Idagdag sa plano';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count sa $total (na) pagkain ang nakaplano';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Gumawa ng listahan ng pamimili';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Idagdag ang lahat ng mga sahog mula sa mga nakaplanong pagkain sa linggong ito sa iyong listahan ng pamimili?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count (na) sahog ang naidagdag sa iyong listahan!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Walang mga sahog na idadagdag. Magplano muna ng ilang pagkain na may mga recipe.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Gumawa muna ng listahan ng pamimili.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Almusal';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Tanghalian';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Hapunan';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Meryenda';
+
+  @override
+  String get mealPlannerDateLabel => 'Petsa';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Walang nakaplano para sa linggong ito';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'I-tap ang anumang araw para magsimulang magplano ng iyong mga pagkain!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

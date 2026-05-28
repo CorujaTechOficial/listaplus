@@ -16,6 +16,7 @@ import '../../../models/unit.dart';
 import '../../../models/shopping_item.dart';
 import '../../../models/shopping_list.dart';
 import '../../../models/interactive_artifact.dart';
+import '../../../models/chat_session_model.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
@@ -26,6 +27,17 @@ import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
 
 part 'chat_provider.g.dart';
+
+class PremiumUnlockException implements Exception {
+  PremiumUnlockException({
+    required this.toolCall,
+    required this.messages,
+    required this.tools,
+  });
+  final AgentToolCall toolCall;
+  final List<Map<String, dynamic>> messages;
+  final List<Map<String, dynamic>> tools;
+}
 
 const int _maxToolRounds = 5;
 const int _maxHistoryMessages = 20;
@@ -58,6 +70,47 @@ class ChatStreamingText extends _$ChatStreamingText {
   void setState(String? value) => state = value;
 }
 
+@riverpod
+class ActiveChatSessionId extends _$ActiveChatSessionId {
+  @override
+  String? build(String? listId) => null;
+  void set(String? value) => state = value;
+}
+
+@riverpod
+class ChatSessions extends _$ChatSessions {
+  @override
+  Future<List<ChatSessionModel>> build(String? listId) async {
+    final service = ref.watch(firestoreServiceProvider);
+    return service.loadChatSessions(listId);
+  }
+
+  void createNewSession() {
+    ref.read(activeChatSessionIdProvider(listId).notifier).set(null);
+  }
+
+  Future<String> startNewSession() async {
+    final newSession = ChatSessionModel(
+      title: 'Nova Conversa',
+      listId: listId,
+    );
+    final service = ref.read(firestoreServiceProvider);
+    await service.saveChatSession(listId, newSession);
+    ref.invalidateSelf();
+    ref.read(activeChatSessionIdProvider(listId).notifier).set(newSession.id);
+    return newSession.id;
+  }
+
+  Future<void> deleteSession(String sessionId) async {
+    final service = ref.read(firestoreServiceProvider);
+    await service.deleteChatSession(listId, sessionId);
+    ref.invalidateSelf();
+    if (ref.read(activeChatSessionIdProvider(listId)) == sessionId) {
+      ref.read(activeChatSessionIdProvider(listId).notifier).set(null);
+    }
+  }
+}
+
 class _AgentResult {
   _AgentResult({required this.messages, required this.fallbackText});
 
@@ -72,16 +125,21 @@ class ChatSession extends _$ChatSession {
   bool _isCancelled = false;
   AiCancellationToken? _cancelToken;
   Future<void>? _currentTask;
+  PremiumUnlockException? _pendingUnlock;
 
   @override
-  Future<List<ChatMessage>> build(String? listId) async {
+  Future<List<ChatMessage>> build(String? listId, String? sessionId) async {
+    if (sessionId == null) {
+      return [];
+    }
+
     ref.onDispose(() {
       _isCancelled = true;
       _cancelToken?.cancel();
       _currentTask = null;
     });
     final service = ref.watch(firestoreServiceProvider);
-    return service.loadChatMessages(listId);
+    return service.loadChatMessages(listId, sessionId: sessionId);
   }
 
   Future<void> sendMessage(String content) async {
@@ -122,6 +180,232 @@ class ChatSession extends _$ChatSession {
         _cancelToken = null;
       }
     }
+  }
+
+  Future<void> _finalizeResponse(
+    AiService aiService,
+    _AgentResult agentResult,
+    List<Map<String, dynamic>> tools,
+  ) async {
+    final firestoreService = ref.read(firestoreServiceProvider);
+    ref.read(chatStreamingProvider(listId).notifier).setState(true);
+    unawaited(HapticFeedback.lightImpact());
+
+    String finalText;
+    bool isError = false;
+    try {
+      final systemPrompt = await _getCurrentSystemPrompt();
+      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools, cancelToken: _cancelToken);
+      if (_isCancelled) {
+        ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+        ref.read(chatStreamingProvider(listId).notifier).setState(false);
+        return;
+      }
+    } on Object catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[StreamResponse] Erro no streaming', extra: {
+        'operation': 'stream_response',
+        'listId': listId,
+        'fallbackText': agentResult.fallbackText.characters.take(200).toString(),
+        'hasToolCalls': agentResult.messages.any((m) => m['tool_calls'] != null),
+      });
+      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+      finalText = agentResult.fallbackText;
+      isError = true;
+    }
+
+    if (finalText.isEmpty) {
+      finalText = agentResult.fallbackText;
+      isError = true;
+    }
+
+    ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
+    ref.read(chatStreamingProvider(listId).notifier).setState(false);
+    unawaited(HapticFeedback.mediumImpact());
+
+    final lastMsg = state.value?.lastOrNull;
+    if (lastMsg != null) {
+      final extracted = _extractSuggestionsFromText(finalText);
+      final displayText = extracted.text;
+      final llmSuggestions = extracted.suggestions;
+      final suggestions = llmSuggestions ?? _generateSuggestedReplies(displayText, listId)
+          ?.map((s) => SuggestedReply(label: s, prompt: s, icon: 'chat'))
+          .toList();
+      final finalMessage = lastMsg.copyWith(
+        content: displayText,
+        isError: isError,
+        suggestedReplies: suggestions,
+      );
+      final updatedMessages = <ChatMessage>[...state.value ?? []];
+      updatedMessages[updatedMessages.length - 1] = finalMessage;
+      state = AsyncValue.data(updatedMessages);
+
+      final sessionId = ref.read(activeChatSessionIdProvider(listId));
+      try {
+        await firestoreService.saveChatMessage(listId, finalMessage, sessionId: sessionId);
+      } on Exception {
+        // Silently fail saving assistant message
+      }
+    }
+  }
+
+  Future<void> resumeWithUnlock() async {
+    final pending = _pendingUnlock;
+    if (pending == null) {
+      return;
+    }
+    _pendingUnlock = null;
+
+    _isCancelled = false;
+    _cancelToken = AiCancellationToken();
+    final task = _resumeLoopInternal(pending, bypassPremium: true);
+    _currentTask = task;
+    try {
+      await task;
+    } finally {
+      if (_currentTask == task) {
+        _currentTask = null;
+        _cancelToken = null;
+      }
+    }
+  }
+
+  Future<void> cancelUnlock() async {
+    final pending = _pendingUnlock;
+    if (pending == null) {
+      return;
+    }
+    _pendingUnlock = null;
+
+    _isCancelled = false;
+    _cancelToken = AiCancellationToken();
+    final task = _resumeLoopInternal(pending, bypassPremium: false, userDeclined: true);
+    _currentTask = task;
+    try {
+      await task;
+    } finally {
+      if (_currentTask == task) {
+        _currentTask = null;
+        _cancelToken = null;
+      }
+    }
+  }
+
+  Future<ToolResult> executeToolDirectly(String name, Map<String, dynamic> arguments) async {
+    final executor = ToolExecutor(ref);
+    final call = AgentToolCall(
+      id: 'direct_${DateTime.now().millisecondsSinceEpoch}',
+      name: name,
+      arguments: arguments,
+    );
+    return executor.execute(call);
+  }
+
+  Future<void> _resumeLoopInternal(
+    PremiumUnlockException pending, {
+    required bool bypassPremium,
+    bool userDeclined = false,
+  }) async {
+    final aiService = ref.read(aiServiceProvider);
+    final executor = ToolExecutor(ref);
+    final tools = AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
+
+    _AgentResult agentResult;
+    try {
+      ref.read(chatThinkingProvider(listId).notifier).setState(true);
+      ref.read(chatActivityProvider(listId).notifier).setState('Retomando processamento...');
+
+      final updatedMessages = List<Map<String, dynamic>>.from(pending.messages);
+
+      if (userDeclined) {
+        // Se o usuário recusou, informamos à IA que a ferramenta falhou por recusa do usuário
+        final result = ToolResult.fromError(
+          'O usuário optou por não utilizar a interface interativa premium neste momento. Prossiga apenas com texto.',
+          toolCallId: pending.toolCall.id,
+        );
+
+        // Atualiza o step para erro/cancelado na UI
+        final finishedSteps = (state.value?.lastOrNull?.executionSteps ?? [])
+            .map((step) {
+              return step.id == pending.toolCall.id
+                  ? step.copyWith(status: AgentStepStatus.error)
+                  : step;
+            })
+            .toList();
+        _updateAssistantMessage(executionSteps: finishedSteps);
+
+        updatedMessages.add({
+          'role': 'tool',
+          'tool_call_id': pending.toolCall.id,
+          'content': result.content,
+        });
+
+        agentResult = await _agentLoop(
+          aiService,
+          executor,
+          updatedMessages,
+          tools: pending.tools,
+          cancelToken: _cancelToken,
+        );
+      } else {
+        // Se foi liberado (bypassPremium), executamos a ferramenta
+        final result = await executor.execute(pending.toolCall, bypassPremium: true);
+
+        final finishedSteps = (state.value?.lastOrNull?.executionSteps ?? [])
+            .map((step) {
+              return step.id == pending.toolCall.id
+                  ? step.copyWith(
+                      status: result.success ? AgentStepStatus.success : AgentStepStatus.error,
+                      resultData: result.resultData,
+                    )
+                  : step;
+            })
+            .toList();
+
+        if (pending.toolCall.name == 'generate_artifact' && result.success && result.resultData != null) {
+          final artifactJson = result.resultData!['artifact'] as Map<String, dynamic>;
+          final artifact = InteractiveArtifact.fromJson(artifactJson);
+          _updateAssistantMessage(
+            executionSteps: finishedSteps,
+            artifact: artifact,
+          );
+        } else {
+          _updateAssistantMessage(executionSteps: finishedSteps);
+        }
+
+        final toolContent = result.resultData != null
+            ? '${result.content}\n\nDADOS: ${jsonEncode(result.resultData)}'
+            : result.content;
+        updatedMessages.add({
+          'role': 'tool',
+          'tool_call_id': pending.toolCall.id,
+          'content': toolContent,
+        });
+
+        agentResult = await _agentLoop(
+          aiService,
+          executor,
+          updatedMessages,
+          tools: pending.tools,
+          cancelToken: _cancelToken,
+        );
+      }
+    } on PremiumUnlockException catch (e) {
+      debugPrint('[AgentLoop] Bloqueio Premium detectado (recursivo) para ${e.toolCall.name}');
+      _pendingUnlock = e;
+      return;
+    } on Object catch (e, st) {
+      LoggerService.error(e, stackTrace: st, message: '[ResumeLoop] Erro ao retomar loop', extra: {
+        'listId': listId,
+        'tool': pending.toolCall.name,
+      });
+      // Fallback em caso de erro na retomada
+      agentResult = _AgentResult(messages: pending.messages, fallbackText: 'Erro ao retomar processamento.');
+    } finally {
+      ref.read(chatThinkingProvider(listId).notifier).setState(false);
+      ref.read(chatActivityProvider(listId).notifier).setState(null);
+    }
+
+    await _finalizeResponse(aiService, agentResult, tools);
   }
 
   void _updateAssistantMessage({
@@ -374,7 +658,7 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data(newList);
 
     try {
-      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
+      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage, sessionId: sessionId);
     } on Exception catch (e, st) {
       LoggerService.error(e, stackTrace: st, message: '[Undo] Failed to save updated chat message', extra: {
         'operation': 'undo_save_message',
@@ -393,6 +677,10 @@ class ChatSession extends _$ChatSession {
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
 
+    if (sessionId == null) {
+      return;
+    }
+
     final userMessage = ChatMessage(
       role: 'user',
       content: content,
@@ -402,7 +690,7 @@ class ChatSession extends _$ChatSession {
     state = AsyncValue.data([...previousHistory, userMessage]);
 
     try {
-        await firestoreService.saveChatMessage(listId, userMessage);
+        await firestoreService.saveChatMessage(listId, userMessage, sessionId: sessionId!);
       } on Exception catch (e, st) {
         LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save user message', extra: {
           'operation': 'save_user_message',
@@ -461,6 +749,10 @@ class ChatSession extends _$ChatSession {
       if (_isCancelled) {
         return;
       }
+    } on PremiumUnlockException catch (e) {
+      debugPrint('[AgentLoop] Bloqueio Premium detectado para ${e.toolCall.name}');
+      _pendingUnlock = e;
+      return;
     } on Object catch (e, stackTrace) {
       LoggerService.error(e, stackTrace: stackTrace, message: '[AgentLoop] ERRO no loop principal', extra: {
         'operation': 'agent_loop',
@@ -478,7 +770,7 @@ class ChatSession extends _$ChatSession {
       final lastMsg = state.value?.lastOrNull;
       if (lastMsg != null) {
         try {
-          await firestoreService.saveChatMessage(listId, lastMsg);
+          await firestoreService.saveChatMessage(listId, lastMsg, sessionId: sessionId);
         } on Exception catch (e2, st2) {
           LoggerService.error(e2, stackTrace: st2, message: '[AgentLoop] Failed to save error message', extra: {
             'operation': 'save_error_message',
@@ -493,63 +785,7 @@ class ChatSession extends _$ChatSession {
       ref.read(chatActivityProvider(listId).notifier).setState(null);
     }
 
-    ref.read(chatStreamingProvider(listId).notifier).setState(true);
-    unawaited(HapticFeedback.lightImpact());
-
-    String finalText;
-    bool isError = false;
-    try {
-      final systemPrompt = await _getCurrentSystemPrompt();
-      finalText = await _streamResponse(aiService, agentResult.messages, systemPrompt, tools, cancelToken: _cancelToken);
-      if (_isCancelled) {
-        ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
-        ref.read(chatStreamingProvider(listId).notifier).setState(false);
-        return;
-      }
-    } on Object catch (e, st) {
-      LoggerService.error(e, stackTrace: st, message: '[StreamResponse] Erro no streaming', extra: {
-        'operation': 'stream_response',
-        'listId': listId,
-        'fallbackText': agentResult.fallbackText.characters.take(200).toString(),
-        'hasToolCalls': agentResult.messages.any((m) => m['tool_calls'] != null),
-      });
-      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
-      finalText = agentResult.fallbackText;
-      isError = true;
-    }
-
-    if (finalText.isEmpty) {
-      finalText = agentResult.fallbackText;
-      isError = true;
-    }
-
-    ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
-    ref.read(chatStreamingProvider(listId).notifier).setState(false);
-    unawaited(HapticFeedback.mediumImpact());
-
-    final lastMsg = state.value?.lastOrNull;
-    if (lastMsg != null) {
-      final extracted = _extractSuggestionsFromText(finalText);
-      final displayText = extracted.text;
-      final llmSuggestions = extracted.suggestions;
-      final suggestions = llmSuggestions ?? _generateSuggestedReplies(displayText, listId)
-          ?.map((s) => SuggestedReply(label: s, prompt: s, icon: 'chat'))
-          .toList();
-      final finalMessage = lastMsg.copyWith(
-        content: displayText,
-        isError: isError,
-        suggestedReplies: suggestions,
-      );
-      final updatedMessages = <ChatMessage>[...state.value ?? []];
-      updatedMessages[updatedMessages.length - 1] = finalMessage;
-      state = AsyncValue.data(updatedMessages);
-
-      try {
-        await firestoreService.saveChatMessage(listId, finalMessage);
-      } on Exception {
-        // Silently fail saving assistant message
-      }
-    }
+    await _finalizeResponse(aiService, agentResult, tools);
   }
 
   Future<String> _getCurrentSystemPrompt() async {
@@ -821,6 +1057,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
           id: tc.id,
           description: _friendlyToolDescription(tc),
           status: AgentStepStatus.pending,
+          toolName: tc.name,
         );
       }).toList();
 
@@ -845,6 +1082,23 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
         
         final result = await executor.execute(toolCall);
         debugPrint('[AgentLoop] Round $round — resultado de ${toolCall.name}: ${result.content.characters.take(200)}');
+
+        if (result.requiresUnlock) {
+          final finishedSteps = (state.value?.lastOrNull?.executionSteps ?? [])
+              .map((step) {
+                return step.id == toolCall.id
+                    ? step.copyWith(status: AgentStepStatus.requiresUnlock)
+                    : step;
+              })
+              .toList();
+          _updateAssistantMessage(executionSteps: finishedSteps);
+
+          throw PremiumUnlockException(
+            toolCall: toolCall,
+            messages: messages,
+            tools: tools,
+          );
+        }
 
         final finishedSteps = (state.value?.lastOrNull?.executionSteps ?? [])
             .map((step) {
@@ -1032,10 +1286,35 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     return buffer.toString();
   }
 
+  Future<void> _generateTitleInBackground(String? listId, String sessionId, String firstMessage) async {
+    try {
+      final aiService = ref.read(aiServiceProvider);
+      final prompt = 'Crie um título curtíssimo (máximo 4 palavras) para uma conversa que começa com: "$firstMessage". Retorne apenas o título, sem aspas.';
+      final response = await aiService.getChatCompletion([
+        ChatMessage(role: 'user', content: prompt),
+      ]);
+
+      var title = response.content.trim();
+      if (title.startsWith('"') && title.endsWith('"')) {
+        title = title.substring(1, title.length - 1);
+      }
+
+      final service = ref.read(firestoreServiceProvider);
+      final sessions = await service.loadChatSessions(listId);
+      final session = sessions.where((s) => s.id == sessionId).firstOrNull;
+      if (session != null) {
+        await service.saveChatSession(listId, session.copyWith(title: title));
+        ref.invalidate(chatSessionsProvider(listId));
+      }
+    } on Exception catch (e) {
+      debugPrint('Error generating chat title: $e');
+    }
+  }
+
   Future<void> clearHistory() async {
     cancelRequest();
     final firestoreService = ref.read(firestoreServiceProvider);
-    await firestoreService.clearChatHistory(listId);
+    await firestoreService.clearChatHistory(listId, sessionId: sessionId);
     state = const AsyncValue.data([]);
   }
 
@@ -1073,7 +1352,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     state = AsyncValue.data(updatedMessages);
 
     try {
-      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage);
+      await ref.read(firestoreServiceProvider).saveChatMessage(listId, updatedMessage, sessionId: sessionId);
     } on Exception catch (e, st) {
       LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save feedback', extra: {
         'operation': 'set_feedback',
@@ -1228,7 +1507,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       final updatedMessages = <ChatMessage>[...state.value ?? []];
       updatedMessages[updatedMessages.length - 1] = finalMessage;
       state = AsyncValue.data(updatedMessages);
-      unawaited(firestoreService.saveChatMessage(listId, finalMessage));
+      unawaited(firestoreService.saveChatMessage(listId, finalMessage, sessionId: sessionId));
     }
   }
 

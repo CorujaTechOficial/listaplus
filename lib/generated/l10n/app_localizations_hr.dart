@@ -288,6 +288,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get languageSystem => 'Zadano sustava';
 
   @override
+  String get chooseLanguage => 'Odaberi jezik';
+
+  @override
+  String get searchLanguage => 'Pretraži jezik...';
+
+  @override
   String get appearance => 'Izgled';
 
   @override
@@ -301,6 +307,12 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get themeColor => 'Boja teme';
+
+  @override
+  String get dynamicColors => 'Dinamične boje';
+
+  @override
+  String get dynamicColorsSubtitle => 'Koristi boje na temelju pozadine';
 
   @override
   String get finance => 'Financije';
@@ -1050,128 +1062,246 @@ class AppLocalizationsHr extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Otvori izbornik';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Vidi recept';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recept stvoren!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Uredi';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Izbriši';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Izbrisati ovaj recept?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Jeste li sigurni da želite izbrisati \"$recipeName\"? Ova se radnja ne može poništiti.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Sastojci';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Upute';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Vrijeme prip.';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Recept spremljen!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nema spremljenih recepata';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Stvorite svoj prvi prilagođeni recept dodirom na gumb ispod.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Moji recepti';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Novi recept';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Učitavanje vaših recepata...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Greška pri učitavanju recepata';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Dodaj sastojak';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Spremi';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Naziv recepta';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Kratki opis';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Vrijeme pripreme (minute)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Upiši jedan korak po retku...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Dodaj fotografiju';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Ili zalijepi URL slike';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Oznake';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Oznake recepta';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Predloženo';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Pretraži recepte...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtriraj po oznaci';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Sve';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Recept izbrisan';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Spremi promjene';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Uredi recept';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Novi recept';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Obavezno';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Odaberi izvor slike';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galerija';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Unesi URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Slika recepta';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Ukloni sliku';
+
+  @override
+  String get mealPlannerTitle => 'Planer obroka';
+
+  @override
+  String get mealPlannerViewMonthly => 'Mjesečni prikaz';
+
+  @override
+  String get mealPlannerViewWeekly => 'Tjedni prikaz';
+
+  @override
+  String get mealPlannerNoMeals => 'Nema planiranih obroka';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Dodirni dan za dodavanje obroka';
+
+  @override
+  String get mealPlannerLoading => 'Učitavanje plana obroka...';
+
+  @override
+  String get mealPlannerError => 'Greška pri učitavanju plana obroka';
+
+  @override
+  String get mealPlannerAddMeal => 'Dodaj obrok';
+
+  @override
+  String get mealPlannerEditMeal => 'Uredi obrok';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Ukloni obrok';
+
+  @override
+  String get mealPlannerMealDeleted => 'Obrok uklonjen';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porcija',
+      few: '$count porcije',
+      one: '$count porcija',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porcije';
+
+  @override
+  String get mealPlannerNoteLabel => 'Bilješka (opcionalno)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Odaberi recept';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Pretraži recepte...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Recepti nisu pronađeni';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Prvo stvorite recepte u kartici Recepti';
+
+  @override
+  String get mealPlannerSave => 'Dodaj u plan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count od $total planiranih obroka';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Generiraj popis za kupnju';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Dodati sve sastojke iz planiranih obroka za ovaj tjedan na popis za kupnju?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count sastojak(a) dodano na vaš popis!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Nema sastojaka za dodavanje. Prvo isplanirajte obroke s receptima.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Prvo stvorite popis za kupnju.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Doručak';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Ručak';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Večera';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Međuobrok';
+
+  @override
+  String get mealPlannerDateLabel => 'Datum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Ništa nije planirano za ovaj tjedan';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Dodirni bilo koji dan za početak planiranja obroka!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

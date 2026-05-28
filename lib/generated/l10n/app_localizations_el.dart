@@ -289,6 +289,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get languageSystem => 'Προεπιλογή συστήματος';
 
   @override
+  String get chooseLanguage => 'Επιλογή γλώσσας';
+
+  @override
+  String get searchLanguage => 'Αναζήτηση γλώσσας...';
+
+  @override
   String get appearance => 'Εμφάνιση';
 
   @override
@@ -302,6 +308,13 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get themeColor => 'Χρώμα θέματος';
+
+  @override
+  String get dynamicColors => 'Δυναμικά χρώματα';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Χρήση χρωμάτων με βάση την ταπετσαρία σας';
 
   @override
   String get finance => 'Οικονομικά';
@@ -1056,130 +1069,251 @@ class AppLocalizationsEl extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Άνοιγμα μενού';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Προβολή συνταγής';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Η συνταγή δημιουργήθηκε!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Επεξεργασία';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Διαγραφή';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Διαγραφή αυτής της συνταγής;';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Είστε σίγουροι ότι θέλετε να διαγράψετε τη συνταγή \"$recipeName\"; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Συστατικά';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Οδηγίες';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Χρόνος προετοιμασίας';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Η συνταγή αποθηκεύτηκε!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Δεν υπάρχουν αποθηκευμένες συνταγές';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Δημιουργήστε την πρώτη σας προσαρμοσμένη συνταγή πατώντας το παρακάτω κουμπί.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Οι συνταγές μου';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Νέα συνταγή';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Φόρτωση των συνταγών σας...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Σφάλμα κατά τη φόρτωση των συνταγών';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Προσθήκη συστατικού';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Αποθήκευση';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Όνομα συνταγής';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Σύντομη περιγραφή';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Χρόνος προετοιμασίας (λεπτά)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Πληκτρολογήστε ένα βήμα ανά γραμμή...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Προσθήκη φωτογραφίας';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Ή επικολλήστε ένα URL εικόνας';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Ετικέτες';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Ετικέτες συνταγής';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Προτεινόμενα';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Αναζήτηση συνταγών...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Φιλτράρισμα ανά ετικέτα';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Όλα';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Η συνταγή διαγράφηκε';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Αποθήκευση αλλαγών';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Επεξεργασία συνταγής';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Νέα συνταγή';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Απαιτείται';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Επιλογή πηγής εικόνας';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Συλλογή';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Εισαγωγή URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Εικόνα συνταγής';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Αφαίρεση εικόνας';
+
+  @override
+  String get mealPlannerTitle => 'Πρόγραμμα γευμάτων';
+
+  @override
+  String get mealPlannerViewMonthly => 'Μηνιαία προβολή';
+
+  @override
+  String get mealPlannerViewWeekly => 'Εβδομαδιαία προβολή';
+
+  @override
+  String get mealPlannerNoMeals => 'Δεν έχουν προγραμματιστεί γεύματα';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Πατήστε μια ημέρα για να προσθέσετε ένα γεύμα';
+
+  @override
+  String get mealPlannerLoading => 'Φόρτωση προγράμματος γευμάτων...';
+
+  @override
+  String get mealPlannerError =>
+      'Σφάλμα κατά τη φόρτωση του προγράμματος γευμάτων';
+
+  @override
+  String get mealPlannerAddMeal => 'Προσθήκη γεύματος';
+
+  @override
+  String get mealPlannerEditMeal => 'Επεξεργασία γεύματος';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Αφαίρεση γεύματος';
+
+  @override
+  String get mealPlannerMealDeleted => 'Το γεύμα αφαιρέθηκε';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count μερίδες',
+      one: '$count μερίδα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Μερίδες';
+
+  @override
+  String get mealPlannerNoteLabel => 'Σημείωση (προαιρετικό)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Επιλέξτε μια συνταγή';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Αναζήτηση συνταγών...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Δεν βρέθηκαν συνταγές';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Δημιουργήστε πρώτα συνταγές στην καρτέλα Συνταγές';
+
+  @override
+  String get mealPlannerSave => 'Προσθήκη στο πρόγραμμα';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Προγραμματίστηκαν $count από $total γεύματα';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Δημιουργία λίστας αγορών';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Προσθήκη όλων των συστατικών από τα προγραμματισμένα γεύματα αυτής της εβδομάδας στη λίστα αγορών σας;';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'Προστέθηκαν $count συστατικά στη λίστα σας!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Δεν υπάρχουν συστατικά για προσθήκη. Προγραμματίστε πρώτα μερικά γεύματα με συνταγές.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Δημιουργήστε πρώτα μια λίστα αγορών.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Πρωινό';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Μεσημεριανό';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Δείπνο';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Σνακ';
+
+  @override
+  String get mealPlannerDateLabel => 'Ημερομηνία';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'Τίποτα προγραμματισμένο για αυτήν την εβδομάδα';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Πατήστε οποιαδήποτε ημέρα για να ξεκινήσετε τον προγραμματισμό των γευμάτων σας!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes λεπτά';
+  }
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).
@@ -1467,6 +1601,12 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get languageSystem => 'Προεπιλογή συστήματος';
 
   @override
+  String get chooseLanguage => 'Επιλογή γλώσσας';
+
+  @override
+  String get searchLanguage => 'Αναζήτηση γλώσσας...';
+
+  @override
   String get appearance => 'Εμφάνιση';
 
   @override
@@ -1480,6 +1620,13 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get themeColor => 'Χρώμα θέματος';
+
+  @override
+  String get dynamicColors => 'Δυναμικά χρώματα';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Χρήση χρωμάτων με βάση την ταπετσαρία σας';
 
   @override
   String get finance => 'Οικονομικά';
@@ -2232,4 +2379,251 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Άνοιγμα μενού';
+
+  @override
+  String get viewRecipe => 'Προβολή συνταγής';
+
+  @override
+  String get recipeCreated => 'Η συνταγή δημιουργήθηκε!';
+
+  @override
+  String get editRecipe => 'Επεξεργασία';
+
+  @override
+  String get deleteRecipe => 'Διαγραφή';
+
+  @override
+  String get deleteRecipeConfirm => 'Διαγραφή αυτής της συνταγής;';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Είστε σίγουροι ότι θέλετε να διαγράψετε τη συνταγή \"$recipeName\"; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.';
+  }
+
+  @override
+  String get ingredients => 'Συστατικά';
+
+  @override
+  String get instructions => 'Οδηγίες';
+
+  @override
+  String get prepTime => 'Χρόνος προετοιμασίας';
+
+  @override
+  String get recipeSaved => 'Η συνταγή αποθηκεύτηκε!';
+
+  @override
+  String get noRecipesSaved => 'Δεν υπάρχουν αποθηκευμένες συνταγές';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Δημιουργήστε την πρώτη σας προσαρμοσμένη συνταγή πατώντας το παρακάτω κουμπί.';
+
+  @override
+  String get myRecipes => 'Οι συνταγές μου';
+
+  @override
+  String get newRecipe => 'Νέα συνταγή';
+
+  @override
+  String get loadingRecipes => 'Φόρτωση των συνταγών σας...';
+
+  @override
+  String get errorLoadingRecipes => 'Σφάλμα κατά τη φόρτωση των συνταγών';
+
+  @override
+  String get addIngredient => 'Προσθήκη συστατικού';
+
+  @override
+  String get saveRecipe => 'Αποθήκευση';
+
+  @override
+  String get recipeName => 'Όνομα συνταγής';
+
+  @override
+  String get shortDescription => 'Σύντομη περιγραφή';
+
+  @override
+  String get prepTimeMinutes => 'Χρόνος προετοιμασίας (λεπτά)';
+
+  @override
+  String get instructionsHint => 'Πληκτρολογήστε ένα βήμα ανά γραμμή...';
+
+  @override
+  String get addPhoto => 'Προσθήκη φωτογραφίας';
+
+  @override
+  String get imageUrlPlaceholder => 'Ή επικολλήστε ένα URL εικόνας';
+
+  @override
+  String get tags => 'Ετικέτες';
+
+  @override
+  String get recipeTags => 'Ετικέτες συνταγής';
+
+  @override
+  String get suggestedTags => 'Προτεινόμενα';
+
+  @override
+  String get searchRecipes => 'Αναζήτηση συνταγών...';
+
+  @override
+  String get filterByTag => 'Φιλτράρισμα ανά ετικέτα';
+
+  @override
+  String get allTags => 'Όλα';
+
+  @override
+  String get recipeDeleted => 'Η συνταγή διαγράφηκε';
+
+  @override
+  String get saveChanges => 'Αποθήκευση αλλαγών';
+
+  @override
+  String get editRecipeTitle => 'Επεξεργασία συνταγής';
+
+  @override
+  String get newRecipeTitle => 'Νέα συνταγή';
+
+  @override
+  String get requiredField => 'Απαιτείται';
+
+  @override
+  String get chooseImageSource => 'Επιλογή πηγής εικόνας';
+
+  @override
+  String get gallery => 'Συλλογή';
+
+  @override
+  String get enterUrl => 'Εισαγωγή URL';
+
+  @override
+  String get recipeImage => 'Εικόνα συνταγής';
+
+  @override
+  String get removeImage => 'Αφαίρεση εικόνας';
+
+  @override
+  String get mealPlannerTitle => 'Πρόγραμμα γευμάτων';
+
+  @override
+  String get mealPlannerViewMonthly => 'Μηνιαία προβολή';
+
+  @override
+  String get mealPlannerViewWeekly => 'Εβδομαδιαία προβολή';
+
+  @override
+  String get mealPlannerNoMeals => 'Δεν έχουν προγραμματιστεί γεύματα';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Πατήστε μια ημέρα για να προσθέσετε ένα γεύμα';
+
+  @override
+  String get mealPlannerLoading => 'Φόρτωση προγράμματος γευμάτων...';
+
+  @override
+  String get mealPlannerError =>
+      'Σφάλμα κατά τη φόρτωση του προγράμματος γευμάτων';
+
+  @override
+  String get mealPlannerAddMeal => 'Προσθήκη γεύματος';
+
+  @override
+  String get mealPlannerEditMeal => 'Επεξεργασία γεύματος';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Αφαίρεση γεύματος';
+
+  @override
+  String get mealPlannerMealDeleted => 'Το γεύμα αφαιρέθηκε';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count μερίδες',
+      one: '$count μερίδα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Μερίδες';
+
+  @override
+  String get mealPlannerNoteLabel => 'Σημείωση (προαιρετικό)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Επιλέξτε μια συνταγή';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Αναζήτηση συνταγών...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Δεν βρέθηκαν συνταγές';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Δημιουργήστε πρώτα συνταγές στην καρτέλα Συνταγές';
+
+  @override
+  String get mealPlannerSave => 'Προσθήκη στο πρόγραμμα';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Προγραμματίστηκαν $count από $total γεύματα';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Δημιουργία λίστας αγορών';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Προσθήκη όλων των συστατικών από τα προγραμματισμένα γεύματα αυτής της εβδομάδας στη λίστα αγορών σας;';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'Προστέθηκαν $count συστατικά στη λίστα σας!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Δεν υπάρχουν συστατικά για προσθήκη. Προγραμματίστε πρώτα μερικά γεύματα με συνταγές.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Δημιουργήστε πρώτα μια λίστα αγορών.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Πρωινό';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Μεσημεριανό';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Δείπνο';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Σνακ';
+
+  @override
+  String get mealPlannerDateLabel => 'Ημερομηνία';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'Τίποτα προγραμματισμένο για αυτήν την εβδομάδα';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Πατήστε οποιαδήποτε ημέρα για να ξεκινήσετε τον προγραμματισμό των γευμάτων σας!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes λεπτά';
+  }
 }

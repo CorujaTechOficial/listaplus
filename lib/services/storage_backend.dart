@@ -1,6 +1,7 @@
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
+import '../models/chat_session_model.dart';
 import '../models/pantry_item.dart';
 import '../models/category_data.dart';
 
@@ -47,10 +48,13 @@ abstract class StorageBackend {
   Future<void> savePantryItems(List<PantryItem> items);
   Future<void> deletePantryItem(String id);
 
-  Future<List<ChatMessage>> loadChatMessages(String? listId);
-  Future<void> saveChatMessage(String? listId, ChatMessage message);
-  Future<void> deleteChatMessage(String? listId, String messageId);
-  Future<void> clearChatHistory(String? listId);
+  Future<List<ChatSessionModel>> loadChatSessions(String? listId);
+  Future<void> saveChatSession(String? listId, ChatSessionModel session);
+  Future<void> deleteChatSession(String? listId, String sessionId);
+  Future<List<ChatMessage>> loadChatMessages(String? listId, {String? sessionId});
+  Future<void> saveChatMessage(String? listId, ChatMessage message, {String? sessionId});
+  Future<void> deleteChatMessage(String? listId, String messageId, {String? sessionId});
+  Future<void> clearChatHistory(String? listId, {String? sessionId});
 
   Future<Map<String, dynamic>?> getAiUsage();
   Future<void> saveAiUsage(Map<String, dynamic> data);

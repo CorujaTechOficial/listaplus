@@ -291,6 +291,12 @@ class AppLocalizationsMn extends AppLocalizations {
   String get languageSystem => 'Системийн анхдагч';
 
   @override
+  String get chooseLanguage => 'Хэл сонгох';
+
+  @override
+  String get searchLanguage => 'Хэл хайх...';
+
+  @override
   String get appearance => 'Гадаад байдал';
 
   @override
@@ -304,6 +310,13 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get themeColor => 'Сэдвийн өнгө';
+
+  @override
+  String get dynamicColors => 'Динамик өнгө';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Таны ханын зураг дээр үндэслэсэн өнгийг ашиглана уу';
 
   @override
   String get finance => 'Санхүү';
@@ -1053,130 +1066,248 @@ class AppLocalizationsMn extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Цэс нээх';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Жор үзэх';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Жор үүсгэгдлээ!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Засварлах';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Устгах';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Энэ жорыг устгах уу?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Та \"$recipeName\" жорыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Найрлага';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Заавар';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Бэлтгэх хугацаа';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Жор хадгалагдлаа!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Хадгалсан жор алга';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Доорх товчлуур дээр дарж анхны жороо үүсгэнэ үү.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Миний жорууд';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Шинэ жор';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Таны жоруудыг ачаалж байна...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Жор ачаалахад алдаа гарлаа';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Найрлага нэмэх';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Хадгалах';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Жорын нэр';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Товч тайлбар';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Бэлтгэх хугацаа (минут)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Мөр бүрт нэг алхам бичнэ үү...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Зураг нэмэх';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Эсвэл зургийн URL-г буулгана уу';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Шошго';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Жорын шошго';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Санал болгож буй';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Жор хайх...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Шошгоор шүүх';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Бүгд';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Жор устгагдсан';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Өөрчлөлтийг хадгалах';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Жор засварлах';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Шинэ жор';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Шаардлагатай';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Зургийн эх үүсвэрийг сонгоно уу';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Галерей';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL оруулна уу';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Жорын зураг';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Зураг устгах';
+
+  @override
+  String get mealPlannerTitle => 'Хоолны төлөвлөгч';
+
+  @override
+  String get mealPlannerViewMonthly => 'Сар бүрийн харагдац';
+
+  @override
+  String get mealPlannerViewWeekly => 'Долоо хоногийн харагдац';
+
+  @override
+  String get mealPlannerNoMeals => 'Төлөвлөсөн хоол алга';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Хоол нэмэхийн тулд өдөр дээр товшино уу';
+
+  @override
+  String get mealPlannerLoading => 'Хоолны төлөвлөгөө ачаалж байна...';
+
+  @override
+  String get mealPlannerError => 'Хоолны төлөвлөгөө ачаалахад алдаа гарлаа';
+
+  @override
+  String get mealPlannerAddMeal => 'Хоол нэмэх';
+
+  @override
+  String get mealPlannerEditMeal => 'Хоол засварлах';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Хоол устгах';
+
+  @override
+  String get mealPlannerMealDeleted => 'Хоол устгагдсан';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count порц',
+      one: '$count порц',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Порц';
+
+  @override
+  String get mealPlannerNoteLabel => 'Тэмдэглэл (заавал биш)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Жор сонгох';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Жор хайх...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Жор олдсонгүй';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'Эхлээд Жор таб дээр жор үүсгэнэ үү';
+
+  @override
+  String get mealPlannerSave => 'Төлөвлөгөөнд нэмэх';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total хоолны $count нь төлөвлөгдсөн';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Шопинг жагсаалт гаргах';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Энэ долоо хоногт төлөвлөсөн хоолны бүх найрлагыг шопинг жагсаалтад нэмэх үү?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count найрлага таны жагсаалтад нэмэгдлээ!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Нэмэх найрлага алга. Эхлээд жороор хоол төлөвлөнө үү.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Эхлээд шопинг жагсаалт үүсгэнэ үү.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Өглөөний цай';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Үдийн хоол';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Оройн хоол';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Хөнгөн зууш';
+
+  @override
+  String get mealPlannerDateLabel => 'Огноо';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Энэ долоо хоногт төлөвлөсөн зүйл алга';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Хоолоо төлөвлөж эхлэхийн тулд дурын өдөр дээр товшино уу!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes мин';
+  }
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).
@@ -1460,6 +1591,12 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get languageSystem => 'Системийн анхдагч';
 
   @override
+  String get chooseLanguage => 'Хэл сонгох';
+
+  @override
+  String get searchLanguage => 'Хэл хайх...';
+
+  @override
   String get appearance => 'Гадаад байдал';
 
   @override
@@ -1473,6 +1610,13 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get themeColor => 'Сэдвийн өнгө';
+
+  @override
+  String get dynamicColors => 'Динамик өнгө';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Таны ханын зураг дээр үндэслэсэн өнгийг ашиглана уу';
 
   @override
   String get finance => 'Санхүү';
@@ -2214,4 +2358,248 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Цэс нээх';
+
+  @override
+  String get viewRecipe => 'Жор үзэх';
+
+  @override
+  String get recipeCreated => 'Жор үүсгэгдлээ!';
+
+  @override
+  String get editRecipe => 'Засварлах';
+
+  @override
+  String get deleteRecipe => 'Устгах';
+
+  @override
+  String get deleteRecipeConfirm => 'Энэ жорыг устгах уу?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Та \"$recipeName\" жорыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.';
+  }
+
+  @override
+  String get ingredients => 'Найрлага';
+
+  @override
+  String get instructions => 'Заавар';
+
+  @override
+  String get prepTime => 'Бэлтгэх хугацаа';
+
+  @override
+  String get recipeSaved => 'Жор хадгалагдлаа!';
+
+  @override
+  String get noRecipesSaved => 'Хадгалсан жор алга';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Доорх товчлуур дээр дарж анхны жороо үүсгэнэ үү.';
+
+  @override
+  String get myRecipes => 'Миний жорууд';
+
+  @override
+  String get newRecipe => 'Шинэ жор';
+
+  @override
+  String get loadingRecipes => 'Таны жоруудыг ачаалж байна...';
+
+  @override
+  String get errorLoadingRecipes => 'Жор ачаалахад алдаа гарлаа';
+
+  @override
+  String get addIngredient => 'Найрлага нэмэх';
+
+  @override
+  String get saveRecipe => 'Хадгалах';
+
+  @override
+  String get recipeName => 'Жорын нэр';
+
+  @override
+  String get shortDescription => 'Товч тайлбар';
+
+  @override
+  String get prepTimeMinutes => 'Бэлтгэх хугацаа (минут)';
+
+  @override
+  String get instructionsHint => 'Мөр бүрт нэг алхам бичнэ үү...';
+
+  @override
+  String get addPhoto => 'Зураг нэмэх';
+
+  @override
+  String get imageUrlPlaceholder => 'Эсвэл зургийн URL-г буулгана уу';
+
+  @override
+  String get tags => 'Шошго';
+
+  @override
+  String get recipeTags => 'Жорын шошго';
+
+  @override
+  String get suggestedTags => 'Санал болгож буй';
+
+  @override
+  String get searchRecipes => 'Жор хайх...';
+
+  @override
+  String get filterByTag => 'Шошгоор шүүх';
+
+  @override
+  String get allTags => 'Бүгд';
+
+  @override
+  String get recipeDeleted => 'Жор устгагдсан';
+
+  @override
+  String get saveChanges => 'Өөрчлөлтийг хадгалах';
+
+  @override
+  String get editRecipeTitle => 'Жор засварлах';
+
+  @override
+  String get newRecipeTitle => 'Шинэ жор';
+
+  @override
+  String get requiredField => 'Шаардлагатай';
+
+  @override
+  String get chooseImageSource => 'Зургийн эх үүсвэрийг сонгоно уу';
+
+  @override
+  String get gallery => 'Галерей';
+
+  @override
+  String get enterUrl => 'URL оруулна уу';
+
+  @override
+  String get recipeImage => 'Жорын зураг';
+
+  @override
+  String get removeImage => 'Зураг устгах';
+
+  @override
+  String get mealPlannerTitle => 'Хоолны төлөвлөгч';
+
+  @override
+  String get mealPlannerViewMonthly => 'Сар бүрийн харагдац';
+
+  @override
+  String get mealPlannerViewWeekly => 'Долоо хоногийн харагдац';
+
+  @override
+  String get mealPlannerNoMeals => 'Төлөвлөсөн хоол алга';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Хоол нэмэхийн тулд өдөр дээр товшино уу';
+
+  @override
+  String get mealPlannerLoading => 'Хоолны төлөвлөгөө ачаалж байна...';
+
+  @override
+  String get mealPlannerError => 'Хоолны төлөвлөгөө ачаалахад алдаа гарлаа';
+
+  @override
+  String get mealPlannerAddMeal => 'Хоол нэмэх';
+
+  @override
+  String get mealPlannerEditMeal => 'Хоол засварлах';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Хоол устгах';
+
+  @override
+  String get mealPlannerMealDeleted => 'Хоол устгагдсан';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count порц',
+      one: '$count порц',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Порц';
+
+  @override
+  String get mealPlannerNoteLabel => 'Тэмдэглэл (заавал биш)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Жор сонгох';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Жор хайх...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Жор олдсонгүй';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'Эхлээд Жор таб дээр жор үүсгэнэ үү';
+
+  @override
+  String get mealPlannerSave => 'Төлөвлөгөөнд нэмэх';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total хоолны $count нь төлөвлөгдсөн';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Шопинг жагсаалт гаргах';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Энэ долоо хоногт төлөвлөсөн хоолны бүх найрлагыг шопинг жагсаалтад нэмэх үү?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count найрлага таны жагсаалтад нэмэгдлээ!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Нэмэх найрлага алга. Эхлээд жороор хоол төлөвлөнө үү.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Эхлээд шопинг жагсаалт үүсгэнэ үү.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Өглөөний цай';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Үдийн хоол';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Оройн хоол';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Хөнгөн зууш';
+
+  @override
+  String get mealPlannerDateLabel => 'Огноо';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Энэ долоо хоногт төлөвлөсөн зүйл алга';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Хоолоо төлөвлөж эхлэхийн тулд дурын өдөр дээр товшино уу!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes мин';
+  }
 }

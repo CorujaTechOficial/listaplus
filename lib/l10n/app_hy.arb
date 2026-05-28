@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Ավելացնել բաղադրիչ",
+  "addPhoto": "Ավելացնել լուսանկար",
+  "allTags": "Բոլորը",
+  "chooseImageSource": "Ընտրել պատկերի աղբյուրը",
+  "chooseLanguage": "Ընտրել լեզուն",
+  "deleteRecipe": "Ջնջել",
+  "deleteRecipeConfirm": "Ջնջե՞լ այս բաղադրատոմսը",
+  "deleteRecipeConfirmMsg": "Համոզվա՞ծ եք, որ ցանկանում եք ջնջել «{recipeName}»-ը: Այս գործողությունը անդառնալի է:",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Դինամիկ գույներ",
+  "dynamicColorsSubtitle": "Օգտագործել գույներ՝ հիմնված պաստառի վրա",
+  "editRecipe": "Խմբագրել",
+  "editRecipeTitle": "Խմբագրել բաղադրատոմսը",
+  "enterUrl": "Մուտքագրել URL",
+  "errorLoadingRecipes": "Սխալ՝ բաղադրատոմսերը բեռնելիս",
+  "filterByTag": "Ֆիլտրել ըստ պիտակի",
+  "gallery": "Պատկերասրահ",
+  "imageUrlPlaceholder": "Կամ տեղադրեք պատկերի URL-ը",
+  "ingredients": "Բաղադրիչներ",
+  "instructions": "Հրահանգներ",
+  "instructionsHint": "Մուտքագրեք մեկ քայլ յուրաքանչյուր տողում...",
+  "loadingRecipes": "Բեռնվում են ձեր բաղադրատոմսերը...",
+  "mealPlannerAddMeal": "Ավելացնել սնունդ",
+  "mealPlannerDateLabel": "Ամսաթիվ",
+  "mealPlannerDeleteMeal": "Հեռացնել սնունդը",
+  "mealPlannerEditMeal": "Խմբագրել սնունդը",
+  "mealPlannerError": "Սխալ՝ սննդի պլանը բեռնելիս",
+  "mealPlannerGenerateList": "Ստեղծել գնումների ցուցակ",
+  "mealPlannerGenerateListConfirm": "Ավելացնե՞լ այս շաբաթվա պլանավորված սննդի բոլոր բաղադրիչները ձեր գնումների ցուցակում:",
+  "mealPlannerGenerateListEmpty": "Ավելացնելու բաղադրիչներ չկան: Նախ պլանավորեք սնունդ բաղադրատոմսերով:",
+  "mealPlannerGenerateListNoList": "Նախ ստեղծեք գնումների ցուցակ:",
+  "mealPlannerGenerateListSuccess": "{count} բաղադրիչ ավելացվեց ձեր ցուցակում!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Սննդի պլանի բեռնում...",
+  "mealPlannerMealDeleted": "Սնունդը հեռացված է",
+  "mealPlannerMealTypeBreakfast": "Նախաճաշ",
+  "mealPlannerMealTypeDinner": "Ընթրիք",
+  "mealPlannerMealTypeLunch": "Ճաշ",
+  "mealPlannerMealTypeSnack": "Թեթև ուտեստ",
+  "mealPlannerNoMeals": "Պլանավորված սնունդ չկա",
+  "mealPlannerNoMealsHint": "Հպեք օրվան՝ սնունդ ավելացնելու համար",
+  "mealPlannerNoRecipesFound": "Բաղադրատոմսեր չեն գտնվել",
+  "mealPlannerNoRecipesHint": "Նախ ստեղծեք բաղադրատոմսեր «Բաղադրատոմսեր» բաժնում",
+  "mealPlannerNoteLabel": "Նշում (կամավոր)",
+  "mealPlannerPrepTime": "{minutes} րոպե",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Ավելացնել պլանին",
+  "mealPlannerSearchRecipes": "Փնտրել բաղադրատոմսեր...",
+  "mealPlannerSelectRecipe": "Ընտրել բաղադրատոմս",
+  "mealPlannerServings": "{count,plural, one{{count} բաժին} other{{count} բաժին}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Բաժիններ",
+  "mealPlannerTitle": "Սննդի պլանավորում",
+  "mealPlannerViewMonthly": "Ամսական տեսք",
+  "mealPlannerViewWeekly": "Շաբաթական տեսք",
+  "mealPlannerWeekEmpty": "Այս շաբաթվա համար ոչինչ պլանավորված չէ",
+  "mealPlannerWeekEmptyHint": "Հպեք ցանկացած օրվա՝ ձեր սնունդը պլանավորելու համար:",
+  "mealPlannerWeekProgress": "Պլանավորված է {total}-ից {count} սնունդ",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Իմ բաղադրատոմսերը",
+  "newRecipe": "Նոր բաղադրատոմս",
+  "newRecipeTitle": "Նոր բաղադրատոմս",
+  "noRecipesSaved": "Պահպանված բաղադրատոմսեր չկան",
+  "noRecipesSavedHint": "Ստեղծեք ձեր առաջին բաղադրատոմսը՝ սեղմելով ներքևի կոճակը:",
+  "openMenu": "Բացել մենյուն",
+  "prepTime": "Պատրաստման ժամանակը",
+  "prepTimeMinutes": "Պատրաստման ժամանակը (րոպե)",
+  "recipeCreated": "Բաղադրատոմսը ստեղծված է",
+  "recipeDeleted": "Բաղադրատոմսը ջնջված է",
+  "recipeImage": "Բաղադրատոմսի պատկեր",
+  "recipeName": "Բաղադրատոմսի անվանում",
+  "recipeSaved": "Բաղադրատոմսը պահպանված է",
+  "recipeTags": "Բաղադրատոմսի պիտակներ",
+  "removeImage": "Հեռացնել պատկերը",
+  "requiredField": "Պարտադիր",
+  "saveChanges": "Պահպանել փոփոխությունները",
+  "saveRecipe": "Պահպանել",
+  "searchLanguage": "Փնտրել լեզուն...",
+  "searchRecipes": "Փնտրել բաղադրատոմսեր...",
+  "shortDescription": "Կարճ նկարագրություն",
+  "suggestedTags": "Առաջարկվող",
+  "tags": "Պիտակներ",
+  "viewRecipe": "Դիտել բաղադրատոմսը"
 }

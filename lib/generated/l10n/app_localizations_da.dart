@@ -287,6 +287,12 @@ class AppLocalizationsDa extends AppLocalizations {
   String get languageSystem => 'Systemstandard';
 
   @override
+  String get chooseLanguage => 'Vælg sprog';
+
+  @override
+  String get searchLanguage => 'Søg sprog...';
+
+  @override
   String get appearance => 'Udseende';
 
   @override
@@ -300,6 +306,12 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get themeColor => 'Temafarve';
+
+  @override
+  String get dynamicColors => 'Dynamiske farver';
+
+  @override
+  String get dynamicColorsSubtitle => 'Brug farver baseret på dit tapet';
 
   @override
   String get finance => 'Økonomi';
@@ -1047,130 +1059,248 @@ class AppLocalizationsDa extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Åbn menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Vis opskrift';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Opskrift oprettet!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Rediger';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Slet';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Slet denne opskrift?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Er du sikker på, at du vil slette \"$recipeName\"? Denne handling kan ikke fortrydes.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingredienser';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instruktioner';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Tilberedningstid';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Opskrift gemt!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Ingen opskrifter gemt';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Opret din første brugerdefinerede opskrift ved at trykke på knappen nedenfor.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Mine opskrifter';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Ny opskrift';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Indlæser dine opskrifter...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Fejl ved indlæsning af opskrifter';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Tilføj ingrediens';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Gem';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Navn på opskrift';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Kort beskrivelse';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Tilberedningstid (minutter)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Skriv ét trin pr. linje...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Tilføj billede';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Eller indsæt en billed-URL';
 
   @override
   String get tags => 'Tags';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Tags til opskrift';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Forslag';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Søg i opskrifter...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrer efter tag';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Alle';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Opskrift slettet';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Gem ændringer';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Rediger opskrift';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Ny opskrift';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Påkrævet';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Vælg billedkilde';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galleri';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Indtast URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Opskriftsbillede';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Fjern billede';
+
+  @override
+  String get mealPlannerTitle => 'Madplanlægger';
+
+  @override
+  String get mealPlannerViewMonthly => 'Månedsvisning';
+
+  @override
+  String get mealPlannerViewWeekly => 'Ugevisning';
+
+  @override
+  String get mealPlannerNoMeals => 'Ingen måltider planlagt';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Tryk på en dag for at tilføje et måltid';
+
+  @override
+  String get mealPlannerLoading => 'Indlæser madplan...';
+
+  @override
+  String get mealPlannerError => 'Fejl ved indlæsning af madplan';
+
+  @override
+  String get mealPlannerAddMeal => 'Tilføj måltid';
+
+  @override
+  String get mealPlannerEditMeal => 'Rediger måltid';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Fjern måltid';
+
+  @override
+  String get mealPlannerMealDeleted => 'Måltid fjernet';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count portioner',
+      one: '$count portion',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Portioner';
+
+  @override
+  String get mealPlannerNoteLabel => 'Note (valgfrit)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Vælg en opskrift';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Søg i opskrifter...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Ingen opskrifter fundet';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Opret opskrifter i fanen Opskrifter først';
+
+  @override
+  String get mealPlannerSave => 'Tilføj til plan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count af $total måltider planlagt';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Generer indkøbsliste';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Tilføj alle ingredienser fra planlagte måltider i denne uge til din indkøbsliste?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingrediens(er) tilføjet til din liste!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Ingen ingredienser at tilføje. Planlæg nogle måltider med opskrifter først.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Opret en indkøbsliste først.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Morgenmad';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Frokost';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Aftensmad';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Snack';
+
+  @override
+  String get mealPlannerDateLabel => 'Dato';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Intet planlagt for denne uge';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tryk på en vilkårlig dag for at begynde at planlægge dine måltider!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }
 
 /// The translations for Danish, as used in Denmark (`da_DK`).
@@ -1456,6 +1586,12 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String get languageSystem => 'Systemstandard';
 
   @override
+  String get chooseLanguage => 'Vælg sprog';
+
+  @override
+  String get searchLanguage => 'Søg sprog...';
+
+  @override
   String get appearance => 'Udseende';
 
   @override
@@ -1469,6 +1605,12 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get themeColor => 'Temafarve';
+
+  @override
+  String get dynamicColors => 'Dynamiske farver';
+
+  @override
+  String get dynamicColorsSubtitle => 'Brug farver baseret på dit tapet';
 
   @override
   String get finance => 'Økonomi';
@@ -2214,4 +2356,248 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Åbn menu';
+
+  @override
+  String get viewRecipe => 'Vis opskrift';
+
+  @override
+  String get recipeCreated => 'Opskrift oprettet!';
+
+  @override
+  String get editRecipe => 'Rediger';
+
+  @override
+  String get deleteRecipe => 'Slet';
+
+  @override
+  String get deleteRecipeConfirm => 'Slet denne opskrift?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Er du sikker på, at du vil slette \"$recipeName\"? Denne handling kan ikke fortrydes.';
+  }
+
+  @override
+  String get ingredients => 'Ingredienser';
+
+  @override
+  String get instructions => 'Instruktioner';
+
+  @override
+  String get prepTime => 'Forberedelsestid';
+
+  @override
+  String get recipeSaved => 'Opskrift gemt!';
+
+  @override
+  String get noRecipesSaved => 'Ingen opskrifter gemt';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Opret din første tilpassede opskrift ved at trykke på knappen nedenfor.';
+
+  @override
+  String get myRecipes => 'Mine opskrifter';
+
+  @override
+  String get newRecipe => 'Ny opskrift';
+
+  @override
+  String get loadingRecipes => 'Indlæser dine opskrifter...';
+
+  @override
+  String get errorLoadingRecipes => 'Fejl ved indlæsning af opskrifter';
+
+  @override
+  String get addIngredient => 'Tilføj ingrediens';
+
+  @override
+  String get saveRecipe => 'Gem';
+
+  @override
+  String get recipeName => 'Navn på opskrift';
+
+  @override
+  String get shortDescription => 'Kort beskrivelse';
+
+  @override
+  String get prepTimeMinutes => 'Forberedelsestid (minutter)';
+
+  @override
+  String get instructionsHint => 'Skriv et trin pr. linje...';
+
+  @override
+  String get addPhoto => 'Tilføj foto';
+
+  @override
+  String get imageUrlPlaceholder => 'Indsæt billed-URL';
+
+  @override
+  String get tags => 'Mærker';
+
+  @override
+  String get recipeTags => 'Opskriftsmærker';
+
+  @override
+  String get suggestedTags => 'Foreslåede';
+
+  @override
+  String get searchRecipes => 'Søg i opskrifter...';
+
+  @override
+  String get filterByTag => 'Filtrer efter mærke';
+
+  @override
+  String get allTags => 'Alle';
+
+  @override
+  String get recipeDeleted => 'Opskrift slettet';
+
+  @override
+  String get saveChanges => 'Gem ændringer';
+
+  @override
+  String get editRecipeTitle => 'Rediger opskrift';
+
+  @override
+  String get newRecipeTitle => 'Ny opskrift';
+
+  @override
+  String get requiredField => 'Påkrævet';
+
+  @override
+  String get chooseImageSource => 'Vælg billedkilde';
+
+  @override
+  String get gallery => 'Galleri';
+
+  @override
+  String get enterUrl => 'Indtast URL';
+
+  @override
+  String get recipeImage => 'Opskriftsbillede';
+
+  @override
+  String get removeImage => 'Fjern billede';
+
+  @override
+  String get mealPlannerTitle => 'Madplan';
+
+  @override
+  String get mealPlannerViewMonthly => 'Månedsvisning';
+
+  @override
+  String get mealPlannerViewWeekly => 'Ugevisning';
+
+  @override
+  String get mealPlannerNoMeals => 'Ingen planlagte måltider';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Tryk på en dag for at tilføje et måltid';
+
+  @override
+  String get mealPlannerLoading => 'Indlæser madplan...';
+
+  @override
+  String get mealPlannerError => 'Fejl ved indlæsning af madplan';
+
+  @override
+  String get mealPlannerAddMeal => 'Tilføj måltid';
+
+  @override
+  String get mealPlannerEditMeal => 'Rediger måltid';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Fjern måltid';
+
+  @override
+  String get mealPlannerMealDeleted => 'Måltid fjernet';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count portioner',
+      one: '$count portion',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Portioner';
+
+  @override
+  String get mealPlannerNoteLabel => 'Note (valgfrit)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Vælg en opskrift';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Søg i opskrifter...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Ingen opskrifter fundet';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Opret opskrifter i fanen Opskrifter først';
+
+  @override
+  String get mealPlannerSave => 'Tilføj til plan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count af $total måltider planlagt';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Generer indkøbsliste';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Tilføj alle ingredienser fra planlagte måltider i denne uge til din indkøbsliste?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingrediens(er) føjet til din liste!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Ingen ingredienser at tilføje. Planlæg nogle måltider med opskrifter først.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Opret en indkøbsliste først.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Morgenmad';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Frokost';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Aftensmad';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Snack';
+
+  @override
+  String get mealPlannerDateLabel => 'Dato';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Intet planlagt for denne uge';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tryk på en dag for at begynde at planlægge dine måltider!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

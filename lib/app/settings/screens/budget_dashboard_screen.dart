@@ -20,7 +20,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
     if (listId == null) {
       return Scaffold(
         appBar: AppBar(title: Text(l10n.budgetDashboardTitle)),
-        body: Center(child: Text(l10n.selectListForDashboard)),
+        body: SafeArea(child: Center(child: Text(l10n.selectListForDashboard))),
       );
     }
 
@@ -35,7 +35,8 @@ class BudgetDashboardScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(l10n.spendingAnalysis),
       ),
-      body: itemsAsync.when(
+      body: SafeArea(
+        child: itemsAsync.when(
         data: (items) {
           if (items.isEmpty) {
             return Center(child: Text(l10n.noItemsToAnalyze));
@@ -147,6 +148,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
         },
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text(l10n.errorGeneric('$e'))),
+      ),
       ),
     );
   }

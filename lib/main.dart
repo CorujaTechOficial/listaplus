@@ -231,14 +231,27 @@ class _MyAppState extends ConsumerState<MyApp> {
     });
   }
 
+  Locale? _getLocale(String? savedLocale) {
+    if (savedLocale == null || savedLocale.isEmpty) {
+      return null;
+    }
+    final parts = savedLocale.split('_');
+    if (parts.length == 2) {
+      return Locale(parts[0], parts[1]);
+    }
+    return Locale(parts[0]);
+  }
+
   @override
   Widget build(BuildContext context) {
     final onboardingAsync = ref.watch(onboardingProvider);
     final darkModeAsync = ref.watch(darkModeProvider);
     final themeColorAsync = ref.watch(themeColorProvider);
     final localeAsync = ref.watch(localeSettingProvider);
+    final useDynamicColorAsync = ref.watch(useDynamicColorProvider);
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
     final colorSeed = themeColorAsync.value ?? const Color(0xFF4CAF50);
+    final useDynamicColor = useDynamicColorAsync.value ?? true;
 
     return onboardingAsync.when(
       data: (hasSeen) {
@@ -247,18 +260,21 @@ class _MyAppState extends ConsumerState<MyApp> {
             themeMode: themeMode,
             colorSeed: colorSeed,
             localeAsync: localeAsync,
+            useDynamicColor: useDynamicColor,
           );
         }
         return _buildMainShell(
           themeMode: themeMode,
           colorSeed: colorSeed,
           localeAsync: localeAsync,
+          useDynamicColor: useDynamicColor,
         );
       },
       loading: () => _buildLoadingShell(
         themeMode: themeMode,
         colorSeed: colorSeed,
         localeAsync: localeAsync,
+        useDynamicColor: useDynamicColor,
       ),
       error: (error, stack) {
         Sentry.captureException(error, stackTrace: stack);
@@ -267,6 +283,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           themeMode: themeMode,
           colorSeed: colorSeed,
           localeAsync: localeAsync,
+          useDynamicColor: useDynamicColor,
         );
       },
     );
@@ -276,15 +293,17 @@ class _MyAppState extends ConsumerState<MyApp> {
     required ThemeMode themeMode,
     required Color colorSeed,
     required AsyncValue<String?> localeAsync,
+    required bool useDynamicColor,
   }) {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed);
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
         return MaterialApp(
           title: 'Lista Plus',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
           darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
+          locale: _getLocale(localeAsync.value),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           localeResolutionCallback: _localeResolver(localeAsync),
@@ -298,15 +317,17 @@ class _MyAppState extends ConsumerState<MyApp> {
     required ThemeMode themeMode,
     required Color colorSeed,
     required AsyncValue<String?> localeAsync,
+    required bool useDynamicColor,
   }) {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed);
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
         return MaterialApp(
           title: 'Lista Plus',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
           darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
+          locale: _getLocale(localeAsync.value),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           localeResolutionCallback: _localeResolver(localeAsync),
@@ -320,19 +341,21 @@ class _MyAppState extends ConsumerState<MyApp> {
     required ThemeMode themeMode,
     required Color colorSeed,
     required AsyncValue<String?> localeAsync,
+    required bool useDynamicColor,
   }) {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed);
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
         return MaterialApp(
           title: 'Lista Plus',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
           darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
+          locale: _getLocale(localeAsync.value),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           localeResolutionCallback: _localeResolver(localeAsync),
-          home: const Scaffold(body: Center(child: CircularProgressIndicator())),
+          home: const Scaffold(body: SafeArea(child: Center(child: CircularProgressIndicator()))),
         );
       },
     );
@@ -342,8 +365,9 @@ class _MyAppState extends ConsumerState<MyApp> {
     ColorScheme? lightDynamic,
     ColorScheme? darkDynamic,
     Color colorSeed,
+    bool useDynamicColor,
   ) {
-    if (lightDynamic != null && darkDynamic != null) {
+    if (useDynamicColor && lightDynamic != null && darkDynamic != null) {
       return (lightDynamic.harmonized(), darkDynamic.harmonized());
     }
     return (
@@ -521,36 +545,38 @@ class ListLoader extends ConsumerWidget {
         }
         return HomeScreen(listId: listId);
       },
-      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
+      loading: () => const Scaffold(body: SafeArea(child: Center(child: CircularProgressIndicator()))),
       error: (e, stack) {
         debugPrint('[ListLoader] Error loading current list: $e');
         Sentry.captureException(e, stackTrace: stack);
         FirebaseCrashlytics.instance.recordError(e, stack, reason: 'ListLoader error');
         return Scaffold(
-          body: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(Spacing.xl),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.error_outline, color: Colors.red, size: 48),
-                  const SizedBox(height: Spacing.md),
-                  Text(
-                    'Erro ao carregar listas',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: Spacing.xs),
-                  Text(
-                    e.toString().replaceFirst('Exception: ', '').replaceFirst('StateError: ', ''),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: Spacing.lg),
-                  FilledButton.icon(
-                    onPressed: () => ref.invalidate(currentListIdProvider),
-                    icon: const Icon(Icons.refresh),
-                    label: const Text('Tentar Novamente'),
-                  ),
-                ],
+          body: SafeArea(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(Spacing.xl),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.error_outline, color: Colors.red, size: 48),
+                    const SizedBox(height: Spacing.md),
+                    Text(
+                      'Erro ao carregar listas',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: Spacing.xs),
+                    Text(
+                      e.toString().replaceFirst('Exception: ', '').replaceFirst('StateError: ', ''),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: Spacing.lg),
+                    FilledButton.icon(
+                      onPressed: () => ref.invalidate(currentListIdProvider),
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Tentar Novamente'),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

@@ -282,6 +282,12 @@ class AppLocalizationsEt extends AppLocalizations {
   String get languageSystem => 'Süsteemi vaikeväärtus';
 
   @override
+  String get chooseLanguage => 'Vali keel';
+
+  @override
+  String get searchLanguage => 'Otsi keelt...';
+
+  @override
   String get appearance => 'Välimus';
 
   @override
@@ -295,6 +301,12 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get themeColor => 'Teema värv';
+
+  @override
+  String get dynamicColors => 'Dünaamilised värvid';
+
+  @override
+  String get dynamicColorsSubtitle => 'Kasuta taustapildil põhinevaid värve';
 
   @override
   String get finance => 'Rahandus';
@@ -1038,128 +1050,245 @@ class AppLocalizationsEt extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Ava menüü';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Vaata retsepti';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Retsept loodud!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Muuda';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Kustuta';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Kustutada see retsept?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Kas olete kindel, et soovite kustutada retsepti \"$recipeName\"? Seda toimingut ei saa tühistada.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Koostisosad';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Juhised';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Ettevalmistusaeg';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Retsept salvestatud!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Salvestatud retsepte pole';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Loo oma esimene kohandatud retsept, puudutades allolevat nuppu.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Minu retseptid';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Uus retsept';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Retseptide laadimine...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Viga retseptide laadimisel';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Lisa koostisosa';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Salvesta';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Retsepti nimi';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Lühikirjeldus';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Ettevalmistusaeg (minutites)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Kirjuta üks samm reale...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Lisa foto';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Või kleebi pildi URL';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Sildid';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Retsepti sildid';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Soovitatud';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Otsi retsepte...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtreeri sildi järgi';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Kõik';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Retsept kustutatud';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Salvesta muudatused';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Muuda retsepti';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Uus retsept';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Kohustuslik';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Vali pildi allikas';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galerii';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Sisesta URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Retsepti pilt';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Eemalda pilt';
+
+  @override
+  String get mealPlannerTitle => 'Toidukorra planeerija';
+
+  @override
+  String get mealPlannerViewMonthly => 'Kuunäade';
+
+  @override
+  String get mealPlannerViewWeekly => 'Nädalanäade';
+
+  @override
+  String get mealPlannerNoMeals => 'Toidukordi pole planeeritud';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Toidukorra lisamiseks puuduta päeva';
+
+  @override
+  String get mealPlannerLoading => 'Toidukava laadimine...';
+
+  @override
+  String get mealPlannerError => 'Viga toidukava laadimisel';
+
+  @override
+  String get mealPlannerAddMeal => 'Lisa toidukord';
+
+  @override
+  String get mealPlannerEditMeal => 'Muuda toidukorda';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Eemalda toidukord';
+
+  @override
+  String get mealPlannerMealDeleted => 'Toidukord eemaldatud';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count portsjonit',
+      one: '$count portsjon',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Portsjonid';
+
+  @override
+  String get mealPlannerNoteLabel => 'Märkus (valikuline)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Vali retsept';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Otsi retsepte...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Retsepte ei leitud';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Loo esmalt retseptid vahekaardil Retseptid';
+
+  @override
+  String get mealPlannerSave => 'Lisa kavasse';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total toidukorda planeeritud';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Loo ostunimekiri';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Kas lisada kaikki selle nädala toidukordade koostisosad ostunimekirja?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count koostisosa lisatud nimekirja!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Koostisosi pole lisada. Planeeri esmalt mõned toidukorrad retseptidega.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Loo esmalt ostunimekiri.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Hommikusöök';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Lõunasöök';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Õhtusöök';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Oode';
+
+  @override
+  String get mealPlannerDateLabel => 'Kuupäev';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Selleks nädalaks pole midagi planeeritud';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Toidukordade planeerimiseks puuduta suvalist päeva!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

@@ -289,6 +289,12 @@ class AppLocalizationsNe extends AppLocalizations {
   String get languageSystem => 'प्रणाली पूर्वनिर्धारित';
 
   @override
+  String get chooseLanguage => 'भाषा चयन गर्नुहोस्';
+
+  @override
+  String get searchLanguage => 'भाषा खोज्नुहोस्...';
+
+  @override
   String get appearance => 'उपस्थिति';
 
   @override
@@ -302,6 +308,13 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get themeColor => 'थिम रङ';
+
+  @override
+  String get dynamicColors => 'गतिशील रंगहरू';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'तपाईंको वालपेपरमा आधारित रंगहरू प्रयोग गर्नुहोस्';
 
   @override
   String get finance => 'वित्त';
@@ -1053,130 +1066,248 @@ class AppLocalizationsNe extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'मेनु खोल्नुहोस्';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'रेसिपी हेर्नुहोस्';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'रेसिपी बनाइयो!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'सम्पादन गर्नुहोस्';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'मेटाउनुहोस्';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'यो रेसिपी मेटाउने?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'के तपाईं निश्चित रूपमा \"$recipeName\" मेटाउन चाहनुहुन्छ? यो कार्य फिर्ता गर्न सकिँदैन।';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'सामग्रीहरू';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'निर्देशनहरू';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'तयारी समय';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'रेसिपी सुरक्षित गरियो!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'कुनै रेसिपी सुरक्षित गरिएको छैन';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'तलको बटन ट्याप गरेर आफ्नो पहिलो अनुकूल रेसिपी बनाउनुहोस्।';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'मेरा रेसिपीहरू';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'नयाँ रेसिपी';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'तपाईंका रेसिपीहरू लोड हुँदैछन्...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'रेसिपी लोड गर्दा त्रुटि';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'सामग्री थप्नुहोस्';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'सुरक्षित गर्नुहोस्';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'रेसिपीको नाम';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'छोटो विवरण';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'तयारी समय (मिनेट)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'प्रत्येक पङ्क्तिमा एक चरण टाइप गर्नुहोस्...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'फोटो थप्नुहोस्';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'वा छवि URL टाँस्नुहोस्';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'ट्यागहरू';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'रेसिपी ट्यागहरू';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'सुझाइएको';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'रेसिपी खोज्नुहोस्...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'ट्याग द्वारा फिल्टर गर्नुहोस्';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'सबै';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'रेसिपी मेटाइयो';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'परिवर्तनहरू सुरक्षित गर्नुहोस्';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'रेसिपी सम्पादन गर्नुहोस्';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'नयाँ रेसिपी';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'आवश्यक';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'छवि स्रोत चयन गर्नुहोस्';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'ग्यालरी';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL प्रविष्ट गर्नुहोस्';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'रेसिपीको छवि';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'छवि हटाउनुहोस्';
+
+  @override
+  String get mealPlannerTitle => 'खाना योजनाकार';
+
+  @override
+  String get mealPlannerViewMonthly => 'मासिक दृश्य';
+
+  @override
+  String get mealPlannerViewWeekly => 'साप्ताहिक दृश्य';
+
+  @override
+  String get mealPlannerNoMeals => 'कुनै खाना योजना गरिएको छैन';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'खाना थप्नको लागि कुनै दिनमा ट्याप गर्नुहोस्';
+
+  @override
+  String get mealPlannerLoading => 'खाना योजना लोड हुँदैछ...';
+
+  @override
+  String get mealPlannerError => 'खाना योजना लोड गर्दा त्रुटि';
+
+  @override
+  String get mealPlannerAddMeal => 'खाना थप्नुहोस्';
+
+  @override
+  String get mealPlannerEditMeal => 'खाना सम्पादन गर्नुहोस्';
+
+  @override
+  String get mealPlannerDeleteMeal => 'खाना हटाउनुहोस्';
+
+  @override
+  String get mealPlannerMealDeleted => 'खाना हटाइयो';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count व्यक्ति',
+      one: '$count व्यक्ति',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'व्यक्ति';
+
+  @override
+  String get mealPlannerNoteLabel => 'नोट (वैकल्पिक)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'रेसिपी चयन गर्नुहोस्';
+
+  @override
+  String get mealPlannerSearchRecipes => 'रेसिपी खोज्नुहोस्...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'कुनै रेसिपी फेला परेन';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'पहिले रेसिपी ट्याबमा रेसिपीहरू बनाउनुहोस्';
+
+  @override
+  String get mealPlannerSave => 'योजनामा थप्नुहोस्';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total मध्ये $count खाना योजना गरिएको';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'किनमेल सूची बनाउनुहोस्';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'यो हप्ताको योजनाबद्ध खानाका सबै सामग्रीहरू तपाईंको किनमेल सूचीमा थप्ने?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'तपाईंको सूचीमा $count सामग्री(हरू) थपियो!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'थप्नका लागि कुनै सामग्री छैन। पहिले रेसिपीहरू सहित केही खानाको योजना बनाउनुहोस्।';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'पहिले किनमेल सूची बनाउनुहोस्।';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'बिहानको खाजा';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'दिउँसोको खाना';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'बेलुकाको खाना';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'खाजा';
+
+  @override
+  String get mealPlannerDateLabel => 'मिति';
+
+  @override
+  String get mealPlannerWeekEmpty => 'यो हप्ताको लागि केहि योजना गरिएको छैन';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'आफ्नो खाना योजना सुरु गर्न कुनै पनि दिनमा ट्याप गर्नुहोस्!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes मिनेट';
+  }
 }
 
 /// The translations for Nepali, as used in Nepal (`ne_NP`).
@@ -1458,6 +1589,12 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String get languageSystem => 'प्रणाली पूर्वनिर्धारित';
 
   @override
+  String get chooseLanguage => 'भाषा चयन गर्नुहोस्';
+
+  @override
+  String get searchLanguage => 'भाषा खोज्नुहोस्...';
+
+  @override
   String get appearance => 'उपस्थिति';
 
   @override
@@ -1471,6 +1608,13 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get themeColor => 'थिम रङ';
+
+  @override
+  String get dynamicColors => 'गतिशील रंगहरू';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'तपाईंको वालपेपरमा आधारित रंगहरू प्रयोग गर्नुहोस्';
 
   @override
   String get finance => 'वित्त';
@@ -2214,4 +2358,248 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'मेनु खोल्नुहोस्';
+
+  @override
+  String get viewRecipe => 'रेसिपी हेर्नुहोस्';
+
+  @override
+  String get recipeCreated => 'रेसिपी बनाइयो!';
+
+  @override
+  String get editRecipe => 'सम्पादन गर्नुहोस्';
+
+  @override
+  String get deleteRecipe => 'मेटाउनुहोस्';
+
+  @override
+  String get deleteRecipeConfirm => 'यो रेसिपी मेटाउने?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'के तपाईं निश्चित रूपमा \"$recipeName\" मेटाउन चाहनुहुन्छ? यो कार्य फिर्ता गर्न सकिँदैन।';
+  }
+
+  @override
+  String get ingredients => 'सामग्रीहरू';
+
+  @override
+  String get instructions => 'निर्देशनहरू';
+
+  @override
+  String get prepTime => 'तयारी समय';
+
+  @override
+  String get recipeSaved => 'रेसिपी सुरक्षित गरियो!';
+
+  @override
+  String get noRecipesSaved => 'कुनै रेसिपी सुरक्षित गरिएको छैन';
+
+  @override
+  String get noRecipesSavedHint =>
+      'तलको बटन ट्याप गरेर आफ्नो पहिलो अनुकूल रेसिपी बनाउनुहोस्।';
+
+  @override
+  String get myRecipes => 'मेरा रेसिपीहरू';
+
+  @override
+  String get newRecipe => 'नयाँ रेसिपी';
+
+  @override
+  String get loadingRecipes => 'तपाईंका रेसिपीहरू लोड हुँदैछन्...';
+
+  @override
+  String get errorLoadingRecipes => 'रेसिपी लोड गर्दा त्रुटि';
+
+  @override
+  String get addIngredient => 'सामग्री थप्नुहोस्';
+
+  @override
+  String get saveRecipe => 'सुरक्षित गर्नुहोस्';
+
+  @override
+  String get recipeName => 'रेसिपीको नाम';
+
+  @override
+  String get shortDescription => 'छोटो विवरण';
+
+  @override
+  String get prepTimeMinutes => 'तयारी समय (मिनेट)';
+
+  @override
+  String get instructionsHint => 'प्रत्येक पङ्क्तिमा एक चरण टाइप गर्नुहोस्...';
+
+  @override
+  String get addPhoto => 'फोटो थप्नुहोस्';
+
+  @override
+  String get imageUrlPlaceholder => 'वा छवि URL टाँस्नुहोस्';
+
+  @override
+  String get tags => 'ट्यागहरू';
+
+  @override
+  String get recipeTags => 'रेसिपी ट्यागहरू';
+
+  @override
+  String get suggestedTags => 'सुझाइएको';
+
+  @override
+  String get searchRecipes => 'रेसिपी खोज्नुहोस्...';
+
+  @override
+  String get filterByTag => 'ट्याग द्वारा फिल्टर गर्नुहोस्';
+
+  @override
+  String get allTags => 'सबै';
+
+  @override
+  String get recipeDeleted => 'रेसिपी मेटाइयो';
+
+  @override
+  String get saveChanges => 'परिवर्तनहरू सुरक्षित गर्नुहोस्';
+
+  @override
+  String get editRecipeTitle => 'रेसिपी सम्पादन गर्नुहोस्';
+
+  @override
+  String get newRecipeTitle => 'नयाँ रेसिपी';
+
+  @override
+  String get requiredField => 'आवश्यक';
+
+  @override
+  String get chooseImageSource => 'छवि स्रोत चयन गर्नुहोस्';
+
+  @override
+  String get gallery => 'ग्यालरी';
+
+  @override
+  String get enterUrl => 'URL प्रविष्ट गर्नुहोस्';
+
+  @override
+  String get recipeImage => 'रेसिपीको छवि';
+
+  @override
+  String get removeImage => 'छवि हटाउनुहोस्';
+
+  @override
+  String get mealPlannerTitle => 'खाना योजनाकार';
+
+  @override
+  String get mealPlannerViewMonthly => 'मासिक दृश्य';
+
+  @override
+  String get mealPlannerViewWeekly => 'साप्ताहिक दृश्य';
+
+  @override
+  String get mealPlannerNoMeals => 'कुनै खाना योजना गरिएको छैन';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'खाना थप्नको लागि कुनै दिनमा ट्याप गर्नुहोस्';
+
+  @override
+  String get mealPlannerLoading => 'खाना योजना लोड हुँदैछ...';
+
+  @override
+  String get mealPlannerError => 'खाना योजना लोड गर्दा त्रुटि';
+
+  @override
+  String get mealPlannerAddMeal => 'खाना थप्नुहोस्';
+
+  @override
+  String get mealPlannerEditMeal => 'खाना सम्पादन गर्नुहोस्';
+
+  @override
+  String get mealPlannerDeleteMeal => 'खाना हटाउनुहोस्';
+
+  @override
+  String get mealPlannerMealDeleted => 'खाना हटाइयो';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count व्यक्ति',
+      one: '$count व्यक्ति',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'व्यक्ति';
+
+  @override
+  String get mealPlannerNoteLabel => 'नोट (वैकल्पिक)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'रेसिपी चयन गर्नुहोस्';
+
+  @override
+  String get mealPlannerSearchRecipes => 'रेसिपी खोज्नुहोस्...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'कुनै रेसिपी फेला परेन';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'पहिले रेसिपी ट्याबमा रेसिपीहरू बनाउनुहोस्';
+
+  @override
+  String get mealPlannerSave => 'योजनामा थप्नुहोस्';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total मध्ये $count खाना योजना गरिएको';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'किनमेल सूची बनाउनुहोस्';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'यो हप्ताको योजनाबद्ध खानाका सबै सामग्रीहरू तपाईंको किनमेल सूचीमा थप्ने?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'तपाईंको सूचीमा $count सामग्री(हरू) थपियो!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'थप्नका लागि कुनै सामग्री छैन। पहिले रेसिपीहरू सहित केही खानाको योजना बनाउनुहोस्।';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'पहिले किनमेल सूची बनाउनुहोस्।';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'बिहानको खाजा';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'दिउँसोको खाना';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'बेलुकाको खाना';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'खाजा';
+
+  @override
+  String get mealPlannerDateLabel => 'मिति';
+
+  @override
+  String get mealPlannerWeekEmpty => 'यो हप्ताको लागि केहि योजना गरिएको छैन';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'आफ्नो खाना योजना सुरु गर्न कुनै पनि दिनमा ट्याप गर्नुहोस्!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes मिनेट';
+  }
 }

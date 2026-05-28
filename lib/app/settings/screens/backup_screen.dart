@@ -37,9 +37,10 @@ class BackupScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.backupNav)),
-      body: Padding(
-        padding: const EdgeInsets.all(Spacing.md),
-        child: Column(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(Spacing.md),
+          child: Column(
           children: [
             Card(
               child: ListTile(
@@ -106,6 +107,7 @@ class BackupScreen extends ConsumerWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }

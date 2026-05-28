@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import '../models/shopping_item.dart';
 import '../models/shopping_list.dart';
 import '../models/chat_message.dart';
+import '../models/chat_session_model.dart';
 import '../models/pantry_item.dart';
 import '../models/category_data.dart';
 import 'logger_service.dart';
@@ -558,13 +559,90 @@ class FirestoreService implements StorageBackend {
     });
   }
 
+  CollectionReference<Map<String, dynamic>> _getChatSessionsColl(String? listId) {
+    return listId != null
+        ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_sessions')
+        : _db.collection('users').doc(_uid).collection('global_chat_sessions');
+  }
+
+  CollectionReference<Map<String, dynamic>> _getChatMessagesColl(String? listId, String sessionId) {
+    return _getChatSessionsColl(listId).doc(sessionId).collection('messages');
+  }
+
   @override
-  Future<List<ChatMessage>> loadChatMessages(String? listId) async {
+  Future<List<ChatSessionModel>> loadChatSessions(String? listId) async {
     return _retry(() async {
-      final coll = listId != null
+      // 1. Check for legacy messages
+      final legacyColl = listId != null
           ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
           : _db.collection('users').doc(_uid).collection('global_chat_messages');
-          
+      
+      final legacySnap = await legacyColl.get();
+      if (legacySnap.docs.isNotEmpty) {
+        // Migration: Move legacy messages to a new session
+        final legacySession = ChatSessionModel(
+          title: 'Conversa Anterior',
+          createdAt: DateTime.now().subtract(const Duration(days: 1)),
+          listId: listId,
+        );
+        
+        await saveChatSession(listId, legacySession);
+        final batch = _db.batch();
+        for (final doc in legacySnap.docs) {
+          final messageData = doc.data();
+          final newDocRef = _getChatMessagesColl(listId, legacySession.id).doc(doc.id);
+          batch.set(newDocRef, messageData);
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      }
+
+      // 2. Load sessions
+      final coll = _getChatSessionsColl(listId);
+      final snap = await coll.orderBy('updatedAt', descending: true).get();
+      return snap.docs.map((d) {
+        final data = d.data();
+        data['id'] = d.id;
+        return ChatSessionModel.fromJson(data);
+      }).toList();
+    });
+  }
+
+  @override
+  Future<void> saveChatSession(String? listId, ChatSessionModel session) async {
+    return _retry(() async {
+      final coll = _getChatSessionsColl(listId);
+      await coll.doc(session.id).set(session.toJson());
+    });
+  }
+
+  @override
+  Future<void> deleteChatSession(String? listId, String sessionId) async {
+    return _retry(() async {
+      final sessionRef = _getChatSessionsColl(listId).doc(sessionId);
+      
+      // Delete messages first
+      final messagesColl = sessionRef.collection('messages');
+      final snap = await messagesColl.get();
+      if (snap.docs.isNotEmpty) {
+        final batch = _db.batch();
+        for (final doc in snap.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      }
+      
+      await sessionRef.delete();
+    });
+  }
+
+  @override
+  Future<List<ChatMessage>> loadChatMessages(String? listId, {String? sessionId}) async {
+    if (sessionId == null) {
+      return [];
+    }
+    return _retry(() async {
+      final coll = _getChatMessagesColl(listId, sessionId);
       final snap = await coll.orderBy('timestamp').get();
       return snap.docs.map((d) {
         final data = d.data();
@@ -575,34 +653,39 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
-  Future<void> saveChatMessage(String? listId, ChatMessage message) async {
+  Future<void> saveChatMessage(String? listId, ChatMessage message, {String? sessionId}) async {
+    if (sessionId == null) {
+      return;
+    }
     return _retry(() async {
-      final coll = listId != null
-          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-          
+      final coll = _getChatMessagesColl(listId, sessionId);
       await coll.doc(message.id).set(message.toJson());
+      
+      // Update session's updatedAt
+      await _getChatSessionsColl(listId).doc(sessionId).update({
+        'updatedAt': DateTime.now().toIso8601String(),
+      });
     });
   }
 
   @override
-  Future<void> deleteChatMessage(String? listId, String messageId) async {
+  Future<void> deleteChatMessage(String? listId, String messageId, {String? sessionId}) async {
+    if (sessionId == null) {
+      return;
+    }
     return _retry(() async {
-      final coll = listId != null
-          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-          
+      final coll = _getChatMessagesColl(listId, sessionId);
       await coll.doc(messageId).delete();
     });
   }
 
   @override
-  Future<void> clearChatHistory(String? listId) async {
+  Future<void> clearChatHistory(String? listId, {String? sessionId}) async {
+    if (sessionId == null) {
+      return;
+    }
     return _retry(() async {
-      final coll = listId != null
-          ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
-          : _db.collection('users').doc(_uid).collection('global_chat_messages');
-          
+      final coll = _getChatMessagesColl(listId, sessionId);
       final snap = await coll.get();
       const limit = 500;
       for (var i = 0; i < snap.docs.length; i += limit) {

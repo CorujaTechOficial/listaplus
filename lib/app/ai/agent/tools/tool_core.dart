@@ -105,6 +105,7 @@ class ToolResult {
     required this.toolCallId,
     required this.content,
     this.success = true,
+    this.requiresUnlock = false,
     this.resultData,
   });
 
@@ -113,18 +114,30 @@ class ToolResult {
     String toolCallId = '',
     Map<String, dynamic>? data,
   }) {
-    return ToolResult(toolCallId: toolCallId, content: content, success: true, resultData: data);
+    return ToolResult(
+      toolCallId: toolCallId,
+      content: content,
+      success: true,
+      resultData: data,
+    );
   }
 
   factory ToolResult.fromError(
     String content, {
     String toolCallId = '',
+    bool requiresUnlock = false,
   }) {
-    return ToolResult(toolCallId: toolCallId, content: content, success: false);
+    return ToolResult(
+      toolCallId: toolCallId,
+      content: content,
+      success: false,
+      requiresUnlock: requiresUnlock,
+    );
   }
 
   final String toolCallId;
   final String content;
   final bool success;
+  final bool requiresUnlock;
   final Map<String, dynamic>? resultData;
 }

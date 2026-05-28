@@ -15,8 +15,10 @@ class InitErrorScreen extends StatelessWidget {
         builder: (context) {
           final message = AppLocalizations.of(context)?.errorGeneric(error.toString()) ?? 'Erro: $error';
           return Scaffold(
-            body: Center(
-              child: Text(message),
+            body: SafeArea(
+              child: Center(
+                child: Text(message),
+              ),
             ),
           );
         },

@@ -532,5 +532,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "הוסף רכיב",
+  "addPhoto": "הוסף תמונה",
+  "allTags": "הכל",
+  "chooseImageSource": "בחר מקור תמונה",
+  "chooseLanguage": "בחר שפה",
+  "deleteRecipe": "מחק",
+  "deleteRecipeConfirm": "למחוק את המתכון הזה?",
+  "deleteRecipeConfirmMsg": "האם אתה בטוח שברצונך למחוק את \"{recipeName}\"? לא ניתן לבטל פעולה זו.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "צבעים דינמיים",
+  "dynamicColorsSubtitle": "השתמש בצבעים המבוססים על הטפט שלך",
+  "editRecipe": "ערוך",
+  "editRecipeTitle": "ערוך מתכון",
+  "enterUrl": "הזן URL",
+  "errorLoadingRecipes": "שגיאה בטעינת מתכונים",
+  "filterByTag": "סנן לפי תגית",
+  "gallery": "גלריה",
+  "imageUrlPlaceholder": "או הדבק URL של תמונה",
+  "ingredients": "רכיבים",
+  "instructions": "הוראות",
+  "instructionsHint": "הקלד שלב אחד בכל שורה...",
+  "loadingRecipes": "טוען את המתכונים שלך...",
+  "mealPlannerAddMeal": "הוסף ארוחה",
+  "mealPlannerDateLabel": "תאריך",
+  "mealPlannerDeleteMeal": "הסר ארוחה",
+  "mealPlannerEditMeal": "ערוך ארוחה",
+  "mealPlannerError": "שגיאה בטעינת תוכנית הארוחות",
+  "mealPlannerGenerateList": "צור רשימת קניות",
+  "mealPlannerGenerateListConfirm": "להוסיף את כל הרכיבים מהארוחות המתוכננות השבוע לרשימת הקניות שלך?",
+  "mealPlannerGenerateListEmpty": "אין רכיבים להוספה. תכנן תחילה ארוחות עם מתכונים.",
+  "mealPlannerGenerateListNoList": "צור רשימת קניות תחילה.",
+  "mealPlannerGenerateListSuccess": "{count} רכיבים נוספו לרשימה שלך!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "טוען תוכנית ארוחות...",
+  "mealPlannerMealDeleted": "הארוחה הוסרה",
+  "mealPlannerMealTypeBreakfast": "ארוחת בוקר",
+  "mealPlannerMealTypeDinner": "ארוחת ערב",
+  "mealPlannerMealTypeLunch": "ארוחת צהריים",
+  "mealPlannerMealTypeSnack": "חטיף",
+  "mealPlannerNoMeals": "אין ארוחות מתוכננות",
+  "mealPlannerNoMealsHint": "הקש על יום כדי להוסיף ארוחה",
+  "mealPlannerNoRecipesFound": "לא נמצאו מתכונים",
+  "mealPlannerNoRecipesHint": "צור מתכונים בלשונית המתכונים תחילה",
+  "mealPlannerNoteLabel": "הערה (אופציונלי)",
+  "mealPlannerPrepTime": "{minutes} דקות",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "הוסף לתוכנית",
+  "mealPlannerSearchRecipes": "חפש מתכונים...",
+  "mealPlannerSelectRecipe": "בחר מתכון",
+  "mealPlannerServings": "{count,plural, one{{count} מנה} other{{count} מנות}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "מנות",
+  "mealPlannerTitle": "מתכנן ארוחות",
+  "mealPlannerViewMonthly": "תצוגה חודשית",
+  "mealPlannerViewWeekly": "תצוגה שבועית",
+  "mealPlannerWeekEmpty": "שום דבר לא מתוכנן לשבוע זה",
+  "mealPlannerWeekEmptyHint": "הקש על יום כלשהו כדי להתחיל לתכנן את הארוחות שלך!",
+  "mealPlannerWeekProgress": "{count} מתוך {total} ארוחות מתוכננות",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "המתכונים שלי",
+  "newRecipe": "מתכון חדש",
+  "newRecipeTitle": "מתכון חדש",
+  "noRecipesSaved": "אין מתכונים שמורים",
+  "noRecipesSavedHint": "צור את המתכון המותאם אישית הראשון שלך על ידי הקשה על הכפתור למטה.",
+  "openMenu": "פתח תפריט",
+  "prepTime": "זמן הכנה",
+  "prepTimeMinutes": "זמן הכנה (דקות)",
+  "recipeCreated": "המתכון נוצר!",
+  "recipeDeleted": "המתכון נמחק",
+  "recipeImage": "תמונת מתכון",
+  "recipeName": "שם המתכון",
+  "recipeSaved": "המתכון נשמר!",
+  "recipeTags": "תגיות מתכון",
+  "removeImage": "הסר תמונה",
+  "requiredField": "שדה חובה",
+  "saveChanges": "שמור שינויים",
+  "saveRecipe": "שמור",
+  "searchLanguage": "חפש שפה...",
+  "searchRecipes": "חפש מתכונים...",
+  "shortDescription": "תיאור קצר",
+  "suggestedTags": "מוצעים",
+  "tags": "תגיות",
+  "viewRecipe": "צפה במתכון"
 }

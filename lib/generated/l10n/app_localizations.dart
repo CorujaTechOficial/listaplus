@@ -780,6 +780,18 @@ abstract class AppLocalizations {
   /// **'System default'**
   String get languageSystem;
 
+  /// No description provided for @chooseLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Language'**
+  String get chooseLanguage;
+
+  /// No description provided for @searchLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Search language...'**
+  String get searchLanguage;
+
   /// No description provided for @appearance.
   ///
   /// In en, this message translates to:
@@ -809,6 +821,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Theme color'**
   String get themeColor;
+
+  /// No description provided for @dynamicColors.
+  ///
+  /// In en, this message translates to:
+  /// **'Dynamic colors'**
+  String get dynamicColors;
+
+  /// No description provided for @dynamicColorsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Use colors based on your wallpaper'**
+  String get dynamicColorsSubtitle;
 
   /// No description provided for @finance.
   ///
@@ -2447,6 +2471,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove image'**
   String get removeImage;
+
+  /// No description provided for @mealPlannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal Planner'**
+  String get mealPlannerTitle;
+
+  /// No description provided for @mealPlannerViewMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly view'**
+  String get mealPlannerViewMonthly;
+
+  /// No description provided for @mealPlannerViewWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly view'**
+  String get mealPlannerViewWeekly;
+
+  /// No description provided for @mealPlannerNoMeals.
+  ///
+  /// In en, this message translates to:
+  /// **'No meals planned'**
+  String get mealPlannerNoMeals;
+
+  /// No description provided for @mealPlannerNoMealsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a day to add a meal'**
+  String get mealPlannerNoMealsHint;
+
+  /// No description provided for @mealPlannerLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading meal plan...'**
+  String get mealPlannerLoading;
+
+  /// No description provided for @mealPlannerError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading meal plan'**
+  String get mealPlannerError;
+
+  /// No description provided for @mealPlannerAddMeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Meal'**
+  String get mealPlannerAddMeal;
+
+  /// No description provided for @mealPlannerEditMeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Meal'**
+  String get mealPlannerEditMeal;
+
+  /// No description provided for @mealPlannerDeleteMeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove meal'**
+  String get mealPlannerDeleteMeal;
+
+  /// No description provided for @mealPlannerMealDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal removed'**
+  String get mealPlannerMealDeleted;
+
+  /// No description provided for @mealPlannerServings.
+  ///
+  /// In en, this message translates to:
+  /// **'{count,plural, one{{count} serving} other{{count} servings}}'**
+  String mealPlannerServings(int count);
+
+  /// No description provided for @mealPlannerServingsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Servings'**
+  String get mealPlannerServingsLabel;
+
+  /// No description provided for @mealPlannerNoteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Note (optional)'**
+  String get mealPlannerNoteLabel;
+
+  /// No description provided for @mealPlannerSelectRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a recipe'**
+  String get mealPlannerSelectRecipe;
+
+  /// No description provided for @mealPlannerSearchRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Search recipes...'**
+  String get mealPlannerSearchRecipes;
+
+  /// No description provided for @mealPlannerNoRecipesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No recipes found'**
+  String get mealPlannerNoRecipesFound;
+
+  /// No description provided for @mealPlannerNoRecipesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Create recipes in the Recipes tab first'**
+  String get mealPlannerNoRecipesHint;
+
+  /// No description provided for @mealPlannerSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to plan'**
+  String get mealPlannerSave;
+
+  /// No description provided for @mealPlannerWeekProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {total} meals planned'**
+  String mealPlannerWeekProgress(int count, int total);
+
+  /// No description provided for @mealPlannerGenerateList.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate shopping list'**
+  String get mealPlannerGenerateList;
+
+  /// No description provided for @mealPlannerGenerateListConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Add all ingredients from planned meals this week to your shopping list?'**
+  String get mealPlannerGenerateListConfirm;
+
+  /// No description provided for @mealPlannerGenerateListSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} ingredient(s) added to your list!'**
+  String mealPlannerGenerateListSuccess(int count);
+
+  /// No description provided for @mealPlannerGenerateListEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No ingredients to add. Plan some meals with recipes first.'**
+  String get mealPlannerGenerateListEmpty;
+
+  /// No description provided for @mealPlannerGenerateListNoList.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a shopping list first.'**
+  String get mealPlannerGenerateListNoList;
+
+  /// No description provided for @mealPlannerMealTypeBreakfast.
+  ///
+  /// In en, this message translates to:
+  /// **'Breakfast'**
+  String get mealPlannerMealTypeBreakfast;
+
+  /// No description provided for @mealPlannerMealTypeLunch.
+  ///
+  /// In en, this message translates to:
+  /// **'Lunch'**
+  String get mealPlannerMealTypeLunch;
+
+  /// No description provided for @mealPlannerMealTypeDinner.
+  ///
+  /// In en, this message translates to:
+  /// **'Dinner'**
+  String get mealPlannerMealTypeDinner;
+
+  /// No description provided for @mealPlannerMealTypeSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Snack'**
+  String get mealPlannerMealTypeSnack;
+
+  /// No description provided for @mealPlannerDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get mealPlannerDateLabel;
+
+  /// No description provided for @mealPlannerWeekEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing planned for this week'**
+  String get mealPlannerWeekEmpty;
+
+  /// No description provided for @mealPlannerWeekEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap any day to start planning your meals!'**
+  String get mealPlannerWeekEmptyHint;
+
+  /// No description provided for @mealPlannerPrepTime.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String mealPlannerPrepTime(int minutes);
 }
 
 class _AppLocalizationsDelegate

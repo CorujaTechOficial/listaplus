@@ -4,6 +4,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/revenuecat_service.dart';
 import '../../services/revenuecat_service_impl.dart';
+import '../../services/ad_service.dart';
+import '../../services/ad_service_impl.dart';
 import '../../services/logger_service.dart';
 
 part 'monetization_providers.g.dart';
@@ -12,6 +14,13 @@ const String listaPlusProEntitlement = 'lista_plus_pro';
 
 final revenueCatServiceProvider = Provider<RevenueCatService>((ref) {
   return RevenueCatServiceImpl();
+});
+
+final adServiceProvider = Provider<AdService>((ref) {
+  final service = AdServiceImpl();
+  // ignore: discarded_futures
+  service.initialize();
+  return service;
 });
 
 @riverpod

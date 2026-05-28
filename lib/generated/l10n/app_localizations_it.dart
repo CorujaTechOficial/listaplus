@@ -291,6 +291,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get languageSystem => 'Predefinito sistema';
 
   @override
+  String get chooseLanguage => 'Seleziona Lingua';
+
+  @override
+  String get searchLanguage => 'Cerca lingua...';
+
+  @override
   String get appearance => 'Aspetto';
 
   @override
@@ -304,6 +310,12 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get themeColor => 'Colore tema';
+
+  @override
+  String get dynamicColors => 'Colori dinamici';
+
+  @override
+  String get dynamicColorsSubtitle => 'Usa i colori basati sul tuo sfondo';
 
   @override
   String get finance => 'Finanze';
@@ -1055,130 +1067,250 @@ class AppLocalizationsIt extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Apri menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Visualizza Ricetta';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Ricetta creata!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Modifica';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Elimina';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Eliminare questa ricetta?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Sei sicuro di voler eliminare \"$recipeName\"? Questa azione non può essere annullata.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingredienti';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Istruzioni';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Tempo di prep.';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Ricetta salvata!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nessuna ricetta salvata';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Crea la tua prima ricetta personalizzata toccando il pulsante qui sotto.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Le Mie Ricette';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Nuova Ricetta';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Caricamento ricette...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Errore nel caricamento delle ricette';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Aggiungi ingrediente';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Salva';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Nome ricetta';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Breve descrizione';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Tempo di preparazione (minuti)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Scrivi un passaggio per riga...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Aggiungi foto';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'O incolla l\'URL di un\'immagine';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tag';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Tag ricetta';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Suggeriti';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Cerca ricette...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtra per tag';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Tutti';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Ricetta eliminata';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Salva modifiche';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Modifica Ricetta';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Nuova Ricetta';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Obbligatorio';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Scegli sorgente immagine';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galleria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Inserisci URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Immagine ricetta';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Rimuovi immagine';
+
+  @override
+  String get mealPlannerTitle => 'Pianificatore Pasti';
+
+  @override
+  String get mealPlannerViewMonthly => 'Vista mensile';
+
+  @override
+  String get mealPlannerViewWeekly => 'Vista settimanale';
+
+  @override
+  String get mealPlannerNoMeals => 'Nessun pasto pianificato';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Tocca un giorno per aggiungere un pasto';
+
+  @override
+  String get mealPlannerLoading => 'Caricamento piano alimentare...';
+
+  @override
+  String get mealPlannerError => 'Errore nel caricamento del piano alimentare';
+
+  @override
+  String get mealPlannerAddMeal => 'Aggiungi Pasto';
+
+  @override
+  String get mealPlannerEditMeal => 'Modifica Pasto';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Rimuovi pasto';
+
+  @override
+  String get mealPlannerMealDeleted => 'Pasto rimosso';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porzioni',
+      one: '$count porzione',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porzioni';
+
+  @override
+  String get mealPlannerNoteLabel => 'Nota (opzionale)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Seleziona una ricetta';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Cerca ricette...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Nessuna ricetta trovata';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Crea prima delle ricette nella scheda Ricette';
+
+  @override
+  String get mealPlannerSave => 'Aggiungi al piano';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count di $total pasti pianificati';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Genera lista della spesa';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Aggiungere tutti gli ingredienti dei pasti pianificati per questa settimana alla lista della spesa?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingredienti aggiunti alla tua lista!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Nessun ingrediente da aggiungere. Pianifica prima dei pasti con ricette.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Crea prima una lista della spesa.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Colazione';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Pranzo';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Cena';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Merenda';
+
+  @override
+  String get mealPlannerDateLabel => 'Data';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'Nulla di pianificato per questa settimana';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tocca un giorno qualsiasi per iniziare a pianificare i tuoi pasti!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }
 
 /// The translations for Italian, as used in Italy (`it_IT`).
@@ -1468,6 +1600,12 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get languageSystem => 'Predefinito sistema';
 
   @override
+  String get chooseLanguage => 'Seleziona Lingua';
+
+  @override
+  String get searchLanguage => 'Cerca lingua...';
+
+  @override
   String get appearance => 'Aspetto';
 
   @override
@@ -1481,6 +1619,12 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
 
   @override
   String get themeColor => 'Colore tema';
+
+  @override
+  String get dynamicColors => 'Colori dinamici';
+
+  @override
+  String get dynamicColorsSubtitle => 'Usa i colori basati sul tuo sfondo';
 
   @override
   String get finance => 'Finanze';
@@ -2230,4 +2374,250 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Apri menu';
+
+  @override
+  String get viewRecipe => 'Visualizza Ricetta';
+
+  @override
+  String get recipeCreated => 'Ricetta creata!';
+
+  @override
+  String get editRecipe => 'Modifica';
+
+  @override
+  String get deleteRecipe => 'Elimina';
+
+  @override
+  String get deleteRecipeConfirm => 'Eliminare questa ricetta?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Sei sicuro di voler eliminare \"$recipeName\"? Questa azione non può essere annullata.';
+  }
+
+  @override
+  String get ingredients => 'Ingredienti';
+
+  @override
+  String get instructions => 'Istruzioni';
+
+  @override
+  String get prepTime => 'Tempo di prep.';
+
+  @override
+  String get recipeSaved => 'Ricetta salvata!';
+
+  @override
+  String get noRecipesSaved => 'Nessuna ricetta salvata';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Crea la tua prima ricetta personalizzata toccando il pulsante qui sotto.';
+
+  @override
+  String get myRecipes => 'Le Mie Ricette';
+
+  @override
+  String get newRecipe => 'Nuova Ricetta';
+
+  @override
+  String get loadingRecipes => 'Caricamento ricette...';
+
+  @override
+  String get errorLoadingRecipes => 'Errore nel caricamento delle ricette';
+
+  @override
+  String get addIngredient => 'Aggiungi ingrediente';
+
+  @override
+  String get saveRecipe => 'Salva';
+
+  @override
+  String get recipeName => 'Nome ricetta';
+
+  @override
+  String get shortDescription => 'Breve descrizione';
+
+  @override
+  String get prepTimeMinutes => 'Tempo di preparazione (minuti)';
+
+  @override
+  String get instructionsHint => 'Scrivi un passaggio per riga...';
+
+  @override
+  String get addPhoto => 'Aggiungi foto';
+
+  @override
+  String get imageUrlPlaceholder => 'O incolla l\'URL di un\'immagine';
+
+  @override
+  String get tags => 'Tag';
+
+  @override
+  String get recipeTags => 'Tag ricetta';
+
+  @override
+  String get suggestedTags => 'Suggeriti';
+
+  @override
+  String get searchRecipes => 'Cerca ricette...';
+
+  @override
+  String get filterByTag => 'Filtra per tag';
+
+  @override
+  String get allTags => 'Tutti';
+
+  @override
+  String get recipeDeleted => 'Ricetta eliminata';
+
+  @override
+  String get saveChanges => 'Salva modifiche';
+
+  @override
+  String get editRecipeTitle => 'Modifica Ricetta';
+
+  @override
+  String get newRecipeTitle => 'Nuova Ricetta';
+
+  @override
+  String get requiredField => 'Obbligatorio';
+
+  @override
+  String get chooseImageSource => 'Scegli sorgente immagine';
+
+  @override
+  String get gallery => 'Galleria';
+
+  @override
+  String get enterUrl => 'Inserisci URL';
+
+  @override
+  String get recipeImage => 'Immagine ricetta';
+
+  @override
+  String get removeImage => 'Rimuovi immagine';
+
+  @override
+  String get mealPlannerTitle => 'Pianificatore Pasti';
+
+  @override
+  String get mealPlannerViewMonthly => 'Vista mensile';
+
+  @override
+  String get mealPlannerViewWeekly => 'Vista settimanale';
+
+  @override
+  String get mealPlannerNoMeals => 'Nessun pasto pianificato';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Tocca un giorno per aggiungere un pasto';
+
+  @override
+  String get mealPlannerLoading => 'Caricamento piano alimentare...';
+
+  @override
+  String get mealPlannerError => 'Errore nel caricamento del piano alimentare';
+
+  @override
+  String get mealPlannerAddMeal => 'Aggiungi Pasto';
+
+  @override
+  String get mealPlannerEditMeal => 'Modifica Pasto';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Rimuovi pasto';
+
+  @override
+  String get mealPlannerMealDeleted => 'Pasto rimosso';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porzioni',
+      one: '$count porzione',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porzioni';
+
+  @override
+  String get mealPlannerNoteLabel => 'Nota (opzionale)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Seleziona una ricetta';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Cerca ricette...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Nessuna ricetta trovata';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Crea prima delle ricette nella scheda Ricette';
+
+  @override
+  String get mealPlannerSave => 'Aggiungi al piano';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count di $total pasti pianificati';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Genera lista della spesa';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Aggiungere tutti gli ingredienti dei pasti pianificati per questa settimana alla lista della spesa?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingredienti aggiunti alla tua lista!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Nessun ingrediente da aggiungere. Pianifica prima dei pasti con ricette.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Crea prima una lista della spesa.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Colazione';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Pranzo';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Cena';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Merenda';
+
+  @override
+  String get mealPlannerDateLabel => 'Data';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'Nulla di pianificato per questa settimana';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tocca un giorno qualsiasi per iniziare a pianificare i tuoi pasti!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

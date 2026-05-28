@@ -102,8 +102,9 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
       appBar: AppBar(
         title: Text(isPt ? 'Histórico do Assistente' : 'Assistant History'),
       ),
-      body: Column(
-        children: [
+      body: SafeArea(
+        child: Column(
+          children: [
           Padding(
             padding: const EdgeInsets.all(12),
             child: TextField(
@@ -251,6 +252,7 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
                       ),
           ),
         ],
+      ),
       ),
     );
   }

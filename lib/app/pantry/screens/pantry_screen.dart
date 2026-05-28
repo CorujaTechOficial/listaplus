@@ -39,90 +39,92 @@ class PantryScreen extends ConsumerWidget {
             ),
         ],
       ),
-      body: pantryAsync.when(
-        data: (items) {
-          if (items.isEmpty) {
+      body: SafeArea(
+        child: pantryAsync.when(
+          data: (items) {
+            if (items.isEmpty) {
+              return RefreshIndicator(
+                onRefresh: () async {
+                  ref.invalidate(pantryItemsProvider);
+                  await ref.read(pantryItemsProvider.future);
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    child: EmptyState(
+                      icon: Icons.inventory_2_outlined,
+                      title: l10n.pantryEmpty,
+                      subtitle: l10n.pantryEmptySubtitle,
+                    ),
+                  ),
+                ),
+              );
+            }
+
+            final deficitItems = items.where((i) => i.trackStock && i.deficit > 0).length;
+
             return RefreshIndicator(
               onRefresh: () async {
                 ref.invalidate(pantryItemsProvider);
                 await ref.read(pantryItemsProvider.future);
               },
-              child: SingleChildScrollView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  child: EmptyState(
-                    icon: Icons.inventory_2_outlined,
-                    title: l10n.pantryEmpty,
-                    subtitle: l10n.pantryEmptySubtitle,
-                  ),
-                ),
-              ),
-            );
-          }
-
-          final deficitItems = items.where((i) => i.trackStock && i.deficit > 0).length;
-
-          return RefreshIndicator(
-            onRefresh: () async {
-              ref.invalidate(pantryItemsProvider);
-              await ref.read(pantryItemsProvider.future);
-            },
-            child: Column(
-              children: [
-                if (deficitItems > 0)
-                  Container(
-                    width: double.infinity,
-                    margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, 0),
-                    padding: const EdgeInsets.all(Spacing.sm),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? theme.colorScheme.tertiaryContainer.withAlpha((0.15 * 255).toInt())
-                          : theme.colorScheme.tertiaryContainer.withAlpha((0.3 * 255).toInt()),
-                      borderRadius: BorderRadius.circular(RadiusTokens.md),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.info_outline, size: 18, color: theme.colorScheme.tertiary),
-                        const SizedBox(width: Spacing.xs),
-                        Expanded(
-                          child: Text(
-                            l10n.itemsNeedPurchase(deficitItems),
-                            style: theme.textTheme.bodySmall?.copyWith(
-                              fontWeight: FontWeight.w600,
+              child: Column(
+                children: [
+                  if (deficitItems > 0)
+                    Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, 0),
+                      padding: const EdgeInsets.all(Spacing.sm),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? theme.colorScheme.tertiaryContainer.withAlpha((0.15 * 255).toInt())
+                            : theme.colorScheme.tertiaryContainer.withAlpha((0.3 * 255).toInt()),
+                        borderRadius: BorderRadius.circular(RadiusTokens.md),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.info_outline, size: 18, color: theme.colorScheme.tertiary),
+                          const SizedBox(width: Spacing.xs),
+                          Expanded(
+                            child: Text(
+                              l10n.itemsNeedPurchase(deficitItems),
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ).animate().slideY(
-                    begin: -1,
-                    end: 0,
-                    duration: DurationTokens.normal,
-                    curve: Curves.easeOutBack,
-                  ).fadeIn(duration: DurationTokens.fast),
-                Expanded(
-                  child: ListView.builder(
-                    padding: const EdgeInsets.only(top: Spacing.xs, bottom: Spacing.md),
-                    itemCount: items.length,
-                    itemBuilder: (context, index) => _PantryItemTile(item: items[index]).animate().fadeIn(
-                      duration: DurationTokens.fast,
-                      delay: Duration(milliseconds: index * 40),
-                    ).slideY(
-                      begin: 0.15,
+                        ],
+                      ),
+                    ).animate().slideY(
+                      begin: -1,
                       end: 0,
-                      duration: DurationTokens.fast,
-                      delay: Duration(milliseconds: index * 40),
-                      curve: Curves.easeOut,
+                      duration: DurationTokens.normal,
+                      curve: Curves.easeOutBack,
+                    ).fadeIn(duration: DurationTokens.fast),
+                  Expanded(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.only(top: Spacing.xs, bottom: Spacing.md),
+                      itemCount: items.length,
+                      itemBuilder: (context, index) => _PantryItemTile(item: items[index]).animate().fadeIn(
+                        duration: DurationTokens.fast,
+                        delay: Duration(milliseconds: index * 40),
+                      ).slideY(
+                        begin: 0.15,
+                        end: 0,
+                        duration: DurationTokens.fast,
+                        delay: Duration(milliseconds: index * 40),
+                        curve: Curves.easeOut,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          );
-        },
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
+                ],
+              ),
+            );
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         heroTag: 'pantry_fab',

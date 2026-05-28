@@ -282,6 +282,12 @@ class AppLocalizationsLo extends AppLocalizations {
   String get languageSystem => 'ຄ່າເລີ່ມຕົ້ນຂອງລະບົບ';
 
   @override
+  String get chooseLanguage => 'ເລືອກພາສາ';
+
+  @override
+  String get searchLanguage => 'ຄົ້ນຫາພາສາ...';
+
+  @override
   String get appearance => 'ຮູບລັກສະນະ';
 
   @override
@@ -295,6 +301,12 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get themeColor => 'ສີຊຸດຮູບແບບ';
+
+  @override
+  String get dynamicColors => 'ສີໄດນາມິກ';
+
+  @override
+  String get dynamicColorsSubtitle => 'ໃຊ້ສີຕາມວໍເປເປີຂອງທ່ານ';
 
   @override
   String get finance => 'ການເງິນ';
@@ -1034,130 +1046,246 @@ class AppLocalizationsLo extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'ເປີດເມນູ';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'ເບິ່ງສູດອາຫານ';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'ສ້າງສູດອາຫານແລ້ວ!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'ແກ້ໄຂ';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'ລຶບ';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'ລຶບສູດອາຫານນີ້?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ \"$recipeName\"? ການດຳເນີນການນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'ສ່ວນປະສົມ';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'ວິທີເຮັດ';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'ເວລາໃນການກຽມ';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'ບັນທຶກສູດອາຫານແລ້ວ!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'ບໍ່ມີສູດອາຫານທີ່ບັນທຶກໄວ້';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'ສ້າງສູດອາຫານທຳອິດຂອງທ່ານໂດຍການແຕະປຸ່ມຂ້າງລຸ່ມນີ້.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'ສູດອາຫານຂອງຂ້ອຍ';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'ສູດອາຫານໃໝ່';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'ກຳລັງໂຫຼດສູດອາຫານຂອງທ່ານ...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດສູດອາຫານ';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'ເພີ່ມສ່ວນປະສົມ';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'ບັນທຶກ';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'ຊື່ສູດອາຫານ';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'ຄຳອະທິບາຍສັ້ນໆ';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'ເວລາໃນການກຽມ (ນາທີ)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'ພິມຂັ້ນຕອນລະໜຶ່ງແຖວ...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'ເພີ່ມຮູບພາບ';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'ຫຼື ວາງ URL ຂອງຮູບພາບ';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'ແທັກ';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'ແທັກສູດອາຫານ';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'ແນະນຳ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'ຄົ້ນຫາສູດອາຫານ...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'ກັ່ນຕອງຕາມແທັກ';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'ທັງໝົດ';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'ລຶບສູດອາຫານແລ້ວ';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'ບັນທຶກການປ່ຽນແປງ';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'ແກ້ໄຂສູດອາຫານ';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'ສູດອາຫານໃໝ່';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'ຈຳເປັນ';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'ເລືອກແຫຼ່ງຮູບພາບ';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'ແກເລີຣີ';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'ປ້ອນ URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'ຮູບພາບສູດອາຫານ';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'ລຶບຮູບພາບອອກ';
+
+  @override
+  String get mealPlannerTitle => 'ເຄື່ອງມືວາງແຜນອາຫານ';
+
+  @override
+  String get mealPlannerViewMonthly => 'ເບິ່ງແບບລາຍເດືອນ';
+
+  @override
+  String get mealPlannerViewWeekly => 'ເບິ່ງແບບລາຍອາທິດ';
+
+  @override
+  String get mealPlannerNoMeals => 'ບໍ່ມີຄາບອາຫານທີ່ວາງແຜນໄວ້';
+
+  @override
+  String get mealPlannerNoMealsHint => 'ແຕະທີ່ວັນເພື່ອເພີ່ມຄາບອາຫານ';
+
+  @override
+  String get mealPlannerLoading => 'ກຳລັງໂຫຼດແຜນອາຫານ...';
+
+  @override
+  String get mealPlannerError => 'ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດແຜນອາຫານ';
+
+  @override
+  String get mealPlannerAddMeal => 'ເພີ່ມຄາບອາຫານ';
+
+  @override
+  String get mealPlannerEditMeal => 'ແກ້ໄຂຄາບອາຫານ';
+
+  @override
+  String get mealPlannerDeleteMeal => 'ລຶບຄາບອາຫານອອກ';
+
+  @override
+  String get mealPlannerMealDeleted => 'ລຶບຄາບອາຫານອອກແລ້ວ';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ທີ່',
+      one: '$count ທີ່',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ຈຳນວນທີ່';
+
+  @override
+  String get mealPlannerNoteLabel => 'ໝາຍເຫດ (ທາງເລືອກ)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ເລືອກສູດອາຫານ';
+
+  @override
+  String get mealPlannerSearchRecipes => 'ຄົ້ນຫາສູດອາຫານ...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'ບໍ່ພົບສູດອາຫານ';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'ສ້າງສູດອາຫານໃນແທັບສູດອາຫານກ່ອນ';
+
+  @override
+  String get mealPlannerSave => 'ເພີ່ມໃສ່ແຜນ';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'ວາງແຜນແລ້ວ $count ຈາກ $total ຄາບ';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ສ້າງລາຍການຊື້ເຄື່ອງ';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'ເພີ່ມສ່ວນປະສົມທັງໝົດຈາກຄາບອາຫານທີ່ວາງແຜນໄວ້ໃນອາທິດນີ້ໃສ່ລາຍການຊື້ເຄື່ອງຂອງທ່ານບໍ?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'ເພີ່ມ $count ສ່ວນປະສົມໃສ່ລາຍການຂອງທ່ານແລ້ວ!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ບໍ່ມີສ່ວນປະສົມທີ່ຈະເພີ່ມ. ວາງແຜນຄາບອາຫານດ້ວຍສູດອາຫານກ່ອນ.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ສ້າງລາຍການຊື້ເຄື່ອງກ່ອນ.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'ອາຫານເຊົ້າ';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ອາຫານທ່ຽງ';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ອາຫານແລງ';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'ອາຫານວ່າງ';
+
+  @override
+  String get mealPlannerDateLabel => 'ວັນທີ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ບໍ່ມີແຜນສຳລັບອາທິດນີ້';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'ແຕະທີ່ມື້ໃດກໍໄດ້ເພື່ອເລີ່ມວາງແຜນອາຫານຂອງທ່ານ!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes ນາທີ';
+  }
 }
 
 /// The translations for Lao, as used in the Lao People's Democratic Republic (`lo_LA`).
@@ -1444,6 +1572,12 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String get languageSystem => 'ຄ່າເລີ່ມຕົ້ນຂອງລະບົບ';
 
   @override
+  String get chooseLanguage => 'ເລືອກພາສາ';
+
+  @override
+  String get searchLanguage => 'ຄົ້ນຫາພາສາ...';
+
+  @override
   String get appearance => 'ຮູບລັກສະນະ';
 
   @override
@@ -1457,6 +1591,12 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get themeColor => 'ສີຊຸດຮູບແບບ';
+
+  @override
+  String get dynamicColors => 'ສີໄດນາມິກ';
+
+  @override
+  String get dynamicColorsSubtitle => 'ໃຊ້ສີຕາມວໍເປເປີຂອງທ່ານ';
 
   @override
   String get finance => 'ການເງິນ';
@@ -2200,4 +2340,246 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'ເປີດເມນູ';
+
+  @override
+  String get viewRecipe => 'ເບິ່ງສູດອາຫານ';
+
+  @override
+  String get recipeCreated => 'ສ້າງສູດອາຫານແລ້ວ!';
+
+  @override
+  String get editRecipe => 'ແກ້ໄຂ';
+
+  @override
+  String get deleteRecipe => 'ລຶບ';
+
+  @override
+  String get deleteRecipeConfirm => 'ລຶບສູດອາຫານນີ້?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ \"$recipeName\"? ການດຳເນີນການນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.';
+  }
+
+  @override
+  String get ingredients => 'ສ່ວນປະສົມ';
+
+  @override
+  String get instructions => 'ວິທີເຮັດ';
+
+  @override
+  String get prepTime => 'ເວລາໃນການກຽມ';
+
+  @override
+  String get recipeSaved => 'ບັນທຶກສູດອາຫານແລ້ວ!';
+
+  @override
+  String get noRecipesSaved => 'ບໍ່ມີສູດອາຫານທີ່ບັນທຶກໄວ້';
+
+  @override
+  String get noRecipesSavedHint =>
+      'ສ້າງສູດອາຫານທຳອິດຂອງທ່ານໂດຍການແຕະປຸ່ມຂ້າງລຸ່ມນີ້.';
+
+  @override
+  String get myRecipes => 'ສູດອາຫານຂອງຂ້ອຍ';
+
+  @override
+  String get newRecipe => 'ສູດອາຫານໃໝ່';
+
+  @override
+  String get loadingRecipes => 'ກຳລັງໂຫຼດສູດອາຫານຂອງທ່ານ...';
+
+  @override
+  String get errorLoadingRecipes => 'ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດສູດອາຫານ';
+
+  @override
+  String get addIngredient => 'ເພີ່ມສ່ວນປະສົມ';
+
+  @override
+  String get saveRecipe => 'ບັນທຶກ';
+
+  @override
+  String get recipeName => 'ຊື່ສູດອາຫານ';
+
+  @override
+  String get shortDescription => 'ຄຳອະທິບາຍສັ້ນໆ';
+
+  @override
+  String get prepTimeMinutes => 'ເວລາໃນການກຽມ (ນາທີ)';
+
+  @override
+  String get instructionsHint => 'ພິມຂັ້ນຕອນລະໜຶ່ງແຖວ...';
+
+  @override
+  String get addPhoto => 'ເພີ່ມຮູບພາບ';
+
+  @override
+  String get imageUrlPlaceholder => 'ຫຼື ວາງ URL ຂອງຮູບພາບ';
+
+  @override
+  String get tags => 'ແທັກ';
+
+  @override
+  String get recipeTags => 'ແທັກສູດອາຫານ';
+
+  @override
+  String get suggestedTags => 'ແນະນຳ';
+
+  @override
+  String get searchRecipes => 'ຄົ້ນຫາສູດອາຫານ...';
+
+  @override
+  String get filterByTag => 'ກັ່ນຕອງຕາມແທັກ';
+
+  @override
+  String get allTags => 'ທັງໝົດ';
+
+  @override
+  String get recipeDeleted => 'ລຶບສູດອາຫານແລ້ວ';
+
+  @override
+  String get saveChanges => 'ບັນທຶກການປ່ຽນແປງ';
+
+  @override
+  String get editRecipeTitle => 'ແກ້ໄຂສູດອາຫານ';
+
+  @override
+  String get newRecipeTitle => 'ສູດອາຫານໃໝ່';
+
+  @override
+  String get requiredField => 'ຈຳເປັນ';
+
+  @override
+  String get chooseImageSource => 'ເລືອກແຫຼ່ງຮູບພາບ';
+
+  @override
+  String get gallery => 'ແກເລີຣີ';
+
+  @override
+  String get enterUrl => 'ປ້ອນ URL';
+
+  @override
+  String get recipeImage => 'ຮູບພາບສູດອາຫານ';
+
+  @override
+  String get removeImage => 'ລຶບຮູບພາບອອກ';
+
+  @override
+  String get mealPlannerTitle => 'ເຄື່ອງມືວາງແຜນອາຫານ';
+
+  @override
+  String get mealPlannerViewMonthly => 'ເບິ່ງແບບລາຍເດືອນ';
+
+  @override
+  String get mealPlannerViewWeekly => 'ເບິ່ງແບບລາຍອາທິດ';
+
+  @override
+  String get mealPlannerNoMeals => 'ບໍ່ມີຄາບອາຫານທີ່ວາງແຜນໄວ້';
+
+  @override
+  String get mealPlannerNoMealsHint => 'ແຕະທີ່ວັນເພື່ອເພີ່ມຄາບອາຫານ';
+
+  @override
+  String get mealPlannerLoading => 'ກຳລັງໂຫຼດແຜນອາຫານ...';
+
+  @override
+  String get mealPlannerError => 'ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດແຜນອາຫານ';
+
+  @override
+  String get mealPlannerAddMeal => 'ເພີ່ມຄາບອາຫານ';
+
+  @override
+  String get mealPlannerEditMeal => 'ແກ້ໄຂຄາບອາຫານ';
+
+  @override
+  String get mealPlannerDeleteMeal => 'ລຶບຄາບອາຫານອອກ';
+
+  @override
+  String get mealPlannerMealDeleted => 'ລຶບຄາບອາຫານອອກແລ້ວ';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ທີ່',
+      one: '$count ທີ່',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ຈຳນວນທີ່';
+
+  @override
+  String get mealPlannerNoteLabel => 'ໝາຍເຫດ (ທາງເລືອກ)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ເລືອກສູດອາຫານ';
+
+  @override
+  String get mealPlannerSearchRecipes => 'ຄົ້ນຫາສູດອາຫານ...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'ບໍ່ພົບສູດອາຫານ';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'ສ້າງສູດອາຫານໃນແທັບສູດອາຫານກ່ອນ';
+
+  @override
+  String get mealPlannerSave => 'ເພີ່ມໃສ່ແຜນ';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'ວາງແຜນແລ້ວ $count ຈາກ $total ຄາບ';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ສ້າງລາຍການຊື້ເຄື່ອງ';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'ເພີ່ມສ່ວນປະສົມທັງໝົດຈາກຄາບອາຫານທີ່ວາງແຜນໄວ້ໃນອາທິດນີ້ໃສ່ລາຍການຊື້ເຄື່ອງຂອງທ່ານບໍ?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'ເພີ່ມ $count ສ່ວນປະສົມໃສ່ລາຍການຂອງທ່ານແລ້ວ!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ບໍ່ມີສ່ວນປະສົມທີ່ຈະເພີ່ມ. ວາງແຜນຄາບອາຫານດ້ວຍສູດອາຫານກ່ອນ.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ສ້າງລາຍການຊື້ເຄື່ອງກ່ອນ.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'ອາຫານເຊົ້າ';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ອາຫານທ່ຽງ';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ອາຫານແລງ';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'ອາຫານວ່າງ';
+
+  @override
+  String get mealPlannerDateLabel => 'ວັນທີ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ບໍ່ມີແຜນສຳລັບອາທິດນີ້';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'ແຕະທີ່ມື້ໃດກໍໄດ້ເພື່ອເລີ່ມວາງແຜນອາຫານຂອງທ່ານ!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes ນາທີ';
+  }
 }

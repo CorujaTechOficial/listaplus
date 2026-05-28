@@ -16,12 +16,15 @@ class ManageCategoriesScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Gerenciar Categorias'),
       ),
-      body: categoriesAsync.when(
-        data: (categories) => _CategoriesList(categories: categories),
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Erro: $e')),
+      body: SafeArea(
+        child: categoriesAsync.when(
+          data: (categories) => _CategoriesList(categories: categories),
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(child: Text('Erro: $e')),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: null,
         onPressed: () => _addCategory(context, ref),
         child: const Icon(Icons.add),
       ),
@@ -77,7 +80,7 @@ class _CategoriesList extends ConsumerWidget {
           leading: CircleAvatar(
             backgroundColor: color.withAlpha((0.2 * 255).toInt()),
             // ignore: non_const_argument_for_const_parameter
-            child: Icon(IconData(cat.iconCodepoint), color: color),
+            child: Icon(cat.icon, color: color),
           ),
           title: Text(cat.name),
           subtitle: Text('ID: ${cat.id}'),

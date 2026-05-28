@@ -16,10 +16,11 @@ class AuthScreen extends ConsumerWidget {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.listaPlusTitle)),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(Spacing.xl),
-          child: Column(
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(Spacing.xl),
+            child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
@@ -103,6 +104,7 @@ class AuthScreen extends ConsumerWidget {
           ),
         ),
       ),
+    ),
     );
   }
 

@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Додај состојка",
+  "addPhoto": "Додај фотографија",
+  "allTags": "Сите",
+  "chooseImageSource": "Изберете извор на слика",
+  "chooseLanguage": "Изберете јазик",
+  "deleteRecipe": "Избриши",
+  "deleteRecipeConfirm": "Избриши го овој рецепт?",
+  "deleteRecipeConfirmMsg": "Дали сте сигурни дека сакате да го избришете \"{recipeName}\"? Оваа акција не може да се врати.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Динамични бои",
+  "dynamicColorsSubtitle": "Користете бои врз основа на вашата позадина",
+  "editRecipe": "Уреди",
+  "editRecipeTitle": "Уреди рецепт",
+  "enterUrl": "Внесете URL",
+  "errorLoadingRecipes": "Грешка при вчитување на рецептите",
+  "filterByTag": "Филтрирај по ознака",
+  "gallery": "Галерија",
+  "imageUrlPlaceholder": "Или вметнете URL на слика",
+  "ingredients": "Состојки",
+  "instructions": "Инструкции",
+  "instructionsHint": "Напишете еден чекор по линија...",
+  "loadingRecipes": "Се вчитуваат вашите рецепти...",
+  "mealPlannerAddMeal": "Додај оброк",
+  "mealPlannerDateLabel": "Датум",
+  "mealPlannerDeleteMeal": "Отстрани оброк",
+  "mealPlannerEditMeal": "Уреди оброк",
+  "mealPlannerError": "Грешка при вчитување на планот за оброци",
+  "mealPlannerGenerateList": "Генерирај листа за шопинг",
+  "mealPlannerGenerateListConfirm": "Да се додадат сите состојки од планираните оброци за оваа недела во вашата листа за шопинг?",
+  "mealPlannerGenerateListEmpty": "Нема состојки за додавање. Прво планирајте некои оброци со рецепти.",
+  "mealPlannerGenerateListNoList": "Прво креирајте листа за шопинг.",
+  "mealPlannerGenerateListSuccess": "{count} состојка(и) додадени во вашата листа!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Се вчитува планот за оброци...",
+  "mealPlannerMealDeleted": "Оброкот е отстранет",
+  "mealPlannerMealTypeBreakfast": "Појадок",
+  "mealPlannerMealTypeDinner": "Вечера",
+  "mealPlannerMealTypeLunch": "Ручек",
+  "mealPlannerMealTypeSnack": "Ужина",
+  "mealPlannerNoMeals": "Нема планирани оброци",
+  "mealPlannerNoMealsHint": "Допрете на ден за да додадете оброк",
+  "mealPlannerNoRecipesFound": "Не се пронајдени рецепти",
+  "mealPlannerNoRecipesHint": "Прво креирајте рецепти во табот Рецепти",
+  "mealPlannerNoteLabel": "Забелешка (опционално)",
+  "mealPlannerPrepTime": "{minutes} мин",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Додај во план",
+  "mealPlannerSearchRecipes": "Пребарај рецепти...",
+  "mealPlannerSelectRecipe": "Изберете рецепт",
+  "mealPlannerServings": "{count,plural, one{{count} порција} other{{count} порции}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Порции",
+  "mealPlannerTitle": "Планер за оброци",
+  "mealPlannerViewMonthly": "Месечен преглед",
+  "mealPlannerViewWeekly": "Неделен преглед",
+  "mealPlannerWeekEmpty": "Ништо не е планирано за оваа недела",
+  "mealPlannerWeekEmptyHint": "Допрете на кој било ден за да започнете со планирање на вашите оброци!",
+  "mealPlannerWeekProgress": "{count} од {total} оброци планирани",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Мои рецепти",
+  "newRecipe": "Нов рецепт",
+  "newRecipeTitle": "Нов рецепт",
+  "noRecipesSaved": "Нема зачувани рецепти",
+  "noRecipesSavedHint": "Креирајте го вашиот прв сопствен рецепт со допирање на копчето подолу.",
+  "openMenu": "Отвори мени",
+  "prepTime": "Време за подготовка",
+  "prepTimeMinutes": "Време за подготовка (минути)",
+  "recipeCreated": "Рецептот е креиран!",
+  "recipeDeleted": "Рецептот е избришан",
+  "recipeImage": "Слика од рецептот",
+  "recipeName": "Име на рецептот",
+  "recipeSaved": "Рецептот е зачуван!",
+  "recipeTags": "Ознаки на рецептот",
+  "removeImage": "Отстрани слика",
+  "requiredField": "Задолжително",
+  "saveChanges": "Зачувај промени",
+  "saveRecipe": "Зачувај",
+  "searchLanguage": "Пребарај јазик...",
+  "searchRecipes": "Пребарај рецепти...",
+  "shortDescription": "Краток опис",
+  "suggestedTags": "Предложено",
+  "tags": "Ознаки",
+  "viewRecipe": "Види рецепт"
 }

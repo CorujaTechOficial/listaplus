@@ -290,6 +290,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get languageSystem => 'Výchozí systém';
 
   @override
+  String get chooseLanguage => 'Vyberte jazyk';
+
+  @override
+  String get searchLanguage => 'Hledat jazyk...';
+
+  @override
   String get appearance => 'Vzhled';
 
   @override
@@ -303,6 +309,12 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get themeColor => 'Barva motivu';
+
+  @override
+  String get dynamicColors => 'Dynamické barvy';
+
+  @override
+  String get dynamicColorsSubtitle => 'Použít barvy na základě vaší tapety';
 
   @override
   String get finance => 'Finance';
@@ -1052,130 +1064,250 @@ class AppLocalizationsCs extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Otevřít menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Zobrazit recept';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recept byl vytvořen!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Upravit';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Smazat';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Smazat tento recept?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Opravdu chcete smazat \"$recipeName\"? Tuto akci nelze vzít zpět.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingredience';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instrukce';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Čas přípravy';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Recept byl uložen!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Žádné recepty nejsou uloženy';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Vytvořte svůj první vlastní recept klepnutím na tlačítko níže.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Moje recepty';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Nový recept';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Načítání vašich receptů...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Chyba při načítání receptů';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Přidat ingredienci';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Uložit';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Název receptu';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Krátký popis';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Čas přípravy (minuty)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Zadejte jeden krok na řádek...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Přidat fotku';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Nebo vložte URL obrázku';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tagy';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Tagy receptu';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Navrhované';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Hledat recepty...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrovat podle tagu';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Vše';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Recept byl smazán';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Uložit změny';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Upravit recept';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Nový recept';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Povinné';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Vyberte zdroj obrázku';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galerie';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Zadejte URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Obrázek receptu';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Odstranit obrázek';
+
+  @override
+  String get mealPlannerTitle => 'Plánovač jídel';
+
+  @override
+  String get mealPlannerViewMonthly => 'Měsíční zobrazení';
+
+  @override
+  String get mealPlannerViewWeekly => 'Týdenní zobrazení';
+
+  @override
+  String get mealPlannerNoMeals => 'Žádná plánovaná jídla';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Klepnutím na den přidáte jídlo';
+
+  @override
+  String get mealPlannerLoading => 'Načítání jídelníčku...';
+
+  @override
+  String get mealPlannerError => 'Chyba při načítání jídelníčku';
+
+  @override
+  String get mealPlannerAddMeal => 'Přidat jídlo';
+
+  @override
+  String get mealPlannerEditMeal => 'Upravit jídlo';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Odebrat jídlo';
+
+  @override
+  String get mealPlannerMealDeleted => 'Jídlo bylo odebráno';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porce',
+      many: '$count porcí',
+      few: '$count porce',
+      one: '$count porce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porce';
+
+  @override
+  String get mealPlannerNoteLabel => 'Poznámka (volitelné)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Vyberte recept';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Hledat recepty...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Žádné recepty nenalezeny';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Nejprve vytvořte recepty na kartě Recepty';
+
+  @override
+  String get mealPlannerSave => 'Přidat do plánu';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Naplánováno $count z $total jídel';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Vygenerovat nákupní seznam';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Přidat všechny ingredience z plánovaných jídel na tento týden do nákupního seznamu?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'Do seznamu bylo přidáno $count ingrediencí!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Žádné ingredience k přidání. Nejprve naplánujte jídla s recepty.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Nejprve vytvořte nákupní seznam.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Snídaně';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Oběd';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Večeře';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Svačina';
+
+  @override
+  String get mealPlannerDateLabel => 'Datum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Na tento týden není nic naplánováno';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Klepnutím na jakýkoli den začněte plánovat svá jídla!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -1464,6 +1596,12 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get languageSystem => 'Výchozí systém';
 
   @override
+  String get chooseLanguage => 'Vyberte jazyk';
+
+  @override
+  String get searchLanguage => 'Hledat jazyk...';
+
+  @override
   String get appearance => 'Vzhled';
 
   @override
@@ -1477,6 +1615,12 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get themeColor => 'Barva motivu';
+
+  @override
+  String get dynamicColors => 'Dynamické barvy';
+
+  @override
+  String get dynamicColorsSubtitle => 'Použít barvy na základě vaší tapety';
 
   @override
   String get finance => 'Finance';
@@ -2224,4 +2368,250 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Otevřít menu';
+
+  @override
+  String get viewRecipe => 'Zobrazit recept';
+
+  @override
+  String get recipeCreated => 'Recept byl vytvořen!';
+
+  @override
+  String get editRecipe => 'Upravit';
+
+  @override
+  String get deleteRecipe => 'Smazat';
+
+  @override
+  String get deleteRecipeConfirm => 'Smazat tento recept?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Opravdu chcete smazat \"$recipeName\"? Tuto akci nelze vzít zpět.';
+  }
+
+  @override
+  String get ingredients => 'Ingredience';
+
+  @override
+  String get instructions => 'Instrukce';
+
+  @override
+  String get prepTime => 'Čas přípravy';
+
+  @override
+  String get recipeSaved => 'Recept byl uložen!';
+
+  @override
+  String get noRecipesSaved => 'Žádné recepty nejsou uloženy';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Vytvořte svůj první vlastní recept klepnutím na tlačítko níže.';
+
+  @override
+  String get myRecipes => 'Moje recepty';
+
+  @override
+  String get newRecipe => 'Nový recept';
+
+  @override
+  String get loadingRecipes => 'Načítání vašich receptů...';
+
+  @override
+  String get errorLoadingRecipes => 'Chyba při načítání receptů';
+
+  @override
+  String get addIngredient => 'Přidat ingredienci';
+
+  @override
+  String get saveRecipe => 'Uložit';
+
+  @override
+  String get recipeName => 'Název receptu';
+
+  @override
+  String get shortDescription => 'Krátký popis';
+
+  @override
+  String get prepTimeMinutes => 'Čas přípravy (minuty)';
+
+  @override
+  String get instructionsHint => 'Zadejte jeden krok na řádek...';
+
+  @override
+  String get addPhoto => 'Přidat fotku';
+
+  @override
+  String get imageUrlPlaceholder => 'Nebo vložte URL obrázku';
+
+  @override
+  String get tags => 'Tagy';
+
+  @override
+  String get recipeTags => 'Tagy receptu';
+
+  @override
+  String get suggestedTags => 'Navrhované';
+
+  @override
+  String get searchRecipes => 'Hledat recepty...';
+
+  @override
+  String get filterByTag => 'Filtrovat podle tagu';
+
+  @override
+  String get allTags => 'Vše';
+
+  @override
+  String get recipeDeleted => 'Recept byl smazán';
+
+  @override
+  String get saveChanges => 'Uložit změny';
+
+  @override
+  String get editRecipeTitle => 'Upravit recept';
+
+  @override
+  String get newRecipeTitle => 'Nový recept';
+
+  @override
+  String get requiredField => 'Povinné';
+
+  @override
+  String get chooseImageSource => 'Vyberte zdroj obrázku';
+
+  @override
+  String get gallery => 'Galerie';
+
+  @override
+  String get enterUrl => 'Zadejte URL';
+
+  @override
+  String get recipeImage => 'Obrázek receptu';
+
+  @override
+  String get removeImage => 'Odstranit obrázek';
+
+  @override
+  String get mealPlannerTitle => 'Plánovač jídel';
+
+  @override
+  String get mealPlannerViewMonthly => 'Měsíční zobrazení';
+
+  @override
+  String get mealPlannerViewWeekly => 'Týdenní zobrazení';
+
+  @override
+  String get mealPlannerNoMeals => 'Žádná plánovaná jídla';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Klepnutím na den přidáte jídlo';
+
+  @override
+  String get mealPlannerLoading => 'Načítání jídelníčku...';
+
+  @override
+  String get mealPlannerError => 'Chyba při načítání jídelníčku';
+
+  @override
+  String get mealPlannerAddMeal => 'Přidat jídlo';
+
+  @override
+  String get mealPlannerEditMeal => 'Upravit jídlo';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Odebrat jídlo';
+
+  @override
+  String get mealPlannerMealDeleted => 'Jídlo bylo odebráno';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porce',
+      many: '$count porcí',
+      few: '$count porce',
+      one: '$count porce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porce';
+
+  @override
+  String get mealPlannerNoteLabel => 'Poznámka (volitelné)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Vyberte recept';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Hledat recepty...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Žádné recepty nenalezeny';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Nejprve vytvořte recepty na kartě Recepty';
+
+  @override
+  String get mealPlannerSave => 'Přidat do plánu';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Naplánováno $count z $total jídel';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Vygenerovat nákupní seznam';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Přidat všechny ingredience z plánovaných jídel na tento týden do nákupního seznamu?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'Do seznamu bylo přidáno $count ingrediencí!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Žádné ingredience k přidání. Nejprve naplánujte jídla s recepty.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Nejprve vytvořte nákupní seznam.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Snídaně';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Oběd';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Večeře';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Svačina';
+
+  @override
+  String get mealPlannerDateLabel => 'Datum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Na tento týden není nic naplánováno';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Klepnutím na jakýkoli den začněte plánovat svá jídla!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

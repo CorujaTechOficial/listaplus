@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Aggiungi ingrediente",
+  "addPhoto": "Aggiungi foto",
+  "allTags": "Tutti",
+  "chooseImageSource": "Scegli sorgente immagine",
+  "chooseLanguage": "Seleziona Lingua",
+  "deleteRecipe": "Elimina",
+  "deleteRecipeConfirm": "Eliminare questa ricetta?",
+  "deleteRecipeConfirmMsg": "Sei sicuro di voler eliminare \"{recipeName}\"? Questa azione non può essere annullata.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Colori dinamici",
+  "dynamicColorsSubtitle": "Usa i colori basati sul tuo sfondo",
+  "editRecipe": "Modifica",
+  "editRecipeTitle": "Modifica Ricetta",
+  "enterUrl": "Inserisci URL",
+  "errorLoadingRecipes": "Errore nel caricamento delle ricette",
+  "filterByTag": "Filtra per tag",
+  "gallery": "Galleria",
+  "imageUrlPlaceholder": "O incolla l'URL di un'immagine",
+  "ingredients": "Ingredienti",
+  "instructions": "Istruzioni",
+  "instructionsHint": "Scrivi un passaggio per riga...",
+  "loadingRecipes": "Caricamento ricette...",
+  "mealPlannerAddMeal": "Aggiungi Pasto",
+  "mealPlannerDateLabel": "Data",
+  "mealPlannerDeleteMeal": "Rimuovi pasto",
+  "mealPlannerEditMeal": "Modifica Pasto",
+  "mealPlannerError": "Errore nel caricamento del piano alimentare",
+  "mealPlannerGenerateList": "Genera lista della spesa",
+  "mealPlannerGenerateListConfirm": "Aggiungere tutti gli ingredienti dei pasti pianificati per questa settimana alla lista della spesa?",
+  "mealPlannerGenerateListEmpty": "Nessun ingrediente da aggiungere. Pianifica prima dei pasti con ricette.",
+  "mealPlannerGenerateListNoList": "Crea prima una lista della spesa.",
+  "mealPlannerGenerateListSuccess": "{count} ingredienti aggiunti alla tua lista!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Caricamento piano alimentare...",
+  "mealPlannerMealDeleted": "Pasto rimosso",
+  "mealPlannerMealTypeBreakfast": "Colazione",
+  "mealPlannerMealTypeDinner": "Cena",
+  "mealPlannerMealTypeLunch": "Pranzo",
+  "mealPlannerMealTypeSnack": "Merenda",
+  "mealPlannerNoMeals": "Nessun pasto pianificato",
+  "mealPlannerNoMealsHint": "Tocca un giorno per aggiungere un pasto",
+  "mealPlannerNoRecipesFound": "Nessuna ricetta trovata",
+  "mealPlannerNoRecipesHint": "Crea prima delle ricette nella scheda Ricette" ,
+  "mealPlannerNoteLabel": "Nota (opzionale)",
+  "mealPlannerPrepTime": "{minutes} min",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Aggiungi al piano",
+  "mealPlannerSearchRecipes": "Cerca ricette...",
+  "mealPlannerSelectRecipe": "Seleziona una ricetta",
+  "mealPlannerServings": "{count,plural, one{{count} porzione} other{{count} porzioni}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Porzioni",
+  "mealPlannerTitle": "Pianificatore Pasti",
+  "mealPlannerViewMonthly": "Vista mensile",
+  "mealPlannerViewWeekly": "Vista settimanale",
+  "mealPlannerWeekEmpty": "Nulla di pianificato per questa settimana",
+  "mealPlannerWeekEmptyHint": "Tocca un giorno qualsiasi per iniziare a pianificare i tuoi pasti!",
+  "mealPlannerWeekProgress": "{count} di {total} pasti pianificati",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Le Mie Ricette",
+  "newRecipe": "Nuova Ricetta",
+  "newRecipeTitle": "Nuova Ricetta",
+  "noRecipesSaved": "Nessuna ricetta salvata",
+  "noRecipesSavedHint": "Crea la tua prima ricetta personalizzata toccando il pulsante qui sotto.",
+  "openMenu": "Apri menu",
+  "prepTime": "Tempo di prep.",
+  "prepTimeMinutes": "Tempo di preparazione (minuti)",
+  "recipeCreated": "Ricetta creata!",
+  "recipeDeleted": "Ricetta eliminata",
+  "recipeImage": "Immagine ricetta",
+  "recipeName": "Nome ricetta",
+  "recipeSaved": "Ricetta salvata!",
+  "recipeTags": "Tag ricetta",
+  "removeImage": "Rimuovi immagine",
+  "requiredField": "Obbligatorio",
+  "saveChanges": "Salva modifiche",
+  "saveRecipe": "Salva",
+  "searchLanguage": "Cerca lingua...",
+  "searchRecipes": "Cerca ricette...",
+  "shortDescription": "Breve descrizione",
+  "suggestedTags": "Suggeriti",
+  "tags": "Tag",
+  "viewRecipe": "Visualizza Ricetta"
 }

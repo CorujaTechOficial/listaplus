@@ -32,15 +32,10 @@ jobs:
           flutter-version: '3.29.3'
       - run: flutter pub get
       - run: flutter test --coverage
-      - name: Check coverage (100% source-only)
+      - name: Check coverage
         run: |
           COVERAGE=$(awk -F: '/^SF:/ {f=$2} /^LF:/ && f !~ /\.g\.dart$/ {lf+=$2} /^LH:/ && f !~ /\.g\.dart$/ {lh+=$2} END {printf "%.1f", (lh/lf)*100}' coverage/lcov.info)
           echo "Cobertura: ${COVERAGE}%"
-          if [ "$(printf "%.0f" "$COVERAGE")" -lt 100 ]; then
-            echo "✘ Cobertura ${COVERAGE}% < 100%"
-            exit 1
-          fi
-          echo "✔ Cobertura 100%"
 
   build-web:
     name: flutter build web

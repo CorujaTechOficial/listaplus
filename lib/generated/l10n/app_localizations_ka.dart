@@ -290,6 +290,12 @@ class AppLocalizationsKa extends AppLocalizations {
   String get languageSystem => 'სისტემის ნაგულისხმევი';
 
   @override
+  String get chooseLanguage => 'ენის არჩევა';
+
+  @override
+  String get searchLanguage => 'ენის ძებნა...';
+
+  @override
   String get appearance => 'გარეგნობა';
 
   @override
@@ -303,6 +309,12 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get themeColor => 'თემის ფერი';
+
+  @override
+  String get dynamicColors => 'დინამიური ფერები';
+
+  @override
+  String get dynamicColorsSubtitle => 'გამოიყენეთ ფერები თქვენი ფონის მიხედვით';
 
   @override
   String get finance => 'ფინანსები';
@@ -1051,130 +1063,247 @@ class AppLocalizationsKa extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'მენიუს გახსნა';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'რეცეპტის ნახვა';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'რეცეპტი შეიქმნა!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'რედაქტირება';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'წაშლა';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'გსურთ რეცეპტის წაშლა?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'დარწმუნებული ხართ, რომ გსურთ „$recipeName“-ის წაშლა? ეს მოქმედება შეუქცევადია.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'ინგრედიენტები';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'ინსტრუქციები';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'მომზადების დრო';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'რეცეპტი შენახულია!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'რეცეპტები არ არის შენახული';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'შექმენით თქვენი პირველი პერსონალური რეცეპტი ქვემოთ მოცემულ ღილაკზე დაჭერით.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'ჩემი რეცეპტები';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'ახალი რეცეპტი';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'თქვენი რეცეპტების ჩატვირთვა...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'რეცეპტების ჩატვირთვის შეცდომა';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'ინგრედიენტის დამატება';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'შენახვა';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'რეცეპტის სახელი';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'მოკლე აღწერა';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'მომზადების დრო (წუთებში)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'შეიყვანეთ თითო ნაბიჯი თითო ხაზზე...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'ფოტოს დამატება';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'ან ჩასვით სურათის URL';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'ტეგები';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'რეცეპტის ტეგები';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'შემოთავაზებული';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'რეცეპტების ძიება...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'ფილტრაცია ტეგით';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'ყველა';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'რეცეპტი წაიშალა';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'ცვლილებების შენახვა';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'რეცეპტის რედაქტირება';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'ახალი რეცეპტი';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'სავალდებულოა';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'სურათის წყაროს არჩევა';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'გალერეა';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'შეიყვანეთ URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'რეცეპტის სურათი';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'სურათის წაშლა';
+
+  @override
+  String get mealPlannerTitle => 'კვების დაგეგმვა';
+
+  @override
+  String get mealPlannerViewMonthly => 'ყოველთვიური ხედი';
+
+  @override
+  String get mealPlannerViewWeekly => 'ყოველკვირეული ხედი';
+
+  @override
+  String get mealPlannerNoMeals => 'კერძები არ არის დაგეგმილი';
+
+  @override
+  String get mealPlannerNoMealsHint => 'დააჭირეთ დღეს კერძის დასამატებლად';
+
+  @override
+  String get mealPlannerLoading => 'კვების გეგმის ჩატვირთვა...';
+
+  @override
+  String get mealPlannerError => 'კვების გეგმის ჩატვირთვის შეცდომა';
+
+  @override
+  String get mealPlannerAddMeal => 'კერძის დამატება';
+
+  @override
+  String get mealPlannerEditMeal => 'კერძის რედაქტირება';
+
+  @override
+  String get mealPlannerDeleteMeal => 'კერძის ამოშლა';
+
+  @override
+  String get mealPlannerMealDeleted => 'კერძი ამოშლილია';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ულუფა',
+      one: '$count ულუფა',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ულუფები';
+
+  @override
+  String get mealPlannerNoteLabel => 'შენიშვნა (სურვილისამებრ)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'აირჩიეთ რეცეპტი';
+
+  @override
+  String get mealPlannerSearchRecipes => 'რეცეპტების ძიება...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'რეცეპტები ვერ მოიძებნა';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ჯერ შექმენით რეცეპტები „რეცეპტების“ ჩანართში';
+
+  @override
+  String get mealPlannerSave => 'გეგმაში დამატება';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'დაგეგმილია $total-დან $count კერძი';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'საყიდლების სიის გენერირება';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'დაემატოს ამ კვირის დაგეგმილი კერძების ყველა ინგრედიენტი საყიდლების სიაში?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ინგრედიენტი დაემატა თქვენს სიას!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'დასამატებელი ინგრედიენტები არ არის. ჯერ დაგეგმეთ კერძები რეცეპტებით.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ჯერ შექმენით საყიდლების სია.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'საუზმე';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'სადილი';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ვახშამი';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'წახემსება';
+
+  @override
+  String get mealPlannerDateLabel => 'თარიღი';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ამ კვირისთვის არაფერია დაგეგმილი';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'დააჭირეთ ნებისმიერ დღეს კვების დაგეგმვის დასაწყებად!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes წთ';
+  }
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -1461,6 +1590,12 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get languageSystem => 'სისტემის ნაგულისხმევი';
 
   @override
+  String get chooseLanguage => 'ენის არჩევა';
+
+  @override
+  String get searchLanguage => 'ენის ძებნა...';
+
+  @override
   String get appearance => 'გარეგნობა';
 
   @override
@@ -1474,6 +1609,12 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get themeColor => 'თემის ფერი';
+
+  @override
+  String get dynamicColors => 'დინამიური ფერები';
+
+  @override
+  String get dynamicColorsSubtitle => 'გამოიყენეთ ფერები თქვენი ფონის მიხედვით';
 
   @override
   String get finance => 'ფინანსები';
@@ -2220,4 +2361,247 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'მენიუს გახსნა';
+
+  @override
+  String get viewRecipe => 'რეცეპტის ნახვა';
+
+  @override
+  String get recipeCreated => 'რეცეპტი შეიქმნა!';
+
+  @override
+  String get editRecipe => 'რედაქტირება';
+
+  @override
+  String get deleteRecipe => 'წაშლა';
+
+  @override
+  String get deleteRecipeConfirm => 'გსურთ რეცეპტის წაშლა?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'დარწმუნებული ხართ, რომ გსურთ „$recipeName“-ის წაშლა? ეს მოქმედება შეუქცევადია.';
+  }
+
+  @override
+  String get ingredients => 'ინგრედიენტები';
+
+  @override
+  String get instructions => 'ინსტრუქციები';
+
+  @override
+  String get prepTime => 'მომზადების დრო';
+
+  @override
+  String get recipeSaved => 'რეცეპტი შენახულია!';
+
+  @override
+  String get noRecipesSaved => 'რეცეპტები არ არის შენახული';
+
+  @override
+  String get noRecipesSavedHint =>
+      'შექმენით თქვენი პირველი პერსონალური რეცეპტი ქვემოთ მოცემულ ღილაკზე დაჭერით.';
+
+  @override
+  String get myRecipes => 'ჩემი რეცეპტები';
+
+  @override
+  String get newRecipe => 'ახალი რეცეპტი';
+
+  @override
+  String get loadingRecipes => 'თქვენი რეცეპტების ჩატვირთვა...';
+
+  @override
+  String get errorLoadingRecipes => 'რეცეპტების ჩატვირთვის შეცდომა';
+
+  @override
+  String get addIngredient => 'ინგრედიენტის დამატება';
+
+  @override
+  String get saveRecipe => 'შენახვა';
+
+  @override
+  String get recipeName => 'რეცეპტის სახელი';
+
+  @override
+  String get shortDescription => 'მოკლე აღწერა';
+
+  @override
+  String get prepTimeMinutes => 'მომზადების დრო (წუთებში)';
+
+  @override
+  String get instructionsHint => 'შეიყვანეთ თითო ნაბიჯი თითო ხაზზე...';
+
+  @override
+  String get addPhoto => 'ფოტოს დამატება';
+
+  @override
+  String get imageUrlPlaceholder => 'ან ჩასვით სურათის URL';
+
+  @override
+  String get tags => 'ტეგები';
+
+  @override
+  String get recipeTags => 'რეცეპტის ტეგები';
+
+  @override
+  String get suggestedTags => 'შემოთავაზებული';
+
+  @override
+  String get searchRecipes => 'რეცეპტების ძიება...';
+
+  @override
+  String get filterByTag => 'ფილტრაცია ტეგით';
+
+  @override
+  String get allTags => 'ყველა';
+
+  @override
+  String get recipeDeleted => 'რეცეპტი წაიშალა';
+
+  @override
+  String get saveChanges => 'ცვლილებების შენახვა';
+
+  @override
+  String get editRecipeTitle => 'რეცეპტის რედაქტირება';
+
+  @override
+  String get newRecipeTitle => 'ახალი რეცეპტი';
+
+  @override
+  String get requiredField => 'სავალდებულოა';
+
+  @override
+  String get chooseImageSource => 'სურათის წყაროს არჩევა';
+
+  @override
+  String get gallery => 'გალერეა';
+
+  @override
+  String get enterUrl => 'შეიყვანეთ URL';
+
+  @override
+  String get recipeImage => 'რეცეპტის სურათი';
+
+  @override
+  String get removeImage => 'სურათის წაშლა';
+
+  @override
+  String get mealPlannerTitle => 'კვების დაგეგმვა';
+
+  @override
+  String get mealPlannerViewMonthly => 'ყოველთვიური ხედი';
+
+  @override
+  String get mealPlannerViewWeekly => 'ყოველკვირეული ხედი';
+
+  @override
+  String get mealPlannerNoMeals => 'კერძები არ არის დაგეგმილი';
+
+  @override
+  String get mealPlannerNoMealsHint => 'დააჭირეთ დღეს კერძის დასამატებლად';
+
+  @override
+  String get mealPlannerLoading => 'კვების გეგმის ჩატვირთვა...';
+
+  @override
+  String get mealPlannerError => 'კვების გეგმის ჩატვირთვის შეცდომა';
+
+  @override
+  String get mealPlannerAddMeal => 'კერძის დამატება';
+
+  @override
+  String get mealPlannerEditMeal => 'კერძის რედაქტირება';
+
+  @override
+  String get mealPlannerDeleteMeal => 'კერძის ამოშლა';
+
+  @override
+  String get mealPlannerMealDeleted => 'კერძი ამოშლილია';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ულუფა',
+      one: '$count ულუფა',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ულუფები';
+
+  @override
+  String get mealPlannerNoteLabel => 'შენიშვნა (სურვილისამებრ)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'აირჩიეთ რეცეპტი';
+
+  @override
+  String get mealPlannerSearchRecipes => 'რეცეპტების ძიება...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'რეცეპტები ვერ მოიძებნა';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ჯერ შექმენით რეცეპტები „რეცეპტების“ ჩანართში';
+
+  @override
+  String get mealPlannerSave => 'გეგმაში დამატება';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'დაგეგმილია $total-დან $count კერძი';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'საყიდლების სიის გენერირება';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'დაემატოს ამ კვირის დაგეგმილი კერძების ყველა ინგრედიენტი საყიდლების სიაში?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ინგრედიენტი დაემატა თქვენს სიას!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'დასამატებელი ინგრედიენტები არ არის. ჯერ დაგეგმეთ კერძები რეცეპტებით.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ჯერ შექმენით საყიდლების სია.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'საუზმე';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'სადილი';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ვახშამი';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'წახემსება';
+
+  @override
+  String get mealPlannerDateLabel => 'თარიღი';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ამ კვირისთვის არაფერია დაგეგმილი';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'დააჭირეთ ნებისმიერ დღეს კვების დაგეგმვის დასაწყებად!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes წთ';
+  }
 }

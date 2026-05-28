@@ -101,8 +101,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
         ),
         title: Text(l10n.myRecipes),
       ),
-      body: recipesAsync.when(
-        data: (recipes) {
+      body: SafeArea(
+        child: recipesAsync.when(
+          data: (recipes) {
           final filtered = _filterRecipes(recipes);
           final allTags = _allTags(recipes);
 
@@ -347,7 +348,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
           ),
         ),
       ),
+      ),
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: null,
         onPressed: () {
           Navigator.push(
             context,

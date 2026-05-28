@@ -281,6 +281,12 @@ class AppLocalizationsKm extends AppLocalizations {
   String get languageSystem => 'លំនាំដើមប្រព័ន្ធ';
 
   @override
+  String get chooseLanguage => 'ជ្រើសរើសភាសា';
+
+  @override
+  String get searchLanguage => 'ស្វែងរកភាសា...';
+
+  @override
   String get appearance => 'រូបរាង';
 
   @override
@@ -294,6 +300,12 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get themeColor => 'ពណ៌ប្រធានបទ';
+
+  @override
+  String get dynamicColors => 'ពណ៌ថាមវន្ត';
+
+  @override
+  String get dynamicColorsSubtitle => 'ប្រើពណ៌តាមផ្ទាំងរូបភាពរបស់អ្នក';
 
   @override
   String get finance => 'ហិរញ្ញវត្ថុ';
@@ -1033,130 +1045,247 @@ class AppLocalizationsKm extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'បើកម៉ឺនុយ';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'មើលរូបមន្ត';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'បានបង្កើតរូបមន្ត!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'កែសម្រួល';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'លុប';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'លុបរូបមន្តនេះ?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'តើអ្នកប្រាកដថាចង់លុប \"$recipeName\" ឬ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'គ្រឿងផ្សំ';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'ការណែនាំ';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'រយៈពេលរៀបចំ';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'បានរក្សាទុករូបមន្ត!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'គ្មានរូបមន្តដែលបានរក្សាទុក';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'បង្កើតរូបមន្តផ្ទាល់ខ្លួនដំបូងរបស់អ្នកដោយប៉ះប៊ូតុងខាងក្រោម。';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'រូបមន្តរបស់ខ្ញុំ';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'រូបមន្តថ្មី';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'កំពុងទាញយករូបមន្តរបស់អ្នក...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'កំហុសក្នុងការទាញយករូបមន្ត';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'បន្ថែមគ្រឿងផ្សំ';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'រក្សាទុក';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'ឈ្មោះរូបមន្ត';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'ការពិពណ៌នាខ្លី';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'រយៈពេលរៀបចំ (នាទី)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'វាយបញ្ចូលមួយជំហានក្នុងមួយជួរ...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'បន្ថែមរូបថត';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'ឬបិទភ្ជាប់ URL រូបភាព';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'ស្លាក';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'ស្លាករូបមន្ត';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'ត្រូវបានណែនាំ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'ស្វែងរករូបមន្ត...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'ត្រងតាមស្លាក';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'ទាំងអស់';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'បានលុបរូបមន្ត';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'រក្សាទុកការផ្លាស់ប្តូរ';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'កែសម្រួលរូបមន្ត';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'រូបមន្តថ្មី';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'ចាំបាច់';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'ជ្រើសរើសប្រភពរូបភាព';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'វិចិត្រសាល';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'បញ្ចូល URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'រូបភាពរូបមន្ត';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'លុបរូបភាព';
+
+  @override
+  String get mealPlannerTitle => 'អ្នករៀបចំអាហារ';
+
+  @override
+  String get mealPlannerViewMonthly => 'ទិដ្ឋភាពប្រចាំខែ';
+
+  @override
+  String get mealPlannerViewWeekly => 'ទិដ្ឋភាពប្រចាំសប្តាហ៍';
+
+  @override
+  String get mealPlannerNoMeals => 'គ្មានអាហារដែលបានគ្រោងទុក';
+
+  @override
+  String get mealPlannerNoMealsHint => 'ប៉ះថ្ងៃណាមួយដើម្បីបន្ថែមអាហារ';
+
+  @override
+  String get mealPlannerLoading => 'កំពុងទាញយកគម្រោងអាហារ...';
+
+  @override
+  String get mealPlannerError => 'កំហុសក្នុងការទាញយកគម្រោងអាហារ';
+
+  @override
+  String get mealPlannerAddMeal => 'បន្ថែមអាហារ';
+
+  @override
+  String get mealPlannerEditMeal => 'កែសម្រួលអាហារ';
+
+  @override
+  String get mealPlannerDeleteMeal => 'លុបអាហារ';
+
+  @override
+  String get mealPlannerMealDeleted => 'បានលុបអាហារ';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ចំណែក',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ចំនួនចំណែក';
+
+  @override
+  String get mealPlannerNoteLabel => 'កំណត់សម្គាល់ (ជាជម្រើស)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ជ្រើសរើសរូបមន្ត';
+
+  @override
+  String get mealPlannerSearchRecipes => 'ស្វែងរករូបមន្ត...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'រកមិនឃើញរូបមន្ត';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'បង្កើតរូបមន្តក្នុងផ្ទាំងរូបមន្តជាមុនសិន';
+
+  @override
+  String get mealPlannerSave => 'បន្ថែមទៅក្នុងគម្រោង';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'អាហារចំនួន $count ក្នុងចំណោម $total ត្រូវបានគ្រោងទុក';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'បង្កើតបញ្ជីទិញទំនិញ';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'បន្ថែមគ្រឿងផ្សំទាំងអស់ពីអាហារដែលបានគ្រោងទុកក្នុងសប្តាហ៍នេះទៅក្នុងបញ្ជីទិញទំនិញរបស់អ្នក?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'បានបន្ថែមគ្រឿងផ្សំ $count ទៅក្នុងបញ្ជីរបស់អ្នក!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'គ្មានគ្រឿងផ្សំដែលត្រូវបន្ថែមទេ។ រៀបចំគម្រោងអាហារជាមួយរូបមន្តជាមុនសិន。';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'បង្កើតបញ្ជីទិញទំនិញជាមុនសិន。';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'អាហារពេលព្រឹក';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'អាហារពេលថ្ងៃត្រង់';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'អាហារពេលល្ងាច';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'អាហារសម្រន់';
+
+  @override
+  String get mealPlannerDateLabel => 'កាលបរិច្ឆេទ';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'គ្មានអ្វីត្រូវបានគ្រោងទុកសម្រាប់សប្តាហ៍នេះទេ';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'ប៉ះថ្ងៃណាមួយដើម្បីចាប់ផ្តើមរៀបចំគម្រោងអាហាររបស់អ្នក!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes នាទី';
+  }
 }
 
 /// The translations for Khmer Central Khmer, as used in Cambodia (`km_KH`).
@@ -1443,6 +1572,12 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get languageSystem => 'លំនាំដើមប្រព័ន្ធ';
 
   @override
+  String get chooseLanguage => 'ជ្រើសរើសភាសា';
+
+  @override
+  String get searchLanguage => 'ស្វែងរកភាសា...';
+
+  @override
   String get appearance => 'រូបរាង';
 
   @override
@@ -1456,6 +1591,12 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get themeColor => 'ពណ៌ប្រធានបទ';
+
+  @override
+  String get dynamicColors => 'ពណ៌ថាមវន្ត';
+
+  @override
+  String get dynamicColorsSubtitle => 'ប្រើពណ៌តាមផ្ទាំងរូបភាពរបស់អ្នក';
 
   @override
   String get finance => 'ហិរញ្ញវត្ថុ';
@@ -2198,4 +2339,247 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'បើកម៉ឺនុយ';
+
+  @override
+  String get viewRecipe => 'មើលរូបមន្ត';
+
+  @override
+  String get recipeCreated => 'បានបង្កើតរូបមន្ត!';
+
+  @override
+  String get editRecipe => 'កែសម្រួល';
+
+  @override
+  String get deleteRecipe => 'លុប';
+
+  @override
+  String get deleteRecipeConfirm => 'លុបរូបមន្តនេះ?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'តើអ្នកប្រាកដថាចង់លុប \"$recipeName\" ឬ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។';
+  }
+
+  @override
+  String get ingredients => 'គ្រឿងផ្សំ';
+
+  @override
+  String get instructions => 'ការណែនាំ';
+
+  @override
+  String get prepTime => 'រយៈពេលរៀបចំ';
+
+  @override
+  String get recipeSaved => 'បានរក្សាទុករូបមន្ត!';
+
+  @override
+  String get noRecipesSaved => 'គ្មានរូបមន្តដែលបានរក្សាទុក';
+
+  @override
+  String get noRecipesSavedHint =>
+      'បង្កើតរូបមន្តផ្ទាល់ខ្លួនដំបូងរបស់អ្នកដោយប៉ះប៊ូតុងខាងក្រោម。';
+
+  @override
+  String get myRecipes => 'រូបមន្តរបស់ខ្ញុំ';
+
+  @override
+  String get newRecipe => 'រូបមន្តថ្មី';
+
+  @override
+  String get loadingRecipes => 'កំពុងទាញយករូបមន្តរបស់អ្នក...';
+
+  @override
+  String get errorLoadingRecipes => 'កំហុសក្នុងការទាញយករូបមន្ត';
+
+  @override
+  String get addIngredient => 'បន្ថែមគ្រឿងផ្សំ';
+
+  @override
+  String get saveRecipe => 'រក្សាទុក';
+
+  @override
+  String get recipeName => 'ឈ្មោះរូបមន្ត';
+
+  @override
+  String get shortDescription => 'ការពិពណ៌នាខ្លី';
+
+  @override
+  String get prepTimeMinutes => 'រយៈពេលរៀបចំ (នាទី)';
+
+  @override
+  String get instructionsHint => 'វាយបញ្ចូលមួយជំហានក្នុងមួយជួរ...';
+
+  @override
+  String get addPhoto => 'បន្ថែមរូបថត';
+
+  @override
+  String get imageUrlPlaceholder => 'ឬបិទភ្ជាប់ URL រូបភាព';
+
+  @override
+  String get tags => 'ស្លាក';
+
+  @override
+  String get recipeTags => 'ស្លាករូបមន្ត';
+
+  @override
+  String get suggestedTags => 'ត្រូវបានណែនាំ';
+
+  @override
+  String get searchRecipes => 'ស្វែងរករូបមន្ត...';
+
+  @override
+  String get filterByTag => 'ត្រងតាមស្លាក';
+
+  @override
+  String get allTags => 'ទាំងអស់';
+
+  @override
+  String get recipeDeleted => 'បានលុបរូបមន្ត';
+
+  @override
+  String get saveChanges => 'រក្សាទុកការផ្លាស់ប្តូរ';
+
+  @override
+  String get editRecipeTitle => 'កែសម្រួលរូបមន្ត';
+
+  @override
+  String get newRecipeTitle => 'រូបមន្តថ្មី';
+
+  @override
+  String get requiredField => 'ចាំបាច់';
+
+  @override
+  String get chooseImageSource => 'ជ្រើសរើសប្រភពរូបភាព';
+
+  @override
+  String get gallery => 'វិចិត្រសាល';
+
+  @override
+  String get enterUrl => 'បញ្ចូល URL';
+
+  @override
+  String get recipeImage => 'រូបភាពរូបមន្ត';
+
+  @override
+  String get removeImage => 'លុបរូបភាព';
+
+  @override
+  String get mealPlannerTitle => 'អ្នករៀបចំអាហារ';
+
+  @override
+  String get mealPlannerViewMonthly => 'ទិដ្ឋភាពប្រចាំខែ';
+
+  @override
+  String get mealPlannerViewWeekly => 'ទិដ្ឋភាពប្រចាំសប្តាហ៍';
+
+  @override
+  String get mealPlannerNoMeals => 'គ្មានអាហារដែលបានគ្រោងទុក';
+
+  @override
+  String get mealPlannerNoMealsHint => 'ប៉ះថ្ងៃណាមួយដើម្បីបន្ថែមអាហារ';
+
+  @override
+  String get mealPlannerLoading => 'កំពុងទាញយកគម្រោងអាហារ...';
+
+  @override
+  String get mealPlannerError => 'កំហុសក្នុងការទាញយកគម្រោងអាហារ';
+
+  @override
+  String get mealPlannerAddMeal => 'បន្ថែមអាហារ';
+
+  @override
+  String get mealPlannerEditMeal => 'កែសម្រួលអាហារ';
+
+  @override
+  String get mealPlannerDeleteMeal => 'លុបអាហារ';
+
+  @override
+  String get mealPlannerMealDeleted => 'បានលុបអាហារ';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ចំណែក',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ចំនួនចំណែក';
+
+  @override
+  String get mealPlannerNoteLabel => 'កំណត់សម្គាល់ (ជាជម្រើស)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ជ្រើសរើសរូបមន្ត';
+
+  @override
+  String get mealPlannerSearchRecipes => 'ស្វែងរករូបមន្ត...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'រកមិនឃើញរូបមន្ត';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'បង្កើតរូបមន្តក្នុងផ្ទាំងរូបមន្តជាមុនសិន';
+
+  @override
+  String get mealPlannerSave => 'បន្ថែមទៅក្នុងគម្រោង';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'អាហារចំនួន $count ក្នុងចំណោម $total ត្រូវបានគ្រោងទុក';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'បង្កើតបញ្ជីទិញទំនិញ';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'បន្ថែមគ្រឿងផ្សំទាំងអស់ពីអាហារដែលបានគ្រោងទុកក្នុងសប្តាហ៍នេះទៅក្នុងបញ្ជីទិញទំនិញរបស់អ្នក?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'បានបន្ថែមគ្រឿងផ្សំ $count ទៅក្នុងបញ្ជីរបស់អ្នក!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'គ្មានគ្រឿងផ្សំដែលត្រូវបន្ថែមទេ។ រៀបចំគម្រោងអាហារជាមួយរូបមន្តជាមុនសិន。';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'បង្កើតបញ្ជីទិញទំនិញជាមុនសិន。';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'អាហារពេលព្រឹក';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'អាហារពេលថ្ងៃត្រង់';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'អាហារពេលល្ងាច';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'អាហារសម្រន់';
+
+  @override
+  String get mealPlannerDateLabel => 'កាលបរិច្ឆេទ';
+
+  @override
+  String get mealPlannerWeekEmpty =>
+      'គ្មានអ្វីត្រូវបានគ្រោងទុកសម្រាប់សប្តាហ៍នេះទេ';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'ប៉ះថ្ងៃណាមួយដើម្បីចាប់ផ្តើមរៀបចំគម្រោងអាហាររបស់អ្នក!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes នាទី';
+  }
 }

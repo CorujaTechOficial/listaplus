@@ -20,7 +20,8 @@ class ThemeSelectionScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Escolher Cor do Tema'),
       ),
-      body: GridView.builder(
+      body: SafeArea(
+        child: GridView.builder(
         padding: const EdgeInsets.all(Spacing.md),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
@@ -75,6 +76,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
             ),
           );
         },
+      ),
       ),
     );
   }

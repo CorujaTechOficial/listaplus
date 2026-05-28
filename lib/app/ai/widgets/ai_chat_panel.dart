@@ -17,6 +17,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../../../models/chat_message.dart';
 import 'package:shopping_list/domain/entities/suggested_reply.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
+import 'package:shopping_list/app/ai/agent/tools/agent_tools.dart';
 import 'package:shopping_list/app/ai/widgets/animated_typing_dots.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import '../../../theme/tokens.dart';
@@ -191,10 +192,15 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     _textController.clear();
 
     try {
+      var sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+      if (sessionId == null) {
+        sessionId = await ref.read(chatSessionsProvider(widget.listId).notifier).startNewSession();
+      }
+
       if (!canSend && !isPremium) {
         // Add user message first
         final userMessage = ChatMessage(role: 'user', content: text);
-        await ref.read(chatSessionProvider(widget.listId).notifier).addMessage(userMessage);
+        await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).addMessage(userMessage);
 
         // Trigger Dynamic Teaser Effect
         String teaserText = 'Para economizar nesta compra, você pode aproveitar as promoções sazonais de frutas cítricas, além de considerar a troca de marcas premium por marcas próprias do supermercado, que oferecem qualidade similar por um preço até 30% menor. Outra dica valiosa é de extrema importância para seu bolso e para a organização da sua despensa...';
@@ -217,7 +223,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
           debugPrint('Error generating dynamic teaser: $e');
         }
 
-        await ref.read(chatSessionProvider(widget.listId).notifier).addMessage(
+        await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).addMessage(
           ChatMessage(
             role: 'assistant',
             content: teaserText,
@@ -225,7 +231,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
           ),
         );
       } else {
-        await ref.read(chatSessionProvider(widget.listId).notifier).sendMessage(text);
+        await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).sendMessage(text);
         if (!isPremium) {
           await ref.read(aiUsageStateProvider.notifier).recordMessage();
         }
@@ -260,7 +266,8 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     final aiUsageAsync = ref.watch(aiUsageStateProvider);
     final canSend = isPremium || (aiUsageAsync.value?.isExhausted == false);
 
-    final chatState = ref.watch(chatSessionProvider(widget.listId));
+    final sessionId = ref.watch(activeChatSessionIdProvider(widget.listId));
+    final chatState = ref.watch(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))));
     final allMessages = chatState.value ?? [];
 
     final itemsAsync = widget.listId != null
@@ -504,6 +511,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                   right: 16,
                   bottom: 16,
                   child: FloatingActionButton.small(
+                    heroTag: null,
                     onPressed: () => _scrollToBottom(force: true),
                     backgroundColor: theme.colorScheme.primaryContainer,
                     foregroundColor: theme.colorScheme.onPrimaryContainer,
@@ -806,8 +814,9 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 4),
                       child: IconButton.filled(
+                        key: const ValueKey('chat_send_button'),
                         onPressed: _isSending
-                            ? () => ref.read(chatSessionProvider(widget.listId).notifier).cancelRequest()
+                            ? () => ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).cancelRequest()
                             : (hasText
                                 ? _sendMessage
                                 : (_isListening
@@ -1106,7 +1115,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                           },
                           onDoubleTap: () {
                             unawaited(HapticFeedback.mediumImpact());
-                            ref.read(chatSessionProvider(widget.listId).notifier).setFeedback(
+                            ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).setFeedback(
                               widget.message.id, 
                               widget.message.feedback == 1 ? null : 1,
                             );
@@ -1249,7 +1258,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                       FilledButton.icon(
                                         onPressed: () {
                                           unawaited(HapticFeedback.lightImpact());
-                                          ref.read(chatSessionProvider(widget.listId).notifier).retryMessage();
+                                          ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).retryMessage();
                                         },
                                         icon: const Icon(Icons.refresh, size: 16),
                                         label: Text(l10n.retry),
@@ -1274,7 +1283,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                             isFilled: true,
                                             onPressed: () async {
                                               unawaited(HapticFeedback.lightImpact());
-                                              await ref.read(chatSessionProvider(widget.listId).notifier).executeAction(widget.message.id, 'add_items');
+                                              await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).executeAction(widget.message.id, 'add_items');
                                               widget.onItemsAdded?.call();
                                               if (context.mounted) {
                                                 final localizations = AppLocalizations.of(context)!;
@@ -1310,7 +1319,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                                 Navigator.pop(context);
                                                 widget.onOrganizeRequested!();
                                               } else {
-                                                ref.read(chatSessionProvider(widget.listId).notifier).executeAction(widget.message.id, 'organize');
+                                                ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).executeAction(widget.message.id, 'organize');
                                               }
                                             },
                                             icon: Icons.category,
@@ -1370,7 +1379,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                     isSelected: widget.message.feedback == 1,
                     onTap: () {
                       unawaited(HapticFeedback.lightImpact());
-                      ref.read(chatSessionProvider(widget.listId).notifier).setFeedback(
+                      ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).setFeedback(
                         widget.message.id,
                         widget.message.feedback == 1 ? null : 1,
                       );
@@ -1382,7 +1391,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                     isSelected: widget.message.feedback == -1,
                     onTap: () {
                       unawaited(HapticFeedback.lightImpact());
-                      ref.read(chatSessionProvider(widget.listId).notifier).setFeedback(
+                      ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).setFeedback(
                         widget.message.id,
                         widget.message.feedback == -1 ? null : -1,
                       );
@@ -1393,7 +1402,7 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                     TextButton.icon(
                       onPressed: () {
                         unawaited(HapticFeedback.mediumImpact());
-                        ref.read(chatSessionProvider(widget.listId).notifier).regenerate(widget.message.id);
+                        ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).regenerate(widget.message.id);
                       },
                       icon: const Icon(Icons.refresh, size: 14),
                       label: Text(l10n.regenerate, style: const TextStyle(fontSize: 10)),
@@ -2127,7 +2136,7 @@ class _AgentActionStepsList extends ConsumerWidget {
       children: [
         ...steps.map((step) => Padding(
               padding: const EdgeInsets.only(bottom: 6),
-              child: AgentActionBlock(step: step).animate().fadeIn(duration: 200.ms).slideY(begin: 0.1, end: 0),
+              child: AgentActionBlock(step: step, listId: listId).animate().fadeIn(duration: 200.ms).slideY(begin: 0.1, end: 0),
             )),
         if (isUndoable)
           Align(
@@ -2138,7 +2147,7 @@ class _AgentActionStepsList extends ConsumerWidget {
                 onPressed: () async {
                   unawaited(HapticFeedback.mediumImpact());
                   await ref
-                      .read(chatSessionProvider(listId).notifier)
+                      .read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier)
                       .undoMessageActions(messageId);
                 },
                 icon: const Icon(Icons.undo, size: 14),
@@ -2170,9 +2179,11 @@ class AgentActionBlock extends StatefulWidget {
   const AgentActionBlock({
     super.key,
     required this.step,
+    this.listId,
   });
 
   final AgentStep step;
+  final String? listId;
 
   @override
   State<AgentActionBlock> createState() => _AgentActionBlockState();
@@ -2194,13 +2205,16 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
     );
 
     // Build leading status indicator
+    final isPremiumTool = AgentTools.premiumToolNames.contains(step.toolName);
     Widget leading;
     switch (status) {
       case AgentStepStatus.pending:
         leading = Icon(
-          Icons.radio_button_unchecked,
+          isPremiumTool ? Icons.workspace_premium : Icons.radio_button_unchecked,
           size: 14,
-          color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
+          color: isPremiumTool 
+              ? Colors.amber.withAlpha((0.8 * 255).toInt())
+              : theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
         );
         break;
       case AgentStepStatus.running:
@@ -2209,7 +2223,9 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
           height: 14,
           child: CircularProgressIndicator(
             strokeWidth: 1.5,
-            valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+            valueColor: AlwaysStoppedAnimation<Color>(
+              isPremiumTool ? Colors.amber : theme.colorScheme.primary,
+            ),
           ),
         );
         break;
@@ -2234,71 +2250,91 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
           color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
         ).animate().shake(duration: 400.ms);
         break;
+      case AgentStepStatus.requiresUnlock:
+        leading = const Icon(
+          Icons.workspace_premium,
+          size: 14,
+          color: Colors.amber,
+        ).animate(onPlay: (controller) => controller.repeat(reverse: true))
+         .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), duration: 600.ms);
+        break;
     }
 
     // Text style based on status
+    final isLocked = status == AgentStepStatus.requiresUnlock;
     final textStyle = theme.textTheme.bodyMedium?.copyWith(
       fontSize: 12,
-      fontWeight: status == AgentStepStatus.running ? FontWeight.w600 : FontWeight.normal,
+      fontWeight: (status == AgentStepStatus.running || isLocked) ? FontWeight.w600 : FontWeight.normal,
       decoration: status == AgentStepStatus.undone ? TextDecoration.lineThrough : null,
       color: status == AgentStepStatus.undone
           ? theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt())
-          : (status == AgentStepStatus.running ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant),
+          : (isLocked ? Colors.amber.shade700 : (status == AgentStepStatus.running ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant)),
     );
 
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(RadiusTokens.sm),
-        border: Border.all(
-          color: theme.colorScheme.outlineVariant.withAlpha((0.4 * 255).toInt()),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          InkWell(
-            onTap: (status == AgentStepStatus.success && hasDetails)
-                ? () {
-                    unawaited(HapticFeedback.selectionClick());
-                    setState(() {
-                      _isExpanded = !_isExpanded;
-                    });
-                  }
-                : null,
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: isLocked ? Colors.amber.withAlpha((0.05 * 255).toInt()) : theme.colorScheme.surfaceContainerLow,
             borderRadius: BorderRadius.circular(RadiusTokens.sm),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-              child: Row(
-                children: [
-                  leading,
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      step.description,
-                      style: textStyle,
-                    ),
-                  ),
-                  if (status == AgentStepStatus.success && hasDetails) ...[
-                    const SizedBox(width: 8),
-                    Icon(
-                      _isExpanded ? Icons.expand_less : Icons.expand_more,
-                      size: 16,
-                      color: theme.colorScheme.onSurfaceVariant.withAlpha((0.6 * 255).toInt()),
-                    ),
-                  ],
-                ],
-              ),
+            border: Border.all(
+              color: isLocked 
+                  ? Colors.amber.withAlpha((0.3 * 255).toInt())
+                  : theme.colorScheme.outlineVariant.withAlpha((0.4 * 255).toInt()),
             ),
-          ).animate(target: status == AgentStepStatus.undone ? 1 : 0)
-           .slideX(begin: 0, end: -0.05, duration: 300.ms, curve: Curves.easeInOut)
-           .then()
-           .slideX(begin: 0, end: 0.05, duration: 300.ms, curve: Curves.easeInOut),
-          if (_isExpanded && status == AgentStepStatus.success && hasDetails)
-            _buildStepDetails(step, theme),
-        ],
-      ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InkWell(
+                onTap: (status == AgentStepStatus.success && hasDetails)
+                    ? () {
+                        unawaited(HapticFeedback.selectionClick());
+                        setState(() {
+                          _isExpanded = !_isExpanded;
+                        });
+                      }
+                    : null,
+                borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                  child: Row(
+                    children: [
+                      leading,
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          isLocked ? '${step.description} (Premium)' : step.description,
+                          style: textStyle,
+                        ),
+                      ),
+                      if (status == AgentStepStatus.success && hasDetails) ...[
+                        const SizedBox(width: 8),
+                        Icon(
+                          _isExpanded ? Icons.expand_less : Icons.expand_more,
+                          size: 16,
+                          color: theme.colorScheme.onSurfaceVariant.withAlpha((0.6 * 255).toInt()),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ).animate(target: status == AgentStepStatus.undone ? 1 : 0)
+               .slideX(begin: 0, end: -0.05, duration: 300.ms, curve: Curves.easeInOut)
+               .then()
+               .slideX(begin: 0, end: 0.05, duration: 300.ms, curve: Curves.easeInOut),
+              if (_isExpanded && status == AgentStepStatus.success && hasDetails)
+                _buildStepDetails(step, theme),
+            ],
+          ),
+        ),
+        if (isLocked)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: _PremiumUnlockCard(listId: widget.listId),
+          ),
+      ],
     );
   }
 
@@ -2394,4 +2430,108 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
     );
   }
 }
+
+class _PremiumUnlockCard extends ConsumerWidget {
+  const _PremiumUnlockCard({this.listId});
+  final String? listId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerHigh,
+        borderRadius: BorderRadius.circular(RadiusTokens.md),
+        border: Border.all(color: Colors.amber.withAlpha((0.5 * 255).toInt()), width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha((0.05 * 255).toInt()),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.auto_awesome, color: Colors.amber, size: 20),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Recurso Avançado',
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: theme.colorScheme.onSurface,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Esta interface interativa utiliza inteligência artificial avançada e é exclusiva para membros Pro ou via anúncio rápido.',
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton.icon(
+              onPressed: () {
+                unawaited(HapticFeedback.mediumImpact());
+                // Abre paywall
+                ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).executeToolDirectly('open_paywall', {});
+              },
+              icon: const Icon(Icons.workspace_premium, size: 18),
+              label: const Text('Seja Premium'),
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.amber.shade700,
+                foregroundColor: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: () async {
+                unawaited(HapticFeedback.lightImpact());
+                final adService = ref.read(adServiceProvider);
+                final success = await adService.showRewardedAd();
+                if (success) {
+                  await ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).resumeWithUnlock();
+                }
+              },
+              icon: const Icon(Icons.play_circle_outline, size: 18),
+              label: const Text('Liberar com Anúncio'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: theme.colorScheme.primary,
+                side: BorderSide(color: theme.colorScheme.primary),
+              ),
+            ),
+          ),
+          const SizedBox(height: 4),
+          TextButton(
+            onPressed: () {
+              unawaited(HapticFeedback.lightImpact());
+              ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).cancelUnlock();
+            },
+            child: Text(
+              'Continuar sem interface interativa',
+              style: theme.textTheme.labelMedium?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant.withAlpha((0.7 * 255).toInt()),
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
+  }
+}
+
 

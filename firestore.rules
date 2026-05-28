@@ -67,12 +67,28 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
-    // Chat messages per list — owner or shared user can R/W
+    // Chat sessions per list — owner or shared user can R/W
+    match /users/{uid}/lists/{listId}/chat_sessions/{sessionId} {
+      allow read, write: if isAuthenticated() && (isOwner(uid) || hasSharedRef(listId));
+      
+      match /messages/{messageId} {
+        allow read, write: if isAuthenticated() && (isOwner(uid) || hasSharedRef(listId));
+      }
+    }
+
+    // Global chat sessions — owner only
+    match /users/{uid}/global_chat_sessions/{sessionId} {
+      allow read, write: if isAuthenticated() && isOwner(uid);
+      
+      match /messages/{messageId} {
+        allow read, write: if isAuthenticated() && isOwner(uid);
+      }
+    }
+
+    // Legacy chat messages (for migration/compatibility)
     match /users/{uid}/lists/{listId}/chat_messages/{messageId} {
       allow read, write: if isAuthenticated() && (isOwner(uid) || hasSharedRef(listId));
     }
-
-    // Global chat messages — owner only
     match /users/{uid}/global_chat_messages/{messageId} {
       allow read, write: if isAuthenticated() && isOwner(uid);
     }

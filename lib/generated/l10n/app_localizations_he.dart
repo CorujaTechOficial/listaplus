@@ -289,6 +289,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get languageSystem => 'ברירת מחדל של המערכת';
 
   @override
+  String get chooseLanguage => 'בחר שפה';
+
+  @override
+  String get searchLanguage => 'חפש שפה...';
+
+  @override
   String get appearance => 'מראה';
 
   @override
@@ -302,6 +308,12 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get themeColor => 'צבע נושא';
+
+  @override
+  String get dynamicColors => 'צבעים דינמיים';
+
+  @override
+  String get dynamicColorsSubtitle => 'השתמש בצבעים המבוססים על הטפט שלך';
 
   @override
   String get finance => 'כספים';
@@ -1047,130 +1059,246 @@ class AppLocalizationsHe extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'פתח תפריט';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'הצג מתכון';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'המתכון נוצר!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'עריכה';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'מחיקה';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'למחוק את המתכון הזה?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'האם אתה בטוח שברצונך למחוק את \"$recipeName\"? לא ניתן לבטל פעולה זו.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'רכיבים';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'הוראות';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'זמן הכנה';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'המתכון נשמר!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'אין מתכונים שמורים';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'צור את המתכון המותאם הראשון שלך על ידי לחיצה על הכפתור למטה.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'המתכונים שלי';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'מתכון חדש';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'טוען את המתכונים שלך...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'שגיאה בטעינת המתכונים';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'הוסף רכיב';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'שמירה';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'שם המתכון';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'תיאור קצר';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'זמן הכנה (דקות)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'הקלד שלב אחד בכל שורה...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'הוסף תמונה';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'או הדבק URL של תמונה';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'תגיות';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'תגיות מתכון';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'מוצעות';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'חפש מתכונים...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'סינון לפי תגית';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'הכל';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'המתכון נמחק';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'שמור שינויים';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'עריכת מתכון';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'מתכון חדש';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'חובה';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'בחר מקור תמונה';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'גלריה';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'הזן URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'תמונת מתכון';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'הסר תמונה';
+
+  @override
+  String get mealPlannerTitle => 'תוכנית ארוחות';
+
+  @override
+  String get mealPlannerViewMonthly => 'תצוגה חודשית';
+
+  @override
+  String get mealPlannerViewWeekly => 'תצוגה שבועית';
+
+  @override
+  String get mealPlannerNoMeals => 'אין ארוחות מתוכננות';
+
+  @override
+  String get mealPlannerNoMealsHint => 'לחץ על יום כדי הוסף ארוחה';
+
+  @override
+  String get mealPlannerLoading => 'טוען תוכנית ארוחות...';
+
+  @override
+  String get mealPlannerError => 'שגיאה בטעינת תוכנית הארוחות';
+
+  @override
+  String get mealPlannerAddMeal => 'הוסף ארוחה';
+
+  @override
+  String get mealPlannerEditMeal => 'ערוך ארוחה';
+
+  @override
+  String get mealPlannerDeleteMeal => 'הסר ארוחה';
+
+  @override
+  String get mealPlannerMealDeleted => 'הארוחה הוסרה';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count מנות',
+      one: 'מנה אחת',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'מנות';
+
+  @override
+  String get mealPlannerNoteLabel => 'הערה (אופציונלי)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'בחר מתכון';
+
+  @override
+  String get mealPlannerSearchRecipes => 'חפש מתכונים...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'לא נמצאו מתכונים';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'צור קודם מתכונים בלשונית המתכונים';
+
+  @override
+  String get mealPlannerSave => 'הוסף לתוכנית';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count מתוך $total ארוחות מתוכננות';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'צור רשימת קניות';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'להוסיף את כל הרכיבים מהארוחות המתוכננות השבוע לרשימת הקניות שלך?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'נוספו $count רכיבים לרשימה שלך!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'אין רכיבים להוספה. תכנן תחילה ארוחות עם מתכונים.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'צור קודם רשימת קניות.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'ארוחת בוקר';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ארוחת צהריים';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ארוחת ערב';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'נשנוש';
+
+  @override
+  String get mealPlannerDateLabel => 'תאריך';
+
+  @override
+  String get mealPlannerWeekEmpty => 'שום דבר לא מתוכנן לשבוע זה';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'לחץ על כל יום כדי להתחיל לתכנן את הארוחות שלך!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes דקות';
+  }
 }
 
 /// The translations for Hebrew, as used in Israel (`he_IL`).
@@ -1458,6 +1586,12 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
   String get languageSystem => 'ברירת מחדל של המערכת';
 
   @override
+  String get chooseLanguage => 'בחר שפה';
+
+  @override
+  String get searchLanguage => 'חפש שפה...';
+
+  @override
   String get appearance => 'מראה';
 
   @override
@@ -1471,6 +1605,12 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get themeColor => 'צבע נושא';
+
+  @override
+  String get dynamicColors => 'צבעים דינמיים';
+
+  @override
+  String get dynamicColorsSubtitle => 'השתמש בצבעים המבוססים על הטפט שלך';
 
   @override
   String get finance => 'כספים';
@@ -2214,4 +2354,246 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'פתח תפריט';
+
+  @override
+  String get viewRecipe => 'צפה במתכון';
+
+  @override
+  String get recipeCreated => 'המתכון נוצר!';
+
+  @override
+  String get editRecipe => 'ערוך';
+
+  @override
+  String get deleteRecipe => 'מחק';
+
+  @override
+  String get deleteRecipeConfirm => 'למחוק את המתכון הזה?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'האם אתה בטוח שברצונך למחוק את \"$recipeName\"? לא ניתן לבטל פעולה זו.';
+  }
+
+  @override
+  String get ingredients => 'רכיבים';
+
+  @override
+  String get instructions => 'הוראות';
+
+  @override
+  String get prepTime => 'זמן הכנה';
+
+  @override
+  String get recipeSaved => 'המתכון נשמר!';
+
+  @override
+  String get noRecipesSaved => 'אין מתכונים שמורים';
+
+  @override
+  String get noRecipesSavedHint =>
+      'צור את המתכון המותאם אישית הראשון שלך על ידי הקשה על הכפתור למטה.';
+
+  @override
+  String get myRecipes => 'המתכונים שלי';
+
+  @override
+  String get newRecipe => 'מתכון חדש';
+
+  @override
+  String get loadingRecipes => 'טוען את המתכונים שלך...';
+
+  @override
+  String get errorLoadingRecipes => 'שגיאה בטעינת מתכונים';
+
+  @override
+  String get addIngredient => 'הוסף רכיב';
+
+  @override
+  String get saveRecipe => 'שמור';
+
+  @override
+  String get recipeName => 'שם המתכון';
+
+  @override
+  String get shortDescription => 'תיאור קצר';
+
+  @override
+  String get prepTimeMinutes => 'זמן הכנה (דקות)';
+
+  @override
+  String get instructionsHint => 'הקלד שלב אחד בכל שורה...';
+
+  @override
+  String get addPhoto => 'הוסף תמונה';
+
+  @override
+  String get imageUrlPlaceholder => 'או הדבק URL של תמונה';
+
+  @override
+  String get tags => 'תגיות';
+
+  @override
+  String get recipeTags => 'תגיות מתכון';
+
+  @override
+  String get suggestedTags => 'מוצעים';
+
+  @override
+  String get searchRecipes => 'חפש מתכונים...';
+
+  @override
+  String get filterByTag => 'סנן לפי תגית';
+
+  @override
+  String get allTags => 'הכל';
+
+  @override
+  String get recipeDeleted => 'המתכון נמחק';
+
+  @override
+  String get saveChanges => 'שמור שינויים';
+
+  @override
+  String get editRecipeTitle => 'ערוך מתכון';
+
+  @override
+  String get newRecipeTitle => 'מתכון חדש';
+
+  @override
+  String get requiredField => 'שדה חובה';
+
+  @override
+  String get chooseImageSource => 'בחר מקור תמונה';
+
+  @override
+  String get gallery => 'גלריה';
+
+  @override
+  String get enterUrl => 'הזן URL';
+
+  @override
+  String get recipeImage => 'תמונת מתכון';
+
+  @override
+  String get removeImage => 'הסר תמונה';
+
+  @override
+  String get mealPlannerTitle => 'מתכנן ארוחות';
+
+  @override
+  String get mealPlannerViewMonthly => 'תצוגה חודשית';
+
+  @override
+  String get mealPlannerViewWeekly => 'תצוגה שבועית';
+
+  @override
+  String get mealPlannerNoMeals => 'אין ארוחות מתוכננות';
+
+  @override
+  String get mealPlannerNoMealsHint => 'הקש על יום כדי להוסיף ארוחה';
+
+  @override
+  String get mealPlannerLoading => 'טוען תוכנית ארוחות...';
+
+  @override
+  String get mealPlannerError => 'שגיאה בטעינת תוכנית הארוחות';
+
+  @override
+  String get mealPlannerAddMeal => 'הוסף ארוחה';
+
+  @override
+  String get mealPlannerEditMeal => 'ערוך ארוחה';
+
+  @override
+  String get mealPlannerDeleteMeal => 'הסר ארוחה';
+
+  @override
+  String get mealPlannerMealDeleted => 'הארוחה הוסרה';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count מנות',
+      one: '$count מנה',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'מנות';
+
+  @override
+  String get mealPlannerNoteLabel => 'הערה (אופציונלי)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'בחר מתכון';
+
+  @override
+  String get mealPlannerSearchRecipes => 'חפש מתכונים...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'לא נמצאו מתכונים';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'צור מתכונים בלשונית המתכונים תחילה';
+
+  @override
+  String get mealPlannerSave => 'הוסף לתוכנית';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count מתוך $total ארוחות מתוכננות';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'צור רשימת קניות';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'להוסיף את כל הרכיבים מהארוחות המתוכננות השבוע לרשימת הקניות שלך?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count רכיבים נוספו לרשימה שלך!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'אין רכיבים להוספה. תכנן תחילה ארוחות עם מתכונים.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'צור רשימת קניות תחילה.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'ארוחת בוקר';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ארוחת צהריים';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'ארוחת ערב';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'חטיף';
+
+  @override
+  String get mealPlannerDateLabel => 'תאריך';
+
+  @override
+  String get mealPlannerWeekEmpty => 'שום דבר לא מתוכנן לשבוע זה';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'הקש על יום כלשהו כדי להתחיל לתכנן את הארוחות שלך!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes דקות';
+  }
 }

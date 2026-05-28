@@ -290,6 +290,12 @@ class AppLocalizationsBe extends AppLocalizations {
   String get languageSystem => 'Сістэмная па змаўчанні';
 
   @override
+  String get chooseLanguage => 'Выберыце мову';
+
+  @override
+  String get searchLanguage => 'Пошук мовы...';
+
+  @override
   String get appearance => 'Выгляд';
 
   @override
@@ -303,6 +309,13 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get themeColor => 'Колер тэмы';
+
+  @override
+  String get dynamicColors => 'Дынамічныя колеры';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Выкарыстоўвайце колеры на аснове вашых шпалер';
 
   @override
   String get finance => 'Фінансы';
@@ -1053,128 +1066,247 @@ class AppLocalizationsBe extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Адкрыць меню';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Паглядзець рэцэпт';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Рэцэпт створаны!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Рэдагаваць';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Выдаліць';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Выдаліць гэты рэцэпт?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Вы ўпэўнены, што хочаце выдаліць \"$recipeName\"? Гэта дзеянне немагчыма адмяніць.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Інгрэдыенты';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Інструкцыі';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Час прыгатавання';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Рэцэпт захаваны!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Няма захаваных рэцэптаў';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Стварыце свой першы ўласны рэцэпт, націснуўшы кнопку ніжэй.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Мае рэцэпты';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Новы рэцэпт';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Загрузка вашых рэцэптаў...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Памылка загрузкі рэцэптаў';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Дадаць інгрэдыент';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Захаваць';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Назва рэцэпту';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Кароткі апісанне';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Час прыгатавання (хвіліны)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Увядзіце адзін крок у радку...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Дадаць фота';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Або ўстаўце URL выявы';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Тэгі';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Тэгі рэцэпту';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Прапанаваныя';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Пошук рэцэптаў...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Фільтраваць па тэгу';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Усе';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Рэцэпт выдалены';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Захаваць змены';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Рэдагаваць рэцэпт';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Новы рэцэпт';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Абавязкова';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Выберыце крыніцу выявы';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Галерэя';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Увядзіце URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Выява рэцэпту';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Выдаліць выяву';
+
+  @override
+  String get mealPlannerTitle => 'План харчавання';
+
+  @override
+  String get mealPlannerViewMonthly => 'Месячны выгляд';
+
+  @override
+  String get mealPlannerViewWeekly => 'Тыднёвы выгляд';
+
+  @override
+  String get mealPlannerNoMeals => 'Няма запланаваных страў';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Націсніце на дзень, каб дадаць страву';
+
+  @override
+  String get mealPlannerLoading => 'Загрузка плана харчавання...';
+
+  @override
+  String get mealPlannerError => 'Памылка загрузкі плана харчавання';
+
+  @override
+  String get mealPlannerAddMeal => 'Дадаць страву';
+
+  @override
+  String get mealPlannerEditMeal => 'Рэдагаваць страву';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Выдаліць страву';
+
+  @override
+  String get mealPlannerMealDeleted => 'Страва выдалена';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count порцыі',
+      many: '$count порцый',
+      few: '$count порцыі',
+      one: '$count порцыя',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Порцыі';
+
+  @override
+  String get mealPlannerNoteLabel => 'Нататка (неабавязкова)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Выберыце рэцэпт';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Пошук рэцэптаў...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Рэцэпты не знойдзены';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Спачатку стварыце рэцэпты ва ўкладцы \"Рэцэпты\"';
+
+  @override
+  String get mealPlannerSave => 'Дадаць у план';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Запланавана $count з $total страў';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Стварыць спіс пакупак';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Дадаць усе інгрэдыенты з запланаваных страў на гэты тыдзень у ваш спіс пакупак?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count інгрэдыент(аў) дададзена ў ваш спіс!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Няма інгрэдыентаў для дадання. Спачатку заплануйце стравы з рэцэптамі.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Спачатку стварыце спіс пакупак.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Сняданак';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Абед';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Вячэра';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Перакус';
+
+  @override
+  String get mealPlannerDateLabel => 'Дата';
+
+  @override
+  String get mealPlannerWeekEmpty => 'На гэты тыдзень нічога не запланавана';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Націсніце на любы дзень, каб пачаць планаваць сваё харчаванне!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes хв';
+  }
 }

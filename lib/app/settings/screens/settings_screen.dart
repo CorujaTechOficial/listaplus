@@ -19,6 +19,8 @@ import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/domain/entities/ai_config.dart';
 import 'package:shopping_list/app/ai/screens/chat_history_screen.dart';
 import 'package:shopping_list/app/settings/screens/feedback_screen.dart';
+import 'package:shopping_list/app/settings/screens/language_selection_screen.dart';
+import 'package:shopping_list/app/settings/utils/locale_names.dart';
 
 
 class SettingsScreen extends ConsumerWidget {
@@ -35,6 +37,8 @@ class SettingsScreen extends ConsumerWidget {
     final isPt = Localizations.localeOf(context).languageCode == 'pt';
     final aiConfigAsync = ref.watch(aiConfigStateProvider);
     final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'smart_toy');
+    final useDynamicColorAsync = ref.watch(useDynamicColorProvider);
+    final useDynamicColor = useDynamicColorAsync.value ?? true;
 
 
     return Scaffold(
@@ -146,6 +150,15 @@ class SettingsScreen extends ConsumerWidget {
               );
             },
           ),
+          SwitchListTile.adaptive(
+            secondary: Icon(Icons.color_lens_outlined, color: theme.colorScheme.primary),
+            title: Text(l10n.dynamicColors),
+            subtitle: Text(l10n.dynamicColorsSubtitle),
+            value: useDynamicColor,
+            onChanged: (value) {
+              ref.read(useDynamicColorProvider.notifier).setUseDynamicColor(value);
+            },
+          ),
           ListTile(
             title: Text(isPt ? 'Personalizar Assistente IA' : 'Customize AI Assistant'),
             subtitle: Text(aiConfig.name),
@@ -181,33 +194,19 @@ class SettingsScreen extends ConsumerWidget {
           ),
 
           const Divider(),
-          _SectionHeader(title: l10n.language),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
-            child: SegmentedButton<String?>(
-              segments: [
-                ButtonSegment<String?>(
-                  value: null,
-                  icon: const Icon(Icons.settings_outlined),
-                  label: Text(l10n.languageSystem),
-                ),
-                const ButtonSegment<String?>(
-                  value: 'pt_BR',
-                  icon: Icon(Icons.language),
-                  label: Text('Português'),
-                ),
-                const ButtonSegment<String?>(
-                  value: 'en',
-                  icon: Icon(Icons.language),
-                  label: Text('English'),
-                ),
-              ],
-              selected: {localeAsync.value},
-              onSelectionChanged: (Set<String?> selected) {
-                ref.read(localeSettingProvider.notifier).setLocale(selected.first);
-              },
-              showSelectedIcon: false,
+          ListTile(
+            leading: Icon(Icons.language, color: theme.colorScheme.primary),
+            title: Text(l10n.language),
+            subtitle: Text(
+              getLocaleDisplayName(localeAsync.value, l10n),
             ),
+            trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeSlideRoute<void>(const LanguageSelectionScreen()),
+              );
+            },
           ),
           const Divider(),
           _SectionHeader(title: l10n.finance),

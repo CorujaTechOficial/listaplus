@@ -288,6 +288,12 @@ class AppLocalizationsIs extends AppLocalizations {
   String get languageSystem => 'Sjálfgefið kerfi';
 
   @override
+  String get chooseLanguage => 'Veldu tungumál';
+
+  @override
+  String get searchLanguage => 'Leita að tungumáli...';
+
+  @override
   String get appearance => 'Útlit';
 
   @override
@@ -301,6 +307,12 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get themeColor => 'Þemalitur';
+
+  @override
+  String get dynamicColors => 'Breytilegir litir';
+
+  @override
+  String get dynamicColorsSubtitle => 'Nota liti byggða á veggfóðrinu þínu';
 
   @override
   String get finance => 'Fjármál';
@@ -1051,130 +1063,247 @@ class AppLocalizationsIs extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Opna valmynd';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Skoða uppskrift';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Uppskrift búin til!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Breyta';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Eyða';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Eyða þessari uppskrift?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Ertu viss um að þú viljir eyða „$recipeName“? Ekki er hægt að afturkalla þessa aðgerð.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Hráefni';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Leiðbeiningar';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Undirbúningstími';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Uppskrift vistuð!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Engar uppskriftir vistaðar';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Búðu til þína fyrstu sérsniðnu uppskrift með því að smella á hnappinn hér að neðan.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Mínar uppskriftir';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Ný uppskrift';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Hleður uppskriftunum þínum...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Villa við að hlaða uppskriftum';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Bæta við hráefni';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Vista';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Heiti uppskriftar';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Stutt lýsing';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Undirbúningstími (mínútur)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Skrifaðu eitt skref á hverja línu...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Bæta við mynd';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Eða límdu inn vefslóð myndar';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Merki';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Merki uppskriftar';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Tillögur';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Leita í uppskriftum...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Sía eftir merki';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Allt';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Uppskrift eytt';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Vista breytingar';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Breyta uppskrift';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Ný uppskrift';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Reitur áskilinn';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Veldu mynduppsprettu';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galéria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Sláðu inn vefslóð';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Mynd af uppskrift';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Fjarlægja mynd';
+
+  @override
+  String get mealPlannerTitle => 'Matseðill';
+
+  @override
+  String get mealPlannerViewMonthly => 'Mánaðarlegt yfirlit';
+
+  @override
+  String get mealPlannerViewWeekly => 'Vikulegt yfirlit';
+
+  @override
+  String get mealPlannerNoMeals => 'Engar máltíðir áætlaðar';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Smelltu á dag til að bæta við máltíð';
+
+  @override
+  String get mealPlannerLoading => 'Hleður matseðli...';
+
+  @override
+  String get mealPlannerError => 'Villa við að hlaða matseðli';
+
+  @override
+  String get mealPlannerAddMeal => 'Bæta við máltíð';
+
+  @override
+  String get mealPlannerEditMeal => 'Breyta máltíð';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Fjarlægja máltíð';
+
+  @override
+  String get mealPlannerMealDeleted => 'Máltíð fjarlægð';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count skammtar',
+      one: '$count skammtur',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Skammtar';
+
+  @override
+  String get mealPlannerNoteLabel => 'Athugasemd (valfrjálst)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Veldu uppskrift';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Leita í uppskriftum...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Engar uppskriftir fundust';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Búðu til uppskriftir í Uppskriftir flipanum fyrst';
+
+  @override
+  String get mealPlannerSave => 'Bæta við áætlun';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count af $total máltíðum áætlaðar';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Gera innkaupalista';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Bæta öllu hráefni úr fyrirhuguðum máltíðum vikunnar á innkaupalistann þinn?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count hráefni bætt við listann þinn!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Engu hráefni til að bæta við. Skipuleggðu máltíðir með uppskriftum fyrst.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Búðu til innkaupalista fyrst.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Morgunmatur';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Hádegismatur';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Kvöldmatur';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Millimál';
+
+  @override
+  String get mealPlannerDateLabel => 'Dagsetning';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Ekkert áætlað fyrir þessa viku';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Smelltu á hvaða dag sem er til að byrja að skipuleggja máltíðirnar þínar!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes mín';
+  }
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -1461,6 +1590,12 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get languageSystem => 'Sjálfgefið kerfi';
 
   @override
+  String get chooseLanguage => 'Veldu tungumál';
+
+  @override
+  String get searchLanguage => 'Leita að tungumáli...';
+
+  @override
   String get appearance => 'Útlit';
 
   @override
@@ -1474,6 +1609,12 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get themeColor => 'Þemalitur';
+
+  @override
+  String get dynamicColors => 'Breytilegir litir';
+
+  @override
+  String get dynamicColorsSubtitle => 'Nota liti byggða á veggfóðrinu þínu';
 
   @override
   String get finance => 'Fjármál';
@@ -2222,4 +2363,247 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Opna valmynd';
+
+  @override
+  String get viewRecipe => 'Skoða uppskrift';
+
+  @override
+  String get recipeCreated => 'Uppskrift búin til!';
+
+  @override
+  String get editRecipe => 'Breyta';
+
+  @override
+  String get deleteRecipe => 'Eyða';
+
+  @override
+  String get deleteRecipeConfirm => 'Eyða þessari uppskrift?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Ertu viss um að þú viljir eyða „$recipeName“? Ekki er hægt að afturkalla þessa aðgerð.';
+  }
+
+  @override
+  String get ingredients => 'Hráefni';
+
+  @override
+  String get instructions => 'Leiðbeiningar';
+
+  @override
+  String get prepTime => 'Undirbúningstími';
+
+  @override
+  String get recipeSaved => 'Uppskrift vistuð!';
+
+  @override
+  String get noRecipesSaved => 'Engar uppskriftir vistaðar';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Búðu til þína fyrstu sérsniðnu uppskrift með því að smella á hnappinn hér að neðan.';
+
+  @override
+  String get myRecipes => 'Mínar uppskriftir';
+
+  @override
+  String get newRecipe => 'Ný uppskrift';
+
+  @override
+  String get loadingRecipes => 'Hleður uppskriftunum þínum...';
+
+  @override
+  String get errorLoadingRecipes => 'Villa við að hlaða uppskriftum';
+
+  @override
+  String get addIngredient => 'Bæta við hráefni';
+
+  @override
+  String get saveRecipe => 'Vista';
+
+  @override
+  String get recipeName => 'Heiti uppskriftar';
+
+  @override
+  String get shortDescription => 'Stutt lýsing';
+
+  @override
+  String get prepTimeMinutes => 'Undirbúningstími (mínútur)';
+
+  @override
+  String get instructionsHint => 'Skrifaðu eitt skref á hverja línu...';
+
+  @override
+  String get addPhoto => 'Bæta við mynd';
+
+  @override
+  String get imageUrlPlaceholder => 'Eða límdu inn vefslóð myndar';
+
+  @override
+  String get tags => 'Merki';
+
+  @override
+  String get recipeTags => 'Merki uppskriftar';
+
+  @override
+  String get suggestedTags => 'Tillögur';
+
+  @override
+  String get searchRecipes => 'Leita í uppskriftum...';
+
+  @override
+  String get filterByTag => 'Sía eftir merki';
+
+  @override
+  String get allTags => 'Allt';
+
+  @override
+  String get recipeDeleted => 'Uppskrift eytt';
+
+  @override
+  String get saveChanges => 'Vista breytingar';
+
+  @override
+  String get editRecipeTitle => 'Breyta uppskrift';
+
+  @override
+  String get newRecipeTitle => 'Ný uppskrift';
+
+  @override
+  String get requiredField => 'Reitur áskilinn';
+
+  @override
+  String get chooseImageSource => 'Veldu mynduppsprettu';
+
+  @override
+  String get gallery => 'Galéria';
+
+  @override
+  String get enterUrl => 'Sláðu inn vefslóð';
+
+  @override
+  String get recipeImage => 'Mynd af uppskrift';
+
+  @override
+  String get removeImage => 'Fjarlægja mynd';
+
+  @override
+  String get mealPlannerTitle => 'Matseðill';
+
+  @override
+  String get mealPlannerViewMonthly => 'Mánaðarlegt yfirlit';
+
+  @override
+  String get mealPlannerViewWeekly => 'Vikulegt yfirlit';
+
+  @override
+  String get mealPlannerNoMeals => 'Engar máltíðir áætlaðar';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Smelltu á dag til að bæta við máltíð';
+
+  @override
+  String get mealPlannerLoading => 'Hleður matseðli...';
+
+  @override
+  String get mealPlannerError => 'Villa við að hlaða matseðli';
+
+  @override
+  String get mealPlannerAddMeal => 'Bæta við máltíð';
+
+  @override
+  String get mealPlannerEditMeal => 'Breyta máltíð';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Fjarlægja máltíð';
+
+  @override
+  String get mealPlannerMealDeleted => 'Máltíð fjarlægð';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count skammtar',
+      one: '$count skammtur',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Skammtar';
+
+  @override
+  String get mealPlannerNoteLabel => 'Athugasemd (valfrjálst)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Veldu uppskrift';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Leita í uppskriftum...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Engar uppskriftir fundust';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Búðu til uppskriftir í Uppskriftir flipanum fyrst';
+
+  @override
+  String get mealPlannerSave => 'Bæta við áætlun';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count af $total máltíðum áætlaðar';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Gera innkaupalista';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Bæta öllu hráefni úr fyrirhuguðum máltíðum vikunnar á innkaupalistann þinn?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count hráefni bætt við listann þinn!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Engu hráefni til að bæta við. Skipuleggðu máltíðir með uppskriftum fyrst.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Búðu til innkaupalista fyrst.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Morgunmatur';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Hádegismatur';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Kvöldmatur';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Millimál';
+
+  @override
+  String get mealPlannerDateLabel => 'Dagsetning';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Ekkert áætlað fyrir þessa viku';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Smelltu á hvaða dag sem er til að byrja að skipuleggja máltíðirnar þínar!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes mín';
+  }
 }

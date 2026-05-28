@@ -287,6 +287,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get languageSystem => 'የስርዓት ነባሪ';
 
   @override
+  String get chooseLanguage => 'ቋንቋ ምረጥ';
+
+  @override
+  String get searchLanguage => 'ቋንቋ ፈልግ...';
+
+  @override
   String get appearance => 'መልክ';
 
   @override
@@ -300,6 +306,12 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get themeColor => 'የቲም ቀለም';
+
+  @override
+  String get dynamicColors => 'ተለዋዋጭ ቀለሞች';
+
+  @override
+  String get dynamicColorsSubtitle => 'በልጣፍዎ ላይ የተመሰረቱ ቀለሞችን ይጠቀሙ';
 
   @override
   String get finance => 'ፋይናንስ';
@@ -1042,128 +1054,244 @@ class AppLocalizationsAm extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'ሜኑ ክፈት';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'የምግብ አዘገጃጀቱን ተመልከት';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'የምግብ አዘገጃጀት ተፈጥሯል!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'አስተካክል';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'ሰርዝ';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'ይህን የምግብ አዘገጃጀት ልሰርዘው?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\"ን መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'ንጥረ ነገሮች';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'መመሪያዎች';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'የዝግጅት ጊዜ';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'የምግብ አዘገጃጀት ተቀምጧል!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'ምንም የተቀመጠ የምግብ አዘገጃጀት የለም';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'ከታች ያለውን ቁልፍ በመጫን የመጀመሪያውን ብጁ የምግብ አዘገጃጀትዎን ይፍጠሩ።';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'የእኔ የምግብ አዘገጃጀቶች';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'አዲስ የምግብ አዘገጃጀት';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'የምግብ አዘገጃጀትዎን በመጫን ላይ...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'የምግብ አዘገጃጀቶችን በመጫን ላይ ስህተት ተከስቷል';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'ንጥረ ነገር ጨምር';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'አስቀምጥ';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'የምግብ አዘገጃጀት ስም';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'አጭር መግለጫ';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'የዝግጅት ጊዜ (በደቂቃ)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'በአንድ መስመር አንድ እርምጃ ይተይቡ...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'ፎቶ ጨምር';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'ወይም የምስል ዩአርኤል እዚህ ለጥፍ';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'መለያዎች';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'የምግብ አዘገጃጀት መለያዎች';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'የቀረቡ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'የምግብ አዘገጃጀት ፈልግ...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'በመለያ አጣራ';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'ሁሉም';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'የምግብ አዘገጃጀት ተሰርዟል';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'ለውጦችን አስቀምጥ';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'የምግብ አዘገጃጀት አስተካክል';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'አዲስ የምግብ አዘገጃጀት';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'የሚፈለግ';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'የምስል ምንጭ ምረጥ';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'ማዕከለ-ስዕላት (Gallery)';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'ዩአርኤል (URL) አስገባ';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'የምግብ አዘገጃጀት ምስል';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'ምስል አስወግድ';
+
+  @override
+  String get mealPlannerTitle => 'የምግብ እቅድ አውጪ';
+
+  @override
+  String get mealPlannerViewMonthly => 'የወር እይታ';
+
+  @override
+  String get mealPlannerViewWeekly => 'የሳምንት እይታ';
+
+  @override
+  String get mealPlannerNoMeals => 'የታቀደ ምግብ የለም';
+
+  @override
+  String get mealPlannerNoMealsHint => 'ምግብ ለመጨመር ቀኑን ይጫኑ';
+
+  @override
+  String get mealPlannerLoading => 'የምግብ እቅዱን በመጫን ላይ...';
+
+  @override
+  String get mealPlannerError => 'የምግብ እቅዱን በመጫን ላይ ስህተት ተከስቷል';
+
+  @override
+  String get mealPlannerAddMeal => 'ምግብ ጨምር';
+
+  @override
+  String get mealPlannerEditMeal => 'ምግብ አስተካክል';
+
+  @override
+  String get mealPlannerDeleteMeal => 'ምግብ አስወግድ';
+
+  @override
+  String get mealPlannerMealDeleted => 'ምግብ ተወግዷል';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ሰዎች',
+      one: '$count ሰው',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'ተመጋቢዎች';
+
+  @override
+  String get mealPlannerNoteLabel => 'ማስታወሻ (አማራጭ)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'የምግብ አዘገጃጀት ምረጥ';
+
+  @override
+  String get mealPlannerSearchRecipes => 'የምግብ አዘገጃጀት ፈልግ...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'ምንም የምግብ አዘገጃጀት አልተገኘም';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'መጀመሪያ በምግብ አዘገጃጀት ትር ውስጥ የምግብ አዘገጃጀት ይፍጠሩ';
+
+  @override
+  String get mealPlannerSave => 'ወደ እቅድ ጨምር';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'ከ$total ምግቦች $count ታቅደዋል';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'የግብዣ ዝርዝር አመንጭ';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'በዚህ ሳምንት ከታቀዱ ምግቦች ውስጥ ያሉትን ሁሉንም ንጥረ ነገሮች ወደ ግብዣ ዝርዝርዎ ልጨምራቸው?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ንጥረ ነገሮች ወደ ዝርዝርዎ ተጨምረዋል!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ሚጨመር ንጥረ ነገር የለም። መጀመሪያ የምግብ አዘገጃጀት ያላቸውን ምግቦች ያቅዱ።';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'መጀመሪያ የግብዣ ዝርዝር ይፍጠሩ።';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'ቁርስ';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ምሳ';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'እራት';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'መክሰስ';
+
+  @override
+  String get mealPlannerDateLabel => 'ቀን';
+
+  @override
+  String get mealPlannerWeekEmpty => 'ለዚህ ሳምንት የታቀደ ነገር የለም';
+
+  @override
+  String get mealPlannerWeekEmptyHint => 'ምግብዎን ማቀድ ለመጀመር ማንኛውንም ቀን ይጫኑ!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes ደቂቃ';
+  }
 }

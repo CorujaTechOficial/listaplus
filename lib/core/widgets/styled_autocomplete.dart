@@ -34,19 +34,29 @@ class StyledAutocomplete<T extends String> extends StatelessWidget {
         if (optionsList.isEmpty) {
           return const SizedBox.shrink();
         }
+        // Calculate estimated height to offset upward above the text field
+        const double itemHeight = 38;
+        const double basePadding = 8;
+        final double optionsHeight = (optionsList.length * itemHeight) + basePadding;
+        const double maxHeight = 220;
+        final double height = optionsHeight > maxHeight ? maxHeight : optionsHeight;
+        // Offset: -(options list height + text field height + small margin)
+        final double yOffset = -(height + 56);
 
         return Align(
           alignment: Alignment.topLeft,
-          child: Material(
-            elevation: 8,
-            shadowColor: theme.shadowColor.withAlpha((0.3 * 255).toInt()),
-            borderRadius: BorderRadius.circular(RadiusTokens.md),
-            clipBehavior: Clip.antiAlias,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxHeight: 220,
-                minWidth: 200,
-              ),
+          child: Transform.translate(
+            offset: Offset(0, yOffset),
+            child: Material(
+              elevation: 8,
+              shadowColor: theme.shadowColor.withAlpha((0.3 * 255).toInt()),
+              borderRadius: BorderRadius.circular(RadiusTokens.md),
+              clipBehavior: Clip.antiAlias,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(
+                  maxHeight: 220,
+                  minWidth: 200,
+                ),
               child: Container(
                 decoration: BoxDecoration(
                   color: theme.colorScheme.surfaceContainerLow,
@@ -106,8 +116,9 @@ class StyledAutocomplete<T extends String> extends StatelessWidget {
               ),
             ),
           ),
-        );
-      },
+        ),
+      );
+    },
     );
   }
 }

@@ -250,7 +250,7 @@ class VoiceInput extends _$VoiceInput {
         }
       }
 
-      await ref.read(chatSessionProvider(listId).notifier).sendVoiceMessage(audioBytes, 'm4a');
+      await ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).sendVoiceMessage(audioBytes, 'm4a');
       state = VoiceInputState.idle;
     } on Exception catch (e) {
       debugPrint('[VoiceInput] Error stopping/sending recording: $e');

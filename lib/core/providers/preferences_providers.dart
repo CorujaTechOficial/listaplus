@@ -80,9 +80,14 @@ class ThemeColor extends _$ThemeColor {
 
   Future<void> setColor(Color color) async {
     final service = ref.read(firestoreServiceProvider);
-    await service.updateUserData({_key: color.toARGB32()});
-    ref.invalidateSelf();
-    await future;
+    final previous = state.value;
+    state = AsyncValue.data(color);
+    try {
+      await service.updateUserData({_key: color.toARGB32()});
+    } on Exception {
+      state = AsyncValue.data(previous ?? const Color(0xFF4CAF50));
+      rethrow;
+    }
   }
 }
 
@@ -100,3 +105,32 @@ class Onboarding extends _$Onboarding {
     state = const AsyncValue.data(true);
   }
 }
+
+@riverpod
+class UseDynamicColor extends _$UseDynamicColor {
+  static const _key = 'useDynamicColor';
+
+  @override
+  Future<bool> build() async {
+    try {
+      final service = ref.watch(firestoreServiceProvider);
+      final data = await service.getUserData();
+      return data?[_key] as bool? ?? true;
+    } on Exception {
+      return true;
+    }
+  }
+
+  Future<void> setUseDynamicColor(bool value) async {
+    final service = ref.read(firestoreServiceProvider);
+    final previous = state.value;
+    state = AsyncValue.data(value);
+    try {
+      await service.updateUserData({_key: value});
+    } on Exception {
+      state = AsyncValue.data(previous ?? true);
+      rethrow;
+    }
+  }
+}
+

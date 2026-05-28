@@ -74,13 +74,15 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
           ),
         ],
       ),
-      body: profileAsync.when(
-        data: (profile) {
-          _initControllers(profile);
-          return _buildForm(theme);
-        },
-        loading: () => const Center(child: CircularProgressIndicator.adaptive()),
-        error: (e, _) => Center(child: Text('Erro: $e')),
+      body: SafeArea(
+        child: profileAsync.when(
+          data: (profile) {
+            _initControllers(profile);
+            return _buildForm(theme);
+          },
+          loading: () => const Center(child: CircularProgressIndicator.adaptive()),
+          error: (e, _) => Center(child: Text('Erro: $e')),
+        ),
       ),
     );
   }

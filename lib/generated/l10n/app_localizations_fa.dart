@@ -288,6 +288,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get languageSystem => 'پیش‌فرض سیستم';
 
   @override
+  String get chooseLanguage => 'انتخاب زبان';
+
+  @override
+  String get searchLanguage => 'جستجوی زبان...';
+
+  @override
   String get appearance => 'ظاهر';
 
   @override
@@ -301,6 +307,13 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get themeColor => 'رنگ تم';
+
+  @override
+  String get dynamicColors => 'رنگ‌های پویا';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'استفاده از رنگ‌ها بر اساس تصویر پس‌زمینه';
 
   @override
   String get finance => 'مالی';
@@ -1050,130 +1063,248 @@ class AppLocalizationsFa extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'باز کردن منو';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'مشاهده دستور پخت';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'دستور پخت ایجاد شد!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'ویرایش';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'حذف';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'این دستور پخت حذف شود؟';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'آیا از حذف \"$recipeName\" مطمئن هستید؟ این عمل قابل بازگشت نیست.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'مواد اولیه';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'دستورالعمل‌ها';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'زمان پخت';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'دستور پخت ذخیره شد!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'هیچ دستور پختی ذخیره نشده است';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'اولین دستور پخت سفارشی خود را با زدن دکمه زیر ایجاد کنید.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'دستورهای پخت من';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'دستور پخت جدید';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'در حال بارگذاری دستورهای پخت شما...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'خطا در بارگذاری دستورهای پخت';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'افزودن مواد اولیه';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'ذخیره';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'نام دستور پخت';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'توضیح کوتاه';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'زمان پخت (دقیقه)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'افزودن عکس';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'یا نشانی تصویر را بچسبانید';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'برچسب‌ها';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'برچسب‌های دستور پخت';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'پیشنهادی';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'جستجوی دستورهای پخت...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'فیلتر بر اساس برچسب';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'همه';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'دستور پخت حذف شد';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'ذخیره تغییرات';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'ویرایش دستور پخت';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'دستور پخت جدید';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'الزامی';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'انتخاب منبع تصویر';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'گالری';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'ورود نشانی اینترنتی';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'تصویر دستور پخت';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'حذف تصویر';
+
+  @override
+  String get mealPlannerTitle => 'برنامه‌ریز غذا';
+
+  @override
+  String get mealPlannerViewMonthly => 'نمای ماهانه';
+
+  @override
+  String get mealPlannerViewWeekly => 'نمای هفتگی';
+
+  @override
+  String get mealPlannerNoMeals => 'هیچ وعده غذایی برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'برای افزودن وعده، روی یک روز ضربه بزنید';
+
+  @override
+  String get mealPlannerLoading => 'در حال بارگذاری برنامه غذایی...';
+
+  @override
+  String get mealPlannerError => 'خطا در بارگذاری برنامه غذایی';
+
+  @override
+  String get mealPlannerAddMeal => 'افزودن وعده غذایی';
+
+  @override
+  String get mealPlannerEditMeal => 'ویرایش وعده غذایی';
+
+  @override
+  String get mealPlannerDeleteMeal => 'حذف وعده غذایی';
+
+  @override
+  String get mealPlannerMealDeleted => 'وعده غذایی حذف شد';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نفر',
+      one: '$count نفر',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'تعداد نفرات';
+
+  @override
+  String get mealPlannerNoteLabel => 'یادداشت (اختیاری)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'یک دستور پخت انتخاب کنید';
+
+  @override
+  String get mealPlannerSearchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'دستور پختی پیدا نشد';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ابتدا دستورهای پخت را در برگه دستور پخت ایجاد کنید';
+
+  @override
+  String get mealPlannerSave => 'افزودن به برنامه';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count از $total وعده برنامه‌ریزی شده';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ایجاد لیست خرید';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'تمام مواد اولیه وعده‌های غذایی برنامه‌ریزی شده این هفته به لیست خرید شما اضافه شود؟';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count مورد به لیست شما اضافه شد!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ماده اولیه‌ای برای افزودن وجود ندارد. ابتدا چند وعده غذایی با دستور پخت برنامه‌ریزی کنید.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ابتدا یک لیست خرید ایجاد کنید.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'صبحانه';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ناهار';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'شام';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'میان‌وعده';
+
+  @override
+  String get mealPlannerDateLabel => 'تاریخ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'چیزی برای این هفته برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes دقیقه';
+  }
 }
 
 /// The translations for Persian, as used in the United Arab Emirates (`fa_AE`).
@@ -1460,6 +1591,12 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get languageSystem => 'پیش‌فرض سیستم';
 
   @override
+  String get chooseLanguage => 'انتخاب زبان';
+
+  @override
+  String get searchLanguage => 'جستجوی زبان...';
+
+  @override
   String get appearance => 'ظاهر';
 
   @override
@@ -1473,6 +1610,13 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get themeColor => 'رنگ تم';
+
+  @override
+  String get dynamicColors => 'رنگ‌های پویا';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'استفاده از رنگ‌ها بر اساس تصویر پس‌زمینه';
 
   @override
   String get finance => 'مالی';
@@ -2220,6 +2364,250 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'باز کردن منو';
+
+  @override
+  String get viewRecipe => 'مشاهده دستور پخت';
+
+  @override
+  String get recipeCreated => 'دستور پخت ایجاد شد!';
+
+  @override
+  String get editRecipe => 'ویرایش';
+
+  @override
+  String get deleteRecipe => 'حذف';
+
+  @override
+  String get deleteRecipeConfirm => 'این دستور پخت حذف شود؟';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'آیا از حذف \"$recipeName\" مطمئن هستید؟ این عمل قابل بازگشت نیست.';
+  }
+
+  @override
+  String get ingredients => 'مواد اولیه';
+
+  @override
+  String get instructions => 'دستورالعمل‌ها';
+
+  @override
+  String get prepTime => 'زمان پخت';
+
+  @override
+  String get recipeSaved => 'دستور پخت ذخیره شد!';
+
+  @override
+  String get noRecipesSaved => 'هیچ دستور پختی ذخیره نشده است';
+
+  @override
+  String get noRecipesSavedHint =>
+      'اولین دستور پخت سفارشی خود را با زدن دکمه زیر ایجاد کنید.';
+
+  @override
+  String get myRecipes => 'دستورهای پخت من';
+
+  @override
+  String get newRecipe => 'دستور پخت جدید';
+
+  @override
+  String get loadingRecipes => 'در حال بارگذاری دستورهای پخت شما...';
+
+  @override
+  String get errorLoadingRecipes => 'خطا در بارگذاری دستورهای پخت';
+
+  @override
+  String get addIngredient => 'افزودن مواد اولیه';
+
+  @override
+  String get saveRecipe => 'ذخیره';
+
+  @override
+  String get recipeName => 'نام دستور پخت';
+
+  @override
+  String get shortDescription => 'توضیح کوتاه';
+
+  @override
+  String get prepTimeMinutes => 'زمان پخت (دقیقه)';
+
+  @override
+  String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
+
+  @override
+  String get addPhoto => 'افزودن عکس';
+
+  @override
+  String get imageUrlPlaceholder => 'یا نشانی تصویر را بچسبانید';
+
+  @override
+  String get tags => 'برچسب‌ها';
+
+  @override
+  String get recipeTags => 'برچسب‌های دستور پخت';
+
+  @override
+  String get suggestedTags => 'پیشنهادی';
+
+  @override
+  String get searchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get filterByTag => 'فیلتر بر اساس برچسب';
+
+  @override
+  String get allTags => 'همه';
+
+  @override
+  String get recipeDeleted => 'دستور پخت حذف شد';
+
+  @override
+  String get saveChanges => 'ذخیره تغییرات';
+
+  @override
+  String get editRecipeTitle => 'ویرایش دستور پخت';
+
+  @override
+  String get newRecipeTitle => 'دستور پخت جدید';
+
+  @override
+  String get requiredField => 'الزامی';
+
+  @override
+  String get chooseImageSource => 'انتخاب منبع تصویر';
+
+  @override
+  String get gallery => 'گالری';
+
+  @override
+  String get enterUrl => 'ورود نشانی اینترنتی';
+
+  @override
+  String get recipeImage => 'تصویر دستور پخت';
+
+  @override
+  String get removeImage => 'حذف تصویر';
+
+  @override
+  String get mealPlannerTitle => 'برنامه‌ریز غذا';
+
+  @override
+  String get mealPlannerViewMonthly => 'نمای ماهانه';
+
+  @override
+  String get mealPlannerViewWeekly => 'نمای هفتگی';
+
+  @override
+  String get mealPlannerNoMeals => 'هیچ وعده غذایی برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'برای افزودن وعده، روی یک روز ضربه بزنید';
+
+  @override
+  String get mealPlannerLoading => 'در حال بارگذاری برنامه غذایی...';
+
+  @override
+  String get mealPlannerError => 'خطا در بارگذاری برنامه غذایی';
+
+  @override
+  String get mealPlannerAddMeal => 'افزودن وعده غذایی';
+
+  @override
+  String get mealPlannerEditMeal => 'ویرایش وعده غذایی';
+
+  @override
+  String get mealPlannerDeleteMeal => 'حذف وعده غذایی';
+
+  @override
+  String get mealPlannerMealDeleted => 'وعده غذایی حذف شد';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نفر',
+      one: '$count نفر',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'تعداد نفرات';
+
+  @override
+  String get mealPlannerNoteLabel => 'یادداشت (اختیاری)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'یک دستور پخت انتخاب کنید';
+
+  @override
+  String get mealPlannerSearchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'دستور پختی پیدا نشد';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ابتدا دستورهای پخت را در برگه دستور پخت ایجاد کنید';
+
+  @override
+  String get mealPlannerSave => 'افزودن به برنامه';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count از $total وعده برنامه‌ریزی شده';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ایجاد لیست خرید';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'تمام مواد اولیه وعده‌های غذایی برنامه‌ریزی شده این هفته به لیست خرید شما اضافه شود؟';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count مورد به لیست شما اضافه شد!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ماده اولیه‌ای برای افزودن وجود ندارد. ابتدا چند وعده غذایی با دستور پخت برنامه‌ریزی کنید.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ابتدا یک لیست خرید ایجاد کنید.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'صبحانه';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ناهار';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'شام';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'میان‌وعده';
+
+  @override
+  String get mealPlannerDateLabel => 'تاریخ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'چیزی برای این هفته برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes دقیقه';
+  }
 }
 
 /// The translations for Persian, as used in Afghanistan (`fa_AF`).
@@ -2506,6 +2894,12 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get languageSystem => 'پیش‌فرض سیستم';
 
   @override
+  String get chooseLanguage => 'انتخاب زبان';
+
+  @override
+  String get searchLanguage => 'جستجوی زبان...';
+
+  @override
   String get appearance => 'ظاهر';
 
   @override
@@ -2519,6 +2913,13 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get themeColor => 'رنگ تم';
+
+  @override
+  String get dynamicColors => 'رنگ‌های پویا';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'استفاده از رنگ‌ها بر اساس تصویر پس‌زمینه';
 
   @override
   String get finance => 'مالی';
@@ -3266,6 +3667,250 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'باز کردن منو';
+
+  @override
+  String get viewRecipe => 'مشاهده دستور پخت';
+
+  @override
+  String get recipeCreated => 'دستور پخت ایجاد شد!';
+
+  @override
+  String get editRecipe => 'ویرایش';
+
+  @override
+  String get deleteRecipe => 'حذف';
+
+  @override
+  String get deleteRecipeConfirm => 'این دستور پخت حذف شود؟';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'آیا از حذف \"$recipeName\" مطمئن هستید؟ این عمل قابل بازگشت نیست.';
+  }
+
+  @override
+  String get ingredients => 'مواد اولیه';
+
+  @override
+  String get instructions => 'دستورالعمل‌ها';
+
+  @override
+  String get prepTime => 'زمان پخت';
+
+  @override
+  String get recipeSaved => 'دستور پخت ذخیره شد!';
+
+  @override
+  String get noRecipesSaved => 'هیچ دستور پختی ذخیره نشده است';
+
+  @override
+  String get noRecipesSavedHint =>
+      'اولین دستور پخت سفارشی خود را با زدن دکمه زیر ایجاد کنید.';
+
+  @override
+  String get myRecipes => 'دستورهای پخت من';
+
+  @override
+  String get newRecipe => 'دستور پخت جدید';
+
+  @override
+  String get loadingRecipes => 'در حال بارگذاری دستورهای پخت شما...';
+
+  @override
+  String get errorLoadingRecipes => 'خطا در بارگذاری دستورهای پخت';
+
+  @override
+  String get addIngredient => 'افزودن مواد اولیه';
+
+  @override
+  String get saveRecipe => 'ذخیره';
+
+  @override
+  String get recipeName => 'نام دستور پخت';
+
+  @override
+  String get shortDescription => 'توضیح کوتاه';
+
+  @override
+  String get prepTimeMinutes => 'زمان پخت (دقیقه)';
+
+  @override
+  String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
+
+  @override
+  String get addPhoto => 'افزودن عکس';
+
+  @override
+  String get imageUrlPlaceholder => 'یا نشانی تصویر را بچسبانید';
+
+  @override
+  String get tags => 'برچسب‌ها';
+
+  @override
+  String get recipeTags => 'برچسب‌های دستور پخت';
+
+  @override
+  String get suggestedTags => 'پیشنهادی';
+
+  @override
+  String get searchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get filterByTag => 'فیلتر بر اساس برچسب';
+
+  @override
+  String get allTags => 'همه';
+
+  @override
+  String get recipeDeleted => 'دستور پخت حذف شد';
+
+  @override
+  String get saveChanges => 'ذخیره تغییرات';
+
+  @override
+  String get editRecipeTitle => 'ویرایش دستور پخت';
+
+  @override
+  String get newRecipeTitle => 'دستور پخت جدید';
+
+  @override
+  String get requiredField => 'الزامی';
+
+  @override
+  String get chooseImageSource => 'انتخاب منبع تصویر';
+
+  @override
+  String get gallery => 'گالری';
+
+  @override
+  String get enterUrl => 'ورود نشانی اینترنتی';
+
+  @override
+  String get recipeImage => 'تصویر دستور پخت';
+
+  @override
+  String get removeImage => 'حذف تصویر';
+
+  @override
+  String get mealPlannerTitle => 'برنامه‌ریز غذا';
+
+  @override
+  String get mealPlannerViewMonthly => 'نمای ماهانه';
+
+  @override
+  String get mealPlannerViewWeekly => 'نمای هفتگی';
+
+  @override
+  String get mealPlannerNoMeals => 'هیچ وعده غذایی برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'برای افزودن وعده، روی یک روز ضربه بزنید';
+
+  @override
+  String get mealPlannerLoading => 'در حال بارگذاری برنامه غذایی...';
+
+  @override
+  String get mealPlannerError => 'خطا در بارگذاری برنامه غذایی';
+
+  @override
+  String get mealPlannerAddMeal => 'افزودن وعده غذایی';
+
+  @override
+  String get mealPlannerEditMeal => 'ویرایش وعده غذایی';
+
+  @override
+  String get mealPlannerDeleteMeal => 'حذف وعده غذایی';
+
+  @override
+  String get mealPlannerMealDeleted => 'وعده غذایی حذف شد';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نفر',
+      one: '$count نفر',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'تعداد نفرات';
+
+  @override
+  String get mealPlannerNoteLabel => 'یادداشت (اختیاری)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'یک دستور پخت انتخاب کنید';
+
+  @override
+  String get mealPlannerSearchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'دستور پختی پیدا نشد';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ابتدا دستورهای پخت را در برگه دستور پخت ایجاد کنید';
+
+  @override
+  String get mealPlannerSave => 'افزودن به برنامه';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count از $total وعده برنامه‌ریزی شده';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ایجاد لیست خرید';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'تمام مواد اولیه وعده‌های غذایی برنامه‌ریزی شده این هفته به لیست خرید شما اضافه شود؟';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count مورد به لیست شما اضافه شد!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ماده اولیه‌ای برای افزودن وجود ندارد. ابتدا چند وعده غذایی با دستور پخت برنامه‌ریزی کنید.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ابتدا یک لیست خرید ایجاد کنید.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'صبحانه';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ناهار';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'شام';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'میان‌وعده';
+
+  @override
+  String get mealPlannerDateLabel => 'تاریخ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'چیزی برای این هفته برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes دقیقه';
+  }
 }
 
 /// The translations for Persian, as used in Islamic Republic of Iran (`fa_IR`).
@@ -3552,6 +4197,12 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get languageSystem => 'پیش‌فرض سیستم';
 
   @override
+  String get chooseLanguage => 'انتخاب زبان';
+
+  @override
+  String get searchLanguage => 'جستجوی زبان...';
+
+  @override
   String get appearance => 'ظاهر';
 
   @override
@@ -3565,6 +4216,13 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get themeColor => 'رنگ تم';
+
+  @override
+  String get dynamicColors => 'رنگ‌های پویا';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'استفاده از رنگ‌ها بر اساس تصویر پس‌زمینه';
 
   @override
   String get finance => 'مالی';
@@ -4312,4 +4970,248 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'باز کردن منو';
+
+  @override
+  String get viewRecipe => 'مشاهده دستور پخت';
+
+  @override
+  String get recipeCreated => 'دستور پخت ایجاد شد!';
+
+  @override
+  String get editRecipe => 'ویرایش';
+
+  @override
+  String get deleteRecipe => 'حذف';
+
+  @override
+  String get deleteRecipeConfirm => 'این دستور پخت حذف شود؟';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'آیا از حذف \"$recipeName\" مطمئن هستید؟ این عمل قابل بازگشت نیست.';
+  }
+
+  @override
+  String get ingredients => 'مواد اولیه';
+
+  @override
+  String get instructions => 'دستورالعمل‌ها';
+
+  @override
+  String get prepTime => 'زمان پخت';
+
+  @override
+  String get recipeSaved => 'دستور پخت ذخیره شد!';
+
+  @override
+  String get noRecipesSaved => 'هیچ دستور پختی ذخیره نشده است';
+
+  @override
+  String get noRecipesSavedHint =>
+      'اولین دستور پخت سفارشی خود را با زدن دکمه زیر ایجاد کنید.';
+
+  @override
+  String get myRecipes => 'دستورهای پخت من';
+
+  @override
+  String get newRecipe => 'دستور پخت جدید';
+
+  @override
+  String get loadingRecipes => 'در حال بارگذاری دستورهای پخت شما...';
+
+  @override
+  String get errorLoadingRecipes => 'خطا در بارگذاری دستورهای پخت';
+
+  @override
+  String get addIngredient => 'افزودن مواد اولیه';
+
+  @override
+  String get saveRecipe => 'ذخیره';
+
+  @override
+  String get recipeName => 'نام دستور پخت';
+
+  @override
+  String get shortDescription => 'توضیح کوتاه';
+
+  @override
+  String get prepTimeMinutes => 'زمان پخت (دقیقه)';
+
+  @override
+  String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
+
+  @override
+  String get addPhoto => 'افزودن عکس';
+
+  @override
+  String get imageUrlPlaceholder => 'یا نشانی تصویر را بچسبانید';
+
+  @override
+  String get tags => 'برچسب‌ها';
+
+  @override
+  String get recipeTags => 'برچسب‌های دستور پخت';
+
+  @override
+  String get suggestedTags => 'پیشنهادی';
+
+  @override
+  String get searchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get filterByTag => 'فیلتر بر اساس برچسب';
+
+  @override
+  String get allTags => 'همه';
+
+  @override
+  String get recipeDeleted => 'دستور پخت حذف شد';
+
+  @override
+  String get saveChanges => 'ذخیره تغییرات';
+
+  @override
+  String get editRecipeTitle => 'ویرایش دستور پخت';
+
+  @override
+  String get newRecipeTitle => 'دستور پخت جدید';
+
+  @override
+  String get requiredField => 'الزامی';
+
+  @override
+  String get chooseImageSource => 'انتخاب منبع تصویر';
+
+  @override
+  String get gallery => 'گالری';
+
+  @override
+  String get enterUrl => 'ورود نشانی اینترنتی';
+
+  @override
+  String get recipeImage => 'تصویر دستور پخت';
+
+  @override
+  String get removeImage => 'حذف تصویر';
+
+  @override
+  String get mealPlannerTitle => 'برنامه‌ریز غذا';
+
+  @override
+  String get mealPlannerViewMonthly => 'نمای ماهانه';
+
+  @override
+  String get mealPlannerViewWeekly => 'نمای هفتگی';
+
+  @override
+  String get mealPlannerNoMeals => 'هیچ وعده غذایی برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'برای افزودن وعده، روی یک روز ضربه بزنید';
+
+  @override
+  String get mealPlannerLoading => 'در حال بارگذاری برنامه غذایی...';
+
+  @override
+  String get mealPlannerError => 'خطا در بارگذاری برنامه غذایی';
+
+  @override
+  String get mealPlannerAddMeal => 'افزودن وعده غذایی';
+
+  @override
+  String get mealPlannerEditMeal => 'ویرایش وعده غذایی';
+
+  @override
+  String get mealPlannerDeleteMeal => 'حذف وعده غذایی';
+
+  @override
+  String get mealPlannerMealDeleted => 'وعده غذایی حذف شد';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نفر',
+      one: '$count نفر',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'تعداد نفرات';
+
+  @override
+  String get mealPlannerNoteLabel => 'یادداشت (اختیاری)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'یک دستور پخت انتخاب کنید';
+
+  @override
+  String get mealPlannerSearchRecipes => 'جستجوی دستورهای پخت...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'دستور پختی پیدا نشد';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'ابتدا دستورهای پخت را در برگه دستور پخت ایجاد کنید';
+
+  @override
+  String get mealPlannerSave => 'افزودن به برنامه';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count از $total وعده برنامه‌ریزی شده';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ایجاد لیست خرید';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'تمام مواد اولیه وعده‌های غذایی برنامه‌ریزی شده این هفته به لیست خرید شما اضافه شود؟';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count مورد به لیست شما اضافه شد!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'ماده اولیه‌ای برای افزودن وجود ندارد. ابتدا چند وعده غذایی با دستور پخت برنامه‌ریزی کنید.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'ابتدا یک لیست خرید ایجاد کنید.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'صبحانه';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'ناهار';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'شام';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'میان‌وعده';
+
+  @override
+  String get mealPlannerDateLabel => 'تاریخ';
+
+  @override
+  String get mealPlannerWeekEmpty => 'چیزی برای این هفته برنامه‌ریزی نشده است';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes دقیقه';
+  }
 }

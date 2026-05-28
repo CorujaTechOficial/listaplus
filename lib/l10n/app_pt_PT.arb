@@ -82,11 +82,15 @@
   "languagePortuguese": "Português (Brasil)",
   "languageEnglish": "English",
   "languageSystem": "Padrão do sistema",
+  "chooseLanguage": "Escolher Idioma",
+  "searchLanguage": "Procurar idioma...",
   "appearance": "Aparência",
   "light": "Claro",
   "system": "Sistema",
   "dark": "Escuro",
   "themeColor": "Cor do tema",
+  "dynamicColors": "Cores dinâmicas",
+  "dynamicColorsSubtitle": "Use cores baseadas no seu papel de parede",
   "finance": "Financeiro",
   "monthlyBudgetNav": "Orçamento mensal",
   "budgetSubtitle": "Acompanhe seus gastos do mês",
@@ -216,9 +220,9 @@
   "shareSubject": "Lista de Compras",
   "monthlyBudgetTitle": "Orçamento Mensal",
   "monthlyBudgetSpent": "{spent} / {budget}",
-  "deficitItems": "{deficit,plural, one{{deficit} item precisa ser comprado} other{{deficit} itens precisam ser comprados}}",
   "deleteListConfirm": "Excluir lista",
   "pantryItemRemoved": "Item removido",
+  "deficitItems": "{deficit,plural, one{{deficit} item precisa ser comprado} other{{deficit} itens precisam ser comprados}}",
   "cartTotal": "Total do carrinho",
   "restockLabel": "Reabastecer",
   "advancedFeatures": "Recursos avançados",
@@ -303,45 +307,11 @@
   "feedbackRetry": "Tentar novamente",
   "feedbackSettingsTitle": "Enviar Feedback",
   "feedbackSettingsSubtitle": "Reporte erros, sugira melhorias ou corrija traduções",
-  "viewItems": "Ver itens",
-  "addDirectToList": "Adicionar direto na lista",
-  "unlockFullResponse": "Desbloquear Resposta Completa",
-  "listening": "Ouvindo...",
-  "viewPro": "Ver Pro",
-  "errorOscillation": "Isso pode ocorrer devido a oscilações de rede ou indisponibilidade temporária. Por favor, tente novamente.",
-  "viewDetails": "Ver Detalhes",
-  "marketMode": "Modo Mercado",
-  "longHistoryWarning": "Histórico longo: o assistente foca nas últimas mensagens para otimizar o desempenho.",
-  "howCanIHelp": "Como posso ajudar?",
-  "itemsPurchasedShort": "{purchased}/{total} comprados",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Perguntas sugeridas:",
-  "noItemsInList": "Nenhum item na lista",
-  "estimatedCost": "Estimado",
-  "chatSubtitleShort": "Pergunte sobre preços, receitas, organização...",
-  "voiceProFeature": "Comandos de voz avançados são Pro. Ativando ditado básico...",
   "aiEnergy": "Energia da IA",
-  "switchList": "Trocar lista",
-  "finishShopping": "Concluir Compras",
-  "welcomeAiAssistant": "Bem-vindo ao Assistente IA",
-  "errorLoadingChat": "Ops! Algo deu errado ao carregar o chat.",
-  "noMessagesFound": "Nenhuma mensagem encontrada",
-  "activeListening": "Escuta Ativa",
-  "backToChat": "Voltar para o Chat",
-  "quickReplies": "Respostas rápidas:",
-  "createListToStartAi": "Crie uma lista de compras para começar a usar o chat inteligente.",
   "searchInConversation": "Pesquisar na conversa...",
+  "noMessagesFound": "Nenhuma mensagem encontrada",
+  "suggestedQuestions": "Perguntas sugeridas:",
   "shoppingAssistant": "Assistente de compras",
-  "whatToDoWithItem": "O que deseja fazer com este item?",
   "itemsPurchasedCount": "{purchased} de {total} comprados",
   "@itemsPurchasedCount": {
     "placeholders": {
@@ -353,5 +323,151 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Verifique sua conexão ou tente novamente mais tarde."
+  "estimatedCost": "Estimado",
+  "viewItems": "Ver itens",
+  "noItemsInList": "Nenhum item na lista",
+  "longHistoryWarning": "Histórico longo: o assistente foca nas últimas mensagens para otimizar o desempenho.",
+  "listening": "Ouvindo...",
+  "addDirectToList": "Adicionar direto na lista",
+  "unlockFullResponse": "Desbloquear Resposta Completa",
+  "switchList": "Trocar lista",
+  "marketMode": "Modo Mercado",
+  "backToChat": "Voltar para o Chat",
+  "finishShopping": "Concluir Compras",
+  "welcomeAiAssistant": "Bem-vindo ao Assistente IA",
+  "createListToStartAi": "Crie uma lista de compras para começar a usar o chat inteligente.",
+  "howCanIHelp": "Como posso ajudar?",
+  "chatSubtitleShort": "Pergunte sobre preços, receitas, organização...",
+  "itemsPurchasedShort": "{purchased}/{total} comprados",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "quickReplies": "Respostas rápidas:",
+  "voiceProFeature": "Comandos de voz avançados são Pro. Ativando ditado básico...",
+  "viewPro": "Ver Pro",
+  "errorLoadingChat": "Ops! Algo deu errado ao carregar o chat.",
+  "errorLoadingChatSubtitle": "Verifique sua conexão ou tente novamente mais tarde.",
+  "errorOscillation": "Isso pode ocorrer devido a oscilações de rede ou indisponibilidade temporária. Por favor, tente novamente.",
+  "activeListening": "Escuta Ativa",
+  "whatToDoWithItem": "O que deseja fazer com este item?",
+  "viewDetails": "Ver Detalhes",
+  "openMenu": "Abrir menu",
+  "viewRecipe": "Ver Receita",
+  "recipeCreated": "Receita criada!",
+  "editRecipe": "Editar",
+  "deleteRecipe": "Eliminar",
+  "deleteRecipeConfirm": "Eliminar esta receita?",
+  "deleteRecipeConfirmMsg": "Tem a certeza de que deseja eliminar \"{recipeName}\"? Esta ação não pode ser desfeita.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "ingredients": "Ingredientes",
+  "instructions": "Instruções",
+  "prepTime": "Tempo de preparação",
+  "recipeSaved": "Receita guardada!",
+  "noRecipesSaved": "Nenhuma receita guardada",
+  "noRecipesSavedHint": "Crie a sua primeira receita personalizada tocando no botão abaixo.",
+  "myRecipes": "Minhas Receitas",
+  "newRecipe": "Nova Receita",
+  "loadingRecipes": "A carregar as suas receitas...",
+  "errorLoadingRecipes": "Erro ao carregar receitas",
+  "addIngredient": "Adicionar ingrediente",
+  "saveRecipe": "Guardar",
+  "recipeName": "Nome da receita",
+  "shortDescription": "Breve descrição",
+  "prepTimeMinutes": "Tempo de preparação (minutos)",
+  "instructionsHint": "Introduza um passo por linha...",
+  "addPhoto": "Adicionar foto",
+  "imageUrlPlaceholder": "Ou cole o URL de uma imagem",
+  "tags": "Etiquetas",
+  "recipeTags": "Etiquetas da receita",
+  "suggestedTags": "Sugeridas",
+  "searchRecipes": "Procurar receitas...",
+  "filterByTag": "Filtrar por etiqueta",
+  "allTags": "Todas",
+  "recipeDeleted": "Receita eliminada",
+  "saveChanges": "Guardar alterações",
+  "editRecipeTitle": "Editar Receita",
+  "newRecipeTitle": "Nova Receita",
+  "requiredField": "Obrigatório",
+  "chooseImageSource": "Escolher origem da imagem",
+  "gallery": "Galeria",
+  "enterUrl": "Introduzir URL",
+  "recipeImage": "Imagem da receita",
+  "removeImage": "Remover imagem",
+  "mealPlannerTitle": "Planeador de Refeições",
+  "mealPlannerViewMonthly": "Ver mensal",
+  "mealPlannerViewWeekly": "Ver semanal",
+  "mealPlannerNoMeals": "Nenhuma refeição planeada",
+  "mealPlannerNoMealsHint": "Toque num dia para adicionar",
+  "mealPlannerLoading": "A carregar ementa...",
+  "mealPlannerError": "Erro ao carregar ementa",
+  "mealPlannerAddMeal": "Adicionar Refeição",
+  "mealPlannerEditMeal": "Editar Refeição",
+  "mealPlannerDeleteMeal": "Remover refeição",
+  "mealPlannerMealDeleted": "Refeição removida",
+  "mealPlannerServings": "{count,plural, one{{count} dose} other{{count} doses}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Doses",
+  "mealPlannerNoteLabel": "Nota (opcional)",
+  "mealPlannerSelectRecipe": "Selecione uma receita",
+  "mealPlannerSearchRecipes": "Procurar receitas...",
+  "mealPlannerNoRecipesFound": "Nenhuma receita encontrada",
+  "mealPlannerNoRecipesHint": "Crie receitas no separador Receitas primeiro",
+  "mealPlannerSave": "Adicionar ao plano",
+  "mealPlannerWeekProgress": "{count} de {total} refeições planeadas",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerGenerateList": "Gerar lista de compras",
+  "mealPlannerGenerateListConfirm": "Adicionar todos os ingredientes das refeições planeadas desta semana à sua lista de compras?",
+  "mealPlannerGenerateListSuccess": "{count} ingrediente(s) adicionado(s) à sua lista!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerGenerateListEmpty": "Nenhum ingrediente para adicionar. Planeie refeições com receitas primeiro.",
+  "mealPlannerGenerateListNoList": "Crie uma lista de compras primeiro.",
+  "mealPlannerMealTypeBreakfast": "Pequeno-Almoço",
+  "mealPlannerMealTypeLunch": "Almoço",
+  "mealPlannerMealTypeDinner": "Jantar",
+  "mealPlannerMealTypeSnack": "Lanche",
+  "mealPlannerDateLabel": "Data",
+  "mealPlannerWeekEmpty": "Nada planeado para esta semana",
+  "mealPlannerWeekEmptyHint": "Toque em qualquer dia para começar a planear as suas refeições!",
+  "mealPlannerPrepTime": "{minutes} min",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  }
 }

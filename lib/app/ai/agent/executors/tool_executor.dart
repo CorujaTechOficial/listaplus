@@ -26,14 +26,15 @@ class ToolExecutor {
   final ConfigExecutor _configExecutor = const ConfigExecutor();
   final SystemExecutor _systemExecutor = const SystemExecutor();
 
-  Future<ToolResult> execute(AgentToolCall call) async {
-    if (AgentTools.premiumToolNames.contains(call.name)) {
+  Future<ToolResult> execute(AgentToolCall call, {bool bypassPremium = false}) async {
+    if (!bypassPremium && AgentTools.premiumToolNames.contains(call.name)) {
       final isPremium = _container.read(premiumProvider).value ?? false;
       if (!isPremium) {
         return ToolResult(
           toolCallId: call.id,
           content: 'Esta funcionalidade requer assinatura Premium.',
           success: false,
+          requiresUnlock: true,
         );
       }
     }

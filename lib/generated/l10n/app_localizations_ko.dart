@@ -281,6 +281,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get languageSystem => '시스템 기본값';
 
   @override
+  String get chooseLanguage => '언어 선택';
+
+  @override
+  String get searchLanguage => '언어 검색...';
+
+  @override
   String get appearance => '테마';
 
   @override
@@ -294,6 +300,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get themeColor => '테마 색상';
+
+  @override
+  String get dynamicColors => '다이내믹 색상';
+
+  @override
+  String get dynamicColorsSubtitle => '배경화면 기반 색상 사용';
 
   @override
   String get finance => '재정';
@@ -1027,130 +1039,243 @@ class AppLocalizationsKo extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => '메뉴 열기';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => '레시피 보기';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => '레시피가 생성되었습니다!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => '편집';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => '삭제';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => '이 레시피를 삭제하시겠습니까?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\"을(를) 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => '재료';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => '조리법';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => '조리 시간';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => '레시피가 저장되었습니다!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => '저장된 레시피 없음';
 
   @override
-  String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+  String get noRecipesSavedHint => '아래 버튼을 눌러 첫 번째 커스텀 레시피를 만드세요.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => '내 레시피';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => '새 레시피';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => '레시피를 로드하는 중...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => '레시피 로드 오류';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => '재료 추가';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => '저장';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => '레시피 이름';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => '짧은 설명';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => '조리 시간 (분)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => '한 줄에 한 단계씩 입력하세요...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => '사진 추가';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => '또는 이미지 URL 붙여넣기';
 
   @override
-  String get tags => 'Tags';
+  String get tags => '태그';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => '레시피 태그';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => '추천';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => '레시피 검색...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => '태그로 필터링';
 
   @override
-  String get allTags => 'All';
+  String get allTags => '전체';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => '레시피가 삭제되었습니다';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => '변경 사항 저장';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => '레시피 편집';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => '새 레시피';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => '필수';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => '이미지 소스 선택';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => '갤러리';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL 입력';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => '레시피 이미지';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => '이미지 제거';
+
+  @override
+  String get mealPlannerTitle => '식단 플래너';
+
+  @override
+  String get mealPlannerViewMonthly => '월간 보기';
+
+  @override
+  String get mealPlannerViewWeekly => '주간 보기';
+
+  @override
+  String get mealPlannerNoMeals => '계획된 식사 없음';
+
+  @override
+  String get mealPlannerNoMealsHint => '식사를 추가하려면 날짜를 탭하세요';
+
+  @override
+  String get mealPlannerLoading => '식사 계획을 로드하는 중...';
+
+  @override
+  String get mealPlannerError => '식사 계획 로드 오류';
+
+  @override
+  String get mealPlannerAddMeal => '식사 추가';
+
+  @override
+  String get mealPlannerEditMeal => '식사 편집';
+
+  @override
+  String get mealPlannerDeleteMeal => '식사 제거';
+
+  @override
+  String get mealPlannerMealDeleted => '식사가 제거됨';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count인분',
+      one: '$count인분',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => '인분';
+
+  @override
+  String get mealPlannerNoteLabel => '메모 (선택 사항)';
+
+  @override
+  String get mealPlannerSelectRecipe => '레시피 선택';
+
+  @override
+  String get mealPlannerSearchRecipes => '레시피 검색...';
+
+  @override
+  String get mealPlannerNoRecipesFound => '레시피를 찾을 수 없음';
+
+  @override
+  String get mealPlannerNoRecipesHint => '먼저 레시피 탭에서 레시피를 만드세요';
+
+  @override
+  String get mealPlannerSave => '계획에 추가';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total 식사 계획됨';
+  }
+
+  @override
+  String get mealPlannerGenerateList => '쇼핑 목록 생성';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      '이번 주 계획된 식사의 모든 재료를 쇼핑 목록에 추가하시겠습니까?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count개의 재료가 목록에 추가되었습니다!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty => '추가할 재료가 없습니다. 먼저 레시피로 식사를 계획하세요.';
+
+  @override
+  String get mealPlannerGenerateListNoList => '먼저 쇼핑 목록을 만드세요.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => '아침';
+
+  @override
+  String get mealPlannerMealTypeLunch => '점심';
+
+  @override
+  String get mealPlannerMealTypeDinner => '저녁';
+
+  @override
+  String get mealPlannerMealTypeSnack => '간식';
+
+  @override
+  String get mealPlannerDateLabel => '날짜';
+
+  @override
+  String get mealPlannerWeekEmpty => '이번 주에 계획된 항목이 없습니다';
+
+  @override
+  String get mealPlannerWeekEmptyHint => '식사 계획을 시작하려면 아무 날짜나 탭하세요!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes분';
+  }
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -1430,6 +1555,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get languageSystem => '시스템 기본값';
 
   @override
+  String get chooseLanguage => '언어 선택';
+
+  @override
+  String get searchLanguage => '언어 검색...';
+
+  @override
   String get appearance => '테마';
 
   @override
@@ -1443,6 +1574,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get themeColor => '테마 색상';
+
+  @override
+  String get dynamicColors => '다이내믹 색상';
+
+  @override
+  String get dynamicColorsSubtitle => '배경화면 기반 색상 사용';
 
   @override
   String get finance => '재정';
@@ -2174,4 +2311,243 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => '메뉴 열기';
+
+  @override
+  String get viewRecipe => '레시피 보기';
+
+  @override
+  String get recipeCreated => '레시피가 생성되었습니다!';
+
+  @override
+  String get editRecipe => '편집';
+
+  @override
+  String get deleteRecipe => '삭제';
+
+  @override
+  String get deleteRecipeConfirm => '이 레시피를 삭제하시겠습니까?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return '\"$recipeName\"을(를) 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.';
+  }
+
+  @override
+  String get ingredients => '재료';
+
+  @override
+  String get instructions => '조리법';
+
+  @override
+  String get prepTime => '조리 시간';
+
+  @override
+  String get recipeSaved => '레시피가 저장되었습니다!';
+
+  @override
+  String get noRecipesSaved => '저장된 레시피 없음';
+
+  @override
+  String get noRecipesSavedHint => '아래 버튼을 눌러 첫 번째 커스텀 레시피를 만드세요.';
+
+  @override
+  String get myRecipes => '내 레시피';
+
+  @override
+  String get newRecipe => '새 레시피';
+
+  @override
+  String get loadingRecipes => '레시피를 로드하는 중...';
+
+  @override
+  String get errorLoadingRecipes => '레시피 로드 오류';
+
+  @override
+  String get addIngredient => '재료 추가';
+
+  @override
+  String get saveRecipe => '저장';
+
+  @override
+  String get recipeName => '레시피 이름';
+
+  @override
+  String get shortDescription => '짧은 설명';
+
+  @override
+  String get prepTimeMinutes => '조리 시간 (분)';
+
+  @override
+  String get instructionsHint => '한 줄에 한 단계씩 입력하세요...';
+
+  @override
+  String get addPhoto => '사진 추가';
+
+  @override
+  String get imageUrlPlaceholder => '또는 이미지 URL 붙여넣기';
+
+  @override
+  String get tags => '태그';
+
+  @override
+  String get recipeTags => '레시피 태그';
+
+  @override
+  String get suggestedTags => '추천';
+
+  @override
+  String get searchRecipes => '레시피 검색...';
+
+  @override
+  String get filterByTag => '태그로 필터링';
+
+  @override
+  String get allTags => '전체';
+
+  @override
+  String get recipeDeleted => '레시피가 삭제되었습니다';
+
+  @override
+  String get saveChanges => '변경 사항 저장';
+
+  @override
+  String get editRecipeTitle => '레시피 편집';
+
+  @override
+  String get newRecipeTitle => '새 레시피';
+
+  @override
+  String get requiredField => '필수';
+
+  @override
+  String get chooseImageSource => '이미지 소스 선택';
+
+  @override
+  String get gallery => '갤러리';
+
+  @override
+  String get enterUrl => 'URL 입력';
+
+  @override
+  String get recipeImage => '레시피 이미지';
+
+  @override
+  String get removeImage => '이미지 제거';
+
+  @override
+  String get mealPlannerTitle => '식단 플래너';
+
+  @override
+  String get mealPlannerViewMonthly => '월간 보기';
+
+  @override
+  String get mealPlannerViewWeekly => '주간 보기';
+
+  @override
+  String get mealPlannerNoMeals => '계획된 식사 없음';
+
+  @override
+  String get mealPlannerNoMealsHint => '식사를 추가하려면 날짜를 탭하세요';
+
+  @override
+  String get mealPlannerLoading => '식사 계획을 로드하는 중...';
+
+  @override
+  String get mealPlannerError => '식사 계획 로드 오류';
+
+  @override
+  String get mealPlannerAddMeal => '식사 추가';
+
+  @override
+  String get mealPlannerEditMeal => '식사 편집';
+
+  @override
+  String get mealPlannerDeleteMeal => '식사 제거';
+
+  @override
+  String get mealPlannerMealDeleted => '식사가 제거됨';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count인분',
+      one: '$count인분',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => '인분';
+
+  @override
+  String get mealPlannerNoteLabel => '메모 (선택 사항)';
+
+  @override
+  String get mealPlannerSelectRecipe => '레시피 선택';
+
+  @override
+  String get mealPlannerSearchRecipes => '레시피 검색...';
+
+  @override
+  String get mealPlannerNoRecipesFound => '레시피를 찾을 수 없음';
+
+  @override
+  String get mealPlannerNoRecipesHint => '먼저 레시피 탭에서 레시피를 만드세요';
+
+  @override
+  String get mealPlannerSave => '계획에 추가';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total 식사 계획됨';
+  }
+
+  @override
+  String get mealPlannerGenerateList => '쇼핑 목록 생성';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      '이번 주 계획된 식사의 모든 재료를 쇼핑 목록에 추가하시겠습니까?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count개의 재료가 목록에 추가되었습니다!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty => '추가할 재료가 없습니다. 먼저 레시피로 식사를 계획하세요.';
+
+  @override
+  String get mealPlannerGenerateListNoList => '먼저 쇼핑 목록을 만드세요.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => '아침';
+
+  @override
+  String get mealPlannerMealTypeLunch => '점심';
+
+  @override
+  String get mealPlannerMealTypeDinner => '저녁';
+
+  @override
+  String get mealPlannerMealTypeSnack => '간식';
+
+  @override
+  String get mealPlannerDateLabel => '날짜';
+
+  @override
+  String get mealPlannerWeekEmpty => '이번 주에 계획된 항목이 없습니다';
+
+  @override
+  String get mealPlannerWeekEmptyHint => '식사 계획을 시작하려면 아무 날짜나 탭하세요!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes분';
+  }
 }

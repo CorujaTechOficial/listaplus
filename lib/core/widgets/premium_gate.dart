@@ -21,10 +21,11 @@ class PremiumGate extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(Spacing.xl),
-          child: Column(
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(Spacing.xl),
+            child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
@@ -79,6 +80,7 @@ class PremiumGate extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }

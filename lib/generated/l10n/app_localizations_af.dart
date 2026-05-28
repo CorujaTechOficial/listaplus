@@ -288,6 +288,12 @@ class AppLocalizationsAf extends AppLocalizations {
   String get languageSystem => 'Stelselverstek';
 
   @override
+  String get chooseLanguage => 'Kies taal';
+
+  @override
+  String get searchLanguage => 'Soek taal...';
+
+  @override
   String get appearance => 'Voorkoms';
 
   @override
@@ -301,6 +307,13 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get themeColor => 'Temakleur';
+
+  @override
+  String get dynamicColors => 'Dinamiese kleure';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Gebruik kleure gebaseer op jou muurpapier';
 
   @override
   String get finance => 'Finansies';
@@ -1050,128 +1063,246 @@ class AppLocalizationsAf extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Maak spyskaart oop';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Bekyk resep';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Resep geskep!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Wysig';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Verwyder';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Verwyder hierdie resep?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Is jy seker jy wil \"$recipeName\" verwyder? Hierdie aksie kan nie ongedaan gemaak word nie.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Bestanddele';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instruksies';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Voorbereidingstyd';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Resep gestoor!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Geen resepte gestoor nie';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Skep jou eerste pasgemaakte resep deur op die knoppie hieronder te tik.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'My resepte';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Nuwe resep';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Laai tans jou resepte...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Fout met laai van resepte';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Voeg bestanddeel by';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Stoor';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Resepnaam';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Kort beskrywing';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Voorbereidingstyd (minute)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Tik een stap per reël...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Voeg foto by';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Of plak \'n beeld-URL';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Etikette';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Resep-etikette';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Voorgestel';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Soek resepte...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtreer volgens etiket';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Alle';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Resep verwyder';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Stoor veranderinge';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Wysig resep';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Nuwe resep';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Vereis';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Kies beeldbron';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galery';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Voer URL in';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Resepbeeld';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Verwyder beeld';
+
+  @override
+  String get mealPlannerTitle => 'Maaltydbeplanner';
+
+  @override
+  String get mealPlannerViewMonthly => 'Maandelikse aansig';
+
+  @override
+  String get mealPlannerViewWeekly => 'Weeklikse aansig';
+
+  @override
+  String get mealPlannerNoMeals => 'Geen maaltye beplan nie';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Tik op \'n dag om \'n maaltyd by te voeg';
+
+  @override
+  String get mealPlannerLoading => 'Laai tans maaltydplan...';
+
+  @override
+  String get mealPlannerError => 'Fout met laai van maaltydplan';
+
+  @override
+  String get mealPlannerAddMeal => 'Voeg maaltyd by';
+
+  @override
+  String get mealPlannerEditMeal => 'Wysig maaltyd';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Verwyder maaltyd';
+
+  @override
+  String get mealPlannerMealDeleted => 'Maaltyd verwyder';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porsies',
+      one: '$count porsie',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porsies';
+
+  @override
+  String get mealPlannerNoteLabel => 'Nota (opsioneel)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Kies \'n resep';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Soek resepte...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Geen resepte gevind nie';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Skep eers resepte in die Resepte-oortjie';
+
+  @override
+  String get mealPlannerSave => 'Voeg by plan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count van $total maaltye beplan';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Genereer inkopielys';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Voeg alle bestanddele van beplande maaltye hierdie week by jou inkopielys?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count bestanddeel(e) by jou lys gevoeg!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Geen bestanddele om by te voeg nie. Beplan eers \'n paar maaltye met resepte.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Skep eers \'n inkopielys.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Ontbyt';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Middagete';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Aandete';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Peuselhappie';
+
+  @override
+  String get mealPlannerDateLabel => 'Datum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Niks beplan vir hierdie week nie';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tik op enige dag om jou maaltye te begin beplan!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

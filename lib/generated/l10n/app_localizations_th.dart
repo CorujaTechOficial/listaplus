@@ -283,6 +283,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get languageSystem => 'ค่าเริ่มต้นของระบบ';
 
   @override
+  String get chooseLanguage => 'Select Language';
+
+  @override
+  String get searchLanguage => 'Search language...';
+
+  @override
   String get appearance => 'ลักษณะ';
 
   @override
@@ -296,6 +302,12 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get themeColor => 'สีธีม';
+
+  @override
+  String get dynamicColors => 'Dynamic colors';
+
+  @override
+  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
 
   @override
   String get finance => 'การเงิน';
@@ -1163,4 +1175,121 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get removeImage => 'Remove image';
+
+  @override
+  String get mealPlannerTitle => 'Meal Planner';
+
+  @override
+  String get mealPlannerViewMonthly => 'Monthly view';
+
+  @override
+  String get mealPlannerViewWeekly => 'Weekly view';
+
+  @override
+  String get mealPlannerNoMeals => 'No meals planned';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+
+  @override
+  String get mealPlannerLoading => 'Loading meal plan...';
+
+  @override
+  String get mealPlannerError => 'Error loading meal plan';
+
+  @override
+  String get mealPlannerAddMeal => 'Add Meal';
+
+  @override
+  String get mealPlannerEditMeal => 'Edit Meal';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Remove meal';
+
+  @override
+  String get mealPlannerMealDeleted => 'Meal removed';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count servings',
+      one: '$count serving',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Servings';
+
+  @override
+  String get mealPlannerNoteLabel => 'Note (optional)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Select a recipe';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Search recipes...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'No recipes found';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Create recipes in the Recipes tab first';
+
+  @override
+  String get mealPlannerSave => 'Add to plan';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count of $total meals planned';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Generate shopping list';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Add all ingredients from planned meals this week to your shopping list?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingredient(s) added to your list!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'No ingredients to add. Plan some meals with recipes first.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Lunch';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Dinner';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Snack';
+
+  @override
+  String get mealPlannerDateLabel => 'Date';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tap any day to start planning your meals!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
 }

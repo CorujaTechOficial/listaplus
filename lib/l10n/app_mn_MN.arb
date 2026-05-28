@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Найрлага нэмэх",
+  "addPhoto": "Зураг нэмэх",
+  "allTags": "Бүгд",
+  "chooseImageSource": "Зургийн эх үүсвэрийг сонгоно уу",
+  "chooseLanguage": "Хэл сонгох",
+  "deleteRecipe": "Устгах",
+  "deleteRecipeConfirm": "Энэ жорыг устгах уу?",
+  "deleteRecipeConfirmMsg": "Та \"{recipeName}\" жорыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Динамик өнгө",
+  "dynamicColorsSubtitle": "Таны ханын зураг дээр үндэслэсэн өнгийг ашиглана уу",
+  "editRecipe": "Засварлах",
+  "editRecipeTitle": "Жор засварлах",
+  "enterUrl": "URL оруулна уу",
+  "errorLoadingRecipes": "Жор ачаалахад алдаа гарлаа",
+  "filterByTag": "Шошгоор шүүх",
+  "gallery": "Галерей",
+  "imageUrlPlaceholder": "Эсвэл зургийн URL-г буулгана уу",
+  "ingredients": "Найрлага",
+  "instructions": "Заавар",
+  "instructionsHint": "Мөр бүрт нэг алхам бичнэ үү...",
+  "loadingRecipes": "Таны жоруудыг ачаалж байна...",
+  "mealPlannerAddMeal": "Хоол нэмэх",
+  "mealPlannerDateLabel": "Огноо",
+  "mealPlannerDeleteMeal": "Хоол устгах",
+  "mealPlannerEditMeal": "Хоол засварлах",
+  "mealPlannerError": "Хоолны төлөвлөгөө ачаалахад алдаа гарлаа",
+  "mealPlannerGenerateList": "Шопинг жагсаалт гаргах",
+  "mealPlannerGenerateListConfirm": "Энэ долоо хоногт төлөвлөсөн хоолны бүх найрлагыг шопинг жагсаалтад нэмэх үү?",
+  "mealPlannerGenerateListEmpty": "Нэмэх найрлага алга. Эхлээд жороор хоол төлөвлөнө үү.",
+  "mealPlannerGenerateListNoList": "Эхлээд шопинг жагсаалт үүсгэнэ үү.",
+  "mealPlannerGenerateListSuccess": "{count} найрлага таны жагсаалтад нэмэгдлээ!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Хоолны төлөвлөгөө ачаалж байна...",
+  "mealPlannerMealDeleted": "Хоол устгагдсан",
+  "mealPlannerMealTypeBreakfast": "Өглөөний цай",
+  "mealPlannerMealTypeDinner": "Оройн хоол",
+  "mealPlannerMealTypeLunch": "Үдийн хоол",
+  "mealPlannerMealTypeSnack": "Хөнгөн зууш",
+  "mealPlannerNoMeals": "Төлөвлөсөн хоол алга",
+  "mealPlannerNoMealsHint": "Хоол нэмэхийн тулд өдөр дээр товшино уу",
+  "mealPlannerNoRecipesFound": "Жор олдсонгүй",
+  "mealPlannerNoRecipesHint": "Эхлээд Жор таб дээр жор үүсгэнэ үү",
+  "mealPlannerNoteLabel": "Тэмдэглэл (заавал биш)",
+  "mealPlannerPrepTime": "{minutes} мин",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Төлөвлөгөөнд нэмэх",
+  "mealPlannerSearchRecipes": "Жор хайх...",
+  "mealPlannerSelectRecipe": "Жор сонгох",
+  "mealPlannerServings": "{count,plural, one{{count} порц} other{{count} порц}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Порц",
+  "mealPlannerTitle": "Хоолны төлөвлөгч",
+  "mealPlannerViewMonthly": "Сар бүрийн харагдац",
+  "mealPlannerViewWeekly": "Долоо хоногийн харагдац",
+  "mealPlannerWeekEmpty": "Энэ долоо хоногт төлөвлөсөн зүйл алга",
+  "mealPlannerWeekEmptyHint": "Хоолоо төлөвлөж эхлэхийн тулд дурын өдөр дээр товшино уу!",
+  "mealPlannerWeekProgress": "{total} хоолны {count} нь төлөвлөгдсөн",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Миний жорууд",
+  "newRecipe": "Шинэ жор",
+  "newRecipeTitle": "Шинэ жор",
+  "noRecipesSaved": "Хадгалсан жор алга",
+  "noRecipesSavedHint": "Доорх товчлуур дээр дарж анхны жороо үүсгэнэ үү.",
+  "openMenu": "Цэс нээх",
+  "prepTime": "Бэлтгэх хугацаа",
+  "prepTimeMinutes": "Бэлтгэх хугацаа (минут)",
+  "recipeCreated": "Жор үүсгэгдлээ!",
+  "recipeDeleted": "Жор устгагдсан",
+  "recipeImage": "Жорын зураг",
+  "recipeName": "Жорын нэр",
+  "recipeSaved": "Жор хадгалагдлаа!",
+  "recipeTags": "Жорын шошго",
+  "removeImage": "Зураг устгах",
+  "requiredField": "Шаардлагатай",
+  "saveChanges": "Өөрчлөлтийг хадгалах",
+  "saveRecipe": "Хадгалах",
+  "searchLanguage": "Хэл хайх...",
+  "searchRecipes": "Жор хайх...",
+  "shortDescription": "Товч тайлбар",
+  "suggestedTags": "Санал болгож буй",
+  "tags": "Шошго",
+  "viewRecipe": "Жор үзэх"
 }

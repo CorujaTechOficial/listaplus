@@ -157,7 +157,8 @@ enum AgentStepStatus {
   running,
   success,
   error,
-  undone;
+  undone,
+  requiresUnlock;
 
   String get value {
     switch (this) {
@@ -171,6 +172,8 @@ enum AgentStepStatus {
         return 'error';
       case AgentStepStatus.undone:
         return 'undone';
+      case AgentStepStatus.requiresUnlock:
+        return 'requiresUnlock';
     }
   }
 
@@ -191,6 +194,7 @@ class AgentStep {
     required this.id,
     required this.description,
     required this.status,
+    this.toolName,
     this.resultData,
   });
 
@@ -199,6 +203,7 @@ class AgentStep {
       id: json['id'] as String? ?? '',
       description: json['description'] as String? ?? '',
       status: AgentStepStatus.fromString(json['status'] as String? ?? 'pending'),
+      toolName: json['toolName'] as String?,
       resultData: json['resultData'] != null ? Map<String, dynamic>.from(json['resultData'] as Map) : null,
     );
   }
@@ -206,18 +211,19 @@ class AgentStep {
   final String id;
   final String description;
   final AgentStepStatus status;
+  final String? toolName;
   final Map<String, dynamic>? resultData;
 
   AgentStep copyWith({
-    String? id,
-    String? description,
     AgentStepStatus? status,
     Map<String, dynamic>? resultData,
+    String? toolName,
   }) {
     return AgentStep(
-      id: id ?? this.id,
-      description: description ?? this.description,
+      id: id,
+      description: description,
       status: status ?? this.status,
+      toolName: toolName ?? this.toolName,
       resultData: resultData ?? this.resultData,
     );
   }
@@ -227,6 +233,7 @@ class AgentStep {
       'id': id,
       'description': description,
       'status': status.value,
+      if (toolName != null) 'toolName': toolName,
       if (resultData != null) 'resultData': resultData,
     };
   }

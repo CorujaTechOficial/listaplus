@@ -60,8 +60,7 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
     super.initState();
     _nameCtrl = TextEditingController(text: widget.existing?.name ?? '');
     _color = widget.existing != null ? Color(widget.existing!.colorValue.toARGB32()) : _colors[0];
-    // ignore: non_const_argument_for_const_parameter
-    _icon = widget.existing != null ? IconData(widget.existing!.iconCodepoint) : _icons[0];
+    _icon = widget.existing != null ? widget.existing!.icon : _icons[0];
   }
 
   @override

@@ -558,5 +558,121 @@
       }
     }
   },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "ചേരുവ ചേർക്കുക",
+  "addPhoto": "ഫോട്ടോ ചേർക്കുക",
+  "allTags": "എല്ലാം",
+  "chooseImageSource": "ചിത്രത്തിന്റെ ഉറവിടം തിരഞ്ഞെടുക്കുക",
+  "chooseLanguage": "ഭാഷ തിരഞ്ഞെടുക്കുക",
+  "deleteRecipe": "ഡിലീറ്റ് ചെയ്യുക",
+  "deleteRecipeConfirm": "ഈ റെസിപ്പി ഡിലീറ്റ് ചെയ്യണോ?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\" ഡിലീറ്റ് ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ? ഈ പ്രവർത്തനം റദ്ദാക്കാൻ കഴിയില്ല.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "ഡൈനാമിക് നിറങ്ങൾ",
+  "dynamicColorsSubtitle": "നിങ്ങളുടെ വാൾപേപ്പറിനെ അടിസ്ഥാനമാക്കിയുള്ള നിറങ്ങൾ ഉപയോഗിക്കുക",
+  "editRecipe": "എഡിറ്റ് ചെയ്യുക",
+  "editRecipeTitle": "റെസിപ്പി എഡിറ്റ് ചെയ്യുക",
+  "enterUrl": "URL നൽകുക",
+  "errorLoadingRecipes": "റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നതിൽ പിശക്",
+  "filterByTag": "ടാഗ് അനുസരിച്ച് ഫിൽട്ടർ ചെയ്യുക",
+  "gallery": "ഗാലറി",
+  "imageUrlPlaceholder": "അല്ലെങ്കിൽ ഒരു ചിത്രത്തിന്റെ URL ഒട്ടിക്കുക",
+  "ingredients": "ചേരുവകൾ",
+  "instructions": "നിർദ്ദേശങ്ങൾ",
+  "instructionsHint": "ഓരോ വരിയിലും ഒരു ഘട്ടം വീതം ടൈപ്പ് ചെയ്യുക...",
+  "loadingRecipes": "നിങ്ങളുടെ റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നു...",
+  "mealPlannerAddMeal": "ഭക്ഷണം ചേർക്കുക",
+  "mealPlannerDateLabel": "തീയതി",
+  "mealPlannerDeleteMeal": "ഭക്ഷണം ഒഴിവാക്കുക",
+  "mealPlannerEditMeal": "ഭക്ഷണം എഡിറ്റ് ചെയ്യുക",
+  "mealPlannerError": "ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നതിൽ പിശക്",
+  "mealPlannerGenerateList": "ഷോപ്പിംഗ് ലിസ്റ്റ് തയ്യാറാക്കുക",
+  "mealPlannerGenerateListConfirm": "ഈ ആഴ്ചയിലെ പ്ലാൻ ചെയ്ത ഭക്ഷണങ്ങളിലെ എല്ലാ ചേരുവകളും നിങ്ങളുടെ ഷോപ്പിംഗ് ലിസ്റ്റിലേക്ക് ചേർക്കണോ?",
+  "mealPlannerGenerateListEmpty": "ചേർക്കാൻ ചേരുവകളൊന്നുമില്ല. ആദ്യം റെസിപ്പികൾ ഉൾപ്പെടുത്തി ഭക്ഷണം പ്ലാൻ ചെയ്യുക.",
+  "mealPlannerGenerateListNoList": "ആദ്യം ഒരു ഷോപ്പിംഗ് ലിസ്റ്റ് നിർമ്മിക്കുക.",
+  "mealPlannerGenerateListSuccess": "{count} ചേരുവകൾ നിങ്ങളുടെ ലിസ്റ്റിൽ ചേർത്തു!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നു...",
+  "mealPlannerMealDeleted": "ഭക്ഷണം ഒഴിവാക്കി",
+  "mealPlannerMealTypeBreakfast": "പ്രഭാതഭക്ഷണം",
+  "mealPlannerMealTypeDinner": "അത്താഴം",
+  "mealPlannerMealTypeLunch": "ഉച്ചഭക്ഷണം",
+  "mealPlannerMealTypeSnack": "ലഘുഭക്ഷണം",
+  "mealPlannerNoMeals": "ഭക്ഷണങ്ങളൊന്നും പ്ലാൻ ചെയ്തിട്ടില്ല",
+  "mealPlannerNoMealsHint": "ഒരു ദിവസം തിരഞ്ഞെടുത്ത് ഭക്ഷണം ചേർക്കുക",
+  "mealPlannerNoRecipesFound": "റെസിപ്പികളൊന്നും കണ്ടെത്തിയില്ല",
+  "mealPlannerNoRecipesHint": "ആദ്യം റെസിപ്പീസ് ടാബിൽ റെസിപ്പികൾ നിർമ്മിക്കുക",
+  "mealPlannerNoteLabel": "കുറിപ്പ് (നിർബന്ധമില്ലാത്തത്)",
+  "mealPlannerPrepTime": "{minutes} മിനിറ്റ്",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "പ്ലാനിലേക്ക് ചേർക്കുക",
+  "mealPlannerSearchRecipes": "റെസിപ്പികൾ തിരയുക...",
+  "mealPlannerSelectRecipe": "ഒരു റെസിപ്പി തിരഞ്ഞെടുക്കുക",
+  "mealPlannerServings": "{count,plural, one{{count} വിളമ്പൽ} other{{count} വിളമ്പലുകൾ}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "വിളമ്പലുകൾ",
+  "mealPlannerTitle": "മീൽ പ്ലാനർ",
+  "mealPlannerViewMonthly": "മാസത്തെ കാഴ്ച",
+  "mealPlannerViewWeekly": "ആഴ്ചയിലെ കാഴ്ച",
+  "mealPlannerWeekEmpty": "ഈ ആഴ്ചയിൽ പ്ലാൻ ചെയ്തവ ഒന്നുമില്ല",
+  "mealPlannerWeekEmptyHint": "നിങ്ങളുടെ ഭക്ഷണം പ്ലാൻ ചെയ്യാൻ ഏതെങ്കിലും ദിവസം തിരഞ്ഞെടുക്കുക!",
+  "mealPlannerWeekProgress": "{total}-ൽ {count} ഭക്ഷണം പ്ലാൻ ചെയ്തു",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "എന്റെ റെസിപ്പികൾ",
+  "newRecipe": "പുതിയ റെസിപ്പി",
+  "newRecipeTitle": "പുതിയ റെസിപ്പി",
+  "noRecipesSaved": "റെസിപ്പികളൊന്നും സേവ് ചെയ്തിട്ടില്ല",
+  "noRecipesSavedHint": "താഴെയുള്ള ബട്ടൺ അമർത്തി നിങ്ങളുടെ ആദ്യത്തെ റെസിപ്പി നിർമ്മിക്കുക.",
+  "openMenu": "മെനു തുറക്കുക",
+  "prepTime": "തയ്യാറാക്കുന്ന സമയം",
+  "prepTimeMinutes": "തയ്യാറാക്കുന്ന സമയം (മിനിറ്റ്)",
+  "recipeCreated": "റെസിപ്പി തയ്യാറാക്കി!",
+  "recipeDeleted": "റെസിപ്പി ഡിലീറ്റ് ചെയ്തു",
+  "recipeImage": "റെസിപ്പിയുടെ ചിത്രം",
+  "recipeName": "റെസിപ്പിയുടെ പേര്",
+  "recipeSaved": "റെസിപ്പി സേവ് ചെയ്തു!",
+  "recipeTags": "റെസിപ്പി ടാഗുകൾ",
+  "removeImage": "ചിത്രം ഒഴിവാക്കുക",
+  "requiredField": "ആവശ്യമാണ്",
+  "saveChanges": "മാറ്റങ്ങൾ സേവ് ചെയ്യുക",
+  "saveRecipe": "സേവ് ചെയ്യുക",
+  "searchLanguage": "ഭാഷ തിരയുക...",
+  "searchRecipes": "റെസിപ്പികൾ തിരയുക...",
+  "shortDescription": "ലഘുവിവരണം",
+  "suggestedTags": "നിർദ്ദേശിച്ചവ",
+  "tags": "ടാഗുകൾ",
+  "viewRecipe": "റെസിപ്പി കാണുക"
 }

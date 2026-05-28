@@ -290,6 +290,12 @@ class AppLocalizationsKy extends AppLocalizations {
   String get languageSystem => 'Системанын демейкиси';
 
   @override
+  String get chooseLanguage => 'Тилди тандаңыз';
+
+  @override
+  String get searchLanguage => 'Тилди издөө...';
+
+  @override
   String get appearance => 'Көрүнүш';
 
   @override
@@ -303,6 +309,13 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get themeColor => 'Теманын түсү';
+
+  @override
+  String get dynamicColors => 'Динамикалык түстөр';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Тушкагазыңызга негизделген түстөрдү колдонуңуз';
 
   @override
   String get finance => 'Каржы';
@@ -1052,130 +1065,247 @@ class AppLocalizationsKy extends AppLocalizations {
   String get viewDetails => 'View Details';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Менюну ачуу';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Рецептти көрүү';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Рецепт түзүлдү!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Түзөтүү';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Өчүрүү';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Бул рецептти өчүрөсүзбү?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\" өчүрүүнү каалайсызбы? Бул аракетти артка кайтарууга болбойт.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ингредиенттер';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Нускамалар';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Даярдоо убактысы';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Рецепт сакталды!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Рецепттер сакталган жок';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Төмөнкү баскычты таптап, биринчи рецептиңизди түзүңүз.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Менин рецепттерим';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Жаңы рецепт';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Рецепттериңиз жүктөлүүдө...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Рецепттерди жүктөөдө ката кетти';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Ингредиент кошуу';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Сактоо';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Рецепттин аты';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Кыскача сүрөттөмө';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Даярдоо убактысы (мүнөт)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Ар бир сапка бирден кадам жазыңыз...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Сүрөт кошуу';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Же сүрөттүн URL дарегин чаптаңыз';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Тегдер';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Рецепт тегдери';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Сунушталган';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Рецепттерди издөө...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Тег боюнча чыпкалоо';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Баары';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Рецепт өчүрүлдү';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Өзгөртүүлөрдү сактоо';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Рецептти түзөтүү';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Жаңы рецепт';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Милдеттүү';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Сүрөт булагын тандаңыз';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Галерея';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL киргизиңиз';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Рецепттин сүрөтү';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Сүрөттү алып салуу';
+
+  @override
+  String get mealPlannerTitle => 'Тамактанууну пландаштыргыч';
+
+  @override
+  String get mealPlannerViewMonthly => 'Айлык көрүнүш';
+
+  @override
+  String get mealPlannerViewWeekly => 'Апталык көрүнүш';
+
+  @override
+  String get mealPlannerNoMeals => 'Тамак пландаштырылган жок';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Тамак кошуу үчүн күндү таптаңыз';
+
+  @override
+  String get mealPlannerLoading => 'Тамактануу планы жүктөлүүдө...';
+
+  @override
+  String get mealPlannerError => 'Тамактануу планын жүктөөдө ката кетти';
+
+  @override
+  String get mealPlannerAddMeal => 'Тамактанууну кошуу';
+
+  @override
+  String get mealPlannerEditMeal => 'Тамакты түзөтүү';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Тамакты алып салуу';
+
+  @override
+  String get mealPlannerMealDeleted => 'Тамак алып салынды';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count порция',
+      one: '$count порция',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Порциялар';
+
+  @override
+  String get mealPlannerNoteLabel => 'Эскертүү (милдеттүү эмес)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Рецепт тандаңыз';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Рецепттерди издөө...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Рецепттер табылган жок';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Алгач Рецепттер өтмөгүндө рецепттерди түзүңүз';
+
+  @override
+  String get mealPlannerSave => 'Планга кошуу';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total тамак пландаштырылды';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Соода тизмесин түзүү';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Ушул аптадагы пландаштырылган тамактардын бардык ингредиенттерин соода тизмеңизге кошосузбу?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'Тизмеңизге $count ингредиент кошулду!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Кошо турган ингредиенттер жок. Алгач рецепттер менен тамактарды пландаштырыңыз.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Алгач соода тизмесин түзүңүз.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Эртең мененки тамак';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Түшкү тамак';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Кечки тамак';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Жеңил тамак';
+
+  @override
+  String get mealPlannerDateLabel => 'Дата';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Бул аптага эч нерсе пландаштырылган жок';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Тамактарыңызды пландаштырууну баштоо үчүн каалаган күндү таптаңыз!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes мүн';
+  }
 }
 
 /// The translations for Kirghiz Kyrgyz, as used in Kyrgyzstan (`ky_KG`).
@@ -1458,6 +1588,12 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   String get languageSystem => 'Тутумдук демейки';
 
   @override
+  String get chooseLanguage => 'Тилди тандаңыз';
+
+  @override
+  String get searchLanguage => 'Тилди издөө...';
+
+  @override
   String get appearance => 'Көрүнүш';
 
   @override
@@ -1471,6 +1607,13 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get themeColor => 'Теманын түсү';
+
+  @override
+  String get dynamicColors => 'Динамикалык түстөр';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'Тушкагазыңызга негизделген түстөрдү колдонуңуз';
 
   @override
   String get finance => 'Финансы';
@@ -2214,4 +2357,247 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get viewDetails => 'View Details';
+
+  @override
+  String get openMenu => 'Менюну ачуу';
+
+  @override
+  String get viewRecipe => 'Рецептти көрүү';
+
+  @override
+  String get recipeCreated => 'Рецепт түзүلدү!';
+
+  @override
+  String get editRecipe => 'Түзөтүү';
+
+  @override
+  String get deleteRecipe => 'Өчүрүү';
+
+  @override
+  String get deleteRecipeConfirm => 'Бул рецептти өчүрөсүзбү?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return '\"$recipeName\" өчүрүүнү каалайсызбы? Бул аракетти артка кайтарууга болбойт.';
+  }
+
+  @override
+  String get ingredients => 'Ингредиенттер';
+
+  @override
+  String get instructions => 'Нускамалар';
+
+  @override
+  String get prepTime => 'Даярдоо убактысы';
+
+  @override
+  String get recipeSaved => 'Рецепт сакталды!';
+
+  @override
+  String get noRecipesSaved => 'Рецепттер сакталган жок';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Төмөнкү баскычты таптап, биринчи рецептиңизди түзүңүз.';
+
+  @override
+  String get myRecipes => 'Менин рецепттерим';
+
+  @override
+  String get newRecipe => 'Жаңы рецепт';
+
+  @override
+  String get loadingRecipes => 'Рецепттериңиз жүктөлүүдө...';
+
+  @override
+  String get errorLoadingRecipes => 'Рецепттерди жүктөөдө ката кетти';
+
+  @override
+  String get addIngredient => 'Ингредиент кошуу';
+
+  @override
+  String get saveRecipe => 'Сактоо';
+
+  @override
+  String get recipeName => 'Рецепттин аты';
+
+  @override
+  String get shortDescription => 'Кыскача сүрөттөмө';
+
+  @override
+  String get prepTimeMinutes => 'Даярдоо убактысы (мүнөт)';
+
+  @override
+  String get instructionsHint => 'Ар бир сапка бирден кадам жазыңыз...';
+
+  @override
+  String get addPhoto => 'Сүрөт кошуу';
+
+  @override
+  String get imageUrlPlaceholder => 'Же сүрөттүн URL дарегин чаптаңыз';
+
+  @override
+  String get tags => 'Тегдер';
+
+  @override
+  String get recipeTags => 'Рецепт тегдери';
+
+  @override
+  String get suggestedTags => 'Сунушталган';
+
+  @override
+  String get searchRecipes => 'Рецепттерди издөө...';
+
+  @override
+  String get filterByTag => 'Тег боюнча чыпкалоо';
+
+  @override
+  String get allTags => 'Баары';
+
+  @override
+  String get recipeDeleted => 'Рецепт өчүрүлдү';
+
+  @override
+  String get saveChanges => 'Өзгөртүүлөрдү сактоо';
+
+  @override
+  String get editRecipeTitle => 'Рецептти түзөтүү';
+
+  @override
+  String get newRecipeTitle => 'Жаңы рецепт';
+
+  @override
+  String get requiredField => 'Милдеттүү';
+
+  @override
+  String get chooseImageSource => 'Сүрөт булагын тандаңыз';
+
+  @override
+  String get gallery => 'Гаเลрея';
+
+  @override
+  String get enterUrl => 'URL киргизиңиз';
+
+  @override
+  String get recipeImage => 'Рецепттин сүрөтү';
+
+  @override
+  String get removeImage => 'Сүрөттү алып салуу';
+
+  @override
+  String get mealPlannerTitle => 'Тамактанууну пландаштыргыч';
+
+  @override
+  String get mealPlannerViewMonthly => 'Айлык көрүнүш';
+
+  @override
+  String get mealPlannerViewWeekly => 'Апталык көрүнүш';
+
+  @override
+  String get mealPlannerNoMeals => 'Тамак пландаштырылган жок';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Тамак кошуу үчүн күндү таптаңыз';
+
+  @override
+  String get mealPlannerLoading => 'Тамактануу планы жүктөлүүдө...';
+
+  @override
+  String get mealPlannerError => 'Тамактануу планын жүктөөдө ката кетти';
+
+  @override
+  String get mealPlannerAddMeal => 'Тамактанууну кошуу';
+
+  @override
+  String get mealPlannerEditMeal => 'Тамакты түзөтүү';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Тамакты алып салуу';
+
+  @override
+  String get mealPlannerMealDeleted => 'Тамак алып салынды';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count порция',
+      one: '$count порция',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Порциялар';
+
+  @override
+  String get mealPlannerNoteLabel => 'Эскертүү (милдеттүү эмес)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Рецепт тандаңыз';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Рецепттерди издөө...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Рецепттер табылган жок';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Алгач Рецепттер өтмөгүндө рецепттерди түзүңүз';
+
+  @override
+  String get mealPlannerSave => 'Планга кошуу';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total тамак пландаштырылды';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Соода тизмесин түзүү';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Ушул аптадагы пландаштырылган тамактардын бардык ингредиенттерин соода тизмеңизге кошосузбу?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'Тизмеңизге $count ингредиент кошулду!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Кошо турган ингредиенттер жок. Алгач рецепттер менен тамактарды пландаштырыңыз.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Алгач соода тизмесин түзүңүз.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Эртең мененки тамак';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Түшкү тамак';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Кечки тамак';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Жеңил тамак';
+
+  @override
+  String get mealPlannerDateLabel => 'Дата';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Бул аптага эч нерсе пландаштырылган жок';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Тамактарыңызды пландаштырууну баштоо үчүн каалаган күндү таптаңыз!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes мүн';
+  }
 }

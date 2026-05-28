@@ -10,11 +10,11 @@ import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/lists/widgets/create_list_dialog.dart';
-import 'package:shopping_list/app/lists/widgets/list_switcher_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/shopping_item_tile.dart';
 import 'package:shopping_list/app/ai/providers/system_action_provider.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
@@ -79,10 +79,10 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
         return _buildChat(listId);
       },
       loading: () => const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+        body: SafeArea(child: Center(child: CircularProgressIndicator())),
       ),
       error: (e, _) => Scaffold(
-        body: Center(child: Text('Erro: $e')),
+        body: SafeArea(child: Center(child: Text('Erro: $e'))),
       ),
     );
   }
@@ -91,8 +91,9 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.aiAssistant)),
-      body: Center(
-        child: SingleChildScrollView(
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
           padding: const EdgeInsets.all(Spacing.xl),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -122,6 +123,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
           ),
         ),
       ),
+    ),
     );
   }
 
@@ -157,33 +159,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
           onPressed: () => Scaffold.of(context).openDrawer(),
           tooltip: l10n.openMenu,
         ),
-        titleSpacing: 0,
-        title: Row(
-          children: [
-            const SizedBox(width: Spacing.sm),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    listName ?? l10n.aiAssistant,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Text(
-                    l10n.shoppingAssistant,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                      fontSize: 11,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+        title: AppBarListSelector(currentListId: listId),
         actions: [
           if (!isPremium && aiUsageAsync.hasValue)
             Container(
@@ -222,23 +198,13 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 ],
               ),
             ),
-          IconButton(
-            icon: const Icon(Icons.swap_horiz),
-            onPressed: () {
-              showModalBottomSheet<void>(
-                context: context,
-                builder: (_) => ListSwitcherSheet(currentListId: listId),
-              );
-            },
-            tooltip: l10n.switchList,
-          ),
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert),
             onSelected: (value) {
               if (value == 'market') {
                 setState(() => _isMarketMode = !_isMarketMode);
               } else if (value == 'clear') {
-                ref.read(chatSessionProvider(listId).notifier).clearHistory();
+                ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).clearHistory();
               }
             },
             itemBuilder: (context) => [
@@ -266,8 +232,9 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
           ),
         ],
       ),
-      body: _isMarketMode
-          ? _ListHeroCard(
+      body: SafeArea(
+        child: _isMarketMode
+            ? _ListHeroCard(
               listId: listId,
               items: items,
               purchased: purchased,
@@ -393,8 +360,10 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 ),
               ],
             ),
+      ),
       floatingActionButton: _isMarketMode
           ? FloatingActionButton(
+              heroTag: null,
               onPressed: () {
                 showModalBottomSheet<void>(
                   context: context,
