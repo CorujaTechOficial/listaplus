@@ -38,7 +38,7 @@ class SettingsScreen extends ConsumerWidget {
     final aiConfigAsync = ref.watch(aiConfigStateProvider);
     final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'smart_toy');
     final useDynamicColorAsync = ref.watch(useDynamicColorProvider);
-    final useDynamicColor = useDynamicColorAsync.value ?? true;
+    final useDynamicColor = useDynamicColorAsync.value ?? false;
 
 
     return Scaffold(

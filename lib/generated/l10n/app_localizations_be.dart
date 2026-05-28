@@ -318,6 +318,10 @@ class AppLocalizationsBe extends AppLocalizations {
       'Выкарыстоўвайце колеры на аснове вашых шпалер';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Фінансы';
 
   @override

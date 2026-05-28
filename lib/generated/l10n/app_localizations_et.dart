@@ -309,6 +309,10 @@ class AppLocalizationsEt extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Kasuta taustapildil põhinevaid värve';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Rahandus';
 
   @override

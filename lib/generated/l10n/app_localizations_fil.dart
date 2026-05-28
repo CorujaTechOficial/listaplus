@@ -318,6 +318,10 @@ class AppLocalizationsFil extends AppLocalizations {
       'Gumamit ng mga kulay base sa iyong wallpaper';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Pananalapi';
 
   @override

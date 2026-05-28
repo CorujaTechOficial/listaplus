@@ -316,6 +316,10 @@ class AppLocalizationsHy extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Օգտագործել գույներ՝ հիմնված պաստառի վրա';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Ֆինանսներ';
 
   @override

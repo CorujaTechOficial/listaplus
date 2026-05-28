@@ -314,6 +314,10 @@ class AppLocalizationsDa extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Brug farver baseret på dit tapet';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Økonomi';
 
   @override

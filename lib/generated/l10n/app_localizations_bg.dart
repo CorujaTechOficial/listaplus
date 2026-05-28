@@ -319,6 +319,10 @@ class AppLocalizationsBg extends AppLocalizations {
       'Използвай цветове въз основа на твоя тапет';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Финанси';
 
   @override

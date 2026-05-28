@@ -123,7 +123,7 @@ final class CurrencySettingProvider
   CurrencySetting create() => CurrencySetting();
 }
 
-String _$currencySettingHash() => r'f4a73d567ea3a272dfb0f5a051b6188dafe0d8fa';
+String _$currencySettingHash() => r'891efbcb42997099747b04f7cbd9caa06d9bdd74';
 
 abstract class _$CurrencySetting extends $AsyncNotifier<String> {
   FutureOr<String> build();

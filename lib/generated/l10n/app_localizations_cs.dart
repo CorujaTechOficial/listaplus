@@ -317,6 +317,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Použít barvy na základě vaší tapety';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Finance';
 
   @override

@@ -308,6 +308,10 @@ class AppLocalizationsKm extends AppLocalizations {
   String get dynamicColorsSubtitle => 'ប្រើពណ៌តាមផ្ទាំងរូបភាពរបស់អ្នក';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ហិរញ្ញវត្ថុ';
 
   @override

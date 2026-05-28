@@ -315,6 +315,10 @@ class AppLocalizationsIs extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Nota liti byggða á veggfóðrinu þínu';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Fjármál';
 
   @override

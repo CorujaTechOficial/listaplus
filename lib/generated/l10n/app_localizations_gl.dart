@@ -316,6 +316,10 @@ class AppLocalizationsGl extends AppLocalizations {
       'Usa cores baseadas no teu fondo de pantalla';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Finanzas';
 
   @override

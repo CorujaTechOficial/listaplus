@@ -310,6 +310,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Käytä taustakuvan mukaisia värejä';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Talous';
 
   @override

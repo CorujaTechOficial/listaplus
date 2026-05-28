@@ -316,6 +316,10 @@ class AppLocalizationsFa extends AppLocalizations {
       'استفاده از رنگ‌ها بر اساس تصویر پس‌زمینه';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'مالی';
 
   @override

@@ -318,6 +318,10 @@ class AppLocalizationsHi extends AppLocalizations {
       'अपने वॉलपेपर के आधार पर रंगों का उपयोग करें';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'वित्त';
 
   @override

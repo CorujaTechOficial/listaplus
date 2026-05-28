@@ -318,6 +318,10 @@ class AppLocalizationsEu extends AppLocalizations {
       'Erabili zure hondo-irudian oinarritutako koloreak';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Finantzak';
 
   @override

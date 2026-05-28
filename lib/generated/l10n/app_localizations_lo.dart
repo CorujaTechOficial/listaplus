@@ -309,6 +309,10 @@ class AppLocalizationsLo extends AppLocalizations {
   String get dynamicColorsSubtitle => 'ໃຊ້ສີຕາມວໍເປເປີຂອງທ່ານ';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ການເງິນ';
 
   @override

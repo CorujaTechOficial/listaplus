@@ -317,6 +317,10 @@ class AppLocalizationsLv extends AppLocalizations {
       'Izmantot krāsas, pamatojoties uz tapetēm';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Finanses';
 
   @override

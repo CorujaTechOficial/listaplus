@@ -317,6 +317,10 @@ class AppLocalizationsKa extends AppLocalizations {
   String get dynamicColorsSubtitle => 'გამოიყენეთ ფერები თქვენი ფონის მიხედვით';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ფინანსები';
 
   @override

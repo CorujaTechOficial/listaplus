@@ -308,6 +308,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dynamicColorsSubtitle => '배경화면 기반 색상 사용';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => '재정';
 
   @override

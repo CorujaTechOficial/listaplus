@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/domain/entities/premium_feature.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
@@ -12,9 +13,11 @@ class ThemeSelectionScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final currentColorAsync = ref.watch(themeColorProvider);
     final theme = Theme.of(context);
     final isPremium = ref.watch(premiumProvider).value ?? false;
+    final useDynamicColor = ref.watch(useDynamicColorProvider).value ?? false;
 
     return Scaffold(
       appBar: AppBar(
@@ -39,6 +42,11 @@ class ThemeSelectionScreen extends ConsumerWidget {
               if (option.isPremium && !isPremium) {
                 Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
                 return;
+              }
+              if (useDynamicColor) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(l10n.dynamicColorsEnabledWarning)),
+                );
               }
               ref.read(themeColorProvider.notifier).setColor(color);
             },

@@ -309,6 +309,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Tài chính';
 
   @override

@@ -308,6 +308,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dynamicColorsSubtitle => '壁紙に基づいた色を使用する';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => '財務';
 
   @override

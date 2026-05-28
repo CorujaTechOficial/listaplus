@@ -316,6 +316,10 @@ class AppLocalizationsGu extends AppLocalizations {
       'તમારા વૉલપેપર પર આધારિત રંગોનો ઉપયોગ કરો';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'નાણાં';
 
   @override

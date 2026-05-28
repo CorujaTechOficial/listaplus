@@ -317,6 +317,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'Usa cores baseadas no teu papel de parede';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Financeiro';
 
   @override

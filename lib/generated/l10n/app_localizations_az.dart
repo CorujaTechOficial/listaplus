@@ -318,6 +318,10 @@ class AppLocalizationsAz extends AppLocalizations {
       'Divar kağızınıza əsaslanan rənglərdən istifadə edin';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Maliyyə';
 
   @override

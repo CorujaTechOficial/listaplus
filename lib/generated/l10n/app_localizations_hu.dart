@@ -318,6 +318,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get dynamicColorsSubtitle => 'Színek használata a háttérkép alapján';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Pénzügyek';
 
   @override

@@ -316,6 +316,10 @@ class AppLocalizationsAf extends AppLocalizations {
       'Gebruik kleure gebaseer op jou muurpapier';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Finansies';
 
   @override

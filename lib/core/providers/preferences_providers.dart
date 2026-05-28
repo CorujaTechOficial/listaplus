@@ -78,9 +78,9 @@ class CurrencySetting extends _$CurrencySetting {
         return saved;
       }
       final locale = ref.read(localeSettingProvider).value;
-      return _inferirDoLocale(locale);
+      return _inferFromLocale(locale);
     } on Exception {
-      return 'BRL';
+      return _defaultCurrency;
     }
   }
 
@@ -91,53 +91,37 @@ class CurrencySetting extends _$CurrencySetting {
     try {
       await service.updateUserData({'currencyCode': code});
     } on Exception {
-      state = AsyncValue.data(previous ?? 'BRL');
+      state = AsyncValue.data(previous ?? _defaultCurrency);
       rethrow;
     }
   }
 
-  String _inferirDoLocale(String? locale) {
+  static const _localeCurrencyMap = <String, String>{
+    'pt_PT': 'EUR',
+    'pt': 'BRL',
+    'en_US': 'USD',
+    'en_GB': 'GBP',
+    'es_AR': 'ARS',
+    'es_CL': 'CLP',
+    'es_CO': 'COP',
+    'es_MX': 'MXN',
+    'ja': 'JPY',
+    'de': 'EUR',
+    'fr': 'EUR',
+    'it': 'EUR',
+    'es': 'EUR',
+  };
+
+  static const _defaultCurrency = 'BRL';
+
+  String _inferFromLocale(String? locale) {
     if (locale == null) {
-      return 'BRL';
+      return _defaultCurrency;
     }
-    if (locale.startsWith('pt')) {
-      return 'BRL';
-    }
-    if (locale.startsWith('en_US')) {
-      return 'USD';
-    }
-    if (locale.startsWith('en_GB')) {
-      return 'GBP';
-    }
-    if (locale.startsWith('pt_PT')) {
-      return 'EUR';
-    }
-    if (locale.startsWith('es_AR')) {
-      return 'ARS';
-    }
-    if (locale.startsWith('es_CL')) {
-      return 'CLP';
-    }
-    if (locale.startsWith('es_CO')) {
-      return 'COP';
-    }
-    if (locale.startsWith('es_MX')) {
-      return 'MXN';
-    }
-    if (locale.startsWith('ja')) {
-      return 'JPY';
-    }
-    if (locale.startsWith('de')) {
-      return 'EUR';
-    }
-    if (locale.startsWith('fr')) {
-      return 'EUR';
-    }
-    if (locale.startsWith('it')) {
-      return 'EUR';
-    }
-    if (locale.startsWith('es')) {
-      return 'EUR';
+    for (final entry in _localeCurrencyMap.entries) {
+      if (locale.startsWith(entry.key)) {
+        return entry.value;
+      }
     }
     return 'USD';
   }

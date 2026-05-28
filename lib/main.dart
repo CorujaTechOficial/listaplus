@@ -252,7 +252,7 @@ class _MyAppState extends ConsumerState<MyApp> {
     final useDynamicColorAsync = ref.watch(useDynamicColorProvider);
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
     final colorSeed = themeColorAsync.value ?? const Color(0xFF4CAF50);
-    final useDynamicColor = useDynamicColorAsync.value ?? true;
+    final useDynamicColor = useDynamicColorAsync.value ?? false;
 
     return onboardingAsync.when(
       data: (hasSeen) {

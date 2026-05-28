@@ -317,6 +317,10 @@ class AppLocalizationsNe extends AppLocalizations {
       'तपाईंको वालपेपरमा आधारित रंगहरू प्रयोग गर्नुहोस्';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'वित्त';
 
   @override

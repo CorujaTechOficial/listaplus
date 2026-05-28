@@ -316,6 +316,10 @@ class AppLocalizationsBn extends AppLocalizations {
       'আপনার ওয়ালপেপারের ওপর ভিত্তি করে রঙ ব্যবহার করুন';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'অর্থ';
 
   @override

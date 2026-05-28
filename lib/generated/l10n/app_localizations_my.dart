@@ -312,6 +312,10 @@ class AppLocalizationsMy extends AppLocalizations {
       'သင်၏ wallpaper ပေါ်မူတည်၍ အရောင်များကို အသုံးပြုပါ';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ဘဏ္ဍာရေး';
 
   @override

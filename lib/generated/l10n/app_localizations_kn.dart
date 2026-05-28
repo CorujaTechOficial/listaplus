@@ -317,6 +317,10 @@ class AppLocalizationsKn extends AppLocalizations {
   String get dynamicColorsSubtitle => 'ನಿಮ್ಮ ವಾಲ್‌ಪೇಪರ್ ಆಧಾರಿತ ಬಣ್ಣಗಳನ್ನು ಬಳಸಿ';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ಹಣಕಾಸು';
 
   @override

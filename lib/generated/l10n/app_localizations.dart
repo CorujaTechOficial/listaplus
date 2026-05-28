@@ -834,6 +834,12 @@ abstract class AppLocalizations {
   /// **'Use colors based on your wallpaper'**
   String get dynamicColorsSubtitle;
 
+  /// SnackBar shown when user picks a color while Dynamic Colors is on
+  ///
+  /// In en, this message translates to:
+  /// **'Disable dynamic colors for the theme color to take effect'**
+  String get dynamicColorsEnabledWarning;
+
   /// No description provided for @finance.
   ///
   /// In en, this message translates to:

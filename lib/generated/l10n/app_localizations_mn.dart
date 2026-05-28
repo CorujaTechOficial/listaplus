@@ -319,6 +319,10 @@ class AppLocalizationsMn extends AppLocalizations {
       'Таны ханын зураг дээр үндэслэсэн өнгийг ашиглана уу';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Санхүү';
 
   @override

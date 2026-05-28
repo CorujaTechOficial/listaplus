@@ -319,6 +319,10 @@ class AppLocalizationsMl extends AppLocalizations {
       'നിങ്ങളുടെ വാൾപേപ്പറിനെ അടിസ്ഥാനമാക്കിയുള്ള നിറങ്ങൾ ഉപയോഗിക്കുക';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ഫിനാൻസ്';
 
   @override

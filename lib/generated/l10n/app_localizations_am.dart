@@ -314,6 +314,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get dynamicColorsSubtitle => 'በልጣፍዎ ላይ የተመሰረቱ ቀለሞችን ይጠቀሙ';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'ፋይናንስ';
 
   @override

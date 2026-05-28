@@ -317,6 +317,10 @@ class AppLocalizationsEl extends AppLocalizations {
       'Χρήση χρωμάτων με βάση την ταπετσαρία σας';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Οικονομικά';
 
   @override

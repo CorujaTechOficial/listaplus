@@ -113,6 +113,8 @@
   "themeColor": "Theme color",
   "dynamicColors": "Dynamic colors",
   "dynamicColorsSubtitle": "Use colors based on your wallpaper",
+  "dynamicColorsEnabledWarning": "Disable dynamic colors for the theme color to take effect",
+  "@dynamicColorsEnabledWarning": { "description": "SnackBar shown when user picks a color while Dynamic Colors is on" },
   "finance": "Finance",
   "monthlyBudgetNav": "Monthly budget",
   "budgetSubtitle": "Track your monthly spending",

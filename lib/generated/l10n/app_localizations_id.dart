@@ -311,6 +311,10 @@ class AppLocalizationsId extends AppLocalizations {
       'Gunakan warna berdasarkan wallpaper Anda';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Keuangan';
 
   @override

@@ -316,6 +316,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get dynamicColorsSubtitle => 'השתמש בצבעים המבוססים על הטפט שלך';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'כספים';
 
   @override

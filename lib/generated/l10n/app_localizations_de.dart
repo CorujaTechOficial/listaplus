@@ -319,6 +319,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Farben basierend auf Ihrem Hintergrundbild verwenden';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Finanzen';
 
   @override

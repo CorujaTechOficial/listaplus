@@ -318,6 +318,10 @@ class AppLocalizationsKk extends AppLocalizations {
       'Түсқағазға негізделген түстерді пайдаланыңыз';
 
   @override
+  String get dynamicColorsEnabledWarning =>
+      'Disable dynamic colors for the theme color to take effect';
+
+  @override
   String get finance => 'Қаржы';
 
   @override
