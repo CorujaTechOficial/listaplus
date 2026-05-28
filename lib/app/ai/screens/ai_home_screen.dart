@@ -27,6 +27,7 @@ import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 
 import 'package:share_plus/share_plus.dart';
+import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/app/recipes/screens/recipe_detail_screen.dart';
 
 class AiHomeScreen extends ConsumerStatefulWidget {
@@ -97,6 +98,97 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
     }
   }
 
+  void _showShareSheet(String listId) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (context) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(l10n.shareListTitle, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
+              const SizedBox(height: 16),
+              ListTile(
+                leading: const Icon(Icons.group_add),
+                title: Text(l10n.inviteToList),
+                subtitle: Text(l10n.shareRealtime),
+                onTap: () {
+                  Navigator.pop(context);
+                  _shareViaCode(listId);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.share),
+                title: Text(l10n.shareApp),
+                subtitle: Text(l10n.shareAppDescription),
+                onTap: () {
+                  Navigator.pop(context);
+                  _shareReferral();
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _shareViaCode(String listId) async {
+    final isPremium = await ref.read(premiumProvider.future);
+    if (!isPremium) {
+      if (!mounted) {
+        return;
+      }
+      await Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
+      return;
+    }
+    try {
+      final code = await ref.read(shareServiceProvider).createShareCode(listId);
+      if (!mounted) {
+        return;
+      }
+      await showDialog<void>(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text(AppLocalizations.of(context)!.shareListTitle),
+          content: Column(mainAxisSize: MainAxisSize.min, children: [
+            Text(AppLocalizations.of(context)!.shareThisCode),
+            const SizedBox(height: 16),
+            SelectableText(
+              code,
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                letterSpacing: 4,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+          ]),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(AppLocalizations.of(context)!.close),
+            ),
+          ],
+        ),
+      );
+    } on Object catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+      }
+    }
+  }
+
+  void _shareReferral() {
+    final l10n = AppLocalizations.of(context)!;
+    SharePlus.instance.share(ShareParams(
+      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      subject: l10n.shareReferralSubject,
+    ));
+  }
+
   void _handleSystemAction(SystemActionType action) {
     switch (action) {
       case SystemActionType.openPaywall:
@@ -106,10 +198,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
       case SystemActionType.promptUpdate:
         ref.read(updateServiceProvider).checkForUpdates();
       case SystemActionType.shareReferral:
-        SharePlus.instance.share(ShareParams(
-          text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-          subject: 'Ganhe 7 dias de Lista Plus Premium!',
-        ));
+        _shareReferral();
     }
   }
 
@@ -216,6 +305,11 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
         ),
         title: AppBarListSelector(currentListId: listId),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () => _showShareSheet(listId),
+            tooltip: l10n.inviteToList,
+          ),
           if (!isPremium && aiUsageAsync.hasValue)
             Container(
               margin: const EdgeInsets.symmetric(vertical: 12),
