@@ -134,3 +134,20 @@ class UseDynamicColor extends _$UseDynamicColor {
   }
 }
 
+@riverpod
+class DefaultScreen extends _$DefaultScreen {
+  static const _key = 'defaultScreen';
+
+  @override
+  Future<String> build() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_key) ?? 'list';
+  }
+
+  Future<void> setScreen(String screen) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_key, screen);
+    state = AsyncValue.data(screen);
+  }
+}
+
