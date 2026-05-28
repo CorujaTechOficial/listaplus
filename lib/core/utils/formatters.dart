@@ -1,12 +1,11 @@
 import 'package:intl/intl.dart';
 
-String formatCurrency(double value) {
-  final format = NumberFormat.currency(
-    locale: 'pt_BR',
-    symbol: 'R\$',
+String formatCurrency(double value, String currencyCode) {
+  final format = NumberFormat.simpleCurrency(
+    name: currencyCode,
     decimalDigits: 2,
   );
-  return format.format(value).replaceAll('\u00a0', ' ');
+  return format.format(value);
 }
 
 String pluralize(int count, String singular, String plural) {

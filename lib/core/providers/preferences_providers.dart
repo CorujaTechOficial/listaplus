@@ -67,6 +67,83 @@ class LocaleSetting extends _$LocaleSetting {
 }
 
 @riverpod
+class CurrencySetting extends _$CurrencySetting {
+  @override
+  Future<String> build() async {
+    try {
+      final service = ref.watch(firestoreServiceProvider);
+      final data = await service.getUserData();
+      final saved = data?['currencyCode'] as String?;
+      if (saved != null) {
+        return saved;
+      }
+      final locale = ref.read(localeSettingProvider).value;
+      return _inferirDoLocale(locale);
+    } on Exception {
+      return 'BRL';
+    }
+  }
+
+  Future<void> setCurrency(String code) async {
+    final service = ref.read(firestoreServiceProvider);
+    final previous = state.value;
+    state = AsyncValue.data(code);
+    try {
+      await service.updateUserData({'currencyCode': code});
+    } on Exception {
+      state = AsyncValue.data(previous ?? 'BRL');
+      rethrow;
+    }
+  }
+
+  String _inferirDoLocale(String? locale) {
+    if (locale == null) {
+      return 'BRL';
+    }
+    if (locale.startsWith('pt')) {
+      return 'BRL';
+    }
+    if (locale.startsWith('en_US')) {
+      return 'USD';
+    }
+    if (locale.startsWith('en_GB')) {
+      return 'GBP';
+    }
+    if (locale.startsWith('pt_PT')) {
+      return 'EUR';
+    }
+    if (locale.startsWith('es_AR')) {
+      return 'ARS';
+    }
+    if (locale.startsWith('es_CL')) {
+      return 'CLP';
+    }
+    if (locale.startsWith('es_CO')) {
+      return 'COP';
+    }
+    if (locale.startsWith('es_MX')) {
+      return 'MXN';
+    }
+    if (locale.startsWith('ja')) {
+      return 'JPY';
+    }
+    if (locale.startsWith('de')) {
+      return 'EUR';
+    }
+    if (locale.startsWith('fr')) {
+      return 'EUR';
+    }
+    if (locale.startsWith('it')) {
+      return 'EUR';
+    }
+    if (locale.startsWith('es')) {
+      return 'EUR';
+    }
+    return 'USD';
+  }
+}
+
+@riverpod
 class ThemeColor extends _$ThemeColor {
   static const _key = 'themeColor';
 
@@ -115,9 +192,9 @@ class UseDynamicColor extends _$UseDynamicColor {
     try {
       final service = ref.watch(firestoreServiceProvider);
       final data = await service.getUserData();
-      return data?[_key] as bool? ?? true;
+      return data?[_key] as bool? ?? false;
     } on Exception {
-      return true;
+      return false;
     }
   }
 
@@ -128,7 +205,7 @@ class UseDynamicColor extends _$UseDynamicColor {
     try {
       await service.updateUserData({_key: value});
     } on Exception {
-      state = AsyncValue.data(previous ?? true);
+      state = AsyncValue.data(previous ?? false);
       rethrow;
     }
   }

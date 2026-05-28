@@ -99,6 +99,51 @@ abstract class _$LocaleSetting extends $AsyncNotifier<String?> {
   }
 }
 
+@ProviderFor(CurrencySetting)
+const currencySettingProvider = CurrencySettingProvider._();
+
+final class CurrencySettingProvider
+    extends $AsyncNotifierProvider<CurrencySetting, String> {
+  const CurrencySettingProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'currencySettingProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$currencySettingHash();
+
+  @$internal
+  @override
+  CurrencySetting create() => CurrencySetting();
+}
+
+String _$currencySettingHash() => r'f4a73d567ea3a272dfb0f5a051b6188dafe0d8fa';
+
+abstract class _$CurrencySetting extends $AsyncNotifier<String> {
+  FutureOr<String> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<String>, String>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<String>, String>,
+              AsyncValue<String>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}
+
 @ProviderFor(ThemeColor)
 const themeColorProvider = ThemeColorProvider._();
 
@@ -213,7 +258,7 @@ final class UseDynamicColorProvider
   UseDynamicColor create() => UseDynamicColor();
 }
 
-String _$useDynamicColorHash() => r'4c0f57c680450e202d9b4a73d0bef410fff8cb96';
+String _$useDynamicColorHash() => r'b4cded4ab5f1c76680f1eba2b76a1f683c88c304';
 
 abstract class _$UseDynamicColor extends $AsyncNotifier<bool> {
   FutureOr<bool> build();
