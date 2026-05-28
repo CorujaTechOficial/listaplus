@@ -469,5 +469,8 @@
         "type": "int"
       }
     }
-  }
+  },
+  "inviteToList": "Convidar para lista",
+  "shareApp": "Compartilhar o app",
+  "shareAppDescription": "Convide amigos para usar o Lista Plus"
 }

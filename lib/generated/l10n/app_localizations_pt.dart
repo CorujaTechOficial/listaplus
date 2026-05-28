@@ -2635,6 +2635,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Convidar para lista';
+
+  @override
+  String get shareApp => 'Compartilhar o app';
+
+  @override
+  String get shareAppDescription => 'Convide amigos para usar o Lista Plus';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
