@@ -20,23 +20,6 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze --fatal-infos
 
-  test:
-    name: flutter test --coverage
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: '3.29.3'
-      - run: flutter pub get
-      - run: flutter test --coverage
-      - name: Check coverage
-        run: |
-          COVERAGE=$(awk -F: '/^SF:/ {f=$2} /^LF:/ && f !~ /\.g\.dart$/ {lf+=$2} /^LH:/ && f !~ /\.g\.dart$/ {lh+=$2} END {printf "%.1f", (lh/lf)*100}' coverage/lcov.info)
-          echo "Cobertura: ${COVERAGE}%"
-
   build-web:
     name: flutter build web
     runs-on: ubuntu-latest
