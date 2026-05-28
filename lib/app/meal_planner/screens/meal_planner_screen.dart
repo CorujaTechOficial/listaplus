@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/add_meal_plan_sheet.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_day_card.dart';
@@ -132,6 +133,14 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
     }
   }
 
+  void _shareApp() {
+    final l10n = AppLocalizations.of(context)!;
+    SharePlus.instance.share(ShareParams(
+      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      subject: l10n.shareReferralSubject,
+    ));
+  }
+
   // ----- Build ---------------------------------------------------------
 
   @override
@@ -150,6 +159,11 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
         ),
         title: Text(l10n.mealPlannerTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: _shareApp,
+            tooltip: l10n.shareApp,
+          ),
           // Generate shopping list button
           if (_isWeekly)
             IconButton(

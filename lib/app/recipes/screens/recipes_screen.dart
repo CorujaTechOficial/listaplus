@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -85,6 +86,14 @@ class _RecipesScreenState extends State<RecipesScreen> {
     }
   }
 
+  void _shareApp() {
+    final l10n = AppLocalizations.of(context)!;
+    SharePlus.instance.share(ShareParams(
+      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      subject: l10n.shareReferralSubject,
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ref, _) {
@@ -100,6 +109,13 @@ class _RecipesScreenState extends State<RecipesScreen> {
           tooltip: l10n.openMenu,
         ),
         title: Text(l10n.myRecipes),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: _shareApp,
+            tooltip: l10n.shareApp,
+          ),
+        ],
       ),
       body: SafeArea(
         child: recipesAsync.when(

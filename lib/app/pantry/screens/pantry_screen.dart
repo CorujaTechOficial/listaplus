@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,6 +32,11 @@ class PantryScreen extends ConsumerWidget {
         ),
         title: Text(l10n.pantryAppBar),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () => _shareApp(context),
+            tooltip: l10n.shareApp,
+          ),
           if (pantryAsync.value?.isNotEmpty == true)
             IconButton(
               icon: const Icon(Icons.shopping_cart),
@@ -143,6 +149,14 @@ class PantryScreen extends ConsumerWidget {
         curve: Curves.easeOutBack,
       ),
     );
+  }
+
+  void _shareApp(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    SharePlus.instance.share(ShareParams(
+      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      subject: l10n.shareReferralSubject,
+    ));
   }
 
   Future<void> _generateShoppingList(BuildContext context, WidgetRef ref) async {
