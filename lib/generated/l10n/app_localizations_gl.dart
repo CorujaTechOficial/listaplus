@@ -612,6 +612,95 @@ class AppLocalizationsGl extends AppLocalizations {
   String get continueAsGuest => 'Continuar como convidado';
 
   @override
+  String get onboardingAiGreeting =>
+      'Hi! I\'m your smart assistant. What would you like to call me?';
+
+  @override
+  String onboardingAiNameResponse(String name) {
+    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
+  }
+
+  @override
+  String get onboardingAiFoodResponse =>
+      'Yum! And how do you prepare it? I can suggest the ingredients!';
+
+  @override
+  String get onboardingAiListReady =>
+      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+
+  @override
+  String get onboardingAiSuggestButton => 'Suggest!';
+
+  @override
+  String get onboardingGoToList => 'Go to list';
+
+  @override
+  String get onboardingKeepChatting => 'Keep chatting';
+
+  @override
+  String get onboardingSkipToApp => 'Skip to app';
+
+  @override
+  String get onboardingChatPlaceholder => 'Type a message...';
+
+  @override
+  String get onboardingLoginTitle => 'Save everything to the cloud';
+
+  @override
+  String get onboardingLoginDesc => 'Your data synced across all your devices';
+
+  @override
+  String get onboardingShareTitle => 'Share with the ones you love';
+
+  @override
+  String get onboardingShareDesc =>
+      'Sync lists with family and friends in real time';
+
+  @override
+  String get onboardingPremiumTitle => 'Unlock all features';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Get the most out of your shopping lists';
+
+  @override
+  String get onboardingAnnualBadge => 'Best Value';
+
+  @override
+  String get onboardingMonthlyLabel => 'Monthly';
+
+  @override
+  String get onboardingAnnualLabel => 'Annual';
+
+  @override
+  String get onboardingViewAllPlans => 'View all plans';
+
+  @override
+  String get onboardingSubscribeCta => 'Subscribe';
+
+  @override
+  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Continue as guest';
+
+  @override
+  String get onboardingRestore => 'Restore';
+
+  @override
+  String get settingsDefaultScreen => 'Default home screen';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Choose between shopping list or AI chat';
+
+  @override
+  String get settingsScreenList => 'Shopping List';
+
+  @override
+  String get settingsScreenChat => 'AI Chat';
+
+  @override
   String loginError(String error) {
     return 'Erro de inicio de sesión: $error';
   }

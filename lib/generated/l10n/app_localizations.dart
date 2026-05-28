@@ -1386,6 +1386,168 @@ abstract class AppLocalizations {
   /// **'Continue as guest'**
   String get continueAsGuest;
 
+  /// AI first message asking for name
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! I\'m your smart assistant. What would you like to call me?'**
+  String get onboardingAiGreeting;
+
+  /// AI response after user gives a name
+  ///
+  /// In en, this message translates to:
+  /// **'{name}? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?'**
+  String onboardingAiNameResponse(String name);
+
+  /// AI asks about food preparation
+  ///
+  /// In en, this message translates to:
+  /// **'Yum! And how do you prepare it? I can suggest the ingredients!'**
+  String get onboardingAiFoodResponse;
+
+  /// AI offers list or chat choice
+  ///
+  /// In en, this message translates to:
+  /// **'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?'**
+  String get onboardingAiListReady;
+
+  /// Button to ask AI for suggestions
+  ///
+  /// In en, this message translates to:
+  /// **'Suggest!'**
+  String get onboardingAiSuggestButton;
+
+  /// Button to go to shopping list
+  ///
+  /// In en, this message translates to:
+  /// **'Go to list'**
+  String get onboardingGoToList;
+
+  /// Button to continue chatting
+  ///
+  /// In en, this message translates to:
+  /// **'Keep chatting'**
+  String get onboardingKeepChatting;
+
+  /// Skip onboarding link
+  ///
+  /// In en, this message translates to:
+  /// **'Skip to app'**
+  String get onboardingSkipToApp;
+
+  /// Chat input placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'Type a message...'**
+  String get onboardingChatPlaceholder;
+
+  /// Slide 2 headline
+  ///
+  /// In en, this message translates to:
+  /// **'Save everything to the cloud'**
+  String get onboardingLoginTitle;
+
+  /// Slide 2 body
+  ///
+  /// In en, this message translates to:
+  /// **'Your data synced across all your devices'**
+  String get onboardingLoginDesc;
+
+  /// Slide 3 headline
+  ///
+  /// In en, this message translates to:
+  /// **'Share with the ones you love'**
+  String get onboardingShareTitle;
+
+  /// Slide 3 body
+  ///
+  /// In en, this message translates to:
+  /// **'Sync lists with family and friends in real time'**
+  String get onboardingShareDesc;
+
+  /// Slide 4 headline
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock all features'**
+  String get onboardingPremiumTitle;
+
+  /// Slide 4 subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Get the most out of your shopping lists'**
+  String get onboardingPremiumSubtitle;
+
+  /// Annual plan badge
+  ///
+  /// In en, this message translates to:
+  /// **'Best Value'**
+  String get onboardingAnnualBadge;
+
+  /// Monthly plan label
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get onboardingMonthlyLabel;
+
+  /// Annual plan label
+  ///
+  /// In en, this message translates to:
+  /// **'Annual'**
+  String get onboardingAnnualLabel;
+
+  /// Link to show additional plans
+  ///
+  /// In en, this message translates to:
+  /// **'View all plans'**
+  String get onboardingViewAllPlans;
+
+  /// Subscribe button text
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe'**
+  String get onboardingSubscribeCta;
+
+  /// Cancellation disclaimer
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime. No commitment.'**
+  String get onboardingCancelAnytime;
+
+  /// Skip login link
+  ///
+  /// In en, this message translates to:
+  /// **'Continue as guest'**
+  String get onboardingContinueAsGuest;
+
+  /// Restore purchases button
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get onboardingRestore;
+
+  /// Settings option label
+  ///
+  /// In en, this message translates to:
+  /// **'Default home screen'**
+  String get settingsDefaultScreen;
+
+  /// Settings option subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Choose between shopping list or AI chat'**
+  String get settingsDefaultScreenSubtitle;
+
+  /// List screen option
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping List'**
+  String get settingsScreenList;
+
+  /// Chat screen option
+  ///
+  /// In en, this message translates to:
+  /// **'AI Chat'**
+  String get settingsScreenChat;
+
   /// No description provided for @loginError.
   ///
   /// In en, this message translates to:
