@@ -8,6 +8,8 @@ import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import '../../theme/tokens.dart';
 import '../../utils/test_utils.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class ArtifactCardShell extends ConsumerStatefulWidget {
@@ -63,6 +65,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
     final budget = widget.artifact.budget;
     final showBudgetBar = widget.artifact.showBudgetBar && budget != null && budget > 0;
 
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
     final resolvedListId = widget.listId ?? ref.watch(currentListIdProvider).value;
 
     final Widget cardContent = Container(
@@ -163,7 +166,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                   ),
                 ),
                 Text(
-                  'R\$ ${totalCost.toStringAsFixed(2)} / R\$ ${budget.toStringAsFixed(2)}',
+                  '${formatCurrency(totalCost, currencyCode)} / ${formatCurrency(budget, currencyCode)}',
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: totalCost > budget ? Colors.red : theme.colorScheme.onSurface,
@@ -201,7 +204,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                     ),
                   ),
                   Text(
-                    'R\$ ${totalCost.toStringAsFixed(2)}',
+                    formatCurrency(totalCost, currencyCode),
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: theme.colorScheme.primary,

@@ -3,6 +3,8 @@ import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/interactive_artifact.dart';
 import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import '../../theme/tokens.dart';
 
 class ArtifactContentRenderer extends ConsumerWidget {
@@ -60,6 +62,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
     ArtifactItem item,
     int itemIndex,
   ) {
+    final currencyCode = ref.read(currencySettingProvider).value ?? 'BRL';
     showModalBottomSheet<void>(
       context: context,
       builder: (context) {
@@ -96,7 +99,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                     ),
                     trailing: alt.estimatedPrice != null
                         ? Text(
-                            'R\$ ${(alt.quantity * alt.estimatedPrice!).toStringAsFixed(2)}',
+                            formatCurrency(alt.quantity * alt.estimatedPrice!, currencyCode),
                             style: theme.textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                               color: theme.colorScheme.primary,
@@ -362,6 +365,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
     }
 
     final theme = Theme.of(context);
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
     final controls = state.artifact.controls;
     final items = state.currentItems;
     final isCommitted = state.isCommitted;
@@ -408,7 +412,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
               final originalIdx = state.currentItems.indexOf(item);
               final double qty = item.isSwapped ? item.baseQuantity : (item.baseQuantity * multiplier);
               final priceText = item.estimatedPrice != null
-                  ? 'R\$ ${(qty * item.estimatedPrice!).toStringAsFixed(2)}'
+                  ? formatCurrency(qty * item.estimatedPrice!, currencyCode)
                   : '';
 
               return Padding(
