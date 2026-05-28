@@ -2693,6 +2693,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{minutes} min'**
   String mealPlannerPrepTime(int minutes);
+
+  /// Button to invite someone to a shopping list
+  ///
+  /// In en, this message translates to:
+  /// **'Invite to list'**
+  String get inviteToList;
+
+  /// Button to share the app with friends
+  ///
+  /// In en, this message translates to:
+  /// **'Share app'**
+  String get shareApp;
+
+  /// Subtitle for sharing the app option
+  ///
+  /// In en, this message translates to:
+  /// **'Invite friends to use Lista Plus'**
+  String get shareAppDescription;
 }
 
 class _AppLocalizationsDelegate

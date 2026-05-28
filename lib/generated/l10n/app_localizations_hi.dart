@@ -1318,6 +1318,15 @@ class AppLocalizationsHi extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes मिनट';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Hindi, as used in India (`hi_IN`).

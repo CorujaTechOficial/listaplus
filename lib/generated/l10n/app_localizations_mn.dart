@@ -1321,6 +1321,15 @@ class AppLocalizationsMn extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes мин';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).

@@ -1320,6 +1320,15 @@ class AppLocalizationsNl extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Dutch Flemish, as used in Netherlands (`nl_NL`).

@@ -1329,6 +1329,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes മിനിറ്റ്';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Malayalam, as used in India (`ml_IN`).

@@ -495,5 +495,17 @@
   "mealPlannerWeekEmpty": "Nothing planned for this week",
   "mealPlannerWeekEmptyHint": "Tap any day to start planning your meals!",
   "mealPlannerPrepTime": "{minutes} min",
-  "@mealPlannerPrepTime": { "placeholders": { "minutes": { "type": "int" } } }
+  "@mealPlannerPrepTime": { "placeholders": { "minutes": { "type": "int" } } },
+  "inviteToList": "Invite to list",
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
+  "shareApp": "Share app",
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "shareAppDescription": "Invite friends to use Lista Plus",
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  }
 }

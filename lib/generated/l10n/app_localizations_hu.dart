@@ -1323,6 +1323,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes perc';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).

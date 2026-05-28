@@ -1327,6 +1327,15 @@ class AppLocalizationsEl extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes λεπτά';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).

@@ -1322,4 +1322,13 @@ class AppLocalizationsBe extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes хв';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }

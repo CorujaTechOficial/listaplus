@@ -1321,6 +1321,15 @@ class AppLocalizationsNe extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes मिनेट';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Nepali, as used in Nepal (`ne_NP`).

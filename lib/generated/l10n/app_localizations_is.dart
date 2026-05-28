@@ -1317,6 +1317,15 @@ class AppLocalizationsIs extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes mín';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).

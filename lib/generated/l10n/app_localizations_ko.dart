@@ -1289,6 +1289,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes분';
   }
+
+  @override
+  String get inviteToList => 'Invite to list';
+
+  @override
+  String get shareApp => 'Share app';
+
+  @override
+  String get shareAppDescription => 'Invite friends to use Lista Plus';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
