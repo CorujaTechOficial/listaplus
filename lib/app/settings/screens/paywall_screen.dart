@@ -245,13 +245,10 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           ..._packages.map((pkg) {
             final isSelected = _selectedPackage?.identifier == pkg.identifier;
             final isAnnual = pkg.identifier.toLowerCase().contains('annual') || pkg.identifier.toLowerCase().contains('ano');
-            final isLifetime = pkg.identifier.toLowerCase().contains('lifetime') || pkg.identifier.toLowerCase().contains('vida');
 
             String badgeText = '';
             if (isAnnual) {
-              badgeText = 'Mais Popular - Salve 50%';
-            } else if (isLifetime) {
-              badgeText = 'Melhor Valor';
+              badgeText = 'Mais Popular - Melhor Valor';
             }
 
             return Padding(
@@ -282,7 +279,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                             if (badgeText.isNotEmpty) ...[
                               Container(
                                 decoration: BoxDecoration(
-                                  color: isAnnual ? theme.colorScheme.primary : AppColors.premiumAmber,
+                                  color: theme.colorScheme.primary,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: 2),
@@ -359,9 +356,6 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     final lower = id.toLowerCase();
     if (lower.contains('annual') || lower.contains('ano')) {
       return 'Plano Anual';
-    }
-    if (lower.contains('lifetime') || lower.contains('vida')) {
-      return 'Plano Vitalício';
     }
     if (lower.contains('monthly') || lower.contains('mes')) {
       return 'Plano Mensal';

@@ -617,6 +617,17 @@ class FirestoreService implements StorageBackend {
   }
 
   @override
+  Future<void> updateChatSessionTitle(String? listId, String sessionId, String title) async {
+    return _retry(() async {
+      final coll = _getChatSessionsColl(listId);
+      await coll.doc(sessionId).update({
+        'title': title,
+        'updatedAt': DateTime.now().toIso8601String(),
+      });
+    });
+  }
+
+  @override
   Future<void> deleteChatSession(String? listId, String sessionId) async {
     return _retry(() async {
       final sessionRef = _getChatSessionsColl(listId).doc(sessionId);

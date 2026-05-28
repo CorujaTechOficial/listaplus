@@ -9,9 +9,7 @@ import 'package:flutter_highlighter/flutter_highlighter.dart';
 import 'package:flutter_highlighter/themes/atom-one-dark.dart';
 import 'package:flutter_highlighter/themes/atom-one-light.dart';
 import 'package:markdown/markdown.dart' as md;
-import 'package:shimmer/shimmer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
 import '../../../utils/test_utils.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../../../models/chat_message.dart';
@@ -28,13 +26,11 @@ import '../../../models/category_data.dart';
 import '../../../models/unit.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../models/shopping_item.dart';
-import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import '../../../models/ai_config.dart';
 import '../../../widgets/artifact_widgets/artifact_card_shell.dart';
 import '../../../widgets/artifact_widgets/artifact_content_renderer.dart';
 import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
-import 'package:audio_waveforms/audio_waveforms.dart';
 
 class AiChatPanel extends ConsumerStatefulWidget {
   const AiChatPanel({
@@ -61,45 +57,15 @@ class AiChatPanel extends ConsumerStatefulWidget {
 class _AiChatPanelState extends ConsumerState<AiChatPanel> {
   final _textController = TextEditingController();
   final _scrollController = ScrollController();
-  final _speech = stt.SpeechToText();
   bool _isSending = false;
   bool _showScrollFAB = false;
   bool _shouldAutoScroll = true;
-  bool _isListening = false;
   int _prevMessageCount = 0;
 
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_scrollListener);
-  }
-
-  Future<void> _listen() async {
-    if (!_isListening) {
-      final locale = Localizations.localeOf(context).toString();
-      final available = await _speech.initialize(
-        onStatus: (val) => debugPrint('Speech status: $val'),
-        onError: (val) => debugPrint('Speech error: $val'),
-      );
-      if (available) {
-        setState(() => _isListening = true);
-        unawaited(HapticFeedback.lightImpact());
-        await _speech.listen(
-          onResult: (val) => setState(() {
-            _textController.text = val.recognizedWords;
-          }),
-          listenOptions: stt.SpeechListenOptions(
-            localeId: locale,
-          ),
-        );
-      }
-    } else {
-      setState(() => _isListening = false);
-      await _speech.stop();
-      if (_textController.text.isNotEmpty) {
-        unawaited(_sendMessage());
-      }
-    }
   }
 
   void _scrollListener() {
@@ -193,9 +159,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
 
     try {
       var sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
-      if (sessionId == null) {
-        sessionId = await ref.read(chatSessionsProvider(widget.listId).notifier).startNewSession();
-      }
+      sessionId ??= await ref.read(chatSessionsProvider(widget.listId).notifier).startNewSession();
 
       if (!canSend && !isPremium) {
         // Add user message first
@@ -266,7 +230,6 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     final aiUsageAsync = ref.watch(aiUsageStateProvider);
     final canSend = isPremium || (aiUsageAsync.value?.isExhausted == false);
 
-    final sessionId = ref.watch(activeChatSessionIdProvider(widget.listId));
     final chatState = ref.watch(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))));
     final allMessages = chatState.value ?? [];
 
@@ -285,8 +248,6 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     final isStreaming = ref.watch<bool>(chatStreamingProvider(widget.listId));
     final isThinking = ref.watch<bool>(chatThinkingProvider(widget.listId));
     final activityDescription = ref.watch<String?>(chatActivityProvider(widget.listId));
-
-    final voiceState = ref.watch(voiceInputProvider);
 
     return Stack(
       children: [
@@ -526,8 +487,6 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
             _buildInput(context, l10n, theme, canSend, suggestionChips, isThinking),
           ],
         ),
-        if (voiceState == VoiceInputState.recording)
-          _buildCompactVoiceIndicator(context, l10n, theme),
       ],
     );
   }
@@ -667,51 +626,83 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
   }
 
   Widget _buildPaywallBanner(BuildContext context, AppLocalizations l10n, ThemeData theme) {
-    final content = Row(
-      children: [
-        const Icon(Icons.workspace_premium, size: 20),
-        const SizedBox(width: Spacing.sm),
-        Expanded(
-          child: Text(
-            'Desbloqueie IA ilimitada',
-            style: theme.textTheme.labelSmall?.copyWith(
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-        const Icon(Icons.arrow_forward_ios, size: 12),
-      ],
-    );
-
-    return GestureDetector(
-      onTap: () => Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen())),
-      child: Container(
-        padding: const EdgeInsets.all(Spacing.sm),
-        margin: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xs),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              theme.colorScheme.primaryContainer.withAlpha((0.5 * 255).toInt()),
-              theme.colorScheme.secondaryContainer.withAlpha((0.3 * 255).toInt()),
+    return Container(
+      padding: const EdgeInsets.all(Spacing.md),
+      margin: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xs),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerHigh,
+        borderRadius: BorderRadius.circular(RadiusTokens.md),
+        border: Border.all(color: theme.colorScheme.outlineVariant),
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.bolt, color: Colors.amber, size: 20),
+              const SizedBox(width: Spacing.sm),
+              Expanded(
+                child: Text(
+                  'Sua energia de IA acabou!',
+                  style: theme.textTheme.labelMedium?.copyWith(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
             ],
           ),
-          borderRadius: BorderRadius.circular(RadiusTokens.md),
-          border: Border.all(color: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt())),
-        ),
-        child: isTestMode 
-          ? content
-          : Shimmer.fromColors(
-              baseColor: theme.colorScheme.primary,
-              highlightColor: theme.colorScheme.primaryContainer,
-              period: const Duration(seconds: 3),
-              child: content,
+          const SizedBox(height: Spacing.xs),
+          Text(
+            'Assista a um vídeo rápido para ganhar +10 energias ou torne-se Premium para usar sem limites.',
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
             ),
+          ),
+          const SizedBox(height: Spacing.md),
+          Row(
+            children: [
+              Expanded(
+                child: OutlinedButton.icon(
+                  onPressed: () async {
+                    unawaited(HapticFeedback.lightImpact());
+                    final adService = ref.read(adServiceProvider);
+                    final success = await adService.showRewardedAd();
+                    if (success) {
+                      await ref.read(aiUsageStateProvider.notifier).recharge();
+                    }
+                  },
+                  icon: const Icon(Icons.play_circle_outline, size: 18),
+                  label: const Text('Recarregar'),
+                  style: OutlinedButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    foregroundColor: theme.colorScheme.primary,
+                    side: BorderSide(color: theme.colorScheme.primary),
+                  ),
+                ),
+              ),
+              const SizedBox(width: Spacing.sm),
+              Expanded(
+                child: FilledButton.icon(
+                  onPressed: () {
+                    unawaited(HapticFeedback.mediumImpact());
+                    Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
+                  },
+                  icon: const Icon(Icons.workspace_premium, size: 18),
+                  label: const Text('Seja Pro'),
+                  style: FilledButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    backgroundColor: Colors.amber.shade700,
+                    foregroundColor: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-    );
+    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
 
   Widget _buildInput(BuildContext context, AppLocalizations l10n, ThemeData theme, bool canSend, List<SuggestedReply> suggestions, bool isThinking) {
-    final isPremium = ref.watch(premiumProvider).value ?? false;
     final hasSuggestions = suggestions.isNotEmpty && !isThinking && !_isSending;
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -737,15 +728,9 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
             ),
           ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-          decoration: BoxDecoration(
-            color: theme.colorScheme.surface,
-            border: Border(
-              top: BorderSide(
-                color: theme.colorScheme.outlineVariant.withAlpha((0.5 * 255).toInt()),
-                width: 0.5,
-              ),
-            ),
+          padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
+          decoration: const BoxDecoration(
+            color: Colors.transparent,
           ),
           child: SafeArea(
             child: Row(
@@ -756,52 +741,45 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                     valueListenable: _textController,
                     builder: (context, value, child) {
                       final charCount = value.text.length;
-                      return TextField(
-                        controller: _textController,
-                        minLines: 1,
-                        maxLines: 5,
-                        style: theme.textTheme.bodyMedium,
-                        decoration: InputDecoration(
-                          hintText: _isListening ? l10n.listening : l10n.chatHint,
-                          hintStyle: theme.textTheme.bodyMedium?.copyWith(
-                            color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(24),
-                            borderSide: BorderSide(
-                              color: theme.colorScheme.outlineVariant.withAlpha((0.5 * 255).toInt()),
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.surface,
+                          borderRadius: BorderRadius.circular(28),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withAlpha((0.08 * 255).toInt()),
+                              blurRadius: 12,
+                              offset: const Offset(0, 4),
                             ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(24),
-                            borderSide: BorderSide(
-                              color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(24),
-                            borderSide: BorderSide(
-                              color: theme.colorScheme.primary.withAlpha((0.5 * 255).toInt()),
-                            ),
-                          ),
-                          filled: true,
-                          fillColor: theme.colorScheme.surfaceContainerLow,
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                          counterText: charCount > 300 ? '$charCount/1000' : null,
-                          prefixIcon: _isListening
-                              ? const RepaintBoundary(child: _MicRipple())
-                              : null,
-                          suffixIcon: widget.listId != null ? IconButton(
-                            icon: Icon(
-                              Icons.add_circle_outline,
-                              color: theme.colorScheme.primary.withAlpha((0.7 * 255).toInt()),
-                              size: 22,
-                            ),
-                            onPressed: !_isSending ? _quickAddItem : null,
-                            tooltip: l10n.addDirectToList,
-                          ) : null,
+                          ],
                         ),
-                        onSubmitted: !_isSending ? (_) => _sendMessage() : null,
+                        child: TextField(
+                          controller: _textController,
+                          minLines: 1,
+                          maxLines: 5,
+                          style: theme.textTheme.bodyMedium,
+                          decoration: InputDecoration(
+                            hintText: l10n.chatHint,
+                            hintStyle: theme.textTheme.bodyMedium?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
+                            ),
+                            border: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                            counterText: charCount > 300 ? '$charCount/1000' : null,
+                            suffixIcon: widget.listId != null ? IconButton(
+                              icon: Icon(
+                                Icons.add_circle_outline,
+                                color: theme.colorScheme.primary.withAlpha((0.7 * 255).toInt()),
+                                size: 22,
+                              ),
+                              onPressed: !_isSending ? _quickAddItem : null,
+                              tooltip: l10n.addDirectToList,
+                            ) : null,
+                          ),
+                          onSubmitted: !_isSending ? (_) => _sendMessage() : null,
+                        ),
                       );
                     },
                   ),
@@ -813,44 +791,32 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                     final hasText = value.text.trim().isNotEmpty;
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 4),
-                      child: IconButton.filled(
-                        key: const ValueKey('chat_send_button'),
-                        onPressed: _isSending
-                            ? () => ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).cancelRequest()
-                            : (hasText
-                                ? _sendMessage
-                                : (_isListening
-                                    ? _listen
-                                    : () {
-                                        if (!isPremium) {
-                                          ScaffoldMessenger.of(context).showSnackBar(
-                                            SnackBar(
-                                              content: Text(l10n.voiceProFeature),
-                                              duration: const Duration(seconds: 4),
-                                              action: SnackBarAction(
-                                                label: l10n.viewPro,
-                                                onPressed: () {
-                                                  Navigator.push(
-                                                    context,
-                                                    fadeSlideRoute<void>(const PaywallScreen()),
-                                                  );
-                                                },
-                                              ),
-                                            ),
-                                          );
-                                          _listen();
-                                        } else {
-                                          ref.read(voiceInputProvider.notifier).startRecording();
-                                        }
-                                      })),
-                        icon: _isSending
-                            ? const Icon(Icons.stop_rounded, size: 20)
-                            : Icon(hasText ? Icons.send_rounded : Icons.mic, size: 20),
-                        style: IconButton.styleFrom(
-                          backgroundColor: theme.colorScheme.primary,
-                          foregroundColor: theme.colorScheme.onPrimary,
-                          minimumSize: const Size(44, 44),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.primary,
+                          borderRadius: BorderRadius.circular(22),
+                          boxShadow: [
+                            BoxShadow(
+                              color: theme.colorScheme.primary.withAlpha((0.3 * 255).toInt()),
+                              blurRadius: 8,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: IconButton(
+                          key: const ValueKey('chat_send_button'),
+                          onPressed: _isSending
+                              ? () => ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).cancelRequest()
+                              : (hasText ? _sendMessage : null),
+                          icon: _isSending
+                              ? const Icon(Icons.stop_rounded, size: 20)
+                              : const Icon(Icons.send_rounded, size: 20),
+                          color: theme.colorScheme.onPrimary,
+                          padding: const EdgeInsets.all(12),
+                          constraints: const BoxConstraints(
+                            minWidth: 48,
+                            minHeight: 48,
+                          ),
                         ),
                       ),
                     );
@@ -862,82 +828,6 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
         ),
       ],
     );
-  }
-
-  Widget _buildCompactVoiceIndicator(
-    BuildContext context,
-    AppLocalizations l10n,
-    ThemeData theme,
-  ) {
-    final voiceNotifier = ref.read(voiceInputProvider.notifier);
-    final controller = voiceNotifier.recorderController;
-
-    return Container(
-      margin: const EdgeInsets.fromLTRB(12, 0, 12, 8),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.primaryContainer.withAlpha((0.9 * 255).toInt()),
-        borderRadius: BorderRadius.circular(RadiusTokens.lg),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha((0.1 * 255).toInt()),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          const Icon(Icons.mic, color: Colors.redAccent, size: 20)
-              .animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true))
-              .scale(end: const Offset(1.2, 1.2), duration: 600.ms),
-          const SizedBox(width: 12),
-          Expanded(
-            child: SizedBox(
-              height: 32,
-              child: controller != null
-                  ? AudioWaveforms(
-                      size: const Size(double.infinity, 32),
-                      recorderController: controller,
-                      enableGesture: false,
-                      waveStyle: WaveStyle(
-                        waveColor: theme.colorScheme.primary,
-                        showDurationLabel: false,
-                        spacing: 4,
-                        extendWaveform: true,
-                        waveCap: StrokeCap.round,
-                      ),
-                    )
-                  : Text(l10n.activeListening, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-            ),
-          ),
-          const SizedBox(width: 12),
-          IconButton.filledTonal(
-            key: const ValueKey('voice_cancel_button'),
-            icon: const Icon(Icons.close, size: 18),
-            onPressed: () => ref.read(voiceInputProvider.notifier).cancelRecording(),
-            style: IconButton.styleFrom(
-              backgroundColor: theme.colorScheme.errorContainer,
-              foregroundColor: theme.colorScheme.onErrorContainer,
-              minimumSize: const Size(32, 32),
-              padding: EdgeInsets.zero,
-            ),
-          ),
-          const SizedBox(width: 8),
-          IconButton.filled(
-            key: const ValueKey('voice_stop_button'),
-            icon: const Icon(Icons.check, size: 18),
-            onPressed: () => ref.read(voiceInputProvider.notifier).stopRecordingAndSend(widget.listId),
-            style: IconButton.styleFrom(
-              backgroundColor: theme.colorScheme.primary,
-              foregroundColor: theme.colorScheme.onPrimary,
-              minimumSize: const Size(32, 32),
-              padding: EdgeInsets.zero,
-            ),
-          ),
-        ],
-      ),
-    ).animate().slideY(begin: 0.5, end: 0).fadeIn();
   }
 }
 
@@ -1730,33 +1620,6 @@ class _CodeCopyButtonState extends State<_CodeCopyButton> {
 }
 
 
-class _MicRipple extends StatelessWidget {
-  const _MicRipple();
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return RepaintBoundary(
-      child: Container(
-        width: 24,
-        height: 24,
-        decoration: BoxDecoration(
-          color: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt()),
-          shape: BoxShape.circle,
-        ),
-        child: Center(
-          child: Icon(Icons.mic, color: theme.colorScheme.primary, size: 20),
-        ),
-      ).animate(onPlay: (c) => isTestMode ? null : c.repeat()).scale(
-        begin: const Offset(1, 1),
-        end: const Offset(1.3, 1.3),
-        duration: 1.seconds,
-        curve: Curves.easeInOut,
-      ).then().fadeOut(),
-    );
-  }
-}
-
 class TypingIndicator extends StatelessWidget {
   const TypingIndicator({
     super.key,
@@ -2069,34 +1932,19 @@ class _ActionButtonState extends State<_ActionButton> {
     final theme = Theme.of(context);
     final label = _isSuccess ? l10n.addedFeedback : widget.label;
     final icon = _isSuccess ? Icons.check : widget.icon;
-    final color = _isSuccess ? Colors.green : null;
+    final color = _isSuccess ? Colors.green : theme.colorScheme.primary;
 
-    if (widget.isFilled) {
-      return FilledButton.icon(
-        onPressed: _isSuccess ? null : _handlePress,
-        icon: Icon(icon, size: 14),
-        label: Text(label, style: const TextStyle(fontSize: 11)),
-        style: FilledButton.styleFrom(
-          backgroundColor: color,
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-          minimumSize: const Size(0, 28),
-          textStyle: theme.textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w700),
-        ),
-      ).animate(target: _isSuccess ? 1 : 0).shimmer(duration: 400.ms);
-    }
-
-    return OutlinedButton.icon(
+    return TextButton.icon(
       onPressed: _isSuccess ? null : _handlePress,
       icon: Icon(icon, size: 14),
       label: Text(label, style: const TextStyle(fontSize: 11)),
-      style: OutlinedButton.styleFrom(
+      style: TextButton.styleFrom(
         foregroundColor: color,
-        side: color != null ? BorderSide(color: color) : null,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
         minimumSize: const Size(0, 28),
         textStyle: theme.textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w700),
       ),
-    ).animate(target: _isSuccess ? 1 : 0).shake(duration: 400.ms);
+    ).animate(target: _isSuccess ? 1 : 0).shimmer(duration: 400.ms);
   }
 }
 

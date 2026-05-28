@@ -5,6 +5,9 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/domain/entities/chat_message.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/app/ai/screens/chat_screen.dart';
+import 'package:shopping_list/app/ai/providers/chat_provider.dart';
+
+import 'package:shopping_list/models/chat_session_model.dart';
 
 class ChatHistoryScreen extends ConsumerStatefulWidget {
   const ChatHistoryScreen({super.key});
@@ -13,10 +16,16 @@ class ChatHistoryScreen extends ConsumerStatefulWidget {
   ConsumerState<ChatHistoryScreen> createState() => _ChatHistoryScreenState();
 }
 
+class _SessionWithMessages {
+  _SessionWithMessages(this.session, this.messages);
+  final ChatSessionModel session;
+  final List<ChatMessage> messages;
+}
+
 class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
   final _searchController = TextEditingController();
   String _searchQuery = '';
-  Map<String, List<ChatMessage>> _allMessagesMap = {};
+  Map<String, List<_SessionWithMessages>> _allSessionsMap = {};
   bool _isLoading = true;
 
   @override
@@ -36,23 +45,33 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
       final firestoreService = ref.read(firestoreServiceProvider);
       final lists = ref.read(shoppingListsProvider).value ?? [];
 
-      final Map<String, List<ChatMessage>> tempMap = {};
+      final Map<String, List<_SessionWithMessages>> tempMap = {};
 
-      final globalMessages = await firestoreService.loadChatMessages(null);
-      if (globalMessages.isNotEmpty) {
-        tempMap[''] = globalMessages;
+      // Helper to load sessions and messages for a list
+      Future<void> processList(String? listId, String key) async {
+        final sessions = await firestoreService.loadChatSessions(listId);
+        if (sessions.isNotEmpty) {
+          final listSessions = <_SessionWithMessages>[];
+          for (final session in sessions) {
+            final msgs = await firestoreService.loadChatMessages(listId, sessionId: session.id);
+            if (msgs.isNotEmpty) {
+              listSessions.add(_SessionWithMessages(session, msgs));
+            }
+          }
+          if (listSessions.isNotEmpty) {
+            tempMap[key] = listSessions;
+          }
+        }
       }
 
+      await processList(null, '');
       for (final list in lists) {
-        final msgs = await firestoreService.loadChatMessages(list.id);
-        if (msgs.isNotEmpty) {
-          tempMap[list.id] = msgs;
-        }
+        await processList(list.id, list.id);
       }
 
       if (mounted) {
         setState(() {
-          _allMessagesMap = tempMap;
+          _allSessionsMap = tempMap;
           _isLoading = false;
         });
       }
@@ -84,17 +103,24 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
       for (final l in lists) l.id: l.name,
     };
 
-    final filteredGroups = <String, List<ChatMessage>>{};
-    _allMessagesMap.forEach((listId, messages) {
-      final matching = messages.where((msg) {
-        if (_searchQuery.isEmpty) {
-          return true;
-        }
-        return msg.content.toLowerCase().contains(_searchQuery.toLowerCase());
-      }).toList();
+    final filteredGroups = <String, List<_SessionWithMessages>>{};
+    _allSessionsMap.forEach((listId, sessions) {
+      final matchingSessions = <_SessionWithMessages>[];
+      for (final sWithM in sessions) {
+        final matchingMsgs = sWithM.messages.where((msg) {
+          if (_searchQuery.isEmpty) {
+            return true;
+          }
+          return msg.content.toLowerCase().contains(_searchQuery.toLowerCase());
+        }).toList();
 
-      if (matching.isNotEmpty) {
-        filteredGroups[listId] = matching;
+        if (matchingMsgs.isNotEmpty) {
+          matchingSessions.add(_SessionWithMessages(sWithM.session, matchingMsgs));
+        }
+      }
+
+      if (matchingSessions.isNotEmpty) {
+        filteredGroups[listId] = matchingSessions;
       }
     });
 
@@ -156,9 +182,7 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
                           final listName = listId.isEmpty
                               ? (isPt ? 'Assistente Geral' : 'General Assistant')
                               : (listNames[listId] ?? (isPt ? 'Lista Excluída' : 'Deleted List'));
-                          final messages = filteredGroups[listId]!;
-
-                          messages.sort((a, b) => b.timestamp.compareTo(a.timestamp));
+                          final sessions = filteredGroups[listId]!;
 
                           return Card(
                             margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -171,81 +195,86 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
                                   color: theme.colorScheme.primary,
                                 ),
                               ),
-                              subtitle: Text(
-                                isPt
-                                    ? '${messages.length} mensagens'
-                                    : '${messages.length} messages',
-                                style: theme.textTheme.bodySmall,
-                              ),
                               childrenPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                              children: [
-                                OutlinedButton.icon(
-                                  icon: const Icon(Icons.chat_bubble_outline, size: 16),
-                                  label: Text(
-                                    isPt ? 'Abrir conversa' : 'Open conversation',
+                              children: sessions.map((sWithM) {
+                                return ExpansionTile(
+                                  title: Text(
+                                    sWithM.session.title ?? (isPt ? 'Nova Conversa' : 'New Chat'),
+                                    style: const TextStyle(fontWeight: FontWeight.w600),
                                   ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      fadeSlideRoute<void>(
-                                        ChatScreen(
-                                          listId: listId.isEmpty ? null : listId,
-                                          listName: listName,
-                                        ),
+                                  subtitle: Text(_formatDate(sWithM.session.updatedAt)),
+                                  leading: const Icon(Icons.chat_bubble_outline),
+                                  children: [
+                                    OutlinedButton.icon(
+                                      icon: const Icon(Icons.chat_bubble_outline, size: 16),
+                                      label: Text(
+                                        isPt ? 'Abrir conversa' : 'Open conversation',
                                       ),
-                                    );
-                                  },
-                                ),
-                                const SizedBox(height: 8),
-                                ...messages.map((msg) {
-                                  final isUser = msg.role == 'user';
-                                  final bubbleColor = isUser
-                                      ? theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt())
-                                      : theme.colorScheme.surfaceContainerHigh;
-
-                                  return Container(
-                                    margin: const EdgeInsets.symmetric(vertical: 4),
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      color: bubbleColor,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              isUser
-                                                  ? (isPt ? 'Você' : 'You')
-                                                  : (isPt ? 'Assistente' : 'Assistant'),
-                                              style: theme.textTheme.labelSmall?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                color: isUser
-                                                    ? theme.colorScheme.primary
-                                                    : theme.colorScheme.secondary,
-                                              ),
+                                      onPressed: () {
+                                        ref.read(activeChatSessionIdProvider(listId.isEmpty ? null : listId).notifier).set(sWithM.session.id);
+                                        Navigator.push(
+                                          context,
+                                          fadeSlideRoute<void>(
+                                            ChatScreen(
+                                              listId: listId.isEmpty ? null : listId,
+                                              listName: listName,
                                             ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    const SizedBox(height: 8),
+                                    ...sWithM.messages.map((msg) {
+                                      final isUser = msg.role == 'user';
+                                      final bubbleColor = isUser
+                                          ? theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt())
+                                          : theme.colorScheme.surfaceContainerHigh;
+
+                                      return Container(
+                                        margin: const EdgeInsets.symmetric(vertical: 4),
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                                          color: bubbleColor,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text(
+                                                  isUser
+                                                      ? (isPt ? 'Você' : 'You')
+                                                      : (isPt ? 'Assistente' : 'Assistant'),
+                                                  style: theme.textTheme.labelSmall?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: isUser
+                                                        ? theme.colorScheme.primary
+                                                        : theme.colorScheme.secondary,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '${_formatDate(msg.timestamp)} ${_formatTime(msg.timestamp)}',
+                                                  style: theme.textTheme.labelSmall?.copyWith(
+                                                    color: theme.colorScheme.onSurfaceVariant.withAlpha((0.6 * 255).toInt()),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 4),
                                             Text(
-                                              '${_formatDate(msg.timestamp)} ${_formatTime(msg.timestamp)}',
-                                              style: theme.textTheme.labelSmall?.copyWith(
-                                                color: theme.colorScheme.onSurfaceVariant.withAlpha((0.6 * 255).toInt()),
-                                              ),
+                                              msg.content,
+                                              style: theme.textTheme.bodyMedium,
                                             ),
                                           ],
                                         ),
-                                        const SizedBox(height: 4),
-                                        Text(
-                                          msg.content,
-                                          style: theme.textTheme.bodyMedium,
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                }),
-                                const SizedBox(height: 8),
-                              ],
+                                      );
+                                    }),
+                                    const SizedBox(height: 8),
+                                  ],
+                                );
+                              }).toList(),
                             ),
                           );
                         },

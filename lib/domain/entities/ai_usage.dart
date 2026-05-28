@@ -35,7 +35,7 @@ class AiUsage {
     return totalCount >= AiUsageLimits.totalLimit;
   }
   bool get isExhausted {
-    return isDailyExhausted || isTotalExhausted;
+    return isDailyExhausted;
   }
   int get remainingDaily => (AiUsageLimits.dailyLimit - dailyCount).clamp(0, AiUsageLimits.dailyLimit);
   int get remainingTotal => (AiUsageLimits.totalLimit - totalCount).clamp(0, AiUsageLimits.totalLimit);

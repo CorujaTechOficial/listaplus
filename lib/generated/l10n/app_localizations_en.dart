@@ -554,6 +554,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get generalAssistant => 'General Assistant';
 
   @override
+  String get newChat => 'New Chat';
+
+  @override
+  String get noHistory => 'No chat history';
+
+  @override
+  String get deleteSession => 'Delete Chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+
+  @override
   String get clearHistory => 'Clear History';
 
   @override

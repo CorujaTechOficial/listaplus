@@ -60,7 +60,9 @@ class RevenueCatServiceImpl implements RevenueCatService {
     if (currentOffering == null) {
       return [];
     }
-    return currentOffering.availablePackages.map((pkg) {
+    return currentOffering.availablePackages
+        .where((pkg) => pkg.packageType != PackageType.lifetime)
+        .map((pkg) {
       return PaywallPackage(
         identifier: pkg.packageType.name, // using packageType name (e.g. monthly, annual, lifetime)
         priceString: pkg.storeProduct.priceString,

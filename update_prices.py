@@ -13,18 +13,13 @@ SCOPES = ["https://www.googleapis.com/auth/androidpublisher"]
 NEW_PRICES = {
     "listaplus_monthly": {
         "basePlanId": "monthly",
-        "units": "14",
-        "nanos": 900000000,
+        "units": "4",
+        "nanos": 990000000,
     },
     "listaplus_yearly": {
         "basePlanId": "yearly",
-        "units": "99",
-        "nanos": 900000000,
-    },
-    "listaplus_lifetime": {
-        "basePlanId": "lifetime",
-        "units": "299",
-        "nanos": 900000000,
+        "units": "29",
+        "nanos": 990000000,
     },
 }
 

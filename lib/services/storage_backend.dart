@@ -50,6 +50,7 @@ abstract class StorageBackend {
 
   Future<List<ChatSessionModel>> loadChatSessions(String? listId);
   Future<void> saveChatSession(String? listId, ChatSessionModel session);
+  Future<void> updateChatSessionTitle(String? listId, String sessionId, String title);
   Future<void> deleteChatSession(String? listId, String sessionId);
   Future<List<ChatMessage>> loadChatMessages(String? listId, {String? sessionId});
   Future<void> saveChatMessage(String? listId, ChatMessage message, {String? sessionId});

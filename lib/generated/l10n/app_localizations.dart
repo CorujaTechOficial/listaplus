@@ -1284,6 +1284,30 @@ abstract class AppLocalizations {
   /// **'General Assistant'**
   String get generalAssistant;
 
+  /// No description provided for @newChat.
+  ///
+  /// In en, this message translates to:
+  /// **'New Chat'**
+  String get newChat;
+
+  /// No description provided for @noHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No chat history'**
+  String get noHistory;
+
+  /// No description provided for @deleteSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Chat'**
+  String get deleteSession;
+
+  /// No description provided for @deleteSessionConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this chat? The messages will be permanently lost.'**
+  String get deleteSessionConfirm;
+
   /// No description provided for @clearHistory.
   ///
   /// In en, this message translates to:

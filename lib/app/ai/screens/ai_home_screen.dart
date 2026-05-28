@@ -2,9 +2,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/ai_usage.dart';
+import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/domain/entities/suggested_reply.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
@@ -13,12 +16,14 @@ import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
+import 'package:shopping_list/app/ai/widgets/ai_chat_drawer.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/lists/widgets/create_list_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/shopping_item_tile.dart';
 import 'package:shopping_list/app/ai/providers/system_action_provider.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
+import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 
 import 'package:share_plus/share_plus.dart';
@@ -41,6 +46,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
     // Listen to system actions from the AI agent
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
+        _checkFirstLaunchWelcome();
         ref.listenManual(systemActionProvider, (previous, next) {
           if (next == null) {
             return;
@@ -49,6 +55,46 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
         });
       }
     });
+  }
+
+  Future<void> _checkFirstLaunchWelcome() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasSeenWelcome = prefs.getBool('has_seen_ai_welcome') ?? false;
+    if (hasSeenWelcome) {
+      return;
+    }
+
+    // Marca como visto imediatamente para evitar disparos duplos
+    await prefs.setBool('has_seen_ai_welcome', true);
+
+    if (!mounted) {
+      return;
+    }
+
+    final listId = ref.read(currentListIdProvider).value;
+    final sessionId = await ref.read(chatSessionsProvider(listId).notifier).startNewSession();
+
+    final welcomeMsg = ChatMessage(
+      role: 'assistant',
+      content: 'Olá! 👋 Sou seu assistente de Inteligência Artificial do Lista Plus.\n\n'
+          'Estou aqui para ajudar você a:\n'
+          '🛒 **Organizar** suas compras por categorias automaticamente\n'
+          '💰 **Controlar** seu orçamento e dar dicas de economia\n'
+          '🍲 **Sugerir** receitas deliciosas com o que você já tem\n\n'
+          'Como posso ajudar hoje? Você pode começar criando sua primeira lista!',
+      suggestedReplies: [
+        SuggestedReply(label: 'Criar minha primeira lista', prompt: 'Me ajude a criar minha primeira lista de compras', icon: 'add_shopping_cart'),
+        SuggestedReply(label: 'Como economizar?', prompt: 'Como você pode me ajudar a economizar nas compras?', icon: 'savings'),
+      ],
+    );
+
+    try {
+      await ref.read(firestoreServiceProvider).saveChatMessage(listId, welcomeMsg, sessionId: sessionId);
+      // Invalida para carregar a mensagem na UI
+      ref.invalidate(chatSessionProvider(listId, sessionId));
+    } on Exception catch (e) {
+      debugPrint('Erro ao enviar mensagem de boas-vindas: $e');
+    }
   }
 
   void _handleSystemAction(SystemActionType action) {
@@ -92,38 +138,47 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(l10n.aiAssistant)),
       body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-          padding: const EdgeInsets.all(Spacing.xl),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              EmptyState(
-                title: l10n.welcomeAiAssistant,
-                subtitle: l10n.createListToStartAi,
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              padding: const EdgeInsets.all(Spacing.xl),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  EmptyState(
+                    title: l10n.welcomeAiAssistant,
+                    subtitle: l10n.createListToStartAi,
+                  ),
+                  const SizedBox(height: Spacing.lg),
+                  FilledButton.tonalIcon(
+                    onPressed: () {
+                      showDialog<void>(
+                        context: context,
+                        builder: (_) => CreateListDialog(
+                          onCreate: (name) async {
+                            await ref.read(shoppingListsProvider.notifier).createList(name);
+                            ref.invalidate(currentListIdProvider);
+                          },
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.add),
+                    label: Text(l10n.createFirstList),
+                  ),
+                ],
               ),
-              const SizedBox(height: Spacing.lg),
-              FilledButton.tonalIcon(
-                onPressed: () {
-                  showDialog<void>(
-                    context: context,
-                    builder: (_) => CreateListDialog(
-                      onCreate: (name) async {
-                        await ref.read(shoppingListsProvider.notifier).createList(name);
-                        ref.invalidate(currentListIdProvider);
-                      },
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.add),
-                label: Text(l10n.createFirstList),
+            ),
+            const Divider(height: 1),
+            const Expanded(
+              child: AiChatPanel(
+                listId: null,
+                listName: null,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    ),
     );
   }
 
@@ -203,8 +258,8 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
             onSelected: (value) {
               if (value == 'market') {
                 setState(() => _isMarketMode = !_isMarketMode);
-              } else if (value == 'clear') {
-                ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).clearHistory();
+              } else if (value == 'new_chat') {
+                ref.read(chatSessionsProvider(listId).notifier).createNewSession();
               }
             },
             itemBuilder: (context) => [
@@ -219,12 +274,12 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 ),
               ),
               PopupMenuItem(
-                value: 'clear',
+                value: 'new_chat',
                 child: Row(
                   children: [
-                    const Icon(Icons.delete_sweep, size: 20),
+                    const Icon(Icons.add, size: 20),
                     const SizedBox(width: Spacing.sm),
-                    Text(l10n.clearHistory),
+                    Text(l10n.newChat),
                   ],
                 ),
               ),
@@ -232,6 +287,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
           ),
         ],
       ),
+      drawer: AiChatDrawer(listId: listId),
       body: SafeArea(
         child: _isMarketMode
             ? _ListHeroCard(

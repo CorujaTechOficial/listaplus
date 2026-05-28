@@ -40,8 +40,8 @@ SUBSCRIPTIONS = [
                             "regionCode": "BR",
                             "newSubscriberAvailability": True,
                             "price": {
-                                "units": "19",
-                                "nanos": 900000000,
+                                "units": "4",
+                                "nanos": 990000000,
                                 "currencyCode": "BRL",
                             },
                         },
@@ -77,46 +77,8 @@ SUBSCRIPTIONS = [
                             "regionCode": "BR",
                             "newSubscriberAvailability": True,
                             "price": {
-                                "units": "149",
-                                "nanos": 900000000,
-                                "currencyCode": "BRL",
-                            },
-                        },
-                    ],
-                }
-            ],
-        },
-    },
-    {
-        "productId": "listaplus_lifetime",
-        "title": "Lista Plus Vitalicio",
-        "description": "Acesso premium vitalicio ao Lista Plus",
-        "basePlanId": "lifetime",
-        "subscription": {
-            "packageName": PACKAGE_NAME,
-            "productId": "listaplus_lifetime",
-            "listings": [
-                {
-                    "languageCode": "pt-BR",
-                    "title": "Lista Plus Vitalicio",
-                    "description": "Acesso premium vitalicio ao Lista Plus",
-                    "benefits": ["Listas ilimitadas", "Sem anuncios"],
-                }
-            ],
-            "basePlans": [
-                {
-                    "basePlanId": "lifetime",
-                    "prepaidBasePlanType": {
-                        "billingPeriodDuration": "P1Y",
-                        "timeExtension": "TIME_EXTENSION_ACTIVE",
-                    },
-                    "regionalConfigs": [
-                        {
-                            "regionCode": "BR",
-                            "newSubscriberAvailability": True,
-                            "price": {
-                                "units": "499",
-                                "nanos": 900000000,
+                                "units": "29",
+                                "nanos": 990000000,
                                 "currencyCode": "BRL",
                             },
                         },

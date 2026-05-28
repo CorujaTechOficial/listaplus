@@ -72,6 +72,15 @@ class AiUsageState extends _$AiUsageState {
     }
     return !current.isExhausted;
   }
+
+  Future<void> recharge() async {
+    final current = state.value ?? AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
+    // Resets daily count to 0 to provide 10 new energy units
+    final updated = current.copyWith(dailyCount: 0);
+    state = AsyncValue.data(updated);
+    final service = ref.read(firestoreServiceProvider);
+    await service.saveAiUsage(updated.toJson());
+  }
 }
 
 // coverage:ignore-start

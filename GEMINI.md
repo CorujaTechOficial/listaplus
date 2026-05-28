@@ -19,7 +19,7 @@ This document provides foundational mandates and essential context for the **Lis
 - **Monetization:**
     - **RevenueCat:** `purchases_flutter` for subscriptions.
         - Entitlement: `lista_plus_pro`.
-        - Packages: `$rc_monthly`, `$rc_annual`, `$rc_lifetime`.
+        - Packages: `$rc_monthly`, `$rc_annual`.
 - **AI Assistant (OpenCodeGo / DeepSeek):**
     - **Service:** `OpenCodeGoService` via `package:http`.
     - **Model:** DeepSeek-v4-flash.

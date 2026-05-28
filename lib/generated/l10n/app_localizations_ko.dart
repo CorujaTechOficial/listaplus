@@ -545,6 +545,19 @@ class AppLocalizationsKo extends AppLocalizations {
   String get generalAssistant => '일반 어시스턴트';
 
   @override
+  String get newChat => 'New Chat';
+
+  @override
+  String get noHistory => 'No chat history';
+
+  @override
+  String get deleteSession => 'Delete Chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+
+  @override
   String get clearHistory => '기록 지우기';
 
   @override

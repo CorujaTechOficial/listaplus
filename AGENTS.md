@@ -10,7 +10,7 @@
 - **Auth**: Anonymous + Google Sign-In via Firebase Auth. RevenueCat UID synced reactively in `_setupAuthSync()` (`main.dart`). `AuthService.signOut()` re-logs-in anonymously — do NOT also call `signInAnonymously()` from the auth stream listener (duplicate race).
 - **Monetization**: RevenueCat (`purchases_flutter`). UID linked via `Purchases.logIn(uid)`.
   Entitlement: `lista_plus_pro`. Offering: `default_play` with 3 packages:
-  `$rc_monthly` R$14.90, `$rc_annual` R$99.90, `$rc_lifetime` R$299.90.
+  `$rc_monthly` R$4.99, `$rc_annual` R$29.99.
   API key via `--dart-define=REVENUECAT_API_KEY=xxx`.
 - **Premium gating**: `premiumProvider` (RevenueCat-only, no Firestore credit check). Max 3 lists free.
 - **AI Agent**: Chat with tool calling (45+ tools). `lib/app/ai/agent/tools/tool_core.dart`

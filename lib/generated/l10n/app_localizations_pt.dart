@@ -555,6 +555,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get generalAssistant => 'Assistente Geral';
 
   @override
+  String get newChat => 'Nova Conversa';
+
+  @override
+  String get noHistory => 'Sem histórico de conversas';
+
+  @override
+  String get deleteSession => 'Excluir Conversa';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Tem certeza que deseja excluir esta conversa? As mensagens serão perdidas permanentemente.';
+
+  @override
   String get clearHistory => 'Limpar Histórico';
 
   @override

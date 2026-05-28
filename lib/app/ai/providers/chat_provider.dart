@@ -1,5 +1,5 @@
 import 'dart:async' show unawaited;
-import 'dart:convert' show base64Encode, jsonDecode, jsonEncode;
+import 'dart:convert' show jsonDecode, jsonEncode;
 import 'package:shopping_list/domain/entities/suggested_reply.dart';
 import 'package:characters/characters.dart';
 import 'package:intl/intl.dart';
@@ -151,26 +151,6 @@ class ChatSession extends _$ChatSession {
     _isCancelled = false;
     _cancelToken = AiCancellationToken();
     final task = _sendMessageInternal(content);
-    _currentTask = task;
-    try {
-      await task;
-    } finally {
-      if (_currentTask == task) {
-        _currentTask = null;
-        _cancelToken = null;
-      }
-    }
-  }
-
-  Future<void> sendVoiceMessage(List<int> audioBytes, String format) async {
-    if (_currentTask != null) {
-      debugPrint('[ChatSession] Ignorando mensagem concorrente.');
-      return;
-    }
-
-    _isCancelled = false;
-    _cancelToken = AiCancellationToken();
-    final task = _sendMessageInternal('🎙️ Mensagem de voz', audioBytes: audioBytes, audioFormat: format);
     _currentTask = task;
     try {
       await task;
@@ -670,10 +650,8 @@ class ChatSession extends _$ChatSession {
 
 
   Future<void> _sendMessageInternal(
-    String content, {
-    List<int>? audioBytes,
-    String? audioFormat,
-  }) async {
+    String content,
+  ) async {
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
 
@@ -691,12 +669,17 @@ class ChatSession extends _$ChatSession {
 
     try {
         await firestoreService.saveChatMessage(listId, userMessage, sessionId: sessionId!);
+        
+        // Se for a primeira mensagem ou o título ainda for o padrão, gera um título
+        final currentMessages = previousHistory.where((m) => m.role == 'user').length;
+        if (currentMessages == 0) {
+          unawaited(_generateTitleInBackground(listId, sessionId!, content));
+        }
       } on Exception catch (e, st) {
         LoggerService.error(e, stackTrace: st, message: '[Chat] Failed to save user message', extra: {
           'operation': 'save_user_message',
           'listId': listId,
           'messageLength': content.length,
-          'hasAudio': audioBytes != null,
         });
         state = AsyncValue.data(previousHistory);
         return;
@@ -712,24 +695,7 @@ class ChatSession extends _$ChatSession {
       apiMessages.add({'role': msg.role, 'content': msg.content});
     }
 
-    if (audioBytes != null && audioFormat != null) {
-      final base64Audio = base64Encode(audioBytes);
-      apiMessages.add({
-        'role': 'user',
-        'content': [
-          {'type': 'text', 'text': content},
-          {
-            'type': 'input_audio',
-            'input_audio': {
-              'data': base64Audio,
-              'format': audioFormat,
-            }
-          }
-        ],
-      });
-    } else {
-      apiMessages.add({'role': 'user', 'content': content});
-    }
+    apiMessages.add({'role': 'user', 'content': content});
 
     final tools = AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
     final executor = ToolExecutor(ref);
@@ -759,7 +725,6 @@ class ChatSession extends _$ChatSession {
         'listId': listId,
         'messageLength': content.length,
         'historyLength': previousHistory.length,
-        'hasAudio': audioBytes != null,
       });
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
       ref.read(chatThinkingProvider(listId).notifier).setState(false);
