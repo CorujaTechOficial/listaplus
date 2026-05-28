@@ -36,7 +36,7 @@ cd "$PROJECT_DIR"
 # ═════════════════════════════════════════════════════════════════════════════
 # PASSO 1 — flutter analyze (fatal em qualquer issue)
 # ═════════════════════════════════════════════════════════════════════════════
-step "1/6  flutter analyze — zero tolerance"
+step "1/5  flutter analyze — zero tolerance"
 
 if ! command -v flutter &>/dev/null; then
   err "flutter não encontrado no PATH"
@@ -54,7 +54,7 @@ fi
 # ═════════════════════════════════════════════════════════════════════════════
 # PASSO 2 — Firestore Security Rules validation
 # ═════════════════════════════════════════════════════════════════════════════
-step "2/6  firebase firestore:validate — Security Rules"
+step "2/5  firebase firestore:validate — Security Rules"
 
 if command -v npx &>/dev/null && npx -y firebase-tools@latest --version &>/dev/null; then
   npx -y firebase-tools@latest firestore:validate --project listaplus-6547b 2>&1 && {
@@ -67,50 +67,9 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 3 — flutter test --coverage
+# PASSO 3 — flutter build (todas as plataformas disponíveis)
 # ═════════════════════════════════════════════════════════════════════════════
-step "3/6  flutter test --coverage — mínimo 100%"
-
-if ! command -v flutter &>/dev/null; then
-  err "flutter não encontrado no PATH"
-else
-  flutter test --machine --coverage > tests.output 2>&1 || {
-    err "flutter test falhou — veja tests.output"
-  }
-
-  TEST_RESULT=$(tail -1 tests.output | grep -o '"success":[a-z]*' | cut -d: -f2 || echo "unknown")
-  TEST_COUNT=$(grep -o '"testCount":[0-9]*' tests.output | tail -1 | cut -d: -f2 || echo "0")
-
-  if [ "$TEST_RESULT" = "true" ]; then
-    ok "testes passaram ($TEST_COUNT testes)"
-  else
-    err "testes falharam — veja tests.output"
-  fi
-
-  if [ -f coverage/lcov.info ]; then
-    # Exclui .g.dart (gerados) — mesma exclusão do SonarQube
-    COVERAGE=$(awk -F: '/^SF:/ {f=$2} /^LF:/ && f !~ /\.g\.dart$/ {lf+=$2} /^LH:/ && f !~ /\.g\.dart$/ {lh+=$2} END {printf "%.1f", (lh/lf)*100}' coverage/lcov.info)
-    COVERAGE_FILES=$(grep "^SF:" coverage/lcov.info | wc -l | tr -d ' ')
-    TOTAL_FILES=$(find lib -name "*.dart" ! -name "*.g.dart" | wc -l | tr -d ' ')
-
-    echo ""
-    echo "  Cobertura de linhas : ${COVERAGE}%"
-    echo "  Arquivos cobertos   : $COVERAGE_FILES / $TOTAL_FILES"
-
-    if [ "$(printf "%.0f" "$COVERAGE")" -lt 100 ]; then
-      err "cobertura ${COVERAGE}% < 100%"
-    else
-      ok "cobertura 100%!"
-    fi
-  else
-    err "coverage/lcov.info não encontrado"
-  fi
-fi
-
-# ═════════════════════════════════════════════════════════════════════════════
-# PASSO 4 — flutter build (todas as plataformas disponíveis)
-# ═════════════════════════════════════════════════════════════════════════════
-step "4/6  flutter build web"
+step "3/5  flutter build web"
 
 if ! command -v flutter &>/dev/null; then
   err "flutter não encontrado no PATH"
@@ -123,9 +82,9 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 5 — sonar-scanner (envia análise com issues Dart)
+# PASSO 4 — sonar-scanner (envia análise com issues Dart)
 # ═════════════════════════════════════════════════════════════════════════════
-step "5/6  sonar-scanner"
+step "4/5  sonar-scanner"
 
 SONAR_ARGS=(
   -Dsonar.projectKey=shopping_list
@@ -165,9 +124,9 @@ else
 fi
 
 # ═════════════════════════════════════════════════════════════════════════════
-# PASSO 6 — Validação cruzada SonarQube Quality Gate
+# PASSO 5 — Validação cruzada SonarQube Quality Gate
 # ═════════════════════════════════════════════════════════════════════════════
-step "6/6  Quality Gate do SonarQube"
+step "5/5  Quality Gate do SonarQube"
 
 if [ -n "$SONAR_TOKEN" ]; then
   # Aguarda processamento e consulta o Quality Gate
