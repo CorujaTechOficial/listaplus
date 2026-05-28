@@ -63,11 +63,9 @@ The app ships with translations for **all 86 locales** via ARBs. If you enable P
 
 ```sh
 flutter analyze --fatal-infos        # CI uses Flutter 3.29.3 (local ~3.44, ~289 infos)
-flutter test                          # 440+ test cases, 0 tolerated failures
 dart run build_runner build --delete-conflicting-outputs   # after @riverpod edits
 dart run build_runner watch --delete-conflicting-outputs   # watch mode
 flutter gen-l10n                      # after editing ARB files in lib/l10n/
-bash .githooks/setup.sh               # enable pre-commit hook (flutter analyze)
 flutter build appbundle --no-tree-shake-icons   # appbundle (category Icons are non-const in category_data.dart)
 ```
 
@@ -89,14 +87,6 @@ flutter build appbundle --no-tree-shake-icons   # appbundle (category Icons are 
 - **RevenueCat**: remote MCP at `https://mcp.revenuecat.ai/mcp`
 - **Firebase**: local MCP via `npx firebase-tools mcp`
 
-## CI (`.github/workflows/ci.yml`)
-
-- Flutter pinned at `3.29.3`.
-- 4 jobs: `analyze` (flutter analyze --fatal-infos), `test` (coverage + awk 100% check on lib/ source),
-  `build-web`, `build-android` (debug appbundle).
-- Coverage excludes `.g.dart`, `main.dart`, `*_provider.dart`, `revenuecat_service_impl.dart`,
-  `analytics_service.dart`, `PaywallScreen`, `AuthScreen`, `AuthService`, `FirestoreService` constructor fallbacks.
-
 ## custom_lints Package (`custom_lints/`)
 
 3 custom lint rules (in `analysis_options.yaml` via `custom_lint`):
@@ -112,28 +102,6 @@ Must compile: `cd custom_lints && dart analyze lib/` → "No issues found!"
 `always_put_control_body_on_new_line` — `if (x) return y;` fails.
 `prefer_int_literals` false positive with `fold(0.0, ...)` — suppress with `// ignore: prefer_int_literals`.
 `*.g.dart` excluded from analysis, coverage, and SonarQube.
-
-## Test Gotchas
-
-- **Riverpod 3.x auto-dispose race**: `container.read(provider.future)` creates a temp listener that
-  auto-disposes on return before first async emission completes → `Bad state: disposed during loading`.
-  **Fix**: `container.listen(provider, (_, __) {})` before `await container.read(provider.future)`.
-  Code paths that read async providers (agent loop, etc.) need this for all providers consumed.
-- **FakeFirebaseFirestore 4.x**: `settings=` setter removed. `FirestoreService` constructor
-  wraps `_db.settings = ...` in try-catch so tests pass without it.
-- **Widget test helpers**: Both `test/helpers/test_widgets.dart` and `test/widgets/widgets_test.dart`
-  define `wrapWithProviders()`. Update BOTH when adding provider overrides.
-  Both override `revenueCatServiceProvider` (FakeRevenueCatService) and `analyticsServiceProvider`
-  (AnalyticsService()) by default.
-- **`find.byIcon(Icons.add)`** returns 2 (FAB + tile "+") → use
-  `find.descendant(of: find.byType(ShoppingItemTile), matching: find.byIcon(Icons.add))`.
-- **`ShoppingItemTile`**: checkbox = selection (selection mode) or purchase toggle (normal mode). Has `Dismissible`.
-- **`premiumProvider`** cache: may return stale after entitlement change. Call `container.invalidate(premiumProvider)` then re-read.
-- **Widget send button**: Uses `ValueKey('chat_send_button')`, not `find.byIcon(Icons.send)`.
-- **Integration tests** (`integration_test/app_test.dart`) are **BROKEN** — skip them.
-- **PaywallScreen**: Minimal-only in tests; `PaywallView` from RevenueCatUI doesn't render in test env.
-- **ReorderableListView.onReorder**: `newIndex -= 1` when `oldIndex < newIndex`.
-- **`context.mounted`** guard necessary after `ref.invalidate` + `Navigator.pop` in PopupMenuButton callbacks.
 
 ## Known Bugs & Gotchas
 

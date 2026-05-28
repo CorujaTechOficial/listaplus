@@ -47,9 +47,6 @@ dart run build_runner watch --delete-conflicting-outputs
 # Strict analysis (zero tolerance)
 flutter analyze --fatal-infos
 
-# Test with coverage (100% mandatory for source)
-flutter test --coverage
-
 # Quality pipeline
 SONAR_TOKEN=squ_xxx ./scripts/quality-check.sh
 ```
@@ -78,14 +75,6 @@ flutter build appbundle --release
 - **ShoppingItemTile:** Checkbox = selection, not purchase. No `Dismissible` widget.
 - **Navigation:** Use `context.mounted` guards after async ops before using `context` or `Navigator`.
 - **ReorderableListView:** Follow `newIndex -= 1` pattern when `oldIndex < newIndex` in `onReorder`.
-
-### Testing Strategy
-- **100% Coverage:** Mandatory for all files in `lib/` (except `.g.dart`).
-    - **Markers:** `// coverage:ignore-start/end` must not have trailing text.
-- **Widget Tests:** Use `wrapWithProviders` helper.
-    - **Mandate:** When adding a provider override, update **both** `test/helpers/test_widgets.dart` and `test/widgets/widgets_test.dart`.
-- **Fakes:** Use `FakeStorageBackend` and `FakeRevenueCatService` for isolation.
-- **Integration Tests:** `integration_test/app_test.dart` is **BROKEN**; skip it.
 
 ### Data & State
 - **Stale State:** `container.read(premiumProvider.future)` may be stale after entitlement changes. Invalidate the provider before re-reading.
