@@ -18,6 +18,7 @@ import 'theme/app_theme.dart';
 import 'theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/app/settings/screens/settings_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
@@ -483,6 +484,14 @@ class _MainShellState extends ConsumerState<MainShell> {
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.push(context, fadeSlideRoute<void>(const SettingsScreen()));
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.workspace_premium_outlined),
+                title: Text(l10n.becomePremium),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
                 },
               ),
             ],
