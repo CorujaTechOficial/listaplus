@@ -999,7 +999,7 @@ abstract class AppLocalizations {
   /// No description provided for @budgetValueLabel.
   ///
   /// In en, this message translates to:
-  /// **'Amount (R\$)'**
+  /// **'Amount'**
   String get budgetValueLabel;
 
   /// No description provided for @setBudgetTitle.
@@ -1089,7 +1089,7 @@ abstract class AppLocalizations {
   /// No description provided for @estimatedPrice.
   ///
   /// In en, this message translates to:
-  /// **'Estimated price (R\$)'**
+  /// **'Estimated price'**
   String get estimatedPrice;
 
   /// No description provided for @addItemPrice.

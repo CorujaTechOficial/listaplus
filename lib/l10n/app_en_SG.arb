@@ -229,7 +229,7 @@
   },
   "setBudgetButton": "Set budget",
   "budgetLists": "Lists",
-  "budgetValueLabel": "Amount (R$)",
+  "budgetValueLabel": "Amount",
   "setBudgetTitle": "Monthly Budget",
   "budgetAmountSpent": "{spent} / {budget}",
   "@budgetAmountSpent": {
@@ -256,7 +256,7 @@
   "quantityShort": "Qty",
   "unit": "Unit",
   "category": "Category",
-  "estimatedPrice": "Estimated price (R$)",
+  "estimatedPrice": "Estimated price",
   "addItemPrice": "Estimated price",
   "@_EditItem": "description: Edit Item Dialog",
   "editItem": "Edit Item",

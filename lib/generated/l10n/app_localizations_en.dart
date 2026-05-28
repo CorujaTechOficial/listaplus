@@ -400,7 +400,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -447,7 +447,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';
@@ -1816,7 +1816,7 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -1863,7 +1863,7 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';
@@ -3113,7 +3113,7 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -3160,7 +3160,7 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';
@@ -4410,7 +4410,7 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -4457,7 +4457,7 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';
@@ -5707,7 +5707,7 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -5754,7 +5754,7 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';
@@ -7004,7 +7004,7 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -7051,7 +7051,7 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';
@@ -8301,7 +8301,7 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
   String get budgetLists => 'Lists';
 
   @override
-  String get budgetValueLabel => 'Amount (R\$)';
+  String get budgetValueLabel => 'Amount';
 
   @override
   String get setBudgetTitle => 'Monthly Budget';
@@ -8348,7 +8348,7 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
   String get category => 'Category';
 
   @override
-  String get estimatedPrice => 'Estimated price (R\$)';
+  String get estimatedPrice => 'Estimated price';
 
   @override
   String get addItemPrice => 'Estimated price';

@@ -401,7 +401,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get budgetLists => 'Listas';
 
   @override
-  String get budgetValueLabel => 'Valor (R\$)';
+  String get budgetValueLabel => 'Valor';
 
   @override
   String get setBudgetTitle => 'Orçamento Mensal';
@@ -448,7 +448,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get category => 'Categoria';
 
   @override
-  String get estimatedPrice => 'Preço estimado (R\$)';
+  String get estimatedPrice => 'Preço estimado';
 
   @override
   String get addItemPrice => 'Preço estimado';
@@ -1825,7 +1825,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get budgetLists => 'Listas';
 
   @override
-  String get budgetValueLabel => 'Valor (R\$)';
+  String get budgetValueLabel => 'Valor';
 
   @override
   String get setBudgetTitle => 'Orçamento Mensal';
@@ -1872,7 +1872,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get category => 'Categoria';
 
   @override
-  String get estimatedPrice => 'Preço estimado (R\$)';
+  String get estimatedPrice => 'Preço estimado';
 
   @override
   String get addItemPrice => 'Preço estimado';
@@ -3148,7 +3148,7 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get budgetLists => 'Listas';
 
   @override
-  String get budgetValueLabel => 'Valor (R\$)';
+  String get budgetValueLabel => 'Valor';
 
   @override
   String get setBudgetTitle => 'Orçamento Mensal';
@@ -3195,7 +3195,7 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get category => 'Categoria';
 
   @override
-  String get estimatedPrice => 'Preço estimado (R\$)';
+  String get estimatedPrice => 'Preço estimado';
 
   @override
   String get addItemPrice => 'Preço estimado';

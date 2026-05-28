@@ -146,7 +146,7 @@
   "@totalEstimated": { "placeholders": { "amount": { "type": "String" } } },
   "setBudgetButton": "Set budget",
   "budgetLists": "Lists",
-  "budgetValueLabel": "Amount (R$)",
+  "budgetValueLabel": "Amount",
   "setBudgetTitle": "Monthly Budget",
   "budgetAmountSpent": "{spent} / {budget}",
   "@budgetAmountSpent": { "placeholders": { "spent": { "type": "String" }, "budget": { "type": "String" } } },
@@ -166,7 +166,7 @@
   "quantityShort": "Qty",
   "unit": "Unit",
   "category": "Category",
-  "estimatedPrice": "Estimated price (R$)",
+  "estimatedPrice": "Estimated price",
   "addItemPrice": "Estimated price",
 
   "@_EditItem": "description: Edit Item Dialog",
