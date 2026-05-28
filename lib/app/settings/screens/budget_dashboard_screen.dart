@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/domain/entities/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
@@ -26,6 +28,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
 
     final itemsAsync = ref.watch(shoppingListItemsProvider(listId!));
     final categoriesAsync = ref.watch(categoriesProvider);
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
     final cats = categoriesAsync.value ?? <CategoryData>[];
     final categoriesMap = <String, CategoryData>{
       for (final cat in cats) cat.id: cat,
@@ -74,7 +77,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: Spacing.xs),
                       Text(
-                        'R\$ ${totalSpent.toStringAsFixed(2)}',
+                        formatCurrency(totalSpent, currencyCode),
                         style: theme.textTheme.displaySmall?.copyWith(
                           fontWeight: FontWeight.w900,
                           color: theme.colorScheme.primary,
@@ -132,7 +135,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        'R\$ ${e.value.toStringAsFixed(2)}',
+                        formatCurrency(e.value, currencyCode),
                         style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       Text(

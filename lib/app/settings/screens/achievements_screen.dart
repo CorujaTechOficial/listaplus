@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class AchievementsScreen extends ConsumerWidget {
@@ -10,6 +12,7 @@ class AchievementsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final stats = ref.watch(userStatsProvider);
     final theme = Theme.of(context);
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
       appBar: AppBar(title: const Text('Minhas Conquistas')),
@@ -28,7 +31,7 @@ class AchievementsScreen extends ConsumerWidget {
           _buildStatCard(
             context,
             'Economia Total',
-            'R\$ ${stats.totalSavings.toStringAsFixed(2)}',
+            formatCurrency(stats.totalSavings, currencyCode),
             Icons.savings,
             Colors.green,
           ),
