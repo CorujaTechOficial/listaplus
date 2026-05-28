@@ -20,6 +20,7 @@ import 'package:shopping_list/domain/entities/ai_config.dart';
 import 'package:shopping_list/app/ai/screens/chat_history_screen.dart';
 import 'package:shopping_list/app/settings/screens/feedback_screen.dart';
 import 'package:shopping_list/app/settings/screens/language_selection_screen.dart';
+import 'package:shopping_list/app/settings/screens/currency_selection_screen.dart';
 import 'package:shopping_list/app/settings/utils/locale_names.dart';
 
 
@@ -34,6 +35,7 @@ class SettingsScreen extends ConsumerWidget {
     final currentThemeMode = darkModeAsync.value ?? ThemeMode.system;
     final premiumAsync = ref.watch(premiumProvider);
     final localeAsync = ref.watch(localeSettingProvider);
+    final currencyAsync = ref.watch(currencySettingProvider);
     final isPt = Localizations.localeOf(context).languageCode == 'pt';
     final aiConfigAsync = ref.watch(aiConfigStateProvider);
     final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'smart_toy');
@@ -241,6 +243,18 @@ class SettingsScreen extends ConsumerWidget {
               Navigator.push(
                 context,
                 fadeSlideRoute<void>(const LanguageSelectionScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.attach_money, color: theme.colorScheme.primary),
+            title: const Text('Moeda'),
+            subtitle: Text(currencyAsync.value ?? 'BRL'),
+            trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeSlideRoute<void>(const CurrencySelectionScreen()),
               );
             },
           ),
