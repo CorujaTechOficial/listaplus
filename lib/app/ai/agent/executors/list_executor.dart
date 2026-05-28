@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../tools/tool_core.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 
 class ListExecutor {
   const ListExecutor();
@@ -22,10 +24,11 @@ class ListExecutor {
         content: 'Nenhuma lista de compras encontrada.',
       );
     }
+    final currencyCode = container.read(currencySettingProvider).value ?? 'BRL';
     final result = StringBuffer('Listas de compras:\n');
     for (final list in lists) {
       final status = list.isArchived ? ' [ARQUIVADA]' : '';
-      final budget = list.budget != null ? ' (R\$${list.budget!.toStringAsFixed(2)})' : '';
+      final budget = list.budget != null ? ' (${formatCurrency(list.budget!, currencyCode)})' : '';
       final shared = list.isShared ? ' [COMPARTILHADA]' : '';
       result.writeln('- ${list.name} (ID: ${list.id})$budget$status$shared');
     }
@@ -45,9 +48,10 @@ class ListExecutor {
     if (list == null) {
       return const ToolResult(toolCallId: '', content: 'Lista atual não encontrada.');
     }
+    final currencyCode = container.read(currencySettingProvider).value ?? 'BRL';
     return ToolResult(
       toolCallId: '',
-      content: 'Lista atual: ${list.name} (ID: ${list.id})${list.budget != null ? ', Orçamento: R\$${list.budget!.toStringAsFixed(2)}' : ''}',
+      content: 'Lista atual: ${list.name} (ID: ${list.id})${list.budget != null ? ', Orçamento: ${formatCurrency(list.budget!, currencyCode)}' : ''}',
     );
   }
 

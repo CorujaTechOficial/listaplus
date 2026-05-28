@@ -18,6 +18,8 @@ import '../../../models/shopping_list.dart';
 import '../../../models/interactive_artifact.dart';
 import '../../../models/chat_session_model.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
@@ -485,7 +487,8 @@ class ChatSession extends _$ChatSession {
         return 'Buscando orçamento';
       case 'set_budget':
         final budget = args['budget'] != null ? (args['budget'] as num).toDouble() : 0.0;
-        return 'Definindo orçamento para R\$${budget.toStringAsFixed(2)}';
+        final moeda = ref.read(currencySettingProvider).value ?? 'BRL';
+        return 'Definindo orçamento para ${formatCurrency(budget, moeda)}';
       case 'create_share_code':
         return 'Criando código de compartilhamento';
       case 'import_shared_list':
