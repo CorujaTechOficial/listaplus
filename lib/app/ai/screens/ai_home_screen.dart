@@ -13,6 +13,8 @@ import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
@@ -295,6 +297,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
 
     // ignore: prefer_int_literals
     final totalValue = items.fold(0.0, (sum, item) => sum + (item.estimatedPrice ?? 0) * item.quantity);
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
       appBar: AppBar(
@@ -390,6 +393,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
               purchased: purchased,
               total: total,
               totalValue: totalValue,
+              currencyCode: currencyCode,
               expanded: true,
               isMarketMode: true,
               onToggle: () => setState(() => _isMarketMode = false),
@@ -420,7 +424,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                         if (totalValue > 0) ...[
                           const SizedBox(width: 8),
                           Text(
-                            'R\$ ${totalValue.toStringAsFixed(2)}',
+                        formatCurrency(totalValue, currencyCode),
                             style: theme.textTheme.labelSmall?.copyWith(
                               color: theme.colorScheme.onSurfaceVariant,
                               fontSize: 11,
@@ -572,6 +576,7 @@ class _ListHeroCard extends StatelessWidget {
     required this.purchased,
     required this.total,
     required this.totalValue,
+    required this.currencyCode,
     required this.expanded,
     required this.isMarketMode,
     required this.onToggle,
@@ -582,6 +587,7 @@ class _ListHeroCard extends StatelessWidget {
   final int purchased;
   final int total;
   final double totalValue;
+  final String currencyCode;
   final bool expanded;
   final bool isMarketMode;
   final VoidCallback onToggle;
@@ -750,8 +756,8 @@ class _ListHeroCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                       ),
                       child: Text(
-                        'R\$ ${totalValue.toStringAsFixed(2)}',
-                        style: theme.textTheme.labelSmall?.copyWith(
+                        formatCurrency(totalValue, currencyCode),
+                            style: theme.textTheme.labelSmall?.copyWith(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: theme.colorScheme.primary,

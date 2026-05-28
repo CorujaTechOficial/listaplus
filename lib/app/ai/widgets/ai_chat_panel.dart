@@ -18,6 +18,8 @@ import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/app/ai/agent/tools/agent_tools.dart';
 import 'package:shopping_list/app/ai/widgets/animated_typing_dots.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import '../../../theme/tokens.dart';
 import '../../../theme/colors.dart';
 import '../../../theme/page_transitions.dart';
@@ -2023,7 +2025,7 @@ class _AgentActionStepsList extends ConsumerWidget {
   }
 }
 
-class AgentActionBlock extends StatefulWidget {
+class AgentActionBlock extends ConsumerStatefulWidget {
   const AgentActionBlock({
     super.key,
     required this.step,
@@ -2034,10 +2036,10 @@ class AgentActionBlock extends StatefulWidget {
   final String? listId;
 
   @override
-  State<AgentActionBlock> createState() => _AgentActionBlockState();
+  ConsumerState<AgentActionBlock> createState() => _AgentActionBlockState();
 }
 
-class _AgentActionBlockState extends State<AgentActionBlock> {
+class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
   bool _isExpanded = false;
 
   @override
@@ -2188,6 +2190,7 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
 
   Widget _buildStepDetails(AgentStep step, ThemeData theme) {
     final result = step.resultData;
+    final currencyCode = ref.read(currencySettingProvider).value ?? 'BRL';
     if (result == null) {
       return const SizedBox.shrink();
     }
@@ -2209,7 +2212,7 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
       try {
         final prevMap = Map<String, dynamic>.from(result['previousState'] as Map);
         final item = ShoppingItem.fromJson(prevMap);
-        final priceStr = item.estimatedPrice != null ? ' (R\$ ${item.estimatedPrice!.toStringAsFixed(2)})' : '';
+        final priceStr = item.estimatedPrice != null ? ' (${formatCurrency(item.estimatedPrice!, currencyCode)})' : '';
         final prevCategoryName = CategoryData.defaults.firstWhere(
           (c) => c.id == item.categoryId,
           orElse: () => CategoryData.defaults.last,
@@ -2252,7 +2255,7 @@ class _AgentActionBlockState extends State<AgentActionBlock> {
     } else if (result.containsKey('previousBudget')) {
       final prevBudgetNum = result['previousBudget'] as num?;
       final prevBudget = prevBudgetNum?.toDouble();
-      final prevBudgetStr = prevBudget != null ? 'R\$ ${prevBudget.toStringAsFixed(2)}' : 'Nenhum';
+      final prevBudgetStr = prevBudget != null ? formatCurrency(prevBudget, currencyCode) : 'Nenhum';
       details.add(Row(
         children: [
           Icon(Icons.account_balance_wallet, size: 12, color: theme.colorScheme.onSurfaceVariant),
