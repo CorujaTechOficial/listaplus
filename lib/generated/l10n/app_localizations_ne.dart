@@ -295,6 +295,15 @@ class AppLocalizationsNe extends AppLocalizations {
   String get searchLanguage => 'भाषा खोज्नुहोस्...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'उपस्थिति';
 
   @override

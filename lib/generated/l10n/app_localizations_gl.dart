@@ -294,6 +294,15 @@ class AppLocalizationsGl extends AppLocalizations {
   String get searchLanguage => 'Buscar idioma...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Aparencia';
 
   @override

@@ -296,6 +296,15 @@ class AppLocalizationsAz extends AppLocalizations {
   String get searchLanguage => 'Dil axtar...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Görünüş';
 
   @override

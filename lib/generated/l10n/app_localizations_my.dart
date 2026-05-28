@@ -290,6 +290,15 @@ class AppLocalizationsMy extends AppLocalizations {
   String get searchLanguage => 'ဘာသာစကားရှာဖွေရန်...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'အသွင်အပြင်';
 
   @override

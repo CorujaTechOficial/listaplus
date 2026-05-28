@@ -289,6 +289,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get searchLanguage => 'Hae kieltä...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Ulkoasu';
 
   @override

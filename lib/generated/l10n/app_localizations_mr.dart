@@ -295,6 +295,15 @@ class AppLocalizationsMr extends AppLocalizations {
   String get searchLanguage => 'भाषा शोधा...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'स्वरूप';
 
   @override

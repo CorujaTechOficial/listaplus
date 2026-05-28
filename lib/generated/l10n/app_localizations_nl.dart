@@ -295,6 +295,15 @@ class AppLocalizationsNl extends AppLocalizations {
   String get searchLanguage => 'Taal zoeken...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Weergave';
 
   @override

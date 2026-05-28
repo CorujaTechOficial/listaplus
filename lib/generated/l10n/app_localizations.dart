@@ -792,6 +792,24 @@ abstract class AppLocalizations {
   /// **'Search language...'**
   String get searchLanguage;
 
+  /// No description provided for @currency.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency'**
+  String get currency;
+
+  /// No description provided for @chooseCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Currency'**
+  String get chooseCurrency;
+
+  /// No description provided for @searchCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Search currency...'**
+  String get searchCurrency;
+
   /// No description provided for @appearance.
   ///
   /// In en, this message translates to:

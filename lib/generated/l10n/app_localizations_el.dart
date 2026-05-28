@@ -295,6 +295,15 @@ class AppLocalizationsEl extends AppLocalizations {
   String get searchLanguage => 'Αναζήτηση γλώσσας...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Εμφάνιση';
 
   @override

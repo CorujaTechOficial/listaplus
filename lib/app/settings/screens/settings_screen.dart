@@ -248,7 +248,7 @@ class SettingsScreen extends ConsumerWidget {
           ),
           ListTile(
             leading: Icon(Icons.attach_money, color: theme.colorScheme.primary),
-            title: const Text('Moeda'),
+            title: Text(l10n.currency),
             subtitle: Text(currencyAsync.value ?? 'BRL'),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
             onTap: () {

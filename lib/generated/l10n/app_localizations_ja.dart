@@ -287,6 +287,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get searchLanguage => '言語を検索...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => '外観';
 
   @override

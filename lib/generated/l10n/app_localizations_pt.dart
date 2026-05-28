@@ -295,6 +295,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get searchLanguage => 'Procurar idioma...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Aparência';
 
   @override

@@ -297,6 +297,15 @@ class AppLocalizationsMn extends AppLocalizations {
   String get searchLanguage => 'Хэл хайх...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Гадаад байдал';
 
   @override

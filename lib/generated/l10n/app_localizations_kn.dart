@@ -296,6 +296,15 @@ class AppLocalizationsKn extends AppLocalizations {
   String get searchLanguage => 'ಭಾಷೆಯನ್ನು ಹುಡುಕಿ...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'ಗೋಚರತೆ';
 
   @override

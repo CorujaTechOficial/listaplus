@@ -296,6 +296,15 @@ class AppLocalizationsKa extends AppLocalizations {
   String get searchLanguage => 'ენის ძებნა...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'გარეგნობა';
 
   @override

@@ -297,6 +297,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get searchLanguage => 'Nyelv keresése...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Megjelenés';
 
   @override

@@ -296,6 +296,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get searchLanguage => 'Hledat jazyk...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Vzhled';
 
   @override

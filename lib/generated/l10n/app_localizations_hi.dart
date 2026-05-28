@@ -296,6 +296,15 @@ class AppLocalizationsHi extends AppLocalizations {
   String get searchLanguage => 'भाषा खोजें...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'दिखावट';
 
   @override

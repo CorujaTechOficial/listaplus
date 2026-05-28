@@ -295,6 +295,15 @@ class AppLocalizationsHy extends AppLocalizations {
   String get searchLanguage => 'Փնտրել լեզուն...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Արտաքին տեսք';
 
   @override

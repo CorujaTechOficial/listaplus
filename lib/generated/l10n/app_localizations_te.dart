@@ -297,6 +297,15 @@ class AppLocalizationsTe extends AppLocalizations {
   String get searchLanguage => 'Search language...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'స్వరూపం';
 
   @override

@@ -293,6 +293,15 @@ class AppLocalizationsDa extends AppLocalizations {
   String get searchLanguage => 'Søg sprog...';
 
   @override
+  String get currency => 'Currency';
+
+  @override
+  String get chooseCurrency => 'Select Currency';
+
+  @override
+  String get searchCurrency => 'Search currency...';
+
+  @override
   String get appearance => 'Udseende';
 
   @override

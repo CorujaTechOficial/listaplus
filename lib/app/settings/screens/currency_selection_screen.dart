@@ -30,7 +30,7 @@ class _CurrencySelectionScreenState extends ConsumerState<CurrencySelectionScree
     final currencyAsync = ref.watch(currencySettingProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Moeda')),
+      appBar: AppBar(title: Text(l10n.chooseCurrency)),
       body: SafeArea(
         child: Column(
           children: [
@@ -49,7 +49,7 @@ class _CurrencySelectionScreenState extends ConsumerState<CurrencySelectionScree
                           },
                         )
                       : null,
-                  hintText: l10n.searchLanguage,
+                  hintText: l10n.searchCurrency,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(RadiusTokens.md),
                   ),
@@ -143,7 +143,7 @@ class _CurrencySelectionScreenState extends ConsumerState<CurrencySelectionScree
                   );
                 },
                 loading: () => const Center(child: CircularProgressIndicator.adaptive()),
-                error: (e, _) => Center(child: Text('Erro: $e')),
+                error: (e, _) => Center(child: Text(e.toString())),
               ),
             ),
           ],
