@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../theme/tokens.dart';
 import '../../../models/shopping_list.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class BudgetDialog extends ConsumerStatefulWidget {
@@ -34,6 +35,7 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
     return AlertDialog(
       title: Text(l10n.listBudgetTitle),
       content: Padding(
@@ -42,7 +44,7 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
           controller: _controller,
           decoration: InputDecoration(
             labelText: l10n.budgetAmountLabel,
-            prefixText: 'R\$ ',
+            prefixText: '$currencyCode ',
           ),
           keyboardType: const TextInputType.numberWithOptions(decimal: true),
         ),
