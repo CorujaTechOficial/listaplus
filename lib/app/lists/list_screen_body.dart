@@ -13,6 +13,8 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/theme/colors.dart';
@@ -197,6 +199,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
     final categoriesMap = {for (final cat in categories) cat.id: cat};
     final isPremium = ref.watch(premiumProvider).value ?? false;
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
@@ -325,7 +328,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                                           style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
                                         ),
                                         Text(
-                                          'Total: R\$ ${totalEstimated.toStringAsFixed(2)}',
+                                          'Total: ${formatCurrency(totalEstimated, currencyCode)}',
                                           style: theme.textTheme.labelLarge?.copyWith(
                                             color: theme.colorScheme.primary,
                                             fontWeight: FontWeight.bold,
@@ -501,7 +504,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
       pw.SizedBox(height: 20),
       ...items.map((item) => pw.Row(mainAxisAlignment: pw.MainAxisAlignment.spaceBetween, children: [
         pw.Text('${item.isPurchased ? "[X] " : "[ ] "} ${item.name} (${item.quantity} ${item.unit.name})'),
-        if (item.estimatedPrice != null) pw.Text('R\$ ${(item.estimatedPrice! * item.quantity).toStringAsFixed(2)}'),
+        if (item.estimatedPrice != null) pw.Text(formatCurrency(item.estimatedPrice! * item.quantity, ref.read(currencySettingProvider).value ?? 'BRL')),
       ])),
     ])));
     await Printing.layoutPdf(onLayout: (format) => pdf.save());

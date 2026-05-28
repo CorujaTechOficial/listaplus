@@ -8,6 +8,8 @@ import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import '../../../models/shopping_item.dart';
 import '../../../models/category_data.dart';
 import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class ShoppingItemTile extends ConsumerWidget {
@@ -35,6 +37,7 @@ class ShoppingItemTile extends ConsumerWidget {
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
     final categoryMap = <String, CategoryData>{for (final c in categories) c.id: c};
     final cat = categoryMap[item.categoryId];
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     final tileContent = Material(
       color: Colors.transparent,
@@ -109,7 +112,7 @@ class ShoppingItemTile extends ConsumerWidget {
                           ],
                           if (item.estimatedPrice != null)
                             Text(
-                              'R\$ ${(item.estimatedPrice! * item.quantity).toStringAsFixed(2)}',
+                              formatCurrency(item.estimatedPrice! * item.quantity, currencyCode),
                               style: theme.textTheme.labelSmall?.copyWith(
                                 color: theme.colorScheme.primary,
                                 fontWeight: FontWeight.w600,
