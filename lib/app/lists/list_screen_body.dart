@@ -247,6 +247,11 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                     IconButton(icon: const Icon(Icons.delete_outline), onPressed: _deleteSelected)
                   else ...[
                     IconButton(
+                      icon: const Icon(Icons.share),
+                      onPressed: () => _showInviteSheet(widget.listId),
+                      tooltip: l10n.inviteToList,
+                    ),
+                    IconButton(
                       icon: const Icon(Icons.search),
                       onPressed: () => showSearch(
                         context: context,
@@ -536,6 +541,52 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
         ),
       ),
     );
+  }
+
+  void _showInviteSheet(String listId) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (context) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(l10n.shareListTitle, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
+              const SizedBox(height: 16),
+              ListTile(
+                leading: const Icon(Icons.group_add),
+                title: Text(l10n.inviteToList),
+                subtitle: Text(l10n.shareRealtime),
+                onTap: () {
+                  Navigator.pop(context);
+                  _shareViaCode();
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.share),
+                title: Text(l10n.shareApp),
+                subtitle: Text(l10n.shareAppDescription),
+                onTap: () {
+                  Navigator.pop(context);
+                  _shareReferral();
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _shareReferral() {
+    SharePlus.instance.share(ShareParams(
+      text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+      subject: 'Ganhe 7 dias de Lista Plus Premium!',
+    ));
   }
 
   Future<void> _shareList(List<ShoppingItem> items, String? listName) async {
