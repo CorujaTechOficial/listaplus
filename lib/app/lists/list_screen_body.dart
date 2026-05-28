@@ -583,9 +583,10 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
   }
 
   void _shareReferral() {
+    final l10n = AppLocalizations.of(context)!;
     SharePlus.instance.share(ShareParams(
-      text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-      subject: 'Ganhe 7 dias de Lista Plus Premium!',
+      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      subject: l10n.shareReferralSubject,
     ));
   }
 

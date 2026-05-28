@@ -1325,6 +1325,14 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get shareAppDescription => 'Invite friends to use Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
 }
 
 /// The translations for Bengali Bangla, as used in Bangladesh (`bn_BD`).

@@ -507,5 +507,16 @@
   "shareAppDescription": "Invite friends to use Lista Plus",
   "@shareAppDescription": {
     "description": "Subtitle for sharing the app option"
+  },
+  "shareReferralText": "I'm using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: {url}",
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "shareReferralSubject": "Get 7 days of Lista Plus Premium!",
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
   }
 }

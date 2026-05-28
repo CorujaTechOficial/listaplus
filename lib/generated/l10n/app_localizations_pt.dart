@@ -1330,6 +1330,14 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get shareAppDescription => 'Invite friends to use Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -2644,6 +2652,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get shareAppDescription => 'Convide amigos para usar o Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Ganhe 7 dias de Lista Plus Premium!';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).

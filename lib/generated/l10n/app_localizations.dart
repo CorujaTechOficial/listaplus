@@ -2711,6 +2711,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Invite friends to use Lista Plus'**
   String get shareAppDescription;
+
+  /// Referral text shared outside the app when inviting friends
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: {url}'**
+  String shareReferralText(Object url);
+
+  /// Subject line for the referral share
+  ///
+  /// In en, this message translates to:
+  /// **'Get 7 days of Lista Plus Premium!'**
+  String get shareReferralSubject;
 }
 
 class _AppLocalizationsDelegate

@@ -472,5 +472,7 @@
   },
   "inviteToList": "Convidar para lista",
   "shareApp": "Compartilhar o app",
-  "shareAppDescription": "Convide amigos para usar o Lista Plus"
+  "shareAppDescription": "Convide amigos para usar o Lista Plus",
+  "shareReferralText": "Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: {url}",
+  "shareReferralSubject": "Ganhe 7 dias de Lista Plus Premium!"
 }
