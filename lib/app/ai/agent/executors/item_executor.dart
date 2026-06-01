@@ -6,6 +6,8 @@ import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/models/shopping_list.dart';
+import '../utils/ai_utils.dart';
 
 class ItemExecutor {
   const ItemExecutor();
@@ -28,19 +30,47 @@ class ItemExecutor {
   }
 
   Future<String?> _resolveCurrentListId(ProviderContainer container) async {
-    final currentId = await container.read(currentListIdProvider.future);
+    final currentListIdState = container.read(currentListIdProvider);
+    final currentId = currentListIdState.hasValue
+        ? currentListIdState.value
+        : await AiUtils.awaitFuture(
+            container.read(currentListIdProvider.future),
+            defaultValue: null,
+            label: 'currentListIdProvider',
+          );
     if (currentId != null) {
       return currentId;
     }
-    final lists = await container.read(shoppingListsProvider.future);
+    final shoppingListsState = container.read(shoppingListsProvider);
+    final lists = shoppingListsState.hasValue
+        ? (shoppingListsState.value ?? const <ShoppingList>[])
+        : await AiUtils.awaitFuture(
+            container.read(shoppingListsProvider.future),
+            defaultValue: <ShoppingList>[],
+            label: 'shoppingListsProvider',
+          );
     return lists.isNotEmpty ? lists.first.id : null;
   }
 
   Future<Map<String, String>> _buildItemIndex(ProviderContainer container) async {
-    final allLists = await container.read(shoppingListsProvider.future);
+    final shoppingListsState = container.read(shoppingListsProvider);
+    final allLists = shoppingListsState.hasValue
+        ? (shoppingListsState.value ?? const <ShoppingList>[])
+        : await AiUtils.awaitFuture(
+            container.read(shoppingListsProvider.future),
+            defaultValue: <ShoppingList>[],
+            label: 'shoppingListsProvider',
+          );
     final index = <String, String>{};
     for (final list in allLists) {
-      final items = await container.read(shoppingListItemsProvider(list.id).future);
+      final itemsState = container.read(shoppingListItemsProvider(list.id));
+      final items = itemsState.hasValue
+          ? (itemsState.value ?? const <ShoppingItem>[])
+          : await AiUtils.awaitFuture(
+              container.read(shoppingListItemsProvider(list.id).future),
+              defaultValue: <ShoppingItem>[],
+              label: 'shoppingListItemsProvider (${list.id})',
+            );
       for (final item in items) {
         index[item.id] = list.id;
       }
@@ -59,7 +89,11 @@ class ItemExecutor {
       );
     }
     final service = container.read(firestoreServiceProvider);
-    final lists = await container.read(shoppingListsProvider.future);
+    final lists = await AiUtils.awaitFuture(
+      container.read(shoppingListsProvider.future),
+      defaultValue: <ShoppingList>[],
+      label: 'shoppingListsProvider',
+    );
     final list = lists.where((l) => l.id == listId).firstOrNull;
     final ownerUid = list?.ownerUid;
     final items = ownerUid != null
@@ -81,7 +115,11 @@ class ItemExecutor {
     final categoryLabel = args['category'] as String?;
     final price = args['estimatedPrice'] != null ? (args['estimatedPrice'] as num).toDouble() : null;
 
-    final items = await container.read(shoppingListItemsProvider(listId).future);
+    final items = await AiUtils.awaitFuture(
+      container.read(shoppingListItemsProvider(listId).future),
+      defaultValue: <ShoppingItem>[],
+      label: 'shoppingListItemsProvider',
+    );
     final existingItem = items.cast<ShoppingItem?>().firstWhere(
       (item) => item!.name.trim().toLowerCase() == name.toLowerCase(),
       orElse: () => null,
@@ -128,7 +166,11 @@ class ItemExecutor {
       );
     }
 
-    final items = await container.read(shoppingListItemsProvider(foundListId).future);
+    final items = await AiUtils.awaitFuture(
+      container.read(shoppingListItemsProvider(foundListId).future),
+      defaultValue: <ShoppingItem>[],
+      label: 'shoppingListItemsProvider',
+    );
     final foundItem = items.where((i) => i.id == itemId).firstOrNull;
     if (foundItem == null) {
       return const ToolResult(
@@ -170,7 +212,11 @@ class ItemExecutor {
     if (listId == null) {
       return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
     }
-    final items = await container.read(shoppingListItemsProvider(listId).future);
+    final items = await AiUtils.awaitFuture(
+      container.read(shoppingListItemsProvider(listId).future),
+      defaultValue: <ShoppingItem>[],
+      label: 'shoppingListItemsProvider',
+    );
     final foundItem = items.where((i) => i.id == itemId).firstOrNull;
     if (foundItem == null) {
       return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
@@ -190,13 +236,21 @@ class ItemExecutor {
     if (listId == null) {
       return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
     }
-    final items = await container.read(shoppingListItemsProvider(listId).future);
+    final items = await AiUtils.awaitFuture(
+      container.read(shoppingListItemsProvider(listId).future),
+      defaultValue: <ShoppingItem>[],
+      label: 'shoppingListItemsProvider',
+    );
     final foundItem = items.where((i) => i.id == itemId).firstOrNull;
     if (foundItem == null) {
       return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
     }
     await container.read(shoppingListItemsProvider(listId).notifier).togglePurchased(itemId);
-    final updatedItems = await container.read(shoppingListItemsProvider(listId).future);
+    final updatedItems = await AiUtils.awaitFuture(
+      container.read(shoppingListItemsProvider(listId).future),
+      defaultValue: <ShoppingItem>[],
+      label: 'shoppingListItemsProvider (updated)',
+    );
     final item = updatedItems.where((i) => i.id == itemId).first;
     return ToolResult(
       toolCallId: '',
@@ -219,9 +273,14 @@ class ItemExecutor {
     }
     final previousStates = <Map<String, dynamic>>[];
     for (final listId in idsByList.keys) {
-      final items = await container.read(shoppingListItemsProvider(listId).future);
+      final items = await AiUtils.awaitFuture(
+      container.read(shoppingListItemsProvider(listId).future),
+      defaultValue: <ShoppingItem>[],
+      label: 'shoppingListItemsProvider',
+    );
+      final idSet = idsByList[listId]!.toSet();
       for (final item in items) {
-        if (idsByList[listId]!.contains(item.id)) {
+        if (idSet.contains(item.id)) {
           previousStates.add(item.toJson());
         }
       }

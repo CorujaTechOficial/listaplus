@@ -42,6 +42,9 @@ class AppLocalizationsBe extends AppLocalizations {
   String get copy => 'Капіяваць';
 
   @override
+  String get next => 'Далей';
+
+  @override
   String get retry => 'Паўтарыць';
 
   @override
@@ -281,10 +284,10 @@ class AppLocalizationsBe extends AppLocalizations {
   String get language => 'Мова';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'партугальская (Бразілія)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'англійская';
 
   @override
   String get languageSystem => 'Сістэмная па змаўчанні';
@@ -296,13 +299,13 @@ class AppLocalizationsBe extends AppLocalizations {
   String get searchLanguage => 'Пошук мовы...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Валюта';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Выберыце Валюта';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Пошук валюты...';
 
   @override
   String get appearance => 'Выгляд';
@@ -328,7 +331,7 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Адключыце дынамічныя колеры, каб колер тэмы ўступіў у сілу';
 
   @override
   String get finance => 'Фінансы';
@@ -570,17 +573,17 @@ class AppLocalizationsBe extends AppLocalizations {
   String get generalAssistant => 'Агульны Памочнік';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Новы чат';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Няма гісторыі чатаў';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Выдаліць чат';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Вы ўпэўнены, што хочаце выдаліць гэты чат? Паведамленні будуць страчаны назаўсёды.';
 
   @override
   String get clearHistory => 'Ачысціць Гісторыю';
@@ -626,93 +629,108 @@ class AppLocalizationsBe extends AppLocalizations {
   String get continueAsGuest => 'Працягнуць як госць';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Сардэчна запрашаем у Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Самы разумны спосаб арганізаваць пакупкі і зэканоміць грошы.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Персаналізуйце свой вопыт';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Выберыце, як вы хочаце, каб Lista Plus выглядаў і працаваў для вас.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Захавайце ўсё ў воблаку';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Вашы даныя сінхранізуюцца на ўсіх вашых прыладах';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Падзяліцеся з тымі, каго любіце';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Сінхранізуйце спісы з сям\'ёй і сябрамі ў рэжыме рэальнага часу';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Разблакіраваць усе функцыі';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Атрымлівайце максімум ад вашых спісаў пакупак';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Лепшае значэнне';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Штомесяц';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Гадавы';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Паглядзець усе планы';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Падпісвайцеся';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Скасаваць у любы час. Без абавязацельстваў.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Працягнуць як госць';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Аднавіць';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'У вас ужо ёсць падпіска? Націсніце тут, каб аднавіць яго.';
+
+  @override
+  String get onboardingExit => 'Выхад';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Давайце з вамі пазнаёмімся';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Мы будзем выкарыстоўваць гэта, каб персаналізаваць вашыя прапановы і зрабіць пакупкі больш разумнымі.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Якая ваша любімая ежа?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'напр. Піца, сушы, лажання...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Працягнуць';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Прапусціць пакуль';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Скажыце нам сваю любімую ежу, каб працягнуць';
+
+  @override
+  String get settingsDefaultScreen => 'Галоўны экран па змаўчанні';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Выбірайце спіс пакупак або чат AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Спіс пакупак';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI Чат';
 
   @override
   String loginError(String error) {
@@ -720,7 +738,7 @@ class AppLocalizationsBe extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'Спіс плюс прэміум';
 
   @override
   String get premiumUpgrade => 'Абнавіце, каб разблакаваць';
@@ -1079,106 +1097,106 @@ class AppLocalizationsBe extends AppLocalizations {
       'Паведамляйце пра памылкі, прапаноўвайце паляпшэнні або выпраўляйце пераклады';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Энергія ІІ';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Пошук у размове...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Паведамленні не знойдзены';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Прапанаваныя пытанні:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Гандлёвы памочнік';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased з $total набыта';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Ацэначны';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Прагляд элементаў';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Няма элементаў у спісе';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Доўгая гісторыя: памочнік факусуюць на апошніх паведамленнях для лепшай прадукцыйнасці.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Слуханне...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Дадаць непасрэдна ў спіс';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Разблакіраваць поўны адказ';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Пераключыць спіс';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Рынкавы рэжым';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Вярнуцца да чата';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Скончыць пакупкі';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Вітаем у памочніку AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Стварыце спіс пакупак, каб пачаць выкарыстоўваць разумны чат.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Чым я магу дапамагчы?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Пытайцеся пра цэны, рэцэпты, арганізацыю...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total набыта';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Хуткія адказы:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Пашыраныя галасавыя каманды - Pro. Уключэнне базавай дыктоўкі...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Прагляд Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Ой! Нешта пайшло не так пры загрузцы чата.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Праверце падключэнне або паўтарыце спробу пазней.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Гэта можа адбыцца з-за ваганняў сеткі або часовай недаступнасці. Калі ласка, паспрабуйце яшчэ раз.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Актыўнае слуханне';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Што б вы хацелі зрабіць з гэтым прадметам?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Глядзець падрабязнасці';
 
   @override
   String get openMenu => 'Адкрыць меню';
@@ -1426,19 +1444,20 @@ class AppLocalizationsBe extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Запрашаем у спіс';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Падзяліцца праграмай';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Запрасіце сяброў выкарыстоўваць Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Я выкарыстоўваю Lista Plus для арганізацыі пакупак! Спампуйце па маёй спасылцы, і мы абодва атрымаем 7 дзён прэміум бясплатна: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Атрымайце 7 дзён Lista Plus Premium!';
 }

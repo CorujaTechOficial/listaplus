@@ -42,6 +42,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get copy => 'コピー';
 
   @override
+  String get next => '次';
+
+  @override
   String get retry => '再試行';
 
   @override
@@ -272,10 +275,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get language => '言語';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'ポルトガル語 (ブラジル)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => '英語';
 
   @override
   String get languageSystem => 'システムデフォルト';
@@ -287,13 +290,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get searchLanguage => '言語を検索...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => '通貨';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => '通貨の選択';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => '通貨を検索...';
 
   @override
   String get appearance => '外観';
@@ -317,8 +320,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dynamicColorsSubtitle => '壁紙に基づいた色を使用する';
 
   @override
-  String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+  String get dynamicColorsEnabledWarning => 'テーマカラーを有効にするには動的カラーを無効にします';
 
   @override
   String get finance => '財務';
@@ -558,17 +560,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get generalAssistant => '一般アシスタント';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => '新しいチャット';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'チャット履歴がありません';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'チャットの削除';
 
   @override
-  String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+  String get deleteSessionConfirm => 'このチャットを削除してもよろしいですか?メッセージは永久に失われます。';
 
   @override
   String get clearHistory => '履歴をクリア';
@@ -613,93 +614,98 @@ class AppLocalizationsJa extends AppLocalizations {
   String get continueAsGuest => 'ゲストとして続ける';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plusへようこそ';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc => '買い物を整理してお金を節約する最も賢い方法。';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'エクスペリエンスをパーソナライズする';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc => 'Lista Plus の外観と機能を選択してください。';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'すべてをクラウドに保存';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc => 'データはすべてのデバイス間で同期されます';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
+  String get onboardingShareTitle => '愛する人と共有しましょう';
 
   @override
-  String get onboardingSkipToApp => 'Skip to app';
+  String get onboardingShareDesc => 'リストを家族や友人とリアルタイムで同期';
 
   @override
-  String get onboardingChatPlaceholder => 'Type a message...';
+  String get onboardingPremiumTitle => 'すべての機能のロックを解除する';
 
   @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
+  String get onboardingPremiumSubtitle => 'ショッピングリストを最大限に活用しましょう';
 
   @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
+  String get onboardingAnnualBadge => 'ベストバリュー';
 
   @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingMonthlyLabel => '毎月';
 
   @override
-  String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+  String get onboardingAnnualLabel => '年間';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingViewAllPlans => 'すべてのプランを見る';
 
   @override
-  String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+  String get onboardingSubscribeCta => '購読する';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingCancelAnytime => 'いつでもキャンセルできます。約束はありません。';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingContinueAsGuest => 'ゲストとして続行';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingRestore => '復元する';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingRestoreDesc => 'すでにサブスクリプションをお持ちですか?復元するにはここをタップしてください。';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingExit => '出口';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingPersonalizationTitle => 'あなたを知りましょう';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingPersonalizationDesc =>
+      'これは、あなたの提案をパーソナライズし、ショッピングをよりスマートにするために使用されます。';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingPersonalizationFoodLabel => '好きな食べ物は何ですか？';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingPersonalizationFoodHint => '例えばピザ、寿司、ラザニア...';
 
   @override
-  String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+  String get onboardingPersonalizationCta => '続く';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get onboardingPersonalizationSkip => '今のところスキップしてください';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get onboardingPersonalizationFoodRequired => '続けて好きな食べ物を教えてください';
+
+  @override
+  String get settingsDefaultScreen => 'デフォルトのホーム画面';
+
+  @override
+  String get settingsDefaultScreenSubtitle => '買い物リストかAIチャットのどちらかを選択';
+
+  @override
+  String get settingsScreenList => '買い物リスト';
+
+  @override
+  String get settingsScreenChat => 'AIチャット';
 
   @override
   String loginError(String error) {
@@ -1053,106 +1059,103 @@ class AppLocalizationsJa extends AppLocalizations {
   String get feedbackSettingsSubtitle => 'バグの報告、改善の提案、翻訳の修正';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AIエネルギー';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => '会話内で検索...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'メッセージが見つかりませんでした';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => '推奨される質問:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'ショッピングアシスタント';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total中$purchasedを購入しました';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => '推定';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'アイテムを見る';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'リストに項目がありません';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      '長い歴史: アシスタントはパフォーマンスを向上させるために最新のメッセージに焦点を当てます。';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'リスニング...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'リストに直接追加';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => '完全な応答のロックを解除する';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'スイッチリスト';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'マーケットモード';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'チャットに戻る';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'ショッピングを終了する';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI アシスタントへようこそ';
 
   @override
-  String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+  String get createListToStartAi => 'スマート チャットの使用を開始するには、買い物リストを作成します。';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'どうすれば助けられますか?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => '価格、レシピ、構成について質問してください...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total を購入しました';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'クイック返信:';
 
   @override
-  String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+  String get voiceProFeature => '高度な音声コマンドは Pro です。基本的なディクテーションを有効にしています...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'プロを見る';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'おっと！チャットの読み込み中に問題が発生しました。';
 
   @override
-  String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+  String get errorLoadingChatSubtitle => '接続を確認するか、後でもう一度試してください。';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'これは、ネットワークの不安定または一時的な利用不能によって発生する可能性があります。もう一度試してください。';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'アクティブリスニング';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'このアイテムを使って何をしたいですか?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => '詳細を見る';
 
   @override
   String get openMenu => 'メニューを開く';
@@ -1394,21 +1397,21 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'リストに招待する';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'アプリを共有する';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => '友達を招待して Lista Plus を使用する';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Lista Plusを使って買い物を整理しています！私のリンクからダウンロードすると、二人とも 7 日間無料で Premium を利用できます: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Lista Plusプレミアムを7日間プレゼント！';
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -1447,6 +1450,9 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get copy => 'コピー';
+
+  @override
+  String get next => '次';
 
   @override
   String get retry => '再試行';
@@ -1679,10 +1685,10 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get language => '言語';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'ポルトガル語 (ブラジル)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => '英語';
 
   @override
   String get languageSystem => 'システムデフォルト';
@@ -1692,6 +1698,15 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get searchLanguage => '言語を検索...';
+
+  @override
+  String get currency => '通貨';
+
+  @override
+  String get chooseCurrency => '通貨の選択';
+
+  @override
+  String get searchCurrency => '通貨を検索...';
 
   @override
   String get appearance => '外観';
@@ -1713,6 +1728,9 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get dynamicColorsSubtitle => '壁紙に基づいた色を使用する';
+
+  @override
+  String get dynamicColorsEnabledWarning => 'テーマカラーを有効にするには動的カラーを無効にします';
 
   @override
   String get finance => '財務';
@@ -1952,6 +1970,18 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get generalAssistant => '一般アシスタント';
 
   @override
+  String get newChat => '新しいチャット';
+
+  @override
+  String get noHistory => 'チャット履歴がありません';
+
+  @override
+  String get deleteSession => 'チャットの削除';
+
+  @override
+  String get deleteSessionConfirm => 'このチャットを削除してもよろしいですか?メッセージは永久に失われます。';
+
+  @override
   String get clearHistory => '履歴をクリア';
 
   @override
@@ -1992,6 +2022,100 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get continueAsGuest => 'ゲストとして続ける';
+
+  @override
+  String get onboardingWelcomeTitle => 'Lista Plusへようこそ';
+
+  @override
+  String get onboardingWelcomeDesc => '買い物を整理してお金を節約する最も賢い方法。';
+
+  @override
+  String get onboardingSetupTitle => 'エクスペリエンスをパーソナライズする';
+
+  @override
+  String get onboardingSetupDesc => 'Lista Plus の外観と機能を選択してください。';
+
+  @override
+  String get onboardingLoginTitle => 'すべてをクラウドに保存';
+
+  @override
+  String get onboardingLoginDesc => 'データはすべてのデバイス間で同期されます';
+
+  @override
+  String get onboardingShareTitle => '愛する人と共有しましょう';
+
+  @override
+  String get onboardingShareDesc => 'リストを家族や友人とリアルタイムで同期';
+
+  @override
+  String get onboardingPremiumTitle => 'すべての機能のロックを解除する';
+
+  @override
+  String get onboardingPremiumSubtitle => 'ショッピングリストを最大限に活用しましょう';
+
+  @override
+  String get onboardingAnnualBadge => 'ベストバリュー';
+
+  @override
+  String get onboardingMonthlyLabel => '毎月';
+
+  @override
+  String get onboardingAnnualLabel => '年間';
+
+  @override
+  String get onboardingViewAllPlans => 'すべてのプランを見る';
+
+  @override
+  String get onboardingSubscribeCta => '購読する';
+
+  @override
+  String get onboardingCancelAnytime => 'いつでもキャンセルできます。約束はありません。';
+
+  @override
+  String get onboardingContinueAsGuest => 'ゲストとして続行';
+
+  @override
+  String get onboardingRestore => '復元する';
+
+  @override
+  String get onboardingRestoreDesc => 'すでにサブスクリプションをお持ちですか?復元するにはここをタップしてください。';
+
+  @override
+  String get onboardingExit => '出口';
+
+  @override
+  String get onboardingPersonalizationTitle => 'あなたを知りましょう';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'これは、あなたの提案をパーソナライズし、ショッピングをよりスマートにするために使用されます。';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => '好きな食べ物は何ですか？';
+
+  @override
+  String get onboardingPersonalizationFoodHint => '例えばピザ、寿司、ラザニア...';
+
+  @override
+  String get onboardingPersonalizationCta => '続く';
+
+  @override
+  String get onboardingPersonalizationSkip => '今のところスキップしてください';
+
+  @override
+  String get onboardingPersonalizationFoodRequired => '続けて好きな食べ物を教えてください';
+
+  @override
+  String get settingsDefaultScreen => 'デフォルトのホーム画面';
+
+  @override
+  String get settingsDefaultScreenSubtitle => '買い物リストかAIチャットのどちらかを選択';
+
+  @override
+  String get settingsScreenList => '買い物リスト';
+
+  @override
+  String get settingsScreenChat => 'AIチャット';
 
   @override
   String loginError(String error) {
@@ -2345,106 +2469,103 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get feedbackSettingsSubtitle => 'バグの報告、改善の提案、翻訳の修正';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AIエネルギー';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => '会話内で検索...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'メッセージが見つかりませんでした';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => '推奨される質問:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'ショッピングアシスタント';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total中$purchasedを購入しました';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => '推定';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'アイテムを見る';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'リストに項目がありません';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      '長い歴史: アシスタントはパフォーマンスを向上させるために最新のメッセージに焦点を当てます。';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'リスニング...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'リストに直接追加';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => '完全な応答のロックを解除する';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'スイッチリスト';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'マーケットモード';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'チャットに戻る';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'ショッピングを終了する';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI アシスタントへようこそ';
 
   @override
-  String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+  String get createListToStartAi => 'スマート チャットの使用を開始するには、買い物リストを作成します。';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'どうすれば助けられますか?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => '価格、レシピ、構成について質問してください...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total を購入しました';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'クイック返信:';
 
   @override
-  String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+  String get voiceProFeature => '高度な音声コマンドは Pro です。基本的なディクテーションを有効にしています...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'プロを見る';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'おっと！チャットの読み込み中に問題が発生しました。';
 
   @override
-  String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+  String get errorLoadingChatSubtitle => '接続を確認するか、後でもう一度試してください。';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'これは、ネットワークの不安定または一時的な利用不能によって発生する可能性があります。もう一度試してください。';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'アクティブリスニング';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'このアイテムを使って何をしたいですか?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => '詳細を見る';
 
   @override
   String get openMenu => 'メニューを開く';
@@ -2684,4 +2805,21 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes分';
   }
+
+  @override
+  String get inviteToList => 'リストに招待する';
+
+  @override
+  String get shareApp => 'アプリを共有する';
+
+  @override
+  String get shareAppDescription => '友達を招待して Lista Plus を使用する';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Lista Plusを使って買い物を整理しています！私のリンクからダウンロードすると、二人とも 7 日間無料で Premium を利用できます: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Lista Plusプレミアムを7日間プレゼント！';
 }

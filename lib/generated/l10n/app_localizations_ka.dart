@@ -42,6 +42,9 @@ class AppLocalizationsKa extends AppLocalizations {
   String get copy => 'კოპირება';
 
   @override
+  String get next => 'შემდეგი';
+
+  @override
   String get retry => 'ხელახლა ცდა';
 
   @override
@@ -281,10 +284,10 @@ class AppLocalizationsKa extends AppLocalizations {
   String get language => 'ენა';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'პორტუგალიური (ბრაზილია)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ინგლისური';
 
   @override
   String get languageSystem => 'სისტემის ნაგულისხმევი';
@@ -296,13 +299,13 @@ class AppLocalizationsKa extends AppLocalizations {
   String get searchLanguage => 'ენის ძებნა...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'ვალუტა';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'აირჩიეთ ვალუტა';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'მოძებნეთ ვალუტა...';
 
   @override
   String get appearance => 'გარეგნობა';
@@ -327,7 +330,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'გამორთეთ დინამიური ფერები თემის ფერის მოქმედებისთვის';
 
   @override
   String get finance => 'ფინანსები';
@@ -569,17 +572,17 @@ class AppLocalizationsKa extends AppLocalizations {
   String get generalAssistant => 'ზოგადი ასისტენტი';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'ახალი ჩატი';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'არ არის ჩატის ისტორია';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'ჩატის წაშლა';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'დარწმუნებული ხართ, რომ გსურთ ამ ჩატის წაშლა? შეტყობინებები სამუდამოდ დაიკარგება.';
 
   @override
   String get clearHistory => 'ისტორიის გასუფთავება';
@@ -625,93 +628,109 @@ class AppLocalizationsKa extends AppLocalizations {
   String get continueAsGuest => 'სტუმრად გაგრძელება';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle =>
+      'კეთილი იყოს თქვენი მობრძანება Lista Plus-ში';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'თქვენი შოპინგის ორგანიზებისა და ფულის დაზოგვის ყველაზე ჭკვიანი გზა.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'თქვენი გამოცდილების პერსონალიზაცია';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'აირჩიეთ, როგორ გსურთ Lista Plus-მა გამოიყურებოდეს და იმუშაოს თქვენთვის.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'შეინახეთ ყველაფერი ღრუბელში';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'თქვენი მონაცემები სინქრონიზებულია ყველა თქვენს მოწყობილობაზე';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'გაუზიარე მათ, ვინც გიყვარს';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'სიების სინქრონიზაცია ოჯახთან და მეგობრებთან რეალურ დროში';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'განბლოკეთ ყველა ფუნქცია';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'მიიღეთ მაქსიმუმი თქვენი სავაჭრო სიებიდან';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'საუკეთესო ღირებულება';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'ყოველთვიური';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'წლიური';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'იხილეთ ყველა გეგმა';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'გამოწერა';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'განაგრძეთ სტუმრად';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'აღდგენა';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'უკვე გაქვთ გამოწერა? შეეხეთ აქ მის აღსადგენად.';
+
+  @override
+  String get onboardingExit => 'გასვლა';
+
+  @override
+  String get onboardingPersonalizationTitle => 'მოდით გაგიცნოთ';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'ჩვენ ამას გამოვიყენებთ თქვენი წინადადებების პერსონალიზებისთვის და შოპინგი უფრო გონივრული რომ გავხადოთ.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'რომელია თქვენი საყვარელი საჭმელი?';
+
+  @override
+  String get onboardingPersonalizationFoodHint => 'მაგ. პიცა, სუში, ლაზანია...';
+
+  @override
+  String get onboardingPersonalizationCta => 'განაგრძეთ';
+
+  @override
+  String get onboardingPersonalizationSkip => 'ახლა გამოტოვეთ';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'გვითხარით თქვენი საყვარელი საკვები გასაგრძელებლად';
+
+  @override
+  String get settingsDefaultScreen => 'ნაგულისხმევი საწყისი ეკრანი';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'აირჩიეთ საყიდლების სიას ან AI ჩატს შორის';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'სავაჭრო სია';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI ჩატი';
 
   @override
   String loginError(String error) {
@@ -1076,106 +1095,107 @@ class AppLocalizationsKa extends AppLocalizations {
       'შეატყობინეთ ხარვეზებს, შემოგვთავაზეთ გაუმჯობესებები ან შეასწორეთ თარგმანები';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI ენერგია';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'საუბარში ძიება...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'შეტყობინებები ვერ მოიძებნა';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'შემოთავაზებული კითხვები:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'სავაჭრო ასისტენტი';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'შეძენილია $purchased $total-დან';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'სავარაუდო';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'ნივთების ნახვა';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'სიაში ელემენტი არ არის';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'ხანგრძლივი ისტორია: ასისტენტი ყურადღებას ამახვილებს უახლეს შეტყობინებებზე უკეთესი მუშაობისთვის.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'მოსმენა...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'პირდაპირ სიაში დამატება';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'განბლოკეთ სრული პასუხი';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'სიის გადართვა';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'ბაზრის რეჟიმი';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'დაბრუნება ჩატში';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'დაასრულეთ შოპინგი';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant =>
+      'კეთილი იყოს თქვენი მობრძანება AI ასისტენტში';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'შექმენით საყიდლების სია, რომ დაიწყოთ ჭკვიანი ჩატის გამოყენება.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'როგორ შემიძლია დახმარება?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'ჰკითხეთ ფასებს, რეცეპტებს, ორგანიზაციას...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total შეძენილი';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'სწრაფი პასუხები:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'გაფართოებული ხმოვანი ბრძანებები არის Pro. ძირითადი კარნახის ჩართვა...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'ნახვა Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'უი! ჩეთის ჩატვირთვისას მოხდა რაღაც შეცდომა.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'შეამოწმეთ თქვენი კავშირი ან სცადეთ მოგვიანებით.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'ეს შეიძლება მოხდეს ქსელის რხევების ან დროებითი მიუწვდომლობის გამო. გთხოვთ, სცადოთ ხელახლა.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'აქტიური მოსმენა';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'რის გაკეთებას ისურვებდით ამ ნივთთან?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'დეტალების ნახვა';
 
   @override
   String get openMenu => 'მენიუს გახსნა';
@@ -1421,21 +1441,22 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'მოიწვიე სიაში';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'აპლიკაციის გაზიარება';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'მოიწვიე მეგობრები, რომ გამოიყენონ Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'მე ვიყენებ Lista Plus-ს ჩემი შოპინგის ორგანიზებისთვის! ჩამოტვირთეთ ჩემი ბმულით და ჩვენ ორივე ვიღებთ 7 დღიან Premium უფასოდ: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'მიიღეთ 7 დღიანი Lista Plus Premium!';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -1474,6 +1495,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get copy => 'კოპირება';
+
+  @override
+  String get next => 'შემდეგი';
 
   @override
   String get retry => 'ხელახლა ცდა';
@@ -1713,10 +1737,10 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get language => 'ენა';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'პორტუგალიური (ბრაზილია)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ინგლისური';
 
   @override
   String get languageSystem => 'სისტემის ნაგულისხმევი';
@@ -1726,6 +1750,15 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get searchLanguage => 'ენის ძებნა...';
+
+  @override
+  String get currency => 'ვალუტა';
+
+  @override
+  String get chooseCurrency => 'აირჩიეთ ვალუტა';
+
+  @override
+  String get searchCurrency => 'მოძებნეთ ვალუტა...';
 
   @override
   String get appearance => 'გარეგნობა';
@@ -1747,6 +1780,10 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get dynamicColorsSubtitle => 'გამოიყენეთ ფერები თქვენი ფონის მიხედვით';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'გამორთეთ დინამიური ფერები თემის ფერის მოქმედებისთვის';
 
   @override
   String get finance => 'ფინანსები';
@@ -1988,6 +2025,19 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get generalAssistant => 'ზოგადი ასისტენტი';
 
   @override
+  String get newChat => 'ახალი ჩატი';
+
+  @override
+  String get noHistory => 'არ არის ჩატის ისტორია';
+
+  @override
+  String get deleteSession => 'ჩატის წაშლა';
+
+  @override
+  String get deleteSessionConfirm =>
+      'დარწმუნებული ხართ, რომ გსურთ ამ ჩატის წაშლა? შეტყობინებები სამუდამოდ დაიკარგება.';
+
+  @override
   String get clearHistory => 'ისტორიის გასუფთავება';
 
   @override
@@ -2029,6 +2079,111 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get continueAsGuest => 'სტუმრად გაგრძელება';
+
+  @override
+  String get onboardingWelcomeTitle =>
+      'კეთილი იყოს თქვენი მობრძანება Lista Plus-ში';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'თქვენი შოპინგის ორგანიზებისა და ფულის დაზოგვის ყველაზე ჭკვიანი გზა.';
+
+  @override
+  String get onboardingSetupTitle => 'თქვენი გამოცდილების პერსონალიზაცია';
+
+  @override
+  String get onboardingSetupDesc =>
+      'აირჩიეთ, როგორ გსურთ Lista Plus-მა გამოიყურებოდეს და იმუშაოს თქვენთვის.';
+
+  @override
+  String get onboardingLoginTitle => 'შეინახეთ ყველაფერი ღრუბელში';
+
+  @override
+  String get onboardingLoginDesc =>
+      'თქვენი მონაცემები სინქრონიზებულია ყველა თქვენს მოწყობილობაზე';
+
+  @override
+  String get onboardingShareTitle => 'გაუზიარე მათ, ვინც გიყვარს';
+
+  @override
+  String get onboardingShareDesc =>
+      'სიების სინქრონიზაცია ოჯახთან და მეგობრებთან რეალურ დროში';
+
+  @override
+  String get onboardingPremiumTitle => 'განბლოკეთ ყველა ფუნქცია';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'მიიღეთ მაქსიმუმი თქვენი სავაჭრო სიებიდან';
+
+  @override
+  String get onboardingAnnualBadge => 'საუკეთესო ღირებულება';
+
+  @override
+  String get onboardingMonthlyLabel => 'ყოველთვიური';
+
+  @override
+  String get onboardingAnnualLabel => 'წლიური';
+
+  @override
+  String get onboardingViewAllPlans => 'იხილეთ ყველა გეგმა';
+
+  @override
+  String get onboardingSubscribeCta => 'გამოწერა';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.';
+
+  @override
+  String get onboardingContinueAsGuest => 'განაგრძეთ სტუმრად';
+
+  @override
+  String get onboardingRestore => 'აღდგენა';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'უკვე გაქვთ გამოწერა? შეეხეთ აქ მის აღსადგენად.';
+
+  @override
+  String get onboardingExit => 'გასვლა';
+
+  @override
+  String get onboardingPersonalizationTitle => 'მოდით გაგიცნოთ';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'ჩვენ ამას გამოვიყენებთ თქვენი წინადადებების პერსონალიზებისთვის და შოპინგი უფრო გონივრული რომ გავხადოთ.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'რომელია თქვენი საყვარელი საჭმელი?';
+
+  @override
+  String get onboardingPersonalizationFoodHint => 'მაგ. პიცა, სუში, ლაზანია...';
+
+  @override
+  String get onboardingPersonalizationCta => 'განაგრძეთ';
+
+  @override
+  String get onboardingPersonalizationSkip => 'ახლა გამოტოვეთ';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'გვითხარით თქვენი საყვარელი საკვები გასაგრძელებლად';
+
+  @override
+  String get settingsDefaultScreen => 'ნაგულისხმევი საწყისი ეკრანი';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'აირჩიეთ საყიდლების სიას ან AI ჩატს შორის';
+
+  @override
+  String get settingsScreenList => 'სავაჭრო სია';
+
+  @override
+  String get settingsScreenChat => 'AI ჩატი';
 
   @override
   String loginError(String error) {
@@ -2393,106 +2548,107 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
       'შეატყობინეთ ხარვეზებს, შემოგვთავაზეთ გაუმჯობესებები ან შეასწორეთ თარგმანები';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI ენერგია';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'საუბარში ძიება...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'შეტყობინებები ვერ მოიძებნა';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'შემოთავაზებული კითხვები:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'სავაჭრო ასისტენტი';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'შეძენილია $purchased $total-დან';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'სავარაუდო';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'ნივთების ნახვა';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'სიაში ელემენტი არ არის';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'ხანგრძლივი ისტორია: ასისტენტი ყურადღებას ამახვილებს უახლეს შეტყობინებებზე უკეთესი მუშაობისთვის.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'მოსმენა...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'პირდაპირ სიაში დამატება';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'განბლოკეთ სრული პასუხი';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'სიის გადართვა';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'ბაზრის რეჟიმი';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'დაბრუნება ჩატში';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'დაასრულეთ შოპინგი';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant =>
+      'კეთილი იყოს თქვენი მობრძანება AI ასისტენტში';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'შექმენით საყიდლების სია, რომ დაიწყოთ ჭკვიანი ჩატის გამოყენება.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'როგორ შემიძლია დახმარება?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'ჰკითხეთ ფასებს, რეცეპტებს, ორგანიზაციას...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total შეძენილი';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'სწრაფი პასუხები:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'გაფართოებული ხმოვანი ბრძანებები არის Pro. ძირითადი კარნახის ჩართვა...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'ნახვა Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'უი! ჩეთის ჩატვირთვისას მოხდა რაღაც შეცდომა.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'შეამოწმეთ თქვენი კავშირი ან სცადეთ მოგვიანებით.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'ეს შეიძლება მოხდეს ქსელის რხევების ან დროებითი მიუწვდომლობის გამო. გთხოვთ, სცადოთ ხელახლა.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'აქტიური მოსმენა';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'რის გაკეთებას ისურვებდით ამ ნივთთან?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'დეტალების ნახვა';
 
   @override
   String get openMenu => 'მენიუს გახსნა';
@@ -2736,4 +2892,22 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes წთ';
   }
+
+  @override
+  String get inviteToList => 'მოიწვიე სიაში';
+
+  @override
+  String get shareApp => 'აპლიკაციის გაზიარება';
+
+  @override
+  String get shareAppDescription =>
+      'მოიწვიე მეგობრები, რომ გამოიყენონ Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'მე ვიყენებ Lista Plus-ს ჩემი შოპინგის ორგანიზებისთვის! ჩამოტვირთეთ ჩემი ბმულით და ჩვენ ორივე ვიღებთ 7 დღიან Premium უფასოდ: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'მიიღეთ 7 დღიანი Lista Plus Premium!';
 }

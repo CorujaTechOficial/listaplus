@@ -1,101 +1,73 @@
 {
   "@@locale": "vi",
-  "appTitle": "Danh sách mua sắm",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Danh sách",
-  "pantry": "Phòng đựng thức ăn",
-  "@_Common": "description: Common actions",
-  "cancel": "Hủy",
-  "save": "Lưu",
-  "create": "Tạo",
-  "add": "Thêm",
-  "remove": "Xóa",
-  "delete": "Xóa",
-  "edit": "Sửa",
-  "copy": "Sao chép",
-  "retry": "Thử lại",
-  "regenerate": "Tạo lại",
-  "copiedToClipboard": "Đã sao chép vào clipboard",
-  "confirm": "Xác nhận",
-  "close": "Đóng",
-  "import": "Nhập",
-  "rename": "Đổi tên",
-  "upgrade": "Nâng cấp",
-  "clear": "Xóa",
-  "error": "Lỗi: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Lỗi: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Lỗi khi xử lý giao dịch. Vui lòng thử lại.",
-  "restoreError": "Lỗi khi khôi phục giao dịch. Vui lòng thử lại.",
-  "loading": "Đang tải...",
-  "fieldRequired": "Trường bắt buộc",
-  "addedFeedback": "Đã thêm!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "Đã chọn {count}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Ước tính",
-  "alreadyPurchased": "Đã mua",
-  "clearList": "Xóa danh sách",
-  "clearPurchased": "Xóa đã mua",
-  "share": "Chia sẻ",
-  "shareViaCode": "Chia sẻ qua mã",
-  "importViaCode": "Nhập qua mã",
-  "listAssistant": "Trợ lý danh sách",
-  "globalAssistant": "Trợ lý chung",
-  "becomePremium": "Trở thành Premium",
-  "manageSubscription": "Quản lý đăng ký",
-  "completePurchase": "Hoàn tất mua hàng",
-  "confirmClearList": "Xóa tất cả mục?",
-  "shareListTitle": "Chia sẻ danh sách",
-  "shareThisCode": "Chia sẻ mã này:",
-  "validForLimitedTime": "Có hiệu lực trong thời gian giới hạn",
-  "importListTitle": "Nhập danh sách",
-  "enterCodeHint": "Nhập mã",
-  "confirmArchiveTitle": "Hoàn tất mua hàng",
-  "confirmArchiveContent": "Hoàn tất giao dịch này và lưu trữ danh sách?",
-  "complete": "Hoàn tất",
-  "listArchived": "Đã lưu trữ danh sách thành công!",
-  "listAdded": "Đã thêm {listName}!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Mua",
-  "unmark": "Bỏ đánh dấu",
-  "confirmDeleteItems": "Xóa {count} mục?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Xác nhận",
-  "confirmContent": "Xóa {count} mục?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Lưu trữ danh sách",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Phòng đựng thức ăn",
-  "generateShoppingList": "Tạo danh sách mua sắm",
-  "pantryEmpty": "Phòng đựng thức ăn trống",
-  "pantryEmptySubtitle": "Thêm sản phẩm bạn muốn có ở nhà",
-  "itemsNeedPurchase": "Cần mua {deficit} mục",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Không có mục nào cần mua",
-  "newPantryList": "Mua sắm từ phòng đựng thức ăn",
-  "newListTitle": "Danh sách mua sắm mới",
-  "itemsWillBeAdded": "Sẽ thêm {count} mục",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Tên danh sách",
-  "listCreated": "Danh sách \"{name}\" đã được tạo với {count} mục",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Không theo dõi",
-  "markAsPurchased": "Đánh dấu đã mua",
-  "editPantryItem": "Sửa {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Số lượng lý tưởng",
-  "currentQuantity": "Số lượng hiện tại",
-  "consumed": "Đã tiêu thụ",
-  "restocked": "Đã bổ sung {name} lên {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Xóa \"{name}\" khỏi phòng đựng thức ăn?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Sửa {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Cài đặt",
-  "language": "Ngôn ngữ",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Mặc định hệ thống",
-  "appearance": "Giao diện",
-  "light": "Sáng",
-  "system": "Hệ thống",
-  "dark": "Tối",
-  "themeColor": "Màu chủ đề",
-  "finance": "Tài chính",
-  "monthlyBudgetNav": "Ngân sách hàng tháng",
-  "budgetSubtitle": "Theo dõi chi tiêu hàng tháng của bạn",
-  "data": "Dữ liệu",
-  "backupNav": "Sao lưu",
-  "backupSubtitle": "Xuất hoặc nhập dữ liệu của bạn",
-  "about": "Giới thiệu",
-  "version": "Phiên bản",
-  "privacy": "Quyền riêng tư",
-  "termsOfUse": "Điều khoản sử dụng",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Sao lưu",
-  "backupPremiumDescription": "Sao lưu và xuất dữ liệu là tính năng cao cấp",
-  "exportData": "Xuất dữ liệu",
-  "exportDataSubtitle": "Lưu tất cả danh sách dưới dạng JSON",
-  "importData": "Nhập dữ liệu",
-  "importDataSubtitle": "Khôi phục danh sách từ JSON",
-  "importJsonTitle": "Nhập JSON",
-  "importJsonHint": "Dán JSON sao lưu vào đây...",
-  "backupExported": "Đã xuất bản sao lưu!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Ngân sách hàng tháng",
-  "budgetPremiumLocked": "Ngân sách hàng tháng tổng thể là tính năng cao cấp",
-  "budgetUpgradePrompt": "Nâng cấp để mở khóa",
-  "noBudgetDefined": "Chưa đặt ngân sách",
-  "totalEstimated": "Tổng ước tính: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Đặt ngân sách",
-  "budgetLists": "Danh sách",
-  "budgetValueLabel": "Số tiền",
-  "setBudgetTitle": "Ngân sách hàng tháng",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Tất cả",
-  "filterPending": "Đang chờ",
-  "filterPurchased": "Đã mua",
-  "sortName": "Tên",
-  "sortCategory": "Danh mục",
-  "sortDate": "Ngày",
-  "sortManual": "Thủ công",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Giới thiệu",
+  "achievements": "Thành tích",
+  "activeListening": "Lắng nghe tích cực",
+  "add": "Thêm",
+  "addAllToList": "Thêm tất cả vào danh sách",
+  "addDirectToList": "Thêm trực tiếp vào danh sách",
+  "addIngredient": "Thêm thành phần",
   "addItem": "Thêm mục",
-  "itemName": "Tên mục",
-  "quantityShort": "SL",
-  "unit": "Đơn vị",
-  "category": "Danh mục",
-  "estimatedPrice": "Giá ước tính",
   "addItemPrice": "Giá ước tính",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Sửa mục",
-  "quantityFull": "Số lượng",
-  "editItemPrice": "Giá ước tính",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Thêm ảnh",
   "addToPantry": "Thêm vào phòng đựng thức ăn",
   "addToPantryPrompt": "Thêm \"{name}\" vào phòng đựng thức ăn?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Có",
-  "productName": "Tên sản phẩm",
-  "idealQty": "SL lý tưởng",
-  "currentQty": "SL hiện tại",
-  "trackStock": "Theo dõi tồn kho",
-  "trackStockActive": "Xuất hiện trong gợi ý mua sắm",
-  "trackStockInactive": "Không tạo gợi ý mua sắm",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Tạo danh sách",
-  "renameListDialog": "Đổi tên danh sách",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Lịch sử danh sách",
-  "myLists": "Danh sách của tôi",
-  "viewActive": "Xem đang hoạt động",
-  "viewHistory": "Xem lịch sử",
-  "noArchivedLists": "Không có danh sách đã lưu trữ",
-  "noActiveLists": "Không có danh sách đang hoạt động",
-  "completedOn": "Hoàn thành vào {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Đã chia sẻ",
-  "restore": "Khôi phục",
-  "removeSharedTooltip": "Xóa",
-  "deleteListTitle": "Xóa danh sách",
-  "deleteListContent": "Bạn có chắc chắn muốn xóa \"{name}\"? Tất cả mục sẽ bị xóa.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Xóa danh sách đã chia sẻ",
-  "removeSharedListContent": "Xóa \"{name}\" khỏi danh sách của bạn? Danh sách gốc sẽ không bị ảnh hưởng.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Tạo danh sách mới",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Đã thêm!",
+  "advancedFeatures": "Tính năng nâng cao",
   "aiAssistant": "Trợ lý AI",
   "aiAssistantDescription": "Nhận đề xuất thông minh, công thức nấu ăn và mẹo cá nhân hóa với trợ lý AI của chúng tôi.",
-  "generalAssistant": "Trợ lý chung",
+  "aiCreditsRemaining": "Còn {remaining} tín dụng",
+  "aiEnergy": "Năng lượng AI",
+  "aiError": "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu của bạn. Kiểm tra kết nối hoặc thử lại sau.",
+  "aiVoiceCommandTooltip": "Lệnh thoại AI (Cao cấp)",
+  "allTags": "Tất cả",
+  "alreadyPurchased": "Đã mua",
+  "appTitle": "Danh sách mua sắm",
+  "appearance": "Giao diện",
+  "archiveList": "Lưu trữ danh sách",
+  "backToChat": "Quay lại Trò chuyện",
+  "backupExported": "Đã xuất bản sao lưu!",
+  "backupNav": "Sao lưu",
+  "backupPremiumDescription": "Sao lưu và xuất dữ liệu là tính năng cao cấp",
+  "backupSubtitle": "Xuất hoặc nhập dữ liệu của bạn",
+  "backupTitle": "Sao lưu",
+  "becomePremium": "Trở thành Premium",
+  "budgetAmountLabel": "Số tiền ngân sách",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Ngân sách hàng tháng",
+  "budgetDashboardTitle": "Bảng điều khiển",
+  "budgetEditTitle": "Ngân sách hàng tháng",
+  "budgetLists": "Danh sách",
+  "budgetPremiumLocked": "Ngân sách hàng tháng tổng thể là tính năng cao cấp",
+  "budgetSubtitle": "Theo dõi chi tiêu hàng tháng của bạn",
+  "budgetUpgradePrompt": "Nâng cấp để mở khóa",
+  "budgetValueLabel": "Số tiền",
+  "buy": "Mua",
+  "cancel": "Hủy",
+  "cartTotal": "Tổng giỏ hàng",
+  "catBakery": "Bánh mì",
+  "catBeverages": "Đồ uống",
+  "catCleaning": "Vệ sinh",
+  "catFruits": "Trái cây",
+  "catOthers": "Khác",
+  "category": "Danh mục",
+  "chatError": "Lỗi khi tải trò chuyện: {error}",
+  "chatHint": "Nhập tin nhắn của bạn...",
+  "chatSubtitle": "Yêu cầu đề xuất mục, công thức nấu ăn hoặc mẹo tiết kiệm.",
+  "chatSubtitleShort": "Hỏi về giá cả, công thức nấu ăn, cách tổ chức...",
+  "chooseCurrency": "Chọn tiền tệ",
+  "chooseImageSource": "Chọn nguồn hình ảnh",
+  "chooseLanguage": "Chọn ngôn ngữ",
+  "clear": "Xóa",
   "clearHistory": "Xóa lịch sử",
   "clearHistoryConfirm": "Xóa tất cả tin nhắn trong phiên này?",
-  "chatHint": "Nhập tin nhắn của bạn...",
-  "chatError": "Lỗi khi tải trò chuyện: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Tôi có thể giúp gì với danh sách của bạn?",
-  "generalHelp": "Hôm nay tôi có thể giúp gì cho việc mua sắm của bạn?",
-  "chatSubtitle": "Yêu cầu đề xuất mục, công thức nấu ăn hoặc mẹo tiết kiệm.",
-  "aiError": "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu của bạn. Kiểm tra kết nối hoặc thử lại sau.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Đăng nhập để mở khóa\ntính năng cao cấp",
-  "signInGoogle": "Đăng nhập bằng Google",
-  "signInApple": "Đăng nhập bằng Apple",
+  "clearList": "Xóa danh sách",
+  "clearPurchased": "Xóa đã mua",
+  "close": "Đóng",
+  "complete": "Hoàn tất",
+  "completePurchase": "Hoàn tất mua hàng",
+  "completedOn": "Hoàn thành vào {date}",
+  "confirm": "Xác nhận",
+  "confirmArchiveContent": "Hoàn tất giao dịch này và lưu trữ danh sách?",
+  "confirmArchiveTitle": "Hoàn tất mua hàng",
+  "confirmClearList": "Xóa tất cả mục?",
+  "confirmContent": "Xóa {count} mục?",
+  "confirmDeleteItems": "Xóa {count} mục?",
+  "confirmDeleteTitle": "Xác nhận",
+  "confirmRemovePantry": "Xóa \"{name}\" khỏi phòng đựng thức ăn?",
+  "consumed": "Đã tiêu thụ",
   "continueAsGuest": "Tiếp tục với tư cách khách",
-  "loginError": "Lỗi đăng nhập: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Nâng cấp để mở khóa",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Đã xóa mục",
-  "undo": "Hoàn tác",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Danh sách của bạn trống",
-  "emptyListSubtitle": "Thêm mục để bắt đầu",
-  "noListFoundTitle": "Không tìm thấy danh sách",
-  "noListFoundSubtitle": "Tạo danh sách đầu tiên của bạn để bắt đầu",
+  "copiedToClipboard": "Đã sao chép vào clipboard",
+  "copy": "Sao chép",
+  "create": "Tạo",
   "createFirstList": "Tạo danh sách đầu tiên",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Ngân sách danh sách",
-  "budgetAmountLabel": "Số tiền ngân sách",
-  "removeBudget": "Xóa",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Danh sách không giới hạn",
-  "prefSharing": "Chia sẻ danh sách",
-  "prefFullHistory": "Lịch sử đầy đủ",
-  "prefExportData": "Xuất dữ liệu",
-  "prefCustomThemes": "Chủ đề tùy chỉnh",
-  "prefMonthlyBudget": "Ngân sách hàng tháng tổng thể",
-  "prefAIAssistant": "Trợ lý AI cá nhân",
-  "prefUnlimitedPantry": "Phòng đựng thức ăn không giới hạn",
-  "prefInteractiveArtifacts": "Tạo phẩm AI tương tác",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Xanh lá",
-  "themeBlue": "Xanh dương",
-  "themePurple": "Tím",
-  "themeRed": "Đỏ",
-  "themeOrange": "Cam",
-  "themePink": "Hồng",
-  "themeIndigo": "Chàm",
-  "themeAmber": "Hổ phách",
-  "themeTeal": "Xanh mòng két",
-  "themeBrown": "Nâu",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Trái cây",
-  "catCleaning": "Vệ sinh",
-  "catBeverages": "Đồ uống",
-  "catBakery": "Bánh mì",
-  "catOthers": "Khác",
-  "@_Unit": "description: Unit",
-  "unitPack": "gói",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Danh sách mua sắm",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Ngân sách hàng tháng",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Xóa danh sách",
-  "pantryItemRemoved": "Đã xóa mục",
+  "createListDialog": "Tạo danh sách",
+  "createListToStartAi": "Tạo danh sách mua sắm để bắt đầu sử dụng tính năng trò chuyện thông minh.",
+  "createNewList": "Tạo danh sách mới",
+  "currency": "Tiền tệ",
+  "currentQty": "SL hiện tại",
+  "currentQuantity": "Số lượng hiện tại",
+  "dark": "Tối",
+  "data": "Dữ liệu",
   "deficitItems": "Cần mua {deficit} mục",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Tổng giỏ hàng",
-  "restockLabel": "Bổ sung",
-  "advancedFeatures": "Tính năng nâng cao",
-  "selectAll": "Chọn tất cả",
+  "delete": "Xóa",
+  "deleteListConfirm": "Xóa danh sách",
+  "deleteListContent": "Bạn có chắc chắn muốn xóa \"{name}\"? Tất cả mục sẽ bị xóa.",
+  "deleteListTitle": "Xóa danh sách",
+  "deleteRecipe": "Xóa bỏ",
+  "deleteRecipeConfirm": "Xóa công thức này?",
+  "deleteRecipeConfirmMsg": "Bạn có chắc chắn muốn xóa \"{recipeName}\" không? Không thể hoàn tác hành động này.",
+  "deleteSession": "Xóa cuộc trò chuyện",
+  "deleteSessionConfirm": "Bạn có chắc chắn muốn xóa cuộc trò chuyện này không? Các tin nhắn sẽ bị mất vĩnh viễn.",
   "deselectAll": "Bỏ chọn tất cả",
-  "monthlyBudgetAppBar": "Ngân sách hàng tháng",
-  "budgetEditTitle": "Ngân sách hàng tháng",
-  "budgetDashboardTitle": "Bảng điều khiển",
-  "selectListForDashboard": "Chọn một danh sách để xem bảng điều khiển.",
-  "spendingAnalysis": "Phân tích chi tiêu",
-  "noItemsToAnalyze": "Không có mục nào trong danh sách để phân tích.",
-  "markItemsToSeeAnalysis": "Đánh dấu mục đã mua để xem phân tích.",
-  "totalSpending": "Tổng chi tiêu",
-  "spendingByCategory": "Chi tiêu theo danh mục",
-  "achievements": "Thành tích",
-  "exportPdfExcel": "Xuất PDF/Excel",
-  "exportPdf": "Xuất dưới dạng PDF",
-  "exportExcel": "Xuất dưới dạng Excel",
-  "organizingAi": "ĐANG SẮP XẾP VỚI AI...",
-  "yesLabel": "Có",
-  "noLabel": "Không",
-  "shareListText": "Danh sách mua sắm của tôi",
-  "emptyListAddItems": "Danh sách của bạn trống! Vui lòng thêm mục trước. ℹ️",
-  "listOrganizedMagic": "Danh sách đã được sắp xếp kỳ diệu theo danh mục! ✨",
-  "shoppingMode": "Chế độ mua sắm",
-  "smartOrganization": "Sắp xếp thông minh",
-  "savings": "Tiết kiệm",
-  "shoppingModeHeader": "CHẾ ĐỘ MUA SẮM",
-  "shareAsText": "Gửi mục dưới dạng văn bản đã định dạng",
-  "shareRealtime": "Đồng bộ thời gian thực với người khác",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Công thức nhanh",
-  "quickRecipePrompt": "Đề xuất công thức nấu ăn với các mục từ danh sách của tôi.",
+  "dynamicColors": "Màu sắc năng động",
+  "dynamicColorsEnabledWarning": "Tắt màu động để màu chủ đề có hiệu lực",
+  "dynamicColorsSubtitle": "Sử dụng màu sắc dựa trên hình nền của bạn",
   "economyTips": "Mẹo tiết kiệm",
   "economyTipsPrompt": "Làm thế nào tôi có thể tiết kiệm tiền cho lần mua này?",
-  "organizeAisles": "Sắp xếp theo lối đi",
-  "organizeAislesPrompt": "Sắp xếp theo lối đi trong siêu thị.",
-  "recipeSuggestion": "Gợi ý công thức",
-  "aiCreditsRemaining": "Còn {remaining} tín dụng",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Thêm tất cả vào danh sách",
-  "organizeByAisles": "Sắp xếp theo lối đi",
-  "voiceTranscriptionTooltip": "Nhập liệu bằng giọng nói (Miễn phí)",
-  "aiVoiceCommandTooltip": "Lệnh thoại AI (Cao cấp)",
-  "voiceCommandTitle": "Lệnh thoại AI",
-  "voiceCommandContent": "Nói tự nhiên để quản lý danh sách của bạn!\n\nVí dụ:\n• 'Thêm bánh mì, phô mai và giăm bông'\n• 'Xóa bột giặt'\n• 'Đổi chủ đề thành xanh dương'\n\nĐây là tính năng độc quyền của Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Xem gói",
-  "itemsAddedSuccess": "Đã thêm mục vào danh sách thành công!",
-  "viewList": "Xem danh sách",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Gửi phản hồi",
+  "edit": "Sửa",
+  "editItem": "Sửa mục",
+  "editItemPrice": "Giá ước tính",
+  "editPantryItem": "Sửa {name}",
+  "editRecipe": "Biên tập",
+  "editRecipeTitle": "Chỉnh sửa công thức",
+  "emptyListAddItems": "Danh sách của bạn trống! Vui lòng thêm mục trước. ℹ️",
+  "emptyListSubtitle": "Thêm mục để bắt đầu",
+  "emptyListTitle": "Danh sách của bạn trống",
+  "enterCodeHint": "Nhập mã",
+  "enterUrl": "Nhập URL",
+  "error": "Lỗi: {message}",
+  "errorGeneric": "Lỗi: {message}",
+  "errorLoadingChat": "Ối! Đã xảy ra lỗi khi tải cuộc trò chuyện.",
+  "errorLoadingChatSubtitle": "Hãy kiểm tra kết nối của bạn hoặc thử lại sau.",
+  "errorLoadingRecipes": "Lỗi tải công thức nấu ăn",
+  "errorOscillation": "Điều này có thể xảy ra do dao động mạng hoặc tạm thời không có sẵn. Vui lòng thử lại.",
+  "estimated": "Ước tính",
+  "estimatedCost": "Ước lượng",
+  "estimatedPrice": "Giá ước tính",
+  "exportData": "Xuất dữ liệu",
+  "exportDataSubtitle": "Lưu tất cả danh sách dưới dạng JSON",
+  "exportExcel": "Xuất dưới dạng Excel",
+  "exportPdf": "Xuất dưới dạng PDF",
+  "exportPdfExcel": "Xuất PDF/Excel",
+  "feedbackBack": "Quay lại",
+  "feedbackError": "Lỗi gửi: {error}",
+  "feedbackHint": "Mô tả chi tiết phản hồi của bạn...",
   "feedbackPrompt": "Bạn muốn chia sẻ điều gì?",
+  "feedbackRetry": "Thử lại",
+  "feedbackSend": "Gửi phản hồi",
+  "feedbackSending": "Đang gửi...",
+  "feedbackSettingsSubtitle": "Báo lỗi, đề xuất cải tiến hoặc sửa bản dịch",
+  "feedbackSettingsTitle": "Gửi phản hồi",
+  "feedbackThankYou": "Cảm ơn bạn!",
+  "feedbackThankYouMessage": "Phản hồi của bạn đã được nhận và giúp chúng tôi cải thiện Lista Plus cho mọi người.",
+  "feedbackTitle": "Gửi phản hồi",
   "feedbackTypeBug": "Báo lỗi",
   "feedbackTypeBugHint": "Có điều gì đó không hoạt động",
-  "feedbackTypeSuggestion": "Góp ý",
-  "feedbackTypeSuggestionHint": "Ý tưởng cải thiện ứng dụng",
-  "feedbackTypeTranslation": "Vấn đề bản dịch",
-  "feedbackTypeTranslationHint": "Bản dịch không chính xác hoặc gượng ép",
   "feedbackTypeFeature": "Yêu cầu tính năng",
   "feedbackTypeFeatureHint": "Tính năng bạn muốn thấy",
   "feedbackTypeOther": "Khác",
   "feedbackTypeOtherHint": "Loại phản hồi khác",
-  "feedbackHint": "Mô tả chi tiết phản hồi của bạn...",
-  "feedbackSend": "Gửi phản hồi",
-  "feedbackSending": "Đang gửi...",
-  "feedbackThankYou": "Cảm ơn bạn!",
-  "feedbackThankYouMessage": "Phản hồi của bạn đã được nhận và giúp chúng tôi cải thiện Lista Plus cho mọi người.",
-  "feedbackBack": "Quay lại",
-  "feedbackError": "Lỗi gửi: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Thử lại",
-  "feedbackSettingsTitle": "Gửi phản hồi",
-  "feedbackSettingsSubtitle": "Báo lỗi, đề xuất cải tiến hoặc sửa bản dịch",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Góp ý",
+  "feedbackTypeSuggestionHint": "Ý tưởng cải thiện ứng dụng",
+  "feedbackTypeTranslation": "Vấn đề bản dịch",
+  "feedbackTypeTranslationHint": "Bản dịch không chính xác hoặc gượng ép",
+  "fieldRequired": "Trường bắt buộc",
+  "filterAll": "Tất cả",
+  "filterByTag": "Lọc theo thẻ",
+  "filterPending": "Đang chờ",
+  "filterPurchased": "Đã mua",
+  "finance": "Tài chính",
+  "finishShopping": "Kết thúc mua sắm",
+  "gallery": "Phòng trưng bày",
+  "generalAssistant": "Trợ lý chung",
+  "generalHelp": "Hôm nay tôi có thể giúp gì cho việc mua sắm của bạn?",
+  "generateShoppingList": "Tạo danh sách mua sắm",
+  "globalAssistant": "Trợ lý chung",
+  "howCanIHelp": "Tôi có thể giúp gì?",
+  "idealQty": "SL lý tưởng",
+  "idealQuantity": "Số lượng lý tưởng",
+  "imageUrlPlaceholder": "Hoặc dán URL hình ảnh",
+  "import": "Nhập",
+  "importData": "Nhập dữ liệu",
+  "importDataSubtitle": "Khôi phục danh sách từ JSON",
+  "importJsonHint": "Dán JSON sao lưu vào đây...",
+  "importJsonTitle": "Nhập JSON",
+  "importListTitle": "Nhập danh sách",
+  "importViaCode": "Nhập qua mã",
+  "ingredients": "Thành phần",
+  "instructions": "Hướng dẫn",
+  "instructionsHint": "Nhập một bước trên mỗi dòng...",
+  "inviteToList": "Mời liệt kê",
+  "itemName": "Tên mục",
+  "itemRemoved": "Đã xóa mục",
+  "itemsAddedSuccess": "Đã thêm mục vào danh sách thành công!",
+  "itemsNeedPurchase": "Cần mua {deficit} mục",
+  "itemsPurchasedCount": "{purchased} trong tổng số {total} đã mua",
+  "itemsPurchasedShort": "{purchased}/{total} đã mua",
+  "itemsWillBeAdded": "Sẽ thêm {count} mục",
+  "language": "Ngôn ngữ",
+  "languageEnglish": "Tiếng Anh",
+  "languagePortuguese": "Người Bồ Đào Nha (Brasil)",
+  "languageSystem": "Mặc định hệ thống",
+  "light": "Sáng",
+  "listAdded": "Đã thêm {listName}!",
+  "listArchived": "Đã lưu trữ danh sách thành công!",
+  "listAssistant": "Trợ lý danh sách",
+  "listBudgetTitle": "Ngân sách danh sách",
+  "listCreated": "Danh sách \"{name}\" đã được tạo với {count} mục",
+  "listHelp": "Tôi có thể giúp gì với danh sách của bạn?",
+  "listHistory": "Lịch sử danh sách",
+  "listNameLabel": "Tên danh sách",
+  "listOrganizedMagic": "Danh sách đã được sắp xếp kỳ diệu theo danh mục! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Đang nghe...",
+  "lists": "Danh sách",
+  "loading": "Đang tải...",
+  "loadingRecipes": "Đang tải công thức nấu ăn của bạn...",
+  "loginError": "Lỗi đăng nhập: {error}",
+  "loginPrompt": "Đăng nhập để mở khóa\ntính năng cao cấp",
+  "longHistoryWarning": "Lịch sử lâu dài: trợ lý tập trung vào các tin nhắn mới nhất để có hiệu suất tốt hơn.",
+  "manageSubscription": "Quản lý đăng ký",
+  "markAsPurchased": "Đánh dấu đã mua",
+  "markItemsToSeeAnalysis": "Đánh dấu mục đã mua để xem phân tích.",
+  "marketMode": "Chế độ thị trường",
+  "mealPlannerAddMeal": "Thêm bữa ăn",
+  "mealPlannerDateLabel": "Ngày",
+  "mealPlannerDeleteMeal": "Bỏ bữa ăn",
+  "mealPlannerEditMeal": "Chỉnh sửa bữa ăn",
+  "mealPlannerError": "Lỗi tải kế hoạch bữa ăn",
+  "mealPlannerGenerateList": "Tạo danh sách mua sắm",
+  "mealPlannerGenerateListConfirm": "Thêm tất cả nguyên liệu từ các bữa ăn đã lên kế hoạch trong tuần này vào danh sách mua sắm của bạn?",
+  "mealPlannerGenerateListEmpty": "Không có thành phần để thêm vào. Lên kế hoạch cho một số bữa ăn với công thức nấu ăn trước tiên.",
+  "mealPlannerGenerateListNoList": "Tạo một danh sách mua sắm đầu tiên.",
+  "mealPlannerGenerateListSuccess": "{count} thành phần đã được thêm vào danh sách của bạn!",
+  "mealPlannerLoading": "Đang tải kế hoạch bữa ăn...",
+  "mealPlannerMealDeleted": "Đã bỏ bữa ăn",
+  "mealPlannerMealTypeBreakfast": "Bữa sáng",
+  "mealPlannerMealTypeDinner": "Bữa tối",
+  "mealPlannerMealTypeLunch": "Bữa trưa",
+  "mealPlannerMealTypeSnack": "Đồ ăn vặt",
+  "mealPlannerNoMeals": "Không có kế hoạch bữa ăn",
+  "mealPlannerNoMealsHint": "Nhấn vào một ngày để thêm bữa ăn",
+  "mealPlannerNoRecipesFound": "Không tìm thấy công thức nấu ăn nào",
+  "mealPlannerNoRecipesHint": "Tạo công thức nấu ăn trong tab Công thức nấu ăn trước tiên",
+  "mealPlannerNoteLabel": "Lưu ý (tùy chọn)",
+  "mealPlannerPrepTime": "{minutes} phút",
+  "mealPlannerSave": "Thêm vào kế hoạch",
+  "mealPlannerSearchRecipes": "Tìm kiếm công thức nấu ăn...",
+  "mealPlannerSelectRecipe": "Chọn một công thức",
+  "mealPlannerServings": "{count,plural, one{{count} khẩu phần} other{{count} khẩu phần}}",
+  "mealPlannerServingsLabel": "Khẩu phần",
+  "mealPlannerTitle": "Kế hoạch bữa ăn",
+  "mealPlannerViewMonthly": "Lượt xem hàng tháng",
+  "mealPlannerViewWeekly": "Xem hàng tuần",
+  "mealPlannerWeekEmpty": "Không có kế hoạch gì cho tuần này",
+  "mealPlannerWeekEmptyHint": "Nhấn vào bất kỳ ngày nào để bắt đầu lên kế hoạch cho bữa ăn của bạn!",
+  "mealPlannerWeekProgress": "{count} trong số {total} bữa ăn được lên kế hoạch",
+  "monthlyBudgetAppBar": "Ngân sách hàng tháng",
+  "monthlyBudgetNav": "Ngân sách hàng tháng",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Ngân sách hàng tháng",
+  "myLists": "Danh sách của tôi",
+  "myRecipes": "Bí quyết của tôi",
+  "newChat": "Trò chuyện mới",
+  "newListTitle": "Danh sách mua sắm mới",
+  "newPantryList": "Mua sắm từ phòng đựng thức ăn",
+  "newRecipe": "Công thức mới",
+  "newRecipeTitle": "Công thức mới",
+  "next": "Kế tiếp",
+  "noActiveLists": "Không có danh sách đang hoạt động",
+  "noArchivedLists": "Không có danh sách đã lưu trữ",
+  "noBudgetDefined": "Chưa đặt ngân sách",
+  "noHistory": "Không có lịch sử trò chuyện",
+  "noItemsInList": "Không có mục nào trong danh sách",
+  "noItemsToAnalyze": "Không có mục nào trong danh sách để phân tích.",
+  "noItemsToBuy": "Không có mục nào cần mua",
+  "noLabel": "Không",
+  "noListFoundSubtitle": "Tạo danh sách đầu tiên của bạn để bắt đầu",
+  "noListFoundTitle": "Không tìm thấy danh sách",
+  "noMessagesFound": "Không tìm thấy tin nhắn nào",
+  "noRecipesSaved": "Không có công thức nấu ăn nào được lưu",
+  "noRecipesSavedHint": "Tạo công thức tùy chỉnh đầu tiên của bạn bằng cách nhấn vào nút bên dưới.",
+  "noTracking": "Không theo dõi",
+  "onboardingAnnualBadge": "Giá trị tốt nhất",
+  "onboardingAnnualLabel": "Hàng năm",
+  "onboardingCancelAnytime": "Hủy bỏ bất cứ lúc nào. Không có cam kết.",
+  "onboardingContinueAsGuest": "Tiếp tục làm khách",
+  "onboardingExit": "Ra",
+  "onboardingLoginDesc": "Dữ liệu của bạn được đồng bộ hóa trên tất cả các thiết bị của bạn",
+  "onboardingLoginTitle": "Lưu mọi thứ vào đám mây",
+  "onboardingMonthlyLabel": "hàng tháng",
+  "onboardingPersonalizationCta": "Tiếp tục",
+  "onboardingPersonalizationDesc": "Chúng tôi sẽ sử dụng điều này để cá nhân hóa các đề xuất của bạn và giúp việc mua sắm trở nên thông minh hơn.",
+  "onboardingPersonalizationFoodHint": "ví dụ. Pizza, Sushi, Lasagna...",
+  "onboardingPersonalizationFoodLabel": "Món ăn yêu thích của bạn là gì?",
+  "onboardingPersonalizationFoodRequired": "Hãy cho chúng tôi biết món ăn yêu thích của bạn để tiếp tục",
+  "onboardingPersonalizationSkip": "Bỏ qua bây giờ",
+  "onboardingPersonalizationTitle": "Hãy làm quen với bạn",
+  "onboardingPremiumSubtitle": "Tận dụng tối đa danh sách mua sắm của bạn",
+  "onboardingPremiumTitle": "Mở khóa tất cả các tính năng",
+  "onboardingRestore": "Khôi phục",
+  "onboardingRestoreDesc": "Đã có đăng ký? Nhấn vào đây để khôi phục nó.",
+  "onboardingSetupDesc": "Chọn cách bạn muốn Lista Plus trông và hoạt động cho bạn.",
+  "onboardingSetupTitle": "Cá nhân hóa trải nghiệm của bạn",
+  "onboardingShareDesc": "Đồng bộ danh sách với gia đình và bạn bè trong thời gian thực",
+  "onboardingShareTitle": "Chia sẻ với những người bạn yêu thương",
+  "onboardingSubscribeCta": "Đặt mua",
+  "onboardingViewAllPlans": "Xem tất cả các kế hoạch",
+  "onboardingWelcomeDesc": "Cách thông minh nhất để tổ chức mua sắm của bạn và tiết kiệm tiền.",
+  "onboardingWelcomeTitle": "Chào mừng đến với Lista Plus",
+  "openMenu": "Mở trình đơn",
+  "organizeAisles": "Sắp xếp theo lối đi",
+  "organizeAislesPrompt": "Sắp xếp theo lối đi trong siêu thị.",
+  "organizeByAisles": "Sắp xếp theo lối đi",
+  "organizingAi": "ĐANG SẮP XẾP VỚI AI...",
+  "pantry": "Phòng đựng thức ăn",
+  "pantryAppBar": "Phòng đựng thức ăn",
+  "pantryEditTitle": "Sửa {name}",
+  "pantryEmpty": "Phòng đựng thức ăn trống",
+  "pantryEmptySubtitle": "Thêm sản phẩm bạn muốn có ở nhà",
+  "pantryItemRemoved": "Đã xóa mục",
+  "paywallTitle": "Lista Plus cao cấp",
+  "prefAIAssistant": "Trợ lý AI cá nhân",
+  "prefCustomThemes": "Chủ đề tùy chỉnh",
+  "prefExportData": "Xuất dữ liệu",
+  "prefFullHistory": "Lịch sử đầy đủ",
+  "prefInteractiveArtifacts": "Tạo phẩm AI tương tác",
+  "prefMonthlyBudget": "Ngân sách hàng tháng tổng thể",
+  "prefSharing": "Chia sẻ danh sách",
+  "prefUnlimitedLists": "Danh sách không giới hạn",
+  "prefUnlimitedPantry": "Phòng đựng thức ăn không giới hạn",
+  "premiumUpgrade": "Nâng cấp để mở khóa",
+  "prepTime": "thời gian chuẩn bị",
+  "prepTimeMinutes": "Thời gian chuẩn bị (phút)",
+  "privacy": "Quyền riêng tư",
+  "productName": "Tên sản phẩm",
+  "purchaseError": "Lỗi khi xử lý giao dịch. Vui lòng thử lại.",
+  "quantityFull": "Số lượng",
+  "quantityShort": "SL",
+  "quickRecipe": "Công thức nhanh",
+  "quickRecipePrompt": "Đề xuất công thức nấu ăn với các mục từ danh sách của tôi.",
+  "quickReplies": "Trả lời nhanh:",
+  "recipeCreated": "Công thức đã được tạo!",
+  "recipeDeleted": "Đã xóa công thức",
+  "recipeImage": "Hình ảnh công thức",
+  "recipeName": "Tên công thức",
+  "recipeSaved": "Đã lưu công thức!",
+  "recipeSuggestion": "Gợi ý công thức",
+  "recipeTags": "Thẻ công thức",
+  "regenerate": "Tạo lại",
+  "remove": "Xóa",
+  "removeBudget": "Xóa",
+  "removeImage": "Xóa hình ảnh",
+  "removeSharedListContent": "Xóa \"{name}\" khỏi danh sách của bạn? Danh sách gốc sẽ không bị ảnh hưởng.",
+  "removeSharedListTitle": "Xóa danh sách đã chia sẻ",
+  "removeSharedTooltip": "Xóa",
+  "rename": "Đổi tên",
+  "renameListDialog": "Đổi tên danh sách",
+  "requiredField": "Yêu cầu",
+  "restockLabel": "Bổ sung",
+  "restocked": "Đã bổ sung {name} lên {quantity} {unit}",
+  "restore": "Khôi phục",
+  "restoreError": "Lỗi khi khôi phục giao dịch. Vui lòng thử lại.",
+  "retry": "Thử lại",
+  "save": "Lưu",
+  "saveChanges": "Lưu thay đổi",
+  "saveRecipe": "Cứu",
+  "savings": "Tiết kiệm",
+  "searchCurrency": "Tìm kiếm tiền tệ...",
+  "searchInConversation": "Tìm kiếm trong cuộc trò chuyện...",
+  "searchLanguage": "Tìm kiếm ngôn ngữ...",
+  "searchRecipes": "Tìm kiếm công thức nấu ăn...",
+  "selectAll": "Chọn tất cả",
+  "selectListForDashboard": "Chọn một danh sách để xem bảng điều khiển.",
+  "selectedItems": "Đã chọn {count}",
+  "setBudgetButton": "Đặt ngân sách",
+  "setBudgetTitle": "Ngân sách hàng tháng",
+  "settingsAppBar": "Cài đặt",
+  "settingsDefaultScreen": "Màn hình chính mặc định",
+  "settingsDefaultScreenSubtitle": "Chọn giữa danh sách mua sắm hoặc trò chuyện AI",
+  "settingsScreenChat": "Trò chuyện AI",
+  "settingsScreenList": "Danh sách mua sắm",
+  "share": "Chia sẻ",
+  "shareApp": "Chia sẻ ứng dụng",
+  "shareAppDescription": "Mời bạn bè sử dụng Lista Plus",
+  "shareAsText": "Gửi mục dưới dạng văn bản đã định dạng",
+  "shareListText": "Danh sách mua sắm của tôi",
+  "shareListTitle": "Chia sẻ danh sách",
+  "shareRealtime": "Đồng bộ thời gian thực với người khác",
+  "shareReferralSubject": "Nhận 7 ngày sử dụng Lista Plus Premium!",
+  "shareReferralText": "Tôi đang sử dụng Lista Plus để sắp xếp việc mua sắm của mình! Tải xuống qua liên kết của tôi và cả hai chúng ta đều nhận được 7 ngày dùng Premium miễn phí: {url}",
+  "shareSubject": "Danh sách mua sắm",
+  "shareThisCode": "Chia sẻ mã này:",
+  "shareViaCode": "Chia sẻ qua mã",
+  "sharedLabel": "Đã chia sẻ",
+  "shoppingAssistant": "Trợ lý mua sắm",
+  "shoppingMode": "Chế độ mua sắm",
+  "shoppingModeHeader": "CHẾ ĐỘ MUA SẮM",
+  "shortDescription": "Mô tả ngắn",
+  "signInApple": "Đăng nhập bằng Apple",
+  "signInGoogle": "Đăng nhập bằng Google",
+  "smartOrganization": "Sắp xếp thông minh",
+  "sortCategory": "Danh mục",
+  "sortDate": "Ngày",
+  "sortManual": "Thủ công",
+  "sortName": "Tên",
+  "spendingAnalysis": "Phân tích chi tiêu",
+  "spendingByCategory": "Chi tiêu theo danh mục",
+  "suggestedQuestions": "Các câu hỏi gợi ý:",
+  "suggestedTags": "được đề xuất",
+  "switchList": "Chuyển đổi danh sách",
+  "system": "Hệ thống",
+  "tags": "Thẻ",
+  "termsOfUse": "Điều khoản sử dụng",
+  "themeAmber": "Hổ phách",
+  "themeBlue": "Xanh dương",
+  "themeBrown": "Nâu",
+  "themeColor": "Màu chủ đề",
+  "themeGreen": "Xanh lá",
+  "themeIndigo": "Chàm",
+  "themeOrange": "Cam",
+  "themePink": "Hồng",
+  "themePurple": "Tím",
+  "themeRed": "Đỏ",
+  "themeTeal": "Xanh mòng két",
+  "totalEstimated": "Tổng ước tính: {amount}",
+  "totalSpending": "Tổng chi tiêu",
+  "trackStock": "Theo dõi tồn kho",
+  "trackStockActive": "Xuất hiện trong gợi ý mua sắm",
+  "trackStockInactive": "Không tạo gợi ý mua sắm",
+  "undo": "Hoàn tác",
+  "unit": "Đơn vị",
+  "unitPack": "gói",
+  "unlockFullResponse": "Mở khóa phản hồi đầy đủ",
+  "unmark": "Bỏ đánh dấu",
+  "upgrade": "Nâng cấp",
+  "validForLimitedTime": "Có hiệu lực trong thời gian giới hạn",
+  "version": "Phiên bản",
+  "viewActive": "Xem đang hoạt động",
+  "viewDetails": "Xem chi tiết",
+  "viewHistory": "Xem lịch sử",
+  "viewItems": "Xem các mục",
+  "viewList": "Xem danh sách",
+  "viewPro": "Xem chuyên nghiệp",
+  "viewRecipe": "Xem công thức",
+  "voiceCommandContent": "Nói tự nhiên để quản lý danh sách của bạn!\n\nVí dụ:\n• 'Thêm bánh mì, phô mai và giăm bông'\n• 'Xóa bột giặt'\n• 'Đổi chủ đề thành xanh dương'\n\nĐây là tính năng độc quyền của Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Xem gói",
+  "voiceCommandTitle": "Lệnh thoại AI",
+  "voiceProFeature": "Lệnh thoại nâng cao là Pro. Đang bật tính năng đọc chính tả cơ bản...",
+  "voiceTranscriptionTooltip": "Nhập liệu bằng giọng nói (Miễn phí)",
+  "welcomeAiAssistant": "Chào mừng bạn đến với Trợ lý AI",
+  "whatToDoWithItem": "Bạn muốn làm gì với mặt hàng này?",
+  "yes": "Có",
+  "yesLabel": "Có"
 }

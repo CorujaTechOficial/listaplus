@@ -175,7 +175,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     if (isPurchased) {
       ref.invalidate(shoppingListItemsProvider(widget.listId));
       final updatedItems = await ref.read(shoppingListItemsProvider(widget.listId).future);
-      final pendingCount = updatedItems.where((i) => !i.isPurchased && !idsToToggle.contains(i.id)).length;
+      final pendingCount = updatedItems.where((i) => !i.isPurchased && !_selectedIds.contains(i.id)).length;
       if (pendingCount == 0) {
         if (!WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding')) {
           _confettiController.play();

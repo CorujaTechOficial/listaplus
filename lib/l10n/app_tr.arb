@@ -1,101 +1,73 @@
 {
   "@@locale": "tr",
-  "appTitle": "Alışveriş Listesi",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Listeler",
-  "pantry": "Kiler",
-  "@_Common": "description: Common actions",
-  "cancel": "İptal",
-  "save": "Kaydet",
-  "create": "Oluştur",
-  "add": "Ekle",
-  "remove": "Kaldır",
-  "delete": "Sil",
-  "edit": "Düzenle",
-  "copy": "Kopyala",
-  "retry": "Tekrar dene",
-  "regenerate": "Yeniden oluştur",
-  "copiedToClipboard": "Panoya kopyalandı",
-  "confirm": "Onayla",
-  "close": "Kapat",
-  "import": "İçe aktar",
-  "rename": "Yeniden adlandır",
-  "upgrade": "Yükselt",
-  "clear": "Temizle",
-  "error": "Hata: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Hata: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Satın alma işlenirken hata oluştu. Tekrar deneyin.",
-  "restoreError": "Satın almalar geri yüklenirken hata oluştu. Tekrar deneyin.",
-  "loading": "Yükleniyor...",
-  "fieldRequired": "Gerekli alan",
-  "addedFeedback": "Eklendi!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count} seçili",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Tahmini",
-  "alreadyPurchased": "Zaten satın alındı",
-  "clearList": "Listeyi temizle",
-  "clearPurchased": "Satın alınanları temizle",
-  "share": "Paylaş",
-  "shareViaCode": "Kodla paylaş",
-  "importViaCode": "Kodla içe aktar",
-  "listAssistant": "Liste asistanı",
-  "globalAssistant": "Genel asistan",
-  "becomePremium": "Premium Ol",
-  "manageSubscription": "Aboneliği yönet",
-  "completePurchase": "Satın almayı tamamla",
-  "confirmClearList": "Tüm öğeler kaldırılsın mı?",
-  "shareListTitle": "Listeyi Paylaş",
-  "shareThisCode": "Bu kodu paylaşın:",
-  "validForLimitedTime": "Sınırlı süre için geçerlidir",
-  "importListTitle": "Listeyi İçe Aktar",
-  "enterCodeHint": "Kodu girin",
-  "confirmArchiveTitle": "Satın Almayı Tamamla",
-  "confirmArchiveContent": "Bu satın alma işlemini tamamlayıp listeyi arşivlesin mi?",
-  "complete": "Tamamla",
-  "listArchived": "Liste başarıyla arşivlendi!",
-  "listAdded": "{listName} eklendi!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Satın al",
-  "unmark": "İşareti kaldır",
-  "confirmDeleteItems": "{count} öğe kaldırılsın mı?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Onayla",
-  "confirmContent": "{count} öğe kaldırılsın mı?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Listeyi arşivle",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Kiler",
-  "generateShoppingList": "Alışveriş listesi oluştur",
-  "pantryEmpty": "Boş kiler",
-  "pantryEmptySubtitle": "Evde bulundurmak istediğiniz ürünleri ekleyin",
-  "itemsNeedPurchase": "{deficit} öğenin satın alınması gerekiyor",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Satın alınması gereken öğe yok",
-  "newPantryList": "Kiler Alışverişi",
-  "newListTitle": "Yeni Alışveriş Listesi",
-  "itemsWillBeAdded": "{count} öğe eklenecek",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Liste adı",
-  "listCreated": "\"{name}\" listesi {count} öğe ile oluşturuldu",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Takip yok",
-  "markAsPurchased": "Satın alındı olarak işaretle",
-  "editPantryItem": "{name} düzenle",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "İdeal miktar",
-  "currentQuantity": "Mevcut miktar",
-  "consumed": "Tüketildi",
-  "restocked": "{name} {quantity} {unit} olarak yenilendi",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "\"{name}\" kilerden kaldırılsın mı?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name} düzenle",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Ayarlar",
-  "language": "Dil",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Sistem varsayılanı",
-  "appearance": "Görünüm",
-  "light": "Aydınlık",
-  "system": "Sistem",
-  "dark": "Karanlık",
-  "themeColor": "Tema rengi",
-  "finance": "Finans",
-  "monthlyBudgetNav": "Aylık bütçe",
-  "budgetSubtitle": "Aylık harcamalarınızı takip edin",
-  "data": "Veri",
-  "backupNav": "Yedekle",
-  "backupSubtitle": "Verilerinizi dışa veya içe aktarın",
-  "about": "Hakkında",
-  "version": "Sürüm",
-  "privacy": "Gizlilik",
-  "termsOfUse": "Kullanım koşulları",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Yedekleme",
-  "backupPremiumDescription": "Yedekleme ve dışa aktarma bir premium özelliğidir",
-  "exportData": "Veriyi dışa aktar",
-  "exportDataSubtitle": "Tüm listeleri JSON olarak kaydedin",
-  "importData": "Veriyi içe aktar",
-  "importDataSubtitle": "JSON'dan listeleri geri yükleyin",
-  "importJsonTitle": "JSON İçe Aktar",
-  "importJsonHint": "Yedek JSON'u buraya yapıştırın...",
-  "backupExported": "Yedek dışa aktarıldı!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Aylık Bütçe",
-  "budgetPremiumLocked": "Genel aylık bütçe premium özelliktir",
-  "budgetUpgradePrompt": "Kilidi açmak için yükseltin",
-  "noBudgetDefined": "Bütçe belirlenmedi",
-  "totalEstimated": "Toplam tahmini: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Bütçe belirle",
-  "budgetLists": "Listeler",
-  "budgetValueLabel": "Tutar",
-  "setBudgetTitle": "Aylık Bütçe",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Tümü",
-  "filterPending": "Bekleyen",
-  "filterPurchased": "Satın alınanlar",
-  "sortName": "Ad",
-  "sortCategory": "Kategori",
-  "sortDate": "Tarih",
-  "sortManual": "Manuel",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Hakkında",
+  "achievements": "Başarılar",
+  "activeListening": "Aktif Dinleme",
+  "add": "Ekle",
+  "addAllToList": "Tümünü listeye ekle",
+  "addDirectToList": "Doğrudan listeye ekle",
+  "addIngredient": "İçerik ekle",
   "addItem": "Öğe Ekle",
-  "itemName": "Öğe adı",
-  "quantityShort": "Adet",
-  "unit": "Birim",
-  "category": "Kategori",
-  "estimatedPrice": "Tahmini fiyat",
   "addItemPrice": "Tahmini fiyat",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Öğeyi Düzenle",
-  "quantityFull": "Miktar",
-  "editItemPrice": "Tahmini fiyat",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Fotoğraf ekle",
   "addToPantry": "Kiler'e Ekle",
   "addToPantryPrompt": "\"{name}\" kilerinize eklensin mi?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Evet",
-  "productName": "Ürün adı",
-  "idealQty": "İdeal miktar",
-  "currentQty": "Mevcut miktar",
-  "trackStock": "Stok takibi",
-  "trackStockActive": "Alışveriş önerilerinde görünür",
-  "trackStockInactive": "Alışveriş önerisi oluşturmaz",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Liste Oluştur",
-  "renameListDialog": "Listeyi Yeniden Adlandır",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Liste Geçmişi",
-  "myLists": "Listelerim",
-  "viewActive": "Aktif Olanları Gör",
-  "viewHistory": "Geçmişi Gör",
-  "noArchivedLists": "Arşivlenmiş liste yok",
-  "noActiveLists": "Aktif liste yok",
-  "completedOn": "{date} tarihinde tamamlandı",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Paylaşıldı",
-  "restore": "Geri yükle",
-  "removeSharedTooltip": "Kaldır",
-  "deleteListTitle": "Listeyi sil",
-  "deleteListContent": "\"{name}\" silmek istediğinize emin misiniz? Tüm öğeler kaldırılacak.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Paylaşılan listeyi kaldır",
-  "removeSharedListContent": "\"{name}\" listenizden kaldırılsın mı? Orijinal liste etkilenmeyecek.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Yeni liste oluştur",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Eklendi!",
+  "advancedFeatures": "Gelişmiş özellikler",
   "aiAssistant": "AI Asistan",
   "aiAssistantDescription": "AI asistanımızla akıllı öneriler, tarifler ve kişiselleştirilmiş ipuçları alın.",
-  "generalAssistant": "Genel Asistan",
+  "aiCreditsRemaining": "{remaining} kredi kaldı",
+  "aiEnergy": "Yapay Zeka Enerjisi",
+  "aiError": "Üzgünüz, isteğiniz işlenirken bir hata oluştu. Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+  "aiVoiceCommandTooltip": "AI Ses Komutu (Premium)",
+  "allTags": "Tüm",
+  "alreadyPurchased": "Zaten satın alındı",
+  "appTitle": "Alışveriş Listesi",
+  "appearance": "Görünüm",
+  "archiveList": "Listeyi arşivle",
+  "backToChat": "Sohbete Geri Dön",
+  "backupExported": "Yedek dışa aktarıldı!",
+  "backupNav": "Yedekle",
+  "backupPremiumDescription": "Yedekleme ve dışa aktarma bir premium özelliğidir",
+  "backupSubtitle": "Verilerinizi dışa veya içe aktarın",
+  "backupTitle": "Yedekleme",
+  "becomePremium": "Premium Ol",
+  "budgetAmountLabel": "Bütçe tutarı",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Aylık Bütçe",
+  "budgetDashboardTitle": "Kontrol Paneli",
+  "budgetEditTitle": "Aylık Bütçe",
+  "budgetLists": "Listeler",
+  "budgetPremiumLocked": "Genel aylık bütçe premium özelliktir",
+  "budgetSubtitle": "Aylık harcamalarınızı takip edin",
+  "budgetUpgradePrompt": "Kilidi açmak için yükseltin",
+  "budgetValueLabel": "Tutar",
+  "buy": "Satın al",
+  "cancel": "İptal",
+  "cartTotal": "Sepet toplamı",
+  "catBakery": "Fırın",
+  "catBeverages": "İçecekler",
+  "catCleaning": "Temizlik",
+  "catFruits": "Meyve",
+  "catOthers": "Diğer",
+  "category": "Kategori",
+  "chatError": "Sohbet yüklenirken hata: {error}",
+  "chatHint": "Mesajınızı yazın...",
+  "chatSubtitle": "Öğe önerileri, tarifler veya tasarruf ipuçları isteyin.",
+  "chatSubtitleShort": "Fiyatlar, tarifler, organizasyon hakkında bilgi alın...",
+  "chooseCurrency": "Para Birimi Seçin",
+  "chooseImageSource": "Resim kaynağını seçin",
+  "chooseLanguage": "Dil Seçiniz",
+  "clear": "Temizle",
   "clearHistory": "Geçmişi Temizle",
   "clearHistoryConfirm": "Bu oturumdaki tüm mesajlar temizlensin mi?",
-  "chatHint": "Mesajınızı yazın...",
-  "chatError": "Sohbet yüklenirken hata: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Listenizle ilgili nasıl yardımcı olabilirim?",
-  "generalHelp": "Bugün alışverişinizle ilgili nasıl yardımcı olabilirim?",
-  "chatSubtitle": "Öğe önerileri, tarifler veya tasarruf ipuçları isteyin.",
-  "aiError": "Üzgünüz, isteğiniz işlenirken bir hata oluştu. Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Premium özelliklerin\nkilidini açmak için giriş yapın",
-  "signInGoogle": "Google ile giriş yap",
-  "signInApple": "Apple ile giriş yap",
+  "clearList": "Listeyi temizle",
+  "clearPurchased": "Satın alınanları temizle",
+  "close": "Kapat",
+  "complete": "Tamamla",
+  "completePurchase": "Satın almayı tamamla",
+  "completedOn": "{date} tarihinde tamamlandı",
+  "confirm": "Onayla",
+  "confirmArchiveContent": "Bu satın alma işlemini tamamlayıp listeyi arşivlesin mi?",
+  "confirmArchiveTitle": "Satın Almayı Tamamla",
+  "confirmClearList": "Tüm öğeler kaldırılsın mı?",
+  "confirmContent": "{count} öğe kaldırılsın mı?",
+  "confirmDeleteItems": "{count} öğe kaldırılsın mı?",
+  "confirmDeleteTitle": "Onayla",
+  "confirmRemovePantry": "\"{name}\" kilerden kaldırılsın mı?",
+  "consumed": "Tüketildi",
   "continueAsGuest": "Misafir olarak devam et",
-  "loginError": "Giriş hatası: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Kilidi açmak için yükseltin",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Öğe kaldırıldı",
-  "undo": "Geri al",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Listeniz boş",
-  "emptyListSubtitle": "Başlamak için öğe ekleyin",
-  "noListFoundTitle": "Liste bulunamadı",
-  "noListFoundSubtitle": "Başlamak için ilk listenizi oluşturun",
+  "copiedToClipboard": "Panoya kopyalandı",
+  "copy": "Kopyala",
+  "create": "Oluştur",
   "createFirstList": "İlk Listeyi Oluştur",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Liste Bütçesi",
-  "budgetAmountLabel": "Bütçe tutarı",
-  "removeBudget": "Kaldır",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Sınırsız liste",
-  "prefSharing": "Listeleri paylaş",
-  "prefFullHistory": "Tam geçmiş",
-  "prefExportData": "Veriyi dışa aktar",
-  "prefCustomThemes": "Özel temalar",
-  "prefMonthlyBudget": "Genel aylık bütçe",
-  "prefAIAssistant": "Kişisel AI Asistan",
-  "prefUnlimitedPantry": "Sınırsız kiler",
-  "prefInteractiveArtifacts": "Etkileşimli AI Yapay Ürünleri",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Yeşil",
-  "themeBlue": "Mavi",
-  "themePurple": "Mor",
-  "themeRed": "Kırmızı",
-  "themeOrange": "Turuncu",
-  "themePink": "Pembe",
-  "themeIndigo": "Çivit",
-  "themeAmber": "Kehribar",
-  "themeTeal": "Deniz yeşili",
-  "themeBrown": "Kahverengi",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Meyve",
-  "catCleaning": "Temizlik",
-  "catBeverages": "İçecekler",
-  "catBakery": "Fırın",
-  "catOthers": "Diğer",
-  "@_Unit": "description: Unit",
-  "unitPack": "paket",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Alışveriş Listesi",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Aylık Bütçe",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Listeyi sil",
-  "pantryItemRemoved": "Öğe kaldırıldı",
+  "createListDialog": "Liste Oluştur",
+  "createListToStartAi": "Akıllı sohbeti kullanmaya başlamak için bir alışveriş listesi oluşturun.",
+  "createNewList": "Yeni liste oluştur",
+  "currency": "Para birimi",
+  "currentQty": "Mevcut miktar",
+  "currentQuantity": "Mevcut miktar",
+  "dark": "Karanlık",
+  "data": "Veri",
   "deficitItems": "{deficit} öğenin satın alınması gerekiyor",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Sepet toplamı",
-  "restockLabel": "Yenile",
-  "advancedFeatures": "Gelişmiş özellikler",
-  "selectAll": "Tümünü seç",
+  "delete": "Sil",
+  "deleteListConfirm": "Listeyi sil",
+  "deleteListContent": "\"{name}\" silmek istediğinize emin misiniz? Tüm öğeler kaldırılacak.",
+  "deleteListTitle": "Listeyi sil",
+  "deleteRecipe": "Silmek",
+  "deleteRecipeConfirm": "Bu tarif silinsin mi?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+  "deleteSession": "Sohbeti Sil",
+  "deleteSessionConfirm": "Bu sohbeti silmek istediğinizden emin misiniz? Mesajlar kalıcı olarak kaybolacak.",
   "deselectAll": "Tümünün seçimini kaldır",
-  "monthlyBudgetAppBar": "Aylık Bütçe",
-  "budgetEditTitle": "Aylık Bütçe",
-  "budgetDashboardTitle": "Kontrol Paneli",
-  "selectListForDashboard": "Kontrol panelini görüntülemek için bir liste seçin.",
-  "spendingAnalysis": "Harcama Analizi",
-  "noItemsToAnalyze": "Analiz edilecek listede öğe yok.",
-  "markItemsToSeeAnalysis": "Analizi görmek için öğeleri satın alındı olarak işaretleyin.",
-  "totalSpending": "Toplam Harcama",
-  "spendingByCategory": "Kategoriye Göre Harcama",
-  "achievements": "Başarılar",
-  "exportPdfExcel": "PDF/Excel Dışa Aktar",
-  "exportPdf": "PDF olarak dışa aktar",
-  "exportExcel": "Excel olarak dışa aktar",
-  "organizingAi": "AI İLE DÜZENLENİYOR...",
-  "yesLabel": "Evet",
-  "noLabel": "Hayır",
-  "shareListText": "Alışveriş Listem",
-  "emptyListAddItems": "Listeniz boş! Önce öğe ekleyin. ℹ️",
-  "listOrganizedMagic": "Liste kategorilere göre sihirli bir şekilde düzenlendi! ✨",
-  "shoppingMode": "Alışveriş Modu",
-  "smartOrganization": "Akıllı Düzenleme",
-  "savings": "Tasarruf",
-  "shoppingModeHeader": "ALIŞVERİŞ MODU",
-  "shareAsText": "Öğeleri biçimlendirilmiş metin olarak gönder",
-  "shareRealtime": "Diğer kişilerle gerçek zamanlı senkronizasyon",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Hızlı tarif",
-  "quickRecipePrompt": "Listemdeki öğelerle tarif öner.",
+  "dynamicColors": "Dinamik renkler",
+  "dynamicColorsEnabledWarning": "Tema renginin etkili olması için dinamik renkleri devre dışı bırakın",
+  "dynamicColorsSubtitle": "Duvar kağıdınıza göre renkler kullanın",
   "economyTips": "Tasarruf ipuçları",
   "economyTipsPrompt": "Bu alışverişte nasıl para biriktirebilirim?",
-  "organizeAisles": "Reyonlara göre düzenle",
-  "organizeAislesPrompt": "Market reyonlarına göre düzenle.",
-  "recipeSuggestion": "Tarif önerisi",
-  "aiCreditsRemaining": "{remaining} kredi kaldı",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Tümünü listeye ekle",
-  "organizeByAisles": "Reyonlara göre düzenle",
-  "voiceTranscriptionTooltip": "Sesle yazma (Ücretsiz)",
-  "aiVoiceCommandTooltip": "AI Ses Komutu (Premium)",
-  "voiceCommandTitle": "AI Ses Komutu",
-  "voiceCommandContent": "Listenizi yönetmek için doğal bir şekilde konuşun!\n\nÖrnekler:\n• 'Ekmek, peynir ve jambon ekle'\n• 'Çamaşır deterjanını kaldır'\n• 'Temayı mavi yap'\n\nBu, Lista Plus Premium'un özel bir özelliğidir.",
-  "voiceCommandPlanBtn": "Planları Gör",
-  "itemsAddedSuccess": "Öğeler listeye başarıyla eklendi!",
-  "viewList": "Listeyi görüntüle",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Geri Bildirim Gönder",
+  "edit": "Düzenle",
+  "editItem": "Öğeyi Düzenle",
+  "editItemPrice": "Tahmini fiyat",
+  "editPantryItem": "{name} düzenle",
+  "editRecipe": "Düzenlemek",
+  "editRecipeTitle": "Tarifi Düzenle",
+  "emptyListAddItems": "Listeniz boş! Önce öğe ekleyin. ℹ️",
+  "emptyListSubtitle": "Başlamak için öğe ekleyin",
+  "emptyListTitle": "Listeniz boş",
+  "enterCodeHint": "Kodu girin",
+  "enterUrl": "URL'yi girin",
+  "error": "Hata: {message}",
+  "errorGeneric": "Hata: {message}",
+  "errorLoadingChat": "Hata! Sohbet yüklenirken bir şeyler ters gitti.",
+  "errorLoadingChatSubtitle": "Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+  "errorLoadingRecipes": "Tarifler yüklenirken hata oluştu",
+  "errorOscillation": "Bu, ağ salınımları veya geçici olarak kullanılamama nedeniyle meydana gelebilir. Lütfen tekrar deneyin.",
+  "estimated": "Tahmini",
+  "estimatedCost": "Tahmini",
+  "estimatedPrice": "Tahmini fiyat",
+  "exportData": "Veriyi dışa aktar",
+  "exportDataSubtitle": "Tüm listeleri JSON olarak kaydedin",
+  "exportExcel": "Excel olarak dışa aktar",
+  "exportPdf": "PDF olarak dışa aktar",
+  "exportPdfExcel": "PDF/Excel Dışa Aktar",
+  "feedbackBack": "Geri",
+  "feedbackError": "Gönderme hatası: {error}",
+  "feedbackHint": "Geri bildiriminizi ayrıntılı olarak açıklayın...",
   "feedbackPrompt": "Ne paylaşmak istersiniz?",
+  "feedbackRetry": "Tekrar dene",
+  "feedbackSend": "Geri Bildirim Gönder",
+  "feedbackSending": "Gönderiliyor...",
+  "feedbackSettingsSubtitle": "Hataları bildirin, iyileştirmeler önerin veya çevirileri düzeltin",
+  "feedbackSettingsTitle": "Geri Bildirim Gönder",
+  "feedbackThankYou": "Teşekkürler!",
+  "feedbackThankYouMessage": "Geri bildiriminiz alındı ve Lista Plus'ı herkes için iyileştirmemize yardımcı oluyor.",
+  "feedbackTitle": "Geri Bildirim Gönder",
   "feedbackTypeBug": "Hata Bildir",
   "feedbackTypeBugHint": "Bir şey çalışmıyor",
-  "feedbackTypeSuggestion": "Öneri",
-  "feedbackTypeSuggestionHint": "Uygulamayı geliştirme fikri",
-  "feedbackTypeTranslation": "Çeviri Sorunu",
-  "feedbackTypeTranslationHint": "Yanlış veya doğal olmayan çeviri",
   "feedbackTypeFeature": "Özellik Talebi",
   "feedbackTypeFeatureHint": "Görmek istediğiniz özellik",
   "feedbackTypeOther": "Diğer",
   "feedbackTypeOtherHint": "Diğer geri bildirim türü",
-  "feedbackHint": "Geri bildiriminizi ayrıntılı olarak açıklayın...",
-  "feedbackSend": "Geri Bildirim Gönder",
-  "feedbackSending": "Gönderiliyor...",
-  "feedbackThankYou": "Teşekkürler!",
-  "feedbackThankYouMessage": "Geri bildiriminiz alındı ve Lista Plus'ı herkes için iyileştirmemize yardımcı oluyor.",
-  "feedbackBack": "Geri",
-  "feedbackError": "Gönderme hatası: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Tekrar dene",
-  "feedbackSettingsTitle": "Geri Bildirim Gönder",
-  "feedbackSettingsSubtitle": "Hataları bildirin, iyileştirmeler önerin veya çevirileri düzeltin",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Öneri",
+  "feedbackTypeSuggestionHint": "Uygulamayı geliştirme fikri",
+  "feedbackTypeTranslation": "Çeviri Sorunu",
+  "feedbackTypeTranslationHint": "Yanlış veya doğal olmayan çeviri",
+  "fieldRequired": "Gerekli alan",
+  "filterAll": "Tümü",
+  "filterByTag": "Etikete göre filtrele",
+  "filterPending": "Bekleyen",
+  "filterPurchased": "Satın alınanlar",
+  "finance": "Finans",
+  "finishShopping": "Alışverişi Bitir",
+  "gallery": "Galeri",
+  "generalAssistant": "Genel Asistan",
+  "generalHelp": "Bugün alışverişinizle ilgili nasıl yardımcı olabilirim?",
+  "generateShoppingList": "Alışveriş listesi oluştur",
+  "globalAssistant": "Genel asistan",
+  "howCanIHelp": "Nasıl yardımcı olabilirim?",
+  "idealQty": "İdeal miktar",
+  "idealQuantity": "İdeal miktar",
+  "imageUrlPlaceholder": "Veya bir resim URL'si yapıştırın",
+  "import": "İçe aktar",
+  "importData": "Veriyi içe aktar",
+  "importDataSubtitle": "JSON'dan listeleri geri yükleyin",
+  "importJsonHint": "Yedek JSON'u buraya yapıştırın...",
+  "importJsonTitle": "JSON İçe Aktar",
+  "importListTitle": "Listeyi İçe Aktar",
+  "importViaCode": "Kodla içe aktar",
+  "ingredients": "İçindekiler",
+  "instructions": "Talimatlar",
+  "instructionsHint": "Her satıra bir adım yazın...",
+  "inviteToList": "Listeye davet et",
+  "itemName": "Öğe adı",
+  "itemRemoved": "Öğe kaldırıldı",
+  "itemsAddedSuccess": "Öğeler listeye başarıyla eklendi!",
+  "itemsNeedPurchase": "{deficit} öğenin satın alınması gerekiyor",
+  "itemsPurchasedCount": "{purchased} / {total} satın alındı",
+  "itemsPurchasedShort": "{purchased}/{total} satın alındı",
+  "itemsWillBeAdded": "{count} öğe eklenecek",
+  "language": "Dil",
+  "languageEnglish": "İngilizce",
+  "languagePortuguese": "Portekizce (Brezilya)",
+  "languageSystem": "Sistem varsayılanı",
+  "light": "Aydınlık",
+  "listAdded": "{listName} eklendi!",
+  "listArchived": "Liste başarıyla arşivlendi!",
+  "listAssistant": "Liste asistanı",
+  "listBudgetTitle": "Liste Bütçesi",
+  "listCreated": "\"{name}\" listesi {count} öğe ile oluşturuldu",
+  "listHelp": "Listenizle ilgili nasıl yardımcı olabilirim?",
+  "listHistory": "Liste Geçmişi",
+  "listNameLabel": "Liste adı",
+  "listOrganizedMagic": "Liste kategorilere göre sihirli bir şekilde düzenlendi! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Dinleme...",
+  "lists": "Listeler",
+  "loading": "Yükleniyor...",
+  "loadingRecipes": "Tarifleriniz yükleniyor...",
+  "loginError": "Giriş hatası: {error}",
+  "loginPrompt": "Premium özelliklerin\nkilidini açmak için giriş yapın",
+  "longHistoryWarning": "Uzun geçmiş: Asistan, daha iyi performans için en son mesajlara odaklanır.",
+  "manageSubscription": "Aboneliği yönet",
+  "markAsPurchased": "Satın alındı olarak işaretle",
+  "markItemsToSeeAnalysis": "Analizi görmek için öğeleri satın alındı olarak işaretleyin.",
+  "marketMode": "Piyasa Modu",
+  "mealPlannerAddMeal": "Yemek Ekle",
+  "mealPlannerDateLabel": "Tarih",
+  "mealPlannerDeleteMeal": "Yemeği kaldır",
+  "mealPlannerEditMeal": "Yemeği Düzenle",
+  "mealPlannerError": "Yemek planı yüklenirken hata oluştu",
+  "mealPlannerGenerateList": "Alışveriş listesi oluştur",
+  "mealPlannerGenerateListConfirm": "Bu hafta planladığınız öğünlerdeki tüm malzemeleri alışveriş listenize eklemek ister misiniz?",
+  "mealPlannerGenerateListEmpty": "Eklenecek malzeme yok. Önce tariflerle birlikte bazı yemekler planlayın.",
+  "mealPlannerGenerateListNoList": "Öncelikle bir alışveriş listesi oluşturun.",
+  "mealPlannerGenerateListSuccess": "{count} içerik(ler) listenize eklendi!",
+  "mealPlannerLoading": "Yemek planı yükleniyor...",
+  "mealPlannerMealDeleted": "Yemek kaldırıldı",
+  "mealPlannerMealTypeBreakfast": "Kahvaltı",
+  "mealPlannerMealTypeDinner": "Akşam yemeği",
+  "mealPlannerMealTypeLunch": "Öğle yemeği",
+  "mealPlannerMealTypeSnack": "Atıştırmalık",
+  "mealPlannerNoMeals": "Yemek planlanmadı",
+  "mealPlannerNoMealsHint": "Yemek eklemek için bir güne dokunun",
+  "mealPlannerNoRecipesFound": "Tarif bulunamadı",
+  "mealPlannerNoRecipesHint": "Önce Tarifler sekmesinde tarifler oluşturun",
+  "mealPlannerNoteLabel": "Not (isteğe bağlı)",
+  "mealPlannerPrepTime": "{minutes} dk.",
+  "mealPlannerSave": "Plana ekle",
+  "mealPlannerSearchRecipes": "Tarif ara...",
+  "mealPlannerSelectRecipe": "Bir tarif seçin",
+  "mealPlannerServings": "{count,plural, one{{count} porsiyon} other{{count} porsiyon}}",
+  "mealPlannerServingsLabel": "Porsiyon",
+  "mealPlannerTitle": "Yemek Planlayıcı",
+  "mealPlannerViewMonthly": "Aylık görünüm",
+  "mealPlannerViewWeekly": "Haftalık görünüm",
+  "mealPlannerWeekEmpty": "Bu hafta için planlanmış bir şey yok",
+  "mealPlannerWeekEmptyHint": "Yemeklerinizi planlamaya başlamak için herhangi bir güne dokunun!",
+  "mealPlannerWeekProgress": "{count} / {total} öğün planlandı",
+  "monthlyBudgetAppBar": "Aylık Bütçe",
+  "monthlyBudgetNav": "Aylık bütçe",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Aylık Bütçe",
+  "myLists": "Listelerim",
+  "myRecipes": "Tariflerim",
+  "newChat": "Yeni Sohbet",
+  "newListTitle": "Yeni Alışveriş Listesi",
+  "newPantryList": "Kiler Alışverişi",
+  "newRecipe": "Yeni Tarif",
+  "newRecipeTitle": "Yeni Tarif",
+  "next": "Sonraki",
+  "noActiveLists": "Aktif liste yok",
+  "noArchivedLists": "Arşivlenmiş liste yok",
+  "noBudgetDefined": "Bütçe belirlenmedi",
+  "noHistory": "Sohbet geçmişi yok",
+  "noItemsInList": "Listede öğe yok",
+  "noItemsToAnalyze": "Analiz edilecek listede öğe yok.",
+  "noItemsToBuy": "Satın alınması gereken öğe yok",
+  "noLabel": "Hayır",
+  "noListFoundSubtitle": "Başlamak için ilk listenizi oluşturun",
+  "noListFoundTitle": "Liste bulunamadı",
+  "noMessagesFound": "Mesaj bulunamadı",
+  "noRecipesSaved": "Hiç tarif kaydedilmedi",
+  "noRecipesSavedHint": "Aşağıdaki düğmeye dokunarak ilk özel tarifinizi oluşturun.",
+  "noTracking": "Takip yok",
+  "onboardingAnnualBadge": "En İyi Değer",
+  "onboardingAnnualLabel": "Yıllık",
+  "onboardingCancelAnytime": "İstediğiniz zaman iptal edin. Taahhüt yok.",
+  "onboardingContinueAsGuest": "Konuk olarak devam et",
+  "onboardingExit": "Çıkış",
+  "onboardingLoginDesc": "Verileriniz tüm cihazlarınızda senkronize edildi",
+  "onboardingLoginTitle": "Her şeyi buluta kaydedin",
+  "onboardingMonthlyLabel": "Aylık",
+  "onboardingPersonalizationCta": "Devam etmek",
+  "onboardingPersonalizationDesc": "Bunu önerilerinizi kişiselleştirmek ve alışverişi daha akıllı hale getirmek için kullanacağız.",
+  "onboardingPersonalizationFoodHint": "örneğin Pizza, Suşi, Lazanya...",
+  "onboardingPersonalizationFoodLabel": "En sevdiğiniz yemek hangisi?",
+  "onboardingPersonalizationFoodRequired": "Devam etmek için bize en sevdiğiniz yemeği söyleyin",
+  "onboardingPersonalizationSkip": "Şimdilik atla",
+  "onboardingPersonalizationTitle": "Hadi seni tanıyalım",
+  "onboardingPremiumSubtitle": "Alışveriş listelerinizden en iyi şekilde yararlanın",
+  "onboardingPremiumTitle": "Tüm özelliklerin kilidini açın",
+  "onboardingRestore": "Eski haline getirmek",
+  "onboardingRestoreDesc": "Zaten bir aboneliğiniz var mı? Geri yüklemek için buraya dokunun.",
+  "onboardingSetupDesc": "Lista Plus'ın sizin için nasıl görünmesini ve çalışmasını istediğinizi seçin.",
+  "onboardingSetupTitle": "Deneyiminizi kişiselleştirin",
+  "onboardingShareDesc": "Listeleri aileniz ve arkadaşlarınızla gerçek zamanlı olarak senkronize edin",
+  "onboardingShareTitle": "Sevdiklerinizle paylaşın",
+  "onboardingSubscribeCta": "Abone",
+  "onboardingViewAllPlans": "Tüm planları görüntüle",
+  "onboardingWelcomeDesc": "Alışverişinizi organize etmenin ve paradan tasarruf etmenin en akıllı yolu.",
+  "onboardingWelcomeTitle": "Lista Plus'a hoş geldiniz",
+  "openMenu": "Menüyü aç",
+  "organizeAisles": "Reyonlara göre düzenle",
+  "organizeAislesPrompt": "Market reyonlarına göre düzenle.",
+  "organizeByAisles": "Reyonlara göre düzenle",
+  "organizingAi": "AI İLE DÜZENLENİYOR...",
+  "pantry": "Kiler",
+  "pantryAppBar": "Kiler",
+  "pantryEditTitle": "{name} düzenle",
+  "pantryEmpty": "Boş kiler",
+  "pantryEmptySubtitle": "Evde bulundurmak istediğiniz ürünleri ekleyin",
+  "pantryItemRemoved": "Öğe kaldırıldı",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Kişisel AI Asistan",
+  "prefCustomThemes": "Özel temalar",
+  "prefExportData": "Veriyi dışa aktar",
+  "prefFullHistory": "Tam geçmiş",
+  "prefInteractiveArtifacts": "Etkileşimli AI Yapay Ürünleri",
+  "prefMonthlyBudget": "Genel aylık bütçe",
+  "prefSharing": "Listeleri paylaş",
+  "prefUnlimitedLists": "Sınırsız liste",
+  "prefUnlimitedPantry": "Sınırsız kiler",
+  "premiumUpgrade": "Kilidi açmak için yükseltin",
+  "prepTime": "Hazırlık zamanı",
+  "prepTimeMinutes": "Hazırlık süresi (dakika)",
+  "privacy": "Gizlilik",
+  "productName": "Ürün adı",
+  "purchaseError": "Satın alma işlenirken hata oluştu. Tekrar deneyin.",
+  "quantityFull": "Miktar",
+  "quantityShort": "Adet",
+  "quickRecipe": "Hızlı tarif",
+  "quickRecipePrompt": "Listemdeki öğelerle tarif öner.",
+  "quickReplies": "Hızlı yanıtlar:",
+  "recipeCreated": "Tarif oluşturuldu!",
+  "recipeDeleted": "Tarif silindi",
+  "recipeImage": "Tarif resmi",
+  "recipeName": "Tarif adı",
+  "recipeSaved": "Tarif kaydedildi!",
+  "recipeSuggestion": "Tarif önerisi",
+  "recipeTags": "Tarif etiketleri",
+  "regenerate": "Yeniden oluştur",
+  "remove": "Kaldır",
+  "removeBudget": "Kaldır",
+  "removeImage": "Resmi kaldır",
+  "removeSharedListContent": "\"{name}\" listenizden kaldırılsın mı? Orijinal liste etkilenmeyecek.",
+  "removeSharedListTitle": "Paylaşılan listeyi kaldır",
+  "removeSharedTooltip": "Kaldır",
+  "rename": "Yeniden adlandır",
+  "renameListDialog": "Listeyi Yeniden Adlandır",
+  "requiredField": "Gerekli",
+  "restockLabel": "Yenile",
+  "restocked": "{name} {quantity} {unit} olarak yenilendi",
+  "restore": "Geri yükle",
+  "restoreError": "Satın almalar geri yüklenirken hata oluştu. Tekrar deneyin.",
+  "retry": "Tekrar dene",
+  "save": "Kaydet",
+  "saveChanges": "Değişiklikleri kaydet",
+  "saveRecipe": "Kaydetmek",
+  "savings": "Tasarruf",
+  "searchCurrency": "Para birimini ara...",
+  "searchInConversation": "Görüşmede ara...",
+  "searchLanguage": "Dil ara...",
+  "searchRecipes": "Tarif ara...",
+  "selectAll": "Tümünü seç",
+  "selectListForDashboard": "Kontrol panelini görüntülemek için bir liste seçin.",
+  "selectedItems": "{count} seçili",
+  "setBudgetButton": "Bütçe belirle",
+  "setBudgetTitle": "Aylık Bütçe",
+  "settingsAppBar": "Ayarlar",
+  "settingsDefaultScreen": "Varsayılan ana ekran",
+  "settingsDefaultScreenSubtitle": "Alışveriş listesi veya AI sohbeti arasında seçim yapın",
+  "settingsScreenChat": "Yapay Zeka Sohbeti",
+  "settingsScreenList": "Alışveriş listesi",
+  "share": "Paylaş",
+  "shareApp": "Uygulamayı paylaş",
+  "shareAppDescription": "Arkadaşlarınızı Lista Plus'ı kullanmaya davet edin",
+  "shareAsText": "Öğeleri biçimlendirilmiş metin olarak gönder",
+  "shareListText": "Alışveriş Listem",
+  "shareListTitle": "Listeyi Paylaş",
+  "shareRealtime": "Diğer kişilerle gerçek zamanlı senkronizasyon",
+  "shareReferralSubject": "7 günlük Lista Plus Premium'u edinin!",
+  "shareReferralText": "Alışverişimi düzenlemek için Lista Plus'ı kullanıyorum! Bağlantım aracılığıyla indirin ve ikimiz de 7 günlük ücretsiz Premium üyeliğine sahip olalım: {url}",
+  "shareSubject": "Alışveriş Listesi",
+  "shareThisCode": "Bu kodu paylaşın:",
+  "shareViaCode": "Kodla paylaş",
+  "sharedLabel": "Paylaşıldı",
+  "shoppingAssistant": "Alışveriş asistanı",
+  "shoppingMode": "Alışveriş Modu",
+  "shoppingModeHeader": "ALIŞVERİŞ MODU",
+  "shortDescription": "Kısa açıklama",
+  "signInApple": "Apple ile giriş yap",
+  "signInGoogle": "Google ile giriş yap",
+  "smartOrganization": "Akıllı Düzenleme",
+  "sortCategory": "Kategori",
+  "sortDate": "Tarih",
+  "sortManual": "Manuel",
+  "sortName": "Ad",
+  "spendingAnalysis": "Harcama Analizi",
+  "spendingByCategory": "Kategoriye Göre Harcama",
+  "suggestedQuestions": "Önerilen sorular:",
+  "suggestedTags": "Önerilen",
+  "switchList": "Listeyi değiştir",
+  "system": "Sistem",
+  "tags": "Etiketler",
+  "termsOfUse": "Kullanım koşulları",
+  "themeAmber": "Kehribar",
+  "themeBlue": "Mavi",
+  "themeBrown": "Kahverengi",
+  "themeColor": "Tema rengi",
+  "themeGreen": "Yeşil",
+  "themeIndigo": "Çivit",
+  "themeOrange": "Turuncu",
+  "themePink": "Pembe",
+  "themePurple": "Mor",
+  "themeRed": "Kırmızı",
+  "themeTeal": "Deniz yeşili",
+  "totalEstimated": "Toplam tahmini: {amount}",
+  "totalSpending": "Toplam Harcama",
+  "trackStock": "Stok takibi",
+  "trackStockActive": "Alışveriş önerilerinde görünür",
+  "trackStockInactive": "Alışveriş önerisi oluşturmaz",
+  "undo": "Geri al",
+  "unit": "Birim",
+  "unitPack": "paket",
+  "unlockFullResponse": "Tam Yanıtın Kilidini Aç",
+  "unmark": "İşareti kaldır",
+  "upgrade": "Yükselt",
+  "validForLimitedTime": "Sınırlı süre için geçerlidir",
+  "version": "Sürüm",
+  "viewActive": "Aktif Olanları Gör",
+  "viewDetails": "Ayrıntıları Görüntüle",
+  "viewHistory": "Geçmişi Gör",
+  "viewItems": "Öğeleri görüntüle",
+  "viewList": "Listeyi görüntüle",
+  "viewPro": "Pro'yu Görüntüle",
+  "viewRecipe": "Tarifi Görüntüle",
+  "voiceCommandContent": "Listenizi yönetmek için doğal bir şekilde konuşun!\n\nÖrnekler:\n• 'Ekmek, peynir ve jambon ekle'\n• 'Çamaşır deterjanını kaldır'\n• 'Temayı mavi yap'\n\nBu, Lista Plus Premium'un özel bir özelliğidir.",
+  "voiceCommandPlanBtn": "Planları Gör",
+  "voiceCommandTitle": "AI Ses Komutu",
+  "voiceProFeature": "Gelişmiş sesli komutlar Pro'dur. Temel dikte etkinleştiriliyor...",
+  "voiceTranscriptionTooltip": "Sesle yazma (Ücretsiz)",
+  "welcomeAiAssistant": "AI Assistant'a hoş geldiniz",
+  "whatToDoWithItem": "Bu eşyayla ne yapmak istersiniz?",
+  "yes": "Evet",
+  "yesLabel": "Evet"
 }

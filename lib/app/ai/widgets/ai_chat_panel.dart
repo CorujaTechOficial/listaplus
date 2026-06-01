@@ -43,6 +43,9 @@ class AiChatPanel extends ConsumerStatefulWidget {
     this.onOrganizeRequested,
     this.onItemsAdded,
     this.onNavigateToRecipe,
+    this.externalController,
+    this.onSendMessage,
+    this.isSimulation = false,
   });
 
   final String? listId;
@@ -51,13 +54,16 @@ class AiChatPanel extends ConsumerStatefulWidget {
   final VoidCallback? onOrganizeRequested;
   final VoidCallback? onItemsAdded;
   final void Function(String recipeId)? onNavigateToRecipe;
+  final TextEditingController? externalController;
+  final Future<void> Function(String)? onSendMessage;
+  final bool isSimulation;
 
   @override
-  ConsumerState<AiChatPanel> createState() => _AiChatPanelState();
+  AiChatPanelState createState() => AiChatPanelState();
 }
 
-class _AiChatPanelState extends ConsumerState<AiChatPanel> {
-  final _textController = TextEditingController();
+class AiChatPanelState extends ConsumerState<AiChatPanel> {
+  late final TextEditingController _textController;
   final _scrollController = ScrollController();
   bool _isSending = false;
   bool _showScrollFAB = false;
@@ -67,6 +73,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
   @override
   void initState() {
     super.initState();
+    _textController = widget.externalController ?? TextEditingController();
     _scrollController.addListener(_scrollListener);
   }
 
@@ -88,7 +95,9 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
   @override
   void dispose() {
     _scrollController.removeListener(_scrollListener);
-    _textController.dispose();
+    if (widget.externalController == null) {
+      _textController.dispose();
+    }
     _scrollController.dispose();
     super.dispose();
   }
@@ -141,14 +150,27 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     }
   }
 
-  Future<void> _sendMessage() async {
-    final text = _textController.text.trim();
+  Future<void> sendMessage([String? manualText]) async {
+    final text = manualText ?? _textController.text.trim();
     if (text.isEmpty || _isSending) {
       return;
     }
 
-    final canSend = ref.read(aiUsageStateProvider.notifier).canSend();
-    final isPremium = ref.read(premiumProvider).value ?? false;
+    if (widget.onSendMessage != null) {
+      setState(() => _isSending = true);
+      try {
+        await widget.onSendMessage!(text);
+        _textController.clear();
+      } finally {
+        if (mounted) {
+      setState(() => _isSending = false);
+    }
+      }
+      return;
+    }
+
+    final canSend = widget.isSimulation || ref.read(aiUsageStateProvider.notifier).canSend();
+    final isPremium = widget.isSimulation || (ref.read(premiumProvider).value ?? false);
     
     // Feedback háptico ao enviar (Item 22)
     unawaited(HapticFeedback.lightImpact());
@@ -161,12 +183,26 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
 
     try {
       var sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
-      sessionId ??= await ref.read(chatSessionsProvider(widget.listId).notifier).startNewSession();
+      if (sessionId == null) {
+        final newId = await ref.read(chatSessionsProvider(widget.listId).notifier).startNewSession();
+        if (!mounted) {
+          return;
+        }
+        sessionId = newId;
+      }
+
+      // Ensure the session is loaded before sending/adding messages to prevent race conditions where
+      // the async build completes after state mutation and wipes out the user message.
+      try {
+        await ref.read(chatSessionProvider(widget.listId, sessionId).future);
+      } on Exception catch (e) {
+        debugPrint('[AiChatPanel] Pre-loading chatSessionProvider future failed (proceeding anyway): $e');
+      }
 
       if (!canSend && !isPremium) {
         // Add user message first
         final userMessage = ChatMessage(role: 'user', content: text);
-        await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).addMessage(userMessage);
+        await ref.read(chatSessionProvider(widget.listId, sessionId).notifier).addMessage(userMessage);
 
         // Trigger Dynamic Teaser Effect
         String teaserText = 'Para economizar nesta compra, você pode aproveitar as promoções sazonais de frutas cítricas, além de considerar a troca de marcas premium por marcas próprias do supermercado, que oferecem qualidade similar por um preço até 30% menor. Outra dica valiosa é de extrema importância para seu bolso e para a organização da sua despensa...';
@@ -189,7 +225,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
           debugPrint('Error generating dynamic teaser: $e');
         }
 
-        await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).addMessage(
+        await ref.read(chatSessionProvider(widget.listId, sessionId).notifier).addMessage(
           ChatMessage(
             role: 'assistant',
             content: teaserText,
@@ -197,12 +233,24 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
           ),
         );
       } else {
-        await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).sendMessage(text);
+        await ref.read(chatSessionProvider(widget.listId, sessionId).notifier).sendMessage(text);
         if (!isPremium) {
           await ref.read(aiUsageStateProvider.notifier).recordMessage();
         }
       }
       _scrollToBottom(force: true);
+    } on Exception catch (e, st) {
+      debugPrint('[AiChatPanel] Error in sendMessage: $e\n$st');
+      if (mounted) {
+        final l10n = AppLocalizations.of(context);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              l10n?.aiError ?? 'Erro ao processar. Verifique sua conexão.',
+            ),
+          ),
+        );
+      }
     } finally {
       if (mounted) {
         setState(() => _isSending = false);
@@ -232,7 +280,8 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
     final aiUsageAsync = ref.watch(aiUsageStateProvider);
     final canSend = isPremium || (aiUsageAsync.value?.isExhausted == false);
 
-    final chatState = ref.watch(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))));
+    final activeSessionId = ref.watch(activeChatSessionIdProvider(widget.listId));
+    final chatState = ref.watch(chatSessionProvider(widget.listId, activeSessionId));
     final allMessages = chatState.value ?? [];
 
     final itemsAsync = widget.listId != null
@@ -253,9 +302,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
 
     return Stack(
       children: [
-        Column(
-          children: [
-            Expanded(
+        Positioned.fill(
           child: Stack(
             children: [
               chatState.when(
@@ -314,7 +361,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                                     child: InkWell(
                                       onTap: !_isSending ? () {
                                         _textController.text = suggestion.prompt;
-                                        _sendMessage();
+                                        sendMessage();
                                       } : null,
                                       borderRadius: BorderRadius.circular(12),
                                       child: Padding(
@@ -353,7 +400,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
 
                   return ListView.builder(
                     controller: _scrollController,
-                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 100),
                     itemCount: messages.length + 1 + (isThinking && (messages.isEmpty || messages.last.role != 'assistant') ? 1 : 0),
                     itemBuilder: (context, index) {
                       if (index == 0) {
@@ -447,7 +494,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                 loading: () => _buildSkeleton(theme, l10n),
               error: (e, _) => Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(24),
+                  padding: const EdgeInsets.fromLTRB(24, 24, 24, 100),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -472,7 +519,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
               if (_showScrollFAB)
                 Positioned(
                   right: 16,
-                  bottom: 16,
+                  bottom: 100,
                   child: FloatingActionButton.small(
                     heroTag: null,
                     onPressed: () => _scrollToBottom(force: true),
@@ -484,10 +531,18 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
             ],
           ),
         ),
-            if (!canSend && !isPremium)
-              _buildPaywallBanner(context, l10n, theme),
-            _buildInput(context, l10n, theme, canSend, suggestionChips, isThinking),
-          ],
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (!canSend && !isPremium)
+                _buildPaywallBanner(context, l10n, theme),
+              _buildInput(context, l10n, theme, canSend, suggestionChips, isThinking),
+            ],
+          ),
         ),
       ],
     );
@@ -722,7 +777,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                     icon: _iconFromName(suggestion.icon),
                     onTap: !_isSending ? () {
                       _textController.text = suggestion.prompt;
-                      _sendMessage();
+                      sendMessage();
                     } : null,
                   ),
                 )).toList(),
@@ -757,6 +812,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                         ),
                         child: TextField(
                           controller: _textController,
+                          readOnly: widget.isSimulation,
                           minLines: 1,
                           maxLines: 5,
                           style: theme.textTheme.bodyMedium,
@@ -780,7 +836,7 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                               tooltip: l10n.addDirectToList,
                             ) : null,
                           ),
-                          onSubmitted: !_isSending ? (_) => _sendMessage() : null,
+                          onSubmitted: !_isSending ? (_) => sendMessage() : null,
                         ),
                       );
                     },
@@ -808,8 +864,11 @@ class _AiChatPanelState extends ConsumerState<AiChatPanel> {
                         child: IconButton(
                           key: const ValueKey('chat_send_button'),
                           onPressed: _isSending
-                              ? () => ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).cancelRequest()
-                              : (hasText ? _sendMessage : null),
+                              ? () {
+                                  final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                                  ref.read(chatSessionProvider(widget.listId, sessionId).notifier).cancelRequest();
+                                }
+                              : (hasText ? sendMessage : null),
                           icon: _isSending
                               ? const Icon(Icons.stop_rounded, size: 20)
                               : const Icon(Icons.send_rounded, size: 20),
@@ -1007,7 +1066,8 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                           },
                           onDoubleTap: () {
                             unawaited(HapticFeedback.mediumImpact());
-                            ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).setFeedback(
+                            final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                            ref.read(chatSessionProvider(widget.listId, sessionId).notifier).setFeedback(
                               widget.message.id, 
                               widget.message.feedback == 1 ? null : 1,
                             );
@@ -1094,11 +1154,30 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                            children: [
                                              RepaintBoundary(child: _AiGlowOrb(color: theme.colorScheme.primary)),
                                              const SizedBox(width: 8),
-                                             Text(
-                                               ref.watch(chatActivityProvider(widget.listId)) ?? l10n.loading,
-                                               style: theme.textTheme.labelSmall?.copyWith(
-                                                 color: theme.colorScheme.primary,
-                                                 fontWeight: FontWeight.w600,
+                                             AnimatedSwitcher(
+                                               duration: const Duration(milliseconds: 350),
+                                               transitionBuilder: (child, animation) {
+                                                 return FadeTransition(
+                                                   opacity: animation,
+                                                   child: SlideTransition(
+                                                     position: Tween<Offset>(
+                                                       begin: const Offset(0, 0.4),
+                                                       end: Offset.zero,
+                                                     ).animate(CurvedAnimation(
+                                                       parent: animation,
+                                                       curve: Curves.easeOut,
+                                                     )),
+                                                     child: child,
+                                                   ),
+                                                 );
+                                               },
+                                               child: Text(
+                                                 ref.watch(chatActivityProvider(widget.listId)) ?? l10n.loading,
+                                                 key: ValueKey(ref.watch(chatActivityProvider(widget.listId))),
+                                                 style: theme.textTheme.labelSmall?.copyWith(
+                                                   color: theme.colorScheme.primary,
+                                                   fontWeight: FontWeight.w600,
+                                                 ),
                                                ),
                                              ),
                                            ],
@@ -1148,10 +1227,11 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                       ),
                                       const SizedBox(height: 10),
                                       FilledButton.icon(
-                                        onPressed: () {
-                                          unawaited(HapticFeedback.lightImpact());
-                                          ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).retryMessage();
-                                        },
+                                          onPressed: () {
+                                            unawaited(HapticFeedback.lightImpact());
+                                            final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                                            ref.read(chatSessionProvider(widget.listId, sessionId).notifier).retryMessage();
+                                          },
                                         icon: const Icon(Icons.refresh, size: 16),
                                         label: Text(l10n.retry),
                                         style: FilledButton.styleFrom(
@@ -1175,7 +1255,8 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                             isFilled: true,
                                             onPressed: () async {
                                               unawaited(HapticFeedback.lightImpact());
-                                              await ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).executeAction(widget.message.id, 'add_items');
+                                              final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                                              await ref.read(chatSessionProvider(widget.listId, sessionId).notifier).executeAction(widget.message.id, 'add_items');
                                               widget.onItemsAdded?.call();
                                               if (context.mounted) {
                                                 final localizations = AppLocalizations.of(context)!;
@@ -1211,7 +1292,8 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                                 Navigator.pop(context);
                                                 widget.onOrganizeRequested!();
                                               } else {
-                                                ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).executeAction(widget.message.id, 'organize');
+                                                final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                                                ref.read(chatSessionProvider(widget.listId, sessionId).notifier).executeAction(widget.message.id, 'organize');
                                               }
                                             },
                                             icon: Icons.category,
@@ -1271,7 +1353,8 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                     isSelected: widget.message.feedback == 1,
                     onTap: () {
                       unawaited(HapticFeedback.lightImpact());
-                      ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).setFeedback(
+                      final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                      ref.read(chatSessionProvider(widget.listId, sessionId).notifier).setFeedback(
                         widget.message.id,
                         widget.message.feedback == 1 ? null : 1,
                       );
@@ -1283,7 +1366,8 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                     isSelected: widget.message.feedback == -1,
                     onTap: () {
                       unawaited(HapticFeedback.lightImpact());
-                      ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).setFeedback(
+                      final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                      ref.read(chatSessionProvider(widget.listId, sessionId).notifier).setFeedback(
                         widget.message.id,
                         widget.message.feedback == -1 ? null : -1,
                       );
@@ -1294,7 +1378,8 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                     TextButton.icon(
                       onPressed: () {
                         unawaited(HapticFeedback.mediumImpact());
-                        ref.read(chatSessionProvider(widget.listId, ref.read(activeChatSessionIdProvider(widget.listId))).notifier).regenerate(widget.message.id);
+                        final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                        ref.read(chatSessionProvider(widget.listId, sessionId).notifier).regenerate(widget.message.id);
                       },
                       icon: const Icon(Icons.refresh, size: 14),
                       label: Text(l10n.regenerate, style: const TextStyle(fontSize: 10)),
@@ -1657,12 +1742,31 @@ class TypingIndicator extends StatelessWidget {
             if (isThinking) ...[
               RepaintBoundary(child: _AiGlowOrb(color: theme.colorScheme.primary)),
               const SizedBox(width: 12),
-              Text(
-                activityDescription ?? fallbackText ?? '...',
-                style: theme.textTheme.labelSmall?.copyWith(
-                  color: theme.colorScheme.primary,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 350),
+                transitionBuilder: (child, animation) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: SlideTransition(
+                      position: Tween<Offset>(
+                        begin: const Offset(0, 0.4),
+                        end: Offset.zero,
+                      ).animate(CurvedAnimation(
+                        parent: animation,
+                        curve: Curves.easeOut,
+                      )),
+                      child: child,
+                    ),
+                  );
+                },
+                child: Text(
+                  activityDescription ?? fallbackText ?? '...',
+                  key: ValueKey(activityDescription ?? fallbackText),
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: theme.colorScheme.primary,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.5,
+                  ),
                 ),
               ),
             ] else
@@ -1996,8 +2100,9 @@ class _AgentActionStepsList extends ConsumerWidget {
               child: TextButton.icon(
                 onPressed: () async {
                   unawaited(HapticFeedback.mediumImpact());
+                  final sessionId = ref.read(activeChatSessionIdProvider(listId));
                   await ref
-                      .read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier)
+                      .read(chatSessionProvider(listId, sessionId).notifier)
                       .undoMessageActions(messageId);
                 },
                 icon: const Icon(Icons.undo, size: 14),
@@ -2335,7 +2440,8 @@ class _PremiumUnlockCard extends ConsumerWidget {
               onPressed: () {
                 unawaited(HapticFeedback.mediumImpact());
                 // Abre paywall
-                ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).executeToolDirectly('open_paywall', {});
+                final sessionId = ref.read(activeChatSessionIdProvider(listId));
+                ref.read(chatSessionProvider(listId, sessionId).notifier).executeToolDirectly('open_paywall', {});
               },
               icon: const Icon(Icons.workspace_premium, size: 18),
               label: const Text('Seja Premium'),
@@ -2354,7 +2460,8 @@ class _PremiumUnlockCard extends ConsumerWidget {
                 final adService = ref.read(adServiceProvider);
                 final success = await adService.showRewardedAd();
                 if (success) {
-                  await ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).resumeWithUnlock();
+                  final sessionId = ref.read(activeChatSessionIdProvider(listId));
+                  await ref.read(chatSessionProvider(listId, sessionId).notifier).resumeWithUnlock();
                 }
               },
               icon: const Icon(Icons.play_circle_outline, size: 18),
@@ -2369,7 +2476,8 @@ class _PremiumUnlockCard extends ConsumerWidget {
           TextButton(
             onPressed: () {
               unawaited(HapticFeedback.lightImpact());
-              ref.read(chatSessionProvider(listId, ref.read(activeChatSessionIdProvider(listId))).notifier).cancelUnlock();
+              final sessionId = ref.read(activeChatSessionIdProvider(listId));
+              ref.read(chatSessionProvider(listId, sessionId).notifier).cancelUnlock();
             },
             child: Text(
               'Continuar sem interface interativa',

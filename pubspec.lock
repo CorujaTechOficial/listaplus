@@ -73,14 +73,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.13.1"
-  audio_waveforms:
-    dependency: "direct main"
-    description:
-      name: audio_waveforms
-      sha256: "03b3430ecf430a2e90185518a228c02be3d26653c62dd931e50d671213a6dbc8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   barcode:
     dependency: transitive
     description:
@@ -237,10 +229,10 @@ packages:
     dependency: transitive
     description:
       name: code_assets
-      sha256: dad6bf6b9f4f378b0a69edbf42584d336efd1a9ce15deb1ba591cbb1b5ff440f
+      sha256: "67cf6d84013f9c601e42a6f8a6b74c4c0d9dc1a1619d775f2b28b732d3551b85"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   code_builder:
     dependency: transitive
     description:
@@ -707,10 +699,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_riverpod
-      sha256: "9e2d6907f12cc7d23a846847615941bddee8709bf2bfd274acdf5e80bcf22fde"
+      sha256: "38ec6c303e2c83ee84512f5fc2a82ae311531021938e63d7137eccc107bf3c02"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.3"
+    version: "3.1.0"
   flutter_shaders:
     dependency: transitive
     description:
@@ -1287,10 +1279,10 @@ packages:
     dependency: "direct main"
     description:
       name: permission_handler
-      sha256: bc917da36261b00137bbc8896bf1482169cd76f866282368948f032c8c1caae1
+      sha256: ca045d03615023c08ccdb297aad46a9198193666039ddd36d4d85fd0b1864b98
       url: "https://pub.dev"
     source: hosted
-    version: "12.0.1"
+    version: "12.0.2"
   permission_handler_android:
     dependency: transitive
     description:
@@ -1303,10 +1295,10 @@ packages:
     dependency: transitive
     description:
       name: permission_handler_apple
-      sha256: f000131e755c54cf4d84a5d8bd6e4149e262cc31c5a8b1d698de1ac85fa41023
+      sha256: "447c18bc3c5fdea5c3039f042b2b365fd51e3634f5f6e269ed22c1f00071addc"
       url: "https://pub.dev"
     source: hosted
-    version: "9.4.7"
+    version: "9.4.8"
   permission_handler_html:
     dependency: transitive
     description:
@@ -1407,18 +1399,18 @@ packages:
     dependency: "direct main"
     description:
       name: purchases_flutter
-      sha256: e0034abc9b4412da1dcf3c4d9df04bf3256998d4982846f9c9952212e5619751
+      sha256: ab35dfa73c641715c0fb1e5a21cf9887fef945fe611e551f3d036e9ad1378d14
       url: "https://pub.dev"
     source: hosted
-    version: "10.1.1"
+    version: "10.2.0"
   purchases_ui_flutter:
     dependency: "direct main"
     description:
       name: purchases_ui_flutter
-      sha256: "9f82fbc98602151f2943e526e0e6e9abca818d5913ba1365f906ca8be711a728"
+      sha256: "2aedbb42f5b755ab3c9a3a4c2073480eade9e927f390dc708b378daafd1e5eab"
       url: "https://pub.dev"
     source: hosted
-    version: "10.1.1"
+    version: "10.2.0"
   qr:
     dependency: transitive
     description:
@@ -1459,54 +1451,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  record:
-    dependency: "direct main"
-    description:
-      name: record
-      sha256: "10911465138fafacef459a780564e883e01bd48eabf87ab20543684884492870"
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.2.1"
-  record_android:
-    dependency: transitive
-    description:
-      name: record_android
-      sha256: eb1732e42d0d2a1895b8db86e4fc917287e6d8491b6ed59918aea8bed6c69de4
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.2"
-  record_ios:
-    dependency: transitive
-    description:
-      name: record_ios
-      sha256: c051fb48edd7a0e265daafb9108730dc827c27b551728a3fdfb3ef69efd89c73
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.1"
-  record_linux:
-    dependency: transitive
-    description:
-      name: record_linux
-      sha256: "31181787bf7eccb0e298835836b69b3cd0a903863b75d70e937de3dec71cd8f3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
-  record_macos:
-    dependency: transitive
-    description:
-      name: record_macos
-      sha256: cfe1b61435e27db418bf513dc36820d10c9f7eb1843786c2c9a52e07e2f4f627
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.2"
-  record_platform_interface:
-    dependency: transitive
-    description:
-      name: record_platform_interface
-      sha256: "8e56cbe06c6984137fb86132ff03459f29938d927496d9b2d0962e2d6345d488"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.6.0"
   record_use:
     dependency: transitive
     description:
@@ -1515,54 +1459,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.0"
-  record_web:
-    dependency: transitive
-    description:
-      name: record_web
-      sha256: "7e9846981c1f2d111d86f0ae3309071f5bba8b624d1c977316706f08fc31d16d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.0"
-  record_windows:
-    dependency: transitive
-    description:
-      name: record_windows
-      sha256: "223258060a1d25c62bae18282c16783f28581ec19401d17e56b5205b9f039d78"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.7"
   riverpod:
     dependency: "direct main"
     description:
       name: riverpod
-      sha256: c406de02bff19d920b832bddfb8283548bfa05ce41c59afba57ce643e116aa59
+      sha256: "16ff608d21e8ea64364f2b7c049c94a02ab81668f78845862b6e88b71dd4935a"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.3"
+    version: "3.1.0"
   riverpod_analyzer_utils:
     dependency: transitive
     description:
       name: riverpod_analyzer_utils
-      sha256: a0f68adb078b790faa3c655110a017f9a7b7b079a57bbd40f540e80dce5fcd29
+      sha256: "947b05d04c52a546a2ac6b19ef2a54b08520ff6bdf9f23d67957a4c8df1c3bc0"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0-dev.7"
+    version: "1.0.0-dev.8"
   riverpod_annotation:
     dependency: "direct main"
     description:
       name: riverpod_annotation
-      sha256: "7230014155777fc31ba3351bc2cb5a3b5717b11bfafe52b1553cb47d385f8897"
+      sha256: cc1474bc2df55ec3c1da1989d139dcef22cd5e2bd78da382e867a69a8eca2e46
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.3"
+    version: "4.0.0"
   riverpod_generator:
     dependency: "direct dev"
     description:
       name: riverpod_generator
-      sha256: "49894543a42cf7a9954fc4e7366b6d3cb2e6ec0fa07775f660afcdd92d097702"
+      sha256: e43b1537229cc8f487f09b0c20d15dba840acbadcf5fc6dad7ad5e8ab75950dc
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.3"
+    version: "4.0.0+1"
   rx:
     dependency: transitive
     description:
@@ -1583,18 +1511,18 @@ packages:
     dependency: transitive
     description:
       name: sentry
-      sha256: f04095a25ff02b202a914174c73ec309570aa93d61098cb4a0a9e715b4aaa465
+      sha256: "3284d220618d9344ce8a0765519129744a4cc658309496f052680909d74f7c51"
       url: "https://pub.dev"
     source: hosted
-    version: "9.20.0"
+    version: "9.21.0"
   sentry_flutter:
     dependency: "direct main"
     description:
       name: sentry_flutter
-      sha256: "4f0a914d8c37e5015d7b86dd42b92dd265948fd31875b43e62ddfc2e7bea0e41"
+      sha256: fc14658d90645e83e2305e8300513d5633aa5cd2cbf5b5d805e78416acbc61e9
       url: "https://pub.dev"
     source: hosted
-    version: "9.20.0"
+    version: "9.21.0"
   share_plus:
     dependency: "direct main"
     description:
@@ -1988,10 +1916,10 @@ packages:
     dependency: transitive
     description:
       name: vector_graphics_compiler
-      sha256: b9b3f391857781aa96acacef96066f2f49b4cd03cf9fce3ca4d8da2ef5ea129e
+      sha256: "09854c7633b215e6f7bb2a9adb607bc525bae8655c7fc29db880c33e62f72230"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.3"
+    version: "1.2.4"
   vector_math:
     dependency: transitive
     description:

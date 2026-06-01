@@ -1,101 +1,73 @@
 {
   "@@locale": "my",
-  "appTitle": "စျေးဝယ်စာရင်း",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "စာရင်းများ",
-  "pantry": "စားသိုက်ခန်း",
-  "@_Common": "description: Common actions",
-  "cancel": "ပယ်ဖျက်",
-  "save": "သိမ်းဆည်း",
-  "create": "ဖန်တီး",
-  "add": "ထည့်",
-  "remove": "ဖယ်ရှား",
-  "delete": "ဖျက်ပစ်",
-  "edit": "တည်းဖြတ်",
-  "copy": "မိတ္တူကူး",
-  "retry": "ထပ်ကြိုးစား",
-  "regenerate": "ပြန်ထုတ်",
-  "copiedToClipboard": "ကလစ်ဘုတ်သို့ ကူးယူပြီး",
-  "confirm": "အတည်ပြု",
-  "close": "ပိတ်",
-  "import": "တင်သွင်း",
-  "rename": "အမည်ပြောင်း",
-  "upgrade": "အဆင့်မြှင့်",
-  "clear": "ရှင်းလင်း",
-  "error": "အမှား: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "အမှား: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "ဝယ်ယူမှုကို လုပ်ဆောင်ရာတွင် အမှားရှိနေသည်။ ထပ်ကြိုးစားပါ။",
-  "restoreError": "ဝယ်ယူမှုများကို ပြန်လည်ရယူရာတွင် အမှားရှိနေသည်။ ထပ်ကြိုးစားပါ။",
-  "loading": "ဖွင့်နေသည်...",
-  "fieldRequired": "လိုအပ်သော အကွက်",
-  "addedFeedback": "ထည့်ပြီးပြီ!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count} ခု ရွေးချယ်ထား",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "ခန့်မှန်း",
-  "alreadyPurchased": "ဝယ်ပြီးသား",
-  "clearList": "စာရင်းရှင်းလင်း",
-  "clearPurchased": "ဝယ်ပြီးများရှင်းလင်း",
-  "share": "မျှဝေ",
-  "shareViaCode": "ကုဒ်ဖြင့်မျှဝေ",
-  "importViaCode": "ကုဒ်ဖြင့်တင်သွင်း",
-  "listAssistant": "စာရင်းအကူ",
-  "globalAssistant": "ကမ္ဘာလုံးဆိုင်ရာအကူ",
-  "becomePremium": "Premium ဖြစ်ပါ",
-  "manageSubscription": "စာရင်းသွင်းမှုကိုစီမံ",
-  "completePurchase": "ဝယ်ယူမှုအပြီးသတ်",
-  "confirmClearList": "ပစ္စည်းအားလုံးကိုဖယ်ရှားမည်?",
-  "shareListTitle": "စာရင်းကိုမျှဝေပါ",
-  "shareThisCode": "ဤကုဒ်ကိုမျှဝေပါ:",
-  "validForLimitedTime": "အချိန်ကန့်သတ်ထားသည်",
-  "importListTitle": "စာရင်းတင်သွင်းပါ",
-  "enterCodeHint": "ကုဒ်ကိုထည့်ပါ",
-  "confirmArchiveTitle": "ဝယ်ယူမှုအပြီးသတ်",
-  "confirmArchiveContent": "ဤဝယ်ယူမှုကိုအပြီးသတ်ပြီးစာရင်းကိုသိမ်းမည်?",
-  "complete": "အပြီးသတ်",
-  "listArchived": "စာရင်းကိုအောင်မြင်စွာသိမ်းပြီးပြီ!",
-  "listAdded": "{listName} ထည့်ပြီးပြီ!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "ဝယ်",
-  "unmark": "အမှတ်ဖြုတ်",
-  "confirmDeleteItems": "{count} ခုကိုဖယ်ရှားမည်?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "အတည်ပြု",
-  "confirmContent": "{count} ခုကိုဖယ်ရှားမည်?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,68 @@
       }
     }
   },
-  "archiveList": "စာရင်းသိမ်းဆည်း",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "စားသိုက်ခန်း",
-  "generateShoppingList": "စျေးဝယ်စာရင်းထုတ်",
-  "pantryEmpty": "စားသိုက်ခန်းဗလာ",
-  "pantryEmptySubtitle": "အိမ်မှာထားချင်တဲ့ပစ္စည်းတွေထည့်ပါ",
-  "itemsNeedPurchase": "{deficit} ခုဝယ်ရန်လိုအပ်သည်",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +144,26 @@
       }
     }
   },
-  "noItemsToBuy": "ဝယ်ရန်မလိုအပ်သောပစ္စည်းမရှိပါ",
-  "newPantryList": "စားသိုက်ခန်းစျေးဝယ်",
-  "newListTitle": "စျေးဝယ်စာရင်းအသစ်",
-  "itemsWillBeAdded": "{count} ခုထည့်သွင်းမည်",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +171,13 @@
       }
     }
   },
-  "listNameLabel": "စာရင်းအမည်",
-  "listCreated": "\"{name}\" စာရင်းကို {count} ခုဖြင့်ဖန်တီးပြီးပြီ",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +188,118 @@
       }
     }
   },
-  "noTracking": "ခြေရာခံမထားပါ",
-  "markAsPurchased": "ဝယ်ပြီးအဖြစ်မှတ်",
-  "editPantryItem": "{name} ကိုတည်းဖြတ်",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "စံပြပမာဏ",
-  "currentQuantity": "လက်ရှိပမာဏ",
-  "consumed": "စားသုံးပြီး",
-  "restocked": "{name} ကို {quantity} {unit} သို့ပြန်ဖြည့်ပြီး",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +313,40 @@
       }
     }
   },
-  "confirmRemovePantry": "\"{name}\" ကိုစားသိုက်ခန်းမှဖယ်ရှားမည်?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name} ကိုတည်းဖြတ်",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "ဆက်တင်များ",
-  "language": "ဘာသာစကား",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "စနစ်မူလ",
-  "appearance": "အသွင်အပြင်",
-  "light": "အလင်း",
-  "system": "စနစ်",
-  "dark": "အမှောင်",
-  "themeColor": "အပြင်အဆင်အရောင်",
-  "finance": "ဘဏ္ဍာရေး",
-  "monthlyBudgetNav": "လစဉ်ဘတ်ဂျက်",
-  "budgetSubtitle": "သင့်လစဉ်အသုံးစရိတ်ကိုခြေရာခံပါ",
-  "data": "ဒေတာ",
-  "backupNav": "အရန်သိမ်း",
-  "backupSubtitle": "သင့်ဒေတာကိုတင်ပို့သို့မဟုတ်တင်သွင်းပါ",
-  "about": "အကြောင်း",
-  "version": "ဗားရှင်း",
-  "privacy": "ကိုယ်ရေးလုံခြုံမှု",
-  "termsOfUse": "အသုံးပြုခြင်းဆိုင်ရာသတ်မှတ်ချက်များ",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "အရန်သိမ်း",
-  "backupPremiumDescription": "အရန်သိမ်းခြင်းနှင့်တင်ပို့ခြင်းသည် Premium အင်္ဂါရပ်ဖြစ်သည်",
-  "exportData": "ဒေတာတင်ပို့",
-  "exportDataSubtitle": "စာရင်းအားလုံးကို JSON အဖြစ်သိမ်းဆည်း",
-  "importData": "ဒေတာတင်သွင်း",
-  "importDataSubtitle": "JSON မှစာရင်းများကိုပြန်လည်ရယူ",
-  "importJsonTitle": "JSON တင်သွင်း",
-  "importJsonHint": "ဤနေရာတွင်အရန်သိမ်း JSON ကိုကူးထည့်ပါ...",
-  "backupExported": "အရန်သိမ်းမှုတင်ပို့ပြီးပြီ!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "လစဉ်ဘတ်ဂျက်",
-  "budgetPremiumLocked": "ကမ္ဘာလုံးဆိုင်ရာလစဉ်ဘတ်ဂျက်သည် Premium ဖြစ်သည်",
-  "budgetUpgradePrompt": "ဖွင့်ရန်အဆင့်မြှင့်ပါ",
-  "noBudgetDefined": "ဘတ်ဂျက်သတ်မှတ်မထားပါ",
-  "totalEstimated": "စုစုပေါင်းခန့်မှန်း: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,359 +354,218 @@
       }
     }
   },
-  "setBudgetButton": "ဘတ်ဂျက်သတ်မှတ်",
-  "budgetLists": "စာရင်းများ",
-  "budgetValueLabel": "ပမာဏ",
-  "setBudgetTitle": "လစဉ်ဘတ်ဂျက်",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "အားလုံး",
-  "filterPending": "ဆိုင်းငံ့",
-  "filterPurchased": "ဝယ်ပြီး",
-  "sortName": "အမည်",
-  "sortCategory": "အမျိုးအစား",
-  "sortDate": "ရက်စွဲ",
-  "sortManual": "ကိုယ်တိုင်",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "အကြောင်း",
+  "achievements": "အောင်မြင်မှုများ",
+  "activeListening": "Active Listening",
+  "add": "ထည့်",
+  "addAllToList": "အားလုံးကိုစာရင်းထဲထည့်",
+  "addDirectToList": "စာရင်းထဲသို့ တိုက်ရိုက်ထည့်ပါ။",
+  "addIngredient": "ပါဝင်ပစ္စည်းထည့်ရန်",
   "addItem": "ပစ္စည်းထည့်",
-  "itemName": "ပစ္စည်းအမည်",
-  "quantityShort": "ပမာဏ",
-  "unit": "ယူနစ်",
-  "category": "အမျိုးအစား",
-  "estimatedPrice": "ခန့်မှန်းစျေးနှုန်း",
   "addItemPrice": "ခန့်မှန်းစျေးနှုန်း",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "ပစ္စည်းတည်းဖြတ်",
-  "quantityFull": "ပမာဏ",
-  "editItemPrice": "ခန့်မှန်းစျေးနှုန်း",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "ဓာတ်ပုံထည့်ရန်",
   "addToPantry": "စားသိုက်ခန်းသို့ထည့်",
   "addToPantryPrompt": "\"{name}\" ကိုသင့်စားသိုက်ခန်းသို့ထည့်မည်?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "ဟုတ်",
-  "productName": "ကုန်ပစ္စည်းအမည်",
-  "idealQty": "စံပြပမာဏ",
-  "currentQty": "လက်ရှိပမာဏ",
-  "trackStock": "စတော့ခြေရာခံ",
-  "trackStockActive": "စျေးဝယ်အကြံပြုချက်များတွင်ပေါ်လာမည်",
-  "trackStockInactive": "စျေးဝယ်အကြံပြုချက်မထုတ်ပါ",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "စာရင်းဖန်တီး",
-  "renameListDialog": "စာရင်းအမည်ပြောင်း",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "စာရင်းမှတ်တမ်း",
-  "myLists": "ကျွန်ုပ်၏စာရင်းများ",
-  "viewActive": "လှုပ်ရှားနေသောစာရင်းများကြည့်",
-  "viewHistory": "မှတ်တမ်းကြည့်",
-  "noArchivedLists": "သိမ်းထားသောစာရင်းမရှိပါ",
-  "noActiveLists": "လှုပ်ရှားနေသောစာရင်းမရှိပါ",
-  "completedOn": "{date} တွင်အပြီးသတ်ခဲ့သည်",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "မျှဝေထား",
-  "restore": "ပြန်လည်ရယူ",
-  "removeSharedTooltip": "ဖယ်ရှား",
-  "deleteListTitle": "စာရင်းဖျက်",
-  "deleteListContent": "\"{name}\" ကိုဖျက်ရန်သေချာပါသလား။ ပစ္စည်းအားလုံးဖယ်ရှားခံရမည်။",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "မျှဝေထားသောစာရင်းဖယ်ရှား",
-  "removeSharedListContent": "\"{name}\" ကိုသင့်စာရင်းများမှဖယ်ရှားမည်? မူရင်းစာရင်းကိုမထိခိုက်ပါ။",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "စာရင်းအသစ်ဖန်တီး",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "ထည့်ပြီးပြီ!",
+  "advancedFeatures": "အဆင့်မြင့်အင်္ဂါရပ်များ",
   "aiAssistant": "AI အကူ",
   "aiAssistantDescription": "ကျွန်ုပ်တို့၏ AI အကူဖြင့်အသိဉာဏ်ရှိသောအကြံပြုချက်များ၊ ချက်ပြုတ်နည်းများနှင့်ကိုယ်ပိုင်အကြံပေးချက်များရယူပါ။",
-  "generalAssistant": "အထွေထွေအကူ",
+  "aiCreditsRemaining": "{remaining} ခရက်ဒစ်ကျန်ပါသည်",
+  "aiEnergy": "AI စွမ်းအင်",
+  "aiError": "ဝမ်းနည်းပါတယ်၊ သင့်တောင်းဆိုချက်ကိုလုပ်ဆောင်ရာတွင်အမှားဖြစ်သွားသည်။ သင့်ချိတ်ဆက်မှုကိုစစ်ဆေးပါသို့မဟုတ်နောက်မှထပ်ကြိုးစားပါ။",
+  "aiVoiceCommandTooltip": "AI အသံအမိန့် (Premium)",
+  "allTags": "အားလုံး",
+  "alreadyPurchased": "ဝယ်ပြီးသား",
+  "appTitle": "စျေးဝယ်စာရင်း",
+  "appearance": "အသွင်အပြင်",
+  "archiveList": "စာရင်းသိမ်းဆည်း",
+  "backToChat": "Chat သို့ ပြန်သွားရန်",
+  "backupExported": "အရန်သိမ်းမှုတင်ပို့ပြီးပြီ!",
+  "backupNav": "အရန်သိမ်း",
+  "backupPremiumDescription": "အရန်သိမ်းခြင်းနှင့်တင်ပို့ခြင်းသည် Premium အင်္ဂါရပ်ဖြစ်သည်",
+  "backupSubtitle": "သင့်ဒေတာကိုတင်ပို့သို့မဟုတ်တင်သွင်းပါ",
+  "backupTitle": "အရန်သိမ်း",
+  "becomePremium": "Premium ဖြစ်ပါ",
+  "budgetAmountLabel": "ဘတ်ဂျက်ပမာဏ",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "လစဉ်ဘတ်ဂျက်",
+  "budgetDashboardTitle": "ဒက်ရှ်ဘုတ်",
+  "budgetEditTitle": "လစဉ်ဘတ်ဂျက်",
+  "budgetLists": "စာရင်းများ",
+  "budgetPremiumLocked": "ကမ္ဘာလုံးဆိုင်ရာလစဉ်ဘတ်ဂျက်သည် Premium ဖြစ်သည်",
+  "budgetSubtitle": "သင့်လစဉ်အသုံးစရိတ်ကိုခြေရာခံပါ",
+  "budgetUpgradePrompt": "ဖွင့်ရန်အဆင့်မြှင့်ပါ",
+  "budgetValueLabel": "ပမာဏ",
+  "buy": "ဝယ်",
+  "cancel": "ပယ်ဖျက်",
+  "cartTotal": "တောင်းစုစုပေါင်း",
+  "catBakery": "မုန့်ဖုတ်",
+  "catBeverages": "အဖျော်ယမကာများ",
+  "catCleaning": "သန့်ရှင်းရေး",
+  "catFruits": "သစ်သီးများ",
+  "catOthers": "အခြား",
+  "category": "အမျိုးအစား",
+  "chatError": "ချတ်ဖွင့်ရာတွင်အမှား: {error}",
+  "chatHint": "သင့်မက်ဆေ့ခ်ျကိုရိုက်ပါ...",
+  "chatSubtitle": "ပစ္စည်းအကြံပြုချက်များ၊ ချက်ပြုတ်နည်းများသို့မဟုတ်ချွေတာရေးအကြံပေးချက်များတောင်းပါ။",
+  "chatSubtitleShort": "စျေးနှုန်း၊ ဟင်းချက်နည်းများ၊ အဖွဲ့အစည်းအကြောင်းမေးပါ...",
+  "chooseCurrency": "ငွေကြေးကို ရွေးပါ။",
+  "chooseImageSource": "ဓာတ်ပုံအရင်းအမြစ်ရွေးချယ်ပါ",
+  "chooseLanguage": "ဘာသာစကားရွေးချယ်ပါ",
+  "clear": "ရှင်းလင်း",
   "clearHistory": "မှတ်တမ်းရှင်းလင်း",
   "clearHistoryConfirm": "ဤအစီအစဉ်အတွင်းမက်ဆေ့ခ်ျအားလုံးကိုရှင်းလင်းမည်?",
-  "chatHint": "သင့်မက်ဆေ့ခ်ျကိုရိုက်ပါ...",
-  "chatError": "ချတ်ဖွင့်ရာတွင်အမှား: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "သင့်စာရင်းအတွက်ဘယ်လိုကူညီပေးရမလဲ?",
-  "generalHelp": "ယနေ့သင့်စျေးဝယ်အတွက်ဘယ်လိုကူညီပေးရမလဲ?",
-  "chatSubtitle": "ပစ္စည်းအကြံပြုချက်များ၊ ချက်ပြုတ်နည်းများသို့မဟုတ်ချွေတာရေးအကြံပေးချက်များတောင်းပါ။",
-  "aiError": "ဝမ်းနည်းပါတယ်၊ သင့်တောင်းဆိုချက်ကိုလုပ်ဆောင်ရာတွင်အမှားဖြစ်သွားသည်။ သင့်ချိတ်ဆက်မှုကိုစစ်ဆေးပါသို့မဟုတ်နောက်မှထပ်ကြိုးစားပါ။",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Premium အင်္ဂါရပ်များကို\nဖွင့်ရန်အကောင့်ဝင်ပါ",
-  "signInGoogle": "Google ဖြင့်အကောင့်ဝင်",
-  "signInApple": "Apple ဖြင့်အကောင့်ဝင်",
+  "clearList": "စာရင်းရှင်းလင်း",
+  "clearPurchased": "ဝယ်ပြီးများရှင်းလင်း",
+  "close": "ပိတ်",
+  "complete": "အပြီးသတ်",
+  "completePurchase": "ဝယ်ယူမှုအပြီးသတ်",
+  "completedOn": "{date} တွင်အပြီးသတ်ခဲ့သည်",
+  "confirm": "အတည်ပြု",
+  "confirmArchiveContent": "ဤဝယ်ယူမှုကိုအပြီးသတ်ပြီးစာရင်းကိုသိမ်းမည်?",
+  "confirmArchiveTitle": "ဝယ်ယူမှုအပြီးသတ်",
+  "confirmClearList": "ပစ္စည်းအားလုံးကိုဖယ်ရှားမည်?",
+  "confirmContent": "{count} ခုကိုဖယ်ရှားမည်?",
+  "confirmDeleteItems": "{count} ခုကိုဖယ်ရှားမည်?",
+  "confirmDeleteTitle": "အတည်ပြု",
+  "confirmRemovePantry": "\"{name}\" ကိုစားသိုက်ခန်းမှဖယ်ရှားမည်?",
+  "consumed": "စားသုံးပြီး",
   "continueAsGuest": "ဧည့်သည်အဖြစ်ဆက်လက်",
-  "loginError": "အကောင့်ဝင်ရာတွင်အမှား: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "ဖွင့်ရန်အဆင့်မြှင့်ပါ",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "ပစ္စည်းဖယ်ရှားပြီး",
-  "undo": "ပြန်ဖျက်",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "သင့်စာရင်းဗလာဖြစ်နေသည်",
-  "emptyListSubtitle": "စတင်ရန်ပစ္စည်းများထည့်ပါ",
-  "noListFoundTitle": "စာရင်းမတွေ့ပါ",
-  "noListFoundSubtitle": "စတင်ရန်သင့်ပထမဆုံးစာရင်းကိုဖန်တီးပါ",
+  "copiedToClipboard": "ကလစ်ဘုတ်သို့ ကူးယူပြီး",
+  "copy": "မိတ္တူကူး",
+  "create": "ဖန်တီး",
   "createFirstList": "ပထမဆုံးစာရင်းဖန်တီး",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "စာရင်းဘတ်ဂျက်",
-  "budgetAmountLabel": "ဘတ်ဂျက်ပမာဏ",
-  "removeBudget": "ဖယ်ရှား",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "အကန့်အသတ်မဲ့စာရင်းများ",
-  "prefSharing": "စာရင်းများမျှဝေပါ",
-  "prefFullHistory": "မှတ်တမ်းအပြည့်အစုံ",
-  "prefExportData": "ဒေတာတင်ပို့",
-  "prefCustomThemes": "စိတ်ကြိုက်အပြင်အဆင်များ",
-  "prefMonthlyBudget": "ကမ္ဘာလုံးဆိုင်ရာလစဉ်ဘတ်ဂျက်",
-  "prefAIAssistant": "ကိုယ်ပိုင် AI အကူ",
-  "prefUnlimitedPantry": "အကန့်အသတ်မဲ့စားသိုက်ခန်း",
-  "prefInteractiveArtifacts": "အပြန်အလှန်တုံ့ပြန် AI Artifacts",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "အစိမ်း",
-  "themeBlue": "အပြာ",
-  "themePurple": "ခရမ်း",
-  "themeRed": "အနီ",
-  "themeOrange": "လိမ္မော်",
-  "themePink": "ပန်းရောင်",
-  "themeIndigo": "မဲနယ်",
-  "themeAmber": "ပယင်း",
-  "themeTeal": "ဘဲဥဖြူ",
-  "themeBrown": "ညို",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "သစ်သီးများ",
-  "catCleaning": "သန့်ရှင်းရေး",
-  "catBeverages": "အဖျော်ယမကာများ",
-  "catBakery": "မုန့်ဖုတ်",
-  "catOthers": "အခြား",
-  "@_Unit": "description: Unit",
-  "unitPack": "ထုပ်",
-  "@_Share": "description: Sharing",
-  "shareSubject": "စျေးဝယ်စာရင်း",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "လစဉ်ဘတ်ဂျက်",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "စာရင်းဖျက်",
-  "pantryItemRemoved": "ပစ္စည်းဖယ်ရှားပြီး",
+  "createListDialog": "စာရင်းဖန်တီး",
+  "createListToStartAi": "စမတ်ချတ်ကို စတင်အသုံးပြုရန် စျေးဝယ်စာရင်းတစ်ခု ဖန်တီးပါ။",
+  "createNewList": "စာရင်းအသစ်ဖန်တီး",
+  "currency": "ငွေကြေး",
+  "currentQty": "လက်ရှိပမာဏ",
+  "currentQuantity": "လက်ရှိပမာဏ",
+  "dark": "အမှောင်",
+  "data": "ဒေတာ",
   "deficitItems": "{deficit} ခုဝယ်ရန်လိုအပ်သည်",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "တောင်းစုစုပေါင်း",
-  "restockLabel": "ပြန်ဖြည့်",
-  "advancedFeatures": "အဆင့်မြင့်အင်္ဂါရပ်များ",
-  "selectAll": "အားလုံးရွေး",
+  "delete": "ဖျက်ပစ်",
+  "deleteListConfirm": "စာရင်းဖျက်",
+  "deleteListContent": "\"{name}\" ကိုဖျက်ရန်သေချာပါသလား။ ပစ္စည်းအားလုံးဖယ်ရှားခံရမည်။",
+  "deleteListTitle": "စာရင်းဖျက်",
+  "deleteRecipe": "ဖျက်ရန်",
+  "deleteRecipeConfirm": "ဤဟင်းချက်နည်းကို ဖျက်မလား?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\" ကို ဖျက်ရန် သေချာပါသလား? ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍မရပါ။",
+  "deleteSession": "Chat ကိုဖျက်ပါ။",
+  "deleteSessionConfirm": "ဤချတ်ကို ဖျက်လိုသည်မှာ သေချာပါသလား။ မက်ဆေ့ချ်များ အပြီးအပိုင် ဆုံးရှုံးသွားပါမည်။",
   "deselectAll": "အားလုံးမရွေး",
-  "monthlyBudgetAppBar": "လစဉ်ဘတ်ဂျက်",
-  "budgetEditTitle": "လစဉ်ဘတ်ဂျက်",
-  "budgetDashboardTitle": "ဒက်ရှ်ဘုတ်",
-  "selectListForDashboard": "ဒက်ရှ်ဘုတ်ကြည့်ရန်စာရင်းတစ်ခုရွေးပါ။",
-  "spendingAnalysis": "အသုံးစရိတ်ခွဲခြမ်းစိတ်ဖြာ",
-  "noItemsToAnalyze": "ခွဲခြမ်းစိတ်ဖြာရန်စာရင်းတွင်ပစ္စည်းမရှိပါ။",
-  "markItemsToSeeAnalysis": "ခွဲခြမ်းစိတ်ဖြာမှုကြည့်ရန်ပစ္စည်းများကိုဝယ်ပြီးအဖြစ်မှတ်ပါ။",
-  "totalSpending": "စုစုပေါင်းအသုံးစရိတ်",
-  "spendingByCategory": "အမျိုးအစားအလိုက်အသုံးစရိတ်",
-  "achievements": "အောင်မြင်မှုများ",
-  "exportPdfExcel": "PDF/Excel တင်ပို့",
-  "exportPdf": "PDF အဖြစ်တင်ပို့",
-  "exportExcel": "Excel အဖြစ်တင်ပို့",
-  "organizingAi": "AI ဖြင့်စုစည်းနေသည်...",
-  "yesLabel": "ဟုတ်",
-  "noLabel": "မဟုတ်",
-  "shareListText": "ကျွန်ုပ်၏စျေးဝယ်စာရင်း",
-  "emptyListAddItems": "သင့်စာရင်းဗလာဖြစ်နေသည်! ပစ္စည်းများအရင်ထည့်ပါ။ ℹ️",
-  "listOrganizedMagic": "စာရင်းကိုအမျိုးအစားများဖြင့်မှော်ဆန်စွာစုစည်းပြီးပြီ! ✨",
-  "shoppingMode": "စျေးဝယ်မုဒ်",
-  "smartOrganization": "စမတ်ကျသောစုစည်းမှု",
-  "savings": "ချွေတာမှုများ",
-  "shoppingModeHeader": "စျေးဝယ်မုဒ်",
-  "shareAsText": "ပစ္စည်းများကိုဖော်မတ်ပါသောစာသားအဖြစ်ပို့",
-  "shareRealtime": "အခြားသူများနှင့်အချိန်နှင့်တပြေးညီထပ်တူပြု",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "အမြန်ချက်ပြုတ်နည်း",
-  "quickRecipePrompt": "ကျွန်ုပ်စာရင်းပါပစ္စည်းများဖြင့်ချက်ပြုတ်နည်းများအကြံပြုပါ။",
+  "dynamicColors": "Dynamic အရောင်များ",
+  "dynamicColorsEnabledWarning": "အပြင်အဆင်အရောင်အကျိုးသက်ရောက်စေရန် ရွေ့လျားရောင်များပိတ်ပါ။",
+  "dynamicColorsSubtitle": "သင်၏ wallpaper ပေါ်မူတည်၍ အရောင်များကို အသုံးပြုပါ",
   "economyTips": "ချွေတာရေးအကြံပေးချက်များ",
   "economyTipsPrompt": "ဤဝယ်ယူမှုတွင်ငွေဘယ်လိုချွေတာနိုင်မလဲ?",
-  "organizeAisles": "စင်များအလိုက်စုစည်း",
-  "organizeAislesPrompt": "စျေးဆိုင်စင်များအလိုက်စုစည်းပါ။",
-  "recipeSuggestion": "ချက်ပြုတ်နည်းအကြံပြုချက်",
-  "aiCreditsRemaining": "{remaining} ခရက်ဒစ်ကျန်ပါသည်",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "အားလုံးကိုစာရင်းထဲထည့်",
-  "organizeByAisles": "စင်များအလိုက်စုစည်း",
-  "voiceTranscriptionTooltip": "အသံရိုက်ခြင်း (အခမဲ့)",
-  "aiVoiceCommandTooltip": "AI အသံအမိန့် (Premium)",
-  "voiceCommandTitle": "AI အသံအမိန့်",
-  "voiceCommandContent": "သင့်စာရင်းကိုစီမံရန်သဘာဝကျကျစကားပြောပါ!\n\nဥပမာများ:\n• 'မုန့်၊ ဒိန်ခဲနှင့်ဝက်ပေါင်ခြောက်ထည့်'\n• 'အဝတ်လျှော်ဆပ်ပြာဖယ်ရှား'\n• 'အပြင်အဆင်ကိုအပြာသို့ပြောင်း'\n\n၎င်းသည် Lista Plus Premium ၏သီးသန့်အင်္ဂါရပ်ဖြစ်သည်။",
-  "voiceCommandPlanBtn": "အစီအစဉ်များကြည့်",
-  "itemsAddedSuccess": "ပစ္စည်းများကိုစာရင်းထဲအောင်မြင်စွာထည့်ပြီးပြီ!",
-  "viewList": "စာရင်းကြည့်",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "တုံ့ပြန်ချက်ပေးပို့ပါ",
+  "edit": "တည်းဖြတ်",
+  "editItem": "ပစ္စည်းတည်းဖြတ်",
+  "editItemPrice": "ခန့်မှန်းစျေးနှုန်း",
+  "editPantryItem": "{name} ကိုတည်းဖြတ်",
+  "editRecipe": "ပြင်ဆင်ရန်",
+  "editRecipeTitle": "ဟင်းချက်နည်းပြင်ဆင်ရန်",
+  "emptyListAddItems": "သင့်စာရင်းဗလာဖြစ်နေသည်! ပစ္စည်းများအရင်ထည့်ပါ။ ℹ️",
+  "emptyListSubtitle": "စတင်ရန်ပစ္စည်းများထည့်ပါ",
+  "emptyListTitle": "သင့်စာရင်းဗလာဖြစ်နေသည်",
+  "enterCodeHint": "ကုဒ်ကိုထည့်ပါ",
+  "enterUrl": "URL ထည့်ပါ",
+  "error": "အမှား: {message}",
+  "errorGeneric": "အမှား: {message}",
+  "errorLoadingChat": "သည်းခံပါ ချတ်ကိုဖွင့်ရာတွင် တစ်စုံတစ်ခု မှားယွင်းသွားပါသည်။",
+  "errorLoadingChatSubtitle": "သင့်ချိတ်ဆက်မှုကို စစ်ဆေးပါ သို့မဟုတ် နောက်မှ ထပ်စမ်းကြည့်ပါ။",
+  "errorLoadingRecipes": "ဟင်းချက်နည်းများ ပြသရာတွင် အမှားရှိနေသည်",
+  "errorOscillation": "ကွန်ရက် တုန်ခါမှုများ သို့မဟုတ် ယာယီ မရရှိနိုင်ခြင်းကြောင့် ဖြစ်နိုင်ပါသည်။ ထပ်စမ်းကြည့်ပါ။",
+  "estimated": "ခန့်မှန်း",
+  "estimatedCost": "ခန့်မှန်း",
+  "estimatedPrice": "ခန့်မှန်းစျေးနှုန်း",
+  "exportData": "ဒေတာတင်ပို့",
+  "exportDataSubtitle": "စာရင်းအားလုံးကို JSON အဖြစ်သိမ်းဆည်း",
+  "exportExcel": "Excel အဖြစ်တင်ပို့",
+  "exportPdf": "PDF အဖြစ်တင်ပို့",
+  "exportPdfExcel": "PDF/Excel တင်ပို့",
+  "feedbackBack": "နောက်သို့",
+  "feedbackError": "ပေးပို့ရာတွင်အမှား: {error}",
+  "feedbackHint": "သင့်တုံ့ပြန်ချက်ကိုအသေးစိတ်ဖော်ပြပါ...",
   "feedbackPrompt": "ဘာမျှဝေချင်ပါသလဲ?",
+  "feedbackRetry": "ထပ်ကြိုးစား",
+  "feedbackSend": "တုံ့ပြန်ချက်ပေးပို့ပါ",
+  "feedbackSending": "ပေးပို့နေသည်...",
+  "feedbackSettingsSubtitle": "ချွတ်ယွင်းချက်များတင်ပြရန်၊ တိုးတက်စေရန်အကြံပြုရန် သို့မဟုတ် ဘာသာပြန်ချက်များပြင်ဆင်ရန်",
+  "feedbackSettingsTitle": "တုံ့ပြန်ချက်ပေးပို့ပါ",
+  "feedbackThankYou": "ကျေးဇူးတင်ပါသည်!",
+  "feedbackThankYouMessage": "သင့်တုံ့ပြန်ချက်ကိုလက်ခံရရှိပြီး Lista Plus ကိုလူတိုင်းအတွက်တိုးတက်စေရန်ကူညီပေးပါသည်။",
+  "feedbackTitle": "တုံ့ပြန်ချက်ပေးပို့ပါ",
   "feedbackTypeBug": "ချွတ်ယွင်းချက်တင်ပြရန်",
   "feedbackTypeBugHint": "တစ်ခုခုအလုပ်မလုပ်ပါ",
-  "feedbackTypeSuggestion": "အကြံပြုချက်",
-  "feedbackTypeSuggestionHint": "အက်ပ်ကိုတိုးတက်စေရန်စိတ်ကူး",
-  "feedbackTypeTranslation": "ဘာသာပြန်ခြင်းပြဿနာ",
-  "feedbackTypeTranslationHint": "မမှန်ကန်သော သို့မဟုတ် မကြည်မလင်သောဘာသာပြန်",
   "feedbackTypeFeature": "အင်္ဂါရပ်တောင်းဆိုချက်",
   "feedbackTypeFeatureHint": "သင်မြင်လိုသောအင်္ဂါရပ်",
   "feedbackTypeOther": "အခြား",
   "feedbackTypeOtherHint": "အခြားတုံ့ပြန်ချက်အမျိုးအစား",
-  "feedbackHint": "သင့်တုံ့ပြန်ချက်ကိုအသေးစိတ်ဖော်ပြပါ...",
-  "feedbackSend": "တုံ့ပြန်ချက်ပေးပို့ပါ",
-  "feedbackSending": "ပေးပို့နေသည်...",
-  "feedbackThankYou": "ကျေးဇူးတင်ပါသည်!",
-  "feedbackThankYouMessage": "သင့်တုံ့ပြန်ချက်ကိုလက်ခံရရှိပြီး Lista Plus ကိုလူတိုင်းအတွက်တိုးတက်စေရန်ကူညီပေးပါသည်။",
-  "feedbackBack": "နောက်သို့",
-  "feedbackError": "ပေးပို့ရာတွင်အမှား: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "ထပ်ကြိုးစား",
-  "feedbackSettingsTitle": "တုံ့ပြန်ချက်ပေးပို့ပါ",
-  "feedbackSettingsSubtitle": "ချွတ်ယွင်းချက်များတင်ပြရန်၊ တိုးတက်စေရန်အကြံပြုရန် သို့မဟုတ် ဘာသာပြန်ချက်များပြင်ဆင်ရန်",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "ပါဝင်ပစ္စည်းထည့်ရန်",
-  "addPhoto": "ဓာတ်ပုံထည့်ရန်",
-  "allTags": "အားလုံး",
-  "chooseImageSource": "ဓာတ်ပုံအရင်းအမြစ်ရွေးချယ်ပါ",
-  "chooseLanguage": "ဘာသာစကားရွေးချယ်ပါ",
-  "deleteRecipe": "ဖျက်ရန်",
-  "deleteRecipeConfirm": "ဤဟင်းချက်နည်းကို ဖျက်မလား?",
-  "deleteRecipeConfirmMsg": "\"{recipeName}\" ကို ဖျက်ရန် သေချာပါသလား? ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍မရပါ။",
-  "dynamicColors": "Dynamic အရောင်များ",
-  "dynamicColorsSubtitle": "သင်၏ wallpaper ပေါ်မူတည်၍ အရောင်များကို အသုံးပြုပါ",
-  "editRecipe": "ပြင်ဆင်ရန်",
-  "editRecipeTitle": "ဟင်းချက်နည်းပြင်ဆင်ရန်",
-  "enterUrl": "URL ထည့်ပါ",
-  "errorLoadingRecipes": "ဟင်းချက်နည်းများ ပြသရာတွင် အမှားရှိနေသည်",
+  "feedbackTypeSuggestion": "အကြံပြုချက်",
+  "feedbackTypeSuggestionHint": "အက်ပ်ကိုတိုးတက်စေရန်စိတ်ကူး",
+  "feedbackTypeTranslation": "ဘာသာပြန်ခြင်းပြဿနာ",
+  "feedbackTypeTranslationHint": "မမှန်ကန်သော သို့မဟုတ် မကြည်မလင်သောဘာသာပြန်",
+  "fieldRequired": "လိုအပ်သော အကွက်",
+  "filterAll": "အားလုံး",
   "filterByTag": "Tag ဖြင့် စစ်ထုတ်ရန်",
+  "filterPending": "ဆိုင်းငံ့",
+  "filterPurchased": "ဝယ်ပြီး",
+  "finance": "ဘဏ္ဍာရေး",
+  "finishShopping": "စျေးဝယ်ပြီးအောင်",
   "gallery": "ပြခန်း",
+  "generalAssistant": "အထွေထွေအကူ",
+  "generalHelp": "ယနေ့သင့်စျေးဝယ်အတွက်ဘယ်လိုကူညီပေးရမလဲ?",
+  "generateShoppingList": "စျေးဝယ်စာရင်းထုတ်",
+  "globalAssistant": "ကမ္ဘာလုံးဆိုင်ရာအကူ",
+  "howCanIHelp": "ငါဘယ်လိုကူညီနိုင်မလဲ။",
+  "idealQty": "စံပြပမာဏ",
+  "idealQuantity": "စံပြပမာဏ",
   "imageUrlPlaceholder": "သို့မဟုတ် ပုံ URL ကို ကူးထည့်ပါ",
+  "import": "တင်သွင်း",
+  "importData": "ဒေတာတင်သွင်း",
+  "importDataSubtitle": "JSON မှစာရင်းများကိုပြန်လည်ရယူ",
+  "importJsonHint": "ဤနေရာတွင်အရန်သိမ်း JSON ကိုကူးထည့်ပါ...",
+  "importJsonTitle": "JSON တင်သွင်း",
+  "importListTitle": "စာရင်းတင်သွင်းပါ",
+  "importViaCode": "ကုဒ်ဖြင့်တင်သွင်း",
   "ingredients": "ပါဝင်ပစ္စည်းများ",
   "instructions": "ညွှန်ကြားချက်များ",
   "instructionsHint": "တစ်ကြောင်းလျှင် အဆင့်တစ်ခုစီ ရိုက်ထည့်ပါ...",
+  "inviteToList": "စာရင်းပေးဖို့ ဖိတ်ခေါ်ပါတယ်။",
+  "itemName": "ပစ္စည်းအမည်",
+  "itemRemoved": "ပစ္စည်းဖယ်ရှားပြီး",
+  "itemsAddedSuccess": "ပစ္စည်းများကိုစာရင်းထဲအောင်မြင်စွာထည့်ပြီးပြီ!",
+  "itemsNeedPurchase": "{deficit} ခုဝယ်ရန်လိုအပ်သည်",
+  "itemsPurchasedCount": "ဝယ်ယူထားသော {total} ၏ {purchased}",
+  "itemsPurchasedShort": "{purchased}/{total} ဝယ်ယူခဲ့သည်။",
+  "itemsWillBeAdded": "{count} ခုထည့်သွင်းမည်",
+  "language": "ဘာသာစကား",
+  "languageEnglish": "အင်္ဂလိပ်စာ",
+  "languagePortuguese": "ပေါ်တူဂီ (ဘရာဇီး)",
+  "languageSystem": "စနစ်မူလ",
+  "light": "အလင်း",
+  "listAdded": "{listName} ထည့်ပြီးပြီ!",
+  "listArchived": "စာရင်းကိုအောင်မြင်စွာသိမ်းပြီးပြီ!",
+  "listAssistant": "စာရင်းအကူ",
+  "listBudgetTitle": "စာရင်းဘတ်ဂျက်",
+  "listCreated": "\"{name}\" စာရင်းကို {count} ခုဖြင့်ဖန်တီးပြီးပြီ",
+  "listHelp": "သင့်စာရင်းအတွက်ဘယ်လိုကူညီပေးရမလဲ?",
+  "listHistory": "စာရင်းမှတ်တမ်း",
+  "listNameLabel": "စာရင်းအမည်",
+  "listOrganizedMagic": "စာရင်းကိုအမျိုးအစားများဖြင့်မှော်ဆန်စွာစုစည်းပြီးပြီ! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "နားထောင်နေသည်...",
+  "lists": "စာရင်းများ",
+  "loading": "ဖွင့်နေသည်...",
   "loadingRecipes": "ဟင်းချက်နည်းများ ပြသနေသည်...",
+  "loginError": "အကောင့်ဝင်ရာတွင်အမှား: {error}",
+  "loginPrompt": "Premium အင်္ဂါရပ်များကို\nဖွင့်ရန်အကောင့်ဝင်ပါ",
+  "longHistoryWarning": "ရှည်လျားသောသမိုင်း- လက်ထောက်သည် ပိုမိုကောင်းမွန်သောစွမ်းဆောင်ရည်အတွက် နောက်ဆုံးပေါ်မက်ဆေ့ဂျ်များကို အာရုံစိုက်သည်။",
+  "manageSubscription": "စာရင်းသွင်းမှုကိုစီမံ",
+  "markAsPurchased": "ဝယ်ပြီးအဖြစ်မှတ်",
+  "markItemsToSeeAnalysis": "ခွဲခြမ်းစိတ်ဖြာမှုကြည့်ရန်ပစ္စည်းများကိုဝယ်ပြီးအဖြစ်မှတ်ပါ။",
+  "marketMode": "စျေးကွက်မုဒ်",
   "mealPlannerAddMeal": "အစားအစာထည့်ရန်",
   "mealPlannerDateLabel": "ရက်စွဲ",
   "mealPlannerDeleteMeal": "အစားအစာဖယ်ရှားရန်",
@@ -613,28 +599,201 @@
   "mealPlannerWeekEmpty": "ယခုတစ်ပတ်အတွက် စီစဉ်ထားသည်များ မရှိပါ",
   "mealPlannerWeekEmptyHint": "အစားအစာများ စတင်စီစဉ်ရန် မည်သည့်ရက်ကိုမဆို နှိပ်ပါ!",
   "mealPlannerWeekProgress": "အစားအစာ {total} ခုတွင် {count} ခု စီစဉ်ပြီး",
+  "monthlyBudgetAppBar": "လစဉ်ဘတ်ဂျက်",
+  "monthlyBudgetNav": "လစဉ်ဘတ်ဂျက်",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "လစဉ်ဘတ်ဂျက်",
+  "myLists": "ကျွန်ုပ်၏စာရင်းများ",
   "myRecipes": "ကျွန်ုပ်၏ ဟင်းချက်နည်းများ",
+  "newChat": "Chat အသစ်",
+  "newListTitle": "စျေးဝယ်စာရင်းအသစ်",
+  "newPantryList": "စားသိုက်ခန်းစျေးဝယ်",
   "newRecipe": "ဟင်းချက်နည်းအသစ်",
   "newRecipeTitle": "ဟင်းချက်နည်းအသစ်",
+  "next": "နောက်တစ်ခု",
+  "noActiveLists": "လှုပ်ရှားနေသောစာရင်းမရှိပါ",
+  "noArchivedLists": "သိမ်းထားသောစာရင်းမရှိပါ",
+  "noBudgetDefined": "ဘတ်ဂျက်သတ်မှတ်မထားပါ",
+  "noHistory": "ချတ်မှတ်တမ်းမရှိပါ။",
+  "noItemsInList": "စာရင်းထဲတွင် မည်သည့်အရာမှ မရှိပါ။",
+  "noItemsToAnalyze": "ခွဲခြမ်းစိတ်ဖြာရန်စာရင်းတွင်ပစ္စည်းမရှိပါ။",
+  "noItemsToBuy": "ဝယ်ရန်မလိုအပ်သောပစ္စည်းမရှိပါ",
+  "noLabel": "မဟုတ်",
+  "noListFoundSubtitle": "စတင်ရန်သင့်ပထမဆုံးစာရင်းကိုဖန်တီးပါ",
+  "noListFoundTitle": "စာရင်းမတွေ့ပါ",
+  "noMessagesFound": "စာများမတွေ့ပါ။",
   "noRecipesSaved": "သိမ်းဆည်းထားသော ဟင်းချက်နည်းမရှိပါ",
   "noRecipesSavedHint": "အောက်ပါခလုတ်ကို နှိပ်ပြီး သင်၏ ပထမဆုံး ကိုယ်ပိုင်ဟင်းချက်နည်းကို ဖန်တီးပါ။",
+  "noTracking": "ခြေရာခံမထားပါ",
+  "onboardingAnnualBadge": "အကောင်းဆုံးတန်ဖိုး",
+  "onboardingAnnualLabel": "နှစ်စဉ်",
+  "onboardingCancelAnytime": "အချိန်မရွေး ပယ်ဖျက်ပါ။ ကတိကဝတ်မရှိ။",
+  "onboardingContinueAsGuest": "ဧည့်သည်အဖြစ် ဆက်သွားပါ။",
+  "onboardingExit": "ထွက်ပေါက်",
+  "onboardingLoginDesc": "သင့်ဒေတာကို သင့်စက်ပစ္စည်းအားလုံးတွင် စင့်ခ်လုပ်ထားသည်။",
+  "onboardingLoginTitle": "အရာအားလုံးကို cloud တွင်သိမ်းဆည်းပါ။",
+  "onboardingMonthlyLabel": "လစဉ်",
+  "onboardingPersonalizationCta": "ဆက်ရန်",
+  "onboardingPersonalizationDesc": "သင့်အကြံပြုချက်များကို စိတ်ကြိုက်ပြင်ဆင်ပြီး စျေးဝယ်ခြင်းကို ပိုမိုစမတ်ကျစေရန် ၎င်းကို ကျွန်ုပ်တို့အသုံးပြုပါမည်။",
+  "onboardingPersonalizationFoodHint": "ဥပမာ ပီဇာ၊ ဆူရှီ၊ လာဆာဂနာ...",
+  "onboardingPersonalizationFoodLabel": "မင်းအကြိုက်ဆုံးအစားအစာကဘာလဲ။",
+  "onboardingPersonalizationFoodRequired": "ဆက်လုပ်ရန် သင်အကြိုက်ဆုံးအစားအစာကို ပြောပြပါ။",
+  "onboardingPersonalizationSkip": "လောလောဆယ် ကျော်သွားပါ။",
+  "onboardingPersonalizationTitle": "မင်းကိုသိရအောင်",
+  "onboardingPremiumSubtitle": "သင့်စျေးဝယ်စာရင်းများမှ အများဆုံးရယူပါ။",
+  "onboardingPremiumTitle": "အင်္ဂါရပ်အားလုံးကို လော့ခ်ဖွင့်ပါ။",
+  "onboardingRestore": "ပြန်ယူပါ။",
+  "onboardingRestoreDesc": "စာရင်းသွင်းထားပြီးပြီလား။ ပြန်လည်ရယူရန် ဤနေရာကို တို့ပါ။",
+  "onboardingSetupDesc": "Lista Plus သည် သင့်အတွက် အသွင်အပြင်နှင့် လုပ်ဆောင်လိုသည့်ပုံစံကို ရွေးချယ်ပါ။",
+  "onboardingSetupTitle": "သင့်အတွေ့အကြုံကို စိတ်ကြိုက်ပြင်ဆင်ပါ။",
+  "onboardingShareDesc": "စာရင်းများကို မိသားစု၊ သူငယ်ချင်းများနှင့် အချိန်နှင့်တပြေးညီ စင့်ခ်လုပ်ပါ။",
+  "onboardingShareTitle": "သင်ချစ်ရတဲ့သူတွေနဲ့ မျှဝေပါ။",
+  "onboardingSubscribeCta": "စာရင်းသွင်းပါ။",
+  "onboardingViewAllPlans": "အစီအစဉ်အားလုံးကို ကြည့်ရှုပါ။",
+  "onboardingWelcomeDesc": "သင်၏စျေးဝယ်ခြင်းကိုစီစဉ်ရန်နှင့်ငွေချွေတာရန်အကောင်းဆုံးနည်းလမ်း။",
+  "onboardingWelcomeTitle": "Lista Plus မှလှိုက်လှဲစွာကြိုဆိုပါသည်။",
   "openMenu": "မီနူးဖွင့်ရန်",
+  "organizeAisles": "စင်များအလိုက်စုစည်း",
+  "organizeAislesPrompt": "စျေးဆိုင်စင်များအလိုက်စုစည်းပါ။",
+  "organizeByAisles": "စင်များအလိုက်စုစည်း",
+  "organizingAi": "AI ဖြင့်စုစည်းနေသည်...",
+  "pantry": "စားသိုက်ခန်း",
+  "pantryAppBar": "စားသိုက်ခန်း",
+  "pantryEditTitle": "{name} ကိုတည်းဖြတ်",
+  "pantryEmpty": "စားသိုက်ခန်းဗလာ",
+  "pantryEmptySubtitle": "အိမ်မှာထားချင်တဲ့ပစ္စည်းတွေထည့်ပါ",
+  "pantryItemRemoved": "ပစ္စည်းဖယ်ရှားပြီး",
+  "paywallTitle": "Lista Plus ပရီမီယံ",
+  "prefAIAssistant": "ကိုယ်ပိုင် AI အကူ",
+  "prefCustomThemes": "စိတ်ကြိုက်အပြင်အဆင်များ",
+  "prefExportData": "ဒေတာတင်ပို့",
+  "prefFullHistory": "မှတ်တမ်းအပြည့်အစုံ",
+  "prefInteractiveArtifacts": "အပြန်အလှန်တုံ့ပြန် AI Artifacts",
+  "prefMonthlyBudget": "ကမ္ဘာလုံးဆိုင်ရာလစဉ်ဘတ်ဂျက်",
+  "prefSharing": "စာရင်းများမျှဝေပါ",
+  "prefUnlimitedLists": "အကန့်အသတ်မဲ့စာရင်းများ",
+  "prefUnlimitedPantry": "အကန့်အသတ်မဲ့စားသိုက်ခန်း",
+  "premiumUpgrade": "ဖွင့်ရန်အဆင့်မြှင့်ပါ",
   "prepTime": "ပြင်ဆင်ချိန်",
   "prepTimeMinutes": "ပြင်ဆင်ချိန် (မိနစ်)",
+  "privacy": "ကိုယ်ရေးလုံခြုံမှု",
+  "productName": "ကုန်ပစ္စည်းအမည်",
+  "purchaseError": "ဝယ်ယူမှုကို လုပ်ဆောင်ရာတွင် အမှားရှိနေသည်။ ထပ်ကြိုးစားပါ။",
+  "quantityFull": "ပမာဏ",
+  "quantityShort": "ပမာဏ",
+  "quickRecipe": "အမြန်ချက်ပြုတ်နည်း",
+  "quickRecipePrompt": "ကျွန်ုပ်စာရင်းပါပစ္စည်းများဖြင့်ချက်ပြုတ်နည်းများအကြံပြုပါ။",
+  "quickReplies": "အမြန်ပြန်ကြားချက်များ-",
   "recipeCreated": "ဟင်းချက်နည်း ဖန်တီးပြီးပါပြီ!",
   "recipeDeleted": "ဟင်းချက်နည်း ဖျက်ပြီးပါပြီ",
   "recipeImage": "ဟင်းချက်နည်းပုံ",
   "recipeName": "ဟင်းချက်နည်းအမည်",
   "recipeSaved": "ဟင်းချက်နည်း သိမ်းဆည်းပြီးပါပြီ!",
+  "recipeSuggestion": "ချက်ပြုတ်နည်းအကြံပြုချက်",
   "recipeTags": "ဟင်းချက်နည်း Tag များ",
+  "regenerate": "ပြန်ထုတ်",
+  "remove": "ဖယ်ရှား",
+  "removeBudget": "ဖယ်ရှား",
   "removeImage": "ပုံဖယ်ရှားရန်",
+  "removeSharedListContent": "\"{name}\" ကိုသင့်စာရင်းများမှဖယ်ရှားမည်? မူရင်းစာရင်းကိုမထိခိုက်ပါ။",
+  "removeSharedListTitle": "မျှဝေထားသောစာရင်းဖယ်ရှား",
+  "removeSharedTooltip": "ဖယ်ရှား",
+  "rename": "အမည်ပြောင်း",
+  "renameListDialog": "စာရင်းအမည်ပြောင်း",
   "requiredField": "လိုအပ်သည်",
+  "restockLabel": "ပြန်ဖြည့်",
+  "restocked": "{name} ကို {quantity} {unit} သို့ပြန်ဖြည့်ပြီး",
+  "restore": "ပြန်လည်ရယူ",
+  "restoreError": "ဝယ်ယူမှုများကို ပြန်လည်ရယူရာတွင် အမှားရှိနေသည်။ ထပ်ကြိုးစားပါ။",
+  "retry": "ထပ်ကြိုးစား",
+  "save": "သိမ်းဆည်း",
   "saveChanges": "ပြောင်းလဲမှုများကို သိမ်းဆည်းရန်",
   "saveRecipe": "သိမ်းဆည်းရန်",
+  "savings": "ချွေတာမှုများ",
+  "searchCurrency": "ငွေကြေးရှာဖွေပါ...",
+  "searchInConversation": "စကားဝိုင်းတွင် ရှာဖွေပါ...",
   "searchLanguage": "ဘာသာစကားရှာဖွေရန်...",
   "searchRecipes": "ဟင်းချက်နည်းများ ရှာဖွေရန်...",
+  "selectAll": "အားလုံးရွေး",
+  "selectListForDashboard": "ဒက်ရှ်ဘုတ်ကြည့်ရန်စာရင်းတစ်ခုရွေးပါ။",
+  "selectedItems": "{count} ခု ရွေးချယ်ထား",
+  "setBudgetButton": "ဘတ်ဂျက်သတ်မှတ်",
+  "setBudgetTitle": "လစဉ်ဘတ်ဂျက်",
+  "settingsAppBar": "ဆက်တင်များ",
+  "settingsDefaultScreen": "မူရင်း ပင်မ မျက်နှာပြင်",
+  "settingsDefaultScreenSubtitle": "စျေးဝယ်စာရင်း သို့မဟုတ် AI ချတ်ကြားကို ရွေးပါ။",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "စျေးဝယ်စာရင်း",
+  "share": "မျှဝေ",
+  "shareApp": "အက်ပ်ကို မျှဝေပါ။",
+  "shareAppDescription": "Lista Plus အသုံးပြုရန် သူငယ်ချင်းများကို ဖိတ်ကြားပါ။",
+  "shareAsText": "ပစ္စည်းများကိုဖော်မတ်ပါသောစာသားအဖြစ်ပို့",
+  "shareListText": "ကျွန်ုပ်၏စျေးဝယ်စာရင်း",
+  "shareListTitle": "စာရင်းကိုမျှဝေပါ",
+  "shareRealtime": "အခြားသူများနှင့်အချိန်နှင့်တပြေးညီထပ်တူပြု",
+  "shareReferralSubject": "Lista Plus Premium ကို 7 ရက် ရယူလိုက်ပါ။",
+  "shareReferralText": "ကျွန်ုပ်၏စျေးဝယ်ခြင်းကိုစီစဉ်ရန် Lista Plus ကိုအသုံးပြုနေပါသည်။ ကျွန်ုပ်၏လင့်ခ်မှတစ်ဆင့် ဒေါင်းလုဒ်လုပ်ခြင်းဖြင့် ကျွန်ုပ်တို့နှစ်ဦးစလုံးသည် ပရီမီယံ 7 ရက်အခမဲ့ရရှိသည်- {url}",
+  "shareSubject": "စျေးဝယ်စာရင်း",
+  "shareThisCode": "ဤကုဒ်ကိုမျှဝေပါ:",
+  "shareViaCode": "ကုဒ်ဖြင့်မျှဝေ",
+  "sharedLabel": "မျှဝေထား",
+  "shoppingAssistant": "စျေးဝယ်လက်ထောက်",
+  "shoppingMode": "စျေးဝယ်မုဒ်",
+  "shoppingModeHeader": "စျေးဝယ်မုဒ်",
   "shortDescription": "အကျဉ်းချုပ် ဖော်ပြချက်",
+  "signInApple": "Apple ဖြင့်အကောင့်ဝင်",
+  "signInGoogle": "Google ဖြင့်အကောင့်ဝင်",
+  "smartOrganization": "စမတ်ကျသောစုစည်းမှု",
+  "sortCategory": "အမျိုးအစား",
+  "sortDate": "ရက်စွဲ",
+  "sortManual": "ကိုယ်တိုင်",
+  "sortName": "အမည်",
+  "spendingAnalysis": "အသုံးစရိတ်ခွဲခြမ်းစိတ်ဖြာ",
+  "spendingByCategory": "အမျိုးအစားအလိုက်အသုံးစရိတ်",
+  "suggestedQuestions": "အကြံပြုထားသောမေးခွန်းများ-",
   "suggestedTags": "အကြံပြုချက်များ",
+  "switchList": "စာရင်းပြောင်းပါ။",
+  "system": "စနစ်",
   "tags": "Tag များ",
-  "viewRecipe": "ဟင်းချက်နည်းကြည့်ရှုရန်"
+  "termsOfUse": "အသုံးပြုခြင်းဆိုင်ရာသတ်မှတ်ချက်များ",
+  "themeAmber": "ပယင်း",
+  "themeBlue": "အပြာ",
+  "themeBrown": "ညို",
+  "themeColor": "အပြင်အဆင်အရောင်",
+  "themeGreen": "အစိမ်း",
+  "themeIndigo": "မဲနယ်",
+  "themeOrange": "လိမ္မော်",
+  "themePink": "ပန်းရောင်",
+  "themePurple": "ခရမ်း",
+  "themeRed": "အနီ",
+  "themeTeal": "ဘဲဥဖြူ",
+  "totalEstimated": "စုစုပေါင်းခန့်မှန်း: {amount}",
+  "totalSpending": "စုစုပေါင်းအသုံးစရိတ်",
+  "trackStock": "စတော့ခြေရာခံ",
+  "trackStockActive": "စျေးဝယ်အကြံပြုချက်များတွင်ပေါ်လာမည်",
+  "trackStockInactive": "စျေးဝယ်အကြံပြုချက်မထုတ်ပါ",
+  "undo": "ပြန်ဖျက်",
+  "unit": "ယူနစ်",
+  "unitPack": "ထုပ်",
+  "unlockFullResponse": "တုံ့ပြန်မှုအပြည့်အဝကိုသော့ဖွင့်ပါ။",
+  "unmark": "အမှတ်ဖြုတ်",
+  "upgrade": "အဆင့်မြှင့်",
+  "validForLimitedTime": "အချိန်ကန့်သတ်ထားသည်",
+  "version": "ဗားရှင်း",
+  "viewActive": "လှုပ်ရှားနေသောစာရင်းများကြည့်",
+  "viewDetails": "အသေးစိတ်ကို ကြည့်ပါ။",
+  "viewHistory": "မှတ်တမ်းကြည့်",
+  "viewItems": "ပစ္စည်းများကိုကြည့်ရှုပါ။",
+  "viewList": "စာရင်းကြည့်",
+  "viewPro": "Pro ကိုကြည့်ပါ။",
+  "viewRecipe": "ဟင်းချက်နည်းကြည့်ရှုရန်",
+  "voiceCommandContent": "သင့်စာရင်းကိုစီမံရန်သဘာဝကျကျစကားပြောပါ!\n\nဥပမာများ:\n• 'မုန့်၊ ဒိန်ခဲနှင့်ဝက်ပေါင်ခြောက်ထည့်'\n• 'အဝတ်လျှော်ဆပ်ပြာဖယ်ရှား'\n• 'အပြင်အဆင်ကိုအပြာသို့ပြောင်း'\n\n၎င်းသည် Lista Plus Premium ၏သီးသန့်အင်္ဂါရပ်ဖြစ်သည်။",
+  "voiceCommandPlanBtn": "အစီအစဉ်များကြည့်",
+  "voiceCommandTitle": "AI အသံအမိန့်",
+  "voiceProFeature": "အဆင့်မြင့် အသံအမိန့်ပေးမှုများသည် Pro ဖြစ်သည်။ အခြေခံသတ်ပုံဖွင့်ခြင်း...",
+  "voiceTranscriptionTooltip": "အသံရိုက်ခြင်း (အခမဲ့)",
+  "welcomeAiAssistant": "AI Assistant မှကြိုဆိုပါသည်။",
+  "whatToDoWithItem": "ဤအရာနှင့် သင်ဘာလုပ်လိုသနည်း။",
+  "yes": "ဟုတ်",
+  "yesLabel": "ဟုတ်"
 }

@@ -14,6 +14,8 @@ import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/app/settings/providers/backup_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
+import '../utils/ai_utils.dart';
+import 'package:shopping_list/models/user_profile.dart';
 
 class ConfigExecutor {
   const ConfigExecutor();
@@ -38,7 +40,11 @@ class ConfigExecutor {
   // --- Theme ---
 
   Future<ToolResult> getTheme(ProviderContainer container) async {
-    final mode = await container.read(darkModeProvider.future);
+    final mode = await AiUtils.awaitFuture(
+      container.read(darkModeProvider.future),
+      defaultValue: ThemeMode.system,
+      label: 'darkModeProvider',
+    );
     final labels = <String, String>{
       'ThemeMode.system': 'sistema',
       'ThemeMode.light': 'claro',
@@ -78,7 +84,11 @@ class ConfigExecutor {
   // --- Profile ---
 
   Future<ToolResult> getUserProfile(ProviderContainer container) async {
-    final profile = await container.read(userProfileProvider.future);
+    final profile = await AiUtils.awaitFuture(
+      container.read(userProfileProvider.future),
+      defaultValue: const UserProfile(),
+      label: 'userProfileProvider',
+    );
     if (profile.isEmpty) {
       return const ToolResult(toolCallId: '', content: 'Nenhuma preferência de perfil configurada ainda.');
     }
@@ -86,7 +96,11 @@ class ConfigExecutor {
   }
 
   Future<ToolResult> updateUserProfile(ProviderContainer container, Map<String, dynamic> args) async {
-    final current = await container.read(userProfileProvider.future);
+    final current = await AiUtils.awaitFuture(
+      container.read(userProfileProvider.future),
+      defaultValue: const UserProfile(),
+      label: 'userProfileProvider',
+    );
     final updated = current.copyWith(
       preferredStore: args['preferredStore'] as String?,
       dietaryRestrictions: args['dietaryRestrictions'] as String?,
@@ -160,7 +174,11 @@ class ConfigExecutor {
 
   Future<ToolResult> getRecipes(ProviderContainer container, Map<String, dynamic> args) async {
     final query = args['query'] as String?;
-    final recipes = await container.read(recipesProvider.future);
+    final recipes = await AiUtils.awaitFuture(
+      container.read(recipesProvider.future),
+      defaultValue: <Recipe>[],
+      label: 'recipesProvider',
+    );
     var filtered = recipes;
     if (query != null && query.isNotEmpty) {
       filtered = recipes.where((r) => r.name.toLowerCase().contains(query.toLowerCase())).toList();
@@ -182,7 +200,11 @@ class ConfigExecutor {
     final instructionsStr = args['instructions'] as String;
     final prepTime = (args['prepTimeMinutes'] as num?)?.toInt() ?? 30;
 
-    final existing = await container.read(recipesProvider.future);
+    final existing = await AiUtils.awaitFuture(
+      container.read(recipesProvider.future),
+      defaultValue: <Recipe>[],
+      label: 'recipesProvider',
+    );
     final duplicate = existing.cast<Recipe?>().firstWhere(
       (r) => r!.name.trim().toLowerCase() == name.toLowerCase(),
       orElse: () => null,
@@ -243,7 +265,11 @@ class ConfigExecutor {
     final endStr = args['endDate'] as String?;
     final start = startStr != null ? DateTime.parse(startStr) : null;
     final end = endStr != null ? DateTime.parse(endStr) : null;
-    final plans = await container.read(mealPlansProvider(start: start, end: end).future);
+    final plans = await AiUtils.awaitFuture(
+      container.read(mealPlansProvider(start: start, end: end).future),
+      defaultValue: <MealPlan>[],
+      label: 'mealPlansProvider',
+    );
     if (plans.isEmpty) {
       return const ToolResult(toolCallId: '', content: 'Nenhuma refeição agendada para este período.');
     }
@@ -261,7 +287,11 @@ class ConfigExecutor {
     final mealTypeStr = args['mealType'] as String;
     final servings = (args['servings'] as num?)?.toInt() ?? 1;
 
-    final recipes = await container.read(recipesProvider.future);
+    final recipes = await AiUtils.awaitFuture(
+      container.read(recipesProvider.future),
+      defaultValue: <Recipe>[],
+      label: 'recipesProvider',
+    );
     final recipe = recipes.where((r) => r.id == recipeId).firstOrNull;
     if (recipe == null) {
       return const ToolResult(toolCallId: '', content: 'Receita não encontrada.', success: false);

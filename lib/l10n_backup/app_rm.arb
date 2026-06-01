@@ -1,0 +1,562 @@
+{
+  "@@locale": "rm",
+  "appTitle": "Lista da cumpras",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Listas",
+  "pantry": "Dispensa",
+  "@_Common": "description: Common actions",
+  "cancel": "Interrumper",
+  "save": "Memorar",
+  "create": "Crear",
+  "add": "Agiuntar",
+  "remove": "Allontanar",
+  "delete": "Stizzar",
+  "edit": "Modifitgar",
+  "copy": "Copiar",
+  "retry": "Empruvar puspè",
+  "regenerate": "Regenerar",
+  "copiedToClipboard": "Copià en la clipboard",
+  "confirm": "Confermar",
+  "close": "Serrar",
+  "import": "Importar",
+  "rename": "Renumnar",
+  "upgrade": "Actualisar",
+  "clear": "Sgiar",
+  "error": "Errur: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Errur: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Errur durant il processament da la cumprà. Empruvà anc ina giada.",
+  "restoreError": "Errur restituind las cumpras. Empruvà anc ina giada.",
+  "loading": "Chargiar...",
+  "fieldRequired": "Champ obligatoric",
+  "addedFeedback": "Agiuntà!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} selecziunà} other{{count} selecziunads}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Stimà",
+  "alreadyPurchased": "Già cumprà",
+  "clearList": "Sgiar la lista",
+  "clearPurchased": "Sgiar cumprà",
+  "share": "Cundivider",
+  "shareViaCode": "Cundivider cun in codesch",
+  "importViaCode": "Importar cun in codesch",
+  "listAssistant": "Assistant per la lista",
+  "globalAssistant": "Assistant global",
+  "becomePremium": "Daventar Premium",
+  "manageSubscription": "Administrar l'abilitaziun",
+  "completePurchase": "Complettar la cumprà",
+  "confirmClearList": "Allontanar tut ils objects?",
+  "shareListTitle": "Cundivider la lista",
+  "shareThisCode": "Cundivider quest codesch:",
+  "validForLimitedTime": "Valid per in temp limità",
+  "importListTitle": "Importar la lista",
+  "enterCodeHint": "Endatar il codesch",
+  "confirmArchiveTitle": "Complettar la cumprà",
+  "confirmArchiveContent": "Complettar questa cumprà ed archivar la lista?",
+  "complete": "Complettar",
+  "listArchived": "La lista è vegnida archivada cun success!",
+  "listAdded": "{listName} agiuntà!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Cumprar",
+  "unmark": "De-marcar",
+  "confirmDeleteItems": "Allontanar {count} object(s)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Confermar",
+  "confirmContent": "Allontanar {count} object(s)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Archivar la lista",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Dispensa",
+  "generateShoppingList": "Generar la lista da cumpras",
+  "pantryEmpty": "Dispensa vita",
+  "pantryEmptySubtitle": "Agiuntar products che Vus volais tegnair a chasa",
+  "itemsNeedPurchase": "{deficit} object(s) ston vegnir cumprà",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Nagins objects ston vegnir cumprà",
+  "newPantryList": "Cumprar da la dispensa",
+  "newListTitle": "Nova lista da cumpras",
+  "itemsWillBeAdded": "{count} object(s) vegnan agiuntads",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Num da la lista",
+  "listCreated": "La lista \"{name}\" è vegnida creada cun {count} objects",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Nagina monitoraziun",
+  "markAsPurchased": "Marcar sco cumprà",
+  "editPantryItem": "Modifitgar {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Quantitad ideal",
+  "currentQuantity": "Quantitad actuala",
+  "consumed": "Consumà",
+  "restocked": "{name} restockà a {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Allontanar \"{name}\" da la dispensa?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Modifitgar {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Configuraziuns",
+  "language": "Lingua",
+  "languagePortuguese": "Portugais (Brasil)",
+  "languageEnglish": "Englais",
+  "languageSystem": "Predefiniziun dal sistem",
+  "appearance": "Aspetg",
+  "light": "Clèr",
+  "system": "Sistem",
+  "dark": "Stgir",
+  "themeColor": "Culur dal tema",
+  "finance": "Finanzas",
+  "monthlyBudgetNav": "Budget mensil",
+  "budgetSubtitle": "Moniturschar Vossas expensas mensilas",
+  "data": "Datas",
+  "backupNav": "Backup",
+  "backupSubtitle": "Exportar u importar Vossas datas",
+  "about": "Davart",
+  "version": "Versiun",
+  "privacy": "Privatesa",
+  "termsOfUse": "Cundiziuns d'utilisaziun",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Backup",
+  "backupPremiumDescription": "Backup ed export è ina funcziun Premium",
+  "exportData": "Exportar datas",
+  "exportDataSubtitle": "Memorar tut las listas sco JSON",
+  "importData": "Importar datas",
+  "importDataSubtitle": "Restituir listas d'in JSON",
+  "importJsonTitle": "Importar JSON",
+  "importJsonHint": "Tippar il JSON da backup qua...",
+  "backupExported": "Backup exportà!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Budget mensil",
+  "budgetPremiumLocked": "Il budget mensil global è Premium",
+  "budgetUpgradePrompt": "Actualisar per debloccar",
+  "noBudgetDefined": "Nagins budget fixà",
+  "totalEstimated": "Total stimà: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Fixar il budget",
+  "budgetLists": "Listas",
+  "budgetValueLabel": "Import",
+  "setBudgetTitle": "Budget mensil",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Tut",
+  "filterPending": "Spetga",
+  "filterPurchased": "Cumprà",
+  "sortName": "Num",
+  "sortCategory": "Categoria",
+  "sortDate": "Data",
+  "sortManual": "Manual",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Agiuntar object",
+  "itemName": "Num da l'object",
+  "quantityShort": "Qta",
+  "unit": "Unidad",
+  "category": "Categoria",
+  "estimatedPrice": "Pretsch stimà",
+  "addItemPrice": "Pretsch stimà",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Modifitgar object",
+  "quantityFull": "Quantitad",
+  "editItemPrice": "Pretsch stimà",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Agiuntar a la dispensa",
+  "addToPantryPrompt": "Agiuntar \"{name}\" a Vossa dispensa?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Gea",
+  "productName": "Num dal product",
+  "idealQty": "Quantitad ideal",
+  "currentQty": "Quantitad actuala",
+  "trackStock": "Moniturschar il stock",
+  "trackStockActive": "Apparescha en suggeriuns da cumpras",
+  "trackStockInactive": "Na genera nagina suggestiun da cumpras",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Crear lista",
+  "renameListDialog": "Renumnar la lista",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Istorgia da las listas",
+  "myLists": "Mi listas",
+  "viewActive": "Mussar activ",
+  "viewHistory": "Mussar istorgia",
+  "noArchivedLists": "Naginas listas archivadas",
+  "noActiveLists": "Naginas listas activas",
+  "completedOn": "Complettà ils {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Cundivis",
+  "restore": "Restituir",
+  "removeSharedTooltip": "Allontanar",
+  "deleteListTitle": "Stizzar la lista",
+  "deleteListContent": "Es Vus segirs che Vus vulais stizzar \"{name}\"? Tut ils objects vegnan allontanads.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Allontanar la lista cundivisa",
+  "removeSharedListContent": "Allontanar \"{name}\" da Vossas listas? La lista originala na vegn betg affectada.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Crear ina nova lista",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "Assistant AI",
+  "aiAssistantDescription": "Survegnir suggeriuns intelligentas, recipes e cussegls persunalisads cun nos assistant AI.",
+  "generalAssistant": "Assistant general",
+  "clearHistory": "Sgiar l'istorgia",
+  "clearHistoryConfirm": "Sgiar tut ils messadis en questa sesiun?",
+  "chatHint": "Tippar Voss messadi...",
+  "chatError": "Errur chargiand il chat: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Co poss jau gidar cun Vossa lista?",
+  "generalHelp": "Co poss jau gidar cun Vossas cumpras oz?",
+  "chatSubtitle": "Dumandar per suggeriuns d'objects, recipes u cussegls da spargn.",
+  "aiError": "Perstgisai, in errur è capità processond Vossa dumonda. Controllai Vossa connexiun u empruvai pli tard.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Annunzia per debloccar\nfuncziuns Premium",
+  "signInGoogle": "Annunzia cun Google",
+  "signInApple": "Annunzia cun Apple",
+  "continueAsGuest": "Cuntinuar sco convidà",
+  "loginError": "Errur da l'annunzia: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Actualisar per debloccar",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Object allontanà",
+  "undo": "Revocar",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Vossa lista è vita",
+  "emptyListSubtitle": "Agiuntar objects per cumenzar",
+  "noListFoundTitle": "Naginas listas chattadas",
+  "noListFoundSubtitle": "Crear Vossa emprima lista per cumenzar",
+  "createFirstList": "Crear l'emprima lista",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Budget da la lista",
+  "budgetAmountLabel": "Import dal budget",
+  "removeBudget": "Allontanar",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Listas illimità",
+  "prefSharing": "Cundivider listas",
+  "prefFullHistory": "Istorgia cumpletta",
+  "prefExportData": "Exportar datas",
+  "prefCustomThemes": "Temas persunalisads",
+  "prefMonthlyBudget": "Budget mensil global",
+  "prefAIAssistant": "Assistant AI persunalisà",
+  "prefUnlimitedPantry": "Dispensa illimitada",
+  "prefInteractiveArtifacts": "Artifacts AI interactivs",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Verd",
+  "themeBlue": "Blau",
+  "themePurple": "Violet",
+  "themeRed": "Cotschen",
+  "themeOrange": "Oransch",
+  "themePink": "Rosa",
+  "themeIndigo": "Indigo",
+  "themeAmber": "Amber",
+  "themeTeal": "Blau-verd",
+  "themeBrown": "Brun",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Fractas",
+  "catCleaning": "Netegia",
+  "catBeverages": "Bervandas",
+  "catBakery": "Pastizaria",
+  "catOthers": "Auters",
+  "@_Unit": "description: Unit",
+  "unitPack": "pachet",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Lista da cumpras",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Budget mensil",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Stizzar la lista",
+  "pantryItemRemoved": "Object allontanà",
+  "deficitItems": "{deficit,plural, one{{deficit} object sto vegnir cumprà} other{{deficit} objects ston vegnir cumprà}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Total dal chassis",
+  "restockLabel": "Restockar",
+  "advancedFeatures": "Funcziuns avanzadas",
+  "selectAll": "Tut selegier",
+  "deselectAll": "Tut desselegier",
+  "monthlyBudgetAppBar": "Budget mensil",
+  "budgetEditTitle": "Budget mensil",
+  "budgetDashboardTitle": "Dashboard",
+  "selectListForDashboard": "Selegi ina lista per mussar il dashboard.",
+  "spendingAnalysis": "Analisa da las expensas",
+  "noItemsToAnalyze": "Nagins objects en la lista per analisar.",
+  "markItemsToSeeAnalysis": "Marcar objects sco cumprà per ver l'analisa.",
+  "totalSpending": "Total spender",
+  "spendingByCategory": "Expensas per categoria",
+  "achievements": "Reussitas",
+  "exportPdfExcel": "Exportar PDF/Excel",
+  "exportPdf": "Exportar sco PDF",
+  "exportExcel": "Exportar sco Excel",
+  "organizingAi": "ORGANISAR CUN AI...",
+  "yesLabel": "Gea",
+  "noLabel": "Na",
+  "shareListText": "Ma lista da cumpras",
+  "emptyListAddItems": "Vossa lista è vita! Agiuntar objects l'emprim.",
+  "listOrganizedMagic": "La lista è vegnida organisada magicamain per categorias!",
+  "shoppingMode": "Modus da cumpras",
+  "smartOrganization": "Organisaziun intelligenta",
+  "savings": "Spargns",
+  "shoppingModeHeader": "MODUS DA CUMPRAS",
+  "shareAsText": "Trametter objects sco text formatà",
+  "shareRealtime": "Sincronisaziun en temp real cun autras persunas",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Recipe spert",
+  "quickRecipePrompt": "Suggerir recipes cun objects da ma lista.",
+  "economyTips": "Cussegls da spargn",
+  "economyTipsPrompt": "Co poss jau spargnà daners sin questa cumprà?",
+  "organizeAisles": "Organisar per curridors",
+  "organizeAislesPrompt": "Organisar per curridors dal martgà.",
+  "recipeSuggestion": "Suggestiun da recipe",
+  "aiCreditsRemaining": "{remaining} credits restants",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Tut agiuntar a la lista",
+  "organizeByAisles": "Organisar per curridors",
+  "voiceTranscriptionTooltip": "Scriver cun la vusch (Gratuit)",
+  "aiVoiceCommandTooltip": "Cumond vocal AI (Premium)",
+  "voiceCommandTitle": "Cumond vocal AI",
+  "voiceCommandContent": "Discurri natiralmain per administrar Vossa lista!\n\nExempels:\n• 'Agiuntar paun, chaschiel e charmella'\n• 'Allontanar detergent'\n• 'Midar il tema en blau'\n\nQuai è ina funcziun exclusiva da Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Mussar plans",
+  "itemsAddedSuccess": "Objects agiuntads cun success a la lista!",
+  "viewList": "Mussar la lista",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Trametter feedback",
+  "feedbackPrompt": "Tge vuls ti cundivider?",
+  "feedbackTypeBug": "Annunziar in error",
+  "feedbackTypeBugHint": "Inzatge n'è betg funcziunant",
+  "feedbackTypeSuggestion": "Suggestiun",
+  "feedbackTypeSuggestionHint": "Idea per meglierar l'app",
+  "feedbackTypeTranslation": "Problem da translaziun",
+  "feedbackTypeTranslationHint": "Translaziun nuncorrecta u maladretga",
+  "feedbackTypeFeature": "Dumonda da funcziun",
+  "feedbackTypeFeatureHint": "Funcziun che ti vuls veser",
+  "feedbackTypeOther": "Auter",
+  "feedbackTypeOtherHint": "Auter tip da feedback",
+  "feedbackHint": "Descriver tes feedback detagliadamain...",
+  "feedbackSend": "Trametter feedback",
+  "feedbackSending": "Tramettend...",
+  "feedbackThankYou": "Grazia fitg!",
+  "feedbackThankYouMessage": "Tia feedback è vegnida retschavida e gida a meglierar Lista Plus per tuts.",
+  "feedbackBack": "Enavos",
+  "feedbackError": "Errur tramettend: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Empruvar puspè",
+  "feedbackSettingsTitle": "Trametter feedback",
+  "feedbackSettingsSubtitle": "Annunziar errors, suggerir meglieraziuns u curregir translaziuns",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

@@ -42,6 +42,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get copy => 'Kopiatu';
 
   @override
+  String get next => 'Hurrengoa';
+
+  @override
   String get retry => 'Saiatu berriro';
 
   @override
@@ -281,10 +284,10 @@ class AppLocalizationsEu extends AppLocalizations {
   String get language => 'Hizkuntza';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'portugesa (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ingelesa';
 
   @override
   String get languageSystem => 'Sistemaren lehenetsia';
@@ -296,13 +299,13 @@ class AppLocalizationsEu extends AppLocalizations {
   String get searchLanguage => 'Bilatu hizkuntza...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Moneta';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Hautatu Moneta';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Bilatu moneta...';
 
   @override
   String get appearance => 'Itxura';
@@ -328,7 +331,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Desgaitu kolore dinamikoak gaiaren koloreak eragina izan dezan';
 
   @override
   String get finance => 'Finantzak';
@@ -570,17 +573,17 @@ class AppLocalizationsEu extends AppLocalizations {
   String get generalAssistant => 'Laguntzaile Orokorra';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Txat berria';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Ez dago txat-historiarik';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Ezabatu txata';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Ziur txat hau ezabatu nahi duzula? Mezuak betiko galduko dira.';
 
   @override
   String get clearHistory => 'Garbitu Historia';
@@ -626,93 +629,108 @@ class AppLocalizationsEu extends AppLocalizations {
   String get continueAsGuest => 'Jarraitu gonbidatu gisa';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Ongi etorri Lista Plus-era';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Erosketak antolatzeko eta dirua aurrezteko modurik adimentsuena.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Pertsonalizatu zure esperientzia';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Aukeratu nola nahi duzun Lista Plus zuretzako itxura eta funtziona dezan.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Gorde dena hodeian';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Zure datuak zure gailu guztietan sinkronizatuta';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Partekatu maite dituzunekin';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Sinkronizatu zerrendak familiarekin eta lagunekin denbora errealean';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Desblokeatu eginbide guztiak';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Atera etekinik handiena zure erosketa zerrendei';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Balio onena';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Hilerokoa';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Urtekoa';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Ikusi plan guztiak';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Harpidetu';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'Utzi edonoiz. Konpromisorik ez.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Jarraitu gonbidatu gisa';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Berreskuratu';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Dagoeneko harpidetza duzu? Sakatu hemen leheneratzeko.';
+
+  @override
+  String get onboardingExit => 'Irten';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Ezagutu gaitezen';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Hau erabiliko dugu zure iradokizunak pertsonalizatzeko eta erosketak adimentsuagoak egiteko.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Zein da zure janaririk gogokoena?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'adib. Pizza, sushi, lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Jarraitu';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Saltatu oraingoz';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Esaiguzu zure janaririk gogokoena jarraitzeko';
+
+  @override
+  String get settingsDefaultScreen => 'Hasierako pantaila lehenetsia';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Aukeratu erosketa-zerrenda edo AI txataren artean';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Erosketa Zerrenda';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI Txata';
 
   @override
   String loginError(String error) {
@@ -1080,106 +1098,106 @@ class AppLocalizationsEu extends AppLocalizations {
       'Salatu akatsak, iradoki hobekuntzak edo konpondu itzulpenak';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI Energia';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Bilatu elkarrizketan...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Ez da mezurik aurkitu';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Iradokitako galderak:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Erosketa laguntzailea';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased/$total erosi dira';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimatua';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Ikusi elementuak';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Ez dago zerrendako elementurik';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Historia luzea: laguntzaileak azken mezuetan oinarritzen da errendimendu hobea lortzeko.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Entzuten...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Gehitu zuzenean zerrendara';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Desblokeatu Erantzun osoa';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Aldatu zerrenda';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Merkatu modua';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Itzuli txateara';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Amaitu Erosketak';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Ongi etorri AI Assistant-era';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Sortu erosketa zerrenda bat txat adimenduna erabiltzen hasteko.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Nola lagundu dezaket?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Galdetu prezioak, errezetak, antolaketa...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total erosi du';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Erantzun azkarrak:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Ahots-komando aurreratuak Pro dira. Oinarrizko diktaketa gaitzen...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Ikusi Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Aupa! Arazoren bat izan da txata kargatzean.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Egiaztatu konexioa edo saiatu berriro geroago.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Sareko oszilazioengatik edo aldi baterako erabilgarritasunik ezagatik gerta daiteke. Mesedez, saiatu berriro.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Entzute Aktiboa';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Zer egin nahiko zenuke elementu honekin?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ikusi xehetasunak';
 
   @override
   String get openMenu => 'Ireki menua';
@@ -1427,19 +1445,19 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Gonbidatu zerrendara';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Partekatu aplikazioa';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Gonbidatu lagunak Lista Plus erabiltzera';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Lista Plus erabiltzen ari naiz nire erosketak antolatzeko! Deskargatu nire esteka bidez eta biok 7 egun Premium doakoak izango ditugu: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Lortu 7 egun Lista Plus Premium!';
 }

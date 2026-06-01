@@ -33,7 +33,7 @@ class CurrentListId extends _$CurrentListId {
   }
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 class ShoppingLists extends _$ShoppingLists {
   @override
   Stream<List<ShoppingList>> build() {
@@ -49,12 +49,15 @@ class ShoppingLists extends _$ShoppingLists {
           return Stream.value(<ShoppingList>[]);
         }
 
-        final individualStreams = refs.entries.map((e) {
-          return service.watchListFromUser(e.value, e.key).map((l) {
+        final individualStreams = refs.entries.map((entry) {
+          return service.watchListFromUser(entry.value, entry.key).map((l) {
             if (l == null) {
               return null;
             }
-            return l.copyWith(ownerUid: e.value);
+            return l.copyWith(ownerUid: entry.value);
+          }).onErrorReturnWith((err, st) {
+            LoggerService.error(err, stackTrace: st, message: 'ShoppingLists: erro ao observar lista compartilhada ${entry.key}');
+            return null;
           });
         }).toList();
 

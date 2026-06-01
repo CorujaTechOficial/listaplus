@@ -1,101 +1,73 @@
 {
   "@@locale": "zh_TW",
-  "appTitle": "购物清单",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "清单",
-  "pantry": "储藏室",
-  "@_Common": "description: Common actions",
-  "cancel": "取消",
-  "save": "保存",
-  "create": "创建",
-  "add": "添加",
-  "remove": "移除",
-  "delete": "删除",
-  "edit": "编辑",
-  "copy": "复制",
-  "retry": "重试",
-  "regenerate": "重新生成",
-  "copiedToClipboard": "已复制到剪贴板",
-  "confirm": "确认",
-  "close": "关闭",
-  "import": "导入",
-  "rename": "重命名",
-  "upgrade": "升级",
-  "clear": "清除",
-  "error": "错误：{message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "错误：{message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "处理购买时出错。请重试。",
-  "restoreError": "恢复购买时出错。请重试。",
-  "loading": "加载中...",
-  "fieldRequired": "必填字段",
-  "addedFeedback": "已添加！",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "已选 {count} 项",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "预估",
-  "alreadyPurchased": "已购买",
-  "clearList": "清空清单",
-  "clearPurchased": "清空已购",
-  "share": "分享",
-  "shareViaCode": "通过代码分享",
-  "importViaCode": "通过代码导入",
-  "listAssistant": "清单助手",
-  "globalAssistant": "全局助手",
-  "becomePremium": "升级至高级版",
-  "manageSubscription": "管理订阅",
-  "completePurchase": "完成购买",
-  "confirmClearList": "移除所有项目？",
-  "shareListTitle": "分享清单",
-  "shareThisCode": "分享此代码：",
-  "validForLimitedTime": "限时有效",
-  "importListTitle": "导入清单",
-  "enterCodeHint": "输入代码",
-  "confirmArchiveTitle": "完成购买",
-  "confirmArchiveContent": "完成此购买并归档清单？",
-  "complete": "完成",
-  "listArchived": "清单归档成功！",
-  "listAdded": "已添加 {listName}！",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "购买",
-  "unmark": "取消标记",
-  "confirmDeleteItems": "移除 {count} 个项目？",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "确认",
-  "confirmContent": "移除 {count} 个项目？",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "归档清单",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "储藏室",
-  "generateShoppingList": "生成购物清单",
-  "pantryEmpty": "储藏室为空",
-  "pantryEmptySubtitle": "添加您想在家中存放的商品",
-  "itemsNeedPurchase": "有 {deficit} 个项目需要购买",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "没有需要购买的项目",
-  "newPantryList": "储藏室购物",
-  "newListTitle": "新购物清单",
-  "itemsWillBeAdded": "将添加 {count} 个项目",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "清单名称",
-  "listCreated": "清单\"{name}\"已创建，共 {count} 个项目",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "不追踪",
-  "markAsPurchased": "标记为已购买",
-  "editPantryItem": "编辑 {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "理想数量",
-  "currentQuantity": "当前数量",
-  "consumed": "已消耗",
-  "restocked": "{name} 已补货至 {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "从储藏室中移除\"{name}\"？",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "编辑 {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "设置",
-  "language": "语言",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "系统默认",
-  "appearance": "外观",
-  "light": "浅色",
-  "system": "系统",
-  "dark": "深色",
-  "themeColor": "主题色",
-  "finance": "财务",
-  "monthlyBudgetNav": "月度预算",
-  "budgetSubtitle": "追踪您的月度支出",
-  "data": "数据",
-  "backupNav": "备份",
-  "backupSubtitle": "导出或导入您的数据",
-  "about": "关于",
-  "version": "版本",
-  "privacy": "隐私",
-  "termsOfUse": "使用条款",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "备份",
-  "backupPremiumDescription": "备份和导出是高级功能",
-  "exportData": "导出数据",
-  "exportDataSubtitle": "将所有清单保存为 JSON",
-  "importData": "导入数据",
-  "importDataSubtitle": "从 JSON 恢复清单",
-  "importJsonTitle": "导入 JSON",
-  "importJsonHint": "在此粘贴备份 JSON...",
-  "backupExported": "备份已导出！",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "月度预算",
-  "budgetPremiumLocked": "全局月度预算为高级功能",
-  "budgetUpgradePrompt": "升级以解锁",
-  "noBudgetDefined": "未设置预算",
-  "totalEstimated": "预估总计：{amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "设置预算",
-  "budgetLists": "清单",
-  "budgetValueLabel": "金额",
-  "setBudgetTitle": "月度预算",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "全部",
-  "filterPending": "待办",
-  "filterPurchased": "已购",
-  "sortName": "名称",
-  "sortCategory": "类别",
-  "sortDate": "日期",
-  "sortManual": "手动",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "关于",
+  "achievements": "成就",
+  "activeListening": "積極傾聽",
+  "add": "添加",
+  "addAllToList": "全部添加到清单",
+  "addDirectToList": "直接添加到列表",
+  "addIngredient": "加入成分",
   "addItem": "添加项目",
-  "itemName": "项目名称",
-  "quantityShort": "数量",
-  "unit": "单位",
-  "category": "类别",
-  "estimatedPrice": "预估价格",
   "addItemPrice": "预估价格",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "编辑项目",
-  "quantityFull": "数量",
-  "editItemPrice": "预估价格",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "添加照片",
   "addToPantry": "添加到储藏室",
   "addToPantryPrompt": "将\"{name}\"添加到您的储藏室？",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "是",
-  "productName": "产品名称",
-  "idealQty": "理想数量",
-  "currentQty": "当前数量",
-  "trackStock": "追踪库存",
-  "trackStockActive": "出现在购物建议中",
-  "trackStockInactive": "不生成购物建议",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "创建清单",
-  "renameListDialog": "重命名清单",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "清单历史",
-  "myLists": "我的清单",
-  "viewActive": "查看活跃",
-  "viewHistory": "查看历史",
-  "noArchivedLists": "没有归档的清单",
-  "noActiveLists": "没有活跃的清单",
-  "completedOn": "完成于 {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "已分享",
-  "restore": "恢复",
-  "removeSharedTooltip": "移除",
-  "deleteListTitle": "删除清单",
-  "deleteListContent": "确定要删除\"{name}\"吗？所有项目将被移除。",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "移除共享清单",
-  "removeSharedListContent": "从您的清单中移除\"{name}\"？原始清单不受影响。",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "创建新清单",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "已添加！",
+  "advancedFeatures": "高级功能",
   "aiAssistant": "AI 助手",
   "aiAssistantDescription": "通过我们的 AI 助手获取智能建议、食谱和个性化提示。",
-  "generalAssistant": "通用助手",
+  "aiCreditsRemaining": "剩余 {remaining} 个积分",
+  "aiEnergy": "人工智慧能源",
+  "aiError": "抱歉，处理您的请求时出错。请检查您的连接或稍后重试。",
+  "aiVoiceCommandTooltip": "AI 语音命令（高级版）",
+  "allTags": "全部",
+  "alreadyPurchased": "已购买",
+  "appTitle": "购物清单",
+  "appearance": "外观",
+  "archiveList": "归档清单",
+  "backToChat": "返回聊天",
+  "backupExported": "备份已导出！",
+  "backupNav": "备份",
+  "backupPremiumDescription": "备份和导出是高级功能",
+  "backupSubtitle": "导出或导入您的数据",
+  "backupTitle": "备份",
+  "becomePremium": "升级至高级版",
+  "budgetAmountLabel": "预算金额",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "月度预算",
+  "budgetDashboardTitle": "仪表板",
+  "budgetEditTitle": "月度预算",
+  "budgetLists": "清单",
+  "budgetPremiumLocked": "全局月度预算为高级功能",
+  "budgetSubtitle": "追踪您的月度支出",
+  "budgetUpgradePrompt": "升级以解锁",
+  "budgetValueLabel": "金额",
+  "buy": "购买",
+  "cancel": "取消",
+  "cartTotal": "购物车总计",
+  "catBakery": "烘焙",
+  "catBeverages": "饮料",
+  "catCleaning": "清洁",
+  "catFruits": "水果",
+  "catOthers": "其他",
+  "category": "类别",
+  "chatError": "加载聊天时出错：{error}",
+  "chatHint": "输入您的消息...",
+  "chatSubtitle": "请求项目建议、食谱或省钱技巧。",
+  "chatSubtitleShort": "詢問價格、食譜、組織…",
+  "chooseCurrency": "選擇貨幣",
+  "chooseImageSource": "選擇影像來源",
+  "chooseLanguage": "選擇語言",
+  "clear": "清除",
   "clearHistory": "清除历史",
   "clearHistoryConfirm": "清除此会话中的所有消息？",
-  "chatHint": "输入您的消息...",
-  "chatError": "加载聊天时出错：{error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "如何帮助您处理清单？",
-  "generalHelp": "今天如何帮助您购物？",
-  "chatSubtitle": "请求项目建议、食谱或省钱技巧。",
-  "aiError": "抱歉，处理您的请求时出错。请检查您的连接或稍后重试。",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "登录以解锁\n高级功能",
-  "signInGoogle": "使用 Google 登录",
-  "signInApple": "使用 Apple 登录",
+  "clearList": "清空清单",
+  "clearPurchased": "清空已购",
+  "close": "关闭",
+  "complete": "完成",
+  "completePurchase": "完成购买",
+  "completedOn": "完成于 {date}",
+  "confirm": "确认",
+  "confirmArchiveContent": "完成此购买并归档清单？",
+  "confirmArchiveTitle": "完成购买",
+  "confirmClearList": "移除所有项目？",
+  "confirmContent": "移除 {count} 个项目？",
+  "confirmDeleteItems": "移除 {count} 个项目？",
+  "confirmDeleteTitle": "确认",
+  "confirmRemovePantry": "从储藏室中移除\"{name}\"？",
+  "consumed": "已消耗",
   "continueAsGuest": "以访客身份继续",
-  "loginError": "登录错误：{error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus 高级版",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "升级以解锁",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "项目已移除",
-  "undo": "撤销",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "您的清单为空",
-  "emptyListSubtitle": "添加项目以开始",
-  "noListFoundTitle": "未找到清单",
-  "noListFoundSubtitle": "创建您的第一个清单以开始",
+  "copiedToClipboard": "已复制到剪贴板",
+  "copy": "复制",
+  "create": "创建",
   "createFirstList": "创建第一个清单",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "清单预算",
-  "budgetAmountLabel": "预算金额",
-  "removeBudget": "移除",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "无限清单",
-  "prefSharing": "共享清单",
-  "prefFullHistory": "完整历史",
-  "prefExportData": "导出数据",
-  "prefCustomThemes": "自定义主题",
-  "prefMonthlyBudget": "全局月度预算",
-  "prefAIAssistant": "个人 AI 助手",
-  "prefUnlimitedPantry": "无限储藏室",
-  "prefInteractiveArtifacts": "交互式 AI 作品",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "绿色",
-  "themeBlue": "蓝色",
-  "themePurple": "紫色",
-  "themeRed": "红色",
-  "themeOrange": "橙色",
-  "themePink": "粉色",
-  "themeIndigo": "靛蓝",
-  "themeAmber": "琥珀色",
-  "themeTeal": "青色",
-  "themeBrown": "棕色",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "水果",
-  "catCleaning": "清洁",
-  "catBeverages": "饮料",
-  "catBakery": "烘焙",
-  "catOthers": "其他",
-  "@_Unit": "description: Unit",
-  "unitPack": "包",
-  "@_Share": "description: Sharing",
-  "shareSubject": "购物清单",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "月度预算",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "删除清单",
-  "pantryItemRemoved": "项目已移除",
+  "createListDialog": "创建清单",
+  "createListToStartAi": "建立購物清單以開始使用智慧聊天。",
+  "createNewList": "创建新清单",
+  "currency": "貨幣",
+  "currentQty": "当前数量",
+  "currentQuantity": "当前数量",
+  "dark": "深色",
+  "data": "数据",
   "deficitItems": "有 {deficit} 个项目需要购买",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "购物车总计",
-  "restockLabel": "补货",
-  "advancedFeatures": "高级功能",
-  "selectAll": "全选",
+  "delete": "删除",
+  "deleteListConfirm": "删除清单",
+  "deleteListContent": "确定要删除\"{name}\"吗？所有项目将被移除。",
+  "deleteListTitle": "删除清单",
+  "deleteRecipe": "刪除",
+  "deleteRecipeConfirm": "刪除這個食譜？",
+  "deleteRecipeConfirmMsg": "您確定要刪除「{recipeName}」嗎？此操作無法撤銷。",
+  "deleteSession": "刪除聊天記錄",
+  "deleteSessionConfirm": "您確定要刪除此聊天記錄嗎？這些訊息將永久遺失。",
   "deselectAll": "取消全选",
-  "monthlyBudgetAppBar": "月度预算",
-  "budgetEditTitle": "月度预算",
-  "budgetDashboardTitle": "仪表板",
-  "selectListForDashboard": "选择一个清单以查看仪表板。",
-  "spendingAnalysis": "支出分析",
-  "noItemsToAnalyze": "清单中没有可分析的项目。",
-  "markItemsToSeeAnalysis": "将项目标记为已购买以查看分析。",
-  "totalSpending": "总支出",
-  "spendingByCategory": "按类别支出",
-  "achievements": "成就",
-  "exportPdfExcel": "导出 PDF/Excel",
-  "exportPdf": "导出为 PDF",
-  "exportExcel": "导出为 Excel",
-  "organizingAi": "正在使用 AI 整理...",
-  "yesLabel": "是",
-  "noLabel": "否",
-  "shareListText": "我的购物清单",
-  "emptyListAddItems": "您的清单为空！请先添加项目。ℹ️",
-  "listOrganizedMagic": "清单已神奇地按类别整理！✨",
-  "shoppingMode": "购物模式",
-  "smartOrganization": "智能整理",
-  "savings": "节省",
-  "shoppingModeHeader": "购物模式",
-  "shareAsText": "以格式化文本发送项目",
-  "shareRealtime": "与他人实时同步",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "快速食谱",
-  "quickRecipePrompt": "使用我清单中的项目推荐食谱。",
+  "dynamicColors": "動態色彩",
+  "dynamicColorsEnabledWarning": "停用動態顏色以使主題顏色生效",
+  "dynamicColorsSubtitle": "使用基於您的壁紙的顏色",
   "economyTips": "省钱技巧",
   "economyTipsPrompt": "如何在此次购买中省钱？",
-  "organizeAisles": "按通道整理",
-  "organizeAislesPrompt": "按超市通道整理。",
-  "recipeSuggestion": "食谱推荐",
-  "aiCreditsRemaining": "剩余 {remaining} 个积分",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "全部添加到清单",
-  "organizeByAisles": "按通道整理",
-  "voiceTranscriptionTooltip": "语音输入（免费）",
-  "aiVoiceCommandTooltip": "AI 语音命令（高级版）",
-  "voiceCommandTitle": "AI 语音命令",
-  "voiceCommandContent": "自然说话以管理您的清单！\n\n示例：\n• '添加面包、奶酪和火腿'\n• '移除洗衣液'\n• '将主题更改为蓝色'\n\n这是 Lista Plus Premium 的专属功能。",
-  "voiceCommandPlanBtn": "查看方案",
-  "itemsAddedSuccess": "项目已成功添加到清单！",
-  "viewList": "查看清单",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "发送反馈",
+  "edit": "编辑",
+  "editItem": "编辑项目",
+  "editItemPrice": "预估价格",
+  "editPantryItem": "编辑 {name}",
+  "editRecipe": "編輯",
+  "editRecipeTitle": "編輯食譜",
+  "emptyListAddItems": "您的清单为空！请先添加项目。ℹ️",
+  "emptyListSubtitle": "添加项目以开始",
+  "emptyListTitle": "您的清单为空",
+  "enterCodeHint": "输入代码",
+  "enterUrl": "輸入網址",
+  "error": "错误：{message}",
+  "errorGeneric": "错误：{message}",
+  "errorLoadingChat": "哎呀！載入聊天時出了點問題。",
+  "errorLoadingChatSubtitle": "檢查您的連線或稍後重試。",
+  "errorLoadingRecipes": "加載食譜時出錯",
+  "errorOscillation": "這可能是由於網路振盪或暫時無法使用而導致的。請再試一次。",
+  "estimated": "预估",
+  "estimatedCost": "估計的",
+  "estimatedPrice": "预估价格",
+  "exportData": "导出数据",
+  "exportDataSubtitle": "将所有清单保存为 JSON",
+  "exportExcel": "导出为 Excel",
+  "exportPdf": "导出为 PDF",
+  "exportPdfExcel": "导出 PDF/Excel",
+  "feedbackBack": "返回",
+  "feedbackError": "发送错误：{error}",
+  "feedbackHint": "详细描述您的反馈...",
   "feedbackPrompt": "您想分享什么？",
+  "feedbackRetry": "重试",
+  "feedbackSend": "发送反馈",
+  "feedbackSending": "发送中...",
+  "feedbackSettingsSubtitle": "报告错误、提出改进建议或修正翻译",
+  "feedbackSettingsTitle": "发送反馈",
+  "feedbackThankYou": "谢谢！",
+  "feedbackThankYouMessage": "您的反馈已收到，这有助于我们为所有人改进 Lista Plus。",
+  "feedbackTitle": "发送反馈",
   "feedbackTypeBug": "报告错误",
   "feedbackTypeBugHint": "某些功能无法正常使用",
-  "feedbackTypeSuggestion": "建议",
-  "feedbackTypeSuggestionHint": "改进应用的创意",
-  "feedbackTypeTranslation": "翻译问题",
-  "feedbackTypeTranslationHint": "不正确或生硬的翻译",
   "feedbackTypeFeature": "功能请求",
   "feedbackTypeFeatureHint": "您希望看到的功能",
   "feedbackTypeOther": "其他",
   "feedbackTypeOtherHint": "其他类型的反馈",
-  "feedbackHint": "详细描述您的反馈...",
-  "feedbackSend": "发送反馈",
-  "feedbackSending": "发送中...",
-  "feedbackThankYou": "谢谢！",
-  "feedbackThankYouMessage": "您的反馈已收到，这有助于我们为所有人改进 Lista Plus。",
-  "feedbackBack": "返回",
-  "feedbackError": "发送错误：{error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "重试",
-  "feedbackSettingsTitle": "发送反馈",
-  "feedbackSettingsSubtitle": "报告错误、提出改进建议或修正翻译",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "建议",
+  "feedbackTypeSuggestionHint": "改进应用的创意",
+  "feedbackTypeTranslation": "翻译问题",
+  "feedbackTypeTranslationHint": "不正确或生硬的翻译",
+  "fieldRequired": "必填字段",
+  "filterAll": "全部",
+  "filterByTag": "按標籤過濾",
+  "filterPending": "待办",
+  "filterPurchased": "已购",
+  "finance": "财务",
+  "finishShopping": "完成購物",
+  "gallery": "畫廊",
+  "generalAssistant": "通用助手",
+  "generalHelp": "今天如何帮助您购物？",
+  "generateShoppingList": "生成购物清单",
+  "globalAssistant": "全局助手",
+  "howCanIHelp": "我能提供什麼幫助嗎？",
+  "idealQty": "理想数量",
+  "idealQuantity": "理想数量",
+  "imageUrlPlaceholder": "或貼上圖片網址",
+  "import": "导入",
+  "importData": "导入数据",
+  "importDataSubtitle": "从 JSON 恢复清单",
+  "importJsonHint": "在此粘贴备份 JSON...",
+  "importJsonTitle": "导入 JSON",
+  "importListTitle": "导入清单",
+  "importViaCode": "通过代码导入",
+  "ingredients": "原料",
+  "instructions": "指示",
+  "instructionsHint": "每行鍵入一個步驟...",
+  "inviteToList": "邀請列出",
+  "itemName": "项目名称",
+  "itemRemoved": "项目已移除",
+  "itemsAddedSuccess": "项目已成功添加到清单！",
+  "itemsNeedPurchase": "有 {deficit} 个项目需要购买",
+  "itemsPurchasedCount": "已購買 {total} 中的 {purchased}",
+  "itemsPurchasedShort": "{purchased}/{total} 已購買",
+  "itemsWillBeAdded": "将添加 {count} 个项目",
+  "language": "语言",
+  "languageEnglish": "英語",
+  "languagePortuguese": "葡萄牙語（巴西）",
+  "languageSystem": "系统默认",
+  "light": "浅色",
+  "listAdded": "已添加 {listName}！",
+  "listArchived": "清单归档成功！",
+  "listAssistant": "清单助手",
+  "listBudgetTitle": "清单预算",
+  "listCreated": "清单\"{name}\"已创建，共 {count} 个项目",
+  "listHelp": "如何帮助您处理清单？",
+  "listHistory": "清单历史",
+  "listNameLabel": "清单名称",
+  "listOrganizedMagic": "清单已神奇地按类别整理！✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "聽...",
+  "lists": "清单",
+  "loading": "加载中...",
+  "loadingRecipes": "正在加載您的食譜...",
+  "loginError": "登录错误：{error}",
+  "loginPrompt": "登录以解锁\n高级功能",
+  "longHistoryWarning": "歷史悠久：助手專注於最新消息以獲得更好的性能。",
+  "manageSubscription": "管理订阅",
+  "markAsPurchased": "标记为已购买",
+  "markItemsToSeeAnalysis": "将项目标记为已购买以查看分析。",
+  "marketMode": "市場模式",
+  "mealPlannerAddMeal": "添加餐點",
+  "mealPlannerDateLabel": "日期",
+  "mealPlannerDeleteMeal": "去除膳食",
+  "mealPlannerEditMeal": "編輯膳食",
+  "mealPlannerError": "加載膳食計劃時出錯",
+  "mealPlannerGenerateList": "產生購物清單",
+  "mealPlannerGenerateListConfirm": "將本週規劃膳食中的所有食材加入您的購物清單中？",
+  "mealPlannerGenerateListEmpty": "無需添加任何成分。首先根據食譜規劃一些膳食。",
+  "mealPlannerGenerateListNoList": "首先建立一個購物清單。",
+  "mealPlannerGenerateListSuccess": "{count} 成分已加入您的清單！",
+  "mealPlannerLoading": "正在加載膳食計劃...",
+  "mealPlannerMealDeleted": "餐點已移除",
+  "mealPlannerMealTypeBreakfast": "早餐",
+  "mealPlannerMealTypeDinner": "晚餐",
+  "mealPlannerMealTypeLunch": "午餐",
+  "mealPlannerMealTypeSnack": "小吃",
+  "mealPlannerNoMeals": "沒有計劃膳食",
+  "mealPlannerNoMealsHint": "點擊一天即可加入餐食",
+  "mealPlannerNoRecipesFound": "沒有找到食譜",
+  "mealPlannerNoRecipesHint": "首先在「食譜」標籤中建立食譜",
+  "mealPlannerNoteLabel": "注意（可選）",
+  "mealPlannerPrepTime": "{minutes} 分鐘",
+  "mealPlannerSave": "添加到計劃",
+  "mealPlannerSearchRecipes": "搜尋食譜...",
+  "mealPlannerSelectRecipe": "選擇一個食譜",
+  "mealPlannerServings": "{count,plural, one{{count} 份} other{{count} 份}}",
+  "mealPlannerServingsLabel": "份量",
+  "mealPlannerTitle": "膳食計劃",
+  "mealPlannerViewMonthly": "月視圖",
+  "mealPlannerViewWeekly": "每週視圖",
+  "mealPlannerWeekEmpty": "這週沒有什麼計劃",
+  "mealPlannerWeekEmptyHint": "點擊任何一天即可開始規劃您的膳食！",
+  "mealPlannerWeekProgress": "計劃 {count} 餐，共 {total} 餐",
+  "monthlyBudgetAppBar": "月度预算",
+  "monthlyBudgetNav": "月度预算",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "月度预算",
+  "myLists": "我的清单",
+  "myRecipes": "我的食譜",
+  "newChat": "新聊天",
+  "newListTitle": "新购物清单",
+  "newPantryList": "储藏室购物",
+  "newRecipe": "新食譜",
+  "newRecipeTitle": "新食譜",
+  "next": "下一個",
+  "noActiveLists": "没有活跃的清单",
+  "noArchivedLists": "没有归档的清单",
+  "noBudgetDefined": "未设置预算",
+  "noHistory": "沒有聊天記錄",
+  "noItemsInList": "清單中沒有項目",
+  "noItemsToAnalyze": "清单中没有可分析的项目。",
+  "noItemsToBuy": "没有需要购买的项目",
+  "noLabel": "否",
+  "noListFoundSubtitle": "创建您的第一个清单以开始",
+  "noListFoundTitle": "未找到清单",
+  "noMessagesFound": "沒有找到訊息",
+  "noRecipesSaved": "沒有保存食譜",
+  "noRecipesSavedHint": "點擊下面的按鈕以建立您的第一個自訂食譜。",
+  "noTracking": "不追踪",
+  "onboardingAnnualBadge": "最超值",
+  "onboardingAnnualLabel": "年度的",
+  "onboardingCancelAnytime": "隨時取消。沒有承諾。",
+  "onboardingContinueAsGuest": "繼續以訪客身份",
+  "onboardingExit": "出口",
+  "onboardingLoginDesc": "您的資料已在所有裝置上同步",
+  "onboardingLoginTitle": "將所有內容儲存到雲端",
+  "onboardingMonthlyLabel": "每月",
+  "onboardingPersonalizationCta": "繼續",
+  "onboardingPersonalizationDesc": "我們將用它來個性化您的建議並使購物更明智。",
+  "onboardingPersonalizationFoodHint": "例如披薩、壽司、烤寬麵條…",
+  "onboardingPersonalizationFoodLabel": "你最喜歡的食物是什麼？",
+  "onboardingPersonalizationFoodRequired": "告訴我們您最喜歡的食物以繼續",
+  "onboardingPersonalizationSkip": "暫時跳過",
+  "onboardingPersonalizationTitle": "讓我們來認識你",
+  "onboardingPremiumSubtitle": "充分利用您的購物清單",
+  "onboardingPremiumTitle": "解鎖所有功能",
+  "onboardingRestore": "恢復購買",
+  "onboardingRestoreDesc": "已經訂閱了？點擊此處將其恢復。",
+  "onboardingSetupDesc": "選擇您希望 Lista Plus 的外觀和工作方式。",
+  "onboardingSetupTitle": "個人化您的體驗",
+  "onboardingShareDesc": "與家人和朋友即時同步列表",
+  "onboardingShareTitle": "與你愛的人分享",
+  "onboardingSubscribeCta": "訂閱",
+  "onboardingViewAllPlans": "查看所有計劃",
+  "onboardingWelcomeDesc": "組織購物並省錢的最明智方法。",
+  "onboardingWelcomeTitle": "歡迎來到Lista Plus",
+  "openMenu": "開啟選單",
+  "organizeAisles": "按通道整理",
+  "organizeAislesPrompt": "按超市通道整理。",
+  "organizeByAisles": "按通道整理",
+  "organizingAi": "正在使用 AI 整理...",
+  "pantry": "储藏室",
+  "pantryAppBar": "储藏室",
+  "pantryEditTitle": "编辑 {name}",
+  "pantryEmpty": "储藏室为空",
+  "pantryEmptySubtitle": "添加您想在家中存放的商品",
+  "pantryItemRemoved": "项目已移除",
+  "paywallTitle": "Lista Plus 高级版",
+  "prefAIAssistant": "个人 AI 助手",
+  "prefCustomThemes": "自定义主题",
+  "prefExportData": "导出数据",
+  "prefFullHistory": "完整历史",
+  "prefInteractiveArtifacts": "交互式 AI 作品",
+  "prefMonthlyBudget": "全局月度预算",
+  "prefSharing": "共享清单",
+  "prefUnlimitedLists": "无限清单",
+  "prefUnlimitedPantry": "无限储藏室",
+  "premiumUpgrade": "升级以解锁",
+  "prepTime": "準備時間",
+  "prepTimeMinutes": "準備時間（分鐘）",
+  "privacy": "隐私",
+  "productName": "产品名称",
+  "purchaseError": "处理购买时出错。请重试。",
+  "quantityFull": "数量",
+  "quantityShort": "数量",
+  "quickRecipe": "快速食谱",
+  "quickRecipePrompt": "使用我清单中的项目推荐食谱。",
+  "quickReplies": "快速回覆：",
+  "recipeCreated": "食譜已建立！",
+  "recipeDeleted": "食譜已刪除",
+  "recipeImage": "食譜圖片",
+  "recipeName": "食譜名稱",
+  "recipeSaved": "食譜已儲存！",
+  "recipeSuggestion": "食谱推荐",
+  "recipeTags": "食譜標籤",
+  "regenerate": "重新生成",
+  "remove": "移除",
+  "removeBudget": "移除",
+  "removeImage": "刪除影像",
+  "removeSharedListContent": "从您的清单中移除\"{name}\"？原始清单不受影响。",
+  "removeSharedListTitle": "移除共享清单",
+  "removeSharedTooltip": "移除",
+  "rename": "重命名",
+  "renameListDialog": "重命名清单",
+  "requiredField": "必需的",
+  "restockLabel": "补货",
+  "restocked": "{name} 已补货至 {quantity} {unit}",
+  "restore": "恢复",
+  "restoreError": "恢复购买时出错。请重试。",
+  "retry": "重试",
+  "save": "保存",
+  "saveChanges": "儲存變更",
+  "saveRecipe": "節省",
+  "savings": "节省",
+  "searchCurrency": "搜尋貨幣...",
+  "searchInConversation": "在對話中搜尋...",
+  "searchLanguage": "搜尋語言...",
+  "searchRecipes": "搜尋食譜...",
+  "selectAll": "全选",
+  "selectListForDashboard": "选择一个清单以查看仪表板。",
+  "selectedItems": "已选 {count} 项",
+  "setBudgetButton": "设置预算",
+  "setBudgetTitle": "月度预算",
+  "settingsAppBar": "设置",
+  "settingsDefaultScreen": "預設主螢幕",
+  "settingsDefaultScreenSubtitle": "選擇購物清單或人工智慧聊天",
+  "settingsScreenChat": "人工智慧聊天",
+  "settingsScreenList": "購物清單",
+  "share": "分享",
+  "shareApp": "分享應用程式",
+  "shareAppDescription": "邀請朋友使用Lista Plus",
+  "shareAsText": "以格式化文本发送项目",
+  "shareListText": "我的购物清单",
+  "shareListTitle": "分享清单",
+  "shareRealtime": "与他人实时同步",
+  "shareReferralSubject": "取得 7 天 Lista Plus Premium！",
+  "shareReferralText": "我正在使用 Lista Plus 來組織我的購物！透過我的連結下載，我們都可以免費獲得 7 天的高級版：{url}",
+  "shareSubject": "购物清单",
+  "shareThisCode": "分享此代码：",
+  "shareViaCode": "通过代码分享",
+  "sharedLabel": "已分享",
+  "shoppingAssistant": "導購員",
+  "shoppingMode": "购物模式",
+  "shoppingModeHeader": "购物模式",
+  "shortDescription": "簡短描述",
+  "signInApple": "使用 Apple 登录",
+  "signInGoogle": "使用 Google 登录",
+  "smartOrganization": "智能整理",
+  "sortCategory": "类别",
+  "sortDate": "日期",
+  "sortManual": "手动",
+  "sortName": "名称",
+  "spendingAnalysis": "支出分析",
+  "spendingByCategory": "按类别支出",
+  "suggestedQuestions": "建議問題：",
+  "suggestedTags": "建議",
+  "switchList": "切換列表",
+  "system": "系统",
+  "tags": "標籤",
+  "termsOfUse": "使用条款",
+  "themeAmber": "琥珀色",
+  "themeBlue": "蓝色",
+  "themeBrown": "棕色",
+  "themeColor": "主题色",
+  "themeGreen": "绿色",
+  "themeIndigo": "靛蓝",
+  "themeOrange": "橙色",
+  "themePink": "粉色",
+  "themePurple": "紫色",
+  "themeRed": "红色",
+  "themeTeal": "青色",
+  "totalEstimated": "预估总计：{amount}",
+  "totalSpending": "总支出",
+  "trackStock": "追踪库存",
+  "trackStockActive": "出现在购物建议中",
+  "trackStockInactive": "不生成购物建议",
+  "undo": "撤销",
+  "unit": "单位",
+  "unitPack": "包",
+  "unlockFullResponse": "解鎖完整回應",
+  "unmark": "取消标记",
+  "upgrade": "升级",
+  "validForLimitedTime": "限时有效",
+  "version": "版本",
+  "viewActive": "查看活跃",
+  "viewDetails": "看詳情",
+  "viewHistory": "查看历史",
+  "viewItems": "查看商品",
+  "viewList": "查看清单",
+  "viewPro": "查看專業版",
+  "viewRecipe": "查看食譜",
+  "voiceCommandContent": "自然说话以管理您的清单！\n\n示例：\n• '添加面包、奶酪和火腿'\n• '移除洗衣液'\n• '将主题更改为蓝色'\n\n这是 Lista Plus Premium 的专属功能。",
+  "voiceCommandPlanBtn": "查看方案",
+  "voiceCommandTitle": "AI 语音命令",
+  "voiceProFeature": "高級語音命令是 Pro。啟用基本聽寫...",
+  "voiceTranscriptionTooltip": "语音输入（免费）",
+  "welcomeAiAssistant": "歡迎使用人工智慧助手",
+  "whatToDoWithItem": "您想用這個物品做什麼？",
+  "yes": "是",
+  "yesLabel": "是"
 }

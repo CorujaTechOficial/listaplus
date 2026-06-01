@@ -1,0 +1,640 @@
+{
+  "@@locale": "eu",
+  "appTitle": "Erosketa Zerrenda",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Zerrendak",
+  "pantry": "Jakitegia",
+  "@_Common": "description: Common actions",
+  "cancel": "Utzi",
+  "save": "Gorde",
+  "create": "Sortu",
+  "add": "Gehitu",
+  "remove": "Kendu",
+  "delete": "Ezabatu",
+  "edit": "Editatu",
+  "copy": "Kopiatu",
+  "retry": "Saiatu berriro",
+  "regenerate": "Birgeneratu",
+  "copiedToClipboard": "Arbelera kopiatuta",
+  "confirm": "Baieztatu",
+  "close": "Itxi",
+  "import": "Inportatu",
+  "rename": "Berrizendatu",
+  "upgrade": "Hobetu",
+  "clear": "Garbitu",
+  "error": "Errorea: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Errorea: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Errorea erosketa prozesatzean. Saiatu berriro.",
+  "restoreError": "Errorea erosketak berreskuratzean. Saiatu berriro.",
+  "loading": "Kargatzen...",
+  "fieldRequired": "Eremu beharrezkoa",
+  "addedFeedback": "Gehituta!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} hautatuta} other{{count} hautatuta}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Estimatuta",
+  "alreadyPurchased": "Dagoeneko erosita",
+  "clearList": "Garbitu zerrenda",
+  "clearPurchased": "Garbitu erositakoak",
+  "share": "Partekatu",
+  "shareViaCode": "Partekatu kode bidez",
+  "importViaCode": "Inportatu kode bidez",
+  "listAssistant": "Zerrenda laguntzailea",
+  "globalAssistant": "Laguntzaile orokorra",
+  "becomePremium": "Premium bihurtu",
+  "manageSubscription": "Kudeatu harpidetza",
+  "completePurchase": "Osatu erosketa",
+  "confirmClearList": "Kendu elementu guztiak?",
+  "shareListTitle": "Partekatu Zerrenda",
+  "shareThisCode": "Partekatu kode hau:",
+  "validForLimitedTime": "Denbora mugaturako baliozkoa",
+  "importListTitle": "Inportatu Zerrenda",
+  "enterCodeHint": "Sartu kodea",
+  "confirmArchiveTitle": "Osatu Erosketa",
+  "confirmArchiveContent": "Erosketa hau osatu eta zerrenda artxibatu?",
+  "complete": "Osatu",
+  "listArchived": "Zerrenda behar bezala artxibatu da!",
+  "listAdded": "{listName} gehituta!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Erosi",
+  "unmark": "Desmarkatu",
+  "confirmDeleteItems": "{count} elementu(k) kendu?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Baieztatu",
+  "confirmContent": "{count} elementu(k) kendu?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Artxibatu zerrenda",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Jakitegia",
+  "generateShoppingList": "Sortu erosketa zerrenda",
+  "pantryEmpty": "Jakitegia hutsik",
+  "pantryEmptySubtitle": "Gehitu etxean eduki nahi dituzun produktuak",
+  "itemsNeedPurchase": "{deficit} elementu(k) erosi behar dira",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Ez dago erosi beharreko elementurik",
+  "newPantryList": "Jakitegiko Erosketa",
+  "newListTitle": "Erosketa Zerrenda Berria",
+  "itemsWillBeAdded": "{count} elementu(k) gehituko dira",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Zerrendaren izena",
+  "listCreated": "\"{name}\" zerrenda {count} elementurekin sortu da",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Seguimendurik gabe",
+  "markAsPurchased": "Markatu erosita bezala",
+  "editPantryItem": "Editatu {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Kantitate ideala",
+  "currentQuantity": "Uneko kantitatea",
+  "consumed": "Kontsumitua",
+  "restocked": "{name} {quantity} {unit}ra berriz bete da",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Kendu \"{name}\" jakitegitik?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Editatu {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Ezarpenak",
+  "language": "Hizkuntza",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Sistemaren lehenetsia",
+  "appearance": "Itxura",
+  "light": "Argia",
+  "system": "Sistema",
+  "dark": "Iluna",
+  "themeColor": "Gaiaren kolorea",
+  "finance": "Finantzak",
+  "monthlyBudgetNav": "Hileko aurrekontua",
+  "budgetSubtitle": "Jarraitu zure hileko gastuak",
+  "data": "Datuak",
+  "backupNav": "Segurtasun kopia",
+  "backupSubtitle": "Esportatu edo inportatu zure datuak",
+  "about": "Honi buruz",
+  "version": "Bertsioa",
+  "privacy": "Pribatutasuna",
+  "termsOfUse": "Erabilera baldintzak",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Segurtasun kopia",
+  "backupPremiumDescription": "Segurtasun kopia eta esportazioa premium ezaugarria da",
+  "exportData": "Esportatu datuak",
+  "exportDataSubtitle": "Gorde zerrenda guztiak JSON gisa",
+  "importData": "Inportatu datuak",
+  "importDataSubtitle": "Berreskuratu zerrendak JSON batetik",
+  "importJsonTitle": "Inportatu JSON",
+  "importJsonHint": "Itsatsi segurtasun kopiako JSON-a hemen...",
+  "backupExported": "Segurtasun kopia esportatuta!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Hileko Aurrekontua",
+  "budgetPremiumLocked": "Hileko aurrekontu orokorra premium da",
+  "budgetUpgradePrompt": "Hobetu desblokeatzeko",
+  "noBudgetDefined": "Aurrekonturik ezarri gabe",
+  "totalEstimated": "Guztira estimatua: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Ezarri aurrekontua",
+  "budgetLists": "Zerrendak",
+  "budgetValueLabel": "Kopurua",
+  "setBudgetTitle": "Hileko Aurrekontua",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Denak",
+  "filterPending": "Zain",
+  "filterPurchased": "Erosita",
+  "sortName": "Izena",
+  "sortCategory": "Kategoria",
+  "sortDate": "Data",
+  "sortManual": "Eskuz",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Gehitu Elementua",
+  "itemName": "Elementuaren izena",
+  "quantityShort": "Kop",
+  "unit": "Unitatea",
+  "category": "Kategoria",
+  "estimatedPrice": "Estimatutako prezioa",
+  "addItemPrice": "Estimatutako prezioa",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Editatu Elementua",
+  "quantityFull": "Kantitatea",
+  "editItemPrice": "Estimatutako prezioa",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Gehitu Jakitegian",
+  "addToPantryPrompt": "Gehitu \"{name}\" zure Jakitegian?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Bai",
+  "productName": "Produktuaren izena",
+  "idealQty": "Kopuru ideala",
+  "currentQty": "Uneko kopurua",
+  "trackStock": "Jarraitu stocka",
+  "trackStockActive": "Erosketa iradokizunetan agertzen da",
+  "trackStockInactive": "Ez du erosketa iradokizunik sortzen",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Sortu Zerrenda",
+  "renameListDialog": "Berrizendatu Zerrenda",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Zerrendaren Historia",
+  "myLists": "Nire Zerrendak",
+  "viewActive": "Ikusi Aktiboak",
+  "viewHistory": "Ikusi Historia",
+  "noArchivedLists": "Ez dago artxibatutako zerrendarik",
+  "noActiveLists": "Ez dago zerrenda aktiborik",
+  "completedOn": "{date}(e)an osatua",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Partekatua",
+  "restore": "Berreskuratu",
+  "removeSharedTooltip": "Kendu",
+  "deleteListTitle": "Ezabatu zerrenda",
+  "deleteListContent": "Ziur zaude \"{name}\" ezabatu nahi duzula? Elementu guztiak kenduko dira.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Kendu partekatutako zerrenda",
+  "removeSharedListContent": "Kendu \"{name}\" zure zerrendetatik? Jatorrizko zerrendak ez du kalterik izango.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Sortu zerrenda berria",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI Laguntzailea",
+  "aiAssistantDescription": "Eskuratu iradokizun adimentsuak, errezetak eta aholku pertsonalizatuak gure AI laguntzailearekin.",
+  "generalAssistant": "Laguntzaile Orokorra",
+  "clearHistory": "Garbitu Historia",
+  "clearHistoryConfirm": "Saio honetako mezu guztiak garbitu?",
+  "chatHint": "Idatzi zure mezua...",
+  "chatError": "Errorea txata kargatzean: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Nola lagundu dezaket zure zerrendarekin?",
+  "generalHelp": "Nola lagundu dezaket zure erosketetan gaur?",
+  "chatSubtitle": "Eskatu elementu iradokizunak, errezetak edo aurrezteko aholkuak.",
+  "aiError": "Barkatu, errorea gertatu da zure eskaera prozesatzean. Egiaztatu konexioa edo saiatu berriro geroago.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Saioa hasi premium\nezaugarriak desblokeatzeko",
+  "signInGoogle": "Saioa hasi Google-rekin",
+  "signInApple": "Saioa hasi Apple-rekin",
+  "continueAsGuest": "Jarraitu gonbidatu gisa",
+  "loginError": "Saio-hasierako errorea: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Hobetu desblokeatzeko",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Elementua kenduta",
+  "undo": "Desegin",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Zure zerrenda hutsik dago",
+  "emptyListSubtitle": "Gehitu elementuak hasteko",
+  "noListFoundTitle": "Ez da zerrendarik aurkitu",
+  "noListFoundSubtitle": "Sortu zure lehen zerrenda hasteko",
+  "createFirstList": "Sortu Lehen Zerrenda",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Zerrendaren Aurrekontua",
+  "budgetAmountLabel": "Aurrekontuaren kopurua",
+  "removeBudget": "Kendu",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Zerrenda mugagabeak",
+  "prefSharing": "Partekatu zerrendak",
+  "prefFullHistory": "Historia osoa",
+  "prefExportData": "Esportatu datuak",
+  "prefCustomThemes": "Gai pertsonalizatuak",
+  "prefMonthlyBudget": "Hileko aurrekontu orokorra",
+  "prefAIAssistant": "AI Laguntzaile Pertsonala",
+  "prefUnlimitedPantry": "Jakitegi mugagabea",
+  "prefInteractiveArtifacts": "AI Artifizio Interaktiboak",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Berdea",
+  "themeBlue": "Urdina",
+  "themePurple": "Morea",
+  "themeRed": "Gorria",
+  "themeOrange": "Laranja",
+  "themePink": "Arrosa",
+  "themeIndigo": "Indigoa",
+  "themeAmber": "Anbarra",
+  "themeTeal": "Teala",
+  "themeBrown": "Marroia",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Frutak",
+  "catCleaning": "Garbiketa",
+  "catBeverages": "Edariak",
+  "catBakery": "Okindegia",
+  "catOthers": "Besteak",
+  "@_Unit": "description: Unit",
+  "unitPack": "pakete",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Erosketa Zerrenda",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Hileko Aurrekontua",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Ezabatu zerrenda",
+  "pantryItemRemoved": "Elementua kenduta",
+  "deficitItems": "{deficit,plural, one{{deficit} elementu erosi behar da} other{{deficit} elementu erosi behar dira}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Saskiaren guztira",
+  "restockLabel": "Berriz bete",
+  "advancedFeatures": "Ezaugarri aurreratuak",
+  "selectAll": "Hautatu guztiak",
+  "deselectAll": "Deshautatu guztiak",
+  "monthlyBudgetAppBar": "Hileko Aurrekontua",
+  "budgetEditTitle": "Hileko Aurrekontua",
+  "budgetDashboardTitle": "Panela",
+  "selectListForDashboard": "Hautatu zerrenda bat panela ikusteko.",
+  "spendingAnalysis": "Gastuen Analisia",
+  "noItemsToAnalyze": "Ez dago elementurik zerrendan analizatzeko.",
+  "markItemsToSeeAnalysis": "Markatu elementuak erosita gisa analisia ikusteko.",
+  "totalSpending": "Gastatutako Guztira",
+  "spendingByCategory": "Gastuak Kategoriaren arabera",
+  "achievements": "Edukiak",
+  "exportPdfExcel": "Esportatu PDF/Excel",
+  "exportPdf": "Esportatu PDF gisa",
+  "exportExcel": "Esportatu Excel gisa",
+  "organizingAi": "AI-REKIN ANTOLATZEN...",
+  "yesLabel": "Bai",
+  "noLabel": "Ez",
+  "shareListText": "Nire Erosketa Zerrenda",
+  "emptyListAddItems": "Zure zerrenda hutsik dago! Gehitu elementuak lehenik. ℹ️",
+  "listOrganizedMagic": "Zerrenda modu magikoan antolatuta kategorien arabera! ✨",
+  "shoppingMode": "Erosketa Modua",
+  "smartOrganization": "Antolaketa Adimentsua",
+  "savings": "Aurrezkiak",
+  "shoppingModeHeader": "EROSKETA MODUA",
+  "shareAsText": "Bidali elementuak testu formatudun gisa",
+  "shareRealtime": "Denbora errealeko sinkronizazioa beste pertsonekin",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Errezeta azkarra",
+  "quickRecipePrompt": "Iradoki errezetak nire zerrendako elementuekin.",
+  "economyTips": "Aurrezteko aholkuak",
+  "economyTipsPrompt": "Nola aurreztu dezaket dirua erosketa honetan?",
+  "organizeAisles": "Antolatu pasilloka",
+  "organizeAislesPrompt": "Antolatu merkatuaren pasilloen arabera.",
+  "recipeSuggestion": "Errezeta iradokizuna",
+  "aiCreditsRemaining": "{remaining} kreditu geratzen dira",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Gehitu denak zerrendara",
+  "organizeByAisles": "Antolatu pasilloka",
+  "voiceTranscriptionTooltip": "Ahots bidezko idazketa (Doan)",
+  "aiVoiceCommandTooltip": "AI Ahots Komandoa (Premium)",
+  "voiceCommandTitle": "AI Ahots Komandoa",
+  "voiceCommandContent": "Hitzez naturalki zure zerrenda kudeatzeko!\n\nAdibideak:\n• 'Gehitu ogia, gazta eta urdaiazpikoa'\n• 'Kendu detergentea'\n• 'Aldatu gaia urdinera'\n\nHau Lista Plus Premium-en ezaugarri esklusiboa da.",
+  "voiceCommandPlanBtn": "Ikusi Planak",
+  "itemsAddedSuccess": "Elementuak behar bezala gehitu dira zerrendara!",
+  "viewList": "Ikusi zerrenda",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Bidali Iritzia",
+  "feedbackPrompt": "Zer partekatu nahi zenuke?",
+  "feedbackTypeBug": "Akatsa Salatu",
+  "feedbackTypeBugHint": "Zerbait ez dabil",
+  "feedbackTypeSuggestion": "Iradokizuna",
+  "feedbackTypeSuggestionHint": "Aplikazioa hobetzeko ideia",
+  "feedbackTypeTranslation": "Itzulpen Arazoa",
+  "feedbackTypeTranslationHint": "Itzulpen okerra edo baldarka",
+  "feedbackTypeFeature": "Ezaugarri Eskaera",
+  "feedbackTypeFeatureHint": "Ikusi nahi duzun ezaugarria",
+  "feedbackTypeOther": "Besteak",
+  "feedbackTypeOtherHint": "Beste iritzi mota bat",
+  "feedbackHint": "Deskribatu zure iritzia xehetasunez...",
+  "feedbackSend": "Bidali Iritzia",
+  "feedbackSending": "Bidaltzen...",
+  "feedbackThankYou": "Eskerrik asko!",
+  "feedbackThankYouMessage": "Zure iritzia jaso dugu eta Lista Plus denontzat hobetzen laguntzen digu.",
+  "feedbackBack": "Atzera",
+  "feedbackError": "Bidaltze-errorea: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Saiatu berriro",
+  "feedbackSettingsTitle": "Bidali Iritzia",
+  "feedbackSettingsSubtitle": "Salatu akatsak, iradoki hobekuntzak edo konpondu itzulpenak",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Gehitu osagaia",
+  "addPhoto": "Gehitu argazkia",
+  "allTags": "Denak",
+  "chooseImageSource": "Hautatu irudiaren jatorria",
+  "chooseLanguage": "Hautatu hizkuntza",
+  "deleteRecipe": "Ezabatu",
+  "deleteRecipeConfirm": "Errezeta hau ezabatu?",
+  "deleteRecipeConfirmMsg": "Ziur zaude \"{recipeName}\" ezabatu nahi duzula? Ekintza hau ezin da desegin.",
+  "dynamicColors": "Kolore dinamikoak",
+  "dynamicColorsSubtitle": "Erabili zure hondo-irudian oinarritutako koloreak",
+  "editRecipe": "Editatu",
+  "editRecipeTitle": "Editatu errezeta",
+  "enterUrl": "Sartu URLa",
+  "errorLoadingRecipes": "Errorea errezetak kargatzean",
+  "filterByTag": "Filtratu etiketaren arabera",
+  "gallery": "Galeria",
+  "imageUrlPlaceholder": "Edo itsatsi irudi baten URLa",
+  "ingredients": "Osagaiak",
+  "instructions": "Argibideak",
+  "instructionsHint": "Idatzi urrats bat lerroko...",
+  "loadingRecipes": "Zure errezetak kargatzen...",
+  "mealPlannerAddMeal": "Gehitu otordua",
+  "mealPlannerDateLabel": "Data",
+  "mealPlannerDeleteMeal": "Kendu otordua",
+  "mealPlannerEditMeal": "Editatu otordua",
+  "mealPlannerError": "Errorea otorduen plana kargatzean",
+  "mealPlannerGenerateList": "Sortu erosketa zerrenda",
+  "mealPlannerGenerateListConfirm": "Gehitu aste honetako otorduetako osagai guztiak erosketa zerrendara?",
+  "mealPlannerGenerateListEmpty": "Ez dago osagairik gehitzeko. Planifikatu otorduak errezetekin lehenik.",
+  "mealPlannerGenerateListNoList": "Sortu erosketa zerrenda bat lehenik.",
+  "mealPlannerGenerateListSuccess": "¡{count} osagai gehitu dira zerrendara!",
+  "mealPlannerLoading": "Otorduen plana kargatzen...",
+  "mealPlannerMealDeleted": "Otordua kenduta",
+  "mealPlannerMealTypeBreakfast": "Gosaria",
+  "mealPlannerMealTypeDinner": "Afaria",
+  "mealPlannerMealTypeLunch": "Bazkaria",
+  "mealPlannerMealTypeSnack": "Askaria",
+  "mealPlannerNoMeals": "Ez dago otordurik planifikatuta",
+  "mealPlannerNoMealsHint": "Sakatu egun bat otordu bat gehitzeko",
+  "mealPlannerNoRecipesFound": "Ez da errezetarik aurkitu",
+  "mealPlannerNoRecipesHint": "Sortu errezetak Errezetak fitxan lehenik",
+  "mealPlannerNoteLabel": "Oharra (aukerakoa)",
+  "mealPlannerPrepTime": "{minutes} min",
+  "mealPlannerSave": "Gehitu planera",
+  "mealPlannerSearchRecipes": "Bilatu errezetak...",
+  "mealPlannerSelectRecipe": "Hautatu errezeta bat",
+  "mealPlannerServings": "{count,plural, one{{count} ano} other{{count} ano}}",
+  "mealPlannerServingsLabel": "Anoak",
+  "mealPlannerTitle": "Otorduen planifikatzailea",
+  "mealPlannerViewMonthly": "Hileko ikuspegia",
+  "mealPlannerViewWeekly": "Asteko ikuspegia",
+  "mealPlannerWeekEmpty": "Ez dago ezer planifikatuta aste honetarako",
+  "mealPlannerWeekEmptyHint": "Sakatu edozein egun otorduak planifikatzen hasteko!",
+  "mealPlannerWeekProgress": "{count} / {total} otordu planifikatuta",
+  "myRecipes": "Nire errezetak",
+  "newRecipe": "Errezeta berria",
+  "newRecipeTitle": "Errezeta berria",
+  "noRecipesSaved": "Ez dago errezetarik gordeta",
+  "noRecipesSavedHint": "Sortu zure lehen errezeta pertsonalizatua beheko botoia sakatuz.",
+  "openMenu": "Ireki menua",
+  "prepTime": "Prestatze denbora",
+  "prepTimeMinutes": "Prestatze denbora (minutuak)",
+  "recipeCreated": "Errezeta sortuta!",
+  "recipeDeleted": "Errezeta ezabatuta",
+  "recipeImage": "Errezetaren irudia",
+  "recipeName": "Errezetaren izena",
+  "recipeSaved": "Errezeta gordeta!",
+  "recipeTags": "Errezetaren etiketak",
+  "removeImage": "Kendu irudia",
+  "requiredField": "Beharrezkoa",
+  "saveChanges": "Gorde aldaketak",
+  "saveRecipe": "Gorde",
+  "searchLanguage": "Bilatu hizkuntza...",
+  "searchRecipes": "Bilatu errezetak...",
+  "shortDescription": "Deskribapen laburra",
+  "suggestedTags": "Iradokitakoak",
+  "tags": "Etiketak",
+  "viewRecipe": "Ikusi errezeta"
+}

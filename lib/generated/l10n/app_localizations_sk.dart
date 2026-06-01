@@ -42,6 +42,9 @@ class AppLocalizationsSk extends AppLocalizations {
   String get copy => 'Kopírovať';
 
   @override
+  String get next => 'Ďalej';
+
+  @override
   String get retry => 'Skúsiť znova';
 
   @override
@@ -281,28 +284,28 @@ class AppLocalizationsSk extends AppLocalizations {
   String get language => 'Jazyk';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brazília)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angličtina';
 
   @override
   String get languageSystem => 'Predvolené systémové';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Vyberte Jazyk';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Jazyk vyhľadávania...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'mena';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Vyberte položku Mena';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Hľadať menu...';
 
   @override
   String get appearance => 'Vzhľad';
@@ -320,14 +323,14 @@ class AppLocalizationsSk extends AppLocalizations {
   String get themeColor => 'Farba témy';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Dynamické farby';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Použite farby podľa tapety';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Deaktivujte dynamické farby, aby sa farba motívu prejavila';
 
   @override
   String get finance => 'Financie';
@@ -568,17 +571,17 @@ class AppLocalizationsSk extends AppLocalizations {
   String get generalAssistant => 'Všeobecný asistent';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Nový rozhovor';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Žiadna história rozhovorov';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Odstrániť rozhovor';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Naozaj chcete odstrániť tento rozhovor? Správy sa natrvalo stratia.';
 
   @override
   String get clearHistory => 'Vyčistiť históriu';
@@ -624,90 +627,105 @@ class AppLocalizationsSk extends AppLocalizations {
   String get continueAsGuest => 'Pokračovať ako hosť';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Vitajte v Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Najchytrejší spôsob, ako si zorganizovať nákupy a ušetriť peniaze.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Prispôsobte si svoj zážitok';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Vyberte si, ako chcete, aby Lista Plus vyzerala a pracovala pre vás.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Uložte všetko do cloudu';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Vaše údaje sú synchronizované na všetkých vašich zariadeniach';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Zdieľajte s tými, ktorých máte radi';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Synchronizujte zoznamy s rodinou a priateľmi v reálnom čase';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Odomknite všetky funkcie';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Vyťažte zo svojich nákupných zoznamov maximum';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Najlepšia hodnota';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Mesačne';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Ročný';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Zobraziť všetky plány';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Prihlásiť sa na odber';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'Zrušiť kedykoľvek. Žiadny záväzok.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Pokračujte ako hosť';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Obnoviť nákupy';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Už máte predplatné? Klepnutím tu ho obnovíte.';
+
+  @override
+  String get onboardingExit => 'VÝCHOD';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Poďme sa s vami zoznámiť';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Použijeme to na prispôsobenie vašich návrhov a inteligentnejšie nakupovanie.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Aké je tvoje obľúbené jedlo?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'napr. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Pokračovať';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Zatiaľ preskočiť';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Povedzte nám svoje obľúbené jedlo, aby sme mohli pokračovať';
+
+  @override
+  String get settingsDefaultScreen => 'Predvolená domovská obrazovka';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Vyberte si medzi nákupným zoznamom alebo chatom AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Nákupný zoznam';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -1078,344 +1096,345 @@ class AppLocalizationsSk extends AppLocalizations {
       'Nahlásiť chyby, navrhnúť zlepšenia alebo opraviť preklady';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energia AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Hľadať v konverzácii...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nenašli sa žiadne správy';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Navrhované otázky:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Nákupný asistent';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'Zakúpené: $purchased z $total';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Odhadovaný';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Zobraziť položky';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'V zozname nie sú žiadne položky';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Dlhá história: asistent sa zameriava na najnovšie správy pre lepší výkon.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Počúvam...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Pridať priamo do zoznamu';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Odomknite úplnú odpoveď';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Prepnúť zoznam';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Trhový režim';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Späť na Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Dokončite nakupovanie';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Vitajte v Asistentovi AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Ak chcete začať používať inteligentný chat, vytvorte si nákupný zoznam.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Ako môžem pomôcť?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Pýtajte sa na ceny, recepty, organizáciu...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total zakúpené';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Rýchle odpovede:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Pokročilé hlasové povely sú Pro. Povolenie základného diktovania...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Zobraziť Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Ojoj! Pri načítavaní četu sa vyskytla chyba.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Skontrolujte pripojenie alebo to skúste znova neskôr.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Môže k tomu dôjsť v dôsledku oscilácií siete alebo dočasnej nedostupnosti. Skúste to znova.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktívne počúvanie';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Čo by ste chceli urobiť s touto položkou?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Zobraziť podrobnosti';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Otvoriť menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Zobraziť Recept';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recept vytvorený!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Upraviť';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Odstrániť';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Odstrániť tento recept?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Naozaj chcete odstrániť „$recipeName“? Túto akciu nie je možné vrátiť späť.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingrediencie';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Pokyny';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Čas prípravy';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Recept uložený!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nie sú uložené žiadne recepty';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Vytvorte si svoj prvý vlastný recept klepnutím na tlačidlo nižšie.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Moje recepty';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Nový recept';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Načítavajú sa vaše recepty...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Chyba pri načítavaní receptov';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Pridajte prísadu';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Uložiť';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Názov receptu';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Krátky popis';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Čas prípravy (minúty)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Napíšte jeden krok na riadok...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Pridať fotku';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Alebo prilepte adresu URL obrázka';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tagy';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Štítky receptov';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Navrhované';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Hľadať recepty...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrovať podľa značky';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Všetky';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Recept bol odstránený';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Uložte zmeny';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Upraviť recept';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Nový recept';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Povinné';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Vyberte zdroj obrázka';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galéria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Zadajte URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Obrázok receptu';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Odstrániť obrázok';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Plánovač jedál';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Mesačný pohľad';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Týždenný pohľad';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Žiadne plánované jedlá';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Klepnutím na deň pridáte jedlo';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Načítava sa jedálny lístok...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Chyba pri načítavaní jedálneho lístka';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Pridajte jedlo';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Upraviť jedlo';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Odstráňte jedlo';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Jedlo bolo odstránené';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count porcií',
+      few: '$count porcie',
+      one: '$count porcia',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Porcie';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Poznámka (voliteľné)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Vyberte recept';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Hľadať recepty...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Nenašli sa žiadne recepty';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Najprv vytvorte recepty na karte Recepty';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Pridať do plánu';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count z $total naplánovaných jedál';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Vytvorte nákupný zoznam';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Pridať všetky ingrediencie z plánovaných jedál na tento týždeň do nákupného zoznamu?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count prísad pridaných do vášho zoznamu!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Žiadne prísady na pridávanie. Naplánujte si najskôr nejaké jedlá s receptami.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'Najprv vytvorte nákupný zoznam.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Raňajky';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'obed';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'večera';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Občerstvenie';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Dátum';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Na tento týždeň nie je nič plánované';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Klepnutím na ktorýkoľvek deň začnete plánovať svoje jedlá!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -1423,19 +1442,20 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Pozvať do zoznamu';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Zdieľať aplikáciu';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Pozvite priateľov, aby používali Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Na organizovanie nákupov používam Lista Plus! Stiahnite si cez môj odkaz a obaja získame 7 dní Premium zadarmo: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Získajte 7 dní Lista Plus Premium!';
 }

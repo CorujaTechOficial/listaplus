@@ -354,6 +354,12 @@ abstract class AppLocalizations {
   /// **'Copy'**
   String get copy;
 
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
   /// No description provided for @retry.
   ///
   /// In en, this message translates to:
@@ -1410,59 +1416,29 @@ abstract class AppLocalizations {
   /// **'Continue as guest'**
   String get continueAsGuest;
 
-  /// AI first message asking for name
+  /// Slide 1 headline
   ///
   /// In en, this message translates to:
-  /// **'Hi! I\'m your smart assistant. What would you like to call me?'**
-  String get onboardingAiGreeting;
+  /// **'Welcome to Lista Plus'**
+  String get onboardingWelcomeTitle;
 
-  /// AI response after user gives a name
+  /// Slide 1 body
   ///
   /// In en, this message translates to:
-  /// **'{name}? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?'**
-  String onboardingAiNameResponse(String name);
+  /// **'The smartest way to organize your shopping and save money.'**
+  String get onboardingWelcomeDesc;
 
-  /// AI asks about food preparation
+  /// Slide setup headline
   ///
   /// In en, this message translates to:
-  /// **'Yum! And how do you prepare it? I can suggest the ingredients!'**
-  String get onboardingAiFoodResponse;
+  /// **'Personalize your experience'**
+  String get onboardingSetupTitle;
 
-  /// AI offers list or chat choice
+  /// Slide setup body
   ///
   /// In en, this message translates to:
-  /// **'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?'**
-  String get onboardingAiListReady;
-
-  /// Button to ask AI for suggestions
-  ///
-  /// In en, this message translates to:
-  /// **'Suggest!'**
-  String get onboardingAiSuggestButton;
-
-  /// Button to go to shopping list
-  ///
-  /// In en, this message translates to:
-  /// **'Go to list'**
-  String get onboardingGoToList;
-
-  /// Button to continue chatting
-  ///
-  /// In en, this message translates to:
-  /// **'Keep chatting'**
-  String get onboardingKeepChatting;
-
-  /// Skip onboarding link
-  ///
-  /// In en, this message translates to:
-  /// **'Skip to app'**
-  String get onboardingSkipToApp;
-
-  /// Chat input placeholder
-  ///
-  /// In en, this message translates to:
-  /// **'Type a message...'**
-  String get onboardingChatPlaceholder;
+  /// **'Choose how you want Lista Plus to look and work for you.'**
+  String get onboardingSetupDesc;
 
   /// Slide 2 headline
   ///
@@ -1545,8 +1521,62 @@ abstract class AppLocalizations {
   /// Restore purchases button
   ///
   /// In en, this message translates to:
-  /// **'Restore'**
+  /// **'Restore Purchases'**
   String get onboardingRestore;
+
+  /// Explanation for restore button
+  ///
+  /// In en, this message translates to:
+  /// **'Already have a subscription? Tap here to restore it.'**
+  String get onboardingRestoreDesc;
+
+  /// Exit button text
+  ///
+  /// In en, this message translates to:
+  /// **'Exit'**
+  String get onboardingExit;
+
+  /// Personalization slide headline
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s get to know you'**
+  String get onboardingPersonalizationTitle;
+
+  /// Personalization slide body text
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll use this to personalize your suggestions and make shopping smarter.'**
+  String get onboardingPersonalizationDesc;
+
+  /// Favorite food field label
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s your favorite food?'**
+  String get onboardingPersonalizationFoodLabel;
+
+  /// Favorite food field hint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Pizza, Sushi, Lasagna...'**
+  String get onboardingPersonalizationFoodHint;
+
+  /// Personalization step continue button
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get onboardingPersonalizationCta;
+
+  /// Skip personalization link
+  ///
+  /// In en, this message translates to:
+  /// **'Skip for now'**
+  String get onboardingPersonalizationSkip;
+
+  /// Validation message when food field is empty
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us your favorite food to continue'**
+  String get onboardingPersonalizationFoodRequired;
 
   /// Settings option label
   ///

@@ -42,6 +42,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get copy => 'Kopyala';
 
   @override
+  String get next => 'Sonraki';
+
+  @override
   String get retry => 'Tekrar dene';
 
   @override
@@ -276,28 +279,28 @@ class AppLocalizationsTr extends AppLocalizations {
   String get language => 'Dil';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Portekizce (Brezilya)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'İngilizce';
 
   @override
   String get languageSystem => 'Sistem varsayılanı';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Dil Seçiniz';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Dil ara...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Para birimi';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Para Birimi Seçin';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Para birimini ara...';
 
   @override
   String get appearance => 'Görünüm';
@@ -315,14 +318,14 @@ class AppLocalizationsTr extends AppLocalizations {
   String get themeColor => 'Tema rengi';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Dinamik renkler';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Duvar kağıdınıza göre renkler kullanın';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Tema renginin etkili olması için dinamik renkleri devre dışı bırakın';
 
   @override
   String get finance => 'Finans';
@@ -564,17 +567,17 @@ class AppLocalizationsTr extends AppLocalizations {
   String get generalAssistant => 'Genel Asistan';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Yeni Sohbet';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Sohbet geçmişi yok';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Sohbeti Sil';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Bu sohbeti silmek istediğinizden emin misiniz? Mesajlar kalıcı olarak kaybolacak.';
 
   @override
   String get clearHistory => 'Geçmişi Temizle';
@@ -623,93 +626,109 @@ class AppLocalizationsTr extends AppLocalizations {
   String get continueAsGuest => 'Misafir olarak devam et';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plus\'a hoş geldiniz';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Alışverişinizi organize etmenin ve paradan tasarruf etmenin en akıllı yolu.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Deneyiminizi kişiselleştirin';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Lista Plus\'ın sizin için nasıl görünmesini ve çalışmasını istediğinizi seçin.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Her şeyi buluta kaydedin';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Verileriniz tüm cihazlarınızda senkronize edildi';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Sevdiklerinizle paylaşın';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Listeleri aileniz ve arkadaşlarınızla gerçek zamanlı olarak senkronize edin';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Tüm özelliklerin kilidini açın';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Alışveriş listelerinizden en iyi şekilde yararlanın';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'En İyi Değer';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Aylık';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Yıllık';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Tüm planları görüntüle';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Abone';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'İstediğiniz zaman iptal edin. Taahhüt yok.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Konuk olarak devam et';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Eski haline getirmek';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Zaten bir aboneliğiniz var mı? Geri yüklemek için buraya dokunun.';
+
+  @override
+  String get onboardingExit => 'Çıkış';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Hadi seni tanıyalım';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Bunu önerilerinizi kişiselleştirmek ve alışverişi daha akıllı hale getirmek için kullanacağız.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'En sevdiğiniz yemek hangisi?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'örneğin Pizza, Suşi, Lazanya...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Devam etmek';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Şimdilik atla';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Devam etmek için bize en sevdiğiniz yemeği söyleyin';
+
+  @override
+  String get settingsDefaultScreen => 'Varsayılan ana ekran';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Alışveriş listesi veya AI sohbeti arasında seçim yapın';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Alışveriş listesi';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'Yapay Zeka Sohbeti';
 
   @override
   String loginError(String error) {
@@ -1067,366 +1086,370 @@ class AppLocalizationsTr extends AppLocalizations {
       'Hataları bildirin, iyileştirmeler önerin veya çevirileri düzeltin';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Yapay Zeka Enerjisi';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Görüşmede ara...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Mesaj bulunamadı';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Önerilen sorular:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Alışveriş asistanı';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased / $total satın alındı';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Tahmini';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Öğeleri görüntüle';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Listede öğe yok';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Uzun geçmiş: Asistan, daha iyi performans için en son mesajlara odaklanır.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Dinleme...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Doğrudan listeye ekle';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Tam Yanıtın Kilidini Aç';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Listeyi değiştir';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Piyasa Modu';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Sohbete Geri Dön';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Alışverişi Bitir';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI Assistant\'a hoş geldiniz';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Akıllı sohbeti kullanmaya başlamak için bir alışveriş listesi oluşturun.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Nasıl yardımcı olabilirim?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Fiyatlar, tarifler, organizasyon hakkında bilgi alın...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total satın alındı';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Hızlı yanıtlar:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Gelişmiş sesli komutlar Pro\'dur. Temel dikte etkinleştiriliyor...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Pro\'yu Görüntüle';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Hata! Sohbet yüklenirken bir şeyler ters gitti.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Bu, ağ salınımları veya geçici olarak kullanılamama nedeniyle meydana gelebilir. Lütfen tekrar deneyin.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktif Dinleme';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Bu eşyayla ne yapmak istersiniz?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ayrıntıları Görüntüle';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Menüyü aç';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Tarifi Görüntüle';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Tarif oluşturuldu!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Düzenlemek';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Silmek';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Bu tarif silinsin mi?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'İçindekiler';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Talimatlar';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Hazırlık zamanı';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Tarif kaydedildi!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Hiç tarif kaydedilmedi';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Aşağıdaki düğmeye dokunarak ilk özel tarifinizi oluşturun.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Tariflerim';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Yeni Tarif';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Tarifleriniz yükleniyor...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Tarifler yüklenirken hata oluştu';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'İçerik ekle';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Kaydetmek';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Tarif adı';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Kısa açıklama';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Hazırlık süresi (dakika)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Her satıra bir adım yazın...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Fotoğraf ekle';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Veya bir resim URL\'si yapıştırın';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Etiketler';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Tarif etiketleri';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Önerilen';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Tarif ara...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Etikete göre filtrele';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Tüm';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Tarif silindi';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Değişiklikleri kaydet';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Tarifi Düzenle';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Yeni Tarif';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Gerekli';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Resim kaynağını seçin';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galeri';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL\'yi girin';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Tarif resmi';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Resmi kaldır';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Yemek Planlayıcı';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Aylık görünüm';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Haftalık görünüm';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Yemek planlanmadı';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Yemek eklemek için bir güne dokunun';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Yemek planı yükleniyor...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Yemek planı yüklenirken hata oluştu';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Yemek Ekle';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Yemeği Düzenle';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Yemeği kaldır';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Yemek kaldırıldı';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count porsiyon',
+      one: '$count porsiyon',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Porsiyon';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Not (isteğe bağlı)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Bir tarif seçin';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Tarif ara...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Tarif bulunamadı';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Önce Tarifler sekmesinde tarifler oluşturun';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Plana ekle';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count / $total öğün planlandı';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Alışveriş listesi oluştur';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Bu hafta planladığınız öğünlerdeki tüm malzemeleri alışveriş listenize eklemek ister misiniz?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count içerik(ler) listenize eklendi!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Eklenecek malzeme yok. Önce tariflerle birlikte bazı yemekler planlayın.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList =>
+      'Öncelikle bir alışveriş listesi oluşturun.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Kahvaltı';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Öğle yemeği';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Akşam yemeği';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Atıştırmalık';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Tarih';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Bu hafta için planlanmış bir şey yok';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Yemeklerinizi planlamaya başlamak için herhangi bir güne dokunun!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes dk.';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Listeye davet et';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Uygulamayı paylaş';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Arkadaşlarınızı Lista Plus\'ı kullanmaya davet edin';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Alışverişimi düzenlemek için Lista Plus\'ı kullanıyorum! Bağlantım aracılığıyla indirin ve ikimiz de 7 günlük ücretsiz Premium üyeliğine sahip olalım: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => '7 günlük Lista Plus Premium\'u edinin!';
 }
 
 /// The translations for Turkish, as used in Turkey (`tr_TR`).
@@ -1465,6 +1488,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get copy => 'Kopyala';
+
+  @override
+  String get next => 'Sonraki';
 
   @override
   String get retry => 'Tekrar dene';
@@ -1701,13 +1727,28 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get language => 'Dil';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Portekizce (Brezilya)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'İngilizce';
 
   @override
   String get languageSystem => 'Sistem varsayılanı';
+
+  @override
+  String get chooseLanguage => 'Dil Seçiniz';
+
+  @override
+  String get searchLanguage => 'Dil ara...';
+
+  @override
+  String get currency => 'Para birimi';
+
+  @override
+  String get chooseCurrency => 'Para Birimi Seçin';
+
+  @override
+  String get searchCurrency => 'Para birimini ara...';
 
   @override
   String get appearance => 'Görünüm';
@@ -1723,6 +1764,16 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get themeColor => 'Tema rengi';
+
+  @override
+  String get dynamicColors => 'Dinamik renkler';
+
+  @override
+  String get dynamicColorsSubtitle => 'Duvar kağıdınıza göre renkler kullanın';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Tema renginin etkili olması için dinamik renkleri devre dışı bırakın';
 
   @override
   String get finance => 'Finans';
@@ -1964,6 +2015,19 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get generalAssistant => 'Genel Asistan';
 
   @override
+  String get newChat => 'Yeni Sohbet';
+
+  @override
+  String get noHistory => 'Sohbet geçmişi yok';
+
+  @override
+  String get deleteSession => 'Sohbeti Sil';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Bu sohbeti silmek istediğinizden emin misiniz? Mesajlar kalıcı olarak kaybolacak.';
+
+  @override
   String get clearHistory => 'Geçmişi Temizle';
 
   @override
@@ -2008,6 +2072,111 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get continueAsGuest => 'Misafir olarak devam et';
+
+  @override
+  String get onboardingWelcomeTitle => 'Lista Plus\'a hoş geldiniz';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Alışverişinizi organize etmenin ve paradan tasarruf etmenin en akıllı yolu.';
+
+  @override
+  String get onboardingSetupTitle => 'Deneyiminizi kişiselleştirin';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Lista Plus\'ın sizin için nasıl görünmesini ve çalışmasını istediğinizi seçin.';
+
+  @override
+  String get onboardingLoginTitle => 'Her şeyi buluta kaydedin';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Verileriniz tüm cihazlarınızda senkronize edildi';
+
+  @override
+  String get onboardingShareTitle => 'Sevdiklerinizle paylaşın';
+
+  @override
+  String get onboardingShareDesc =>
+      'Listeleri aileniz ve arkadaşlarınızla gerçek zamanlı olarak senkronize edin';
+
+  @override
+  String get onboardingPremiumTitle => 'Tüm özelliklerin kilidini açın';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Alışveriş listelerinizden en iyi şekilde yararlanın';
+
+  @override
+  String get onboardingAnnualBadge => 'En İyi Değer';
+
+  @override
+  String get onboardingMonthlyLabel => 'Aylık';
+
+  @override
+  String get onboardingAnnualLabel => 'Yıllık';
+
+  @override
+  String get onboardingViewAllPlans => 'Tüm planları görüntüle';
+
+  @override
+  String get onboardingSubscribeCta => 'Abone';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'İstediğiniz zaman iptal edin. Taahhüt yok.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Konuk olarak devam et';
+
+  @override
+  String get onboardingRestore => 'Satın Alınanları Geri Yükle';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Zaten bir aboneliğiniz var mı? Geri yüklemek için buraya dokunun.';
+
+  @override
+  String get onboardingExit => 'Çıkış';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Hadi seni tanıyalım';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Bunu önerilerinizi kişiselleştirmek ve alışverişi daha akıllı hale getirmek için kullanacağız.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'En sevdiğiniz yemek hangisi?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'örneğin Pizza, Suşi, Lazanya...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Devam etmek';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Şimdilik atla';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Devam etmek için bize en sevdiğiniz yemeği söyleyin';
+
+  @override
+  String get settingsDefaultScreen => 'Varsayılan ana ekran';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Alışveriş listesi veya AI sohbeti arasında seçim yapın';
+
+  @override
+  String get settingsScreenList => 'Alışveriş listesi';
+
+  @override
+  String get settingsScreenChat => 'Yapay Zeka Sohbeti';
 
   @override
   String loginError(String error) {
@@ -2365,104 +2534,368 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
       'Hataları bildirin, iyileştirmeler önerin veya çevirileri düzeltin';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Yapay Zeka Enerjisi';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Görüşmede ara...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Mesaj bulunamadı';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Önerilen sorular:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Alışveriş asistanı';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased / $total satın alındı';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Tahmini';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Öğeleri görüntüle';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Listede öğe yok';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Uzun geçmiş: Asistan, daha iyi performans için en son mesajlara odaklanır.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Dinleme...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Doğrudan listeye ekle';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Tam Yanıtın Kilidini Aç';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Listeyi değiştir';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Piyasa Modu';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Sohbete Geri Dön';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Alışverişi Bitir';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI Assistant\'a hoş geldiniz';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Akıllı sohbeti kullanmaya başlamak için bir alışveriş listesi oluşturun.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Nasıl yardımcı olabilirim?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Fiyatlar, tarifler, organizasyon hakkında bilgi alın...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total satın alındı';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Hızlı yanıtlar:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Gelişmiş sesli komutlar Pro\'dur. Temel dikte etkinleştiriliyor...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Pro\'yu Görüntüle';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Hata! Sohbet yüklenirken bir şeyler ters gitti.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Bu, ağ salınımları veya geçici olarak kullanılamama nedeniyle meydana gelebilir. Lütfen tekrar deneyin.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktif Dinleme';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Bu eşyayla ne yapmak istersiniz?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ayrıntıları Görüntüle';
+
+  @override
+  String get openMenu => 'Menüyü aç';
+
+  @override
+  String get viewRecipe => 'Tarifi Görüntüle';
+
+  @override
+  String get recipeCreated => 'Tarif oluşturuldu!';
+
+  @override
+  String get editRecipe => 'Düzenlemek';
+
+  @override
+  String get deleteRecipe => 'Silmek';
+
+  @override
+  String get deleteRecipeConfirm => 'Bu tarif silinsin mi?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return '\"$recipeName\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.';
+  }
+
+  @override
+  String get ingredients => 'İçindekiler';
+
+  @override
+  String get instructions => 'Talimatlar';
+
+  @override
+  String get prepTime => 'Hazırlık zamanı';
+
+  @override
+  String get recipeSaved => 'Tarif kaydedildi!';
+
+  @override
+  String get noRecipesSaved => 'Hiç tarif kaydedilmedi';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Aşağıdaki düğmeye dokunarak ilk özel tarifinizi oluşturun.';
+
+  @override
+  String get myRecipes => 'Tariflerim';
+
+  @override
+  String get newRecipe => 'Yeni Tarif';
+
+  @override
+  String get loadingRecipes => 'Tarifleriniz yükleniyor...';
+
+  @override
+  String get errorLoadingRecipes => 'Tarifler yüklenirken hata oluştu';
+
+  @override
+  String get addIngredient => 'İçerik ekle';
+
+  @override
+  String get saveRecipe => 'Kaydetmek';
+
+  @override
+  String get recipeName => 'Tarif adı';
+
+  @override
+  String get shortDescription => 'Kısa açıklama';
+
+  @override
+  String get prepTimeMinutes => 'Hazırlık süresi (dakika)';
+
+  @override
+  String get instructionsHint => 'Her satıra bir adım yazın...';
+
+  @override
+  String get addPhoto => 'Fotoğraf ekle';
+
+  @override
+  String get imageUrlPlaceholder => 'Veya bir resim URL\'si yapıştırın';
+
+  @override
+  String get tags => 'Etiketler';
+
+  @override
+  String get recipeTags => 'Tarif etiketleri';
+
+  @override
+  String get suggestedTags => 'Önerilen';
+
+  @override
+  String get searchRecipes => 'Tarif ara...';
+
+  @override
+  String get filterByTag => 'Etikete göre filtrele';
+
+  @override
+  String get allTags => 'Tüm';
+
+  @override
+  String get recipeDeleted => 'Tarif silindi';
+
+  @override
+  String get saveChanges => 'Değişiklikleri kaydet';
+
+  @override
+  String get editRecipeTitle => 'Tarifi Düzenle';
+
+  @override
+  String get newRecipeTitle => 'Yeni Tarif';
+
+  @override
+  String get requiredField => 'Gerekli';
+
+  @override
+  String get chooseImageSource => 'Resim kaynağını seçin';
+
+  @override
+  String get gallery => 'Galeri';
+
+  @override
+  String get enterUrl => 'URL\'yi girin';
+
+  @override
+  String get recipeImage => 'Tarif resmi';
+
+  @override
+  String get removeImage => 'Resmi kaldır';
+
+  @override
+  String get mealPlannerTitle => 'Yemek Planlayıcı';
+
+  @override
+  String get mealPlannerViewMonthly => 'Aylık görünüm';
+
+  @override
+  String get mealPlannerViewWeekly => 'Haftalık görünüm';
+
+  @override
+  String get mealPlannerNoMeals => 'Yemek planlanmadı';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Yemek eklemek için bir güne dokunun';
+
+  @override
+  String get mealPlannerLoading => 'Yemek planı yükleniyor...';
+
+  @override
+  String get mealPlannerError => 'Yemek planı yüklenirken hata oluştu';
+
+  @override
+  String get mealPlannerAddMeal => 'Yemek Ekle';
+
+  @override
+  String get mealPlannerEditMeal => 'Yemeği Düzenle';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Yemeği kaldır';
+
+  @override
+  String get mealPlannerMealDeleted => 'Yemek kaldırıldı';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porsiyon',
+      one: '$count porsiyon',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porsiyon';
+
+  @override
+  String get mealPlannerNoteLabel => 'Not (isteğe bağlı)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Bir tarif seçin';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Tarif ara...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Tarif bulunamadı';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Önce Tarifler sekmesinde tarifler oluşturun';
+
+  @override
+  String get mealPlannerSave => 'Plana ekle';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count / $total öğün planlandı';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Alışveriş listesi oluştur';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Bu hafta planladığınız öğünlerdeki tüm malzemeleri alışveriş listenize eklemek ister misiniz?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count içerik(ler) listenize eklendi!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Eklenecek malzeme yok. Önce tariflerle birlikte bazı yemekler planlayın.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Öncelikle bir alışveriş listesi oluşturun.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Kahvaltı';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Öğle yemeği';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Akşam yemeği';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Atıştırmalık';
+
+  @override
+  String get mealPlannerDateLabel => 'Tarih';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Bu hafta için planlanmış bir şey yok';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Yemeklerinizi planlamaya başlamak için herhangi bir güne dokunun!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes dk.';
+  }
+
+  @override
+  String get inviteToList => 'Listeye davet et';
+
+  @override
+  String get shareApp => 'Uygulamayı paylaş';
+
+  @override
+  String get shareAppDescription =>
+      'Arkadaşlarınızı Lista Plus\'ı kullanmaya davet edin';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Alışverişimi düzenlemek için Lista Plus\'ı kullanıyorum! Bağlantım aracılığıyla indirin ve ikimiz de 7 günlük ücretsiz Premium üyeliğine sahip olalım: $url';
+  }
+
+  @override
+  String get shareReferralSubject => '7 günlük Lista Plus Premium\'u edinin!';
 }

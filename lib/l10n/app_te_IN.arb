@@ -1,101 +1,73 @@
 {
   "@@locale": "te_IN",
-  "appTitle": "షాపింగ్ జాబితా",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "జాబితాలు",
-  "pantry": "ప్యాంట్రీ",
-  "@_Common": "description: Common actions",
-  "cancel": "రద్దు చేయి",
-  "save": "సేవ్ చేయి",
-  "create": "సృష్టించు",
-  "add": "జోడించు",
-  "remove": "తీసివేయి",
-  "delete": "తొలగించు",
-  "edit": "సవరించు",
-  "copy": "కాపీ చేయి",
-  "retry": "మళ్ళీ ప్రయత్నించు",
-  "regenerate": "పునరుత్పత్తి చేయి",
-  "copiedToClipboard": "క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది",
-  "confirm": "నిర్ధారించు",
-  "close": "మూసివేయి",
-  "import": "దిగుమతి",
-  "rename": "పేరు మార్చు",
-  "upgrade": "అప్‌గ్రేడ్ చేయి",
-  "clear": "క్లియర్ చేయి",
-  "error": "లోపం: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "లోపం: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "కొనుగోలును ప్రాసెస్ చేయడంలో లోపం. మళ్ళీ ప్రయత్నించండి.",
-  "restoreError": "కొనుగోళ్లను పునరుద్ధరించడంలో లోపం. మళ్ళీ ప్రయత్నించండి.",
-  "loading": "లోడ్ అవుతోంది...",
-  "fieldRequired": "తప్పనిసరి ఫీల్డ్",
-  "addedFeedback": "జోడించబడింది!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} ఎంచుకోబడింది} other{{count} ఎంచుకోబడ్డాయి}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "అంచనా",
-  "alreadyPurchased": "ఇప్పటికే కొనుగోలు చేయబడింది",
-  "clearList": "జాబితాను క్లియర్ చేయి",
-  "clearPurchased": "కొనుగోలు చేసినవి క్లియర్ చేయి",
-  "share": "భాగస్వామ్యం చేయి",
-  "shareViaCode": "కోడ్ ద్వారా భాగస్వామ్యం చేయి",
-  "importViaCode": "కోడ్ ద్వారా దిగుమతి చేయి",
-  "listAssistant": "జాబితా సహాయకుడు",
-  "globalAssistant": "గ్లోబల్ అసిస్టెంట్",
-  "becomePremium": "ప్రీమియమ్ అవ్వండి",
-  "manageSubscription": "సబ్‌స్క్రిప్షన్ నిర్వహించు",
-  "completePurchase": "కొనుగోలును పూర్తి చేయి",
-  "confirmClearList": "అన్ని అంశాలను తీసివేయాలా?",
-  "shareListTitle": "జాబితాను భాగస్వామ్యం చేయి",
-  "shareThisCode": "ఈ కోడ్‌ను భాగస్వామ్యం చేయండి:",
-  "validForLimitedTime": "పరిమిత సమయం మాత్రమే చెల్లుతుంది",
-  "importListTitle": "జాబితాను దిగుమతి చేయి",
-  "enterCodeHint": "కోడ్‌ను నమోదు చేయండి",
-  "confirmArchiveTitle": "కొనుగోలును పూర్తి చేయి",
-  "confirmArchiveContent": "ఈ కొనుగోలును పూర్తి చేసి జాబితాను ఆర్కైవ్ చేయాలా?",
-  "complete": "పూర్తి",
-  "listArchived": "జాబితా విజయవంతంగా ఆర్కైవ్ చేయబడింది!",
-  "listAdded": "{listName} జోడించబడింది!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "కొనుగోలు చేయి",
-  "unmark": "గుర్తును తీసివేయి",
-  "confirmDeleteItems": "{count} అంశం(ల)ను తీసివేయాలా?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "నిర్ధారించు",
-  "confirmContent": "{count} అంశం(ల)ను తీసివేయాలా?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "జాబితాను ఆర్కైవ్ చేయి",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "ప్యాంట్రీ",
-  "generateShoppingList": "షాపింగ్ జాబితాను రూపొందించు",
-  "pantryEmpty": "ఖాళీ ప్యాంట్రీ",
-  "pantryEmptySubtitle": "మీరు ఇంట్లో ఉంచుకోవాలనుకునే ఉత్పత్తులను జోడించండి",
-  "itemsNeedPurchase": "{deficit} అంశం(లు) కొనుగోలు చేయాలి",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "కొనుగోలు చేయవలసిన అంశాలు ఏవీ లేవు",
-  "newPantryList": "ప్యాంట్రీ షాపింగ్",
-  "newListTitle": "కొత్త షాపింగ్ జాబితా",
-  "itemsWillBeAdded": "{count} అంశం(లు) జోడించబడతాయి",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "జాబితా పేరు",
-  "listCreated": "\"{name}\" జాబితా {count} అంశాలతో సృష్టించబడింది",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "ట్రాకింగ్ లేదు",
-  "markAsPurchased": "కొనుగోలు చేసినట్లు గుర్తించు",
-  "editPantryItem": "{name}ని సవరించు",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "ఆదర్శ పరిమాణం",
-  "currentQuantity": "ప్రస్తుత పరిమాణం",
-  "consumed": "వినియోగించబడింది",
-  "restocked": "{name} {quantity} {unit}కి తిరిగి నింపబడింది",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "ప్యాంట్రీ నుండి \"{name}\"ను తీసివేయాలా?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name}ని సవరించు",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "సెట్టింగ్‌లు",
-  "language": "భాష",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "సిస్టమ్ డిఫాల్ట్",
-  "appearance": "స్వరూపం",
-  "light": "లైట్",
-  "system": "సిస్టమ్",
-  "dark": "డార్క్",
-  "themeColor": "థీమ్ రంగు",
-  "finance": "ఫైనాన్స్",
-  "monthlyBudgetNav": "నెలవారీ బడ్జెట్",
-  "budgetSubtitle": "మీ నెలవారీ ఖర్చులను ట్రాక్ చేయండి",
-  "data": "డేటా",
-  "backupNav": "బ్యాకప్",
-  "backupSubtitle": "మీ డేటాను ఎగుమతి లేదా దిగుమతి చేయండి",
-  "about": "గురించి",
-  "version": "వెర్షన్",
-  "privacy": "గోప్యత",
-  "termsOfUse": "వినియోగ నిబంధనలు",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "బ్యాకప్",
-  "backupPremiumDescription": "బ్యాకప్ మరియు ఎగుమతి ఒక ప్రీమియమ్ ఫీచర్",
-  "exportData": "డేటాను ఎగుమతి చేయి",
-  "exportDataSubtitle": "అన్ని జాబితాలను JSON గా సేవ్ చేయండి",
-  "importData": "డేటాను దిగుమతి చేయి",
-  "importDataSubtitle": "JSON నుండి జాబితాలను పునరుద్ధరించండి",
-  "importJsonTitle": "JSON దిగుమతి",
-  "importJsonHint": "బ్యాకప్ JSON ను ఇక్కడ పేస్ట్ చేయండి...",
-  "backupExported": "బ్యాకప్ ఎగుమతి చేయబడింది!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "నెలవారీ బడ్జెట్",
-  "budgetPremiumLocked": "గ్లోబల్ నెలవారీ బడ్జెట్ ప్రీమియమ్",
-  "budgetUpgradePrompt": "అన్‌లాక్ చేయడానికి అప్‌గ్రేడ్ చేయండి",
-  "noBudgetDefined": "బడ్జెట్ సెట్ చేయబడలేదు",
-  "totalEstimated": "మొత్తం అంచనా: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "బడ్జెట్ సెట్ చేయి",
-  "budgetLists": "జాబితాలు",
-  "budgetValueLabel": "మొత్తం",
-  "setBudgetTitle": "నెలవారీ బడ్జెట్",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "అన్నీ",
-  "filterPending": "పెండింగ్",
-  "filterPurchased": "కొనుగోలు చేసినవి",
-  "sortName": "పేరు",
-  "sortCategory": "వర్గం",
-  "sortDate": "తేదీ",
-  "sortManual": "మాన్యువల్",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "గురించి",
+  "achievements": "విజయాలు",
+  "activeListening": "చురుకుగా వినడం",
+  "add": "జోడించు",
+  "addAllToList": "అన్నీ జాబితాకు జోడించు",
+  "addDirectToList": "జాబితాకు నేరుగా జోడించండి",
+  "addIngredient": "పదార్ధాన్ని జోడించండి",
   "addItem": "అంశాన్ని జోడించు",
-  "itemName": "అంశం పేరు",
-  "quantityShort": "పరి",
-  "unit": "యూనిట్",
-  "category": "వర్గం",
-  "estimatedPrice": "అంచనా ధర",
   "addItemPrice": "అంచనా ధర",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "అంశాన్ని సవరించు",
-  "quantityFull": "పరిమాణం",
-  "editItemPrice": "అంచనా ధర",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "ఫోటోను జోడించండి",
   "addToPantry": "ప్యాంట్రీకి జోడించు",
   "addToPantryPrompt": "\"{name}\"ను మీ ప్యాంట్రీకి జోడించాలా?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "అవును",
-  "productName": "ఉత్పత్తి పేరు",
-  "idealQty": "ఆదర్శ పరి",
-  "currentQty": "ప్రస్తుత పరి",
-  "trackStock": "స్టాక్ ట్రాక్ చేయి",
-  "trackStockActive": "షాపింగ్ సూచనలలో కనిపిస్తుంది",
-  "trackStockInactive": "షాపింగ్ సూచనను రూపొందించదు",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "జాబితాను సృష్టించు",
-  "renameListDialog": "జాబితా పేరు మార్చు",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "జాబితా చరిత్ర",
-  "myLists": "నా జాబితాలు",
-  "viewActive": "యాక్టివ్ వీక్షించు",
-  "viewHistory": "చరిత్ర వీక్షించు",
-  "noArchivedLists": "ఆర్కైవ్ చేసిన జాబితాలు లేవు",
-  "noActiveLists": "యాక్టివ్ జాబితాలు లేవు",
-  "completedOn": "{date}న పూర్తి చేయబడింది",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "భాగస్వామ్యం చేయబడింది",
-  "restore": "పునరుద్ధరించు",
-  "removeSharedTooltip": "తీసివేయి",
-  "deleteListTitle": "జాబితాను తొలగించు",
-  "deleteListContent": "\"{name}\"ను ఖచ్చితంగా తొలగించాలనుకుంటున్నారా? అన్ని అంశాలు తీసివేయబడతాయి.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "భాగస్వామ్య జాబితాను తీసివేయి",
-  "removeSharedListContent": "మీ జాబితాల నుండి \"{name}\"ను తీసివేయాలా? అసలు జాబితా ప్రభావితం కాదు.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "కొత్త జాబితాను సృష్టించు",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "జోడించబడింది!",
+  "advancedFeatures": "అధునాతన ఫీచర్లు",
   "aiAssistant": "AI అసిస్టెంట్",
   "aiAssistantDescription": "మా AI అసిస్టెంట్‌తో స్మార్ట్ సూచనలు, వంటకాలు మరియు వ్యక్తిగతీకరించిన చిట్కాలను పొందండి.",
-  "generalAssistant": "జనరల్ అసిస్టెంట్",
+  "aiCreditsRemaining": "{remaining} క్రెడిట్‌లు మిగిలి ఉన్నాయి",
+  "aiEnergy": "AI శక్తి",
+  "aiError": "క్షమించండి, మీ అభ్యర్థనను ప్రాసెస్ చేయడంలో లోపం సంభవించింది. మీ కనెక్షన్‌ను తనిఖీ చేయండి లేదా తర్వాత మళ్ళీ ప్రయత్నించండి.",
+  "aiVoiceCommandTooltip": "AI వాయిస్ కమాండ్ (ప్రీమియమ్)",
+  "allTags": "అన్నీ",
+  "alreadyPurchased": "ఇప్పటికే కొనుగోలు చేయబడింది",
+  "appTitle": "షాపింగ్ జాబితా",
+  "appearance": "స్వరూపం",
+  "archiveList": "జాబితాను ఆర్కైవ్ చేయి",
+  "backToChat": "తిరిగి చాట్‌కి",
+  "backupExported": "బ్యాకప్ ఎగుమతి చేయబడింది!",
+  "backupNav": "బ్యాకప్",
+  "backupPremiumDescription": "బ్యాకప్ మరియు ఎగుమతి ఒక ప్రీమియమ్ ఫీచర్",
+  "backupSubtitle": "మీ డేటాను ఎగుమతి లేదా దిగుమతి చేయండి",
+  "backupTitle": "బ్యాకప్",
+  "becomePremium": "ప్రీమియమ్ అవ్వండి",
+  "budgetAmountLabel": "బడ్జెట్ మొత్తం",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "నెలవారీ బడ్జెట్",
+  "budgetDashboardTitle": "డాష్‌బోర్డ్",
+  "budgetEditTitle": "నెలవారీ బడ్జెట్",
+  "budgetLists": "జాబితాలు",
+  "budgetPremiumLocked": "గ్లోబల్ నెలవారీ బడ్జెట్ ప్రీమియమ్",
+  "budgetSubtitle": "మీ నెలవారీ ఖర్చులను ట్రాక్ చేయండి",
+  "budgetUpgradePrompt": "అన్‌లాక్ చేయడానికి అప్‌గ్రేడ్ చేయండి",
+  "budgetValueLabel": "మొత్తం",
+  "buy": "కొనుగోలు చేయి",
+  "cancel": "రద్దు చేయి",
+  "cartTotal": "కార్ట్ మొత్తం",
+  "catBakery": "బేకరీ",
+  "catBeverages": "పానీయాలు",
+  "catCleaning": "శుభ్రపరచడం",
+  "catFruits": "పండ్లు",
+  "catOthers": "ఇతరాలు",
+  "category": "వర్గం",
+  "chatError": "చాట్ లోడ్ చేయడంలో లోపం: {error}",
+  "chatHint": "మీ సందేశాన్ని టైప్ చేయండి...",
+  "chatSubtitle": "అంశం సూచనలు, వంటకాలు లేదా పొదుపు చిట్కాల కోసం అడగండి.",
+  "chatSubtitleShort": "ధరలు, వంటకాలు, సంస్థ గురించి అడగండి...",
+  "chooseCurrency": "కరెన్సీని ఎంచుకోండి",
+  "chooseImageSource": "చిత్ర మూలాన్ని ఎంచుకోండి",
+  "chooseLanguage": "భాషను ఎంచుకోండి",
+  "clear": "క్లియర్ చేయి",
   "clearHistory": "చరిత్రను క్లియర్ చేయి",
   "clearHistoryConfirm": "ఈ సెషన్‌లోని అన్ని సందేశాలను క్లియర్ చేయాలా?",
-  "chatHint": "మీ సందేశాన్ని టైప్ చేయండి...",
-  "chatError": "చాట్ లోడ్ చేయడంలో లోపం: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "మీ జాబితాతో ఎలా సహాయపడగలను?",
-  "generalHelp": "ఈ రోజు మీ షాపింగ్‌తో ఎలా సహాయపడగలను?",
-  "chatSubtitle": "అంశం సూచనలు, వంటకాలు లేదా పొదుపు చిట్కాల కోసం అడగండి.",
-  "aiError": "క్షమించండి, మీ అభ్యర్థనను ప్రాసెస్ చేయడంలో లోపం సంభవించింది. మీ కనెక్షన్‌ను తనిఖీ చేయండి లేదా తర్వాత మళ్ళీ ప్రయత్నించండి.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "ప్రీమియమ్ ఫీచర్లను\nఅన్‌లాక్ చేయడానికి లాగిన్ చేయండి",
-  "signInGoogle": "Googleతో సైన్ ఇన్ చేయి",
-  "signInApple": "Appleతో సైన్ ఇన్ చేయి",
+  "clearList": "జాబితాను క్లియర్ చేయి",
+  "clearPurchased": "కొనుగోలు చేసినవి క్లియర్ చేయి",
+  "close": "మూసివేయి",
+  "complete": "పూర్తి",
+  "completePurchase": "కొనుగోలును పూర్తి చేయి",
+  "completedOn": "{date}న పూర్తి చేయబడింది",
+  "confirm": "నిర్ధారించు",
+  "confirmArchiveContent": "ఈ కొనుగోలును పూర్తి చేసి జాబితాను ఆర్కైవ్ చేయాలా?",
+  "confirmArchiveTitle": "కొనుగోలును పూర్తి చేయి",
+  "confirmClearList": "అన్ని అంశాలను తీసివేయాలా?",
+  "confirmContent": "{count} అంశం(ల)ను తీసివేయాలా?",
+  "confirmDeleteItems": "{count} అంశం(ల)ను తీసివేయాలా?",
+  "confirmDeleteTitle": "నిర్ధారించు",
+  "confirmRemovePantry": "ప్యాంట్రీ నుండి \"{name}\"ను తీసివేయాలా?",
+  "consumed": "వినియోగించబడింది",
   "continueAsGuest": "అతిథిగా కొనసాగు",
-  "loginError": "లాగిన్ లోపం: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "అన్‌లాక్ చేయడానికి అప్‌గ్రేడ్ చేయండి",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "అంశం తీసివేయబడింది",
-  "undo": "రద్దు చేయి",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "మీ జాబితా ఖాళీగా ఉంది",
-  "emptyListSubtitle": "ప్రారంభించడానికి అంశాలను జోడించండి",
-  "noListFoundTitle": "జాబితాలు ఏవీ కనుగొనబడలేదు",
-  "noListFoundSubtitle": "ప్రారంభించడానికి మీ మొదటి జాబితాను సృష్టించండి",
+  "copiedToClipboard": "క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది",
+  "copy": "కాపీ చేయి",
+  "create": "సృష్టించు",
   "createFirstList": "మొదటి జాబితాను సృష్టించు",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "జాబితా బడ్జెట్",
-  "budgetAmountLabel": "బడ్జెట్ మొత్తం",
-  "removeBudget": "తీసివేయి",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "అపరిమిత జాబితాలు",
-  "prefSharing": "జాబితాలను భాగస్వామ్యం చేయి",
-  "prefFullHistory": "పూర్తి చరిత్ర",
-  "prefExportData": "డేటాను ఎగుమతి చేయి",
-  "prefCustomThemes": "కస్టమ్ థీమ్‌లు",
-  "prefMonthlyBudget": "గ్లోబల్ నెలవారీ బడ్జెట్",
-  "prefAIAssistant": "వ్యక్తిగత AI అసిస్టెంట్",
-  "prefUnlimitedPantry": "అపరిమిత ప్యాంట్రీ",
-  "prefInteractiveArtifacts": "ఇంటరాక్టివ్ AI ఆర్టిఫాక్ట్‌లు",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "ఆకుపచ్చ",
-  "themeBlue": "నీలం",
-  "themePurple": "ఊదా",
-  "themeRed": "ఎరుపు",
-  "themeOrange": "నారింజ",
-  "themePink": "గులాబీ",
-  "themeIndigo": "ఇండిగో",
-  "themeAmber": "అంబర్",
-  "themeTeal": "టీల్",
-  "themeBrown": "గోధుమ",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "పండ్లు",
-  "catCleaning": "శుభ్రపరచడం",
-  "catBeverages": "పానీయాలు",
-  "catBakery": "బేకరీ",
-  "catOthers": "ఇతరాలు",
-  "@_Unit": "description: Unit",
-  "unitPack": "ప్యాక్",
-  "@_Share": "description: Sharing",
-  "shareSubject": "షాపింగ్ జాబితా",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "నెలవారీ బడ్జెట్",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "జాబితాను తొలగించు",
-  "pantryItemRemoved": "అంశం తీసివేయబడింది",
+  "createListDialog": "జాబితాను సృష్టించు",
+  "createListToStartAi": "స్మార్ట్ చాట్‌ని ఉపయోగించడం ప్రారంభించడానికి షాపింగ్ జాబితాను సృష్టించండి.",
+  "createNewList": "కొత్త జాబితాను సృష్టించు",
+  "currency": "కరెన్సీ",
+  "currentQty": "ప్రస్తుత పరి",
+  "currentQuantity": "ప్రస్తుత పరిమాణం",
+  "dark": "డార్క్",
+  "data": "డేటా",
   "deficitItems": "{deficit,plural, one{{deficit} అంశం కొనుగోలు చేయాలి} other{{deficit} అంశాలు కొనుగోలు చేయాలి}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "కార్ట్ మొత్తం",
-  "restockLabel": "తిరిగి నింపు",
-  "advancedFeatures": "అధునాతన ఫీచర్లు",
-  "selectAll": "అన్నీ ఎంచుకోండి",
+  "delete": "తొలగించు",
+  "deleteListConfirm": "జాబితాను తొలగించు",
+  "deleteListContent": "\"{name}\"ను ఖచ్చితంగా తొలగించాలనుకుంటున్నారా? అన్ని అంశాలు తీసివేయబడతాయి.",
+  "deleteListTitle": "జాబితాను తొలగించు",
+  "deleteRecipe": "తొలగించు",
+  "deleteRecipeConfirm": "ఈ రెసిపీని తొలగించాలా?",
+  "deleteRecipeConfirmMsg": "మీరు \"{recipeName}\"ని ఖచ్చితంగా తొలగించాలనుకుంటున్నారా? ఈ చర్య రద్దు చేయబడదు.",
+  "deleteSession": "చాట్‌ని తొలగించండి",
+  "deleteSessionConfirm": "మీరు ఖచ్చితంగా ఈ చాట్‌ని తొలగించాలనుకుంటున్నారా? సందేశాలు శాశ్వతంగా పోతాయి.",
   "deselectAll": "అన్నీ ఎంపిక తీసివేయి",
-  "monthlyBudgetAppBar": "నెలవారీ బడ్జెట్",
-  "budgetEditTitle": "నెలవారీ బడ్జెట్",
-  "budgetDashboardTitle": "డాష్‌బోర్డ్",
-  "selectListForDashboard": "డాష్‌బోర్డ్ వీక్షించడానికి జాబితాను ఎంచుకోండి.",
-  "spendingAnalysis": "ఖర్చు విశ్లేషణ",
-  "noItemsToAnalyze": "విశ్లేషించడానికి జాబితాలో అంశాలు లేవు.",
-  "markItemsToSeeAnalysis": "విశ్లేషణ చూడటానికి అంశాలను కొనుగోలు చేసినట్లు గుర్తించండి.",
-  "totalSpending": "మొత్తం ఖర్చు",
-  "spendingByCategory": "వర్గం వారీగా ఖర్చు",
-  "achievements": "విజయాలు",
-  "exportPdfExcel": "PDF/Excel ఎగుమతి",
-  "exportPdf": "PDF గా ఎగుమతి చేయి",
-  "exportExcel": "Excel గా ఎగుమతి చేయి",
-  "organizingAi": "AI తో నిర్వహిస్తోంది...",
-  "yesLabel": "అవును",
-  "noLabel": "కాదు",
-  "shareListText": "నా షాపింగ్ జాబితా",
-  "emptyListAddItems": "మీ జాబితా ఖాళీగా ఉంది! ముందు అంశాలను జోడించండి. ℹ️",
-  "listOrganizedMagic": "జాబితా వర్గాల ద్వారా మాయాజాలంగా నిర్వహించబడింది! ✨",
-  "shoppingMode": "షాపింగ్ మోడ్",
-  "smartOrganization": "స్మార్ట్ ఆర్గనైజేషన్",
-  "savings": "పొదుపులు",
-  "shoppingModeHeader": "షాపింగ్ మోడ్",
-  "shareAsText": "అంశాలను ఫార్మాట్ చేసిన టెక్స్ట్ గా పంపండి",
-  "shareRealtime": "ఇతర వ్యక్తులతో రియల్-టైమ్ సమకాలీకరణ",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "శీఘ్ర వంటకం",
-  "quickRecipePrompt": "నా జాబితాలోని అంశాలతో వంటకాలను సూచించండి.",
+  "dynamicColors": "డైనమిక్ రంగులు",
+  "dynamicColorsEnabledWarning": "థీమ్ రంగు ప్రభావం చూపడానికి డైనమిక్ రంగులను నిలిపివేయండి",
+  "dynamicColorsSubtitle": "మీ వాల్‌పేపర్ ఆధారంగా రంగులను ఉపయోగించండి",
   "economyTips": "ఆర్థిక చిట్కాలు",
   "economyTipsPrompt": "ఈ కొనుగోలుపై నేను ఎలా డబ్బు ఆదా చేయగలను?",
-  "organizeAisles": "ఐల్స్ వారీగా నిర్వహించు",
-  "organizeAislesPrompt": "మార్కెట్ ఐల్స్ వారీగా నిర్వహించండి.",
-  "recipeSuggestion": "వంటకం సూచన",
-  "aiCreditsRemaining": "{remaining} క్రెడిట్‌లు మిగిలి ఉన్నాయి",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "అన్నీ జాబితాకు జోడించు",
-  "organizeByAisles": "ఐల్స్ వారీగా నిర్వహించు",
-  "voiceTranscriptionTooltip": "వాయిస్ టైపింగ్ (ఉచితం)",
-  "aiVoiceCommandTooltip": "AI వాయిస్ కమాండ్ (ప్రీమియమ్)",
-  "voiceCommandTitle": "AI వాయిస్ కమాండ్",
-  "voiceCommandContent": "మీ జాబితాను నిర్వహించడానికి సహజంగా మాట్లాడండి!\n\nఉదాహరణలు:\n• 'బ్రెడ్, జున్ను మరియు హామ్ జోడించు'\n• 'లాండ్రీ డిటర్జెంట్ తీసివేయి'\n• 'థీమ్‌ను నీలంగా మార్చు'\n\nఇది Lista Plus Premium యొక్క ప్రత్యేక ఫీచర్.",
-  "voiceCommandPlanBtn": "ప్లాన్‌లను వీక్షించు",
-  "itemsAddedSuccess": "అంశాలు జాబితాకు విజయవంతంగా జోడించబడ్డాయి!",
-  "viewList": "జాబితాను వీక్షించు",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "అభిప్రాయాన్ని పంపండి",
+  "edit": "సవరించు",
+  "editItem": "అంశాన్ని సవరించు",
+  "editItemPrice": "అంచనా ధర",
+  "editPantryItem": "{name}ని సవరించు",
+  "editRecipe": "సవరించు",
+  "editRecipeTitle": "రెసిపీని సవరించండి",
+  "emptyListAddItems": "మీ జాబితా ఖాళీగా ఉంది! ముందు అంశాలను జోడించండి. ℹ️",
+  "emptyListSubtitle": "ప్రారంభించడానికి అంశాలను జోడించండి",
+  "emptyListTitle": "మీ జాబితా ఖాళీగా ఉంది",
+  "enterCodeHint": "కోడ్‌ను నమోదు చేయండి",
+  "enterUrl": "URLని నమోదు చేయండి",
+  "error": "లోపం: {message}",
+  "errorGeneric": "లోపం: {message}",
+  "errorLoadingChat": "అయ్యో! చాట్‌ని లోడ్ చేయడంలో ఏదో తప్పు జరిగింది.",
+  "errorLoadingChatSubtitle": "మీ కనెక్షన్‌ని తనిఖీ చేయండి లేదా తర్వాత మళ్లీ ప్రయత్నించండి.",
+  "errorLoadingRecipes": "వంటకాలను లోడ్ చేయడంలో లోపం",
+  "errorOscillation": "ఇది నెట్‌వర్క్ డోలనాలు లేదా తాత్కాలిక లభ్యత కారణంగా సంభవించవచ్చు. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "estimated": "అంచనా",
+  "estimatedCost": "అంచనా వేయబడింది",
+  "estimatedPrice": "అంచనా ధర",
+  "exportData": "డేటాను ఎగుమతి చేయి",
+  "exportDataSubtitle": "అన్ని జాబితాలను JSON గా సేవ్ చేయండి",
+  "exportExcel": "Excel గా ఎగుమతి చేయి",
+  "exportPdf": "PDF గా ఎగుమతి చేయి",
+  "exportPdfExcel": "PDF/Excel ఎగుమతి",
+  "feedbackBack": "వెనుకకు",
+  "feedbackError": "పంపడంలో లోపం: {error}",
+  "feedbackHint": "మీ అభిప్రాయాన్ని వివరంగా వివరించండి...",
   "feedbackPrompt": "మీరు ఏమి షేర్ చేయాలనుకుంటున్నారు?",
+  "feedbackRetry": "మళ్ళీ ప్రయత్నించండి",
+  "feedbackSend": "అభిప్రాయాన్ని పంపండి",
+  "feedbackSending": "పంపుతోంది...",
+  "feedbackSettingsSubtitle": "బగ్‌లను నివేదించండి, మెరుగుదలలను సూచించండి లేదా అనువాదాలను సరిచేయండి",
+  "feedbackSettingsTitle": "అభిప్రాయాన్ని పంపండి",
+  "feedbackThankYou": "ధన్యవాదాలు!",
+  "feedbackThankYouMessage": "మీ అభిప్రాయం అందింది మరియు Lista Plus ను అందరికీ మెరుగుపరచడానికి మాకు సహాయపడుతుంది.",
+  "feedbackTitle": "అభిప్రాయాన్ని పంపండి",
   "feedbackTypeBug": "బగ్ నివేదించండి",
   "feedbackTypeBugHint": "ఏదో పని చేయడం లేదు",
-  "feedbackTypeSuggestion": "సూచన",
-  "feedbackTypeSuggestionHint": "యాప్‌ను మెరుగుపరచడానికి ఆలోచన",
-  "feedbackTypeTranslation": "అనువాద సమస్య",
-  "feedbackTypeTranslationHint": "తప్పు లేదా వికారమైన అనువాదం",
   "feedbackTypeFeature": "ఫీచర్ అభ్యర్థన",
   "feedbackTypeFeatureHint": "మీరు చూడాలనుకునే ఫీచర్",
   "feedbackTypeOther": "ఇతర",
   "feedbackTypeOtherHint": "ఇతర రకం అభిప్రాయం",
-  "feedbackHint": "మీ అభిప్రాయాన్ని వివరంగా వివరించండి...",
-  "feedbackSend": "అభిప్రాయాన్ని పంపండి",
-  "feedbackSending": "పంపుతోంది...",
-  "feedbackThankYou": "ధన్యవాదాలు!",
-  "feedbackThankYouMessage": "మీ అభిప్రాయం అందింది మరియు Lista Plus ను అందరికీ మెరుగుపరచడానికి మాకు సహాయపడుతుంది.",
-  "feedbackBack": "వెనుకకు",
-  "feedbackError": "పంపడంలో లోపం: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "మళ్ళీ ప్రయత్నించండి",
-  "feedbackSettingsTitle": "అభిప్రాయాన్ని పంపండి",
-  "feedbackSettingsSubtitle": "బగ్‌లను నివేదించండి, మెరుగుదలలను సూచించండి లేదా అనువాదాలను సరిచేయండి",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "సూచన",
+  "feedbackTypeSuggestionHint": "యాప్‌ను మెరుగుపరచడానికి ఆలోచన",
+  "feedbackTypeTranslation": "అనువాద సమస్య",
+  "feedbackTypeTranslationHint": "తప్పు లేదా వికారమైన అనువాదం",
+  "fieldRequired": "తప్పనిసరి ఫీల్డ్",
+  "filterAll": "అన్నీ",
+  "filterByTag": "ట్యాగ్ ద్వారా ఫిల్టర్ చేయండి",
+  "filterPending": "పెండింగ్",
+  "filterPurchased": "కొనుగోలు చేసినవి",
+  "finance": "ఫైనాన్స్",
+  "finishShopping": "షాపింగ్ ముగించు",
+  "gallery": "గ్యాలరీ",
+  "generalAssistant": "జనరల్ అసిస్టెంట్",
+  "generalHelp": "ఈ రోజు మీ షాపింగ్‌తో ఎలా సహాయపడగలను?",
+  "generateShoppingList": "షాపింగ్ జాబితాను రూపొందించు",
+  "globalAssistant": "గ్లోబల్ అసిస్టెంట్",
+  "howCanIHelp": "నేను ఎలా సహాయం చేయగలను?",
+  "idealQty": "ఆదర్శ పరి",
+  "idealQuantity": "ఆదర్శ పరిమాణం",
+  "imageUrlPlaceholder": "లేదా చిత్ర URLని అతికించండి",
+  "import": "దిగుమతి",
+  "importData": "డేటాను దిగుమతి చేయి",
+  "importDataSubtitle": "JSON నుండి జాబితాలను పునరుద్ధరించండి",
+  "importJsonHint": "బ్యాకప్ JSON ను ఇక్కడ పేస్ట్ చేయండి...",
+  "importJsonTitle": "JSON దిగుమతి",
+  "importListTitle": "జాబితాను దిగుమతి చేయి",
+  "importViaCode": "కోడ్ ద్వారా దిగుమతి చేయి",
+  "ingredients": "కావలసినవి",
+  "instructions": "సూచనలు",
+  "instructionsHint": "పంక్తికి ఒక అడుగు టైప్ చేయండి...",
+  "inviteToList": "జాబితాకు ఆహ్వానించండి",
+  "itemName": "అంశం పేరు",
+  "itemRemoved": "అంశం తీసివేయబడింది",
+  "itemsAddedSuccess": "అంశాలు జాబితాకు విజయవంతంగా జోడించబడ్డాయి!",
+  "itemsNeedPurchase": "{deficit} అంశం(లు) కొనుగోలు చేయాలి",
+  "itemsPurchasedCount": "{total}లో {purchased} కొనుగోలు చేయబడింది",
+  "itemsPurchasedShort": "{purchased}/{total} కొనుగోలు చేయబడింది",
+  "itemsWillBeAdded": "{count} అంశం(లు) జోడించబడతాయి",
+  "language": "భాష",
+  "languageEnglish": "ఇంగ్లీష్",
+  "languagePortuguese": "పోర్చుగీస్ (బ్రెసిల్)",
+  "languageSystem": "సిస్టమ్ డిఫాల్ట్",
+  "light": "లైట్",
+  "listAdded": "{listName} జోడించబడింది!",
+  "listArchived": "జాబితా విజయవంతంగా ఆర్కైవ్ చేయబడింది!",
+  "listAssistant": "జాబితా సహాయకుడు",
+  "listBudgetTitle": "జాబితా బడ్జెట్",
+  "listCreated": "\"{name}\" జాబితా {count} అంశాలతో సృష్టించబడింది",
+  "listHelp": "మీ జాబితాతో ఎలా సహాయపడగలను?",
+  "listHistory": "జాబితా చరిత్ర",
+  "listNameLabel": "జాబితా పేరు",
+  "listOrganizedMagic": "జాబితా వర్గాల ద్వారా మాయాజాలంగా నిర్వహించబడింది! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "వింటూ...",
+  "lists": "జాబితాలు",
+  "loading": "లోడ్ అవుతోంది...",
+  "loadingRecipes": "మీ వంటకాలను లోడ్ చేస్తోంది...",
+  "loginError": "లాగిన్ లోపం: {error}",
+  "loginPrompt": "ప్రీమియమ్ ఫీచర్లను\nఅన్‌లాక్ చేయడానికి లాగిన్ చేయండి",
+  "longHistoryWarning": "సుదీర్ఘ చరిత్ర: మెరుగైన పనితీరు కోసం అసిస్టెంట్ తాజా సందేశాలపై దృష్టి పెడుతుంది.",
+  "manageSubscription": "సబ్‌స్క్రిప్షన్ నిర్వహించు",
+  "markAsPurchased": "కొనుగోలు చేసినట్లు గుర్తించు",
+  "markItemsToSeeAnalysis": "విశ్లేషణ చూడటానికి అంశాలను కొనుగోలు చేసినట్లు గుర్తించండి.",
+  "marketMode": "మార్కెట్ మోడ్",
+  "mealPlannerAddMeal": "భోజనం జోడించండి",
+  "mealPlannerDateLabel": "తేదీ",
+  "mealPlannerDeleteMeal": "భోజనం తొలగించండి",
+  "mealPlannerEditMeal": "భోజనాన్ని సవరించండి",
+  "mealPlannerError": "భోజన ప్రణాళికను లోడ్ చేయడంలో లోపం ఏర్పడింది",
+  "mealPlannerGenerateList": "షాపింగ్ జాబితాను రూపొందించండి",
+  "mealPlannerGenerateListConfirm": "మీ షాపింగ్ జాబితాకు ఈ వారం ప్లాన్ చేసిన భోజనం నుండి అన్ని పదార్థాలను జోడించాలా?",
+  "mealPlannerGenerateListEmpty": "జోడించడానికి పదార్థాలు లేవు. ముందుగా వంటకాలతో కొన్ని భోజనాలను ప్లాన్ చేయండి.",
+  "mealPlannerGenerateListNoList": "ముందుగా షాపింగ్ జాబితాను రూపొందించండి.",
+  "mealPlannerGenerateListSuccess": "{count} పదార్ధం(లు) మీ జాబితాకు జోడించబడ్డాయి!",
+  "mealPlannerLoading": "భోజన ప్రణాళిక లోడ్ అవుతోంది...",
+  "mealPlannerMealDeleted": "భోజనం తీసివేయబడింది",
+  "mealPlannerMealTypeBreakfast": "అల్పాహారం",
+  "mealPlannerMealTypeDinner": "డిన్నర్",
+  "mealPlannerMealTypeLunch": "లంచ్",
+  "mealPlannerMealTypeSnack": "చిరుతిండి",
+  "mealPlannerNoMeals": "భోజనం ప్లాన్ చేయలేదు",
+  "mealPlannerNoMealsHint": "భోజనాన్ని జోడించడానికి ఒక రోజు నొక్కండి",
+  "mealPlannerNoRecipesFound": "వంటకాలు ఏవీ కనుగొనబడలేదు",
+  "mealPlannerNoRecipesHint": "ముందుగా వంటకాల ట్యాబ్‌లో వంటకాలను సృష్టించండి",
+  "mealPlannerNoteLabel": "గమనిక (ఐచ్ఛికం)",
+  "mealPlannerPrepTime": "{minutes} నిమి",
+  "mealPlannerSave": "ప్రణాళికకు జోడించండి",
+  "mealPlannerSearchRecipes": "వంటకాలను శోధించండి...",
+  "mealPlannerSelectRecipe": "రెసిపీని ఎంచుకోండి",
+  "mealPlannerServings": "{count,plural, one{{count} సర్వింగ్} other{{count} సర్వింగ్‌లు}}",
+  "mealPlannerServingsLabel": "సర్వింగ్స్",
+  "mealPlannerTitle": "మీల్ ప్లానర్",
+  "mealPlannerViewMonthly": "నెలవారీ వీక్షణ",
+  "mealPlannerViewWeekly": "వారపు వీక్షణ",
+  "mealPlannerWeekEmpty": "ఈ వారం ఏమీ ప్లాన్ చేయలేదు",
+  "mealPlannerWeekEmptyHint": "మీ భోజనాన్ని ప్లాన్ చేయడం ప్రారంభించడానికి ఏ రోజునైనా నొక్కండి!",
+  "mealPlannerWeekProgress": "{total}లో {count} భోజనం ప్లాన్ చేయబడింది",
+  "monthlyBudgetAppBar": "నెలవారీ బడ్జెట్",
+  "monthlyBudgetNav": "నెలవారీ బడ్జెట్",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "నెలవారీ బడ్జెట్",
+  "myLists": "నా జాబితాలు",
+  "myRecipes": "నా వంటకాలు",
+  "newChat": "కొత్త చాట్",
+  "newListTitle": "కొత్త షాపింగ్ జాబితా",
+  "newPantryList": "ప్యాంట్రీ షాపింగ్",
+  "newRecipe": "కొత్త రెసిపీ",
+  "newRecipeTitle": "కొత్త రెసిపీ",
+  "next": "తదుపరి",
+  "noActiveLists": "యాక్టివ్ జాబితాలు లేవు",
+  "noArchivedLists": "ఆర్కైవ్ చేసిన జాబితాలు లేవు",
+  "noBudgetDefined": "బడ్జెట్ సెట్ చేయబడలేదు",
+  "noHistory": "చాట్ చరిత్ర లేదు",
+  "noItemsInList": "జాబితాలో ఏ అంశాలు లేవు",
+  "noItemsToAnalyze": "విశ్లేషించడానికి జాబితాలో అంశాలు లేవు.",
+  "noItemsToBuy": "కొనుగోలు చేయవలసిన అంశాలు ఏవీ లేవు",
+  "noLabel": "కాదు",
+  "noListFoundSubtitle": "ప్రారంభించడానికి మీ మొదటి జాబితాను సృష్టించండి",
+  "noListFoundTitle": "జాబితాలు ఏవీ కనుగొనబడలేదు",
+  "noMessagesFound": "సందేశాలు ఏవీ కనుగొనబడలేదు",
+  "noRecipesSaved": "వంటకాలు ఏవీ సేవ్ చేయబడలేదు",
+  "noRecipesSavedHint": "దిగువ బటన్‌ను నొక్కడం ద్వారా మీ మొదటి అనుకూల వంటకాన్ని సృష్టించండి.",
+  "noTracking": "ట్రాకింగ్ లేదు",
+  "onboardingAnnualBadge": "ఉత్తమ విలువ",
+  "onboardingAnnualLabel": "వార్షిక",
+  "onboardingCancelAnytime": "ఎప్పుడైనా రద్దు చేయండి. నిబద్ధత లేదు.",
+  "onboardingContinueAsGuest": "అతిథిగా కొనసాగండి",
+  "onboardingExit": "నిష్క్రమించు",
+  "onboardingLoginDesc": "మీ డేటా మీ అన్ని పరికరాల్లో సమకాలీకరించబడింది",
+  "onboardingLoginTitle": "ప్రతిదీ క్లౌడ్‌లో సేవ్ చేయండి",
+  "onboardingMonthlyLabel": "నెలవారీ",
+  "onboardingPersonalizationCta": "కొనసాగించు",
+  "onboardingPersonalizationDesc": "మీ సూచనలను వ్యక్తిగతీకరించడానికి మరియు షాపింగ్‌ను మరింత తెలివిగా చేయడానికి మేము దీన్ని ఉపయోగిస్తాము.",
+  "onboardingPersonalizationFoodHint": "ఉదా పిజ్జా, సుషీ, లాసాగ్నా...",
+  "onboardingPersonalizationFoodLabel": "మీకు ఇష్టమైన ఆహారం ఏమిటి?",
+  "onboardingPersonalizationFoodRequired": "కొనసాగించడానికి మీకు ఇష్టమైన ఆహారాన్ని మాకు చెప్పండి",
+  "onboardingPersonalizationSkip": "ప్రస్తుతానికి దాటవేయి",
+  "onboardingPersonalizationTitle": "మీ గురించి తెలుసుకుందాం",
+  "onboardingPremiumSubtitle": "మీ షాపింగ్ జాబితాల నుండి అత్యధిక ప్రయోజనాలను పొందండి",
+  "onboardingPremiumTitle": "అన్ని లక్షణాలను అన్‌లాక్ చేయండి",
+  "onboardingRestore": "కొనుగోళ్లను పునరుద్ధరించండి",
+  "onboardingRestoreDesc": "ఇప్పటికే సబ్‌స్క్రిప్షన్ ఉందా? దీన్ని పునరుద్ధరించడానికి ఇక్కడ నొక్కండి.",
+  "onboardingSetupDesc": "Lista Plus మీ కోసం ఎలా కనిపించాలని మరియు పని చేయాలని మీరు కోరుకుంటున్నారో ఎంచుకోండి.",
+  "onboardingSetupTitle": "మీ అనుభవాన్ని వ్యక్తిగతీకరించండి",
+  "onboardingShareDesc": "నిజ సమయంలో కుటుంబం మరియు స్నేహితులతో జాబితాలను సమకాలీకరించండి",
+  "onboardingShareTitle": "మీరు ఇష్టపడే వారితో పంచుకోండి",
+  "onboardingSubscribeCta": "సభ్యత్వం పొందండి",
+  "onboardingViewAllPlans": "అన్ని ప్లాన్‌లను చూడండి",
+  "onboardingWelcomeDesc": "మీ షాపింగ్‌ను నిర్వహించడానికి మరియు డబ్బు ఆదా చేయడానికి తెలివైన మార్గం.",
+  "onboardingWelcomeTitle": "Lista Plusకి స్వాగతం",
+  "openMenu": "మెనుని తెరవండి",
+  "organizeAisles": "ఐల్స్ వారీగా నిర్వహించు",
+  "organizeAislesPrompt": "మార్కెట్ ఐల్స్ వారీగా నిర్వహించండి.",
+  "organizeByAisles": "ఐల్స్ వారీగా నిర్వహించు",
+  "organizingAi": "AI తో నిర్వహిస్తోంది...",
+  "pantry": "ప్యాంట్రీ",
+  "pantryAppBar": "ప్యాంట్రీ",
+  "pantryEditTitle": "{name}ని సవరించు",
+  "pantryEmpty": "ఖాళీ ప్యాంట్రీ",
+  "pantryEmptySubtitle": "మీరు ఇంట్లో ఉంచుకోవాలనుకునే ఉత్పత్తులను జోడించండి",
+  "pantryItemRemoved": "అంశం తీసివేయబడింది",
+  "paywallTitle": "లిస్టా ప్లస్ ప్రీమియం",
+  "prefAIAssistant": "వ్యక్తిగత AI అసిస్టెంట్",
+  "prefCustomThemes": "కస్టమ్ థీమ్‌లు",
+  "prefExportData": "డేటాను ఎగుమతి చేయి",
+  "prefFullHistory": "పూర్తి చరిత్ర",
+  "prefInteractiveArtifacts": "ఇంటరాక్టివ్ AI ఆర్టిఫాక్ట్‌లు",
+  "prefMonthlyBudget": "గ్లోబల్ నెలవారీ బడ్జెట్",
+  "prefSharing": "జాబితాలను భాగస్వామ్యం చేయి",
+  "prefUnlimitedLists": "అపరిమిత జాబితాలు",
+  "prefUnlimitedPantry": "అపరిమిత ప్యాంట్రీ",
+  "premiumUpgrade": "అన్‌లాక్ చేయడానికి అప్‌గ్రేడ్ చేయండి",
+  "prepTime": "ప్రిపరేషన్ సమయం",
+  "prepTimeMinutes": "ప్రిపరేషన్ సమయం (నిమిషాలు)",
+  "privacy": "గోప్యత",
+  "productName": "ఉత్పత్తి పేరు",
+  "purchaseError": "కొనుగోలును ప్రాసెస్ చేయడంలో లోపం. మళ్ళీ ప్రయత్నించండి.",
+  "quantityFull": "పరిమాణం",
+  "quantityShort": "పరి",
+  "quickRecipe": "శీఘ్ర వంటకం",
+  "quickRecipePrompt": "నా జాబితాలోని అంశాలతో వంటకాలను సూచించండి.",
+  "quickReplies": "త్వరిత సమాధానాలు:",
+  "recipeCreated": "రెసిపీ సృష్టించబడింది!",
+  "recipeDeleted": "రెసిపీ తొలగించబడింది",
+  "recipeImage": "రెసిపీ చిత్రం",
+  "recipeName": "రెసిపీ పేరు",
+  "recipeSaved": "రెసిపీ సేవ్ చేయబడింది!",
+  "recipeSuggestion": "వంటకం సూచన",
+  "recipeTags": "రెసిపీ ట్యాగ్‌లు",
+  "regenerate": "పునరుత్పత్తి చేయి",
+  "remove": "తీసివేయి",
+  "removeBudget": "తీసివేయి",
+  "removeImage": "చిత్రాన్ని తీసివేయండి",
+  "removeSharedListContent": "మీ జాబితాల నుండి \"{name}\"ను తీసివేయాలా? అసలు జాబితా ప్రభావితం కాదు.",
+  "removeSharedListTitle": "భాగస్వామ్య జాబితాను తీసివేయి",
+  "removeSharedTooltip": "తీసివేయి",
+  "rename": "పేరు మార్చు",
+  "renameListDialog": "జాబితా పేరు మార్చు",
+  "requiredField": "అవసరం",
+  "restockLabel": "తిరిగి నింపు",
+  "restocked": "{name} {quantity} {unit}కి తిరిగి నింపబడింది",
+  "restore": "పునరుద్ధరించు",
+  "restoreError": "కొనుగోళ్లను పునరుద్ధరించడంలో లోపం. మళ్ళీ ప్రయత్నించండి.",
+  "retry": "మళ్ళీ ప్రయత్నించు",
+  "save": "సేవ్ చేయి",
+  "saveChanges": "మార్పులను సేవ్ చేయండి",
+  "saveRecipe": "సేవ్ చేయండి",
+  "savings": "పొదుపులు",
+  "searchCurrency": "కరెన్సీని వెతకండి...",
+  "searchInConversation": "సంభాషణలో శోధించండి...",
+  "searchLanguage": "శోధన భాష...",
+  "searchRecipes": "వంటకాలను శోధించండి...",
+  "selectAll": "అన్నీ ఎంచుకోండి",
+  "selectListForDashboard": "డాష్‌బోర్డ్ వీక్షించడానికి జాబితాను ఎంచుకోండి.",
+  "selectedItems": "{count,plural, one{{count} ఎంచుకోబడింది} other{{count} ఎంచుకోబడ్డాయి}}",
+  "setBudgetButton": "బడ్జెట్ సెట్ చేయి",
+  "setBudgetTitle": "నెలవారీ బడ్జెట్",
+  "settingsAppBar": "సెట్టింగ్‌లు",
+  "settingsDefaultScreen": "డిఫాల్ట్ హోమ్ స్క్రీన్",
+  "settingsDefaultScreenSubtitle": "షాపింగ్ జాబితా లేదా AI చాట్ మధ్య ఎంచుకోండి",
+  "settingsScreenChat": "AI చాట్",
+  "settingsScreenList": "షాపింగ్ జాబితా",
+  "share": "భాగస్వామ్యం చేయి",
+  "shareApp": "యాప్‌ను భాగస్వామ్యం చేయండి",
+  "shareAppDescription": "Lista Plusని ఉపయోగించడానికి స్నేహితులను ఆహ్వానించండి",
+  "shareAsText": "అంశాలను ఫార్మాట్ చేసిన టెక్స్ట్ గా పంపండి",
+  "shareListText": "నా షాపింగ్ జాబితా",
+  "shareListTitle": "జాబితాను భాగస్వామ్యం చేయి",
+  "shareRealtime": "ఇతర వ్యక్తులతో రియల్-టైమ్ సమకాలీకరణ",
+  "shareReferralSubject": "7 రోజుల Lista Plus ప్రీమియం పొందండి!",
+  "shareReferralText": "నేను నా షాపింగ్‌ని నిర్వహించడానికి Lista Plusని ఉపయోగిస్తున్నాను! నా లింక్ ద్వారా డౌన్‌లోడ్ చేసుకోండి మరియు మా ఇద్దరికీ 7 రోజుల ప్రీమియం ఉచితం: {url}",
+  "shareSubject": "షాపింగ్ జాబితా",
+  "shareThisCode": "ఈ కోడ్‌ను భాగస్వామ్యం చేయండి:",
+  "shareViaCode": "కోడ్ ద్వారా భాగస్వామ్యం చేయి",
+  "sharedLabel": "భాగస్వామ్యం చేయబడింది",
+  "shoppingAssistant": "షాపింగ్ అసిస్టెంట్",
+  "shoppingMode": "షాపింగ్ మోడ్",
+  "shoppingModeHeader": "షాపింగ్ మోడ్",
+  "shortDescription": "చిన్న వివరణ",
+  "signInApple": "Appleతో సైన్ ఇన్ చేయి",
+  "signInGoogle": "Googleతో సైన్ ఇన్ చేయి",
+  "smartOrganization": "స్మార్ట్ ఆర్గనైజేషన్",
+  "sortCategory": "వర్గం",
+  "sortDate": "తేదీ",
+  "sortManual": "మాన్యువల్",
+  "sortName": "పేరు",
+  "spendingAnalysis": "ఖర్చు విశ్లేషణ",
+  "spendingByCategory": "వర్గం వారీగా ఖర్చు",
+  "suggestedQuestions": "సూచించబడిన ప్రశ్నలు:",
+  "suggestedTags": "సూచించారు",
+  "switchList": "జాబితా మారండి",
+  "system": "సిస్టమ్",
+  "tags": "ట్యాగ్‌లు",
+  "termsOfUse": "వినియోగ నిబంధనలు",
+  "themeAmber": "అంబర్",
+  "themeBlue": "నీలం",
+  "themeBrown": "గోధుమ",
+  "themeColor": "థీమ్ రంగు",
+  "themeGreen": "ఆకుపచ్చ",
+  "themeIndigo": "ఇండిగో",
+  "themeOrange": "నారింజ",
+  "themePink": "గులాబీ",
+  "themePurple": "ఊదా",
+  "themeRed": "ఎరుపు",
+  "themeTeal": "టీల్",
+  "totalEstimated": "మొత్తం అంచనా: {amount}",
+  "totalSpending": "మొత్తం ఖర్చు",
+  "trackStock": "స్టాక్ ట్రాక్ చేయి",
+  "trackStockActive": "షాపింగ్ సూచనలలో కనిపిస్తుంది",
+  "trackStockInactive": "షాపింగ్ సూచనను రూపొందించదు",
+  "undo": "రద్దు చేయి",
+  "unit": "యూనిట్",
+  "unitPack": "ప్యాక్",
+  "unlockFullResponse": "పూర్తి ప్రతిస్పందనను అన్‌లాక్ చేయండి",
+  "unmark": "గుర్తును తీసివేయి",
+  "upgrade": "అప్‌గ్రేడ్ చేయి",
+  "validForLimitedTime": "పరిమిత సమయం మాత్రమే చెల్లుతుంది",
+  "version": "వెర్షన్",
+  "viewActive": "యాక్టివ్ వీక్షించు",
+  "viewDetails": "వివరాలను వీక్షించండి",
+  "viewHistory": "చరిత్ర వీక్షించు",
+  "viewItems": "అంశాలను వీక్షించండి",
+  "viewList": "జాబితాను వీక్షించు",
+  "viewPro": "ప్రోని వీక్షించండి",
+  "viewRecipe": "రెసిపీని వీక్షించండి",
+  "voiceCommandContent": "మీ జాబితాను నిర్వహించడానికి సహజంగా మాట్లాడండి!\n\nఉదాహరణలు:\n• 'బ్రెడ్, జున్ను మరియు హామ్ జోడించు'\n• 'లాండ్రీ డిటర్జెంట్ తీసివేయి'\n• 'థీమ్‌ను నీలంగా మార్చు'\n\nఇది Lista Plus Premium యొక్క ప్రత్యేక ఫీచర్.",
+  "voiceCommandPlanBtn": "ప్లాన్‌లను వీక్షించు",
+  "voiceCommandTitle": "AI వాయిస్ కమాండ్",
+  "voiceProFeature": "అధునాతన వాయిస్ ఆదేశాలు ప్రో. ప్రాథమిక డిక్టేషన్‌ని ప్రారంభిస్తోంది...",
+  "voiceTranscriptionTooltip": "వాయిస్ టైపింగ్ (ఉచితం)",
+  "welcomeAiAssistant": "AI అసిస్టెంట్‌కి స్వాగతం",
+  "whatToDoWithItem": "మీరు ఈ వస్తువుతో ఏమి చేయాలనుకుంటున్నారు?",
+  "yes": "అవును",
+  "yesLabel": "అవును"
 }

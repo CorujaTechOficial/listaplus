@@ -1,99 +1,47 @@
 {
   "@@locale": "gu",
-  "appTitle": "શોપિંગ લિસ્ટ",
+  "@_Feedback": "description: Feedback Screen",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "યાદીઓ",
-  "pantry": "પેન્ટ્રી",
-  "cancel": "રદ કરો",
-  "save": "સાચવો",
-  "create": "બનાવો",
-  "add": "ઉમેરો",
-  "remove": "દૂર કરો",
-  "delete": "કાઢી નાખો",
-  "edit": "સંપાદિત કરો",
-  "copy": "કૉપિ કરો",
-  "retry": "ફરી પ્રયાસ કરો",
-  "regenerate": "ફરીથી બનાવો",
-  "copiedToClipboard": "ક્લિપબોર્ડ પર કૉપિ થયું",
-  "confirm": "પુષ્ટિ કરો",
-  "close": "બંધ કરો",
-  "import": "આયાત કરો",
-  "rename": "ફરીથી નામ આપો",
-  "upgrade": "અપગ્રેડ કરો",
-  "clear": "સાફ કરો",
-  "error": "ભૂલ: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "ભૂલ: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "ખરીદી પ્રક્રિયામાં ભૂલ. ફરી પ્રયાસ કરો.",
-  "restoreError": "ખરીદીઓ પુનઃસ્થાપિત કરવામાં ભૂલ. ફરી પ્રયાસ કરો.",
-  "loading": "લોડ થાય છે...",
-  "fieldRequired": "ફરજિયાત ક્ષેત્ર",
-  "addedFeedback": "ઉમેરાયું!",
-  "selectedItems": "{count,plural, one{{count} પસંદ કરેલ} other{{count} પસંદ કરેલ}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "અંદાજિત",
-  "alreadyPurchased": "પહેલેથી ખરીદેલ",
-  "clearList": "યાદી સાફ કરો",
-  "clearPurchased": "ખરીદેલ સાફ કરો",
-  "share": "શેર કરો",
-  "shareViaCode": "કોડ દ્વારા શેર કરો",
-  "importViaCode": "કોડ દ્વારા આયાત કરો",
-  "listAssistant": "યાદી સહાયક",
-  "globalAssistant": "વૈશ્વિક સહાયક",
-  "becomePremium": "પ્રીમિયમ બનો",
-  "manageSubscription": "સબ્સ્ક્રિપ્શન મેનેજ કરો",
-  "completePurchase": "ખરીદી પૂર્ણ કરો",
-  "confirmClearList": "બધી આઇટમ દૂર કરીએ?",
-  "shareListTitle": "યાદી શેર કરો",
-  "shareThisCode": "આ કોડ શેર કરો:",
-  "validForLimitedTime": "મર્યાદિત સમય માટે માન્ય",
-  "importListTitle": "યાદી આયાત કરો",
-  "enterCodeHint": "કોડ દાખલ કરો",
-  "confirmArchiveTitle": "ખરીદી પૂર્ણ કરો",
-  "confirmArchiveContent": "આ ખરીદી પૂર્ણ કરીને યાદી આર્કાઇવ કરીએ?",
-  "complete": "પૂર્ણ કરો",
-  "listArchived": "યાદી સફળતાપૂર્વક આર્કાઇવ થઈ!",
-  "listAdded": "{listName} ઉમેરાયું!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "ખરીદો",
-  "unmark": "નિશાન દૂર કરો",
-  "confirmDeleteItems": "{count} આઇટમ દૂર કરીએ?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "પુષ્ટિ કરો",
-  "confirmContent": "{count} આઇટમ દૂર કરીએ?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -101,12 +49,68 @@
       }
     }
   },
-  "archiveList": "યાદી આર્કાઇવ કરો",
-  "pantryAppBar": "પેન્ટ્રી",
-  "generateShoppingList": "શોપિંગ યાદી બનાવો",
-  "pantryEmpty": "ખાલી પેન્ટ્રી",
-  "pantryEmptySubtitle": "તમે ઘરમાં રાખવા માંગો છો તે ઉત્પાદનો ઉમેરો",
-  "itemsNeedPurchase": "{deficit} આઇટમ ખરીદવાની જરૂર છે",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -114,10 +118,26 @@
       }
     }
   },
-  "noItemsToBuy": "ખરીદવા માટે કોઈ આઇટમ નથી",
-  "newPantryList": "પેન્ટ્રી શોપિંગ",
-  "newListTitle": "નવી શોપિંગ યાદી",
-  "itemsWillBeAdded": "{count} આઇટમ ઉમેરાશે",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -125,8 +145,13 @@
       }
     }
   },
-  "listNameLabel": "યાદીનું નામ",
-  "listCreated": "યાદી \"{name}\" {count} આઇટમ સાથે બનાવી",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -137,20 +162,118 @@
       }
     }
   },
-  "noTracking": "કોઈ ટ્રેકિંગ નથી",
-  "markAsPurchased": "ખરીદેલ તરીકે ચિહ્નિત કરો",
-  "editPantryItem": "{name} સંપાદિત કરો",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "આદર્શ માત્રા",
-  "currentQuantity": "હાલની માત્રા",
-  "consumed": "વપરાશમાં લીધેલ",
-  "restocked": "{name} ફરી ભરાયું {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -164,56 +287,40 @@
       }
     }
   },
-  "confirmRemovePantry": "પેન્ટ્રીમાંથી \"{name}\" દૂર કરીએ?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name} સંપાદિત કરો",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "settingsAppBar": "સેટિંગ્સ",
-  "language": "ભાષા",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "સિસ્ટમ ડિફૉલ્ટ",
-  "appearance": "દેખાવ",
-  "light": "પ્રકાશ",
-  "system": "સિસ્ટમ",
-  "dark": "શ્યામ",
-  "themeColor": "થીમ રંગ",
-  "finance": "નાણાં",
-  "monthlyBudgetNav": "માસિક બજેટ",
-  "budgetSubtitle": "તમારા માસિક ખર્ચને ટ્રેક કરો",
-  "data": "ડેટા",
-  "backupNav": "બેકઅપ",
-  "backupSubtitle": "તમારો ડેટા એક્સપોર્ટ અથવા આયાત કરો",
-  "about": "વિશે",
-  "version": "સંસ્કરણ",
-  "privacy": "ગોપનીયતા",
-  "termsOfUse": "ઉપયોગની શરતો",
-  "backupTitle": "બેકઅપ",
-  "backupPremiumDescription": "બેકઅપ અને એક્સપોર્ટ એ પ્રીમિયમ સુવિધા છે",
-  "exportData": "ડેટા એક્સપોર્ટ કરો",
-  "exportDataSubtitle": "બધી યાદીઓ JSON તરીકે સાચવો",
-  "importData": "ડેટા આયાત કરો",
-  "importDataSubtitle": "JSON માંથી યાદીઓ પુનઃસ્થાપિત કરો",
-  "importJsonTitle": "JSON આયાત કરો",
-  "importJsonHint": "અહીં બેકઅપ JSON પેસ્ટ કરો...",
-  "backupExported": "બેકઅપ એક્સપોર્ટ થયું!",
-  "budgetAppBar": "માસિક બજેટ",
-  "budgetPremiumLocked": "વૈશ્વિક માસિક બજેટ પ્રીમિયમ છે",
-  "budgetUpgradePrompt": "અનલૉક કરવા અપગ્રેડ કરો",
-  "noBudgetDefined": "કોઈ બજેટ સેટ નથી",
-  "totalEstimated": "કુલ અંદાજિત: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -221,339 +328,218 @@
       }
     }
   },
-  "setBudgetButton": "બજેટ સેટ કરો",
-  "budgetLists": "યાદીઓ",
-  "budgetValueLabel": "રકમ",
-  "setBudgetTitle": "માસિક બજેટ",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "filterAll": "બધા",
-  "filterPending": "બાકી",
-  "filterPurchased": "ખરીદેલ",
-  "sortName": "નામ",
-  "sortCategory": "શ્રેણી",
-  "sortDate": "તારીખ",
-  "sortManual": "મેન્યુઅલ",
+  "about": "વિશે",
+  "achievements": "સિદ્ધિઓ",
+  "activeListening": "સક્રિય શ્રવણ",
+  "add": "ઉમેરો",
+  "addAllToList": "બધું યાદીમાં ઉમેરો",
+  "addDirectToList": "સૂચિમાં સીધું ઉમેરો",
+  "addIngredient": "સામગ્રી ઉમેરો",
   "addItem": "આઇટમ ઉમેરો",
-  "itemName": "આઇટમનું નામ",
-  "quantityShort": "જથ્થો",
-  "unit": "એકમ",
-  "category": "શ્રેણી",
-  "estimatedPrice": "અંદાજિત કિંમત",
   "addItemPrice": "અંદાજિત કિંમત",
-  "editItem": "આઇટમ સંપાદિત કરો",
-  "quantityFull": "જથ્થો",
-  "editItemPrice": "અંદાજિત કિંમત",
+  "addPhoto": "ફોટો ઉમેરો",
   "addToPantry": "પેન્ટ્રીમાં ઉમેરો",
   "addToPantryPrompt": "\"{name}\" તમારી પેન્ટ્રીમાં ઉમેરીએ?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "હા",
-  "productName": "ઉત્પાદનનું નામ",
-  "idealQty": "આદર્શ જથ્થો",
-  "currentQty": "હાલનો જથ્થો",
-  "trackStock": "સ્ટોક ટ્રેક કરો",
-  "trackStockActive": "શોપિંગ સૂચનોમાં દેખાય છે",
-  "trackStockInactive": "શોપિંગ સૂચન ઉત્પન્ન કરતું નથી",
-  "createListDialog": "યાદી બનાવો",
-  "renameListDialog": "યાદીનું નામ બદલો",
-  "listHistory": "યાદી ઇતિહાસ",
-  "myLists": "મારી યાદીઓ",
-  "viewActive": "સક્રિય જુઓ",
-  "viewHistory": "ઇતિહાસ જુઓ",
-  "noArchivedLists": "કોઈ આર્કાઇવ યાદીઓ નથી",
-  "noActiveLists": "કોઈ સક્રિય યાદીઓ નથી",
-  "completedOn": "{date} ના રોજ પૂર્ણ",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "શેર કરેલ",
-  "restore": "પુનઃસ્થાપિત કરો",
-  "removeSharedTooltip": "દૂર કરો",
-  "deleteListTitle": "યાદી કાઢી નાખો",
-  "deleteListContent": "શું તમે ખરેખર \"{name}\" કાઢી નાખવા માંગો છો? બધી આઇટમ દૂર થશે.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "શેર કરેલી યાદી દૂર કરો",
-  "removeSharedListContent": "તમારી યાદીઓમાંથી \"{name}\" દૂર કરીએ? મૂળ યાદી પર અસર થશે નહીં.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "નવી યાદી બનાવો",
+  "addedFeedback": "ઉમેરાયું!",
+  "advancedFeatures": "અદ્યતન સુવિધાઓ",
   "aiAssistant": "AI સહાયક",
   "aiAssistantDescription": "અમારા AI સહાયક સાથે સ્માર્ટ સૂચનો, રેસિપી અને વ્યક્તિગત ટિપ્સ મેળવો.",
-  "generalAssistant": "સામાન્ય સહાયક",
+  "aiCreditsRemaining": "{remaining} ક્રેડિટ બાકી",
+  "aiEnergy": "એઆઈ એનર્જી",
+  "aiError": "માફ કરશો, તમારી વિનંતી પ્રક્રિયા કરવામાં ભૂલ આવી. તમારું કનેક્શન તપાસો અથવા પછીથી ફરી પ્રયાસ કરો.",
+  "aiVoiceCommandTooltip": "AI વૉઇસ કમાન્ડ (પ્રીમિયમ)",
+  "allTags": "બધા",
+  "alreadyPurchased": "પહેલેથી ખરીદેલ",
+  "appTitle": "શોપિંગ લિસ્ટ",
+  "appearance": "દેખાવ",
+  "archiveList": "યાદી આર્કાઇવ કરો",
+  "backToChat": "ચેટ પર પાછા જાઓ",
+  "backupExported": "બેકઅપ એક્સપોર્ટ થયું!",
+  "backupNav": "બેકઅપ",
+  "backupPremiumDescription": "બેકઅપ અને એક્સપોર્ટ એ પ્રીમિયમ સુવિધા છે",
+  "backupSubtitle": "તમારો ડેટા એક્સપોર્ટ અથવા આયાત કરો",
+  "backupTitle": "બેકઅપ",
+  "becomePremium": "પ્રીમિયમ બનો",
+  "budgetAmountLabel": "બજેટ રકમ",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "માસિક બજેટ",
+  "budgetDashboardTitle": "ડેશબોર્ડ",
+  "budgetEditTitle": "માસિક બજેટ",
+  "budgetLists": "યાદીઓ",
+  "budgetPremiumLocked": "વૈશ્વિક માસિક બજેટ પ્રીમિયમ છે",
+  "budgetSubtitle": "તમારા માસિક ખર્ચને ટ્રેક કરો",
+  "budgetUpgradePrompt": "અનલૉક કરવા અપગ્રેડ કરો",
+  "budgetValueLabel": "રકમ",
+  "buy": "ખરીદો",
+  "cancel": "રદ કરો",
+  "cartTotal": "કાર્ટ કુલ",
+  "catBakery": "બેકરી",
+  "catBeverages": "પીણાં",
+  "catCleaning": "સફાઈ",
+  "catFruits": "ફળો",
+  "catOthers": "અન્ય",
+  "category": "શ્રેણી",
+  "chatError": "ચેટ લોડ કરવામાં ભૂલ: {error}",
+  "chatHint": "તમારો સંદેશ લખો...",
+  "chatSubtitle": "આઇટમ સૂચનો, રેસિપી અથવા બચત ટિપ્સ માટે પૂછો.",
+  "chatSubtitleShort": "કિંમતો, વાનગીઓ, સંસ્થા વિશે પૂછો...",
+  "chooseCurrency": "ચલણ પસંદ કરો",
+  "chooseImageSource": "છબી સ્રોત પસંદ કરો",
+  "chooseLanguage": "ભાષા પસંદ કરો",
+  "clear": "સાફ કરો",
   "clearHistory": "ઇતિહાસ સાફ કરો",
   "clearHistoryConfirm": "આ સત્રના બધા સંદેશા કાઢી નાખીએ?",
-  "chatHint": "તમારો સંદેશ લખો...",
-  "chatError": "ચેટ લોડ કરવામાં ભૂલ: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "હું તમારી યાદીમાં કેવી રીતે મદદ કરી શકું?",
-  "generalHelp": "આજે તમારી ખરીદીમાં હું કેવી રીતે મદદ કરી શકું?",
-  "chatSubtitle": "આઇટમ સૂચનો, રેસિપી અથવા બચત ટિપ્સ માટે પૂછો.",
-  "aiError": "માફ કરશો, તમારી વિનંતી પ્રક્રિયા કરવામાં ભૂલ આવી. તમારું કનેક્શન તપાસો અથવા પછીથી ફરી પ્રયાસ કરો.",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "પ્રીમિયમ સુવિધાઓ\nઅનલૉક કરવા લૉગિન કરો",
-  "signInGoogle": "Google વડે સાઇન ઇન કરો",
-  "signInApple": "Apple વડે સાઇન ઇન કરો",
+  "clearList": "યાદી સાફ કરો",
+  "clearPurchased": "ખરીદેલ સાફ કરો",
+  "close": "બંધ કરો",
+  "complete": "પૂર્ણ કરો",
+  "completePurchase": "ખરીદી પૂર્ણ કરો",
+  "completedOn": "{date} ના રોજ પૂર્ણ",
+  "confirm": "પુષ્ટિ કરો",
+  "confirmArchiveContent": "આ ખરીદી પૂર્ણ કરીને યાદી આર્કાઇવ કરીએ?",
+  "confirmArchiveTitle": "ખરીદી પૂર્ણ કરો",
+  "confirmClearList": "બધી આઇટમ દૂર કરીએ?",
+  "confirmContent": "{count} આઇટમ દૂર કરીએ?",
+  "confirmDeleteItems": "{count} આઇટમ દૂર કરીએ?",
+  "confirmDeleteTitle": "પુષ્ટિ કરો",
+  "confirmRemovePantry": "પેન્ટ્રીમાંથી \"{name}\" દૂર કરીએ?",
+  "consumed": "વપરાશમાં લીધેલ",
   "continueAsGuest": "મહેમાન તરીકે ચાલુ રાખો",
-  "loginError": "લૉગિન ભૂલ: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallTitle": "Lista Plus પ્રીમિયમ",
-  "premiumUpgrade": "અનલૉક કરવા અપગ્રેડ કરો",
-  "itemRemoved": "આઇટમ દૂર કરી",
-  "undo": "પૂર્વવત્ કરો",
-  "emptyListTitle": "તમારી યાદી ખાલી છે",
-  "emptyListSubtitle": "શરૂ કરવા આઇટમ ઉમેરો",
-  "noListFoundTitle": "કોઈ યાદી મળી નથી",
-  "noListFoundSubtitle": "શરૂ કરવા તમારી પ્રથમ યાદી બનાવો",
+  "copiedToClipboard": "ક્લિપબોર્ડ પર કૉપિ થયું",
+  "copy": "કૉપિ કરો",
+  "create": "બનાવો",
   "createFirstList": "પ્રથમ યાદી બનાવો",
-  "listBudgetTitle": "યાદી બજેટ",
-  "budgetAmountLabel": "બજેટ રકમ",
-  "removeBudget": "દૂર કરો",
-  "prefUnlimitedLists": "અમર્યાદિત યાદીઓ",
-  "prefSharing": "યાદીઓ શેર કરો",
-  "prefFullHistory": "સંપૂર્ણ ઇતિહાસ",
-  "prefExportData": "ડેટા એક્સપોર્ટ કરો",
-  "prefCustomThemes": "કસ્ટમ થીમ્સ",
-  "prefMonthlyBudget": "વૈશ્વિક માસિક બજેટ",
-  "prefAIAssistant": "વ્યક્તિગત AI સહાયક",
-  "prefUnlimitedPantry": "અમર્યાદિત પેન્ટ્રી",
-  "prefInteractiveArtifacts": "ઇન્ટરેક્ટિવ AI આર્ટિફેક્ટ્સ",
-  "themeGreen": "લીલો",
-  "themeBlue": "વાદળી",
-  "themePurple": "જાંબલી",
-  "themeRed": "લાલ",
-  "themeOrange": "નારંગી",
-  "themePink": "ગુલાબી",
-  "themeIndigo": "ઈન્ડિગો",
-  "themeAmber": "એમ્બર",
-  "themeTeal": "ટીલ",
-  "themeBrown": "ભૂરો",
-  "catFruits": "ફળો",
-  "catCleaning": "સફાઈ",
-  "catBeverages": "પીણાં",
-  "catBakery": "બેકરી",
-  "catOthers": "અન્ય",
-  "unitPack": "પેક",
-  "shareSubject": "શોપિંગ યાદી",
-  "monthlyBudgetTitle": "માસિક બજેટ",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "યાદી કાઢી નાખો",
-  "pantryItemRemoved": "આઇટમ દૂર કરી",
+  "createListDialog": "યાદી બનાવો",
+  "createListToStartAi": "સ્માર્ટ ચેટનો ઉપયોગ શરૂ કરવા માટે શોપિંગ લિસ્ટ બનાવો.",
+  "createNewList": "નવી યાદી બનાવો",
+  "currency": "ચલણ",
+  "currentQty": "હાલનો જથ્થો",
+  "currentQuantity": "હાલની માત્રા",
+  "dark": "શ્યામ",
+  "data": "ડેટા",
   "deficitItems": "{deficit,plural, one{{deficit} આઇટમ ખરીદવાની જરૂર છે} other{{deficit} આઇટમ ખરીદવાની જરૂર છે}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "કાર્ટ કુલ",
-  "restockLabel": "ફરી ભરો",
-  "advancedFeatures": "અદ્યતન સુવિધાઓ",
-  "selectAll": "બધા પસંદ કરો",
+  "delete": "કાઢી નાખો",
+  "deleteListConfirm": "યાદી કાઢી નાખો",
+  "deleteListContent": "શું તમે ખરેખર \"{name}\" કાઢી નાખવા માંગો છો? બધી આઇટમ દૂર થશે.",
+  "deleteListTitle": "યાદી કાઢી નાખો",
+  "deleteRecipe": "કાઢી નાખો",
+  "deleteRecipeConfirm": "આ રેસીપી કાઢી નાખવી છે?",
+  "deleteRecipeConfirmMsg": "શું તમે ખરેખર \"{recipeName}\" કાઢી નાખવા માંગો છો? આ ક્રિયા ઉલટાવી શકાશે નહીં.",
+  "deleteSession": "ચેટ કાઢી નાખો",
+  "deleteSessionConfirm": "શું તમે ખરેખર આ ચેટ કાઢી નાખવા માંગો છો? સંદેશાઓ કાયમ માટે ખોવાઈ જશે.",
   "deselectAll": "બધા અપસ્લેક્ટ કરો",
-  "monthlyBudgetAppBar": "માસિક બજેટ",
-  "budgetEditTitle": "માસિક બજેટ",
-  "budgetDashboardTitle": "ડેશબોર્ડ",
-  "selectListForDashboard": "ડેશબોર્ડ જોવા યાદી પસંદ કરો.",
-  "spendingAnalysis": "ખર્ચ વિશ્લેષણ",
-  "noItemsToAnalyze": "યાદીમાં વિશ્લેષણ કરવા માટે કોઈ આઇટમ નથી.",
-  "markItemsToSeeAnalysis": "વિશ્લેષણ જોવા આઇટમ ખરીદેલ તરીકે ચિહ્નિત કરો.",
-  "totalSpending": "કુલ ખર્ચ",
-  "spendingByCategory": "શ્રેણી પ્રમાણે ખર્ચ",
-  "achievements": "સિદ્ધિઓ",
-  "exportPdfExcel": "PDF/Excel એક્સપોર્ટ કરો",
-  "exportPdf": "PDF તરીકે એક્સપોર્ટ કરો",
-  "exportExcel": "Excel તરીકે એક્સપોર્ટ કરો",
-  "organizingAi": "AI સાથે ગોઠવાઈ રહ્યું છે...",
-  "yesLabel": "હા",
-  "noLabel": "ના",
-  "shareListText": "મારી શોપિંગ યાદી",
-  "emptyListAddItems": "તમારી યાદી ખાલી છે! પહેલા આઇટમ ઉમેરો. ℹ️",
-  "listOrganizedMagic": "યાદી જાદુઈ રીતે શ્રેણીઓમાં ગોઠવાઈ! ✨",
-  "shoppingMode": "શોપિંગ મોડ",
-  "smartOrganization": "સ્માર્ટ ગોઠવણી",
-  "savings": "બચત",
-  "shoppingModeHeader": "શોપિંગ મોડ",
-  "shareAsText": "આઇટમ ફોર્મેટેડ ટેક્સ્ટ તરીકે મોકલો",
-  "shareRealtime": "અન્ય લોકો સાથે રીઅલ-ટાઇમ સિંક",
-  "quickRecipe": "ઝડપી રેસીપી",
-  "quickRecipePrompt": "મારી યાદીની આઇટમ સાથે રેસિપી સૂચવો.",
+  "dynamicColors": "ડાયનેમિક રંગો",
+  "dynamicColorsEnabledWarning": "થીમના રંગને પ્રભાવિત કરવા માટે ગતિશીલ રંગોને અક્ષમ કરો",
+  "dynamicColorsSubtitle": "તમારા વૉલપેપર પર આધારિત રંગોનો ઉપયોગ કરો",
   "economyTips": "બચત ટિપ્સ",
   "economyTipsPrompt": "આ ખરીદી પર હું કેવી રીતે પૈસા બચાવી શકું?",
-  "organizeAisles": "ગલીઓ પ્રમાણે ગોઠવો",
-  "organizeAislesPrompt": "બજારની ગલીઓ પ્રમાણે ગોઠવો.",
-  "recipeSuggestion": "રેસીપી સૂચન",
-  "aiCreditsRemaining": "{remaining} ક્રેડિટ બાકી",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "બધું યાદીમાં ઉમેરો",
-  "organizeByAisles": "ગલીઓ પ્રમાણે ગોઠવો",
-  "voiceTranscriptionTooltip": "વૉઇસ ટાઇપિંગ (મફત)",
-  "aiVoiceCommandTooltip": "AI વૉઇસ કમાન્ડ (પ્રીમિયમ)",
-  "voiceCommandTitle": "AI વૉઇસ કમાન્ડ",
-  "voiceCommandContent": "તમારી યાદી મેનેજ કરવા કુદરતી રીતે બોલો!\n\nઉદાહરણો:\n• 'બ્રેડ, ચીઝ અને હેમ ઉમેરો'\n• 'લોન્ડ્રી ડિટર્જન્ટ દૂર કરો'\n• 'થીમ વાદળીમાં બદલો'\n\nઆ Lista Plus Premiumની વિશિષ્ટ સુવિધા છે.",
-  "voiceCommandPlanBtn": "પ્લાન જુઓ",
-  "itemsAddedSuccess": "આઇટમ સફળતાપૂર્વક યાદીમાં ઉમેરાઈ!",
-  "viewList": "યાદી જુઓ",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "પ્રતિસાદ મોકલો",
+  "edit": "સંપાદિત કરો",
+  "editItem": "આઇટમ સંપાદિત કરો",
+  "editItemPrice": "અંદાજિત કિંમત",
+  "editPantryItem": "{name} સંપાદિત કરો",
+  "editRecipe": "સંપાદિત કરો",
+  "editRecipeTitle": "રેસીપી સંપાદિત કરો",
+  "emptyListAddItems": "તમારી યાદી ખાલી છે! પહેલા આઇટમ ઉમેરો. ℹ️",
+  "emptyListSubtitle": "શરૂ કરવા આઇટમ ઉમેરો",
+  "emptyListTitle": "તમારી યાદી ખાલી છે",
+  "enterCodeHint": "કોડ દાખલ કરો",
+  "enterUrl": "URL દાખલ કરો",
+  "error": "ભૂલ: {message}",
+  "errorGeneric": "ભૂલ: {message}",
+  "errorLoadingChat": "અરે! ચેટ લોડ કરવામાં કંઈક ખોટું થયું.",
+  "errorLoadingChatSubtitle": "તમારું કનેક્શન તપાસો અથવા પછીથી ફરી પ્રયાસ કરો.",
+  "errorLoadingRecipes": "રેસીપી લોડ કરવામાં ભૂલ",
+  "errorOscillation": "આ નેટવર્ક ઓસિલેશન અથવા અસ્થાયી અનુપલબ્ધતાને કારણે થઈ શકે છે. કૃપા કરીને ફરી પ્રયાસ કરો.",
+  "estimated": "અંદાજિત",
+  "estimatedCost": "અંદાજિત",
+  "estimatedPrice": "અંદાજિત કિંમત",
+  "exportData": "ડેટા એક્સપોર્ટ કરો",
+  "exportDataSubtitle": "બધી યાદીઓ JSON તરીકે સાચવો",
+  "exportExcel": "Excel તરીકે એક્સપોર્ટ કરો",
+  "exportPdf": "PDF તરીકે એક્સપોર્ટ કરો",
+  "exportPdfExcel": "PDF/Excel એક્સપોર્ટ કરો",
+  "feedbackBack": "પાછળ",
+  "feedbackError": "મોકલવામાં ભૂલ: {error}",
+  "feedbackHint": "તમારા પ્રતિસાદનું વિગતમાં વર્ણન કરો...",
   "feedbackPrompt": "તમે શું શેર કરવા માંગો છો?",
+  "feedbackRetry": "ફરી પ્રયાસ કરો",
+  "feedbackSend": "પ્રતિસાદ મોકલો",
+  "feedbackSending": "મોકલાઈ રહ્યું છે...",
+  "feedbackSettingsSubtitle": "બગ રિપોર્ટ કરો, સુધારા સૂચવો અથવા અનુવાદો સુધારો",
+  "feedbackSettingsTitle": "પ્રતિસાદ મોકલો",
+  "feedbackThankYou": "આભાર!",
+  "feedbackThankYouMessage": "તમારો પ્રતિસાદ પ્રાપ્ત થયો છે અને તે Lista Plus ને બધા માટે સુધારવામાં મદદ કરે છે.",
+  "feedbackTitle": "પ્રતિસાદ મોકલો",
   "feedbackTypeBug": "બગ રિપોર્ટ કરો",
   "feedbackTypeBugHint": "કંઈક કામ કરી રહ્યું નથી",
-  "feedbackTypeSuggestion": "સૂચન",
-  "feedbackTypeSuggestionHint": "એપ સુધારવા માટેનો વિચાર",
-  "feedbackTypeTranslation": "અનુવાદ સમસ્યા",
-  "feedbackTypeTranslationHint": "ખોટો અથવા અયોગ્ય અનુવાદ",
   "feedbackTypeFeature": "ફીચર વિનંતી",
   "feedbackTypeFeatureHint": "તમે જોવા માંગો છો તે ફીચર",
   "feedbackTypeOther": "અન્ય",
   "feedbackTypeOtherHint": "અન્ય પ્રકારનો પ્રતિસાદ",
-  "feedbackHint": "તમારા પ્રતિસાદનું વિગતમાં વર્ણન કરો...",
-  "feedbackSend": "પ્રતિસાદ મોકલો",
-  "feedbackSending": "મોકલાઈ રહ્યું છે...",
-  "feedbackThankYou": "આભાર!",
-  "feedbackThankYouMessage": "તમારો પ્રતિસાદ પ્રાપ્ત થયો છે અને તે Lista Plus ને બધા માટે સુધારવામાં મદદ કરે છે.",
-  "feedbackBack": "પાછળ",
-  "feedbackError": "મોકલવામાં ભૂલ: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "ફરી પ્રયાસ કરો",
-  "feedbackSettingsTitle": "પ્રતિસાદ મોકલો",
-  "feedbackSettingsSubtitle": "બગ રિપોર્ટ કરો, સુધારા સૂચવો અથવા અનુવાદો સુધારો",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "સામગ્રી ઉમેરો",
-  "addPhoto": "ફોટો ઉમેરો",
-  "allTags": "બધા",
-  "chooseImageSource": "છબી સ્રોત પસંદ કરો",
-  "chooseLanguage": "ભાષા પસંદ કરો",
-  "deleteRecipe": "કાઢી નાખો",
-  "deleteRecipeConfirm": "આ રેસીપી કાઢી નાખવી છે?",
-  "deleteRecipeConfirmMsg": "શું તમે ખરેખર \"{recipeName}\" કાઢી નાખવા માંગો છો? આ ક્રિયા ઉલટાવી શકાશે નહીં.",
-  "dynamicColors": "ડાયનેમિક રંગો",
-  "dynamicColorsSubtitle": "તમારા વૉલપેપર પર આધારિત રંગોનો ઉપયોગ કરો",
-  "editRecipe": "સંપાદિત કરો",
-  "editRecipeTitle": "રેસીપી સંપાદિત કરો",
-  "enterUrl": "URL દાખલ કરો",
-  "errorLoadingRecipes": "રેસીપી લોડ કરવામાં ભૂલ",
+  "feedbackTypeSuggestion": "સૂચન",
+  "feedbackTypeSuggestionHint": "એપ સુધારવા માટેનો વિચાર",
+  "feedbackTypeTranslation": "અનુવાદ સમસ્યા",
+  "feedbackTypeTranslationHint": "ખોટો અથવા અયોગ્ય અનુવાદ",
+  "fieldRequired": "ફરજિયાત ક્ષેત્ર",
+  "filterAll": "બધા",
   "filterByTag": "ટેગ દ્વારા ફિલ્ટર કરો",
+  "filterPending": "બાકી",
+  "filterPurchased": "ખરીદેલ",
+  "finance": "નાણાં",
+  "finishShopping": "ખરીદી સમાપ્ત કરો",
   "gallery": "ગેલેરી",
+  "generalAssistant": "સામાન્ય સહાયક",
+  "generalHelp": "આજે તમારી ખરીદીમાં હું કેવી રીતે મદદ કરી શકું?",
+  "generateShoppingList": "શોપિંગ યાદી બનાવો",
+  "globalAssistant": "વૈશ્વિક સહાયક",
+  "howCanIHelp": "હું કેવી રીતે મદદ કરી શકું?",
+  "idealQty": "આદર્શ જથ્થો",
+  "idealQuantity": "આદર્શ માત્રા",
   "imageUrlPlaceholder": "અથવા છબી URL પેસ્ટ કરો",
+  "import": "આયાત કરો",
+  "importData": "ડેટા આયાત કરો",
+  "importDataSubtitle": "JSON માંથી યાદીઓ પુનઃસ્થાપિત કરો",
+  "importJsonHint": "અહીં બેકઅપ JSON પેસ્ટ કરો...",
+  "importJsonTitle": "JSON આયાત કરો",
+  "importListTitle": "યાદી આયાત કરો",
+  "importViaCode": "કોડ દ્વારા આયાત કરો",
   "ingredients": "સામગ્રી",
   "instructions": "સૂચનાઓ",
   "instructionsHint": "દરેક લીટી દીઠ એક પગલું લખો...",
+  "inviteToList": "સૂચિમાં આમંત્રિત કરો",
+  "itemName": "આઇટમનું નામ",
+  "itemRemoved": "આઇટમ દૂર કરી",
+  "itemsAddedSuccess": "આઇટમ સફળતાપૂર્વક યાદીમાં ઉમેરાઈ!",
+  "itemsNeedPurchase": "{deficit} આઇટમ ખરીદવાની જરૂર છે",
+  "itemsPurchasedCount": "{total} માંથી {purchased} ખરીદી",
+  "itemsPurchasedShort": "{purchased}/{total} ખરીદી",
+  "itemsWillBeAdded": "{count} આઇટમ ઉમેરાશે",
+  "language": "ભાષા",
+  "languageEnglish": "અંગ્રેજી",
+  "languagePortuguese": "પોર્ટુગીઝ (બ્રાઝિલ)",
+  "languageSystem": "સિસ્ટમ ડિફૉલ્ટ",
+  "light": "પ્રકાશ",
+  "listAdded": "{listName} ઉમેરાયું!",
+  "listArchived": "યાદી સફળતાપૂર્વક આર્કાઇવ થઈ!",
+  "listAssistant": "યાદી સહાયક",
+  "listBudgetTitle": "યાદી બજેટ",
+  "listCreated": "યાદી \"{name}\" {count} આઇટમ સાથે બનાવી",
+  "listHelp": "હું તમારી યાદીમાં કેવી રીતે મદદ કરી શકું?",
+  "listHistory": "યાદી ઇતિહાસ",
+  "listNameLabel": "યાદીનું નામ",
+  "listOrganizedMagic": "યાદી જાદુઈ રીતે શ્રેણીઓમાં ગોઠવાઈ! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "સાંભળી રહ્યું છે...",
+  "lists": "યાદીઓ",
+  "loading": "લોડ થાય છે...",
   "loadingRecipes": "તમારી રેસીપી લોડ થઈ રહી છે...",
+  "loginError": "લૉગિન ભૂલ: {error}",
+  "loginPrompt": "પ્રીમિયમ સુવિધાઓ\nઅનલૉક કરવા લૉગિન કરો",
+  "longHistoryWarning": "લાંબો ઇતિહાસ: સહાયક બહેતર પ્રદર્શન માટે નવીનતમ સંદેશાઓ પર ધ્યાન કેન્દ્રિત કરે છે.",
+  "manageSubscription": "સબ્સ્ક્રિપ્શન મેનેજ કરો",
+  "markAsPurchased": "ખરીદેલ તરીકે ચિહ્નિત કરો",
+  "markItemsToSeeAnalysis": "વિશ્લેષણ જોવા આઇટમ ખરીદેલ તરીકે ચિહ્નિત કરો.",
+  "marketMode": "બજાર મોડ",
   "mealPlannerAddMeal": "ભોજન ઉમેરો",
   "mealPlannerDateLabel": "તારીખ",
   "mealPlannerDeleteMeal": "ભોજન દૂર કરો",
@@ -587,28 +573,201 @@
   "mealPlannerWeekEmpty": "આ અઠવાડિયા માટે કંઈ આયોજિત નથી",
   "mealPlannerWeekEmptyHint": "તમારા ભોજનનું આયોજન શરૂ કરવા માટે કોઈપણ દિવસ પર ટેપ કરો!",
   "mealPlannerWeekProgress": "{total} માંથી {count} ભોજન આયોજિત",
+  "monthlyBudgetAppBar": "માસિક બજેટ",
+  "monthlyBudgetNav": "માસિક બજેટ",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "માસિક બજેટ",
+  "myLists": "મારી યાદીઓ",
   "myRecipes": "મારી રેસીપી",
+  "newChat": "નવી ચેટ",
+  "newListTitle": "નવી શોપિંગ યાદી",
+  "newPantryList": "પેન્ટ્રી શોપિંગ",
   "newRecipe": "નવી રેસીપી",
   "newRecipeTitle": "નવી રેસીપી",
+  "next": "આગળ",
+  "noActiveLists": "કોઈ સક્રિય યાદીઓ નથી",
+  "noArchivedLists": "કોઈ આર્કાઇવ યાદીઓ નથી",
+  "noBudgetDefined": "કોઈ બજેટ સેટ નથી",
+  "noHistory": "કોઈ ચેટ ઇતિહાસ નથી",
+  "noItemsInList": "સૂચિમાં કોઈ આઇટમ નથી",
+  "noItemsToAnalyze": "યાદીમાં વિશ્લેષણ કરવા માટે કોઈ આઇટમ નથી.",
+  "noItemsToBuy": "ખરીદવા માટે કોઈ આઇટમ નથી",
+  "noLabel": "ના",
+  "noListFoundSubtitle": "શરૂ કરવા તમારી પ્રથમ યાદી બનાવો",
+  "noListFoundTitle": "કોઈ યાદી મળી નથી",
+  "noMessagesFound": "કોઈ સંદેશા મળ્યા નથી",
   "noRecipesSaved": "કોઈ રેસીપી સાચવેલી નથી",
   "noRecipesSavedHint": "નીચેના બટન પર ટેપ કરીને તમારી પ્રથમ કસ્ટમ રેસીપી બનાવો.",
+  "noTracking": "કોઈ ટ્રેકિંગ નથી",
+  "onboardingAnnualBadge": "શ્રેષ્ઠ મૂલ્ય",
+  "onboardingAnnualLabel": "વાર્ષિક",
+  "onboardingCancelAnytime": "કોઈપણ સમયે રદ કરો. પ્રતિબદ્ધતા નથી.",
+  "onboardingContinueAsGuest": "અતિથિ તરીકે ચાલુ રાખો",
+  "onboardingExit": "બહાર નીકળો",
+  "onboardingLoginDesc": "તમારો ડેટા તમારા બધા ઉપકરણો પર સમન્વયિત થાય છે",
+  "onboardingLoginTitle": "મેઘ પર બધું સાચવો",
+  "onboardingMonthlyLabel": "માસિક",
+  "onboardingPersonalizationCta": "ચાલુ રાખો",
+  "onboardingPersonalizationDesc": "અમે આનો ઉપયોગ તમારા સૂચનોને વ્યક્તિગત કરવા અને ખરીદીને વધુ સ્માર્ટ બનાવવા માટે કરીશું.",
+  "onboardingPersonalizationFoodHint": "દા.ત. પિઝા, સુશી, લાસગ્ના...",
+  "onboardingPersonalizationFoodLabel": "તમારો મનપસંદ ખોરાક કયો છે?",
+  "onboardingPersonalizationFoodRequired": "ચાલુ રાખવા માટે અમને તમારો મનપસંદ ખોરાક જણાવો",
+  "onboardingPersonalizationSkip": "હમણાં માટે અવગણો",
+  "onboardingPersonalizationTitle": "ચાલો તમને જાણીએ",
+  "onboardingPremiumSubtitle": "તમારી ખરીદીની સૂચિમાંથી સૌથી વધુ મેળવો",
+  "onboardingPremiumTitle": "બધી સુવિધાઓને અનલૉક કરો",
+  "onboardingRestore": "પુનઃસ્થાપિત કરો",
+  "onboardingRestoreDesc": "પહેલેથી સબ્સ્ક્રિપ્શન છે? તેને પુનઃસ્થાપિત કરવા માટે અહીં ટૅપ કરો.",
+  "onboardingSetupDesc": "તમે Lista Plus કેવી રીતે દેખાવા અને તમારા માટે કામ કરવા માંગો છો તે પસંદ કરો.",
+  "onboardingSetupTitle": "તમારા અનુભવને વ્યક્તિગત કરો",
+  "onboardingShareDesc": "વાસ્તવિક સમયમાં કુટુંબ અને મિત્રો સાથે સૂચિઓ સમન્વયિત કરો",
+  "onboardingShareTitle": "તમે જેને પ્રેમ કરો છો તેની સાથે શેર કરો",
+  "onboardingSubscribeCta": "સબ્સ્ક્રાઇબ કરો",
+  "onboardingViewAllPlans": "બધી યોજનાઓ જુઓ",
+  "onboardingWelcomeDesc": "તમારી ખરીદીને ગોઠવવાની અને નાણાં બચાવવા માટેની સૌથી સ્માર્ટ રીત.",
+  "onboardingWelcomeTitle": "Lista Plus પર આપનું સ્વાગત છે",
   "openMenu": "મેનુ ખોલો",
+  "organizeAisles": "ગલીઓ પ્રમાણે ગોઠવો",
+  "organizeAislesPrompt": "બજારની ગલીઓ પ્રમાણે ગોઠવો.",
+  "organizeByAisles": "ગલીઓ પ્રમાણે ગોઠવો",
+  "organizingAi": "AI સાથે ગોઠવાઈ રહ્યું છે...",
+  "pantry": "પેન્ટ્રી",
+  "pantryAppBar": "પેન્ટ્રી",
+  "pantryEditTitle": "{name} સંપાદિત કરો",
+  "pantryEmpty": "ખાલી પેન્ટ્રી",
+  "pantryEmptySubtitle": "તમે ઘરમાં રાખવા માંગો છો તે ઉત્પાદનો ઉમેરો",
+  "pantryItemRemoved": "આઇટમ દૂર કરી",
+  "paywallTitle": "Lista Plus પ્રીમિયમ",
+  "prefAIAssistant": "વ્યક્તિગત AI સહાયક",
+  "prefCustomThemes": "કસ્ટમ થીમ્સ",
+  "prefExportData": "ડેટા એક્સપોર્ટ કરો",
+  "prefFullHistory": "સંપૂર્ણ ઇતિહાસ",
+  "prefInteractiveArtifacts": "ઇન્ટરેક્ટિવ AI આર્ટિફેક્ટ્સ",
+  "prefMonthlyBudget": "વૈશ્વિક માસિક બજેટ",
+  "prefSharing": "યાદીઓ શેર કરો",
+  "prefUnlimitedLists": "અમર્યાદિત યાદીઓ",
+  "prefUnlimitedPantry": "અમર્યાદિત પેન્ટ્રી",
+  "premiumUpgrade": "અનલૉક કરવા અપગ્રેડ કરો",
   "prepTime": "તૈયારીનો સમય",
   "prepTimeMinutes": "તૈયારીનો સમય (મિનિટ)",
+  "privacy": "ગોપનીયતા",
+  "productName": "ઉત્પાદનનું નામ",
+  "purchaseError": "ખરીદી પ્રક્રિયામાં ભૂલ. ફરી પ્રયાસ કરો.",
+  "quantityFull": "જથ્થો",
+  "quantityShort": "જથ્થો",
+  "quickRecipe": "ઝડપી રેસીપી",
+  "quickRecipePrompt": "મારી યાદીની આઇટમ સાથે રેસિપી સૂચવો.",
+  "quickReplies": "ઝડપી જવાબો:",
   "recipeCreated": "રેસીપી બનાવી!",
   "recipeDeleted": "રેસીપી કાઢી નાખી",
   "recipeImage": "રેસીપી છબી",
   "recipeName": "રેસીપીનું નામ",
   "recipeSaved": "રેસીપી સાચવી!",
+  "recipeSuggestion": "રેસીપી સૂચન",
   "recipeTags": "રેસીપી ટેગ્સ",
+  "regenerate": "ફરીથી બનાવો",
+  "remove": "દૂર કરો",
+  "removeBudget": "દૂર કરો",
   "removeImage": "છબી દૂર કરો",
+  "removeSharedListContent": "તમારી યાદીઓમાંથી \"{name}\" દૂર કરીએ? મૂળ યાદી પર અસર થશે નહીં.",
+  "removeSharedListTitle": "શેર કરેલી યાદી દૂર કરો",
+  "removeSharedTooltip": "દૂર કરો",
+  "rename": "ફરીથી નામ આપો",
+  "renameListDialog": "યાદીનું નામ બદલો",
   "requiredField": "ફરજિયાત",
+  "restockLabel": "ફરી ભરો",
+  "restocked": "{name} ફરી ભરાયું {quantity} {unit}",
+  "restore": "પુનઃસ્થાપિત કરો",
+  "restoreError": "ખરીદીઓ પુનઃસ્થાપિત કરવામાં ભૂલ. ફરી પ્રયાસ કરો.",
+  "retry": "ફરી પ્રયાસ કરો",
+  "save": "સાચવો",
   "saveChanges": "ફેરફારો સાચવો",
   "saveRecipe": "સાચવો",
+  "savings": "બચત",
+  "searchCurrency": "ચલણ શોધો...",
+  "searchInConversation": "વાતચીતમાં શોધો...",
   "searchLanguage": "ભાષા શોધો...",
   "searchRecipes": "રેસીપી શોધો...",
+  "selectAll": "બધા પસંદ કરો",
+  "selectListForDashboard": "ડેશબોર્ડ જોવા યાદી પસંદ કરો.",
+  "selectedItems": "{count,plural, one{{count} પસંદ કરેલ} other{{count} પસંદ કરેલ}}",
+  "setBudgetButton": "બજેટ સેટ કરો",
+  "setBudgetTitle": "માસિક બજેટ",
+  "settingsAppBar": "સેટિંગ્સ",
+  "settingsDefaultScreen": "ડિફૉલ્ટ હોમ સ્ક્રીન",
+  "settingsDefaultScreenSubtitle": "શોપિંગ લિસ્ટ અથવા AI ચેટ વચ્ચે પસંદ કરો",
+  "settingsScreenChat": "AI ચેટ",
+  "settingsScreenList": "શોપિંગ સૂચિ",
+  "share": "શેર કરો",
+  "shareApp": "એપ્લિકેશન શેર કરો",
+  "shareAppDescription": "Lista Plus નો ઉપયોગ કરવા મિત્રોને આમંત્રિત કરો",
+  "shareAsText": "આઇટમ ફોર્મેટેડ ટેક્સ્ટ તરીકે મોકલો",
+  "shareListText": "મારી શોપિંગ યાદી",
+  "shareListTitle": "યાદી શેર કરો",
+  "shareRealtime": "અન્ય લોકો સાથે રીઅલ-ટાઇમ સિંક",
+  "shareReferralSubject": "Lista Plus પ્રીમિયમના 7 દિવસ મેળવો!",
+  "shareReferralText": "હું મારી ખરીદી ગોઠવવા માટે Lista Plus નો ઉપયોગ કરું છું! મારી લિંક દ્વારા ડાઉનલોડ કરો અને અમને બંનેને 7 દિવસનું પ્રીમિયમ મફત મળે છે: {url}",
+  "shareSubject": "શોપિંગ યાદી",
+  "shareThisCode": "આ કોડ શેર કરો:",
+  "shareViaCode": "કોડ દ્વારા શેર કરો",
+  "sharedLabel": "શેર કરેલ",
+  "shoppingAssistant": "શોપિંગ સહાયક",
+  "shoppingMode": "શોપિંગ મોડ",
+  "shoppingModeHeader": "શોપિંગ મોડ",
   "shortDescription": "ટૂંકું વર્ણન",
+  "signInApple": "Apple વડે સાઇન ઇન કરો",
+  "signInGoogle": "Google વડે સાઇન ઇન કરો",
+  "smartOrganization": "સ્માર્ટ ગોઠવણી",
+  "sortCategory": "શ્રેણી",
+  "sortDate": "તારીખ",
+  "sortManual": "મેન્યુઅલ",
+  "sortName": "નામ",
+  "spendingAnalysis": "ખર્ચ વિશ્લેષણ",
+  "spendingByCategory": "શ્રેણી પ્રમાણે ખર્ચ",
+  "suggestedQuestions": "સૂચવેલા પ્રશ્નો:",
   "suggestedTags": "સૂચવેલ",
+  "switchList": "સ્વિચ સૂચિ",
+  "system": "સિસ્ટમ",
   "tags": "ટેગ્સ",
-  "viewRecipe": "રેસીપી જુઓ"
+  "termsOfUse": "ઉપયોગની શરતો",
+  "themeAmber": "એમ્બર",
+  "themeBlue": "વાદળી",
+  "themeBrown": "ભૂરો",
+  "themeColor": "થીમ રંગ",
+  "themeGreen": "લીલો",
+  "themeIndigo": "ઈન્ડિગો",
+  "themeOrange": "નારંગી",
+  "themePink": "ગુલાબી",
+  "themePurple": "જાંબલી",
+  "themeRed": "લાલ",
+  "themeTeal": "ટીલ",
+  "totalEstimated": "કુલ અંદાજિત: {amount}",
+  "totalSpending": "કુલ ખર્ચ",
+  "trackStock": "સ્ટોક ટ્રેક કરો",
+  "trackStockActive": "શોપિંગ સૂચનોમાં દેખાય છે",
+  "trackStockInactive": "શોપિંગ સૂચન ઉત્પન્ન કરતું નથી",
+  "undo": "પૂર્વવત્ કરો",
+  "unit": "એકમ",
+  "unitPack": "પેક",
+  "unlockFullResponse": "સંપૂર્ણ પ્રતિભાવ અનલૉક કરો",
+  "unmark": "નિશાન દૂર કરો",
+  "upgrade": "અપગ્રેડ કરો",
+  "validForLimitedTime": "મર્યાદિત સમય માટે માન્ય",
+  "version": "સંસ્કરણ",
+  "viewActive": "સક્રિય જુઓ",
+  "viewDetails": "વિગતો જુઓ",
+  "viewHistory": "ઇતિહાસ જુઓ",
+  "viewItems": "વસ્તુઓ જુઓ",
+  "viewList": "યાદી જુઓ",
+  "viewPro": "પ્રો જુઓ",
+  "viewRecipe": "રેસીપી જુઓ",
+  "voiceCommandContent": "તમારી યાદી મેનેજ કરવા કુદરતી રીતે બોલો!\n\nઉદાહરણો:\n• 'બ્રેડ, ચીઝ અને હેમ ઉમેરો'\n• 'લોન્ડ્રી ડિટર્જન્ટ દૂર કરો'\n• 'થીમ વાદળીમાં બદલો'\n\nઆ Lista Plus Premiumની વિશિષ્ટ સુવિધા છે.",
+  "voiceCommandPlanBtn": "પ્લાન જુઓ",
+  "voiceCommandTitle": "AI વૉઇસ કમાન્ડ",
+  "voiceProFeature": "અદ્યતન વૉઇસ કમાન્ડ પ્રો. મૂળભૂત શ્રુતલેખન સક્ષમ કરી રહ્યું છે...",
+  "voiceTranscriptionTooltip": "વૉઇસ ટાઇપિંગ (મફત)",
+  "welcomeAiAssistant": "AI સહાયકમાં આપનું સ્વાગત છે",
+  "whatToDoWithItem": "તમે આ આઇટમ સાથે શું કરવા માંગો છો?",
+  "yes": "હા",
+  "yesLabel": "હા"
 }

@@ -1,101 +1,73 @@
 {
   "@@locale": "sv_SE",
-  "appTitle": "Inköpslista",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Listor",
-  "pantry": "Skafferi",
-  "@_Common": "description: Common actions",
-  "cancel": "Avbryt",
-  "save": "Spara",
-  "create": "Skapa",
-  "add": "Lägg till",
-  "remove": "Ta bort",
-  "delete": "Radera",
-  "edit": "Redigera",
-  "copy": "Kopiera",
-  "retry": "Försök igen",
-  "regenerate": "Återskapa",
-  "copiedToClipboard": "Kopierat till urklipp",
-  "confirm": "Bekräfta",
-  "close": "Stäng",
-  "import": "Importera",
-  "rename": "Byt namn",
-  "upgrade": "Uppgradera",
-  "clear": "Rensa",
-  "error": "Fel: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Fel: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Fel vid behandling av köp. Försök igen.",
-  "restoreError": "Fel vid återställning av köp. Försök igen.",
-  "loading": "Laddar...",
-  "fieldRequired": "Obligatoriskt fält",
-  "addedFeedback": "Tillagd!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} vald} other{{count} valda}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Beräknat",
-  "alreadyPurchased": "Redan köpt",
-  "clearList": "Rensa lista",
-  "clearPurchased": "Rensa köpta",
-  "share": "Dela",
-  "shareViaCode": "Dela via kod",
-  "importViaCode": "Importera via kod",
-  "listAssistant": "Listassistent",
-  "globalAssistant": "Global assistent",
-  "becomePremium": "Bli Premium",
-  "manageSubscription": "Hantera prenumeration",
-  "completePurchase": "Slutför köp",
-  "confirmClearList": "Ta bort alla varor?",
-  "shareListTitle": "Dela Lista",
-  "shareThisCode": "Dela denna kod:",
-  "validForLimitedTime": "Gäller under begränsad tid",
-  "importListTitle": "Importera Lista",
-  "enterCodeHint": "Ange koden",
-  "confirmArchiveTitle": "Slutför Köp",
-  "confirmArchiveContent": "Slutför detta köp och arkivera listan?",
-  "complete": "Slutför",
-  "listArchived": "Listan arkiverades!",
-  "listAdded": "{listName} tillagd!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Köp",
-  "unmark": "Avmarkera",
-  "confirmDeleteItems": "Ta bort {count} vara/varor?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Bekräfta",
-  "confirmContent": "Ta bort {count} vara/varor?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Arkivera lista",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Skafferi",
-  "generateShoppingList": "Generera inköpslista",
-  "pantryEmpty": "Tomt skafferi",
-  "pantryEmptySubtitle": "Lägg till produkter du vill ha hemma",
-  "itemsNeedPurchase": "{deficit} vara/varor måste köpas",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Inga varor behöver köpas",
-  "newPantryList": "Skafferihandling",
-  "newListTitle": "Ny Inköpslista",
-  "itemsWillBeAdded": "{count} vara/varor läggs till",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Listnamn",
-  "listCreated": "Listan \"{name}\" skapad med {count} varor",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Ingen spårning",
-  "markAsPurchased": "Markera som köpt",
-  "editPantryItem": "Redigera {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Idealisk mängd",
-  "currentQuantity": "Nuvarande mängd",
-  "consumed": "Förbrukad",
-  "restocked": "{name} påfylld till {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Ta bort \"{name}\" från skafferiet?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Redigera {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Inställningar",
-  "language": "Språk",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Systemstandard",
-  "appearance": "Utseende",
-  "light": "Ljust",
-  "system": "System",
-  "dark": "Mörkt",
-  "themeColor": "Temafärg",
-  "finance": "Ekonomi",
-  "monthlyBudgetNav": "Månadsbudget",
-  "budgetSubtitle": "Följ dina månatliga utgifter",
-  "data": "Data",
-  "backupNav": "Säkerhetskopiera",
-  "backupSubtitle": "Exportera eller importera din data",
-  "about": "Om",
-  "version": "Version",
-  "privacy": "Integritet",
-  "termsOfUse": "Användarvillkor",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Säkerhetskopiering",
-  "backupPremiumDescription": "Säkerhetskopiering och export är en premiumfunktion",
-  "exportData": "Exportera data",
-  "exportDataSubtitle": "Spara alla listor som JSON",
-  "importData": "Importera data",
-  "importDataSubtitle": "Återställ listor från en JSON",
-  "importJsonTitle": "Importera JSON",
-  "importJsonHint": "Klistra in JSON för säkerhetskopian här...",
-  "backupExported": "Säkerhetskopia exporterad!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Månadsbudget",
-  "budgetPremiumLocked": "Global månadsbudget är premium",
-  "budgetUpgradePrompt": "Uppgradera för att låsa upp",
-  "noBudgetDefined": "Ingen budget angiven",
-  "totalEstimated": "Totalt beräknat: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Ange budget",
-  "budgetLists": "Listor",
-  "budgetValueLabel": "Belopp",
-  "setBudgetTitle": "Månadsbudget",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Alla",
-  "filterPending": "Väntande",
-  "filterPurchased": "Köpta",
-  "sortName": "Namn",
-  "sortCategory": "Kategori",
-  "sortDate": "Datum",
-  "sortManual": "Manuell",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Om",
+  "achievements": "Prestationer",
+  "activeListening": "Aktivt lyssnande",
+  "add": "Lägg till",
+  "addAllToList": "Lägg till alla i listan",
+  "addDirectToList": "Lägg till direkt i listan",
+  "addIngredient": "Tillsätt ingrediens",
   "addItem": "Lägg till Vara",
-  "itemName": "Varunamn",
-  "quantityShort": "Ant",
-  "unit": "Enhet",
-  "category": "Kategori",
-  "estimatedPrice": "Beräknat pris",
   "addItemPrice": "Beräknat pris",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Redigera Vara",
-  "quantityFull": "Kvantitet",
-  "editItemPrice": "Beräknat pris",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Lägg till foto",
   "addToPantry": "Lägg till i Skafferi",
   "addToPantryPrompt": "Lägg till \"{name}\" i ditt skafferi?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Ja",
-  "productName": "Produktnamn",
-  "idealQty": "Idealisk mängd",
-  "currentQty": "Nuvarande mängd",
-  "trackStock": "Spåra lager",
-  "trackStockActive": "Visas i shoppingförslag",
-  "trackStockInactive": "Genererar inget shoppingförslag",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Skapa Lista",
-  "renameListDialog": "Byt Namn på Lista",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Listhistorik",
-  "myLists": "Mina Listor",
-  "viewActive": "Visa Aktiva",
-  "viewHistory": "Visa Historik",
-  "noArchivedLists": "Inga arkiverade listor",
-  "noActiveLists": "Inga aktiva listor",
-  "completedOn": "Slutförd den {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Delad",
-  "restore": "Återställ",
-  "removeSharedTooltip": "Ta bort",
-  "deleteListTitle": "Radera lista",
-  "deleteListContent": "Är du säker på att du vill radera \"{name}\"? Alla varor kommer att tas bort.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Ta bort delad lista",
-  "removeSharedListContent": "Ta bort \"{name}\" från dina listor? Originallistan påverkas inte.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Skapa ny lista",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Tillagd!",
+  "advancedFeatures": "Avancerade funktioner",
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarta förslag, recept och personliga tips med vår AI-assistent.",
-  "generalAssistant": "Allmän assistent",
+  "aiCreditsRemaining": "{remaining} krediter kvar",
+  "aiEnergy": "AI energi",
+  "aiError": "Tyvärr, ett fel uppstod vid behandlingen av din förfrågan. Kontrollera din anslutning eller försök igen senare.",
+  "aiVoiceCommandTooltip": "AI-röstkommando (Premium)",
+  "allTags": "Alla",
+  "alreadyPurchased": "Redan köpt",
+  "appTitle": "Inköpslista",
+  "appearance": "Utseende",
+  "archiveList": "Arkivera lista",
+  "backToChat": "Tillbaka till Chatt",
+  "backupExported": "Säkerhetskopia exporterad!",
+  "backupNav": "Säkerhetskopiera",
+  "backupPremiumDescription": "Säkerhetskopiering och export är en premiumfunktion",
+  "backupSubtitle": "Exportera eller importera din data",
+  "backupTitle": "Säkerhetskopiering",
+  "becomePremium": "Bli Premium",
+  "budgetAmountLabel": "Budgetbelopp",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Månadsbudget",
+  "budgetDashboardTitle": "Instrumentbräda",
+  "budgetEditTitle": "Månadsbudget",
+  "budgetLists": "Listor",
+  "budgetPremiumLocked": "Global månadsbudget är premium",
+  "budgetSubtitle": "Följ dina månatliga utgifter",
+  "budgetUpgradePrompt": "Uppgradera för att låsa upp",
+  "budgetValueLabel": "Belopp",
+  "buy": "Köp",
+  "cancel": "Avbryt",
+  "cartTotal": "Varukorg totalt",
+  "catBakery": "Bageri",
+  "catBeverages": "Drycker",
+  "catCleaning": "Städning",
+  "catFruits": "Frukt",
+  "catOthers": "Övrigt",
+  "category": "Kategori",
+  "chatError": "Fel vid laddning av chatt: {error}",
+  "chatHint": "Skriv ditt meddelande...",
+  "chatSubtitle": "Be om varuförslag, recept eller spartips.",
+  "chatSubtitleShort": "Fråga om priser, recept, organisation...",
+  "chooseCurrency": "Välj Valuta",
+  "chooseImageSource": "Välj bildkälla",
+  "chooseLanguage": "Välj Språk",
+  "clear": "Rensa",
   "clearHistory": "Rensa Historik",
   "clearHistoryConfirm": "Rensa alla meddelanden i denna session?",
-  "chatHint": "Skriv ditt meddelande...",
-  "chatError": "Fel vid laddning av chatt: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Hur kan jag hjälpa dig med din lista?",
-  "generalHelp": "Hur kan jag hjälpa dig med din shopping idag?",
-  "chatSubtitle": "Be om varuförslag, recept eller spartips.",
-  "aiError": "Tyvärr, ett fel uppstod vid behandlingen av din förfrågan. Kontrollera din anslutning eller försök igen senare.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Logga in för att låsa upp\npremiumfunktioner",
-  "signInGoogle": "Logga in med Google",
-  "signInApple": "Logga in med Apple",
+  "clearList": "Rensa lista",
+  "clearPurchased": "Rensa köpta",
+  "close": "Stäng",
+  "complete": "Slutför",
+  "completePurchase": "Slutför köp",
+  "completedOn": "Slutförd den {date}",
+  "confirm": "Bekräfta",
+  "confirmArchiveContent": "Slutför detta köp och arkivera listan?",
+  "confirmArchiveTitle": "Slutför Köp",
+  "confirmClearList": "Ta bort alla varor?",
+  "confirmContent": "Ta bort {count} vara/varor?",
+  "confirmDeleteItems": "Ta bort {count} vara/varor?",
+  "confirmDeleteTitle": "Bekräfta",
+  "confirmRemovePantry": "Ta bort \"{name}\" från skafferiet?",
+  "consumed": "Förbrukad",
   "continueAsGuest": "Fortsätt som gäst",
-  "loginError": "Inloggningsfel: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Uppgradera för att låsa upp",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Varan borttagen",
-  "undo": "Ångra",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Din lista är tom",
-  "emptyListSubtitle": "Lägg till varor för att komma igång",
-  "noListFoundTitle": "Inga listor hittades",
-  "noListFoundSubtitle": "Skapa din första lista för att komma igång",
+  "copiedToClipboard": "Kopierat till urklipp",
+  "copy": "Kopiera",
+  "create": "Skapa",
   "createFirstList": "Skapa Första Listan",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Listbudget",
-  "budgetAmountLabel": "Budgetbelopp",
-  "removeBudget": "Ta bort",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Obegränsat antal listor",
-  "prefSharing": "Dela listor",
-  "prefFullHistory": "Full historik",
-  "prefExportData": "Exportera data",
-  "prefCustomThemes": "Anpassade teman",
-  "prefMonthlyBudget": "Global månadsbudget",
-  "prefAIAssistant": "Personlig AI-assistent",
-  "prefUnlimitedPantry": "Obegränsat skafferi",
-  "prefInteractiveArtifacts": "Interaktiva AI-artefakter",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Grön",
-  "themeBlue": "Blå",
-  "themePurple": "Lila",
-  "themeRed": "Röd",
-  "themeOrange": "Orange",
-  "themePink": "Rosa",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Bärnsten",
-  "themeTeal": "Teal",
-  "themeBrown": "Brun",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Frukt",
-  "catCleaning": "Städning",
-  "catBeverages": "Drycker",
-  "catBakery": "Bageri",
-  "catOthers": "Övrigt",
-  "@_Unit": "description: Unit",
-  "unitPack": "förpackning",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Inköpslista",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Månadsbudget",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Radera lista",
-  "pantryItemRemoved": "Varan borttagen",
+  "createListDialog": "Skapa Lista",
+  "createListToStartAi": "Skapa en inköpslista för att börja använda den smarta chatten.",
+  "createNewList": "Skapa ny lista",
+  "currency": "Valuta",
+  "currentQty": "Nuvarande mängd",
+  "currentQuantity": "Nuvarande mängd",
+  "dark": "Mörkt",
+  "data": "Data",
   "deficitItems": "{deficit,plural, one{{deficit} vara måste köpas} other{{deficit} varor måste köpas}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Varukorg totalt",
-  "restockLabel": "Fyll på",
-  "advancedFeatures": "Avancerade funktioner",
-  "selectAll": "Välj alla",
+  "delete": "Radera",
+  "deleteListConfirm": "Radera lista",
+  "deleteListContent": "Är du säker på att du vill radera \"{name}\"? Alla varor kommer att tas bort.",
+  "deleteListTitle": "Radera lista",
+  "deleteRecipe": "Radera",
+  "deleteRecipeConfirm": "Vill du ta bort det här receptet?",
+  "deleteRecipeConfirmMsg": "Är du säker på att du vill ta bort \"{recipeName}\"? Denna åtgärd kan inte ångras.",
+  "deleteSession": "Ta bort chatt",
+  "deleteSessionConfirm": "Är du säker på att du vill ta bort den här chatten? Meddelanden kommer att försvinna permanent.",
   "deselectAll": "Avmarkera alla",
-  "monthlyBudgetAppBar": "Månadsbudget",
-  "budgetEditTitle": "Månadsbudget",
-  "budgetDashboardTitle": "Dashboard",
-  "selectListForDashboard": "Välj en lista för att visa dashboard.",
-  "spendingAnalysis": "Utgiftsanalys",
-  "noItemsToAnalyze": "Inga varor i listan att analysera.",
-  "markItemsToSeeAnalysis": "Markera varor som köpta för att se analysen.",
-  "totalSpending": "Totala Utgifter",
-  "spendingByCategory": "Utgifter per Kategori",
-  "achievements": "Prestationer",
-  "exportPdfExcel": "Exportera PDF/Excel",
-  "exportPdf": "Exportera som PDF",
-  "exportExcel": "Exportera som Excel",
-  "organizingAi": "ORGANISERAR MED AI...",
-  "yesLabel": "Ja",
-  "noLabel": "Nej",
-  "shareListText": "Min Inköpslista",
-  "emptyListAddItems": "Din lista är tom! Lägg till varor först. ℹ️",
-  "listOrganizedMagic": "Listan magiskt organiserad efter kategorier! ✨",
-  "shoppingMode": "Shoppingläge",
-  "smartOrganization": "Smart organisering",
-  "savings": "Besparingar",
-  "shoppingModeHeader": "SHOPPINGLÄGE",
-  "shareAsText": "Skicka varor som formaterad text",
-  "shareRealtime": "Realtidssynkronisering med andra personer",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Snabbt recept",
-  "quickRecipePrompt": "Föreslå recept med varor från min lista.",
+  "dynamicColors": "Dynamiska färger",
+  "dynamicColorsEnabledWarning": "Inaktivera dynamiska färger för att temafärgen ska träda i kraft",
+  "dynamicColorsSubtitle": "Använd färger baserat på din tapet",
   "economyTips": "Spartips",
   "economyTipsPrompt": "Hur kan jag spara pengar på detta köp?",
-  "organizeAisles": "Organisera efter gångar",
-  "organizeAislesPrompt": "Organisera efter matbutikens gångar.",
-  "recipeSuggestion": "Receptförslag",
-  "aiCreditsRemaining": "{remaining} krediter kvar",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Lägg till alla i listan",
-  "organizeByAisles": "Organisera efter gångar",
-  "voiceTranscriptionTooltip": "Röstinmatning (Gratis)",
-  "aiVoiceCommandTooltip": "AI-röstkommando (Premium)",
-  "voiceCommandTitle": "AI-röstkommando",
-  "voiceCommandContent": "Tala naturligt för att hantera din lista!\n\nExempel:\n• 'Lägg till bröd, ost och skinka'\n• 'Ta bort tvättmedel'\n• 'Byt tema till blått'\n\nDetta är en exklusiv funktion i Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Visa Planer",
-  "itemsAddedSuccess": "Varor har lagts till i listan!",
-  "viewList": "Visa lista",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Skicka feedback",
+  "edit": "Redigera",
+  "editItem": "Redigera Vara",
+  "editItemPrice": "Beräknat pris",
+  "editPantryItem": "Redigera {name}",
+  "editRecipe": "Redigera",
+  "editRecipeTitle": "Redigera recept",
+  "emptyListAddItems": "Din lista är tom! Lägg till varor först. ℹ️",
+  "emptyListSubtitle": "Lägg till varor för att komma igång",
+  "emptyListTitle": "Din lista är tom",
+  "enterCodeHint": "Ange koden",
+  "enterUrl": "Ange URL",
+  "error": "Fel: {message}",
+  "errorGeneric": "Fel: {message}",
+  "errorLoadingChat": "hoppsan! Något gick fel när chatten laddades.",
+  "errorLoadingChatSubtitle": "Kontrollera din anslutning eller försök igen senare.",
+  "errorLoadingRecipes": "Det gick inte att läsa in recept",
+  "errorOscillation": "Detta kan uppstå på grund av nätverksvängningar eller tillfällig otillgänglighet. Försök igen.",
+  "estimated": "Beräknat",
+  "estimatedCost": "Uppskattad",
+  "estimatedPrice": "Beräknat pris",
+  "exportData": "Exportera data",
+  "exportDataSubtitle": "Spara alla listor som JSON",
+  "exportExcel": "Exportera som Excel",
+  "exportPdf": "Exportera som PDF",
+  "exportPdfExcel": "Exportera PDF/Excel",
+  "feedbackBack": "Tillbaka",
+  "feedbackError": "Fel vid skickning: {error}",
+  "feedbackHint": "Beskriv din feedback i detalj...",
   "feedbackPrompt": "Vad vill du dela?",
+  "feedbackRetry": "Försök igen",
+  "feedbackSend": "Skicka feedback",
+  "feedbackSending": "Skickar...",
+  "feedbackSettingsSubtitle": "Rapportera fel, föreslå förbättringar eller fixa översättningar",
+  "feedbackSettingsTitle": "Skicka feedback",
+  "feedbackThankYou": "Tack!",
+  "feedbackThankYouMessage": "Din feedback har tagits emot och hjälper oss att förbättra Lista Plus för alla.",
+  "feedbackTitle": "Skicka feedback",
   "feedbackTypeBug": "Rapportera fel",
   "feedbackTypeBugHint": "Något fungerar inte",
-  "feedbackTypeSuggestion": "Förslag",
-  "feedbackTypeSuggestionHint": "Idé för att förbättra appen",
-  "feedbackTypeTranslation": "Översättningsproblem",
-  "feedbackTypeTranslationHint": "Felaktig eller konstig översättning",
   "feedbackTypeFeature": "Funktionsbegäran",
   "feedbackTypeFeatureHint": "Funktion du skulle vilja se",
   "feedbackTypeOther": "Annat",
   "feedbackTypeOtherHint": "Annan typ av feedback",
-  "feedbackHint": "Beskriv din feedback i detalj...",
-  "feedbackSend": "Skicka feedback",
-  "feedbackSending": "Skickar...",
-  "feedbackThankYou": "Tack!",
-  "feedbackThankYouMessage": "Din feedback har tagits emot och hjälper oss att förbättra Lista Plus för alla.",
-  "feedbackBack": "Tillbaka",
-  "feedbackError": "Fel vid skickning: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Försök igen",
-  "feedbackSettingsTitle": "Skicka feedback",
-  "feedbackSettingsSubtitle": "Rapportera fel, föreslå förbättringar eller fixa översättningar",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Förslag",
+  "feedbackTypeSuggestionHint": "Idé för att förbättra appen",
+  "feedbackTypeTranslation": "Översättningsproblem",
+  "feedbackTypeTranslationHint": "Felaktig eller konstig översättning",
+  "fieldRequired": "Obligatoriskt fält",
+  "filterAll": "Alla",
+  "filterByTag": "Filtrera efter tagg",
+  "filterPending": "Väntande",
+  "filterPurchased": "Köpta",
+  "finance": "Ekonomi",
+  "finishShopping": "Avsluta shopping",
+  "gallery": "Galleri",
+  "generalAssistant": "Allmän assistent",
+  "generalHelp": "Hur kan jag hjälpa dig med din shopping idag?",
+  "generateShoppingList": "Generera inköpslista",
+  "globalAssistant": "Global assistent",
+  "howCanIHelp": "Hur kan jag hjälpa till?",
+  "idealQty": "Idealisk mängd",
+  "idealQuantity": "Idealisk mängd",
+  "imageUrlPlaceholder": "Eller klistra in en bildadress",
+  "import": "Importera",
+  "importData": "Importera data",
+  "importDataSubtitle": "Återställ listor från en JSON",
+  "importJsonHint": "Klistra in JSON för säkerhetskopian här...",
+  "importJsonTitle": "Importera JSON",
+  "importListTitle": "Importera Lista",
+  "importViaCode": "Importera via kod",
+  "ingredients": "Ingredienser",
+  "instructions": "Instruktioner",
+  "instructionsHint": "Skriv ett steg per rad...",
+  "inviteToList": "Bjud in till lista",
+  "itemName": "Varunamn",
+  "itemRemoved": "Varan borttagen",
+  "itemsAddedSuccess": "Varor har lagts till i listan!",
+  "itemsNeedPurchase": "{deficit} vara/varor måste köpas",
+  "itemsPurchasedCount": "{purchased} av {total} köpt",
+  "itemsPurchasedShort": "{purchased}/{total} köpt",
+  "itemsWillBeAdded": "{count} vara/varor läggs till",
+  "language": "Språk",
+  "languageEnglish": "engelska",
+  "languagePortuguese": "Português (Brasilien)",
+  "languageSystem": "Systemstandard",
+  "light": "Ljust",
+  "listAdded": "{listName} tillagd!",
+  "listArchived": "Listan arkiverades!",
+  "listAssistant": "Listassistent",
+  "listBudgetTitle": "Listbudget",
+  "listCreated": "Listan \"{name}\" skapad med {count} varor",
+  "listHelp": "Hur kan jag hjälpa dig med din lista?",
+  "listHistory": "Listhistorik",
+  "listNameLabel": "Listnamn",
+  "listOrganizedMagic": "Listan magiskt organiserad efter kategorier! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Lyssnande...",
+  "lists": "Listor",
+  "loading": "Laddar...",
+  "loadingRecipes": "Laddar dina recept...",
+  "loginError": "Inloggningsfel: {error}",
+  "loginPrompt": "Logga in för att låsa upp\npremiumfunktioner",
+  "longHistoryWarning": "Lång historia: assistenten fokuserar på de senaste meddelandena för bättre prestanda.",
+  "manageSubscription": "Hantera prenumeration",
+  "markAsPurchased": "Markera som köpt",
+  "markItemsToSeeAnalysis": "Markera varor som köpta för att se analysen.",
+  "marketMode": "Marknadsläge",
+  "mealPlannerAddMeal": "Lägg till måltid",
+  "mealPlannerDateLabel": "Datum",
+  "mealPlannerDeleteMeal": "Ta bort måltid",
+  "mealPlannerEditMeal": "Redigera måltid",
+  "mealPlannerError": "Det gick inte att läsa in måltidsplanen",
+  "mealPlannerGenerateList": "Skapa inköpslista",
+  "mealPlannerGenerateListConfirm": "Lägg till alla ingredienser från planerade måltider den här veckan till din inköpslista?",
+  "mealPlannerGenerateListEmpty": "Inga ingredienser att lägga till. Planera några måltider med recept först.",
+  "mealPlannerGenerateListNoList": "Skapa en inköpslista först.",
+  "mealPlannerGenerateListSuccess": "{count} ingrediens(er) har lagts till i din lista!",
+  "mealPlannerLoading": "Laddar matplan...",
+  "mealPlannerMealDeleted": "Måltiden borttagen",
+  "mealPlannerMealTypeBreakfast": "Frukost",
+  "mealPlannerMealTypeDinner": "Middag",
+  "mealPlannerMealTypeLunch": "Lunch",
+  "mealPlannerMealTypeSnack": "Mellanmål",
+  "mealPlannerNoMeals": "Inga måltider planerade",
+  "mealPlannerNoMealsHint": "Tryck på en dag för att lägga till en måltid",
+  "mealPlannerNoRecipesFound": "Inga recept hittades",
+  "mealPlannerNoRecipesHint": "Skapa recept på fliken Recept först",
+  "mealPlannerNoteLabel": "Obs (valfritt)",
+  "mealPlannerPrepTime": "{minutes} min",
+  "mealPlannerSave": "Lägg till i planen",
+  "mealPlannerSearchRecipes": "Sök recept...",
+  "mealPlannerSelectRecipe": "Välj ett recept",
+  "mealPlannerServings": "{count,plural, one{{count} portion} other{{count} portioner}}",
+  "mealPlannerServingsLabel": "Serveringar",
+  "mealPlannerTitle": "Måltidsplanerare",
+  "mealPlannerViewMonthly": "Månadsvy",
+  "mealPlannerViewWeekly": "Veckovy",
+  "mealPlannerWeekEmpty": "Inget planerat för den här veckan",
+  "mealPlannerWeekEmptyHint": "Tryck på vilken dag som helst för att börja planera dina måltider!",
+  "mealPlannerWeekProgress": "{count} av {total} måltider planerade",
+  "monthlyBudgetAppBar": "Månadsbudget",
+  "monthlyBudgetNav": "Månadsbudget",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Månadsbudget",
+  "myLists": "Mina Listor",
+  "myRecipes": "Mina recept",
+  "newChat": "Ny chatt",
+  "newListTitle": "Ny Inköpslista",
+  "newPantryList": "Skafferihandling",
+  "newRecipe": "Nytt recept",
+  "newRecipeTitle": "Nytt recept",
+  "next": "Nästa",
+  "noActiveLists": "Inga aktiva listor",
+  "noArchivedLists": "Inga arkiverade listor",
+  "noBudgetDefined": "Ingen budget angiven",
+  "noHistory": "Ingen chatthistorik",
+  "noItemsInList": "Inga objekt i listan",
+  "noItemsToAnalyze": "Inga varor i listan att analysera.",
+  "noItemsToBuy": "Inga varor behöver köpas",
+  "noLabel": "Nej",
+  "noListFoundSubtitle": "Skapa din första lista för att komma igång",
+  "noListFoundTitle": "Inga listor hittades",
+  "noMessagesFound": "Inga meddelanden hittades",
+  "noRecipesSaved": "Inga recept sparade",
+  "noRecipesSavedHint": "Skapa ditt första anpassade recept genom att trycka på knappen nedan.",
+  "noTracking": "Ingen spårning",
+  "onboardingAnnualBadge": "Bästa värde",
+  "onboardingAnnualLabel": "Årlig",
+  "onboardingCancelAnytime": "Avbryt när som helst. Inget åtagande.",
+  "onboardingContinueAsGuest": "Fortsätt som gäst",
+  "onboardingExit": "Utgång",
+  "onboardingLoginDesc": "Din data synkroniseras över alla dina enheter",
+  "onboardingLoginTitle": "Spara allt till molnet",
+  "onboardingMonthlyLabel": "Månatlig",
+  "onboardingPersonalizationCta": "Fortsätta",
+  "onboardingPersonalizationDesc": "Vi kommer att använda detta för att anpassa dina förslag och göra shopping smartare.",
+  "onboardingPersonalizationFoodHint": "till exempel Pizza, sushi, lasagne...",
+  "onboardingPersonalizationFoodLabel": "Vilken är din favoritmat?",
+  "onboardingPersonalizationFoodRequired": "Berätta för oss din favoritmat för att fortsätta",
+  "onboardingPersonalizationSkip": "Hoppa över nu",
+  "onboardingPersonalizationTitle": "Låt oss lära känna dig",
+  "onboardingPremiumSubtitle": "Få ut det mesta av dina inköpslistor",
+  "onboardingPremiumTitle": "Lås upp alla funktioner",
+  "onboardingRestore": "Återställ inköp",
+  "onboardingRestoreDesc": "Har du redan ett abonnemang? Tryck här för att återställa den.",
+  "onboardingSetupDesc": "Välj hur du vill att Lista Plus ska se ut och fungera för dig.",
+  "onboardingSetupTitle": "Anpassa din upplevelse",
+  "onboardingShareDesc": "Synkronisera listor med familj och vänner i realtid",
+  "onboardingShareTitle": "Dela med dem du älskar",
+  "onboardingSubscribeCta": "Prenumerera",
+  "onboardingViewAllPlans": "Se alla planer",
+  "onboardingWelcomeDesc": "Det smartaste sättet att organisera din shopping och spara pengar.",
+  "onboardingWelcomeTitle": "Välkommen till Lista Plus",
+  "openMenu": "Öppna menyn",
+  "organizeAisles": "Organisera efter gångar",
+  "organizeAislesPrompt": "Organisera efter matbutikens gångar.",
+  "organizeByAisles": "Organisera efter gångar",
+  "organizingAi": "ORGANISERAR MED AI...",
+  "pantry": "Skafferi",
+  "pantryAppBar": "Skafferi",
+  "pantryEditTitle": "Redigera {name}",
+  "pantryEmpty": "Tomt skafferi",
+  "pantryEmptySubtitle": "Lägg till produkter du vill ha hemma",
+  "pantryItemRemoved": "Varan borttagen",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Personlig AI-assistent",
+  "prefCustomThemes": "Anpassade teman",
+  "prefExportData": "Exportera data",
+  "prefFullHistory": "Full historik",
+  "prefInteractiveArtifacts": "Interaktiva AI-artefakter",
+  "prefMonthlyBudget": "Global månadsbudget",
+  "prefSharing": "Dela listor",
+  "prefUnlimitedLists": "Obegränsat antal listor",
+  "prefUnlimitedPantry": "Obegränsat skafferi",
+  "premiumUpgrade": "Uppgradera för att låsa upp",
+  "prepTime": "Förberedelsetid",
+  "prepTimeMinutes": "Förberedelsetid (minuter)",
+  "privacy": "Integritet",
+  "productName": "Produktnamn",
+  "purchaseError": "Fel vid behandling av köp. Försök igen.",
+  "quantityFull": "Kvantitet",
+  "quantityShort": "Ant",
+  "quickRecipe": "Snabbt recept",
+  "quickRecipePrompt": "Föreslå recept med varor från min lista.",
+  "quickReplies": "Snabba svar:",
+  "recipeCreated": "Recept skapat!",
+  "recipeDeleted": "Receptet raderat",
+  "recipeImage": "Receptbild",
+  "recipeName": "Receptets namn",
+  "recipeSaved": "Receptet sparat!",
+  "recipeSuggestion": "Receptförslag",
+  "recipeTags": "Receptetiketter",
+  "regenerate": "Återskapa",
+  "remove": "Ta bort",
+  "removeBudget": "Ta bort",
+  "removeImage": "Ta bort bild",
+  "removeSharedListContent": "Ta bort \"{name}\" från dina listor? Originallistan påverkas inte.",
+  "removeSharedListTitle": "Ta bort delad lista",
+  "removeSharedTooltip": "Ta bort",
+  "rename": "Byt namn",
+  "renameListDialog": "Byt Namn på Lista",
+  "requiredField": "Nödvändig",
+  "restockLabel": "Fyll på",
+  "restocked": "{name} påfylld till {quantity} {unit}",
+  "restore": "Återställ",
+  "restoreError": "Fel vid återställning av köp. Försök igen.",
+  "retry": "Försök igen",
+  "save": "Spara",
+  "saveChanges": "Spara ändringar",
+  "saveRecipe": "Spara",
+  "savings": "Besparingar",
+  "searchCurrency": "Sök valuta...",
+  "searchInConversation": "Sök i konversation...",
+  "searchLanguage": "Sök språk...",
+  "searchRecipes": "Sök recept...",
+  "selectAll": "Välj alla",
+  "selectListForDashboard": "Välj en lista för att visa dashboard.",
+  "selectedItems": "{count,plural, one{{count} vald} other{{count} valda}}",
+  "setBudgetButton": "Ange budget",
+  "setBudgetTitle": "Månadsbudget",
+  "settingsAppBar": "Inställningar",
+  "settingsDefaultScreen": "Standard startskärm",
+  "settingsDefaultScreenSubtitle": "Välj mellan inköpslista eller AI-chatt",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "Inköpslista",
+  "share": "Dela",
+  "shareApp": "Dela app",
+  "shareAppDescription": "Bjud in vänner att använda Lista Plus",
+  "shareAsText": "Skicka varor som formaterad text",
+  "shareListText": "Min Inköpslista",
+  "shareListTitle": "Dela Lista",
+  "shareRealtime": "Realtidssynkronisering med andra personer",
+  "shareReferralSubject": "Få 7 dagars Lista Plus Premium!",
+  "shareReferralText": "Jag använder Lista Plus för att organisera min shopping! Ladda ner via min länk så får vi båda 7 dagars Premium gratis: {url}",
+  "shareSubject": "Inköpslista",
+  "shareThisCode": "Dela denna kod:",
+  "shareViaCode": "Dela via kod",
+  "sharedLabel": "Delad",
+  "shoppingAssistant": "Shoppingbiträde",
+  "shoppingMode": "Shoppingläge",
+  "shoppingModeHeader": "SHOPPINGLÄGE",
+  "shortDescription": "Kort beskrivning",
+  "signInApple": "Logga in med Apple",
+  "signInGoogle": "Logga in med Google",
+  "smartOrganization": "Smart organisering",
+  "sortCategory": "Kategori",
+  "sortDate": "Datum",
+  "sortManual": "Manuell",
+  "sortName": "Namn",
+  "spendingAnalysis": "Utgiftsanalys",
+  "spendingByCategory": "Utgifter per Kategori",
+  "suggestedQuestions": "Föreslagna frågor:",
+  "suggestedTags": "Föreslog",
+  "switchList": "Byt lista",
+  "system": "System",
+  "tags": "Taggar",
+  "termsOfUse": "Användarvillkor",
+  "themeAmber": "Bärnsten",
+  "themeBlue": "Blå",
+  "themeBrown": "Brun",
+  "themeColor": "Temafärg",
+  "themeGreen": "Grön",
+  "themeIndigo": "Indigo",
+  "themeOrange": "Orange",
+  "themePink": "Rosa",
+  "themePurple": "Lila",
+  "themeRed": "Röd",
+  "themeTeal": "Kricka",
+  "totalEstimated": "Totalt beräknat: {amount}",
+  "totalSpending": "Totala Utgifter",
+  "trackStock": "Spåra lager",
+  "trackStockActive": "Visas i shoppingförslag",
+  "trackStockInactive": "Genererar inget shoppingförslag",
+  "undo": "Ångra",
+  "unit": "Enhet",
+  "unitPack": "förpackning",
+  "unlockFullResponse": "Lås upp fullständigt svar",
+  "unmark": "Avmarkera",
+  "upgrade": "Uppgradera",
+  "validForLimitedTime": "Gäller under begränsad tid",
+  "version": "Version",
+  "viewActive": "Visa Aktiva",
+  "viewDetails": "Visa detaljer",
+  "viewHistory": "Visa Historik",
+  "viewItems": "Visa objekt",
+  "viewList": "Visa lista",
+  "viewPro": "Visa Pro",
+  "viewRecipe": "Se recept",
+  "voiceCommandContent": "Tala naturligt för att hantera din lista!\n\nExempel:\n• 'Lägg till bröd, ost och skinka'\n• 'Ta bort tvättmedel'\n• 'Byt tema till blått'\n\nDetta är en exklusiv funktion i Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Visa Planer",
+  "voiceCommandTitle": "AI-röstkommando",
+  "voiceProFeature": "Avancerade röstkommandon är Pro. Aktiverar grundläggande diktering...",
+  "voiceTranscriptionTooltip": "Röstinmatning (Gratis)",
+  "welcomeAiAssistant": "Välkommen till AI Assistant",
+  "whatToDoWithItem": "Vad skulle du vilja göra med det här föremålet?",
+  "yes": "Ja",
+  "yesLabel": "Ja"
 }

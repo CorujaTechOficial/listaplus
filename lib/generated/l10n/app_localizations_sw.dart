@@ -42,6 +42,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get copy => 'Nakili';
 
   @override
+  String get next => 'Inayofuata';
+
+  @override
   String get retry => 'Jaribu tena';
 
   @override
@@ -280,28 +283,28 @@ class AppLocalizationsSw extends AppLocalizations {
   String get language => 'Lugha';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Kireno (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Kiingereza';
 
   @override
   String get languageSystem => 'Chaguo-msingi la mfumo';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Chagua Lugha';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Tafuta lugha...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Sarafu';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Chagua Sarafu';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Tafuta sarafu...';
 
   @override
   String get appearance => 'Mwonekano';
@@ -319,14 +322,14 @@ class AppLocalizationsSw extends AppLocalizations {
   String get themeColor => 'Rangi ya mandhari';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Rangi zenye nguvu';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Tumia rangi kulingana na mandhari yako';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Zima rangi zinazobadilika ili rangi ya mandhari ianze kutumika';
 
   @override
   String get finance => 'Fedha';
@@ -568,17 +571,17 @@ class AppLocalizationsSw extends AppLocalizations {
   String get generalAssistant => 'Msaidizi Mkuu';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Gumzo Mpya';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Hakuna historia ya gumzo';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Futa Gumzo';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Je, una uhakika unataka kufuta gumzo hili? Ujumbe utapotea kabisa.';
 
   @override
   String get clearHistory => 'Futa Historia';
@@ -624,93 +627,109 @@ class AppLocalizationsSw extends AppLocalizations {
   String get continueAsGuest => 'Endelea kama mgeni';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Karibu kwenye Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Njia bora zaidi ya kupanga ununuzi wako na kuokoa pesa.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Binafsisha matumizi yako';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Chagua jinsi unavyotaka Lista Plus ionekane na ikufanyie kazi.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Hifadhi kila kitu kwenye wingu';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Data yako ilisawazishwa kwenye vifaa vyako vyote';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Shiriki na wale unaowapenda';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Sawazisha orodha na familia na marafiki kwa wakati halisi';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Fungua vipengele vyote';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Pata manufaa zaidi kutoka kwa orodha zako za ununuzi';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Thamani Bora';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Kila mwezi';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Mwaka';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Tazama mipango yote';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Jisajili';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Ghairi wakati wowote. Hakuna kujitolea.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Endelea kama mgeni';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Rejesha Ununuzi';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Je, tayari una usajili? Gusa hapa ili kuirejesha.';
+
+  @override
+  String get onboardingExit => 'Utgång';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Hebu tujue wewe';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Tutatumia hii kubinafsisha mapendekezo yako na kufanya ununuzi kuwa bora zaidi.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Ni chakula gani unachopenda zaidi?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'k.m. Pizza, Sushi, Lasagna ...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Endelea';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Ruka kwa sasa';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Tuambie chakula unachopenda ili kuendelea';
+
+  @override
+  String get settingsDefaultScreen => 'Skrini chaguomsingi ya nyumbani';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Chagua kati ya orodha ya ununuzi au gumzo la AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Orodha ya Ununuzi';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'Gumzo la AI';
 
   @override
   String loginError(String error) {
@@ -1077,364 +1096,365 @@ class AppLocalizationsSw extends AppLocalizations {
       'Ripoti hitilafu, pendekeza maboresho, au rekebisha tafsiri';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Nishati ya AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Tafuta kwenye mazungumzo...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Hakuna ujumbe uliopatikana';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Maswali yaliyopendekezwa:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Msaidizi wa ununuzi';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased kati ya $total imenunuliwa';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Inakadiriwa';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Tazama vitu';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Hakuna vipengee kwenye orodha';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Historia ndefu: Mratibu huangazia ujumbe wa hivi punde kwa utendakazi bora.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Inasikiliza...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Ongeza moja kwa moja kwenye orodha';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Fungua Majibu Kamili';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Badilisha orodha';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Hali ya Soko';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Rudi kwa Gumzo';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Maliza Ununuzi';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Karibu kwenye Msaidizi wa AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Unda orodha ya ununuzi ili kuanza kutumia gumzo mahiri.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Ninawezaje kusaidia?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Uliza kuhusu bei, mapishi, shirika...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total imenunuliwa';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Majibu ya haraka:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Amri za sauti za hali ya juu ni Pro. Inawasha imla msingi...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Tazama Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Lo! Hitilafu fulani imetokea wakati wa kupakia gumzo.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Angalia muunganisho wako au ujaribu tena baadaye.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Hii inaweza kutokea kwa sababu ya kuzunguka kwa mtandao au kutopatikana kwa muda. Tafadhali jaribu tena.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Usikivu wa Kikamilifu';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Je, ungependa kufanya nini na kipengee hiki?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Tazama Maelezo';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Fungua menyu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Tazama Kichocheo';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Kichocheo kimeundwa!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Hariri';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Futa';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Ungependa kufuta kichocheo hiki?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Je, una uhakika unataka kufuta \"$recipeName\"? Kitendo hiki hakiwezi kutenduliwa.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Viungo';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Maagizo';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Muda wa maandalizi';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Kichocheo kimehifadhiwa!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Hakuna mapishi yaliyohifadhiwa';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Unda kichocheo chako cha kwanza maalum kwa kugonga kitufe kilicho hapa chini.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Mapishi Yangu';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Kichocheo Kipya';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Inapakia mapishi yako...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Hitilafu katika kupakia mapishi';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Ongeza kiungo';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Hifadhi';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Jina la mapishi';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Maelezo mafupi';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Muda wa maandalizi (dakika)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Andika hatua moja kwa kila mstari...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Ongeza picha';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Au bandika URL ya picha';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Lebo';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Vitambulisho vya mapishi';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Imependekezwa';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Tafuta mapishi...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Chuja kwa lebo';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Wote';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Kichocheo kimefutwa';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Hifadhi mabadiliko';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Badilisha Kichocheo';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Kichocheo Kipya';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Inahitajika';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Chagua chanzo cha picha';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Matunzio';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Weka URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Picha ya mapishi';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Ondoa picha';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Mpangaji wa Chakula';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Mtazamo wa kila mwezi';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Mtazamo wa kila wiki';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Hakuna milo iliyopangwa';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Gusa siku ili kuongeza chakula';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Inapakia mpango wa chakula...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Hitilafu katika kupakia mpango wa chakula';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Ongeza Mlo';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Hariri Mlo';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Ondoa chakula';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Mlo umeondolewa';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count huduma zingine',
+      one: '$count inahudumia',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Huduma';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Kumbuka (si lazima)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Chagua kichocheo';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Tafuta mapishi...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Hakuna mapishi yaliyopatikana';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Unda mapishi kwenye kichupo cha Mapishi kwanza';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Ongeza kwenye mpango';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count kati ya milo $total imepangwa';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Tengeneza orodha ya ununuzi';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Je, ungependa kuongeza viungo vyote kutoka kwenye milo iliyopangwa wiki hii kwenye orodha yako ya ununuzi?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count kiungo/viungo vimeongezwa kwenye orodha yako!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Hakuna viungo vya kuongeza. Panga milo kadhaa ukitumia mapishi kwanza.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'Unda orodha ya ununuzi kwanza.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Kifungua kinywa';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Chakula cha mchana';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Chakula cha jioni';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Vitafunio';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Tarehe';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Hakuna kilichopangwa kwa wiki hii';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Gusa siku yoyote ili uanze kupanga milo yako!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return 'Dakika $minutes';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Alika kwenye orodha';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Shiriki programu';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Alika marafiki kutumia Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Ninatumia Lista Plus kupanga ununuzi wangu! Pakua kupitia kiungo changu na sote tupate siku 7 za Premium bila malipo: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Pata siku 7 za Lista Plus Premium!';
 }

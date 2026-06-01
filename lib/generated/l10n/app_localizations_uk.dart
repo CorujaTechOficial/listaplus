@@ -42,6 +42,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get copy => 'Копіювати';
 
   @override
+  String get next => 'Далі';
+
+  @override
   String get retry => 'Повторити';
 
   @override
@@ -282,28 +285,28 @@ class AppLocalizationsUk extends AppLocalizations {
   String get language => 'Мова';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Бразилія)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'англійська';
 
   @override
   String get languageSystem => 'Системна за замовчуванням';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Виберіть мову';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Мова пошуку...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Валюта';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Виберіть Валюта';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Пошук валюти...';
 
   @override
   String get appearance => 'Зовнішній вигляд';
@@ -321,14 +324,14 @@ class AppLocalizationsUk extends AppLocalizations {
   String get themeColor => 'Колір теми';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Динамічні кольори';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Використовуйте кольори на основі шпалер';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Вимкніть динамічні кольори, щоб колір теми почав діяти';
 
   @override
   String get finance => 'Фінанси';
@@ -570,17 +573,17 @@ class AppLocalizationsUk extends AppLocalizations {
   String get generalAssistant => 'Загальний помічник';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Новий чат';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Немає історії чату';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Видалити чат';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Ви впевнені, що хочете видалити цей чат? Повідомлення буде остаточно втрачено.';
 
   @override
   String get clearHistory => 'Очистити історію';
@@ -626,93 +629,108 @@ class AppLocalizationsUk extends AppLocalizations {
   String get continueAsGuest => 'Продовжити як гість';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Ласкаво просимо до Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Найрозумніший спосіб організувати покупки та заощадити гроші.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Персоналізуйте свій досвід';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Виберіть, як ви хочете, щоб Lista Plus виглядала та працювала для вас.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Збережіть усе в хмарі';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Ваші дані синхронізуються на всіх ваших пристроях';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Поділіться з тими, кого любите';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Синхронізуйте списки з родиною та друзями в реальному часі';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Розблокуйте всі функції';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Отримайте максимум від своїх списків покупок';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Найкраще значення';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Щомісяця';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Щорічний';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Переглянути всі плани';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Підпишіться';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Скасувати будь-коли. Без зобов\'язань.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Продовжити як гість';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Відновити';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Уже є підписка? Натисніть тут, щоб відновити його.';
+
+  @override
+  String get onboardingExit => 'Вихід';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Давайте з вами познайомимося';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Ми використаємо це, щоб персоналізувати ваші пропозиції та зробити покупки розумнішими.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Яка твоя улюблена їжа?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'напр. Піца, суші, лазанья...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Продовжити';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Пропустити поки що';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Скажіть нам свою улюблену їжу, щоб продовжити';
+
+  @override
+  String get settingsDefaultScreen => 'Головний екран за умовчанням';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Виберіть список покупок або чат AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Список покупок';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'ШІ Чат';
 
   @override
   String loginError(String error) {
@@ -720,7 +738,7 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'Список Плюс Преміум';
 
   @override
   String get premiumUpgrade => 'Оновіть, щоб розблокувати';
@@ -1084,361 +1102,364 @@ class AppLocalizationsUk extends AppLocalizations {
   String get aiEnergy => 'AI Energy';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Пошук у розмові...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Повідомлень не знайдено';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Запропоновані запитання:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Торговий помічник';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'Придбано $purchased з $total';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Розрахункова';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Переглянути предмети';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Немає елементів у списку';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Довга історія: помічник зосереджується на останніх повідомленнях для кращої продуктивності.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'слухаю...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Додайте безпосередньо до списку';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Розблокувати повну відповідь';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Переключити список';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Ринковий режим';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Назад до чату';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Завершіть покупки';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Ласкаво просимо до AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Створіть список покупок, щоб почати користуватися розумним чатом.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Чим я можу допомогти?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Запитайте про ціни, рецепти, організацію...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total придбано';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Швидкі відповіді:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Розширені голосові команди Pro. Увімкнення основного диктування...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Переглянути Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Ой! Під час завантаження чату сталася помилка.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Перевірте підключення або повторіть спробу пізніше.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Це може статися через коливання мережі або тимчасову недоступність. Спробуйте ще раз.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Активне слухання';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Що б ви хотіли зробити з цим предметом?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Переглянути деталі';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Відкрити меню';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Переглянути рецепт';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Рецепт створено!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Редагувати';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Видалити';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Видалити цей рецепт?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Ви впевнені, що хочете видалити \"$recipeName\"? Цю дію не можна скасувати.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Інгредієнти';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Інструкції';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Час підготовки';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Рецепт збережено!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Немає збережених рецептів';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Створіть свій перший індивідуальний рецепт, натиснувши кнопку нижче.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Мої рецепти';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Новий рецепт';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Завантаження ваших рецептів...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Помилка завантаження рецептів';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Додайте інгредієнт';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'зберегти';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Назва рецепта';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Короткий опис';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Час приготування (хв)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Введіть один крок на рядок...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Додайте фото';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Або вставте URL-адресу зображення';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Теги';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Теги рецептів';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Запропоновано';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Пошук рецептів...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Фільтрувати за тегом';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'всі';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Рецепт видалено';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Зберегти зміни';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Редагувати рецепт';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Новий рецепт';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Обов\'язковий';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Виберіть джерело зображення';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Галерея';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Введіть URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Зображення рецепта';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Видалити зображення';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Планувальник їжі';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Місячний перегляд';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Тижневий перегляд';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Харчування не планується';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Торкніться дня, щоб додати страву';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Завантаження плану харчування...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Помилка завантаження плану харчування';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Додати їжу';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Редагувати їжу';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Видалити їжу';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Їжа видалена';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count порцій',
+      one: '$count порцій',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Порції';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Примітка (необов\'язково)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Виберіть рецепт';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Пошук рецептів...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Рецептів не знайдено';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Спочатку створіть рецепти на вкладці «Рецепти».';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Додати до плану';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return 'Заплановано $count з $total прийомів їжі';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Створити список покупок';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Додати всі інгредієнти із запланованих страв цього тижня до списку покупок?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count інгредієнт(ів) додано до вашого списку!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Немає інгредієнтів для додавання. Спочатку сплануйте деякі страви за рецептами.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList =>
+      'Спочатку створіть список покупок.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Сніданок';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'обід';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Вечеря';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'перекус';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Дата';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'На цей тиждень нічого не планується';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Торкніться будь-якого дня, щоб почати планувати своє харчування!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes хв';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Запросити до списку';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Поділитися програмою';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Запросіть друзів використовувати Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Для організації покупок використовую Lista Plus! Завантажте за моїм посиланням, і ми обоє отримаємо 7 днів безкоштовного доступу до Premium: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Отримайте 7 днів Lista Plus Premium!';
 }

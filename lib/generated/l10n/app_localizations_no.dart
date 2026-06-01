@@ -42,6 +42,9 @@ class AppLocalizationsNo extends AppLocalizations {
   String get copy => 'Kopier';
 
   @override
+  String get next => 'Neste';
+
+  @override
   String get retry => 'Prøv igjen';
 
   @override
@@ -281,25 +284,25 @@ class AppLocalizationsNo extends AppLocalizations {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'engelsk';
 
   @override
   String get languageSystem => 'Systemstandard';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Velg Språk';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Søk etter språk...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Valuta';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Velg Valuta';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Søk etter valuta...';
 
   @override
   String get appearance => 'Utseende';
@@ -317,14 +320,14 @@ class AppLocalizationsNo extends AppLocalizations {
   String get themeColor => 'Temafarge';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Dynamiske farger';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Bruk farger basert på bakgrunnen din';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Deaktiver dynamiske farger for at temafargen skal tre i kraft';
 
   @override
   String get finance => 'Økonomi';
@@ -566,17 +569,17 @@ class AppLocalizationsNo extends AppLocalizations {
   String get generalAssistant => 'Generell assistent';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Ny chat';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Ingen chattehistorikk';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Slett Chat';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Er du sikker på at du vil slette denne chatten? Meldingene vil gå tapt permanent.';
 
   @override
   String get clearHistory => 'Tøm historikk';
@@ -622,90 +625,105 @@ class AppLocalizationsNo extends AppLocalizations {
   String get continueAsGuest => 'Fortsett som gjest';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Velkommen til Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Den smarteste måten å organisere shoppingen på og spare penger.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Tilpass opplevelsen din';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Velg hvordan du vil at Lista Plus skal se ut og fungere for deg.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Lagre alt til skyen';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Dataene dine synkroniseres på tvers av alle enhetene dine';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Del med de du er glad i';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Synkroniser lister med familie og venner i sanntid';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Lås opp alle funksjoner';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Få mest mulig ut av handlelistene dine';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Best verdi';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Månedlig';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Årlig';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Se alle planer';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Abonner';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Avbryt når som helst. Ingen forpliktelse.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Fortsett som gjest';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Restaurere';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Har du allerede et abonnement? Trykk her for å gjenopprette den.';
+
+  @override
+  String get onboardingExit => 'Gå';
+
+  @override
+  String get onboardingPersonalizationTitle => 'La oss bli kjent med deg';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Vi bruker dette til å tilpasse forslagene dine og gjøre shopping smartere.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Hva er favorittmaten din?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'f.eks. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Fortsette';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Hopp over for nå';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Fortell oss din favorittmat for å fortsette';
+
+  @override
+  String get settingsDefaultScreen => 'Standard startskjerm';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Velg mellom handleliste eller AI-chat';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Handleliste';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -804,7 +822,7 @@ class AppLocalizationsNo extends AppLocalizations {
   String get themeAmber => 'Rav';
 
   @override
-  String get themeTeal => 'Teal';
+  String get themeTeal => 'Blågrønn';
 
   @override
   String get themeBrown => 'Brun';
@@ -1074,344 +1092,346 @@ class AppLocalizationsNo extends AppLocalizations {
       'Rapporter feil, foreslå forbedringer eller fiks oversettelser';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI energi';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Søk i samtale...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Ingen meldinger funnet';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Foreslåtte spørsmål:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Handleassistent';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased av $total kjøpt';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimert';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Vis elementer';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Ingen elementer i listen';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Lang historie: assistenten fokuserer på de siste meldingene for bedre ytelse.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Lytter...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Legg direkte til listen';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Lås opp full respons';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Bytt liste';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Markedsmodus';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Tilbake til Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Fullfør shopping';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Velkommen til AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Lag en handleliste for å begynne å bruke smartchatten.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hvordan kan jeg hjelpe?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Spør om priser, oppskrifter, organisering...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total kjøpt';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Raske svar:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Avanserte talekommandoer er Pro. Aktiverer grunnleggende diktering ...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Vis Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Oops! Noe gikk galt med å laste chatten.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Sjekk tilkoblingen eller prøv igjen senere.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Dette kan oppstå på grunn av nettverkssvingninger eller midlertidig utilgjengelighet. Vennligst prøv igjen.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktiv lytting';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Hva vil du gjøre med denne varen?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Se detaljer';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Åpne menyen';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Se oppskrift';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Oppskrift laget!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Redigere';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Slett';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Vil du slette denne oppskriften?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Er du sikker på at du vil slette \"$recipeName\"? Denne handlingen kan ikke angres.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingredienser';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instruksjoner';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Forberedelsestid';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Oppskriften er lagret!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Ingen oppskrifter lagret';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Lag din første egendefinerte oppskrift ved å trykke på knappen nedenfor.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Mine oppskrifter';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Ny oppskrift';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Laster inn oppskriftene dine...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Feil ved innlasting av oppskrifter';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Tilsett ingrediens';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Spare';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Navn på oppskriften';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Kort beskrivelse';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Forberedelsestid (minutter)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Skriv ett trinn per linje...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Legg til bilde';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Eller lim inn en bilde-URL';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tagger';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Oppskriftsetiketter';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Foreslått';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Søk etter oppskrifter...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrer etter tag';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Alle';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Oppskriften er slettet';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Lagre endringer';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Rediger oppskrift';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Ny oppskrift';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Obligatorisk';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Velg bildekilde';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galleri';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Skriv inn URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Oppskriftsbilde';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Fjern bildet';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Måltidsplanlegger';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Månedlig visning';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Ukentlig visning';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Ingen måltider planlagt';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint =>
+      'Trykk på en dag for å legge til et måltid';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Laster inn måltidsplan...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Feil ved innlasting av måltidsplan';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Legg til måltid';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Rediger måltid';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Fjern måltidet';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Måltid fjernet';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count porsjoner',
+      one: '$count porsjoner',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Porsjoner';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Merknad (valgfritt)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Velg en oppskrift';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Søk etter oppskrifter...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Ingen oppskrifter funnet';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Lag oppskrifter i Oppskrifter-fanen først';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Legg til i planen';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count av $total måltider planlagt';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Generer handleliste';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Legg til alle ingrediensene fra planlagte måltider denne uken på handlelisten din?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count ingrediens(er) lagt til i listen din!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Ingen ingredienser å legge til. Planlegg noen måltider med oppskrifter først.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'Lag en handleliste først.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Frokost';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Lunsj';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Middag';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Matbit';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Dato';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Ingenting planlagt denne uken';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Trykk på hvilken som helst dag for å begynne å planlegge måltidene dine!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -1419,21 +1439,21 @@ class AppLocalizationsNo extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Inviter til liste';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Del app';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Inviter venner til å bruke Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Jeg bruker Lista Plus for å organisere handlen min! Last ned via linken min, så får vi begge 7 dager Premium gratis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Få 7 dager med Lista Plus Premium!';
 }
 
 /// The translations for Norwegian, as used in Norway (`no_NO`).
@@ -1472,6 +1492,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get copy => 'Kopier';
+
+  @override
+  String get next => 'Neste';
 
   @override
   String get retry => 'Prøv igjen';
@@ -1713,10 +1736,25 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'engelsk';
 
   @override
   String get languageSystem => 'Systemstandard';
+
+  @override
+  String get chooseLanguage => 'Velg Språk';
+
+  @override
+  String get searchLanguage => 'Søk etter språk...';
+
+  @override
+  String get currency => 'Valuta';
+
+  @override
+  String get chooseCurrency => 'Velg Valuta';
+
+  @override
+  String get searchCurrency => 'Søk etter valuta...';
 
   @override
   String get appearance => 'Utseende';
@@ -1732,6 +1770,16 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get themeColor => 'Temafarge';
+
+  @override
+  String get dynamicColors => 'Dynamiske farger';
+
+  @override
+  String get dynamicColorsSubtitle => 'Bruk farger basert på bakgrunnen din';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Deaktiver dynamiske farger for at temafargen skal tre i kraft';
 
   @override
   String get finance => 'Økonomi';
@@ -1973,6 +2021,19 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get generalAssistant => 'Generell assistent';
 
   @override
+  String get newChat => 'Ny chat';
+
+  @override
+  String get noHistory => 'Ingen chattehistorikk';
+
+  @override
+  String get deleteSession => 'Slett Chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Er du sikker på at du vil slette denne chatten? Meldingene vil gå tapt permanent.';
+
+  @override
   String get clearHistory => 'Tøm historikk';
 
   @override
@@ -2014,6 +2075,110 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get continueAsGuest => 'Fortsett som gjest';
+
+  @override
+  String get onboardingWelcomeTitle => 'Velkommen til Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Den smarteste måten å organisere shoppingen på og spare penger.';
+
+  @override
+  String get onboardingSetupTitle => 'Tilpass opplevelsen din';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Velg hvordan du vil at Lista Plus skal se ut og fungere for deg.';
+
+  @override
+  String get onboardingLoginTitle => 'Lagre alt til skyen';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Dataene dine synkroniseres på tvers av alle enhetene dine';
+
+  @override
+  String get onboardingShareTitle => 'Del med de du er glad i';
+
+  @override
+  String get onboardingShareDesc =>
+      'Synkroniser lister med familie og venner i sanntid';
+
+  @override
+  String get onboardingPremiumTitle => 'Lås opp alle funksjoner';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Få mest mulig ut av handlelistene dine';
+
+  @override
+  String get onboardingAnnualBadge => 'Best verdi';
+
+  @override
+  String get onboardingMonthlyLabel => 'Månedlig';
+
+  @override
+  String get onboardingAnnualLabel => 'Årlig';
+
+  @override
+  String get onboardingViewAllPlans => 'Se alle planer';
+
+  @override
+  String get onboardingSubscribeCta => 'Abonner';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Avbryt når som helst. Ingen forpliktelse.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Fortsett som gjest';
+
+  @override
+  String get onboardingRestore => 'Restaurere';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Har du allerede et abonnement? Trykk her for å gjenopprette den.';
+
+  @override
+  String get onboardingExit => 'Gå';
+
+  @override
+  String get onboardingPersonalizationTitle => 'La oss bli kjent med deg';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Vi bruker dette til å tilpasse forslagene dine og gjøre shopping smartere.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Hva er favorittmaten din?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'f.eks. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Fortsette';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Hopp over for nå';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Fortell oss din favorittmat for å fortsette';
+
+  @override
+  String get settingsDefaultScreen => 'Standard startskjerm';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Velg mellom handleliste eller AI-chat';
+
+  @override
+  String get settingsScreenList => 'Handleliste';
+
+  @override
+  String get settingsScreenChat => 'AI Chat';
 
   @override
   String loginError(String error) {
@@ -2109,7 +2274,7 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get themeAmber => 'Rav';
 
   @override
-  String get themeTeal => 'Teal';
+  String get themeTeal => 'Blågrønn';
 
   @override
   String get themeBrown => 'Brun';
@@ -2379,104 +2544,366 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
       'Rapporter feil, foreslå forbedringer, eller fiks oversettelser';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI energi';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Søk i samtale...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Ingen meldinger funnet';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Foreslåtte spørsmål:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Handleassistent';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased av $total kjøpt';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimert';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Vis elementer';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Ingen elementer i listen';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Lang historie: assistenten fokuserer på de siste meldingene for bedre ytelse.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Lytter...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Legg direkte til listen';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Lås opp full respons';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Bytt liste';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Markedsmodus';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Tilbake til Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Fullfør shopping';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Velkommen til AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Lag en handleliste for å begynne å bruke smartchatten.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hvordan kan jeg hjelpe?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Spør om priser, oppskrifter, organisering...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total kjøpt';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Raske svar:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Avanserte talekommandoer er Pro. Aktiverer grunnleggende diktering ...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Vis Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Oops! Noe gikk galt med å laste chatten.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Sjekk tilkoblingen eller prøv igjen senere.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Dette kan oppstå på grunn av nettverkssvingninger eller midlertidig utilgjengelighet. Vennligst prøv igjen.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktiv lytting';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Hva vil du gjøre med denne varen?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Se detaljer';
+
+  @override
+  String get openMenu => 'Åpne menyen';
+
+  @override
+  String get viewRecipe => 'Se oppskrift';
+
+  @override
+  String get recipeCreated => 'Oppskrift laget!';
+
+  @override
+  String get editRecipe => 'Redigere';
+
+  @override
+  String get deleteRecipe => 'Slett';
+
+  @override
+  String get deleteRecipeConfirm => 'Vil du slette denne oppskriften?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Er du sikker på at du vil slette \"$recipeName\"? Denne handlingen kan ikke angres.';
+  }
+
+  @override
+  String get ingredients => 'Ingredienser';
+
+  @override
+  String get instructions => 'Instruksjoner';
+
+  @override
+  String get prepTime => 'Forberedelsestid';
+
+  @override
+  String get recipeSaved => 'Oppskriften er lagret!';
+
+  @override
+  String get noRecipesSaved => 'Ingen oppskrifter lagret';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Lag din første egendefinerte oppskrift ved å trykke på knappen nedenfor.';
+
+  @override
+  String get myRecipes => 'Mine oppskrifter';
+
+  @override
+  String get newRecipe => 'Ny oppskrift';
+
+  @override
+  String get loadingRecipes => 'Laster oppskriftene dine ...';
+
+  @override
+  String get errorLoadingRecipes => 'Feil ved innlasting av oppskrifter';
+
+  @override
+  String get addIngredient => 'Tilsett ingrediens';
+
+  @override
+  String get saveRecipe => 'Spare';
+
+  @override
+  String get recipeName => 'Navn på oppskriften';
+
+  @override
+  String get shortDescription => 'Kort beskrivelse';
+
+  @override
+  String get prepTimeMinutes => 'Forberedelsestid (minutter)';
+
+  @override
+  String get instructionsHint => 'Skriv ett trinn per linje...';
+
+  @override
+  String get addPhoto => 'Legg til bilde';
+
+  @override
+  String get imageUrlPlaceholder => 'Eller lim inn en bilde-URL';
+
+  @override
+  String get tags => 'Tagger';
+
+  @override
+  String get recipeTags => 'Oppskriftsetiketter';
+
+  @override
+  String get suggestedTags => 'Foreslått';
+
+  @override
+  String get searchRecipes => 'Søk etter oppskrifter...';
+
+  @override
+  String get filterByTag => 'Filtrer etter tag';
+
+  @override
+  String get allTags => 'Alle';
+
+  @override
+  String get recipeDeleted => 'Oppskriften er slettet';
+
+  @override
+  String get saveChanges => 'Lagre endringer';
+
+  @override
+  String get editRecipeTitle => 'Rediger oppskrift';
+
+  @override
+  String get newRecipeTitle => 'Ny oppskrift';
+
+  @override
+  String get requiredField => 'Obligatorisk';
+
+  @override
+  String get chooseImageSource => 'Velg bildekilde';
+
+  @override
+  String get gallery => 'Galleri';
+
+  @override
+  String get enterUrl => 'Skriv inn URL';
+
+  @override
+  String get recipeImage => 'Oppskriftsbilde';
+
+  @override
+  String get removeImage => 'Fjern bildet';
+
+  @override
+  String get mealPlannerTitle => 'Måltidsplanlegger';
+
+  @override
+  String get mealPlannerViewMonthly => 'Månedlig visning';
+
+  @override
+  String get mealPlannerViewWeekly => 'Ukentlig visning';
+
+  @override
+  String get mealPlannerNoMeals => 'Ingen måltider planlagt';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Trykk på en dag for å legge til et måltid';
+
+  @override
+  String get mealPlannerLoading => 'Laster inn måltidsplan...';
+
+  @override
+  String get mealPlannerError => 'Feil ved innlasting av måltidsplan';
+
+  @override
+  String get mealPlannerAddMeal => 'Legg til måltid';
+
+  @override
+  String get mealPlannerEditMeal => 'Rediger måltid';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Fjern måltidet';
+
+  @override
+  String get mealPlannerMealDeleted => 'Måltid fjernet';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porsjoner',
+      one: '$count porsjoner',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porsjoner';
+
+  @override
+  String get mealPlannerNoteLabel => 'Merknad (valgfritt)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Velg en oppskrift';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Søk etter oppskrifter...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Ingen oppskrifter funnet';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Lag oppskrifter i Oppskrifter-fanen først';
+
+  @override
+  String get mealPlannerSave => 'Legg til i planen';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count av $total måltider planlagt';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Generer handleliste';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Legg til alle ingrediensene fra planlagte måltider denne uken på handlelisten din?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingrediens(er) lagt til i listen din!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Ingen ingredienser å legge til. Planlegg noen måltider med oppskrifter først.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Lag en handleliste først.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Frokost';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Lunsj';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Middag';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Matbit';
+
+  @override
+  String get mealPlannerDateLabel => 'Dato';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Ingenting planlagt denne uken';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Trykk på hvilken som helst dag for å begynne å planlegge måltidene dine!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get inviteToList => 'Inviter til liste';
+
+  @override
+  String get shareApp => 'Del app';
+
+  @override
+  String get shareAppDescription => 'Inviter venner til å bruke Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Jeg bruker Lista Plus for å organisere handlen min! Last ned via linken min, så får vi begge 7 dager Premium gratis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Få 7 dager med Lista Plus Premium!';
 }

@@ -42,6 +42,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get copy => 'Copiar';
 
   @override
+  String get next => 'Próximo';
+
+  @override
   String get retry => 'Reintentar';
 
   @override
@@ -283,7 +286,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Inglés';
 
   @override
   String get languageSystem => 'Predeterminado del sistema';
@@ -295,13 +298,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get searchLanguage => 'Buscar idioma...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Divisa';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Seleccionar moneda';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Buscar moneda...';
 
   @override
   String get appearance => 'Apariencia';
@@ -327,7 +330,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Desactive los colores dinámicos para que el color del tema surta efecto';
 
   @override
   String get finance => 'Finanzas';
@@ -569,17 +572,17 @@ class AppLocalizationsEs extends AppLocalizations {
   String get generalAssistant => 'Asistente general';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Nuevo chat';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Sin historial de chat';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Eliminar chat';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      '¿Estás seguro de que quieres eliminar este chat? Los mensajes se perderán permanentemente.';
 
   @override
   String get clearHistory => 'Limpiar historial';
@@ -626,93 +629,109 @@ class AppLocalizationsEs extends AppLocalizations {
   String get continueAsGuest => 'Continuar como invitado';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Bienvenido a Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'La forma más inteligente de organizar tus compras y ahorrar dinero.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Personaliza tu experiencia';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Elija cómo desea que Lista Plus se vea y funcione para usted.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Guarda todo en la nube';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Tus datos sincronizados en todos tus dispositivos';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Comparte con tus seres queridos';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Sincroniza listas con familiares y amigos en tiempo real';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Desbloquea todas las funciones';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Sácale el máximo provecho a tus listas de compras';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Mejor valor';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Mensual';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Anual';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Ver todos los planes';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Suscribir';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Cancele en cualquier momento. Sin compromiso.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Continuar como invitado';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Restaurar';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      '¿Ya tienes una suscripción? Toque aquí para restaurarlo.';
+
+  @override
+  String get onboardingExit => 'Salida';
+
+  @override
+  String get onboardingPersonalizationTitle => 'vamos a conocerte';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Usaremos esto para personalizar sus sugerencias y hacer que las compras sean más inteligentes.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      '¿Cuál es tu comida favorita?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'p.ej. Pizza, sushi, lasaña...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Continuar';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Saltar por ahora';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Cuéntanos tu comida favorita para continuar';
+
+  @override
+  String get settingsDefaultScreen => 'Pantalla de inicio predeterminada';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Elija entre lista de compras o chat AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Lista de compras';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'Chat de IA';
 
   @override
   String loginError(String error) {
@@ -1079,106 +1098,107 @@ class AppLocalizationsEs extends AppLocalizations {
       'Reporta errores, sugiere mejoras o corrige traducciones';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energía de IA';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Buscar en conversación...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'No se encontraron mensajes';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Preguntas sugeridas:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'asistente de compras';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased de $total comprado';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimado';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Ver artículos';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'No hay elementos en la lista';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Larga historia: el asistente se centra en los mensajes más recientes para un mejor rendimiento.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Escuchando...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Añadir directamente a la lista';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Desbloquear respuesta completa';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Lista de cambios';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Modo de mercado';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Volver al chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Terminar de comprar';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Bienvenido al Asistente de IA';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Crea una lista de compras para comenzar a usar el chat inteligente.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => '¿Cómo puedo ayudar?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Pregunta por precios, recetas, organización...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total comprado';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Respuestas rápidas:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Los comandos de voz avanzados son Pro. Habilitando el dictado básico...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Ver profesional';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => '¡Ups! Algo salió mal al cargar el chat.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Comprueba tu conexión o vuelve a intentarlo más tarde.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Esto puede ocurrir debido a oscilaciones de la red o indisponibilidad temporal. Por favor inténtalo de nuevo.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Escucha activa';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => '¿Qué te gustaría hacer con este artículo?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ver detalles';
 
   @override
   String get openMenu => 'Abrir menú';
@@ -1421,25 +1441,25 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes minutos';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Invitar a la lista';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Compartir aplicación';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Invita a tus amigos a usar Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return '¡Estoy usando Lista Plus para organizar mis compras! Descárguelo a través de mi enlace y ambos obtendremos 7 días de Premium gratis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => '¡Obtén 7 días de Lista Plus Premium!';
 }
 
 /// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).
@@ -1480,6 +1500,9 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get copy => 'Copiar';
 
   @override
+  String get next => 'Próximo';
+
+  @override
   String get retry => 'Reintentar';
 
   @override
@@ -1721,7 +1744,7 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Inglés';
 
   @override
   String get languageSystem => 'Predeterminado del sistema';
@@ -1731,6 +1754,15 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
   @override
   String get searchLanguage => 'Buscar idioma...';
+
+  @override
+  String get currency => 'Divisa';
+
+  @override
+  String get chooseCurrency => 'Seleccionar moneda';
+
+  @override
+  String get searchCurrency => 'Buscar moneda...';
 
   @override
   String get appearance => 'Apariencia';
@@ -1753,6 +1785,10 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   @override
   String get dynamicColorsSubtitle =>
       'Usa colores basados en tu fondo de pantalla';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Desactive los colores dinámicos para que el color del tema surta efecto';
 
   @override
   String get finance => 'Finanzas';
@@ -1994,6 +2030,19 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get generalAssistant => 'Asistente general';
 
   @override
+  String get newChat => 'Nuevo chat';
+
+  @override
+  String get noHistory => 'Sin historial de chat';
+
+  @override
+  String get deleteSession => 'Eliminar chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      '¿Estás seguro de que quieres eliminar este chat? Los mensajes se perderán permanentemente.';
+
+  @override
   String get clearHistory => 'Limpiar historial';
 
   @override
@@ -2036,6 +2085,111 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
   @override
   String get continueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get onboardingWelcomeTitle => 'Bienvenido a Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'La forma más inteligente de organizar tus compras y ahorrar dinero.';
+
+  @override
+  String get onboardingSetupTitle => 'Personaliza tu experiencia';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Elija cómo desea que Lista Plus se vea y funcione para usted.';
+
+  @override
+  String get onboardingLoginTitle => 'Guarda todo en la nube';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Tus datos sincronizados en todos tus dispositivos';
+
+  @override
+  String get onboardingShareTitle => 'Comparte con tus seres queridos';
+
+  @override
+  String get onboardingShareDesc =>
+      'Sincroniza listas con familiares y amigos en tiempo real';
+
+  @override
+  String get onboardingPremiumTitle => 'Desbloquea todas las funciones';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Sácale el máximo provecho a tus listas de compras';
+
+  @override
+  String get onboardingAnnualBadge => 'Mejor valor';
+
+  @override
+  String get onboardingMonthlyLabel => 'Mensual';
+
+  @override
+  String get onboardingAnnualLabel => 'Anual';
+
+  @override
+  String get onboardingViewAllPlans => 'Ver todos los planes';
+
+  @override
+  String get onboardingSubscribeCta => 'Suscribir';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Cancele en cualquier momento. Sin compromiso.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get onboardingRestore => 'Restaurar';
+
+  @override
+  String get onboardingRestoreDesc =>
+      '¿Ya tienes una suscripción? Toque aquí para restaurarlo.';
+
+  @override
+  String get onboardingExit => 'Salida';
+
+  @override
+  String get onboardingPersonalizationTitle => 'vamos a conocerte';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Usaremos esto para personalizar sus sugerencias y hacer que las compras sean más inteligentes.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      '¿Cuál es tu comida favorita?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'p.ej. Pizza, sushi, lasaña...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Continuar';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Saltar por ahora';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Cuéntanos tu comida favorita para continuar';
+
+  @override
+  String get settingsDefaultScreen => 'Pantalla de inicio predeterminada';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Elija entre lista de compras o chat AI';
+
+  @override
+  String get settingsScreenList => 'Lista de compras';
+
+  @override
+  String get settingsScreenChat => 'Chat de IA';
 
   @override
   String loginError(String error) {
@@ -2402,106 +2556,107 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
       'Reporta errores, sugiere mejoras o corrige traducciones';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energía de IA';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Buscar en conversación...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'No se encontraron mensajes';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Preguntas sugeridas:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'asistente de compras';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased de $total comprado';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimado';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Ver artículos';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'No hay elementos en la lista';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Larga historia: el asistente se centra en los mensajes más recientes para un mejor rendimiento.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Escuchando...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Añadir directamente a la lista';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Desbloquear respuesta completa';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Lista de cambios';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Modo de mercado';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Volver al chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Terminar de comprar';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Bienvenido al Asistente de IA';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Crea una lista de compras para comenzar a usar el chat inteligente.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => '¿Cómo puedo ayudar?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Pregunta por precios, recetas, organización...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total comprado';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Respuestas rápidas:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Los comandos de voz avanzados son Pro. Habilitando el dictado básico...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Ver profesional';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => '¡Ups! Algo salió mal al cargar el chat.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Comprueba tu conexión o vuelve a intentarlo más tarde.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Esto puede ocurrir debido a oscilaciones de la red o indisponibilidad temporal. Por favor inténtalo de nuevo.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Escucha activa';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => '¿Qué te gustaría hacer con este artículo?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ver detalles';
 
   @override
   String get openMenu => 'Abrir menú';
@@ -2746,6 +2901,23 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Invitar a la lista';
+
+  @override
+  String get shareApp => 'Compartir aplicación';
+
+  @override
+  String get shareAppDescription => 'Invita a tus amigos a usar Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return '¡Estoy usando Lista Plus para organizar mis compras! Descárguelo a través de mi enlace y ambos obtendremos 7 días de Premium gratis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => '¡Obtén 7 días de Lista Plus Premium!';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -2786,6 +2958,9 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String get copy => 'Copiar';
 
   @override
+  String get next => 'Próximo';
+
+  @override
   String get retry => 'Reintentar';
 
   @override
@@ -3027,7 +3202,7 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Inglés';
 
   @override
   String get languageSystem => 'Predeterminado del sistema';
@@ -3037,6 +3212,15 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get searchLanguage => 'Buscar idioma...';
+
+  @override
+  String get currency => 'Divisa';
+
+  @override
+  String get chooseCurrency => 'Seleccionar moneda';
+
+  @override
+  String get searchCurrency => 'Buscar moneda...';
 
   @override
   String get appearance => 'Apariencia';
@@ -3059,6 +3243,10 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   @override
   String get dynamicColorsSubtitle =>
       'Usa colores basados en tu fondo de pantalla';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Desactive los colores dinámicos para que el color del tema surta efecto';
 
   @override
   String get finance => 'Finanzas';
@@ -3300,6 +3488,19 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String get generalAssistant => 'Asistente general';
 
   @override
+  String get newChat => 'Nuevo chat';
+
+  @override
+  String get noHistory => 'Sin historial de chat';
+
+  @override
+  String get deleteSession => 'Eliminar chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      '¿Estás seguro de que quieres eliminar este chat? Los mensajes se perderán permanentemente.';
+
+  @override
   String get clearHistory => 'Limpiar historial';
 
   @override
@@ -3342,6 +3543,111 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get continueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get onboardingWelcomeTitle => 'Bienvenido a Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'La forma más inteligente de organizar tus compras y ahorrar dinero.';
+
+  @override
+  String get onboardingSetupTitle => 'Personaliza tu experiencia';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Elija cómo desea que Lista Plus se vea y funcione para usted.';
+
+  @override
+  String get onboardingLoginTitle => 'Guarda todo en la nube';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Tus datos sincronizados en todos tus dispositivos';
+
+  @override
+  String get onboardingShareTitle => 'Comparte con tus seres queridos';
+
+  @override
+  String get onboardingShareDesc =>
+      'Sincroniza listas con familiares y amigos en tiempo real';
+
+  @override
+  String get onboardingPremiumTitle => 'Desbloquea todas las funciones';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Sácale el máximo provecho a tus listas de compras';
+
+  @override
+  String get onboardingAnnualBadge => 'Mejor valor';
+
+  @override
+  String get onboardingMonthlyLabel => 'Mensual';
+
+  @override
+  String get onboardingAnnualLabel => 'Anual';
+
+  @override
+  String get onboardingViewAllPlans => 'Ver todos los planes';
+
+  @override
+  String get onboardingSubscribeCta => 'Suscribir';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Cancele en cualquier momento. Sin compromiso.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get onboardingRestore => 'Restaurar';
+
+  @override
+  String get onboardingRestoreDesc =>
+      '¿Ya tienes una suscripción? Toque aquí para restaurarlo.';
+
+  @override
+  String get onboardingExit => 'Salida';
+
+  @override
+  String get onboardingPersonalizationTitle => 'vamos a conocerte';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Usaremos esto para personalizar sus sugerencias y hacer que las compras sean más inteligentes.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      '¿Cuál es tu comida favorita?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'p.ej. Pizza, sushi, lasaña...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Continuar';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Saltar por ahora';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Cuéntanos tu comida favorita para continuar';
+
+  @override
+  String get settingsDefaultScreen => 'Pantalla de inicio predeterminada';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Elija entre lista de compras o chat AI';
+
+  @override
+  String get settingsScreenList => 'Lista de compras';
+
+  @override
+  String get settingsScreenChat => 'Chat de IA';
 
   @override
   String loginError(String error) {
@@ -3708,106 +4014,107 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
       'Reporta errores, sugiere mejoras o corrige traducciones';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energía de IA';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Buscar en conversación...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'No se encontraron mensajes';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Preguntas sugeridas:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'asistente de compras';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased de $total comprado';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimado';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Ver artículos';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'No hay elementos en la lista';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Larga historia: el asistente se centra en los mensajes más recientes para un mejor rendimiento.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Escuchando...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Añadir directamente a la lista';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Desbloquear respuesta completa';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Lista de cambios';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Modo de mercado';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Volver al chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Terminar de comprar';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Bienvenido al Asistente de IA';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Crea una lista de compras para comenzar a usar el chat inteligente.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => '¿Cómo puedo ayudar?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Pregunta por precios, recetas, organización...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total comprado';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Respuestas rápidas:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Los comandos de voz avanzados son Pro. Habilitando el dictado básico...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Ver profesional';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => '¡Ups! Algo salió mal al cargar el chat.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Comprueba tu conexión o vuelve a intentarlo más tarde.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Esto puede ocurrir debido a oscilaciones de la red o indisponibilidad temporal. Por favor inténtalo de nuevo.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Escucha activa';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => '¿Qué te gustaría hacer con este artículo?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ver detalles';
 
   @override
   String get openMenu => 'Abrir menú';
@@ -4052,6 +4359,23 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Invitar a la lista';
+
+  @override
+  String get shareApp => 'Compartir aplicación';
+
+  @override
+  String get shareAppDescription => 'Invita a tus amigos a usar Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return '¡Estoy usando Lista Plus para organizar mis compras! Descárguelo a través de mi enlace y ambos obtendremos 7 días de Premium gratis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => '¡Obtén 7 días de Lista Plus Premium!';
 }
 
 /// The translations for Spanish Castilian, as used in the United States (`es_US`).
@@ -4092,6 +4416,9 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get copy => 'Copiar';
 
   @override
+  String get next => 'Próximo';
+
+  @override
   String get retry => 'Reintentar';
 
   @override
@@ -4333,7 +4660,7 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Inglés';
 
   @override
   String get languageSystem => 'Predeterminado del sistema';
@@ -4343,6 +4670,15 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
 
   @override
   String get searchLanguage => 'Buscar idioma...';
+
+  @override
+  String get currency => 'Divisa';
+
+  @override
+  String get chooseCurrency => 'Seleccionar moneda';
+
+  @override
+  String get searchCurrency => 'Buscar moneda...';
 
   @override
   String get appearance => 'Apariencia';
@@ -4365,6 +4701,10 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   @override
   String get dynamicColorsSubtitle =>
       'Usa colores basados en tu fondo de pantalla';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Desactive los colores dinámicos para que el color del tema surta efecto';
 
   @override
   String get finance => 'Finanzas';
@@ -4606,6 +4946,19 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get generalAssistant => 'Asistente general';
 
   @override
+  String get newChat => 'Nuevo chat';
+
+  @override
+  String get noHistory => 'Sin historial de chat';
+
+  @override
+  String get deleteSession => 'Eliminar chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      '¿Estás seguro de que quieres eliminar este chat? Los mensajes se perderán permanentemente.';
+
+  @override
   String get clearHistory => 'Limpiar historial';
 
   @override
@@ -4648,6 +5001,111 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
 
   @override
   String get continueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get onboardingWelcomeTitle => 'Bienvenido a Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'La forma más inteligente de organizar tus compras y ahorrar dinero.';
+
+  @override
+  String get onboardingSetupTitle => 'Personaliza tu experiencia';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Elija cómo desea que Lista Plus se vea y funcione para usted.';
+
+  @override
+  String get onboardingLoginTitle => 'Guarda todo en la nube';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Tus datos sincronizados en todos tus dispositivos';
+
+  @override
+  String get onboardingShareTitle => 'Comparte con tus seres queridos';
+
+  @override
+  String get onboardingShareDesc =>
+      'Sincroniza listas con familiares y amigos en tiempo real';
+
+  @override
+  String get onboardingPremiumTitle => 'Desbloquea todas las funciones';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Sácale el máximo provecho a tus listas de compras';
+
+  @override
+  String get onboardingAnnualBadge => 'Mejor valor';
+
+  @override
+  String get onboardingMonthlyLabel => 'Mensual';
+
+  @override
+  String get onboardingAnnualLabel => 'Anual';
+
+  @override
+  String get onboardingViewAllPlans => 'Ver todos los planes';
+
+  @override
+  String get onboardingSubscribeCta => 'Suscribir';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Cancele en cualquier momento. Sin compromiso.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get onboardingRestore => 'Restaurar';
+
+  @override
+  String get onboardingRestoreDesc =>
+      '¿Ya tienes una suscripción? Toque aquí para restaurarlo.';
+
+  @override
+  String get onboardingExit => 'Salida';
+
+  @override
+  String get onboardingPersonalizationTitle => 'vamos a conocerte';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Usaremos esto para personalizar sus sugerencias y hacer que las compras sean más inteligentes.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      '¿Cuál es tu comida favorita?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'p.ej. Pizza, sushi, lasaña...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Continuar';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Saltar por ahora';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Cuéntanos tu comida favorita para continuar';
+
+  @override
+  String get settingsDefaultScreen => 'Pantalla de inicio predeterminada';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Elija entre lista de compras o chat AI';
+
+  @override
+  String get settingsScreenList => 'Lista de compras';
+
+  @override
+  String get settingsScreenChat => 'Chat de IA';
 
   @override
   String loginError(String error) {
@@ -5014,106 +5472,107 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
       'Reporta errores, sugiere mejoras o corrige traducciones';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energía de IA';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Buscar en conversación...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'No se encontraron mensajes';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Preguntas sugeridas:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'asistente de compras';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased de $total comprado';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimado';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Ver artículos';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'No hay elementos en la lista';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Larga historia: el asistente se centra en los mensajes más recientes para un mejor rendimiento.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Escuchando...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Añadir directamente a la lista';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Desbloquear respuesta completa';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Lista de cambios';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Modo de mercado';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Volver al chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Terminar de comprar';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Bienvenido al Asistente de IA';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Crea una lista de compras para comenzar a usar el chat inteligente.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => '¿Cómo puedo ayudar?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Pregunta por precios, recetas, organización...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total comprado';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Respuestas rápidas:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Los comandos de voz avanzados son Pro. Habilitando el dictado básico...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Ver profesional';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => '¡Ups! Algo salió mal al cargar el chat.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Comprueba tu conexión o vuelve a intentarlo más tarde.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Esto puede ocurrir debido a oscilaciones de la red o indisponibilidad temporal. Por favor inténtalo de nuevo.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Escucha activa';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => '¿Qué te gustaría hacer con este artículo?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Ver detalles';
 
   @override
   String get openMenu => 'Abrir menú';
@@ -5358,4 +5817,21 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Invitar a la lista';
+
+  @override
+  String get shareApp => 'Compartir aplicación';
+
+  @override
+  String get shareAppDescription => 'Invita a tus amigos a usar Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return '¡Estoy usando Lista Plus para organizar mis compras! Descárguelo a través de mi enlace y ambos obtendremos 7 días de Premium gratis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => '¡Obtén 7 días de Lista Plus Premium!';
 }

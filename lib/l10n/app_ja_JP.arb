@@ -1,101 +1,73 @@
 {
   "@@locale": "ja_JP",
-  "appTitle": "ショッピングリスト",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "リスト",
-  "pantry": "パントリー",
-  "@_Common": "description: Common actions",
-  "cancel": "キャンセル",
-  "save": "保存",
-  "create": "作成",
-  "add": "追加",
-  "remove": "削除",
-  "delete": "削除",
-  "edit": "編集",
-  "copy": "コピー",
-  "retry": "再試行",
-  "regenerate": "再生成",
-  "copiedToClipboard": "クリップボードにコピーしました",
-  "confirm": "確認",
-  "close": "閉じる",
-  "import": "インポート",
-  "rename": "名前を変更",
-  "upgrade": "アップグレード",
-  "clear": "クリア",
-  "error": "エラー: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "エラー: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "購入処理中にエラーが発生しました。もう一度お試しください。",
-  "restoreError": "購入の復元中にエラーが発生しました。もう一度お試しください。",
-  "loading": "読み込み中...",
-  "fieldRequired": "必須項目",
-  "addedFeedback": "追加しました！",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count}個選択中",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "推定",
-  "alreadyPurchased": "購入済み",
-  "clearList": "リストをクリア",
-  "clearPurchased": "購入済みを消去",
-  "share": "共有",
-  "shareViaCode": "コードで共有",
-  "importViaCode": "コードでインポート",
-  "listAssistant": "リストアシスタント",
-  "globalAssistant": "グローバルアシスタント",
-  "becomePremium": "プレミアムに登録",
-  "manageSubscription": "サブスクリプション管理",
-  "completePurchase": "購入を完了",
-  "confirmClearList": "すべてのアイテムを削除しますか？",
-  "shareListTitle": "リストを共有",
-  "shareThisCode": "このコードを共有：",
-  "validForLimitedTime": "期間限定で有効",
-  "importListTitle": "リストをインポート",
-  "enterCodeHint": "コードを入力",
-  "confirmArchiveTitle": "購入を完了",
-  "confirmArchiveContent": "この購入を完了してリストをアーカイブしますか？",
-  "complete": "完了",
-  "listArchived": "リストをアーカイブしました！",
-  "listAdded": "{listName}を追加しました！",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "購入",
-  "unmark": "マーク解除",
-  "confirmDeleteItems": "{count}個のアイテムを削除しますか？",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "確認",
-  "confirmContent": "{count}個のアイテムを削除しますか？",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,68 @@
       }
     }
   },
-  "archiveList": "リストをアーカイブ",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "パントリー",
-  "generateShoppingList": "買い物リストを生成",
-  "pantryEmpty": "パントリーは空です",
-  "pantryEmptySubtitle": "家に置いておきたい商品を追加",
-  "itemsNeedPurchase": "購入が必要なアイテム: {deficit}",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +144,26 @@
       }
     }
   },
-  "noItemsToBuy": "購入が必要なアイテムはありません",
-  "newPantryList": "パントリーの買い物",
-  "newListTitle": "新しい買い物リスト",
-  "itemsWillBeAdded": "{count}個のアイテムが追加されます",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +171,13 @@
       }
     }
   },
-  "listNameLabel": "リスト名",
-  "listCreated": "リスト「{name}」を{count}個のアイテムで作成しました",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +188,118 @@
       }
     }
   },
-  "noTracking": "追跡なし",
-  "markAsPurchased": "購入済みにする",
-  "editPantryItem": "{name}を編集",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "理想の数量",
-  "currentQuantity": "現在の数量",
-  "consumed": "消費済み",
-  "restocked": "{name}を{quantity}{unit}に補充しました",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +313,40 @@
       }
     }
   },
-  "confirmRemovePantry": "パントリーから「{name}」を削除しますか？",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name}を編集",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "設定",
-  "language": "言語",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "システムデフォルト",
-  "appearance": "外観",
-  "light": "ライト",
-  "system": "システム",
-  "dark": "ダーク",
-  "themeColor": "テーマカラー",
-  "finance": "財務",
-  "monthlyBudgetNav": "月間予算",
-  "budgetSubtitle": "月々の支出を追跡",
-  "data": "データ",
-  "backupNav": "バックアップ",
-  "backupSubtitle": "データのエクスポートまたはインポート",
-  "about": "このアプリについて",
-  "version": "バージョン",
-  "privacy": "プライバシー",
-  "termsOfUse": "利用規約",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "バックアップ",
-  "backupPremiumDescription": "バックアップとエクスポートはプレミアム機能です",
-  "exportData": "データをエクスポート",
-  "exportDataSubtitle": "すべてのリストをJSONとして保存",
-  "importData": "データをインポート",
-  "importDataSubtitle": "JSONからリストを復元",
-  "importJsonTitle": "JSONをインポート",
-  "importJsonHint": "バックアップJSONをここに貼り付け...",
-  "backupExported": "バックアップをエクスポートしました！",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "月間予算",
-  "budgetPremiumLocked": "グローバル月間予算はプレミアム機能です",
-  "budgetUpgradePrompt": "アップグレードして解除",
-  "noBudgetDefined": "予算が設定されていません",
-  "totalEstimated": "推定合計: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,359 +354,218 @@
       }
     }
   },
-  "setBudgetButton": "予算を設定",
-  "budgetLists": "リスト",
-  "budgetValueLabel": "金額",
-  "setBudgetTitle": "月間予算",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "すべて",
-  "filterPending": "保留中",
-  "filterPurchased": "購入済み",
-  "sortName": "名前",
-  "sortCategory": "カテゴリ",
-  "sortDate": "日付",
-  "sortManual": "手動",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "このアプリについて",
+  "achievements": "実績",
+  "activeListening": "アクティブリスニング",
+  "add": "追加",
+  "addAllToList": "すべてをリストに追加",
+  "addDirectToList": "リストに直接追加",
+  "addIngredient": "材料を追加",
   "addItem": "アイテムを追加",
-  "itemName": "アイテム名",
-  "quantityShort": "数量",
-  "unit": "単位",
-  "category": "カテゴリ",
-  "estimatedPrice": "推定価格",
   "addItemPrice": "推定価格",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "アイテムを編集",
-  "quantityFull": "数量",
-  "editItemPrice": "推定価格",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "写真を追加",
   "addToPantry": "パントリーに追加",
   "addToPantryPrompt": "「{name}」をパントリーに追加しますか？",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "はい",
-  "productName": "商品名",
-  "idealQty": "理想の数",
-  "currentQty": "現在の数",
-  "trackStock": "在庫を追跡",
-  "trackStockActive": "買い物提案に表示",
-  "trackStockInactive": "買い物提案を生成しない",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "リストを作成",
-  "renameListDialog": "リストの名前を変更",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "リスト履歴",
-  "myLists": "マイリスト",
-  "viewActive": "アクティブを表示",
-  "viewHistory": "履歴を表示",
-  "noArchivedLists": "アーカイブされたリストはありません",
-  "noActiveLists": "アクティブなリストはありません",
-  "completedOn": "{date}に完了",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "共有中",
-  "restore": "復元",
-  "removeSharedTooltip": "削除",
-  "deleteListTitle": "リストを削除",
-  "deleteListContent": "「{name}」を削除してもよろしいですか？すべてのアイテムが削除されます。",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "共有リストを削除",
-  "removeSharedListContent": "「{name}」をリストから削除しますか？元のリストは影響を受けません。",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "新しいリストを作成",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "追加しました！",
+  "advancedFeatures": "高度な機能",
   "aiAssistant": "AIアシスタント",
   "aiAssistantDescription": "AIアシスタントでスマートな提案、レシピ、パーソナライズされたヒントを入手。",
-  "generalAssistant": "一般アシスタント",
+  "aiCreditsRemaining": "残り{remaining}クレジット",
+  "aiEnergy": "AIエネルギー",
+  "aiError": "申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。",
+  "aiVoiceCommandTooltip": "AI音声コマンド（プレミアム）",
+  "allTags": "すべて",
+  "alreadyPurchased": "購入済み",
+  "appTitle": "ショッピングリスト",
+  "appearance": "外観",
+  "archiveList": "リストをアーカイブ",
+  "backToChat": "チャットに戻る",
+  "backupExported": "バックアップをエクスポートしました！",
+  "backupNav": "バックアップ",
+  "backupPremiumDescription": "バックアップとエクスポートはプレミアム機能です",
+  "backupSubtitle": "データのエクスポートまたはインポート",
+  "backupTitle": "バックアップ",
+  "becomePremium": "プレミアムに登録",
+  "budgetAmountLabel": "予算額",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "月間予算",
+  "budgetDashboardTitle": "ダッシュボード",
+  "budgetEditTitle": "月間予算",
+  "budgetLists": "リスト",
+  "budgetPremiumLocked": "グローバル月間予算はプレミアム機能です",
+  "budgetSubtitle": "月々の支出を追跡",
+  "budgetUpgradePrompt": "アップグレードして解除",
+  "budgetValueLabel": "金額",
+  "buy": "購入",
+  "cancel": "キャンセル",
+  "cartTotal": "カート合計",
+  "catBakery": "パン・焼き菓子",
+  "catBeverages": "飲料",
+  "catCleaning": "掃除用品",
+  "catFruits": "果物",
+  "catOthers": "その他",
+  "category": "カテゴリ",
+  "chatError": "チャットの読み込みエラー: {error}",
+  "chatHint": "メッセージを入力...",
+  "chatSubtitle": "アイテムの提案、レシピ、節約のコツを尋ねてください。",
+  "chatSubtitleShort": "価格、レシピ、構成について質問してください...",
+  "chooseCurrency": "通貨の選択",
+  "chooseImageSource": "画像ソースを選択",
+  "chooseLanguage": "言語を選択",
+  "clear": "クリア",
   "clearHistory": "履歴をクリア",
   "clearHistoryConfirm": "このセッションのすべてのメッセージを削除しますか？",
-  "chatHint": "メッセージを入力...",
-  "chatError": "チャットの読み込みエラー: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "リストについてどう支援しましょうか？",
-  "generalHelp": "今日のお買い物についてどう支援しましょうか？",
-  "chatSubtitle": "アイテムの提案、レシピ、節約のコツを尋ねてください。",
-  "aiError": "申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "ログインして\nプレミアム機能を解除",
-  "signInGoogle": "Googleでサインイン",
-  "signInApple": "Appleでサインイン",
+  "clearList": "リストをクリア",
+  "clearPurchased": "購入済みを消去",
+  "close": "閉じる",
+  "complete": "完了",
+  "completePurchase": "購入を完了",
+  "completedOn": "{date}に完了",
+  "confirm": "確認",
+  "confirmArchiveContent": "この購入を完了してリストをアーカイブしますか？",
+  "confirmArchiveTitle": "購入を完了",
+  "confirmClearList": "すべてのアイテムを削除しますか？",
+  "confirmContent": "{count}個のアイテムを削除しますか？",
+  "confirmDeleteItems": "{count}個のアイテムを削除しますか？",
+  "confirmDeleteTitle": "確認",
+  "confirmRemovePantry": "パントリーから「{name}」を削除しますか？",
+  "consumed": "消費済み",
   "continueAsGuest": "ゲストとして続ける",
-  "loginError": "ログインエラー: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus プレミアム",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "アップグレードして解除",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "アイテムを削除しました",
-  "undo": "元に戻す",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "リストは空です",
-  "emptyListSubtitle": "アイテムを追加して開始",
-  "noListFoundTitle": "リストが見つかりません",
-  "noListFoundSubtitle": "最初のリストを作成して開始",
+  "copiedToClipboard": "クリップボードにコピーしました",
+  "copy": "コピー",
+  "create": "作成",
   "createFirstList": "最初のリストを作成",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "リスト予算",
-  "budgetAmountLabel": "予算額",
-  "removeBudget": "削除",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "無制限のリスト",
-  "prefSharing": "リストを共有",
-  "prefFullHistory": "完全な履歴",
-  "prefExportData": "データをエクスポート",
-  "prefCustomThemes": "カスタムテーマ",
-  "prefMonthlyBudget": "グローバル月間予算",
-  "prefAIAssistant": "パーソナルAIアシスタント",
-  "prefUnlimitedPantry": "無制限のパントリー",
-  "prefInteractiveArtifacts": "インタラクティブAIアーティファクト",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "緑",
-  "themeBlue": "青",
-  "themePurple": "紫",
-  "themeRed": "赤",
-  "themeOrange": "オレンジ",
-  "themePink": "ピンク",
-  "themeIndigo": "インジゴ",
-  "themeAmber": "琥珀",
-  "themeTeal": "ティール",
-  "themeBrown": "茶",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "果物",
-  "catCleaning": "掃除用品",
-  "catBeverages": "飲料",
-  "catBakery": "パン・焼き菓子",
-  "catOthers": "その他",
-  "@_Unit": "description: Unit",
-  "unitPack": "パック",
-  "@_Share": "description: Sharing",
-  "shareSubject": "ショッピングリスト",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "月間予算",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "リストを削除",
-  "pantryItemRemoved": "アイテムを削除しました",
+  "createListDialog": "リストを作成",
+  "createListToStartAi": "スマート チャットの使用を開始するには、買い物リストを作成します。",
+  "createNewList": "新しいリストを作成",
+  "currency": "通貨",
+  "currentQty": "現在の数",
+  "currentQuantity": "現在の数量",
+  "dark": "ダーク",
+  "data": "データ",
   "deficitItems": "購入が必要なアイテム: {deficit}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "カート合計",
-  "restockLabel": "補充",
-  "advancedFeatures": "高度な機能",
-  "selectAll": "すべて選択",
+  "delete": "削除",
+  "deleteListConfirm": "リストを削除",
+  "deleteListContent": "「{name}」を削除してもよろしいですか？すべてのアイテムが削除されます。",
+  "deleteListTitle": "リストを削除",
+  "deleteRecipe": "削除",
+  "deleteRecipeConfirm": "このレシピを削除しますか？",
+  "deleteRecipeConfirmMsg": "「{recipeName}」を削除してもよろしいですか？この操作は取り消せません。",
+  "deleteSession": "チャットの削除",
+  "deleteSessionConfirm": "このチャットを削除してもよろしいですか?メッセージは永久に失われます。",
   "deselectAll": "すべて解除",
-  "monthlyBudgetAppBar": "月間予算",
-  "budgetEditTitle": "月間予算",
-  "budgetDashboardTitle": "ダッシュボード",
-  "selectListForDashboard": "ダッシュボードを表示するリストを選択してください。",
-  "spendingAnalysis": "支出分析",
-  "noItemsToAnalyze": "分析するアイテムがリストにありません。",
-  "markItemsToSeeAnalysis": "アイテムを購入済みとしてマークすると分析が表示されます。",
-  "totalSpending": "総支出",
-  "spendingByCategory": "カテゴリ別支出",
-  "achievements": "実績",
-  "exportPdfExcel": "PDF/Excelにエクスポート",
-  "exportPdf": "PDFとしてエクスポート",
-  "exportExcel": "Excelとしてエクスポート",
-  "organizingAi": "AIで整理中...",
-  "yesLabel": "はい",
-  "noLabel": "いいえ",
-  "shareListText": "マイショッピングリスト",
-  "emptyListAddItems": "リストは空です！先にアイテムを追加してください。ℹ️",
-  "listOrganizedMagic": "リストが魔法のようにカテゴリごとに整理されました！✨",
-  "shoppingMode": "ショッピングモード",
-  "smartOrganization": "スマート整理",
-  "savings": "節約",
-  "shoppingModeHeader": "ショッピングモード",
-  "shareAsText": "整形テキストとしてアイテムを送信",
-  "shareRealtime": "他の人とリアルタイム同期",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "クイックレシピ",
-  "quickRecipePrompt": "リストのアイテムを使ったレシピを提案してください。",
+  "dynamicColors": "ダイナミックカラー",
+  "dynamicColorsEnabledWarning": "テーマカラーを有効にするには動的カラーを無効にします",
+  "dynamicColorsSubtitle": "壁紙に基づいた色を使用する",
   "economyTips": "節約のコツ",
   "economyTipsPrompt": "この買い物でどうすれば節約できますか？",
-  "organizeAisles": "売り場順に整理",
-  "organizeAislesPrompt": "スーパーの売り場順に整理してください。",
-  "recipeSuggestion": "レシピ提案",
-  "aiCreditsRemaining": "残り{remaining}クレジット",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "すべてをリストに追加",
-  "organizeByAisles": "売り場順に整理",
-  "voiceTranscriptionTooltip": "音声入力（無料）",
-  "aiVoiceCommandTooltip": "AI音声コマンド（プレミアム）",
-  "voiceCommandTitle": "AI音声コマンド",
-  "voiceCommandContent": "自然に話してリストを管理！\n\n例：\n• 「パン、チーズ、ハムを追加して」\n• 「洗濯洗剤を削除して」\n• 「テーマを青に変更して」\n\nこれはLista Plusプレミアムの特別な機能です。",
-  "voiceCommandPlanBtn": "プランを見る",
-  "itemsAddedSuccess": "アイテムをリストに追加しました！",
-  "viewList": "リストを見る",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "フィードバックを送信",
+  "edit": "編集",
+  "editItem": "アイテムを編集",
+  "editItemPrice": "推定価格",
+  "editPantryItem": "{name}を編集",
+  "editRecipe": "編集",
+  "editRecipeTitle": "レシピを編集",
+  "emptyListAddItems": "リストは空です！先にアイテムを追加してください。ℹ️",
+  "emptyListSubtitle": "アイテムを追加して開始",
+  "emptyListTitle": "リストは空です",
+  "enterCodeHint": "コードを入力",
+  "enterUrl": "URLを入力",
+  "error": "エラー: {message}",
+  "errorGeneric": "エラー: {message}",
+  "errorLoadingChat": "おっと！チャットの読み込み中に問題が発生しました。",
+  "errorLoadingChatSubtitle": "接続を確認するか、後でもう一度試してください。",
+  "errorLoadingRecipes": "レシピの読み込みエラー",
+  "errorOscillation": "これは、ネットワークの不安定または一時的な利用不能によって発生する可能性があります。もう一度試してください。",
+  "estimated": "推定",
+  "estimatedCost": "推定",
+  "estimatedPrice": "推定価格",
+  "exportData": "データをエクスポート",
+  "exportDataSubtitle": "すべてのリストをJSONとして保存",
+  "exportExcel": "Excelとしてエクスポート",
+  "exportPdf": "PDFとしてエクスポート",
+  "exportPdfExcel": "PDF/Excelにエクスポート",
+  "feedbackBack": "戻る",
+  "feedbackError": "送信エラー: {error}",
+  "feedbackHint": "フィードバックを詳しく説明してください...",
   "feedbackPrompt": "何を共有しますか？",
+  "feedbackRetry": "再試行",
+  "feedbackSend": "フィードバックを送信",
+  "feedbackSending": "送信中...",
+  "feedbackSettingsSubtitle": "バグの報告、改善の提案、翻訳の修正",
+  "feedbackSettingsTitle": "フィードバックを送信",
+  "feedbackThankYou": "ありがとうございます！",
+  "feedbackThankYouMessage": "フィードバックを受け取りました。皆様により良いLista Plusを提供するために役立てます。",
+  "feedbackTitle": "フィードバックを送信",
   "feedbackTypeBug": "バグを報告",
   "feedbackTypeBugHint": "何かが動作しない",
-  "feedbackTypeSuggestion": "提案",
-  "feedbackTypeSuggestionHint": "アプリを改善するアイデア",
-  "feedbackTypeTranslation": "翻訳の問題",
-  "feedbackTypeTranslationHint": "不正確または不自然な翻訳",
   "feedbackTypeFeature": "機能リクエスト",
   "feedbackTypeFeatureHint": "追加してほしい機能",
   "feedbackTypeOther": "その他",
   "feedbackTypeOtherHint": "その他のフィードバック",
-  "feedbackHint": "フィードバックを詳しく説明してください...",
-  "feedbackSend": "フィードバックを送信",
-  "feedbackSending": "送信中...",
-  "feedbackThankYou": "ありがとうございます！",
-  "feedbackThankYouMessage": "フィードバックを受け取りました。皆様により良いLista Plusを提供するために役立てます。",
-  "feedbackBack": "戻る",
-  "feedbackError": "送信エラー: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "再試行",
-  "feedbackSettingsTitle": "フィードバックを送信",
-  "feedbackSettingsSubtitle": "バグの報告、改善の提案、翻訳の修正",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "材料を追加",
-  "addPhoto": "写真を追加",
-  "allTags": "すべて",
-  "chooseImageSource": "画像ソースを選択",
-  "chooseLanguage": "言語を選択",
-  "deleteRecipe": "削除",
-  "deleteRecipeConfirm": "このレシピを削除しますか？",
-  "deleteRecipeConfirmMsg": "「{recipeName}」を削除してもよろしいですか？この操作は取り消せません。",
-  "dynamicColors": "ダイナミックカラー",
-  "dynamicColorsSubtitle": "壁紙に基づいた色を使用する",
-  "editRecipe": "編集",
-  "editRecipeTitle": "レシピを編集",
-  "enterUrl": "URLを入力",
-  "errorLoadingRecipes": "レシピの読み込みエラー",
+  "feedbackTypeSuggestion": "提案",
+  "feedbackTypeSuggestionHint": "アプリを改善するアイデア",
+  "feedbackTypeTranslation": "翻訳の問題",
+  "feedbackTypeTranslationHint": "不正確または不自然な翻訳",
+  "fieldRequired": "必須項目",
+  "filterAll": "すべて",
   "filterByTag": "タグで絞り込む",
+  "filterPending": "保留中",
+  "filterPurchased": "購入済み",
+  "finance": "財務",
+  "finishShopping": "ショッピングを終了する",
   "gallery": "ギャラリー",
+  "generalAssistant": "一般アシスタント",
+  "generalHelp": "今日のお買い物についてどう支援しましょうか？",
+  "generateShoppingList": "買い物リストを生成",
+  "globalAssistant": "グローバルアシスタント",
+  "howCanIHelp": "どうすれば助けられますか?",
+  "idealQty": "理想の数",
+  "idealQuantity": "理想の数量",
   "imageUrlPlaceholder": "または画像のURLを貼り付け",
+  "import": "インポート",
+  "importData": "データをインポート",
+  "importDataSubtitle": "JSONからリストを復元",
+  "importJsonHint": "バックアップJSONをここに貼り付け...",
+  "importJsonTitle": "JSONをインポート",
+  "importListTitle": "リストをインポート",
+  "importViaCode": "コードでインポート",
   "ingredients": "材料",
   "instructions": "作り方",
   "instructionsHint": "1行に1ステップずつ入力...",
+  "inviteToList": "リストに招待する",
+  "itemName": "アイテム名",
+  "itemRemoved": "アイテムを削除しました",
+  "itemsAddedSuccess": "アイテムをリストに追加しました！",
+  "itemsNeedPurchase": "購入が必要なアイテム: {deficit}",
+  "itemsPurchasedCount": "{total}中{purchased}を購入しました",
+  "itemsPurchasedShort": "{purchased}/{total} を購入しました",
+  "itemsWillBeAdded": "{count}個のアイテムが追加されます",
+  "language": "言語",
+  "languageEnglish": "英語",
+  "languagePortuguese": "ポルトガル語 (ブラジル)",
+  "languageSystem": "システムデフォルト",
+  "light": "ライト",
+  "listAdded": "{listName}を追加しました！",
+  "listArchived": "リストをアーカイブしました！",
+  "listAssistant": "リストアシスタント",
+  "listBudgetTitle": "リスト予算",
+  "listCreated": "リスト「{name}」を{count}個のアイテムで作成しました",
+  "listHelp": "リストについてどう支援しましょうか？",
+  "listHistory": "リスト履歴",
+  "listNameLabel": "リスト名",
+  "listOrganizedMagic": "リストが魔法のようにカテゴリごとに整理されました！✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "リスニング...",
+  "lists": "リスト",
+  "loading": "読み込み中...",
   "loadingRecipes": "レシピを読み込み中...",
+  "loginError": "ログインエラー: {error}",
+  "loginPrompt": "ログインして\nプレミアム機能を解除",
+  "longHistoryWarning": "長い歴史: アシスタントはパフォーマンスを向上させるために最新のメッセージに焦点を当てます。",
+  "manageSubscription": "サブスクリプション管理",
+  "markAsPurchased": "購入済みにする",
+  "markItemsToSeeAnalysis": "アイテムを購入済みとしてマークすると分析が表示されます。",
+  "marketMode": "マーケットモード",
   "mealPlannerAddMeal": "食事を追加",
   "mealPlannerDateLabel": "日付",
   "mealPlannerDeleteMeal": "食事を削除",
@@ -613,28 +599,201 @@
   "mealPlannerWeekEmpty": "今週の予定はありません",
   "mealPlannerWeekEmptyHint": "日付をタップして食事の計画を始めましょう！",
   "mealPlannerWeekProgress": "{total}食中{count}食を計画済み",
+  "monthlyBudgetAppBar": "月間予算",
+  "monthlyBudgetNav": "月間予算",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "月間予算",
+  "myLists": "マイリスト",
   "myRecipes": "マイレシピ",
+  "newChat": "新しいチャット",
+  "newListTitle": "新しい買い物リスト",
+  "newPantryList": "パントリーの買い物",
   "newRecipe": "新しいレシピ",
   "newRecipeTitle": "新しいレシピ",
+  "next": "次",
+  "noActiveLists": "アクティブなリストはありません",
+  "noArchivedLists": "アーカイブされたリストはありません",
+  "noBudgetDefined": "予算が設定されていません",
+  "noHistory": "チャット履歴がありません",
+  "noItemsInList": "リストに項目がありません",
+  "noItemsToAnalyze": "分析するアイテムがリストにありません。",
+  "noItemsToBuy": "購入が必要なアイテムはありません",
+  "noLabel": "いいえ",
+  "noListFoundSubtitle": "最初のリストを作成して開始",
+  "noListFoundTitle": "リストが見つかりません",
+  "noMessagesFound": "メッセージが見つかりませんでした",
   "noRecipesSaved": "保存されたレシピはありません",
   "noRecipesSavedHint": "下のボタンをタップして、最初のカスタムレシピを作成しましょう。",
+  "noTracking": "追跡なし",
+  "onboardingAnnualBadge": "ベストバリュー",
+  "onboardingAnnualLabel": "年間",
+  "onboardingCancelAnytime": "いつでもキャンセルできます。約束はありません。",
+  "onboardingContinueAsGuest": "ゲストとして続行",
+  "onboardingExit": "出口",
+  "onboardingLoginDesc": "データはすべてのデバイス間で同期されます",
+  "onboardingLoginTitle": "すべてをクラウドに保存",
+  "onboardingMonthlyLabel": "毎月",
+  "onboardingPersonalizationCta": "続く",
+  "onboardingPersonalizationDesc": "これは、あなたの提案をパーソナライズし、ショッピングをよりスマートにするために使用されます。",
+  "onboardingPersonalizationFoodHint": "例えばピザ、寿司、ラザニア...",
+  "onboardingPersonalizationFoodLabel": "好きな食べ物は何ですか？",
+  "onboardingPersonalizationFoodRequired": "続けて好きな食べ物を教えてください",
+  "onboardingPersonalizationSkip": "今のところスキップしてください",
+  "onboardingPersonalizationTitle": "あなたを知りましょう",
+  "onboardingPremiumSubtitle": "ショッピングリストを最大限に活用しましょう",
+  "onboardingPremiumTitle": "すべての機能のロックを解除する",
+  "onboardingRestore": "復元する",
+  "onboardingRestoreDesc": "すでにサブスクリプションをお持ちですか?復元するにはここをタップしてください。",
+  "onboardingSetupDesc": "Lista Plus の外観と機能を選択してください。",
+  "onboardingSetupTitle": "エクスペリエンスをパーソナライズする",
+  "onboardingShareDesc": "リストを家族や友人とリアルタイムで同期",
+  "onboardingShareTitle": "愛する人と共有しましょう",
+  "onboardingSubscribeCta": "購読する",
+  "onboardingViewAllPlans": "すべてのプランを見る",
+  "onboardingWelcomeDesc": "買い物を整理してお金を節約する最も賢い方法。",
+  "onboardingWelcomeTitle": "Lista Plusへようこそ",
   "openMenu": "メニューを開く",
+  "organizeAisles": "売り場順に整理",
+  "organizeAislesPrompt": "スーパーの売り場順に整理してください。",
+  "organizeByAisles": "売り場順に整理",
+  "organizingAi": "AIで整理中...",
+  "pantry": "パントリー",
+  "pantryAppBar": "パントリー",
+  "pantryEditTitle": "{name}を編集",
+  "pantryEmpty": "パントリーは空です",
+  "pantryEmptySubtitle": "家に置いておきたい商品を追加",
+  "pantryItemRemoved": "アイテムを削除しました",
+  "paywallTitle": "Lista Plus プレミアム",
+  "prefAIAssistant": "パーソナルAIアシスタント",
+  "prefCustomThemes": "カスタムテーマ",
+  "prefExportData": "データをエクスポート",
+  "prefFullHistory": "完全な履歴",
+  "prefInteractiveArtifacts": "インタラクティブAIアーティファクト",
+  "prefMonthlyBudget": "グローバル月間予算",
+  "prefSharing": "リストを共有",
+  "prefUnlimitedLists": "無制限のリスト",
+  "prefUnlimitedPantry": "無制限のパントリー",
+  "premiumUpgrade": "アップグレードして解除",
   "prepTime": "調理時間",
   "prepTimeMinutes": "調理時間（分）",
+  "privacy": "プライバシー",
+  "productName": "商品名",
+  "purchaseError": "購入処理中にエラーが発生しました。もう一度お試しください。",
+  "quantityFull": "数量",
+  "quantityShort": "数量",
+  "quickRecipe": "クイックレシピ",
+  "quickRecipePrompt": "リストのアイテムを使ったレシピを提案してください。",
+  "quickReplies": "クイック返信:",
   "recipeCreated": "レシピを作成しました！",
   "recipeDeleted": "レシピを削除しました",
   "recipeImage": "レシピ画像",
   "recipeName": "レシピ名",
   "recipeSaved": "レシピを保存しました！",
+  "recipeSuggestion": "レシピ提案",
   "recipeTags": "レシピのタグ",
+  "regenerate": "再生成",
+  "remove": "削除",
+  "removeBudget": "削除",
   "removeImage": "画像を削除",
+  "removeSharedListContent": "「{name}」をリストから削除しますか？元のリストは影響を受けません。",
+  "removeSharedListTitle": "共有リストを削除",
+  "removeSharedTooltip": "削除",
+  "rename": "名前を変更",
+  "renameListDialog": "リストの名前を変更",
   "requiredField": "必須",
+  "restockLabel": "補充",
+  "restocked": "{name}を{quantity}{unit}に補充しました",
+  "restore": "復元",
+  "restoreError": "購入の復元中にエラーが発生しました。もう一度お試しください。",
+  "retry": "再試行",
+  "save": "保存",
   "saveChanges": "変更を保存",
   "saveRecipe": "保存",
+  "savings": "節約",
+  "searchCurrency": "通貨を検索...",
+  "searchInConversation": "会話内で検索...",
   "searchLanguage": "言語を検索...",
   "searchRecipes": "レシピを検索...",
+  "selectAll": "すべて選択",
+  "selectListForDashboard": "ダッシュボードを表示するリストを選択してください。",
+  "selectedItems": "{count}個選択中",
+  "setBudgetButton": "予算を設定",
+  "setBudgetTitle": "月間予算",
+  "settingsAppBar": "設定",
+  "settingsDefaultScreen": "デフォルトのホーム画面",
+  "settingsDefaultScreenSubtitle": "買い物リストかAIチャットのどちらかを選択",
+  "settingsScreenChat": "AIチャット",
+  "settingsScreenList": "買い物リスト",
+  "share": "共有",
+  "shareApp": "アプリを共有する",
+  "shareAppDescription": "友達を招待して Lista Plus を使用する",
+  "shareAsText": "整形テキストとしてアイテムを送信",
+  "shareListText": "マイショッピングリスト",
+  "shareListTitle": "リストを共有",
+  "shareRealtime": "他の人とリアルタイム同期",
+  "shareReferralSubject": "Lista Plusプレミアムを7日間プレゼント！",
+  "shareReferralText": "Lista Plusを使って買い物を整理しています！私のリンクからダウンロードすると、二人とも 7 日間無料で Premium を利用できます: {url}",
+  "shareSubject": "ショッピングリスト",
+  "shareThisCode": "このコードを共有：",
+  "shareViaCode": "コードで共有",
+  "sharedLabel": "共有中",
+  "shoppingAssistant": "ショッピングアシスタント",
+  "shoppingMode": "ショッピングモード",
+  "shoppingModeHeader": "ショッピングモード",
   "shortDescription": "短い説明",
+  "signInApple": "Appleでサインイン",
+  "signInGoogle": "Googleでサインイン",
+  "smartOrganization": "スマート整理",
+  "sortCategory": "カテゴリ",
+  "sortDate": "日付",
+  "sortManual": "手動",
+  "sortName": "名前",
+  "spendingAnalysis": "支出分析",
+  "spendingByCategory": "カテゴリ別支出",
+  "suggestedQuestions": "推奨される質問:",
   "suggestedTags": "おすすめ",
+  "switchList": "スイッチリスト",
+  "system": "システム",
   "tags": "タグ",
-  "viewRecipe": "レシピを見る"
+  "termsOfUse": "利用規約",
+  "themeAmber": "琥珀",
+  "themeBlue": "青",
+  "themeBrown": "茶",
+  "themeColor": "テーマカラー",
+  "themeGreen": "緑",
+  "themeIndigo": "インジゴ",
+  "themeOrange": "オレンジ",
+  "themePink": "ピンク",
+  "themePurple": "紫",
+  "themeRed": "赤",
+  "themeTeal": "ティール",
+  "totalEstimated": "推定合計: {amount}",
+  "totalSpending": "総支出",
+  "trackStock": "在庫を追跡",
+  "trackStockActive": "買い物提案に表示",
+  "trackStockInactive": "買い物提案を生成しない",
+  "undo": "元に戻す",
+  "unit": "単位",
+  "unitPack": "パック",
+  "unlockFullResponse": "完全な応答のロックを解除する",
+  "unmark": "マーク解除",
+  "upgrade": "アップグレード",
+  "validForLimitedTime": "期間限定で有効",
+  "version": "バージョン",
+  "viewActive": "アクティブを表示",
+  "viewDetails": "詳細を見る",
+  "viewHistory": "履歴を表示",
+  "viewItems": "アイテムを見る",
+  "viewList": "リストを見る",
+  "viewPro": "プロを見る",
+  "viewRecipe": "レシピを見る",
+  "voiceCommandContent": "自然に話してリストを管理！\n\n例：\n• 「パン、チーズ、ハムを追加して」\n• 「洗濯洗剤を削除して」\n• 「テーマを青に変更して」\n\nこれはLista Plusプレミアムの特別な機能です。",
+  "voiceCommandPlanBtn": "プランを見る",
+  "voiceCommandTitle": "AI音声コマンド",
+  "voiceProFeature": "高度な音声コマンドは Pro です。基本的なディクテーションを有効にしています...",
+  "voiceTranscriptionTooltip": "音声入力（無料）",
+  "welcomeAiAssistant": "AI アシスタントへようこそ",
+  "whatToDoWithItem": "このアイテムを使って何をしたいですか?",
+  "yes": "はい",
+  "yesLabel": "はい"
 }

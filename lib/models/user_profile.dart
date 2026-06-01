@@ -1,5 +1,5 @@
 class UserProfile {
-  UserProfile({
+  const UserProfile({
     this.preferredStore,
     this.dietaryRestrictions,
     this.avoidedStores,

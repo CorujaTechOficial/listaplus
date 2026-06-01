@@ -1,101 +1,73 @@
 {
   "@@locale": "am",
-  "appTitle": "የግብዣ ዝርዝር",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "ዝርዝሮች",
-  "pantry": "ምግብ ቤት",
-  "@_Common": "description: Common actions",
-  "cancel": "ሰርዝ",
-  "save": "አስቀምጥ",
-  "create": "ፍጠር",
-  "add": "ጨምር",
-  "remove": "አስወግድ",
-  "delete": "ሰርዝ",
-  "edit": "አስተካክል",
-  "copy": "ቅዳ",
-  "retry": "ድጋሚ ሞክር",
-  "regenerate": "እንደገና አመንጭ",
-  "copiedToClipboard": "ወደ ቅንጥብ ሰሌዳ ተቀድቷል",
-  "confirm": "አረጋግጥ",
-  "close": "ዝጋ",
-  "import": "አስመጣ",
-  "rename": "እንደገና ሰይም",
-  "upgrade": "አሻሽል",
-  "clear": "አጽዳ",
-  "error": "ስህተት፦ {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "ስህተት፦ {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "ግዢውን በማስኬድ ላይ ስህተት። እንደገና ሞክር።",
-  "restoreError": "ግዢዎችን ወደነበሩበት በማስመለስ ስህተት። እንደገና ሞክር።",
-  "loading": "በመጫን ላይ...",
-  "fieldRequired": "የሚፈለግ መስክ",
-  "addedFeedback": "ተጨምሯል!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} የተመረጠ} other{{count} የተመረጡ}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "የተገመተ",
-  "alreadyPurchased": "አስቀድሞ የተገዛ",
-  "clearList": "ዝርዝሩን አጽዳ",
-  "clearPurchased": "የተገዙትን አጽዳ",
-  "share": "አጋራ",
-  "shareViaCode": "በኮድ አጋራ",
-  "importViaCode": "በኮድ አስመጣ",
-  "listAssistant": "የዝርዝር ረዳት",
-  "globalAssistant": "አለምአቀፍ ረዳት",
-  "becomePremium": "ፕሪሚየም ይሁኑ",
-  "manageSubscription": "ደንበኝነትን አስተዳድር",
-  "completePurchase": "ግዢውን አጠናቅቅ",
-  "confirmClearList": "ሁሉንም ንጥሎች ማስወገድ?",
-  "shareListTitle": "ዝርዝሩን አጋራ",
-  "shareThisCode": "ይህን ኮድ አጋራ፦",
-  "validForLimitedTime": "ለተወሰነ ጊዜ የሚሰራ",
-  "importListTitle": "ዝርዝሩን አስመጣ",
-  "enterCodeHint": "ኮዱን ያስገቡ",
-  "confirmArchiveTitle": "ግዢውን አጠናቅቅ",
-  "confirmArchiveContent": "ይህን ግዢ አጠናቅቀህ ዝርዝሩን አርክቭ ማድረግ?",
-  "complete": "አጠናቅቅ",
-  "listArchived": "ዝርዝሩ በተሳካ ሁኔታ በማህደር ተቀምጧል!",
-  "listAdded": "{listName} ተጨምሯል!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "ግዛ",
-  "unmark": "ምልክት አስወግድ",
-  "confirmDeleteItems": "{count} ንጥሎችን ማስወገድ?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "አረጋግጥ",
-  "confirmContent": "{count} ንጥሎችን ማስወገድ?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,68 @@
       }
     }
   },
-  "archiveList": "ዝርዝሩን አርክቭ አድርግ",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "ምግብ ቤት",
-  "generateShoppingList": "የግብዣ ዝርዝር አመንጭ",
-  "pantryEmpty": "ባዶ ምግብ ቤት",
-  "pantryEmptySubtitle": "በቤት ውስጥ ማቆየት የሚፈልጋቸውን ምርቶች ጨምር",
-  "itemsNeedPurchase": "{deficit} ንጥሎች መግዛት ያስፈልጋል",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +144,26 @@
       }
     }
   },
-  "noItemsToBuy": "ምንም የሚገዙ ንጥሎች የሉም",
-  "newPantryList": "ከምግብ ቤት ግብዣ",
-  "newListTitle": "አዲስ የግብዣ ዝርዝር",
-  "itemsWillBeAdded": "{count} ንጥሎች ይጨመራሉ",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +171,13 @@
       }
     }
   },
-  "listNameLabel": "የዝርዝሩ ስም",
-  "listCreated": "ዝርዝር \"{name}\" በ{count} ንጥሎች ተፈጥሯል",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +188,118 @@
       }
     }
   },
-  "noTracking": "ምንም ክትትል",
-  "markAsPurchased": "እንደተገዛ ምልክት አድርግ",
-  "editPantryItem": "{name} አስተካክል",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "ተስማሚ ብዛት",
-  "currentQuantity": "አሁን ያለው ብዛት",
-  "consumed": "የተበላ",
-  "restocked": "{name} ወደ {quantity} {unit} ተመልሷል",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +313,40 @@
       }
     }
   },
-  "confirmRemovePantry": "\"{name}\" ከምግብ ቤት ያስወግዳል?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name} አስተካክል",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "ቅንብሮች",
-  "language": "ቋንቋ",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "የስርዓት ነባሪ",
-  "appearance": "መልክ",
-  "light": "ብርሃን",
-  "system": "ስርዓት",
-  "dark": "ጨለማ",
-  "themeColor": "የቲም ቀለም",
-  "finance": "ፋይናንስ",
-  "monthlyBudgetNav": "ወርሃዊ በጀት",
-  "budgetSubtitle": "ወርሃዊ ወጪህን ተከታተል",
-  "data": "ውሂብ",
-  "backupNav": "ምትኬ",
-  "backupSubtitle": "ውሂብህን ላክ ወይም አስመጣ",
-  "about": "ስለ",
-  "version": "ስሪት",
-  "privacy": "ግላዊነት",
-  "termsOfUse": "የአጠቃቀም ውሎች",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "ምትኬ",
-  "backupPremiumDescription": "ምትኬ እና መላክ ፕሪሚየም ባህሪ ነው",
-  "exportData": "ውሂብ ላክ",
-  "exportDataSubtitle": "ሁሉንም ዝርዝሮች እንደ JSON አስቀምጥ",
-  "importData": "ውሂብ አስመጣ",
-  "importDataSubtitle": "ዝርዝሮችን ከJSON ወደነበሩበት መልስ",
-  "importJsonTitle": "JSON አስመጣ",
-  "importJsonHint": "የምትኬውን JSON እዚህ ለጥፍ...",
-  "backupExported": "ምትኬ ተልኳል!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "ወርሃዊ በጀት",
-  "budgetPremiumLocked": "አለምአቀፍ ወርሃዊ በጀት ፕሪሚየም ነው",
-  "budgetUpgradePrompt": "ለመክፈት አሻሽል",
-  "noBudgetDefined": "ምንም በጀት አልተዘጋጀም",
-  "totalEstimated": "ጠቅላላ ግምት፦ {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,359 +354,218 @@
       }
     }
   },
-  "setBudgetButton": "በጀት አዘጋጅ",
-  "budgetLists": "ዝርዝሮች",
-  "budgetValueLabel": "መጠን",
-  "setBudgetTitle": "ወርሃዊ በጀት",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "ሁሉም",
-  "filterPending": "በመጠባበቅ ላይ",
-  "filterPurchased": "የተገዙ",
-  "sortName": "ስም",
-  "sortCategory": "ምድብ",
-  "sortDate": "ቀን",
-  "sortManual": "በእጅ",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "ስለ",
+  "achievements": "ስኬቶች",
+  "activeListening": "ንቁ ማዳመጥ",
+  "add": "ጨምር",
+  "addAllToList": "ሁሉንም ወደ ዝርዝር ጨምር",
+  "addDirectToList": "በቀጥታ ወደ ዝርዝር ያክሉ",
+  "addIngredient": "ንጥረ ነገር ጨምር",
   "addItem": "ንጥል ጨምር",
-  "itemName": "የንጥል ስም",
-  "quantityShort": "ብዛት",
-  "unit": "አሃድ",
-  "category": "ምድብ",
-  "estimatedPrice": "የተገመተ ዋጋ",
   "addItemPrice": "የተገመተ ዋጋ",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "ንጥል አስተካክል",
-  "quantityFull": "ብዛት",
-  "editItemPrice": "የተገመተ ዋጋ",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "ፎቶ ጨምር",
   "addToPantry": "ወደ ምግብ ቤት ጨምር",
   "addToPantryPrompt": "\"{name}\" ወደ ምግብ ቤትህ ጨምር?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "አዎ",
-  "productName": "የምርት ስም",
-  "idealQty": "ተስማሚ ብዛት",
-  "currentQty": "አሁን ያለው ብዛት",
-  "trackStock": "ክምችት ተከታተል",
-  "trackStockActive": "በግብዣ ሃሳቦች ውስጥ ይታያል",
-  "trackStockInactive": "የግብዣ ሃሳብ አያመነጭም",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "ዝርዝር ፍጠር",
-  "renameListDialog": "ዝርዝሩን እንደገና ሰይም",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "የዝርዝር ታሪክ",
-  "myLists": "የእኔ ዝርዝሮች",
-  "viewActive": "ንቁዎችን ተመልከት",
-  "viewHistory": "ታሪክ ተመልከት",
-  "noArchivedLists": "ምንም በማህደር የተቀመጡ ዝርዝሮች የሉም",
-  "noActiveLists": "ምንም ንቁ ዝርዝሮች የሉም",
-  "completedOn": "የተጠናቀቀ በ{date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "የተጋራ",
-  "restore": "ወደነበረበት መልስ",
-  "removeSharedTooltip": "አስወግድ",
-  "deleteListTitle": "ዝርዝሩን ሰርዝ",
-  "deleteListContent": "እርግጠኛ ነህ \"{name}\" መሰረዝ ትፈልጋለህ? ሁሉም ንጥሎች ይወገዳሉ።",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "የተጋራውን ዝርዝር አስወግድ",
-  "removeSharedListContent": "\"{name}\" ከዝርዝሮችህ ያስወግዳል? ዋናው ዝርዝር አይጎዳም።",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "አዲስ ዝርዝር ፍጠር",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "ተጨምሯል!",
+  "advancedFeatures": "የላቁ ባህሪዎች",
   "aiAssistant": "AI ረዳት",
   "aiAssistantDescription": "ከAI ረዳታችን ጋር ብልህ ሃሳቦችን፣ የምግብ አዘገጃጀቶችን እና የግል ምክሮችን አግኝ።",
-  "generalAssistant": "አጠቃላይ ረዳት",
+  "aiCreditsRemaining": "{remaining} የተረፉ ክሬዲቶች",
+  "aiEnergy": "AI ኢነርጂ",
+  "aiError": "ይቅርታ፣ ጥያቄህን በማስኬድ ላይ ስህተት ተከስቷል። ግንኙነትህን አረጋግጥ ወይም በኋላ እንደገና ሞክር።",
+  "aiVoiceCommandTooltip": "AI የድምጽ ትእዛዝ (ፕሪሚየም)",
+  "allTags": "ሁሉም",
+  "alreadyPurchased": "አስቀድሞ የተገዛ",
+  "appTitle": "የግብዣ ዝርዝር",
+  "appearance": "መልክ",
+  "archiveList": "ዝርዝሩን አርክቭ አድርግ",
+  "backToChat": "ወደ ውይይት ተመለስ",
+  "backupExported": "ምትኬ ተልኳል!",
+  "backupNav": "ምትኬ",
+  "backupPremiumDescription": "ምትኬ እና መላክ ፕሪሚየም ባህሪ ነው",
+  "backupSubtitle": "ውሂብህን ላክ ወይም አስመጣ",
+  "backupTitle": "ምትኬ",
+  "becomePremium": "ፕሪሚየም ይሁኑ",
+  "budgetAmountLabel": "የበጀት መጠን",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "ወርሃዊ በጀት",
+  "budgetDashboardTitle": "ዳሽቦርድ",
+  "budgetEditTitle": "ወርሃዊ በጀት",
+  "budgetLists": "ዝርዝሮች",
+  "budgetPremiumLocked": "አለምአቀፍ ወርሃዊ በጀት ፕሪሚየም ነው",
+  "budgetSubtitle": "ወርሃዊ ወጪህን ተከታተል",
+  "budgetUpgradePrompt": "ለመክፈት አሻሽል",
+  "budgetValueLabel": "መጠን",
+  "buy": "ግዛ",
+  "cancel": "ሰርዝ",
+  "cartTotal": "ጠቅላላ ጋሪ",
+  "catBakery": "ዳቦ ቤት",
+  "catBeverages": "መጠጦች",
+  "catCleaning": "ጽዳት",
+  "catFruits": "ፍራፍሬዎች",
+  "catOthers": "ሌሎች",
+  "category": "ምድብ",
+  "chatError": "ውይይቱን በመጫን ላይ ስህተት፦ {error}",
+  "chatHint": "መልእክትህን ጻፍ...",
+  "chatSubtitle": "ለንጥሎች፣ የምግብ አዘገጃጀት ወይም የቁጠባ ምክሮች ጠይቅ።",
+  "chatSubtitleShort": "ስለ ዋጋዎች፣ የምግብ አዘገጃጀት መመሪያዎች፣ ድርጅት... ይጠይቁ።",
+  "chooseCurrency": "ምንዛሪ ይምረጡ",
+  "chooseImageSource": "የምስል ምንጭ ምረጥ",
+  "chooseLanguage": "ቋንቋ ምረጥ",
+  "clear": "አጽዳ",
   "clearHistory": "ታሪክ አጽዳ",
   "clearHistoryConfirm": "በዚህ ክፍለ ጊዜ ውስጥ ያሉትን ሁሉንም መልእክቶች ማጽዳት?",
-  "chatHint": "መልእክትህን ጻፍ...",
-  "chatError": "ውይይቱን በመጫን ላይ ስህተት፦ {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "በዝርዝርህ እንዴት ልረዳህ?",
-  "generalHelp": "በግብዣህ ዛሬ እንዴት ልረዳህ?",
-  "chatSubtitle": "ለንጥሎች፣ የምግብ አዘገጃጀት ወይም የቁጠባ ምክሮች ጠይቅ።",
-  "aiError": "ይቅርታ፣ ጥያቄህን በማስኬድ ላይ ስህተት ተከስቷል። ግንኙነትህን አረጋግጥ ወይም በኋላ እንደገና ሞክር።",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "ፕሪሚየም ባህሪያትን\nለመክፈት ግባ",
-  "signInGoogle": "በGoogle ግባ",
-  "signInApple": "በApple ግባ",
+  "clearList": "ዝርዝሩን አጽዳ",
+  "clearPurchased": "የተገዙትን አጽዳ",
+  "close": "ዝጋ",
+  "complete": "አጠናቅቅ",
+  "completePurchase": "ግዢውን አጠናቅቅ",
+  "completedOn": "የተጠናቀቀ በ{date}",
+  "confirm": "አረጋግጥ",
+  "confirmArchiveContent": "ይህን ግዢ አጠናቅቀህ ዝርዝሩን አርክቭ ማድረግ?",
+  "confirmArchiveTitle": "ግዢውን አጠናቅቅ",
+  "confirmClearList": "ሁሉንም ንጥሎች ማስወገድ?",
+  "confirmContent": "{count} ንጥሎችን ማስወገድ?",
+  "confirmDeleteItems": "{count} ንጥሎችን ማስወገድ?",
+  "confirmDeleteTitle": "አረጋግጥ",
+  "confirmRemovePantry": "\"{name}\" ከምግብ ቤት ያስወግዳል?",
+  "consumed": "የተበላ",
   "continueAsGuest": "እንደ እንግዳ ቀጥል",
-  "loginError": "የመግቢያ ስህተት፦ {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus ፕሪሚየም",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "ለመክፈት አሻሽል",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "ንጥል ተወግዷል",
-  "undo": "ቀልብስ",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "ዝርዝርህ ባዶ ነው",
-  "emptyListSubtitle": "ለመጀመር ንጥሎችን ጨምር",
-  "noListFoundTitle": "ምንም ዝርዝሮች አልተገኙም",
-  "noListFoundSubtitle": "ለመጀመር የመጀመሪያውን ዝርዝርህን ፍጠር",
+  "copiedToClipboard": "ወደ ቅንጥብ ሰሌዳ ተቀድቷል",
+  "copy": "ቅዳ",
+  "create": "ፍጠር",
   "createFirstList": "የመጀመሪያ ዝርዝር ፍጠር",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "የዝርዝር በጀት",
-  "budgetAmountLabel": "የበጀት መጠን",
-  "removeBudget": "አስወግድ",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "ያልተገደቡ ዝርዝሮች",
-  "prefSharing": "ዝርዝሮችን አጋራ",
-  "prefFullHistory": "ሙሉ ታሪክ",
-  "prefExportData": "ውሂብ ላክ",
-  "prefCustomThemes": "የተበጁ ገጽታዎች",
-  "prefMonthlyBudget": "አለምአቀፍ ወርሃዊ በጀት",
-  "prefAIAssistant": "የግል AI ረዳት",
-  "prefUnlimitedPantry": "ያልተገደበ ምግብ ቤት",
-  "prefInteractiveArtifacts": "በይነተገናኝ AI ቅርሶች",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "አረንጓዴ",
-  "themeBlue": "ሰማያዊ",
-  "themePurple": "ሐምራዊ",
-  "themeRed": "ቀይ",
-  "themeOrange": "ብርቱካን",
-  "themePink": "ሮዝ",
-  "themeIndigo": "ኢንዲጎ",
-  "themeAmber": "አምበር",
-  "themeTeal": "ቲል",
-  "themeBrown": "ቡናማ",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "ፍራፍሬዎች",
-  "catCleaning": "ጽዳት",
-  "catBeverages": "መጠጦች",
-  "catBakery": "ዳቦ ቤት",
-  "catOthers": "ሌሎች",
-  "@_Unit": "description: Unit",
-  "unitPack": "ጥቅል",
-  "@_Share": "description: Sharing",
-  "shareSubject": "የግብዣ ዝርዝር",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "ወርሃዊ በጀት",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "ዝርዝሩን ሰርዝ",
-  "pantryItemRemoved": "ንጥል ተወግዷል",
+  "createListDialog": "ዝርዝር ፍጠር",
+  "createListToStartAi": "ብልጥ ቻቱን መጠቀም ለመጀመር የግዢ ዝርዝር ይፍጠሩ።",
+  "createNewList": "አዲስ ዝርዝር ፍጠር",
+  "currency": "ምንዛሪ",
+  "currentQty": "አሁን ያለው ብዛት",
+  "currentQuantity": "አሁን ያለው ብዛት",
+  "dark": "ጨለማ",
+  "data": "ውሂብ",
   "deficitItems": "{deficit,plural, one{{deficit} ንጥል መግዛት ያስፈልጋል} other{{deficit} ንጥሎች መግዛት ያስፈልጋል}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "ጠቅላላ ጋሪ",
-  "restockLabel": "እንደገና አሞላ",
-  "advancedFeatures": "የላቁ ባህሪዎች",
-  "selectAll": "ሁሉንም ምረጥ",
+  "delete": "ሰርዝ",
+  "deleteListConfirm": "ዝርዝሩን ሰርዝ",
+  "deleteListContent": "እርግጠኛ ነህ \"{name}\" መሰረዝ ትፈልጋለህ? ሁሉም ንጥሎች ይወገዳሉ።",
+  "deleteListTitle": "ዝርዝሩን ሰርዝ",
+  "deleteRecipe": "ሰርዝ",
+  "deleteRecipeConfirm": "ይህን የምግብ አዘገጃጀት ልሰርዘው?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\"ን መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።",
+  "deleteSession": "ውይይትን ሰርዝ",
+  "deleteSessionConfirm": "እርግጠኛ ነዎት ይህን ውይይት መሰረዝ ይፈልጋሉ? መልእክቶቹ እስከመጨረሻው ይጠፋሉ.",
   "deselectAll": "ሁሉንም አይምረጥ",
-  "monthlyBudgetAppBar": "ወርሃዊ በጀት",
-  "budgetEditTitle": "ወርሃዊ በጀት",
-  "budgetDashboardTitle": "ዳሽቦርድ",
-  "selectListForDashboard": "ዳሽቦርዱን ለማየት ዝርዝር ምረጥ።",
-  "spendingAnalysis": "የወጪ ትንተና",
-  "noItemsToAnalyze": "ለመተንተን በዝርዝሩ ውስጥ ምንም ንጥሎች የሉም።",
-  "markItemsToSeeAnalysis": "ትንተናውን ለማየት ንጥሎችን እንደተገዙ ምልክት አድርግ።",
-  "totalSpending": "ጠቅላላ ወጪ",
-  "spendingByCategory": "እንደ ምድብ ወጪ",
-  "achievements": "ስኬቶች",
-  "exportPdfExcel": "PDF/Excel ላክ",
-  "exportPdf": "እንደ PDF ላክ",
-  "exportExcel": "እንደ Excel ላክ",
-  "organizingAi": "በAI እያደራጀ...",
-  "yesLabel": "አዎ",
-  "noLabel": "አይ",
-  "shareListText": "የእኔ የግብዣ ዝርዝር",
-  "emptyListAddItems": "ዝርዝርህ ባዶ ነው! መጀመሪያ ንጥሎችን ጨምር። ℹ️",
-  "listOrganizedMagic": "ዝርዝሩ በምድቦች በሚያስገርም ሁኔታ ተደራጅቷል! ✨",
-  "shoppingMode": "የግብዣ ሁነታ",
-  "smartOrganization": "ብልህ ድርጅት",
-  "savings": "ቁጠባዎች",
-  "shoppingModeHeader": "የግብዣ ሁነታ",
-  "shareAsText": "ንጥሎችን እንደ ተቀረጸ ጽሁፍ ላክ",
-  "shareRealtime": "ከሌሎች ሰዎች ጋር የቀጥታ ማመሳሰል",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "ፈጣን የምግብ አዘገጃጀት",
-  "quickRecipePrompt": "ከዝርዝሬ ንጥሎች ጋር የምግብ አዘገጃጀቶችን ጠቁም።",
+  "dynamicColors": "ተለዋዋጭ ቀለሞች",
+  "dynamicColorsEnabledWarning": "የጭብጡ ቀለም ተግባራዊ እንዲሆን ተለዋዋጭ ቀለሞችን አሰናክል",
+  "dynamicColorsSubtitle": "በልጣፍዎ ላይ የተመሰረቱ ቀለሞችን ይጠቀሙ",
   "economyTips": "የቁጠባ ምክሮች",
   "economyTipsPrompt": "በዚህ ግዢ ላይ እንዴት ገንዘብ መቆጠብ እችላለሁ?",
-  "organizeAisles": "በመደርደሪያ አደራጅ",
-  "organizeAislesPrompt": "በገበያ መደርደሪያዎች አደራጅ።",
-  "recipeSuggestion": "የምግብ አዘገጃጀት ምክር",
-  "aiCreditsRemaining": "{remaining} የተረፉ ክሬዲቶች",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "ሁሉንም ወደ ዝርዝር ጨምር",
-  "organizeByAisles": "በመደርደሪያ አደራጅ",
-  "voiceTranscriptionTooltip": "በድምጽ መተየብ (ነፃ)",
-  "aiVoiceCommandTooltip": "AI የድምጽ ትእዛዝ (ፕሪሚየም)",
-  "voiceCommandTitle": "AI የድምጽ ትእዛዝ",
-  "voiceCommandContent": "ዝርዝርህን ለማስተዳደር በተፈጥሮ ተናገር!\n\nምሳሌዎች፦\n• 'ዳቦ፣ አይብ እና ካም ጨምር'\n• 'የልብስ ማጠቢያ ሳሙና አስወግድ'\n• 'ገጽታውን ወደ ሰማያዊ ቀይር'\n\nይህ የLista Plus ፕሪሚየም ልዩ ባህሪ ነው።",
-  "voiceCommandPlanBtn": "ዕቅዶችን ተመልከት",
-  "itemsAddedSuccess": "ንጥሎች በተሳካ ሁኔታ ወደ ዝርዝሩ ተጨምረዋል!",
-  "viewList": "ዝርዝሩን ተመልከት",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "ግብረ መልስ ላክ",
+  "edit": "አስተካክል",
+  "editItem": "ንጥል አስተካክል",
+  "editItemPrice": "የተገመተ ዋጋ",
+  "editPantryItem": "{name} አስተካክል",
+  "editRecipe": "አስተካክል",
+  "editRecipeTitle": "የምግብ አዘገጃጀት አስተካክል",
+  "emptyListAddItems": "ዝርዝርህ ባዶ ነው! መጀመሪያ ንጥሎችን ጨምር። ℹ️",
+  "emptyListSubtitle": "ለመጀመር ንጥሎችን ጨምር",
+  "emptyListTitle": "ዝርዝርህ ባዶ ነው",
+  "enterCodeHint": "ኮዱን ያስገቡ",
+  "enterUrl": "ዩአርኤል (URL) አስገባ",
+  "error": "ስህተት፦ {message}",
+  "errorGeneric": "ስህተት፦ {message}",
+  "errorLoadingChat": "ውይ! ቻቱን በመጫን ላይ የሆነ ችግር ተፈጥሯል።",
+  "errorLoadingChatSubtitle": "ግንኙነትዎን ይፈትሹ ወይም ቆይተው እንደገና ይሞክሩ።",
+  "errorLoadingRecipes": "የምግብ አዘገጃጀቶችን በመጫን ላይ ስህተት ተከስቷል",
+  "errorOscillation": "ይህ በኔትወርክ ንዝረት ወይም በጊዜያዊ አለመገኘት ምክንያት ሊከሰት ይችላል። እባክዎ እንደገና ይሞክሩ።",
+  "estimated": "የተገመተ",
+  "estimatedCost": "የሚገመተው",
+  "estimatedPrice": "የተገመተ ዋጋ",
+  "exportData": "ውሂብ ላክ",
+  "exportDataSubtitle": "ሁሉንም ዝርዝሮች እንደ JSON አስቀምጥ",
+  "exportExcel": "እንደ Excel ላክ",
+  "exportPdf": "እንደ PDF ላክ",
+  "exportPdfExcel": "PDF/Excel ላክ",
+  "feedbackBack": "ተመለስ",
+  "feedbackError": "በመላክ ላይ ስህተት: {error}",
+  "feedbackHint": "ግብረ መልስህን በዝርዝር ግለጽ...",
   "feedbackPrompt": "ምን ማጋራት ትፈልጋለህ?",
+  "feedbackRetry": "እንደገና ሞክር",
+  "feedbackSend": "ግብረ መልስ ላክ",
+  "feedbackSending": "በመላክ ላይ...",
+  "feedbackSettingsSubtitle": "ሳንካዎችን ሪፖርት አድርግ፣ ማሻሻያዎችን ጠቁም፣ ወይም ትርጉሞችን አስተካክል",
+  "feedbackSettingsTitle": "ግብረ መልስ ላክ",
+  "feedbackThankYou": "አመሰግናለሁ!",
+  "feedbackThankYouMessage": "ግብረ መልስህ ደርሶናል እና Lista Plusን ለሁሉም ለማሻሻል ይረዳናል።",
+  "feedbackTitle": "ግብረ መልስ ላክ",
   "feedbackTypeBug": "ሳንካ ሪፖርት አድርግ",
   "feedbackTypeBugHint": "የሆነ ነገር አይሰራም",
-  "feedbackTypeSuggestion": "አስተያየት",
-  "feedbackTypeSuggestionHint": "መተግበሪያውን ለማሻሻል ሃሳብ",
-  "feedbackTypeTranslation": "የትርጉም ጉዳይ",
-  "feedbackTypeTranslationHint": "የተሳሳተ ወይም ያልተፈጥሮ ትርጉም",
   "feedbackTypeFeature": "የባህሪ ጥያቄ",
   "feedbackTypeFeatureHint": "ማየት የምትፈልገው ባህሪ",
   "feedbackTypeOther": "ሌላ",
   "feedbackTypeOtherHint": "ሌላ አይነት ግብረ መልስ",
-  "feedbackHint": "ግብረ መልስህን በዝርዝር ግለጽ...",
-  "feedbackSend": "ግብረ መልስ ላክ",
-  "feedbackSending": "በመላክ ላይ...",
-  "feedbackThankYou": "አመሰግናለሁ!",
-  "feedbackThankYouMessage": "ግብረ መልስህ ደርሶናል እና Lista Plusን ለሁሉም ለማሻሻል ይረዳናል።",
-  "feedbackBack": "ተመለስ",
-  "feedbackError": "በመላክ ላይ ስህተት: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "እንደገና ሞክር",
-  "feedbackSettingsTitle": "ግብረ መልስ ላክ",
-  "feedbackSettingsSubtitle": "ሳንካዎችን ሪፖርት አድርግ፣ ማሻሻያዎችን ጠቁም፣ ወይም ትርጉሞችን አስተካክል",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "ንጥረ ነገር ጨምር",
-  "addPhoto": "ፎቶ ጨምር",
-  "allTags": "ሁሉም",
-  "chooseImageSource": "የምስል ምንጭ ምረጥ",
-  "chooseLanguage": "ቋንቋ ምረጥ",
-  "deleteRecipe": "ሰርዝ",
-  "deleteRecipeConfirm": "ይህን የምግብ አዘገጃጀት ልሰርዘው?",
-  "deleteRecipeConfirmMsg": "\"{recipeName}\"ን መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።",
-  "dynamicColors": "ተለዋዋጭ ቀለሞች",
-  "dynamicColorsSubtitle": "በልጣፍዎ ላይ የተመሰረቱ ቀለሞችን ይጠቀሙ",
-  "editRecipe": "አስተካክል",
-  "editRecipeTitle": "የምግብ አዘገጃጀት አስተካክል",
-  "enterUrl": "ዩአርኤል (URL) አስገባ",
-  "errorLoadingRecipes": "የምግብ አዘገጃጀቶችን በመጫን ላይ ስህተት ተከስቷል",
+  "feedbackTypeSuggestion": "አስተያየት",
+  "feedbackTypeSuggestionHint": "መተግበሪያውን ለማሻሻል ሃሳብ",
+  "feedbackTypeTranslation": "የትርጉም ጉዳይ",
+  "feedbackTypeTranslationHint": "የተሳሳተ ወይም ያልተፈጥሮ ትርጉም",
+  "fieldRequired": "የሚፈለግ መስክ",
+  "filterAll": "ሁሉም",
   "filterByTag": "በመለያ አጣራ",
+  "filterPending": "በመጠባበቅ ላይ",
+  "filterPurchased": "የተገዙ",
+  "finance": "ፋይናንስ",
+  "finishShopping": "ግዢን ጨርስ",
   "gallery": "ማዕከለ-ስዕላት (Gallery)",
+  "generalAssistant": "አጠቃላይ ረዳት",
+  "generalHelp": "በግብዣህ ዛሬ እንዴት ልረዳህ?",
+  "generateShoppingList": "የግብዣ ዝርዝር አመንጭ",
+  "globalAssistant": "አለምአቀፍ ረዳት",
+  "howCanIHelp": "እንዴት መርዳት እችላለሁ?",
+  "idealQty": "ተስማሚ ብዛት",
+  "idealQuantity": "ተስማሚ ብዛት",
   "imageUrlPlaceholder": "ወይም የምስል ዩአርኤል እዚህ ለጥፍ",
+  "import": "አስመጣ",
+  "importData": "ውሂብ አስመጣ",
+  "importDataSubtitle": "ዝርዝሮችን ከJSON ወደነበሩበት መልስ",
+  "importJsonHint": "የምትኬውን JSON እዚህ ለጥፍ...",
+  "importJsonTitle": "JSON አስመጣ",
+  "importListTitle": "ዝርዝሩን አስመጣ",
+  "importViaCode": "በኮድ አስመጣ",
   "ingredients": "ንጥረ ነገሮች",
   "instructions": "መመሪያዎች",
   "instructionsHint": "በአንድ መስመር አንድ እርምጃ ይተይቡ...",
+  "inviteToList": "ወደ ዝርዝር ጋብዝ",
+  "itemName": "የንጥል ስም",
+  "itemRemoved": "ንጥል ተወግዷል",
+  "itemsAddedSuccess": "ንጥሎች በተሳካ ሁኔታ ወደ ዝርዝሩ ተጨምረዋል!",
+  "itemsNeedPurchase": "{deficit} ንጥሎች መግዛት ያስፈልጋል",
+  "itemsPurchasedCount": "{purchased} ከ{total} ተገዝቷል።",
+  "itemsPurchasedShort": "{purchased}/{total} ተገዝቷል።",
+  "itemsWillBeAdded": "{count} ንጥሎች ይጨመራሉ",
+  "language": "ቋንቋ",
+  "languageEnglish": "እንግሊዝኛ",
+  "languagePortuguese": "ፖርቱጋል (ብራሲል)",
+  "languageSystem": "የስርዓት ነባሪ",
+  "light": "ብርሃን",
+  "listAdded": "{listName} ተጨምሯል!",
+  "listArchived": "ዝርዝሩ በተሳካ ሁኔታ በማህደር ተቀምጧል!",
+  "listAssistant": "የዝርዝር ረዳት",
+  "listBudgetTitle": "የዝርዝር በጀት",
+  "listCreated": "ዝርዝር \"{name}\" በ{count} ንጥሎች ተፈጥሯል",
+  "listHelp": "በዝርዝርህ እንዴት ልረዳህ?",
+  "listHistory": "የዝርዝር ታሪክ",
+  "listNameLabel": "የዝርዝሩ ስም",
+  "listOrganizedMagic": "ዝርዝሩ በምድቦች በሚያስገርም ሁኔታ ተደራጅቷል! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "በማዳመጥ ላይ...",
+  "lists": "ዝርዝሮች",
+  "loading": "በመጫን ላይ...",
   "loadingRecipes": "የምግብ አዘገጃጀትዎን በመጫን ላይ...",
+  "loginError": "የመግቢያ ስህተት፦ {error}",
+  "loginPrompt": "ፕሪሚየም ባህሪያትን\nለመክፈት ግባ",
+  "longHistoryWarning": "ረጅም ታሪክ፡ ረዳቱ ለተሻለ አፈጻጸም የቅርብ ጊዜዎቹን መልዕክቶች ላይ ያተኩራል።",
+  "manageSubscription": "ደንበኝነትን አስተዳድር",
+  "markAsPurchased": "እንደተገዛ ምልክት አድርግ",
+  "markItemsToSeeAnalysis": "ትንተናውን ለማየት ንጥሎችን እንደተገዙ ምልክት አድርግ።",
+  "marketMode": "የገበያ ሁኔታ",
   "mealPlannerAddMeal": "ምግብ ጨምር",
   "mealPlannerDateLabel": "ቀን",
   "mealPlannerDeleteMeal": "ምግብ አስወግድ",
@@ -613,28 +599,201 @@
   "mealPlannerWeekEmpty": "ለዚህ ሳምንት የታቀደ ነገር የለም",
   "mealPlannerWeekEmptyHint": "ምግብዎን ማቀድ ለመጀመር ማንኛውንም ቀን ይጫኑ!",
   "mealPlannerWeekProgress": "ከ{total} ምግቦች {count} ታቅደዋል",
+  "monthlyBudgetAppBar": "ወርሃዊ በጀት",
+  "monthlyBudgetNav": "ወርሃዊ በጀት",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "ወርሃዊ በጀት",
+  "myLists": "የእኔ ዝርዝሮች",
   "myRecipes": "የእኔ የምግብ አዘገጃጀቶች",
+  "newChat": "አዲስ ውይይት",
+  "newListTitle": "አዲስ የግብዣ ዝርዝር",
+  "newPantryList": "ከምግብ ቤት ግብዣ",
   "newRecipe": "አዲስ የምግብ አዘገጃጀት",
   "newRecipeTitle": "አዲስ የምግብ አዘገጃጀት",
+  "next": "ቀጥሎ",
+  "noActiveLists": "ምንም ንቁ ዝርዝሮች የሉም",
+  "noArchivedLists": "ምንም በማህደር የተቀመጡ ዝርዝሮች የሉም",
+  "noBudgetDefined": "ምንም በጀት አልተዘጋጀም",
+  "noHistory": "የውይይት ታሪክ የለም።",
+  "noItemsInList": "በዝርዝሩ ውስጥ ምንም ንጥሎች የሉም",
+  "noItemsToAnalyze": "ለመተንተን በዝርዝሩ ውስጥ ምንም ንጥሎች የሉም።",
+  "noItemsToBuy": "ምንም የሚገዙ ንጥሎች የሉም",
+  "noLabel": "አይ",
+  "noListFoundSubtitle": "ለመጀመር የመጀመሪያውን ዝርዝርህን ፍጠር",
+  "noListFoundTitle": "ምንም ዝርዝሮች አልተገኙም",
+  "noMessagesFound": "ምንም መልዕክቶች አልተገኙም።",
   "noRecipesSaved": "ምንም የተቀመጠ የምግብ አዘገጃጀት የለም",
   "noRecipesSavedHint": "ከታች ያለውን ቁልፍ በመጫን የመጀመሪያውን ብጁ የምግብ አዘገጃጀትዎን ይፍጠሩ።",
+  "noTracking": "ምንም ክትትል",
+  "onboardingAnnualBadge": "ምርጥ እሴት",
+  "onboardingAnnualLabel": "አመታዊ",
+  "onboardingCancelAnytime": "በማንኛውም ጊዜ ይሰርዙ። ቁርጠኝነት የለም።",
+  "onboardingContinueAsGuest": "እንደ እንግዳ ቀጥል።",
+  "onboardingExit": "ውጣ",
+  "onboardingLoginDesc": "የእርስዎ ውሂብ በሁሉም መሣሪያዎችዎ ላይ ተመሳስሏል።",
+  "onboardingLoginTitle": "ሁሉንም ነገር ወደ ደመና ያስቀምጡ",
+  "onboardingMonthlyLabel": "ወርሃዊ",
+  "onboardingPersonalizationCta": "ቀጥል",
+  "onboardingPersonalizationDesc": "የእርስዎን የአስተያየት ጥቆማዎች ግላዊ ለማድረግ እና ግዢን የበለጠ ዘመናዊ ለማድረግ ይህንን እንጠቀማለን።",
+  "onboardingPersonalizationFoodHint": "ለምሳሌ. ፒዛ፣ ሱሺ፣ ላዛኛ...",
+  "onboardingPersonalizationFoodLabel": "የምትወደው ምግብ ምንድን ነው?",
+  "onboardingPersonalizationFoodRequired": "ለመቀጠል የሚወዱትን ምግብ ይንገሩን",
+  "onboardingPersonalizationSkip": "ለአሁን ዝለል",
+  "onboardingPersonalizationTitle": "እንተዋወቅህ",
+  "onboardingPremiumSubtitle": "ከግዢ ዝርዝሮችዎ ምርጡን ያግኙ",
+  "onboardingPremiumTitle": "ሁሉንም ባህሪያት ይክፈቱ",
+  "onboardingRestore": "እነበረበት መልስ",
+  "onboardingRestoreDesc": "አስቀድመው የደንበኝነት ምዝገባ አለህ? ወደነበረበት ለመመለስ እዚህ ይንኩ።",
+  "onboardingSetupDesc": "Lista Plus እንዴት እንዲመስልዎት እና ለእርስዎ እንዲሰራ እንደሚፈልጉ ይምረጡ።",
+  "onboardingSetupTitle": "ተሞክሮዎን ለግል ያብጁ",
+  "onboardingShareDesc": "ዝርዝሮችን ከቤተሰብ እና ከጓደኞች ጋር በቅጽበት ያመሳስሉ።",
+  "onboardingShareTitle": "ከምትወዷቸው ጋር አጋራ",
+  "onboardingSubscribeCta": "ሰብስክራይብ ያድርጉ",
+  "onboardingViewAllPlans": "ሁሉንም እቅዶች ይመልከቱ",
+  "onboardingWelcomeDesc": "ግብይትዎን ለማደራጀት እና ገንዘብ ለመቆጠብ በጣም ብልጥ መንገድ።",
+  "onboardingWelcomeTitle": "እንኳን ወደ Lista Plus በደህና መጡ",
   "openMenu": "ሜኑ ክፈት",
+  "organizeAisles": "በመደርደሪያ አደራጅ",
+  "organizeAislesPrompt": "በገበያ መደርደሪያዎች አደራጅ።",
+  "organizeByAisles": "በመደርደሪያ አደራጅ",
+  "organizingAi": "በAI እያደራጀ...",
+  "pantry": "ምግብ ቤት",
+  "pantryAppBar": "ምግብ ቤት",
+  "pantryEditTitle": "{name} አስተካክል",
+  "pantryEmpty": "ባዶ ምግብ ቤት",
+  "pantryEmptySubtitle": "በቤት ውስጥ ማቆየት የሚፈልጋቸውን ምርቶች ጨምር",
+  "pantryItemRemoved": "ንጥል ተወግዷል",
+  "paywallTitle": "Lista Plus ፕሪሚየም",
+  "prefAIAssistant": "የግል AI ረዳት",
+  "prefCustomThemes": "የተበጁ ገጽታዎች",
+  "prefExportData": "ውሂብ ላክ",
+  "prefFullHistory": "ሙሉ ታሪክ",
+  "prefInteractiveArtifacts": "በይነተገናኝ AI ቅርሶች",
+  "prefMonthlyBudget": "አለምአቀፍ ወርሃዊ በጀት",
+  "prefSharing": "ዝርዝሮችን አጋራ",
+  "prefUnlimitedLists": "ያልተገደቡ ዝርዝሮች",
+  "prefUnlimitedPantry": "ያልተገደበ ምግብ ቤት",
+  "premiumUpgrade": "ለመክፈት አሻሽል",
   "prepTime": "የዝግጅት ጊዜ",
   "prepTimeMinutes": "የዝግጅት ጊዜ (በደቂቃ)",
+  "privacy": "ግላዊነት",
+  "productName": "የምርት ስም",
+  "purchaseError": "ግዢውን በማስኬድ ላይ ስህተት። እንደገና ሞክር።",
+  "quantityFull": "ብዛት",
+  "quantityShort": "ብዛት",
+  "quickRecipe": "ፈጣን የምግብ አዘገጃጀት",
+  "quickRecipePrompt": "ከዝርዝሬ ንጥሎች ጋር የምግብ አዘገጃጀቶችን ጠቁም።",
+  "quickReplies": "ፈጣን ምላሾች፡-",
   "recipeCreated": "የምግብ አዘገጃጀት ተፈጥሯል!",
   "recipeDeleted": "የምግብ አዘገጃጀት ተሰርዟል",
   "recipeImage": "የምግብ አዘገጃጀት ምስል",
   "recipeName": "የምግብ አዘገጃጀት ስም",
   "recipeSaved": "የምግብ አዘገጃጀት ተቀምጧል!",
+  "recipeSuggestion": "የምግብ አዘገጃጀት ምክር",
   "recipeTags": "የምግብ አዘገጃጀት መለያዎች",
+  "regenerate": "እንደገና አመንጭ",
+  "remove": "አስወግድ",
+  "removeBudget": "አስወግድ",
   "removeImage": "ምስል አስወግድ",
+  "removeSharedListContent": "\"{name}\" ከዝርዝሮችህ ያስወግዳል? ዋናው ዝርዝር አይጎዳም።",
+  "removeSharedListTitle": "የተጋራውን ዝርዝር አስወግድ",
+  "removeSharedTooltip": "አስወግድ",
+  "rename": "እንደገና ሰይም",
+  "renameListDialog": "ዝርዝሩን እንደገና ሰይም",
   "requiredField": "የሚፈለግ",
+  "restockLabel": "እንደገና አሞላ",
+  "restocked": "{name} ወደ {quantity} {unit} ተመልሷል",
+  "restore": "ወደነበረበት መልስ",
+  "restoreError": "ግዢዎችን ወደነበሩበት በማስመለስ ስህተት። እንደገና ሞክር።",
+  "retry": "ድጋሚ ሞክር",
+  "save": "አስቀምጥ",
   "saveChanges": "ለውጦችን አስቀምጥ",
   "saveRecipe": "አስቀምጥ",
+  "savings": "ቁጠባዎች",
+  "searchCurrency": "ምንዛሬ ፈልግ...",
+  "searchInConversation": "በውይይት ውስጥ ፈልግ...",
   "searchLanguage": "ቋንቋ ፈልግ...",
   "searchRecipes": "የምግብ አዘገጃጀት ፈልግ...",
+  "selectAll": "ሁሉንም ምረጥ",
+  "selectListForDashboard": "ዳሽቦርዱን ለማየት ዝርዝር ምረጥ።",
+  "selectedItems": "{count,plural, one{{count} የተመረጠ} other{{count} የተመረጡ}}",
+  "setBudgetButton": "በጀት አዘጋጅ",
+  "setBudgetTitle": "ወርሃዊ በጀት",
+  "settingsAppBar": "ቅንብሮች",
+  "settingsDefaultScreen": "ነባሪ የመነሻ ማያ ገጽ",
+  "settingsDefaultScreenSubtitle": "በግዢ ዝርዝር ወይም በ AI ውይይት መካከል ይምረጡ",
+  "settingsScreenChat": "AI ውይይት",
+  "settingsScreenList": "የግዢ ዝርዝር",
+  "share": "አጋራ",
+  "shareApp": "መተግበሪያ አጋራ",
+  "shareAppDescription": "Lista Plus ጓደኞችን ጋብዝ",
+  "shareAsText": "ንጥሎችን እንደ ተቀረጸ ጽሁፍ ላክ",
+  "shareListText": "የእኔ የግብዣ ዝርዝር",
+  "shareListTitle": "ዝርዝሩን አጋራ",
+  "shareRealtime": "ከሌሎች ሰዎች ጋር የቀጥታ ማመሳሰል",
+  "shareReferralSubject": "የ7 ቀናት Lista Plus Premium ያግኙ!",
+  "shareReferralText": "ግዢዬን ለማደራጀት Lista Plus እየተጠቀምኩ ነው! በእኔ አገናኝ አውርደናል እና ሁለታችንም ለ7 ቀናት ፕሪሚየም በነፃ እናገኛለን፡{url}",
+  "shareSubject": "የግብዣ ዝርዝር",
+  "shareThisCode": "ይህን ኮድ አጋራ፦",
+  "shareViaCode": "በኮድ አጋራ",
+  "sharedLabel": "የተጋራ",
+  "shoppingAssistant": "የግዢ ረዳት",
+  "shoppingMode": "የግብዣ ሁነታ",
+  "shoppingModeHeader": "የግብዣ ሁነታ",
   "shortDescription": "አጭር መግለጫ",
+  "signInApple": "በApple ግባ",
+  "signInGoogle": "በGoogle ግባ",
+  "smartOrganization": "ብልህ ድርጅት",
+  "sortCategory": "ምድብ",
+  "sortDate": "ቀን",
+  "sortManual": "በእጅ",
+  "sortName": "ስም",
+  "spendingAnalysis": "የወጪ ትንተና",
+  "spendingByCategory": "እንደ ምድብ ወጪ",
+  "suggestedQuestions": "የተጠቆሙ ጥያቄዎች፡-",
   "suggestedTags": "የቀረቡ",
+  "switchList": "ዝርዝር ቀይር",
+  "system": "ስርዓት",
   "tags": "መለያዎች",
-  "viewRecipe": "የምግብ አዘገጃጀቱን ተመልከት"
+  "termsOfUse": "የአጠቃቀም ውሎች",
+  "themeAmber": "አምበር",
+  "themeBlue": "ሰማያዊ",
+  "themeBrown": "ቡናማ",
+  "themeColor": "የቲም ቀለም",
+  "themeGreen": "አረንጓዴ",
+  "themeIndigo": "ኢንዲጎ",
+  "themeOrange": "ብርቱካን",
+  "themePink": "ሮዝ",
+  "themePurple": "ሐምራዊ",
+  "themeRed": "ቀይ",
+  "themeTeal": "ቲል",
+  "totalEstimated": "ጠቅላላ ግምት፦ {amount}",
+  "totalSpending": "ጠቅላላ ወጪ",
+  "trackStock": "ክምችት ተከታተል",
+  "trackStockActive": "በግብዣ ሃሳቦች ውስጥ ይታያል",
+  "trackStockInactive": "የግብዣ ሃሳብ አያመነጭም",
+  "undo": "ቀልብስ",
+  "unit": "አሃድ",
+  "unitPack": "ጥቅል",
+  "unlockFullResponse": "ሙሉ ምላሽ ክፈት",
+  "unmark": "ምልክት አስወግድ",
+  "upgrade": "አሻሽል",
+  "validForLimitedTime": "ለተወሰነ ጊዜ የሚሰራ",
+  "version": "ስሪት",
+  "viewActive": "ንቁዎችን ተመልከት",
+  "viewDetails": "ዝርዝሮችን ይመልከቱ",
+  "viewHistory": "ታሪክ ተመልከት",
+  "viewItems": "እቃዎችን ይመልከቱ",
+  "viewList": "ዝርዝሩን ተመልከት",
+  "viewPro": "ፕሮ ን ይመልከቱ",
+  "viewRecipe": "የምግብ አዘገጃጀቱን ተመልከት",
+  "voiceCommandContent": "ዝርዝርህን ለማስተዳደር በተፈጥሮ ተናገር!\n\nምሳሌዎች፦\n• 'ዳቦ፣ አይብ እና ካም ጨምር'\n• 'የልብስ ማጠቢያ ሳሙና አስወግድ'\n• 'ገጽታውን ወደ ሰማያዊ ቀይር'\n\nይህ የLista Plus ፕሪሚየም ልዩ ባህሪ ነው።",
+  "voiceCommandPlanBtn": "ዕቅዶችን ተመልከት",
+  "voiceCommandTitle": "AI የድምጽ ትእዛዝ",
+  "voiceProFeature": "የላቁ የድምጽ ትዕዛዞች Pro ናቸው። መሰረታዊ መዝገበ ቃላትን በማንቃት ላይ...",
+  "voiceTranscriptionTooltip": "በድምጽ መተየብ (ነፃ)",
+  "welcomeAiAssistant": "ወደ AI ረዳት እንኳን በደህና መጡ",
+  "whatToDoWithItem": "በዚህ ዕቃ ምን ማድረግ ይፈልጋሉ?",
+  "yes": "አዎ",
+  "yesLabel": "አዎ"
 }

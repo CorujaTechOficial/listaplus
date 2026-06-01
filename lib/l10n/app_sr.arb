@@ -1,101 +1,73 @@
 {
   "@@locale": "sr",
-  "appTitle": "Листа за куповину",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Листе",
-  "pantry": "Остава",
-  "@_Common": "description: Common actions",
-  "cancel": "Откажи",
-  "save": "Сачувај",
-  "create": "Направи",
-  "add": "Додај",
-  "remove": "Уклони",
-  "delete": "Обриши",
-  "edit": "Уреди",
-  "copy": "Копирај",
-  "retry": "Покушај поново",
-  "regenerate": "Регенериши",
-  "copiedToClipboard": "Копирано у клипборд",
-  "confirm": "Потврди",
-  "close": "Затвори",
-  "import": "Увези",
-  "rename": "Преименуј",
-  "upgrade": "Надогради",
-  "clear": "Очисти",
-  "error": "Грешка: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Грешка: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Грешка при обради куповине. Покушајте поново.",
-  "restoreError": "Грешка при враћању куповина. Покушајте поново.",
-  "loading": "Учитавам...",
-  "fieldRequired": "Обавезно поље",
-  "addedFeedback": "Додато!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{Изабрана {count} ставка} few{Изабране {count} ставке} other{Изабрано {count} ставки}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Процењено",
-  "alreadyPurchased": "Већ купљено",
-  "clearList": "Очисти листу",
-  "clearPurchased": "Очисти купљено",
-  "share": "Подели",
-  "shareViaCode": "Подели преко кода",
-  "importViaCode": "Увези преко кода",
-  "listAssistant": "Асистент за листу",
-  "globalAssistant": "Глобални асистент",
-  "becomePremium": "Постани Premium",
-  "manageSubscription": "Управљај претплатом",
-  "completePurchase": "Заврши куповину",
-  "confirmClearList": "Уклонити све ставке?",
-  "shareListTitle": "Подели листу",
-  "shareThisCode": "Поделите овај код:",
-  "validForLimitedTime": "Важи ограничено време",
-  "importListTitle": "Увези листу",
-  "enterCodeHint": "Унесите код",
-  "confirmArchiveTitle": "Заврши куповину",
-  "confirmArchiveContent": "Завршити ову куповину и архивирати листу?",
-  "complete": "Заврши",
-  "listArchived": "Листа је успешно архивирана!",
-  "listAdded": "{listName} додата!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Купи",
-  "unmark": "Поништи ознаку",
-  "confirmDeleteItems": "Уклонити {count} ставку/и?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Потврди",
-  "confirmContent": "Уклонити {count} ставку/и?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Архивирај листу",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Остава",
-  "generateShoppingList": "Генериши листу за куповину",
-  "pantryEmpty": "Празна остава",
-  "pantryEmptySubtitle": "Додајте производе које желите да држите код куће",
-  "itemsNeedPurchase": "{deficit} ставку/и треба купити",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Нема ставки за куповину",
-  "newPantryList": "Куповина из оставе",
-  "newListTitle": "Нова листа за куповину",
-  "itemsWillBeAdded": "{count} ставка/и ће бити додато",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Назив листе",
-  "listCreated": "Листа \"{name}\" је креирана са {count} ставки",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Без праћења",
-  "markAsPurchased": "Означи као купљено",
-  "editPantryItem": "Уреди {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Идеална количина",
-  "currentQuantity": "Тренутна количина",
-  "consumed": "Потрошено",
-  "restocked": "{name} допуњено на {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Уклонити \"{name}\" из оставе?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Уреди {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Подешавања",
-  "language": "Језик",
-  "languagePortuguese": "Португалски (Бразил)",
-  "languageEnglish": "Енглески",
-  "languageSystem": "Системски подразумевани",
-  "appearance": "Изглед",
-  "light": "Светло",
-  "system": "Систем",
-  "dark": "Тамно",
-  "themeColor": "Боја теме",
-  "finance": "Финансије",
-  "monthlyBudgetNav": "Месечни буџет",
-  "budgetSubtitle": "Пратите своју месечну потрошњу",
-  "data": "Подаци",
-  "backupNav": "Резервна копија",
-  "backupSubtitle": "Извезите или увозите своје податке",
-  "about": "О апликацији",
-  "version": "Верзија",
-  "privacy": "Приватност",
-  "termsOfUse": "Услови коришћења",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Резервна копија",
-  "backupPremiumDescription": "Резервна копија и извоз су Premium функција",
-  "exportData": "Извези податке",
-  "exportDataSubtitle": "Сачувај све листе као JSON",
-  "importData": "Увези податке",
-  "importDataSubtitle": "Врати листе из JSON-а",
-  "importJsonTitle": "Увези JSON",
-  "importJsonHint": "Налепите резервни JSON овде...",
-  "backupExported": "Резервна копија је извезена!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Месечни буџет",
-  "budgetPremiumLocked": "Глобални месечни буџет је Premium",
-  "budgetUpgradePrompt": "Надогради да откључаш",
-  "noBudgetDefined": "Буџет није постављен",
-  "totalEstimated": "Укупно процењено: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Постави буџет",
-  "budgetLists": "Листе",
-  "budgetValueLabel": "Износ",
-  "setBudgetTitle": "Месечни буџет",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Све",
-  "filterPending": "На чекању",
-  "filterPurchased": "Купљено",
-  "sortName": "Назив",
-  "sortCategory": "Категорија",
-  "sortDate": "Датум",
-  "sortManual": "Ручно",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "О апликацији",
+  "achievements": "Достигнућа",
+  "activeListening": "Активно слушање",
+  "add": "Додај",
+  "addAllToList": "Додај све у листу",
+  "addDirectToList": "Додајте директно на листу",
+  "addIngredient": "Додајте састојак",
   "addItem": "Додај ставку",
-  "itemName": "Назив ставке",
-  "quantityShort": "Кол",
-  "unit": "Јединица",
-  "category": "Категорија",
-  "estimatedPrice": "Процењена цена",
   "addItemPrice": "Процењена цена",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Уреди ставку",
-  "quantityFull": "Количина",
-  "editItemPrice": "Процењена цена",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Додај фотографију",
   "addToPantry": "Додај у оставу",
   "addToPantryPrompt": "Додати \"{name}\" у вашу оставу?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Да",
-  "productName": "Назив производа",
-  "idealQty": "Идеална количина",
-  "currentQty": "Тренутна количина",
-  "trackStock": "Прати залихе",
-  "trackStockActive": "Појављује се у предлозима за куповину",
-  "trackStockInactive": "Не генерише предлог за куповину",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Направи листу",
-  "renameListDialog": "Преименуј листу",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Историја листи",
-  "myLists": "Моје листе",
-  "viewActive": "Прегледај активне",
-  "viewHistory": "Прегледај историју",
-  "noArchivedLists": "Нема архивираних листи",
-  "noActiveLists": "Нема активних листи",
-  "completedOn": "Завршено {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Дељено",
-  "restore": "Врати",
-  "removeSharedTooltip": "Уклони",
-  "deleteListTitle": "Обриши листу",
-  "deleteListContent": "Да ли сте сигурни да желите да обришете \"{name}\"? Све ставке ће бити уклоњене.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Уклони дељену листу",
-  "removeSharedListContent": "Уклонити \"{name}\" са ваших листи? Оригинална листа неће бити погођена.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Направи нову листу",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Додато!",
+  "advancedFeatures": "Напредне функције",
   "aiAssistant": "AI асистент",
   "aiAssistantDescription": "Добијте паметне предлоге, рецепте и персонализоване савете са нашим AI асистентом.",
-  "generalAssistant": "Општи асистент",
+  "aiCreditsRemaining": "Преостало {remaining} кредита",
+  "aiEnergy": "АИ енергија",
+  "aiError": "Жао нам је, дошло је до грешке при обради вашег захтева. Проверите везу или покушајте поново касније.",
+  "aiVoiceCommandTooltip": "AI гласовна команда (Premium)",
+  "allTags": "Све",
+  "alreadyPurchased": "Већ купљено",
+  "appTitle": "Листа за куповину",
+  "appearance": "Изглед",
+  "archiveList": "Архивирај листу",
+  "backToChat": "Назад на ћаскање",
+  "backupExported": "Резервна копија је извезена!",
+  "backupNav": "Резервна копија",
+  "backupPremiumDescription": "Резервна копија и извоз су Premium функција",
+  "backupSubtitle": "Извезите или увозите своје податке",
+  "backupTitle": "Резервна копија",
+  "becomePremium": "Постани Premium",
+  "budgetAmountLabel": "Износ буџета",
+  "budgetAmountSpent": "__ПХ0__ / __ПХ1__",
+  "budgetAppBar": "Месечни буџет",
+  "budgetDashboardTitle": "Контролна табла",
+  "budgetEditTitle": "Месечни буџет",
+  "budgetLists": "Листе",
+  "budgetPremiumLocked": "Глобални месечни буџет је Premium",
+  "budgetSubtitle": "Пратите своју месечну потрошњу",
+  "budgetUpgradePrompt": "Надогради да откључаш",
+  "budgetValueLabel": "Износ",
+  "buy": "Купи",
+  "cancel": "Откажи",
+  "cartTotal": "Укупно у корпи",
+  "catBakery": "Пекара",
+  "catBeverages": "Пића",
+  "catCleaning": "Чишћење",
+  "catFruits": "Воће",
+  "catOthers": "Остало",
+  "category": "Категорија",
+  "chatError": "Грешка при учитавању ћаскања: {error}",
+  "chatHint": "Откуцајте вашу поруку...",
+  "chatSubtitle": "Питајте за предлоге ставки, рецепте или савете за уштеду.",
+  "chatSubtitleShort": "Питајте за цене, рецепте, организацију...",
+  "chooseCurrency": "Изаберите Валута",
+  "chooseImageSource": "Изаберите извор слике",
+  "chooseLanguage": "Изаберите Језик",
+  "clear": "Очисти",
   "clearHistory": "Очисти историју",
   "clearHistoryConfirm": "Очистити све поруке у овој сесији?",
-  "chatHint": "Откуцајте вашу поруку...",
-  "chatError": "Грешка при учитавању ћаскања: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Како могу да вам помогнем са вашом листом?",
-  "generalHelp": "Како могу да вам помогнем са куповином данас?",
-  "chatSubtitle": "Питајте за предлоге ставки, рецепте или савете за уштеду.",
-  "aiError": "Жао нам је, дошло је до грешке при обради вашег захтева. Проверите везу или покушајте поново касније.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Пријавите се да откључате\nPremium функције",
-  "signInGoogle": "Пријави се са Google-ом",
-  "signInApple": "Пријави се са Apple-ом",
+  "clearList": "Очисти листу",
+  "clearPurchased": "Очисти купљено",
+  "close": "Затвори",
+  "complete": "Заврши",
+  "completePurchase": "Заврши куповину",
+  "completedOn": "Завршено {date}",
+  "confirm": "Потврди",
+  "confirmArchiveContent": "Завршити ову куповину и архивирати листу?",
+  "confirmArchiveTitle": "Заврши куповину",
+  "confirmClearList": "Уклонити све ставке?",
+  "confirmContent": "Уклонити {count} ставку/и?",
+  "confirmDeleteItems": "Уклонити {count} ставку/и?",
+  "confirmDeleteTitle": "Потврди",
+  "confirmRemovePantry": "Уклонити \"{name}\" из оставе?",
+  "consumed": "Потрошено",
   "continueAsGuest": "Настави као гост",
-  "loginError": "Грешка при пријави: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Надогради да откључаш",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Ставка је уклоњена",
-  "undo": "Поништи",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Ваша листа је празна",
-  "emptyListSubtitle": "Додајте ставке да бисте започели",
-  "noListFoundTitle": "Нема пронађених листи",
-  "noListFoundSubtitle": "Направите своју прву листу да бисте започели",
+  "copiedToClipboard": "Копирано у клипборд",
+  "copy": "Копирај",
+  "create": "Направи",
   "createFirstList": "Направи прву листу",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Буџет листе",
-  "budgetAmountLabel": "Износ буџета",
-  "removeBudget": "Уклони",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Неограничене листе",
-  "prefSharing": "Дељење листи",
-  "prefFullHistory": "Пуна историја",
-  "prefExportData": "Извоз података",
-  "prefCustomThemes": "Прилагођене теме",
-  "prefMonthlyBudget": "Глобални месечни буџет",
-  "prefAIAssistant": "Лични AI асистент",
-  "prefUnlimitedPantry": "Неограничена остава",
-  "prefInteractiveArtifacts": "Интерактивни AI Artifacts",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Зелена",
-  "themeBlue": "Плава",
-  "themePurple": "Љубичаста",
-  "themeRed": "Црвена",
-  "themeOrange": "Наранџаста",
-  "themePink": "Розе",
-  "themeIndigo": "Индиго",
-  "themeAmber": "Ћилибарна",
-  "themeTeal": "Тиркизна",
-  "themeBrown": "Браон",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Воће",
-  "catCleaning": "Чишћење",
-  "catBeverages": "Пића",
-  "catBakery": "Пекара",
-  "catOthers": "Остало",
-  "@_Unit": "description: Unit",
-  "unitPack": "пак",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Листа за куповину",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Месечни буџет",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Обриши листу",
-  "pantryItemRemoved": "Ставка је уклоњена",
+  "createListDialog": "Направи листу",
+  "createListToStartAi": "Направите листу за куповину да бисте почели да користите паметно ћаскање.",
+  "createNewList": "Направи нову листу",
+  "currency": "Валута",
+  "currentQty": "Тренутна количина",
+  "currentQuantity": "Тренутна количина",
+  "dark": "Тамно",
+  "data": "Подаци",
   "deficitItems": "{deficit,plural, one{{deficit} ставку треба купити} few{{deficit} ставке треба купити} other{{deficit} ставки треба купити}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Укупно у корпи",
-  "restockLabel": "Допуни",
-  "advancedFeatures": "Напредне функције",
-  "selectAll": "Изабери све",
+  "delete": "Обриши",
+  "deleteListConfirm": "Обриши листу",
+  "deleteListContent": "Да ли сте сигурни да желите да обришете \"{name}\"? Све ставке ће бити уклоњене.",
+  "deleteListTitle": "Обриши листу",
+  "deleteRecipe": "Избриши",
+  "deleteRecipeConfirm": "Избрисати овај рецепт?",
+  "deleteRecipeConfirmMsg": "Да ли сте сигурни да желите да избришете „{recipeName}“? Ова радња се не може опозвати.",
+  "deleteSession": "Избриши ћаскање",
+  "deleteSessionConfirm": "Да ли сте сигурни да желите да избришете ово ћаскање? Поруке ће бити трајно изгубљене.",
   "deselectAll": "Поништи избор свих",
-  "monthlyBudgetAppBar": "Месечни буџет",
-  "budgetEditTitle": "Месечни буџет",
-  "budgetDashboardTitle": "Контролна табла",
-  "selectListForDashboard": "Изаберите листу за преглед контролне табле.",
-  "spendingAnalysis": "Анализа потрошње",
-  "noItemsToAnalyze": "Нема ставки у листи за анализу.",
-  "markItemsToSeeAnalysis": "Означите ставке као купљене да бисте видели анализу.",
-  "totalSpending": "Укупно потрошено",
-  "spendingByCategory": "Потрошња по категорији",
-  "achievements": "Достигнућа",
-  "exportPdfExcel": "Извези PDF/Excel",
-  "exportPdf": "Извези као PDF",
-  "exportExcel": "Извези као Excel",
-  "organizingAi": "ОРГАНИЗУЈЕМ СА AI...",
-  "yesLabel": "Да",
-  "noLabel": "Не",
-  "shareListText": "Моја листа за куповину",
-  "emptyListAddItems": "Ваша листа је празна! Прво додајте ставке.",
-  "listOrganizedMagic": "Листа магично организована по категоријама!",
-  "shoppingMode": "Режим куповине",
-  "smartOrganization": "Паметна организација",
-  "savings": "Уштеда",
-  "shoppingModeHeader": "РЕЖИМ КУПОВИНЕ",
-  "shareAsText": "Пошаљи ставке као форматиран текст",
-  "shareRealtime": "Синхронизација у реалном времену са другим људима",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Брзи рецепт",
-  "quickRecipePrompt": "Предложи рецепте са ставкама из моје листе.",
+  "dynamicColors": "Динамичне боје",
+  "dynamicColorsEnabledWarning": "Онемогућите динамичке боје да би боја теме ступила на снагу",
+  "dynamicColorsSubtitle": "Користите боје на основу позадине",
   "economyTips": "Савети за уштеду",
   "economyTipsPrompt": "Како могу да уштедим новац на овој куповини?",
-  "organizeAisles": "Организуј по пролазима",
-  "organizeAislesPrompt": "Организуј по продајним пролазима.",
-  "recipeSuggestion": "Предлог рецепта",
-  "aiCreditsRemaining": "Преостало {remaining} кредита",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Додај све у листу",
-  "organizeByAisles": "Организуј по пролазима",
-  "voiceTranscriptionTooltip": "Гласовно куцање (Бесплатно)",
-  "aiVoiceCommandTooltip": "AI гласовна команда (Premium)",
-  "voiceCommandTitle": "AI гласовна команда",
-  "voiceCommandContent": "Говорите природно да управљате вашом листом!\n\nПримери:\n• 'Додај хлеб, сир и шунку'\n• 'Уклони детерџент за веш'\n• 'Промени тему у плаву'\n\nОво је ексклузивна функција Lista Plus Premium-а.",
-  "voiceCommandPlanBtn": "Погледај планове",
-  "itemsAddedSuccess": "Ставке су успешно додате у листу!",
-  "viewList": "Погледај листу",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Пошаљи повратну информацију",
+  "edit": "Уреди",
+  "editItem": "Уреди ставку",
+  "editItemPrice": "Процењена цена",
+  "editPantryItem": "Уреди {name}",
+  "editRecipe": "Уреди",
+  "editRecipeTitle": "Уреди рецепт",
+  "emptyListAddItems": "Ваша листа је празна! Прво додајте ставке.",
+  "emptyListSubtitle": "Додајте ставке да бисте започели",
+  "emptyListTitle": "Ваша листа је празна",
+  "enterCodeHint": "Унесите код",
+  "enterUrl": "Унесите УРЛ",
+  "error": "Грешка: {message}",
+  "errorGeneric": "Грешка: {message}",
+  "errorLoadingChat": "Упс! Нешто није у реду при учитавању ћаскања.",
+  "errorLoadingChatSubtitle": "Проверите везу или покушајте поново касније.",
+  "errorLoadingRecipes": "Грешка при учитавању рецепата",
+  "errorOscillation": "Ово се може догодити због осцилација мреже или привремене недоступности. Покушајте поново.",
+  "estimated": "Процењено",
+  "estimatedCost": "Процењено",
+  "estimatedPrice": "Процењена цена",
+  "exportData": "Извези податке",
+  "exportDataSubtitle": "Сачувај све листе као JSON",
+  "exportExcel": "Извези као Excel",
+  "exportPdf": "Извези као PDF",
+  "exportPdfExcel": "Извези PDF/Excel",
+  "feedbackBack": "Назад",
+  "feedbackError": "Грешка при слању: {error}",
+  "feedbackHint": "Опишите вашу повратну информацију детаљно...",
   "feedbackPrompt": "Шта бисте желели да поделите?",
+  "feedbackRetry": "Покушај поново",
+  "feedbackSend": "Пошаљи повратну информацију",
+  "feedbackSending": "Слање...",
+  "feedbackSettingsSubtitle": "Пријави грешке, предложи побољшања или исправи преводе",
+  "feedbackSettingsTitle": "Пошаљи повратну информацију",
+  "feedbackThankYou": "Хвала!",
+  "feedbackThankYouMessage": "Ваша повратна информација је примљена и помаже нам да побољшамо Lista Plus за све.",
+  "feedbackTitle": "Пошаљи повратну информацију",
   "feedbackTypeBug": "Пријави грешку",
   "feedbackTypeBugHint": "Нешто не ради како треба",
-  "feedbackTypeSuggestion": "Предлог",
-  "feedbackTypeSuggestionHint": "Идеја за побољшање апликације",
-  "feedbackTypeTranslation": "Проблем превода",
-  "feedbackTypeTranslationHint": "Нетачан или незграпан превод",
   "feedbackTypeFeature": "Захтев за функцију",
   "feedbackTypeFeatureHint": "Функција коју желите да видите",
   "feedbackTypeOther": "Остало",
   "feedbackTypeOtherHint": "Други тип повратне информације",
-  "feedbackHint": "Опишите вашу повратну информацију детаљно...",
-  "feedbackSend": "Пошаљи повратну информацију",
-  "feedbackSending": "Слање...",
-  "feedbackThankYou": "Хвала!",
-  "feedbackThankYouMessage": "Ваша повратна информација је примљена и помаже нам да побољшамо Lista Plus за све.",
-  "feedbackBack": "Назад",
-  "feedbackError": "Грешка при слању: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Покушај поново",
-  "feedbackSettingsTitle": "Пошаљи повратну информацију",
-  "feedbackSettingsSubtitle": "Пријави грешке, предложи побољшања или исправи преводе",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Предлог",
+  "feedbackTypeSuggestionHint": "Идеја за побољшање апликације",
+  "feedbackTypeTranslation": "Проблем превода",
+  "feedbackTypeTranslationHint": "Нетачан или незграпан превод",
+  "fieldRequired": "Обавезно поље",
+  "filterAll": "Све",
+  "filterByTag": "Филтрирајте према ознаци",
+  "filterPending": "На чекању",
+  "filterPurchased": "Купљено",
+  "finance": "Финансије",
+  "finishShopping": "Завршите куповину",
+  "gallery": "Галерија",
+  "generalAssistant": "Општи асистент",
+  "generalHelp": "Како могу да вам помогнем са куповином данас?",
+  "generateShoppingList": "Генериши листу за куповину",
+  "globalAssistant": "Глобални асистент",
+  "howCanIHelp": "Како могу помоћи?",
+  "idealQty": "Идеална количина",
+  "idealQuantity": "Идеална количина",
+  "imageUrlPlaceholder": "Или налепите УРЛ слике",
+  "import": "Увези",
+  "importData": "Увези податке",
+  "importDataSubtitle": "Врати листе из JSON-а",
+  "importJsonHint": "Налепите резервни JSON овде...",
+  "importJsonTitle": "Увези JSON",
+  "importListTitle": "Увези листу",
+  "importViaCode": "Увези преко кода",
+  "ingredients": "Састојци",
+  "instructions": "Упутства",
+  "instructionsHint": "Унесите један корак у сваки ред...",
+  "inviteToList": "Позовите на листу",
+  "itemName": "Назив ставке",
+  "itemRemoved": "Ставка је уклоњена",
+  "itemsAddedSuccess": "Ставке су успешно додате у листу!",
+  "itemsNeedPurchase": "{deficit} ставку/и треба купити",
+  "itemsPurchasedCount": "{purchased} од {total} купљено",
+  "itemsPurchasedShort": "{purchased}/{total} купљено",
+  "itemsWillBeAdded": "{count} ставка/и ће бити додато",
+  "language": "Језик",
+  "languageEnglish": "Енглески",
+  "languagePortuguese": "Португалски (Бразил)",
+  "languageSystem": "Системски подразумевани",
+  "light": "Светло",
+  "listAdded": "{listName} додата!",
+  "listArchived": "Листа је успешно архивирана!",
+  "listAssistant": "Асистент за листу",
+  "listBudgetTitle": "Буџет листе",
+  "listCreated": "Листа \"{name}\" је креирана са {count} ставки",
+  "listHelp": "Како могу да вам помогнем са вашом листом?",
+  "listHistory": "Историја листи",
+  "listNameLabel": "Назив листе",
+  "listOrganizedMagic": "Листа магично организована по категоријама!",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "слушам...",
+  "lists": "Листе",
+  "loading": "Учитавам...",
+  "loadingRecipes": "Учитавање ваших рецепата...",
+  "loginError": "Грешка при пријави: {error}",
+  "loginPrompt": "Пријавите се да откључате\nPremium функције",
+  "longHistoryWarning": "Дуга историја: помоћник се фокусира на најновије поруке ради бољег учинка.",
+  "manageSubscription": "Управљај претплатом",
+  "markAsPurchased": "Означи као купљено",
+  "markItemsToSeeAnalysis": "Означите ставке као купљене да бисте видели анализу.",
+  "marketMode": "Маркет Моде",
+  "mealPlannerAddMeal": "Додај оброк",
+  "mealPlannerDateLabel": "Датум",
+  "mealPlannerDeleteMeal": "Уклоните оброк",
+  "mealPlannerEditMeal": "Уреди оброк",
+  "mealPlannerError": "Грешка при учитавању плана оброка",
+  "mealPlannerGenerateList": "Генеришите листу за куповину",
+  "mealPlannerGenerateListConfirm": "Додајте све састојке из планираних оброка ове недеље на своју листу за куповину?",
+  "mealPlannerGenerateListEmpty": "Нема састојака за додавање. Прво планирајте неке оброке са рецептима.",
+  "mealPlannerGenerateListNoList": "Прво направите листу за куповину.",
+  "mealPlannerGenerateListSuccess": "{count} састојак(и) додат(и) на вашу листу!",
+  "mealPlannerLoading": "Учитавање плана оброка...",
+  "mealPlannerMealDeleted": "Оброк уклоњен",
+  "mealPlannerMealTypeBreakfast": "Доручак",
+  "mealPlannerMealTypeDinner": "Вечера",
+  "mealPlannerMealTypeLunch": "Ручак",
+  "mealPlannerMealTypeSnack": "Снацк",
+  "mealPlannerNoMeals": "Нема планираних оброка",
+  "mealPlannerNoMealsHint": "Додирните дан да додате оброк",
+  "mealPlannerNoRecipesFound": "Није пронађен ниједан рецепт",
+  "mealPlannerNoRecipesHint": "Прво направите рецепте на картици Рецепти",
+  "mealPlannerNoteLabel": "Напомена (опционо)",
+  "mealPlannerPrepTime": "{minutes} мин",
+  "mealPlannerSave": "Додајте у план",
+  "mealPlannerSearchRecipes": "Претражи рецепте...",
+  "mealPlannerSelectRecipe": "Изаберите рецепт",
+  "mealPlannerServings": "{count,plural, one{{count} порција} few{{count} порције} other{{count} порција}}",
+  "mealPlannerServingsLabel": "Порције",
+  "mealPlannerTitle": "Планер оброка",
+  "mealPlannerViewMonthly": "Месечни преглед",
+  "mealPlannerViewWeekly": "Недељни преглед",
+  "mealPlannerWeekEmpty": "Ништа није планирано за ову недељу",
+  "mealPlannerWeekEmptyHint": "Додирните било који дан да почнете да планирате своје оброке!",
+  "mealPlannerWeekProgress": "{count} од {total} планираних оброка",
+  "monthlyBudgetAppBar": "Месечни буџет",
+  "monthlyBudgetNav": "Месечни буџет",
+  "monthlyBudgetSpent": "__ПХ0__ / __ПХ1__",
+  "monthlyBudgetTitle": "Месечни буџет",
+  "myLists": "Моје листе",
+  "myRecipes": "Моји рецепти",
+  "newChat": "Ново ћаскање",
+  "newListTitle": "Нова листа за куповину",
+  "newPantryList": "Куповина из оставе",
+  "newRecipe": "Нови рецепт",
+  "newRecipeTitle": "Нови рецепт",
+  "next": "Следеће",
+  "noActiveLists": "Нема активних листи",
+  "noArchivedLists": "Нема архивираних листи",
+  "noBudgetDefined": "Буџет није постављен",
+  "noHistory": "Нема историје ћаскања",
+  "noItemsInList": "Нема ставки на листи",
+  "noItemsToAnalyze": "Нема ставки у листи за анализу.",
+  "noItemsToBuy": "Нема ставки за куповину",
+  "noLabel": "Не",
+  "noListFoundSubtitle": "Направите своју прву листу да бисте започели",
+  "noListFoundTitle": "Нема пронађених листи",
+  "noMessagesFound": "Није пронађена ниједна порука",
+  "noRecipesSaved": "Нема сачуваних рецепата",
+  "noRecipesSavedHint": "Креирајте свој први прилагођени рецепт додиром на дугме испод.",
+  "noTracking": "Без праћења",
+  "onboardingAnnualBadge": "Најбоља вредност",
+  "onboardingAnnualLabel": "Годишњи",
+  "onboardingCancelAnytime": "Откажите било када. Без обавеза.",
+  "onboardingContinueAsGuest": "Наставите као гост",
+  "onboardingExit": "Изађи",
+  "onboardingLoginDesc": "Ваши подаци су синхронизовани на свим вашим уређајима",
+  "onboardingLoginTitle": "Сачувајте све у облаку",
+  "onboardingMonthlyLabel": "Месечно",
+  "onboardingPersonalizationCta": "Настави",
+  "onboardingPersonalizationDesc": "Користићемо ово да персонализујемо ваше предлоге и учинимо куповину паметнијом.",
+  "onboardingPersonalizationFoodHint": "нпр. Пица, суши, лазање...",
+  "onboardingPersonalizationFoodLabel": "Која је твоја омиљена храна?",
+  "onboardingPersonalizationFoodRequired": "Реците нам своју омиљену храну да наставимо",
+  "onboardingPersonalizationSkip": "Прескочи за сада",
+  "onboardingPersonalizationTitle": "хајде да те упознамо",
+  "onboardingPremiumSubtitle": "Извуците максимум из својих листа за куповину",
+  "onboardingPremiumTitle": "Откључајте све функције",
+  "onboardingRestore": "Ресторе Пурцхасес",
+  "onboardingRestoreDesc": "Већ имате претплату? Додирните овде да бисте га вратили.",
+  "onboardingSetupDesc": "Одаберите како желите да Lista Plus изгледа и ради за вас.",
+  "onboardingSetupTitle": "Персонализујте своје искуство",
+  "onboardingShareDesc": "Синхронизујте листе sa породицом и пријатељима у реалном времену",
+  "onboardingShareTitle": "Поделите sa онима које волите",
+  "onboardingSubscribeCta": "Претплатите се",
+  "onboardingViewAllPlans": "Погледајте све планове",
+  "onboardingWelcomeDesc": "Најпаметнији начин да организујете куповину и уштедите новац.",
+  "onboardingWelcomeTitle": "Добродошли у Lista Plus",
+  "openMenu": "Отворите мени",
+  "organizeAisles": "Организуј по пролазима",
+  "organizeAislesPrompt": "Организуј по продајним пролазима.",
+  "organizeByAisles": "Организуј по пролазима",
+  "organizingAi": "ОРГАНИЗУЈЕМ СА AI...",
+  "pantry": "Остава",
+  "pantryAppBar": "Остава",
+  "pantryEditTitle": "Уреди {name}",
+  "pantryEmpty": "Празна остава",
+  "pantryEmptySubtitle": "Додајте производе које желите да држите код куће",
+  "pantryItemRemoved": "Ставка је уклоњена",
+  "paywallTitle": "Листа Плус Премиум",
+  "prefAIAssistant": "Лични AI асистент",
+  "prefCustomThemes": "Прилагођене теме",
+  "prefExportData": "Извоз података",
+  "prefFullHistory": "Пуна историја",
+  "prefInteractiveArtifacts": "Интерактивни AI Artifacts",
+  "prefMonthlyBudget": "Глобални месечни буџет",
+  "prefSharing": "Дељење листи",
+  "prefUnlimitedLists": "Неограничене листе",
+  "prefUnlimitedPantry": "Неограничена остава",
+  "premiumUpgrade": "Надогради да откључаш",
+  "prepTime": "Време припреме",
+  "prepTimeMinutes": "Време припреме (минути)",
+  "privacy": "Приватност",
+  "productName": "Назив производа",
+  "purchaseError": "Грешка при обради куповине. Покушајте поново.",
+  "quantityFull": "Количина",
+  "quantityShort": "Кол",
+  "quickRecipe": "Брзи рецепт",
+  "quickRecipePrompt": "Предложи рецепте sa ставкама из моје листе.",
+  "quickReplies": "Брзи одговори:",
+  "recipeCreated": "Рецепт креиран!",
+  "recipeDeleted": "Рецепт је избрисан",
+  "recipeImage": "Слика рецепта",
+  "recipeName": "Назив рецепта",
+  "recipeSaved": "Рецепт је сачуван!",
+  "recipeSuggestion": "Предлог рецепта",
+  "recipeTags": "Ознаке за рецепте",
+  "regenerate": "Регенериши",
+  "remove": "Уклони",
+  "removeBudget": "Уклони",
+  "removeImage": "Уклони слику",
+  "removeSharedListContent": "Уклонити \"{name}\" sa ваших листи? Оригинална листа неће бити погођена.",
+  "removeSharedListTitle": "Уклони дељену листу",
+  "removeSharedTooltip": "Уклони",
+  "rename": "Преименуј",
+  "renameListDialog": "Преименуј листу",
+  "requiredField": "Обавезно",
+  "restockLabel": "Допуни",
+  "restocked": "{name} допуњено на {quantity} {unit}",
+  "restore": "Врати",
+  "restoreError": "Грешка при враћању куповина. Покушајте поново.",
+  "retry": "Покушај поново",
+  "save": "Сачувај",
+  "saveChanges": "Сачувај промене",
+  "saveRecipe": "Сачувај",
+  "savings": "Уштеда",
+  "searchCurrency": "Претражи валуту...",
+  "searchInConversation": "Тражи у конверзацији...",
+  "searchLanguage": "Претражи језик...",
+  "searchRecipes": "Претражи рецепте...",
+  "selectAll": "Изабери све",
+  "selectListForDashboard": "Изаберите листу за преглед контролне табле.",
+  "selectedItems": "{count,plural, one{Изабрана {count} ставка} few{Изабране {count} ставке} other{Изабрано {count} ставки}}",
+  "setBudgetButton": "Постави буџет",
+  "setBudgetTitle": "Месечни буџет",
+  "settingsAppBar": "Подешавања",
+  "settingsDefaultScreen": "Подразумевани почетни екран",
+  "settingsDefaultScreenSubtitle": "Изаберите између листе за куповину или АИ ћаскања",
+  "settingsScreenChat": "АИ Цхат",
+  "settingsScreenList": "Листа за куповину",
+  "share": "Подели",
+  "shareApp": "Делите апликацију",
+  "shareAppDescription": "Позовите пријатеље да користе Lista Plus",
+  "shareAsText": "Пошаљи ставке као форматиран текст",
+  "shareListText": "Моја листа за куповину",
+  "shareListTitle": "Подели листу",
+  "shareRealtime": "Синхронизација у реалном времену sa другим људима",
+  "shareReferralSubject": "Добијте 7 дана Lista Plus Премиум!",
+  "shareReferralText": "Користим Lista Plus да организујем куповину! Преузмите преко моје везе и обоје добијамо 7 дана Премиум бесплатног: {url}",
+  "shareSubject": "Листа за куповину",
+  "shareThisCode": "Поделите овај код:",
+  "shareViaCode": "Подели преко кода",
+  "sharedLabel": "Дељено",
+  "shoppingAssistant": "Помоћник у куповини",
+  "shoppingMode": "Режим куповине",
+  "shoppingModeHeader": "РЕЖИМ КУПОВИНЕ",
+  "shortDescription": "Кратак опис",
+  "signInApple": "Пријави се sa Apple-ом",
+  "signInGoogle": "Пријави се sa Google-ом",
+  "smartOrganization": "Паметна организација",
+  "sortCategory": "Категорија",
+  "sortDate": "Датум",
+  "sortManual": "Ручно",
+  "sortName": "Назив",
+  "spendingAnalysis": "Анализа потрошње",
+  "spendingByCategory": "Потрошња по категорији",
+  "suggestedQuestions": "Предложена питања:",
+  "suggestedTags": "Предложено",
+  "switchList": "Листа за пребацивање",
+  "system": "Систем",
+  "tags": "Ознаке",
+  "termsOfUse": "Услови коришћења",
+  "themeAmber": "Ћилибарна",
+  "themeBlue": "Плава",
+  "themeBrown": "Браон",
+  "themeColor": "Боја теме",
+  "themeGreen": "Зелена",
+  "themeIndigo": "Индиго",
+  "themeOrange": "Наранџаста",
+  "themePink": "Розе",
+  "themePurple": "Љубичаста",
+  "themeRed": "Црвена",
+  "themeTeal": "Тиркизна",
+  "totalEstimated": "Укупно процењено: {amount}",
+  "totalSpending": "Укупно потрошено",
+  "trackStock": "Прати залихе",
+  "trackStockActive": "Појављује се у предлозима за куповину",
+  "trackStockInactive": "Не генерише предлог за куповину",
+  "undo": "Поништи",
+  "unit": "Јединица",
+  "unitPack": "пак",
+  "unlockFullResponse": "Откључајте пуни одговор",
+  "unmark": "Поништи ознаку",
+  "upgrade": "Надогради",
+  "validForLimitedTime": "Важи ограничено време",
+  "version": "Верзија",
+  "viewActive": "Прегледај активне",
+  "viewDetails": "Прикажи детаље",
+  "viewHistory": "Прегледај историју",
+  "viewItems": "Прикажи ставке",
+  "viewList": "Погледај листу",
+  "viewPro": "Виев Про",
+  "viewRecipe": "Погледај рецепт",
+  "voiceCommandContent": "Говорите природно да управљате вашом листом!\n\nПримери:\n• 'Додај хлеб, сир и шунку'\n• 'Уклони детерџент за веш'\n• 'Промени тему у плаву'\n\nОво је ексклузивна функција Lista Plus Premium-а.",
+  "voiceCommandPlanBtn": "Погледај планове",
+  "voiceCommandTitle": "AI гласовна команда",
+  "voiceProFeature": "Напредне гласовне команде су Про. Омогућавање основног диктата...",
+  "voiceTranscriptionTooltip": "Гласовно куцање (Бесплатно)",
+  "welcomeAiAssistant": "Добродошли у АИ Ассистант",
+  "whatToDoWithItem": "Шта желите да урадите sa овим предметом?",
+  "yes": "Да",
+  "yesLabel": "Да"
 }

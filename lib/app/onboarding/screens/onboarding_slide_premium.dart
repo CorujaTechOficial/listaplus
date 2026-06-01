@@ -23,7 +23,6 @@ class _OnboardingSlidePremiumState
   bool _isPurchasing = false;
   List<PaywallPackage> _packages = [];
   PaywallPackage? _selectedPackage;
-  bool _showAllPlans = false;
 
   @override
   void initState() {
@@ -195,6 +194,13 @@ class _OnboardingSlidePremiumState
             ),
           ),
           const SizedBox(height: Spacing.md),
+          Text(
+            l10n.onboardingRestoreDesc,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant.withAlpha(180),
+            ),
+          ),
           TextButton(
             onPressed: _restore,
             child: Text(
@@ -218,7 +224,7 @@ class _OnboardingSlidePremiumState
                   mode: LaunchMode.externalApplication,
                 ),
                 child: Text(
-                  'Pol\u00edtica de Privacidade',
+                  l10n.privacy,
                   style: TextStyle(
                     fontSize: 12,
                     color: theme.colorScheme.onSurfaceVariant,
@@ -236,7 +242,7 @@ class _OnboardingSlidePremiumState
                   mode: LaunchMode.externalApplication,
                 ),
                 child: Text(
-                  'Termos de Uso',
+                  l10n.termsOfUse,
                   style: TextStyle(
                     fontSize: 12,
                     color: theme.colorScheme.onSurfaceVariant,
@@ -261,76 +267,66 @@ class _OnboardingSlidePremiumState
   }
 
   List<Widget> _buildPlanCards(ThemeData theme, AppLocalizations l10n) {
-    final visible = _showAllPlans ? _packages : _packages.take(1).toList();
+    return _packages.map((pkg) {
+      final isSelected = _selectedPackage?.identifier == pkg.identifier;
+      final isAnnual = pkg.identifier.toLowerCase().contains('annual') ||
+          pkg.identifier.toLowerCase().contains('ano');
 
-    return [
-      ...visible.map((pkg) {
-        final isSelected = _selectedPackage?.identifier == pkg.identifier;
-        final isAnnual = pkg.identifier.toLowerCase().contains('annual') ||
-            pkg.identifier.toLowerCase().contains('ano');
-
-        return Padding(
-          padding: const EdgeInsets.only(bottom: Spacing.sm),
-          child: InkWell(
-            onTap: () => setState(() => _selectedPackage = pkg),
-            borderRadius: BorderRadius.circular(16),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: isSelected
-                      ? theme.colorScheme.primary
-                      : theme.colorScheme.outline
-                          .withAlpha((0.3 * 255).toInt()),
-                  width: isSelected ? 2 : 1,
-                ),
-                borderRadius: BorderRadius.circular(16),
+      return Padding(
+        padding: const EdgeInsets.only(bottom: Spacing.sm),
+        child: InkWell(
+          onTap: () => setState(() => _selectedPackage = pkg),
+          borderRadius: BorderRadius.circular(16),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
                 color: isSelected
-                    ? theme.colorScheme.primaryContainer
-                        .withAlpha((0.1 * 255).toInt())
-                    : null,
+                    ? theme.colorScheme.primary
+                    : theme.colorScheme.outline.withAlpha((0.3 * 255).toInt()),
+                width: isSelected ? 2 : 1,
               ),
-              padding: const EdgeInsets.all(Spacing.md),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          isAnnual
-                              ? l10n.onboardingAnnualLabel
-                              : l10n.onboardingMonthlyLabel,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+              borderRadius: BorderRadius.circular(16),
+              color: isSelected
+                  ? theme.colorScheme.primaryContainer
+                      .withAlpha((0.1 * 255).toInt())
+                  : null,
+            ),
+            padding: const EdgeInsets.all(Spacing.md),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        isAnnual
+                            ? l10n.onboardingAnnualLabel
+                            : l10n.onboardingMonthlyLabel,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
-                        Text(
-                          pkg.description,
-                          style: theme.textTheme.bodySmall?.copyWith(
-                            color: theme.colorScheme.onSurfaceVariant,
-                          ),
+                      ),
+                      Text(
+                        pkg.description,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    pkg.priceString,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: theme.colorScheme.primary,
-                    ),
+                ),
+                Text(
+                  pkg.priceString,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: theme.colorScheme.primary,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        );
-      }),
-      if (!_showAllPlans && _packages.length > 1)
-        TextButton(
-          onPressed: () => setState(() => _showAllPlans = true),
-          child: Text(l10n.onboardingViewAllPlans),
         ),
-    ];
+      );
+    }).toList();
   }
 }

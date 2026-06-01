@@ -42,6 +42,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get copy => 'Copiază';
 
   @override
+  String get next => 'Următorul';
+
+  @override
   String get retry => 'Reîncearcă';
 
   @override
@@ -283,28 +286,28 @@ class AppLocalizationsRo extends AppLocalizations {
   String get language => 'Limbă';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brazilia)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'engleză';
 
   @override
   String get languageSystem => 'Implicit sistem';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Selectați Limbă';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Căutați limba...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Valută';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Selectați Moneda';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Caută moneda...';
 
   @override
   String get appearance => 'Aspect';
@@ -322,14 +325,14 @@ class AppLocalizationsRo extends AppLocalizations {
   String get themeColor => 'Culoare temă';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Culori dinamice';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Utilizați culori pe baza tapetului dvs';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Dezactivați culorile dinamice pentru ca culoarea temei să aibă efect';
 
   @override
   String get finance => 'Finanțe';
@@ -571,17 +574,17 @@ class AppLocalizationsRo extends AppLocalizations {
   String get generalAssistant => 'Asistent general';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Chat nou';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Fără istoric de chat';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Șterge chat';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Sigur vrei să ștergi acest chat? Mesajele se vor pierde definitiv.';
 
   @override
   String get clearHistory => 'Curăță istoricul';
@@ -628,90 +631,105 @@ class AppLocalizationsRo extends AppLocalizations {
   String get continueAsGuest => 'Continuă ca invitat';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Bun venit la Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Cel mai inteligent mod de a-ți organiza cumpărăturile și de a economisi bani.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Personalizați-vă experiența';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Alegeți cum doriți să arate și să funcționeze Lista Plus pentru dvs.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Salvați totul în cloud';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Datele dvs. sunt sincronizate pe toate dispozitivele dvs';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Împărtășește cu cei pe care îi iubești';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Sincronizați listele cu familia și prietenii în timp real';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Deblocați toate funcțiile';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Profitați la maximum de listele dvs. de cumpărături';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Cea mai bună valoare';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Lunar';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Anual';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Vezi toate planurile';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Abonați-vă';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'Anulați oricând. Nici un angajament.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Continuați ca invitat';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Restabili';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Aveți deja un abonament? Atingeți aici pentru a o restabili.';
+
+  @override
+  String get onboardingExit => 'Ieșire';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Hai să te cunoaștem';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Vom folosi acest lucru pentru a vă personaliza sugestiile și pentru a face cumpărăturile mai inteligente.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Care este mâncarea ta preferată?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'de ex. Pizza, sushi, lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Continua';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Sari peste moment';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Spune-ne mâncarea ta preferată pentru a continua';
+
+  @override
+  String get settingsDefaultScreen => 'Ecran de start implicit';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Alegeți între lista de cumpărături sau chat AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Lista de cumpărături';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -1083,344 +1101,348 @@ class AppLocalizationsRo extends AppLocalizations {
       'Raportează erori, sugerează îmbunătățiri sau corectează traduceri';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energie AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Căutați în conversație...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nu s-au găsit mesaje';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Întrebări sugerate:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Asistent de cumpărături';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased din $total achiziționate';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Estimată';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Vizualizați articole';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Nu există articole în listă';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Istoric lung: asistentul se concentrează pe cele mai recente mesaje pentru o performanță mai bună.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Ascultare...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Adăugați direct la listă';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Deblocați răspunsul complet';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Lista de comutare';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Modul Piață';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Înapoi la chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Terminați cumpărăturile';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Bun venit la AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Creați o listă de cumpărături pentru a începe să utilizați chatul inteligent.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Cum pot ajuta?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Întrebați despre prețuri, rețete, organizare...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total achiziționat';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Răspunsuri rapide:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Comenzile vocale avansate sunt Pro. Se activează dictarea de bază...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Vizualizați Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Hopa! A apărut o eroare la încărcarea chatului.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Verificați conexiunea sau încercați din nou mai târziu.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Acest lucru poate apărea din cauza oscilațiilor rețelei sau a indisponibilității temporare. Vă rugăm să încercați din nou.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Ascultarea activă';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Ce ai vrea să faci cu acest articol?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Vezi detalii';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Deschide meniul';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Vezi Rețeta';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Reteta creata!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Edita';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Şterge';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Ștergeți această rețetă?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Sigur doriți să ștergeți „$recipeName”? Această acțiune nu poate fi anulată.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingrediente';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instrucţiuni';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Timp de pregătire';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Reteta salvata!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nu au fost salvate rețete';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Creați prima rețetă personalizată atingând butonul de mai jos.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Rețetele mele';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Rețetă nouă';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Se încarcă rețetele...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Eroare la încărcarea rețetelor';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Adăugați ingredient';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Salva';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Numele rețetei';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Scurtă descriere';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Timp de pregătire (minute)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Introduceți un pas pe linie...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Adăugați o fotografie';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Sau inserați adresa URL a unei imagini';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Etichete';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Etichete de rețetă';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Sugerat';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Cauta retete...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrați după etichetă';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Toate';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Rețeta a fost ștearsă';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Salvați modificările';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Editați rețeta';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Rețetă nouă';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Necesar';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Alegeți sursa imaginii';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galerie';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Introduceți adresa URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Imaginea retetei';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Eliminați imaginea';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Planificator de mese';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Vedere lunară';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Vedere săptămânală';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Nicio masă planificată';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Atingeți o zi pentru a adăuga o masă';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Se încarcă planul de masă...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Eroare la încărcarea planului de masă';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Adăugați masa';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Editați masa';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Scoateți masa';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Mâncarea eliminată';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count porții',
+      one: '$count porții',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Porții';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Notă (opțional)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Selectați o rețetă';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Cauta retete...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Nu au fost găsite rețete';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Creați mai întâi rețete în fila Rețete';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Adăugați la plan';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count din $total mese planificate';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Generați lista de cumpărături';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Adăugați toate ingredientele din mesele planificate săptămâna aceasta la lista de cumpărături?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count ingredient(e) adăugat(e) la lista dvs.!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Fără ingrediente de adăugat. Planificați mai întâi câteva mese cu rețete.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList =>
+      'Creați mai întâi o listă de cumpărături.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Mic dejun';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Prânz';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Cină';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Gustare';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Data';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty =>
+      'Nimic planificat pentru această săptămână';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Atingeți orice zi pentru a începe să vă planificați mesele!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -1428,19 +1450,20 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Invitați pe listă';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Partajați aplicația';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Invitați prietenii să folosească Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Folosesc Lista Plus pentru a-mi organiza cumpărăturile! Descărcați prin linkul meu și primim amândoi 7 zile de Premium gratuit: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Obțineți 7 zile de Lista Plus Premium!';
 }

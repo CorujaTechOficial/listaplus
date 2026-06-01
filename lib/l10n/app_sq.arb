@@ -1,101 +1,73 @@
 {
   "@@locale": "sq",
-  "appTitle": "Lista e Blerjeve",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Listat",
-  "pantry": "Qilar",
-  "@_Common": "description: Common actions",
-  "cancel": "Anulo",
-  "save": "Ruaj",
-  "create": "Krijo",
-  "add": "Shto",
-  "remove": "Hiq",
-  "delete": "Fshi",
-  "edit": "Ndrysho",
-  "copy": "Kopjo",
-  "retry": "Provo përsëri",
-  "regenerate": "Rigjenero",
-  "copiedToClipboard": "Kopjuar në clipboard",
-  "confirm": "Konfirmo",
-  "close": "Mbyll",
-  "import": "Importo",
-  "rename": "Riemërto",
-  "upgrade": "Përmirëso",
-  "clear": "Pastro",
-  "error": "Gabim: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Gabim: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Gabim në përpunimin e blerjes. Provo përsëri.",
-  "restoreError": "Gabim në restaurimin e blerjeve. Provo përsëri.",
-  "loading": "Duke u ngarkuar...",
-  "fieldRequired": "Fushë e detyrueshme",
-  "addedFeedback": "U shtua!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} i zgjedhur} other{{count} të zgjedhura}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Vlerësuar",
-  "alreadyPurchased": "Tashmë të blera",
-  "clearList": "Pastro listën",
-  "clearPurchased": "Pastro të blerat",
-  "share": "Ndaj",
-  "shareViaCode": "Ndaj përmes kodit",
-  "importViaCode": "Importo përmes kodit",
-  "listAssistant": "Asistent i listës",
-  "globalAssistant": "Asistent global",
-  "becomePremium": "Bëhu Premium",
-  "manageSubscription": "Menaxho abonimin",
-  "completePurchase": "Përfundo blerjen",
-  "confirmClearList": "Hiq të gjithë artikujt?",
-  "shareListTitle": "Ndaj Listën",
-  "shareThisCode": "Ndaj këtë kod:",
-  "validForLimitedTime": "Vlefshëm për kohë të kufizuar",
-  "importListTitle": "Importo Listën",
-  "enterCodeHint": "Fut kodin",
-  "confirmArchiveTitle": "Përfundo Blerjen",
-  "confirmArchiveContent": "Përfundo këtë blerje dhe arkivo listën?",
-  "complete": "Përfundo",
-  "listArchived": "Lista u arkivua me sukses!",
-  "listAdded": "{listName} u shtua!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Bli",
-  "unmark": "Çshëno",
-  "confirmDeleteItems": "Hiq {count} artikuj?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Konfirmo",
-  "confirmContent": "Hiq {count} artikuj?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Arkivo listën",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Qilar",
-  "generateShoppingList": "Gjenero listën e blerjeve",
-  "pantryEmpty": "Qilar bosh",
-  "pantryEmptySubtitle": "Shto produktet që dëshiron të mbash në shtëpi",
-  "itemsNeedPurchase": "{deficit} artikuj duhet të blihen",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Asnjë artikull nuk ka nevojë të blihet",
-  "newPantryList": "Blerje nga Qilar",
-  "newListTitle": "Listë e Re Blerjesh",
-  "itemsWillBeAdded": "{count} artikuj do të shtohen",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Emri i listës",
-  "listCreated": "Lista \"{name}\" u krijua me {count} artikuj",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Pa gjurmim",
-  "markAsPurchased": "Shëno si të blerë",
-  "editPantryItem": "Ndrysho {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Sasia ideale",
-  "currentQuantity": "Sasia aktuale",
-  "consumed": "Konsumuar",
-  "restocked": "{name} u rimbush në {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Hiq \"{name}\" nga qilari?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Ndrysho {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Cilësimet",
-  "language": "Gjuha",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Parazgjedhja e sistemit",
-  "appearance": "Pamja",
-  "light": "E çelët",
-  "system": "Sistemi",
-  "dark": "E errët",
-  "themeColor": "Ngjyra e temës",
-  "finance": "Financa",
-  "monthlyBudgetNav": "Buxheti mujor",
-  "budgetSubtitle": "Gjurmo shpenzimet e tua mujore",
-  "data": "Të dhënat",
-  "backupNav": "Rezervim",
-  "backupSubtitle": "Eksporto ose importo të dhënat e tua",
-  "about": "Rreth",
-  "version": "Versioni",
-  "privacy": "Privatësia",
-  "termsOfUse": "Kushtet e përdorimit",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Rezervim",
-  "backupPremiumDescription": "Rezervimi dhe eksportimi janë veçori premium",
-  "exportData": "Eksporto të dhënat",
-  "exportDataSubtitle": "Ruaj të gjitha listat si JSON",
-  "importData": "Importo të dhënat",
-  "importDataSubtitle": "Rivendos listat nga një JSON",
-  "importJsonTitle": "Importo JSON",
-  "importJsonHint": "Ngjit JSON-in e rezervimit këtu...",
-  "backupExported": "Rezervimi u eksportua!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Buxheti Mujor",
-  "budgetPremiumLocked": "Buxheti global mujor është premium",
-  "budgetUpgradePrompt": "Përmirëso për të zhbllokuar",
-  "noBudgetDefined": "Asnjë buxhet i caktuar",
-  "totalEstimated": "Totali i vlerësuar: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Cakto buxhetin",
-  "budgetLists": "Listat",
-  "budgetValueLabel": "Shuma",
-  "setBudgetTitle": "Buxheti Mujor",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Të gjitha",
-  "filterPending": "Në pritje",
-  "filterPurchased": "Të blera",
-  "sortName": "Emri",
-  "sortCategory": "Kategoria",
-  "sortDate": "Data",
-  "sortManual": "Manual",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Rreth",
+  "achievements": "Arritjet",
+  "activeListening": "Dëgjim aktiv",
+  "add": "Shto",
+  "addAllToList": "Shto të gjitha në listë",
+  "addDirectToList": "Shto direkt në listë",
+  "addIngredient": "Shtoni përbërës",
   "addItem": "Shto Artikull",
-  "itemName": "Emri i artikullit",
-  "quantityShort": "Sasia",
-  "unit": "Njësia",
-  "category": "Kategoria",
-  "estimatedPrice": "Çmimi i vlerësuar",
   "addItemPrice": "Çmimi i vlerësuar",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Ndrysho Artikull",
-  "quantityFull": "Sasia",
-  "editItemPrice": "Çmimi i vlerësuar",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Shto foto",
   "addToPantry": "Shto në Qilar",
   "addToPantryPrompt": "Shto \"{name}\" në Qilarin tënd?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Po",
-  "productName": "Emri i produktit",
-  "idealQty": "Sasia ideale",
-  "currentQty": "Sasia aktuale",
-  "trackStock": "Gjurmo stokun",
-  "trackStockActive": "Shfaqet në sugjerimet e blerjeve",
-  "trackStockInactive": "Nuk gjeneron sugjerim blerjeje",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Krijo Listë",
-  "renameListDialog": "Riemërto Listën",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Historiku i Listave",
-  "myLists": "Listat e Mia",
-  "viewActive": "Shiko Aktive",
-  "viewHistory": "Shiko Historikun",
-  "noArchivedLists": "Asnjë listë e arkivuar",
-  "noActiveLists": "Asnjë listë aktive",
-  "completedOn": "Përfunduar më {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "E ndarë",
-  "restore": "Rivendos",
-  "removeSharedTooltip": "Hiq",
-  "deleteListTitle": "Fshi listën",
-  "deleteListContent": "Jeni të sigurt që doni të fshini \"{name}\"? Të gjithë artikujt do të hiqen.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Hiq listën e ndarë",
-  "removeSharedListContent": "Hiq \"{name}\" nga listat e tua? Lista origjinale nuk do të ndikohet.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Krijo listë të re",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "U shtua!",
+  "advancedFeatures": "Veçori të avancuara",
   "aiAssistant": "Asistent AI",
   "aiAssistantDescription": "Merr sugjerime të zgjuara, receta dhe këshilla të personalizuara me asistentin tonë AI.",
-  "generalAssistant": "Asistent i Përgjithshëm",
+  "aiCreditsRemaining": "{remaining} kredite të mbetura",
+  "aiEnergy": "Energjia e AI",
+  "aiError": "Na vjen keq, ndodhi një gabim gjatë përpunimit të kërkesës suaj. Kontrollo lidhjen ose provo përsëri më vonë.",
+  "aiVoiceCommandTooltip": "Komandë Zëri AI (Premium)",
+  "allTags": "Të gjitha",
+  "alreadyPurchased": "Tashmë të blera",
+  "appTitle": "Lista e Blerjeve",
+  "appearance": "Pamja",
+  "archiveList": "Arkivo listën",
+  "backToChat": "Kthehu te Chat",
+  "backupExported": "Rezervimi u eksportua!",
+  "backupNav": "Rezervim",
+  "backupPremiumDescription": "Rezervimi dhe eksportimi janë veçori premium",
+  "backupSubtitle": "Eksporto ose importo të dhënat e tua",
+  "backupTitle": "Rezervim",
+  "becomePremium": "Bëhu Premium",
+  "budgetAmountLabel": "Shuma e buxhetit",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Buxheti Mujor",
+  "budgetDashboardTitle": "Paneli",
+  "budgetEditTitle": "Buxheti Mujor",
+  "budgetLists": "Listat",
+  "budgetPremiumLocked": "Buxheti global mujor është premium",
+  "budgetSubtitle": "Gjurmo shpenzimet e tua mujore",
+  "budgetUpgradePrompt": "Përmirëso për të zhbllokuar",
+  "budgetValueLabel": "Shuma",
+  "buy": "Bli",
+  "cancel": "Anulo",
+  "cartTotal": "Totali i shportës",
+  "catBakery": "Furra",
+  "catBeverages": "Pijet",
+  "catCleaning": "Pastrimi",
+  "catFruits": "Frutat",
+  "catOthers": "Të tjera",
+  "category": "Kategoria",
+  "chatError": "Gabim në ngarkimin e bisedës: {error}",
+  "chatHint": "Shkruaj mesazhin tënd...",
+  "chatSubtitle": "Kërko sugjerime për artikuj, receta ose këshilla kursimi.",
+  "chatSubtitleShort": "Pyetni për çmimet, recetat, organizimin...",
+  "chooseCurrency": "Zgjidhni monedhën",
+  "chooseImageSource": "Zgjidhni burimin e imazhit",
+  "chooseLanguage": "Zgjidhni gjuhën",
+  "clear": "Pastro",
   "clearHistory": "Pastro Historikun",
   "clearHistoryConfirm": "Pastro të gjitha mesazhet në këtë sesion?",
-  "chatHint": "Shkruaj mesazhin tënd...",
-  "chatError": "Gabim në ngarkimin e bisedës: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Si mund të ndihmoj me listën tënde?",
-  "generalHelp": "Si mund të ndihmoj me blerjet e tua sot?",
-  "chatSubtitle": "Kërko sugjerime për artikuj, receta ose këshilla kursimi.",
-  "aiError": "Na vjen keq, ndodhi një gabim gjatë përpunimit të kërkesës suaj. Kontrollo lidhjen ose provo përsëri më vonë.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Hyr për të zhbllokuar\nveçoritë premium",
-  "signInGoogle": "Hyr me Google",
-  "signInApple": "Hyr me Apple",
+  "clearList": "Pastro listën",
+  "clearPurchased": "Pastro të blerat",
+  "close": "Mbyll",
+  "complete": "Përfundo",
+  "completePurchase": "Përfundo blerjen",
+  "completedOn": "Përfunduar më {date}",
+  "confirm": "Konfirmo",
+  "confirmArchiveContent": "Përfundo këtë blerje dhe arkivo listën?",
+  "confirmArchiveTitle": "Përfundo Blerjen",
+  "confirmClearList": "Hiq të gjithë artikujt?",
+  "confirmContent": "Hiq {count} artikuj?",
+  "confirmDeleteItems": "Hiq {count} artikuj?",
+  "confirmDeleteTitle": "Konfirmo",
+  "confirmRemovePantry": "Hiq \"{name}\" nga qilari?",
+  "consumed": "Konsumuar",
   "continueAsGuest": "Vazhdo si i ftuar",
-  "loginError": "Gabim në hyrje: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Përmirëso për të zhbllokuar",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Artikulli u hoq",
-  "undo": "Çbëj",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Lista jote është bosh",
-  "emptyListSubtitle": "Shto artikuj për të filluar",
-  "noListFoundTitle": "Nuk u gjetën lista",
-  "noListFoundSubtitle": "Krijo listën tënde të parë për të filluar",
+  "copiedToClipboard": "Kopjuar në clipboard",
+  "copy": "Kopjo",
+  "create": "Krijo",
   "createFirstList": "Krijo Listën e Parë",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Buxheti i Listës",
-  "budgetAmountLabel": "Shuma e buxhetit",
-  "removeBudget": "Hiq",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Lista të pakufizuara",
-  "prefSharing": "Ndaj lista",
-  "prefFullHistory": "Historik i plotë",
-  "prefExportData": "Eksporto të dhënat",
-  "prefCustomThemes": "Tema të personalizuara",
-  "prefMonthlyBudget": "Buxhet global mujor",
-  "prefAIAssistant": "Asistent Personal AI",
-  "prefUnlimitedPantry": "Qilar i pakufizuar",
-  "prefInteractiveArtifacts": "Artifakte Interaktive AI",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Jeshile",
-  "themeBlue": "Blu",
-  "themePurple": "Vjollcë",
-  "themeRed": "Kuqe",
-  "themeOrange": "Portokalli",
-  "themePink": "Rozë",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Qelibar",
-  "themeTeal": "Teal",
-  "themeBrown": "Kafe",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Frutat",
-  "catCleaning": "Pastrimi",
-  "catBeverages": "Pijet",
-  "catBakery": "Furra",
-  "catOthers": "Të tjera",
-  "@_Unit": "description: Unit",
-  "unitPack": "pako",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Lista e Blerjeve",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Buxheti Mujor",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Fshi listën",
-  "pantryItemRemoved": "Artikulli u hoq",
+  "createListDialog": "Krijo Listë",
+  "createListToStartAi": "Krijo një listë blerjesh për të filluar përdorimin e bisedës inteligjente.",
+  "createNewList": "Krijo listë të re",
+  "currency": "Monedha",
+  "currentQty": "Sasia aktuale",
+  "currentQuantity": "Sasia aktuale",
+  "dark": "E errët",
+  "data": "Të dhënat",
   "deficitItems": "{deficit,plural, one{{deficit} artikull duhet të blihet} other{{deficit} artikuj duhet të blihen}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Totali i shportës",
-  "restockLabel": "Rimbush",
-  "advancedFeatures": "Veçori të avancuara",
-  "selectAll": "Zgjidh të gjitha",
+  "delete": "Fshi",
+  "deleteListConfirm": "Fshi listën",
+  "deleteListContent": "Jeni të sigurt që doni të fshini \"{name}\"? Të gjithë artikujt do të hiqen.",
+  "deleteListTitle": "Fshi listën",
+  "deleteRecipe": "Fshije",
+  "deleteRecipeConfirm": "Të fshihet kjo recetë?",
+  "deleteRecipeConfirmMsg": "Jeni i sigurt që dëshironi të fshini \"{recipeName}\"? Ky veprim nuk mund të zhbëhet.",
+  "deleteSession": "Fshi Chat",
+  "deleteSessionConfirm": "Je i sigurt që dëshiron ta fshish këtë bisedë? Mesazhet do të humbasin përgjithmonë.",
   "deselectAll": "Çzgjidh të gjitha",
-  "monthlyBudgetAppBar": "Buxheti Mujor",
-  "budgetEditTitle": "Buxheti Mujor",
-  "budgetDashboardTitle": "Paneli",
-  "selectListForDashboard": "Zgjidh një listë për të parë panelin.",
-  "spendingAnalysis": "Analiza e Shpenzimeve",
-  "noItemsToAnalyze": "Asnjë artikull në listë për të analizuar.",
-  "markItemsToSeeAnalysis": "Shëno artikujt si të blerë për të parë analizën.",
-  "totalSpending": "Totali i Shpenzuar",
-  "spendingByCategory": "Shpenzimet sipas Kategorisë",
-  "achievements": "Arritjet",
-  "exportPdfExcel": "Eksporto PDF/Excel",
-  "exportPdf": "Eksporto si PDF",
-  "exportExcel": "Eksporto si Excel",
-  "organizingAi": "DUKE ORGANIZUAR ME AI...",
-  "yesLabel": "Po",
-  "noLabel": "Jo",
-  "shareListText": "Lista Ime e Blerjeve",
-  "emptyListAddItems": "Lista jote është bosh! Shto artikuj së pari. ℹ️",
-  "listOrganizedMagic": "Lista e organizuar për mrekulli sipas kategorive! ✨",
-  "shoppingMode": "Modaliteti i Blerjeve",
-  "smartOrganization": "Organizim i Mençur",
-  "savings": "Kursimet",
-  "shoppingModeHeader": "MODALITETI I BLERJEVE",
-  "shareAsText": "Dërgo artikujt si tekst të formatuar",
-  "shareRealtime": "Sinkronizim në kohë reale me persona të tjerë",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Recetë e shpejtë",
-  "quickRecipePrompt": "Sugjero receta me artikuj nga lista ime.",
+  "dynamicColors": "Ngjyra dinamike",
+  "dynamicColorsEnabledWarning": "Çaktivizo ngjyrat dinamike që ngjyra e temës të hyjë në fuqi",
+  "dynamicColorsSubtitle": "Përdorni ngjyrat bazuar në sfondin tuaj",
   "economyTips": "Këshilla kursimi",
   "economyTipsPrompt": "Si mund të kursej para në këtë blerje?",
-  "organizeAisles": "Organizo sipas korridoreve",
-  "organizeAislesPrompt": "Organizo sipas korridoreve të supermarketit.",
-  "recipeSuggestion": "Sugjerim recete",
-  "aiCreditsRemaining": "{remaining} kredite të mbetura",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Shto të gjitha në listë",
-  "organizeByAisles": "Organizo sipas korridoreve",
-  "voiceTranscriptionTooltip": "Shtypje me zë (Falas)",
-  "aiVoiceCommandTooltip": "Komandë Zëri AI (Premium)",
-  "voiceCommandTitle": "Komandë Zëri AI",
-  "voiceCommandContent": "Flit natyrshëm për të menaxhuar listën tënde!\n\nShembuj:\n• 'Shto bukë, djathë dhe proshutë'\n• 'Hiq detergjentin e rrobave'\n• 'Ndrysho temën në blu'\n\nKjo është një veçori ekskluzive e Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Shiko Planet",
-  "itemsAddedSuccess": "Artikujt u shtuan me sukses në listë!",
-  "viewList": "Shiko listën",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Dërgo Feedback",
+  "edit": "Ndrysho",
+  "editItem": "Ndrysho Artikull",
+  "editItemPrice": "Çmimi i vlerësuar",
+  "editPantryItem": "Ndrysho {name}",
+  "editRecipe": "Redakto",
+  "editRecipeTitle": "Redakto recetën",
+  "emptyListAddItems": "Lista jote është bosh! Shto artikuj së pari. ℹ️",
+  "emptyListSubtitle": "Shto artikuj për të filluar",
+  "emptyListTitle": "Lista jote është bosh",
+  "enterCodeHint": "Fut kodin",
+  "enterUrl": "Fut URL-në",
+  "error": "Gabim: {message}",
+  "errorGeneric": "Gabim: {message}",
+  "errorLoadingChat": "Oops! Ndodhi një gabim gjatë ngarkimit të bisedës.",
+  "errorLoadingChatSubtitle": "Kontrollo lidhjen tënde ose provo sërish më vonë.",
+  "errorLoadingRecipes": "Gabim gjatë ngarkimit të recetave",
+  "errorOscillation": "Kjo mund të ndodhë për shkak të lëkundjeve të rrjetit ose mosdisponueshmërisë së përkohshme. Ju lutemi provoni përsëri.",
+  "estimated": "Vlerësuar",
+  "estimatedCost": "e vlerësuar",
+  "estimatedPrice": "Çmimi i vlerësuar",
+  "exportData": "Eksporto të dhënat",
+  "exportDataSubtitle": "Ruaj të gjitha listat si JSON",
+  "exportExcel": "Eksporto si Excel",
+  "exportPdf": "Eksporto si PDF",
+  "exportPdfExcel": "Eksporto PDF/Excel",
+  "feedbackBack": "Mbrapa",
+  "feedbackError": "Gabim në dërgim: {error}",
+  "feedbackHint": "Përshkruaj feedback-un tënd në detaje...",
   "feedbackPrompt": "Çfarë dëshiron të ndash?",
+  "feedbackRetry": "Provo përsëri",
+  "feedbackSend": "Dërgo Feedback",
+  "feedbackSending": "Duke dërguar...",
+  "feedbackSettingsSubtitle": "Raporto gabime, sugjero përmirësime ose rregullo përkthime",
+  "feedbackSettingsTitle": "Dërgo Feedback",
+  "feedbackThankYou": "Faleminderit!",
+  "feedbackThankYouMessage": "Feedback-u yt u mor dhe na ndihmon të përmirësojmë Lista Plus për të gjithë.",
+  "feedbackTitle": "Dërgo Feedback",
   "feedbackTypeBug": "Raporto Gabim",
   "feedbackTypeBugHint": "Diçka nuk funksionon",
-  "feedbackTypeSuggestion": "Sugjerim",
-  "feedbackTypeSuggestionHint": "Ide për të përmirësuar aplikacionin",
-  "feedbackTypeTranslation": "Çështje Përkthimi",
-  "feedbackTypeTranslationHint": "Përkthim i pasaktë ose i vështirë",
   "feedbackTypeFeature": "Kërkesë për Veçori",
   "feedbackTypeFeatureHint": "Veçori që dëshiron të shohësh",
   "feedbackTypeOther": "Tjetër",
   "feedbackTypeOtherHint": "Lloj tjetër feedback-u",
-  "feedbackHint": "Përshkruaj feedback-un tënd në detaje...",
-  "feedbackSend": "Dërgo Feedback",
-  "feedbackSending": "Duke dërguar...",
-  "feedbackThankYou": "Faleminderit!",
-  "feedbackThankYouMessage": "Feedback-u yt u mor dhe na ndihmon të përmirësojmë Lista Plus për të gjithë.",
-  "feedbackBack": "Mbrapa",
-  "feedbackError": "Gabim në dërgim: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Provo përsëri",
-  "feedbackSettingsTitle": "Dërgo Feedback",
-  "feedbackSettingsSubtitle": "Raporto gabime, sugjero përmirësime ose rregullo përkthime",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Sugjerim",
+  "feedbackTypeSuggestionHint": "Ide për të përmirësuar aplikacionin",
+  "feedbackTypeTranslation": "Çështje Përkthimi",
+  "feedbackTypeTranslationHint": "Përkthim i pasaktë ose i vështirë",
+  "fieldRequired": "Fushë e detyrueshme",
+  "filterAll": "Të gjitha",
+  "filterByTag": "Filtro sipas etiketës",
+  "filterPending": "Në pritje",
+  "filterPurchased": "Të blera",
+  "finance": "Financa",
+  "finishShopping": "Përfundo blerjet",
+  "gallery": "Galeria",
+  "generalAssistant": "Asistent i Përgjithshëm",
+  "generalHelp": "Si mund të ndihmoj me blerjet e tua sot?",
+  "generateShoppingList": "Gjenero listën e blerjeve",
+  "globalAssistant": "Asistent global",
+  "howCanIHelp": "Si mund të ndihmoj?",
+  "idealQty": "Sasia ideale",
+  "idealQuantity": "Sasia ideale",
+  "imageUrlPlaceholder": "Ose ngjitni një URL të imazhit",
+  "import": "Importo",
+  "importData": "Importo të dhënat",
+  "importDataSubtitle": "Rivendos listat nga një JSON",
+  "importJsonHint": "Ngjit JSON-in e rezervimit këtu...",
+  "importJsonTitle": "Importo JSON",
+  "importListTitle": "Importo Listën",
+  "importViaCode": "Importo përmes kodit",
+  "ingredients": "Përbërësit",
+  "instructions": "Udhëzimet",
+  "instructionsHint": "Shkruani një hap për rresht...",
+  "inviteToList": "Fto në listë",
+  "itemName": "Emri i artikullit",
+  "itemRemoved": "Artikulli u hoq",
+  "itemsAddedSuccess": "Artikujt u shtuan me sukses në listë!",
+  "itemsNeedPurchase": "{deficit} artikuj duhet të blihen",
+  "itemsPurchasedCount": "blerë {purchased} nga {total}",
+  "itemsPurchasedShort": "{purchased}/{total} blerë",
+  "itemsWillBeAdded": "{count} artikuj do të shtohen",
+  "language": "Gjuha",
+  "languageEnglish": "anglisht",
+  "languagePortuguese": "portugalisht (Brazil)",
+  "languageSystem": "Parazgjedhja e sistemit",
+  "light": "E çelët",
+  "listAdded": "{listName} u shtua!",
+  "listArchived": "Lista u arkivua me sukses!",
+  "listAssistant": "Asistent i listës",
+  "listBudgetTitle": "Buxheti i Listës",
+  "listCreated": "Lista \"{name}\" u krijua me {count} artikuj",
+  "listHelp": "Si mund të ndihmoj me listën tënde?",
+  "listHistory": "Historiku i Listave",
+  "listNameLabel": "Emri i listës",
+  "listOrganizedMagic": "Lista e organizuar për mrekulli sipas kategorive! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Duke dëgjuar...",
+  "lists": "Listat",
+  "loading": "Duke u ngarkuar...",
+  "loadingRecipes": "Recetat tuaja po ngarkohen...",
+  "loginError": "Gabim në hyrje: {error}",
+  "loginPrompt": "Hyr për të zhbllokuar\nveçoritë premium",
+  "longHistoryWarning": "Histori e gjatë: asistenti fokusohet në mesazhet më të fundit për performancë më të mirë.",
+  "manageSubscription": "Menaxho abonimin",
+  "markAsPurchased": "Shëno si të blerë",
+  "markItemsToSeeAnalysis": "Shëno artikujt si të blerë për të parë analizën.",
+  "marketMode": "Mënyra e tregut",
+  "mealPlannerAddMeal": "Shtoni vaktin",
+  "mealPlannerDateLabel": "Data",
+  "mealPlannerDeleteMeal": "Hiqni vaktin",
+  "mealPlannerEditMeal": "Redakto vaktin",
+  "mealPlannerError": "Gabim gjatë ngarkimit të planit të vaktit",
+  "mealPlannerGenerateList": "Gjeneroni listën e blerjeve",
+  "mealPlannerGenerateListConfirm": "Shtoni të gjithë përbërësit nga vaktet e planifikuara këtë javë në listën tuaj të blerjeve?",
+  "mealPlannerGenerateListEmpty": "Nuk ka përbërës për të shtuar. Planifikoni fillimisht disa vakte me receta.",
+  "mealPlannerGenerateListNoList": "Krijoni së pari një listë blerjesh.",
+  "mealPlannerGenerateListSuccess": "{count} përbërësit u shtuan në listën tuaj!",
+  "mealPlannerLoading": "Plani i ushqimit po ngarkohet...",
+  "mealPlannerMealDeleted": "Vakti i hequr",
+  "mealPlannerMealTypeBreakfast": "Mëngjesi",
+  "mealPlannerMealTypeDinner": "Darka",
+  "mealPlannerMealTypeLunch": "Dreka",
+  "mealPlannerMealTypeSnack": "Rostiçeri",
+  "mealPlannerNoMeals": "Asnjë vakt i planifikuar",
+  "mealPlannerNoMealsHint": "Prekni një ditë për të shtuar një vakt",
+  "mealPlannerNoRecipesFound": "Nuk u gjet asnjë recetë",
+  "mealPlannerNoRecipesHint": "Krijoni receta fillimisht në skedën Receta",
+  "mealPlannerNoteLabel": "Shënim (opsionale)",
+  "mealPlannerPrepTime": "{minutes} min",
+  "mealPlannerSave": "Shtoni në plan",
+  "mealPlannerSearchRecipes": "Kërkoni receta...",
+  "mealPlannerSelectRecipe": "Zgjidhni një recetë",
+  "mealPlannerServings": "{count,plural, one{{count} shërbim} other{{count} shërbime}}",
+  "mealPlannerServingsLabel": "Shërbimet",
+  "mealPlannerTitle": "Planifikues i vakteve",
+  "mealPlannerViewMonthly": "Pamje mujore",
+  "mealPlannerViewWeekly": "Pamje javore",
+  "mealPlannerWeekEmpty": "Asgjë e planifikuar për këtë javë",
+  "mealPlannerWeekEmptyHint": "Prekni çdo ditë për të filluar planifikimin e vakteve tuaja!",
+  "mealPlannerWeekProgress": "{count} nga {total} vaktet e planifikuara",
+  "monthlyBudgetAppBar": "Buxheti Mujor",
+  "monthlyBudgetNav": "Buxheti mujor",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Buxheti Mujor",
+  "myLists": "Listat e Mia",
+  "myRecipes": "Recetat e mia",
+  "newChat": "Bisedë e re",
+  "newListTitle": "Listë e Re Blerjesh",
+  "newPantryList": "Blerje nga Qilar",
+  "newRecipe": "Recetë e re",
+  "newRecipeTitle": "Recetë e re",
+  "next": "Tjetra",
+  "noActiveLists": "Asnjë listë aktive",
+  "noArchivedLists": "Asnjë listë e arkivuar",
+  "noBudgetDefined": "Asnjë buxhet i caktuar",
+  "noHistory": "Nuk ka histori bisede",
+  "noItemsInList": "Nuk ka artikuj në listë",
+  "noItemsToAnalyze": "Asnjë artikull në listë për të analizuar.",
+  "noItemsToBuy": "Asnjë artikull nuk ka nevojë të blihet",
+  "noLabel": "Jo",
+  "noListFoundSubtitle": "Krijo listën tënde të parë për të filluar",
+  "noListFoundTitle": "Nuk u gjetën lista",
+  "noMessagesFound": "Nuk u gjet asnjë mesazh",
+  "noRecipesSaved": "Asnjë recetë nuk është ruajtur",
+  "noRecipesSavedHint": "Krijoni recetën tuaj të parë të personalizuar duke shtypur butonin më poshtë.",
+  "noTracking": "Pa gjurmim",
+  "onboardingAnnualBadge": "Vlera më e mirë",
+  "onboardingAnnualLabel": "Vjetore",
+  "onboardingCancelAnytime": "Anulo në çdo kohë. Asnjë angazhim.",
+  "onboardingContinueAsGuest": "Vazhdo si mysafir",
+  "onboardingExit": "Dilni",
+  "onboardingLoginDesc": "Të dhënat tuaja u sinkronizuan në të gjitha pajisjet tuaja",
+  "onboardingLoginTitle": "Ruani gjithçka në re",
+  "onboardingMonthlyLabel": "Mujore",
+  "onboardingPersonalizationCta": "Vazhdoni",
+  "onboardingPersonalizationDesc": "Ne do ta përdorim këtë për të personalizuar sugjerimet tuaja dhe për t'i bërë blerjet më të zgjuara.",
+  "onboardingPersonalizationFoodHint": "p.sh. Pica, Sushi, Lasagna...",
+  "onboardingPersonalizationFoodLabel": "Cili është ushqimi juaj i preferuar?",
+  "onboardingPersonalizationFoodRequired": "Na tregoni ushqimin tuaj të preferuar për të vazhduar",
+  "onboardingPersonalizationSkip": "Kalo për momentin",
+  "onboardingPersonalizationTitle": "Le të njihemi me ju",
+  "onboardingPremiumSubtitle": "Përfitoni sa më shumë nga listat tuaja të blerjeve",
+  "onboardingPremiumTitle": "Zhbllokoni të gjitha veçoritë",
+  "onboardingRestore": "Rivendos blerjet",
+  "onboardingRestoreDesc": "Keni tashmë një abonim? Trokit këtu për ta rivendosur.",
+  "onboardingSetupDesc": "Zgjidhni si dëshironi që Lista Plus të duket dhe të punojë për ju.",
+  "onboardingSetupTitle": "Personalizoni përvojën tuaj",
+  "onboardingShareDesc": "Sinkronizoni listat me familjen dhe miqtë në kohë reale",
+  "onboardingShareTitle": "Ndani me ata që doni",
+  "onboardingSubscribeCta": "Abonohu",
+  "onboardingViewAllPlans": "Shikoni të gjitha planet",
+  "onboardingWelcomeDesc": "Mënyra më e zgjuar për të organizuar blerjet tuaja dhe për të kursyer para.",
+  "onboardingWelcomeTitle": "Mirësevini në Lista Plus",
+  "openMenu": "Hap menunë",
+  "organizeAisles": "Organizo sipas korridoreve",
+  "organizeAislesPrompt": "Organizo sipas korridoreve të supermarketit.",
+  "organizeByAisles": "Organizo sipas korridoreve",
+  "organizingAi": "DUKE ORGANIZUAR ME AI...",
+  "pantry": "Qilar",
+  "pantryAppBar": "Qilar",
+  "pantryEditTitle": "Ndrysho {name}",
+  "pantryEmpty": "Qilar bosh",
+  "pantryEmptySubtitle": "Shto produktet që dëshiron të mbash në shtëpi",
+  "pantryItemRemoved": "Artikulli u hoq",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Asistent Personal AI",
+  "prefCustomThemes": "Tema të personalizuara",
+  "prefExportData": "Eksporto të dhënat",
+  "prefFullHistory": "Historik i plotë",
+  "prefInteractiveArtifacts": "Artifakte Interaktive AI",
+  "prefMonthlyBudget": "Buxhet global mujor",
+  "prefSharing": "Ndaj lista",
+  "prefUnlimitedLists": "Lista të pakufizuara",
+  "prefUnlimitedPantry": "Qilar i pakufizuar",
+  "premiumUpgrade": "Përmirëso për të zhbllokuar",
+  "prepTime": "Koha e pergatitjes",
+  "prepTimeMinutes": "Koha e përgatitjes (minuta)",
+  "privacy": "Privatësia",
+  "productName": "Emri i produktit",
+  "purchaseError": "Gabim në përpunimin e blerjes. Provo përsëri.",
+  "quantityFull": "Sasia",
+  "quantityShort": "Sasia",
+  "quickRecipe": "Recetë e shpejtë",
+  "quickRecipePrompt": "Sugjero receta me artikuj nga lista ime.",
+  "quickReplies": "Përgjigje të shpejta:",
+  "recipeCreated": "Receta e krijuar!",
+  "recipeDeleted": "Receta u fshi",
+  "recipeImage": "Imazhi i recetës",
+  "recipeName": "Emri i recetës",
+  "recipeSaved": "Receta u ruajt!",
+  "recipeSuggestion": "Sugjerim recete",
+  "recipeTags": "Etiketat e recetave",
+  "regenerate": "Rigjenero",
+  "remove": "Hiq",
+  "removeBudget": "Hiq",
+  "removeImage": "Hiq imazhin",
+  "removeSharedListContent": "Hiq \"{name}\" nga listat e tua? Lista origjinale nuk do të ndikohet.",
+  "removeSharedListTitle": "Hiq listën e ndarë",
+  "removeSharedTooltip": "Hiq",
+  "rename": "Riemërto",
+  "renameListDialog": "Riemërto Listën",
+  "requiredField": "E detyrueshme",
+  "restockLabel": "Rimbush",
+  "restocked": "{name} u rimbush në {quantity} {unit}",
+  "restore": "Rivendos",
+  "restoreError": "Gabim në restaurimin e blerjeve. Provo përsëri.",
+  "retry": "Provo përsëri",
+  "save": "Ruaj",
+  "saveChanges": "Ruaj ndryshimet",
+  "saveRecipe": "Ruaj",
+  "savings": "Kursimet",
+  "searchCurrency": "Kërko monedhën...",
+  "searchInConversation": "Kërko në bisedë...",
+  "searchLanguage": "Kërko gjuhën...",
+  "searchRecipes": "Kërkoni receta...",
+  "selectAll": "Zgjidh të gjitha",
+  "selectListForDashboard": "Zgjidh një listë për të parë panelin.",
+  "selectedItems": "{count,plural, one{{count} i zgjedhur} other{{count} të zgjedhura}}",
+  "setBudgetButton": "Cakto buxhetin",
+  "setBudgetTitle": "Buxheti Mujor",
+  "settingsAppBar": "Cilësimet",
+  "settingsDefaultScreen": "Ekrani bazë i parazgjedhur",
+  "settingsDefaultScreenSubtitle": "Zgjidhni midis listës së blerjeve ose bisedës me AI",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "Lista e blerjeve",
+  "share": "Ndaj",
+  "shareApp": "Ndani aplikacionin",
+  "shareAppDescription": "Ftoni miqtë të përdorin Lista Plus",
+  "shareAsText": "Dërgo artikujt si tekst të formatuar",
+  "shareListText": "Lista Ime e Blerjeve",
+  "shareListTitle": "Ndaj Listën",
+  "shareRealtime": "Sinkronizim në kohë reale me persona të tjerë",
+  "shareReferralSubject": "Përfitoni 7 ditë Lista Plus Premium!",
+  "shareReferralText": "Unë jam duke përdorur Lista Plus për të organizuar blerjet e mia! Shkarkoni përmes lidhjes sime dhe ne të dy marrim 7 ditë Premium falas: {url}",
+  "shareSubject": "Lista e Blerjeve",
+  "shareThisCode": "Ndaj këtë kod:",
+  "shareViaCode": "Ndaj përmes kodit",
+  "sharedLabel": "E ndarë",
+  "shoppingAssistant": "Asistente e blerjeve",
+  "shoppingMode": "Modaliteti i Blerjeve",
+  "shoppingModeHeader": "MODALITETI I BLERJEVE",
+  "shortDescription": "Përshkrimi i shkurtër",
+  "signInApple": "Hyr me Apple",
+  "signInGoogle": "Hyr me Google",
+  "smartOrganization": "Organizim i Mençur",
+  "sortCategory": "Kategoria",
+  "sortDate": "Data",
+  "sortManual": "Manual",
+  "sortName": "Emri",
+  "spendingAnalysis": "Analiza e Shpenzimeve",
+  "spendingByCategory": "Shpenzimet sipas Kategorisë",
+  "suggestedQuestions": "Pyetje të sugjeruara:",
+  "suggestedTags": "Sugjeruar",
+  "switchList": "Ndërro listën",
+  "system": "Sistemi",
+  "tags": "Etiketat",
+  "termsOfUse": "Kushtet e përdorimit",
+  "themeAmber": "Qelibar",
+  "themeBlue": "Blu",
+  "themeBrown": "Kafe",
+  "themeColor": "Ngjyra e temës",
+  "themeGreen": "Jeshile",
+  "themeIndigo": "Lejla",
+  "themeOrange": "Portokalli",
+  "themePink": "Rozë",
+  "themePurple": "Vjollcë",
+  "themeRed": "Kuqe",
+  "themeTeal": "Teal",
+  "totalEstimated": "Totali i vlerësuar: {amount}",
+  "totalSpending": "Totali i Shpenzuar",
+  "trackStock": "Gjurmo stokun",
+  "trackStockActive": "Shfaqet në sugjerimet e blerjeve",
+  "trackStockInactive": "Nuk gjeneron sugjerim blerjeje",
+  "undo": "Çbëj",
+  "unit": "Njësia",
+  "unitPack": "pako",
+  "unlockFullResponse": "Zhbllokoni përgjigjen e plotë",
+  "unmark": "Çshëno",
+  "upgrade": "Përmirëso",
+  "validForLimitedTime": "Vlefshëm për kohë të kufizuar",
+  "version": "Versioni",
+  "viewActive": "Shiko Aktive",
+  "viewDetails": "Shiko Detajet",
+  "viewHistory": "Shiko Historikun",
+  "viewItems": "Shiko artikujt",
+  "viewList": "Shiko listën",
+  "viewPro": "Shiko Pro",
+  "viewRecipe": "Shikoni recetën",
+  "voiceCommandContent": "Flit natyrshëm për të menaxhuar listën tënde!\n\nShembuj:\n• 'Shto bukë, djathë dhe proshutë'\n• 'Hiq detergjentin e rrobave'\n• 'Ndrysho temën në blu'\n\nKjo është një veçori ekskluzive e Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Shiko Planet",
+  "voiceCommandTitle": "Komandë Zëri AI",
+  "voiceProFeature": "Komandat e avancuara zanore janë Pro. Po aktivizon diktimin bazë...",
+  "voiceTranscriptionTooltip": "Shtypje me zë (Falas)",
+  "welcomeAiAssistant": "Mirë se vini në AI Assistant",
+  "whatToDoWithItem": "Çfarë do të dëshironit të bënit me këtë artikull?",
+  "yes": "Po",
+  "yesLabel": "Po"
 }

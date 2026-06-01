@@ -41,7 +41,7 @@ class Recipes extends _$Recipes {
     ref.onDispose(() => _subscription?.cancel());
 
     return completer.future.timeout(
-      const Duration(seconds: 15),
+      const Duration(seconds: 30),
       onTimeout: () {
         LoggerService.log('RecipesProvider: timeout no carregamento inicial', tag: 'Recipes');
         throw TimeoutException('O servidor demorou muito para responder. Verifique sua conexão.');

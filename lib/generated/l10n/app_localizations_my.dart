@@ -42,6 +42,9 @@ class AppLocalizationsMy extends AppLocalizations {
   String get copy => 'မိတ္တူကူး';
 
   @override
+  String get next => 'နောက်တစ်ခု';
+
+  @override
   String get retry => 'ထပ်ကြိုးစား';
 
   @override
@@ -275,10 +278,10 @@ class AppLocalizationsMy extends AppLocalizations {
   String get language => 'ဘာသာစကား';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'ပေါ်တူဂီ (ဘရာဇီး)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'အင်္ဂလိပ်စာ';
 
   @override
   String get languageSystem => 'စနစ်မူလ';
@@ -290,13 +293,13 @@ class AppLocalizationsMy extends AppLocalizations {
   String get searchLanguage => 'ဘာသာစကားရှာဖွေရန်...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'ငွေကြေး';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'ငွေကြေးကို ရွေးပါ။';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'ငွေကြေးရှာဖွေပါ...';
 
   @override
   String get appearance => 'အသွင်အပြင်';
@@ -322,7 +325,7 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'အပြင်အဆင်အရောင်အကျိုးသက်ရောက်စေရန် ရွေ့လျားရောင်များပိတ်ပါ။';
 
   @override
   String get finance => 'ဘဏ္ဍာရေး';
@@ -565,17 +568,17 @@ class AppLocalizationsMy extends AppLocalizations {
   String get generalAssistant => 'အထွေထွေအကူ';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Chat အသစ်';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'ချတ်မှတ်တမ်းမရှိပါ။';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Chat ကိုဖျက်ပါ။';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'ဤချတ်ကို ဖျက်လိုသည်မှာ သေချာပါသလား။ မက်ဆေ့ချ်များ အပြီးအပိုင် ဆုံးရှုံးသွားပါမည်။';
 
   @override
   String get clearHistory => 'မှတ်တမ်းရှင်းလင်း';
@@ -622,90 +625,105 @@ class AppLocalizationsMy extends AppLocalizations {
   String get continueAsGuest => 'ဧည့်သည်အဖြစ်ဆက်လက်';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plus မှလှိုက်လှဲစွာကြိုဆိုပါသည်။';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'သင်၏စျေးဝယ်ခြင်းကိုစီစဉ်ရန်နှင့်ငွေချွေတာရန်အကောင်းဆုံးနည်းလမ်း။';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'သင့်အတွေ့အကြုံကို စိတ်ကြိုက်ပြင်ဆင်ပါ။';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Lista Plus သည် သင့်အတွက် အသွင်အပြင်နှင့် လုပ်ဆောင်လိုသည့်ပုံစံကို ရွေးချယ်ပါ။';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'အရာအားလုံးကို cloud တွင်သိမ်းဆည်းပါ။';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'သင့်ဒေတာကို သင့်စက်ပစ္စည်းအားလုံးတွင် စင့်ခ်လုပ်ထားသည်။';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'သင်ချစ်ရတဲ့သူတွေနဲ့ မျှဝေပါ။';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'စာရင်းများကို မိသားစု၊ သူငယ်ချင်းများနှင့် အချိန်နှင့်တပြေးညီ စင့်ခ်လုပ်ပါ။';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'အင်္ဂါရပ်အားလုံးကို လော့ခ်ဖွင့်ပါ။';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'သင့်စျေးဝယ်စာရင်းများမှ အများဆုံးရယူပါ။';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'အကောင်းဆုံးတန်ဖိုး';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'လစဉ်';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'နှစ်စဉ်';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'အစီအစဉ်အားလုံးကို ကြည့်ရှုပါ။';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'စာရင်းသွင်းပါ။';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'အချိန်မရွေး ပယ်ဖျက်ပါ။ ကတိကဝတ်မရှိ။';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'ဧည့်သည်အဖြစ် ဆက်သွားပါ။';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'ပြန်ယူပါ။';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'စာရင်းသွင်းထားပြီးပြီလား။ ပြန်လည်ရယူရန် ဤနေရာကို တို့ပါ။';
+
+  @override
+  String get onboardingExit => 'ထွက်ပေါက်';
+
+  @override
+  String get onboardingPersonalizationTitle => 'မင်းကိုသိရအောင်';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'သင့်အကြံပြုချက်များကို စိတ်ကြိုက်ပြင်ဆင်ပြီး စျေးဝယ်ခြင်းကို ပိုမိုစမတ်ကျစေရန် ၎င်းကို ကျွန်ုပ်တို့အသုံးပြုပါမည်။';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'မင်းအကြိုက်ဆုံးအစားအစာကဘာလဲ။';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'ဥပမာ ပီဇာ၊ ဆူရှီ၊ လာဆာဂနာ...';
+
+  @override
+  String get onboardingPersonalizationCta => 'ဆက်ရန်';
+
+  @override
+  String get onboardingPersonalizationSkip => 'လောလောဆယ် ကျော်သွားပါ။';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'ဆက်လုပ်ရန် သင်အကြိုက်ဆုံးအစားအစာကို ပြောပြပါ။';
+
+  @override
+  String get settingsDefaultScreen => 'မူရင်း ပင်မ မျက်နှာပြင်';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'စျေးဝယ်စာရင်း သို့မဟုတ် AI ချတ်ကြားကို ရွေးပါ။';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'စျေးဝယ်စာရင်း';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -716,7 +734,7 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'Lista Plus ပရီမီယံ';
 
   @override
   String get premiumUpgrade => 'ဖွင့်ရန်အဆင့်မြှင့်ပါ';
@@ -1069,106 +1087,108 @@ class AppLocalizationsMy extends AppLocalizations {
       'ချွတ်ယွင်းချက်များတင်ပြရန်၊ တိုးတက်စေရန်အကြံပြုရန် သို့မဟုတ် ဘာသာပြန်ချက်များပြင်ဆင်ရန်';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI စွမ်းအင်';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'စကားဝိုင်းတွင် ရှာဖွေပါ...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'စာများမတွေ့ပါ။';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'အကြံပြုထားသောမေးခွန်းများ-';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'စျေးဝယ်လက်ထောက်';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'ဝယ်ယူထားသော $total ၏ $purchased';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'ခန့်မှန်း';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'ပစ္စည်းများကိုကြည့်ရှုပါ။';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'စာရင်းထဲတွင် မည်သည့်အရာမှ မရှိပါ။';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'ရှည်လျားသောသမိုင်း- လက်ထောက်သည် ပိုမိုကောင်းမွန်သောစွမ်းဆောင်ရည်အတွက် နောက်ဆုံးပေါ်မက်ဆေ့ဂျ်များကို အာရုံစိုက်သည်။';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'နားထောင်နေသည်...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'စာရင်းထဲသို့ တိုက်ရိုက်ထည့်ပါ။';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'တုံ့ပြန်မှုအပြည့်အဝကိုသော့ဖွင့်ပါ။';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'စာရင်းပြောင်းပါ။';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'စျေးကွက်မုဒ်';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Chat သို့ ပြန်သွားရန်';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'စျေးဝယ်ပြီးအောင်';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI Assistant မှကြိုဆိုပါသည်။';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'စမတ်ချတ်ကို စတင်အသုံးပြုရန် စျေးဝယ်စာရင်းတစ်ခု ဖန်တီးပါ။';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'ငါဘယ်လိုကူညီနိုင်မလဲ။';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'စျေးနှုန်း၊ ဟင်းချက်နည်းများ၊ အဖွဲ့အစည်းအကြောင်းမေးပါ...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total ဝယ်ယူခဲ့သည်။';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'အမြန်ပြန်ကြားချက်များ-';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'အဆင့်မြင့် အသံအမိန့်ပေးမှုများသည် Pro ဖြစ်သည်။ အခြေခံသတ်ပုံဖွင့်ခြင်း...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Pro ကိုကြည့်ပါ။';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'သည်းခံပါ ချတ်ကိုဖွင့်ရာတွင် တစ်စုံတစ်ခု မှားယွင်းသွားပါသည်။';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'သင့်ချိတ်ဆက်မှုကို စစ်ဆေးပါ သို့မဟုတ် နောက်မှ ထပ်စမ်းကြည့်ပါ။';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'ကွန်ရက် တုန်ခါမှုများ သို့မဟုတ် ယာယီ မရရှိနိုင်ခြင်းကြောင့် ဖြစ်နိုင်ပါသည်။ ထပ်စမ်းကြည့်ပါ။';
 
   @override
   String get activeListening => 'Active Listening';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'ဤအရာနှင့် သင်ဘာလုပ်လိုသနည်း။';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'အသေးစိတ်ကို ကြည့်ပါ။';
 
   @override
   String get openMenu => 'မီနူးဖွင့်ရန်';
@@ -1409,19 +1429,20 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'စာရင်းပေးဖို့ ဖိတ်ခေါ်ပါတယ်။';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'အက်ပ်ကို မျှဝေပါ။';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Lista Plus အသုံးပြုရန် သူငယ်ချင်းများကို ဖိတ်ကြားပါ။';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'ကျွန်ုပ်၏စျေးဝယ်ခြင်းကိုစီစဉ်ရန် Lista Plus ကိုအသုံးပြုနေပါသည်။ ကျွန်ုပ်၏လင့်ခ်မှတစ်ဆင့် ဒေါင်းလုဒ်လုပ်ခြင်းဖြင့် ကျွန်ုပ်တို့နှစ်ဦးစလုံးသည် ပရီမီယံ 7 ရက်အခမဲ့ရရှိသည်- $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Lista Plus Premium ကို 7 ရက် ရယူလိုက်ပါ။';
 }

@@ -42,6 +42,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get copy => 'Másolás';
 
   @override
+  String get next => 'Következő';
+
+  @override
   String get retry => 'Újra';
 
   @override
@@ -282,10 +285,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get language => 'Nyelv';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'portugál (Brazil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angol';
 
   @override
   String get languageSystem => 'Rendszer alapértelmezett';
@@ -297,13 +300,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String get searchLanguage => 'Nyelv keresése...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Valuta';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Válassza a Pénznem lehetőséget';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Pénznem keresése...';
 
   @override
   String get appearance => 'Megjelenés';
@@ -328,7 +331,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Tiltsa le a dinamikus színeket, hogy a téma színe érvényesüljön';
 
   @override
   String get finance => 'Pénzügyek';
@@ -570,17 +573,17 @@ class AppLocalizationsHu extends AppLocalizations {
   String get generalAssistant => 'Általános asszisztens';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Új csevegés';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Nincs csevegési előzmény';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Csevegés törlése';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Biztosan törli ezt a csevegést? Az üzenetek véglegesen elvesznek.';
 
   @override
   String get clearHistory => 'Előzmények törlése';
@@ -627,90 +630,105 @@ class AppLocalizationsHu extends AppLocalizations {
   String get continueAsGuest => 'Folytatás vendégként';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Üdvözöljük a Lista Plusban';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'A legokosabb módja a vásárlás megszervezésének és a pénzmegtakarításnak.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Tegye személyre élményeit';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Válassza ki, hogy a Lista Plus hogyan nézzen ki és működjön az Ön számára.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Mentse el mindent a felhőbe';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Adatai szinkronizálva vannak az összes eszközén';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Oszd meg azokkal, akiket szeretsz';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Szinkronizálja a listákat családjával és barátaival valós időben';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Oldja fel az összes funkciót';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Hozza ki a legtöbbet bevásárlólistáiból';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Legjobb érték';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Havi';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Évi';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Tekintse meg az összes tervet';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Iratkozz fel';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Bármikor lemondhatja. Nincs elkötelezettség.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Továbbra is vendégként';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Visszaállítás';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Már van előfizetése? Koppintson ide a visszaállításhoz.';
+
+  @override
+  String get onboardingExit => 'Kijárat';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Ismerkedjünk meg';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Ezt arra fogjuk használni, hogy személyre szabjuk javaslatait, és okosabbá tegyük a vásárlást.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Mi a kedvenc ételed?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'például Pizza, Sushi, Lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Folytatás';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Most hagyd ki';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Mondja el kedvenc ételét a folytatáshoz';
+
+  @override
+  String get settingsDefaultScreen => 'Alapértelmezett kezdőképernyő';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Válasszon a bevásárlólista vagy az AI chat között';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Bevásárlólista';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -1080,106 +1098,107 @@ class AppLocalizationsHu extends AppLocalizations {
       'Hibák bejelentése, fejlesztési javaslatok vagy fordítások javítása';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI energia';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Keresés a beszélgetésben...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nem található üzenet';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Javasolt kérdések:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Bevásárlási asszisztens';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total/$purchased megvásárolva';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Becsült';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Elemek megtekintése';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Nincsenek elemek a listában';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Hosszú történelem: az asszisztens a legújabb üzenetekre összpontosít a jobb teljesítmény érdekében.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Hallgat...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Hozzáadás közvetlenül a listához';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Teljes válasz feloldása';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Váltólista';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Piaci mód';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Vissza a Chathez';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Fejezd be a vásárlást';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Üdvözöljük az AI-asszisztensben';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Hozzon létre egy bevásárlólistát az intelligens csevegés használatának megkezdéséhez.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hogyan segíthetek?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Érdeklődjön árakról, receptekről, szervezésről...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total megvásárolva';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Gyors válaszok:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'A speciális hangutasítások Pro. Alapszintű diktálás engedélyezése...';
 
   @override
   String get viewPro => 'View Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Hoppá! Hiba történt a csevegés betöltésekor.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Ellenőrizze a kapcsolatot, vagy próbálja újra később.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Ez a hálózat rezgései vagy ideiglenes elérhetetlenség miatt fordulhat elő. Kérjük, próbálja újra.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktív hallgatás';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Mit szeretne csinálni ezzel az elemmel?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Részletek megtekintése';
 
   @override
   String get openMenu => 'Menü megnyitása';
@@ -1427,21 +1446,22 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Meghívás a listára';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Alkalmazás megosztása';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Hívd meg barátaidat a Lista Plus használatára';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'A Lista Plus-t használom a vásárlások szervezésére! Töltsd le a linkemen keresztül, és mindketten kapunk 7 nap ingyenes prémiumot: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => '7 nap Lista Plus Premium!';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -1480,6 +1500,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get copy => 'Másolás';
+
+  @override
+  String get next => 'Következő';
 
   @override
   String get retry => 'Újra';
@@ -1722,10 +1745,10 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get language => 'Nyelv';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'portugál (Brazil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angol';
 
   @override
   String get languageSystem => 'Rendszer alapértelmezett';
@@ -1735,6 +1758,15 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get searchLanguage => 'Nyelv keresése...';
+
+  @override
+  String get currency => 'Valuta';
+
+  @override
+  String get chooseCurrency => 'Válassza a Pénznem lehetőséget';
+
+  @override
+  String get searchCurrency => 'Pénznem keresése...';
 
   @override
   String get appearance => 'Megjelenés';
@@ -1756,6 +1788,10 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get dynamicColorsSubtitle => 'Színek használata a háttérkép alapján';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Tiltsa le a dinamikus színeket, hogy a téma színe érvényesüljön';
 
   @override
   String get finance => 'Pénzügyek';
@@ -1997,6 +2033,19 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get generalAssistant => 'Általános asszisztens';
 
   @override
+  String get newChat => 'Új csevegés';
+
+  @override
+  String get noHistory => 'Nincs csevegési előzmény';
+
+  @override
+  String get deleteSession => 'Csevegés törlése';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Biztosan törli ezt a csevegést? Az üzenetek véglegesen elvesznek.';
+
+  @override
   String get clearHistory => 'Előzmények törlése';
 
   @override
@@ -2039,6 +2088,110 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get continueAsGuest => 'Folytatás vendégként';
+
+  @override
+  String get onboardingWelcomeTitle => 'Üdvözöljük a Lista Plusban';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'A legokosabb módja a vásárlás megszervezésének és a pénzmegtakarításnak.';
+
+  @override
+  String get onboardingSetupTitle => 'Tegye személyre élményeit';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Válassza ki, hogy a Lista Plus hogyan nézzen ki és működjön az Ön számára.';
+
+  @override
+  String get onboardingLoginTitle => 'Mentse el mindent a felhőbe';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Adatai szinkronizálva vannak az összes eszközén';
+
+  @override
+  String get onboardingShareTitle => 'Oszd meg azokkal, akiket szeretsz';
+
+  @override
+  String get onboardingShareDesc =>
+      'Szinkronizálja a listákat családjával és barátaival valós időben';
+
+  @override
+  String get onboardingPremiumTitle => 'Oldja fel az összes funkciót';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Hozza ki a legtöbbet bevásárlólistáiból';
+
+  @override
+  String get onboardingAnnualBadge => 'Legjobb érték';
+
+  @override
+  String get onboardingMonthlyLabel => 'Havi';
+
+  @override
+  String get onboardingAnnualLabel => 'Évi';
+
+  @override
+  String get onboardingViewAllPlans => 'Tekintse meg az összes tervet';
+
+  @override
+  String get onboardingSubscribeCta => 'Iratkozz fel';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Bármikor lemondhatja. Nincs elkötelezettség.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Továbbra is vendégként';
+
+  @override
+  String get onboardingRestore => 'Visszaállítás';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Már van előfizetése? Koppintson ide a visszaállításhoz.';
+
+  @override
+  String get onboardingExit => 'Kijárat';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Ismerkedjünk meg';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Ezt arra fogjuk használni, hogy személyre szabjuk javaslatait, és okosabbá tegyük a vásárlást.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Mi a kedvenc ételed?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'például Pizza, Sushi, Lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Folytatás';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Most hagyd ki';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Mondja el kedvenc ételét a folytatáshoz';
+
+  @override
+  String get settingsDefaultScreen => 'Alapértelmezett kezdőképernyő';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Válasszon a bevásárlólista vagy az AI chat között';
+
+  @override
+  String get settingsScreenList => 'Bevásárlólista';
+
+  @override
+  String get settingsScreenChat => 'AI Chat';
 
   @override
   String loginError(String error) {
@@ -2405,106 +2558,107 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
       'Hibák bejelentése, fejlesztési javaslatok vagy fordítások javítása';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI energia';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Keresés a beszélgetésben...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nem található üzenet';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Javasolt kérdések:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Bevásárlási asszisztens';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total/$purchased megvásárolva';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Becsült';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Elemek megtekintése';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Nincsenek elemek a listában';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Hosszú történelem: az asszisztens a legújabb üzenetekre összpontosít a jobb teljesítmény érdekében.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Hallgat...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Hozzáadás közvetlenül a listához';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Teljes válasz feloldása';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Váltólista';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Piaci mód';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Vissza a Chathez';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Fejezd be a vásárlást';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Üdvözöljük az AI-asszisztensben';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Hozzon létre egy bevásárlólistát az intelligens csevegés használatának megkezdéséhez.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hogyan segíthetek?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Érdeklődjön árakról, receptekről, szervezésről...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total megvásárolva';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Gyors válaszok:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'A speciális hangutasítások Pro. Alapszintű diktálás engedélyezése...';
 
   @override
   String get viewPro => 'View Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Hoppá! Hiba történt a csevegés betöltésekor.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Ellenőrizze a kapcsolatot, vagy próbálja újra később.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Ez a hálózat rezgései vagy ideiglenes elérhetetlenség miatt fordulhat elő. Kérjük, próbálja újra.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktív hallgatás';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Mit szeretne csinálni ezzel az elemmel?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Részletek megtekintése';
 
   @override
   String get openMenu => 'Menü megnyitása';
@@ -2750,4 +2904,22 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes perc';
   }
+
+  @override
+  String get inviteToList => 'Meghívás a listára';
+
+  @override
+  String get shareApp => 'Alkalmazás megosztása';
+
+  @override
+  String get shareAppDescription =>
+      'Hívd meg barátaidat a Lista Plus használatára';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'A Lista Plus-t használom a vásárlások szervezésére! Töltsd le a linkemen keresztül, és mindketten kapunk 7 nap ingyenes prémiumot: $url';
+  }
+
+  @override
+  String get shareReferralSubject => '7 nap Lista Plus Premium!';
 }

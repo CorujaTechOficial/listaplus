@@ -1,99 +1,47 @@
 {
   "@@locale": "da",
-  "appTitle": "Indkøbsliste",
+  "@_Feedback": "description: Feedback Screen",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Lister",
-  "pantry": "Spisekammer",
-  "cancel": "Annuller",
-  "save": "Gem",
-  "create": "Opret",
-  "add": "Tilføj",
-  "remove": "Fjern",
-  "delete": "Slet",
-  "edit": "Rediger",
-  "copy": "Kopiér",
-  "retry": "Prøv igen",
-  "regenerate": "Regenerér",
-  "copiedToClipboard": "Kopieret til udklipsholder",
-  "confirm": "Bekræft",
-  "close": "Luk",
-  "import": "Importer",
-  "rename": "Omdøb",
-  "upgrade": "Opgrader",
-  "clear": "Ryd",
-  "error": "Fejl: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Fejl: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Fejl ved behandling af køb. Prøv igen.",
-  "restoreError": "Fejl ved gendannelse af køb. Prøv igen.",
-  "loading": "Indlæser...",
-  "fieldRequired": "Påkrævet felt",
-  "addedFeedback": "Tilføjet!",
-  "selectedItems": "{count,plural, one{Valgt {count}} other{Valgt {count}}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Anslået",
-  "alreadyPurchased": "Allerede købt",
-  "clearList": "Ryd liste",
-  "clearPurchased": "Ryd købte",
-  "share": "Del",
-  "shareViaCode": "Del via kode",
-  "importViaCode": "Importer via kode",
-  "listAssistant": "Assistent til liste",
-  "globalAssistant": "Global assistent",
-  "becomePremium": "Bliv Premium",
-  "manageSubscription": "Administrer abonnement",
-  "completePurchase": "Fuldfør køb",
-  "confirmClearList": "Fjern alle varer?",
-  "shareListTitle": "Del liste",
-  "shareThisCode": "Del denne kode:",
-  "validForLimitedTime": "Gyldig i begrænset tid",
-  "importListTitle": "Importer liste",
-  "enterCodeHint": "Indtast koden",
-  "confirmArchiveTitle": "Fuldfør køb",
-  "confirmArchiveContent": "Fuldfør dette køb og arkivér listen?",
-  "complete": "Fuldfør",
-  "listArchived": "Listen er arkiveret!",
-  "listAdded": "{listName} tilføjet!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Køb",
-  "unmark": "Fjern markering",
-  "confirmDeleteItems": "Fjern {count} vare(r)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Bekræft",
-  "confirmContent": "Fjern {count} vare(r)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -101,12 +49,68 @@
       }
     }
   },
-  "archiveList": "Arkivér liste",
-  "pantryAppBar": "Spisekammer",
-  "generateShoppingList": "Generér indkøbsliste",
-  "pantryEmpty": "Tomt spisekammer",
-  "pantryEmptySubtitle": "Tilføj produkter, du vil have derhjemme",
-  "itemsNeedPurchase": "{deficit} vare(r) skal købes",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -114,10 +118,26 @@
       }
     }
   },
-  "noItemsToBuy": "Ingen varer skal købes",
-  "newPantryList": "Indkøb til spisekammer",
-  "newListTitle": "Ny indkøbsliste",
-  "itemsWillBeAdded": "{count} vare(r) vil blive tilføjet",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -125,8 +145,13 @@
       }
     }
   },
-  "listNameLabel": "Navn på liste",
-  "listCreated": "Listen \"{name}\" oprettet med {count} varer",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -137,20 +162,125 @@
       }
     }
   },
-  "noTracking": "Ingen sporing",
-  "markAsPurchased": "Markér som købt",
-  "editPantryItem": "Redigér {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Ideel mængde",
-  "currentQuantity": "Aktuel mængde",
-  "consumed": "Forbrugt",
-  "restocked": "{name} genopfyldt til {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -164,56 +294,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Fjern \"{name}\" fra spisekammeret?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Redigér {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "settingsAppBar": "Indstillinger",
-  "language": "Sprog",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Systemstandard",
-  "appearance": "Udseende",
-  "light": "Lys",
-  "system": "System",
-  "dark": "Mørk",
-  "themeColor": "Temafarve",
-  "finance": "Økonomi",
-  "monthlyBudgetNav": "Månedligt budget",
-  "budgetSubtitle": "Følg dine månedlige udgifter",
-  "data": "Data",
-  "backupNav": "Backup",
-  "backupSubtitle": "Eksportér eller importer dine data",
-  "about": "Om",
-  "version": "Version",
-  "privacy": "Privatliv",
-  "termsOfUse": "Brugsvilkår",
-  "backupTitle": "Backup",
-  "backupPremiumDescription": "Backup og eksport er en Premium-funktion",
-  "exportData": "Eksportér data",
-  "exportDataSubtitle": "Gem alle lister som JSON",
-  "importData": "Importer data",
-  "importDataSubtitle": "Gendan lister fra en JSON",
-  "importJsonTitle": "Importer JSON",
-  "importJsonHint": "Indsæt backup-JSON her...",
-  "backupExported": "Backup eksporteret!",
-  "budgetAppBar": "Månedligt budget",
-  "budgetPremiumLocked": "Globalt månedligt budget er Premium",
-  "budgetUpgradePrompt": "Opgrader for at låse op",
-  "noBudgetDefined": "Intet budget sat",
-  "totalEstimated": "Anslået i alt: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -221,339 +335,218 @@
       }
     }
   },
-  "setBudgetButton": "Sæt budget",
-  "budgetLists": "Lister",
-  "budgetValueLabel": "Beløb",
-  "setBudgetTitle": "Månedligt budget",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "filterAll": "Alle",
-  "filterPending": "Afventende",
-  "filterPurchased": "Købte",
-  "sortName": "Navn",
-  "sortCategory": "Kategori",
-  "sortDate": "Dato",
-  "sortManual": "Manuelt",
+  "about": "Om",
+  "achievements": "Resultater",
+  "activeListening": "Aktiv lytning",
+  "add": "Tilføj",
+  "addAllToList": "Tilføj alle til listen",
+  "addDirectToList": "Tilføj direkte til listen",
+  "addIngredient": "Tilføj ingrediens",
   "addItem": "Tilføj vare",
-  "itemName": "Varenavn",
-  "quantityShort": "Ant",
-  "unit": "Enhed",
-  "category": "Kategori",
-  "estimatedPrice": "Anslået pris",
   "addItemPrice": "Anslået pris",
-  "editItem": "Redigér vare",
-  "quantityFull": "Mængde",
-  "editItemPrice": "Anslået pris",
+  "addPhoto": "Tilføj billede",
   "addToPantry": "Tilføj til spisekammer",
   "addToPantryPrompt": "Tilføj \"{name}\" til dit spisekammer?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Ja",
-  "productName": "Produktnavn",
-  "idealQty": "Ideel ant",
-  "currentQty": "Aktuel ant",
-  "trackStock": "Følg lager",
-  "trackStockActive": "Vises i indkøbsforslag",
-  "trackStockInactive": "Genererer ikke indkøbsforslag",
-  "createListDialog": "Opret liste",
-  "renameListDialog": "Omdøb liste",
-  "listHistory": "Listehistorik",
-  "myLists": "Mine lister",
-  "viewActive": "Se aktive",
-  "viewHistory": "Se historik",
-  "noArchivedLists": "Ingen arkiverede lister",
-  "noActiveLists": "Ingen aktive lister",
-  "completedOn": "Fuldført den {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Delt",
-  "restore": "Gendan",
-  "removeSharedTooltip": "Fjern",
-  "deleteListTitle": "Slet liste",
-  "deleteListContent": "Er du sikker på, at du vil slette \"{name}\"? Alle varer vil blive fjernet.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Fjern delt liste",
-  "removeSharedListContent": "Fjern \"{name}\" fra dine lister? Den originale liste vil ikke blive påvirket.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Opret ny liste",
+  "addedFeedback": "Tilføjet!",
+  "advancedFeatures": "Avancerede funktioner",
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarte forslag, opskrifter og personlige tips med vores AI-assistent.",
-  "generalAssistant": "Generel assistent",
+  "aiCreditsRemaining": "{remaining} credits tilbage",
+  "aiEnergy": "AI energi",
+  "aiError": "Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.",
+  "aiVoiceCommandTooltip": "AI-stemmekommando (Premium)",
+  "allTags": "Alle",
+  "alreadyPurchased": "Allerede købt",
+  "appTitle": "Indkøbsliste",
+  "appearance": "Udseende",
+  "archiveList": "Arkivér liste",
+  "backToChat": "Tilbage til Chat",
+  "backupExported": "Backup eksporteret!",
+  "backupNav": "Backup",
+  "backupPremiumDescription": "Backup og eksport er en Premium-funktion",
+  "backupSubtitle": "Eksportér eller importer dine data",
+  "backupTitle": "Backup",
+  "becomePremium": "Bliv Premium",
+  "budgetAmountLabel": "Budgetbeløb",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Månedligt budget",
+  "budgetDashboardTitle": "Dashboard",
+  "budgetEditTitle": "Månedligt budget",
+  "budgetLists": "Lister",
+  "budgetPremiumLocked": "Globalt månedligt budget er Premium",
+  "budgetSubtitle": "Følg dine månedlige udgifter",
+  "budgetUpgradePrompt": "Opgrader for at låse op",
+  "budgetValueLabel": "Beløb",
+  "buy": "Køb",
+  "cancel": "Annuller",
+  "cartTotal": "Kurv i alt",
+  "catBakery": "Bageri",
+  "catBeverages": "Drikkevarer",
+  "catCleaning": "Rengøring",
+  "catFruits": "Frugt",
+  "catOthers": "Andet",
+  "category": "Kategori",
+  "chatError": "Fejl ved indlæsning af chat: {error}",
+  "chatHint": "Skriv din besked...",
+  "chatSubtitle": "Spørg efter vareforslag, opskrifter eller sparetips.",
+  "chatSubtitleShort": "Spørg om priser, opskrifter, organisation...",
+  "chooseCurrency": "Vælg Valuta",
+  "chooseImageSource": "Vælg billedkilde",
+  "chooseLanguage": "Vælg sprog",
+  "clear": "Ryd",
   "clearHistory": "Ryd historik",
   "clearHistoryConfirm": "Slet alle meddelelser i denne session?",
-  "chatHint": "Skriv din besked...",
-  "chatError": "Fejl ved indlæsning af chat: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Hvordan kan jeg hjælpe med din liste?",
-  "generalHelp": "Hvordan kan jeg hjælpe med din shopping i dag?",
-  "chatSubtitle": "Spørg efter vareforslag, opskrifter eller sparetips.",
-  "aiError": "Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Log ind for at låse op\nfor Premium-funktioner",
-  "signInGoogle": "Log ind med Google",
-  "signInApple": "Log ind med Apple",
+  "clearList": "Ryd liste",
+  "clearPurchased": "Ryd købte",
+  "close": "Luk",
+  "complete": "Fuldfør",
+  "completePurchase": "Fuldfør køb",
+  "completedOn": "Fuldført den {date}",
+  "confirm": "Bekræft",
+  "confirmArchiveContent": "Fuldfør dette køb og arkivér listen?",
+  "confirmArchiveTitle": "Fuldfør køb",
+  "confirmClearList": "Fjern alle varer?",
+  "confirmContent": "Fjern {count} vare(r)?",
+  "confirmDeleteItems": "Fjern {count} vare(r)?",
+  "confirmDeleteTitle": "Bekræft",
+  "confirmRemovePantry": "Fjern \"{name}\" fra spisekammeret?",
+  "consumed": "Forbrugt",
   "continueAsGuest": "Fortsæt som gæst",
-  "loginError": "Log-in fejl: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallTitle": "Lista Plus Premium",
-  "premiumUpgrade": "Opgrader for at låse op",
-  "itemRemoved": "Vare fjernet",
-  "undo": "Fortryd",
-  "emptyListTitle": "Din liste er tom",
-  "emptyListSubtitle": "Tilføj varer for at komme i gang",
-  "noListFoundTitle": "Ingen lister fundet",
-  "noListFoundSubtitle": "Opret din første liste for at komme i gang",
+  "copiedToClipboard": "Kopieret til udklipsholder",
+  "copy": "Kopiér",
+  "create": "Opret",
   "createFirstList": "Opret første liste",
-  "listBudgetTitle": "Listebudget",
-  "budgetAmountLabel": "Budgetbeløb",
-  "removeBudget": "Fjern",
-  "prefUnlimitedLists": "Ubegrænsede lister",
-  "prefSharing": "Del lister",
-  "prefFullHistory": "Fuld historik",
-  "prefExportData": "Eksportér data",
-  "prefCustomThemes": "Brugerdefinerede temaer",
-  "prefMonthlyBudget": "Globalt månedligt budget",
-  "prefAIAssistant": "Personlig AI-assistent",
-  "prefUnlimitedPantry": "Ubegrænset spisekammer",
-  "prefInteractiveArtifacts": "Interaktive AI-artefakter",
-  "themeGreen": "Grøn",
-  "themeBlue": "Blå",
-  "themePurple": "Lilla",
-  "themeRed": "Rød",
-  "themeOrange": "Orange",
-  "themePink": "Lyserød",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Rav",
-  "themeTeal": "Krikand",
-  "themeBrown": "Brun",
-  "catFruits": "Frugt",
-  "catCleaning": "Rengøring",
-  "catBeverages": "Drikkevarer",
-  "catBakery": "Bageri",
-  "catOthers": "Andet",
-  "unitPack": "pakke",
-  "shareSubject": "Indkøbsliste",
-  "monthlyBudgetTitle": "Månedligt budget",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Slet liste",
-  "pantryItemRemoved": "Vare fjernet",
+  "createListDialog": "Opret liste",
+  "createListToStartAi": "Opret en indkøbsliste for at begynde at bruge smartchatten.",
+  "createNewList": "Opret ny liste",
+  "currency": "Valuta",
+  "currentQty": "Aktuel ant",
+  "currentQuantity": "Aktuel mængde",
+  "dark": "Mørk",
+  "data": "Data",
   "deficitItems": "{deficit,plural, one{{deficit} vare skal købes} other{{deficit} varer skal købes}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Kurv i alt",
-  "restockLabel": "Genopfyld",
-  "advancedFeatures": "Avancerede funktioner",
-  "selectAll": "Vælg alle",
+  "delete": "Slet",
+  "deleteListConfirm": "Slet liste",
+  "deleteListContent": "Er du sikker på, at du vil slette \"{name}\"? Alle varer vil blive fjernet.",
+  "deleteListTitle": "Slet liste",
+  "deleteRecipe": "Slet",
+  "deleteRecipeConfirm": "Slet denne opskrift?",
+  "deleteRecipeConfirmMsg": "Er du sikker på, at du vil slette \"{recipeName}\"? Denne handling kan ikke fortrydes.",
+  "deleteSession": "Slet chat",
+  "deleteSessionConfirm": "Er du sikker på, at du vil slette denne chat? Beskederne vil blive permanent tabt.",
   "deselectAll": "Fravælg alle",
-  "monthlyBudgetAppBar": "Månedligt budget",
-  "budgetEditTitle": "Månedligt budget",
-  "budgetDashboardTitle": "Dashboard",
-  "selectListForDashboard": "Vælg en liste for at se dashboardet.",
-  "spendingAnalysis": "Forbrugsanalyse",
-  "noItemsToAnalyze": "Ingen varer på listen at analysere.",
-  "markItemsToSeeAnalysis": "Markér varer som købt for at se analysen.",
-  "totalSpending": "Samlet forbrug",
-  "spendingByCategory": "Forbrug efter kategori",
-  "achievements": "Resultater",
-  "exportPdfExcel": "Eksportér PDF/Excel",
-  "exportPdf": "Eksportér som PDF",
-  "exportExcel": "Eksportér som Excel",
-  "organizingAi": "ORGANISERER MED AI...",
-  "yesLabel": "Ja",
-  "noLabel": "Nej",
-  "shareListText": "Min indkøbsliste",
-  "emptyListAddItems": "Din liste er tom! Tilføj først varer. ℹ️",
-  "listOrganizedMagic": "Listen er magisk organiseret efter kategorier! ✨",
-  "shoppingMode": "Indkøbstilstand",
-  "smartOrganization": "Smart organisering",
-  "savings": "Besparelser",
-  "shoppingModeHeader": "INDKØBSTILSTAND",
-  "shareAsText": "Send varer som formateret tekst",
-  "shareRealtime": "Realtidssynkronisering med andre",
-  "quickRecipe": "Hurtig opskrift",
-  "quickRecipePrompt": "Foreslå opskrifter med varer fra min liste.",
+  "dynamicColors": "Dynamiske farver",
+  "dynamicColorsEnabledWarning": "Deaktiver dynamiske farver, for at temafarven træder i kraft",
+  "dynamicColorsSubtitle": "Brug farver baseret på dit tapet",
   "economyTips": "Sparetips",
   "economyTipsPrompt": "Hvordan kan jeg spare penge på dette køb?",
-  "organizeAisles": "Organisér efter gange",
-  "organizeAislesPrompt": "Organisér efter butiksgange.",
-  "recipeSuggestion": "Opskriftforslag",
-  "aiCreditsRemaining": "{remaining} credits tilbage",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Tilføj alle til listen",
-  "organizeByAisles": "Organisér efter gange",
-  "voiceTranscriptionTooltip": "Tale til tekst (Gratis)",
-  "aiVoiceCommandTooltip": "AI-stemmekommando (Premium)",
-  "voiceCommandTitle": "AI-stemmekommando",
-  "voiceCommandContent": "Tal naturligt for at administrere din liste!\n\nEksempler:\n• 'Tilføj brød, ost og skinke'\n• 'Fjern vaskemiddel'\n• 'Skift tema til blå'\n\nDette er en eksklusiv funktion i Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Se planer",
-  "itemsAddedSuccess": "Varer blev tilføjet til listen!",
-  "viewList": "Se liste",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Send feedback",
+  "edit": "Rediger",
+  "editItem": "Redigér vare",
+  "editItemPrice": "Anslået pris",
+  "editPantryItem": "Redigér {name}",
+  "editRecipe": "Rediger",
+  "editRecipeTitle": "Rediger opskrift",
+  "emptyListAddItems": "Din liste er tom! Tilføj først varer. ℹ️",
+  "emptyListSubtitle": "Tilføj varer for at komme i gang",
+  "emptyListTitle": "Din liste er tom",
+  "enterCodeHint": "Indtast koden",
+  "enterUrl": "Indtast URL",
+  "error": "Fejl: {message}",
+  "errorGeneric": "Fejl: {message}",
+  "errorLoadingChat": "Ups! Noget gik galt med at indlæse chatten.",
+  "errorLoadingChatSubtitle": "Tjek din forbindelse, eller prøv igen senere.",
+  "errorLoadingRecipes": "Fejl ved indlæsning af opskrifter",
+  "errorOscillation": "Dette kan forekomme på grund af netværksoscillationer eller midlertidig utilgængelighed. Prøv venligst igen.",
+  "estimated": "Anslået",
+  "estimatedCost": "Anslået",
+  "estimatedPrice": "Anslået pris",
+  "exportData": "Eksportér data",
+  "exportDataSubtitle": "Gem alle lister som JSON",
+  "exportExcel": "Eksportér som Excel",
+  "exportPdf": "Eksportér som PDF",
+  "exportPdfExcel": "Eksportér PDF/Excel",
+  "feedbackBack": "Tilbage",
+  "feedbackError": "Fejl ved afsendelse: {error}",
+  "feedbackHint": "Beskriv din feedback i detaljer...",
   "feedbackPrompt": "Hvad vil du gerne dele?",
+  "feedbackRetry": "Prøv igen",
+  "feedbackSend": "Send feedback",
+  "feedbackSending": "Sender...",
+  "feedbackSettingsSubtitle": "Rapporter fejl, foreslå forbedringer eller ret oversættelser",
+  "feedbackSettingsTitle": "Send feedback",
+  "feedbackThankYou": "Tak!",
+  "feedbackThankYouMessage": "Din feedback er modtaget og hjælper os med at forbedre Lista Plus for alle.",
+  "feedbackTitle": "Send feedback",
   "feedbackTypeBug": "Rapporter fejl",
   "feedbackTypeBugHint": "Noget fungerer ikke",
-  "feedbackTypeSuggestion": "Forslag",
-  "feedbackTypeSuggestionHint": "Idé til at forbedre appen",
-  "feedbackTypeTranslation": "Oversættelsesproblem",
-  "feedbackTypeTranslationHint": "Forkert eller akavet oversættelse",
   "feedbackTypeFeature": "Funktionsanmodning",
   "feedbackTypeFeatureHint": "Funktion du gerne vil se",
   "feedbackTypeOther": "Andet",
   "feedbackTypeOtherHint": "Anden type feedback",
-  "feedbackHint": "Beskriv din feedback i detaljer...",
-  "feedbackSend": "Send feedback",
-  "feedbackSending": "Sender...",
-  "feedbackThankYou": "Tak!",
-  "feedbackThankYouMessage": "Din feedback er modtaget og hjælper os med at forbedre Lista Plus for alle.",
-  "feedbackBack": "Tilbage",
-  "feedbackError": "Fejl ved afsendelse: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Prøv igen",
-  "feedbackSettingsTitle": "Send feedback",
-  "feedbackSettingsSubtitle": "Rapporter fejl, foreslå forbedringer eller ret oversættelser",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Tilføj ingrediens",
-  "addPhoto": "Tilføj billede",
-  "allTags": "Alle",
-  "chooseImageSource": "Vælg billedkilde",
-  "chooseLanguage": "Vælg sprog",
-  "deleteRecipe": "Slet",
-  "deleteRecipeConfirm": "Slet denne opskrift?",
-  "deleteRecipeConfirmMsg": "Er du sikker på, at du vil slette \"{recipeName}\"? Denne handling kan ikke fortrydes.",
-  "dynamicColors": "Dynamiske farver",
-  "dynamicColorsSubtitle": "Brug farver baseret på dit tapet",
-  "editRecipe": "Rediger",
-  "editRecipeTitle": "Rediger opskrift",
-  "enterUrl": "Indtast URL",
-  "errorLoadingRecipes": "Fejl ved indlæsning af opskrifter",
+  "feedbackTypeSuggestion": "Forslag",
+  "feedbackTypeSuggestionHint": "Idé til at forbedre appen",
+  "feedbackTypeTranslation": "Oversættelsesproblem",
+  "feedbackTypeTranslationHint": "Forkert eller akavet oversættelse",
+  "fieldRequired": "Påkrævet felt",
+  "filterAll": "Alle",
   "filterByTag": "Filtrer efter tag",
+  "filterPending": "Afventende",
+  "filterPurchased": "Købte",
+  "finance": "Økonomi",
+  "finishShopping": "Afslut indkøb",
   "gallery": "Galleri",
+  "generalAssistant": "Generel assistent",
+  "generalHelp": "Hvordan kan jeg hjælpe med din shopping i dag?",
+  "generateShoppingList": "Generér indkøbsliste",
+  "globalAssistant": "Global assistent",
+  "howCanIHelp": "Hvordan kan jeg hjælpe?",
+  "idealQty": "Ideel ant",
+  "idealQuantity": "Ideel mængde",
   "imageUrlPlaceholder": "Eller indsæt en billed-URL",
+  "import": "Importer",
+  "importData": "Importer data",
+  "importDataSubtitle": "Gendan lister fra en JSON",
+  "importJsonHint": "Indsæt backup-JSON her...",
+  "importJsonTitle": "Importer JSON",
+  "importListTitle": "Importer liste",
+  "importViaCode": "Importer via kode",
   "ingredients": "Ingredienser",
   "instructions": "Instruktioner",
   "instructionsHint": "Skriv ét trin pr. linje...",
+  "inviteToList": "Inviter til liste",
+  "itemName": "Varenavn",
+  "itemRemoved": "Vare fjernet",
+  "itemsAddedSuccess": "Varer blev tilføjet til listen!",
+  "itemsNeedPurchase": "{deficit} vare(r) skal købes",
+  "itemsPurchasedCount": "{purchased} af {total} købt",
+  "itemsPurchasedShort": "{purchased}/{total} købt",
+  "itemsWillBeAdded": "{count} vare(r) vil blive tilføjet",
+  "language": "Sprog",
+  "languageEnglish": "engelsk",
+  "languagePortuguese": "Português (Brasil)",
+  "languageSystem": "Systemstandard",
+  "light": "Lys",
+  "listAdded": "{listName} tilføjet!",
+  "listArchived": "Listen er arkiveret!",
+  "listAssistant": "Assistent til liste",
+  "listBudgetTitle": "Listebudget",
+  "listCreated": "Listen \"{name}\" oprettet med {count} varer",
+  "listHelp": "Hvordan kan jeg hjælpe med din liste?",
+  "listHistory": "Listehistorik",
+  "listNameLabel": "Navn på liste",
+  "listOrganizedMagic": "Listen er magisk organiseret efter kategorier! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Lytter...",
+  "lists": "Lister",
+  "loading": "Indlæser...",
   "loadingRecipes": "Indlæser dine opskrifter...",
+  "loginError": "Log-in fejl: {error}",
+  "loginPrompt": "Log ind for at låse op\nfor Premium-funktioner",
+  "longHistoryWarning": "Lang historie: Assistenten fokuserer på de seneste beskeder for bedre ydeevne.",
+  "manageSubscription": "Administrer abonnement",
+  "markAsPurchased": "Markér som købt",
+  "markItemsToSeeAnalysis": "Markér varer som købt for at se analysen.",
+  "marketMode": "Markedstilstand",
   "mealPlannerAddMeal": "Tilføj måltid",
   "mealPlannerDateLabel": "Dato",
   "mealPlannerDeleteMeal": "Fjern måltid",
@@ -569,7 +562,7 @@
   "mealPlannerMealTypeBreakfast": "Morgenmad",
   "mealPlannerMealTypeDinner": "Aftensmad",
   "mealPlannerMealTypeLunch": "Frokost",
-  "mealPlannerMealTypeSnack": "Snack",
+  "mealPlannerMealTypeSnack": "Mellemmåltid",
   "mealPlannerNoMeals": "Ingen måltider planlagt",
   "mealPlannerNoMealsHint": "Tryk på en dag for at tilføje et måltid",
   "mealPlannerNoRecipesFound": "Ingen opskrifter fundet",
@@ -587,28 +580,201 @@
   "mealPlannerWeekEmpty": "Intet planlagt for denne uge",
   "mealPlannerWeekEmptyHint": "Tryk på en vilkårlig dag for at begynde at planlægge dine måltider!",
   "mealPlannerWeekProgress": "{count} af {total} måltider planlagt",
+  "monthlyBudgetAppBar": "Månedligt budget",
+  "monthlyBudgetNav": "Månedligt budget",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Månedligt budget",
+  "myLists": "Mine lister",
   "myRecipes": "Mine opskrifter",
+  "newChat": "Ny chat",
+  "newListTitle": "Ny indkøbsliste",
+  "newPantryList": "Indkøb til spisekammer",
   "newRecipe": "Ny opskrift",
   "newRecipeTitle": "Ny opskrift",
+  "next": "Næste",
+  "noActiveLists": "Ingen aktive lister",
+  "noArchivedLists": "Ingen arkiverede lister",
+  "noBudgetDefined": "Intet budget sat",
+  "noHistory": "Ingen chathistorik",
+  "noItemsInList": "Ingen elementer på listen",
+  "noItemsToAnalyze": "Ingen varer på listen at analysere.",
+  "noItemsToBuy": "Ingen varer skal købes",
+  "noLabel": "Nej",
+  "noListFoundSubtitle": "Opret din første liste for at komme i gang",
+  "noListFoundTitle": "Ingen lister fundet",
+  "noMessagesFound": "Ingen beskeder fundet",
   "noRecipesSaved": "Ingen opskrifter gemt",
   "noRecipesSavedHint": "Opret din første brugerdefinerede opskrift ved at trykke på knappen nedenfor.",
+  "noTracking": "Ingen sporing",
+  "onboardingAnnualBadge": "Bedste værdi",
+  "onboardingAnnualLabel": "Årlig",
+  "onboardingCancelAnytime": "Annuller når som helst. Ingen forpligtelse.",
+  "onboardingContinueAsGuest": "Fortsæt som gæst",
+  "onboardingExit": "Udgang",
+  "onboardingLoginDesc": "Dine data synkroniseres på tværs af alle dine enheder",
+  "onboardingLoginTitle": "Gem alt i skyen",
+  "onboardingMonthlyLabel": "Månedlig",
+  "onboardingPersonalizationCta": "Fortsætte",
+  "onboardingPersonalizationDesc": "Vi bruger dette til at tilpasse dine forslag og gøre shopping smartere.",
+  "onboardingPersonalizationFoodHint": "f.eks. Pizza, sushi, lasagne...",
+  "onboardingPersonalizationFoodLabel": "Hvad er din yndlingsmad?",
+  "onboardingPersonalizationFoodRequired": "Fortæl os din yndlingsmad for at fortsætte",
+  "onboardingPersonalizationSkip": "Spring over for nu",
+  "onboardingPersonalizationTitle": "Lad os lære dig at kende",
+  "onboardingPremiumSubtitle": "Få mest muligt ud af dine indkøbslister",
+  "onboardingPremiumTitle": "Lås op for alle funktioner",
+  "onboardingRestore": "Gendan",
+  "onboardingRestoreDesc": "Har du allerede et abonnement? Tryk her for at gendanne den.",
+  "onboardingSetupDesc": "Vælg, hvordan du vil have Lista Plus til at se ud og fungere for dig.",
+  "onboardingSetupTitle": "Tilpas din oplevelse",
+  "onboardingShareDesc": "Synkroniser lister med familie og venner i realtid",
+  "onboardingShareTitle": "Del med dem, du elsker",
+  "onboardingSubscribeCta": "Abonner",
+  "onboardingViewAllPlans": "Se alle planer",
+  "onboardingWelcomeDesc": "Den smarteste måde at organisere din shopping på og spare penge.",
+  "onboardingWelcomeTitle": "Velkommen til Lista Plus",
   "openMenu": "Åbn menu",
+  "organizeAisles": "Organisér efter gange",
+  "organizeAislesPrompt": "Organisér efter butiksgange.",
+  "organizeByAisles": "Organisér efter gange",
+  "organizingAi": "ORGANISERER MED AI...",
+  "pantry": "Spisekammer",
+  "pantryAppBar": "Spisekammer",
+  "pantryEditTitle": "Redigér {name}",
+  "pantryEmpty": "Tomt spisekammer",
+  "pantryEmptySubtitle": "Tilføj produkter, du vil have derhjemme",
+  "pantryItemRemoved": "Vare fjernet",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Personlig AI-assistent",
+  "prefCustomThemes": "Brugerdefinerede temaer",
+  "prefExportData": "Eksportér data",
+  "prefFullHistory": "Fuld historik",
+  "prefInteractiveArtifacts": "Interaktive AI-artefakter",
+  "prefMonthlyBudget": "Globalt månedligt budget",
+  "prefSharing": "Del lister",
+  "prefUnlimitedLists": "Ubegrænsede lister",
+  "prefUnlimitedPantry": "Ubegrænset spisekammer",
+  "premiumUpgrade": "Opgrader for at låse op",
   "prepTime": "Tilberedningstid",
   "prepTimeMinutes": "Tilberedningstid (minutter)",
+  "privacy": "Privatliv",
+  "productName": "Produktnavn",
+  "purchaseError": "Fejl ved behandling af køb. Prøv igen.",
+  "quantityFull": "Mængde",
+  "quantityShort": "Ant",
+  "quickRecipe": "Hurtig opskrift",
+  "quickRecipePrompt": "Foreslå opskrifter med varer fra min liste.",
+  "quickReplies": "Hurtige svar:",
   "recipeCreated": "Opskrift oprettet!",
   "recipeDeleted": "Opskrift slettet",
   "recipeImage": "Opskriftsbillede",
   "recipeName": "Navn på opskrift",
   "recipeSaved": "Opskrift gemt!",
+  "recipeSuggestion": "Opskriftforslag",
   "recipeTags": "Tags til opskrift",
+  "regenerate": "Regenerér",
+  "remove": "Fjern",
+  "removeBudget": "Fjern",
   "removeImage": "Fjern billede",
+  "removeSharedListContent": "Fjern \"{name}\" fra dine lister? Den originale liste vil ikke blive påvirket.",
+  "removeSharedListTitle": "Fjern delt liste",
+  "removeSharedTooltip": "Fjern",
+  "rename": "Omdøb",
+  "renameListDialog": "Omdøb liste",
   "requiredField": "Påkrævet",
+  "restockLabel": "Genopfyld",
+  "restocked": "{name} genopfyldt til {quantity} {unit}",
+  "restore": "Gendan",
+  "restoreError": "Fejl ved gendannelse af køb. Prøv igen.",
+  "retry": "Prøv igen",
+  "save": "Gem",
   "saveChanges": "Gem ændringer",
   "saveRecipe": "Gem",
+  "savings": "Besparelser",
+  "searchCurrency": "Søg i valuta...",
+  "searchInConversation": "Søg i samtale...",
   "searchLanguage": "Søg sprog...",
   "searchRecipes": "Søg i opskrifter...",
+  "selectAll": "Vælg alle",
+  "selectListForDashboard": "Vælg en liste for at se dashboardet.",
+  "selectedItems": "{count,plural, one{Valgt {count}} other{Valgt {count}}}",
+  "setBudgetButton": "Sæt budget",
+  "setBudgetTitle": "Månedligt budget",
+  "settingsAppBar": "Indstillinger",
+  "settingsDefaultScreen": "Standard startskærm",
+  "settingsDefaultScreenSubtitle": "Vælg mellem indkøbsliste eller AI-chat",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "Indkøbsliste",
+  "share": "Del",
+  "shareApp": "Del app",
+  "shareAppDescription": "Inviter venner til at bruge Lista Plus",
+  "shareAsText": "Send varer som formateret tekst",
+  "shareListText": "Min indkøbsliste",
+  "shareListTitle": "Del liste",
+  "shareRealtime": "Realtidssynkronisering med andre",
+  "shareReferralSubject": "Få 7 dages Lista Plus Premium!",
+  "shareReferralText": "Jeg bruger Lista Plus til at organisere mine indkøb! Download via mit link, og vi får begge 7 dages Premium gratis: {url}",
+  "shareSubject": "Indkøbsliste",
+  "shareThisCode": "Del denne kode:",
+  "shareViaCode": "Del via kode",
+  "sharedLabel": "Delt",
+  "shoppingAssistant": "Indkøbsassistent",
+  "shoppingMode": "Indkøbstilstand",
+  "shoppingModeHeader": "INDKØBSTILSTAND",
   "shortDescription": "Kort beskrivelse",
+  "signInApple": "Log ind med Apple",
+  "signInGoogle": "Log ind med Google",
+  "smartOrganization": "Smart organisering",
+  "sortCategory": "Kategori",
+  "sortDate": "Dato",
+  "sortManual": "Manuelt",
+  "sortName": "Navn",
+  "spendingAnalysis": "Forbrugsanalyse",
+  "spendingByCategory": "Forbrug efter kategori",
+  "suggestedQuestions": "Foreslåede spørgsmål:",
   "suggestedTags": "Forslag",
+  "switchList": "Skift liste",
+  "system": "System",
   "tags": "Tags",
-  "viewRecipe": "Vis opskrift"
+  "termsOfUse": "Brugsvilkår",
+  "themeAmber": "Rav",
+  "themeBlue": "Blå",
+  "themeBrown": "Brun",
+  "themeColor": "Temafarve",
+  "themeGreen": "Grøn",
+  "themeIndigo": "Indigo",
+  "themeOrange": "Orange",
+  "themePink": "Lyserød",
+  "themePurple": "Lilla",
+  "themeRed": "Rød",
+  "themeTeal": "Krikand",
+  "totalEstimated": "Anslået i alt: {amount}",
+  "totalSpending": "Samlet forbrug",
+  "trackStock": "Følg lager",
+  "trackStockActive": "Vises i indkøbsforslag",
+  "trackStockInactive": "Genererer ikke indkøbsforslag",
+  "undo": "Fortryd",
+  "unit": "Enhed",
+  "unitPack": "pakke",
+  "unlockFullResponse": "Lås op for fuld respons",
+  "unmark": "Fjern markering",
+  "upgrade": "Opgrader",
+  "validForLimitedTime": "Gyldig i begrænset tid",
+  "version": "Version",
+  "viewActive": "Se aktive",
+  "viewDetails": "Se detaljer",
+  "viewHistory": "Se historik",
+  "viewItems": "Se varer",
+  "viewList": "Se liste",
+  "viewPro": "Se Pro",
+  "viewRecipe": "Vis opskrift",
+  "voiceCommandContent": "Tal naturligt for at administrere din liste!\n\nEksempler:\n• 'Tilføj brød, ost og skinke'\n• 'Fjern vaskemiddel'\n• 'Skift tema til blå'\n\nDette er en eksklusiv funktion i Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Se planer",
+  "voiceCommandTitle": "AI-stemmekommando",
+  "voiceProFeature": "Avancerede stemmekommandoer er Pro. Aktiverer grundlæggende diktering...",
+  "voiceTranscriptionTooltip": "Tale til tekst (Gratis)",
+  "welcomeAiAssistant": "Velkommen til AI Assistant",
+  "whatToDoWithItem": "Hvad vil du gerne med denne vare?",
+  "yes": "Ja",
+  "yesLabel": "Ja"
 }

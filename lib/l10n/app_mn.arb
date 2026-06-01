@@ -1,101 +1,73 @@
 {
   "@@locale": "mn",
-  "appTitle": "Дэлгүүрийн жагсаалт",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Жагсаалтууд",
-  "pantry": "Агуулах",
-  "@_Common": "description: Common actions",
-  "cancel": "Цуцлах",
-  "save": "Хадгалах",
-  "create": "Үүсгэх",
-  "add": "Нэмэх",
-  "remove": "Устгах",
-  "delete": "Устгах",
-  "edit": "Засах",
-  "copy": "Хуулах",
-  "retry": "Дахин оролдох",
-  "regenerate": "Дахин үүсгэх",
-  "copiedToClipboard": "Самбар руу хуулсан",
-  "confirm": "Баталгаажуулах",
-  "close": "Хаах",
-  "import": "Импортлох",
-  "rename": "Нэр өөрчлөх",
-  "upgrade": "Шинэчлэх",
-  "clear": "Цэвэрлэх",
-  "error": "Алдаа: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Алдаа: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Худалдан авалтыг боловсруулахад алдаа гарлаа. Дахин оролдоно уу.",
-  "restoreError": "Худалдан авалтыг сэргээхэд алдаа гарлаа. Дахин оролдоно уу.",
-  "loading": "Ачааллаж байна...",
-  "fieldRequired": "Шаардлагатай талбар",
-  "addedFeedback": "Нэмэгдсэн!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} сонгогдсон} other{{count} сонгогдсон}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Тооцоолсон",
-  "alreadyPurchased": "Аль хэдийн худалдаж авсан",
-  "clearList": "Жагсаалтыг цэвэрлэх",
-  "clearPurchased": "Худалдаж авсаныг цэвэрлэх",
-  "share": "Хуваалцах",
-  "shareViaCode": "Кодоор хуваалцах",
-  "importViaCode": "Кодоор импортлох",
-  "listAssistant": "Жагсаалтын туслах",
-  "globalAssistant": "Ерөнхий туслах",
-  "becomePremium": "Premium болох",
-  "manageSubscription": "Захиалга удирдах",
-  "completePurchase": "Худалдан авалтыг дуусгах",
-  "confirmClearList": "Бүх зүйлийг устгах уу?",
-  "shareListTitle": "Жагсаалт хуваалцах",
-  "shareThisCode": "Энэ кодыг хуваалцах:",
-  "validForLimitedTime": "Хязгаарлагдмал хугацаанд хүчинтэй",
-  "importListTitle": "Жагсаалт импортлох",
-  "enterCodeHint": "Кодыг оруулна уу",
-  "confirmArchiveTitle": "Худалдан авалтыг дуусгах",
-  "confirmArchiveContent": "Энэ худалдан авалтыг дуусгаад жагсаалтыг архивт хадгалах уу?",
-  "complete": "Дуусгах",
-  "listArchived": "Жагсаалт амжилттай архивлагдлаа!",
-  "listAdded": "{listName} нэмэгдсэн!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Худалдаж авах",
-  "unmark": "Тэмдэглэгээ арилгах",
-  "confirmDeleteItems": "{count} зүйлийг устгах уу?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Баталгаажуулах",
-  "confirmContent": "{count} зүйлийг устгах уу?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Жагсаалтыг архивлах",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Агуулах",
-  "generateShoppingList": "Дэлгүүрийн жагсаалт үүсгэх",
-  "pantryEmpty": "Агуулах хоосон",
-  "pantryEmptySubtitle": "Гэртээ хадгалахыг хүсэх бүтээгдэхүүнээ нэмнэ үү",
-  "itemsNeedPurchase": "{deficit} зүйл худалдаж авах шаардлагатай",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Худалдаж авах зүйл байхгүй",
-  "newPantryList": "Агуулахаас дэлгүүр",
-  "newListTitle": "Шинэ дэлгүүрийн жагсаалт",
-  "itemsWillBeAdded": "{count} зүйл нэмэгдэх болно",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Жагсаалтын нэр",
-  "listCreated": "\"{name}\" жагсаалт {count} зүйлтэй үүсгэгдлээ",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Хяналт байхгүй",
-  "markAsPurchased": "Худалдаж авсан гэж тэмдэглэх",
-  "editPantryItem": "{name} засах",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Тохиромжтой тоо хэмжээ",
-  "currentQuantity": "Одоогийн тоо хэмжээ",
-  "consumed": "Хэрэглэсэн",
-  "restocked": "{name} -ийг {quantity} {unit} болгон нөөцлөв",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "\"{name}\" -ийг агуулахаас устгах уу?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name} засах",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Тохиргоо",
-  "language": "Хэл",
-  "languagePortuguese": "Португал (Бразил)",
-  "languageEnglish": "Англи",
-  "languageSystem": "Системийн анхдагч",
-  "appearance": "Гадаад байдал",
-  "light": "Гэрэлтэй",
-  "system": "Систем",
-  "dark": "Харанхуй",
-  "themeColor": "Сэдвийн өнгө",
-  "finance": "Санхүү",
-  "monthlyBudgetNav": "Сарын төсөв",
-  "budgetSubtitle": "Сарын зарлагаа хянах",
-  "data": "Өгөгдөл",
-  "backupNav": "Нөөцлөлт",
-  "backupSubtitle": "Өгөгдлөө экспортлох эсвэл импортлох",
-  "about": "Тухай",
-  "version": "Хувилбар",
-  "privacy": "Нууцлал",
-  "termsOfUse": "Ашиглах нөхцөл",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Нөөцлөлт",
-  "backupPremiumDescription": "Нөөцлөлт ба экспорт нь Premium онцлог юм",
-  "exportData": "Өгөгдөл экспортлох",
-  "exportDataSubtitle": "Бүх жагсаалтыг JSON хэлбэрээр хадгалах",
-  "importData": "Өгөгдөл импортлох",
-  "importDataSubtitle": "JSON -аас жагсаалтуудыг сэргээх",
-  "importJsonTitle": "JSON импортлох",
-  "importJsonHint": "Нөөц JSON -ийг энд буулгана уу...",
-  "backupExported": "Нөөцлөлт амжилттай экспортлогдлоо!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Сарын төсөв",
-  "budgetPremiumLocked": "Дэлхий нийтийн сарын төсөв нь Premium",
-  "budgetUpgradePrompt": "Шинэчлэх",
-  "noBudgetDefined": "Төсөв тогтоогоогүй",
-  "totalEstimated": "Нийт тооцоолол: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,366 +392,218 @@
       }
     }
   },
-  "setBudgetButton": "Төсөв тогтоох",
-  "budgetLists": "Жагсаалтууд",
-  "budgetValueLabel": "Дүн",
-  "setBudgetTitle": "Сарын төсөв",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Бүгд",
-  "filterPending": "Хүлээгдэж буй",
-  "filterPurchased": "Худалдаж авсан",
-  "sortName": "Нэр",
-  "sortCategory": "Ангилал",
-  "sortDate": "Огноо",
-  "sortManual": "Гараар",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Тухай",
+  "achievements": "Амжилтууд",
+  "activeListening": "Идэвхтэй сонсох",
+  "add": "Нэмэх",
+  "addAllToList": "Бүгдийг жагсаалтад нэмэх",
+  "addDirectToList": "Жагсаалтад шууд нэмнэ үү",
+  "addIngredient": "Найрлага нэмэх",
   "addItem": "Зүйл нэмэх",
-  "itemName": "Зүйлийн нэр",
-  "quantityShort": "Тоо",
-  "unit": "Нэгж",
-  "category": "Ангилал",
-  "estimatedPrice": "Тооцоолсон үнэ",
   "addItemPrice": "Тооцоолсон үнэ",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Зүйл засах",
-  "quantityFull": "Тоо хэмжээ",
-  "editItemPrice": "Тооцоолсон үнэ",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Зураг нэмэх",
   "addToPantry": "Агуулах руу нэмэх",
   "addToPantryPrompt": "\"{name}\" -ийг Агуулах руу нэмэх үү?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Тийм",
-  "productName": "Бүтээгдэхүүний нэр",
-  "idealQty": "Тохиромжтой тоо",
-  "currentQty": "Одоогийн тоо",
-  "trackStock": "Нөөц хянах",
-  "trackStockActive": "Дэлгүүрийн зөвлөмжид гарна",
-  "trackStockInactive": "Дэлгүүрийн зөвлөмж үүсгэхгүй",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Жагсаалт үүсгэх",
-  "renameListDialog": "Жагсаалтын нэр өөрчлөх",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Жагсаалтын түүх",
-  "myLists": "Миний жагсаалтууд",
-  "viewActive": "Идэвхтэйг харах",
-  "viewHistory": "Түүхийг харах",
-  "noArchivedLists": "Архивлагдсан жагсаалт байхгүй",
-  "noActiveLists": "Идэвхтэй жагсаалт байхгүй",
-  "completedOn": "{date} -д дууссан",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Хуваалцсан",
-  "restore": "Сэргээх",
-  "removeSharedTooltip": "Устгах",
-  "deleteListTitle": "Жагсаалт устгах",
-  "deleteListContent": "\"{name}\" жагсаалтыг устгахдаа итгэлтэй байна уу? Бүх зүйлс устгагдах болно.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Хуваалцсан жагсаалтыг устгах",
-  "removeSharedListContent": "\"{name}\" -ийг жагсаалтуудаас чинь устгах уу? Анхны жагсаалт өөрчлөгдөхгүй.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Шинэ жагсаалт үүсгэх",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Нэмэгдсэн!",
+  "advancedFeatures": "Дэвшилтэт функцууд",
   "aiAssistant": "AI туслах",
   "aiAssistantDescription": "Манай AI туслахаар ухаалаг зөвлөмж, жор, хувийн зөвлөгөө аваарай.",
-  "generalAssistant": "Ерөнхий туслах",
+  "aiCreditsRemaining": "{remaining} кредит үлдсэн",
+  "aiEnergy": "AI эрчим хүч",
+  "aiError": "Уучлаарай, таны хүсэлтийг боловсруулахад алдаа гарлаа. Холболтоо шалгаад дараа дахин оролдоно уу.",
+  "aiVoiceCommandTooltip": "AI дуут команд (Premium)",
+  "allTags": "Бүгд",
+  "alreadyPurchased": "Аль хэдийн худалдаж авсан",
+  "appTitle": "Дэлгүүрийн жагсаалт",
+  "appearance": "Гадаад байдал",
+  "archiveList": "Жагсаалтыг архивлах",
+  "backToChat": "Чат руу буцах",
+  "backupExported": "Нөөцлөлт амжилттай экспортлогдлоо!",
+  "backupNav": "Нөөцлөлт",
+  "backupPremiumDescription": "Нөөцлөлт ба экспорт нь Premium онцлог юм",
+  "backupSubtitle": "Өгөгдлөө экспортлох эсвэл импортлох",
+  "backupTitle": "Нөөцлөлт",
+  "becomePremium": "Premium болох",
+  "budgetAmountLabel": "Төсвийн дүн",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Сарын төсөв",
+  "budgetDashboardTitle": "Хянах самбар",
+  "budgetEditTitle": "Сарын төсөв",
+  "budgetLists": "Жагсаалтууд",
+  "budgetPremiumLocked": "Дэлхий нийтийн сарын төсөв нь Premium",
+  "budgetSubtitle": "Сарын зарлагаа хянах",
+  "budgetUpgradePrompt": "Шинэчлэх",
+  "budgetValueLabel": "Дүн",
+  "buy": "Худалдаж авах",
+  "cancel": "Цуцлах",
+  "cartTotal": "Сагсны нийт",
+  "catBakery": "Талх нарийн боов",
+  "catBeverages": "Ундаа",
+  "catCleaning": "Цэвэрлэгээ",
+  "catFruits": "Жимс",
+  "catOthers": "Бусад",
+  "category": "Ангилал",
+  "chatError": "Чат ачааллахад алдаа гарлаа: {error}",
+  "chatHint": "Мессежээ бичнэ үү...",
+  "chatSubtitle": "Зүйлсийн зөвлөмж, жор эсвэл хэмнэлтийн зөвлөгөө авах.",
+  "chatSubtitleShort": "Үнэ, жор, зохион байгуулалтын талаар асуу...",
+  "chooseCurrency": "Валют сонгоно уу",
+  "chooseImageSource": "Зургийн эх үүсвэрийг сонгоно уу",
+  "chooseLanguage": "Хэл сонгох",
+  "clear": "Цэвэрлэх",
   "clearHistory": "Түүх цэвэрлэх",
   "clearHistoryConfirm": "Энэ сессийн бүх мессежийг цэвэрлэх үү?",
-  "chatHint": "Мессежээ бичнэ үү...",
-  "chatError": "Чат ачааллахад алдаа гарлаа: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Жагсаалтад чинь хэрхэн туслах вэ?",
-  "generalHelp": "Өнөөдрийн дэлгүүрт хэрхэн туслах вэ?",
-  "chatSubtitle": "Зүйлсийн зөвлөмж, жор эсвэл хэмнэлтийн зөвлөгөө авах.",
-  "aiError": "Уучлаарай, таны хүсэлтийг боловсруулахад алдаа гарлаа. Холболтоо шалгаад дараа дахин оролдоно уу.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Нэвтрээд Premium\nфункцуудыг нээх",
-  "signInGoogle": "Google -р нэвтрэх",
-  "signInApple": "Apple -р нэвтрэх",
+  "clearList": "Жагсаалтыг цэвэрлэх",
+  "clearPurchased": "Худалдаж авсаныг цэвэрлэх",
+  "close": "Хаах",
+  "complete": "Дуусгах",
+  "completePurchase": "Худалдан авалтыг дуусгах",
+  "completedOn": "{date} -д дууссан",
+  "confirm": "Баталгаажуулах",
+  "confirmArchiveContent": "Энэ худалдан авалтыг дуусгаад жагсаалтыг архивт хадгалах уу?",
+  "confirmArchiveTitle": "Худалдан авалтыг дуусгах",
+  "confirmClearList": "Бүх зүйлийг устгах уу?",
+  "confirmContent": "{count} зүйлийг устгах уу?",
+  "confirmDeleteItems": "{count} зүйлийг устгах уу?",
+  "confirmDeleteTitle": "Баталгаажуулах",
+  "confirmRemovePantry": "\"{name}\" -ийг агуулахаас устгах уу?",
+  "consumed": "Хэрэглэсэн",
   "continueAsGuest": "Зочин хэлбэрээр үргэлжлүүлэх",
-  "loginError": "Нэвтрэх алдаа: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Шинэчлэх",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Зүйл устгагдлаа",
-  "undo": "Буцаах",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Таны жагсаалт хоосон байна",
-  "emptyListSubtitle": "Эхлэхийн тулд зүйлс нэмнэ үү",
-  "noListFoundTitle": "Жагсаалт олдсонгүй",
-  "noListFoundSubtitle": "Эхлэхийн тулд эхний жагсаалтаа үүсгэнэ үү",
+  "copiedToClipboard": "Самбар руу хуулсан",
+  "copy": "Хуулах",
+  "create": "Үүсгэх",
   "createFirstList": "Эхний жагсаалт үүсгэх",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Жагсаалтын төсөв",
-  "budgetAmountLabel": "Төсвийн дүн",
-  "removeBudget": "Устгах",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Хязгааргүй жагсаалт",
-  "prefSharing": "Жагсаалт хуваалцах",
-  "prefFullHistory": "Бүрэн түүх",
-  "prefExportData": "Өгөгдөл экспортлох",
-  "prefCustomThemes": "Өөрийн сэдвүүд",
-  "prefMonthlyBudget": "Дэлхий нийтийн сарын төсөв",
-  "prefAIAssistant": "Хувийн AI туслах",
-  "prefUnlimitedPantry": "Хязгааргүй агуулах",
-  "prefInteractiveArtifacts": "Интерактив AI Artifacts",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Ногоон",
-  "themeBlue": "Цэнхэр",
-  "themePurple": "Ягаан",
-  "themeRed": "Улаан",
-  "themeOrange": "Улбар шар",
-  "themePink": "Ягаан",
-  "themeIndigo": "Индиго",
-  "themeAmber": "Шар",
-  "themeTeal": "Ногоон цэнхэр",
-  "themeBrown": "Бор",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Жимс",
-  "catCleaning": "Цэвэрлэгээ",
-  "catBeverages": "Ундаа",
-  "catBakery": "Талх нарийн боов",
-  "catOthers": "Бусад",
-  "@_Unit": "description: Unit",
-  "unitPack": "багц",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Дэлгүүрийн жагсаалт",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Сарын төсөв",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Жагсаалт устгах",
-  "pantryItemRemoved": "Зүйл устгагдлаа",
+  "createListDialog": "Жагсаалт үүсгэх",
+  "createListToStartAi": "Ухаалаг чат ашиглаж эхлэхийн тулд худалдааны жагсаалт үүсгэ.",
+  "createNewList": "Шинэ жагсаалт үүсгэх",
+  "currency": "Валют",
+  "currentQty": "Одоогийн тоо",
+  "currentQuantity": "Одоогийн тоо хэмжээ",
+  "dark": "Харанхуй",
+  "data": "Өгөгдөл",
   "deficitItems": "{deficit,plural, one{{deficit} зүйл худалдаж авах шаардлагатай} other{{deficit} зүйл худалдаж авах шаардлагатай}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Сагсны нийт",
-  "restockLabel": "Нөөцлөх",
-  "advancedFeatures": "Дэвшилтэт функцууд",
-  "selectAll": "Бүгдийг сонгох",
+  "delete": "Устгах",
+  "deleteListConfirm": "Жагсаалт устгах",
+  "deleteListContent": "\"{name}\" жагсаалтыг устгахдаа итгэлтэй байна уу? Бүх зүйлс устгагдах болно.",
+  "deleteListTitle": "Жагсаалт устгах",
+  "deleteRecipe": "Устгах",
+  "deleteRecipeConfirm": "Энэ жорыг устгах уу?",
+  "deleteRecipeConfirmMsg": "Та \"{recipeName}\" жорыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.",
+  "deleteSession": "Чатыг устгах",
+  "deleteSessionConfirm": "Та энэ чатыг устгахдаа итгэлтэй байна уу? Зурвасууд бүрмөсөн алга болно.",
   "deselectAll": "Бүгдийг цуцлах",
-  "monthlyBudgetAppBar": "Сарын төсөв",
-  "budgetEditTitle": "Сарын төсөв",
-  "budgetDashboardTitle": "Хянах самбар",
-  "selectListForDashboard": "Хянах самбарыг үзэхийн тулд жагсаалт сонгоно уу.",
-  "spendingAnalysis": "Зарлагын шинжилгээ",
-  "noItemsToAnalyze": "Шинжилгээ хийх зүйл байхгүй.",
-  "markItemsToSeeAnalysis": "Шинжилгээг үзэхийн тулд зүйлсийг худалдаж авсан гэж тэмдэглэнэ үү.",
-  "totalSpending": "Нийт зарлага",
-  "spendingByCategory": "Ангилалаар зарлага",
-  "achievements": "Амжилтууд",
-  "exportPdfExcel": "PDF/Excel экспортлох",
-  "exportPdf": "PDF хэлбэрээр экспортлох",
-  "exportExcel": "Excel хэлбэрээр экспортлох",
-  "organizingAi": "AI -аар зохион байгуулж байна...",
-  "yesLabel": "Тийм",
-  "noLabel": "Үгүй",
-  "shareListText": "Миний дэлгүүрийн жагсаалт",
-  "emptyListAddItems": "Таны жагсаалт хоосон байна! Эхлээд зүйлс нэмнэ үү.",
-  "listOrganizedMagic": "Жагсаалт ангилалаар шидэт байдлаар зохион байгуулагдлаа!",
-  "shoppingMode": "Дэлгүүрийн горим",
-  "smartOrganization": "Ухаалаг зохион байгуулалт",
-  "savings": "Хэмнэлт",
-  "shoppingModeHeader": "ДЭЛГҮҮРИЙН ГОРИМ",
-  "shareAsText": "Зүйлсийг форматтай текстээр илгээх",
-  "shareRealtime": "Бусад хүмүүстэй шууд синхрончлол",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Түргэн жор",
-  "quickRecipePrompt": "Миний жагсаалтаас жор санал болгох.",
+  "dynamicColors": "Динамик өнгө",
+  "dynamicColorsEnabledWarning": "Загварын өнгө хүчин төгөлдөр болохын тулд динамик өнгийг идэвхгүй болго",
+  "dynamicColorsSubtitle": "Таны ханын зураг дээр үндэслэсэн өнгийг ашиглана уу",
   "economyTips": "Хэмнэлтийн зөвлөгөө",
   "economyTipsPrompt": "Энэ худалдан авалтаар хэрхэн мөнгө хэмнэх вэ?",
-  "organizeAisles": "Тавиураар зохион байгуулах",
-  "organizeAislesPrompt": "Дэлгүүрийн тавиураар зохион байгуулах.",
-  "recipeSuggestion": "Жорны санал",
-  "aiCreditsRemaining": "{remaining} кредит үлдсэн",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Бүгдийг жагсаалтад нэмэх",
-  "organizeByAisles": "Тавиураар зохион байгуулах",
-  "voiceTranscriptionTooltip": "Дуут бичих (Үнэгүй)",
-  "aiVoiceCommandTooltip": "AI дуут команд (Premium)",
-  "voiceCommandTitle": "AI дуут команд",
-  "voiceCommandContent": "Жагсаалтаа удирдахын тулд байгалийн жамаар ярь!\n\nЖишээнүүд:\n• 'Талх, бяслаг, хиам нэмэх'\n• 'Угаалгын нунтаг устгах'\n• 'Сэдвийг цэнхэр болгох'\n\nЭнэ бол Lista Plus Premium -ийн онцгой функц юм.",
-  "voiceCommandPlanBtn": "Төлөвлөгөө үзэх",
-  "itemsAddedSuccess": "Зүйлс жагсаалтад амжилттай нэмэгдлээ!",
-  "viewList": "Жагсаалт үзэх",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Санал хүсэлт илгээх",
+  "edit": "Засах",
+  "editItem": "Зүйл засах",
+  "editItemPrice": "Тооцоолсон үнэ",
+  "editPantryItem": "{name} засах",
+  "editRecipe": "Засварлах",
+  "editRecipeTitle": "Жор засварлах",
+  "emptyListAddItems": "Таны жагсаалт хоосон байна! Эхлээд зүйлс нэмнэ үү.",
+  "emptyListSubtitle": "Эхлэхийн тулд зүйлс нэмнэ үү",
+  "emptyListTitle": "Таны жагсаалт хоосон байна",
+  "enterCodeHint": "Кодыг оруулна уу",
+  "enterUrl": "URL оруулна уу",
+  "error": "Алдаа: {message}",
+  "errorGeneric": "Алдаа: {message}",
+  "errorLoadingChat": "Өө! Чатыг ачаалахад алдаа гарлаа.",
+  "errorLoadingChatSubtitle": "Холболтоо шалгах эсвэл дараа дахин оролдоно уу.",
+  "errorLoadingRecipes": "Жор ачаалахад алдаа гарлаа",
+  "errorOscillation": "Энэ нь сүлжээний хэлбэлзэл эсвэл түр зуур ашиглах боломжгүй зэргээс шалтгаалж болно. Дахин оролдоно уу.",
+  "estimated": "Тооцоолсон",
+  "estimatedCost": "Тооцоолсон",
+  "estimatedPrice": "Тооцоолсон үнэ",
+  "exportData": "Өгөгдөл экспортлох",
+  "exportDataSubtitle": "Бүх жагсаалтыг JSON хэлбэрээр хадгалах",
+  "exportExcel": "Excel хэлбэрээр экспортлох",
+  "exportPdf": "PDF хэлбэрээр экспортлох",
+  "exportPdfExcel": "PDF/Excel экспортлох",
+  "feedbackBack": "Буцах",
+  "feedbackError": "Илгээхэд алдаа гарлаа: {error}",
+  "feedbackHint": "Саналаа дэлгэрэнгүй бичнэ үү...",
   "feedbackPrompt": "Юу хуваалцахыг хүсэж байна вэ?",
+  "feedbackRetry": "Дахин оролдох",
+  "feedbackSend": "Санал илгээх",
+  "feedbackSending": "Илгээж байна...",
+  "feedbackSettingsSubtitle": "Алдаа мэдээлэх, сайжруулах санал эсвэл орчуулга засах",
+  "feedbackSettingsTitle": "Санал илгээх",
+  "feedbackThankYou": "Баярлалаа!",
+  "feedbackThankYouMessage": "Таны саналыг хүлээн авлаа. Энэ нь Lista Plus-г бүгдэд зориулж сайжруулахад тусална.",
+  "feedbackTitle": "Санал хүсэлт илгээх",
   "feedbackTypeBug": "Алдаа мэдээлэх",
   "feedbackTypeBugHint": "Ямар нэг зүйл ажиллахгүй байна",
-  "feedbackTypeSuggestion": "Санал",
-  "feedbackTypeSuggestionHint": "Аппыг сайжруулах санаа",
-  "feedbackTypeTranslation": "Орчуулгын асуудал",
-  "feedbackTypeTranslationHint": "Буруу эсвэл эвгүй орчуулга",
   "feedbackTypeFeature": "Функц хүсэх",
   "feedbackTypeFeatureHint": "Таны харахыг хүссэн функц",
   "feedbackTypeOther": "Бусад",
   "feedbackTypeOtherHint": "Бусад төрлийн санал",
-  "feedbackHint": "Саналаа дэлгэрэнгүй бичнэ үү...",
-  "feedbackSend": "Санал илгээх",
-  "feedbackSending": "Илгээж байна...",
-  "feedbackThankYou": "Баярлалаа!",
-  "feedbackThankYouMessage": "Таны саналыг хүлээн авлаа. Энэ нь Lista Plus-г бүгдэд зориулж сайжруулахад тусална.",
-  "feedbackBack": "Буцах",
-  "feedbackError": "Илгээхэд алдаа гарлаа: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Дахин оролдох",
-  "feedbackSettingsTitle": "Санал илгээх",
-  "feedbackSettingsSubtitle": "Алдаа мэдээлэх, сайжруулах санал эсвэл орчуулга засах",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Найрлага нэмэх",
-  "addPhoto": "Зураг нэмэх",
-  "allTags": "Бүгд",
-  "chooseImageSource": "Зургийн эх үүсвэрийг сонгоно уу",
-  "chooseLanguage": "Хэл сонгох",
-  "deleteRecipe": "Устгах",
-  "deleteRecipeConfirm": "Энэ жорыг устгах уу?",
-  "deleteRecipeConfirmMsg": "Та \"{recipeName}\" жорыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.",
-  "@deleteRecipeConfirmMsg": {
-    "placeholders": {
-      "recipeName": {
-        "type": "String"
-      }
-    }
-  },
-  "dynamicColors": "Динамик өнгө",
-  "dynamicColorsSubtitle": "Таны ханын зураг дээр үндэслэсэн өнгийг ашиглана уу",
-  "editRecipe": "Засварлах",
-  "editRecipeTitle": "Жор засварлах",
-  "enterUrl": "URL оруулна уу",
-  "errorLoadingRecipes": "Жор ачаалахад алдаа гарлаа",
+  "feedbackTypeSuggestion": "Санал",
+  "feedbackTypeSuggestionHint": "Аппыг сайжруулах санаа",
+  "feedbackTypeTranslation": "Орчуулгын асуудал",
+  "feedbackTypeTranslationHint": "Буруу эсвэл эвгүй орчуулга",
+  "fieldRequired": "Шаардлагатай талбар",
+  "filterAll": "Бүгд",
   "filterByTag": "Шошгоор шүүх",
+  "filterPending": "Хүлээгдэж буй",
+  "filterPurchased": "Худалдаж авсан",
+  "finance": "Санхүү",
+  "finishShopping": "Дэлгүүрээ дуусга",
   "gallery": "Галерей",
+  "generalAssistant": "Ерөнхий туслах",
+  "generalHelp": "Өнөөдрийн дэлгүүрт хэрхэн туслах вэ?",
+  "generateShoppingList": "Дэлгүүрийн жагсаалт үүсгэх",
+  "globalAssistant": "Ерөнхий туслах",
+  "howCanIHelp": "Би яаж туслах вэ?",
+  "idealQty": "Тохиромжтой тоо",
+  "idealQuantity": "Тохиромжтой тоо хэмжээ",
   "imageUrlPlaceholder": "Эсвэл зургийн URL-г буулгана уу",
+  "import": "Импортлох",
+  "importData": "Өгөгдөл импортлох",
+  "importDataSubtitle": "JSON -аас жагсаалтуудыг сэргээх",
+  "importJsonHint": "Нөөц JSON -ийг энд буулгана уу...",
+  "importJsonTitle": "JSON импортлох",
+  "importListTitle": "Жагсаалт импортлох",
+  "importViaCode": "Кодоор импортлох",
   "ingredients": "Найрлага",
   "instructions": "Заавар",
   "instructionsHint": "Мөр бүрт нэг алхам бичнэ үү...",
+  "inviteToList": "Жагсаалтад урих",
+  "itemName": "Зүйлийн нэр",
+  "itemRemoved": "Зүйл устгагдлаа",
+  "itemsAddedSuccess": "Зүйлс жагсаалтад амжилттай нэмэгдлээ!",
+  "itemsNeedPurchase": "{deficit} зүйл худалдаж авах шаардлагатай",
+  "itemsPurchasedCount": "{total}-ийн {purchased}-г худалдаж авсан",
+  "itemsPurchasedShort": "{purchased}/{total} худалдаж авсан",
+  "itemsWillBeAdded": "{count} зүйл нэмэгдэх болно",
+  "language": "Хэл",
+  "languageEnglish": "Англи",
+  "languagePortuguese": "Португал (Бразил)",
+  "languageSystem": "Системийн анхдагч",
+  "light": "Гэрэлтэй",
+  "listAdded": "{listName} нэмэгдсэн!",
+  "listArchived": "Жагсаалт амжилттай архивлагдлаа!",
+  "listAssistant": "Жагсаалтын туслах",
+  "listBudgetTitle": "Жагсаалтын төсөв",
+  "listCreated": "\"{name}\" жагсаалт {count} зүйлтэй үүсгэгдлээ",
+  "listHelp": "Жагсаалтад чинь хэрхэн туслах вэ?",
+  "listHistory": "Жагсаалтын түүх",
+  "listNameLabel": "Жагсаалтын нэр",
+  "listOrganizedMagic": "Жагсаалт ангилалаар шидэт байдлаар зохион байгуулагдлаа!",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Сонсож байна...",
+  "lists": "Жагсаалтууд",
+  "loading": "Ачааллаж байна...",
   "loadingRecipes": "Таны жоруудыг ачаалж байна...",
+  "loginError": "Нэвтрэх алдаа: {error}",
+  "loginPrompt": "Нэвтрээд Premium\nфункцуудыг нээх",
+  "longHistoryWarning": "Урт түүх: Туслах нь гүйцэтгэлийг сайжруулахын тулд хамгийн сүүлийн үеийн мессежүүдэд анхаарлаа хандуулдаг.",
+  "manageSubscription": "Захиалга удирдах",
+  "markAsPurchased": "Худалдаж авсан гэж тэмдэглэх",
+  "markItemsToSeeAnalysis": "Шинжилгээг үзэхийн тулд зүйлсийг худалдаж авсан гэж тэмдэглэнэ үү.",
+  "marketMode": "Зах зээлийн горим",
   "mealPlannerAddMeal": "Хоол нэмэх",
   "mealPlannerDateLabel": "Огноо",
   "mealPlannerDeleteMeal": "Хоол устгах",
@@ -597,13 +614,6 @@
   "mealPlannerGenerateListEmpty": "Нэмэх найрлага алга. Эхлээд жороор хоол төлөвлөнө үү.",
   "mealPlannerGenerateListNoList": "Эхлээд шопинг жагсаалт үүсгэнэ үү.",
   "mealPlannerGenerateListSuccess": "{count} найрлага таны жагсаалтад нэмэгдлээ!",
-  "@mealPlannerGenerateListSuccess": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "mealPlannerLoading": "Хоолны төлөвлөгөө ачаалж байна...",
   "mealPlannerMealDeleted": "Хоол устгагдсан",
   "mealPlannerMealTypeBreakfast": "Өглөөний цай",
@@ -616,24 +626,10 @@
   "mealPlannerNoRecipesHint": "Эхлээд Жор таб дээр жор үүсгэнэ үү",
   "mealPlannerNoteLabel": "Тэмдэглэл (заавал биш)",
   "mealPlannerPrepTime": "{minutes} мин",
-  "@mealPlannerPrepTime": {
-    "placeholders": {
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
   "mealPlannerSave": "Төлөвлөгөөнд нэмэх",
   "mealPlannerSearchRecipes": "Жор хайх...",
   "mealPlannerSelectRecipe": "Жор сонгох",
   "mealPlannerServings": "{count,plural, one{{count} порц} other{{count} порц}}",
-  "@mealPlannerServings": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "mealPlannerServingsLabel": "Порц",
   "mealPlannerTitle": "Хоолны төлөвлөгч",
   "mealPlannerViewMonthly": "Сар бүрийн харагдац",
@@ -641,38 +637,201 @@
   "mealPlannerWeekEmpty": "Энэ долоо хоногт төлөвлөсөн зүйл алга",
   "mealPlannerWeekEmptyHint": "Хоолоо төлөвлөж эхлэхийн тулд дурын өдөр дээр товшино уу!",
   "mealPlannerWeekProgress": "{total} хоолны {count} нь төлөвлөгдсөн",
-  "@mealPlannerWeekProgress": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
+  "monthlyBudgetAppBar": "Сарын төсөв",
+  "monthlyBudgetNav": "Сарын төсөв",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Сарын төсөв",
+  "myLists": "Миний жагсаалтууд",
   "myRecipes": "Миний жорууд",
+  "newChat": "Шинэ чат",
+  "newListTitle": "Шинэ дэлгүүрийн жагсаалт",
+  "newPantryList": "Агуулахаас дэлгүүр",
   "newRecipe": "Шинэ жор",
   "newRecipeTitle": "Шинэ жор",
+  "next": "Дараа нь",
+  "noActiveLists": "Идэвхтэй жагсаалт байхгүй",
+  "noArchivedLists": "Архивлагдсан жагсаалт байхгүй",
+  "noBudgetDefined": "Төсөв тогтоогоогүй",
+  "noHistory": "Чатын түүх байхгүй",
+  "noItemsInList": "Жагсаалтад зүйл алга",
+  "noItemsToAnalyze": "Шинжилгээ хийх зүйл байхгүй.",
+  "noItemsToBuy": "Худалдаж авах зүйл байхгүй",
+  "noLabel": "Үгүй",
+  "noListFoundSubtitle": "Эхлэхийн тулд эхний жагсаалтаа үүсгэнэ үү",
+  "noListFoundTitle": "Жагсаалт олдсонгүй",
+  "noMessagesFound": "Мессеж олдсонгүй",
   "noRecipesSaved": "Хадгалсан жор алга",
   "noRecipesSavedHint": "Доорх товчлуур дээр дарж анхны жороо үүсгэнэ үү.",
+  "noTracking": "Хяналт байхгүй",
+  "onboardingAnnualBadge": "Хамгийн сайн үнэ цэнэ",
+  "onboardingAnnualLabel": "Жилийн",
+  "onboardingCancelAnytime": "Хэзээ ч цуцлах. Амлалт байхгүй.",
+  "onboardingContinueAsGuest": "Зочиноор үргэлжлүүлээрэй",
+  "onboardingExit": "Гарах",
+  "onboardingLoginDesc": "Таны өгөгдлийг бүх төхөөрөмжид синк хийсэн",
+  "onboardingLoginTitle": "Бүгдийг үүлэн дээр хадгал",
+  "onboardingMonthlyLabel": "Сар бүр",
+  "onboardingPersonalizationCta": "Үргэлжлүүлэх",
+  "onboardingPersonalizationDesc": "Бид үүнийг таны саналыг хувийн болгож, худалдан авалтыг илүү ухаалаг болгоход ашиглах болно.",
+  "onboardingPersonalizationFoodHint": "жишээ нь Пицца, суши, лазанья...",
+  "onboardingPersonalizationFoodLabel": "Таны дуртай хоол юу вэ?",
+  "onboardingPersonalizationFoodRequired": "Үргэлжлүүлэхийн тулд дуртай хоолоо бидэнд хэлээрэй",
+  "onboardingPersonalizationSkip": "Одоохондоо алгасая",
+  "onboardingPersonalizationTitle": "Тантай танилцацгаая",
+  "onboardingPremiumSubtitle": "Худалдан авалтын жагсаалтаасаа хамгийн их ашиг хүртээрэй",
+  "onboardingPremiumTitle": "Бүх функцийн түгжээг тайл",
+  "onboardingRestore": "Сэргээх",
+  "onboardingRestoreDesc": "Аль хэдийн захиалга авсан уу? Үүнийг сэргээхийн тулд энд товшино уу.",
+  "onboardingSetupDesc": "Lista Plus хэрхэн харагдах, таны төлөө ажиллахыг хүсч байгаагаа сонго.",
+  "onboardingSetupTitle": "Туршлагаа хувийн болго",
+  "onboardingShareDesc": "Жагсаалтыг гэр бүл, найз нөхөдтэйгээ бодит цаг хугацаанд синк хийнэ үү",
+  "onboardingShareTitle": "Хайртай хүмүүстэйгээ хуваалцаарай",
+  "onboardingSubscribeCta": "Бүртгүүлэх",
+  "onboardingViewAllPlans": "Бүх төлөвлөгөөг харах",
+  "onboardingWelcomeDesc": "Худалдан авалтаа зохион байгуулж, мөнгөө хэмнэх хамгийн ухаалаг арга.",
+  "onboardingWelcomeTitle": "Lista Plus-д тавтай морил",
   "openMenu": "Цэс нээх",
+  "organizeAisles": "Тавиураар зохион байгуулах",
+  "organizeAislesPrompt": "Дэлгүүрийн тавиураар зохион байгуулах.",
+  "organizeByAisles": "Тавиураар зохион байгуулах",
+  "organizingAi": "AI -аар зохион байгуулж байна...",
+  "pantry": "Агуулах",
+  "pantryAppBar": "Агуулах",
+  "pantryEditTitle": "{name} засах",
+  "pantryEmpty": "Агуулах хоосон",
+  "pantryEmptySubtitle": "Гэртээ хадгалахыг хүсэх бүтээгдэхүүнээ нэмнэ үү",
+  "pantryItemRemoved": "Зүйл устгагдлаа",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Хувийн AI туслах",
+  "prefCustomThemes": "Өөрийн сэдвүүд",
+  "prefExportData": "Өгөгдөл экспортлох",
+  "prefFullHistory": "Бүрэн түүх",
+  "prefInteractiveArtifacts": "Интерактив AI Artifacts",
+  "prefMonthlyBudget": "Дэлхий нийтийн сарын төсөв",
+  "prefSharing": "Жагсаалт хуваалцах",
+  "prefUnlimitedLists": "Хязгааргүй жагсаалт",
+  "prefUnlimitedPantry": "Хязгааргүй агуулах",
+  "premiumUpgrade": "Шинэчлэх",
   "prepTime": "Бэлтгэх хугацаа",
   "prepTimeMinutes": "Бэлтгэх хугацаа (минут)",
+  "privacy": "Нууцлал",
+  "productName": "Бүтээгдэхүүний нэр",
+  "purchaseError": "Худалдан авалтыг боловсруулахад алдаа гарлаа. Дахин оролдоно уу.",
+  "quantityFull": "Тоо хэмжээ",
+  "quantityShort": "Тоо",
+  "quickRecipe": "Түргэн жор",
+  "quickRecipePrompt": "Миний жагсаалтаас жор санал болгох.",
+  "quickReplies": "Шуурхай хариултууд:",
   "recipeCreated": "Жор үүсгэгдлээ!",
   "recipeDeleted": "Жор устгагдсан",
   "recipeImage": "Жорын зураг",
   "recipeName": "Жорын нэр",
   "recipeSaved": "Жор хадгалагдлаа!",
+  "recipeSuggestion": "Жорны санал",
   "recipeTags": "Жорын шошго",
+  "regenerate": "Дахин үүсгэх",
+  "remove": "Устгах",
+  "removeBudget": "Устгах",
   "removeImage": "Зураг устгах",
+  "removeSharedListContent": "\"{name}\" -ийг жагсаалтуудаас чинь устгах уу? Анхны жагсаалт өөрчлөгдөхгүй.",
+  "removeSharedListTitle": "Хуваалцсан жагсаалтыг устгах",
+  "removeSharedTooltip": "Устгах",
+  "rename": "Нэр өөрчлөх",
+  "renameListDialog": "Жагсаалтын нэр өөрчлөх",
   "requiredField": "Шаардлагатай",
+  "restockLabel": "Нөөцлөх",
+  "restocked": "{name} -ийг {quantity} {unit} болгон нөөцлөв",
+  "restore": "Сэргээх",
+  "restoreError": "Худалдан авалтыг сэргээхэд алдаа гарлаа. Дахин оролдоно уу.",
+  "retry": "Дахин оролдох",
+  "save": "Хадгалах",
   "saveChanges": "Өөрчлөлтийг хадгалах",
   "saveRecipe": "Хадгалах",
+  "savings": "Хэмнэлт",
+  "searchCurrency": "Валют хайх...",
+  "searchInConversation": "Харилцан ярианаас хайх...",
   "searchLanguage": "Хэл хайх...",
   "searchRecipes": "Жор хайх...",
+  "selectAll": "Бүгдийг сонгох",
+  "selectListForDashboard": "Хянах самбарыг үзэхийн тулд жагсаалт сонгоно уу.",
+  "selectedItems": "{count,plural, one{{count} сонгогдсон} other{{count} сонгогдсон}}",
+  "setBudgetButton": "Төсөв тогтоох",
+  "setBudgetTitle": "Сарын төсөв",
+  "settingsAppBar": "Тохиргоо",
+  "settingsDefaultScreen": "Үндсэн нүүр дэлгэц",
+  "settingsDefaultScreenSubtitle": "Худалдааны жагсаалт эсвэл AI чат хоёрын хооронд сонгоно уу",
+  "settingsScreenChat": "AI чат",
+  "settingsScreenList": "Худалдан авалтын жагсаалт",
+  "share": "Хуваалцах",
+  "shareApp": "Аппликешн хуваалцах",
+  "shareAppDescription": "Найзуудаа Lista Plus ашиглахыг урь",
+  "shareAsText": "Зүйлсийг форматтай текстээр илгээх",
+  "shareListText": "Миний дэлгүүрийн жагсаалт",
+  "shareListTitle": "Жагсаалт хуваалцах",
+  "shareRealtime": "Бусад хүмүүстэй шууд синхрончлол",
+  "shareReferralSubject": "Lista Plus Premium-г 7 хоног аваарай!",
+  "shareReferralText": "Би дэлгүүр хэсэхдээ Lista Plus ашиглаж байна! Миний холбоосоор татаж аваад бид хоёулаа 7 хоногийн Premium-г үнэгүй авах боломжтой: {url}",
+  "shareSubject": "Дэлгүүрийн жагсаалт",
+  "shareThisCode": "Энэ кодыг хуваалцах:",
+  "shareViaCode": "Кодоор хуваалцах",
+  "sharedLabel": "Хуваалцсан",
+  "shoppingAssistant": "Худалдааны туслах",
+  "shoppingMode": "Дэлгүүрийн горим",
+  "shoppingModeHeader": "ДЭЛГҮҮРИЙН ГОРИМ",
   "shortDescription": "Товч тайлбар",
+  "signInApple": "Apple -р нэвтрэх",
+  "signInGoogle": "Google -р нэвтрэх",
+  "smartOrganization": "Ухаалаг зохион байгуулалт",
+  "sortCategory": "Ангилал",
+  "sortDate": "Огноо",
+  "sortManual": "Гараар",
+  "sortName": "Нэр",
+  "spendingAnalysis": "Зарлагын шинжилгээ",
+  "spendingByCategory": "Ангилалаар зарлага",
+  "suggestedQuestions": "Санал болгож буй асуултууд:",
   "suggestedTags": "Санал болгож буй",
+  "switchList": "Жагсаалтыг солих",
+  "system": "Систем",
   "tags": "Шошго",
-  "viewRecipe": "Жор үзэх"
+  "termsOfUse": "Ашиглах нөхцөл",
+  "themeAmber": "Шар",
+  "themeBlue": "Цэнхэр",
+  "themeBrown": "Бор",
+  "themeColor": "Сэдвийн өнгө",
+  "themeGreen": "Ногоон",
+  "themeIndigo": "Индиго",
+  "themeOrange": "Улбар шар",
+  "themePink": "Ягаан",
+  "themePurple": "Ягаан",
+  "themeRed": "Улаан",
+  "themeTeal": "Ногоон цэнхэр",
+  "totalEstimated": "Нийт тооцоолол: {amount}",
+  "totalSpending": "Нийт зарлага",
+  "trackStock": "Нөөц хянах",
+  "trackStockActive": "Дэлгүүрийн зөвлөмжид гарна",
+  "trackStockInactive": "Дэлгүүрийн зөвлөмж үүсгэхгүй",
+  "undo": "Буцаах",
+  "unit": "Нэгж",
+  "unitPack": "багц",
+  "unlockFullResponse": "Бүрэн хариултын түгжээг тайлах",
+  "unmark": "Тэмдэглэгээ арилгах",
+  "upgrade": "Шинэчлэх",
+  "validForLimitedTime": "Хязгаарлагдмал хугацаанд хүчинтэй",
+  "version": "Хувилбар",
+  "viewActive": "Идэвхтэйг харах",
+  "viewDetails": "Дэлгэрэнгүйг харах",
+  "viewHistory": "Түүхийг харах",
+  "viewItems": "Зүйлс харах",
+  "viewList": "Жагсаалт үзэх",
+  "viewPro": "Pro харах",
+  "viewRecipe": "Жор үзэх",
+  "voiceCommandContent": "Жагсаалтаа удирдахын тулд байгалийн жамаар ярь!\n\nЖишээнүүд:\n• 'Талх, бяслаг, хиам нэмэх'\n• 'Угаалгын нунтаг устгах'\n• 'Сэдвийг цэнхэр болгох'\n\nЭнэ бол Lista Plus Premium -ийн онцгой функц юм.",
+  "voiceCommandPlanBtn": "Төлөвлөгөө үзэх",
+  "voiceCommandTitle": "AI дуут команд",
+  "voiceProFeature": "Нарийвчилсан дуут тушаалууд нь Pro. Үндсэн диктантыг идэвхжүүлж байна...",
+  "voiceTranscriptionTooltip": "Дуут бичих (Үнэгүй)",
+  "welcomeAiAssistant": "AI Assistant-д тавтай морил",
+  "whatToDoWithItem": "Та энэ зүйлээр юу хийхийг хүсч байна вэ?",
+  "yes": "Тийм",
+  "yesLabel": "Тийм"
 }

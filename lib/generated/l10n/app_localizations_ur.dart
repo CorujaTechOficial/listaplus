@@ -42,6 +42,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get copy => 'نقل کریں';
 
   @override
+  String get next => 'اگلا';
+
+  @override
   String get retry => 'دوبارہ کوشش کریں';
 
   @override
@@ -281,28 +284,28 @@ class AppLocalizationsUr extends AppLocalizations {
   String get language => 'زبان';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'پرتگالی (برازیل)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'انگریزی';
 
   @override
   String get languageSystem => 'سسٹم ڈیفالٹ';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'زبان منتخب کریں۔';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'زبان تلاش کریں...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'کرنسی';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'کرنسی کا انتخاب کریں۔';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'کرنسی تلاش کریں...';
 
   @override
   String get appearance => 'ظاہری شکل';
@@ -320,14 +323,15 @@ class AppLocalizationsUr extends AppLocalizations {
   String get themeColor => 'تھیم کا رنگ';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'متحرک رنگ';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle =>
+      'اپنے وال پیپر کی بنیاد پر رنگ استعمال کریں۔';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'تھیم کے رنگ کے مؤثر ہونے کے لیے متحرک رنگوں کو غیر فعال کریں۔';
 
   @override
   String get finance => 'مالیات';
@@ -568,17 +572,17 @@ class AppLocalizationsUr extends AppLocalizations {
   String get generalAssistant => 'عام مددگار';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'نئی چیٹ';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'چیٹ کی کوئی سرگزشت نہیں۔';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'چیٹ کو حذف کریں۔';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'کیا آپ واقعی اس چیٹ کو حذف کرنا چاہتے ہیں؟ پیغامات مستقل طور پر ضائع ہو جائیں گے۔';
 
   @override
   String get clearHistory => 'تاریخ صاف کریں';
@@ -624,93 +628,108 @@ class AppLocalizationsUr extends AppLocalizations {
   String get continueAsGuest => 'مہمان کے طور پر جاری رکھیں';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plus میں خوش آمدید';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'اپنی خریداری کو منظم کرنے اور پیسے بچانے کا بہترین طریقہ۔';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'اپنے تجربے کو ذاتی بنائیں';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'منتخب کریں کہ آپ Lista Plus کیسا دیکھنا چاہتے ہیں اور آپ کے لیے کام کرتے ہیں۔';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'ہر چیز کو بادل میں محفوظ کریں۔';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'آپ کا ڈیٹا آپ کے تمام آلات پر مطابقت پذیر ہے۔';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'اپنے پیاروں کے ساتھ شئیر کریں۔';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'حقیقی وقت میں خاندان اور دوستوں کے ساتھ فہرستیں ہم آہنگ کریں۔';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'تمام خصوصیات کو غیر مقفل کریں۔';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'اپنی خریداری کی فہرستوں سے زیادہ سے زیادہ فائدہ اٹھائیں۔';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'بہترین قدر';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'ماہانہ';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'سالانہ';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'تمام منصوبے دیکھیں';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'سبسکرائب کریں۔';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'کسی بھی وقت منسوخ کریں۔ کوئی عزم نہیں۔';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'مہمان کے طور پر جاری رکھیں';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'خریداریوں کو بحال کریں۔';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'پہلے سے ہی سبسکرپشن ہے؟ اسے بحال کرنے کے لیے یہاں تھپتھپائیں۔';
+
+  @override
+  String get onboardingExit => 'باہر نکلیں۔';
+
+  @override
+  String get onboardingPersonalizationTitle => 'آئیے آپ کو جانتے ہیں۔';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'ہم اسے آپ کی تجاویز کو ذاتی نوعیت کا بنانے اور خریداری کو بہتر بنانے کے لیے استعمال کریں گے۔';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'آپ کا پسندیدہ کھانا کیا ہے؟';
+
+  @override
+  String get onboardingPersonalizationFoodHint => 'جیسے پیزا، سشی، لاسگنا...';
+
+  @override
+  String get onboardingPersonalizationCta => 'جاری رکھیں';
+
+  @override
+  String get onboardingPersonalizationSkip => 'ابھی کے لیے چھوڑ دیں۔';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'جاری رکھنے کے لیے ہمیں اپنا پسندیدہ کھانا بتائیں';
+
+  @override
+  String get settingsDefaultScreen => 'ڈیفالٹ ہوم اسکرین';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'خریداری کی فہرست یا AI چیٹ کے درمیان انتخاب کریں۔';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'خریداری کی فہرست';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'اے آئی چیٹ';
 
   @override
   String loginError(String error) {
@@ -718,7 +737,7 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'لسٹا پلس پریمیم';
 
   @override
   String get premiumUpgrade => 'کھولنے کے لیے اپ گریڈ کریں';
@@ -1076,364 +1095,367 @@ class AppLocalizationsUr extends AppLocalizations {
       'بگ رپورٹ کریں، بہتری کی تجاویز دیں، یا ترجمے درست کریں';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI توانائی';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'گفتگو میں تلاش کریں...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'کوئی پیغامات نہیں ملے';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'تجویز کردہ سوالات:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'شاپنگ اسسٹنٹ';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total میں سے $purchased خریدی گئی۔';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'تخمینہ لگایا';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'آئٹمز دیکھیں';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'فہرست میں کوئی آئٹم نہیں ہے۔';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'طویل تاریخ: معاون بہتر کارکردگی کے لیے تازہ ترین پیغامات پر توجہ مرکوز کرتا ہے۔';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'سن رہا ہے...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'براہ راست فہرست میں شامل کریں۔';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'مکمل جواب کو غیر مقفل کریں۔';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'فہرست سوئچ کریں۔';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'مارکیٹ موڈ';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'چیٹ پر واپس جائیں۔';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'خریداری ختم کریں۔';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI اسسٹنٹ میں خوش آمدید';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'سمارٹ چیٹ کا استعمال شروع کرنے کے لیے خریداری کی فہرست بنائیں۔';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'میں کس طرح مدد کر سکتا ہوں؟';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'قیمتوں، ترکیبوں، تنظیم کے بارے میں پوچھیں...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total خریدی گئی۔';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'فوری جوابات:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'ایڈوانسڈ وائس کمانڈز پرو ہیں۔ بنیادی ڈکٹیشن کو فعال کیا جا رہا ہے...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'پرو دیکھیں';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'افوہ! چیٹ لوڈ کرنے میں کچھ غلط ہو گیا۔';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'اپنا کنکشن چیک کریں یا بعد میں دوبارہ کوشش کریں۔';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'یہ نیٹ ورک کے دوغلے پن یا عارضی عدم دستیابی کی وجہ سے ہو سکتا ہے۔ براہ کرم دوبارہ کوشش کریں۔';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'فعال سننا';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'آپ اس آئٹم کے ساتھ کیا کرنا چاہیں گے؟';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'تفصیلات دیکھیں';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'مینو کھولیں۔';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'نسخہ دیکھیں';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'ہدایت بنائی گئی!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'ترمیم کریں۔';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'حذف کریں۔';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'اس ترکیب کو حذف کریں؟';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'کیا آپ واقعی \"$recipeName\" کو حذف کرنا چاہتے ہیں؟ اس کارروائی کو کالعدم نہیں کیا جا سکتا۔';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'اجزاء';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'ہدایات';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'تیاری کا وقت';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'نسخہ محفوظ ہو گیا!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'کوئی ترکیبیں محفوظ نہیں ہیں۔';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'نیچے دیئے گئے بٹن کو تھپتھپا کر اپنی پہلی حسب ضرورت ترکیب بنائیں۔';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'میری ترکیبیں۔';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'نیا نسخہ';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'آپ کی ترکیبیں لوڈ ہو رہی ہیں...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'ترکیبیں لوڈ کرنے میں خرابی۔';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'اجزاء شامل کریں۔';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'محفوظ کریں۔';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'نسخہ کا نام';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'مختصر تفصیل';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'تیاری کا وقت (منٹ)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'فی لائن ایک قدم ٹائپ کریں...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'تصویر شامل کریں۔';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'یا تصویر کا URL چسپاں کریں۔';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'ٹیگز';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'ترکیب کے ٹیگز';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'تجویز کردہ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'ترکیبیں تلاش کریں...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'ٹیگ کے لحاظ سے فلٹر کریں۔';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'تمام';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'نسخہ حذف کر دیا گیا۔';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'تبدیلیاں محفوظ کریں۔';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'ترکیب میں ترمیم کریں۔';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'نیا نسخہ';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'درکار ہے۔';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'تصویر کا ذریعہ منتخب کریں۔';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'گیلری';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL درج کریں۔';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'نسخہ کی تصویر';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'تصویر کو ہٹا دیں۔';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'کھانے کا منصوبہ ساز';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'ماہانہ نظارہ';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'ہفتہ وار نظارہ';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'کھانے کا کوئی منصوبہ نہیں ہے۔';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint =>
+      'کھانا شامل کرنے کے لیے ایک دن کو تھپتھپائیں۔';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'کھانے کا منصوبہ لوڈ ہو رہا ہے...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'کھانے کا منصوبہ لوڈ کرنے میں خرابی۔';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'کھانا شامل کریں۔';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'کھانے میں ترمیم کریں۔';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'کھانا ہٹا دیں۔';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'کھانا ہٹا دیا گیا۔';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count سرونگ',
+      one: '$count سرونگ',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'سرونگز';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'نوٹ (اختیاری)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'ایک نسخہ منتخب کریں۔';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'ترکیبیں تلاش کریں...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'کوئی ترکیبیں نہیں ملی';
 
   @override
-  String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+  String get mealPlannerNoRecipesHint => 'پہلے ترکیبیں ٹیب میں ترکیبیں بنائیں';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'پلان میں شامل کریں۔';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$total میں سے $count کھانے کا منصوبہ بنایا گیا ہے۔';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'خریداری کی فہرست بنائیں';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'اس ہفتے منصوبہ بند کھانوں کے تمام اجزاء کو اپنی خریداری کی فہرست میں شامل کریں؟';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return 'آپ کی فہرست میں $count اجزاء شامل کیے گئے!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'شامل کرنے کے لیے کوئی اجزاء نہیں۔ پہلے ترکیبوں کے ساتھ کچھ کھانے کا منصوبہ بنائیں۔';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'پہلے خریداری کی فہرست بنائیں۔';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'ناشتہ';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'دوپہر کا کھانا';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'رات کا کھانا';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'ناشتہ';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'تاریخ';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty =>
+      'اس ہفتے کے لیے کوئی منصوبہ بندی نہیں کی گئی۔';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'اپنے کھانے کی منصوبہ بندی شروع کرنے کے لیے کسی بھی دن تھپتھپائیں!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes منٹ';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'فہرست میں مدعو کریں۔';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'ایپ شیئر کریں۔';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Lista Plus استعمال کرنے کے لیے دوستوں کو مدعو کریں۔';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'میں اپنی خریداری کو منظم کرنے کے لیے Lista Plus کا استعمال کر رہا ہوں! میرے لنک کے ذریعے ڈاؤن لوڈ کریں اور ہم دونوں کو 7 دن کا پریمیم مفت ملتا ہے: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Lista Plus Premium کے 7 دن حاصل کریں!';
 }

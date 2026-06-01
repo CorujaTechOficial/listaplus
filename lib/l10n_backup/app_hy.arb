@@ -1,0 +1,678 @@
+{
+  "@@locale": "hy",
+  "appTitle": "Գնումների ցուցակ",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Ցուցակներ",
+  "pantry": "Մառան",
+  "@_Common": "description: Common actions",
+  "cancel": "Չեղարկել",
+  "save": "Պահպանել",
+  "create": "Ստեղծել",
+  "add": "Ավելացնել",
+  "remove": "Հեռացնել",
+  "delete": "Ջնջել",
+  "edit": "Խմբագրել",
+  "copy": "Պատճենել",
+  "retry": "Կրկին փորձել",
+  "regenerate": "Վերականգնել",
+  "copiedToClipboard": "Պատճենվել է սեղմատախտակին",
+  "confirm": "Հաստատել",
+  "close": "Փակել",
+  "import": "Ներմուծել",
+  "rename": "Վերանվանել",
+  "upgrade": "Թարմացնել",
+  "clear": "Մաքրել",
+  "error": "Սխալ՝ {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Սխալ՝ {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Գնման մշակման սխալ։ Կրկին փորձեք։",
+  "restoreError": "Գնումների վերականգնման սխալ։ Կրկին փորձեք։",
+  "loading": "Բեռնվում է...",
+  "fieldRequired": "Պարտադիր դաշտ",
+  "addedFeedback": "Ավելացված է!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} ընտրված} other{{count} ընտրված}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Մոտավոր",
+  "alreadyPurchased": "Արդեն գնված",
+  "clearList": "Մաքրել ցուցակը",
+  "clearPurchased": "Մաքրել գնվածները",
+  "share": "Կիսվել",
+  "shareViaCode": "Կիսվել կոդով",
+  "importViaCode": "Ներմուծել կոդով",
+  "listAssistant": "Ցուցակի օգնական",
+  "globalAssistant": "Ընդհանուր օգնական",
+  "becomePremium": "Դարձեք Premium",
+  "manageSubscription": "Կառավարել բաժանորդագրությունը",
+  "completePurchase": "Ավարտել գնումը",
+  "confirmClearList": "Հեռացնել բոլոր կետերը?",
+  "shareListTitle": "Կիսվել ցուցակով",
+  "shareThisCode": "Կիսվել այս կոդով՝",
+  "validForLimitedTime": "Վավեր է սահմանափակ ժամանակով",
+  "importListTitle": "Ներմուծել ցուցակ",
+  "enterCodeHint": "Մուտքագրեք կոդը",
+  "confirmArchiveTitle": "Ավարտել Գնումը",
+  "confirmArchiveContent": "Ավարտել այս գնումը և արխիվացնել ցուցակը?",
+  "complete": "Ավարտել",
+  "listArchived": "Ցուցակը հաջողությամբ արխիվացվեց!",
+  "listAdded": "{listName} ավելացված է!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Գնել",
+  "unmark": "Հանել նշումը",
+  "confirmDeleteItems": "Հեռացնել {count} կետ(եր)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Հաստատել",
+  "confirmContent": "Հեռացնել {count} կետ(եր)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Արխիվացնել ցուցակը",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Մառան",
+  "generateShoppingList": "Ստեղծել գնումների ցուցակ",
+  "pantryEmpty": "Դատարկ մառան",
+  "pantryEmptySubtitle": "Ավելացրեք այն ապրանքները, որոնք ցանկանում եք պահել տանը",
+  "itemsNeedPurchase": "{deficit} կետ(եր) պետք է գնվեն",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Գնման կարիք չունեցող կետեր չկան",
+  "newPantryList": "Մառանից գնումներ",
+  "newListTitle": "Նոր Գնումների Ցուցակ",
+  "itemsWillBeAdded": "{count} կետ(եր) կավելացվեն",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Ցուցակի անուն",
+  "listCreated": "«{name}» ցուցակը ստեղծվել է {count} կետով",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Առանց հետևելու",
+  "markAsPurchased": "Նշել որպես գնված",
+  "editPantryItem": "Խմբագրել {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Իդեալական քանակ",
+  "currentQuantity": "Ընթացիկ քանակ",
+  "consumed": "Սպառված",
+  "restocked": "{name}-ը համալրվել է {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Հեռացնել «{name}»-ը մառանից?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Խմբագրել {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Կարգավորումներ",
+  "language": "Լեզու",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Համակարգի լռելյայն",
+  "appearance": "Արտաքին տեսք",
+  "light": "Բաց",
+  "system": "Համակարգ",
+  "dark": "Մուգ",
+  "themeColor": "Թեմայի գույն",
+  "finance": "Ֆինանսներ",
+  "monthlyBudgetNav": "Ամսական բյուջե",
+  "budgetSubtitle": "Հետևեք ձեր ամսական ծախսերին",
+  "data": "Տվյալներ",
+  "backupNav": "Պահուստավորում",
+  "backupSubtitle": "Արտահանել կամ ներմուծել ձեր տվյալները",
+  "about": "Մեր մասին",
+  "version": "Տարբերակ",
+  "privacy": "Գաղտնիություն",
+  "termsOfUse": "Օգտագործման պայմաններ",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Պահուստավորում",
+  "backupPremiumDescription": "Պահուստավորումը և արտահանումը պրեմիում հնարավորություն է",
+  "exportData": "Արտահանել տվյալները",
+  "exportDataSubtitle": "Պահպանել բոլոր ցուցակները որպես JSON",
+  "importData": "Ներմուծել տվյալները",
+  "importDataSubtitle": "Վերականգնել ցուցակները JSON-ից",
+  "importJsonTitle": "Ներմուծել JSON",
+  "importJsonHint": "Տեղադրեք պահուստային JSON-ն այստեղ...",
+  "backupExported": "Պահուստավորումն արտահանված է!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Ամսական Բյուջե",
+  "budgetPremiumLocked": "Համընդհանուր ամսական բյուջեն պրեմիում է",
+  "budgetUpgradePrompt": "Թարմացրեք բացելու համար",
+  "noBudgetDefined": "Բյուջե սահմանված չէ",
+  "totalEstimated": "Ընդհանուր մոտավոր՝ {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Սահմանել բյուջե",
+  "budgetLists": "Ցուցակներ",
+  "budgetValueLabel": "Գումար",
+  "setBudgetTitle": "Ամսական Բյուջե",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Բոլորը",
+  "filterPending": "Սպասող",
+  "filterPurchased": "Գնված",
+  "sortName": "Անուն",
+  "sortCategory": "Կատեգորիա",
+  "sortDate": "Ամսաթիվ",
+  "sortManual": "Ձեռքով",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Ավելացնել Կետ",
+  "itemName": "Կետի անուն",
+  "quantityShort": "Քանակ",
+  "unit": "Միավոր",
+  "category": "Կատեգորիա",
+  "estimatedPrice": "Մոտավոր գին",
+  "addItemPrice": "Մոտավոր գին",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Խմբագրել Կետը",
+  "quantityFull": "Քանակ",
+  "editItemPrice": "Մոտավոր գին",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Ավելացնել Մառանում",
+  "addToPantryPrompt": "Ավելացնել «{name}»-ը Ձեր մառանում?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Այո",
+  "productName": "Ապրանքի անուն",
+  "idealQty": "Իդեալական քանակ",
+  "currentQty": "Ընթացիկ քանակ",
+  "trackStock": "Հետևել պաշարին",
+  "trackStockActive": "Հայտնվում է գնման առաջարկներում",
+  "trackStockInactive": "Գնման առաջարկ չի ստեղծում",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Ստեղծել Ցուցակ",
+  "renameListDialog": "Վերանվանել Ցուցակը",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Ցուցակի Պատմություն",
+  "myLists": "Իմ Ցուցակները",
+  "viewActive": "Դիտել Ակտիվները",
+  "viewHistory": "Դիտել Պատմությունը",
+  "noArchivedLists": "Արխիվացված ցուցակներ չկան",
+  "noActiveLists": "Ակտիվ ցուցակներ չկան",
+  "completedOn": "Ավարտված է {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Համօգտագործված",
+  "restore": "Վերականգնել",
+  "removeSharedTooltip": "Հեռացնել",
+  "deleteListTitle": "Ջնջել ցուցակը",
+  "deleteListContent": "Համոզված եք, որ ցանկանում եք ջնջել «{name}»-ը: Բոլոր կետերը կհեռացվեն:",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Հեռացնել համօգտագործված ցուցակը",
+  "removeSharedListContent": "Հեռացնել «{name}»-ը ձեր ցուցակներից: Բնօրինակ ցուցակը չի տուժի:",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Ստեղծել նոր ցուցակ",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI Օգնական",
+  "aiAssistantDescription": "Ստացեք խելացի առաջարկներ, բաղադրատոմսեր և անհատական խորհուրդներ մեր AI օգնականի միջոցով:",
+  "generalAssistant": "Ընդհանուր Օգնական",
+  "clearHistory": "Մաքրել Պատմությունը",
+  "clearHistoryConfirm": "Մաքրել բոլոր հաղորդագրություններն այս նիստում:",
+  "chatHint": "Գրեք ձեր հաղորդագրությունը...",
+  "chatError": "Զրույցի բեռնման սխալ՝ {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Ինչպե՞ս կարող եմ օգնել ձեր ցուցակին:",
+  "generalHelp": "Ինչպե՞ս կարող եմ օգնել ձեր գնումներին այսօր:",
+  "chatSubtitle": "Հարցրեք կետերի առաջարկներ, բաղադրատոմսեր կամ խնայողության խորհուրդներ:",
+  "aiError": "Ներեցեք, ձեր հարցումը մշակելիս սխալ է տեղի ունեցել: Ստուգեք ձեր կապը կամ փորձեք ավելի ուշ:",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Մուտք գործեք՝\nպրեմիում հնարավորությունները բացելու համար",
+  "signInGoogle": "Մուտք Google-ով",
+  "signInApple": "Մուտք Apple-ով",
+  "continueAsGuest": "Շարունակել որպես հյուր",
+  "loginError": "Մուտքի սխալ՝ {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Թարմացրեք բացելու համար",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Կետը հեռացված է",
+  "undo": "Հետարկել",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Ձեր ցուցակը դատարկ է",
+  "emptyListSubtitle": "Ավելացրեք կետեր սկսելու համար",
+  "noListFoundTitle": "Ցուցակներ չեն գտնվել",
+  "noListFoundSubtitle": "Ստեղծեք ձեր առաջին ցուցակը սկսելու համար",
+  "createFirstList": "Ստեղծել Առաջին Ցուցակը",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Ցուցակի Բյուջե",
+  "budgetAmountLabel": "Բյուջեի գումար",
+  "removeBudget": "Հեռացնել",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Անսահմանափակ ցուցակներ",
+  "prefSharing": "Կիսվել ցուցակներով",
+  "prefFullHistory": "Ամբողջական պատմություն",
+  "prefExportData": "Արտահանել տվյալները",
+  "prefCustomThemes": "Անհատական թեմաներ",
+  "prefMonthlyBudget": "Համընդհանուր ամսական բյուջե",
+  "prefAIAssistant": "Անհատական AI Օգնական",
+  "prefUnlimitedPantry": "Անսահմանափակ մառան",
+  "prefInteractiveArtifacts": "Ինտերակտիվ AI Արտեֆակտներ",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Կանաչ",
+  "themeBlue": "Կապույտ",
+  "themePurple": "Մանուշակագույն",
+  "themeRed": "Կարմիր",
+  "themeOrange": "Նարնջագույն",
+  "themePink": "Վարդագույն",
+  "themeIndigo": "Ինդիգո",
+  "themeAmber": "Սաթ",
+  "themeTeal": "Ծովակնագույն",
+  "themeBrown": "Շագանակագույն",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Մրգեր",
+  "catCleaning": "Մաքրում",
+  "catBeverages": "Ըմպելիքներ",
+  "catBakery": "Հացաբուլկեղեն",
+  "catOthers": "Այլ",
+  "@_Unit": "description: Unit",
+  "unitPack": "տուփ",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Գնումների Ցուցակ",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Ամսական Բյուջե",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Ջնջել ցուցակը",
+  "pantryItemRemoved": "Կետը հեռացված է",
+  "deficitItems": "{deficit,plural, one{{deficit} կետ պետք է գնվի} other{{deficit} կետ պետք է գնվեն}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Զամբյուղի ընդհանուր",
+  "restockLabel": "Համալրել",
+  "advancedFeatures": "Ընդլայնված հնարավորություններ",
+  "selectAll": "Ընտրել բոլորը",
+  "deselectAll": "Ապաընտրել բոլորը",
+  "monthlyBudgetAppBar": "Ամսական Բյուջե",
+  "budgetEditTitle": "Ամսական Բյուջե",
+  "budgetDashboardTitle": "Վահանակ",
+  "selectListForDashboard": "Ընտրեք ցուցակ՝ վահանակը դիտելու համար:",
+  "spendingAnalysis": "Ծախսերի Վերլուծություն",
+  "noItemsToAnalyze": "Վերլուծելու կետեր չկան ցուցակում:",
+  "markItemsToSeeAnalysis": "Նշեք կետերը որպես գնված՝ վերլուծությունը տեսնելու համար:",
+  "totalSpending": "Ընդհանուր Ծախս",
+  "spendingByCategory": "Ծախսեր ըստ Կատեգորիայի",
+  "achievements": "Ձեռքբերումներ",
+  "exportPdfExcel": "Արտահանել PDF/Excel",
+  "exportPdf": "Արտահանել որպես PDF",
+  "exportExcel": "Արտահանել որպես Excel",
+  "organizingAi": "ԿԱԶՄԱԿԵՐՊՎՈՒՄ Է AI-ՈՎ...",
+  "yesLabel": "Այո",
+  "noLabel": "Ոչ",
+  "shareListText": "Իմ Գնումների Ցուցակը",
+  "emptyListAddItems": "Ձեր ցուցակը դատարկ է! Նախ ավելացրեք կետեր: ℹ️",
+  "listOrganizedMagic": "Ցուցակը կախարդականորեն կազմակերպված է ըստ կատեգորիաների! ✨",
+  "shoppingMode": "Գնումների Ռեժիմ",
+  "smartOrganization": "Խելացի Կազմակերպում",
+  "savings": "Խնայողություններ",
+  "shoppingModeHeader": "ԳՆՈՒՄՆԵՐԻ ՌԵԺԻՄ",
+  "shareAsText": "Ուղարկել կետերը որպես ֆորմատավորված տեքստ",
+  "shareRealtime": "Իրական ժամանակում սինխրոնիզացիա այլ մարդկանց հետ",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Արագ բաղադրատոմս",
+  "quickRecipePrompt": "Առաջարկել բաղադրատոմսեր իմ ցուցակի կետերով:",
+  "economyTips": "Խնայողության խորհուրդներ",
+  "economyTipsPrompt": "Ինչպե՞ս կարող եմ գումար խնայել այս գնման վրա:",
+  "organizeAisles": "Կազմակերպել ըստ միջանցքների",
+  "organizeAislesPrompt": "Կազմակերպել ըստ խանութի միջանցքների:",
+  "recipeSuggestion": "Բաղադրատոմսի առաջարկ",
+  "aiCreditsRemaining": "{remaining} մնացած կրեդիտ",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Ավելացնել բոլորը ցուցակում",
+  "organizeByAisles": "Կազմակերպել ըստ միջանցքների",
+  "voiceTranscriptionTooltip": "Ձայնային մուտքագրում (Անվճար)",
+  "aiVoiceCommandTooltip": "AI Ձայնային Հրաման (Premium)",
+  "voiceCommandTitle": "AI Ձայնային Հրաման",
+  "voiceCommandContent": "Խոսեք բնականաբար ձեր ցուցակը կառավարելու համար!\n\nՕրինակներ՝\n• 'Ավելացնել հաց, պանիր և խոզապուխտ'\n• 'Հեռացնել լվացքի փոշին'\n• 'Փոխել թեման կապույտ'\n\nՍա Lista Plus Premium-ի բացառիկ հնարավորություն է:",
+  "voiceCommandPlanBtn": "Դիտել Պլանները",
+  "itemsAddedSuccess": "Կետերը հաջողությամբ ավելացվել են ցուցակում!",
+  "viewList": "Դիտել ցուցակը",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Ուղարկել Հետադարձ Կապ",
+  "feedbackPrompt": "Ի՞նչ կցանկանայիք կիսվել:",
+  "feedbackTypeBug": "Հաղորդել Սխալի Մասին",
+  "feedbackTypeBugHint": "Ինչ-որ բան չի աշխատում",
+  "feedbackTypeSuggestion": "Առաջարկ",
+  "feedbackTypeSuggestionHint": "Գաղափար՝ հավելվածը բարելավելու համար",
+  "feedbackTypeTranslation": "Թարգմանության Խնդիր",
+  "feedbackTypeTranslationHint": "Սխալ կամ անհարթ թարգմանություն",
+  "feedbackTypeFeature": "Ֆունկցիոնալության Հայց",
+  "feedbackTypeFeatureHint": "Ֆունկցիա, որը կցանկանայիք տեսնել",
+  "feedbackTypeOther": "Այլ",
+  "feedbackTypeOtherHint": "Հետադարձ կապի այլ տեսակ",
+  "feedbackHint": "Նկարագրեք ձեր հետադարձ կապը մանրամասն...",
+  "feedbackSend": "Ուղարկել Հետադարձ Կապ",
+  "feedbackSending": "Ուղարկվում է...",
+  "feedbackThankYou": "Շնորհակալություն!",
+  "feedbackThankYouMessage": "Ձեր հետադարձ կապը ստացվել է և օգնում է մեզ բարելավել Lista Plus-ը բոլորի համար:",
+  "feedbackBack": "Հետ",
+  "feedbackError": "Ուղարկելիս սխալ՝ {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Կրկին փորձել",
+  "feedbackSettingsTitle": "Ուղարկել Հետադարձ Կապ",
+  "feedbackSettingsSubtitle": "Հաղորդել սխալների մասին, առաջարկել բարելավումներ կամ ուղղել թարգմանությունները",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Ավելացնել բաղադրիչ",
+  "addPhoto": "Ավելացնել լուսանկար",
+  "allTags": "Բոլորը",
+  "chooseImageSource": "Ընտրել պատկերի աղբյուրը",
+  "chooseLanguage": "Ընտրել լեզուն",
+  "deleteRecipe": "Ջնջել",
+  "deleteRecipeConfirm": "Ջնջե՞լ այս բաղադրատոմսը",
+  "deleteRecipeConfirmMsg": "Համոզվա՞ծ եք, որ ցանկանում եք ջնջել «{recipeName}»-ը: Այս գործողությունը անդառնալի է:",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Դինամիկ գույներ",
+  "dynamicColorsSubtitle": "Օգտագործել գույներ՝ հիմնված պաստառի վրա",
+  "editRecipe": "Խմբագրել",
+  "editRecipeTitle": "Խմբագրել բաղադրատոմսը",
+  "enterUrl": "Մուտքագրել URL",
+  "errorLoadingRecipes": "Սխալ՝ բաղադրատոմսերը բեռնելիս",
+  "filterByTag": "Ֆիլտրել ըստ պիտակի",
+  "gallery": "Պատկերասրահ",
+  "imageUrlPlaceholder": "Կամ տեղադրեք պատկերի URL-ը",
+  "ingredients": "Բաղադրիչներ",
+  "instructions": "Հրահանգներ",
+  "instructionsHint": "Մուտքագրեք մեկ քայլ յուրաքանչյուր տողում...",
+  "loadingRecipes": "Բեռնվում են ձեր բաղադրատոմսերը...",
+  "mealPlannerAddMeal": "Ավելացնել սնունդ",
+  "mealPlannerDateLabel": "Ամսաթիվ",
+  "mealPlannerDeleteMeal": "Հեռացնել սնունդը",
+  "mealPlannerEditMeal": "Խմբագրել սնունդը",
+  "mealPlannerError": "Սխալ՝ սննդի պլանը բեռնելիս",
+  "mealPlannerGenerateList": "Ստեղծել գնումների ցուցակ",
+  "mealPlannerGenerateListConfirm": "Ավելացնե՞լ այս շաբաթվա պլանավորված սննդի բոլոր բաղադրիչները ձեր գնումների ցուցակում:",
+  "mealPlannerGenerateListEmpty": "Ավելացնելու բաղադրիչներ չկան: Նախ պլանավորեք սնունդ բաղադրատոմսերով:",
+  "mealPlannerGenerateListNoList": "Նախ ստեղծեք գնումների ցուցակ:",
+  "mealPlannerGenerateListSuccess": "{count} բաղադրիչ ավելացվեց ձեր ցուցակում!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Սննդի պլանի բեռնում...",
+  "mealPlannerMealDeleted": "Սնունդը հեռացված է",
+  "mealPlannerMealTypeBreakfast": "Նախաճաշ",
+  "mealPlannerMealTypeDinner": "Ընթրիք",
+  "mealPlannerMealTypeLunch": "Ճաշ",
+  "mealPlannerMealTypeSnack": "Թեթև ուտեստ",
+  "mealPlannerNoMeals": "Պլանավորված սնունդ չկա",
+  "mealPlannerNoMealsHint": "Հպեք օրվան՝ սնունդ ավելացնելու համար",
+  "mealPlannerNoRecipesFound": "Բաղադրատոմսեր չեն գտնվել",
+  "mealPlannerNoRecipesHint": "Նախ ստեղծեք բաղադրատոմսեր «Բաղադրատոմսեր» բաժնում",
+  "mealPlannerNoteLabel": "Նշում (կամավոր)",
+  "mealPlannerPrepTime": "{minutes} րոպե",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Ավելացնել պլանին",
+  "mealPlannerSearchRecipes": "Փնտրել բաղադրատոմսեր...",
+  "mealPlannerSelectRecipe": "Ընտրել բաղադրատոմս",
+  "mealPlannerServings": "{count,plural, one{{count} բաժին} other{{count} բաժին}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Բաժիններ",
+  "mealPlannerTitle": "Սննդի պլանավորում",
+  "mealPlannerViewMonthly": "Ամսական տեսք",
+  "mealPlannerViewWeekly": "Շաբաթական տեսք",
+  "mealPlannerWeekEmpty": "Այս շաբաթվա համար ոչինչ պլանավորված չէ",
+  "mealPlannerWeekEmptyHint": "Հպեք ցանկացած օրվա՝ ձեր սնունդը պլանավորելու համար:",
+  "mealPlannerWeekProgress": "Պլանավորված է {total}-ից {count} սնունդ",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Իմ բաղադրատոմսերը",
+  "newRecipe": "Նոր բաղադրատոմս",
+  "newRecipeTitle": "Նոր բաղադրատոմս",
+  "noRecipesSaved": "Պահպանված բաղադրատոմսեր չկան",
+  "noRecipesSavedHint": "Ստեղծեք ձեր առաջին բաղադրատոմսը՝ սեղմելով ներքևի կոճակը:",
+  "openMenu": "Բացել մենյուն",
+  "prepTime": "Պատրաստման ժամանակը",
+  "prepTimeMinutes": "Պատրաստման ժամանակը (րոպե)",
+  "recipeCreated": "Բաղադրատոմսը ստեղծված է",
+  "recipeDeleted": "Բաղադրատոմսը ջնջված է",
+  "recipeImage": "Բաղադրատոմսի պատկեր",
+  "recipeName": "Բաղադրատոմսի անվանում",
+  "recipeSaved": "Բաղադրատոմսը պահպանված է",
+  "recipeTags": "Բաղադրատոմսի պիտակներ",
+  "removeImage": "Հեռացնել պատկերը",
+  "requiredField": "Պարտադիր",
+  "saveChanges": "Պահպանել փոփոխությունները",
+  "saveRecipe": "Պահպանել",
+  "searchLanguage": "Փնտրել լեզուն...",
+  "searchRecipes": "Փնտրել բաղադրատոմսեր...",
+  "shortDescription": "Կարճ նկարագրություն",
+  "suggestedTags": "Առաջարկվող",
+  "tags": "Պիտակներ",
+  "viewRecipe": "Դիտել բաղադրատոմսը"
+}

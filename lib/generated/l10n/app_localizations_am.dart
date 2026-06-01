@@ -42,6 +42,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get copy => 'ቅዳ';
 
   @override
+  String get next => 'ቀጥሎ';
+
+  @override
   String get retry => 'ድጋሚ ሞክር';
 
   @override
@@ -278,10 +281,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get language => 'ቋንቋ';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'ፖርቱጋል (ብራሲል)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'እንግሊዝኛ';
 
   @override
   String get languageSystem => 'የስርዓት ነባሪ';
@@ -293,13 +296,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get searchLanguage => 'ቋንቋ ፈልግ...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'ምንዛሪ';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'ምንዛሪ ይምረጡ';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'ምንዛሬ ፈልግ...';
 
   @override
   String get appearance => 'መልክ';
@@ -324,7 +327,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'የጭብጡ ቀለም ተግባራዊ እንዲሆን ተለዋዋጭ ቀለሞችን አሰናክል';
 
   @override
   String get finance => 'ፋይናንስ';
@@ -565,17 +568,17 @@ class AppLocalizationsAm extends AppLocalizations {
   String get generalAssistant => 'አጠቃላይ ረዳት';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'አዲስ ውይይት';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'የውይይት ታሪክ የለም።';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'ውይይትን ሰርዝ';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'እርግጠኛ ነዎት ይህን ውይይት መሰረዝ ይፈልጋሉ? መልእክቶቹ እስከመጨረሻው ይጠፋሉ.';
 
   @override
   String get clearHistory => 'ታሪክ አጽዳ';
@@ -620,93 +623,102 @@ class AppLocalizationsAm extends AppLocalizations {
   String get continueAsGuest => 'እንደ እንግዳ ቀጥል';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'እንኳን ወደ Lista Plus በደህና መጡ';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'ግብይትዎን ለማደራጀት እና ገንዘብ ለመቆጠብ በጣም ብልጥ መንገድ።';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'ተሞክሮዎን ለግል ያብጁ';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Lista Plus እንዴት እንዲመስልዎት እና ለእርስዎ እንዲሰራ እንደሚፈልጉ ይምረጡ።';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'ሁሉንም ነገር ወደ ደመና ያስቀምጡ';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc => 'የእርስዎ ውሂብ በሁሉም መሣሪያዎችዎ ላይ ተመሳስሏል።';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
+  String get onboardingShareTitle => 'ከምትወዷቸው ጋር አጋራ';
 
   @override
-  String get onboardingSkipToApp => 'Skip to app';
+  String get onboardingShareDesc => 'ዝርዝሮችን ከቤተሰብ እና ከጓደኞች ጋር በቅጽበት ያመሳስሉ።';
 
   @override
-  String get onboardingChatPlaceholder => 'Type a message...';
+  String get onboardingPremiumTitle => 'ሁሉንም ባህሪያት ይክፈቱ';
 
   @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
+  String get onboardingPremiumSubtitle => 'ከግዢ ዝርዝሮችዎ ምርጡን ያግኙ';
 
   @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
+  String get onboardingAnnualBadge => 'ምርጥ እሴት';
 
   @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingMonthlyLabel => 'ወርሃዊ';
 
   @override
-  String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+  String get onboardingAnnualLabel => 'አመታዊ';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingViewAllPlans => 'ሁሉንም እቅዶች ይመልከቱ';
 
   @override
-  String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+  String get onboardingSubscribeCta => 'ሰብስክራይብ ያድርጉ';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingCancelAnytime => 'በማንኛውም ጊዜ ይሰርዙ። ቁርጠኝነት የለም።';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingContinueAsGuest => 'እንደ እንግዳ ቀጥል።';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingRestore => 'እነበረበት መልስ';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingRestoreDesc =>
+      'አስቀድመው የደንበኝነት ምዝገባ አለህ? ወደነበረበት ለመመለስ እዚህ ይንኩ።';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingExit => 'ውጣ';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingPersonalizationTitle => 'እንተዋወቅህ';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingPersonalizationDesc =>
+      'የእርስዎን የአስተያየት ጥቆማዎች ግላዊ ለማድረግ እና ግዢን የበለጠ ዘመናዊ ለማድረግ ይህንን እንጠቀማለን።';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingPersonalizationFoodLabel => 'የምትወደው ምግብ ምንድን ነው?';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingPersonalizationFoodHint => 'ለምሳሌ. ፒዛ፣ ሱሺ፣ ላዛኛ...';
+
+  @override
+  String get onboardingPersonalizationCta => 'ቀጥል';
+
+  @override
+  String get onboardingPersonalizationSkip => 'ለአሁን ዝለል';
+
+  @override
+  String get onboardingPersonalizationFoodRequired => 'ለመቀጠል የሚወዱትን ምግብ ይንገሩን';
+
+  @override
+  String get settingsDefaultScreen => 'ነባሪ የመነሻ ማያ ገጽ';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'በግዢ ዝርዝር ወይም በ AI ውይይት መካከል ይምረጡ';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'የግዢ ዝርዝር';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI ውይይት';
 
   @override
   String loginError(String error) {
@@ -1067,106 +1079,104 @@ class AppLocalizationsAm extends AppLocalizations {
       'ሳንካዎችን ሪፖርት አድርግ፣ ማሻሻያዎችን ጠቁም፣ ወይም ትርጉሞችን አስተካክል';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI ኢነርጂ';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'በውይይት ውስጥ ፈልግ...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'ምንም መልዕክቶች አልተገኙም።';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'የተጠቆሙ ጥያቄዎች፡-';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'የግዢ ረዳት';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased ከ$total ተገዝቷል።';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'የሚገመተው';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'እቃዎችን ይመልከቱ';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'በዝርዝሩ ውስጥ ምንም ንጥሎች የሉም';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'ረጅም ታሪክ፡ ረዳቱ ለተሻለ አፈጻጸም የቅርብ ጊዜዎቹን መልዕክቶች ላይ ያተኩራል።';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'በማዳመጥ ላይ...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'በቀጥታ ወደ ዝርዝር ያክሉ';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'ሙሉ ምላሽ ክፈት';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'ዝርዝር ቀይር';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'የገበያ ሁኔታ';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'ወደ ውይይት ተመለስ';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'ግዢን ጨርስ';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'ወደ AI ረዳት እንኳን በደህና መጡ';
 
   @override
-  String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+  String get createListToStartAi => 'ብልጥ ቻቱን መጠቀም ለመጀመር የግዢ ዝርዝር ይፍጠሩ።';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'እንዴት መርዳት እችላለሁ?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'ስለ ዋጋዎች፣ የምግብ አዘገጃጀት መመሪያዎች፣ ድርጅት... ይጠይቁ።';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total ተገዝቷል።';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'ፈጣን ምላሾች፡-';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'የላቁ የድምጽ ትዕዛዞች Pro ናቸው። መሰረታዊ መዝገበ ቃላትን በማንቃት ላይ...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'ፕሮ ን ይመልከቱ';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'ውይ! ቻቱን በመጫን ላይ የሆነ ችግር ተፈጥሯል።';
 
   @override
-  String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+  String get errorLoadingChatSubtitle => 'ግንኙነትዎን ይፈትሹ ወይም ቆይተው እንደገና ይሞክሩ።';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'ይህ በኔትወርክ ንዝረት ወይም በጊዜያዊ አለመገኘት ምክንያት ሊከሰት ይችላል። እባክዎ እንደገና ይሞክሩ።';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'ንቁ ማዳመጥ';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'በዚህ ዕቃ ምን ማድረግ ይፈልጋሉ?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'ዝርዝሮችን ይመልከቱ';
 
   @override
   String get openMenu => 'ሜኑ ክፈት';
@@ -1411,19 +1421,19 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'ወደ ዝርዝር ጋብዝ';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'መተግበሪያ አጋራ';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Lista Plus ጓደኞችን ጋብዝ';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'ግዢዬን ለማደራጀት Lista Plus እየተጠቀምኩ ነው! በእኔ አገናኝ አውርደናል እና ሁለታችንም ለ7 ቀናት ፕሪሚየም በነፃ እናገኛለን፡$url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'የ7 ቀናት Lista Plus Premium ያግኙ!';
 }

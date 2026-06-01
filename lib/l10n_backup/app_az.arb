@@ -1,0 +1,640 @@
+{
+  "@@locale": "az",
+  "appTitle": "Alış-veriş Siyahısı",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Siyahılar",
+  "pantry": "Kiler",
+  "@_Common": "description: Common actions",
+  "cancel": "Ləğv et",
+  "save": "Yadda saxla",
+  "create": "Yarat",
+  "add": "Əlavə et",
+  "remove": "Sil",
+  "delete": "Sil",
+  "edit": "Redaktə et",
+  "copy": "Kopyala",
+  "retry": "Yenidən cəhd et",
+  "regenerate": "Yenidən yarat",
+  "copiedToClipboard": "Panoya kopyalandı",
+  "confirm": "Təsdiqlə",
+  "close": "Bağla",
+  "import": "İdxal et",
+  "rename": "Adını dəyiş",
+  "upgrade": "Yüksəlt",
+  "clear": "Təmizlə",
+  "error": "Xəta: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Xəta: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Alış-verişi emal edərkən xəta. Yenidən cəhd edin.",
+  "restoreError": "Alışları bərpa edərkən xəta. Yenidən cəhd edin.",
+  "loading": "Yüklənir...",
+  "fieldRequired": "Məcburi sahə",
+  "addedFeedback": "Əlavə edildi!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} seçilmiş} other{{count} seçilmiş}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Təxmini",
+  "alreadyPurchased": "Artıq alınıb",
+  "clearList": "Siyahını təmizlə",
+  "clearPurchased": "Alınanları təmizlə",
+  "share": "Paylaş",
+  "shareViaCode": "Kodla paylaş",
+  "importViaCode": "Kodla idxal et",
+  "listAssistant": "Siyahı köməkçisi",
+  "globalAssistant": "Qlobal köməkçi",
+  "becomePremium": "Premium ol",
+  "manageSubscription": "Abunəliyi idarə et",
+  "completePurchase": "Alışı tamamla",
+  "confirmClearList": "Bütün maddələri sil?",
+  "shareListTitle": "Siyahını Paylaş",
+  "shareThisCode": "Bu kodu paylaş:",
+  "validForLimitedTime": "Məhdud müddət üçün keçərlidir",
+  "importListTitle": "Siyahını İdxal Et",
+  "enterCodeHint": "Kodu daxil edin",
+  "confirmArchiveTitle": "Alışı Tamamla",
+  "confirmArchiveContent": "Bu alışı tamamlayıb siyahını arxivləşdirim?",
+  "complete": "Tamamla",
+  "listArchived": "Siyahı uğurla arxivləşdirildi!",
+  "listAdded": "{listName} əlavə edildi!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Al",
+  "unmark": "İşarəni götür",
+  "confirmDeleteItems": "{count} maddə(ni) sil?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Təsdiqlə",
+  "confirmContent": "{count} maddə(ni) sil?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Siyahını arxivləşdir",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Kiler",
+  "generateShoppingList": "Alış-veriş siyahısı yarat",
+  "pantryEmpty": "Boş kiler",
+  "pantryEmptySubtitle": "Evdə saxlamaq istədiyiniz məhsulları əlavə edin",
+  "itemsNeedPurchase": "{deficit} maddə alınmalıdır",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Alınması lazım olan maddə yoxdur",
+  "newPantryList": "Kiler Alış-verişi",
+  "newListTitle": "Yeni Alış-veriş Siyahısı",
+  "itemsWillBeAdded": "{count} maddə əlavə olunacaq",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Siyahı adı",
+  "listCreated": "\"{name}\" siyahısı {count} maddə ilə yaradıldı",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "İzləmə yoxdur",
+  "markAsPurchased": "Alınmış kimi işarələ",
+  "editPantryItem": "{name} redaktə et",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "İdeal miqdar",
+  "currentQuantity": "Cari miqdar",
+  "consumed": "İstehlak edilmiş",
+  "restocked": "{name} {quantity} {unit} təkər dolduruldu",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "\"{name}\" kilerdən silinsin?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "{name} redaktə et",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Tənzimləmələr",
+  "language": "Dil",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Sistem defoltu",
+  "appearance": "Görünüş",
+  "light": "Açıq",
+  "system": "Sistem",
+  "dark": "Tünd",
+  "themeColor": "Tema rəngi",
+  "finance": "Maliyyə",
+  "monthlyBudgetNav": "Aylıq büdcə",
+  "budgetSubtitle": "Aylıq xərclərinizi izləyin",
+  "data": "Məlumat",
+  "backupNav": "Ehtiyat",
+  "backupSubtitle": "Məlumatlarınızı ixrac və ya idxal edin",
+  "about": "Haqqında",
+  "version": "Versiya",
+  "privacy": "Məxfilik",
+  "termsOfUse": "İstifadə şərtləri",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Ehtiyat",
+  "backupPremiumDescription": "Ehtiyat və ixrac premium xüsusiyyətdir",
+  "exportData": "Məlumatları ixrac et",
+  "exportDataSubtitle": "Bütün siyahıları JSON olaraq saxla",
+  "importData": "Məlumatları idxal et",
+  "importDataSubtitle": "JSON-dan siyahıları bərpa et",
+  "importJsonTitle": "JSON idxal et",
+  "importJsonHint": "Ehtiyat JSON-u bura yapışdırın...",
+  "backupExported": "Ehtiyat ixrac edildi!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Aylıq Büdcə",
+  "budgetPremiumLocked": "Qlobal aylıq büdcə premiumdur",
+  "budgetUpgradePrompt": "Açmaq üçün yüksəldin",
+  "noBudgetDefined": "Büdcə təyin edilməyib",
+  "totalEstimated": "Ümumi təxmini: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Büdcə təyin et",
+  "budgetLists": "Siyahılar",
+  "budgetValueLabel": "Məbləğ",
+  "setBudgetTitle": "Aylıq Büdcə",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Hamısı",
+  "filterPending": "Gözləyən",
+  "filterPurchased": "Alınmış",
+  "sortName": "Ad",
+  "sortCategory": "Kateqoriya",
+  "sortDate": "Tarix",
+  "sortManual": "Əllə",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Maddə Əlavə Et",
+  "itemName": "Maddə adı",
+  "quantityShort": "Say",
+  "unit": "Vahid",
+  "category": "Kateqoriya",
+  "estimatedPrice": "Təxmini qiymət",
+  "addItemPrice": "Təxmini qiymət",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Maddəni Redaktə Et",
+  "quantityFull": "Miqdar",
+  "editItemPrice": "Təxmini qiymət",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Kilerə Əlavə Et",
+  "addToPantryPrompt": "\"{name}\" kilerə əlavə edilsin?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Bəli",
+  "productName": "Məhsul adı",
+  "idealQty": "İdeal say",
+  "currentQty": "Cari say",
+  "trackStock": "Ehtiyatı izlə",
+  "trackStockActive": "Alış təkliflərində görünür",
+  "trackStockInactive": "Alış təklifi yaratmır",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Siyahı Yarat",
+  "renameListDialog": "Siyahının Adını Dəyiş",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Siyahı Tarixçəsi",
+  "myLists": "Siyahılarım",
+  "viewActive": "Aktivlərə Bax",
+  "viewHistory": "Tarixçəyə Bax",
+  "noArchivedLists": "Arxivləşdirilmiş siyahı yoxdur",
+  "noActiveLists": "Aktiv siyahı yoxdur",
+  "completedOn": "{date} tarixində tamamlandı",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Paylaşılmış",
+  "restore": "Bərpa et",
+  "removeSharedTooltip": "Sil",
+  "deleteListTitle": "Siyahını sil",
+  "deleteListContent": "\"{name}\" siyahısını silmək istədiyinizə əminsiniz? Bütün maddələr silinəcək.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Paylaşılmış siyahını sil",
+  "removeSharedListContent": "\"{name}\" siyahılarınızdan silinsin? Orijinal siyahı təsirlənməyəcək.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Yeni siyahı yarat",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI Köməkçi",
+  "aiAssistantDescription": "AI köməkçimizlə ağıllı təkliflər, reseptlər və fərdi məsləhətlər alın.",
+  "generalAssistant": "Ümumi Köməkçi",
+  "clearHistory": "Tarixçəni Təmizlə",
+  "clearHistoryConfirm": "Bu sessiyadakı bütün mesajları təmizlə?",
+  "chatHint": "Mesajınızı yazın...",
+  "chatError": "Söhbəti yükləyərkən xəta: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Siyahınıza necə kömək edə bilərəm?",
+  "generalHelp": "Bu gün alış-verişinizə necə kömək edə bilərəm?",
+  "chatSubtitle": "Maddə təklifləri, reseptlər və ya qənaət məsləhətləri üçün soruşun.",
+  "aiError": "Üzr istəyirik, sorğunuzu emal edərkən xəta baş verdi. Əlaqənizi yoxlayın və ya daha sonra yenidən cəhd edin.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Premium xüsusiyyətləri\naçmaq üçün daxil olun",
+  "signInGoogle": "Google ilə daxil ol",
+  "signInApple": "Apple ilə daxil ol",
+  "continueAsGuest": "Qonaq olaraq davam et",
+  "loginError": "Giriş xətası: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Açmaq üçün yüksəldin",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Maddə silindi",
+  "undo": "Geri al",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Siyahınız boşdur",
+  "emptyListSubtitle": "Başlamaq üçün maddələr əlavə edin",
+  "noListFoundTitle": "Siyahı tapılmadı",
+  "noListFoundSubtitle": "Başlamaq üçün ilk siyahınızı yaradın",
+  "createFirstList": "İlk Siyahını Yarat",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Siyahı Büdcəsi",
+  "budgetAmountLabel": "Büdcə məbləği",
+  "removeBudget": "Sil",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Limitsiz siyahılar",
+  "prefSharing": "Siyahıları paylaş",
+  "prefFullHistory": "Tam tarixçə",
+  "prefExportData": "Məlumatları ixrac et",
+  "prefCustomThemes": "Fərdi temalar",
+  "prefMonthlyBudget": "Qlobal aylıq büdcə",
+  "prefAIAssistant": "Şəxsi AI Köməkçi",
+  "prefUnlimitedPantry": "Limitsiz kiler",
+  "prefInteractiveArtifacts": "İnteraktiv AI Artfaktları",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Yaşıl",
+  "themeBlue": "Mavi",
+  "themePurple": "Bənövşəyi",
+  "themeRed": "Qırmızı",
+  "themeOrange": "Narıncı",
+  "themePink": "Çəhrayı",
+  "themeIndigo": "İndiqo",
+  "themeAmber": "Kəhrəba",
+  "themeTeal": "Teal",
+  "themeBrown": "Qəhvəyi",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Meyvələr",
+  "catCleaning": "Təmizlik",
+  "catBeverages": "İçkilər",
+  "catBakery": "Çörək məmulatları",
+  "catOthers": "Digər",
+  "@_Unit": "description: Unit",
+  "unitPack": "paket",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Alış-veriş Siyahısı",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Aylıq Büdcə",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Siyahını sil",
+  "pantryItemRemoved": "Maddə silindi",
+  "deficitItems": "{deficit,plural, one{{deficit} maddə alınmalıdır} other{{deficit} maddə alınmalıdır}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Səbət cəmi",
+  "restockLabel": "Təkər doldur",
+  "advancedFeatures": "Qabaqcıl xüsusiyyətlər",
+  "selectAll": "Hamısını seç",
+  "deselectAll": "Hamısını seçmə",
+  "monthlyBudgetAppBar": "Aylıq Büdcə",
+  "budgetEditTitle": "Aylıq Büdcə",
+  "budgetDashboardTitle": "Panel",
+  "selectListForDashboard": "Paneli görmək üçün siyahı seçin.",
+  "spendingAnalysis": "Xərc Təhlili",
+  "noItemsToAnalyze": "Təhlil etmək üçün siyahıda maddə yoxdur.",
+  "markItemsToSeeAnalysis": "Təhlili görmək üçün maddələri alınmış kimi işarələyin.",
+  "totalSpending": "Ümumi Xərc",
+  "spendingByCategory": "Kateqoriyaya görə Xərc",
+  "achievements": "Nailiyyətlər",
+  "exportPdfExcel": "PDF/Excel ixrac et",
+  "exportPdf": "PDF olaraq ixrac et",
+  "exportExcel": "Excel olaraq ixrac et",
+  "organizingAi": "AI İLƏ TƏŞKİL EDİLİR...",
+  "yesLabel": "Bəli",
+  "noLabel": "Xeyr",
+  "shareListText": "Alış-veriş Siyahım",
+  "emptyListAddItems": "Siyahınız boşdur! Əvvəlcə maddələr əlavə edin. ℹ️",
+  "listOrganizedMagic": "Siyahı sehrli şəkildə kateqoriyalara görə təşkil edildi! ✨",
+  "shoppingMode": "Alış-veriş Rejimi",
+  "smartOrganization": "Ağıllı Təşkilat",
+  "savings": "Qənaətlər",
+  "shoppingModeHeader": "ALIŞ-VERİŞ REJİMİ",
+  "shareAsText": "Maddələri formatlaşdırılmış mətn olaraq göndər",
+  "shareRealtime": "Digər insanlarla real vaxt sinxronizasiyası",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Sürətli resept",
+  "quickRecipePrompt": "Siyahımdakı maddələrlə reseptlər təklif et.",
+  "economyTips": "Qənaət məsləhətləri",
+  "economyTipsPrompt": "Bu alışda necə pul qənaət edə bilərəm?",
+  "organizeAisles": "Rəflərə görə təşkil et",
+  "organizeAislesPrompt": "Bazar rəflərinə görə təşkil et.",
+  "recipeSuggestion": "Resept təklifi",
+  "aiCreditsRemaining": "{remaining} kredit qalıb",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Hamısını siyahıya əlavə et",
+  "organizeByAisles": "Rəflərə görə təşkil et",
+  "voiceTranscriptionTooltip": "Səsli yazma (Pulsuz)",
+  "aiVoiceCommandTooltip": "AI Səs Əmri (Premium)",
+  "voiceCommandTitle": "AI Səs Əmri",
+  "voiceCommandContent": "Siyahınızı idarə etmək üçün təbii danışın!\n\nNümunələr:\n• 'Çörək, pendir və vetçina əlavə et'\n• 'Camaşır yuyucusunu sil'\n• 'Temanı maviyə dəyiş'\n\nBu, Lista Plus Premium-un eksklüziv xüsusiyyətidir.",
+  "voiceCommandPlanBtn": "Planlara Bax",
+  "itemsAddedSuccess": "Maddələr siyahıya uğurla əlavə edildi!",
+  "viewList": "Siyahıya bax",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Rəy Göndər",
+  "feedbackPrompt": "Nə paylaşmaq istərdiniz?",
+  "feedbackTypeBug": "Xəta Bildir",
+  "feedbackTypeBugHint": "Nəsə işləmir",
+  "feedbackTypeSuggestion": "Təklif",
+  "feedbackTypeSuggestionHint": "Tətbiqi yaxşılaşdırmaq üçün ideya",
+  "feedbackTypeTranslation": "Tərcümə Problemi",
+  "feedbackTypeTranslationHint": "Yanlış və ya gərgin tərcümə",
+  "feedbackTypeFeature": "Xüsusiyyət İstəyi",
+  "feedbackTypeFeatureHint": "Görmək istədiyiniz xüsusiyyət",
+  "feedbackTypeOther": "Digər",
+  "feedbackTypeOtherHint": "Digər rəy növü",
+  "feedbackHint": "Rəyinizi ətraflı təsvir edin...",
+  "feedbackSend": "Rəy Göndər",
+  "feedbackSending": "Göndərilir...",
+  "feedbackThankYou": "Təşəkkürlər!",
+  "feedbackThankYouMessage": "Rəyiniz qəbul edildi və Lista Plus-ı hər kəs üçün yaxşılaşdırmağa kömək edir.",
+  "feedbackBack": "Geri",
+  "feedbackError": "Göndərmə xətası: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Yenidən cəhd et",
+  "feedbackSettingsTitle": "Rəy Göndər",
+  "feedbackSettingsSubtitle": "Xətaları bildirin, təkmilləşdirmələr təklif edin və ya tərcümələri düzəldin",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "İnqrediyent əlavə et",
+  "addPhoto": "Foto əlavə et",
+  "allTags": "Hamısı",
+  "chooseImageSource": "Şəkil mənbəyini seçin",
+  "chooseLanguage": "Dil seçin",
+  "deleteRecipe": "Sil",
+  "deleteRecipeConfirm": "Bu resepti silmək istəyirsiniz?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\" reseptini silmək istədiyinizə əminsiniz? Bu əməliyyat geri qaytarıla bilməz.",
+  "dynamicColors": "Dinamik rənglər",
+  "dynamicColorsSubtitle": "Divar kağızınıza əsaslanan rənglərdən istifadə edin",
+  "editRecipe": "Redaktə et",
+  "editRecipeTitle": "Resepti redaktə et",
+  "enterUrl": "URL daxil edin",
+  "errorLoadingRecipes": "Reseptlərin yüklənməsində xəta baş verdi",
+  "filterByTag": "Teqə görə süzgəclə",
+  "gallery": "Qalereya",
+  "imageUrlPlaceholder": "Və ya şəkil URL-ni yapışdırın",
+  "ingredients": "İnqrediyentlər",
+  "instructions": "Təlimatlar",
+  "instructionsHint": "Hər sətirə bir addım yazın...",
+  "loadingRecipes": "Reseptləriniz yüklənir...",
+  "mealPlannerAddMeal": "Yemək əlavə et",
+  "mealPlannerDateLabel": "Tarix",
+  "mealPlannerDeleteMeal": "Yeməyi sil",
+  "mealPlannerEditMeal": "Yeməyi redaktə et",
+  "mealPlannerError": "Yemək planının yüklənməsində xəta baş verdi",
+  "mealPlannerGenerateList": "Alış-veriş siyahısı yarat",
+  "mealPlannerGenerateListConfirm": "Bu həftəlik planlaşdırılan yeməklərin bütün inqrediyentlərini alış-veriş siyahınıza əlavə edilsin?",
+  "mealPlannerGenerateListEmpty": "Əlavə ediləcək inqrediyent yoxdur. Əvvəlcə reseptlərlə bəzi yeməklər planlaşdırın.",
+  "mealPlannerGenerateListNoList": "Əvvəlcə bir alış-veriş siyahısı yaradın.",
+  "mealPlannerGenerateListSuccess": "Siyahınıza {count} inqrediyent əlavə edildi!",
+  "mealPlannerLoading": "Yemək planı yüklənir...",
+  "mealPlannerMealDeleted": "Yemək silindi",
+  "mealPlannerMealTypeBreakfast": "Səhər yeməyi",
+  "mealPlannerMealTypeDinner": "Şam yeməyi",
+  "mealPlannerMealTypeLunch": "Nahar",
+  "mealPlannerMealTypeSnack": "Atışdırmalıq",
+  "mealPlannerNoMeals": "Planlaşdırılan yemək yoxdur",
+  "mealPlannerNoMealsHint": "Yemək əlavə etmək üçün bir günə toxunun",
+  "mealPlannerNoRecipesFound": "Resept tapılmadı",
+  "mealPlannerNoRecipesHint": "Əvvəlcə Reseptlər bölməsində reseptlər yaradın",
+  "mealPlannerNoteLabel": "Qeyd (istəyə bağlı)",
+  "mealPlannerPrepTime": "{minutes} dəq",
+  "mealPlannerSave": "Plana əlavə et",
+  "mealPlannerSearchRecipes": "Reseptləri axtar...",
+  "mealPlannerSelectRecipe": "Resept seçin",
+  "mealPlannerServings": "{count,plural, one{{count} porsiya} other{{count} porsiya}}",
+  "mealPlannerServingsLabel": "Porsiya sayı",
+  "mealPlannerTitle": "Yemək Planlayıcısı",
+  "mealPlannerViewMonthly": "Aylıq görünüş",
+  "mealPlannerViewWeekly": "Həftəlik görünüş",
+  "mealPlannerWeekEmpty": "Bu həftə üçün heç nə planlaşdırılmayıb",
+  "mealPlannerWeekEmptyHint": "Yeməklərinizi planlaşdırmağa başlamaq üçün hər hansı bir günə toxunun!",
+  "mealPlannerWeekProgress": "{total} yeməkdən {count}-i planlaşdırılıb",
+  "myRecipes": "Mənim reseptlərim",
+  "newRecipe": "Yeni resept",
+  "newRecipeTitle": "Yeni resept",
+  "noRecipesSaved": "Saxlanılan resept yoxdur",
+  "noRecipesSavedHint": "Aşağıdakı düyməyə toxunaraq ilk xüsusi reseptinizi yaradın.",
+  "openMenu": "Menunu aç",
+  "prepTime": "Hazırlanma vaxtı",
+  "prepTimeMinutes": "Hazırlanma vaxtı (dəqiqə)",
+  "recipeCreated": "Resept yaradıldı!",
+  "recipeDeleted": "Resept silindi",
+  "recipeImage": "Resept şəkli",
+  "recipeName": "Reseptin adı",
+  "recipeSaved": "Resept yadda saxlanıldı!",
+  "recipeTags": "Resept teqləri",
+  "removeImage": "Şəkli sil",
+  "requiredField": "Məcburidir",
+  "saveChanges": "Dəyişiklikləri yadda saxla",
+  "saveRecipe": "Yadda saxla",
+  "searchLanguage": "Dil axtar...",
+  "searchRecipes": "Reseptləri axtar...",
+  "shortDescription": "Qısa təsvir",
+  "suggestedTags": "Təklif olunan",
+  "tags": "Teqlər",
+  "viewRecipe": "Reseptə bax"
+}

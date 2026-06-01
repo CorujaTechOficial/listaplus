@@ -1,101 +1,73 @@
 {
   "@@locale": "lt",
-  "appTitle": "Pirkinių sąrašas",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Sąrašai",
-  "pantry": "Sandėliukas",
-  "@_Common": "description: Common actions",
-  "cancel": "Atšaukti",
-  "save": "Išsaugoti",
-  "create": "Sukurti",
-  "add": "Pridėti",
-  "remove": "Pašalinti",
-  "delete": "Ištrinti",
-  "edit": "Redaguoti",
-  "copy": "Kopijuoti",
-  "retry": "Bandyti dar kartą",
-  "regenerate": "Atkurti",
-  "copiedToClipboard": "Nukopijuota į iškarpinę",
-  "confirm": "Patvirtinti",
-  "close": "Uždaryti",
-  "import": "Importuoti",
-  "rename": "Pervadinti",
-  "upgrade": "Atnaujinti",
-  "clear": "Išvalyti",
-  "error": "Klaida: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Klaida: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Klaida apdorojant pirkimą. Bandykite dar kartą.",
-  "restoreError": "Klaida atkuriant pirkimus. Bandykite dar kartą.",
-  "loading": "Įkeliama...",
-  "fieldRequired": "Privalomas laukas",
-  "addedFeedback": "Pridėta!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} pasirinktas} few{{count} pasirinkti} other{{count} pasirinkta}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Numatoma",
-  "alreadyPurchased": "Jau nupirkta",
-  "clearList": "Išvalyti sąrašą",
-  "clearPurchased": "Išvalyti nupirktus",
-  "share": "Dalintis",
-  "shareViaCode": "Dalintis per kodą",
-  "importViaCode": "Importuoti per kodą",
-  "listAssistant": "Sąrašo asistentas",
-  "globalAssistant": "Globalus asistentas",
-  "becomePremium": "Tapkite Premium",
-  "manageSubscription": "Valdyti prenumeratą",
-  "completePurchase": "Užbaigti pirkimą",
-  "confirmClearList": "Pašalinti visas prekes?",
-  "shareListTitle": "Dalintis sąrašu",
-  "shareThisCode": "Pasidalinkite šiuo kodu:",
-  "validForLimitedTime": "Galioja ribotą laiką",
-  "importListTitle": "Importuoti sąrašą",
-  "enterCodeHint": "Įveskite kodą",
-  "confirmArchiveTitle": "Užbaigti pirkimą",
-  "confirmArchiveContent": "Užbaigti šį pirkimą ir archyvuoti sąrašą?",
-  "complete": "Užbaigti",
-  "listArchived": "Sąrašas sėkmingai archyvuotas!",
-  "listAdded": "{listName} pridėta!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Pirkti",
-  "unmark": "Panaikinti žymėjimą",
-  "confirmDeleteItems": "Pašalinti {count} prekę(-es)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Patvirtinti",
-  "confirmContent": "Pašalinti {count} prekę(-es)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,68 @@
       }
     }
   },
-  "archiveList": "Archyvuoti sąrašą",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Sandėliukas",
-  "generateShoppingList": "Sukurti pirkinių sąrašą",
-  "pantryEmpty": "Tuščias sandėliukas",
-  "pantryEmptySubtitle": "Pridėkite produktų, kuriuos norite laikyti namuose",
-  "itemsNeedPurchase": "{deficit} prekę(-es) reikia nusipirkti",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +144,26 @@
       }
     }
   },
-  "noItemsToBuy": "Nereikia nieko pirkti",
-  "newPantryList": "Sandėliuko pirkiniai",
-  "newListTitle": "Naujas pirkinių sąrašas",
-  "itemsWillBeAdded": "{count} prekė(-ės) bus pridėta",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +171,13 @@
       }
     }
   },
-  "listNameLabel": "Sąrašo pavadinimas",
-  "listCreated": "Sąrašas \"{name}\" sukurtas su {count} prekėmis",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +188,125 @@
       }
     }
   },
-  "noTracking": "Be sekimo",
-  "markAsPurchased": "Pažymėti kaip nupirkta",
-  "editPantryItem": "Redaguoti {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Idealus kiekis",
-  "currentQuantity": "Dabartinis kiekis",
-  "consumed": "Suvartota",
-  "restocked": "{name} papildytas iki {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +320,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Pašalinti \"{name}\" iš sandėliuko?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Redaguoti {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Nustatymai",
-  "language": "Kalba",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Sistemos numatytoji",
-  "appearance": "Išvaizda",
-  "light": "Šviesi",
-  "system": "Sistema",
-  "dark": "Tamsi",
-  "themeColor": "Temos spalva",
-  "finance": "Finansai",
-  "monthlyBudgetNav": "Mėnesio biudžetas",
-  "budgetSubtitle": "Stebėkite savo mėnesio išlaidas",
-  "data": "Duomenys",
-  "backupNav": "Atsarginė kopija",
-  "backupSubtitle": "Eksportuokite arba importuokite savo duomenis",
-  "about": "Apie",
-  "version": "Versija",
-  "privacy": "Privatumas",
-  "termsOfUse": "Naudojimo sąlygos",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Atsarginė kopija",
-  "backupPremiumDescription": "Atsarginė kopija ir eksportavimas yra premium funkcija",
-  "exportData": "Eksportuoti duomenis",
-  "exportDataSubtitle": "Išsaugoti visus sąrašus kaip JSON",
-  "importData": "Importuoti duomenis",
-  "importDataSubtitle": "Atkurti sąrašus iš JSON",
-  "importJsonTitle": "Importuoti JSON",
-  "importJsonHint": "Įklijuokite atsarginę JSON kopiją čia...",
-  "backupExported": "Atsarginė kopija eksportuota!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Mėnesio biudžetas",
-  "budgetPremiumLocked": "Globalus mėnesio biudžetas yra premium",
-  "budgetUpgradePrompt": "Atnaujinkite, kad atrakintumėte",
-  "noBudgetDefined": "Nenustatytas biudžetas",
-  "totalEstimated": "Numatoma suma: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,359 +361,218 @@
       }
     }
   },
-  "setBudgetButton": "Nustatyti biudžetą",
-  "budgetLists": "Sąrašai",
-  "budgetValueLabel": "Suma",
-  "setBudgetTitle": "Mėnesio biudžetas",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Visi",
-  "filterPending": "Laukiantys",
-  "filterPurchased": "Nupirkta",
-  "sortName": "Pavadinimas",
-  "sortCategory": "Kategorija",
-  "sortDate": "Data",
-  "sortManual": "Rankinis",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Apie",
+  "achievements": "Pasiekimai",
+  "activeListening": "Aktyvus klausymas",
+  "add": "Pridėti",
+  "addAllToList": "Pridėti viską į sąrašą",
+  "addDirectToList": "Pridėti tiesiai į sąrašą",
+  "addIngredient": "Pridėti ingredientą",
   "addItem": "Pridėti prekę",
-  "itemName": "Prekės pavadinimas",
-  "quantityShort": "Kiekis",
-  "unit": "Vienetas",
-  "category": "Kategorija",
-  "estimatedPrice": "Numatoma kaina",
   "addItemPrice": "Numatoma kaina",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Redaguoti prekę",
-  "quantityFull": "Kiekis",
-  "editItemPrice": "Numatoma kaina",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Pridėti nuotrauką",
   "addToPantry": "Pridėti į sandėliuką",
   "addToPantryPrompt": "Pridėti \"{name}\" į jūsų sandėliuką?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Taip",
-  "productName": "Produkto pavadinimas",
-  "idealQty": "Idealus kiekis",
-  "currentQty": "Dabartinis kiekis",
-  "trackStock": "Sekti atsargas",
-  "trackStockActive": "Rodoma pirkimo pasiūlymuose",
-  "trackStockInactive": "Negeneruoja pirkimo pasiūlymų",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Sukurti sąrašą",
-  "renameListDialog": "Pervadinti sąrašą",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Sąrašų istorija",
-  "myLists": "Mano sąrašai",
-  "viewActive": "Žiūrėti aktyvius",
-  "viewHistory": "Žiūrėti istoriją",
-  "noArchivedLists": "Nėra archyvuotų sąrašų",
-  "noActiveLists": "Nėra aktyvių sąrašų",
-  "completedOn": "Užbaigta {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Bendrinamas",
-  "restore": "Atkurti",
-  "removeSharedTooltip": "Pašalinti",
-  "deleteListTitle": "Ištrinti sąrašą",
-  "deleteListContent": "Ar tikrai norite ištrinti \"{name}\"? Visos prekės bus pašalintos.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Pašalinti bendrinamą sąrašą",
-  "removeSharedListContent": "Pašalinti \"{name}\" iš jūsų sąrašų? Originalus sąrašas nebus paveiktas.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Sukurti naują sąrašą",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Pridėta!",
+  "advancedFeatures": "Išplėstinės funkcijos",
   "aiAssistant": "AI asistentas",
   "aiAssistantDescription": "Gaukite protingų pasiūlymų, receptų ir asmeninių patarimų iš mūsų AI asistento.",
-  "generalAssistant": "Bendrasis asistentas",
+  "aiCreditsRemaining": "Liko {remaining} kreditų",
+  "aiEnergy": "AI energija",
+  "aiError": "Atsiprašome, įvyko klaida apdorojant jūsų užklausą. Patikrinkite ryšį arba bandykite dar kartą vėliau.",
+  "aiVoiceCommandTooltip": "AI balso komanda (Premium)",
+  "allTags": "Visi",
+  "alreadyPurchased": "Jau nupirkta",
+  "appTitle": "Pirkinių sąrašas",
+  "appearance": "Išvaizda",
+  "archiveList": "Archyvuoti sąrašą",
+  "backToChat": "Grįžti į pokalbį",
+  "backupExported": "Atsarginė kopija eksportuota!",
+  "backupNav": "Atsarginė kopija",
+  "backupPremiumDescription": "Atsarginė kopija ir eksportavimas yra premium funkcija",
+  "backupSubtitle": "Eksportuokite arba importuokite savo duomenis",
+  "backupTitle": "Atsarginė kopija",
+  "becomePremium": "Tapkite Premium",
+  "budgetAmountLabel": "Biudžeto suma",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Mėnesio biudžetas",
+  "budgetDashboardTitle": "Prietaisų skydelis",
+  "budgetEditTitle": "Mėnesio biudžetas",
+  "budgetLists": "Sąrašai",
+  "budgetPremiumLocked": "Globalus mėnesio biudžetas yra premium",
+  "budgetSubtitle": "Stebėkite savo mėnesio išlaidas",
+  "budgetUpgradePrompt": "Atnaujinkite, kad atrakintumėte",
+  "budgetValueLabel": "Suma",
+  "buy": "Pirkti",
+  "cancel": "Atšaukti",
+  "cartTotal": "Krepšelio suma",
+  "catBakery": "Kepiniai",
+  "catBeverages": "Gėrimai",
+  "catCleaning": "Valymas",
+  "catFruits": "Vaisiai",
+  "catOthers": "Kita",
+  "category": "Kategorija",
+  "chatError": "Klaida įkeliant pokalbį: {error}",
+  "chatHint": "Įrašykite savo žinutę...",
+  "chatSubtitle": "Klauskite prekių pasiūlymų, receptų ar taupymo patarimų.",
+  "chatSubtitleShort": "Dėl kainų, receptų, organizavimo teirautis...",
+  "chooseCurrency": "Pasirinkite Valiuta",
+  "chooseImageSource": "Pasirinkite nuotraukos šaltinį",
+  "chooseLanguage": "Pasirinkite kalbą",
+  "clear": "Išvalyti",
   "clearHistory": "Išvalyti istoriją",
   "clearHistoryConfirm": "Išvalyti visus šios sesijos pranešimus?",
-  "chatHint": "Įrašykite savo žinutę...",
-  "chatError": "Klaida įkeliant pokalbį: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Kaip galiu padėti su jūsų sąrašu?",
-  "generalHelp": "Kaip galiu padėti jums apsipirkti šiandien?",
-  "chatSubtitle": "Klauskite prekių pasiūlymų, receptų ar taupymo patarimų.",
-  "aiError": "Atsiprašome, įvyko klaida apdorojant jūsų užklausą. Patikrinkite ryšį arba bandykite dar kartą vėliau.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Prisijunkite, kad atrakintumėte\npremium funkcijas",
-  "signInGoogle": "Prisijungti su Google",
-  "signInApple": "Prisijungti su Apple",
+  "clearList": "Išvalyti sąrašą",
+  "clearPurchased": "Išvalyti nupirktus",
+  "close": "Uždaryti",
+  "complete": "Užbaigti",
+  "completePurchase": "Užbaigti pirkimą",
+  "completedOn": "Užbaigta {date}",
+  "confirm": "Patvirtinti",
+  "confirmArchiveContent": "Užbaigti šį pirkimą ir archyvuoti sąrašą?",
+  "confirmArchiveTitle": "Užbaigti pirkimą",
+  "confirmClearList": "Pašalinti visas prekes?",
+  "confirmContent": "Pašalinti {count} prekę(-es)?",
+  "confirmDeleteItems": "Pašalinti {count} prekę(-es)?",
+  "confirmDeleteTitle": "Patvirtinti",
+  "confirmRemovePantry": "Pašalinti \"{name}\" iš sandėliuko?",
+  "consumed": "Suvartota",
   "continueAsGuest": "Tęsti kaip svečias",
-  "loginError": "Prisijungimo klaida: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Atnaujinkite, kad atrakintumėte",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Prekė pašalinta",
-  "undo": "Atšaukti",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Jūsų sąrašas tuščias",
-  "emptyListSubtitle": "Pridėkite prekių, kad pradėtumėte",
-  "noListFoundTitle": "Nerasta jokių sąrašų",
-  "noListFoundSubtitle": "Sukurkite savo pirmąjį sąrašą, kad pradėtumėte",
+  "copiedToClipboard": "Nukopijuota į iškarpinę",
+  "copy": "Kopijuoti",
+  "create": "Sukurti",
   "createFirstList": "Sukurti pirmąjį sąrašą",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Sąrašo biudžetas",
-  "budgetAmountLabel": "Biudžeto suma",
-  "removeBudget": "Pašalinti",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Neriboti sąrašai",
-  "prefSharing": "Dalintis sąrašais",
-  "prefFullHistory": "Pilna istorija",
-  "prefExportData": "Eksportuoti duomenis",
-  "prefCustomThemes": "Individualios temos",
-  "prefMonthlyBudget": "Globalus mėnesio biudžetas",
-  "prefAIAssistant": "Asmeninis AI asistentas",
-  "prefUnlimitedPantry": "Neribotas sandėliukas",
-  "prefInteractiveArtifacts": "Interaktyvūs AI artefaktai",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Žalia",
-  "themeBlue": "Mėlyna",
-  "themePurple": "Violetinė",
-  "themeRed": "Raudona",
-  "themeOrange": "Oranžinė",
-  "themePink": "Rožinė",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Gintarinė",
-  "themeTeal": "Žalsvai mėlyna",
-  "themeBrown": "Ruda",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Vaisiai",
-  "catCleaning": "Valymas",
-  "catBeverages": "Gėrimai",
-  "catBakery": "Kepiniai",
-  "catOthers": "Kita",
-  "@_Unit": "description: Unit",
-  "unitPack": "pakuotė",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Pirkinių sąrašas",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Mėnesio biudžetas",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Ištrinti sąrašą",
-  "pantryItemRemoved": "Prekė pašalinta",
+  "createListDialog": "Sukurti sąrašą",
+  "createListToStartAi": "Norėdami pradėti naudotis išmaniuoju pokalbiu, sukurkite pirkinių sąrašą.",
+  "createNewList": "Sukurti naują sąrašą",
+  "currency": "Valiuta",
+  "currentQty": "Dabartinis kiekis",
+  "currentQuantity": "Dabartinis kiekis",
+  "dark": "Tamsi",
+  "data": "Duomenys",
   "deficitItems": "{deficit,plural, one{reikia nusipirkti {deficit} prekę} few{reikia nusipirkti {deficit} prekes} other{reikia nusipirkti {deficit} prekių}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Krepšelio suma",
-  "restockLabel": "Papildyti",
-  "advancedFeatures": "Išplėstinės funkcijos",
-  "selectAll": "Pasirinkti viską",
+  "delete": "Ištrinti",
+  "deleteListConfirm": "Ištrinti sąrašą",
+  "deleteListContent": "Ar tikrai norite ištrinti \"{name}\"? Visos prekės bus pašalintos.",
+  "deleteListTitle": "Ištrinti sąrašą",
+  "deleteRecipe": "Ištrinti",
+  "deleteRecipeConfirm": "Ištrinti šį receptą?",
+  "deleteRecipeConfirmMsg": "Ar tikrai norite ištrinti „{recipeName}“? Šio veiksmo atšaukti negalima.",
+  "deleteSession": "Ištrinti pokalbį",
+  "deleteSessionConfirm": "Ar tikrai norite ištrinti šį pokalbį? Pranešimai bus visam laikui prarasti.",
   "deselectAll": "Panaikinti visus pasirinkimus",
-  "monthlyBudgetAppBar": "Mėnesio biudžetas",
-  "budgetEditTitle": "Mėnesio biudžetas",
-  "budgetDashboardTitle": "Prietaisų skydelis",
-  "selectListForDashboard": "Pasirinkite sąrašą, kad peržiūrėtumėte skydelį.",
-  "spendingAnalysis": "Išlaidų analizė",
-  "noItemsToAnalyze": "Sąraše nėra prekių, kurias būtų galima analizuoti.",
-  "markItemsToSeeAnalysis": "Pažymėkite prekes kaip nupirktas, kad pamatytumėte analizę.",
-  "totalSpending": "Visos išlaidos",
-  "spendingByCategory": "Išlaidos pagal kategoriją",
-  "achievements": "Pasiekimai",
-  "exportPdfExcel": "Eksportuoti PDF/Excel",
-  "exportPdf": "Eksportuoti kaip PDF",
-  "exportExcel": "Eksportuoti kaip Excel",
-  "organizingAi": "ORGANIZUOJAMA SU AI...",
-  "yesLabel": "Taip",
-  "noLabel": "Ne",
-  "shareListText": "Mano pirkinių sąrašas",
-  "emptyListAddItems": "Jūsų sąrašas tuščias! Pirmiausia pridėkite prekių. ℹ️",
-  "listOrganizedMagic": "Sąrašas stebuklingai suskirstytas į kategorijas! ✨",
-  "shoppingMode": "Pirkimo režimas",
-  "smartOrganization": "Protingas organizavimas",
-  "savings": "Sutaupymas",
-  "shoppingModeHeader": "PIRKIMO REŽIMAS",
-  "shareAsText": "Siųsti prekes kaip suformatuotą tekstą",
-  "shareRealtime": "Realaus laiko sinchronizavimas su kitais",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Greitas receptas",
-  "quickRecipePrompt": "Pasiūlykite receptų su mano sąrašo prekėmis.",
+  "dynamicColors": "Dinaminės spalvos",
+  "dynamicColorsEnabledWarning": "Išjunkite dinamines spalvas, kad temos spalva įsigaliotų",
+  "dynamicColorsSubtitle": "Naudoti spalvas pagal jūsų ekrano foną",
   "economyTips": "Taupymo patarimai",
   "economyTipsPrompt": "Kaip galiu sutaupyti pinigų šiam pirkiniui?",
-  "organizeAisles": "Rūšiuoti pagal skyrius",
-  "organizeAislesPrompt": "Rūšiuoti pagal prekybos centro skyrius.",
-  "recipeSuggestion": "Recepto pasiūlymas",
-  "aiCreditsRemaining": "Liko {remaining} kreditų",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Pridėti viską į sąrašą",
-  "organizeByAisles": "Rūšiuoti pagal skyrius",
-  "voiceTranscriptionTooltip": "Balso įvedimas (Nemokamai)",
-  "aiVoiceCommandTooltip": "AI balso komanda (Premium)",
-  "voiceCommandTitle": "AI balso komanda",
-  "voiceCommandContent": "Kalbėkite natūraliai, kad valdytumėte savo sąrašą!\n\nPavyzdžiai:\n• 'Pridėti duonos, sūrio ir kumpio'\n• 'Pašalinti skalbiklio'\n• 'Pakeisti temą į mėlyną'\n\nTai yra išskirtinė Lista Plus Premium funkcija.",
-  "voiceCommandPlanBtn": "Peržiūrėti planus",
-  "itemsAddedSuccess": "Prekės sėkmingai pridėtos į sąrašą!",
-  "viewList": "Peržiūrėti sąrašą",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Siųsti atsiliepimą",
+  "edit": "Redaguoti",
+  "editItem": "Redaguoti prekę",
+  "editItemPrice": "Numatoma kaina",
+  "editPantryItem": "Redaguoti {name}",
+  "editRecipe": "Redaguoti",
+  "editRecipeTitle": "Redaguoti receptą",
+  "emptyListAddItems": "Jūsų sąrašas tuščias! Pirmiausia pridėkite prekių. ℹ️",
+  "emptyListSubtitle": "Pridėkite prekių, kad pradėtumėte",
+  "emptyListTitle": "Jūsų sąrašas tuščias",
+  "enterCodeHint": "Įveskite kodą",
+  "enterUrl": "Įveskite URL",
+  "error": "Klaida: {message}",
+  "errorGeneric": "Klaida: {message}",
+  "errorLoadingChat": "Oi! Įkeliant pokalbį įvyko klaida.",
+  "errorLoadingChatSubtitle": "Patikrinkite ryšį arba bandykite dar kartą vėliau.",
+  "errorLoadingRecipes": "Klaida įkeliant receptus",
+  "errorOscillation": "Taip gali nutikti dėl tinklo svyravimų arba laikino nepasiekiamumo. Bandykite dar kartą.",
+  "estimated": "Numatoma",
+  "estimatedCost": "Apskaičiuota",
+  "estimatedPrice": "Numatoma kaina",
+  "exportData": "Eksportuoti duomenis",
+  "exportDataSubtitle": "Išsaugoti visus sąrašus kaip JSON",
+  "exportExcel": "Eksportuoti kaip Excel",
+  "exportPdf": "Eksportuoti kaip PDF",
+  "exportPdfExcel": "Eksportuoti PDF/Excel",
+  "feedbackBack": "Atgal",
+  "feedbackError": "Siuntimo klaida: {error}",
+  "feedbackHint": "Išsamiai aprašykite savo atsiliepimą...",
   "feedbackPrompt": "Kuo norėtumėte pasidalinti?",
+  "feedbackRetry": "Bandyti dar kartą",
+  "feedbackSend": "Siųsti atsiliepimą",
+  "feedbackSending": "Siunčiama...",
+  "feedbackSettingsSubtitle": "Pranešti apie klaidas, siūlyti patobulinimus ar taisyti vertimus",
+  "feedbackSettingsTitle": "Siųsti atsiliepimą",
+  "feedbackThankYou": "Ačiū!",
+  "feedbackThankYouMessage": "Jūsų atsiliepimas gautas ir padeda mums tobulinti Lista Plus visiems.",
+  "feedbackTitle": "Siųsti atsiliepimą",
   "feedbackTypeBug": "Pranešti apie klaidą",
   "feedbackTypeBugHint": "Kažkas neveikia",
-  "feedbackTypeSuggestion": "Pasiūlymas",
-  "feedbackTypeSuggestionHint": "Idėja, kaip pagerinti programėlę",
-  "feedbackTypeTranslation": "Vertimo problema",
-  "feedbackTypeTranslationHint": "Netikslus ar nepatogus vertimas",
   "feedbackTypeFeature": "Funkcijos prašymas",
   "feedbackTypeFeatureHint": "Funkcija, kurią norėtumėte matyti",
   "feedbackTypeOther": "Kita",
   "feedbackTypeOtherHint": "Kitas atsiliepimo tipas",
-  "feedbackHint": "Išsamiai aprašykite savo atsiliepimą...",
-  "feedbackSend": "Siųsti atsiliepimą",
-  "feedbackSending": "Siunčiama...",
-  "feedbackThankYou": "Ačiū!",
-  "feedbackThankYouMessage": "Jūsų atsiliepimas gautas ir padeda mums tobulinti Lista Plus visiems.",
-  "feedbackBack": "Atgal",
-  "feedbackError": "Siuntimo klaida: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Bandyti dar kartą",
-  "feedbackSettingsTitle": "Siųsti atsiliepimą",
-  "feedbackSettingsSubtitle": "Pranešti apie klaidas, siūlyti patobulinimus ar taisyti vertimus",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Pridėti ingredientą",
-  "addPhoto": "Pridėti nuotrauką",
-  "allTags": "Visi",
-  "chooseImageSource": "Pasirinkite nuotraukos šaltinį",
-  "chooseLanguage": "Pasirinkite kalbą",
-  "deleteRecipe": "Ištrinti",
-  "deleteRecipeConfirm": "Ištrinti šį receptą?",
-  "deleteRecipeConfirmMsg": "Ar tikrai norite ištrinti „{recipeName}“? Šio veiksmo atšaukti negalima.",
-  "dynamicColors": "Dinaminės spalvos",
-  "dynamicColorsSubtitle": "Naudoti spalvas pagal jūsų ekrano foną",
-  "editRecipe": "Redaguoti",
-  "editRecipeTitle": "Redaguoti receptą",
-  "enterUrl": "Įveskite URL",
-  "errorLoadingRecipes": "Klaida įkeliant receptus",
+  "feedbackTypeSuggestion": "Pasiūlymas",
+  "feedbackTypeSuggestionHint": "Idėja, kaip pagerinti programėlę",
+  "feedbackTypeTranslation": "Vertimo problema",
+  "feedbackTypeTranslationHint": "Netikslus ar nepatogus vertimas",
+  "fieldRequired": "Privalomas laukas",
+  "filterAll": "Visi",
   "filterByTag": "Filtruoti pagal žymą",
+  "filterPending": "Laukiantys",
+  "filterPurchased": "Nupirkta",
+  "finance": "Finansai",
+  "finishShopping": "Baigti apsipirkti",
   "gallery": "Galerija",
+  "generalAssistant": "Bendrasis asistentas",
+  "generalHelp": "Kaip galiu padėti jums apsipirkti šiandien?",
+  "generateShoppingList": "Sukurti pirkinių sąrašą",
+  "globalAssistant": "Globalus asistentas",
+  "howCanIHelp": "Kaip galiu padėti?",
+  "idealQty": "Idealus kiekis",
+  "idealQuantity": "Idealus kiekis",
   "imageUrlPlaceholder": "Arba įklijuokite nuotraukos URL",
+  "import": "Importuoti",
+  "importData": "Importuoti duomenis",
+  "importDataSubtitle": "Atkurti sąrašus iš JSON",
+  "importJsonHint": "Įklijuokite atsarginę JSON kopiją čia...",
+  "importJsonTitle": "Importuoti JSON",
+  "importListTitle": "Importuoti sąrašą",
+  "importViaCode": "Importuoti per kodą",
   "ingredients": "Ingredientai",
   "instructions": "Instrukcijos",
   "instructionsHint": "Įveskite po vieną žingsnį eilutėje...",
+  "inviteToList": "Pakviesti į sąrašą",
+  "itemName": "Prekės pavadinimas",
+  "itemRemoved": "Prekė pašalinta",
+  "itemsAddedSuccess": "Prekės sėkmingai pridėtos į sąrašą!",
+  "itemsNeedPurchase": "{deficit} prekę(-es) reikia nusipirkti",
+  "itemsPurchasedCount": "Įsigyta {purchased} iš {total}",
+  "itemsPurchasedShort": "{purchased}/{total} įsigytas",
+  "itemsWillBeAdded": "{count} prekė(-ės) bus pridėta",
+  "language": "Kalba",
+  "languageEnglish": "anglų kalba",
+  "languagePortuguese": "portugalų k. (Brazilija)",
+  "languageSystem": "Sistemos numatytoji",
+  "light": "Šviesi",
+  "listAdded": "{listName} pridėta!",
+  "listArchived": "Sąrašas sėkmingai archyvuotas!",
+  "listAssistant": "Sąrašo asistentas",
+  "listBudgetTitle": "Sąrašo biudžetas",
+  "listCreated": "Sąrašas \"{name}\" sukurtas su {count} prekėmis",
+  "listHelp": "Kaip galiu padėti su jūsų sąrašu?",
+  "listHistory": "Sąrašų istorija",
+  "listNameLabel": "Sąrašo pavadinimas",
+  "listOrganizedMagic": "Sąrašas stebuklingai suskirstytas į kategorijas! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Klausau...",
+  "lists": "Sąrašai",
+  "loading": "Įkeliama...",
   "loadingRecipes": "Įkeliami jūsų receptai...",
+  "loginError": "Prisijungimo klaida: {error}",
+  "loginPrompt": "Prisijunkite, kad atrakintumėte\npremium funkcijas",
+  "longHistoryWarning": "Ilga istorija: padėjėjas sutelkia dėmesį į naujausius pranešimus, kad pagerintų našumą.",
+  "manageSubscription": "Valdyti prenumeratą",
+  "markAsPurchased": "Pažymėti kaip nupirkta",
+  "markItemsToSeeAnalysis": "Pažymėkite prekes kaip nupirktas, kad pamatytumėte analizę.",
+  "marketMode": "Rinkos režimas",
   "mealPlannerAddMeal": "Pridėti valgį",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDeleteMeal": "Pašalinti valgį",
@@ -613,28 +606,201 @@
   "mealPlannerWeekEmpty": "Šiai savaitei nieko nesuplanuota",
   "mealPlannerWeekEmptyHint": "Bakstelėkite bet kurią dieną, kad pradėtumėte planuoti valgius!",
   "mealPlannerWeekProgress": "Suplanuota {count} iš {total} valgių",
+  "monthlyBudgetAppBar": "Mėnesio biudžetas",
+  "monthlyBudgetNav": "Mėnesio biudžetas",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Mėnesio biudžetas",
+  "myLists": "Mano sąrašai",
   "myRecipes": "Mano receptai",
+  "newChat": "Naujas pokalbis",
+  "newListTitle": "Naujas pirkinių sąrašas",
+  "newPantryList": "Sandėliuko pirkiniai",
   "newRecipe": "Naujas receptas",
   "newRecipeTitle": "Naujas receptas",
+  "next": "Kitas",
+  "noActiveLists": "Nėra aktyvių sąrašų",
+  "noArchivedLists": "Nėra archyvuotų sąrašų",
+  "noBudgetDefined": "Nenustatytas biudžetas",
+  "noHistory": "Nėra pokalbių istorijos",
+  "noItemsInList": "Sąraše nėra elementų",
+  "noItemsToAnalyze": "Sąraše nėra prekių, kurias būtų galima analizuoti.",
+  "noItemsToBuy": "Nereikia nieko pirkti",
+  "noLabel": "Ne",
+  "noListFoundSubtitle": "Sukurkite savo pirmąjį sąrašą, kad pradėtumėte",
+  "noListFoundTitle": "Nerasta jokių sąrašų",
+  "noMessagesFound": "Nerasta jokių pranešimų",
   "noRecipesSaved": "Nėra išsaugotų receptų",
   "noRecipesSavedHint": "Sukurkite savo pirmąjį individualų receptą bakstelėdami žemiau esantį mygtuką.",
+  "noTracking": "Be sekimo",
+  "onboardingAnnualBadge": "Geriausia vertė",
+  "onboardingAnnualLabel": "Metinis",
+  "onboardingCancelAnytime": "Atšaukti bet kada. Jokio įsipareigojimo.",
+  "onboardingContinueAsGuest": "Tęsti kaip svečias",
+  "onboardingExit": "Išeiti",
+  "onboardingLoginDesc": "Jūsų duomenys sinchronizuojami visuose įrenginiuose",
+  "onboardingLoginTitle": "Išsaugokite viską debesyje",
+  "onboardingMonthlyLabel": "Kas mėnesį",
+  "onboardingPersonalizationCta": "Tęsti",
+  "onboardingPersonalizationDesc": "Tai naudosime siekdami suasmeninti jūsų pasiūlymus ir padaryti apsipirkimą išmanesniu.",
+  "onboardingPersonalizationFoodHint": "pvz. Pica, Sušiai, Lazanija...",
+  "onboardingPersonalizationFoodLabel": "Koks tavo mėgstamiausias maistas?",
+  "onboardingPersonalizationFoodRequired": "Jei norite tęsti, pasakykite mums savo mėgstamą maistą",
+  "onboardingPersonalizationSkip": "Kol kas praleiskite",
+  "onboardingPersonalizationTitle": "Susipažinkime",
+  "onboardingPremiumSubtitle": "Išnaudokite visas savo pirkinių sąrašų galimybes",
+  "onboardingPremiumTitle": "Atrakinkite visas funkcijas",
+  "onboardingRestore": "Atkurti",
+  "onboardingRestoreDesc": "Jau turite prenumeratą? Bakstelėkite čia, kad jį atkurtumėte.",
+  "onboardingSetupDesc": "Pasirinkite, kaip norite, kad „Lista Plus“ atrodytų ir veiktų jums.",
+  "onboardingSetupTitle": "Suasmeninkite savo patirtį",
+  "onboardingShareDesc": "Sinchronizuokite sąrašus su šeima ir draugais realiuoju laiku",
+  "onboardingShareTitle": "Pasidalinkite su tais, kuriuos mylite",
+  "onboardingSubscribeCta": "Prenumeruoti",
+  "onboardingViewAllPlans": "Peržiūrėkite visus planus",
+  "onboardingWelcomeDesc": "Protingiausias būdas organizuoti apsipirkimą ir sutaupyti pinigų.",
+  "onboardingWelcomeTitle": "Sveiki atvykę į „Lista Plus“.",
   "openMenu": "Atidaryti meniu",
+  "organizeAisles": "Rūšiuoti pagal skyrius",
+  "organizeAislesPrompt": "Rūšiuoti pagal prekybos centro skyrius.",
+  "organizeByAisles": "Rūšiuoti pagal skyrius",
+  "organizingAi": "ORGANIZUOJAMA SU AI...",
+  "pantry": "Sandėliukas",
+  "pantryAppBar": "Sandėliukas",
+  "pantryEditTitle": "Redaguoti {name}",
+  "pantryEmpty": "Tuščias sandėliukas",
+  "pantryEmptySubtitle": "Pridėkite produktų, kuriuos norite laikyti namuose",
+  "pantryItemRemoved": "Prekė pašalinta",
+  "paywallTitle": "„Lista Plus Premium“.",
+  "prefAIAssistant": "Asmeninis AI asistentas",
+  "prefCustomThemes": "Individualios temos",
+  "prefExportData": "Eksportuoti duomenis",
+  "prefFullHistory": "Pilna istorija",
+  "prefInteractiveArtifacts": "Interaktyvūs AI artefaktai",
+  "prefMonthlyBudget": "Globalus mėnesio biudžetas",
+  "prefSharing": "Dalintis sąrašais",
+  "prefUnlimitedLists": "Neriboti sąrašai",
+  "prefUnlimitedPantry": "Neribotas sandėliukas",
+  "premiumUpgrade": "Atnaujinkite, kad atrakintumėte",
   "prepTime": "Gaminimo laikas",
   "prepTimeMinutes": "Gaminimo laikas (minutėmis)",
+  "privacy": "Privatumas",
+  "productName": "Produkto pavadinimas",
+  "purchaseError": "Klaida apdorojant pirkimą. Bandykite dar kartą.",
+  "quantityFull": "Kiekis",
+  "quantityShort": "Kiekis",
+  "quickRecipe": "Greitas receptas",
+  "quickRecipePrompt": "Pasiūlykite receptų su mano sąrašo prekėmis.",
+  "quickReplies": "Greiti atsakymai:",
   "recipeCreated": "Receptas sukurtas!",
   "recipeDeleted": "Receptas ištrintas",
   "recipeImage": "Recepto nuotrauka",
   "recipeName": "Recepto pavadinimas",
   "recipeSaved": "Receptas išsaugotas!",
+  "recipeSuggestion": "Recepto pasiūlymas",
   "recipeTags": "Recepto žymos",
+  "regenerate": "Atkurti",
+  "remove": "Pašalinti",
+  "removeBudget": "Pašalinti",
   "removeImage": "Pašalinti nuotrauką",
+  "removeSharedListContent": "Pašalinti \"{name}\" iš jūsų sąrašų? Originalus sąrašas nebus paveiktas.",
+  "removeSharedListTitle": "Pašalinti bendrinamą sąrašą",
+  "removeSharedTooltip": "Pašalinti",
+  "rename": "Pervadinti",
+  "renameListDialog": "Pervadinti sąrašą",
   "requiredField": "Privaloma",
+  "restockLabel": "Papildyti",
+  "restocked": "{name} papildytas iki {quantity} {unit}",
+  "restore": "Atkurti",
+  "restoreError": "Klaida atkuriant pirkimus. Bandykite dar kartą.",
+  "retry": "Bandyti dar kartą",
+  "save": "Išsaugoti",
   "saveChanges": "Išsaugoti pakeitimus",
   "saveRecipe": "Išsaugoti",
+  "savings": "Sutaupymas",
+  "searchCurrency": "Ieškoti valiutos...",
+  "searchInConversation": "Ieškoti pokalbyje...",
   "searchLanguage": "Ieškoti kalbos...",
   "searchRecipes": "Ieškoti receptų...",
+  "selectAll": "Pasirinkti viską",
+  "selectListForDashboard": "Pasirinkite sąrašą, kad peržiūrėtumėte skydelį.",
+  "selectedItems": "{count,plural, one{{count} pasirinktas} few{{count} pasirinkti} other{{count} pasirinkta}}",
+  "setBudgetButton": "Nustatyti biudžetą",
+  "setBudgetTitle": "Mėnesio biudžetas",
+  "settingsAppBar": "Nustatymai",
+  "settingsDefaultScreen": "Numatytasis pradinis ekranas",
+  "settingsDefaultScreenSubtitle": "Pasirinkite pirkinių sąrašą arba AI pokalbį",
+  "settingsScreenChat": "AI pokalbis",
+  "settingsScreenList": "Pirkinių sąrašas",
+  "share": "Dalintis",
+  "shareApp": "Bendrinkite programą",
+  "shareAppDescription": "Pakvieskite draugus naudotis „Lista Plus“.",
+  "shareAsText": "Siųsti prekes kaip suformatuotą tekstą",
+  "shareListText": "Mano pirkinių sąrašas",
+  "shareListTitle": "Dalintis sąrašu",
+  "shareRealtime": "Realaus laiko sinchronizavimas su kitais",
+  "shareReferralSubject": "Gaukite „Lista Plus Premium“ 7 dienas!",
+  "shareReferralText": "Naudoju „Lista Plus“ pirkinių organizavimui! Atsisiųskite naudodami mano nuorodą ir mes abu gausime 7 dienas „Premium“ nemokamai: {url}",
+  "shareSubject": "Pirkinių sąrašas",
+  "shareThisCode": "Pasidalinkite šiuo kodu:",
+  "shareViaCode": "Dalintis per kodą",
+  "sharedLabel": "Bendrinamas",
+  "shoppingAssistant": "Pirkinių padėjėja",
+  "shoppingMode": "Pirkimo režimas",
+  "shoppingModeHeader": "PIRKIMO REŽIMAS",
   "shortDescription": "Trumpas aprašymas",
+  "signInApple": "Prisijungti su Apple",
+  "signInGoogle": "Prisijungti su Google",
+  "smartOrganization": "Protingas organizavimas",
+  "sortCategory": "Kategorija",
+  "sortDate": "Data",
+  "sortManual": "Rankinis",
+  "sortName": "Pavadinimas",
+  "spendingAnalysis": "Išlaidų analizė",
+  "spendingByCategory": "Išlaidos pagal kategoriją",
+  "suggestedQuestions": "Siūlomi klausimai:",
   "suggestedTags": "Siūloma",
+  "switchList": "Perjungti sąrašą",
+  "system": "Sistema",
   "tags": "Žymos",
-  "viewRecipe": "Žiūrėti receptą"
+  "termsOfUse": "Naudojimo sąlygos",
+  "themeAmber": "Gintarinė",
+  "themeBlue": "Mėlyna",
+  "themeBrown": "Ruda",
+  "themeColor": "Temos spalva",
+  "themeGreen": "Žalia",
+  "themeIndigo": "Indigo",
+  "themeOrange": "Oranžinė",
+  "themePink": "Rožinė",
+  "themePurple": "Violetinė",
+  "themeRed": "Raudona",
+  "themeTeal": "Žalsvai mėlyna",
+  "totalEstimated": "Numatoma suma: {amount}",
+  "totalSpending": "Visos išlaidos",
+  "trackStock": "Sekti atsargas",
+  "trackStockActive": "Rodoma pirkimo pasiūlymuose",
+  "trackStockInactive": "Negeneruoja pirkimo pasiūlymų",
+  "undo": "Atšaukti",
+  "unit": "Vienetas",
+  "unitPack": "pakuotė",
+  "unlockFullResponse": "Atrakinkite visą atsakymą",
+  "unmark": "Panaikinti žymėjimą",
+  "upgrade": "Atnaujinti",
+  "validForLimitedTime": "Galioja ribotą laiką",
+  "version": "Versija",
+  "viewActive": "Žiūrėti aktyvius",
+  "viewDetails": "Peržiūrėti išsamią informaciją",
+  "viewHistory": "Žiūrėti istoriją",
+  "viewItems": "Peržiūrėti elementus",
+  "viewList": "Peržiūrėti sąrašą",
+  "viewPro": "Žiūrėti Pro",
+  "viewRecipe": "Žiūrėti receptą",
+  "voiceCommandContent": "Kalbėkite natūraliai, kad valdytumėte savo sąrašą!\n\nPavyzdžiai:\n• 'Pridėti duonos, sūrio ir kumpio'\n• 'Pašalinti skalbiklio'\n• 'Pakeisti temą į mėlyną'\n\nTai yra išskirtinė Lista Plus Premium funkcija.",
+  "voiceCommandPlanBtn": "Peržiūrėti planus",
+  "voiceCommandTitle": "AI balso komanda",
+  "voiceProFeature": "Išplėstinės balso komandos yra Pro. Įgalinamas pagrindinis diktantas...",
+  "voiceTranscriptionTooltip": "Balso įvedimas (Nemokamai)",
+  "welcomeAiAssistant": "Sveiki atvykę į AI asistentą",
+  "whatToDoWithItem": "Ką norėtumėte daryti su šiuo elementu?",
+  "yes": "Taip",
+  "yesLabel": "Taip"
 }

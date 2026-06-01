@@ -42,6 +42,9 @@ class AppLocalizationsMr extends AppLocalizations {
   String get copy => 'कॉपी करा';
 
   @override
+  String get next => 'पुढे';
+
+  @override
   String get retry => 'पुन्हा प्रयत्न करा';
 
   @override
@@ -280,10 +283,10 @@ class AppLocalizationsMr extends AppLocalizations {
   String get language => 'भाषा';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'पोर्तुगीज (ब्राझील)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'इंग्रजी';
 
   @override
   String get languageSystem => 'सिस्टम डीफॉल्ट';
@@ -295,13 +298,13 @@ class AppLocalizationsMr extends AppLocalizations {
   String get searchLanguage => 'भाषा शोधा...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'चलन';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'चलन निवडा';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'चलन शोधा...';
 
   @override
   String get appearance => 'स्वरूप';
@@ -327,7 +330,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'थीम रंग प्रभावी होण्यासाठी डायनॅमिक रंग अक्षम करा';
 
   @override
   String get finance => 'वित्त';
@@ -569,17 +572,17 @@ class AppLocalizationsMr extends AppLocalizations {
   String get generalAssistant => 'सामान्य सहाय्यक';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'नवीन गप्पा';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'चॅट इतिहास नाही';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'चॅट हटवा';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'तुम्हाला खात्री आहे की तुम्ही ही चॅट हटवू इच्छिता? संदेश कायमचे गमावले जातील.';
 
   @override
   String get clearHistory => 'इतिहास साफ करा';
@@ -609,7 +612,7 @@ class AppLocalizationsMr extends AppLocalizations {
       'क्षमस्व, तुमची विनंती प्रक्रिया करताना त्रुटी आली. तुमचे कनेक्शन तपासा किंवा नंतर पुन्हा प्रयत्न करा.';
 
   @override
-  String get listaPlusTitle => 'लिस्टा प्लस';
+  String get listaPlusTitle => 'Lista Plus';
 
   @override
   String get loginPrompt => 'प्रीमियम वैशिष्ट्ये\nअनलॉक करण्यासाठी लॉगिन करा';
@@ -624,93 +627,108 @@ class AppLocalizationsMr extends AppLocalizations {
   String get continueAsGuest => 'पाहुणे म्हणून सुरू ठेवा';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plus मध्ये आपले स्वागत आहे';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'तुमची खरेदी व्यवस्थापित करण्याचा आणि पैसे वाचवण्याचा सर्वात हुशार मार्ग.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'तुमचा अनुभव वैयक्तिकृत करा';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'तुम्हाला Lista Plus कसे दिसावे आणि तुमच्यासाठी कसे कार्य करायचे ते निवडा.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'क्लाउडवर सर्वकाही जतन करा';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'तुमचा डेटा तुमच्या सर्व डिव्हाइसेसवर सिंक केला आहे';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'तुम्हाला आवडत असलेल्यांसोबत शेअर करा';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'रिअल टाइममध्ये कुटुंब आणि मित्रांसह याद्या समक्रमित करा';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'सर्व वैशिष्ट्ये अनलॉक करा';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'तुमच्या खरेदी सूचीमधून जास्तीत जास्त मिळवा';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'सर्वोत्तम मूल्य';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'मासिक';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'वार्षिक';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'सर्व योजना पहा';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'सदस्यता घ्या';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'कधीही रद्द करा. बांधिलकी नाही.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'अतिथी म्हणून सुरू ठेवा';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'पुनर्संचयित करा';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'आधीपासूनच सदस्यता आहे? ते पुनर्संचयित करण्यासाठी येथे टॅप करा.';
+
+  @override
+  String get onboardingExit => 'बाहेर पडा';
+
+  @override
+  String get onboardingPersonalizationTitle => 'चला तुम्हाला ओळखू या';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'तुमच्या सूचना वैयक्तिकृत करण्यासाठी आणि खरेदी अधिक स्मार्ट करण्यासाठी आम्ही याचा वापर करू.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'तुमचे आवडते अन्न कोणते आहे?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'उदा. पिझ्झा, सुशी, लसाग्ना...';
+
+  @override
+  String get onboardingPersonalizationCta => 'चालू ठेवा';
+
+  @override
+  String get onboardingPersonalizationSkip => 'आतासाठी वगळा';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'सुरू ठेवण्यासाठी आम्हाला तुमचे आवडते पदार्थ सांगा';
+
+  @override
+  String get settingsDefaultScreen => 'डीफॉल्ट होम स्क्रीन';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'खरेदी सूची किंवा एआय चॅट यापैकी निवडा';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'खरेदी सूची';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'एआय गप्पा';
 
   @override
   String loginError(String error) {
@@ -718,7 +736,7 @@ class AppLocalizationsMr extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'लिस्टा प्लस प्रीमियम';
+  String get paywallTitle => 'Lista Plus प्रीमियम';
 
   @override
   String get premiumUpgrade => 'अनलॉक करण्यासाठी अपग्रेड करा';
@@ -992,7 +1010,7 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get voiceCommandContent =>
-      'तुमची लिस्ट व्यवस्थापित करण्यासाठी नैसर्गिकपणे बोला!\n\nउदाहरणे:\n• \'ब्रेड, चीज आणि हॅम जोडा\'\n• \'लॉन्ड्री डिटर्जंट काढा\'\n• \'थीम निळ्यामध्ये बदला\'\n\nहे लिस्टा प्लस प्रीमियमचे अनन्य वैशिष्ट्य आहे.';
+      'तुमची लिस्ट व्यवस्थापित करण्यासाठी नैसर्गिकपणे बोला!\n\nउदाहरणे:\n• \'ब्रेड, चीज आणि हॅम जोडा\'\n• \'लॉन्ड्री डिटर्जंट काढा\'\n• \'थीम निळ्यामध्ये बदला\'\n\nहे Lista Plus प्रीमियमचे अनन्य वैशिष्ट्य आहे.';
 
   @override
   String get voiceCommandPlanBtn => 'प्लॅन पहा';
@@ -1074,106 +1092,106 @@ class AppLocalizationsMr extends AppLocalizations {
       'बगची तक्रार करा, सुधारणा सुचवा किंवा भाषांतरे दुरुस्त करा';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'एआय एनर्जी';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'संभाषणात शोधा...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'कोणतेही संदेश आढळले नाहीत';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'सुचवलेले प्रश्न:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'खरेदी सहाय्यक';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total पैकी $purchased खरेदी केले';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'अंदाज';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'आयटम पहा';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'सूचीमध्ये कोणतेही आयटम नाहीत';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'दीर्घ इतिहास: अधिक चांगल्या कामगिरीसाठी सहाय्यक नवीनतम संदेशांवर लक्ष केंद्रित करतो.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'ऐकत आहे...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'थेट सूचीमध्ये जोडा';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'पूर्ण प्रतिसाद अनलॉक करा';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'सूची स्विच करा';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'मार्केट मोड';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'चॅट वर परत';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'खरेदी पूर्ण करा';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI सहाय्यकामध्ये आपले स्वागत आहे';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'स्मार्ट चॅट वापरणे सुरू करण्यासाठी खरेदी सूची तयार करा.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'मी कशी मदत करू शकतो?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'किंमती, पाककृती, संस्था याबद्दल विचारा...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total खरेदी केले';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'द्रुत प्रत्युत्तरे:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'प्रगत व्हॉइस कमांड प्रो आहेत. मूलभूत श्रुतलेख सक्षम करत आहे...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'प्रो पहा';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'अरेरे! चॅट लोड करताना काहीतरी चूक झाली.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'तुमचे कनेक्शन तपासा किंवा नंतर पुन्हा प्रयत्न करा.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'हे नेटवर्क दोलन किंवा तात्पुरत्या अनुपलब्धतेमुळे उद्भवू शकते. कृपया पुन्हा प्रयत्न करा.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'सक्रिय ऐकणे';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'तुम्हाला या आयटमचे काय करायचे आहे?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'तपशील पहा';
 
   @override
   String get openMenu => 'मेनू उघडा';
@@ -1419,21 +1437,22 @@ class AppLocalizationsMr extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'सूचीसाठी आमंत्रित करा';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'ॲप शेअर करा';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Lista Plus वापरण्यासाठी मित्रांना आमंत्रित करा';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'मी माझी खरेदी आयोजित करण्यासाठी Lista Plus वापरत आहे! माझ्या लिंकद्वारे डाउनलोड करा आणि आम्हा दोघांना 7 दिवसांचे प्रीमियम मोफत मिळेल: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => '७ दिवसांचे Lista Plus प्रीमियम मिळवा!';
 }
 
 /// The translations for Marathi, as used in India (`mr_IN`).
@@ -1472,6 +1491,9 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get copy => 'कॉपी करा';
+
+  @override
+  String get next => 'पुढे';
 
   @override
   String get retry => 'पुन्हा प्रयत्न करा';
@@ -1712,10 +1734,10 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get language => 'भाषा';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'पोर्तुगीज (ब्राझील)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'इंग्रजी';
 
   @override
   String get languageSystem => 'सिस्टम डीफॉल्ट';
@@ -1725,6 +1747,15 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get searchLanguage => 'भाषा शोधा...';
+
+  @override
+  String get currency => 'चलन';
+
+  @override
+  String get chooseCurrency => 'चलन निवडा';
+
+  @override
+  String get searchCurrency => 'चलन शोधा...';
 
   @override
   String get appearance => 'स्वरूप';
@@ -1747,6 +1778,10 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   @override
   String get dynamicColorsSubtitle =>
       'तुमच्या वॉलपेपरवर आधारित रंगांचा वापर करा';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'थीम रंग प्रभावी होण्यासाठी डायनॅमिक रंग अक्षम करा';
 
   @override
   String get finance => 'वित्त';
@@ -1988,6 +2023,19 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get generalAssistant => 'सामान्य सहाय्यक';
 
   @override
+  String get newChat => 'नवीन गप्पा';
+
+  @override
+  String get noHistory => 'चॅट इतिहास नाही';
+
+  @override
+  String get deleteSession => 'चॅट हटवा';
+
+  @override
+  String get deleteSessionConfirm =>
+      'तुम्हाला खात्री आहे की तुम्ही ही चॅट हटवू इच्छिता? संदेश कायमचे गमावले जातील.';
+
+  @override
   String get clearHistory => 'इतिहास साफ करा';
 
   @override
@@ -2015,7 +2063,7 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
       'क्षमस्व, तुमची विनंती प्रक्रिया करताना त्रुटी आली. तुमचे कनेक्शन तपासा किंवा नंतर पुन्हा प्रयत्न करा.';
 
   @override
-  String get listaPlusTitle => 'लिस्टा प्लस';
+  String get listaPlusTitle => 'Lista Plus';
 
   @override
   String get loginPrompt => 'प्रीमियम वैशिष्ट्ये\nअनलॉक करण्यासाठी लॉगिन करा';
@@ -2030,12 +2078,116 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get continueAsGuest => 'पाहुणे म्हणून सुरू ठेवा';
 
   @override
+  String get onboardingWelcomeTitle => 'Lista Plus मध्ये आपले स्वागत आहे';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'तुमची खरेदी व्यवस्थापित करण्याचा आणि पैसे वाचवण्याचा सर्वात हुशार मार्ग.';
+
+  @override
+  String get onboardingSetupTitle => 'तुमचा अनुभव वैयक्तिकृत करा';
+
+  @override
+  String get onboardingSetupDesc =>
+      'तुम्हाला Lista Plus कसे दिसावे आणि तुमच्यासाठी कसे कार्य करायचे ते निवडा.';
+
+  @override
+  String get onboardingLoginTitle => 'क्लाउडवर सर्वकाही जतन करा';
+
+  @override
+  String get onboardingLoginDesc =>
+      'तुमचा डेटा तुमच्या सर्व डिव्हाइसेसवर सिंक केला आहे';
+
+  @override
+  String get onboardingShareTitle => 'तुम्हाला आवडत असलेल्यांसोबत शेअर करा';
+
+  @override
+  String get onboardingShareDesc =>
+      'रिअल टाइममध्ये कुटुंब आणि मित्रांसह याद्या समक्रमित करा';
+
+  @override
+  String get onboardingPremiumTitle => 'सर्व वैशिष्ट्ये अनलॉक करा';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'तुमच्या खरेदी सूचीमधून जास्तीत जास्त मिळवा';
+
+  @override
+  String get onboardingAnnualBadge => 'सर्वोत्तम मूल्य';
+
+  @override
+  String get onboardingMonthlyLabel => 'मासिक';
+
+  @override
+  String get onboardingAnnualLabel => 'वार्षिक';
+
+  @override
+  String get onboardingViewAllPlans => 'सर्व योजना पहा';
+
+  @override
+  String get onboardingSubscribeCta => 'सदस्यता घ्या';
+
+  @override
+  String get onboardingCancelAnytime => 'कधीही रद्द करा. बांधिलकी नाही.';
+
+  @override
+  String get onboardingContinueAsGuest => 'अतिथी म्हणून सुरू ठेवा';
+
+  @override
+  String get onboardingRestore => 'पुनर्संचयित करा';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'आधीपासूनच सदस्यता आहे? ते पुनर्संचयित करण्यासाठी येथे टॅप करा.';
+
+  @override
+  String get onboardingExit => 'बाहेर पडा';
+
+  @override
+  String get onboardingPersonalizationTitle => 'चला तुम्हाला ओळखू या';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'तुमच्या सूचना वैयक्तिकृत करण्यासाठी आणि खरेदी अधिक स्मार्ट करण्यासाठी आम्ही याचा वापर करू.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'तुमचे आवडते अन्न कोणते आहे?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'उदा. पिझ्झा, सुशी, लसाग्ना...';
+
+  @override
+  String get onboardingPersonalizationCta => 'चालू ठेवा';
+
+  @override
+  String get onboardingPersonalizationSkip => 'आतासाठी वगळा';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'सुरू ठेवण्यासाठी आम्हाला तुमचे आवडते पदार्थ सांगा';
+
+  @override
+  String get settingsDefaultScreen => 'डीफॉल्ट होम स्क्रीन';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'खरेदी सूची किंवा एआय चॅट यापैकी निवडा';
+
+  @override
+  String get settingsScreenList => 'खरेदी सूची';
+
+  @override
+  String get settingsScreenChat => 'एआय गप्पा';
+
+  @override
   String loginError(String error) {
     return 'लॉगिन त्रुटी: $error';
   }
 
   @override
-  String get paywallTitle => 'लिस्टा प्लस प्रीमियम';
+  String get paywallTitle => 'Lista Plus प्रीमियम';
 
   @override
   String get premiumUpgrade => 'अनलॉक करण्यासाठी अपग्रेड करा';
@@ -2309,7 +2461,7 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get voiceCommandContent =>
-      'तुमची लिस्ट व्यवस्थापित करण्यासाठी नैसर्गिकपणे बोला!\n\nउदाहरणे:\n• \'ब्रेड, चीज आणि हॅम जोडा\'\n• \'लॉन्ड्री डिटर्जंट काढा\'\n• \'थीम निळ्यामध्ये बदला\'\n\nहे लिस्टा प्लस प्रीमियमचे अनन्य वैशिष्ट्य आहे.';
+      'तुमची लिस्ट व्यवस्थापित करण्यासाठी नैसर्गिकपणे बोला!\n\nउदाहरणे:\n• \'ब्रेड, चीज आणि हॅम जोडा\'\n• \'लॉन्ड्री डिटर्जंट काढा\'\n• \'थीम निळ्यामध्ये बदला\'\n\nहे Lista Plus प्रीमियमचे अनन्य वैशिष्ट्य आहे.';
 
   @override
   String get voiceCommandPlanBtn => 'प्लॅन पहा';
@@ -2391,106 +2543,106 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
       'बग कळवा, सुधारणा सुचवा किंवा भाषांतर दुरुस्त करा';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'एआय एनर्जी';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'संभाषणात शोधा...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'कोणतेही संदेश आढळले नाहीत';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'सुचवलेले प्रश्न:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'खरेदी सहाय्यक';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total पैकी $purchased खरेदी केले';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'अंदाज';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'आयटम पहा';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'सूचीमध्ये कोणतेही आयटम नाहीत';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'दीर्घ इतिहास: अधिक चांगल्या कामगिरीसाठी सहाय्यक नवीनतम संदेशांवर लक्ष केंद्रित करतो.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'ऐकत आहे...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'थेट सूचीमध्ये जोडा';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'पूर्ण प्रतिसाद अनलॉक करा';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'सूची स्विच करा';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'मार्केट मोड';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'चॅट वर परत';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'खरेदी पूर्ण करा';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI सहाय्यकामध्ये आपले स्वागत आहे';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'स्मार्ट चॅट वापरणे सुरू करण्यासाठी खरेदी सूची तयार करा.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'मी कशी मदत करू शकतो?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'किंमती, पाककृती, संस्था याबद्दल विचारा...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total खरेदी केले';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'द्रुत प्रत्युत्तरे:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'प्रगत व्हॉइस कमांड प्रो आहेत. मूलभूत श्रुतलेख सक्षम करत आहे...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'प्रो पहा';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'अरेरे! चॅट लोड करताना काहीतरी चूक झाली.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'तुमचे कनेक्शन तपासा किंवा नंतर पुन्हा प्रयत्न करा.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'हे नेटवर्क दोलन किंवा तात्पुरत्या अनुपलब्धतेमुळे उद्भवू शकते. कृपया पुन्हा प्रयत्न करा.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'सक्रिय ऐकणे';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'तुम्हाला या आयटमचे काय करायचे आहे?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'तपशील पहा';
 
   @override
   String get openMenu => 'मेनू उघडा';
@@ -2734,4 +2886,22 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes मिनीटे';
   }
+
+  @override
+  String get inviteToList => 'सूचीसाठी आमंत्रित करा';
+
+  @override
+  String get shareApp => 'ॲप शेअर करा';
+
+  @override
+  String get shareAppDescription =>
+      'Lista Plus वापरण्यासाठी मित्रांना आमंत्रित करा';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'मी माझी खरेदी आयोजित करण्यासाठी Lista Plus वापरत आहे! माझ्या लिंकद्वारे डाउनलोड करा आणि आम्हा दोघांना 7 दिवसांचे प्रीमियम मोफत मिळेल: $url';
+  }
+
+  @override
+  String get shareReferralSubject => '७ दिवसांचे Lista Plus प्रीमियम मिळवा!';
 }

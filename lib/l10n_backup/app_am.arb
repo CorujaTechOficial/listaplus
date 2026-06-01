@@ -1,0 +1,640 @@
+{
+  "@@locale": "am",
+  "appTitle": "የግብዣ ዝርዝር",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "ዝርዝሮች",
+  "pantry": "ምግብ ቤት",
+  "@_Common": "description: Common actions",
+  "cancel": "ሰርዝ",
+  "save": "አስቀምጥ",
+  "create": "ፍጠር",
+  "add": "ጨምር",
+  "remove": "አስወግድ",
+  "delete": "ሰርዝ",
+  "edit": "አስተካክል",
+  "copy": "ቅዳ",
+  "retry": "ድጋሚ ሞክር",
+  "regenerate": "እንደገና አመንጭ",
+  "copiedToClipboard": "ወደ ቅንጥብ ሰሌዳ ተቀድቷል",
+  "confirm": "አረጋግጥ",
+  "close": "ዝጋ",
+  "import": "አስመጣ",
+  "rename": "እንደገና ሰይም",
+  "upgrade": "አሻሽል",
+  "clear": "አጽዳ",
+  "error": "ስህተት፦ {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "ስህተት፦ {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "ግዢውን በማስኬድ ላይ ስህተት። እንደገና ሞክር።",
+  "restoreError": "ግዢዎችን ወደነበሩበት በማስመለስ ስህተት። እንደገና ሞክር።",
+  "loading": "በመጫን ላይ...",
+  "fieldRequired": "የሚፈለግ መስክ",
+  "addedFeedback": "ተጨምሯል!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} የተመረጠ} other{{count} የተመረጡ}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "የተገመተ",
+  "alreadyPurchased": "አስቀድሞ የተገዛ",
+  "clearList": "ዝርዝሩን አጽዳ",
+  "clearPurchased": "የተገዙትን አጽዳ",
+  "share": "አጋራ",
+  "shareViaCode": "በኮድ አጋራ",
+  "importViaCode": "በኮድ አስመጣ",
+  "listAssistant": "የዝርዝር ረዳት",
+  "globalAssistant": "አለምአቀፍ ረዳት",
+  "becomePremium": "ፕሪሚየም ይሁኑ",
+  "manageSubscription": "ደንበኝነትን አስተዳድር",
+  "completePurchase": "ግዢውን አጠናቅቅ",
+  "confirmClearList": "ሁሉንም ንጥሎች ማስወገድ?",
+  "shareListTitle": "ዝርዝሩን አጋራ",
+  "shareThisCode": "ይህን ኮድ አጋራ፦",
+  "validForLimitedTime": "ለተወሰነ ጊዜ የሚሰራ",
+  "importListTitle": "ዝርዝሩን አስመጣ",
+  "enterCodeHint": "ኮዱን ያስገቡ",
+  "confirmArchiveTitle": "ግዢውን አጠናቅቅ",
+  "confirmArchiveContent": "ይህን ግዢ አጠናቅቀህ ዝርዝሩን አርክቭ ማድረግ?",
+  "complete": "አጠናቅቅ",
+  "listArchived": "ዝርዝሩ በተሳካ ሁኔታ በማህደር ተቀምጧል!",
+  "listAdded": "{listName} ተጨምሯል!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "ግዛ",
+  "unmark": "ምልክት አስወግድ",
+  "confirmDeleteItems": "{count} ንጥሎችን ማስወገድ?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "አረጋግጥ",
+  "confirmContent": "{count} ንጥሎችን ማስወገድ?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "ዝርዝሩን አርክቭ አድርግ",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "ምግብ ቤት",
+  "generateShoppingList": "የግብዣ ዝርዝር አመንጭ",
+  "pantryEmpty": "ባዶ ምግብ ቤት",
+  "pantryEmptySubtitle": "በቤት ውስጥ ማቆየት የሚፈልጋቸውን ምርቶች ጨምር",
+  "itemsNeedPurchase": "{deficit} ንጥሎች መግዛት ያስፈልጋል",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "ምንም የሚገዙ ንጥሎች የሉም",
+  "newPantryList": "ከምግብ ቤት ግብዣ",
+  "newListTitle": "አዲስ የግብዣ ዝርዝር",
+  "itemsWillBeAdded": "{count} ንጥሎች ይጨመራሉ",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "የዝርዝሩ ስም",
+  "listCreated": "ዝርዝር \"{name}\" በ{count} ንጥሎች ተፈጥሯል",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "ምንም ክትትል",
+  "markAsPurchased": "እንደተገዛ ምልክት አድርግ",
+  "editPantryItem": "{name} አስተካክል",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "ተስማሚ ብዛት",
+  "currentQuantity": "አሁን ያለው ብዛት",
+  "consumed": "የተበላ",
+  "restocked": "{name} ወደ {quantity} {unit} ተመልሷል",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "\"{name}\" ከምግብ ቤት ያስወግዳል?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "{name} አስተካክል",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "ቅንብሮች",
+  "language": "ቋንቋ",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "የስርዓት ነባሪ",
+  "appearance": "መልክ",
+  "light": "ብርሃን",
+  "system": "ስርዓት",
+  "dark": "ጨለማ",
+  "themeColor": "የቲም ቀለም",
+  "finance": "ፋይናንስ",
+  "monthlyBudgetNav": "ወርሃዊ በጀት",
+  "budgetSubtitle": "ወርሃዊ ወጪህን ተከታተል",
+  "data": "ውሂብ",
+  "backupNav": "ምትኬ",
+  "backupSubtitle": "ውሂብህን ላክ ወይም አስመጣ",
+  "about": "ስለ",
+  "version": "ስሪት",
+  "privacy": "ግላዊነት",
+  "termsOfUse": "የአጠቃቀም ውሎች",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "ምትኬ",
+  "backupPremiumDescription": "ምትኬ እና መላክ ፕሪሚየም ባህሪ ነው",
+  "exportData": "ውሂብ ላክ",
+  "exportDataSubtitle": "ሁሉንም ዝርዝሮች እንደ JSON አስቀምጥ",
+  "importData": "ውሂብ አስመጣ",
+  "importDataSubtitle": "ዝርዝሮችን ከJSON ወደነበሩበት መልስ",
+  "importJsonTitle": "JSON አስመጣ",
+  "importJsonHint": "የምትኬውን JSON እዚህ ለጥፍ...",
+  "backupExported": "ምትኬ ተልኳል!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "ወርሃዊ በጀት",
+  "budgetPremiumLocked": "አለምአቀፍ ወርሃዊ በጀት ፕሪሚየም ነው",
+  "budgetUpgradePrompt": "ለመክፈት አሻሽል",
+  "noBudgetDefined": "ምንም በጀት አልተዘጋጀም",
+  "totalEstimated": "ጠቅላላ ግምት፦ {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "በጀት አዘጋጅ",
+  "budgetLists": "ዝርዝሮች",
+  "budgetValueLabel": "መጠን",
+  "setBudgetTitle": "ወርሃዊ በጀት",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "ሁሉም",
+  "filterPending": "በመጠባበቅ ላይ",
+  "filterPurchased": "የተገዙ",
+  "sortName": "ስም",
+  "sortCategory": "ምድብ",
+  "sortDate": "ቀን",
+  "sortManual": "በእጅ",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "ንጥል ጨምር",
+  "itemName": "የንጥል ስም",
+  "quantityShort": "ብዛት",
+  "unit": "አሃድ",
+  "category": "ምድብ",
+  "estimatedPrice": "የተገመተ ዋጋ",
+  "addItemPrice": "የተገመተ ዋጋ",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "ንጥል አስተካክል",
+  "quantityFull": "ብዛት",
+  "editItemPrice": "የተገመተ ዋጋ",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "ወደ ምግብ ቤት ጨምር",
+  "addToPantryPrompt": "\"{name}\" ወደ ምግብ ቤትህ ጨምር?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "አዎ",
+  "productName": "የምርት ስም",
+  "idealQty": "ተስማሚ ብዛት",
+  "currentQty": "አሁን ያለው ብዛት",
+  "trackStock": "ክምችት ተከታተል",
+  "trackStockActive": "በግብዣ ሃሳቦች ውስጥ ይታያል",
+  "trackStockInactive": "የግብዣ ሃሳብ አያመነጭም",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "ዝርዝር ፍጠር",
+  "renameListDialog": "ዝርዝሩን እንደገና ሰይም",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "የዝርዝር ታሪክ",
+  "myLists": "የእኔ ዝርዝሮች",
+  "viewActive": "ንቁዎችን ተመልከት",
+  "viewHistory": "ታሪክ ተመልከት",
+  "noArchivedLists": "ምንም በማህደር የተቀመጡ ዝርዝሮች የሉም",
+  "noActiveLists": "ምንም ንቁ ዝርዝሮች የሉም",
+  "completedOn": "የተጠናቀቀ በ{date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "የተጋራ",
+  "restore": "ወደነበረበት መልስ",
+  "removeSharedTooltip": "አስወግድ",
+  "deleteListTitle": "ዝርዝሩን ሰርዝ",
+  "deleteListContent": "እርግጠኛ ነህ \"{name}\" መሰረዝ ትፈልጋለህ? ሁሉም ንጥሎች ይወገዳሉ።",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "የተጋራውን ዝርዝር አስወግድ",
+  "removeSharedListContent": "\"{name}\" ከዝርዝሮችህ ያስወግዳል? ዋናው ዝርዝር አይጎዳም።",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "አዲስ ዝርዝር ፍጠር",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI ረዳት",
+  "aiAssistantDescription": "ከAI ረዳታችን ጋር ብልህ ሃሳቦችን፣ የምግብ አዘገጃጀቶችን እና የግል ምክሮችን አግኝ።",
+  "generalAssistant": "አጠቃላይ ረዳት",
+  "clearHistory": "ታሪክ አጽዳ",
+  "clearHistoryConfirm": "በዚህ ክፍለ ጊዜ ውስጥ ያሉትን ሁሉንም መልእክቶች ማጽዳት?",
+  "chatHint": "መልእክትህን ጻፍ...",
+  "chatError": "ውይይቱን በመጫን ላይ ስህተት፦ {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "በዝርዝርህ እንዴት ልረዳህ?",
+  "generalHelp": "በግብዣህ ዛሬ እንዴት ልረዳህ?",
+  "chatSubtitle": "ለንጥሎች፣ የምግብ አዘገጃጀት ወይም የቁጠባ ምክሮች ጠይቅ።",
+  "aiError": "ይቅርታ፣ ጥያቄህን በማስኬድ ላይ ስህተት ተከስቷል። ግንኙነትህን አረጋግጥ ወይም በኋላ እንደገና ሞክር።",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "ፕሪሚየም ባህሪያትን\nለመክፈት ግባ",
+  "signInGoogle": "በGoogle ግባ",
+  "signInApple": "በApple ግባ",
+  "continueAsGuest": "እንደ እንግዳ ቀጥል",
+  "loginError": "የመግቢያ ስህተት፦ {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus ፕሪሚየም",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "ለመክፈት አሻሽል",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "ንጥል ተወግዷል",
+  "undo": "ቀልብስ",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "ዝርዝርህ ባዶ ነው",
+  "emptyListSubtitle": "ለመጀመር ንጥሎችን ጨምር",
+  "noListFoundTitle": "ምንም ዝርዝሮች አልተገኙም",
+  "noListFoundSubtitle": "ለመጀመር የመጀመሪያውን ዝርዝርህን ፍጠር",
+  "createFirstList": "የመጀመሪያ ዝርዝር ፍጠር",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "የዝርዝር በጀት",
+  "budgetAmountLabel": "የበጀት መጠን",
+  "removeBudget": "አስወግድ",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "ያልተገደቡ ዝርዝሮች",
+  "prefSharing": "ዝርዝሮችን አጋራ",
+  "prefFullHistory": "ሙሉ ታሪክ",
+  "prefExportData": "ውሂብ ላክ",
+  "prefCustomThemes": "የተበጁ ገጽታዎች",
+  "prefMonthlyBudget": "አለምአቀፍ ወርሃዊ በጀት",
+  "prefAIAssistant": "የግል AI ረዳት",
+  "prefUnlimitedPantry": "ያልተገደበ ምግብ ቤት",
+  "prefInteractiveArtifacts": "በይነተገናኝ AI ቅርሶች",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "አረንጓዴ",
+  "themeBlue": "ሰማያዊ",
+  "themePurple": "ሐምራዊ",
+  "themeRed": "ቀይ",
+  "themeOrange": "ብርቱካን",
+  "themePink": "ሮዝ",
+  "themeIndigo": "ኢንዲጎ",
+  "themeAmber": "አምበር",
+  "themeTeal": "ቲል",
+  "themeBrown": "ቡናማ",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "ፍራፍሬዎች",
+  "catCleaning": "ጽዳት",
+  "catBeverages": "መጠጦች",
+  "catBakery": "ዳቦ ቤት",
+  "catOthers": "ሌሎች",
+  "@_Unit": "description: Unit",
+  "unitPack": "ጥቅል",
+  "@_Share": "description: Sharing",
+  "shareSubject": "የግብዣ ዝርዝር",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "ወርሃዊ በጀት",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "ዝርዝሩን ሰርዝ",
+  "pantryItemRemoved": "ንጥል ተወግዷል",
+  "deficitItems": "{deficit,plural, one{{deficit} ንጥል መግዛት ያስፈልጋል} other{{deficit} ንጥሎች መግዛት ያስፈልጋል}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "ጠቅላላ ጋሪ",
+  "restockLabel": "እንደገና አሞላ",
+  "advancedFeatures": "የላቁ ባህሪዎች",
+  "selectAll": "ሁሉንም ምረጥ",
+  "deselectAll": "ሁሉንም አይምረጥ",
+  "monthlyBudgetAppBar": "ወርሃዊ በጀት",
+  "budgetEditTitle": "ወርሃዊ በጀት",
+  "budgetDashboardTitle": "ዳሽቦርድ",
+  "selectListForDashboard": "ዳሽቦርዱን ለማየት ዝርዝር ምረጥ።",
+  "spendingAnalysis": "የወጪ ትንተና",
+  "noItemsToAnalyze": "ለመተንተን በዝርዝሩ ውስጥ ምንም ንጥሎች የሉም።",
+  "markItemsToSeeAnalysis": "ትንተናውን ለማየት ንጥሎችን እንደተገዙ ምልክት አድርግ።",
+  "totalSpending": "ጠቅላላ ወጪ",
+  "spendingByCategory": "እንደ ምድብ ወጪ",
+  "achievements": "ስኬቶች",
+  "exportPdfExcel": "PDF/Excel ላክ",
+  "exportPdf": "እንደ PDF ላክ",
+  "exportExcel": "እንደ Excel ላክ",
+  "organizingAi": "በAI እያደራጀ...",
+  "yesLabel": "አዎ",
+  "noLabel": "አይ",
+  "shareListText": "የእኔ የግብዣ ዝርዝር",
+  "emptyListAddItems": "ዝርዝርህ ባዶ ነው! መጀመሪያ ንጥሎችን ጨምር። ℹ️",
+  "listOrganizedMagic": "ዝርዝሩ በምድቦች በሚያስገርም ሁኔታ ተደራጅቷል! ✨",
+  "shoppingMode": "የግብዣ ሁነታ",
+  "smartOrganization": "ብልህ ድርጅት",
+  "savings": "ቁጠባዎች",
+  "shoppingModeHeader": "የግብዣ ሁነታ",
+  "shareAsText": "ንጥሎችን እንደ ተቀረጸ ጽሁፍ ላክ",
+  "shareRealtime": "ከሌሎች ሰዎች ጋር የቀጥታ ማመሳሰል",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "ፈጣን የምግብ አዘገጃጀት",
+  "quickRecipePrompt": "ከዝርዝሬ ንጥሎች ጋር የምግብ አዘገጃጀቶችን ጠቁም።",
+  "economyTips": "የቁጠባ ምክሮች",
+  "economyTipsPrompt": "በዚህ ግዢ ላይ እንዴት ገንዘብ መቆጠብ እችላለሁ?",
+  "organizeAisles": "በመደርደሪያ አደራጅ",
+  "organizeAislesPrompt": "በገበያ መደርደሪያዎች አደራጅ።",
+  "recipeSuggestion": "የምግብ አዘገጃጀት ምክር",
+  "aiCreditsRemaining": "{remaining} የተረፉ ክሬዲቶች",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "ሁሉንም ወደ ዝርዝር ጨምር",
+  "organizeByAisles": "በመደርደሪያ አደራጅ",
+  "voiceTranscriptionTooltip": "በድምጽ መተየብ (ነፃ)",
+  "aiVoiceCommandTooltip": "AI የድምጽ ትእዛዝ (ፕሪሚየም)",
+  "voiceCommandTitle": "AI የድምጽ ትእዛዝ",
+  "voiceCommandContent": "ዝርዝርህን ለማስተዳደር በተፈጥሮ ተናገር!\n\nምሳሌዎች፦\n• 'ዳቦ፣ አይብ እና ካም ጨምር'\n• 'የልብስ ማጠቢያ ሳሙና አስወግድ'\n• 'ገጽታውን ወደ ሰማያዊ ቀይር'\n\nይህ የLista Plus ፕሪሚየም ልዩ ባህሪ ነው።",
+  "voiceCommandPlanBtn": "ዕቅዶችን ተመልከት",
+  "itemsAddedSuccess": "ንጥሎች በተሳካ ሁኔታ ወደ ዝርዝሩ ተጨምረዋል!",
+  "viewList": "ዝርዝሩን ተመልከት",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "ግብረ መልስ ላክ",
+  "feedbackPrompt": "ምን ማጋራት ትፈልጋለህ?",
+  "feedbackTypeBug": "ሳንካ ሪፖርት አድርግ",
+  "feedbackTypeBugHint": "የሆነ ነገር አይሰራም",
+  "feedbackTypeSuggestion": "አስተያየት",
+  "feedbackTypeSuggestionHint": "መተግበሪያውን ለማሻሻል ሃሳብ",
+  "feedbackTypeTranslation": "የትርጉም ጉዳይ",
+  "feedbackTypeTranslationHint": "የተሳሳተ ወይም ያልተፈጥሮ ትርጉም",
+  "feedbackTypeFeature": "የባህሪ ጥያቄ",
+  "feedbackTypeFeatureHint": "ማየት የምትፈልገው ባህሪ",
+  "feedbackTypeOther": "ሌላ",
+  "feedbackTypeOtherHint": "ሌላ አይነት ግብረ መልስ",
+  "feedbackHint": "ግብረ መልስህን በዝርዝር ግለጽ...",
+  "feedbackSend": "ግብረ መልስ ላክ",
+  "feedbackSending": "በመላክ ላይ...",
+  "feedbackThankYou": "አመሰግናለሁ!",
+  "feedbackThankYouMessage": "ግብረ መልስህ ደርሶናል እና Lista Plusን ለሁሉም ለማሻሻል ይረዳናል።",
+  "feedbackBack": "ተመለስ",
+  "feedbackError": "በመላክ ላይ ስህተት: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "እንደገና ሞክር",
+  "feedbackSettingsTitle": "ግብረ መልስ ላክ",
+  "feedbackSettingsSubtitle": "ሳንካዎችን ሪፖርት አድርግ፣ ማሻሻያዎችን ጠቁም፣ ወይም ትርጉሞችን አስተካክል",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "ንጥረ ነገር ጨምር",
+  "addPhoto": "ፎቶ ጨምር",
+  "allTags": "ሁሉም",
+  "chooseImageSource": "የምስል ምንጭ ምረጥ",
+  "chooseLanguage": "ቋንቋ ምረጥ",
+  "deleteRecipe": "ሰርዝ",
+  "deleteRecipeConfirm": "ይህን የምግብ አዘገጃጀት ልሰርዘው?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\"ን መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።",
+  "dynamicColors": "ተለዋዋጭ ቀለሞች",
+  "dynamicColorsSubtitle": "በልጣፍዎ ላይ የተመሰረቱ ቀለሞችን ይጠቀሙ",
+  "editRecipe": "አስተካክል",
+  "editRecipeTitle": "የምግብ አዘገጃጀት አስተካክል",
+  "enterUrl": "ዩአርኤል (URL) አስገባ",
+  "errorLoadingRecipes": "የምግብ አዘገጃጀቶችን በመጫን ላይ ስህተት ተከስቷል",
+  "filterByTag": "በመለያ አጣራ",
+  "gallery": "ማዕከለ-ስዕላት (Gallery)",
+  "imageUrlPlaceholder": "ወይም የምስል ዩአርኤል እዚህ ለጥፍ",
+  "ingredients": "ንጥረ ነገሮች",
+  "instructions": "መመሪያዎች",
+  "instructionsHint": "በአንድ መስመር አንድ እርምጃ ይተይቡ...",
+  "loadingRecipes": "የምግብ አዘገጃጀትዎን በመጫን ላይ...",
+  "mealPlannerAddMeal": "ምግብ ጨምር",
+  "mealPlannerDateLabel": "ቀን",
+  "mealPlannerDeleteMeal": "ምግብ አስወግድ",
+  "mealPlannerEditMeal": "ምግብ አስተካክል",
+  "mealPlannerError": "የምግብ እቅዱን በመጫን ላይ ስህተት ተከስቷል",
+  "mealPlannerGenerateList": "የግብዣ ዝርዝር አመንጭ",
+  "mealPlannerGenerateListConfirm": "በዚህ ሳምንት ከታቀዱ ምግቦች ውስጥ ያሉትን ሁሉንም ንጥረ ነገሮች ወደ ግብዣ ዝርዝርዎ ልጨምራቸው?",
+  "mealPlannerGenerateListEmpty": "ሚጨመር ንጥረ ነገር የለም። መጀመሪያ የምግብ አዘገጃጀት ያላቸውን ምግቦች ያቅዱ።",
+  "mealPlannerGenerateListNoList": "መጀመሪያ የግብዣ ዝርዝር ይፍጠሩ።",
+  "mealPlannerGenerateListSuccess": "{count} ንጥረ ነገሮች ወደ ዝርዝርዎ ተጨምረዋል!",
+  "mealPlannerLoading": "የምግብ እቅዱን በመጫን ላይ...",
+  "mealPlannerMealDeleted": "ምግብ ተወግዷል",
+  "mealPlannerMealTypeBreakfast": "ቁርስ",
+  "mealPlannerMealTypeDinner": "እራት",
+  "mealPlannerMealTypeLunch": "ምሳ",
+  "mealPlannerMealTypeSnack": "መክሰስ",
+  "mealPlannerNoMeals": "የታቀደ ምግብ የለም",
+  "mealPlannerNoMealsHint": "ምግብ ለመጨመር ቀኑን ይጫኑ",
+  "mealPlannerNoRecipesFound": "ምንም የምግብ አዘገጃጀት አልተገኘም",
+  "mealPlannerNoRecipesHint": "መጀመሪያ በምግብ አዘገጃጀት ትር ውስጥ የምግብ አዘገጃጀት ይፍጠሩ",
+  "mealPlannerNoteLabel": "ማስታወሻ (አማራጭ)",
+  "mealPlannerPrepTime": "{minutes} ደቂቃ",
+  "mealPlannerSave": "ወደ እቅድ ጨምር",
+  "mealPlannerSearchRecipes": "የምግብ አዘገጃጀት ፈልግ...",
+  "mealPlannerSelectRecipe": "የምግብ አዘገጃጀት ምረጥ",
+  "mealPlannerServings": "{count,plural, one{{count} ሰው} other{{count} ሰዎች}}",
+  "mealPlannerServingsLabel": "ተመጋቢዎች",
+  "mealPlannerTitle": "የምግብ እቅድ አውጪ",
+  "mealPlannerViewMonthly": "የወር እይታ",
+  "mealPlannerViewWeekly": "የሳምንት እይታ",
+  "mealPlannerWeekEmpty": "ለዚህ ሳምንት የታቀደ ነገር የለም",
+  "mealPlannerWeekEmptyHint": "ምግብዎን ማቀድ ለመጀመር ማንኛውንም ቀን ይጫኑ!",
+  "mealPlannerWeekProgress": "ከ{total} ምግቦች {count} ታቅደዋል",
+  "myRecipes": "የእኔ የምግብ አዘገጃጀቶች",
+  "newRecipe": "አዲስ የምግብ አዘገጃጀት",
+  "newRecipeTitle": "አዲስ የምግብ አዘገጃጀት",
+  "noRecipesSaved": "ምንም የተቀመጠ የምግብ አዘገጃጀት የለም",
+  "noRecipesSavedHint": "ከታች ያለውን ቁልፍ በመጫን የመጀመሪያውን ብጁ የምግብ አዘገጃጀትዎን ይፍጠሩ።",
+  "openMenu": "ሜኑ ክፈት",
+  "prepTime": "የዝግጅት ጊዜ",
+  "prepTimeMinutes": "የዝግጅት ጊዜ (በደቂቃ)",
+  "recipeCreated": "የምግብ አዘገጃጀት ተፈጥሯል!",
+  "recipeDeleted": "የምግብ አዘገጃጀት ተሰርዟል",
+  "recipeImage": "የምግብ አዘገጃጀት ምስል",
+  "recipeName": "የምግብ አዘገጃጀት ስም",
+  "recipeSaved": "የምግብ አዘገጃጀት ተቀምጧል!",
+  "recipeTags": "የምግብ አዘገጃጀት መለያዎች",
+  "removeImage": "ምስል አስወግድ",
+  "requiredField": "የሚፈለግ",
+  "saveChanges": "ለውጦችን አስቀምጥ",
+  "saveRecipe": "አስቀምጥ",
+  "searchLanguage": "ቋንቋ ፈልግ...",
+  "searchRecipes": "የምግብ አዘገጃጀት ፈልግ...",
+  "shortDescription": "አጭር መግለጫ",
+  "suggestedTags": "የቀረቡ",
+  "tags": "መለያዎች",
+  "viewRecipe": "የምግብ አዘገጃጀቱን ተመልከት"
+}

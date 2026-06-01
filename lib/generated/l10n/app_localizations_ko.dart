@@ -42,6 +42,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get copy => '복사';
 
   @override
+  String get next => '다음';
+
+  @override
   String get retry => '재시도';
 
   @override
@@ -272,10 +275,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get language => '언어';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => '포르투갈어(브라질)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => '영어';
 
   @override
   String get languageSystem => '시스템 기본값';
@@ -287,13 +290,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get searchLanguage => '언어 검색...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => '통화';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => '통화 선택';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => '통화 검색...';
 
   @override
   String get appearance => '테마';
@@ -317,8 +320,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dynamicColorsSubtitle => '배경화면 기반 색상 사용';
 
   @override
-  String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+  String get dynamicColorsEnabledWarning => '테마 색상을 적용하려면 동적 색상을 비활성화하세요.';
 
   @override
   String get finance => '재정';
@@ -558,17 +560,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get generalAssistant => '일반 어시스턴트';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => '새 채팅';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => '채팅 기록 없음';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => '채팅 삭제';
 
   @override
-  String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+  String get deleteSessionConfirm => '정말로 이 채팅을 삭제하시겠습니까? 메시지는 영구적으로 손실됩니다.';
 
   @override
   String get clearHistory => '기록 지우기';
@@ -612,93 +613,98 @@ class AppLocalizationsKo extends AppLocalizations {
   String get continueAsGuest => '게스트로 계속';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plus에 오신 것을 환영합니다';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc => '쇼핑을 정리하고 비용을 절약하는 가장 현명한 방법입니다.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => '경험을 개인화하세요';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc => 'Lista Plus의 모양과 작동 방식을 선택하세요.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => '모든 것을 클라우드에 저장하세요';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc => '모든 기기에서 데이터가 동기화됩니다.';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
+  String get onboardingShareTitle => '사랑하는 사람들과 공유하세요';
 
   @override
-  String get onboardingSkipToApp => 'Skip to app';
+  String get onboardingShareDesc => '가족, 친구와 목록을 실시간으로 동기화하세요';
 
   @override
-  String get onboardingChatPlaceholder => 'Type a message...';
+  String get onboardingPremiumTitle => '모든 기능 잠금 해제';
 
   @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
+  String get onboardingPremiumSubtitle => '쇼핑 목록을 최대한 활용하세요';
 
   @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
+  String get onboardingAnnualBadge => '최고의 가치';
 
   @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingMonthlyLabel => '월간 간행물';
 
   @override
-  String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+  String get onboardingAnnualLabel => '연간';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingViewAllPlans => '모든 플랜 보기';
 
   @override
-  String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+  String get onboardingSubscribeCta => '구독하다';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingCancelAnytime => '언제든지 취소하세요. 헌신이 없습니다.';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingContinueAsGuest => '게스트로 계속';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingRestore => '복원하다';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingRestoreDesc => '이미 구독하고 계십니까? 복원하려면 여기를 탭하세요.';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingExit => '출구';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingPersonalizationTitle => '당신을 알아가자';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingPersonalizationDesc =>
+      '이 정보는 귀하의 제안을 개인화하고 더욱 스마트한 쇼핑을 만드는 데 사용됩니다.';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingPersonalizationFoodLabel => '당신이 가장 좋아하는 음식은 무엇입니까?';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingPersonalizationFoodHint => '예를 들어 피자, 스시, 라자냐...';
 
   @override
-  String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+  String get onboardingPersonalizationCta => '계속하다';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get onboardingPersonalizationSkip => '지금은 건너뛰기';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get onboardingPersonalizationFoodRequired => '계속하려면 좋아하는 음식을 알려주세요.';
+
+  @override
+  String get settingsDefaultScreen => '기본 홈 화면';
+
+  @override
+  String get settingsDefaultScreenSubtitle => '쇼핑 목록 또는 AI 채팅 중 선택';
+
+  @override
+  String get settingsScreenList => '쇼핑 목록';
+
+  @override
+  String get settingsScreenChat => 'AI채팅';
 
   @override
   String loginError(String error) {
@@ -1052,106 +1058,102 @@ class AppLocalizationsKo extends AppLocalizations {
   String get feedbackSettingsSubtitle => '버그 신고, 개선 제안 또는 번역 수정';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI 에너지';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => '대화에서 검색...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => '메시지를 찾을 수 없습니다.';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => '제안된 질문:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => '쇼핑 도우미';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total 중 $purchased 구매함';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => '추정된';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => '항목 보기';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => '목록에 항목이 없습니다';
 
   @override
-  String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+  String get longHistoryWarning => '오랜 역사: 어시스턴트는 더 나은 성능을 위해 최신 메시지에 중점을 둡니다.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => '청취...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => '목록에 직접 추가';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => '전체 응답 잠금 해제';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => '목록 전환';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => '시장 모드';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => '채팅으로 돌아가기';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => '쇼핑 마무리';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI 어시스턴트에 오신 것을 환영합니다';
 
   @override
-  String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+  String get createListToStartAi => '스마트 채팅을 시작하려면 쇼핑 목록을 만드세요.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => '어떻게 도와드릴까요?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => '가격, 레시피, 구성 등에 대해 물어보세요...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total 구매함';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => '빠른 답변:';
 
   @override
-  String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+  String get voiceProFeature => '고급 음성 명령은 Pro입니다. 기본 받아쓰기를 사용 설정하는 중...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => '프로 보기';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => '이런! 채팅을 로드하는 중에 문제가 발생했습니다.';
 
   @override
-  String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+  String get errorLoadingChatSubtitle => '연결을 확인하거나 나중에 다시 시도하세요.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      '이는 네트워크 변동 또는 일시적인 사용 불가로 인해 발생할 수 있습니다. 다시 시도해 주세요.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => '적극적 경청';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => '이 아이템으로 무엇을 하고 싶으신가요?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => '세부정보 보기';
 
   @override
   String get openMenu => '메뉴 열기';
@@ -1393,21 +1395,21 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => '목록에 초대';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => '앱 공유';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Lista Plus를 사용하도록 친구를 초대하세요';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return '저는 Lista Plus를 사용하여 쇼핑을 정리하고 있습니다! 내 링크를 통해 다운로드하면 우리 둘 다 7일간 프리미엄을 무료로 받을 수 있습니다: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Lista Plus Premium을 7일 동안 이용해보세요!';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -1446,6 +1448,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get copy => '복사';
+
+  @override
+  String get next => '다음';
 
   @override
   String get retry => '재시도';
@@ -1678,10 +1683,10 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get language => '언어';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => '포르투갈어(브라질)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => '영어';
 
   @override
   String get languageSystem => '시스템 기본값';
@@ -1691,6 +1696,15 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get searchLanguage => '언어 검색...';
+
+  @override
+  String get currency => '통화';
+
+  @override
+  String get chooseCurrency => '통화 선택';
+
+  @override
+  String get searchCurrency => '통화 검색...';
 
   @override
   String get appearance => '테마';
@@ -1712,6 +1726,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get dynamicColorsSubtitle => '배경화면 기반 색상 사용';
+
+  @override
+  String get dynamicColorsEnabledWarning => '테마 색상을 적용하려면 동적 색상을 비활성화하세요.';
 
   @override
   String get finance => '재정';
@@ -1951,6 +1968,18 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get generalAssistant => '일반 어시스턴트';
 
   @override
+  String get newChat => '새 채팅';
+
+  @override
+  String get noHistory => '채팅 기록 없음';
+
+  @override
+  String get deleteSession => '채팅 삭제';
+
+  @override
+  String get deleteSessionConfirm => '정말로 이 채팅을 삭제하시겠습니까? 메시지는 영구적으로 손실됩니다.';
+
+  @override
   String get clearHistory => '기록 지우기';
 
   @override
@@ -1990,6 +2019,100 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get continueAsGuest => '게스트로 계속';
+
+  @override
+  String get onboardingWelcomeTitle => 'Lista Plus에 오신 것을 환영합니다';
+
+  @override
+  String get onboardingWelcomeDesc => '쇼핑을 정리하고 비용을 절약하는 가장 현명한 방법입니다.';
+
+  @override
+  String get onboardingSetupTitle => '경험을 개인화하세요';
+
+  @override
+  String get onboardingSetupDesc => 'Lista Plus의 모양과 작동 방식을 선택하세요.';
+
+  @override
+  String get onboardingLoginTitle => '모든 것을 클라우드에 저장하세요';
+
+  @override
+  String get onboardingLoginDesc => '모든 기기에서 데이터가 동기화됩니다.';
+
+  @override
+  String get onboardingShareTitle => '사랑하는 사람들과 공유하세요';
+
+  @override
+  String get onboardingShareDesc => '가족, 친구와 목록을 실시간으로 동기화하세요';
+
+  @override
+  String get onboardingPremiumTitle => '모든 기능 잠금 해제';
+
+  @override
+  String get onboardingPremiumSubtitle => '쇼핑 목록을 최대한 활용하세요';
+
+  @override
+  String get onboardingAnnualBadge => '최고의 가치';
+
+  @override
+  String get onboardingMonthlyLabel => '월간 간행물';
+
+  @override
+  String get onboardingAnnualLabel => '연간';
+
+  @override
+  String get onboardingViewAllPlans => '모든 플랜 보기';
+
+  @override
+  String get onboardingSubscribeCta => '구독하다';
+
+  @override
+  String get onboardingCancelAnytime => '언제든지 취소하세요. 헌신이 없습니다.';
+
+  @override
+  String get onboardingContinueAsGuest => '게스트로 계속';
+
+  @override
+  String get onboardingRestore => '복원하다';
+
+  @override
+  String get onboardingRestoreDesc => '이미 구독하고 계십니까? 복원하려면 여기를 탭하세요.';
+
+  @override
+  String get onboardingExit => '출구';
+
+  @override
+  String get onboardingPersonalizationTitle => '당신을 알아가자';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      '이 정보는 귀하의 제안을 개인화하고 더욱 스마트한 쇼핑을 만드는 데 사용됩니다.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => '당신이 가장 좋아하는 음식은 무엇입니까?';
+
+  @override
+  String get onboardingPersonalizationFoodHint => '예를 들어 피자, 스시, 라자냐...';
+
+  @override
+  String get onboardingPersonalizationCta => '계속하다';
+
+  @override
+  String get onboardingPersonalizationSkip => '지금은 건너뛰기';
+
+  @override
+  String get onboardingPersonalizationFoodRequired => '계속하려면 좋아하는 음식을 알려주세요.';
+
+  @override
+  String get settingsDefaultScreen => '기본 홈 화면';
+
+  @override
+  String get settingsDefaultScreenSubtitle => '쇼핑 목록 또는 AI 채팅 중 선택';
+
+  @override
+  String get settingsScreenList => '쇼핑 목록';
+
+  @override
+  String get settingsScreenChat => 'AI채팅';
 
   @override
   String loginError(String error) {
@@ -2343,106 +2466,102 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get feedbackSettingsSubtitle => '버그 신고, 개선 제안 또는 번역 수정';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI 에너지';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => '대화에서 검색...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => '메시지를 찾을 수 없습니다.';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => '제안된 질문:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => '쇼핑 도우미';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total 중 $purchased 구매함';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => '추정된';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => '항목 보기';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => '목록에 항목이 없습니다';
 
   @override
-  String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+  String get longHistoryWarning => '오랜 역사: 어시스턴트는 더 나은 성능을 위해 최신 메시지에 중점을 둡니다.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => '청취...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => '목록에 직접 추가';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => '전체 응답 잠금 해제';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => '목록 전환';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => '시장 모드';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => '채팅으로 돌아가기';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => '쇼핑 마무리';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI 어시스턴트에 오신 것을 환영합니다';
 
   @override
-  String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+  String get createListToStartAi => '스마트 채팅을 시작하려면 쇼핑 목록을 만드세요.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => '어떻게 도와드릴까요?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => '가격, 레시피, 구성 등에 대해 물어보세요...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total 구매함';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => '빠른 답변:';
 
   @override
-  String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+  String get voiceProFeature => '고급 음성 명령은 Pro입니다. 기본 받아쓰기를 사용 설정하는 중...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => '프로 보기';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => '이런! 채팅을 로드하는 중에 문제가 발생했습니다.';
 
   @override
-  String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+  String get errorLoadingChatSubtitle => '연결을 확인하거나 나중에 다시 시도하세요.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      '이는 네트워크 변동 또는 일시적인 사용 불가로 인해 발생할 수 있습니다. 다시 시도해 주세요.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => '적극적 경청';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => '이 아이템으로 무엇을 하고 싶으신가요?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => '세부정보 보기';
 
   @override
   String get openMenu => '메뉴 열기';
@@ -2682,4 +2801,21 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes분';
   }
+
+  @override
+  String get inviteToList => '목록에 초대';
+
+  @override
+  String get shareApp => '앱 공유';
+
+  @override
+  String get shareAppDescription => 'Lista Plus를 사용하도록 친구를 초대하세요';
+
+  @override
+  String shareReferralText(Object url) {
+    return '저는 Lista Plus를 사용하여 쇼핑을 정리하고 있습니다! 내 링크를 통해 다운로드하면 우리 둘 다 7일간 프리미엄을 무료로 받을 수 있습니다: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Lista Plus Premium을 7일 동안 이용해보세요!';
 }

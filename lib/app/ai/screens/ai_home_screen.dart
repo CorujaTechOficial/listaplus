@@ -67,14 +67,18 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
       return;
     }
 
-    // Marca como visto imediatamente para evitar disparos duplos
+    final listId = await ref.read(currentListIdProvider.future);
+    if (listId == null) {
+      return;
+    }
+
+    // Marca como visto após obter um listId válido para evitar salvar com null
     await prefs.setBool('has_seen_ai_welcome', true);
 
     if (!mounted) {
       return;
     }
 
-    final listId = ref.read(currentListIdProvider).value;
     final sessionId = await ref.read(chatSessionsProvider(listId).notifier).startNewSession();
 
     final welcomeMsg = ChatMessage(

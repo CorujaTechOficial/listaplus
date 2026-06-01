@@ -42,6 +42,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get copy => 'Salin';
 
   @override
+  String get next => 'Seterusnya';
+
+  @override
   String get retry => 'Cuba semula';
 
   @override
@@ -289,13 +292,13 @@ class AppLocalizationsMs extends AppLocalizations {
   String get searchLanguage => 'Cari bahasa...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'mata wang';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Pilih Mata Wang';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Cari mata wang...';
 
   @override
   String get appearance => 'Penampilan';
@@ -321,7 +324,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Lumpuhkan warna dinamik untuk warna tema berkuat kuasa';
 
   @override
   String get finance => 'Kewangan';
@@ -563,17 +566,17 @@ class AppLocalizationsMs extends AppLocalizations {
   String get generalAssistant => 'Pembantu Umum';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Sembang Baharu';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Tiada sejarah sembang';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Padam Sembang';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Adakah anda pasti mahu memadamkan sembang ini? Mesej akan hilang secara kekal.';
 
   @override
   String get clearHistory => 'Kosongkan Sejarah';
@@ -619,93 +622,109 @@ class AppLocalizationsMs extends AppLocalizations {
   String get continueAsGuest => 'Teruskan sebagai tetamu';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Selamat datang ke Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Cara paling bijak untuk mengatur belanja anda dan menjimatkan wang.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Peribadikan pengalaman anda';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Pilih cara anda mahu Lista Plus kelihatan dan berfungsi untuk anda.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Simpan semuanya ke awan';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Data anda disegerakkan merentas semua peranti anda';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Kongsi dengan orang yang anda sayangi';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Segerakkan senarai dengan keluarga dan rakan dalam masa nyata';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Buka kunci semua ciri';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Manfaatkan sepenuhnya senarai beli-belah anda';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Nilai Terbaik';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Bulanan';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'tahunan';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Lihat semua rancangan';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Langgan';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Batalkan bila-bila masa. Tiada komitmen.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Teruskan sebagai tetamu';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Pulihkan';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Sudah mempunyai langganan? Ketik di sini untuk memulihkannya.';
+
+  @override
+  String get onboardingExit => 'Keluar';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Jom kenali awak';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Kami akan menggunakan ini untuk memperibadikan cadangan anda dan menjadikan beli-belah lebih bijak.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Apakah makanan kegemaran anda?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'cth. Pizza, Sushi, Lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'teruskan';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Langkau buat masa ini';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Beritahu kami makanan kegemaran anda untuk meneruskan';
+
+  @override
+  String get settingsDefaultScreen => 'Skrin utama lalai';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Pilih antara senarai beli-belah atau sembang AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Senarai Membeli-belah';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'Sembang AI';
 
   @override
   String loginError(String error) {
@@ -1067,106 +1086,108 @@ class AppLocalizationsMs extends AppLocalizations {
       'Laporkan pepijat, cadangkan penambahbaikan, atau baiki terjemahan';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Tenaga AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Cari dalam perbualan...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Tiada mesej ditemui';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Soalan yang dicadangkan:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Pembantu beli-belah';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased daripada $total dibeli';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Dianggarkan';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Lihat item';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Tiada item dalam senarai';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Sejarah panjang: pembantu memfokuskan pada mesej terkini untuk prestasi yang lebih baik.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Mendengar...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Tambahkan terus ke senarai';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Buka kunci Respons Penuh';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Tukar senarai';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Mod Pasaran';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Kembali ke Sembang';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Selesai Membeli-belah';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Selamat datang ke AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Buat senarai beli-belah untuk mula menggunakan sembang pintar.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Bagaimana saya boleh membantu?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Tanya tentang harga, resipi, organisasi...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total dibeli';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Balasan pantas:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Perintah suara lanjutan adalah Pro. Mendayakan imlak asas...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Lihat Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Aduh! Kesilapan telah berlaku semasa memuatkan sembang.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Semak sambungan anda atau cuba lagi kemudian.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Ini mungkin berlaku disebabkan oleh ayunan rangkaian atau ketiadaan sementara. Sila cuba lagi.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Mendengar Aktif';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'Apakah yang anda ingin lakukan dengan item ini?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Lihat Butiran';
 
   @override
   String get openMenu => 'Buka menu';
@@ -1178,7 +1199,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get recipeCreated => 'Resipi dicipta!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Sunting';
 
   @override
   String get deleteRecipe => 'Padam';
@@ -1411,21 +1432,21 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Jemput ke senarai';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Kongsi apl';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Ajak kawan-kawan guna Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Saya menggunakan Lista Plus untuk mengatur pembelian saya! Muat turun melalui pautan saya dan kami berdua mendapat 7 hari Premium percuma: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Dapatkan 7 hari Lista Plus Premium!';
 }
 
 /// The translations for Malay, as used in Malaysia (`ms_MY`).
@@ -1464,6 +1485,9 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get copy => 'Salin';
+
+  @override
+  String get next => 'Seterusnya';
 
   @override
   String get retry => 'Cuba semula';
@@ -1707,7 +1731,7 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get languagePortuguese => 'Português (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Inggeris';
 
   @override
   String get languageSystem => 'Sistem lalai';
@@ -1717,6 +1741,15 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get searchLanguage => 'Cari bahasa...';
+
+  @override
+  String get currency => 'mata wang';
+
+  @override
+  String get chooseCurrency => 'Pilih Mata Wang';
+
+  @override
+  String get searchCurrency => 'Cari mata wang...';
 
   @override
   String get appearance => 'Penampilan';
@@ -1739,6 +1772,10 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   @override
   String get dynamicColorsSubtitle =>
       'Gunakan warna berdasarkan kertas dinding anda';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Lumpuhkan warna dinamik untuk warna tema berkuat kuasa';
 
   @override
   String get finance => 'Kewangan';
@@ -1980,6 +2017,19 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get generalAssistant => 'Pembantu Am';
 
   @override
+  String get newChat => 'Sembang Baharu';
+
+  @override
+  String get noHistory => 'Tiada sejarah sembang';
+
+  @override
+  String get deleteSession => 'Padam Sembang';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Adakah anda pasti mahu memadamkan sembang ini? Mesej akan hilang secara kekal.';
+
+  @override
   String get clearHistory => 'Kosongkan Sejarah';
 
   @override
@@ -2022,6 +2072,111 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get continueAsGuest => 'Teruskan sebagai tetamu';
+
+  @override
+  String get onboardingWelcomeTitle => 'Selamat datang ke Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Cara paling bijak untuk mengatur belanja anda dan menjimatkan wang.';
+
+  @override
+  String get onboardingSetupTitle => 'Peribadikan pengalaman anda';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Pilih cara anda mahu Lista Plus kelihatan dan berfungsi untuk anda.';
+
+  @override
+  String get onboardingLoginTitle => 'Simpan semuanya ke awan';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Data anda disegerakkan merentas semua peranti anda';
+
+  @override
+  String get onboardingShareTitle => 'Kongsi dengan orang yang anda sayangi';
+
+  @override
+  String get onboardingShareDesc =>
+      'Segerakkan senarai dengan keluarga dan rakan dalam masa nyata';
+
+  @override
+  String get onboardingPremiumTitle => 'Buka kunci semua ciri';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Manfaatkan sepenuhnya senarai beli-belah anda';
+
+  @override
+  String get onboardingAnnualBadge => 'Nilai Terbaik';
+
+  @override
+  String get onboardingMonthlyLabel => 'Bulanan';
+
+  @override
+  String get onboardingAnnualLabel => 'tahunan';
+
+  @override
+  String get onboardingViewAllPlans => 'Lihat semua rancangan';
+
+  @override
+  String get onboardingSubscribeCta => 'Langgan';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Batalkan bila-bila masa. Tiada komitmen.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Teruskan sebagai tetamu';
+
+  @override
+  String get onboardingRestore => 'Pulihkan';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Sudah mempunyai langganan? Ketik di sini untuk memulihkannya.';
+
+  @override
+  String get onboardingExit => 'Keluar';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Jom kenali awak';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Kami akan menggunakan ini untuk memperibadikan cadangan anda dan menjadikan beli-belah lebih bijak.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Apakah makanan kegemaran anda?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'cth. Pizza, Sushi, Lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'teruskan';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Langkau buat masa ini';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Beritahu kami makanan kegemaran anda untuk meneruskan';
+
+  @override
+  String get settingsDefaultScreen => 'Skrin utama lalai';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Pilih antara senarai beli-belah atau sembang AI';
+
+  @override
+  String get settingsScreenList => 'Senarai Membeli-belah';
+
+  @override
+  String get settingsScreenChat => 'Sembang AI';
 
   @override
   String loginError(String error) {
@@ -2389,106 +2544,108 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
       'Laporkan pepijat, cadangkan penambahbaikan, atau baiki terjemahan';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Tenaga AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Cari dalam perbualan...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Tiada mesej ditemui';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Soalan yang dicadangkan:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Pembantu beli-belah';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased daripada $total dibeli';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Dianggarkan';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Lihat item';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Tiada item dalam senarai';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Sejarah panjang: pembantu memfokuskan pada mesej terkini untuk prestasi yang lebih baik.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Mendengar...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Tambahkan terus ke senarai';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Buka kunci Respons Penuh';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Tukar senarai';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Mod Pasaran';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Kembali ke Sembang';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Selesai Membeli-belah';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Selamat datang ke AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Buat senarai beli-belah untuk mula menggunakan sembang pintar.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Bagaimana saya boleh membantu?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Tanya tentang harga, resipi, organisasi...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total dibeli';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Balasan pantas:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Perintah suara lanjutan adalah Pro. Mendayakan imlak asas...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Lihat Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Aduh! Kesilapan telah berlaku semasa memuatkan sembang.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Semak sambungan anda atau cuba lagi kemudian.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Ini mungkin berlaku disebabkan oleh ayunan rangkaian atau ketiadaan sementara. Sila cuba lagi.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Mendengar Aktif';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'Apakah yang anda ingin lakukan dengan item ini?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Lihat Butiran';
 
   @override
   String get openMenu => 'Buka menu';
@@ -2500,7 +2657,7 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get recipeCreated => 'Resipi dicipta!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Sunting';
 
   @override
   String get deleteRecipe => 'Padam';
@@ -2731,4 +2888,21 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Jemput ke senarai';
+
+  @override
+  String get shareApp => 'Kongsi apl';
+
+  @override
+  String get shareAppDescription => 'Ajak kawan-kawan guna Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Saya menggunakan Lista Plus untuk mengatur pembelian saya! Muat turun melalui pautan saya dan kami berdua mendapat 7 hari Premium percuma: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Dapatkan 7 hari Lista Plus Premium!';
 }

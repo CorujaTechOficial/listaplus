@@ -1,99 +1,47 @@
 {
   "@@locale": "et",
-  "appTitle": "Ostunimekiri",
+  "@_Feedback": "description: Feedback Screen",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Nimekirjad",
-  "pantry": "Sahver",
-  "cancel": "Tühista",
-  "save": "Salvesta",
-  "create": "Loo",
-  "add": "Lisa",
-  "remove": "Eemalda",
-  "delete": "Kustuta",
-  "edit": "Muuda",
-  "copy": "Kopeeri",
-  "retry": "Proovi uuesti",
-  "regenerate": "Loo uuesti",
-  "copiedToClipboard": "Lõikelauale kopeeritud",
-  "confirm": "Kinnita",
-  "close": "Sulge",
-  "import": "Impordi",
-  "rename": "Nimeta ümber",
-  "upgrade": "Täienda",
-  "clear": "Tühjenda",
-  "error": "Viga: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Viga: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Viga ostu töötlemisel. Proovi uuesti.",
-  "restoreError": "Viga ostude taastamisel. Proovi uuesti.",
-  "loading": "Laadimine...",
-  "fieldRequired": "Kohustuslik väli",
-  "addedFeedback": "Lisatud!",
-  "selectedItems": "Valitud {count}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Hinnanguline",
-  "alreadyPurchased": "Juba ostetud",
-  "clearList": "Tühjenda nimekiri",
-  "clearPurchased": "Eemalda ostetud",
-  "share": "Jaga",
-  "shareViaCode": "Jaga koodiga",
-  "importViaCode": "Impordi koodiga",
-  "listAssistant": "Nimekirja abiline",
-  "globalAssistant": "Üldine abiline",
-  "becomePremium": "Hangi Premium",
-  "manageSubscription": "Halda tellimust",
-  "completePurchase": "Lõpeta ost",
-  "confirmClearList": "Eemaldada kõik üksused?",
-  "shareListTitle": "Jaga nimekirja",
-  "shareThisCode": "Jaga seda koodi:",
-  "validForLimitedTime": "Kehtib piiratud aja",
-  "importListTitle": "Impordi nimekiri",
-  "enterCodeHint": "Sisesta kood",
-  "confirmArchiveTitle": "Lõpeta ost",
-  "confirmArchiveContent": "Lõpetada see ost ja arhiveerida nimekiri?",
-  "complete": "Lõpeta",
-  "listArchived": "Nimekiri edukalt arhiveeritud!",
-  "listAdded": "{listName} lisatud!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Osta",
-  "unmark": "Eemalda märge",
-  "confirmDeleteItems": "Eemalda {count} üksust?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Kinnita",
-  "confirmContent": "Eemalda {count} üksust?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -101,12 +49,68 @@
       }
     }
   },
-  "archiveList": "Arhiveeri nimekiri",
-  "pantryAppBar": "Sahver",
-  "generateShoppingList": "Loo ostunimekiri",
-  "pantryEmpty": "Tühi sahver",
-  "pantryEmptySubtitle": "Lisa tooted, mida soovid kodus hoida",
-  "itemsNeedPurchase": "{deficit} üksus(t) vajab ostmist",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -114,10 +118,26 @@
       }
     }
   },
-  "noItemsToBuy": "Pole vaja osta ühtegi üksust",
-  "newPantryList": "Sahvrioste",
-  "newListTitle": "Uus ostunimekiri",
-  "itemsWillBeAdded": "Lisatakse {count} üksus(t)",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -125,8 +145,13 @@
       }
     }
   },
-  "listNameLabel": "Nimekirja nimi",
-  "listCreated": "Nimekiri \"{name}\" loodud {count} üksusega",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -137,20 +162,125 @@
       }
     }
   },
-  "noTracking": "Jälgimiseta",
-  "markAsPurchased": "Märgi ostetuks",
-  "editPantryItem": "Muuda {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Ideaalne kogus",
-  "currentQuantity": "Praegune kogus",
-  "consumed": "Tarbitud",
-  "restocked": "{name} täiendatud {quantity} {unit}-ni",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -164,56 +294,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Eemaldada \"{name}\" sahvrist?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Muuda {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "settingsAppBar": "Seaded",
-  "language": "Keel",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Süsteemi vaikeväärtus",
-  "appearance": "Välimus",
-  "light": "Heled",
-  "system": "Süsteem",
-  "dark": "Tume",
-  "themeColor": "Teema värv",
-  "finance": "Rahandus",
-  "monthlyBudgetNav": "Kuueelarve",
-  "budgetSubtitle": "Jälgi oma igakuiseid kulutusi",
-  "data": "Andmed",
-  "backupNav": "Varukoopia",
-  "backupSubtitle": "Ekspordi või impordi oma andmed",
-  "about": "Teave",
-  "version": "Versioon",
-  "privacy": "Privaatsus",
-  "termsOfUse": "Kasutustingimused",
-  "backupTitle": "Varukoopia",
-  "backupPremiumDescription": "Varundamine ja eksport on Premium funktsioon",
-  "exportData": "Ekspordi andmed",
-  "exportDataSubtitle": "Salvesta kõik nimekirjad JSON-ina",
-  "importData": "Impordi andmed",
-  "importDataSubtitle": "Taasta nimekirjad JSON-failist",
-  "importJsonTitle": "Impordi JSON",
-  "importJsonHint": "Kleebi varukoopia JSON siia...",
-  "backupExported": "Varukoopia eksporditud!",
-  "budgetAppBar": "Kuueelarve",
-  "budgetPremiumLocked": "Globaalne kuueelarve on Premium",
-  "budgetUpgradePrompt": "Täienda, et avada",
-  "noBudgetDefined": "Eelarvet pole määratud",
-  "totalEstimated": "Hinnanguline kogusumma: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -221,339 +335,218 @@
       }
     }
   },
-  "setBudgetButton": "Määra eelarve",
-  "budgetLists": "Nimekirjad",
-  "budgetValueLabel": "Summa",
-  "setBudgetTitle": "Kuueelarve",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "filterAll": "Kõik",
-  "filterPending": "Ootel",
-  "filterPurchased": "Ostetud",
-  "sortName": "Nimi",
-  "sortCategory": "Kategooria",
-  "sortDate": "Kuupäev",
-  "sortManual": "Käsitsi",
+  "about": "Teave",
+  "achievements": "Saavutused",
+  "activeListening": "Aktiivne kuulamine",
+  "add": "Lisa",
+  "addAllToList": "Lisa kõik nimekirja",
+  "addDirectToList": "Lisa otse loendisse",
+  "addIngredient": "Lisa koostisosa",
   "addItem": "Lisa üksus",
-  "itemName": "Üksuse nimi",
-  "quantityShort": "Kogus",
-  "unit": "Ühik",
-  "category": "Kategooria",
-  "estimatedPrice": "Hinnanguline hind",
   "addItemPrice": "Hinnanguline hind",
-  "editItem": "Muuda üksust",
-  "quantityFull": "Kogus",
-  "editItemPrice": "Hinnanguline hind",
+  "addPhoto": "Lisa foto",
   "addToPantry": "Lisa sahvrisse",
   "addToPantryPrompt": "Kas lisada \"{name}\" sinu sahvrisse?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Jah",
-  "productName": "Toote nimi",
-  "idealQty": "Ideaalne kogus",
-  "currentQty": "Praegune kogus",
-  "trackStock": "Jälgi varu",
-  "trackStockActive": "Kuvatakse ostusoovitustes",
-  "trackStockInactive": "Ei genereeri ostusoovitust",
-  "createListDialog": "Loo nimekiri",
-  "renameListDialog": "Nimeta nimekiri ümber",
-  "listHistory": "Nimekirjade ajalugu",
-  "myLists": "Minu nimekirjad",
-  "viewActive": "Vaata aktiivseid",
-  "viewHistory": "Vaata ajalugu",
-  "noArchivedLists": "Arhiveeritud nimekirju pole",
-  "noActiveLists": "Aktiivseid nimekirju pole",
-  "completedOn": "Lõpetatud {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Jagatud",
-  "restore": "Taasta",
-  "removeSharedTooltip": "Eemalda",
-  "deleteListTitle": "Kustuta nimekiri",
-  "deleteListContent": "Oled sa kindel, et soovid kustutada \"{name}\"? Kõik üksused eemaldatakse.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Eemalda jagatud nimekiri",
-  "removeSharedListContent": "Eemaldada \"{name}\" sinu nimekirjadest? Algset nimekirja see ei mõjuta.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Loo uus nimekiri",
+  "addedFeedback": "Lisatud!",
+  "advancedFeatures": "Täiustatud funktsioonid",
   "aiAssistant": "AI abiline",
   "aiAssistantDescription": "Hangi nutikaid soovitusi, retsepte ja isikupärastatud näpunäiteid meie AI abilisega.",
-  "generalAssistant": "Üldine abiline",
+  "aiCreditsRemaining": "Jäänud {remaining} krediiti",
+  "aiEnergy": "AI energia",
+  "aiError": "Vabandust, sinu päringu töötlemisel tekkis viga. Kontrolli ühendust või proovi hiljem uuesti.",
+  "aiVoiceCommandTooltip": "AI häälejuhtimine (Premium)",
+  "allTags": "Kõik",
+  "alreadyPurchased": "Juba ostetud",
+  "appTitle": "Ostunimekiri",
+  "appearance": "Välimus",
+  "archiveList": "Arhiveeri nimekiri",
+  "backToChat": "Tagasi vestlusesse",
+  "backupExported": "Varukoopia eksporditud!",
+  "backupNav": "Varukoopia",
+  "backupPremiumDescription": "Varundamine ja eksport on Premium funktsioon",
+  "backupSubtitle": "Ekspordi või impordi oma andmed",
+  "backupTitle": "Varukoopia",
+  "becomePremium": "Hangi Premium",
+  "budgetAmountLabel": "Eelarve summa",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Kuueelarve",
+  "budgetDashboardTitle": "Töölaud",
+  "budgetEditTitle": "Kuueelarve",
+  "budgetLists": "Nimekirjad",
+  "budgetPremiumLocked": "Globaalne kuueelarve on Premium",
+  "budgetSubtitle": "Jälgi oma igakuiseid kulutusi",
+  "budgetUpgradePrompt": "Täienda, et avada",
+  "budgetValueLabel": "Summa",
+  "buy": "Osta",
+  "cancel": "Tühista",
+  "cartTotal": "Ostukorvi summa",
+  "catBakery": "Pagaritooted",
+  "catBeverages": "Joogid",
+  "catCleaning": "Puhastus",
+  "catFruits": "Puuviljad",
+  "catOthers": "Muud",
+  "category": "Kategooria",
+  "chatError": "Viga vestluse laadimisel: {error}",
+  "chatHint": "Kirjuta oma sõnum...",
+  "chatSubtitle": "Küsi üksuste soovitusi, retsepte või säästunõuandeid.",
+  "chatSubtitleShort": "Küsi hindade, retseptide, korralduse kohta...",
+  "chooseCurrency": "Valige Valuuta",
+  "chooseImageSource": "Vali pildi allikas",
+  "chooseLanguage": "Vali keel",
+  "clear": "Tühjenda",
   "clearHistory": "Tühjenda ajalugu",
   "clearHistoryConfirm": "Kas kustutada kõik sõnumid selles sessioonis?",
-  "chatHint": "Kirjuta oma sõnum...",
-  "chatError": "Viga vestluse laadimisel: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Kuidas saan aidata sinu nimekirjaga?",
-  "generalHelp": "Kuidas saan täna aidata sinu ostlemisel?",
-  "chatSubtitle": "Küsi üksuste soovitusi, retsepte või säästunõuandeid.",
-  "aiError": "Vabandust, sinu päringu töötlemisel tekkis viga. Kontrolli ühendust või proovi hiljem uuesti.",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Logi sisse, et avada\nPremium funktsioonid",
-  "signInGoogle": "Logi sisse Google'iga",
-  "signInApple": "Logi sisse Apple'iga",
+  "clearList": "Tühjenda nimekiri",
+  "clearPurchased": "Eemalda ostetud",
+  "close": "Sulge",
+  "complete": "Lõpeta",
+  "completePurchase": "Lõpeta ost",
+  "completedOn": "Lõpetatud {date}",
+  "confirm": "Kinnita",
+  "confirmArchiveContent": "Lõpetada see ost ja arhiveerida nimekiri?",
+  "confirmArchiveTitle": "Lõpeta ost",
+  "confirmClearList": "Eemaldada kõik üksused?",
+  "confirmContent": "Eemalda {count} üksust?",
+  "confirmDeleteItems": "Eemalda {count} üksust?",
+  "confirmDeleteTitle": "Kinnita",
+  "confirmRemovePantry": "Eemaldada \"{name}\" sahvrist?",
+  "consumed": "Tarbitud",
   "continueAsGuest": "Jätka külalisena",
-  "loginError": "Sisselogimise viga: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallTitle": "Lista Plus Premium",
-  "premiumUpgrade": "Täienda, et avada",
-  "itemRemoved": "Üksus eemaldatud",
-  "undo": "Võta tagasi",
-  "emptyListTitle": "Sinu nimekiri on tühi",
-  "emptyListSubtitle": "Alustamiseks lisa üksusi",
-  "noListFoundTitle": "Nimekirju ei leitud",
-  "noListFoundSubtitle": "Alustamiseks loe oma esimene nimekiri",
+  "copiedToClipboard": "Lõikelauale kopeeritud",
+  "copy": "Kopeeri",
+  "create": "Loo",
   "createFirstList": "Loo esimene nimekiri",
-  "listBudgetTitle": "Nimekirja eelarve",
-  "budgetAmountLabel": "Eelarve summa",
-  "removeBudget": "Eemalda",
-  "prefUnlimitedLists": "Piiramatud nimekirjad",
-  "prefSharing": "Jaga nimekirju",
-  "prefFullHistory": "Täielik ajalugu",
-  "prefExportData": "Ekspordi andmed",
-  "prefCustomThemes": "Kohandatud teemad",
-  "prefMonthlyBudget": "Globaalne kuueelarve",
-  "prefAIAssistant": "Isiklik AI abiline",
-  "prefUnlimitedPantry": "Piiramatu sahver",
-  "prefInteractiveArtifacts": "Interaktiivsed AI artefaktid",
-  "themeGreen": "Roheline",
-  "themeBlue": "Sinine",
-  "themePurple": "Lilla",
-  "themeRed": "Punane",
-  "themeOrange": "Oranž",
-  "themePink": "Roosa",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Merevaik",
-  "themeTeal": "Sinakasroheline",
-  "themeBrown": "Pruun",
-  "catFruits": "Puuviljad",
-  "catCleaning": "Puhastus",
-  "catBeverages": "Joogid",
-  "catBakery": "Pagaritooted",
-  "catOthers": "Muud",
-  "unitPack": "pakk",
-  "shareSubject": "Ostunimekiri",
-  "monthlyBudgetTitle": "Kuueelarve",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Kustuta nimekiri",
-  "pantryItemRemoved": "Üksus eemaldatud",
+  "createListDialog": "Loo nimekiri",
+  "createListToStartAi": "Nutivestluse kasutamise alustamiseks koostage ostunimekiri.",
+  "createNewList": "Loo uus nimekiri",
+  "currency": "Valuuta",
+  "currentQty": "Praegune kogus",
+  "currentQuantity": "Praegune kogus",
+  "dark": "Tume",
+  "data": "Andmed",
   "deficitItems": "{deficit} üksus(t) vajab ostmist",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Ostukorvi summa",
-  "restockLabel": "Täienda",
-  "advancedFeatures": "Täiustatud funktsioonid",
-  "selectAll": "Vali kõik",
+  "delete": "Kustuta",
+  "deleteListConfirm": "Kustuta nimekiri",
+  "deleteListContent": "Oled sa kindel, et soovid kustutada \"{name}\"? Kõik üksused eemaldatakse.",
+  "deleteListTitle": "Kustuta nimekiri",
+  "deleteRecipe": "Kustuta",
+  "deleteRecipeConfirm": "Kustutada see retsept?",
+  "deleteRecipeConfirmMsg": "Kas olete kindel, et soovite kustutada retsepti \"{recipeName}\"? Seda toimingut ei saa tühistada.",
+  "deleteSession": "Kustuta vestlus",
+  "deleteSessionConfirm": "Kas olete kindel, et soovite selle vestluse kustutada? Sõnumid lähevad jäädavalt kaotsi.",
   "deselectAll": "Tühista kõik",
-  "monthlyBudgetAppBar": "Kuueelarve",
-  "budgetEditTitle": "Kuueelarve",
-  "budgetDashboardTitle": "Töölaud",
-  "selectListForDashboard": "Töölaua vaatamiseks vali nimekiri.",
-  "spendingAnalysis": "Kulude analüüs",
-  "noItemsToAnalyze": "Nimekirjas pole analüüsitavaid üksusi.",
-  "markItemsToSeeAnalysis": "Märgi üksused ostetuks, et näha analüüsi.",
-  "totalSpending": "Kulutatud kokku",
-  "spendingByCategory": "Kulud kategooriate kaupa",
-  "achievements": "Saavutused",
-  "exportPdfExcel": "Ekspordi PDF/Excel",
-  "exportPdf": "Ekspordi PDF-ina",
-  "exportExcel": "Ekspordi Excel-ina",
-  "organizingAi": "KORRALDAN AI-ga...",
-  "yesLabel": "Jah",
-  "noLabel": "Ei",
-  "shareListText": "Minu ostunimekiri",
-  "emptyListAddItems": "Sinu nimekiri on tühi! Lisa esmalt üksusi. ℹ️",
-  "listOrganizedMagic": "Nimekiri maagiliselt kategooriate kaupa korrastatud! ✨",
-  "shoppingMode": "Osturežiim",
-  "smartOrganization": "Nutikas korraldus",
-  "savings": "Sääst",
-  "shoppingModeHeader": "OSTUREŽIIM",
-  "shareAsText": "Saada üksused vormindatud tekstina",
-  "shareRealtime": "Reaalajas sünkroonimine teiste inimestega",
-  "quickRecipe": "Kiire retsept",
-  "quickRecipePrompt": "Soovita retsepte minu nimekirja üksustega.",
+  "dynamicColors": "Dünaamilised värvid",
+  "dynamicColorsEnabledWarning": "Keelake dünaamilised värvid, et teema värv jõustuks",
+  "dynamicColorsSubtitle": "Kasuta taustapildil põhinevaid värve",
   "economyTips": "Säästunõuanded",
   "economyTipsPrompt": "Kuidas saan selle ostu pealt raha kokku hoida?",
-  "organizeAisles": "Korralda vahekäikude kaupa",
-  "organizeAislesPrompt": "Korralda poe vahekäikude kaupa.",
-  "recipeSuggestion": "Retsepti soovitus",
-  "aiCreditsRemaining": "Jäänud {remaining} krediiti",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Lisa kõik nimekirja",
-  "organizeByAisles": "Korralda vahekäikude kaupa",
-  "voiceTranscriptionTooltip": "Häältrükkimine (Tasuta)",
-  "aiVoiceCommandTooltip": "AI häälejuhtimine (Premium)",
-  "voiceCommandTitle": "AI häälejuhtimine",
-  "voiceCommandContent": "Räägi loomulikult, et oma nimekirja hallata!\n\nNäited:\n• 'Lisa leib, juust ja sink'\n• 'Eemalda pesupulber'\n• 'Muuda teema siniseks'\n\nSee on Lista Plus Premium eksklusiivne funktsioon.",
-  "voiceCommandPlanBtn": "Vaata plaane",
-  "itemsAddedSuccess": "Üksused edukalt nimekirja lisatud!",
-  "viewList": "Vaata nimekirja",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Saada tagasiside",
+  "edit": "Muuda",
+  "editItem": "Muuda üksust",
+  "editItemPrice": "Hinnanguline hind",
+  "editPantryItem": "Muuda {name}",
+  "editRecipe": "Muuda",
+  "editRecipeTitle": "Muuda retsepti",
+  "emptyListAddItems": "Sinu nimekiri on tühi! Lisa esmalt üksusi. ℹ️",
+  "emptyListSubtitle": "Alustamiseks lisa üksusi",
+  "emptyListTitle": "Sinu nimekiri on tühi",
+  "enterCodeHint": "Sisesta kood",
+  "enterUrl": "Sisesta URL",
+  "error": "Viga: {message}",
+  "errorGeneric": "Viga: {message}",
+  "errorLoadingChat": "Oih! Midagi läks vestluse laadimisel valesti.",
+  "errorLoadingChatSubtitle": "Kontrollige ühendust või proovige hiljem uuesti.",
+  "errorLoadingRecipes": "Viga retseptide laadimisel",
+  "errorOscillation": "See võib juhtuda võrgu võnkumiste või ajutise kättesaamatuse tõttu. Palun proovi uuesti.",
+  "estimated": "Hinnanguline",
+  "estimatedCost": "Hinnanguline",
+  "estimatedPrice": "Hinnanguline hind",
+  "exportData": "Ekspordi andmed",
+  "exportDataSubtitle": "Salvesta kõik nimekirjad JSON-ina",
+  "exportExcel": "Ekspordi Excel-ina",
+  "exportPdf": "Ekspordi PDF-ina",
+  "exportPdfExcel": "Ekspordi PDF/Excel",
+  "feedbackBack": "Tagasi",
+  "feedbackError": "Viga saatmisel: {error}",
+  "feedbackHint": "Kirjeldage oma tagasisidet üksikasjalikult...",
   "feedbackPrompt": "Mida soovite jagada?",
+  "feedbackRetry": "Proovi uuesti",
+  "feedbackSend": "Saada tagasiside",
+  "feedbackSending": "Saatmine...",
+  "feedbackSettingsSubtitle": "Teatage vigadest, soovitage parendusi või parandage tõlkeid",
+  "feedbackSettingsTitle": "Saada tagasiside",
+  "feedbackThankYou": "Täname!",
+  "feedbackThankYouMessage": "Teie tagasiside on kätte saadud ja aitab meil Lista Plus kõigi jaoks paremaks muuta.",
+  "feedbackTitle": "Saada tagasiside",
   "feedbackTypeBug": "Teata veast",
   "feedbackTypeBugHint": "Miski ei tööta",
-  "feedbackTypeSuggestion": "Ettepanek",
-  "feedbackTypeSuggestionHint": "Idee rakenduse parandamiseks",
-  "feedbackTypeTranslation": "Tõlkeprobleem",
-  "feedbackTypeTranslationHint": "Vale või kohmakas tõlge",
   "feedbackTypeFeature": "Funktsiooni soovitus",
   "feedbackTypeFeatureHint": "Funktsioon, mida sooviksite näha",
   "feedbackTypeOther": "Muu",
   "feedbackTypeOtherHint": "Muud tüüpi tagasiside",
-  "feedbackHint": "Kirjeldage oma tagasisidet üksikasjalikult...",
-  "feedbackSend": "Saada tagasiside",
-  "feedbackSending": "Saatmine...",
-  "feedbackThankYou": "Täname!",
-  "feedbackThankYouMessage": "Teie tagasiside on kätte saadud ja aitab meil Lista Plus kõigi jaoks paremaks muuta.",
-  "feedbackBack": "Tagasi",
-  "feedbackError": "Viga saatmisel: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Proovi uuesti",
-  "feedbackSettingsTitle": "Saada tagasiside",
-  "feedbackSettingsSubtitle": "Teatage vigadest, soovitage parendusi või parandage tõlkeid",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Lisa koostisosa",
-  "addPhoto": "Lisa foto",
-  "allTags": "Kõik",
-  "chooseImageSource": "Vali pildi allikas",
-  "chooseLanguage": "Vali keel",
-  "deleteRecipe": "Kustuta",
-  "deleteRecipeConfirm": "Kustutada see retsept?",
-  "deleteRecipeConfirmMsg": "Kas olete kindel, et soovite kustutada retsepti \"{recipeName}\"? Seda toimingut ei saa tühistada.",
-  "dynamicColors": "Dünaamilised värvid",
-  "dynamicColorsSubtitle": "Kasuta taustapildil põhinevaid värve",
-  "editRecipe": "Muuda",
-  "editRecipeTitle": "Muuda retsepti",
-  "enterUrl": "Sisesta URL",
-  "errorLoadingRecipes": "Viga retseptide laadimisel",
+  "feedbackTypeSuggestion": "Ettepanek",
+  "feedbackTypeSuggestionHint": "Idee rakenduse parandamiseks",
+  "feedbackTypeTranslation": "Tõlkeprobleem",
+  "feedbackTypeTranslationHint": "Vale või kohmakas tõlge",
+  "fieldRequired": "Kohustuslik väli",
+  "filterAll": "Kõik",
   "filterByTag": "Filtreeri sildi järgi",
+  "filterPending": "Ootel",
+  "filterPurchased": "Ostetud",
+  "finance": "Rahandus",
+  "finishShopping": "Lõpeta ostlemine",
   "gallery": "Galerii",
+  "generalAssistant": "Üldine abiline",
+  "generalHelp": "Kuidas saan täna aidata sinu ostlemisel?",
+  "generateShoppingList": "Loo ostunimekiri",
+  "globalAssistant": "Üldine abiline",
+  "howCanIHelp": "Kuidas ma saan aidata?",
+  "idealQty": "Ideaalne kogus",
+  "idealQuantity": "Ideaalne kogus",
   "imageUrlPlaceholder": "Või kleebi pildi URL",
+  "import": "Impordi",
+  "importData": "Impordi andmed",
+  "importDataSubtitle": "Taasta nimekirjad JSON-failist",
+  "importJsonHint": "Kleebi varukoopia JSON siia...",
+  "importJsonTitle": "Impordi JSON",
+  "importListTitle": "Impordi nimekiri",
+  "importViaCode": "Impordi koodiga",
   "ingredients": "Koostisosad",
   "instructions": "Juhised",
   "instructionsHint": "Kirjuta üks samm reale...",
+  "inviteToList": "Kutsu nimekirja",
+  "itemName": "Üksuse nimi",
+  "itemRemoved": "Üksus eemaldatud",
+  "itemsAddedSuccess": "Üksused edukalt nimekirja lisatud!",
+  "itemsNeedPurchase": "{deficit} üksus(t) vajab ostmist",
+  "itemsPurchasedCount": "{purchased} {total}-st ostetud",
+  "itemsPurchasedShort": "{purchased}/{total} ostetud",
+  "itemsWillBeAdded": "Lisatakse {count} üksus(t)",
+  "language": "Keel",
+  "languageEnglish": "inglise keel",
+  "languagePortuguese": "portugali keel (Brasiilia)",
+  "languageSystem": "Süsteemi vaikeväärtus",
+  "light": "Heled",
+  "listAdded": "{listName} lisatud!",
+  "listArchived": "Nimekiri edukalt arhiveeritud!",
+  "listAssistant": "Nimekirja abiline",
+  "listBudgetTitle": "Nimekirja eelarve",
+  "listCreated": "Nimekiri \"{name}\" loodud {count} üksusega",
+  "listHelp": "Kuidas saan aidata sinu nimekirjaga?",
+  "listHistory": "Nimekirjade ajalugu",
+  "listNameLabel": "Nimekirja nimi",
+  "listOrganizedMagic": "Nimekiri maagiliselt kategooriate kaupa korrastatud! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Kuulan...",
+  "lists": "Nimekirjad",
+  "loading": "Laadimine...",
   "loadingRecipes": "Retseptide laadimine...",
+  "loginError": "Sisselogimise viga: {error}",
+  "loginPrompt": "Logi sisse, et avada\nPremium funktsioonid",
+  "longHistoryWarning": "Pikk ajalugu: assistent keskendub parema jõudluse tagamiseks uusimatele sõnumitele.",
+  "manageSubscription": "Halda tellimust",
+  "markAsPurchased": "Märgi ostetuks",
+  "markItemsToSeeAnalysis": "Märgi üksused ostetuks, et näha analüüsi.",
+  "marketMode": "Tururežiim",
   "mealPlannerAddMeal": "Lisa toidukord",
   "mealPlannerDateLabel": "Kuupäev",
   "mealPlannerDeleteMeal": "Eemalda toidukord",
@@ -587,28 +580,201 @@
   "mealPlannerWeekEmpty": "Selleks nädalaks pole midagi planeeritud",
   "mealPlannerWeekEmptyHint": "Toidukordade planeerimiseks puuduta suvalist päeva!",
   "mealPlannerWeekProgress": "{count} / {total} toidukorda planeeritud",
+  "monthlyBudgetAppBar": "Kuueelarve",
+  "monthlyBudgetNav": "Kuueelarve",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Kuueelarve",
+  "myLists": "Minu nimekirjad",
   "myRecipes": "Minu retseptid",
+  "newChat": "Uus vestlus",
+  "newListTitle": "Uus ostunimekiri",
+  "newPantryList": "Sahvrioste",
   "newRecipe": "Uus retsept",
   "newRecipeTitle": "Uus retsept",
+  "next": "Edasi",
+  "noActiveLists": "Aktiivseid nimekirju pole",
+  "noArchivedLists": "Arhiveeritud nimekirju pole",
+  "noBudgetDefined": "Eelarvet pole määratud",
+  "noHistory": "Vestlusajalugu pole",
+  "noItemsInList": "Loendis pole üksusi",
+  "noItemsToAnalyze": "Nimekirjas pole analüüsitavaid üksusi.",
+  "noItemsToBuy": "Pole vaja osta ühtegi üksust",
+  "noLabel": "Ei",
+  "noListFoundSubtitle": "Alustamiseks loe oma esimene nimekiri",
+  "noListFoundTitle": "Nimekirju ei leitud",
+  "noMessagesFound": "Sõnumeid ei leitud",
   "noRecipesSaved": "Salvestatud retsepte pole",
   "noRecipesSavedHint": "Loo oma esimene kohandatud retsept, puudutades allolevat nuppu.",
+  "noTracking": "Jälgimiseta",
+  "onboardingAnnualBadge": "Parim väärtus",
+  "onboardingAnnualLabel": "Aastane",
+  "onboardingCancelAnytime": "Tühistage igal ajal. Ei mingit kohustust.",
+  "onboardingContinueAsGuest": "Jätka külalisena",
+  "onboardingExit": "Välju",
+  "onboardingLoginDesc": "Teie andmed sünkrooniti kõigis teie seadmetes",
+  "onboardingLoginTitle": "Salvestage kõik pilve",
+  "onboardingMonthlyLabel": "Igakuine",
+  "onboardingPersonalizationCta": "Jätka",
+  "onboardingPersonalizationDesc": "Kasutame seda teie soovituste isikupärastamiseks ja ostlemise nutikamaks muutmiseks.",
+  "onboardingPersonalizationFoodHint": "nt. Pitsa, sushi, lasanje...",
+  "onboardingPersonalizationFoodLabel": "Mis on sinu lemmiktoit?",
+  "onboardingPersonalizationFoodRequired": "Jätkamiseks öelge meile oma lemmiktoit",
+  "onboardingPersonalizationSkip": "Jäta praegu vahele",
+  "onboardingPersonalizationTitle": "Saame sinuga tuttavaks",
+  "onboardingPremiumSubtitle": "Võtke oma ostunimekirjadest maksimum",
+  "onboardingPremiumTitle": "Avage kõik funktsioonid",
+  "onboardingRestore": "Taasta",
+  "onboardingRestoreDesc": "Kas teil on juba tellimus? Selle taastamiseks puudutage siin.",
+  "onboardingSetupDesc": "Valige, kuidas soovite, et Lista Plus näeks välja ja teie heaks töötaks.",
+  "onboardingSetupTitle": "Isikupärastage oma kogemust",
+  "onboardingShareDesc": "Sünkroonige loendid pere ja sõpradega reaalajas",
+  "onboardingShareTitle": "Jagage nendega, keda armastate",
+  "onboardingSubscribeCta": "Telli",
+  "onboardingViewAllPlans": "Vaadake kõiki plaane",
+  "onboardingWelcomeDesc": "Kõige nutikam viis ostlemise korraldamiseks ja raha säästmiseks.",
+  "onboardingWelcomeTitle": "Tere tulemast Lista Plusi",
   "openMenu": "Ava menüü",
+  "organizeAisles": "Korralda vahekäikude kaupa",
+  "organizeAislesPrompt": "Korralda poe vahekäikude kaupa.",
+  "organizeByAisles": "Korralda vahekäikude kaupa",
+  "organizingAi": "KORRALDAN AI-ga...",
+  "pantry": "Sahver",
+  "pantryAppBar": "Sahver",
+  "pantryEditTitle": "Muuda {name}",
+  "pantryEmpty": "Tühi sahver",
+  "pantryEmptySubtitle": "Lisa tooted, mida soovid kodus hoida",
+  "pantryItemRemoved": "Üksus eemaldatud",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Isiklik AI abiline",
+  "prefCustomThemes": "Kohandatud teemad",
+  "prefExportData": "Ekspordi andmed",
+  "prefFullHistory": "Täielik ajalugu",
+  "prefInteractiveArtifacts": "Interaktiivsed AI artefaktid",
+  "prefMonthlyBudget": "Globaalne kuueelarve",
+  "prefSharing": "Jaga nimekirju",
+  "prefUnlimitedLists": "Piiramatud nimekirjad",
+  "prefUnlimitedPantry": "Piiramatu sahver",
+  "premiumUpgrade": "Täienda, et avada",
   "prepTime": "Ettevalmistusaeg",
   "prepTimeMinutes": "Ettevalmistusaeg (minutites)",
+  "privacy": "Privaatsus",
+  "productName": "Toote nimi",
+  "purchaseError": "Viga ostu töötlemisel. Proovi uuesti.",
+  "quantityFull": "Kogus",
+  "quantityShort": "Kogus",
+  "quickRecipe": "Kiire retsept",
+  "quickRecipePrompt": "Soovita retsepte minu nimekirja üksustega.",
+  "quickReplies": "Kiired vastused:",
   "recipeCreated": "Retsept loodud!",
   "recipeDeleted": "Retsept kustutatud",
   "recipeImage": "Retsepti pilt",
   "recipeName": "Retsepti nimi",
   "recipeSaved": "Retsept salvestatud!",
+  "recipeSuggestion": "Retsepti soovitus",
   "recipeTags": "Retsepti sildid",
+  "regenerate": "Loo uuesti",
+  "remove": "Eemalda",
+  "removeBudget": "Eemalda",
   "removeImage": "Eemalda pilt",
+  "removeSharedListContent": "Eemaldada \"{name}\" sinu nimekirjadest? Algset nimekirja see ei mõjuta.",
+  "removeSharedListTitle": "Eemalda jagatud nimekiri",
+  "removeSharedTooltip": "Eemalda",
+  "rename": "Nimeta ümber",
+  "renameListDialog": "Nimeta nimekiri ümber",
   "requiredField": "Kohustuslik",
+  "restockLabel": "Täienda",
+  "restocked": "{name} täiendatud {quantity} {unit}-ni",
+  "restore": "Taasta",
+  "restoreError": "Viga ostude taastamisel. Proovi uuesti.",
+  "retry": "Proovi uuesti",
+  "save": "Salvesta",
   "saveChanges": "Salvesta muudatused",
   "saveRecipe": "Salvesta",
+  "savings": "Sääst",
+  "searchCurrency": "Otsi valuutat...",
+  "searchInConversation": "Otsi vestlusest...",
   "searchLanguage": "Otsi keelt...",
   "searchRecipes": "Otsi retsepte...",
+  "selectAll": "Vali kõik",
+  "selectListForDashboard": "Töölaua vaatamiseks vali nimekiri.",
+  "selectedItems": "Valitud {count}",
+  "setBudgetButton": "Määra eelarve",
+  "setBudgetTitle": "Kuueelarve",
+  "settingsAppBar": "Seaded",
+  "settingsDefaultScreen": "Vaikimisi avakuva",
+  "settingsDefaultScreenSubtitle": "Valige ostunimekirja või AI-vestluse vahel",
+  "settingsScreenChat": "AI vestlus",
+  "settingsScreenList": "Ostunimekiri",
+  "share": "Jaga",
+  "shareApp": "Jaga rakendust",
+  "shareAppDescription": "Kutsu sõpru Lista Plusi kasutama",
+  "shareAsText": "Saada üksused vormindatud tekstina",
+  "shareListText": "Minu ostunimekiri",
+  "shareListTitle": "Jaga nimekirja",
+  "shareRealtime": "Reaalajas sünkroonimine teiste inimestega",
+  "shareReferralSubject": "Saate 7 päeva Lista Plus Premiumi!",
+  "shareReferralText": "Kasutan ostude korraldamiseks Lista Plusi! Laadige alla minu lingi kaudu ja me mõlemad saame 7 päeva tasuta Premiumi: {url}",
+  "shareSubject": "Ostunimekiri",
+  "shareThisCode": "Jaga seda koodi:",
+  "shareViaCode": "Jaga koodiga",
+  "sharedLabel": "Jagatud",
+  "shoppingAssistant": "Ostuabiline",
+  "shoppingMode": "Osturežiim",
+  "shoppingModeHeader": "OSTUREŽIIM",
   "shortDescription": "Lühikirjeldus",
+  "signInApple": "Logi sisse Apple'iga",
+  "signInGoogle": "Logi sisse Google'iga",
+  "smartOrganization": "Nutikas korraldus",
+  "sortCategory": "Kategooria",
+  "sortDate": "Kuupäev",
+  "sortManual": "Käsitsi",
+  "sortName": "Nimi",
+  "spendingAnalysis": "Kulude analüüs",
+  "spendingByCategory": "Kulud kategooriate kaupa",
+  "suggestedQuestions": "Soovitatud küsimused:",
   "suggestedTags": "Soovitatud",
+  "switchList": "Vaheta loendit",
+  "system": "Süsteem",
   "tags": "Sildid",
-  "viewRecipe": "Vaata retsepti"
+  "termsOfUse": "Kasutustingimused",
+  "themeAmber": "Merevaik",
+  "themeBlue": "Sinine",
+  "themeBrown": "Pruun",
+  "themeColor": "Teema värv",
+  "themeGreen": "Roheline",
+  "themeIndigo": "Indigo",
+  "themeOrange": "Oranž",
+  "themePink": "Roosa",
+  "themePurple": "Lilla",
+  "themeRed": "Punane",
+  "themeTeal": "Sinakasroheline",
+  "totalEstimated": "Hinnanguline kogusumma: {amount}",
+  "totalSpending": "Kulutatud kokku",
+  "trackStock": "Jälgi varu",
+  "trackStockActive": "Kuvatakse ostusoovitustes",
+  "trackStockInactive": "Ei genereeri ostusoovitust",
+  "undo": "Võta tagasi",
+  "unit": "Ühik",
+  "unitPack": "pakk",
+  "unlockFullResponse": "Avage täielik vastus",
+  "unmark": "Eemalda märge",
+  "upgrade": "Täienda",
+  "validForLimitedTime": "Kehtib piiratud aja",
+  "version": "Versioon",
+  "viewActive": "Vaata aktiivseid",
+  "viewDetails": "Kuva üksikasjad",
+  "viewHistory": "Vaata ajalugu",
+  "viewItems": "Kuva üksused",
+  "viewList": "Vaata nimekirja",
+  "viewPro": "Vaata Pro",
+  "viewRecipe": "Vaata retsepti",
+  "voiceCommandContent": "Räägi loomulikult, et oma nimekirja hallata!\n\nNäited:\n• 'Lisa leib, juust ja sink'\n• 'Eemalda pesupulber'\n• 'Muuda teema siniseks'\n\nSee on Lista Plus Premium eksklusiivne funktsioon.",
+  "voiceCommandPlanBtn": "Vaata plaane",
+  "voiceCommandTitle": "AI häälejuhtimine",
+  "voiceProFeature": "Täpsemad häälkäsklused on Pro. Tavalise dikteerimise lubamine...",
+  "voiceTranscriptionTooltip": "Häältrükkimine (Tasuta)",
+  "welcomeAiAssistant": "Tere tulemast AI assistendisse",
+  "whatToDoWithItem": "Mida soovite selle üksusega teha?",
+  "yes": "Jah",
+  "yesLabel": "Jah"
 }

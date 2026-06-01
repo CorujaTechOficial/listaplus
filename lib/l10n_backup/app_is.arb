@@ -1,0 +1,678 @@
+{
+  "@@locale": "is",
+  "appTitle": "Innkaupalisti",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Listar",
+  "pantry": "Búrka",
+  "@_Common": "description: Common actions",
+  "cancel": "Hætta við",
+  "save": "Vista",
+  "create": "Búa til",
+  "add": "Bæta við",
+  "remove": "Fjarlægja",
+  "delete": "Eyða",
+  "edit": "Breyta",
+  "copy": "Afrita",
+  "retry": "Reyna aftur",
+  "regenerate": "Endurgera",
+  "copiedToClipboard": "Afritað á klippispjald",
+  "confirm": "Staðfesta",
+  "close": "Loka",
+  "import": "Flytja inn",
+  "rename": "Endurnefna",
+  "upgrade": "Uppfæra",
+  "clear": "Hreinsa",
+  "error": "Villa: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Villa: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Villa við að vinna úr kaupum. Reyndu aftur.",
+  "restoreError": "Villa við að endurheimta kaup. Reyndu aftur.",
+  "loading": "Hleð...",
+  "fieldRequired": "Skyldureitur",
+  "addedFeedback": "Bætt við!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} valið} other{{count} valin}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Áætlað",
+  "alreadyPurchased": "Þegar keypt",
+  "clearList": "Hreinsa lista",
+  "clearPurchased": "Hreinsa keypt",
+  "share": "Deila",
+  "shareViaCode": "Deila með kóða",
+  "importViaCode": "Flytja inn með kóða",
+  "listAssistant": "Listaaðstoð",
+  "globalAssistant": "Alheimsaðstoð",
+  "becomePremium": "Verða Premium",
+  "manageSubscription": "Stjórna áskrift",
+  "completePurchase": "Ljúka kaupum",
+  "confirmClearList": "Fjarlægja alla hluti?",
+  "shareListTitle": "Deila lista",
+  "shareThisCode": "Deildu þessum kóða:",
+  "validForLimitedTime": "Gildir í takmarkaðan tíma",
+  "importListTitle": "Flytja inn lista",
+  "enterCodeHint": "Sláðu inn kóðann",
+  "confirmArchiveTitle": "Ljúka kaupum",
+  "confirmArchiveContent": "Ljúka þessum kaupum og arkívera listann?",
+  "complete": "Ljúka",
+  "listArchived": "Listi arkíveraður!",
+  "listAdded": "{listName} bætt við!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Kaupa",
+  "unmark": "Afmerkja",
+  "confirmDeleteItems": "Fjarlægja {count} hlut(e)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Staðfesta",
+  "confirmContent": "Fjarlægja {count} hlut(e)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Arkívera lista",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Búrka",
+  "generateShoppingList": "Búa til innkaupalista",
+  "pantryEmpty": "Tóm búrka",
+  "pantryEmptySubtitle": "Bættu við vörum sem þú vilt hafa heima",
+  "itemsNeedPurchase": "{deficit} hlut(ir) þarf að kaupa",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Engir hlutir þarf að kaupa",
+  "newPantryList": "Búrkukaup",
+  "newListTitle": "Nýr innkaupalisti",
+  "itemsWillBeAdded": "{count} hlut(ir) verða bætt við",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Nafn lista",
+  "listCreated": "Listi \"{name}\" búinn til með {count} hlutum",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Engin rakning",
+  "markAsPurchased": "Merkja sem keypt",
+  "editPantryItem": "Breyta {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ákjósanlegt magn",
+  "currentQuantity": "Núverandi magn",
+  "consumed": "Notað",
+  "restocked": "{name} enduruppfyllt: {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Fjarlægja \"{name}\" úr búrku?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Breyta {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Stillingar",
+  "language": "Tungumál",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Sjálfgefið kerfi",
+  "appearance": "Útlit",
+  "light": "Ljóst",
+  "system": "Kerfi",
+  "dark": "Dökkt",
+  "themeColor": "Þemalitur",
+  "finance": "Fjármál",
+  "monthlyBudgetNav": "Mánaðarleg fjárhagsáætlun",
+  "budgetSubtitle": "Fylgdu mánaðarlegum útgjöldum þínum",
+  "data": "Gögn",
+  "backupNav": "Öryggisafrit",
+  "backupSubtitle": "Flytja út eða inn gögnin þín",
+  "about": "Um",
+  "version": "Útgáfa",
+  "privacy": "Persónuvernd",
+  "termsOfUse": "Notkunarskilmálar",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Öryggisafrit",
+  "backupPremiumDescription": "Öryggisafrit og útflutningur er premium eiginleiki",
+  "exportData": "Flytja út gögn",
+  "exportDataSubtitle": "Vista alla lista sem JSON",
+  "importData": "Flytja inn gögn",
+  "importDataSubtitle": "Endurheimta lista úr JSON",
+  "importJsonTitle": "Flytja inn JSON",
+  "importJsonHint": "Límdu öryggisafrit JSON hér...",
+  "backupExported": "Öryggisafrit flutt út!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Mánaðarleg fjárhagsáætlun",
+  "budgetPremiumLocked": "Alheims mánaðarleg fjárhagsáætlun er premium",
+  "budgetUpgradePrompt": "Uppfærðu til að opna",
+  "noBudgetDefined": "Engin fjárhagsáætlun stillt",
+  "totalEstimated": "Áætluð samtals: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Stilla fjárhagsáætlun",
+  "budgetLists": "Listar",
+  "budgetValueLabel": "Upphæð",
+  "setBudgetTitle": "Mánaðarleg fjárhagsáætlun",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Allt",
+  "filterPending": "Í bið",
+  "filterPurchased": "Keypt",
+  "sortName": "Nafn",
+  "sortCategory": "Flokkur",
+  "sortDate": "Dagsetning",
+  "sortManual": "Handvirkt",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Bæta við hlut",
+  "itemName": "Heiti hlutar",
+  "quantityShort": "Magn",
+  "unit": "Eining",
+  "category": "Flokkur",
+  "estimatedPrice": "Áætlað verð",
+  "addItemPrice": "Áætlað verð",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Breyta hlut",
+  "quantityFull": "Magn",
+  "editItemPrice": "Áætlað verð",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Bæta í búrku",
+  "addToPantryPrompt": "Bæta \"{name}\" við búrku?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Já",
+  "productName": "Heiti vöru",
+  "idealQty": "Ákjósanlegt magn",
+  "currentQty": "Núverandi magn",
+  "trackStock": "Rekja birgðir",
+  "trackStockActive": "Birtist í innkaupatillögum",
+  "trackStockInactive": "Myndar ekki innkaupatillögu",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Búa til lista",
+  "renameListDialog": "Endurnefna lista",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Listasaga",
+  "myLists": "Listarnir mínir",
+  "viewActive": "Skoða virka",
+  "viewHistory": "Skoða sögu",
+  "noArchivedLists": "Enginn arkíveraður listi",
+  "noActiveLists": "Engir virkir listar",
+  "completedOn": "Lokið þann {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Deilt",
+  "restore": "Endurheimta",
+  "removeSharedTooltip": "Fjarlægja",
+  "deleteListTitle": "Eyða lista",
+  "deleteListContent": "Ertu viss um að þú viljir eyða \"{name}\"? Öllum hlutum verður eytt.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Fjarlægja deildan lista",
+  "removeSharedListContent": "Fjarlægja \"{name}\" af listunum þínum? Upprunalegi listinn verður ekki fyrir áhrifum.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Búa til nýjan lista",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI aðstoð",
+  "aiAssistantDescription": "Fáðu snjallar tillögur, uppskriftir og persónulegar ábendingar með AI aðstoðarmanni okkar.",
+  "generalAssistant": "Almenn aðstoð",
+  "clearHistory": "Hreinsa sögu",
+  "clearHistoryConfirm": "Hreinsa öll skilaboð í þessum samtalsglugga?",
+  "chatHint": "Skrifaðu skilaboð...",
+  "chatError": "Villa við að hlaða spjalli: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Hvernig get ég aðstoðað þig með listann?",
+  "generalHelp": "Hvernig get ég aðstoðað þig við innkaupin í dag?",
+  "chatSubtitle": "Spurðu um vörutillögur, uppskriftir eða sparnaðarábendingar.",
+  "aiError": "Því miður, villa kom upp við að vinna úr beiðninni þinni. Athugaðu tenginguna eða reyndu aftur síðar.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Skráðu þig inn til að\nopna premium eiginleika",
+  "signInGoogle": "Skráðu þig inn með Google",
+  "signInApple": "Skráðu þig inn með Apple",
+  "continueAsGuest": "Halda áfram sem gestur",
+  "loginError": "Innskráningarvilla: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Uppfærðu til að opna",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Hlut fjarlægður",
+  "undo": "Afturkalla",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Listinn þinn er tómur",
+  "emptyListSubtitle": "Bættu við hlutum til að byrja",
+  "noListFoundTitle": "Engir listar fundust",
+  "noListFoundSubtitle": "Búðu til þinn fyrsta lista til að byrja",
+  "createFirstList": "Búa til fyrsta lista",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Fjárhagsáætlun lista",
+  "budgetAmountLabel": "Upphæð fjárhagsáætlunar",
+  "removeBudget": "Fjarlægja",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Ótakmarkaðir listar",
+  "prefSharing": "Deila listum",
+  "prefFullHistory": "Full saga",
+  "prefExportData": "Flytja út gögn",
+  "prefCustomThemes": "Sérsniðin þemu",
+  "prefMonthlyBudget": "Alheims mánaðarleg fjárhagsáætlun",
+  "prefAIAssistant": "Persónulegur AI aðstoðarmaður",
+  "prefUnlimitedPantry": "Ótakmörkuð búrka",
+  "prefInteractiveArtifacts": "Gagnvirk AI greinar",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Grænn",
+  "themeBlue": "Blár",
+  "themePurple": "Fjólublár",
+  "themeRed": "Rauður",
+  "themeOrange": "Appelsínugulur",
+  "themePink": "Bleikur",
+  "themeIndigo": "Indígó",
+  "themeAmber": "Rauðgulur",
+  "themeTeal": "Grænblár",
+  "themeBrown": "Brúnn",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Ávextir",
+  "catCleaning": "Hreinsun",
+  "catBeverages": "Drykkir",
+  "catBakery": "Bakarí",
+  "catOthers": "Annað",
+  "@_Unit": "description: Unit",
+  "unitPack": "pakkning",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Innkaupalisti",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Mánaðarleg fjárhagsáætlun",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Eyða lista",
+  "pantryItemRemoved": "Hlut fjarlægður",
+  "deficitItems": "{deficit,plural, one{{deficit} hlut þarf að kaupa} other{{deficit} hluti þarf að kaupa}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Karfa samtals",
+  "restockLabel": "Enduruppfylla",
+  "advancedFeatures": "Ítarlegir eiginleikar",
+  "selectAll": "Velja allt",
+  "deselectAll": "Afvelja allt",
+  "monthlyBudgetAppBar": "Mánaðarleg fjárhagsáætlun",
+  "budgetEditTitle": "Mánaðarleg fjárhagsáætlun",
+  "budgetDashboardTitle": "Mælaborð",
+  "selectListForDashboard": "Veldu lista til að skoða mælaborð.",
+  "spendingAnalysis": "Útgjaldagreining",
+  "noItemsToAnalyze": "Engir hlutir í listanum til að greina.",
+  "markItemsToSeeAnalysis": "Merktu hluti sem keypta til að sjá greininguna.",
+  "totalSpending": "Heildarútgjöld",
+  "spendingByCategory": "Útgjöld eftir flokki",
+  "achievements": "Áfangar",
+  "exportPdfExcel": "Flytja út PDF/Excel",
+  "exportPdf": "Flytja út sem PDF",
+  "exportExcel": "Flytja út sem Excel",
+  "organizingAi": "RÖÐUN MEÐ AI...",
+  "yesLabel": "Já",
+  "noLabel": "Nei",
+  "shareListText": "Innkaupalistinn minn",
+  "emptyListAddItems": "Listinn þinn er tómur! Bættu fyrst við hlutum. ℹ️",
+  "listOrganizedMagic": "Listi töfrandi raðaður í flokka! ✨",
+  "shoppingMode": "Innkaupahamur",
+  "smartOrganization": "Snjöll röðun",
+  "savings": "Sparnaður",
+  "shoppingModeHeader": "INNKAUPHAMUR",
+  "shareAsText": "Senda hluti sem sniðinn texta",
+  "shareRealtime": "Rauntímasamstilling með öðrum",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Fljótleg uppskrift",
+  "quickRecipePrompt": "Leggðu til uppskriftir með hlutum af listanum mínum.",
+  "economyTips": "Sparnaðarábendingar",
+  "economyTipsPrompt": "Hvernig get ég sparað peninga við þessi kaup?",
+  "organizeAisles": "Raða eftir göngum",
+  "organizeAislesPrompt": "Raða eftir göngum markaðarins.",
+  "recipeSuggestion": "Uppskriftartillaga",
+  "aiCreditsRemaining": "{remaining} einingar eftir",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Bæta öllu við lista",
+  "organizeByAisles": "Raða eftir göngum",
+  "voiceTranscriptionTooltip": "Radduppskrift (Ókeypis)",
+  "aiVoiceCommandTooltip": "AI raddskipun (Premium)",
+  "voiceCommandTitle": "AI raddskipun",
+  "voiceCommandContent": "Talaðu náttúrulega til að stjórna listanum þínum!\n\nDæmi:\n• 'Bæta við brauði, osti og skinku'\n• 'Fjarlægja þvottaefni'\n• 'Breyta þema í blátt'\n\nÞetta er einkaeiginleiki Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Skoða áætlanir",
+  "itemsAddedSuccess": "Hlutum bætt við lista!",
+  "viewList": "Skoða lista",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Senda ábendingu",
+  "feedbackPrompt": "Hvað viltu deila?",
+  "feedbackTypeBug": "Tilkynna villu",
+  "feedbackTypeBugHint": "Eitthvað virkar ekki",
+  "feedbackTypeSuggestion": "Ábending",
+  "feedbackTypeSuggestionHint": "Hugmynd að því að bæta forritið",
+  "feedbackTypeTranslation": "Þýðingarvilla",
+  "feedbackTypeTranslationHint": "Röng þýðing eða óeðlilegt orðalag",
+  "feedbackTypeFeature": "Beðni um eiginleika",
+  "feedbackTypeFeatureHint": "Eiginleiki sem þú vilt sjá",
+  "feedbackTypeOther": "Annað",
+  "feedbackTypeOtherHint": "Annars konar ábending",
+  "feedbackHint": "Lýstu ábendingunni þinni í smáatriðum...",
+  "feedbackSend": "Senda ábendingu",
+  "feedbackSending": "Sendi...",
+  "feedbackThankYou": "Takk!",
+  "feedbackThankYouMessage": "Ábendingin þín hefur borist og hjálpar okkur að bæta Lista Plus fyrir alla.",
+  "feedbackBack": "Til baka",
+  "feedbackError": "Villa við sendingu: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Reyna aftur",
+  "feedbackSettingsTitle": "Senda ábendingu",
+  "feedbackSettingsSubtitle": "Tilkynna villur, stinga upp á endurbótum eða laga þýðingar",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Bæta við hráefni",
+  "addPhoto": "Bæta við mynd",
+  "allTags": "Allt",
+  "chooseImageSource": "Veldu mynduppsprettu",
+  "chooseLanguage": "Veldu tungumál",
+  "deleteRecipe": "Eyða",
+  "deleteRecipeConfirm": "Eyða þessari uppskrift?",
+  "deleteRecipeConfirmMsg": "Ertu viss um að þú viljir eyða „{recipeName}“? Ekki er hægt að afturkalla þessa aðgerð.",
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "dynamicColors": "Breytilegir litir",
+  "dynamicColorsSubtitle": "Nota liti byggða á veggfóðrinu þínu",
+  "editRecipe": "Breyta",
+  "editRecipeTitle": "Breyta uppskrift",
+  "enterUrl": "Sláðu inn vefslóð",
+  "errorLoadingRecipes": "Villa við að hlaða uppskriftum",
+  "filterByTag": "Sía eftir merki",
+  "gallery": "Galéria",
+  "imageUrlPlaceholder": "Eða límdu inn vefslóð myndar",
+  "ingredients": "Hráefni",
+  "instructions": "Leiðbeiningar",
+  "instructionsHint": "Skrifaðu eitt skref á hverja línu...",
+  "loadingRecipes": "Hleður uppskriftunum þínum...",
+  "mealPlannerAddMeal": "Bæta við máltíð",
+  "mealPlannerDateLabel": "Dagsetning",
+  "mealPlannerDeleteMeal": "Fjarlægja máltíð",
+  "mealPlannerEditMeal": "Breyta máltíð",
+  "mealPlannerError": "Villa við að hlaða matseðli",
+  "mealPlannerGenerateList": "Gera innkaupalista",
+  "mealPlannerGenerateListConfirm": "Bæta öllu hráefni úr fyrirhuguðum máltíðum vikunnar á innkaupalistann þinn?",
+  "mealPlannerGenerateListEmpty": "Engu hráefni til að bæta við. Skipuleggðu máltíðir með uppskriftum fyrst.",
+  "mealPlannerGenerateListNoList": "Búðu til innkaupalista fyrst.",
+  "mealPlannerGenerateListSuccess": "{count} hráefni bætt við listann þinn!",
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerLoading": "Hleður matseðli...",
+  "mealPlannerMealDeleted": "Máltíð fjarlægð",
+  "mealPlannerMealTypeBreakfast": "Morgunmatur",
+  "mealPlannerMealTypeDinner": "Kvöldmatur",
+  "mealPlannerMealTypeLunch": "Hádegismatur",
+  "mealPlannerMealTypeSnack": "Millimál",
+  "mealPlannerNoMeals": "Engar máltíðir áætlaðar",
+  "mealPlannerNoMealsHint": "Smelltu á dag til að bæta við máltíð",
+  "mealPlannerNoRecipesFound": "Engar uppskriftir fundust",
+  "mealPlannerNoRecipesHint": "Búðu til uppskriftir í Uppskriftir flipanum fyrst",
+  "mealPlannerNoteLabel": "Athugasemd (valfrjálst)",
+  "mealPlannerPrepTime": "{minutes} mín",
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerSave": "Bæta við áætlun",
+  "mealPlannerSearchRecipes": "Leita í uppskriftum...",
+  "mealPlannerSelectRecipe": "Veldu uppskrift",
+  "mealPlannerServings": "{count,plural, one{{count} skammtur} other{{count} skammtar}}",
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mealPlannerServingsLabel": "Skammtar",
+  "mealPlannerTitle": "Matseðill",
+  "mealPlannerViewMonthly": "Mánaðarlegt yfirlit",
+  "mealPlannerViewWeekly": "Vikulegt yfirlit",
+  "mealPlannerWeekEmpty": "Ekkert áætlað fyrir þessa viku",
+  "mealPlannerWeekEmptyHint": "Smelltu á hvaða dag sem er til að byrja að skipuleggja máltíðirnar þínar!",
+  "mealPlannerWeekProgress": "{count} af {total} máltíðum áætlaðar",
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "myRecipes": "Mínar uppskriftir",
+  "newRecipe": "Ný uppskrift",
+  "newRecipeTitle": "Ný uppskrift",
+  "noRecipesSaved": "Engar uppskriftir vistaðar",
+  "noRecipesSavedHint": "Búðu til þína fyrstu sérsniðnu uppskrift með því að smella á hnappinn hér að neðan.",
+  "openMenu": "Opna valmynd",
+  "prepTime": "Undirbúningstími",
+  "prepTimeMinutes": "Undirbúningstími (mínútur)",
+  "recipeCreated": "Uppskrift búin til!",
+  "recipeDeleted": "Uppskrift eytt",
+  "recipeImage": "Mynd af uppskrift",
+  "recipeName": "Heiti uppskriftar",
+  "recipeSaved": "Uppskrift vistuð!",
+  "recipeTags": "Merki uppskriftar",
+  "removeImage": "Fjarlægja mynd",
+  "requiredField": "Reitur áskilinn",
+  "saveChanges": "Vista breytingar",
+  "saveRecipe": "Vista",
+  "searchLanguage": "Leita að tungumáli...",
+  "searchRecipes": "Leita í uppskriftum...",
+  "shortDescription": "Stutt lýsing",
+  "suggestedTags": "Tillögur",
+  "tags": "Merki",
+  "viewRecipe": "Skoða uppskrift"
+}

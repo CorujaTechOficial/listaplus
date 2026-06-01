@@ -1,101 +1,73 @@
 {
   "@@locale": "sw",
-  "appTitle": "Orodha ya Ununuzi",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Orodha",
-  "pantry": "Pantri",
-  "@_Common": "description: Common actions",
-  "cancel": "Ghairi",
-  "save": "Hifadhi",
-  "create": "Unda",
-  "add": "Ongeza",
-  "remove": "Ondoa",
-  "delete": "Futa",
-  "edit": "Hariri",
-  "copy": "Nakili",
-  "retry": "Jaribu tena",
-  "regenerate": "Tengeneza upya",
-  "copiedToClipboard": "Imenakiliwa kwenye ubao wa kunakilia",
-  "confirm": "Thibitisha",
-  "close": "Funga",
-  "import": "Ingiza",
-  "rename": "Badilisha jina",
-  "upgrade": "Boresha",
-  "clear": "Futa",
-  "error": "Hitilafu: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Hitilafu: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Hitilafu katika kuchakata ununuzi. Jaribu tena.",
-  "restoreError": "Hitilafu katika kurejesha ununuzi. Jaribu tena.",
-  "loading": "Inapakia...",
-  "fieldRequired": "Sehemu inayohitajika",
-  "addedFeedback": "Imeongezwa!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} imechaguliwa} other{{count} zimechaguliwa}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Inakadiriwa",
-  "alreadyPurchased": "Tayari imenunuliwa",
-  "clearList": "Futa orodha",
-  "clearPurchased": "Futa zilizonunuliwa",
-  "share": "Shiriki",
-  "shareViaCode": "Shiriki kwa msimbo",
-  "importViaCode": "Ingiza kwa msimbo",
-  "listAssistant": "Msaidizi wa orodha",
-  "globalAssistant": "Msaidizi wa jumla",
-  "becomePremium": "Kuwa Premium",
-  "manageSubscription": "Dhibiti usajili",
-  "completePurchase": "Kamilisha ununuzi",
-  "confirmClearList": "Ondoa vitu vyote?",
-  "shareListTitle": "Shiriki Orodha",
-  "shareThisCode": "Shiriki msimbo huu:",
-  "validForLimitedTime": "Inatumika kwa muda mfupi",
-  "importListTitle": "Ingiza Orodha",
-  "enterCodeHint": "Weka msimbo",
-  "confirmArchiveTitle": "Kamilisha Ununuzi",
-  "confirmArchiveContent": "Kamilisha ununuzi huu na uweke kumbukumbu?",
-  "complete": "Kamilisha",
-  "listArchived": "Orodha imehifadhiwa kwa mafanikio!",
-  "listAdded": "{listName} imeongezwa!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Nunua",
-  "unmark": "Ondoa alama",
-  "confirmDeleteItems": "Ondoa vitu {count}?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Thibitisha",
-  "confirmContent": "Ondoa vitu {count}?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Weka kumbukumbu",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Pantri",
-  "generateShoppingList": "Tengeneza orodha ya ununuzi",
-  "pantryEmpty": "Pantri tupu",
-  "pantryEmptySubtitle": "Ongeza bidhaa unazotaka kuwa nazo nyumbani",
-  "itemsNeedPurchase": "Vitu {deficit} vinahitaji kununuliwa",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Hakuna vitu vinavyohitaji kununuliwa",
-  "newPantryList": "Ununuzi wa Pantri",
-  "newListTitle": "Orodha Mpya ya Ununuzi",
-  "itemsWillBeAdded": "Vitu {count} vitaongezwa",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Jina la orodha",
-  "listCreated": "Orodha \"{name}\" imeundwa na vitu {count}",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Hakuna ufuatiliaji",
-  "markAsPurchased": "Weka kama imenunuliwa",
-  "editPantryItem": "Hariri {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Kiasi bora",
-  "currentQuantity": "Kiasi cha sasa",
-  "consumed": "Imetumika",
-  "restocked": "{name} imejazwa tena hadi {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Ondoa \"{name}\" kutoka pantri?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Hariri {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Mipangilio",
-  "language": "Lugha",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Chaguo-msingi la mfumo",
-  "appearance": "Mwonekano",
-  "light": "Mwanga",
-  "system": "Mfumo",
-  "dark": "Giza",
-  "themeColor": "Rangi ya mandhari",
-  "finance": "Fedha",
-  "monthlyBudgetNav": "Bajeti ya kila mwezi",
-  "budgetSubtitle": "Fuatilia matumizi yako ya kila mwezi",
-  "data": "Data",
-  "backupNav": "Hifadhi rudufu",
-  "backupSubtitle": "Hamisha au ingiza data yako",
-  "about": "Kuhusu",
-  "version": "Toleo",
-  "privacy": "Faragha",
-  "termsOfUse": "Masharti ya matumizi",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Hifadhi rudufu",
-  "backupPremiumDescription": "Kuhifadhi rudufu na kusafirisha ni kipengele cha premium",
-  "exportData": "Hamisha data",
-  "exportDataSubtitle": "Hifadhi orodha zote kama JSON",
-  "importData": "Ingiza data",
-  "importDataSubtitle": "Rejesha orodha kutoka kwa JSON",
-  "importJsonTitle": "Ingiza JSON",
-  "importJsonHint": "Bandika JSON ya hifadhi rudufu hapa...",
-  "backupExported": "Hifadhi rudufu imesafirishwa!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Bajeti ya Kila Mwezi",
-  "budgetPremiumLocked": "Bajeti ya jumla ya kila mwezi ni premium",
-  "budgetUpgradePrompt": "Boresha ili kufungua",
-  "noBudgetDefined": "Hakuna bajeti iliyowekwa",
-  "totalEstimated": "Jumla inakadiriwa: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Weka bajeti",
-  "budgetLists": "Orodha",
-  "budgetValueLabel": "Kiasi",
-  "setBudgetTitle": "Bajeti ya Kila Mwezi",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Zote",
-  "filterPending": "Zinazosubiri",
-  "filterPurchased": "Zilizonunuliwa",
-  "sortName": "Jina",
-  "sortCategory": "Kategoria",
-  "sortDate": "Tarehe",
-  "sortManual": "Mwenyewe",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Kuhusu",
+  "achievements": "Mafanikio",
+  "activeListening": "Usikivu wa Kikamilifu",
+  "add": "Ongeza",
+  "addAllToList": "Ongeza yote kwenye orodha",
+  "addDirectToList": "Ongeza moja kwa moja kwenye orodha",
+  "addIngredient": "Ongeza kiungo",
   "addItem": "Ongeza Kitu",
-  "itemName": "Jina la kitu",
-  "quantityShort": "Idadi",
-  "unit": "Kipimo",
-  "category": "Kategoria",
-  "estimatedPrice": "Bei inakadiriwa",
   "addItemPrice": "Bei inakadiriwa",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Hariri Kitu",
-  "quantityFull": "Kiasi",
-  "editItemPrice": "Bei inakadiriwa",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Ongeza picha",
   "addToPantry": "Ongeza kwenye Pantri",
   "addToPantryPrompt": "Ongeza \"{name}\" kwenye Pantri yako?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Ndiyo",
-  "productName": "Jina la bidhaa",
-  "idealQty": "Kiasi bora",
-  "currentQty": "Kiasi cha sasa",
-  "trackStock": "Fuatilia hisa",
-  "trackStockActive": "Inaonekana katika mapendekezo ya ununuzi",
-  "trackStockInactive": "Haizalishi mapendekezo ya ununuzi",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Unda Orodha",
-  "renameListDialog": "Badilisha Jina la Orodha",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Historia ya Orodha",
-  "myLists": "Orodha Zangu",
-  "viewActive": "Tazama Zinazotumika",
-  "viewHistory": "Tazama Historia",
-  "noArchivedLists": "Hakuna orodha za kumbukumbu",
-  "noActiveLists": "Hakuna orodha zinazotumika",
-  "completedOn": "Ilikamilishwa tarehe {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Imeshirikiwa",
-  "restore": "Rejesha",
-  "removeSharedTooltip": "Ondoa",
-  "deleteListTitle": "Futa orodha",
-  "deleteListContent": "Una uhakika unataka kufuta \"{name}\"? Vitu vyote vitaondolewa.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Ondoa orodha iliyoshirikiwa",
-  "removeSharedListContent": "Ondoa \"{name}\" kutoka kwenye orodha zako? Orodha asili haitaathiriwa.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Unda orodha mpya",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Imeongezwa!",
+  "advancedFeatures": "Vipengele vya hali ya juu",
   "aiAssistant": "Msaidizi wa AI",
   "aiAssistantDescription": "Pata mapendekezo mahiri, mapishi na vidokezo vya kibinafsi kwa msaidizi wetu wa AI.",
-  "generalAssistant": "Msaidizi Mkuu",
+  "aiCreditsRemaining": "Salio la mikopo {remaining}",
+  "aiEnergy": "Nishati ya AI",
+  "aiError": "Samahani, hitilafu ilitokea wakati wa kuchakata ombi lako. Angalia muunganisho wako au jaribu tena baadaye.",
+  "aiVoiceCommandTooltip": "Amri ya Sauti ya AI (Premium)",
+  "allTags": "Wote",
+  "alreadyPurchased": "Tayari imenunuliwa",
+  "appTitle": "Orodha ya Ununuzi",
+  "appearance": "Mwonekano",
+  "archiveList": "Weka kumbukumbu",
+  "backToChat": "Rudi kwa Gumzo",
+  "backupExported": "Hifadhi rudufu imesafirishwa!",
+  "backupNav": "Hifadhi rudufu",
+  "backupPremiumDescription": "Kuhifadhi rudufu na kusafirisha ni kipengele cha premium",
+  "backupSubtitle": "Hamisha au ingiza data yako",
+  "backupTitle": "Hifadhi rudufu",
+  "becomePremium": "Kuwa Premium",
+  "budgetAmountLabel": "Kiasi cha bajeti",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Bajeti ya Kila Mwezi",
+  "budgetDashboardTitle": "Dashibodi",
+  "budgetEditTitle": "Bajeti ya Kila Mwezi",
+  "budgetLists": "Orodha",
+  "budgetPremiumLocked": "Bajeti ya jumla ya kila mwezi ni premium",
+  "budgetSubtitle": "Fuatilia matumizi yako ya kila mwezi",
+  "budgetUpgradePrompt": "Boresha ili kufungua",
+  "budgetValueLabel": "Kiasi",
+  "buy": "Nunua",
+  "cancel": "Ghairi",
+  "cartTotal": "Jumla ya gari",
+  "catBakery": "Mkate",
+  "catBeverages": "Vinywaji",
+  "catCleaning": "Usafishaji",
+  "catFruits": "Matunda",
+  "catOthers": "Vingine",
+  "category": "Kategoria",
+  "chatError": "Hitilafu katika kupakia gumzo: {error}",
+  "chatHint": "Andika ujumbe wako...",
+  "chatSubtitle": "Uliza mapendekezo ya vitu, mapishi au vidokezo vya kuokoa.",
+  "chatSubtitleShort": "Uliza kuhusu bei, mapishi, shirika...",
+  "chooseCurrency": "Chagua Sarafu",
+  "chooseImageSource": "Chagua chanzo cha picha",
+  "chooseLanguage": "Chagua Lugha",
+  "clear": "Futa",
   "clearHistory": "Futa Historia",
   "clearHistoryConfirm": "Futa ujumbe wote katika kikao hiki?",
-  "chatHint": "Andika ujumbe wako...",
-  "chatError": "Hitilafu katika kupakia gumzo: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Naweza kusaidiaje na orodha yako?",
-  "generalHelp": "Naweza kusaidiaje na ununuzi wako leo?",
-  "chatSubtitle": "Uliza mapendekezo ya vitu, mapishi au vidokezo vya kuokoa.",
-  "aiError": "Samahani, hitilafu ilitokea wakati wa kuchakata ombi lako. Angalia muunganisho wako au jaribu tena baadaye.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Ingia ili kufungua\nvipengele vya premium",
-  "signInGoogle": "Ingia kwa Google",
-  "signInApple": "Ingia kwa Apple",
+  "clearList": "Futa orodha",
+  "clearPurchased": "Futa zilizonunuliwa",
+  "close": "Funga",
+  "complete": "Kamilisha",
+  "completePurchase": "Kamilisha ununuzi",
+  "completedOn": "Ilikamilishwa tarehe {date}",
+  "confirm": "Thibitisha",
+  "confirmArchiveContent": "Kamilisha ununuzi huu na uweke kumbukumbu?",
+  "confirmArchiveTitle": "Kamilisha Ununuzi",
+  "confirmClearList": "Ondoa vitu vyote?",
+  "confirmContent": "Ondoa vitu {count}?",
+  "confirmDeleteItems": "Ondoa vitu {count}?",
+  "confirmDeleteTitle": "Thibitisha",
+  "confirmRemovePantry": "Ondoa \"{name}\" kutoka pantri?",
+  "consumed": "Imetumika",
   "continueAsGuest": "Endelea kama mgeni",
-  "loginError": "Hitilafu ya kuingia: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Boresha ili kufungua",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Kitu kimeondolewa",
-  "undo": "Tengua",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Orodha yako haina kitu",
-  "emptyListSubtitle": "Ongeza vitu ili kuanza",
-  "noListFoundTitle": "Hakuna orodha zilizopatikana",
-  "noListFoundSubtitle": "Unda orodha yako ya kwanza ili kuanza",
+  "copiedToClipboard": "Imenakiliwa kwenye ubao wa kunakilia",
+  "copy": "Nakili",
+  "create": "Unda",
   "createFirstList": "Unda Orodha ya Kwanza",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Bajeti ya Orodha",
-  "budgetAmountLabel": "Kiasi cha bajeti",
-  "removeBudget": "Ondoa",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Orodha zisizo na kikomo",
-  "prefSharing": "Shiriki orodha",
-  "prefFullHistory": "Historia kamili",
-  "prefExportData": "Hamisha data",
-  "prefCustomThemes": "Mandhari maalum",
-  "prefMonthlyBudget": "Bajeti ya jumla ya kila mwezi",
-  "prefAIAssistant": "Msaidizi wa Kibinafsi wa AI",
-  "prefUnlimitedPantry": "Pantri isiyo na kikomo",
-  "prefInteractiveArtifacts": "Vipengee shirikishi vya AI",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Kijani",
-  "themeBlue": "Bluu",
-  "themePurple": "Zambarau",
-  "themeRed": "Nyekundu",
-  "themeOrange": "Chungwa",
-  "themePink": "Waridi",
-  "themeIndigo": "Buluu",
-  "themeAmber": "Kaharabu",
-  "themeTeal": "Teal",
-  "themeBrown": "Kahawia",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Matunda",
-  "catCleaning": "Usafishaji",
-  "catBeverages": "Vinywaji",
-  "catBakery": "Mkate",
-  "catOthers": "Vingine",
-  "@_Unit": "description: Unit",
-  "unitPack": "pakiti",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Orodha ya Ununuzi",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Bajeti ya Kila Mwezi",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Futa orodha",
-  "pantryItemRemoved": "Kitu kimeondolewa",
+  "createListDialog": "Unda Orodha",
+  "createListToStartAi": "Unda orodha ya ununuzi ili kuanza kutumia gumzo mahiri.",
+  "createNewList": "Unda orodha mpya",
+  "currency": "Sarafu",
+  "currentQty": "Kiasi cha sasa",
+  "currentQuantity": "Kiasi cha sasa",
+  "dark": "Giza",
+  "data": "Data",
   "deficitItems": "{deficit,plural, one{Kipengee {deficit} kinahitaji kununuliwa} other{Vipengee {deficit} vinahitaji kununuliwa}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Jumla ya gari",
-  "restockLabel": "Jaza tena",
-  "advancedFeatures": "Vipengele vya hali ya juu",
-  "selectAll": "Chagua zote",
+  "delete": "Futa",
+  "deleteListConfirm": "Futa orodha",
+  "deleteListContent": "Una uhakika unataka kufuta \"{name}\"? Vitu vyote vitaondolewa.",
+  "deleteListTitle": "Futa orodha",
+  "deleteRecipe": "Futa",
+  "deleteRecipeConfirm": "Ungependa kufuta kichocheo hiki?",
+  "deleteRecipeConfirmMsg": "Je, una uhakika unataka kufuta \"{recipeName}\"? Kitendo hiki hakiwezi kutenduliwa.",
+  "deleteSession": "Futa Gumzo",
+  "deleteSessionConfirm": "Je, una uhakika unataka kufuta gumzo hili? Ujumbe utapotea kabisa.",
   "deselectAll": "Achagua zote",
-  "monthlyBudgetAppBar": "Bajeti ya Kila Mwezi",
-  "budgetEditTitle": "Bajeti ya Kila Mwezi",
-  "budgetDashboardTitle": "Dashibodi",
-  "selectListForDashboard": "Chagua orodha ili kutazama dashibodi.",
-  "spendingAnalysis": "Uchambuzi wa Matumizi",
-  "noItemsToAnalyze": "Hakuna vitu kwenye orodha vya kuchambua.",
-  "markItemsToSeeAnalysis": "Weka alama ya vitu kama vilivyonunuliwa ili kuona uchambuzi.",
-  "totalSpending": "Jumla ya Matumizi",
-  "spendingByCategory": "Matumizi kwa Kategoria",
-  "achievements": "Mafanikio",
-  "exportPdfExcel": "Hamisha PDF/Excel",
-  "exportPdf": "Hamisha kama PDF",
-  "exportExcel": "Hamisha kama Excel",
-  "organizingAi": "INAPANGUA KWA AI...",
-  "yesLabel": "Ndiyo",
-  "noLabel": "Hapana",
-  "shareListText": "Orodha Yangu ya Ununuzi",
-  "emptyListAddItems": "Orodha yako haina kitu! Ongeza vitu kwanza. ℹ️",
-  "listOrganizedMagic": "Orodha imepanguliwa kichawi kwa kategoria! ✨",
-  "shoppingMode": "Hali ya Ununuzi",
-  "smartOrganization": "Upangaji Mahiri",
-  "savings": "Akiba",
-  "shoppingModeHeader": "HALI YA UNUNUZI",
-  "shareAsText": "Tuma vitu kama maandishi yaliyopangwa",
-  "shareRealtime": "Usawazishaji wa wakati halisi na watu wengine",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Mapishi ya haraka",
-  "quickRecipePrompt": "Pendekeza mapishi na vitu kutoka kwenye orodha yangu.",
+  "dynamicColors": "Rangi zenye nguvu",
+  "dynamicColorsEnabledWarning": "Zima rangi zinazobadilika ili rangi ya mandhari ianze kutumika",
+  "dynamicColorsSubtitle": "Tumia rangi kulingana na mandhari yako",
   "economyTips": "Vidokezo vya uchumi",
   "economyTipsPrompt": "Nawezaje kuokoa pesa kwenye ununuzi huu?",
-  "organizeAisles": "Panga kwa safu",
-  "organizeAislesPrompt": "Panga kwa safu za duka.",
-  "recipeSuggestion": "Mapendekezo ya mapishi",
-  "aiCreditsRemaining": "Salio la mikopo {remaining}",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Ongeza yote kwenye orodha",
-  "organizeByAisles": "Panga kwa safu",
-  "voiceTranscriptionTooltip": "Kuandika kwa sauti (Bure)",
-  "aiVoiceCommandTooltip": "Amri ya Sauti ya AI (Premium)",
-  "voiceCommandTitle": "Amri ya Sauti ya AI",
-  "voiceCommandContent": "Zungumza kwa asili ili kudhibiti orodha yako!\n\nMifano:\n• 'Ongeza mkate, jibini, na ham'\n• 'Ondoa sabuni ya kufulia'\n• 'Badilisha mandhari kuwa bluu'\n\nHiki ni kipengele cha kipekee cha Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Tazama Pland",
-  "itemsAddedSuccess": "Vitu vimeongezwa kwenye orodha kwa mafanikio!",
-  "viewList": "Tazama orodha",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Tuma Maoni",
+  "edit": "Hariri",
+  "editItem": "Hariri Kitu",
+  "editItemPrice": "Bei inakadiriwa",
+  "editPantryItem": "Hariri {name}",
+  "editRecipe": "Hariri",
+  "editRecipeTitle": "Badilisha Kichocheo",
+  "emptyListAddItems": "Orodha yako haina kitu! Ongeza vitu kwanza. ℹ️",
+  "emptyListSubtitle": "Ongeza vitu ili kuanza",
+  "emptyListTitle": "Orodha yako haina kitu",
+  "enterCodeHint": "Weka msimbo",
+  "enterUrl": "Weka URL",
+  "error": "Hitilafu: {message}",
+  "errorGeneric": "Hitilafu: {message}",
+  "errorLoadingChat": "Lo! Hitilafu fulani imetokea wakati wa kupakia gumzo.",
+  "errorLoadingChatSubtitle": "Angalia muunganisho wako au ujaribu tena baadaye.",
+  "errorLoadingRecipes": "Hitilafu katika kupakia mapishi",
+  "errorOscillation": "Hii inaweza kutokea kwa sababu ya kuzunguka kwa mtandao au kutopatikana kwa muda. Tafadhali jaribu tena.",
+  "estimated": "Inakadiriwa",
+  "estimatedCost": "Inakadiriwa",
+  "estimatedPrice": "Bei inakadiriwa",
+  "exportData": "Hamisha data",
+  "exportDataSubtitle": "Hifadhi orodha zote kama JSON",
+  "exportExcel": "Hamisha kama Excel",
+  "exportPdf": "Hamisha kama PDF",
+  "exportPdfExcel": "Hamisha PDF/Excel",
+  "feedbackBack": "Nyuma",
+  "feedbackError": "Hitilafu ya kutuma: {error}",
+  "feedbackHint": "Eleza maoni yako kwa undani...",
   "feedbackPrompt": "Ungependa kushiriki nini?",
+  "feedbackRetry": "Jaribu tena",
+  "feedbackSend": "Tuma Maoni",
+  "feedbackSending": "Inatuma...",
+  "feedbackSettingsSubtitle": "Ripoti hitilafu, pendekeza maboresho, au rekebisha tafsiri",
+  "feedbackSettingsTitle": "Tuma Maoni",
+  "feedbackThankYou": "Asante!",
+  "feedbackThankYouMessage": "Maoni yako yamepokelewa na yanatusaidia kuboresha Lista Plus kwa kila mtu.",
+  "feedbackTitle": "Tuma Maoni",
   "feedbackTypeBug": "Ripoti Hitilafu",
   "feedbackTypeBugHint": "Kitu hakifanyi kazi",
-  "feedbackTypeSuggestion": "Pendekezo",
-  "feedbackTypeSuggestionHint": "Wazo la kuboresha programu",
-  "feedbackTypeTranslation": "Suala la Tafsiri",
-  "feedbackTypeTranslationHint": "Tafsiri isiyo sahihi au isiyo nzuri",
   "feedbackTypeFeature": "Ombi la Kipengele",
   "feedbackTypeFeatureHint": "Kipengele ungependa kuona",
   "feedbackTypeOther": "Nyingine",
   "feedbackTypeOtherHint": "Aina nyingine ya maoni",
-  "feedbackHint": "Eleza maoni yako kwa undani...",
-  "feedbackSend": "Tuma Maoni",
-  "feedbackSending": "Inatuma...",
-  "feedbackThankYou": "Asante!",
-  "feedbackThankYouMessage": "Maoni yako yamepokelewa na yanatusaidia kuboresha Lista Plus kwa kila mtu.",
-  "feedbackBack": "Nyuma",
-  "feedbackError": "Hitilafu ya kutuma: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Jaribu tena",
-  "feedbackSettingsTitle": "Tuma Maoni",
-  "feedbackSettingsSubtitle": "Ripoti hitilafu, pendekeza maboresho, au rekebisha tafsiri",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Pendekezo",
+  "feedbackTypeSuggestionHint": "Wazo la kuboresha programu",
+  "feedbackTypeTranslation": "Suala la Tafsiri",
+  "feedbackTypeTranslationHint": "Tafsiri isiyo sahihi au isiyo nzuri",
+  "fieldRequired": "Sehemu inayohitajika",
+  "filterAll": "Zote",
+  "filterByTag": "Chuja kwa lebo",
+  "filterPending": "Zinazosubiri",
+  "filterPurchased": "Zilizonunuliwa",
+  "finance": "Fedha",
+  "finishShopping": "Maliza Ununuzi",
+  "gallery": "Matunzio",
+  "generalAssistant": "Msaidizi Mkuu",
+  "generalHelp": "Naweza kusaidiaje na ununuzi wako leo?",
+  "generateShoppingList": "Tengeneza orodha ya ununuzi",
+  "globalAssistant": "Msaidizi wa jumla",
+  "howCanIHelp": "Ninawezaje kusaidia?",
+  "idealQty": "Kiasi bora",
+  "idealQuantity": "Kiasi bora",
+  "imageUrlPlaceholder": "Au bandika URL ya picha",
+  "import": "Ingiza",
+  "importData": "Ingiza data",
+  "importDataSubtitle": "Rejesha orodha kutoka kwa JSON",
+  "importJsonHint": "Bandika JSON ya hifadhi rudufu hapa...",
+  "importJsonTitle": "Ingiza JSON",
+  "importListTitle": "Ingiza Orodha",
+  "importViaCode": "Ingiza kwa msimbo",
+  "ingredients": "Viungo",
+  "instructions": "Maagizo",
+  "instructionsHint": "Andika hatua moja kwa kila mstari...",
+  "inviteToList": "Alika kwenye orodha",
+  "itemName": "Jina la kitu",
+  "itemRemoved": "Kitu kimeondolewa",
+  "itemsAddedSuccess": "Vitu vimeongezwa kwenye orodha kwa mafanikio!",
+  "itemsNeedPurchase": "Vitu {deficit} vinahitaji kununuliwa",
+  "itemsPurchasedCount": "{purchased} kati ya {total} imenunuliwa",
+  "itemsPurchasedShort": "{purchased}/{total} imenunuliwa",
+  "itemsWillBeAdded": "Vitu {count} vitaongezwa",
+  "language": "Lugha",
+  "languageEnglish": "Kiingereza",
+  "languagePortuguese": "Kireno (Brasil)",
+  "languageSystem": "Chaguo-msingi la mfumo",
+  "light": "Mwanga",
+  "listAdded": "{listName} imeongezwa!",
+  "listArchived": "Orodha imehifadhiwa kwa mafanikio!",
+  "listAssistant": "Msaidizi wa orodha",
+  "listBudgetTitle": "Bajeti ya Orodha",
+  "listCreated": "Orodha \"{name}\" imeundwa na vitu {count}",
+  "listHelp": "Naweza kusaidiaje na orodha yako?",
+  "listHistory": "Historia ya Orodha",
+  "listNameLabel": "Jina la orodha",
+  "listOrganizedMagic": "Orodha imepanguliwa kichawi kwa kategoria! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Inasikiliza...",
+  "lists": "Orodha",
+  "loading": "Inapakia...",
+  "loadingRecipes": "Inapakia mapishi yako...",
+  "loginError": "Hitilafu ya kuingia: {error}",
+  "loginPrompt": "Ingia ili kufungua\nvipengele vya premium",
+  "longHistoryWarning": "Historia ndefu: Mratibu huangazia ujumbe wa hivi punde kwa utendakazi bora.",
+  "manageSubscription": "Dhibiti usajili",
+  "markAsPurchased": "Weka kama imenunuliwa",
+  "markItemsToSeeAnalysis": "Weka alama ya vitu kama vilivyonunuliwa ili kuona uchambuzi.",
+  "marketMode": "Hali ya Soko",
+  "mealPlannerAddMeal": "Ongeza Mlo",
+  "mealPlannerDateLabel": "Tarehe",
+  "mealPlannerDeleteMeal": "Ondoa chakula",
+  "mealPlannerEditMeal": "Hariri Mlo",
+  "mealPlannerError": "Hitilafu katika kupakia mpango wa chakula",
+  "mealPlannerGenerateList": "Tengeneza orodha ya ununuzi",
+  "mealPlannerGenerateListConfirm": "Je, ungependa kuongeza viungo vyote kutoka kwenye milo iliyopangwa wiki hii kwenye orodha yako ya ununuzi?",
+  "mealPlannerGenerateListEmpty": "Hakuna viungo vya kuongeza. Panga milo kadhaa ukitumia mapishi kwanza.",
+  "mealPlannerGenerateListNoList": "Unda orodha ya ununuzi kwanza.",
+  "mealPlannerGenerateListSuccess": "{count} kiungo/viungo vimeongezwa kwenye orodha yako!",
+  "mealPlannerLoading": "Inapakia mpango wa chakula...",
+  "mealPlannerMealDeleted": "Mlo umeondolewa",
+  "mealPlannerMealTypeBreakfast": "Kifungua kinywa",
+  "mealPlannerMealTypeDinner": "Chakula cha jioni",
+  "mealPlannerMealTypeLunch": "Chakula cha mchana",
+  "mealPlannerMealTypeSnack": "Vitafunio",
+  "mealPlannerNoMeals": "Hakuna milo iliyopangwa",
+  "mealPlannerNoMealsHint": "Gusa siku ili kuongeza chakula",
+  "mealPlannerNoRecipesFound": "Hakuna mapishi yaliyopatikana",
+  "mealPlannerNoRecipesHint": "Unda mapishi kwenye kichupo cha Mapishi kwanza",
+  "mealPlannerNoteLabel": "Kumbuka (si lazima)",
+  "mealPlannerPrepTime": "Dakika {minutes}",
+  "mealPlannerSave": "Ongeza kwenye mpango",
+  "mealPlannerSearchRecipes": "Tafuta mapishi...",
+  "mealPlannerSelectRecipe": "Chagua kichocheo",
+  "mealPlannerServings": "{count,plural, one{{count} inahudumia} other{{count} huduma zingine}}",
+  "mealPlannerServingsLabel": "Huduma",
+  "mealPlannerTitle": "Mpangaji wa Chakula",
+  "mealPlannerViewMonthly": "Mtazamo wa kila mwezi",
+  "mealPlannerViewWeekly": "Mtazamo wa kila wiki",
+  "mealPlannerWeekEmpty": "Hakuna kilichopangwa kwa wiki hii",
+  "mealPlannerWeekEmptyHint": "Gusa siku yoyote ili uanze kupanga milo yako!",
+  "mealPlannerWeekProgress": "{count} kati ya milo {total} imepangwa",
+  "monthlyBudgetAppBar": "Bajeti ya Kila Mwezi",
+  "monthlyBudgetNav": "Bajeti ya kila mwezi",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Bajeti ya Kila Mwezi",
+  "myLists": "Orodha Zangu",
+  "myRecipes": "Mapishi Yangu",
+  "newChat": "Gumzo Mpya",
+  "newListTitle": "Orodha Mpya ya Ununuzi",
+  "newPantryList": "Ununuzi wa Pantri",
+  "newRecipe": "Kichocheo Kipya",
+  "newRecipeTitle": "Kichocheo Kipya",
+  "next": "Inayofuata",
+  "noActiveLists": "Hakuna orodha zinazotumika",
+  "noArchivedLists": "Hakuna orodha za kumbukumbu",
+  "noBudgetDefined": "Hakuna bajeti iliyowekwa",
+  "noHistory": "Hakuna historia ya gumzo",
+  "noItemsInList": "Hakuna vipengee kwenye orodha",
+  "noItemsToAnalyze": "Hakuna vitu kwenye orodha vya kuchambua.",
+  "noItemsToBuy": "Hakuna vitu vinavyohitaji kununuliwa",
+  "noLabel": "Hapana",
+  "noListFoundSubtitle": "Unda orodha yako ya kwanza ili kuanza",
+  "noListFoundTitle": "Hakuna orodha zilizopatikana",
+  "noMessagesFound": "Hakuna ujumbe uliopatikana",
+  "noRecipesSaved": "Hakuna mapishi yaliyohifadhiwa",
+  "noRecipesSavedHint": "Unda kichocheo chako cha kwanza maalum kwa kugonga kitufe kilicho hapa chini.",
+  "noTracking": "Hakuna ufuatiliaji",
+  "onboardingAnnualBadge": "Thamani Bora",
+  "onboardingAnnualLabel": "Mwaka",
+  "onboardingCancelAnytime": "Ghairi wakati wowote. Hakuna kujitolea.",
+  "onboardingContinueAsGuest": "Endelea kama mgeni",
+  "onboardingExit": "Utgång",
+  "onboardingLoginDesc": "Data yako ilisawazishwa kwenye vifaa vyako vyote",
+  "onboardingLoginTitle": "Hifadhi kila kitu kwenye wingu",
+  "onboardingMonthlyLabel": "Kila mwezi",
+  "onboardingPersonalizationCta": "Endelea",
+  "onboardingPersonalizationDesc": "Tutatumia hii kubinafsisha mapendekezo yako na kufanya ununuzi kuwa bora zaidi.",
+  "onboardingPersonalizationFoodHint": "k.m. Pizza, Sushi, Lasagna ...",
+  "onboardingPersonalizationFoodLabel": "Ni chakula gani unachopenda zaidi?",
+  "onboardingPersonalizationFoodRequired": "Tuambie chakula unachopenda ili kuendelea",
+  "onboardingPersonalizationSkip": "Ruka kwa sasa",
+  "onboardingPersonalizationTitle": "Hebu tujue wewe",
+  "onboardingPremiumSubtitle": "Pata manufaa zaidi kutoka kwa orodha zako za ununuzi",
+  "onboardingPremiumTitle": "Fungua vipengele vyote",
+  "onboardingRestore": "Rejesha Ununuzi",
+  "onboardingRestoreDesc": "Je, tayari una usajili? Gusa hapa ili kuirejesha.",
+  "onboardingSetupDesc": "Chagua jinsi unavyotaka Lista Plus ionekane na ikufanyie kazi.",
+  "onboardingSetupTitle": "Binafsisha matumizi yako",
+  "onboardingShareDesc": "Sawazisha orodha na familia na marafiki kwa wakati halisi",
+  "onboardingShareTitle": "Shiriki na wale unaowapenda",
+  "onboardingSubscribeCta": "Jisajili",
+  "onboardingViewAllPlans": "Tazama mipango yote",
+  "onboardingWelcomeDesc": "Njia bora zaidi ya kupanga ununuzi wako na kuokoa pesa.",
+  "onboardingWelcomeTitle": "Karibu kwenye Lista Plus",
+  "openMenu": "Fungua menyu",
+  "organizeAisles": "Panga kwa safu",
+  "organizeAislesPrompt": "Panga kwa safu za duka.",
+  "organizeByAisles": "Panga kwa safu",
+  "organizingAi": "INAPANGUA KWA AI...",
+  "pantry": "Pantri",
+  "pantryAppBar": "Pantri",
+  "pantryEditTitle": "Hariri {name}",
+  "pantryEmpty": "Pantri tupu",
+  "pantryEmptySubtitle": "Ongeza bidhaa unazotaka kuwa nazo nyumbani",
+  "pantryItemRemoved": "Kitu kimeondolewa",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Msaidizi wa Kibinafsi wa AI",
+  "prefCustomThemes": "Mandhari maalum",
+  "prefExportData": "Hamisha data",
+  "prefFullHistory": "Historia kamili",
+  "prefInteractiveArtifacts": "Vipengee shirikishi vya AI",
+  "prefMonthlyBudget": "Bajeti ya jumla ya kila mwezi",
+  "prefSharing": "Shiriki orodha",
+  "prefUnlimitedLists": "Orodha zisizo na kikomo",
+  "prefUnlimitedPantry": "Pantri isiyo na kikomo",
+  "premiumUpgrade": "Boresha ili kufungua",
+  "prepTime": "Muda wa maandalizi",
+  "prepTimeMinutes": "Muda wa maandalizi (dakika)",
+  "privacy": "Faragha",
+  "productName": "Jina la bidhaa",
+  "purchaseError": "Hitilafu katika kuchakata ununuzi. Jaribu tena.",
+  "quantityFull": "Kiasi",
+  "quantityShort": "Idadi",
+  "quickRecipe": "Mapishi ya haraka",
+  "quickRecipePrompt": "Pendekeza mapishi na vitu kutoka kwenye orodha yangu.",
+  "quickReplies": "Majibu ya haraka:",
+  "recipeCreated": "Kichocheo kimeundwa!",
+  "recipeDeleted": "Kichocheo kimefutwa",
+  "recipeImage": "Picha ya mapishi",
+  "recipeName": "Jina la mapishi",
+  "recipeSaved": "Kichocheo kimehifadhiwa!",
+  "recipeSuggestion": "Mapendekezo ya mapishi",
+  "recipeTags": "Vitambulisho vya mapishi",
+  "regenerate": "Tengeneza upya",
+  "remove": "Ondoa",
+  "removeBudget": "Ondoa",
+  "removeImage": "Ondoa picha",
+  "removeSharedListContent": "Ondoa \"{name}\" kutoka kwenye orodha zako? Orodha asili haitaathiriwa.",
+  "removeSharedListTitle": "Ondoa orodha iliyoshirikiwa",
+  "removeSharedTooltip": "Ondoa",
+  "rename": "Badilisha jina",
+  "renameListDialog": "Badilisha Jina la Orodha",
+  "requiredField": "Inahitajika",
+  "restockLabel": "Jaza tena",
+  "restocked": "{name} imejazwa tena hadi {quantity} {unit}",
+  "restore": "Rejesha",
+  "restoreError": "Hitilafu katika kurejesha ununuzi. Jaribu tena.",
+  "retry": "Jaribu tena",
+  "save": "Hifadhi",
+  "saveChanges": "Hifadhi mabadiliko",
+  "saveRecipe": "Hifadhi",
+  "savings": "Akiba",
+  "searchCurrency": "Tafuta sarafu...",
+  "searchInConversation": "Tafuta kwenye mazungumzo...",
+  "searchLanguage": "Tafuta lugha...",
+  "searchRecipes": "Tafuta mapishi...",
+  "selectAll": "Chagua zote",
+  "selectListForDashboard": "Chagua orodha ili kutazama dashibodi.",
+  "selectedItems": "{count,plural, one{{count} imechaguliwa} other{{count} zimechaguliwa}}",
+  "setBudgetButton": "Weka bajeti",
+  "setBudgetTitle": "Bajeti ya Kila Mwezi",
+  "settingsAppBar": "Mipangilio",
+  "settingsDefaultScreen": "Skrini chaguomsingi ya nyumbani",
+  "settingsDefaultScreenSubtitle": "Chagua kati ya orodha ya ununuzi au gumzo la AI",
+  "settingsScreenChat": "Gumzo la AI",
+  "settingsScreenList": "Orodha ya Ununuzi",
+  "share": "Shiriki",
+  "shareApp": "Shiriki programu",
+  "shareAppDescription": "Alika marafiki kutumia Lista Plus",
+  "shareAsText": "Tuma vitu kama maandishi yaliyopangwa",
+  "shareListText": "Orodha Yangu ya Ununuzi",
+  "shareListTitle": "Shiriki Orodha",
+  "shareRealtime": "Usawazishaji wa wakati halisi na watu wengine",
+  "shareReferralSubject": "Pata siku 7 za Lista Plus Premium!",
+  "shareReferralText": "Ninatumia Lista Plus kupanga ununuzi wangu! Pakua kupitia kiungo changu na sote tupate siku 7 za Premium bila malipo: {url}",
+  "shareSubject": "Orodha ya Ununuzi",
+  "shareThisCode": "Shiriki msimbo huu:",
+  "shareViaCode": "Shiriki kwa msimbo",
+  "sharedLabel": "Imeshirikiwa",
+  "shoppingAssistant": "Msaidizi wa ununuzi",
+  "shoppingMode": "Hali ya Ununuzi",
+  "shoppingModeHeader": "HALI YA UNUNUZI",
+  "shortDescription": "Maelezo mafupi",
+  "signInApple": "Ingia kwa Apple",
+  "signInGoogle": "Ingia kwa Google",
+  "smartOrganization": "Upangaji Mahiri",
+  "sortCategory": "Kategoria",
+  "sortDate": "Tarehe",
+  "sortManual": "Mwenyewe",
+  "sortName": "Jina",
+  "spendingAnalysis": "Uchambuzi wa Matumizi",
+  "spendingByCategory": "Matumizi kwa Kategoria",
+  "suggestedQuestions": "Maswali yaliyopendekezwa:",
+  "suggestedTags": "Imependekezwa",
+  "switchList": "Badilisha orodha",
+  "system": "Mfumo",
+  "tags": "Lebo",
+  "termsOfUse": "Masharti ya matumizi",
+  "themeAmber": "Kaharabu",
+  "themeBlue": "Bluu",
+  "themeBrown": "Kahawia",
+  "themeColor": "Rangi ya mandhari",
+  "themeGreen": "Kijani",
+  "themeIndigo": "Buluu",
+  "themeOrange": "Chungwa",
+  "themePink": "Waridi",
+  "themePurple": "Zambarau",
+  "themeRed": "Nyekundu",
+  "themeTeal": "Teal",
+  "totalEstimated": "Jumla inakadiriwa: {amount}",
+  "totalSpending": "Jumla ya Matumizi",
+  "trackStock": "Fuatilia hisa",
+  "trackStockActive": "Inaonekana katika mapendekezo ya ununuzi",
+  "trackStockInactive": "Haizalishi mapendekezo ya ununuzi",
+  "undo": "Tengua",
+  "unit": "Kipimo",
+  "unitPack": "pakiti",
+  "unlockFullResponse": "Fungua Majibu Kamili",
+  "unmark": "Ondoa alama",
+  "upgrade": "Boresha",
+  "validForLimitedTime": "Inatumika kwa muda mfupi",
+  "version": "Toleo",
+  "viewActive": "Tazama Zinazotumika",
+  "viewDetails": "Tazama Maelezo",
+  "viewHistory": "Tazama Historia",
+  "viewItems": "Tazama vitu",
+  "viewList": "Tazama orodha",
+  "viewPro": "Tazama Pro",
+  "viewRecipe": "Tazama Kichocheo",
+  "voiceCommandContent": "Zungumza kwa asili ili kudhibiti orodha yako!\n\nMifano:\n• 'Ongeza mkate, jibini, na ham'\n• 'Ondoa sabuni ya kufulia'\n• 'Badilisha mandhari kuwa bluu'\n\nHiki ni kipengele cha kipekee cha Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Tazama Pland",
+  "voiceCommandTitle": "Amri ya Sauti ya AI",
+  "voiceProFeature": "Amri za sauti za hali ya juu ni Pro. Inawasha imla msingi...",
+  "voiceTranscriptionTooltip": "Kuandika kwa sauti (Bure)",
+  "welcomeAiAssistant": "Karibu kwenye Msaidizi wa AI",
+  "whatToDoWithItem": "Je, ungependa kufanya nini na kipengee hiki?",
+  "yes": "Ndiyo",
+  "yesLabel": "Ndiyo"
 }

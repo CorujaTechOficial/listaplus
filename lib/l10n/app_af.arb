@@ -1,101 +1,73 @@
 {
   "@@locale": "af",
-  "appTitle": "Klyslys",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Lyste",
-  "pantry": "Spens",
-  "@_Common": "description: Common actions",
-  "cancel": "Kanselleer",
-  "save": "Stoor",
-  "create": "Skep",
-  "add": "Voeg by",
-  "remove": "Verwyder",
-  "delete": "Verwyder",
-  "edit": "Wysig",
-  "copy": "Kopieer",
-  "retry": "Probeer weer",
-  "regenerate": "Her genereer",
-  "copiedToClipboard": "Gekopieer na knipbord",
-  "confirm": "Bevestig",
-  "close": "Maak toe",
-  "import": "Voer in",
-  "rename": "Hernoem",
-  "upgrade": "Gradeer op",
-  "clear": "Maak skoon",
-  "error": "Fout: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Fout: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Fout met verwerking van aankoop. Probeer weer.",
-  "restoreError": "Fout met herstel van aankope. Probeer weer.",
-  "loading": "Laai tans...",
-  "fieldRequired": "Vereiste veld",
-  "addedFeedback": "Bygevoeg!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} gekies} other{{count} gekies}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Geraam",
-  "alreadyPurchased": "Reeds gekoop",
-  "clearList": "Maak lys skoon",
-  "clearPurchased": "Maak gekoopte skoon",
-  "share": "Deel",
-  "shareViaCode": "Deel via kode",
-  "importViaCode": "Voer in via kode",
-  "listAssistant": "Lysassistent",
-  "globalAssistant": "Globale assistent",
-  "becomePremium": "Word Premium",
-  "manageSubscription": "Bestuur intekening",
-  "completePurchase": "Voltooi aankoop",
-  "confirmClearList": "Verwyder alle items?",
-  "shareListTitle": "Deel Lys",
-  "shareThisCode": "Deel hierdie kode:",
-  "validForLimitedTime": "Geldig vir beperkte tyd",
-  "importListTitle": "Voer Lys In",
-  "enterCodeHint": "Voer die kode in",
-  "confirmArchiveTitle": "Voltooi Aankoop",
-  "confirmArchiveContent": "Voltooi hierdie aankoop en argiveer die lys?",
-  "complete": "Voltooi",
-  "listArchived": "Lys suksesvol geargiveer!",
-  "listAdded": "{listName} bygevoeg!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Koop",
-  "unmark": "Ontmerk",
-  "confirmDeleteItems": "Verwyder {count} item(s)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Bevestig",
-  "confirmContent": "Verwyder {count} item(s)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,68 @@
       }
     }
   },
-  "archiveList": "Argiveer lys",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Spens",
-  "generateShoppingList": "Genereer klyslys",
-  "pantryEmpty": "Spens is leeg",
-  "pantryEmptySubtitle": "Voeg produkte by wat jy tuis wil hou",
-  "itemsNeedPurchase": "{deficit} item(s) moet gekoop word",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +144,26 @@
       }
     }
   },
-  "noItemsToBuy": "Geen items om te koop nie",
-  "newPantryList": "Spens Inkopies",
-  "newListTitle": "Nuwe Klyslys",
-  "itemsWillBeAdded": "{count} item(s) sal bygevoeg word",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +171,13 @@
       }
     }
   },
-  "listNameLabel": "Lysnaam",
-  "listCreated": "Lys \"{name}\" geskep met {count} items",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +188,125 @@
       }
     }
   },
-  "noTracking": "Geen dop",
-  "markAsPurchased": "Merk as gekoop",
-  "editPantryItem": "Wysig {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Ideale hoeveelheid",
-  "currentQuantity": "Huidige hoeveelheid",
-  "consumed": "Verbruik",
-  "restocked": "{name} hervul na {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +320,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Verwyder \"{name}\" uit spens?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Wysig {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Instellings",
-  "language": "Taal",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Stelselverstek",
-  "appearance": "Voorkoms",
-  "light": "Lig",
-  "system": "Stelsel",
-  "dark": "Donker",
-  "themeColor": "Temakleur",
-  "finance": "Finansies",
-  "monthlyBudgetNav": "Maandelikse begroting",
-  "budgetSubtitle": "Volg jou maandelikse besteding",
-  "data": "Data",
-  "backupNav": "Rugsteun",
-  "backupSubtitle": "Voer uit of voer jou data in",
-  "about": "Oor",
-  "version": "Weergawe",
-  "privacy": "Privaatheid",
-  "termsOfUse": "Gebruiksvoorwaardes",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Rugsteun",
-  "backupPremiumDescription": "Rugsteun en uitvoer is 'n premium kenmerk",
-  "exportData": "Voer data uit",
-  "exportDataSubtitle": "Stoor alle lyste as JSON",
-  "importData": "Voer data in",
-  "importDataSubtitle": "Herstel lyste van 'n JSON",
-  "importJsonTitle": "Voer JSON in",
-  "importJsonHint": "Plak die rugsteun-JSON hier...",
-  "backupExported": "Rugsteun uitgevoer!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Maandelikse Begroting",
-  "budgetPremiumLocked": "Globale maandelikse begroting is premium",
-  "budgetUpgradePrompt": "Gradeer op om te ontsluit",
-  "noBudgetDefined": "Geen begroting gestel",
-  "totalEstimated": "Totaal geraam: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,359 +361,218 @@
       }
     }
   },
-  "setBudgetButton": "Stel begroting",
-  "budgetLists": "Lyste",
-  "budgetValueLabel": "Bedrag",
-  "setBudgetTitle": "Maandelikse Begroting",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Alle",
-  "filterPending": "Hangend",
-  "filterPurchased": "Gekoop",
-  "sortName": "Naam",
-  "sortCategory": "Kategorie",
-  "sortDate": "Datum",
-  "sortManual": "Handmatig",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Oor",
+  "achievements": "Prestasies",
+  "activeListening": "Aktiewe luister",
+  "add": "Voeg by",
+  "addAllToList": "Voeg alles by lys",
+  "addDirectToList": "Voeg direk by lys",
+  "addIngredient": "Voeg bestanddeel by",
   "addItem": "Voeg Item By",
-  "itemName": "Itemnaam",
-  "quantityShort": "Hoev",
-  "unit": "Eenheid",
-  "category": "Kategorie",
-  "estimatedPrice": "Geraamde prys",
   "addItemPrice": "Geraamde prys",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Wysig Item",
-  "quantityFull": "Hoeveelheid",
-  "editItemPrice": "Geraamde prys",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Voeg foto by",
   "addToPantry": "Voeg by Spens",
   "addToPantryPrompt": "Voeg \"{name}\" by jou Spens?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Ja",
-  "productName": "Produknaam",
-  "idealQty": "Ideale hoev",
-  "currentQty": "Huidige hoev",
-  "trackStock": "Hou voorraad dop",
-  "trackStockActive": "Verskyn in inkopie-voorstelle",
-  "trackStockInactive": "Genereer geen inkopie-voorstel nie",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Skep Lys",
-  "renameListDialog": "Hernoem Lys",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Lysgeskiedenis",
-  "myLists": "My Lyste",
-  "viewActive": "Bekyk Aktiewe",
-  "viewHistory": "Bekyk Geskiedenis",
-  "noArchivedLists": "Geen geargiveerde lyste",
-  "noActiveLists": "Geen aktiewe lyste",
-  "completedOn": "Voltooi op {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Gedeel",
-  "restore": "Herstel",
-  "removeSharedTooltip": "Verwyder",
-  "deleteListTitle": "Verwyder lys",
-  "deleteListContent": "Is jy seker jy wil \"{name}\" verwyder? Alle items sal verwyder word.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Verwyder gedeelde lys",
-  "removeSharedListContent": "Verwyder \"{name}\" van jou lyste? Die oorspronklike lys sal nie geraak word nie.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Skep nuwe lys",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Bygevoeg!",
+  "advancedFeatures": "Gevorderde kenmerke",
   "aiAssistant": "AI Assistent",
   "aiAssistantDescription": "Kry slim voorstelle, resepte en persoonlike wenke met ons AI-assistent.",
-  "generalAssistant": "Algemene Assistent",
+  "aiCreditsRemaining": "{remaining} krediete oor",
+  "aiEnergy": "AI Energie",
+  "aiError": "Jammer, 'n fout het voorgekom met die verwerking van jou versoek. Gaan jou verbinding na of probeer later weer.",
+  "aiVoiceCommandTooltip": "KI-stemopdrag (Premium)",
+  "allTags": "Alle",
+  "alreadyPurchased": "Reeds gekoop",
+  "appTitle": "Klyslys",
+  "appearance": "Voorkoms",
+  "archiveList": "Argiveer lys",
+  "backToChat": "Terug na Chat",
+  "backupExported": "Rugsteun uitgevoer!",
+  "backupNav": "Rugsteun",
+  "backupPremiumDescription": "Rugsteun en uitvoer is 'n premium kenmerk",
+  "backupSubtitle": "Voer uit of voer jou data in",
+  "backupTitle": "Rugsteun",
+  "becomePremium": "Word Premium",
+  "budgetAmountLabel": "Begrotingsbedrag",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Maandelikse Begroting",
+  "budgetDashboardTitle": "Dashboard",
+  "budgetEditTitle": "Maandelikse Begroting",
+  "budgetLists": "Lyste",
+  "budgetPremiumLocked": "Globale maandelikse begroting is premium",
+  "budgetSubtitle": "Volg jou maandelikse besteding",
+  "budgetUpgradePrompt": "Gradeer op om te ontsluit",
+  "budgetValueLabel": "Bedrag",
+  "buy": "Koop",
+  "cancel": "Kanselleer",
+  "cartTotal": "Mandjietotaal",
+  "catBakery": "Bakkery",
+  "catBeverages": "Drankies",
+  "catCleaning": "Skoonmaak",
+  "catFruits": "Vrugte",
+  "catOthers": "Ander",
+  "category": "Kategorie",
+  "chatError": "Fout met laai van geselsie: {error}",
+  "chatHint": "Tik jou boodskap...",
+  "chatSubtitle": "Vra vir itemvoorstelle, resepte of besparingwenke.",
+  "chatSubtitleShort": "Vra oor pryse, resepte, organisasie...",
+  "chooseCurrency": "Kies Geldeenheid",
+  "chooseImageSource": "Kies beeldbron",
+  "chooseLanguage": "Kies taal",
+  "clear": "Maak skoon",
   "clearHistory": "Maak Geskiedenis Skoon",
   "clearHistoryConfirm": "Maak alle boodskappe in hierdie sessie skoon?",
-  "chatHint": "Tik jou boodskap...",
-  "chatError": "Fout met laai van geselsie: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Hoe kan ek met jou lys help?",
-  "generalHelp": "Hoe kan ek met jou inkopies vandag help?",
-  "chatSubtitle": "Vra vir itemvoorstelle, resepte of besparingwenke.",
-  "aiError": "Jammer, 'n fout het voorgekom met die verwerking van jou versoek. Gaan jou verbinding na of probeer later weer.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Meld aan om\npremium-kenmerke te ontsluit",
-  "signInGoogle": "Teken in met Google",
-  "signInApple": "Teken in met Apple",
+  "clearList": "Maak lys skoon",
+  "clearPurchased": "Maak gekoopte skoon",
+  "close": "Maak toe",
+  "complete": "Voltooi",
+  "completePurchase": "Voltooi aankoop",
+  "completedOn": "Voltooi op {date}",
+  "confirm": "Bevestig",
+  "confirmArchiveContent": "Voltooi hierdie aankoop en argiveer die lys?",
+  "confirmArchiveTitle": "Voltooi Aankoop",
+  "confirmClearList": "Verwyder alle items?",
+  "confirmContent": "Verwyder {count} item(s)?",
+  "confirmDeleteItems": "Verwyder {count} item(s)?",
+  "confirmDeleteTitle": "Bevestig",
+  "confirmRemovePantry": "Verwyder \"{name}\" uit spens?",
+  "consumed": "Verbruik",
   "continueAsGuest": "Gaan voort as gas",
-  "loginError": "Aantekenfout: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Gradeer op om te ontsluit",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Item verwyder",
-  "undo": "Ontdoen",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Jou lys is leeg",
-  "emptyListSubtitle": "Voeg items by om te begin",
-  "noListFoundTitle": "Geen lyste gevind",
-  "noListFoundSubtitle": "Skep jou eerste lys om te begin",
+  "copiedToClipboard": "Gekopieer na knipbord",
+  "copy": "Kopieer",
+  "create": "Skep",
   "createFirstList": "Skep Eerste Lys",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Lysbegroting",
-  "budgetAmountLabel": "Begrotingsbedrag",
-  "removeBudget": "Verwyder",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Onbeperkte lyste",
-  "prefSharing": "Deel lyste",
-  "prefFullHistory": "Volle geskiedenis",
-  "prefExportData": "Voer data uit",
-  "prefCustomThemes": "Pasgemaakte temas",
-  "prefMonthlyBudget": "Globale maandelikse begroting",
-  "prefAIAssistant": "Persoonlike AI Assistent",
-  "prefUnlimitedPantry": "Onbeperkte spens",
-  "prefInteractiveArtifacts": "Interaktiewe AI-Artifakte",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Groen",
-  "themeBlue": "Blou",
-  "themePurple": "Pers",
-  "themeRed": "Rooi",
-  "themeOrange": "Oranje",
-  "themePink": "Pienk",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Amber",
-  "themeTeal": "Groenblou",
-  "themeBrown": "Bruin",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Vrugte",
-  "catCleaning": "Skoonmaak",
-  "catBeverages": "Drankies",
-  "catBakery": "Bakkery",
-  "catOthers": "Ander",
-  "@_Unit": "description: Unit",
-  "unitPack": "pak",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Klyslys",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Maandelikse Begroting",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Verwyder lys",
-  "pantryItemRemoved": "Item verwyder",
+  "createListDialog": "Skep Lys",
+  "createListToStartAi": "Skep 'n inkopielys om die slimklets te begin gebruik.",
+  "createNewList": "Skep nuwe lys",
+  "currency": "Geldeenheid",
+  "currentQty": "Huidige hoev",
+  "currentQuantity": "Huidige hoeveelheid",
+  "dark": "Donker",
+  "data": "Data",
   "deficitItems": "{deficit,plural, one{{deficit} item moet gekoop word} other{{deficit} items moet gekoop word}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Mandjietotaal",
-  "restockLabel": "Hervul",
-  "advancedFeatures": "Gevorderde kenmerke",
-  "selectAll": "Kies alles",
+  "delete": "Verwyder",
+  "deleteListConfirm": "Verwyder lys",
+  "deleteListContent": "Is jy seker jy wil \"{name}\" verwyder? Alle items sal verwyder word.",
+  "deleteListTitle": "Verwyder lys",
+  "deleteRecipe": "Verwyder",
+  "deleteRecipeConfirm": "Verwyder hierdie resep?",
+  "deleteRecipeConfirmMsg": "Is jy seker jy wil \"{recipeName}\" verwyder? Hierdie aksie kan nie ongedaan gemaak word nie.",
+  "deleteSession": "Vee Chat uit",
+  "deleteSessionConfirm": "Is jy seker jy wil hierdie klets uitvee? Die boodskappe sal permanent verlore gaan.",
   "deselectAll": "Ontkies alles",
-  "monthlyBudgetAppBar": "Maandelikse Begroting",
-  "budgetEditTitle": "Maandelikse Begroting",
-  "budgetDashboardTitle": "Dashboard",
-  "selectListForDashboard": "Kies 'n lys om die dashboard te bekyk.",
-  "spendingAnalysis": "Bestedingsanalise",
-  "noItemsToAnalyze": "Geen items in die lys om te ontleed nie.",
-  "markItemsToSeeAnalysis": "Merk items as gekoop om die analise te sien.",
-  "totalSpending": "Totale Besteding",
-  "spendingByCategory": "Besteding per Kategorie",
-  "achievements": "Prestasies",
-  "exportPdfExcel": "Voer uit PDF/Excel",
-  "exportPdf": "Voer uit as PDF",
-  "exportExcel": "Voer uit as Excel",
-  "organizingAi": "ORGANISEER MET KI...",
-  "yesLabel": "Ja",
-  "noLabel": "Nee",
-  "shareListText": "My Klyslys",
-  "emptyListAddItems": "Jou lys is leeg! Voeg eers items by. ℹ️",
-  "listOrganizedMagic": "Lys magies georganiseer volgens kategorieë! ✨",
-  "shoppingMode": "Inkopiemodus",
-  "smartOrganization": "Slim Organisasie",
-  "savings": "Besparings",
-  "shoppingModeHeader": "INKOPIEMODUS",
-  "shareAsText": "Stuur items as geformateerde teks",
-  "shareRealtime": "Reële tyd-sinkronisasie met ander mense",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Vinnige resep",
-  "quickRecipePrompt": "Stel resepte voor met items van my lys.",
+  "dynamicColors": "Dinamiese kleure",
+  "dynamicColorsEnabledWarning": "Deaktiveer dinamiese kleure sodat die temakleur in werking tree",
+  "dynamicColorsSubtitle": "Gebruik kleure gebaseer op jou muurpapier",
   "economyTips": "Besparingwenke",
   "economyTipsPrompt": "Hoe kan ek geld spaar op hierdie aankoop?",
-  "organizeAisles": "Organiseer volgens gange",
-  "organizeAislesPrompt": "Organiseer volgens winkelgange.",
-  "recipeSuggestion": "Resepvoorstel",
-  "aiCreditsRemaining": "{remaining} krediete oor",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Voeg alles by lys",
-  "organizeByAisles": "Organiseer volgens gange",
-  "voiceTranscriptionTooltip": "Stemtik (Gratis)",
-  "aiVoiceCommandTooltip": "KI-stemopdrag (Premium)",
-  "voiceCommandTitle": "KI-stemopdrag",
-  "voiceCommandContent": "Praat natuurlik om jou lys te bestuur!\n\nVoorbeelde:\n• 'Voeg brood, kaas en ham by'\n• 'Verwyder waspoeier'\n• 'Verander tema na blou'\n\nDit is 'n eksklusiewe kenmerk van Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Bekyk Planne",
-  "itemsAddedSuccess": "Items suksesvol by lys gevoeg!",
-  "viewList": "Bekyk lys",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Stuur Terugvoer",
+  "edit": "Wysig",
+  "editItem": "Wysig Item",
+  "editItemPrice": "Geraamde prys",
+  "editPantryItem": "Wysig {name}",
+  "editRecipe": "Wysig",
+  "editRecipeTitle": "Wysig resep",
+  "emptyListAddItems": "Jou lys is leeg! Voeg eers items by. ℹ️",
+  "emptyListSubtitle": "Voeg items by om te begin",
+  "emptyListTitle": "Jou lys is leeg",
+  "enterCodeHint": "Voer die kode in",
+  "enterUrl": "Voer URL in",
+  "error": "Fout: {message}",
+  "errorGeneric": "Fout: {message}",
+  "errorLoadingChat": "Oeps! Iets het verkeerd geloop om die klets te laai.",
+  "errorLoadingChatSubtitle": "Gaan jou verbinding na of probeer later weer.",
+  "errorLoadingRecipes": "Fout met laai van resepte",
+  "errorOscillation": "Dit kan voorkom as gevolg van netwerkossillasies of tydelike onbeskikbaarheid. Probeer asseblief weer.",
+  "estimated": "Geraam",
+  "estimatedCost": "Geskatte",
+  "estimatedPrice": "Geraamde prys",
+  "exportData": "Voer data uit",
+  "exportDataSubtitle": "Stoor alle lyste as JSON",
+  "exportExcel": "Voer uit as Excel",
+  "exportPdf": "Voer uit as PDF",
+  "exportPdfExcel": "Voer uit PDF/Excel",
+  "feedbackBack": "Terug",
+  "feedbackError": "Fout met stuur: {error}",
+  "feedbackHint": "Beskryf jou terugvoer in detail...",
   "feedbackPrompt": "Wat wil jy graag deel?",
+  "feedbackRetry": "Probeer weer",
+  "feedbackSend": "Stuur Terugvoer",
+  "feedbackSending": "Stuur tans...",
+  "feedbackSettingsSubtitle": "Rapporteer foute, stel verbeterings voor, of maak vertalings reg",
+  "feedbackSettingsTitle": "Stuur Terugvoer",
+  "feedbackThankYou": "Dankie!",
+  "feedbackThankYouMessage": "Jou terugvoer is ontvang en help ons om Lista Plus vir almal te verbeter.",
+  "feedbackTitle": "Stuur Terugvoer",
   "feedbackTypeBug": "Rapporteer Fout",
   "feedbackTypeBugHint": "Iets werk nie",
-  "feedbackTypeSuggestion": "Voorstel",
-  "feedbackTypeSuggestionHint": "Idee om die program te verbeter",
-  "feedbackTypeTranslation": "Vertalingskwessie",
-  "feedbackTypeTranslationHint": "Verkeerde of ongemaklike vertaling",
   "feedbackTypeFeature": "Funksieversoek",
   "feedbackTypeFeatureHint": "Funksie wat jy graag wil sien",
   "feedbackTypeOther": "Ander",
   "feedbackTypeOtherHint": "Ander tipe terugvoer",
-  "feedbackHint": "Beskryf jou terugvoer in detail...",
-  "feedbackSend": "Stuur Terugvoer",
-  "feedbackSending": "Stuur tans...",
-  "feedbackThankYou": "Dankie!",
-  "feedbackThankYouMessage": "Jou terugvoer is ontvang en help ons om Lista Plus vir almal te verbeter.",
-  "feedbackBack": "Terug",
-  "feedbackError": "Fout met stuur: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Probeer weer",
-  "feedbackSettingsTitle": "Stuur Terugvoer",
-  "feedbackSettingsSubtitle": "Rapporteer foute, stel verbeterings voor, of maak vertalings reg",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Voeg bestanddeel by",
-  "addPhoto": "Voeg foto by",
-  "allTags": "Alle",
-  "chooseImageSource": "Kies beeldbron",
-  "chooseLanguage": "Kies taal",
-  "deleteRecipe": "Verwyder",
-  "deleteRecipeConfirm": "Verwyder hierdie resep?",
-  "deleteRecipeConfirmMsg": "Is jy seker jy wil \"{recipeName}\" verwyder? Hierdie aksie kan nie ongedaan gemaak word nie.",
-  "dynamicColors": "Dinamiese kleure",
-  "dynamicColorsSubtitle": "Gebruik kleure gebaseer op jou muurpapier",
-  "editRecipe": "Wysig",
-  "editRecipeTitle": "Wysig resep",
-  "enterUrl": "Voer URL in",
-  "errorLoadingRecipes": "Fout met laai van resepte",
+  "feedbackTypeSuggestion": "Voorstel",
+  "feedbackTypeSuggestionHint": "Idee om die program te verbeter",
+  "feedbackTypeTranslation": "Vertalingskwessie",
+  "feedbackTypeTranslationHint": "Verkeerde of ongemaklike vertaling",
+  "fieldRequired": "Vereiste veld",
+  "filterAll": "Alle",
   "filterByTag": "Filtreer volgens etiket",
+  "filterPending": "Hangend",
+  "filterPurchased": "Gekoop",
+  "finance": "Finansies",
+  "finishShopping": "Voltooi inkopies",
   "gallery": "Galery",
+  "generalAssistant": "Algemene Assistent",
+  "generalHelp": "Hoe kan ek met jou inkopies vandag help?",
+  "generateShoppingList": "Genereer klyslys",
+  "globalAssistant": "Globale assistent",
+  "howCanIHelp": "Hoe kan ek help?",
+  "idealQty": "Ideale hoev",
+  "idealQuantity": "Ideale hoeveelheid",
   "imageUrlPlaceholder": "Of plak 'n beeld-URL",
+  "import": "Voer in",
+  "importData": "Voer data in",
+  "importDataSubtitle": "Herstel lyste van 'n JSON",
+  "importJsonHint": "Plak die rugsteun-JSON hier...",
+  "importJsonTitle": "Voer JSON in",
+  "importListTitle": "Voer Lys In",
+  "importViaCode": "Voer in via kode",
   "ingredients": "Bestanddele",
   "instructions": "Instruksies",
   "instructionsHint": "Tik een stap per reël...",
+  "inviteToList": "Nooi na lys",
+  "itemName": "Itemnaam",
+  "itemRemoved": "Item verwyder",
+  "itemsAddedSuccess": "Items suksesvol by lys gevoeg!",
+  "itemsNeedPurchase": "{deficit} item(s) moet gekoop word",
+  "itemsPurchasedCount": "{purchased} van {total} gekoop",
+  "itemsPurchasedShort": "{purchased}/{total} gekoop",
+  "itemsWillBeAdded": "{count} item(s) sal bygevoeg word",
+  "language": "Taal",
+  "languageEnglish": "Engels",
+  "languagePortuguese": "Português (Brasilië)",
+  "languageSystem": "Stelselverstek",
+  "light": "Lig",
+  "listAdded": "{listName} bygevoeg!",
+  "listArchived": "Lys suksesvol geargiveer!",
+  "listAssistant": "Lysassistent",
+  "listBudgetTitle": "Lysbegroting",
+  "listCreated": "Lys \"{name}\" geskep met {count} items",
+  "listHelp": "Hoe kan ek met jou lys help?",
+  "listHistory": "Lysgeskiedenis",
+  "listNameLabel": "Lysnaam",
+  "listOrganizedMagic": "Lys magies georganiseer volgens kategorieë! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Luister tans...",
+  "lists": "Lyste",
+  "loading": "Laai tans...",
   "loadingRecipes": "Laai tans jou resepte...",
+  "loginError": "Aantekenfout: {error}",
+  "loginPrompt": "Meld aan om\npremium-kenmerke te ontsluit",
+  "longHistoryWarning": "Lang geskiedenis: die assistent fokus op die nuutste boodskappe vir beter prestasie.",
+  "manageSubscription": "Bestuur intekening",
+  "markAsPurchased": "Merk as gekoop",
+  "markItemsToSeeAnalysis": "Merk items as gekoop om die analise te sien.",
+  "marketMode": "Markmodus",
   "mealPlannerAddMeal": "Voeg maaltyd by",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDeleteMeal": "Verwyder maaltyd",
@@ -613,28 +606,201 @@
   "mealPlannerWeekEmpty": "Niks beplan vir hierdie week nie",
   "mealPlannerWeekEmptyHint": "Tik op enige dag om jou maaltye te begin beplan!",
   "mealPlannerWeekProgress": "{count} van {total} maaltye beplan",
+  "monthlyBudgetAppBar": "Maandelikse Begroting",
+  "monthlyBudgetNav": "Maandelikse begroting",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Maandelikse Begroting",
+  "myLists": "My Lyste",
   "myRecipes": "My resepte",
+  "newChat": "Nuwe Chat",
+  "newListTitle": "Nuwe Klyslys",
+  "newPantryList": "Spens Inkopies",
   "newRecipe": "Nuwe resep",
   "newRecipeTitle": "Nuwe resep",
+  "next": "Volgende",
+  "noActiveLists": "Geen aktiewe lyste",
+  "noArchivedLists": "Geen geargiveerde lyste",
+  "noBudgetDefined": "Geen begroting gestel",
+  "noHistory": "Geen kletsgeskiedenis nie",
+  "noItemsInList": "Geen items in die lys nie",
+  "noItemsToAnalyze": "Geen items in die lys om te ontleed nie.",
+  "noItemsToBuy": "Geen items om te koop nie",
+  "noLabel": "Nee",
+  "noListFoundSubtitle": "Skep jou eerste lys om te begin",
+  "noListFoundTitle": "Geen lyste gevind",
+  "noMessagesFound": "Geen boodskappe gevind nie",
   "noRecipesSaved": "Geen resepte gestoor nie",
   "noRecipesSavedHint": "Skep jou eerste pasgemaakte resep deur op die knoppie hieronder te tik.",
+  "noTracking": "Geen dop",
+  "onboardingAnnualBadge": "Beste waarde",
+  "onboardingAnnualLabel": "Jaarliks",
+  "onboardingCancelAnytime": "Kanselleer enige tyd. Geen verbintenis nie.",
+  "onboardingContinueAsGuest": "Gaan voort as gas",
+  "onboardingExit": "Verlaat",
+  "onboardingLoginDesc": "Jou data is oor al jou toestelle gesinkroniseer",
+  "onboardingLoginTitle": "Stoor alles in die wolk",
+  "onboardingMonthlyLabel": "Maandeliks",
+  "onboardingPersonalizationCta": "Gaan voort",
+  "onboardingPersonalizationDesc": "Ons sal dit gebruik om jou voorstelle te verpersoonlik en inkopies slimmer te maak.",
+  "onboardingPersonalizationFoodHint": "bv. Pizza, Sushi, Lasagne...",
+  "onboardingPersonalizationFoodLabel": "Wat is jou gunsteling kos?",
+  "onboardingPersonalizationFoodRequired": "Vertel ons jou gunsteling kos om voort te gaan",
+  "onboardingPersonalizationSkip": "Slaan vir eers oor",
+  "onboardingPersonalizationTitle": "Kom ons leer jou ken",
+  "onboardingPremiumSubtitle": "Haal die meeste uit jou inkopielyste",
+  "onboardingPremiumTitle": "Ontsluit alle kenmerke",
+  "onboardingRestore": "Herstel",
+  "onboardingRestoreDesc": "Het jy reeds 'n intekening? Tik hier om dit te herstel.",
+  "onboardingSetupDesc": "Kies hoe jy wil hê Lista Plus moet lyk en vir jou werk.",
+  "onboardingSetupTitle": "Pas jou ervaring aan",
+  "onboardingShareDesc": "Sinkroniseer lyste intyds met familie en vriende",
+  "onboardingShareTitle": "Deel met diegene vir wie jy lief is",
+  "onboardingSubscribeCta": "Teken in",
+  "onboardingViewAllPlans": "Bekyk alle planne",
+  "onboardingWelcomeDesc": "Die slimste manier om jou inkopies te organiseer en geld te spaar.",
+  "onboardingWelcomeTitle": "Welkom by Lista Plus",
   "openMenu": "Maak spyskaart oop",
+  "organizeAisles": "Organiseer volgens gange",
+  "organizeAislesPrompt": "Organiseer volgens winkelgange.",
+  "organizeByAisles": "Organiseer volgens gange",
+  "organizingAi": "ORGANISEER MET KI...",
+  "pantry": "Spens",
+  "pantryAppBar": "Spens",
+  "pantryEditTitle": "Wysig {name}",
+  "pantryEmpty": "Spens is leeg",
+  "pantryEmptySubtitle": "Voeg produkte by wat jy tuis wil hou",
+  "pantryItemRemoved": "Item verwyder",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Persoonlike AI Assistent",
+  "prefCustomThemes": "Pasgemaakte temas",
+  "prefExportData": "Voer data uit",
+  "prefFullHistory": "Volle geskiedenis",
+  "prefInteractiveArtifacts": "Interaktiewe AI-Artifakte",
+  "prefMonthlyBudget": "Globale maandelikse begroting",
+  "prefSharing": "Deel lyste",
+  "prefUnlimitedLists": "Onbeperkte lyste",
+  "prefUnlimitedPantry": "Onbeperkte spens",
+  "premiumUpgrade": "Gradeer op om te ontsluit",
   "prepTime": "Voorbereidingstyd",
   "prepTimeMinutes": "Voorbereidingstyd (minute)",
+  "privacy": "Privaatheid",
+  "productName": "Produknaam",
+  "purchaseError": "Fout met verwerking van aankoop. Probeer weer.",
+  "quantityFull": "Hoeveelheid",
+  "quantityShort": "Hoev",
+  "quickRecipe": "Vinnige resep",
+  "quickRecipePrompt": "Stel resepte voor met items van my lys.",
+  "quickReplies": "Vinnige antwoorde:",
   "recipeCreated": "Resep geskep!",
   "recipeDeleted": "Resep verwyder",
   "recipeImage": "Resepbeeld",
   "recipeName": "Resepnaam",
   "recipeSaved": "Resep gestoor!",
+  "recipeSuggestion": "Resepvoorstel",
   "recipeTags": "Resep-etikette",
+  "regenerate": "Her genereer",
+  "remove": "Verwyder",
+  "removeBudget": "Verwyder",
   "removeImage": "Verwyder beeld",
+  "removeSharedListContent": "Verwyder \"{name}\" van jou lyste? Die oorspronklike lys sal nie geraak word nie.",
+  "removeSharedListTitle": "Verwyder gedeelde lys",
+  "removeSharedTooltip": "Verwyder",
+  "rename": "Hernoem",
+  "renameListDialog": "Hernoem Lys",
   "requiredField": "Vereis",
+  "restockLabel": "Hervul",
+  "restocked": "{name} hervul na {quantity} {unit}",
+  "restore": "Herstel",
+  "restoreError": "Fout met herstel van aankope. Probeer weer.",
+  "retry": "Probeer weer",
+  "save": "Stoor",
   "saveChanges": "Stoor veranderinge",
   "saveRecipe": "Stoor",
+  "savings": "Besparings",
+  "searchCurrency": "Soek geldeenheid...",
+  "searchInConversation": "Soek in gesprek...",
   "searchLanguage": "Soek taal...",
   "searchRecipes": "Soek resepte...",
+  "selectAll": "Kies alles",
+  "selectListForDashboard": "Kies 'n lys om die dashboard te bekyk.",
+  "selectedItems": "{count,plural, one{{count} gekies} other{{count} gekies}}",
+  "setBudgetButton": "Stel begroting",
+  "setBudgetTitle": "Maandelikse Begroting",
+  "settingsAppBar": "Instellings",
+  "settingsDefaultScreen": "Verstek tuisskerm",
+  "settingsDefaultScreenSubtitle": "Kies tussen inkopielys of KI-klets",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "Inkopielys",
+  "share": "Deel",
+  "shareApp": "Deel app",
+  "shareAppDescription": "Nooi vriende om Lista Plus te gebruik",
+  "shareAsText": "Stuur items as geformateerde teks",
+  "shareListText": "My Klyslys",
+  "shareListTitle": "Deel Lys",
+  "shareRealtime": "Reële tyd-sinkronisasie met ander mense",
+  "shareReferralSubject": "Kry 7 dae se Lista Plus Premium!",
+  "shareReferralText": "Ek gebruik Lista Plus om my inkopies te organiseer! Laai af via my skakel en ons kry albei 7 dae se Premium gratis: {url}",
+  "shareSubject": "Klyslys",
+  "shareThisCode": "Deel hierdie kode:",
+  "shareViaCode": "Deel via kode",
+  "sharedLabel": "Gedeel",
+  "shoppingAssistant": "Inkopie-assistent",
+  "shoppingMode": "Inkopiemodus",
+  "shoppingModeHeader": "INKOPIEMODUS",
   "shortDescription": "Kort beskrywing",
+  "signInApple": "Teken in met Apple",
+  "signInGoogle": "Teken in met Google",
+  "smartOrganization": "Slim Organisasie",
+  "sortCategory": "Kategorie",
+  "sortDate": "Datum",
+  "sortManual": "Handmatig",
+  "sortName": "Naam",
+  "spendingAnalysis": "Bestedingsanalise",
+  "spendingByCategory": "Besteding per Kategorie",
+  "suggestedQuestions": "Voorgestelde vrae:",
   "suggestedTags": "Voorgestel",
+  "switchList": "Verander lys",
+  "system": "Stelsel",
   "tags": "Etikette",
-  "viewRecipe": "Bekyk resep"
+  "termsOfUse": "Gebruiksvoorwaardes",
+  "themeAmber": "Amber",
+  "themeBlue": "Blou",
+  "themeBrown": "Bruin",
+  "themeColor": "Temakleur",
+  "themeGreen": "Groen",
+  "themeIndigo": "Indigo",
+  "themeOrange": "Oranje",
+  "themePink": "Pienk",
+  "themePurple": "Pers",
+  "themeRed": "Rooi",
+  "themeTeal": "Groenblou",
+  "totalEstimated": "Totaal geraam: {amount}",
+  "totalSpending": "Totale Besteding",
+  "trackStock": "Hou voorraad dop",
+  "trackStockActive": "Verskyn in inkopie-voorstelle",
+  "trackStockInactive": "Genereer geen inkopie-voorstel nie",
+  "undo": "Ontdoen",
+  "unit": "Eenheid",
+  "unitPack": "pak",
+  "unlockFullResponse": "Ontsluit volle reaksie",
+  "unmark": "Ontmerk",
+  "upgrade": "Gradeer op",
+  "validForLimitedTime": "Geldig vir beperkte tyd",
+  "version": "Weergawe",
+  "viewActive": "Bekyk Aktiewe",
+  "viewDetails": "Bekyk besonderhede",
+  "viewHistory": "Bekyk Geskiedenis",
+  "viewItems": "Bekyk items",
+  "viewList": "Bekyk lys",
+  "viewPro": "Bekyk Pro",
+  "viewRecipe": "Bekyk resep",
+  "voiceCommandContent": "Praat natuurlik om jou lys te bestuur!\n\nVoorbeelde:\n• 'Voeg brood, kaas en ham by'\n• 'Verwyder waspoeier'\n• 'Verander tema na blou'\n\nDit is 'n eksklusiewe kenmerk van Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Bekyk Planne",
+  "voiceCommandTitle": "KI-stemopdrag",
+  "voiceProFeature": "Gevorderde stemopdragte is Pro. Aktiveer tans basiese diktee …",
+  "voiceTranscriptionTooltip": "Stemtik (Gratis)",
+  "welcomeAiAssistant": "Welkom by AI Assistant",
+  "whatToDoWithItem": "Wat wil jy graag met hierdie item doen?",
+  "yes": "Ja",
+  "yesLabel": "Ja"
 }

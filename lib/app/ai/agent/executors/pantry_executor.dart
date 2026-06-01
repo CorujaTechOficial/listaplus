@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../tools/tool_core.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
+import '../utils/ai_utils.dart';
+import 'package:shopping_list/models/pantry_item.dart';
 
 class PantryExecutor {
   const PantryExecutor();
@@ -24,7 +26,11 @@ class PantryExecutor {
   }
 
   Future<ToolResult> getPantryItems(ProviderContainer container) async {
-    final items = await container.read(pantryItemsProvider.future);
+    final items = await AiUtils.awaitFuture(
+      container.read(pantryItemsProvider.future),
+      defaultValue: <PantryItem>[],
+      label: 'pantryItemsProvider',
+    );
     if (items.isEmpty) {
       return const ToolResult(toolCallId: '', content: 'A despensa está vazia.');
     }
@@ -58,7 +64,11 @@ class PantryExecutor {
 
   Future<ToolResult> updatePantryItem(ProviderContainer container, Map<String, dynamic> args) async {
     final itemId = args['itemId'] as String;
-    final items = await container.read(pantryItemsProvider.future);
+    final items = await AiUtils.awaitFuture(
+      container.read(pantryItemsProvider.future),
+      defaultValue: <PantryItem>[],
+      label: 'pantryItemsProvider',
+    );
     final item = items.where((i) => i.id == itemId).firstOrNull;
     if (item == null) {
       return const ToolResult(toolCallId: '', content: 'Item não encontrado na despensa.', success: false);

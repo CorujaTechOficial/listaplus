@@ -42,6 +42,9 @@ class AppLocalizationsAf extends AppLocalizations {
   String get copy => 'Kopieer';
 
   @override
+  String get next => 'Volgende';
+
+  @override
   String get retry => 'Probeer weer';
 
   @override
@@ -279,10 +282,10 @@ class AppLocalizationsAf extends AppLocalizations {
   String get language => 'Taal';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brasilië)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Engels';
 
   @override
   String get languageSystem => 'Stelselverstek';
@@ -294,13 +297,13 @@ class AppLocalizationsAf extends AppLocalizations {
   String get searchLanguage => 'Soek taal...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Geldeenheid';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Kies Geldeenheid';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Soek geldeenheid...';
 
   @override
   String get appearance => 'Voorkoms';
@@ -326,7 +329,7 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Deaktiveer dinamiese kleure sodat die temakleur in werking tree';
 
   @override
   String get finance => 'Finansies';
@@ -568,17 +571,17 @@ class AppLocalizationsAf extends AppLocalizations {
   String get generalAssistant => 'Algemene Assistent';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Nuwe Chat';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Geen kletsgeskiedenis nie';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Vee Chat uit';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Is jy seker jy wil hierdie klets uitvee? Die boodskappe sal permanent verlore gaan.';
 
   @override
   String get clearHistory => 'Maak Geskiedenis Skoon';
@@ -625,90 +628,105 @@ class AppLocalizationsAf extends AppLocalizations {
   String get continueAsGuest => 'Gaan voort as gas';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Welkom by Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Die slimste manier om jou inkopies te organiseer en geld te spaar.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Pas jou ervaring aan';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Kies hoe jy wil hê Lista Plus moet lyk en vir jou werk.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Stoor alles in die wolk';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Jou data is oor al jou toestelle gesinkroniseer';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Deel met diegene vir wie jy lief is';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Sinkroniseer lyste intyds met familie en vriende';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Ontsluit alle kenmerke';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Haal die meeste uit jou inkopielyste';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Beste waarde';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Maandeliks';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Jaarliks';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Bekyk alle planne';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Teken in';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Kanselleer enige tyd. Geen verbintenis nie.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Gaan voort as gas';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Herstel';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Het jy reeds \'n intekening? Tik hier om dit te herstel.';
+
+  @override
+  String get onboardingExit => 'Verlaat';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Kom ons leer jou ken';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Ons sal dit gebruik om jou voorstelle te verpersoonlik en inkopies slimmer te maak.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Wat is jou gunsteling kos?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'bv. Pizza, Sushi, Lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Gaan voort';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Slaan vir eers oor';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Vertel ons jou gunsteling kos om voort te gaan';
+
+  @override
+  String get settingsDefaultScreen => 'Verstek tuisskerm';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Kies tussen inkopielys of KI-klets';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Inkopielys';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -1076,106 +1094,107 @@ class AppLocalizationsAf extends AppLocalizations {
       'Rapporteer foute, stel verbeterings voor, of maak vertalings reg';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI Energie';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Soek in gesprek...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Geen boodskappe gevind nie';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Voorgestelde vrae:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Inkopie-assistent';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased van $total gekoop';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Geskatte';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Bekyk items';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Geen items in die lys nie';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Lang geskiedenis: die assistent fokus op die nuutste boodskappe vir beter prestasie.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Luister tans...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Voeg direk by lys';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Ontsluit volle reaksie';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Verander lys';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Markmodus';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Terug na Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Voltooi inkopies';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Welkom by AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Skep \'n inkopielys om die slimklets te begin gebruik.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hoe kan ek help?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Vra oor pryse, resepte, organisasie...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total gekoop';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Vinnige antwoorde:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Gevorderde stemopdragte is Pro. Aktiveer tans basiese diktee …';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Bekyk Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Oeps! Iets het verkeerd geloop om die klets te laai.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Gaan jou verbinding na of probeer later weer.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Dit kan voorkom as gevolg van netwerkossillasies of tydelike onbeskikbaarheid. Probeer asseblief weer.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktiewe luister';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Wat wil jy graag met hierdie item doen?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Bekyk besonderhede';
 
   @override
   String get openMenu => 'Maak spyskaart oop';
@@ -1422,19 +1441,19 @@ class AppLocalizationsAf extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Nooi na lys';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Deel app';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Nooi vriende om Lista Plus te gebruik';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Ek gebruik Lista Plus om my inkopies te organiseer! Laai af via my skakel en ons kry albei 7 dae se Premium gratis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Kry 7 dae se Lista Plus Premium!';
 }

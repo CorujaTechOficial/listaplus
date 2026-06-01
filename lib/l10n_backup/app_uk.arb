@@ -1,0 +1,562 @@
+{
+  "@@locale": "uk",
+  "appTitle": "Список покупок",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Списки",
+  "pantry": "Комора",
+  "@_Common": "description: Common actions",
+  "cancel": "Скасувати",
+  "save": "Зберегти",
+  "create": "Створити",
+  "add": "Додати",
+  "remove": "Видалити",
+  "delete": "Видалити",
+  "edit": "Редагувати",
+  "copy": "Копіювати",
+  "retry": "Повторити",
+  "regenerate": "Перегенерувати",
+  "copiedToClipboard": "Скопійовано в буфер обміну",
+  "confirm": "Підтвердити",
+  "close": "Закрити",
+  "import": "Імпортувати",
+  "rename": "Перейменувати",
+  "upgrade": "Оновити",
+  "clear": "Очистити",
+  "error": "Помилка: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Помилка: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Помилка обробки покупки. Спробуйте ще раз.",
+  "restoreError": "Помилка відновлення покупок. Спробуйте ще раз.",
+  "loading": "Завантаження...",
+  "fieldRequired": "Обов'язкове поле",
+  "addedFeedback": "Додано!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{Вибрано {count}} few{Вибрано {count}} many{Вибрано {count}} other{Вибрано {count}}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Орієнтовно",
+  "alreadyPurchased": "Вже куплено",
+  "clearList": "Очистити список",
+  "clearPurchased": "Очистити куплене",
+  "share": "Поділитися",
+  "shareViaCode": "Поділитися через код",
+  "importViaCode": "Імпортувати через код",
+  "listAssistant": "Помічник списку",
+  "globalAssistant": "Глобальний помічник",
+  "becomePremium": "Стати Premium",
+  "manageSubscription": "Керувати підпискою",
+  "completePurchase": "Завершити покупку",
+  "confirmClearList": "Видалити всі елементи?",
+  "shareListTitle": "Поділитися списком",
+  "shareThisCode": "Поділитися цим кодом:",
+  "validForLimitedTime": "Діє обмежений час",
+  "importListTitle": "Імпортувати список",
+  "enterCodeHint": "Введіть код",
+  "confirmArchiveTitle": "Завершити покупку",
+  "confirmArchiveContent": "Завершити цю покупку та архівувати список?",
+  "complete": "Завершити",
+  "listArchived": "Список успішно заархівовано!",
+  "listAdded": "{listName} додано!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Купити",
+  "unmark": "Зняти позначку",
+  "confirmDeleteItems": "Видалити {count} елемент(и)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Підтвердити",
+  "confirmContent": "Видалити {count} елемент(и)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Архівувати список",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Комора",
+  "generateShoppingList": "Створити список покупок",
+  "pantryEmpty": "Порожня комора",
+  "pantryEmptySubtitle": "Додайте продукти, які ви хочете мати вдома",
+  "itemsNeedPurchase": "{deficit} елемент(и) потрібно купити",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Нічого не потрібно купувати",
+  "newPantryList": "Покупки з комори",
+  "newListTitle": "Новий список покупок",
+  "itemsWillBeAdded": "{count} елемент(и) буде додано",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Назва списку",
+  "listCreated": "Список \"{name}\" створено з {count} елементів",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Без відстеження",
+  "markAsPurchased": "Позначити як куплене",
+  "editPantryItem": "Редагувати {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ідеальна кількість",
+  "currentQuantity": "Поточна кількість",
+  "consumed": "Спожито",
+  "restocked": "{name} поповнено до {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Видалити \"{name}\" з комори?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Редагувати {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Налаштування",
+  "language": "Мова",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Системна за замовчуванням",
+  "appearance": "Зовнішній вигляд",
+  "light": "Світла",
+  "system": "Системна",
+  "dark": "Темна",
+  "themeColor": "Колір теми",
+  "finance": "Фінанси",
+  "monthlyBudgetNav": "Місячний бюджет",
+  "budgetSubtitle": "Відстежуйте свої щомісячні витрати",
+  "data": "Дані",
+  "backupNav": "Резервне копіювання",
+  "backupSubtitle": "Експортуйте або імпортуйте свої дані",
+  "about": "Про програму",
+  "version": "Версія",
+  "privacy": "Конфіденційність",
+  "termsOfUse": "Умови використання",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Резервне копіювання",
+  "backupPremiumDescription": "Резервне копіювання та експорт — це функція Premium",
+  "exportData": "Експортувати дані",
+  "exportDataSubtitle": "Зберегти всі списки як JSON",
+  "importData": "Імпортувати дані",
+  "importDataSubtitle": "Відновити списки з JSON",
+  "importJsonTitle": "Імпорт JSON",
+  "importJsonHint": "Вставте резервний код JSON тут...",
+  "backupExported": "Резервну копію експортовано!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Місячний бюджет",
+  "budgetPremiumLocked": "Глобальний місячний бюджет — це Premium",
+  "budgetUpgradePrompt": "Оновіть, щоб розблокувати",
+  "noBudgetDefined": "Бюджет не встановлено",
+  "totalEstimated": "Загальна оцінка: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Встановити бюджет",
+  "budgetLists": "Списки",
+  "budgetValueLabel": "Сума",
+  "setBudgetTitle": "Місячний бюджет",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Усі",
+  "filterPending": "Очікують",
+  "filterPurchased": "Куплені",
+  "sortName": "Назва",
+  "sortCategory": "Категорія",
+  "sortDate": "Дата",
+  "sortManual": "Вручну",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Додати елемент",
+  "itemName": "Назва елемента",
+  "quantityShort": "К-сть",
+  "unit": "Одиниця",
+  "category": "Категорія",
+  "estimatedPrice": "Орієнтовна ціна",
+  "addItemPrice": "Орієнтовна ціна",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Редагувати елемент",
+  "quantityFull": "Кількість",
+  "editItemPrice": "Орієнтовна ціна",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Додати до комори",
+  "addToPantryPrompt": "Додати \"{name}\" до вашої комори?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Так",
+  "productName": "Назва продукту",
+  "idealQty": "Ідеальна к-сть",
+  "currentQty": "Поточна к-сть",
+  "trackStock": "Відстежувати запаси",
+  "trackStockActive": "З'являється в пропозиціях щодо покупок",
+  "trackStockInactive": "Не створює пропозицій щодо покупок",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Створити список",
+  "renameListDialog": "Перейменувати список",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Історія списків",
+  "myLists": "Мої списки",
+  "viewActive": "Переглянути активні",
+  "viewHistory": "Переглянути історію",
+  "noArchivedLists": "Немає архівованих списків",
+  "noActiveLists": "Немає активних списків",
+  "completedOn": "Завершено {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Спільний",
+  "restore": "Відновити",
+  "removeSharedTooltip": "Видалити",
+  "deleteListTitle": "Видалити список",
+  "deleteListContent": "Ви впевнені, що хочете видалити \"{name}\"? Усі елементи буде видалено.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Видалити спільний список",
+  "removeSharedListContent": "Видалити \"{name}\" з ваших списків? Оригінальний список не постраждає.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Створити новий список",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI помічник",
+  "aiAssistantDescription": "Отримуйте розумні пропозиції, рецепти та персоналізовані поради з нашим AI помічником.",
+  "generalAssistant": "Загальний помічник",
+  "clearHistory": "Очистити історію",
+  "clearHistoryConfirm": "Очистити всі повідомлення в цьому сеансі?",
+  "chatHint": "Напишіть своє повідомлення...",
+  "chatError": "Помилка завантаження чату: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Чим я можу допомогти з вашим списком?",
+  "generalHelp": "Чим я можу допомогти з вашими покупками сьогодні?",
+  "chatSubtitle": "Попросіть пропозиції щодо товарів, рецепти або поради щодо економії.",
+  "aiError": "Вибачте, сталася помилка під час обробки вашого запиту. Перевірте з'єднання або спробуйте пізніше.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Увійдіть, щоб розблокувати\nпреміум-функції",
+  "signInGoogle": "Увійти через Google",
+  "signInApple": "Увійти через Apple",
+  "continueAsGuest": "Продовжити як гість",
+  "loginError": "Помилка входу: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Оновіть, щоб розблокувати",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Елемент видалено",
+  "undo": "Скасувати",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Ваш список порожній",
+  "emptyListSubtitle": "Додайте елементи, щоб почати",
+  "noListFoundTitle": "Списків не знайдено",
+  "noListFoundSubtitle": "Створіть свій перший список, щоб почати",
+  "createFirstList": "Створити перший список",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Бюджет списку",
+  "budgetAmountLabel": "Сума бюджету",
+  "removeBudget": "Видалити",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Необмежена кількість списків",
+  "prefSharing": "Спільні списки",
+  "prefFullHistory": "Повна історія",
+  "prefExportData": "Експорт даних",
+  "prefCustomThemes": "Користувацькі теми",
+  "prefMonthlyBudget": "Глобальний місячний бюджет",
+  "prefAIAssistant": "Персональний AI помічник",
+  "prefUnlimitedPantry": "Необмежена комора",
+  "prefInteractiveArtifacts": "Інтерактивні AI артефакти",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Зелений",
+  "themeBlue": "Синій",
+  "themePurple": "Фіолетовий",
+  "themeRed": "Червоний",
+  "themeOrange": "Помаранчевий",
+  "themePink": "Рожевий",
+  "themeIndigo": "Індиго",
+  "themeAmber": "Бурштин",
+  "themeTeal": "Бірюзовий",
+  "themeBrown": "Коричневий",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Фрукти",
+  "catCleaning": "Прибирання",
+  "catBeverages": "Напої",
+  "catBakery": "Випічка",
+  "catOthers": "Інше",
+  "@_Unit": "description: Unit",
+  "unitPack": "уп.",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Список покупок",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Місячний бюджет",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Видалити список",
+  "pantryItemRemoved": "Елемент видалено",
+  "deficitItems": "{deficit,plural, one{{deficit} елемент потрібно купити} few{{deficit} елементи потрібно купити} many{{deficit} елементів потрібно купити} other{{deficit} елемента потрібно купити}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Всього в кошику",
+  "restockLabel": "Поповнити",
+  "advancedFeatures": "Розширені функції",
+  "selectAll": "Вибрати все",
+  "deselectAll": "Зняти вибір",
+  "monthlyBudgetAppBar": "Місячний бюджет",
+  "budgetEditTitle": "Місячний бюджет",
+  "budgetDashboardTitle": "Панель керування",
+  "selectListForDashboard": "Виберіть список, щоб переглянути панель керування.",
+  "spendingAnalysis": "Аналіз витрат",
+  "noItemsToAnalyze": "Немає елементів у списку для аналізу.",
+  "markItemsToSeeAnalysis": "Позначте елементи як куплені, щоб побачити аналіз.",
+  "totalSpending": "Загальні витрати",
+  "spendingByCategory": "Витрати за категоріями",
+  "achievements": "Досягнення",
+  "exportPdfExcel": "Експорт PDF/Excel",
+  "exportPdf": "Експорт як PDF",
+  "exportExcel": "Експорт як Excel",
+  "organizingAi": "ОРГАНІЗАЦІЯ ЗА ДОПОМОГОЮ AI...",
+  "yesLabel": "Так",
+  "noLabel": "Ні",
+  "shareListText": "Мій список покупок",
+  "emptyListAddItems": "Ваш список порожній! Спочатку додайте елементи. ℹ️",
+  "listOrganizedMagic": "Список магічно організовано за категоріями! ✨",
+  "shoppingMode": "Режим покупок",
+  "smartOrganization": "Розумна організація",
+  "savings": "Економія",
+  "shoppingModeHeader": "РЕЖИМ ПОКУПОК",
+  "shareAsText": "Надіслати елементи як форматований текст",
+  "shareRealtime": "Синхронізація в реальному часі з іншими людьми",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Швидкий рецепт",
+  "quickRecipePrompt": "Запропонуйте рецепти з продуктами з мого списку.",
+  "economyTips": "Поради з економії",
+  "economyTipsPrompt": "Як я можу заощадити на цій покупці?",
+  "organizeAisles": "Організувати за відділами",
+  "organizeAislesPrompt": "Організувати за відділами магазину.",
+  "recipeSuggestion": "Пропозиція рецепту",
+  "aiCreditsRemaining": "Залишилося {remaining} кредитів",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Додати все до списку",
+  "organizeByAisles": "Організувати за відділами",
+  "voiceTranscriptionTooltip": "Голосовий ввід (Безкоштовно)",
+  "aiVoiceCommandTooltip": "AI голосова команда (Premium)",
+  "voiceCommandTitle": "AI голосова команда",
+  "voiceCommandContent": "Говоріть природно, щоб керувати списком!\n\nПриклади:\n• 'Додати хліб, сир і шинку'\n• 'Видалити пральний порошок'\n• 'Змінити тему на синю'\n\nЦе ексклюзивна функція Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Переглянути плани",
+  "itemsAddedSuccess": "Елементи успішно додано до списку!",
+  "viewList": "Переглянути список",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Надіслати відгук",
+  "feedbackPrompt": "Чим ви хочете поділитися?",
+  "feedbackTypeBug": "Повідомити про помилку",
+  "feedbackTypeBugHint": "Щось не працює",
+  "feedbackTypeSuggestion": "Пропозиція",
+  "feedbackTypeSuggestionHint": "Ідея щодо покращення програми",
+  "feedbackTypeTranslation": "Проблема з перекладом",
+  "feedbackTypeTranslationHint": "Неправильний або неприродний переклад",
+  "feedbackTypeFeature": "Запит функції",
+  "feedbackTypeFeatureHint": "Функція, яку ви хотіли б бачити",
+  "feedbackTypeOther": "Інше",
+  "feedbackTypeOtherHint": "Інший тип відгуку",
+  "feedbackHint": "Детально опишіть ваш відгук...",
+  "feedbackSend": "Надіслати відгук",
+  "feedbackSending": "Надсилання...",
+  "feedbackThankYou": "Дякуємо!",
+  "feedbackThankYouMessage": "Ваш відгук отримано, і він допомагає нам покращувати Lista Plus для всіх.",
+  "feedbackBack": "Назад",
+  "feedbackError": "Помилка надсилання: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Спробувати ще раз",
+  "feedbackSettingsTitle": "Надіслати відгук",
+  "feedbackSettingsSubtitle": "Повідомляйте про помилки, пропонуйте покращення або виправляйте переклади",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

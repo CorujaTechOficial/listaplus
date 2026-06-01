@@ -42,6 +42,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get copy => 'Kopírovat';
 
   @override
+  String get next => 'Další';
+
+  @override
   String get retry => 'Zkusit znovu';
 
   @override
@@ -281,10 +284,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get language => 'Jazyk';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'português (Brazílie)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angličtina';
 
   @override
   String get languageSystem => 'Výchozí systém';
@@ -296,13 +299,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get searchLanguage => 'Hledat jazyk...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Měna';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Vyberte možnost Měna';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Hledat měnu...';
 
   @override
   String get appearance => 'Vzhled';
@@ -327,7 +330,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Deaktivujte dynamické barvy, aby se barva motivu projevila';
 
   @override
   String get finance => 'Finance';
@@ -569,17 +572,17 @@ class AppLocalizationsCs extends AppLocalizations {
   String get generalAssistant => 'Obecný asistent';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Nový chat';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Žádná historie chatu';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Smazat chat';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Opravdu chcete tento chat smazat? Zprávy budou trvale ztraceny.';
 
   @override
   String get clearHistory => 'Vyčistit historii';
@@ -625,93 +628,108 @@ class AppLocalizationsCs extends AppLocalizations {
   String get continueAsGuest => 'Pokračovat jako host';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Vítejte v Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Nejchytřejší způsob, jak uspořádat nákupy a ušetřit peníze.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Přizpůsobte si své zkušenosti';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Vyberte si, jak chcete, aby pro vás Lista Plus vypadala a fungovala.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Uložte vše do cloudu';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Vaše data se synchronizují na všech vašich zařízeních';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Sdílejte s těmi, které máte rádi';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Synchronizujte seznamy s rodinou a přáteli v reálném čase';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Odemkněte všechny funkce';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Získejte ze svých nákupních seznamů maximum';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Nejlepší hodnota';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Měsíční';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Výroční';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Zobrazit všechny plány';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Upsat';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'Zrušit kdykoli. Žádný závazek.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Pokračovat jako host';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Obnovit';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Už máte předplatné? Klepnutím sem jej obnovíte.';
+
+  @override
+  String get onboardingExit => 'Výstup';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Pojďme se s vámi seznámit';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Použijeme to k přizpůsobení vašich návrhů a zefektivnění nakupování.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Jaké je tvé oblíbené jídlo?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'např. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Pokračovat';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Prozatím přeskočit';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Pro pokračování nám řekněte své oblíbené jídlo';
+
+  @override
+  String get settingsDefaultScreen => 'Výchozí domovská obrazovka';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Vyberte si mezi nákupním seznamem nebo chatem AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Nákupní seznam';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI chat';
 
   @override
   String loginError(String error) {
@@ -1077,106 +1095,106 @@ class AppLocalizationsCs extends AppLocalizations {
       'Hlaste chyby, navrhujte vylepšení nebo opravujte překlady';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energie AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Hledat v konverzaci...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nebyly nalezeny žádné zprávy';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Doporučené otázky:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Nákupní asistentka';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'Zakoupeno $purchased z $total';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Odhadovaný';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Zobrazit položky';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'V seznamu nejsou žádné položky';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Dlouhá historie: asistent se zaměřuje na nejnovější zprávy pro lepší výkon.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Naslouchání...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Přidat přímo do seznamu';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Odemkněte plnou odezvu';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Přepnout seznam';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Režim trhu';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Zpět na Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Dokončit nakupování';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Vítejte v AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Vytvořte si nákupní seznam a začněte používat chytrý chat.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Jak mohu pomoci?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Zeptejte se na ceny, recepty, organizaci...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total zakoupeno';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Rychlé odpovědi:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Pokročilé hlasové příkazy jsou Pro. Povolení základního diktování...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Zobrazit Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Jejda! Při načítání chatu se něco pokazilo.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Zkontrolujte připojení nebo to zkuste znovu později.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'K tomu může dojít v důsledku oscilací sítě nebo dočasné nedostupnosti. Zkuste to prosím znovu.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktivní naslouchání';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Co byste s touto položkou chtěli udělat?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Zobrazit podrobnosti';
 
   @override
   String get openMenu => 'Otevřít menu';
@@ -1425,21 +1443,21 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Pozvat do seznamu';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Sdílet aplikaci';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Pozvěte přátele, aby používali Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'K organizaci nákupů používám Lista Plus! Stáhněte si přes můj odkaz a oba získáme 7 dní Premium zdarma: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Získejte 7 dní Lista Plus Premium!';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -1478,6 +1496,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get copy => 'Kopírovat';
+
+  @override
+  String get next => 'Další';
 
   @override
   String get retry => 'Zkusit znovu';
@@ -1719,10 +1740,10 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get language => 'Jazyk';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'português (Brazílie)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angličtina';
 
   @override
   String get languageSystem => 'Výchozí systém';
@@ -1732,6 +1753,15 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get searchLanguage => 'Hledat jazyk...';
+
+  @override
+  String get currency => 'Měna';
+
+  @override
+  String get chooseCurrency => 'Vyberte možnost Měna';
+
+  @override
+  String get searchCurrency => 'Hledat měnu...';
 
   @override
   String get appearance => 'Vzhled';
@@ -1753,6 +1783,10 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get dynamicColorsSubtitle => 'Použít barvy na základě vaší tapety';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Deaktivujte dynamické barvy, aby se barva motivu projevila';
 
   @override
   String get finance => 'Finance';
@@ -1994,6 +2028,19 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get generalAssistant => 'Obecný asistent';
 
   @override
+  String get newChat => 'Nový chat';
+
+  @override
+  String get noHistory => 'Žádná historie chatu';
+
+  @override
+  String get deleteSession => 'Smazat chat';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Opravdu chcete tento chat smazat? Zprávy budou trvale ztraceny.';
+
+  @override
   String get clearHistory => 'Vyčistit historii';
 
   @override
@@ -2035,6 +2082,110 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get continueAsGuest => 'Pokračovat jako host';
+
+  @override
+  String get onboardingWelcomeTitle => 'Vítejte v Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Nejchytřejší způsob, jak uspořádat nákupy a ušetřit peníze.';
+
+  @override
+  String get onboardingSetupTitle => 'Přizpůsobte si své zkušenosti';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Vyberte si, jak chcete, aby pro vás Lista Plus vypadala a fungovala.';
+
+  @override
+  String get onboardingLoginTitle => 'Uložte vše do cloudu';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Vaše data se synchronizují na všech vašich zařízeních';
+
+  @override
+  String get onboardingShareTitle => 'Sdílejte s těmi, které máte rádi';
+
+  @override
+  String get onboardingShareDesc =>
+      'Synchronizujte seznamy s rodinou a přáteli v reálném čase';
+
+  @override
+  String get onboardingPremiumTitle => 'Odemkněte všechny funkce';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Získejte ze svých nákupních seznamů maximum';
+
+  @override
+  String get onboardingAnnualBadge => 'Nejlepší hodnota';
+
+  @override
+  String get onboardingMonthlyLabel => 'Měsíční';
+
+  @override
+  String get onboardingAnnualLabel => 'Výroční';
+
+  @override
+  String get onboardingViewAllPlans => 'Zobrazit všechny plány';
+
+  @override
+  String get onboardingSubscribeCta => 'Upsat';
+
+  @override
+  String get onboardingCancelAnytime => 'Zrušit kdykoli. Žádný závazek.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Pokračovat jako host';
+
+  @override
+  String get onboardingRestore => 'Obnovit';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Už máte předplatné? Klepnutím sem jej obnovíte.';
+
+  @override
+  String get onboardingExit => 'Výstup';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Pojďme se s vámi seznámit';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Použijeme to k přizpůsobení vašich návrhů a zefektivnění nakupování.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Jaké je tvé oblíbené jídlo?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'např. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Pokračovat';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Prozatím přeskočit';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Pro pokračování nám řekněte své oblíbené jídlo';
+
+  @override
+  String get settingsDefaultScreen => 'Výchozí domovská obrazovka';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Vyberte si mezi nákupním seznamem nebo chatem AI';
+
+  @override
+  String get settingsScreenList => 'Nákupní seznam';
+
+  @override
+  String get settingsScreenChat => 'AI chat';
 
   @override
   String loginError(String error) {
@@ -2400,106 +2551,106 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
       'Nahlaste chyby, navrhněte vylepšení nebo opravte překlady';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energie AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Hledat v konverzaci...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nebyly nalezeny žádné zprávy';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Doporučené otázky:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Nákupní asistentka';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'Zakoupeno $purchased z $total';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Odhadovaný';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Zobrazit položky';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'V seznamu nejsou žádné položky';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Dlouhá historie: asistent se zaměřuje na nejnovější zprávy pro lepší výkon.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Naslouchání...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Přidat přímo do seznamu';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Odemkněte plnou odezvu';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Přepnout seznam';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Režim trhu';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Zpět na Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Dokončit nakupování';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Vítejte v AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Vytvořte si nákupní seznam a začněte používat chytrý chat.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Jak mohu pomoci?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Zeptejte se na ceny, recepty, organizaci...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total zakoupeno';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Rychlé odpovědi:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Pokročilé hlasové příkazy jsou Pro. Povolení základního diktování...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Zobrazit Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Jejda! Při načítání chatu se něco pokazilo.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Zkontrolujte připojení nebo to zkuste znovu později.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'K tomu může dojít v důsledku oscilací sítě nebo dočasné nedostupnosti. Zkuste to prosím znovu.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktivní naslouchání';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Co byste s touto položkou chtěli udělat?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Zobrazit podrobnosti';
 
   @override
   String get openMenu => 'Otevřít menu';
@@ -2746,4 +2897,21 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
+
+  @override
+  String get inviteToList => 'Pozvat do seznamu';
+
+  @override
+  String get shareApp => 'Sdílet aplikaci';
+
+  @override
+  String get shareAppDescription => 'Pozvěte přátele, aby používali Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'K organizaci nákupů používám Lista Plus! Stáhněte si přes můj odkaz a oba získáme 7 dní Premium zdarma: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Získejte 7 dní Lista Plus Premium!';
 }

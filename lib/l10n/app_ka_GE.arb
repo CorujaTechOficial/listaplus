@@ -1,99 +1,47 @@
 {
   "@@locale": "ka_GE",
-  "appTitle": "სავაჭრო სია",
+  "@_Feedback": "description: Feedback Screen",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "სიები",
-  "pantry": "საკუჭნაო",
-  "cancel": "გაუქმება",
-  "save": "შენახვა",
-  "create": "შექმნა",
-  "add": "დამატება",
-  "remove": "წაშლა",
-  "delete": "წაშლა",
-  "edit": "რედაქტირება",
-  "copy": "კოპირება",
-  "retry": "ხელახლა ცდა",
-  "regenerate": "ხელახლა გენერაცია",
-  "copiedToClipboard": "კოპირებულია ბუფერში",
-  "confirm": "დადასტურება",
-  "close": "დახურვა",
-  "import": "იმპორტი",
-  "rename": "სახელის გადარქმევა",
-  "upgrade": "განახლება",
-  "clear": "გასუფთავება",
-  "error": "შეცდომა: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "შეცდომა: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "შეცდომა შეძენის დამუშავებისას. სცადეთ თავიდან.",
-  "restoreError": "შეცდომა შეძენების აღდგენისას. სცადეთ თავიდან.",
-  "loading": "იტვირთება...",
-  "fieldRequired": "აუცილებელი ველი",
-  "addedFeedback": "დამატებულია!",
-  "selectedItems": "{count,plural, one{არჩეულია {count}} other{არჩეულია {count}}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "სავარაუდო",
-  "alreadyPurchased": "უკვე ნაყიდია",
-  "clearList": "სიის გასუფთავება",
-  "clearPurchased": "ნაყიდის გასუფთავება",
-  "share": "გაზიარება",
-  "shareViaCode": "კოდით გაზიარება",
-  "importViaCode": "კოდით იმპორტი",
-  "listAssistant": "სიის ასისტენტი",
-  "globalAssistant": "გლობალური ასისტენტი",
-  "becomePremium": "გახდი Premium",
-  "manageSubscription": "გამოწერის მართვა",
-  "completePurchase": "შეძენის დასრულება",
-  "confirmClearList": "ყველა ნივთის წაშლა?",
-  "shareListTitle": "სიის გაზიარება",
-  "shareThisCode": "გააზიარეთ ეს კოდი:",
-  "validForLimitedTime": "მოქმედებს შეზღუდული დროით",
-  "importListTitle": "სიის იმპორტი",
-  "enterCodeHint": "შეიყვანეთ კოდი",
-  "confirmArchiveTitle": "შეძენის დასრულება",
-  "confirmArchiveContent": "დავასრულოთ ეს შეძენა და დავარქივოთ სია?",
-  "complete": "დასრულება",
-  "listArchived": "სია წარმატებით დაარქივდა!",
-  "listAdded": "{listName} დაემატა!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "ყიდვა",
-  "unmark": "მონიშვნის მოხსნა",
-  "confirmDeleteItems": "წავშალოთ {count} ნივთ(ი)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "დადასტურება",
-  "confirmContent": "წავშალოთ {count} ნივთ(ი)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -101,12 +49,68 @@
       }
     }
   },
-  "archiveList": "სიის დაარქივება",
-  "pantryAppBar": "საკუჭნაო",
-  "generateShoppingList": "სავაჭრო სიის გენერაცია",
-  "pantryEmpty": "ცარიელი საკუჭნაო",
-  "pantryEmptySubtitle": "დაამატეთ პროდუქტები, რომელთა შენახვაც გსურთ სახლში",
-  "itemsNeedPurchase": "{deficit} ნივთ(ის) ყიდვაა საჭირო",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -114,10 +118,26 @@
       }
     }
   },
-  "noItemsToBuy": "ყიდვისთვის საჭირო ნივთები არ არის",
-  "newPantryList": "საკუჭნაოს შეძენა",
-  "newListTitle": "ახალი სავაჭრო სია",
-  "itemsWillBeAdded": "{count} ნივთ(ი) დაემატება",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -125,8 +145,13 @@
       }
     }
   },
-  "listNameLabel": "სიის სახელი",
-  "listCreated": "სია \"{name}\" შეიქმნა {count} ნივთით",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -137,20 +162,118 @@
       }
     }
   },
-  "noTracking": "თვალყურის გარეშე",
-  "markAsPurchased": "მონიშვნა როგორც ნაყიდი",
-  "editPantryItem": "{name}-ის რედაქტირება",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "იდეალური რაოდენობა",
-  "currentQuantity": "მიმდინარე რაოდენობა",
-  "consumed": "მოხმარებული",
-  "restocked": "{name} შეივსო {quantity} {unit}-მდე",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -164,56 +287,40 @@
       }
     }
   },
-  "confirmRemovePantry": "წავშალოთ \"{name}\" საკუჭნაოდან?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name}-ის რედაქტირება",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "settingsAppBar": "პარამეტრები",
-  "language": "ენა",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "სისტემის ნაგულისხმევი",
-  "appearance": "გარეგნობა",
-  "light": "ღია",
-  "system": "სისტემა",
-  "dark": "მუქი",
-  "themeColor": "თემის ფერი",
-  "finance": "ფინანსები",
-  "monthlyBudgetNav": "თვიური ბიუჯეტი",
-  "budgetSubtitle": "თვალყური ადევნეთ თქვენს თვიურ ხარჯებს",
-  "data": "მონაცემები",
-  "backupNav": "სარეზერვო",
-  "backupSubtitle": "ექსპორტი ან იმპორტი თქვენი მონაცემების",
-  "about": "შესახებ",
-  "version": "ვერსია",
-  "privacy": "კონფიდენციალურობა",
-  "termsOfUse": "გამოყენების პირობები",
-  "backupTitle": "სარეზერვო ასლი",
-  "backupPremiumDescription": "სარეზერვო ასლი და ექსპორტი პრემიუმ ფუნქციაა",
-  "exportData": "მონაცემების ექსპორტი",
-  "exportDataSubtitle": "ყველა სიის JSON-ად შენახვა",
-  "importData": "მონაცემების იმპორტი",
-  "importDataSubtitle": "სიების აღდგენა JSON-დან",
-  "importJsonTitle": "JSON-ის იმპორტი",
-  "importJsonHint": "ჩასვით სარეზერვო JSON აქ...",
-  "backupExported": "სარეზერვო ასლი ექსპორტირებულია!",
-  "budgetAppBar": "თვიური ბიუჯეტი",
-  "budgetPremiumLocked": "გლობალური თვიური ბიუჯეტი პრემიუმია",
-  "budgetUpgradePrompt": "განაახლეთ განბლოკვისთვის",
-  "noBudgetDefined": "ბიუჯეტი არ არის დაყენებული",
-  "totalEstimated": "სავარაუდო სულ: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -221,339 +328,218 @@
       }
     }
   },
-  "setBudgetButton": "ბიუჯეტის დაყენება",
-  "budgetLists": "სიები",
-  "budgetValueLabel": "თანხა",
-  "setBudgetTitle": "თვიური ბიუჯეტი",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "filterAll": "ყველა",
-  "filterPending": "მოლოდინში",
-  "filterPurchased": "ნაყიდი",
-  "sortName": "სახელი",
-  "sortCategory": "კატეგორია",
-  "sortDate": "თარიღი",
-  "sortManual": "ხელით",
+  "about": "შესახებ",
+  "achievements": "მიღწევები",
+  "activeListening": "აქტიური მოსმენა",
+  "add": "დამატება",
+  "addAllToList": "ყველას დამატება სიაში",
+  "addDirectToList": "პირდაპირ სიაში დამატება",
+  "addIngredient": "ინგრედიენტის დამატება",
   "addItem": "ნივთის დამატება",
-  "itemName": "ნივთის სახელი",
-  "quantityShort": "რაოდ",
-  "unit": "ერთეული",
-  "category": "კატეგორია",
-  "estimatedPrice": "სავარაუდო ფასი",
   "addItemPrice": "სავარაუდო ფასი",
-  "editItem": "ნივთის რედაქტირება",
-  "quantityFull": "რაოდენობა",
-  "editItemPrice": "სავარაუდო ფასი",
+  "addPhoto": "ფოტოს დამატება",
   "addToPantry": "საკუჭნაოში დამატება",
   "addToPantryPrompt": "დავამატოთ \"{name}\" თქვენს საკუჭნაოში?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "დიახ",
-  "productName": "პროდუქტის სახელი",
-  "idealQty": "იდეალური რაოდ",
-  "currentQty": "მიმდინარე რაოდ",
-  "trackStock": "მარაგის თვალყური",
-  "trackStockActive": "ჩნდება შეძენის წინადადებებში",
-  "trackStockInactive": "არ ქმნის შეძენის წინადადებას",
-  "createListDialog": "სიის შექმნა",
-  "renameListDialog": "სიის სახელის გადარქმევა",
-  "listHistory": "სიის ისტორია",
-  "myLists": "ჩემი სიები",
-  "viewActive": "აქტიურების ნახვა",
-  "viewHistory": "ისტორიის ნახვა",
-  "noArchivedLists": "დაარქივებული სიები არ არის",
-  "noActiveLists": "აქტიური სიები არ არის",
-  "completedOn": "დასრულდა {date}-ში",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "გაზიარებული",
-  "restore": "აღდგენა",
-  "removeSharedTooltip": "წაშლა",
-  "deleteListTitle": "სიის წაშლა",
-  "deleteListContent": "დარწმუნებული ხართ, რომ გსურთ \"{name}\"-ის წაშლა? ყველა ნივთი წაიშლება.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "გაზიარებული სიის წაშლა",
-  "removeSharedListContent": "წავშალოთ \"{name}\" თქვენი სიებიდან? ორიგინალი სია არ შეიცვლება.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "ახალი სიის შექმნა",
+  "addedFeedback": "დამატებულია!",
+  "advancedFeatures": "მოწინავე ფუნქციები",
   "aiAssistant": "AI ასისტენტი",
   "aiAssistantDescription": "მიიღეთ ჭკვიანი წინადადებები, რეცეპტები და პერსონალიზებული რჩევები ჩვენი AI ასისტენტით.",
-  "generalAssistant": "ზოგადი ასისტენტი",
+  "aiCreditsRemaining": "დარჩენილია {remaining} კრედიტი",
+  "aiEnergy": "AI ენერგია",
+  "aiError": "უკაცრავად, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ თავიდან მოგვიანებით.",
+  "aiVoiceCommandTooltip": "AI ხმოვანი ბრძანება (პრემიუმ)",
+  "allTags": "ყველა",
+  "alreadyPurchased": "უკვე ნაყიდია",
+  "appTitle": "სავაჭრო სია",
+  "appearance": "გარეგნობა",
+  "archiveList": "სიის დაარქივება",
+  "backToChat": "დაბრუნება ჩატში",
+  "backupExported": "სარეზერვო ასლი ექსპორტირებულია!",
+  "backupNav": "სარეზერვო",
+  "backupPremiumDescription": "სარეზერვო ასლი და ექსპორტი პრემიუმ ფუნქციაა",
+  "backupSubtitle": "ექსპორტი ან იმპორტი თქვენი მონაცემების",
+  "backupTitle": "სარეზერვო ასლი",
+  "becomePremium": "გახდი Premium",
+  "budgetAmountLabel": "ბიუჯეტის თანხა",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "თვიური ბიუჯეტი",
+  "budgetDashboardTitle": "დაფა",
+  "budgetEditTitle": "თვიური ბიუჯეტი",
+  "budgetLists": "სიები",
+  "budgetPremiumLocked": "გლობალური თვიური ბიუჯეტი პრემიუმია",
+  "budgetSubtitle": "თვალყური ადევნეთ თქვენს თვიურ ხარჯებს",
+  "budgetUpgradePrompt": "განაახლეთ განბლოკვისთვის",
+  "budgetValueLabel": "თანხა",
+  "buy": "ყიდვა",
+  "cancel": "გაუქმება",
+  "cartTotal": "კალათის ჯამი",
+  "catBakery": "საცხობი",
+  "catBeverages": "სასმელები",
+  "catCleaning": "დასუფთავება",
+  "catFruits": "ხილი",
+  "catOthers": "სხვა",
+  "category": "კატეგორია",
+  "chatError": "შეცდომა ჩატის ჩატვირთვისას: {error}",
+  "chatHint": "აკრიფეთ თქვენი შეტყობინება...",
+  "chatSubtitle": "მოითხოვეთ ნივთების წინადადებები, რეცეპტები ან დაზოგვის რჩევები.",
+  "chatSubtitleShort": "ჰკითხეთ ფასებს, რეცეპტებს, ორგანიზაციას...",
+  "chooseCurrency": "აირჩიეთ ვალუტა",
+  "chooseImageSource": "სურათის წყაროს არჩევა",
+  "chooseLanguage": "ენის არჩევა",
+  "clear": "გასუფთავება",
   "clearHistory": "ისტორიის გასუფთავება",
   "clearHistoryConfirm": "წავშალოთ ყველა შეტყობინება ამ სესიაში?",
-  "chatHint": "აკრიფეთ თქვენი შეტყობინება...",
-  "chatError": "შეცდომა ჩატის ჩატვირთვისას: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "როგორ დაგეხმაროთ თქვენი სიით?",
-  "generalHelp": "როგორ დაგეხმაროთ დღეს თქვენი შეძენებისას?",
-  "chatSubtitle": "მოითხოვეთ ნივთების წინადადებები, რეცეპტები ან დაზოგვის რჩევები.",
-  "aiError": "უკაცრავად, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ თავიდან მოგვიანებით.",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "შედით სისტემაში პრემიუმ ფუნქციების განსაბლოკად",
-  "signInGoogle": "Google-ით შესვლა",
-  "signInApple": "Apple-ით შესვლა",
+  "clearList": "სიის გასუფთავება",
+  "clearPurchased": "ნაყიდის გასუფთავება",
+  "close": "დახურვა",
+  "complete": "დასრულება",
+  "completePurchase": "შეძენის დასრულება",
+  "completedOn": "დასრულდა {date}-ში",
+  "confirm": "დადასტურება",
+  "confirmArchiveContent": "დავასრულოთ ეს შეძენა და დავარქივოთ სია?",
+  "confirmArchiveTitle": "შეძენის დასრულება",
+  "confirmClearList": "ყველა ნივთის წაშლა?",
+  "confirmContent": "წავშალოთ {count} ნივთ(ი)?",
+  "confirmDeleteItems": "წავშალოთ {count} ნივთ(ი)?",
+  "confirmDeleteTitle": "დადასტურება",
+  "confirmRemovePantry": "წავშალოთ \"{name}\" საკუჭნაოდან?",
+  "consumed": "მოხმარებული",
   "continueAsGuest": "სტუმრად გაგრძელება",
-  "loginError": "შესვლის შეცდომა: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallTitle": "Lista Plus Premium",
-  "premiumUpgrade": "განაახლეთ განბლოკვისთვის",
-  "itemRemoved": "ნივთი წაიშალა",
-  "undo": "დაბრუნება",
-  "emptyListTitle": "თქვენი სია ცარიელია",
-  "emptyListSubtitle": "დაამატეთ ნივთები დასაწყებად",
-  "noListFoundTitle": "სიები ვერ მოიძებნა",
-  "noListFoundSubtitle": "შექმენით თქვენი პირველი სია დასაწყებად",
+  "copiedToClipboard": "კოპირებულია ბუფერში",
+  "copy": "კოპირება",
+  "create": "შექმნა",
   "createFirstList": "პირველი სიის შექმნა",
-  "listBudgetTitle": "სიის ბიუჯეტი",
-  "budgetAmountLabel": "ბიუჯეტის თანხა",
-  "removeBudget": "წაშლა",
-  "prefUnlimitedLists": "შეუზღუდავი სიები",
-  "prefSharing": "სიების გაზიარება",
-  "prefFullHistory": "სრული ისტორია",
-  "prefExportData": "მონაცემების ექსპორტი",
-  "prefCustomThemes": "მორგებული თემები",
-  "prefMonthlyBudget": "გლობალური თვიური ბიუჯეტი",
-  "prefAIAssistant": "პერსონალური AI ასისტენტი",
-  "prefUnlimitedPantry": "შეუზღუდავი საკუჭნაო",
-  "prefInteractiveArtifacts": "ინტერაქტიული AI არტეფაქტები",
-  "themeGreen": "მწვანე",
-  "themeBlue": "ლურჯი",
-  "themePurple": "იისფერი",
-  "themeRed": "წითელი",
-  "themeOrange": "ნარინჯისფერი",
-  "themePink": "ვარდისფერი",
-  "themeIndigo": "ინდიგო",
-  "themeAmber": "ქარვისფერი",
-  "themeTeal": "ზღვისფერი",
-  "themeBrown": "ყავისფერი",
-  "catFruits": "ხილი",
-  "catCleaning": "დასუფთავება",
-  "catBeverages": "სასმელები",
-  "catBakery": "საცხობი",
-  "catOthers": "სხვა",
-  "unitPack": "შეფუთვა",
-  "shareSubject": "სავაჭრო სია",
-  "monthlyBudgetTitle": "თვიური ბიუჯეტი",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "სიის წაშლა",
-  "pantryItemRemoved": "ნივთი წაიშალა",
+  "createListDialog": "სიის შექმნა",
+  "createListToStartAi": "შექმენით საყიდლების სია, რომ დაიწყოთ ჭკვიანი ჩატის გამოყენება.",
+  "createNewList": "ახალი სიის შექმნა",
+  "currency": "ვალუტა",
+  "currentQty": "მიმდინარე რაოდ",
+  "currentQuantity": "მიმდინარე რაოდენობა",
+  "dark": "მუქი",
+  "data": "მონაცემები",
   "deficitItems": "{deficit,plural, one{{deficit} ნივთის ყიდვაა საჭირო} other{{deficit} ნივთის ყიდვაა საჭირო}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "კალათის ჯამი",
-  "restockLabel": "შევსება",
-  "advancedFeatures": "მოწინავე ფუნქციები",
-  "selectAll": "ყველას მონიშვნა",
+  "delete": "წაშლა",
+  "deleteListConfirm": "სიის წაშლა",
+  "deleteListContent": "დარწმუნებული ხართ, რომ გსურთ \"{name}\"-ის წაშლა? ყველა ნივთი წაიშლება.",
+  "deleteListTitle": "სიის წაშლა",
+  "deleteRecipe": "წაშლა",
+  "deleteRecipeConfirm": "გსურთ რეცეპტის წაშლა?",
+  "deleteRecipeConfirmMsg": "დარწმუნებული ხართ, რომ გსურთ „{recipeName}“-ის წაშლა? ეს მოქმედება შეუქცევადია.",
+  "deleteSession": "ჩატის წაშლა",
+  "deleteSessionConfirm": "დარწმუნებული ხართ, რომ გსურთ ამ ჩატის წაშლა? შეტყობინებები სამუდამოდ დაიკარგება.",
   "deselectAll": "ყველას მოხსნა",
-  "monthlyBudgetAppBar": "თვიური ბიუჯეტი",
-  "budgetEditTitle": "თვიური ბიუჯეტი",
-  "budgetDashboardTitle": "დაფა",
-  "selectListForDashboard": "აირჩიეთ სია დაფის სანახავად.",
-  "spendingAnalysis": "ხარჯების ანალიზი",
-  "noItemsToAnalyze": "სიაში გასაანალიზებელი ნივთები არ არის.",
-  "markItemsToSeeAnalysis": "მონიშნეთ ნივთები როგორც ნაყიდი ანალიზის სანახავად.",
-  "totalSpending": "მთლიანი ხარჯი",
-  "spendingByCategory": "ხარჯი კატეგორიების მიხედვით",
-  "achievements": "მიღწევები",
-  "exportPdfExcel": "PDF/Excel ექსპორტი",
-  "exportPdf": "PDF-ად ექსპორტი",
-  "exportExcel": "Excel-ად ექსპორტი",
-  "organizingAi": "ორგანიზება AI-თი...",
-  "yesLabel": "დიახ",
-  "noLabel": "არა",
-  "shareListText": "ჩემი სავაჭრო სია",
-  "emptyListAddItems": "თქვენი სია ცარიელია! ჯერ დაამატეთ ნივთები. ℹ️",
-  "listOrganizedMagic": "სია ჯადოსნურად დალაგდა კატეგორიების მიხედვით! ✨",
-  "shoppingMode": "შეძენის რეჟიმი",
-  "smartOrganization": "ჭკვიანი ორგანიზება",
-  "savings": "დაზოგვა",
-  "shoppingModeHeader": "შეძენის რეჟიმი",
-  "shareAsText": "ნივთების გაგზავნა ფორმატირებული ტექსტით",
-  "shareRealtime": "რეალურ დროში სინქრონიზაცია სხვა ადამიანებთან",
-  "quickRecipe": "სწრაფი რეცეპტი",
-  "quickRecipePrompt": "შემოგვთავაზეთ რეცეპტები ჩემი სიის ნივთებით.",
+  "dynamicColors": "დინამიური ფერები",
+  "dynamicColorsEnabledWarning": "გამორთეთ დინამიური ფერები თემის ფერის მოქმედებისთვის",
+  "dynamicColorsSubtitle": "გამოიყენეთ ფერები თქვენი ფონის მიხედვით",
   "economyTips": "დაზოგვის რჩევები",
   "economyTipsPrompt": "როგორ დავზოგო ფული ამ შეძენაზე?",
-  "organizeAisles": "დალაგება დერეფნების მიხედვით",
-  "organizeAislesPrompt": "დაალაგეთ სუპერმარკეტის დერეფნების მიხედვით.",
-  "recipeSuggestion": "რეცეპტის წინადადება",
-  "aiCreditsRemaining": "დარჩენილია {remaining} კრედიტი",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "ყველას დამატება სიაში",
-  "organizeByAisles": "დალაგება დერეფნების მიხედვით",
-  "voiceTranscriptionTooltip": "ხმით აკრეფა (უფასო)",
-  "aiVoiceCommandTooltip": "AI ხმოვანი ბრძანება (პრემიუმ)",
-  "voiceCommandTitle": "AI ხმოვანი ბრძანება",
-  "voiceCommandContent": "ილაპარაკეთ ბუნებრივად თქვენი სიის სამართავად!\n\nმაგალითები:\n• 'დაამატე პური, ყველი და ლორი'\n• 'წაშალე სარეცხი ფხვნილი'\n• 'შეცვალე თემა ლურჯზე'\n\nეს არის Lista Plus Premium-ის ექსკლუზიური ფუნქცია.",
-  "voiceCommandPlanBtn": "გეგმების ნახვა",
-  "itemsAddedSuccess": "ნივთები წარმატებით დაემატა სიაში!",
-  "viewList": "სიის ნახვა",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "გამოხმაურების გაგზავნა",
+  "edit": "რედაქტირება",
+  "editItem": "ნივთის რედაქტირება",
+  "editItemPrice": "სავარაუდო ფასი",
+  "editPantryItem": "{name}-ის რედაქტირება",
+  "editRecipe": "რედაქტირება",
+  "editRecipeTitle": "რეცეპტის რედაქტირება",
+  "emptyListAddItems": "თქვენი სია ცარიელია! ჯერ დაამატეთ ნივთები. ℹ️",
+  "emptyListSubtitle": "დაამატეთ ნივთები დასაწყებად",
+  "emptyListTitle": "თქვენი სია ცარიელია",
+  "enterCodeHint": "შეიყვანეთ კოდი",
+  "enterUrl": "შეიყვანეთ URL",
+  "error": "შეცდომა: {message}",
+  "errorGeneric": "შეცდომა: {message}",
+  "errorLoadingChat": "უი! ჩეთის ჩატვირთვისას მოხდა რაღაც შეცდომა.",
+  "errorLoadingChatSubtitle": "შეამოწმეთ თქვენი კავშირი ან სცადეთ მოგვიანებით.",
+  "errorLoadingRecipes": "რეცეპტების ჩატვირთვის შეცდომა",
+  "errorOscillation": "ეს შეიძლება მოხდეს ქსელის რხევების ან დროებითი მიუწვდომლობის გამო. გთხოვთ, სცადოთ ხელახლა.",
+  "estimated": "სავარაუდო",
+  "estimatedCost": "სავარაუდო",
+  "estimatedPrice": "სავარაუდო ფასი",
+  "exportData": "მონაცემების ექსპორტი",
+  "exportDataSubtitle": "ყველა სიის JSON-ად შენახვა",
+  "exportExcel": "Excel-ად ექსპორტი",
+  "exportPdf": "PDF-ად ექსპორტი",
+  "exportPdfExcel": "PDF/Excel ექსპორტი",
+  "feedbackBack": "უკან",
+  "feedbackError": "გაგზავნის შეცდომა: {error}",
+  "feedbackHint": "დეტალურად აღწერეთ თქვენი გამოხმაურება...",
   "feedbackPrompt": "რისი გაზიარება გსურთ?",
+  "feedbackRetry": "ხელახლა ცდა",
+  "feedbackSend": "გამოხმაურების გაგზავნა",
+  "feedbackSending": "იგზავნება...",
+  "feedbackSettingsSubtitle": "შეატყობინეთ ხარვეზებს, შემოგვთავაზეთ გაუმჯობესებები ან შეასწორეთ თარგმანები",
+  "feedbackSettingsTitle": "გამოხმაურების გაგზავნა",
+  "feedbackThankYou": "გმადლობთ!",
+  "feedbackThankYouMessage": "თქვენი გამოხმაურება მიღებულია და გვეხმარება Lista Plus-ის გაუმჯობესებაში ყველასთვის.",
+  "feedbackTitle": "გამოხმაურების გაგზავნა",
   "feedbackTypeBug": "ხარვეზის რეპორტი",
   "feedbackTypeBugHint": "რაღაც არ მუშაობს",
-  "feedbackTypeSuggestion": "შემოთავაზება",
-  "feedbackTypeSuggestionHint": "იდეა აპის გასაუმჯობესებლად",
-  "feedbackTypeTranslation": "თარგმანის პრობლემა",
-  "feedbackTypeTranslationHint": "არასწორი ან უხერხული თარგმანი",
   "feedbackTypeFeature": "ფუნქციის მოთხოვნა",
   "feedbackTypeFeatureHint": "ფუნქცია, რომლის ნახვაც გსურთ",
   "feedbackTypeOther": "სხვა",
   "feedbackTypeOtherHint": "სხვა ტიპის გამოხმაურება",
-  "feedbackHint": "დეტალურად აღწერეთ თქვენი გამოხმაურება...",
-  "feedbackSend": "გამოხმაურების გაგზავნა",
-  "feedbackSending": "იგზავნება...",
-  "feedbackThankYou": "გმადლობთ!",
-  "feedbackThankYouMessage": "თქვენი გამოხმაურება მიღებულია და გვეხმარება Lista Plus-ის გაუმჯობესებაში ყველასთვის.",
-  "feedbackBack": "უკან",
-  "feedbackError": "გაგზავნის შეცდომა: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "ხელახლა ცდა",
-  "feedbackSettingsTitle": "გამოხმაურების გაგზავნა",
-  "feedbackSettingsSubtitle": "შეატყობინეთ ხარვეზებს, შემოგვთავაზეთ გაუმჯობესებები ან შეასწორეთ თარგმანები",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "ინგრედიენტის დამატება",
-  "addPhoto": "ფოტოს დამატება",
-  "allTags": "ყველა",
-  "chooseImageSource": "სურათის წყაროს არჩევა",
-  "chooseLanguage": "ენის არჩევა",
-  "deleteRecipe": "წაშლა",
-  "deleteRecipeConfirm": "გსურთ რეცეპტის წაშლა?",
-  "deleteRecipeConfirmMsg": "დარწმუნებული ხართ, რომ გსურთ „{recipeName}“-ის წაშლა? ეს მოქმედება შეუქცევადია.",
-  "dynamicColors": "დინამიური ფერები",
-  "dynamicColorsSubtitle": "გამოიყენეთ ფერები თქვენი ფონის მიხედვით",
-  "editRecipe": "რედაქტირება",
-  "editRecipeTitle": "რეცეპტის რედაქტირება",
-  "enterUrl": "შეიყვანეთ URL",
-  "errorLoadingRecipes": "რეცეპტების ჩატვირთვის შეცდომა",
+  "feedbackTypeSuggestion": "შემოთავაზება",
+  "feedbackTypeSuggestionHint": "იდეა აპის გასაუმჯობესებლად",
+  "feedbackTypeTranslation": "თარგმანის პრობლემა",
+  "feedbackTypeTranslationHint": "არასწორი ან უხერხული თარგმანი",
+  "fieldRequired": "აუცილებელი ველი",
+  "filterAll": "ყველა",
   "filterByTag": "ფილტრაცია ტეგით",
+  "filterPending": "მოლოდინში",
+  "filterPurchased": "ნაყიდი",
+  "finance": "ფინანსები",
+  "finishShopping": "დაასრულეთ შოპინგი",
   "gallery": "გალერეა",
+  "generalAssistant": "ზოგადი ასისტენტი",
+  "generalHelp": "როგორ დაგეხმაროთ დღეს თქვენი შეძენებისას?",
+  "generateShoppingList": "სავაჭრო სიის გენერაცია",
+  "globalAssistant": "გლობალური ასისტენტი",
+  "howCanIHelp": "როგორ შემიძლია დახმარება?",
+  "idealQty": "იდეალური რაოდ",
+  "idealQuantity": "იდეალური რაოდენობა",
   "imageUrlPlaceholder": "ან ჩასვით სურათის URL",
+  "import": "იმპორტი",
+  "importData": "მონაცემების იმპორტი",
+  "importDataSubtitle": "სიების აღდგენა JSON-დან",
+  "importJsonHint": "ჩასვით სარეზერვო JSON აქ...",
+  "importJsonTitle": "JSON-ის იმპორტი",
+  "importListTitle": "სიის იმპორტი",
+  "importViaCode": "კოდით იმპორტი",
   "ingredients": "ინგრედიენტები",
   "instructions": "ინსტრუქციები",
   "instructionsHint": "შეიყვანეთ თითო ნაბიჯი თითო ხაზზე...",
+  "inviteToList": "მოიწვიე სიაში",
+  "itemName": "ნივთის სახელი",
+  "itemRemoved": "ნივთი წაიშალა",
+  "itemsAddedSuccess": "ნივთები წარმატებით დაემატა სიაში!",
+  "itemsNeedPurchase": "{deficit} ნივთ(ის) ყიდვაა საჭირო",
+  "itemsPurchasedCount": "შეძენილია {purchased} {total}-დან",
+  "itemsPurchasedShort": "{purchased}/{total} შეძენილი",
+  "itemsWillBeAdded": "{count} ნივთ(ი) დაემატება",
+  "language": "ენა",
+  "languageEnglish": "ინგლისური",
+  "languagePortuguese": "პორტუგალიური (ბრაზილია)",
+  "languageSystem": "სისტემის ნაგულისხმევი",
+  "light": "ღია",
+  "listAdded": "{listName} დაემატა!",
+  "listArchived": "სია წარმატებით დაარქივდა!",
+  "listAssistant": "სიის ასისტენტი",
+  "listBudgetTitle": "სიის ბიუჯეტი",
+  "listCreated": "სია \"{name}\" შეიქმნა {count} ნივთით",
+  "listHelp": "როგორ დაგეხმაროთ თქვენი სიით?",
+  "listHistory": "სიის ისტორია",
+  "listNameLabel": "სიის სახელი",
+  "listOrganizedMagic": "სია ჯადოსნურად დალაგდა კატეგორიების მიხედვით! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "მოსმენა...",
+  "lists": "სიები",
+  "loading": "იტვირთება...",
   "loadingRecipes": "თქვენი რეცეპტების ჩატვირთვა...",
+  "loginError": "შესვლის შეცდომა: {error}",
+  "loginPrompt": "შედით სისტემაში პრემიუმ ფუნქციების განსაბლოკად",
+  "longHistoryWarning": "ხანგრძლივი ისტორია: ასისტენტი ყურადღებას ამახვილებს უახლეს შეტყობინებებზე უკეთესი მუშაობისთვის.",
+  "manageSubscription": "გამოწერის მართვა",
+  "markAsPurchased": "მონიშვნა როგორც ნაყიდი",
+  "markItemsToSeeAnalysis": "მონიშნეთ ნივთები როგორც ნაყიდი ანალიზის სანახავად.",
+  "marketMode": "ბაზრის რეჟიმი",
   "mealPlannerAddMeal": "კერძის დამატება",
   "mealPlannerDateLabel": "თარიღი",
   "mealPlannerDeleteMeal": "კერძის ამოშლა",
@@ -587,28 +573,201 @@
   "mealPlannerWeekEmpty": "ამ კვირისთვის არაფერია დაგეგმილი",
   "mealPlannerWeekEmptyHint": "დააჭირეთ ნებისმიერ დღეს კვების დაგეგმვის დასაწყებად!",
   "mealPlannerWeekProgress": "დაგეგმილია {total}-დან {count} კერძი",
+  "monthlyBudgetAppBar": "თვიური ბიუჯეტი",
+  "monthlyBudgetNav": "თვიური ბიუჯეტი",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "თვიური ბიუჯეტი",
+  "myLists": "ჩემი სიები",
   "myRecipes": "ჩემი რეცეპტები",
+  "newChat": "ახალი ჩატი",
+  "newListTitle": "ახალი სავაჭრო სია",
+  "newPantryList": "საკუჭნაოს შეძენა",
   "newRecipe": "ახალი რეცეპტი",
   "newRecipeTitle": "ახალი რეცეპტი",
+  "next": "შემდეგი",
+  "noActiveLists": "აქტიური სიები არ არის",
+  "noArchivedLists": "დაარქივებული სიები არ არის",
+  "noBudgetDefined": "ბიუჯეტი არ არის დაყენებული",
+  "noHistory": "არ არის ჩატის ისტორია",
+  "noItemsInList": "სიაში ელემენტი არ არის",
+  "noItemsToAnalyze": "სიაში გასაანალიზებელი ნივთები არ არის.",
+  "noItemsToBuy": "ყიდვისთვის საჭირო ნივთები არ არის",
+  "noLabel": "არა",
+  "noListFoundSubtitle": "შექმენით თქვენი პირველი სია დასაწყებად",
+  "noListFoundTitle": "სიები ვერ მოიძებნა",
+  "noMessagesFound": "შეტყობინებები ვერ მოიძებნა",
   "noRecipesSaved": "რეცეპტები არ არის შენახული",
   "noRecipesSavedHint": "შექმენით თქვენი პირველი პერსონალური რეცეპტი ქვემოთ მოცემულ ღილაკზე დაჭერით.",
+  "noTracking": "თვალყურის გარეშე",
+  "onboardingAnnualBadge": "საუკეთესო ღირებულება",
+  "onboardingAnnualLabel": "წლიური",
+  "onboardingCancelAnytime": "გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.",
+  "onboardingContinueAsGuest": "განაგრძეთ სტუმრად",
+  "onboardingExit": "გასვლა",
+  "onboardingLoginDesc": "თქვენი მონაცემები სინქრონიზებულია ყველა თქვენს მოწყობილობაზე",
+  "onboardingLoginTitle": "შეინახეთ ყველაფერი ღრუბელში",
+  "onboardingMonthlyLabel": "ყოველთვიური",
+  "onboardingPersonalizationCta": "განაგრძეთ",
+  "onboardingPersonalizationDesc": "ჩვენ ამას გამოვიყენებთ თქვენი წინადადებების პერსონალიზებისთვის და შოპინგი უფრო გონივრული რომ გავხადოთ.",
+  "onboardingPersonalizationFoodHint": "მაგ. პიცა, სუში, ლაზანია...",
+  "onboardingPersonalizationFoodLabel": "რომელია თქვენი საყვარელი საჭმელი?",
+  "onboardingPersonalizationFoodRequired": "გვითხარით თქვენი საყვარელი საკვები გასაგრძელებლად",
+  "onboardingPersonalizationSkip": "ახლა გამოტოვეთ",
+  "onboardingPersonalizationTitle": "მოდით გაგიცნოთ",
+  "onboardingPremiumSubtitle": "მიიღეთ მაქსიმუმი თქვენი სავაჭრო სიებიდან",
+  "onboardingPremiumTitle": "განბლოკეთ ყველა ფუნქცია",
+  "onboardingRestore": "აღდგენა",
+  "onboardingRestoreDesc": "უკვე გაქვთ გამოწერა? შეეხეთ აქ მის აღსადგენად.",
+  "onboardingSetupDesc": "აირჩიეთ, როგორ გსურთ Lista Plus-მა გამოიყურებოდეს და იმუშაოს თქვენთვის.",
+  "onboardingSetupTitle": "თქვენი გამოცდილების პერსონალიზაცია",
+  "onboardingShareDesc": "სიების სინქრონიზაცია ოჯახთან და მეგობრებთან რეალურ დროში",
+  "onboardingShareTitle": "გაუზიარე მათ, ვინც გიყვარს",
+  "onboardingSubscribeCta": "გამოწერა",
+  "onboardingViewAllPlans": "იხილეთ ყველა გეგმა",
+  "onboardingWelcomeDesc": "თქვენი შოპინგის ორგანიზებისა და ფულის დაზოგვის ყველაზე ჭკვიანი გზა.",
+  "onboardingWelcomeTitle": "კეთილი იყოს თქვენი მობრძანება Lista Plus-ში",
   "openMenu": "მენიუს გახსნა",
+  "organizeAisles": "დალაგება დერეფნების მიხედვით",
+  "organizeAislesPrompt": "დაალაგეთ სუპერმარკეტის დერეფნების მიხედვით.",
+  "organizeByAisles": "დალაგება დერეფნების მიხედვით",
+  "organizingAi": "ორგანიზება AI-თი...",
+  "pantry": "საკუჭნაო",
+  "pantryAppBar": "საკუჭნაო",
+  "pantryEditTitle": "{name}-ის რედაქტირება",
+  "pantryEmpty": "ცარიელი საკუჭნაო",
+  "pantryEmptySubtitle": "დაამატეთ პროდუქტები, რომელთა შენახვაც გსურთ სახლში",
+  "pantryItemRemoved": "ნივთი წაიშალა",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "პერსონალური AI ასისტენტი",
+  "prefCustomThemes": "მორგებული თემები",
+  "prefExportData": "მონაცემების ექსპორტი",
+  "prefFullHistory": "სრული ისტორია",
+  "prefInteractiveArtifacts": "ინტერაქტიული AI არტეფაქტები",
+  "prefMonthlyBudget": "გლობალური თვიური ბიუჯეტი",
+  "prefSharing": "სიების გაზიარება",
+  "prefUnlimitedLists": "შეუზღუდავი სიები",
+  "prefUnlimitedPantry": "შეუზღუდავი საკუჭნაო",
+  "premiumUpgrade": "განაახლეთ განბლოკვისთვის",
   "prepTime": "მომზადების დრო",
   "prepTimeMinutes": "მომზადების დრო (წუთებში)",
+  "privacy": "კონფიდენციალურობა",
+  "productName": "პროდუქტის სახელი",
+  "purchaseError": "შეცდომა შეძენის დამუშავებისას. სცადეთ თავიდან.",
+  "quantityFull": "რაოდენობა",
+  "quantityShort": "რაოდ",
+  "quickRecipe": "სწრაფი რეცეპტი",
+  "quickRecipePrompt": "შემოგვთავაზეთ რეცეპტები ჩემი სიის ნივთებით.",
+  "quickReplies": "სწრაფი პასუხები:",
   "recipeCreated": "რეცეპტი შეიქმნა!",
   "recipeDeleted": "რეცეპტი წაიშალა",
   "recipeImage": "რეცეპტის სურათი",
   "recipeName": "რეცეპტის სახელი",
   "recipeSaved": "რეცეპტი შენახულია!",
+  "recipeSuggestion": "რეცეპტის წინადადება",
   "recipeTags": "რეცეპტის ტეგები",
+  "regenerate": "ხელახლა გენერაცია",
+  "remove": "წაშლა",
+  "removeBudget": "წაშლა",
   "removeImage": "სურათის წაშლა",
+  "removeSharedListContent": "წავშალოთ \"{name}\" თქვენი სიებიდან? ორიგინალი სია არ შეიცვლება.",
+  "removeSharedListTitle": "გაზიარებული სიის წაშლა",
+  "removeSharedTooltip": "წაშლა",
+  "rename": "სახელის გადარქმევა",
+  "renameListDialog": "სიის სახელის გადარქმევა",
   "requiredField": "სავალდებულოა",
+  "restockLabel": "შევსება",
+  "restocked": "{name} შეივსო {quantity} {unit}-მდე",
+  "restore": "აღდგენა",
+  "restoreError": "შეცდომა შეძენების აღდგენისას. სცადეთ თავიდან.",
+  "retry": "ხელახლა ცდა",
+  "save": "შენახვა",
   "saveChanges": "ცვლილებების შენახვა",
   "saveRecipe": "შენახვა",
+  "savings": "დაზოგვა",
+  "searchCurrency": "მოძებნეთ ვალუტა...",
+  "searchInConversation": "საუბარში ძიება...",
   "searchLanguage": "ენის ძებნა...",
   "searchRecipes": "რეცეპტების ძიება...",
+  "selectAll": "ყველას მონიშვნა",
+  "selectListForDashboard": "აირჩიეთ სია დაფის სანახავად.",
+  "selectedItems": "{count,plural, one{არჩეულია {count}} other{არჩეულია {count}}}",
+  "setBudgetButton": "ბიუჯეტის დაყენება",
+  "setBudgetTitle": "თვიური ბიუჯეტი",
+  "settingsAppBar": "პარამეტრები",
+  "settingsDefaultScreen": "ნაგულისხმევი საწყისი ეკრანი",
+  "settingsDefaultScreenSubtitle": "აირჩიეთ საყიდლების სიას ან AI ჩატს შორის",
+  "settingsScreenChat": "AI ჩატი",
+  "settingsScreenList": "სავაჭრო სია",
+  "share": "გაზიარება",
+  "shareApp": "აპლიკაციის გაზიარება",
+  "shareAppDescription": "მოიწვიე მეგობრები, რომ გამოიყენონ Lista Plus",
+  "shareAsText": "ნივთების გაგზავნა ფორმატირებული ტექსტით",
+  "shareListText": "ჩემი სავაჭრო სია",
+  "shareListTitle": "სიის გაზიარება",
+  "shareRealtime": "რეალურ დროში სინქრონიზაცია სხვა ადამიანებთან",
+  "shareReferralSubject": "მიიღეთ 7 დღიანი Lista Plus Premium!",
+  "shareReferralText": "მე ვიყენებ Lista Plus-ს ჩემი შოპინგის ორგანიზებისთვის! ჩამოტვირთეთ ჩემი ბმულით და ჩვენ ორივე ვიღებთ 7 დღიან Premium უფასოდ: {url}",
+  "shareSubject": "სავაჭრო სია",
+  "shareThisCode": "გააზიარეთ ეს კოდი:",
+  "shareViaCode": "კოდით გაზიარება",
+  "sharedLabel": "გაზიარებული",
+  "shoppingAssistant": "სავაჭრო ასისტენტი",
+  "shoppingMode": "შეძენის რეჟიმი",
+  "shoppingModeHeader": "შეძენის რეჟიმი",
   "shortDescription": "მოკლე აღწერა",
+  "signInApple": "Apple-ით შესვლა",
+  "signInGoogle": "Google-ით შესვლა",
+  "smartOrganization": "ჭკვიანი ორგანიზება",
+  "sortCategory": "კატეგორია",
+  "sortDate": "თარიღი",
+  "sortManual": "ხელით",
+  "sortName": "სახელი",
+  "spendingAnalysis": "ხარჯების ანალიზი",
+  "spendingByCategory": "ხარჯი კატეგორიების მიხედვით",
+  "suggestedQuestions": "შემოთავაზებული კითხვები:",
   "suggestedTags": "შემოთავაზებული",
+  "switchList": "სიის გადართვა",
+  "system": "სისტემა",
   "tags": "ტეგები",
-  "viewRecipe": "რეცეპტის ნახვა"
+  "termsOfUse": "გამოყენების პირობები",
+  "themeAmber": "ქარვისფერი",
+  "themeBlue": "ლურჯი",
+  "themeBrown": "ყავისფერი",
+  "themeColor": "თემის ფერი",
+  "themeGreen": "მწვანე",
+  "themeIndigo": "ინდიგო",
+  "themeOrange": "ნარინჯისფერი",
+  "themePink": "ვარდისფერი",
+  "themePurple": "იისფერი",
+  "themeRed": "წითელი",
+  "themeTeal": "ზღვისფერი",
+  "totalEstimated": "სავარაუდო სულ: {amount}",
+  "totalSpending": "მთლიანი ხარჯი",
+  "trackStock": "მარაგის თვალყური",
+  "trackStockActive": "ჩნდება შეძენის წინადადებებში",
+  "trackStockInactive": "არ ქმნის შეძენის წინადადებას",
+  "undo": "დაბრუნება",
+  "unit": "ერთეული",
+  "unitPack": "შეფუთვა",
+  "unlockFullResponse": "განბლოკეთ სრული პასუხი",
+  "unmark": "მონიშვნის მოხსნა",
+  "upgrade": "განახლება",
+  "validForLimitedTime": "მოქმედებს შეზღუდული დროით",
+  "version": "ვერსია",
+  "viewActive": "აქტიურების ნახვა",
+  "viewDetails": "დეტალების ნახვა",
+  "viewHistory": "ისტორიის ნახვა",
+  "viewItems": "ნივთების ნახვა",
+  "viewList": "სიის ნახვა",
+  "viewPro": "ნახვა Pro",
+  "viewRecipe": "რეცეპტის ნახვა",
+  "voiceCommandContent": "ილაპარაკეთ ბუნებრივად თქვენი სიის სამართავად!\n\nმაგალითები:\n• 'დაამატე პური, ყველი და ლორი'\n• 'წაშალე სარეცხი ფხვნილი'\n• 'შეცვალე თემა ლურჯზე'\n\nეს არის Lista Plus Premium-ის ექსკლუზიური ფუნქცია.",
+  "voiceCommandPlanBtn": "გეგმების ნახვა",
+  "voiceCommandTitle": "AI ხმოვანი ბრძანება",
+  "voiceProFeature": "გაფართოებული ხმოვანი ბრძანებები არის Pro. ძირითადი კარნახის ჩართვა...",
+  "voiceTranscriptionTooltip": "ხმით აკრეფა (უფასო)",
+  "welcomeAiAssistant": "კეთილი იყოს თქვენი მობრძანება AI ასისტენტში",
+  "whatToDoWithItem": "რის გაკეთებას ისურვებდით ამ ნივთთან?",
+  "yes": "დიახ",
+  "yesLabel": "დიახ"
 }

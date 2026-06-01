@@ -1,101 +1,73 @@
 {
   "@@locale": "ml_IN",
-  "appTitle": "ഷോപ്പിംഗ് ലിസ്റ്റ്",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "ലിസ്റ്റുകൾ",
-  "pantry": "പാന്ട്രി",
-  "@_Common": "description: Common actions",
-  "cancel": "റദ്ദാക്കുക",
-  "save": "സംരക്ഷിക്കുക",
-  "create": "സൃഷ്ടിക്കുക",
-  "add": "ചേർക്കുക",
-  "remove": "നീക്കംചെയ്യുക",
-  "delete": "ഇല്ലാതാക്കുക",
-  "edit": "എഡിറ്റ് ചെയ്യുക",
-  "copy": "പകർത്തുക",
-  "retry": "വീണ്ടും ശ്രമിക്കുക",
-  "regenerate": "പുനഃസൃഷ്ടിക്കുക",
-  "copiedToClipboard": "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി",
-  "confirm": "സ്ഥിരീകരിക്കുക",
-  "close": "അടയ്ക്കുക",
-  "import": "ഇറക്കുമതി ചെയ്യുക",
-  "rename": "പുനർനാമകരണം",
-  "upgrade": "അപ്‌ഗ്രേഡ് ചെയ്യുക",
-  "clear": "മായ്ക്കുക",
-  "error": "പിശക്: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "പിശക്: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "വാങ്ങൽ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.",
-  "restoreError": "വാങ്ങലുകൾ പുനഃസ്ഥാപിക്കുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.",
-  "loading": "ലോഡ് ചെയ്യുന്നു...",
-  "fieldRequired": "നിർബന്ധിത ഫീൽഡ്",
-  "addedFeedback": "ചേർത്തു!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} തിരഞ്ഞെടുത്തു} other{{count} തിരഞ്ഞെടുത്തു}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "ഏകദേശം",
-  "alreadyPurchased": "ഇതിനകം വാങ്ങിയത്",
-  "clearList": "ലിസ്റ്റ് മായ്ക്കുക",
-  "clearPurchased": "വാങ്ങിയവ മായ്ക്കുക",
-  "share": "പങ്കിടുക",
-  "shareViaCode": "കോഡ് വഴി പങ്കിടുക",
-  "importViaCode": "കോഡ് വഴി ഇറക്കുമതി ചെയ്യുക",
-  "listAssistant": "ലിസ്റ്റ് അസിസ്റ്റന്റ്",
-  "globalAssistant": "ഗ്ലോബൽ അസിസ്റ്റന്റ്",
-  "becomePremium": "പ്രീമിയം ആകുക",
-  "manageSubscription": "സബ്‌സ്ക്രിപ്ഷൻ നിയന്ത്രിക്കുക",
-  "completePurchase": "വാങ്ങൽ പൂർത്തിയാക്കുക",
-  "confirmClearList": "എല്ലാ ഇനങ്ങളും നീക്കംചെയ്യണോ?",
-  "shareListTitle": "ലിസ്റ്റ് പങ്കിടുക",
-  "shareThisCode": "ഈ കോഡ് പങ്കിടുക:",
-  "validForLimitedTime": "പരിമിത സമയത്തേക്ക് മാത്രം സാധുത",
-  "importListTitle": "ലിസ്റ്റ് ഇറക്കുമതി ചെയ്യുക",
-  "enterCodeHint": "കോഡ് നൽകുക",
-  "confirmArchiveTitle": "വാങ്ങൽ പൂർത്തിയാക്കുക",
-  "confirmArchiveContent": "ഈ വാങ്ങൽ പൂർത്തിയാക്കി ലിസ്റ്റ് ആർക്കൈവ് ചെയ്യണോ?",
-  "complete": "പൂർത്തിയാക്കുക",
-  "listArchived": "ലിസ്റ്റ് വിജയകരമായി ആർക്കൈവ് ചെയ്തു!",
-  "listAdded": "{listName} ചേർത്തു!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "വാങ്ങുക",
-  "unmark": "അൺമാർക്ക് ചെയ്യുക",
-  "confirmDeleteItems": "{count} ഇനം നീക്കംചെയ്യണോ?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "സ്ഥിരീകരിക്കുക",
-  "confirmContent": "{count} ഇനം നീക്കംചെയ്യണോ?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "ലിസ്റ്റ് ആർക്കൈവ് ചെയ്യുക",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "പാന്ട്രി",
-  "generateShoppingList": "ഷോപ്പിംഗ് ലിസ്റ്റ് ജനറേറ്റ് ചെയ്യുക",
-  "pantryEmpty": "പാന്ട്രി ശൂന്യമാണ്",
-  "pantryEmptySubtitle": "വീട്ടിൽ സൂക്ഷിക്കണമെന്ന് ആഗ്രഹിക്കുന്ന ഉൽപ്പന്നങ്ങൾ ചേർക്കുക",
-  "itemsNeedPurchase": "{deficit} ഇനം വാങ്ങേണ്ടതുണ്ട്",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "വാങ്ങേണ്ട ഇനങ്ങളൊന്നുമില്ല",
-  "newPantryList": "പാന്ട്രി ഷോപ്പിംഗ്",
-  "newListTitle": "പുതിയ ഷോപ്പിംഗ് ലിസ്റ്റ്",
-  "itemsWillBeAdded": "{count} ഇനം ചേർക്കും",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "ലിസ്റ്റിന്റെ പേര്",
-  "listCreated": "\"{name}\" എന്ന ലിസ്റ്റ് {count} ഇനങ്ങളോടെ സൃഷ്ടിച്ചു",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "ട്രാക്കിംഗ് ഇല്ല",
-  "markAsPurchased": "വാങ്ങിയതായി അടയാളപ്പെടുത്തുക",
-  "editPantryItem": "{name} എഡിറ്റ് ചെയ്യുക",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "ആദർശ അളവ്",
-  "currentQuantity": "നിലവിലെ അളവ്",
-  "consumed": "ഉപഭോഗം ചെയ്തത്",
-  "restocked": "{name} {quantity} {unit} ആയി പുനഃസംഭരിച്ചു",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "പാന്ട്രിയിൽ നിന്ന് \"{name}\" നീക്കംചെയ്യണോ?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "{name} എഡിറ്റ് ചെയ്യുക",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "ക്രമീകരണങ്ങൾ",
-  "language": "ഭാഷ",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "സിസ്റ്റം ഡിഫോൾട്ട്",
-  "appearance": "രൂപഭാവം",
-  "light": "ലൈറ്റ്",
-  "system": "സിസ്റ്റം",
-  "dark": "ഡാർക്ക്",
-  "themeColor": "തീം നിറം",
-  "finance": "ഫിനാൻസ്",
-  "monthlyBudgetNav": "പ്രതിമാസ ബജറ്റ്",
-  "budgetSubtitle": "നിങ്ങളുടെ പ്രതിമാസ ചെലവ് ട്രാക്ക് ചെയ്യുക",
-  "data": "ഡാറ്റ",
-  "backupNav": "ബാക്കപ്പ്",
-  "backupSubtitle": "നിങ്ങളുടെ ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക അല്ലെങ്കിൽ ഇറക്കുമതി ചെയ്യുക",
-  "about": "കുറിച്ച്",
-  "version": "പതിപ്പ്",
-  "privacy": "സ്വകാര്യത",
-  "termsOfUse": "ഉപയോഗ നിബന്ധനകൾ",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "ബാക്കപ്പ്",
-  "backupPremiumDescription": "ബാക്കപ്പും എക്‌സ്‌പോർട്ടും ഒരു പ്രീമിയം ഫീച്ചറാണ്",
-  "exportData": "ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക",
-  "exportDataSubtitle": "എല്ലാ ലിസ്റ്റുകളും JSON ആയി സംരക്ഷിക്കുക",
-  "importData": "ഡാറ്റ ഇറക്കുമതി ചെയ്യുക",
-  "importDataSubtitle": "JSON-ൽ നിന്ന് ലിസ്റ്റുകൾ പുനഃസ്ഥാപിക്കുക",
-  "importJsonTitle": "JSON ഇറക്കുമതി ചെയ്യുക",
-  "importJsonHint": "ബാക്കപ്പ് JSON ഇവിടെ പേസ്റ്റ് ചെയ്യുക...",
-  "backupExported": "ബാക്കപ്പ് എക്‌സ്‌പോർട്ട് ചെയ്തു!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "പ്രതിമാസ ബജറ്റ്",
-  "budgetPremiumLocked": "ആഗോള പ്രതിമാസ ബജറ്റ് പ്രീമിയം ആണ്",
-  "budgetUpgradePrompt": "അൺലോക്ക് ചെയ്യാൻ അപ്‌ഗ്രേഡ് ചെയ്യുക",
-  "noBudgetDefined": "ബജറ്റ് സജ്ജീകരിച്ചിട്ടില്ല",
-  "totalEstimated": "ആകെ ഏകദേശം: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,366 +392,218 @@
       }
     }
   },
-  "setBudgetButton": "ബജറ്റ് സജ്ജമാക്കുക",
-  "budgetLists": "ലിസ്റ്റുകൾ",
-  "budgetValueLabel": "തുക",
-  "setBudgetTitle": "പ്രതിമാസ ബജറ്റ്",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "എല്ലാം",
-  "filterPending": "തീർപ്പാക്കാത്തവ",
-  "filterPurchased": "വാങ്ങിയവ",
-  "sortName": "പേര്",
-  "sortCategory": "വിഭാഗം",
-  "sortDate": "തീയതി",
-  "sortManual": "രംഗം",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "കുറിച്ച്",
+  "achievements": "നേട്ടങ്ങൾ",
+  "activeListening": "സജീവമായി കേൾക്കൽ",
+  "add": "ചേർക്കുക",
+  "addAllToList": "എല്ലാം ലിസ്റ്റിലേക്ക് ചേർക്കുക",
+  "addDirectToList": "പട്ടികയിലേക്ക് നേരിട്ട് ചേർക്കുക",
+  "addIngredient": "ചേരുവ ചേർക്കുക",
   "addItem": "ഇനം ചേർക്കുക",
-  "itemName": "ഇനത്തിന്റെ പേര്",
-  "quantityShort": "അളവ്",
-  "unit": "യൂണിറ്റ്",
-  "category": "വിഭാഗം",
-  "estimatedPrice": "ഏകദേശ വില",
   "addItemPrice": "ഏകദേശ വില",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "ഇനം എഡിറ്റ് ചെയ്യുക",
-  "quantityFull": "അളവ്",
-  "editItemPrice": "ഏകദേശ വില",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "ഫോട്ടോ ചേർക്കുക",
   "addToPantry": "പാന്ട്രിയിലേക്ക് ചേർക്കുക",
   "addToPantryPrompt": "\"{name}\" നിങ്ങളുടെ പാന്ട്രിയിലേക്ക് ചേർക്കണോ?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "അതെ",
-  "productName": "ഉൽപ്പന്നത്തിന്റെ പേര്",
-  "idealQty": "ആദർശ അളവ്",
-  "currentQty": "നിലവിലെ അളവ്",
-  "trackStock": "സ്റ്റോക്ക് ട്രാക്ക് ചെയ്യുക",
-  "trackStockActive": "ഷോപ്പിംഗ് നിർദ്ദേശങ്ങളിൽ ദൃശ്യമാകുന്നു",
-  "trackStockInactive": "ഷോപ്പിംഗ് നിർദ്ദേശം സൃഷ്ടിക്കുന്നില്ല",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "ലിസ്റ്റ് സൃഷ്ടിക്കുക",
-  "renameListDialog": "ലിസ്റ്റ് പുനർനാമകരണം",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "ലിസ്റ്റ് ചരിത്രം",
-  "myLists": "എന്റെ ലിസ്റ്റുകൾ",
-  "viewActive": "സജീവമായവ കാണുക",
-  "viewHistory": "ചരിത്രം കാണുക",
-  "noArchivedLists": "ആർക്കൈവ് ചെയ്ത ലിസ്റ്റുകളൊന്നുമില്ല",
-  "noActiveLists": "സജീവ ലിസ്റ്റുകളൊന്നുമില്ല",
-  "completedOn": "{date} ന് പൂർത്തിയാക്കി",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "പങ്കിട്ടത്",
-  "restore": "പുനഃസ്ഥാപിക്കുക",
-  "removeSharedTooltip": "നീക്കംചെയ്യുക",
-  "deleteListTitle": "ലിസ്റ്റ് ഇല്ലാതാക്കുക",
-  "deleteListContent": "\"{name}\" ഇല്ലാതാക്കണമെന്ന് ഉറപ്പാണോ? എല്ലാ ഇനങ്ങളും നീക്കംചെയ്യും.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "പങ്കിട്ട ലിസ്റ്റ് നീക്കംചെയ്യുക",
-  "removeSharedListContent": "നിങ്ങളുടെ ലിസ്റ്റുകളിൽ നിന്ന് \"{name}\" നീക്കംചെയ്യണോ? യഥാർത്ഥ ലിസ്റ്റിനെ ബാധിക്കില്ല.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "പുതിയ ലിസ്റ്റ് സൃഷ്ടിക്കുക",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "ചേർത്തു!",
+  "advancedFeatures": "വിപുലമായ ഫീച്ചറുകൾ",
   "aiAssistant": "AI അസിസ്റ്റന്റ്",
   "aiAssistantDescription": "ഞങ്ങളുടെ AI അസിസ്റ്റന്റുമായി സ്മാർട്ട് നിർദ്ദേശങ്ങളും പാചകക്കുറിപ്പുകളും വ്യക്തിഗത നുറുങ്ങുകളും നേടുക.",
-  "generalAssistant": "ജനറൽ അസിസ്റ്റന്റ്",
+  "aiCreditsRemaining": "{remaining} ക്രെഡിറ്റുകൾ ശേഷിക്കുന്നു",
+  "aiEnergy": "AI ഊർജ്ജം",
+  "aiError": "ക്ഷമിക്കണം, നിങ്ങളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക് സംഭവിച്ചു. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക അല്ലെങ്കിൽ പിന്നീട് വീണ്ടും ശ്രമിക്കുക.",
+  "aiVoiceCommandTooltip": "AI വോയ്സ് കമാൻഡ് (പ്രീമിയം)",
+  "allTags": "എല്ലാം",
+  "alreadyPurchased": "ഇതിനകം വാങ്ങിയത്",
+  "appTitle": "ഷോപ്പിംഗ് ലിസ്റ്റ്",
+  "appearance": "രൂപഭാവം",
+  "archiveList": "ലിസ്റ്റ് ആർക്കൈവ് ചെയ്യുക",
+  "backToChat": "ചാറ്റിലേക്ക് മടങ്ങുക",
+  "backupExported": "ബാക്കപ്പ് എക്‌സ്‌പോർട്ട് ചെയ്തു!",
+  "backupNav": "ബാക്കപ്പ്",
+  "backupPremiumDescription": "ബാക്കപ്പും എക്‌സ്‌പോർട്ടും ഒരു പ്രീമിയം ഫീച്ചറാണ്",
+  "backupSubtitle": "നിങ്ങളുടെ ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക അല്ലെങ്കിൽ ഇറക്കുമതി ചെയ്യുക",
+  "backupTitle": "ബാക്കപ്പ്",
+  "becomePremium": "പ്രീമിയം ആകുക",
+  "budgetAmountLabel": "ബജറ്റ് തുക",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "പ്രതിമാസ ബജറ്റ്",
+  "budgetDashboardTitle": "ഡാഷ്ബോർഡ്",
+  "budgetEditTitle": "പ്രതിമാസ ബജറ്റ്",
+  "budgetLists": "ലിസ്റ്റുകൾ",
+  "budgetPremiumLocked": "ആഗോള പ്രതിമാസ ബജറ്റ് പ്രീമിയം ആണ്",
+  "budgetSubtitle": "നിങ്ങളുടെ പ്രതിമാസ ചെലവ് ട്രാക്ക് ചെയ്യുക",
+  "budgetUpgradePrompt": "അൺലോക്ക് ചെയ്യാൻ അപ്‌ഗ്രേഡ് ചെയ്യുക",
+  "budgetValueLabel": "തുക",
+  "buy": "വാങ്ങുക",
+  "cancel": "റദ്ദാക്കുക",
+  "cartTotal": "കാർട്ട് ആകെ",
+  "catBakery": "ബേക്കറി",
+  "catBeverages": "പാനീയങ്ങൾ",
+  "catCleaning": "ക്ലീനിംഗ്",
+  "catFruits": "പഴങ്ങൾ",
+  "catOthers": "മറ്റുള്ളവ",
+  "category": "വിഭാഗം",
+  "chatError": "ചാറ്റ് ലോഡ് ചെയ്യുന്നതിൽ പിശക്: {error}",
+  "chatHint": "നിങ്ങളുടെ സന്ദേശം ടൈപ്പ് ചെയ്യുക...",
+  "chatSubtitle": "ഇനങ്ങളുടെ നിർദ്ദേശങ്ങൾക്കും പാചകക്കുറിപ്പുകൾക്കും സേവിംഗ് ടിപ്പുകൾക്കുമായി ചോദിക്കുക.",
+  "chatSubtitleShort": "വിലകൾ, പാചകക്കുറിപ്പുകൾ, ഓർഗനൈസേഷൻ എന്നിവയെക്കുറിച്ച് ചോദിക്കൂ...",
+  "chooseCurrency": "കറൻസി തിരഞ്ഞെടുക്കുക",
+  "chooseImageSource": "ചിത്രത്തിന്റെ ഉറവിടം തിരഞ്ഞെടുക്കുക",
+  "chooseLanguage": "ഭാഷ തിരഞ്ഞെടുക്കുക",
+  "clear": "മായ്ക്കുക",
   "clearHistory": "ചരിത്രം മായ്ക്കുക",
   "clearHistoryConfirm": "ഈ സെഷനിലെ എല്ലാ സന്ദേശങ്ങളും മായ്ക്കണോ?",
-  "chatHint": "നിങ്ങളുടെ സന്ദേശം ടൈപ്പ് ചെയ്യുക...",
-  "chatError": "ചാറ്റ് ലോഡ് ചെയ്യുന്നതിൽ പിശക്: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "നിങ്ങളുടെ ലിസ്റ്റിൽ എങ്ങനെ സഹായിക്കണം?",
-  "generalHelp": "ഇന്ന് നിങ്ങളുടെ ഷോപ്പിംഗിൽ എങ്ങനെ സഹായിക്കണം?",
-  "chatSubtitle": "ഇനങ്ങളുടെ നിർദ്ദേശങ്ങൾക്കും പാചകക്കുറിപ്പുകൾക്കും സേവിംഗ് ടിപ്പുകൾക്കുമായി ചോദിക്കുക.",
-  "aiError": "ക്ഷമിക്കണം, നിങ്ങളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക് സംഭവിച്ചു. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക അല്ലെങ്കിൽ പിന്നീട് വീണ്ടും ശ്രമിക്കുക.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "ലിസ്റ്റ പ്ലസ്",
-  "loginPrompt": "പ്രീമിയം ഫീച്ചറുകൾ\nഅൺലോക്ക് ചെയ്യാൻ ലോഗിൻ ചെയ്യുക",
-  "signInGoogle": "Google ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക",
-  "signInApple": "Apple ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക",
+  "clearList": "ലിസ്റ്റ് മായ്ക്കുക",
+  "clearPurchased": "വാങ്ങിയവ മായ്ക്കുക",
+  "close": "അടയ്ക്കുക",
+  "complete": "പൂർത്തിയാക്കുക",
+  "completePurchase": "വാങ്ങൽ പൂർത്തിയാക്കുക",
+  "completedOn": "{date} ന് പൂർത്തിയാക്കി",
+  "confirm": "സ്ഥിരീകരിക്കുക",
+  "confirmArchiveContent": "ഈ വാങ്ങൽ പൂർത്തിയാക്കി ലിസ്റ്റ് ആർക്കൈവ് ചെയ്യണോ?",
+  "confirmArchiveTitle": "വാങ്ങൽ പൂർത്തിയാക്കുക",
+  "confirmClearList": "എല്ലാ ഇനങ്ങളും നീക്കംചെയ്യണോ?",
+  "confirmContent": "{count} ഇനം നീക്കംചെയ്യണോ?",
+  "confirmDeleteItems": "{count} ഇനം നീക്കംചെയ്യണോ?",
+  "confirmDeleteTitle": "സ്ഥിരീകരിക്കുക",
+  "confirmRemovePantry": "പാന്ട്രിയിൽ നിന്ന് \"{name}\" നീക്കംചെയ്യണോ?",
+  "consumed": "ഉപഭോഗം ചെയ്തത്",
   "continueAsGuest": "അതിഥിയായി തുടരുക",
-  "loginError": "ലോഗിൻ പിശക്: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "ലിസ്റ്റ പ്ലസ് പ്രീമിയം",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "അൺലോക്ക് ചെയ്യാൻ അപ്‌ഗ്രേഡ് ചെയ്യുക",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "ഇനം നീക്കംചെയ്തു",
-  "undo": "പഴയപടിയാക്കുക",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "നിങ്ങളുടെ ലിസ്റ്റ് ശൂന്യമാണ്",
-  "emptyListSubtitle": "ആരംഭിക്കാൻ ഇനങ്ങൾ ചേർക്കുക",
-  "noListFoundTitle": "ലിസ്റ്റുകളൊന്നും കണ്ടെത്തിയില്ല",
-  "noListFoundSubtitle": "ആരംഭിക്കാൻ നിങ്ങളുടെ ആദ്യ ലിസ്റ്റ് സൃഷ്ടിക്കുക",
+  "copiedToClipboard": "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി",
+  "copy": "പകർത്തുക",
+  "create": "സൃഷ്ടിക്കുക",
   "createFirstList": "ആദ്യ ലിസ്റ്റ് സൃഷ്ടിക്കുക",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "ലിസ്റ്റ് ബജറ്റ്",
-  "budgetAmountLabel": "ബജറ്റ് തുക",
-  "removeBudget": "നീക്കംചെയ്യുക",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "പരിധിയില്ലാത്ത ലിസ്റ്റുകൾ",
-  "prefSharing": "ലിസ്റ്റുകൾ പങ്കിടുക",
-  "prefFullHistory": "പൂർണ്ണ ചരിത്രം",
-  "prefExportData": "ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക",
-  "prefCustomThemes": "ഇഷ്ടാനുസൃത തീമുകൾ",
-  "prefMonthlyBudget": "ആഗോള പ്രതിമാസ ബജറ്റ്",
-  "prefAIAssistant": "വ്യക്തിഗത AI അസിസ്റ്റന്റ്",
-  "prefUnlimitedPantry": "പരിധിയില്ലാത്ത പാന്ട്രി",
-  "prefInteractiveArtifacts": "സംവേദനാത്മക AI ആർട്ടിഫാക്റ്റുകൾ",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "പച്ച",
-  "themeBlue": "നീല",
-  "themePurple": "പർപ്പിൾ",
-  "themeRed": "ചുവപ്പ്",
-  "themeOrange": "ഓറഞ്ച്",
-  "themePink": "പിങ്ക്",
-  "themeIndigo": "ഇൻഡിഗോ",
-  "themeAmber": "ആമ്പർ",
-  "themeTeal": "ടീൽ",
-  "themeBrown": "ബ്രൗൺ",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "പഴങ്ങൾ",
-  "catCleaning": "ക്ലീനിംഗ്",
-  "catBeverages": "പാനീയങ്ങൾ",
-  "catBakery": "ബേക്കറി",
-  "catOthers": "മറ്റുള്ളവ",
-  "@_Unit": "description: Unit",
-  "unitPack": "പായ്ക്ക്",
-  "@_Share": "description: Sharing",
-  "shareSubject": "ഷോപ്പിംഗ് ലിസ്റ്റ്",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "പ്രതിമാസ ബജറ്റ്",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "ലിസ്റ്റ് ഇല്ലാതാക്കുക",
-  "pantryItemRemoved": "ഇനം നീക്കംചെയ്തു",
+  "createListDialog": "ലിസ്റ്റ് സൃഷ്ടിക്കുക",
+  "createListToStartAi": "സ്‌മാർട്ട് ചാറ്റ് ഉപയോഗിക്കാൻ തുടങ്ങാൻ ഒരു ഷോപ്പിംഗ് ലിസ്റ്റ് സൃഷ്‌ടിക്കുക.",
+  "createNewList": "പുതിയ ലിസ്റ്റ് സൃഷ്ടിക്കുക",
+  "currency": "കറൻസി",
+  "currentQty": "നിലവിലെ അളവ്",
+  "currentQuantity": "നിലവിലെ അളവ്",
+  "dark": "ഡാർക്ക്",
+  "data": "ഡാറ്റ",
   "deficitItems": "{deficit,plural, one{{deficit} ഇനം വാങ്ങേണ്ടതുണ്ട്} other{{deficit} ഇനങ്ങൾ വാങ്ങേണ്ടതുണ്ട്}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "കാർട്ട് ആകെ",
-  "restockLabel": "പുനഃസംഭരിക്കുക",
-  "advancedFeatures": "വിപുലമായ ഫീച്ചറുകൾ",
-  "selectAll": "എല്ലാം തിരഞ്ഞെടുക്കുക",
+  "delete": "ഇല്ലാതാക്കുക",
+  "deleteListConfirm": "ലിസ്റ്റ് ഇല്ലാതാക്കുക",
+  "deleteListContent": "\"{name}\" ഇല്ലാതാക്കണമെന്ന് ഉറപ്പാണോ? എല്ലാ ഇനങ്ങളും നീക്കംചെയ്യും.",
+  "deleteListTitle": "ലിസ്റ്റ് ഇല്ലാതാക്കുക",
+  "deleteRecipe": "ഡിലീറ്റ് ചെയ്യുക",
+  "deleteRecipeConfirm": "ഈ റെസിപ്പി ഡിലീറ്റ് ചെയ്യണോ?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\" ഡിലീറ്റ് ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ? ഈ പ്രവർത്തനം റദ്ദാക്കാൻ കഴിയില്ല.",
+  "deleteSession": "ചാറ്റ് ഇല്ലാതാക്കുക",
+  "deleteSessionConfirm": "ഈ ചാറ്റ് ഇല്ലാതാക്കണമെന്ന് തീർച്ചയാണോ? സന്ദേശങ്ങൾ ശാശ്വതമായി നഷ്ടപ്പെടും.",
   "deselectAll": "എല്ലാം അൺസെലക്റ്റ് ചെയ്യുക",
-  "monthlyBudgetAppBar": "പ്രതിമാസ ബജറ്റ്",
-  "budgetEditTitle": "പ്രതിമാസ ബജറ്റ്",
-  "budgetDashboardTitle": "ഡാഷ്ബോർഡ്",
-  "selectListForDashboard": "ഡാഷ്ബോർഡ് കാണുന്നതിന് ഒരു ലിസ്റ്റ് തിരഞ്ഞെടുക്കുക.",
-  "spendingAnalysis": "ചെലവ് വിശകലനം",
-  "noItemsToAnalyze": "വിശകലനം ചെയ്യാൻ ലിസ്റ്റിൽ ഇനങ്ങളൊന്നുമില്ല.",
-  "markItemsToSeeAnalysis": "വിശകലനം കാണുന്നതിന് ഇനങ്ങൾ വാങ്ങിയതായി അടയാളപ്പെടുത്തുക.",
-  "totalSpending": "ആകെ ചെലവ്",
-  "spendingByCategory": "വിഭാഗം അനുസരിച്ച് ചെലവ്",
-  "achievements": "നേട്ടങ്ങൾ",
-  "exportPdfExcel": "PDF/Excel എക്‌സ്‌പോർട്ട് ചെയ്യുക",
-  "exportPdf": "PDF ആയി എക്‌സ്‌പോർട്ട് ചെയ്യുക",
-  "exportExcel": "Excel ആയി എക്‌സ്‌പോർട്ട് ചെയ്യുക",
-  "organizingAi": "AI ഉപയോഗിച്ച് ഓർഗനൈസ് ചെയ്യുന്നു...",
-  "yesLabel": "അതെ",
-  "noLabel": "ഇല്ല",
-  "shareListText": "എന്റെ ഷോപ്പിംഗ് ലിസ്റ്റ്",
-  "emptyListAddItems": "നിങ്ങളുടെ ലിസ്റ്റ് ശൂന്യമാണ്! ആദ്യം ഇനങ്ങൾ ചേർക്കുക. ℹ️",
-  "listOrganizedMagic": "ലിസ്റ്റ് വിഭാഗങ്ങൾ അനുസരിച്ച് മാന്ത്രികമായി ക്രമീകരിച്ചു! ✨",
-  "shoppingMode": "ഷോപ്പിംഗ് മോഡ്",
-  "smartOrganization": "സ്മാർട്ട് ഓർഗനൈസേഷൻ",
-  "savings": "സേവിംഗ്സ്",
-  "shoppingModeHeader": "ഷോപ്പിംഗ് മോഡ്",
-  "shareAsText": "ഫോർമാറ്റ് ചെയ്ത ടെക്സ്റ്റായി ഇനങ്ങൾ അയയ്ക്കുക",
-  "shareRealtime": "മറ്റ് ആളുകളുമായി തത്സമയ സമന്വയം",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "പെട്ടെന്നുള്ള പാചകക്കുറിപ്പ്",
-  "quickRecipePrompt": "എന്റെ ലിസ്റ്റിലെ ഇനങ്ങൾ ഉപയോഗിച്ച് പാചകക്കുറിപ്പുകൾ നിർദ്ദേശിക്കുക.",
+  "dynamicColors": "ഡൈനാമിക് നിറങ്ങൾ",
+  "dynamicColorsEnabledWarning": "തീം വർണ്ണം പ്രാബല്യത്തിൽ വരുന്നതിന് ഡൈനാമിക് നിറങ്ങൾ പ്രവർത്തനരഹിതമാക്കുക",
+  "dynamicColorsSubtitle": "നിങ്ങളുടെ വാൾപേപ്പറിനെ അടിസ്ഥാനമാക്കിയുള്ള നിറങ്ങൾ ഉപയോഗിക്കുക",
   "economyTips": "സേവിംഗ് ടിപ്പുകൾ",
   "economyTipsPrompt": "ഈ വാങ്ങലിൽ എങ്ങനെ പണം ലാഭിക്കാം?",
-  "organizeAisles": "ഐലുകൾ അനുസരിച്ച് ക്രമീകരിക്കുക",
-  "organizeAislesPrompt": "മാർക്കറ്റ് ഐലുകൾ അനുസരിച്ച് ക്രമീകരിക്കുക.",
-  "recipeSuggestion": "പാചകക്കുറിപ്പ് നിർദ്ദേശം",
-  "aiCreditsRemaining": "{remaining} ക്രെഡിറ്റുകൾ ശേഷിക്കുന്നു",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "എല്ലാം ലിസ്റ്റിലേക്ക് ചേർക്കുക",
-  "organizeByAisles": "ഐലുകൾ അനുസരിച്ച് ക്രമീകരിക്കുക",
-  "voiceTranscriptionTooltip": "വോയ്സ് ടൈപ്പിംഗ് (സൗജന്യം)",
-  "aiVoiceCommandTooltip": "AI വോയ്സ് കമാൻഡ് (പ്രീമിയം)",
-  "voiceCommandTitle": "AI വോയ്സ് കമാൻഡ്",
-  "voiceCommandContent": "നിങ്ങളുടെ ലിസ്റ്റ് നിയന്ത്രിക്കാൻ സ്വാഭാവികമായി സംസാരിക്കുക!\n\nഉദാഹരണങ്ങൾ:\n• 'ബ്രെഡ്, ചീസ്, ഹാം എന്നിവ ചേർക്കുക'\n• 'ലോൺഡ്രി ഡിറ്റർജന്റ് നീക്കംചെയ്യുക'\n• 'തീം നീലയിലേക്ക് മാറ്റുക'\n\nഇത് ലിസ്റ്റ പ്ലസ് പ്രീമിയത്തിന്റെ എക്സ്ക്ലൂസീവ് ഫീച്ചറാണ്.",
-  "voiceCommandPlanBtn": "പ്ലാനുകൾ കാണുക",
-  "itemsAddedSuccess": "ഇനങ്ങൾ വിജയകരമായി ലിസ്റ്റിലേക്ക് ചേർത്തു!",
-  "viewList": "ലിസ്റ്റ് കാണുക",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
+  "edit": "എഡിറ്റ് ചെയ്യുക",
+  "editItem": "ഇനം എഡിറ്റ് ചെയ്യുക",
+  "editItemPrice": "ഏകദേശ വില",
+  "editPantryItem": "{name} എഡിറ്റ് ചെയ്യുക",
+  "editRecipe": "എഡിറ്റ് ചെയ്യുക",
+  "editRecipeTitle": "റെസിപ്പി എഡിറ്റ് ചെയ്യുക",
+  "emptyListAddItems": "നിങ്ങളുടെ ലിസ്റ്റ് ശൂന്യമാണ്! ആദ്യം ഇനങ്ങൾ ചേർക്കുക. ℹ️",
+  "emptyListSubtitle": "ആരംഭിക്കാൻ ഇനങ്ങൾ ചേർക്കുക",
+  "emptyListTitle": "നിങ്ങളുടെ ലിസ്റ്റ് ശൂന്യമാണ്",
+  "enterCodeHint": "കോഡ് നൽകുക",
+  "enterUrl": "URL നൽകുക",
+  "error": "പിശക്: {message}",
+  "errorGeneric": "പിശക്: {message}",
+  "errorLoadingChat": "ശ്ശോ! ചാറ്റ് ലോഡ് ചെയ്യുന്നതിൽ എന്തോ കുഴപ്പം സംഭവിച്ചു.",
+  "errorLoadingChatSubtitle": "നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക അല്ലെങ്കിൽ പിന്നീട് വീണ്ടും ശ്രമിക്കുക.",
+  "errorLoadingRecipes": "റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നതിൽ പിശക്",
+  "errorOscillation": "നെറ്റ്‌വർക്ക് ആന്ദോളനങ്ങളോ താൽക്കാലിക ലഭ്യതയോ കാരണം ഇത് സംഭവിക്കാം. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+  "estimated": "ഏകദേശം",
+  "estimatedCost": "കണക്കാക്കിയത്",
+  "estimatedPrice": "ഏകദേശ വില",
+  "exportData": "ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക",
+  "exportDataSubtitle": "എല്ലാ ലിസ്റ്റുകളും JSON ആയി സംരക്ഷിക്കുക",
+  "exportExcel": "Excel ആയി എക്‌സ്‌പോർട്ട് ചെയ്യുക",
+  "exportPdf": "PDF ആയി എക്‌സ്‌പോർട്ട് ചെയ്യുക",
+  "exportPdfExcel": "PDF/Excel എക്‌സ്‌പോർട്ട് ചെയ്യുക",
+  "feedbackBack": "തിരികെ",
+  "feedbackError": "അയയ്ക്കുന്നതിൽ പിശക്: {error}",
+  "feedbackHint": "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് വിശദമായി വിവരിക്കുക...",
   "feedbackPrompt": "എന്താണ് നിങ്ങൾ പങ്കിടാൻ ആഗ്രഹിക്കുന്നത്?",
+  "feedbackRetry": "വീണ്ടും ശ്രമിക്കുക",
+  "feedbackSend": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
+  "feedbackSending": "അയയ്ക്കുന്നു...",
+  "feedbackSettingsSubtitle": "ബഗുകൾ റിപ്പോർട്ട് ചെയ്യുക, മെച്ചപ്പെടുത്തലുകൾ നിർദ്ദേശിക്കുക, അല്ലെങ്കിൽ വിവർത്തനങ്ങൾ ശരിയാക്കുക",
+  "feedbackSettingsTitle": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
+  "feedbackThankYou": "നന്ദി!",
+  "feedbackThankYouMessage": "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് ലഭിച്ചു, എല്ലാവർക്കുമായി Lista Plus മെച്ചപ്പെടുത്താൻ ഇത് ഞങ്ങളെ സഹായിക്കുന്നു.",
+  "feedbackTitle": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
   "feedbackTypeBug": "ബഗ് റിപ്പോർട്ട് ചെയ്യുക",
   "feedbackTypeBugHint": "എന്തോ ശരിയായി പ്രവർത്തിക്കുന്നില്ല",
-  "feedbackTypeSuggestion": "നിർദ്ദേശം",
-  "feedbackTypeSuggestionHint": "ആപ്പ് മെച്ചപ്പെടുത്താനുള്ള ആശയം",
-  "feedbackTypeTranslation": "വിവർത്തന പ്രശ്നം",
-  "feedbackTypeTranslationHint": "തെറ്റായ അല്ലെങ്കിൽ അസ്വാഭാവിക വിവർത്തനം",
   "feedbackTypeFeature": "ഫീച്ചർ അഭ്യർത്ഥന",
   "feedbackTypeFeatureHint": "നിങ്ങൾ കാണാൻ ആഗ്രഹിക്കുന്ന ഫീച്ചർ",
   "feedbackTypeOther": "മറ്റുള്ളവ",
   "feedbackTypeOtherHint": "മറ്റ് തരത്തിലുള്ള ഫീഡ്‌ബാക്ക്",
-  "feedbackHint": "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് വിശദമായി വിവരിക്കുക...",
-  "feedbackSend": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
-  "feedbackSending": "അയയ്ക്കുന്നു...",
-  "feedbackThankYou": "നന്ദി!",
-  "feedbackThankYouMessage": "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് ലഭിച്ചു, എല്ലാവർക്കുമായി Lista Plus മെച്ചപ്പെടുത്താൻ ഇത് ഞങ്ങളെ സഹായിക്കുന്നു.",
-  "feedbackBack": "തിരികെ",
-  "feedbackError": "അയയ്ക്കുന്നതിൽ പിശക്: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "വീണ്ടും ശ്രമിക്കുക",
-  "feedbackSettingsTitle": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
-  "feedbackSettingsSubtitle": "ബഗുകൾ റിപ്പോർട്ട് ചെയ്യുക, മെച്ചപ്പെടുത്തലുകൾ നിർദ്ദേശിക്കുക, അല്ലെങ്കിൽ വിവർത്തനങ്ങൾ ശരിയാക്കുക",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "ചേരുവ ചേർക്കുക",
-  "addPhoto": "ഫോട്ടോ ചേർക്കുക",
-  "allTags": "എല്ലാം",
-  "chooseImageSource": "ചിത്രത്തിന്റെ ഉറവിടം തിരഞ്ഞെടുക്കുക",
-  "chooseLanguage": "ഭാഷ തിരഞ്ഞെടുക്കുക",
-  "deleteRecipe": "ഡിലീറ്റ് ചെയ്യുക",
-  "deleteRecipeConfirm": "ഈ റെസിപ്പി ഡിലീറ്റ് ചെയ്യണോ?",
-  "deleteRecipeConfirmMsg": "\"{recipeName}\" ഡിലീറ്റ് ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ? ഈ പ്രവർത്തനം റദ്ദാക്കാൻ കഴിയില്ല.",
-  "@deleteRecipeConfirmMsg": {
-    "placeholders": {
-      "recipeName": {
-        "type": "String"
-      }
-    }
-  },
-  "dynamicColors": "ഡൈനാമിക് നിറങ്ങൾ",
-  "dynamicColorsSubtitle": "നിങ്ങളുടെ വാൾപേപ്പറിനെ അടിസ്ഥാനമാക്കിയുള്ള നിറങ്ങൾ ഉപയോഗിക്കുക",
-  "editRecipe": "എഡിറ്റ് ചെയ്യുക",
-  "editRecipeTitle": "റെസിപ്പി എഡിറ്റ് ചെയ്യുക",
-  "enterUrl": "URL നൽകുക",
-  "errorLoadingRecipes": "റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നതിൽ പിശക്",
+  "feedbackTypeSuggestion": "നിർദ്ദേശം",
+  "feedbackTypeSuggestionHint": "ആപ്പ് മെച്ചപ്പെടുത്താനുള്ള ആശയം",
+  "feedbackTypeTranslation": "വിവർത്തന പ്രശ്നം",
+  "feedbackTypeTranslationHint": "തെറ്റായ അല്ലെങ്കിൽ അസ്വാഭാവിക വിവർത്തനം",
+  "fieldRequired": "നിർബന്ധിത ഫീൽഡ്",
+  "filterAll": "എല്ലാം",
   "filterByTag": "ടാഗ് അനുസരിച്ച് ഫിൽട്ടർ ചെയ്യുക",
+  "filterPending": "തീർപ്പാക്കാത്തവ",
+  "filterPurchased": "വാങ്ങിയവ",
+  "finance": "ഫിനാൻസ്",
+  "finishShopping": "ഷോപ്പിംഗ് പൂർത്തിയാക്കുക",
   "gallery": "ഗാലറി",
+  "generalAssistant": "ജനറൽ അസിസ്റ്റന്റ്",
+  "generalHelp": "ഇന്ന് നിങ്ങളുടെ ഷോപ്പിംഗിൽ എങ്ങനെ സഹായിക്കണം?",
+  "generateShoppingList": "ഷോപ്പിംഗ് ലിസ്റ്റ് ജനറേറ്റ് ചെയ്യുക",
+  "globalAssistant": "ഗ്ലോബൽ അസിസ്റ്റന്റ്",
+  "howCanIHelp": "എനിക്ക് എങ്ങനെ സഹായിക്കാനാകും?",
+  "idealQty": "ആദർശ അളവ്",
+  "idealQuantity": "ആദർശ അളവ്",
   "imageUrlPlaceholder": "അല്ലെങ്കിൽ ഒരു ചിത്രത്തിന്റെ URL ഒട്ടിക്കുക",
+  "import": "ഇറക്കുമതി ചെയ്യുക",
+  "importData": "ഡാറ്റ ഇറക്കുമതി ചെയ്യുക",
+  "importDataSubtitle": "JSON-ൽ നിന്ന് ലിസ്റ്റുകൾ പുനഃസ്ഥാപിക്കുക",
+  "importJsonHint": "ബാക്കപ്പ് JSON ഇവിടെ പേസ്റ്റ് ചെയ്യുക...",
+  "importJsonTitle": "JSON ഇറക്കുമതി ചെയ്യുക",
+  "importListTitle": "ലിസ്റ്റ് ഇറക്കുമതി ചെയ്യുക",
+  "importViaCode": "കോഡ് വഴി ഇറക്കുമതി ചെയ്യുക",
   "ingredients": "ചേരുവകൾ",
   "instructions": "നിർദ്ദേശങ്ങൾ",
   "instructionsHint": "ഓരോ വരിയിലും ഒരു ഘട്ടം വീതം ടൈപ്പ് ചെയ്യുക...",
+  "inviteToList": "പട്ടികയിലേക്ക് ക്ഷണിക്കുക",
+  "itemName": "ഇനത്തിന്റെ പേര്",
+  "itemRemoved": "ഇനം നീക്കംചെയ്തു",
+  "itemsAddedSuccess": "ഇനങ്ങൾ വിജയകരമായി ലിസ്റ്റിലേക്ക് ചേർത്തു!",
+  "itemsNeedPurchase": "{deficit} ഇനം വാങ്ങേണ്ടതുണ്ട്",
+  "itemsPurchasedCount": "{purchased} of {total} വാങ്ങി",
+  "itemsPurchasedShort": "{purchased}/{total} വാങ്ങി",
+  "itemsWillBeAdded": "{count} ഇനം ചേർക്കും",
+  "language": "ഭാഷ",
+  "languageEnglish": "ഇംഗ്ലീഷ്",
+  "languagePortuguese": "പോർച്ചുഗീസ് (ബ്രസീൽ)",
+  "languageSystem": "സിസ്റ്റം ഡിഫോൾട്ട്",
+  "light": "ലൈറ്റ്",
+  "listAdded": "{listName} ചേർത്തു!",
+  "listArchived": "ലിസ്റ്റ് വിജയകരമായി ആർക്കൈവ് ചെയ്തു!",
+  "listAssistant": "ലിസ്റ്റ് അസിസ്റ്റന്റ്",
+  "listBudgetTitle": "ലിസ്റ്റ് ബജറ്റ്",
+  "listCreated": "\"{name}\" എന്ന ലിസ്റ്റ് {count} ഇനങ്ങളോടെ സൃഷ്ടിച്ചു",
+  "listHelp": "നിങ്ങളുടെ ലിസ്റ്റിൽ എങ്ങനെ സഹായിക്കണം?",
+  "listHistory": "ലിസ്റ്റ് ചരിത്രം",
+  "listNameLabel": "ലിസ്റ്റിന്റെ പേര്",
+  "listOrganizedMagic": "ലിസ്റ്റ് വിഭാഗങ്ങൾ അനുസരിച്ച് മാന്ത്രികമായി ക്രമീകരിച്ചു! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "കേൾക്കുന്നു...",
+  "lists": "ലിസ്റ്റുകൾ",
+  "loading": "ലോഡ് ചെയ്യുന്നു...",
   "loadingRecipes": "നിങ്ങളുടെ റെസിപ്പികൾ ലോഡ് ചെയ്യുന്നു...",
+  "loginError": "ലോഗിൻ പിശക്: {error}",
+  "loginPrompt": "പ്രീമിയം ഫീച്ചറുകൾ\nഅൺലോക്ക് ചെയ്യാൻ ലോഗിൻ ചെയ്യുക",
+  "longHistoryWarning": "നീണ്ട ചരിത്രം: മികച്ച പ്രകടനത്തിനായി അസിസ്റ്റൻ്റ് ഏറ്റവും പുതിയ സന്ദേശങ്ങളിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു.",
+  "manageSubscription": "സബ്‌സ്ക്രിപ്ഷൻ നിയന്ത്രിക്കുക",
+  "markAsPurchased": "വാങ്ങിയതായി അടയാളപ്പെടുത്തുക",
+  "markItemsToSeeAnalysis": "വിശകലനം കാണുന്നതിന് ഇനങ്ങൾ വാങ്ങിയതായി അടയാളപ്പെടുത്തുക.",
+  "marketMode": "മാർക്കറ്റ് മോഡ്",
   "mealPlannerAddMeal": "ഭക്ഷണം ചേർക്കുക",
   "mealPlannerDateLabel": "തീയതി",
   "mealPlannerDeleteMeal": "ഭക്ഷണം ഒഴിവാക്കുക",
@@ -597,13 +614,6 @@
   "mealPlannerGenerateListEmpty": "ചേർക്കാൻ ചേരുവകളൊന്നുമില്ല. ആദ്യം റെസിപ്പികൾ ഉൾപ്പെടുത്തി ഭക്ഷണം പ്ലാൻ ചെയ്യുക.",
   "mealPlannerGenerateListNoList": "ആദ്യം ഒരു ഷോപ്പിംഗ് ലിസ്റ്റ് നിർമ്മിക്കുക.",
   "mealPlannerGenerateListSuccess": "{count} ചേരുവകൾ നിങ്ങളുടെ ലിസ്റ്റിൽ ചേർത്തു!",
-  "@mealPlannerGenerateListSuccess": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "mealPlannerLoading": "ഭക്ഷണ പ്ലാൻ ലോഡ് ചെയ്യുന്നു...",
   "mealPlannerMealDeleted": "ഭക്ഷണം ഒഴിവാക്കി",
   "mealPlannerMealTypeBreakfast": "പ്രഭാതഭക്ഷണം",
@@ -616,24 +626,10 @@
   "mealPlannerNoRecipesHint": "ആദ്യം റെസിപ്പീസ് ടാബിൽ റെസിപ്പികൾ നിർമ്മിക്കുക",
   "mealPlannerNoteLabel": "കുറിപ്പ് (നിർബന്ധമില്ലാത്തത്)",
   "mealPlannerPrepTime": "{minutes} മിനിറ്റ്",
-  "@mealPlannerPrepTime": {
-    "placeholders": {
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
   "mealPlannerSave": "പ്ലാനിലേക്ക് ചേർക്കുക",
   "mealPlannerSearchRecipes": "റെസിപ്പികൾ തിരയുക...",
   "mealPlannerSelectRecipe": "ഒരു റെസിപ്പി തിരഞ്ഞെടുക്കുക",
   "mealPlannerServings": "{count,plural, one{{count} വിളമ്പൽ} other{{count} വിളമ്പലുകൾ}}",
-  "@mealPlannerServings": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "mealPlannerServingsLabel": "വിളമ്പലുകൾ",
   "mealPlannerTitle": "മീൽ പ്ലാനർ",
   "mealPlannerViewMonthly": "മാസത്തെ കാഴ്ച",
@@ -641,38 +637,201 @@
   "mealPlannerWeekEmpty": "ഈ ആഴ്ചയിൽ പ്ലാൻ ചെയ്തവ ഒന്നുമില്ല",
   "mealPlannerWeekEmptyHint": "നിങ്ങളുടെ ഭക്ഷണം പ്ലാൻ ചെയ്യാൻ ഏതെങ്കിലും ദിവസം തിരഞ്ഞെടുക്കുക!",
   "mealPlannerWeekProgress": "{total}-ൽ {count} ഭക്ഷണം പ്ലാൻ ചെയ്തു",
-  "@mealPlannerWeekProgress": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
+  "monthlyBudgetAppBar": "പ്രതിമാസ ബജറ്റ്",
+  "monthlyBudgetNav": "പ്രതിമാസ ബജറ്റ്",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "പ്രതിമാസ ബജറ്റ്",
+  "myLists": "എന്റെ ലിസ്റ്റുകൾ",
   "myRecipes": "എന്റെ റെസിപ്പികൾ",
+  "newChat": "പുതിയ ചാറ്റ്",
+  "newListTitle": "പുതിയ ഷോപ്പിംഗ് ലിസ്റ്റ്",
+  "newPantryList": "പാന്ട്രി ഷോപ്പിംഗ്",
   "newRecipe": "പുതിയ റെസിപ്പി",
   "newRecipeTitle": "പുതിയ റെസിപ്പി",
+  "next": "അടുത്തത്",
+  "noActiveLists": "സജീവ ലിസ്റ്റുകളൊന്നുമില്ല",
+  "noArchivedLists": "ആർക്കൈവ് ചെയ്ത ലിസ്റ്റുകളൊന്നുമില്ല",
+  "noBudgetDefined": "ബജറ്റ് സജ്ജീകരിച്ചിട്ടില്ല",
+  "noHistory": "ചാറ്റ് ചരിത്രമില്ല",
+  "noItemsInList": "ലിസ്റ്റിൽ ഇനങ്ങളൊന്നുമില്ല",
+  "noItemsToAnalyze": "വിശകലനം ചെയ്യാൻ ലിസ്റ്റിൽ ഇനങ്ങളൊന്നുമില്ല.",
+  "noItemsToBuy": "വാങ്ങേണ്ട ഇനങ്ങളൊന്നുമില്ല",
+  "noLabel": "ഇല്ല",
+  "noListFoundSubtitle": "ആരംഭിക്കാൻ നിങ്ങളുടെ ആദ്യ ലിസ്റ്റ് സൃഷ്ടിക്കുക",
+  "noListFoundTitle": "ലിസ്റ്റുകളൊന്നും കണ്ടെത്തിയില്ല",
+  "noMessagesFound": "സന്ദേശങ്ങളൊന്നും കണ്ടെത്തിയില്ല",
   "noRecipesSaved": "റെസിപ്പികളൊന്നും സേവ് ചെയ്തിട്ടില്ല",
   "noRecipesSavedHint": "താഴെയുള്ള ബട്ടൺ അമർത്തി നിങ്ങളുടെ ആദ്യത്തെ റെസിപ്പി നിർമ്മിക്കുക.",
+  "noTracking": "ട്രാക്കിംഗ് ഇല്ല",
+  "onboardingAnnualBadge": "മികച്ച മൂല്യം",
+  "onboardingAnnualLabel": "വാർഷികം",
+  "onboardingCancelAnytime": "എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക. പ്രതിബദ്ധതയില്ല.",
+  "onboardingContinueAsGuest": "അതിഥിയായി തുടരുക",
+  "onboardingExit": "പുറത്ത്",
+  "onboardingLoginDesc": "നിങ്ങളുടെ എല്ലാ ഉപകരണങ്ങളിലും നിങ്ങളുടെ ഡാറ്റ സമന്വയിപ്പിച്ചു",
+  "onboardingLoginTitle": "എല്ലാം ക്ലൗഡിലേക്ക് സംരക്ഷിക്കുക",
+  "onboardingMonthlyLabel": "പ്രതിമാസ",
+  "onboardingPersonalizationCta": "തുടരുക",
+  "onboardingPersonalizationDesc": "നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ വ്യക്തിപരമാക്കാനും ഷോപ്പിംഗ് മികച്ചതാക്കാനും ഞങ്ങൾ ഇത് ഉപയോഗിക്കും.",
+  "onboardingPersonalizationFoodHint": "ഉദാ. പിസ്സ, സുഷി, ലസാഗ്ന...",
+  "onboardingPersonalizationFoodLabel": "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം ഏതാണ്?",
+  "onboardingPersonalizationFoodRequired": "തുടരാൻ നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം ഞങ്ങളോട് പറയുക",
+  "onboardingPersonalizationSkip": "തൽക്കാലം ഒഴിവാക്കുക",
+  "onboardingPersonalizationTitle": "നമുക്ക് നിങ്ങളെ പരിചയപ്പെടാം",
+  "onboardingPremiumSubtitle": "നിങ്ങളുടെ ഷോപ്പിംഗ് ലിസ്റ്റുകൾ പരമാവധി പ്രയോജനപ്പെടുത്തുക",
+  "onboardingPremiumTitle": "എല്ലാ സവിശേഷതകളും അൺലോക്ക് ചെയ്യുക",
+  "onboardingRestore": "പുനഃസ്ഥാപിക്കുക",
+  "onboardingRestoreDesc": "ഇതിനകം ഒരു സബ്സ്ക്രിപ്ഷൻ ഉണ്ടോ? അത് പുനഃസ്ഥാപിക്കാൻ ഇവിടെ ടാപ്പ് ചെയ്യുക.",
+  "onboardingSetupDesc": "Lista Plus എങ്ങനെ കാണണമെന്നും നിങ്ങൾക്കായി പ്രവർത്തിക്കണമെന്നും നിങ്ങൾ ആഗ്രഹിക്കുന്നുവെന്ന് തിരഞ്ഞെടുക്കുക.",
+  "onboardingSetupTitle": "നിങ്ങളുടെ അനുഭവം വ്യക്തിഗതമാക്കുക",
+  "onboardingShareDesc": "കുടുംബാംഗങ്ങളുമായും സുഹൃത്തുക്കളുമായും ലിസ്റ്റുകൾ തത്സമയം സമന്വയിപ്പിക്കുക",
+  "onboardingShareTitle": "നിങ്ങൾ ഇഷ്ടപ്പെടുന്നവരുമായി പങ്കിടുക",
+  "onboardingSubscribeCta": "സബ്സ്ക്രൈബ് ചെയ്യുക",
+  "onboardingViewAllPlans": "എല്ലാ പ്ലാനുകളും കാണുക",
+  "onboardingWelcomeDesc": "നിങ്ങളുടെ ഷോപ്പിംഗ് സംഘടിപ്പിക്കുന്നതിനും പണം ലാഭിക്കുന്നതിനുമുള്ള ഏറ്റവും മികച്ച മാർഗം.",
+  "onboardingWelcomeTitle": "Lista Plus-ലേക്ക് സ്വാഗതം",
   "openMenu": "മെനു തുറക്കുക",
+  "organizeAisles": "ഐലുകൾ അനുസരിച്ച് ക്രമീകരിക്കുക",
+  "organizeAislesPrompt": "മാർക്കറ്റ് ഐലുകൾ അനുസരിച്ച് ക്രമീകരിക്കുക.",
+  "organizeByAisles": "ഐലുകൾ അനുസരിച്ച് ക്രമീകരിക്കുക",
+  "organizingAi": "AI ഉപയോഗിച്ച് ഓർഗനൈസ് ചെയ്യുന്നു...",
+  "pantry": "പാന്ട്രി",
+  "pantryAppBar": "പാന്ട്രി",
+  "pantryEditTitle": "{name} എഡിറ്റ് ചെയ്യുക",
+  "pantryEmpty": "പാന്ട്രി ശൂന്യമാണ്",
+  "pantryEmptySubtitle": "വീട്ടിൽ സൂക്ഷിക്കണമെന്ന് ആഗ്രഹിക്കുന്ന ഉൽപ്പന്നങ്ങൾ ചേർക്കുക",
+  "pantryItemRemoved": "ഇനം നീക്കംചെയ്തു",
+  "paywallTitle": "ലിസ്റ്റ പ്ലസ് പ്രീമിയം",
+  "prefAIAssistant": "വ്യക്തിഗത AI അസിസ്റ്റന്റ്",
+  "prefCustomThemes": "ഇഷ്ടാനുസൃത തീമുകൾ",
+  "prefExportData": "ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക",
+  "prefFullHistory": "പൂർണ്ണ ചരിത്രം",
+  "prefInteractiveArtifacts": "സംവേദനാത്മക AI ആർട്ടിഫാക്റ്റുകൾ",
+  "prefMonthlyBudget": "ആഗോള പ്രതിമാസ ബജറ്റ്",
+  "prefSharing": "ലിസ്റ്റുകൾ പങ്കിടുക",
+  "prefUnlimitedLists": "പരിധിയില്ലാത്ത ലിസ്റ്റുകൾ",
+  "prefUnlimitedPantry": "പരിധിയില്ലാത്ത പാന്ട്രി",
+  "premiumUpgrade": "അൺലോക്ക് ചെയ്യാൻ അപ്‌ഗ്രേഡ് ചെയ്യുക",
   "prepTime": "തയ്യാറാക്കുന്ന സമയം",
   "prepTimeMinutes": "തയ്യാറാക്കുന്ന സമയം (മിനിറ്റ്)",
+  "privacy": "സ്വകാര്യത",
+  "productName": "ഉൽപ്പന്നത്തിന്റെ പേര്",
+  "purchaseError": "വാങ്ങൽ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.",
+  "quantityFull": "അളവ്",
+  "quantityShort": "അളവ്",
+  "quickRecipe": "പെട്ടെന്നുള്ള പാചകക്കുറിപ്പ്",
+  "quickRecipePrompt": "എന്റെ ലിസ്റ്റിലെ ഇനങ്ങൾ ഉപയോഗിച്ച് പാചകക്കുറിപ്പുകൾ നിർദ്ദേശിക്കുക.",
+  "quickReplies": "ദ്രുത മറുപടികൾ:",
   "recipeCreated": "റെസിപ്പി തയ്യാറാക്കി!",
   "recipeDeleted": "റെസിപ്പി ഡിലീറ്റ് ചെയ്തു",
   "recipeImage": "റെസിപ്പിയുടെ ചിത്രം",
   "recipeName": "റെസിപ്പിയുടെ പേര്",
   "recipeSaved": "റെസിപ്പി സേവ് ചെയ്തു!",
+  "recipeSuggestion": "പാചകക്കുറിപ്പ് നിർദ്ദേശം",
   "recipeTags": "റെസിപ്പി ടാഗുകൾ",
+  "regenerate": "പുനഃസൃഷ്ടിക്കുക",
+  "remove": "നീക്കംചെയ്യുക",
+  "removeBudget": "നീക്കംചെയ്യുക",
   "removeImage": "ചിത്രം ഒഴിവാക്കുക",
+  "removeSharedListContent": "നിങ്ങളുടെ ലിസ്റ്റുകളിൽ നിന്ന് \"{name}\" നീക്കംചെയ്യണോ? യഥാർത്ഥ ലിസ്റ്റിനെ ബാധിക്കില്ല.",
+  "removeSharedListTitle": "പങ്കിട്ട ലിസ്റ്റ് നീക്കംചെയ്യുക",
+  "removeSharedTooltip": "നീക്കംചെയ്യുക",
+  "rename": "പുനർനാമകരണം",
+  "renameListDialog": "ലിസ്റ്റ് പുനർനാമകരണം",
   "requiredField": "ആവശ്യമാണ്",
+  "restockLabel": "പുനഃസംഭരിക്കുക",
+  "restocked": "{name} {quantity} {unit} ആയി പുനഃസംഭരിച്ചു",
+  "restore": "പുനഃസ്ഥാപിക്കുക",
+  "restoreError": "വാങ്ങലുകൾ പുനഃസ്ഥാപിക്കുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.",
+  "retry": "വീണ്ടും ശ്രമിക്കുക",
+  "save": "സംരക്ഷിക്കുക",
   "saveChanges": "മാറ്റങ്ങൾ സേവ് ചെയ്യുക",
   "saveRecipe": "സേവ് ചെയ്യുക",
+  "savings": "സേവിംഗ്സ്",
+  "searchCurrency": "കറൻസി തിരയുക...",
+  "searchInConversation": "സംഭാഷണത്തിൽ തിരയുക...",
   "searchLanguage": "ഭാഷ തിരയുക...",
   "searchRecipes": "റെസിപ്പികൾ തിരയുക...",
+  "selectAll": "എല്ലാം തിരഞ്ഞെടുക്കുക",
+  "selectListForDashboard": "ഡാഷ്ബോർഡ് കാണുന്നതിന് ഒരു ലിസ്റ്റ് തിരഞ്ഞെടുക്കുക.",
+  "selectedItems": "{count,plural, one{{count} തിരഞ്ഞെടുത്തു} other{{count} തിരഞ്ഞെടുത്തു}}",
+  "setBudgetButton": "ബജറ്റ് സജ്ജമാക്കുക",
+  "setBudgetTitle": "പ്രതിമാസ ബജറ്റ്",
+  "settingsAppBar": "ക്രമീകരണങ്ങൾ",
+  "settingsDefaultScreen": "ഡിഫോൾട്ട് ഹോം സ്‌ക്രീൻ",
+  "settingsDefaultScreenSubtitle": "ഷോപ്പിംഗ് ലിസ്റ്റ് അല്ലെങ്കിൽ AI ചാറ്റ് എന്നിവയിൽ ഒന്ന് തിരഞ്ഞെടുക്കുക",
+  "settingsScreenChat": "AI ചാറ്റ്",
+  "settingsScreenList": "ഷോപ്പിംഗ് ലിസ്റ്റ്",
+  "share": "പങ്കിടുക",
+  "shareApp": "ആപ്പ് പങ്കിടുക",
+  "shareAppDescription": "Lista Plus ഉപയോഗിക്കുന്നതിന് സുഹൃത്തുക്കളെ ക്ഷണിക്കുക",
+  "shareAsText": "ഫോർമാറ്റ് ചെയ്ത ടെക്സ്റ്റായി ഇനങ്ങൾ അയയ്ക്കുക",
+  "shareListText": "എന്റെ ഷോപ്പിംഗ് ലിസ്റ്റ്",
+  "shareListTitle": "ലിസ്റ്റ് പങ്കിടുക",
+  "shareRealtime": "മറ്റ് ആളുകളുമായി തത്സമയ സമന്വയം",
+  "shareReferralSubject": "Lista Plus പ്രീമിയം 7 ദിവസത്തെ നേടൂ!",
+  "shareReferralText": "എൻ്റെ ഷോപ്പിംഗ് സംഘടിപ്പിക്കാൻ ഞാൻ Lista Plus ഉപയോഗിക്കുന്നു! എൻ്റെ ലിങ്ക് വഴി ഡൗൺലോഡ് ചെയ്യൂ, ഞങ്ങൾ രണ്ടുപേർക്കും 7 ദിവസത്തെ പ്രീമിയം സൗജന്യമായി ലഭിക്കും: {url}",
+  "shareSubject": "ഷോപ്പിംഗ് ലിസ്റ്റ്",
+  "shareThisCode": "ഈ കോഡ് പങ്കിടുക:",
+  "shareViaCode": "കോഡ് വഴി പങ്കിടുക",
+  "sharedLabel": "പങ്കിട്ടത്",
+  "shoppingAssistant": "ഷോപ്പിംഗ് അസിസ്റ്റൻ്റ്",
+  "shoppingMode": "ഷോപ്പിംഗ് മോഡ്",
+  "shoppingModeHeader": "ഷോപ്പിംഗ് മോഡ്",
   "shortDescription": "ലഘുവിവരണം",
+  "signInApple": "Apple ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക",
+  "signInGoogle": "Google ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക",
+  "smartOrganization": "സ്മാർട്ട് ഓർഗനൈസേഷൻ",
+  "sortCategory": "വിഭാഗം",
+  "sortDate": "തീയതി",
+  "sortManual": "രംഗം",
+  "sortName": "പേര്",
+  "spendingAnalysis": "ചെലവ് വിശകലനം",
+  "spendingByCategory": "വിഭാഗം അനുസരിച്ച് ചെലവ്",
+  "suggestedQuestions": "നിർദ്ദേശിച്ച ചോദ്യങ്ങൾ:",
   "suggestedTags": "നിർദ്ദേശിച്ചവ",
+  "switchList": "ലിസ്റ്റ് മാറുക",
+  "system": "സിസ്റ്റം",
   "tags": "ടാഗുകൾ",
-  "viewRecipe": "റെസിപ്പി കാണുക"
+  "termsOfUse": "ഉപയോഗ നിബന്ധനകൾ",
+  "themeAmber": "ആമ്പർ",
+  "themeBlue": "നീല",
+  "themeBrown": "ബ്രൗൺ",
+  "themeColor": "തീം നിറം",
+  "themeGreen": "പച്ച",
+  "themeIndigo": "ഇൻഡിഗോ",
+  "themeOrange": "ഓറഞ്ച്",
+  "themePink": "പിങ്ക്",
+  "themePurple": "പർപ്പിൾ",
+  "themeRed": "ചുവപ്പ്",
+  "themeTeal": "ടീൽ",
+  "totalEstimated": "ആകെ ഏകദേശം: {amount}",
+  "totalSpending": "ആകെ ചെലവ്",
+  "trackStock": "സ്റ്റോക്ക് ട്രാക്ക് ചെയ്യുക",
+  "trackStockActive": "ഷോപ്പിംഗ് നിർദ്ദേശങ്ങളിൽ ദൃശ്യമാകുന്നു",
+  "trackStockInactive": "ഷോപ്പിംഗ് നിർദ്ദേശം സൃഷ്ടിക്കുന്നില്ല",
+  "undo": "പഴയപടിയാക്കുക",
+  "unit": "യൂണിറ്റ്",
+  "unitPack": "പായ്ക്ക്",
+  "unlockFullResponse": "പൂർണ്ണ പ്രതികരണം അൺലോക്ക് ചെയ്യുക",
+  "unmark": "അൺമാർക്ക് ചെയ്യുക",
+  "upgrade": "അപ്‌ഗ്രേഡ് ചെയ്യുക",
+  "validForLimitedTime": "പരിമിത സമയത്തേക്ക് മാത്രം സാധുത",
+  "version": "പതിപ്പ്",
+  "viewActive": "സജീവമായവ കാണുക",
+  "viewDetails": "വിശദാംശങ്ങൾ കാണുക",
+  "viewHistory": "ചരിത്രം കാണുക",
+  "viewItems": "ഇനങ്ങൾ കാണുക",
+  "viewList": "ലിസ്റ്റ് കാണുക",
+  "viewPro": "പ്രോ കാണുക",
+  "viewRecipe": "റെസിപ്പി കാണുക",
+  "voiceCommandContent": "നിങ്ങളുടെ ലിസ്റ്റ് നിയന്ത്രിക്കാൻ സ്വാഭാവികമായി സംസാരിക്കുക!\n\nഉദാഹരണങ്ങൾ:\n• 'ബ്രെഡ്, ചീസ്, ഹാം എന്നിവ ചേർക്കുക'\n• 'ലോൺഡ്രി ഡിറ്റർജന്റ് നീക്കംചെയ്യുക'\n• 'തീം നീലയിലേക്ക് മാറ്റുക'\n\nഇത് Lista Plus പ്രീമിയത്തിന്റെ എക്സ്ക്ലൂസീവ് ഫീച്ചറാണ്.",
+  "voiceCommandPlanBtn": "പ്ലാനുകൾ കാണുക",
+  "voiceCommandTitle": "AI വോയ്സ് കമാൻഡ്",
+  "voiceProFeature": "വിപുലമായ വോയ്‌സ് കമാൻഡുകൾ പ്രോ. അടിസ്ഥാന നിർദ്ദേശം പ്രവർത്തനക്ഷമമാക്കുന്നു...",
+  "voiceTranscriptionTooltip": "വോയ്സ് ടൈപ്പിംഗ് (സൗജന്യം)",
+  "welcomeAiAssistant": "AI അസിസ്റ്റൻ്റിലേക്ക് സ്വാഗതം",
+  "whatToDoWithItem": "ഈ ഇനം ഉപയോഗിച്ച് നിങ്ങൾ എന്താണ് ചെയ്യാൻ ആഗ്രഹിക്കുന്നത്?",
+  "yes": "അതെ",
+  "yesLabel": "അതെ"
 }

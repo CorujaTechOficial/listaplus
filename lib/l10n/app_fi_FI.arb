@@ -1,99 +1,47 @@
 {
   "@@locale": "fi_FI",
-  "appTitle": "Ostoslista",
+  "@_Feedback": "description: Feedback Screen",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Listat",
-  "pantry": "Ruokakomero",
-  "cancel": "Peruuta",
-  "save": "Tallenna",
-  "create": "Luo",
-  "add": "Lisää",
-  "remove": "Poista",
-  "delete": "Poista",
-  "edit": "Muokkaa",
-  "copy": "Kopioi",
-  "retry": "Yritä uudelleen",
-  "regenerate": "Luo uudelleen",
-  "copiedToClipboard": "Kopioitu leikepöydälle",
-  "confirm": "Vahvista",
-  "close": "Sulje",
-  "import": "Tuo",
-  "rename": "Nimeä uudelleen",
-  "upgrade": "Päivitä",
-  "clear": "Tyhjennä",
-  "error": "Virhe: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Virhe: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Virhe ostoksen käsittelyssä. Yritä uudelleen.",
-  "restoreError": "Virhe ostosten palauttamisessa. Yritä uudelleen.",
-  "loading": "Ladataan...",
-  "fieldRequired": "Pakollinen kenttä",
-  "addedFeedback": "Lisätty!",
-  "selectedItems": "Valittu {count}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Arvioitu",
-  "alreadyPurchased": "Jo ostettu",
-  "clearList": "Tyhjennä lista",
-  "clearPurchased": "Tyhjennä ostetut",
-  "share": "Jaa",
-  "shareViaCode": "Jaa koodilla",
-  "importViaCode": "Tuo koodilla",
-  "listAssistant": "Lista-assistentti",
-  "globalAssistant": "Yleinen assistentti",
-  "becomePremium": "Hanki Premium",
-  "manageSubscription": "Hallinnoi tilausta",
-  "completePurchase": "Suorita osto",
-  "confirmClearList": "Poistetaanko kaikki kohteet?",
-  "shareListTitle": "Jaa lista",
-  "shareThisCode": "Jaa tämä koodi:",
-  "validForLimitedTime": "Voimassa rajoitetun ajan",
-  "importListTitle": "Tuo lista",
-  "enterCodeHint": "Syötä koodi",
-  "confirmArchiveTitle": "Suorita osto",
-  "confirmArchiveContent": "Suoritetaanko tämä osto ja arkistoidaan lista?",
-  "complete": "Suorita",
-  "listArchived": "Lista arkistoitu onnistuneesti!",
-  "listAdded": "{listName} lisätty!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Osta",
-  "unmark": "Poista merkintä",
-  "confirmDeleteItems": "Poistetaanko {count} kohde(tta)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Vahvista",
-  "confirmContent": "Poistetaanko {count} kohde(tta)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -101,12 +49,68 @@
       }
     }
   },
-  "archiveList": "Arkistoi lista",
-  "pantryAppBar": "Ruokakomero",
-  "generateShoppingList": "Luo ostoslista",
-  "pantryEmpty": "Tyhjä ruokakomero",
-  "pantryEmptySubtitle": "Lisää tuotteita, joita haluat pitää kotona",
-  "itemsNeedPurchase": "{deficit} kohde(tta) on ostettava",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -114,10 +118,26 @@
       }
     }
   },
-  "noItemsToBuy": "Ei ostettavia kohteita",
-  "newPantryList": "Ruokakomero-ostokset",
-  "newListTitle": "Uusi ostoslista",
-  "itemsWillBeAdded": "{count} kohde(tta) lisätään",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -125,8 +145,13 @@
       }
     }
   },
-  "listNameLabel": "Listan nimi",
-  "listCreated": "Lista \"{name}\" luotu {count} kohteella",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -137,20 +162,125 @@
       }
     }
   },
-  "noTracking": "Ei seurantaa",
-  "markAsPurchased": "Merkitse ostetuksi",
-  "editPantryItem": "Muokkaa {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Ihannemäärä",
-  "currentQuantity": "Nykyinen määrä",
-  "consumed": "Kulutettu",
-  "restocked": "{name} täydennetty määrään {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -164,56 +294,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Poistetaanko \"{name}\" ruokakomerosta?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Muokkaa {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "settingsAppBar": "Asetukset",
-  "language": "Kieli",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Järjestelmän oletus",
-  "appearance": "Ulkoasu",
-  "light": "Vaalea",
-  "system": "Järjestelmä",
-  "dark": "Tumma",
-  "themeColor": "Teeman väri",
-  "finance": "Talous",
-  "monthlyBudgetNav": "Kuukausibudjetti",
-  "budgetSubtitle": "Seuraa kuukausittaisia kulujasi",
-  "data": "Tiedot",
-  "backupNav": "Varmuuskopio",
-  "backupSubtitle": "Vie tai tuo tietosi",
-  "about": "Tietoja",
-  "version": "Versio",
-  "privacy": "Yksityisyys",
-  "termsOfUse": "Käyttöehdot",
-  "backupTitle": "Varmuuskopio",
-  "backupPremiumDescription": "Varmuuskopiointi ja vienti on Premium-ominaisuus",
-  "exportData": "Vie tiedot",
-  "exportDataSubtitle": "Tallenna kaikki listat JSON-muodossa",
-  "importData": "Tuo tiedot",
-  "importDataSubtitle": "Palauta listat JSON-tiedostosta",
-  "importJsonTitle": "Tuo JSON",
-  "importJsonHint": "Liitä varmuuskopion JSON tähän...",
-  "backupExported": "Varmuuskopio viety!",
-  "budgetAppBar": "Kuukausibudjetti",
-  "budgetPremiumLocked": "Globaali kuukausibudjetti on Premium",
-  "budgetUpgradePrompt": "Päivitä avataksesi",
-  "noBudgetDefined": "Budjettia ei asetettu",
-  "totalEstimated": "Arvioitu yhteensä: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -221,339 +335,218 @@
       }
     }
   },
-  "setBudgetButton": "Aseta budjetti",
-  "budgetLists": "Listat",
-  "budgetValueLabel": "Summa",
-  "setBudgetTitle": "Kuukausibudjetti",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "filterAll": "Kaikki",
-  "filterPending": "Odottaa",
-  "filterPurchased": "Ostetut",
-  "sortName": "Nimi",
-  "sortCategory": "Kategoria",
-  "sortDate": "Päivämäärä",
-  "sortManual": "Manuaalinen",
+  "about": "Tietoja",
+  "achievements": "Saavutukset",
+  "activeListening": "Aktiivinen kuuntelu",
+  "add": "Lisää",
+  "addAllToList": "Lisää kaikki listalle",
+  "addDirectToList": "Lisää suoraan luetteloon",
+  "addIngredient": "Lisää ainesosa",
   "addItem": "Lisää kohde",
-  "itemName": "Kohteen nimi",
-  "quantityShort": "Määrä",
-  "unit": "Yksikkö",
-  "category": "Kategoria",
-  "estimatedPrice": "Arvioitu hinta",
   "addItemPrice": "Arvioitu hinta",
-  "editItem": "Muokkaa kohdetta",
-  "quantityFull": "Määrä",
-  "editItemPrice": "Arvioitu hinta",
+  "addPhoto": "Lisää kuva",
   "addToPantry": "Lisää ruokakomeroon",
   "addToPantryPrompt": "Lisätäänkö \"{name}\" ruokakomeroosi?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Kyllä",
-  "productName": "Tuotteen nimi",
-  "idealQty": "Ihannemäärä",
-  "currentQty": "Nykyinen määrä",
-  "trackStock": "Seuraa varastoa",
-  "trackStockActive": "Näkyy ostoehdotuksissa",
-  "trackStockInactive": "Ei luo ostoehdotusta",
-  "createListDialog": "Luo lista",
-  "renameListDialog": "Nimeä lista uudelleen",
-  "listHistory": "Listahistoria",
-  "myLists": "Minun listat",
-  "viewActive": "Näytä aktiiviset",
-  "viewHistory": "Näytä historia",
-  "noArchivedLists": "Ei arkistoituja listoja",
-  "noActiveLists": "Ei aktiivisia listoja",
-  "completedOn": "Suoritettu {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Jaettu",
-  "restore": "Palauta",
-  "removeSharedTooltip": "Poista",
-  "deleteListTitle": "Poista lista",
-  "deleteListContent": "Oletko varma, että haluat poistaa \"{name}\"? Kaikki kohteet poistetaan.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Poista jaettu lista",
-  "removeSharedListContent": "Poistetaanko \"{name}\" listoistasi? Alkuperäiseen listaan ei kosketa.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Luo uusi lista",
+  "addedFeedback": "Lisätty!",
+  "advancedFeatures": "Edistyneet ominaisuudet",
   "aiAssistant": "AI-assistentti",
   "aiAssistantDescription": "Saa älykkäitä ehdotuksia, reseptejä ja henkilökohtaisia vinkkejä AI-assistentiltamme.",
-  "generalAssistant": "Yleinen assistentti",
+  "aiCreditsRemaining": "{remaining} krediittiä jäljellä",
+  "aiEnergy": "AI energia",
+  "aiError": "Anteeksi, pyyntösi käsittelyssä tapahtui virhe. Tarkista yhteys tai yritä myöhemmin uudelleen.",
+  "aiVoiceCommandTooltip": "AI-äänikomento (Premium)",
+  "allTags": "Kaikki",
+  "alreadyPurchased": "Jo ostettu",
+  "appTitle": "Ostoslista",
+  "appearance": "Ulkoasu",
+  "archiveList": "Arkistoi lista",
+  "backToChat": "Takaisin Chatiin",
+  "backupExported": "Varmuuskopio viety!",
+  "backupNav": "Varmuuskopio",
+  "backupPremiumDescription": "Varmuuskopiointi ja vienti on Premium-ominaisuus",
+  "backupSubtitle": "Vie tai tuo tietosi",
+  "backupTitle": "Varmuuskopio",
+  "becomePremium": "Hanki Premium",
+  "budgetAmountLabel": "Budjetin määrä",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Kuukausibudjetti",
+  "budgetDashboardTitle": "Hallintapaneeli",
+  "budgetEditTitle": "Kuukausibudjetti",
+  "budgetLists": "Listat",
+  "budgetPremiumLocked": "Globaali kuukausibudjetti on Premium",
+  "budgetSubtitle": "Seuraa kuukausittaisia kulujasi",
+  "budgetUpgradePrompt": "Päivitä avataksesi",
+  "budgetValueLabel": "Summa",
+  "buy": "Osta",
+  "cancel": "Peruuta",
+  "cartTotal": "Ostoskorin yhteensä",
+  "catBakery": "Leipomo",
+  "catBeverages": "Juomat",
+  "catCleaning": "Siivous",
+  "catFruits": "Hedelmät",
+  "catOthers": "Muut",
+  "category": "Kategoria",
+  "chatError": "Virhe ladattaessa chattia: {error}",
+  "chatHint": "Kirjoita viestisi...",
+  "chatSubtitle": "Kysy kohde-ehdotuksia, reseptejä tai säästövinkkejä.",
+  "chatSubtitleShort": "Kysy hinnoista, resepteistä, järjestämisestä...",
+  "chooseCurrency": "Valitse Valuutta",
+  "chooseImageSource": "Valitse kuvan lähde",
+  "chooseLanguage": "Valitse kieli",
+  "clear": "Tyhjennä",
   "clearHistory": "Tyhjennä historia",
   "clearHistoryConfirm": "Poistetaanko kaikki viestit tästä istunnosta?",
-  "chatHint": "Kirjoita viestisi...",
-  "chatError": "Virhe ladattaessa chattia: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Miten voin auttaa listasi kanssa?",
-  "generalHelp": "Miten voin auttaa ostoksissasi tänään?",
-  "chatSubtitle": "Kysy kohde-ehdotuksia, reseptejä tai säästövinkkejä.",
-  "aiError": "Anteeksi, pyyntösi käsittelyssä tapahtui virhe. Tarkista yhteys tai yritä myöhemmin uudelleen.",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Kirjaudu sisään avataksesi Premium-ominaisuudet",
-  "signInGoogle": "Kirjaudu Google-tilillä",
-  "signInApple": "Kirjaudu Apple-tilillä",
+  "clearList": "Tyhjennä lista",
+  "clearPurchased": "Tyhjennä ostetut",
+  "close": "Sulje",
+  "complete": "Suorita",
+  "completePurchase": "Suorita osto",
+  "completedOn": "Suoritettu {date}",
+  "confirm": "Vahvista",
+  "confirmArchiveContent": "Suoritetaanko tämä osto ja arkistoidaan lista?",
+  "confirmArchiveTitle": "Suorita osto",
+  "confirmClearList": "Poistetaanko kaikki kohteet?",
+  "confirmContent": "Poistetaanko {count} kohde(tta)?",
+  "confirmDeleteItems": "Poistetaanko {count} kohde(tta)?",
+  "confirmDeleteTitle": "Vahvista",
+  "confirmRemovePantry": "Poistetaanko \"{name}\" ruokakomerosta?",
+  "consumed": "Kulutettu",
   "continueAsGuest": "Jatka vieraana",
-  "loginError": "Kirjautumisvirhe: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallTitle": "Lista Plus Premium",
-  "premiumUpgrade": "Päivitä avataksesi",
-  "itemRemoved": "Kohde poistettu",
-  "undo": "Kumoa",
-  "emptyListTitle": "Listasi on tyhjä",
-  "emptyListSubtitle": "Lisää kohteita aloittaaksesi",
-  "noListFoundTitle": "Listoja ei löytynyt",
-  "noListFoundSubtitle": "Luo ensimmäinen listasi aloittaaksesi",
+  "copiedToClipboard": "Kopioitu leikepöydälle",
+  "copy": "Kopioi",
+  "create": "Luo",
   "createFirstList": "Luo ensimmäinen lista",
-  "listBudgetTitle": "Listan budjetti",
-  "budgetAmountLabel": "Budjetin määrä",
-  "removeBudget": "Poista",
-  "prefUnlimitedLists": "Rajattomat listat",
-  "prefSharing": "Jaa listat",
-  "prefFullHistory": "Täysi historia",
-  "prefExportData": "Vie tiedot",
-  "prefCustomThemes": "Mukautetut teemat",
-  "prefMonthlyBudget": "Globaali kuukausibudjetti",
-  "prefAIAssistant": "Henkilökohtainen AI-assistentti",
-  "prefUnlimitedPantry": "Rajaton ruokakomero",
-  "prefInteractiveArtifacts": "Interaktiiviset AI-artefaktit",
-  "themeGreen": "Vihreä",
-  "themeBlue": "Sininen",
-  "themePurple": "Violetti",
-  "themeRed": "Punainen",
-  "themeOrange": "Oranssi",
-  "themePink": "Vaaleanpunainen",
-  "themeIndigo": "Indigo",
-  "themeAmber": "Meripihka",
-  "themeTeal": "Tavi",
-  "themeBrown": "Ruskea",
-  "catFruits": "Hedelmät",
-  "catCleaning": "Siivous",
-  "catBeverages": "Juomat",
-  "catBakery": "Leipomo",
-  "catOthers": "Muut",
-  "unitPack": "pakkaus",
-  "shareSubject": "Ostoslista",
-  "monthlyBudgetTitle": "Kuukausibudjetti",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Poista lista",
-  "pantryItemRemoved": "Kohde poistettu",
+  "createListDialog": "Luo lista",
+  "createListToStartAi": "Luo ostoslista aloittaaksesi älykkään chatin käytön.",
+  "createNewList": "Luo uusi lista",
+  "currency": "Valuutta",
+  "currentQty": "Nykyinen määrä",
+  "currentQuantity": "Nykyinen määrä",
+  "dark": "Tumma",
+  "data": "Tiedot",
   "deficitItems": "{deficit} kohde(tta) on ostettava",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Ostoskorin yhteensä",
-  "restockLabel": "Täydennä",
-  "advancedFeatures": "Edistyneet ominaisuudet",
-  "selectAll": "Valitse kaikki",
+  "delete": "Poista",
+  "deleteListConfirm": "Poista lista",
+  "deleteListContent": "Oletko varma, että haluat poistaa \"{name}\"? Kaikki kohteet poistetaan.",
+  "deleteListTitle": "Poista lista",
+  "deleteRecipe": "Poista",
+  "deleteRecipeConfirm": "Poistetaanko tämä resepti?",
+  "deleteRecipeConfirmMsg": "Haluatko varmasti poistaa reseptin \"{recipeName}\"? Tätä toimintoa ei voi peruuttaa.",
+  "deleteSession": "Poista Chat",
+  "deleteSessionConfirm": "Haluatko varmasti poistaa tämän keskustelun? Viestit katoavat pysyvästi.",
   "deselectAll": "Poista kaikki valinnat",
-  "monthlyBudgetAppBar": "Kuukausibudjetti",
-  "budgetEditTitle": "Kuukausibudjetti",
-  "budgetDashboardTitle": "Hallintapaneeli",
-  "selectListForDashboard": "Valitse lista nähdäksesi hallintapaneelin.",
-  "spendingAnalysis": "Kulutusanalyysi",
-  "noItemsToAnalyze": "Listalla ei ole analysoitavia kohteita.",
-  "markItemsToSeeAnalysis": "Merkitse kohteet ostetuiksi nähdäksesi analyysin.",
-  "totalSpending": "Kulutettu yhteensä",
-  "spendingByCategory": "Kulut kategorioittain",
-  "achievements": "Saavutukset",
-  "exportPdfExcel": "Vie PDF/Excel",
-  "exportPdf": "Vie PDF-muodossa",
-  "exportExcel": "Vie Excel-muodossa",
-  "organizingAi": "JÄRJESTETÄÄN AI:LLA...",
-  "yesLabel": "Kyllä",
-  "noLabel": "Ei",
-  "shareListText": "Ostoslistani",
-  "emptyListAddItems": "Listasi on tyhjä! Lisää ensin kohteita. ℹ️",
-  "listOrganizedMagic": "Lista maagisesti järjestetty kategorioittain! ✨",
-  "shoppingMode": "Ostotila",
-  "smartOrganization": "Älykäs järjestys",
-  "savings": "Säästöt",
-  "shoppingModeHeader": "OSTOTILA",
-  "shareAsText": "Lähetä kohteet muotoiltuna tekstinä",
-  "shareRealtime": "Reaaliaikainen synkronointi muiden kanssa",
-  "quickRecipe": "Nopea resepti",
-  "quickRecipePrompt": "Ehdota reseptejä listani kohteilla.",
+  "dynamicColors": "Dynaamiset värit",
+  "dynamicColorsEnabledWarning": "Poista dynaamiset värit käytöstä, jotta teemaväri tulee voimaan",
+  "dynamicColorsSubtitle": "Käytä taustakuvan mukaisia värejä",
   "economyTips": "Säästövinkit",
   "economyTipsPrompt": "Kuinka voin säästää rahaa tässä ostoksessa?",
-  "organizeAisles": "Järjestä käytävittäin",
-  "organizeAislesPrompt": "Järjestä kaupan käytävien mukaan.",
-  "recipeSuggestion": "Reseptiehdotus",
-  "aiCreditsRemaining": "{remaining} krediittiä jäljellä",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Lisää kaikki listalle",
-  "organizeByAisles": "Järjestä käytävittäin",
-  "voiceTranscriptionTooltip": "Puhekirjoitus (Ilmainen)",
-  "aiVoiceCommandTooltip": "AI-äänikomento (Premium)",
-  "voiceCommandTitle": "AI-äänikomento",
-  "voiceCommandContent": "Puhu luonnollisesti hallitaksesi listaasi!\n\nEsimerkkejä:\n• 'Lisää leipää, juustoa ja kinkkua'\n• 'Poista pyykinpesuaine'\n• 'Vaihda teema siniseksi'\n\nTämä on Lista Plus Premiumin eksklusiivinen ominaisuus.",
-  "voiceCommandPlanBtn": "Katso suunnitelmat",
-  "itemsAddedSuccess": "Kohteet lisätty onnistuneesti listalle!",
-  "viewList": "Katso lista",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Lähetä palautetta",
+  "edit": "Muokkaa",
+  "editItem": "Muokkaa kohdetta",
+  "editItemPrice": "Arvioitu hinta",
+  "editPantryItem": "Muokkaa {name}",
+  "editRecipe": "Muokkaa",
+  "editRecipeTitle": "Muokkaa reseptiä",
+  "emptyListAddItems": "Listasi on tyhjä! Lisää ensin kohteita. ℹ️",
+  "emptyListSubtitle": "Lisää kohteita aloittaaksesi",
+  "emptyListTitle": "Listasi on tyhjä",
+  "enterCodeHint": "Syötä koodi",
+  "enterUrl": "Anna URL-osoite",
+  "error": "Virhe: {message}",
+  "errorGeneric": "Virhe: {message}",
+  "errorLoadingChat": "Oho! Jotain meni pieleen chatin lataamisessa.",
+  "errorLoadingChatSubtitle": "Tarkista yhteys tai yritä myöhemmin uudelleen.",
+  "errorLoadingRecipes": "Virhe ladattaessa reseptejä",
+  "errorOscillation": "Tämä voi johtua verkon heilahteluista tai tilapäisestä epäkäytettävyydestä. Yritä uudelleen.",
+  "estimated": "Arvioitu",
+  "estimatedCost": "Arvioitu",
+  "estimatedPrice": "Arvioitu hinta",
+  "exportData": "Vie tiedot",
+  "exportDataSubtitle": "Tallenna kaikki listat JSON-muodossa",
+  "exportExcel": "Vie Excel-muodossa",
+  "exportPdf": "Vie PDF-muodossa",
+  "exportPdfExcel": "Vie PDF/Excel",
+  "feedbackBack": "Takaisin",
+  "feedbackError": "Virhe lähetyksessä: {error}",
+  "feedbackHint": "Kuvaile palautettasi yksityiskohtaisesti...",
   "feedbackPrompt": "Mitä haluaisit jakaa?",
+  "feedbackRetry": "Yritä uudelleen",
+  "feedbackSend": "Lähetä palaute",
+  "feedbackSending": "Lähetetään...",
+  "feedbackSettingsSubtitle": "Ilmoita vioista, ehdota parannuksia tai korjaa käännöksiä",
+  "feedbackSettingsTitle": "Lähetä palautetta",
+  "feedbackThankYou": "Kiitos!",
+  "feedbackThankYouMessage": "Palaute on vastaanotettu ja auttaa meitä parantamaan Lista Plusia kaikille.",
+  "feedbackTitle": "Lähetä palautetta",
   "feedbackTypeBug": "Ilmoita viasta",
   "feedbackTypeBugHint": "Jokin ei toimi",
-  "feedbackTypeSuggestion": "Ehdotus",
-  "feedbackTypeSuggestionHint": "Idea sovelluksen parantamiseksi",
-  "feedbackTypeTranslation": "Käännösvirhe",
-  "feedbackTypeTranslationHint": "Virheellinen tai kömpelö käännös",
   "feedbackTypeFeature": "Ominaisuuspyyntö",
   "feedbackTypeFeatureHint": "Ominaisuus, jonka haluaisit nähdä",
   "feedbackTypeOther": "Muu",
   "feedbackTypeOtherHint": "Muun tyyppinen palaute",
-  "feedbackHint": "Kuvaile palautettasi yksityiskohtaisesti...",
-  "feedbackSend": "Lähetä palaute",
-  "feedbackSending": "Lähetetään...",
-  "feedbackThankYou": "Kiitos!",
-  "feedbackThankYouMessage": "Palaute on vastaanotettu ja auttaa meitä parantamaan Lista Plusia kaikille.",
-  "feedbackBack": "Takaisin",
-  "feedbackError": "Virhe lähetyksessä: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Yritä uudelleen",
-  "feedbackSettingsTitle": "Lähetä palautetta",
-  "feedbackSettingsSubtitle": "Ilmoita vioista, ehdota parannuksia tai korjaa käännöksiä",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Lisää ainesosa",
-  "addPhoto": "Lisää kuva",
-  "allTags": "Kaikki",
-  "chooseImageSource": "Valitse kuvan lähde",
-  "chooseLanguage": "Valitse kieli",
-  "deleteRecipe": "Poista",
-  "deleteRecipeConfirm": "Poistetaanko tämä resepti?",
-  "deleteRecipeConfirmMsg": "Haluatko varmasti poistaa reseptin \"{recipeName}\"? Tätä toimintoa ei voi peruuttaa.",
-  "dynamicColors": "Dynaamiset värit",
-  "dynamicColorsSubtitle": "Käytä taustakuvan mukaisia värejä",
-  "editRecipe": "Muokkaa",
-  "editRecipeTitle": "Muokkaa reseptiä",
-  "enterUrl": "Anna URL-osoite",
-  "errorLoadingRecipes": "Virhe ladattaessa reseptejä",
+  "feedbackTypeSuggestion": "Ehdotus",
+  "feedbackTypeSuggestionHint": "Idea sovelluksen parantamiseksi",
+  "feedbackTypeTranslation": "Käännösvirhe",
+  "feedbackTypeTranslationHint": "Virheellinen tai kömpelö käännös",
+  "fieldRequired": "Pakollinen kenttä",
+  "filterAll": "Kaikki",
   "filterByTag": "Suodata tunnisteella",
+  "filterPending": "Odottaa",
+  "filterPurchased": "Ostetut",
+  "finance": "Talous",
+  "finishShopping": "Viimeistele ostokset",
   "gallery": "Galleria",
+  "generalAssistant": "Yleinen assistentti",
+  "generalHelp": "Miten voin auttaa ostoksissasi tänään?",
+  "generateShoppingList": "Luo ostoslista",
+  "globalAssistant": "Yleinen assistentti",
+  "howCanIHelp": "Miten voin auttaa?",
+  "idealQty": "Ihannemäärä",
+  "idealQuantity": "Ihannemäärä",
   "imageUrlPlaceholder": "Tai liitä kuvan URL",
+  "import": "Tuo",
+  "importData": "Tuo tiedot",
+  "importDataSubtitle": "Palauta listat JSON-tiedostosta",
+  "importJsonHint": "Liitä varmuuskopion JSON tähän...",
+  "importJsonTitle": "Tuo JSON",
+  "importListTitle": "Tuo lista",
+  "importViaCode": "Tuo koodilla",
   "ingredients": "Ainekset",
   "instructions": "Ohjeet",
   "instructionsHint": "Kirjoita yksi vaihe riville...",
+  "inviteToList": "Kutsu listalle",
+  "itemName": "Kohteen nimi",
+  "itemRemoved": "Kohde poistettu",
+  "itemsAddedSuccess": "Kohteet lisätty onnistuneesti listalle!",
+  "itemsNeedPurchase": "{deficit} kohde(tta) on ostettava",
+  "itemsPurchasedCount": "{purchased} / {total} ostettu",
+  "itemsPurchasedShort": "{purchased}/{total} ostettu",
+  "itemsWillBeAdded": "{count} kohde(tta) lisätään",
+  "language": "Kieli",
+  "languageEnglish": "englanti",
+  "languagePortuguese": "portugali (Brasilia)",
+  "languageSystem": "Järjestelmän oletus",
+  "light": "Vaalea",
+  "listAdded": "{listName} lisätty!",
+  "listArchived": "Lista arkistoitu onnistuneesti!",
+  "listAssistant": "Lista-assistentti",
+  "listBudgetTitle": "Listan budjetti",
+  "listCreated": "Lista \"{name}\" luotu {count} kohteella",
+  "listHelp": "Miten voin auttaa listasi kanssa?",
+  "listHistory": "Listahistoria",
+  "listNameLabel": "Listan nimi",
+  "listOrganizedMagic": "Lista maagisesti järjestetty kategorioittain! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Kuuntelee...",
+  "lists": "Listat",
+  "loading": "Ladataan...",
   "loadingRecipes": "Ladataan reseptejäsi...",
+  "loginError": "Kirjautumisvirhe: {error}",
+  "loginPrompt": "Kirjaudu sisään avataksesi Premium-ominaisuudet",
+  "longHistoryWarning": "Pitkä historia: avustaja keskittyy uusimpiin viesteihin parantaakseen suorituskykyä.",
+  "manageSubscription": "Hallinnoi tilausta",
+  "markAsPurchased": "Merkitse ostetuksi",
+  "markItemsToSeeAnalysis": "Merkitse kohteet ostetuiksi nähdäksesi analyysin.",
+  "marketMode": "Markkinatila",
   "mealPlannerAddMeal": "Lisää ateria",
   "mealPlannerDateLabel": "Päivämäärä",
   "mealPlannerDeleteMeal": "Poista ateria",
@@ -587,28 +580,201 @@
   "mealPlannerWeekEmpty": "Ei mitään suunniteltua tälle viikolle",
   "mealPlannerWeekEmptyHint": "Napauta mitä tahansa päivää aloittaaksesi aterioiden suunnittelun!",
   "mealPlannerWeekProgress": "{count} / {total} ateriaa suunniteltu",
+  "monthlyBudgetAppBar": "Kuukausibudjetti",
+  "monthlyBudgetNav": "Kuukausibudjetti",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Kuukausibudjetti",
+  "myLists": "Minun listat",
   "myRecipes": "Omat reseptit",
+  "newChat": "Uusi Chat",
+  "newListTitle": "Uusi ostoslista",
+  "newPantryList": "Ruokakomero-ostokset",
   "newRecipe": "Uusi resepti",
   "newRecipeTitle": "Uusi resepti",
+  "next": "Seuraavaksi",
+  "noActiveLists": "Ei aktiivisia listoja",
+  "noArchivedLists": "Ei arkistoituja listoja",
+  "noBudgetDefined": "Budjettia ei asetettu",
+  "noHistory": "Ei keskusteluhistoriaa",
+  "noItemsInList": "Ei kohteita luettelossa",
+  "noItemsToAnalyze": "Listalla ei ole analysoitavia kohteita.",
+  "noItemsToBuy": "Ei ostettavia kohteita",
+  "noLabel": "Ei",
+  "noListFoundSubtitle": "Luo ensimmäinen listasi aloittaaksesi",
+  "noListFoundTitle": "Listoja ei löytynyt",
+  "noMessagesFound": "Viestejä ei löytynyt",
   "noRecipesSaved": "Ei tallennettuja reseptejä",
   "noRecipesSavedHint": "Luo ensimmäinen mukautettu reseptisi napauttamalla alla olevaa painiketta.",
+  "noTracking": "Ei seurantaa",
+  "onboardingAnnualBadge": "Paras arvo",
+  "onboardingAnnualLabel": "Vuosittainen",
+  "onboardingCancelAnytime": "Peru milloin tahansa. Ei sitoutumista.",
+  "onboardingContinueAsGuest": "Jatka vieraana",
+  "onboardingExit": "Poistu",
+  "onboardingLoginDesc": "Tietosi synkronoidaan kaikkien laitteidesi välillä",
+  "onboardingLoginTitle": "Tallenna kaikki pilveen",
+  "onboardingMonthlyLabel": "Kuukausittain",
+  "onboardingPersonalizationCta": "Jatkaa",
+  "onboardingPersonalizationDesc": "Käytämme tätä mukauttaaksemme ehdotuksiasi ja tehdäksemme ostoksista älykkäämpiä.",
+  "onboardingPersonalizationFoodHint": "esim. Pizzaa, Sushia, Lasagnea...",
+  "onboardingPersonalizationFoodLabel": "Mikä on lempiruokasi?",
+  "onboardingPersonalizationFoodRequired": "Kerro meille suosikkiruokasi jatkaaksesi",
+  "onboardingPersonalizationSkip": "Ohita toistaiseksi",
+  "onboardingPersonalizationTitle": "Tutustutaanpa sinuun",
+  "onboardingPremiumSubtitle": "Ota kaikki irti ostoslistoistasi",
+  "onboardingPremiumTitle": "Avaa kaikki ominaisuudet",
+  "onboardingRestore": "Palauttaa",
+  "onboardingRestoreDesc": "Onko sinulla jo tilaus? Palauta se napauttamalla tätä.",
+  "onboardingSetupDesc": "Valitse, miltä haluat Lista Plusin näyttävän ja toimivan sinulle.",
+  "onboardingSetupTitle": "Mukauta kokemustasi",
+  "onboardingShareDesc": "Synkronoi luettelot perheen ja ystävien kanssa reaaliajassa",
+  "onboardingShareTitle": "Jaa rakastamiesi kanssa",
+  "onboardingSubscribeCta": "Tilaa",
+  "onboardingViewAllPlans": "Katso kaikki suunnitelmat",
+  "onboardingWelcomeDesc": "Älykkäin tapa järjestää ostoksesi ja säästää rahaa.",
+  "onboardingWelcomeTitle": "Tervetuloa Lista Plus -palveluun",
   "openMenu": "Avaa valikko",
+  "organizeAisles": "Järjestä käytävittäin",
+  "organizeAislesPrompt": "Järjestä kaupan käytävien mukaan.",
+  "organizeByAisles": "Järjestä käytävittäin",
+  "organizingAi": "JÄRJESTETÄÄN AI:LLA...",
+  "pantry": "Ruokakomero",
+  "pantryAppBar": "Ruokakomero",
+  "pantryEditTitle": "Muokkaa {name}",
+  "pantryEmpty": "Tyhjä ruokakomero",
+  "pantryEmptySubtitle": "Lisää tuotteita, joita haluat pitää kotona",
+  "pantryItemRemoved": "Kohde poistettu",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Henkilökohtainen AI-assistentti",
+  "prefCustomThemes": "Mukautetut teemat",
+  "prefExportData": "Vie tiedot",
+  "prefFullHistory": "Täysi historia",
+  "prefInteractiveArtifacts": "Interaktiiviset AI-artefaktit",
+  "prefMonthlyBudget": "Globaali kuukausibudjetti",
+  "prefSharing": "Jaa listat",
+  "prefUnlimitedLists": "Rajattomat listat",
+  "prefUnlimitedPantry": "Rajaton ruokakomero",
+  "premiumUpgrade": "Päivitä avataksesi",
   "prepTime": "Valmistusaika",
   "prepTimeMinutes": "Valmistusaika (minuuttia)",
+  "privacy": "Yksityisyys",
+  "productName": "Tuotteen nimi",
+  "purchaseError": "Virhe ostoksen käsittelyssä. Yritä uudelleen.",
+  "quantityFull": "Määrä",
+  "quantityShort": "Määrä",
+  "quickRecipe": "Nopea resepti",
+  "quickRecipePrompt": "Ehdota reseptejä listani kohteilla.",
+  "quickReplies": "Pikaiset vastaukset:",
   "recipeCreated": "Resepti luotu!",
   "recipeDeleted": "Resepti poistettu",
   "recipeImage": "Reseptin kuva",
   "recipeName": "Reseptin nimi",
   "recipeSaved": "Resepti tallennettu!",
+  "recipeSuggestion": "Reseptiehdotus",
   "recipeTags": "Reseptin tunnisteet",
+  "regenerate": "Luo uudelleen",
+  "remove": "Poista",
+  "removeBudget": "Poista",
   "removeImage": "Poista kuva",
+  "removeSharedListContent": "Poistetaanko \"{name}\" listoistasi? Alkuperäiseen listaan ei kosketa.",
+  "removeSharedListTitle": "Poista jaettu lista",
+  "removeSharedTooltip": "Poista",
+  "rename": "Nimeä uudelleen",
+  "renameListDialog": "Nimeä lista uudelleen",
   "requiredField": "Pakollinen",
+  "restockLabel": "Täydennä",
+  "restocked": "{name} täydennetty määrään {quantity} {unit}",
+  "restore": "Palauta",
+  "restoreError": "Virhe ostosten palauttamisessa. Yritä uudelleen.",
+  "retry": "Yritä uudelleen",
+  "save": "Tallenna",
   "saveChanges": "Tallenna muutokset",
   "saveRecipe": "Tallenna",
+  "savings": "Säästöt",
+  "searchCurrency": "Hae valuutta...",
+  "searchInConversation": "Hae keskustelusta...",
   "searchLanguage": "Hae kieltä...",
   "searchRecipes": "Hae reseptejä...",
+  "selectAll": "Valitse kaikki",
+  "selectListForDashboard": "Valitse lista nähdäksesi hallintapaneelin.",
+  "selectedItems": "Valittu {count}",
+  "setBudgetButton": "Aseta budjetti",
+  "setBudgetTitle": "Kuukausibudjetti",
+  "settingsAppBar": "Asetukset",
+  "settingsDefaultScreen": "Oletusaloitusnäyttö",
+  "settingsDefaultScreenSubtitle": "Valitse ostoslistan tai AI-chatin välillä",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "Ostoslista",
+  "share": "Jaa",
+  "shareApp": "Jaa sovellus",
+  "shareAppDescription": "Kutsu ystäviä käyttämään Lista Plusia",
+  "shareAsText": "Lähetä kohteet muotoiltuna tekstinä",
+  "shareListText": "Ostoslistani",
+  "shareListTitle": "Jaa lista",
+  "shareRealtime": "Reaaliaikainen synkronointi muiden kanssa",
+  "shareReferralSubject": "Hanki 7 päivää Lista Plus Premiumia!",
+  "shareReferralText": "Käytän Lista Plusia ostosteni järjestämiseen! Lataa linkistäni ja saamme molemmat 7 päivää Premiumia ilmaiseksi: {url}",
+  "shareSubject": "Ostoslista",
+  "shareThisCode": "Jaa tämä koodi:",
+  "shareViaCode": "Jaa koodilla",
+  "sharedLabel": "Jaettu",
+  "shoppingAssistant": "Ostosavustaja",
+  "shoppingMode": "Ostotila",
+  "shoppingModeHeader": "OSTOTILA",
   "shortDescription": "Lyhyt kuvaus",
+  "signInApple": "Kirjaudu Apple-tilillä",
+  "signInGoogle": "Kirjaudu Google-tilillä",
+  "smartOrganization": "Älykäs järjestys",
+  "sortCategory": "Kategoria",
+  "sortDate": "Päivämäärä",
+  "sortManual": "Manuaalinen",
+  "sortName": "Nimi",
+  "spendingAnalysis": "Kulutusanalyysi",
+  "spendingByCategory": "Kulut kategorioittain",
+  "suggestedQuestions": "Ehdotetut kysymykset:",
   "suggestedTags": "Ehdotetut",
+  "switchList": "Vaihda luetteloa",
+  "system": "Järjestelmä",
   "tags": "Tunnisteet",
-  "viewRecipe": "Näytä resepti"
+  "termsOfUse": "Käyttöehdot",
+  "themeAmber": "Meripihka",
+  "themeBlue": "Sininen",
+  "themeBrown": "Ruskea",
+  "themeColor": "Teeman väri",
+  "themeGreen": "Vihreä",
+  "themeIndigo": "Indigo",
+  "themeOrange": "Oranssi",
+  "themePink": "Vaaleanpunainen",
+  "themePurple": "Violetti",
+  "themeRed": "Punainen",
+  "themeTeal": "Tavi",
+  "totalEstimated": "Arvioitu yhteensä: {amount}",
+  "totalSpending": "Kulutettu yhteensä",
+  "trackStock": "Seuraa varastoa",
+  "trackStockActive": "Näkyy ostoehdotuksissa",
+  "trackStockInactive": "Ei luo ostoehdotusta",
+  "undo": "Kumoa",
+  "unit": "Yksikkö",
+  "unitPack": "pakkaus",
+  "unlockFullResponse": "Avaa täysi vastaus",
+  "unmark": "Poista merkintä",
+  "upgrade": "Päivitä",
+  "validForLimitedTime": "Voimassa rajoitetun ajan",
+  "version": "Versio",
+  "viewActive": "Näytä aktiiviset",
+  "viewDetails": "Näytä tiedot",
+  "viewHistory": "Näytä historia",
+  "viewItems": "Näytä kohteet",
+  "viewList": "Katso lista",
+  "viewPro": "Näytä Pro",
+  "viewRecipe": "Näytä resepti",
+  "voiceCommandContent": "Puhu luonnollisesti hallitaksesi listaasi!\n\nEsimerkkejä:\n• 'Lisää leipää, juustoa ja kinkkua'\n• 'Poista pyykinpesuaine'\n• 'Vaihda teema siniseksi'\n\nTämä on Lista Plus Premiumin eksklusiivinen ominaisuus.",
+  "voiceCommandPlanBtn": "Katso suunnitelmat",
+  "voiceCommandTitle": "AI-äänikomento",
+  "voiceProFeature": "Kehittyneet äänikomennot ovat Pro. Otetaan perussanelu käyttöön...",
+  "voiceTranscriptionTooltip": "Puhekirjoitus (Ilmainen)",
+  "welcomeAiAssistant": "Tervetuloa AI Assistantiin",
+  "whatToDoWithItem": "Mitä haluaisit tehdä tällä esineellä?",
+  "yes": "Kyllä",
+  "yesLabel": "Kyllä"
 }

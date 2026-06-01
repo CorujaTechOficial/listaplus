@@ -1,0 +1,614 @@
+{
+  "@@locale": "el_GR",
+  "appTitle": "Λίστα Αγορών",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Λίστες",
+  "pantry": "Ντουλάπι",
+  "cancel": "Ακύρωση",
+  "save": "Αποθήκευση",
+  "create": "Δημιουργία",
+  "add": "Προσθήκη",
+  "remove": "Αφαίρεση",
+  "delete": "Διαγραφή",
+  "edit": "Επεξεργασία",
+  "copy": "Αντιγραφή",
+  "retry": "Επανάληψη",
+  "regenerate": "Αναγέννηση",
+  "copiedToClipboard": "Αντιγράφηκε στο πρόχειρο",
+  "confirm": "Επιβεβαίωση",
+  "close": "Κλείσιμο",
+  "import": "Εισαγωγή",
+  "rename": "Μετονομασία",
+  "upgrade": "Αναβάθμιση",
+  "clear": "Εκκαθάριση",
+  "error": "Σφάλμα: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Σφάλμα: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Σφάλμα επεξεργασίας αγοράς. Δοκιμάστε ξανά.",
+  "restoreError": "Σφάλμα επαναφοράς αγορών. Δοκιμάστε ξανά.",
+  "loading": "Φόρτωση...",
+  "fieldRequired": "Υποχρεωτικό πεδίο",
+  "addedFeedback": "Προστέθηκε!",
+  "selectedItems": "{count,plural, one{{count} επιλεγμένο} other{{count} επιλεγμένα}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Εκτιμώμενο",
+  "alreadyPurchased": "Ήδη αγορασμένο",
+  "clearList": "Εκκαθάριση λίστας",
+  "clearPurchased": "Εκκαθάριση αγορασμένων",
+  "share": "Κοινή χρήση",
+  "shareViaCode": "Κοινή χρήση μέσω κωδικού",
+  "importViaCode": "Εισαγωγή μέσω κωδικού",
+  "listAssistant": "Βοηθός λίστας",
+  "globalAssistant": "Γενικός βοηθός",
+  "becomePremium": "Γίνε Premium",
+  "manageSubscription": "Διαχείριση συνδρομής",
+  "completePurchase": "Ολοκλήρωση αγοράς",
+  "confirmClearList": "Αφαίρεση όλων των στοιχείων;",
+  "shareListTitle": "Κοινή χρήση λίστας",
+  "shareThisCode": "Μοιράσου αυτόν τον κωδικό:",
+  "validForLimitedTime": "Ισχύει για περιορισμένο χρόνο",
+  "importListTitle": "Εισαγωγή λίστας",
+  "enterCodeHint": "Εισάγετε τον κωδικό",
+  "confirmArchiveTitle": "Ολοκλήρωση αγοράς",
+  "confirmArchiveContent": "Να ολοκληρωθεί αυτή η αγορά και να αρχειοθετηθεί η λίστα;",
+  "complete": "Ολοκλήρωση",
+  "listArchived": "Η λίστα αρχειοθετήθηκε επιτυχώς!",
+  "listAdded": "Το {listName} προστέθηκε!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Αγορά",
+  "unmark": "Αποεπισήμανση",
+  "confirmDeleteItems": "Αφαίρεση {count} στοιχείου(ων);",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Επιβεβαίωση",
+  "confirmContent": "Αφαίρεση {count} στοιχείου(ων);",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Αρχειοθέτηση λίστας",
+  "pantryAppBar": "Ντουλάπι",
+  "generateShoppingList": "Δημιουργία λίστας αγορών",
+  "pantryEmpty": "Άδειο ντουλάπι",
+  "pantryEmptySubtitle": "Προσθέστε προϊόντα που θέλετε να έχετε στο σπίτι",
+  "itemsNeedPurchase": "{deficit} στοιχείο(α) χρειάζονται αγορά",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Κανένα στοιχείο δεν χρειάζεται αγορά",
+  "newPantryList": "Αγορές ντουλαπιού",
+  "newListTitle": "Νέα λίστα αγορών",
+  "itemsWillBeAdded": "{count} στοιχείο(α) θα προστεθούν",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Όνομα λίστας",
+  "listCreated": "Η λίστα \"{name}\" δημιουργήθηκε με {count} στοιχεία",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Χωρίς παρακολούθηση",
+  "markAsPurchased": "Σημείωση ως αγορασμένο",
+  "editPantryItem": "Επεξεργασία {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Ιδανική ποσότητα",
+  "currentQuantity": "Τρέχουσα ποσότητα",
+  "consumed": "Καταναλώθηκε",
+  "restocked": "Το {name} ανανεώθηκε σε {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Αφαίρεση του \"{name}\" από το ντουλάπι;",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Επεξεργασία {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsAppBar": "Ρυθμίσεις",
+  "language": "Γλώσσα",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Προεπιλογή συστήματος",
+  "appearance": "Εμφάνιση",
+  "light": "Ανοιχτό",
+  "system": "Σύστημα",
+  "dark": "Σκοτεινό",
+  "themeColor": "Χρώμα θέματος",
+  "finance": "Οικονομικά",
+  "monthlyBudgetNav": "Μηνιαίος προϋπολογισμός",
+  "budgetSubtitle": "Παρακολουθήστε τις μηνιαίες δαπάνες σας",
+  "data": "Δεδομένα",
+  "backupNav": "Αντίγραφο ασφαλείας",
+  "backupSubtitle": "Εξαγωγή ή εισαγωγή δεδομένων",
+  "about": "Σχετικά",
+  "version": "Έκδοση",
+  "privacy": "Απόρρητο",
+  "termsOfUse": "Όροι χρήσης",
+  "backupTitle": "Αντίγραφο ασφαλείας",
+  "backupPremiumDescription": "Το αντίγραφο ασφαλείας και η εξαγωγή είναι λειτουργία Premium",
+  "exportData": "Εξαγωγή δεδομένων",
+  "exportDataSubtitle": "Αποθήκευση όλων των λιστών ως JSON",
+  "importData": "Εισαγωγή δεδομένων",
+  "importDataSubtitle": "Επαναφορά λιστών από JSON",
+  "importJsonTitle": "Εισαγωγή JSON",
+  "importJsonHint": "Επικολλήστε το JSON αντιγράφου ασφαλείας εδώ...",
+  "backupExported": "Το αντίγραφο ασφαλείας εξήχθη!",
+  "budgetAppBar": "Μηνιαίος προϋπολογισμός",
+  "budgetPremiumLocked": "Ο συνολικός μηνιαίος προϋπολογισμός είναι Premium",
+  "budgetUpgradePrompt": "Αναβαθμίστε για ξεκλείδωμα",
+  "noBudgetDefined": "Δεν έχει οριστεί προϋπολογισμός",
+  "totalEstimated": "Σύνολο εκτιμώμενο: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Ορισμός προϋπολογισμού",
+  "budgetLists": "Λίστες",
+  "budgetValueLabel": "Ποσό",
+  "setBudgetTitle": "Μηνιαίος προϋπολογισμός",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "filterAll": "Όλα",
+  "filterPending": "Εκκρεμή",
+  "filterPurchased": "Αγορασμένα",
+  "sortName": "Όνομα",
+  "sortCategory": "Κατηγορία",
+  "sortDate": "Ημερομηνία",
+  "sortManual": "Χειροκίνητα",
+  "addItem": "Προσθήκη στοιχείου",
+  "itemName": "Όνομα στοιχείου",
+  "quantityShort": "Ποσ",
+  "unit": "Μονάδα",
+  "category": "Κατηγορία",
+  "estimatedPrice": "Εκτιμώμενη τιμή",
+  "addItemPrice": "Εκτιμώμενη τιμή",
+  "editItem": "Επεξεργασία στοιχείου",
+  "quantityFull": "Ποσότητα",
+  "editItemPrice": "Εκτιμώμενη τιμή",
+  "addToPantry": "Προσθήκη στο ντουλάπι",
+  "addToPantryPrompt": "Να προστεθεί το \"{name}\" στο ντουλάπι σας;",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Ναι",
+  "productName": "Όνομα προϊόντος",
+  "idealQty": "Ιδανική ποσ",
+  "currentQty": "Τρέχουσα ποσ",
+  "trackStock": "Παρακολούθηση αποθέματος",
+  "trackStockActive": "Εμφανίζεται σε προτάσεις αγορών",
+  "trackStockInactive": "Δεν δημιουργεί πρόταση αγοράς",
+  "createListDialog": "Δημιουργία λίστας",
+  "renameListDialog": "Μετονομασία λίστας",
+  "listHistory": "Ιστορικό λιστών",
+  "myLists": "Οι λίστες μου",
+  "viewActive": "Προβολή ενεργών",
+  "viewHistory": "Προβολή ιστορικού",
+  "noArchivedLists": "Δεν υπάρχουν αρχειοθετημένες λίστες",
+  "noActiveLists": "Δεν υπάρχουν ενεργές λίστες",
+  "completedOn": "Ολοκληρώθηκε στις {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Κοινόχρηστη",
+  "restore": "Επαναφορά",
+  "removeSharedTooltip": "Αφαίρεση",
+  "deleteListTitle": "Διαγραφή λίστας",
+  "deleteListContent": "Είστε σίγουροι ότι θέλετε να διαγράψετε το \"{name}\"; Όλα τα στοιχεία θα αφαιρεθούν.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Αφαίρεση κοινόχρηστης λίστας",
+  "removeSharedListContent": "Να αφαιρεθεί το \"{name}\" από τις λίστες σας; Η αρχική λίστα δεν θα επηρεαστεί.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Δημιουργία νέας λίστας",
+  "aiAssistant": "Βοηθός AI",
+  "aiAssistantDescription": "Λάβετε έξυπνες προτάσεις, συνταγές και εξατομικευμένες συμβουλές με τον βοηθό AI μας.",
+  "generalAssistant": "Γενικός βοηθός",
+  "clearHistory": "Εκκαθάριση ιστορικού",
+  "clearHistoryConfirm": "Να διαγραφούν όλα τα μηνύματα αυτής της συνεδρίας;",
+  "chatHint": "Πληκτρολογήστε το μήνυμά σας...",
+  "chatError": "Σφάλμα φόρτωσης συνομιλίας: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Πώς μπορώ να βοηθήσω με τη λίστα σας;",
+  "generalHelp": "Πώς μπορώ να βοηθήσω με τα ψώνια σας σήμερα;",
+  "chatSubtitle": "Ζητήστε προτάσεις στοιχείων, συνταγές ή συμβουλές εξοικονόμησης.",
+  "aiError": "Λυπούμαστε, παρουσιάστηκε σφάλμα κατά την επεξεργασία του αιτήματός σας. Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Συνδεθείτε για να ξεκλειδώσετε Premium λειτουργίες",
+  "signInGoogle": "Σύνδεση με Google",
+  "signInApple": "Σύνδεση με Apple",
+  "continueAsGuest": "Συνέχεια ως επισκέπτης",
+  "loginError": "Σφάλμα σύνδεσης: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallTitle": "Lista Plus Premium",
+  "premiumUpgrade": "Αναβαθμίστε για ξεκλείδωμα",
+  "itemRemoved": "Το στοιχείο αφαιρέθηκε",
+  "undo": "Αναίρεση",
+  "emptyListTitle": "Η λίστα σας είναι άδεια",
+  "emptyListSubtitle": "Προσθέστε στοιχεία για να ξεκινήσετε",
+  "noListFoundTitle": "Δεν βρέθηκαν λίστες",
+  "noListFoundSubtitle": "Δημιουργήστε την πρώτη σας λίστα για να ξεκινήσετε",
+  "createFirstList": "Δημιουργία πρώτης λίστας",
+  "listBudgetTitle": "Προϋπολογισμός λίστας",
+  "budgetAmountLabel": "Ποσό προϋπολογισμού",
+  "removeBudget": "Αφαίρεση",
+  "prefUnlimitedLists": "Απεριόριστες λίστες",
+  "prefSharing": "Κοινή χρήση λιστών",
+  "prefFullHistory": "Πλήρες ιστορικό",
+  "prefExportData": "Εξαγωγή δεδομένων",
+  "prefCustomThemes": "Προσαρμοσμένα θέματα",
+  "prefMonthlyBudget": "Συνολικός μηνιαίος προϋπολογισμός",
+  "prefAIAssistant": "Προσωπικός βοηθός AI",
+  "prefUnlimitedPantry": "Απεριόριστο ντουλάπι",
+  "prefInteractiveArtifacts": "Διαδραστικά τεχνουργήματα AI",
+  "themeGreen": "Πράσινο",
+  "themeBlue": "Μπλε",
+  "themePurple": "Μωβ",
+  "themeRed": "Κόκκινο",
+  "themeOrange": "Πορτοκαλί",
+  "themePink": "Ροζ",
+  "themeIndigo": "Λουλακί",
+  "themeAmber": "Κεχριμπάρι",
+  "themeTeal": "Γαλαζοπράσινο",
+  "themeBrown": "Καφέ",
+  "catFruits": "Φρούτα",
+  "catCleaning": "Καθαρισμός",
+  "catBeverages": "Ποτά",
+  "catBakery": "Αρτοποιείο",
+  "catOthers": "Άλλα",
+  "unitPack": "συσκευασία",
+  "shareSubject": "Λίστα αγορών",
+  "monthlyBudgetTitle": "Μηνιαίος προϋπολογισμός",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Διαγραφή λίστας",
+  "pantryItemRemoved": "Το στοιχείο αφαιρέθηκε",
+  "deficitItems": "{deficit,plural, one{{deficit} στοιχείο χρειάζεται αγορά} other{{deficit} στοιχεία χρειάζονται αγορά}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Σύνολο καλαθιού",
+  "restockLabel": "Ανανέωση",
+  "advancedFeatures": "Προηγμένες λειτουργίες",
+  "selectAll": "Επιλογή όλων",
+  "deselectAll": "Αποεπιλογή όλων",
+  "monthlyBudgetAppBar": "Μηνιαίος προϋπολογισμός",
+  "budgetEditTitle": "Μηνιαίος προϋπολογισμός",
+  "budgetDashboardTitle": "Πίνακας ελέγχου",
+  "selectListForDashboard": "Επιλέξτε μια λίστα για να δείτε τον πίνακα ελέγχου.",
+  "spendingAnalysis": "Ανάλυση δαπανών",
+  "noItemsToAnalyze": "Δεν υπάρχουν στοιχεία στη λίστα για ανάλυση.",
+  "markItemsToSeeAnalysis": "Σημειώστε τα στοιχεία ως αγορασμένα για να δείτε την ανάλυση.",
+  "totalSpending": "Συνολικές δαπάνες",
+  "spendingByCategory": "Δαπάνες ανά κατηγορία",
+  "achievements": "Επιτεύγματα",
+  "exportPdfExcel": "Εξαγωγή PDF/Excel",
+  "exportPdf": "Εξαγωγή ως PDF",
+  "exportExcel": "Εξαγωγή ως Excel",
+  "organizingAi": "ΟΡΓΑΝΩΣΗ ΜΕ AI...",
+  "yesLabel": "Ναι",
+  "noLabel": "Όχι",
+  "shareListText": "Η λίστα αγορών μου",
+  "emptyListAddItems": "Η λίστα σας είναι άδεια! Προσθέστε πρώτα στοιχεία. ℹ️",
+  "listOrganizedMagic": "Η λίστα οργανώθηκε μαγικά ανά κατηγορία! ✨",
+  "shoppingMode": "Λειτουργία αγορών",
+  "smartOrganization": "Έξυπνη οργάνωση",
+  "savings": "Εξοικονόμηση",
+  "shoppingModeHeader": "ΛΕΙΤΟΥΡΓΙΑ ΑΓΟΡΩΝ",
+  "shareAsText": "Αποστολή στοιχείων ως μορφοποιημένο κείμενο",
+  "shareRealtime": "Συγχρονισμός σε πραγματικό χρόνο με άλλους",
+  "quickRecipe": "Γρήγορη συνταγή",
+  "quickRecipePrompt": "Προτείνετε συνταγές με στοιχεία από τη λίστα μου.",
+  "economyTips": "Συμβουλές εξοικονόμησης",
+  "economyTipsPrompt": "Πώς μπορώ να εξοικονομήσω χρήματα σε αυτή την αγορά;",
+  "organizeAisles": "Οργάνωση ανά διαδρόμους",
+  "organizeAislesPrompt": "Οργάνωση ανά διαδρόμους σούπερ μάρκετ.",
+  "recipeSuggestion": "Πρόταση συνταγής",
+  "aiCreditsRemaining": "Απομένουν {remaining} πιστώσεις",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Προσθήκη όλων στη λίστα",
+  "organizeByAisles": "Οργάνωση ανά διαδρόμους",
+  "voiceTranscriptionTooltip": "Φωνητική πληκτρολόγηση (Δωρεάν)",
+  "aiVoiceCommandTooltip": "Φωνητική εντολή AI (Premium)",
+  "voiceCommandTitle": "Φωνητική εντολή AI",
+  "voiceCommandContent": "Μιλήστε φυσικά για να διαχειριστείτε τη λίστα σας!\n\nΠαραδείγματα:\n• 'Πρόσθεσε ψωμί, τυρί και ζαμπόν'\n• 'Αφαίρεσε το απορρυπαντικό'\n• 'Άλλαξε θέμα σε μπλε'\n\nΑυτή είναι μια αποκλειστική λειτουργία του Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Δείτε τα πακέτα",
+  "itemsAddedSuccess": "Τα στοιχεία προστέθηκαν επιτυχώς στη λίστα!",
+  "viewList": "Προβολή λίστας",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Αποστολή σχολίων",
+  "feedbackPrompt": "Τι θα θέλατε να μοιραστείτε;",
+  "feedbackTypeBug": "Αναφορά σφάλματος",
+  "feedbackTypeBugHint": "Κάτι δεν λειτουργεί",
+  "feedbackTypeSuggestion": "Πρόταση",
+  "feedbackTypeSuggestionHint": "Ιδέα για βελτίωση της εφαρμογής",
+  "feedbackTypeTranslation": "Θέμα μετάφρασης",
+  "feedbackTypeTranslationHint": "Λανθασμένη ή περίεργη μετάφραση",
+  "feedbackTypeFeature": "Αίτημα λειτουργίας",
+  "feedbackTypeFeatureHint": "Λειτουργία που θα θέλατε να δείτε",
+  "feedbackTypeOther": "Άλλο",
+  "feedbackTypeOtherHint": "Άλλος τύπος σχολίου",
+  "feedbackHint": "Περιγράψτε τα σχόλιά σας λεπτομερώς...",
+  "feedbackSend": "Αποστολή σχολίων",
+  "feedbackSending": "Αποστολή...",
+  "feedbackThankYou": "Ευχαριστούμε!",
+  "feedbackThankYouMessage": "Τα σχόλιά σας ελήφθησαν και μας βοηθούν να βελτιώσουμε το Lista Plus για όλους.",
+  "feedbackBack": "Πίσω",
+  "feedbackError": "Σφάλμα αποστολής: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Δοκιμάστε ξανά",
+  "feedbackSettingsTitle": "Αποστολή σχολίων",
+  "feedbackSettingsSubtitle": "Αναφέρετε σφάλματα, προτείνετε βελτιώσεις ή διορθώστε μεταφράσεις",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Προσθήκη συστατικού",
+  "addPhoto": "Προσθήκη φωτογραφίας",
+  "allTags": "Όλα",
+  "chooseImageSource": "Επιλογή πηγής εικόνας",
+  "chooseLanguage": "Επιλογή γλώσσας",
+  "deleteRecipe": "Διαγραφή",
+  "deleteRecipeConfirm": "Διαγραφή αυτής της συνταγής;",
+  "deleteRecipeConfirmMsg": "Είστε σίγουροι ότι θέλετε να διαγράψετε τη συνταγή \"{recipeName}\"; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
+  "dynamicColors": "Δυναμικά χρώματα",
+  "dynamicColorsSubtitle": "Χρήση χρωμάτων με βάση την ταπετσαρία σας",
+  "editRecipe": "Επεξεργασία",
+  "editRecipeTitle": "Επεξεργασία συνταγής",
+  "enterUrl": "Εισαγωγή URL",
+  "errorLoadingRecipes": "Σφάλμα κατά τη φόρτωση των συνταγών",
+  "filterByTag": "Φιλτράρισμα ανά ετικέτα",
+  "gallery": "Συλλογή",
+  "imageUrlPlaceholder": "Ή επικολλήστε ένα URL εικόνας",
+  "ingredients": "Συστατικά",
+  "instructions": "Οδηγίες",
+  "instructionsHint": "Πληκτρολογήστε ένα βήμα ανά γραμμή...",
+  "loadingRecipes": "Φόρτωση των συνταγών σας...",
+  "mealPlannerAddMeal": "Προσθήκη γεύματος",
+  "mealPlannerDateLabel": "Ημερομηνία",
+  "mealPlannerDeleteMeal": "Αφαίρεση γεύματος",
+  "mealPlannerEditMeal": "Επεξεργασία γεύματος",
+  "mealPlannerError": "Σφάλμα κατά τη φόρτωση του προγράμματος γευμάτων",
+  "mealPlannerGenerateList": "Δημιουργία λίστας αγορών",
+  "mealPlannerGenerateListConfirm": "Προσθήκη όλων των συστατικών από τα προγραμματισμένα γεύματα αυτής της εβδομάδας στη λίστα αγορών σας;",
+  "mealPlannerGenerateListEmpty": "Δεν υπάρχουν συστατικά για προσθήκη. Προγραμματίστε πρώτα μερικά γεύματα με συνταγές.",
+  "mealPlannerGenerateListNoList": "Δημιουργήστε πρώτα μια λίστα αγορών.",
+  "mealPlannerGenerateListSuccess": "Προστέθηκαν {count} συστατικά στη λίστα σας!",
+  "mealPlannerLoading": "Φόρτωση προγράμματος γευμάτων...",
+  "mealPlannerMealDeleted": "Το γεύμα αφαιρέθηκε",
+  "mealPlannerMealTypeBreakfast": "Πρωινό",
+  "mealPlannerMealTypeDinner": "Δείπνο",
+  "mealPlannerMealTypeLunch": "Μεσημεριανό",
+  "mealPlannerMealTypeSnack": "Σνακ",
+  "mealPlannerNoMeals": "Δεν έχουν προγραμματιστεί γεύματα",
+  "mealPlannerNoMealsHint": "Πατήστε μια ημέρα για να προσθέσετε ένα γεύμα",
+  "mealPlannerNoRecipesFound": "Δεν βρέθηκαν συνταγές",
+  "mealPlannerNoRecipesHint": "Δημιουργήστε πρώτα συνταγές στην καρτέλα Συνταγές",
+  "mealPlannerNoteLabel": "Σημείωση (προαιρετικό)",
+  "mealPlannerPrepTime": "{minutes} λεπτά",
+  "mealPlannerSave": "Προσθήκη στο πρόγραμμα",
+  "mealPlannerSearchRecipes": "Αναζήτηση συνταγών...",
+  "mealPlannerSelectRecipe": "Επιλέξτε μια συνταγή",
+  "mealPlannerServings": "{count,plural, one{{count} μερίδα} other{{count} μερίδες}}",
+  "mealPlannerServingsLabel": "Μερίδες",
+  "mealPlannerTitle": "Πρόγραμμα γευμάτων",
+  "mealPlannerViewMonthly": "Μηνιαία προβολή",
+  "mealPlannerViewWeekly": "Εβδομαδιαία προβολή",
+  "mealPlannerWeekEmpty": "Τίποτα προγραμματισμένο για αυτήν την εβδομάδα",
+  "mealPlannerWeekEmptyHint": "Πατήστε οποιαδήποτε ημέρα για να ξεκινήσετε τον προγραμματισμό των γευμάτων σας!",
+  "mealPlannerWeekProgress": "Προγραμματίστηκαν {count} από {total} γεύματα",
+  "myRecipes": "Οι συνταγές μου",
+  "newRecipe": "Νέα συνταγή",
+  "newRecipeTitle": "Νέα συνταγή",
+  "noRecipesSaved": "Δεν υπάρχουν αποθηκευμένες συνταγές",
+  "noRecipesSavedHint": "Δημιουργήστε την πρώτη σας προσαρμοσμένη συνταγή πατώντας το παρακάτω κουμπί.",
+  "openMenu": "Άνοιγμα μενού",
+  "prepTime": "Χρόνος προετοιμασίας",
+  "prepTimeMinutes": "Χρόνος προετοιμασίας (λεπτά)",
+  "recipeCreated": "Η συνταγή δημιουργήθηκε!",
+  "recipeDeleted": "Η συνταγή διαγράφηκε",
+  "recipeImage": "Εικόνα συνταγής",
+  "recipeName": "Όνομα συνταγής",
+  "recipeSaved": "Η συνταγή αποθηκεύτηκε!",
+  "recipeTags": "Ετικέτες συνταγής",
+  "removeImage": "Αφαίρεση εικόνας",
+  "requiredField": "Απαιτείται",
+  "saveChanges": "Αποθήκευση αλλαγών",
+  "saveRecipe": "Αποθήκευση",
+  "searchLanguage": "Αναζήτηση γλώσσας...",
+  "searchRecipes": "Αναζήτηση συνταγών...",
+  "shortDescription": "Σύντομη περιγραφή",
+  "suggestedTags": "Προτεινόμενα",
+  "tags": "Ετικέτες",
+  "viewRecipe": "Προβολή συνταγής"
+}

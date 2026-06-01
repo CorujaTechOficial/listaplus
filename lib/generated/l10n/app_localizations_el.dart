@@ -42,6 +42,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get copy => 'Αντιγραφή';
 
   @override
+  String get next => 'Επόμενος';
+
+  @override
   String get retry => 'Επανάληψη';
 
   @override
@@ -280,10 +283,10 @@ class AppLocalizationsEl extends AppLocalizations {
   String get language => 'Γλώσσα';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Πορτογαλία (Βραζιλία)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'αγγλικός';
 
   @override
   String get languageSystem => 'Προεπιλογή συστήματος';
@@ -295,13 +298,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get searchLanguage => 'Αναζήτηση γλώσσας...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Νόμισμα';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Επιλέξτε Νόμισμα';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Αναζήτηση νομίσματος...';
 
   @override
   String get appearance => 'Εμφάνιση';
@@ -327,7 +330,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Απενεργοποιήστε τα δυναμικά χρώματα για να εφαρμοστεί το χρώμα του θέματος';
 
   @override
   String get finance => 'Οικονομικά';
@@ -571,17 +574,17 @@ class AppLocalizationsEl extends AppLocalizations {
   String get generalAssistant => 'Γενικός βοηθός';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Νέα συνομιλία';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Δεν υπάρχει ιστορικό συνομιλιών';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Διαγραφή συνομιλίας';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη συνομιλία; Τα μηνύματα θα χαθούν οριστικά.';
 
   @override
   String get clearHistory => 'Εκκαθάριση ιστορικού';
@@ -629,90 +632,106 @@ class AppLocalizationsEl extends AppLocalizations {
   String get continueAsGuest => 'Συνέχεια ως επισκέπτης';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Καλώς ήρθατε στο Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Ο πιο έξυπνος τρόπος για να οργανώσετε τις αγορές σας και να εξοικονομήσετε χρήματα.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Εξατομικεύστε την εμπειρία σας';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Επιλέξτε πώς θέλετε να φαίνεται το Lista Plus και να λειτουργεί για εσάς.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Αποθηκεύστε τα πάντα στο σύννεφο';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Τα δεδομένα σας συγχρονίστηκαν σε όλες τις συσκευές σας';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Μοιραστείτε με αυτούς που αγαπάτε';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Συγχρονίστε λίστες με την οικογένεια και τους φίλους σας σε πραγματικό χρόνο';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Ξεκλειδώστε όλες τις λειτουργίες';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Αξιοποιήστε στο έπακρο τις λίστες αγορών σας';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Καλύτερη Αξία';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Μηνιαίος';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Ετήσιος';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Δείτε όλα τα σχέδια';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Συνεισφέρω';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Ακύρωση ανά πάσα στιγμή. Καμία δέσμευση.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Συνεχίστε ως επισκέπτης';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Επαναφέρω';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Έχετε ήδη συνδρομή; Πατήστε εδώ για να το επαναφέρετε.';
+
+  @override
+  String get onboardingExit => 'Εξοδος';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Ας σε γνωρίσουμε';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Θα το χρησιμοποιήσουμε για να εξατομικεύσουμε τις προτάσεις σας και να κάνουμε τις αγορές πιο έξυπνες.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Ποιο είναι το αγαπημένο σου φαγητό;';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'π.χ. Πίτσα, σούσι, λαζάνια...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Συνεχίζω';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Παράλειψη προς το παρόν';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Πείτε μας το αγαπημένο σας φαγητό για να συνεχίσουμε';
+
+  @override
+  String get settingsDefaultScreen => 'Προεπιλεγμένη αρχική οθόνη';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Επιλέξτε μεταξύ λίστας αγορών ή συνομιλίας AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Λίστα αγορών';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -1085,103 +1104,105 @@ class AppLocalizationsEl extends AppLocalizations {
   String get aiEnergy => 'AI Energy';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Αναζήτηση στη συνομιλία...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Δεν βρέθηκαν μηνύματα';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Προτεινόμενες ερωτήσεις:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Βοηθός αγορών';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased από $total αγοράστηκε';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Εκτιμώμενος';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Προβολή στοιχείων';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Δεν υπάρχουν στοιχεία στη λίστα';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Μακρά ιστορία: ο βοηθός εστιάζει στα πιο πρόσφατα μηνύματα για καλύτερη απόδοση.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Ακούγοντας...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Προσθήκη απευθείας στη λίστα';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Ξεκλείδωμα Πλήρους Απόκρισης';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Εναλλαγή λίστας';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Λειτουργία αγοράς';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Επιστροφή στο Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Τελειώστε τις αγορές';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Καλώς ήρθατε στο AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Δημιουργήστε μια λίστα αγορών για να ξεκινήσετε να χρησιμοποιείτε την έξυπνη συνομιλία.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Πώς μπορώ να βοηθήσω;';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Ρωτήστε για τιμές, συνταγές, οργάνωση...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total αγοράστηκε';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Γρήγορες απαντήσεις:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Οι προηγμένες φωνητικές εντολές είναι Pro. Ενεργοποίηση βασικής υπαγόρευσης...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Προβολή Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Ωχ! Κάτι πήγε στραβά κατά τη φόρτωση της συνομιλίας.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Αυτό μπορεί να συμβεί λόγω ταλαντώσεων δικτύου ή προσωρινής μη διαθεσιμότητας. Δοκιμάστε ξανά.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Ενεργητική Ακρόαση';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'Τι θα θέλατε να κάνετε με αυτό το αντικείμενο;';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Προβολή λεπτομερειών';
 
   @override
   String get openMenu => 'Άνοιγμα μενού';
@@ -1431,21 +1452,22 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Πρόσκληση στη λίστα';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Κοινή χρήση εφαρμογής';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Προσκαλέστε φίλους να χρησιμοποιήσουν το Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Χρησιμοποιώ το Lista Plus για να οργανώσω τις αγορές μου! Κάντε λήψη μέσω του συνδέσμου μου και θα λάβουμε και οι δύο δωρεάν 7 ημέρες Premium: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Αποκτήστε 7 ημέρες Lista Plus Premium!';
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).
@@ -1484,6 +1506,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get copy => 'Αντιγραφή';
+
+  @override
+  String get next => 'Επόμενος';
 
   @override
   String get retry => 'Επανάληψη';
@@ -1724,10 +1749,10 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get language => 'Γλώσσα';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Πορτογαλία (Βραζιλία)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'αγγλικός';
 
   @override
   String get languageSystem => 'Προεπιλογή συστήματος';
@@ -1737,6 +1762,15 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get searchLanguage => 'Αναζήτηση γλώσσας...';
+
+  @override
+  String get currency => 'Νόμισμα';
+
+  @override
+  String get chooseCurrency => 'Επιλέξτε Νόμισμα';
+
+  @override
+  String get searchCurrency => 'Αναζήτηση νομίσματος...';
 
   @override
   String get appearance => 'Εμφάνιση';
@@ -1759,6 +1793,10 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   @override
   String get dynamicColorsSubtitle =>
       'Χρήση χρωμάτων με βάση την ταπετσαρία σας';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Απενεργοποιήστε τα δυναμικά χρώματα για να εφαρμοστεί το χρώμα του θέματος';
 
   @override
   String get finance => 'Οικονομικά';
@@ -2002,6 +2040,19 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get generalAssistant => 'Γενικός βοηθός';
 
   @override
+  String get newChat => 'Νέα συνομιλία';
+
+  @override
+  String get noHistory => 'Δεν υπάρχει ιστορικό συνομιλιών';
+
+  @override
+  String get deleteSession => 'Διαγραφή συνομιλίας';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη συνομιλία; Τα μηνύματα θα χαθούν οριστικά.';
+
+  @override
   String get clearHistory => 'Εκκαθάριση ιστορικού';
 
   @override
@@ -2045,6 +2096,111 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get continueAsGuest => 'Συνέχεια ως επισκέπτης';
+
+  @override
+  String get onboardingWelcomeTitle => 'Καλώς ήρθατε στο Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Ο πιο έξυπνος τρόπος για να οργανώσετε τις αγορές σας και να εξοικονομήσετε χρήματα.';
+
+  @override
+  String get onboardingSetupTitle => 'Εξατομικεύστε την εμπειρία σας';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Επιλέξτε πώς θέλετε να φαίνεται το Lista Plus και να λειτουργεί για εσάς.';
+
+  @override
+  String get onboardingLoginTitle => 'Αποθηκεύστε τα πάντα στο σύννεφο';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Τα δεδομένα σας συγχρονίστηκαν σε όλες τις συσκευές σας';
+
+  @override
+  String get onboardingShareTitle => 'Μοιραστείτε με αυτούς που αγαπάτε';
+
+  @override
+  String get onboardingShareDesc =>
+      'Συγχρονίστε λίστες με την οικογένεια και τους φίλους σας σε πραγματικό χρόνο';
+
+  @override
+  String get onboardingPremiumTitle => 'Ξεκλειδώστε όλες τις λειτουργίες';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Αξιοποιήστε στο έπακρο τις λίστες αγορών σας';
+
+  @override
+  String get onboardingAnnualBadge => 'Καλύτερη Αξία';
+
+  @override
+  String get onboardingMonthlyLabel => 'Μηνιαίος';
+
+  @override
+  String get onboardingAnnualLabel => 'Ετήσιος';
+
+  @override
+  String get onboardingViewAllPlans => 'Δείτε όλα τα σχέδια';
+
+  @override
+  String get onboardingSubscribeCta => 'Συνεισφέρω';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Ακύρωση ανά πάσα στιγμή. Καμία δέσμευση.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Συνεχίστε ως επισκέπτης';
+
+  @override
+  String get onboardingRestore => 'Επαναφέρω';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Έχετε ήδη συνδρομή; Πατήστε εδώ για να το επαναφέρετε.';
+
+  @override
+  String get onboardingExit => 'Εξοδος';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Ας σε γνωρίσουμε';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Θα το χρησιμοποιήσουμε για να εξατομικεύσουμε τις προτάσεις σας και να κάνουμε τις αγορές πιο έξυπνες.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Ποιο είναι το αγαπημένο σου φαγητό;';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'π.χ. Πίτσα, σούσι, λαζάνια...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Συνεχίζω';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Παράλειψη προς το παρόν';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Πείτε μας το αγαπημένο σας φαγητό για να συνεχίσουμε';
+
+  @override
+  String get settingsDefaultScreen => 'Προεπιλεγμένη αρχική οθόνη';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Επιλέξτε μεταξύ λίστας αγορών ή συνομιλίας AI';
+
+  @override
+  String get settingsScreenList => 'Λίστα αγορών';
+
+  @override
+  String get settingsScreenChat => 'AI Chat';
 
   @override
   String loginError(String error) {
@@ -2414,103 +2570,105 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get aiEnergy => 'AI Energy';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Αναζήτηση στη συνομιλία...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Δεν βρέθηκαν μηνύματα';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Προτεινόμενες ερωτήσεις:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Βοηθός αγορών';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased από $total αγοράστηκε';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Εκτιμώμενος';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Προβολή στοιχείων';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Δεν υπάρχουν στοιχεία στη λίστα';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Μακρά ιστορία: ο βοηθός εστιάζει στα πιο πρόσφατα μηνύματα για καλύτερη απόδοση.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Ακούγοντας...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Προσθήκη απευθείας στη λίστα';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Ξεκλείδωμα Πλήρους Απόκρισης';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Εναλλαγή λίστας';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Λειτουργία αγοράς';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Επιστροφή στο Chat';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Τελειώστε τις αγορές';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Καλώς ήρθατε στο AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Δημιουργήστε μια λίστα αγορών για να ξεκινήσετε να χρησιμοποιείτε την έξυπνη συνομιλία.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Πώς μπορώ να βοηθήσω;';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Ρωτήστε για τιμές, συνταγές, οργάνωση...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total αγοράστηκε';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Γρήγορες απαντήσεις:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Οι προηγμένες φωνητικές εντολές είναι Pro. Ενεργοποίηση βασικής υπαγόρευσης...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Προβολή Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Ωχ! Κάτι πήγε στραβά κατά τη φόρτωση της συνομιλίας.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Αυτό μπορεί να συμβεί λόγω ταλαντώσεων δικτύου ή προσωρινής μη διαθεσιμότητας. Δοκιμάστε ξανά.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Ενεργητική Ακρόαση';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'Τι θα θέλατε να κάνετε με αυτό το αντικείμενο;';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Προβολή λεπτομερειών';
 
   @override
   String get openMenu => 'Άνοιγμα μενού';
@@ -2758,4 +2916,22 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes λεπτά';
   }
+
+  @override
+  String get inviteToList => 'Πρόσκληση στη λίστα';
+
+  @override
+  String get shareApp => 'Κοινή χρήση εφαρμογής';
+
+  @override
+  String get shareAppDescription =>
+      'Προσκαλέστε φίλους να χρησιμοποιήσουν το Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Χρησιμοποιώ το Lista Plus για να οργανώσω τις αγορές μου! Κάντε λήψη μέσω του συνδέσμου μου και θα λάβουμε και οι δύο δωρεάν 7 ημέρες Premium: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Αποκτήστε 7 ημέρες Lista Plus Premium!';
 }

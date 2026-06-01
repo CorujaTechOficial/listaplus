@@ -8,7 +8,8 @@ import 'auth_provider.dart';
 final firebaseStorageProvider = Provider<FirebaseStorage>((ref) => FirebaseStorage.instance);
 
 final firestoreServiceProvider = Provider<StorageBackend>((ref) {
-  final user = ref.watch(authProvider).value;
+  final authAsync = ref.watch(authProvider);
+  final user = authAsync.asData?.value;
 
   if (user != null) {
     return FirestoreService(uid: user.uid);
@@ -19,9 +20,9 @@ final firestoreServiceProvider = Provider<StorageBackend>((ref) {
     return FirestoreService(uid: current.uid);
   }
 
-  // Se não houver UID ainda, retornamos um serviço com UID placeholder
-  // em vez de lançar um erro síncrono. Isso evita quebrar o grafo do Riverpod
-  // e permite que a UI carregue normalmente. O Firestore lidará com erros de
-  // permissão caso o UID seja inválido, o que já é tratado no .when(error: ...)
-  return FirestoreService(uid: 'pending_auth');
+  if (authAsync.isLoading) {
+    throw Exception('Autenticação ainda não carregada');
+  }
+
+  throw Exception('Usuário não autenticado');
 });

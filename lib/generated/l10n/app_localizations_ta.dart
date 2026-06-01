@@ -42,6 +42,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get copy => 'நகலெடு';
 
   @override
+  String get next => 'அடுத்து';
+
+  @override
   String get retry => 'மீண்டும் முயற்சி';
 
   @override
@@ -283,28 +286,28 @@ class AppLocalizationsTa extends AppLocalizations {
   String get language => 'மொழி';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'போர்ச்சுகீஸ் (பிரேசில்)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ஆங்கிலம்';
 
   @override
   String get languageSystem => 'கணினி இயல்புநிலை';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'மொழியைத் தேர்ந்தெடுக்கவும்';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'தேடல் மொழி...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'நாணயம்';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'நாணயத்தைத் தேர்ந்தெடுக்கவும்';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'நாணயத்தைத் தேடு...';
 
   @override
   String get appearance => 'தோற்றம்';
@@ -322,14 +325,15 @@ class AppLocalizationsTa extends AppLocalizations {
   String get themeColor => 'தீம் நிறம்';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'டைனமிக் நிறங்கள்';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle =>
+      'உங்கள் வால்பேப்பரின் அடிப்படையில் வண்ணங்களைப் பயன்படுத்தவும்';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'தீம் வண்ணம் செயல்பட டைனமிக் வண்ணங்களை முடக்கவும்';
 
   @override
   String get finance => 'நிதி';
@@ -574,17 +578,17 @@ class AppLocalizationsTa extends AppLocalizations {
   String get generalAssistant => 'பொது உதவியாளர்';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'புதிய அரட்டை';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'அரட்டை வரலாறு இல்லை';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'அரட்டையை நீக்கு';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'இந்த அரட்டையை நிச்சயமாக நீக்க விரும்புகிறீர்களா? செய்திகள் நிரந்தரமாக இழக்கப்படும்.';
 
   @override
   String get clearHistory => 'வரலாற்றை அழி';
@@ -631,93 +635,111 @@ class AppLocalizationsTa extends AppLocalizations {
   String get continueAsGuest => 'விருந்தினராகத் தொடர்க';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Lista Plusக்கு வரவேற்கிறோம்';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'உங்கள் ஷாப்பிங்கை ஒழுங்கமைத்து பணத்தைச் சேமிப்பதற்கான சிறந்த வழி.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'உங்கள் அனுபவத்தைத் தனிப்பயனாக்குங்கள்';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'உங்களுக்காக Lista Plus எப்படி இருக்க வேண்டும் மற்றும் வேலை செய்ய வேண்டும் என்பதை தேர்வு செய்யவும்.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'எல்லாவற்றையும் கிளவுட்டில் சேமிக்கவும்';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'உங்கள் எல்லா சாதனங்களிலும் உங்கள் தரவு ஒத்திசைக்கப்பட்டது';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle =>
+      'நீங்கள் விரும்புபவர்களுடன் பகிர்ந்து கொள்ளுங்கள்';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'உண்மையான நேரத்தில் குடும்பம் மற்றும் நண்பர்களுடன் பட்டியல்களை ஒத்திசைக்கவும்';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'அனைத்து அம்சங்களையும் திறக்கவும்';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'உங்கள் ஷாப்பிங் பட்டியல்களில் இருந்து அதிகமானவற்றைப் பெறுங்கள்';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'சிறந்த மதிப்பு';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'மாதாந்திர';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'ஆண்டு';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'அனைத்து திட்டங்களையும் பார்க்கவும்';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'குழுசேர்';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'எப்போது வேண்டுமானாலும் ரத்து செய்யலாம். உறுதி இல்லை.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'விருந்தினராக தொடரவும்';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'வாங்குதல்களை மீட்டெடுக்கவும்';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'ஏற்கனவே சந்தா உள்ளதா? அதை மீட்டெடுக்க இங்கே தட்டவும்.';
+
+  @override
+  String get onboardingExit => 'வெளியேறு';
+
+  @override
+  String get onboardingPersonalizationTitle =>
+      'உங்களைப் பற்றி தெரிந்து கொள்வோம்';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'உங்கள் பரிந்துரைகளைத் தனிப்பயனாக்கவும், ஷாப்பிங்கை சிறந்ததாக்கவும் இதைப் பயன்படுத்துவோம்.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'உங்களுக்கு பிடித்த உணவு எது?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'எ.கா. பீட்சா, சுஷி, லாசக்னா...';
+
+  @override
+  String get onboardingPersonalizationCta => 'தொடரவும்';
+
+  @override
+  String get onboardingPersonalizationSkip => 'இப்போதைக்கு தவிர்க்கவும்';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'தொடர உங்களுக்கு பிடித்த உணவை எங்களிடம் கூறுங்கள்';
+
+  @override
+  String get settingsDefaultScreen => 'இயல்புநிலை முகப்புத் திரை';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'ஷாப்பிங் பட்டியல் அல்லது AI அரட்டைக்கு இடையே தேர்வு செய்யவும்';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'ஷாப்பிங் பட்டியல்';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI அரட்டை';
 
   @override
   String loginError(String error) {
@@ -725,7 +747,7 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'லிஸ்டா பிளஸ் பிரீமியம்';
 
   @override
   String get premiumUpgrade => 'திறக்க மேம்படுத்தவும்';
@@ -1087,366 +1109,372 @@ class AppLocalizationsTa extends AppLocalizations {
       'பிழைகளைப் புகாரளிக்கவும், மேம்பாடுகளைப் பரிந்துரைக்கவும் அல்லது மொழிபெயர்ப்புகளைச் சரிசெய்யவும்';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI ஆற்றல்';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'உரையாடலில் தேடு...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'செய்திகள் எதுவும் இல்லை';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'பரிந்துரைக்கப்பட்ட கேள்விகள்:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'ஷாப்பிங் உதவியாளர்';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total இல் $purchased வாங்கப்பட்டது';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'மதிப்பிடப்பட்டுள்ளது';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'பொருட்களைக் காண்க';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'பட்டியலில் உருப்படிகள் இல்லை';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'நீண்ட வரலாறு: சிறந்த செயல்திறனுக்காக அசிஸ்டண்ட் சமீபத்திய செய்திகளில் கவனம் செலுத்துகிறது.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'கேட்கிறது...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'பட்டியலில் நேரடியாகச் சேர்க்கவும்';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'முழு பதிலைத் திறக்கவும்';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'பட்டியலை மாற்றவும்';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'சந்தை முறை';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'அரட்டைக்குத் திரும்பு';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'ஷாப்பிங்கை முடிக்கவும்';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI உதவியாளருக்கு வரவேற்கிறோம்';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'ஸ்மார்ட் அரட்டையைப் பயன்படுத்த ஷாப்பிங் பட்டியலை உருவாக்கவும்.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'நான் எப்படி உதவ முடியும்?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'விலைகள், சமையல் வகைகள், அமைப்பு பற்றி கேளுங்கள்...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total வாங்கப்பட்டது';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'விரைவான பதில்கள்:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'மேம்பட்ட குரல் கட்டளைகள் புரோ. அடிப்படை ஆணையை இயக்குகிறது...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'ப்ரோவைக் காண்க';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'அச்சச்சோ! அரட்டையை ஏற்றுவதில் ஏதோ தவறு ஏற்பட்டது.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'உங்கள் இணைப்பைச் சரிபார்க்கவும் அல்லது பிறகு முயற்சிக்கவும்.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'நெட்வொர்க் அலைவுகள் அல்லது தற்காலிகமாக கிடைக்காததால் இது நிகழலாம். மீண்டும் முயற்சிக்கவும்.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'செயலில் கேட்பது';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'இந்த உருப்படியை என்ன செய்ய விரும்புகிறீர்கள்?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'விவரங்களைக் காண்க';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'மெனுவைத் திற';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'செய்முறையைப் பார்க்கவும்';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'செய்முறை உருவாக்கப்பட்டது!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'திருத்தவும்';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'நீக்கு';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'இந்த செய்முறையை நீக்கவா?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return '\"$recipeName\" ஐ நிச்சயமாக நீக்க விரும்புகிறீர்களா? இந்தச் செயலைச் செயல்தவிர்க்க முடியாது.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'தேவையான பொருட்கள்';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'வழிமுறைகள்';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'தயாரிப்பு நேரம்';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'செய்முறை சேமிக்கப்பட்டது!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'எந்த சமையல் குறிப்புகளும் சேமிக்கப்படவில்லை';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'கீழே உள்ள பொத்தானைத் தட்டுவதன் மூலம் உங்களின் முதல் தனிப்பயன் செய்முறையை உருவாக்கவும்.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'எனது சமையல் வகைகள்';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'புதிய செய்முறை';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'உங்கள் சமையல் குறிப்புகளை ஏற்றுகிறது...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'சமையல் குறிப்புகளை ஏற்றுவதில் பிழை';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'மூலப்பொருள் சேர்க்கவும்';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'சேமிக்கவும்';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'செய்முறை பெயர்';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'சுருக்கமான விளக்கம்';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'தயாரிப்பு நேரம் (நிமிடங்கள்)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'வரிக்கு ஒரு படி என தட்டச்சு செய்க...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'புகைப்படத்தைச் சேர்க்கவும்';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'அல்லது பட URLஐ ஒட்டவும்';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'குறிச்சொற்கள்';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'செய்முறை குறிச்சொற்கள்';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'பரிந்துரைக்கப்பட்டது';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'சமையல் குறிப்புகளைத் தேடு...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'குறிச்சொல் மூலம் வடிகட்டவும்';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'அனைத்து';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'செய்முறை நீக்கப்பட்டது';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'மாற்றங்களைச் சேமிக்கவும்';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'செய்முறையைத் திருத்தவும்';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'புதிய செய்முறை';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'தேவை';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'படத்தின் மூலத்தைத் தேர்ந்தெடுக்கவும்';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'தொகுப்பு';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'URL ஐ உள்ளிடவும்';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'செய்முறை படம்';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'படத்தை அகற்று';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'உணவு திட்டமிடுபவர்';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'மாதாந்திர பார்வை';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'வாராந்திர பார்வை';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'உணவு திட்டமிடப்படவில்லை';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'உணவைச் சேர்க்க ஒரு நாளைத் தட்டவும்';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'உணவுத் திட்டத்தை ஏற்றுகிறது...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'உணவுத் திட்டத்தை ஏற்றுவதில் பிழை';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'சாப்பாடு சேர்க்கவும்';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'உணவைத் திருத்தவும்';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'உணவை அகற்றவும்';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'உணவு நீக்கப்பட்டது';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count சேவைகள்',
+      one: '$count பரிமாறும்',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'பரிமாறல்கள்';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'குறிப்பு (விரும்பினால்)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'ஒரு செய்முறையைத் தேர்ந்தெடுக்கவும்';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'சமையல் குறிப்புகளைத் தேடு...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'சமையல் குறிப்புகள் எதுவும் இல்லை';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'முதலில் சமையல் தாவலில் சமையல் குறிப்புகளை உருவாக்கவும்';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'திட்டத்தில் சேர்க்கவும்';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$total உணவுகளில் $count திட்டமிடப்பட்டுள்ளது';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'ஷாப்பிங் பட்டியலை உருவாக்கவும்';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'இந்த வாரம் திட்டமிட்ட உணவுகளில் இருந்து அனைத்து பொருட்களையும் உங்கள் ஷாப்பிங் பட்டியலில் சேர்க்கவா?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count மூலப்பொருள்(கள்) உங்கள் பட்டியலில் சேர்க்கப்பட்டது!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'சேர்க்க பொருட்கள் இல்லை. முதலில் சமையல் குறிப்புகளுடன் சில உணவுகளைத் திட்டமிடுங்கள்.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList =>
+      'முதலில் ஷாப்பிங் பட்டியலை உருவாக்கவும்.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'காலை உணவு';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'மதிய உணவு';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'இரவு உணவு';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'சிற்றுண்டி';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'தேதி';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'இந்த வாரம் எதுவும் திட்டமிடவில்லை';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'உங்கள் உணவைத் திட்டமிடத் தொடங்க எந்த நாளையும் தட்டவும்!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes நிமிடம்';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'பட்டியலுக்கு அழைக்கவும்';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'பயன்பாட்டைப் பகிரவும்';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Lista Plus ஐப் பயன்படுத்த நண்பர்களை அழைக்கவும்';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'எனது ஷாப்பிங்கை ஒழுங்கமைக்க Lista Plusஐப் பயன்படுத்துகிறேன்! எனது இணைப்பு மூலம் பதிவிறக்குங்கள், நாங்கள் இருவரும் 7 நாட்கள் பிரீமியம் இலவசம்: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject =>
+      'Lista Plus பிரீமியத்தை 7 நாட்கள் பெறுங்கள்!';
 }
 
 /// The translations for Tamil, as used in India (`ta_IN`).
@@ -1485,6 +1513,9 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get copy => 'நகலெடு';
+
+  @override
+  String get next => 'அடுத்து';
 
   @override
   String get retry => 'மீண்டும் முயற்சி';
@@ -1728,13 +1759,28 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
   String get language => 'மொழி';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'போர்ச்சுகீஸ் (பிரேசில்)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ஆங்கிலம்';
 
   @override
   String get languageSystem => 'கணினி இயல்புநிலை';
+
+  @override
+  String get chooseLanguage => 'மொழியைத் தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get searchLanguage => 'தேடல் மொழி...';
+
+  @override
+  String get currency => 'நாணயம்';
+
+  @override
+  String get chooseCurrency => 'நாணயத்தைத் தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get searchCurrency => 'நாணயத்தைத் தேடு...';
 
   @override
   String get appearance => 'தோற்றம்';
@@ -1750,6 +1796,17 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get themeColor => 'தீம் நிறம்';
+
+  @override
+  String get dynamicColors => 'டைனமிக் நிறங்கள்';
+
+  @override
+  String get dynamicColorsSubtitle =>
+      'உங்கள் வால்பேப்பரின் அடிப்படையில் வண்ணங்களைப் பயன்படுத்தவும்';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'தீம் வண்ணம் செயல்பட டைனமிக் வண்ணங்களை முடக்கவும்';
 
   @override
   String get finance => 'நிதி';
@@ -1994,6 +2051,19 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
   String get generalAssistant => 'பொது உதவியாளர்';
 
   @override
+  String get newChat => 'புதிய அரட்டை';
+
+  @override
+  String get noHistory => 'அரட்டை வரலாறு இல்லை';
+
+  @override
+  String get deleteSession => 'அரட்டையை நீக்கு';
+
+  @override
+  String get deleteSessionConfirm =>
+      'இந்த அரட்டையை நிச்சயமாக நீக்க விரும்புகிறீர்களா? செய்திகள் நிரந்தரமாக இழக்கப்படும்.';
+
+  @override
   String get clearHistory => 'வரலாற்றை அழி';
 
   @override
@@ -2038,12 +2108,119 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
   String get continueAsGuest => 'விருந்தினராகத் தொடர்க';
 
   @override
+  String get onboardingWelcomeTitle => 'Lista Plusக்கு வரவேற்கிறோம்';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'உங்கள் ஷாப்பிங்கை ஒழுங்கமைத்து பணத்தைச் சேமிப்பதற்கான சிறந்த வழி.';
+
+  @override
+  String get onboardingSetupTitle => 'உங்கள் அனுபவத்தைத் தனிப்பயனாக்குங்கள்';
+
+  @override
+  String get onboardingSetupDesc =>
+      'உங்களுக்காக Lista Plus எப்படி இருக்க வேண்டும் மற்றும் வேலை செய்ய வேண்டும் என்பதை தேர்வு செய்யவும்.';
+
+  @override
+  String get onboardingLoginTitle => 'எல்லாவற்றையும் கிளவுட்டில் சேமிக்கவும்';
+
+  @override
+  String get onboardingLoginDesc =>
+      'உங்கள் எல்லா சாதனங்களிலும் உங்கள் தரவு ஒத்திசைக்கப்பட்டது';
+
+  @override
+  String get onboardingShareTitle =>
+      'நீங்கள் விரும்புபவர்களுடன் பகிர்ந்து கொள்ளுங்கள்';
+
+  @override
+  String get onboardingShareDesc =>
+      'உண்மையான நேரத்தில் குடும்பம் மற்றும் நண்பர்களுடன் பட்டியல்களை ஒத்திசைக்கவும்';
+
+  @override
+  String get onboardingPremiumTitle => 'அனைத்து அம்சங்களையும் திறக்கவும்';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'உங்கள் ஷாப்பிங் பட்டியல்களில் இருந்து அதிகமானவற்றைப் பெறுங்கள்';
+
+  @override
+  String get onboardingAnnualBadge => 'சிறந்த மதிப்பு';
+
+  @override
+  String get onboardingMonthlyLabel => 'மாதாந்திர';
+
+  @override
+  String get onboardingAnnualLabel => 'ஆண்டு';
+
+  @override
+  String get onboardingViewAllPlans => 'அனைத்து திட்டங்களையும் பார்க்கவும்';
+
+  @override
+  String get onboardingSubscribeCta => 'குழுசேர்';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'எப்போது வேண்டுமானாலும் ரத்து செய்யலாம். உறுதி இல்லை.';
+
+  @override
+  String get onboardingContinueAsGuest => 'விருந்தினராக தொடரவும்';
+
+  @override
+  String get onboardingRestore => 'வாங்குதல்களை மீட்டெடுக்கவும்';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'ஏற்கனவே சந்தா உள்ளதா? அதை மீட்டெடுக்க இங்கே தட்டவும்.';
+
+  @override
+  String get onboardingExit => 'வெளியேறு';
+
+  @override
+  String get onboardingPersonalizationTitle =>
+      'உங்களைப் பற்றி தெரிந்து கொள்வோம்';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'உங்கள் பரிந்துரைகளைத் தனிப்பயனாக்கவும், ஷாப்பிங்கை சிறந்ததாக்கவும் இதைப் பயன்படுத்துவோம்.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'உங்களுக்கு பிடித்த உணவு எது?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'எ.கா. பீட்சா, சுஷி, லாசக்னா...';
+
+  @override
+  String get onboardingPersonalizationCta => 'தொடரவும்';
+
+  @override
+  String get onboardingPersonalizationSkip => 'இப்போதைக்கு தவிர்க்கவும்';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'தொடர உங்களுக்கு பிடித்த உணவை எங்களிடம் கூறுங்கள்';
+
+  @override
+  String get settingsDefaultScreen => 'இயல்புநிலை முகப்புத் திரை';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'ஷாப்பிங் பட்டியல் அல்லது AI அரட்டைக்கு இடையே தேர்வு செய்யவும்';
+
+  @override
+  String get settingsScreenList => 'ஷாப்பிங் பட்டியல்';
+
+  @override
+  String get settingsScreenChat => 'AI அரட்டை';
+
+  @override
   String loginError(String error) {
     return 'உள்நுழைவு பிழை: $error';
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'லிஸ்டா பிளஸ் பிரீமியம்';
 
   @override
   String get premiumUpgrade => 'திறக்க மேம்படுத்தவும்';
@@ -2405,104 +2582,370 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
       'பிழைகளைப் புகாரளிக்கவும், மேம்பாடுகளைப் பரிந்துரைக்கவும் அல்லது மொழிபெயர்ப்புகளைச் சரிசெய்யவும்';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI ஆற்றல்';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'உரையாடலில் தேடு...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'செய்திகள் எதுவும் இல்லை';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'பரிந்துரைக்கப்பட்ட கேள்விகள்:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'ஷாப்பிங் உதவியாளர்';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$total இல் $purchased வாங்கப்பட்டது';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'மதிப்பிடப்பட்டுள்ளது';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'பொருட்களைக் காண்க';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'பட்டியலில் உருப்படிகள் இல்லை';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'நீண்ட வரலாறு: சிறந்த செயல்திறனுக்காக அசிஸ்டண்ட் சமீபத்திய செய்திகளில் கவனம் செலுத்துகிறது.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'கேட்கிறது...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'பட்டியலில் நேரடியாகச் சேர்க்கவும்';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'முழு பதிலைத் திறக்கவும்';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'பட்டியலை மாற்றவும்';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'சந்தை முறை';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'அரட்டைக்குத் திரும்பு';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'ஷாப்பிங்கை முடிக்கவும்';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'AI உதவியாளருக்கு வரவேற்கிறோம்';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'ஸ்மார்ட் அரட்டையைப் பயன்படுத்த ஷாப்பிங் பட்டியலை உருவாக்கவும்.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'நான் எப்படி உதவ முடியும்?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'விலைகள், சமையல் வகைகள், அமைப்பு பற்றி கேளுங்கள்...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total வாங்கப்பட்டது';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'விரைவான பதில்கள்:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'மேம்பட்ட குரல் கட்டளைகள் புரோ. அடிப்படை ஆணையை இயக்குகிறது...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'ப்ரோவைக் காண்க';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'அச்சச்சோ! அரட்டையை ஏற்றுவதில் ஏதோ தவறு ஏற்பட்டது.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'உங்கள் இணைப்பைச் சரிபார்க்கவும் அல்லது பிறகு முயற்சிக்கவும்.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'நெட்வொர்க் அலைவுகள் அல்லது தற்காலிகமாக கிடைக்காததால் இது நிகழலாம். மீண்டும் முயற்சிக்கவும்.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'செயலில் கேட்பது';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'இந்த உருப்படியை என்ன செய்ய விரும்புகிறீர்கள்?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'விவரங்களைக் காண்க';
+
+  @override
+  String get openMenu => 'மெனுவைத் திற';
+
+  @override
+  String get viewRecipe => 'செய்முறையைப் பார்க்கவும்';
+
+  @override
+  String get recipeCreated => 'செய்முறை உருவாக்கப்பட்டது!';
+
+  @override
+  String get editRecipe => 'திருத்தவும்';
+
+  @override
+  String get deleteRecipe => 'நீக்கு';
+
+  @override
+  String get deleteRecipeConfirm => 'இந்த செய்முறையை நீக்கவா?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return '\"$recipeName\" ஐ நிச்சயமாக நீக்க விரும்புகிறீர்களா? இந்தச் செயலைச் செயல்தவிர்க்க முடியாது.';
+  }
+
+  @override
+  String get ingredients => 'தேவையான பொருட்கள்';
+
+  @override
+  String get instructions => 'வழிமுறைகள்';
+
+  @override
+  String get prepTime => 'தயாரிப்பு நேரம்';
+
+  @override
+  String get recipeSaved => 'செய்முறை சேமிக்கப்பட்டது!';
+
+  @override
+  String get noRecipesSaved => 'எந்த சமையல் குறிப்புகளும் சேமிக்கப்படவில்லை';
+
+  @override
+  String get noRecipesSavedHint =>
+      'கீழே உள்ள பொத்தானைத் தட்டுவதன் மூலம் உங்களின் முதல் தனிப்பயன் செய்முறையை உருவாக்கவும்.';
+
+  @override
+  String get myRecipes => 'எனது சமையல் வகைகள்';
+
+  @override
+  String get newRecipe => 'புதிய செய்முறை';
+
+  @override
+  String get loadingRecipes => 'உங்கள் சமையல் குறிப்புகளை ஏற்றுகிறது...';
+
+  @override
+  String get errorLoadingRecipes => 'சமையல் குறிப்புகளை ஏற்றுவதில் பிழை';
+
+  @override
+  String get addIngredient => 'மூலப்பொருள் சேர்க்கவும்';
+
+  @override
+  String get saveRecipe => 'சேமிக்கவும்';
+
+  @override
+  String get recipeName => 'செய்முறை பெயர்';
+
+  @override
+  String get shortDescription => 'சுருக்கமான விளக்கம்';
+
+  @override
+  String get prepTimeMinutes => 'தயாரிப்பு நேரம் (நிமிடங்கள்)';
+
+  @override
+  String get instructionsHint => 'வரிக்கு ஒரு படி என தட்டச்சு செய்க...';
+
+  @override
+  String get addPhoto => 'புகைப்படத்தைச் சேர்க்கவும்';
+
+  @override
+  String get imageUrlPlaceholder => 'அல்லது பட URLஐ ஒட்டவும்';
+
+  @override
+  String get tags => 'குறிச்சொற்கள்';
+
+  @override
+  String get recipeTags => 'செய்முறை குறிச்சொற்கள்';
+
+  @override
+  String get suggestedTags => 'பரிந்துரைக்கப்பட்டது';
+
+  @override
+  String get searchRecipes => 'சமையல் குறிப்புகளைத் தேடு...';
+
+  @override
+  String get filterByTag => 'குறிச்சொல் மூலம் வடிகட்டவும்';
+
+  @override
+  String get allTags => 'அனைத்து';
+
+  @override
+  String get recipeDeleted => 'செய்முறை நீக்கப்பட்டது';
+
+  @override
+  String get saveChanges => 'மாற்றங்களைச் சேமிக்கவும்';
+
+  @override
+  String get editRecipeTitle => 'செய்முறையைத் திருத்தவும்';
+
+  @override
+  String get newRecipeTitle => 'புதிய செய்முறை';
+
+  @override
+  String get requiredField => 'தேவை';
+
+  @override
+  String get chooseImageSource => 'படத்தின் மூலத்தைத் தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get gallery => 'தொகுப்பு';
+
+  @override
+  String get enterUrl => 'URL ஐ உள்ளிடவும்';
+
+  @override
+  String get recipeImage => 'செய்முறை படம்';
+
+  @override
+  String get removeImage => 'படத்தை அகற்று';
+
+  @override
+  String get mealPlannerTitle => 'உணவு திட்டமிடுபவர்';
+
+  @override
+  String get mealPlannerViewMonthly => 'மாதாந்திர பார்வை';
+
+  @override
+  String get mealPlannerViewWeekly => 'வாராந்திர பார்வை';
+
+  @override
+  String get mealPlannerNoMeals => 'உணவு திட்டமிடப்படவில்லை';
+
+  @override
+  String get mealPlannerNoMealsHint => 'உணவைச் சேர்க்க ஒரு நாளைத் தட்டவும்';
+
+  @override
+  String get mealPlannerLoading => 'உணவுத் திட்டத்தை ஏற்றுகிறது...';
+
+  @override
+  String get mealPlannerError => 'உணவுத் திட்டத்தை ஏற்றுவதில் பிழை';
+
+  @override
+  String get mealPlannerAddMeal => 'சாப்பாடு சேர்க்கவும்';
+
+  @override
+  String get mealPlannerEditMeal => 'உணவைத் திருத்தவும்';
+
+  @override
+  String get mealPlannerDeleteMeal => 'உணவை அகற்றவும்';
+
+  @override
+  String get mealPlannerMealDeleted => 'உணவு நீக்கப்பட்டது';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count சேவைகள்',
+      one: '$count பரிமாறும்',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'பரிமாறல்கள்';
+
+  @override
+  String get mealPlannerNoteLabel => 'குறிப்பு (விரும்பினால்)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'ஒரு செய்முறையைத் தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get mealPlannerSearchRecipes => 'சமையல் குறிப்புகளைத் தேடு...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'சமையல் குறிப்புகள் எதுவும் இல்லை';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'முதலில் சமையல் தாவலில் சமையல் குறிப்புகளை உருவாக்கவும்';
+
+  @override
+  String get mealPlannerSave => 'திட்டத்தில் சேர்க்கவும்';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$total உணவுகளில் $count திட்டமிடப்பட்டுள்ளது';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'ஷாப்பிங் பட்டியலை உருவாக்கவும்';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'இந்த வாரம் திட்டமிட்ட உணவுகளில் இருந்து அனைத்து பொருட்களையும் உங்கள் ஷாப்பிங் பட்டியலில் சேர்க்கவா?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count மூலப்பொருள்(கள்) உங்கள் பட்டியலில் சேர்க்கப்பட்டது!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'சேர்க்க பொருட்கள் இல்லை. முதலில் சமையல் குறிப்புகளுடன் சில உணவுகளைத் திட்டமிடுங்கள்.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'முதலில் ஷாப்பிங் பட்டியலை உருவாக்கவும்.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'காலை உணவு';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'மதிய உணவு';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'இரவு உணவு';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'சிற்றுண்டி';
+
+  @override
+  String get mealPlannerDateLabel => 'தேதி';
+
+  @override
+  String get mealPlannerWeekEmpty => 'இந்த வாரம் எதுவும் திட்டமிடவில்லை';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'உங்கள் உணவைத் திட்டமிடத் தொடங்க எந்த நாளையும் தட்டவும்!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes நிமிடம்';
+  }
+
+  @override
+  String get inviteToList => 'பட்டியலுக்கு அழைக்கவும்';
+
+  @override
+  String get shareApp => 'பயன்பாட்டைப் பகிரவும்';
+
+  @override
+  String get shareAppDescription =>
+      'Lista Plus ஐப் பயன்படுத்த நண்பர்களை அழைக்கவும்';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'எனது ஷாப்பிங்கை ஒழுங்கமைக்க Lista Plusஐப் பயன்படுத்துகிறேன்! எனது இணைப்பு மூலம் பதிவிறக்குங்கள், நாங்கள் இருவரும் 7 நாட்கள் பிரீமியம் இலவசம்: $url';
+  }
+
+  @override
+  String get shareReferralSubject =>
+      'Lista Plus பிரீமியத்தை 7 நாட்கள் பெறுங்கள்!';
 }

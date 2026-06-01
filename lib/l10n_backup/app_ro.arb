@@ -1,0 +1,562 @@
+{
+  "@@locale": "ro",
+  "appTitle": "Listă de cumpărături",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Liste",
+  "pantry": "Cămară",
+  "@_Common": "description: Common actions",
+  "cancel": "Anulează",
+  "save": "Salvează",
+  "create": "Creează",
+  "add": "Adaugă",
+  "remove": "Elimină",
+  "delete": "Șterge",
+  "edit": "Editează",
+  "copy": "Copiază",
+  "retry": "Reîncearcă",
+  "regenerate": "Regenerează",
+  "copiedToClipboard": "Copiat în clipboard",
+  "confirm": "Confirmă",
+  "close": "Închide",
+  "import": "Importă",
+  "rename": "Redenumește",
+  "upgrade": "Fă upgrade",
+  "clear": "Curăță",
+  "error": "Eroare: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Eroare: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Eroare la procesarea achiziției. Încearcă din nou.",
+  "restoreError": "Eroare la restaurarea achizițiilor. Încearcă din nou.",
+  "loading": "Se încarcă...",
+  "fieldRequired": "Câmp obligatoriu",
+  "addedFeedback": "Adăugat!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} selectat} few{{count} selectate} other{{count} selectate}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Estimat",
+  "alreadyPurchased": "Deja achiziționat",
+  "clearList": "Curăță lista",
+  "clearPurchased": "Elimină cumpăratele",
+  "share": "Partajează",
+  "shareViaCode": "Partajează prin cod",
+  "importViaCode": "Importă prin cod",
+  "listAssistant": "Asistent listă",
+  "globalAssistant": "Asistent global",
+  "becomePremium": "Devino Premium",
+  "manageSubscription": "Gestionează abonamentul",
+  "completePurchase": "Finalizează achiziția",
+  "confirmClearList": "Elimin toate articolele?",
+  "shareListTitle": "Partajează lista",
+  "shareThisCode": "Partajează acest cod:",
+  "validForLimitedTime": "Valabil pentru timp limitat",
+  "importListTitle": "Importă lista",
+  "enterCodeHint": "Introdu codul",
+  "confirmArchiveTitle": "Finalizează achiziția",
+  "confirmArchiveContent": "Finalizez această achiziție și arhivez lista?",
+  "complete": "Finalizează",
+  "listArchived": "Lista arhivată cu succes!",
+  "listAdded": "{listName} adăugată!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Cumpără",
+  "unmark": "Elimină marcarea",
+  "confirmDeleteItems": "Elimin {count} articol(oare)?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Confirmă",
+  "confirmContent": "Elimin {count} articol(oare)?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Arhivează lista",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Cămară",
+  "generateShoppingList": "Generează lista de cumpărături",
+  "pantryEmpty": "Cămara goală",
+  "pantryEmptySubtitle": "Adaugă produse pe care vrei să le ai acasă",
+  "itemsNeedPurchase": "{deficit} articol(oare) trebuie cumpărat(e)",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Niciun articol de cumpărat",
+  "newPantryList": "Cumpărături din cămară",
+  "newListTitle": "Listă nouă de cumpărături",
+  "itemsWillBeAdded": "{count} articol(oare) vor fi adăugate",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Numele listei",
+  "listCreated": "Lista \"{name}\" creată cu {count} articole",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Fără urmărire",
+  "markAsPurchased": "Marchează ca achiziționat",
+  "editPantryItem": "Editează {name}",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Cantitate ideală",
+  "currentQuantity": "Cantitate curentă",
+  "consumed": "Consumat",
+  "restocked": "{name} reaprovizionat la {quantity} {unit}",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "Elimin \"{name}\" din cămară?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "Editează {name}",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Setări",
+  "language": "Limbă",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "Implicit sistem",
+  "appearance": "Aspect",
+  "light": "Luminos",
+  "system": "Sistem",
+  "dark": "Întunecat",
+  "themeColor": "Culoare temă",
+  "finance": "Finanțe",
+  "monthlyBudgetNav": "Buget lunar",
+  "budgetSubtitle": "Urmărește-ți cheltuielile lunare",
+  "data": "Date",
+  "backupNav": "Backup",
+  "backupSubtitle": "Exportă sau importă datele tale",
+  "about": "Despre",
+  "version": "Versiune",
+  "privacy": "Confidențialitate",
+  "termsOfUse": "Termeni de utilizare",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Backup",
+  "backupPremiumDescription": "Backup-ul și exportul sunt o funcție premium",
+  "exportData": "Exportă datele",
+  "exportDataSubtitle": "Salvează toate listele ca JSON",
+  "importData": "Importă datele",
+  "importDataSubtitle": "Restaurează liste dintr-un JSON",
+  "importJsonTitle": "Importă JSON",
+  "importJsonHint": "Lipește JSON-ul de backup aici...",
+  "backupExported": "Backup exportat!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Buget lunar",
+  "budgetPremiumLocked": "Bugetul lunar global este premium",
+  "budgetUpgradePrompt": "Fă upgrade pentru a debloca",
+  "noBudgetDefined": "Niciun buget stabilit",
+  "totalEstimated": "Total estimat: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Setează buget",
+  "budgetLists": "Liste",
+  "budgetValueLabel": "Sumă",
+  "setBudgetTitle": "Buget lunar",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Toate",
+  "filterPending": "În așteptare",
+  "filterPurchased": "Achiziționate",
+  "sortName": "Nume",
+  "sortCategory": "Categorie",
+  "sortDate": "Data",
+  "sortManual": "Manual",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Adaugă articol",
+  "itemName": "Nume articol",
+  "quantityShort": "Cant.",
+  "unit": "Unitate",
+  "category": "Categorie",
+  "estimatedPrice": "Preț estimat",
+  "addItemPrice": "Preț estimat",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Editează articol",
+  "quantityFull": "Cantitate",
+  "editItemPrice": "Preț estimat",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Adaugă în cămară",
+  "addToPantryPrompt": "Adaug \"{name}\" în cămara ta?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Da",
+  "productName": "Nume produs",
+  "idealQty": "Cant. ideală",
+  "currentQty": "Cant. curentă",
+  "trackStock": "Urmărește stocul",
+  "trackStockActive": "Apare în sugestiile de cumpărături",
+  "trackStockInactive": "Nu generează sugestii de cumpărături",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Creează listă",
+  "renameListDialog": "Redenumește lista",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Istoric liste",
+  "myLists": "Listele mele",
+  "viewActive": "Vezi active",
+  "viewHistory": "Vezi istoric",
+  "noArchivedLists": "Nicio listă arhivată",
+  "noActiveLists": "Nicio listă activă",
+  "completedOn": "Finalizată pe {date}",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Partajată",
+  "restore": "Restaurează",
+  "removeSharedTooltip": "Elimină",
+  "deleteListTitle": "Șterge lista",
+  "deleteListContent": "Ești sigur că vrei să ștergi \"{name}\"? Toate articolele vor fi eliminate.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Elimină lista partajată",
+  "removeSharedListContent": "Elimin \"{name}\" din listele tale? Lista originală nu va fi afectată.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Creează o listă nouă",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "Asistent AI",
+  "aiAssistantDescription": "Primește sugestii inteligente, rețete și sfaturi personalizate cu asistentul nostru AI.",
+  "generalAssistant": "Asistent general",
+  "clearHistory": "Curăță istoricul",
+  "clearHistoryConfirm": "Șterg toate mesajele din această sesiune?",
+  "chatHint": "Scrie mesajul tău...",
+  "chatError": "Eroare la încărcarea chatului: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Cum pot ajuta cu lista ta?",
+  "generalHelp": "Cum te pot ajuta cu cumpărăturile tale astăzi?",
+  "chatSubtitle": "Cere sugestii de articole, rețete sau sfaturi de economisire.",
+  "aiError": "Ne pare rău, a apărut o eroare la procesarea cererii tale. Verifică conexiunea sau încearcă din nou mai târziu.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Autentifică-te pentru\na debloca funcțiile premium",
+  "signInGoogle": "Conectează-te cu Google",
+  "signInApple": "Conectează-te cu Apple",
+  "continueAsGuest": "Continuă ca invitat",
+  "loginError": "Eroare de autentificare: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Fă upgrade pentru a debloca",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Articol eliminat",
+  "undo": "Anulează",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Lista ta este goală",
+  "emptyListSubtitle": "Adaugă articole pentru a începe",
+  "noListFoundTitle": "Nicio listă găsită",
+  "noListFoundSubtitle": "Creează prima ta listă pentru a începe",
+  "createFirstList": "Creează prima listă",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Buget listă",
+  "budgetAmountLabel": "Sumă buget",
+  "removeBudget": "Elimină",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Liste nelimitate",
+  "prefSharing": "Partajează liste",
+  "prefFullHistory": "Istoric complet",
+  "prefExportData": "Exportă date",
+  "prefCustomThemes": "Teme personalizate",
+  "prefMonthlyBudget": "Buget lunar global",
+  "prefAIAssistant": "Asistent AI personal",
+  "prefUnlimitedPantry": "Cămară nelimitată",
+  "prefInteractiveArtifacts": "Artefacte AI interactive",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Verde",
+  "themeBlue": "Albastru",
+  "themePurple": "Mov",
+  "themeRed": "Roșu",
+  "themeOrange": "Portocaliu",
+  "themePink": "Roz",
+  "themeIndigo": "Indigo",
+  "themeAmber": "Chihlimbar",
+  "themeTeal": "Teal",
+  "themeBrown": "Maro",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Fructe",
+  "catCleaning": "Curățenie",
+  "catBeverages": "Băuturi",
+  "catBakery": "Panificație",
+  "catOthers": "Altele",
+  "@_Unit": "description: Unit",
+  "unitPack": "pachet",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Listă de cumpărături",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Buget lunar",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Șterge lista",
+  "pantryItemRemoved": "Articol eliminat",
+  "deficitItems": "{deficit,plural, one{{deficit} articol trebuie cumpărat} few{{deficit} articole trebuie cumpărate} other{{deficit} de articole trebuie cumpărate}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Total coș",
+  "restockLabel": "Reaprovizionează",
+  "advancedFeatures": "Funcții avansate",
+  "selectAll": "Selectează tot",
+  "deselectAll": "Deselectează tot",
+  "monthlyBudgetAppBar": "Buget lunar",
+  "budgetEditTitle": "Buget lunar",
+  "budgetDashboardTitle": "Tablou de bord",
+  "selectListForDashboard": "Selectează o listă pentru a vedea tabloul de bord.",
+  "spendingAnalysis": "Analiză cheltuieli",
+  "noItemsToAnalyze": "Niciun articol în listă de analizat.",
+  "markItemsToSeeAnalysis": "Marchează articolele ca achiziționate pentru a vedea analiza.",
+  "totalSpending": "Total cheltuit",
+  "spendingByCategory": "Cheltuieli pe categorii",
+  "achievements": "Realizări",
+  "exportPdfExcel": "Exportă PDF/Excel",
+  "exportPdf": "Exportă ca PDF",
+  "exportExcel": "Exportă ca Excel",
+  "organizingAi": "SE ORGANIZEAZĂ CU AI...",
+  "yesLabel": "Da",
+  "noLabel": "Nu",
+  "shareListText": "Lista mea de cumpărături",
+  "emptyListAddItems": "Lista ta este goală! Adaugă articole mai întâi. ℹ️",
+  "listOrganizedMagic": "Listă organizată magic pe categorii! ✨",
+  "shoppingMode": "Mod cumpărături",
+  "smartOrganization": "Organizare inteligentă",
+  "savings": "Economii",
+  "shoppingModeHeader": "MOD CUMPĂRĂTURI",
+  "shareAsText": "Trimite articolele ca text formatat",
+  "shareRealtime": "Sincronizare în timp real cu alte persoane",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Rețetă rapidă",
+  "quickRecipePrompt": "Sugerează rețete cu articole din lista mea.",
+  "economyTips": "Sfaturi de economisire",
+  "economyTipsPrompt": "Cum pot economisi bani la această achiziție?",
+  "organizeAisles": "Organizează pe culoare",
+  "organizeAislesPrompt": "Organizează pe culoarele magazinului.",
+  "recipeSuggestion": "Sugestie de rețetă",
+  "aiCreditsRemaining": "{remaining} credite rămase",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Adaugă tot în listă",
+  "organizeByAisles": "Organizează pe culoare",
+  "voiceTranscriptionTooltip": "Tastare vocală (Gratuit)",
+  "aiVoiceCommandTooltip": "Comandă vocală AI (Premium)",
+  "voiceCommandTitle": "Comandă vocală AI",
+  "voiceCommandContent": "Vorbește natural pentru a-ți gestiona lista!\n\nExemple:\n• 'Adaugă pâine, brânză și șuncă'\n• 'Elimină detergentul de rufe'\n• 'Schimbă tema în albastru'\n\nAceasta este o funcție exclusivă a Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Vezi planuri",
+  "itemsAddedSuccess": "Articole adăugate cu succes în listă!",
+  "viewList": "Vezi lista",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Trimite feedback",
+  "feedbackPrompt": "Ce doriți să împărtășiți?",
+  "feedbackTypeBug": "Raportează o eroare",
+  "feedbackTypeBugHint": "Ceva nu funcționează",
+  "feedbackTypeSuggestion": "Sugestie",
+  "feedbackTypeSuggestionHint": "Idee pentru îmbunătățirea aplicației",
+  "feedbackTypeTranslation": "Problemă de traducere",
+  "feedbackTypeTranslationHint": "Traducere incorectă sau nefirească",
+  "feedbackTypeFeature": "Solicitare funcționalitate",
+  "feedbackTypeFeatureHint": "Funcționalitate pe care ați dori să o vedeți",
+  "feedbackTypeOther": "Altul",
+  "feedbackTypeOtherHint": "Alt tip de feedback",
+  "feedbackHint": "Descrieți feedback-ul în detaliu...",
+  "feedbackSend": "Trimite feedback",
+  "feedbackSending": "Se trimite...",
+  "feedbackThankYou": "Mulțumim!",
+  "feedbackThankYouMessage": "Feedback-ul dumneavoastră a fost primit și ne ajută să îmbunătățim Lista Plus pentru toată lumea.",
+  "feedbackBack": "Înapoi",
+  "feedbackError": "Eroare la trimitere: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Încearcă din nou",
+  "feedbackSettingsTitle": "Trimite feedback",
+  "feedbackSettingsSubtitle": "Raportează erori, sugerează îmbunătățiri sau corectează traduceri",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later."
+}

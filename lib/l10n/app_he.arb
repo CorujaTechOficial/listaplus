@@ -1,99 +1,47 @@
 {
   "@@locale": "he",
-  "appTitle": "רשימת קניות",
+  "@_Feedback": "description: Feedback Screen",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "רשימות",
-  "pantry": "מזווה",
-  "cancel": "ביטול",
-  "save": "שמירה",
-  "create": "יצירה",
-  "add": "הוספה",
-  "remove": "הסרה",
-  "delete": "מחיקה",
-  "edit": "עריכה",
-  "copy": "העתקה",
-  "retry": "ניסיון חוזר",
-  "regenerate": "יצירה מחדש",
-  "copiedToClipboard": "הועתק ללוח",
-  "confirm": "אישור",
-  "close": "סגירה",
-  "import": "ייבוא",
-  "rename": "שינוי שם",
-  "upgrade": "שדרוג",
-  "clear": "ניקוי",
-  "error": "שגיאה: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "שגיאה: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "שגיאה בעיבוד הרכישה. נסה שוב.",
-  "restoreError": "שגיאה בשחזור רכישות. נסה שוב.",
-  "loading": "טוען...",
-  "fieldRequired": "שדה חובה",
-  "addedFeedback": "נוסף!",
-  "selectedItems": "{count,plural, one{נבחר {count}} two{נבחרו {count}} many{נבחרו {count}} other{נבחרו {count}}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "מוערך",
-  "alreadyPurchased": "כבר נרכש",
-  "clearList": "נקה רשימה",
-  "clearPurchased": "נקה נרכשים",
-  "share": "שיתוף",
-  "shareViaCode": "שיתוף באמצעות קוד",
-  "importViaCode": "ייבוא באמצעות קוד",
-  "listAssistant": "עוזר רשימה",
-  "globalAssistant": "עוזר כללי",
-  "becomePremium": "היה Premium",
-  "manageSubscription": "ניהול מינוי",
-  "completePurchase": "השלם רכישה",
-  "confirmClearList": "להסיר את כל הפריטים?",
-  "shareListTitle": "שיתוף רשימה",
-  "shareThisCode": "שתף קוד זה:",
-  "validForLimitedTime": "תקף לזמן מוגבל",
-  "importListTitle": "ייבוא רשימה",
-  "enterCodeHint": "הכנס את הקוד",
-  "confirmArchiveTitle": "השלם רכישה",
-  "confirmArchiveContent": "להשלים רכישה זו ולארכב את הרשימה?",
-  "complete": "השלם",
-  "listArchived": "הרשימה אורכבה בהצלחה!",
-  "listAdded": "{listName} נוסף!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "קנה",
-  "unmark": "הסר סימון",
-  "confirmDeleteItems": "להסיר {count} פריט(ים)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "אישור",
-  "confirmContent": "להסיר {count} פריט(ים)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -101,12 +49,68 @@
       }
     }
   },
-  "archiveList": "ארכוב רשימה",
-  "pantryAppBar": "מזווה",
-  "generateShoppingList": "צור רשימת קניות",
-  "pantryEmpty": "מזווה ריק",
-  "pantryEmptySubtitle": "הוסף מוצרים שאתה רוצה להחזיק בבית",
-  "itemsNeedPurchase": "{deficit} פריט(ים) צריך/צריכים להירכש",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -114,10 +118,26 @@
       }
     }
   },
-  "noItemsToBuy": "אין פריטים שצריך לקנות",
-  "newPantryList": "קניית מזווה",
-  "newListTitle": "רשימת קניות חדשה",
-  "itemsWillBeAdded": "{count} פריט(ים) יתווספו",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -125,8 +145,13 @@
       }
     }
   },
-  "listNameLabel": "שם הרשימה",
-  "listCreated": "הרשימה \"{name}\" נוצרה עם {count} פריטים",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -137,20 +162,118 @@
       }
     }
   },
-  "noTracking": "ללא מעקב",
-  "markAsPurchased": "סמן כנרכש",
-  "editPantryItem": "ערוך {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "כמות אידיאלית",
-  "currentQuantity": "כמות נוכחית",
-  "consumed": "נצרך",
-  "restocked": "{name} חודש ל-{quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -164,56 +287,40 @@
       }
     }
   },
-  "confirmRemovePantry": "להסיר את \"{name}\" מהמזווה?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "ערוך {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "settingsAppBar": "הגדרות",
-  "language": "שפה",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "ברירת מחדל של המערכת",
-  "appearance": "מראה",
-  "light": "בהיר",
-  "system": "מערכת",
-  "dark": "כהה",
-  "themeColor": "צבע נושא",
-  "finance": "כספים",
-  "monthlyBudgetNav": "תקציב חודשי",
-  "budgetSubtitle": "עקוב אחר ההוצאות החודשיות שלך",
-  "data": "נתונים",
-  "backupNav": "גיבוי",
-  "backupSubtitle": "ייצא או ייבא את הנתונים שלך",
-  "about": "אודות",
-  "version": "גרסה",
-  "privacy": "פרטיות",
-  "termsOfUse": "תנאי שימוש",
-  "backupTitle": "גיבוי",
-  "backupPremiumDescription": "גיבוי וייצוא הם תכונת Premium",
-  "exportData": "ייצא נתונים",
-  "exportDataSubtitle": "שמור את כל הרשימות כ-JSON",
-  "importData": "ייבא נתונים",
-  "importDataSubtitle": "שחזר רשימות מ-JSON",
-  "importJsonTitle": "ייבא JSON",
-  "importJsonHint": "הדבק את JSON הגיבוי כאן...",
-  "backupExported": "הגיבוי יוצא!",
-  "budgetAppBar": "תקציב חודשי",
-  "budgetPremiumLocked": "תקציב חודשי גלובלי הוא Premium",
-  "budgetUpgradePrompt": "שדרג כדי לפתוח",
-  "noBudgetDefined": "לא הוגדר תקציב",
-  "totalEstimated": "סה\"כ מוערך: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -221,339 +328,218 @@
       }
     }
   },
-  "setBudgetButton": "הגדר תקציב",
-  "budgetLists": "רשימות",
-  "budgetValueLabel": "סכום",
-  "setBudgetTitle": "תקציב חודשי",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "filterAll": "הכל",
-  "filterPending": "ממתין",
-  "filterPurchased": "נרכש",
-  "sortName": "שם",
-  "sortCategory": "קטגוריה",
-  "sortDate": "תאריך",
-  "sortManual": "ידני",
+  "about": "אודות",
+  "achievements": "הישגים",
+  "activeListening": "הקשבה פעילה",
+  "add": "הוספה",
+  "addAllToList": "הוסף הכל לרשימה",
+  "addDirectToList": "הוסף ישירות לרשימה",
+  "addIngredient": "הוסף רכיב",
   "addItem": "הוסף פריט",
-  "itemName": "שם הפריט",
-  "quantityShort": "כמות",
-  "unit": "יחידה",
-  "category": "קטגוריה",
-  "estimatedPrice": "מחיר משוער",
   "addItemPrice": "מחיר משוער",
-  "editItem": "ערוך פריט",
-  "quantityFull": "כמות",
-  "editItemPrice": "מחיר משוער",
+  "addPhoto": "הוסף תמונה",
   "addToPantry": "הוסף למזווה",
   "addToPantryPrompt": "להוסיף את \"{name}\" למזווה שלך?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "כן",
-  "productName": "שם המוצר",
-  "idealQty": "כמות אידיאלית",
-  "currentQty": "כמות נוכחית",
-  "trackStock": "מעקב מלאי",
-  "trackStockActive": "מופיע בהצעות קנייה",
-  "trackStockInactive": "לא יוצר הצעת קנייה",
-  "createListDialog": "צור רשימה",
-  "renameListDialog": "שנה שם רשימה",
-  "listHistory": "היסטוריית רשימות",
-  "myLists": "הרשימות שלי",
-  "viewActive": "צפה בפעילות",
-  "viewHistory": "צפה בהיסטוריה",
-  "noArchivedLists": "אין רשימות בארכיון",
-  "noActiveLists": "אין רשימות פעילות",
-  "completedOn": "הושלם בתאריך {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "משותף",
-  "restore": "שחזר",
-  "removeSharedTooltip": "הסר",
-  "deleteListTitle": "מחק רשימה",
-  "deleteListContent": "האם אתה בטוח שברצונך למחוק את \"{name}\"? כל הפריטים יוסרו.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "הסר רשימה משותפת",
-  "removeSharedListContent": "להסיר את \"{name}\" מהרשימות שלך? הרשימה המקורית לא תושפע.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "צור רשימה חדשה",
+  "addedFeedback": "נוסף!",
+  "advancedFeatures": "תכונות מתקדמות",
   "aiAssistant": "עוזר AI",
   "aiAssistantDescription": "קבל הצעות חכמות, מתכונים וטיפים מותאמים אישית עם עוזר ה-AI שלנו.",
-  "generalAssistant": "עוזר כללי",
+  "aiCreditsRemaining": "נותרו {remaining} נקודות זכות",
+  "aiEnergy": "AI Energy",
+  "aiError": "מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.",
+  "aiVoiceCommandTooltip": "פקודה קולית AI (Premium)",
+  "allTags": "הכל",
+  "alreadyPurchased": "כבר נרכש",
+  "appTitle": "רשימת קניות",
+  "appearance": "מראה",
+  "archiveList": "ארכוב רשימה",
+  "backToChat": "חזרה לצ'אט",
+  "backupExported": "הגיבוי יוצא!",
+  "backupNav": "גיבוי",
+  "backupPremiumDescription": "גיבוי וייצוא הם תכונת Premium",
+  "backupSubtitle": "ייצא או ייבא את הנתונים שלך",
+  "backupTitle": "גיבוי",
+  "becomePremium": "היה Premium",
+  "budgetAmountLabel": "סכום התקציב",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "תקציב חודשי",
+  "budgetDashboardTitle": "לוח מחוונים",
+  "budgetEditTitle": "תקציב חודשי",
+  "budgetLists": "רשימות",
+  "budgetPremiumLocked": "תקציב חודשי גלובלי הוא Premium",
+  "budgetSubtitle": "עקוב אחר ההוצאות החודשיות שלך",
+  "budgetUpgradePrompt": "שדרג כדי לפתוח",
+  "budgetValueLabel": "סכום",
+  "buy": "קנה",
+  "cancel": "ביטול",
+  "cartTotal": "סה\"כ בעגלה",
+  "catBakery": "מאפייה",
+  "catBeverages": "משקאות",
+  "catCleaning": "ניקיון",
+  "catFruits": "פירות",
+  "catOthers": "אחר",
+  "category": "קטגוריה",
+  "chatError": "שגיאה בטעינת הצ'אט: {error}",
+  "chatHint": "הקלד את ההודעה שלך...",
+  "chatSubtitle": "בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.",
+  "chatSubtitleShort": "שאל על מחירים, מתכונים, ארגון...",
+  "chooseCurrency": "בחר מטבע",
+  "chooseImageSource": "בחר מקור תמונה",
+  "chooseLanguage": "בחר שפה",
+  "clear": "ניקוי",
   "clearHistory": "נקה היסטוריה",
   "clearHistoryConfirm": "למחוק את כל ההודעות בפגישה זו?",
-  "chatHint": "הקלד את ההודעה שלך...",
-  "chatError": "שגיאה בטעינת הצ'אט: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "איך אני יכול לעזור עם הרשימה שלך?",
-  "generalHelp": "איך אני יכול לעזור עם הקניות שלך היום?",
-  "chatSubtitle": "בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.",
-  "aiError": "מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "התחבר כדי לפתוח\nתכונות Premium",
-  "signInGoogle": "התחבר עם Google",
-  "signInApple": "התחבר עם Apple",
+  "clearList": "נקה רשימה",
+  "clearPurchased": "נקה נרכשים",
+  "close": "סגירה",
+  "complete": "השלם",
+  "completePurchase": "השלם רכישה",
+  "completedOn": "הושלם בתאריך {date}",
+  "confirm": "אישור",
+  "confirmArchiveContent": "להשלים רכישה זו ולארכב את הרשימה?",
+  "confirmArchiveTitle": "השלם רכישה",
+  "confirmClearList": "להסיר את כל הפריטים?",
+  "confirmContent": "להסיר {count} פריט(ים)?",
+  "confirmDeleteItems": "להסיר {count} פריט(ים)?",
+  "confirmDeleteTitle": "אישור",
+  "confirmRemovePantry": "להסיר את \"{name}\" מהמזווה?",
+  "consumed": "נצרך",
   "continueAsGuest": "המשך כאורח",
-  "loginError": "שגיאת התחברות: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallTitle": "Lista Plus Premium",
-  "premiumUpgrade": "שדרג כדי לפתוח",
-  "itemRemoved": "הפריט הוסר",
-  "undo": "בטל",
-  "emptyListTitle": "הרשימה שלך ריקה",
-  "emptyListSubtitle": "הוסף פריטים כדי להתחיל",
-  "noListFoundTitle": "לא נמצאו רשימות",
-  "noListFoundSubtitle": "צור את הרשימה הראשונה שלך כדי להתחיל",
+  "copiedToClipboard": "הועתק ללוח",
+  "copy": "העתקה",
+  "create": "יצירה",
   "createFirstList": "צור רשימה ראשונה",
-  "listBudgetTitle": "תקציב הרשימה",
-  "budgetAmountLabel": "סכום התקציב",
-  "removeBudget": "הסר",
-  "prefUnlimitedLists": "רשימות ללא הגבלה",
-  "prefSharing": "שתף רשימות",
-  "prefFullHistory": "היסטוריה מלאה",
-  "prefExportData": "ייצא נתונים",
-  "prefCustomThemes": "ערכות נושא מותאמות",
-  "prefMonthlyBudget": "תקציב חודשי גלובלי",
-  "prefAIAssistant": "עוזר AI אישי",
-  "prefUnlimitedPantry": "מזווה ללא הגבלה",
-  "prefInteractiveArtifacts": "ארטיפקטים אינטראקטיביים של AI",
-  "themeGreen": "ירוק",
-  "themeBlue": "כחול",
-  "themePurple": "סגול",
-  "themeRed": "אדום",
-  "themeOrange": "כתום",
-  "themePink": "ורוד",
-  "themeIndigo": "אינדיגו",
-  "themeAmber": "ענבר",
-  "themeTeal": "טיל",
-  "themeBrown": "חום",
-  "catFruits": "פירות",
-  "catCleaning": "ניקיון",
-  "catBeverages": "משקאות",
-  "catBakery": "מאפייה",
-  "catOthers": "אחר",
-  "unitPack": "חבילה",
-  "shareSubject": "רשימת קניות",
-  "monthlyBudgetTitle": "תקציב חודשי",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "מחק רשימה",
-  "pantryItemRemoved": "הפריט הוסר",
+  "createListDialog": "צור רשימה",
+  "createListToStartAi": "צור רשימת קניות כדי להתחיל להשתמש בצ'אט החכם.",
+  "createNewList": "צור רשימה חדשה",
+  "currency": "מַטְבֵּעַ",
+  "currentQty": "כמות נוכחית",
+  "currentQuantity": "כמות נוכחית",
+  "dark": "כהה",
+  "data": "נתונים",
   "deficitItems": "{deficit,plural, one{יש לרכוש {deficit} פריט} two{יש לרכוש {deficit} פריטים} many{יש לרכוש {deficit} פריטים} other{יש לרכוש {deficit} פריטים}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "סה\"כ בעגלה",
-  "restockLabel": "חידוש מלאי",
-  "advancedFeatures": "תכונות מתקדמות",
-  "selectAll": "בחר הכל",
+  "delete": "מחיקה",
+  "deleteListConfirm": "מחק רשימה",
+  "deleteListContent": "האם אתה בטוח שברצונך למחוק את \"{name}\"? כל הפריטים יוסרו.",
+  "deleteListTitle": "מחק רשימה",
+  "deleteRecipe": "מחיקה",
+  "deleteRecipeConfirm": "למחוק את המתכון הזה?",
+  "deleteRecipeConfirmMsg": "האם אתה בטוח שברצונך למחוק את \"{recipeName}\"? לא ניתן לבטל פעולה זו.",
+  "deleteSession": "מחק את הצ'אט",
+  "deleteSessionConfirm": "האם אתה בטוח שברצונך למחוק את הצ'אט הזה? ההודעות יאבדו לצמיתות.",
   "deselectAll": "בטל בחירה",
-  "monthlyBudgetAppBar": "תקציב חודשי",
-  "budgetEditTitle": "תקציב חודשי",
-  "budgetDashboardTitle": "לוח מחוונים",
-  "selectListForDashboard": "בחר רשימה כדי לראות את לוח המחוונים.",
-  "spendingAnalysis": "ניתוח הוצאות",
-  "noItemsToAnalyze": "אין פריטים ברשימה לניתוח.",
-  "markItemsToSeeAnalysis": "סמן פריטים כנרכשים כדי לראות את הניתוח.",
-  "totalSpending": "סה\"כ הוצאות",
-  "spendingByCategory": "הוצאות לפי קטגוריה",
-  "achievements": "הישגים",
-  "exportPdfExcel": "ייצא PDF/Excel",
-  "exportPdf": "ייצא כ-PDF",
-  "exportExcel": "ייצא כ-Excel",
-  "organizingAi": "מארגן עם AI...",
-  "yesLabel": "כן",
-  "noLabel": "לא",
-  "shareListText": "רשימת הקניות שלי",
-  "emptyListAddItems": "הרשימה שלך ריקה! הוסף פריטים תחילה. ℹ️",
-  "listOrganizedMagic": "הרשימה אורגנה בקסם לפי קטגוריות! ✨",
-  "shoppingMode": "מצב קניות",
-  "smartOrganization": "ארגון חכם",
-  "savings": "חיסכון",
-  "shoppingModeHeader": "מצב קניות",
-  "shareAsText": "שלח פריטים כטקסט מעוצב",
-  "shareRealtime": "סנכרון בזמן אמת עם אנשים אחרים",
-  "quickRecipe": "מתכון מהיר",
-  "quickRecipePrompt": "הצע מתכונים עם פריטים מהרשימה שלי.",
+  "dynamicColors": "צבעים דינמיים",
+  "dynamicColorsEnabledWarning": "השבת צבעים דינמיים כדי שצבע הנושא ייכנס לתוקף",
+  "dynamicColorsSubtitle": "השתמש בצבעים המבוססים על הטפט שלך",
   "economyTips": "טיפים לחיסכון",
   "economyTipsPrompt": "איך אני יכול לחסוך כסף ברכישה זו?",
-  "organizeAisles": "ארגן לפי מעברים",
-  "organizeAislesPrompt": "ארגן לפי מעברים בסופר.",
-  "recipeSuggestion": "הצעת מתכון",
-  "aiCreditsRemaining": "נותרו {remaining} נקודות זכות",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "הוסף הכל לרשימה",
-  "organizeByAisles": "ארגן לפי מעברים",
-  "voiceTranscriptionTooltip": "הקלדה קולית (חינם)",
-  "aiVoiceCommandTooltip": "פקודה קולית AI (Premium)",
-  "voiceCommandTitle": "פקודה קולית AI",
-  "voiceCommandContent": "דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• 'הוסף לחם, גבינה ונקניק'\n• 'הסר אבקת כביסה'\n• 'שנה נושא לכחול'\n\nזוהי תכונה בלעדית של Lista Plus Premium.",
-  "voiceCommandPlanBtn": "צפה בתוכניות",
-  "itemsAddedSuccess": "הפריטים נוספו בהצלחה לרשימה!",
-  "viewList": "צפה ברשימה",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "שלח משוב",
+  "edit": "עריכה",
+  "editItem": "ערוך פריט",
+  "editItemPrice": "מחיר משוער",
+  "editPantryItem": "ערוך {name}",
+  "editRecipe": "עריכה",
+  "editRecipeTitle": "עריכת מתכון",
+  "emptyListAddItems": "הרשימה שלך ריקה! הוסף פריטים תחילה. ℹ️",
+  "emptyListSubtitle": "הוסף פריטים כדי להתחיל",
+  "emptyListTitle": "הרשימה שלך ריקה",
+  "enterCodeHint": "הכנס את הקוד",
+  "enterUrl": "הזן URL",
+  "error": "שגיאה: {message}",
+  "errorGeneric": "שגיאה: {message}",
+  "errorLoadingChat": "אופס! משהו השתבש בטעינת הצ'אט.",
+  "errorLoadingChatSubtitle": "בדוק את החיבור שלך או נסה שוב מאוחר יותר.",
+  "errorLoadingRecipes": "שגיאה בטעינת המתכונים",
+  "errorOscillation": "זה עלול להתרחש עקב תנודות רשת או חוסר זמינות זמנית. אנא נסה שוב.",
+  "estimated": "מוערך",
+  "estimatedCost": "מְשׁוֹעָר",
+  "estimatedPrice": "מחיר משוער",
+  "exportData": "ייצא נתונים",
+  "exportDataSubtitle": "שמור את כל הרשימות כ-JSON",
+  "exportExcel": "ייצא כ-Excel",
+  "exportPdf": "ייצא כ-PDF",
+  "exportPdfExcel": "ייצא PDF/Excel",
+  "feedbackBack": "חזור",
+  "feedbackError": "שגיאה בשליחה: {error}",
+  "feedbackHint": "תאר את המשוב שלך בפירוט...",
   "feedbackPrompt": "מה תרצה לשתף?",
+  "feedbackRetry": "נסה שוב",
+  "feedbackSend": "שלח משוב",
+  "feedbackSending": "שולח...",
+  "feedbackSettingsSubtitle": "דווח על באגים, הצע שיפורים או תקן תרגומים",
+  "feedbackSettingsTitle": "שלח משוב",
+  "feedbackThankYou": "תודה!",
+  "feedbackThankYouMessage": "המשוב שלך התקבל ועוזר לנו לשפר את Lista Plus עבור כולם.",
+  "feedbackTitle": "שלח משוב",
   "feedbackTypeBug": "דווח על באג",
   "feedbackTypeBugHint": "משהו לא עובד",
-  "feedbackTypeSuggestion": "הצעה",
-  "feedbackTypeSuggestionHint": "רעיון לשיפור האפליקציה",
-  "feedbackTypeTranslation": "בעיית תרגום",
-  "feedbackTypeTranslationHint": "תרגום לא נכון או לא טבעי",
   "feedbackTypeFeature": "בקשת תכונה",
   "feedbackTypeFeatureHint": "תכונה שהיית רוצה לראות",
   "feedbackTypeOther": "אחר",
   "feedbackTypeOtherHint": "סוג משוב אחר",
-  "feedbackHint": "תאר את המשוב שלך בפירוט...",
-  "feedbackSend": "שלח משוב",
-  "feedbackSending": "שולח...",
-  "feedbackThankYou": "תודה!",
-  "feedbackThankYouMessage": "המשוב שלך התקבל ועוזר לנו לשפר את Lista Plus עבור כולם.",
-  "feedbackBack": "חזור",
-  "feedbackError": "שגיאה בשליחה: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "נסה שוב",
-  "feedbackSettingsTitle": "שלח משוב",
-  "feedbackSettingsSubtitle": "דווח על באגים, הצע שיפורים או תקן תרגומים",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "הוסף רכיב",
-  "addPhoto": "הוסף תמונה",
-  "allTags": "הכל",
-  "chooseImageSource": "בחר מקור תמונה",
-  "chooseLanguage": "בחר שפה",
-  "deleteRecipe": "מחיקה",
-  "deleteRecipeConfirm": "למחוק את המתכון הזה?",
-  "deleteRecipeConfirmMsg": "האם אתה בטוח שברצונך למחוק את \"{recipeName}\"? לא ניתן לבטל פעולה זו.",
-  "dynamicColors": "צבעים דינמיים",
-  "dynamicColorsSubtitle": "השתמש בצבעים המבוססים על הטפט שלך",
-  "editRecipe": "עריכה",
-  "editRecipeTitle": "עריכת מתכון",
-  "enterUrl": "הזן URL",
-  "errorLoadingRecipes": "שגיאה בטעינת המתכונים",
+  "feedbackTypeSuggestion": "הצעה",
+  "feedbackTypeSuggestionHint": "רעיון לשיפור האפליקציה",
+  "feedbackTypeTranslation": "בעיית תרגום",
+  "feedbackTypeTranslationHint": "תרגום לא נכון או לא טבעי",
+  "fieldRequired": "שדה חובה",
+  "filterAll": "הכל",
   "filterByTag": "סינון לפי תגית",
+  "filterPending": "ממתין",
+  "filterPurchased": "נרכש",
+  "finance": "כספים",
+  "finishShopping": "סיים את הקניות",
   "gallery": "גלריה",
+  "generalAssistant": "עוזר כללי",
+  "generalHelp": "איך אני יכול לעזור עם הקניות שלך היום?",
+  "generateShoppingList": "צור רשימת קניות",
+  "globalAssistant": "עוזר כללי",
+  "howCanIHelp": "איך אני יכול לעזור?",
+  "idealQty": "כמות אידיאלית",
+  "idealQuantity": "כמות אידיאלית",
   "imageUrlPlaceholder": "או הדבק URL של תמונה",
+  "import": "ייבוא",
+  "importData": "ייבא נתונים",
+  "importDataSubtitle": "שחזר רשימות מ-JSON",
+  "importJsonHint": "הדבק את JSON הגיבוי כאן...",
+  "importJsonTitle": "ייבא JSON",
+  "importListTitle": "ייבוא רשימה",
+  "importViaCode": "ייבוא באמצעות קוד",
   "ingredients": "רכיבים",
   "instructions": "הוראות",
   "instructionsHint": "הקלד שלב אחד בכל שורה...",
+  "inviteToList": "הזמינו לרשימה",
+  "itemName": "שם הפריט",
+  "itemRemoved": "הפריט הוסר",
+  "itemsAddedSuccess": "הפריטים נוספו בהצלחה לרשימה!",
+  "itemsNeedPurchase": "{deficit} פריט(ים) צריך/צריכים להירכש",
+  "itemsPurchasedCount": "{purchased} מתוך {total} נרכש",
+  "itemsPurchasedShort": "{purchased}/{total} נרכש",
+  "itemsWillBeAdded": "{count} פריט(ים) יתווספו",
+  "language": "שפה",
+  "languageEnglish": "אַנגְלִית",
+  "languagePortuguese": "Português (ברזיל)",
+  "languageSystem": "ברירת מחדל של המערכת",
+  "light": "בהיר",
+  "listAdded": "{listName} נוסף!",
+  "listArchived": "הרשימה אורכבה בהצלחה!",
+  "listAssistant": "עוזר רשימה",
+  "listBudgetTitle": "תקציב הרשימה",
+  "listCreated": "הרשימה \"{name}\" נוצרה עם {count} פריטים",
+  "listHelp": "איך אני יכול לעזור עם הרשימה שלך?",
+  "listHistory": "היסטוריית רשימות",
+  "listNameLabel": "שם הרשימה",
+  "listOrganizedMagic": "הרשימה אורגנה בקסם לפי קטגוריות! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "הַקשָׁבָה...",
+  "lists": "רשימות",
+  "loading": "טוען...",
   "loadingRecipes": "טוען את המתכונים שלך...",
+  "loginError": "שגיאת התחברות: {error}",
+  "loginPrompt": "התחבר כדי לפתוח\nתכונות Premium",
+  "longHistoryWarning": "היסטוריה ארוכה: העוזר מתמקד בהודעות האחרונות לביצועים טובים יותר.",
+  "manageSubscription": "ניהול מינוי",
+  "markAsPurchased": "סמן כנרכש",
+  "markItemsToSeeAnalysis": "סמן פריטים כנרכשים כדי לראות את הניתוח.",
+  "marketMode": "מצב שוק",
   "mealPlannerAddMeal": "הוסף ארוחה",
   "mealPlannerDateLabel": "תאריך",
   "mealPlannerDeleteMeal": "הסר ארוחה",
@@ -587,28 +573,201 @@
   "mealPlannerWeekEmpty": "שום דבר לא מתוכנן לשבוע זה",
   "mealPlannerWeekEmptyHint": "לחץ על כל יום כדי להתחיל לתכנן את הארוחות שלך!",
   "mealPlannerWeekProgress": "{count} מתוך {total} ארוחות מתוכננות",
+  "monthlyBudgetAppBar": "תקציב חודשי",
+  "monthlyBudgetNav": "תקציב חודשי",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "תקציב חודשי",
+  "myLists": "הרשימות שלי",
   "myRecipes": "המתכונים שלי",
+  "newChat": "צ'אט חדש",
+  "newListTitle": "רשימת קניות חדשה",
+  "newPantryList": "קניית מזווה",
   "newRecipe": "מתכון חדש",
   "newRecipeTitle": "מתכון חדש",
+  "next": "הַבָּא",
+  "noActiveLists": "אין רשימות פעילות",
+  "noArchivedLists": "אין רשימות בארכיון",
+  "noBudgetDefined": "לא הוגדר תקציב",
+  "noHistory": "אין היסטוריית צ'אט",
+  "noItemsInList": "אין פריטים ברשימה",
+  "noItemsToAnalyze": "אין פריטים ברשימה לניתוח.",
+  "noItemsToBuy": "אין פריטים שצריך לקנות",
+  "noLabel": "לא",
+  "noListFoundSubtitle": "צור את הרשימה הראשונה שלך כדי להתחיל",
+  "noListFoundTitle": "לא נמצאו רשימות",
+  "noMessagesFound": "לא נמצאו הודעות",
   "noRecipesSaved": "אין מתכונים שמורים",
   "noRecipesSavedHint": "צור את המתכון המותאם הראשון שלך על ידי לחיצה על הכפתור למטה.",
+  "noTracking": "ללא מעקב",
+  "onboardingAnnualBadge": "התמורה הטובה ביותר",
+  "onboardingAnnualLabel": "שְׁנָתִי",
+  "onboardingCancelAnytime": "בטל בכל עת. אין התחייבות.",
+  "onboardingContinueAsGuest": "המשך כאורח",
+  "onboardingExit": "יְצִיאָה",
+  "onboardingLoginDesc": "הנתונים שלך מסונכרנים בכל המכשירים שלך",
+  "onboardingLoginTitle": "שמור הכל בענן",
+  "onboardingMonthlyLabel": "יַרחוֹן",
+  "onboardingPersonalizationCta": "לְהַמשִׁיך",
+  "onboardingPersonalizationDesc": "נשתמש בזה כדי להתאים אישית את ההצעות שלך ולהפוך את הקניות לחכמה יותר.",
+  "onboardingPersonalizationFoodHint": "לְמָשָׁל פיצה, סושי, לזניה...",
+  "onboardingPersonalizationFoodLabel": "מה המאכל האהוב עליך?",
+  "onboardingPersonalizationFoodRequired": "ספר לנו על האוכל האהוב עליך כדי להמשיך",
+  "onboardingPersonalizationSkip": "דלג לעת עתה",
+  "onboardingPersonalizationTitle": "בוא נכיר אותך",
+  "onboardingPremiumSubtitle": "הפק את המרב מרשימות הקניות שלך",
+  "onboardingPremiumTitle": "בטל את הנעילה של כל התכונות",
+  "onboardingRestore": "לְשַׁחְזֵר",
+  "onboardingRestoreDesc": "יש לך כבר מנוי? הקש כאן כדי לשחזר אותו.",
+  "onboardingSetupDesc": "בחר כיצד אתה רוצה ש-Lista Plus ייראה ויעבוד עבורך.",
+  "onboardingSetupTitle": "התאם אישית את החוויה שלך",
+  "onboardingShareDesc": "סנכרן רשימות עם משפחה וחברים בזמן אמת",
+  "onboardingShareTitle": "שתף עם אלה שאתה אוהב",
+  "onboardingSubscribeCta": "הירשם",
+  "onboardingViewAllPlans": "הצג את כל התוכניות",
+  "onboardingWelcomeDesc": "הדרך החכמה ביותר לארגן את הקניות ולחסוך כסף.",
+  "onboardingWelcomeTitle": "ברוכים הבאים ל- Lista Plus",
   "openMenu": "פתח תפריט",
+  "organizeAisles": "ארגן לפי מעברים",
+  "organizeAislesPrompt": "ארגן לפי מעברים בסופר.",
+  "organizeByAisles": "ארגן לפי מעברים",
+  "organizingAi": "מארגן עם AI...",
+  "pantry": "מזווה",
+  "pantryAppBar": "מזווה",
+  "pantryEditTitle": "ערוך {name}",
+  "pantryEmpty": "מזווה ריק",
+  "pantryEmptySubtitle": "הוסף מוצרים שאתה רוצה להחזיק בבית",
+  "pantryItemRemoved": "הפריט הוסר",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "עוזר AI אישי",
+  "prefCustomThemes": "ערכות נושא מותאמות",
+  "prefExportData": "ייצא נתונים",
+  "prefFullHistory": "היסטוריה מלאה",
+  "prefInteractiveArtifacts": "ארטיפקטים אינטראקטיביים של AI",
+  "prefMonthlyBudget": "תקציב חודשי גלובלי",
+  "prefSharing": "שתף רשימות",
+  "prefUnlimitedLists": "רשימות ללא הגבלה",
+  "prefUnlimitedPantry": "מזווה ללא הגבלה",
+  "premiumUpgrade": "שדרג כדי לפתוח",
   "prepTime": "זמן הכנה",
   "prepTimeMinutes": "זמן הכנה (דקות)",
+  "privacy": "פרטיות",
+  "productName": "שם המוצר",
+  "purchaseError": "שגיאה בעיבוד הרכישה. נסה שוב.",
+  "quantityFull": "כמות",
+  "quantityShort": "כמות",
+  "quickRecipe": "מתכון מהיר",
+  "quickRecipePrompt": "הצע מתכונים עם פריטים מהרשימה שלי.",
+  "quickReplies": "תשובות מהירות:",
   "recipeCreated": "המתכון נוצר!",
   "recipeDeleted": "המתכון נמחק",
   "recipeImage": "תמונת מתכון",
   "recipeName": "שם המתכון",
   "recipeSaved": "המתכון נשמר!",
+  "recipeSuggestion": "הצעת מתכון",
   "recipeTags": "תגיות מתכון",
+  "regenerate": "יצירה מחדש",
+  "remove": "הסרה",
+  "removeBudget": "הסר",
   "removeImage": "הסר תמונה",
+  "removeSharedListContent": "להסיר את \"{name}\" מהרשימות שלך? הרשימה המקורית לא תושפע.",
+  "removeSharedListTitle": "הסר רשימה משותפת",
+  "removeSharedTooltip": "הסר",
+  "rename": "שינוי שם",
+  "renameListDialog": "שנה שם רשימה",
   "requiredField": "חובה",
+  "restockLabel": "חידוש מלאי",
+  "restocked": "{name} חודש ל-{quantity} {unit}",
+  "restore": "שחזר",
+  "restoreError": "שגיאה בשחזור רכישות. נסה שוב.",
+  "retry": "ניסיון חוזר",
+  "save": "שמירה",
   "saveChanges": "שמור שינויים",
   "saveRecipe": "שמירה",
+  "savings": "חיסכון",
+  "searchCurrency": "חפש מטבע...",
+  "searchInConversation": "חפש בשיחה...",
   "searchLanguage": "חפש שפה...",
   "searchRecipes": "חפש מתכונים...",
+  "selectAll": "בחר הכל",
+  "selectListForDashboard": "בחר רשימה כדי לראות את לוח המחוונים.",
+  "selectedItems": "{count,plural, one{נבחר {count}} two{נבחרו {count}} many{נבחרו {count}} other{נבחרו {count}}}",
+  "setBudgetButton": "הגדר תקציב",
+  "setBudgetTitle": "תקציב חודשי",
+  "settingsAppBar": "הגדרות",
+  "settingsDefaultScreen": "מסך הבית המוגדר כברירת מחדל",
+  "settingsDefaultScreenSubtitle": "בחר בין רשימת קניות או צ'אט בינה מלאכותית",
+  "settingsScreenChat": "AI Chat",
+  "settingsScreenList": "רשימת קניות",
+  "share": "שיתוף",
+  "shareApp": "שתף אפליקציה",
+  "shareAppDescription": "הזמן חברים להשתמש ב- Lista Plus",
+  "shareAsText": "שלח פריטים כטקסט מעוצב",
+  "shareListText": "רשימת הקניות שלי",
+  "shareListTitle": "שיתוף רשימה",
+  "shareRealtime": "סנכרון בזמן אמת עם אנשים אחרים",
+  "shareReferralSubject": "קבלו 7 ימים של Lista Plus Premium!",
+  "shareReferralText": "אני משתמש ב- Lista Plus כדי לארגן את הקניות שלי! הורד דרך הקישור שלי ושנינו מקבלים 7 ימים של פרימיום בחינם: {url}",
+  "shareSubject": "רשימת קניות",
+  "shareThisCode": "שתף קוד זה:",
+  "shareViaCode": "שיתוף באמצעות קוד",
+  "sharedLabel": "משותף",
+  "shoppingAssistant": "עוזר קניות",
+  "shoppingMode": "מצב קניות",
+  "shoppingModeHeader": "מצב קניות",
   "shortDescription": "תיאור קצר",
+  "signInApple": "התחבר עם Apple",
+  "signInGoogle": "התחבר עם Google",
+  "smartOrganization": "ארגון חכם",
+  "sortCategory": "קטגוריה",
+  "sortDate": "תאריך",
+  "sortManual": "ידני",
+  "sortName": "שם",
+  "spendingAnalysis": "ניתוח הוצאות",
+  "spendingByCategory": "הוצאות לפי קטגוריה",
+  "suggestedQuestions": "שאלות מוצעות:",
   "suggestedTags": "מוצעות",
+  "switchList": "החלף רשימה",
+  "system": "מערכת",
   "tags": "תגיות",
-  "viewRecipe": "הצג מתכון"
+  "termsOfUse": "תנאי שימוש",
+  "themeAmber": "ענבר",
+  "themeBlue": "כחול",
+  "themeBrown": "חום",
+  "themeColor": "צבע נושא",
+  "themeGreen": "ירוק",
+  "themeIndigo": "אינדיגו",
+  "themeOrange": "כתום",
+  "themePink": "ורוד",
+  "themePurple": "סגול",
+  "themeRed": "אדום",
+  "themeTeal": "טיל",
+  "totalEstimated": "סה\"כ מוערך: {amount}",
+  "totalSpending": "סה\"כ הוצאות",
+  "trackStock": "מעקב מלאי",
+  "trackStockActive": "מופיע בהצעות קנייה",
+  "trackStockInactive": "לא יוצר הצעת קנייה",
+  "undo": "בטל",
+  "unit": "יחידה",
+  "unitPack": "חבילה",
+  "unlockFullResponse": "בטל נעילת תגובה מלאה",
+  "unmark": "הסר סימון",
+  "upgrade": "שדרוג",
+  "validForLimitedTime": "תקף לזמן מוגבל",
+  "version": "גרסה",
+  "viewActive": "צפה בפעילות",
+  "viewDetails": "הצג פרטים",
+  "viewHistory": "צפה בהיסטוריה",
+  "viewItems": "הצג פריטים",
+  "viewList": "צפה ברשימה",
+  "viewPro": "View Pro",
+  "viewRecipe": "הצג מתכון",
+  "voiceCommandContent": "דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• 'הוסף לחם, גבינה ונקניק'\n• 'הסר אבקת כביסה'\n• 'שנה נושא לכחול'\n\nזוהי תכונה בלעדית של Lista Plus Premium.",
+  "voiceCommandPlanBtn": "צפה בתוכניות",
+  "voiceCommandTitle": "פקודה קולית AI",
+  "voiceProFeature": "פקודות קוליות מתקדמות הן Pro. הפעלת הכתבה בסיסית...",
+  "voiceTranscriptionTooltip": "הקלדה קולית (חינם)",
+  "welcomeAiAssistant": "ברוכים הבאים ל-AI Assistant",
+  "whatToDoWithItem": "מה תרצה לעשות עם הפריט הזה?",
+  "yes": "כן",
+  "yesLabel": "כן"
 }

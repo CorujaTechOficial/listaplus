@@ -42,6 +42,9 @@ class AppLocalizationsIs extends AppLocalizations {
   String get copy => 'Afrita';
 
   @override
+  String get next => 'Næst';
+
+  @override
   String get retry => 'Reyna aftur';
 
   @override
@@ -279,10 +282,10 @@ class AppLocalizationsIs extends AppLocalizations {
   String get language => 'Tungumál';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brasilía)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ensku';
 
   @override
   String get languageSystem => 'Sjálfgefið kerfi';
@@ -294,13 +297,13 @@ class AppLocalizationsIs extends AppLocalizations {
   String get searchLanguage => 'Leita að tungumáli...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Gjaldmiðill';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Veldu Gjaldmiðill';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Leita að gjaldmiðli...';
 
   @override
   String get appearance => 'Útlit';
@@ -325,7 +328,7 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Slökktu á kraftmiklum litum til að þemaliturinn taki gildi';
 
   @override
   String get finance => 'Fjármál';
@@ -568,17 +571,17 @@ class AppLocalizationsIs extends AppLocalizations {
   String get generalAssistant => 'Almenn aðstoð';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Nýtt spjall';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Enginn spjallferill';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Eyða spjalli';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Ertu viss um að þú viljir eyða þessu spjalli? Skilaboðin munu glatast varanlega.';
 
   @override
   String get clearHistory => 'Hreinsa sögu';
@@ -625,93 +628,109 @@ class AppLocalizationsIs extends AppLocalizations {
   String get continueAsGuest => 'Halda áfram sem gestur';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Velkomin á Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Snjöllasta leiðin til að skipuleggja innkaupin og spara peninga.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Sérsníddu upplifun þína';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Veldu hvernig þú vilt að Lista Plus líti út og virki fyrir þig.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Vistaðu allt í skýinu';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Gögnin þín samstillt á öllum tækjunum þínum';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Deildu með þeim sem þú elskar';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Samstilltu lista við fjölskyldu og vini í rauntíma';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Opnaðu alla eiginleika';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Fáðu sem mest út úr innkaupalistanum þínum';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Best gildi';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Mánaðarlega';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Árlegt';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Skoða allar áætlanir';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Gerast áskrifandi';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Hætta við hvenær sem er. Engin skuldbinding.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Haltu áfram sem gestur';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Endurheimta';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Ertu nú þegar með áskrift? Pikkaðu hér til að endurheimta það.';
+
+  @override
+  String get onboardingExit => 'Hætta';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Við skulum kynnast þér';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Við munum nota þetta til að sérsníða tillögur þínar og gera innkaup betri.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Hver er uppáhaldsmaturinn þinn?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      't.d. Pizza, sushi, lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Halda áfram';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Slepptu í bili';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Segðu okkur uppáhaldsmatinn þinn til að halda áfram';
+
+  @override
+  String get settingsDefaultScreen => 'Sjálfgefinn heimaskjár';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Veldu á milli innkaupalista eða gervigreindarspjalls';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Innkaupalisti';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI spjall';
 
   @override
   String loginError(String error) {
@@ -1076,106 +1095,107 @@ class AppLocalizationsIs extends AppLocalizations {
       'Tilkynna villur, stinga upp á endurbótum eða laga þýðingar';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI orka';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Leita í samtali...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Engin skilaboð fundust';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Tillögur að spurningum:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Innkaupaaðstoðarmaður';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased af $total keypt';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Áætlað';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Skoða hluti';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Engir hlutir á listanum';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Löng saga: Aðstoðarmaðurinn einbeitir sér að nýjustu skilaboðunum fyrir betri frammistöðu.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Hlustar...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Bættu beint á listann';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Opnaðu fullt svar';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Skipta um lista';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Markaðsstilling';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Aftur í Spjall';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Ljúktu við að versla';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Velkomin í AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Búðu til innkaupalista til að byrja að nota snjallspjallið.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hvernig get ég hjálpað?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Spyrðu um verð, uppskriftir, skipulag...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total keypt';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Fljótleg svör:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Ítarlegar raddskipanir eru Pro. Virkjar grunnuppskrift...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Skoða Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Úps! Eitthvað fór úrskeiðis við að hlaða spjallinu.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Athugaðu tenginguna þína eða reyndu aftur síðar.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Þetta getur komið fram vegna netsveiflna eða tímabundins óaðgengis. Vinsamlegast reyndu aftur.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Virk hlustun';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Hvað myndir þú vilja gera við þennan hlut?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Skoða upplýsingar';
 
   @override
   String get openMenu => 'Opna valmynd';
@@ -1421,21 +1441,21 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Bjóða á lista';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Deildu appi';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Bjóddu vinum að nota Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Ég nota Lista Plus til að skipuleggja innkaupin mín! Sæktu í gegnum tengilinn minn og við fáum bæði 7 daga af Premium ókeypis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Fáðu 7 daga af Lista Plus Premium!';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -1474,6 +1494,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get copy => 'Afrita';
+
+  @override
+  String get next => 'Næst';
 
   @override
   String get retry => 'Reyna aftur';
@@ -1713,10 +1736,10 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get language => 'Tungumál';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brasilía)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ensku';
 
   @override
   String get languageSystem => 'Sjálfgefið kerfi';
@@ -1726,6 +1749,15 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get searchLanguage => 'Leita að tungumáli...';
+
+  @override
+  String get currency => 'Gjaldmiðill';
+
+  @override
+  String get chooseCurrency => 'Veldu Gjaldmiðill';
+
+  @override
+  String get searchCurrency => 'Leita að gjaldmiðli...';
 
   @override
   String get appearance => 'Útlit';
@@ -1747,6 +1779,10 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get dynamicColorsSubtitle => 'Nota liti byggða á veggfóðrinu þínu';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Slökktu á kraftmiklum litum til að þemaliturinn taki gildi';
 
   @override
   String get finance => 'Fjármál';
@@ -1989,6 +2025,19 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get generalAssistant => 'Almenn aðstoð';
 
   @override
+  String get newChat => 'Nýtt spjall';
+
+  @override
+  String get noHistory => 'Enginn spjallferill';
+
+  @override
+  String get deleteSession => 'Eyða spjalli';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Ertu viss um að þú viljir eyða þessu spjalli? Skilaboðin munu glatast varanlega.';
+
+  @override
   String get clearHistory => 'Hreinsa sögu';
 
   @override
@@ -2031,6 +2080,111 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get continueAsGuest => 'Halda áfram sem gestur';
+
+  @override
+  String get onboardingWelcomeTitle => 'Velkomin á Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Snjöllasta leiðin til að skipuleggja innkaupin og spara peninga.';
+
+  @override
+  String get onboardingSetupTitle => 'Sérsníddu upplifun þína';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Veldu hvernig þú vilt að Lista Plus líti út og virki fyrir þig.';
+
+  @override
+  String get onboardingLoginTitle => 'Vistaðu allt í skýinu';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Gögnin þín samstillt á öllum tækjunum þínum';
+
+  @override
+  String get onboardingShareTitle => 'Deildu með þeim sem þú elskar';
+
+  @override
+  String get onboardingShareDesc =>
+      'Samstilltu lista við fjölskyldu og vini í rauntíma';
+
+  @override
+  String get onboardingPremiumTitle => 'Opnaðu alla eiginleika';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Fáðu sem mest út úr innkaupalistanum þínum';
+
+  @override
+  String get onboardingAnnualBadge => 'Best gildi';
+
+  @override
+  String get onboardingMonthlyLabel => 'Mánaðarlega';
+
+  @override
+  String get onboardingAnnualLabel => 'Árlegt';
+
+  @override
+  String get onboardingViewAllPlans => 'Skoða allar áætlanir';
+
+  @override
+  String get onboardingSubscribeCta => 'Gerast áskrifandi';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Hætta við hvenær sem er. Engin skuldbinding.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Haltu áfram sem gestur';
+
+  @override
+  String get onboardingRestore => 'Endurheimta';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Ertu nú þegar með áskrift? Pikkaðu hér til að endurheimta það.';
+
+  @override
+  String get onboardingExit => 'Hætta';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Við skulum kynnast þér';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Við munum nota þetta til að sérsníða tillögur þínar og gera innkaup betri.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Hver er uppáhaldsmaturinn þinn?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      't.d. Pizza, sushi, lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Halda áfram';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Slepptu í bili';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Segðu okkur uppáhaldsmatinn þinn til að halda áfram';
+
+  @override
+  String get settingsDefaultScreen => 'Sjálfgefinn heimaskjár';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Veldu á milli innkaupalista eða gervigreindarspjalls';
+
+  @override
+  String get settingsScreenList => 'Innkaupalisti';
+
+  @override
+  String get settingsScreenChat => 'AI spjall';
 
   @override
   String loginError(String error) {
@@ -2395,106 +2549,107 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
       'Tilkynna villur, stinga upp á endurbótum eða laga þýðingar';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI orka';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Leita í samtali...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Engin skilaboð fundust';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Tillögur að spurningum:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Innkaupaaðstoðarmaður';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased af $total keypt';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Áætlað';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Skoða hluti';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Engir hlutir á listanum';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Löng saga: Aðstoðarmaðurinn einbeitir sér að nýjustu skilaboðunum fyrir betri frammistöðu.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Hlustar...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Bættu beint á listann';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Opnaðu fullt svar';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Skipta um lista';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Markaðsstilling';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Aftur í Spjall';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Ljúktu við að versla';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Velkomin í AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Búðu til innkaupalista til að byrja að nota snjallspjallið.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hvernig get ég hjálpað?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Spyrðu um verð, uppskriftir, skipulag...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total keypt';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Fljótleg svör:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Ítarlegar raddskipanir eru Pro. Virkjar grunnuppskrift...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Skoða Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Úps! Eitthvað fór úrskeiðis við að hlaða spjallinu.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Athugaðu tenginguna þína eða reyndu aftur síðar.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Þetta getur komið fram vegna netsveiflna eða tímabundins óaðgengis. Vinsamlegast reyndu aftur.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Virk hlustun';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Hvað myndir þú vilja gera við þennan hlut?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Skoða upplýsingar';
 
   @override
   String get openMenu => 'Opna valmynd';
@@ -2738,4 +2893,21 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String mealPlannerPrepTime(int minutes) {
     return '$minutes mín';
   }
+
+  @override
+  String get inviteToList => 'Bjóða á lista';
+
+  @override
+  String get shareApp => 'Deildu appi';
+
+  @override
+  String get shareAppDescription => 'Bjóddu vinum að nota Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Ég nota Lista Plus til að skipuleggja innkaupin mín! Sæktu í gegnum tengilinn minn og við fáum bæði 7 daga af Premium ókeypis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Fáðu 7 daga af Lista Plus Premium!';
 }

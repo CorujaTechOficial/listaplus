@@ -5,7 +5,7 @@ import '../../services/auth_service.dart';
 
 part 'auth_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 Stream<User?> auth(Ref ref) {
   final authService = ref.watch(authServiceProvider);
   return authService.authStateChanges;

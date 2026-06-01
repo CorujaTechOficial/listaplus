@@ -42,6 +42,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get copy => 'Копировать';
 
   @override
+  String get next => 'Следующий';
+
+  @override
   String get retry => 'Повторить';
 
   @override
@@ -282,28 +285,28 @@ class AppLocalizationsRu extends AppLocalizations {
   String get language => 'Язык';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Португальский (Бразилия)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Английский';
 
   @override
   String get languageSystem => 'Системный';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Выберите язык';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Язык поиска...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Валюта';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Выберите валюту';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Поиск валюты...';
 
   @override
   String get appearance => 'Внешний вид';
@@ -321,14 +324,14 @@ class AppLocalizationsRu extends AppLocalizations {
   String get themeColor => 'Цвет темы';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Динамические цвета';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Используйте цвета на основе ваших обоев';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Отключите динамические цвета, чтобы цвет темы вступил в силу.';
 
   @override
   String get finance => 'Финансы';
@@ -570,17 +573,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String get generalAssistant => 'Общий помощник';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Новый чат';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Нет истории чата';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Удалить чат';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Вы уверены, что хотите удалить этот чат? Сообщения будут безвозвратно потеряны.';
 
   @override
   String get clearHistory => 'Очистить историю';
@@ -626,93 +629,108 @@ class AppLocalizationsRu extends AppLocalizations {
   String get continueAsGuest => 'Продолжить как гость';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Добро пожаловать в Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Самый разумный способ организовать покупки и сэкономить деньги.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Персонализируйте свой опыт';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Выберите, как вы хотите, чтобы Lista Plus выглядела и работала для вас.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Сохраняйте все в облаке';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Ваши данные синхронизируются на всех ваших устройствах';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Поделитесь с теми, кого вы любите';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Синхронизируйте списки с семьей и друзьями в режиме реального времени';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Разблокируйте все функции';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Получите максимальную пользу от своих списков покупок';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Лучшее соотношение цены и качества';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Ежемесячно';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Ежегодный';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Посмотреть все планы';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Подписаться';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Отменить в любое время. Никаких обязательств.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Продолжить в качестве гостя';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Восстановить';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Уже есть подписка? Нажмите здесь, чтобы восстановить его.';
+
+  @override
+  String get onboardingExit => 'Выход';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Давай познакомимся';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Мы будем использовать это, чтобы персонализировать ваши предложения и сделать покупки более разумными.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Какая твоя любимая еда?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'например Пицца, Суши, Лазанья...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Продолжать';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Пропустить сейчас';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Расскажите нам о своей любимой еде, чтобы продолжить.';
+
+  @override
+  String get settingsDefaultScreen => 'Главный экран по умолчанию';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Выбирайте между списком покупок или чатом с искусственным интеллектом.';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Список покупок';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'AI-чат';
 
   @override
   String loginError(String error) {
@@ -720,7 +738,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'Листа Плюс Премиум';
 
   @override
   String get premiumUpgrade => 'Обновите, чтобы разблокировать';
@@ -1080,366 +1098,368 @@ class AppLocalizationsRu extends AppLocalizations {
       'Сообщайте об ошибках, предлагайте улучшения или исправляйте переводы';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'ИИ Энергия';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Искать в разговоре...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Сообщений не найдено';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Предлагаемые вопросы:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Помощник по покупкам';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased из $total куплено';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Оцененный';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Посмотреть элементы';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'В списке нет элементов';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Длинная история: помощник фокусируется на последних сообщениях для повышения производительности.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Слушаю...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Добавить прямо в список';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Разблокировать полный ответ';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Список переключателей';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Рыночный режим';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Вернуться в чат';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Завершить покупки';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Добро пожаловать в AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Создайте список покупок, чтобы начать использовать умный чат.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Как я могу помочь?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Спрашивайте о ценах, рецептах, организации...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total куплено';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Быстрые ответы:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Расширенные голосовые команды — Pro. Включение базовой диктовки...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Посмотреть Про';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Упс! Что-то пошло не так при загрузке чата.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Проверьте подключение или повторите попытку позже.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Это может произойти из-за колебаний сети или временной недоступности. Пожалуйста, попробуйте еще раз.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Активное слушание';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Что бы вы хотели сделать с этим предметом?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Посмотреть детали';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Открыть меню';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Посмотреть рецепт';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Рецепт создан!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Редактировать';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Удалить';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Удалить этот рецепт?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Вы уверены, что хотите удалить «$recipeName»? Это действие невозможно отменить.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ингредиенты';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Инструкции';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Время подготовки';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Рецепт сохранен!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Рецепты не сохранены';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Создайте свой первый индивидуальный рецепт, нажав кнопку ниже.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Мои рецепты';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Новый рецепт';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Загружаю ваши рецепты...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Ошибка загрузки рецептов.';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Добавить ингредиент';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Сохранять';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Название рецепта';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Краткое описание';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Время приготовления (минуты)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Введите один шаг в строке...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Добавить фото';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Или вставьте URL-адрес изображения';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Теги';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Теги рецептов';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Предложенный';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Поиск рецептов...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Фильтровать по тегу';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Все';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Рецепт удален.';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Сохранить изменения';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Редактировать рецепт';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Новый рецепт';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Необходимый';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Выберите источник изображения';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Галерея';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Введите URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Изображение рецепта';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Удалить изображение';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Планировщик еды';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Просмотр за месяц';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Еженедельный просмотр';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Питание не запланировано';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Нажмите день, чтобы добавить блюдо';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Загрузка плана питания...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Ошибка загрузки плана питания.';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Добавить еду';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Редактировать еду';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Удалить еду';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Еда удалена';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count порций',
+      one: '$count порций',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Порции';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Примечание (необязательно)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Выберите рецепт';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Поиск рецептов...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Рецептов не найдено';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Сначала создайте рецепты на вкладке «Рецепты».';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Добавить в план';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return 'Запланировано $count из $total приемов пищи';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Создать список покупок';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Добавить в список покупок все ингредиенты из запланированных на эту неделю блюд?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return 'В ваш список добавлено $count ингредиентов!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Никаких ингредиентов добавлять не нужно. Сначала спланируйте несколько блюд по рецептам.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList =>
+      'Сначала создайте список покупок.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Завтрак';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Обед';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Ужин';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Закуска';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Дата';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'На этой неделе ничего не запланировано';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Нажмите на любой день, чтобы начать планировать питание!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes мин.';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Пригласить в список';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Поделиться приложением';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Пригласите друзей использовать Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Я использую Lista Plus для организации покупок! Загрузите по моей ссылке, и мы оба получим 7 дней Premium бесплатно: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Получите 7 дней Lista Plus Premium!';
 }
 
 /// The translations for Russian, as used in Russian Federation (`ru_RU`).
@@ -1478,6 +1498,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get copy => 'Копировать';
+
+  @override
+  String get next => 'Следующий';
 
   @override
   String get retry => 'Повторить';
@@ -1720,13 +1743,28 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get language => 'Язык';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Португальский (Бразилия)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Английский';
 
   @override
   String get languageSystem => 'Системный';
+
+  @override
+  String get chooseLanguage => 'Выберите язык';
+
+  @override
+  String get searchLanguage => 'Язык поиска...';
+
+  @override
+  String get currency => 'Валюта';
+
+  @override
+  String get chooseCurrency => 'Выберите валюту';
+
+  @override
+  String get searchCurrency => 'Поиск валюты...';
 
   @override
   String get appearance => 'Внешний вид';
@@ -1742,6 +1780,16 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get themeColor => 'Цвет темы';
+
+  @override
+  String get dynamicColors => 'Динамические цвета';
+
+  @override
+  String get dynamicColorsSubtitle => 'Используйте цвета на основе ваших обоев';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Отключите динамические цвета, чтобы цвет темы вступил в силу.';
 
   @override
   String get finance => 'Финансы';
@@ -1983,6 +2031,19 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get generalAssistant => 'Общий помощник';
 
   @override
+  String get newChat => 'Новый чат';
+
+  @override
+  String get noHistory => 'Нет истории чата';
+
+  @override
+  String get deleteSession => 'Удалить чат';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Вы уверены, что хотите удалить этот чат? Сообщения будут безвозвратно потеряны.';
+
+  @override
   String get clearHistory => 'Очистить историю';
 
   @override
@@ -2026,12 +2087,116 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get continueAsGuest => 'Продолжить как гость';
 
   @override
+  String get onboardingWelcomeTitle => 'Добро пожаловать в Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Самый разумный способ организовать покупки и сэкономить деньги.';
+
+  @override
+  String get onboardingSetupTitle => 'Персонализируйте свой опыт';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Выберите, как вы хотите, чтобы Lista Plus выглядела и работала для вас.';
+
+  @override
+  String get onboardingLoginTitle => 'Сохраняйте все в облаке';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Ваши данные синхронизируются на всех ваших устройствах';
+
+  @override
+  String get onboardingShareTitle => 'Поделитесь с теми, кого вы любите';
+
+  @override
+  String get onboardingShareDesc =>
+      'Синхронизируйте списки с семьей и друзьями в режиме реального времени';
+
+  @override
+  String get onboardingPremiumTitle => 'Разблокируйте все функции';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Получите максимальную пользу от своих списков покупок';
+
+  @override
+  String get onboardingAnnualBadge => 'Лучшее соотношение цены и качества';
+
+  @override
+  String get onboardingMonthlyLabel => 'Ежемесячно';
+
+  @override
+  String get onboardingAnnualLabel => 'Ежегодный';
+
+  @override
+  String get onboardingViewAllPlans => 'Посмотреть все планы';
+
+  @override
+  String get onboardingSubscribeCta => 'Подписаться';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Отменить в любое время. Никаких обязательств.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Продолжить в качестве гостя';
+
+  @override
+  String get onboardingRestore => 'Восстановить';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Уже есть подписка? Нажмите здесь, чтобы восстановить его.';
+
+  @override
+  String get onboardingExit => 'Выход';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Давай познакомимся';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Мы будем использовать это, чтобы персонализировать ваши предложения и сделать покупки более разумными.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Какая твоя любимая еда?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'например Пицца, Суши, Лазанья...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Продолжать';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Пропустить сейчас';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Расскажите нам о своей любимой еде, чтобы продолжить.';
+
+  @override
+  String get settingsDefaultScreen => 'Главный экран по умолчанию';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Выбирайте между списком покупок или чатом с искусственным интеллектом.';
+
+  @override
+  String get settingsScreenList => 'Список покупок';
+
+  @override
+  String get settingsScreenChat => 'AI-чат';
+
+  @override
   String loginError(String error) {
     return 'Ошибка входа: $error';
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'Листа Плюс Премиум';
 
   @override
   String get premiumUpgrade => 'Обновите, чтобы разблокировать';
@@ -2391,104 +2556,366 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
       'Сообщайте об ошибках, предлагайте улучшения или исправляйте переводы';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'ИИ Энергия';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Искать в разговоре...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Сообщений не найдено';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Предлагаемые вопросы:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Помощник по покупкам';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased из $total куплено';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Оцененный';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Посмотреть элементы';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'В списке нет элементов';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Длинная история: помощник фокусируется на последних сообщениях для повышения производительности.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Слушаю...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Добавить прямо в список';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Разблокировать полный ответ';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Список переключателей';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Рыночный режим';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Вернуться в чат';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Завершить покупки';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Добро пожаловать в AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Создайте список покупок, чтобы начать использовать умный чат.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Как я могу помочь?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Спрашивайте о ценах, рецептах, организации...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total куплено';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Быстрые ответы:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Расширенные голосовые команды — Pro. Включение базовой диктовки...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Посмотреть Про';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Упс! Что-то пошло не так при загрузке чата.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Проверьте подключение или повторите попытку позже.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Это может произойти из-за колебаний сети или временной недоступности. Пожалуйста, попробуйте еще раз.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Активное слушание';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Что бы вы хотели сделать с этим предметом?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Посмотреть детали';
+
+  @override
+  String get openMenu => 'Открыть меню';
+
+  @override
+  String get viewRecipe => 'Посмотреть рецепт';
+
+  @override
+  String get recipeCreated => 'Рецепт создан!';
+
+  @override
+  String get editRecipe => 'Редактировать';
+
+  @override
+  String get deleteRecipe => 'Удалить';
+
+  @override
+  String get deleteRecipeConfirm => 'Удалить этот рецепт?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Вы уверены, что хотите удалить «$recipeName»? Это действие невозможно отменить.';
+  }
+
+  @override
+  String get ingredients => 'Ингредиенты';
+
+  @override
+  String get instructions => 'Инструкции';
+
+  @override
+  String get prepTime => 'Время подготовки';
+
+  @override
+  String get recipeSaved => 'Рецепт сохранен!';
+
+  @override
+  String get noRecipesSaved => 'Рецепты не сохранены';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Создайте свой первый индивидуальный рецепт, нажав кнопку ниже.';
+
+  @override
+  String get myRecipes => 'Мои рецепты';
+
+  @override
+  String get newRecipe => 'Новый рецепт';
+
+  @override
+  String get loadingRecipes => 'Загружаю ваши рецепты...';
+
+  @override
+  String get errorLoadingRecipes => 'Ошибка загрузки рецептов.';
+
+  @override
+  String get addIngredient => 'Добавить ингредиент';
+
+  @override
+  String get saveRecipe => 'Сохранять';
+
+  @override
+  String get recipeName => 'Название рецепта';
+
+  @override
+  String get shortDescription => 'Краткое описание';
+
+  @override
+  String get prepTimeMinutes => 'Время приготовления (минуты)';
+
+  @override
+  String get instructionsHint => 'Введите один шаг в строке...';
+
+  @override
+  String get addPhoto => 'Добавить фото';
+
+  @override
+  String get imageUrlPlaceholder => 'Или вставьте URL-адрес изображения';
+
+  @override
+  String get tags => 'Теги';
+
+  @override
+  String get recipeTags => 'Теги рецептов';
+
+  @override
+  String get suggestedTags => 'Предложенный';
+
+  @override
+  String get searchRecipes => 'Поиск рецептов...';
+
+  @override
+  String get filterByTag => 'Фильтровать по тегу';
+
+  @override
+  String get allTags => 'Все';
+
+  @override
+  String get recipeDeleted => 'Рецепт удален.';
+
+  @override
+  String get saveChanges => 'Сохранить изменения';
+
+  @override
+  String get editRecipeTitle => 'Редактировать рецепт';
+
+  @override
+  String get newRecipeTitle => 'Новый рецепт';
+
+  @override
+  String get requiredField => 'Необходимый';
+
+  @override
+  String get chooseImageSource => 'Выберите источник изображения';
+
+  @override
+  String get gallery => 'Галерея';
+
+  @override
+  String get enterUrl => 'Введите URL';
+
+  @override
+  String get recipeImage => 'Изображение рецепта';
+
+  @override
+  String get removeImage => 'Удалить изображение';
+
+  @override
+  String get mealPlannerTitle => 'Планировщик еды';
+
+  @override
+  String get mealPlannerViewMonthly => 'Просмотр за месяц';
+
+  @override
+  String get mealPlannerViewWeekly => 'Еженедельный просмотр';
+
+  @override
+  String get mealPlannerNoMeals => 'Питание не запланировано';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Нажмите день, чтобы добавить блюдо';
+
+  @override
+  String get mealPlannerLoading => 'Загрузка плана питания...';
+
+  @override
+  String get mealPlannerError => 'Ошибка загрузки плана питания.';
+
+  @override
+  String get mealPlannerAddMeal => 'Добавить еду';
+
+  @override
+  String get mealPlannerEditMeal => 'Редактировать еду';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Удалить еду';
+
+  @override
+  String get mealPlannerMealDeleted => 'Еда удалена';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count порций',
+      one: '$count порций',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Порции';
+
+  @override
+  String get mealPlannerNoteLabel => 'Примечание (необязательно)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Выберите рецепт';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Поиск рецептов...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Рецептов не найдено';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Сначала создайте рецепты на вкладке «Рецепты».';
+
+  @override
+  String get mealPlannerSave => 'Добавить в план';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Запланировано $count из $total приемов пищи';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Создать список покупок';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Добавить в список покупок все ингредиенты из запланированных на эту неделю блюд?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return 'В ваш список добавлено $count ингредиентов!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Никаких ингредиентов добавлять не нужно. Сначала спланируйте несколько блюд по рецептам.';
+
+  @override
+  String get mealPlannerGenerateListNoList =>
+      'Сначала создайте список покупок.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Завтрак';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Обед';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Ужин';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Закуска';
+
+  @override
+  String get mealPlannerDateLabel => 'Дата';
+
+  @override
+  String get mealPlannerWeekEmpty => 'На этой неделе ничего не запланировано';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Нажмите на любой день, чтобы начать планировать питание!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes мин.';
+  }
+
+  @override
+  String get inviteToList => 'Пригласить в список';
+
+  @override
+  String get shareApp => 'Поделиться приложением';
+
+  @override
+  String get shareAppDescription => 'Пригласите друзей использовать Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Я использую Lista Plus для организации покупок! Загрузите по моей ссылке, и мы оба получим 7 дней Premium бесплатно: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Получите 7 дней Lista Plus Premium!';
 }

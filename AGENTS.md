@@ -44,6 +44,28 @@ All locales have **genuine translations** (zero English placeholders). 6 English
 - `AppLocalizations.of(context)!` used throughout
 - Always preserve ICU plural syntax and `{placeholder}` variables in translations
 
+### Translation & Review Scripts
+
+To maintain 100% translation across all 86+ locales:
+
+- **`scripts/translate_missing.py`**: Automated bulk translation.
+    - Scans `app_en.arb` for all keys and compares with every other locale.
+    - Translates missing keys or keys still in English using Google Translate.
+    - **Protection**: Preserves brand names (Lista Plus, Google, etc.) and ICU placeholders (`{count}`).
+- **`scripts/review_translations.py`**: Quality assurance tool.
+    - **Placeholders**: Fails if a translation modified or removed a variable (CRITICAL).
+    - **Branding**: Warns if "Lista Plus" was translated.
+    - **UI Length**: Warns if a translation is >2.5x longer than English (prevents layout overflow).
+    - **English Fallback**: Detects long strings that weren't translated.
+- **`scripts/translate_single.py`**: Safe fallback if the bulk script times out.
+    - Usage: `python3 scripts/translate_single.py app_es.arb`
+
+**Workflow**:
+1. Add new keys to `app_en.arb`.
+2. Run `python3 scripts/translate_missing.py`.
+3. Run `python3 scripts/review_translations.py` to verify quality.
+4. Run `flutter gen-l10n`.
+
 ### 🔴 CRITICAL: Never hardcode display strings
 
 **Every** user-facing string MUST go through `AppLocalizations.of(context)!`.

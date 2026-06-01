@@ -1,101 +1,73 @@
 {
   "@@locale": "ru_RU",
-  "appTitle": "Список покупок",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Списки",
-  "pantry": "Кладовая",
-  "@_Common": "description: Common actions",
-  "cancel": "Отмена",
-  "save": "Сохранить",
-  "create": "Создать",
-  "add": "Добавить",
-  "remove": "Удалить",
-  "delete": "Удалить",
-  "edit": "Редактировать",
-  "copy": "Копировать",
-  "retry": "Повторить",
-  "regenerate": "Перегенерировать",
-  "copiedToClipboard": "Скопировано в буфер обмена",
-  "confirm": "Подтвердить",
-  "close": "Закрыть",
-  "import": "Импортировать",
-  "rename": "Переименовать",
-  "upgrade": "Обновить",
-  "clear": "Очистить",
-  "error": "Ошибка: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Ошибка: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Ошибка обработки покупки. Попробуйте снова.",
-  "restoreError": "Ошибка восстановления покупок. Попробуйте снова.",
-  "loading": "Загрузка...",
-  "fieldRequired": "Обязательное поле",
-  "addedFeedback": "Добавлено!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{Выбран {count}} few{Выбрано {count}} many{Выбрано {count}} other{Выбрано {count}}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Оценка",
-  "alreadyPurchased": "Уже куплено",
-  "clearList": "Очистить список",
-  "clearPurchased": "Убрать купленное",
-  "share": "Поделиться",
-  "shareViaCode": "Поделиться по коду",
-  "importViaCode": "Импортировать по коду",
-  "listAssistant": "Помощник списка",
-  "globalAssistant": "Глобальный помощник",
-  "becomePremium": "Стать Premium",
-  "manageSubscription": "Управление подпиской",
-  "completePurchase": "Завершить покупку",
-  "confirmClearList": "Удалить все товары?",
-  "shareListTitle": "Поделиться списком",
-  "shareThisCode": "Поделитесь этим кодом:",
-  "validForLimitedTime": "Действителен ограниченное время",
-  "importListTitle": "Импортировать список",
-  "enterCodeHint": "Введите код",
-  "confirmArchiveTitle": "Завершить покупку",
-  "confirmArchiveContent": "Завершить покупку и архивировать список?",
-  "complete": "Завершить",
-  "listArchived": "Список успешно архивирован!",
-  "listAdded": "{listName} добавлен!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Купить",
-  "unmark": "Снять отметку",
-  "confirmDeleteItems": "Удалить {count} товар(ы/ов)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Подтверждение",
-  "confirmContent": "Удалить {count} товар(ы/ов)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,75 @@
       }
     }
   },
-  "archiveList": "Архивировать список",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Кладовая",
-  "generateShoppingList": "Создать список покупок",
-  "pantryEmpty": "Пустая кладовая",
-  "pantryEmptySubtitle": "Добавьте продукты, которые хотите иметь дома",
-  "itemsNeedPurchase": "{deficit} товар(ы/ов) нужно купить",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteRecipeConfirmMsg": {
+    "placeholders": {
+      "recipeName": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +151,26 @@
       }
     }
   },
-  "noItemsToBuy": "Нет товаров для покупки",
-  "newPantryList": "Покупки из кладовой",
-  "newListTitle": "Новый список покупок",
-  "itemsWillBeAdded": "{count} товар(ы/ов) будет добавлено",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +178,13 @@
       }
     }
   },
-  "listNameLabel": "Название списка",
-  "listCreated": "Список \"{name}\" создан с {count} товарами",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +195,149 @@
       }
     }
   },
-  "noTracking": "Без отслеживания",
-  "markAsPurchased": "Отметить как купленное",
-  "editPantryItem": "Редактировать {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerWeekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Идеальное количество",
-  "currentQuantity": "Текущее количество",
-  "consumed": "Потреблено",
-  "restocked": "{name} пополнено до {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +351,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Удалить \"{name}\" из кладовой?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Редактировать {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Настройки",
-  "language": "Язык",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Системный",
-  "appearance": "Внешний вид",
-  "light": "Светлая",
-  "system": "Системная",
-  "dark": "Тёмная",
-  "themeColor": "Цвет темы",
-  "finance": "Финансы",
-  "monthlyBudgetNav": "Месячный бюджет",
-  "budgetSubtitle": "Отслеживайте свои ежемесячные расходы",
-  "data": "Данные",
-  "backupNav": "Резервное копирование",
-  "backupSubtitle": "Экспортируйте или импортируйте свои данные",
-  "about": "О приложении",
-  "version": "Версия",
-  "privacy": "Конфиденциальность",
-  "termsOfUse": "Условия использования",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Резервное копирование",
-  "backupPremiumDescription": "Резервное копирование и экспорт — это премиум-функция",
-  "exportData": "Экспортировать данные",
-  "exportDataSubtitle": "Сохранить все списки в JSON",
-  "importData": "Импортировать данные",
-  "importDataSubtitle": "Восстановить списки из JSON",
-  "importJsonTitle": "Импортировать JSON",
-  "importJsonHint": "Вставьте JSON резервной копии здесь...",
-  "backupExported": "Резервная копия экспортирована!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Месячный бюджет",
-  "budgetPremiumLocked": "Глобальный месячный бюджет — премиум",
-  "budgetUpgradePrompt": "Обновите, чтобы разблокировать",
-  "noBudgetDefined": "Бюджет не установлен",
-  "totalEstimated": "Всего оценено: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,336 +392,446 @@
       }
     }
   },
-  "setBudgetButton": "Установить бюджет",
-  "budgetLists": "Списки",
-  "budgetValueLabel": "Сумма",
-  "setBudgetTitle": "Месячный бюджет",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Все",
-  "filterPending": "Ожидающие",
-  "filterPurchased": "Купленные",
-  "sortName": "Название",
-  "sortCategory": "Категория",
-  "sortDate": "Дата",
-  "sortManual": "Вручную",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "О приложении",
+  "achievements": "Достижения",
+  "activeListening": "Активное слушание",
+  "add": "Добавить",
+  "addAllToList": "Добавить всё в список",
+  "addDirectToList": "Добавить прямо в список",
+  "addIngredient": "Добавить ингредиент",
   "addItem": "Добавить товар",
-  "itemName": "Название товара",
-  "quantityShort": "Кол-во",
-  "unit": "Единица",
-  "category": "Категория",
-  "estimatedPrice": "Оценочная цена",
   "addItemPrice": "Оценочная цена",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Редактировать товар",
-  "quantityFull": "Количество",
-  "editItemPrice": "Оценочная цена",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Добавить фото",
   "addToPantry": "Добавить в кладовую",
   "addToPantryPrompt": "Добавить \"{name}\" в вашу кладовую?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Да",
-  "productName": "Название продукта",
-  "idealQty": "Идеальное кол-во",
-  "currentQty": "Текущее кол-во",
-  "trackStock": "Отслеживать запас",
-  "trackStockActive": "Отображается в предложениях покупок",
-  "trackStockInactive": "Не создаёт предложения покупок",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Создать список",
-  "renameListDialog": "Переименовать список",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "История списков",
-  "myLists": "Мои списки",
-  "viewActive": "Активные",
-  "viewHistory": "История",
-  "noArchivedLists": "Нет архивированных списков",
-  "noActiveLists": "Нет активных списков",
-  "completedOn": "Завершён {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Общий",
-  "restore": "Восстановить",
-  "removeSharedTooltip": "Удалить",
-  "deleteListTitle": "Удалить список",
-  "deleteListContent": "Вы уверены, что хотите удалить \"{name}\"? Все товары будут удалены.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Удалить общий список",
-  "removeSharedListContent": "Удалить \"{name}\" из ваших списков? Исходный список не изменится.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Создать новый список",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Добавлено!",
+  "advancedFeatures": "Расширенные функции",
   "aiAssistant": "ИИ-помощник",
   "aiAssistantDescription": "Получайте умные предложения, рецепты и персонализированные советы с нашим ИИ-помощником.",
-  "generalAssistant": "Общий помощник",
+  "aiCreditsRemaining": "Осталось {remaining} кредитов",
+  "aiEnergy": "ИИ Энергия",
+  "aiError": "Извините, произошла ошибка при обработке вашего запроса. Проверьте соединение или попробуйте позже.",
+  "aiVoiceCommandTooltip": "Голосовая команда ИИ (Премиум)",
+  "allTags": "Все",
+  "alreadyPurchased": "Уже куплено",
+  "appTitle": "Список покупок",
+  "appearance": "Внешний вид",
+  "archiveList": "Архивировать список",
+  "backToChat": "Вернуться в чат",
+  "backupExported": "Резервная копия экспортирована!",
+  "backupNav": "Резервное копирование",
+  "backupPremiumDescription": "Резервное копирование и экспорт — это премиум-функция",
+  "backupSubtitle": "Экспортируйте или импортируйте свои данные",
+  "backupTitle": "Резервное копирование",
+  "becomePremium": "Стать Premium",
+  "budgetAmountLabel": "Сумма бюджета",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Месячный бюджет",
+  "budgetDashboardTitle": "Панель",
+  "budgetEditTitle": "Месячный бюджет",
+  "budgetLists": "Списки",
+  "budgetPremiumLocked": "Глобальный месячный бюджет — премиум",
+  "budgetSubtitle": "Отслеживайте свои ежемесячные расходы",
+  "budgetUpgradePrompt": "Обновите, чтобы разблокировать",
+  "budgetValueLabel": "Сумма",
+  "buy": "Купить",
+  "cancel": "Отмена",
+  "cartTotal": "Итого в корзине",
+  "catBakery": "Выпечка",
+  "catBeverages": "Напитки",
+  "catCleaning": "Уборка",
+  "catFruits": "Фрукты",
+  "catOthers": "Другое",
+  "category": "Категория",
+  "chatError": "Ошибка загрузки чата: {error}",
+  "chatHint": "Введите ваше сообщение...",
+  "chatSubtitle": "Спросите о предложениях товаров, рецептах или советах по экономии.",
+  "chatSubtitleShort": "Спрашивайте о ценах, рецептах, организации...",
+  "chooseCurrency": "Выберите валюту",
+  "chooseImageSource": "Выберите источник изображения",
+  "chooseLanguage": "Выберите язык",
+  "clear": "Очистить",
   "clearHistory": "Очистить историю",
   "clearHistoryConfirm": "Удалить все сообщения в этом сеансе?",
-  "chatHint": "Введите ваше сообщение...",
-  "chatError": "Ошибка загрузки чата: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Чем помочь с вашим списком?",
-  "generalHelp": "Чем помочь с покупками сегодня?",
-  "chatSubtitle": "Спросите о предложениях товаров, рецептах или советах по экономии.",
-  "aiError": "Извините, произошла ошибка при обработке вашего запроса. Проверьте соединение или попробуйте позже.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Войдите, чтобы\nразблокировать премиум-функции",
-  "signInGoogle": "Войти через Google",
-  "signInApple": "Войти через Apple",
+  "clearList": "Очистить список",
+  "clearPurchased": "Убрать купленное",
+  "close": "Закрыть",
+  "complete": "Завершить",
+  "completePurchase": "Завершить покупку",
+  "completedOn": "Завершён {date}",
+  "confirm": "Подтвердить",
+  "confirmArchiveContent": "Завершить покупку и архивировать список?",
+  "confirmArchiveTitle": "Завершить покупку",
+  "confirmClearList": "Удалить все товары?",
+  "confirmContent": "Удалить {count} товар(ы/ов)?",
+  "confirmDeleteItems": "Удалить {count} товар(ы/ов)?",
+  "confirmDeleteTitle": "Подтверждение",
+  "confirmRemovePantry": "Удалить \"{name}\" из кладовой?",
+  "consumed": "Потреблено",
   "continueAsGuest": "Продолжить как гость",
-  "loginError": "Ошибка входа: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Обновите, чтобы разблокировать",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Товар удалён",
-  "undo": "Отменить",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "Ваш список пуст",
-  "emptyListSubtitle": "Добавьте товары, чтобы начать",
-  "noListFoundTitle": "Списки не найдены",
-  "noListFoundSubtitle": "Создайте свой первый список, чтобы начать",
+  "copiedToClipboard": "Скопировано в буфер обмена",
+  "copy": "Копировать",
+  "create": "Создать",
   "createFirstList": "Создать первый список",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Бюджет списка",
-  "budgetAmountLabel": "Сумма бюджета",
-  "removeBudget": "Удалить",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Неограниченные списки",
-  "prefSharing": "Делиться списками",
-  "prefFullHistory": "Полная история",
-  "prefExportData": "Экспорт данных",
-  "prefCustomThemes": "Свои темы",
-  "prefMonthlyBudget": "Глобальный месячный бюджет",
-  "prefAIAssistant": "Личный ИИ-помощник",
-  "prefUnlimitedPantry": "Неограниченная кладовая",
-  "prefInteractiveArtifacts": "Интерактивные ИИ-артефакты",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Зелёный",
-  "themeBlue": "Синий",
-  "themePurple": "Фиолетовый",
-  "themeRed": "Красный",
-  "themeOrange": "Оранжевый",
-  "themePink": "Розовый",
-  "themeIndigo": "Индиго",
-  "themeAmber": "Янтарный",
-  "themeTeal": "Бирюзовый",
-  "themeBrown": "Коричневый",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Фрукты",
-  "catCleaning": "Уборка",
-  "catBeverages": "Напитки",
-  "catBakery": "Выпечка",
-  "catOthers": "Другое",
-  "@_Unit": "description: Unit",
-  "unitPack": "упаковка",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Список покупок",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Месячный бюджет",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Удалить список",
-  "pantryItemRemoved": "Товар удалён",
+  "createListDialog": "Создать список",
+  "createListToStartAi": "Создайте список покупок, чтобы начать использовать умный чат.",
+  "createNewList": "Создать новый список",
+  "currency": "Валюта",
+  "currentQty": "Текущее кол-во",
+  "currentQuantity": "Текущее количество",
+  "dark": "Тёмная",
+  "data": "Данные",
   "deficitItems": "{deficit,plural, one{{deficit} товар нужно купить} few{{deficit} товара нужно купить} many{{deficit} товаров нужно купить} other{{deficit} товара нужно купить}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Итого в корзине",
-  "restockLabel": "Пополнить",
-  "advancedFeatures": "Расширенные функции",
-  "selectAll": "Выбрать всё",
+  "delete": "Удалить",
+  "deleteListConfirm": "Удалить список",
+  "deleteListContent": "Вы уверены, что хотите удалить \"{name}\"? Все товары будут удалены.",
+  "deleteListTitle": "Удалить список",
+  "deleteRecipe": "Удалить",
+  "deleteRecipeConfirm": "Удалить этот рецепт?",
+  "deleteRecipeConfirmMsg": "Вы уверены, что хотите удалить «{recipeName}»? Это действие невозможно отменить.",
+  "deleteSession": "Удалить чат",
+  "deleteSessionConfirm": "Вы уверены, что хотите удалить этот чат? Сообщения будут безвозвратно потеряны.",
   "deselectAll": "Снять выделение",
-  "monthlyBudgetAppBar": "Месячный бюджет",
-  "budgetEditTitle": "Месячный бюджет",
-  "budgetDashboardTitle": "Панель",
-  "selectListForDashboard": "Выберите список для просмотра панели.",
-  "spendingAnalysis": "Анализ расходов",
-  "noItemsToAnalyze": "В списке нет товаров для анализа.",
-  "markItemsToSeeAnalysis": "Отметьте товары как купленные, чтобы увидеть анализ.",
-  "totalSpending": "Всего потрачено",
-  "spendingByCategory": "Расходы по категориям",
-  "achievements": "Достижения",
-  "exportPdfExcel": "Экспорт PDF/Excel",
-  "exportPdf": "Экспорт в PDF",
-  "exportExcel": "Экспорт в Excel",
-  "organizingAi": "ОРГАНИЗАЦИЯ С ПОМОЩЬЮ ИИ...",
-  "yesLabel": "Да",
-  "noLabel": "Нет",
-  "shareListText": "Мой список покупок",
-  "emptyListAddItems": "Ваш список пуст! Сначала добавьте товары. ℹ️",
-  "listOrganizedMagic": "Список волшебным образом организован по категориям! ✨",
-  "shoppingMode": "Режим покупок",
-  "smartOrganization": "Умная организация",
-  "savings": "Экономия",
-  "shoppingModeHeader": "РЕЖИМ ПОКУПОК",
-  "shareAsText": "Отправить товары как форматированный текст",
-  "shareRealtime": "Синхронизация в реальном времени с другими",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Быстрый рецепт",
-  "quickRecipePrompt": "Предложи рецепты с товарами из моего списка.",
+  "dynamicColors": "Динамические цвета",
+  "dynamicColorsEnabledWarning": "Отключите динамические цвета, чтобы цвет темы вступил в силу.",
+  "dynamicColorsSubtitle": "Используйте цвета на основе ваших обоев",
   "economyTips": "Советы по экономии",
   "economyTipsPrompt": "Как я могу сэкономить на этой покупке?",
-  "organizeAisles": "По отделам",
-  "organizeAislesPrompt": "Упорядочить по отделам магазина.",
-  "recipeSuggestion": "Предложение рецепта",
-  "aiCreditsRemaining": "Осталось {remaining} кредитов",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Добавить всё в список",
-  "organizeByAisles": "По отделам",
-  "voiceTranscriptionTooltip": "Голосовой ввод (Бесплатно)",
-  "aiVoiceCommandTooltip": "Голосовая команда ИИ (Премиум)",
-  "voiceCommandTitle": "Голосовая команда ИИ",
-  "voiceCommandContent": "Говорите естественно, чтобы управлять списком!\n\nПримеры:\n• 'Добавь хлеб, сыр и ветчину'\n• 'Удали стиральный порошок'\n• 'Смени тему на синюю'\n\nЭто эксклюзивная функция Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Посмотреть планы",
-  "itemsAddedSuccess": "Товары успешно добавлены в список!",
-  "viewList": "Посмотреть список",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Отправить отзыв",
+  "edit": "Редактировать",
+  "editItem": "Редактировать товар",
+  "editItemPrice": "Оценочная цена",
+  "editPantryItem": "Редактировать {name}",
+  "editRecipe": "Редактировать",
+  "editRecipeTitle": "Редактировать рецепт",
+  "emptyListAddItems": "Ваш список пуст! Сначала добавьте товары. ℹ️",
+  "emptyListSubtitle": "Добавьте товары, чтобы начать",
+  "emptyListTitle": "Ваш список пуст",
+  "enterCodeHint": "Введите код",
+  "enterUrl": "Введите URL",
+  "error": "Ошибка: {message}",
+  "errorGeneric": "Ошибка: {message}",
+  "errorLoadingChat": "Упс! Что-то пошло не так при загрузке чата.",
+  "errorLoadingChatSubtitle": "Проверьте подключение или повторите попытку позже.",
+  "errorLoadingRecipes": "Ошибка загрузки рецептов.",
+  "errorOscillation": "Это может произойти из-за колебаний сети или временной недоступности. Пожалуйста, попробуйте еще раз.",
+  "estimated": "Оценка",
+  "estimatedCost": "Оцененный",
+  "estimatedPrice": "Оценочная цена",
+  "exportData": "Экспортировать данные",
+  "exportDataSubtitle": "Сохранить все списки в JSON",
+  "exportExcel": "Экспорт в Excel",
+  "exportPdf": "Экспорт в PDF",
+  "exportPdfExcel": "Экспорт PDF/Excel",
+  "feedbackBack": "Назад",
+  "feedbackError": "Ошибка отправки: {error}",
+  "feedbackHint": "Опишите ваш отзыв подробно...",
   "feedbackPrompt": "Чем вы хотите поделиться?",
+  "feedbackRetry": "Повторить",
+  "feedbackSend": "Отправить отзыв",
+  "feedbackSending": "Отправка...",
+  "feedbackSettingsSubtitle": "Сообщайте об ошибках, предлагайте улучшения или исправляйте переводы",
+  "feedbackSettingsTitle": "Отправить отзыв",
+  "feedbackThankYou": "Спасибо!",
+  "feedbackThankYouMessage": "Ваш отзыв получен и помогает нам улучшать Lista Plus для всех.",
+  "feedbackTitle": "Отправить отзыв",
   "feedbackTypeBug": "Сообщить об ошибке",
   "feedbackTypeBugHint": "Что-то не работает",
-  "feedbackTypeSuggestion": "Предложение",
-  "feedbackTypeSuggestionHint": "Идея по улучшению приложения",
-  "feedbackTypeTranslation": "Проблема с переводом",
-  "feedbackTypeTranslationHint": "Некорректный или неудачный перевод",
   "feedbackTypeFeature": "Запрос функции",
   "feedbackTypeFeatureHint": "Функция, которую вы хотели бы видеть",
   "feedbackTypeOther": "Другое",
   "feedbackTypeOtherHint": "Другой тип отзыва",
-  "feedbackHint": "Опишите ваш отзыв подробно...",
-  "feedbackSend": "Отправить отзыв",
-  "feedbackSending": "Отправка...",
-  "feedbackThankYou": "Спасибо!",
-  "feedbackThankYouMessage": "Ваш отзыв получен и помогает нам улучшать Lista Plus для всех.",
-  "feedbackBack": "Назад",
-  "feedbackError": "Ошибка отправки: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Повторить",
-  "feedbackSettingsTitle": "Отправить отзыв",
-  "feedbackSettingsSubtitle": "Сообщайте об ошибках, предлагайте улучшения или исправляйте переводы",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later."
+  "feedbackTypeSuggestion": "Предложение",
+  "feedbackTypeSuggestionHint": "Идея по улучшению приложения",
+  "feedbackTypeTranslation": "Проблема с переводом",
+  "feedbackTypeTranslationHint": "Некорректный или неудачный перевод",
+  "fieldRequired": "Обязательное поле",
+  "filterAll": "Все",
+  "filterByTag": "Фильтровать по тегу",
+  "filterPending": "Ожидающие",
+  "filterPurchased": "Купленные",
+  "finance": "Финансы",
+  "finishShopping": "Завершить покупки",
+  "gallery": "Галерея",
+  "generalAssistant": "Общий помощник",
+  "generalHelp": "Чем помочь с покупками сегодня?",
+  "generateShoppingList": "Создать список покупок",
+  "globalAssistant": "Глобальный помощник",
+  "howCanIHelp": "Как я могу помочь?",
+  "idealQty": "Идеальное кол-во",
+  "idealQuantity": "Идеальное количество",
+  "imageUrlPlaceholder": "Или вставьте URL-адрес изображения",
+  "import": "Импортировать",
+  "importData": "Импортировать данные",
+  "importDataSubtitle": "Восстановить списки из JSON",
+  "importJsonHint": "Вставьте JSON резервной копии здесь...",
+  "importJsonTitle": "Импортировать JSON",
+  "importListTitle": "Импортировать список",
+  "importViaCode": "Импортировать по коду",
+  "ingredients": "Ингредиенты",
+  "instructions": "Инструкции",
+  "instructionsHint": "Введите один шаг в строке...",
+  "inviteToList": "Пригласить в список",
+  "itemName": "Название товара",
+  "itemRemoved": "Товар удалён",
+  "itemsAddedSuccess": "Товары успешно добавлены в список!",
+  "itemsNeedPurchase": "{deficit} товар(ы/ов) нужно купить",
+  "itemsPurchasedCount": "{purchased} из {total} куплено",
+  "itemsPurchasedShort": "{purchased}/{total} куплено",
+  "itemsWillBeAdded": "{count} товар(ы/ов) будет добавлено",
+  "language": "Язык",
+  "languageEnglish": "Английский",
+  "languagePortuguese": "Португальский (Бразилия)",
+  "languageSystem": "Системный",
+  "light": "Светлая",
+  "listAdded": "{listName} добавлен!",
+  "listArchived": "Список успешно архивирован!",
+  "listAssistant": "Помощник списка",
+  "listBudgetTitle": "Бюджет списка",
+  "listCreated": "Список \"{name}\" создан с {count} товарами",
+  "listHelp": "Чем помочь с вашим списком?",
+  "listHistory": "История списков",
+  "listNameLabel": "Название списка",
+  "listOrganizedMagic": "Список волшебным образом организован по категориям! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Слушаю...",
+  "lists": "Списки",
+  "loading": "Загрузка...",
+  "loadingRecipes": "Загружаю ваши рецепты...",
+  "loginError": "Ошибка входа: {error}",
+  "loginPrompt": "Войдите, чтобы\nразблокировать премиум-функции",
+  "longHistoryWarning": "Длинная история: помощник фокусируется на последних сообщениях для повышения производительности.",
+  "manageSubscription": "Управление подпиской",
+  "markAsPurchased": "Отметить как купленное",
+  "markItemsToSeeAnalysis": "Отметьте товары как купленные, чтобы увидеть анализ.",
+  "marketMode": "Рыночный режим",
+  "mealPlannerAddMeal": "Добавить еду",
+  "mealPlannerDateLabel": "Дата",
+  "mealPlannerDeleteMeal": "Удалить еду",
+  "mealPlannerEditMeal": "Редактировать еду",
+  "mealPlannerError": "Ошибка загрузки плана питания.",
+  "mealPlannerGenerateList": "Создать список покупок",
+  "mealPlannerGenerateListConfirm": "Добавить в список покупок все ингредиенты из запланированных на эту неделю блюд?",
+  "mealPlannerGenerateListEmpty": "Никаких ингредиентов добавлять не нужно. Сначала спланируйте несколько блюд по рецептам.",
+  "mealPlannerGenerateListNoList": "Сначала создайте список покупок.",
+  "mealPlannerGenerateListSuccess": "В ваш список добавлено {count} ингредиентов!",
+  "mealPlannerLoading": "Загрузка плана питания...",
+  "mealPlannerMealDeleted": "Еда удалена",
+  "mealPlannerMealTypeBreakfast": "Завтрак",
+  "mealPlannerMealTypeDinner": "Ужин",
+  "mealPlannerMealTypeLunch": "Обед",
+  "mealPlannerMealTypeSnack": "Закуска",
+  "mealPlannerNoMeals": "Питание не запланировано",
+  "mealPlannerNoMealsHint": "Нажмите день, чтобы добавить блюдо",
+  "mealPlannerNoRecipesFound": "Рецептов не найдено",
+  "mealPlannerNoRecipesHint": "Сначала создайте рецепты на вкладке «Рецепты».",
+  "mealPlannerNoteLabel": "Примечание (необязательно)",
+  "mealPlannerPrepTime": "{minutes} мин.",
+  "mealPlannerSave": "Добавить в план",
+  "mealPlannerSearchRecipes": "Поиск рецептов...",
+  "mealPlannerSelectRecipe": "Выберите рецепт",
+  "mealPlannerServings": "{count,plural, one{{count} порций} other{{count} порций}}",
+  "mealPlannerServingsLabel": "Порции",
+  "mealPlannerTitle": "Планировщик еды",
+  "mealPlannerViewMonthly": "Просмотр за месяц",
+  "mealPlannerViewWeekly": "Еженедельный просмотр",
+  "mealPlannerWeekEmpty": "На этой неделе ничего не запланировано",
+  "mealPlannerWeekEmptyHint": "Нажмите на любой день, чтобы начать планировать питание!",
+  "mealPlannerWeekProgress": "Запланировано {count} из {total} приемов пищи",
+  "monthlyBudgetAppBar": "Месячный бюджет",
+  "monthlyBudgetNav": "Месячный бюджет",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Месячный бюджет",
+  "myLists": "Мои списки",
+  "myRecipes": "Мои рецепты",
+  "newChat": "Новый чат",
+  "newListTitle": "Новый список покупок",
+  "newPantryList": "Покупки из кладовой",
+  "newRecipe": "Новый рецепт",
+  "newRecipeTitle": "Новый рецепт",
+  "next": "Следующий",
+  "noActiveLists": "Нет активных списков",
+  "noArchivedLists": "Нет архивированных списков",
+  "noBudgetDefined": "Бюджет не установлен",
+  "noHistory": "Нет истории чата",
+  "noItemsInList": "В списке нет элементов",
+  "noItemsToAnalyze": "В списке нет товаров для анализа.",
+  "noItemsToBuy": "Нет товаров для покупки",
+  "noLabel": "Нет",
+  "noListFoundSubtitle": "Создайте свой первый список, чтобы начать",
+  "noListFoundTitle": "Списки не найдены",
+  "noMessagesFound": "Сообщений не найдено",
+  "noRecipesSaved": "Рецепты не сохранены",
+  "noRecipesSavedHint": "Создайте свой первый индивидуальный рецепт, нажав кнопку ниже.",
+  "noTracking": "Без отслеживания",
+  "onboardingAnnualBadge": "Лучшее соотношение цены и качества",
+  "onboardingAnnualLabel": "Ежегодный",
+  "onboardingCancelAnytime": "Отменить в любое время. Никаких обязательств.",
+  "onboardingContinueAsGuest": "Продолжить в качестве гостя",
+  "onboardingExit": "Выход",
+  "onboardingLoginDesc": "Ваши данные синхронизируются на всех ваших устройствах",
+  "onboardingLoginTitle": "Сохраняйте все в облаке",
+  "onboardingMonthlyLabel": "Ежемесячно",
+  "onboardingPersonalizationCta": "Продолжать",
+  "onboardingPersonalizationDesc": "Мы будем использовать это, чтобы персонализировать ваши предложения и сделать покупки более разумными.",
+  "onboardingPersonalizationFoodHint": "например Пицца, Суши, Лазанья...",
+  "onboardingPersonalizationFoodLabel": "Какая твоя любимая еда?",
+  "onboardingPersonalizationFoodRequired": "Расскажите нам о своей любимой еде, чтобы продолжить.",
+  "onboardingPersonalizationSkip": "Пропустить сейчас",
+  "onboardingPersonalizationTitle": "Давай познакомимся",
+  "onboardingPremiumSubtitle": "Получите максимальную пользу от своих списков покупок",
+  "onboardingPremiumTitle": "Разблокируйте все функции",
+  "onboardingRestore": "Восстановить",
+  "onboardingRestoreDesc": "Уже есть подписка? Нажмите здесь, чтобы восстановить его.",
+  "onboardingSetupDesc": "Выберите, как вы хотите, чтобы Lista Plus выглядела и работала для вас.",
+  "onboardingSetupTitle": "Персонализируйте свой опыт",
+  "onboardingShareDesc": "Синхронизируйте списки с семьей и друзьями в режиме реального времени",
+  "onboardingShareTitle": "Поделитесь с теми, кого вы любите",
+  "onboardingSubscribeCta": "Подписаться",
+  "onboardingViewAllPlans": "Посмотреть все планы",
+  "onboardingWelcomeDesc": "Самый разумный способ организовать покупки и сэкономить деньги.",
+  "onboardingWelcomeTitle": "Добро пожаловать в Lista Plus",
+  "openMenu": "Открыть меню",
+  "organizeAisles": "По отделам",
+  "organizeAislesPrompt": "Упорядочить по отделам магазина.",
+  "organizeByAisles": "По отделам",
+  "organizingAi": "ОРГАНИЗАЦИЯ С ПОМОЩЬЮ ИИ...",
+  "pantry": "Кладовая",
+  "pantryAppBar": "Кладовая",
+  "pantryEditTitle": "Редактировать {name}",
+  "pantryEmpty": "Пустая кладовая",
+  "pantryEmptySubtitle": "Добавьте продукты, которые хотите иметь дома",
+  "pantryItemRemoved": "Товар удалён",
+  "paywallTitle": "Листа Плюс Премиум",
+  "prefAIAssistant": "Личный ИИ-помощник",
+  "prefCustomThemes": "Свои темы",
+  "prefExportData": "Экспорт данных",
+  "prefFullHistory": "Полная история",
+  "prefInteractiveArtifacts": "Интерактивные ИИ-артефакты",
+  "prefMonthlyBudget": "Глобальный месячный бюджет",
+  "prefSharing": "Делиться списками",
+  "prefUnlimitedLists": "Неограниченные списки",
+  "prefUnlimitedPantry": "Неограниченная кладовая",
+  "premiumUpgrade": "Обновите, чтобы разблокировать",
+  "prepTime": "Время подготовки",
+  "prepTimeMinutes": "Время приготовления (минуты)",
+  "privacy": "Конфиденциальность",
+  "productName": "Название продукта",
+  "purchaseError": "Ошибка обработки покупки. Попробуйте снова.",
+  "quantityFull": "Количество",
+  "quantityShort": "Кол-во",
+  "quickRecipe": "Быстрый рецепт",
+  "quickRecipePrompt": "Предложи рецепты с товарами из моего списка.",
+  "quickReplies": "Быстрые ответы:",
+  "recipeCreated": "Рецепт создан!",
+  "recipeDeleted": "Рецепт удален.",
+  "recipeImage": "Изображение рецепта",
+  "recipeName": "Название рецепта",
+  "recipeSaved": "Рецепт сохранен!",
+  "recipeSuggestion": "Предложение рецепта",
+  "recipeTags": "Теги рецептов",
+  "regenerate": "Перегенерировать",
+  "remove": "Удалить",
+  "removeBudget": "Удалить",
+  "removeImage": "Удалить изображение",
+  "removeSharedListContent": "Удалить \"{name}\" из ваших списков? Исходный список не изменится.",
+  "removeSharedListTitle": "Удалить общий список",
+  "removeSharedTooltip": "Удалить",
+  "rename": "Переименовать",
+  "renameListDialog": "Переименовать список",
+  "requiredField": "Необходимый",
+  "restockLabel": "Пополнить",
+  "restocked": "{name} пополнено до {quantity} {unit}",
+  "restore": "Восстановить",
+  "restoreError": "Ошибка восстановления покупок. Попробуйте снова.",
+  "retry": "Повторить",
+  "save": "Сохранить",
+  "saveChanges": "Сохранить изменения",
+  "saveRecipe": "Сохранять",
+  "savings": "Экономия",
+  "searchCurrency": "Поиск валюты...",
+  "searchInConversation": "Искать в разговоре...",
+  "searchLanguage": "Язык поиска...",
+  "searchRecipes": "Поиск рецептов...",
+  "selectAll": "Выбрать всё",
+  "selectListForDashboard": "Выберите список для просмотра панели.",
+  "selectedItems": "{count,plural, one{Выбран {count}} few{Выбрано {count}} many{Выбрано {count}} other{Выбрано {count}}}",
+  "setBudgetButton": "Установить бюджет",
+  "setBudgetTitle": "Месячный бюджет",
+  "settingsAppBar": "Настройки",
+  "settingsDefaultScreen": "Главный экран по умолчанию",
+  "settingsDefaultScreenSubtitle": "Выбирайте между списком покупок или чатом с искусственным интеллектом.",
+  "settingsScreenChat": "AI-чат",
+  "settingsScreenList": "Список покупок",
+  "share": "Поделиться",
+  "shareApp": "Поделиться приложением",
+  "shareAppDescription": "Пригласите друзей использовать Lista Plus",
+  "shareAsText": "Отправить товары как форматированный текст",
+  "shareListText": "Мой список покупок",
+  "shareListTitle": "Поделиться списком",
+  "shareRealtime": "Синхронизация в реальном времени с другими",
+  "shareReferralSubject": "Получите 7 дней Lista Plus Premium!",
+  "shareReferralText": "Я использую Lista Plus для организации покупок! Загрузите по моей ссылке, и мы оба получим 7 дней Premium бесплатно: {url}",
+  "shareSubject": "Список покупок",
+  "shareThisCode": "Поделитесь этим кодом:",
+  "shareViaCode": "Поделиться по коду",
+  "sharedLabel": "Общий",
+  "shoppingAssistant": "Помощник по покупкам",
+  "shoppingMode": "Режим покупок",
+  "shoppingModeHeader": "РЕЖИМ ПОКУПОК",
+  "shortDescription": "Краткое описание",
+  "signInApple": "Войти через Apple",
+  "signInGoogle": "Войти через Google",
+  "smartOrganization": "Умная организация",
+  "sortCategory": "Категория",
+  "sortDate": "Дата",
+  "sortManual": "Вручную",
+  "sortName": "Название",
+  "spendingAnalysis": "Анализ расходов",
+  "spendingByCategory": "Расходы по категориям",
+  "suggestedQuestions": "Предлагаемые вопросы:",
+  "suggestedTags": "Предложенный",
+  "switchList": "Список переключателей",
+  "system": "Системная",
+  "tags": "Теги",
+  "termsOfUse": "Условия использования",
+  "themeAmber": "Янтарный",
+  "themeBlue": "Синий",
+  "themeBrown": "Коричневый",
+  "themeColor": "Цвет темы",
+  "themeGreen": "Зелёный",
+  "themeIndigo": "Индиго",
+  "themeOrange": "Оранжевый",
+  "themePink": "Розовый",
+  "themePurple": "Фиолетовый",
+  "themeRed": "Красный",
+  "themeTeal": "Бирюзовый",
+  "totalEstimated": "Всего оценено: {amount}",
+  "totalSpending": "Всего потрачено",
+  "trackStock": "Отслеживать запас",
+  "trackStockActive": "Отображается в предложениях покупок",
+  "trackStockInactive": "Не создаёт предложения покупок",
+  "undo": "Отменить",
+  "unit": "Единица",
+  "unitPack": "упаковка",
+  "unlockFullResponse": "Разблокировать полный ответ",
+  "unmark": "Снять отметку",
+  "upgrade": "Обновить",
+  "validForLimitedTime": "Действителен ограниченное время",
+  "version": "Версия",
+  "viewActive": "Активные",
+  "viewDetails": "Посмотреть детали",
+  "viewHistory": "История",
+  "viewItems": "Посмотреть элементы",
+  "viewList": "Посмотреть список",
+  "viewPro": "Посмотреть Про",
+  "viewRecipe": "Посмотреть рецепт",
+  "voiceCommandContent": "Говорите естественно, чтобы управлять списком!\n\nПримеры:\n• 'Добавь хлеб, сыр и ветчину'\n• 'Удали стиральный порошок'\n• 'Смени тему на синюю'\n\nЭто эксклюзивная функция Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Посмотреть планы",
+  "voiceCommandTitle": "Голосовая команда ИИ",
+  "voiceProFeature": "Расширенные голосовые команды — Pro. Включение базовой диктовки...",
+  "voiceTranscriptionTooltip": "Голосовой ввод (Бесплатно)",
+  "welcomeAiAssistant": "Добро пожаловать в AI Assistant",
+  "whatToDoWithItem": "Что бы вы хотели сделать с этим предметом?",
+  "yes": "Да",
+  "yesLabel": "Да"
 }

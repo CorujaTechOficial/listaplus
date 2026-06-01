@@ -1,101 +1,73 @@
 {
   "@@locale": "gl",
-  "appTitle": "Lista da Compra",
+  "@_AddItem": "description: Add Item Dialog",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "@_Auth": "description: Auth Screen",
+  "@_Backup": "description: Backup Screen",
+  "@_Budget": "description: Budget Screen",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "@_Categories": "description: Category Labels",
+  "@_Chat": "description: Chat Screen",
+  "@_Common": "description: Common actions",
+  "@_CreateList": "description: Create List Dialog",
+  "@_EditItem": "description: Edit Item Dialog",
+  "@_EmptyState": "description: Empty States",
+  "@_Feedback": "description: Feedback Screen",
+  "@_Filter": "description: Filter Bar",
+  "@_Home": "description: Home Screen",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "@_Pantry": "description: Pantry Screen",
+  "@_Paywall": "description: Paywall Screen",
+  "@_Premium": "description: Premium gating",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "@_Settings": "description: Settings Screen",
+  "@_Share": "description: Sharing",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "@_Tile": "description: Shopping Item Tile",
+  "@_Unit": "description: Unit",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "@appTitle": {
     "description": "Main app title"
   },
-  "lists": "Listas",
-  "pantry": "Despensa",
-  "@_Common": "description: Common actions",
-  "cancel": "Cancelar",
-  "save": "Gardar",
-  "create": "Crear",
-  "add": "Engadir",
-  "remove": "Eliminar",
-  "delete": "Borrar",
-  "edit": "Editar",
-  "copy": "Copiar",
-  "retry": "Reintentar",
-  "regenerate": "Rexerar",
-  "copiedToClipboard": "Copiado ao portapapeis",
-  "confirm": "Confirmar",
-  "close": "Pechar",
-  "import": "Importar",
-  "rename": "Renomear",
-  "upgrade": "Mellorar",
-  "clear": "Limpar",
-  "error": "Erro: {message}",
-  "@error": {
+  "@budgetAmountSpent": {
     "placeholders": {
-      "message": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
         "type": "String"
       }
     }
   },
-  "errorGeneric": "Erro: {message}",
-  "@errorGeneric": {
+  "@chatError": {
     "placeholders": {
-      "message": {
+      "error": {
         "type": "String"
       }
     }
   },
-  "purchaseError": "Erro ao procesar a compra. Téntao de novo.",
-  "restoreError": "Erro ao restaurar as compras. Téntao de novo.",
-  "loading": "Cargando...",
-  "fieldRequired": "Campo obrigatorio",
-  "addedFeedback": "Engadido!",
-  "@_Home": "description: Home Screen",
-  "selectedItems": "{count,plural, one{{count} seleccionado} other{{count} seleccionados}}",
-  "@selectedItems": {
+  "@completedOn": {
     "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "estimated": "Estimado",
-  "alreadyPurchased": "Xa mercados",
-  "clearList": "Limpar lista",
-  "clearPurchased": "Limpar mercados",
-  "share": "Compartir",
-  "shareViaCode": "Compartir mediante código",
-  "importViaCode": "Importar mediante código",
-  "listAssistant": "Asistente de lista",
-  "globalAssistant": "Asistente global",
-  "becomePremium": "Faite Premium",
-  "manageSubscription": "Xestionar subscrición",
-  "completePurchase": "Completar compra",
-  "confirmClearList": "Eliminar todos os elementos?",
-  "shareListTitle": "Compartir Lista",
-  "shareThisCode": "Comparte este código:",
-  "validForLimitedTime": "Válido por tempo limitado",
-  "importListTitle": "Importar Lista",
-  "enterCodeHint": "Introduce o código",
-  "confirmArchiveTitle": "Completar Compra",
-  "confirmArchiveContent": "Completar esta compra e arquivar a lista?",
-  "complete": "Completar",
-  "listArchived": "Lista arquivada correctamente!",
-  "listAdded": "{listName} engadida!",
-  "@listAdded": {
-    "placeholders": {
-      "listName": {
+      "date": {
         "type": "String"
       }
     }
   },
-  "buy": "Mercar",
-  "unmark": "Desmarcar",
-  "confirmDeleteItems": "Eliminar {count} elemento(s)?",
-  "@confirmDeleteItems": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "confirmDeleteTitle": "Confirmar",
-  "confirmContent": "Eliminar {count} elemento(s)?",
   "@confirmContent": {
     "placeholders": {
       "count": {
@@ -103,13 +75,68 @@
       }
     }
   },
-  "archiveList": "Arquivar lista",
-  "@_Pantry": "description: Pantry Screen",
-  "pantryAppBar": "Despensa",
-  "generateShoppingList": "Xerar lista da compra",
-  "pantryEmpty": "Despensa baleira",
-  "pantryEmptySubtitle": "Engade os produtos que queres ter na casa",
-  "itemsNeedPurchase": "{deficit} elemento(s) precisan mercarse",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dynamicColorsEnabledWarning": {
+    "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@inviteToList": {
+    "description": "Button to invite someone to a shopping list"
+  },
   "@itemsNeedPurchase": {
     "placeholders": {
       "deficit": {
@@ -117,10 +144,26 @@
       }
     }
   },
-  "noItemsToBuy": "Non hai elementos que mercar",
-  "newPantryList": "Compra da Despensa",
-  "newListTitle": "Nova Lista da Compra",
-  "itemsWillBeAdded": "{count} elemento(s) engadiranse",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "@itemsWillBeAdded": {
     "placeholders": {
       "count": {
@@ -128,8 +171,13 @@
       }
     }
   },
-  "listNameLabel": "Nome da lista",
-  "listCreated": "Lista \"{name}\" creada con {count} elementos",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -140,20 +188,125 @@
       }
     }
   },
-  "noTracking": "Sen seguimento",
-  "markAsPurchased": "Marcar como mercada",
-  "editPantryItem": "Editar {name}",
-  "@editPantryItem": {
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPrepTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAnnualBadge": {
+    "description": "Annual plan badge"
+  },
+  "@onboardingAnnualLabel": {
+    "description": "Annual plan label"
+  },
+  "@onboardingCancelAnytime": {
+    "description": "Cancellation disclaimer"
+  },
+  "@onboardingContinueAsGuest": {
+    "description": "Skip login link"
+  },
+  "@onboardingExit": {
+    "description": "Exit button text"
+  },
+  "@onboardingLoginDesc": {
+    "description": "Slide 2 body"
+  },
+  "@onboardingLoginTitle": {
+    "description": "Slide 2 headline"
+  },
+  "@onboardingMonthlyLabel": {
+    "description": "Monthly plan label"
+  },
+  "@onboardingPersonalizationCta": {
+    "description": "Personalization step continue button"
+  },
+  "@onboardingPersonalizationDesc": {
+    "description": "Personalization slide body text"
+  },
+  "@onboardingPersonalizationFoodHint": {
+    "description": "Favorite food field hint"
+  },
+  "@onboardingPersonalizationFoodLabel": {
+    "description": "Favorite food field label"
+  },
+  "@onboardingPersonalizationFoodRequired": {
+    "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationSkip": {
+    "description": "Skip personalization link"
+  },
+  "@onboardingPersonalizationTitle": {
+    "description": "Personalization slide headline"
+  },
+  "@onboardingPremiumSubtitle": {
+    "description": "Slide 4 subtitle"
+  },
+  "@onboardingPremiumTitle": {
+    "description": "Slide 4 headline"
+  },
+  "@onboardingRestore": {
+    "description": "Restore purchases button"
+  },
+  "@onboardingRestoreDesc": {
+    "description": "Explanation for restore button"
+  },
+  "@onboardingSetupDesc": {
+    "description": "Slide setup body"
+  },
+  "@onboardingSetupTitle": {
+    "description": "Slide setup headline"
+  },
+  "@onboardingShareDesc": {
+    "description": "Slide 3 body"
+  },
+  "@onboardingShareTitle": {
+    "description": "Slide 3 headline"
+  },
+  "@onboardingSubscribeCta": {
+    "description": "Subscribe button text"
+  },
+  "@onboardingViewAllPlans": {
+    "description": "Link to show additional plans"
+  },
+  "@onboardingWelcomeDesc": {
+    "description": "Slide 1 body"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "Slide 1 headline"
+  },
+  "@pantryEditTitle": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
-  "idealQuantity": "Cantidade ideal",
-  "currentQuantity": "Cantidade actual",
-  "consumed": "Consumido",
-  "restocked": "{name} reabastecido a {quantity} {unit}",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -167,59 +320,40 @@
       }
     }
   },
-  "confirmRemovePantry": "Eliminar \"{name}\" da despensa?",
-  "@confirmRemovePantry": {
+  "@selectedItems": {
     "placeholders": {
-      "name": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
-  "pantryEditTitle": "Editar {name}",
-  "@pantryEditTitle": {
+  "@settingsDefaultScreen": {
+    "description": "Settings option label"
+  },
+  "@settingsDefaultScreenSubtitle": {
+    "description": "Settings option subtitle"
+  },
+  "@settingsScreenChat": {
+    "description": "Chat screen option"
+  },
+  "@settingsScreenList": {
+    "description": "List screen option"
+  },
+  "@shareApp": {
+    "description": "Button to share the app with friends"
+  },
+  "@shareAppDescription": {
+    "description": "Subtitle for sharing the app option"
+  },
+  "@shareReferralSubject": {
+    "description": "Subject line for the referral share"
+  },
+  "@shareReferralText": {
+    "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "name": {
-        "type": "String"
-      }
+      "url": {}
     }
   },
-  "@_Settings": "description: Settings Screen",
-  "settingsAppBar": "Configuración",
-  "language": "Idioma",
-  "languagePortuguese": "Português (Brasil)",
-  "languageEnglish": "English",
-  "languageSystem": "Predeterminado do sistema",
-  "appearance": "Aparencia",
-  "light": "Claro",
-  "system": "Sistema",
-  "dark": "Escuro",
-  "themeColor": "Cor do tema",
-  "finance": "Finanzas",
-  "monthlyBudgetNav": "Orzamento mensual",
-  "budgetSubtitle": "Sigue os teus gastos mensuais",
-  "data": "Datos",
-  "backupNav": "Copia de seguranza",
-  "backupSubtitle": "Exporta ou importa os teus datos",
-  "about": "Acerca de",
-  "version": "Versión",
-  "privacy": "Privacidade",
-  "termsOfUse": "Termos de uso",
-  "@_Backup": "description: Backup Screen",
-  "backupTitle": "Copia de seguranza",
-  "backupPremiumDescription": "A copia de seguranza e exportación é unha función premium",
-  "exportData": "Exportar datos",
-  "exportDataSubtitle": "Gardar todas as listas como JSON",
-  "importData": "Importar datos",
-  "importDataSubtitle": "Restaurar listas desde un JSON",
-  "importJsonTitle": "Importar JSON",
-  "importJsonHint": "Pega aquí o JSON da copia de seguranza...",
-  "backupExported": "Copia de seguranza exportada!",
-  "@_Budget": "description: Budget Screen",
-  "budgetAppBar": "Orzamento Mensual",
-  "budgetPremiumLocked": "O orzamento mensual global é premium",
-  "budgetUpgradePrompt": "Mellora para desbloquear",
-  "noBudgetDefined": "Non se definiu orzamento",
-  "totalEstimated": "Total estimado: {amount}",
   "@totalEstimated": {
     "placeholders": {
       "amount": {
@@ -227,359 +361,218 @@
       }
     }
   },
-  "setBudgetButton": "Establecer orzamento",
-  "budgetLists": "Listas",
-  "budgetValueLabel": "Importe",
-  "setBudgetTitle": "Orzamento Mensual",
-  "budgetAmountSpent": "{spent} / {budget}",
-  "@budgetAmountSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Filter": "description: Filter Bar",
-  "filterAll": "Todos",
-  "filterPending": "Pendentes",
-  "filterPurchased": "Mercados",
-  "sortName": "Nome",
-  "sortCategory": "Categoría",
-  "sortDate": "Data",
-  "sortManual": "Manual",
-  "@_AddItem": "description: Add Item Dialog",
+  "about": "Acerca de",
+  "achievements": "Logros",
+  "activeListening": "Escoita activa",
+  "add": "Engadir",
+  "addAllToList": "Engadir todo á lista",
+  "addDirectToList": "Engadir directamente á lista",
+  "addIngredient": "Engadir ingrediente",
   "addItem": "Engadir Elemento",
-  "itemName": "Nome do elemento",
-  "quantityShort": "Cant",
-  "unit": "Unidade",
-  "category": "Categoría",
-  "estimatedPrice": "Prezo estimado",
   "addItemPrice": "Prezo estimado",
-  "@_EditItem": "description: Edit Item Dialog",
-  "editItem": "Editar Elemento",
-  "quantityFull": "Cantidade",
-  "editItemPrice": "Prezo estimado",
-  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addPhoto": "Engadir foto",
   "addToPantry": "Engadir á Despensa",
   "addToPantryPrompt": "Engadir \"{name}\" á túa Despensa?",
-  "@addToPantryPrompt": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "yes": "Si",
-  "productName": "Nome do produto",
-  "idealQty": "Cant ideal",
-  "currentQty": "Cant actual",
-  "trackStock": "Seguir stock",
-  "trackStockActive": "Aparece nos suxestións de compra",
-  "trackStockInactive": "Non xera suxestión de compra",
-  "@_CreateList": "description: Create List Dialog",
-  "createListDialog": "Crear Lista",
-  "renameListDialog": "Renomear Lista",
-  "@_ListSwitcher": "description: List Switcher Sheet",
-  "listHistory": "Historial de Listas",
-  "myLists": "As Miñas Listas",
-  "viewActive": "Ver Activas",
-  "viewHistory": "Ver Historial",
-  "noArchivedLists": "Non hai listas arquivadas",
-  "noActiveLists": "Non hai listas activas",
-  "completedOn": "Completada o {date}",
-  "@completedOn": {
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "sharedLabel": "Compartida",
-  "restore": "Restaurar",
-  "removeSharedTooltip": "Eliminar",
-  "deleteListTitle": "Borrar lista",
-  "deleteListContent": "Seguro que queres borrar \"{name}\"? Todos os elementos serán eliminados.",
-  "@deleteListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "removeSharedListTitle": "Eliminar lista compartida",
-  "removeSharedListContent": "Eliminar \"{name}\" das túas listas? A lista orixinal non se verá afectada.",
-  "@removeSharedListContent": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "createNewList": "Crear nova lista",
-  "@_Chat": "description: Chat Screen",
+  "addedFeedback": "Engadido!",
+  "advancedFeatures": "Funcións avanzadas",
   "aiAssistant": "Asistente de IA",
   "aiAssistantDescription": "Obtén suxestións intelixentes, receitas e consellos personalizados co noso asistente de IA.",
-  "generalAssistant": "Asistente Xeral",
+  "aiCreditsRemaining": "{remaining} créditos restantes",
+  "aiEnergy": "Enerxía AI",
+  "aiError": "Sentímolo, produciuse un erro ao procesar a túa solicitude. Comproba a túa conexión ou téntao de novo máis tarde.",
+  "aiVoiceCommandTooltip": "Comando de Voz con IA (Premium)",
+  "allTags": "Todos",
+  "alreadyPurchased": "Xa mercados",
+  "appTitle": "Lista da Compra",
+  "appearance": "Aparencia",
+  "archiveList": "Arquivar lista",
+  "backToChat": "Volver ao chat",
+  "backupExported": "Copia de seguranza exportada!",
+  "backupNav": "Copia de seguranza",
+  "backupPremiumDescription": "A copia de seguranza e exportación é unha función premium",
+  "backupSubtitle": "Exporta ou importa os teus datos",
+  "backupTitle": "Copia de seguranza",
+  "becomePremium": "Faite Premium",
+  "budgetAmountLabel": "Importe do orzamento",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "budgetAppBar": "Orzamento Mensual",
+  "budgetDashboardTitle": "Panel",
+  "budgetEditTitle": "Orzamento Mensual",
+  "budgetLists": "Listas",
+  "budgetPremiumLocked": "O orzamento mensual global é premium",
+  "budgetSubtitle": "Sigue os teus gastos mensuais",
+  "budgetUpgradePrompt": "Mellora para desbloquear",
+  "budgetValueLabel": "Importe",
+  "buy": "Mercar",
+  "cancel": "Cancelar",
+  "cartTotal": "Total do carro",
+  "catBakery": "Panadaría",
+  "catBeverages": "Bebidas",
+  "catCleaning": "Limpeza",
+  "catFruits": "Froitas",
+  "catOthers": "Outros",
+  "category": "Categoría",
+  "chatError": "Erro ao cargar o chat: {error}",
+  "chatHint": "Escribe a túa mensaxe...",
+  "chatSubtitle": "Pide suxestións de artigos, receitas ou consellos para aforrar.",
+  "chatSubtitleShort": "Pregunta por prezos, receitas, organización...",
+  "chooseCurrency": "Seleccione Moeda",
+  "chooseImageSource": "Escoller a fonte da imaxe",
+  "chooseLanguage": "Seleccionar idioma",
+  "clear": "Limpar",
   "clearHistory": "Limpar Historial",
   "clearHistoryConfirm": "Limpar todas as mensaxes desta sesión?",
-  "chatHint": "Escribe a túa mensaxe...",
-  "chatError": "Erro ao cargar o chat: {error}",
-  "@chatError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "listHelp": "Como podo axudar coa túa lista?",
-  "generalHelp": "Como podo axudar coas túas compras hoxe?",
-  "chatSubtitle": "Pide suxestións de artigos, receitas ou consellos para aforrar.",
-  "aiError": "Sentímolo, produciuse un erro ao procesar a túa solicitude. Comproba a túa conexión ou téntao de novo máis tarde.",
-  "@_Auth": "description: Auth Screen",
-  "listaPlusTitle": "Lista Plus",
-  "loginPrompt": "Inicia sesión para desbloquear\nas funcións premium",
-  "signInGoogle": "Iniciar sesión con Google",
-  "signInApple": "Iniciar sesión con Apple",
+  "clearList": "Limpar lista",
+  "clearPurchased": "Limpar mercados",
+  "close": "Pechar",
+  "complete": "Completar",
+  "completePurchase": "Completar compra",
+  "completedOn": "Completada o {date}",
+  "confirm": "Confirmar",
+  "confirmArchiveContent": "Completar esta compra e arquivar a lista?",
+  "confirmArchiveTitle": "Completar Compra",
+  "confirmClearList": "Eliminar todos os elementos?",
+  "confirmContent": "Eliminar {count} elemento(s)?",
+  "confirmDeleteItems": "Eliminar {count} elemento(s)?",
+  "confirmDeleteTitle": "Confirmar",
+  "confirmRemovePantry": "Eliminar \"{name}\" da despensa?",
+  "consumed": "Consumido",
   "continueAsGuest": "Continuar como convidado",
-  "loginError": "Erro de inicio de sesión: {error}",
-  "@loginError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "@_Paywall": "description: Paywall Screen",
-  "paywallTitle": "Lista Plus Premium",
-  "@_Premium": "description: Premium gating",
-  "premiumUpgrade": "Mellora para desbloquear",
-  "@_Tile": "description: Shopping Item Tile",
-  "itemRemoved": "Elemento eliminado",
-  "undo": "Desfacer",
-  "@_EmptyState": "description: Empty States",
-  "emptyListTitle": "A túa lista está baleira",
-  "emptyListSubtitle": "Engade elementos para comezar",
-  "noListFoundTitle": "Non se atoparon listas",
-  "noListFoundSubtitle": "Crea a túa primeira lista para comezar",
+  "copiedToClipboard": "Copiado ao portapapeis",
+  "copy": "Copiar",
+  "create": "Crear",
   "createFirstList": "Crear Primeira Lista",
-  "@_BudgetDialog": "description: Budget Dialog",
-  "listBudgetTitle": "Orzamento da Lista",
-  "budgetAmountLabel": "Importe do orzamento",
-  "removeBudget": "Eliminar",
-  "@_PremiumFeatures": "description: Premium Feature Labels",
-  "prefUnlimitedLists": "Listas ilimitadas",
-  "prefSharing": "Compartir listas",
-  "prefFullHistory": "Historial completo",
-  "prefExportData": "Exportar datos",
-  "prefCustomThemes": "Temas personalizados",
-  "prefMonthlyBudget": "Orzamento mensual global",
-  "prefAIAssistant": "Asistente de IA Persoal",
-  "prefUnlimitedPantry": "Despensa ilimitada",
-  "prefInteractiveArtifacts": "Artefactos Interactivos de IA",
-  "@_ThemeOptions": "description: Theme Color Names",
-  "themeGreen": "Verde",
-  "themeBlue": "Azul",
-  "themePurple": "Púrpura",
-  "themeRed": "Vermello",
-  "themeOrange": "Laranxa",
-  "themePink": "Rosa",
-  "themeIndigo": "Índigo",
-  "themeAmber": "Ámbar",
-  "themeTeal": "Teal",
-  "themeBrown": "Marrón",
-  "@_Categories": "description: Category Labels",
-  "catFruits": "Froitas",
-  "catCleaning": "Limpeza",
-  "catBeverages": "Bebidas",
-  "catBakery": "Panadaría",
-  "catOthers": "Outros",
-  "@_Unit": "description: Unit",
-  "unitPack": "paquete",
-  "@_Share": "description: Sharing",
-  "shareSubject": "Lista da Compra",
-  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
-  "monthlyBudgetTitle": "Orzamento Mensual",
-  "monthlyBudgetSpent": "{spent} / {budget}",
-  "@monthlyBudgetSpent": {
-    "placeholders": {
-      "spent": {
-        "type": "String"
-      },
-      "budget": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteListConfirm": "Borrar lista",
-  "pantryItemRemoved": "Elemento eliminado",
+  "createListDialog": "Crear Lista",
+  "createListToStartAi": "Crea unha lista da compra para comezar a usar o chat intelixente.",
+  "createNewList": "Crear nova lista",
+  "currency": "Moeda",
+  "currentQty": "Cant actual",
+  "currentQuantity": "Cantidade actual",
+  "dark": "Escuro",
+  "data": "Datos",
   "deficitItems": "{deficit,plural, one{{deficit} elemento precisa ser mercada} other{{deficit} elementos precisan ser mercadas}}",
-  "@deficitItems": {
-    "placeholders": {
-      "deficit": {
-        "type": "int"
-      }
-    }
-  },
-  "cartTotal": "Total do carro",
-  "restockLabel": "Reabastecer",
-  "advancedFeatures": "Funcións avanzadas",
-  "selectAll": "Seleccionar todo",
+  "delete": "Borrar",
+  "deleteListConfirm": "Borrar lista",
+  "deleteListContent": "Seguro que queres borrar \"{name}\"? Todos os elementos serán eliminados.",
+  "deleteListTitle": "Borrar lista",
+  "deleteRecipe": "Borrar",
+  "deleteRecipeConfirm": "Borrar esta receita?",
+  "deleteRecipeConfirmMsg": "Seguro que queres borrar \"{recipeName}\"? Esta acción non se pode desfacer.",
+  "deleteSession": "Eliminar chat",
+  "deleteSessionConfirm": "Estás seguro de que queres eliminar este chat? As mensaxes perderanse permanentemente.",
   "deselectAll": "Deseleccionar todo",
-  "monthlyBudgetAppBar": "Orzamento Mensual",
-  "budgetEditTitle": "Orzamento Mensual",
-  "budgetDashboardTitle": "Panel",
-  "selectListForDashboard": "Selecciona unha lista para ver o panel.",
-  "spendingAnalysis": "Análise de Gastos",
-  "noItemsToAnalyze": "Non hai elementos na lista para analizar.",
-  "markItemsToSeeAnalysis": "Marca os elementos como mercados para ver a análise.",
-  "totalSpending": "Gasto Total",
-  "spendingByCategory": "Gastos por Categoría",
-  "achievements": "Logros",
-  "exportPdfExcel": "Exportar PDF/Excel",
-  "exportPdf": "Exportar como PDF",
-  "exportExcel": "Exportar como Excel",
-  "organizingAi": "ORGANIZANDO CON IA...",
-  "yesLabel": "Si",
-  "noLabel": "Non",
-  "shareListText": "A Miña Lista da Compra",
-  "emptyListAddItems": "A túa lista está baleira! Engade elementos primeiro. ℹ️",
-  "listOrganizedMagic": "Lista organizada maxicamente por categorías! ✨",
-  "shoppingMode": "Modo de Compra",
-  "smartOrganization": "Organización Intelixente",
-  "savings": "Aforros",
-  "shoppingModeHeader": "MODO DE COMPRA",
-  "shareAsText": "Enviar elementos como texto formatado",
-  "shareRealtime": "Sincronización en tempo real con outras persoas",
-  "@_AiChatPanel": "description: AI Chat Panel",
-  "quickRecipe": "Receita rápida",
-  "quickRecipePrompt": "Suxire receitas con elementos da miña lista.",
+  "dynamicColors": "Cores dinámicas",
+  "dynamicColorsEnabledWarning": "Desactiva as cores dinámicas para que a cor do tema teña efecto",
+  "dynamicColorsSubtitle": "Usa cores baseadas no teu fondo de pantalla",
   "economyTips": "Consellos de aforro",
   "economyTipsPrompt": "Como podo aforrar cartos nesta compra?",
-  "organizeAisles": "Organizar por corredores",
-  "organizeAislesPrompt": "Organizar por corredores do mercado.",
-  "recipeSuggestion": "Suxestión de receita",
-  "aiCreditsRemaining": "{remaining} créditos restantes",
-  "@aiCreditsRemaining": {
-    "placeholders": {
-      "remaining": {
-        "type": "int"
-      }
-    }
-  },
-  "addAllToList": "Engadir todo á lista",
-  "organizeByAisles": "Organizar por corredores",
-  "voiceTranscriptionTooltip": "Escritura por voz (Gratuíta)",
-  "aiVoiceCommandTooltip": "Comando de Voz con IA (Premium)",
-  "voiceCommandTitle": "Comando de Voz con IA",
-  "voiceCommandContent": "Fala naturalmente para xestionar a túa lista!\n\nExemplos:\n• 'Engadir pan, queixo e xamón'\n• 'Eliminar deterxente'\n• 'Cambiar o tema a azul'\n\nEsta é unha función exclusiva de Lista Plus Premium.",
-  "voiceCommandPlanBtn": "Ver Plans",
-  "itemsAddedSuccess": "Elementos engadidos correctamente á lista!",
-  "viewList": "Ver lista",
-  "@_Feedback": "description: Feedback Screen",
-  "feedbackTitle": "Enviar Comentarios",
+  "edit": "Editar",
+  "editItem": "Editar Elemento",
+  "editItemPrice": "Prezo estimado",
+  "editPantryItem": "Editar {name}",
+  "editRecipe": "Editar",
+  "editRecipeTitle": "Editar receita",
+  "emptyListAddItems": "A túa lista está baleira! Engade elementos primeiro. ℹ️",
+  "emptyListSubtitle": "Engade elementos para comezar",
+  "emptyListTitle": "A túa lista está baleira",
+  "enterCodeHint": "Introduce o código",
+  "enterUrl": "Introducir URL",
+  "error": "Erro: {message}",
+  "errorGeneric": "Erro: {message}",
+  "errorLoadingChat": "Vaia! Produciuse un erro ao cargar o chat.",
+  "errorLoadingChatSubtitle": "Comproba a túa conexión ou téntao de novo máis tarde.",
+  "errorLoadingRecipes": "Erro ao cargar as receitas",
+  "errorOscillation": "Isto pode ocorrer debido a oscilacións da rede ou a indisponibilidade temporal. Téntao de novo.",
+  "estimated": "Estimado",
+  "estimatedCost": "Estimado",
+  "estimatedPrice": "Prezo estimado",
+  "exportData": "Exportar datos",
+  "exportDataSubtitle": "Gardar todas as listas como JSON",
+  "exportExcel": "Exportar como Excel",
+  "exportPdf": "Exportar como PDF",
+  "exportPdfExcel": "Exportar PDF/Excel",
+  "feedbackBack": "Volver",
+  "feedbackError": "Erro ao enviar: {error}",
+  "feedbackHint": "Describe os teus comentarios en detalle...",
   "feedbackPrompt": "Que che gustaría compartir?",
+  "feedbackRetry": "Tentar de novo",
+  "feedbackSend": "Enviar Comentarios",
+  "feedbackSending": "Enviando...",
+  "feedbackSettingsSubtitle": "Reportar erros, suxerir melloras ou corrixir traducións",
+  "feedbackSettingsTitle": "Enviar Comentarios",
+  "feedbackThankYou": "Grazas!",
+  "feedbackThankYouMessage": "Recibíronse os teus comentarios e axúdannos a mellorar Lista Plus para todos.",
+  "feedbackTitle": "Enviar Comentarios",
   "feedbackTypeBug": "Reportar Erro",
   "feedbackTypeBugHint": "Algo non funciona",
-  "feedbackTypeSuggestion": "Suxestión",
-  "feedbackTypeSuggestionHint": "Idea para mellorar a app",
-  "feedbackTypeTranslation": "Problema de Tradución",
-  "feedbackTypeTranslationHint": "Tradución incorrecta ou pouco natural",
   "feedbackTypeFeature": "Solicitude de Funcionalidade",
   "feedbackTypeFeatureHint": "Funcionalidade que che gustaría ver",
   "feedbackTypeOther": "Outro",
   "feedbackTypeOtherHint": "Outro tipo de comentario",
-  "feedbackHint": "Describe os teus comentarios en detalle...",
-  "feedbackSend": "Enviar Comentarios",
-  "feedbackSending": "Enviando...",
-  "feedbackThankYou": "Grazas!",
-  "feedbackThankYouMessage": "Recibíronse os teus comentarios e axúdannos a mellorar Lista Plus para todos.",
-  "feedbackBack": "Volver",
-  "feedbackError": "Erro ao enviar: {error}",
-  "@feedbackError": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "feedbackRetry": "Tentar de novo",
-  "feedbackSettingsTitle": "Enviar Comentarios",
-  "feedbackSettingsSubtitle": "Reportar erros, suxerir melloras ou corrixir traducións",
-  "viewItems": "View items",
-  "addDirectToList": "Add directly to list",
-  "unlockFullResponse": "Unlock Full Response",
-  "listening": "Listening...",
-  "viewPro": "View Pro",
-  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
-  "viewDetails": "View Details",
-  "marketMode": "Market Mode",
-  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
-  "howCanIHelp": "How can I help?",
-  "itemsPurchasedShort": "{purchased}/{total} purchased",
-  "@itemsPurchasedShort": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "suggestedQuestions": "Suggested questions:",
-  "noItemsInList": "No items in the list",
-  "estimatedCost": "Estimated",
-  "chatSubtitleShort": "Ask about prices, recipes, organization...",
-  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
-  "aiEnergy": "AI Energy",
-  "switchList": "Switch list",
-  "finishShopping": "Finish Shopping",
-  "welcomeAiAssistant": "Welcome to AI Assistant",
-  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
-  "noMessagesFound": "No messages found",
-  "activeListening": "Active Listening",
-  "backToChat": "Back to Chat",
-  "quickReplies": "Quick replies:",
-  "createListToStartAi": "Create a shopping list to start using the smart chat.",
-  "searchInConversation": "Search in conversation...",
-  "shoppingAssistant": "Shopping assistant",
-  "whatToDoWithItem": "What would you like to do with this item?",
-  "itemsPurchasedCount": "{purchased} of {total} purchased",
-  "@itemsPurchasedCount": {
-    "placeholders": {
-      "purchased": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "errorLoadingChatSubtitle": "Check your connection or try again later.",
-  "addIngredient": "Engadir ingrediente",
-  "addPhoto": "Engadir foto",
-  "allTags": "Todos",
-  "chooseImageSource": "Escoller a fonte da imaxe",
-  "chooseLanguage": "Seleccionar idioma",
-  "deleteRecipe": "Borrar",
-  "deleteRecipeConfirm": "Borrar esta receita?",
-  "deleteRecipeConfirmMsg": "Seguro que queres borrar \"{recipeName}\"? Esta acción non se pode desfacer.",
-  "dynamicColors": "Cores dinámicas",
-  "dynamicColorsSubtitle": "Usa cores baseadas no teu fondo de pantalla",
-  "editRecipe": "Editar",
-  "editRecipeTitle": "Editar receita",
-  "enterUrl": "Introducir URL",
-  "errorLoadingRecipes": "Erro ao cargar as receitas",
+  "feedbackTypeSuggestion": "Suxestión",
+  "feedbackTypeSuggestionHint": "Idea para mellorar a app",
+  "feedbackTypeTranslation": "Problema de Tradución",
+  "feedbackTypeTranslationHint": "Tradución incorrecta ou pouco natural",
+  "fieldRequired": "Campo obrigatorio",
+  "filterAll": "Todos",
   "filterByTag": "Filtrer por etiqueta",
+  "filterPending": "Pendentes",
+  "filterPurchased": "Mercados",
+  "finance": "Finanzas",
+  "finishShopping": "Rematar de compras",
   "gallery": "Galería",
+  "generalAssistant": "Asistente Xeral",
+  "generalHelp": "Como podo axudar coas túas compras hoxe?",
+  "generateShoppingList": "Xerar lista da compra",
+  "globalAssistant": "Asistente global",
+  "howCanIHelp": "Como podo axudar?",
+  "idealQty": "Cant ideal",
+  "idealQuantity": "Cantidade ideal",
   "imageUrlPlaceholder": "Ou pega un URL de imaxe",
+  "import": "Importar",
+  "importData": "Importar datos",
+  "importDataSubtitle": "Restaurar listas desde un JSON",
+  "importJsonHint": "Pega aquí o JSON da copia de seguranza...",
+  "importJsonTitle": "Importar JSON",
+  "importListTitle": "Importar Lista",
+  "importViaCode": "Importar mediante código",
   "ingredients": "Ingredientes",
   "instructions": "Instrucións",
   "instructionsHint": "Escribe un paso por liña...",
+  "inviteToList": "Invitar á lista",
+  "itemName": "Nome do elemento",
+  "itemRemoved": "Elemento eliminado",
+  "itemsAddedSuccess": "Elementos engadidos correctamente á lista!",
+  "itemsNeedPurchase": "{deficit} elemento(s) precisan mercarse",
+  "itemsPurchasedCount": "{purchased} de {total} comprados",
+  "itemsPurchasedShort": "{purchased}/{total} mercou",
+  "itemsWillBeAdded": "{count} elemento(s) engadiranse",
+  "language": "Idioma",
+  "languageEnglish": "inglés",
+  "languagePortuguese": "Português (Brasil)",
+  "languageSystem": "Predeterminado do sistema",
+  "light": "Claro",
+  "listAdded": "{listName} engadida!",
+  "listArchived": "Lista arquivada correctamente!",
+  "listAssistant": "Asistente de lista",
+  "listBudgetTitle": "Orzamento da Lista",
+  "listCreated": "Lista \"{name}\" creada con {count} elementos",
+  "listHelp": "Como podo axudar coa túa lista?",
+  "listHistory": "Historial de Listas",
+  "listNameLabel": "Nome da lista",
+  "listOrganizedMagic": "Lista organizada maxicamente por categorías! ✨",
+  "listaPlusTitle": "Lista Plus",
+  "listening": "Escoitando...",
+  "lists": "Listas",
+  "loading": "Cargando...",
   "loadingRecipes": "Cargando as túas receitas...",
+  "loginError": "Erro de inicio de sesión: {error}",
+  "loginPrompt": "Inicia sesión para desbloquear\nas funcións premium",
+  "longHistoryWarning": "Longa historia: o asistente céntrase nas mensaxes máis recentes para mellorar o rendemento.",
+  "manageSubscription": "Xestionar subscrición",
+  "markAsPurchased": "Marcar como mercada",
+  "markItemsToSeeAnalysis": "Marca os elementos como mercados para ver a análise.",
+  "marketMode": "Modo mercado",
   "mealPlannerAddMeal": "Engadir comida",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDeleteMeal": "Retirar comida",
@@ -613,28 +606,201 @@
   "mealPlannerWeekEmpty": "Nada planificado para esta semana",
   "mealPlannerWeekEmptyHint": "Toca calquera día para comezar a planificar as túas comidas!",
   "mealPlannerWeekProgress": "{count} de {total} comidas planificadas",
+  "monthlyBudgetAppBar": "Orzamento Mensual",
+  "monthlyBudgetNav": "Orzamento mensual",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "monthlyBudgetTitle": "Orzamento Mensual",
+  "myLists": "As Miñas Listas",
   "myRecipes": "As miñas receitas",
+  "newChat": "Chat novo",
+  "newListTitle": "Nova Lista da Compra",
+  "newPantryList": "Compra da Despensa",
   "newRecipe": "Nova receita",
   "newRecipeTitle": "Nova receita",
+  "next": "A continuación",
+  "noActiveLists": "Non hai listas activas",
+  "noArchivedLists": "Non hai listas arquivadas",
+  "noBudgetDefined": "Non se definiu orzamento",
+  "noHistory": "Non hai historial de chat",
+  "noItemsInList": "Non hai elementos na lista",
+  "noItemsToAnalyze": "Non hai elementos na lista para analizar.",
+  "noItemsToBuy": "Non hai elementos que mercar",
+  "noLabel": "Non",
+  "noListFoundSubtitle": "Crea a túa primeira lista para comezar",
+  "noListFoundTitle": "Non se atoparon listas",
+  "noMessagesFound": "Non se atopou ningunha mensaxe",
   "noRecipesSaved": "Non hai receitas gardadas",
   "noRecipesSavedHint": "Crea a túa primeira receita personalizada tocando o botón de abaixo.",
+  "noTracking": "Sen seguimento",
+  "onboardingAnnualBadge": "Mellor valor",
+  "onboardingAnnualLabel": "Anual",
+  "onboardingCancelAnytime": "Cancela en calquera momento. Sen compromiso.",
+  "onboardingContinueAsGuest": "Continúa como convidado",
+  "onboardingExit": "Saír",
+  "onboardingLoginDesc": "Os teus datos sincronizados en todos os teus dispositivos",
+  "onboardingLoginTitle": "Garda todo na nube",
+  "onboardingMonthlyLabel": "Mensuais",
+  "onboardingPersonalizationCta": "Continuar",
+  "onboardingPersonalizationDesc": "Usarémolo para personalizar as túas suxestións e facer a compra máis intelixente.",
+  "onboardingPersonalizationFoodHint": "p.ex. Pizza, sushi, lasaña...",
+  "onboardingPersonalizationFoodLabel": "Cal é a túa comida favorita?",
+  "onboardingPersonalizationFoodRequired": "Cóntanos a túa comida favorita para continuar",
+  "onboardingPersonalizationSkip": "Saltar por agora",
+  "onboardingPersonalizationTitle": "Imos coñecerte",
+  "onboardingPremiumSubtitle": "Saca o máximo proveito das túas listas de compras",
+  "onboardingPremiumTitle": "Desbloquear todas as funcións",
+  "onboardingRestore": "Restaurar",
+  "onboardingRestoreDesc": "Xa tes unha subscrición? Toca aquí para restauralo.",
+  "onboardingSetupDesc": "Escolle como queres que Lista Plus se vexa e funcione para ti.",
+  "onboardingSetupTitle": "Personaliza a túa experiencia",
+  "onboardingShareDesc": "Sincroniza listas con familiares e amigos en tempo real",
+  "onboardingShareTitle": "Comparte coas persoas que queres",
+  "onboardingSubscribeCta": "Subscríbete",
+  "onboardingViewAllPlans": "Ver todos os plans",
+  "onboardingWelcomeDesc": "A forma máis intelixente de organizar as túas compras e aforrar cartos.",
+  "onboardingWelcomeTitle": "Benvido a Lista Plus",
   "openMenu": "Abrir menú",
+  "organizeAisles": "Organizar por corredores",
+  "organizeAislesPrompt": "Organizar por corredores do mercado.",
+  "organizeByAisles": "Organizar por corredores",
+  "organizingAi": "ORGANIZANDO CON IA...",
+  "pantry": "Despensa",
+  "pantryAppBar": "Despensa",
+  "pantryEditTitle": "Editar {name}",
+  "pantryEmpty": "Despensa baleira",
+  "pantryEmptySubtitle": "Engade os produtos que queres ter na casa",
+  "pantryItemRemoved": "Elemento eliminado",
+  "paywallTitle": "Lista Plus Premium",
+  "prefAIAssistant": "Asistente de IA Persoal",
+  "prefCustomThemes": "Temas personalizados",
+  "prefExportData": "Exportar datos",
+  "prefFullHistory": "Historial completo",
+  "prefInteractiveArtifacts": "Artefactos Interactivos de IA",
+  "prefMonthlyBudget": "Orzamento mensual global",
+  "prefSharing": "Compartir listas",
+  "prefUnlimitedLists": "Listas ilimitadas",
+  "prefUnlimitedPantry": "Despensa ilimitada",
+  "premiumUpgrade": "Mellora para desbloquear",
   "prepTime": "Tempo de prep.",
   "prepTimeMinutes": "Tempo de prep. (minutos)",
+  "privacy": "Privacidade",
+  "productName": "Nome do produto",
+  "purchaseError": "Erro ao procesar a compra. Téntao de novo.",
+  "quantityFull": "Cantidade",
+  "quantityShort": "Cant",
+  "quickRecipe": "Receita rápida",
+  "quickRecipePrompt": "Suxire receitas con elementos da miña lista.",
+  "quickReplies": "Respostas rápidas:",
   "recipeCreated": "Receita creada!",
   "recipeDeleted": "Receita borrada",
   "recipeImage": "Imaxe da receita",
   "recipeName": "Nome da receita",
   "recipeSaved": "Receita gardada!",
+  "recipeSuggestion": "Suxestión de receita",
   "recipeTags": "Etiquetas da receita",
+  "regenerate": "Rexerar",
+  "remove": "Eliminar",
+  "removeBudget": "Eliminar",
   "removeImage": "Retirar imaxe",
+  "removeSharedListContent": "Eliminar \"{name}\" das túas listas? A lista orixinal non se verá afectada.",
+  "removeSharedListTitle": "Eliminar lista compartida",
+  "removeSharedTooltip": "Eliminar",
+  "rename": "Renomear",
+  "renameListDialog": "Renomear Lista",
   "requiredField": "Obrigatorio",
+  "restockLabel": "Reabastecer",
+  "restocked": "{name} reabastecido a {quantity} {unit}",
+  "restore": "Restaurar",
+  "restoreError": "Erro ao restaurar as compras. Téntao de novo.",
+  "retry": "Reintentar",
+  "save": "Gardar",
   "saveChanges": "Gardar cambios",
   "saveRecipe": "Gardar",
+  "savings": "Aforros",
+  "searchCurrency": "Busca moeda...",
+  "searchInConversation": "Busca na conversa...",
   "searchLanguage": "Buscar idioma...",
   "searchRecipes": "Buscar receitas...",
+  "selectAll": "Seleccionar todo",
+  "selectListForDashboard": "Selecciona unha lista para ver o panel.",
+  "selectedItems": "{count,plural, one{{count} seleccionado} other{{count} seleccionados}}",
+  "setBudgetButton": "Establecer orzamento",
+  "setBudgetTitle": "Orzamento Mensual",
+  "settingsAppBar": "Configuración",
+  "settingsDefaultScreen": "Pantalla de inicio predeterminada",
+  "settingsDefaultScreenSubtitle": "Escolle entre a lista da compra ou o chat AI",
+  "settingsScreenChat": "Chat AI",
+  "settingsScreenList": "Lista da compra",
+  "share": "Compartir",
+  "shareApp": "Compartir aplicación",
+  "shareAppDescription": "Invita amigos a usar Lista Plus",
+  "shareAsText": "Enviar elementos como texto formatado",
+  "shareListText": "A Miña Lista da Compra",
+  "shareListTitle": "Compartir Lista",
+  "shareRealtime": "Sincronización en tempo real con outras persoas",
+  "shareReferralSubject": "Obtén 7 días de Lista Plus Premium!",
+  "shareReferralText": "Estou usando Lista Plus para organizar as miñas compras! Descarga a través da miña ligazón e os dous recibimos 7 días de Premium gratis: {url}",
+  "shareSubject": "Lista da Compra",
+  "shareThisCode": "Comparte este código:",
+  "shareViaCode": "Compartir mediante código",
+  "sharedLabel": "Compartida",
+  "shoppingAssistant": "Auxiliar de compras",
+  "shoppingMode": "Modo de Compra",
+  "shoppingModeHeader": "MODO DE COMPRA",
   "shortDescription": "Descrición curta",
+  "signInApple": "Iniciar sesión con Apple",
+  "signInGoogle": "Iniciar sesión con Google",
+  "smartOrganization": "Organización Intelixente",
+  "sortCategory": "Categoría",
+  "sortDate": "Data",
+  "sortManual": "Manual",
+  "sortName": "Nome",
+  "spendingAnalysis": "Análise de Gastos",
+  "spendingByCategory": "Gastos por Categoría",
+  "suggestedQuestions": "Preguntas suxeridas:",
   "suggestedTags": "Suxeridas",
+  "switchList": "Lista de cambios",
+  "system": "Sistema",
   "tags": "Etiquetas",
-  "viewRecipe": "Ver receita"
+  "termsOfUse": "Termos de uso",
+  "themeAmber": "Ámbar",
+  "themeBlue": "Azul",
+  "themeBrown": "Marrón",
+  "themeColor": "Cor do tema",
+  "themeGreen": "Verde",
+  "themeIndigo": "Índigo",
+  "themeOrange": "Laranxa",
+  "themePink": "Rosa",
+  "themePurple": "Púrpura",
+  "themeRed": "Vermello",
+  "themeTeal": "Cerceta",
+  "totalEstimated": "Total estimado: {amount}",
+  "totalSpending": "Gasto Total",
+  "trackStock": "Seguir stock",
+  "trackStockActive": "Aparece nos suxestións de compra",
+  "trackStockInactive": "Non xera suxestión de compra",
+  "undo": "Desfacer",
+  "unit": "Unidade",
+  "unitPack": "paquete",
+  "unlockFullResponse": "Desbloquear a resposta completa",
+  "unmark": "Desmarcar",
+  "upgrade": "Mellorar",
+  "validForLimitedTime": "Válido por tempo limitado",
+  "version": "Versión",
+  "viewActive": "Ver Activas",
+  "viewDetails": "Ver detalles",
+  "viewHistory": "Ver Historial",
+  "viewItems": "Ver elementos",
+  "viewList": "Ver lista",
+  "viewPro": "Ver Pro",
+  "viewRecipe": "Ver receita",
+  "voiceCommandContent": "Fala naturalmente para xestionar a túa lista!\n\nExemplos:\n• 'Engadir pan, queixo e xamón'\n• 'Eliminar deterxente'\n• 'Cambiar o tema a azul'\n\nEsta é unha función exclusiva de Lista Plus Premium.",
+  "voiceCommandPlanBtn": "Ver Plans",
+  "voiceCommandTitle": "Comando de Voz con IA",
+  "voiceProFeature": "Os comandos de voz avanzados son Pro. Activando o ditado básico...",
+  "voiceTranscriptionTooltip": "Escritura por voz (Gratuíta)",
+  "welcomeAiAssistant": "Benvido a AI Assistant",
+  "whatToDoWithItem": "Que che gustaría facer con este artigo?",
+  "yes": "Si",
+  "yesLabel": "Si"
 }

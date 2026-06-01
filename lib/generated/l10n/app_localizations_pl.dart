@@ -42,6 +42,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get copy => 'Kopiuj';
 
   @override
+  String get next => 'Następny';
+
+  @override
   String get retry => 'Ponów';
 
   @override
@@ -281,28 +284,28 @@ class AppLocalizationsPl extends AppLocalizations {
   String get language => 'Język';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brazylia)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angielski';
 
   @override
   String get languageSystem => 'Domyślny systemu';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Wybierz Język';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Wyszukaj język...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Waluta';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Wybierz Waluta';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Wyszukaj walutę...';
 
   @override
   String get appearance => 'Wygląd';
@@ -320,14 +323,14 @@ class AppLocalizationsPl extends AppLocalizations {
   String get themeColor => 'Kolor motywu';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Dynamiczne kolory';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Użyj kolorów na podstawie tapety';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Wyłącz kolory dynamiczne, aby kolor motywu zaczął obowiązywać';
 
   @override
   String get finance => 'Finanse';
@@ -570,17 +573,17 @@ class AppLocalizationsPl extends AppLocalizations {
   String get generalAssistant => 'Asystent ogólny';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Nowy czat';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Brak historii czatów';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Usuń czat';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Czy na pewno chcesz usunąć ten czat? Wiadomości zostaną trwale utracone.';
 
   @override
   String get clearHistory => 'Wyczyść historię';
@@ -626,93 +629,109 @@ class AppLocalizationsPl extends AppLocalizations {
   String get continueAsGuest => 'Kontynuuj jako gość';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Witamy w Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Najmądrzejszy sposób na zorganizowanie zakupów i zaoszczędzenie pieniędzy.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Spersonalizuj swoje doświadczenia';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Wybierz, jak Lista Plus ma wyglądać i działać dla Ciebie.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Zapisz wszystko w chmurze';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Twoje dane zsynchronizowane na wszystkich urządzeniach';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Podziel się z tymi, których kochasz';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Synchronizuj listy z rodziną i przyjaciółmi w czasie rzeczywistym';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Odblokuj wszystkie funkcje';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Wykorzystaj w pełni swoje listy zakupów';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Najlepsza wartość';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Miesięczny';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Coroczny';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Zobacz wszystkie plany';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Subskrybować';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Anuluj w dowolnym momencie. Żadnego zaangażowania.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Kontynuuj jako gość';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Przywrócić';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Masz już subskrypcję? Kliknij tutaj, aby je przywrócić.';
+
+  @override
+  String get onboardingExit => 'Wyjście';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Poznajmy Cię';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Wykorzystamy to, aby spersonalizować Twoje sugestie i sprawić, że zakupy będą mądrzejsze.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Jakie jest Twoje ulubione jedzenie?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'np. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Kontynuować';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Pomiń na razie';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Opowiedz nam o swoim ulubionym jedzeniu, aby kontynuować';
+
+  @override
+  String get settingsDefaultScreen => 'Domyślny ekran główny';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Wybierz pomiędzy listą zakupów lub czatem AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Lista zakupów';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'Czat AI';
 
   @override
   String loginError(String error) {
@@ -1081,344 +1100,345 @@ class AppLocalizationsPl extends AppLocalizations {
       'Zgłaszaj błędy, sugeruj ulepszenia lub poprawiaj tłumaczenia';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energia AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Wyszukaj w rozmowie...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nie znaleziono żadnych wiadomości';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Sugerowane pytania:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Asystent zakupów';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'Zakupiono $purchased z $total';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Szacowany';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Zobacz przedmioty';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Brak pozycji na liście';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Długa historia: asystent skupia się na najnowszych wiadomościach, aby uzyskać lepszą wydajność.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Słuchający...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Dodaj bezpośrednio do listy';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Odblokuj pełną odpowiedź';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Zmień listę';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Tryb rynkowy';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Powrót do czatu';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Zakończ zakupy';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Witamy w Asystencie AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Utwórz listę zakupów, aby rozpocząć korzystanie z inteligentnego czatu.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Jak mogę pomóc?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Zapytaj o ceny, przepisy, organizację...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total kupiono';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Szybkie odpowiedzi:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Zaawansowane polecenia głosowe to wersja Pro. Włączanie podstawowego dyktowania...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Zobacz Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Ups! Coś poszło nie tak podczas ładowania czatu.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Sprawdź połączenie lub spróbuj ponownie później.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Może się to zdarzyć z powodu oscylacji sieci lub tymczasowej niedostępności. Spróbuj ponownie.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktywne słuchanie';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Co chciałbyś zrobić z tym przedmiotem?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Zobacz szczegóły';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Otwórz menu';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Zobacz przepis';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Przepis stworzony!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Redagować';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Usuwać';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Usunąć ten przepis?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Czy na pewno chcesz usunąć „$recipeName”? Tej akcji nie można cofnąć.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Składniki';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instrukcje';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Czas przygotowania';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Przepis zapisany!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Nie zapisano żadnych przepisów';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Utwórz swój pierwszy niestandardowy przepis, dotykając przycisku poniżej.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Moje przepisy';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Nowy przepis';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Ładuję Twoje przepisy...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Błąd podczas ładowania przepisów';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Dodaj składnik';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Ratować';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Nazwa przepisu';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Krótki opis';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Czas przygotowania (minuty)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Wpisz jeden krok w wierszu...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Dodaj zdjęcie';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Możesz też wkleić adres URL obrazu';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Tagi';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Tagi z przepisami';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Sugerowane';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Szukaj przepisów...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtruj według tagu';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Wszystko';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Przepis usunięty';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Zapisz zmiany';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Edytuj przepis';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Nowy przepis';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Wymagany';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Wybierz źródło obrazu';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galeria';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Wpisz adres URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Obraz przepisu';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Usuń obraz';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Planista posiłków';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Widok miesięczny';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Widok tygodniowy';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Brak zaplanowanych posiłków';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Kliknij dzień, aby dodać posiłek';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Ładowanie planu posiłków...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Błąd podczas ładowania planu posiłków';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Dodaj posiłek';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Edytuj posiłek';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Usuń posiłek';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Posiłek usunięty';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count porcje',
+      one: '$count porcja',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Porcje';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Uwaga (opcjonalnie)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Wybierz przepis';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Szukaj przepisów...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Nie znaleziono przepisów';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Najpierw utwórz przepisy w zakładce Przepisy';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Dodaj do planu';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return 'Zaplanowano $count z $total posiłków';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Wygeneruj listę zakupów';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Dodać do swojej listy zakupów wszystkie składniki z zaplanowanych w tym tygodniu posiłków?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count składnik(i) dodany do Twojej listy!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Brak składników do dodania. Najpierw zaplanuj kilka posiłków, korzystając z przepisów.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'Najpierw utwórz listę zakupów.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Śniadanie';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Obiad';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Kolacja';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Przekąska';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Data';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Na ten tydzień nie zaplanowano nic';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Kliknij dowolny dzień, aby rozpocząć planowanie posiłków!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -1426,21 +1446,22 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Zaproś do listy';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Udostępnij aplikację';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription =>
+      'Zaproś znajomych do korzystania z Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Do organizowania zakupów korzystam z Lista Plus! Pobierz za pomocą mojego linku, a oboje otrzymamy 7 dni Premium za darmo: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Zdobądź 7 dni Lista Plus Premium!';
 }
 
 /// The translations for Polish, as used in Poland (`pl_PL`).
@@ -1479,6 +1500,9 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get copy => 'Kopiuj';
+
+  @override
+  String get next => 'Następny';
 
   @override
   String get retry => 'Ponów';
@@ -1720,13 +1744,28 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get language => 'Język';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brazylia)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'angielski';
 
   @override
   String get languageSystem => 'Domyślny systemu';
+
+  @override
+  String get chooseLanguage => 'Wybierz Język';
+
+  @override
+  String get searchLanguage => 'Wyszukaj język...';
+
+  @override
+  String get currency => 'Waluta';
+
+  @override
+  String get chooseCurrency => 'Wybierz Waluta';
+
+  @override
+  String get searchCurrency => 'Wyszukaj walutę...';
 
   @override
   String get appearance => 'Wygląd';
@@ -1742,6 +1781,16 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get themeColor => 'Kolor motywu';
+
+  @override
+  String get dynamicColors => 'Dynamiczne kolory';
+
+  @override
+  String get dynamicColorsSubtitle => 'Użyj kolorów na podstawie tapety';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Wyłącz kolory dynamiczne, aby kolor motywu zaczął obowiązywać';
 
   @override
   String get finance => 'Finanse';
@@ -1984,6 +2033,19 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get generalAssistant => 'Asystent ogólny';
 
   @override
+  String get newChat => 'Nowy czat';
+
+  @override
+  String get noHistory => 'Brak historii czatów';
+
+  @override
+  String get deleteSession => 'Usuń czat';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Czy na pewno chcesz usunąć ten czat? Wiadomości zostaną trwale utracone.';
+
+  @override
   String get clearHistory => 'Wyczyść historię';
 
   @override
@@ -2025,6 +2087,111 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get continueAsGuest => 'Kontynuuj jako gość';
+
+  @override
+  String get onboardingWelcomeTitle => 'Witamy w Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Najmądrzejszy sposób na zorganizowanie zakupów i zaoszczędzenie pieniędzy.';
+
+  @override
+  String get onboardingSetupTitle => 'Spersonalizuj swoje doświadczenia';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Wybierz, jak Lista Plus ma wyglądać i działać dla Ciebie.';
+
+  @override
+  String get onboardingLoginTitle => 'Zapisz wszystko w chmurze';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Twoje dane zsynchronizowane na wszystkich urządzeniach';
+
+  @override
+  String get onboardingShareTitle => 'Podziel się z tymi, których kochasz';
+
+  @override
+  String get onboardingShareDesc =>
+      'Synchronizuj listy z rodziną i przyjaciółmi w czasie rzeczywistym';
+
+  @override
+  String get onboardingPremiumTitle => 'Odblokuj wszystkie funkcje';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Wykorzystaj w pełni swoje listy zakupów';
+
+  @override
+  String get onboardingAnnualBadge => 'Najlepsza wartość';
+
+  @override
+  String get onboardingMonthlyLabel => 'Miesięczny';
+
+  @override
+  String get onboardingAnnualLabel => 'Coroczny';
+
+  @override
+  String get onboardingViewAllPlans => 'Zobacz wszystkie plany';
+
+  @override
+  String get onboardingSubscribeCta => 'Subskrybować';
+
+  @override
+  String get onboardingCancelAnytime =>
+      'Anuluj w dowolnym momencie. Żadnego zaangażowania.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Kontynuuj jako gość';
+
+  @override
+  String get onboardingRestore => 'Przywrócić';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Masz już subskrypcję? Kliknij tutaj, aby je przywrócić.';
+
+  @override
+  String get onboardingExit => 'Wyjście';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Poznajmy Cię';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Wykorzystamy to, aby spersonalizować Twoje sugestie i sprawić, że zakupy będą mądrzejsze.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Jakie jest Twoje ulubione jedzenie?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'np. Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Kontynuować';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Pomiń na razie';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Opowiedz nam o swoim ulubionym jedzeniu, aby kontynuować';
+
+  @override
+  String get settingsDefaultScreen => 'Domyślny ekran główny';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Wybierz pomiędzy listą zakupów lub czatem AI';
+
+  @override
+  String get settingsScreenList => 'Lista zakupów';
+
+  @override
+  String get settingsScreenChat => 'Czat AI';
 
   @override
   String loginError(String error) {
@@ -2393,104 +2560,366 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
       'Zgłaszaj błędy, sugeruj ulepszenia lub poprawiaj tłumaczenia';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Energia AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Wyszukaj w rozmowie...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Nie znaleziono żadnych wiadomości';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Sugerowane pytania:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Asystent zakupów';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return 'Zakupiono $purchased z $total';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Szacowany';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Zobacz przedmioty';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Brak pozycji na liście';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Długa historia: asystent skupia się na najnowszych wiadomościach, aby uzyskać lepszą wydajność.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Słuchający...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Dodaj bezpośrednio do listy';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Odblokuj pełną odpowiedź';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Zmień listę';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Tryb rynkowy';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Powrót do czatu';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Zakończ zakupy';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Witamy w Asystencie AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Utwórz listę zakupów, aby rozpocząć korzystanie z inteligentnego czatu.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Jak mogę pomóc?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Zapytaj o ceny, przepisy, organizację...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total kupiono';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Szybkie odpowiedzi:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Zaawansowane polecenia głosowe to wersja Pro. Włączanie podstawowego dyktowania...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Zobacz Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'Ups! Coś poszło nie tak podczas ładowania czatu.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Sprawdź połączenie lub spróbuj ponownie później.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Może się to zdarzyć z powodu oscylacji sieci lub tymczasowej niedostępności. Spróbuj ponownie.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktywne słuchanie';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Co chciałbyś zrobić z tym przedmiotem?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Zobacz szczegóły';
+
+  @override
+  String get openMenu => 'Otwórz menu';
+
+  @override
+  String get viewRecipe => 'Zobacz przepis';
+
+  @override
+  String get recipeCreated => 'Przepis stworzony!';
+
+  @override
+  String get editRecipe => 'Redagować';
+
+  @override
+  String get deleteRecipe => 'Usuwać';
+
+  @override
+  String get deleteRecipeConfirm => 'Usunąć ten przepis?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Czy na pewno chcesz usunąć „$recipeName”? Tej akcji nie można cofnąć.';
+  }
+
+  @override
+  String get ingredients => 'Składniki';
+
+  @override
+  String get instructions => 'Instrukcje';
+
+  @override
+  String get prepTime => 'Czas przygotowania';
+
+  @override
+  String get recipeSaved => 'Przepis zapisany!';
+
+  @override
+  String get noRecipesSaved => 'Nie zapisano żadnych przepisów';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Utwórz swój pierwszy niestandardowy przepis, dotykając przycisku poniżej.';
+
+  @override
+  String get myRecipes => 'Moje przepisy';
+
+  @override
+  String get newRecipe => 'Nowy przepis';
+
+  @override
+  String get loadingRecipes => 'Ładuję Twoje przepisy...';
+
+  @override
+  String get errorLoadingRecipes => 'Błąd podczas ładowania przepisów';
+
+  @override
+  String get addIngredient => 'Dodaj składnik';
+
+  @override
+  String get saveRecipe => 'Ratować';
+
+  @override
+  String get recipeName => 'Nazwa przepisu';
+
+  @override
+  String get shortDescription => 'Krótki opis';
+
+  @override
+  String get prepTimeMinutes => 'Czas przygotowania (minuty)';
+
+  @override
+  String get instructionsHint => 'Wpisz jeden krok w wierszu...';
+
+  @override
+  String get addPhoto => 'Dodaj zdjęcie';
+
+  @override
+  String get imageUrlPlaceholder => 'Możesz też wkleić adres URL obrazu';
+
+  @override
+  String get tags => 'Tagi';
+
+  @override
+  String get recipeTags => 'Tagi z przepisami';
+
+  @override
+  String get suggestedTags => 'Sugerowane';
+
+  @override
+  String get searchRecipes => 'Szukaj przepisów...';
+
+  @override
+  String get filterByTag => 'Filtruj według tagu';
+
+  @override
+  String get allTags => 'Wszystko';
+
+  @override
+  String get recipeDeleted => 'Przepis usunięty';
+
+  @override
+  String get saveChanges => 'Zapisz zmiany';
+
+  @override
+  String get editRecipeTitle => 'Edytuj przepis';
+
+  @override
+  String get newRecipeTitle => 'Nowy przepis';
+
+  @override
+  String get requiredField => 'Wymagany';
+
+  @override
+  String get chooseImageSource => 'Wybierz źródło obrazu';
+
+  @override
+  String get gallery => 'Galeria';
+
+  @override
+  String get enterUrl => 'Wpisz adres URL';
+
+  @override
+  String get recipeImage => 'Obraz przepisu';
+
+  @override
+  String get removeImage => 'Usuń obraz';
+
+  @override
+  String get mealPlannerTitle => 'Planista posiłków';
+
+  @override
+  String get mealPlannerViewMonthly => 'Widok miesięczny';
+
+  @override
+  String get mealPlannerViewWeekly => 'Widok tygodniowy';
+
+  @override
+  String get mealPlannerNoMeals => 'Brak zaplanowanych posiłków';
+
+  @override
+  String get mealPlannerNoMealsHint => 'Kliknij dzień, aby dodać posiłek';
+
+  @override
+  String get mealPlannerLoading => 'Ładowanie planu posiłków...';
+
+  @override
+  String get mealPlannerError => 'Błąd podczas ładowania planu posiłków';
+
+  @override
+  String get mealPlannerAddMeal => 'Dodaj posiłek';
+
+  @override
+  String get mealPlannerEditMeal => 'Edytuj posiłek';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Usuń posiłek';
+
+  @override
+  String get mealPlannerMealDeleted => 'Posiłek usunięty';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count porcje',
+      one: '$count porcja',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Porcje';
+
+  @override
+  String get mealPlannerNoteLabel => 'Uwaga (opcjonalnie)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Wybierz przepis';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Szukaj przepisów...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Nie znaleziono przepisów';
+
+  @override
+  String get mealPlannerNoRecipesHint =>
+      'Najpierw utwórz przepisy w zakładce Przepisy';
+
+  @override
+  String get mealPlannerSave => 'Dodaj do planu';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return 'Zaplanowano $count z $total posiłków';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Wygeneruj listę zakupów';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Dodać do swojej listy zakupów wszystkie składniki z zaplanowanych w tym tygodniu posiłków?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count składnik(i) dodany do Twojej listy!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Brak składników do dodania. Najpierw zaplanuj kilka posiłków, korzystając z przepisów.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Najpierw utwórz listę zakupów.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Śniadanie';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Obiad';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Kolacja';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Przekąska';
+
+  @override
+  String get mealPlannerDateLabel => 'Data';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Na ten tydzień nie zaplanowano nic';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Kliknij dowolny dzień, aby rozpocząć planowanie posiłków!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get inviteToList => 'Zaproś do listy';
+
+  @override
+  String get shareApp => 'Udostępnij aplikację';
+
+  @override
+  String get shareAppDescription =>
+      'Zaproś znajomych do korzystania z Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Do organizowania zakupów korzystam z Lista Plus! Pobierz za pomocą mojego linku, a oboje otrzymamy 7 dni Premium za darmo: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Zdobądź 7 dni Lista Plus Premium!';
 }

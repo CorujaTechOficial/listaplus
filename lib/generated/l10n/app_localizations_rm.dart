@@ -42,6 +42,9 @@ class AppLocalizationsRm extends AppLocalizations {
   String get copy => 'Copiar';
 
   @override
+  String get next => 'Next';
+
+  @override
   String get retry => 'Empruvar puspè';
 
   @override
@@ -626,36 +629,18 @@ class AppLocalizationsRm extends AppLocalizations {
   String get continueAsGuest => 'Cuntinuar sco convidà';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Welcome to Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'The smartest way to organize your shopping and save money.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Personalize your experience';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
-
-  @override
-  String get onboardingAiSuggestButton => 'Suggest!';
-
-  @override
-  String get onboardingGoToList => 'Go to list';
-
-  @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
+  String get onboardingSetupDesc =>
+      'Choose how you want Lista Plus to look and work for you.';
 
   @override
   String get onboardingLoginTitle => 'Save everything to the cloud';
@@ -700,6 +685,38 @@ class AppLocalizationsRm extends AppLocalizations {
 
   @override
   String get onboardingRestore => 'Restore';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Already have a subscription? Tap here to restore it.';
+
+  @override
+  String get onboardingExit => 'Exit';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Let\'s get to know you';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'We\'ll use this to personalize your suggestions and make shopping smarter.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'What\'s your favorite food?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'e.g. Pizza, Sushi, Lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Continue';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Skip for now';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Tell us your favorite food to continue';
 
   @override
   String get settingsDefaultScreen => 'Default home screen';

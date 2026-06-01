@@ -42,6 +42,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get copy => 'Sao chép';
 
   @override
+  String get next => 'Kế tiếp';
+
+  @override
   String get retry => 'Thử lại';
 
   @override
@@ -273,28 +276,28 @@ class AppLocalizationsVi extends AppLocalizations {
   String get language => 'Ngôn ngữ';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Người Bồ Đào Nha (Brasil)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'Tiếng Anh';
 
   @override
   String get languageSystem => 'Mặc định hệ thống';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Chọn ngôn ngữ';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Tìm kiếm ngôn ngữ...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Tiền tệ';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Chọn tiền tệ';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Tìm kiếm tiền tệ...';
 
   @override
   String get appearance => 'Giao diện';
@@ -312,14 +315,15 @@ class AppLocalizationsVi extends AppLocalizations {
   String get themeColor => 'Màu chủ đề';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Màu sắc năng động';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle =>
+      'Sử dụng màu sắc dựa trên hình nền của bạn';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Tắt màu động để màu chủ đề có hiệu lực';
 
   @override
   String get finance => 'Tài chính';
@@ -562,17 +566,17 @@ class AppLocalizationsVi extends AppLocalizations {
   String get generalAssistant => 'Trợ lý chung';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Trò chuyện mới';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Không có lịch sử trò chuyện';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Xóa cuộc trò chuyện';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Bạn có chắc chắn muốn xóa cuộc trò chuyện này không? Các tin nhắn sẽ bị mất vĩnh viễn.';
 
   @override
   String get clearHistory => 'Xóa lịch sử';
@@ -619,93 +623,109 @@ class AppLocalizationsVi extends AppLocalizations {
   String get continueAsGuest => 'Tiếp tục với tư cách khách';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Chào mừng đến với Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Cách thông minh nhất để tổ chức mua sắm của bạn và tiết kiệm tiền.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Cá nhân hóa trải nghiệm của bạn';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Chọn cách bạn muốn Lista Plus trông và hoạt động cho bạn.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Lưu mọi thứ vào đám mây';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Dữ liệu của bạn được đồng bộ hóa trên tất cả các thiết bị của bạn';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Chia sẻ với những người bạn yêu thương';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Đồng bộ danh sách với gia đình và bạn bè trong thời gian thực';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Mở khóa tất cả các tính năng';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Tận dụng tối đa danh sách mua sắm của bạn';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Giá trị tốt nhất';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'hàng tháng';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Hàng năm';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Xem tất cả các kế hoạch';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Đặt mua';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime =>
+      'Hủy bỏ bất cứ lúc nào. Không có cam kết.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Tiếp tục làm khách';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Khôi phục';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Đã có đăng ký? Nhấn vào đây để khôi phục nó.';
+
+  @override
+  String get onboardingExit => 'Ra';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Hãy làm quen với bạn';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Chúng tôi sẽ sử dụng điều này để cá nhân hóa các đề xuất của bạn và giúp việc mua sắm trở nên thông minh hơn.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel =>
+      'Món ăn yêu thích của bạn là gì?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'ví dụ. Pizza, Sushi, Lasagna...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Tiếp tục';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Bỏ qua bây giờ';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Hãy cho chúng tôi biết món ăn yêu thích của bạn để tiếp tục';
+
+  @override
+  String get settingsDefaultScreen => 'Màn hình chính mặc định';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Chọn giữa danh sách mua sắm hoặc trò chuyện AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Danh sách mua sắm';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'Trò chuyện AI';
 
   @override
   String loginError(String error) {
@@ -713,7 +733,7 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'Lista Plus cao cấp';
 
   @override
   String get premiumUpgrade => 'Nâng cấp để mở khóa';
@@ -1067,364 +1087,366 @@ class AppLocalizationsVi extends AppLocalizations {
       'Báo lỗi, đề xuất cải tiến hoặc sửa bản dịch';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'Năng lượng AI';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Tìm kiếm trong cuộc trò chuyện...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Không tìm thấy tin nhắn nào';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Các câu hỏi gợi ý:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Trợ lý mua sắm';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased trong tổng số $total đã mua';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Ước lượng';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Xem các mục';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Không có mục nào trong danh sách';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Lịch sử lâu dài: trợ lý tập trung vào các tin nhắn mới nhất để có hiệu suất tốt hơn.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Đang nghe...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Thêm trực tiếp vào danh sách';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Mở khóa phản hồi đầy đủ';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Chuyển đổi danh sách';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Chế độ thị trường';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Quay lại Trò chuyện';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Kết thúc mua sắm';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Chào mừng bạn đến với Trợ lý AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Tạo danh sách mua sắm để bắt đầu sử dụng tính năng trò chuyện thông minh.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Tôi có thể giúp gì?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort =>
+      'Hỏi về giá cả, công thức nấu ăn, cách tổ chức...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total đã mua';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Trả lời nhanh:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Lệnh thoại nâng cao là Pro. Đang bật tính năng đọc chính tả cơ bản...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Xem chuyên nghiệp';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'Ối! Đã xảy ra lỗi khi tải cuộc trò chuyện.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Hãy kiểm tra kết nối của bạn hoặc thử lại sau.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Điều này có thể xảy ra do dao động mạng hoặc tạm thời không có sẵn. Vui lòng thử lại.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Lắng nghe tích cực';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'Bạn muốn làm gì với mặt hàng này?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Xem chi tiết';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Mở trình đơn';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Xem công thức';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Công thức đã được tạo!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Biên tập';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Xóa bỏ';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Xóa công thức này?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Bạn có chắc chắn muốn xóa \"$recipeName\" không? Không thể hoàn tác hành động này.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Thành phần';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Hướng dẫn';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'thời gian chuẩn bị';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Đã lưu công thức!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Không có công thức nấu ăn nào được lưu';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Tạo công thức tùy chỉnh đầu tiên của bạn bằng cách nhấn vào nút bên dưới.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Bí quyết của tôi';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Công thức mới';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Đang tải công thức nấu ăn của bạn...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Lỗi tải công thức nấu ăn';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Thêm thành phần';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Cứu';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Tên công thức';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Mô tả ngắn';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Thời gian chuẩn bị (phút)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Nhập một bước trên mỗi dòng...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Thêm ảnh';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Hoặc dán URL hình ảnh';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Thẻ';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Thẻ công thức';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'được đề xuất';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Tìm kiếm công thức nấu ăn...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Lọc theo thẻ';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Tất cả';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Đã xóa công thức';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Lưu thay đổi';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Chỉnh sửa công thức';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Công thức mới';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Yêu cầu';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Chọn nguồn hình ảnh';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Phòng trưng bày';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Nhập URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Hình ảnh công thức';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Xóa hình ảnh';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Kế hoạch bữa ăn';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Lượt xem hàng tháng';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Xem hàng tuần';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Không có kế hoạch bữa ăn';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'Nhấn vào một ngày để thêm bữa ăn';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Đang tải kế hoạch bữa ăn...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Lỗi tải kế hoạch bữa ăn';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Thêm bữa ăn';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Chỉnh sửa bữa ăn';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Bỏ bữa ăn';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Đã bỏ bữa ăn';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count khẩu phần',
+      one: '$count khẩu phần',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Khẩu phần';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Lưu ý (tùy chọn)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Chọn một công thức';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Tìm kiếm công thức nấu ăn...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Không tìm thấy công thức nấu ăn nào';
 
   @override
   String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+      'Tạo công thức nấu ăn trong tab Công thức nấu ăn trước tiên';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Thêm vào kế hoạch';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count trong số $total bữa ăn được lên kế hoạch';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Tạo danh sách mua sắm';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Thêm tất cả nguyên liệu từ các bữa ăn đã lên kế hoạch trong tuần này vào danh sách mua sắm của bạn?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count thành phần đã được thêm vào danh sách của bạn!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Không có thành phần để thêm vào. Lên kế hoạch cho một số bữa ăn với công thức nấu ăn trước tiên.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList =>
+      'Tạo một danh sách mua sắm đầu tiên.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Bữa sáng';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'Bữa trưa';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Bữa tối';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Đồ ăn vặt';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Ngày';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Không có kế hoạch gì cho tuần này';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Nhấn vào bất kỳ ngày nào để bắt đầu lên kế hoạch cho bữa ăn của bạn!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes phút';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Mời liệt kê';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Chia sẻ ứng dụng';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Mời bạn bè sử dụng Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Tôi đang sử dụng Lista Plus để sắp xếp việc mua sắm của mình! Tải xuống qua liên kết của tôi và cả hai chúng ta đều nhận được 7 ngày dùng Premium miễn phí: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Nhận 7 ngày sử dụng Lista Plus Premium!';
 }

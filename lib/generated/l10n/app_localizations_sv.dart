@@ -42,6 +42,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get copy => 'Kopiera';
 
   @override
+  String get next => 'Nästa';
+
+  @override
   String get retry => 'Försök igen';
 
   @override
@@ -278,28 +281,28 @@ class AppLocalizationsSv extends AppLocalizations {
   String get language => 'Språk';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brasilien)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'engelska';
 
   @override
   String get languageSystem => 'Systemstandard';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'Välj Språk';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'Sök språk...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'Valuta';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'Välj Valuta';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'Sök valuta...';
 
   @override
   String get appearance => 'Utseende';
@@ -317,14 +320,14 @@ class AppLocalizationsSv extends AppLocalizations {
   String get themeColor => 'Temafärg';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'Dynamiska färger';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'Använd färger baserat på din tapet';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'Inaktivera dynamiska färger för att temafärgen ska träda i kraft';
 
   @override
   String get finance => 'Ekonomi';
@@ -566,17 +569,17 @@ class AppLocalizationsSv extends AppLocalizations {
   String get generalAssistant => 'Allmän assistent';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'Ny chatt';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'Ingen chatthistorik';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'Ta bort chatt';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'Är du säker på att du vill ta bort den här chatten? Meddelanden kommer att försvinna permanent.';
 
   @override
   String get clearHistory => 'Rensa Historik';
@@ -621,90 +624,104 @@ class AppLocalizationsSv extends AppLocalizations {
   String get continueAsGuest => 'Fortsätt som gäst';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'Välkommen till Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'Det smartaste sättet att organisera din shopping och spara pengar.';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'Anpassa din upplevelse';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'Välj hur du vill att Lista Plus ska se ut och fungera för dig.';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'Spara allt till molnet';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc =>
+      'Din data synkroniseras över alla dina enheter';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'Dela med dem du älskar';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'Synkronisera listor med familj och vänner i realtid';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'Lås upp alla funktioner';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'Få ut det mesta av dina inköpslistor';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'Bästa värde';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'Månatlig';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'Årlig';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'Se alla planer';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'Prenumerera';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'Avbryt när som helst. Inget åtagande.';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'Fortsätt som gäst';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'Återställ inköp';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc =>
+      'Har du redan ett abonnemang? Tryck här för att återställa den.';
+
+  @override
+  String get onboardingExit => 'Utgång';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Låt oss lära känna dig';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Vi kommer att använda detta för att anpassa dina förslag och göra shopping smartare.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Vilken är din favoritmat?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'till exempel Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Fortsätta';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Hoppa över nu';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Berätta för oss din favoritmat för att fortsätta';
+
+  @override
+  String get settingsDefaultScreen => 'Standard startskärm';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'Välj mellan inköpslista eller AI-chatt';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'Inköpslista';
 
   @override
   String get settingsScreenChat => 'AI Chat';
@@ -803,7 +820,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get themeAmber => 'Bärnsten';
 
   @override
-  String get themeTeal => 'Teal';
+  String get themeTeal => 'Kricka';
 
   @override
   String get themeBrown => 'Brun';
@@ -876,7 +893,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get budgetEditTitle => 'Månadsbudget';
 
   @override
-  String get budgetDashboardTitle => 'Dashboard';
+  String get budgetDashboardTitle => 'Instrumentbräda';
 
   @override
   String get selectListForDashboard => 'Välj en lista för att visa dashboard.';
@@ -1072,344 +1089,346 @@ class AppLocalizationsSv extends AppLocalizations {
       'Rapportera buggar, föreslå förbättringar eller korrigera översättningar';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI energi';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Sök i konversation...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Inga meddelanden hittades';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Föreslagna frågor:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Shoppingbiträde';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased av $total köpt';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Uppskattad';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Visa objekt';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Inga objekt i listan';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Lång historia: assistenten fokuserar på de senaste meddelandena för bättre prestanda.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Lyssnande...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Lägg till direkt i listan';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Lås upp fullständigt svar';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Byt lista';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Marknadsläge';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Tillbaka till Chatt';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Avsluta shopping';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Välkommen till AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Skapa en inköpslista för att börja använda den smarta chatten.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hur kan jag hjälpa till?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Fråga om priser, recept, organisation...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total köpt';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Snabba svar:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Avancerade röstkommandon är Pro. Aktiverar grundläggande diktering...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Visa Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'hoppsan! Något gick fel när chatten laddades.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Kontrollera din anslutning eller försök igen senare.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Detta kan uppstå på grund av nätverksvängningar eller tillfällig otillgänglighet. Försök igen.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktivt lyssnande';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'Vad skulle du vilja göra med det här föremålet?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Visa detaljer';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'Öppna menyn';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'Se recept';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'Recept skapat!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'Redigera';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'Radera';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'Vill du ta bort det här receptet?';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'Är du säker på att du vill ta bort \"$recipeName\"? Denna åtgärd kan inte ångras.';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'Ingredienser';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'Instruktioner';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'Förberedelsetid';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'Receptet sparat!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'Inga recept sparade';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'Skapa ditt första anpassade recept genom att trycka på knappen nedan.';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'Mina recept';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'Nytt recept';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'Laddar dina recept...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'Det gick inte att läsa in recept';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'Tillsätt ingrediens';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'Spara';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'Receptets namn';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'Kort beskrivning';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'Förberedelsetid (minuter)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'Skriv ett steg per rad...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'Lägg till foto';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'Eller klistra in en bildadress';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'Taggar';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'Receptetiketter';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'Föreslog';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'Sök recept...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'Filtrera efter tagg';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'Alla';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'Receptet raderat';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'Spara ändringar';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'Redigera recept';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'Nytt recept';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'Nödvändig';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'Välj bildkälla';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galleri';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'Ange URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'Receptbild';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'Ta bort bild';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'Måltidsplanerare';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'Månadsvy';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'Veckovy';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'Inga måltider planerade';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint =>
+      'Tryck på en dag för att lägga till en måltid';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'Laddar matplan...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'Det gick inte att läsa in måltidsplanen';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'Lägg till måltid';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'Redigera måltid';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'Ta bort måltid';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'Måltiden borttagen';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count portioner',
+      one: '$count portion',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'Serveringar';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'Obs (valfritt)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'Välj ett recept';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'Sök recept...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'Inga recept hittades';
 
   @override
-  String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+  String get mealPlannerNoRecipesHint => 'Skapa recept på fliken Recept först';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'Lägg till i planen';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count av $total måltider planerade';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'Skapa inköpslista';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'Lägg till alla ingredienser från planerade måltider den här veckan till din inköpslista?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count ingrediens(er) har lagts till i din lista!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'Inga ingredienser att lägga till. Planera några måltider med recept först.';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'Skapa en inköpslista först.';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'Frukost';
 
   @override
   String get mealPlannerMealTypeLunch => 'Lunch';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'Middag';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'Mellanmål';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'Datum';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'Inget planerat för den här veckan';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'Tryck på vilken dag som helst för att börja planera dina måltider!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -1417,21 +1436,21 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'Bjud in till lista';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'Dela app';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Bjud in vänner att använda Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'Jag använder Lista Plus för att organisera min shopping! Ladda ner via min länk så får vi båda 7 dagars Premium gratis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Få 7 dagars Lista Plus Premium!';
 }
 
 /// The translations for Swedish, as used in Sweden (`sv_SE`).
@@ -1470,6 +1489,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get copy => 'Kopiera';
+
+  @override
+  String get next => 'Nästa';
 
   @override
   String get retry => 'Försök igen';
@@ -1708,13 +1730,28 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get language => 'Språk';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'Português (Brasilien)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'engelska';
 
   @override
   String get languageSystem => 'Systemstandard';
+
+  @override
+  String get chooseLanguage => 'Välj Språk';
+
+  @override
+  String get searchLanguage => 'Sök språk...';
+
+  @override
+  String get currency => 'Valuta';
+
+  @override
+  String get chooseCurrency => 'Välj Valuta';
+
+  @override
+  String get searchCurrency => 'Sök valuta...';
 
   @override
   String get appearance => 'Utseende';
@@ -1730,6 +1767,16 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get themeColor => 'Temafärg';
+
+  @override
+  String get dynamicColors => 'Dynamiska färger';
+
+  @override
+  String get dynamicColorsSubtitle => 'Använd färger baserat på din tapet';
+
+  @override
+  String get dynamicColorsEnabledWarning =>
+      'Inaktivera dynamiska färger för att temafärgen ska träda i kraft';
 
   @override
   String get finance => 'Ekonomi';
@@ -1971,6 +2018,19 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get generalAssistant => 'Allmän assistent';
 
   @override
+  String get newChat => 'Ny chatt';
+
+  @override
+  String get noHistory => 'Ingen chatthistorik';
+
+  @override
+  String get deleteSession => 'Ta bort chatt';
+
+  @override
+  String get deleteSessionConfirm =>
+      'Är du säker på att du vill ta bort den här chatten? Meddelanden kommer att försvinna permanent.';
+
+  @override
   String get clearHistory => 'Rensa Historik';
 
   @override
@@ -2011,6 +2071,109 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get continueAsGuest => 'Fortsätt som gäst';
+
+  @override
+  String get onboardingWelcomeTitle => 'Välkommen till Lista Plus';
+
+  @override
+  String get onboardingWelcomeDesc =>
+      'Det smartaste sättet att organisera din shopping och spara pengar.';
+
+  @override
+  String get onboardingSetupTitle => 'Anpassa din upplevelse';
+
+  @override
+  String get onboardingSetupDesc =>
+      'Välj hur du vill att Lista Plus ska se ut och fungera för dig.';
+
+  @override
+  String get onboardingLoginTitle => 'Spara allt till molnet';
+
+  @override
+  String get onboardingLoginDesc =>
+      'Din data synkroniseras över alla dina enheter';
+
+  @override
+  String get onboardingShareTitle => 'Dela med dem du älskar';
+
+  @override
+  String get onboardingShareDesc =>
+      'Synkronisera listor med familj och vänner i realtid';
+
+  @override
+  String get onboardingPremiumTitle => 'Lås upp alla funktioner';
+
+  @override
+  String get onboardingPremiumSubtitle =>
+      'Få ut det mesta av dina inköpslistor';
+
+  @override
+  String get onboardingAnnualBadge => 'Bästa värde';
+
+  @override
+  String get onboardingMonthlyLabel => 'Månatlig';
+
+  @override
+  String get onboardingAnnualLabel => 'Årlig';
+
+  @override
+  String get onboardingViewAllPlans => 'Se alla planer';
+
+  @override
+  String get onboardingSubscribeCta => 'Prenumerera';
+
+  @override
+  String get onboardingCancelAnytime => 'Avbryt när som helst. Inget åtagande.';
+
+  @override
+  String get onboardingContinueAsGuest => 'Fortsätt som gäst';
+
+  @override
+  String get onboardingRestore => 'Återställ inköp';
+
+  @override
+  String get onboardingRestoreDesc =>
+      'Har du redan ett abonnemang? Tryck här för att återställa den.';
+
+  @override
+  String get onboardingExit => 'Utgång';
+
+  @override
+  String get onboardingPersonalizationTitle => 'Låt oss lära känna dig';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'Vi kommer att använda detta för att anpassa dina förslag och göra shopping smartare.';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'Vilken är din favoritmat?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'till exempel Pizza, sushi, lasagne...';
+
+  @override
+  String get onboardingPersonalizationCta => 'Fortsätta';
+
+  @override
+  String get onboardingPersonalizationSkip => 'Hoppa över nu';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'Berätta för oss din favoritmat för att fortsätta';
+
+  @override
+  String get settingsDefaultScreen => 'Standard startskärm';
+
+  @override
+  String get settingsDefaultScreenSubtitle =>
+      'Välj mellan inköpslista eller AI-chatt';
+
+  @override
+  String get settingsScreenList => 'Inköpslista';
+
+  @override
+  String get settingsScreenChat => 'AI Chat';
 
   @override
   String loginError(String error) {
@@ -2106,7 +2269,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get themeAmber => 'Bärnsten';
 
   @override
-  String get themeTeal => 'Teal';
+  String get themeTeal => 'Kricka';
 
   @override
   String get themeBrown => 'Brun';
@@ -2179,7 +2342,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get budgetEditTitle => 'Månadsbudget';
 
   @override
-  String get budgetDashboardTitle => 'Dashboard';
+  String get budgetDashboardTitle => 'Instrumentbräda';
 
   @override
   String get selectListForDashboard => 'Välj en lista för att visa dashboard.';
@@ -2375,104 +2538,366 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
       'Rapportera fel, föreslå förbättringar eller fixa översättningar';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'AI energi';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'Sök i konversation...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'Inga meddelanden hittades';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'Föreslagna frågor:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'Shoppingbiträde';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased av $total köpt';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'Uppskattad';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'Visa objekt';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'Inga objekt i listan';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'Lång historia: assistenten fokuserar på de senaste meddelandena för bättre prestanda.';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'Lyssnande...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'Lägg till direkt i listan';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'Lås upp fullständigt svar';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'Byt lista';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'Marknadsläge';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'Tillbaka till Chatt';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'Avsluta shopping';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'Välkommen till AI Assistant';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'Skapa en inköpslista för att börja använda den smarta chatten.';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'Hur kan jag hjälpa till?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'Fråga om priser, recept, organisation...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total köpt';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'Snabba svar:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'Avancerade röstkommandon är Pro. Aktiverar grundläggande diktering...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'Visa Pro';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat =>
+      'hoppsan! Något gick fel när chatten laddades.';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'Kontrollera din anslutning eller försök igen senare.';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'Detta kan uppstå på grund av nätverksvängningar eller tillfällig otillgänglighet. Försök igen.';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'Aktivt lyssnande';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem =>
+      'Vad skulle du vilja göra med det här föremålet?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'Visa detaljer';
+
+  @override
+  String get openMenu => 'Öppna menyn';
+
+  @override
+  String get viewRecipe => 'Se recept';
+
+  @override
+  String get recipeCreated => 'Recept skapat!';
+
+  @override
+  String get editRecipe => 'Redigera';
+
+  @override
+  String get deleteRecipe => 'Radera';
+
+  @override
+  String get deleteRecipeConfirm => 'Vill du ta bort det här receptet?';
+
+  @override
+  String deleteRecipeConfirmMsg(String recipeName) {
+    return 'Är du säker på att du vill ta bort \"$recipeName\"? Denna åtgärd kan inte ångras.';
+  }
+
+  @override
+  String get ingredients => 'Ingredienser';
+
+  @override
+  String get instructions => 'Instruktioner';
+
+  @override
+  String get prepTime => 'Förberedelsetid';
+
+  @override
+  String get recipeSaved => 'Receptet sparat!';
+
+  @override
+  String get noRecipesSaved => 'Inga recept sparade';
+
+  @override
+  String get noRecipesSavedHint =>
+      'Skapa ditt första anpassade recept genom att trycka på knappen nedan.';
+
+  @override
+  String get myRecipes => 'Mina recept';
+
+  @override
+  String get newRecipe => 'Nytt recept';
+
+  @override
+  String get loadingRecipes => 'Laddar dina recept...';
+
+  @override
+  String get errorLoadingRecipes => 'Det gick inte att läsa in recept';
+
+  @override
+  String get addIngredient => 'Tillsätt ingrediens';
+
+  @override
+  String get saveRecipe => 'Spara';
+
+  @override
+  String get recipeName => 'Receptets namn';
+
+  @override
+  String get shortDescription => 'Kort beskrivning';
+
+  @override
+  String get prepTimeMinutes => 'Förberedelsetid (minuter)';
+
+  @override
+  String get instructionsHint => 'Skriv ett steg per rad...';
+
+  @override
+  String get addPhoto => 'Lägg till foto';
+
+  @override
+  String get imageUrlPlaceholder => 'Eller klistra in en bildadress';
+
+  @override
+  String get tags => 'Taggar';
+
+  @override
+  String get recipeTags => 'Receptetiketter';
+
+  @override
+  String get suggestedTags => 'Föreslog';
+
+  @override
+  String get searchRecipes => 'Sök recept...';
+
+  @override
+  String get filterByTag => 'Filtrera efter tagg';
+
+  @override
+  String get allTags => 'Alla';
+
+  @override
+  String get recipeDeleted => 'Receptet raderat';
+
+  @override
+  String get saveChanges => 'Spara ändringar';
+
+  @override
+  String get editRecipeTitle => 'Redigera recept';
+
+  @override
+  String get newRecipeTitle => 'Nytt recept';
+
+  @override
+  String get requiredField => 'Nödvändig';
+
+  @override
+  String get chooseImageSource => 'Välj bildkälla';
+
+  @override
+  String get gallery => 'Galleri';
+
+  @override
+  String get enterUrl => 'Ange URL';
+
+  @override
+  String get recipeImage => 'Receptbild';
+
+  @override
+  String get removeImage => 'Ta bort bild';
+
+  @override
+  String get mealPlannerTitle => 'Måltidsplanerare';
+
+  @override
+  String get mealPlannerViewMonthly => 'Månadsvy';
+
+  @override
+  String get mealPlannerViewWeekly => 'Veckovy';
+
+  @override
+  String get mealPlannerNoMeals => 'Inga måltider planerade';
+
+  @override
+  String get mealPlannerNoMealsHint =>
+      'Tryck på en dag för att lägga till en måltid';
+
+  @override
+  String get mealPlannerLoading => 'Laddar matplan...';
+
+  @override
+  String get mealPlannerError => 'Det gick inte att läsa in måltidsplanen';
+
+  @override
+  String get mealPlannerAddMeal => 'Lägg till måltid';
+
+  @override
+  String get mealPlannerEditMeal => 'Redigera måltid';
+
+  @override
+  String get mealPlannerDeleteMeal => 'Ta bort måltid';
+
+  @override
+  String get mealPlannerMealDeleted => 'Måltiden borttagen';
+
+  @override
+  String mealPlannerServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count portioner',
+      one: '$count portion',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mealPlannerServingsLabel => 'Serveringar';
+
+  @override
+  String get mealPlannerNoteLabel => 'Obs (valfritt)';
+
+  @override
+  String get mealPlannerSelectRecipe => 'Välj ett recept';
+
+  @override
+  String get mealPlannerSearchRecipes => 'Sök recept...';
+
+  @override
+  String get mealPlannerNoRecipesFound => 'Inga recept hittades';
+
+  @override
+  String get mealPlannerNoRecipesHint => 'Skapa recept på fliken Recept först';
+
+  @override
+  String get mealPlannerSave => 'Lägg till i planen';
+
+  @override
+  String mealPlannerWeekProgress(int count, int total) {
+    return '$count av $total måltider planerade';
+  }
+
+  @override
+  String get mealPlannerGenerateList => 'Skapa inköpslista';
+
+  @override
+  String get mealPlannerGenerateListConfirm =>
+      'Lägg till alla ingredienser från planerade måltider den här veckan till din inköpslista?';
+
+  @override
+  String mealPlannerGenerateListSuccess(int count) {
+    return '$count ingrediens(er) har lagts till i din lista!';
+  }
+
+  @override
+  String get mealPlannerGenerateListEmpty =>
+      'Inga ingredienser att lägga till. Planera några måltider med recept först.';
+
+  @override
+  String get mealPlannerGenerateListNoList => 'Skapa en inköpslista först.';
+
+  @override
+  String get mealPlannerMealTypeBreakfast => 'Frukost';
+
+  @override
+  String get mealPlannerMealTypeLunch => 'Lunch';
+
+  @override
+  String get mealPlannerMealTypeDinner => 'Middag';
+
+  @override
+  String get mealPlannerMealTypeSnack => 'Mellanmål';
+
+  @override
+  String get mealPlannerDateLabel => 'Datum';
+
+  @override
+  String get mealPlannerWeekEmpty => 'Inget planerat för den här veckan';
+
+  @override
+  String get mealPlannerWeekEmptyHint =>
+      'Tryck på vilken dag som helst för att börja planera dina måltider!';
+
+  @override
+  String mealPlannerPrepTime(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get inviteToList => 'Bjud in till lista';
+
+  @override
+  String get shareApp => 'Dela app';
+
+  @override
+  String get shareAppDescription => 'Bjud in vänner att använda Lista Plus';
+
+  @override
+  String shareReferralText(Object url) {
+    return 'Jag använder Lista Plus för att organisera min shopping! Ladda ner via min länk så får vi båda 7 dagars Premium gratis: $url';
+  }
+
+  @override
+  String get shareReferralSubject => 'Få 7 dagars Lista Plus Premium!';
 }

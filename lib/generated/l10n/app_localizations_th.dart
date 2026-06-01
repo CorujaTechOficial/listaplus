@@ -42,6 +42,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get copy => 'คัดลอก';
 
   @override
+  String get next => 'ต่อไป';
+
+  @override
   String get retry => 'ลองอีกครั้ง';
 
   @override
@@ -274,28 +277,28 @@ class AppLocalizationsTh extends AppLocalizations {
   String get language => 'ภาษา';
 
   @override
-  String get languagePortuguese => 'Português (Brasil)';
+  String get languagePortuguese => 'โปรตุเกส (บราซิล)';
 
   @override
-  String get languageEnglish => 'English';
+  String get languageEnglish => 'ภาษาอังกฤษ';
 
   @override
   String get languageSystem => 'ค่าเริ่มต้นของระบบ';
 
   @override
-  String get chooseLanguage => 'Select Language';
+  String get chooseLanguage => 'เลือกภาษา';
 
   @override
-  String get searchLanguage => 'Search language...';
+  String get searchLanguage => 'ค้นหาภาษา...';
 
   @override
-  String get currency => 'Currency';
+  String get currency => 'สกุลเงิน';
 
   @override
-  String get chooseCurrency => 'Select Currency';
+  String get chooseCurrency => 'เลือกสกุลเงิน';
 
   @override
-  String get searchCurrency => 'Search currency...';
+  String get searchCurrency => 'ค้นหาสกุลเงิน...';
 
   @override
   String get appearance => 'ลักษณะ';
@@ -313,14 +316,14 @@ class AppLocalizationsTh extends AppLocalizations {
   String get themeColor => 'สีธีม';
 
   @override
-  String get dynamicColors => 'Dynamic colors';
+  String get dynamicColors => 'สีแบบไดนามิก';
 
   @override
-  String get dynamicColorsSubtitle => 'Use colors based on your wallpaper';
+  String get dynamicColorsSubtitle => 'ใช้สีตามวอลเปเปอร์ของคุณ';
 
   @override
   String get dynamicColorsEnabledWarning =>
-      'Disable dynamic colors for the theme color to take effect';
+      'ปิดใช้งานสีไดนามิกเพื่อให้สีของธีมมีผล';
 
   @override
   String get finance => 'การเงิน';
@@ -562,17 +565,17 @@ class AppLocalizationsTh extends AppLocalizations {
   String get generalAssistant => 'ผู้ช่วยทั่วไป';
 
   @override
-  String get newChat => 'New Chat';
+  String get newChat => 'แชทใหม่';
 
   @override
-  String get noHistory => 'No chat history';
+  String get noHistory => 'ไม่มีประวัติการแชท';
 
   @override
-  String get deleteSession => 'Delete Chat';
+  String get deleteSession => 'ลบแชท';
 
   @override
   String get deleteSessionConfirm =>
-      'Are you sure you want to delete this chat? The messages will be permanently lost.';
+      'คุณแน่ใจหรือไม่ว่าต้องการลบการแชทนี้ ข้อความจะหายไปอย่างถาวร';
 
   @override
   String get clearHistory => 'ล้างประวัติ';
@@ -618,93 +621,105 @@ class AppLocalizationsTh extends AppLocalizations {
   String get continueAsGuest => 'ดำเนินการต่อในฐานะแขก';
 
   @override
-  String get onboardingAiGreeting =>
-      'Hi! I\'m your smart assistant. What would you like to call me?';
+  String get onboardingWelcomeTitle => 'ยินดีต้อนรับสู่Lista Plus';
 
   @override
-  String onboardingAiNameResponse(String name) {
-    return '$name? Love it! I can help with lists, categorize items, give suggestions and much more. What\'s your favorite food?';
-  }
+  String get onboardingWelcomeDesc =>
+      'วิธีที่ชาญฉลาดที่สุดในการจัดระเบียบการซื้อของและประหยัดเงิน';
 
   @override
-  String get onboardingAiFoodResponse =>
-      'Yum! And how do you prepare it? I can suggest the ingredients!';
+  String get onboardingSetupTitle => 'ปรับแต่งประสบการณ์ของคุณ';
 
   @override
-  String get onboardingAiListReady =>
-      'Done! Your list is organized. Do you want to go to the shopping list or keep chatting?';
+  String get onboardingSetupDesc =>
+      'เลือกว่าคุณต้องการให้ Lista Plus มีลักษณะและทำงานอย่างไรสำหรับคุณ';
 
   @override
-  String get onboardingAiSuggestButton => 'Suggest!';
+  String get onboardingLoginTitle => 'บันทึกทุกอย่างไว้บนคลาวด์';
 
   @override
-  String get onboardingGoToList => 'Go to list';
+  String get onboardingLoginDesc => 'ข้อมูลของคุณซิงค์กับทุกอุปกรณ์ของคุณ';
 
   @override
-  String get onboardingKeepChatting => 'Keep chatting';
-
-  @override
-  String get onboardingSkipToApp => 'Skip to app';
-
-  @override
-  String get onboardingChatPlaceholder => 'Type a message...';
-
-  @override
-  String get onboardingLoginTitle => 'Save everything to the cloud';
-
-  @override
-  String get onboardingLoginDesc => 'Your data synced across all your devices';
-
-  @override
-  String get onboardingShareTitle => 'Share with the ones you love';
+  String get onboardingShareTitle => 'แบ่งปันกับคนที่คุณรัก';
 
   @override
   String get onboardingShareDesc =>
-      'Sync lists with family and friends in real time';
+      'ซิงค์รายการกับครอบครัวและเพื่อน ๆ แบบเรียลไทม์';
 
   @override
-  String get onboardingPremiumTitle => 'Unlock all features';
+  String get onboardingPremiumTitle => 'ปลดล็อคคุณสมบัติทั้งหมด';
 
   @override
   String get onboardingPremiumSubtitle =>
-      'Get the most out of your shopping lists';
+      'ใช้ประโยชน์สูงสุดจากรายการช้อปปิ้งของคุณ';
 
   @override
-  String get onboardingAnnualBadge => 'Best Value';
+  String get onboardingAnnualBadge => 'คุ้มค่าที่สุด';
 
   @override
-  String get onboardingMonthlyLabel => 'Monthly';
+  String get onboardingMonthlyLabel => 'รายเดือน';
 
   @override
-  String get onboardingAnnualLabel => 'Annual';
+  String get onboardingAnnualLabel => 'ประจำปี';
 
   @override
-  String get onboardingViewAllPlans => 'View all plans';
+  String get onboardingViewAllPlans => 'ดูแผนทั้งหมด';
 
   @override
-  String get onboardingSubscribeCta => 'Subscribe';
+  String get onboardingSubscribeCta => 'สมัครสมาชิก';
 
   @override
-  String get onboardingCancelAnytime => 'Cancel anytime. No commitment.';
+  String get onboardingCancelAnytime => 'ยกเลิกได้ตลอดเวลา ไม่มีความมุ่งมั่น';
 
   @override
-  String get onboardingContinueAsGuest => 'Continue as guest';
+  String get onboardingContinueAsGuest => 'ดำเนินการต่อในฐานะแขก';
 
   @override
-  String get onboardingRestore => 'Restore';
+  String get onboardingRestore => 'คืนค่าการซื้อ';
 
   @override
-  String get settingsDefaultScreen => 'Default home screen';
+  String get onboardingRestoreDesc => 'สมัครสมาชิกแล้ว? แตะที่นี่เพื่อกู้คืน';
+
+  @override
+  String get onboardingExit => 'ออก';
+
+  @override
+  String get onboardingPersonalizationTitle => 'มาทำความรู้จักกันเถอะ';
+
+  @override
+  String get onboardingPersonalizationDesc =>
+      'เราจะใช้ข้อมูลนี้เพื่อปรับเปลี่ยนคำแนะนำของคุณและทำให้การช้อปปิ้งชาญฉลาดยิ่งขึ้น';
+
+  @override
+  String get onboardingPersonalizationFoodLabel => 'อาหารที่คุณชื่นชอบคืออะไร?';
+
+  @override
+  String get onboardingPersonalizationFoodHint =>
+      'เช่น พิซซ่า ซูชิ ลาซานญ่า...';
+
+  @override
+  String get onboardingPersonalizationCta => 'ดำเนินการต่อ';
+
+  @override
+  String get onboardingPersonalizationSkip => 'ข้ามไปก่อน';
+
+  @override
+  String get onboardingPersonalizationFoodRequired =>
+      'บอกอาหารที่คุณชื่นชอบเพื่อดำเนินการต่อ';
+
+  @override
+  String get settingsDefaultScreen => 'หน้าจอหลักเริ่มต้น';
 
   @override
   String get settingsDefaultScreenSubtitle =>
-      'Choose between shopping list or AI chat';
+      'เลือกระหว่างรายการช้อปปิ้งหรือการแชท AI';
 
   @override
-  String get settingsScreenList => 'Shopping List';
+  String get settingsScreenList => 'รายการช้อปปิ้ง';
 
   @override
-  String get settingsScreenChat => 'AI Chat';
+  String get settingsScreenChat => 'เอไอ แชท';
 
   @override
   String loginError(String error) {
@@ -712,7 +727,7 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'ลิสต้า พลัส พรีเมียม';
 
   @override
   String get premiumUpgrade => 'อัปเกรดเพื่อปลดล็อก';
@@ -1064,364 +1079,363 @@ class AppLocalizationsTh extends AppLocalizations {
       'รายงานข้อบกพร่อง แนะนำการปรับปรุง หรือแก้ไขการแปล';
 
   @override
-  String get aiEnergy => 'AI Energy';
+  String get aiEnergy => 'พลังงานเอไอ';
 
   @override
-  String get searchInConversation => 'Search in conversation...';
+  String get searchInConversation => 'ค้นหาในการสนทนา...';
 
   @override
-  String get noMessagesFound => 'No messages found';
+  String get noMessagesFound => 'ไม่พบข้อความ';
 
   @override
-  String get suggestedQuestions => 'Suggested questions:';
+  String get suggestedQuestions => 'คำถามที่แนะนำ:';
 
   @override
-  String get shoppingAssistant => 'Shopping assistant';
+  String get shoppingAssistant => 'ผู้ช่วยชอปปิ้ง';
 
   @override
   String itemsPurchasedCount(int purchased, int total) {
-    return '$purchased of $total purchased';
+    return '$purchased จาก $total ที่ซื้อ';
   }
 
   @override
-  String get estimatedCost => 'Estimated';
+  String get estimatedCost => 'โดยประมาณ';
 
   @override
-  String get viewItems => 'View items';
+  String get viewItems => 'ดูรายการ';
 
   @override
-  String get noItemsInList => 'No items in the list';
+  String get noItemsInList => 'ไม่มีรายการในรายการ';
 
   @override
   String get longHistoryWarning =>
-      'Long history: the assistant focuses on the latest messages for better performance.';
+      'ประวัติอันยาวนาน: ผู้ช่วยมุ่งเน้นไปที่ข้อความล่าสุดเพื่อประสิทธิภาพที่ดีขึ้น';
 
   @override
-  String get listening => 'Listening...';
+  String get listening => 'การฟัง...';
 
   @override
-  String get addDirectToList => 'Add directly to list';
+  String get addDirectToList => 'เพิ่มลงในรายการโดยตรง';
 
   @override
-  String get unlockFullResponse => 'Unlock Full Response';
+  String get unlockFullResponse => 'ปลดล็อคการตอบสนองแบบเต็ม';
 
   @override
-  String get switchList => 'Switch list';
+  String get switchList => 'สลับรายการ';
 
   @override
-  String get marketMode => 'Market Mode';
+  String get marketMode => 'โหมดการตลาด';
 
   @override
-  String get backToChat => 'Back to Chat';
+  String get backToChat => 'กลับไปที่แชท';
 
   @override
-  String get finishShopping => 'Finish Shopping';
+  String get finishShopping => 'ช้อปปิ้งให้เสร็จ';
 
   @override
-  String get welcomeAiAssistant => 'Welcome to AI Assistant';
+  String get welcomeAiAssistant => 'ยินดีต้อนรับสู่ผู้ช่วย AI';
 
   @override
   String get createListToStartAi =>
-      'Create a shopping list to start using the smart chat.';
+      'สร้างรายการช้อปปิ้งเพื่อเริ่มใช้แชทอัจฉริยะ';
 
   @override
-  String get howCanIHelp => 'How can I help?';
+  String get howCanIHelp => 'ฉันจะช่วยได้อย่างไร?';
 
   @override
-  String get chatSubtitleShort => 'Ask about prices, recipes, organization...';
+  String get chatSubtitleShort => 'สอบถามราคา สูตร การจัดเรียง...';
 
   @override
   String itemsPurchasedShort(int purchased, int total) {
-    return '$purchased/$total purchased';
+    return '$purchased/$total ซื้อแล้ว';
   }
 
   @override
-  String get quickReplies => 'Quick replies:';
+  String get quickReplies => 'ตอบกลับด่วน:';
 
   @override
   String get voiceProFeature =>
-      'Advanced voice commands are Pro. Enabling basic dictation...';
+      'คำสั่งเสียงขั้นสูงเป็นแบบ Pro กำลังเปิดใช้งานการเขียนตามคำบอกพื้นฐาน...';
 
   @override
-  String get viewPro => 'View Pro';
+  String get viewPro => 'ดูโปร';
 
   @override
-  String get errorLoadingChat => 'Oops! Something went wrong loading the chat.';
+  String get errorLoadingChat => 'อ๊ะ! เกิดข้อผิดพลาดในการโหลดแชท';
 
   @override
   String get errorLoadingChatSubtitle =>
-      'Check your connection or try again later.';
+      'ตรวจสอบการเชื่อมต่อของคุณหรือลองอีกครั้งในภายหลัง';
 
   @override
   String get errorOscillation =>
-      'This may occur due to network oscillations or temporary unavailability. Please try again.';
+      'สิ่งนี้อาจเกิดขึ้นเนื่องจากการสั่นของเครือข่ายหรือความไม่พร้อมใช้งานชั่วคราว โปรดลองอีกครั้ง';
 
   @override
-  String get activeListening => 'Active Listening';
+  String get activeListening => 'การฟังอย่างกระตือรือร้น';
 
   @override
-  String get whatToDoWithItem => 'What would you like to do with this item?';
+  String get whatToDoWithItem => 'คุณต้องการทำอะไรกับรายการนี้?';
 
   @override
-  String get viewDetails => 'View Details';
+  String get viewDetails => 'ดูรายละเอียด';
 
   @override
-  String get openMenu => 'Open menu';
+  String get openMenu => 'เปิดเมนู';
 
   @override
-  String get viewRecipe => 'View Recipe';
+  String get viewRecipe => 'ดูสูตร';
 
   @override
-  String get recipeCreated => 'Recipe created!';
+  String get recipeCreated => 'สร้างสูตรแล้ว!';
 
   @override
-  String get editRecipe => 'Edit';
+  String get editRecipe => 'แก้ไข';
 
   @override
-  String get deleteRecipe => 'Delete';
+  String get deleteRecipe => 'ลบ';
 
   @override
-  String get deleteRecipeConfirm => 'Delete this recipe?';
+  String get deleteRecipeConfirm => 'ลบสูตรนี้ใช่ไหม';
 
   @override
   String deleteRecipeConfirmMsg(String recipeName) {
-    return 'Are you sure you want to delete \"$recipeName\"? This action cannot be undone.';
+    return 'คุณแน่ใจหรือไม่ว่าต้องการลบ \"$recipeName\" การดำเนินการนี้ไม่สามารถยกเลิกได้';
   }
 
   @override
-  String get ingredients => 'Ingredients';
+  String get ingredients => 'วัตถุดิบ';
 
   @override
-  String get instructions => 'Instructions';
+  String get instructions => 'คำแนะนำ';
 
   @override
-  String get prepTime => 'Prep time';
+  String get prepTime => 'เวลาเตรียมตัว';
 
   @override
-  String get recipeSaved => 'Recipe saved!';
+  String get recipeSaved => 'บันทึกสูตรแล้ว!';
 
   @override
-  String get noRecipesSaved => 'No recipes saved';
+  String get noRecipesSaved => 'ไม่มีสูตรที่บันทึกไว้';
 
   @override
   String get noRecipesSavedHint =>
-      'Create your first custom recipe by tapping the button below.';
+      'สร้างสูตรอาหารที่คุณกำหนดเองสูตรแรกโดยแตะปุ่มด้านล่าง';
 
   @override
-  String get myRecipes => 'My Recipes';
+  String get myRecipes => 'สูตรอาหารของฉัน';
 
   @override
-  String get newRecipe => 'New Recipe';
+  String get newRecipe => 'สูตรใหม่';
 
   @override
-  String get loadingRecipes => 'Loading your recipes...';
+  String get loadingRecipes => 'กำลังโหลดสูตรอาหารของคุณ...';
 
   @override
-  String get errorLoadingRecipes => 'Error loading recipes';
+  String get errorLoadingRecipes => 'เกิดข้อผิดพลาดในการโหลดสูตรอาหาร';
 
   @override
-  String get addIngredient => 'Add ingredient';
+  String get addIngredient => 'เพิ่มส่วนผสม';
 
   @override
-  String get saveRecipe => 'Save';
+  String get saveRecipe => 'บันทึก';
 
   @override
-  String get recipeName => 'Recipe name';
+  String get recipeName => 'ชื่อสูตร';
 
   @override
-  String get shortDescription => 'Short description';
+  String get shortDescription => 'คำอธิบายสั้น ๆ';
 
   @override
-  String get prepTimeMinutes => 'Prep time (minutes)';
+  String get prepTimeMinutes => 'เวลาเตรียม (นาที)';
 
   @override
-  String get instructionsHint => 'Type one step per line...';
+  String get instructionsHint => 'พิมพ์หนึ่งขั้นตอนต่อบรรทัด...';
 
   @override
-  String get addPhoto => 'Add photo';
+  String get addPhoto => 'เพิ่มรูปภาพ';
 
   @override
-  String get imageUrlPlaceholder => 'Or paste an image URL';
+  String get imageUrlPlaceholder => 'หรือวาง URL รูปภาพ';
 
   @override
-  String get tags => 'Tags';
+  String get tags => 'แท็ก';
 
   @override
-  String get recipeTags => 'Recipe tags';
+  String get recipeTags => 'แท็กสูตร';
 
   @override
-  String get suggestedTags => 'Suggested';
+  String get suggestedTags => 'แนะนำ';
 
   @override
-  String get searchRecipes => 'Search recipes...';
+  String get searchRecipes => 'ค้นหาสูตรอาหาร...';
 
   @override
-  String get filterByTag => 'Filter by tag';
+  String get filterByTag => 'กรองตามแท็ก';
 
   @override
-  String get allTags => 'All';
+  String get allTags => 'ทั้งหมด';
 
   @override
-  String get recipeDeleted => 'Recipe deleted';
+  String get recipeDeleted => 'ลบสูตรแล้ว';
 
   @override
-  String get saveChanges => 'Save changes';
+  String get saveChanges => 'บันทึกการเปลี่ยนแปลง';
 
   @override
-  String get editRecipeTitle => 'Edit Recipe';
+  String get editRecipeTitle => 'แก้ไขสูตร';
 
   @override
-  String get newRecipeTitle => 'New Recipe';
+  String get newRecipeTitle => 'สูตรใหม่';
 
   @override
-  String get requiredField => 'Required';
+  String get requiredField => 'ที่จำเป็น';
 
   @override
-  String get chooseImageSource => 'Choose image source';
+  String get chooseImageSource => 'เลือกแหล่งที่มาของภาพ';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'แกลเลอรี่';
 
   @override
-  String get enterUrl => 'Enter URL';
+  String get enterUrl => 'ป้อน URL';
 
   @override
-  String get recipeImage => 'Recipe image';
+  String get recipeImage => 'รูปภาพสูตรอาหาร';
 
   @override
-  String get removeImage => 'Remove image';
+  String get removeImage => 'ลบรูปภาพ';
 
   @override
-  String get mealPlannerTitle => 'Meal Planner';
+  String get mealPlannerTitle => 'วางแผนมื้ออาหาร';
 
   @override
-  String get mealPlannerViewMonthly => 'Monthly view';
+  String get mealPlannerViewMonthly => 'มุมมองรายเดือน';
 
   @override
-  String get mealPlannerViewWeekly => 'Weekly view';
+  String get mealPlannerViewWeekly => 'มุมมองรายสัปดาห์';
 
   @override
-  String get mealPlannerNoMeals => 'No meals planned';
+  String get mealPlannerNoMeals => 'ไม่มีการวางแผนมื้ออาหาร';
 
   @override
-  String get mealPlannerNoMealsHint => 'Tap a day to add a meal';
+  String get mealPlannerNoMealsHint => 'แตะวันเพื่อเพิ่มมื้ออาหาร';
 
   @override
-  String get mealPlannerLoading => 'Loading meal plan...';
+  String get mealPlannerLoading => 'กำลังโหลดแผนอาหาร...';
 
   @override
-  String get mealPlannerError => 'Error loading meal plan';
+  String get mealPlannerError => 'เกิดข้อผิดพลาดในการโหลดแผนอาหาร';
 
   @override
-  String get mealPlannerAddMeal => 'Add Meal';
+  String get mealPlannerAddMeal => 'เพิ่มมื้ออาหาร';
 
   @override
-  String get mealPlannerEditMeal => 'Edit Meal';
+  String get mealPlannerEditMeal => 'แก้ไขมื้ออาหาร';
 
   @override
-  String get mealPlannerDeleteMeal => 'Remove meal';
+  String get mealPlannerDeleteMeal => 'ลบมื้ออาหาร';
 
   @override
-  String get mealPlannerMealDeleted => 'Meal removed';
+  String get mealPlannerMealDeleted => 'อาหารถูกลบออก';
 
   @override
   String mealPlannerServings(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count servings',
-      one: '$count serving',
+      other: '$count เสิร์ฟ',
+      one: '$count เสิร์ฟ',
     );
     return '$_temp0';
   }
 
   @override
-  String get mealPlannerServingsLabel => 'Servings';
+  String get mealPlannerServingsLabel => 'เสิร์ฟ';
 
   @override
-  String get mealPlannerNoteLabel => 'Note (optional)';
+  String get mealPlannerNoteLabel => 'หมายเหตุ (ไม่บังคับ)';
 
   @override
-  String get mealPlannerSelectRecipe => 'Select a recipe';
+  String get mealPlannerSelectRecipe => 'เลือกสูตร';
 
   @override
-  String get mealPlannerSearchRecipes => 'Search recipes...';
+  String get mealPlannerSearchRecipes => 'ค้นหาสูตรอาหาร...';
 
   @override
-  String get mealPlannerNoRecipesFound => 'No recipes found';
+  String get mealPlannerNoRecipesFound => 'ไม่พบสูตร';
 
   @override
-  String get mealPlannerNoRecipesHint =>
-      'Create recipes in the Recipes tab first';
+  String get mealPlannerNoRecipesHint => 'สร้างสูตรอาหารในแท็บสูตรอาหารก่อน';
 
   @override
-  String get mealPlannerSave => 'Add to plan';
+  String get mealPlannerSave => 'เพิ่มลงในแผน';
 
   @override
   String mealPlannerWeekProgress(int count, int total) {
-    return '$count of $total meals planned';
+    return '$count จาก $total มื้อที่วางแผนไว้';
   }
 
   @override
-  String get mealPlannerGenerateList => 'Generate shopping list';
+  String get mealPlannerGenerateList => 'สร้างรายการช้อปปิ้ง';
 
   @override
   String get mealPlannerGenerateListConfirm =>
-      'Add all ingredients from planned meals this week to your shopping list?';
+      'เพิ่มส่วนผสมทั้งหมดจากมื้ออาหารที่วางแผนไว้สัปดาห์นี้ลงในรายการช้อปปิ้งของคุณหรือไม่?';
 
   @override
   String mealPlannerGenerateListSuccess(int count) {
-    return '$count ingredient(s) added to your list!';
+    return '$count เพิ่มส่วนผสมในรายการของคุณแล้ว!';
   }
 
   @override
   String get mealPlannerGenerateListEmpty =>
-      'No ingredients to add. Plan some meals with recipes first.';
+      'ไม่มีส่วนผสมที่ต้องเติม วางแผนมื้ออาหารด้วยสูตรอาหารก่อน';
 
   @override
-  String get mealPlannerGenerateListNoList => 'Create a shopping list first.';
+  String get mealPlannerGenerateListNoList => 'สร้างรายการช็อปปิ้งก่อน';
 
   @override
-  String get mealPlannerMealTypeBreakfast => 'Breakfast';
+  String get mealPlannerMealTypeBreakfast => 'อาหารเช้า';
 
   @override
-  String get mealPlannerMealTypeLunch => 'Lunch';
+  String get mealPlannerMealTypeLunch => 'อาหารกลางวัน';
 
   @override
-  String get mealPlannerMealTypeDinner => 'Dinner';
+  String get mealPlannerMealTypeDinner => 'อาหารเย็น';
 
   @override
-  String get mealPlannerMealTypeSnack => 'Snack';
+  String get mealPlannerMealTypeSnack => 'อาหารว่าง';
 
   @override
-  String get mealPlannerDateLabel => 'Date';
+  String get mealPlannerDateLabel => 'วันที่';
 
   @override
-  String get mealPlannerWeekEmpty => 'Nothing planned for this week';
+  String get mealPlannerWeekEmpty => 'ไม่มีการวางแผนสำหรับสัปดาห์นี้';
 
   @override
   String get mealPlannerWeekEmptyHint =>
-      'Tap any day to start planning your meals!';
+      'แตะวันใดก็ได้เพื่อเริ่มวางแผนมื้ออาหารของคุณ!';
 
   @override
   String mealPlannerPrepTime(int minutes) {
-    return '$minutes min';
+    return '$minutes นาที';
   }
 
   @override
-  String get inviteToList => 'Invite to list';
+  String get inviteToList => 'เชิญลงรายการ';
 
   @override
-  String get shareApp => 'Share app';
+  String get shareApp => 'แชร์แอป';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'ชวนเพื่อนมาใช้ Lista Plus';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'ฉันใช้ Lista Plus เพื่อจัดการช็อปปิ้งของฉัน! ดาวน์โหลดผ่านลิงก์ของฉันและเราทั้งคู่จะได้รับพรีเมี่ยมฟรี 7 วัน: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'รับ Lista Plus Premium 7 วัน!';
 }

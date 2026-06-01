@@ -12,7 +12,7 @@ final userProfileProvider = FutureProvider.autoDispose<UserProfile>((ref) async 
   return UserProfile.fromUserDoc(userData);
 });
 
-final userProfileServiceProvider = Provider.autoDispose<UserProfileService>((ref) {
+final userProfileServiceProvider = Provider<UserProfileService>((ref) {
   return UserProfileService(ref);
 });
 
@@ -103,7 +103,7 @@ class UserStats {
       };
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 class UserStatsNotifier extends _$UserStatsNotifier {
   @override
   UserStats build() {

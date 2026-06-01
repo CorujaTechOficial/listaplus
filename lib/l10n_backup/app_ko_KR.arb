@@ -1,0 +1,640 @@
+{
+  "@@locale": "ko_KR",
+  "appTitle": "쇼핑 목록",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "목록",
+  "pantry": "식료품 저장실",
+  "@_Common": "description: Common actions",
+  "cancel": "취소",
+  "save": "저장",
+  "create": "만들기",
+  "add": "추가",
+  "remove": "제거",
+  "delete": "삭제",
+  "edit": "편집",
+  "copy": "복사",
+  "retry": "재시도",
+  "regenerate": "재생성",
+  "copiedToClipboard": "클립보드에 복사됨",
+  "confirm": "확인",
+  "close": "닫기",
+  "import": "가져오기",
+  "rename": "이름 바꾸기",
+  "upgrade": "업그레이드",
+  "clear": "지우기",
+  "error": "오류: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "오류: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "구매 처리 중 오류가 발생했습니다. 다시 시도하세요.",
+  "restoreError": "구매 복원 중 오류가 발생했습니다. 다시 시도하세요.",
+  "loading": "로딩 중...",
+  "fieldRequired": "필수 입력 항목",
+  "addedFeedback": "추가됨!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "선택된 {count}개",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "예상",
+  "alreadyPurchased": "이미 구매함",
+  "clearList": "목록 지우기",
+  "clearPurchased": "구매 항목 지우기",
+  "share": "공유",
+  "shareViaCode": "코드로 공유",
+  "importViaCode": "코드로 가져오기",
+  "listAssistant": "목록 어시스턴트",
+  "globalAssistant": "글로벌 어시스턴트",
+  "becomePremium": "프리미엄 가입",
+  "manageSubscription": "구독 관리",
+  "completePurchase": "구매 완료",
+  "confirmClearList": "모든 항목을 제거하시겠습니까?",
+  "shareListTitle": "목록 공유",
+  "shareThisCode": "이 코드를 공유하세요:",
+  "validForLimitedTime": "제한된 시간 동안 유효",
+  "importListTitle": "목록 가져오기",
+  "enterCodeHint": "코드 입력",
+  "confirmArchiveTitle": "구매 완료",
+  "confirmArchiveContent": "이 구매를 완료하고 목록을 보관 처리하시겠습니까?",
+  "complete": "완료",
+  "listArchived": "목록이 보관되었습니다!",
+  "listAdded": "{listName} 추가됨!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "구매",
+  "unmark": "표시 해제",
+  "confirmDeleteItems": "{count}개 항목을 제거하시겠습니까?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "확인",
+  "confirmContent": "{count}개 항목을 제거하시겠습니까?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "목록 보관",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "식료품 저장실",
+  "generateShoppingList": "쇼핑 목록 생성",
+  "pantryEmpty": "저장실이 비어 있음",
+  "pantryEmptySubtitle": "집에 두고 싶은 제품을 추가하세요",
+  "itemsNeedPurchase": "구매가 필요한 항목: {deficit}개",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "구매할 항목이 없습니다",
+  "newPantryList": "저장실 쇼핑",
+  "newListTitle": "새 쇼핑 목록",
+  "itemsWillBeAdded": "{count}개 항목이 추가됩니다",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "목록 이름",
+  "listCreated": "\"{name}\" 목록이 {count}개 항목으로 생성됨",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "추적 안 함",
+  "markAsPurchased": "구매 완료로 표시",
+  "editPantryItem": "{name} 편집",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "이상 수량",
+  "currentQuantity": "현재 수량",
+  "consumed": "소비됨",
+  "restocked": "{name}이(가) {quantity}{unit}(으)로 재입고됨",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "저장실에서 \"{name}\"을(를) 제거하시겠습니까?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "{name} 편집",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "설정",
+  "language": "언어",
+  "languagePortuguese": "Português (Brasil)",
+  "languageEnglish": "English",
+  "languageSystem": "시스템 기본값",
+  "appearance": "테마",
+  "light": "라이트",
+  "system": "시스템",
+  "dark": "다크",
+  "themeColor": "테마 색상",
+  "finance": "재정",
+  "monthlyBudgetNav": "월 예산",
+  "budgetSubtitle": "월별 지출 추적",
+  "data": "데이터",
+  "backupNav": "백업",
+  "backupSubtitle": "데이터 내보내기 또는 가져오기",
+  "about": "정보",
+  "version": "버전",
+  "privacy": "개인정보 처리방침",
+  "termsOfUse": "이용약관",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "백업",
+  "backupPremiumDescription": "백업 및 내보내기는 프리미엄 기능입니다",
+  "exportData": "데이터 내보내기",
+  "exportDataSubtitle": "모든 목록을 JSON으로 저장",
+  "importData": "데이터 가져오기",
+  "importDataSubtitle": "JSON에서 목록 복원",
+  "importJsonTitle": "JSON 가져오기",
+  "importJsonHint": "백업 JSON을 여기에 붙여넣으세요...",
+  "backupExported": "백업이 내보내졌습니다!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "월 예산",
+  "budgetPremiumLocked": "글로벌 월 예산은 프리미엄 기능입니다",
+  "budgetUpgradePrompt": "업그레이드하여 잠금 해제",
+  "noBudgetDefined": "설정된 예산 없음",
+  "totalEstimated": "총 예상: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "예산 설정",
+  "budgetLists": "목록",
+  "budgetValueLabel": "금액",
+  "setBudgetTitle": "월 예산",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "전체",
+  "filterPending": "미구매",
+  "filterPurchased": "구매 완료",
+  "sortName": "이름",
+  "sortCategory": "카테고리",
+  "sortDate": "날짜",
+  "sortManual": "수동",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "항목 추가",
+  "itemName": "항목 이름",
+  "quantityShort": "수량",
+  "unit": "단위",
+  "category": "카테고리",
+  "estimatedPrice": "예상 가격",
+  "addItemPrice": "예상 가격",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "항목 편집",
+  "quantityFull": "수량",
+  "editItemPrice": "예상 가격",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "저장실에 추가",
+  "addToPantryPrompt": "\"{name}\"을(를) 저장실에 추가하시겠습니까?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "예",
+  "productName": "제품 이름",
+  "idealQty": "이상 수량",
+  "currentQty": "현재 수량",
+  "trackStock": "재고 추적",
+  "trackStockActive": "쇼핑 제안에 표시됨",
+  "trackStockInactive": "쇼핑 제안을 생성하지 않음",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "목록 만들기",
+  "renameListDialog": "목록 이름 바꾸기",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "목록 기록",
+  "myLists": "내 목록",
+  "viewActive": "활성 목록 보기",
+  "viewHistory": "기록 보기",
+  "noArchivedLists": "보관된 목록이 없습니다",
+  "noActiveLists": "활성 목록이 없습니다",
+  "completedOn": "{date}에 완료됨",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "공유 중",
+  "restore": "복원",
+  "removeSharedTooltip": "제거",
+  "deleteListTitle": "목록 삭제",
+  "deleteListContent": "\"{name}\"을(를) 삭제하시겠습니까? 모든 항목이 제거됩니다.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "공유 목록 제거",
+  "removeSharedListContent": "목록에서 \"{name}\"을(를) 제거하시겠습니까? 원본 목록에는 영향을 미치지 않습니다.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "새 목록 만들기",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI 어시스턴트",
+  "aiAssistantDescription": "AI 어시스턴트로 스마트한 제안, 레시피 및 맞춤 팁을 받아보세요.",
+  "generalAssistant": "일반 어시스턴트",
+  "clearHistory": "기록 지우기",
+  "clearHistoryConfirm": "이 세션의 모든 메시지를 지우시겠습니까?",
+  "chatHint": "메시지를 입력하세요...",
+  "chatError": "채팅 로딩 오류: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "목록에 대해 무엇을 도와드릴까요?",
+  "generalHelp": "오늘 쇼핑에 대해 무엇을 도와드릴까요?",
+  "chatSubtitle": "항목 제안, 레시피 또는 절약 팁을 물어보세요.",
+  "aiError": "죄송합니다. 요청 처리 중 오류가 발생했습니다. 연결을 확인하거나 나중에 다시 시도해 주세요.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "로그인하여 프리미엄\n기능을 잠금 해제하세요",
+  "signInGoogle": "Google로 로그인",
+  "signInApple": "Apple로 로그인",
+  "continueAsGuest": "게스트로 계속",
+  "loginError": "로그인 오류: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus 프리미엄",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "업그레이드하여 잠금 해제",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "항목이 제거됨",
+  "undo": "실행 취소",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "목록이 비어 있습니다",
+  "emptyListSubtitle": "항목을 추가하여 시작하세요",
+  "noListFoundTitle": "목록을 찾을 수 없음",
+  "noListFoundSubtitle": "첫 번째 목록을 만들어 시작하세요",
+  "createFirstList": "첫 번째 목록 만들기",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "목록 예산",
+  "budgetAmountLabel": "예산 금액",
+  "removeBudget": "제거",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "무제한 목록",
+  "prefSharing": "목록 공유",
+  "prefFullHistory": "전체 기록",
+  "prefExportData": "데이터 내보내기",
+  "prefCustomThemes": "커스텀 테마",
+  "prefMonthlyBudget": "글로벌 월 예산",
+  "prefAIAssistant": "개인 AI 어시스턴트",
+  "prefUnlimitedPantry": "무제한 저장실",
+  "prefInteractiveArtifacts": "대화형 AI 아티팩트",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "그린",
+  "themeBlue": "블루",
+  "themePurple": "퍼플",
+  "themeRed": "레드",
+  "themeOrange": "오렌지",
+  "themePink": "핑크",
+  "themeIndigo": "인디고",
+  "themeAmber": "앰버",
+  "themeTeal": "틸",
+  "themeBrown": "브라운",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "과일",
+  "catCleaning": "청소용품",
+  "catBeverages": "음료",
+  "catBakery": "베이커리",
+  "catOthers": "기타",
+  "@_Unit": "description: Unit",
+  "unitPack": "팩",
+  "@_Share": "description: Sharing",
+  "shareSubject": "쇼핑 목록",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "월 예산",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "목록 삭제",
+  "pantryItemRemoved": "항목이 제거됨",
+  "deficitItems": "구매가 필요한 항목: {deficit}개",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "장바구니 합계",
+  "restockLabel": "재입고",
+  "advancedFeatures": "고급 기능",
+  "selectAll": "모두 선택",
+  "deselectAll": "모두 선택 해제",
+  "monthlyBudgetAppBar": "월 예산",
+  "budgetEditTitle": "월 예산",
+  "budgetDashboardTitle": "대시보드",
+  "selectListForDashboard": "대시보드를 보려면 목록을 선택하세요.",
+  "spendingAnalysis": "지출 분석",
+  "noItemsToAnalyze": "분석할 항목이 목록에 없습니다.",
+  "markItemsToSeeAnalysis": "항목을 구매 완료로 표시하면 분석을 볼 수 있습니다.",
+  "totalSpending": "총 지출",
+  "spendingByCategory": "카테고리별 지출",
+  "achievements": "업적",
+  "exportPdfExcel": "PDF/Excel 내보내기",
+  "exportPdf": "PDF로 내보내기",
+  "exportExcel": "Excel로 내보내기",
+  "organizingAi": "AI로 정리 중...",
+  "yesLabel": "예",
+  "noLabel": "아니요",
+  "shareListText": "내 쇼핑 목록",
+  "emptyListAddItems": "목록이 비어 있습니다! 먼저 항목을 추가하세요. ℹ️",
+  "listOrganizedMagic": "목록이 마법처럼 카테고리별로 정리되었습니다! ✨",
+  "shoppingMode": "쇼핑 모드",
+  "smartOrganization": "스마트 정리",
+  "savings": "절약",
+  "shoppingModeHeader": "쇼핑 모드",
+  "shareAsText": "서식이 지정된 텍스트로 항목 보내기",
+  "shareRealtime": "다른 사람과 실시간 동기화",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "빠른 레시피",
+  "quickRecipePrompt": "내 목록에 있는 항목으로 레시피를 추천해 주세요.",
+  "economyTips": "절약 팁",
+  "economyTipsPrompt": "이 구매에서 비용을 어떻게 절약할 수 있나요?",
+  "organizeAisles": "매대별로 정리",
+  "organizeAislesPrompt": "마켓 매대별로 정리해 주세요.",
+  "recipeSuggestion": "레시피 추천",
+  "aiCreditsRemaining": "남은 크레딧: {remaining}",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "모두 목록에 추가",
+  "organizeByAisles": "매대별로 정리",
+  "voiceTranscriptionTooltip": "음성 입력 (무료)",
+  "aiVoiceCommandTooltip": "AI 음성 명령 (프리미엄)",
+  "voiceCommandTitle": "AI 음성 명령",
+  "voiceCommandContent": "자연스럽게 말하여 목록을 관리하세요!\n\n예시:\n• '빵, 치즈, 햄 추가'\n• '세탁 세제 제거'\n• '테마를 파란색으로 변경'\n\n이것은 Lista Plus 프리미엄의 독점 기능입니다.",
+  "voiceCommandPlanBtn": "요금제 보기",
+  "itemsAddedSuccess": "항목이 목록에 성공적으로 추가되었습니다!",
+  "viewList": "목록 보기",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "피드백 보내기",
+  "feedbackPrompt": "무엇을 공유하시겠습니까?",
+  "feedbackTypeBug": "버그 신고",
+  "feedbackTypeBugHint": "무언가 작동하지 않음",
+  "feedbackTypeSuggestion": "제안",
+  "feedbackTypeSuggestionHint": "앱 개선 아이디어",
+  "feedbackTypeTranslation": "번역 문제",
+  "feedbackTypeTranslationHint": "올바르지 않거나 어색한 번역",
+  "feedbackTypeFeature": "기능 요청",
+  "feedbackTypeFeatureHint": "보고 싶은 기능",
+  "feedbackTypeOther": "기타",
+  "feedbackTypeOtherHint": "기타 유형의 피드백",
+  "feedbackHint": "피드백을 자세히 설명해 주세요...",
+  "feedbackSend": "피드백 보내기",
+  "feedbackSending": "보내는 중...",
+  "feedbackThankYou": "감사합니다!",
+  "feedbackThankYouMessage": "피드백이 접수되었으며 모두를 위한 Lista Plus 개선에 도움이 됩니다.",
+  "feedbackBack": "뒤로",
+  "feedbackError": "보내기 오류: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "다시 시도",
+  "feedbackSettingsTitle": "피드백 보내기",
+  "feedbackSettingsSubtitle": "버그 신고, 개선 제안 또는 번역 수정",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "재료 추가",
+  "addPhoto": "사진 추가",
+  "allTags": "전체",
+  "chooseImageSource": "이미지 소스 선택",
+  "chooseLanguage": "언어 선택",
+  "deleteRecipe": "삭제",
+  "deleteRecipeConfirm": "이 레시피를 삭제하시겠습니까?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\"을(를) 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+  "dynamicColors": "다이내믹 색상",
+  "dynamicColorsSubtitle": "배경화면 기반 색상 사용",
+  "editRecipe": "편집",
+  "editRecipeTitle": "레시피 편집",
+  "enterUrl": "URL 입력",
+  "errorLoadingRecipes": "레시피 로드 오류",
+  "filterByTag": "태그로 필터링",
+  "gallery": "갤러리",
+  "imageUrlPlaceholder": "또는 이미지 URL 붙여넣기",
+  "ingredients": "재료",
+  "instructions": "조리법",
+  "instructionsHint": "한 줄에 한 단계씩 입력하세요...",
+  "loadingRecipes": "레시피를 로드하는 중...",
+  "mealPlannerAddMeal": "식사 추가",
+  "mealPlannerDateLabel": "날짜",
+  "mealPlannerDeleteMeal": "식사 제거",
+  "mealPlannerEditMeal": "식사 편집",
+  "mealPlannerError": "식사 계획 로드 오류",
+  "mealPlannerGenerateList": "쇼핑 목록 생성",
+  "mealPlannerGenerateListConfirm": "이번 주 계획된 식사의 모든 재료를 쇼핑 목록에 추가하시겠습니까?",
+  "mealPlannerGenerateListEmpty": "추가할 재료가 없습니다. 먼저 레시피로 식사를 계획하세요.",
+  "mealPlannerGenerateListNoList": "먼저 쇼핑 목록을 만드세요.",
+  "mealPlannerGenerateListSuccess": "{count}개의 재료가 목록에 추가되었습니다!",
+  "mealPlannerLoading": "식사 계획을 로드하는 중...",
+  "mealPlannerMealDeleted": "식사가 제거됨",
+  "mealPlannerMealTypeBreakfast": "아침",
+  "mealPlannerMealTypeDinner": "저녁",
+  "mealPlannerMealTypeLunch": "점심",
+  "mealPlannerMealTypeSnack": "간식",
+  "mealPlannerNoMeals": "계획된 식사 없음",
+  "mealPlannerNoMealsHint": "식사를 추가하려면 날짜를 탭하세요",
+  "mealPlannerNoRecipesFound": "레시피를 찾을 수 없음",
+  "mealPlannerNoRecipesHint": "먼저 레시피 탭에서 레시피를 만드세요",
+  "mealPlannerNoteLabel": "메모 (선택 사항)",
+  "mealPlannerPrepTime": "{minutes}분",
+  "mealPlannerSave": "계획에 추가",
+  "mealPlannerSearchRecipes": "레시피 검색...",
+  "mealPlannerSelectRecipe": "레시피 선택",
+  "mealPlannerServings": "{count,plural, one{{count}인분} other{{count}인분}}",
+  "mealPlannerServingsLabel": "인분",
+  "mealPlannerTitle": "식단 플래너",
+  "mealPlannerViewMonthly": "월간 보기",
+  "mealPlannerViewWeekly": "주간 보기",
+  "mealPlannerWeekEmpty": "이번 주에 계획된 항목이 없습니다",
+  "mealPlannerWeekEmptyHint": "식사 계획을 시작하려면 아무 날짜나 탭하세요!",
+  "mealPlannerWeekProgress": "{count} / {total} 식사 계획됨",
+  "myRecipes": "내 레시피",
+  "newRecipe": "새 레시피",
+  "newRecipeTitle": "새 레시피",
+  "noRecipesSaved": "저장된 레시피 없음",
+  "noRecipesSavedHint": "아래 버튼을 눌러 첫 번째 커스텀 레시피를 만드세요.",
+  "openMenu": "메뉴 열기",
+  "prepTime": "조리 시간",
+  "prepTimeMinutes": "조리 시간 (분)",
+  "recipeCreated": "레시피가 생성되었습니다!",
+  "recipeDeleted": "레시피가 삭제되었습니다",
+  "recipeImage": "레시피 이미지",
+  "recipeName": "레시피 이름",
+  "recipeSaved": "레시피가 저장되었습니다!",
+  "recipeTags": "레시피 태그",
+  "removeImage": "이미지 제거",
+  "requiredField": "필수",
+  "saveChanges": "변경 사항 저장",
+  "saveRecipe": "저장",
+  "searchLanguage": "언어 검색...",
+  "searchRecipes": "레시피 검색...",
+  "shortDescription": "짧은 설명",
+  "suggestedTags": "추천",
+  "tags": "태그",
+  "viewRecipe": "레시피 보기"
+}

@@ -1,0 +1,640 @@
+{
+  "@@locale": "ky",
+  "appTitle": "Дүкөн тизмеси",
+  "@appTitle": {
+    "description": "Main app title"
+  },
+  "lists": "Тизмелер",
+  "pantry": "Кампа",
+  "@_Common": "description: Common actions",
+  "cancel": "Жокко чыгаруу",
+  "save": "Сактоо",
+  "create": "Түзүү",
+  "add": "Кошуу",
+  "remove": "Алып салуу",
+  "delete": "Өчүрүү",
+  "edit": "Түзөтүү",
+  "copy": "Көчүрүү",
+  "retry": "Кайра аракет кылуу",
+  "regenerate": "Кайра түзүү",
+  "copiedToClipboard": "Буферге көчүрүлдү",
+  "confirm": "Ырастоо",
+  "close": "Жабуу",
+  "import": "Импорттоо",
+  "rename": "Атын өзгөртүү",
+  "upgrade": "Жаңыртуу",
+  "clear": "Тазалоо",
+  "error": "Ката: {message}",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "errorGeneric": "Ката: {message}",
+  "@errorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseError": "Сатып алууну иштетүүдө ката кетти. Кайра аракет кылыңыз.",
+  "restoreError": "Сатып алууну калыбына келтирүүдө ката кетти. Кайра аракет кылыңыз.",
+  "loading": "Жүктөлүүдө...",
+  "fieldRequired": "Милдеттүү талаа",
+  "addedFeedback": "Кошулду!",
+  "@_Home": "description: Home Screen",
+  "selectedItems": "{count,plural, one{{count} тандалды} other{{count} тандалды}}",
+  "@selectedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimated": "Болжолдуу",
+  "alreadyPurchased": "Мурунтан сатылып алынган",
+  "clearList": "Тизмени тазалоо",
+  "clearPurchased": "Сатып алынгандарды тазалоо",
+  "share": "Бөлүшүү",
+  "shareViaCode": "Код аркылуу бөлүшүү",
+  "importViaCode": "Код аркылуу импорттоо",
+  "listAssistant": "Тизме жардамчысы",
+  "globalAssistant": "Жалпы жардамчы",
+  "becomePremium": "Premium болуу",
+  "manageSubscription": "Жазылууну башкаруу",
+  "completePurchase": "Сатып алууну бүтүрүү",
+  "confirmClearList": "Бардык буюмдарды алып салуу?",
+  "shareListTitle": "Тизмени бөлүшүү",
+  "shareThisCode": "Ушул кодду бөлүшүү:",
+  "validForLimitedTime": "Чектелген убакытка жарактуу",
+  "importListTitle": "Тизмени импорттоо",
+  "enterCodeHint": "Кодду киргизиңиз",
+  "confirmArchiveTitle": "Сатып алууну бүтүрүү",
+  "confirmArchiveContent": "Бул сатып алууну бүтүрүп, тизмени архивге салуу?",
+  "complete": "Бүтүрүү",
+  "listArchived": "Тизме ийгиликтүү архивге салынды!",
+  "listAdded": "{listName} кошулду!",
+  "@listAdded": {
+    "placeholders": {
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
+  "buy": "Сатып алуу",
+  "unmark": "Белгини алып салуу",
+  "confirmDeleteItems": "{count} буюм(дар)ды алып салуу?",
+  "@confirmDeleteItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteTitle": "Ырастоо",
+  "confirmContent": "{count} буюм(дар)ды алып салуу?",
+  "@confirmContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveList": "Тизмени архивдөө",
+  "@_Pantry": "description: Pantry Screen",
+  "pantryAppBar": "Кампа",
+  "generateShoppingList": "Дүкөн тизмесин түзүү",
+  "pantryEmpty": "Кампа бош",
+  "pantryEmptySubtitle": "Үйдө сактагыңыз келген буюмдарды кошуңуз",
+  "itemsNeedPurchase": "{deficit} буюм(дар) сатып алынышы керек",
+  "@itemsNeedPurchase": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "noItemsToBuy": "Сатып алуучу буюмдар жок",
+  "newPantryList": "Кампадан дүкөнгө",
+  "newListTitle": "Жаңы дүкөн тизмеси",
+  "itemsWillBeAdded": "{count} буюм(дар) кошулат",
+  "@itemsWillBeAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "listNameLabel": "Тизме аты",
+  "listCreated": "\"{name}\" тизмеси {count} буюм менен түзүлдү",
+  "@listCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTracking": "Көзөмөл жок",
+  "markAsPurchased": "Сатып алынган деп белгилөө",
+  "editPantryItem": "{name} түзөтүү",
+  "@editPantryItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "idealQuantity": "Идеалдуу өлчөм",
+  "currentQuantity": "Учурдагы өлчөм",
+  "consumed": "Керектелди",
+  "restocked": "{name} {quantity} {unit} чейин толукталды",
+  "@restocked": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmRemovePantry": "\"{name}\" кампадан алып салуу?",
+  "@confirmRemovePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pantryEditTitle": "{name} түзөтүү",
+  "@pantryEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Settings": "description: Settings Screen",
+  "settingsAppBar": "Жөндөөлөр",
+  "language": "Тил",
+  "languagePortuguese": "Португалча (Бразилия)",
+  "languageEnglish": "Англисче",
+  "languageSystem": "Системанын демейкиси",
+  "appearance": "Көрүнүш",
+  "light": "Ачык",
+  "system": "Система",
+  "dark": "Караңгы",
+  "themeColor": "Теманын түсү",
+  "finance": "Каржы",
+  "monthlyBudgetNav": "Айлык бюджет",
+  "budgetSubtitle": "Айлык чыгымдарыңызды көзөмөлдөө",
+  "data": "Маалымат",
+  "backupNav": "Резервдөө",
+  "backupSubtitle": "Маалыматыңызды экспорттоо же импорттоо",
+  "about": "Жөнүндө",
+  "version": "Версия",
+  "privacy": "Купуялык",
+  "termsOfUse": "Колдонуу шарттары",
+  "@_Backup": "description: Backup Screen",
+  "backupTitle": "Резервдөө",
+  "backupPremiumDescription": "Резервдөө жана экспорттоо Premium функциясы",
+  "exportData": "Маалыматты экспорттоо",
+  "exportDataSubtitle": "Бардык тизмелерди JSON катары сактоо",
+  "importData": "Маалыматты импорттоо",
+  "importDataSubtitle": "JSON дан тизмелерди калыбына келтирүү",
+  "importJsonTitle": "JSON импорттоо",
+  "importJsonHint": "Резервдик JSON ды ушул жерге чаптаңыз...",
+  "backupExported": "Резервдик көчүрмө экспорттолду!",
+  "@_Budget": "description: Budget Screen",
+  "budgetAppBar": "Айлык бюджет",
+  "budgetPremiumLocked": "Глобалдык айлык бюджет Premium",
+  "budgetUpgradePrompt": "Жаңыртуу",
+  "noBudgetDefined": "Бюджет белгиленген эмес",
+  "totalEstimated": "Жалпы болжолдуу: {amount}",
+  "@totalEstimated": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "setBudgetButton": "Бюджетти белгилөө",
+  "budgetLists": "Тизмелер",
+  "budgetValueLabel": "Сумма",
+  "setBudgetTitle": "Айлык бюджет",
+  "budgetAmountSpent": "{spent} / {budget}",
+  "@budgetAmountSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Filter": "description: Filter Bar",
+  "filterAll": "Баары",
+  "filterPending": "Күтүүдө",
+  "filterPurchased": "Сатып алынган",
+  "sortName": "Аты",
+  "sortCategory": "Категория",
+  "sortDate": "Күнү",
+  "sortManual": "Кол менен",
+  "@_AddItem": "description: Add Item Dialog",
+  "addItem": "Буюм кошуу",
+  "itemName": "Буюмдун аты",
+  "quantityShort": "Өлч",
+  "unit": "Бирдик",
+  "category": "Категория",
+  "estimatedPrice": "Болжолдуу баасы",
+  "addItemPrice": "Болжолдуу баасы",
+  "@_EditItem": "description: Edit Item Dialog",
+  "editItem": "Буюмду түзөтүү",
+  "quantityFull": "Өлчөм",
+  "editItemPrice": "Болжолдуу баасы",
+  "@_AddPantry": "description: Add Pantry Item Dialog",
+  "addToPantry": "Кампага кошуу",
+  "addToPantryPrompt": "\"{name}\" кампага кошуу?",
+  "@addToPantryPrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yes": "Ооба",
+  "productName": "Буюмдун аты",
+  "idealQty": "Идеалдуу өлч",
+  "currentQty": "Учурдагы өлч",
+  "trackStock": "Запасты көзөмөлдөө",
+  "trackStockActive": "Дүкөн сунуштарында пайда болот",
+  "trackStockInactive": "Дүкөн сунушун түзбөйт",
+  "@_CreateList": "description: Create List Dialog",
+  "createListDialog": "Тизме түзүү",
+  "renameListDialog": "Тизменин атын өзгөртүү",
+  "@_ListSwitcher": "description: List Switcher Sheet",
+  "listHistory": "Тизмелер тарыхы",
+  "myLists": "Менин тизмелерим",
+  "viewActive": "Активдүү көрүү",
+  "viewHistory": "Тарыхты көрүү",
+  "noArchivedLists": "Архивделген тизмелер жок",
+  "noActiveLists": "Активдүү тизмелер жок",
+  "completedOn": "{date} бүткөн",
+  "@completedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sharedLabel": "Бөлүшүлгөн",
+  "restore": "Калыбына келтирүү",
+  "removeSharedTooltip": "Алып салуу",
+  "deleteListTitle": "Тизмени өчүрүү",
+  "deleteListContent": "\"{name}\" тизмесин өчүрүүгө ишенесизби? Бардык буюмдар алып салынат.",
+  "@deleteListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSharedListTitle": "Бөлүшүлгөн тизмени алып салуу",
+  "removeSharedListContent": "\"{name}\" тизмелериңизден алып салуу? Түпнуска тизме өзгөрүлбөйт.",
+  "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createNewList": "Жаңы тизме түзүү",
+  "@_Chat": "description: Chat Screen",
+  "aiAssistant": "AI жардамчы",
+  "aiAssistantDescription": "AI жардамчыбыз менен акылдуу сунуштар, рецепттер жана жеке кеңештер алыңыз.",
+  "generalAssistant": "Жалпы жардамчы",
+  "clearHistory": "Тарыхты тазалоо",
+  "clearHistoryConfirm": "Бул сессиядагы бардык билдирүүлөрдү тазалоо?",
+  "chatHint": "Билдирүүңүздү жазыңыз...",
+  "chatError": "Чатты жүктөөдө ката: {error}",
+  "@chatError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "listHelp": "Тизменизге кантип жардам бере алам?",
+  "generalHelp": "Бүгүн дүкөндө кантип жардам бере алам?",
+  "chatSubtitle": "Буюм сунуштары, рецепттер же үнөмдөө кеңештерин сураңыз.",
+  "aiError": "Кечиресиз, сурамыңызды иштетүүдө ката кетти. Байланышыңызды текшерип, кийинчерээк кайра аракет кылыңыз.",
+  "@_Auth": "description: Auth Screen",
+  "listaPlusTitle": "Lista Plus",
+  "loginPrompt": "Premium функцияларын\nачуу үчүн кириңиз",
+  "signInGoogle": "Google менен кирүү",
+  "signInApple": "Apple менен кирүү",
+  "continueAsGuest": "Мейман катары улантуу",
+  "loginError": "Кирүү катасы: {error}",
+  "@loginError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@_Paywall": "description: Paywall Screen",
+  "paywallTitle": "Lista Plus Premium",
+  "@_Premium": "description: Premium gating",
+  "premiumUpgrade": "Жаңыртуу",
+  "@_Tile": "description: Shopping Item Tile",
+  "itemRemoved": "Буюм алып салынды",
+  "undo": "Артка кайтаруу",
+  "@_EmptyState": "description: Empty States",
+  "emptyListTitle": "Тизмеңиз бош",
+  "emptyListSubtitle": "Баштоо үчүн буюмдарды кошуңуз",
+  "noListFoundTitle": "Тизмелер табылган жок",
+  "noListFoundSubtitle": "Баштоо үчүн биринчи тизмеңизди түзүңүз",
+  "createFirstList": "Биринчи тизме түзүү",
+  "@_BudgetDialog": "description: Budget Dialog",
+  "listBudgetTitle": "Тизме бюджети",
+  "budgetAmountLabel": "Бюджеттин суммасы",
+  "removeBudget": "Алып салуу",
+  "@_PremiumFeatures": "description: Premium Feature Labels",
+  "prefUnlimitedLists": "Чексиз тизмелер",
+  "prefSharing": "Тизмелерди бөлүшүү",
+  "prefFullHistory": "Толук тарых",
+  "prefExportData": "Маалыматты экспорттоо",
+  "prefCustomThemes": "Ыңгайлаштырылган темалар",
+  "prefMonthlyBudget": "Глобалдык айлык бюджет",
+  "prefAIAssistant": "Жеке AI жардамчы",
+  "prefUnlimitedPantry": "Чексиз кампа",
+  "prefInteractiveArtifacts": "Интерактивдүү AI Artifacts",
+  "@_ThemeOptions": "description: Theme Color Names",
+  "themeGreen": "Жашыл",
+  "themeBlue": "Көк",
+  "themePurple": "Кызгылт көк",
+  "themeRed": "Кызыл",
+  "themeOrange": "Кызгылт сары",
+  "themePink": "Кызгылт",
+  "themeIndigo": "Индиго",
+  "themeAmber": "Янтарь",
+  "themeTeal": "Көгүш жашыл",
+  "themeBrown": "Күрөң",
+  "@_Categories": "description: Category Labels",
+  "catFruits": "Жемиштер",
+  "catCleaning": "Тазалоо",
+  "catBeverages": "Суусундуктар",
+  "catBakery": "Нан азыктары",
+  "catOthers": "Башкалар",
+  "@_Unit": "description: Unit",
+  "unitPack": "пакет",
+  "@_Share": "description: Sharing",
+  "shareSubject": "Дүкөн тизмеси",
+  "@_MonthlyBudgetScreen": "description: Monthly Budget Screen",
+  "monthlyBudgetTitle": "Айлык бюджет",
+  "monthlyBudgetSpent": "{spent} / {budget}",
+  "@monthlyBudgetSpent": {
+    "placeholders": {
+      "spent": {
+        "type": "String"
+      },
+      "budget": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteListConfirm": "Тизмени өчүрүү",
+  "pantryItemRemoved": "Буюм алып салынды",
+  "deficitItems": "{deficit,plural, one{{deficit} буюм сатып алынышы керек} other{{deficit} буюм сатып алынышы керек}}",
+  "@deficitItems": {
+    "placeholders": {
+      "deficit": {
+        "type": "int"
+      }
+    }
+  },
+  "cartTotal": "Себеттин жалпысы",
+  "restockLabel": "Толуктоо",
+  "advancedFeatures": "Өркүндөтүлгөн функциялар",
+  "selectAll": "Баарын тандоо",
+  "deselectAll": "Баарын тандоодон чыгаруу",
+  "monthlyBudgetAppBar": "Айлык бюджет",
+  "budgetEditTitle": "Айлык бюджет",
+  "budgetDashboardTitle": "Панель",
+  "selectListForDashboard": "Панелди көрүү үчүн тизме тандаңыз.",
+  "spendingAnalysis": "Чыгымдарды талдоо",
+  "noItemsToAnalyze": "Талдоо үчүн тизмеде буюмдар жок.",
+  "markItemsToSeeAnalysis": "Талдоо көрүү үчүн буюмдарды сатып алынган деп белгилеңиз.",
+  "totalSpending": "Жалпы чыгым",
+  "spendingByCategory": "Категория боюнча чыгым",
+  "achievements": "Жетишкендиктер",
+  "exportPdfExcel": "PDF/Excel экспорттоо",
+  "exportPdf": "PDF катары экспорттоо",
+  "exportExcel": "Excel катары экспорттоо",
+  "organizingAi": "AI МЕНЕН УЮШТУРУУ...",
+  "yesLabel": "Ооба",
+  "noLabel": "Жок",
+  "shareListText": "Менин дүкөн тизмеси",
+  "emptyListAddItems": "Тизмеңиз бош! Алгач буюмдарды кошуңуз.",
+  "listOrganizedMagic": "Тизме сыйкырдуу түрдө категориялар боюнча уюштурулду!",
+  "shoppingMode": "Дүкөн режими",
+  "smartOrganization": "Акылдуу уюштуруу",
+  "savings": "Үнөмдөө",
+  "shoppingModeHeader": "ДҮКӨН РЕЖИМИ",
+  "shareAsText": "Буюмдарды форматталган текст катары жөнөтүү",
+  "shareRealtime": "Башка адамдар менен реалдуу убакытта синхрондоштуруу",
+  "@_AiChatPanel": "description: AI Chat Panel",
+  "quickRecipe": "Тез рецепт",
+  "quickRecipePrompt": "Менин тизмедеги буюмдар менен рецепттерди сунуштаңыз.",
+  "economyTips": "Үнөмдөө кеңештери",
+  "economyTipsPrompt": "Бул сатып алуудан кантип акча үнөмдөй алам?",
+  "organizeAisles": "Текчелер боюнча уюштуруу",
+  "organizeAislesPrompt": "Дүкөн текчелери боюнча уюштуруу.",
+  "recipeSuggestion": "Рецепт сунушу",
+  "aiCreditsRemaining": "{remaining} кредит калды",
+  "@aiCreditsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "addAllToList": "Баарын тизмеге кошуу",
+  "organizeByAisles": "Текчелер боюнча уюштуруу",
+  "voiceTranscriptionTooltip": "Үн менен терим (Акысыз)",
+  "aiVoiceCommandTooltip": "AI үн буйругу (Premium)",
+  "voiceCommandTitle": "AI үн буйругу",
+  "voiceCommandContent": "Тизмени башкаруу үчүн табигый сүйлөңүз!\n\nМисалдар:\n• 'Нан, сыр жана ветчина кошуу'\n• 'Кир жуучу порошокту алып салуу'\n• 'Теманы көккө өзгөртүү'\n\nБул Lista Plus Premiumдун өзгөчө функциясы.",
+  "voiceCommandPlanBtn": "Пландарды көрүү",
+  "itemsAddedSuccess": "Буюмдар тизмеге ийгиликтүү кошулду!",
+  "viewList": "Тизмени көрүү",
+  "@_Feedback": "description: Feedback Screen",
+  "feedbackTitle": "Пикир жөнөтүү",
+  "feedbackPrompt": "Эмнени бөлүшкүңүз келет?",
+  "feedbackTypeBug": "Ката жөнүндө билдирүү",
+  "feedbackTypeBugHint": "Бир нерсе иштебей жатат",
+  "feedbackTypeSuggestion": "Сунуш",
+  "feedbackTypeSuggestionHint": "Колдонмону жакшыртуу идеясы",
+  "feedbackTypeTranslation": "Котормо маселеси",
+  "feedbackTypeTranslationHint": "Туура эмес же ыңгайсыз котормо",
+  "feedbackTypeFeature": "Функция суроо",
+  "feedbackTypeFeatureHint": "Сиз көргүңүз келген функция",
+  "feedbackTypeOther": "Башка",
+  "feedbackTypeOtherHint": "Пикирдин башка түрү",
+  "feedbackHint": "Пикириңизди кенен сүрөттөңүз...",
+  "feedbackSend": "Пикир жөнөтүү",
+  "feedbackSending": "Жөнөтүлүүдө...",
+  "feedbackThankYou": "Рахмат!",
+  "feedbackThankYouMessage": "Пикириңиз кабыл алынды жана Lista Plus'tu бардыгы үчүн жакшыртууга жардам берет.",
+  "feedbackBack": "Артка",
+  "feedbackError": "Жөнөтүү катасы: {error}",
+  "@feedbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackRetry": "Кайра аракет кылуу",
+  "feedbackSettingsTitle": "Пикир жөнөтүү",
+  "feedbackSettingsSubtitle": "Каталар жөнүндө билдириңиз, жакшыртууларды сунуштаңыз же котормолорду оңдоңуз",
+  "viewItems": "View items",
+  "addDirectToList": "Add directly to list",
+  "unlockFullResponse": "Unlock Full Response",
+  "listening": "Listening...",
+  "viewPro": "View Pro",
+  "errorOscillation": "This may occur due to network oscillations or temporary unavailability. Please try again.",
+  "viewDetails": "View Details",
+  "marketMode": "Market Mode",
+  "longHistoryWarning": "Long history: the assistant focuses on the latest messages for better performance.",
+  "howCanIHelp": "How can I help?",
+  "itemsPurchasedShort": "{purchased}/{total} purchased",
+  "@itemsPurchasedShort": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedQuestions": "Suggested questions:",
+  "noItemsInList": "No items in the list",
+  "estimatedCost": "Estimated",
+  "chatSubtitleShort": "Ask about prices, recipes, organization...",
+  "voiceProFeature": "Advanced voice commands are Pro. Enabling basic dictation...",
+  "aiEnergy": "AI Energy",
+  "switchList": "Switch list",
+  "finishShopping": "Finish Shopping",
+  "welcomeAiAssistant": "Welcome to AI Assistant",
+  "errorLoadingChat": "Oops! Something went wrong loading the chat.",
+  "noMessagesFound": "No messages found",
+  "activeListening": "Active Listening",
+  "backToChat": "Back to Chat",
+  "quickReplies": "Quick replies:",
+  "createListToStartAi": "Create a shopping list to start using the smart chat.",
+  "searchInConversation": "Search in conversation...",
+  "shoppingAssistant": "Shopping assistant",
+  "whatToDoWithItem": "What would you like to do with this item?",
+  "itemsPurchasedCount": "{purchased} of {total} purchased",
+  "@itemsPurchasedCount": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingChatSubtitle": "Check your connection or try again later.",
+  "addIngredient": "Ингредиент кошуу",
+  "addPhoto": "Сүрөт кошуу",
+  "allTags": "Баары",
+  "chooseImageSource": "Сүрөт булагын тандаңыз",
+  "chooseLanguage": "Тилди тандаңыз",
+  "deleteRecipe": "Өчүрүү",
+  "deleteRecipeConfirm": "Бул рецептти өчүрөсүзбү?",
+  "deleteRecipeConfirmMsg": "\"{recipeName}\" өчүрүүнү каалайсызбы? Бул аракетти артка кайтарууга болбойт.",
+  "dynamicColors": "Динамикалык түстөр",
+  "dynamicColorsSubtitle": "Тушкагазыңызга негизделген түстөрдү колдонуңуз",
+  "editRecipe": "Түзөтүү",
+  "editRecipeTitle": "Рецептти түзөтүү",
+  "enterUrl": "URL киргизиңиз",
+  "errorLoadingRecipes": "Рецепттерди жүктөөдө ката кетти",
+  "filterByTag": "Тег боюнча чыпкалоо",
+  "gallery": "Галерея",
+  "imageUrlPlaceholder": "Же сүрөттүн URL дарегин чаптаңыз",
+  "ingredients": "Ингредиенттер",
+  "instructions": "Нускамалар",
+  "instructionsHint": "Ар бир сапка бирден кадам жазыңыз...",
+  "loadingRecipes": "Рецепттериңиз жүктөлүүдө...",
+  "mealPlannerAddMeal": "Тамактанууну кошуу",
+  "mealPlannerDateLabel": "Дата",
+  "mealPlannerDeleteMeal": "Тамакты алып салуу",
+  "mealPlannerEditMeal": "Тамакты түзөтүү",
+  "mealPlannerError": "Тамактануу планын жүктөөдө ката кетти",
+  "mealPlannerGenerateList": "Соода тизмесин түзүү",
+  "mealPlannerGenerateListConfirm": "Ушул аптадагы пландаштырылган тамактардын бардык ингредиенттерин соода тизмеңизге кошосузбу?",
+  "mealPlannerGenerateListEmpty": "Кошо турган ингредиенттер жок. Алгач рецепттер менен тамактарды пландаштырыңыз.",
+  "mealPlannerGenerateListNoList": "Алгач соода тизмесин түзүңүз.",
+  "mealPlannerGenerateListSuccess": "Тизмеңизге {count} ингредиент кошулду!",
+  "mealPlannerLoading": "Тамактануу планы жүктөлүүдө...",
+  "mealPlannerMealDeleted": "Тамак алып салынды",
+  "mealPlannerMealTypeBreakfast": "Эртең мененки тамак",
+  "mealPlannerMealTypeDinner": "Кечки тамак",
+  "mealPlannerMealTypeLunch": "Түшкү тамак",
+  "mealPlannerMealTypeSnack": "Жеңил тамак",
+  "mealPlannerNoMeals": "Тамак пландаштырылган жок",
+  "mealPlannerNoMealsHint": "Тамак кошуу үчүн күндү таптаңыз",
+  "mealPlannerNoRecipesFound": "Рецепттер табылган жок",
+  "mealPlannerNoRecipesHint": "Алгач Рецепттер өтмөгүндө рецепттерди түзүңүз",
+  "mealPlannerNoteLabel": "Эскертүү (милдеттүү эмес)",
+  "mealPlannerPrepTime": "{minutes} мүн",
+  "mealPlannerSave": "Планга кошуу",
+  "mealPlannerSearchRecipes": "Рецепттерди издөө...",
+  "mealPlannerSelectRecipe": "Рецепт тандаңыз",
+  "mealPlannerServings": "{count,plural, one{{count} порция} other{{count} порция}}",
+  "mealPlannerServingsLabel": "Порциялар",
+  "mealPlannerTitle": "Тамактанууну пландаштыргыч",
+  "mealPlannerViewMonthly": "Айлык көрүнүш",
+  "mealPlannerViewWeekly": "Апталык көрүнүш",
+  "mealPlannerWeekEmpty": "Бул аптага эч нерсе пландаштырылган жок",
+  "mealPlannerWeekEmptyHint": "Тамактарыңызды пландаштырууну баштоо үчүн каалаган күндү таптаңыз!",
+  "mealPlannerWeekProgress": "{count} / {total} тамак пландаштырылды",
+  "myRecipes": "Менин рецепттерим",
+  "newRecipe": "Жаңы рецепт",
+  "newRecipeTitle": "Жаңы рецепт",
+  "noRecipesSaved": "Рецепттер сакталган жок",
+  "noRecipesSavedHint": "Төмөнкү баскычты таптап, биринчи рецептиңизди түзүңүз.",
+  "openMenu": "Менюну ачуу",
+  "prepTime": "Даярдоо убактысы",
+  "prepTimeMinutes": "Даярдоо убактысы (мүнөт)",
+  "recipeCreated": "Рецепт түзүлдү!",
+  "recipeDeleted": "Рецепт өчүрүлдү",
+  "recipeImage": "Рецепттин сүрөтү",
+  "recipeName": "Рецепттин аты",
+  "recipeSaved": "Рецепт сакталды!",
+  "recipeTags": "Рецепт тегдери",
+  "removeImage": "Сүрөттү алып салуу",
+  "requiredField": "Милдеттүү",
+  "saveChanges": "Өзгөртүүлөрдү сактоо",
+  "saveRecipe": "Сактоо",
+  "searchLanguage": "Тилди издөө...",
+  "searchRecipes": "Рецепттерди издөө...",
+  "shortDescription": "Кыскача сүрөттөмө",
+  "suggestedTags": "Сунушталган",
+  "tags": "Тегдер",
+  "viewRecipe": "Рецептти көрүү"
+}

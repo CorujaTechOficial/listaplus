@@ -326,8 +326,9 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     final items = state.value ?? [];
     int newlyPurchased = 0;
+    final idsSet = ids.toSet();
     final updated = items.map((item) {
-      if (ids.contains(item.id)) {
+      if (idsSet.contains(item.id)) {
         if (!item.isPurchased && isPurchased) {
           newlyPurchased++;
         }

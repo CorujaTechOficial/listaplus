@@ -7,7 +7,9 @@ pluginManagement {
         flutterSdkPath
     }
 
-    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle") {
+        name = "flutter-gradle-tools"
+    }
 
     repositories {
         google()
@@ -17,7 +19,7 @@ pluginManagement {
 }
 
 plugins {
-    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+    id("dev.flutter.flutter-plugin-loader")
     id("com.android.application") version "8.11.1" apply false
     id("org.jetbrains.kotlin.android") version "2.2.20" apply false
     id("com.google.gms.google-services") version "4.4.2" apply false

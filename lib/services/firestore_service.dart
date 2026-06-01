@@ -32,12 +32,32 @@ class FirestoreService implements StorageBackend {
 
   final FirebaseFirestore _db;
   final String _uid;
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> _docGetWithCacheFallback(DocumentReference<Map<String, dynamic>> ref) async {
+    try {
+      final doc = await ref.get().timeout(const Duration(seconds: 3));
+      return doc;
+    } on Object catch (_) {
+      final doc = await ref.get(const GetOptions(source: Source.cache));
+      return doc;
+    }
+  }
+
+  Future<QuerySnapshot<Map<String, dynamic>>> _queryGetWithCacheFallback(Query<Map<String, dynamic>> query) async {
+    try {
+      final snap = await query.get().timeout(const Duration(seconds: 3));
+      return snap;
+    } on Object catch (_) {
+      final snap = await query.get(const GetOptions(source: Source.cache));
+      return snap;
+    }
+  }
 // coverage:ignore-start
 
   static const _maxRetries = 3;
   static const _baseDelay = Duration(milliseconds: 300);
-  static const _operationTimeout = Duration(seconds: 15);
-  static const _streamTimeout = Duration(seconds: 20);
+  static const _operationTimeout = Duration(seconds: 30);
+  static const _streamTimeout = Duration(seconds: 30);
 
   static bool isTransientError(Object error) {
     if (error is FirebaseException) {
@@ -76,15 +96,21 @@ class FirestoreService implements StorageBackend {
     bool hasEmitted = false;
     final controller = StreamController<T>();
     
+    debugPrint('[FirestoreService] Iniciando stream: $label para UID: $_uid');
+
     final Timer timeoutTimer = Timer(_streamTimeout, () {
       if (!hasEmitted && !controller.isClosed) {
         LoggerService.log('Firestore Stream Timeout ($label) para UID: $_uid', tag: 'FirestoreService');
+        debugPrint('[FirestoreService] Timeout na stream: $label');
         controller.addError(TimeoutException('Tempo esgotado ao conectar com o servidor ($label). Verifique sua conexão.'));
       }
     });
 
     final sub = stream.listen(
       (data) {
+        if (!hasEmitted) {
+          debugPrint('[FirestoreService] Primeiro evento recebido: $label');
+        }
         hasEmitted = true;
         timeoutTimer.cancel();
         if (!controller.isClosed) {
@@ -265,7 +291,7 @@ class FirestoreService implements StorageBackend {
   @override
   Future<String?> getCurrentListId() async {
     return _retry(() async {
-      final doc = await _db.collection('users').doc(_uid).get();
+      final doc = await _docGetWithCacheFallback(_db.collection('users').doc(_uid));
       return doc.data()?['currentListId'] as String?;
     }, label: 'getCurrentListId');
   }
@@ -283,7 +309,7 @@ class FirestoreService implements StorageBackend {
   @override
   Future<Map<String, dynamic>?> getUserData() async {
     return _retry(() async {
-      final doc = await _db.collection('users').doc(_uid).get();
+      final doc = await _docGetWithCacheFallback(_db.collection('users').doc(_uid));
       return doc.data();
     });
   }
@@ -545,7 +571,7 @@ class FirestoreService implements StorageBackend {
   @override
   Future<Map<String, dynamic>?> getAiUsage() async {
     return _retry(() async {
-      final doc = await _db.collection('users').doc(_uid).get();
+      final doc = await _docGetWithCacheFallback(_db.collection('users').doc(_uid));
       return doc.data()?['aiUsage'] as Map<String, dynamic>?;
     });
   }
@@ -577,7 +603,7 @@ class FirestoreService implements StorageBackend {
           ? _db.collection('users').doc(_uid).collection('lists').doc(listId).collection('chat_messages')
           : _db.collection('users').doc(_uid).collection('global_chat_messages');
       
-      final legacySnap = await legacyColl.get();
+      final legacySnap = await _queryGetWithCacheFallback(legacyColl);
       if (legacySnap.docs.isNotEmpty) {
         // Migration: Move legacy messages to a new session
         final legacySession = ChatSessionModel(
@@ -599,7 +625,7 @@ class FirestoreService implements StorageBackend {
 
       // 2. Load sessions
       final coll = _getChatSessionsColl(listId);
-      final snap = await coll.orderBy('updatedAt', descending: true).get();
+      final snap = await _queryGetWithCacheFallback(coll.orderBy('updatedAt', descending: true));
       return snap.docs.map((d) {
         final data = d.data();
         data['id'] = d.id;
@@ -634,7 +660,7 @@ class FirestoreService implements StorageBackend {
       
       // Delete messages first
       final messagesColl = sessionRef.collection('messages');
-      final snap = await messagesColl.get();
+      final snap = await _queryGetWithCacheFallback(messagesColl);
       if (snap.docs.isNotEmpty) {
         final batch = _db.batch();
         for (final doc in snap.docs) {
@@ -654,7 +680,7 @@ class FirestoreService implements StorageBackend {
     }
     return _retry(() async {
       final coll = _getChatMessagesColl(listId, sessionId);
-      final snap = await coll.orderBy('timestamp').get();
+      final snap = await _queryGetWithCacheFallback(coll.orderBy('timestamp'));
       return snap.docs.map((d) {
         final data = d.data();
         data['id'] = d.id;
@@ -672,10 +698,10 @@ class FirestoreService implements StorageBackend {
       final coll = _getChatMessagesColl(listId, sessionId);
       await coll.doc(message.id).set(message.toJson());
       
-      // Update session's updatedAt
-      await _getChatSessionsColl(listId).doc(sessionId).update({
+      // Update session's updatedAt - use set with merge if document might not exist
+      await _getChatSessionsColl(listId).doc(sessionId).set({
         'updatedAt': DateTime.now().toIso8601String(),
-      });
+      }, SetOptions(merge: true));
     });
   }
 
@@ -713,7 +739,7 @@ class FirestoreService implements StorageBackend {
   @override
   Future<List<CategoryData>> loadCategories() async {
     return _retry(() async {
-      final snap = await _db.collection('users').doc(_uid).collection('categories').get();
+      final snap = await _queryGetWithCacheFallback(_db.collection('users').doc(_uid).collection('categories'));
       return snap.docs.map((d) {
         final data = d.data();
         data['id'] = d.id;

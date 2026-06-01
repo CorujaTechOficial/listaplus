@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -59,7 +60,11 @@ class AuthScreen extends ConsumerWidget {
               SizedBox(
                 width: double.infinity,
                 child: FilledButton.icon(
-                  icon: const Icon(Icons.g_mobiledata),
+                  icon: SvgPicture.asset(
+                    'assets/images/google_logo.svg',
+                    width: 20,
+                    height: 20,
+                  ),
                   label: Text(l10n.signInGoogle),
                   onPressed: () => _signInWithGoogle(context, ref),
                 ),
