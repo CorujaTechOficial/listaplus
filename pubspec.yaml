@@ -86,7 +86,7 @@ dependencies:
   markdown: ^7.3.0
   package_info_plus: ^10.1.0
   image_picker: ^1.1.2
-  firebase_storage: ^13.4.1
+  firebase_storage: ^13.4.2
   google_mobile_ads: ^8.0.0
 
 dev_dependencies:
