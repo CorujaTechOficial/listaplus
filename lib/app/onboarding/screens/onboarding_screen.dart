@@ -13,9 +13,6 @@ import 'package:shopping_list/app/onboarding/screens/onboarding_slide_premium.da
 import 'package:shopping_list/app/onboarding/widgets/onboarding_dots.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
-/// Slide index that requires the food field to be filled before advancing.
-const int _kPersonalizationSlideIndex = 2;
-
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -39,11 +36,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   bool get _isLastSlide => _currentSlide == 5;
 
   /// Returns true if the user is allowed to advance from the current slide.
-  /// On the personalization slide the food field must be non-empty.
   bool _canAdvance(String favoriteFood) {
-    if (_currentSlide == _kPersonalizationSlideIndex) {
-      return favoriteFood.trim().isNotEmpty;
-    }
     return true;
   }
 
@@ -92,11 +85,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
               padding: const EdgeInsets.only(bottom: 80),
               child: PageView(
                 controller: _pageController,
-                // Disable swipe on the personalization slide until food is set.
-                physics: (_currentSlide == _kPersonalizationSlideIndex &&
-                        !canAdvance)
-                    ? const NeverScrollableScrollPhysics()
-                    : const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 onPageChanged: _handlePageChanged,
                 children: [
                   OnboardingSlideWelcomeLogin(

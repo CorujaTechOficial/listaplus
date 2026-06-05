@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import '../providers/onboarding_data_provider.dart';
@@ -83,21 +84,18 @@ class _OnboardingSlidePersonalizationState
             // ── Illustration ───────────────────────────────────────────────
             Center(
               child: Container(
-                width: 96,
-                height: 96,
+                width: 120,
+                height: 120,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    colors: [
-                      theme.colorScheme.primaryContainer,
-                      theme.colorScheme.secondaryContainer,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
+                  color: theme.colorScheme.primaryContainer.withAlpha(100),
                 ),
-                child: const Center(
-                  child: Text('🛒', style: TextStyle(fontSize: 44)),
+                child: Padding(
+                  padding: const EdgeInsets.all(Spacing.md),
+                  child: SvgPicture.asset(
+                    'assets/images/kipi/kipi_welcome.svg',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               )
                   .animate()

@@ -325,7 +325,7 @@
   "generalHelp": "როგორ დაგეხმაროთ დღეს თქვენი შეძენებისას?",
   "chatSubtitle": "მოითხოვეთ ნივთების წინადადებები, რეცეპტები ან დაზოგვის რჩევები.",
   "aiError": "უკაცრავად, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ თავიდან მოგვიანებით.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "შედით სისტემაში პრემიუმ ფუნქციების განსაბლოკად",
   "signInGoogle": "Google-ით შესვლა",
   "signInApple": "Apple-ით შესვლა",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "განაახლეთ განბლოკვისთვის",
   "itemRemoved": "ნივთი წაიშალა",
   "undo": "დაბრუნება",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "ხმით აკრეფა (უფასო)",
   "aiVoiceCommandTooltip": "AI ხმოვანი ბრძანება (პრემიუმ)",
   "voiceCommandTitle": "AI ხმოვანი ბრძანება",
-  "voiceCommandContent": "ილაპარაკეთ ბუნებრივად თქვენი სიის სამართავად!\n\nმაგალითები:\n• 'დაამატე პური, ყველი და ლორი'\n• 'წაშალე სარეცხი ფხვნილი'\n• 'შეცვალე თემა ლურჯზე'\n\nეს არის Lista Plus Premium-ის ექსკლუზიური ფუნქცია.",
+  "voiceCommandContent": "ილაპარაკეთ ბუნებრივად თქვენი სიის სამართავად!\n\nმაგალითები:\n• 'დაამატე პური, ყველი და ლორი'\n• 'წაშალე სარეცხი ფხვნილი'\n• 'შეცვალე თემა ლურჯზე'\n\nეს არის KipiList Premium-ის ექსკლუზიური ფუნქცია.",
   "voiceCommandPlanBtn": "გეგმების ნახვა",
   "itemsAddedSuccess": "ნივთები წარმატებით დაემატა სიაში!",
   "viewList": "სიის ნახვა",
@@ -469,7 +469,7 @@
   "feedbackSend": "გამოხმაურების გაგზავნა",
   "feedbackSending": "იგზავნება...",
   "feedbackThankYou": "გმადლობთ!",
-  "feedbackThankYouMessage": "თქვენი გამოხმაურება მიღებულია და გვეხმარება Lista Plus-ის გაუმჯობესებაში ყველასთვის.",
+  "feedbackThankYouMessage": "თქვენი გამოხმაურება მიღებულია და გვეხმარება KipiList-ის გაუმჯობესებაში ყველასთვის.",
   "feedbackBack": "უკან",
   "feedbackError": "გაგზავნის შეცდომა: {error}",
   "@feedbackError": {

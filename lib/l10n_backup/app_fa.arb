@@ -495,7 +495,7 @@
   "feedbackSend": "ارسال بازخورد",
   "feedbackSending": "در حال ارسال...",
   "feedbackThankYou": "متشکرم!",
-  "feedbackThankYouMessage": "بازخورد شما دریافت شد و به ما کمک می‌کند تا Lista Plus را برای همه بهبود دهیم.",
+  "feedbackThankYouMessage": "بازخورد شما دریافت شد و به ما کمک می‌کند تا KipiList را برای همه بهبود دهیم.",
   "feedbackBack": "بازگشت",
   "feedbackError": "خطا در ارسال: {error}",
   "@feedbackError": {

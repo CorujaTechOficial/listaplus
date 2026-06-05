@@ -5,11 +5,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/models/ai_usage.dart';
 import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/domain/entities/suggested_reply.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
-import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
@@ -83,15 +81,15 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
 
     final welcomeMsg = ChatMessage(
       role: 'assistant',
-      content: 'Olá! 👋 Sou seu assistente de Inteligência Artificial do Lista Plus.\n\n'
+      content: 'Olá! 👋 Eu sou o **Kipi**, seu assistente pessoal de compras e receitas!\n\n'
           'Estou aqui para ajudar você a:\n'
           '🛒 **Organizar** suas compras por categorias automaticamente\n'
           '💰 **Controlar** seu orçamento e dar dicas de economia\n'
           '🍲 **Sugerir** receitas deliciosas com o que você já tem\n\n'
           'Como posso ajudar hoje? Você pode começar criando sua primeira lista!',
       suggestedReplies: [
-        SuggestedReply(label: 'Criar minha primeira lista', prompt: 'Me ajude a criar minha primeira lista de compras', icon: 'add_shopping_cart'),
-        SuggestedReply(label: 'Como economizar?', prompt: 'Como você pode me ajudar a economizar nas compras?', icon: 'savings'),
+        SuggestedReply(label: 'Criar minha primeira lista', prompt: 'Kipi, me ajude a criar minha primeira lista de compras', icon: 'add_shopping_cart'),
+        SuggestedReply(label: 'Como economizar?', prompt: 'Kipi, como você pode me ajudar a economizar nas compras?', icon: 'savings'),
       ],
     );
 
@@ -190,7 +188,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   void _shareReferral() {
     final l10n = AppLocalizations.of(context)!;
     SharePlus.instance.share(ShareParams(
-      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      text: l10n.shareReferralText('https://kipilist.com/invite'),
       subject: l10n.shareReferralSubject,
     ));
   }
@@ -242,6 +240,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   EmptyState(
+                    assetPath: 'assets/images/kipi/kipi_welcome.svg',
                     title: l10n.welcomeAiAssistant,
                     subtitle: l10n.createListToStartAi,
                   ),
@@ -291,20 +290,14 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
     final purchased = items.where((i) => i.isPurchased).length;
     final total = items.length;
 
-    final isPremium = ref.watch(premiumProvider).value ?? false;
-    final aiUsageAsync = ref.watch(aiUsageStateProvider);
-    final remaining = aiUsageAsync.value?.remainingDaily ?? 0;
-    final progress = (remaining / AiUsageLimits.dailyLimit).clamp(0.0, 1.0);
-    final energyColor = remaining > 5
-        ? Colors.green
-        : (remaining > 2 ? Colors.amber : Colors.orange);
-
     // ignore: prefer_int_literals
     final totalValue = items.fold(0.0, (sum, item) => sum + (item.estimatedPrice ?? 0) * item.quantity);
     final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
       appBar: AppBar(
+        leadingWidth: 40,
+        titleSpacing: 0,
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () => Scaffold.of(context).openDrawer(),
@@ -317,43 +310,6 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
             onPressed: () => _showShareSheet(listId),
             tooltip: l10n.inviteToList,
           ),
-          if (!isPremium && aiUsageAsync.hasValue)
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 12),
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: theme.colorScheme.primaryContainer.withAlpha((0.5 * 255).toInt()),
-                borderRadius: BorderRadius.circular(RadiusTokens.md),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.bolt, size: 14, color: theme.colorScheme.primary),
-                  const SizedBox(width: 4),
-                  SizedBox(
-                    width: 36,
-                    height: 4,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(2),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        backgroundColor: theme.colorScheme.primary.withAlpha((0.2 * 255).toInt()),
-                        valueColor: AlwaysStoppedAnimation<Color>(energyColor),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '$remaining',
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      color: theme.colorScheme.primary,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 10,
-                    ),
-                  ),
-                ],
-              ),
-            ),
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert),
             onSelected: (value) {

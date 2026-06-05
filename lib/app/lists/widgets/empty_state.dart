@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// coverage:ignore-start
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../../../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../models/unit.dart';
 import 'add_item_dialog.dart';
+import '../../../utils/test_utils.dart';
 
 class EmptyState extends ConsumerWidget {
   const EmptyState({
     super.key,
     this.icon,
+    this.assetPath,
     this.title,
     this.subtitle,
     this.listId,
   });
 
   final IconData? icon;
+  final String? assetPath;
   final String? title;
   final String? subtitle;
   final String? listId;
@@ -28,7 +32,7 @@ class EmptyState extends ConsumerWidget {
     final theme = Theme.of(context);
 
     final suggestions = [
-      'Leite', 'Pão', 'Ovos', 'Frutas', 'Café', 'Arroz'
+      'Leite', 'Pão', 'Ovos', 'Café', 'Arroz', 'Frutas'
     ];
 
     return LayoutBuilder(
@@ -43,11 +47,26 @@ class EmptyState extends ConsumerWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  icon ?? Icons.shopping_cart_outlined,
-                  size: 64,
-                  color: theme.colorScheme.outlineVariant,
-                ),
+                if (assetPath != null || (icon == null && listId != null))
+                  SvgPicture.asset(
+                    assetPath ?? 'assets/images/kipi/kipi_helper.svg',
+                    width: 140,
+                    height: 140,
+                  ).animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true)).moveY(
+                    begin: -5,
+                    end: 5,
+                    duration: 2.seconds,
+                    curve: Curves.easeInOut,
+                  )
+                else
+                  Icon(
+                    icon ?? Icons.shopping_cart_outlined,
+                    size: 64,
+                    color: theme.colorScheme.outlineVariant,
+                  ).animate().scale(
+                    duration: 600.ms,
+                    curve: Curves.elasticOut,
+                  ),
                 const SizedBox(height: Spacing.lg),
                 Text(
                   title ?? l10n.emptyListTitle,
@@ -74,7 +93,7 @@ class EmptyState extends ConsumerWidget {
                       color: theme.colorScheme.primary,
                       fontWeight: FontWeight.w600,
                     ),
-                  ),
+                  ).animate().fadeIn(delay: 400.ms),
                   const SizedBox(height: Spacing.md),
                   Wrap(
                     spacing: 8,
@@ -98,6 +117,9 @@ class EmptyState extends ConsumerWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(RadiusTokens.full),
                         ),
+                      ).animate().fadeIn(delay: (500 + entry.key * 50).ms).scale(
+                        duration: 300.ms,
+                        curve: Curves.easeOutBack,
                       );
                     }).toList(),
                   ),
@@ -115,7 +137,7 @@ class EmptyState extends ConsumerWidget {
                     style: FilledButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                     ),
-                  ),
+                  ).animate().fadeIn(delay: 1.seconds).slideY(begin: 0.2, end: 0),
                 ],
               ],
             ),

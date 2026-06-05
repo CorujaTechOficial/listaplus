@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
@@ -141,10 +142,20 @@ class _OnboardingSlidePremiumState
             ),
           ),
           const SizedBox(height: Spacing.md),
-          const Icon(
-            Icons.workspace_premium,
-            size: 64,
-            color: AppColors.premiumAmber,
+          Container(
+            width: 120,
+            height: 120,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.premiumAmber.withAlpha(50),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(Spacing.md),
+              child: SvgPicture.asset(
+                'assets/images/kipi/kipi_helper.svg',
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
           const SizedBox(height: Spacing.sm),
           Text(
@@ -219,7 +230,7 @@ class _OnboardingSlidePremiumState
               TextButton(
                 onPressed: () => launchUrl(
                   Uri.parse(
-                    'https://listaplus-6547b.web.app/privacidade.html',
+                    'https://kipilist-6547b.web.app/privacidade.html',
                   ),
                   mode: LaunchMode.externalApplication,
                 ),
@@ -238,7 +249,7 @@ class _OnboardingSlidePremiumState
               ),
               TextButton(
                 onPressed: () => launchUrl(
-                  Uri.parse('https://listaplus-6547b.web.app/termos.html'),
+                  Uri.parse('https://kipilist-6547b.web.app/termos.html'),
                   mode: LaunchMode.externalApplication,
                 ),
                 child: Text(

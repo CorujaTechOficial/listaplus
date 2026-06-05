@@ -15,8 +15,8 @@ REGIONS_VERSION = "2025/03"
 SUBSCRIPTIONS = [
     {
         "productId": "listaplus_monthly",
-        "title": "Lista Plus Mensal",
-        "description": "Acesso premium mensal ao Lista Plus",
+        "title": "KipiList Mensal",
+        "description": "Acesso premium mensal ao KipiList",
         "basePlanId": "monthly",
         "subscription": {
             "packageName": PACKAGE_NAME,
@@ -24,8 +24,8 @@ SUBSCRIPTIONS = [
             "listings": [
                 {
                     "languageCode": "pt-BR",
-                    "title": "Lista Plus Mensal",
-                    "description": "Acesso premium mensal ao Lista Plus",
+                    "title": "KipiList Mensal",
+                    "description": "Acesso premium mensal ao KipiList",
                     "benefits": ["Listas ilimitadas", "Sem anuncios"],
                 }
             ],
@@ -52,8 +52,8 @@ SUBSCRIPTIONS = [
     },
     {
         "productId": "listaplus_yearly",
-        "title": "Lista Plus Anual",
-        "description": "Acesso premium anual ao Lista Plus",
+        "title": "KipiList Anual",
+        "description": "Acesso premium anual ao KipiList",
         "basePlanId": "yearly",
         "subscription": {
             "packageName": PACKAGE_NAME,
@@ -61,8 +61,8 @@ SUBSCRIPTIONS = [
             "listings": [
                 {
                     "languageCode": "pt-BR",
-                    "title": "Lista Plus Anual",
-                    "description": "Acesso premium anual ao Lista Plus",
+                    "title": "KipiList Anual",
+                    "description": "Acesso premium anual ao KipiList",
                     "benefits": ["Listas ilimitadas", "Sem anuncios"],
                 }
             ],

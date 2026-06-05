@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,6 +9,7 @@ import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/models/pantry_item.dart';
+import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/domain/entities/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
@@ -154,7 +156,7 @@ class PantryScreen extends ConsumerWidget {
   void _shareApp(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     SharePlus.instance.share(ShareParams(
-      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      text: l10n.shareReferralText('https://kipilist.com/invite'),
       subject: l10n.shareReferralSubject,
     ));
   }
@@ -215,16 +217,18 @@ class PantryScreen extends ConsumerWidget {
                         try {
                           final newList = await ref.read(shoppingListsProvider.notifier).createList(name);
                           final itemsNotifier = ref.read(shoppingListItemsProvider(newList.id).notifier);
-                          for (final suggestion in suggestions) {
-                            await itemsNotifier.addItem(
-                              listId: newList.id,
-                              name: suggestion.name,
-                              quantity: suggestion.quantity,
-                              categoryId: suggestion.categoryId,
-                              unit: suggestion.unit,
-                              estimatedPrice: suggestion.estimatedPrice,
-                            );
-                          }
+                          
+                          final newItems = suggestions.map((suggestion) => ShoppingItem(
+                            shoppingListId: newList.id,
+                            name: suggestion.name,
+                            quantity: suggestion.quantity,
+                            categoryId: suggestion.categoryId,
+                            unit: suggestion.unit,
+                            estimatedPrice: suggestion.estimatedPrice,
+                          )).toList();
+                          
+                          await itemsNotifier.addItems(newItems);
+                          
                           await ref.read(currentListIdProvider.notifier).setCurrentList(newList.id);
                           if (ctx.mounted) {
                             ScaffoldMessenger.of(ctx).showSnackBar(
@@ -521,6 +525,7 @@ class _EditPantryItemDialogState extends State<_EditPantryItemDialog> {
                   border: const OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               ),
               const SizedBox(height: Spacing.sm),
               TextField(
@@ -530,6 +535,7 @@ class _EditPantryItemDialogState extends State<_EditPantryItemDialog> {
                   border: const OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               ),
             ],
           ),

@@ -325,7 +325,7 @@
   "generalHelp": "આજે તમારી ખરીદીમાં હું કેવી રીતે મદદ કરી શકું?",
   "chatSubtitle": "આઇટમ સૂચનો, રેસિપી અથવા બચત ટિપ્સ માટે પૂછો.",
   "aiError": "માફ કરશો, તમારી વિનંતી પ્રક્રિયા કરવામાં ભૂલ આવી. તમારું કનેક્શન તપાસો અથવા પછીથી ફરી પ્રયાસ કરો.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "પ્રીમિયમ સુવિધાઓ\nઅનલૉક કરવા લૉગિન કરો",
   "signInGoogle": "Google વડે સાઇન ઇન કરો",
   "signInApple": "Apple વડે સાઇન ઇન કરો",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus પ્રીમિયમ",
+  "paywallTitle": "KipiList પ્રીમિયમ",
   "premiumUpgrade": "અનલૉક કરવા અપગ્રેડ કરો",
   "itemRemoved": "આઇટમ દૂર કરી",
   "undo": "પૂર્વવત્ કરો",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "વૉઇસ ટાઇપિંગ (મફત)",
   "aiVoiceCommandTooltip": "AI વૉઇસ કમાન્ડ (પ્રીમિયમ)",
   "voiceCommandTitle": "AI વૉઇસ કમાન્ડ",
-  "voiceCommandContent": "તમારી યાદી મેનેજ કરવા કુદરતી રીતે બોલો!\n\nઉદાહરણો:\n• 'બ્રેડ, ચીઝ અને હેમ ઉમેરો'\n• 'લોન્ડ્રી ડિટર્જન્ટ દૂર કરો'\n• 'થીમ વાદળીમાં બદલો'\n\nઆ Lista Plus Premiumની વિશિષ્ટ સુવિધા છે.",
+  "voiceCommandContent": "તમારી યાદી મેનેજ કરવા કુદરતી રીતે બોલો!\n\nઉદાહરણો:\n• 'બ્રેડ, ચીઝ અને હેમ ઉમેરો'\n• 'લોન્ડ્રી ડિટર્જન્ટ દૂર કરો'\n• 'થીમ વાદળીમાં બદલો'\n\nઆ KipiList Premiumની વિશિષ્ટ સુવિધા છે.",
   "voiceCommandPlanBtn": "પ્લાન જુઓ",
   "itemsAddedSuccess": "આઇટમ સફળતાપૂર્વક યાદીમાં ઉમેરાઈ!",
   "viewList": "યાદી જુઓ",
@@ -469,7 +469,7 @@
   "feedbackSend": "પ્રતિસાદ મોકલો",
   "feedbackSending": "મોકલાઈ રહ્યું છે...",
   "feedbackThankYou": "આભાર!",
-  "feedbackThankYouMessage": "તમારો પ્રતિસાદ પ્રાપ્ત થયો છે અને તે Lista Plus ને બધા માટે સુધારવામાં મદદ કરે છે.",
+  "feedbackThankYouMessage": "તમારો પ્રતિસાદ પ્રાપ્ત થયો છે અને તે KipiList ને બધા માટે સુધારવામાં મદદ કરે છે.",
   "feedbackBack": "પાછળ",
   "feedbackError": "મોકલવામાં ભૂલ: {error}",
   "@feedbackError": {

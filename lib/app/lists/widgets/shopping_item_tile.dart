@@ -58,26 +58,52 @@ class ShoppingItemTile extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(
             children: [
-              _CustomCheckbox(
-                value: selectionMode ? isSelected : isPurchased,
-                onChanged: selectionMode
-                    ? (v) {
-                        HapticFeedback.selectionClick();
-                        onSelectionChanged?.call(v ?? false);
+              if (selectionMode)
+                _CustomCheckbox(
+                  value: isSelected,
+                  onChanged: (v) {
+                    HapticFeedback.selectionClick();
+                    onSelectionChanged?.call(v ?? false);
+                  },
+                )
+              else
+                // Status indicator (not a checkbox for purchase, as per mandate)
+                GestureDetector(
+                  onTap: () async {
+                    if (isPurchased) {
+                      unawaited(HapticFeedback.lightImpact());
+                    } else {
+                      unawaited(HapticFeedback.mediumImpact());
+                    }
+                    
+                    await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
+                    
+                    if (!isPurchased && context.mounted) {
+                      _askToAddToPantry(context, ref);
+                      
+                      final updatedItems = await ref.read(shoppingListItemsProvider(listId).future);
+                      final allPurchased = updatedItems.isNotEmpty && updatedItems.every((i) => i.isPurchased);
+                      if (allPurchased) {
+                        unawaited(HapticFeedback.heavyImpact());
                       }
-                    : (v) async {
-                        if (v == true) {
-                          unawaited(HapticFeedback.mediumImpact());
-                        } else {
-                          unawaited(HapticFeedback.lightImpact());
-                        }
-                        await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
-                        if (v == true && context.mounted) {
-                          _askToAddToPantry(context, ref);
-                        }
-                      },
-                activeColor: isPurchased ? theme.colorScheme.primary : null,
-              ),
+                    }
+                  },
+                  child: Container(
+                    width: 24,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: isPurchased ? theme.colorScheme.primary : theme.colorScheme.outline,
+                        width: 2,
+                      ),
+                      color: isPurchased ? theme.colorScheme.primary : Colors.transparent,
+                    ),
+                    child: isPurchased
+                        ? Icon(Icons.check, size: 16, color: theme.colorScheme.onPrimary)
+                        : null,
+                  ),
+                ),
               const SizedBox(width: 16),
               Expanded(
                 child: Column(
@@ -232,10 +258,9 @@ class ShoppingItemTile extends ConsumerWidget {
 }
 
 class _CustomCheckbox extends StatelessWidget {
-  const _CustomCheckbox({required this.value, required this.onChanged, this.activeColor});
+  const _CustomCheckbox({required this.value, required this.onChanged});
   final bool value;
   final ValueChanged<bool?> onChanged;
-  final Color? activeColor;
 
   @override
   Widget build(BuildContext context) {
@@ -245,7 +270,6 @@ class _CustomCheckbox extends StatelessWidget {
       child: Checkbox(
         value: value,
         onChanged: onChanged,
-        activeColor: activeColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       ),
     );

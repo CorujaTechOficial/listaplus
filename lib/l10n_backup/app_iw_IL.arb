@@ -325,7 +325,7 @@
   "generalHelp": "איך אני יכול לעזור עם הקניות שלך היום?",
   "chatSubtitle": "בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.",
   "aiError": "מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "התחבר כדי לפתוח תכונות Premium",
   "signInGoogle": "התחבר עם Google",
   "signInApple": "התחבר עם Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "שדרג כדי לפתוח",
   "itemRemoved": "הפריט הוסר",
   "undo": "בטל",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "הקלדה קולית (חינם)",
   "aiVoiceCommandTooltip": "פקודה קולית AI (Premium)",
   "voiceCommandTitle": "פקודה קולית AI",
-  "voiceCommandContent": "דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• 'הוסף לחם, גבינה ונקניק'\n• 'הסר אבקת כביסה'\n• 'שנה נושא לכחול'\n\nזוהי תכונה בלעדית של Lista Plus Premium.",
+  "voiceCommandContent": "דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• 'הוסף לחם, גבינה ונקניק'\n• 'הסר אבקת כביסה'\n• 'שנה נושא לכחול'\n\nזוהי תכונה בלעדית של KipiList Premium.",
   "voiceCommandPlanBtn": "צפה בתוכניות",
   "itemsAddedSuccess": "הפריטים נוספו בהצלחה לרשימה!",
   "viewList": "צפה ברשימה",
@@ -469,7 +469,7 @@
   "feedbackSend": "שלח משוב",
   "feedbackSending": "שולח...",
   "feedbackThankYou": "תודה!",
-  "feedbackThankYouMessage": "המשוב שלך התקבל ועוזר לנו לשפר את Lista Plus לכולם.",
+  "feedbackThankYouMessage": "המשוב שלך התקבל ועוזר לנו לשפר את KipiList לכולם.",
   "feedbackBack": "חזור",
   "feedbackError": "שגיאה בשליחה: {error}",
   "@feedbackError": {

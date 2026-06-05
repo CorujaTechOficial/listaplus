@@ -10,10 +10,15 @@ import '../../services/logger_service.dart';
 
 part 'monetization_providers.g.dart';
 
-const String listaPlusProEntitlement = 'lista_plus_pro';
+const String kipiListProEntitlement = 'kipilist_pro';
 
 final revenueCatServiceProvider = Provider<RevenueCatService>((ref) {
   return RevenueCatServiceImpl();
+});
+
+final paywallPackagesProvider = FutureProvider<List<PaywallPackage>>((ref) async {
+  final service = ref.read(revenueCatServiceProvider);
+  return service.getPaywallPackages();
 });
 
 final adServiceProvider = Provider<AdService>((ref) {
@@ -52,7 +57,7 @@ class Premium extends _$Premium {
     ref.onDispose(() => revenueCat.removeCustomerInfoUpdateListener(listener));
 
     try {
-      final active = await revenueCat.isEntitlementActive(listaPlusProEntitlement);
+      final active = await revenueCat.isEntitlementActive(kipiListProEntitlement);
       return active;
     } on Object catch (e) {
       LoggerService.log('PremiumProvider: erro ao verificar entitlement: $e', tag: 'Premium');

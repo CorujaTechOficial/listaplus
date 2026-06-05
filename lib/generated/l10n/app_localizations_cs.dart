@@ -594,6 +594,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get chatHint => 'Napiš svou zprávu...';
 
   @override
+  String get chatHintBlocked => 'Odemkněte AI, abyste mohli chatovat';
+
+  @override
   String chatError(String error) {
     return 'Chyba při načítání chatu: $error';
   }
@@ -613,7 +616,7 @@ class AppLocalizationsCs extends AppLocalizations {
       'Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => 'Přihlas se pro odemknutí\nprémiových funkcí';
@@ -628,7 +631,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get continueAsGuest => 'Pokračovat jako host';
 
   @override
-  String get onboardingWelcomeTitle => 'Vítejte v Lista Plus';
+  String get onboardingWelcomeTitle => 'Vítejte v KipiList';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -639,7 +642,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get onboardingSetupDesc =>
-      'Vyberte si, jak chcete, aby pro vás Lista Plus vypadala a fungovala.';
+      'Vyberte si, jak chcete, aby pro vás KipiList vypadala a fungovala.';
 
   @override
   String get onboardingLoginTitle => 'Uložte vše do cloudu';
@@ -737,7 +740,142 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError => 'Error loading offers. Try again.';
+
+  @override
+  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+
+  @override
+  String get paywallRestoreError => 'No active subscription found to restore.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAYS FREE';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WEEKS FREE',
+      one: '$count WEEK FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Everything you need:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+
+  @override
+  String get paywallFeatureSmartAI => 'Smart AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Expense Control';
+
+  @override
+  String get paywallFeatureSharing => 'Sharing';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI Before and After:';
+
+  @override
+  String get paywallLabelCommon => 'Common';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rice';
+
+  @override
+  String get paywallBeforeItem2 => 'soap';
+
+  @override
+  String get paywallBeforeItem3 => 'meat';
+
+  @override
+  String get paywallBeforeItem4 => 'bread';
+
+  @override
+  String get paywallAfterItem1 => 'Grains';
+
+  @override
+  String get paywallAfterItem2 => 'Cleaning';
+
+  @override
+  String get paywallAfterItem3 => 'Meats';
+
+  @override
+  String get paywallAfterItem4 => 'Bakery';
+
+  @override
+  String get paywallTestimonialsTitle => 'What our users say:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'I never forgot a list item again. The AI chat is sensational!';
+
+  @override
+  String get paywallSelectPlan => 'Choose your plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SAVE $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Only $price/month';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Annual Plan';
+
+  @override
+  String get paywallPackageMonthly => 'Monthly Plan';
+
+  @override
+  String get paywallPackageLifetime => 'Lifetime Access';
+
+  @override
+  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+
+  @override
+  String get paywallPolicy => 'Privacy Policy';
+
+  @override
+  String get paywallTerms => 'Terms of Use';
+
+  @override
+  String get paywallRestore => 'Restore';
 
   @override
   String get premiumUpgrade => 'Upgraduj pro odemknutí';
@@ -1013,7 +1151,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get voiceCommandContent =>
-      'Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• \'Přidej chléb, sýr a šunku\'\n• \'Odeber prací prášek\'\n• \'Změň motiv na modrý\'\n\nToto je exkluzivní funkce Lista Plus Premium.';
+      'Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• \'Přidej chléb, sýr a šunku\'\n• \'Odeber prací prášek\'\n• \'Změň motiv na modrý\'\n\nToto je exkluzivní funkce KipiList Premium.';
 
   @override
   String get voiceCommandPlanBtn => 'Zobrazit plány';
@@ -1074,7 +1212,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get feedbackThankYouMessage =>
-      'Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat Lista Plus pro všechny.';
+      'Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat KipiList pro všechny.';
 
   @override
   String get feedbackBack => 'Zpět';
@@ -1449,15 +1587,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get shareApp => 'Sdílet aplikaci';
 
   @override
-  String get shareAppDescription => 'Pozvěte přátele, aby používali Lista Plus';
+  String get shareAppDescription => 'Pozvěte přátele, aby používali KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return 'K organizaci nákupů používám Lista Plus! Stáhněte si přes můj odkaz a oba získáme 7 dní Premium zdarma: $url';
+    return 'K organizaci nákupů používám KipiList! Stáhněte si přes můj odkaz a oba získáme 7 dní Premium zdarma: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Získejte 7 dní Lista Plus Premium!';
+  String get shareReferralSubject => 'Získejte 7 dní KipiList Premium!';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -2050,6 +2188,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get chatHint => 'Napiš svou zprávu...';
 
   @override
+  String get chatHintBlocked => 'Odemkněte AI, abyste mohli chatovat';
+
+  @override
   String chatError(String error) {
     return 'Chyba při načítání chatu: $error';
   }
@@ -2069,7 +2210,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
       'Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => 'Přihlas se pro odemknutí\nprémiových funkcí';
@@ -2084,7 +2225,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get continueAsGuest => 'Pokračovat jako host';
 
   @override
-  String get onboardingWelcomeTitle => 'Vítejte v Lista Plus';
+  String get onboardingWelcomeTitle => 'Vítejte v KipiList';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -2095,7 +2236,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get onboardingSetupDesc =>
-      'Vyberte si, jak chcete, aby pro vás Lista Plus vypadala a fungovala.';
+      'Vyberte si, jak chcete, aby pro vás KipiList vypadala a fungovala.';
 
   @override
   String get onboardingLoginTitle => 'Uložte vše do cloudu';
@@ -2193,7 +2334,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'KipiList Premium';
 
   @override
   String get premiumUpgrade => 'Upgraduj pro odemknutí';
@@ -2469,7 +2610,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get voiceCommandContent =>
-      'Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• \'Přidej chléb, sýr a šunku\'\n• \'Odeber prací prášek\'\n• \'Změň motiv na modrý\'\n\nToto je exkluzivní funkce Lista Plus Premium.';
+      'Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• \'Přidej chléb, sýr a šunku\'\n• \'Odeber prací prášek\'\n• \'Změň motiv na modrý\'\n\nToto je exkluzivní funkce KipiList Premium.';
 
   @override
   String get voiceCommandPlanBtn => 'Zobrazit plány';
@@ -2530,7 +2671,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get feedbackThankYouMessage =>
-      'Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat Lista Plus pro všechny.';
+      'Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat KipiList pro všechny.';
 
   @override
   String get feedbackBack => 'Zpět';
@@ -2905,13 +3046,13 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get shareApp => 'Sdílet aplikaci';
 
   @override
-  String get shareAppDescription => 'Pozvěte přátele, aby používali Lista Plus';
+  String get shareAppDescription => 'Pozvěte přátele, aby používali KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return 'K organizaci nákupů používám Lista Plus! Stáhněte si přes můj odkaz a oba získáme 7 dní Premium zdarma: $url';
+    return 'K organizaci nákupů používám KipiList! Stáhněte si přes můj odkaz a oba získáme 7 dní Premium zdarma: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Získejte 7 dní Lista Plus Premium!';
+  String get shareReferralSubject => 'Získejte 7 dní KipiList Premium!';
 }

@@ -495,7 +495,7 @@
   "feedbackSend": "अभिप्राय पाठवा",
   "feedbackSending": "पाठवत आहे...",
   "feedbackThankYou": "धन्यवाद!",
-  "feedbackThankYouMessage": "तुमचा अभिप्राय प्राप्त झाला आहे आणि तो Lista Plus सर्वांसाठी सुधारण्यास मदत करतो.",
+  "feedbackThankYouMessage": "तुमचा अभिप्राय प्राप्त झाला आहे आणि तो KipiList सर्वांसाठी सुधारण्यास मदत करतो.",
   "feedbackBack": "मागे",
   "feedbackError": "पाठवताना त्रुटी: {error}",
   "@feedbackError": {

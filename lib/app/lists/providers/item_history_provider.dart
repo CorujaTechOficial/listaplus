@@ -16,7 +16,9 @@ class ItemHistory extends _$ItemHistory {
     final data = await service.getUserData();
     if (data != null && data['itemHistory'] != null) {
       final history = data['itemHistory'] as Map<String, dynamic>;
-      state = history.map((key, value) => MapEntry(key, (value as num).toInt()));
+      if (ref.mounted) {
+        state = history.map((key, value) => MapEntry(key, (value as num).toInt()));
+      }
     }
   }
 
@@ -29,10 +31,11 @@ class ItemHistory extends _$ItemHistory {
     final current = Map<String, int>.from(state);
     current[nameNormalized] = (current[nameNormalized] ?? 0) + 1;
 
-    state = current;
-
-    final service = ref.read(firestoreServiceProvider);
-    await service.updateUserData({'itemHistory': state});
+    if (ref.mounted) {
+      state = current;
+      final service = ref.read(firestoreServiceProvider);
+      await service.updateUserData({'itemHistory': state});
+    }
   }
 
   List<String> getFrequentItems({int limit = 10}) {

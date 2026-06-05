@@ -34,10 +34,10 @@ class OnboardingSlideWelcomeLogin extends ConsumerWidget {
             children: [
             // Logo de boas-vindas
             Container(
-              width: 140,
-              height: 140,
+              width: 160,
+              height: 160,
               decoration: BoxDecoration(
-                color: theme.colorScheme.primaryContainer,
+                color: theme.colorScheme.primaryContainer.withAlpha(150),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
@@ -47,10 +47,12 @@ class OnboardingSlideWelcomeLogin extends ConsumerWidget {
                   ),
                 ],
               ),
-              child: Icon(
-                Icons.shopping_basket_rounded,
-                size: 80,
-                color: theme.colorScheme.primary,
+              child: Padding(
+                padding: const EdgeInsets.all(Spacing.md),
+                child: SvgPicture.asset(
+                  'assets/images/kipi/kipi_welcome.svg',
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             const SizedBox(height: Spacing.xl),

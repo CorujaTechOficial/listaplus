@@ -325,7 +325,7 @@
   "generalHelp": "Как мога да помогна с пазаруването ти днес?",
   "chatSubtitle": "Поискай предложения за артикули, рецепти или съвети за икономисване.",
   "aiError": "Съжалявам, възникна грешка при обработката на заявката ти. Провери връзката си или опитай отново по-късно.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Влез, за да отключиш\nPremium функции",
   "signInGoogle": "Вход с Google",
   "signInApple": "Вход с Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Надгради, за да отключиш",
   "itemRemoved": "Артикулът е премахнат",
   "undo": "Отмяна",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Гласово писане (Безплатно)",
   "aiVoiceCommandTooltip": "AI гласова команда (Premium)",
   "voiceCommandTitle": "AI гласова команда",
-  "voiceCommandContent": "Говори естествено, за да управляваш списъка си!\n\nПримери:\n• 'Добави хляб, сирене и шунка'\n• 'Премахни перилния препарат'\n• 'Промени темата на синя'\n\nТова е ексклузивна функция на Lista Plus Premium.",
+  "voiceCommandContent": "Говори естествено, за да управляваш списъка си!\n\nПримери:\n• 'Добави хляб, сирене и шунка'\n• 'Премахни перилния препарат'\n• 'Промени темата на синя'\n\nТова е ексклузивна функция на KipiList Premium.",
   "voiceCommandPlanBtn": "Виж плановете",
   "itemsAddedSuccess": "Артикулите са добавени успешно в списъка!",
   "viewList": "Виж списъка",
@@ -469,7 +469,7 @@
   "feedbackSend": "Изпрати отзиви",
   "feedbackSending": "Изпращане...",
   "feedbackThankYou": "Благодаря!",
-  "feedbackThankYouMessage": "Вашият отзив е получен и ни помага да подобрим Lista Plus за всички.",
+  "feedbackThankYouMessage": "Вашият отзив е получен и ни помага да подобрим KipiList за всички.",
   "feedbackBack": "Назад",
   "feedbackError": "Грешка при изпращане: {error}",
   "@feedbackError": {

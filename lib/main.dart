@@ -8,6 +8,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -280,11 +281,13 @@ class _MyAppState extends ConsumerState<MyApp> {
       error: (error, stack) {
         Sentry.captureException(error, stackTrace: stack);
         FirebaseCrashlytics.instance.recordError(error, stack, reason: 'MyApp.onboarding error');
-        return _buildMainShell(
+        return _buildErrorShell(
           themeMode: themeMode,
           colorSeed: colorSeed,
           localeAsync: localeAsync,
           useDynamicColor: useDynamicColor,
+          error: error.toString(),
+          onRetry: () => ref.invalidate(onboardingProvider),
         );
       },
     );
@@ -300,7 +303,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       builder: (lightDynamic, darkDynamic) {
         final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
         return MaterialApp(
-          title: 'Lista Plus',
+          title: 'KipiList',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
           darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
@@ -324,7 +327,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       builder: (lightDynamic, darkDynamic) {
         final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
         return MaterialApp(
-          title: 'Lista Plus',
+          title: 'KipiList',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
           darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
@@ -333,6 +336,63 @@ class _MyAppState extends ConsumerState<MyApp> {
           supportedLocales: AppLocalizations.supportedLocales,
           localeResolutionCallback: _localeResolver(localeAsync),
           home: const MainShell(),
+        );
+      },
+    );
+  }
+
+  Widget _buildErrorShell({
+    required ThemeMode themeMode,
+    required Color colorSeed,
+    required AsyncValue<String?> localeAsync,
+    required bool useDynamicColor,
+    required String error,
+    required VoidCallback onRetry,
+  }) {
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) {
+        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
+        return MaterialApp(
+          title: 'KipiList',
+          theme: AppTheme.fromColorScheme(colorSchemes.$1),
+          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
+          themeMode: themeMode,
+          locale: _getLocale(localeAsync.value),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          localeResolutionCallback: _localeResolver(localeAsync),
+          home: Scaffold(
+            body: SafeArea(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.cloud_off_rounded, size: 64, color: Colors.red),
+                      const SizedBox(height: 16),
+                      const Text(
+                        'Erro de Conexão',
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Não foi possível conectar ao servidor. Verifique sua internet.\n($error)',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(color: Colors.grey),
+                      ),
+                      const SizedBox(height: 24),
+                      FilledButton.icon(
+                        onPressed: onRetry,
+                        icon: const Icon(Icons.refresh_rounded),
+                        label: const Text('Tentar Novamente'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         );
       },
     );
@@ -348,7 +408,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       builder: (lightDynamic, darkDynamic) {
         final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
         return MaterialApp(
-          title: 'Lista Plus',
+          title: 'KipiList',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
           darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
           themeMode: themeMode,
@@ -416,10 +476,13 @@ class _MainShellState extends ConsumerState<MainShell> {
     super.initState();
     _quickActions.setShortcutItems(<ShortcutItem>[
       const ShortcutItem(type: 'action_pantry', localizedTitle: 'Ver Dispensa', icon: 'icon_pantry'),
+      const ShortcutItem(type: 'action_ai', localizedTitle: 'Conversar com Kipi', icon: 'icon_kipi'),
     ]);
     _quickActions.initialize((shortcutType) {
       if (shortcutType == 'action_pantry') {
         setState(() => _currentTab = 1);
+      } else if (shortcutType == 'action_ai') {
+        setState(() => _currentTab = 0);
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -452,10 +515,14 @@ class _MainShellState extends ConsumerState<MainShell> {
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
                 child: Row(
                   children: [
-                    Icon(Icons.shopping_cart, color: theme.colorScheme.primary),
+                    SizedBox(
+                      width: 32,
+                      height: 32,
+                      child: SvgPicture.asset('assets/images/kipi/kipi_welcome.svg'),
+                    ),
                     const SizedBox(width: 12),
                     Text(
-                      'Lista Plus',
+                      'KipiList',
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -609,7 +676,7 @@ class NoListsScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const EmptyState(
-                icon: Icons.list_alt,
+                assetPath: 'assets/images/kipi/kipi_welcome.svg',
                 title: 'Nenhuma lista encontrada',
                 subtitle: 'Crie sua primeira lista para começar',
               ),

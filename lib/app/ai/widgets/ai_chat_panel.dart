@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -10,15 +12,17 @@ import 'package:flutter_highlighter/themes/atom-one-dark.dart';
 import 'package:flutter_highlighter/themes/atom-one-light.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:permission_handler/permission_handler.dart';
 import '../../../utils/test_utils.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../../../models/chat_message.dart';
-import 'package:shopping_list/domain/entities/suggested_reply.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/app/ai/agent/tools/agent_tools.dart';
 import 'package:shopping_list/app/ai/widgets/animated_typing_dots.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import '../../../theme/tokens.dart';
 import '../../../theme/colors.dart';
@@ -62,19 +66,45 @@ class AiChatPanel extends ConsumerStatefulWidget {
   AiChatPanelState createState() => AiChatPanelState();
 }
 
-class AiChatPanelState extends ConsumerState<AiChatPanel> {
+class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObserver, SingleTickerProviderStateMixin {
   late final TextEditingController _textController;
   final _scrollController = ScrollController();
+  final _focusNode = FocusNode();
+  late final AnimationController _waveController;
   bool _isSending = false;
   bool _showScrollFAB = false;
   bool _shouldAutoScroll = true;
   int _prevMessageCount = 0;
+  bool _isKeyboardVisible = false;
+  late stt.SpeechToText _speech;
+  bool _isListening = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _textController = widget.externalController ?? TextEditingController();
     _scrollController.addListener(_scrollListener);
+    _focusNode.addListener(() => setState(() {}));
+    _speech = stt.SpeechToText();
+    _waveController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
+  }
+
+  @override
+  void didChangeMetrics() {
+    final bottom = View.of(context).viewInsets.bottom;
+    final visible = bottom > 0;
+    if (visible != _isKeyboardVisible) {
+      setState(() {
+        _isKeyboardVisible = visible;
+        if (!visible) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        }
+      });
+    }
   }
 
   void _scrollListener() {
@@ -94,10 +124,13 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _scrollController.removeListener(_scrollListener);
     if (widget.externalController == null) {
       _textController.dispose();
     }
+    _focusNode.dispose();
+    _waveController.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -106,16 +139,15 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
     if (_scrollController.hasClients && (_shouldAutoScroll || force)) {
       final isStreaming = ref.read(chatStreamingProvider(widget.listId));
       if (isStreaming && !force) {
-        // Use a smoother jump-like animation for streaming
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 100),
+          duration: const Duration(milliseconds: 300),
           curve: Curves.easeOut,
         );
       } else {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: Duration(milliseconds: isStreaming ? 50 : 300),
+          duration: const Duration(milliseconds: 300),
           curve: Curves.easeOut,
         );
       }
@@ -148,6 +180,60 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
         );
       }
     }
+  }
+
+  void _updateWave() {
+    if (_isListening) {
+      _waveController.repeat();
+    } else {
+      _waveController.stop();
+    }
+  }
+
+  Future<void> _startDictation() async {
+    if (_isListening) {
+      setState(() => _isListening = false);
+      _updateWave();
+      await _speech.stop();
+      return;
+    }
+    final status = await Permission.microphone.request();
+    if (!status.isGranted) {
+      return;
+    }
+    final available = await _speech.initialize(
+      onStatus: (val) {
+        if (val == 'done' || val == 'notListening') {
+          if (mounted) {
+            setState(() => _isListening = false);
+            _updateWave();
+          }
+        }
+      },
+      onError: (val) {
+        if (mounted) {
+          setState(() => _isListening = false);
+          _updateWave();
+        }
+      },
+    );
+    if (!available) {
+      return;
+    }
+    setState(() => _isListening = true);
+    _updateWave();
+    if (!mounted) {
+      return;
+    }
+    final locale = Localizations.localeOf(context);
+    await _speech.listen(
+      onResult: (val) {
+        _textController.text = val.recognizedWords;
+      },
+      listenOptions: stt.SpeechListenOptions(
+        localeId: locale.toString(),
+      ),
+    );
   }
 
   Future<void> sendMessage([String? manualText]) async {
@@ -279,30 +365,20 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
     final isPremium = ref.watch(premiumProvider).value ?? false;
     final aiUsageAsync = ref.watch(aiUsageStateProvider);
     final canSend = isPremium || (aiUsageAsync.value?.isExhausted == false);
+    final remaining = aiUsageAsync.value?.remainingDaily ?? 0;
+    final isLowEnergy = remaining > 0 && remaining <= 2;
+    final showBanner = (!canSend || isLowEnergy) && !isPremium;
 
     final activeSessionId = ref.watch(activeChatSessionIdProvider(widget.listId));
     final chatState = ref.watch(chatSessionProvider(widget.listId, activeSessionId));
-    final allMessages = chatState.value ?? [];
 
-    final itemsAsync = widget.listId != null
-        ? ref.watch(shoppingListItemsProvider(widget.listId!))
-        : const AsyncValue<List<ShoppingItem>>.data([]);
-    final items = itemsAsync.value ?? [];
-
-    final lastAssistantMsg = allMessages.where((m) => m.role == 'assistant').lastOrNull;
-    final llmSuggestions = lastAssistantMsg?.suggestedReplies ?? [];
-    final suggestionChips = llmSuggestions.isNotEmpty
-        ? llmSuggestions
-        : _getDynamicShortcuts(items, l10n, allMessages)
-            .map((s) => SuggestedReply(label: s.label, prompt: s.prompt, icon: ''))
-            .toList();
     final isStreaming = ref.watch<bool>(chatStreamingProvider(widget.listId));
     final isThinking = ref.watch<bool>(chatThinkingProvider(widget.listId));
     final activityDescription = ref.watch<String?>(chatActivityProvider(widget.listId));
 
-    return Stack(
+    return Column(
       children: [
-        Positioned.fill(
+        Expanded(
           child: Stack(
             children: [
               chatState.when(
@@ -311,84 +387,39 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
 
                   if (allMessages.isEmpty) {
                     return Center(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(height: 16),
-                            SizedBox(
-                              width: 64,
-                              height: 64,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  _AiGlowOrb(color: theme.colorScheme.primary),
-                                ],
-                              ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            width: 64,
+                            height: 64,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                _AiGlowOrb(color: theme.colorScheme.primary),
+                              ],
                             ),
-                            const SizedBox(height: 16),
-                            Text(
-                              l10n.howCanIHelp,
+                          ),
+                          const SizedBox(height: 16),
+                          Text(
+                            l10n.howCanIHelp,
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 24),
+                            child: Text(
+                              l10n.chatSubtitleShort,
                               textAlign: TextAlign.center,
-                              style: theme.textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: theme.colorScheme.onSurfaceVariant,
                               ),
                             ),
-                            const SizedBox(height: 4),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 24),
-                              child: Text(
-                                l10n.chatSubtitleShort,
-                                textAlign: TextAlign.center,
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  color: theme.colorScheme.onSurfaceVariant,
-                                ),
-                              ),
-                            ),
-                            if (suggestionChips.isNotEmpty) ...[
-                              const SizedBox(height: 24),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 16),
-                                child: Column(
-                                  children: suggestionChips.take(2).map((suggestion) => Card(
-                                    margin: const EdgeInsets.only(bottom: 8),
-                                    elevation: 0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      side: BorderSide(color: theme.colorScheme.outlineVariant.withAlpha((0.4 * 255).toInt())),
-                                    ),
-                                    color: theme.colorScheme.surfaceContainerLow,
-                                    child: InkWell(
-                                      onTap: !_isSending ? () {
-                                        _textController.text = suggestion.prompt;
-                                        sendMessage();
-                                      } : null,
-                                      borderRadius: BorderRadius.circular(12),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                                        child: Row(
-                                          children: [
-                                            Icon(_iconFromName(suggestion.icon), color: theme.colorScheme.primary, size: 20),
-                                            const SizedBox(width: 12),
-                                            Expanded(
-                                              child: Text(
-                                                suggestion.label,
-                                                style: theme.textTheme.bodyMedium?.copyWith(
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                            Icon(Icons.arrow_forward_ios, size: 12, color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt())),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  )).toList(),
-                                ),
-                              ),
-                            ],
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     );
                   }
@@ -400,7 +431,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
 
                   return ListView.builder(
                     controller: _scrollController,
-                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 100),
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 72),
                     itemCount: messages.length + 1 + (isThinking && (messages.isEmpty || messages.last.role != 'assistant') ? 1 : 0),
                     itemBuilder: (context, index) {
                       if (index == 0) {
@@ -471,6 +502,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
                               onOrganizeRequested: widget.onOrganizeRequested,
                               onItemsAdded: widget.onItemsAdded,
                               onNavigateToRecipe: widget.onNavigateToRecipe,
+                              onScrollToBottom: _scrollToBottom,
                             ).animate().fadeIn(
                               duration: DurationTokens.fast,
                             ).slideX(
@@ -531,18 +563,21 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
             ],
           ),
         ),
-        Positioned(
-          left: 0,
-          right: 0,
-          bottom: 0,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (!canSend && !isPremium)
-                _buildPaywallBanner(context, l10n, theme),
-              _buildInput(context, l10n, theme, canSend, suggestionChips, isThinking),
-            ],
-          ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (showBanner)
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  _isKeyboardVisible ? 5 : 40,
+                  0,
+                  _isKeyboardVisible ? 5 : 40,
+                  0,
+                ),
+                child: _buildPaywallBanner(context, l10n, theme, remaining),
+              ),
+            _buildInput(context, l10n, theme, canSend, isThinking, showBanner),
+          ],
         ),
       ],
     );
@@ -659,7 +694,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
                           child: Text(
                             isUser
                                 ? 'Pergunta curta do usuário para a IA.'
-                                : 'Esta é uma resposta mais longa e simulada do assistente de inteligência artificial da lista plus, detalhando dicas de economia.',
+                                : 'Esta é uma resposta mais longa e simulada do assistente de inteligência artificial da KipiList, detalhando dicas de economia.',
                             style: theme.textTheme.bodyMedium,
                           ),
                         ),
@@ -682,212 +717,302 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
     );
   }
 
-  Widget _buildPaywallBanner(BuildContext context, AppLocalizations l10n, ThemeData theme) {
+  Widget _buildPaywallBanner(BuildContext context, AppLocalizations l10n, ThemeData theme, int remaining) {
+    final packagesAsync = ref.watch(paywallPackagesProvider);
+    final packages = packagesAsync.asData?.value;
+    final annualPkg = packages?.where(
+      (PaywallPackage p) => p.identifier.toLowerCase().contains('annual') || p.identifier.toLowerCase().contains('ano'),
+    ).firstOrNull;
+    final monthlyPkg = packages?.where(
+      (PaywallPackage p) => p.identifier.toLowerCase().contains('monthly') || p.identifier.toLowerCase().contains('mes'),
+    ).firstOrNull;
+
+    final String buttonText;
+    final String? captionText;
+    final String? trialText;
+    if (annualPkg != null && monthlyPkg != null) {
+      if (annualPkg.hasFreeTrial) {
+        trialText = annualPkg.trialPeriodDays! >= 7
+            ? '${annualPkg.trialPeriodDays! ~/ 7} semanas grátis'
+            : '${annualPkg.trialPeriodDays} dias grátis';
+        buttonText = '$trialText · depois ${annualPkg.priceString}/ano';
+      } else {
+        trialText = null;
+        buttonText = 'Premium Anual · ${annualPkg.priceString}';
+      }
+      final perDay = annualPkg.price / 365;
+      final perDayFormatted = formatCurrency(perDay, annualPkg.currencyCode);
+      captionText = '~$perDayFormatted/dia';
+    } else {
+      buttonText = 'Premium';
+      captionText = null;
+      trialText = null;
+    }
+
     return Container(
       padding: const EdgeInsets.all(Spacing.md),
-      margin: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xs),
       decoration: BoxDecoration(
         color: theme.colorScheme.surfaceContainerHigh,
         borderRadius: BorderRadius.circular(RadiusTokens.md),
-        border: Border.all(color: theme.colorScheme.outlineVariant),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(Icons.bolt, color: Colors.amber, size: 20),
-              const SizedBox(width: Spacing.sm),
+              Icon(Icons.auto_awesome, size: 16, color: theme.colorScheme.primary),
+              const SizedBox(width: Spacing.xxs),
               Expanded(
                 child: Text(
-                  'Sua energia de IA acabou!',
+                  remaining > 0 ? 'Você está quase sem energia!' : 'Desbloqueie a IA sem limites',
                   style: theme.textTheme.labelMedium?.copyWith(
                     fontWeight: FontWeight.w800,
                   ),
                 ),
               ),
+              if (trialText != null)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: AppColors.premiumAmber,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    trialText,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
+                      fontSize: 10,
+                    ),
+                  ),
+                ),
             ],
           ),
-          const SizedBox(height: Spacing.xs),
+          const SizedBox(height: Spacing.xxs),
           Text(
-            'Assista a um vídeo rápido para ganhar +10 energias ou torne-se Premium para usar sem limites.',
+            remaining > 0
+                ? 'Restam apenas $remaining mensagens grátis hoje. Assine o Premium e pare de se preocupar com limites.'
+                : 'Assine o Premium e use o chat de IA quantas vezes quiser. Sem contagem, sem limites.',
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
-          const SizedBox(height: Spacing.md),
-          Row(
-            children: [
-              Expanded(
-                child: OutlinedButton.icon(
-                  onPressed: () async {
-                    unawaited(HapticFeedback.lightImpact());
-                    final adService = ref.read(adServiceProvider);
-                    final success = await adService.showRewardedAd();
-                    if (success) {
-                      await ref.read(aiUsageStateProvider.notifier).recharge();
-                    }
-                  },
-                  icon: const Icon(Icons.play_circle_outline, size: 18),
-                  label: const Text('Recarregar'),
-                  style: OutlinedButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    foregroundColor: theme.colorScheme.primary,
-                    side: BorderSide(color: theme.colorScheme.primary),
+          const SizedBox(height: Spacing.sm),
+          SizedBox(
+            width: double.infinity,
+            height: 48,
+            child: Material(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(100),
+              child: Ink(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      theme.colorScheme.primary,
+                      theme.colorScheme.primary.withAlpha(210),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                   ),
+                  borderRadius: BorderRadius.circular(100),
                 ),
-              ),
-              const SizedBox(width: Spacing.sm),
-              Expanded(
-                child: FilledButton.icon(
-                  onPressed: () {
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(100),
+                  onTap: () {
                     unawaited(HapticFeedback.mediumImpact());
-                    Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
+                    showModalBottomSheet<void>(
+                      context: context,
+                      isScrollControlled: true,
+                      useSafeArea: true,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                      ),
+                      builder: (_) => const PaywallScreen(asSheet: true),
+                    );
                   },
-                  icon: const Icon(Icons.workspace_premium, size: 18),
-                  label: const Text('Seja Pro'),
-                  style: FilledButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    backgroundColor: Colors.amber.shade700,
-                    foregroundColor: Colors.white,
+                  child: Center(
+                    child: Text(
+                      buttonText,
+                      style: theme.textTheme.labelLarge?.copyWith(
+                        color: theme.colorScheme.onPrimary,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ],
+            ),
           ),
+          if (captionText != null) ...[
+            const SizedBox(height: Spacing.xxs),
+            Center(
+              child: Text(
+                captionText,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
 
-  Widget _buildInput(BuildContext context, AppLocalizations l10n, ThemeData theme, bool canSend, List<SuggestedReply> suggestions, bool isThinking) {
-    final hasSuggestions = suggestions.isNotEmpty && !isThinking && !_isSending;
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (hasSuggestions)
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: suggestions.take(4).map((suggestion) => Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: _SuggestionChip(
-                    label: suggestion.label,
-                    icon: _iconFromName(suggestion.icon),
-                    onTap: !_isSending ? () {
-                      _textController.text = suggestion.prompt;
-                      sendMessage();
-                    } : null,
-                  ),
-                )).toList(),
+  Widget _buildWave(ThemeData theme) {
+    return AnimatedBuilder(
+      animation: _waveController,
+      builder: (context, child) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 12, right: 8),
+          child: SizedBox(
+            width: 24,
+            height: 24,
+            child: CustomPaint(
+              painter: _WavePainter(
+                color: theme.colorScheme.primary,
+                value: _waveController.value,
               ),
             ),
           ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
-          decoration: const BoxDecoration(
-            color: Colors.transparent,
-          ),
-          child: SafeArea(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+        );
+      },
+    );
+  }
+
+  Widget _buildInput(BuildContext context, AppLocalizations l10n, ThemeData theme, bool canSend, bool isThinking, bool inputBlocked) {
+    final showPlus = widget.listId != null;
+    final isKeyboardOpen = _isKeyboardVisible;
+    return Container(
+      padding: EdgeInsets.fromLTRB(isKeyboardOpen ? 5 : 40, 8, isKeyboardOpen ? 5 : 40, 16),
+      decoration: const BoxDecoration(
+        color: Colors.transparent,
+      ),
+      child: SafeArea(
+        child: ValueListenableBuilder<TextEditingValue>(
+          valueListenable: _textController,
+          builder: (context, value, child) {
+            final hasText = value.text.trim().isNotEmpty;
+            final charCount = value.text.length;
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                if (showPlus && isKeyboardOpen)
+                  Container(
+                    width: 42,
+                    height: 42,
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.surfaceContainerHigh,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(Icons.add, size: 22),
+                      color: theme.colorScheme.primary,
+                      onPressed: !_isSending && !inputBlocked ? _quickAddItem : null,
+                      tooltip: l10n.addDirectToList,
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                    ),
+                  ),
+                if (showPlus && isKeyboardOpen) const SizedBox(width: 8),
                 Expanded(
-                  child: ValueListenableBuilder<TextEditingValue>(
-                    valueListenable: _textController,
-                    builder: (context, value, child) {
-                      final charCount = value.text.length;
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.surface,
-                          borderRadius: BorderRadius.circular(28),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withAlpha((0.08 * 255).toInt()),
-                              blurRadius: 12,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: TextField(
-                          controller: _textController,
-                          readOnly: widget.isSimulation,
-                          minLines: 1,
-                          maxLines: 5,
-                          style: theme.textTheme.bodyMedium,
-                          decoration: InputDecoration(
-                            hintText: l10n.chatHint,
-                            hintStyle: theme.textTheme.bodyMedium?.copyWith(
-                              color: theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
-                            ),
-                            border: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                            counterText: charCount > 300 ? '$charCount/1000' : null,
-                            suffixIcon: widget.listId != null ? IconButton(
-                              icon: Icon(
-                                Icons.add_circle_outline,
-                                color: theme.colorScheme.primary.withAlpha((0.7 * 255).toInt()),
-                                size: 22,
-                              ),
-                              onPressed: !_isSending ? _quickAddItem : null,
+                  child: TextField(
+                    focusNode: _focusNode,
+                    controller: _textController,
+                    readOnly: widget.isSimulation || inputBlocked,
+                    minLines: 1,
+                    maxLines: 1,
+                    style: theme.textTheme.bodyMedium,
+                    decoration: InputDecoration(
+                      hintText: inputBlocked
+                          ? l10n.chatHintBlocked
+                          : _isListening
+                              ? l10n.voiceTranscriptionTooltip
+                              : l10n.chatHint,
+                      hintStyle: theme.textTheme.bodyMedium?.copyWith(
+                        color: inputBlocked
+                            ? theme.colorScheme.onSurfaceVariant.withAlpha((0.35 * 255).toInt())
+                            : _isListening
+                                ? theme.colorScheme.primary
+                                : theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
+                      ),
+                      filled: true,
+                      fillColor: inputBlocked
+                          ? theme.colorScheme.surfaceContainerHigh.withAlpha((0.4 * 255).toInt())
+                          : _isListening
+                              ? theme.colorScheme.primaryContainer.withAlpha((0.4 * 255).toInt())
+                              : theme.colorScheme.surfaceContainerHigh,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: isKeyboardOpen ? 20 : 12,
+                        vertical: 6,
+                      ),
+                      counterText: charCount > 300 ? '$charCount/1000' : null,
+                      prefixIcon: _isListening
+                          ? _buildWave(theme)
+                          : !isKeyboardOpen && showPlus
+                          ? IconButton(
+                              icon: const Icon(Icons.add, size: 22),
+                              color: theme.colorScheme.primary,
+                              onPressed: !_isSending && !inputBlocked ? _quickAddItem : null,
                               tooltip: l10n.addDirectToList,
-                            ) : null,
-                          ),
-                          onSubmitted: !_isSending ? (_) => sendMessage() : null,
-                        ),
-                      );
-                    },
+                              padding: EdgeInsets.zero,
+                              constraints: const BoxConstraints(),
+                            )
+                          : null,
+                      suffixIcon: _isSending
+                          ? IconButton(
+                              key: const ValueKey('chat_stop_button'),
+                              onPressed: () {
+                                final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                                ref.read(chatSessionProvider(widget.listId, sessionId).notifier).cancelRequest();
+                              },
+                              icon: const Icon(Icons.stop_rounded, size: 22),
+                              style: IconButton.styleFrom(
+                                foregroundColor: theme.colorScheme.error,
+                              ),
+                            )
+                          : hasText
+                              ? IconButton(
+                                  key: const ValueKey('chat_send_button'),
+                                  onPressed: inputBlocked ? null : () => sendMessage(),
+                                  icon: const Icon(Icons.send_rounded, size: 22),
+                                  style: IconButton.styleFrom(
+                                    foregroundColor: theme.colorScheme.primary,
+                                  ),
+                                )
+                              : IconButton(
+                                  key: const ValueKey('chat_mic_button'),
+                                  onPressed: inputBlocked ? null : _startDictation,
+                                  icon: Icon(
+                                    _isListening ? Icons.mic : Icons.mic_none_rounded,
+                                    size: 22,
+                                  ),
+                                  style: IconButton.styleFrom(
+                                    foregroundColor: _isListening ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
+                                  ),
+                                ),
+                    ),
+                    onSubmitted: !_isSending && !inputBlocked ? (_) => sendMessage() : null,
                   ),
                 ),
-                const SizedBox(width: 10),
-                ValueListenableBuilder<TextEditingValue>(
-                  valueListenable: _textController,
-                  builder: (context, value, child) {
-                    final hasText = value.text.trim().isNotEmpty;
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 4),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.primary,
-                          borderRadius: BorderRadius.circular(22),
-                          boxShadow: [
-                            BoxShadow(
-                              color: theme.colorScheme.primary.withAlpha((0.3 * 255).toInt()),
-                              blurRadius: 8,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: IconButton(
-                          key: const ValueKey('chat_send_button'),
-                          onPressed: _isSending
-                              ? () {
-                                  final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
-                                  ref.read(chatSessionProvider(widget.listId, sessionId).notifier).cancelRequest();
-                                }
-                              : (hasText ? sendMessage : null),
-                          icon: _isSending
-                              ? const Icon(Icons.stop_rounded, size: 20)
-                              : const Icon(Icons.send_rounded, size: 20),
-                          color: theme.colorScheme.onPrimary,
-                          padding: const EdgeInsets.all(12),
-                          constraints: const BoxConstraints(
-                            minWidth: 48,
-                            minHeight: 48,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
               ],
-            ),
-          ),
+            );
+          },
         ),
-      ],
+      ),
     );
   }
 }
@@ -895,36 +1020,6 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> {
 // Energy bar replaced _LowCreditsBanner
 
 // _HeaderRow removed — energy bar and list info moved to AppBar in AiHomeScreen
-
-class _SuggestionChip extends StatelessWidget {
-  const _SuggestionChip({
-    required this.label,
-    required this.icon,
-    required this.onTap,
-  });
-
-  final String label;
-  final IconData icon;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return ActionChip(
-      avatar: Icon(icon, size: 16, color: onTap != null ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant),
-      label: Text(label, style: theme.textTheme.labelMedium),
-      onPressed: onTap != null ? () {
-        unawaited(HapticFeedback.lightImpact());
-        onTap!();
-      } : null,
-      backgroundColor: onTap != null
-          ? theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt())
-          : theme.colorScheme.surfaceContainerHighest.withAlpha((0.3 * 255).toInt()),
-      side: BorderSide.none,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
-    );
-  }
-}
 
 class _GroupChatBubble extends ConsumerStatefulWidget {
   const _GroupChatBubble({
@@ -935,6 +1030,7 @@ class _GroupChatBubble extends ConsumerStatefulWidget {
     this.onOrganizeRequested,
     this.onItemsAdded,
     this.onNavigateToRecipe,
+    this.onScrollToBottom,
   });
 
   final ChatMessage message;
@@ -944,6 +1040,7 @@ class _GroupChatBubble extends ConsumerStatefulWidget {
   final VoidCallback? onOrganizeRequested;
   final VoidCallback? onItemsAdded;
   final void Function(String recipeId)? onNavigateToRecipe;
+  final VoidCallback? onScrollToBottom;
 
   @override
   ConsumerState<_GroupChatBubble> createState() => _GroupChatBubbleState();
@@ -986,14 +1083,15 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
       return;
     }
     _typeTimer?.cancel();
-    _typeTimer = Timer.periodic(const Duration(milliseconds: 16), (timer) {
+    _typeTimer = Timer.periodic(const Duration(milliseconds: 32), (timer) {
       if (!mounted || _revealedChars >= charCount) {
         timer.cancel();
         return;
       }
       setState(() {
-        _revealedChars = (_revealedChars + 5).clamp(0, charCount);
+        _revealedChars = (_revealedChars + 3).clamp(0, charCount);
       });
+      widget.onScrollToBottom?.call();
     });
   }
 
@@ -1298,22 +1396,6 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                                             },
                                             icon: Icons.category,
                                             label: l10n.organizeByAisles,
-                                          ),
-                                        ),
-                                      if (actions.containsKey('view_recipe'))
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 2),
-                                          child: _ActionButton(
-                                            isFilled: true,
-                                            onPressed: () {
-                                              unawaited(HapticFeedback.lightImpact());
-                                              final recipeId = actions['view_recipe'] as String?;
-                                              if (recipeId != null && widget.onNavigateToRecipe != null) {
-                                                widget.onNavigateToRecipe!(recipeId);
-                                              }
-                                            },
-                                            icon: Icons.restaurant,
-                                            label: l10n.viewRecipe,
                                           ),
                                         ),
                                     ],
@@ -1728,7 +1810,7 @@ class TypingIndicator extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 12, left: 12),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceContainerHighest.withAlpha((0.5 * 255).toInt()),
+          color: theme.colorScheme.surfaceContainerHigh,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(16),
             topRight: Radius.circular(16),
@@ -1740,7 +1822,18 @@ class TypingIndicator extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (isThinking) ...[
-              RepaintBoundary(child: _AiGlowOrb(color: theme.colorScheme.primary)),
+              SizedBox(
+                width: 24,
+                height: 24,
+                child: SvgPicture.asset(
+                  'assets/images/kipi/kipi_helper.svg',
+                ),
+              ).animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true)).scale(
+                    begin: const Offset(0.8, 0.8),
+                    end: const Offset(1.1, 1.1),
+                    duration: 600.ms,
+                    curve: Curves.easeInOut,
+                  ),
               const SizedBox(width: 12),
               AnimatedSwitcher(
                 duration: const Duration(milliseconds: 350),
@@ -1760,7 +1853,7 @@ class TypingIndicator extends StatelessWidget {
                   );
                 },
                 child: Text(
-                  activityDescription ?? fallbackText ?? '...',
+                  activityDescription ?? fallbackText ?? 'Kipi está pensando...',
                   key: ValueKey(activityDescription ?? fallbackText),
                   style: theme.textTheme.labelSmall?.copyWith(
                     color: theme.colorScheme.primary,
@@ -1789,27 +1882,21 @@ class _AiGlowOrb extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepaintBoundary(
       child: Container(
-        width: 10,
-        height: 10,
+        width: 64,
+        height: 64,
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: color,
+          color: color.withAlpha(30),
           shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: color.withAlpha((0.5 * 255).toInt()),
-              blurRadius: 8,
-              spreadRadius: 2,
-            ),
-          ],
+        ),
+        child: SvgPicture.asset(
+          'assets/images/kipi/kipi_welcome.svg',
         ),
       ).animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true)).scale(
-        begin: const Offset(0.8, 0.8),
-        end: const Offset(1.2, 1.2),
-        duration: 800.ms,
+        begin: const Offset(0.9, 0.9),
+        end: const Offset(1.1, 1.1),
+        duration: 2.seconds,
         curve: Curves.easeInOut,
-      ).tint(
-        color: color.withAlpha((0.8 * 255).toInt()),
-        duration: 800.ms,
       ),
     );
   }
@@ -1845,159 +1932,6 @@ class _FeedbackButton extends StatelessWidget {
       ),
     );
   }
-}
-
-// _BubbleActionButton removed — feedback unified outside bubble
-
-class _ShortcutData {
-  const _ShortcutData({
-    required this.label,
-    required this.prompt,
-    required this.icon,
-  });
-
-  final String label;
-  final String prompt;
-  final IconData icon;
-}
-
-IconData _iconFromName(String name) {
-  switch (name) {
-    case 'add_shopping_cart': return Icons.add_shopping_cart;
-    case 'receipt_long': return Icons.receipt_long;
-    case 'restaurant_menu': return Icons.restaurant_menu;
-    case 'menu_book': return Icons.menu_book;
-    case 'local_fire_department': return Icons.local_fire_department;
-    case 'eco': return Icons.eco;
-    case 'cleaning_services': return Icons.cleaning_services;
-    case 'savings': return Icons.savings;
-    case 'trending_up': return Icons.trending_up;
-    case 'cake': return Icons.cake;
-    case 'shopping_cart': return Icons.shopping_cart;
-    case 'check_circle': return Icons.check_circle;
-    case 'delete': return Icons.delete;
-    case 'edit': return Icons.edit;
-    case 'share': return Icons.share;
-    case 'map': return Icons.map;
-    case 'search': return Icons.search;
-    case 'lightbulb': return Icons.lightbulb;
-    case 'tips_and_updates': return Icons.tips_and_updates;
-    case 'organize': return Icons.category;
-    case 'kitchen': return Icons.kitchen;
-    case 'grocery': return Icons.local_grocery_store;
-    case 'calendar_month': return Icons.calendar_month;
-    case 'schedule': return Icons.schedule;
-    case 'group_add': return Icons.group_add;
-    case 'archive': return Icons.archive;
-    case 'checklist': return Icons.checklist;
-    case 'nutrition': return Icons.set_meal;
-    case 'price_check': return Icons.price_check;
-    case 'repeat': return Icons.repeat;
-    case 'star': return Icons.star;
-    case 'timer': return Icons.timer;
-    case 'today': return Icons.today;
-    default: return Icons.lightbulb;
-  }
-}
-
-List<_ShortcutData> _getDynamicShortcuts(List<ShoppingItem> items, AppLocalizations l10n, List<ChatMessage> messages) {
-  final shortcuts = <_ShortcutData>[];
-  final itemNames = items.map((e) => e.name.toLowerCase()).toList();
-
-  final userText = messages
-      .where((m) => m.role == 'user')
-      .map((m) => m.content.toLowerCase())
-      .join(' ');
-
-  final weekday = DateTime.now().weekday;
-  final dailySuggestion = weekday == DateTime.saturday || weekday == DateTime.sunday
-      ? const _ShortcutData(
-          label: 'Almoço de fim de semana',
-          prompt: 'Sugira um cardápio e lista para um almoço especial de fim de semana.',
-          icon: Icons.brunch_dining,
-        )
-      : const _ShortcutData(
-          label: 'Marmitas da semana',
-          prompt: 'Como planejar marmitas saudáveis com economia para esta semana?',
-          icon: Icons.backpack_outlined,
-        );
-
-  final hasAskedEconomy = userText.contains('economia') || userText.contains('economizar') || userText.contains('preço') || userText.contains('barat');
-  if (hasAskedEconomy) {
-    shortcuts.add(const _ShortcutData(
-      label: 'Itens mais caros?',
-      prompt: 'Quais são os itens com maior probabilidade de encarecer minha conta nesta lista?',
-      icon: Icons.trending_up,
-    ));
-    shortcuts.add(const _ShortcutData(
-      label: 'Substitutos baratos?',
-      prompt: 'Sugira opções de marcas ou ingredientes mais em conta para os itens da minha lista.',
-      icon: Icons.compare_arrows,
-    ));
-  } else {
-    shortcuts.add(_ShortcutData(
-      label: l10n.economyTips,
-      prompt: l10n.economyTipsPrompt,
-      icon: Icons.savings_outlined,
-    ));
-  }
-
-  if (itemNames.any((name) => name.contains('carne') || name.contains('picanha') || name.contains('linguiça')) &&
-      itemNames.any((name) => name.contains('carvão') || name.contains('acendedor'))) {
-    shortcuts.add(const _ShortcutData(
-      label: 'Falta para o churrasco?',
-      prompt: 'O que falta para o meu churrasco com os itens que já tenho na lista?',
-      icon: Icons.local_fire_department,
-    ));
-  }
-
-  if (itemNames.any((name) => name.contains('farinha')) &&
-      itemNames.any((name) => name.contains('ovo') || name.contains('leite'))) {
-    shortcuts.add(const _ShortcutData(
-      label: 'Receitas de bolo?',
-      prompt: 'Sugira receitas de bolo simples com os ingredientes que tenho.',
-      icon: Icons.cake,
-    ));
-  }
-
-  if (itemNames.any((name) => name.contains('alface') || name.contains('tomate') || name.contains('rúcula'))) {
-    shortcuts.add(const _ShortcutData(
-      label: 'Dicas para salada?',
-      prompt: 'Como posso deixar minha salada mais gostosa com esses ingredientes?',
-      icon: Icons.eco,
-    ));
-  }
-
-  if (itemNames.any((name) => name.contains('detergente') || name.contains('sabão') || name.contains('limpeza'))) {
-    shortcuts.add(const _ShortcutData(
-      label: 'Faxina eficiente?',
-      prompt: 'Dicas de como usar esses produtos de limpeza de forma eficiente.',
-      icon: Icons.cleaning_services,
-    ));
-  }
-
-  shortcuts.add(_ShortcutData(
-    label: l10n.organizeAisles,
-    prompt: l10n.organizeAislesPrompt,
-    icon: Icons.map_outlined,
-  ));
-
-  shortcuts.add(dailySuggestion);
-
-  if (shortcuts.length < 4) {
-    shortcuts.add(_ShortcutData(
-      label: l10n.quickRecipe,
-      prompt: l10n.quickRecipePrompt,
-      icon: Icons.restaurant_menu,
-    ));
-  }
-
-  final uniqueShortcuts = <String, _ShortcutData>{};
-  for (final s in shortcuts) {
-    uniqueShortcuts[s.label] = s;
-  }
-
-  return uniqueShortcuts.values.take(4).toList();
 }
 
 class _ActionButton extends StatefulWidget {
@@ -2068,7 +2002,18 @@ class _AgentActionStepsList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    
+
+    // Group consecutive steps by toolName
+    final groups = <_StepGroup>[];
+    for (final step in steps) {
+      final toolName = step.toolName;
+      if (groups.isNotEmpty && groups.last.toolName == toolName) {
+        groups.last.steps.add(step);
+      } else {
+        groups.add(_StepGroup(toolName: toolName, steps: [step]));
+      }
+    }
+
     // Check if there is at least one successful undoable action
     final isUndoable = steps.any((step) {
       if (step.status != AgentStepStatus.success) {
@@ -2084,14 +2029,26 @@ class _AgentActionStepsList extends ConsumerWidget {
           rd.containsKey('previousBudget');
     });
 
+    final groupCount = groups.length;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        ...steps.map((step) => Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: AgentActionBlock(step: step, listId: listId).animate().fadeIn(duration: 200.ms).slideY(begin: 0.1, end: 0),
-            )),
+        ...groups.asMap().entries.map((entry) {
+          final i = entry.key;
+          final group = entry.value;
+          final isLast = i == groupCount - 1;
+          return Padding(
+            padding: EdgeInsets.only(bottom: isLast ? 6 : 4),
+            child: group.steps.length == 1
+                ? AgentActionBlock(step: group.steps.first, listId: listId)
+                    .animate()
+                    .fadeIn(duration: 200.ms)
+                    .slideY(begin: 0.1, end: 0)
+                : _CollapsibleStepGroup(group: group, listId: listId),
+          );
+        }),
         if (isUndoable)
           Align(
             alignment: Alignment.centerRight,
@@ -2126,6 +2083,152 @@ class _AgentActionStepsList extends ConsumerWidget {
             ),
           ),
       ],
+    );
+  }
+}
+
+class _StepGroup {
+  _StepGroup({required this.toolName, required this.steps});
+
+  final String? toolName;
+  final List<AgentStep> steps;
+}
+
+class _CollapsibleStepGroup extends ConsumerStatefulWidget {
+  const _CollapsibleStepGroup({
+    required this.group,
+    this.listId,
+  });
+
+  final _StepGroup group;
+  final String? listId;
+
+  @override
+  ConsumerState<_CollapsibleStepGroup> createState() => _CollapsibleStepGroupState();
+}
+
+String _friendlyToolGroupName(String? toolName, int count) {
+  if (toolName == null) {
+    return '$count ações';
+  }
+  final names = <String, String>{
+    'get_lists': 'Consultar listas',
+    'get_current_list': 'Identificar lista',
+    'set_current_list': 'Definir lista',
+    'create_list': 'Criar lista',
+    'rename_list': 'Renomear lista',
+    'delete_list': 'Excluir lista',
+    'archive_list': 'Arquivar lista',
+    'unarchive_list': 'Desarquivar lista',
+    'get_items': 'Buscar itens',
+    'add_item': 'Adicionar itens',
+    'update_item': 'Atualizar itens',
+    'remove_item': 'Remover itens',
+    'toggle_purchased': 'Marcar itens',
+    'toggle_purchased_batch': 'Marcar itens',
+    'increment_quantity': 'Aumentar quantidade',
+    'decrement_quantity': 'Diminuir quantidade',
+    'clear_purchased': 'Limpar comprados',
+    'clear_all_items': 'Limpar lista',
+    'reorder_items': 'Reordenar itens',
+    'get_pantry_items': 'Buscar despensa',
+    'add_pantry_item': 'Adicionar à despensa',
+    'update_pantry_item': 'Atualizar despensa',
+    'remove_pantry_item': 'Remover da despensa',
+    'consume_pantry_item': 'Consumir item',
+    'restock_pantry_item': 'Reabastecer despensa',
+    'clear_pantry': 'Limpar despensa',
+    'get_budget': 'Consultar orçamento',
+    'set_budget': 'Definir orçamento',
+    'create_share_code': 'Compartilhar lista',
+    'import_shared_list': 'Importar lista',
+    'get_theme': 'Consultar tema',
+    'set_theme': 'Alterar tema',
+    'export_backup': 'Exportar dados',
+    'import_backup': 'Importar dados',
+    'generate_artifact': 'Gerar visualização',
+    'get_recipes': 'Consultar receitas',
+    'create_recipe': 'Salvar receita',
+    'delete_recipe': 'Excluir receita',
+    'get_meal_plan': 'Consultar cardápio',
+    'schedule_meal': 'Agendar refeição',
+    'remove_meal_plan_entry': 'Remover refeição',
+    'open_paywall': 'Abrir assinatura',
+    'request_app_review': 'Avaliar app',
+    'prompt_app_update': 'Atualizar app',
+    'generate_referral_link': 'Gerar link',
+    'save_user_preference': 'Salvar preferência',
+    'delete_user_preference': 'Remover preferência',
+    'get_user_profile': 'Consultar perfil',
+    'update_user_profile': 'Atualizar perfil',
+  };
+  final base = names[toolName] ?? toolName;
+  if (count <= 1) {
+    return base;
+  }
+  return '$base ($count)';
+}
+
+class _CollapsibleStepGroupState extends ConsumerState<_CollapsibleStepGroup> {
+  bool _isExpanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final group = widget.group;
+    final steps = group.steps;
+    final label = _friendlyToolGroupName(group.toolName, steps.length);
+    final allDone = steps.every((s) => s.status == AgentStepStatus.success);
+
+    return Container(
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(RadiusTokens.sm),
+        border: Border.all(
+          color: theme.colorScheme.outlineVariant.withAlpha((0.4 * 255).toInt()),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          InkWell(
+            onTap: () => setState(() => _isExpanded = !_isExpanded),
+            borderRadius: BorderRadius.circular(RadiusTokens.sm),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              child: Row(
+                children: [
+                  Icon(
+                    allDone ? Icons.check_circle_outline : Icons.radio_button_unchecked,
+                    size: 14,
+                    color: allDone ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      label,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Icon(
+                    _isExpanded ? Icons.expand_less : Icons.expand_more,
+                    size: 16,
+                    color: theme.colorScheme.onSurfaceVariant.withAlpha((0.6 * 255).toInt()),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          if (_isExpanded)
+            ...steps.map((step) => Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: AgentActionBlock(step: step, listId: widget.listId),
+                )),
+        ],
+      ),
     );
   }
 }
@@ -2491,6 +2594,42 @@ class _PremiumUnlockCard extends ConsumerWidget {
       ),
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
+}
+
+class _WavePainter extends CustomPainter {
+  _WavePainter({required this.color, required this.value});
+
+  final Color color;
+  final double value;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 3;
+
+    const barCount = 4;
+    final spacing = size.width / barCount;
+    final centerY = size.height / 2;
+
+    for (int i = 0; i < barCount; i++) {
+      final x = spacing * i + spacing / 2;
+      final phase = value * math.pi * 2 + i * 1.5;
+      final height = (math.sin(phase) + 1) * 5 + 4;
+      final top = centerY - height / 2;
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(
+          Rect.fromLTWH(x - 1.5, top, 3, height),
+          const Radius.circular(2),
+        ),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_WavePainter oldDelegate) => oldDelegate.value != value;
 }
 
 

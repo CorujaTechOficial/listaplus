@@ -325,7 +325,7 @@
   "generalHelp": "Com puc ajudar-te amb les teves compres avui?",
   "chatSubtitle": "Demana suggeriments d'articles, receptes o consells d'estalvi.",
   "aiError": "Ho sentim, s'ha produït un error en processar la teva sol·licitud. Comprova la teva connexió o torna-ho a provar més tard.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Inicia sessió per desbloquejar\nfuncions Premium",
   "signInGoogle": "Iniciar sessió amb Google",
   "signInApple": "Iniciar sessió amb Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Millora per desbloquejar",
   "itemRemoved": "Article eliminat",
   "undo": "Desfer",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Escriptura per veu (Gratuït)",
   "aiVoiceCommandTooltip": "Comandament de veu IA (Premium)",
   "voiceCommandTitle": "Comandament de veu IA",
-  "voiceCommandContent": "Parla de manera natural per gestionar la teva llista!\n\nExemples:\n• 'Afegeix pa, formatge i pernil'\n• 'Elimina el detergent'\n• 'Canvia el tema a blau'\n\nAquesta és una funció exclusiva de Lista Plus Premium.",
+  "voiceCommandContent": "Parla de manera natural per gestionar la teva llista!\n\nExemples:\n• 'Afegeix pa, formatge i pernil'\n• 'Elimina el detergent'\n• 'Canvia el tema a blau'\n\nAquesta és una funció exclusiva de KipiList Premium.",
   "voiceCommandPlanBtn": "Veure plans",
   "itemsAddedSuccess": "Articles afegits correctament a la llista!",
   "viewList": "Veure llista",
@@ -469,7 +469,7 @@
   "feedbackSend": "Enviar comentaris",
   "feedbackSending": "Enviant...",
   "feedbackThankYou": "Gràcies!",
-  "feedbackThankYouMessage": "Els vostres comentaris s'han rebut i ens ajuden a millorar Lista Plus per a tothom.",
+  "feedbackThankYouMessage": "Els vostres comentaris s'han rebut i ens ajuden a millorar KipiList per a tothom.",
   "feedbackBack": "Enrere",
   "feedbackError": "Error en enviar: {error}",
   "@feedbackError": {

@@ -325,7 +325,7 @@
   "generalHelp": "Kuidas saan täna aidata sinu ostlemisel?",
   "chatSubtitle": "Küsi üksuste soovitusi, retsepte või säästunõuandeid.",
   "aiError": "Vabandust, sinu päringu töötlemisel tekkis viga. Kontrolli ühendust või proovi hiljem uuesti.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Logi sisse, et avada\nPremium funktsioonid",
   "signInGoogle": "Logi sisse Google'iga",
   "signInApple": "Logi sisse Apple'iga",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Täienda, et avada",
   "itemRemoved": "Üksus eemaldatud",
   "undo": "Võta tagasi",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Häältrükkimine (Tasuta)",
   "aiVoiceCommandTooltip": "AI häälejuhtimine (Premium)",
   "voiceCommandTitle": "AI häälejuhtimine",
-  "voiceCommandContent": "Räägi loomulikult, et oma nimekirja hallata!\n\nNäited:\n• 'Lisa leib, juust ja sink'\n• 'Eemalda pesupulber'\n• 'Muuda teema siniseks'\n\nSee on Lista Plus Premium eksklusiivne funktsioon.",
+  "voiceCommandContent": "Räägi loomulikult, et oma nimekirja hallata!\n\nNäited:\n• 'Lisa leib, juust ja sink'\n• 'Eemalda pesupulber'\n• 'Muuda teema siniseks'\n\nSee on KipiList Premium eksklusiivne funktsioon.",
   "voiceCommandPlanBtn": "Vaata plaane",
   "itemsAddedSuccess": "Üksused edukalt nimekirja lisatud!",
   "viewList": "Vaata nimekirja",
@@ -469,7 +469,7 @@
   "feedbackSend": "Saada tagasiside",
   "feedbackSending": "Saatmine...",
   "feedbackThankYou": "Täname!",
-  "feedbackThankYouMessage": "Teie tagasiside on kätte saadud ja aitab meil Lista Plus kõigi jaoks paremaks muuta.",
+  "feedbackThankYouMessage": "Teie tagasiside on kätte saadud ja aitab meil KipiList kõigi jaoks paremaks muuta.",
   "feedbackBack": "Tagasi",
   "feedbackError": "Viga saatmisel: {error}",
   "@feedbackError": {

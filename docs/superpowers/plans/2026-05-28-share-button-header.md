@@ -28,7 +28,7 @@ Add before the closing `}`:
   "@shareApp": {
     "description": "Button to share the app with friends"
   },
-  "shareAppDescription": "Invite friends to use Lista Plus",
+  "shareAppDescription": "Invite friends to use KipiList",
   "@shareAppDescription": {
     "description": "Subtitle for sharing the app option"
   }
@@ -99,8 +99,8 @@ void _showInviteSheet(String listId) {
 
 void _shareReferral() {
   SharePlus.instance.share(ShareParams(
-    text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-    subject: 'Ganhe 7 dias de Lista Plus Premium!',
+    text: 'Estou usando o KipiList para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+    subject: 'Ganhe 7 dias de KipiList Premium!',
   ));
 }
 ```
@@ -239,8 +239,8 @@ Future<void> _shareViaCode(String listId) async {
 
 void _shareReferral() {
   SharePlus.instance.share(ShareParams(
-    text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-    subject: 'Ganhe 7 dias de Lista Plus Premium!',
+    text: 'Estou usando o KipiList para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+    subject: 'Ganhe 7 dias de KipiList Premium!',
   ));
 }
 ```
@@ -298,8 +298,8 @@ Add before the `build` method:
 ```dart
 void _shareApp() {
   SharePlus.instance.share(ShareParams(
-    text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-    subject: 'Ganhe 7 dias de Lista Plus Premium!',
+    text: 'Estou usando o KipiList para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+    subject: 'Ganhe 7 dias de KipiList Premium!',
   ));
 }
 ```
@@ -351,8 +351,8 @@ Add before the `build` method:
 ```dart
 void _shareApp() {
   SharePlus.instance.share(ShareParams(
-    text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-    subject: 'Ganhe 7 dias de Lista Plus Premium!',
+    text: 'Estou usando o KipiList para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+    subject: 'Ganhe 7 dias de KipiList Premium!',
   ));
 }
 ```
@@ -404,8 +404,8 @@ Add before the `build` method:
 ```dart
 void _shareApp() {
   SharePlus.instance.share(ShareParams(
-    text: 'Estou usando o Lista Plus para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
-    subject: 'Ganhe 7 dias de Lista Plus Premium!',
+    text: 'Estou usando o KipiList para organizar minhas compras! Baixe pelo meu link e nós dois ganhamos 7 dias de Premium grátis: https://listaplus.com/invite',
+    subject: 'Ganhe 7 dias de KipiList Premium!',
   ));
 }
 ```

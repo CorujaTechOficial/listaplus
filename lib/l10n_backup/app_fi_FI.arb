@@ -325,7 +325,7 @@
   "generalHelp": "Miten voin auttaa ostoksissasi tänään?",
   "chatSubtitle": "Kysy kohde-ehdotuksia, reseptejä tai säästövinkkejä.",
   "aiError": "Anteeksi, pyyntösi käsittelyssä tapahtui virhe. Tarkista yhteys tai yritä myöhemmin uudelleen.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Kirjaudu sisään avataksesi Premium-ominaisuudet",
   "signInGoogle": "Kirjaudu Google-tilillä",
   "signInApple": "Kirjaudu Apple-tilillä",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Päivitä avataksesi",
   "itemRemoved": "Kohde poistettu",
   "undo": "Kumoa",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Puhekirjoitus (Ilmainen)",
   "aiVoiceCommandTooltip": "AI-äänikomento (Premium)",
   "voiceCommandTitle": "AI-äänikomento",
-  "voiceCommandContent": "Puhu luonnollisesti hallitaksesi listaasi!\n\nEsimerkkejä:\n• 'Lisää leipää, juustoa ja kinkkua'\n• 'Poista pyykinpesuaine'\n• 'Vaihda teema siniseksi'\n\nTämä on Lista Plus Premiumin eksklusiivinen ominaisuus.",
+  "voiceCommandContent": "Puhu luonnollisesti hallitaksesi listaasi!\n\nEsimerkkejä:\n• 'Lisää leipää, juustoa ja kinkkua'\n• 'Poista pyykinpesuaine'\n• 'Vaihda teema siniseksi'\n\nTämä on KipiList Premiumin eksklusiivinen ominaisuus.",
   "voiceCommandPlanBtn": "Katso suunnitelmat",
   "itemsAddedSuccess": "Kohteet lisätty onnistuneesti listalle!",
   "viewList": "Katso lista",
@@ -469,7 +469,7 @@
   "feedbackSend": "Lähetä palaute",
   "feedbackSending": "Lähetetään...",
   "feedbackThankYou": "Kiitos!",
-  "feedbackThankYouMessage": "Palaute on vastaanotettu ja auttaa meitä parantamaan Lista Plusia kaikille.",
+  "feedbackThankYouMessage": "Palaute on vastaanotettu ja auttaa meitä parantamaan KipiListia kaikille.",
   "feedbackBack": "Takaisin",
   "feedbackError": "Virhe lähetyksessä: {error}",
   "@feedbackError": {

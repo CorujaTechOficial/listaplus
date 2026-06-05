@@ -495,7 +495,7 @@
   "feedbackSend": "ਸੁਝਾਅ ਭੇਜੋ",
   "feedbackSending": "ਭੇਜ ਰਿਹਾ ਹੈ...",
   "feedbackThankYou": "ਧੰਨਵਾਦ!",
-  "feedbackThankYouMessage": "ਤੁਹਾਡਾ ਸੁਝਾਅ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ ਹੈ ਅਤੇ ਇਹ Lista Plus ਨੂੰ ਸਭ ਲਈ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਸਾਡੀ ਮਦਦ ਕਰਦਾ ਹੈ।",
+  "feedbackThankYouMessage": "ਤੁਹਾਡਾ ਸੁਝਾਅ ਪ੍ਰਾਪਤ ਹੋ ਗਿਆ ਹੈ ਅਤੇ ਇਹ KipiList ਨੂੰ ਸਭ ਲਈ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਸਾਡੀ ਮਦਦ ਕਰਦਾ ਹੈ।",
   "feedbackBack": "ਵਾਪਸ",
   "feedbackError": "ਭੇਜਣ ਵਿੱਚ ਗਲਤੀ: {error}",
   "@feedbackError": {

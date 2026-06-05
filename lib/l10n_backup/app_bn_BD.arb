@@ -325,7 +325,7 @@
   "generalHelp": "আজকে আপনার কেনাকাটায় কিভাবে সাহায্য করতে পারি?",
   "chatSubtitle": "আইটেম সুপারিশ, রেসিপি বা সাশ্রয়ের টিপস চান।",
   "aiError": "দুঃখিত, আপনার অনুরোধ প্রক্রিয়াকরণে ত্রুটি হয়েছে। আপনার সংযোগ পরীক্ষা করুন বা পরে আবার চেষ্টা করুন।",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "প্রিমিয়াম বৈশিষ্ট্য\nআনলক করতে লগইন করুন",
   "signInGoogle": "Google দিয়ে সাইন ইন",
   "signInApple": "Apple দিয়ে সাইন ইন",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus প্রিমিয়াম",
+  "paywallTitle": "KipiList প্রিমিয়াম",
   "premiumUpgrade": "আনলক করতে আপগ্রেড",
   "itemRemoved": "আইটেম সরানো হয়েছে",
   "undo": "পূর্বাবস্থায় ফেরান",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "ভয়েস টাইপিং (ফ্রি)",
   "aiVoiceCommandTooltip": "AI ভয়েস কমান্ড (প্রিমিয়াম)",
   "voiceCommandTitle": "AI ভয়েস কমান্ড",
-  "voiceCommandContent": "আপনার তালিকা পরিচালনা করতে স্বাভাবিকভাবে কথা বলুন!\n\nউদাহরণ:\n• 'রুটি, পনির এবং হ্যাম যোগ করুন'\n• 'লন্ড্রি ডিটারজেন্ট সরান'\n• 'থিম নীলে পরিবর্তন করুন'\n\nএটি Lista Plus Premium-এর একচেটিয়া বৈশিষ্ট্য।",
+  "voiceCommandContent": "আপনার তালিকা পরিচালনা করতে স্বাভাবিকভাবে কথা বলুন!\n\nউদাহরণ:\n• 'রুটি, পনির এবং হ্যাম যোগ করুন'\n• 'লন্ড্রি ডিটারজেন্ট সরান'\n• 'থিম নীলে পরিবর্তন করুন'\n\nএটি KipiList Premium-এর একচেটিয়া বৈশিষ্ট্য।",
   "voiceCommandPlanBtn": "প্ল্যান দেখুন",
   "itemsAddedSuccess": "আইটেম সফলভাবে তালিকায় যোগ হয়েছে!",
   "viewList": "তালিকা দেখুন",
@@ -469,7 +469,7 @@
   "feedbackSend": "প্রতিক্রিয়া পাঠান",
   "feedbackSending": "পাঠানো হচ্ছে...",
   "feedbackThankYou": "ধন্যবাদ!",
-  "feedbackThankYouMessage": "আপনার প্রতিক্রিয়া গৃহীত হয়েছে এবং এটি Lista Plus-কে সবার জন্য উন্নত করতে সহায়তা করে।",
+  "feedbackThankYouMessage": "আপনার প্রতিক্রিয়া গৃহীত হয়েছে এবং এটি KipiList-কে সবার জন্য উন্নত করতে সহায়তা করে।",
   "feedbackBack": "পিছনে",
   "feedbackError": "পাঠাতে ত্রুটি: {error}",
   "@feedbackError": {

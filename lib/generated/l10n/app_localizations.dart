@@ -1356,6 +1356,12 @@ abstract class AppLocalizations {
   /// **'Type your message...'**
   String get chatHint;
 
+  /// No description provided for @chatHintBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock AI to chat'**
+  String get chatHintBlocked;
+
   /// No description provided for @chatError.
   ///
   /// In en, this message translates to:
@@ -1386,11 +1392,11 @@ abstract class AppLocalizations {
   /// **'Sorry, an error occurred processing your request. Check your connection or try again later.'**
   String get aiError;
 
-  /// No description provided for @listaPlusTitle.
+  /// No description provided for @kipiListTitle.
   ///
   /// In en, this message translates to:
-  /// **'Lista Plus'**
-  String get listaPlusTitle;
+  /// **'KipiList'**
+  String get kipiListTitle;
 
   /// No description provided for @loginPrompt.
   ///
@@ -1419,7 +1425,7 @@ abstract class AppLocalizations {
   /// Slide 1 headline
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Lista Plus'**
+  /// **'Welcome to KipiList'**
   String get onboardingWelcomeTitle;
 
   /// Slide 1 body
@@ -1437,7 +1443,7 @@ abstract class AppLocalizations {
   /// Slide setup body
   ///
   /// In en, this message translates to:
-  /// **'Choose how you want Lista Plus to look and work for you.'**
+  /// **'Choose how you want KipiList to look and work for you.'**
   String get onboardingSetupDesc;
 
   /// Slide 2 headline
@@ -1611,8 +1617,230 @@ abstract class AppLocalizations {
   /// No description provided for @paywallTitle.
   ///
   /// In en, this message translates to:
-  /// **'Lista Plus Premium'**
+  /// **'KipiList Premium'**
   String get paywallTitle;
+
+  /// No description provided for @paywallLoadingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading offers. Try again.'**
+  String get paywallLoadingError;
+
+  /// No description provided for @paywallPurchaseError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not complete purchase. Try again.'**
+  String get paywallPurchaseError;
+
+  /// No description provided for @paywallRestoreError.
+  ///
+  /// In en, this message translates to:
+  /// **'No active subscription found to restore.'**
+  String get paywallRestoreError;
+
+  /// No description provided for @paywallTrialDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} DAYS FREE'**
+  String paywallTrialDays(Object days);
+
+  /// No description provided for @paywallTrialWeeks.
+  ///
+  /// In en, this message translates to:
+  /// **'{count,plural, one{{count} WEEK FREE} other{{count} WEEKS FREE}}'**
+  String paywallTrialWeeks(num count);
+
+  /// No description provided for @paywallTrialMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}'**
+  String paywallTrialMonths(num count);
+
+  /// No description provided for @paywallFeaturesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything you need:'**
+  String get paywallFeaturesTitle;
+
+  /// No description provided for @paywallFeatureUnlimitedLists.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited Lists'**
+  String get paywallFeatureUnlimitedLists;
+
+  /// No description provided for @paywallFeatureSmartAI.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart AI'**
+  String get paywallFeatureSmartAI;
+
+  /// No description provided for @paywallFeatureExpenseControl.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense Control'**
+  String get paywallFeatureExpenseControl;
+
+  /// No description provided for @paywallFeatureSharing.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing'**
+  String get paywallFeatureSharing;
+
+  /// No description provided for @paywallBeforeAfterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Before and After:'**
+  String get paywallBeforeAfterTitle;
+
+  /// No description provided for @paywallLabelCommon.
+  ///
+  /// In en, this message translates to:
+  /// **'Common'**
+  String get paywallLabelCommon;
+
+  /// No description provided for @paywallLabelPro.
+  ///
+  /// In en, this message translates to:
+  /// **'KipiList PRO'**
+  String get paywallLabelPro;
+
+  /// No description provided for @paywallBeforeItem1.
+  ///
+  /// In en, this message translates to:
+  /// **'rice'**
+  String get paywallBeforeItem1;
+
+  /// No description provided for @paywallBeforeItem2.
+  ///
+  /// In en, this message translates to:
+  /// **'soap'**
+  String get paywallBeforeItem2;
+
+  /// No description provided for @paywallBeforeItem3.
+  ///
+  /// In en, this message translates to:
+  /// **'meat'**
+  String get paywallBeforeItem3;
+
+  /// No description provided for @paywallBeforeItem4.
+  ///
+  /// In en, this message translates to:
+  /// **'bread'**
+  String get paywallBeforeItem4;
+
+  /// No description provided for @paywallAfterItem1.
+  ///
+  /// In en, this message translates to:
+  /// **'Grains'**
+  String get paywallAfterItem1;
+
+  /// No description provided for @paywallAfterItem2.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleaning'**
+  String get paywallAfterItem2;
+
+  /// No description provided for @paywallAfterItem3.
+  ///
+  /// In en, this message translates to:
+  /// **'Meats'**
+  String get paywallAfterItem3;
+
+  /// No description provided for @paywallAfterItem4.
+  ///
+  /// In en, this message translates to:
+  /// **'Bakery'**
+  String get paywallAfterItem4;
+
+  /// No description provided for @paywallTestimonialsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What our users say:'**
+  String get paywallTestimonialsTitle;
+
+  /// No description provided for @paywallTestimonial1Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Ann S.'**
+  String get paywallTestimonial1Name;
+
+  /// No description provided for @paywallTestimonial1Text.
+  ///
+  /// In en, this message translates to:
+  /// **'AI organizes my shopping in seconds. I save 20 min per market trip.'**
+  String get paywallTestimonial1Text;
+
+  /// No description provided for @paywallTestimonial2Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Charles M.'**
+  String get paywallTestimonial2Name;
+
+  /// No description provided for @paywallTestimonial2Text.
+  ///
+  /// In en, this message translates to:
+  /// **'I never forgot a list item again. The AI chat is sensational!'**
+  String get paywallTestimonial2Text;
+
+  /// No description provided for @paywallSelectPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your plan:'**
+  String get paywallSelectPlan;
+
+  /// No description provided for @paywallSavePercent.
+  ///
+  /// In en, this message translates to:
+  /// **'SAVE {percent}%'**
+  String paywallSavePercent(Object percent);
+
+  /// No description provided for @paywallPricePerMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {price}/month'**
+  String paywallPricePerMonth(Object price);
+
+  /// No description provided for @paywallPackageAnnual.
+  ///
+  /// In en, this message translates to:
+  /// **'Annual Plan'**
+  String get paywallPackageAnnual;
+
+  /// No description provided for @paywallPackageMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Plan'**
+  String get paywallPackageMonthly;
+
+  /// No description provided for @paywallPackageLifetime.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime Access'**
+  String get paywallPackageLifetime;
+
+  /// No description provided for @paywallCancelAnytime.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime. No commitment.'**
+  String get paywallCancelAnytime;
+
+  /// No description provided for @paywallPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get paywallPolicy;
+
+  /// No description provided for @paywallTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get paywallTerms;
+
+  /// No description provided for @paywallRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get paywallRestore;
 
   /// No description provided for @premiumUpgrade.
   ///
@@ -2127,7 +2355,7 @@ abstract class AppLocalizations {
   /// No description provided for @voiceCommandContent.
   ///
   /// In en, this message translates to:
-  /// **'Speak naturally to manage your list!\n\nExamples:\n• \'Add bread, cheese, and ham\'\n• \'Remove laundry detergent\'\n• \'Change theme to blue\'\n\nThis is an exclusive feature of Lista Plus Premium.'**
+  /// **'Speak naturally to manage your list!\n\nExamples:\n• \'Add bread, cheese, and ham\'\n• \'Remove laundry detergent\'\n• \'Change theme to blue\'\n\nThis is an exclusive feature of KipiList Premium.'**
   String get voiceCommandContent;
 
   /// No description provided for @voiceCommandPlanBtn.
@@ -2247,7 +2475,7 @@ abstract class AppLocalizations {
   /// No description provided for @feedbackThankYouMessage.
   ///
   /// In en, this message translates to:
-  /// **'Your feedback has been received and helps us improve Lista Plus for everyone.'**
+  /// **'Your feedback has been received and helps us improve KipiList for everyone.'**
   String get feedbackThankYouMessage;
 
   /// No description provided for @feedbackBack.
@@ -2925,19 +3153,19 @@ abstract class AppLocalizations {
   /// Subtitle for sharing the app option
   ///
   /// In en, this message translates to:
-  /// **'Invite friends to use Lista Plus'**
+  /// **'Invite friends to use KipiList'**
   String get shareAppDescription;
 
   /// Referral text shared outside the app when inviting friends
   ///
   /// In en, this message translates to:
-  /// **'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: {url}'**
+  /// **'I\'m using KipiList to organize my shopping! Download via my link and we both get 7 days of Premium free: {url}'**
   String shareReferralText(Object url);
 
   /// Subject line for the referral share
   ///
   /// In en, this message translates to:
-  /// **'Get 7 days of Lista Plus Premium!'**
+  /// **'Get 7 days of KipiList Premium!'**
   String get shareReferralSubject;
 }
 

@@ -325,7 +325,7 @@
   "generalHelp": "Hoe kan ik vandaag helpen met je boodschappen?",
   "chatSubtitle": "Vraag om productsuggesties, recepten of bespaartips.",
   "aiError": "Sorry, er is een fout opgetreden bij het verwerken van je verzoek. Controleer je verbinding of probeer het later opnieuw.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Log in om Premium-functies\nte ontgrendelen",
   "signInGoogle": "Inloggen met Google",
   "signInApple": "Inloggen met Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Upgrade om te ontgrendelen",
   "itemRemoved": "Item verwijderd",
   "undo": "Ongedaan maken",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Spraaktypen (Gratis)",
   "aiVoiceCommandTooltip": "AI-stemcommando (Premium)",
   "voiceCommandTitle": "AI-stemcommando",
-  "voiceCommandContent": "Spreek natuurlijk om je lijst te beheren!\n\nVoorbeelden:\n• 'Voeg brood, kaas en ham toe'\n• 'Verwijder wasmiddel'\n• 'Verander thema naar blauw'\n\nDit is een exclusieve functie van Lista Plus Premium.",
+  "voiceCommandContent": "Spreek natuurlijk om je lijst te beheren!\n\nVoorbeelden:\n• 'Voeg brood, kaas en ham toe'\n• 'Verwijder wasmiddel'\n• 'Verander thema naar blauw'\n\nDit is een exclusieve functie van KipiList Premium.",
   "voiceCommandPlanBtn": "Bekijk abonnementen",
   "itemsAddedSuccess": "Items succesvol toegevoegd aan lijst!",
   "viewList": "Lijst bekijken",
@@ -469,7 +469,7 @@
   "feedbackSend": "Feedback verzenden",
   "feedbackSending": "Bezig met verzenden...",
   "feedbackThankYou": "Bedankt!",
-  "feedbackThankYouMessage": "Je feedback is ontvangen en helpt ons Lista Plus voor iedereen te verbeteren.",
+  "feedbackThankYouMessage": "Je feedback is ontvangen en helpt ons KipiList voor iedereen te verbeteren.",
   "feedbackBack": "Terug",
   "feedbackError": "Fout bij verzenden: {error}",
   "@feedbackError": {

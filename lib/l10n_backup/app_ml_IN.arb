@@ -495,7 +495,7 @@
   "feedbackSend": "ഫീഡ്‌ബാക്ക് അയയ്ക്കുക",
   "feedbackSending": "അയയ്ക്കുന്നു...",
   "feedbackThankYou": "നന്ദി!",
-  "feedbackThankYouMessage": "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് ലഭിച്ചു, എല്ലാവർക്കുമായി Lista Plus മെച്ചപ്പെടുത്താൻ ഇത് ഞങ്ങളെ സഹായിക്കുന്നു.",
+  "feedbackThankYouMessage": "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് ലഭിച്ചു, എല്ലാവർക്കുമായി KipiList മെച്ചപ്പെടുത്താൻ ഇത് ഞങ്ങളെ സഹായിക്കുന്നു.",
   "feedbackBack": "തിരികെ",
   "feedbackError": "അയയ്ക്കുന്നതിൽ പിശക്: {error}",
   "@feedbackError": {

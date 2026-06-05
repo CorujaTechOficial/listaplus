@@ -30,7 +30,9 @@ class PriceHistory extends _$PriceHistory {
     final data = await service.getUserData();
     if (data != null && data['priceHistory'] != null) {
       final history = data['priceHistory'] as Map<String, dynamic>;
-      state = history.map((key, value) => MapEntry(key, (value as num).toDouble()));
+      if (ref.mounted) {
+        state = history.map((key, value) => MapEntry(key, (value as num).toDouble()));
+      }
     }
   }
 
@@ -43,10 +45,11 @@ class PriceHistory extends _$PriceHistory {
     final current = Map<String, double>.from(state);
     current[nameNormalized] = price;
 
-    state = current;
-
-    final service = ref.read(firestoreServiceProvider);
-    await service.updateUserData({'priceHistory': state});
+    if (ref.mounted) {
+      state = current;
+      final service = ref.read(firestoreServiceProvider);
+      await service.updateUserData({'priceHistory': state});
+    }
   }
 
   double? getPreviousPrice(String name) {
@@ -110,6 +113,31 @@ class ShoppingListItems extends _$ShoppingListItems {
       });
     } on Exception catch (e) {
       throw Exception('Erro ao adicionar item: $e');
+    }
+  }
+
+  Future<void> addItems(List<ShoppingItem> items) async {
+    if (items.isEmpty) {
+      return;
+    }
+    final service = ref.read(firestoreServiceProvider);
+    try {
+      final ownerUid = await _ownerUid();
+      if (ownerUid != null) {
+        await service.saveItemsToUser(ownerUid, items);
+      } else {
+        await service.saveItems(items);
+      }
+
+      // Track history for each item
+      for (final item in items) {
+        // ignore: unawaited_futures
+        ref.read(itemHistoryProvider.notifier).trackItem(item.name).catchError((Object e) {
+          debugPrint('Failed to track item history: $e');
+        });
+      }
+    } on Exception catch (e) {
+      throw Exception('Erro ao adicionar itens em lote: $e');
     }
   }
 

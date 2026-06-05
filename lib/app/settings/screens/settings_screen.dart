@@ -52,7 +52,7 @@ class SettingsScreen extends ConsumerWidget {
             data: (isPremium) => isPremium
                 ? ListTile(
                     leading: const Icon(Icons.workspace_premium, color: AppColors.premiumAmber),
-                    title: Text(isPt ? 'Lista Plus Pro ativo' : 'Lista Plus Pro active'),
+                    title: Text(isPt ? 'KipiList Pro ativo' : 'KipiList Pro active'),
                     subtitle: Text(l10n.manageSubscription),
                     trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
                     onTap: () async {
@@ -345,7 +345,7 @@ class SettingsScreen extends ConsumerWidget {
             trailing: Icon(Icons.open_in_new, color: theme.colorScheme.onSurfaceVariant, size: 18),
             onTap: () {
               launchUrl(
-                Uri.parse('https://listaplus-6547b.web.app/privacidade.html'),
+                Uri.parse('https://kipilist-6547b.web.app/privacidade.html'),
                 mode: LaunchMode.externalApplication,
               );
             },
@@ -356,7 +356,7 @@ class SettingsScreen extends ConsumerWidget {
             trailing: Icon(Icons.open_in_new, color: theme.colorScheme.onSurfaceVariant, size: 18),
             onTap: () {
               launchUrl(
-                Uri.parse('https://listaplus-6547b.web.app/termos.html'),
+                Uri.parse('https://kipilist-6547b.web.app/termos.html'),
                 mode: LaunchMode.externalApplication,
               );
             },

@@ -16,7 +16,7 @@ class AuthScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.listaPlusTitle)),
+      appBar: AppBar(title: Text(l10n.kipiListTitle)),
       body: SafeArea(
         child: Center(
           child: Padding(

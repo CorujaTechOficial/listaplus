@@ -596,6 +596,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get chatHint => 'Írja be az üzenetét...';
 
   @override
+  String get chatHintBlocked => 'Unlock AI to chat';
+
+  @override
   String chatError(String error) {
     return 'Hiba a chat betöltésekor: $error';
   }
@@ -615,7 +618,7 @@ class AppLocalizationsHu extends AppLocalizations {
       'Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => 'Jelentkezzen be a prémium\nfunkciók feloldásához';
@@ -630,7 +633,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get continueAsGuest => 'Folytatás vendégként';
 
   @override
-  String get onboardingWelcomeTitle => 'Üdvözöljük a Lista Plusban';
+  String get onboardingWelcomeTitle => 'Üdvözöljük a KipiListban';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -641,7 +644,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get onboardingSetupDesc =>
-      'Válassza ki, hogy a Lista Plus hogyan nézzen ki és működjön az Ön számára.';
+      'Válassza ki, hogy a KipiList hogyan nézzen ki és működjön az Ön számára.';
 
   @override
   String get onboardingLoginTitle => 'Mentse el mindent a felhőbe';
@@ -739,7 +742,142 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError => 'Error loading offers. Try again.';
+
+  @override
+  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+
+  @override
+  String get paywallRestoreError => 'No active subscription found to restore.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAYS FREE';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WEEKS FREE',
+      one: '$count WEEK FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Everything you need:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+
+  @override
+  String get paywallFeatureSmartAI => 'Smart AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Expense Control';
+
+  @override
+  String get paywallFeatureSharing => 'Sharing';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI Before and After:';
+
+  @override
+  String get paywallLabelCommon => 'Common';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rice';
+
+  @override
+  String get paywallBeforeItem2 => 'soap';
+
+  @override
+  String get paywallBeforeItem3 => 'meat';
+
+  @override
+  String get paywallBeforeItem4 => 'bread';
+
+  @override
+  String get paywallAfterItem1 => 'Grains';
+
+  @override
+  String get paywallAfterItem2 => 'Cleaning';
+
+  @override
+  String get paywallAfterItem3 => 'Meats';
+
+  @override
+  String get paywallAfterItem4 => 'Bakery';
+
+  @override
+  String get paywallTestimonialsTitle => 'What our users say:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'I never forgot a list item again. The AI chat is sensational!';
+
+  @override
+  String get paywallSelectPlan => 'Choose your plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SAVE $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Only $price/month';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Annual Plan';
+
+  @override
+  String get paywallPackageMonthly => 'Monthly Plan';
+
+  @override
+  String get paywallPackageLifetime => 'Lifetime Access';
+
+  @override
+  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+
+  @override
+  String get paywallPolicy => 'Privacy Policy';
+
+  @override
+  String get paywallTerms => 'Terms of Use';
+
+  @override
+  String get paywallRestore => 'Restore';
 
   @override
   String get premiumUpgrade => 'Frissítsen a feloldáshoz';
@@ -1015,7 +1153,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get voiceCommandContent =>
-      'Beszéljen természetesen a lista kezeléséhez!\n\nPéldák:\n• \'Kenyér, sajt és sonka hozzáadása\'\n• \'Mosószer eltávolítása\'\n• \'Téma váltása kékre\'\n\nEz a Lista Plus Premium exkluzív funkciója.';
+      'Beszéljen természetesen a lista kezeléséhez!\n\nPéldák:\n• \'Kenyér, sajt és sonka hozzáadása\'\n• \'Mosószer eltávolítása\'\n• \'Téma váltása kékre\'\n\nEz a KipiList Premium exkluzív funkciója.';
 
   @override
   String get voiceCommandPlanBtn => 'Csomagok megtekintése';
@@ -1077,7 +1215,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get feedbackThankYouMessage =>
-      'A visszajelzésed megérkezett és segít nekünk a Lista Plus fejlesztésében mindenki számára.';
+      'A visszajelzésed megérkezett és segít nekünk a KipiList fejlesztésében mindenki számára.';
 
   @override
   String get feedbackBack => 'Vissza';
@@ -1453,15 +1591,15 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get shareAppDescription =>
-      'Hívd meg barátaidat a Lista Plus használatára';
+      'Hívd meg barátaidat a KipiList használatára';
 
   @override
   String shareReferralText(Object url) {
-    return 'A Lista Plus-t használom a vásárlások szervezésére! Töltsd le a linkemen keresztül, és mindketten kapunk 7 nap ingyenes prémiumot: $url';
+    return 'A KipiList-t használom a vásárlások szervezésére! Töltsd le a linkemen keresztül, és mindketten kapunk 7 nap ingyenes prémiumot: $url';
   }
 
   @override
-  String get shareReferralSubject => '7 nap Lista Plus Premium!';
+  String get shareReferralSubject => '7 nap KipiList Premium!';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -2075,7 +2213,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
       'Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => 'Jelentkezzen be a prémium\nfunkciók feloldásához';
@@ -2090,7 +2228,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get continueAsGuest => 'Folytatás vendégként';
 
   @override
-  String get onboardingWelcomeTitle => 'Üdvözöljük a Lista Plusban';
+  String get onboardingWelcomeTitle => 'Üdvözöljük a KipiListban';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -2101,7 +2239,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get onboardingSetupDesc =>
-      'Válassza ki, hogy a Lista Plus hogyan nézzen ki és működjön az Ön számára.';
+      'Válassza ki, hogy a KipiList hogyan nézzen ki és működjön az Ön számára.';
 
   @override
   String get onboardingLoginTitle => 'Mentse el mindent a felhőbe';
@@ -2199,7 +2337,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'KipiList Premium';
 
   @override
   String get premiumUpgrade => 'Frissítsen a feloldáshoz';
@@ -2475,7 +2613,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get voiceCommandContent =>
-      'Beszéljen természetesen a lista kezeléséhez!\n\nPéldák:\n• \'Kenyér, sajt és sonka hozzáadása\'\n• \'Mosószer eltávolítása\'\n• \'Téma váltása kékre\'\n\nEz a Lista Plus Premium exkluzív funkciója.';
+      'Beszéljen természetesen a lista kezeléséhez!\n\nPéldák:\n• \'Kenyér, sajt és sonka hozzáadása\'\n• \'Mosószer eltávolítása\'\n• \'Téma váltása kékre\'\n\nEz a KipiList Premium exkluzív funkciója.';
 
   @override
   String get voiceCommandPlanBtn => 'Csomagok megtekintése';
@@ -2537,7 +2675,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get feedbackThankYouMessage =>
-      'A visszajelzésed megérkezett, és segít nekünk a Lista Plus fejlesztésében mindenki számára.';
+      'A visszajelzésed megérkezett, és segít nekünk a KipiList fejlesztésében mindenki számára.';
 
   @override
   String get feedbackBack => 'Vissza';
@@ -2913,13 +3051,13 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get shareAppDescription =>
-      'Hívd meg barátaidat a Lista Plus használatára';
+      'Hívd meg barátaidat a KipiList használatára';
 
   @override
   String shareReferralText(Object url) {
-    return 'A Lista Plus-t használom a vásárlások szervezésére! Töltsd le a linkemen keresztül, és mindketten kapunk 7 nap ingyenes prémiumot: $url';
+    return 'A KipiList-t használom a vásárlások szervezésére! Töltsd le a linkemen keresztül, és mindketten kapunk 7 nap ingyenes prémiumot: $url';
   }
 
   @override
-  String get shareReferralSubject => '7 nap Lista Plus Premium!';
+  String get shareReferralSubject => '7 nap KipiList Premium!';
 }

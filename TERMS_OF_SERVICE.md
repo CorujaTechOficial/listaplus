@@ -1,14 +1,14 @@
-# Termos de Serviço — Lista Plus
+# Termos de Serviço — KipiList
 
 Última atualização: 16 de maio de 2026
 
 ## 1. Aceitação dos Termos
 
-Ao usar o Lista Plus, você concorda com estes Termos de Serviço. Se não concordar, não utilize o aplicativo.
+Ao usar o KipiList, você concorda com estes Termos de Serviço. Se não concordar, não utilize o aplicativo.
 
 ## 2. Descrição do Serviço
 
-Lista Plus é um aplicativo de lista de compras que oferece:
+KipiList é um aplicativo de lista de compras que oferece:
 - Criação e gerenciamento de listas de compras
 - Sincronização entre dispositivos via nuvem
 - Recursos premium mediante assinatura
@@ -48,7 +48,7 @@ O plano gratuito permite até 3 listas de compras simultâneas. Upgrade para pla
 
 ## 6. Limitação de Responsabilidade
 
-O Lista Plus é fornecido "como está". Não nos responsabilizamos por:
+O KipiList é fornecido "como está". Não nos responsabilizamos por:
 - Perda de dados devido a exclusão da conta
 - Danos decorrentes do uso ou impossibilidade de uso do app
 - Precisão das informações inseridas pelo usuário

@@ -1,4 +1,4 @@
-# Lista Plus — `br.com.curujatech.listaplus` (Android)
+# KipiList — `br.com.curujatech.listaplus` (Android)
 
 ## Architecture
 
@@ -9,7 +9,7 @@
   `users/{uid}`, `sharedLists/{code}`, plus `pantry`, `categories`, `recipes`, `meal_plans` collections.
 - **Auth**: Anonymous + Google Sign-In via Firebase Auth. RevenueCat UID synced reactively in `_setupAuthSync()` (`main.dart`). `AuthService.signOut()` re-logs-in anonymously — do NOT also call `signInAnonymously()` from the auth stream listener (duplicate race).
 - **Monetization**: RevenueCat (`purchases_flutter`). UID linked via `Purchases.logIn(uid)`.
-  Entitlement: `lista_plus_pro`. Offering: `default_play` with 3 packages:
+  - Entitlement: `kipilist_pro`. Offering: `default_play` with 3 packages:
   `$rc_monthly` R$4.99, `$rc_annual` R$29.99.
   API key via `--dart-define=REVENUECAT_API_KEY=xxx`.
 - **Premium gating**: `premiumProvider` (RevenueCat-only, no Firestore credit check). Max 3 lists free.
@@ -51,10 +51,10 @@ To maintain 100% translation across all 86+ locales:
 - **`scripts/translate_missing.py`**: Automated bulk translation.
     - Scans `app_en.arb` for all keys and compares with every other locale.
     - Translates missing keys or keys still in English using Google Translate.
-    - **Protection**: Preserves brand names (Lista Plus, Google, etc.) and ICU placeholders (`{count}`).
+    - **Protection**: Preserves brand names (KipiList, Google, etc.) and ICU placeholders (`{count}`).
 - **`scripts/review_translations.py`**: Quality assurance tool.
     - **Placeholders**: Fails if a translation modified or removed a variable (CRITICAL).
-    - **Branding**: Warns if "Lista Plus" was translated.
+    - **Branding**: Warns if "KipiList" was translated.
     - **UI Length**: Warns if a translation is >2.5x longer than English (prevents layout overflow).
     - **English Fallback**: Detects long strings that weren't translated.
 - **`scripts/translate_single.py`**: Safe fallback if the bulk script times out.
@@ -73,7 +73,7 @@ To maintain 100% translation across all 86+ locales:
 - NEVER use `'...'` as labels, hints, subtitles, button text, dialog messages, error messages, or snackbars
 - All new text MUST be added to `lib/l10n/app_en.arb` first, then `flutter gen-l10n`
 - Even "temporary" or "obvious" text counts — this is a 86-locale app
-- Exception: brand name "Lista Plus", icons, and purely decorative elements
+- Exception: brand name "KipiList", icons, and purely decorative elements
 
 Rule of thumb: if a user can see it, it goes in the ARB.
 

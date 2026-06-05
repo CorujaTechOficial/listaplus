@@ -1,4 +1,4 @@
-"""Fix translated brand 'Lista Plus' across all ARB locale files.
+"""Fix translated brand 'KipiList' across all ARB locale files.
 
 The brand name "Lista Plus" must remain in Latin script in every locale.
 """
@@ -11,26 +11,26 @@ EN_FILE = os.path.join(L10N_DIR, 'app_en.arb')
 with open(EN_FILE) as f:
     en = json.load(f)
 
-# Keys whose English value contains "Lista Plus" or "ListaPlus"
-BRAND_KEYS = [k for k, v in en.items() if isinstance(v, str) and ('Lista Plus' in v or 'ListaPlus' in v)]
+# Keys whose English value contains "Lista Plus" or "KipiList"
+BRAND_KEYS = [k for k, v in en.items() if isinstance(v, str) and ('KipiList' in v or 'KipiList' in v)]
 
 def fix_value(key, locale, value):
     """Fix brand in a single value, returning fixed value or None if unchanged."""
     en_val = en[key]
 
     # If already contains correct brand, skip
-    if 'Lista Plus' in value:
+    if 'KipiList' in value:
         return None
-    # Fix "ListaPlus" -> "Lista Plus" (no space is wrong)
-    if 'ListaPlus' in value:
-        return value.replace('ListaPlus', 'Lista Plus')
+    # Fix "KipiList" -> "Lista Plus" (no space is wrong)
+    if 'KipiList' in value:
+        return value.replace('KipiList', 'KipiList')
 
     # For pure-brand keys, just use English value
     if key in ('listaPlusTitle',):
-        return 'Lista Plus'
+        return 'KipiList'
 
     if key in ('paywallTitle',):
-        return 'Lista Plus Premium'
+        return 'KipiList Premium'
 
     # For keys where brand is embedded in a sentence, do targeted replacement
     # Strategy: replace the localized brand part with "Lista Plus"
@@ -39,16 +39,16 @@ def fix_value(key, locale, value):
     # Common patterns of translated brand names
     brand_patterns = [
         # Latin-script variants (wrong case, spelling, or missing space)
-        (r'\bList\s*Plus\b', 'Lista Plus', re.IGNORECASE),        # List Plus, list plus
-        (r'\bListe\s*Plus\b', 'Lista Plus', re.IGNORECASE),       # Liste Plus (French)
-        (r'\bLlista\s*Plus\b', 'Lista Plus', re.IGNORECASE),      # Llista Plus (Catalan)
-        (r'ListaPlus\b', 'Lista Plus', re.IGNORECASE),             # ListaPlus (no space)
-        (r'\bDaftar\s*Ditambah\b', 'Lista Plus', re.IGNORECASE),  # Indonesian
+        (r'\bList\s*Plus\b', 'KipiList', re.IGNORECASE),        # List Plus, list plus
+        (r'\bListe\s*Plus\b', 'KipiList', re.IGNORECASE),       # Liste Plus (French)
+        (r'\bLlista\s*Plus\b', 'KipiList', re.IGNORECASE),      # Llista Plus (Catalan)
+        (r'KipiList\b', 'KipiList', re.IGNORECASE),             # KipiList (no space)
+        (r'\bDaftar\s*Ditambah\b', 'KipiList', re.IGNORECASE),  # Indonesian
         # Declined forms (Slavic languages)
-        (r'\bListu\s*Plus\b', 'Lista Plus', re.IGNORECASE),       # Croatian
-        (r'\bLiście\s*Plus\b', 'Lista Plus', re.IGNORECASE),       # Polish
-        (r'\bListi\s*Plus\b', 'Lista Plus', re.IGNORECASE),       # Slovenian
-        (r'\bListo\s*Plus\b', 'Lista Plus', re.IGNORECASE),       # Slovenian declined
+        (r'\bListu\s*Plus\b', 'KipiList', re.IGNORECASE),       # Croatian
+        (r'\bLiście\s*Plus\b', 'KipiList', re.IGNORECASE),       # Polish
+        (r'\bListi\s*Plus\b', 'KipiList', re.IGNORECASE),       # Slovenian
+        (r'\bListo\s*Plus\b', 'KipiList', re.IGNORECASE),       # Slovenian declined
     ]
 
     for pattern, replacement, flags in brand_patterns:
@@ -61,15 +61,15 @@ def fix_value(key, locale, value):
     # Cyrillic patterns
     cyrillic_brands = [
         # Russian, Serbian, Bulgarian: Листа Плюс, Спіс плюс, etc.
-        ('Листа Плюс', 'Lista Plus'), ('Листа Плус', 'Lista Plus'),
-        ('листу Плус', 'Lista Plus'),  # Serbian declined
-        ('Листу Плус', 'Lista Plus'),  # Serbian declined capitalized
-        ('Листе Плус', 'Lista Plus'),  # Serbian genitive declined
-        ('Спіс плюс', 'Lista Plus'), ('Список Плюс', 'Lista Plus'),
-        ('Листа Плус', 'Lista Plus'), ('Листа плус', 'Lista Plus'),
-        ('Список Плюс', 'Lista Plus'), ('Спіс плюс', 'Lista Plus'),
+        ('Листа Плюс', 'KipiList'), ('Листа Плус', 'KipiList'),
+        ('листу Плус', 'KipiList'),  # Serbian declined
+        ('Листу Плус', 'KipiList'),  # Serbian declined capitalized
+        ('Листе Плус', 'KipiList'),  # Serbian genitive declined
+        ('Спіс плюс', 'KipiList'), ('Список Плюс', 'KipiList'),
+        ('Листа Плус', 'KipiList'), ('Листа плус', 'KipiList'),
+        ('Список Плюс', 'KipiList'), ('Спіс плюс', 'KipiList'),
         # Belarusian
-        ('Спіс плюс', 'Lista Plus'), ('List Plus', 'Lista Plus'),
+        ('Спіс плюс', 'KipiList'), ('List Plus', 'KipiList'),
     ]
 
     for wrong, correct in cyrillic_brands:
@@ -81,7 +81,7 @@ def fix_value(key, locale, value):
         # Replace both "списокот плус" variants
         for w in ['списокот плус', 'Списокот плус', 'списокот Плус']:
             if w in value:
-                return value.replace(w, 'Lista Plus')
+                return value.replace(w, 'KipiList')
 
     # Arabic/Persian patterns
     arabic_brands = [
@@ -89,18 +89,18 @@ def fix_value(key, locale, value):
     ]
     for wrong in arabic_brands:
         if wrong in value:
-            return value.replace(wrong, 'Lista Plus')
+            return value.replace(wrong, 'KipiList')
 
     # East Asian patterns
     east_asian_brands = [
         # Japanese
-        ('リスタプラス', 'Lista Plus'),
+        ('リスタプラス', 'KipiList'),
         # Korean
-        ('리스타 플러스', 'Lista Plus'),
-        ('리스타플러스', 'Lista Plus'),
+        ('리스타 플러스', 'KipiList'),
+        ('리스타플러스', 'KipiList'),
         # Chinese
-        ('列表加号', 'Lista Plus'),
-        ('列表加號', 'Lista Plus'),
+        ('列表加号', 'KipiList'),
+        ('列表加號', 'KipiList'),
     ]
     for wrong, correct in east_asian_brands:
         if wrong in value:
@@ -108,14 +108,14 @@ def fix_value(key, locale, value):
 
     # South Asian patterns (Devanagari, Bengali, etc.)
     south_asian_brands = [
-        ('लिस्टा प्लस', 'Lista Plus'),         # Hindi, Marathi
-        ('লিস্টা প্লাস', 'Lista Plus'),          # Bengali
-        ('લિસ્ટા પ્લસ', 'Lista Plus'),           # Gujarati
-        ('ಲಿಸ್ಟಾ ಪ್ಲಸ್', 'Lista Plus'),           # Kannada
-        ('ലിസ്റ്റ പ്ലസ്', 'Lista Plus'),          # Malayalam
-        ('ਲਿਸਟਾ ਪਲੱਸ', 'Lista Plus'),            # Punjabi
-        ('லிஸ்டா பிளஸ்', 'Lista Plus'),           # Tamil
-        ('లిస్టా ప్లస్', 'Lista Plus'),           # Telugu
+        ('लिस्टा प्लस', 'KipiList'),         # Hindi, Marathi
+        ('লিস্টা প্লাস', 'KipiList'),          # Bengali
+        ('લિસ્ટા પ્લસ', 'KipiList'),           # Gujarati
+        ('ಲಿಸ್ಟಾ ಪ್ಲಸ್', 'KipiList'),           # Kannada
+        ('ലിസ്റ്റ പ്ലസ്', 'KipiList'),          # Malayalam
+        ('ਲਿਸਟਾ ਪਲੱਸ', 'KipiList'),            # Punjabi
+        ('லிஸ்டா பிளஸ்', 'KipiList'),           # Tamil
+        ('లిస్టా ప్లస్', 'KipiList'),           # Telugu
     ]
     for wrong, correct in south_asian_brands:
         if wrong in value:
@@ -123,8 +123,8 @@ def fix_value(key, locale, value):
 
     # Thai
     thai_brands = [
-        ('ลิสต้า พลัส', 'Lista Plus'),
-        ('ลิสตาพลัส', 'Lista Plus'),
+        ('ลิสต้า พลัส', 'KipiList'),
+        ('ลิสตาพลัส', 'KipiList'),
     ]
     for wrong, correct in thai_brands:
         if wrong in value:
@@ -132,15 +132,15 @@ def fix_value(key, locale, value):
 
     # Armenian
     if 'List Plus' in value or 'Լիստ Պլյուս' in value:
-        return value.replace('List Plus', 'Lista Plus').replace('Լիստ Պլյուս', 'Lista Plus')
+        return value.replace('List Plus', 'KipiList').replace('Լիստ Պլյուս', 'KipiList')
 
     # Amharic/Ethiopic
     if 'ሊስታ ፕላስ' in value:
-        return value.replace('ሊስታ ፕላስ', 'Lista Plus')
+        return value.replace('ሊስታ ፕላስ', 'KipiList')
 
     # Ukrainian
     if 'Список Плюс' in value or 'Список плюс' in value:
-        return value.replace('Список Плюс', 'Lista Plus').replace('Список плюс', 'Lista Plus')
+        return value.replace('Список Плюс', 'KipiList').replace('Список плюс', 'KipiList')
 
     # If we get here, we couldn't identify the brand pattern
     # Log it for manual review

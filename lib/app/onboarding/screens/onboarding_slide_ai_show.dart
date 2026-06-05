@@ -148,7 +148,7 @@ class _OnboardingSlideAiShowState extends ConsumerState<OnboardingSlideAiShow> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: Spacing.xl),
                 child: Text(
-                  'Estou preparando tudo para você...',
+                  'O Kipi está preparando tudo para você...',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,

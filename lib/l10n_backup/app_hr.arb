@@ -325,7 +325,7 @@
   "generalHelp": "Kako mogu pomoći s tvojom današnjom kupovinom?",
   "chatSubtitle": "Zatraži prijedloge stavki, recepte ili savjete za uštedu.",
   "aiError": "Oprosti, došlo je do greške u obradi tvog zahtjeva. Provjeri svoju vezu ili pokušaj ponovno kasnije.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Prijavi se za otključavanje\nPremium značajki",
   "signInGoogle": "Prijava s Googleom",
   "signInApple": "Prijava s Appleom",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Nadogradi za otključavanje",
   "itemRemoved": "Stavka uklonjena",
   "undo": "Poništi",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Glasovno tipkanje (Besplatno)",
   "aiVoiceCommandTooltip": "AI glasovna naredba (Premium)",
   "voiceCommandTitle": "AI glasovna naredba",
-  "voiceCommandContent": "Govori prirodno za upravljanje svojim popisom!\n\nPrimjeri:\n• 'Dodaj kruh, sir i šunku'\n• 'Ukloni deterdžent za rublje'\n• 'Promijeni temu u plavu'\n\nOvo je ekskluzivna značajka Lista Plus Premium.",
+  "voiceCommandContent": "Govori prirodno za upravljanje svojim popisom!\n\nPrimjeri:\n• 'Dodaj kruh, sir i šunku'\n• 'Ukloni deterdžent za rublje'\n• 'Promijeni temu u plavu'\n\nOvo je ekskluzivna značajka KipiList Premium.",
   "voiceCommandPlanBtn": "Pogledaj planove",
   "itemsAddedSuccess": "Stavke uspješno dodane na popis!",
   "viewList": "Pogledaj popis",
@@ -469,7 +469,7 @@
   "feedbackSend": "Pošalji povratne informacije",
   "feedbackSending": "Slanje...",
   "feedbackThankYou": "Hvala vam!",
-  "feedbackThankYouMessage": "Vaše povratne informacije su primljene i pomažu nam poboljšati Lista Plus za sve.",
+  "feedbackThankYouMessage": "Vaše povratne informacije su primljene i pomažu nam poboljšati KipiList za sve.",
   "feedbackBack": "Natrag",
   "feedbackError": "Greška pri slanju: {error}",
   "@feedbackError": {

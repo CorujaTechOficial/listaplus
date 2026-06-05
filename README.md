@@ -1,1 +1,1 @@
-# Lista Plus
+# KipiList

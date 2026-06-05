@@ -39,7 +39,7 @@ class BackupService {
     await SharePlus.instance.share(
       ShareParams(
         text: json,
-        subject: 'Lista Plus - Backup',
+        subject: 'KipiList - Backup',
       ),
     );
   }

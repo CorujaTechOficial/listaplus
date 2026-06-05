@@ -594,6 +594,9 @@ class AppLocalizationsZu extends AppLocalizations {
   String get chatHint => 'Bhala umyalezo wakho...';
 
   @override
+  String get chatHintBlocked => 'Unlock AI to chat';
+
+  @override
   String chatError(String error) {
     return 'Iphutha ekulayisheni ingxoxo: $error';
   }
@@ -613,7 +616,7 @@ class AppLocalizationsZu extends AppLocalizations {
       'Uxolo, kube nephutha ekucubunguleni isicelo sakho. Bheka ukuxhumana kwakho noma uzame futhi kamuva.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => 'Ngena ukuze uvule\nizici ze-premium';
@@ -628,7 +631,7 @@ class AppLocalizationsZu extends AppLocalizations {
   String get continueAsGuest => 'Qhubeka njengesivakashi';
 
   @override
-  String get onboardingWelcomeTitle => 'Siyakwamukela ku-Lista Plus';
+  String get onboardingWelcomeTitle => 'Siyakwamukela ku-KipiList';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -639,7 +642,7 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get onboardingSetupDesc =>
-      'Khetha ukuthi ufuna i-Lista Plus ikubukeke kanjani futhi ikusebenzele.';
+      'Khetha ukuthi ufuna i-KipiList ikubukeke kanjani futhi ikusebenzele.';
 
   @override
   String get onboardingLoginTitle => 'Londoloza yonke into emafini';
@@ -738,7 +741,142 @@ class AppLocalizationsZu extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'I-Lista Plus Premium';
+  String get paywallTitle => 'I-KipiList Premium';
+
+  @override
+  String get paywallLoadingError => 'Error loading offers. Try again.';
+
+  @override
+  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+
+  @override
+  String get paywallRestoreError => 'No active subscription found to restore.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAYS FREE';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WEEKS FREE',
+      one: '$count WEEK FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Everything you need:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+
+  @override
+  String get paywallFeatureSmartAI => 'Smart AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Expense Control';
+
+  @override
+  String get paywallFeatureSharing => 'Sharing';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI Before and After:';
+
+  @override
+  String get paywallLabelCommon => 'Common';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rice';
+
+  @override
+  String get paywallBeforeItem2 => 'soap';
+
+  @override
+  String get paywallBeforeItem3 => 'meat';
+
+  @override
+  String get paywallBeforeItem4 => 'bread';
+
+  @override
+  String get paywallAfterItem1 => 'Grains';
+
+  @override
+  String get paywallAfterItem2 => 'Cleaning';
+
+  @override
+  String get paywallAfterItem3 => 'Meats';
+
+  @override
+  String get paywallAfterItem4 => 'Bakery';
+
+  @override
+  String get paywallTestimonialsTitle => 'What our users say:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'I never forgot a list item again. The AI chat is sensational!';
+
+  @override
+  String get paywallSelectPlan => 'Choose your plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SAVE $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Only $price/month';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Annual Plan';
+
+  @override
+  String get paywallPackageMonthly => 'Monthly Plan';
+
+  @override
+  String get paywallPackageLifetime => 'Lifetime Access';
+
+  @override
+  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+
+  @override
+  String get paywallPolicy => 'Privacy Policy';
+
+  @override
+  String get paywallTerms => 'Terms of Use';
+
+  @override
+  String get paywallRestore => 'Restore';
 
   @override
   String get premiumUpgrade => 'Thuthukisa ukuze uvule';
@@ -1013,7 +1151,7 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get voiceCommandContent =>
-      'Khuluma ngokwemvelo ukuze uphethe uhlu lwakho!\n\nIzibonelo:\n• \'Engeza isinkwa, ushizi, ne-ham\'\n• \'Susa i-laundry detergent\'\n• \'Shintsha itimu ibe luhlaza okwesibhakabhaka\'\n\nLesi yisici esikhethekile se-Lista Plus Premium.';
+      'Khuluma ngokwemvelo ukuze uphethe uhlu lwakho!\n\nIzibonelo:\n• \'Engeza isinkwa, ushizi, ne-ham\'\n• \'Susa i-laundry detergent\'\n• \'Shintsha itimu ibe luhlaza okwesibhakabhaka\'\n\nLesi yisici esikhethekile se-KipiList Premium.';
 
   @override
   String get voiceCommandPlanBtn => 'Buka Amapulani';
@@ -1075,7 +1213,7 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get feedbackThankYouMessage =>
-      'Impendulo yakho isitholakele futhi isisiza ukuthuthukisa i-Lista Plus yawo wonke umuntu.';
+      'Impendulo yakho isitholakele futhi isisiza ukuthuthukisa i-KipiList yawo wonke umuntu.';
 
   @override
   String get feedbackBack => 'Emuva';
@@ -1450,14 +1588,14 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get shareAppDescription =>
-      'Mema abangani ukuthi basebenzise i-Lista Plus';
+      'Mema abangani ukuthi basebenzise i-KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return 'Ngisebenzisa i-Lista Plus ukuhlela ukuthenga kwami! Landa ngesixhumanisi sami futhi sobabili sithole izinsuku ezingu-7 ze-Premium mahhala: $url';
+    return 'Ngisebenzisa i-KipiList ukuhlela ukuthenga kwami! Landa ngesixhumanisi sami futhi sobabili sithole izinsuku ezingu-7 ze-Premium mahhala: $url';
   }
 
   @override
   String get shareReferralSubject =>
-      'Thola izinsuku ezingu-7 ze-Lista Plus Premium!';
+      'Thola izinsuku ezingu-7 ze-KipiList Premium!';
 }

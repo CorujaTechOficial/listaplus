@@ -325,7 +325,7 @@
   "generalHelp": "Como podo axudar coas túas compras hoxe?",
   "chatSubtitle": "Pide suxestións de artigos, receitas ou consellos de aforro.",
   "aiError": "Sentímolo, produciuse un erro ao procesar a túa solicitude. Comproba a túa conexión ou inténtao de novo máis tarde.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Inicia sesión para desbloquear funcións premium",
   "signInGoogle": "Iniciar sesión con Google",
   "signInApple": "Iniciar sesión con Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Mellora para desbloquear",
   "itemRemoved": "Artigo eliminado",
   "undo": "Desfacer",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Escrita por voz (Gratuíto)",
   "aiVoiceCommandTooltip": "Comando de voz con IA (Premium)",
   "voiceCommandTitle": "Comando de voz con IA",
-  "voiceCommandContent": "Fala de forma natural para xestionar a túa lista!\n\nExemplos:\n• 'Engade pan, queixo e xamón'\n• 'Elimina o deterxente'\n• 'Cambia o tema a azul'\n\nEsta é unha función exclusiva de Lista Plus Premium.",
+  "voiceCommandContent": "Fala de forma natural para xestionar a túa lista!\n\nExemplos:\n• 'Engade pan, queixo e xamón'\n• 'Elimina o deterxente'\n• 'Cambia o tema a azul'\n\nEsta é unha función exclusiva de KipiList Premium.",
   "voiceCommandPlanBtn": "Ver plans",
   "itemsAddedSuccess": "Artigos engadidos á lista correctamente!",
   "viewList": "Ver lista",
@@ -469,7 +469,7 @@
   "feedbackSend": "Enviar comentario",
   "feedbackSending": "Enviando...",
   "feedbackThankYou": "Grazas!",
-  "feedbackThankYouMessage": "Recibíuse o teu comentario e axúdanos a mellorar Lista Plus para todos.",
+  "feedbackThankYouMessage": "Recibíuse o teu comentario e axúdanos a mellorar KipiList para todos.",
   "feedbackBack": "Volver",
   "feedbackError": "Erro ao enviar: {error}",
   "@feedbackError": {

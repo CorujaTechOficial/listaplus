@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'dart:math' as math;
 
 class OnboardingSlideShare extends StatelessWidget {
   const OnboardingSlideShare({super.key});
@@ -15,17 +17,30 @@ class OnboardingSlideShare extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(
-              color: theme.colorScheme.tertiary.withAlpha((0.1 * 255).toInt()),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              Icons.group,
-              size: 64,
-              color: theme.colorScheme.tertiary,
+          SizedBox(
+            height: 140,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned(
+                  left: 20,
+                  child: SvgPicture.asset(
+                    'assets/images/kipi/kipi_welcome.svg',
+                    height: 100,
+                  ),
+                ),
+                Positioned(
+                  right: 20,
+                  child: Transform(
+                    alignment: Alignment.center,
+                    transform: Matrix4.rotationY(math.pi),
+                    child: SvgPicture.asset(
+                      'assets/images/kipi/kipi_welcome.svg',
+                      height: 100,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: Spacing.lg),

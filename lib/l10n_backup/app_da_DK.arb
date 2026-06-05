@@ -325,7 +325,7 @@
   "generalHelp": "Hvordan kan jeg hjælpe med din shopping i dag?",
   "chatSubtitle": "Spørg efter vareforslag, opskrifter eller sparetips.",
   "aiError": "Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Log ind for at låse op for Premium-funktioner",
   "signInGoogle": "Log ind med Google",
   "signInApple": "Log ind med Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Opgrader for at låse op",
   "itemRemoved": "Vare fjernet",
   "undo": "Fortryd",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Tale til tekst (Gratis)",
   "aiVoiceCommandTooltip": "AI-stemmekommando (Premium)",
   "voiceCommandTitle": "AI-stemmekommando",
-  "voiceCommandContent": "Tal naturligt for at administrere din liste!\n\nEksempler:\n• 'Tilføj brød, ost og skinke'\n• 'Fjern vaskemiddel'\n• 'Skift tema til blå'\n\nDette er en eksklusiv funktion i Lista Plus Premium.",
+  "voiceCommandContent": "Tal naturligt for at administrere din liste!\n\nEksempler:\n• 'Tilføj brød, ost og skinke'\n• 'Fjern vaskemiddel'\n• 'Skift tema til blå'\n\nDette er en eksklusiv funktion i KipiList Premium.",
   "voiceCommandPlanBtn": "Se planer",
   "itemsAddedSuccess": "Varer blev tilføjet til listen!",
   "viewList": "Se liste",
@@ -469,7 +469,7 @@
   "feedbackSend": "Send feedback",
   "feedbackSending": "Sender...",
   "feedbackThankYou": "Tak!",
-  "feedbackThankYouMessage": "Din feedback er modtaget og hjælper os med at forbedre Lista Plus for alle.",
+  "feedbackThankYouMessage": "Din feedback er modtaget og hjælper os med at forbedre KipiList for alle.",
   "feedbackBack": "Tilbage",
   "feedbackError": "Fejl ved afsendelse: {error}",
   "@feedbackError": {

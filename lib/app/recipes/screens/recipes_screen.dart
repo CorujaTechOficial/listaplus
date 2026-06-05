@@ -89,7 +89,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
   void _shareApp() {
     final l10n = AppLocalizations.of(context)!;
     SharePlus.instance.share(ShareParams(
-      text: l10n.shareReferralText('https://listaplus.com/invite'),
+      text: l10n.shareReferralText('https://kipilist.com/invite'),
       subject: l10n.shareReferralSubject,
     ));
   }

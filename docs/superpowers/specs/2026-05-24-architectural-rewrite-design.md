@@ -1,8 +1,8 @@
-# Lista Plus — Reestruturação Arquitetural
+# KipiList — Reestruturação Arquitetural
 
 ## Visão Geral
 
-Reescrever a estrutura do app Lista Plus (Flutter, Riverpod, Firebase) seguindo **Clean Architecture simplificada** com **layers + feature grouping**. Manter todas as funcionalidades atuais, mas reorganizar arquivos, quebrar arquivos gigantes, consolidar providers e simplificar dependências.
+Reescrever a estrutura do app KipiList (Flutter, Riverpod, Firebase) seguindo **Clean Architecture simplificada** com **layers + feature grouping**. Manter todas as funcionalidades atuais, mas reorganizar arquivos, quebrar arquivos gigantes, consolidar providers e simplificar dependências.
 
 ## Estrutura Alvo
 

@@ -325,7 +325,7 @@
   "generalHelp": "Jak mohu dnes pomoci s tvým nákupem?",
   "chatSubtitle": "Požádej o návrhy položek, recepty nebo tipy na úsporu.",
   "aiError": "Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Přihlas se pro odemknutí\nprémiových funkcí",
   "signInGoogle": "Přihlásit se přes Google",
   "signInApple": "Přihlásit se přes Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Upgraduj pro odemknutí",
   "itemRemoved": "Položka odebrána",
   "undo": "Zpět",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Hlasové psaní (Zdarma)",
   "aiVoiceCommandTooltip": "AI hlasový příkaz (Premium)",
   "voiceCommandTitle": "AI hlasový příkaz",
-  "voiceCommandContent": "Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• 'Přidej chléb, sýr a šunku'\n• 'Odeber prací prášek'\n• 'Změň motiv na modrý'\n\nToto je exkluzivní funkce Lista Plus Premium.",
+  "voiceCommandContent": "Mluv přirozeně pro správu svého seznamu!\n\nPříklady:\n• 'Přidej chléb, sýr a šunku'\n• 'Odeber prací prášek'\n• 'Změň motiv na modrý'\n\nToto je exkluzivní funkce KipiList Premium.",
   "voiceCommandPlanBtn": "Zobrazit plány",
   "itemsAddedSuccess": "Položky úspěšně přidány do seznamu!",
   "viewList": "Zobrazit seznam",
@@ -469,7 +469,7 @@
   "feedbackSend": "Odeslat zpětnou vazbu",
   "feedbackSending": "Odesílání...",
   "feedbackThankYou": "Děkujeme!",
-  "feedbackThankYouMessage": "Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat Lista Plus pro všechny.",
+  "feedbackThankYouMessage": "Vaše zpětná vazba byla přijata a pomáhá nám vylepšovat KipiList pro všechny.",
   "feedbackBack": "Zpět",
   "feedbackError": "Chyba při odesílání: {error}",
   "@feedbackError": {

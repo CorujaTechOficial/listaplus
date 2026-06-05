@@ -981,11 +981,11 @@ import 'package:flutter/foundation.dart';
 
 class Logger {
   static void log(String message) {
-    debugPrint('[ListaPlus] $message');
+    debugPrint('[KipiList] $message');
   }
 
   static void error(String message, [Object? error, StackTrace? stack]) {
-    debugPrint('[ListaPlus ERROR] $message');
+    debugPrint('[KipiList ERROR] $message');
     if (error != null) debugPrint('Error: $error');
     if (stack != null) debugPrint('Stack: $stack');
   }

@@ -1,4 +1,4 @@
-# Diário de Correções — Lista Plus
+# Diário de Correções — KipiList
 
 ## Sessão 1 — 32 bugs corrigidos
 

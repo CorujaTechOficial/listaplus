@@ -593,6 +593,9 @@ class AppLocalizationsGl extends AppLocalizations {
   String get chatHint => 'Escribe a túa mensaxe...';
 
   @override
+  String get chatHintBlocked => 'Unlock AI to chat';
+
+  @override
   String chatError(String error) {
     return 'Erro ao cargar o chat: $error';
   }
@@ -612,7 +615,7 @@ class AppLocalizationsGl extends AppLocalizations {
       'Sentímolo, produciuse un erro ao procesar a túa solicitude. Comproba a túa conexión ou téntao de novo máis tarde.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt =>
@@ -628,7 +631,7 @@ class AppLocalizationsGl extends AppLocalizations {
   String get continueAsGuest => 'Continuar como convidado';
 
   @override
-  String get onboardingWelcomeTitle => 'Benvido a Lista Plus';
+  String get onboardingWelcomeTitle => 'Benvido a KipiList';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -639,7 +642,7 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get onboardingSetupDesc =>
-      'Escolle como queres que Lista Plus se vexa e funcione para ti.';
+      'Escolle como queres que KipiList se vexa e funcione para ti.';
 
   @override
   String get onboardingLoginTitle => 'Garda todo na nube';
@@ -738,7 +741,142 @@ class AppLocalizationsGl extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError => 'Error loading offers. Try again.';
+
+  @override
+  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+
+  @override
+  String get paywallRestoreError => 'No active subscription found to restore.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAYS FREE';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WEEKS FREE',
+      one: '$count WEEK FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Everything you need:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+
+  @override
+  String get paywallFeatureSmartAI => 'Smart AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Expense Control';
+
+  @override
+  String get paywallFeatureSharing => 'Sharing';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI Before and After:';
+
+  @override
+  String get paywallLabelCommon => 'Common';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rice';
+
+  @override
+  String get paywallBeforeItem2 => 'soap';
+
+  @override
+  String get paywallBeforeItem3 => 'meat';
+
+  @override
+  String get paywallBeforeItem4 => 'bread';
+
+  @override
+  String get paywallAfterItem1 => 'Grains';
+
+  @override
+  String get paywallAfterItem2 => 'Cleaning';
+
+  @override
+  String get paywallAfterItem3 => 'Meats';
+
+  @override
+  String get paywallAfterItem4 => 'Bakery';
+
+  @override
+  String get paywallTestimonialsTitle => 'What our users say:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'I never forgot a list item again. The AI chat is sensational!';
+
+  @override
+  String get paywallSelectPlan => 'Choose your plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SAVE $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Only $price/month';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Annual Plan';
+
+  @override
+  String get paywallPackageMonthly => 'Monthly Plan';
+
+  @override
+  String get paywallPackageLifetime => 'Lifetime Access';
+
+  @override
+  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+
+  @override
+  String get paywallPolicy => 'Privacy Policy';
+
+  @override
+  String get paywallTerms => 'Terms of Use';
+
+  @override
+  String get paywallRestore => 'Restore';
 
   @override
   String get premiumUpgrade => 'Mellora para desbloquear';
@@ -1014,7 +1152,7 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get voiceCommandContent =>
-      'Fala naturalmente para xestionar a túa lista!\n\nExemplos:\n• \'Engadir pan, queixo e xamón\'\n• \'Eliminar deterxente\'\n• \'Cambiar o tema a azul\'\n\nEsta é unha función exclusiva de Lista Plus Premium.';
+      'Fala naturalmente para xestionar a túa lista!\n\nExemplos:\n• \'Engadir pan, queixo e xamón\'\n• \'Eliminar deterxente\'\n• \'Cambiar o tema a azul\'\n\nEsta é unha función exclusiva de KipiList Premium.';
 
   @override
   String get voiceCommandPlanBtn => 'Ver Plans';
@@ -1076,7 +1214,7 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get feedbackThankYouMessage =>
-      'Recibíronse os teus comentarios e axúdannos a mellorar Lista Plus para todos.';
+      'Recibíronse os teus comentarios e axúdannos a mellorar KipiList para todos.';
 
   @override
   String get feedbackBack => 'Volver';
@@ -1450,15 +1588,15 @@ class AppLocalizationsGl extends AppLocalizations {
   String get shareApp => 'Compartir aplicación';
 
   @override
-  String get shareAppDescription => 'Invita amigos a usar Lista Plus';
+  String get shareAppDescription => 'Invita amigos a usar KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return 'Estou usando Lista Plus para organizar as miñas compras! Descarga a través da miña ligazón e os dous recibimos 7 días de Premium gratis: $url';
+    return 'Estou usando KipiList para organizar as miñas compras! Descarga a través da miña ligazón e os dous recibimos 7 días de Premium gratis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Obtén 7 días de Lista Plus Premium!';
+  String get shareReferralSubject => 'Obtén 7 días de KipiList Premium!';
 }
 
 /// The translations for Galician, as used in Spain (`gl_ES`).
@@ -2069,7 +2207,7 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
       'Sentímolo, produciuse un erro ao procesar a túa solicitude. Comproba a túa conexión ou inténtao de novo máis tarde.';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => 'Inicia sesión para desbloquear funcións premium';
@@ -2084,7 +2222,7 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
   String get continueAsGuest => 'Continuar como convidado';
 
   @override
-  String get onboardingWelcomeTitle => 'Benvido a Lista Plus';
+  String get onboardingWelcomeTitle => 'Benvido a KipiList';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -2095,7 +2233,7 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
 
   @override
   String get onboardingSetupDesc =>
-      'Escolle como queres que Lista Plus se vexa e funcione para ti.';
+      'Escolle como queres que KipiList se vexa e funcione para ti.';
 
   @override
   String get onboardingLoginTitle => 'Garda todo na nube';
@@ -2194,7 +2332,7 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus Premium';
+  String get paywallTitle => 'KipiList Premium';
 
   @override
   String get premiumUpgrade => 'Mellora para desbloquear';
@@ -2469,7 +2607,7 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
 
   @override
   String get voiceCommandContent =>
-      'Fala de forma natural para xestionar a túa lista!\n\nExemplos:\n• \'Engade pan, queixo e xamón\'\n• \'Elimina o deterxente\'\n• \'Cambia o tema a azul\'\n\nEsta é unha función exclusiva de Lista Plus Premium.';
+      'Fala de forma natural para xestionar a túa lista!\n\nExemplos:\n• \'Engade pan, queixo e xamón\'\n• \'Elimina o deterxente\'\n• \'Cambia o tema a azul\'\n\nEsta é unha función exclusiva de KipiList Premium.';
 
   @override
   String get voiceCommandPlanBtn => 'Ver plans';
@@ -2530,7 +2668,7 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
 
   @override
   String get feedbackThankYouMessage =>
-      'Recibíuse o teu comentario e axúdanos a mellorar Lista Plus para todos.';
+      'Recibíuse o teu comentario e axúdanos a mellorar KipiList para todos.';
 
   @override
   String get feedbackBack => 'Volver';
@@ -2904,13 +3042,13 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
   String get shareApp => 'Compartir aplicación';
 
   @override
-  String get shareAppDescription => 'Invita amigos a usar Lista Plus';
+  String get shareAppDescription => 'Invita amigos a usar KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return 'Estou usando Lista Plus para organizar as miñas compras! Descarga a través da miña ligazón e os dous recibimos 7 días de Premium gratis: $url';
+    return 'Estou usando KipiList para organizar as miñas compras! Descarga a través da miña ligazón e os dous recibimos 7 días de Premium gratis: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Obtén 7 días de Lista Plus Premium!';
+  String get shareReferralSubject => 'Obtén 7 días de KipiList Premium!';
 }

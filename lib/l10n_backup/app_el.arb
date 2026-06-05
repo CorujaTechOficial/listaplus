@@ -325,7 +325,7 @@
   "generalHelp": "Πώς μπορώ να βοηθήσω με τα ψώνια σας σήμερα;",
   "chatSubtitle": "Ζητήστε προτάσεις στοιχείων, συνταγές ή συμβουλές εξοικονόμησης.",
   "aiError": "Λυπούμαστε, παρουσιάστηκε σφάλμα κατά την επεξεργασία του αιτήματός σας. Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.",
-  "listaPlusTitle": "Lista Plus",
+  "listaPlusTitle": "KipiList",
   "loginPrompt": "Συνδεθείτε για να ξεκλειδώσετε\nPremium λειτουργίες",
   "signInGoogle": "Σύνδεση με Google",
   "signInApple": "Σύνδεση με Apple",
@@ -338,7 +338,7 @@
       }
     }
   },
-  "paywallTitle": "Lista Plus Premium",
+  "paywallTitle": "KipiList Premium",
   "premiumUpgrade": "Αναβαθμίστε για ξεκλείδωμα",
   "itemRemoved": "Το στοιχείο αφαιρέθηκε",
   "undo": "Αναίρεση",
@@ -448,7 +448,7 @@
   "voiceTranscriptionTooltip": "Φωνητική πληκτρολόγηση (Δωρεάν)",
   "aiVoiceCommandTooltip": "Φωνητική εντολή AI (Premium)",
   "voiceCommandTitle": "Φωνητική εντολή AI",
-  "voiceCommandContent": "Μιλήστε φυσικά για να διαχειριστείτε τη λίστα σας!\n\nΠαραδείγματα:\n• 'Πρόσθεσε ψωμί, τυρί και ζαμπόν'\n• 'Αφαίρεσε το απορρυπαντικό'\n• 'Άλλαξε θέμα σε μπλε'\n\nΑυτή είναι μια αποκλειστική λειτουργία του Lista Plus Premium.",
+  "voiceCommandContent": "Μιλήστε φυσικά για να διαχειριστείτε τη λίστα σας!\n\nΠαραδείγματα:\n• 'Πρόσθεσε ψωμί, τυρί και ζαμπόν'\n• 'Αφαίρεσε το απορρυπαντικό'\n• 'Άλλαξε θέμα σε μπλε'\n\nΑυτή είναι μια αποκλειστική λειτουργία του KipiList Premium.",
   "voiceCommandPlanBtn": "Δείτε τα πακέτα",
   "itemsAddedSuccess": "Τα στοιχεία προστέθηκαν επιτυχώς στη λίστα!",
   "viewList": "Προβολή λίστας",
@@ -469,7 +469,7 @@
   "feedbackSend": "Αποστολή σχολίων",
   "feedbackSending": "Αποστολή...",
   "feedbackThankYou": "Σας ευχαριστούμε!",
-  "feedbackThankYouMessage": "Τα σχόλιά σας ελήφθησαν και μας βοηθούν να βελτιώσουμε το Lista Plus για όλους.",
+  "feedbackThankYouMessage": "Τα σχόλιά σας ελήφθησαν και μας βοηθούν να βελτιώσουμε το KipiList για όλους.",
   "feedbackBack": "Πίσω",
   "feedbackError": "Σφάλμα αποστολής: {error}",
   "@feedbackError": {

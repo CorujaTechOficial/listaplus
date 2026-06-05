@@ -61,14 +61,27 @@ class RevenueCatServiceImpl implements RevenueCatService {
       return [];
     }
     return currentOffering.availablePackages
-        .where((pkg) => pkg.packageType != PackageType.lifetime)
         .map((pkg) {
+      final intro = pkg.storeProduct.introductoryPrice;
+      int? trialDays;
+      if (intro != null && intro.price == 0) {
+        trialDays = switch (intro.periodUnit) {
+          PeriodUnit.day => intro.periodNumberOfUnits,
+          PeriodUnit.week => intro.periodNumberOfUnits * 7,
+          PeriodUnit.month => intro.periodNumberOfUnits * 30,
+          PeriodUnit.year => intro.periodNumberOfUnits * 365,
+          _ => null,
+        };
+      }
       return PaywallPackage(
-        identifier: pkg.packageType.name, // using packageType name (e.g. monthly, annual, lifetime)
+        identifier: pkg.packageType.name,
         priceString: pkg.storeProduct.priceString,
+        price: pkg.storeProduct.price,
+        currencyCode: pkg.storeProduct.currencyCode,
         title: pkg.storeProduct.title,
         description: pkg.storeProduct.description,
         rawPackage: pkg,
+        trialPeriodDays: trialDays,
       );
     }).toList();
   }

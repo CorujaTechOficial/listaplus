@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
@@ -15,25 +16,20 @@ class OnboardingSlideWelcome extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Custom Logo
+          // Custom Logo with Kipi
           Container(
-            width: 140,
-            height: 140,
+            width: 200,
+            height: 200,
             decoration: BoxDecoration(
-              color: theme.colorScheme.primaryContainer,
+              color: theme.colorScheme.primaryContainer.withAlpha(80),
               shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: theme.colorScheme.primary.withAlpha(50),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
-                ),
-              ],
             ),
-            child: Icon(
-              Icons.shopping_basket_rounded,
-              size: 80,
-              color: theme.colorScheme.primary,
+            child: Center(
+              child: SvgPicture.asset(
+                'assets/images/kipi/kipi_welcome.svg',
+                width: 160,
+                height: 160,
+              ),
             ),
           ),
           const SizedBox(height: Spacing.xl),

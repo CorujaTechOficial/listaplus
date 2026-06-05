@@ -581,6 +581,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get chatHint => '输入您的消息...';
 
   @override
+  String get chatHintBlocked => 'Unlock AI to chat';
+
+  @override
   String chatError(String error) {
     return '加载聊天时出错：$error';
   }
@@ -598,7 +601,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiError => '抱歉，处理您的请求时出错。请检查您的连接或稍后重试。';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => '登录以解锁\n高级功能';
@@ -613,7 +616,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get continueAsGuest => '以访客身份继续';
 
   @override
-  String get onboardingWelcomeTitle => '欢迎来到Lista Plus';
+  String get onboardingWelcomeTitle => '欢迎来到KipiList';
 
   @override
   String get onboardingWelcomeDesc => '组织购物并省钱的最明智方式。';
@@ -622,7 +625,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingSetupTitle => '个性化您的体验';
 
   @override
-  String get onboardingSetupDesc => '选择您希望 Lista Plus 的外观和工作方式。';
+  String get onboardingSetupDesc => '选择您希望 KipiList 的外观和工作方式。';
 
   @override
   String get onboardingLoginTitle => '将所有内容保存到云端';
@@ -711,7 +714,142 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus 高级版';
+  String get paywallTitle => 'KipiList 高级版';
+
+  @override
+  String get paywallLoadingError => 'Error loading offers. Try again.';
+
+  @override
+  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+
+  @override
+  String get paywallRestoreError => 'No active subscription found to restore.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAYS FREE';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WEEKS FREE',
+      one: '$count WEEK FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Everything you need:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+
+  @override
+  String get paywallFeatureSmartAI => 'Smart AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Expense Control';
+
+  @override
+  String get paywallFeatureSharing => 'Sharing';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI Before and After:';
+
+  @override
+  String get paywallLabelCommon => 'Common';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rice';
+
+  @override
+  String get paywallBeforeItem2 => 'soap';
+
+  @override
+  String get paywallBeforeItem3 => 'meat';
+
+  @override
+  String get paywallBeforeItem4 => 'bread';
+
+  @override
+  String get paywallAfterItem1 => 'Grains';
+
+  @override
+  String get paywallAfterItem2 => 'Cleaning';
+
+  @override
+  String get paywallAfterItem3 => 'Meats';
+
+  @override
+  String get paywallAfterItem4 => 'Bakery';
+
+  @override
+  String get paywallTestimonialsTitle => 'What our users say:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'I never forgot a list item again. The AI chat is sensational!';
+
+  @override
+  String get paywallSelectPlan => 'Choose your plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SAVE $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Only $price/month';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Annual Plan';
+
+  @override
+  String get paywallPackageMonthly => 'Monthly Plan';
+
+  @override
+  String get paywallPackageLifetime => 'Lifetime Access';
+
+  @override
+  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+
+  @override
+  String get paywallPolicy => 'Privacy Policy';
+
+  @override
+  String get paywallTerms => 'Terms of Use';
+
+  @override
+  String get paywallRestore => 'Restore';
 
   @override
   String get premiumUpgrade => '升级以解锁';
@@ -976,7 +1114,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get voiceCommandContent =>
-      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 Lista Plus Premium 的专属功能。';
+      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 KipiList Premium 的专属功能。';
 
   @override
   String get voiceCommandPlanBtn => '查看方案';
@@ -1036,7 +1174,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get feedbackThankYou => '谢谢！';
 
   @override
-  String get feedbackThankYouMessage => '你的反馈已收到，帮助我们为所有人改进 Lista Plus。';
+  String get feedbackThankYouMessage => '你的反馈已收到，帮助我们为所有人改进 KipiList。';
 
   @override
   String get feedbackBack => '返回';
@@ -1397,15 +1535,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get shareApp => '分享应用程序';
 
   @override
-  String get shareAppDescription => '邀请朋友使用Lista Plus';
+  String get shareAppDescription => '邀请朋友使用KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return '我正在使用 Lista Plus 来组织我的购物！通过我的链接下载，我们都可以免费获得 7 天的高级版：$url';
+    return '我正在使用 KipiList 来组织我的购物！通过我的链接下载，我们都可以免费获得 7 天的高级版：$url';
   }
 
   @override
-  String get shareReferralSubject => '获取 7 天 Lista Plus Premium！';
+  String get shareReferralSubject => '获取 7 天 KipiList Premium！';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -2002,7 +2140,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get aiError => '抱歉，处理您的请求时出错。请检查您的连接或稍后重试。';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => '登录以解锁\n高级功能';
@@ -2017,7 +2155,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get continueAsGuest => '以访客身份继续';
 
   @override
-  String get onboardingWelcomeTitle => '欢迎来到Lista Plus';
+  String get onboardingWelcomeTitle => '欢迎来到KipiList';
 
   @override
   String get onboardingWelcomeDesc => '组织购物并省钱的最明智方式。';
@@ -2026,7 +2164,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get onboardingSetupTitle => '个性化您的体验';
 
   @override
-  String get onboardingSetupDesc => '选择您希望 Lista Plus 的外观和工作方式。';
+  String get onboardingSetupDesc => '选择您希望 KipiList 的外观和工作方式。';
 
   @override
   String get onboardingLoginTitle => '将所有内容保存到云端';
@@ -2115,7 +2253,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus 高级版';
+  String get paywallTitle => 'KipiList 高级版';
 
   @override
   String get premiumUpgrade => '升级以解锁';
@@ -2380,7 +2518,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get voiceCommandContent =>
-      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 Lista Plus Premium 的专属功能。';
+      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 KipiList Premium 的专属功能。';
 
   @override
   String get voiceCommandPlanBtn => '查看方案';
@@ -2440,7 +2578,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get feedbackThankYou => '谢谢！';
 
   @override
-  String get feedbackThankYouMessage => '你的反馈已收到，帮助我们为所有人改进 Lista Plus。';
+  String get feedbackThankYouMessage => '你的反馈已收到，帮助我们为所有人改进 KipiList。';
 
   @override
   String get feedbackBack => '返回';
@@ -2801,15 +2939,15 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get shareApp => '分享应用程序';
 
   @override
-  String get shareAppDescription => '邀请朋友使用Lista Plus';
+  String get shareAppDescription => '邀请朋友使用KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return '我正在使用 Lista Plus 来组织我的购物！通过我的链接下载，我们都可以免费获得 7 天的高级版：$url';
+    return '我正在使用 KipiList 来组织我的购物！通过我的链接下载，我们都可以免费获得 7 天的高级版：$url';
   }
 
   @override
-  String get shareReferralSubject => '获取 7 天 Lista Plus Premium！';
+  String get shareReferralSubject => '获取 7 天 KipiList Premium！';
 }
 
 /// The translations for Chinese, as used in Hong Kong (`zh_HK`).
@@ -3408,7 +3546,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get aiError => '抱歉，处理您的请求时出错。请检查您的连接或稍后重试。';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => '登录以解锁\n高级功能';
@@ -3423,7 +3561,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get continueAsGuest => '以访客身份继续';
 
   @override
-  String get onboardingWelcomeTitle => 'Welcome to Lista Plus';
+  String get onboardingWelcomeTitle => 'Welcome to KipiList';
 
   @override
   String get onboardingWelcomeDesc =>
@@ -3434,7 +3572,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get onboardingSetupDesc =>
-      'Choose how you want Lista Plus to look and work for you.';
+      'Choose how you want KipiList to look and work for you.';
 
   @override
   String get onboardingLoginTitle => 'Save everything to the cloud';
@@ -3531,7 +3669,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus 高级版';
+  String get paywallTitle => 'KipiList 高级版';
 
   @override
   String get premiumUpgrade => '升级以解锁';
@@ -3796,7 +3934,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get voiceCommandContent =>
-      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 Lista Plus Premium 的专属功能。';
+      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 KipiList Premium 的专属功能。';
 
   @override
   String get voiceCommandPlanBtn => '查看方案';
@@ -3856,7 +3994,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get feedbackThankYou => '謝謝！';
 
   @override
-  String get feedbackThankYouMessage => '您的意見已收到，幫助我們為所有人改進 Lista Plus。';
+  String get feedbackThankYouMessage => '您的意見已收到，幫助我們為所有人改進 KipiList。';
 
   @override
   String get feedbackBack => '返回';
@@ -4227,15 +4365,15 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get shareApp => 'Share app';
 
   @override
-  String get shareAppDescription => 'Invite friends to use Lista Plus';
+  String get shareAppDescription => 'Invite friends to use KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return 'I\'m using Lista Plus to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
+    return 'I\'m using KipiList to organize my shopping! Download via my link and we both get 7 days of Premium free: $url';
   }
 
   @override
-  String get shareReferralSubject => 'Get 7 days of Lista Plus Premium!';
+  String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -4832,7 +4970,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get aiError => '抱歉，处理您的请求时出错。请检查您的连接或稍后重试。';
 
   @override
-  String get listaPlusTitle => 'Lista Plus';
+  String get kipiListTitle => 'KipiList';
 
   @override
   String get loginPrompt => '登录以解锁\n高级功能';
@@ -4847,7 +4985,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get continueAsGuest => '以访客身份继续';
 
   @override
-  String get onboardingWelcomeTitle => '歡迎來到Lista Plus';
+  String get onboardingWelcomeTitle => '歡迎來到KipiList';
 
   @override
   String get onboardingWelcomeDesc => '組織購物並省錢的最明智方法。';
@@ -4856,7 +4994,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get onboardingSetupTitle => '個人化您的體驗';
 
   @override
-  String get onboardingSetupDesc => '選擇您希望 Lista Plus 的外觀和工作方式。';
+  String get onboardingSetupDesc => '選擇您希望 KipiList 的外觀和工作方式。';
 
   @override
   String get onboardingLoginTitle => '將所有內容儲存到雲端';
@@ -4945,7 +5083,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   }
 
   @override
-  String get paywallTitle => 'Lista Plus 高级版';
+  String get paywallTitle => 'KipiList 高级版';
 
   @override
   String get premiumUpgrade => '升级以解锁';
@@ -5210,7 +5348,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get voiceCommandContent =>
-      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 Lista Plus Premium 的专属功能。';
+      '自然说话以管理您的清单！\n\n示例：\n• \'添加面包、奶酪和火腿\'\n• \'移除洗衣液\'\n• \'将主题更改为蓝色\'\n\n这是 KipiList Premium 的专属功能。';
 
   @override
   String get voiceCommandPlanBtn => '查看方案';
@@ -5270,7 +5408,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get feedbackThankYou => '谢谢！';
 
   @override
-  String get feedbackThankYouMessage => '您的反馈已收到，这有助于我们为所有人改进 Lista Plus。';
+  String get feedbackThankYouMessage => '您的反馈已收到，这有助于我们为所有人改进 KipiList。';
 
   @override
   String get feedbackBack => '返回';
@@ -5631,13 +5769,13 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get shareApp => '分享應用程式';
 
   @override
-  String get shareAppDescription => '邀請朋友使用Lista Plus';
+  String get shareAppDescription => '邀請朋友使用KipiList';
 
   @override
   String shareReferralText(Object url) {
-    return '我正在使用 Lista Plus 來組織我的購物！透過我的連結下載，我們都可以免費獲得 7 天的高級版：$url';
+    return '我正在使用 KipiList 來組織我的購物！透過我的連結下載，我們都可以免費獲得 7 天的高級版：$url';
   }
 
   @override
-  String get shareReferralSubject => '取得 7 天 Lista Plus Premium！';
+  String get shareReferralSubject => '取得 7 天 KipiList Premium！';
 }

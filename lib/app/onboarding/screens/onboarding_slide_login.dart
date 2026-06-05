@@ -29,17 +29,19 @@ class OnboardingSlideLogin extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: 120,
-              height: 120,
+              width: 140,
+              height: 140,
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   color: theme.colorScheme.secondary.withAlpha((0.1 * 255).toInt()),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
-                  Icons.cloud_sync,
-                  size: 64,
-                  color: theme.colorScheme.secondary,
+                child: Padding(
+                  padding: const EdgeInsets.all(Spacing.lg),
+                  child: SvgPicture.asset(
+                    'assets/images/kipi/kipi_welcome.svg',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),

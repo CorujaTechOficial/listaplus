@@ -56,7 +56,7 @@ Novas chaves:
 - `shareApp` → "Share app"
 - `inviteToList` → "Invite to list"
 - `shareListDescription` → "Share your shopping list with friends"
-- `premiumRequiredForSharing` → "Sharing lists requires Lista Plus Premium"
+- `premiumRequiredForSharing` → "Sharing lists requires KipiList Premium"
 - `shareCodeCopied` → "Code copied!"
 - `shareYourListCode` → "Share this code with a friend:"
 

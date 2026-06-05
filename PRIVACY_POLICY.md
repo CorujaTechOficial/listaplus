@@ -1,4 +1,4 @@
-# Política de Privacidade — Lista Plus
+# Política de Privacidade — KipiList
 
 Última atualização: 16 de maio de 2026
 

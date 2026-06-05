@@ -148,7 +148,7 @@ class _AgentResult {
 
 typedef _UndoCallback = Future<void> Function();
 
-@riverpod
+@Riverpod(keepAlive: true)
 class ChatSession extends _$ChatSession {
   bool _isCancelled = false;
   AiCancellationToken? _cancelToken;
@@ -654,6 +654,9 @@ class ChatSession extends _$ChatSession {
   Future<void> undoMessageActions(String messageId) async {
     final keepAliveLink = ref.keepAlive();
     try {
+      if (!ref.mounted) {
+        return;
+      }
       final messages = state.value ?? [];
       final index = messages.indexWhere((m) {
         return m.id == messageId;
@@ -822,6 +825,9 @@ class ChatSession extends _$ChatSession {
   }
 
   Future<void> _sendMessageInternal(String content) async {
+    if (!ref.mounted) {
+      return;
+    }
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
 
@@ -1923,12 +1929,18 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
   Future<void> clearHistory() async {
     cancelRequest();
+    if (!ref.mounted) {
+      return;
+    }
     final firestoreService = ref.read(firestoreServiceProvider);
     await firestoreService.clearChatHistory(listId, sessionId: sessionId);
     state = const AsyncValue.data([]);
   }
 
   Future<void> addMessage(ChatMessage message) async {
+    if (!ref.mounted) {
+      return;
+    }
     final keepAliveLink = ref.keepAlive();
     try {
       final previousMessages = state.value ?? [];
@@ -1957,6 +1969,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
   }
 
   Future<void> setFeedback(String messageId, int? feedback) async {
+    if (!ref.mounted) {
+      return;
+    }
     final messages = state.value ?? [];
     final index = messages.indexWhere((m) {
       return m.id == messageId;
@@ -2013,6 +2028,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
   }
 
   Future<void> _regenerateInternal(String messageId) async {
+    if (!ref.mounted) {
+      return;
+    }
     final messages = state.value ?? [];
     final index = messages.indexWhere((m) {
       return m.id == messageId;
@@ -2049,6 +2067,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
   }
 
   Future<void> _sendAssistantResponse(String content) async {
+    if (!ref.mounted) {
+      return;
+    }
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
     final previousHistory = state.value ?? [];
@@ -2386,7 +2407,8 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
             ? '\n... e mais ${items.length - maxItems} itens (total: ${items.length})'
             : '';
 
-    return '''Você é um assistente inteligente com CONTROLE TOTAL sobre o app do usuário.
+    return '''Você é o Kipi, um esquilo assistente inteligente, ágil e muito organizado. Você tem CONTROLE TOTAL sobre o app de compras do usuário para ajudá-lo a organizar o "ninho"!
+Seu tom é amigável, prestativo e ligeiramente saltitante.
 
 Contexto atual: lista "$listName".
 
@@ -2405,7 +2427,7 @@ NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferram
 
 VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
 - Adicionar, remover, editar itens
-- Marcar/desmarcar comprados
+- Marcar/desmarcar comprados (ajudando o usuário a "armazenar nozes")
 - Gerenciar listas (criar, renomear, arquivar, excluir)
 - Gerenciar despensa
 - Gerenciar RECEITAS (criar, buscar, excluir)
@@ -2434,8 +2456,8 @@ Se precisar de informações adicionais para executar uma ação, use as ferrame
     String locale = 'pt_BR',
   }) {
     var context =
-        'Você é um assistente inteligente com CONTROLE TOTAL sobre o app de compras do usuário.\n';
-    context += 'O usuário possui as seguintes listas:\n\n';
+        'Você é o Kipi, um esquilo assistente inteligente, ágil e muito organizado. Você tem CONTROLE TOTAL sobre o app de compras do usuário para ajudá-lo a organizar o "ninho"!\n';
+    context += 'Seu tom é amigável e prestativo. O usuário possui as seguintes listas:\n\n';
 
     const maxItems = 30;
     int totalItems = 0;

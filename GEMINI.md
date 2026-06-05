@@ -1,9 +1,9 @@
-# GEMINI.md - Lista Plus (Shopping List)
+# GEMINI.md - KipiList (Shopping List)
 
-This document provides foundational mandates and essential context for the **Lista Plus** (shopping_list) project. It consolidates technical architecture, development conventions, and strict quality requirements.
+This document provides foundational mandates and essential context for the **KipiList** (shopping_list) project. It consolidates technical architecture, development conventions, and strict quality requirements.
 
 ## Project Overview
-- **Name:** Lista Plus
+- **Name:** KipiList
 - **Package:** `br.com.curujatech.listaplus` (pt-BR, Android)
 - **Purpose:** Modern shopping list application with multi-list support, budget tracking, and cloud sync.
 - **Platforms:** Android (Primary), Web, iOS.
@@ -18,7 +18,7 @@ This document provides foundational mandates and essential context for the **Lis
     - **User Data:** `themeMode`, `isPremium`, `currentListId` stored in `users/{uid}`.
 - **Monetization:**
     - **RevenueCat:** `purchases_flutter` for subscriptions.
-        - Entitlement: `lista_plus_pro`.
+        - Entitlement: `kipilist_pro`.
         - Packages: `$rc_monthly`, `$rc_annual`.
 - **AI Assistant (OpenCodeGo / DeepSeek):**
     - **Service:** `OpenCodeGoService` via `package:http`.
