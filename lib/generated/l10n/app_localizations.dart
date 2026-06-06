@@ -1392,6 +1392,18 @@ abstract class AppLocalizations {
   /// **'Sorry, an error occurred processing your request. Check your connection or try again later.'**
   String get aiError;
 
+  /// No description provided for @aiLimitAlmostReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Almost out of AI messages'**
+  String get aiLimitAlmostReached;
+
+  /// No description provided for @unlockAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock unlimited AI'**
+  String get unlockAi;
+
   /// No description provided for @kipiListTitle.
   ///
   /// In en, this message translates to:
@@ -1781,6 +1793,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I never forgot a list item again. The AI chat is sensational!'**
   String get paywallTestimonial2Text;
+
+  /// No description provided for @paywallSocialProof.
+  ///
+  /// In en, this message translates to:
+  /// **'Join thousands of smart shoppers saving time and money'**
+  String get paywallSocialProof;
+
+  /// No description provided for @paywallCtaUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock KipiList PRO'**
+  String get paywallCtaUnlock;
+
+  /// No description provided for @paywallCtaTrial.
+  ///
+  /// In en, this message translates to:
+  /// **'Start My Free Trial'**
+  String get paywallCtaTrial;
+
+  /// No description provided for @paywallBestValue.
+  ///
+  /// In en, this message translates to:
+  /// **'BEST VALUE'**
+  String get paywallBestValue;
+
+  /// No description provided for @paywallMostPopular.
+  ///
+  /// In en, this message translates to:
+  /// **'MOST POPULAR'**
+  String get paywallMostPopular;
+
+  /// No description provided for @paywallSafeCheckout.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure payment via App Store/Play Store'**
+  String get paywallSafeCheckout;
 
   /// No description provided for @paywallSelectPlan.
   ///

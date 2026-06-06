@@ -619,6 +619,12 @@ class AppLocalizationsFil extends AppLocalizations {
       'Paumanhin, may error sa pagproseso ng iyong kahilingan. Suriin ang iyong koneksyon o subukan muli mamaya.';
 
   @override
+  String get aiLimitAlmostReached => 'Almost out of AI messages';
+
+  @override
+  String get unlockAi => 'Unlock unlimited AI';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -847,6 +853,25 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get paywallTestimonial2Text =>
       'I never forgot a list item again. The AI chat is sensational!';
+
+  @override
+  String get paywallSocialProof =>
+      'Join thousands of smart shoppers saving time and money';
+
+  @override
+  String get paywallCtaUnlock => 'Unlock KipiList PRO';
+
+  @override
+  String get paywallCtaTrial => 'Start My Free Trial';
+
+  @override
+  String get paywallBestValue => 'BEST VALUE';
+
+  @override
+  String get paywallMostPopular => 'MOST POPULAR';
+
+  @override
+  String get paywallSafeCheckout => 'Secure payment via App Store/Play Store';
 
   @override
   String get paywallSelectPlan => 'Choose your plan:';

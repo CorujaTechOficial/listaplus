@@ -726,6 +726,50 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
   }
 
   Widget _buildPaywallBanner(BuildContext context, AppLocalizations l10n, ThemeData theme, int remaining) {
+    // Compact pill when keyboard is open — saves ~120px
+    if (_isKeyboardVisible) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4),
+        child: GestureDetector(
+          onTap: () {
+            unawaited(HapticFeedback.lightImpact());
+            showModalBottomSheet<void>(
+              context: context,
+              isScrollControlled: true,
+              useSafeArea: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              ),
+              builder: (_) => const PaywallScreen(asSheet: true),
+            );
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: theme.colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.auto_awesome, size: 14, color: theme.colorScheme.primary),
+                const SizedBox(width: 6),
+                Text(
+                  remaining > 0
+                      ? l10n.aiLimitAlmostReached
+                      : l10n.unlockAi,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: theme.colorScheme.onPrimaryContainer,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ).animate().fadeIn(duration: 200.ms);
+    }
+
     final packagesAsync = ref.watch(paywallPackagesProvider);
     final packages = packagesAsync.asData?.value;
     final annualPkg = packages?.where(
