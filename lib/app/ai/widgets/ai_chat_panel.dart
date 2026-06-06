@@ -548,7 +548,8 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
                       const SizedBox(height: 24),
                       FilledButton.icon(
                         onPressed: () {
-                          ref.invalidate(chatSessionProvider(widget.listId, activeSessionId));
+                          final sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
+                          ref.invalidate(chatSessionProvider(widget.listId, sessionId));
                         },
                         icon: const Icon(Icons.refresh, size: 18),
                         label: Text(l10n.retry),
@@ -949,7 +950,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
           ),
         ] : null,
       ),
-      child: ClipRRect(
+      child: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Padding(
