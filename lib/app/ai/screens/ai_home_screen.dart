@@ -468,11 +468,15 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                             padding: const EdgeInsets.symmetric(vertical: 4),
                             itemCount: items.length,
                             itemBuilder: (context, index) {
-                              return ShoppingItemTile(
+                              final tile = ShoppingItemTile(
                                 listId: listId,
                                 item: items[index],
-                              ).animate().fadeIn(
-                                duration: 200.ms,
+                              );
+                              if (index >= 5) {
+                                return tile;
+                              }
+                              return tile.animate().fadeIn(
+                                duration: 150.ms,
                                 delay: (index * 30).ms,
                               );
                             },
