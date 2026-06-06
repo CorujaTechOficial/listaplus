@@ -569,9 +569,9 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
             if (showBanner)
               Padding(
                 padding: EdgeInsets.fromLTRB(
-                  _isKeyboardVisible ? 5 : 40,
+                  _isKeyboardVisible ? 5 : 16,
                   0,
-                  _isKeyboardVisible ? 5 : 40,
+                  _isKeyboardVisible ? 5 : 16,
                   0,
                 ),
                 child: _buildPaywallBanner(context, l10n, theme, remaining),
@@ -899,7 +899,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(isKeyboardOpen ? 5 : 40, 8, isKeyboardOpen ? 5 : 40, 16),
+            padding: EdgeInsets.fromLTRB(isKeyboardOpen ? 5 : 16, 8, isKeyboardOpen ? 5 : 16, 16),
             child: SafeArea(
               child: ValueListenableBuilder<TextEditingValue>(
           valueListenable: _textController,
