@@ -456,6 +456,24 @@ abstract class AppLocalizations {
   /// **'Added!'**
   String get addedFeedback;
 
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @exitShoppingMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit Shopping Mode'**
+  String get exitShoppingMode;
+
+  /// No description provided for @exit.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit'**
+  String get exit;
+
   /// No description provided for @selectedItems.
   ///
   /// In en, this message translates to:

@@ -139,7 +139,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         hintText: l10n.searchRecipes,
                         prefixIcon: const Icon(Icons.search, size: 20),
                         filled: true,
-                        fillColor: theme.colorScheme.surfaceContainerHighest.withAlpha((isDark ? 0.3 : 0.5 * 255).toInt()),
+                        fillColor: theme.colorScheme.surfaceContainerHighest.withAlpha((isDark ? 0.3 * 255 : 0.5 * 255).toInt()),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(RadiusTokens.lg),
                           borderSide: BorderSide.none,

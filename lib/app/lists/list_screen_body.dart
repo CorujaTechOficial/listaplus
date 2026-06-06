@@ -220,7 +220,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                   }
                 },
               ),
-              title: Text(_shoppingMode ? l10n.shoppingMode : '${_selectedIds.length} selecionados'),
+              title: Text(_shoppingMode ? l10n.shoppingMode : l10n.selectedItems(_selectedIds.length)),
               actions: [
                 if (_selectionMode)
                   IconButton(icon: const Icon(Icons.delete_outline), onPressed: _deleteSelected),
@@ -489,7 +489,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                         const SizedBox(height: 24),
                         FilledButton(
                           onPressed: () => setState(() => _shoppingMode = false),
-                          child: const Text('Sair do Modo Compra'),
+                          child: Text(l10n.exitShoppingMode),
                         ),
                       ],
                     ),
@@ -562,7 +562,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
               heroTag: null,
               onPressed: _selectionMode ? () => _markSelected(true) : () => setState(() => _shoppingMode = false),
               icon: Icon(_selectionMode ? Icons.check : Icons.close),
-              label: Text(_selectionMode ? l10n.buy : 'Sair'),
+              label: Text(_selectionMode ? l10n.buy : l10n.exit),
               backgroundColor: _shoppingMode ? theme.colorScheme.secondary : theme.colorScheme.primary,
               foregroundColor: _shoppingMode ? theme.colorScheme.onSecondary : theme.colorScheme.onPrimary,
             )

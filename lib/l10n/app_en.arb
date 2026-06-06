@@ -34,6 +34,11 @@
   "fieldRequired": "Required field",
   "addedFeedback": "Added!",
 
+  "@_Account": "description: Account Menu",
+  "profile": "Profile",
+  "exitShoppingMode": "Exit Shopping Mode",
+  "exit": "Exit",
+
   "@_Home": "description: Home Screen",
   "selectedItems": "{count,plural, one{{count} selected} other{{count} selected}}",
   "@selectedItems": { "placeholders": { "count": { "type": "int" } } },

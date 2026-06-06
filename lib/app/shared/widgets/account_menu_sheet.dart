@@ -24,7 +24,7 @@ class AccountMenuSheet extends StatelessWidget {
         children: [
           ListTile(
             leading: const Icon(Icons.person_outline),
-            title: const Text('Perfil'),
+            title: Text(l10n.profile),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context, fadeSlideRoute<void>(const UserProfileScreen()));
