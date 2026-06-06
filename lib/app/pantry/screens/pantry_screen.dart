@@ -636,7 +636,7 @@ class _QuantityControl extends StatelessWidget {
         onTap: onPressed,
         borderRadius: BorderRadius.circular(RadiusTokens.sm),
         child: Padding(
-          padding: const EdgeInsets.all(Spacing.xs),
+          padding: const EdgeInsets.all(Spacing.sm),
           child: Icon(
             icon,
             size: 20,
