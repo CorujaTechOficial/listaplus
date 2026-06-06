@@ -1,8 +1,8 @@
 import 'dart:async';
+import 'dart:ui';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -885,12 +885,23 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
     final showPlus = widget.listId != null;
     final isKeyboardOpen = _isKeyboardVisible;
     return Container(
-      padding: EdgeInsets.fromLTRB(isKeyboardOpen ? 5 : 40, 8, isKeyboardOpen ? 5 : 40, 16),
-      decoration: const BoxDecoration(
-        color: Colors.transparent,
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface.withAlpha(isKeyboardOpen ? 255 : (0.8 * 255).toInt()),
+        boxShadow: !isKeyboardOpen ? [
+          BoxShadow(
+            color: Colors.black.withAlpha(10),
+            blurRadius: 10,
+            offset: const Offset(0, -2),
+          ),
+        ] : null,
       ),
-      child: SafeArea(
-        child: ValueListenableBuilder<TextEditingValue>(
+      child: ClipRRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(isKeyboardOpen ? 5 : 40, 8, isKeyboardOpen ? 5 : 40, 16),
+            child: SafeArea(
+              child: ValueListenableBuilder<TextEditingValue>(
           valueListenable: _textController,
           builder: (context, value, child) {
             final hasText = value.text.trim().isNotEmpty;
@@ -922,7 +933,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
                     controller: _textController,
                     readOnly: widget.isSimulation || inputBlocked,
                     minLines: 1,
-                    maxLines: 1,
+                    maxLines: 5,
                     style: theme.textTheme.bodyMedium,
                     decoration: InputDecoration(
                       hintText: inputBlocked
@@ -1013,6 +1024,9 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
           },
         ),
       ),
+    ),
+    ),
+    ),
     );
   }
 }
@@ -1825,8 +1839,8 @@ class TypingIndicator extends StatelessWidget {
               SizedBox(
                 width: 24,
                 height: 24,
-                child: SvgPicture.asset(
-                  'assets/images/kipi/kipi_helper.svg',
+                child: Image.asset(
+                  'assets/images/kipi/kipi_helper.png',
                 ),
               ).animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true)).scale(
                     begin: const Offset(0.8, 0.8),
@@ -1889,8 +1903,8 @@ class _AiGlowOrb extends StatelessWidget {
           color: color.withAlpha(30),
           shape: BoxShape.circle,
         ),
-        child: SvgPicture.asset(
-          'assets/images/kipi/kipi_welcome.svg',
+        child: Image.asset(
+          'assets/images/kipi/kipi_welcome.png',
         ),
       ).animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true)).scale(
         begin: const Offset(0.9, 0.9),
