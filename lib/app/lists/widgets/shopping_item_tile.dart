@@ -12,6 +12,7 @@ import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/theme/app_theme.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 
 class ShoppingItemTile extends ConsumerWidget {
   const ShoppingItemTile({
@@ -266,17 +267,14 @@ class ShoppingItemTile extends ConsumerWidget {
         final removedItem = item;
         final notifier = ref.read(shoppingListItemsProvider(listId).notifier);
         notifier.removeItem(item.id);
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.itemRemoved),
-              action: SnackBarAction(
-                label: l10n.undo,
-                onPressed: () => notifier.restoreItem(removedItem),
-              ),
-            ),
-          );
-        }
+        showUniqueSnackBar(
+          context,
+          content: Text(l10n.itemRemoved),
+          action: SnackBarAction(
+            label: l10n.undo,
+            onPressed: () => notifier.restoreItem(removedItem),
+          ),
+        );
       },
       child: tileContent,
     );
