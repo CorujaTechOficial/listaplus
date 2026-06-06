@@ -338,12 +338,12 @@
   "paywallTestimonial1Text": "AI organizes my shopping in seconds. I save 20 min per market trip.",
   "paywallTestimonial2Name": "Charles M.",
   "paywallTestimonial2Text": "I never forgot a list item again. The AI chat is sensational!",
-  "paywallSocialProof": "Join thousands of smart shoppers saving time and money",
-  "paywallCtaUnlock": "Unlock KipiList PRO",
+  "paywallSocialProof": "+2,400 families use it",
+  "paywallCtaUnlock": "Unlock PRO",
   "paywallCtaTrial": "Start My Free Trial",
   "paywallBestValue": "BEST VALUE",
   "paywallMostPopular": "MOST POPULAR",
-  "paywallSafeCheckout": "Secure payment via App Store/Play Store",
+  "paywallSafeCheckout": "Secure payment",
   "paywallSelectPlan": "Choose your plan:",
   "paywallSavePercent": "SAVE {percent}%",
   "paywallPricePerMonth": "Only {price}/month",
@@ -354,6 +354,20 @@
   "paywallPolicy": "Privacy Policy",
   "paywallTerms": "Terms of Use",
   "paywallRestore": "Restore",
+  "paywallHeroHeadline": "Kipi AI always by your side",
+  "paywallHeroSubtitle": "Add items, organize lists and save time with AI in your pocket",
+  "paywallBenefit1Desc": "Adds, organizes and suggests items 24/7",
+  "paywallBenefit2Desc": "No 3-list limit",
+  "paywallBenefit3Desc": "Expense tracking and family lists",
+  "paywallPackageMonthlyDesc": "Full flexibility",
+  "paywallCtaTrialDays": "Start free — {days} days",
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
 
   "@_Premium": "description: Premium gating",
   "premiumUpgrade": "Upgrade to unlock",
