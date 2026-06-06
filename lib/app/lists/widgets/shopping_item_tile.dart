@@ -44,9 +44,11 @@ class ShoppingItemTile extends ConsumerWidget {
     final cat = categoryMap[item.categoryId];
     final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
-    final tileContent = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-      child: Container(
+    final tileContent = Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+          child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           boxShadow: isSelected ? shadows?.soft : (isDark ? null : shadows?.soft),
@@ -224,6 +226,22 @@ class ShoppingItemTile extends ConsumerWidget {
 
         ),
       ),
+        ),
+        if (!selectionMode)
+          Positioned(
+            right: 16,
+            top: 0,
+            bottom: 0,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Icon(
+                Icons.delete_outline,
+                size: 18,
+                color: theme.colorScheme.error.withAlpha(25),
+              ),
+            ),
+          ),
+      ],
     );
 
     if (selectionMode) {
