@@ -850,9 +850,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get paywallCtaUnlock => 'Unlock PRO';
 
   @override
-  String get paywallCtaTrial => 'Start My Free Trial';
-
-  @override
   String get paywallBestValue => 'BEST VALUE';
 
   @override

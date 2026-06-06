@@ -864,9 +864,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywallCtaUnlock => 'Unlock PRO';
 
   @override
-  String get paywallCtaTrial => 'Start My Free Trial';
-
-  @override
   String get paywallBestValue => 'BEST VALUE';
 
   @override
@@ -2501,9 +2498,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get paywallCtaUnlock => 'Desbloquear PRO';
-
-  @override
-  String get paywallCtaTrial => 'Experimentar Grátis';
 
   @override
   String get paywallBestValue => 'MELHOR VALOR';

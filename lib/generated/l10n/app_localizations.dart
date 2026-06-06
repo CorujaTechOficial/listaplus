@@ -1812,12 +1812,6 @@ abstract class AppLocalizations {
   /// **'Unlock PRO'**
   String get paywallCtaUnlock;
 
-  /// No description provided for @paywallCtaTrial.
-  ///
-  /// In en, this message translates to:
-  /// **'Start My Free Trial'**
-  String get paywallCtaTrial;
-
   /// No description provided for @paywallBestValue.
   ///
   /// In en, this message translates to:

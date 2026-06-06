@@ -688,7 +688,12 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox.shrink(),
+                      IconButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        icon: const Icon(Icons.close),
+                        color: theme.colorScheme.onSurfaceVariant,
+                        iconSize: 20,
+                      ),
                       TextButton(
                         onPressed: _restore,
                         child: Text(
