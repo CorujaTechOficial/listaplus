@@ -253,243 +253,51 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     );
   }
 
-  Widget _buildFeaturesList(ThemeData theme, AppLocalizations l10n) {
-    final features = [
-      (l10n.paywallFeatureUnlimitedLists, Icons.all_inclusive),
-      (l10n.paywallFeatureSmartAI, Icons.auto_awesome),
-      (l10n.paywallFeatureExpenseControl, Icons.bar_chart),
-      (l10n.paywallFeatureSharing, Icons.group),
+  Widget _buildBenefits(ThemeData theme, AppLocalizations l10n) {
+    final benefits = [
+      (Icons.auto_awesome, l10n.paywallFeatureSmartAI, l10n.paywallBenefit1Desc),
+      (Icons.all_inclusive, l10n.paywallFeatureUnlimitedLists, l10n.paywallBenefit2Desc),
+      (Icons.bar_chart, l10n.paywallFeatureExpenseControl, l10n.paywallBenefit3Desc),
     ];
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            l10n.paywallFeaturesTitle,
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: Spacing.sm),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: features.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: Spacing.sm,
-              mainAxisSpacing: Spacing.sm,
-              childAspectRatio: 2.5,
-            ),
-            itemBuilder: (context, index) {
-              final f = features[index];
-              return Container(
-                padding: const EdgeInsets.all(Spacing.xs),
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.surfaceContainerLow,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: theme.colorScheme.outlineVariant.withAlpha(100)),
+    return ColoredBox(
+      color: theme.colorScheme.surface,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: Spacing.lg, vertical: Spacing.xs),
+        child: Column(
+          children: [
+            for (int i = 0; i < benefits.length; i++) ...[
+              _buildBenefitRow(theme, benefits[i].$1, benefits[i].$2, benefits[i].$3),
+              if (i < benefits.length - 1)
+                Divider(
+                  color: theme.colorScheme.outlineVariant.withAlpha(80),
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    Icon(f.$2, color: theme.colorScheme.primary, size: 20),
-                    const SizedBox(width: Spacing.xs),
-                    Expanded(
-                      child: Text(
-                        f.$1,
-                        style: theme.textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBeforeAfter(ThemeData theme, AppLocalizations l10n) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            l10n.paywallBeforeAfterTitle,
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: Spacing.sm),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: _comparisonCard(
-                  theme,
-                  l10n.paywallLabelCommon,
-                  Icons.sentiment_dissatisfied,
-                  [
-                    l10n.paywallBeforeItem1,
-                    l10n.paywallBeforeItem2,
-                    l10n.paywallBeforeItem3,
-                    l10n.paywallBeforeItem4,
-                  ],
-                  theme.colorScheme.surfaceContainerHighest.withAlpha(100),
-                  theme.colorScheme.outline,
-                ),
-              ),
-              const SizedBox(width: Spacing.sm),
-              Expanded(
-                child: _comparisonCard(
-                  theme,
-                  l10n.paywallLabelPro,
-                  Icons.auto_awesome,
-                  [
-                    l10n.paywallAfterItem1,
-                    l10n.paywallAfterItem2,
-                    l10n.paywallAfterItem3,
-                    l10n.paywallAfterItem4,
-                  ],
-                  theme.colorScheme.primaryContainer.withAlpha(150),
-                  theme.colorScheme.primary,
-                ),
-              ),
             ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _comparisonCard(
-    ThemeData theme,
-    String label,
-    IconData icon,
-    List<String> items,
-    Color bgColor,
-    Color accentColor,
-  ) {
-    final isPro = label == 'KipiList PRO';
-    return Container(
-      padding: const EdgeInsets.all(Spacing.sm),
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: accentColor.withAlpha(50)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  color: accentColor.withAlpha(40),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(icon, size: 12, color: accentColor),
-              ),
-              const SizedBox(width: 6),
-              Text(
-                label,
-                style: theme.textTheme.labelMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: accentColor,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: Spacing.sm),
-          ...items.map((item) => Padding(
-            padding: const EdgeInsets.only(bottom: 6),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 2),
-                  child: Icon(
-                    isPro ? Icons.check_circle : Icons.error_outline,
-                    size: 12,
-                    color: isPro ? Colors.green : theme.colorScheme.error.withAlpha(150),
-                  ),
-                ),
-                const SizedBox(width: 6),
-                Expanded(
-                  child: Text(
-                    item,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurface.withAlpha(isPro ? 255 : 180),
-                      fontSize: 11,
-                      fontWeight: isPro ? FontWeight.w500 : null,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          )),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTestimonials(ThemeData theme, AppLocalizations l10n) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            l10n.paywallTestimonialsTitle,
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: Spacing.sm),
-          _testimonialCard(
-            theme,
-            l10n.paywallTestimonial1Name,
-            l10n.paywallTestimonial1Text,
-          ),
-          const SizedBox(height: Spacing.xs),
-          _testimonialCard(
-            theme,
-            l10n.paywallTestimonial2Name,
-            l10n.paywallTestimonial2Text,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _testimonialCard(ThemeData theme, String name, String text) {
-    return Container(
-      padding: const EdgeInsets.all(Spacing.sm),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: theme.colorScheme.outline.withAlpha((0.15 * 255).toInt()),
+          ],
         ),
       ),
+    );
+  }
+
+  Widget _buildBenefitRow(
+    ThemeData theme,
+    IconData icon,
+    String title,
+    String subtitle,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            radius: 16,
-            backgroundColor: theme.colorScheme.primaryContainer,
-            child: Text(
-              name[0],
-              style: theme.textTheme.labelMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.onPrimaryContainer,
-              ),
+          Container(
+            width: 32,
+            height: 32,
+            decoration: BoxDecoration(
+              color: theme.colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(9),
             ),
+            child: Icon(icon, color: theme.colorScheme.primary, size: 18),
           ),
           const SizedBox(width: Spacing.sm),
           Expanded(
@@ -497,13 +305,13 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  name,
-                  style: theme.textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
+                  title,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
                 Text(
-                  text,
+                  subtitle,
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
@@ -867,12 +675,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                 ),
               ],
               _buildHero(theme, l10n),
-              const SizedBox(height: Spacing.md),
-              _buildBeforeAfter(theme, l10n),
-              const SizedBox(height: Spacing.lg),
-              _buildFeaturesList(theme, l10n),
-              const SizedBox(height: Spacing.md),
-              _buildTestimonials(theme, l10n),
+              _buildBenefits(theme, l10n),
               const SizedBox(height: Spacing.md),
               if (_isLoading)
                 const Padding(
