@@ -495,8 +495,8 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     if (pkg == null) {
       return l10n.paywallCtaUnlock;
     }
-    if (pkg.hasFreeTrial) {
-      return l10n.paywallCtaTrial;
+    if (pkg.hasFreeTrial && pkg.trialPeriodDays != null) {
+      return l10n.paywallCtaTrialDays(pkg.trialPeriodDays!);
     }
     return l10n.paywallCtaUnlock;
   }
@@ -506,7 +506,12 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       return const SizedBox.shrink();
     }
     return Container(
-      padding: EdgeInsets.fromLTRB(Spacing.lg, Spacing.sm, Spacing.lg, MediaQuery.of(context).padding.bottom + Spacing.sm),
+      padding: EdgeInsets.fromLTRB(
+        Spacing.lg,
+        Spacing.sm,
+        Spacing.lg,
+        MediaQuery.of(context).padding.bottom + Spacing.sm,
+      ),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         boxShadow: [
@@ -522,21 +527,25 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
         children: [
           SizedBox(
             width: double.infinity,
-            height: 56,
+            height: 54,
             child: ElevatedButton(
               onPressed: _selectedPackage != null ? _purchase : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: theme.colorScheme.primary,
                 foregroundColor: theme.colorScheme.onPrimary,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(28),
+                  borderRadius: BorderRadius.circular(27),
                 ),
                 elevation: 4,
                 shadowColor: theme.colorScheme.primary.withAlpha(100),
               ),
               child: Text(
                 _ctaText(l10n),
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, letterSpacing: 0.5),
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 0.3,
+                ),
               ),
             ),
           ),
@@ -544,22 +553,76 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.security, size: 12, color: theme.colorScheme.outline),
+              Icon(Icons.lock_outline, size: 11, color: theme.colorScheme.outline),
               const SizedBox(width: 4),
               Text(
-                l10n.paywallSafeCheckout,
+                '${l10n.paywallSafeCheckout} · ${l10n.paywallCancelAnytime}',
                 style: theme.textTheme.labelSmall?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant.withAlpha((0.7 * 255).toInt()),
+                  fontSize: 10,
+                  color: theme.colorScheme.onSurfaceVariant
+                      .withAlpha((0.7 * 255).toInt()),
                 ),
               ),
             ],
           ),
-          Text(
-            l10n.paywallCancelAnytime,
-            style: theme.textTheme.labelSmall?.copyWith(
-              fontSize: 10,
-              color: theme.colorScheme.outline,
-            ),
+          const SizedBox(height: Spacing.xxs),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () => launchUrl(
+                  Uri.parse('https://kipilist-6547b.web.app/privacidade.html'),
+                  mode: LaunchMode.externalApplication,
+                ),
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.xs,
+                    vertical: 2,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(
+                  l10n.paywallPolicy,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: theme.colorScheme.onSurfaceVariant
+                        .withAlpha((0.7 * 255).toInt()),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              Text(
+                '·',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: theme.colorScheme.outline,
+                ),
+              ),
+              TextButton(
+                onPressed: () => launchUrl(
+                  Uri.parse('https://kipilist-6547b.web.app/termos.html'),
+                  mode: LaunchMode.externalApplication,
+                ),
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.xs,
+                    vertical: 2,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(
+                  l10n.paywallTerms,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: theme.colorScheme.onSurfaceVariant
+                        .withAlpha((0.7 * 255).toInt()),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -573,50 +636,6 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       PackageType.lifetime => l10n.paywallPackageLifetime,
       _ => pkg.title,
     };
-  }
-
-  Widget _buildFooterLinks(ThemeData theme, AppLocalizations l10n) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        TextButton(
-          onPressed: () {
-            launchUrl(
-              Uri.parse('https://kipilist-6547b.web.app/privacidade.html'),
-              mode: LaunchMode.externalApplication,
-            );
-          },
-          child: Text(
-            l10n.paywallPolicy,
-            style: TextStyle(
-              fontSize: 12,
-              color: theme.colorScheme.onSurfaceVariant,
-              decoration: TextDecoration.underline,
-            ),
-          ),
-        ),
-        Text(
-          '•',
-          style: TextStyle(color: theme.colorScheme.onSurfaceVariant),
-        ),
-        TextButton(
-          onPressed: () {
-            launchUrl(
-              Uri.parse('https://kipilist-6547b.web.app/termos.html'),
-              mode: LaunchMode.externalApplication,
-            );
-          },
-          child: Text(
-            l10n.paywallTerms,
-            style: TextStyle(
-              fontSize: 12,
-              color: theme.colorScheme.onSurfaceVariant,
-              decoration: TextDecoration.underline,
-            ),
-          ),
-        ),
-      ],
-    );
   }
 
   @override
@@ -657,13 +676,15 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                     width: 32,
                     height: 4,
                     decoration: BoxDecoration(
-                      color: theme.colorScheme.onSurfaceVariant.withAlpha((0.3 * 255).toInt()),
+                      color: theme.colorScheme.onSurfaceVariant
+                          .withAlpha((0.3 * 255).toInt()),
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: Spacing.lg),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -683,7 +704,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
               ],
               _buildHero(theme, l10n),
               _buildBenefits(theme, l10n),
-              const SizedBox(height: Spacing.md),
+              const SizedBox(height: Spacing.sm),
               if (_isLoading)
                 const Padding(
                   padding: EdgeInsets.all(Spacing.lg),
@@ -694,17 +715,23 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   padding: const EdgeInsets.all(Spacing.lg),
                   child: Column(
                     children: [
-                      Text(_errorMessage!, style: const TextStyle(color: Colors.red)),
+                      Text(
+                        _errorMessage!,
+                        style: const TextStyle(color: Colors.red),
+                      ),
                       const SizedBox(height: Spacing.sm),
-                      ElevatedButton(onPressed: _loadPackages, child: Text(l10n.retry)),
+                      ElevatedButton(
+                        onPressed: _loadPackages,
+                        child: Text(l10n.retry),
+                      ),
                     ],
                   ),
                 )
               else
                 _buildPlans(theme, l10n),
-              const SizedBox(height: Spacing.xl),
-              _buildFooterLinks(theme, l10n),
-              SizedBox(height: MediaQuery.of(context).padding.bottom + 140),
+              SizedBox(
+                height: MediaQuery.of(context).padding.bottom + 140,
+              ),
             ],
           ),
         ),
