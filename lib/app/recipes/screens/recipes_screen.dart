@@ -243,29 +243,34 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   if (filtered.isNotEmpty)
                     Expanded(
                       child: AnimationLimiter(
-                        child: GridView.builder(
-                          padding: const EdgeInsets.all(Spacing.md),
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 0.75,
-                            crossAxisSpacing: Spacing.md,
-                            mainAxisSpacing: Spacing.md,
-                          ),
-                          itemCount: filtered.length,
-                          itemBuilder: (context, index) {
-                            final recipe = filtered[index];
-                            return AnimationConfiguration.staggeredGrid(
-                              position: index,
-                              duration: DurationTokens.normal,
-                              columnCount: 2,
-                              child: ScaleAnimation(
-                                child: FadeInAnimation(
-                                  child: _RecipeGridCard(
-                                    recipe: recipe,
-                                    onDelete: () => _confirmDelete(context, ref, recipe, l10n),
-                                  ),
-                                ),
+                        child: LayoutBuilder(
+                          builder: (context, constraints) {
+                            final ratio = constraints.maxWidth < 380 ? 0.65 : 0.75;
+                            return GridView.builder(
+                              padding: const EdgeInsets.all(Spacing.md),
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: ratio,
+                                crossAxisSpacing: Spacing.md,
+                                mainAxisSpacing: Spacing.md,
                               ),
+                              itemCount: filtered.length,
+                              itemBuilder: (context, index) {
+                                final recipe = filtered[index];
+                                return AnimationConfiguration.staggeredGrid(
+                                  position: index,
+                                  duration: DurationTokens.normal,
+                                  columnCount: 2,
+                                  child: ScaleAnimation(
+                                    child: FadeInAnimation(
+                                      child: _RecipeGridCard(
+                                        recipe: recipe,
+                                        onDelete: () => _confirmDelete(context, ref, recipe, l10n),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                             );
                           },
                         ),
