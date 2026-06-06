@@ -14,6 +14,8 @@ import 'package:shopping_list/domain/entities/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
+import 'package:collection/collection.dart';
+import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 
 class PantryScreen extends ConsumerWidget {
   const PantryScreen({super.key});
@@ -28,9 +30,8 @@ class PantryScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () => Scaffold.of(context).openDrawer(),
-          tooltip: l10n.openMenu,
+          icon: const Icon(Icons.person_outline),
+          onPressed: () => AccountMenuSheet.show(context),
         ),
         title: Text(l10n.pantryAppBar),
         actions: [
@@ -70,62 +71,138 @@ class PantryScreen extends ConsumerWidget {
               );
             }
 
-            final deficitItems = items.where((i) => i.trackStock && i.deficit > 0).length;
+            final deficitItems = items.where((i) => i.trackStock && i.deficit > 0).toList();
+            
+            // Group items by category
+            final categoriesAsync = ref.watch(categoriesProvider);
+            final cats = categoriesAsync.value ?? <CategoryData>[];
+            final categoriesMap = {for (final cat in cats) cat.id: cat};
+            
+            final groupedItems = groupBy(items, (PantryItem i) => i.categoryId);
+            final sortedCategoryIds = groupedItems.keys.toList()
+              ..sort((a, b) {
+                final catA = categoriesMap[a];
+                final catB = categoriesMap[b];
+                if (catA == null) {
+                  return 1;
+                }
+                if (catB == null) {
+                  return -1;
+                }
+                return catA.name.compareTo(catB.name);
+              });
 
             return RefreshIndicator(
               onRefresh: () async {
                 ref.invalidate(pantryItemsProvider);
                 await ref.read(pantryItemsProvider.future);
               },
-              child: Column(
-                children: [
-                  if (deficitItems > 0)
-                    Container(
-                      width: double.infinity,
-                      margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, 0),
-                      padding: const EdgeInsets.all(Spacing.sm),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? theme.colorScheme.tertiaryContainer.withAlpha((0.15 * 255).toInt())
-                            : theme.colorScheme.tertiaryContainer.withAlpha((0.3 * 255).toInt()),
-                        borderRadius: BorderRadius.circular(RadiusTokens.md),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(Icons.info_outline, size: 18, color: theme.colorScheme.tertiary),
-                          const SizedBox(width: Spacing.xs),
-                          Expanded(
-                            child: Text(
-                              l10n.itemsNeedPurchase(deficitItems),
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                fontWeight: FontWeight.w600,
+              child: CustomScrollView(
+                slivers: [
+                  if (deficitItems.isNotEmpty)
+                    SliverToBoxAdapter(
+                      child: Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, Spacing.xs),
+                        padding: const EdgeInsets.all(Spacing.sm),
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.tertiaryContainer.withAlpha((isDark ? 0.15 : 0.3 * 255).toInt()),
+                          borderRadius: BorderRadius.circular(RadiusTokens.md),
+                          border: Border.all(
+                            color: theme.colorScheme.tertiary.withAlpha((0.2 * 255).toInt()),
+                          ),
+                        ),
+                        child: InkWell(
+                          onTap: () => _generateShoppingList(context, ref),
+                          borderRadius: BorderRadius.circular(RadiusTokens.md),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(Spacing.xxs),
+                                decoration: BoxDecoration(
+                                  color: theme.colorScheme.tertiary,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(Icons.shopping_cart_outlined, size: 16, color: theme.colorScheme.onTertiary),
+                              ),
+                              const SizedBox(width: Spacing.sm),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      l10n.itemsNeedPurchase(deficitItems.length),
+                                      style: theme.textTheme.titleSmall?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: theme.colorScheme.onTertiaryContainer,
+                                      ),
+                                    ),
+                                    Text(
+                                      l10n.generateShoppingList,
+                                      style: theme.textTheme.bodySmall?.copyWith(
+                                        color: theme.colorScheme.onTertiaryContainer.withAlpha((0.8 * 255).toInt()),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Icon(Icons.chevron_right, color: theme.colorScheme.tertiary),
+                            ],
+                          ),
+                        ),
+                      ).animate().slideY(
+                        begin: -0.2,
+                        end: 0,
+                        duration: DurationTokens.normal,
+                        curve: Curves.easeOutBack,
+                      ).fadeIn(duration: DurationTokens.fast),
+                    ),
+                  
+                  for (final catId in sortedCategoryIds) ...[
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.md, Spacing.md, Spacing.xs),
+                        child: Row(
+                          children: [
+                            Icon(
+                              categoriesMap[catId]?.icon ?? Icons.category_outlined,
+                              size: 16,
+                              color: categoriesMap[catId]?.colorValue ?? theme.colorScheme.primary,
+                            ),
+                            const SizedBox(width: Spacing.xs),
+                            Text(
+                              categoriesMap[catId]?.name ?? l10n.catOthers,
+                              style: theme.textTheme.labelLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.onSurfaceVariant,
+                                letterSpacing: 0.5,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ).animate().slideY(
-                      begin: -1,
-                      end: 0,
-                      duration: DurationTokens.normal,
-                      curve: Curves.easeOutBack,
-                    ).fadeIn(duration: DurationTokens.fast),
-                  Expanded(
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(top: Spacing.xs, bottom: Spacing.md),
-                      itemCount: items.length,
-                      itemBuilder: (context, index) => _PantryItemTile(item: items[index]).animate().fadeIn(
-                        duration: DurationTokens.fast,
-                        delay: Duration(milliseconds: index * 40),
-                      ).slideY(
-                        begin: 0.15,
-                        end: 0,
-                        duration: DurationTokens.fast,
-                        delay: Duration(milliseconds: index * 40),
-                        curve: Curves.easeOut,
+                            const SizedBox(width: Spacing.xs),
+                            Expanded(child: Divider(color: theme.colorScheme.outlineVariant, thickness: 0.5)),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          final categoryItems = groupedItems[catId]!;
+                          return _PantryItemTile(item: categoryItems[index]).animate().fadeIn(
+                            duration: DurationTokens.fast,
+                            delay: Duration(milliseconds: index * 30),
+                          ).slideX(
+                            begin: 0.05,
+                            end: 0,
+                            duration: DurationTokens.fast,
+                            delay: Duration(milliseconds: index * 30),
+                          );
+                        },
+                        childCount: groupedItems[catId]!.length,
+                      ),
+                    ),
+                  ],
+                  const SliverPadding(padding: EdgeInsets.only(bottom: Spacing.xxl + Spacing.md)),
                 ],
               ),
             );
@@ -273,201 +350,160 @@ class _PantryItemTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
     final progress = item.idealQuantity > 0
-        ? item.currentQuantity / item.idealQuantity
+        ? (item.currentQuantity / item.idealQuantity).clamp(0.0, 1.0)
         : 0.0;
-    final categoriesAsync = ref.watch(categoriesProvider);
-    final cats = categoriesAsync.value ?? <CategoryData>[];
-    final categoriesMap = <String, CategoryData>{
-      for (final cat in cats) cat.id: cat,
-    };
-
+    
     final Color barColor;
     if (progress >= 0.8) {
       barColor = Colors.green;
-    } else if (progress >= 0.4) {
+    } else if (progress >= 0.3) {
       barColor = Colors.orange;
     } else {
-      barColor = Colors.red;
+      barColor = theme.colorScheme.error;
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: 2),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(Spacing.xs),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 28,
-                    height: 28,
-                    decoration: BoxDecoration(
-                      color: categoriesMap[item.categoryId]?.colorValue.withAlpha(((isDark ? 0.2 : 0.15) * 255).toInt()) ?? theme.colorScheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(RadiusTokens.xxs),
-                    ),
-                    child: Icon(
-                      categoriesMap[item.categoryId]?.icon ?? Icons.category,
-                      size: 14,
-                      color: categoriesMap[item.categoryId]?.colorValue ?? theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const SizedBox(width: Spacing.xs),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          item.name,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        if (!item.trackStock)
+      padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.xxs),
+      child: Container(
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surface,
+          borderRadius: BorderRadius.circular(RadiusTokens.md),
+          border: Border.all(
+            color: item.deficit > 0 
+              ? barColor.withAlpha((0.3 * 255).toInt())
+              : theme.colorScheme.outlineVariant.withAlpha((0.5 * 255).toInt()),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha((0.03 * 255).toInt()),
+              blurRadius: 4,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: InkWell(
+          onTap: () => _showEditDialog(context, ref),
+          borderRadius: BorderRadius.circular(RadiusTokens.md),
+          child: Padding(
+            padding: const EdgeInsets.all(Spacing.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text(
-                            l10n.noTracking,
-                            style: theme.textTheme.labelSmall?.copyWith(
-                              color: theme.colorScheme.onSurfaceVariant,
-                              fontStyle: FontStyle.italic,
+                            item.name,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              decoration: item.currentQuantity == 0 && item.trackStock 
+                                ? TextDecoration.none 
+                                : null,
                             ),
                           ),
-                      ],
-                    ),
-                  ),
-                  PopupMenuButton<String>(
-                    icon: const Icon(Icons.more_vert, size: 18),
-                    itemBuilder: (_) => [
-                      PopupMenuItem(value: 'edit', child: Text(l10n.edit)),
-                      if (item.trackStock && item.deficit > 0)
-                        PopupMenuItem(value: 'restock', child: Text(l10n.markAsPurchased)),
-                      PopupMenuItem(value: 'delete', child: Text(l10n.remove)),
-                    ],
-                    onSelected: (value) async {
-                      if (value == 'edit') {
-                        _showEditDialog(context, ref);
-                      } else if (value == 'delete') {
-                        final confirm = await showDialog<bool>(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text(l10n.confirm),
-                            content: Text(l10n.confirmRemovePantry(item.name)),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.pop(context, false),
-                                child: Text(l10n.cancel),
+                          if (!item.trackStock)
+                            Text(
+                              l10n.noTracking,
+                              style: theme.textTheme.labelSmall?.copyWith(
+                                color: theme.colorScheme.onSurfaceVariant,
+                                fontStyle: FontStyle.italic,
                               ),
-                              TextButton(
-                                onPressed: () => Navigator.pop(context, true),
-                                child: Text(l10n.remove),
-                              ),
-                            ],
-                          ),
-                        );
-                        if (confirm == true) {
-                          await ref.read(pantryItemsProvider.notifier).removeItem(item.id);
-                        }
-                      } else if (value == 'restock') {
-                        await ref.read(pantryItemsProvider.notifier).restockItem(item.id, item.deficit);
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text(l10n.restocked(item.name, item.idealQuantity, item.unit.label))),
-                          );
-                        }
-                      }
-                    },
-                  ),
-                ],
-              ),
-              const SizedBox(height: Spacing.xxs),
-              if (item.trackStock)
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(RadiusTokens.xxs),
-                      child: TweenAnimationBuilder<double>(
-                        tween: Tween(begin: 0, end: progress),
-                        duration: DurationTokens.normal,
-                        curve: Curves.easeOut,
-                        builder: (context, value, _) => LinearProgressIndicator(
-                          value: value,
-                          minHeight: 6,
-                          backgroundColor: isDark
-                              ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.2 * 255).toInt())
-                              : theme.colorScheme.surfaceContainerHighest,
-                          valueColor: AlwaysStoppedAnimation<Color>(barColor),
-                        ),
+                            ),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 2),
-                    Row(
-                      children: [
-                        Text(
-                          '${item.currentQuantity} / ${item.idealQuantity} ${item.unit.label}',
+                    if (item.trackStock && item.deficit > 0)
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: barColor.withAlpha((0.1 * 255).toInt()),
+                          borderRadius: BorderRadius.circular(RadiusTokens.full),
+                        ),
+                        child: Text(
+                          'Faltam ${item.deficit}${item.unit.label}',
                           style: theme.textTheme.labelSmall?.copyWith(
-                            fontWeight: FontWeight.w500,
-                            fontFeatures: [const FontFeature.tabularFigures()],
+                            color: barColor,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const Spacer(),
-                        if (item.deficit > 0)
-                          Text(
-                            'Faltam ${item.deficit}',
-                            style: theme.textTheme.labelSmall?.copyWith(
-                              color: barColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                      ],
-                    ),
-                    const SizedBox(height: 2),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        _QuantityIconButton(
-                          icon: Icons.remove,
-                          onPressed: item.currentQuantity <= 0
-                              ? null
-                              : () => ref.read(pantryItemsProvider.notifier).decrementCurrent(item.id),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: Text(
-                            '${item.currentQuantity}',
-                            style: theme.textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w700,
-                              fontFeatures: [const FontFeature.tabularFigures()],
-                            ),
-                          ),
-                        ),
-                        _QuantityIconButton(
-                          icon: Icons.add,
-                          onPressed: () => ref.read(pantryItemsProvider.notifier).incrementCurrent(item.id),
-                        ),
-                        const SizedBox(width: Spacing.xs),
-                        TextButton.icon(
-                          onPressed: item.currentQuantity <= 0
-                              ? null
-                              : () => ref.read(pantryItemsProvider.notifier).consumeItem(item.id),
-                          icon: Icon(Icons.arrow_downward, size: 14, color: theme.colorScheme.error),
-                          label: Text(
-                            l10n.consumed,
-                            style: TextStyle(color: theme.colorScheme.error, fontSize: 12),
-                          ),
-                          style: TextButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(horizontal: 6),
-                            minimumSize: Size.zero,
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    const SizedBox(width: Spacing.xs),
+                    _ItemMenuButton(item: item),
                   ],
                 ),
-            ],
+                if (item.trackStock) ...[
+                  const SizedBox(height: Spacing.sm),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '${item.currentQuantity} / ${item.idealQuantity} ${item.unit.label}',
+                                  style: theme.textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color: theme.colorScheme.onSurfaceVariant,
+                                  ),
+                                ),
+                                Text(
+                                  '${(progress * 100).toInt()}%',
+                                  style: theme.textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: barColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 4),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(RadiusTokens.full),
+                              child: LinearProgressIndicator(
+                                value: progress,
+                                minHeight: 8,
+                                backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                                valueColor: AlwaysStoppedAnimation<Color>(barColor),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: Spacing.md),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _QuantityControl(
+                            icon: Icons.remove,
+                            onPressed: item.currentQuantity <= 0
+                                ? null
+                                : () async {
+                                    await HapticFeedback.lightImpact();
+                                    await ref.read(pantryItemsProvider.notifier).decrementCurrent(item.id);
+                                  },
+                          ),
+                          const SizedBox(width: Spacing.sm),
+                          _QuantityControl(
+                            icon: Icons.add,
+                            isPrimary: true,
+                            onPressed: () async {
+                              await HapticFeedback.lightImpact();
+                              await ref.read(pantryItemsProvider.notifier).incrementCurrent(item.id);
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ],
+            ),
           ),
         ),
       ),
@@ -478,6 +514,136 @@ class _PantryItemTile extends ConsumerWidget {
     showDialog<void>(
       context: context,
       builder: (_) => _EditPantryItemDialog(item: item),
+    );
+  }
+}
+
+class _ItemMenuButton extends ConsumerWidget {
+  const _ItemMenuButton({required this.item});
+  final PantryItem item;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    return PopupMenuButton<String>(
+      icon: const Icon(Icons.more_vert, size: 20),
+      padding: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.md)),
+      itemBuilder: (_) => [
+        PopupMenuItem(
+          value: 'edit', 
+          child: Row(
+            children: [
+              const Icon(Icons.edit_outlined, size: 18),
+              const SizedBox(width: Spacing.sm),
+              Text(l10n.edit),
+            ],
+          ),
+        ),
+        if (item.trackStock && item.deficit > 0)
+          PopupMenuItem(
+            value: 'restock', 
+            child: Row(
+              children: [
+                const Icon(Icons.inventory_outlined, size: 18),
+                const SizedBox(width: Spacing.sm),
+                Text(l10n.markAsPurchased),
+              ],
+            ),
+          ),
+        const PopupMenuDivider(),
+        PopupMenuItem(
+          value: 'delete', 
+          child: Row(
+            children: [
+              Icon(Icons.delete_outline, size: 18, color: Theme.of(context).colorScheme.error),
+              const SizedBox(width: Spacing.sm),
+              Text(l10n.remove, style: TextStyle(color: Theme.of(context).colorScheme.error)),
+            ],
+          ),
+        ),
+      ],
+      onSelected: (value) async {
+        if (value == 'edit') {
+          await showDialog<void>(
+            context: context,
+            builder: (_) => _EditPantryItemDialog(item: item),
+          );
+        } else if (value == 'delete') {
+          final confirm = await showDialog<bool>(
+            context: context,
+            builder: (_) => AlertDialog(
+              title: Text(l10n.confirm),
+              content: Text(l10n.confirmRemovePantry(item.name)),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: Text(l10n.cancel),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text(l10n.remove),
+                ),
+              ],
+            ),
+          );
+          if (confirm == true) {
+            await ref.read(pantryItemsProvider.notifier).removeItem(item.id);
+          }
+        } else if (value == 'restock') {
+          await ref.read(pantryItemsProvider.notifier).restockItem(item.id, item.deficit);
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                behavior: SnackBarBehavior.floating,
+                content: Text(l10n.restocked(item.name, item.idealQuantity, item.unit.label)),
+              ),
+            );
+          }
+        }
+      },
+    );
+  }
+}
+
+class _QuantityControl extends StatelessWidget {
+  const _QuantityControl({
+    required this.icon,
+    this.onPressed,
+    this.isPrimary = false,
+  });
+
+  final IconData icon;
+  final VoidCallback? onPressed;
+  final bool isPrimary;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
+    return Material(
+      color: onPressed == null
+          ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.3 * 255).toInt())
+          : isPrimary 
+              ? theme.colorScheme.primaryContainer 
+              : theme.colorScheme.secondaryContainer.withAlpha((0.5 * 255).toInt()),
+      borderRadius: BorderRadius.circular(RadiusTokens.sm),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(RadiusTokens.sm),
+        child: Padding(
+          padding: const EdgeInsets.all(Spacing.xs),
+          child: Icon(
+            icon,
+            size: 20,
+            color: onPressed == null
+                ? theme.colorScheme.onSurface.withAlpha((0.3 * 255).toInt())
+                : isPrimary 
+                    ? theme.colorScheme.onPrimaryContainer
+                    : theme.colorScheme.onSecondaryContainer,
+          ),
+        ),
+      ),
     );
   }
 }
@@ -566,38 +732,6 @@ class _EditPantryItemDialogState extends State<_EditPantryItemDialog> {
           ],
         );
       },
-    );
-  }
-}
-
-class _QuantityIconButton extends StatelessWidget {
-  const _QuantityIconButton({required this.icon, this.onPressed});
-
-  final IconData icon;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Material(
-      color: onPressed != null
-          ? theme.colorScheme.secondaryContainer.withAlpha((0.5 * 255).toInt())
-          : theme.colorScheme.surfaceContainerHighest.withAlpha((0.3 * 255).toInt()),
-      borderRadius: BorderRadius.circular(RadiusTokens.sm),
-      child: InkWell(
-        onTap: onPressed,
-        borderRadius: BorderRadius.circular(RadiusTokens.sm),
-        child: Padding(
-          padding: const EdgeInsets.all(6),
-          child: Icon(
-            icon,
-            size: 18,
-            color: onPressed != null
-                ? theme.colorScheme.onSecondaryContainer
-                : theme.colorScheme.onSurface.withAlpha((0.3 * 255).toInt()),
-          ),
-        ),
-      ),
     );
   }
 }

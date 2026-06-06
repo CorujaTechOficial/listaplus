@@ -9,6 +9,7 @@ import 'package:shopping_list/app/meal_planner/widgets/weekly_summary_bar.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 
 class MealPlannerScreen extends ConsumerStatefulWidget {
   const MealPlannerScreen({super.key});
@@ -153,9 +154,8 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () => Scaffold.of(context).openDrawer(),
-          tooltip: l10n.openMenu,
+          icon: const Icon(Icons.person_outline),
+          onPressed: () => AccountMenuSheet.show(context),
         ),
         title: Text(l10n.mealPlannerTitle),
         actions: [

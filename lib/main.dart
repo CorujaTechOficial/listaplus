@@ -8,7 +8,6 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -19,10 +18,6 @@ import 'theme/app_theme.dart';
 import 'theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
-import 'package:shopping_list/app/settings/screens/settings_screen.dart';
-import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
-import 'package:shopping_list/theme/page_transitions.dart';
 import 'screens/home_screen.dart';
 import 'package:shopping_list/app/pantry/screens/pantry_screen.dart';
 import 'package:shopping_list/app/recipes/screens/recipes_screen.dart';
@@ -480,7 +475,7 @@ class _MainShellState extends ConsumerState<MainShell> {
     ]);
     _quickActions.initialize((shortcutType) {
       if (shortcutType == 'action_pantry') {
-        setState(() => _currentTab = 1);
+        setState(() => _currentTab = 3); // Despensa is now index 3
       } else if (shortcutType == 'action_ai') {
         setState(() => _currentTab = 0);
       }
@@ -495,112 +490,47 @@ class _MainShellState extends ConsumerState<MainShell> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
     return Scaffold(
       key: _scaffoldKey,
-      drawer: Drawer(
-        child: Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewPadding.bottom,
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _currentTab,
+        onDestinationSelected: (index) => setState(() => _currentTab = index),
+        destinations: [
+          const NavigationDestination(
+            icon: Icon(Icons.smart_toy_outlined),
+            selectedIcon: Icon(Icons.smart_toy),
+            label: 'IA',
           ),
-          child: NavigationDrawer(
-          selectedIndex: _currentTab,
-          onDestinationSelected: (index) {
-            setState(() => _currentTab = index);
-            Navigator.pop(context);
-          },
-          header: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 32,
-                      height: 32,
-                      child: SvgPicture.asset('assets/images/kipi/kipi_welcome.svg'),
-                    ),
-                    const SizedBox(width: 12),
-                    Text(
-                      'KipiList',
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Divider(indent: 16, endIndent: 16, color: theme.colorScheme.outlineVariant),
-            ],
+          NavigationDestination(
+            icon: const Icon(Icons.restaurant_menu_outlined),
+            selectedIcon: const Icon(Icons.restaurant_menu),
+            label: l10n.myRecipes,
           ),
-          footer: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Divider(indent: 16, endIndent: 16, color: theme.colorScheme.outlineVariant),
-              ListTile(
-                leading: const Icon(Icons.person_outline),
-                title: const Text('Perfil'),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context, fadeSlideRoute<void>(const UserProfileScreen()));
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.settings_outlined),
-                title: Text(l10n.settingsAppBar),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context, fadeSlideRoute<void>(const SettingsScreen()));
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.workspace_premium_outlined),
-                title: Text(l10n.becomePremium),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
-                },
-              ),
-            ],
+          NavigationDestination(
+            icon: const Icon(Icons.list_alt_outlined),
+            selectedIcon: const Icon(Icons.list_alt),
+            label: l10n.myLists,
           ),
-          children: [
-            const NavigationDrawerDestination(
-              icon: Icon(Icons.smart_toy_outlined),
-              selectedIcon: Icon(Icons.smart_toy),
-              label: Text('IA'),
-            ),
-            const NavigationDrawerDestination(
-              icon: Icon(Icons.restaurant_menu_outlined),
-              selectedIcon: Icon(Icons.restaurant_menu),
-              label: Text('Receitas'),
-            ),
-            const NavigationDrawerDestination(
-              icon: Icon(Icons.calendar_month_outlined),
-              selectedIcon: Icon(Icons.calendar_month),
-              label: Text('Cardápio'),
-            ),
-            NavigationDrawerDestination(
-              icon: const Icon(Icons.inventory_2_outlined),
-              selectedIcon: const Icon(Icons.inventory_2),
-              label: Text(l10n.pantry),
-            ),
-            NavigationDrawerDestination(
-              icon: const Icon(Icons.list_alt_outlined),
-              selectedIcon: const Icon(Icons.list_alt),
-              label: Text(l10n.myLists),
-            ),
-          ],
-        ),
-      ),
+          NavigationDestination(
+            icon: const Icon(Icons.inventory_2_outlined),
+            selectedIcon: const Icon(Icons.inventory_2),
+            label: l10n.pantry,
+          ),
+          const NavigationDestination(
+            icon: Icon(Icons.calendar_month_outlined),
+            selectedIcon: Icon(Icons.calendar_month),
+            label: 'Cardápio',
+          ),
+        ],
       ),
       body: IndexedStack(
         index: _currentTab,
         children: const [
           AiHomeScreen(),
           RecipesScreen(),
-          MealPlannerScreen(),
-          PantryScreen(),
           ListLoader(),
+          PantryScreen(),
+          MealPlannerScreen(),
         ],
       ),
     );
@@ -676,7 +606,7 @@ class NoListsScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const EmptyState(
-                assetPath: 'assets/images/kipi/kipi_welcome.svg',
+                assetPath: 'assets/images/kipi/kipi_welcome.png',
                 title: 'Nenhuma lista encontrada',
                 subtitle: 'Crie sua primeira lista para começar',
               ),

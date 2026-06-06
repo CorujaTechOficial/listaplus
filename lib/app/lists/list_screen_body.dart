@@ -19,6 +19,7 @@ import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/core/theme/colors.dart';
 import '../../theme/page_transitions.dart';
+import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import '../../theme/tokens.dart';
 import 'package:shopping_list/app/lists/widgets/budget_dialog.dart';
@@ -46,6 +47,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
   FilterType _filter = FilterType.all;
   SortType _sort = SortType.manual;
   bool _selectionMode = false;
+  bool _shoppingMode = false;
   final Set<String> _selectedIds = {};
 
   @override
@@ -203,6 +205,33 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
 
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
+      appBar: _selectionMode || _shoppingMode
+          ? AppBar(
+              backgroundColor: _shoppingMode ? theme.colorScheme.primary : theme.colorScheme.surface,
+              foregroundColor: _shoppingMode ? theme.colorScheme.onPrimary : theme.colorScheme.onSurface,
+              leading: IconButton(
+                icon: const Icon(Icons.close),
+                onPressed: () {
+                  if (_selectionMode) {
+                    _exitSelectionMode();
+                  }
+                  if (_shoppingMode) {
+                    setState(() => _shoppingMode = false);
+                  }
+                },
+              ),
+              title: Text(_shoppingMode ? l10n.shoppingMode : '${_selectedIds.length} selecionados'),
+              actions: [
+                if (_selectionMode)
+                  IconButton(icon: const Icon(Icons.delete_outline), onPressed: _deleteSelected),
+                if (_shoppingMode)
+                  IconButton(
+                    icon: const Icon(Icons.celebration_outlined),
+                    onPressed: () => _confettiController.play(),
+                  ),
+              ],
+            )
+          : null,
       body: itemsAsync.when(
         data: (items) {
           final pending = items.where((i) => !i.isPurchased).toList();
@@ -229,26 +258,35 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
 
           // ignore: prefer_int_literals
           final totalEstimated = items.fold(0.0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+          final purchasedItemsList = items.where((i) => i.isPurchased).toList();
+          // ignore: prefer_int_literals
+          final totalPurchased = purchasedItemsList.fold(0.0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
           final progress = items.isEmpty ? 0.0 : purchased.length / items.length;
+          
+          final budget = currentList?.budget ?? 0.0;
+          final overBudget = budget > 0 && totalPurchased > budget;
+          final budgetProgress = budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.1) : 0.0;
 
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
-              SliverAppBar(
-                backgroundColor: theme.colorScheme.surface,
-                surfaceTintColor: Colors.transparent,
-                pinned: true,
-                floating: true,
-                leading: IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
-                  tooltip: l10n.openMenu,
-                ),
-                title: AppBarListSelector(currentListId: widget.listId),
-                actions: [
-                  if (_selectionMode)
-                    IconButton(icon: const Icon(Icons.delete_outline), onPressed: _deleteSelected)
-                  else ...[
+              if (!_selectionMode && !_shoppingMode)
+                SliverAppBar(
+                  backgroundColor: theme.colorScheme.surface,
+                  surfaceTintColor: Colors.transparent,
+                  pinned: true,
+                  floating: true,
+                  leading: IconButton(
+                    icon: const Icon(Icons.person_outline),
+                    onPressed: () => AccountMenuSheet.show(context),
+                  ),
+                  title: AppBarListSelector(currentListId: widget.listId),
+                  actions: [
+                    IconButton(
+                      icon: Icon(_shoppingMode ? Icons.shopping_basket : Icons.shopping_basket_outlined),
+                      onPressed: () => setState(() => _shoppingMode = !_shoppingMode),
+                      tooltip: l10n.shoppingMode,
+                    ),
                     IconButton(
                       icon: const Icon(Icons.share),
                       onPressed: () => _showInviteSheet(widget.listId),
@@ -306,88 +344,157 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                       ],
                     ),
                   ],
-                ],
-                bottom: items.isEmpty
-                    ? null
-                    : PreferredSize(
-                        preferredSize: const Size.fromHeight(110),
-                        child: Container(
-                          color: theme.colorScheme.surface,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          '${purchased.length} de ${items.length} itens',
-                                          style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                                        ),
-                                        Text(
-                                          'Total: ${formatCurrency(totalEstimated, currencyCode)}',
-                                          style: theme.textTheme.labelLarge?.copyWith(
-                                            color: theme.colorScheme.primary,
-                                            fontWeight: FontWeight.bold,
+                  bottom: items.isEmpty
+                      ? null
+                      : PreferredSize(
+                          preferredSize: const Size.fromHeight(135),
+                          child: Container(
+                            color: theme.colorScheme.surface,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '${purchased.length} de ${items.length} itens',
+                                                style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                                              ),
+                                              if (budget > 0)
+                                                Text(
+                                                  'Orçamento: ${formatCurrency(budget, currencyCode)}',
+                                                  style: theme.textTheme.labelSmall?.copyWith(
+                                                    color: overBudget ? theme.colorScheme.error : theme.colorScheme.outline,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                            ],
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 8),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(RadiusTokens.full),
-                                      child: LinearProgressIndicator(
-                                        value: progress,
-                                        minHeight: 4,
-                                        backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                            children: [
+                                              Text(
+                                                formatCurrency(totalPurchased, currencyCode),
+                                                style: theme.textTheme.titleMedium?.copyWith(
+                                                  color: overBudget ? theme.colorScheme.error : theme.colorScheme.primary,
+                                                  fontWeight: FontWeight.w900,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Total: ${formatCurrency(totalEstimated, currencyCode)}',
+                                                style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.outline),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 8),
+                                      Stack(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius: BorderRadius.circular(RadiusTokens.full),
+                                            child: LinearProgressIndicator(
+                                              value: progress,
+                                              minHeight: 8,
+                                              backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                                              valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+                                            ),
+                                          ),
+                                          if (budget > 0)
+                                            Positioned.fill(
+                                              child: FractionallySizedBox(
+                                                alignment: Alignment.centerLeft,
+                                                widthFactor: budgetProgress > 1.0 ? 1.0 : budgetProgress,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(RadiusTokens.full),
+                                                    color: (overBudget ? Colors.red : Colors.orange).withAlpha(100),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                child: Row(
-                                  children: [
-                                    FilterChip(
-                                      label: Text(l10n.filterAll),
-                                      selected: _filter == FilterType.all,
-                                      onSelected: (s) => setState(() => _filter = FilterType.all),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    FilterChip(
-                                      label: Text(l10n.filterPending),
-                                      selected: _filter == FilterType.pending,
-                                      onSelected: (s) => setState(() => _filter = FilterType.pending),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    FilterChip(
-                                      label: Text(l10n.filterPurchased),
-                                      selected: _filter == FilterType.purchased,
-                                      onSelected: (s) => setState(() => _filter = FilterType.purchased),
-                                    ),
-                                    const SizedBox(width: 12),
-                                    Container(width: 1, height: 24, color: theme.colorScheme.outlineVariant),
-                                    const SizedBox(width: 12),
-                                    ActionChip(
-                                      avatar: const Icon(Icons.sort, size: 16),
-                                      label: Text(_getSortLabel()),
-                                      onPressed: _showSortOptions,
-                                      side: BorderSide.none,
-                                      backgroundColor: theme.colorScheme.surfaceContainerLow,
-                                    ),
-                                  ],
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                  child: Row(
+                                    children: [
+                                      FilterChip(
+                                        label: Text(l10n.filterAll),
+                                        selected: _filter == FilterType.all,
+                                        onSelected: (s) => setState(() => _filter = FilterType.all),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      FilterChip(
+                                        label: Text(l10n.filterPending),
+                                        selected: _filter == FilterType.pending,
+                                        onSelected: (s) => setState(() => _filter = FilterType.pending),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      FilterChip(
+                                        label: Text(l10n.filterPurchased),
+                                        selected: _filter == FilterType.purchased,
+                                        onSelected: (s) => setState(() => _filter = FilterType.purchased),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Container(width: 1, height: 24, color: theme.colorScheme.outlineVariant),
+                                      const SizedBox(width: 12),
+                                      ActionChip(
+                                        avatar: const Icon(Icons.sort, size: 16),
+                                        label: Text(_getSortLabel()),
+                                        onPressed: _showSortOptions,
+                                        side: BorderSide.none,
+                                        backgroundColor: theme.colorScheme.surfaceContainerLow,
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-              ),
+                ),
+              if (_shoppingMode && pending.isEmpty && items.isNotEmpty)
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.check_circle_outline, size: 80, color: Colors.green),
+                        const SizedBox(height: 16),
+                        Text(
+                          'Tudo pronto!',
+                          style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Você completou sua lista.',
+                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                        ),
+                        const SizedBox(height: 24),
+                        FilledButton(
+                          onPressed: () => setState(() => _shoppingMode = false),
+                          child: const Text('Sair do Modo Compra'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               if (items.isEmpty)
                 SliverFillRemaining(hasScrollBody: true, child: EmptyState(listId: widget.listId))
               else ...[
@@ -398,6 +505,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                         listId: widget.listId,
                         item: pending[index],
                         selectionMode: _selectionMode,
+                        isShoppingMode: _shoppingMode,
                         isSelected: _selectedIds.contains(pending[index].id),
                         onSelectionChanged: (selected) => _handleSelection(pending[index].id, selected),
                       ),
@@ -431,6 +539,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                         listId: widget.listId,
                         item: purchased[index],
                         selectionMode: _selectionMode,
+                        isShoppingMode: _shoppingMode,
                         isSelected: _selectedIds.contains(purchased[index].id),
                         onSelectionChanged: (selected) => _handleSelection(purchased[index].id, selected),
                       ),
@@ -448,14 +557,14 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
           return SafeArea(child: Center(child: Text(e.toString())));
         },
       ),
-      floatingActionButton: _selectionMode
+      floatingActionButton: _selectionMode || _shoppingMode
           ? FloatingActionButton.extended(
               heroTag: null,
-              onPressed: () => _markSelected(true),
-              icon: const Icon(Icons.check),
-              label: Text(l10n.buy),
-              backgroundColor: theme.colorScheme.primary,
-              foregroundColor: theme.colorScheme.onPrimary,
+              onPressed: _selectionMode ? () => _markSelected(true) : () => setState(() => _shoppingMode = false),
+              icon: Icon(_selectionMode ? Icons.check : Icons.close),
+              label: Text(_selectionMode ? l10n.buy : 'Sair'),
+              backgroundColor: _shoppingMode ? theme.colorScheme.secondary : theme.colorScheme.primary,
+              foregroundColor: _shoppingMode ? theme.colorScheme.onSecondary : theme.colorScheme.onPrimary,
             )
           : null,
       bottomNavigationBar: _selectionMode

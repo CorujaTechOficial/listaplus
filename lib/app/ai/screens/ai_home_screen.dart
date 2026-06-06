@@ -27,6 +27,7 @@ import 'package:shopping_list/theme/page_transitions.dart';
 
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/app/lists/providers/share_provider.dart';
+import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 import 'package:shopping_list/app/recipes/screens/recipe_detail_screen.dart';
 
 class AiHomeScreen extends ConsumerStatefulWidget {
@@ -228,7 +229,13 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
   Widget _buildNoList() {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.aiAssistant)),
+      appBar: AppBar(
+        title: Text(l10n.aiAssistant),
+        leading: IconButton(
+          icon: const Icon(Icons.person_outline),
+          onPressed: () => AccountMenuSheet.show(context),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -297,29 +304,38 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
       appBar: AppBar(
         leadingWidth: 40,
         titleSpacing: 0,
-        backgroundColor: _isMarketMode
-            ? theme.colorScheme.primaryContainer.withAlpha((0.5 * 255).toInt())
-            : null,
         leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () => Scaffold.of(context).openDrawer(),
-          tooltip: l10n.openMenu,
+          icon: const Icon(Icons.person_outline),
+          onPressed: () => AccountMenuSheet.show(context),
         ),
-        title: _isMarketMode
-            ? Row(
-                children: [
-                  Icon(Icons.shopping_basket, size: 18, color: theme.colorScheme.primary),
-                  const SizedBox(width: 8),
-                  Text(
-                    l10n.marketMode,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: theme.colorScheme.primary,
+        title: Row(
+          children: [
+            Expanded(child: AppBarListSelector(currentListId: listId)),
+            if (_isMarketMode) ...[
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  border: Border.all(color: theme.colorScheme.outline.withAlpha(120)),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.shopping_basket, size: 12, color: theme.colorScheme.onSurfaceVariant),
+                    const SizedBox(width: 4),
+                    Text(
+                      l10n.marketMode,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
                     ),
-                  ),
-                ],
-              )
-            : AppBarListSelector(currentListId: listId),
+                  ],
+                ),
+              ),
+            ],
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.share),
@@ -573,13 +589,11 @@ class _ListHeroCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(Spacing.md),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              theme.colorScheme.primaryContainer,
-              theme.colorScheme.secondaryContainer,
-            ],
+          color: theme.colorScheme.surfaceContainerLow,
+          border: Border(
+            bottom: BorderSide(
+              color: theme.colorScheme.outline.withAlpha(60),
+            ),
           ),
         ),
         child: SafeArea(
@@ -590,7 +604,7 @@ class _ListHeroCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                    Icon(Icons.shopping_basket, size: 24, color: theme.colorScheme.primary),
+                    Icon(Icons.shopping_basket, size: 24, color: theme.colorScheme.onSurfaceVariant),
                   const SizedBox(width: Spacing.sm),
                   Expanded(
                     child: Column(
@@ -598,9 +612,9 @@ class _ListHeroCard extends StatelessWidget {
                       children: [
                         Text(
                           l10n.marketMode,
-                          style: theme.textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.w900,
-                            color: theme.colorScheme.primary,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: theme.colorScheme.onSurface,
                           ),
                         ),
                         Text(
