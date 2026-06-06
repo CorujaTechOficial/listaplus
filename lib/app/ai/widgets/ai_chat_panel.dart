@@ -543,6 +543,14 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
                         textAlign: TextAlign.center,
                         style: theme.textTheme.bodySmall,
                       ),
+                      const SizedBox(height: 24),
+                      FilledButton.icon(
+                        onPressed: () {
+                          ref.invalidate(chatSessionProvider(widget.listId, activeSessionId));
+                        },
+                        icon: const Icon(Icons.refresh, size: 18),
+                        label: Text(l10n.retry),
+                      ),
                     ],
                   ),
                 ),
