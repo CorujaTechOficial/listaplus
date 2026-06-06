@@ -653,5 +653,9 @@
   "shareReferralSubject": "Get 7 days of KipiList Premium!",
   "@shareReferralSubject": {
     "description": "Subject line for the referral share"
+  },
+  "gestureHint": "Hold to select • Swipe to remove",
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   }
 }

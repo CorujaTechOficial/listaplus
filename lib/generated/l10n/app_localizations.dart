@@ -3275,6 +3275,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Get 7 days of KipiList Premium!'**
   String get shareReferralSubject;
+
+  /// One-time hint banner teaching swipe-to-delete and long-press-to-select gestures
+  ///
+  /// In en, this message translates to:
+  /// **'Hold to select • Swipe to remove'**
+  String get gestureHint;
 }
 
 class _AppLocalizationsDelegate

@@ -33,6 +33,7 @@ import '../../models/shopping_item.dart';
 import '../../models/shopping_list.dart';
 import 'package:shopping_list/app/ai/screens/chat_screen.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_list/app/settings/screens/settings_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
 
@@ -49,12 +50,32 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
   SortType _sort = SortType.manual;
   bool _selectionMode = false;
   bool _shoppingMode = false;
+  bool _showGestureHint = false;
   final Set<String> _selectedIds = {};
 
   @override
   void initState() {
     super.initState();
     _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+    _checkGestureHint();
+  }
+
+  Future<void> _checkGestureHint() async {
+    final prefs = await SharedPreferences.getInstance();
+    final shown = prefs.getBool('hint_gestures_shown') ?? false;
+    if (!shown && mounted) {
+      setState(() => _showGestureHint = true);
+      Future.delayed(const Duration(seconds: 5), _dismissGestureHint);
+    }
+  }
+
+  Future<void> _dismissGestureHint() async {
+    if (!mounted) {
+      return;
+    }
+    setState(() => _showGestureHint = false);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('hint_gestures_shown', true);
   }
 
   @override
@@ -499,6 +520,37 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
               if (items.isEmpty)
                 SliverFillRemaining(hasScrollBody: true, child: EmptyState(listId: widget.listId))
               else ...[
+                if (_showGestureHint && items.isNotEmpty)
+                  SliverToBoxAdapter(
+                    child: GestureDetector(
+                      onTap: _dismissGestureHint,
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                          borderRadius: BorderRadius.circular(999),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.info_outline,
+                              size: 14,
+                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              l10n.gestureHint,
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
                   SliverList(
                     delegate: SliverChildBuilderDelegate(

@@ -1644,6 +1644,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
