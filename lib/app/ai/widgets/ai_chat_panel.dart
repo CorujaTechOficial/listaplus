@@ -1930,18 +1930,17 @@ class _FeedbackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(4),
-        decoration: BoxDecoration(
-          color: isSelected ? theme.colorScheme.primaryContainer.withAlpha((0.5 * 255).toInt()) : Colors.transparent,
-          borderRadius: BorderRadius.circular(RadiusTokens.sm),
-        ),
+      borderRadius: BorderRadius.circular(RadiusTokens.sm),
+      child: Padding(
+        padding: const EdgeInsets.all(10),
         child: Icon(
           icon,
-          size: 14,
-          color: isSelected ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant.withAlpha((0.4 * 255).toInt()),
+          size: 16,
+          color: isSelected
+              ? theme.colorScheme.primary
+              : theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()),
         ),
       ),
     );
