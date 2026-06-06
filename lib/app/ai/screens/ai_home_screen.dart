@@ -240,7 +240,7 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   EmptyState(
-                    assetPath: 'assets/images/kipi/kipi_welcome.svg',
+                    assetPath: 'assets/images/kipi/kipi_welcome.png',
                     title: l10n.welcomeAiAssistant,
                     subtitle: l10n.createListToStartAi,
                   ),
@@ -298,12 +298,29 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
       appBar: AppBar(
         leadingWidth: 40,
         titleSpacing: 0,
+        backgroundColor: _isMarketMode
+            ? theme.colorScheme.primaryContainer.withAlpha((0.5 * 255).toInt())
+            : null,
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () => Scaffold.of(context).openDrawer(),
           tooltip: l10n.openMenu,
         ),
-        title: AppBarListSelector(currentListId: listId),
+        title: _isMarketMode
+            ? Row(
+                children: [
+                  Icon(Icons.shopping_basket, size: 18, color: theme.colorScheme.primary),
+                  const SizedBox(width: 8),
+                  Text(
+                    l10n.marketMode,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: theme.colorScheme.primary,
+                    ),
+                  ),
+                ],
+              )
+            : AppBarListSelector(currentListId: listId),
         actions: [
           IconButton(
             icon: const Icon(Icons.share),
