@@ -1542,6 +1542,46 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
                 ],
               ),
             ),
+          if (!isUser &&
+              widget.isLastInGroup &&
+              widget.message.suggestedReplies != null &&
+              widget.message.suggestedReplies!.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: widget.message.suggestedReplies!.asMap().entries.map((entry) {
+                    final index = entry.key;
+                    final reply = entry.value;
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ActionChip(
+                        avatar: Icon(
+                          _iconFromKey(reply.icon),
+                          size: 16,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        label: Text(
+                          reply.label,
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        onPressed: () {
+                          unawaited(HapticFeedback.lightImpact());
+                          final panelState = context.findAncestorStateOfType<AiChatPanelState>();
+                          panelState?.sendMessage(reply.prompt);
+                        },
+                      ).animate().fadeIn(
+                        duration: 200.ms,
+                        delay: (index * 60).ms,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
         ],
       ),
     );
@@ -1677,6 +1717,23 @@ class _GroupChatBubbleState extends ConsumerState<_GroupChatBubble> {
         }
       },
     );
+  }
+}
+
+IconData _iconFromKey(String? key) {
+  switch (key) {
+    case 'add_shopping_cart':
+      return Icons.add_shopping_cart;
+    case 'savings':
+      return Icons.savings;
+    case 'restaurant':
+      return Icons.restaurant;
+    case 'list':
+      return Icons.list;
+    case 'star':
+      return Icons.star;
+    default:
+      return Icons.chat_bubble_outline;
   }
 }
 
