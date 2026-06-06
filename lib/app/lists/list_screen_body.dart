@@ -10,6 +10,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/app/lists/widgets/shopping_item_tile_skeleton.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
@@ -551,7 +552,12 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
             ],
           );
         },
-        loading: () => const SafeArea(child: Center(child: CircularProgressIndicator())),
+        loading: () => SafeArea(
+          child: ListView.builder(
+            itemCount: 6,
+            itemBuilder: (_, _) => const ShoppingItemTileSkeleton(),
+          ),
+        ),
         error: (e, s) {
           debugPrint('Error: $e');
           return SafeArea(child: Center(child: Text(e.toString())));

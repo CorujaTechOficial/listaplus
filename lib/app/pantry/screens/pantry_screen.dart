@@ -14,6 +14,7 @@ import 'package:shopping_list/domain/entities/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
+import 'package:shopping_list/app/pantry/widgets/pantry_item_skeleton.dart';
 import 'package:collection/collection.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 
@@ -207,7 +208,10 @@ class PantryScreen extends ConsumerWidget {
               ),
             );
           },
-          loading: () => const Center(child: CircularProgressIndicator()),
+          loading: () => ListView.builder(
+            itemCount: 6,
+            itemBuilder: (_, _) => const PantryItemSkeleton(),
+          ),
           error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
         ),
       ),

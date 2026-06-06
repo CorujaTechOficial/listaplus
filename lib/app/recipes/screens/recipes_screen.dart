@@ -7,6 +7,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/recipe.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/recipes/widgets/add_recipe_dialog.dart';
+import 'package:shopping_list/app/recipes/widgets/recipe_card_skeleton.dart';
 import 'package:shopping_list/app/recipes/screens/recipe_detail_screen.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -273,15 +274,16 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 ],
               );
             },
-            loading: () => Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const CircularProgressIndicator(),
-                  const SizedBox(height: Spacing.md),
-                  Text(l10n.loadingRecipes),
-                ],
+            loading: () => GridView.builder(
+              padding: const EdgeInsets.all(Spacing.md),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: Spacing.md,
+                mainAxisSpacing: Spacing.md,
               ),
+              itemCount: 4,
+              itemBuilder: (_, _) => const RecipeCardSkeleton(),
             ),
             error: (err, stack) => Center(
               child: Padding(
