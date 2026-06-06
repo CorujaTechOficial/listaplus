@@ -619,6 +619,10 @@ class AppLocalizationsDa extends AppLocalizations {
   String get unlockAi => 'Unlock unlimited AI';
 
   @override
+  String get aiTeaserFallback =>
+      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

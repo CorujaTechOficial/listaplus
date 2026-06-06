@@ -1404,6 +1404,12 @@ abstract class AppLocalizations {
   /// **'Unlock unlimited AI'**
   String get unlockAi;
 
+  /// No description provided for @aiTeaserFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...'**
+  String get aiTeaserFallback;
+
   /// No description provided for @kipiListTitle.
   ///
   /// In en, this message translates to:

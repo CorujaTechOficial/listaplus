@@ -267,6 +267,9 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
     });
     _textController.clear();
 
+    // Get l10n before async operations to avoid BuildContext across async gaps
+    final l10n = AppLocalizations.of(context);
+
     try {
       var sessionId = ref.read(activeChatSessionIdProvider(widget.listId));
       if (sessionId == null) {
@@ -291,7 +294,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
         await ref.read(chatSessionProvider(widget.listId, sessionId).notifier).addMessage(userMessage);
 
         // Trigger Dynamic Teaser Effect
-        String teaserText = 'Para economizar nesta compra, você pode aproveitar as promoções sazonais de frutas cítricas, além de considerar a troca de marcas premium por marcas próprias do supermercado, que oferecem qualidade similar por um preço até 30% menor. Outra dica valiosa é de extrema importância para seu bolso e para a organização da sua despensa...';
+        String teaserText = l10n?.aiTeaserFallback ?? 'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
         try {
           final aiService = ref.read(aiServiceProvider);
           final items = ref.read(shoppingListItemsProvider(widget.listId ?? ''));
@@ -328,7 +331,6 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
     } on Exception catch (e, st) {
       debugPrint('[AiChatPanel] Error in sendMessage: $e\n$st');
       if (mounted) {
-        final l10n = AppLocalizations.of(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(

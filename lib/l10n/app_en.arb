@@ -234,6 +234,7 @@
   "aiError": "Sorry, an error occurred processing your request. Check your connection or try again later.",
   "aiLimitAlmostReached": "Almost out of AI messages",
   "unlockAi": "Unlock unlimited AI",
+  "aiTeaserFallback": "Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...",
 
   "@_Auth": "description: Auth Screen",
   "kipiListTitle": "KipiList",
