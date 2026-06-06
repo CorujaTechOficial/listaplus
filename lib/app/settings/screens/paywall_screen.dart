@@ -324,7 +324,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     );
   }
 
-  Widget _buildPackagesList(ThemeData theme, AppLocalizations l10n) {
+  Widget _buildPlans(ThemeData theme, AppLocalizations l10n) {
     if (_packages.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -333,140 +333,147 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       (p) => p?.rawPackage?.packageType == PackageType.monthly,
       orElse: () => _packages.first,
     );
-    
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
       child: Column(
         children: [
           Text(
             l10n.paywallSelectPlan,
-            style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            style: theme.textTheme.labelSmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.onSurfaceVariant,
+              letterSpacing: 0.8,
+            ),
           ),
-          const SizedBox(height: Spacing.md),
+          const SizedBox(height: Spacing.sm),
           ..._packages.map((pkg) {
             final isSelected = _selectedPackage?.identifier == pkg.identifier;
             final isAnnual = pkg.rawPackage?.packageType == PackageType.annual;
             final isMonthly = pkg.rawPackage?.packageType == PackageType.monthly;
-            
+
             String badgeText = '';
-            if (isAnnual && monthlyPkg != null && monthlyPkg.identifier != pkg.identifier) {
+            if (isAnnual &&
+                monthlyPkg != null &&
+                monthlyPkg.identifier != pkg.identifier) {
               final yearlyCostMonthly = monthlyPkg.price * 12;
-              final savings = ((yearlyCostMonthly - pkg.price) / yearlyCostMonthly * 100).round();
-              badgeText = '${l10n.paywallBestValue} - ${l10n.paywallSavePercent(savings)}';
-            } else if (isMonthly) {
-              badgeText = l10n.paywallMostPopular;
+              final savings =
+                  ((yearlyCostMonthly - pkg.price) / yearlyCostMonthly * 100)
+                      .round();
+              badgeText =
+                  '${l10n.paywallBestValue} · ${l10n.paywallSavePercent(savings)}';
             }
 
             return Padding(
-              padding: const EdgeInsets.only(bottom: Spacing.md),
+              padding: const EdgeInsets.only(bottom: Spacing.sm),
               child: InkWell(
                 onTap: () => setState(() => _selectedPackage = pkg),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(16),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: isSelected ? theme.colorScheme.primary : theme.colorScheme.outlineVariant,
-                      width: isSelected ? 2.5 : 1,
+                      color: isSelected
+                          ? theme.colorScheme.primary
+                          : theme.colorScheme.outlineVariant,
+                      width: isSelected ? 2.5 : 1.5,
                     ),
-                    borderRadius: BorderRadius.circular(20),
-                    color: isAnnual 
-                      ? (isSelected ? theme.colorScheme.primaryContainer.withAlpha(120) : theme.colorScheme.primaryContainer.withAlpha(40)) 
-                      : (isSelected ? theme.colorScheme.surfaceContainerHighest : theme.colorScheme.surface),
-                    boxShadow: isSelected ? [
-                      BoxShadow(
-                        color: theme.colorScheme.primary.withAlpha(30),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      )
-                    ] : null,
+                    borderRadius: BorderRadius.circular(16),
+                    color: isAnnual
+                        ? (isSelected
+                            ? theme.colorScheme.primaryContainer.withAlpha(100)
+                            : theme.colorScheme.primaryContainer.withAlpha(30))
+                        : (isSelected
+                            ? theme.colorScheme.surfaceContainerHighest
+                            : theme.colorScheme.surface),
                   ),
                   child: Stack(
                     clipBehavior: Clip.none,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(Spacing.md),
+                        padding: const EdgeInsets.all(Spacing.sm),
                         child: Row(
                           children: [
-                            Radio<String>(
-                              value: pkg.identifier,
-                              groupValue: _selectedPackage?.identifier,
-                              onChanged: (val) {
-                                if (val != null) {
-                                  setState(() => _selectedPackage = pkg);
-                                }
-                              },
-                              activeColor: theme.colorScheme.primary,
-                              visualDensity: VisualDensity.compact,
-                            ),
-                            const SizedBox(width: 4),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     _mapPackageName(pkg, l10n),
-                                    style: theme.textTheme.titleMedium?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: isSelected ? theme.colorScheme.primary : null,
+                                    style: theme.textTheme.titleSmall?.copyWith(
+                                      fontWeight: FontWeight.w800,
+                                      color: isSelected
+                                          ? theme.colorScheme.primary
+                                          : theme.colorScheme.onSurface,
                                     ),
                                   ),
-                                  if (isAnnual && monthlyPkg != null && monthlyPkg.identifier != pkg.identifier)
+                                  if (isAnnual &&
+                                      monthlyPkg != null &&
+                                      monthlyPkg.identifier != pkg.identifier)
                                     Text(
-                                      l10n.paywallPricePerMonth(formatCurrency(pkg.price / 12, pkg.currencyCode)),
+                                      l10n.paywallPricePerMonth(
+                                        formatCurrency(
+                                          pkg.price / 12,
+                                          pkg.currencyCode,
+                                        ),
+                                      ),
                                       style: theme.textTheme.bodySmall?.copyWith(
-                                        color: isSelected ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
-                                        fontWeight: isSelected ? FontWeight.bold : null,
+                                        color: isSelected
+                                            ? theme.colorScheme.primary
+                                            : theme.colorScheme.onSurfaceVariant,
+                                        fontWeight: isSelected
+                                            ? FontWeight.w600
+                                            : null,
                                       ),
                                     )
-                                  else
+                                  else if (isMonthly)
                                     Text(
-                                      pkg.description,
-                                      style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                                      l10n.paywallPackageMonthlyDesc,
+                                      style: theme.textTheme.bodySmall?.copyWith(
+                                        color: theme.colorScheme.onSurfaceVariant,
+                                      ),
                                     ),
                                 ],
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  pkg.priceString,
-                                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
-                                ),
-                                if (isAnnual)
-                                  Text(
-                                    'Pague uma vez/ano',
-                                    style: theme.textTheme.labelSmall?.copyWith(fontSize: 9, color: theme.colorScheme.outline),
-                                  ),
-                              ],
+                            Text(
+                              pkg.priceString,
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.w900,
+                                color: isSelected
+                                    ? theme.colorScheme.primary
+                                    : theme.colorScheme.onSurface,
+                              ),
                             ),
                           ],
                         ),
                       ),
                       if (badgeText.isNotEmpty)
                         Positioned(
-                          top: -12,
-                          right: 20,
+                          top: -10,
+                          right: 16,
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: Spacing.xs,
+                              vertical: 3,
+                            ),
                             decoration: BoxDecoration(
-                              color: isAnnual ? AppColors.premiumAmber : theme.colorScheme.secondary,
-                              borderRadius: BorderRadius.circular(10),
+                              color: AppColors.premiumAmber,
+                              borderRadius: BorderRadius.circular(8),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withAlpha(40),
                                   blurRadius: 4,
                                   offset: const Offset(0, 2),
-                                )
+                                ),
                               ],
                             ),
                             child: Text(
                               badgeText,
-                              style: TextStyle(
-                                fontSize: 10, 
-                                fontWeight: FontWeight.w900, 
-                                color: isAnnual ? Colors.black : theme.colorScheme.onSecondary,
+                              style: const TextStyle(
+                                fontSize: 9,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black,
                                 letterSpacing: 0.5,
                               ),
                             ),
@@ -694,7 +701,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   ),
                 )
               else
-                _buildPackagesList(theme, l10n),
+                _buildPlans(theme, l10n),
               const SizedBox(height: Spacing.xl),
               _buildFooterLinks(theme, l10n),
               SizedBox(height: MediaQuery.of(context).padding.bottom + 140),
