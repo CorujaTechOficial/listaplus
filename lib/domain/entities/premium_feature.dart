@@ -94,6 +94,9 @@ class ThemeOption {
   final bool isPremium;
 
   static const List<ThemeOption> options = [
+    ThemeOption(name: 'Fresco', color: Color(0xFF2E7D32), isPremium: false),
+    ThemeOption(name: 'Oceano', color: Color(0xFF0277BD), isPremium: false),
+    ThemeOption(name: 'Cálido', color: Color(0xFFE65100), isPremium: false),
     ThemeOption(name: 'Verde', color: Colors.green, isPremium: false),
     ThemeOption(name: 'Azul', color: Colors.blue, isPremium: false),
     ThemeOption(name: 'Roxo', color: Colors.purple, isPremium: false),
