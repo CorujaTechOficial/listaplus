@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -472,13 +471,6 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
                     onItemsAdded: () {
                       setState(() {
                         _listExpanded = true;
-                      });
-                      Timer(const Duration(seconds: 3), () {
-                        if (mounted) {
-                          setState(() {
-                            _listExpanded = false;
-                          });
-                        }
                       });
                     },
                     onNavigateToRecipe: (recipeId) {
