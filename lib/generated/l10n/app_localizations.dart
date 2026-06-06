@@ -1803,13 +1803,13 @@ abstract class AppLocalizations {
   /// No description provided for @paywallSocialProof.
   ///
   /// In en, this message translates to:
-  /// **'Join thousands of smart shoppers saving time and money'**
+  /// **'+2,400 families use it'**
   String get paywallSocialProof;
 
   /// No description provided for @paywallCtaUnlock.
   ///
   /// In en, this message translates to:
-  /// **'Unlock KipiList PRO'**
+  /// **'Unlock PRO'**
   String get paywallCtaUnlock;
 
   /// No description provided for @paywallCtaTrial.
@@ -1833,7 +1833,7 @@ abstract class AppLocalizations {
   /// No description provided for @paywallSafeCheckout.
   ///
   /// In en, this message translates to:
-  /// **'Secure payment via App Store/Play Store'**
+  /// **'Secure payment'**
   String get paywallSafeCheckout;
 
   /// No description provided for @paywallSelectPlan.
@@ -1895,6 +1895,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restore'**
   String get paywallRestore;
+
+  /// No description provided for @paywallHeroHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Kipi AI always by your side'**
+  String get paywallHeroHeadline;
+
+  /// No description provided for @paywallHeroSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add items, organize lists and save time with AI in your pocket'**
+  String get paywallHeroSubtitle;
+
+  /// No description provided for @paywallBenefit1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Adds, organizes and suggests items 24/7'**
+  String get paywallBenefit1Desc;
+
+  /// No description provided for @paywallBenefit2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'No 3-list limit'**
+  String get paywallBenefit2Desc;
+
+  /// No description provided for @paywallBenefit3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense tracking and family lists'**
+  String get paywallBenefit3Desc;
+
+  /// No description provided for @paywallPackageMonthlyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Full flexibility'**
+  String get paywallPackageMonthlyDesc;
+
+  /// No description provided for @paywallCtaTrialDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Start free — {days} days'**
+  String paywallCtaTrialDays(int days);
 
   /// No description provided for @premiumUpgrade.
   ///

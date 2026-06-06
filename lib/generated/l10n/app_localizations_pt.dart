@@ -858,11 +858,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'Nunca mais esqueci um item da lista. O chat com IA é sensacional!';
 
   @override
-  String get paywallSocialProof =>
-      'Join thousands of smart shoppers saving time and money';
+  String get paywallSocialProof => '+2,400 families use it';
 
   @override
-  String get paywallCtaUnlock => 'Unlock KipiList PRO';
+  String get paywallCtaUnlock => 'Unlock PRO';
 
   @override
   String get paywallCtaTrial => 'Start My Free Trial';
@@ -874,7 +873,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywallMostPopular => 'MOST POPULAR';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment via App Store/Play Store';
+  String get paywallSafeCheckout => 'Secure payment';
 
   @override
   String get paywallSelectPlan => 'Escolha seu plano:';
@@ -909,6 +908,30 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get paywallRestore => 'Restaurar';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI always by your side';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Add items, organize lists and save time with AI in your pocket';
+
+  @override
+  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+
+  @override
+  String get paywallBenefit2Desc => 'No 3-list limit';
+
+  @override
+  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Start free — $days days';
+  }
 
   @override
   String get premiumUpgrade => 'Faça upgrade para desbloquear';
@@ -2474,11 +2497,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Nunca mais esqueci um item da lista. O chat com IA é sensacional!';
 
   @override
-  String get paywallSocialProof =>
-      'Junte-se a milhares de usuários economizando tempo e dinheiro';
+  String get paywallSocialProof => '+2.400 famílias usam';
 
   @override
-  String get paywallCtaUnlock => 'Desbloquear KipiList PRO';
+  String get paywallCtaUnlock => 'Desbloquear PRO';
 
   @override
   String get paywallCtaTrial => 'Experimentar Grátis';
@@ -2490,7 +2512,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get paywallMostPopular => 'MAIS POPULAR';
 
   @override
-  String get paywallSafeCheckout => 'Pagamento seguro via App Store/Play Store';
+  String get paywallSafeCheckout => 'Pagamento seguro';
 
   @override
   String get paywallSelectPlan => 'Escolha seu plano:';
@@ -2525,6 +2547,30 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get paywallRestore => 'Restaurar';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi IA sempre do seu lado';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Adicione itens, organize listas e economize tempo com IA no bolso';
+
+  @override
+  String get paywallBenefit1Desc => 'Adiciona, organiza e sugere itens 24h';
+
+  @override
+  String get paywallBenefit2Desc => 'Sem o limite de 3 listas';
+
+  @override
+  String get paywallBenefit3Desc => 'Controle de gastos e listas em família';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Flexibilidade total';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Começar grátis — $days dias';
+  }
 
   @override
   String get premiumUpgrade => 'Faça upgrade para desbloquear';
