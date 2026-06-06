@@ -160,59 +160,92 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     return '';
   }
 
-  Widget _buildHeader(ThemeData theme, AppLocalizations l10n) {
+  Widget _buildHero(ThemeData theme, AppLocalizations l10n) {
     final trialLabel = _trialLabel(l10n);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            theme.colorScheme.primary.withAlpha((0.8 * 255).toInt()),
-            theme.colorScheme.tertiary.withAlpha((0.6 * 255).toInt()),
+            theme.colorScheme.primary.withAlpha((0.9 * 255).toInt()),
+            theme.colorScheme.tertiary.withAlpha((0.7 * 255).toInt()),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.xl, vertical: Spacing.xl),
+      padding: const EdgeInsets.fromLTRB(
+        Spacing.xl, Spacing.xl, Spacing.xl, Spacing.lg,
+      ),
       child: Column(
         children: [
-          if (trialLabel.isNotEmpty)
+          Image.asset(
+            'assets/images/kipi/kipi_welcome.png',
+            height: 100,
+            filterQuality: FilterQuality.high,
+          ),
+          if (trialLabel.isNotEmpty) ...[
+            const SizedBox(height: Spacing.sm),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xs),
+              padding: const EdgeInsets.symmetric(
+                horizontal: Spacing.sm, vertical: Spacing.xxs,
+              ),
               decoration: BoxDecoration(
                 color: AppColors.premiumAmber,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
                 trialLabel,
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 12,
                   color: Colors.black,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),
-          if (trialLabel.isNotEmpty) const SizedBox(height: Spacing.md),
-          const Icon(
-            Icons.workspace_premium,
-            size: 64,
-            color: AppColors.premiumAmber,
-          ),
+          ],
           const SizedBox(height: Spacing.sm),
           Text(
-            'KipiList PRO',
-            style: theme.textTheme.headlineMedium?.copyWith(
-              fontWeight: FontWeight.bold,
+            l10n.paywallHeroHeadline,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.w900,
               color: Colors.white,
+              height: 1.2,
             ),
           ),
           const SizedBox(height: Spacing.xs),
           Text(
-            l10n.onboardingPremiumSubtitle,
+            l10n.paywallHeroSubtitle,
             textAlign: TextAlign.center,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: Colors.white.withAlpha((0.9 * 255).toInt()),
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: Colors.white.withAlpha((0.85 * 255).toInt()),
+              height: 1.45,
+            ),
+          ),
+          const SizedBox(height: Spacing.sm),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: Spacing.sm, vertical: Spacing.xxs,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white.withAlpha((0.15 * 255).toInt()),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('⭐⭐⭐⭐⭐', style: TextStyle(fontSize: 10)),
+                const SizedBox(width: 5),
+                Text(
+                  l10n.paywallSocialProof,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: Colors.white.withAlpha((0.9 * 255).toInt()),
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -293,20 +326,21 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           ),
           const SizedBox(height: Spacing.sm),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: _comparisonCard(
                   theme,
                   l10n.paywallLabelCommon,
-                  Icons.close,
+                  Icons.sentiment_dissatisfied,
                   [
                     l10n.paywallBeforeItem1,
                     l10n.paywallBeforeItem2,
                     l10n.paywallBeforeItem3,
                     l10n.paywallBeforeItem4,
                   ],
-                  theme.colorScheme.errorContainer.withAlpha(100),
-                  theme.colorScheme.error,
+                  theme.colorScheme.surfaceContainerHighest.withAlpha(100),
+                  theme.colorScheme.outline,
                 ),
               ),
               const SizedBox(width: Spacing.sm),
@@ -314,14 +348,14 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                 child: _comparisonCard(
                   theme,
                   l10n.paywallLabelPro,
-                  Icons.check,
+                  Icons.auto_awesome,
                   [
                     l10n.paywallAfterItem1,
                     l10n.paywallAfterItem2,
                     l10n.paywallAfterItem3,
                     l10n.paywallAfterItem4,
                   ],
-                  theme.colorScheme.primaryContainer,
+                  theme.colorScheme.primaryContainer.withAlpha(150),
                   theme.colorScheme.primary,
                 ),
               ),
@@ -338,41 +372,65 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     IconData icon,
     List<String> items,
     Color bgColor,
-    Color iconColor,
+    Color accentColor,
   ) {
+    final isPro = label == 'KipiList PRO';
     return Container(
       padding: const EdgeInsets.all(Spacing.sm),
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: iconColor.withAlpha(50)),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: accentColor.withAlpha(50)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(icon, size: 16, color: iconColor),
-              const SizedBox(width: 4),
+              Container(
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: accentColor.withAlpha(40),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, size: 12, color: accentColor),
+              ),
+              const SizedBox(width: 6),
               Text(
                 label,
                 style: theme.textTheme.labelMedium?.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: iconColor,
+                  color: accentColor,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: Spacing.xs),
+          const SizedBox(height: Spacing.sm),
           ...items.map((item) => Padding(
-            padding: const EdgeInsets.only(bottom: 2),
-            child: Text(
-              item,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurface,
-                decoration: label != 'KipiList PRO' ? TextDecoration.lineThrough : null,
-                decorationColor: theme.colorScheme.onSurface.withAlpha(100),
-              ),
+            padding: const EdgeInsets.only(bottom: 6),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Icon(
+                    isPro ? Icons.check_circle : Icons.error_outline,
+                    size: 12,
+                    color: isPro ? Colors.green : theme.colorScheme.error.withAlpha(150),
+                  ),
+                ),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    item,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurface.withAlpha(isPro ? 255 : 180),
+                      fontSize: 11,
+                      fontWeight: isPro ? FontWeight.w500 : null,
+                    ),
+                  ),
+                ),
+              ],
             ),
           )),
         ],
@@ -476,33 +534,44 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             l10n.paywallSelectPlan,
             style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: Spacing.sm),
+          const SizedBox(height: Spacing.md),
           ..._packages.map((pkg) {
             final isSelected = _selectedPackage?.identifier == pkg.identifier;
             final isAnnual = pkg.rawPackage?.packageType == PackageType.annual;
+            final isMonthly = pkg.rawPackage?.packageType == PackageType.monthly;
             
             String badgeText = '';
             if (isAnnual && monthlyPkg != null && monthlyPkg.identifier != pkg.identifier) {
               final yearlyCostMonthly = monthlyPkg.price * 12;
               final savings = ((yearlyCostMonthly - pkg.price) / yearlyCostMonthly * 100).round();
-              badgeText = l10n.paywallSavePercent(savings);
+              badgeText = '${l10n.paywallBestValue} - ${l10n.paywallSavePercent(savings)}';
+            } else if (isMonthly) {
+              badgeText = l10n.paywallMostPopular;
             }
 
             return Padding(
-              padding: const EdgeInsets.only(bottom: Spacing.sm),
+              padding: const EdgeInsets.only(bottom: Spacing.md),
               child: InkWell(
                 onTap: () => setState(() => _selectedPackage = pkg),
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
+                borderRadius: BorderRadius.circular(20),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: isSelected ? theme.colorScheme.primary : theme.colorScheme.outlineVariant,
-                      width: isSelected ? 2 : 1,
+                      width: isSelected ? 2.5 : 1,
                     ),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(20),
                     color: isAnnual 
-                      ? (isSelected ? theme.colorScheme.primaryContainer.withAlpha(80) : theme.colorScheme.primaryContainer.withAlpha(40)) 
+                      ? (isSelected ? theme.colorScheme.primaryContainer.withAlpha(120) : theme.colorScheme.primaryContainer.withAlpha(40)) 
                       : (isSelected ? theme.colorScheme.surfaceContainerHighest : theme.colorScheme.surface),
+                    boxShadow: isSelected ? [
+                      BoxShadow(
+                        color: theme.colorScheme.primary.withAlpha(30),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      )
+                    ] : null,
                   ),
                   child: Stack(
                     clipBehavior: Clip.none,
@@ -511,31 +580,36 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                         padding: const EdgeInsets.all(Spacing.md),
                         child: Row(
                           children: [
-                            // ignore: deprecated_member_use
                             Radio<String>(
                               value: pkg.identifier,
-                              // ignore: deprecated_member_use
                               groupValue: _selectedPackage?.identifier,
-                              // ignore: deprecated_member_use
                               onChanged: (val) {
                                 if (val != null) {
                                   setState(() => _selectedPackage = pkg);
                                 }
                               },
                               activeColor: theme.colorScheme.primary,
+                              visualDensity: VisualDensity.compact,
                             ),
+                            const SizedBox(width: 4),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     _mapPackageName(pkg, l10n),
-                                    style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                                    style: theme.textTheme.titleMedium?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: isSelected ? theme.colorScheme.primary : null,
+                                    ),
                                   ),
                                   if (isAnnual && monthlyPkg != null && monthlyPkg.identifier != pkg.identifier)
                                     Text(
                                       l10n.paywallPricePerMonth(formatCurrency(pkg.price / 12, pkg.currencyCode)),
-                                      style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.primary),
+                                      style: theme.textTheme.bodySmall?.copyWith(
+                                        color: isSelected ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
+                                        fontWeight: isSelected ? FontWeight.bold : null,
+                                      ),
                                     )
                                   else
                                     Text(
@@ -545,26 +619,48 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                                 ],
                               ),
                             ),
-                            Text(
-                              pkg.priceString,
-                              style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  pkg.priceString,
+                                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
+                                ),
+                                if (isAnnual)
+                                  Text(
+                                    'Pague uma vez/ano',
+                                    style: theme.textTheme.labelSmall?.copyWith(fontSize: 9, color: theme.colorScheme.outline),
+                                  ),
+                              ],
                             ),
                           ],
                         ),
                       ),
                       if (badgeText.isNotEmpty)
                         Positioned(
-                          top: -10,
-                          right: 24,
+                          top: -12,
+                          right: 20,
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                             decoration: BoxDecoration(
-                              color: AppColors.premiumAmber,
-                              borderRadius: BorderRadius.circular(8),
+                              color: isAnnual ? AppColors.premiumAmber : theme.colorScheme.secondary,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withAlpha(40),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
+                                )
+                              ],
                             ),
                             child: Text(
                               badgeText,
-                              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black),
+                              style: TextStyle(
+                                fontSize: 10, 
+                                fontWeight: FontWeight.w900, 
+                                color: isAnnual ? Colors.black : theme.colorScheme.onSecondary,
+                                letterSpacing: 0.5,
+                              ),
                             ),
                           ),
                         ),
@@ -582,16 +678,12 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
   String _ctaText(AppLocalizations l10n) {
     final pkg = _selectedPackage;
     if (pkg == null) {
-      return l10n.buy;
+      return l10n.paywallCtaUnlock;
     }
     if (pkg.hasFreeTrial) {
-      final days = pkg.trialPeriodDays!;
-      final label = days >= 30
-          ? l10n.paywallTrialMonths(days ~/ 30).toLowerCase()
-          : l10n.paywallTrialDays(days).toLowerCase();
-      return '${l10n.next} $label';
+      return l10n.paywallCtaTrial;
     }
-    return l10n.onboardingSubscribeCta;
+    return l10n.paywallCtaUnlock;
   }
 
   Widget _buildStickyCta(ThemeData theme, AppLocalizations l10n) {
@@ -604,9 +696,9 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
         color: theme.colorScheme.surface,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withAlpha((0.1 * 255).toInt()),
-            blurRadius: 8,
-            offset: const Offset(0, -2),
+            color: Colors.black.withAlpha((0.08 * 255).toInt()),
+            blurRadius: 10,
+            offset: const Offset(0, -4),
           ),
         ],
       ),
@@ -615,28 +707,43 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
         children: [
           SizedBox(
             width: double.infinity,
-            height: 52,
+            height: 56,
             child: ElevatedButton(
               onPressed: _selectedPackage != null ? _purchase : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: theme.colorScheme.primary,
                 foregroundColor: theme.colorScheme.onPrimary,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(28),
                 ),
-                elevation: 2,
+                elevation: 4,
+                shadowColor: theme.colorScheme.primary.withAlpha(100),
               ),
               child: Text(
                 _ctaText(l10n),
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, letterSpacing: 0.5),
               ),
             ),
           ),
-          const SizedBox(height: Spacing.xxs),
+          const SizedBox(height: Spacing.xs),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.security, size: 12, color: theme.colorScheme.outline),
+              const SizedBox(width: 4),
+              Text(
+                l10n.paywallSafeCheckout,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant.withAlpha((0.7 * 255).toInt()),
+                ),
+              ),
+            ],
+          ),
           Text(
             l10n.paywallCancelAnytime,
             style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant.withAlpha((0.7 * 255).toInt()),
+              fontSize: 10,
+              color: theme.colorScheme.outline,
             ),
           ),
         ],
@@ -759,7 +866,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   ),
                 ),
               ],
-              _buildHeader(theme, l10n),
+              _buildHero(theme, l10n),
               const SizedBox(height: Spacing.md),
               _buildBeforeAfter(theme, l10n),
               const SizedBox(height: Spacing.lg),
