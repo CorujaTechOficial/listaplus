@@ -4,6 +4,10 @@
   "@appTitle": { "description": "Main app title" },
   "lists": "Lists",
   "pantry": "Pantry",
+  "navChat": "Chat",
+  "navRecipes": "Recipes",
+  "navLists": "Lists",
+  "navMealPlanner": "Menu",
 
   "@_Common": "description: Common actions",
   "cancel": "Cancel",

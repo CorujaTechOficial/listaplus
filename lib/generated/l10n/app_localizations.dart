@@ -306,6 +306,30 @@ abstract class AppLocalizations {
   /// **'Pantry'**
   String get pantry;
 
+  /// No description provided for @navChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat'**
+  String get navChat;
+
+  /// No description provided for @navRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipes'**
+  String get navRecipes;
+
+  /// No description provided for @navLists.
+  ///
+  /// In en, this message translates to:
+  /// **'Lists'**
+  String get navLists;
+
+  /// No description provided for @navMealPlanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Menu'**
+  String get navMealPlanner;
+
   /// No description provided for @cancel.
   ///
   /// In en, this message translates to:
@@ -3281,6 +3305,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hold to select • Swipe to remove'**
   String get gestureHint;
+
+  /// No description provided for @catalogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalog'**
+  String get catalogTitle;
+
+  /// No description provided for @catalogMyFrequents.
+  ///
+  /// In en, this message translates to:
+  /// **'My Frequents'**
+  String get catalogMyFrequents;
+
+  /// No description provided for @catalogSearchGlobal.
+  ///
+  /// In en, this message translates to:
+  /// **'Search any product...'**
+  String get catalogSearchGlobal;
+
+  /// No description provided for @catalogSearchInCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Search in {category}...'**
+  String catalogSearchInCategory(String category);
+
+  /// No description provided for @catalogSortPopular.
+  ///
+  /// In en, this message translates to:
+  /// **'Most popular'**
+  String get catalogSortPopular;
+
+  /// No description provided for @catalogSortAZ.
+  ///
+  /// In en, this message translates to:
+  /// **'A–Z'**
+  String get catalogSortAZ;
+
+  /// No description provided for @catalogFilterNational.
+  ///
+  /// In en, this message translates to:
+  /// **'Nationals'**
+  String get catalogFilterNational;
+
+  /// No description provided for @catalogRareSection.
+  ///
+  /// In en, this message translates to:
+  /// **'less common in your country'**
+  String get catalogRareSection;
+
+  /// No description provided for @catalogAddItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Add {count} {count, plural, one{item} other{items}} →'**
+  String catalogAddItems(int count);
+
+  /// No description provided for @catalogProductNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Product not found, type the name'**
+  String get catalogProductNotFound;
+
+  /// No description provided for @catalogBrowse.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Catalog'**
+  String get catalogBrowse;
 }
 
 class _AppLocalizationsDelegate

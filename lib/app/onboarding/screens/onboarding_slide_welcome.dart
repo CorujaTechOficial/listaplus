@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
@@ -25,8 +24,8 @@ class OnboardingSlideWelcome extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: Center(
-              child: SvgPicture.asset(
-                'assets/images/kipi/kipi_welcome.svg',
+              child: Image.asset(
+                'assets/images/kipi/kipi_welcome.png',
                 width: 160,
                 height: 160,
               ),

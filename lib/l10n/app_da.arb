@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "{remaining} credits tilbage",
   "aiEnergy": "AI energi",
   "aiError": "Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.",
+  "aiLimitAlmostReached": "Næsten ude af AI-meddelelser",
+  "aiTeaserFallback": "Abonner på Premium for at låse op for det fulde svar og få ubegrænsede AI-tip til dine indkøb...",
   "aiVoiceCommandTooltip": "AI-stemmekommando (Premium)",
   "allTags": "Alle",
   "alreadyPurchased": "Allerede købt",
@@ -385,6 +411,17 @@
   "catCleaning": "Rengøring",
   "catFruits": "Frugt",
   "catOthers": "Andet",
+  "catalogAddItems": "Tilføj {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Gennemse kataloget",
+  "catalogFilterNational": "Nationale",
+  "catalogMyFrequents": "Mine hyppige",
+  "catalogProductNotFound": "Produktet blev ikke fundet. Indtast navnet",
+  "catalogRareSection": "mindre almindelig i dit land",
+  "catalogSearchGlobal": "Søg efter ethvert produkt...",
+  "catalogSearchInCategory": "Søg i {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Mest populær",
+  "catalogTitle": "Katalog",
   "category": "Kategori",
   "chatError": "Fejl ved indlæsning af chat: {error}",
   "chatHint": "Skriv din besked...",
@@ -461,6 +498,8 @@
   "estimated": "Anslået",
   "estimatedCost": "Anslået",
   "estimatedPrice": "Anslået pris",
+  "exit": "Udgang",
+  "exitShoppingMode": "Afslut indkøbstilstand",
   "exportData": "Eksportér data",
   "exportDataSubtitle": "Gem alle lister som JSON",
   "exportExcel": "Eksportér som Excel",
@@ -499,6 +538,7 @@
   "generalAssistant": "Generel assistent",
   "generalHelp": "Hvordan kan jeg hjælpe med din shopping i dag?",
   "generateShoppingList": "Generér indkøbsliste",
+  "gestureHint": "Hold nede for at vælge • Stryg for at fjerne",
   "globalAssistant": "Global assistent",
   "howCanIHelp": "Hvordan kan jeg hjælpe?",
   "idealQty": "Ideel ant",
@@ -522,6 +562,7 @@
   "itemsPurchasedCount": "{purchased} af {total} købt",
   "itemsPurchasedShort": "{purchased}/{total} købt",
   "itemsWillBeAdded": "{count} vare(r) vil blive tilføjet",
+  "kipiListTitle": "KipiList",
   "language": "Sprog",
   "languageEnglish": "engelsk",
   "languagePortuguese": "Português (Brasil)",
@@ -536,7 +577,6 @@
   "listHistory": "Listehistorik",
   "listNameLabel": "Navn på liste",
   "listOrganizedMagic": "Listen er magisk organiseret efter kategorier! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Lytter...",
   "lists": "Lister",
   "loading": "Indlæser...",
@@ -587,6 +627,10 @@
   "monthlyBudgetTitle": "Månedligt budget",
   "myLists": "Mine lister",
   "myRecipes": "Mine opskrifter",
+  "navChat": "Chat",
+  "navLists": "Lister",
+  "navMealPlanner": "Menu",
+  "navRecipes": "Opskrifter",
   "newChat": "Ny chat",
   "newListTitle": "Ny indkøbsliste",
   "newPantryList": "Indkøb til spisekammer",
@@ -645,7 +689,56 @@
   "pantryEmpty": "Tomt spisekammer",
   "pantryEmptySubtitle": "Tilføj produkter, du vil have derhjemme",
   "pantryItemRemoved": "Vare fjernet",
+  "paywallAfterItem1": "Korn",
+  "paywallAfterItem2": "Rensning",
+  "paywallAfterItem3": "Kød",
+  "paywallAfterItem4": "Bageri",
+  "paywallBeforeAfterTitle": "AI før og efter:",
+  "paywallBeforeItem1": "ris",
+  "paywallBeforeItem2": "sæbe",
+  "paywallBeforeItem3": "kød",
+  "paywallBeforeItem4": "brød",
+  "paywallBenefit1Desc": "Tilføjer, organiserer og foreslår elementer 24/7",
+  "paywallBenefit2Desc": "Ingen 3-liste grænse",
+  "paywallBenefit3Desc": "Udgiftssporing og familielister",
+  "paywallBestValue": "BEDSTE VÆRDI",
+  "paywallCancelAnytime": "Annuller når som helst. Ingen forpligtelse.",
+  "paywallCtaTrialDays": "Start gratis - {days} dage",
+  "paywallCtaUnlock": "Lås PRO op",
+  "paywallFeatureExpenseControl": "Udgiftskontrol",
+  "paywallFeatureSharing": "Deling",
+  "paywallFeatureSmartAI": "Smart AI",
+  "paywallFeatureUnlimitedLists": "Ubegrænsede lister",
+  "paywallFeaturesTitle": "Alt hvad du behøver:",
+  "paywallHeroHeadline": "Kipi AI altid ved din side",
+  "paywallHeroSubtitle": "Tilføj genstande, organiser lister og spar tid med kunstig intelligens i lommen",
+  "paywallLabelCommon": "Fælles",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Fejl ved indlæsning af tilbud. Prøv igen.",
+  "paywallMostPopular": "MEST POPULÆR",
+  "paywallPackageAnnual": "Årsplan",
+  "paywallPackageLifetime": "Livstidsadgang",
+  "paywallPackageMonthly": "Månedsplan",
+  "paywallPackageMonthlyDesc": "Fuld fleksibilitet",
+  "paywallPolicy": "Privatlivspolitik",
+  "paywallPricePerMonth": "Kun {price}/måned",
+  "paywallPurchaseError": "Kunne ikke gennemføre købet. Prøv igen.",
+  "paywallRestore": "Gendan",
+  "paywallRestoreError": "Der blev ikke fundet noget aktivt abonnement at gendanne.",
+  "paywallSafeCheckout": "Sikker betaling",
+  "paywallSavePercent": "SPAR {percent}%",
+  "paywallSelectPlan": "Vælg din plan:",
+  "paywallSocialProof": "+2.400 familier bruger det",
+  "paywallTerms": "Vilkår for brug",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI organiserer mine indkøb på få sekunder. Jeg sparer 20 min pr. markedsrejse.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Jeg har aldrig glemt et listeelement igen. AI-chatten er sensationel!",
+  "paywallTestimonialsTitle": "Hvad vores brugere siger:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DAGE GRATIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} UGE GRATIS} other{{count} UGE GRATIS}}",
   "prefAIAssistant": "Personlig AI-assistent",
   "prefCustomThemes": "Brugerdefinerede temaer",
   "prefExportData": "Eksportér data",
@@ -660,6 +753,7 @@
   "prepTimeMinutes": "Tilberedningstid (minutter)",
   "privacy": "Privatliv",
   "productName": "Produktnavn",
+  "profile": "Profil",
   "purchaseError": "Fejl ved behandling af køb. Prøv igen.",
   "quantityFull": "Mængde",
   "quantityShort": "Ant",
@@ -757,6 +851,7 @@
   "undo": "Fortryd",
   "unit": "Enhed",
   "unitPack": "pakke",
+  "unlockAi": "Lås op for ubegrænset AI",
   "unlockFullResponse": "Lås op for fuld respons",
   "unmark": "Fjern markering",
   "upgrade": "Opgrader",

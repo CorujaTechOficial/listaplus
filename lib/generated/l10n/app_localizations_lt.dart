@@ -18,6 +18,18 @@ class AppLocalizationsLt extends AppLocalizations {
   String get pantry => 'Sandėliukas';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Receptai';
+
+  @override
+  String get navLists => 'Sąrašai';
+
+  @override
+  String get navMealPlanner => 'Meniu';
+
+  @override
   String get cancel => 'Atšaukti';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Pridėta!';
+
+  @override
+  String get profile => 'Profilis';
+
+  @override
+  String get exitShoppingMode => 'Išeikite iš apsipirkimo režimo';
+
+  @override
+  String get exit => 'Išeiti';
 
   @override
   String selectedItems(int count) {
@@ -594,7 +615,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get chatHint => 'Įrašykite savo žinutę...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'Atrakinkite AI, kad galėtumėte kalbėtis';
 
   @override
   String chatError(String error) {
@@ -616,14 +637,14 @@ class AppLocalizationsLt extends AppLocalizations {
       'Atsiprašome, įvyko klaida apdorojant jūsų užklausą. Patikrinkite ryšį arba bandykite dar kartą vėliau.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Beveik baigėsi AI pranešimai';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Atrakinkite neribotą AI';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Prenumeruokite „Premium“, kad atrakintumėte visą atsakymą ir gautumėte neribotus AI patarimus, kaip apsipirkti...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -755,17 +776,20 @@ class AppLocalizationsLt extends AppLocalizations {
   String get paywallTitle => '„KipiList Premium“.';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Įkeliant pasiūlymus įvyko klaida. Bandykite dar kartą.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Nepavyko užbaigti pirkimo. Bandykite dar kartą.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Nerasta aktyvios prenumeratos, kurią būtų galima atkurti.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days DIENOS NEMOKAMAI';
   }
 
   @override
@@ -773,8 +797,8 @@ class AppLocalizationsLt extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count SAVAITĖS NEMOKAMA',
+      one: '$count NEMOKAMA SAVAITĖ',
     );
     return '$_temp0';
   }
@@ -784,148 +808,149 @@ class AppLocalizationsLt extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count MĖNESIO NEMOKAMAI',
+      one: '$count MĖNESIO NEMOKAMAI',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Viskas ko reikia:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Neriboti sąrašai';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Išmanusis AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Išlaidų kontrolė';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Dalijimasis';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI prieš ir po:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Dažnas';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'ryžių';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'muilas';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'mėsa';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'duona';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Grūdai';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Valymas';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Mėsos';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Kepyklėlė';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Ką sako mūsų vartotojai:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI sutvarko mano apsipirkimą per kelias sekundes. Sutaupau 20 min vienai kelionei į turgų.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'Charlesas M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Niekada daugiau nepamiršau sąrašo elemento. AI pokalbis yra sensacingas!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => 'Ja naudojasi +2 400 šeimų';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Atrakinkite PRO';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'GERIAUSIA VERTĖ';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'POPULIARIAUSI';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Saugus mokėjimas';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Pasirinkite savo planą:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'SUTAUPYTI $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Tik $price/mėn';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Metinis planas';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Mėnesio planas';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Prieiga visą gyvenimą';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'Atšaukti bet kada. Jokio įsipareigojimo.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Privatumo politika';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Naudojimo sąlygos';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Atkurti';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI visada šalia jūsų';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Pridėkite elementus, tvarkykite sąrašus ir sutaupykite laiko naudodami AI kišenėje';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Prideda, tvarko ir siūlo elementus 24 valandas per parą, 7 dienas per savaitę';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Nėra 3 sąrašų apribojimo';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Išlaidų stebėjimas ir šeimų sąrašai';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Visiškas lankstumas';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Pradėkite nemokamai – $days dienų';
   }
 
   @override
@@ -1651,4 +1676,51 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Gaukite „KipiList Premium“ 7 dienas!';
+
+  @override
+  String get gestureHint =>
+      'Palaikykite, kad pasirinktumėte • Braukite, kad pašalintumėte';
+
+  @override
+  String get catalogTitle => 'Katalogas';
+
+  @override
+  String get catalogMyFrequents => 'Mano dažniai';
+
+  @override
+  String get catalogSearchGlobal => 'Ieškokite bet kurio produkto...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Ieškoti $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Populiariausias';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nacionaliniai';
+
+  @override
+  String get catalogRareSection => 'mažiau paplitusi jūsų šalyje';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Pridėti $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Prekė nerasta, įveskite pavadinimą';
+
+  @override
+  String get catalogBrowse => 'Naršyti katalogą';
 }

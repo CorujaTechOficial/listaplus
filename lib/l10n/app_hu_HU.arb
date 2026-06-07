@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "{remaining} kredit maradt",
   "aiEnergy": "AI energia",
   "aiError": "Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.",
+  "aiLimitAlmostReached": "Majdnem kifogytak az AI-üzenetek",
+  "aiTeaserFallback": "Iratkozzon fel a Premiumra, hogy feloldja a teljes választ, és korlátlan számú mesterséges intelligenciával kapcsolatos tippet kapjon a vásárláshoz...",
   "aiVoiceCommandTooltip": "AI hangparancs (Prémium)",
   "allTags": "Összes",
   "alreadyPurchased": "Már megvásárolva",
@@ -442,9 +468,21 @@
   "catCleaning": "Tisztítás",
   "catFruits": "Gyümölcsök",
   "catOthers": "Egyéb",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} hozzáadása →",
+  "catalogBrowse": "Tallózás a katalógusban",
+  "catalogFilterNational": "Nemzetiek",
+  "catalogMyFrequents": "Gyakoriságaim",
+  "catalogProductNotFound": "A termék nem található, írja be a nevet",
+  "catalogRareSection": "kevésbé gyakori az Ön országában",
+  "catalogSearchGlobal": "Keressen bármilyen terméket...",
+  "catalogSearchInCategory": "Keresés itt: {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "A legnépszerűbb",
+  "catalogTitle": "Katalógus",
   "category": "Kategória",
   "chatError": "Hiba a chat betöltésekor: {error}",
   "chatHint": "Írja be az üzenetét...",
+  "chatHintBlocked": "Oldja fel az AI-t a csevegéshez",
   "chatSubtitle": "Kérdezzen termékajánlatokat, recepteket vagy megtakarítási tippeket.",
   "chatSubtitleShort": "Érdeklődjön árakról, receptekről, szervezésről...",
   "chooseCurrency": "Válassza a Pénznem lehetőséget",
@@ -517,6 +555,8 @@
   "estimated": "Becsült",
   "estimatedCost": "Becsült",
   "estimatedPrice": "Becsült ár",
+  "exit": "Kijárat",
+  "exitShoppingMode": "Lépjen ki a Vásárlás módból",
   "exportData": "Adatok exportálása",
   "exportDataSubtitle": "Összes lista mentése JSON-ként",
   "exportExcel": "Exportálás Excel-ként",
@@ -555,6 +595,7 @@
   "generalAssistant": "Általános asszisztens",
   "generalHelp": "Miben segíthetek a mai bevásárlásban?",
   "generateShoppingList": "Bevásárlólista generálása",
+  "gestureHint": "Tartsa lenyomva a kiválasztáshoz • Csúsztassa az ujját az eltávolításhoz",
   "globalAssistant": "Globális asszisztens",
   "howCanIHelp": "Hogyan segíthetek?",
   "idealQty": "Ideális menny.",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "{total}/{purchased} megvásárolva",
   "itemsPurchasedShort": "{purchased}/{total} megvásárolva",
   "itemsWillBeAdded": "{count} elem kerül hozzáadásra",
+  "kipiListTitle": "KipiList",
   "language": "Nyelv",
   "languageEnglish": "angol",
   "languagePortuguese": "portugál (Brazil)",
@@ -592,7 +634,6 @@
   "listHistory": "Lista előzmények",
   "listNameLabel": "Lista neve",
   "listOrganizedMagic": "Lista varázslatosan kategóriákba rendezve! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Hallgat...",
   "lists": "Listák",
   "loading": "Betöltés...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "Havi költségvetés",
   "myLists": "Listáim",
   "myRecipes": "Receptjeim",
+  "navChat": "Chat",
+  "navLists": "Listák",
+  "navMealPlanner": "Menü",
+  "navRecipes": "Receptek",
   "newChat": "Új csevegés",
   "newListTitle": "Új bevásárlólista",
   "newPantryList": "Kamra bevásárlás",
@@ -701,7 +746,56 @@
   "pantryEmpty": "Üres kamra",
   "pantryEmptySubtitle": "Adja hozzá a termékeket, amelyeket otthon szeretne tartani",
   "pantryItemRemoved": "Elem eltávolítva",
+  "paywallAfterItem1": "Szemek",
+  "paywallAfterItem2": "Tisztítás",
+  "paywallAfterItem3": "Húsok",
+  "paywallAfterItem4": "Pékség",
+  "paywallBeforeAfterTitle": "AI előtt és után:",
+  "paywallBeforeItem1": "rizs",
+  "paywallBeforeItem2": "szappan",
+  "paywallBeforeItem3": "hús",
+  "paywallBeforeItem4": "kenyér",
+  "paywallBenefit1Desc": "Hozzáad, rendszerez és javasol elemeket a hét minden napján, 24 órában",
+  "paywallBenefit2Desc": "Nincs 3 listás korlát",
+  "paywallBenefit3Desc": "Költségkövetés és családlisták",
+  "paywallBestValue": "LEGJOBB ÉRTÉK",
+  "paywallCancelAnytime": "Bármikor lemondhatja. Nincs elkötelezettség.",
+  "paywallCtaTrialDays": "Kezdje ingyen – {days} nap",
+  "paywallCtaUnlock": "A PRO feloldása",
+  "paywallFeatureExpenseControl": "Költségszabályozás",
+  "paywallFeatureSharing": "Megosztás",
+  "paywallFeatureSmartAI": "Intelligens AI",
+  "paywallFeatureUnlimitedLists": "Korlátlan listák",
+  "paywallFeaturesTitle": "Minden, amire szüksége van:",
+  "paywallHeroHeadline": "Kipi AI mindig melletted",
+  "paywallHeroSubtitle": "Adjon hozzá elemeket, rendezze a listákat, és takarítson meg időt a mesterséges intelligencia segítségével",
+  "paywallLabelCommon": "Közös",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Hiba az ajánlatok betöltésekor. Próbáld újra.",
+  "paywallMostPopular": "LEGNÉPSZERŰBB",
+  "paywallPackageAnnual": "Éves terv",
+  "paywallPackageLifetime": "Életre szóló hozzáférés",
+  "paywallPackageMonthly": "Havi terv",
+  "paywallPackageMonthlyDesc": "Teljes rugalmasság",
+  "paywallPolicy": "Adatvédelmi szabályzat",
+  "paywallPricePerMonth": "Csak {price}/hó",
+  "paywallPurchaseError": "Nem sikerült befejezni a vásárlást. Próbáld újra.",
+  "paywallRestore": "Visszaállítás",
+  "paywallRestoreError": "Nem található visszaállítandó aktív előfizetés.",
+  "paywallSafeCheckout": "Biztonságos fizetés",
+  "paywallSavePercent": "MEGTAKARÍTÁS {percent}%",
+  "paywallSelectPlan": "Válassza ki tervét:",
+  "paywallSocialProof": "+2400 család használja",
+  "paywallTerms": "Felhasználási feltételek",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "Az AI pillanatok alatt megszervezi a vásárlásomat. 20 percet spórolok piaci kirándulásonként.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Soha többé nem felejtettem el egyetlen listaelemet sem. Az AI chat szenzációs!",
+  "paywallTestimonialsTitle": "Felhasználóink ​​véleménye:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} NAP INGYENES",
+  "paywallTrialMonths": "{count,plural, one{{count} HÓNAP INGYENES} other{{count} HÓNAP INGYENES}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} INGYENES HÉT} other{{count} HÉT INGYENES}}",
   "prefAIAssistant": "Személyes AI asszisztens",
   "prefCustomThemes": "Egyedi témák",
   "prefExportData": "Adatok exportálása",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "Elkészítési idő (perc)",
   "privacy": "Adatvédelem",
   "productName": "Termék neve",
+  "profile": "Profil",
   "purchaseError": "Hiba a vásárlás feldolgozása közben. Próbálja újra.",
   "quantityFull": "Mennyiség",
   "quantityShort": "Menny.",
@@ -813,6 +908,7 @@
   "undo": "Visszavonás",
   "unit": "Egység",
   "unitPack": "csomag",
+  "unlockAi": "Oldja fel a korlátlan AI-t",
   "unlockFullResponse": "Teljes válasz feloldása",
   "unmark": "Jelölés eltávolítása",
   "upgrade": "Frissítés",

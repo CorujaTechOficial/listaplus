@@ -18,6 +18,18 @@ class AppLocalizationsBg extends AppLocalizations {
   String get pantry => 'Килер';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Рецепти';
+
+  @override
+  String get navLists => 'Списъци';
+
+  @override
+  String get navMealPlanner => 'Меню';
+
+  @override
   String get cancel => 'Отказ';
 
   @override
@@ -97,6 +109,15 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Добавено!';
+
+  @override
+  String get profile => 'Профил';
+
+  @override
+  String get exitShoppingMode => 'Излезте от режим Пазаруване';
+
+  @override
+  String get exit => 'Изход';
 
   @override
   String selectedItems(int count) {
@@ -619,14 +640,14 @@ class AppLocalizationsBg extends AppLocalizations {
       'Съжалявам, възникна грешка при обработката на заявката ти. Провери връзката си или опитай отново по-късно.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Почти свършиха AI съобщенията';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Отключете неограничен AI';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Абонирайте се за Premium, за да отключите пълния отговор и да получите неограничени AI съвети за вашето пазаруване...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -754,17 +775,20 @@ class AppLocalizationsBg extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Грешка при зареждане на оферти. Опитайте отново.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Покупката не можа да бъде завършена. Опитайте отново.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Няма намерен активен абонамент за възстановяване.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days ДНИ БЕЗПЛАТНО';
   }
 
   @override
@@ -772,8 +796,8 @@ class AppLocalizationsBg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count СЕДМИЦИ БЕЗПЛАТНО',
+      one: '$count СЕДМИЦА БЕЗПЛАТНО',
     );
     return '$_temp0';
   }
@@ -783,148 +807,150 @@ class AppLocalizationsBg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count МЕСЕЦА БЕЗПЛАТНО',
+      one: '$count МЕСЕЦ БЕЗПЛАТНО',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'всичко необходимо:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Неограничени списъци';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Интелигентен AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Контрол на разходите';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Споделяне';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI преди и след:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Чести';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'ориз';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'сапун';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'месо';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'хляб';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'зърна';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Почистване';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Меса';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Пекарна';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Какво казват нашите потребители:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => 'Ан С.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI организира моето пазаруване за секунди. Спестявам 20 минути на пазарно пътуване.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'Чарлз М.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Никога повече не забравих елемент от списъка. AI чатът е сензационен!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2400 семейства го използват';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Отключете PRO';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'НАЙ-ДОБРА СТОЙНОСТ';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'НАЙ-ПОПУЛЯРНИ';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Сигурно плащане';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Изберете своя план:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'СПЕСТЕТЕ $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Само $price/месец';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Годишен план';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Месечен план';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Доживотен достъп';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'Отказ по всяко време. Без обвързване.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Политика за поверителност';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Условия за ползване';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Възстановяване';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI винаги до вас';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Добавяйте елементи, организирайте списъци и пестете време с AI в джоба си';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Добавя, организира и предлага елементи 24/7';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Без ограничение от 3 списъка';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc =>
+      'Проследяване на разходите и семейни списъци';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Пълна гъвкавост';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Започнете безплатно — $days дни';
   }
 
   @override
@@ -1643,4 +1669,50 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Вземете 7 дни KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Задръжте за избор • Плъзнете за премахване';
+
+  @override
+  String get catalogTitle => 'Каталог';
+
+  @override
+  String get catalogMyFrequents => 'Моите често срещани';
+
+  @override
+  String get catalogSearchGlobal => 'Търсете всеки продукт...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Търсене в $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Най-популярни';
+
+  @override
+  String get catalogSortAZ => 'А–Я';
+
+  @override
+  String get catalogFilterNational => 'Национали';
+
+  @override
+  String get catalogRareSection => 'по-рядко срещани във вашата страна';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Добавете $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Продуктът не е намерен, въведете името';
+
+  @override
+  String get catalogBrowse => 'Разгледайте каталога';
 }

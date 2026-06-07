@@ -49,8 +49,8 @@ class OnboardingSlideWelcomeLogin extends ConsumerWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(Spacing.md),
-                child: SvgPicture.asset(
-                  'assets/images/kipi/kipi_welcome.svg',
+                child: Image.asset(
+                  'assets/images/kipi/kipi_welcome.png',
                   fit: BoxFit.contain,
                 ),
               ),

@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "Jäänud {remaining} krediiti",
   "aiEnergy": "AI energia",
   "aiError": "Vabandust, sinu päringu töötlemisel tekkis viga. Kontrolli ühendust või proovi hiljem uuesti.",
+  "aiLimitAlmostReached": "AI sõnumid on peaaegu otsas",
+  "aiTeaserFallback": "Tellige Premium, et avada täielik vastus ja saada piiramatul hulgal tehisintellekti näpunäiteid oma ostude tegemiseks...",
   "aiVoiceCommandTooltip": "AI häälejuhtimine (Premium)",
   "allTags": "Kõik",
   "alreadyPurchased": "Juba ostetud",
@@ -385,6 +411,17 @@
   "catCleaning": "Puhastus",
   "catFruits": "Puuviljad",
   "catOthers": "Muud",
+  "catalogAddItems": "Lisa {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Sirvi kataloogi",
+  "catalogFilterNational": "Rahvuslased",
+  "catalogMyFrequents": "Minu Sagedused",
+  "catalogProductNotFound": "Toodet ei leitud, sisestage nimi",
+  "catalogRareSection": "teie riigis vähem levinud",
+  "catalogSearchGlobal": "Otsige mis tahes toodet...",
+  "catalogSearchInCategory": "Otsi {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Kõige populaarsem",
+  "catalogTitle": "Kataloog",
   "category": "Kategooria",
   "chatError": "Viga vestluse laadimisel: {error}",
   "chatHint": "Kirjuta oma sõnum...",
@@ -461,6 +498,8 @@
   "estimated": "Hinnanguline",
   "estimatedCost": "Hinnanguline",
   "estimatedPrice": "Hinnanguline hind",
+  "exit": "Välju",
+  "exitShoppingMode": "Väljuge osturežiimist",
   "exportData": "Ekspordi andmed",
   "exportDataSubtitle": "Salvesta kõik nimekirjad JSON-ina",
   "exportExcel": "Ekspordi Excel-ina",
@@ -499,6 +538,7 @@
   "generalAssistant": "Üldine abiline",
   "generalHelp": "Kuidas saan täna aidata sinu ostlemisel?",
   "generateShoppingList": "Loo ostunimekiri",
+  "gestureHint": "Valimiseks hoidke all • Eemaldamiseks pühkige",
   "globalAssistant": "Üldine abiline",
   "howCanIHelp": "Kuidas ma saan aidata?",
   "idealQty": "Ideaalne kogus",
@@ -522,6 +562,7 @@
   "itemsPurchasedCount": "{purchased} {total}-st ostetud",
   "itemsPurchasedShort": "{purchased}/{total} ostetud",
   "itemsWillBeAdded": "Lisatakse {count} üksus(t)",
+  "kipiListTitle": "KipiList",
   "language": "Keel",
   "languageEnglish": "inglise keel",
   "languagePortuguese": "portugali keel (Brasiilia)",
@@ -536,7 +577,6 @@
   "listHistory": "Nimekirjade ajalugu",
   "listNameLabel": "Nimekirja nimi",
   "listOrganizedMagic": "Nimekiri maagiliselt kategooriate kaupa korrastatud! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Kuulan...",
   "lists": "Nimekirjad",
   "loading": "Laadimine...",
@@ -587,6 +627,10 @@
   "monthlyBudgetTitle": "Kuueelarve",
   "myLists": "Minu nimekirjad",
   "myRecipes": "Minu retseptid",
+  "navChat": "Chat",
+  "navLists": "Nimekirjad",
+  "navMealPlanner": "Menüü",
+  "navRecipes": "Retseptid",
   "newChat": "Uus vestlus",
   "newListTitle": "Uus ostunimekiri",
   "newPantryList": "Sahvrioste",
@@ -645,7 +689,56 @@
   "pantryEmpty": "Tühi sahver",
   "pantryEmptySubtitle": "Lisa tooted, mida soovid kodus hoida",
   "pantryItemRemoved": "Üksus eemaldatud",
+  "paywallAfterItem1": "Terad",
+  "paywallAfterItem2": "Puhastamine",
+  "paywallAfterItem3": "Lihad",
+  "paywallAfterItem4": "Pagariäri",
+  "paywallBeforeAfterTitle": "AI enne ja pärast:",
+  "paywallBeforeItem1": "riis",
+  "paywallBeforeItem2": "seep",
+  "paywallBeforeItem3": "liha",
+  "paywallBeforeItem4": "leiba",
+  "paywallBenefit1Desc": "Lisab, korraldab ja soovitab üksusi ööpäevaringselt",
+  "paywallBenefit2Desc": "Kolme loendi piirang puudub",
+  "paywallBenefit3Desc": "Kulude jälgimine ja perenimekirjad",
+  "paywallBestValue": "PARIM VÄÄRTUS",
+  "paywallCancelAnytime": "Tühistage igal ajal. Ei mingit kohustust.",
+  "paywallCtaTrialDays": "Alustage tasuta – {days} päeva",
+  "paywallCtaUnlock": "Avage PRO",
+  "paywallFeatureExpenseControl": "Kulude kontroll",
+  "paywallFeatureSharing": "Jagamine",
+  "paywallFeatureSmartAI": "Nutikas AI",
+  "paywallFeatureUnlimitedLists": "Piiramatu arv loendeid",
+  "paywallFeaturesTitle": "Kõik, mida vajate:",
+  "paywallHeroHeadline": "Kipi AI alati teie kõrval",
+  "paywallHeroSubtitle": "Lisage üksusi, korraldage loendeid ja säästke aega taskus oleva tehisintellektiga",
+  "paywallLabelCommon": "Levinud",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Viga pakkumiste laadimisel. Proovi uuesti.",
+  "paywallMostPopular": "KÕIGE POPULAARSEM",
+  "paywallPackageAnnual": "Aastaplaan",
+  "paywallPackageLifetime": "Eluaegne juurdepääs",
+  "paywallPackageMonthly": "Kuuplaan",
+  "paywallPackageMonthlyDesc": "Täielik paindlikkus",
+  "paywallPolicy": "Privaatsuspoliitika",
+  "paywallPricePerMonth": "Ainult {price} kuus",
+  "paywallPurchaseError": "Ostmist ei saanud lõpule viia. Proovi uuesti.",
+  "paywallRestore": "Taasta",
+  "paywallRestoreError": "Taastatavat aktiivset tellimust ei leitud.",
+  "paywallSafeCheckout": "Turvaline makse",
+  "paywallSavePercent": "SÄÄSTA {percent}%",
+  "paywallSelectPlan": "Valige oma plaan:",
+  "paywallSocialProof": "Seda kasutab +2400 perekonda",
+  "paywallTerms": "Kasutustingimused",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI korraldab mu ostlemise sekunditega. Säästan 20 min turureisi pealt.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Ma ei unustanud enam kunagi ühtegi loendi elementi. AI-vestlus on sensatsiooniline!",
+  "paywallTestimonialsTitle": "Mida meie kasutajad ütlevad:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} PÄEVA TASUTA",
+  "paywallTrialMonths": "{count,plural, one{{count} KUUD TASUTA} other{{count} KUUD TASUTA}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} NÄDAL TASUTA} other{{count} NÄDALAT TASUTA}}",
   "prefAIAssistant": "Isiklik AI abiline",
   "prefCustomThemes": "Kohandatud teemad",
   "prefExportData": "Ekspordi andmed",
@@ -660,6 +753,7 @@
   "prepTimeMinutes": "Ettevalmistusaeg (minutites)",
   "privacy": "Privaatsus",
   "productName": "Toote nimi",
+  "profile": "Profiil",
   "purchaseError": "Viga ostu töötlemisel. Proovi uuesti.",
   "quantityFull": "Kogus",
   "quantityShort": "Kogus",
@@ -757,6 +851,7 @@
   "undo": "Võta tagasi",
   "unit": "Ühik",
   "unitPack": "pakk",
+  "unlockAi": "Avage piiramatu AI",
   "unlockFullResponse": "Avage täielik vastus",
   "unmark": "Eemalda märge",
   "upgrade": "Täienda",

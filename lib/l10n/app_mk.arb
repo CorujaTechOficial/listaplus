@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "Преостанати {remaining} кредити",
   "aiEnergy": "AI енергија",
   "aiError": "За жал, се појави грешка при обработката на вашето барање. Проверете ја врската или обидете се подоцна.",
+  "aiLimitAlmostReached": "Скоро немаше пораки со вештачка интелигенција",
+  "aiTeaserFallback": "Претплатете се на Premium за да го отклучите целосниот одговор и да добивате неограничени совети за вештачка интелигенција за купување...",
   "aiVoiceCommandTooltip": "AI гласовна команда (Premium)",
   "allTags": "Сите",
   "alreadyPurchased": "Веќе купено",
@@ -442,9 +468,21 @@
   "catCleaning": "Чистење",
   "catFruits": "Овошје",
   "catOthers": "Друго",
+  "catalogAddItems": "Додајте {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Прелистајте го каталогот",
+  "catalogFilterNational": "Националните",
+  "catalogMyFrequents": "Мои фреквенции",
+  "catalogProductNotFound": "Производот не е пронајден, напишете го името",
+  "catalogRareSection": "поретко во вашата земја",
+  "catalogSearchGlobal": "Пребарајте кој било производ...",
+  "catalogSearchInCategory": "Пребарајте во {category}...",
+  "catalogSortAZ": "А–З",
+  "catalogSortPopular": "Најпопуларни",
+  "catalogTitle": "Каталог",
   "category": "Категорија",
   "chatError": "Грешка при вчитување на разговорот: {error}",
   "chatHint": "Напишете ја вашата порака...",
+  "chatHintBlocked": "Отклучете ја вештачката интелигенција за разговор",
   "chatSubtitle": "Прашајте за предлози за ставки, рецепти или совети за заштеда.",
   "chatSubtitleShort": "Прашајте за цени, рецепти, организација...",
   "chooseCurrency": "Изберете валута",
@@ -517,6 +555,8 @@
   "estimated": "Проценето",
   "estimatedCost": "Проценето",
   "estimatedPrice": "Проценета цена",
+  "exit": "Излезете",
+  "exitShoppingMode": "Излезете од режимот на купување",
   "exportData": "Извези податоци",
   "exportDataSubtitle": "Зачувај ги сите листи како JSON",
   "exportExcel": "Извези како Excel",
@@ -555,6 +595,7 @@
   "generalAssistant": "Општ асистент",
   "generalHelp": "Како можам да ви помогнам со вашето шопинг денес?",
   "generateShoppingList": "Генерирај листа за шопинг",
+  "gestureHint": "Држете за да изберете • Повлечете за да отстраните",
   "globalAssistant": "Глобален асистент",
   "howCanIHelp": "Како можам да помогнам?",
   "idealQty": "Идеална количина",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "купени {purchased} од {total}",
   "itemsPurchasedShort": "Купени {purchased}/{total}",
   "itemsWillBeAdded": "{count} ставка(и) ќе бидат додадени",
+  "kipiListTitle": "KipiList",
   "language": "Јазик",
   "languageEnglish": "Англиски",
   "languagePortuguese": "Португалски (Бразил)",
@@ -592,7 +634,6 @@
   "listHistory": "Историја на листи",
   "listNameLabel": "Име на листа",
   "listOrganizedMagic": "Листата магично организирана по категории!",
-  "kipiListTitle": "KipiList",
   "listening": "Слушање...",
   "lists": "Листи",
   "loading": "Се вчитува...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "Месечен буџет",
   "myLists": "Мои листи",
   "myRecipes": "Мои рецепти",
+  "navChat": "Chat",
+  "navLists": "Листи",
+  "navMealPlanner": "Мени",
+  "navRecipes": "Рецепти",
   "newChat": "Нов разговор",
   "newListTitle": "Нова листа за шопинг",
   "newPantryList": "Шопинг од шпајз",
@@ -701,7 +746,56 @@
   "pantryEmpty": "Празен шпајз",
   "pantryEmptySubtitle": "Додадете производи што сакате да ги чувате дома",
   "pantryItemRemoved": "Ставката е отстранета",
+  "paywallAfterItem1": "Зрна",
+  "paywallAfterItem2": "Чистење",
+  "paywallAfterItem3": "Месо",
+  "paywallAfterItem4": "Пекара",
+  "paywallBeforeAfterTitle": "ВИ пред и потоа:",
+  "paywallBeforeItem1": "оризот",
+  "paywallBeforeItem2": "сапун",
+  "paywallBeforeItem3": "месо",
+  "paywallBeforeItem4": "леб",
+  "paywallBenefit1Desc": "Додава, организира и предлага ставки 24/7",
+  "paywallBenefit2Desc": "Нема ограничување од 3 списоци",
+  "paywallBenefit3Desc": "Следење на трошоци и семејни списоци",
+  "paywallBestValue": "НАЈДОБРА ВРЕДНОСТ",
+  "paywallCancelAnytime": "Откажете во секое време. Без посветеност.",
+  "paywallCtaTrialDays": "Започнете бесплатно - {days} дена",
+  "paywallCtaUnlock": "Отклучете го PRO",
+  "paywallFeatureExpenseControl": "Контрола на трошоци",
+  "paywallFeatureSharing": "Споделување",
+  "paywallFeatureSmartAI": "Паметна вештачка интелигенција",
+  "paywallFeatureUnlimitedLists": "Неограничени списоци",
+  "paywallFeaturesTitle": "Сè што ви треба:",
+  "paywallHeroHeadline": "Kipi AI секогаш покрај вас",
+  "paywallHeroSubtitle": "Додавајте ставки, организирајте списоци и заштедете време со вештачката интелигенција во вашиот џеб",
+  "paywallLabelCommon": "Заеднички",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Грешка при вчитување на понудите. Обидете се повторно.",
+  "paywallMostPopular": "НАЈПОПУЛАРНО",
+  "paywallPackageAnnual": "Годишен план",
+  "paywallPackageLifetime": "Доживотен пристап",
+  "paywallPackageMonthly": "Месечен план",
+  "paywallPackageMonthlyDesc": "Целосна флексибилност",
+  "paywallPolicy": "Политика за приватност",
+  "paywallPricePerMonth": "Само {price}/месечно",
+  "paywallPurchaseError": "Не може да се заврши купувањето. Обидете се повторно.",
+  "paywallRestore": "Врати",
+  "paywallRestoreError": "Не е пронајдена активна претплата за враќање.",
+  "paywallSafeCheckout": "Безбедно плаќање",
+  "paywallSavePercent": "ЗАШТЕДИ {percent}%",
+  "paywallSelectPlan": "Изберете го вашиот план:",
+  "paywallSocialProof": "Го користат +2.400 семејства",
+  "paywallTerms": "Услови за користење",
+  "paywallTestimonial1Name": "Ен С.",
+  "paywallTestimonial1Text": "ВИ го организира мојот шопинг за неколку секунди. Заштедувам 20 мин по пазарно патување.",
+  "paywallTestimonial2Name": "Чарлс М.",
+  "paywallTestimonial2Text": "Никогаш повеќе не заборавив ставка од списокот. Разговорот за вештачка интелигенција е сензационален!",
+  "paywallTestimonialsTitle": "Што велат нашите корисници:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} БЕСПЛАТНИ ДЕНА",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} МЕСЕЦИ БЕСПЛАТНИ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} НЕДЕЛА БЕСПЛАТНО} other{{count} НЕДЕЛИ БЕСПЛАТНИ}}",
   "prefAIAssistant": "Личен AI асистент",
   "prefCustomThemes": "Прилагодени теми",
   "prefExportData": "Извоз на податоци",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "Време за подготовка (минути)",
   "privacy": "Приватност",
   "productName": "Име на производ",
+  "profile": "Профил",
   "purchaseError": "Грешка при обработка на купувањето. Обидете се повторно.",
   "quantityFull": "Количина",
   "quantityShort": "Кол",
@@ -813,6 +908,7 @@
   "undo": "Врати",
   "unit": "Единица",
   "unitPack": "пакување",
+  "unlockAi": "Отклучете неограничена вештачка интелигенција",
   "unlockFullResponse": "Отклучете го целосниот одговор",
   "unmark": "Одозначи",
   "upgrade": "Надгради",

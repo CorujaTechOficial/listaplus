@@ -18,6 +18,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@deleteRecipeConfirmMsg": {
     "placeholders": {
       "recipeName": {
@@ -34,6 +48,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -180,6 +197,13 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@settingsDefaultScreen": {
     "description": "Settings option label"
   },
@@ -226,6 +250,8 @@
   "aiCreditsRemaining": "{remaining} créditos restantes",
   "aiEnergy": "Energia da IA",
   "aiError": "Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.",
+  "aiLimitAlmostReached": "Quase sem mensagens de IA",
+  "aiTeaserFallback": "Assine o Premium para desbloquear a resposta completa e obter dicas ilimitadas de IA para suas compras...",
   "aiVoiceCommandTooltip": "Comando de voz com IA (Premium)",
   "allTags": "Todas",
   "alreadyPurchased": "Já comprado",
@@ -257,9 +283,21 @@
   "catCleaning": "Limpeza",
   "catFruits": "Frutas",
   "catOthers": "Outros",
+  "catalogAddItems": "Adicione {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Navegar no catálogo",
+  "catalogFilterNational": "Nacionais",
+  "catalogMyFrequents": "Meus frequentadores",
+  "catalogProductNotFound": "Produto não encontrado, digite o nome",
+  "catalogRareSection": "menos comum em seu país",
+  "catalogSearchGlobal": "Pesquise qualquer produto...",
+  "catalogSearchInCategory": "Pesquisar em {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Mais popular",
+  "catalogTitle": "Catálogo",
   "category": "Categoria",
   "chatError": "Erro ao carregar chat: {error}",
   "chatHint": "Digite sua mensagem...",
+  "chatHintBlocked": "Desbloqueie IA para conversar",
   "chatSubtitle": "Peça sugestões de itens, receitas or dicas de economia.",
   "chatSubtitleShort": "Pergunte sobre preços, receitas, organização...",
   "chooseCurrency": "Selecione a moeda",
@@ -332,6 +370,8 @@
   "estimated": "Estimado",
   "estimatedCost": "Estimado",
   "estimatedPrice": "Preço estimado",
+  "exit": "Saída",
+  "exitShoppingMode": "Sair do modo de compras",
   "exportData": "Exportar dados",
   "exportDataSubtitle": "Salvar todas as listas como JSON",
   "exportExcel": "Exportar como Excel",
@@ -370,6 +410,7 @@
   "generalAssistant": "Assistente Geral",
   "generalHelp": "Como posso ajudar com suas compras hoje?",
   "generateShoppingList": "Gerar lista de compras",
+  "gestureHint": "Segure para selecionar • Deslize para remover",
   "globalAssistant": "Assistente geral",
   "howCanIHelp": "Como posso ajudar?",
   "idealQty": "Qtd ideal",
@@ -393,6 +434,7 @@
   "itemsPurchasedCount": "{purchased} de {total} comprados",
   "itemsPurchasedShort": "{purchased}/{total} comprados",
   "itemsWillBeAdded": "{count} item(ns) serão adicionados",
+  "kipiListTitle": "Lista Kipi",
   "language": "Idioma",
   "languageEnglish": "Inglês",
   "languagePortuguese": "Português (Brasil)",
@@ -407,7 +449,6 @@
   "listHistory": "Histórico de Listas",
   "listNameLabel": "Nome da lista",
   "listOrganizedMagic": "Lista organizada magicamente por categorias! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Ouvindo...",
   "lists": "Listas",
   "loading": "Carregando...",
@@ -458,6 +499,10 @@
   "monthlyBudgetTitle": "Orçamento Mensal",
   "myLists": "Minhas Listas",
   "myRecipes": "Minhas Receitas",
+  "navChat": "Bater papo",
+  "navLists": "Listas",
+  "navMealPlanner": "Cardápio",
+  "navRecipes": "Receitas",
   "newChat": "Nova Conversa",
   "newListTitle": "Nova Lista de Compras",
   "newPantryList": "Compras da Dispensa",
@@ -516,44 +561,56 @@
   "pantryEmpty": "Dispensa vazia",
   "pantryEmptySubtitle": "Adicione produtos que você quer manter em casa",
   "pantryItemRemoved": "Item removido",
-  "paywallTitle": "KipiList Premium",
-  "paywallLoadingError": "Erro ao carregar ofertas. Tente novamente.",
-  "paywallPurchaseError": "Não foi possível concluir a compra. Tente novamente.",
-  "paywallRestoreError": "Nenhuma assinatura ativa encontrada para restaurar.",
-  "paywallTrialDays": "{days} DIAS GRÁTIS",
-  "paywallTrialWeeks": "{count,plural, one{{count} SEMANA GRÁTIS} other{{count} SEMANAS GRÁTIS}}",
-  "paywallTrialMonths": "{count,plural, one{{count} MÊS GRÁTIS} other{{count} MESES GRÁTIS}}",
-  "paywallFeaturesTitle": "Tudo que você precisa:",
-  "paywallFeatureUnlimitedLists": "Listas Ilimitadas",
-  "paywallFeatureSmartAI": "IA Inteligente",
-  "paywallFeatureExpenseControl": "Controle de Gastos",
-  "paywallFeatureSharing": "Compartilhamento",
-  "paywallBeforeAfterTitle": "O antes e depois da IA:",
-  "paywallLabelCommon": "Comum",
-  "paywallLabelPro": "KipiList PRO",
-  "paywallBeforeItem1": "arroz",
-  "paywallBeforeItem2": "sabão",
-  "paywallBeforeItem3": "carne",
-  "paywallBeforeItem4": "pão",
   "paywallAfterItem1": "Grãos",
   "paywallAfterItem2": "Limpeza",
   "paywallAfterItem3": "Carnes",
   "paywallAfterItem4": "Padaria",
-  "paywallTestimonialsTitle": "O que nossos usuários dizem:",
+  "paywallBeforeAfterTitle": "O antes e depois da IA:",
+  "paywallBeforeItem1": "arroz",
+  "paywallBeforeItem2": "sabão",
+  "paywallBeforeItem3": "carne",
+  "paywallBeforeItem4": "pão",
+  "paywallBenefit1Desc": "Adiciona, organiza e sugere itens 24 horas por dia, 7 dias por semana",
+  "paywallBenefit2Desc": "Sem limite de 3 listas",
+  "paywallBenefit3Desc": "Acompanhamento de despesas e listas familiares",
+  "paywallBestValue": "MELHOR VALOR",
+  "paywallCancelAnytime": "Cancele quando quiser. Sem compromisso.",
+  "paywallCtaTrialDays": "Comece gratuitamente – {days} dias",
+  "paywallCtaUnlock": "Desbloquear PRO",
+  "paywallFeatureExpenseControl": "Controle de Gastos",
+  "paywallFeatureSharing": "Compartilhamento",
+  "paywallFeatureSmartAI": "IA Inteligente",
+  "paywallFeatureUnlimitedLists": "Listas Ilimitadas",
+  "paywallFeaturesTitle": "Tudo que você precisa:",
+  "paywallHeroHeadline": "Kipi AI sempre ao seu lado",
+  "paywallHeroSubtitle": "Adicione itens, organize listas e economize tempo com a IA no seu bolso",
+  "paywallLabelCommon": "Comum",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Erro ao carregar ofertas. Tente novamente.",
+  "paywallMostPopular": "MAIS POPULAR",
+  "paywallPackageAnnual": "Plano Anual",
+  "paywallPackageLifetime": "Acesso Vitalício",
+  "paywallPackageMonthly": "Plano Mensal",
+  "paywallPackageMonthlyDesc": "Flexibilidade total",
+  "paywallPolicy": "Política de Privacidade",
+  "paywallPricePerMonth": "Apenas {price}/mês",
+  "paywallPurchaseError": "Não foi possível concluir a compra. Tente novamente.",
+  "paywallRestore": "Restaurar",
+  "paywallRestoreError": "Nenhuma assinatura ativa encontrada para restaurar.",
+  "paywallSafeCheckout": "Pagamento seguro",
+  "paywallSavePercent": "ECONOMIZE {percent}%",
+  "paywallSelectPlan": "Escolha seu plano:",
+  "paywallSocialProof": "+2.400 famílias usam",
+  "paywallTerms": "Termos de Uso",
   "paywallTestimonial1Name": "Ana S.",
   "paywallTestimonial1Text": "A IA organiza minhas compras em segundos. Economizo 20 min por ida ao mercado.",
   "paywallTestimonial2Name": "Carlos M.",
   "paywallTestimonial2Text": "Nunca mais esqueci um item da lista. O chat com IA é sensacional!",
-  "paywallSelectPlan": "Escolha seu plano:",
-  "paywallSavePercent": "ECONOMIZE {percent}%",
-  "paywallPricePerMonth": "Apenas {price}/mês",
-  "paywallPackageAnnual": "Plano Anual",
-  "paywallPackageMonthly": "Plano Mensal",
-  "paywallPackageLifetime": "Acesso Vitalício",
-  "paywallCancelAnytime": "Cancele quando quiser. Sem compromisso.",
-  "paywallPolicy": "Política de Privacidade",
-  "paywallTerms": "Termos de Uso",
-  "paywallRestore": "Restaurar",
+  "paywallTestimonialsTitle": "O que nossos usuários dizem:",
+  "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DIAS GRÁTIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MÊS GRÁTIS} other{{count} MESES GRÁTIS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} SEMANA GRÁTIS} other{{count} SEMANAS GRÁTIS}}",
   "prefAIAssistant": "Assistente de IA Personalizado",
   "prefCustomThemes": "Temas personalizados",
   "prefExportData": "Exportar dados",
@@ -568,6 +625,7 @@
   "prepTimeMinutes": "Tempo de preparação (minutos)",
   "privacy": "Privacidade",
   "productName": "Nome do produto",
+  "profile": "Perfil",
   "purchaseError": "Erro ao processar compra. Tente novamente.",
   "quantityFull": "Quantidade",
   "quantityShort": "Qtd",
@@ -665,6 +723,7 @@
   "undo": "Desfazer",
   "unit": "Unidade",
   "unitPack": "pacote",
+  "unlockAi": "Desbloqueie IA ilimitada",
   "unlockFullResponse": "Desbloquear Resposta Completa",
   "unmark": "Desmarcar",
   "upgrade": "Fazer upgrade",

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'dart:math' as math;
@@ -24,8 +23,8 @@ class OnboardingSlideShare extends StatelessWidget {
               children: [
                 Positioned(
                   left: 20,
-                  child: SvgPicture.asset(
-                    'assets/images/kipi/kipi_welcome.svg',
+                  child: Image.asset(
+                    'assets/images/kipi/kipi_welcome.png',
                     height: 100,
                   ),
                 ),
@@ -34,8 +33,8 @@ class OnboardingSlideShare extends StatelessWidget {
                   child: Transform(
                     alignment: Alignment.center,
                     transform: Matrix4.rotationY(math.pi),
-                    child: SvgPicture.asset(
-                      'assets/images/kipi/kipi_welcome.svg',
+                    child: Image.asset(
+                      'assets/images/kipi/kipi_welcome.png',
                       height: 100,
                     ),
                   ),

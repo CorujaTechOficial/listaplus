@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} ឥណទាននៅសល់",
   "aiEnergy": "ថាមពល AI",
   "aiError": "សូមទោស មានកំហុសក្នុងការដំណើរការសំណើរបស់អ្នក។ សូមពិនិត្យការតភ្ជាប់របស់អ្នក ឬព្យាយាមម្តងទៀតពេលក្រោយ។",
+  "aiLimitAlmostReached": "ស្ទើរតែចេញពីសារ AI",
+  "aiTeaserFallback": "ជាវ Premium ដើម្បីដោះសោការឆ្លើយតបពេញលេញ និងទទួលបានគន្លឹះ AI គ្មានដែនកំណត់សម្រាប់ការទិញទំនិញរបស់អ្នក...",
   "aiVoiceCommandTooltip": "ពាក្យបញ្ជាសំឡេង AI (ពិសេស)",
   "allTags": "ទាំងអស់",
   "alreadyPurchased": "បានទិញរួច",
@@ -404,9 +430,21 @@
   "catCleaning": "សម្អាត",
   "catFruits": "ផ្លែឈើ",
   "catOthers": "ផ្សេងៗ",
+  "catalogAddItems": "បន្ថែម {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "រកមើលកាតាឡុក",
+  "catalogFilterNational": "ជាតិ",
+  "catalogMyFrequents": "ភាពញឹកញាប់របស់ខ្ញុំ",
+  "catalogProductNotFound": "រកមិនឃើញផលិតផល វាយឈ្មោះ",
+  "catalogRareSection": "មិនសូវជារឿងធម្មតាទេនៅក្នុងប្រទេសរបស់អ្នក។",
+  "catalogSearchGlobal": "ស្វែងរកផលិតផលណាមួយ...",
+  "catalogSearchInCategory": "ស្វែងរកក្នុង {category}...",
+  "catalogSortAZ": "A-Z",
+  "catalogSortPopular": "ពេញនិយមបំផុត។",
+  "catalogTitle": "កាតាឡុក",
   "category": "ប្រភេទ",
   "chatError": "កំហុសក្នុងការផ្ទុកជជែក: {error}",
   "chatHint": "វាយសាររបស់អ្នក...",
+  "chatHintBlocked": "ដោះសោ AI ដើម្បីជជែក",
   "chatSubtitle": "សួររកការណែនាំធាតុ រូបមន្ត ឬគន្លឹះសន្សំប្រាក់។",
   "chatSubtitleShort": "សួរអំពីតម្លៃ រូបមន្ត អង្គការ...",
   "chooseCurrency": "ជ្រើសរើសរូបិយប័ណ្ណ",
@@ -479,6 +517,8 @@
   "estimated": "ប៉ាន់ស្មាន",
   "estimatedCost": "ប៉ាន់ស្មាន",
   "estimatedPrice": "តម្លៃប៉ាន់ស្មាន",
+  "exit": "ចេញ",
+  "exitShoppingMode": "ចាកចេញពីរបៀបទិញទំនិញ",
   "exportData": "នាំចេញទិន្នន័យ",
   "exportDataSubtitle": "រក្សាទុកបញ្ជីទាំងអស់ជា JSON",
   "exportExcel": "នាំចេញជា Excel",
@@ -517,6 +557,7 @@
   "generalAssistant": "ជំនួយការទូទៅ",
   "generalHelp": "តើខ្ញុំអាចជួយអ្វីជាមួយការដើរទិញឥវ៉ាន់របស់អ្នកថ្ងៃនេះ?",
   "generateShoppingList": "បង្កើតបញ្ជីដើរទិញឥវ៉ាន់",
+  "gestureHint": "សង្កត់ដើម្បីជ្រើសរើស • អូសដើម្បីលុបចេញ",
   "globalAssistant": "ជំនួយការសកល",
   "howCanIHelp": "តើខ្ញុំអាចជួយបានដោយរបៀបណា?",
   "idealQty": "បរិមាណដ៏ល្អ",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{purchased} នៃ {total} បានទិញ",
   "itemsPurchasedShort": "{purchased}/{total} បានទិញ",
   "itemsWillBeAdded": "{count} ធាតុនឹងត្រូវបានបន្ថែម",
+  "kipiListTitle": "បញ្ជី Kipi",
   "language": "ភាសា",
   "languageEnglish": "ភាសាអង់គ្លេស",
   "languagePortuguese": "ព័រទុយហ្គាល់ (ប្រេស៊ីល)",
@@ -554,7 +596,6 @@
   "listHistory": "ប្រវត្តិបញ្ជី",
   "listNameLabel": "ឈ្មោះបញ្ជី",
   "listOrganizedMagic": "បញ្ជីត្រូវបានរៀបចំតាមប្រភេទដោយវេទមន្ត! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "កំពុងស្តាប់...",
   "lists": "បញ្ជី",
   "loading": "កំពុងផ្ទុក...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "ថវិកាប្រចាំខែ",
   "myLists": "បញ្ជីរបស់ខ្ញុំ",
   "myRecipes": "រូបមន្តរបស់ខ្ញុំ",
+  "navChat": "Chat",
+  "navLists": "បញ្ជី",
+  "navMealPlanner": "ម៉ឺនុយ",
+  "navRecipes": "រូបមន្ត",
   "newChat": "ការជជែកថ្មី។",
   "newListTitle": "បញ្ជីដើរទិញឥវ៉ាន់ថ្មី",
   "newPantryList": "ការដើរទិញឥវ៉ាន់បន្ថែម",
@@ -663,7 +708,56 @@
   "pantryEmpty": "ទូដាក់អាហារទទេ",
   "pantryEmptySubtitle": "បន្ថែមផលិតផលដែលអ្នកចង់ទុកនៅផ្ទះ",
   "pantryItemRemoved": "ធាតុត្រូវបានដកចេញ",
+  "paywallAfterItem1": "គ្រាប់ធញ្ញជាតិ",
+  "paywallAfterItem2": "ការសម្អាត",
+  "paywallAfterItem3": "សាច់",
+  "paywallAfterItem4": "ហាងនំប៉័ង",
+  "paywallBeforeAfterTitle": "AI មុន និងក្រោយ៖",
+  "paywallBeforeItem1": "អង្ករ",
+  "paywallBeforeItem2": "សាប៊ូ",
+  "paywallBeforeItem3": "សាច់",
+  "paywallBeforeItem4": "នំបុ័ង",
+  "paywallBenefit1Desc": "បន្ថែម រៀបចំ និងណែនាំធាតុ 24/7",
+  "paywallBenefit2Desc": "គ្មានដែនកំណត់បញ្ជី 3",
+  "paywallBenefit3Desc": "ការតាមដានការចំណាយ និងបញ្ជីគ្រួសារ",
+  "paywallBestValue": "តម្លៃល្អបំផុត",
+  "paywallCancelAnytime": "បោះបង់នៅពេលណាក៏បាន។ គ្មានការប្តេជ្ញាចិត្ត។",
+  "paywallCtaTrialDays": "ចាប់ផ្តើមដោយឥតគិតថ្លៃ — {days} ថ្ងៃ។",
+  "paywallCtaUnlock": "ដោះសោ PRO",
+  "paywallFeatureExpenseControl": "ការគ្រប់គ្រងការចំណាយ",
+  "paywallFeatureSharing": "ការចែករំលែក",
+  "paywallFeatureSmartAI": "AI ឆ្លាតវៃ",
+  "paywallFeatureUnlimitedLists": "បញ្ជីគ្មានដែនកំណត់",
+  "paywallFeaturesTitle": "អ្វីគ្រប់យ៉ាងដែលអ្នកត្រូវការ៖",
+  "paywallHeroHeadline": "Kipi AI តែងតែនៅក្បែរអ្នក។",
+  "paywallHeroSubtitle": "បន្ថែមធាតុ រៀបចំបញ្ជី និងសន្សំពេលវេលាជាមួយ AI នៅក្នុងហោប៉ៅរបស់អ្នក។",
+  "paywallLabelCommon": "ទូទៅ",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "កំហុសក្នុងការផ្ទុកការផ្តល់ជូន។ ព្យាយាមម្តងទៀត។",
+  "paywallMostPopular": "ពេញនិយមបំផុត។",
+  "paywallPackageAnnual": "ផែនការប្រចាំឆ្នាំ",
+  "paywallPackageLifetime": "ការចូលប្រើពេញមួយជីវិត",
+  "paywallPackageMonthly": "ផែនការប្រចាំខែ",
+  "paywallPackageMonthlyDesc": "ភាពបត់បែនពេញលេញ",
+  "paywallPolicy": "គោលការណ៍ឯកជនភាព",
+  "paywallPricePerMonth": "ត្រឹមតែ {price}/ខែ",
+  "paywallPurchaseError": "មិនអាចបញ្ចប់ការទិញបានទេ។ ព្យាយាមម្តងទៀត។",
+  "paywallRestore": "ស្តារ",
+  "paywallRestoreError": "រកមិនឃើញការជាវសកម្មដើម្បីស្តារឡើងវិញទេ។",
+  "paywallSafeCheckout": "ការទូទាត់ប្រកបដោយសុវត្ថិភាព",
+  "paywallSavePercent": "រក្សាទុក {percent}%",
+  "paywallSelectPlan": "ជ្រើសរើសគម្រោងរបស់អ្នក៖",
+  "paywallSocialProof": "+2,400 គ្រួសារប្រើវា។",
+  "paywallTerms": "ល័ក្ខខ័ណ្ឌនៃការប្រើប្រាស់",
+  "paywallTestimonial1Name": "អាន អេស.",
+  "paywallTestimonial1Text": "AI រៀបចំការទិញរបស់ខ្ញុំក្នុងរយៈពេលប៉ុន្មានវិនាទី។ ខ្ញុំសន្សំបាន 20 នាទីក្នុងមួយការធ្វើដំណើរផ្សារ។",
+  "paywallTestimonial2Name": "លោក Charles M.",
+  "paywallTestimonial2Text": "ខ្ញុំមិនដែលភ្លេចធាតុក្នុងបញ្ជីម្តងទៀតទេ។ AI ជជែក​កំសាន្ត​សប្បាយ​ចិត្ត!",
+  "paywallTestimonialsTitle": "អ្វីដែលអ្នកប្រើប្រាស់របស់យើងនិយាយ៖",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ថ្ងៃឥតគិតថ្លៃ",
+  "paywallTrialMonths": "{count,plural, one{{count} ខែឥតគិតថ្លៃ} other{{count} ខែឥតគិតថ្លៃ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} សប្ដាហ៍ឥតគិតថ្លៃ} other{{count} សប្ដាហ៍ឥតគិតថ្លៃ}}",
   "prefAIAssistant": "ជំនួយការ AI ផ្ទាល់ខ្លួន",
   "prefCustomThemes": "ប្រធានបទផ្ទាល់ខ្លួន",
   "prefExportData": "នាំចេញទិន្នន័យ",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "រយៈពេលរៀបចំ (នាទី)",
   "privacy": "ឯកជនភាព",
   "productName": "ឈ្មោះផលិតផល",
+  "profile": "ប្រវត្តិរូប",
   "purchaseError": "មានកំហុសក្នុងការដំណើរការការទិញ។ សូមព្យាយាមម្តងទៀត។",
   "quantityFull": "បរិមាណ",
   "quantityShort": "បរិមាណ",
@@ -775,6 +870,7 @@
   "undo": "មិនធ្វើវិញ",
   "unit": "ឯកតា",
   "unitPack": "កញ្ចប់",
+  "unlockAi": "ដោះសោ AI គ្មានដែនកំណត់",
   "unlockFullResponse": "ដោះសោការឆ្លើយតបពេញលេញ",
   "unmark": "ដកសញ្ញាសម្គាល់",
   "upgrade": "ធ្វើឱ្យប្រសើរ",

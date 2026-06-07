@@ -18,6 +18,18 @@ class AppLocalizationsRm extends AppLocalizations {
   String get pantry => 'Dispensa';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recettas';
+
+  @override
+  String get navLists => 'Listas';
+
+  @override
+  String get navMealPlanner => 'Meniu';
+
+  @override
   String get cancel => 'Interrumper';
 
   @override
@@ -97,6 +109,15 @@ class AppLocalizationsRm extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Agiuntà!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -1643,4 +1664,50 @@ class AppLocalizationsRm extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }

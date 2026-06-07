@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "{remaining} kredit tersisa",
   "aiEnergy": "Energi AI",
   "aiError": "Maaf, terjadi kesalahan memproses permintaan Anda. Periksa koneksi Anda atau coba lagi nanti.",
+  "aiLimitAlmostReached": "Hampir kehabisan pesan AI",
+  "aiTeaserFallback": "Berlangganan Premium untuk mendapatkan respons penuh dan mendapatkan tips AI tanpa batas untuk belanja Anda...",
   "aiVoiceCommandTooltip": "Perintah Suara AI (Premium)",
   "allTags": "Semua",
   "alreadyPurchased": "Sudah dibeli",
@@ -442,9 +468,21 @@
   "catCleaning": "Kebersihan",
   "catFruits": "Buah",
   "catOthers": "Lainnya",
+  "catalogAddItems": "Tambahkan {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Telusuri Katalog",
+  "catalogFilterNational": "Warga negara",
+  "catalogMyFrequents": "Yang Sering Saya",
+  "catalogProductNotFound": "Produk tidak ditemukan, ketikkan namanya",
+  "catalogRareSection": "kurang umum di negara Anda",
+  "catalogSearchGlobal": "Telusuri produk apa saja...",
+  "catalogSearchInCategory": "Cari di {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Paling populer",
+  "catalogTitle": "Katalog",
   "category": "Kategori",
   "chatError": "Kesalahan memuat chat: {error}",
   "chatHint": "Ketik pesan Anda...",
+  "chatHintBlocked": "Buka kunci AI untuk mengobrol",
   "chatSubtitle": "Minta saran item, resep, atau tips hemat.",
   "chatSubtitleShort": "Tanyakan tentang harga, resep, organisasi...",
   "chooseCurrency": "Pilih Mata Uang",
@@ -517,6 +555,8 @@
   "estimated": "Estimasi",
   "estimatedCost": "Diperkirakan",
   "estimatedPrice": "Estimasi harga",
+  "exit": "KELUAR",
+  "exitShoppingMode": "Keluar dari Mode Belanja",
   "exportData": "Ekspor data",
   "exportDataSubtitle": "Simpan semua daftar sebagai JSON",
   "exportExcel": "Ekspor sebagai Excel",
@@ -555,6 +595,7 @@
   "generalAssistant": "Asisten Umum",
   "generalHelp": "Bagaimana saya bisa membantu belanja Anda hari ini?",
   "generateShoppingList": "Buat daftar belanja",
+  "gestureHint": "Tahan untuk memilih • Geser untuk menghapus",
   "globalAssistant": "Asisten global",
   "howCanIHelp": "Apa yang bisa saya bantu?",
   "idealQty": "Jml ideal",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "{purchased} dari {total} dibeli",
   "itemsPurchasedShort": "{purchased}/{total} dibeli",
   "itemsWillBeAdded": "{count} item akan ditambahkan",
+  "kipiListTitle": "Daftar Kipi",
   "language": "Bahasa",
   "languageEnglish": "Bahasa inggris",
   "languagePortuguese": "Portugis (Brasil)",
@@ -592,7 +634,6 @@
   "listHistory": "Riwayat Daftar",
   "listNameLabel": "Nama daftar",
   "listOrganizedMagic": "Daftar secara ajaib diatur berdasarkan kategori! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Mendengarkan...",
   "lists": "Daftar",
   "loading": "Memuat...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "Anggaran Bulanan",
   "myLists": "Daftar Saya",
   "myRecipes": "Resep Saya",
+  "navChat": "Chat",
+  "navLists": "Daftar",
+  "navMealPlanner": "Menu",
+  "navRecipes": "Resep",
   "newChat": "Obrolan Baru",
   "newListTitle": "Daftar Belanja Baru",
   "newPantryList": "Belanja Dapur",
@@ -701,7 +746,56 @@
   "pantryEmpty": "Dapur kosong",
   "pantryEmptySubtitle": "Tambahkan produk yang ingin Anda simpan di rumah",
   "pantryItemRemoved": "Item dihapus",
+  "paywallAfterItem1": "Biji-bijian",
+  "paywallAfterItem2": "Pembersihan",
+  "paywallAfterItem3": "Daging",
+  "paywallAfterItem4": "Toko roti",
+  "paywallBeforeAfterTitle": "AI Sebelum dan Sesudah:",
+  "paywallBeforeItem1": "beras",
+  "paywallBeforeItem2": "sabun",
+  "paywallBeforeItem3": "daging",
+  "paywallBeforeItem4": "roti",
+  "paywallBenefit1Desc": "Menambahkan, mengatur, dan menyarankan item 24/7",
+  "paywallBenefit2Desc": "Tidak ada batasan 3 daftar",
+  "paywallBenefit3Desc": "Pelacakan pengeluaran dan daftar keluarga",
+  "paywallBestValue": "NILAI TERBAIK",
+  "paywallCancelAnytime": "Batalkan kapan saja. Tidak ada komitmen.",
+  "paywallCtaTrialDays": "Mulai gratis — {days} hari",
+  "paywallCtaUnlock": "Buka kunci PRO",
+  "paywallFeatureExpenseControl": "Pengendalian Biaya",
+  "paywallFeatureSharing": "Membagikan",
+  "paywallFeatureSmartAI": "AI yang cerdas",
+  "paywallFeatureUnlimitedLists": "Daftar Tidak Terbatas",
+  "paywallFeaturesTitle": "Semua yang Anda butuhkan:",
+  "paywallHeroHeadline": "Kipi AI selalu di sisimu",
+  "paywallHeroSubtitle": "Tambahkan item, atur daftar, dan hemat waktu dengan AI di saku Anda",
+  "paywallLabelCommon": "Umum",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Terjadi kesalahan saat memuat penawaran. Coba lagi.",
+  "paywallMostPopular": "PALING POPULER",
+  "paywallPackageAnnual": "Paket Tahunan",
+  "paywallPackageLifetime": "Akses Seumur Hidup",
+  "paywallPackageMonthly": "Paket Bulanan",
+  "paywallPackageMonthlyDesc": "Fleksibilitas penuh",
+  "paywallPolicy": "Kebijakan Privasi",
+  "paywallPricePerMonth": "Hanya {price}/bulan",
+  "paywallPurchaseError": "Tidak dapat menyelesaikan pembelian. Coba lagi.",
+  "paywallRestore": "Memulihkan",
+  "paywallRestoreError": "Tidak ditemukan langganan aktif untuk dipulihkan.",
+  "paywallSafeCheckout": "Pembayaran aman",
+  "paywallSavePercent": "HEMAT {percent}%",
+  "paywallSelectPlan": "Pilih paket Anda:",
+  "paywallSocialProof": "+2.400 keluarga menggunakannya",
+  "paywallTerms": "Ketentuan Penggunaan",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI mengatur belanjaan saya dalam hitungan detik. Saya menghemat 20 menit per perjalanan pasar.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Saya tidak pernah melupakan item daftar lagi. Obrolan AI itu sensasional!",
+  "paywallTestimonialsTitle": "Apa yang dikatakan pengguna kami:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} HARI GRATIS",
+  "paywallTrialMonths": "{count,plural, one{{count} BULAN GRATIS} other{{count} BULAN GRATIS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} MINGGU GRATIS} other{{count} MINGGU GRATIS}}",
   "prefAIAssistant": "Asisten AI Pribadi",
   "prefCustomThemes": "Tema kustom",
   "prefExportData": "Ekspor data",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "Waktu persiapan (menit)",
   "privacy": "Privasi",
   "productName": "Nama produk",
+  "profile": "Profil",
   "purchaseError": "Kesalahan memproses pembelian. Coba lagi.",
   "quantityFull": "Jumlah",
   "quantityShort": "Jml",
@@ -813,6 +908,7 @@
   "undo": "Urungkan",
   "unit": "Satuan",
   "unitPack": "bungkus",
+  "unlockAi": "Buka kunci AI tanpa batas",
   "unlockFullResponse": "Buka Kunci Respons Penuh",
   "unmark": "Hapus tanda",
   "upgrade": "Tingkatkan",

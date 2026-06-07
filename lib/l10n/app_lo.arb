@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "ຍັງເຫຼືອ {remaining} ເຄຣດິດ",
   "aiEnergy": "ພະລັງງານ AI",
   "aiError": "ຂໍອະໄພ ມີຂໍ້ຜິດພາດໃນການດຳເນີນການຕາມຄຳຂໍຂອງທ່ານ. ກະລຸນາກວດສອບການເຊື່ອມຕໍ່ ຫຼື ລອງໃໝ່ພາຍຫຼັງ.",
+  "aiLimitAlmostReached": "ເກືອບອອກຈາກຂໍ້ຄວາມ AI",
+  "aiTeaserFallback": "ສະໝັກໃຊ້ Premium ເພື່ອປົດລັອກການຕອບຮັບເຕັມຮູບແບບ ແລະ ຮັບເຄັດລັບ AI ແບບບໍ່ຈຳກັດສຳລັບການໄປຊື້ເຄື່ອງຂອງທ່ານ...",
   "aiVoiceCommandTooltip": "ຄຳສັ່ງສຽງ AI (Premium)",
   "allTags": "ທັງໝົດ",
   "alreadyPurchased": "ຊື້ແລ້ວ",
@@ -404,9 +430,21 @@
   "catCleaning": "ທຳຄວາມສະອາດ",
   "catFruits": "ໝາກໄມ້",
   "catOthers": "ອື່ນໆ",
+  "catalogAddItems": "ເພີ່ມ {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "ຊອກຫາລາຍການ",
+  "catalogFilterNational": "ຊາດ",
+  "catalogMyFrequents": "ເລື້ອຍໆຂອງຂ້ອຍ",
+  "catalogProductNotFound": "ບໍ່ພົບສິນຄ້າ, ພິມຊື່",
+  "catalogRareSection": "ບໍ່ຄ່ອຍມີຢູ່ໃນປະເທດຂອງເຈົ້າ",
+  "catalogSearchGlobal": "ຊອກຫາຜະລິດຕະພັນໃດນຶ່ງ...",
+  "catalogSearchInCategory": "ຊອກຫາໃນ {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "ນິຍົມທີ່ສຸດ",
+  "catalogTitle": "ລາຍການ",
   "category": "ໝວດ",
   "chatError": "ຂໍ້ຜິດພາດໃນການໂຫຼດການສົນທະນາ: {error}",
   "chatHint": "ພິມຂໍ້ຄວາມຂອງທ່ານ...",
+  "chatHintBlocked": "ປົດລັອກ AI ເພື່ອສົນທະນາ",
   "chatSubtitle": "ຖາມຫາຄຳແນະນຳລາຍການ ສູດອາຫານ ຫຼື ຄຳແນະນຳການປະຫຍັດເງິນ.",
   "chatSubtitleShort": "ສອບຖາມລາຄາ, ສູດອາຫານ, ອົງກອນ...",
   "chooseCurrency": "ເລືອກສະກຸນເງິນ",
@@ -479,6 +517,8 @@
   "estimated": "ປະມານ",
   "estimatedCost": "ຄາດຄະເນ",
   "estimatedPrice": "ລາຄາປະມານ",
+  "exit": "ອອກໄປ",
+  "exitShoppingMode": "ອອກຈາກໂໝດຊື້ເຄື່ອງ",
   "exportData": "ສົ່ງອອກຂໍ້ມູນ",
   "exportDataSubtitle": "ບັນທຶກທຸກລາຍການເປັນ JSON",
   "exportExcel": "ສົ່ງອອກເປັນ Excel",
@@ -517,6 +557,7 @@
   "generalAssistant": "ຜູ້ຊ່ວຍທົ່ວໄປ",
   "generalHelp": "ຂ້ອຍສາມາດຊ່ວຍທ່ານກ່ຽວກັບການຊື້ເຄື່ອງມື້ນີ້ແນວໃດ?",
   "generateShoppingList": "ສ້າງລາຍການຊື້ເຄື່ອງ",
+  "gestureHint": "ກົດຄ້າງໄວ້ເພື່ອເລືອກ • ປັດເພື່ອເອົາອອກ",
   "globalAssistant": "ຜູ້ຊ່ວຍທົ່ວໄປ",
   "howCanIHelp": "ຂ້ອຍສາມາດຊ່ວຍໄດ້ແນວໃດ?",
   "idealQty": "ຈຳນວນທີ່ຕ້ອງການ",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{purchased} ຈາກທັງໝົດ {total} ຊື້ແລ້ວ",
   "itemsPurchasedShort": "{purchased}/{total} ຊື້ແລ້ວ",
   "itemsWillBeAdded": "{count} ລາຍການຈະຖືກເພີ່ມ",
+  "kipiListTitle": "KipiList",
   "language": "ພາສາ",
   "languageEnglish": "ພາສາອັງກິດ",
   "languagePortuguese": "ພາສາປອກຕຸຍການ (ບຣາຊິວ)",
@@ -554,7 +596,6 @@
   "listHistory": "ປະຫວັດລາຍການ",
   "listNameLabel": "ຊື່ລາຍການ",
   "listOrganizedMagic": "ລາຍການຖືກຈັດລະບຽບຕາມໝວດຢ່າງມະຫັດສະຈັນ!",
-  "kipiListTitle": "KipiList",
   "listening": "ກຳລັງຟັງ...",
   "lists": "ລາຍການ",
   "loading": "ກຳລັງໂຫຼດ...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "ງົບປະມານປະຈຳເດືອນ",
   "myLists": "ລາຍການຂອງຂ້ອຍ",
   "myRecipes": "ສູດອາຫານຂອງຂ້ອຍ",
+  "navChat": "Chat",
+  "navLists": "ລາຍການ",
+  "navMealPlanner": "ເມນູ",
+  "navRecipes": "ສູດ",
   "newChat": "ສົນທະນາໃໝ່",
   "newListTitle": "ລາຍການຊື້ເຄື່ອງໃໝ່",
   "newPantryList": "ຊື້ເຄື່ອງຈາກຕູ້ເຄື່ອງໃຊ້",
@@ -663,7 +708,56 @@
   "pantryEmpty": "ຕູ້ເຄື່ອງໃຊ້ວ່າງ",
   "pantryEmptySubtitle": "ເພີ່ມສິນຄ້າທີ່ທ່ານຕ້ອງການເກັບໄວ້ໃນເຮືອນ",
   "pantryItemRemoved": "ລາຍການຖືກລຶບອອກ",
+  "paywallAfterItem1": "ເມັດພືດ",
+  "paywallAfterItem2": "ທໍາຄວາມສະອາດ",
+  "paywallAfterItem3": "ຊີ້ນ",
+  "paywallAfterItem4": "ເບເກີຣີ",
+  "paywallBeforeAfterTitle": "AI ກ່ອນ ແລະ ຫຼັງ:",
+  "paywallBeforeItem1": "ເຂົ້າ",
+  "paywallBeforeItem2": "ສະບູ່",
+  "paywallBeforeItem3": "ຊີ້ນ",
+  "paywallBeforeItem4": "ເຂົ້າຈີ່",
+  "paywallBenefit1Desc": "ເພີ່ມ, ຈັດລະບຽບ ແລະແນະນຳລາຍການ 24/7",
+  "paywallBenefit2Desc": "ບໍ່ມີຂອບເຂດຈໍາກັດ 3 ລາຍການ",
+  "paywallBenefit3Desc": "ການຕິດຕາມຄ່າໃຊ້ຈ່າຍແລະລາຍຊື່ຄອບຄົວ",
+  "paywallBestValue": "VALUE ທີ່ດີທີ່ສຸດ",
+  "paywallCancelAnytime": "ຍົກເລີກໄດ້ທຸກເວລາ. ບໍ່ມີຄໍາຫມັ້ນສັນຍາ.",
+  "paywallCtaTrialDays": "ເລີ່ມຟຣີ — {days} ມື້",
+  "paywallCtaUnlock": "ປົດລັອກ PRO",
+  "paywallFeatureExpenseControl": "ການຄວບຄຸມຄ່າໃຊ້ຈ່າຍ",
+  "paywallFeatureSharing": "ການແບ່ງປັນ",
+  "paywallFeatureSmartAI": "AI ອັດສະລິຍະ",
+  "paywallFeatureUnlimitedLists": "ບັນຊີລາຍຊື່ບໍ່ຈໍາກັດ",
+  "paywallFeaturesTitle": "ທຸກ​ສິ່ງ​ທຸກ​ຢ່າງ​ທີ່​ທ່ານ​ຕ້ອງ​ການ​:",
+  "paywallHeroHeadline": "Kipi AI ຢູ່ຄຽງຂ້າງເຈົ້າສະເໝີ",
+  "paywallHeroSubtitle": "ເພີ່ມລາຍການ, ຈັດລະບຽບລາຍການແລະປະຫຍັດເວລາດ້ວຍ AI ໃນຖົງຂອງທ່ານ",
+  "paywallLabelCommon": "ທົ່ວໄປ",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "ເກີດຄວາມຜິດພາດໃນການໂຫຼດຂໍ້ສະເໜີ. ລອງອີກຄັ້ງ.",
+  "paywallMostPopular": "ນິຍົມທີ່ສຸດ",
+  "paywallPackageAnnual": "ແຜນປະຈຳປີ",
+  "paywallPackageLifetime": "ການເຂົ້າເຖິງຕະຫຼອດຊີວິດ",
+  "paywallPackageMonthly": "ແຜນປະຈໍາເດືອນ",
+  "paywallPackageMonthlyDesc": "ຄວາມຍືດຫຍຸ່ນຢ່າງເຕັມທີ່",
+  "paywallPolicy": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+  "paywallPricePerMonth": "ພຽງແຕ່ {price}/ເດືອນ",
+  "paywallPurchaseError": "ບໍ່ສາມາດສຳເລັດການຊື້ໄດ້. ລອງອີກຄັ້ງ.",
+  "paywallRestore": "ຟື້ນຟູ",
+  "paywallRestoreError": "ບໍ່ພົບການສະໝັກໃຊ້ທີ່ເຄື່ອນໄຫວເພື່ອກູ້ຂໍ້ມູນຄືນມາ.",
+  "paywallSafeCheckout": "ການຊໍາລະທີ່ປອດໄພ",
+  "paywallSavePercent": "ປະຢັດ {percent}%",
+  "paywallSelectPlan": "ເລືອກແຜນຂອງທ່ານ:",
+  "paywallSocialProof": "+2,400 ຄອບຄົວໃຊ້ມັນ",
+  "paywallTerms": "ເງື່ອນໄຂການນໍາໃຊ້",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI ຈັດການຊື້ຂອງຂ້ອຍໃນວິນາທີ. ຂ້ອຍປະຫຍັດ 20 ນາທີຕໍ່ການເດີນທາງຕະຫຼາດ.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "ຂ້ອຍບໍ່ເຄີຍລືມລາຍການລາຍຊື່ອີກ. AI ສົນທະນາແມ່ນຄວາມຮູ້ສຶກ!",
+  "paywallTestimonialsTitle": "ສິ່ງທີ່ຜູ້ໃຊ້ຂອງພວກເຮົາເວົ້າ:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ມື້ຟຣີ",
+  "paywallTrialMonths": "{count,plural, one{{count} ເດືອນຟຣີ} other{{count} ເດືອນຟຣີ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ອາທິດຟຣີ} other{{count} ອາທິດຟຣີ}}",
   "prefAIAssistant": "ຜູ້ຊ່ວຍ AI ສ່ວນຕົວ",
   "prefCustomThemes": "ຊຸດຮູບແບບທີ່ກຳນົດເອງ",
   "prefExportData": "ສົ່ງອອກຂໍ້ມູນ",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "ເວລາໃນການກຽມ (ນາທີ)",
   "privacy": "ຄວາມເປັນສ່ວນຕົວ",
   "productName": "ຊື່ສິນຄ້າ",
+  "profile": "ໂປຣໄຟລ໌",
   "purchaseError": "ຂໍ້ຜິດພາດໃນການຊຳລະເງິນ. ກະລຸນາລອງໃໝ່.",
   "quantityFull": "ຈຳນວນ",
   "quantityShort": "ຈຳນວນ",
@@ -775,6 +870,7 @@
   "undo": "ຍົກເລີກ",
   "unit": "ຫົວໜ່ວຍ",
   "unitPack": "ຊອງ",
+  "unlockAi": "ປົດລັອກ AI ບໍ່ຈໍາກັດ",
   "unlockFullResponse": "ປົດລັອກການຕອບໂຕ້ຢ່າງເຕັມທີ່",
   "unmark": "ຍົກເລີກເຄື່ອງໝາຍ",
   "upgrade": "ອັບເກຣດ",

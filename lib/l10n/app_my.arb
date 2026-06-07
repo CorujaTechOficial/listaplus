@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} ခရက်ဒစ်ကျန်ပါသည်",
   "aiEnergy": "AI စွမ်းအင်",
   "aiError": "ဝမ်းနည်းပါတယ်၊ သင့်တောင်းဆိုချက်ကိုလုပ်ဆောင်ရာတွင်အမှားဖြစ်သွားသည်။ သင့်ချိတ်ဆက်မှုကိုစစ်ဆေးပါသို့မဟုတ်နောက်မှထပ်ကြိုးစားပါ။",
+  "aiLimitAlmostReached": "AI မက်ဆေ့ဂျ်များနီးပါး",
+  "aiTeaserFallback": "အပြည့်အဝတုံ့ပြန်မှုနှင့် သင့်စျေးဝယ်မှုအတွက် အကန့်အသတ်မရှိ AI အကြံပြုချက်များကို ရယူရန် Premium သို့ စာရင်းသွင်းပါ...",
   "aiVoiceCommandTooltip": "AI အသံအမိန့် (Premium)",
   "allTags": "အားလုံး",
   "alreadyPurchased": "ဝယ်ပြီးသား",
@@ -404,9 +430,21 @@
   "catCleaning": "သန့်ရှင်းရေး",
   "catFruits": "သစ်သီးများ",
   "catOthers": "အခြား",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} → ထည့်ပါ။",
+  "catalogBrowse": "Catalogue ကို ကြည့်ပါ။",
+  "catalogFilterNational": "တိုင်းရင်းသားများ",
+  "catalogMyFrequents": "ကျွန်ုပ်၏ အကြိမ်ရေများ",
+  "catalogProductNotFound": "ကုန်ပစ္စည်းမတွေ့ပါက အမည်ကို ရိုက်ထည့်ပါ။",
+  "catalogRareSection": "သင့်နိုင်ငံမှာ အဖြစ်နည်းပါတယ်။",
+  "catalogSearchGlobal": "မည်သည့်ထုတ်ကုန်ကိုမဆို ရှာဖွေပါ...",
+  "catalogSearchInCategory": "{category} တွင် ရှာပါ...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "လူကြိုက်အများဆုံး",
+  "catalogTitle": "ကက်တလောက်",
   "category": "အမျိုးအစား",
   "chatError": "ချတ်ဖွင့်ရာတွင်အမှား: {error}",
   "chatHint": "သင့်မက်ဆေ့ခ်ျကိုရိုက်ပါ...",
+  "chatHintBlocked": "ချတ်လုပ်ရန် AI ကို လော့ခ်ဖွင့်ပါ။",
   "chatSubtitle": "ပစ္စည်းအကြံပြုချက်များ၊ ချက်ပြုတ်နည်းများသို့မဟုတ်ချွေတာရေးအကြံပေးချက်များတောင်းပါ။",
   "chatSubtitleShort": "စျေးနှုန်း၊ ဟင်းချက်နည်းများ၊ အဖွဲ့အစည်းအကြောင်းမေးပါ...",
   "chooseCurrency": "ငွေကြေးကို ရွေးပါ။",
@@ -479,6 +517,8 @@
   "estimated": "ခန့်မှန်း",
   "estimatedCost": "ခန့်မှန်း",
   "estimatedPrice": "ခန့်မှန်းစျေးနှုန်း",
+  "exit": "ထွက်ပေါက်",
+  "exitShoppingMode": "စျေးဝယ်မုဒ်မှ ထွက်ပါ။",
   "exportData": "ဒေတာတင်ပို့",
   "exportDataSubtitle": "စာရင်းအားလုံးကို JSON အဖြစ်သိမ်းဆည်း",
   "exportExcel": "Excel အဖြစ်တင်ပို့",
@@ -517,6 +557,7 @@
   "generalAssistant": "အထွေထွေအကူ",
   "generalHelp": "ယနေ့သင့်စျေးဝယ်အတွက်ဘယ်လိုကူညီပေးရမလဲ?",
   "generateShoppingList": "စျေးဝယ်စာရင်းထုတ်",
+  "gestureHint": "ရွေးရန် ဖိထားပါ • ဖယ်ရှားရန် ပွတ်ဆွဲပါ။",
   "globalAssistant": "ကမ္ဘာလုံးဆိုင်ရာအကူ",
   "howCanIHelp": "ငါဘယ်လိုကူညီနိုင်မလဲ။",
   "idealQty": "စံပြပမာဏ",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "ဝယ်ယူထားသော {total} ၏ {purchased}",
   "itemsPurchasedShort": "{purchased}/{total} ဝယ်ယူခဲ့သည်။",
   "itemsWillBeAdded": "{count} ခုထည့်သွင်းမည်",
+  "kipiListTitle": "KipiList",
   "language": "ဘာသာစကား",
   "languageEnglish": "အင်္ဂလိပ်စာ",
   "languagePortuguese": "ပေါ်တူဂီ (ဘရာဇီး)",
@@ -554,7 +596,6 @@
   "listHistory": "စာရင်းမှတ်တမ်း",
   "listNameLabel": "စာရင်းအမည်",
   "listOrganizedMagic": "စာရင်းကိုအမျိုးအစားများဖြင့်မှော်ဆန်စွာစုစည်းပြီးပြီ! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "နားထောင်နေသည်...",
   "lists": "စာရင်းများ",
   "loading": "ဖွင့်နေသည်...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "လစဉ်ဘတ်ဂျက်",
   "myLists": "ကျွန်ုပ်၏စာရင်းများ",
   "myRecipes": "ကျွန်ုပ်၏ ဟင်းချက်နည်းများ",
+  "navChat": "Chat",
+  "navLists": "စာရင်းများ",
+  "navMealPlanner": "မီနူး",
+  "navRecipes": "ချက်ပြုတ်နည်းများ",
   "newChat": "Chat အသစ်",
   "newListTitle": "စျေးဝယ်စာရင်းအသစ်",
   "newPantryList": "စားသိုက်ခန်းစျေးဝယ်",
@@ -663,7 +708,56 @@
   "pantryEmpty": "စားသိုက်ခန်းဗလာ",
   "pantryEmptySubtitle": "အိမ်မှာထားချင်တဲ့ပစ္စည်းတွေထည့်ပါ",
   "pantryItemRemoved": "ပစ္စည်းဖယ်ရှားပြီး",
+  "paywallAfterItem1": "အစေ့အဆန်များ",
+  "paywallAfterItem2": "သန့်ရှင်းရေး",
+  "paywallAfterItem3": "အသားများ",
+  "paywallAfterItem4": "မုန့်တိုက်",
+  "paywallBeforeAfterTitle": "AI ရှေ့နှင့်နောက်။",
+  "paywallBeforeItem1": "ဆန်",
+  "paywallBeforeItem2": "ဆပ်ပြာ",
+  "paywallBeforeItem3": "အသား",
+  "paywallBeforeItem4": "မုန့်",
+  "paywallBenefit1Desc": "ပစ္စည်းများ ပေါင်းထည့်ခြင်း၊ စီစဉ်ခြင်းနှင့် အကြံပြုခြင်းများ 24/7",
+  "paywallBenefit2Desc": "3 စာရင်းကန့်သတ်ချက်မရှိပါ။",
+  "paywallBenefit3Desc": "ကုန်ကျစရိတ်ခြေရာခံခြင်းနှင့် မိသားစုစာရင်းများ",
+  "paywallBestValue": "အကောင်းဆုံးတန်ဖိုး",
+  "paywallCancelAnytime": "အချိန်မရွေး ပယ်ဖျက်ပါ။ ကတိကဝတ်မရှိ။",
+  "paywallCtaTrialDays": "အခမဲ့စတင်ပါ — {days} ရက်",
+  "paywallCtaUnlock": "PRO ကိုသော့ဖွင့်ပါ။",
+  "paywallFeatureExpenseControl": "ကုန်ကျစရိတ်ထိန်းချုပ်ရေး",
+  "paywallFeatureSharing": "မျှဝေခြင်း။",
+  "paywallFeatureSmartAI": "စမတ် AI",
+  "paywallFeatureUnlimitedLists": "အကန့်အသတ်မရှိစာရင်းများ",
+  "paywallFeaturesTitle": "သင်လိုအပ်သမျှ-",
+  "paywallHeroHeadline": "Kipi AI သည် သင့်အနားတွင် အမြဲရှိနေပါသည်။",
+  "paywallHeroSubtitle": "ပစ္စည်းများထည့်ပါ၊ စာရင်းများကိုစုစည်းပြီး သင့်အိတ်ကပ်ထဲရှိ AI ဖြင့် အချိန်ကုန်သက်သာစေသည်။",
+  "paywallLabelCommon": "အဖြစ်များသည်။",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "ကမ်းလှမ်းချက်များကို ဖွင့်ရာတွင် အမှားအယွင်းရှိနေသည်။ ထပ်ကြိုးစားပါ။",
+  "paywallMostPopular": "လူကြိုက်အများဆုံး",
+  "paywallPackageAnnual": "နှစ်ပတ်လည်အစီအစဉ်",
+  "paywallPackageLifetime": "တစ်သက်တာအသုံးပြုခွင့်",
+  "paywallPackageMonthly": "လစဉ်အစီအစဉ်",
+  "paywallPackageMonthlyDesc": "အပြည့်အဝပြောင်းလွယ်ပြင်လွယ်",
+  "paywallPolicy": "ကိုယ်ရေးအချက်အလက်မူဝါဒ",
+  "paywallPricePerMonth": "{price}/လသာ",
+  "paywallPurchaseError": "ဝယ်ယူမှုကို အပြီးသတ်၍မရပါ။ ထပ်ကြိုးစားပါ။",
+  "paywallRestore": "ပြန်ယူပါ။",
+  "paywallRestoreError": "ပြန်လည်ရယူရန် လက်ရှိစာရင်းသွင်းမှု မတွေ့ပါ။",
+  "paywallSafeCheckout": "လုံခြုံသောငွေပေးချေမှု",
+  "paywallSavePercent": "{percent}% သိမ်းဆည်းပါ",
+  "paywallSelectPlan": "သင့်အစီအစဉ်ကို ရွေးချယ်ပါ-",
+  "paywallSocialProof": "မိသားစုပေါင်း 2,400 အသုံးပြုသည်။",
+  "paywallTerms": "သတ်မှတ်ချက်များ",
+  "paywallTestimonial1Name": "အန်းအက်စ်",
+  "paywallTestimonial1Text": "AI သည် ကျွန်ုပ်၏စျေးဝယ်ခြင်းကို စက္ကန့်ပိုင်းအတွင်း စီစဉ်ပေးပါသည်။ ဈေးခရီးတစ်ခုလျှင် မိနစ် 20 သက်သာပါသည်။",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "စာရင်းထဲက အကြောင်းအရာတစ်ခုကို ဘယ်တော့မှ မမေ့တော့ဘူး။ AI chat သည် စိတ်လှုပ်ရှားဖွယ်ကောင်းသည်။",
+  "paywallTestimonialsTitle": "ကျွန်ုပ်တို့၏အသုံးပြုသူများပြောသောအရာ-",
   "paywallTitle": "KipiList ပရီမီယံ",
+  "paywallTrialDays": "{days} ရက်အခမဲ့",
+  "paywallTrialMonths": "{count,plural, one{{count} တစ်လ အခမဲ့} other{{count} လ အခမဲ့}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} အပတ်အခမဲ့} other{{count} အပတ်အခမဲ့}}",
   "prefAIAssistant": "ကိုယ်ပိုင် AI အကူ",
   "prefCustomThemes": "စိတ်ကြိုက်အပြင်အဆင်များ",
   "prefExportData": "ဒေတာတင်ပို့",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "ပြင်ဆင်ချိန် (မိနစ်)",
   "privacy": "ကိုယ်ရေးလုံခြုံမှု",
   "productName": "ကုန်ပစ္စည်းအမည်",
+  "profile": "ကိုယ်ရေးအကျဉ်း",
   "purchaseError": "ဝယ်ယူမှုကို လုပ်ဆောင်ရာတွင် အမှားရှိနေသည်။ ထပ်ကြိုးစားပါ။",
   "quantityFull": "ပမာဏ",
   "quantityShort": "ပမာဏ",
@@ -775,6 +870,7 @@
   "undo": "ပြန်ဖျက်",
   "unit": "ယူနစ်",
   "unitPack": "ထုပ်",
+  "unlockAi": "အကန့်အသတ်မဲ့ AI ကို လော့ခ်ဖွင့်ပါ။",
   "unlockFullResponse": "တုံ့ပြန်မှုအပြည့်အဝကိုသော့ဖွင့်ပါ။",
   "unmark": "အမှတ်ဖြုတ်",
   "upgrade": "အဆင့်မြှင့်",

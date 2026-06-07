@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -300,6 +317,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -380,6 +404,8 @@
   "aiCreditsRemaining": "{remaining} krediete oor",
   "aiEnergy": "AI Energie",
   "aiError": "Jammer, 'n fout het voorgekom met die verwerking van jou versoek. Gaan jou verbinding na of probeer later weer.",
+  "aiLimitAlmostReached": "Amper uit KI-boodskappe",
+  "aiTeaserFallback": "Teken in op Premium om die volle reaksie te ontsluit en kry onbeperkte KI-wenke vir jou inkopies...",
   "aiVoiceCommandTooltip": "KI-stemopdrag (Premium)",
   "allTags": "Alle",
   "alreadyPurchased": "Reeds gekoop",
@@ -411,6 +437,17 @@
   "catCleaning": "Skoonmaak",
   "catFruits": "Vrugte",
   "catOthers": "Ander",
+  "catalogAddItems": "Voeg {count} {count, plural, one{item} other{items}} by →",
+  "catalogBrowse": "Blaai deur Katalogus",
+  "catalogFilterNational": "Onderdane",
+  "catalogMyFrequents": "My gereelde",
+  "catalogProductNotFound": "Produk nie gevind nie, tik die naam in",
+  "catalogRareSection": "minder algemeen in jou land",
+  "catalogSearchGlobal": "Soek enige produk...",
+  "catalogSearchInCategory": "Soek in {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Gewildste",
+  "catalogTitle": "Katalogus",
   "category": "Kategorie",
   "chatError": "Fout met laai van geselsie: {error}",
   "chatHint": "Tik jou boodskap...",
@@ -487,6 +524,8 @@
   "estimated": "Geraam",
   "estimatedCost": "Geskatte",
   "estimatedPrice": "Geraamde prys",
+  "exit": "Verlaat",
+  "exitShoppingMode": "Verlaat inkopiemodus",
   "exportData": "Voer data uit",
   "exportDataSubtitle": "Stoor alle lyste as JSON",
   "exportExcel": "Voer uit as Excel",
@@ -525,6 +564,7 @@
   "generalAssistant": "Algemene Assistent",
   "generalHelp": "Hoe kan ek met jou inkopies vandag help?",
   "generateShoppingList": "Genereer klyslys",
+  "gestureHint": "Hou om te kies • Swiep om te verwyder",
   "globalAssistant": "Globale assistent",
   "howCanIHelp": "Hoe kan ek help?",
   "idealQty": "Ideale hoev",
@@ -548,6 +588,7 @@
   "itemsPurchasedCount": "{purchased} van {total} gekoop",
   "itemsPurchasedShort": "{purchased}/{total} gekoop",
   "itemsWillBeAdded": "{count} item(s) sal bygevoeg word",
+  "kipiListTitle": "KipiLys",
   "language": "Taal",
   "languageEnglish": "Engels",
   "languagePortuguese": "Português (Brasilië)",
@@ -562,7 +603,6 @@
   "listHistory": "Lysgeskiedenis",
   "listNameLabel": "Lysnaam",
   "listOrganizedMagic": "Lys magies georganiseer volgens kategorieë! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Luister tans...",
   "lists": "Lyste",
   "loading": "Laai tans...",
@@ -613,6 +653,10 @@
   "monthlyBudgetTitle": "Maandelikse Begroting",
   "myLists": "My Lyste",
   "myRecipes": "My resepte",
+  "navChat": "Chat",
+  "navLists": "Lyste",
+  "navMealPlanner": "Spyskaart",
+  "navRecipes": "Resepte",
   "newChat": "Nuwe Chat",
   "newListTitle": "Nuwe Klyslys",
   "newPantryList": "Spens Inkopies",
@@ -671,7 +715,56 @@
   "pantryEmpty": "Spens is leeg",
   "pantryEmptySubtitle": "Voeg produkte by wat jy tuis wil hou",
   "pantryItemRemoved": "Item verwyder",
+  "paywallAfterItem1": "Korrels",
+  "paywallAfterItem2": "Skoonmaak",
+  "paywallAfterItem3": "Vleis",
+  "paywallAfterItem4": "Bakkery",
+  "paywallBeforeAfterTitle": "KI voor en na:",
+  "paywallBeforeItem1": "rys",
+  "paywallBeforeItem2": "seep",
+  "paywallBeforeItem3": "vleis",
+  "paywallBeforeItem4": "brood",
+  "paywallBenefit1Desc": "Voeg items 24/7 by, organiseer en stel items voor",
+  "paywallBenefit2Desc": "Geen 3-lys limiet nie",
+  "paywallBenefit3Desc": "Uitgawe dop en familie lyste",
+  "paywallBestValue": "BESTE WAARDE",
+  "paywallCancelAnytime": "Kanselleer enige tyd. Geen verbintenis nie.",
+  "paywallCtaTrialDays": "Begin gratis - {days} dae",
+  "paywallCtaUnlock": "Ontsluit PRO",
+  "paywallFeatureExpenseControl": "Onkostebeheer",
+  "paywallFeatureSharing": "Deel",
+  "paywallFeatureSmartAI": "Slim KI",
+  "paywallFeatureUnlimitedLists": "Onbeperkte lyste",
+  "paywallFeaturesTitle": "Alles wat jy nodig het:",
+  "paywallHeroHeadline": "Kipi AI altyd aan jou sy",
+  "paywallHeroSubtitle": "Voeg items by, organiseer lyste en bespaar tyd met KI in jou sak",
+  "paywallLabelCommon": "Algemeen",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Kon nie aanbiedings laai nie. Probeer weer.",
+  "paywallMostPopular": "MEES GEWILDE",
+  "paywallPackageAnnual": "Jaarlikse Plan",
+  "paywallPackageLifetime": "Lewenslange toegang",
+  "paywallPackageMonthly": "Maandelikse Plan",
+  "paywallPackageMonthlyDesc": "Volle buigsaamheid",
+  "paywallPolicy": "Privaatheidsbeleid",
+  "paywallPricePerMonth": "Slegs {price}/maand",
+  "paywallPurchaseError": "Kon nie aankoop voltooi nie. Probeer weer.",
+  "paywallRestore": "Herstel",
+  "paywallRestoreError": "Geen aktiewe intekening gevind om terug te stel nie.",
+  "paywallSafeCheckout": "Veilige betaling",
+  "paywallSavePercent": "SPAAR {percent}%",
+  "paywallSelectPlan": "Kies jou plan:",
+  "paywallSocialProof": "+2 400 gesinne gebruik dit",
+  "paywallTerms": "Gebruiksvoorwaardes",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "KI organiseer my inkopies binne sekondes. Ek spaar 20 min per markreis.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Ek het nooit weer 'n lysitem vergeet nie. Die KI-klets is sensasioneel!",
+  "paywallTestimonialsTitle": "Wat ons gebruikers sê:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DAE GRATIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MAAND GRATIS} other{{count} MAANDE GRATIS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} WEEK GRATIS} other{{count} WEKE GRATIS}}",
   "prefAIAssistant": "Persoonlike AI Assistent",
   "prefCustomThemes": "Pasgemaakte temas",
   "prefExportData": "Voer data uit",
@@ -686,6 +779,7 @@
   "prepTimeMinutes": "Voorbereidingstyd (minute)",
   "privacy": "Privaatheid",
   "productName": "Produknaam",
+  "profile": "Profiel",
   "purchaseError": "Fout met verwerking van aankoop. Probeer weer.",
   "quantityFull": "Hoeveelheid",
   "quantityShort": "Hoev",
@@ -783,6 +877,7 @@
   "undo": "Ontdoen",
   "unit": "Eenheid",
   "unitPack": "pak",
+  "unlockAi": "Ontsluit onbeperkte AI",
   "unlockFullResponse": "Ontsluit volle reaksie",
   "unmark": "Ontmerk",
   "upgrade": "Gradeer op",

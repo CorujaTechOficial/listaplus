@@ -18,6 +18,18 @@ class AppLocalizationsMn extends AppLocalizations {
   String get pantry => 'Агуулах';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Хоолны жор';
+
+  @override
+  String get navLists => 'Жагсаалтууд';
+
+  @override
+  String get navMealPlanner => 'Цэс';
+
+  @override
   String get cancel => 'Цуцлах';
 
   @override
@@ -97,6 +109,15 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Нэмэгдсэн!';
+
+  @override
+  String get profile => 'Профайл';
+
+  @override
+  String get exitShoppingMode => 'Худалдааны горимоос гарах';
+
+  @override
+  String get exit => 'Гарах';
 
   @override
   String selectedItems(int count) {
@@ -596,7 +617,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get chatHint => 'Мессежээ бичнэ үү...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'Чатлахын тулд AI-ийн түгжээг тайлаарай';
 
   @override
   String chatError(String error) {
@@ -618,14 +639,14 @@ class AppLocalizationsMn extends AppLocalizations {
       'Уучлаарай, таны хүсэлтийг боловсруулахад алдаа гарлаа. Холболтоо шалгаад дараа дахин оролдоно уу.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'AI мессеж бараг байхгүй болсон';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Хязгааргүй хиймэл оюун ухааны түгжээг тайл';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Бүрэн хариултыг нээхийн тулд Premium-д бүртгүүлж, дэлгүүр хэсэхдээ хязгааргүй хиймэл оюун ухааны зөвлөгөө аваарай...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -754,17 +775,19 @@ class AppLocalizationsMn extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Саналыг ачаалахад алдаа гарлаа. Дахин оролдоно уу.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Худалдан авалтыг дуусгаж чадсангүй. Дахин оролдоно уу.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError => 'Сэргээх идэвхтэй захиалга олдсонгүй.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days ӨДӨР ҮНЭГҮЙ';
   }
 
   @override
@@ -772,8 +795,8 @@ class AppLocalizationsMn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count ДОЛОО ХОНОГ ҮНЭГҮЙ',
+      one: '$count ДОЛОО ХОНОГ ҮНЭГҮЙ',
     );
     return '$_temp0';
   }
@@ -783,148 +806,148 @@ class AppLocalizationsMn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count САР ҮНЭГҮЙ',
+      one: '$count САР ҮНЭГҮЙ',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Танд хэрэгтэй бүх зүйл:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Хязгааргүй жагсаалт';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Ухаалаг AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Зардлын хяналт';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Хуваалцах';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI өмнө ба дараа:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Нийтлэг';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'будаа';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'саван';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'мах';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'талх';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Үр тариа';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Цэвэрлэгээ';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Мах';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Талх нарийн боов';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Манай хэрэглэгчид юу гэж хэлдэг:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => 'Анн С.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI миний худалдан авалтыг секундын дотор зохион байгуулдаг. Би зах зээлд 20 минут хэмнэдэг.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'Чарльз М.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Би жагсаалтын нэг зүйлийг дахин хэзээ ч мартсангүй. AI чат нь сенсаацтай юм!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2400 өрх үүнийг ашигладаг';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'PRO түгжээг тайл';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'ХАМГИЙН ҮНЭ ЦЭНЭ';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'ХАМГИЙН АЛДАРТ';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Аюулгүй төлбөр';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Төлөвлөгөөгөө сонгоно уу:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return '$percent% ХЭМНЭХ';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Зөвхөн $price/сар';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Жилийн төлөвлөгөө';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Сарын төлөвлөгөө';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Насан туршийн хандалт';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'Хэзээ ч цуцлах. Амлалт байхгүй.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Нууцлалын бодлого';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Хэрэглэх нөхцөл';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Сэргээх';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI үргэлж таны хажууд байдаг';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Хиймэл оюун ухааны тусламжтайгаар халаасандаа байгаа зүйлсээ нэмж, жагсаалтаа цэгцэлж, цаг хэмнээрэй';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc => '24/7 зүйл нэмж, цэгцэлж, санал болгодог';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => '3 жагсаалтын хязгаарлалт байхгүй';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Зардлын хяналт, гэр бүлийн жагсаалт';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Бүрэн уян хатан байдал';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Үнэгүй эхлэх — $days хоног';
   }
 
   @override
@@ -1645,6 +1668,54 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'KipiList Premium-г 7 хоног аваарай!';
+
+  @override
+  String get gestureHint =>
+      'Сонгохын тулд удаан дарна уу • Устгахын тулд шударна уу';
+
+  @override
+  String get catalogTitle => 'Каталог';
+
+  @override
+  String get catalogMyFrequents => 'Миний байнгын хүмүүс';
+
+  @override
+  String get catalogSearchGlobal => 'Ямар ч бүтээгдэхүүн хайх...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category-д хайх...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Хамгийн алдартай';
+
+  @override
+  String get catalogSortAZ => 'А–З';
+
+  @override
+  String get catalogFilterNational => 'Үндэсний хүмүүс';
+
+  @override
+  String get catalogRareSection => 'танай улсад бага тохиолддог';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 нэмэх →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'Бүтээгдэхүүн олдсонгүй, нэрийг бичнэ үү';
+
+  @override
+  String get catalogBrowse => 'Каталог үзэх';
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).
@@ -1659,6 +1730,18 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get pantry => 'Агуулах';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Хоолны жор';
+
+  @override
+  String get navLists => 'Жагсаалтууд';
+
+  @override
+  String get navMealPlanner => 'Цэс';
 
   @override
   String get cancel => 'Цуцлах';
@@ -1740,6 +1823,15 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get addedFeedback => 'Нэмэгдсэн!';
+
+  @override
+  String get profile => 'Профайл';
+
+  @override
+  String get exitShoppingMode => 'Худалдааны горимоос гарах';
+
+  @override
+  String get exit => 'Гарах';
 
   @override
   String selectedItems(int count) {
@@ -2233,6 +2325,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get chatHint => 'Зурвасаа бичнэ үү...';
 
   @override
+  String get chatHintBlocked => 'Чатлахын тулд AI-ийн түгжээг тайлаарай';
+
+  @override
   String chatError(String error) {
     return 'Чат ачааллахад алдаа: $error';
   }
@@ -2250,6 +2345,16 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   @override
   String get aiError =>
       'Уучлаарай, таны хүсэлтийг боловсруулахад алдаа гарлаа. Холболтоо шалгах эсвэл дараа дахин оролдоно уу.';
+
+  @override
+  String get aiLimitAlmostReached => 'AI мессеж бараг байхгүй болсон';
+
+  @override
+  String get unlockAi => 'Хязгааргүй хиймэл оюун ухааны түгжээг тайл';
+
+  @override
+  String get aiTeaserFallback =>
+      'Бүрэн хариултыг нээхийн тулд Premium-д бүртгүүлж, дэлгүүр хэсэхдээ хязгааргүй хиймэл оюун ухааны зөвлөгөө аваарай...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -2376,6 +2481,182 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError =>
+      'Саналыг ачаалахад алдаа гарлаа. Дахин оролдоно уу.';
+
+  @override
+  String get paywallPurchaseError =>
+      'Худалдан авалтыг дуусгаж чадсангүй. Дахин оролдоно уу.';
+
+  @override
+  String get paywallRestoreError => 'Сэргээх идэвхтэй захиалга олдсонгүй.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days ӨДӨР ҮНЭГҮЙ';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ДОЛОО ХОНОГ ҮНЭГҮЙ',
+      one: '$count ДОЛОО ХОНОГ ҮНЭГҮЙ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count САР ҮНЭГҮЙ',
+      one: '$count САР ҮНЭГҮЙ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Танд хэрэгтэй бүх зүйл:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Хязгааргүй жагсаалт';
+
+  @override
+  String get paywallFeatureSmartAI => 'Ухаалаг AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Зардлын хяналт';
+
+  @override
+  String get paywallFeatureSharing => 'Хуваалцах';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI өмнө ба дараа:';
+
+  @override
+  String get paywallLabelCommon => 'Нийтлэг';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'будаа';
+
+  @override
+  String get paywallBeforeItem2 => 'саван';
+
+  @override
+  String get paywallBeforeItem3 => 'мах';
+
+  @override
+  String get paywallBeforeItem4 => 'талх';
+
+  @override
+  String get paywallAfterItem1 => 'Үр тариа';
+
+  @override
+  String get paywallAfterItem2 => 'Цэвэрлэгээ';
+
+  @override
+  String get paywallAfterItem3 => 'Мах';
+
+  @override
+  String get paywallAfterItem4 => 'Талх нарийн боов';
+
+  @override
+  String get paywallTestimonialsTitle => 'Манай хэрэглэгчид юу гэж хэлдэг:';
+
+  @override
+  String get paywallTestimonial1Name => 'Анн С.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI миний худалдан авалтыг секундын дотор зохион байгуулдаг. Би зах зээлд 20 минут хэмнэдэг.';
+
+  @override
+  String get paywallTestimonial2Name => 'Чарльз М.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'Би жагсаалтын нэг зүйлийг дахин хэзээ ч мартсангүй. AI чат нь сенсаацтай юм!';
+
+  @override
+  String get paywallSocialProof => '+2400 өрх үүнийг ашигладаг';
+
+  @override
+  String get paywallCtaUnlock => 'PRO түгжээг тайл';
+
+  @override
+  String get paywallBestValue => 'ХАМГИЙН ҮНЭ ЦЭНЭ';
+
+  @override
+  String get paywallMostPopular => 'ХАМГИЙН АЛДАРТ';
+
+  @override
+  String get paywallSafeCheckout => 'Аюулгүй төлбөр';
+
+  @override
+  String get paywallSelectPlan => 'Төлөвлөгөөгөө сонгоно уу:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return '$percent% ХЭМНЭХ';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Зөвхөн $price/сар';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Жилийн төлөвлөгөө';
+
+  @override
+  String get paywallPackageMonthly => 'Сарын төлөвлөгөө';
+
+  @override
+  String get paywallPackageLifetime => 'Насан туршийн хандалт';
+
+  @override
+  String get paywallCancelAnytime => 'Хэзээ ч цуцлах. Амлалт байхгүй.';
+
+  @override
+  String get paywallPolicy => 'Нууцлалын бодлого';
+
+  @override
+  String get paywallTerms => 'Хэрэглэх нөхцөл';
+
+  @override
+  String get paywallRestore => 'Сэргээх';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI үргэлж таны хажууд байдаг';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Хиймэл оюун ухааны тусламжтайгаар халаасандаа байгаа зүйлсээ нэмж, жагсаалтаа цэгцэлж, цаг хэмнээрэй';
+
+  @override
+  String get paywallBenefit1Desc => '24/7 зүйл нэмж, цэгцэлж, санал болгодог';
+
+  @override
+  String get paywallBenefit2Desc => '3 жагсаалтын хязгаарлалт байхгүй';
+
+  @override
+  String get paywallBenefit3Desc => 'Зардлын хяналт, гэр бүлийн жагсаалт';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Бүрэн уян хатан байдал';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Үнэгүй эхлэх — $days хоног';
+  }
 
   @override
   String get premiumUpgrade => 'Нээхээр шинэчлэх';
@@ -3089,4 +3370,52 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get shareReferralSubject => 'KipiList Premium-г 7 хоног аваарай!';
+
+  @override
+  String get gestureHint =>
+      'Сонгохын тулд удаан дарна уу • Устгахын тулд шударна уу';
+
+  @override
+  String get catalogTitle => 'Каталог';
+
+  @override
+  String get catalogMyFrequents => 'Миний байнгын хүмүүс';
+
+  @override
+  String get catalogSearchGlobal => 'Ямар ч бүтээгдэхүүн хайх...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category-д хайх...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Хамгийн алдартай';
+
+  @override
+  String get catalogSortAZ => 'А–З';
+
+  @override
+  String get catalogFilterNational => 'Үндэсний хүмүүс';
+
+  @override
+  String get catalogRareSection => 'танай улсад бага тохиолддог';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 нэмэх →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'Бүтээгдэхүүн олдсонгүй, нэрийг бичнэ үү';
+
+  @override
+  String get catalogBrowse => 'Каталог үзэх';
 }

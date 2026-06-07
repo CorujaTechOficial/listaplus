@@ -34,13 +34,17 @@ class AppBarListSelector extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Flexible(
-              child: Text(
-                currentList?.name ?? l10n.appTitle,
-                style: theme.textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: theme.colorScheme.onSurface,
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                child: Text(
+                  currentList?.name ?? l10n.appTitle,
+                  key: ValueKey<String>(currentList?.id ?? 'default'),
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: theme.colorScheme.onSurface,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                overflow: TextOverflow.ellipsis,
               ),
             ),
             const SizedBox(width: 4),
@@ -53,5 +57,6 @@ class AppBarListSelector extends ConsumerWidget {
         ),
       ),
     );
+
   }
 }

@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -300,6 +317,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -380,6 +404,8 @@
   "aiCreditsRemaining": "Atlikuši {remaining} kredīti",
   "aiEnergy": "AI enerģija",
   "aiError": "Atvainojiet, radās kļūda, apstrādājot jūsu pieprasījumu. Pārbaudiet savienojumu vai mēģiniet vēlreiz vēlāk.",
+  "aiLimitAlmostReached": "Gandrīz beigušies AI ziņojumi",
+  "aiTeaserFallback": "Abonējiet Premium, lai atvērtu pilnu atbildi un saņemtu neierobežotus AI padomus par iepirkšanos...",
   "aiVoiceCommandTooltip": "AI balss komanda (Premium)",
   "allTags": "Visas",
   "alreadyPurchased": "Jau iegādāts",
@@ -411,9 +437,21 @@
   "catCleaning": "Tīrīšana",
   "catFruits": "Augļi",
   "catOthers": "Citi",
+  "catalogAddItems": "Pievienot {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Pārlūkot katalogu",
+  "catalogFilterNational": "Nacionāļi",
+  "catalogMyFrequents": "Mani Frekvences",
+  "catalogProductNotFound": "Produkts nav atrasts, ierakstiet nosaukumu",
+  "catalogRareSection": "retāk jūsu valstī",
+  "catalogSearchGlobal": "Meklēt jebkuru produktu...",
+  "catalogSearchInCategory": "Meklēt {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Populārākais",
+  "catalogTitle": "Katalogs",
   "category": "Kategorija",
   "chatError": "Kļūda, ielādējot tērzēšanu: {error}",
   "chatHint": "Ierakstiet savu ziņojumu...",
+  "chatHintBlocked": "Atbloķējiet AI, lai tērzētu",
   "chatSubtitle": "Jautājiet par vienumu ieteikumiem, receptēm vai taupīšanas padomiem.",
   "chatSubtitleShort": "Jautājiet par cenām, receptēm, organizāciju...",
   "chooseCurrency": "Atlasiet Valūta",
@@ -486,6 +524,8 @@
   "estimated": "Aptuveni",
   "estimatedCost": "Aptuvenais",
   "estimatedPrice": "Aptuvenā cena",
+  "exit": "Iziet",
+  "exitShoppingMode": "Izejiet no iepirkšanās režīma",
   "exportData": "Eksportēt datus",
   "exportDataSubtitle": "Saglabāt visus sarakstus kā JSON",
   "exportExcel": "Eksportēt kā Excel",
@@ -524,6 +564,7 @@
   "generalAssistant": "Vispārējais palīgs",
   "generalHelp": "Kā es varu palīdzēt ar jūsu iepirkšanos šodien?",
   "generateShoppingList": "Ģenerēt iepirkumu sarakstu",
+  "gestureHint": "Turiet, lai atlasītu • Velciet, lai noņemtu",
   "globalAssistant": "Globālais palīgs",
   "howCanIHelp": "Kā es varu palīdzēt?",
   "idealQty": "Ideālais daudz.",
@@ -547,6 +588,7 @@
   "itemsPurchasedCount": "{purchased} no {total} iegādāts",
   "itemsPurchasedShort": "{purchased}/{total} iegādāts",
   "itemsWillBeAdded": "Tiks pievienots {count} vienums(-i)",
+  "kipiListTitle": "KipiList",
   "language": "Valoda",
   "languageEnglish": "angļu valoda",
   "languagePortuguese": "portugāļu (Brazīlija)",
@@ -561,7 +603,6 @@
   "listHistory": "Sarakstu vēsture",
   "listNameLabel": "Saraksta nosaukums",
   "listOrganizedMagic": "Saraksts maģiski sakārtots kategorijās! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Klausos...",
   "lists": "Saraksti",
   "loading": "Ielādē...",
@@ -612,6 +653,10 @@
   "monthlyBudgetTitle": "Mēneša budžets",
   "myLists": "Mani saraksti",
   "myRecipes": "Manas receptes",
+  "navChat": "Chat",
+  "navLists": "Saraksti",
+  "navMealPlanner": "Izvēlne",
+  "navRecipes": "Receptes",
   "newChat": "Jauna tērzēšana",
   "newListTitle": "Jauns iepirkumu saraksts",
   "newPantryList": "Pieliekamā iepirkums",
@@ -670,7 +715,56 @@
   "pantryEmpty": "Tukšs pieliekamais",
   "pantryEmptySubtitle": "Pievienojiet produktus, kurus vēlaties turēt mājās",
   "pantryItemRemoved": "Vienums noņemts",
+  "paywallAfterItem1": "Graudi",
+  "paywallAfterItem2": "Tīrīšana",
+  "paywallAfterItem3": "Gaļa",
+  "paywallAfterItem4": "Maiznīca",
+  "paywallBeforeAfterTitle": "AI pirms un pēc:",
+  "paywallBeforeItem1": "rīsi",
+  "paywallBeforeItem2": "ziepes",
+  "paywallBeforeItem3": "gaļu",
+  "paywallBeforeItem4": "maize",
+  "paywallBenefit1Desc": "Pievieno, kārto un iesaka vienumus visu diennakti",
+  "paywallBenefit2Desc": "Nav 3 sarakstu ierobežojuma",
+  "paywallBenefit3Desc": "Izdevumu uzskaite un ģimenes saraksti",
+  "paywallBestValue": "LABĀKĀ VĒRTĪBA",
+  "paywallCancelAnytime": "Atcelt jebkurā laikā. Bez apņemšanās.",
+  "paywallCtaTrialDays": "Sāciet bez maksas — {days} dienas",
+  "paywallCtaUnlock": "Atbloķējiet PRO",
+  "paywallFeatureExpenseControl": "Izdevumu kontrole",
+  "paywallFeatureSharing": "Kopīgošana",
+  "paywallFeatureSmartAI": "Gudrais AI",
+  "paywallFeatureUnlimitedLists": "Neierobežoti saraksti",
+  "paywallFeaturesTitle": "Viss, kas jums nepieciešams:",
+  "paywallHeroHeadline": "Kipi AI vienmēr ir jūsu pusē",
+  "paywallHeroSubtitle": "Pievienojiet vienumus, kārtojiet sarakstus un ietaupiet laiku, izmantojot AI savā kabatā",
+  "paywallLabelCommon": "Bieži",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Ielādējot piedāvājumus, radās kļūda. Mēģiniet vēlreiz.",
+  "paywallMostPopular": "POPULĀRĀKAIS",
+  "paywallPackageAnnual": "Gada plāns",
+  "paywallPackageLifetime": "Piekļuve mūža garumā",
+  "paywallPackageMonthly": "Mēneša plāns",
+  "paywallPackageMonthlyDesc": "Pilnīga elastība",
+  "paywallPolicy": "Privātuma politika",
+  "paywallPricePerMonth": "Tikai {price} mēnesī",
+  "paywallPurchaseError": "Nevarēja pabeigt pirkumu. Mēģiniet vēlreiz.",
+  "paywallRestore": "Atjaunot",
+  "paywallRestoreError": "Nav atrasts neviens aktīvs abonements, ko atjaunot.",
+  "paywallSafeCheckout": "Drošs maksājums",
+  "paywallSavePercent": "IETAUPĪT {percent}%",
+  "paywallSelectPlan": "Izvēlieties savu plānu:",
+  "paywallSocialProof": "To izmanto +2400 ģimenes",
+  "paywallTerms": "Lietošanas noteikumi",
+  "paywallTestimonial1Name": "Anna S.",
+  "paywallTestimonial1Text": "AI sakārto manu iepirkšanos dažu sekunžu laikā. Ietaupu 20 min uz vienu tirgus braucienu.",
+  "paywallTestimonial2Name": "Čārlzs M.",
+  "paywallTestimonial2Text": "Es nekad vairs neaizmirsu nevienu saraksta vienumu. AI tērzēšana ir sensacionāla!",
+  "paywallTestimonialsTitle": "Ko saka mūsu lietotāji:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DIENAS BEZMAKSAS",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH BEZMAKSAS} other{{count} MĒNEŠI BEZMAKSAS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} BEZMAKSAS NEDĒĻA} other{{count} BEZMAKSAS NEDĒĻAS}}",
   "prefAIAssistant": "Personīgais AI palīgs",
   "prefCustomThemes": "Pielāgotas tēmas",
   "prefExportData": "Eksportēt datus",
@@ -685,6 +779,7 @@
   "prepTimeMinutes": "Gatavošanas laiks (minūtes)",
   "privacy": "Privātums",
   "productName": "Produkta nosaukums",
+  "profile": "Profils",
   "purchaseError": "Kļūda, apstrādājot pirkumu. Mēģiniet vēlreiz.",
   "quantityFull": "Daudzums",
   "quantityShort": "Daudz.",
@@ -782,6 +877,7 @@
   "undo": "Atsaukt",
   "unit": "Vienība",
   "unitPack": "iepakojums",
+  "unlockAi": "Atbloķējiet neierobežotu AI",
   "unlockFullResponse": "Atbloķējiet pilnu atbildi",
   "unmark": "Noņemt atzīmi",
   "upgrade": "Jaunināt",

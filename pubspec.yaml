@@ -89,6 +89,7 @@ dependencies:
   firebase_storage: ^13.4.1
   google_mobile_ads: ^8.0.0
   animations: ^2.2.0
+  collection: ^1.19.1
 
 dev_dependencies:
   flutter_test:

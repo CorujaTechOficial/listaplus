@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} kredit qalıb",
   "aiEnergy": "AI Enerjisi",
   "aiError": "Üzr istəyirik, sorğunuzu emal edərkən xəta baş verdi. Əlaqənizi yoxlayın və ya daha sonra yenidən cəhd edin.",
+  "aiLimitAlmostReached": "Demək olar ki, AI mesajları bitdi",
+  "aiTeaserFallback": "Tam cavabı açmaq və alış-verişiniz üçün limitsiz AI məsləhətləri əldə etmək üçün Premiuma abunə olun...",
   "aiVoiceCommandTooltip": "AI Səs Əmri (Premium)",
   "allTags": "Hamısı",
   "alreadyPurchased": "Artıq alınıb",
@@ -404,6 +430,17 @@
   "catCleaning": "Təmizlik",
   "catFruits": "Meyvələr",
   "catOthers": "Digər",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} əlavə edin →",
+  "catalogBrowse": "Kataloqu nəzərdən keçirin",
+  "catalogFilterNational": "Millilər",
+  "catalogMyFrequents": "Mənim Tez-tez",
+  "catalogProductNotFound": "Məhsul tapılmadı, adı yazın",
+  "catalogRareSection": "ölkənizdə daha az yayılmışdır",
+  "catalogSearchGlobal": "İstənilən məhsulu axtarın...",
+  "catalogSearchInCategory": "{category} içində axtar...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Ən populyar",
+  "catalogTitle": "Kataloq",
   "category": "Kateqoriya",
   "chatError": "Söhbəti yükləyərkən xəta: {error}",
   "chatHint": "Mesajınızı yazın...",
@@ -480,6 +517,8 @@
   "estimated": "Təxmini",
   "estimatedCost": "Təxmini",
   "estimatedPrice": "Təxmini qiymət",
+  "exit": "Çıx",
+  "exitShoppingMode": "Alış-veriş rejimindən çıxın",
   "exportData": "Məlumatları ixrac et",
   "exportDataSubtitle": "Bütün siyahıları JSON olaraq saxla",
   "exportExcel": "Excel olaraq ixrac et",
@@ -518,6 +557,7 @@
   "generalAssistant": "Ümumi Köməkçi",
   "generalHelp": "Bu gün alış-verişinizə necə kömək edə bilərəm?",
   "generateShoppingList": "Alış-veriş siyahısı yarat",
+  "gestureHint": "Seçmək üçün basıb saxlayın • Silmək üçün sürüşdürün",
   "globalAssistant": "Qlobal köməkçi",
   "howCanIHelp": "Mən necə kömək edə bilərəm?",
   "idealQty": "İdeal say",
@@ -541,6 +581,7 @@
   "itemsPurchasedCount": "{total} ədəddən {purchased} alınıb",
   "itemsPurchasedShort": "{purchased}/{total} alınıb",
   "itemsWillBeAdded": "{count} maddə əlavə olunacaq",
+  "kipiListTitle": "KipiList",
   "language": "Dil",
   "languageEnglish": "İngilis dili",
   "languagePortuguese": "Português (Braziliya)",
@@ -555,7 +596,6 @@
   "listHistory": "Siyahı Tarixçəsi",
   "listNameLabel": "Siyahı adı",
   "listOrganizedMagic": "Siyahı sehrli şəkildə kateqoriyalara görə təşkil edildi! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Dinlənir...",
   "lists": "Siyahılar",
   "loading": "Yüklənir...",
@@ -606,6 +646,10 @@
   "monthlyBudgetTitle": "Aylıq Büdcə",
   "myLists": "Siyahılarım",
   "myRecipes": "Mənim reseptlərim",
+  "navChat": "Chat",
+  "navLists": "Siyahılar",
+  "navMealPlanner": "Menyu",
+  "navRecipes": "Reseptlər",
   "newChat": "Yeni Söhbət",
   "newListTitle": "Yeni Alış-veriş Siyahısı",
   "newPantryList": "Kiler Alış-verişi",
@@ -664,7 +708,56 @@
   "pantryEmpty": "Boş kiler",
   "pantryEmptySubtitle": "Evdə saxlamaq istədiyiniz məhsulları əlavə edin",
   "pantryItemRemoved": "Maddə silindi",
+  "paywallAfterItem1": "Taxıllar",
+  "paywallAfterItem2": "Təmizləmə",
+  "paywallAfterItem3": "Ətlər",
+  "paywallAfterItem4": "Çörəkxana",
+  "paywallBeforeAfterTitle": "AI əvvəl və sonra:",
+  "paywallBeforeItem1": "düyü",
+  "paywallBeforeItem2": "sabun",
+  "paywallBeforeItem3": "ət",
+  "paywallBeforeItem4": "çörək",
+  "paywallBenefit1Desc": "24/7 maddələr əlavə edir, təşkil edir və təklif edir",
+  "paywallBenefit2Desc": "3 siyahı limiti yoxdur",
+  "paywallBenefit3Desc": "Xərclərin izlənməsi və ailə siyahıları",
+  "paywallBestValue": "ƏN YAXŞI DƏYƏR",
+  "paywallCancelAnytime": "İstənilən vaxt ləğv edin. Öhdəlik yoxdur.",
+  "paywallCtaTrialDays": "Ödənişsiz başlayın — {days} gün",
+  "paywallCtaUnlock": "PRO kilidini açın",
+  "paywallFeatureExpenseControl": "Xərclərə nəzarət",
+  "paywallFeatureSharing": "Paylaşma",
+  "paywallFeatureSmartAI": "Ağıllı AI",
+  "paywallFeatureUnlimitedLists": "Limitsiz Siyahılar",
+  "paywallFeaturesTitle": "Sizə lazım olan hər şey:",
+  "paywallHeroHeadline": "Kipi AI həmişə sənin yanındadır",
+  "paywallHeroSubtitle": "Cibinizdə AI ilə elementlər əlavə edin, siyahıları təşkil edin və vaxtınıza qənaət edin",
+  "paywallLabelCommon": "Ümumi",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Təklifləri yükləmə xətası. Yenidən cəhd edin.",
+  "paywallMostPopular": "ƏN POPULLAR",
+  "paywallPackageAnnual": "İllik Plan",
+  "paywallPackageLifetime": "Ömürlük Giriş",
+  "paywallPackageMonthly": "Aylıq Plan",
+  "paywallPackageMonthlyDesc": "Tam çeviklik",
+  "paywallPolicy": "Məxfilik Siyasəti",
+  "paywallPricePerMonth": "Yalnız {price}/ay",
+  "paywallPurchaseError": "Satınalmanı tamamlamaq mümkün olmadı. Yenidən cəhd edin.",
+  "paywallRestore": "Bərpa et",
+  "paywallRestoreError": "Bərpa etmək üçün aktiv abunə tapılmadı.",
+  "paywallSafeCheckout": "Təhlükəsiz ödəniş",
+  "paywallSavePercent": "{percent}% QƏNAƏT",
+  "paywallSelectPlan": "Planınızı seçin:",
+  "paywallSocialProof": "+2400 ailə ondan istifadə edir",
+  "paywallTerms": "İstifadə şərtləri",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI mənim alış-verişimi saniyələr ərzində təşkil edir. Hər bazar səfərinə 20 dəqiqə qənaət edirəm.",
+  "paywallTestimonial2Name": "Çarlz M.",
+  "paywallTestimonial2Text": "Bir daha siyahıda bir elementi unutmadım. AI söhbəti sensasiyalıdır!",
+  "paywallTestimonialsTitle": "İstifadəçilərimiz nə deyir:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} GÜNLƏR PULSUZ",
+  "paywallTrialMonths": "{count,plural, one{{count} AY PULSUZ} other{{count} AYLAR PULSUZ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} HƏFTƏ PULSUZ} other{{count} HƏFTƏLƏR PULSUZ}}",
   "prefAIAssistant": "Şəxsi AI Köməkçi",
   "prefCustomThemes": "Fərdi temalar",
   "prefExportData": "Məlumatları ixrac et",
@@ -679,6 +772,7 @@
   "prepTimeMinutes": "Hazırlanma vaxtı (dəqiqə)",
   "privacy": "Məxfilik",
   "productName": "Məhsul adı",
+  "profile": "Profil",
   "purchaseError": "Alış-verişi emal edərkən xəta. Yenidən cəhd edin.",
   "quantityFull": "Miqdar",
   "quantityShort": "Say",
@@ -776,6 +870,7 @@
   "undo": "Geri al",
   "unit": "Vahid",
   "unitPack": "paket",
+  "unlockAi": "Limitsiz AI kilidini açın",
   "unlockFullResponse": "Tam Cavabın kilidini açın",
   "unmark": "İşarəni götür",
   "upgrade": "Yüksəlt",

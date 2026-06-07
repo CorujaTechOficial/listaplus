@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -267,6 +284,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -347,6 +371,8 @@
   "aiCreditsRemaining": "Απομένουν {remaining} πιστώσεις",
   "aiEnergy": "AI Energy",
   "aiError": "Λυπούμαστε, παρουσιάστηκε σφάλμα κατά την επεξεργασία του αιτήματός σας. Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.",
+  "aiLimitAlmostReached": "Σχεδόν εξαντλήθηκαν τα μηνύματα AI",
+  "aiTeaserFallback": "Εγγραφείτε στο Premium για να ξεκλειδώσετε την πλήρη απόκριση και να λάβετε απεριόριστες συμβουλές AI για τις αγορές σας...",
   "aiVoiceCommandTooltip": "Φωνητική εντολή AI (Premium)",
   "allTags": "Όλα",
   "alreadyPurchased": "Ήδη αγορασμένο",
@@ -378,6 +404,17 @@
   "catCleaning": "Καθαρισμός",
   "catFruits": "Φρούτα",
   "catOthers": "Άλλα",
+  "catalogAddItems": "Προσθήκη {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Περιήγηση στον Κατάλογο",
+  "catalogFilterNational": "Εθνικοί",
+  "catalogMyFrequents": "Οι συχνές μου",
+  "catalogProductNotFound": "Το προϊόν δεν βρέθηκε, πληκτρολογήστε το όνομα",
+  "catalogRareSection": "λιγότερο συνηθισμένο στη χώρα σας",
+  "catalogSearchGlobal": "Αναζητήστε οποιοδήποτε προϊόν...",
+  "catalogSearchInCategory": "Αναζήτηση στο {category}...",
+  "catalogSortAZ": "Α–Ζ",
+  "catalogSortPopular": "Το πιο δημοφιλές",
+  "catalogTitle": "Κατάλογος",
   "category": "Κατηγορία",
   "chatError": "Σφάλμα φόρτωσης συνομιλίας: {error}",
   "chatHint": "Πληκτρολογήστε το μήνυμά σας...",
@@ -454,6 +491,8 @@
   "estimated": "Εκτιμώμενο",
   "estimatedCost": "Εκτιμώμενος",
   "estimatedPrice": "Εκτιμώμενη τιμή",
+  "exit": "Εξοδος",
+  "exitShoppingMode": "Έξοδος από τη λειτουργία αγορών",
   "exportData": "Εξαγωγή δεδομένων",
   "exportDataSubtitle": "Αποθήκευση όλων των λιστών ως JSON",
   "exportExcel": "Εξαγωγή ως Excel",
@@ -492,6 +531,7 @@
   "generalAssistant": "Γενικός βοηθός",
   "generalHelp": "Πώς μπορώ να βοηθήσω με τα ψώνια σας σήμερα;",
   "generateShoppingList": "Δημιουργία λίστας αγορών",
+  "gestureHint": "Κρατήστε πατημένο για να επιλέξετε • Σύρετε για κατάργηση",
   "globalAssistant": "Γενικός βοηθός",
   "howCanIHelp": "Πώς μπορώ να βοηθήσω;",
   "idealQty": "Ιδανική ποσ",
@@ -515,6 +555,7 @@
   "itemsPurchasedCount": "{purchased} από {total} αγοράστηκε",
   "itemsPurchasedShort": "{purchased}/{total} αγοράστηκε",
   "itemsWillBeAdded": "{count} στοιχείο(α) θα προστεθούν",
+  "kipiListTitle": "KipiList",
   "language": "Γλώσσα",
   "languageEnglish": "αγγλικός",
   "languagePortuguese": "Πορτογαλία (Βραζιλία)",
@@ -529,7 +570,6 @@
   "listHistory": "Ιστορικό λιστών",
   "listNameLabel": "Όνομα λίστας",
   "listOrganizedMagic": "Η λίστα οργανώθηκε μαγικά ανά κατηγορία! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Ακούγοντας...",
   "lists": "Λίστες",
   "loading": "Φόρτωση...",
@@ -580,6 +620,10 @@
   "monthlyBudgetTitle": "Μηνιαίος προϋπολογισμός",
   "myLists": "Οι λίστες μου",
   "myRecipes": "Οι συνταγές μου",
+  "navChat": "Chat",
+  "navLists": "Λίστες",
+  "navMealPlanner": "Μενού",
+  "navRecipes": "Συνταγές",
   "newChat": "Νέα συνομιλία",
   "newListTitle": "Νέα λίστα αγορών",
   "newPantryList": "Αγορές ντουλαπιού",
@@ -638,7 +682,56 @@
   "pantryEmpty": "Άδειο ντουλάπι",
   "pantryEmptySubtitle": "Προσθέστε προϊόντα που θέλετε να έχετε στο σπίτι",
   "pantryItemRemoved": "Το στοιχείο αφαιρέθηκε",
+  "paywallAfterItem1": "Σιτηρά",
+  "paywallAfterItem2": "Καθάρισμα",
+  "paywallAfterItem3": "κρέατα",
+  "paywallAfterItem4": "Αρτοποιείο",
+  "paywallBeforeAfterTitle": "AI Πριν και Μετά:",
+  "paywallBeforeItem1": "ρύζι",
+  "paywallBeforeItem2": "σαπούνι",
+  "paywallBeforeItem3": "κρέας",
+  "paywallBeforeItem4": "ψωμί",
+  "paywallBenefit1Desc": "Προσθέτει, οργανώνει και προτείνει αντικείμενα 24/7",
+  "paywallBenefit2Desc": "Χωρίς όριο 3 λιστών",
+  "paywallBenefit3Desc": "Παρακολούθηση δαπανών και λίστες οικογένειας",
+  "paywallBestValue": "ΚΑΛΥΤΕΡΗ ΑΞΙΑ",
+  "paywallCancelAnytime": "Ακύρωση ανά πάσα στιγμή. Καμία δέσμευση.",
+  "paywallCtaTrialDays": "Έναρξη δωρεάν — {days} ημέρες",
+  "paywallCtaUnlock": "Ξεκλειδώστε το PRO",
+  "paywallFeatureExpenseControl": "Έλεγχος δαπανών",
+  "paywallFeatureSharing": "Μοιρασιά",
+  "paywallFeatureSmartAI": "Έξυπνο AI",
+  "paywallFeatureUnlimitedLists": "Απεριόριστες λίστες",
+  "paywallFeaturesTitle": "Όλα όσα χρειάζεστε:",
+  "paywallHeroHeadline": "Το Kipi AI πάντα δίπλα σας",
+  "paywallHeroSubtitle": "Προσθέστε αντικείμενα, οργανώστε λίστες και εξοικονομήστε χρόνο με την τεχνητή νοημοσύνη στην τσέπη σας",
+  "paywallLabelCommon": "Κοινός",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Σφάλμα κατά τη φόρτωση των προσφορών. Προσπαθήστε ξανά.",
+  "paywallMostPopular": "ΠΙΟ ΔΗΜΟΦΗΤΙΚΟ",
+  "paywallPackageAnnual": "Ετήσιο Σχέδιο",
+  "paywallPackageLifetime": "Δια βίου πρόσβαση",
+  "paywallPackageMonthly": "Μηνιαίο Πρόγραμμα",
+  "paywallPackageMonthlyDesc": "Πλήρης ευελιξία",
+  "paywallPolicy": "Πολιτική Απορρήτου",
+  "paywallPricePerMonth": "Μόνο {price}/μήνα",
+  "paywallPurchaseError": "Δεν ήταν δυνατή η ολοκλήρωση της αγοράς. Προσπαθήστε ξανά.",
+  "paywallRestore": "Επαναφέρω",
+  "paywallRestoreError": "Δεν βρέθηκε ενεργή συνδρομή για επαναφορά.",
+  "paywallSafeCheckout": "Ασφαλής πληρωμή",
+  "paywallSavePercent": "ΑΠΟΘΗΚΕΥΣΗ {percent}%",
+  "paywallSelectPlan": "Επιλέξτε το σχέδιό σας:",
+  "paywallSocialProof": "Το χρησιμοποιούν +2.400 οικογένειες",
+  "paywallTerms": "Όροι Χρήσης",
+  "paywallTestimonial1Name": "Ανν Σ.",
+  "paywallTestimonial1Text": "Το AI οργανώνει τις αγορές μου σε δευτερόλεπτα. Εξοικονομώ 20 λεπτά ανά ταξίδι στην αγορά.",
+  "paywallTestimonial2Name": "Τσαρλς Μ.",
+  "paywallTestimonial2Text": "Δεν ξέχασα ποτέ ξανά ένα στοιχείο λίστας. Η συνομιλία AI είναι συγκλονιστική!",
+  "paywallTestimonialsTitle": "Τι λένε οι χρήστες μας:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ΜΕΡΕΣ ΔΩΡΕΑΝ",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ΕΒΔΟΜΑΔΑ ΔΩΡΕΑΝ} other{{count} ΕΒΔΟΜΑΔΕΣ ΔΩΡΕΑΝ}}",
   "prefAIAssistant": "Προσωπικός βοηθός AI",
   "prefCustomThemes": "Προσαρμοσμένα θέματα",
   "prefExportData": "Εξαγωγή δεδομένων",
@@ -653,6 +746,7 @@
   "prepTimeMinutes": "Χρόνος προετοιμασίας (λεπτά)",
   "privacy": "Απόρρητο",
   "productName": "Όνομα προϊόντος",
+  "profile": "Προφίλ",
   "purchaseError": "Σφάλμα επεξεργασίας αγοράς. Δοκιμάστε ξανά.",
   "quantityFull": "Ποσότητα",
   "quantityShort": "Ποσ",
@@ -750,6 +844,7 @@
   "undo": "Αναίρεση",
   "unit": "Μονάδα",
   "unitPack": "συσκευασία",
+  "unlockAi": "Ξεκλειδώστε απεριόριστο AI",
   "unlockFullResponse": "Ξεκλείδωμα Πλήρους Απόκρισης",
   "unmark": "Αποεπισήμανση",
   "upgrade": "Αναβάθμιση",

@@ -18,6 +18,18 @@ class AppLocalizationsCs extends AppLocalizations {
   String get pantry => 'Spižírna';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recepty';
+
+  @override
+  String get navLists => 'Seznamy';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Zrušit';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Přidáno!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Ukončete nákupní režim';
+
+  @override
+  String get exit => 'Výstup';
 
   @override
   String selectedItems(int count) {
@@ -616,14 +637,14 @@ class AppLocalizationsCs extends AppLocalizations {
       'Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Téměř došly zprávy AI';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Odemkněte neomezenou umělou inteligenci';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Přihlaste se k odběru Premium a odemkněte plnou odpověď a získejte neomezené množství tipů AI pro své nakupování...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -753,17 +774,20 @@ class AppLocalizationsCs extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Chyba při načítání nabídek. Zkuste to znovu.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Nákup se nepodařilo dokončit. Zkuste to znovu.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Nebylo nalezeno žádné aktivní předplatné k obnovení.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days DNŮ ZDARMA';
   }
 
   @override
@@ -771,8 +795,8 @@ class AppLocalizationsCs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count TÝDNY ZDARMA',
+      one: '$count TÝDEN ZDARMA',
     );
     return '$_temp0';
   }
@@ -782,148 +806,149 @@ class AppLocalizationsCs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count MĚSÍCE ZDARMA',
+      one: '$count MĚSÍC ZDARMA',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Vše, co potřebujete:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Neomezené seznamy';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Inteligentní AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Kontrola výdajů';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Sdílení';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI před a po:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Společný';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'rýže';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'mýdlo';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'maso';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'chléb';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Zrna';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Čištění';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Maso';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Pekárna';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Co říkají naši uživatelé:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'Umělá inteligence zorganizuje moje nákupy během několika sekund. Ušetřím 20 minut za cestu na trh.';
 
   @override
   String get paywallTestimonial2Name => 'Charles M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Už jsem nikdy nezapomněl na položku seznamu. AI chat je senzační!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => 'Využívá jej +2 400 rodin';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Odemkněte PRO';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'NEJLEPŠÍ HODNOTA';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'NEJOBLÍBENĚJŠÍ';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Bezpečná platba';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Vyberte si svůj plán:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'UŠETŘETE $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Pouze $price/měsíc';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Roční plán';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Měsíční plán';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Doživotní přístup';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'Kdykoli zrušit. Žádný závazek.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Zásady ochrany osobních údajů';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Podmínky použití';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Obnovit';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI vždy po vašem boku';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Přidávejte položky, organizujte seznamy a ušetřete čas s umělou inteligencí v kapse';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Přidává, organizuje a navrhuje položky 24/7';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Žádný limit na 3 seznamy';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Sledování výdajů a rodinné seznamy';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Plná flexibilita';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Začněte zdarma — $days dnů';
   }
 
   @override
@@ -1645,6 +1670,52 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Získejte 7 dní KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Podržením vyberte • Přejetím odeberte';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Moje časté';
+
+  @override
+  String get catalogSearchGlobal => 'Vyhledejte jakýkoli produkt...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Hledat v $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Nejoblíbenější';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'státní příslušníci';
+
+  @override
+  String get catalogRareSection => 've vaší zemi méně běžné';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Přidat $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Produkt nenalezen, zadejte název';
+
+  @override
+  String get catalogBrowse => 'Procházet katalog';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -1659,6 +1730,18 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get pantry => 'Spižírna';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recepty';
+
+  @override
+  String get navLists => 'Seznamy';
+
+  @override
+  String get navMealPlanner => 'Menu';
 
   @override
   String get cancel => 'Zrušit';
@@ -1738,6 +1821,15 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get addedFeedback => 'Přidáno!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Ukončete nákupní režim';
+
+  @override
+  String get exit => 'Výstup';
 
   @override
   String selectedItems(int count) {
@@ -2259,6 +2351,16 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
       'Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.';
 
   @override
+  String get aiLimitAlmostReached => 'Téměř došly zprávy AI';
+
+  @override
+  String get unlockAi => 'Odemkněte neomezenou umělou inteligenci';
+
+  @override
+  String get aiTeaserFallback =>
+      'Přihlaste se k odběru Premium a odemkněte plnou odpověď a získejte neomezené množství tipů AI pro své nakupování...';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -2384,6 +2486,184 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError =>
+      'Chyba při načítání nabídek. Zkuste to znovu.';
+
+  @override
+  String get paywallPurchaseError =>
+      'Nákup se nepodařilo dokončit. Zkuste to znovu.';
+
+  @override
+  String get paywallRestoreError =>
+      'Nebylo nalezeno žádné aktivní předplatné k obnovení.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DNŮ ZDARMA';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count TÝDNY ZDARMA',
+      one: '$count TÝDEN ZDARMA',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MĚSÍCE ZDARMA',
+      one: '$count MĚSÍC ZDARMA',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Vše, co potřebujete:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Neomezené seznamy';
+
+  @override
+  String get paywallFeatureSmartAI => 'Inteligentní AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Kontrola výdajů';
+
+  @override
+  String get paywallFeatureSharing => 'Sdílení';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI před a po:';
+
+  @override
+  String get paywallLabelCommon => 'Společný';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rýže';
+
+  @override
+  String get paywallBeforeItem2 => 'mýdlo';
+
+  @override
+  String get paywallBeforeItem3 => 'maso';
+
+  @override
+  String get paywallBeforeItem4 => 'chléb';
+
+  @override
+  String get paywallAfterItem1 => 'Zrna';
+
+  @override
+  String get paywallAfterItem2 => 'Čištění';
+
+  @override
+  String get paywallAfterItem3 => 'Maso';
+
+  @override
+  String get paywallAfterItem4 => 'Pekárna';
+
+  @override
+  String get paywallTestimonialsTitle => 'Co říkají naši uživatelé:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'Umělá inteligence zorganizuje moje nákupy během několika sekund. Ušetřím 20 minut za cestu na trh.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'Už jsem nikdy nezapomněl na položku seznamu. AI chat je senzační!';
+
+  @override
+  String get paywallSocialProof => 'Využívá jej +2 400 rodin';
+
+  @override
+  String get paywallCtaUnlock => 'Odemkněte PRO';
+
+  @override
+  String get paywallBestValue => 'NEJLEPŠÍ HODNOTA';
+
+  @override
+  String get paywallMostPopular => 'NEJOBLÍBENĚJŠÍ';
+
+  @override
+  String get paywallSafeCheckout => 'Bezpečná platba';
+
+  @override
+  String get paywallSelectPlan => 'Vyberte si svůj plán:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'UŠETŘETE $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Pouze $price/měsíc';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Roční plán';
+
+  @override
+  String get paywallPackageMonthly => 'Měsíční plán';
+
+  @override
+  String get paywallPackageLifetime => 'Doživotní přístup';
+
+  @override
+  String get paywallCancelAnytime => 'Kdykoli zrušit. Žádný závazek.';
+
+  @override
+  String get paywallPolicy => 'Zásady ochrany osobních údajů';
+
+  @override
+  String get paywallTerms => 'Podmínky použití';
+
+  @override
+  String get paywallRestore => 'Obnovit';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI vždy po vašem boku';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Přidávejte položky, organizujte seznamy a ušetřete čas s umělou inteligencí v kapse';
+
+  @override
+  String get paywallBenefit1Desc =>
+      'Přidává, organizuje a navrhuje položky 24/7';
+
+  @override
+  String get paywallBenefit2Desc => 'Žádný limit na 3 seznamy';
+
+  @override
+  String get paywallBenefit3Desc => 'Sledování výdajů a rodinné seznamy';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Plná flexibilita';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Začněte zdarma — $days dnů';
+  }
 
   @override
   String get premiumUpgrade => 'Upgraduj pro odemknutí';
@@ -3104,4 +3384,50 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get shareReferralSubject => 'Získejte 7 dní KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Podržením vyberte • Přejetím odeberte';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Moje časté';
+
+  @override
+  String get catalogSearchGlobal => 'Vyhledejte jakýkoli produkt...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Hledat v $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Nejoblíbenější';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'státní příslušníci';
+
+  @override
+  String get catalogRareSection => 've vaší zemi méně běžné';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Přidat $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Produkt nenalezen, zadejte název';
+
+  @override
+  String get catalogBrowse => 'Procházet katalog';
 }

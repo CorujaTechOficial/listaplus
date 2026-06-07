@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -300,6 +317,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -380,6 +404,8 @@
   "aiCreditsRemaining": "{remaining} créditos restantes",
   "aiEnergy": "Enerxía AI",
   "aiError": "Sentímolo, produciuse un erro ao procesar a túa solicitude. Comproba a túa conexión ou téntao de novo máis tarde.",
+  "aiLimitAlmostReached": "Case sen mensaxes de IA",
+  "aiTeaserFallback": "Subscríbete a Premium para desbloquear a resposta completa e obter consellos de IA ilimitados para as túas compras...",
   "aiVoiceCommandTooltip": "Comando de Voz con IA (Premium)",
   "allTags": "Todos",
   "alreadyPurchased": "Xa mercados",
@@ -411,9 +437,21 @@
   "catCleaning": "Limpeza",
   "catFruits": "Froitas",
   "catOthers": "Outros",
+  "catalogAddItems": "Engadir {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Explorar catálogo",
+  "catalogFilterNational": "Nacionais",
+  "catalogMyFrequents": "Os meus frecuentes",
+  "catalogProductNotFound": "Non se atopou o produto, escriba o nome",
+  "catalogRareSection": "menos común no teu país",
+  "catalogSearchGlobal": "Busca calquera produto...",
+  "catalogSearchInCategory": "Busca en {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "O máis popular",
+  "catalogTitle": "Catálogo",
   "category": "Categoría",
   "chatError": "Erro ao cargar o chat: {error}",
   "chatHint": "Escribe a túa mensaxe...",
+  "chatHintBlocked": "Desbloquea a IA para chatear",
   "chatSubtitle": "Pide suxestións de artigos, receitas ou consellos para aforrar.",
   "chatSubtitleShort": "Pregunta por prezos, receitas, organización...",
   "chooseCurrency": "Seleccione Moeda",
@@ -486,6 +524,8 @@
   "estimated": "Estimado",
   "estimatedCost": "Estimado",
   "estimatedPrice": "Prezo estimado",
+  "exit": "Saír",
+  "exitShoppingMode": "Saír do modo de compra",
   "exportData": "Exportar datos",
   "exportDataSubtitle": "Gardar todas as listas como JSON",
   "exportExcel": "Exportar como Excel",
@@ -524,6 +564,7 @@
   "generalAssistant": "Asistente Xeral",
   "generalHelp": "Como podo axudar coas túas compras hoxe?",
   "generateShoppingList": "Xerar lista da compra",
+  "gestureHint": "Mantén premido para seleccionar • Pasa o dedo para eliminalo",
   "globalAssistant": "Asistente global",
   "howCanIHelp": "Como podo axudar?",
   "idealQty": "Cant ideal",
@@ -547,6 +588,7 @@
   "itemsPurchasedCount": "{purchased} de {total} comprados",
   "itemsPurchasedShort": "{purchased}/{total} mercou",
   "itemsWillBeAdded": "{count} elemento(s) engadiranse",
+  "kipiListTitle": "KipiList",
   "language": "Idioma",
   "languageEnglish": "inglés",
   "languagePortuguese": "Português (Brasil)",
@@ -561,7 +603,6 @@
   "listHistory": "Historial de Listas",
   "listNameLabel": "Nome da lista",
   "listOrganizedMagic": "Lista organizada maxicamente por categorías! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Escoitando...",
   "lists": "Listas",
   "loading": "Cargando...",
@@ -612,6 +653,10 @@
   "monthlyBudgetTitle": "Orzamento Mensual",
   "myLists": "As Miñas Listas",
   "myRecipes": "As miñas receitas",
+  "navChat": "Chat",
+  "navLists": "Listas",
+  "navMealPlanner": "Menú",
+  "navRecipes": "Receitas",
   "newChat": "Chat novo",
   "newListTitle": "Nova Lista da Compra",
   "newPantryList": "Compra da Despensa",
@@ -670,7 +715,56 @@
   "pantryEmpty": "Despensa baleira",
   "pantryEmptySubtitle": "Engade os produtos que queres ter na casa",
   "pantryItemRemoved": "Elemento eliminado",
+  "paywallAfterItem1": "Grans",
+  "paywallAfterItem2": "Limpeza",
+  "paywallAfterItem3": "Carnes",
+  "paywallAfterItem4": "Panadaría",
+  "paywallBeforeAfterTitle": "AI antes e despois:",
+  "paywallBeforeItem1": "arroz",
+  "paywallBeforeItem2": "xabón",
+  "paywallBeforeItem3": "carne",
+  "paywallBeforeItem4": "pan",
+  "paywallBenefit1Desc": "Engade, organiza e suxire elementos 24/7",
+  "paywallBenefit2Desc": "Sen límite de 3 listas",
+  "paywallBenefit3Desc": "Seguimento de gastos e listas familiares",
+  "paywallBestValue": "MELLOR VALOR",
+  "paywallCancelAnytime": "Cancela en calquera momento. Sen compromiso.",
+  "paywallCtaTrialDays": "Comeza gratis — {days} días",
+  "paywallCtaUnlock": "Desbloquear PRO",
+  "paywallFeatureExpenseControl": "Control de Gastos",
+  "paywallFeatureSharing": "Compartindo",
+  "paywallFeatureSmartAI": "AI intelixente",
+  "paywallFeatureUnlimitedLists": "Listas ilimitadas",
+  "paywallFeaturesTitle": "Todo o que necesitas:",
+  "paywallHeroHeadline": "Kipi AI sempre ao teu lado",
+  "paywallHeroSubtitle": "Engade elementos, organiza listas e aforra tempo coa IA no peto",
+  "paywallLabelCommon": "Común",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Produciuse un erro ao cargar as ofertas. Téntao de novo.",
+  "paywallMostPopular": "MÁIS POPULAR",
+  "paywallPackageAnnual": "Plan anual",
+  "paywallPackageLifetime": "Acceso de por vida",
+  "paywallPackageMonthly": "Plan Mensual",
+  "paywallPackageMonthlyDesc": "Flexibilidade total",
+  "paywallPolicy": "Política de privacidade",
+  "paywallPricePerMonth": "Só {price}/mes",
+  "paywallPurchaseError": "Non se puido completar a compra. Téntao de novo.",
+  "paywallRestore": "Restaurar",
+  "paywallRestoreError": "Non se atopou ningunha subscrición activa para restaurala.",
+  "paywallSafeCheckout": "Pago seguro",
+  "paywallSavePercent": "AHORRA {percent} %",
+  "paywallSelectPlan": "Escolle o teu plan:",
+  "paywallSocialProof": "Úsano máis de 2.400 familias",
+  "paywallTerms": "Condicións de uso",
+  "paywallTestimonial1Name": "Ana S.",
+  "paywallTestimonial1Text": "A IA organiza as miñas compras en segundos. Aforro 20 minutos por viaxe ao mercado.",
+  "paywallTestimonial2Name": "Carlos M.",
+  "paywallTestimonial2Text": "Nunca esquecín un elemento da lista de novo. O chat AI é sensacional!",
+  "paywallTestimonialsTitle": "O que din os nosos usuarios:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DÍAS GRATIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MES GRATIS} other{{count} MESES GRATIS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} SEMANA GRATIS} other{{count} SEMANAS GRATIS}}",
   "prefAIAssistant": "Asistente de IA Persoal",
   "prefCustomThemes": "Temas personalizados",
   "prefExportData": "Exportar datos",
@@ -685,6 +779,7 @@
   "prepTimeMinutes": "Tempo de prep. (minutos)",
   "privacy": "Privacidade",
   "productName": "Nome do produto",
+  "profile": "Perfil",
   "purchaseError": "Erro ao procesar a compra. Téntao de novo.",
   "quantityFull": "Cantidade",
   "quantityShort": "Cant",
@@ -782,6 +877,7 @@
   "undo": "Desfacer",
   "unit": "Unidade",
   "unitPack": "paquete",
+  "unlockAi": "Desbloquear IA ilimitada",
   "unlockFullResponse": "Desbloquear a resposta completa",
   "unmark": "Desmarcar",
   "upgrade": "Mellorar",

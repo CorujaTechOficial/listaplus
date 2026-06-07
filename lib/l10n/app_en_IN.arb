@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} credits remaining",
   "aiEnergy": "AI Energy",
   "aiError": "Sorry, an error occurred processing your request. Check your connection or try again later.",
+  "aiLimitAlmostReached": "Almost out of AI messages",
+  "aiTeaserFallback": "Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...",
   "aiVoiceCommandTooltip": "AI Voice Command (Premium)",
   "allTags": "All",
   "alreadyPurchased": "Already purchased",
@@ -404,6 +430,17 @@
   "catCleaning": "Cleaning",
   "catFruits": "Fruits",
   "catOthers": "Others",
+  "catalogAddItems": "Add {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Browse Catalog",
+  "catalogFilterNational": "Nationals",
+  "catalogMyFrequents": "My Frequents",
+  "catalogProductNotFound": "Product not found, type the name",
+  "catalogRareSection": "less common in your country",
+  "catalogSearchGlobal": "Search any product...",
+  "catalogSearchInCategory": "Search in {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Most popular",
+  "catalogTitle": "Catalog",
   "category": "Category",
   "chatError": "Error loading chat: {error}",
   "chatHint": "Type your message...",
@@ -480,6 +517,8 @@
   "estimated": "Estimated",
   "estimatedCost": "Estimated",
   "estimatedPrice": "Estimated price",
+  "exit": "Exit",
+  "exitShoppingMode": "Exit Shopping Mode",
   "exportData": "Export data",
   "exportDataSubtitle": "Save all lists as JSON",
   "exportExcel": "Export as Excel",
@@ -518,6 +557,7 @@
   "generalAssistant": "General Assistant",
   "generalHelp": "How can I help with your shopping today?",
   "generateShoppingList": "Generate shopping list",
+  "gestureHint": "Hold to select • Swipe to remove",
   "globalAssistant": "Global assistant",
   "howCanIHelp": "How can I help?",
   "idealQty": "Ideal qty",
@@ -541,6 +581,7 @@
   "itemsPurchasedCount": "{purchased} of {total} purchased",
   "itemsPurchasedShort": "{purchased}/{total} purchased",
   "itemsWillBeAdded": "{count} item(s) will be added",
+  "kipiListTitle": "KipiList",
   "language": "Language",
   "languageEnglish": "English",
   "languagePortuguese": "Português (Brasil)",
@@ -555,7 +596,6 @@
   "listHistory": "List History",
   "listNameLabel": "List name",
   "listOrganizedMagic": "List magically organized by categories! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Listening...",
   "lists": "Lists",
   "loading": "Loading...",
@@ -606,6 +646,10 @@
   "monthlyBudgetTitle": "Monthly Budget",
   "myLists": "My Lists",
   "myRecipes": "My Recipes",
+  "navChat": "Chat",
+  "navLists": "Lists",
+  "navMealPlanner": "Menu",
+  "navRecipes": "Recipes",
   "newChat": "New Chat",
   "newListTitle": "New Shopping List",
   "newPantryList": "Pantry Shopping",
@@ -664,7 +708,56 @@
   "pantryEmpty": "Empty pantry",
   "pantryEmptySubtitle": "Add products you want to keep at home",
   "pantryItemRemoved": "Item removed",
+  "paywallAfterItem1": "Grains",
+  "paywallAfterItem2": "Cleaning",
+  "paywallAfterItem3": "Meats",
+  "paywallAfterItem4": "Bakery",
+  "paywallBeforeAfterTitle": "AI Before and After:",
+  "paywallBeforeItem1": "rice",
+  "paywallBeforeItem2": "soap",
+  "paywallBeforeItem3": "meat",
+  "paywallBeforeItem4": "bread",
+  "paywallBenefit1Desc": "Adds, organizes and suggests items 24/7",
+  "paywallBenefit2Desc": "No 3-list limit",
+  "paywallBenefit3Desc": "Expense tracking and family lists",
+  "paywallBestValue": "BEST VALUE",
+  "paywallCancelAnytime": "Cancel anytime. No commitment.",
+  "paywallCtaTrialDays": "Start free — {days} days",
+  "paywallCtaUnlock": "Unlock PRO",
+  "paywallFeatureExpenseControl": "Expense Control",
+  "paywallFeatureSharing": "Sharing",
+  "paywallFeatureSmartAI": "Smart AI",
+  "paywallFeatureUnlimitedLists": "Unlimited Lists",
+  "paywallFeaturesTitle": "Everything you need:",
+  "paywallHeroHeadline": "Kipi AI always by your side",
+  "paywallHeroSubtitle": "Add items, organize lists and save time with AI in your pocket",
+  "paywallLabelCommon": "Common",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Error loading offers. Try again.",
+  "paywallMostPopular": "MOST POPULAR",
+  "paywallPackageAnnual": "Annual Plan",
+  "paywallPackageLifetime": "Lifetime Access",
+  "paywallPackageMonthly": "Monthly Plan",
+  "paywallPackageMonthlyDesc": "Full flexibility",
+  "paywallPolicy": "Privacy Policy",
+  "paywallPricePerMonth": "Only {price}/month",
+  "paywallPurchaseError": "Could not complete purchase. Try again.",
+  "paywallRestore": "Restore",
+  "paywallRestoreError": "No active subscription found to restore.",
+  "paywallSafeCheckout": "Secure payment",
+  "paywallSavePercent": "SAVE {percent}%",
+  "paywallSelectPlan": "Choose your plan:",
+  "paywallSocialProof": "+2,400 families use it",
+  "paywallTerms": "Terms of Use",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI organizes my shopping in seconds. I save 20 min per market trip.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "I never forgot a list item again. The AI chat is sensational!",
+  "paywallTestimonialsTitle": "What our users say:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DAYS FREE",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} WEEK FREE} other{{count} WEEKS FREE}}",
   "prefAIAssistant": "Personal AI Assistant",
   "prefCustomThemes": "Custom themes",
   "prefExportData": "Export data",
@@ -679,6 +772,7 @@
   "prepTimeMinutes": "Prep time (minutes)",
   "privacy": "Privacy",
   "productName": "Product name",
+  "profile": "Profile",
   "purchaseError": "Error processing purchase. Try again.",
   "quantityFull": "Quantity",
   "quantityShort": "Qty",
@@ -776,6 +870,7 @@
   "undo": "Undo",
   "unit": "Unit",
   "unitPack": "pack",
+  "unlockAi": "Unlock unlimited AI",
   "unlockFullResponse": "Unlock Full Response",
   "unmark": "Unmark",
   "upgrade": "Upgrade",

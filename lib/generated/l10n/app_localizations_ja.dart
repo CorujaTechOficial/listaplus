@@ -18,6 +18,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get pantry => 'パントリー';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'レシピ';
+
+  @override
+  String get navLists => 'リスト';
+
+  @override
+  String get navMealPlanner => 'メニュー';
+
+  @override
   String get cancel => 'キャンセル';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get addedFeedback => '追加しました！';
+
+  @override
+  String get profile => 'プロフィール';
+
+  @override
+  String get exitShoppingMode => 'ショッピングモードを終了する';
+
+  @override
+  String get exit => '出口';
 
   @override
   String selectedItems(int count) {
@@ -581,7 +602,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get chatHint => 'メッセージを入力...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'AI のロックを解除してチャットできるようにする';
 
   @override
   String chatError(String error) {
@@ -602,17 +623,17 @@ class AppLocalizationsJa extends AppLocalizations {
       '申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'AI メッセージがほぼなくなりました';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => '無制限の AI をアンロックする';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'プレミアムに登録すると、完全な回答が得られ、ショッピングに関する AI ヒントを無制限に入手できます...';
 
   @override
-  String get kipiListTitle => 'KipiList';
+  String get kipiListTitle => 'キピリスト';
 
   @override
   String get loginPrompt => 'ログインして\nプレミアム機能を解除';
@@ -729,17 +750,17 @@ class AppLocalizationsJa extends AppLocalizations {
   String get paywallTitle => 'KipiList プレミアム';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError => 'オファーの読み込み中にエラーが発生しました。もう一度やり直してください。';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError => '購入を完了できませんでした。もう一度やり直してください。';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError => '復元するアクティブなサブスクリプションが見つかりません。';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days日間無料';
   }
 
   @override
@@ -747,8 +768,8 @@ class AppLocalizationsJa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count 週間無料',
+      one: '$count 週間無料',
     );
     return '$_temp0';
   }
@@ -758,148 +779,146 @@ class AppLocalizationsJa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count か月無料',
+      one: '$count か月無料',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => '必要なものすべて:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => '無制限のリスト';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'スマートAI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => '経費管理';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => '共有';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI の導入前と導入後:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => '一般';
 
   @override
-  String get paywallLabelPro => 'KipiList PRO';
+  String get paywallLabelPro => 'キピリストプロ';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => '米';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => '石鹸';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => '肉';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'パン';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => '穀物';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'クリーニング';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => '肉';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'ベーカリー';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'ユーザーの声:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => 'アン S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI が私の買い物を数秒で整理してくれます。市場訪問ごとに 20 分節約できます。';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'チャールズ M.';
 
   @override
-  String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+  String get paywallTestimonial2Text => 'もうリスト項目を忘れることはありません。 AIチャットがセンセーショナル！';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2,400 家族が使用しています';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'プロのロックを解除する';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'ベストバリュー';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => '最も人気のある';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => '安全な支払い';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'プランを選択してください:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return '$percent% 節約';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'わずか$price/月';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => '年間計画';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => '月額プラン';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => '生涯アクセス';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'いつでもキャンセルできます。約束はありません。';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'プライバシーポリシー';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => '利用規約';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => '復元する';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AIはいつもあなたのそばに';
 
   @override
-  String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+  String get paywallHeroSubtitle => 'AI をポケットに入れて項目を追加し、リストを整理し、時間を節約します';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc => '年中無休でアイテムを追加、整理、提案します';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => '3 リスト制限なし';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => '支出の追跡と家族リスト';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => '完全な柔軟性';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return '無料で始める — $days 日';
   }
 
   @override
@@ -1599,6 +1618,52 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'KipiListプレミアムを7日間プレゼント！';
+
+  @override
+  String get gestureHint => '押し続けて選択 • スワイプして削除';
+
+  @override
+  String get catalogTitle => 'カタログ';
+
+  @override
+  String get catalogMyFrequents => '私のよく行く人';
+
+  @override
+  String get catalogSearchGlobal => '任意の製品を検索...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category で検索...';
+  }
+
+  @override
+  String get catalogSortPopular => '最も人気のある';
+
+  @override
+  String get catalogSortAZ => 'A ～ Z';
+
+  @override
+  String get catalogFilterNational => 'ナショナルズ';
+
+  @override
+  String get catalogRareSection => 'あなたの国ではあまり一般的ではありません';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 を追加 →';
+  }
+
+  @override
+  String get catalogProductNotFound => '製品が見つかりません。名前を入力してください';
+
+  @override
+  String get catalogBrowse => 'カタログを閲覧する';
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -1613,6 +1678,18 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get pantry => 'パントリー';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'レシピ';
+
+  @override
+  String get navLists => 'リスト';
+
+  @override
+  String get navMealPlanner => 'メニュー';
 
   @override
   String get cancel => 'キャンセル';
@@ -1692,6 +1769,15 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get addedFeedback => '追加しました！';
+
+  @override
+  String get profile => 'プロフィール';
+
+  @override
+  String get exitShoppingMode => 'ショッピングモードを終了する';
+
+  @override
+  String get exit => '出口';
 
   @override
   String selectedItems(int count) {
@@ -2178,6 +2264,9 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get chatHint => 'メッセージを入力...';
 
   @override
+  String get chatHintBlocked => 'AI のロックを解除してチャットできるようにする';
+
+  @override
   String chatError(String error) {
     return 'チャットの読み込みエラー: $error';
   }
@@ -2196,7 +2285,17 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
       '申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。';
 
   @override
-  String get kipiListTitle => 'KipiList';
+  String get aiLimitAlmostReached => 'AI メッセージがほぼなくなりました';
+
+  @override
+  String get unlockAi => '無制限の AI をアンロックする';
+
+  @override
+  String get aiTeaserFallback =>
+      'プレミアムに登録すると、完全な回答が得られ、ショッピングに関する AI ヒントを無制限に入手できます...';
+
+  @override
+  String get kipiListTitle => 'キピリスト';
 
   @override
   String get loginPrompt => 'ログインして\nプレミアム機能を解除';
@@ -2311,6 +2410,178 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get paywallTitle => 'KipiList プレミアム';
+
+  @override
+  String get paywallLoadingError => 'オファーの読み込み中にエラーが発生しました。もう一度やり直してください。';
+
+  @override
+  String get paywallPurchaseError => '購入を完了できませんでした。もう一度やり直してください。';
+
+  @override
+  String get paywallRestoreError => '復元するアクティブなサブスクリプションが見つかりません。';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days日間無料';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 週間無料',
+      one: '$count 週間無料',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count か月無料',
+      one: '$count か月無料',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => '必要なものすべて:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => '無制限のリスト';
+
+  @override
+  String get paywallFeatureSmartAI => 'スマートAI';
+
+  @override
+  String get paywallFeatureExpenseControl => '経費管理';
+
+  @override
+  String get paywallFeatureSharing => '共有';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI の導入前と導入後:';
+
+  @override
+  String get paywallLabelCommon => '一般';
+
+  @override
+  String get paywallLabelPro => 'キピリストプロ';
+
+  @override
+  String get paywallBeforeItem1 => '米';
+
+  @override
+  String get paywallBeforeItem2 => '石鹸';
+
+  @override
+  String get paywallBeforeItem3 => '肉';
+
+  @override
+  String get paywallBeforeItem4 => 'パン';
+
+  @override
+  String get paywallAfterItem1 => '穀物';
+
+  @override
+  String get paywallAfterItem2 => 'クリーニング';
+
+  @override
+  String get paywallAfterItem3 => '肉';
+
+  @override
+  String get paywallAfterItem4 => 'ベーカリー';
+
+  @override
+  String get paywallTestimonialsTitle => 'ユーザーの声:';
+
+  @override
+  String get paywallTestimonial1Name => 'アン S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI が私の買い物を数秒で整理してくれます。市場訪問ごとに 20 分節約できます。';
+
+  @override
+  String get paywallTestimonial2Name => 'チャールズ M.';
+
+  @override
+  String get paywallTestimonial2Text => 'もうリスト項目を忘れることはありません。 AIチャットがセンセーショナル！';
+
+  @override
+  String get paywallSocialProof => '+2,400 家族が使用しています';
+
+  @override
+  String get paywallCtaUnlock => 'プロのロックを解除する';
+
+  @override
+  String get paywallBestValue => 'ベストバリュー';
+
+  @override
+  String get paywallMostPopular => '最も人気のある';
+
+  @override
+  String get paywallSafeCheckout => '安全な支払い';
+
+  @override
+  String get paywallSelectPlan => 'プランを選択してください:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return '$percent% 節約';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'わずか$price/月';
+  }
+
+  @override
+  String get paywallPackageAnnual => '年間計画';
+
+  @override
+  String get paywallPackageMonthly => '月額プラン';
+
+  @override
+  String get paywallPackageLifetime => '生涯アクセス';
+
+  @override
+  String get paywallCancelAnytime => 'いつでもキャンセルできます。約束はありません。';
+
+  @override
+  String get paywallPolicy => 'プライバシーポリシー';
+
+  @override
+  String get paywallTerms => '利用規約';
+
+  @override
+  String get paywallRestore => '復元する';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AIはいつもあなたのそばに';
+
+  @override
+  String get paywallHeroSubtitle => 'AI をポケットに入れて項目を追加し、リストを整理し、時間を節約します';
+
+  @override
+  String get paywallBenefit1Desc => '年中無休でアイテムを追加、整理、提案します';
+
+  @override
+  String get paywallBenefit2Desc => '3 リスト制限なし';
+
+  @override
+  String get paywallBenefit3Desc => '支出の追跡と家族リスト';
+
+  @override
+  String get paywallPackageMonthlyDesc => '完全な柔軟性';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return '無料で始める — $days 日';
+  }
 
   @override
   String get premiumUpgrade => 'アップグレードして解除';
@@ -3009,4 +3280,50 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get shareReferralSubject => 'KipiListプレミアムを7日間プレゼント！';
+
+  @override
+  String get gestureHint => '押し続けて選択 • スワイプして削除';
+
+  @override
+  String get catalogTitle => 'カタログ';
+
+  @override
+  String get catalogMyFrequents => '私のよく行く人';
+
+  @override
+  String get catalogSearchGlobal => '任意の製品を検索...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category で検索...';
+  }
+
+  @override
+  String get catalogSortPopular => '最も人気のある';
+
+  @override
+  String get catalogSortAZ => 'A ～ Z';
+
+  @override
+  String get catalogFilterNational => 'ナショナルズ';
+
+  @override
+  String get catalogRareSection => 'あなたの国ではあまり一般的ではありません';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 を追加 →';
+  }
+
+  @override
+  String get catalogProductNotFound => '製品が見つかりません。名前を入力してください';
+
+  @override
+  String get catalogBrowse => 'カタログを閲覧する';
 }

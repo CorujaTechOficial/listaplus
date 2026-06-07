@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "남은 크레딧: {remaining}",
   "aiEnergy": "AI 에너지",
   "aiError": "죄송합니다. 요청 처리 중 오류가 발생했습니다. 연결을 확인하거나 나중에 다시 시도해 주세요.",
+  "aiLimitAlmostReached": "AI 메시지가 거의 부족함",
+  "aiTeaserFallback": "프리미엄을 구독하면 전체 응답을 받고 쇼핑에 대한 무제한 AI 팁을 얻을 수 있습니다...",
   "aiVoiceCommandTooltip": "AI 음성 명령 (프리미엄)",
   "allTags": "전체",
   "alreadyPurchased": "이미 구매함",
@@ -404,9 +430,21 @@
   "catCleaning": "청소용품",
   "catFruits": "과일",
   "catOthers": "기타",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} 추가 →",
+  "catalogBrowse": "카탈로그 찾아보기",
+  "catalogFilterNational": "국민",
+  "catalogMyFrequents": "나의 자주 방문하는 곳",
+  "catalogProductNotFound": "제품을 찾을 수 없습니다. 이름을 입력하세요.",
+  "catalogRareSection": "귀하의 국가에서는 덜 일반적입니다",
+  "catalogSearchGlobal": "어떤 제품이든 검색해보세요...",
+  "catalogSearchInCategory": "{category}에서 검색하세요...",
+  "catalogSortAZ": "A~Z",
+  "catalogSortPopular": "가장 인기있는",
+  "catalogTitle": "목록",
   "category": "카테고리",
   "chatError": "채팅 로딩 오류: {error}",
   "chatHint": "메시지를 입력하세요...",
+  "chatHintBlocked": "채팅을 위해 AI 잠금 해제",
   "chatSubtitle": "항목 제안, 레시피 또는 절약 팁을 물어보세요.",
   "chatSubtitleShort": "가격, 레시피, 구성 등에 대해 물어보세요...",
   "chooseCurrency": "통화 선택",
@@ -479,6 +517,8 @@
   "estimated": "예상",
   "estimatedCost": "추정된",
   "estimatedPrice": "예상 가격",
+  "exit": "출구",
+  "exitShoppingMode": "쇼핑 모드 종료",
   "exportData": "데이터 내보내기",
   "exportDataSubtitle": "모든 목록을 JSON으로 저장",
   "exportExcel": "Excel로 내보내기",
@@ -517,6 +557,7 @@
   "generalAssistant": "일반 어시스턴트",
   "generalHelp": "오늘 쇼핑에 대해 무엇을 도와드릴까요?",
   "generateShoppingList": "쇼핑 목록 생성",
+  "gestureHint": "길게 눌러 선택 • 스와이프하여 삭제",
   "globalAssistant": "글로벌 어시스턴트",
   "howCanIHelp": "어떻게 도와드릴까요?",
   "idealQty": "이상 수량",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{total} 중 {purchased} 구매함",
   "itemsPurchasedShort": "{purchased}/{total} 구매함",
   "itemsWillBeAdded": "{count}개 항목이 추가됩니다",
+  "kipiListTitle": "KipiList",
   "language": "언어",
   "languageEnglish": "영어",
   "languagePortuguese": "포르투갈어(브라질)",
@@ -554,7 +596,6 @@
   "listHistory": "목록 기록",
   "listNameLabel": "목록 이름",
   "listOrganizedMagic": "목록이 마법처럼 카테고리별로 정리되었습니다! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "청취...",
   "lists": "목록",
   "loading": "로딩 중...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "월 예산",
   "myLists": "내 목록",
   "myRecipes": "내 레시피",
+  "navChat": "Chat",
+  "navLists": "목록",
+  "navMealPlanner": "메뉴",
+  "navRecipes": "조리법",
   "newChat": "새 채팅",
   "newListTitle": "새 쇼핑 목록",
   "newPantryList": "저장실 쇼핑",
@@ -663,7 +708,56 @@
   "pantryEmpty": "저장실이 비어 있음",
   "pantryEmptySubtitle": "집에 두고 싶은 제품을 추가하세요",
   "pantryItemRemoved": "항목이 제거됨",
+  "paywallAfterItem1": "작살",
+  "paywallAfterItem2": "청소",
+  "paywallAfterItem3": "고기",
+  "paywallAfterItem4": "빵집",
+  "paywallBeforeAfterTitle": "AI 이전과 이후:",
+  "paywallBeforeItem1": "쌀",
+  "paywallBeforeItem2": "비누",
+  "paywallBeforeItem3": "고기",
+  "paywallBeforeItem4": "빵",
+  "paywallBenefit1Desc": "연중무휴 24시간 항목 추가, 정리, 제안",
+  "paywallBenefit2Desc": "3개 목록 제한 없음",
+  "paywallBenefit3Desc": "비용 추적 및 가족 목록",
+  "paywallBestValue": "최고의 가치",
+  "paywallCancelAnytime": "언제든지 취소하세요. 헌신이 없습니다.",
+  "paywallCtaTrialDays": "무료로 시작 — {days}일",
+  "paywallCtaUnlock": "PRO 잠금 해제",
+  "paywallFeatureExpenseControl": "비용 통제",
+  "paywallFeatureSharing": "공유",
+  "paywallFeatureSmartAI": "스마트 AI",
+  "paywallFeatureUnlimitedLists": "무제한 목록",
+  "paywallFeaturesTitle": "필요한 모든 것:",
+  "paywallHeroHeadline": "Kipi AI는 항상 당신 곁에 있습니다.",
+  "paywallHeroSubtitle": "주머니 속의 AI로 항목을 추가하고, 목록을 정리하고, 시간을 절약하세요",
+  "paywallLabelCommon": "흔한",
+  "paywallLabelPro": "키피리스트 PRO",
+  "paywallLoadingError": "쿠폰을 로드하는 중에 오류가 발생했습니다. 다시 시도해 보세요.",
+  "paywallMostPopular": "가장 인기 있는",
+  "paywallPackageAnnual": "연간 요금제",
+  "paywallPackageLifetime": "평생 액세스",
+  "paywallPackageMonthly": "월간 요금제",
+  "paywallPackageMonthlyDesc": "완전한 유연성",
+  "paywallPolicy": "개인 정보 보호 정책",
+  "paywallPricePerMonth": "단 {price}/월",
+  "paywallPurchaseError": "구매를 완료할 수 없습니다. 다시 시도해 보세요.",
+  "paywallRestore": "복원하다",
+  "paywallRestoreError": "복원할 활성 구독이 없습니다.",
+  "paywallSafeCheckout": "안전한 결제",
+  "paywallSavePercent": "{percent}% 저장",
+  "paywallSelectPlan": "계획을 선택하세요:",
+  "paywallSocialProof": "+2,400 가족이 사용합니다.",
+  "paywallTerms": "이용약관",
+  "paywallTestimonial1Name": "앤 S.",
+  "paywallTestimonial1Text": "AI는 내 쇼핑을 몇 초 만에 정리합니다. 나는 시장 여행당 20분을 절약한다.",
+  "paywallTestimonial2Name": "찰스 M.",
+  "paywallTestimonial2Text": "나는 다시는 목록 항목을 잊어버린 적이 없습니다. AI 채팅이 놀랍습니다!",
+  "paywallTestimonialsTitle": "사용자 의견:",
   "paywallTitle": "KipiList 프리미엄",
+  "paywallTrialDays": "{days}일 무료",
+  "paywallTrialMonths": "{count,plural, one{{count}개월 무료} other{{count}개월 무료}}",
+  "paywallTrialWeeks": "{count,plural, one{{count}주 무료} other{{count}주 무료}}",
   "prefAIAssistant": "개인 AI 어시스턴트",
   "prefCustomThemes": "커스텀 테마",
   "prefExportData": "데이터 내보내기",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "조리 시간 (분)",
   "privacy": "개인정보 처리방침",
   "productName": "제품 이름",
+  "profile": "윤곽",
   "purchaseError": "구매 처리 중 오류가 발생했습니다. 다시 시도하세요.",
   "quantityFull": "수량",
   "quantityShort": "수량",
@@ -775,6 +870,7 @@
   "undo": "실행 취소",
   "unit": "단위",
   "unitPack": "팩",
+  "unlockAi": "무제한 AI 잠금 해제",
   "unlockFullResponse": "전체 응답 잠금 해제",
   "unmark": "표시 해제",
   "upgrade": "업그레이드",

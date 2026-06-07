@@ -14,6 +14,8 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:quick_actions/quick_actions.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:animations/animations.dart';
 import 'theme/app_theme.dart';
 import 'theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
@@ -496,43 +498,56 @@ class _MainShellState extends ConsumerState<MainShell> {
         selectedIndex: _currentTab,
         onDestinationSelected: (index) => setState(() => _currentTab = index),
         destinations: [
-          const NavigationDestination(
-            icon: Icon(Icons.smart_toy_outlined),
-            selectedIcon: Icon(Icons.smart_toy),
-            label: 'IA',
+          NavigationDestination(
+            icon: const Icon(Icons.smart_toy_outlined),
+            selectedIcon: const Icon(Icons.smart_toy),
+            label: l10n.navChat,
           ),
           NavigationDestination(
             icon: const Icon(Icons.restaurant_menu_outlined),
             selectedIcon: const Icon(Icons.restaurant_menu),
-            label: l10n.myRecipes,
+            label: l10n.navRecipes,
           ),
           NavigationDestination(
             icon: const Icon(Icons.list_alt_outlined),
             selectedIcon: const Icon(Icons.list_alt),
-            label: l10n.myLists,
+            label: l10n.navLists,
           ),
           NavigationDestination(
             icon: const Icon(Icons.inventory_2_outlined),
             selectedIcon: const Icon(Icons.inventory_2),
             label: l10n.pantry,
           ),
-          const NavigationDestination(
-            icon: Icon(Icons.calendar_month_outlined),
-            selectedIcon: Icon(Icons.calendar_month),
-            label: 'Cardápio',
+          NavigationDestination(
+            icon: const Icon(Icons.calendar_month_outlined),
+            selectedIcon: const Icon(Icons.calendar_month),
+            label: l10n.navMealPlanner,
           ),
         ],
+      ).animate().slideY(begin: 1, end: 0, duration: 600.ms, curve: Curves.easeOutCubic),
+
+      body: PageTransitionSwitcher(
+        duration: const Duration(milliseconds: 300),
+        transitionBuilder: (child, animation, secondaryAnimation) {
+          return SharedAxisTransition(
+            animation: animation,
+            secondaryAnimation: secondaryAnimation,
+            transitionType: SharedAxisTransitionType.horizontal,
+            child: child,
+          );
+        },
+        child: KeyedSubtree(
+          key: ValueKey<int>(_currentTab),
+          child: [
+            const AiHomeScreen(),
+            const RecipesScreen(),
+            const ListLoader(),
+            const PantryScreen(),
+            const MealPlannerScreen(),
+          ][_currentTab],
+        ),
       ),
-      body: IndexedStack(
-        index: _currentTab,
-        children: const [
-          AiHomeScreen(),
-          RecipesScreen(),
-          ListLoader(),
-          PantryScreen(),
-          MealPlannerScreen(),
-        ],
-      ),
+
     );
   }
 }

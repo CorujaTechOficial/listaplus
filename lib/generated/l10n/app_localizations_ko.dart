@@ -18,6 +18,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get pantry => '식료품 저장실';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => '조리법';
+
+  @override
+  String get navLists => '목록';
+
+  @override
+  String get navMealPlanner => '메뉴';
+
+  @override
   String get cancel => '취소';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get addedFeedback => '추가됨!';
+
+  @override
+  String get profile => '윤곽';
+
+  @override
+  String get exitShoppingMode => '쇼핑 모드 종료';
+
+  @override
+  String get exit => '출구';
 
   @override
   String selectedItems(int count) {
@@ -581,7 +602,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chatHint => '메시지를 입력하세요...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => '채팅을 위해 AI 잠금 해제';
 
   @override
   String chatError(String error) {
@@ -601,14 +622,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get aiError => '죄송합니다. 요청 처리 중 오류가 발생했습니다. 연결을 확인하거나 나중에 다시 시도해 주세요.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'AI 메시지가 거의 부족함';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => '무제한 AI 잠금 해제';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      '프리미엄을 구독하면 전체 응답을 받고 쇼핑에 대한 무제한 AI 팁을 얻을 수 있습니다...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -728,17 +749,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String get paywallTitle => 'KipiList 프리미엄';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError => '쿠폰을 로드하는 중에 오류가 발생했습니다. 다시 시도해 보세요.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError => '구매를 완료할 수 없습니다. 다시 시도해 보세요.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError => '복원할 활성 구독이 없습니다.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days일 무료';
   }
 
   @override
@@ -746,8 +767,8 @@ class AppLocalizationsKo extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count주 무료',
+      one: '$count주 무료',
     );
     return '$_temp0';
   }
@@ -757,148 +778,147 @@ class AppLocalizationsKo extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count개월 무료',
+      one: '$count개월 무료',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => '필요한 모든 것:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => '무제한 목록';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => '스마트 AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => '비용 통제';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => '공유';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI 이전과 이후:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => '흔한';
 
   @override
-  String get paywallLabelPro => 'KipiList PRO';
+  String get paywallLabelPro => '키피리스트 PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => '쌀';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => '비누';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => '고기';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => '빵';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => '작살';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => '청소';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => '고기';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => '빵집';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => '사용자 의견:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => '앤 S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI는 내 쇼핑을 몇 초 만에 정리합니다. 나는 시장 여행당 20분을 절약한다.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => '찰스 M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      '나는 다시는 목록 항목을 잊어버린 적이 없습니다. AI 채팅이 놀랍습니다!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2,400 가족이 사용합니다.';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'PRO 잠금 해제';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => '최고의 가치';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => '가장 인기 있는';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => '안전한 결제';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => '계획을 선택하세요:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return '$percent% 저장';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return '단 $price/월';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => '연간 요금제';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => '월간 요금제';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => '평생 액세스';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => '언제든지 취소하세요. 헌신이 없습니다.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => '개인 정보 보호 정책';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => '이용약관';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => '복원하다';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI는 항상 당신 곁에 있습니다.';
 
   @override
-  String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+  String get paywallHeroSubtitle => '주머니 속의 AI로 항목을 추가하고, 목록을 정리하고, 시간을 절약하세요';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc => '연중무휴 24시간 항목 추가, 정리, 제안';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => '3개 목록 제한 없음';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => '비용 추적 및 가족 목록';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => '완전한 유연성';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return '무료로 시작 — $days일';
   }
 
   @override
@@ -1597,6 +1617,52 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'KipiList Premium을 7일 동안 이용해보세요!';
+
+  @override
+  String get gestureHint => '길게 눌러 선택 • 스와이프하여 삭제';
+
+  @override
+  String get catalogTitle => '목록';
+
+  @override
+  String get catalogMyFrequents => '나의 자주 방문하는 곳';
+
+  @override
+  String get catalogSearchGlobal => '어떤 제품이든 검색해보세요...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category에서 검색하세요...';
+  }
+
+  @override
+  String get catalogSortPopular => '가장 인기있는';
+
+  @override
+  String get catalogSortAZ => 'A~Z';
+
+  @override
+  String get catalogFilterNational => '국민';
+
+  @override
+  String get catalogRareSection => '귀하의 국가에서는 덜 일반적입니다';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 추가 →';
+  }
+
+  @override
+  String get catalogProductNotFound => '제품을 찾을 수 없습니다. 이름을 입력하세요.';
+
+  @override
+  String get catalogBrowse => '카탈로그 찾아보기';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -1611,6 +1677,18 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get pantry => '식료품 저장실';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => '조리법';
+
+  @override
+  String get navLists => '목록';
+
+  @override
+  String get navMealPlanner => '메뉴';
 
   @override
   String get cancel => '취소';
@@ -1690,6 +1768,15 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get addedFeedback => '추가됨!';
+
+  @override
+  String get profile => '윤곽';
+
+  @override
+  String get exitShoppingMode => '쇼핑 모드 종료';
+
+  @override
+  String get exit => '출구';
 
   @override
   String selectedItems(int count) {
@@ -2176,6 +2263,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get chatHint => '메시지를 입력하세요...';
 
   @override
+  String get chatHintBlocked => '채팅을 위해 AI 잠금 해제';
+
+  @override
   String chatError(String error) {
     return '채팅 로딩 오류: $error';
   }
@@ -2191,6 +2281,16 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get aiError => '죄송합니다. 요청 처리 중 오류가 발생했습니다. 연결을 확인하거나 나중에 다시 시도해 주세요.';
+
+  @override
+  String get aiLimitAlmostReached => 'AI 메시지가 거의 부족함';
+
+  @override
+  String get unlockAi => '무제한 AI 잠금 해제';
+
+  @override
+  String get aiTeaserFallback =>
+      '프리미엄을 구독하면 전체 응답을 받고 쇼핑에 대한 무제한 AI 팁을 얻을 수 있습니다...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -2308,6 +2408,179 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get paywallTitle => 'KipiList 프리미엄';
+
+  @override
+  String get paywallLoadingError => '쿠폰을 로드하는 중에 오류가 발생했습니다. 다시 시도해 보세요.';
+
+  @override
+  String get paywallPurchaseError => '구매를 완료할 수 없습니다. 다시 시도해 보세요.';
+
+  @override
+  String get paywallRestoreError => '복원할 활성 구독이 없습니다.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days일 무료';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count주 무료',
+      one: '$count주 무료',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count개월 무료',
+      one: '$count개월 무료',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => '필요한 모든 것:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => '무제한 목록';
+
+  @override
+  String get paywallFeatureSmartAI => '스마트 AI';
+
+  @override
+  String get paywallFeatureExpenseControl => '비용 통제';
+
+  @override
+  String get paywallFeatureSharing => '공유';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI 이전과 이후:';
+
+  @override
+  String get paywallLabelCommon => '흔한';
+
+  @override
+  String get paywallLabelPro => '키피리스트 PRO';
+
+  @override
+  String get paywallBeforeItem1 => '쌀';
+
+  @override
+  String get paywallBeforeItem2 => '비누';
+
+  @override
+  String get paywallBeforeItem3 => '고기';
+
+  @override
+  String get paywallBeforeItem4 => '빵';
+
+  @override
+  String get paywallAfterItem1 => '작살';
+
+  @override
+  String get paywallAfterItem2 => '청소';
+
+  @override
+  String get paywallAfterItem3 => '고기';
+
+  @override
+  String get paywallAfterItem4 => '빵집';
+
+  @override
+  String get paywallTestimonialsTitle => '사용자 의견:';
+
+  @override
+  String get paywallTestimonial1Name => '앤 S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI는 내 쇼핑을 몇 초 만에 정리합니다. 나는 시장 여행당 20분을 절약한다.';
+
+  @override
+  String get paywallTestimonial2Name => '찰스 M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      '나는 다시는 목록 항목을 잊어버린 적이 없습니다. AI 채팅이 놀랍습니다!';
+
+  @override
+  String get paywallSocialProof => '+2,400 가족이 사용합니다.';
+
+  @override
+  String get paywallCtaUnlock => 'PRO 잠금 해제';
+
+  @override
+  String get paywallBestValue => '최고의 가치';
+
+  @override
+  String get paywallMostPopular => '가장 인기 있는';
+
+  @override
+  String get paywallSafeCheckout => '안전한 결제';
+
+  @override
+  String get paywallSelectPlan => '계획을 선택하세요:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return '$percent% 저장';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return '단 $price/월';
+  }
+
+  @override
+  String get paywallPackageAnnual => '연간 요금제';
+
+  @override
+  String get paywallPackageMonthly => '월간 요금제';
+
+  @override
+  String get paywallPackageLifetime => '평생 액세스';
+
+  @override
+  String get paywallCancelAnytime => '언제든지 취소하세요. 헌신이 없습니다.';
+
+  @override
+  String get paywallPolicy => '개인 정보 보호 정책';
+
+  @override
+  String get paywallTerms => '이용약관';
+
+  @override
+  String get paywallRestore => '복원하다';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI는 항상 당신 곁에 있습니다.';
+
+  @override
+  String get paywallHeroSubtitle => '주머니 속의 AI로 항목을 추가하고, 목록을 정리하고, 시간을 절약하세요';
+
+  @override
+  String get paywallBenefit1Desc => '연중무휴 24시간 항목 추가, 정리, 제안';
+
+  @override
+  String get paywallBenefit2Desc => '3개 목록 제한 없음';
+
+  @override
+  String get paywallBenefit3Desc => '비용 추적 및 가족 목록';
+
+  @override
+  String get paywallPackageMonthlyDesc => '완전한 유연성';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return '무료로 시작 — $days일';
+  }
 
   @override
   String get premiumUpgrade => '업그레이드하여 잠금 해제';
@@ -3005,4 +3278,50 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get shareReferralSubject => 'KipiList Premium을 7일 동안 이용해보세요!';
+
+  @override
+  String get gestureHint => '길게 눌러 선택 • 스와이프하여 삭제';
+
+  @override
+  String get catalogTitle => '목록';
+
+  @override
+  String get catalogMyFrequents => '나의 자주 방문하는 곳';
+
+  @override
+  String get catalogSearchGlobal => '어떤 제품이든 검색해보세요...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category에서 검색하세요...';
+  }
+
+  @override
+  String get catalogSortPopular => '가장 인기있는';
+
+  @override
+  String get catalogSortAZ => 'A~Z';
+
+  @override
+  String get catalogFilterNational => '국민';
+
+  @override
+  String get catalogRareSection => '귀하의 국가에서는 덜 일반적입니다';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 추가 →';
+  }
+
+  @override
+  String get catalogProductNotFound => '제품을 찾을 수 없습니다. 이름을 입력하세요.';
+
+  @override
+  String get catalogBrowse => '카탈로그 찾아보기';
 }

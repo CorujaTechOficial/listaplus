@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "{remaining} krediittiä jäljellä",
   "aiEnergy": "AI energia",
   "aiError": "Anteeksi, pyyntösi käsittelyssä tapahtui virhe. Tarkista yhteys tai yritä myöhemmin uudelleen.",
+  "aiLimitAlmostReached": "Tekoälyviestit ovat melkein lopussa",
+  "aiTeaserFallback": "Tilaa Premium, niin saat täyden vastauksen ja rajattomasti tekoälyvinkkejä ostoksille...",
   "aiVoiceCommandTooltip": "AI-äänikomento (Premium)",
   "allTags": "Kaikki",
   "alreadyPurchased": "Jo ostettu",
@@ -385,9 +411,21 @@
   "catCleaning": "Siivous",
   "catFruits": "Hedelmät",
   "catOthers": "Muut",
+  "catalogAddItems": "Lisää {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Selaa katalogia",
+  "catalogFilterNational": "Kansalaiset",
+  "catalogMyFrequents": "Minun Frequents",
+  "catalogProductNotFound": "Tuotetta ei löydy, kirjoita nimi",
+  "catalogRareSection": "harvinaisempaa maassasi",
+  "catalogSearchGlobal": "Hae mitä tahansa tuotetta...",
+  "catalogSearchInCategory": "Hae {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Suosituin",
+  "catalogTitle": "Luettelo",
   "category": "Kategoria",
   "chatError": "Virhe ladattaessa chattia: {error}",
   "chatHint": "Kirjoita viestisi...",
+  "chatHintBlocked": "Avaa AI keskustellaksesi",
   "chatSubtitle": "Kysy kohde-ehdotuksia, reseptejä tai säästövinkkejä.",
   "chatSubtitleShort": "Kysy hinnoista, resepteistä, järjestämisestä...",
   "chooseCurrency": "Valitse Valuutta",
@@ -460,6 +498,8 @@
   "estimated": "Arvioitu",
   "estimatedCost": "Arvioitu",
   "estimatedPrice": "Arvioitu hinta",
+  "exit": "Poistu",
+  "exitShoppingMode": "Poistu ostostilasta",
   "exportData": "Vie tiedot",
   "exportDataSubtitle": "Tallenna kaikki listat JSON-muodossa",
   "exportExcel": "Vie Excel-muodossa",
@@ -498,6 +538,7 @@
   "generalAssistant": "Yleinen assistentti",
   "generalHelp": "Miten voin auttaa ostoksissasi tänään?",
   "generateShoppingList": "Luo ostoslista",
+  "gestureHint": "Valitse pitämällä painettuna • Poista pyyhkäisemällä",
   "globalAssistant": "Yleinen assistentti",
   "howCanIHelp": "Miten voin auttaa?",
   "idealQty": "Ihannemäärä",
@@ -521,6 +562,7 @@
   "itemsPurchasedCount": "{purchased} / {total} ostettu",
   "itemsPurchasedShort": "{purchased}/{total} ostettu",
   "itemsWillBeAdded": "{count} kohde(tta) lisätään",
+  "kipiListTitle": "KipiList",
   "language": "Kieli",
   "languageEnglish": "englanti",
   "languagePortuguese": "portugali (Brasilia)",
@@ -535,7 +577,6 @@
   "listHistory": "Listahistoria",
   "listNameLabel": "Listan nimi",
   "listOrganizedMagic": "Lista maagisesti järjestetty kategorioittain! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Kuuntelee...",
   "lists": "Listat",
   "loading": "Ladataan...",
@@ -586,6 +627,10 @@
   "monthlyBudgetTitle": "Kuukausibudjetti",
   "myLists": "Minun listat",
   "myRecipes": "Omat reseptit",
+  "navChat": "Chat",
+  "navLists": "Listat",
+  "navMealPlanner": "Valikko",
+  "navRecipes": "Reseptit",
   "newChat": "Uusi Chat",
   "newListTitle": "Uusi ostoslista",
   "newPantryList": "Ruokakomero-ostokset",
@@ -644,7 +689,56 @@
   "pantryEmpty": "Tyhjä ruokakomero",
   "pantryEmptySubtitle": "Lisää tuotteita, joita haluat pitää kotona",
   "pantryItemRemoved": "Kohde poistettu",
+  "paywallAfterItem1": "Jyvät",
+  "paywallAfterItem2": "Puhdistus",
+  "paywallAfterItem3": "Lihat",
+  "paywallAfterItem4": "Leipomo",
+  "paywallBeforeAfterTitle": "AI ennen ja jälkeen:",
+  "paywallBeforeItem1": "riisi",
+  "paywallBeforeItem2": "saippua",
+  "paywallBeforeItem3": "liha",
+  "paywallBeforeItem4": "leipää",
+  "paywallBenefit1Desc": "Lisää, järjestää ja ehdottaa kohteita 24/7",
+  "paywallBenefit2Desc": "Ei kolmen listan rajaa",
+  "paywallBenefit3Desc": "Kulujen seuranta ja perheluettelot",
+  "paywallBestValue": "PARAS ARVO",
+  "paywallCancelAnytime": "Peru milloin tahansa. Ei sitoutumista.",
+  "paywallCtaTrialDays": "Aloita ilmaiseksi – {days} päivää",
+  "paywallCtaUnlock": "Avaa PRO",
+  "paywallFeatureExpenseControl": "Kulujen valvonta",
+  "paywallFeatureSharing": "Jakaminen",
+  "paywallFeatureSmartAI": "Älykäs AI",
+  "paywallFeatureUnlimitedLists": "Rajoittamaton luettelo",
+  "paywallFeaturesTitle": "Kaikki mitä tarvitset:",
+  "paywallHeroHeadline": "Kipi AI aina vierelläsi",
+  "paywallHeroSubtitle": "Lisää kohteita, järjestä luetteloita ja säästä aikaa taskussasi olevan tekoälyn avulla",
+  "paywallLabelCommon": "Yleistä",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Virhe ladattaessa tarjouksia. Yritä uudelleen.",
+  "paywallMostPopular": "SUOSITTUIN",
+  "paywallPackageAnnual": "Vuosisuunnitelma",
+  "paywallPackageLifetime": "Elinikäinen pääsy",
+  "paywallPackageMonthly": "Kuukausisuunnitelma",
+  "paywallPackageMonthlyDesc": "Täysi joustavuus",
+  "paywallPolicy": "Tietosuojakäytäntö",
+  "paywallPricePerMonth": "Vain {price}/kk",
+  "paywallPurchaseError": "Ostoa ei voitu suorittaa loppuun. Yritä uudelleen.",
+  "paywallRestore": "Palauttaa",
+  "paywallRestoreError": "Palautettavaa aktiivista tilausta ei löytynyt.",
+  "paywallSafeCheckout": "Turvallinen maksu",
+  "paywallSavePercent": "SÄÄSTÄ {percent}%",
+  "paywallSelectPlan": "Valitse suunnitelmasi:",
+  "paywallSocialProof": "+2 400 perhettä käyttää sitä",
+  "paywallTerms": "Käyttöehdot",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "Tekoäly järjestää ostokseni sekunneissa. Säästän 20 minuuttia per torimatka.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "En enää koskaan unohtanut yhtään listakohtaa. AI-chat on sensaatiomainen!",
+  "paywallTestimonialsTitle": "Mitä käyttäjämme sanovat:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} PÄIVÄÄ ILMAISEKSI",
+  "paywallTrialMonths": "{count,plural, one{{count} KUUKAUSI ILMAISEKSI} other{{count} KUUKAUTA ILMAISEKSI}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} VIIKKO ILMAISEKSI} other{{count} VIIKKOA ILMAISEKSI}}",
   "prefAIAssistant": "Henkilökohtainen AI-assistentti",
   "prefCustomThemes": "Mukautetut teemat",
   "prefExportData": "Vie tiedot",
@@ -659,6 +753,7 @@
   "prepTimeMinutes": "Valmistusaika (minuuttia)",
   "privacy": "Yksityisyys",
   "productName": "Tuotteen nimi",
+  "profile": "Profiili",
   "purchaseError": "Virhe ostoksen käsittelyssä. Yritä uudelleen.",
   "quantityFull": "Määrä",
   "quantityShort": "Määrä",
@@ -756,6 +851,7 @@
   "undo": "Kumoa",
   "unit": "Yksikkö",
   "unitPack": "pakkaus",
+  "unlockAi": "Avaa rajoittamaton AI",
   "unlockFullResponse": "Avaa täysi vastaus",
   "unmark": "Poista merkintä",
   "upgrade": "Päivitä",

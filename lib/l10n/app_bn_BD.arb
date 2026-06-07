@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -267,6 +284,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -347,6 +371,8 @@
   "aiCreditsRemaining": "{remaining} ক্রেডিট বাকি",
   "aiEnergy": "এআই এনার্জি",
   "aiError": "দুঃখিত, আপনার অনুরোধ প্রক্রিয়াকরণে ত্রুটি হয়েছে। আপনার সংযোগ পরীক্ষা করুন বা পরে আবার চেষ্টা করুন।",
+  "aiLimitAlmostReached": "প্রায় AI বার্তার বাইরে",
+  "aiTeaserFallback": "সম্পূর্ণ প্রতিক্রিয়া আনলক করতে প্রিমিয়ামে সদস্যতা নিন এবং আপনার কেনাকাটার জন্য সীমাহীন এআই টিপস পান...",
   "aiVoiceCommandTooltip": "AI ভয়েস কমান্ড (প্রিমিয়াম)",
   "allTags": "সব",
   "alreadyPurchased": "ইতিমধ্যে কেনা",
@@ -378,6 +404,17 @@
   "catCleaning": "পরিষ্কার",
   "catFruits": "ফল",
   "catOthers": "অন্যান্য",
+  "catalogAddItems": "যোগ করুন {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "ক্যাটালগ ব্রাউজ করুন",
+  "catalogFilterNational": "জাতীয়",
+  "catalogMyFrequents": "আমার ঘন ঘন",
+  "catalogProductNotFound": "পণ্য পাওয়া যায়নি, নাম টাইপ করুন",
+  "catalogRareSection": "আপনার দেশে কম সাধারণ",
+  "catalogSearchGlobal": "যেকোনো পণ্য অনুসন্ধান করুন...",
+  "catalogSearchInCategory": "{category} এ অনুসন্ধান করুন...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "সবচেয়ে জনপ্রিয়",
+  "catalogTitle": "ক্যাটালগ",
   "category": "বিভাগ",
   "chatError": "চ্যাট লোড করতে ত্রুটি: {error}",
   "chatHint": "আপনার বার্তা টাইপ করুন...",
@@ -454,6 +491,8 @@
   "estimated": "আনুমানিক",
   "estimatedCost": "আনুমানিক",
   "estimatedPrice": "আনুমানিক মূল্য",
+  "exit": "প্রস্থান করুন",
+  "exitShoppingMode": "শপিং মোড থেকে প্রস্থান করুন",
   "exportData": "ডেটা এক্সপোর্ট",
   "exportDataSubtitle": "সব তালিকা JSON হিসেবে সংরক্ষণ",
   "exportExcel": "Excel হিসেবে এক্সপোর্ট",
@@ -492,6 +531,7 @@
   "generalAssistant": "সাধারণ সহায়ক",
   "generalHelp": "আজকে আপনার কেনাকাটায় কিভাবে সাহায্য করতে পারি?",
   "generateShoppingList": "শপিং লিস্ট তৈরি",
+  "gestureHint": "নির্বাচন করতে ধরে রাখুন • সরাতে সোয়াইপ করুন",
   "globalAssistant": "সার্বিক সহায়ক",
   "howCanIHelp": "আমি কিভাবে সাহায্য করতে পারি?",
   "idealQty": "আদর্শ পরিমাণ",
@@ -515,6 +555,7 @@
   "itemsPurchasedCount": "{total} এর মধ্যে {purchased} কেনা হয়েছে",
   "itemsPurchasedShort": "{purchased}/{total} কেনা হয়েছে",
   "itemsWillBeAdded": "{count}টি আইটেম যোগ করা হবে",
+  "kipiListTitle": "কিপিলিস্ট",
   "language": "ভাষা",
   "languageEnglish": "ইংরেজি",
   "languagePortuguese": "পর্তুগিজ (ব্রাজিল)",
@@ -529,7 +570,6 @@
   "listHistory": "তালিকার ইতিহাস",
   "listNameLabel": "তালিকার নাম",
   "listOrganizedMagic": "তালিকা যাদুর মতো বিভাগ অনুযায়ী সংগঠিত! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "শুনছি...",
   "lists": "তালিকা",
   "loading": "লোড হচ্ছে...",
@@ -580,6 +620,10 @@
   "monthlyBudgetTitle": "মাসিক বাজেট",
   "myLists": "আমার তালিকা",
   "myRecipes": "আমার রেসিপি",
+  "navChat": "Chat",
+  "navLists": "তালিকা",
+  "navMealPlanner": "মেনু",
+  "navRecipes": "রেসিপি",
   "newChat": "নতুন চ্যাট",
   "newListTitle": "নতুন শপিং লিস্ট",
   "newPantryList": "প্যান্ট্রি শপিং",
@@ -638,7 +682,56 @@
   "pantryEmpty": "প্যান্ট্রি খালি",
   "pantryEmptySubtitle": "বাড়িতে রাখতে চান এমন পণ্য যোগ করুন",
   "pantryItemRemoved": "আইটেম সরানো হয়েছে",
+  "paywallAfterItem1": "দানা",
+  "paywallAfterItem2": "ক্লিনিং",
+  "paywallAfterItem3": "মাংস",
+  "paywallAfterItem4": "বেকারি",
+  "paywallBeforeAfterTitle": "AI আগে এবং পরে:",
+  "paywallBeforeItem1": "চাল",
+  "paywallBeforeItem2": "সাবান",
+  "paywallBeforeItem3": "মাংস",
+  "paywallBeforeItem4": "রুটি",
+  "paywallBenefit1Desc": "24/7 আইটেম যোগ করে, সংগঠিত করে এবং পরামর্শ দেয়",
+  "paywallBenefit2Desc": "3-তালিকা সীমা নেই",
+  "paywallBenefit3Desc": "খরচ ট্র্যাকিং এবং পরিবারের তালিকা",
+  "paywallBestValue": "সেরা মূল্য",
+  "paywallCancelAnytime": "যেকোনো সময় বাতিল করুন। কোনো অঙ্গীকার নেই।",
+  "paywallCtaTrialDays": "বিনামূল্যে শুরু করুন — {days} দিন",
+  "paywallCtaUnlock": "PRO আনলক করুন",
+  "paywallFeatureExpenseControl": "ব্যয় নিয়ন্ত্রণ",
+  "paywallFeatureSharing": "শেয়ারিং",
+  "paywallFeatureSmartAI": "স্মার্ট এআই",
+  "paywallFeatureUnlimitedLists": "সীমাহীন তালিকা",
+  "paywallFeaturesTitle": "আপনার যা কিছু প্রয়োজন:",
+  "paywallHeroHeadline": "কিপি এআই সবসময় আপনার পাশে",
+  "paywallHeroSubtitle": "আইটেম যোগ করুন, তালিকা সংগঠিত করুন এবং আপনার পকেটে AI দিয়ে সময় বাঁচান",
+  "paywallLabelCommon": "সাধারণ",
+  "paywallLabelPro": "কিপিলিস্ট প্রো",
+  "paywallLoadingError": "অফার লোড করার সময় ত্রুটি। আবার চেষ্টা করুন",
+  "paywallMostPopular": "সবচেয়ে জনপ্রিয়",
+  "paywallPackageAnnual": "বার্ষিক পরিকল্পনা",
+  "paywallPackageLifetime": "লাইফটাইম অ্যাক্সেস",
+  "paywallPackageMonthly": "মাসিক পরিকল্পনা",
+  "paywallPackageMonthlyDesc": "সম্পূর্ণ নমনীয়তা",
+  "paywallPolicy": "গোপনীয়তা নীতি",
+  "paywallPricePerMonth": "শুধুমাত্র {price}/মাস",
+  "paywallPurchaseError": "কেনাকাটা সম্পূর্ণ করা যায়নি। আবার চেষ্টা করুন",
+  "paywallRestore": "পুনরুদ্ধার করুন",
+  "paywallRestoreError": "পুনরুদ্ধার করার জন্য কোনো সক্রিয় সদস্যতা পাওয়া যায়নি।",
+  "paywallSafeCheckout": "নিরাপদ পেমেন্ট",
+  "paywallSavePercent": "{percent}% সংরক্ষণ করুন",
+  "paywallSelectPlan": "আপনার পরিকল্পনা চয়ন করুন:",
+  "paywallSocialProof": "+2,400 পরিবার এটি ব্যবহার করে",
+  "paywallTerms": "ব্যবহারের শর্তাবলী",
+  "paywallTestimonial1Name": "অ্যান এস.",
+  "paywallTestimonial1Text": "AI সেকেন্ডের মধ্যে আমার কেনাকাটা সংগঠিত করে। আমি প্রতি বাজার ট্রিপে 20 মিনিট বাঁচাই।",
+  "paywallTestimonial2Name": "চার্লস এম.",
+  "paywallTestimonial2Text": "আমি আবার একটি তালিকা আইটেম ভুলবেন না. এআই চ্যাট উত্তেজনাপূর্ণ!",
+  "paywallTestimonialsTitle": "আমাদের ব্যবহারকারীরা যা বলে:",
   "paywallTitle": "KipiList প্রিমিয়াম",
+  "paywallTrialDays": "{days} দিন বিনামূল্যে",
+  "paywallTrialMonths": "{count,plural, one{{count} মাস বিনামূল্যে} other{{count} মাস বিনামূল্যে}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} সপ্তাহ বিনামূল্যে} other{{count} সপ্তাহ বিনামূল্যে}}",
   "prefAIAssistant": "ব্যক্তিগত AI সহায়ক",
   "prefCustomThemes": "কাস্টম থিম",
   "prefExportData": "ডেটা এক্সপোর্ট",
@@ -653,6 +746,7 @@
   "prepTimeMinutes": "প্রস্তুতির সময় (মিনিট)",
   "privacy": "গোপনীয়তা",
   "productName": "পণ্যের নাম",
+  "profile": "প্রোফাইল",
   "purchaseError": "ক্রয় প্রক্রিয়াকরণে ত্রুটি। আবার চেষ্টা করুন।",
   "quantityFull": "পরিমাণ",
   "quantityShort": "পরিমাণ",
@@ -750,6 +844,7 @@
   "undo": "পূর্বাবস্থায় ফেরান",
   "unit": "একক",
   "unitPack": "প্যাক",
+  "unlockAi": "আনলিমিটেড এআই আনলক করুন",
   "unlockFullResponse": "সম্পূর্ণ প্রতিক্রিয়া আনলক করুন",
   "unmark": "চিহ্নমুক্ত",
   "upgrade": "আপগ্রেড",

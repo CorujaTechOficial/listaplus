@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "{remaining} crèdits restants",
   "aiEnergy": "Energia IA",
   "aiError": "Ho sentim, s'ha produït un error en processar la teva sol·licitud. Comprova la teva connexió o torna-ho a provar més tard.",
+  "aiLimitAlmostReached": "Quasi sense missatges d'IA",
+  "aiTeaserFallback": "Subscriviu-vos a Premium per desbloquejar la resposta completa i obtenir consells d'IA il·limitats per a les vostres compres...",
   "aiVoiceCommandTooltip": "Comandament de veu IA (Premium)",
   "allTags": "Tots",
   "alreadyPurchased": "Ja comprat",
@@ -385,6 +411,17 @@
   "catCleaning": "Neteja",
   "catFruits": "Fruites",
   "catOthers": "Altres",
+  "catalogAddItems": "Afegeix {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Navega pel catàleg",
+  "catalogFilterNational": "Nacionals",
+  "catalogMyFrequents": "Els meus freqüents",
+  "catalogProductNotFound": "No s'ha trobat el producte, escriviu el nom",
+  "catalogRareSection": "menys comú al teu país",
+  "catalogSearchGlobal": "Cerca qualsevol producte...",
+  "catalogSearchInCategory": "Cerca a {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "El més popular",
+  "catalogTitle": "Catàleg",
   "category": "Categoria",
   "chatError": "Error en carregar el xat: {error}",
   "chatHint": "Escriu el teu missatge...",
@@ -461,6 +498,8 @@
   "estimated": "Estimat",
   "estimatedCost": "Estimat",
   "estimatedPrice": "Preu estimat",
+  "exit": "Sortida",
+  "exitShoppingMode": "Sortiu del mode de compra",
   "exportData": "Exportar dades",
   "exportDataSubtitle": "Guardar totes les llistes com a JSON",
   "exportExcel": "Exportar com a Excel",
@@ -499,6 +538,7 @@
   "generalAssistant": "Assistent general",
   "generalHelp": "Com puc ajudar-te amb les teves compres avui?",
   "generateShoppingList": "Generar llista de compra",
+  "gestureHint": "Manteniu premut per seleccionar • Feu lliscar el dit per eliminar-lo",
   "globalAssistant": "Assistent global",
   "howCanIHelp": "Com puc ajudar?",
   "idealQty": "Quant ideal",
@@ -522,6 +562,7 @@
   "itemsPurchasedCount": "{purchased} de {total} comprat",
   "itemsPurchasedShort": "{purchased}/{total} comprat",
   "itemsWillBeAdded": "{count} article(s) s'afegiran",
+  "kipiListTitle": "KipiList",
   "language": "Idioma",
   "languageEnglish": "Anglès",
   "languagePortuguese": "Portuguès (Brasil)",
@@ -536,7 +577,6 @@
   "listHistory": "Historial de llistes",
   "listNameLabel": "Nom de la llista",
   "listOrganizedMagic": "Llista organitzada màgicament per categories! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Escoltant...",
   "lists": "Llistes",
   "loading": "Carregant...",
@@ -587,6 +627,10 @@
   "monthlyBudgetTitle": "Pressupost mensual",
   "myLists": "Les meves llistes",
   "myRecipes": "Les meves receptes",
+  "navChat": "Chat",
+  "navLists": "Llistes",
+  "navMealPlanner": "Menú",
+  "navRecipes": "Receptes",
   "newChat": "Xat nou",
   "newListTitle": "Nova llista de compra",
   "newPantryList": "Compra de rebost",
@@ -645,7 +689,56 @@
   "pantryEmpty": "Rebost buit",
   "pantryEmptySubtitle": "Afegeix productes que vulguis tenir a casa",
   "pantryItemRemoved": "Article eliminat",
+  "paywallAfterItem1": "Grans",
+  "paywallAfterItem2": "Neteja",
+  "paywallAfterItem3": "Carns",
+  "paywallAfterItem4": "Fleca",
+  "paywallBeforeAfterTitle": "AI abans i després:",
+  "paywallBeforeItem1": "arròs",
+  "paywallBeforeItem2": "sabó",
+  "paywallBeforeItem3": "carn",
+  "paywallBeforeItem4": "pa",
+  "paywallBenefit1Desc": "Afegeix, organitza i suggereix elements les 24 hores del dia",
+  "paywallBenefit2Desc": "Sense límit de 3 llistes",
+  "paywallBenefit3Desc": "Seguiment de despeses i llistes familiars",
+  "paywallBestValue": "MILLOR VALOR",
+  "paywallCancelAnytime": "Cancel·la en qualsevol moment. Sense compromís.",
+  "paywallCtaTrialDays": "Comença gratis — {days} dies",
+  "paywallCtaUnlock": "Desbloqueja PRO",
+  "paywallFeatureExpenseControl": "Control de despeses",
+  "paywallFeatureSharing": "Compartint",
+  "paywallFeatureSmartAI": "Intel·ligència intel·ligent",
+  "paywallFeatureUnlimitedLists": "Llistes il·limitades",
+  "paywallFeaturesTitle": "Tot el que necessites:",
+  "paywallHeroHeadline": "Kipi AI sempre al teu costat",
+  "paywallHeroSubtitle": "Afegiu articles, organitzeu llistes i estalvieu temps amb la IA a la butxaca",
+  "paywallLabelCommon": "Comú",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "S'ha produït un error en carregar les ofertes. Torna-ho a provar.",
+  "paywallMostPopular": "MÉS POPULARS",
+  "paywallPackageAnnual": "Pla anual",
+  "paywallPackageLifetime": "Accés de per vida",
+  "paywallPackageMonthly": "Pla mensual",
+  "paywallPackageMonthlyDesc": "Flexibilitat total",
+  "paywallPolicy": "Política de privadesa",
+  "paywallPricePerMonth": "Només {price}/mes",
+  "paywallPurchaseError": "No s'ha pogut completar la compra. Torna-ho a provar.",
+  "paywallRestore": "Restaurar",
+  "paywallRestoreError": "No s'ha trobat cap subscripció activa per restaurar.",
+  "paywallSafeCheckout": "Pagament segur",
+  "paywallSavePercent": "Estalvia un {percent}%",
+  "paywallSelectPlan": "Tria el teu pla:",
+  "paywallSocialProof": "+2.400 famílies l'utilitzen",
+  "paywallTerms": "Condicions d'ús",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "L'IA organitza les meves compres en qüestió de segons. M'estalvio 20 minuts per viatge al mercat.",
+  "paywallTestimonial2Name": "Carles M.",
+  "paywallTestimonial2Text": "No he tornat a oblidar cap element de la llista. El xat amb IA és sensacional!",
+  "paywallTestimonialsTitle": "Què diuen els nostres usuaris:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DIES GRATIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MES GRATIS} other{{count} MES GRATIS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} SETMANA GRATIS} other{{count} SETMANES GRATIS}}",
   "prefAIAssistant": "Assistent d'IA personal",
   "prefCustomThemes": "Temes personalitzats",
   "prefExportData": "Exportar dades",
@@ -660,6 +753,7 @@
   "prepTimeMinutes": "Temps de preparació (minuts)",
   "privacy": "Privacitat",
   "productName": "Nom del producte",
+  "profile": "Perfil",
   "purchaseError": "Error en processar la compra. Torna-ho a provar.",
   "quantityFull": "Quantitat",
   "quantityShort": "Quant",
@@ -757,6 +851,7 @@
   "undo": "Desfer",
   "unit": "Unitat",
   "unitPack": "paquet",
+  "unlockAi": "Desbloqueja IA il·limitada",
   "unlockFullResponse": "Desbloqueja la resposta completa",
   "unmark": "Desmarcar",
   "upgrade": "Millorar",

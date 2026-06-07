@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "{remaining} մնացած կրեդիտ",
   "aiEnergy": "AI էներգիա",
   "aiError": "Ներեցեք, ձեր հարցումը մշակելիս սխալ է տեղի ունեցել: Ստուգեք ձեր կապը կամ փորձեք ավելի ուշ:",
+  "aiLimitAlmostReached": "AI հաղորդագրությունները գրեթե սպառվել են",
+  "aiTeaserFallback": "Բաժանորդագրվեք Պրեմիումին՝ ամբողջական պատասխանը բացելու և անսահմանափակ AI-ի խորհուրդներ ստանալու համար ձեր գնումների համար...",
   "aiVoiceCommandTooltip": "AI Ձայնային Հրաման (Premium)",
   "allTags": "Բոլորը",
   "alreadyPurchased": "Արդեն գնված",
@@ -442,9 +468,21 @@
   "catCleaning": "Մաքրում",
   "catFruits": "Մրգեր",
   "catOthers": "Այլ",
+  "catalogAddItems": "Ավելացնել {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Թերթիր կատալոգը",
+  "catalogFilterNational": "Ազգայինները",
+  "catalogMyFrequents": "Իմ հաճախականությունները",
+  "catalogProductNotFound": "Ապրանքը չի գտնվել, մուտքագրեք անունը",
+  "catalogRareSection": "ավելի քիչ տարածված ձեր երկրում",
+  "catalogSearchGlobal": "Որոնել ցանկացած ապրանք...",
+  "catalogSearchInCategory": "Որոնել {category}-ում...",
+  "catalogSortAZ": "Ա–Զ",
+  "catalogSortPopular": "Ամենատարածված",
+  "catalogTitle": "Կատալոգ",
   "category": "Կատեգորիա",
   "chatError": "Զրույցի բեռնման սխալ՝ {error}",
   "chatHint": "Գրեք ձեր հաղորդագրությունը...",
+  "chatHintBlocked": "Բացեք AI-ն զրուցելու համար",
   "chatSubtitle": "Հարցրեք կետերի առաջարկներ, բաղադրատոմսեր կամ խնայողության խորհուրդներ:",
   "chatSubtitleShort": "Հարցրեք գների, բաղադրատոմսերի, կազմակերպման մասին...",
   "chooseCurrency": "Ընտրեք արժույթ",
@@ -517,6 +555,8 @@
   "estimated": "Մոտավոր",
   "estimatedCost": "գնահատված",
   "estimatedPrice": "Մոտավոր գին",
+  "exit": "Ելք",
+  "exitShoppingMode": "Դուրս գալ գնումների ռեժիմից",
   "exportData": "Արտահանել տվյալները",
   "exportDataSubtitle": "Պահպանել բոլոր ցուցակները որպես JSON",
   "exportExcel": "Արտահանել որպես Excel",
@@ -555,6 +595,7 @@
   "generalAssistant": "Ընդհանուր Օգնական",
   "generalHelp": "Ինչպե՞ս կարող եմ օգնել ձեր գնումներին այսօր:",
   "generateShoppingList": "Ստեղծել գնումների ցուցակ",
+  "gestureHint": "Պահեք՝ ընտրելու համար • Սահեցրեք՝ հեռացնելու համար",
   "globalAssistant": "Ընդհանուր օգնական",
   "howCanIHelp": "Ինչպե՞ս կարող եմ օգնել:",
   "idealQty": "Իդեալական քանակ",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "գնված {purchased}{total}-ից",
   "itemsPurchasedShort": "{purchased}/{total} գնված է",
   "itemsWillBeAdded": "{count} կետ(եր) կավելացվեն",
+  "kipiListTitle": "KipiList",
   "language": "Լեզու",
   "languageEnglish": "Անգլերեն",
   "languagePortuguese": "Պորտուգալիա (Բրազիլիա)",
@@ -592,7 +634,6 @@
   "listHistory": "Ցուցակի Պատմություն",
   "listNameLabel": "Ցուցակի անուն",
   "listOrganizedMagic": "Ցուցակը կախարդականորեն կազմակերպված է ըստ կատեգորիաների! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Լսելով...",
   "lists": "Ցուցակներ",
   "loading": "Բեռնվում է...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "Ամսական Բյուջե",
   "myLists": "Իմ Ցուցակները",
   "myRecipes": "Իմ բաղադրատոմսերը",
+  "navChat": "Chat",
+  "navLists": "Ցուցակներ",
+  "navMealPlanner": "Մենյու",
+  "navRecipes": "Բաղադրատոմսեր",
   "newChat": "Նոր Զրուցարան",
   "newListTitle": "Նոր Գնումների Ցուցակ",
   "newPantryList": "Մառանից գնումներ",
@@ -701,7 +746,56 @@
   "pantryEmpty": "Դատարկ մառան",
   "pantryEmptySubtitle": "Ավելացրեք այն ապրանքները, որոնք ցանկանում եք պահել տանը",
   "pantryItemRemoved": "Կետը հեռացված է",
+  "paywallAfterItem1": "Հացահատիկներ",
+  "paywallAfterItem2": "Մաքրում",
+  "paywallAfterItem3": "Միս",
+  "paywallAfterItem4": "Հացաբուլկեղեն",
+  "paywallBeforeAfterTitle": "AI առաջ և հետո.",
+  "paywallBeforeItem1": "բրինձ",
+  "paywallBeforeItem2": "օճառ",
+  "paywallBeforeItem3": "միս",
+  "paywallBeforeItem4": "հաց",
+  "paywallBenefit1Desc": "Ավելացնում է, կազմակերպում և առաջարկում իրեր 24/7",
+  "paywallBenefit2Desc": "3 ցուցակի սահմանափակում չկա",
+  "paywallBenefit3Desc": "Ծախսերի հետևում և ընտանեկան ցուցակներ",
+  "paywallBestValue": "ԼԱՎԱԳՈՒՅՆ ԱՐԺԵՔ",
+  "paywallCancelAnytime": "Չեղարկել ցանկացած ժամանակ: Ոչ մի պարտավորություն:",
+  "paywallCtaTrialDays": "Սկսեք անվճար — {days} օր",
+  "paywallCtaUnlock": "Բացել PRO",
+  "paywallFeatureExpenseControl": "Ծախսերի վերահսկում",
+  "paywallFeatureSharing": "Համօգտագործում",
+  "paywallFeatureSmartAI": "Խելացի AI",
+  "paywallFeatureUnlimitedLists": "Անսահմանափակ ցուցակներ",
+  "paywallFeaturesTitle": "Ձեզ անհրաժեշտ ամեն ինչ.",
+  "paywallHeroHeadline": "Kipi AI-ն միշտ ձեր կողքին է",
+  "paywallHeroSubtitle": "Ավելացրեք իրեր, կազմակերպեք ցուցակները և խնայեք ժամանակը ձեր գրպանում AI-ի միջոցով",
+  "paywallLabelCommon": "Ընդհանուր",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Առաջարկները բեռնելիս սխալ առաջացավ: Նորից փորձեք:",
+  "paywallMostPopular": "ԱՄԵՆԱՍԻՐՎԱԾԸ",
+  "paywallPackageAnnual": "Տարեկան պլան",
+  "paywallPackageLifetime": "Կյանքի ընթացքում հասանելիություն",
+  "paywallPackageMonthly": "Ամսական պլան",
+  "paywallPackageMonthlyDesc": "Ամբողջական ճկունություն",
+  "paywallPolicy": "Գաղտնիության քաղաքականություն",
+  "paywallPricePerMonth": "Միայն {price}/ամսական",
+  "paywallPurchaseError": "Չհաջողվեց ավարտել գնումը: Նորից փորձեք:",
+  "paywallRestore": "Վերականգնել",
+  "paywallRestoreError": "Ակտիվ բաժանորդագրություն չի գտնվել վերականգնելու համար:",
+  "paywallSafeCheckout": "Ապահով վճարում",
+  "paywallSavePercent": "ՊԱՀՊԱՆԵԼ {percent}%",
+  "paywallSelectPlan": "Ընտրեք ձեր պլանը.",
+  "paywallSocialProof": "Դրանից օգտվում է +2400 ընտանիք",
+  "paywallTerms": "Օգտագործման պայմաններ",
+  "paywallTestimonial1Name": "Անն Ս.",
+  "paywallTestimonial1Text": "AI-ն վայրկյանների ընթացքում կազմակերպում է իմ գնումները։ Ես խնայում եմ 20 րոպե շուկայական ուղևորության համար:",
+  "paywallTestimonial2Name": "Չարլզ Մ.",
+  "paywallTestimonial2Text": "Ես այլևս երբեք չեմ մոռացել ցուցակի որևէ կետ: AI զրույցը սենսացիոն է:",
+  "paywallTestimonialsTitle": "Ինչ են ասում մեր օգտատերերը.",
   "paywallTitle": "KipiList Պրեմիում",
+  "paywallTrialDays": "{days} ՕՐ ԱՆՎՃԱՐ",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH ԱՆՎՃԱՐ} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ՇԱԲԱԹ ԱՆՎՃԱՐ} other{{count} ՇԱԲԱԹ ԱՆՎՃԱՐ}}",
   "prefAIAssistant": "Անհատական AI Օգնական",
   "prefCustomThemes": "Անհատական թեմաներ",
   "prefExportData": "Արտահանել տվյալները",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "Պատրաստման ժամանակը (րոպե)",
   "privacy": "Գաղտնիություն",
   "productName": "Ապրանքի անուն",
+  "profile": "Անձնագիր",
   "purchaseError": "Գնման մշակման սխալ։ Կրկին փորձեք։",
   "quantityFull": "Քանակ",
   "quantityShort": "Քանակ",
@@ -813,6 +908,7 @@
   "undo": "Հետարկել",
   "unit": "Միավոր",
   "unitPack": "տուփ",
+  "unlockAi": "Բացեք անսահմանափակ AI",
   "unlockFullResponse": "Բացել ամբողջական պատասխանը",
   "unmark": "Հանել նշումը",
   "upgrade": "Թարմացնել",

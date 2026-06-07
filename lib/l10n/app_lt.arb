@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -300,6 +317,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -380,6 +404,8 @@
   "aiCreditsRemaining": "Liko {remaining} kreditų",
   "aiEnergy": "AI energija",
   "aiError": "Atsiprašome, įvyko klaida apdorojant jūsų užklausą. Patikrinkite ryšį arba bandykite dar kartą vėliau.",
+  "aiLimitAlmostReached": "Beveik baigėsi AI pranešimai",
+  "aiTeaserFallback": "Prenumeruokite „Premium“, kad atrakintumėte visą atsakymą ir gautumėte neribotus AI patarimus, kaip apsipirkti...",
   "aiVoiceCommandTooltip": "AI balso komanda (Premium)",
   "allTags": "Visi",
   "alreadyPurchased": "Jau nupirkta",
@@ -411,9 +437,21 @@
   "catCleaning": "Valymas",
   "catFruits": "Vaisiai",
   "catOthers": "Kita",
+  "catalogAddItems": "Pridėti {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Naršyti katalogą",
+  "catalogFilterNational": "Nacionaliniai",
+  "catalogMyFrequents": "Mano dažniai",
+  "catalogProductNotFound": "Prekė nerasta, įveskite pavadinimą",
+  "catalogRareSection": "mažiau paplitusi jūsų šalyje",
+  "catalogSearchGlobal": "Ieškokite bet kurio produkto...",
+  "catalogSearchInCategory": "Ieškoti {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Populiariausias",
+  "catalogTitle": "Katalogas",
   "category": "Kategorija",
   "chatError": "Klaida įkeliant pokalbį: {error}",
   "chatHint": "Įrašykite savo žinutę...",
+  "chatHintBlocked": "Atrakinkite AI, kad galėtumėte kalbėtis",
   "chatSubtitle": "Klauskite prekių pasiūlymų, receptų ar taupymo patarimų.",
   "chatSubtitleShort": "Dėl kainų, receptų, organizavimo teirautis...",
   "chooseCurrency": "Pasirinkite Valiuta",
@@ -486,6 +524,8 @@
   "estimated": "Numatoma",
   "estimatedCost": "Apskaičiuota",
   "estimatedPrice": "Numatoma kaina",
+  "exit": "Išeiti",
+  "exitShoppingMode": "Išeikite iš apsipirkimo režimo",
   "exportData": "Eksportuoti duomenis",
   "exportDataSubtitle": "Išsaugoti visus sąrašus kaip JSON",
   "exportExcel": "Eksportuoti kaip Excel",
@@ -524,6 +564,7 @@
   "generalAssistant": "Bendrasis asistentas",
   "generalHelp": "Kaip galiu padėti jums apsipirkti šiandien?",
   "generateShoppingList": "Sukurti pirkinių sąrašą",
+  "gestureHint": "Palaikykite, kad pasirinktumėte • Braukite, kad pašalintumėte",
   "globalAssistant": "Globalus asistentas",
   "howCanIHelp": "Kaip galiu padėti?",
   "idealQty": "Idealus kiekis",
@@ -547,6 +588,7 @@
   "itemsPurchasedCount": "Įsigyta {purchased} iš {total}",
   "itemsPurchasedShort": "{purchased}/{total} įsigytas",
   "itemsWillBeAdded": "{count} prekė(-ės) bus pridėta",
+  "kipiListTitle": "KipiList",
   "language": "Kalba",
   "languageEnglish": "anglų kalba",
   "languagePortuguese": "portugalų k. (Brazilija)",
@@ -561,7 +603,6 @@
   "listHistory": "Sąrašų istorija",
   "listNameLabel": "Sąrašo pavadinimas",
   "listOrganizedMagic": "Sąrašas stebuklingai suskirstytas į kategorijas! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Klausau...",
   "lists": "Sąrašai",
   "loading": "Įkeliama...",
@@ -612,6 +653,10 @@
   "monthlyBudgetTitle": "Mėnesio biudžetas",
   "myLists": "Mano sąrašai",
   "myRecipes": "Mano receptai",
+  "navChat": "Chat",
+  "navLists": "Sąrašai",
+  "navMealPlanner": "Meniu",
+  "navRecipes": "Receptai",
   "newChat": "Naujas pokalbis",
   "newListTitle": "Naujas pirkinių sąrašas",
   "newPantryList": "Sandėliuko pirkiniai",
@@ -670,7 +715,56 @@
   "pantryEmpty": "Tuščias sandėliukas",
   "pantryEmptySubtitle": "Pridėkite produktų, kuriuos norite laikyti namuose",
   "pantryItemRemoved": "Prekė pašalinta",
+  "paywallAfterItem1": "Grūdai",
+  "paywallAfterItem2": "Valymas",
+  "paywallAfterItem3": "Mėsos",
+  "paywallAfterItem4": "Kepyklėlė",
+  "paywallBeforeAfterTitle": "AI prieš ir po:",
+  "paywallBeforeItem1": "ryžių",
+  "paywallBeforeItem2": "muilas",
+  "paywallBeforeItem3": "mėsa",
+  "paywallBeforeItem4": "duona",
+  "paywallBenefit1Desc": "Prideda, tvarko ir siūlo elementus 24 valandas per parą, 7 dienas per savaitę",
+  "paywallBenefit2Desc": "Nėra 3 sąrašų apribojimo",
+  "paywallBenefit3Desc": "Išlaidų stebėjimas ir šeimų sąrašai",
+  "paywallBestValue": "GERIAUSIA VERTĖ",
+  "paywallCancelAnytime": "Atšaukti bet kada. Jokio įsipareigojimo.",
+  "paywallCtaTrialDays": "Pradėkite nemokamai – {days} dienų",
+  "paywallCtaUnlock": "Atrakinkite PRO",
+  "paywallFeatureExpenseControl": "Išlaidų kontrolė",
+  "paywallFeatureSharing": "Dalijimasis",
+  "paywallFeatureSmartAI": "Išmanusis AI",
+  "paywallFeatureUnlimitedLists": "Neriboti sąrašai",
+  "paywallFeaturesTitle": "Viskas ko reikia:",
+  "paywallHeroHeadline": "Kipi AI visada šalia jūsų",
+  "paywallHeroSubtitle": "Pridėkite elementus, tvarkykite sąrašus ir sutaupykite laiko naudodami AI kišenėje",
+  "paywallLabelCommon": "Dažnas",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Įkeliant pasiūlymus įvyko klaida. Bandykite dar kartą.",
+  "paywallMostPopular": "POPULIARIAUSI",
+  "paywallPackageAnnual": "Metinis planas",
+  "paywallPackageLifetime": "Prieiga visą gyvenimą",
+  "paywallPackageMonthly": "Mėnesio planas",
+  "paywallPackageMonthlyDesc": "Visiškas lankstumas",
+  "paywallPolicy": "Privatumo politika",
+  "paywallPricePerMonth": "Tik {price}/mėn",
+  "paywallPurchaseError": "Nepavyko užbaigti pirkimo. Bandykite dar kartą.",
+  "paywallRestore": "Atkurti",
+  "paywallRestoreError": "Nerasta aktyvios prenumeratos, kurią būtų galima atkurti.",
+  "paywallSafeCheckout": "Saugus mokėjimas",
+  "paywallSavePercent": "SUTAUPYTI {percent}%",
+  "paywallSelectPlan": "Pasirinkite savo planą:",
+  "paywallSocialProof": "Ja naudojasi +2 400 šeimų",
+  "paywallTerms": "Naudojimo sąlygos",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI sutvarko mano apsipirkimą per kelias sekundes. Sutaupau 20 min vienai kelionei į turgų.",
+  "paywallTestimonial2Name": "Charlesas M.",
+  "paywallTestimonial2Text": "Niekada daugiau nepamiršau sąrašo elemento. AI pokalbis yra sensacingas!",
+  "paywallTestimonialsTitle": "Ką sako mūsų vartotojai:",
   "paywallTitle": "„KipiList Premium“.",
+  "paywallTrialDays": "{days} DIENOS NEMOKAMAI",
+  "paywallTrialMonths": "{count,plural, one{{count} MĖNESIO NEMOKAMAI} other{{count} MĖNESIO NEMOKAMAI}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} NEMOKAMA SAVAITĖ} other{{count} SAVAITĖS NEMOKAMA}}",
   "prefAIAssistant": "Asmeninis AI asistentas",
   "prefCustomThemes": "Individualios temos",
   "prefExportData": "Eksportuoti duomenis",
@@ -685,6 +779,7 @@
   "prepTimeMinutes": "Gaminimo laikas (minutėmis)",
   "privacy": "Privatumas",
   "productName": "Produkto pavadinimas",
+  "profile": "Profilis",
   "purchaseError": "Klaida apdorojant pirkimą. Bandykite dar kartą.",
   "quantityFull": "Kiekis",
   "quantityShort": "Kiekis",
@@ -782,6 +877,7 @@
   "undo": "Atšaukti",
   "unit": "Vienetas",
   "unitPack": "pakuotė",
+  "unlockAi": "Atrakinkite neribotą AI",
   "unlockFullResponse": "Atrakinkite visą atsakymą",
   "unmark": "Panaikinti žymėjimą",
   "upgrade": "Atnaujinti",

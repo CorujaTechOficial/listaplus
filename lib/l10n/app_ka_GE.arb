@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -267,6 +284,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -347,6 +371,8 @@
   "aiCreditsRemaining": "დარჩენილია {remaining} კრედიტი",
   "aiEnergy": "AI ენერგია",
   "aiError": "უკაცრავად, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ თავიდან მოგვიანებით.",
+  "aiLimitAlmostReached": "AI შეტყობინებები თითქმის ამოიწურა",
+  "aiTeaserFallback": "გამოიწერეთ Premium, რათა განბლოკოთ სრული პასუხი და მიიღოთ შეუზღუდავი AI რჩევები თქვენი შოპინგისთვის...",
   "aiVoiceCommandTooltip": "AI ხმოვანი ბრძანება (პრემიუმ)",
   "allTags": "ყველა",
   "alreadyPurchased": "უკვე ნაყიდია",
@@ -378,9 +404,21 @@
   "catCleaning": "დასუფთავება",
   "catFruits": "ხილი",
   "catOthers": "სხვა",
+  "catalogAddItems": "დაამატეთ {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "კატალოგის დათვალიერება",
+  "catalogFilterNational": "ნაციონალები",
+  "catalogMyFrequents": "ჩემი სიხშირე",
+  "catalogProductNotFound": "პროდუქტი ვერ მოიძებნა, ჩაწერეთ სახელი",
+  "catalogRareSection": "ნაკლებად გავრცელებული თქვენს ქვეყანაში",
+  "catalogSearchGlobal": "მოძებნეთ ნებისმიერი პროდუქტი...",
+  "catalogSearchInCategory": "ძიება {category}-ში...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "ყველაზე პოპულარული",
+  "catalogTitle": "კატალოგი",
   "category": "კატეგორია",
   "chatError": "შეცდომა ჩატის ჩატვირთვისას: {error}",
   "chatHint": "აკრიფეთ თქვენი შეტყობინება...",
+  "chatHintBlocked": "განბლოკეთ AI ჩატში",
   "chatSubtitle": "მოითხოვეთ ნივთების წინადადებები, რეცეპტები ან დაზოგვის რჩევები.",
   "chatSubtitleShort": "ჰკითხეთ ფასებს, რეცეპტებს, ორგანიზაციას...",
   "chooseCurrency": "აირჩიეთ ვალუტა",
@@ -453,6 +491,8 @@
   "estimated": "სავარაუდო",
   "estimatedCost": "სავარაუდო",
   "estimatedPrice": "სავარაუდო ფასი",
+  "exit": "გასვლა",
+  "exitShoppingMode": "გადით შოპინგის რეჟიმიდან",
   "exportData": "მონაცემების ექსპორტი",
   "exportDataSubtitle": "ყველა სიის JSON-ად შენახვა",
   "exportExcel": "Excel-ად ექსპორტი",
@@ -491,6 +531,7 @@
   "generalAssistant": "ზოგადი ასისტენტი",
   "generalHelp": "როგორ დაგეხმაროთ დღეს თქვენი შეძენებისას?",
   "generateShoppingList": "სავაჭრო სიის გენერაცია",
+  "gestureHint": "ხანგრძლივად ასარჩევად • გადაფურცლეთ წასაშლელად",
   "globalAssistant": "გლობალური ასისტენტი",
   "howCanIHelp": "როგორ შემიძლია დახმარება?",
   "idealQty": "იდეალური რაოდ",
@@ -514,6 +555,7 @@
   "itemsPurchasedCount": "შეძენილია {purchased} {total}-დან",
   "itemsPurchasedShort": "{purchased}/{total} შეძენილი",
   "itemsWillBeAdded": "{count} ნივთ(ი) დაემატება",
+  "kipiListTitle": "KipiList",
   "language": "ენა",
   "languageEnglish": "ინგლისური",
   "languagePortuguese": "პორტუგალიური (ბრაზილია)",
@@ -528,7 +570,6 @@
   "listHistory": "სიის ისტორია",
   "listNameLabel": "სიის სახელი",
   "listOrganizedMagic": "სია ჯადოსნურად დალაგდა კატეგორიების მიხედვით! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "მოსმენა...",
   "lists": "სიები",
   "loading": "იტვირთება...",
@@ -579,6 +620,10 @@
   "monthlyBudgetTitle": "თვიური ბიუჯეტი",
   "myLists": "ჩემი სიები",
   "myRecipes": "ჩემი რეცეპტები",
+  "navChat": "Chat",
+  "navLists": "სიები",
+  "navMealPlanner": "მენიუ",
+  "navRecipes": "რეცეპტები",
   "newChat": "ახალი ჩატი",
   "newListTitle": "ახალი სავაჭრო სია",
   "newPantryList": "საკუჭნაოს შეძენა",
@@ -637,7 +682,56 @@
   "pantryEmpty": "ცარიელი საკუჭნაო",
   "pantryEmptySubtitle": "დაამატეთ პროდუქტები, რომელთა შენახვაც გსურთ სახლში",
   "pantryItemRemoved": "ნივთი წაიშალა",
+  "paywallAfterItem1": "მარცვლეული",
+  "paywallAfterItem2": "დასუფთავება",
+  "paywallAfterItem3": "ხორცი",
+  "paywallAfterItem4": "საცხობი",
+  "paywallBeforeAfterTitle": "AI ადრე და შემდეგ:",
+  "paywallBeforeItem1": "ბრინჯი",
+  "paywallBeforeItem2": "საპონი",
+  "paywallBeforeItem3": "ხორცი",
+  "paywallBeforeItem4": "პური",
+  "paywallBenefit1Desc": "ამატებს, აწყობს და სთავაზობს ნივთებს 24/7",
+  "paywallBenefit2Desc": "არ არის 3 სიის ლიმიტი",
+  "paywallBenefit3Desc": "ხარჯების თვალყურის დევნება და ოჯახის სიები",
+  "paywallBestValue": "საუკეთესო ღირებულება",
+  "paywallCancelAnytime": "გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.",
+  "paywallCtaTrialDays": "დაწყება უფასოდ — {days} დღე",
+  "paywallCtaUnlock": "განბლოკეთ PRO",
+  "paywallFeatureExpenseControl": "ხარჯების კონტროლი",
+  "paywallFeatureSharing": "გაზიარება",
+  "paywallFeatureSmartAI": "ჭკვიანი AI",
+  "paywallFeatureUnlimitedLists": "შეუზღუდავი სიები",
+  "paywallFeaturesTitle": "ყველაფერი რაც თქვენ გჭირდებათ:",
+  "paywallHeroHeadline": "Kipi AI ყოველთვის თქვენს გვერდით",
+  "paywallHeroSubtitle": "დაამატეთ ნივთები, მოაწყვეთ სიები და დაზოგეთ დრო ჯიბეში AI-ით",
+  "paywallLabelCommon": "საერთო",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "შეთავაზებების ჩატვირთვის შეცდომა. სცადეთ ხელახლა.",
+  "paywallMostPopular": "ყველაზე პოპულარული",
+  "paywallPackageAnnual": "წლიური გეგმა",
+  "paywallPackageLifetime": "უვადოდ წვდომა",
+  "paywallPackageMonthly": "ყოველთვიური გეგმა",
+  "paywallPackageMonthlyDesc": "სრული მოქნილობა",
+  "paywallPolicy": "კონფიდენციალურობის პოლიტიკა",
+  "paywallPricePerMonth": "მხოლოდ {price}/თვეში",
+  "paywallPurchaseError": "შესყიდვის დასრულება ვერ მოხერხდა. სცადეთ ხელახლა.",
+  "paywallRestore": "აღდგენა",
+  "paywallRestoreError": "აღსადგენად აქტიური გამოწერა ვერ მოიძებნა.",
+  "paywallSafeCheckout": "უსაფრთხო გადახდა",
+  "paywallSavePercent": "შენახვა {percent}%",
+  "paywallSelectPlan": "აირჩიეთ თქვენი გეგმა:",
+  "paywallSocialProof": "სარგებლობს +2400 ოჯახი",
+  "paywallTerms": "გამოყენების პირობები",
+  "paywallTestimonial1Name": "ენ ს.",
+  "paywallTestimonial1Text": "AI აწყობს ჩემს შოპინგის წამებში. მე ვზოგავ 20 წუთს მარკეტში მოგზაურობისთვის.",
+  "paywallTestimonial2Name": "ჩარლზ მ.",
+  "paywallTestimonial2Text": "სიის პუნქტი აღარ დამავიწყდა. AI ჩატი სენსაციურია!",
+  "paywallTestimonialsTitle": "რას ამბობენ ჩვენი მომხმარებლები:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} დღე უფასო",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} WEEK FREE} other{{count} WEEKS FREE}}",
   "prefAIAssistant": "პერსონალური AI ასისტენტი",
   "prefCustomThemes": "მორგებული თემები",
   "prefExportData": "მონაცემების ექსპორტი",
@@ -652,6 +746,7 @@
   "prepTimeMinutes": "მომზადების დრო (წუთებში)",
   "privacy": "კონფიდენციალურობა",
   "productName": "პროდუქტის სახელი",
+  "profile": "პროფილი",
   "purchaseError": "შეცდომა შეძენის დამუშავებისას. სცადეთ თავიდან.",
   "quantityFull": "რაოდენობა",
   "quantityShort": "რაოდ",
@@ -749,6 +844,7 @@
   "undo": "დაბრუნება",
   "unit": "ერთეული",
   "unitPack": "შეფუთვა",
+  "unlockAi": "განბლოკეთ შეუზღუდავი AI",
   "unlockFullResponse": "განბლოკეთ სრული პასუხი",
   "unmark": "მონიშვნის მოხსნა",
   "upgrade": "განახლება",

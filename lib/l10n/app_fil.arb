@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -307,6 +324,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -387,6 +411,8 @@
   "aiCreditsRemaining": "{remaining} natitirang credits",
   "aiEnergy": "AI Energy",
   "aiError": "Paumanhin, may error sa pagproseso ng iyong kahilingan. Suriin ang iyong koneksyon o subukan muli mamaya.",
+  "aiLimitAlmostReached": "Halos wala na sa mga mensahe ng AI",
+  "aiTeaserFallback": "Mag-subscribe sa Premium upang i-unlock ang buong tugon at makakuha ng walang limitasyong mga tip sa AI para sa iyong pamimili...",
   "aiVoiceCommandTooltip": "AI Voice Command (Premium)",
   "allTags": "Lahat",
   "alreadyPurchased": "Nabili na",
@@ -418,9 +444,21 @@
   "catCleaning": "Paglilinis",
   "catFruits": "Mga Prutas",
   "catOthers": "Iba pa",
+  "catalogAddItems": "Magdagdag ng {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Mag-browse ng Catalog",
+  "catalogFilterNational": "mga nasyonal",
+  "catalogMyFrequents": "Aking Mga Madalas",
+  "catalogProductNotFound": "Hindi nakita ang produkto, i-type ang pangalan",
+  "catalogRareSection": "hindi gaanong karaniwan sa iyong bansa",
+  "catalogSearchGlobal": "Maghanap ng anumang produkto...",
+  "catalogSearchInCategory": "Maghanap sa {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Pinakasikat",
+  "catalogTitle": "Catalog",
   "category": "Kategorya",
   "chatError": "Error sa pag-load ng chat: {error}",
   "chatHint": "I-type ang iyong mensahe...",
+  "chatHintBlocked": "I-unlock ang AI para makipag-chat",
   "chatSubtitle": "Humiling ng mga mungkahi sa item, recipe o tip sa pagtitipid.",
   "chatSubtitleShort": "Magtanong tungkol sa mga presyo, recipe, organisasyon...",
   "chooseCurrency": "Piliin ang Pera",
@@ -493,6 +531,8 @@
   "estimated": "Tantiya",
   "estimatedCost": "Tinatantya",
   "estimatedPrice": "Tantiya sa presyo",
+  "exit": "Lumabas",
+  "exitShoppingMode": "Lumabas sa Shopping Mode",
   "exportData": "I-export ang data",
   "exportDataSubtitle": "I-save ang lahat ng listahan bilang JSON",
   "exportExcel": "I-export bilang Excel",
@@ -531,6 +571,7 @@
   "generalAssistant": "Pangkalahatang Assistant",
   "generalHelp": "Paano ako makakatulong sa iyong pamimili ngayon?",
   "generateShoppingList": "Gumawa ng listahan ng pamimili",
+  "gestureHint": "I-hold para piliin ang • Mag-swipe para alisin",
   "globalAssistant": "Pangkalahatang katulong",
   "howCanIHelp": "Paano ako makakatulong?",
   "idealQty": "Tamang dami",
@@ -554,6 +595,7 @@
   "itemsPurchasedCount": "{purchased} ng {total} ang binili",
   "itemsPurchasedShort": "{purchased}/{total} ang binili",
   "itemsWillBeAdded": "{count} item ang idadagdag",
+  "kipiListTitle": "KipiList",
   "language": "Wika",
   "languageEnglish": "Ingles",
   "languagePortuguese": "Português (Brasil)",
@@ -568,7 +610,6 @@
   "listHistory": "Kasaysayan ng Listahan",
   "listNameLabel": "Pangalan ng listahan",
   "listOrganizedMagic": "Mahiwagang naayos ang listahan ayon sa mga kategorya! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Nakikinig...",
   "lists": "Mga Listahan",
   "loading": "Naglo-load...",
@@ -619,6 +660,10 @@
   "monthlyBudgetTitle": "Buwanang Badyet",
   "myLists": "Aking mga Listahan",
   "myRecipes": "Aking mga Recipe",
+  "navChat": "Chat",
+  "navLists": "Mga Listahan",
+  "navMealPlanner": "Menu",
+  "navRecipes": "Mga recipe",
   "newChat": "Bagong Chat",
   "newListTitle": "Bagong Listahan ng Pamimili",
   "newPantryList": "Pamili mula sa Dispatch",
@@ -677,7 +722,56 @@
   "pantryEmpty": "Walang laman ang dispatch",
   "pantryEmptySubtitle": "Idagdag ang mga produktong gusto mong itabi sa bahay",
   "pantryItemRemoved": "Naalis ang item",
+  "paywallAfterItem1": "Mga butil",
+  "paywallAfterItem2": "Paglilinis",
+  "paywallAfterItem3": "Mga karne",
+  "paywallAfterItem4": "Panaderya",
+  "paywallBeforeAfterTitle": "AI Bago at Pagkatapos:",
+  "paywallBeforeItem1": "kanin",
+  "paywallBeforeItem2": "sabon",
+  "paywallBeforeItem3": "karne",
+  "paywallBeforeItem4": "tinapay",
+  "paywallBenefit1Desc": "Nagdaragdag, nag-aayos at nagmumungkahi ng mga item 24/7",
+  "paywallBenefit2Desc": "Walang 3-listang limitasyon",
+  "paywallBenefit3Desc": "Pagsubaybay sa gastos at mga listahan ng pamilya",
+  "paywallBestValue": "PINAKAMAHALAGA",
+  "paywallCancelAnytime": "Kanselahin anumang oras. Walang commitment.",
+  "paywallCtaTrialDays": "Magsimula nang libre — {days} araw",
+  "paywallCtaUnlock": "I-unlock ang PRO",
+  "paywallFeatureExpenseControl": "Kontrol sa Gastos",
+  "paywallFeatureSharing": "Pagbabahaginan",
+  "paywallFeatureSmartAI": "Matalinong AI",
+  "paywallFeatureUnlimitedLists": "Walang limitasyong mga Listahan",
+  "paywallFeaturesTitle": "Lahat ng kailangan mo:",
+  "paywallHeroHeadline": "Kipi AI laging nasa tabi mo",
+  "paywallHeroSubtitle": "Magdagdag ng mga item, ayusin ang mga listahan at makatipid ng oras gamit ang AI sa iyong bulsa",
+  "paywallLabelCommon": "Karaniwan",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Error sa paglo-load ng mga alok. Subukan muli.",
+  "paywallMostPopular": "PINAKA SIKAT",
+  "paywallPackageAnnual": "Taunang Plano",
+  "paywallPackageLifetime": "Panghabambuhay na Access",
+  "paywallPackageMonthly": "Buwanang Plano",
+  "paywallPackageMonthlyDesc": "Buong kakayahang umangkop",
+  "paywallPolicy": "Patakaran sa Privacy",
+  "paywallPricePerMonth": "{price}/buwan lang",
+  "paywallPurchaseError": "Hindi makumpleto ang pagbili. Subukan muli.",
+  "paywallRestore": "Ibalik",
+  "paywallRestoreError": "Walang nakitang aktibong subscription para i-restore.",
+  "paywallSafeCheckout": "Secure na pagbabayad",
+  "paywallSavePercent": "MAGTIPID {percent}%",
+  "paywallSelectPlan": "Piliin ang iyong plano:",
+  "paywallSocialProof": "+2,400 pamilya ang gumagamit nito",
+  "paywallTerms": "Mga Tuntunin sa Paggamit",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "Inaayos ng AI ang aking pamimili sa ilang segundo. Nagtitipid ako ng 20 min kada mamalengke.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Hindi ko na nakalimutan muli ang isang item sa listahan. Ang AI chat ay kahindik-hindik!",
+  "paywallTestimonialsTitle": "Ano ang sinasabi ng aming mga gumagamit:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ARAW NA LIBRE",
+  "paywallTrialMonths": "{count,plural, one{{count} BUWAN LIBRE} other{{count} BUWAN LIBRE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} LIBRENG LINGGO} other{{count} LIBRENG LINGGO}}",
   "prefAIAssistant": "Personal na AI Assistant",
   "prefCustomThemes": "Mga custom na tema",
   "prefExportData": "I-export ang data",
@@ -692,6 +786,7 @@
   "prepTimeMinutes": "Oras ng paghahanda (minuto)",
   "privacy": "Pagkapribado",
   "productName": "Pangalan ng produkto",
+  "profile": "Profile",
   "purchaseError": "Error sa pagproseso ng pagbili. Subukan muli.",
   "quantityFull": "Dami",
   "quantityShort": "Dami",
@@ -789,6 +884,7 @@
   "undo": "I-undo",
   "unit": "Yunit",
   "unitPack": "pack",
+  "unlockAi": "I-unlock ang walang limitasyong AI",
   "unlockFullResponse": "I-unlock ang Buong Tugon",
   "unmark": "Alisin ang marka",
   "upgrade": "Mag-upgrade",

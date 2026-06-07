@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} የተረፉ ክሬዲቶች",
   "aiEnergy": "AI ኢነርጂ",
   "aiError": "ይቅርታ፣ ጥያቄህን በማስኬድ ላይ ስህተት ተከስቷል። ግንኙነትህን አረጋግጥ ወይም በኋላ እንደገና ሞክር።",
+  "aiLimitAlmostReached": "ከ AI መልእክቶች ሊጨርሱ ነው።",
+  "aiTeaserFallback": "ሙሉውን ምላሽ ለመክፈት እና ለግዢዎ ያልተገደበ AI ጠቃሚ ምክሮችን ለማግኘት ለPremium ይመዝገቡ...",
   "aiVoiceCommandTooltip": "AI የድምጽ ትእዛዝ (ፕሪሚየም)",
   "allTags": "ሁሉም",
   "alreadyPurchased": "አስቀድሞ የተገዛ",
@@ -404,6 +430,17 @@
   "catCleaning": "ጽዳት",
   "catFruits": "ፍራፍሬዎች",
   "catOthers": "ሌሎች",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} → ያክሉ",
+  "catalogBrowse": "ካታሎግ አስስ",
+  "catalogFilterNational": "ዜግነት ያላቸው",
+  "catalogMyFrequents": "የእኔ ድግግሞሽ",
+  "catalogProductNotFound": "ምርቱ አልተገኘም, ስሙን ይተይቡ",
+  "catalogRareSection": "በአገርዎ ብዙም ያልተለመደ",
+  "catalogSearchGlobal": "ማንኛውንም ምርት ይፈልጉ...",
+  "catalogSearchInCategory": "በ{category} ውስጥ ይፈልጉ...",
+  "catalogSortAZ": "አ–ዜ",
+  "catalogSortPopular": "በጣም ታዋቂ",
+  "catalogTitle": "ካታሎግ",
   "category": "ምድብ",
   "chatError": "ውይይቱን በመጫን ላይ ስህተት፦ {error}",
   "chatHint": "መልእክትህን ጻፍ...",
@@ -480,6 +517,8 @@
   "estimated": "የተገመተ",
   "estimatedCost": "የሚገመተው",
   "estimatedPrice": "የተገመተ ዋጋ",
+  "exit": "ውጣ",
+  "exitShoppingMode": "ከግዢ ሁነታ ውጣ",
   "exportData": "ውሂብ ላክ",
   "exportDataSubtitle": "ሁሉንም ዝርዝሮች እንደ JSON አስቀምጥ",
   "exportExcel": "እንደ Excel ላክ",
@@ -518,6 +557,7 @@
   "generalAssistant": "አጠቃላይ ረዳት",
   "generalHelp": "በግብዣህ ዛሬ እንዴት ልረዳህ?",
   "generateShoppingList": "የግብዣ ዝርዝር አመንጭ",
+  "gestureHint": "ለመምረጥ ይያዙ • ለማስወገድ ያንሸራትቱ",
   "globalAssistant": "አለምአቀፍ ረዳት",
   "howCanIHelp": "እንዴት መርዳት እችላለሁ?",
   "idealQty": "ተስማሚ ብዛት",
@@ -541,6 +581,7 @@
   "itemsPurchasedCount": "{purchased} ከ{total} ተገዝቷል።",
   "itemsPurchasedShort": "{purchased}/{total} ተገዝቷል።",
   "itemsWillBeAdded": "{count} ንጥሎች ይጨመራሉ",
+  "kipiListTitle": "KipiList",
   "language": "ቋንቋ",
   "languageEnglish": "እንግሊዝኛ",
   "languagePortuguese": "ፖርቱጋል (ብራሲል)",
@@ -555,7 +596,6 @@
   "listHistory": "የዝርዝር ታሪክ",
   "listNameLabel": "የዝርዝሩ ስም",
   "listOrganizedMagic": "ዝርዝሩ በምድቦች በሚያስገርም ሁኔታ ተደራጅቷል! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "በማዳመጥ ላይ...",
   "lists": "ዝርዝሮች",
   "loading": "በመጫን ላይ...",
@@ -606,6 +646,10 @@
   "monthlyBudgetTitle": "ወርሃዊ በጀት",
   "myLists": "የእኔ ዝርዝሮች",
   "myRecipes": "የእኔ የምግብ አዘገጃጀቶች",
+  "navChat": "Chat",
+  "navLists": "ዝርዝሮች",
+  "navMealPlanner": "ምናሌ",
+  "navRecipes": "የምግብ አዘገጃጀት",
   "newChat": "አዲስ ውይይት",
   "newListTitle": "አዲስ የግብዣ ዝርዝር",
   "newPantryList": "ከምግብ ቤት ግብዣ",
@@ -664,7 +708,56 @@
   "pantryEmpty": "ባዶ ምግብ ቤት",
   "pantryEmptySubtitle": "በቤት ውስጥ ማቆየት የሚፈልጋቸውን ምርቶች ጨምር",
   "pantryItemRemoved": "ንጥል ተወግዷል",
+  "paywallAfterItem1": "ጥራጥሬዎች",
+  "paywallAfterItem2": "ማጽዳት",
+  "paywallAfterItem3": "ስጋዎች",
+  "paywallAfterItem4": "ዳቦ ቤት",
+  "paywallBeforeAfterTitle": "AI በፊት እና በኋላ:",
+  "paywallBeforeItem1": "ሩዝ",
+  "paywallBeforeItem2": "ሳሙና",
+  "paywallBeforeItem3": "ስጋ",
+  "paywallBeforeItem4": "ዳቦ",
+  "paywallBenefit1Desc": "24/7 ንጥሎችን ያክላል፣ ያደራጃል እና ይጠቁማል",
+  "paywallBenefit2Desc": "የ3-ዝርዝር ገደብ የለም።",
+  "paywallBenefit3Desc": "ወጪን መከታተል እና የቤተሰብ ዝርዝሮች",
+  "paywallBestValue": "ምርጥ ዋጋ",
+  "paywallCancelAnytime": "በማንኛውም ጊዜ ይሰርዙ። ቁርጠኝነት የለም።",
+  "paywallCtaTrialDays": "በነጻ ይጀምሩ - {days} ቀናት",
+  "paywallCtaUnlock": "PROን ይክፈቱ",
+  "paywallFeatureExpenseControl": "የወጪ ቁጥጥር",
+  "paywallFeatureSharing": "ማጋራት።",
+  "paywallFeatureSmartAI": "ብልጥ AI",
+  "paywallFeatureUnlimitedLists": "ያልተገደበ ዝርዝሮች",
+  "paywallFeaturesTitle": "የሚያስፈልግህ ነገር ሁሉ፡-",
+  "paywallHeroHeadline": "Kipi AI ሁልጊዜ ከጎንህ ነው።",
+  "paywallHeroSubtitle": "ንጥሎችን ያክሉ፣ ዝርዝሮችን ያደራጁ እና በኪስዎ ውስጥ ባለው AI ጊዜ ይቆጥቡ",
+  "paywallLabelCommon": "የተለመደ",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "ቅናሾችን መጫን ላይ ስህተት። እንደገና ይሞክሩ።",
+  "paywallMostPopular": "በጣም ታዋቂ",
+  "paywallPackageAnnual": "ዓመታዊ ዕቅድ",
+  "paywallPackageLifetime": "የዕድሜ ልክ መዳረሻ",
+  "paywallPackageMonthly": "ወርሃዊ እቅድ",
+  "paywallPackageMonthlyDesc": "ሙሉ ተለዋዋጭነት",
+  "paywallPolicy": "የግላዊነት ፖሊሲ",
+  "paywallPricePerMonth": "በወር {price} ብቻ",
+  "paywallPurchaseError": "ግዢን ማጠናቀቅ አልተቻለም። እንደገና ይሞክሩ።",
+  "paywallRestore": "እነበረበት መልስ",
+  "paywallRestoreError": "ወደነበረበት ለመመለስ ምንም ገቢር የደንበኝነት ምዝገባ አልተገኘም።",
+  "paywallSafeCheckout": "ደህንነቱ የተጠበቀ ክፍያ",
+  "paywallSavePercent": "{percent}% ይቆጥቡ",
+  "paywallSelectPlan": "እቅድዎን ይምረጡ፡-",
+  "paywallSocialProof": "+2,400 ቤተሰቦች ይጠቀማሉ",
+  "paywallTerms": "የአጠቃቀም ውል",
+  "paywallTestimonial1Name": "አን ኤስ.",
+  "paywallTestimonial1Text": "AI ግዢዬን በሰከንዶች ውስጥ ያደራጃል. በአንድ የገበያ ጉዞ 20 ደቂቃ እቆጥባለሁ።",
+  "paywallTestimonial2Name": "ቻርለስ ኤም.",
+  "paywallTestimonial2Text": "እንደገና የዝርዝር ንጥል ነገር አልረሳሁትም። የ AI ውይይት ስሜት ቀስቃሽ ነው!",
+  "paywallTestimonialsTitle": "ተጠቃሚዎቻችን የሚሉት፡-",
   "paywallTitle": "KipiList ፕሪሚየም",
+  "paywallTrialDays": "{days} ቀናት ነፃ",
+  "paywallTrialMonths": "{count,plural, one{{count} ወር ነፃ} other{{count} ወራት ነፃ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ሳምንት ነፃ} other{{count} ሳምንታት ነፃ}}",
   "prefAIAssistant": "የግል AI ረዳት",
   "prefCustomThemes": "የተበጁ ገጽታዎች",
   "prefExportData": "ውሂብ ላክ",
@@ -679,6 +772,7 @@
   "prepTimeMinutes": "የዝግጅት ጊዜ (በደቂቃ)",
   "privacy": "ግላዊነት",
   "productName": "የምርት ስም",
+  "profile": "መገለጫ",
   "purchaseError": "ግዢውን በማስኬድ ላይ ስህተት። እንደገና ሞክር።",
   "quantityFull": "ብዛት",
   "quantityShort": "ብዛት",
@@ -776,6 +870,7 @@
   "undo": "ቀልብስ",
   "unit": "አሃድ",
   "unitPack": "ጥቅል",
+  "unlockAi": "ያልተገደበ AI ይክፈቱ",
   "unlockFullResponse": "ሙሉ ምላሽ ክፈት",
   "unmark": "ምልክት አስወግድ",
   "upgrade": "አሻሽል",

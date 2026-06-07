@@ -18,6 +18,18 @@ class AppLocalizationsGu extends AppLocalizations {
   String get pantry => 'પેન્ટ્રી';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'વાનગીઓ';
+
+  @override
+  String get navLists => 'યાદીઓ';
+
+  @override
+  String get navMealPlanner => 'મેનુ';
+
+  @override
   String get cancel => 'રદ કરો';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get addedFeedback => 'ઉમેરાયું!';
+
+  @override
+  String get profile => 'પ્રોફાઇલ';
+
+  @override
+  String get exitShoppingMode => 'શોપિંગ મોડમાંથી બહાર નીકળો';
+
+  @override
+  String get exit => 'બહાર નીકળો';
 
   @override
   String selectedItems(int count) {
@@ -593,7 +614,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get chatHint => 'તમારો સંદેશ લખો...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'ચેટ કરવા માટે AI ને અનલૉક કરો';
 
   @override
   String chatError(String error) {
@@ -614,14 +635,14 @@ class AppLocalizationsGu extends AppLocalizations {
       'માફ કરશો, તમારી વિનંતી પ્રક્રિયા કરવામાં ભૂલ આવી. તમારું કનેક્શન તપાસો અથવા પછીથી ફરી પ્રયાસ કરો.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'લગભગ AI સંદેશાઓની બહાર';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'અમર્યાદિત AI અનલૉક કરો';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'સંપૂર્ણ પ્રતિસાદને અનલૉક કરવા માટે પ્રીમિયમ પર સબ્સ્ક્રાઇબ કરો અને તમારી ખરીદી માટે અમર્યાદિત AI ટિપ્સ મેળવો...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -750,17 +771,19 @@ class AppLocalizationsGu extends AppLocalizations {
   String get paywallTitle => 'KipiList પ્રીમિયમ';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError => 'ઑફર્સ લોડ કરવામાં ભૂલ. ફરી પ્રયાસ કરો.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'ખરીદી પૂર્ણ કરી શકાઈ નથી. ફરી પ્રયાસ કરો.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'પુનઃસ્થાપિત કરવા માટે કોઈ સક્રિય સબ્સ્ક્રિપ્શન મળ્યું નથી.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days દિવસ મફત';
   }
 
   @override
@@ -768,8 +791,8 @@ class AppLocalizationsGu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count અઠવાડિયા મફત',
+      one: '$count અઠવાડિયું મફત',
     );
     return '$_temp0';
   }
@@ -779,148 +802,149 @@ class AppLocalizationsGu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count મહિનો મફત',
+      one: '$count મહિનો મફત',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'તમને જે જોઈએ છે તે બધું:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'અમર્યાદિત યાદીઓ';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'સ્માર્ટ AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'ખર્ચ નિયંત્રણ';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'શેરિંગ';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI પહેલા અને પછી:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'સામાન્ય';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'ચોખા';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'સાબુ';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'માંસ';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'બ્રેડ';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'અનાજ';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'સફાઈ';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'માંસ';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'બેકરી';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'અમારા વપરાશકર્તાઓ શું કહે છે:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => 'એન એસ.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI મારી ખરીદી સેકન્ડોમાં ગોઠવે છે. હું માર્કેટ ટ્રીપ દીઠ 20 મિનિટ બચાવું છું.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'ચાર્લ્સ એમ.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'હું એક યાદી આઇટમ ફરી ક્યારેય ભૂલી નથી. AI ચેટ સનસનાટીપૂર્ણ છે!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2,400 પરિવારો તેનો ઉપયોગ કરે છે';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'PRO અનલોક કરો';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'શ્રેષ્ઠ મૂલ્ય';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'સૌથી વધુ લોકપ્રિય';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'સુરક્ષિત ચુકવણી';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'તમારી યોજના પસંદ કરો:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return '$percent% સાચવો';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'માત્ર $price/મહિને';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'વાર્ષિક યોજના';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'માસિક યોજના';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'આજીવન ઍક્સેસ';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'કોઈપણ સમયે રદ કરો. પ્રતિબદ્ધતા નથી.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'ગોપનીયતા નીતિ';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'ઉપયોગની શરતો';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'પુનઃસ્થાપિત કરો';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI હંમેશા તમારી બાજુમાં';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'તમારા ખિસ્સામાં AI સાથે વસ્તુઓ ઉમેરો, સૂચિઓ ગોઠવો અને સમય બચાવો';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      '24/7 વસ્તુઓ ઉમેરે છે, ગોઠવે છે અને સૂચવે છે';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'કોઈ 3-સૂચિ મર્યાદા';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'ખર્ચ ટ્રેકિંગ અને કુટુંબ યાદીઓ';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'સંપૂર્ણ સુગમતા';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'મફત પ્રારંભ કરો — $days દિવસ';
   }
 
   @override
@@ -1635,4 +1659,51 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'KipiList પ્રીમિયમના 7 દિવસ મેળવો!';
+
+  @override
+  String get gestureHint =>
+      'પસંદ કરવા માટે હોલ્ડ કરો • દૂર કરવા માટે સ્વાઇપ કરો';
+
+  @override
+  String get catalogTitle => 'કેટલોગ';
+
+  @override
+  String get catalogMyFrequents => 'મારી વારંવાર';
+
+  @override
+  String get catalogSearchGlobal => 'કોઈપણ ઉત્પાદન શોધો...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category માં શોધો...';
+  }
+
+  @override
+  String get catalogSortPopular => 'સૌથી વધુ લોકપ્રિય';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'નાગરિકો';
+
+  @override
+  String get catalogRareSection => 'તમારા દેશમાં ઓછા સામાન્ય';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'ઉમેરો $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'ઉત્પાદન મળ્યું નથી, નામ લખો';
+
+  @override
+  String get catalogBrowse => 'કેટલોગ બ્રાઉઝ કરો';
 }

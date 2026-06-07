@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} ಕ್ರೆಡಿಟ್ಗಳು ಉಳಿದಿವೆ",
   "aiEnergy": "AI ಶಕ್ತಿ",
   "aiError": "ಕ್ಷಮಿಸಿ, ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುವಲ್ಲಿ ದೋಷ ಸಂಭವಿಸಿದೆ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಅಥವಾ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "aiLimitAlmostReached": "ಬಹುತೇಕ AI ಸಂದೇಶಗಳು ಹೊರಗಿವೆ",
+  "aiTeaserFallback": "ಸಂಪೂರ್ಣ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಪ್ರೀಮಿಯಂಗೆ ಚಂದಾದಾರರಾಗಿ ಮತ್ತು ನಿಮ್ಮ ಶಾಪಿಂಗ್‌ಗಾಗಿ ಅನಿಯಮಿತ AI ಸಲಹೆಗಳನ್ನು ಪಡೆಯಿರಿ...",
   "aiVoiceCommandTooltip": "AI ಧ್ವನಿ ಆಜ್ಞೆ (ಪ್ರೀಮಿಯಂ)",
   "allTags": "ಎಲ್ಲಾ",
   "alreadyPurchased": "ಈಗಾಗಲೇ ಖರೀದಿಸಲಾಗಿದೆ",
@@ -404,9 +430,21 @@
   "catCleaning": "ಶುಚಿಗೊಳಿಸುವಿಕೆ",
   "catFruits": "ಹಣ್ಣುಗಳು",
   "catOthers": "ಇತರೆ",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} → ಸೇರಿಸಿ",
+  "catalogBrowse": "ಕ್ಯಾಟಲಾಗ್ ಬ್ರೌಸ್ ಮಾಡಿ",
+  "catalogFilterNational": "ರಾಷ್ಟ್ರೀಯರು",
+  "catalogMyFrequents": "ನನ್ನ ಆಗಾಗ್ಗೆ",
+  "catalogProductNotFound": "ಉತ್ಪನ್ನ ಕಂಡುಬಂದಿಲ್ಲ, ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ",
+  "catalogRareSection": "ನಿಮ್ಮ ದೇಶದಲ್ಲಿ ಕಡಿಮೆ ಸಾಮಾನ್ಯವಾಗಿದೆ",
+  "catalogSearchGlobal": "ಯಾವುದೇ ಉತ್ಪನ್ನವನ್ನು ಹುಡುಕಿ...",
+  "catalogSearchInCategory": "{category} ನಲ್ಲಿ ಹುಡುಕಿ...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ",
+  "catalogTitle": "ಕ್ಯಾಟಲಾಗ್",
   "category": "ವರ್ಗ",
   "chatError": "ಚಾಟ್ ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ: {error}",
   "chatHint": "ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+  "chatHintBlocked": "ಚಾಟ್ ಮಾಡಲು AI ಅನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ",
   "chatSubtitle": "ಐಟಂ ಸಲಹೆಗಳು, ಪಾಕವಿಧಾನಗಳು ಅಥವಾ ಉಳಿತಾಯ ಸಲಹೆಗಳಿಗಾಗಿ ಕೇಳಿ.",
   "chatSubtitleShort": "ಬೆಲೆಗಳು, ಪಾಕವಿಧಾನಗಳು, ಸಂಸ್ಥೆಯ ಬಗ್ಗೆ ಕೇಳಿ...",
   "chooseCurrency": "ಕರೆನ್ಸಿ ಆಯ್ಕೆಮಾಡಿ",
@@ -479,6 +517,8 @@
   "estimated": "ಅಂದಾಜು",
   "estimatedCost": "ಅಂದಾಜಿಸಲಾಗಿದೆ",
   "estimatedPrice": "ಅಂದಾಜು ಬೆಲೆ",
+  "exit": "ನಿರ್ಗಮಿಸಿ",
+  "exitShoppingMode": "ಶಾಪಿಂಗ್ ಮೋಡ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ",
   "exportData": "ಡೇಟಾ ರಫ್ತು ಮಾಡಿ",
   "exportDataSubtitle": "ಎಲ್ಲಾ ಪಟ್ಟಿಗಳನ್ನು JSON ಆಗಿ ಉಳಿಸಿ",
   "exportExcel": "Excel ಆಗಿ ರಫ್ತು ಮಾಡಿ",
@@ -517,6 +557,7 @@
   "generalAssistant": "ಸಾಮಾನ್ಯ ಸಹಾಯಕ",
   "generalHelp": "ಇಂದು ನಿಮ್ಮ ಶಾಪಿಂಗ್ನಲ್ಲಿ ನಾನು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಲ್ಲೆ?",
   "generateShoppingList": "ಶಾಪಿಂಗ್ ಪಟ್ಟಿ ರಚಿಸಿ",
+  "gestureHint": "ಆಯ್ಕೆ ಮಾಡಲು ಹೋಲ್ಡ್ ಮಾಡಿ • ತೆಗೆದುಹಾಕಲು ಸ್ವೈಪ್ ಮಾಡಿ",
   "globalAssistant": "ಜಾಗತಿಕ ಸಹಾಯಕ",
   "howCanIHelp": "ನಾನು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
   "idealQty": "ಆದರ್ಶ ಪ್ರಮಾಣ",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{total} ರಲ್ಲಿ {purchased} ಖರೀದಿಸಲಾಗಿದೆ",
   "itemsPurchasedShort": "{purchased}/{total} ಖರೀದಿಸಲಾಗಿದೆ",
   "itemsWillBeAdded": "{count} ಐಟಂ(ಗಳ)ನ್ನು ಸೇರಿಸಲಾಗುವುದು",
+  "kipiListTitle": "ಕಿಪಿಲಿಸ್ಟ್",
   "language": "ಭಾಷೆ",
   "languageEnglish": "ಇಂಗ್ಲೀಷ್",
   "languagePortuguese": "ಪೋರ್ಚುಗೀಸ್ (ಬ್ರೆಸಿಲ್)",
@@ -554,7 +596,6 @@
   "listHistory": "ಪಟ್ಟಿ ಇತಿಹಾಸ",
   "listNameLabel": "ಪಟ್ಟಿಯ ಹೆಸರು",
   "listOrganizedMagic": "ಪಟ್ಟಿಯನ್ನು ಮಾಂತ್ರಿಕವಾಗಿ ವರ್ಗಗಳಾಗಿ ಸಂಘಟಿಸಲಾಗಿದೆ! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "ಕೇಳುತ್ತಿದೆ...",
   "lists": "ಪಟ್ಟಿಗಳು",
   "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "ಮಾಸಿಕ ಬಜೆಟ್",
   "myLists": "ನನ್ನ ಪಟ್ಟಿಗಳು",
   "myRecipes": "ನನ್ನ ಪಾಕವಿಧಾನಗಳು",
+  "navChat": "Chat",
+  "navLists": "ಪಟ್ಟಿಗಳು",
+  "navMealPlanner": "ಮೆನು",
+  "navRecipes": "ಪಾಕವಿಧಾನಗಳು",
   "newChat": "ಹೊಸ ಚಾಟ್",
   "newListTitle": "ಹೊಸ ಶಾಪಿಂಗ್ ಪಟ್ಟಿ",
   "newPantryList": "ಪ್ಯಾಂಟ್ರಿ ಶಾಪಿಂಗ್",
@@ -663,7 +708,56 @@
   "pantryEmpty": "ಖಾಲಿ ಪ್ಯಾಂಟ್ರಿ",
   "pantryEmptySubtitle": "ನೀವು ಮನೆಯಲ್ಲಿ ಇಟ್ಟುಕೊಳ್ಳಲು ಬಯಸುವ ಉತ್ಪನ್ನಗಳನ್ನು ಸೇರಿಸಿ",
   "pantryItemRemoved": "ಐಟಂ ತೆಗೆದುಹಾಕಲಾಗಿದೆ",
+  "paywallAfterItem1": "ಧಾನ್ಯಗಳು",
+  "paywallAfterItem2": "ಸ್ವಚ್ಛಗೊಳಿಸುವ",
+  "paywallAfterItem3": "ಮಾಂಸಗಳು",
+  "paywallAfterItem4": "ಬೇಕರಿ",
+  "paywallBeforeAfterTitle": "AI ಮೊದಲು ಮತ್ತು ನಂತರ:",
+  "paywallBeforeItem1": "ಅಕ್ಕಿ",
+  "paywallBeforeItem2": "ಸಾಬೂನು",
+  "paywallBeforeItem3": "ಮಾಂಸ",
+  "paywallBeforeItem4": "ಬ್ರೆಡ್",
+  "paywallBenefit1Desc": "24/7 ಐಟಂಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ, ಸಂಘಟಿಸುತ್ತದೆ ಮತ್ತು ಸೂಚಿಸುತ್ತದೆ",
+  "paywallBenefit2Desc": "3-ಪಟ್ಟಿ ಮಿತಿ ಇಲ್ಲ",
+  "paywallBenefit3Desc": "ವೆಚ್ಚ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಕುಟುಂಬದ ಪಟ್ಟಿಗಳು",
+  "paywallBestValue": "ಅತ್ಯುತ್ತಮ ಮೌಲ್ಯ",
+  "paywallCancelAnytime": "ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ. ಬದ್ಧತೆ ಇಲ್ಲ.",
+  "paywallCtaTrialDays": "ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ — {days} ದಿನಗಳು",
+  "paywallCtaUnlock": "PRO ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "paywallFeatureExpenseControl": "ವೆಚ್ಚ ನಿಯಂತ್ರಣ",
+  "paywallFeatureSharing": "ಹಂಚಿಕೆ",
+  "paywallFeatureSmartAI": "ಸ್ಮಾರ್ಟ್ AI",
+  "paywallFeatureUnlimitedLists": "ಅನಿಯಮಿತ ಪಟ್ಟಿಗಳು",
+  "paywallFeaturesTitle": "ನಿಮಗೆ ಬೇಕಾಗಿರುವುದು:",
+  "paywallHeroHeadline": "Kipi AI ಯಾವಾಗಲೂ ನಿಮ್ಮ ಪಕ್ಕದಲ್ಲಿದೆ",
+  "paywallHeroSubtitle": "ಐಟಂಗಳನ್ನು ಸೇರಿಸಿ, ಪಟ್ಟಿಗಳನ್ನು ಸಂಘಟಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಜೇಬಿನಲ್ಲಿ AI ಯೊಂದಿಗೆ ಸಮಯವನ್ನು ಉಳಿಸಿ",
+  "paywallLabelCommon": "ಸಾಮಾನ್ಯ",
+  "paywallLabelPro": "ಕಿಪಿಲಿಸ್ಟ್ ಪ್ರೊ",
+  "paywallLoadingError": "ಕೊಡುಗೆಗಳನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "paywallMostPopular": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ",
+  "paywallPackageAnnual": "ವಾರ್ಷಿಕ ಯೋಜನೆ",
+  "paywallPackageLifetime": "ಜೀವಮಾನದ ಪ್ರವೇಶ",
+  "paywallPackageMonthly": "ಮಾಸಿಕ ಯೋಜನೆ",
+  "paywallPackageMonthlyDesc": "ಪೂರ್ಣ ನಮ್ಯತೆ",
+  "paywallPolicy": "ಗೌಪ್ಯತೆ ನೀತಿ",
+  "paywallPricePerMonth": "ಕೇವಲ {price}/ತಿಂಗಳು",
+  "paywallPurchaseError": "ಖರೀದಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "paywallRestore": "ಮರುಸ್ಥಾಪಿಸಿ",
+  "paywallRestoreError": "ಮರುಸ್ಥಾಪಿಸಲು ಯಾವುದೇ ಸಕ್ರಿಯ ಚಂದಾದಾರಿಕೆ ಕಂಡುಬಂದಿಲ್ಲ.",
+  "paywallSafeCheckout": "ಸುರಕ್ಷಿತ ಪಾವತಿ",
+  "paywallSavePercent": "{percent}% ಉಳಿಸಿ",
+  "paywallSelectPlan": "ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ:",
+  "paywallSocialProof": "+2,400 ಕುಟುಂಬಗಳು ಇದನ್ನು ಬಳಸುತ್ತವೆ",
+  "paywallTerms": "ಬಳಕೆಯ ನಿಯಮಗಳು",
+  "paywallTestimonial1Name": "ಆನ್ ಎಸ್.",
+  "paywallTestimonial1Text": "AI ನನ್ನ ಶಾಪಿಂಗ್ ಅನ್ನು ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಆಯೋಜಿಸುತ್ತದೆ. ನಾನು ಪ್ರತಿ ಮಾರುಕಟ್ಟೆ ಪ್ರವಾಸಕ್ಕೆ 20 ನಿಮಿಷಗಳನ್ನು ಉಳಿಸುತ್ತೇನೆ.",
+  "paywallTestimonial2Name": "ಚಾರ್ಲ್ಸ್ ಎಂ.",
+  "paywallTestimonial2Text": "ನಾನು ಮತ್ತೆ ಪಟ್ಟಿ ಐಟಂ ಅನ್ನು ಮರೆಯಲಿಲ್ಲ. AI ಚಾಟ್ ಸಂವೇದನಾಶೀಲವಾಗಿದೆ!",
+  "paywallTestimonialsTitle": "ನಮ್ಮ ಬಳಕೆದಾರರು ಏನು ಹೇಳುತ್ತಾರೆ:",
   "paywallTitle": "KipiList ಪ್ರೀಮಿಯಂ",
+  "paywallTrialDays": "{days} ದಿನಗಳು ಉಚಿತ",
+  "paywallTrialMonths": "{count,plural, one{{count} ತಿಂಗಳು ಉಚಿತ} other{{count} ತಿಂಗಳುಗಳು ಉಚಿತ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ವಾರ ಉಚಿತ} other{{count} ವಾರಗಳು ಉಚಿತ}}",
   "prefAIAssistant": "ವೈಯಕ್ತಿಕ AI ಸಹಾಯಕ",
   "prefCustomThemes": "ಕಸ್ಟಮ್ ಥೀಮ್ಗಳು",
   "prefExportData": "ಡೇಟಾ ರಫ್ತು ಮಾಡಿ",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "ತಯಾರಿಕೆಯ ಸಮಯ (ನಿಮಿಷಗಳು)",
   "privacy": "ಗೌಪ್ಯತೆ",
   "productName": "ಉತ್ಪನ್ನದ ಹೆಸರು",
+  "profile": "ಪ್ರೊಫೈಲ್",
   "purchaseError": "ಖರೀದಿ ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿ ದೋಷ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
   "quantityFull": "ಪ್ರಮಾಣ",
   "quantityShort": "ಪ್ರಮಾಣ",
@@ -775,6 +870,7 @@
   "undo": "ರದ್ದುಮಾಡಿ",
   "unit": "ಘಟಕ",
   "unitPack": "ಪ್ಯಾಕ್",
+  "unlockAi": "ಅನಿಯಮಿತ AI ಅನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
   "unlockFullResponse": "ಪೂರ್ಣ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
   "unmark": "ಗುರುತು ತೆಗೆದುಹಾಕಿ",
   "upgrade": "ಅಪ್ಗ್ರೇಡ್ ಮಾಡಿ",

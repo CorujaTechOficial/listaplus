@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -300,6 +317,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -380,6 +404,8 @@
   "aiCreditsRemaining": "{remaining} kreditu geratzen dira",
   "aiEnergy": "AI Energia",
   "aiError": "Barkatu, errorea gertatu da zure eskaera prozesatzean. Egiaztatu konexioa edo saiatu berriro geroago.",
+  "aiLimitAlmostReached": "Ia AI mezurik gabe",
+  "aiTeaserFallback": "Harpidetu Premium-era erantzun osoa desblokeatzeko eta erosketetarako AI aholku mugagabeak jasotzeko...",
   "aiVoiceCommandTooltip": "AI Ahots Komandoa (Premium)",
   "allTags": "Denak",
   "alreadyPurchased": "Dagoeneko erosita",
@@ -411,6 +437,17 @@
   "catCleaning": "Garbiketa",
   "catFruits": "Frutak",
   "catOthers": "Besteak",
+  "catalogAddItems": "Gehitu {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Arakatu Katalogoa",
+  "catalogFilterNational": "Nazionalak",
+  "catalogMyFrequents": "Nire Maizak",
+  "catalogProductNotFound": "Produktua ez da aurkitu, idatzi izena",
+  "catalogRareSection": "ez da hain ohikoa zure herrialdean",
+  "catalogSearchGlobal": "Bilatu edozein produktu...",
+  "catalogSearchInCategory": "Bilatu {category}-n...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Ezagunenak",
+  "catalogTitle": "Katalogoa",
   "category": "Kategoria",
   "chatError": "Errorea txata kargatzean: {error}",
   "chatHint": "Idatzi zure mezua...",
@@ -487,6 +524,8 @@
   "estimated": "Estimatuta",
   "estimatedCost": "Estimatua",
   "estimatedPrice": "Estimatutako prezioa",
+  "exit": "Irten",
+  "exitShoppingMode": "Irten Erosketa modutik",
   "exportData": "Esportatu datuak",
   "exportDataSubtitle": "Gorde zerrenda guztiak JSON gisa",
   "exportExcel": "Esportatu Excel gisa",
@@ -525,6 +564,7 @@
   "generalAssistant": "Laguntzaile Orokorra",
   "generalHelp": "Nola lagundu dezaket zure erosketetan gaur?",
   "generateShoppingList": "Sortu erosketa zerrenda",
+  "gestureHint": "Eduki sakatuta hautatzeko • Irristatu kentzeko",
   "globalAssistant": "Laguntzaile orokorra",
   "howCanIHelp": "Nola lagundu dezaket?",
   "idealQty": "Kopuru ideala",
@@ -548,6 +588,7 @@
   "itemsPurchasedCount": "{purchased}/{total} erosi dira",
   "itemsPurchasedShort": "{purchased}/{total} erosi du",
   "itemsWillBeAdded": "{count} elementu(k) gehituko dira",
+  "kipiListTitle": "KipiList",
   "language": "Hizkuntza",
   "languageEnglish": "ingelesa",
   "languagePortuguese": "portugesa (Brasil)",
@@ -562,7 +603,6 @@
   "listHistory": "Zerrendaren Historia",
   "listNameLabel": "Zerrendaren izena",
   "listOrganizedMagic": "Zerrenda modu magikoan antolatuta kategorien arabera! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Entzuten...",
   "lists": "Zerrendak",
   "loading": "Kargatzen...",
@@ -613,6 +653,10 @@
   "monthlyBudgetTitle": "Hileko Aurrekontua",
   "myLists": "Nire Zerrendak",
   "myRecipes": "Nire errezetak",
+  "navChat": "Chat",
+  "navLists": "Zerrendak",
+  "navMealPlanner": "Menua",
+  "navRecipes": "Errezetak",
   "newChat": "Txat berria",
   "newListTitle": "Erosketa Zerrenda Berria",
   "newPantryList": "Jakitegiko Erosketa",
@@ -671,7 +715,56 @@
   "pantryEmpty": "Jakitegia hutsik",
   "pantryEmptySubtitle": "Gehitu etxean eduki nahi dituzun produktuak",
   "pantryItemRemoved": "Elementua kenduta",
+  "paywallAfterItem1": "Aleak",
+  "paywallAfterItem2": "Garbiketa",
+  "paywallAfterItem3": "Haragiak",
+  "paywallAfterItem4": "Okindegia",
+  "paywallBeforeAfterTitle": "AI aurretik eta ondoren:",
+  "paywallBeforeItem1": "arroza",
+  "paywallBeforeItem2": "xaboia",
+  "paywallBeforeItem3": "haragia",
+  "paywallBeforeItem4": "ogia",
+  "paywallBenefit1Desc": "Elementuak gehitzen, antolatu eta iradokitzen ditu 24/7",
+  "paywallBenefit2Desc": "Ez dago 3 zerrendako mugarik",
+  "paywallBenefit3Desc": "Gastuen jarraipena eta familia-zerrendak",
+  "paywallBestValue": "BALIO ONENA",
+  "paywallCancelAnytime": "Utzi edonoiz. Konpromisorik ez.",
+  "paywallCtaTrialDays": "Hasi doan — {days} egun",
+  "paywallCtaUnlock": "Desblokeatu PRO",
+  "paywallFeatureExpenseControl": "Gastuen Kontrola",
+  "paywallFeatureSharing": "Partekatzea",
+  "paywallFeatureSmartAI": "AI adimenduna",
+  "paywallFeatureUnlimitedLists": "Zerrenda mugagabeak",
+  "paywallFeaturesTitle": "Behar duzun guztia:",
+  "paywallHeroHeadline": "Kipi AI beti zure ondoan",
+  "paywallHeroSubtitle": "Gehitu elementuak, antolatu zerrendak eta aurreztu denbora zure poltsikoan AI-arekin",
+  "paywallLabelCommon": "Ohikoa",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Errore bat gertatu da eskaintzak kargatzean. Saiatu berriro.",
+  "paywallMostPopular": "HERRIENA",
+  "paywallPackageAnnual": "Urteko Plana",
+  "paywallPackageLifetime": "Bizitza osorako sarbidea",
+  "paywallPackageMonthly": "Hileko Plana",
+  "paywallPackageMonthlyDesc": "Malgutasun osoa",
+  "paywallPolicy": "Pribatutasun-politika",
+  "paywallPricePerMonth": "{price}/hilabete baino ez",
+  "paywallPurchaseError": "Ezin izan da erosketa osatu. Saiatu berriro.",
+  "paywallRestore": "Berreskuratu",
+  "paywallRestoreError": "Ez da aurkitu harpidetza aktiborik leheneratzeko.",
+  "paywallSafeCheckout": "Ordainketa segurua",
+  "paywallSavePercent": "GORDE % {percent}",
+  "paywallSelectPlan": "Aukeratu zure plana:",
+  "paywallSocialProof": "+2.400 familiak erabiltzen dute",
+  "paywallTerms": "Erabilera-baldintzak",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AIk segundotan antolatzen ditu nire erosketak. Merkaturako bidaia bakoitzeko 20 minutu aurrezten ditut.",
+  "paywallTestimonial2Name": "Karlos M.",
+  "paywallTestimonial2Text": "Ez dut inoiz ahaztu zerrendako elementu bat berriro. AI txata sekulakoa da!",
+  "paywallTestimonialsTitle": "Gure erabiltzaileek diotena:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} EGUN DOAN",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH DOAN} other{{count} MONTH DOAN}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ASTE DOAN} other{{count} ASTE DOAN}}",
   "prefAIAssistant": "AI Laguntzaile Pertsonala",
   "prefCustomThemes": "Gai pertsonalizatuak",
   "prefExportData": "Esportatu datuak",
@@ -686,6 +779,7 @@
   "prepTimeMinutes": "Prestatze denbora (minutuak)",
   "privacy": "Pribatutasuna",
   "productName": "Produktuaren izena",
+  "profile": "Profila",
   "purchaseError": "Errorea erosketa prozesatzean. Saiatu berriro.",
   "quantityFull": "Kantitatea",
   "quantityShort": "Kop",
@@ -783,6 +877,7 @@
   "undo": "Desegin",
   "unit": "Unitatea",
   "unitPack": "pakete",
+  "unlockAi": "Desblokeatu AI mugagabea",
   "unlockFullResponse": "Desblokeatu Erantzun osoa",
   "unmark": "Desmarkatu",
   "upgrade": "Hobetu",

@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "{remaining} credits over",
   "aiEnergy": "AI-energie",
   "aiError": "Sorry, er is een fout opgetreden bij het verwerken van je verzoek. Controleer je verbinding of probeer het later opnieuw.",
+  "aiLimitAlmostReached": "Bijna geen AI-berichten meer",
+  "aiTeaserFallback": "Abonneer u op Premium om het volledige antwoord te ontgrendelen en onbeperkte AI-tips te krijgen voor uw boodschappen...",
   "aiVoiceCommandTooltip": "AI-stemcommando (Premium)",
   "allTags": "Alle",
   "alreadyPurchased": "Al gekocht",
@@ -385,9 +411,21 @@
   "catCleaning": "Schoonmaak",
   "catFruits": "Fruit",
   "catOthers": "Overig",
+  "catalogAddItems": "Voeg {count} {count, plural, one{item} other{items}} toe →",
+  "catalogBrowse": "Catalogus doorbladeren",
+  "catalogFilterNational": "Onderdanen",
+  "catalogMyFrequents": "Mijn frequente bezoekers",
+  "catalogProductNotFound": "Product niet gevonden, typ de naam",
+  "catalogRareSection": "minder gebruikelijk in uw land",
+  "catalogSearchGlobal": "Zoek een product...",
+  "catalogSearchInCategory": "Zoeken in {category}...",
+  "catalogSortAZ": "A-Z",
+  "catalogSortPopular": "Meest populair",
+  "catalogTitle": "Catalogus",
   "category": "Categorie",
   "chatError": "Fout bij laden chat: {error}",
   "chatHint": "Typ je bericht...",
+  "chatHintBlocked": "Ontgrendel AI om te chatten",
   "chatSubtitle": "Vraag om productsuggesties, recepten of bespaartips.",
   "chatSubtitleShort": "Vraag naar prijzen, recepten, organisatie...",
   "chooseCurrency": "Selecteer Valuta",
@@ -460,6 +498,8 @@
   "estimated": "Geschat",
   "estimatedCost": "Geschat",
   "estimatedPrice": "Geschatte prijs",
+  "exit": "Uitgang",
+  "exitShoppingMode": "Verlaat de winkelmodus",
   "exportData": "Gegevens exporteren",
   "exportDataSubtitle": "Alle lijsten opslaan als JSON",
   "exportExcel": "Exporteren als Excel",
@@ -498,6 +538,7 @@
   "generalAssistant": "Algemene assistent",
   "generalHelp": "Hoe kan ik vandaag helpen met je boodschappen?",
   "generateShoppingList": "Boodschappenlijst genereren",
+  "gestureHint": "Houd ingedrukt om te selecteren • Veeg om te verwijderen",
   "globalAssistant": "Globale assistent",
   "howCanIHelp": "Hoe kan ik helpen?",
   "idealQty": "Ideale aant",
@@ -521,6 +562,7 @@
   "itemsPurchasedCount": "{purchased} van {total} gekocht",
   "itemsPurchasedShort": "{purchased}/{total} gekocht",
   "itemsWillBeAdded": "{count} item(s) worden toegevoegd",
+  "kipiListTitle": "KipiLijst",
   "language": "Taal",
   "languageEnglish": "Engels",
   "languagePortuguese": "Portugees (Brazilië)",
@@ -535,7 +577,6 @@
   "listHistory": "Lijstgeschiedenis",
   "listNameLabel": "Lijstnaam",
   "listOrganizedMagic": "Lijst als bij toverslag georganiseerd op categorie! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Luisteren...",
   "lists": "Lijsten",
   "loading": "Laden...",
@@ -586,6 +627,10 @@
   "monthlyBudgetTitle": "Maandelijks budget",
   "myLists": "Mijn lijsten",
   "myRecipes": "Mijn recepten",
+  "navChat": "Chatten",
+  "navLists": "Lijsten",
+  "navMealPlanner": "Menu",
+  "navRecipes": "Recepten",
   "newChat": "Nieuwe chat",
   "newListTitle": "Nieuwe boodschappenlijst",
   "newPantryList": "Voorraad boodschappen",
@@ -644,7 +689,56 @@
   "pantryEmpty": "Lege voorraadkast",
   "pantryEmptySubtitle": "Voeg producten toe die je thuis wilt houden",
   "pantryItemRemoved": "Item verwijderd",
+  "paywallAfterItem1": "Granen",
+  "paywallAfterItem2": "Schoonmaak",
+  "paywallAfterItem3": "Vlees",
+  "paywallAfterItem4": "Bakkerij",
+  "paywallBeforeAfterTitle": "AI voor en na:",
+  "paywallBeforeItem1": "rijst",
+  "paywallBeforeItem2": "zeep",
+  "paywallBeforeItem3": "vlees",
+  "paywallBeforeItem4": "brood",
+  "paywallBenefit1Desc": "Voegt 24/7 items toe, ordent ze en stelt ze voor",
+  "paywallBenefit2Desc": "Geen limiet van 3 lijsten",
+  "paywallBenefit3Desc": "Onkosten bijhouden en familielijsten",
+  "paywallBestValue": "BESTE WAARDE",
+  "paywallCancelAnytime": "Annuleer op elk gewenst moment. Geen verplichting.",
+  "paywallCtaTrialDays": "Begin gratis — {days} dagen",
+  "paywallCtaUnlock": "Ontgrendel PRO",
+  "paywallFeatureExpenseControl": "Kostenbeheersing",
+  "paywallFeatureSharing": "Delen",
+  "paywallFeatureSmartAI": "Slimme AI",
+  "paywallFeatureUnlimitedLists": "Onbeperkte lijsten",
+  "paywallFeaturesTitle": "Alles wat je nodig hebt:",
+  "paywallHeroHeadline": "Kipi AI staat altijd aan uw zijde",
+  "paywallHeroSubtitle": "Voeg items toe, organiseer lijsten en bespaar tijd met AI op zak",
+  "paywallLabelCommon": "Gewoon",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Fout bij het laden van aanbiedingen. Probeer het opnieuw.",
+  "paywallMostPopular": "MEEST POPULAIR",
+  "paywallPackageAnnual": "Jaarplan",
+  "paywallPackageLifetime": "Levenslange toegang",
+  "paywallPackageMonthly": "Maandplan",
+  "paywallPackageMonthlyDesc": "Volledige flexibiliteit",
+  "paywallPolicy": "Privacybeleid",
+  "paywallPricePerMonth": "Slechts {price}/maand",
+  "paywallPurchaseError": "Kan aankoop niet voltooien. Probeer het opnieuw.",
+  "paywallRestore": "Herstellen",
+  "paywallRestoreError": "Geen actief abonnement gevonden om te herstellen.",
+  "paywallSafeCheckout": "Veilige betaling",
+  "paywallSavePercent": "BESPAAR {percent}%",
+  "paywallSelectPlan": "Kies uw abonnement:",
+  "paywallSocialProof": "+2.400 gezinnen maken er gebruik van",
+  "paywallTerms": "Gebruiksvoorwaarden",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI organiseert mijn boodschappen binnen enkele seconden. Ik bespaar 20 minuten per marktreis.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Ik ben nooit meer een lijstitem vergeten. De AI-chat is sensationeel!",
+  "paywallTestimonialsTitle": "Wat onze gebruikers zeggen:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DAGEN GRATIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MAAND GRATIS} other{{count} MAANDEN GRATIS}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} WEEK GRATIS} other{{count} WEKEN GRATIS}}",
   "prefAIAssistant": "Persoonlijke AI-assistent",
   "prefCustomThemes": "Aangepaste thema's",
   "prefExportData": "Gegevens exporteren",
@@ -659,6 +753,7 @@
   "prepTimeMinutes": "Bereidingstijd (minuten)",
   "privacy": "Privacy",
   "productName": "Productnaam",
+  "profile": "Profiel",
   "purchaseError": "Fout bij verwerken aankoop. Probeer opnieuw.",
   "quantityFull": "Hoeveelheid",
   "quantityShort": "Aant",
@@ -756,6 +851,7 @@
   "undo": "Ongedaan maken",
   "unit": "Eenheid",
   "unitPack": "pak",
+  "unlockAi": "Ontgrendel onbeperkte AI",
   "unlockFullResponse": "Ontgrendel volledige respons",
   "unmark": "Markering verwijderen",
   "upgrade": "Upgraden",

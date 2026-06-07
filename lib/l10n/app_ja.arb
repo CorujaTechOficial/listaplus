@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "残り{remaining}クレジット",
   "aiEnergy": "AIエネルギー",
   "aiError": "申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。",
+  "aiLimitAlmostReached": "AI メッセージがほぼなくなりました",
+  "aiTeaserFallback": "プレミアムに登録すると、完全な回答が得られ、ショッピングに関する AI ヒントを無制限に入手できます...",
   "aiVoiceCommandTooltip": "AI音声コマンド（プレミアム）",
   "allTags": "すべて",
   "alreadyPurchased": "購入済み",
@@ -404,9 +430,21 @@
   "catCleaning": "掃除用品",
   "catFruits": "果物",
   "catOthers": "その他",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} を追加 →",
+  "catalogBrowse": "カタログを閲覧する",
+  "catalogFilterNational": "ナショナルズ",
+  "catalogMyFrequents": "私のよく行く人",
+  "catalogProductNotFound": "製品が見つかりません。名前を入力してください",
+  "catalogRareSection": "あなたの国ではあまり一般的ではありません",
+  "catalogSearchGlobal": "任意の製品を検索...",
+  "catalogSearchInCategory": "{category} で検索...",
+  "catalogSortAZ": "A ～ Z",
+  "catalogSortPopular": "最も人気のある",
+  "catalogTitle": "カタログ",
   "category": "カテゴリ",
   "chatError": "チャットの読み込みエラー: {error}",
   "chatHint": "メッセージを入力...",
+  "chatHintBlocked": "AI のロックを解除してチャットできるようにする",
   "chatSubtitle": "アイテムの提案、レシピ、節約のコツを尋ねてください。",
   "chatSubtitleShort": "価格、レシピ、構成について質問してください...",
   "chooseCurrency": "通貨の選択",
@@ -479,6 +517,8 @@
   "estimated": "推定",
   "estimatedCost": "推定",
   "estimatedPrice": "推定価格",
+  "exit": "出口",
+  "exitShoppingMode": "ショッピングモードを終了する",
   "exportData": "データをエクスポート",
   "exportDataSubtitle": "すべてのリストをJSONとして保存",
   "exportExcel": "Excelとしてエクスポート",
@@ -517,6 +557,7 @@
   "generalAssistant": "一般アシスタント",
   "generalHelp": "今日のお買い物についてどう支援しましょうか？",
   "generateShoppingList": "買い物リストを生成",
+  "gestureHint": "押し続けて選択 • スワイプして削除",
   "globalAssistant": "グローバルアシスタント",
   "howCanIHelp": "どうすれば助けられますか?",
   "idealQty": "理想の数",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{total}中{purchased}を購入しました",
   "itemsPurchasedShort": "{purchased}/{total} を購入しました",
   "itemsWillBeAdded": "{count}個のアイテムが追加されます",
+  "kipiListTitle": "キピリスト",
   "language": "言語",
   "languageEnglish": "英語",
   "languagePortuguese": "ポルトガル語 (ブラジル)",
@@ -554,7 +596,6 @@
   "listHistory": "リスト履歴",
   "listNameLabel": "リスト名",
   "listOrganizedMagic": "リストが魔法のようにカテゴリごとに整理されました！✨",
-  "kipiListTitle": "KipiList",
   "listening": "リスニング...",
   "lists": "リスト",
   "loading": "読み込み中...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "月間予算",
   "myLists": "マイリスト",
   "myRecipes": "マイレシピ",
+  "navChat": "Chat",
+  "navLists": "リスト",
+  "navMealPlanner": "メニュー",
+  "navRecipes": "レシピ",
   "newChat": "新しいチャット",
   "newListTitle": "新しい買い物リスト",
   "newPantryList": "パントリーの買い物",
@@ -663,7 +708,56 @@
   "pantryEmpty": "パントリーは空です",
   "pantryEmptySubtitle": "家に置いておきたい商品を追加",
   "pantryItemRemoved": "アイテムを削除しました",
+  "paywallAfterItem1": "穀物",
+  "paywallAfterItem2": "クリーニング",
+  "paywallAfterItem3": "肉",
+  "paywallAfterItem4": "ベーカリー",
+  "paywallBeforeAfterTitle": "AI の導入前と導入後:",
+  "paywallBeforeItem1": "米",
+  "paywallBeforeItem2": "石鹸",
+  "paywallBeforeItem3": "肉",
+  "paywallBeforeItem4": "パン",
+  "paywallBenefit1Desc": "年中無休でアイテムを追加、整理、提案します",
+  "paywallBenefit2Desc": "3 リスト制限なし",
+  "paywallBenefit3Desc": "支出の追跡と家族リスト",
+  "paywallBestValue": "ベストバリュー",
+  "paywallCancelAnytime": "いつでもキャンセルできます。約束はありません。",
+  "paywallCtaTrialDays": "無料で始める — {days} 日",
+  "paywallCtaUnlock": "プロのロックを解除する",
+  "paywallFeatureExpenseControl": "経費管理",
+  "paywallFeatureSharing": "共有",
+  "paywallFeatureSmartAI": "スマートAI",
+  "paywallFeatureUnlimitedLists": "無制限のリスト",
+  "paywallFeaturesTitle": "必要なものすべて:",
+  "paywallHeroHeadline": "Kipi AIはいつもあなたのそばに",
+  "paywallHeroSubtitle": "AI をポケットに入れて項目を追加し、リストを整理し、時間を節約します",
+  "paywallLabelCommon": "一般",
+  "paywallLabelPro": "キピリストプロ",
+  "paywallLoadingError": "オファーの読み込み中にエラーが発生しました。もう一度やり直してください。",
+  "paywallMostPopular": "最も人気のある",
+  "paywallPackageAnnual": "年間計画",
+  "paywallPackageLifetime": "生涯アクセス",
+  "paywallPackageMonthly": "月額プラン",
+  "paywallPackageMonthlyDesc": "完全な柔軟性",
+  "paywallPolicy": "プライバシーポリシー",
+  "paywallPricePerMonth": "わずか{price}/月",
+  "paywallPurchaseError": "購入を完了できませんでした。もう一度やり直してください。",
+  "paywallRestore": "復元する",
+  "paywallRestoreError": "復元するアクティブなサブスクリプションが見つかりません。",
+  "paywallSafeCheckout": "安全な支払い",
+  "paywallSavePercent": "{percent}% 節約",
+  "paywallSelectPlan": "プランを選択してください:",
+  "paywallSocialProof": "+2,400 家族が使用しています",
+  "paywallTerms": "利用規約",
+  "paywallTestimonial1Name": "アン S.",
+  "paywallTestimonial1Text": "AI が私の買い物を数秒で整理してくれます。市場訪問ごとに 20 分節約できます。",
+  "paywallTestimonial2Name": "チャールズ M.",
+  "paywallTestimonial2Text": "もうリスト項目を忘れることはありません。 AIチャットがセンセーショナル！",
+  "paywallTestimonialsTitle": "ユーザーの声:",
   "paywallTitle": "KipiList プレミアム",
+  "paywallTrialDays": "{days}日間無料",
+  "paywallTrialMonths": "{count,plural, one{{count} か月無料} other{{count} か月無料}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} 週間無料} other{{count} 週間無料}}",
   "prefAIAssistant": "パーソナルAIアシスタント",
   "prefCustomThemes": "カスタムテーマ",
   "prefExportData": "データをエクスポート",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "調理時間（分）",
   "privacy": "プライバシー",
   "productName": "商品名",
+  "profile": "プロフィール",
   "purchaseError": "購入処理中にエラーが発生しました。もう一度お試しください。",
   "quantityFull": "数量",
   "quantityShort": "数量",
@@ -775,6 +870,7 @@
   "undo": "元に戻す",
   "unit": "単位",
   "unitPack": "パック",
+  "unlockAi": "無制限の AI をアンロックする",
   "unlockFullResponse": "完全な応答のロックを解除する",
   "unmark": "マーク解除",
   "upgrade": "アップグレード",

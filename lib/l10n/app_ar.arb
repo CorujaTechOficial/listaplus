@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} رصيد متبقي",
   "aiEnergy": "طاقة الذكاء الاصطناعي",
   "aiError": "عذراً، حدث خطأ أثناء معالجة طلبك. تحقق من اتصالك أو حاول مرة أخرى لاحقاً.",
+  "aiLimitAlmostReached": "لقد نفدت رسائل الذكاء الاصطناعي تقريبًا",
+  "aiTeaserFallback": "اشترك في Premium للحصول على الاستجابة الكاملة والحصول على نصائح غير محدودة بتقنية الذكاء الاصطناعي لتسوقك...",
   "aiVoiceCommandTooltip": "أمر صوتي بالذكاء الاصطناعي (بريميوم)",
   "allTags": "الكل",
   "alreadyPurchased": "تم شراؤه مسبقاً",
@@ -404,6 +430,17 @@
   "catCleaning": "تنظيف",
   "catFruits": "فواكه",
   "catOthers": "أخرى",
+  "catalogAddItems": "أضف {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "تصفح الكتالوج",
+  "catalogFilterNational": "المواطنين",
+  "catalogMyFrequents": "تردداتي",
+  "catalogProductNotFound": "لم يتم العثور على المنتج، اكتب الاسم",
+  "catalogRareSection": "أقل شيوعا في بلدك",
+  "catalogSearchGlobal": "ابحث عن أي منتج...",
+  "catalogSearchInCategory": "البحث في {category}...",
+  "catalogSortAZ": "من الألف إلى الياء",
+  "catalogSortPopular": "الأكثر شعبية",
+  "catalogTitle": "كتالوج",
   "category": "الفئة",
   "chatError": "خطأ في تحميل الدردشة: {error}",
   "chatHint": "اكتب رسالتك...",
@@ -480,6 +517,8 @@
   "estimated": "تقديري",
   "estimatedCost": "مُقدَّر",
   "estimatedPrice": "السعر التقديري",
+  "exit": "مخرج",
+  "exitShoppingMode": "الخروج من وضع التسوق",
   "exportData": "تصدير البيانات",
   "exportDataSubtitle": "حفظ جميع القوائم بصيغة JSON",
   "exportExcel": "تصدير كـ Excel",
@@ -518,6 +557,7 @@
   "generalAssistant": "المساعد العام",
   "generalHelp": "كيف يمكنني المساعدة في تسوقك اليوم؟",
   "generateShoppingList": "إنشاء قائمة تسوق",
+  "gestureHint": "اضغط مع الاستمرار لتحديد • اسحب للإزالة",
   "globalAssistant": "المساعد العام",
   "howCanIHelp": "كيف يمكنني المساعدة؟",
   "idealQty": "الكمية المثالية",
@@ -541,6 +581,7 @@
   "itemsPurchasedCount": "تم شراء {purchased} من {total}",
   "itemsPurchasedShort": "تم شراء {purchased}/{total}",
   "itemsWillBeAdded": "سيتم إضافة {count} عنصر",
+  "kipiListTitle": "KipiList",
   "language": "اللغة",
   "languageEnglish": "إنجليزي",
   "languagePortuguese": "البرتغالية (البرازيل)",
@@ -555,7 +596,6 @@
   "listHistory": "سجل القوائم",
   "listNameLabel": "اسم القائمة",
   "listOrganizedMagic": "تم تنظيم القائمة بسحر حسب الفئات! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "جاري الاستماع...",
   "lists": "القوائم",
   "loading": "جارٍ التحميل...",
@@ -606,6 +646,10 @@
   "monthlyBudgetTitle": "الميزانية الشهرية",
   "myLists": "قوائمي",
   "myRecipes": "وصفاتي",
+  "navChat": "Chat",
+  "navLists": "القوائم",
+  "navMealPlanner": "قائمة طعام",
+  "navRecipes": "وصفات",
   "newChat": "دردشة جديدة",
   "newListTitle": "قائمة تسوق جديدة",
   "newPantryList": "تسوق المخزن",
@@ -664,7 +708,56 @@
   "pantryEmpty": "المخزن فارغ",
   "pantryEmptySubtitle": "أضف المنتجات التي ترغب في الاحتفاظ بها في المنزل",
   "pantryItemRemoved": "تمت إزالة العنصر",
+  "paywallAfterItem1": "الحبوب",
+  "paywallAfterItem2": "تنظيف",
+  "paywallAfterItem3": "اللحوم",
+  "paywallAfterItem4": "مخبز",
+  "paywallBeforeAfterTitle": "الذكاء الاصطناعي قبل وبعد:",
+  "paywallBeforeItem1": "أرز",
+  "paywallBeforeItem2": "صابون",
+  "paywallBeforeItem3": "لحمة",
+  "paywallBeforeItem4": "خبز",
+  "paywallBenefit1Desc": "يضيف وينظم ويقترح العناصر 24/7",
+  "paywallBenefit2Desc": "لا يوجد حد 3 القائمة",
+  "paywallBenefit3Desc": "تتبع النفقات وقوائم الأسرة",
+  "paywallBestValue": "أفضل قيمة",
+  "paywallCancelAnytime": "إلغاء في أي وقت. لا التزام.",
+  "paywallCtaTrialDays": "ابدأ مجانًا — {days} يومًا",
+  "paywallCtaUnlock": "إفتح PRO",
+  "paywallFeatureExpenseControl": "مراقبة النفقات",
+  "paywallFeatureSharing": "مشاركة",
+  "paywallFeatureSmartAI": "الذكاء الاصطناعي الذكي",
+  "paywallFeatureUnlimitedLists": "قوائم غير محدودة",
+  "paywallFeaturesTitle": "كل ما تحتاجه:",
+  "paywallHeroHeadline": "Kipi AI دائما بجانبك",
+  "paywallHeroSubtitle": "قم بإضافة العناصر وتنظيم القوائم وتوفير الوقت باستخدام الذكاء الاصطناعي في جيبك",
+  "paywallLabelCommon": "شائع",
+  "paywallLabelPro": "كيبيليست برو",
+  "paywallLoadingError": "حدث خطأ أثناء تحميل العروض. حاول ثانية.",
+  "paywallMostPopular": "الأكثر شعبية",
+  "paywallPackageAnnual": "الخطة السنوية",
+  "paywallPackageLifetime": "الوصول مدى الحياة",
+  "paywallPackageMonthly": "الخطة الشهرية",
+  "paywallPackageMonthlyDesc": "المرونة الكاملة",
+  "paywallPolicy": "سياسة الخصوصية",
+  "paywallPricePerMonth": "فقط {price}/شهر",
+  "paywallPurchaseError": "لا يمكن إكمال عملية الشراء. حاول ثانية.",
+  "paywallRestore": "يعيد",
+  "paywallRestoreError": "لم يتم العثور على اشتراك نشط لاستعادته.",
+  "paywallSafeCheckout": "الدفع الآمن",
+  "paywallSavePercent": "حفظ {percent}%",
+  "paywallSelectPlan": "اختر خطتك:",
+  "paywallSocialProof": "+2400 عائلة تستخدمه",
+  "paywallTerms": "شروط الاستخدام",
+  "paywallTestimonial1Name": "آن س.",
+  "paywallTestimonial1Text": "يقوم الذكاء الاصطناعي بتنظيم التسوق في ثوانٍ. أقوم بتوفير 20 دقيقة لكل رحلة إلى السوق.",
+  "paywallTestimonial2Name": "تشارلز م.",
+  "paywallTestimonial2Text": "لم أنس أبدًا عنصر القائمة مرة أخرى. دردشة الذكاء الاصطناعي مثيرة!",
+  "paywallTestimonialsTitle": "ماذا يقول مستخدمونا:",
   "paywallTitle": "KipiList بريميوم",
+  "paywallTrialDays": "{days} أيام مجانية",
+  "paywallTrialMonths": "{count,plural, one{{count} شهر مجاني} other{{count} شهر مجاني}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} أسبوع مجاني} other{{count} أسابيع مجانية}}",
   "prefAIAssistant": "مساعد ذكاء اصطناعي شخصي",
   "prefCustomThemes": "سمات مخصصة",
   "prefExportData": "تصدير البيانات",
@@ -679,6 +772,7 @@
   "prepTimeMinutes": "وقت التحضير (بالدقائق)",
   "privacy": "الخصوصية",
   "productName": "اسم المنتج",
+  "profile": "حساب تعريفي",
   "purchaseError": "خطأ في معالجة الشراء. حاول مرة أخرى.",
   "quantityFull": "الكمية",
   "quantityShort": "الكمية",
@@ -776,6 +870,7 @@
   "undo": "تراجع",
   "unit": "الوحدة",
   "unitPack": "حزمة",
+  "unlockAi": "فتح الذكاء الاصطناعي غير المحدود",
   "unlockFullResponse": "فتح الاستجابة الكاملة",
   "unmark": "إلغاء التحديد",
   "upgrade": "ترقية",

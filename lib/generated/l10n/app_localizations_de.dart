@@ -18,6 +18,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get pantry => 'Vorrat';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Rezepte';
+
+  @override
+  String get navLists => 'Listen';
+
+  @override
+  String get navMealPlanner => 'Speisekarte';
+
+  @override
   String get cancel => 'Abbrechen';
 
   @override
@@ -97,6 +109,15 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Hinzugefügt!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Verlassen Sie den Einkaufsmodus';
+
+  @override
+  String get exit => 'Ausfahrt';
 
   @override
   String selectedItems(int count) {
@@ -620,14 +641,14 @@ class AppLocalizationsDe extends AppLocalizations {
       'Entschuldigung, bei der Verarbeitung deiner Anfrage ist ein Fehler aufgetreten. Überprüfe deine Verbindung oder versuche es später erneut.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Fast keine KI-Nachrichten mehr';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Schalte unbegrenzte KI frei';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Abonnieren Sie Premium, um die vollständige Antwort freizuschalten und unbegrenzt KI-Tipps für Ihren Einkauf zu erhalten ...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -759,17 +780,20 @@ class AppLocalizationsDe extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Fehler beim Laden der Angebote. Versuchen Sie es erneut.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Der Kauf konnte nicht abgeschlossen werden. Versuchen Sie es erneut.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Es wurde kein aktives Abonnement zum Wiederherstellen gefunden.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days TAGE KOSTENLOS';
   }
 
   @override
@@ -777,8 +801,8 @@ class AppLocalizationsDe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count WOCHEN KOSTENLOS',
+      one: '$count WOCHE KOSTENLOS',
     );
     return '$_temp0';
   }
@@ -788,148 +812,149 @@ class AppLocalizationsDe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count MONATE KOSTENLOS',
+      one: '$count MONAT KOSTENLOS',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Alles was Sie brauchen:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Unbegrenzte Listen';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Intelligente KI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Kostenkontrolle';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Teilen';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'KI vorher und nachher:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Gemeinsam';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'Reis';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'Seife';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'Fleisch';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'brot';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Körner';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Reinigung';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Fleisch';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Bäckerei';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Was unsere Benutzer sagen:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'KI organisiert meinen Einkauf in Sekundenschnelle. Ich spare 20 Minuten pro Marktfahrt.';
 
   @override
   String get paywallTestimonial2Name => 'Charles M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Ich habe nie wieder einen Listenpunkt vergessen. Der KI-Chat ist sensationell!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => 'Über 2.400 Familien nutzen es';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Schalte PRO frei';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'Das beste Preis-Leistungs-Verhältnis';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'AM BELIEBTESTEN';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Sichere Zahlung';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Wählen Sie Ihren Plan:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'SPAREN Sie $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Nur $price/Monat';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Jahresplan';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Monatsplan';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Lebenslanger Zugriff';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'Jederzeit kündbar. Keine Verpflichtung.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Datenschutzrichtlinie';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Nutzungsbedingungen';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Wiederherstellen';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI immer an Ihrer Seite';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Fügen Sie Elemente hinzu, organisieren Sie Listen und sparen Sie Zeit mit KI in Ihrer Tasche';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Fügt Artikel rund um die Uhr hinzu, organisiert sie und schlägt sie vor';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Keine Beschränkung auf 3 Listen';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Spesenverfolgung und Familienlisten';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Volle Flexibilität';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Kostenlos starten – $days Tage';
   }
 
   @override
@@ -1656,6 +1681,55 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get shareReferralSubject =>
       'Sichern Sie sich 7 Tage KipiList Premium!';
+
+  @override
+  String get gestureHint =>
+      'Zum Auswählen gedrückt halten. • Zum Entfernen wischen';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Meine Frequents';
+
+  @override
+  String get catalogSearchGlobal =>
+      'Suchen Sie nach einem beliebigen Produkt...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Suche in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Am beliebtesten';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Staatsangehörige';
+
+  @override
+  String get catalogRareSection => 'kommt in Ihrem Land weniger häufig vor';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Fügen Sie $count $_temp0 hinzu →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'Produkt nicht gefunden, geben Sie den Namen ein';
+
+  @override
+  String get catalogBrowse => 'Katalog durchsuchen';
 }
 
 /// The translations for German, as used in Germany (`de_DE`).
@@ -1670,6 +1744,18 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
 
   @override
   String get pantry => 'Vorrat';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Rezepte';
+
+  @override
+  String get navLists => 'Listen';
+
+  @override
+  String get navMealPlanner => 'Speisekarte';
 
   @override
   String get cancel => 'Abbrechen';
@@ -1751,6 +1837,15 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
 
   @override
   String get addedFeedback => 'Hinzugefügt!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Verlassen Sie den Einkaufsmodus';
+
+  @override
+  String get exit => 'Ausfahrt';
 
   @override
   String selectedItems(int count) {
@@ -2274,6 +2369,16 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
       'Entschuldigung, bei der Verarbeitung deiner Anfrage ist ein Fehler aufgetreten. Überprüfe deine Verbindung oder versuche es später erneut.';
 
   @override
+  String get aiLimitAlmostReached => 'Fast keine KI-Nachrichten mehr';
+
+  @override
+  String get unlockAi => 'Schalte unbegrenzte KI frei';
+
+  @override
+  String get aiTeaserFallback =>
+      'Abonnieren Sie Premium, um die vollständige Antwort freizuschalten und unbegrenzt KI-Tipps für Ihren Einkauf zu erhalten ...';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -2401,6 +2506,184 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError =>
+      'Fehler beim Laden der Angebote. Versuchen Sie es erneut.';
+
+  @override
+  String get paywallPurchaseError =>
+      'Der Kauf konnte nicht abgeschlossen werden. Versuchen Sie es erneut.';
+
+  @override
+  String get paywallRestoreError =>
+      'Es wurde kein aktives Abonnement zum Wiederherstellen gefunden.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days TAGE KOSTENLOS';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WOCHEN KOSTENLOS',
+      one: '$count WOCHE KOSTENLOS',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONATE KOSTENLOS',
+      one: '$count MONAT KOSTENLOS',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Alles was Sie brauchen:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Unbegrenzte Listen';
+
+  @override
+  String get paywallFeatureSmartAI => 'Intelligente KI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Kostenkontrolle';
+
+  @override
+  String get paywallFeatureSharing => 'Teilen';
+
+  @override
+  String get paywallBeforeAfterTitle => 'KI vorher und nachher:';
+
+  @override
+  String get paywallLabelCommon => 'Gemeinsam';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'Reis';
+
+  @override
+  String get paywallBeforeItem2 => 'Seife';
+
+  @override
+  String get paywallBeforeItem3 => 'Fleisch';
+
+  @override
+  String get paywallBeforeItem4 => 'brot';
+
+  @override
+  String get paywallAfterItem1 => 'Körner';
+
+  @override
+  String get paywallAfterItem2 => 'Reinigung';
+
+  @override
+  String get paywallAfterItem3 => 'Fleisch';
+
+  @override
+  String get paywallAfterItem4 => 'Bäckerei';
+
+  @override
+  String get paywallTestimonialsTitle => 'Was unsere Benutzer sagen:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'KI organisiert meinen Einkauf in Sekundenschnelle. Ich spare 20 Minuten pro Marktfahrt.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'Ich habe nie wieder einen Listenpunkt vergessen. Der KI-Chat ist sensationell!';
+
+  @override
+  String get paywallSocialProof => 'Über 2.400 Familien nutzen es';
+
+  @override
+  String get paywallCtaUnlock => 'Schalte PRO frei';
+
+  @override
+  String get paywallBestValue => 'Das beste Preis-Leistungs-Verhältnis';
+
+  @override
+  String get paywallMostPopular => 'AM BELIEBTESTEN';
+
+  @override
+  String get paywallSafeCheckout => 'Sichere Zahlung';
+
+  @override
+  String get paywallSelectPlan => 'Wählen Sie Ihren Plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SPAREN Sie $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Nur $price/Monat';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Jahresplan';
+
+  @override
+  String get paywallPackageMonthly => 'Monatsplan';
+
+  @override
+  String get paywallPackageLifetime => 'Lebenslanger Zugriff';
+
+  @override
+  String get paywallCancelAnytime => 'Jederzeit kündbar. Keine Verpflichtung.';
+
+  @override
+  String get paywallPolicy => 'Datenschutzrichtlinie';
+
+  @override
+  String get paywallTerms => 'Nutzungsbedingungen';
+
+  @override
+  String get paywallRestore => 'Wiederherstellen';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI immer an Ihrer Seite';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Fügen Sie Elemente hinzu, organisieren Sie Listen und sparen Sie Zeit mit KI in Ihrer Tasche';
+
+  @override
+  String get paywallBenefit1Desc =>
+      'Fügt Artikel rund um die Uhr hinzu, organisiert sie und schlägt sie vor';
+
+  @override
+  String get paywallBenefit2Desc => 'Keine Beschränkung auf 3 Listen';
+
+  @override
+  String get paywallBenefit3Desc => 'Spesenverfolgung und Familienlisten';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Volle Flexibilität';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Kostenlos starten – $days Tage';
+  }
 
   @override
   String get premiumUpgrade => 'Upgrade zum Freischalten';
@@ -3126,4 +3409,53 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
   @override
   String get shareReferralSubject =>
       'Sichern Sie sich 7 Tage KipiList Premium!';
+
+  @override
+  String get gestureHint =>
+      'Zum Auswählen gedrückt halten. • Zum Entfernen wischen';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Meine Frequents';
+
+  @override
+  String get catalogSearchGlobal =>
+      'Suchen Sie nach einem beliebigen Produkt...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Suche in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Am beliebtesten';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Staatsangehörige';
+
+  @override
+  String get catalogRareSection => 'kommt in Ihrem Land weniger häufig vor';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Fügen Sie $count $_temp0 hinzu →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'Produkt nicht gefunden, geben Sie den Namen ein';
+
+  @override
+  String get catalogBrowse => 'Katalog durchsuchen';
 }

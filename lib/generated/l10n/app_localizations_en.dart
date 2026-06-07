@@ -18,6 +18,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pantry => 'Pantry';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Cancel';
 
   @override
@@ -1647,6 +1659,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
@@ -1663,6 +1718,18 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
   String get pantry => 'Pantry';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Cancel';
 
   @override
@@ -1740,6 +1807,15 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get addedFeedback => 'Added!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -3280,6 +3356,52 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }
 
 /// The translations for English, as used in Canada (`en_CA`).
@@ -3296,6 +3418,18 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   String get pantry => 'Pantry';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Cancel';
 
   @override
@@ -3373,6 +3507,15 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
 
   @override
   String get addedFeedback => 'Added!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -4913,6 +5056,52 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -4929,6 +5118,18 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get pantry => 'Pantry';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Cancel';
 
   @override
@@ -5006,6 +5207,15 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get addedFeedback => 'Added!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -6546,6 +6756,52 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }
 
 /// The translations for English, as used in India (`en_IN`).
@@ -6562,6 +6818,18 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
   String get pantry => 'Pantry';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Cancel';
 
   @override
@@ -6639,6 +6907,15 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
 
   @override
   String get addedFeedback => 'Added!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -8179,6 +8456,52 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }
 
 /// The translations for English, as used in Singapore (`en_SG`).
@@ -8193,6 +8516,18 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
 
   @override
   String get pantry => 'Pantry';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
 
   @override
   String get cancel => 'Cancel';
@@ -8272,6 +8607,15 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
 
   @override
   String get addedFeedback => 'Added!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -9812,6 +10156,52 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }
 
 /// The translations for English, as used in South Africa (`en_ZA`).
@@ -9826,6 +10216,18 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
 
   @override
   String get pantry => 'Pantry';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recipes';
+
+  @override
+  String get navLists => 'Lists';
+
+  @override
+  String get navMealPlanner => 'Menu';
 
   @override
   String get cancel => 'Cancel';
@@ -9905,6 +10307,15 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
 
   @override
   String get addedFeedback => 'Added!';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
 
   @override
   String selectedItems(int count) {
@@ -11445,4 +11856,50 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
 }

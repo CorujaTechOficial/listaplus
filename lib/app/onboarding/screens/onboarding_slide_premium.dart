@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
@@ -151,8 +150,8 @@ class _OnboardingSlidePremiumState
             ),
             child: Padding(
               padding: const EdgeInsets.all(Spacing.md),
-              child: SvgPicture.asset(
-                'assets/images/kipi/kipi_helper.svg',
+              child: Image.asset(
+                'assets/images/kipi/kipi_helper.png',
                 fit: BoxFit.contain,
               ),
             ),

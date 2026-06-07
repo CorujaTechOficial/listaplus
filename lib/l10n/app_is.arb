@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "{remaining} einingar eftir",
   "aiEnergy": "AI orka",
   "aiError": "Því miður, villa kom upp við að vinna úr beiðninni þinni. Athugaðu tenginguna eða reyndu aftur síðar.",
+  "aiLimitAlmostReached": "Næstum upp úr gervigreindarskilaboðum",
+  "aiTeaserFallback": "Gerast áskrifandi að Premium til að opna allt svarið og fá ótakmarkaða gervigreindarráð til að versla...",
   "aiVoiceCommandTooltip": "AI raddskipun (Premium)",
   "allTags": "Allt",
   "alreadyPurchased": "Þegar keypt",
@@ -442,9 +468,21 @@
   "catCleaning": "Hreinsun",
   "catFruits": "Ávextir",
   "catOthers": "Annað",
+  "catalogAddItems": "Bæta við {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Skoðaðu vörulista",
+  "catalogFilterNational": "Landsmenn",
+  "catalogMyFrequents": "Mín tíðindi",
+  "catalogProductNotFound": "Varan fannst ekki, sláðu inn nafnið",
+  "catalogRareSection": "sjaldgæfari í þínu landi",
+  "catalogSearchGlobal": "Leitaðu að hvaða vöru sem er...",
+  "catalogSearchInCategory": "Leitaðu í {category}...",
+  "catalogSortAZ": "A–Ö",
+  "catalogSortPopular": "Vinsælast",
+  "catalogTitle": "Vörulisti",
   "category": "Flokkur",
   "chatError": "Villa við að hlaða spjalli: {error}",
   "chatHint": "Skrifaðu skilaboð...",
+  "chatHintBlocked": "Opnaðu gervigreind til að spjalla",
   "chatSubtitle": "Spurðu um vörutillögur, uppskriftir eða sparnaðarábendingar.",
   "chatSubtitleShort": "Spyrðu um verð, uppskriftir, skipulag...",
   "chooseCurrency": "Veldu Gjaldmiðill",
@@ -517,6 +555,8 @@
   "estimated": "Áætlað",
   "estimatedCost": "Áætlað",
   "estimatedPrice": "Áætlað verð",
+  "exit": "Hætta",
+  "exitShoppingMode": "Hætta verslunarstillingu",
   "exportData": "Flytja út gögn",
   "exportDataSubtitle": "Vista alla lista sem JSON",
   "exportExcel": "Flytja út sem Excel",
@@ -555,6 +595,7 @@
   "generalAssistant": "Almenn aðstoð",
   "generalHelp": "Hvernig get ég aðstoðað þig við innkaupin í dag?",
   "generateShoppingList": "Búa til innkaupalista",
+  "gestureHint": "Haltu inni til að velja • Strjúktu til að fjarlægja",
   "globalAssistant": "Alheimsaðstoð",
   "howCanIHelp": "Hvernig get ég hjálpað?",
   "idealQty": "Ákjósanlegt magn",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "{purchased} af {total} keypt",
   "itemsPurchasedShort": "{purchased}/{total} keypt",
   "itemsWillBeAdded": "{count} hlut(ir) verða bætt við",
+  "kipiListTitle": "KipiList",
   "language": "Tungumál",
   "languageEnglish": "ensku",
   "languagePortuguese": "Português (Brasilía)",
@@ -592,7 +634,6 @@
   "listHistory": "Listasaga",
   "listNameLabel": "Nafn lista",
   "listOrganizedMagic": "Listi töfrandi raðaður í flokka! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Hlustar...",
   "lists": "Listar",
   "loading": "Hleð...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "Mánaðarleg fjárhagsáætlun",
   "myLists": "Listarnir mínir",
   "myRecipes": "Mínar uppskriftir",
+  "navChat": "Chat",
+  "navLists": "Listar",
+  "navMealPlanner": "Matseðill",
+  "navRecipes": "Uppskriftir",
   "newChat": "Nýtt spjall",
   "newListTitle": "Nýr innkaupalisti",
   "newPantryList": "Búrkukaup",
@@ -701,7 +746,56 @@
   "pantryEmpty": "Tóm búrka",
   "pantryEmptySubtitle": "Bættu við vörum sem þú vilt hafa heima",
   "pantryItemRemoved": "Hlut fjarlægður",
+  "paywallAfterItem1": "Korn",
+  "paywallAfterItem2": "Þrif",
+  "paywallAfterItem3": "Kjöt",
+  "paywallAfterItem4": "Bakarí",
+  "paywallBeforeAfterTitle": "AI fyrir og eftir:",
+  "paywallBeforeItem1": "hrísgrjón",
+  "paywallBeforeItem2": "sápu",
+  "paywallBeforeItem3": "kjöti",
+  "paywallBeforeItem4": "brauð",
+  "paywallBenefit1Desc": "Bætir við, skipuleggur og stingur upp á hlutum allan sólarhringinn",
+  "paywallBenefit2Desc": "Engin 3 lista takmörk",
+  "paywallBenefit3Desc": "Kostnaðarmælingar og fjölskyldulistar",
+  "paywallBestValue": "BESTU VERÐI",
+  "paywallCancelAnytime": "Hætta við hvenær sem er. Engin skuldbinding.",
+  "paywallCtaTrialDays": "Byrjaðu ókeypis — {days} dagar",
+  "paywallCtaUnlock": "Opnaðu PRO",
+  "paywallFeatureExpenseControl": "Kostnaðareftirlit",
+  "paywallFeatureSharing": "Samnýting",
+  "paywallFeatureSmartAI": "Snjall gervigreind",
+  "paywallFeatureUnlimitedLists": "Ótakmarkaður listi",
+  "paywallFeaturesTitle": "Allt sem þú þarft:",
+  "paywallHeroHeadline": "Kipi AI alltaf þér við hlið",
+  "paywallHeroSubtitle": "Bættu við hlutum, skipulagðu lista og sparaðu tíma með gervigreind í vasanum",
+  "paywallLabelCommon": "Algengt",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Villa við að hlaða tilboðum. Reyndu aftur.",
+  "paywallMostPopular": "VINSÆLASTA",
+  "paywallPackageAnnual": "Ársáætlun",
+  "paywallPackageLifetime": "Aðgangur fyrir lífstíð",
+  "paywallPackageMonthly": "Mánaðaráætlun",
+  "paywallPackageMonthlyDesc": "Fullur sveigjanleiki",
+  "paywallPolicy": "Persónuverndarstefna",
+  "paywallPricePerMonth": "Aðeins {price}/mánuði",
+  "paywallPurchaseError": "Ekki tókst að ganga frá kaupum. Reyndu aftur.",
+  "paywallRestore": "Endurheimta",
+  "paywallRestoreError": "Engin virk áskrift fannst til að endurheimta.",
+  "paywallSafeCheckout": "Örugg greiðsla",
+  "paywallSavePercent": "SPARA {percent}%",
+  "paywallSelectPlan": "Veldu áætlun þína:",
+  "paywallSocialProof": "+2.400 fjölskyldur nota það",
+  "paywallTerms": "Notkunarskilmálar",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI skipuleggur innkaupin mín á nokkrum sekúndum. Ég spara 20 mín í hverja markaðsferð.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Ég gleymdi aldrei aftur listaatriði. AI spjallið er tilkomumikið!",
+  "paywallTestimonialsTitle": "Það sem notendur okkar segja:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DAGAR ÓKEYPIS",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} VIKA ÓKEYPIS} other{{count} VIKA ÓKEYPIS}}",
   "prefAIAssistant": "Persónulegur AI aðstoðarmaður",
   "prefCustomThemes": "Sérsniðin þemu",
   "prefExportData": "Flytja út gögn",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "Undirbúningstími (mínútur)",
   "privacy": "Persónuvernd",
   "productName": "Heiti vöru",
+  "profile": "Prófíll",
   "purchaseError": "Villa við að vinna úr kaupum. Reyndu aftur.",
   "quantityFull": "Magn",
   "quantityShort": "Magn",
@@ -813,6 +908,7 @@
   "undo": "Afturkalla",
   "unit": "Eining",
   "unitPack": "pakkning",
+  "unlockAi": "Opnaðu ótakmarkaða gervigreind",
   "unlockFullResponse": "Opnaðu fullt svar",
   "unmark": "Afmerkja",
   "upgrade": "Uppfæra",

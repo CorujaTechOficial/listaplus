@@ -4,6 +4,8 @@ import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/domain/entities/unit.dart';
 import 'package:shopping_list/models/shopping_item.dart';
+import 'package:shopping_list/utils/string_extensions.dart';
+import 'package:collection/collection.dart';
 
 part 'pantry_providers.g.dart';
 
@@ -30,7 +32,7 @@ class PantryItems extends _$PantryItems {
     final currentItems = state.value ?? [];
 
     if (!isPremium && currentItems.length >= freePantryLimit) {
-      throw Exception('Limite de $freePantryLimit itens na dispensa no plano gratuito. Faça upgrade para adicionar mais.');
+      throw Exception('Limite de $freePantryLimit itens na despensa no plano gratuito. Faça upgrade para adicionar mais.');
     }
 
     final service = ref.read(firestoreServiceProvider);
@@ -297,4 +299,11 @@ class PantrySuggestions extends _$PantrySuggestions {
             ))
         .toList();
   }
+}
+
+@riverpod
+PantryItem? findInPantry(Ref ref, String itemName) {
+  final items = ref.watch(pantryItemsProvider).value ?? [];
+  final normalizedName = itemName.normalize();
+  return items.firstWhereOrNull((PantryItem i) => i.name.normalize() == normalizedName);
 }

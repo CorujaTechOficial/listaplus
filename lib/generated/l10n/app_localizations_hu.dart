@@ -18,6 +18,18 @@ class AppLocalizationsHu extends AppLocalizations {
   String get pantry => 'Kamra';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Receptek';
+
+  @override
+  String get navLists => 'Listák';
+
+  @override
+  String get navMealPlanner => 'Menü';
+
+  @override
   String get cancel => 'Mégse';
 
   @override
@@ -97,6 +109,15 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Hozzáadva!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Lépjen ki a Vásárlás módból';
+
+  @override
+  String get exit => 'Kijárat';
 
   @override
   String selectedItems(int count) {
@@ -596,7 +617,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get chatHint => 'Írja be az üzenetét...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'Oldja fel az AI-t a csevegéshez';
 
   @override
   String chatError(String error) {
@@ -618,14 +639,14 @@ class AppLocalizationsHu extends AppLocalizations {
       'Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Majdnem kifogytak az AI-üzenetek';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Oldja fel a korlátlan AI-t';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Iratkozzon fel a Premiumra, hogy feloldja a teljes választ, és korlátlan számú mesterséges intelligenciával kapcsolatos tippet kapjon a vásárláshoz...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -755,17 +776,20 @@ class AppLocalizationsHu extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Hiba az ajánlatok betöltésekor. Próbáld újra.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Nem sikerült befejezni a vásárlást. Próbáld újra.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Nem található visszaállítandó aktív előfizetés.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days NAP INGYENES';
   }
 
   @override
@@ -773,8 +797,8 @@ class AppLocalizationsHu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count HÉT INGYENES',
+      one: '$count INGYENES HÉT',
     );
     return '$_temp0';
   }
@@ -784,148 +808,150 @@ class AppLocalizationsHu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count HÓNAP INGYENES',
+      one: '$count HÓNAP INGYENES',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Minden, amire szüksége van:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Korlátlan listák';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Intelligens AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Költségszabályozás';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Megosztás';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI előtt és után:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Közös';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'rizs';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'szappan';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'hús';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'kenyér';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Szemek';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Tisztítás';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Húsok';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Pékség';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Felhasználóink ​​véleménye:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'Az AI pillanatok alatt megszervezi a vásárlásomat. 20 percet spórolok piaci kirándulásonként.';
 
   @override
   String get paywallTestimonial2Name => 'Charles M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Soha többé nem felejtettem el egyetlen listaelemet sem. Az AI chat szenzációs!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2400 család használja';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'A PRO feloldása';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'LEGJOBB ÉRTÉK';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'LEGNÉPSZERŰBB';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Biztonságos fizetés';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Válassza ki tervét:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'MEGTAKARÍTÁS $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Csak $price/hó';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Éves terv';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Havi terv';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Életre szóló hozzáférés';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime =>
+      'Bármikor lemondhatja. Nincs elkötelezettség.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Adatvédelmi szabályzat';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Felhasználási feltételek';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Visszaállítás';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI mindig melletted';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Adjon hozzá elemeket, rendezze a listákat, és takarítson meg időt a mesterséges intelligencia segítségével';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Hozzáad, rendszerez és javasol elemeket a hét minden napján, 24 órában';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Nincs 3 listás korlát';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Költségkövetés és családlisták';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Teljes rugalmasság';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Kezdje ingyen – $days nap';
   }
 
   @override
@@ -1649,6 +1675,54 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get shareReferralSubject => '7 nap KipiList Premium!';
+
+  @override
+  String get gestureHint =>
+      'Tartsa lenyomva a kiválasztáshoz • Csúsztassa az ujját az eltávolításhoz';
+
+  @override
+  String get catalogTitle => 'Katalógus';
+
+  @override
+  String get catalogMyFrequents => 'Gyakoriságaim';
+
+  @override
+  String get catalogSearchGlobal => 'Keressen bármilyen terméket...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Keresés itt: $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'A legnépszerűbb';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nemzetiek';
+
+  @override
+  String get catalogRareSection => 'kevésbé gyakori az Ön országában';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 hozzáadása →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'A termék nem található, írja be a nevet';
+
+  @override
+  String get catalogBrowse => 'Tallózás a katalógusban';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -1663,6 +1737,18 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get pantry => 'Kamra';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Receptek';
+
+  @override
+  String get navLists => 'Listák';
+
+  @override
+  String get navMealPlanner => 'Menü';
 
   @override
   String get cancel => 'Mégse';
@@ -1744,6 +1830,15 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get addedFeedback => 'Hozzáadva!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Lépjen ki a Vásárlás módból';
+
+  @override
+  String get exit => 'Kijárat';
 
   @override
   String selectedItems(int count) {
@@ -2243,6 +2338,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get chatHint => 'Írja be az üzenetét...';
 
   @override
+  String get chatHintBlocked => 'Oldja fel az AI-t a csevegéshez';
+
+  @override
   String chatError(String error) {
     return 'Hiba a chat betöltésekor: $error';
   }
@@ -2260,6 +2358,16 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   @override
   String get aiError =>
       'Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.';
+
+  @override
+  String get aiLimitAlmostReached => 'Majdnem kifogytak az AI-üzenetek';
+
+  @override
+  String get unlockAi => 'Oldja fel a korlátlan AI-t';
+
+  @override
+  String get aiTeaserFallback =>
+      'Iratkozzon fel a Premiumra, hogy feloldja a teljes választ, és korlátlan számú mesterséges intelligenciával kapcsolatos tippet kapjon a vásárláshoz...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -2387,6 +2495,185 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError =>
+      'Hiba az ajánlatok betöltésekor. Próbáld újra.';
+
+  @override
+  String get paywallPurchaseError =>
+      'Nem sikerült befejezni a vásárlást. Próbáld újra.';
+
+  @override
+  String get paywallRestoreError =>
+      'Nem található visszaállítandó aktív előfizetés.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days NAP INGYENES';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count HÉT INGYENES',
+      one: '$count INGYENES HÉT',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count HÓNAP INGYENES',
+      one: '$count HÓNAP INGYENES',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Minden, amire szüksége van:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Korlátlan listák';
+
+  @override
+  String get paywallFeatureSmartAI => 'Intelligens AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Költségszabályozás';
+
+  @override
+  String get paywallFeatureSharing => 'Megosztás';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI előtt és után:';
+
+  @override
+  String get paywallLabelCommon => 'Közös';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'rizs';
+
+  @override
+  String get paywallBeforeItem2 => 'szappan';
+
+  @override
+  String get paywallBeforeItem3 => 'hús';
+
+  @override
+  String get paywallBeforeItem4 => 'kenyér';
+
+  @override
+  String get paywallAfterItem1 => 'Szemek';
+
+  @override
+  String get paywallAfterItem2 => 'Tisztítás';
+
+  @override
+  String get paywallAfterItem3 => 'Húsok';
+
+  @override
+  String get paywallAfterItem4 => 'Pékség';
+
+  @override
+  String get paywallTestimonialsTitle => 'Felhasználóink ​​véleménye:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'Az AI pillanatok alatt megszervezi a vásárlásomat. 20 percet spórolok piaci kirándulásonként.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'Soha többé nem felejtettem el egyetlen listaelemet sem. Az AI chat szenzációs!';
+
+  @override
+  String get paywallSocialProof => '+2400 család használja';
+
+  @override
+  String get paywallCtaUnlock => 'A PRO feloldása';
+
+  @override
+  String get paywallBestValue => 'LEGJOBB ÉRTÉK';
+
+  @override
+  String get paywallMostPopular => 'LEGNÉPSZERŰBB';
+
+  @override
+  String get paywallSafeCheckout => 'Biztonságos fizetés';
+
+  @override
+  String get paywallSelectPlan => 'Válassza ki tervét:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'MEGTAKARÍTÁS $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Csak $price/hó';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Éves terv';
+
+  @override
+  String get paywallPackageMonthly => 'Havi terv';
+
+  @override
+  String get paywallPackageLifetime => 'Életre szóló hozzáférés';
+
+  @override
+  String get paywallCancelAnytime =>
+      'Bármikor lemondhatja. Nincs elkötelezettség.';
+
+  @override
+  String get paywallPolicy => 'Adatvédelmi szabályzat';
+
+  @override
+  String get paywallTerms => 'Felhasználási feltételek';
+
+  @override
+  String get paywallRestore => 'Visszaállítás';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI mindig melletted';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Adjon hozzá elemeket, rendezze a listákat, és takarítson meg időt a mesterséges intelligencia segítségével';
+
+  @override
+  String get paywallBenefit1Desc =>
+      'Hozzáad, rendszerez és javasol elemeket a hét minden napján, 24 órában';
+
+  @override
+  String get paywallBenefit2Desc => 'Nincs 3 listás korlát';
+
+  @override
+  String get paywallBenefit3Desc => 'Költségkövetés és családlisták';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Teljes rugalmasság';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Kezdje ingyen – $days nap';
+  }
 
   @override
   String get premiumUpgrade => 'Frissítsen a feloldáshoz';
@@ -3109,4 +3396,52 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get shareReferralSubject => '7 nap KipiList Premium!';
+
+  @override
+  String get gestureHint =>
+      'Tartsa lenyomva a kiválasztáshoz • Csúsztassa az ujját az eltávolításhoz';
+
+  @override
+  String get catalogTitle => 'Katalógus';
+
+  @override
+  String get catalogMyFrequents => 'Gyakoriságaim';
+
+  @override
+  String get catalogSearchGlobal => 'Keressen bármilyen terméket...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Keresés itt: $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'A legnépszerűbb';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nemzetiek';
+
+  @override
+  String get catalogRareSection => 'kevésbé gyakori az Ön országában';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 hozzáadása →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'A termék nem található, írja be a nevet';
+
+  @override
+  String get catalogBrowse => 'Tallózás a katalógusban';
 }

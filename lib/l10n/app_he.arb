@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -267,6 +284,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -347,6 +371,8 @@
   "aiCreditsRemaining": "נותרו {remaining} נקודות זכות",
   "aiEnergy": "AI Energy",
   "aiError": "מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.",
+  "aiLimitAlmostReached": "כמעט נגמרו הודעות הבינה המלאכותית",
+  "aiTeaserFallback": "הירשם ל-Premium כדי לפתוח את התגובה המלאה ולקבל טיפים בלתי מוגבלים בינה מלאכותית לקניות שלך...",
   "aiVoiceCommandTooltip": "פקודה קולית AI (Premium)",
   "allTags": "הכל",
   "alreadyPurchased": "כבר נרכש",
@@ -378,9 +404,21 @@
   "catCleaning": "ניקיון",
   "catFruits": "פירות",
   "catOthers": "אחר",
+  "catalogAddItems": "הוסף {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "עיין בקטלוג",
+  "catalogFilterNational": "אזרחים",
+  "catalogMyFrequents": "התדירות שלי",
+  "catalogProductNotFound": "המוצר לא נמצא, הקלד את השם",
+  "catalogRareSection": "פחות נפוץ במדינה שלך",
+  "catalogSearchGlobal": "חפש בכל מוצר...",
+  "catalogSearchInCategory": "חפש ב{category}...",
+  "catalogSortAZ": "א–ז",
+  "catalogSortPopular": "הכי פופולרי",
+  "catalogTitle": "קָטָלוֹג",
   "category": "קטגוריה",
   "chatError": "שגיאה בטעינת הצ'אט: {error}",
   "chatHint": "הקלד את ההודעה שלך...",
+  "chatHintBlocked": "פתח את הנעילה של AI כדי לשוחח",
   "chatSubtitle": "בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.",
   "chatSubtitleShort": "שאל על מחירים, מתכונים, ארגון...",
   "chooseCurrency": "בחר מטבע",
@@ -453,6 +491,8 @@
   "estimated": "מוערך",
   "estimatedCost": "מְשׁוֹעָר",
   "estimatedPrice": "מחיר משוער",
+  "exit": "יְצִיאָה",
+  "exitShoppingMode": "צא ממצב קניות",
   "exportData": "ייצא נתונים",
   "exportDataSubtitle": "שמור את כל הרשימות כ-JSON",
   "exportExcel": "ייצא כ-Excel",
@@ -491,6 +531,7 @@
   "generalAssistant": "עוזר כללי",
   "generalHelp": "איך אני יכול לעזור עם הקניות שלך היום?",
   "generateShoppingList": "צור רשימת קניות",
+  "gestureHint": "החזק כדי לבחור • החלק להסרה",
   "globalAssistant": "עוזר כללי",
   "howCanIHelp": "איך אני יכול לעזור?",
   "idealQty": "כמות אידיאלית",
@@ -514,6 +555,7 @@
   "itemsPurchasedCount": "{purchased} מתוך {total} נרכש",
   "itemsPurchasedShort": "{purchased}/{total} נרכש",
   "itemsWillBeAdded": "{count} פריט(ים) יתווספו",
+  "kipiListTitle": "KipiList",
   "language": "שפה",
   "languageEnglish": "אַנגְלִית",
   "languagePortuguese": "Português (ברזיל)",
@@ -528,7 +570,6 @@
   "listHistory": "היסטוריית רשימות",
   "listNameLabel": "שם הרשימה",
   "listOrganizedMagic": "הרשימה אורגנה בקסם לפי קטגוריות! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "הַקשָׁבָה...",
   "lists": "רשימות",
   "loading": "טוען...",
@@ -579,6 +620,10 @@
   "monthlyBudgetTitle": "תקציב חודשי",
   "myLists": "הרשימות שלי",
   "myRecipes": "המתכונים שלי",
+  "navChat": "Chat",
+  "navLists": "רשימות",
+  "navMealPlanner": "תַפרִיט",
+  "navRecipes": "מתכונים",
   "newChat": "צ'אט חדש",
   "newListTitle": "רשימת קניות חדשה",
   "newPantryList": "קניית מזווה",
@@ -637,7 +682,56 @@
   "pantryEmpty": "מזווה ריק",
   "pantryEmptySubtitle": "הוסף מוצרים שאתה רוצה להחזיק בבית",
   "pantryItemRemoved": "הפריט הוסר",
+  "paywallAfterItem1": "דגנים",
+  "paywallAfterItem2": "ניקוי",
+  "paywallAfterItem3": "בשרים",
+  "paywallAfterItem4": "מַאֲפִיָה",
+  "paywallBeforeAfterTitle": "AI לפני ואחרי:",
+  "paywallBeforeItem1": "אוֹרֶז",
+  "paywallBeforeItem2": "סַבּוֹן",
+  "paywallBeforeItem3": "בָּשָׂר",
+  "paywallBeforeItem4": "לֶחֶם",
+  "paywallBenefit1Desc": "מוסיף, מארגן ומציע פריטים 24/7",
+  "paywallBenefit2Desc": "אין מגבלה של 3 רשימות",
+  "paywallBenefit3Desc": "מעקב אחר הוצאות ורשימות משפחתיות",
+  "paywallBestValue": "הערך הטוב ביותר",
+  "paywallCancelAnytime": "בטל בכל עת. אין התחייבות.",
+  "paywallCtaTrialDays": "התחל בחינם - {days} ימים",
+  "paywallCtaUnlock": "בטל את הנעילה של PRO",
+  "paywallFeatureExpenseControl": "בקרת הוצאות",
+  "paywallFeatureSharing": "שיתוף",
+  "paywallFeatureSmartAI": "AI חכם",
+  "paywallFeatureUnlimitedLists": "רשימות ללא הגבלה",
+  "paywallFeaturesTitle": "כל מה שאתה צריך:",
+  "paywallHeroHeadline": "Kipi AI תמיד לצידך",
+  "paywallHeroSubtitle": "הוסף פריטים, ארגן רשימות וחסוך זמן עם AI בכיס",
+  "paywallLabelCommon": "מְשׁוּתָף",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "שגיאה בטעינת הצעות. נסה שוב.",
+  "paywallMostPopular": "הכי פופולרי",
+  "paywallPackageAnnual": "תוכנית שנתית",
+  "paywallPackageLifetime": "גישה לכל החיים",
+  "paywallPackageMonthly": "תוכנית חודשית",
+  "paywallPackageMonthlyDesc": "גמישות מלאה",
+  "paywallPolicy": "מדיניות פרטיות",
+  "paywallPricePerMonth": "רק {price} לחודש",
+  "paywallPurchaseError": "לא ניתן היה להשלים את הרכישה. נסה שוב.",
+  "paywallRestore": "לְשַׁחְזֵר",
+  "paywallRestoreError": "לא נמצא מנוי פעיל לשחזור.",
+  "paywallSafeCheckout": "תשלום מאובטח",
+  "paywallSavePercent": "חסוך {percent}%",
+  "paywallSelectPlan": "בחר את התוכנית שלך:",
+  "paywallSocialProof": "+2,400 משפחות משתמשות בו",
+  "paywallTerms": "תנאי שימוש",
+  "paywallTestimonial1Name": "אן ס.",
+  "paywallTestimonial1Text": "AI מארגן את הקניות שלי בשניות. אני חוסך 20 דקות לטיול בשוק.",
+  "paywallTestimonial2Name": "צ'ארלס מ.",
+  "paywallTestimonial2Text": "לא שכחתי שוב פריט ברשימה. צ'אט AI הוא סנסציוני!",
+  "paywallTestimonialsTitle": "מה המשתמשים שלנו אומרים:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ימים בחינם",
+  "paywallTrialMonths": "{count,plural, one{{count} חודש חינם} other{{count} חודשים בחינם}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} שבוע חינם} other{{count} שבועות בחינם}}",
   "prefAIAssistant": "עוזר AI אישי",
   "prefCustomThemes": "ערכות נושא מותאמות",
   "prefExportData": "ייצא נתונים",
@@ -652,6 +746,7 @@
   "prepTimeMinutes": "זמן הכנה (דקות)",
   "privacy": "פרטיות",
   "productName": "שם המוצר",
+  "profile": "פּרוֹפִיל",
   "purchaseError": "שגיאה בעיבוד הרכישה. נסה שוב.",
   "quantityFull": "כמות",
   "quantityShort": "כמות",
@@ -749,6 +844,7 @@
   "undo": "בטל",
   "unit": "יחידה",
   "unitPack": "חבילה",
+  "unlockAi": "פתח AI ללא הגבלה",
   "unlockFullResponse": "בטל נעילת תגובה מלאה",
   "unmark": "הסר סימון",
   "upgrade": "שדרוג",

@@ -18,6 +18,18 @@ class AppLocalizationsKk extends AppLocalizations {
   String get pantry => 'Азық-түлік қоры';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Рецепттер';
+
+  @override
+  String get navLists => 'Тізімдер';
+
+  @override
+  String get navMealPlanner => 'Мәзір';
+
+  @override
   String get cancel => 'Болдырмау';
 
   @override
@@ -97,6 +109,15 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Қосылды!';
+
+  @override
+  String get profile => 'Профиль';
+
+  @override
+  String get exitShoppingMode => 'Сатып алу режимінен шығу';
+
+  @override
+  String get exit => 'Шығу';
 
   @override
   String selectedItems(int count) {
@@ -595,7 +616,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get chatHint => 'Хабарламаңызды жазыңыз...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'Сөйлесу үшін AI құлпын ашыңыз';
 
   @override
   String chatError(String error) {
@@ -617,14 +638,14 @@ class AppLocalizationsKk extends AppLocalizations {
       'Кешіріңіз, сұрауыңызды өңдеу кезінде қате пайда болды. Қосылымыңызды тексеріңіз немесе кейінірек қайталап көріңіз.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'AI хабарлары дерлік';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Шексіз AI құлпын ашыңыз';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Толық жауаптың құлпын ашу және сатып алу үшін шексіз AI кеңестерін алу үшін Premium-ге жазылыңыз...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -755,17 +776,20 @@ class AppLocalizationsKk extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Ұсыныстарды жүктеу қатесі. Қайтадан байқап көріңіз.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Сатып алу аяқталмады. Қайтадан байқап көріңіз.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Қалпына келтіру үшін белсенді жазылым табылмады.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days КҮН ТЕГІН';
   }
 
   @override
@@ -773,8 +797,8 @@ class AppLocalizationsKk extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count АПТА ТЕГІН',
+      one: '$count АПТА ТЕГІН',
     );
     return '$_temp0';
   }
@@ -784,148 +808,151 @@ class AppLocalizationsKk extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count АЙ ТЕГІН',
+      one: '$count АЙ ТЕГІН',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Сізге қажет нәрсенің бәрі:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Шексіз тізімдер';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Ақылды AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Шығындарды бақылау';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Бөлісу';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI алдында және кейін:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Жалпы';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'күріш';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'сабын';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'ет';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'нан';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Дәндер';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Тазалау';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Еттер';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Наубайхана';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Біздің қолданушылар не дейді:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => 'Энн С.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI менің сатып алуларымды секундтарда ұйымдастырады. Мен базарға бару үшін 20 минут үнемдеймін.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'Чарльз М.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Мен тізімдегі бір элементті қайтадан ұмытпадым. AI чаты сенсациялық!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2400 отбасы пайдаланады';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'PRO құлпын ашыңыз';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'ҮЗДІК ҚҰН';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'ЕҢ ТАНЫМАЛ';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Қауіпсіз төлем';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Жоспарыңызды таңдаңыз:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return '$percent% ҮНЕМДЕУ';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Тек $price/ай';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Жылдық жоспар';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Айлық жоспар';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Өмір бойы қол жеткізу';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime =>
+      'Кез келген уақытта бас тарту. Міндеттеме жоқ.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Құпиялылық саясаты';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Пайдалану шарттары';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Қалпына келтіру';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI әрқашан сіздің қасыңызда';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Қалтаңыздағы AI көмегімен элементтерді қосыңыз, тізімдерді реттеңіз және уақытты үнемдеңіз';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      '24/7 элементтерді қосады, реттейді және ұсынады';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => '3 тізімге шектеу жоқ';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc =>
+      'Шығындарды қадағалау және отбасы тізімдері';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Толық икемділік';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Тегін бастаңыз — $days күн';
   }
 
   @override
@@ -1648,4 +1675,50 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get shareReferralSubject => '7 күн KipiList Premium алыңыз!';
+
+  @override
+  String get gestureHint => 'Таңдау үшін басып тұрыңыз • Жою үшін сырғытыңыз';
+
+  @override
+  String get catalogTitle => 'Каталог';
+
+  @override
+  String get catalogMyFrequents => 'Менің жиілерім';
+
+  @override
+  String get catalogSearchGlobal => 'Кез келген өнімді іздеу...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category ішінен іздеу...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Ең танымал';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Ұлттық';
+
+  @override
+  String get catalogRareSection => 'еліңізде сирек кездеседі';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 қосу →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Өнім табылмады, атын теріңіз';
+
+  @override
+  String get catalogBrowse => 'Каталогты шолу';
 }

@@ -18,6 +18,18 @@ class AppLocalizationsIs extends AppLocalizations {
   String get pantry => 'Búrka';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Uppskriftir';
+
+  @override
+  String get navLists => 'Listar';
+
+  @override
+  String get navMealPlanner => 'Matseðill';
+
+  @override
   String get cancel => 'Hætta við';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Bætt við!';
+
+  @override
+  String get profile => 'Prófíll';
+
+  @override
+  String get exitShoppingMode => 'Hætta verslunarstillingu';
+
+  @override
+  String get exit => 'Hætta';
 
   @override
   String selectedItems(int count) {
@@ -594,7 +615,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get chatHint => 'Skrifaðu skilaboð...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'Opnaðu gervigreind til að spjalla';
 
   @override
   String chatError(String error) {
@@ -616,14 +637,14 @@ class AppLocalizationsIs extends AppLocalizations {
       'Því miður, villa kom upp við að vinna úr beiðninni þinni. Athugaðu tenginguna eða reyndu aftur síðar.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Næstum upp úr gervigreindarskilaboðum';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Opnaðu ótakmarkaða gervigreind';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Gerast áskrifandi að Premium til að opna allt svarið og fá ótakmarkaða gervigreindarráð til að versla...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -754,17 +775,20 @@ class AppLocalizationsIs extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Villa við að hlaða tilboðum. Reyndu aftur.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Ekki tókst að ganga frá kaupum. Reyndu aftur.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Engin virk áskrift fannst til að endurheimta.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days DAGAR ÓKEYPIS';
   }
 
   @override
@@ -772,8 +796,8 @@ class AppLocalizationsIs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count VIKA ÓKEYPIS',
+      one: '$count VIKA ÓKEYPIS',
     );
     return '$_temp0';
   }
@@ -790,141 +814,143 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Allt sem þú þarft:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Ótakmarkaður listi';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Snjall gervigreind';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Kostnaðareftirlit';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Samnýting';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI fyrir og eftir:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Algengt';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'hrísgrjón';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'sápu';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'kjöti';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'brauð';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Korn';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Þrif';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Kjöt';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Bakarí';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Það sem notendur okkar segja:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI skipuleggur innkaupin mín á nokkrum sekúndum. Ég spara 20 mín í hverja markaðsferð.';
 
   @override
   String get paywallTestimonial2Name => 'Charles M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Ég gleymdi aldrei aftur listaatriði. AI spjallið er tilkomumikið!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2.400 fjölskyldur nota það';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Opnaðu PRO';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'BESTU VERÐI';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'VINSÆLASTA';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Örugg greiðsla';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Veldu áætlun þína:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'SPARA $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Aðeins $price/mánuði';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Ársáætlun';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Mánaðaráætlun';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Aðgangur fyrir lífstíð';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime =>
+      'Hætta við hvenær sem er. Engin skuldbinding.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Persónuverndarstefna';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Notkunarskilmálar';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Endurheimta';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI alltaf þér við hlið';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Bættu við hlutum, skipulagðu lista og sparaðu tíma með gervigreind í vasanum';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Bætir við, skipuleggur og stingur upp á hlutum allan sólarhringinn';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Engin 3 lista takmörk';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Kostnaðarmælingar og fjölskyldulistar';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Fullur sveigjanleiki';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Byrjaðu ókeypis — $days dagar';
   }
 
   @override
@@ -1643,6 +1669,53 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Fáðu 7 daga af KipiList Premium!';
+
+  @override
+  String get gestureHint =>
+      'Haltu inni til að velja • Strjúktu til að fjarlægja';
+
+  @override
+  String get catalogTitle => 'Vörulisti';
+
+  @override
+  String get catalogMyFrequents => 'Mín tíðindi';
+
+  @override
+  String get catalogSearchGlobal => 'Leitaðu að hvaða vöru sem er...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Leitaðu í $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Vinsælast';
+
+  @override
+  String get catalogSortAZ => 'A–Ö';
+
+  @override
+  String get catalogFilterNational => 'Landsmenn';
+
+  @override
+  String get catalogRareSection => 'sjaldgæfari í þínu landi';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Bæta við $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Varan fannst ekki, sláðu inn nafnið';
+
+  @override
+  String get catalogBrowse => 'Skoðaðu vörulista';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -1657,6 +1730,18 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get pantry => 'Búrka';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Uppskriftir';
+
+  @override
+  String get navLists => 'Listar';
+
+  @override
+  String get navMealPlanner => 'Matseðill';
 
   @override
   String get cancel => 'Hætta við';
@@ -1736,6 +1821,15 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get addedFeedback => 'Bætt við!';
+
+  @override
+  String get profile => 'Prófíll';
+
+  @override
+  String get exitShoppingMode => 'Hætta verslunarstillingu';
+
+  @override
+  String get exit => 'Hætta';
 
   @override
   String selectedItems(int count) {
@@ -2235,6 +2329,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get chatHint => 'Skrifaðu skilaboð...';
 
   @override
+  String get chatHintBlocked => 'Opnaðu gervigreind til að spjalla';
+
+  @override
   String chatError(String error) {
     return 'Villa við að hlaða spjalli: $error';
   }
@@ -2252,6 +2349,16 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   @override
   String get aiError =>
       'Því miður, villa kom upp við að vinna úr beiðninni þinni. Athugaðu tenginguna eða reyndu aftur síðar.';
+
+  @override
+  String get aiLimitAlmostReached => 'Næstum upp úr gervigreindarskilaboðum';
+
+  @override
+  String get unlockAi => 'Opnaðu ótakmarkaða gervigreind';
+
+  @override
+  String get aiTeaserFallback =>
+      'Gerast áskrifandi að Premium til að opna allt svarið og fá ótakmarkaða gervigreindarráð til að versla...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -2380,6 +2487,185 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError =>
+      'Villa við að hlaða tilboðum. Reyndu aftur.';
+
+  @override
+  String get paywallPurchaseError =>
+      'Ekki tókst að ganga frá kaupum. Reyndu aftur.';
+
+  @override
+  String get paywallRestoreError =>
+      'Engin virk áskrift fannst til að endurheimta.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAGAR ÓKEYPIS';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count VIKA ÓKEYPIS',
+      one: '$count VIKA ÓKEYPIS',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Allt sem þú þarft:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Ótakmarkaður listi';
+
+  @override
+  String get paywallFeatureSmartAI => 'Snjall gervigreind';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Kostnaðareftirlit';
+
+  @override
+  String get paywallFeatureSharing => 'Samnýting';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI fyrir og eftir:';
+
+  @override
+  String get paywallLabelCommon => 'Algengt';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'hrísgrjón';
+
+  @override
+  String get paywallBeforeItem2 => 'sápu';
+
+  @override
+  String get paywallBeforeItem3 => 'kjöti';
+
+  @override
+  String get paywallBeforeItem4 => 'brauð';
+
+  @override
+  String get paywallAfterItem1 => 'Korn';
+
+  @override
+  String get paywallAfterItem2 => 'Þrif';
+
+  @override
+  String get paywallAfterItem3 => 'Kjöt';
+
+  @override
+  String get paywallAfterItem4 => 'Bakarí';
+
+  @override
+  String get paywallTestimonialsTitle => 'Það sem notendur okkar segja:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI skipuleggur innkaupin mín á nokkrum sekúndum. Ég spara 20 mín í hverja markaðsferð.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'Ég gleymdi aldrei aftur listaatriði. AI spjallið er tilkomumikið!';
+
+  @override
+  String get paywallSocialProof => '+2.400 fjölskyldur nota það';
+
+  @override
+  String get paywallCtaUnlock => 'Opnaðu PRO';
+
+  @override
+  String get paywallBestValue => 'BESTU VERÐI';
+
+  @override
+  String get paywallMostPopular => 'VINSÆLASTA';
+
+  @override
+  String get paywallSafeCheckout => 'Örugg greiðsla';
+
+  @override
+  String get paywallSelectPlan => 'Veldu áætlun þína:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SPARA $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Aðeins $price/mánuði';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Ársáætlun';
+
+  @override
+  String get paywallPackageMonthly => 'Mánaðaráætlun';
+
+  @override
+  String get paywallPackageLifetime => 'Aðgangur fyrir lífstíð';
+
+  @override
+  String get paywallCancelAnytime =>
+      'Hætta við hvenær sem er. Engin skuldbinding.';
+
+  @override
+  String get paywallPolicy => 'Persónuverndarstefna';
+
+  @override
+  String get paywallTerms => 'Notkunarskilmálar';
+
+  @override
+  String get paywallRestore => 'Endurheimta';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI alltaf þér við hlið';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Bættu við hlutum, skipulagðu lista og sparaðu tíma með gervigreind í vasanum';
+
+  @override
+  String get paywallBenefit1Desc =>
+      'Bætir við, skipuleggur og stingur upp á hlutum allan sólarhringinn';
+
+  @override
+  String get paywallBenefit2Desc => 'Engin 3 lista takmörk';
+
+  @override
+  String get paywallBenefit3Desc => 'Kostnaðarmælingar og fjölskyldulistar';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Fullur sveigjanleiki';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Byrjaðu ókeypis — $days dagar';
+  }
 
   @override
   String get premiumUpgrade => 'Uppfærðu til að opna';
@@ -3097,4 +3383,51 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get shareReferralSubject => 'Fáðu 7 daga af KipiList Premium!';
+
+  @override
+  String get gestureHint =>
+      'Haltu inni til að velja • Strjúktu til að fjarlægja';
+
+  @override
+  String get catalogTitle => 'Vörulisti';
+
+  @override
+  String get catalogMyFrequents => 'Mín tíðindi';
+
+  @override
+  String get catalogSearchGlobal => 'Leitaðu að hvaða vöru sem er...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Leitaðu í $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Vinsælast';
+
+  @override
+  String get catalogSortAZ => 'A–Ö';
+
+  @override
+  String get catalogFilterNational => 'Landsmenn';
+
+  @override
+  String get catalogRareSection => 'sjaldgæfari í þínu landi';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Bæta við $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Varan fannst ekki, sláðu inn nafnið';
+
+  @override
+  String get catalogBrowse => 'Skoðaðu vörulista';
 }

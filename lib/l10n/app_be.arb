@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} крэдытаў засталося",
   "aiEnergy": "Энергія ІІ",
   "aiError": "Прабачце, адбылася памылка пры апрацоўцы вашага запыту. Праверце падключэнне або паспрабуйце пазней.",
+  "aiLimitAlmostReached": "Амаль скончыліся паведамленні AI",
+  "aiTeaserFallback": "Падпішыцеся на Premium, каб разблакіраваць поўны адказ і атрымаць неабмежаваную колькасць падказак AI для вашых пакупак...",
   "aiVoiceCommandTooltip": "AI Галасавая Каманда (Premium)",
   "allTags": "Усе",
   "alreadyPurchased": "Ужо набыта",
@@ -404,6 +430,17 @@
   "catCleaning": "Чыстка",
   "catFruits": "Садавіна",
   "catOthers": "Іншае",
+  "catalogAddItems": "Дадаць {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Праглядзіце каталог",
+  "catalogFilterNational": "Грамадзяне",
+  "catalogMyFrequents": "Мае наведвальнікі",
+  "catalogProductNotFound": "Тавар не знойдзены, увядзіце назву",
+  "catalogRareSection": "радзей у вашай краіне",
+  "catalogSearchGlobal": "Шукайце любы прадукт...",
+  "catalogSearchInCategory": "Шукаць у {category}...",
+  "catalogSortAZ": "А–Я",
+  "catalogSortPopular": "Самая папулярная",
+  "catalogTitle": "Каталог",
   "category": "Катэгорыя",
   "chatError": "Памылка загрузкі чата: {error}",
   "chatHint": "Напішыце паведамленне...",
@@ -480,6 +517,8 @@
   "estimated": "Прыблізна",
   "estimatedCost": "Ацэначны",
   "estimatedPrice": "Прыблізны кошт",
+  "exit": "Выхад",
+  "exitShoppingMode": "Выйдзіце з рэжыму пакупак",
   "exportData": "Экспартаваць дадзеныя",
   "exportDataSubtitle": "Захаваць усе спісы як JSON",
   "exportExcel": "Экспартаваць як Excel",
@@ -518,6 +557,7 @@
   "generalAssistant": "Агульны Памочнік",
   "generalHelp": "Чым я магу дапамагчы з вашымі пакупкамі сёння?",
   "generateShoppingList": "Стварыць спіс пакупак",
+  "gestureHint": "Утрымлівайце, каб выбраць • Правядзіце, каб выдаліць",
   "globalAssistant": "Глабальны памочнік",
   "howCanIHelp": "Чым я магу дапамагчы?",
   "idealQty": "Ідэальная кольк",
@@ -541,6 +581,7 @@
   "itemsPurchasedCount": "{purchased} з {total} набыта",
   "itemsPurchasedShort": "{purchased}/{total} набыта",
   "itemsWillBeAdded": "{count} элемент(ы) будзе дададзена",
+  "kipiListTitle": "KipiList",
   "language": "Мова",
   "languageEnglish": "англійская",
   "languagePortuguese": "партугальская (Бразілія)",
@@ -555,7 +596,6 @@
   "listHistory": "Гісторыя Спісаў",
   "listNameLabel": "Назва спісу",
   "listOrganizedMagic": "Спіс магічна арганізаваны па катэгорыях! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Слуханне...",
   "lists": "Спісы",
   "loading": "Загрузка...",
@@ -606,6 +646,10 @@
   "monthlyBudgetTitle": "Месяцовы Бюджэт",
   "myLists": "Мае Спісы",
   "myRecipes": "Мае рэцэпты",
+  "navChat": "Chat",
+  "navLists": "Спісы",
+  "navMealPlanner": "Меню",
+  "navRecipes": "Рэцэпты",
   "newChat": "Новы чат",
   "newListTitle": "Новы Спіс Пакупак",
   "newPantryList": "Пакупка з Кладоўкі",
@@ -664,7 +708,56 @@
   "pantryEmpty": "Пустая кладоўка",
   "pantryEmptySubtitle": "Дадавайце прадукты, якія хочаце мець дома",
   "pantryItemRemoved": "Элемент выдалены",
+  "paywallAfterItem1": "Збожжа",
+  "paywallAfterItem2": "Уборка",
+  "paywallAfterItem3": "мяса",
+  "paywallAfterItem4": "Пякарня",
+  "paywallBeforeAfterTitle": "ШІ да і пасля:",
+  "paywallBeforeItem1": "рысу",
+  "paywallBeforeItem2": "мыла",
+  "paywallBeforeItem3": "мяса",
+  "paywallBeforeItem4": "хлеб",
+  "paywallBenefit1Desc": "Дадае, упарадкоўвае і прапануе элементы 24/7",
+  "paywallBenefit2Desc": "Няма абмежавання на 3 спісы",
+  "paywallBenefit3Desc": "Адсочванне выдаткаў і сямейныя спісы",
+  "paywallBestValue": "ЛЕПШАЕ ЗНАЧЭННЕ",
+  "paywallCancelAnytime": "Скасаваць у любы час. Без абавязацельстваў.",
+  "paywallCtaTrialDays": "Пачаць бясплатна — {days} дзён",
+  "paywallCtaUnlock": "Разблакіроўка PRO",
+  "paywallFeatureExpenseControl": "Кантроль выдаткаў",
+  "paywallFeatureSharing": "Абмен",
+  "paywallFeatureSmartAI": "Разумны штучны інтэлект",
+  "paywallFeatureUnlimitedLists": "Неабмежаваныя спісы",
+  "paywallFeaturesTitle": "Усё неабходнае:",
+  "paywallHeroHeadline": "Kipi AI заўсёды побач з вамі",
+  "paywallHeroSubtitle": "Дадавайце элементы, упарадкоўвайце спісы і эканомце час з AI у вашай кішэні",
+  "paywallLabelCommon": "Агульны",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Памылка загрузкі прапаноў. Паспрабуйце яшчэ раз.",
+  "paywallMostPopular": "САМЫЯ ПАПУЛЯРНЫЯ",
+  "paywallPackageAnnual": "Гадавы план",
+  "paywallPackageLifetime": "Пажыццёвы доступ",
+  "paywallPackageMonthly": "Месячны план",
+  "paywallPackageMonthlyDesc": "Поўная гнуткасць",
+  "paywallPolicy": "Палітыка прыватнасці",
+  "paywallPricePerMonth": "Толькі {price}/месяц",
+  "paywallPurchaseError": "Не атрымалася завяршыць куплю. Паспрабуйце яшчэ раз.",
+  "paywallRestore": "Аднавіць",
+  "paywallRestoreError": "Няма актыўнай падпіскі для аднаўлення.",
+  "paywallSafeCheckout": "Бяспечная аплата",
+  "paywallSavePercent": "ЭКАНОМІЯ {percent}%",
+  "paywallSelectPlan": "Выберыце свой план:",
+  "paywallSocialProof": "Карыстаюцца ім яшчэ 2400 сем'яў",
+  "paywallTerms": "Умовы выкарыстання",
+  "paywallTestimonial1Name": "Эн С.",
+  "paywallTestimonial1Text": "ШІ арганізуе мае пакупкі за лічаныя секунды. Я эканомлю 20 хвілін на паездку на рынак.",
+  "paywallTestimonial2Name": "Чарльз М.",
+  "paywallTestimonial2Text": "Я ніколі больш не забываў пункт спісу. Чат AI - гэта сенсацыя!",
+  "paywallTestimonialsTitle": "Што кажуць нашы карыстальнікі:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ДЗЁН БЯСПЛАТНА",
+  "paywallTrialMonths": "{count,plural, one{{count} МЕСЯЦАЎ БЯСПЛАТНА} other{{count} МЕСЯЦАЎ БЯСПЛАТНА}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ТЫДНЯ БЯСПЛАТНА} other{{count} ТЫДНЯ БЯСПЛАТНА}}",
   "prefAIAssistant": "Персанальны AI Памочнік",
   "prefCustomThemes": "Уласныя тэмы",
   "prefExportData": "Экспартаваць дадзеныя",
@@ -679,6 +772,7 @@
   "prepTimeMinutes": "Час прыгатавання (хвіліны)",
   "privacy": "Канфідэнцыяльнасць",
   "productName": "Назва прадукту",
+  "profile": "Профіль",
   "purchaseError": "Памылка апрацоўкі пакупкі. Паспрабуйце зноў.",
   "quantityFull": "Колькасць",
   "quantityShort": "Кольк",
@@ -776,6 +870,7 @@
   "undo": "Адмяніць",
   "unit": "Адзінка",
   "unitPack": "упак",
+  "unlockAi": "Адкрыйце неабмежаваны AI",
   "unlockFullResponse": "Разблакіраваць поўны адказ",
   "unmark": "Зняць пазнаку",
   "upgrade": "Абнавіць",

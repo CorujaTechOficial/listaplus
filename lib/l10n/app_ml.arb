@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "{remaining} ക്രെഡിറ്റുകൾ ശേഷിക്കുന്നു",
   "aiEnergy": "AI ഊർജ്ജം",
   "aiError": "ക്ഷമിക്കണം, നിങ്ങളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക് സംഭവിച്ചു. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക അല്ലെങ്കിൽ പിന്നീട് വീണ്ടും ശ്രമിക്കുക.",
+  "aiLimitAlmostReached": "AI സന്ദേശങ്ങൾ ഏതാണ്ട് തീർന്നു",
+  "aiTeaserFallback": "മുഴുവൻ പ്രതികരണവും അൺലോക്ക് ചെയ്യാനും നിങ്ങളുടെ ഷോപ്പിംഗിനായി പരിധിയില്ലാത്ത AI നുറുങ്ങുകൾ നേടാനും Premium സബ്‌സ്‌ക്രൈബുചെയ്യുക...",
   "aiVoiceCommandTooltip": "AI വോയ്സ് കമാൻഡ് (പ്രീമിയം)",
   "allTags": "എല്ലാം",
   "alreadyPurchased": "ഇതിനകം വാങ്ങിയത്",
@@ -442,9 +468,21 @@
   "catCleaning": "ക്ലീനിംഗ്",
   "catFruits": "പഴങ്ങൾ",
   "catOthers": "മറ്റുള്ളവ",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} → ചേർക്കുക",
+  "catalogBrowse": "കാറ്റലോഗ് ബ്രൗസ് ചെയ്യുക",
+  "catalogFilterNational": "ദേശീയത",
+  "catalogMyFrequents": "എൻ്റെ ആവർത്തനങ്ങൾ",
+  "catalogProductNotFound": "ഉൽപ്പന്നം കണ്ടെത്തിയില്ല, പേര് ടൈപ്പ് ചെയ്യുക",
+  "catalogRareSection": "നിങ്ങളുടെ രാജ്യത്ത് സാധാരണ കുറവാണ്",
+  "catalogSearchGlobal": "ഏതെങ്കിലും ഉൽപ്പന്നം തിരയുക...",
+  "catalogSearchInCategory": "{category} എന്നതിൽ തിരയുക...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "ഏറ്റവും ജനപ്രിയമായത്",
+  "catalogTitle": "കാറ്റലോഗ്",
   "category": "വിഭാഗം",
   "chatError": "ചാറ്റ് ലോഡ് ചെയ്യുന്നതിൽ പിശക്: {error}",
   "chatHint": "നിങ്ങളുടെ സന്ദേശം ടൈപ്പ് ചെയ്യുക...",
+  "chatHintBlocked": "ചാറ്റ് ചെയ്യാൻ AI അൺലോക്ക് ചെയ്യുക",
   "chatSubtitle": "ഇനങ്ങളുടെ നിർദ്ദേശങ്ങൾക്കും പാചകക്കുറിപ്പുകൾക്കും സേവിംഗ് ടിപ്പുകൾക്കുമായി ചോദിക്കുക.",
   "chatSubtitleShort": "വിലകൾ, പാചകക്കുറിപ്പുകൾ, ഓർഗനൈസേഷൻ എന്നിവയെക്കുറിച്ച് ചോദിക്കൂ...",
   "chooseCurrency": "കറൻസി തിരഞ്ഞെടുക്കുക",
@@ -517,6 +555,8 @@
   "estimated": "ഏകദേശം",
   "estimatedCost": "കണക്കാക്കിയത്",
   "estimatedPrice": "ഏകദേശ വില",
+  "exit": "പുറത്ത്",
+  "exitShoppingMode": "ഷോപ്പിംഗ് മോഡിൽ നിന്ന് പുറത്തുകടക്കുക",
   "exportData": "ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക",
   "exportDataSubtitle": "എല്ലാ ലിസ്റ്റുകളും JSON ആയി സംരക്ഷിക്കുക",
   "exportExcel": "Excel ആയി എക്‌സ്‌പോർട്ട് ചെയ്യുക",
@@ -555,6 +595,7 @@
   "generalAssistant": "ജനറൽ അസിസ്റ്റന്റ്",
   "generalHelp": "ഇന്ന് നിങ്ങളുടെ ഷോപ്പിംഗിൽ എങ്ങനെ സഹായിക്കണം?",
   "generateShoppingList": "ഷോപ്പിംഗ് ലിസ്റ്റ് ജനറേറ്റ് ചെയ്യുക",
+  "gestureHint": "തിരഞ്ഞെടുക്കാൻ പിടിക്കുക • നീക്കം ചെയ്യാൻ സ്വൈപ്പ് ചെയ്യുക",
   "globalAssistant": "ഗ്ലോബൽ അസിസ്റ്റന്റ്",
   "howCanIHelp": "എനിക്ക് എങ്ങനെ സഹായിക്കാനാകും?",
   "idealQty": "ആദർശ അളവ്",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "{purchased} of {total} വാങ്ങി",
   "itemsPurchasedShort": "{purchased}/{total} വാങ്ങി",
   "itemsWillBeAdded": "{count} ഇനം ചേർക്കും",
+  "kipiListTitle": "കിപ്പിലിസ്റ്റ്",
   "language": "ഭാഷ",
   "languageEnglish": "ഇംഗ്ലീഷ്",
   "languagePortuguese": "പോർച്ചുഗീസ് (ബ്രസീൽ)",
@@ -592,7 +634,6 @@
   "listHistory": "ലിസ്റ്റ് ചരിത്രം",
   "listNameLabel": "ലിസ്റ്റിന്റെ പേര്",
   "listOrganizedMagic": "ലിസ്റ്റ് വിഭാഗങ്ങൾ അനുസരിച്ച് മാന്ത്രികമായി ക്രമീകരിച്ചു! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "കേൾക്കുന്നു...",
   "lists": "ലിസ്റ്റുകൾ",
   "loading": "ലോഡ് ചെയ്യുന്നു...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "പ്രതിമാസ ബജറ്റ്",
   "myLists": "എന്റെ ലിസ്റ്റുകൾ",
   "myRecipes": "എന്റെ റെസിപ്പികൾ",
+  "navChat": "Chat",
+  "navLists": "ലിസ്റ്റുകൾ",
+  "navMealPlanner": "മെനു",
+  "navRecipes": "പാചകക്കുറിപ്പുകൾ",
   "newChat": "പുതിയ ചാറ്റ്",
   "newListTitle": "പുതിയ ഷോപ്പിംഗ് ലിസ്റ്റ്",
   "newPantryList": "പാന്ട്രി ഷോപ്പിംഗ്",
@@ -701,7 +746,56 @@
   "pantryEmpty": "പാന്ട്രി ശൂന്യമാണ്",
   "pantryEmptySubtitle": "വീട്ടിൽ സൂക്ഷിക്കണമെന്ന് ആഗ്രഹിക്കുന്ന ഉൽപ്പന്നങ്ങൾ ചേർക്കുക",
   "pantryItemRemoved": "ഇനം നീക്കംചെയ്തു",
-  "paywallTitle": "KipiList Premium",
+  "paywallAfterItem1": "ധാന്യങ്ങൾ",
+  "paywallAfterItem2": "വൃത്തിയാക്കൽ",
+  "paywallAfterItem3": "മാംസങ്ങൾ",
+  "paywallAfterItem4": "ബേക്കറി",
+  "paywallBeforeAfterTitle": "AI മുമ്പും ശേഷവും:",
+  "paywallBeforeItem1": "അരി",
+  "paywallBeforeItem2": "സോപ്പ്",
+  "paywallBeforeItem3": "മാംസം",
+  "paywallBeforeItem4": "അപ്പം",
+  "paywallBenefit1Desc": "24/7 ഇനങ്ങൾ കൂട്ടിച്ചേർക്കുകയും സംഘടിപ്പിക്കുകയും നിർദ്ദേശിക്കുകയും ചെയ്യുന്നു",
+  "paywallBenefit2Desc": "3-ലിസ്റ്റ് പരിധി ഇല്ല",
+  "paywallBenefit3Desc": "ചെലവ് ട്രാക്കിംഗും കുടുംബ ലിസ്റ്റുകളും",
+  "paywallBestValue": "മികച്ച മൂല്യം",
+  "paywallCancelAnytime": "എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക. പ്രതിബദ്ധതയില്ല.",
+  "paywallCtaTrialDays": "സൗജന്യമായി ആരംഭിക്കുക — {days} ദിവസം",
+  "paywallCtaUnlock": "PRO അൺലോക്ക് ചെയ്യുക",
+  "paywallFeatureExpenseControl": "ചെലവ് നിയന്ത്രണം",
+  "paywallFeatureSharing": "പങ്കിടുന്നു",
+  "paywallFeatureSmartAI": "സ്മാർട്ട് AI",
+  "paywallFeatureUnlimitedLists": "പരിധിയില്ലാത്ത ലിസ്റ്റുകൾ",
+  "paywallFeaturesTitle": "നിങ്ങൾക്ക് ആവശ്യമുള്ളതെല്ലാം:",
+  "paywallHeroHeadline": "Kipi AI എപ്പോഴും നിങ്ങളുടെ അരികിലുണ്ട്",
+  "paywallHeroSubtitle": "ഇനങ്ങൾ ചേർക്കുക, ലിസ്റ്റുകൾ സംഘടിപ്പിക്കുക, നിങ്ങളുടെ പോക്കറ്റിൽ AI ഉപയോഗിച്ച് സമയം ലാഭിക്കുക",
+  "paywallLabelCommon": "സാധാരണ",
+  "paywallLabelPro": "കിപ്പിലിസ്റ്റ് PRO",
+  "paywallLoadingError": "ഓഫറുകൾ ലോഡ് ചെയ്യുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.",
+  "paywallMostPopular": "ഏറ്റവും ജനപ്രിയമായത്",
+  "paywallPackageAnnual": "വാർഷിക പദ്ധതി",
+  "paywallPackageLifetime": "ആജീവനാന്ത പ്രവേശനം",
+  "paywallPackageMonthly": "പ്രതിമാസ പദ്ധതി",
+  "paywallPackageMonthlyDesc": "പൂർണ്ണമായ വഴക്കം",
+  "paywallPolicy": "സ്വകാര്യതാ നയം",
+  "paywallPricePerMonth": "{price}/മാസം മാത്രം",
+  "paywallPurchaseError": "വാങ്ങൽ പൂർത്തിയാക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക.",
+  "paywallRestore": "പുനഃസ്ഥാപിക്കുക",
+  "paywallRestoreError": "പുനഃസ്ഥാപിക്കാൻ സജീവമായ സബ്‌സ്‌ക്രിപ്‌ഷനൊന്നും കണ്ടെത്തിയില്ല.",
+  "paywallSafeCheckout": "സുരക്ഷിത പേയ്മെൻ്റ്",
+  "paywallSavePercent": "{percent}% സംരക്ഷിക്കുക",
+  "paywallSelectPlan": "നിങ്ങളുടെ പ്ലാൻ തിരഞ്ഞെടുക്കുക:",
+  "paywallSocialProof": "+2,400 കുടുംബങ്ങൾ ഇത് ഉപയോഗിക്കുന്നു",
+  "paywallTerms": "ഉപയോഗ നിബന്ധനകൾ",
+  "paywallTestimonial1Name": "ആൻ എസ്.",
+  "paywallTestimonial1Text": "AI എൻ്റെ ഷോപ്പിംഗ് നിമിഷങ്ങൾക്കുള്ളിൽ സംഘടിപ്പിക്കുന്നു. ഓരോ മാർക്കറ്റ് യാത്രയിലും ഞാൻ 20 മിനിറ്റ് ലാഭിക്കുന്നു.",
+  "paywallTestimonial2Name": "ചാൾസ് എം.",
+  "paywallTestimonial2Text": "ഒരു ലിസ്റ്റ് ഇനം ഞാൻ പിന്നെ ഒരിക്കലും മറന്നില്ല. AI ചാറ്റ് സെൻസേഷണൽ ആണ്!",
+  "paywallTestimonialsTitle": "ഞങ്ങളുടെ ഉപയോക്താക്കൾ പറയുന്നത്:",
+  "paywallTitle": "കിപ്പിലിസ്റ്റ് പ്രീമിയം",
+  "paywallTrialDays": "{days} ദിവസങ്ങൾ സൗജന്യം",
+  "paywallTrialMonths": "{count,plural, one{{count} മാസം സൗജന്യം} other{{count} മാസം സൗജന്യം}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ആഴ്ച സൗജന്യം} other{{count} ആഴ്ചകൾ സൗജന്യം}}",
   "prefAIAssistant": "വ്യക്തിഗത AI അസിസ്റ്റന്റ്",
   "prefCustomThemes": "ഇഷ്ടാനുസൃത തീമുകൾ",
   "prefExportData": "ഡാറ്റ എക്‌സ്‌പോർട്ട് ചെയ്യുക",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "തയ്യാറാക്കുന്ന സമയം (മിനിറ്റ്)",
   "privacy": "സ്വകാര്യത",
   "productName": "ഉൽപ്പന്നത്തിന്റെ പേര്",
+  "profile": "പ്രൊഫൈൽ",
   "purchaseError": "വാങ്ങൽ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.",
   "quantityFull": "അളവ്",
   "quantityShort": "അളവ്",
@@ -813,6 +908,7 @@
   "undo": "പഴയപടിയാക്കുക",
   "unit": "യൂണിറ്റ്",
   "unitPack": "പായ്ക്ക്",
+  "unlockAi": "അൺലിമിറ്റഡ് AI അൺലോക്ക് ചെയ്യുക",
   "unlockFullResponse": "പൂർണ്ണ പ്രതികരണം അൺലോക്ക് ചെയ്യുക",
   "unmark": "അൺമാർക്ക് ചെയ്യുക",
   "upgrade": "അപ്‌ഗ്രേഡ് ചെയ്യുക",

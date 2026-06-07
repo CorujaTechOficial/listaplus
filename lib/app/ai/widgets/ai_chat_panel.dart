@@ -366,10 +366,15 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
 
     final isPremium = ref.watch(premiumProvider).value ?? false;
     final aiUsageAsync = ref.watch(aiUsageStateProvider);
+    
+    // Evita piscada de banner de limite enquanto carrega dados de monetização/uso
+    final isLoadingStatus = ref.watch(premiumProvider).isLoading || aiUsageAsync.isLoading;
+    
     final canSend = isPremium || (aiUsageAsync.value?.isExhausted == false);
     final remaining = aiUsageAsync.value?.remainingDaily ?? 0;
     final isLowEnergy = remaining > 0 && remaining <= 2;
-    final showBanner = (!canSend || isLowEnergy) && !isPremium;
+    final showBanner = !isLoadingStatus && (!canSend || isLowEnergy) && !isPremium;
+    final isInputBlocked = !isLoadingStatus && !canSend && !isPremium;
 
     final activeSessionId = ref.watch(activeChatSessionIdProvider(widget.listId));
     final chatState = ref.watch(chatSessionProvider(widget.listId, activeSessionId));
@@ -587,7 +592,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
                 ),
                 child: _buildPaywallBanner(context, l10n, theme, remaining),
               ),
-            _buildInput(context, l10n, theme, canSend, isThinking, showBanner),
+            _buildInput(context, l10n, theme, canSend, isThinking, isInputBlocked),
           ],
         ),
       ],
@@ -655,13 +660,19 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
                         Container(
                           width: 120,
                           height: 16,
-                          color: Colors.white,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
                         ),
                         const SizedBox(height: 4),
                         Container(
                           width: 80,
                           height: 12,
-                          color: Colors.white,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
                         ),
                       ],
                     ),
@@ -725,7 +736,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
           ),
         ],
       ),
-    );
+    ).animate().fadeIn(delay: 150.ms, duration: 250.ms);
   }
 
   Widget _buildPaywallBanner(BuildContext context, AppLocalizations l10n, ThemeData theme, int remaining) {

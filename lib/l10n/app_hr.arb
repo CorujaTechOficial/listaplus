@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "Preostalo {remaining} kredita",
   "aiEnergy": "AI energija",
   "aiError": "Oprosti, došlo je do greške u obradi tvog zahtjeva. Provjeri svoju vezu ili pokušaj ponovno kasnije.",
+  "aiLimitAlmostReached": "Gotovo bez AI poruka",
+  "aiTeaserFallback": "Pretplatite se na Premium kako biste otključali puni odgovor i dobili neograničene AI savjete za svoju kupovinu...",
   "aiVoiceCommandTooltip": "AI glasovna naredba (Premium)",
   "allTags": "Sve",
   "alreadyPurchased": "Već kupljeno",
@@ -385,9 +411,21 @@
   "catCleaning": "Čišćenje",
   "catFruits": "Voće",
   "catOthers": "Ostalo",
+  "catalogAddItems": "Dodaj {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Pregledaj katalog",
+  "catalogFilterNational": "Državljani",
+  "catalogMyFrequents": "Moji česti",
+  "catalogProductNotFound": "Proizvod nije pronađen, upišite naziv",
+  "catalogRareSection": "rjeđe u vašoj zemlji",
+  "catalogSearchGlobal": "Pretražite bilo koji proizvod...",
+  "catalogSearchInCategory": "Traži u {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Najpopularniji",
+  "catalogTitle": "Katalog",
   "category": "Kategorija",
   "chatError": "Greška u učitavanju chata: {error}",
   "chatHint": "Upiši svoju poruku...",
+  "chatHintBlocked": "Otključajte AI za chat",
   "chatSubtitle": "Zatraži prijedloge stavki, recepte ili savjete za uštedu.",
   "chatSubtitleShort": "Pitajte za cijene, recepte, organizaciju...",
   "chooseCurrency": "Odaberite Valutu",
@@ -460,6 +498,8 @@
   "estimated": "Procijenjeno",
   "estimatedCost": "Procijenjeno",
   "estimatedPrice": "Procijenjena cijena",
+  "exit": "Izlaz",
+  "exitShoppingMode": "Izađite iz načina za kupovinu",
   "exportData": "Izvezi podatke",
   "exportDataSubtitle": "Spremi sve popise kao JSON",
   "exportExcel": "Izvezi kao Excel",
@@ -498,6 +538,7 @@
   "generalAssistant": "Opći pomoćnik",
   "generalHelp": "Kako mogu pomoći s tvojom današnjom kupovinom?",
   "generateShoppingList": "Generiraj popis za kupnju",
+  "gestureHint": "Držite za odabir • Prijeđite prstom za uklanjanje",
   "globalAssistant": "Globalni pomoćnik",
   "howCanIHelp": "Kako mogu pomoći?",
   "idealQty": "Idealna kol",
@@ -521,6 +562,7 @@
   "itemsPurchasedCount": "Kupljeno {purchased} od {total}",
   "itemsPurchasedShort": "{purchased}/{total} kupljeno",
   "itemsWillBeAdded": "{count} stavku(i) će biti dodano",
+  "kipiListTitle": "KipiList",
   "language": "Jezik",
   "languageEnglish": "engleski",
   "languagePortuguese": "português (Brazil)",
@@ -535,7 +577,6 @@
   "listHistory": "Povijest popisa",
   "listNameLabel": "Naziv popisa",
   "listOrganizedMagic": "Popis čarobno organiziran po kategorijama! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Slušanje...",
   "lists": "Popisi",
   "loading": "Učitavanje...",
@@ -586,6 +627,10 @@
   "monthlyBudgetTitle": "Mjesečni proračun",
   "myLists": "Moji popisi",
   "myRecipes": "Moji recepti",
+  "navChat": "Chat",
+  "navLists": "Popisi",
+  "navMealPlanner": "Jelovnik",
+  "navRecipes": "Recepti",
   "newChat": "Novi razgovor",
   "newListTitle": "Novi popis za kupnju",
   "newPantryList": "Kupnja za ostavu",
@@ -644,7 +689,56 @@
   "pantryEmpty": "Prazna ostava",
   "pantryEmptySubtitle": "Dodaj proizvode koje želiš imati kod kuće",
   "pantryItemRemoved": "Stavka uklonjena",
+  "paywallAfterItem1": "Žitarice",
+  "paywallAfterItem2": "Čišćenje",
+  "paywallAfterItem3": "meso",
+  "paywallAfterItem4": "Pekara",
+  "paywallBeforeAfterTitle": "AI prije i poslije:",
+  "paywallBeforeItem1": "riža",
+  "paywallBeforeItem2": "sapun",
+  "paywallBeforeItem3": "meso",
+  "paywallBeforeItem4": "kruh",
+  "paywallBenefit1Desc": "Dodaje, organizira i predlaže stavke 24/7",
+  "paywallBenefit2Desc": "Nema ograničenja od 3 popisa",
+  "paywallBenefit3Desc": "Praćenje troškova i obiteljske liste",
+  "paywallBestValue": "NAJBOLJA VRIJEDNOST",
+  "paywallCancelAnytime": "Otkaži bilo kada. Bez obveze.",
+  "paywallCtaTrialDays": "Započnite besplatno — {days} dana",
+  "paywallCtaUnlock": "Otključaj PRO",
+  "paywallFeatureExpenseControl": "Kontrola troškova",
+  "paywallFeatureSharing": "Dijeljenje",
+  "paywallFeatureSmartAI": "Pametna umjetna inteligencija",
+  "paywallFeatureUnlimitedLists": "Neograničeni popisi",
+  "paywallFeaturesTitle": "Sve što vam treba:",
+  "paywallHeroHeadline": "Kipi AI uvijek uz tebe",
+  "paywallHeroSubtitle": "Dodajte stavke, organizirajte popise i uštedite vrijeme uz AI u vašem džepu",
+  "paywallLabelCommon": "Uobičajeno",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Pogreška pri učitavanju ponuda. Pokušajte ponovno.",
+  "paywallMostPopular": "NAJPOPULARNIJI",
+  "paywallPackageAnnual": "Godišnji plan",
+  "paywallPackageLifetime": "Doživotni pristup",
+  "paywallPackageMonthly": "Mjesečni plan",
+  "paywallPackageMonthlyDesc": "Potpuna fleksibilnost",
+  "paywallPolicy": "Politika privatnosti",
+  "paywallPricePerMonth": "Samo {price} mjesečno",
+  "paywallPurchaseError": "Nije moguće dovršiti kupnju. Pokušajte ponovno.",
+  "paywallRestore": "Vratiti",
+  "paywallRestoreError": "Nije pronađena aktivna pretplata za vraćanje.",
+  "paywallSafeCheckout": "Sigurno plaćanje",
+  "paywallSavePercent": "UŠTEDITE {percent}%",
+  "paywallSelectPlan": "Odaberite svoj plan:",
+  "paywallSocialProof": "Koristi ga +2400 obitelji",
+  "paywallTerms": "Uvjeti korištenja",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "AI organizira moju kupovinu u sekundi. Uštedim 20 minuta po obilasku tržnice.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Nikad više nisam zaboravio stavku s popisa. AI chat je senzacionalan!",
+  "paywallTestimonialsTitle": "Što kažu naši korisnici:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DANA BESPLATNO",
+  "paywallTrialMonths": "{count,plural, one{{count} MJESECI BESPLATNO} other{{count} MJESECI BESPLATNO}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} TJEDAN BESPLATNO} other{{count} TJEDANA BESPLATNO}}",
   "prefAIAssistant": "Osobni AI pomoćnik",
   "prefCustomThemes": "Prilagođene teme",
   "prefExportData": "Izvoz podataka",
@@ -659,6 +753,7 @@
   "prepTimeMinutes": "Vrijeme pripreme (minute)",
   "privacy": "Privatnost",
   "productName": "Naziv proizvoda",
+  "profile": "Profil",
   "purchaseError": "Greška u obradi kupnje. Pokušaj ponovno.",
   "quantityFull": "Količina",
   "quantityShort": "Kol",
@@ -756,6 +851,7 @@
   "undo": "Poništi",
   "unit": "Jedinica",
   "unitPack": "paket",
+  "unlockAi": "Otključajte neograničenu umjetnu inteligenciju",
   "unlockFullResponse": "Otključaj puni odgovor",
   "unmark": "Odznači",
   "upgrade": "Nadogradi",

@@ -18,6 +18,18 @@ class AppLocalizationsHr extends AppLocalizations {
   String get pantry => 'Ostava';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Recepti';
+
+  @override
+  String get navLists => 'Popisi';
+
+  @override
+  String get navMealPlanner => 'Jelovnik';
+
+  @override
   String get cancel => 'Odustani';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Dodano!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Izađite iz načina za kupovinu';
+
+  @override
+  String get exit => 'Izlaz';
 
   @override
   String selectedItems(int count) {
@@ -592,7 +613,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get chatHint => 'Upiši svoju poruku...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'Otključajte AI za chat';
 
   @override
   String chatError(String error) {
@@ -614,14 +635,14 @@ class AppLocalizationsHr extends AppLocalizations {
       'Oprosti, došlo je do greške u obradi tvog zahtjeva. Provjeri svoju vezu ili pokušaj ponovno kasnije.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Gotovo bez AI poruka';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Otključajte neograničenu umjetnu inteligenciju';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Pretplatite se na Premium kako biste otključali puni odgovor i dobili neograničene AI savjete za svoju kupovinu...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -750,17 +771,20 @@ class AppLocalizationsHr extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'Pogreška pri učitavanju ponuda. Pokušajte ponovno.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'Nije moguće dovršiti kupnju. Pokušajte ponovno.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Nije pronađena aktivna pretplata za vraćanje.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days DANA BESPLATNO';
   }
 
   @override
@@ -768,8 +792,8 @@ class AppLocalizationsHr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count TJEDANA BESPLATNO',
+      one: '$count TJEDAN BESPLATNO',
     );
     return '$_temp0';
   }
@@ -779,148 +803,148 @@ class AppLocalizationsHr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count MONTHS FREE',
-      one: '$count MONTH FREE',
+      other: '$count MJESECI BESPLATNO',
+      one: '$count MJESECI BESPLATNO',
     );
     return '$_temp0';
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Sve što vam treba:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Neograničeni popisi';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'Pametna umjetna inteligencija';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Kontrola troškova';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Dijeljenje';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI prije i poslije:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Uobičajeno';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'riža';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'sapun';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'meso';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'kruh';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Žitarice';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Čišćenje';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'meso';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Pekara';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Što kažu naši korisnici:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI organizira moju kupovinu u sekundi. Uštedim 20 minuta po obilasku tržnice.';
 
   @override
   String get paywallTestimonial2Name => 'Charles M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Nikad više nisam zaboravio stavku s popisa. AI chat je senzacionalan!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => 'Koristi ga +2400 obitelji';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Otključaj PRO';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'NAJBOLJA VRIJEDNOST';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'NAJPOPULARNIJI';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Sigurno plaćanje';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Odaberite svoj plan:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'UŠTEDITE $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Samo $price mjesečno';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Godišnji plan';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Mjesečni plan';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Doživotni pristup';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime => 'Otkaži bilo kada. Bez obveze.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Politika privatnosti';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Uvjeti korištenja';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Vratiti';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI uvijek uz tebe';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Dodajte stavke, organizirajte popise i uštedite vrijeme uz AI u vašem džepu';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc => 'Dodaje, organizira i predlaže stavke 24/7';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Nema ograničenja od 3 popisa';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Praćenje troškova i obiteljske liste';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Potpuna fleksibilnost';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Započnite besplatno — $days dana';
   }
 
   @override
@@ -1641,4 +1665,50 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Dobijte 7 dana KipiList Premiuma!';
+
+  @override
+  String get gestureHint => 'Držite za odabir • Prijeđite prstom za uklanjanje';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Moji česti';
+
+  @override
+  String get catalogSearchGlobal => 'Pretražite bilo koji proizvod...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Traži u $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Najpopularniji';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Državljani';
+
+  @override
+  String get catalogRareSection => 'rjeđe u vašoj zemlji';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Dodaj $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Proizvod nije pronađen, upišite naziv';
+
+  @override
+  String get catalogBrowse => 'Pregledaj katalog';
 }

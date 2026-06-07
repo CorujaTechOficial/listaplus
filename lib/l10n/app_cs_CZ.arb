@@ -28,6 +28,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -107,6 +121,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -274,6 +291,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -354,6 +378,8 @@
   "aiCreditsRemaining": "Zbývá {remaining} kreditů",
   "aiEnergy": "Energie AI",
   "aiError": "Omlouváme se, při zpracování tvého požadavku došlo k chybě. Zkontroluj připojení nebo to zkus znovu později.",
+  "aiLimitAlmostReached": "Téměř došly zprávy AI",
+  "aiTeaserFallback": "Přihlaste se k odběru Premium a odemkněte plnou odpověď a získejte neomezené množství tipů AI pro své nakupování...",
   "aiVoiceCommandTooltip": "AI hlasový příkaz (Premium)",
   "allTags": "Vše",
   "alreadyPurchased": "Již zakoupeno",
@@ -385,6 +411,17 @@
   "catCleaning": "Úklid",
   "catFruits": "Ovoce",
   "catOthers": "Ostatní",
+  "catalogAddItems": "Přidat {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Procházet katalog",
+  "catalogFilterNational": "státní příslušníci",
+  "catalogMyFrequents": "Moje časté",
+  "catalogProductNotFound": "Produkt nenalezen, zadejte název",
+  "catalogRareSection": "ve vaší zemi méně běžné",
+  "catalogSearchGlobal": "Vyhledejte jakýkoli produkt...",
+  "catalogSearchInCategory": "Hledat v {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Nejoblíbenější",
+  "catalogTitle": "Katalog",
   "category": "Kategorie",
   "chatError": "Chyba při načítání chatu: {error}",
   "chatHint": "Napiš svou zprávu...",
@@ -461,6 +498,8 @@
   "estimated": "Odhadováno",
   "estimatedCost": "Odhadovaný",
   "estimatedPrice": "Odhadovaná cena",
+  "exit": "Výstup",
+  "exitShoppingMode": "Ukončete nákupní režim",
   "exportData": "Exportovat data",
   "exportDataSubtitle": "Uložit všechny seznamy jako JSON",
   "exportExcel": "Exportovat jako Excel",
@@ -499,6 +538,7 @@
   "generalAssistant": "Obecný asistent",
   "generalHelp": "Jak mohu dnes pomoci s tvým nákupem?",
   "generateShoppingList": "Vygenerovat nákupní seznam",
+  "gestureHint": "Podržením vyberte • Přejetím odeberte",
   "globalAssistant": "Globální asistent",
   "howCanIHelp": "Jak mohu pomoci?",
   "idealQty": "Ideální mn",
@@ -522,6 +562,7 @@
   "itemsPurchasedCount": "Zakoupeno {purchased} z {total}",
   "itemsPurchasedShort": "{purchased}/{total} zakoupeno",
   "itemsWillBeAdded": "{count} položek bude přidáno",
+  "kipiListTitle": "KipiList",
   "language": "Jazyk",
   "languageEnglish": "angličtina",
   "languagePortuguese": "português (Brazílie)",
@@ -536,7 +577,6 @@
   "listHistory": "Historie seznamů",
   "listNameLabel": "Název seznamu",
   "listOrganizedMagic": "Seznam kouzelně uspořádán podle kategorií! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Naslouchání...",
   "lists": "Seznamy",
   "loading": "Načítání...",
@@ -587,6 +627,10 @@
   "monthlyBudgetTitle": "Měsíční rozpočet",
   "myLists": "Mé seznamy",
   "myRecipes": "Moje recepty",
+  "navChat": "Chat",
+  "navLists": "Seznamy",
+  "navMealPlanner": "Menu",
+  "navRecipes": "Recepty",
   "newChat": "Nový chat",
   "newListTitle": "Nový nákupní seznam",
   "newPantryList": "Nákup pro spižírnu",
@@ -645,7 +689,56 @@
   "pantryEmpty": "Prázdná spižírna",
   "pantryEmptySubtitle": "Přidej produkty, které chceš mít doma",
   "pantryItemRemoved": "Položka odebrána",
+  "paywallAfterItem1": "Zrna",
+  "paywallAfterItem2": "Čištění",
+  "paywallAfterItem3": "Maso",
+  "paywallAfterItem4": "Pekárna",
+  "paywallBeforeAfterTitle": "AI před a po:",
+  "paywallBeforeItem1": "rýže",
+  "paywallBeforeItem2": "mýdlo",
+  "paywallBeforeItem3": "maso",
+  "paywallBeforeItem4": "chléb",
+  "paywallBenefit1Desc": "Přidává, organizuje a navrhuje položky 24/7",
+  "paywallBenefit2Desc": "Žádný limit na 3 seznamy",
+  "paywallBenefit3Desc": "Sledování výdajů a rodinné seznamy",
+  "paywallBestValue": "NEJLEPŠÍ HODNOTA",
+  "paywallCancelAnytime": "Kdykoli zrušit. Žádný závazek.",
+  "paywallCtaTrialDays": "Začněte zdarma — {days} dnů",
+  "paywallCtaUnlock": "Odemkněte PRO",
+  "paywallFeatureExpenseControl": "Kontrola výdajů",
+  "paywallFeatureSharing": "Sdílení",
+  "paywallFeatureSmartAI": "Inteligentní AI",
+  "paywallFeatureUnlimitedLists": "Neomezené seznamy",
+  "paywallFeaturesTitle": "Vše, co potřebujete:",
+  "paywallHeroHeadline": "Kipi AI vždy po vašem boku",
+  "paywallHeroSubtitle": "Přidávejte položky, organizujte seznamy a ušetřete čas s umělou inteligencí v kapse",
+  "paywallLabelCommon": "Společný",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Chyba při načítání nabídek. Zkuste to znovu.",
+  "paywallMostPopular": "NEJOBLÍBENĚJŠÍ",
+  "paywallPackageAnnual": "Roční plán",
+  "paywallPackageLifetime": "Doživotní přístup",
+  "paywallPackageMonthly": "Měsíční plán",
+  "paywallPackageMonthlyDesc": "Plná flexibilita",
+  "paywallPolicy": "Zásady ochrany osobních údajů",
+  "paywallPricePerMonth": "Pouze {price}/měsíc",
+  "paywallPurchaseError": "Nákup se nepodařilo dokončit. Zkuste to znovu.",
+  "paywallRestore": "Obnovit",
+  "paywallRestoreError": "Nebylo nalezeno žádné aktivní předplatné k obnovení.",
+  "paywallSafeCheckout": "Bezpečná platba",
+  "paywallSavePercent": "UŠETŘETE {percent}%",
+  "paywallSelectPlan": "Vyberte si svůj plán:",
+  "paywallSocialProof": "Využívá jej +2 400 rodin",
+  "paywallTerms": "Podmínky použití",
+  "paywallTestimonial1Name": "Ann S.",
+  "paywallTestimonial1Text": "Umělá inteligence zorganizuje moje nákupy během několika sekund. Ušetřím 20 minut za cestu na trh.",
+  "paywallTestimonial2Name": "Charles M.",
+  "paywallTestimonial2Text": "Už jsem nikdy nezapomněl na položku seznamu. AI chat je senzační!",
+  "paywallTestimonialsTitle": "Co říkají naši uživatelé:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} DNŮ ZDARMA",
+  "paywallTrialMonths": "{count,plural, one{{count} MĚSÍC ZDARMA} other{{count} MĚSÍCE ZDARMA}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} TÝDEN ZDARMA} other{{count} TÝDNY ZDARMA}}",
   "prefAIAssistant": "Osobní AI asistent",
   "prefCustomThemes": "Vlastní motivy",
   "prefExportData": "Export dat",
@@ -660,6 +753,7 @@
   "prepTimeMinutes": "Čas přípravy (minuty)",
   "privacy": "Soukromí",
   "productName": "Název produktu",
+  "profile": "Profil",
   "purchaseError": "Chyba při zpracování nákupu. Zkus to znovu.",
   "quantityFull": "Množství",
   "quantityShort": "Mn",
@@ -757,6 +851,7 @@
   "undo": "Zpět",
   "unit": "Jednotka",
   "unitPack": "balení",
+  "unlockAi": "Odemkněte neomezenou umělou inteligenci",
   "unlockFullResponse": "Odemkněte plnou odezvu",
   "unmark": "Odznačit",
   "upgrade": "Upgradovat",

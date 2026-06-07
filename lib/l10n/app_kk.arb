@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} кредит қалды",
   "aiEnergy": "AI энергиясы",
   "aiError": "Кешіріңіз, сұрауыңызды өңдеу кезінде қате пайда болды. Қосылымыңызды тексеріңіз немесе кейінірек қайталап көріңіз.",
+  "aiLimitAlmostReached": "AI хабарлары дерлік",
+  "aiTeaserFallback": "Толық жауаптың құлпын ашу және сатып алу үшін шексіз AI кеңестерін алу үшін Premium-ге жазылыңыз...",
   "aiVoiceCommandTooltip": "AI Дауыс Пәрмені (Premium)",
   "allTags": "Барлығы",
   "alreadyPurchased": "Сатып алынған",
@@ -404,9 +430,21 @@
   "catCleaning": "Тазалау",
   "catFruits": "Жемістер",
   "catOthers": "Басқалар",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} қосу →",
+  "catalogBrowse": "Каталогты шолу",
+  "catalogFilterNational": "Ұлттық",
+  "catalogMyFrequents": "Менің жиілерім",
+  "catalogProductNotFound": "Өнім табылмады, атын теріңіз",
+  "catalogRareSection": "еліңізде сирек кездеседі",
+  "catalogSearchGlobal": "Кез келген өнімді іздеу...",
+  "catalogSearchInCategory": "{category} ішінен іздеу...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Ең танымал",
+  "catalogTitle": "Каталог",
   "category": "Санат",
   "chatError": "Чатты жүктеу қатесі: {error}",
   "chatHint": "Хабарламаңызды жазыңыз...",
+  "chatHintBlocked": "Сөйлесу үшін AI құлпын ашыңыз",
   "chatSubtitle": "Элемент ұсыныстарын, рецептерді немесе үнемдеу кеңестерін сұраңыз.",
   "chatSubtitleShort": "Бағалар, рецепттер, ұйымдастыру туралы сұраңыз...",
   "chooseCurrency": "Валюта таңдаңыз",
@@ -479,6 +517,8 @@
   "estimated": "Болжалды",
   "estimatedCost": "Болжалды",
   "estimatedPrice": "Болжалды баға",
+  "exit": "Шығу",
+  "exitShoppingMode": "Сатып алу режимінен шығу",
   "exportData": "Деректерді экспорттау",
   "exportDataSubtitle": "Барлық тізімдерді JSON ретінде сақтау",
   "exportExcel": "Excel ретінде экспорттау",
@@ -517,6 +557,7 @@
   "generalAssistant": "Жалпы Көмекші",
   "generalHelp": "Бүгін сатып алуыңызға қалай көмектесе аламын?",
   "generateShoppingList": "Сатып алу тізімін жасау",
+  "gestureHint": "Таңдау үшін басып тұрыңыз • Жою үшін сырғытыңыз",
   "globalAssistant": "Жаһандық көмекші",
   "howCanIHelp": "Қалай көмектесе аламын?",
   "idealQty": "Идеалды саны",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{purchased}/{total} сатып алынды",
   "itemsPurchasedShort": "{purchased}/{total} сатып алынды",
   "itemsWillBeAdded": "{count} элемент(тер) қосылады",
+  "kipiListTitle": "KipiList",
   "language": "Тіл",
   "languageEnglish": "Ағылшын",
   "languagePortuguese": "Português (Бразилия)",
@@ -554,7 +596,6 @@
   "listHistory": "Тізімдер Тарихы",
   "listNameLabel": "Тізім атауы",
   "listOrganizedMagic": "Тізім сиқырлы түрде санаттар бойынша ұйымдастырылды! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Тыңдалуда...",
   "lists": "Тізімдер",
   "loading": "Жүктелуде...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "Айлық Бюджет",
   "myLists": "Менің Тізімдерім",
   "myRecipes": "Менің рецепттерім",
+  "navChat": "Chat",
+  "navLists": "Тізімдер",
+  "navMealPlanner": "Мәзір",
+  "navRecipes": "Рецепттер",
   "newChat": "Жаңа чат",
   "newListTitle": "Жаңа Сатып Алу Тізімі",
   "newPantryList": "Қордан сатып алу",
@@ -663,7 +708,56 @@
   "pantryEmpty": "Бос қор",
   "pantryEmptySubtitle": "Үйде ұстағыңыз келетін өнімдерді қосыңыз",
   "pantryItemRemoved": "Элемент жойылды",
+  "paywallAfterItem1": "Дәндер",
+  "paywallAfterItem2": "Тазалау",
+  "paywallAfterItem3": "Еттер",
+  "paywallAfterItem4": "Наубайхана",
+  "paywallBeforeAfterTitle": "AI алдында және кейін:",
+  "paywallBeforeItem1": "күріш",
+  "paywallBeforeItem2": "сабын",
+  "paywallBeforeItem3": "ет",
+  "paywallBeforeItem4": "нан",
+  "paywallBenefit1Desc": "24/7 элементтерді қосады, реттейді және ұсынады",
+  "paywallBenefit2Desc": "3 тізімге шектеу жоқ",
+  "paywallBenefit3Desc": "Шығындарды қадағалау және отбасы тізімдері",
+  "paywallBestValue": "ҮЗДІК ҚҰН",
+  "paywallCancelAnytime": "Кез келген уақытта бас тарту. Міндеттеме жоқ.",
+  "paywallCtaTrialDays": "Тегін бастаңыз — {days} күн",
+  "paywallCtaUnlock": "PRO құлпын ашыңыз",
+  "paywallFeatureExpenseControl": "Шығындарды бақылау",
+  "paywallFeatureSharing": "Бөлісу",
+  "paywallFeatureSmartAI": "Ақылды AI",
+  "paywallFeatureUnlimitedLists": "Шексіз тізімдер",
+  "paywallFeaturesTitle": "Сізге қажет нәрсенің бәрі:",
+  "paywallHeroHeadline": "Kipi AI әрқашан сіздің қасыңызда",
+  "paywallHeroSubtitle": "Қалтаңыздағы AI көмегімен элементтерді қосыңыз, тізімдерді реттеңіз және уақытты үнемдеңіз",
+  "paywallLabelCommon": "Жалпы",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Ұсыныстарды жүктеу қатесі. Қайтадан байқап көріңіз.",
+  "paywallMostPopular": "ЕҢ ТАНЫМАЛ",
+  "paywallPackageAnnual": "Жылдық жоспар",
+  "paywallPackageLifetime": "Өмір бойы қол жеткізу",
+  "paywallPackageMonthly": "Айлық жоспар",
+  "paywallPackageMonthlyDesc": "Толық икемділік",
+  "paywallPolicy": "Құпиялылық саясаты",
+  "paywallPricePerMonth": "Тек {price}/ай",
+  "paywallPurchaseError": "Сатып алу аяқталмады. Қайтадан байқап көріңіз.",
+  "paywallRestore": "Қалпына келтіру",
+  "paywallRestoreError": "Қалпына келтіру үшін белсенді жазылым табылмады.",
+  "paywallSafeCheckout": "Қауіпсіз төлем",
+  "paywallSavePercent": "{percent}% ҮНЕМДЕУ",
+  "paywallSelectPlan": "Жоспарыңызды таңдаңыз:",
+  "paywallSocialProof": "+2400 отбасы пайдаланады",
+  "paywallTerms": "Пайдалану шарттары",
+  "paywallTestimonial1Name": "Энн С.",
+  "paywallTestimonial1Text": "AI менің сатып алуларымды секундтарда ұйымдастырады. Мен базарға бару үшін 20 минут үнемдеймін.",
+  "paywallTestimonial2Name": "Чарльз М.",
+  "paywallTestimonial2Text": "Мен тізімдегі бір элементті қайтадан ұмытпадым. AI чаты сенсациялық!",
+  "paywallTestimonialsTitle": "Біздің қолданушылар не дейді:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} КҮН ТЕГІН",
+  "paywallTrialMonths": "{count,plural, one{{count} АЙ ТЕГІН} other{{count} АЙ ТЕГІН}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} АПТА ТЕГІН} other{{count} АПТА ТЕГІН}}",
   "prefAIAssistant": "Жеке AI Көмекші",
   "prefCustomThemes": "Теңшелетін тақырыптар",
   "prefExportData": "Деректерді экспорттау",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "Дайындау уақыты (минут)",
   "privacy": "Құпиялылық",
   "productName": "Өнім атауы",
+  "profile": "Профиль",
   "purchaseError": "Сатып алуды өңдеу кезінде қате. Қайталап көріңіз.",
   "quantityFull": "Саны",
   "quantityShort": "Саны",
@@ -775,6 +870,7 @@
   "undo": "Болдырмау",
   "unit": "Бірлік",
   "unitPack": "орам",
+  "unlockAi": "Шексіз AI құлпын ашыңыз",
   "unlockFullResponse": "Толық жауаптың құлпын ашыңыз",
   "unmark": "Белгіні алу",
   "upgrade": "Жаңарту",

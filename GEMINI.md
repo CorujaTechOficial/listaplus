@@ -43,10 +43,11 @@ dart run build_runner watch --delete-conflicting-outputs
 ```
 
 ### Quality & Testing
+- **Mandate:** Always run `flutter analyze --fatal-infos` after any code modification.
 ```bash
 # Strict analysis (zero tolerance)
 flutter analyze --fatal-infos
-
+```
 # Quality pipeline
 SONAR_TOKEN=squ_xxx ./scripts/quality-check.sh
 ```

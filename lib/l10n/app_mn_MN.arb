@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -140,6 +154,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -331,6 +348,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -411,6 +435,8 @@
   "aiCreditsRemaining": "{remaining} кредит үлдсэн",
   "aiEnergy": "AI эрчим хүч",
   "aiError": "Уучлаарай, таны хүсэлтийг боловсруулахад алдаа гарлаа. Холболтоо шалгах эсвэл дараа дахин оролдоно уу.",
+  "aiLimitAlmostReached": "AI мессеж бараг байхгүй болсон",
+  "aiTeaserFallback": "Бүрэн хариултыг нээхийн тулд Premium-д бүртгүүлж, дэлгүүр хэсэхдээ хязгааргүй хиймэл оюун ухааны зөвлөгөө аваарай...",
   "aiVoiceCommandTooltip": "AI дуут команд (Premium)",
   "allTags": "Бүгд",
   "alreadyPurchased": "Аль хэдийн худалдаж авсан",
@@ -442,9 +468,21 @@
   "catCleaning": "Цэвэрлэгээ",
   "catFruits": "Жимс",
   "catOthers": "Бусад",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} нэмэх →",
+  "catalogBrowse": "Каталог үзэх",
+  "catalogFilterNational": "Үндэсний хүмүүс",
+  "catalogMyFrequents": "Миний байнгын хүмүүс",
+  "catalogProductNotFound": "Бүтээгдэхүүн олдсонгүй, нэрийг бичнэ үү",
+  "catalogRareSection": "танай улсад бага тохиолддог",
+  "catalogSearchGlobal": "Ямар ч бүтээгдэхүүн хайх...",
+  "catalogSearchInCategory": "{category}-д хайх...",
+  "catalogSortAZ": "А–З",
+  "catalogSortPopular": "Хамгийн алдартай",
+  "catalogTitle": "Каталог",
   "category": "Ангилал",
   "chatError": "Чат ачааллахад алдаа: {error}",
   "chatHint": "Зурвасаа бичнэ үү...",
+  "chatHintBlocked": "Чатлахын тулд AI-ийн түгжээг тайлаарай",
   "chatSubtitle": "Зүйлсийн санал, жор, хэмнэлтийн зөвлөгөө авахыг асуу.",
   "chatSubtitleShort": "Үнэ, жор, зохион байгуулалтын талаар асуу...",
   "chooseCurrency": "Валют сонгоно уу",
@@ -517,6 +555,8 @@
   "estimated": "Тооцоолсон",
   "estimatedCost": "Тооцоолсон",
   "estimatedPrice": "Тооцоолсон үнэ",
+  "exit": "Гарах",
+  "exitShoppingMode": "Худалдааны горимоос гарах",
   "exportData": "Өгөгдөл экспортлох",
   "exportDataSubtitle": "Бүх жагсаалтыг JSON хэлбэрээр хадгалах",
   "exportExcel": "Excel хэлбэрээр экспортлох",
@@ -555,6 +595,7 @@
   "generalAssistant": "Ерөнхий туслах",
   "generalHelp": "Өнөөдөр дэлгүүр хэсэхэд хэрхэн туслах вэ?",
   "generateShoppingList": "Дэлгүүрийн жагсаалт үүсгэх",
+  "gestureHint": "Сонгохын тулд удаан дарна уу • Устгахын тулд шударна уу",
   "globalAssistant": "Ерөнхий туслах",
   "howCanIHelp": "Би яаж туслах вэ?",
   "idealQty": "Тохиромжтой тоо",
@@ -578,6 +619,7 @@
   "itemsPurchasedCount": "{total}-ийн {purchased}-г худалдаж авсан",
   "itemsPurchasedShort": "{purchased}/{total} худалдаж авсан",
   "itemsWillBeAdded": "{count} зүйл(с) нэмэгдэх болно",
+  "kipiListTitle": "KipiList",
   "language": "Хэл",
   "languageEnglish": "Англи",
   "languagePortuguese": "Português (Бразил)",
@@ -592,7 +634,6 @@
   "listHistory": "Жагсаалтын түүх",
   "listNameLabel": "Жагсаалтын нэр",
   "listOrganizedMagic": "Жагсаалт ангилалаар ид шидтэй зохион байгуулагдсан! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Сонсож байна...",
   "lists": "Жагсаалтууд",
   "loading": "Ачааллаж байна...",
@@ -643,6 +684,10 @@
   "monthlyBudgetTitle": "Сарын төсөв",
   "myLists": "Миний жагсаалтууд",
   "myRecipes": "Миний жорууд",
+  "navChat": "Chat",
+  "navLists": "Жагсаалтууд",
+  "navMealPlanner": "Цэс",
+  "navRecipes": "Хоолны жор",
   "newChat": "Шинэ чат",
   "newListTitle": "Шинэ дэлгүүрийн жагсаалт",
   "newPantryList": "Агуулахын худалдан авалт",
@@ -701,7 +746,56 @@
   "pantryEmpty": "Агуулах хоосон",
   "pantryEmptySubtitle": "Гэртээ байлгахыг хүсэх бүтээгдэхүүнүүдээ нэмнэ үү",
   "pantryItemRemoved": "Зүйл устгагдсан",
+  "paywallAfterItem1": "Үр тариа",
+  "paywallAfterItem2": "Цэвэрлэгээ",
+  "paywallAfterItem3": "Мах",
+  "paywallAfterItem4": "Талх нарийн боов",
+  "paywallBeforeAfterTitle": "AI өмнө ба дараа:",
+  "paywallBeforeItem1": "будаа",
+  "paywallBeforeItem2": "саван",
+  "paywallBeforeItem3": "мах",
+  "paywallBeforeItem4": "талх",
+  "paywallBenefit1Desc": "24/7 зүйл нэмж, цэгцэлж, санал болгодог",
+  "paywallBenefit2Desc": "3 жагсаалтын хязгаарлалт байхгүй",
+  "paywallBenefit3Desc": "Зардлын хяналт, гэр бүлийн жагсаалт",
+  "paywallBestValue": "ХАМГИЙН ҮНЭ ЦЭНЭ",
+  "paywallCancelAnytime": "Хэзээ ч цуцлах. Амлалт байхгүй.",
+  "paywallCtaTrialDays": "Үнэгүй эхлэх — {days} хоног",
+  "paywallCtaUnlock": "PRO түгжээг тайл",
+  "paywallFeatureExpenseControl": "Зардлын хяналт",
+  "paywallFeatureSharing": "Хуваалцах",
+  "paywallFeatureSmartAI": "Ухаалаг AI",
+  "paywallFeatureUnlimitedLists": "Хязгааргүй жагсаалт",
+  "paywallFeaturesTitle": "Танд хэрэгтэй бүх зүйл:",
+  "paywallHeroHeadline": "Kipi AI үргэлж таны хажууд байдаг",
+  "paywallHeroSubtitle": "Хиймэл оюун ухааны тусламжтайгаар халаасандаа байгаа зүйлсээ нэмж, жагсаалтаа цэгцэлж, цаг хэмнээрэй",
+  "paywallLabelCommon": "Нийтлэг",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Саналыг ачаалахад алдаа гарлаа. Дахин оролдоно уу.",
+  "paywallMostPopular": "ХАМГИЙН АЛДАРТ",
+  "paywallPackageAnnual": "Жилийн төлөвлөгөө",
+  "paywallPackageLifetime": "Насан туршийн хандалт",
+  "paywallPackageMonthly": "Сарын төлөвлөгөө",
+  "paywallPackageMonthlyDesc": "Бүрэн уян хатан байдал",
+  "paywallPolicy": "Нууцлалын бодлого",
+  "paywallPricePerMonth": "Зөвхөн {price}/сар",
+  "paywallPurchaseError": "Худалдан авалтыг дуусгаж чадсангүй. Дахин оролдоно уу.",
+  "paywallRestore": "Сэргээх",
+  "paywallRestoreError": "Сэргээх идэвхтэй захиалга олдсонгүй.",
+  "paywallSafeCheckout": "Аюулгүй төлбөр",
+  "paywallSavePercent": "{percent}% ХЭМНЭХ",
+  "paywallSelectPlan": "Төлөвлөгөөгөө сонгоно уу:",
+  "paywallSocialProof": "+2400 өрх үүнийг ашигладаг",
+  "paywallTerms": "Хэрэглэх нөхцөл",
+  "paywallTestimonial1Name": "Анн С.",
+  "paywallTestimonial1Text": "AI миний худалдан авалтыг секундын дотор зохион байгуулдаг. Би зах зээлд 20 минут хэмнэдэг.",
+  "paywallTestimonial2Name": "Чарльз М.",
+  "paywallTestimonial2Text": "Би жагсаалтын нэг зүйлийг дахин хэзээ ч мартсангүй. AI чат нь сенсаацтай юм!",
+  "paywallTestimonialsTitle": "Манай хэрэглэгчид юу гэж хэлдэг:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} ӨДӨР ҮНЭГҮЙ",
+  "paywallTrialMonths": "{count,plural, one{{count} САР ҮНЭГҮЙ} other{{count} САР ҮНЭГҮЙ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ДОЛОО ХОНОГ ҮНЭГҮЙ} other{{count} ДОЛОО ХОНОГ ҮНЭГҮЙ}}",
   "prefAIAssistant": "Хувийн AI туслах",
   "prefCustomThemes": "Өөрийн сэдвүүд",
   "prefExportData": "Өгөгдөл экспортлох",
@@ -716,6 +810,7 @@
   "prepTimeMinutes": "Бэлтгэх хугацаа (минут)",
   "privacy": "Нууцлал",
   "productName": "Бүтээгдэхүүний нэр",
+  "profile": "Профайл",
   "purchaseError": "Худалдан авалтыг боловсруулахад алдаа гарлаа. Дахин оролдоно уу.",
   "quantityFull": "Тоо хэмжээ",
   "quantityShort": "Тоо",
@@ -813,6 +908,7 @@
   "undo": "Буцаах",
   "unit": "Нэгж",
   "unitPack": "багц",
+  "unlockAi": "Хязгааргүй хиймэл оюун ухааны түгжээг тайл",
   "unlockFullResponse": "Бүрэн хариултын түгжээг тайлах",
   "unmark": "Тэмдэг арилгах",
   "upgrade": "Шинэчлэх",

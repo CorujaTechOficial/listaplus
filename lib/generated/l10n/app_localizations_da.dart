@@ -18,6 +18,18 @@ class AppLocalizationsDa extends AppLocalizations {
   String get pantry => 'Spisekammer';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Opskrifter';
+
+  @override
+  String get navLists => 'Lister';
+
+  @override
+  String get navMealPlanner => 'Menu';
+
+  @override
   String get cancel => 'Annuller';
 
   @override
@@ -95,6 +107,15 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get addedFeedback => 'Tilføjet!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Afslut indkøbstilstand';
+
+  @override
+  String get exit => 'Udgang';
 
   @override
   String selectedItems(int count) {
@@ -613,14 +634,14 @@ class AppLocalizationsDa extends AppLocalizations {
       'Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'Næsten ude af AI-meddelelser';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'Lås op for ubegrænset AI';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'Abonner på Premium for at låse op for det fulde svar og få ubegrænsede AI-tip til dine indkøb...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -750,17 +771,18 @@ class AppLocalizationsDa extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError => 'Fejl ved indlæsning af tilbud. Prøv igen.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError => 'Kunne ikke gennemføre købet. Prøv igen.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError =>
+      'Der blev ikke fundet noget aktivt abonnement at gendanne.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days DAGE GRATIS';
   }
 
   @override
@@ -768,8 +790,8 @@ class AppLocalizationsDa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count WEEKS FREE',
-      one: '$count WEEK FREE',
+      other: '$count UGE GRATIS',
+      one: '$count UGE GRATIS',
     );
     return '$_temp0';
   }
@@ -786,141 +808,143 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'Alt hvad du behøver:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'Ubegrænsede lister';
 
   @override
   String get paywallFeatureSmartAI => 'Smart AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'Udgiftskontrol';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'Deling';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI før og efter:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'Fælles';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'ris';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'sæbe';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'kød';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'brød';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'Korn';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'Rensning';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'Kød';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'Bageri';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'Hvad vores brugere siger:';
 
   @override
   String get paywallTestimonial1Name => 'Ann S.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI organiserer mine indkøb på få sekunder. Jeg sparer 20 min pr. markedsrejse.';
 
   @override
   String get paywallTestimonial2Name => 'Charles M.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'Jeg har aldrig glemt et listeelement igen. AI-chatten er sensationel!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => '+2.400 familier bruger det';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'Lås PRO op';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'BEDSTE VÆRDI';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'MEST POPULÆR';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'Sikker betaling';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'Vælg din plan:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'SPAR $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'Kun $price/måned';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'Årsplan';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'Månedsplan';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'Livstidsadgang';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime =>
+      'Annuller når som helst. Ingen forpligtelse.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'Privatlivspolitik';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'Vilkår for brug';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'Gendan';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI altid ved din side';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Tilføj genstande, organiser lister og spar tid med kunstig intelligens i lommen';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'Tilføjer, organiserer og foreslår elementer 24/7';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Ingen 3-liste grænse';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc => 'Udgiftssporing og familielister';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'Fuld fleksibilitet';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'Start gratis - $days dage';
   }
 
   @override
@@ -1639,6 +1663,53 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'Få 7 dages KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold nede for at vælge • Stryg for at fjerne';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Mine hyppige';
+
+  @override
+  String get catalogSearchGlobal => 'Søg efter ethvert produkt...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Søg i $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Mest populær';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationale';
+
+  @override
+  String get catalogRareSection => 'mindre almindelig i dit land';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Tilføj $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'Produktet blev ikke fundet. Indtast navnet';
+
+  @override
+  String get catalogBrowse => 'Gennemse kataloget';
 }
 
 /// The translations for Danish, as used in Denmark (`da_DK`).
@@ -1653,6 +1724,18 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get pantry => 'Spisekammer';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'Opskrifter';
+
+  @override
+  String get navLists => 'Lister';
+
+  @override
+  String get navMealPlanner => 'Menu';
 
   @override
   String get cancel => 'Annuller';
@@ -1732,6 +1815,15 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get addedFeedback => 'Tilføjet!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Afslut indkøbstilstand';
+
+  @override
+  String get exit => 'Udgang';
 
   @override
   String selectedItems(int count) {
@@ -2250,6 +2342,16 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
       'Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.';
 
   @override
+  String get aiLimitAlmostReached => 'Næsten ude af AI-meddelelser';
+
+  @override
+  String get unlockAi => 'Lås op for ubegrænset AI';
+
+  @override
+  String get aiTeaserFallback =>
+      'Abonner på Premium for at låse op for det fulde svar og få ubegrænsede AI-tip til dine indkøb...';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -2375,6 +2477,183 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError => 'Fejl ved indlæsning af tilbud. Prøv igen.';
+
+  @override
+  String get paywallPurchaseError => 'Kunne ikke gennemføre købet. Prøv igen.';
+
+  @override
+  String get paywallRestoreError =>
+      'Der blev ikke fundet noget aktivt abonnement at gendanne.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days DAGE GRATIS';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count UGE GRATIS',
+      one: '$count UGE GRATIS',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'Alt hvad du behøver:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'Ubegrænsede lister';
+
+  @override
+  String get paywallFeatureSmartAI => 'Smart AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'Udgiftskontrol';
+
+  @override
+  String get paywallFeatureSharing => 'Deling';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI før og efter:';
+
+  @override
+  String get paywallLabelCommon => 'Fælles';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'ris';
+
+  @override
+  String get paywallBeforeItem2 => 'sæbe';
+
+  @override
+  String get paywallBeforeItem3 => 'kød';
+
+  @override
+  String get paywallBeforeItem4 => 'brød';
+
+  @override
+  String get paywallAfterItem1 => 'Korn';
+
+  @override
+  String get paywallAfterItem2 => 'Rensning';
+
+  @override
+  String get paywallAfterItem3 => 'Kød';
+
+  @override
+  String get paywallAfterItem4 => 'Bageri';
+
+  @override
+  String get paywallTestimonialsTitle => 'Hvad vores brugere siger:';
+
+  @override
+  String get paywallTestimonial1Name => 'Ann S.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI organiserer mine indkøb på få sekunder. Jeg sparer 20 min pr. markedsrejse.';
+
+  @override
+  String get paywallTestimonial2Name => 'Charles M.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'Jeg har aldrig glemt et listeelement igen. AI-chatten er sensationel!';
+
+  @override
+  String get paywallSocialProof => '+2.400 familier bruger det';
+
+  @override
+  String get paywallCtaUnlock => 'Lås PRO op';
+
+  @override
+  String get paywallBestValue => 'BEDSTE VÆRDI';
+
+  @override
+  String get paywallMostPopular => 'MEST POPULÆR';
+
+  @override
+  String get paywallSafeCheckout => 'Sikker betaling';
+
+  @override
+  String get paywallSelectPlan => 'Vælg din plan:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'SPAR $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'Kun $price/måned';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'Årsplan';
+
+  @override
+  String get paywallPackageMonthly => 'Månedsplan';
+
+  @override
+  String get paywallPackageLifetime => 'Livstidsadgang';
+
+  @override
+  String get paywallCancelAnytime =>
+      'Annuller når som helst. Ingen forpligtelse.';
+
+  @override
+  String get paywallPolicy => 'Privatlivspolitik';
+
+  @override
+  String get paywallTerms => 'Vilkår for brug';
+
+  @override
+  String get paywallRestore => 'Gendan';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI altid ved din side';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'Tilføj genstande, organiser lister og spar tid med kunstig intelligens i lommen';
+
+  @override
+  String get paywallBenefit1Desc =>
+      'Tilføjer, organiserer og foreslår elementer 24/7';
+
+  @override
+  String get paywallBenefit2Desc => 'Ingen 3-liste grænse';
+
+  @override
+  String get paywallBenefit3Desc => 'Udgiftssporing og familielister';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'Fuld fleksibilitet';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'Start gratis - $days dage';
+  }
 
   @override
   String get premiumUpgrade => 'Opgrader for at låse op';
@@ -3092,4 +3371,51 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get shareReferralSubject => 'Få 7 dages KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold nede for at vælge • Stryg for at fjerne';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Mine hyppige';
+
+  @override
+  String get catalogSearchGlobal => 'Søg efter ethvert produkt...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Søg i $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Mest populær';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationale';
+
+  @override
+  String get catalogRareSection => 'mindre almindelig i dit land';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Tilføj $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound =>
+      'Produktet blev ikke fundet. Indtast navnet';
+
+  @override
+  String get catalogBrowse => 'Gennemse kataloget';
 }

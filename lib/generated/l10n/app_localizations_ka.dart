@@ -18,6 +18,18 @@ class AppLocalizationsKa extends AppLocalizations {
   String get pantry => 'საკუჭნაო';
 
   @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'რეცეპტები';
+
+  @override
+  String get navLists => 'სიები';
+
+  @override
+  String get navMealPlanner => 'მენიუ';
+
+  @override
   String get cancel => 'გაუქმება';
 
   @override
@@ -96,6 +108,15 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get addedFeedback => 'დამატებულია!';
+
+  @override
+  String get profile => 'პროფილი';
+
+  @override
+  String get exitShoppingMode => 'გადით შოპინგის რეჟიმიდან';
+
+  @override
+  String get exit => 'გასვლა';
 
   @override
   String selectedItems(int count) {
@@ -594,7 +615,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get chatHint => 'ჩაწერეთ თქვენი მესიჯი...';
 
   @override
-  String get chatHintBlocked => 'Unlock AI to chat';
+  String get chatHintBlocked => 'განბლოკეთ AI ჩატში';
 
   @override
   String chatError(String error) {
@@ -616,14 +637,14 @@ class AppLocalizationsKa extends AppLocalizations {
       'ბოდიში, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ მოგვიანებით.';
 
   @override
-  String get aiLimitAlmostReached => 'Almost out of AI messages';
+  String get aiLimitAlmostReached => 'AI შეტყობინებები თითქმის ამოიწურა';
 
   @override
-  String get unlockAi => 'Unlock unlimited AI';
+  String get unlockAi => 'განბლოკეთ შეუზღუდავი AI';
 
   @override
   String get aiTeaserFallback =>
-      'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
+      'გამოიწერეთ Premium, რათა განბლოკოთ სრული პასუხი და მიიღოთ შეუზღუდავი AI რჩევები თქვენი შოპინგისთვის...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -754,17 +775,19 @@ class AppLocalizationsKa extends AppLocalizations {
   String get paywallTitle => 'KipiList Premium';
 
   @override
-  String get paywallLoadingError => 'Error loading offers. Try again.';
+  String get paywallLoadingError =>
+      'შეთავაზებების ჩატვირთვის შეცდომა. სცადეთ ხელახლა.';
 
   @override
-  String get paywallPurchaseError => 'Could not complete purchase. Try again.';
+  String get paywallPurchaseError =>
+      'შესყიდვის დასრულება ვერ მოხერხდა. სცადეთ ხელახლა.';
 
   @override
-  String get paywallRestoreError => 'No active subscription found to restore.';
+  String get paywallRestoreError => 'აღსადგენად აქტიური გამოწერა ვერ მოიძებნა.';
 
   @override
   String paywallTrialDays(Object days) {
-    return '$days DAYS FREE';
+    return '$days დღე უფასო';
   }
 
   @override
@@ -790,141 +813,143 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get paywallFeaturesTitle => 'Everything you need:';
+  String get paywallFeaturesTitle => 'ყველაფერი რაც თქვენ გჭირდებათ:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Unlimited Lists';
+  String get paywallFeatureUnlimitedLists => 'შეუზღუდავი სიები';
 
   @override
-  String get paywallFeatureSmartAI => 'Smart AI';
+  String get paywallFeatureSmartAI => 'ჭკვიანი AI';
 
   @override
-  String get paywallFeatureExpenseControl => 'Expense Control';
+  String get paywallFeatureExpenseControl => 'ხარჯების კონტროლი';
 
   @override
-  String get paywallFeatureSharing => 'Sharing';
+  String get paywallFeatureSharing => 'გაზიარება';
 
   @override
-  String get paywallBeforeAfterTitle => 'AI Before and After:';
+  String get paywallBeforeAfterTitle => 'AI ადრე და შემდეგ:';
 
   @override
-  String get paywallLabelCommon => 'Common';
+  String get paywallLabelCommon => 'საერთო';
 
   @override
   String get paywallLabelPro => 'KipiList PRO';
 
   @override
-  String get paywallBeforeItem1 => 'rice';
+  String get paywallBeforeItem1 => 'ბრინჯი';
 
   @override
-  String get paywallBeforeItem2 => 'soap';
+  String get paywallBeforeItem2 => 'საპონი';
 
   @override
-  String get paywallBeforeItem3 => 'meat';
+  String get paywallBeforeItem3 => 'ხორცი';
 
   @override
-  String get paywallBeforeItem4 => 'bread';
+  String get paywallBeforeItem4 => 'პური';
 
   @override
-  String get paywallAfterItem1 => 'Grains';
+  String get paywallAfterItem1 => 'მარცვლეული';
 
   @override
-  String get paywallAfterItem2 => 'Cleaning';
+  String get paywallAfterItem2 => 'დასუფთავება';
 
   @override
-  String get paywallAfterItem3 => 'Meats';
+  String get paywallAfterItem3 => 'ხორცი';
 
   @override
-  String get paywallAfterItem4 => 'Bakery';
+  String get paywallAfterItem4 => 'საცხობი';
 
   @override
-  String get paywallTestimonialsTitle => 'What our users say:';
+  String get paywallTestimonialsTitle => 'რას ამბობენ ჩვენი მომხმარებლები:';
 
   @override
-  String get paywallTestimonial1Name => 'Ann S.';
+  String get paywallTestimonial1Name => 'ენ ს.';
 
   @override
   String get paywallTestimonial1Text =>
-      'AI organizes my shopping in seconds. I save 20 min per market trip.';
+      'AI აწყობს ჩემს შოპინგის წამებში. მე ვზოგავ 20 წუთს მარკეტში მოგზაურობისთვის.';
 
   @override
-  String get paywallTestimonial2Name => 'Charles M.';
+  String get paywallTestimonial2Name => 'ჩარლზ მ.';
 
   @override
   String get paywallTestimonial2Text =>
-      'I never forgot a list item again. The AI chat is sensational!';
+      'სიის პუნქტი აღარ დამავიწყდა. AI ჩატი სენსაციურია!';
 
   @override
-  String get paywallSocialProof => '+2,400 families use it';
+  String get paywallSocialProof => 'სარგებლობს +2400 ოჯახი';
 
   @override
-  String get paywallCtaUnlock => 'Unlock PRO';
+  String get paywallCtaUnlock => 'განბლოკეთ PRO';
 
   @override
-  String get paywallBestValue => 'BEST VALUE';
+  String get paywallBestValue => 'საუკეთესო ღირებულება';
 
   @override
-  String get paywallMostPopular => 'MOST POPULAR';
+  String get paywallMostPopular => 'ყველაზე პოპულარული';
 
   @override
-  String get paywallSafeCheckout => 'Secure payment';
+  String get paywallSafeCheckout => 'უსაფრთხო გადახდა';
 
   @override
-  String get paywallSelectPlan => 'Choose your plan:';
+  String get paywallSelectPlan => 'აირჩიეთ თქვენი გეგმა:';
 
   @override
   String paywallSavePercent(Object percent) {
-    return 'SAVE $percent%';
+    return 'შენახვა $percent%';
   }
 
   @override
   String paywallPricePerMonth(Object price) {
-    return 'Only $price/month';
+    return 'მხოლოდ $price/თვეში';
   }
 
   @override
-  String get paywallPackageAnnual => 'Annual Plan';
+  String get paywallPackageAnnual => 'წლიური გეგმა';
 
   @override
-  String get paywallPackageMonthly => 'Monthly Plan';
+  String get paywallPackageMonthly => 'ყოველთვიური გეგმა';
 
   @override
-  String get paywallPackageLifetime => 'Lifetime Access';
+  String get paywallPackageLifetime => 'უვადოდ წვდომა';
 
   @override
-  String get paywallCancelAnytime => 'Cancel anytime. No commitment.';
+  String get paywallCancelAnytime =>
+      'გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.';
 
   @override
-  String get paywallPolicy => 'Privacy Policy';
+  String get paywallPolicy => 'კონფიდენციალურობის პოლიტიკა';
 
   @override
-  String get paywallTerms => 'Terms of Use';
+  String get paywallTerms => 'გამოყენების პირობები';
 
   @override
-  String get paywallRestore => 'Restore';
+  String get paywallRestore => 'აღდგენა';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi AI ყოველთვის თქვენს გვერდით';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'დაამატეთ ნივთები, მოაწყვეთ სიები და დაზოგეთ დრო ჯიბეში AI-ით';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc => 'ამატებს, აწყობს და სთავაზობს ნივთებს 24/7';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'არ არის 3 სიის ლიმიტი';
 
   @override
-  String get paywallBenefit3Desc => 'Expense tracking and family lists';
+  String get paywallBenefit3Desc =>
+      'ხარჯების თვალყურის დევნება და ოჯახის სიები';
 
   @override
-  String get paywallPackageMonthlyDesc => 'Full flexibility';
+  String get paywallPackageMonthlyDesc => 'სრული მოქნილობა';
 
   @override
   String paywallCtaTrialDays(int days) {
-    return 'Start free — $days days';
+    return 'დაწყება უფასოდ — $days დღე';
   }
 
   @override
@@ -1644,6 +1669,52 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get shareReferralSubject => 'მიიღეთ 7 დღიანი KipiList Premium!';
+
+  @override
+  String get gestureHint => 'ხანგრძლივად ასარჩევად • გადაფურცლეთ წასაშლელად';
+
+  @override
+  String get catalogTitle => 'კატალოგი';
+
+  @override
+  String get catalogMyFrequents => 'ჩემი სიხშირე';
+
+  @override
+  String get catalogSearchGlobal => 'მოძებნეთ ნებისმიერი პროდუქტი...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'ძიება $category-ში...';
+  }
+
+  @override
+  String get catalogSortPopular => 'ყველაზე პოპულარული';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'ნაციონალები';
+
+  @override
+  String get catalogRareSection => 'ნაკლებად გავრცელებული თქვენს ქვეყანაში';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'დაამატეთ $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'პროდუქტი ვერ მოიძებნა, ჩაწერეთ სახელი';
+
+  @override
+  String get catalogBrowse => 'კატალოგის დათვალიერება';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -1658,6 +1729,18 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get pantry => 'საკუჭნაო';
+
+  @override
+  String get navChat => 'Chat';
+
+  @override
+  String get navRecipes => 'რეცეპტები';
+
+  @override
+  String get navLists => 'სიები';
+
+  @override
+  String get navMealPlanner => 'მენიუ';
 
   @override
   String get cancel => 'გაუქმება';
@@ -1737,6 +1820,15 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get addedFeedback => 'დამატებულია!';
+
+  @override
+  String get profile => 'პროფილი';
+
+  @override
+  String get exitShoppingMode => 'გადით შოპინგის რეჟიმიდან';
+
+  @override
+  String get exit => 'გასვლა';
 
   @override
   String selectedItems(int count) {
@@ -2234,6 +2326,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get chatHint => 'აკრიფეთ თქვენი შეტყობინება...';
 
   @override
+  String get chatHintBlocked => 'განბლოკეთ AI ჩატში';
+
+  @override
   String chatError(String error) {
     return 'შეცდომა ჩატის ჩატვირთვისას: $error';
   }
@@ -2251,6 +2346,16 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   @override
   String get aiError =>
       'უკაცრავად, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ თავიდან მოგვიანებით.';
+
+  @override
+  String get aiLimitAlmostReached => 'AI შეტყობინებები თითქმის ამოიწურა';
+
+  @override
+  String get unlockAi => 'განბლოკეთ შეუზღუდავი AI';
+
+  @override
+  String get aiTeaserFallback =>
+      'გამოიწერეთ Premium, რათა განბლოკოთ სრული პასუხი და მიიღოთ შეუზღუდავი AI რჩევები თქვენი შოპინგისთვის...';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -2379,6 +2484,184 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get paywallTitle => 'KipiList Premium';
+
+  @override
+  String get paywallLoadingError =>
+      'შეთავაზებების ჩატვირთვის შეცდომა. სცადეთ ხელახლა.';
+
+  @override
+  String get paywallPurchaseError =>
+      'შესყიდვის დასრულება ვერ მოხერხდა. სცადეთ ხელახლა.';
+
+  @override
+  String get paywallRestoreError => 'აღსადგენად აქტიური გამოწერა ვერ მოიძებნა.';
+
+  @override
+  String paywallTrialDays(Object days) {
+    return '$days დღე უფასო';
+  }
+
+  @override
+  String paywallTrialWeeks(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count WEEKS FREE',
+      one: '$count WEEK FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallTrialMonths(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count MONTHS FREE',
+      one: '$count MONTH FREE',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallFeaturesTitle => 'ყველაფერი რაც თქვენ გჭირდებათ:';
+
+  @override
+  String get paywallFeatureUnlimitedLists => 'შეუზღუდავი სიები';
+
+  @override
+  String get paywallFeatureSmartAI => 'ჭკვიანი AI';
+
+  @override
+  String get paywallFeatureExpenseControl => 'ხარჯების კონტროლი';
+
+  @override
+  String get paywallFeatureSharing => 'გაზიარება';
+
+  @override
+  String get paywallBeforeAfterTitle => 'AI ადრე და შემდეგ:';
+
+  @override
+  String get paywallLabelCommon => 'საერთო';
+
+  @override
+  String get paywallLabelPro => 'KipiList PRO';
+
+  @override
+  String get paywallBeforeItem1 => 'ბრინჯი';
+
+  @override
+  String get paywallBeforeItem2 => 'საპონი';
+
+  @override
+  String get paywallBeforeItem3 => 'ხორცი';
+
+  @override
+  String get paywallBeforeItem4 => 'პური';
+
+  @override
+  String get paywallAfterItem1 => 'მარცვლეული';
+
+  @override
+  String get paywallAfterItem2 => 'დასუფთავება';
+
+  @override
+  String get paywallAfterItem3 => 'ხორცი';
+
+  @override
+  String get paywallAfterItem4 => 'საცხობი';
+
+  @override
+  String get paywallTestimonialsTitle => 'რას ამბობენ ჩვენი მომხმარებლები:';
+
+  @override
+  String get paywallTestimonial1Name => 'ენ ს.';
+
+  @override
+  String get paywallTestimonial1Text =>
+      'AI აწყობს ჩემს შოპინგის წამებში. მე ვზოგავ 20 წუთს მარკეტში მოგზაურობისთვის.';
+
+  @override
+  String get paywallTestimonial2Name => 'ჩარლზ მ.';
+
+  @override
+  String get paywallTestimonial2Text =>
+      'სიის პუნქტი აღარ დამავიწყდა. AI ჩატი სენსაციურია!';
+
+  @override
+  String get paywallSocialProof => 'სარგებლობს +2400 ოჯახი';
+
+  @override
+  String get paywallCtaUnlock => 'განბლოკეთ PRO';
+
+  @override
+  String get paywallBestValue => 'საუკეთესო ღირებულება';
+
+  @override
+  String get paywallMostPopular => 'ყველაზე პოპულარული';
+
+  @override
+  String get paywallSafeCheckout => 'უსაფრთხო გადახდა';
+
+  @override
+  String get paywallSelectPlan => 'აირჩიეთ თქვენი გეგმა:';
+
+  @override
+  String paywallSavePercent(Object percent) {
+    return 'შენახვა $percent%';
+  }
+
+  @override
+  String paywallPricePerMonth(Object price) {
+    return 'მხოლოდ $price/თვეში';
+  }
+
+  @override
+  String get paywallPackageAnnual => 'წლიური გეგმა';
+
+  @override
+  String get paywallPackageMonthly => 'ყოველთვიური გეგმა';
+
+  @override
+  String get paywallPackageLifetime => 'უვადოდ წვდომა';
+
+  @override
+  String get paywallCancelAnytime =>
+      'გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.';
+
+  @override
+  String get paywallPolicy => 'კონფიდენციალურობის პოლიტიკა';
+
+  @override
+  String get paywallTerms => 'გამოყენების პირობები';
+
+  @override
+  String get paywallRestore => 'აღდგენა';
+
+  @override
+  String get paywallHeroHeadline => 'Kipi AI ყოველთვის თქვენს გვერდით';
+
+  @override
+  String get paywallHeroSubtitle =>
+      'დაამატეთ ნივთები, მოაწყვეთ სიები და დაზოგეთ დრო ჯიბეში AI-ით';
+
+  @override
+  String get paywallBenefit1Desc => 'ამატებს, აწყობს და სთავაზობს ნივთებს 24/7';
+
+  @override
+  String get paywallBenefit2Desc => 'არ არის 3 სიის ლიმიტი';
+
+  @override
+  String get paywallBenefit3Desc =>
+      'ხარჯების თვალყურის დევნება და ოჯახის სიები';
+
+  @override
+  String get paywallPackageMonthlyDesc => 'სრული მოქნილობა';
+
+  @override
+  String paywallCtaTrialDays(int days) {
+    return 'დაწყება უფასოდ — $days დღე';
+  }
 
   @override
   String get premiumUpgrade => 'განაახლეთ განბლოკვისთვის';
@@ -3097,4 +3380,50 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get shareReferralSubject => 'მიიღეთ 7 დღიანი KipiList Premium!';
+
+  @override
+  String get gestureHint => 'ხანგრძლივად ასარჩევად • გადაფურცლეთ წასაშლელად';
+
+  @override
+  String get catalogTitle => 'კატალოგი';
+
+  @override
+  String get catalogMyFrequents => 'ჩემი სიხშირე';
+
+  @override
+  String get catalogSearchGlobal => 'მოძებნეთ ნებისმიერი პროდუქტი...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'ძიება $category-ში...';
+  }
+
+  @override
+  String get catalogSortPopular => 'ყველაზე პოპულარული';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'ნაციონალები';
+
+  @override
+  String get catalogRareSection => 'ნაკლებად გავრცელებული თქვენს ქვეყანაში';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'დაამატეთ $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'პროდუქტი ვერ მოიძებნა, ჩაწერეთ სახელი';
+
+  @override
+  String get catalogBrowse => 'კატალოგის დათვალიერება';
 }

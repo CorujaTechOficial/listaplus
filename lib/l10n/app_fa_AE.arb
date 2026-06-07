@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} اعتبار باقی‌مانده",
   "aiEnergy": "انرژی هوش مصنوعی",
   "aiError": "متأسفانه، خطایی در پردازش درخواست شما رخ داد. اتصال خود را بررسی کنید یا بعداً دوباره تلاش کنید.",
+  "aiLimitAlmostReached": "پیام های هوش مصنوعی تقریبا تمام شده است",
+  "aiTeaserFallback": "برای باز کردن پاسخ کامل و دریافت نکات نامحدود هوش مصنوعی برای خرید خود در Premium مشترک شوید...",
   "aiVoiceCommandTooltip": "فرمان صوتی هوش مصنوعی (پریمیوم)",
   "allTags": "همه",
   "alreadyPurchased": "قبلاً خریداری شده",
@@ -404,6 +430,17 @@
   "catCleaning": "نظافت",
   "catFruits": "میوه‌ها",
   "catOthers": "سایر",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} را اضافه کنید →",
+  "catalogBrowse": "کاتالوگ را مرور کنید",
+  "catalogFilterNational": "ملی پوشان",
+  "catalogMyFrequents": "فرکانس های من",
+  "catalogProductNotFound": "محصول یافت نشد، نام را تایپ کنید",
+  "catalogRareSection": "در کشور شما کمتر رایج است",
+  "catalogSearchGlobal": "جستجو در هر محصول ...",
+  "catalogSearchInCategory": "جستجو در {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "محبوب ترین",
+  "catalogTitle": "کاتالوگ",
   "category": "دسته‌بندی",
   "chatError": "خطا در بارگذاری چت: {error}",
   "chatHint": "پیام خود را بنویسید...",
@@ -480,6 +517,8 @@
   "estimated": "تخمینی",
   "estimatedCost": "برآورد شده است",
   "estimatedPrice": "قیمت تخمینی",
+  "exit": "خارج شوید",
+  "exitShoppingMode": "از حالت خرید خارج شوید",
   "exportData": "صادر کردن داده‌ها",
   "exportDataSubtitle": "ذخیره همه لیست‌ها به صورت JSON",
   "exportExcel": "صادر کردن به صورت Excel",
@@ -518,6 +557,7 @@
   "generalAssistant": "دستیار عمومی",
   "generalHelp": "امروز چگونه می‌توانم در خرید شما کمک کنم؟",
   "generateShoppingList": "ایجاد لیست خرید",
+  "gestureHint": "برای انتخاب نگه دارید • برای حذف، انگشت خود را تند بکشید",
   "globalAssistant": "دستیار عمومی",
   "howCanIHelp": "چگونه می توانم کمک کنم؟",
   "idealQty": "مقدار ایده‌آل",
@@ -541,6 +581,7 @@
   "itemsPurchasedCount": "{purchased} از {total} خریداری شده است",
   "itemsPurchasedShort": "{purchased}/{total} خریداری شد",
   "itemsWillBeAdded": "{count} آیتم اضافه خواهد شد",
+  "kipiListTitle": "KipiList",
   "language": "زبان",
   "languageEnglish": "انگلیسی",
   "languagePortuguese": "پرتغالی (برزیل)",
@@ -555,7 +596,6 @@
   "listHistory": "تاریخچه لیست",
   "listNameLabel": "نام لیست",
   "listOrganizedMagic": "لیست به صورت جادویی بر اساس دسته‌بندی سازماندهی شد! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "گوش دادن...",
   "lists": "لیست‌ها",
   "loading": "در حال بارگذاری...",
@@ -606,6 +646,10 @@
   "monthlyBudgetTitle": "بودجه ماهانه",
   "myLists": "لیست‌های من",
   "myRecipes": "دستورهای پخت من",
+  "navChat": "Chat",
+  "navLists": "لیست‌ها",
+  "navMealPlanner": "منو",
+  "navRecipes": "دستور العمل ها",
   "newChat": "چت جدید",
   "newListTitle": "لیست خرید جدید",
   "newPantryList": "خرید از انباری",
@@ -664,7 +708,56 @@
   "pantryEmpty": "انباری خالی است",
   "pantryEmptySubtitle": "محصولاتی را که می‌خواهید در خانه داشته باشید اضافه کنید",
   "pantryItemRemoved": "آیتم حذف شد",
+  "paywallAfterItem1": "غلات",
+  "paywallAfterItem2": "تمیز کردن",
+  "paywallAfterItem3": "گوشت ها",
+  "paywallAfterItem4": "نانوایی",
+  "paywallBeforeAfterTitle": "هوش مصنوعی قبل و بعد:",
+  "paywallBeforeItem1": "برنج",
+  "paywallBeforeItem2": "صابون",
+  "paywallBeforeItem3": "گوشت",
+  "paywallBeforeItem4": "نان",
+  "paywallBenefit1Desc": "24/7 موارد را اضافه، سازماندهی و پیشنهاد می کند",
+  "paywallBenefit2Desc": "محدودیت 3 لیستی وجود ندارد",
+  "paywallBenefit3Desc": "ردیابی هزینه ها و لیست خانواده",
+  "paywallBestValue": "بهترین ارزش",
+  "paywallCancelAnytime": "هر زمان خواستید لغو کنید. بدون تعهد",
+  "paywallCtaTrialDays": "شروع رایگان — {days} روز",
+  "paywallCtaUnlock": "باز کردن قفل PRO",
+  "paywallFeatureExpenseControl": "کنترل هزینه",
+  "paywallFeatureSharing": "اشتراک گذاری",
+  "paywallFeatureSmartAI": "هوش مصنوعی هوشمند",
+  "paywallFeatureUnlimitedLists": "لیست های نامحدود",
+  "paywallFeaturesTitle": "هر چیزی که نیاز دارید:",
+  "paywallHeroHeadline": "هوش مصنوعی Kipi همیشه در کنار شماست",
+  "paywallHeroSubtitle": "آیتم ها را اضافه کنید، لیست ها را سازماندهی کنید و با هوش مصنوعی در جیب خود در زمان صرفه جویی کنید",
+  "paywallLabelCommon": "مشترک",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "خطا در بارگیری پیشنهادها. دوباره امتحان کنید.",
+  "paywallMostPopular": "محبوب ترین",
+  "paywallPackageAnnual": "برنامه سالانه",
+  "paywallPackageLifetime": "دسترسی مادام العمر",
+  "paywallPackageMonthly": "برنامه ماهانه",
+  "paywallPackageMonthlyDesc": "انعطاف پذیری کامل",
+  "paywallPolicy": "سیاست حفظ حریم خصوصی",
+  "paywallPricePerMonth": "فقط {price}/ماه",
+  "paywallPurchaseError": "خرید کامل نشد. دوباره امتحان کنید.",
+  "paywallRestore": "بازیابی کنید",
+  "paywallRestoreError": "هیچ اشتراک فعالی برای بازیابی یافت نشد.",
+  "paywallSafeCheckout": "پرداخت مطمئن",
+  "paywallSavePercent": "ذخیره {percent}%",
+  "paywallSelectPlan": "طرح خود را انتخاب کنید:",
+  "paywallSocialProof": "+2400 خانواده از آن استفاده می کنند",
+  "paywallTerms": "شرایط استفاده",
+  "paywallTestimonial1Name": "آن اس.",
+  "paywallTestimonial1Text": "هوش مصنوعی خرید من را در چند ثانیه سازماندهی می کند. من 20 دقیقه در هر سفر بازار صرفه جویی می کنم.",
+  "paywallTestimonial2Name": "چارلز ام.",
+  "paywallTestimonial2Text": "من هرگز یک آیتم لیست را فراموش نکردم. چت هوش مصنوعی هیجان انگیز است!",
+  "paywallTestimonialsTitle": "آنچه کاربران ما می گویند:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} روز رایگان",
+  "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} WEEK FREE} other{{count} WEEKS FREE}}",
   "prefAIAssistant": "دستیار هوش مصنوعی شخصی",
   "prefCustomThemes": "تم‌های سفارشی",
   "prefExportData": "صادر کردن داده‌ها",
@@ -679,6 +772,7 @@
   "prepTimeMinutes": "زمان پخت (دقیقه)",
   "privacy": "حریم خصوصی",
   "productName": "نام محصول",
+  "profile": "نمایه",
   "purchaseError": "خطا در پردازش خرید. دوباره تلاش کنید.",
   "quantityFull": "مقدار",
   "quantityShort": "تعداد",
@@ -776,6 +870,7 @@
   "undo": "واگردانی",
   "unit": "واحد",
   "unitPack": "بسته",
+  "unlockAi": "هوش مصنوعی نامحدود را باز کنید",
   "unlockFullResponse": "پاسخ کامل را باز کنید",
   "unmark": "لغو علامت",
   "upgrade": "ارتقا",

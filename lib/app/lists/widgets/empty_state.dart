@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../../theme/tokens.dart';
@@ -48,8 +47,8 @@ class EmptyState extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (assetPath != null || (icon == null && listId != null))
-                  SvgPicture.asset(
-                    assetPath ?? 'assets/images/kipi/kipi_helper.svg',
+                  Image.asset(
+                    assetPath ?? 'assets/images/kipi/kipi_helper.png',
                     width: 140,
                     height: 140,
                   ).animate(onPlay: (c) => isTestMode ? null : c.repeat(reverse: true)).moveY(

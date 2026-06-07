@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} кредит калды",
   "aiEnergy": "AI Energy",
   "aiError": "Кечиресиз, сурамыңызды иштетүүдө ката кетти. Байланышыңызды текшериңиз же кийин кайра аракет кылыңыз.",
+  "aiLimitAlmostReached": "AI билдирүүлөрү дээрлик жок",
+  "aiTeaserFallback": "Толук жоопту ачуу жана сатып алууларыңыз үчүн чексиз AI кеңештерин алуу үчүн Premium кызматына жазылыңыз...",
   "aiVoiceCommandTooltip": "AI үн буйругу (Premium)",
   "allTags": "Баары",
   "alreadyPurchased": "Мурда сатып алынган",
@@ -404,9 +430,21 @@
   "catCleaning": "Тазалоо",
   "catFruits": "Жемиштер",
   "catOthers": "Башкалар",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} кошуу →",
+  "catalogBrowse": "Каталогду карап чыгуу",
+  "catalogFilterNational": "Улуттук",
+  "catalogMyFrequents": "Менин Көбүнчөлөрүм",
+  "catalogProductNotFound": "Продукт табылган жок, атын жазыңыз",
+  "catalogRareSection": "сиздин өлкөдө азыраак таралган",
+  "catalogSearchGlobal": "Каалаган продуктуну издөө...",
+  "catalogSearchInCategory": "{category} ичинде издөө...",
+  "catalogSortAZ": "А–З",
+  "catalogSortPopular": "Эң популярдуу",
+  "catalogTitle": "Каталог",
   "category": "Категория",
   "chatError": "Чатты жүктөөдө ката: {error}",
   "chatHint": "Билдирүүңүздү жазыңыз...",
+  "chatHintBlocked": "Маектешүү үчүн AI кулпусун ачыңыз",
   "chatSubtitle": "Буюм сунуштары, рецепттер же үнөмдөө кеңештерин сураңыз.",
   "chatSubtitleShort": "Баалар, рецепттер, уюштуруу тууралуу сураңыз...",
   "chooseCurrency": "Валюта тандаңыз",
@@ -479,6 +517,8 @@
   "estimated": "Болжолдуу",
   "estimatedCost": "Болжолдуу",
   "estimatedPrice": "Болжолдуу баасы",
+  "exit": "Чыгыңыз",
+  "exitShoppingMode": "Соода режиминен чыгуу",
   "exportData": "Маалыматтарды экспорттоо",
   "exportDataSubtitle": "Бардык тизмелерди JSON катары сактоо",
   "exportExcel": "Excel катары экспорттоо",
@@ -517,6 +557,7 @@
   "generalAssistant": "Жалпы жардамчы",
   "generalHelp": "Бүгүн соодаңызга кантип жардам бере алам?",
   "generateShoppingList": "Соода тизмесин түзүү",
+  "gestureHint": "Тандоо үчүн кармап туруңуз • Алып салуу үчүн серпиңиз",
   "globalAssistant": "Жалпы жардамчы",
   "howCanIHelp": "Кантип жардам бере алам?",
   "idealQty": "Идеалдуу сан",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{total} ичинен {purchased} сатылып алынган",
   "itemsPurchasedShort": "{purchased}/{total} сатылып алынган",
   "itemsWillBeAdded": "{count} буюм(дар) кошулат",
+  "kipiListTitle": "KipiList",
   "language": "Тил",
   "languageEnglish": "Англисче",
   "languagePortuguese": "Português (Бразилия)",
@@ -554,7 +596,6 @@
   "listHistory": "Тизме тарыхы",
   "listNameLabel": "Тизменин аты",
   "listOrganizedMagic": "Тизме категориялар боюнча сыйкырдуу уюштурулду! ✨",
-  "kipiListTitle": "KipiList",
   "listening": "Угууда...",
   "lists": "Тизмелер",
   "loading": "Жүктөлүүдө...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "Айлык бюджет",
   "myLists": "Менин тизмелерим",
   "myRecipes": "Менин рецепттерим",
+  "navChat": "Chat",
+  "navLists": "Тизмелер",
+  "navMealPlanner": "Меню",
+  "navRecipes": "Рецепттер",
   "newChat": "Жаңы чат",
   "newListTitle": "Жаңы соода тизмеси",
   "newPantryList": "Кампа соодасы",
@@ -663,7 +708,56 @@
   "pantryEmpty": "Кампа бош",
   "pantryEmptySubtitle": "Үйдө сактагыңыз келген буюмдарды кошуңуз",
   "pantryItemRemoved": "Буюм алып салынды",
+  "paywallAfterItem1": "Дан",
+  "paywallAfterItem2": "Тазалоо",
+  "paywallAfterItem3": "Эттер",
+  "paywallAfterItem4": "Наабайкана",
+  "paywallBeforeAfterTitle": "AI мурун жана кийин:",
+  "paywallBeforeItem1": "күрүч",
+  "paywallBeforeItem2": "самын",
+  "paywallBeforeItem3": "эт",
+  "paywallBeforeItem4": "нан",
+  "paywallBenefit1Desc": "24/7 нерселерди кошот, уюштурат жана сунуштайт",
+  "paywallBenefit2Desc": "3 тизмеге чек жок",
+  "paywallBenefit3Desc": "Чыгымдарга көз салуу жана үй-бүлө тизмелери",
+  "paywallBestValue": "МЫКТЫ БААЛУУ",
+  "paywallCancelAnytime": "Каалаган убакта жокко чыгарыңыз. Милдеттенме жок.",
+  "paywallCtaTrialDays": "Бекер баштоо — {days} күн",
+  "paywallCtaUnlock": "PRO кулпусун ачуу",
+  "paywallFeatureExpenseControl": "Чыгымдарды көзөмөлдөө",
+  "paywallFeatureSharing": "Бөлүшүү",
+  "paywallFeatureSmartAI": "Smart AI",
+  "paywallFeatureUnlimitedLists": "Чексиз тизмелер",
+  "paywallFeaturesTitle": "Сизге керектүү нерселердин баары:",
+  "paywallHeroHeadline": "Kipi AI ар дайым жаныңда",
+  "paywallHeroSubtitle": "Чөнтөгүңүздөгү AI менен нерселерди кошуп, тизмелерди уюштуруп, убакытты үнөмдөңүз",
+  "paywallLabelCommon": "Жалпы",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "Сунуштарды жүктөө катасы. Кайра аракет кыл.",
+  "paywallMostPopular": "ЭҢ ПОПУЛЯР",
+  "paywallPackageAnnual": "Жылдык план",
+  "paywallPackageLifetime": "Өмүр бою мүмкүндүк алуу",
+  "paywallPackageMonthly": "Айлык план",
+  "paywallPackageMonthlyDesc": "Толук ийкемдүүлүк",
+  "paywallPolicy": "Купуялык саясаты",
+  "paywallPricePerMonth": "Болгону {price}/ай",
+  "paywallPurchaseError": "Сатып алуу аягына чыккан жок. Кайра аракет кыл.",
+  "paywallRestore": "Калыбына келтирүү",
+  "paywallRestoreError": "Калыбына келтире турган активдүү жазылуу табылган жок.",
+  "paywallSafeCheckout": "Коопсуз төлөм",
+  "paywallSavePercent": "үнөмдөө {percent}%",
+  "paywallSelectPlan": "Планыңызды тандаңыз:",
+  "paywallSocialProof": "+2400 үй-бүлө колдонот",
+  "paywallTerms": "Колдонуу шарттары",
+  "paywallTestimonial1Name": "Энн С.",
+  "paywallTestimonial1Text": "AI менин соодамды секунданын ичинде уюштурат. Мен базарга барган сайын 20 мүнөт үнөмдөйм.",
+  "paywallTestimonial2Name": "Чарльз М.",
+  "paywallTestimonial2Text": "Мен тизмедеги бир нерсени кайра унуткан жокмун. AI чаты сенсациялуу!",
+  "paywallTestimonialsTitle": "Биздин колдонуучулар эмне дешет:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialDays": "{days} КҮН АКЫСЫЗ",
+  "paywallTrialMonths": "{count,plural, one{{count} АЙ АКЫСЫЗ} other{{count} АЙЛАР АКЫСЫЗ}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} ЖУМА АКЫСЫЗ} other{{count} ЖУМА АКЫСЫЗ}}",
   "prefAIAssistant": "Жеке AI жардамчы",
   "prefCustomThemes": "Ыңгайлаштырылган темалар",
   "prefExportData": "Маалыматтарды экспорттоо",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "Даярдоо убактысы (мүнөт)",
   "privacy": "Купуялык",
   "productName": "Продукт аты",
+  "profile": "Профиль",
   "purchaseError": "Сатып алууну иштетүүдө ката кетти. Кайра аракет кылыңыз.",
   "quantityFull": "Өлчөм",
   "quantityShort": "Саны",
@@ -775,6 +870,7 @@
   "undo": "Жокко чыгаруу",
   "unit": "Бирдик",
   "unitPack": "пакет",
+  "unlockAi": "Чексиз AI кулпусун ачыңыз",
   "unlockFullResponse": "Толук жоопту ачуу",
   "unmark": "Белгини алуу",
   "upgrade": "Жаңыртуу",

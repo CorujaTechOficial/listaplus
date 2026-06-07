@@ -54,6 +54,20 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
   "@chatError": {
     "placeholders": {
       "error": {
@@ -133,6 +147,9 @@
         "type": "String"
       }
     }
+  },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -293,6 +310,13 @@
       }
     }
   },
+  "@paywallCtaTrialDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
@@ -373,6 +397,8 @@
   "aiCreditsRemaining": "{remaining} क्रेडिट बाँकी",
   "aiEnergy": "एआई ऊर्जा",
   "aiError": "माफ गर्नुहोस्, तपाईंको अनुरोध प्रक्रिया गर्दा त्रुटि भयो। आफ्नो जडान जाँच गर्नुहोस् वा पछि पुनः प्रयास गर्नुहोस्।",
+  "aiLimitAlmostReached": "लगभग AI सन्देशहरू बाहिर",
+  "aiTeaserFallback": "पूर्ण प्रतिक्रिया अनलक गर्न र आफ्नो किनमेलको लागि असीमित एआई सुझावहरू प्राप्त गर्न प्रिमियमको सदस्यता लिनुहोस्...",
   "aiVoiceCommandTooltip": "AI भ्वाइस कमाण्ड (प्रिमियम)",
   "allTags": "सबै",
   "alreadyPurchased": "पहिले नै किनिएको",
@@ -404,9 +430,21 @@
   "catCleaning": "सफाई",
   "catFruits": "फलफूल",
   "catOthers": "अन्य",
+  "catalogAddItems": "थप्नुहोस् {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "क्याटलग ब्राउज गर्नुहोस्",
+  "catalogFilterNational": "राष्ट्रिय",
+  "catalogMyFrequents": "मेरो बारम्बार",
+  "catalogProductNotFound": "उत्पादन फेला परेन, नाम टाइप गर्नुहोस्",
+  "catalogRareSection": "तपाईंको देशमा कम सामान्य",
+  "catalogSearchGlobal": "कुनै पनि उत्पादन खोज्नुहोस् ...",
+  "catalogSearchInCategory": "{category} मा खोज्नुहोस्...",
+  "catalogSortAZ": "A-Z",
+  "catalogSortPopular": "सबैभन्दा लोकप्रिय",
+  "catalogTitle": "क्याटलग",
   "category": "श्रेणी",
   "chatError": "च्याट लोड गर्दा त्रुटि: {error}",
   "chatHint": "आफ्नो सन्देश टाइप गर्नुहोस्...",
+  "chatHintBlocked": "च्याट गर्न AI अनलक गर्नुहोस्",
   "chatSubtitle": "वस्तु सुझाव, रेसिपी वा बचत सुझावहरूको लागि सोध्नुहोस्।",
   "chatSubtitleShort": "मूल्य, रेसिपी, संगठन बारे सोध्नुहोस्...",
   "chooseCurrency": "मुद्रा चयन गर्नुहोस्",
@@ -479,6 +517,8 @@
   "estimated": "अनुमानित",
   "estimatedCost": "अनुमानित",
   "estimatedPrice": "अनुमानित मूल्य",
+  "exit": "बाहिर निस्कनुहोस्",
+  "exitShoppingMode": "किनमेल मोडबाट बाहिर निस्कनुहोस्",
   "exportData": "डाटा निर्यात गर्नुहोस्",
   "exportDataSubtitle": "सबै सूचीहरू JSON को रूपमा सुरक्षित गर्नुहोस्",
   "exportExcel": "Excel को रूपमा निर्यात गर्नुहोस्",
@@ -517,6 +557,7 @@
   "generalAssistant": "सामान्य सहायक",
   "generalHelp": "म आज तपाईंको किनमेलमा कसरी मद्दत गर्न सक्छु?",
   "generateShoppingList": "किनमेल सूची उत्पन्न गर्नुहोस्",
+  "gestureHint": "चयन गर्न होल्ड गर्नुहोस् • हटाउन स्वाइप गर्नुहोस्",
   "globalAssistant": "सामान्य सहायक",
   "howCanIHelp": "म कसरी मद्दत गर्न सक्छु?",
   "idealQty": "आदर्श मात्रा",
@@ -540,6 +581,7 @@
   "itemsPurchasedCount": "{total} को {purchased} खरिद गरियो",
   "itemsPurchasedShort": "{purchased}/{total} खरिद गरियो",
   "itemsWillBeAdded": "{count} वस्तु(हरू) थपिनेछ",
+  "kipiListTitle": "KipiList",
   "language": "भाषा",
   "languageEnglish": "अङ्ग्रेजी",
   "languagePortuguese": "पोर्तुगाली (ब्राजिल)",
@@ -554,7 +596,6 @@
   "listHistory": "सूची इतिहास",
   "listNameLabel": "सूचीको नाम",
   "listOrganizedMagic": "सूची जादुई रूपमा श्रेणीहरूमा व्यवस्थित गरियो!",
-  "kipiListTitle": "KipiList",
   "listening": "सुन्दै...",
   "lists": "सूचीहरू",
   "loading": "लोड हुँदै...",
@@ -605,6 +646,10 @@
   "monthlyBudgetTitle": "मासिक बजेट",
   "myLists": "मेरा सूचीहरू",
   "myRecipes": "मेरा रेसिपीहरू",
+  "navChat": "Chat",
+  "navLists": "सूचीहरू",
+  "navMealPlanner": "मेनु",
+  "navRecipes": "रेसिपीहरू",
   "newChat": "नयाँ च्याट",
   "newListTitle": "नयाँ किनमेल सूची",
   "newPantryList": "भण्डार किनमेल",
@@ -663,7 +708,56 @@
   "pantryEmpty": "खाली भण्डार",
   "pantryEmptySubtitle": "तपाईं घरमा राख्न चाहनुहुने उत्पादनहरू थप्नुहोस्",
   "pantryItemRemoved": "वस्तु हटाइयो",
+  "paywallAfterItem1": "अनाज",
+  "paywallAfterItem2": "सरसफाई",
+  "paywallAfterItem3": "मासु",
+  "paywallAfterItem4": "बेकरी",
+  "paywallBeforeAfterTitle": "AI पहिले र पछि:",
+  "paywallBeforeItem1": "चामल",
+  "paywallBeforeItem2": "साबुन",
+  "paywallBeforeItem3": "मासु",
+  "paywallBeforeItem4": "रोटी",
+  "paywallBenefit1Desc": "24/7 वस्तुहरू थप्छ, व्यवस्थित गर्दछ र सुझाव दिन्छ",
+  "paywallBenefit2Desc": "कुनै 3-सूची सीमा छैन",
+  "paywallBenefit3Desc": "खर्च ट्र्याकिंग र परिवार सूची",
+  "paywallBestValue": "उत्तम मूल्य",
+  "paywallCancelAnytime": "जुनसुकै बेला रद्द गर्नुहोस्। कुनै प्रतिबद्धता छैन।",
+  "paywallCtaTrialDays": "नि:शुल्क सुरु गर्नुहोस् — {days} दिन",
+  "paywallCtaUnlock": "PRO अनलक गर्नुहोस्",
+  "paywallFeatureExpenseControl": "खर्च नियन्त्रण",
+  "paywallFeatureSharing": "साझेदारी गर्दै",
+  "paywallFeatureSmartAI": "स्मार्ट एआई",
+  "paywallFeatureUnlimitedLists": "असीमित सूचीहरू",
+  "paywallFeaturesTitle": "तपाईलाई चाहिने सबै कुरा:",
+  "paywallHeroHeadline": "Kipi AI सधैं तपाईंको छेउमा",
+  "paywallHeroSubtitle": "वस्तुहरू थप्नुहोस्, सूचीहरू व्यवस्थित गर्नुहोस् र तपाईंको जेबमा AI मार्फत समय बचत गर्नुहोस्",
+  "paywallLabelCommon": "सामान्य",
+  "paywallLabelPro": "KipiList PRO",
+  "paywallLoadingError": "प्रस्तावहरू लोड गर्दा त्रुटि भयो। पुन: प्रयास गर्नुहोस्।",
+  "paywallMostPopular": "सबैभन्दा लोकप्रिय",
+  "paywallPackageAnnual": "वार्षिक योजना",
+  "paywallPackageLifetime": "लाइफटाइम पहुँच",
+  "paywallPackageMonthly": "मासिक योजना",
+  "paywallPackageMonthlyDesc": "पूर्ण लचिलोपन",
+  "paywallPolicy": "गोपनीयता नीति",
+  "paywallPricePerMonth": "मात्र {price}/महिना",
+  "paywallPurchaseError": "खरिद पूरा गर्न सकिएन। पुन: प्रयास गर्नुहोस्।",
+  "paywallRestore": "पुनर्स्थापना गर्नुहोस्",
+  "paywallRestoreError": "पुनर्स्थापना गर्न कुनै सक्रिय सदस्यता फेला परेन।",
+  "paywallSafeCheckout": "सुरक्षित भुक्तानी",
+  "paywallSavePercent": "बचत गर्नुहोस् {percent}%",
+  "paywallSelectPlan": "आफ्नो योजना छान्नुहोस्:",
+  "paywallSocialProof": "+२,४०० परिवारहरूले यसलाई प्रयोग गर्छन्",
+  "paywallTerms": "प्रयोगका सर्तहरू",
+  "paywallTestimonial1Name": "एन एस।",
+  "paywallTestimonial1Text": "AI ले मेरो किनमेल सेकेन्डमा व्यवस्थित गर्दछ। म प्रति बजार यात्रा २० मिनेट बचत गर्छु।",
+  "paywallTestimonial2Name": "चार्ल्स एम।",
+  "paywallTestimonial2Text": "मैले सूची वस्तु फेरि कहिल्यै बिर्सिन। एआई च्याट सनसनीपूर्ण छ!",
+  "paywallTestimonialsTitle": "हाम्रा प्रयोगकर्ताहरू के भन्छन्:",
   "paywallTitle": "KipiList प्रीमियम",
+  "paywallTrialDays": "{days} दिनहरू निःशुल्क",
+  "paywallTrialMonths": "{count,plural, one{{count} महिना निःशुल्क} other{{count} महिना निःशुल्क}}",
+  "paywallTrialWeeks": "{count,plural, one{{count} हप्ता निःशुल्क} other{{count} हप्ता निःशुल्क}}",
   "prefAIAssistant": "व्यक्तिगत AI सहायक",
   "prefCustomThemes": "अनुकूलन थिमहरू",
   "prefExportData": "डाटा निर्यात गर्नुहोस्",
@@ -678,6 +772,7 @@
   "prepTimeMinutes": "तयारी समय (मिनेट)",
   "privacy": "गोपनीयता",
   "productName": "उत्पादनको नाम",
+  "profile": "प्रोफाइल",
   "purchaseError": "खरिद प्रक्रियामा त्रुटि। पुनः प्रयास गर्नुहोस्।",
   "quantityFull": "मात्रा",
   "quantityShort": "मात्रा",
@@ -775,6 +870,7 @@
   "undo": "पूर्ववत गर्नुहोस्",
   "unit": "एकाइ",
   "unitPack": "प्याक",
+  "unlockAi": "असीमित एआई अनलक गर्नुहोस्",
   "unlockFullResponse": "पूर्ण प्रतिक्रिया अनलक गर्नुहोस्",
   "unmark": "चिन्ह हटाउनुहोस्",
   "upgrade": "अपग्रेड गर्नुहोस्",
