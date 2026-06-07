@@ -18,7 +18,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get pantry => 'საკუჭნაო';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'ჩატი';
 
   @override
   String get navRecipes => 'რეცეპტები';
@@ -843,26 +843,22 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'სცადეთ KipiList Pro უფასოდ 7 დღის განმავლობაში';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'გააუქმეთ ნებისმიერ დროს. დღეს გადასახადი არ არის.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'დაიწყეთ უფასო საცდელი ვერსია';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'საყიდლების სიაში დამატება';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ინგრედიენტი დაემატა $listName-ს';
   }
 
   @override
@@ -1773,40 +1769,40 @@ class AppLocalizationsKa extends AppLocalizations {
   String get catalogBrowse => 'კატალოგის დათვალიერება';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'თქვენ ხაზგარეშე ხართ';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'კონფიდენციალურობა და ანალიტიკა';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList იყენებს Firebase Analytics-ს თქვენი გამოცდილების გასაუმჯობესებლად. თქვენი მონაცემები მუშავდება ჩვენი კონფიდენციალურობის პოლიტიკის შესაბამისად.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'მიღება';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'არა, მადლობა';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'მარაგში';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count აკლია ელემენტი',
+      one: '$count აკლია ელემენტი',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'ვარგისიანობის ვადა';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'არ არის ინფორმირებული';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -1823,7 +1819,7 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get pantry => 'საკუჭნაო';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'ჩატი';
 
   @override
   String get navRecipes => 'რეცეპტები';
@@ -2613,6 +2609,25 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'სცადეთ KipiList Pro უფასოდ 7 დღის განმავლობაში';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'გააუქმეთ ნებისმიერ დროს. დღეს გადასახადი არ არის.';
+
+  @override
+  String get paywallTrialCta => 'დაიწყეთ უფასო საცდელი ვერსია';
+
+  @override
+  String get recipeAddToList => 'საყიდლების სიაში დამატება';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ინგრედიენტი დაემატა $listName-ს';
   }
 
   @override
@@ -3518,4 +3533,40 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get catalogBrowse => 'კატალოგის დათვალიერება';
+
+  @override
+  String get offlineBanner => 'თქვენ ხაზგარეშე ხართ';
+
+  @override
+  String get consentTitle => 'კონფიდენციალურობა და ანალიტიკა';
+
+  @override
+  String get consentBody =>
+      'KipiList იყენებს Firebase Analytics-ს თქვენი გამოცდილების გასაუმჯობესებლად. თქვენი მონაცემები მუშავდება ჩვენი კონფიდენციალურობის პოლიტიკის შესაბამისად.';
+
+  @override
+  String get consentAccept => 'მიღება';
+
+  @override
+  String get consentDecline => 'არა, მადლობა';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'მარაგში';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count აკლია ელემენტი',
+      one: '$count აკლია ელემენტი',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'ვარგისიანობის ვადა';
+
+  @override
+  String get notInformed => 'არ არის ინფორმირებული';
 }

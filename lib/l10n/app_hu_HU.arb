@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -202,6 +216,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -209,6 +230,13 @@
       },
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
       }
     }
   },
@@ -220,6 +248,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -341,6 +376,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -348,10 +400,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -416,11 +499,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Névjegy",
   "achievements": "Eredmények",
+  "achievementsTitle": "Eredményeim",
   "activeListening": "Aktív hallgatás",
   "add": "Hozzáadás",
   "addAllToList": "Összes hozzáadása a listához",
+  "addCategoryColor": "Szín:",
+  "addCategoryIcon": "Ikon:",
   "addDirectToList": "Hozzáadás közvetlenül a listához",
   "addIngredient": "Hozzávaló hozzáadása",
   "addItem": "Elem hozzáadása",
@@ -432,23 +532,52 @@
   "advancedFeatures": "Speciális funkciók",
   "aiAssistant": "AI asszisztens",
   "aiAssistantDescription": "Kapjon intelligens javaslatokat, recepteket és személyre szabott tippeket AI asszisztensünktől.",
+  "aiAssistantGeneral": "Általános asszisztens",
+  "aiAssistantHistory": "Asszisztens Történelem",
+  "aiConversationHistory": "Beszélgetés története",
   "aiCreditsRemaining": "{remaining} kredit maradt",
+  "aiDeleteConversationConfirm": "Töröl",
+  "aiDeleteConversationTitle": "Törli a beszélgetést?",
+  "aiDeletedList": "Törölt lista",
   "aiEnergy": "AI energia",
   "aiError": "Elnézést, hiba történt a kérés feldolgozása során. Ellenőrizze a kapcsolatot, vagy próbálja újra később.",
+  "aiFirstOpenHint": "Kipi vagyok, a vásárlási asszisztensed. Kérdezz bármit a listáddal kapcsolatban!",
+  "aiHello": "Helló! Kipi vagyok",
+  "aiHowCanIHelp": "Hogyan segíthetek ma?",
   "aiLimitAlmostReached": "Majdnem kifogytak az AI-üzenetek",
+  "aiNewConversation": "Új beszélgetés",
+  "aiNewSession": "Új munkamenet",
+  "aiNoConversationFound": "Nem található beszélgetés",
+  "aiNoMessagesFound": "Nem található üzenet",
+  "aiPremiumUpsell": "Menj a Premiumra",
+  "aiRecentConversations": "Legutóbbi beszélgetések",
+  "aiSearchMessages": "Üzenetek keresése...",
+  "aiStartNewConversation": "Új beszélgetés indítása",
+  "aiSuggestCreateList": "Hozd létre az első listámat",
+  "aiSuggestSaveMore": "Hogyan lehet többet megtakarítani?",
   "aiTeaserFallback": "Iratkozzon fel a Premiumra, hogy feloldja a teljes választ, és korlátlan számú mesterséges intelligenciával kapcsolatos tippet kapjon a vásárláshoz...",
+  "aiUnlockWithAd": "Feloldás hirdetéssel",
   "aiVoiceCommandTooltip": "AI hangparancs (Prémium)",
+  "aiWelcomeTitle": "Helló! 👋 **Kipi** vagyok, az okos vásárlási asszisztensed.",
   "allTags": "Összes",
   "alreadyPurchased": "Már megvásárolva",
   "appTitle": "Bevásárlólista",
   "appearance": "Megjelenés",
   "archiveList": "Lista archiválása",
+  "artifactReplaceBody": "Válasszon alternatív terméket a költségek optimalizálásához.",
+  "artifactReplaceTitle": "Csere {name}",
+  "artifactSuggestedItems": "Javasolt tételek",
+  "artifactSwapButton": "Csere",
+  "artifactSwappedLabel": "Cserélve",
   "backToChat": "Vissza a Chathez",
+  "backToToday": "Vissza a mába",
   "backupExported": "Biztonsági mentés exportálva!",
   "backupNav": "Biztonsági mentés",
   "backupPremiumDescription": "A biztonsági mentés és exportálás prémium funkció",
   "backupSubtitle": "Adatok exportálása vagy importálása",
   "backupTitle": "Biztonsági mentés",
+  "barcodeScannerHint": "Irányítsa a kamerát a vonalkódra",
+  "barcodeScannerTitle": "Vonalkód beolvasása",
   "becomePremium": "Legyen Premium",
   "budgetAmountLabel": "Költségvetés összege",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -471,9 +600,11 @@
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} hozzáadása →",
   "catalogBrowse": "Tallózás a katalógusban",
   "catalogFilterNational": "Nemzetiek",
+  "catalogItemAdded": "{name} hozzáadva",
   "catalogMyFrequents": "Gyakoriságaim",
   "catalogProductNotFound": "A termék nem található, írja be a nevet",
   "catalogRareSection": "kevésbé gyakori az Ön országában",
+  "catalogRetry": "Próbáld újra",
   "catalogSearchGlobal": "Keressen bármilyen terméket...",
   "catalogSearchInCategory": "Keresés itt: {category}...",
   "catalogSortAZ": "A–Z",
@@ -505,6 +636,10 @@
   "confirmDeleteItems": "{count} elem eltávolítása?",
   "confirmDeleteTitle": "Megerősítés",
   "confirmRemovePantry": "\"{name}\" eltávolítása a kamrából?",
+  "consentAccept": "Elfogadás",
+  "consentBody": "A KipiList a Firebase Analytics segítségével javítja az élményt. Adatait az adatvédelmi szabályzatunk szerint kezeljük.",
+  "consentDecline": "Nem, köszönöm",
+  "consentTitle": "Adatvédelem és elemzések",
   "consumed": "Elfogyasztva",
   "continueAsGuest": "Folytatás vendégként",
   "copiedToClipboard": "Vágólapra másolva",
@@ -542,8 +677,16 @@
   "editRecipe": "Szerkesztés",
   "editRecipeTitle": "Recept szerkesztése",
   "emptyListAddItems": "A lista üres! Először adjon hozzá elemeket. ℹ️",
+  "emptyListAiAction": "Kérdezze meg az AI-asszisztenst",
+  "emptyListAiExample": "Kérje meg az AI-t, hogy javasoljon elemeket",
   "emptyListSubtitle": "Adjon hozzá elemeket a kezdéshez",
   "emptyListTitle": "A lista üres",
+  "emptyMealSlotHint": "Étkezés megtervezéséhez érintse meg",
+  "emptyPantryScan": "A termék beolvasása",
+  "emptyPantrySubtitle": "Adjon hozzá termékeket, hogy nyomon követhesse, mi van otthon",
+  "emptyPantryTitle": "Üres kamra",
+  "emptyRecipesSubtitle": "Készítse el első receptjét, vagy kérje meg az AI-t, hogy készítsen egyet",
+  "emptyRecipesTitle": "Nincs mentett recept",
   "enterCodeHint": "Írja be a kódot",
   "enterUrl": "URL megadása",
   "error": "Hiba: {message}",
@@ -557,6 +700,7 @@
   "estimatedPrice": "Becsült ár",
   "exit": "Kijárat",
   "exitShoppingMode": "Lépjen ki a Vásárlás módból",
+  "expirationDate": "Lejárati idő",
   "exportData": "Adatok exportálása",
   "exportDataSubtitle": "Összes lista mentése JSON-ként",
   "exportExcel": "Exportálás Excel-ként",
@@ -628,12 +772,20 @@
   "listAdded": "{listName} hozzáadva!",
   "listArchived": "Lista sikeresen archiválva!",
   "listAssistant": "Lista asszisztens",
+  "listBudgetIndicator": "Költségkeret: {value}",
   "listBudgetTitle": "Lista költségvetés",
   "listCreated": "A(z) \"{name}\" lista létrehozva {count} elemmel",
+  "listDelete": "Töröl",
+  "listErrorGeneric": "Hiba történt. Kérjük, próbálja újra.",
   "listHelp": "Miben segíthetek a listájával?",
   "listHistory": "Lista előzmények",
   "listNameLabel": "Lista neve",
   "listOrganizedMagic": "Lista varázslatosan kategóriákba rendezve! ✨",
+  "listProfile": "Profil",
+  "listSelectAll": "Válassza ki az összeset",
+  "listShoppingComplete": "Minden kész!",
+  "listShoppingCompleteSubtitle": "Elkészítette a listát.",
+  "listTotalLabel": "Összesen: {value}",
   "listening": "Hallgat...",
   "lists": "Listák",
   "loading": "Betöltés...",
@@ -641,10 +793,14 @@
   "loginError": "Bejelentkezési hiba: {error}",
   "loginPrompt": "Jelentkezzen be a prémium\nfunkciók feloldásához",
   "longHistoryWarning": "Hosszú történelem: az asszisztens a legújabb üzenetekre összpontosít a jobb teljesítmény érdekében.",
+  "manageCategoriesEmpty": "Még nincsenek kategóriák",
+  "manageCategoriesTitle": "Kategóriák kezelése",
   "manageSubscription": "Előfizetés kezelése",
   "markAsPurchased": "Megvásároltnak jelölés",
   "markItemsToSeeAnalysis": "Jelölje meg a termékeket vásároltként az elemzés megtekintéséhez.",
   "marketMode": "Piaci mód",
+  "mealDragHint": "Tartsa lenyomva a húzáshoz és mozgatáshoz",
+  "mealNoRecipeFound": "Nem található recept",
   "mealPlannerAddMeal": "Étkezés hozzáadása",
   "mealPlannerDateLabel": "Dátum",
   "mealPlannerDeleteMeal": "Étkezés eltávolítása",
@@ -666,6 +822,8 @@
   "mealPlannerNoRecipesFound": "Nem találhatók receptek",
   "mealPlannerNoRecipesHint": "Előbb hozzon létre recepteket a Receptek fülön",
   "mealPlannerNoteLabel": "Megjegyzés (opcionális)",
+  "mealPlannerPantryAllAvailable": "Raktáron",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} hiányzó elem} other{{count} hiányzó elem}}",
   "mealPlannerPrepTime": "{minutes} perc",
   "mealPlannerSave": "Hozzáadás a tervhez",
   "mealPlannerSearchRecipes": "Receptek keresése...",
@@ -678,13 +836,15 @@
   "mealPlannerWeekEmpty": "Nincs semmi tervezve erre a hétre",
   "mealPlannerWeekEmptyHint": "Koppintson bármelyik napra az étkezések tervezésének megkezdéséhez!",
   "mealPlannerWeekProgress": "{count} / {total} étkezés megtervezve",
+  "mealSearchRecipes": "Receptek keresése...",
+  "mealTypeLabel": "Étkezés típusa",
   "monthlyBudgetAppBar": "Havi költségvetés",
   "monthlyBudgetNav": "Havi költségvetés",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Havi költségvetés",
   "myLists": "Listáim",
   "myRecipes": "Receptjeim",
-  "navChat": "Chat",
+  "navChat": "Csevegés",
   "navLists": "Listák",
   "navMealPlanner": "Menü",
   "navRecipes": "Receptek",
@@ -708,6 +868,10 @@
   "noRecipesSaved": "Nincsenek mentett receptek",
   "noRecipesSavedHint": "Hozza létre első egyedi receptjét az alábbi gombra koppintva.",
   "noTracking": "Nincs nyomonkövetés",
+  "notInformed": "Nem tájékoztatták",
+  "offlineBanner": "Ön offline állapotban van",
+  "onboardingAIShowSubtitle": "Kipi mindent előkészít neked...",
+  "onboardingAIShowTitle": "Lásd az intelligencia működését!",
   "onboardingAnnualBadge": "Legjobb érték",
   "onboardingAnnualLabel": "Évi",
   "onboardingCancelAnytime": "Bármikor lemondhatja. Nincs elkötelezettség.",
@@ -741,11 +905,35 @@
   "organizeByAisles": "Rendezés sorok szerint",
   "organizingAi": "RENDEZÉS AI-JAL...",
   "pantry": "Kamra",
+  "pantryAdvancedMode": "Fejlett",
   "pantryAppBar": "Kamra",
+  "pantryCompactView": "Kompakt nézet",
+  "pantryDeficit": "Hiányzik {amount}{unit}",
+  "pantryDeleteItemsContent": "Törölni szeretne {count} kiválasztott elemet?",
+  "pantryDeleteItemsTitle": "Elemek törlése",
+  "pantryDeleteSelected": "Kijelölt törlése",
+  "pantryDetailedView": "Részletes nézet",
   "pantryEditTitle": "{name} szerkesztése",
   "pantryEmpty": "Üres kamra",
   "pantryEmptySubtitle": "Adja hozzá a termékeket, amelyeket otthon szeretne tartani",
+  "pantryExpired": "Lejárt",
+  "pantryExpiresIn": "{days} napon belül lejár",
+  "pantryExpiringSoon": "Hamarosan lejár",
+  "pantryExpiryDate": "Lejárati dátum",
+  "pantryExpiryNotSet": "Nincs beállítva",
+  "pantryFilterAll": "Minden",
+  "pantryFilterExpiring": "Lejár",
+  "pantryFilterOutStock": "Elfogyott",
+  "pantryFirstOpenHint": "Kövesse nyomon, mi van otthon. Adjon hozzá elemeket vagy olvassa be a vonalkódokat.",
   "pantryItemRemoved": "Elem eltávolítva",
+  "pantryMoreDetails": "További részletek",
+  "pantryNoItemsFound": "Nem található elemek a következőhöz: \"{query}\"",
+  "pantryRestockSelected": "Újrakészlet kiválasztva",
+  "pantryScanProduct": "A termék beolvasása",
+  "pantryScanner": "Termék beolvasása",
+  "pantrySearchHint": "Keresés a kamrában...",
+  "pantrySelectedCount": "{count} kiválasztva",
+  "pantrySimpleMode": "Alapvető",
   "paywallAfterItem1": "Szemek",
   "paywallAfterItem2": "Tisztítás",
   "paywallAfterItem3": "Húsok",
@@ -793,8 +981,11 @@
   "paywallTestimonial2Text": "Soha többé nem felejtettem el egyetlen listaelemet sem. Az AI chat szenzációs!",
   "paywallTestimonialsTitle": "Felhasználóink ​​véleménye:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Indítsa el az ingyenes próbaverziót",
   "paywallTrialDays": "{days} NAP INGYENES",
   "paywallTrialMonths": "{count,plural, one{{count} HÓNAP INGYENES} other{{count} HÓNAP INGYENES}}",
+  "paywallTrialSubtitle": "Bármikor lemondhatja. Ma nincs díj.",
+  "paywallTrialTitle": "Próbálja ki a KipiList Pro-t 7 napig ingyenesen",
   "paywallTrialWeeks": "{count,plural, one{{count} INGYENES HÉT} other{{count} HÉT INGYENES}}",
   "prefAIAssistant": "Személyes AI asszisztens",
   "prefCustomThemes": "Egyedi témák",
@@ -817,6 +1008,8 @@
   "quickRecipe": "Gyors recept",
   "quickRecipePrompt": "Ajánljon recepteket a listám elemeiből.",
   "quickReplies": "Gyors válaszok:",
+  "recipeAddToList": "Hozzáadás a bevásárlólistához",
+  "recipeAddedConfirmation": "{count} összetevők hozzáadva a {listName}-hoz",
   "recipeCreated": "Recept létrehozva!",
   "recipeDeleted": "Recept törölve",
   "recipeImage": "Recept képe",
@@ -853,10 +1046,33 @@
   "setBudgetButton": "Költségvetés beállítása",
   "setBudgetTitle": "Havi költségvetés",
   "settingsAppBar": "Beállítások",
+  "settingsAssistantHistory": "Asszisztens Történelem",
+  "settingsAssistantHistorySubtitle": "Korábbi beszélgetések megtekintése és keresése",
+  "settingsAssistantName": "Segéd neve",
+  "settingsCancel": "Mégse",
+  "settingsCategories": "Kategóriák",
+  "settingsCategoriesSubtitle": "Tételkategóriák kezelése",
+  "settingsChooseIcon": "Válasszon egy ikont:",
+  "settingsCustomizeAI": "Az AI-asszisztens testreszabása",
+  "settingsCustomizeDialog": "A Segéd személyre szabása",
   "settingsDefaultScreen": "Alapértelmezett kezdőképernyő",
   "settingsDefaultScreenSubtitle": "Válasszon a bevásárlólista vagy az AI chat között",
+  "settingsErrorSubscription": "Hiba az előfizetés betöltésekor",
+  "settingsLegal": "Jogi",
+  "settingsLoadingSubscription": "Előfizetés betöltése...",
+  "settingsMyProfile": "Saját profil",
+  "settingsPrivacyPolicy": "Adatvédelmi szabályzat",
+  "settingsProActive": "KipiList Pro aktív",
+  "settingsProCta": "Feloldja a korlátlan listákat, mesterséges intelligenciát és még sok mást",
+  "settingsProfileSubtitle": "Az AI-asszisztens személyes preferenciái",
+  "settingsSave": "Megtakarítás",
   "settingsScreenChat": "AI Chat",
   "settingsScreenList": "Bevásárlólista",
+  "settingsSectionAccount": "fiók",
+  "settingsSectionApp": "App",
+  "settingsSectionAssistant": "AI-asszisztens",
+  "settingsSubscription": "Előfizetés",
+  "settingsTermsOfService": "Szolgáltatási feltételek",
   "share": "Megosztás",
   "shareApp": "Alkalmazás megosztása",
   "shareAppDescription": "Hívd meg barátaidat a KipiList használatára",
@@ -877,6 +1093,7 @@
   "signInApple": "Bejelentkezés Apple-lel",
   "signInGoogle": "Bejelentkezés Google-lal",
   "smartOrganization": "Intelligens rendezés",
+  "sortAZ": "A–Z",
   "sortCategory": "Kategória",
   "sortDate": "Dátum",
   "sortManual": "Kézi",
@@ -899,6 +1116,7 @@
   "themePink": "Rózsaszín",
   "themePurple": "Lila",
   "themeRed": "Piros",
+  "themeSelectionTitle": "Válassza ki a téma színét",
   "themeTeal": "Kékeszöld",
   "totalEstimated": "Becsült összesen: {amount}",
   "totalSpending": "Összes kiadás",
@@ -912,6 +1130,20 @@
   "unlockFullResponse": "Teljes válasz feloldása",
   "unmark": "Jelölés eltávolítása",
   "upgrade": "Frissítés",
+  "userProfileAvoidedStores": "Elkerült üzletek",
+  "userProfileAvoidedStoresHint": "például X üzlet, Y üzlet",
+  "userProfileDescription": "Adja hozzá személyes preferenciáit, hogy az AI-asszisztens személyre szabott tételeket és recepteket javasolhasson.",
+  "userProfileDietaryRestrictions": "Étrendi korlátozások",
+  "userProfileDietaryRestrictionsHint": "például vegán, vegetáriánus, gluténmentes",
+  "userProfileErrorLoading": "Hiba: {error}",
+  "userProfileErrorSaving": "Hiba a mentéskor: {error}",
+  "userProfileNotes": "Megjegyzések",
+  "userProfileNotesHint": "Egyéb preferenciák az asszisztens számára",
+  "userProfilePreferredStore": "Előnyben részesített üzlet",
+  "userProfilePreferredStoreHint": "például Az üzlet neve",
+  "userProfileSaveButton": "Profil mentése",
+  "userProfileSaved": "A profil sikeresen mentve!",
+  "userProfileTitle": "Saját profil",
   "validForLimitedTime": "Korlátozott ideig érvényes",
   "version": "Verzió",
   "viewActive": "Aktívak megtekintése",
@@ -926,6 +1158,13 @@
   "voiceCommandTitle": "AI hangparancs",
   "voiceProFeature": "A speciális hangutasítások Pro. Alapszintű diktálás engedélyezése...",
   "voiceTranscriptionTooltip": "Hangos gépelés (Ingyenes)",
+  "weekdayFriday": "péntek",
+  "weekdayMonday": "hétfő",
+  "weekdaySaturday": "szombat",
+  "weekdaySunday": "vasárnap",
+  "weekdayThursday": "csütörtök",
+  "weekdayTuesday": "kedd",
+  "weekdayWednesday": "szerda",
   "welcomeAiAssistant": "Üdvözöljük az AI-asszisztensben",
   "whatToDoWithItem": "Mit szeretne csinálni ezzel az elemmel?",
   "yes": "Igen",

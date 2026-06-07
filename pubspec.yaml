@@ -111,6 +111,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
   test: any
+  mocktail: ^1.0.5
 flutter:
   generate: true
 

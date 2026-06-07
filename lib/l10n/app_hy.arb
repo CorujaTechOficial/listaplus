@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -202,6 +216,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -209,6 +230,13 @@
       },
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
       }
     }
   },
@@ -220,6 +248,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -341,6 +376,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -348,10 +400,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -416,11 +499,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Մեր մասին",
   "achievements": "Ձեռքբերումներ",
+  "achievementsTitle": "Իմ նվաճումները",
   "activeListening": "Ակտիվ լսում",
   "add": "Ավելացնել",
   "addAllToList": "Ավելացնել բոլորը ցուցակում",
+  "addCategoryColor": "Գույնը:",
+  "addCategoryIcon": "Պատկերակ՝",
   "addDirectToList": "Ավելացրեք անմիջապես ցուցակին",
   "addIngredient": "Ավելացնել բաղադրիչ",
   "addItem": "Ավելացնել Կետ",
@@ -432,23 +532,52 @@
   "advancedFeatures": "Ընդլայնված հնարավորություններ",
   "aiAssistant": "AI Օգնական",
   "aiAssistantDescription": "Ստացեք խելացի առաջարկներ, բաղադրատոմսեր և անհատական խորհուրդներ մեր AI օգնականի միջոցով:",
+  "aiAssistantGeneral": "Գլխավոր օգնական",
+  "aiAssistantHistory": "Օգնականի պատմություն",
+  "aiConversationHistory": "Զրույցի պատմություն",
   "aiCreditsRemaining": "{remaining} մնացած կրեդիտ",
+  "aiDeleteConversationConfirm": "Ջնջել",
+  "aiDeleteConversationTitle": "Ջնջե՞լ խոսակցությունը",
+  "aiDeletedList": "Ջնջված ցուցակ",
   "aiEnergy": "AI էներգիա",
   "aiError": "Ներեցեք, ձեր հարցումը մշակելիս սխալ է տեղի ունեցել: Ստուգեք ձեր կապը կամ փորձեք ավելի ուշ:",
+  "aiFirstOpenHint": "Ես Կիպին եմ՝ ձեր գնումների օգնականը: Հարցրեք ինձ ձեր ցուցակի մասին որևէ բան:",
+  "aiHello": "Ողջույն Ես Կիպին եմ",
+  "aiHowCanIHelp": "Ինչպե՞ս կարող եմ օգնել ձեզ այսօր:",
   "aiLimitAlmostReached": "AI հաղորդագրությունները գրեթե սպառվել են",
+  "aiNewConversation": "Նոր Զրույց",
+  "aiNewSession": "Նոր նիստ",
+  "aiNoConversationFound": "Խոսակցություն չի գտնվել",
+  "aiNoMessagesFound": "Հաղորդագրություններ չեն գտնվել",
+  "aiPremiumUpsell": "Գնացեք Պրեմիում",
+  "aiRecentConversations": "Վերջին խոսակցությունները",
+  "aiSearchMessages": "Որոնել հաղորդագրություններ...",
+  "aiStartNewConversation": "Սկսեք նոր խոսակցություն",
+  "aiSuggestCreateList": "Ստեղծեք իմ առաջին ցուցակը",
+  "aiSuggestSaveMore": "Ինչպե՞ս ավելի շատ խնայել:",
   "aiTeaserFallback": "Բաժանորդագրվեք Պրեմիումին՝ ամբողջական պատասխանը բացելու և անսահմանափակ AI-ի խորհուրդներ ստանալու համար ձեր գնումների համար...",
+  "aiUnlockWithAd": "Բացել գովազդի միջոցով",
   "aiVoiceCommandTooltip": "AI Ձայնային Հրաման (Premium)",
+  "aiWelcomeTitle": "Ողջույն 👋 Ես **Kipi**-ն եմ՝ ձեր խելացի գնումների օգնականը:",
   "allTags": "Բոլորը",
   "alreadyPurchased": "Արդեն գնված",
   "appTitle": "Գնումների ցուցակ",
   "appearance": "Արտաքին տեսք",
   "archiveList": "Արխիվացնել ցուցակը",
+  "artifactReplaceBody": "Ընտրեք ապրանքի այլընտրանք՝ ծախսերը օպտիմալացնելու համար:",
+  "artifactReplaceTitle": "Փոխարինել {name}",
+  "artifactSuggestedItems": "Առաջարկվող իրեր",
+  "artifactSwapButton": "Փոխանակում",
+  "artifactSwappedLabel": "Փոխանակված",
   "backToChat": "Վերադարձ դեպի Զրուցարան",
+  "backToToday": "Վերադարձ դեպի այսօր",
   "backupExported": "Պահուստավորումն արտահանված է!",
   "backupNav": "Պահուստավորում",
   "backupPremiumDescription": "Պահուստավորումը և արտահանումը պրեմիում հնարավորություն է",
   "backupSubtitle": "Արտահանել կամ ներմուծել ձեր տվյալները",
   "backupTitle": "Պահուստավորում",
+  "barcodeScannerHint": "Ուղղեք տեսախցիկը շտրիխ կոդի վրա",
+  "barcodeScannerTitle": "Սկանավորեք շտրիխ կոդը",
   "becomePremium": "Դարձեք Premium",
   "budgetAmountLabel": "Բյուջեի գումար",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -471,9 +600,11 @@
   "catalogAddItems": "Ավելացնել {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Թերթիր կատալոգը",
   "catalogFilterNational": "Ազգայինները",
+  "catalogItemAdded": "{name} ավելացված է",
   "catalogMyFrequents": "Իմ հաճախականությունները",
   "catalogProductNotFound": "Ապրանքը չի գտնվել, մուտքագրեք անունը",
   "catalogRareSection": "ավելի քիչ տարածված ձեր երկրում",
+  "catalogRetry": "Նորից փորձեք",
   "catalogSearchGlobal": "Որոնել ցանկացած ապրանք...",
   "catalogSearchInCategory": "Որոնել {category}-ում...",
   "catalogSortAZ": "Ա–Զ",
@@ -505,6 +636,10 @@
   "confirmDeleteItems": "Հեռացնել {count} կետ(եր)?",
   "confirmDeleteTitle": "Հաստատել",
   "confirmRemovePantry": "Հեռացնել «{name}»-ը մառանից?",
+  "consentAccept": "Ընդունել",
+  "consentBody": "KipiList-ը օգտագործում է Firebase Analytics՝ ձեր փորձը բարելավելու համար: Ձեր տվյալները մշակվում են մեր Գաղտնիության քաղաքականության համաձայն:",
+  "consentDecline": "Ոչ, շնորհակալություն",
+  "consentTitle": "Գաղտնիություն և վերլուծություն",
   "consumed": "Սպառված",
   "continueAsGuest": "Շարունակել որպես հյուր",
   "copiedToClipboard": "Պատճենվել է սեղմատախտակին",
@@ -542,8 +677,16 @@
   "editRecipe": "Խմբագրել",
   "editRecipeTitle": "Խմբագրել բաղադրատոմսը",
   "emptyListAddItems": "Ձեր ցուցակը դատարկ է! Նախ ավելացրեք կետեր: ℹ️",
+  "emptyListAiAction": "Հարցրեք AI օգնականին",
+  "emptyListAiExample": "Փորձեք AI-ին խնդրել իրեր առաջարկել",
   "emptyListSubtitle": "Ավելացրեք կետեր սկսելու համար",
   "emptyListTitle": "Ձեր ցուցակը դատարկ է",
+  "emptyMealSlotHint": "Հպեք՝ կերակուր պլանավորելու համար",
+  "emptyPantryScan": "Ապրանքի սկանավորում",
+  "emptyPantrySubtitle": "Ավելացրեք ապրանքներ՝ հետևելու, թե ինչ ունեք տանը",
+  "emptyPantryTitle": "Դատարկ մառան",
+  "emptyRecipesSubtitle": "Ստեղծեք ձեր առաջին բաղադրատոմսը կամ խնդրեք AI-ին ստեղծել այն",
+  "emptyRecipesTitle": "Ոչ մի բաղադրատոմս չի պահպանվել",
   "enterCodeHint": "Մուտքագրեք կոդը",
   "enterUrl": "Մուտքագրել URL",
   "error": "Սխալ՝ {message}",
@@ -557,6 +700,7 @@
   "estimatedPrice": "Մոտավոր գին",
   "exit": "Ելք",
   "exitShoppingMode": "Դուրս գալ գնումների ռեժիմից",
+  "expirationDate": "Ժամկետի ժամկետը",
   "exportData": "Արտահանել տվյալները",
   "exportDataSubtitle": "Պահպանել բոլոր ցուցակները որպես JSON",
   "exportExcel": "Արտահանել որպես Excel",
@@ -628,12 +772,20 @@
   "listAdded": "{listName} ավելացված է!",
   "listArchived": "Ցուցակը հաջողությամբ արխիվացվեց!",
   "listAssistant": "Ցուցակի օգնական",
+  "listBudgetIndicator": "Բյուջե՝ {value}",
   "listBudgetTitle": "Ցուցակի Բյուջե",
   "listCreated": "«{name}» ցուցակը ստեղծվել է {count} կետով",
+  "listDelete": "Ջնջել",
+  "listErrorGeneric": "Սխալ է տեղի ունեցել: Խնդրում ենք կրկին փորձել:",
   "listHelp": "Ինչպե՞ս կարող եմ օգնել ձեր ցուցակին:",
   "listHistory": "Ցուցակի Պատմություն",
   "listNameLabel": "Ցուցակի անուն",
   "listOrganizedMagic": "Ցուցակը կախարդականորեն կազմակերպված է ըստ կատեգորիաների! ✨",
+  "listProfile": "Անձնագիր",
+  "listSelectAll": "Ընտրեք բոլորը",
+  "listShoppingComplete": "Ամեն ինչ արված է:",
+  "listShoppingCompleteSubtitle": "Դուք լրացրել եք ձեր ցուցակը:",
+  "listTotalLabel": "Ընդհանուր՝ {value}",
   "listening": "Լսելով...",
   "lists": "Ցուցակներ",
   "loading": "Բեռնվում է...",
@@ -641,10 +793,14 @@
   "loginError": "Մուտքի սխալ՝ {error}",
   "loginPrompt": "Մուտք գործեք՝\nպրեմիում հնարավորությունները բացելու համար",
   "longHistoryWarning": "Երկար պատմություն. օգնականը կենտրոնանում է վերջին հաղորդագրությունների վրա՝ ավելի լավ կատարման համար:",
+  "manageCategoriesEmpty": "Կատեգորիաներ դեռ չկան",
+  "manageCategoriesTitle": "Կառավարեք կատեգորիաները",
   "manageSubscription": "Կառավարել բաժանորդագրությունը",
   "markAsPurchased": "Նշել որպես գնված",
   "markItemsToSeeAnalysis": "Նշեք կետերը որպես գնված՝ վերլուծությունը տեսնելու համար:",
   "marketMode": "Շուկայական ռեժիմ",
+  "mealDragHint": "Պահեք՝ քաշելու և տեղափոխելու համար",
+  "mealNoRecipeFound": "Ոչ մի բաղադրատոմս չի գտնվել",
   "mealPlannerAddMeal": "Ավելացնել սնունդ",
   "mealPlannerDateLabel": "Ամսաթիվ",
   "mealPlannerDeleteMeal": "Հեռացնել սնունդը",
@@ -666,6 +822,8 @@
   "mealPlannerNoRecipesFound": "Բաղադրատոմսեր չեն գտնվել",
   "mealPlannerNoRecipesHint": "Նախ ստեղծեք բաղադրատոմսեր «Բաղադրատոմսեր» բաժնում",
   "mealPlannerNoteLabel": "Նշում (կամավոր)",
+  "mealPlannerPantryAllAvailable": "Պահեստում",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} բացակայող տարր} other{{count} բացակայող տարրեր}}",
   "mealPlannerPrepTime": "{minutes} րոպե",
   "mealPlannerSave": "Ավելացնել պլանին",
   "mealPlannerSearchRecipes": "Փնտրել բաղադրատոմսեր...",
@@ -678,13 +836,15 @@
   "mealPlannerWeekEmpty": "Այս շաբաթվա համար ոչինչ պլանավորված չէ",
   "mealPlannerWeekEmptyHint": "Հպեք ցանկացած օրվա՝ ձեր սնունդը պլանավորելու համար:",
   "mealPlannerWeekProgress": "Պլանավորված է {total}-ից {count} սնունդ",
+  "mealSearchRecipes": "Որոնել բաղադրատոմսեր...",
+  "mealTypeLabel": "Սննդի տեսակը",
   "monthlyBudgetAppBar": "Ամսական Բյուջե",
   "monthlyBudgetNav": "Ամսական բյուջե",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Ամսական Բյուջե",
   "myLists": "Իմ Ցուցակները",
   "myRecipes": "Իմ բաղադրատոմսերը",
-  "navChat": "Chat",
+  "navChat": "Զրուցարան",
   "navLists": "Ցուցակներ",
   "navMealPlanner": "Մենյու",
   "navRecipes": "Բաղադրատոմսեր",
@@ -708,6 +868,10 @@
   "noRecipesSaved": "Պահպանված բաղադրատոմսեր չկան",
   "noRecipesSavedHint": "Ստեղծեք ձեր առաջին բաղադրատոմսը՝ սեղմելով ներքևի կոճակը:",
   "noTracking": "Առանց հետևելու",
+  "notInformed": "Տեղեկացված չէ",
+  "offlineBanner": "Դուք անցանց եք",
+  "onboardingAIShowSubtitle": "Քիփին ամեն ինչ պատրաստում է ձեզ համար...",
+  "onboardingAIShowTitle": "Տեսեք բանականությունը գործողության մեջ:",
   "onboardingAnnualBadge": "Լավագույն արժեքը",
   "onboardingAnnualLabel": "Տարեկան",
   "onboardingCancelAnytime": "Չեղարկել ցանկացած ժամանակ: Ոչ մի պարտավորություն:",
@@ -741,11 +905,35 @@
   "organizeByAisles": "Կազմակերպել ըստ միջանցքների",
   "organizingAi": "ԿԱԶՄԱԿԵՐՊՎՈՒՄ Է AI-ՈՎ...",
   "pantry": "Մառան",
+  "pantryAdvancedMode": "Ընդլայնված",
   "pantryAppBar": "Մառան",
+  "pantryCompactView": "Կոմպակտ տեսք",
+  "pantryDeficit": "Բացակայում է {amount}{unit}",
+  "pantryDeleteItemsContent": "Ցանկանու՞մ եք ջնջել {count} ընտրված տարրը:",
+  "pantryDeleteItemsTitle": "Ջնջել տարրերը",
+  "pantryDeleteSelected": "Ջնջել ընտրվածը",
+  "pantryDetailedView": "Մանրամասն տեսք",
   "pantryEditTitle": "Խմբագրել {name}",
   "pantryEmpty": "Դատարկ մառան",
   "pantryEmptySubtitle": "Ավելացրեք այն ապրանքները, որոնք ցանկանում եք պահել տանը",
+  "pantryExpired": "Ժամկետանց",
+  "pantryExpiresIn": "Սպառվում է {days} օրից",
+  "pantryExpiringSoon": "Ժամկետը շուտով կլրանա",
+  "pantryExpiryDate": "Ժամկետի ժամկետը",
+  "pantryExpiryNotSet": "Սահմանված չէ",
+  "pantryFilterAll": "Բոլորը",
+  "pantryFilterExpiring": "Ժամկետը սպառվում է",
+  "pantryFilterOutStock": "Պահեստում չկա",
+  "pantryFirstOpenHint": "Հետևեք, թե ինչ ունեք տանը: Ավելացրեք իրեր կամ սկանավորեք շտրիխ կոդեր:",
   "pantryItemRemoved": "Կետը հեռացված է",
+  "pantryMoreDetails": "Ավելի մանրամասն",
+  "pantryNoItemsFound": "«{query}»-ի համար ապրանքներ չեն գտնվել",
+  "pantryRestockSelected": "Վերալիցքավորումն ընտրված է",
+  "pantryScanProduct": "Ապրանքի սկանավորում",
+  "pantryScanner": "Ապրանքի սկանավորում",
+  "pantrySearchHint": "Որոնել մառան...",
+  "pantrySelectedCount": "{count} ընտրված է",
+  "pantrySimpleMode": "Հիմնական",
   "paywallAfterItem1": "Հացահատիկներ",
   "paywallAfterItem2": "Մաքրում",
   "paywallAfterItem3": "Միս",
@@ -793,8 +981,11 @@
   "paywallTestimonial2Text": "Ես այլևս երբեք չեմ մոռացել ցուցակի որևէ կետ: AI զրույցը սենսացիոն է:",
   "paywallTestimonialsTitle": "Ինչ են ասում մեր օգտատերերը.",
   "paywallTitle": "KipiList Պրեմիում",
+  "paywallTrialCta": "Սկսեք անվճար փորձաշրջան",
   "paywallTrialDays": "{days} ՕՐ ԱՆՎՃԱՐ",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH ԱՆՎՃԱՐ} other{{count} MONTHS FREE}}",
+  "paywallTrialSubtitle": "Չեղարկել ցանկացած ժամանակ: Այսօր ոչ մի գանձում:",
+  "paywallTrialTitle": "Փորձեք KipiList Pro-ն անվճար 7 օր",
   "paywallTrialWeeks": "{count,plural, one{{count} ՇԱԲԱԹ ԱՆՎՃԱՐ} other{{count} ՇԱԲԱԹ ԱՆՎՃԱՐ}}",
   "prefAIAssistant": "Անհատական AI Օգնական",
   "prefCustomThemes": "Անհատական թեմաներ",
@@ -817,6 +1008,8 @@
   "quickRecipe": "Արագ բաղադրատոմս",
   "quickRecipePrompt": "Առաջարկել բաղադրատոմսեր իմ ցուցակի կետերով:",
   "quickReplies": "Արագ պատասխաններ.",
+  "recipeAddToList": "Ավելացնել գնումների ցուցակին",
+  "recipeAddedConfirmation": "{count} բաղադրիչ ավելացվել է {listName}-ին",
   "recipeCreated": "Բաղադրատոմսը ստեղծված է",
   "recipeDeleted": "Բաղադրատոմսը ջնջված է",
   "recipeImage": "Բաղադրատոմսի պատկեր",
@@ -853,10 +1046,33 @@
   "setBudgetButton": "Սահմանել բյուջե",
   "setBudgetTitle": "Ամսական Բյուջե",
   "settingsAppBar": "Կարգավորումներ",
+  "settingsAssistantHistory": "Օգնականի պատմություն",
+  "settingsAssistantHistorySubtitle": "Դիտեք և որոնեք անցյալ խոսակցությունները",
+  "settingsAssistantName": "Օգնականի անունը",
+  "settingsCancel": "Չեղարկել",
+  "settingsCategories": "Կատեգորիաներ",
+  "settingsCategoriesSubtitle": "Կառավարեք ապրանքների կատեգորիաները",
+  "settingsChooseIcon": "Ընտրեք պատկերակ.",
+  "settingsCustomizeAI": "Անհատականացրեք AI օգնականը",
+  "settingsCustomizeDialog": "Անհատականացրեք օգնականը",
   "settingsDefaultScreen": "Կանխադրված հիմնական էկրան",
   "settingsDefaultScreenSubtitle": "Ընտրեք գնումների ցուցակի կամ AI զրույցի միջև",
+  "settingsErrorSubscription": "Բաժանորդագրությունը բեռնելիս սխալ առաջացավ",
+  "settingsLegal": "Իրավական",
+  "settingsLoadingSubscription": "Բեռնվում է բաժանորդագրությունը...",
+  "settingsMyProfile": "Իմ պրոֆիլը",
+  "settingsPrivacyPolicy": "Գաղտնիության քաղաքականություն",
+  "settingsProActive": "KipiList Pro-ն ակտիվ է",
+  "settingsProCta": "Բացեք անսահմանափակ ցուցակներ, AI և այլն",
+  "settingsProfileSubtitle": "Անձնական նախապատվություններ AI օգնականի համար",
+  "settingsSave": "Պահպանել",
   "settingsScreenChat": "AI Chat",
   "settingsScreenList": "Գնումների ցուցակ",
+  "settingsSectionAccount": "Հաշիվ",
+  "settingsSectionApp": "Հավելված",
+  "settingsSectionAssistant": "AI օգնական",
+  "settingsSubscription": "Բաժանորդագրություն",
+  "settingsTermsOfService": "Ծառայության պայմաններ",
   "share": "Կիսվել",
   "shareApp": "Կիսվեք հավելվածով",
   "shareAppDescription": "Հրավիրեք ընկերներին օգտվել KipiList-ից",
@@ -877,6 +1093,7 @@
   "signInApple": "Մուտք Apple-ով",
   "signInGoogle": "Մուտք Google-ով",
   "smartOrganization": "Խելացի Կազմակերպում",
+  "sortAZ": "Ա–Զ",
   "sortCategory": "Կատեգորիա",
   "sortDate": "Ամսաթիվ",
   "sortManual": "Ձեռքով",
@@ -899,6 +1116,7 @@
   "themePink": "Վարդագույն",
   "themePurple": "Մանուշակագույն",
   "themeRed": "Կարմիր",
+  "themeSelectionTitle": "Ընտրեք թեմայի գույնը",
   "themeTeal": "Ծովակնագույն",
   "totalEstimated": "Ընդհանուր մոտավոր՝ {amount}",
   "totalSpending": "Ընդհանուր Ծախս",
@@ -912,6 +1130,20 @@
   "unlockFullResponse": "Բացել ամբողջական պատասխանը",
   "unmark": "Հանել նշումը",
   "upgrade": "Թարմացնել",
+  "userProfileAvoidedStores": "Խուսափված խանութներ",
+  "userProfileAvoidedStoresHint": "օր. Խանութ X, Խանութ Y",
+  "userProfileDescription": "Ավելացրեք ձեր անձնական նախասիրությունները, որպեսզի AI օգնականը կարողանա առաջարկել անհատականացված իրեր և բաղադրատոմսեր:",
+  "userProfileDietaryRestrictions": "Դիետայի սահմանափակումներ",
+  "userProfileDietaryRestrictionsHint": "օր. վեգան, բուսակեր, առանց սնձան",
+  "userProfileErrorLoading": "Սխալ՝ {error}",
+  "userProfileErrorSaving": "Սխալ պահելիս՝ {error}",
+  "userProfileNotes": "Նշումներ",
+  "userProfileNotesHint": "Այլ նախապատվություններ օգնականի համար",
+  "userProfilePreferredStore": "Նախընտրելի խանութ",
+  "userProfilePreferredStoreHint": "օր. Խանութի անվանումը",
+  "userProfileSaveButton": "Պահպանել պրոֆիլը",
+  "userProfileSaved": "Պրոֆիլը հաջողությամբ պահպանվեց:",
+  "userProfileTitle": "Իմ պրոֆիլը",
   "validForLimitedTime": "Վավեր է սահմանափակ ժամանակով",
   "version": "Տարբերակ",
   "viewActive": "Դիտել Ակտիվները",
@@ -926,6 +1158,13 @@
   "voiceCommandTitle": "AI Ձայնային Հրաման",
   "voiceProFeature": "Ընդլայնված ձայնային հրամանները Pro են: Հիմնական թելադրանքի ակտիվացում...",
   "voiceTranscriptionTooltip": "Ձայնային մուտքագրում (Անվճար)",
+  "weekdayFriday": "Ուրբաթ",
+  "weekdayMonday": "Երկուշաբթի",
+  "weekdaySaturday": "շաբաթ օրը",
+  "weekdaySunday": "Կիրակի",
+  "weekdayThursday": "հինգշաբթի",
+  "weekdayTuesday": "Երեքշաբթի",
+  "weekdayWednesday": "չորեքշաբթի",
   "welcomeAiAssistant": "Բարի գալուստ AI օգնական",
   "whatToDoWithItem": "Ի՞նչ կցանկանայիք անել այս իրի հետ:",
   "yes": "Այո",

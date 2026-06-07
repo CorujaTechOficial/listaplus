@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -195,6 +209,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -205,10 +226,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -303,6 +338,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -310,10 +362,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -378,11 +461,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "このアプリについて",
   "achievements": "実績",
+  "achievementsTitle": "私の業績",
   "activeListening": "アクティブリスニング",
   "add": "追加",
   "addAllToList": "すべてをリストに追加",
+  "addCategoryColor": "色：",
+  "addCategoryIcon": "アイコン：",
   "addDirectToList": "リストに直接追加",
   "addIngredient": "材料を追加",
   "addItem": "アイテムを追加",
@@ -394,23 +494,52 @@
   "advancedFeatures": "高度な機能",
   "aiAssistant": "AIアシスタント",
   "aiAssistantDescription": "AIアシスタントでスマートな提案、レシピ、パーソナライズされたヒントを入手。",
+  "aiAssistantGeneral": "一般アシスタント",
+  "aiAssistantHistory": "アシスタントの歴史",
+  "aiConversationHistory": "会話履歴",
   "aiCreditsRemaining": "残り{remaining}クレジット",
+  "aiDeleteConversationConfirm": "消去",
+  "aiDeleteConversationTitle": "会話を削除しますか?",
+  "aiDeletedList": "削除されたリスト",
   "aiEnergy": "AIエネルギー",
   "aiError": "申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。",
+  "aiFirstOpenHint": "私はショッピングアシスタントのキピです。あなたのリストについて何でも聞いてください！",
+  "aiHello": "こんにちは！私はキピです",
+  "aiHowCanIHelp": "今日はどのようにお手伝いできますか?",
   "aiLimitAlmostReached": "AI メッセージがほぼなくなりました",
+  "aiNewConversation": "新しい会話",
+  "aiNewSession": "新しいセッション",
+  "aiNoConversationFound": "会話が見つかりませんでした",
+  "aiNoMessagesFound": "メッセージが見つかりませんでした",
+  "aiPremiumUpsell": "プレミアムに行く",
+  "aiRecentConversations": "最近の会話",
+  "aiSearchMessages": "メッセージを検索...",
+  "aiStartNewConversation": "新しい会話を開始する",
+  "aiSuggestCreateList": "最初のリストを作成する",
+  "aiSuggestSaveMore": "さらに節約するにはどうすればよいですか?",
   "aiTeaserFallback": "プレミアムに登録すると、完全な回答が得られ、ショッピングに関する AI ヒントを無制限に入手できます...",
+  "aiUnlockWithAd": "広告でロックを解除する",
   "aiVoiceCommandTooltip": "AI音声コマンド（プレミアム）",
+  "aiWelcomeTitle": "こんにちは！ 👋 私はあなたの賢いショッピングアシスタントの **Kipi** です。",
   "allTags": "すべて",
   "alreadyPurchased": "購入済み",
   "appTitle": "ショッピングリスト",
   "appearance": "外観",
   "archiveList": "リストをアーカイブ",
+  "artifactReplaceBody": "コストを最適化するために代替製品を選択してください。",
+  "artifactReplaceTitle": "{name} を置き換えます",
+  "artifactSuggestedItems": "おすすめアイテム",
+  "artifactSwapButton": "スワップ",
+  "artifactSwappedLabel": "交換されました",
   "backToChat": "チャットに戻る",
+  "backToToday": "今日に戻る",
   "backupExported": "バックアップをエクスポートしました！",
   "backupNav": "バックアップ",
   "backupPremiumDescription": "バックアップとエクスポートはプレミアム機能です",
   "backupSubtitle": "データのエクスポートまたはインポート",
   "backupTitle": "バックアップ",
+  "barcodeScannerHint": "バーコードにカメラを向けます",
+  "barcodeScannerTitle": "バーコードをスキャンする",
   "becomePremium": "プレミアムに登録",
   "budgetAmountLabel": "予算額",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -433,9 +562,11 @@
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} を追加 →",
   "catalogBrowse": "カタログを閲覧する",
   "catalogFilterNational": "ナショナルズ",
+  "catalogItemAdded": "{name} が追加されました",
   "catalogMyFrequents": "私のよく行く人",
   "catalogProductNotFound": "製品が見つかりません。名前を入力してください",
   "catalogRareSection": "あなたの国ではあまり一般的ではありません",
+  "catalogRetry": "もう一度やり直してください",
   "catalogSearchGlobal": "任意の製品を検索...",
   "catalogSearchInCategory": "{category} で検索...",
   "catalogSortAZ": "A ～ Z",
@@ -467,6 +598,10 @@
   "confirmDeleteItems": "{count}個のアイテムを削除しますか？",
   "confirmDeleteTitle": "確認",
   "confirmRemovePantry": "パントリーから「{name}」を削除しますか？",
+  "consentAccept": "受け入れる",
+  "consentBody": "KipiList は Firebase Analytics を使用してエクスペリエンスを向上させます。あなたのデータは当社のプライバシーポリシーに従って処理されます。",
+  "consentDecline": "結構です",
+  "consentTitle": "プライバシーと分析",
   "consumed": "消費済み",
   "continueAsGuest": "ゲストとして続ける",
   "copiedToClipboard": "クリップボードにコピーしました",
@@ -504,8 +639,16 @@
   "editRecipe": "編集",
   "editRecipeTitle": "レシピを編集",
   "emptyListAddItems": "リストは空です！先にアイテムを追加してください。ℹ️",
+  "emptyListAiAction": "AIアシスタントに聞く",
+  "emptyListAiExample": "AIにアイテムの提案を依頼してみる",
   "emptyListSubtitle": "アイテムを追加して開始",
   "emptyListTitle": "リストは空です",
+  "emptyMealSlotHint": "タップして食事の計画を立てる",
+  "emptyPantryScan": "スキャン製品",
+  "emptyPantrySubtitle": "商品を追加して家にあるものを追跡する",
+  "emptyPantryTitle": "空のパントリー",
+  "emptyRecipesSubtitle": "最初のレシピを作成するか、AI にレシピの生成を依頼します",
+  "emptyRecipesTitle": "レシピは保存されていません",
   "enterCodeHint": "コードを入力",
   "enterUrl": "URLを入力",
   "error": "エラー: {message}",
@@ -519,6 +662,7 @@
   "estimatedPrice": "推定価格",
   "exit": "出口",
   "exitShoppingMode": "ショッピングモードを終了する",
+  "expirationDate": "有効期限",
   "exportData": "データをエクスポート",
   "exportDataSubtitle": "すべてのリストをJSONとして保存",
   "exportExcel": "Excelとしてエクスポート",
@@ -590,12 +734,20 @@
   "listAdded": "{listName}を追加しました！",
   "listArchived": "リストをアーカイブしました！",
   "listAssistant": "リストアシスタント",
+  "listBudgetIndicator": "予算: {value}",
   "listBudgetTitle": "リスト予算",
   "listCreated": "リスト「{name}」を{count}個のアイテムで作成しました",
+  "listDelete": "消去",
+  "listErrorGeneric": "エラーが発生しました。もう一度試してください。",
   "listHelp": "リストについてどう支援しましょうか？",
   "listHistory": "リスト履歴",
   "listNameLabel": "リスト名",
   "listOrganizedMagic": "リストが魔法のようにカテゴリごとに整理されました！✨",
+  "listProfile": "プロフィール",
+  "listSelectAll": "すべて選択",
+  "listShoppingComplete": "すべて完了しました！",
+  "listShoppingCompleteSubtitle": "リストが完成しました。",
+  "listTotalLabel": "合計: {value}",
   "listening": "リスニング...",
   "lists": "リスト",
   "loading": "読み込み中...",
@@ -603,10 +755,14 @@
   "loginError": "ログインエラー: {error}",
   "loginPrompt": "ログインして\nプレミアム機能を解除",
   "longHistoryWarning": "長い歴史: アシスタントはパフォーマンスを向上させるために最新のメッセージに焦点を当てます。",
+  "manageCategoriesEmpty": "カテゴリはまだありません",
+  "manageCategoriesTitle": "カテゴリの管理",
   "manageSubscription": "サブスクリプション管理",
   "markAsPurchased": "購入済みにする",
   "markItemsToSeeAnalysis": "アイテムを購入済みとしてマークすると分析が表示されます。",
   "marketMode": "マーケットモード",
+  "mealDragHint": "押したままドラッグして移動します",
+  "mealNoRecipeFound": "レシピが見つかりませんでした",
   "mealPlannerAddMeal": "食事を追加",
   "mealPlannerDateLabel": "日付",
   "mealPlannerDeleteMeal": "食事を削除",
@@ -628,6 +784,8 @@
   "mealPlannerNoRecipesFound": "レシピが見つかりません",
   "mealPlannerNoRecipesHint": "まず「レシピ」タブでレシピを作成してください",
   "mealPlannerNoteLabel": "メモ（任意）",
+  "mealPlannerPantryAllAvailable": "在庫あり",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} 欠品アイテム} other{{count} 欠品アイテム}}",
   "mealPlannerPrepTime": "{minutes}分",
   "mealPlannerSave": "プランに追加",
   "mealPlannerSearchRecipes": "レシピを検索...",
@@ -640,13 +798,15 @@
   "mealPlannerWeekEmpty": "今週の予定はありません",
   "mealPlannerWeekEmptyHint": "日付をタップして食事の計画を始めましょう！",
   "mealPlannerWeekProgress": "{total}食中{count}食を計画済み",
+  "mealSearchRecipes": "レシピを検索...",
+  "mealTypeLabel": "食事の種類",
   "monthlyBudgetAppBar": "月間予算",
   "monthlyBudgetNav": "月間予算",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "月間予算",
   "myLists": "マイリスト",
   "myRecipes": "マイレシピ",
-  "navChat": "Chat",
+  "navChat": "チャット",
   "navLists": "リスト",
   "navMealPlanner": "メニュー",
   "navRecipes": "レシピ",
@@ -670,6 +830,10 @@
   "noRecipesSaved": "保存されたレシピはありません",
   "noRecipesSavedHint": "下のボタンをタップして、最初のカスタムレシピを作成しましょう。",
   "noTracking": "追跡なし",
+  "notInformed": "知らされていない",
+  "offlineBanner": "あなたはオフラインです",
+  "onboardingAIShowSubtitle": "キピはあなたのためにすべての準備をしています...",
+  "onboardingAIShowTitle": "インテリジェンスが実際に動いている様子をご覧ください。",
   "onboardingAnnualBadge": "ベストバリュー",
   "onboardingAnnualLabel": "年間",
   "onboardingCancelAnytime": "いつでもキャンセルできます。約束はありません。",
@@ -703,11 +867,35 @@
   "organizeByAisles": "売り場順に整理",
   "organizingAi": "AIで整理中...",
   "pantry": "パントリー",
+  "pantryAdvancedMode": "高度な",
   "pantryAppBar": "パントリー",
+  "pantryCompactView": "コンパクトビュー",
+  "pantryDeficit": "{amount}{unit} がありません",
+  "pantryDeleteItemsContent": "{count} 個の選択したアイテムを削除しますか?",
+  "pantryDeleteItemsTitle": "項目の削除",
+  "pantryDeleteSelected": "選択したものを削除",
+  "pantryDetailedView": "詳細図",
   "pantryEditTitle": "{name}を編集",
   "pantryEmpty": "パントリーは空です",
   "pantryEmptySubtitle": "家に置いておきたい商品を追加",
+  "pantryExpired": "期限切れ",
+  "pantryExpiresIn": "{days} 日で期限切れになります",
+  "pantryExpiringSoon": "もうすぐ期限切れになります",
+  "pantryExpiryDate": "有効期限",
+  "pantryExpiryNotSet": "未設定",
+  "pantryFilterAll": "全て",
+  "pantryFilterExpiring": "期限切れ",
+  "pantryFilterOutStock": "在庫切れ",
+  "pantryFirstOpenHint": "家にあるものを記録しておいてください。アイテムを追加するか、バーコードをスキャンします。",
   "pantryItemRemoved": "アイテムを削除しました",
+  "pantryMoreDetails": "さらに詳しく",
+  "pantryNoItemsFound": "「{query}」の項目は見つかりませんでした",
+  "pantryRestockSelected": "再入荷が選択されました",
+  "pantryScanProduct": "スキャン製品",
+  "pantryScanner": "スキャン製品",
+  "pantrySearchHint": "パントリーを検索...",
+  "pantrySelectedCount": "{count} が選択されました",
+  "pantrySimpleMode": "基本",
   "paywallAfterItem1": "穀物",
   "paywallAfterItem2": "クリーニング",
   "paywallAfterItem3": "肉",
@@ -755,8 +943,11 @@
   "paywallTestimonial2Text": "もうリスト項目を忘れることはありません。 AIチャットがセンセーショナル！",
   "paywallTestimonialsTitle": "ユーザーの声:",
   "paywallTitle": "KipiList プレミアム",
+  "paywallTrialCta": "無料トライアルを開始する",
   "paywallTrialDays": "{days}日間無料",
   "paywallTrialMonths": "{count,plural, one{{count} か月無料} other{{count} か月無料}}",
+  "paywallTrialSubtitle": "いつでもキャンセルできます。今日は無課金です。",
+  "paywallTrialTitle": "KipiList Pro を 7 日間無料でお試しください",
   "paywallTrialWeeks": "{count,plural, one{{count} 週間無料} other{{count} 週間無料}}",
   "prefAIAssistant": "パーソナルAIアシスタント",
   "prefCustomThemes": "カスタムテーマ",
@@ -779,6 +970,8 @@
   "quickRecipe": "クイックレシピ",
   "quickRecipePrompt": "リストのアイテムを使ったレシピを提案してください。",
   "quickReplies": "クイック返信:",
+  "recipeAddToList": "買い物リストに追加する",
+  "recipeAddedConfirmation": "{count} 成分が {listName} に追加されました",
   "recipeCreated": "レシピを作成しました！",
   "recipeDeleted": "レシピを削除しました",
   "recipeImage": "レシピ画像",
@@ -815,10 +1008,33 @@
   "setBudgetButton": "予算を設定",
   "setBudgetTitle": "月間予算",
   "settingsAppBar": "設定",
+  "settingsAssistantHistory": "アシスタントの歴史",
+  "settingsAssistantHistorySubtitle": "過去の会話の表示と検索",
+  "settingsAssistantName": "アシスタント名",
+  "settingsCancel": "キャンセル",
+  "settingsCategories": "カテゴリー",
+  "settingsCategoriesSubtitle": "アイテムカテゴリの管理",
+  "settingsChooseIcon": "アイコンを選択してください:",
+  "settingsCustomizeAI": "AIアシスタントをカスタマイズする",
+  "settingsCustomizeDialog": "カスタマイズアシスタント",
   "settingsDefaultScreen": "デフォルトのホーム画面",
   "settingsDefaultScreenSubtitle": "買い物リストかAIチャットのどちらかを選択",
+  "settingsErrorSubscription": "サブスクリプションの読み込みエラー",
+  "settingsLegal": "法律上の",
+  "settingsLoadingSubscription": "サブスクリプションを読み込んでいます...",
+  "settingsMyProfile": "私のプロフィール",
+  "settingsPrivacyPolicy": "プライバシーポリシー",
+  "settingsProActive": "KipiList Pro アクティブ",
+  "settingsProCta": "無制限のリスト、AI などのロックを解除します",
+  "settingsProfileSubtitle": "AI アシスタントの個人的な好み",
+  "settingsSave": "保存",
   "settingsScreenChat": "AIチャット",
   "settingsScreenList": "買い物リスト",
+  "settingsSectionAccount": "アカウント",
+  "settingsSectionApp": "アプリ",
+  "settingsSectionAssistant": "AIアシスタント",
+  "settingsSubscription": "サブスクリプション",
+  "settingsTermsOfService": "利用規約",
   "share": "共有",
   "shareApp": "アプリを共有する",
   "shareAppDescription": "友達を招待して KipiList を使用する",
@@ -839,6 +1055,7 @@
   "signInApple": "Appleでサインイン",
   "signInGoogle": "Googleでサインイン",
   "smartOrganization": "スマート整理",
+  "sortAZ": "A ～ Z",
   "sortCategory": "カテゴリ",
   "sortDate": "日付",
   "sortManual": "手動",
@@ -861,6 +1078,7 @@
   "themePink": "ピンク",
   "themePurple": "紫",
   "themeRed": "赤",
+  "themeSelectionTitle": "テーマカラーの選択",
   "themeTeal": "ティール",
   "totalEstimated": "推定合計: {amount}",
   "totalSpending": "総支出",
@@ -874,6 +1092,20 @@
   "unlockFullResponse": "完全な応答のロックを解除する",
   "unmark": "マーク解除",
   "upgrade": "アップグレード",
+  "userProfileAvoidedStores": "避けた店舗",
+  "userProfileAvoidedStoresHint": "例えばX店、Y店",
+  "userProfileDescription": "個人の好みを追加すると、AI アシスタントがパーソナライズされたアイテムやレシピを提案できるようになります。",
+  "userProfileDietaryRestrictions": "食事制限",
+  "userProfileDietaryRestrictionsHint": "例えばビーガン、ベジタリアン、グルテンフリー",
+  "userProfileErrorLoading": "エラー: {error}",
+  "userProfileErrorSaving": "保存エラー: {error}",
+  "userProfileNotes": "注意事項",
+  "userProfileNotesHint": "アシスタントのその他の設定",
+  "userProfilePreferredStore": "優先ストア",
+  "userProfilePreferredStoreHint": "例えば店名",
+  "userProfileSaveButton": "プロファイルの保存",
+  "userProfileSaved": "プロファイルが正常に保存されました。",
+  "userProfileTitle": "私のプロフィール",
   "validForLimitedTime": "期間限定で有効",
   "version": "バージョン",
   "viewActive": "アクティブを表示",
@@ -888,6 +1120,13 @@
   "voiceCommandTitle": "AI音声コマンド",
   "voiceProFeature": "高度な音声コマンドは Pro です。基本的なディクテーションを有効にしています...",
   "voiceTranscriptionTooltip": "音声入力（無料）",
+  "weekdayFriday": "金曜日",
+  "weekdayMonday": "月曜日",
+  "weekdaySaturday": "土曜日",
+  "weekdaySunday": "日曜日",
+  "weekdayThursday": "木曜日",
+  "weekdayTuesday": "火曜日",
+  "weekdayWednesday": "水曜日",
   "welcomeAiAssistant": "AI アシスタントへようこそ",
   "whatToDoWithItem": "このアイテムを使って何をしたいですか?",
   "yes": "はい",

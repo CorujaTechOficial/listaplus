@@ -18,7 +18,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get pantry => 'パントリー';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'チャット';
 
   @override
   String get navRecipes => 'レシピ';
@@ -816,26 +816,20 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'KipiList Pro を 7 日間無料でお試しください';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'いつでもキャンセルできます。今日は無課金です。';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => '無料トライアルを開始する';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => '買い物リストに追加する';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count 成分が $listName に追加されました';
   }
 
   @override
@@ -1722,40 +1716,40 @@ class AppLocalizationsJa extends AppLocalizations {
   String get catalogBrowse => 'カタログを閲覧する';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'あなたはオフラインです';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'プライバシーと分析';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList は Firebase Analytics を使用してエクスペリエンスを向上させます。あなたのデータは当社のプライバシーポリシーに従って処理されます。';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => '受け入れる';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => '結構です';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => '在庫あり';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count 欠品アイテム',
+      one: '$count 欠品アイテム',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => '有効期限';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => '知らされていない';
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -1772,7 +1766,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get pantry => 'パントリー';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'チャット';
 
   @override
   String get navRecipes => 'レシピ';
@@ -2537,6 +2531,23 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
       one: '$count か月無料',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'KipiList Pro を 7 日間無料でお試しください';
+
+  @override
+  String get paywallTrialSubtitle => 'いつでもキャンセルできます。今日は無課金です。';
+
+  @override
+  String get paywallTrialCta => '無料トライアルを開始する';
+
+  @override
+  String get recipeAddToList => '買い物リストに追加する';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count 成分が $listName に追加されました';
   }
 
   @override
@@ -3418,4 +3429,40 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get catalogBrowse => 'カタログを閲覧する';
+
+  @override
+  String get offlineBanner => 'あなたはオフラインです';
+
+  @override
+  String get consentTitle => 'プライバシーと分析';
+
+  @override
+  String get consentBody =>
+      'KipiList は Firebase Analytics を使用してエクスペリエンスを向上させます。あなたのデータは当社のプライバシーポリシーに従って処理されます。';
+
+  @override
+  String get consentAccept => '受け入れる';
+
+  @override
+  String get consentDecline => '結構です';
+
+  @override
+  String get mealPlannerPantryAllAvailable => '在庫あり';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 欠品アイテム',
+      one: '$count 欠品アイテム',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => '有効期限';
+
+  @override
+  String get notInformed => '知らされていない';
 }

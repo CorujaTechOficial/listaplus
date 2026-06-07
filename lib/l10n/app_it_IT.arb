@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -202,6 +216,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -209,6 +230,13 @@
       },
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
       }
     }
   },
@@ -220,6 +248,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -341,6 +376,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -348,10 +400,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -416,11 +499,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Informazioni",
   "achievements": "Obiettivi",
+  "achievementsTitle": "I miei successi",
   "activeListening": "Ascolto attivo",
   "add": "Aggiungi",
   "addAllToList": "Aggiungi tutto alla lista",
+  "addCategoryColor": "Colore:",
+  "addCategoryIcon": "Icona:",
   "addDirectToList": "Aggiungi direttamente alla lista",
   "addIngredient": "Aggiungi ingrediente",
   "addItem": "Aggiungi Elemento",
@@ -432,23 +532,52 @@
   "advancedFeatures": "Funzionalità avanzate",
   "aiAssistant": "Assistente AI",
   "aiAssistantDescription": "Ottieni suggerimenti intelligenti, ricette e consigli personalizzati con il nostro assistente AI.",
+  "aiAssistantGeneral": "Assistente generale",
+  "aiAssistantHistory": "Storia dell'Assistente",
+  "aiConversationHistory": "Cronologia delle conversazioni",
   "aiCreditsRemaining": "{remaining} crediti rimasti",
+  "aiDeleteConversationConfirm": "Eliminare",
+  "aiDeleteConversationTitle": "Eliminare conversazione?",
+  "aiDeletedList": "Elenco eliminato",
   "aiEnergy": "Energia dell'intelligenza artificiale",
   "aiError": "Spiacenti, si è verificato un errore nell'elaborazione della richiesta. Controlla la connessione o riprova più tardi.",
+  "aiFirstOpenHint": "Sono Kipi, il tuo commesso. Chiedimi qualsiasi cosa sulla tua lista!",
+  "aiHello": "Ciao! Sono Kipi",
+  "aiHowCanIHelp": "Come posso aiutarti oggi?",
   "aiLimitAlmostReached": "Quasi senza messaggi AI",
+  "aiNewConversation": "Nuova conversazione",
+  "aiNewSession": "Nuova sessione",
+  "aiNoConversationFound": "Nessuna conversazione trovata",
+  "aiNoMessagesFound": "Nessun messaggio trovato",
+  "aiPremiumUpsell": "Passa a Premium",
+  "aiRecentConversations": "Conversazioni recenti",
+  "aiSearchMessages": "Cerca messaggi...",
+  "aiStartNewConversation": "Inizia una nuova conversazione",
+  "aiSuggestCreateList": "Crea la mia prima lista",
+  "aiSuggestSaveMore": "Come risparmiare di più?",
   "aiTeaserFallback": "Iscriviti a Premium per sbloccare la risposta completa e ottenere suggerimenti AI illimitati per i tuoi acquisti...",
+  "aiUnlockWithAd": "Sblocca con l'annuncio",
   "aiVoiceCommandTooltip": "Comando Vocale AI (Premium)",
+  "aiWelcomeTitle": "Ciao! 👋 Sono **Kipi**, il tuo assistente allo shopping intelligente.",
   "allTags": "Tutti",
   "alreadyPurchased": "Già acquistato",
   "appTitle": "Lista della Spesa",
   "appearance": "Aspetto",
   "archiveList": "Archivia lista",
+  "artifactReplaceBody": "Seleziona un prodotto alternativo per ottimizzare i costi.",
+  "artifactReplaceTitle": "Sostituisci {name}",
+  "artifactSuggestedItems": "Articoli suggeriti",
+  "artifactSwapButton": "Scambio",
+  "artifactSwappedLabel": "Scambiato",
   "backToChat": "Torna alla chat",
+  "backToToday": "Torniamo a oggi",
   "backupExported": "Backup esportato!",
   "backupNav": "Backup",
   "backupPremiumDescription": "Backup ed esportazione sono funzionalità premium",
   "backupSubtitle": "Esporta o importa i tuoi dati",
   "backupTitle": "Backup",
+  "barcodeScannerHint": "Punta la fotocamera sul codice a barre",
+  "barcodeScannerTitle": "Scansiona il codice a barre",
   "becomePremium": "Diventa Premium",
   "budgetAmountLabel": "Importo budget",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -471,9 +600,11 @@
   "catalogAddItems": "Aggiungi {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Sfoglia il catalogo",
   "catalogFilterNational": "Nazionali",
+  "catalogItemAdded": "{name} aggiunto",
   "catalogMyFrequents": "I miei frequentatori",
   "catalogProductNotFound": "Prodotto non trovato, digita il nome",
   "catalogRareSection": "meno comune nel tuo paese",
+  "catalogRetry": "Riprova",
   "catalogSearchGlobal": "Cerca qualsiasi prodotto...",
   "catalogSearchInCategory": "Cerca in {category}...",
   "catalogSortAZ": "Dalla A alla Z",
@@ -505,6 +636,10 @@
   "confirmDeleteItems": "Rimuovere {count} elemento/i?",
   "confirmDeleteTitle": "Conferma",
   "confirmRemovePantry": "Rimuovere \"{name}\" dalla dispensa?",
+  "consentAccept": "Accettare",
+  "consentBody": "KipiList utilizza Firebase Analytics per migliorare la tua esperienza. I tuoi dati vengono trattati secondo la nostra Privacy Policy.",
+  "consentDecline": "No grazie",
+  "consentTitle": "Privacy e analisi",
   "consumed": "Consumato",
   "continueAsGuest": "Continua come ospite",
   "copiedToClipboard": "Copiato negli appunti",
@@ -542,8 +677,16 @@
   "editRecipe": "Modifica",
   "editRecipeTitle": "Modifica Ricetta",
   "emptyListAddItems": "La tua lista è vuota! Aggiungi prima gli elementi. ℹ️",
+  "emptyListAiAction": "Chiedi all'Assistente AI",
+  "emptyListAiExample": "Prova a chiedere all'IA di suggerire oggetti",
   "emptyListSubtitle": "Aggiungi elementi per iniziare",
   "emptyListTitle": "La tua lista è vuota",
+  "emptyMealSlotHint": "Tocca per pianificare un pasto",
+  "emptyPantryScan": "Scansiona il prodotto",
+  "emptyPantrySubtitle": "Aggiungi prodotti per tenere traccia di ciò che hai a casa",
+  "emptyPantryTitle": "Dispensa vuota",
+  "emptyRecipesSubtitle": "Crea la tua prima ricetta o chiedi all'IA di generarne una",
+  "emptyRecipesTitle": "Nessuna ricetta salvata",
   "enterCodeHint": "Inserisci il codice",
   "enterUrl": "Inserisci URL",
   "error": "Errore: {message}",
@@ -557,6 +700,7 @@
   "estimatedPrice": "Prezzo stimato",
   "exit": "Uscita",
   "exitShoppingMode": "Esci dalla modalità acquisto",
+  "expirationDate": "Data di scadenza",
   "exportData": "Esporta dati",
   "exportDataSubtitle": "Salva tutte le liste come JSON",
   "exportExcel": "Esporta come Excel",
@@ -628,12 +772,20 @@
   "listAdded": "{listName} aggiunta!",
   "listArchived": "Lista archiviata con successo!",
   "listAssistant": "Assistente lista",
+  "listBudgetIndicator": "Budget: {value}",
   "listBudgetTitle": "Budget Lista",
   "listCreated": "Lista \"{name}\" creata con {count} elementi",
+  "listDelete": "Eliminare",
+  "listErrorGeneric": "Si è verificato un errore. Per favore riprova.",
   "listHelp": "Come posso aiutarti con la tua lista?",
   "listHistory": "Cronologia Liste",
   "listNameLabel": "Nome lista",
   "listOrganizedMagic": "Lista magicamente organizzata per categorie! ✨",
+  "listProfile": "Profilo",
+  "listSelectAll": "Seleziona tutto",
+  "listShoppingComplete": "Tutto fatto!",
+  "listShoppingCompleteSubtitle": "Hai completato la tua lista.",
+  "listTotalLabel": "Totale: {value}",
   "listening": "Ascolto...",
   "lists": "Liste",
   "loading": "Caricamento...",
@@ -641,10 +793,14 @@
   "loginError": "Errore di accesso: {error}",
   "loginPrompt": "Accedi per sbloccare\nle funzionalità premium",
   "longHistoryWarning": "Cronologia lunga: l'assistente si concentra sui messaggi più recenti per prestazioni migliori.",
+  "manageCategoriesEmpty": "Nessuna categoria ancora",
+  "manageCategoriesTitle": "Gestisci categorie",
   "manageSubscription": "Gestisci abbonamento",
   "markAsPurchased": "Segna come acquistato",
   "markItemsToSeeAnalysis": "Segna gli elementi come acquistati per vedere l'analisi.",
   "marketMode": "Modalità mercato",
+  "mealDragHint": "Tieni premuto per trascinare e spostare",
+  "mealNoRecipeFound": "Nessuna ricetta trovata",
   "mealPlannerAddMeal": "Aggiungi Pasto",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDeleteMeal": "Rimuovi pasto",
@@ -666,6 +822,8 @@
   "mealPlannerNoRecipesFound": "Nessuna ricetta trovata",
   "mealPlannerNoRecipesHint": "Crea prima delle ricette nella scheda Ricette",
   "mealPlannerNoteLabel": "Nota (opzionale)",
+  "mealPlannerPantryAllAvailable": "In magazzino",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} elemento mancante} other{{count} elementi mancanti}}",
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Aggiungi al piano",
   "mealPlannerSearchRecipes": "Cerca ricette...",
@@ -678,13 +836,15 @@
   "mealPlannerWeekEmpty": "Nulla di pianificato per questa settimana",
   "mealPlannerWeekEmptyHint": "Tocca un giorno qualsiasi per iniziare a pianificare i tuoi pasti!",
   "mealPlannerWeekProgress": "{count} di {total} pasti pianificati",
+  "mealSearchRecipes": "Cerca ricette...",
+  "mealTypeLabel": "Tipo di pasto",
   "monthlyBudgetAppBar": "Budget Mensile",
   "monthlyBudgetNav": "Budget mensile",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Budget Mensile",
   "myLists": "Le Mie Liste",
   "myRecipes": "Le Mie Ricette",
-  "navChat": "Chat",
+  "navChat": "Chiacchierata",
   "navLists": "Liste",
   "navMealPlanner": "Menu",
   "navRecipes": "Ricette",
@@ -708,6 +868,10 @@
   "noRecipesSaved": "Nessuna ricetta salvata",
   "noRecipesSavedHint": "Crea la tua prima ricetta personalizzata toccando il pulsante qui sotto.",
   "noTracking": "Nessun monitoraggio",
+  "notInformed": "Non informato",
+  "offlineBanner": "Sei offline",
+  "onboardingAIShowSubtitle": "Kipi sta preparando tutto per te...",
+  "onboardingAIShowTitle": "Guarda l'intelligenza in azione!",
   "onboardingAnnualBadge": "Miglior rapporto qualità/prezzo",
   "onboardingAnnualLabel": "Annuale",
   "onboardingCancelAnytime": "Annulla in qualsiasi momento. Nessun impegno.",
@@ -741,11 +905,35 @@
   "organizeByAisles": "Organizza per reparti",
   "organizingAi": "ORGANIZZANDO CON AI...",
   "pantry": "Dispensa",
+  "pantryAdvancedMode": "Avanzato",
   "pantryAppBar": "Dispensa",
+  "pantryCompactView": "Visualizzazione compatta",
+  "pantryDeficit": "Mancante {amount}PH1__",
+  "pantryDeleteItemsContent": "Vuoi eliminare gli {count} elementi selezionati?",
+  "pantryDeleteItemsTitle": "Elimina elementi",
+  "pantryDeleteSelected": "Elimina selezionato",
+  "pantryDetailedView": "Vista dettagliata",
   "pantryEditTitle": "Modifica {name}",
   "pantryEmpty": "Dispensa vuota",
   "pantryEmptySubtitle": "Aggiungi i prodotti che vuoi tenere in casa",
+  "pantryExpired": "Scaduto",
+  "pantryExpiresIn": "Scade tra {days} giorni",
+  "pantryExpiringSoon": "In scadenza a breve",
+  "pantryExpiryDate": "Data di scadenza",
+  "pantryExpiryNotSet": "Non impostato",
+  "pantryFilterAll": "Tutto",
+  "pantryFilterExpiring": "In scadenza",
+  "pantryFilterOutStock": "Esaurito",
+  "pantryFirstOpenHint": "Tieni traccia di ciò che hai a casa. Aggiungi articoli o scansiona codici a barre.",
   "pantryItemRemoved": "Elemento rimosso",
+  "pantryMoreDetails": "Maggiori dettagli",
+  "pantryNoItemsFound": "Nessun elemento trovato per \"{query}\"",
+  "pantryRestockSelected": "Rifornimento selezionato",
+  "pantryScanProduct": "Scansiona il prodotto",
+  "pantryScanner": "Scansione prodotto",
+  "pantrySearchHint": "Cerca dispensa...",
+  "pantrySelectedCount": "{count} selezionato",
+  "pantrySimpleMode": "Di base",
   "paywallAfterItem1": "Grani",
   "paywallAfterItem2": "Pulizia",
   "paywallAfterItem3": "Carni",
@@ -793,8 +981,11 @@
   "paywallTestimonial2Text": "Non ho mai più dimenticato una voce dell'elenco. La chat dell'IA è sensazionale!",
   "paywallTestimonialsTitle": "Cosa dicono i nostri utenti:",
   "paywallTitle": "KipiListPremium",
+  "paywallTrialCta": "Inizia la prova gratuita",
   "paywallTrialDays": "{days} GIORNI GRATUITI",
   "paywallTrialMonths": "{count,plural, one{{count} MESE GRATIS} other{{count} MESI GRATIS}}",
+  "paywallTrialSubtitle": "Annulla in qualsiasi momento. Nessun addebito oggi.",
+  "paywallTrialTitle": "Prova KipiList Pro gratuitamente per 7 giorni",
   "paywallTrialWeeks": "{count,plural, one{{count} SETTIMANA GRATIS} other{{count} SETTIMANE GRATIS}}",
   "prefAIAssistant": "Assistente AI personale",
   "prefCustomThemes": "Temi personalizzati",
@@ -817,6 +1008,8 @@
   "quickRecipe": "Ricetta veloce",
   "quickRecipePrompt": "Suggerisci ricette con gli elementi della mia lista.",
   "quickReplies": "Risposte rapide:",
+  "recipeAddToList": "Aggiungi alla lista della spesa",
+  "recipeAddedConfirmation": "{count} ingredienti aggiunti a {listName}",
   "recipeCreated": "Ricetta creata!",
   "recipeDeleted": "Ricetta eliminata",
   "recipeImage": "Immagine ricetta",
@@ -853,10 +1046,33 @@
   "setBudgetButton": "Imposta budget",
   "setBudgetTitle": "Budget Mensile",
   "settingsAppBar": "Impostazioni",
+  "settingsAssistantHistory": "Storia dell'Assistente",
+  "settingsAssistantHistorySubtitle": "Visualizza e cerca le conversazioni passate",
+  "settingsAssistantName": "Nome dell'assistente",
+  "settingsCancel": "Cancellare",
+  "settingsCategories": "Categorie",
+  "settingsCategoriesSubtitle": "Gestisci le categorie di articoli",
+  "settingsChooseIcon": "Scegli un'icona:",
+  "settingsCustomizeAI": "Personalizza l'assistente AI",
+  "settingsCustomizeDialog": "Personalizza l'assistente",
   "settingsDefaultScreen": "Schermata iniziale predefinita",
   "settingsDefaultScreenSubtitle": "Scegli tra la lista della spesa o la chat AI",
+  "settingsErrorSubscription": "Errore durante il caricamento dell'abbonamento",
+  "settingsLegal": "Legale",
+  "settingsLoadingSubscription": "Caricamento abbonamento...",
+  "settingsMyProfile": "Il mio profilo",
+  "settingsPrivacyPolicy": "politica sulla riservatezza",
+  "settingsProActive": "KipiList Pro attivo",
+  "settingsProCta": "Sblocca elenchi illimitati, AI e altro ancora",
+  "settingsProfileSubtitle": "Preferenze personali per l'assistente AI",
+  "settingsSave": "Salva",
   "settingsScreenChat": "Chatta sull'intelligenza artificiale",
   "settingsScreenList": "Lista della spesa",
+  "settingsSectionAccount": "Account",
+  "settingsSectionApp": "App",
+  "settingsSectionAssistant": "Assistente AI",
+  "settingsSubscription": "Sottoscrizione",
+  "settingsTermsOfService": "Termini di servizio",
   "share": "Condividi",
   "shareApp": "Condividi l'app",
   "shareAppDescription": "Invita gli amici a utilizzare KipiList",
@@ -877,6 +1093,7 @@
   "signInApple": "Accedi con Apple",
   "signInGoogle": "Accedi con Google",
   "smartOrganization": "Organizzazione Intelligente",
+  "sortAZ": "Dalla A alla Z",
   "sortCategory": "Categoria",
   "sortDate": "Data",
   "sortManual": "Manuale",
@@ -899,6 +1116,7 @@
   "themePink": "Rosa",
   "themePurple": "Viola",
   "themeRed": "Rosso",
+  "themeSelectionTitle": "Scegli il colore del tema",
   "themeTeal": "Verde acqua",
   "totalEstimated": "Totale stimato: {amount}",
   "totalSpending": "Totale Speso",
@@ -912,6 +1130,20 @@
   "unlockFullResponse": "Sblocca la risposta completa",
   "unmark": "Deseleziona",
   "upgrade": "Aggiorna",
+  "userProfileAvoidedStores": "Negozi evitati",
+  "userProfileAvoidedStoresHint": "per esempio. Negozio X, negozio Y",
+  "userProfileDescription": "Aggiungi le tue preferenze personali in modo che l'assistente AI possa suggerire articoli e ricette personalizzate.",
+  "userProfileDietaryRestrictions": "Restrizioni dietetiche",
+  "userProfileDietaryRestrictionsHint": "per esempio. vegano, vegetariano, senza glutine",
+  "userProfileErrorLoading": "Errore: {error}",
+  "userProfileErrorSaving": "Errore durante il salvataggio: {error}",
+  "userProfileNotes": "Note",
+  "userProfileNotesHint": "Altre preferenze per l'assistente",
+  "userProfilePreferredStore": "Negozio preferito",
+  "userProfilePreferredStoreHint": "per esempio. Nome del negozio",
+  "userProfileSaveButton": "Salva profilo",
+  "userProfileSaved": "Profilo salvato con successo!",
+  "userProfileTitle": "Il mio profilo",
   "validForLimitedTime": "Valido per tempo limitato",
   "version": "Versione",
   "viewActive": "Vedi Attive",
@@ -926,6 +1158,13 @@
   "voiceCommandTitle": "Comando Vocale AI",
   "voiceProFeature": "I comandi vocali avanzati sono Pro. Abilitazione della dettatura di base...",
   "voiceTranscriptionTooltip": "Digitazione vocale (Gratuita)",
+  "weekdayFriday": "Venerdì",
+  "weekdayMonday": "Lunedi",
+  "weekdaySaturday": "Sabato",
+  "weekdaySunday": "Domenica",
+  "weekdayThursday": "Giovedì",
+  "weekdayTuesday": "Martedì",
+  "weekdayWednesday": "Mercoledì",
   "welcomeAiAssistant": "Benvenuto nell'Assistente AI",
   "whatToDoWithItem": "Cosa vorresti fare con questo oggetto?",
   "yes": "Sì",

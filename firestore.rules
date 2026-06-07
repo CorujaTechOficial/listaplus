@@ -103,6 +103,11 @@ service cloud.firestore {
       allow read, write: if isAuthenticated() && isOwner(uid);
     }
 
+    // AI usage tracking — owner only
+    match /users/{uid}/ai_usage/{monthDoc} {
+      allow read, write: if isAuthenticated() && isOwner(uid);
+    }
+
     // App feedback — any authenticated user can create
     match /feedback/{feedbackId} {
       allow create: if isAuthenticated();

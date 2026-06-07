@@ -18,7 +18,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get pantry => 'Búrka';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Spjall';
 
   @override
   String get navRecipes => 'Uppskriftir';
@@ -844,26 +844,21 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Prófaðu KipiList Pro ókeypis í 7 daga';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Hætta við hvenær sem er. Ekkert gjald í dag.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Byrjaðu ókeypis prufuáskrift';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Bæta við innkaupalista';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count hráefni bætt við $listName';
   }
 
   @override
@@ -1774,40 +1769,40 @@ class AppLocalizationsIs extends AppLocalizations {
   String get catalogBrowse => 'Skoðaðu vörulista';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Þú ert ótengdur';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Persónuvernd og greining';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList notar Firebase Analytics til að bæta upplifun þína. Gögn þín eru unnin í samræmi við persónuverndarstefnu okkar.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Samþykkja';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Nei, takk';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Til á lager';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count vantar atriði',
+      one: '$count vantar atriði',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Gildistími';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Ekki upplýst';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -1824,7 +1819,7 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get pantry => 'Búrka';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Spjall';
 
   @override
   String get navRecipes => 'Uppskriftir';
@@ -2617,6 +2612,24 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Prófaðu KipiList Pro ókeypis í 7 daga';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Hætta við hvenær sem er. Ekkert gjald í dag.';
+
+  @override
+  String get paywallTrialCta => 'Byrjaðu ókeypis prufuáskrift';
+
+  @override
+  String get recipeAddToList => 'Bæta við innkaupalista';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count hráefni bætt við $listName';
   }
 
   @override
@@ -3522,4 +3535,40 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get catalogBrowse => 'Skoðaðu vörulista';
+
+  @override
+  String get offlineBanner => 'Þú ert ótengdur';
+
+  @override
+  String get consentTitle => 'Persónuvernd og greining';
+
+  @override
+  String get consentBody =>
+      'KipiList notar Firebase Analytics til að bæta upplifun þína. Gögn þín eru unnin í samræmi við persónuverndarstefnu okkar.';
+
+  @override
+  String get consentAccept => 'Samþykkja';
+
+  @override
+  String get consentDecline => 'Nei, takk';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Til á lager';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vantar atriði',
+      one: '$count vantar atriði',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Gildistími';
+
+  @override
+  String get notInformed => 'Ekki upplýst';
 }

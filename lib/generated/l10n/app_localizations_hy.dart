@@ -18,7 +18,7 @@ class AppLocalizationsHy extends AppLocalizations {
   String get pantry => 'Մառան';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Զրուցարան';
 
   @override
   String get navRecipes => 'Բաղադրատոմսեր';
@@ -843,26 +843,21 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Փորձեք KipiList Pro-ն անվճար 7 օր';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Չեղարկել ցանկացած ժամանակ: Այսօր ոչ մի գանձում:';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Սկսեք անվճար փորձաշրջան';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Ավելացնել գնումների ցուցակին';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count բաղադրիչ ավելացվել է $listName-ին';
   }
 
   @override
@@ -1775,38 +1770,38 @@ class AppLocalizationsHy extends AppLocalizations {
   String get catalogBrowse => 'Թերթիր կատալոգը';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Դուք անցանց եք';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Գաղտնիություն և վերլուծություն';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList-ը օգտագործում է Firebase Analytics՝ ձեր փորձը բարելավելու համար: Ձեր տվյալները մշակվում են մեր Գաղտնիության քաղաքականության համաձայն:';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Ընդունել';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Ոչ, շնորհակալություն';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Պահեստում';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count բացակայող տարրեր',
+      one: '$count բացակայող տարր',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Ժամկետի ժամկետը';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Տեղեկացված չէ';
 }

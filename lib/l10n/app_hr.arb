@@ -18,6 +18,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -32,6 +39,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -169,6 +183,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -179,10 +200,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -284,6 +319,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -291,10 +343,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -359,11 +442,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "O nama",
   "achievements": "Postignuća",
+  "achievementsTitle": "Moja postignuća",
   "activeListening": "Aktivno slušanje",
   "add": "Dodaj",
   "addAllToList": "Dodaj sve na popis",
+  "addCategoryColor": "Boja:",
+  "addCategoryIcon": "Ikona:",
   "addDirectToList": "Dodaj izravno na popis",
   "addIngredient": "Dodaj sastojak",
   "addItem": "Dodaj stavku",
@@ -375,23 +475,52 @@
   "advancedFeatures": "Napredne značajke",
   "aiAssistant": "AI pomoćnik",
   "aiAssistantDescription": "Dobij pametne prijedloge, recepte i personalizirane savjete s našim AI pomoćnikom.",
+  "aiAssistantGeneral": "Generalni pomoćnik",
+  "aiAssistantHistory": "Povijest pomoćnika",
+  "aiConversationHistory": "Povijest razgovora",
   "aiCreditsRemaining": "Preostalo {remaining} kredita",
+  "aiDeleteConversationConfirm": "Izbrisati",
+  "aiDeleteConversationTitle": "Izbrisati razgovor?",
+  "aiDeletedList": "Popis izbrisanih",
   "aiEnergy": "AI energija",
   "aiError": "Oprosti, došlo je do greške u obradi tvog zahtjeva. Provjeri svoju vezu ili pokušaj ponovno kasnije.",
+  "aiFirstOpenHint": "Ja sam Kipi, tvoj pomoćnik u kupovini. Pitaj me bilo što o svom popisu!",
+  "aiHello": "Zdravo! Ja sam Kipi",
+  "aiHowCanIHelp": "Kako vam mogu pomoći danas?",
   "aiLimitAlmostReached": "Gotovo bez AI poruka",
+  "aiNewConversation": "Novi razgovor",
+  "aiNewSession": "Nova sesija",
+  "aiNoConversationFound": "Nije pronađen nijedan razgovor",
+  "aiNoMessagesFound": "Nema pronađenih poruka",
+  "aiPremiumUpsell": "Idi na Premium",
+  "aiRecentConversations": "Nedavni razgovori",
+  "aiSearchMessages": "Traži poruke...",
+  "aiStartNewConversation": "Započni novi razgovor",
+  "aiSuggestCreateList": "Napravi moj prvi popis",
+  "aiSuggestSaveMore": "Kako uštedjeti više?",
   "aiTeaserFallback": "Pretplatite se na Premium kako biste otključali puni odgovor i dobili neograničene AI savjete za svoju kupovinu...",
+  "aiUnlockWithAd": "Otključaj s oglasom",
   "aiVoiceCommandTooltip": "AI glasovna naredba (Premium)",
+  "aiWelcomeTitle": "Zdravo! 👋 Ja sam **Kipi**, tvoj pametni pomoćnik u kupovini.",
   "allTags": "Sve",
   "alreadyPurchased": "Već kupljeno",
   "appTitle": "Popis za kupovinu",
   "appearance": "Izgled",
   "archiveList": "Arhiviraj popis",
+  "artifactReplaceBody": "Odaberite alternativni proizvod kako biste optimizirali troškove.",
+  "artifactReplaceTitle": "Zamijeni {name}",
+  "artifactSuggestedItems": "Predložene stavke",
+  "artifactSwapButton": "Zamjena",
+  "artifactSwappedLabel": "Zamijenjeno",
   "backToChat": "Natrag na Chat",
+  "backToToday": "Povratak na danas",
   "backupExported": "Sigurnosna kopija izvezena!",
   "backupNav": "Sigurnosna kopija",
   "backupPremiumDescription": "Sigurnosna kopija i izvoz su Premium značajka",
   "backupSubtitle": "Izvezi ili uvezi svoje podatke",
   "backupTitle": "Sigurnosna kopija",
+  "barcodeScannerHint": "Usmjerite kameru prema crtičnom kodu",
+  "barcodeScannerTitle": "Skeniraj crtični kod",
   "becomePremium": "Postani Premium",
   "budgetAmountLabel": "Iznos proračuna",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -414,9 +543,11 @@
   "catalogAddItems": "Dodaj {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Pregledaj katalog",
   "catalogFilterNational": "Državljani",
+  "catalogItemAdded": "{name} dodan",
   "catalogMyFrequents": "Moji česti",
   "catalogProductNotFound": "Proizvod nije pronađen, upišite naziv",
   "catalogRareSection": "rjeđe u vašoj zemlji",
+  "catalogRetry": "Pokušajte ponovo",
   "catalogSearchGlobal": "Pretražite bilo koji proizvod...",
   "catalogSearchInCategory": "Traži u {category}...",
   "catalogSortAZ": "A–Z",
@@ -448,6 +579,10 @@
   "confirmDeleteItems": "Ukloniti {count} stavku(i)?",
   "confirmDeleteTitle": "Potvrdi",
   "confirmRemovePantry": "Ukloniti \"{name}\" iz ostave?",
+  "consentAccept": "Prihvatiti",
+  "consentBody": "KipiList koristi Firebase Analytics za poboljšanje vašeg iskustva. Vaši se podaci obrađuju u skladu s našom Politikom privatnosti.",
+  "consentDecline": "Ne, hvala",
+  "consentTitle": "Privatnost i analitika",
   "consumed": "Potrošeno",
   "continueAsGuest": "Nastavi kao gost",
   "copiedToClipboard": "Kopirano u međuspremnik",
@@ -485,8 +620,16 @@
   "editRecipe": "Uredi",
   "editRecipeTitle": "Uredi recept",
   "emptyListAddItems": "Tvoj popis je prazan! Prvo dodaj stavke. ℹ️",
+  "emptyListAiAction": "Pitajte AI pomoćnika",
+  "emptyListAiExample": "Pokušajte zamoliti AI da predloži predmete",
   "emptyListSubtitle": "Dodaj stavke za početak",
   "emptyListTitle": "Tvoj popis je prazan",
+  "emptyMealSlotHint": "Dodirnite za planiranje obroka",
+  "emptyPantryScan": "Skenirajte proizvod",
+  "emptyPantrySubtitle": "Dodajte proizvode kako biste pratili što imate kod kuće",
+  "emptyPantryTitle": "Prazna ostava",
+  "emptyRecipesSubtitle": "Napravite svoj prvi recept ili zamolite AI da ga generira",
+  "emptyRecipesTitle": "Nema spremljenih recepata",
   "enterCodeHint": "Unesi kod",
   "enterUrl": "Unesi URL",
   "error": "Greška: {message}",
@@ -500,6 +643,7 @@
   "estimatedPrice": "Procijenjena cijena",
   "exit": "Izlaz",
   "exitShoppingMode": "Izađite iz načina za kupovinu",
+  "expirationDate": "Rok trajanja",
   "exportData": "Izvezi podatke",
   "exportDataSubtitle": "Spremi sve popise kao JSON",
   "exportExcel": "Izvezi kao Excel",
@@ -571,12 +715,20 @@
   "listAdded": "{listName} dodan!",
   "listArchived": "Popis uspješno arhiviran!",
   "listAssistant": "Pomoćnik za popis",
+  "listBudgetIndicator": "Proračun: {value}",
   "listBudgetTitle": "Proračun popisa",
   "listCreated": "Popis \"{name}\" stvoren s {count} stavki",
+  "listDelete": "Izbrisati",
+  "listErrorGeneric": "Došlo je do pogreške. Molimo pokušajte ponovo.",
   "listHelp": "Kako mogu pomoći s tvojim popisom?",
   "listHistory": "Povijest popisa",
   "listNameLabel": "Naziv popisa",
   "listOrganizedMagic": "Popis čarobno organiziran po kategorijama! ✨",
+  "listProfile": "Profil",
+  "listSelectAll": "Odaberite sve",
+  "listShoppingComplete": "Gotovo!",
+  "listShoppingCompleteSubtitle": "Dovršili ste svoj popis.",
+  "listTotalLabel": "Ukupno: {value}",
   "listening": "Slušanje...",
   "lists": "Popisi",
   "loading": "Učitavanje...",
@@ -584,10 +736,14 @@
   "loginError": "Greška pri prijavi: {error}",
   "loginPrompt": "Prijavi se za otključavanje\nPremium značajki",
   "longHistoryWarning": "Duga povijest: pomoćnik se fokusira na najnovije poruke za bolju izvedbu.",
+  "manageCategoriesEmpty": "Još nema kategorija",
+  "manageCategoriesTitle": "Upravljanje kategorijama",
   "manageSubscription": "Upravljanje pretplatom",
   "markAsPurchased": "Označi kao kupljeno",
   "markItemsToSeeAnalysis": "Označi stavke kao kupljene za prikaz analize.",
   "marketMode": "Tržišni način rada",
+  "mealDragHint": "Držite za povlačenje i pomicanje",
+  "mealNoRecipeFound": "Recept nije pronađen",
   "mealPlannerAddMeal": "Dodaj obrok",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDeleteMeal": "Ukloni obrok",
@@ -609,6 +765,8 @@
   "mealPlannerNoRecipesFound": "Recepti nisu pronađeni",
   "mealPlannerNoRecipesHint": "Prvo stvorite recepte u kartici Recepti",
   "mealPlannerNoteLabel": "Bilješka (opcionalno)",
+  "mealPlannerPantryAllAvailable": "Na lageru",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} nedostajuća stavka} other{{count} nedostajuće stavke}}",
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Dodaj u plan",
   "mealPlannerSearchRecipes": "Pretraži recepte...",
@@ -621,13 +779,15 @@
   "mealPlannerWeekEmpty": "Ništa nije planirano za ovaj tjedan",
   "mealPlannerWeekEmptyHint": "Dodirni bilo koji dan za početak planiranja obroka!",
   "mealPlannerWeekProgress": "{count} od {total} planiranih obroka",
+  "mealSearchRecipes": "Traži recepte...",
+  "mealTypeLabel": "Vrsta obroka",
   "monthlyBudgetAppBar": "Mjesečni proračun",
   "monthlyBudgetNav": "Mjesečni proračun",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Mjesečni proračun",
   "myLists": "Moji popisi",
   "myRecipes": "Moji recepti",
-  "navChat": "Chat",
+  "navChat": "Razgovor",
   "navLists": "Popisi",
   "navMealPlanner": "Jelovnik",
   "navRecipes": "Recepti",
@@ -651,6 +811,10 @@
   "noRecipesSaved": "Nema spremljenih recepata",
   "noRecipesSavedHint": "Stvorite svoj prvi prilagođeni recept dodirom na gumb ispod.",
   "noTracking": "Bez praćenja",
+  "notInformed": "Nije informiran",
+  "offlineBanner": "Vi ste izvan mreže",
+  "onboardingAIShowSubtitle": "Kipi sprema sve za vas...",
+  "onboardingAIShowTitle": "Pogledajte inteligenciju na djelu!",
   "onboardingAnnualBadge": "Najbolja vrijednost",
   "onboardingAnnualLabel": "Godišnji",
   "onboardingCancelAnytime": "Otkaži bilo kada. Bez obveze.",
@@ -684,11 +848,35 @@
   "organizeByAisles": "Organiziraj po prolazima",
   "organizingAi": "ORGANIZIRANJE S AI...",
   "pantry": "Ostava",
+  "pantryAdvancedMode": "Napredno",
   "pantryAppBar": "Ostava",
+  "pantryCompactView": "Kompaktni prikaz",
+  "pantryDeficit": "Nedostaje {amount}{unit}",
+  "pantryDeleteItemsContent": "Želite li izbrisati {count} odabranih stavki?",
+  "pantryDeleteItemsTitle": "Brisanje stavki",
+  "pantryDeleteSelected": "Izbriši odabrano",
+  "pantryDetailedView": "Detaljan prikaz",
   "pantryEditTitle": "Uredi {name}",
   "pantryEmpty": "Prazna ostava",
   "pantryEmptySubtitle": "Dodaj proizvode koje želiš imati kod kuće",
+  "pantryExpired": "Istekao",
+  "pantryExpiresIn": "Istječe za {days} dana",
+  "pantryExpiringSoon": "Uskoro ističe",
+  "pantryExpiryDate": "Rok trajanja",
+  "pantryExpiryNotSet": "Nije postavljeno",
+  "pantryFilterAll": "Sve",
+  "pantryFilterExpiring": "Istječe",
+  "pantryFilterOutStock": "Nema na skladištu",
+  "pantryFirstOpenHint": "Pratite što imate kod kuće. Dodajte stavke ili skenirajte crtične kodove.",
   "pantryItemRemoved": "Stavka uklonjena",
+  "pantryMoreDetails": "Više detalja",
+  "pantryNoItemsFound": "Nema pronađenih stavki za \"{query}\"",
+  "pantryRestockSelected": "Odabrano obnavljanje zaliha",
+  "pantryScanProduct": "Skenirajte proizvod",
+  "pantryScanner": "Skeniraj proizvod",
+  "pantrySearchHint": "Pretraži smočnicu...",
+  "pantrySelectedCount": "{count} odabrano",
+  "pantrySimpleMode": "Osnovno",
   "paywallAfterItem1": "Žitarice",
   "paywallAfterItem2": "Čišćenje",
   "paywallAfterItem3": "meso",
@@ -736,8 +924,11 @@
   "paywallTestimonial2Text": "Nikad više nisam zaboravio stavku s popisa. AI chat je senzacionalan!",
   "paywallTestimonialsTitle": "Što kažu naši korisnici:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Započni besplatnu probu",
   "paywallTrialDays": "{days} DANA BESPLATNO",
   "paywallTrialMonths": "{count,plural, one{{count} MJESECI BESPLATNO} other{{count} MJESECI BESPLATNO}}",
+  "paywallTrialSubtitle": "Otkaži bilo kada. Danas se ne naplaćuje.",
+  "paywallTrialTitle": "Isprobajte KipiList Pro besplatno 7 dana",
   "paywallTrialWeeks": "{count,plural, one{{count} TJEDAN BESPLATNO} other{{count} TJEDANA BESPLATNO}}",
   "prefAIAssistant": "Osobni AI pomoćnik",
   "prefCustomThemes": "Prilagođene teme",
@@ -760,6 +951,8 @@
   "quickRecipe": "Brzi recept",
   "quickRecipePrompt": "Predloži recepte sa stavkama s mog popisa.",
   "quickReplies": "Brzi odgovori:",
+  "recipeAddToList": "Dodaj na popis za kupovinu",
+  "recipeAddedConfirmation": "{count} sastojaka dodanih u {listName}",
   "recipeCreated": "Recept stvoren!",
   "recipeDeleted": "Recept izbrisan",
   "recipeImage": "Slika recepta",
@@ -796,10 +989,33 @@
   "setBudgetButton": "Postavi proračun",
   "setBudgetTitle": "Mjesečni proračun",
   "settingsAppBar": "Postavke",
+  "settingsAssistantHistory": "Povijest pomoćnika",
+  "settingsAssistantHistorySubtitle": "Pregledajte i pretražite prošle razgovore",
+  "settingsAssistantName": "Ime pomoćnika",
+  "settingsCancel": "Otkazati",
+  "settingsCategories": "kategorije",
+  "settingsCategoriesSubtitle": "Upravljanje kategorijama stavki",
+  "settingsChooseIcon": "Odaberite ikonu:",
+  "settingsCustomizeAI": "Prilagodite AI pomoćnika",
+  "settingsCustomizeDialog": "Prilagodite pomoćnika",
   "settingsDefaultScreen": "Zadani početni zaslon",
   "settingsDefaultScreenSubtitle": "Odaberite između popisa za kupovinu ili AI chata",
+  "settingsErrorSubscription": "Pogreška pri učitavanju pretplate",
+  "settingsLegal": "Pravno",
+  "settingsLoadingSubscription": "Učitavanje pretplate...",
+  "settingsMyProfile": "Moj profil",
+  "settingsPrivacyPolicy": "Politika privatnosti",
+  "settingsProActive": "KipiList Pro aktivan",
+  "settingsProCta": "Otključajte neograničene popise, AI i više",
+  "settingsProfileSubtitle": "Osobne postavke za AI pomoćnika",
+  "settingsSave": "Uštedjeti",
   "settingsScreenChat": "AI Chat",
   "settingsScreenList": "Popis za kupovinu",
+  "settingsSectionAccount": "Račun",
+  "settingsSectionApp": "aplikacija",
+  "settingsSectionAssistant": "AI pomoćnik",
+  "settingsSubscription": "Pretplata",
+  "settingsTermsOfService": "Uvjeti usluge",
   "share": "Podijeli",
   "shareApp": "Dijeli aplikaciju",
   "shareAppDescription": "Pozovite prijatelje da koriste KipiList",
@@ -820,6 +1036,7 @@
   "signInApple": "Prijava s Appleom",
   "signInGoogle": "Prijava s Googleom",
   "smartOrganization": "Pametna organizacija",
+  "sortAZ": "A–Z",
   "sortCategory": "Kategorija",
   "sortDate": "Datum",
   "sortManual": "Ručno",
@@ -842,6 +1059,7 @@
   "themePink": "Ružičasta",
   "themePurple": "Ljubičasta",
   "themeRed": "Crvena",
+  "themeSelectionTitle": "Odaberite boju teme",
   "themeTeal": "Teal",
   "totalEstimated": "Ukupno procijenjeno: {amount}",
   "totalSpending": "Ukupno potrošeno",
@@ -855,6 +1073,20 @@
   "unlockFullResponse": "Otključaj puni odgovor",
   "unmark": "Odznači",
   "upgrade": "Nadogradi",
+  "userProfileAvoidedStores": "Izbjegnute trgovine",
+  "userProfileAvoidedStoresHint": "npr. Pohranite X, pohranite Y",
+  "userProfileDescription": "Dodajte svoje osobne postavke kako bi AI asistent mogao predložiti personalizirane artikle i recepte.",
+  "userProfileDietaryRestrictions": "Dijetetska ograničenja",
+  "userProfileDietaryRestrictionsHint": "npr. veganska, vegetarijanska, bez glutena",
+  "userProfileErrorLoading": "Greška: {error}",
+  "userProfileErrorSaving": "Pogreška pri spremanju: {error}",
+  "userProfileNotes": "Bilješke",
+  "userProfileNotesHint": "Ostale postavke za pomoćnika",
+  "userProfilePreferredStore": "Preferirana trgovina",
+  "userProfilePreferredStoreHint": "npr. Naziv trgovine",
+  "userProfileSaveButton": "Spremi profil",
+  "userProfileSaved": "Profil je uspješno spremljen!",
+  "userProfileTitle": "Moj profil",
   "validForLimitedTime": "Vrijedi ograničeno vrijeme",
   "version": "Verzija",
   "viewActive": "Pregledaj aktivne",
@@ -869,6 +1101,13 @@
   "voiceCommandTitle": "AI glasovna naredba",
   "voiceProFeature": "Napredne glasovne naredbe su Pro. Omogućavanje osnovnog diktiranja...",
   "voiceTranscriptionTooltip": "Glasovno tipkanje (Besplatno)",
+  "weekdayFriday": "petak",
+  "weekdayMonday": "ponedjeljak",
+  "weekdaySaturday": "subota",
+  "weekdaySunday": "nedjelja",
+  "weekdayThursday": "četvrtak",
+  "weekdayTuesday": "utorak",
+  "weekdayWednesday": "srijeda",
   "welcomeAiAssistant": "Dobro došli u AI Assistant",
   "whatToDoWithItem": "Što želite učiniti s ovom stavkom?",
   "yes": "Da",

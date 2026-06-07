@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
@@ -139,10 +138,10 @@ void main() {
           .thenAnswer((_) async => pantryItems);
 
       // Keep providers alive during the test
-      container.listen(mealPlansProvider(), (_, __) {});
-      container.listen(shoppingListsProvider, (_, __) {});
-      container.listen(recipesProvider, (_, __) {});
-      container.listen(pantryItemsProvider, (_, __) {});
+      container.listen(mealPlansProvider(), (_, _) {});
+      container.listen(shoppingListsProvider, (_, _) {});
+      container.listen(recipesProvider, (_, _) {});
+      container.listen(pantryItemsProvider, (_, _) {});
 
       // Trigger build and wait for it
       await container.read(mealPlansProvider().future);

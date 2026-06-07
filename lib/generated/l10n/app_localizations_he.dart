@@ -18,7 +18,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get pantry => 'מזווה';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'לְשׂוֹחֵחַ';
 
   @override
   String get navRecipes => 'מתכונים';
@@ -832,26 +832,20 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'נסה את KipiList Pro בחינם למשך 7 ימים';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'בטל בכל עת. אין תשלום היום.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'התחל ניסיון חינם';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'הוסף לרשימת הקניות';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count מרכיבים נוספו ל$listName';
   }
 
   @override
@@ -1756,40 +1750,40 @@ class AppLocalizationsHe extends AppLocalizations {
   String get catalogBrowse => 'עיין בקטלוג';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'אתה במצב לא מקוון';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'פרטיות וניתוח';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList משתמש ב-Firebase Analytics כדי לשפר את החוויה שלך. הנתונים שלך מעובדים בהתאם למדיניות הפרטיות שלנו.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'לְקַבֵּל';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'לא, תודה';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'בִּמלַאִי';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count פריטים חסרים',
+      one: '$count פריט חסר',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'תַאֲרִיך תְפוּגָה';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'לא מודיעים';
 }
 
 /// The translations for Hebrew, as used in Israel (`he_IL`).
@@ -1806,7 +1800,7 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
   String get pantry => 'מזווה';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'לְשׂוֹחֵחַ';
 
   @override
   String get navRecipes => 'מתכונים';
@@ -2587,6 +2581,23 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
       one: '$count חודש חינם',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'נסה את KipiList Pro בחינם למשך 7 ימים';
+
+  @override
+  String get paywallTrialSubtitle => 'בטל בכל עת. אין תשלום היום.';
+
+  @override
+  String get paywallTrialCta => 'התחל ניסיון חינם';
+
+  @override
+  String get recipeAddToList => 'הוסף לרשימת הקניות';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count מרכיבים נוספו ל$listName';
   }
 
   @override
@@ -3486,4 +3497,40 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get catalogBrowse => 'עיין בקטלוג';
+
+  @override
+  String get offlineBanner => 'אתה במצב לא מקוון';
+
+  @override
+  String get consentTitle => 'פרטיות וניתוח';
+
+  @override
+  String get consentBody =>
+      'KipiList משתמש ב-Firebase Analytics כדי לשפר את החוויה שלך. הנתונים שלך מעובדים בהתאם למדיניות הפרטיות שלנו.';
+
+  @override
+  String get consentAccept => 'לְקַבֵּל';
+
+  @override
+  String get consentDecline => 'לא, תודה';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'בִּמלַאִי';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count חסר',
+      one: '$count פריט חסר',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'תַאֲרִיך תְפוּגָה';
+
+  @override
+  String get notInformed => 'לא מודיעים';
 }

@@ -792,7 +792,7 @@
   "mealPlannerNoRecipesHint": "Créez d'abord des recettes dans l'onglet Recettes",
   "mealPlannerNoteLabel": "Note (optionnel)",
   "mealPlannerPantryAllAvailable": "En stock",
-  "mealPlannerPantryMissing": "{count,plural, one{{count} élément manquant} autre{{count} éléments manquants}}",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} élément manquant} other{{count} éléments manquants}}",
   "mealPlannerPrepTime": "{minutes} minutes",
   "mealPlannerSave": "Ajouter au planning",
   "mealPlannerSearchRecipes": "Rechercher des recettes...",

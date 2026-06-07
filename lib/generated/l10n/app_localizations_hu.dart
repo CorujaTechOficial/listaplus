@@ -18,7 +18,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get pantry => 'Kamra';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Csevegés';
 
   @override
   String get navRecipes => 'Receptek';
@@ -845,26 +845,21 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'Próbálja ki a KipiList Pro-t 7 napig ingyenesen';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'Bármikor lemondhatja. Ma nincs díj.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Indítsa el az ingyenes próbaverziót';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Hozzáadás a bevásárlólistához';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count összetevők hozzáadva a $listName-hoz';
   }
 
   @override
@@ -1781,40 +1776,40 @@ class AppLocalizationsHu extends AppLocalizations {
   String get catalogBrowse => 'Tallózás a katalógusban';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Ön offline állapotban van';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Adatvédelem és elemzések';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'A KipiList a Firebase Analytics segítségével javítja az élményt. Adatait az adatvédelmi szabályzatunk szerint kezeljük.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Elfogadás';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Nem, köszönöm';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Raktáron';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count hiányzó elem',
+      one: '$count hiányzó elem',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Lejárati idő';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Nem tájékoztatták';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -1831,7 +1826,7 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get pantry => 'Kamra';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Csevegés';
 
   @override
   String get navRecipes => 'Receptek';
@@ -2625,6 +2620,24 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
       one: '$count HÓNAP INGYENES',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'Próbálja ki a KipiList Pro-t 7 napig ingyenesen';
+
+  @override
+  String get paywallTrialSubtitle => 'Bármikor lemondhatja. Ma nincs díj.';
+
+  @override
+  String get paywallTrialCta => 'Indítsa el az ingyenes próbaverziót';
+
+  @override
+  String get recipeAddToList => 'Hozzáadás a bevásárlólistához';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count összetevők hozzáadva a $listName-hoz';
   }
 
   @override
@@ -3536,4 +3549,40 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get catalogBrowse => 'Tallózás a katalógusban';
+
+  @override
+  String get offlineBanner => 'Ön offline állapotban van';
+
+  @override
+  String get consentTitle => 'Adatvédelem és elemzések';
+
+  @override
+  String get consentBody =>
+      'A KipiList a Firebase Analytics segítségével javítja az élményt. Adatait az adatvédelmi szabályzatunk szerint kezeljük.';
+
+  @override
+  String get consentAccept => 'Elfogadás';
+
+  @override
+  String get consentDecline => 'Nem, köszönöm';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Raktáron';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hiányzó elem',
+      one: '$count hiányzó elem',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Lejárati idő';
+
+  @override
+  String get notInformed => 'Nem tájékoztatták';
 }

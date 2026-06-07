@@ -18,7 +18,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get pantry => 'Dapur';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Mengobrol';
 
   @override
   String get navRecipes => 'Resep';
@@ -837,26 +837,21 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Coba KipiList Pro gratis selama 7 hari';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Batalkan kapan saja. Tidak ada biaya hari ini.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Mulai Uji Coba Gratis';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Tambahkan ke daftar belanja';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count bahan ditambahkan ke $listName';
   }
 
   @override
@@ -1764,38 +1759,38 @@ class AppLocalizationsId extends AppLocalizations {
   String get catalogBrowse => 'Telusuri Katalog';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Anda sedang luring';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privasi & Analisis';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList menggunakan Firebase Analytics untuk meningkatkan pengalaman Anda. Data Anda diproses sesuai dengan Kebijakan Privasi kami.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Menerima';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Tidak, terima kasih';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Tersedia';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count barang hilang',
+      one: '$count barang hilang',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Kedaluwarsa';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Tidak diberitahu';
 }

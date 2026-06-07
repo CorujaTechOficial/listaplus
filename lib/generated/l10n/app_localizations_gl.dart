@@ -844,26 +844,21 @@ class AppLocalizationsGl extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Proba KipiList Pro gratis durante 7 días';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Cancela en calquera momento. Hoxe sen cargo.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Comeza a proba gratuíta';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Engadir á lista da compra';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ingredientes engadidos a $listName';
   }
 
   @override
@@ -1777,40 +1772,40 @@ class AppLocalizationsGl extends AppLocalizations {
   String get catalogBrowse => 'Explorar catálogo';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Estás sen conexión';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privacidade e análise';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList usa Firebase Analytics para mellorar a túa experiencia. Os teus datos son procesados ​​segundo a nosa Política de Privacidade.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Aceptar';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Non, grazas';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'En stock';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count elementos que faltan',
+      one: '$count elemento que falta',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Data de caducidade';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Non informado';
 }
 
 /// The translations for Galician, as used in Spain (`gl_ES`).
@@ -2619,6 +2614,24 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
       one: '$count MES GRATIS',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Proba KipiList Pro gratis durante 7 días';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Cancela en calquera momento. Hoxe sen cargo.';
+
+  @override
+  String get paywallTrialCta => 'Comeza a proba gratuíta';
+
+  @override
+  String get recipeAddToList => 'Engadir á lista da compra';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingredientes engadidos a $listName';
   }
 
   @override
@@ -3525,4 +3538,40 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
 
   @override
   String get catalogBrowse => 'Explorar catálogo';
+
+  @override
+  String get offlineBanner => 'Estás sen conexión';
+
+  @override
+  String get consentTitle => 'Privacidade e análise';
+
+  @override
+  String get consentBody =>
+      'KipiList usa Firebase Analytics para mellorar a túa experiencia. Os teus datos son procesados ​​segundo a nosa Política de Privacidade.';
+
+  @override
+  String get consentAccept => 'Aceptar';
+
+  @override
+  String get consentDecline => 'Non, grazas';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'En stock';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count elementos que faltan',
+      one: '$count elemento que falta',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Data de caducidade';
+
+  @override
+  String get notInformed => 'Non informado';
 }

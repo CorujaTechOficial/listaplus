@@ -18,6 +18,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -32,6 +39,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -176,6 +190,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -183,6 +204,13 @@
       },
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
       }
     }
   },
@@ -194,6 +222,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -315,6 +350,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -322,10 +374,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -390,11 +473,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "אודות",
   "achievements": "הישגים",
+  "achievementsTitle": "ההישגים שלי",
   "activeListening": "הקשבה פעילה",
   "add": "הוספה",
   "addAllToList": "הוסף הכל לרשימה",
+  "addCategoryColor": "צֶבַע:",
+  "addCategoryIcon": "סמל:",
   "addDirectToList": "הוסף ישירות לרשימה",
   "addIngredient": "הוסף רכיב",
   "addItem": "הוסף פריט",
@@ -406,23 +506,52 @@
   "advancedFeatures": "תכונות מתקדמות",
   "aiAssistant": "עוזר AI",
   "aiAssistantDescription": "קבל הצעות חכמות, מתכונים וטיפים מותאמים אישית עם עוזר ה-AI שלנו.",
+  "aiAssistantGeneral": "עוזר כללי",
+  "aiAssistantHistory": "היסטוריה של עוזר",
+  "aiConversationHistory": "היסטוריית שיחות",
   "aiCreditsRemaining": "נותרו {remaining} נקודות זכות",
+  "aiDeleteConversationConfirm": "לִמְחוֹק",
+  "aiDeleteConversationTitle": "למחוק את השיחה?",
+  "aiDeletedList": "רשימה שנמחקה",
   "aiEnergy": "AI Energy",
   "aiError": "מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.",
+  "aiFirstOpenHint": "אני קיפי, עוזרת הקניות שלך. שאל אותי כל דבר על הרשימה שלך!",
+  "aiHello": "שלום! אני קיפי",
+  "aiHowCanIHelp": "איך אני יכול לעזור לך היום?",
   "aiLimitAlmostReached": "כמעט נגמרו הודעות הבינה המלאכותית",
+  "aiNewConversation": "שיחה חדשה",
+  "aiNewSession": "מושב חדש",
+  "aiNoConversationFound": "לא נמצאה שיחה",
+  "aiNoMessagesFound": "לא נמצאו הודעות",
+  "aiPremiumUpsell": "עבור לפרימיום",
+  "aiRecentConversations": "שיחות אחרונות",
+  "aiSearchMessages": "חפש הודעות...",
+  "aiStartNewConversation": "התחל שיחה חדשה",
+  "aiSuggestCreateList": "צור את הרשימה הראשונה שלי",
+  "aiSuggestSaveMore": "איך לחסוך יותר?",
   "aiTeaserFallback": "הירשם ל-Premium כדי לפתוח את התגובה המלאה ולקבל טיפים בלתי מוגבלים בינה מלאכותית לקניות שלך...",
+  "aiUnlockWithAd": "בטל את הנעילה באמצעות Ad",
   "aiVoiceCommandTooltip": "פקודה קולית AI (Premium)",
+  "aiWelcomeTitle": "שלום! 👋 אני **קיפי**, עוזרת הקניות החכמה שלך.",
   "allTags": "הכל",
   "alreadyPurchased": "כבר נרכש",
   "appTitle": "רשימת קניות",
   "appearance": "מראה",
   "archiveList": "ארכוב רשימה",
+  "artifactReplaceBody": "בחר חלופה למוצר כדי לייעל את העלות.",
+  "artifactReplaceTitle": "החלף {name}",
+  "artifactSuggestedItems": "פריטים מוצעים",
+  "artifactSwapButton": "לְהַחלִיף",
+  "artifactSwappedLabel": "הוחלף",
   "backToChat": "חזרה לצ'אט",
+  "backToToday": "בחזרה להיום",
   "backupExported": "הגיבוי יוצא!",
   "backupNav": "גיבוי",
   "backupPremiumDescription": "גיבוי וייצוא הם תכונת Premium",
   "backupSubtitle": "ייצא או ייבא את הנתונים שלך",
   "backupTitle": "גיבוי",
+  "barcodeScannerHint": "כוון את המצלמה לברקוד",
+  "barcodeScannerTitle": "סרוק ברקוד",
   "becomePremium": "היה Premium",
   "budgetAmountLabel": "סכום התקציב",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -445,9 +574,11 @@
   "catalogAddItems": "הוסף {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "עיין בקטלוג",
   "catalogFilterNational": "אזרחים",
+  "catalogItemAdded": "{name} נוסף",
   "catalogMyFrequents": "התדירות שלי",
   "catalogProductNotFound": "המוצר לא נמצא, הקלד את השם",
   "catalogRareSection": "פחות נפוץ במדינה שלך",
+  "catalogRetry": "נסה שוב",
   "catalogSearchGlobal": "חפש בכל מוצר...",
   "catalogSearchInCategory": "חפש ב{category}...",
   "catalogSortAZ": "א–ז",
@@ -479,6 +610,10 @@
   "confirmDeleteItems": "להסיר {count} פריט(ים)?",
   "confirmDeleteTitle": "אישור",
   "confirmRemovePantry": "להסיר את \"{name}\" מהמזווה?",
+  "consentAccept": "לְקַבֵּל",
+  "consentBody": "KipiList משתמש ב-Firebase Analytics כדי לשפר את החוויה שלך. הנתונים שלך מעובדים בהתאם למדיניות הפרטיות שלנו.",
+  "consentDecline": "לא, תודה",
+  "consentTitle": "פרטיות וניתוח",
   "consumed": "נצרך",
   "continueAsGuest": "המשך כאורח",
   "copiedToClipboard": "הועתק ללוח",
@@ -516,8 +651,16 @@
   "editRecipe": "ערוך",
   "editRecipeTitle": "ערוך מתכון",
   "emptyListAddItems": "הרשימה שלך ריקה! הוסף פריטים תחילה. ℹ️",
+  "emptyListAiAction": "שאל את עוזר AI",
+  "emptyListAiExample": "נסה לבקש מה-AI להציע פריטים",
   "emptyListSubtitle": "הוסף פריטים כדי להתחיל",
   "emptyListTitle": "הרשימה שלך ריקה",
+  "emptyMealSlotHint": "הקש כדי לתכנן ארוחה",
+  "emptyPantryScan": "סרוק מוצר",
+  "emptyPantrySubtitle": "הוסף מוצרים כדי לעקוב אחר מה שיש לך בבית",
+  "emptyPantryTitle": "מזווה ריק",
+  "emptyRecipesSubtitle": "צור את המתכון הראשון שלך או בקש מה-AI ליצור אחד",
+  "emptyRecipesTitle": "לא נשמרו מתכונים",
   "enterCodeHint": "הכנס את הקוד",
   "enterUrl": "הזן URL",
   "error": "שגיאה: {message}",
@@ -531,6 +674,7 @@
   "estimatedPrice": "מחיר משוער",
   "exit": "יְצִיאָה",
   "exitShoppingMode": "צא ממצב קניות",
+  "expirationDate": "תַאֲרִיך תְפוּגָה",
   "exportData": "ייצא נתונים",
   "exportDataSubtitle": "שמור את כל הרשימות כ-JSON",
   "exportExcel": "ייצא כ-Excel",
@@ -602,12 +746,20 @@
   "listAdded": "{listName} נוסף!",
   "listArchived": "הרשימה אורכבה בהצלחה!",
   "listAssistant": "עוזר רשימה",
+  "listBudgetIndicator": "תקציב: {value}",
   "listBudgetTitle": "תקציב הרשימה",
   "listCreated": "הרשימה \"{name}\" נוצרה עם {count} פריטים",
+  "listDelete": "לִמְחוֹק",
+  "listErrorGeneric": "אירעה שגיאה. אנא נסה שוב.",
   "listHelp": "איך אני יכול לעזור עם הרשימה שלך?",
   "listHistory": "היסטוריית רשימות",
   "listNameLabel": "שם הרשימה",
   "listOrganizedMagic": "הרשימה אורגנה בקסם לפי קטגוריות! ✨",
+  "listProfile": "פּרוֹפִיל",
+  "listSelectAll": "בחר הכל",
+  "listShoppingComplete": "הכל נעשה!",
+  "listShoppingCompleteSubtitle": "השלמת את הרשימה שלך.",
+  "listTotalLabel": "סה\"כ: {value}",
   "listening": "הַקשָׁבָה...",
   "lists": "רשימות",
   "loading": "טוען...",
@@ -615,10 +767,14 @@
   "loginError": "שגיאת התחברות: {error}",
   "loginPrompt": "התחבר כדי לפתוח תכונות Premium",
   "longHistoryWarning": "היסטוריה ארוכה: העוזר מתמקד בהודעות האחרונות לביצועים טובים יותר.",
+  "manageCategoriesEmpty": "עדיין אין קטגוריות",
+  "manageCategoriesTitle": "נהל קטגוריות",
   "manageSubscription": "ניהול מינוי",
   "markAsPurchased": "סמן כנרכש",
   "markItemsToSeeAnalysis": "סמן פריטים כנרכשים כדי לראות את הניתוח.",
   "marketMode": "מצב שוק",
+  "mealDragHint": "החזק כדי לגרור ולהזיז",
+  "mealNoRecipeFound": "לא נמצא מתכון",
   "mealPlannerAddMeal": "הוסף ארוחה",
   "mealPlannerDateLabel": "תאריך",
   "mealPlannerDeleteMeal": "הסר ארוחה",
@@ -640,6 +796,8 @@
   "mealPlannerNoRecipesFound": "לא נמצאו מתכונים",
   "mealPlannerNoRecipesHint": "צור מתכונים בלשונית המתכונים תחילה",
   "mealPlannerNoteLabel": "הערה (אופציונלי)",
+  "mealPlannerPantryAllAvailable": "בִּמלַאִי",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} פריט חסר} other{{count} חסר}}",
   "mealPlannerPrepTime": "{minutes} דקות",
   "mealPlannerSave": "הוסף לתוכנית",
   "mealPlannerSearchRecipes": "חפש מתכונים...",
@@ -652,13 +810,15 @@
   "mealPlannerWeekEmpty": "שום דבר לא מתוכנן לשבוע זה",
   "mealPlannerWeekEmptyHint": "הקש על יום כלשהו כדי להתחיל לתכנן את הארוחות שלך!",
   "mealPlannerWeekProgress": "{count} מתוך {total} ארוחות מתוכננות",
+  "mealSearchRecipes": "חפש מתכונים...",
+  "mealTypeLabel": "סוג ארוחה",
   "monthlyBudgetAppBar": "תקציב חודשי",
   "monthlyBudgetNav": "תקציב חודשי",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "תקציב חודשי",
   "myLists": "הרשימות שלי",
   "myRecipes": "המתכונים שלי",
-  "navChat": "Chat",
+  "navChat": "לְשׂוֹחֵחַ",
   "navLists": "רשימות",
   "navMealPlanner": "תַפרִיט",
   "navRecipes": "מתכונים",
@@ -682,6 +842,10 @@
   "noRecipesSaved": "אין מתכונים שמורים",
   "noRecipesSavedHint": "צור את המתכון המותאם אישית הראשון שלך על ידי הקשה על הכפתור למטה.",
   "noTracking": "ללא מעקב",
+  "notInformed": "לא מודיעים",
+  "offlineBanner": "אתה במצב לא מקוון",
+  "onboardingAIShowSubtitle": "קיפי מכין לך הכל...",
+  "onboardingAIShowTitle": "ראה אינטליגנציה בפעולה!",
   "onboardingAnnualBadge": "התמורה הטובה ביותר",
   "onboardingAnnualLabel": "שְׁנָתִי",
   "onboardingCancelAnytime": "בטל בכל עת. אין התחייבות.",
@@ -715,11 +879,35 @@
   "organizeByAisles": "ארגן לפי מעברים",
   "organizingAi": "מארגן עם AI...",
   "pantry": "מזווה",
+  "pantryAdvancedMode": "מִתקַדֵם",
   "pantryAppBar": "מזווה",
+  "pantryCompactView": "תצוגה קומפקטית",
+  "pantryDeficit": "חסר {amount}{unit}",
+  "pantryDeleteItemsContent": "האם ברצונך למחוק {count} פריטים נבחרים?",
+  "pantryDeleteItemsTitle": "מחק פריטים",
+  "pantryDeleteSelected": "מחק את הבחירה",
+  "pantryDetailedView": "תצוגה מפורטת",
   "pantryEditTitle": "ערוך {name}",
   "pantryEmpty": "מזווה ריק",
   "pantryEmptySubtitle": "הוסף מוצרים שאתה רוצה להחזיק בבית",
+  "pantryExpired": "פג תוקף",
+  "pantryExpiresIn": "יפוג בעוד {days} ימים",
+  "pantryExpiringSoon": "יפוג בקרוב",
+  "pantryExpiryDate": "תאריך תפוגה",
+  "pantryExpiryNotSet": "לא מוגדר",
+  "pantryFilterAll": "כֹּל",
+  "pantryFilterExpiring": "פג תוקף",
+  "pantryFilterOutStock": "אזל המלאי",
+  "pantryFirstOpenHint": "עקוב אחר מה שיש לך בבית. הוסף פריטים או סרוק ברקודים.",
   "pantryItemRemoved": "הפריט הוסר",
+  "pantryMoreDetails": "פרטים נוספים",
+  "pantryNoItemsFound": "לא נמצאו פריטים עבור \"{query}\"",
+  "pantryRestockSelected": "נבחר מחדש מלאי",
+  "pantryScanProduct": "סרוק מוצר",
+  "pantryScanner": "סריקת מוצר",
+  "pantrySearchHint": "חפש במזווה...",
+  "pantrySelectedCount": "{count} נבחר",
+  "pantrySimpleMode": "בְּסִיסִי",
   "paywallAfterItem1": "דגנים",
   "paywallAfterItem2": "ניקוי",
   "paywallAfterItem3": "בשרים",
@@ -767,8 +955,11 @@
   "paywallTestimonial2Text": "לא שכחתי שוב פריט ברשימה. צ'אט AI הוא סנסציוני!",
   "paywallTestimonialsTitle": "מה המשתמשים שלנו אומרים:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "התחל ניסיון חינם",
   "paywallTrialDays": "{days} ימים בחינם",
   "paywallTrialMonths": "{count,plural, one{{count} חודש חינם} other{{count} חודשים בחינם}}",
+  "paywallTrialSubtitle": "בטל בכל עת. אין תשלום היום.",
+  "paywallTrialTitle": "נסה את KipiList Pro בחינם למשך 7 ימים",
   "paywallTrialWeeks": "{count,plural, one{{count} שבוע חינם} other{{count} שבועות בחינם}}",
   "prefAIAssistant": "עוזר AI אישי",
   "prefCustomThemes": "ערכות נושא מותאמות",
@@ -791,6 +982,8 @@
   "quickRecipe": "מתכון מהיר",
   "quickRecipePrompt": "הצע מתכונים עם פריטים מהרשימה שלי.",
   "quickReplies": "תשובות מהירות:",
+  "recipeAddToList": "הוסף לרשימת הקניות",
+  "recipeAddedConfirmation": "{count} מרכיבים נוספו ל{listName}",
   "recipeCreated": "המתכון נוצר!",
   "recipeDeleted": "המתכון נמחק",
   "recipeImage": "תמונת מתכון",
@@ -827,10 +1020,33 @@
   "setBudgetButton": "הגדר תקציב",
   "setBudgetTitle": "תקציב חודשי",
   "settingsAppBar": "הגדרות",
+  "settingsAssistantHistory": "היסטוריה של עוזר",
+  "settingsAssistantHistorySubtitle": "הצג וחפש שיחות קודמות",
+  "settingsAssistantName": "שם עוזר",
+  "settingsCancel": "לְבַטֵל",
+  "settingsCategories": "קטגוריות",
+  "settingsCategoriesSubtitle": "נהל קטגוריות פריטים",
+  "settingsChooseIcon": "בחר אייקון:",
+  "settingsCustomizeAI": "התאמה אישית של עוזר AI",
+  "settingsCustomizeDialog": "התאמה אישית של עוזר",
   "settingsDefaultScreen": "מסך הבית המוגדר כברירת מחדל",
   "settingsDefaultScreenSubtitle": "בחר בין רשימת קניות או צ'אט בינה מלאכותית",
+  "settingsErrorSubscription": "שגיאה בטעינת המנוי",
+  "settingsLegal": "מִשׁפָּטִי",
+  "settingsLoadingSubscription": "טוען מנוי...",
+  "settingsMyProfile": "הפרופיל שלי",
+  "settingsPrivacyPolicy": "מדיניות פרטיות",
+  "settingsProActive": "KipiList Pro פעיל",
+  "settingsProCta": "פתח רשימות ללא הגבלה, AI ועוד",
+  "settingsProfileSubtitle": "העדפות אישיות לעוזר הבינה המלאכותית",
+  "settingsSave": "לְהַצִיל",
   "settingsScreenChat": "AI Chat",
   "settingsScreenList": "רשימת קניות",
+  "settingsSectionAccount": "חֶשְׁבּוֹן",
+  "settingsSectionApp": "אפליקציה",
+  "settingsSectionAssistant": "עוזר AI",
+  "settingsSubscription": "מִנוּי",
+  "settingsTermsOfService": "תנאים והגבלות",
   "share": "שיתוף",
   "shareApp": "שתף אפליקציה",
   "shareAppDescription": "הזמן חברים להשתמש ב- KipiList",
@@ -851,6 +1067,7 @@
   "signInApple": "התחבר עם Apple",
   "signInGoogle": "התחבר עם Google",
   "smartOrganization": "ארגון חכם",
+  "sortAZ": "א–ז",
   "sortCategory": "קטגוריה",
   "sortDate": "תאריך",
   "sortManual": "ידני",
@@ -873,6 +1090,7 @@
   "themePink": "ורוד",
   "themePurple": "סגול",
   "themeRed": "אדום",
+  "themeSelectionTitle": "בחר צבע ערכת נושא",
   "themeTeal": "טיל",
   "totalEstimated": "סה\"כ מוערך: {amount}",
   "totalSpending": "סה\"כ הוצאות",
@@ -886,6 +1104,20 @@
   "unlockFullResponse": "בטל נעילת תגובה מלאה",
   "unmark": "הסר סימון",
   "upgrade": "שדרוג",
+  "userProfileAvoidedStores": "חנויות נמנעות",
+  "userProfileAvoidedStoresHint": "לְמָשָׁל חנות X, חנות Y",
+  "userProfileDescription": "הוסף את ההעדפות האישיות שלך כדי שעוזר הבינה המלאכותית יוכל להציע פריטים ומתכונים מותאמים אישית.",
+  "userProfileDietaryRestrictions": "הגבלות תזונתיות",
+  "userProfileDietaryRestrictionsHint": "לְמָשָׁל טבעוני, צמחוני, ללא גלוטן",
+  "userProfileErrorLoading": "שגיאה: {error}",
+  "userProfileErrorSaving": "שגיאה בשמירה: {error}",
+  "userProfileNotes": "הערות",
+  "userProfileNotesHint": "העדפות אחרות עבור העוזר",
+  "userProfilePreferredStore": "חנות מועדפת",
+  "userProfilePreferredStoreHint": "לְמָשָׁל שם החנות",
+  "userProfileSaveButton": "שמור פרופיל",
+  "userProfileSaved": "הפרופיל נשמר בהצלחה!",
+  "userProfileTitle": "הפרופיל שלי",
   "validForLimitedTime": "תקף לזמן מוגבל",
   "version": "גרסה",
   "viewActive": "צפה בפעילות",
@@ -900,6 +1132,13 @@
   "voiceCommandTitle": "פקודה קולית AI",
   "voiceProFeature": "פקודות קוליות מתקדמות הן Pro. הפעלת הכתבה בסיסית...",
   "voiceTranscriptionTooltip": "הקלדה קולית (חינם)",
+  "weekdayFriday": "יוֹם שִׁישִׁי",
+  "weekdayMonday": "יוֹם שֵׁנִי",
+  "weekdaySaturday": "שַׁבָּת",
+  "weekdaySunday": "יוֹם רִאשׁוֹן",
+  "weekdayThursday": "יוֹם חֲמִישִׁי",
+  "weekdayTuesday": "יוֹם שְׁלִישִׁי",
+  "weekdayWednesday": "יוֹם רְבִיעִי",
   "welcomeAiAssistant": "ברוכים הבאים ל-AI Assistant",
   "whatToDoWithItem": "מה תרצה לעשות עם הפריט הזה?",
   "yes": "כן",
