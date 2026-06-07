@@ -12,12 +12,16 @@ class AiUsageBanner extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isPremium = ref.watch(premiumProvider).value ?? false;
-    if (isPremium) return const SizedBox.shrink();
+    if (isPremium) {
+      return const SizedBox.shrink();
+    }
 
     final usageAsync = ref.watch(aiUsageProvider);
     return usageAsync.when(
       data: (count) {
-        if (count < kAiUsageWarningThreshold) return const SizedBox.shrink();
+        if (count < kAiUsageWarningThreshold) {
+          return const SizedBox.shrink();
+        }
         final remaining = kFreeAiActionsPerMonth - count;
         final isExhausted = remaining <= 0;
         final theme = Theme.of(context);
@@ -77,7 +81,7 @@ class AiUsageBanner extends ConsumerWidget {
         );
       },
       loading: () => const SizedBox.shrink(),
-      error: (_, __) => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
     );
   }
 }

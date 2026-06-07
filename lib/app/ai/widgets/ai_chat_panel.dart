@@ -38,7 +38,6 @@ import '../../../models/ai_config.dart';
 import '../../../widgets/artifact_widgets/artifact_card_shell.dart';
 import '../../../widgets/artifact_widgets/artifact_content_renderer.dart';
 import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
-import 'package:shopping_list/app/ai/widgets/ai_usage_banner.dart';
 
 class AiChatPanel extends ConsumerStatefulWidget {
   const AiChatPanel({
