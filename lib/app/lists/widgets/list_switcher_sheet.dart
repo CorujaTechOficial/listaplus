@@ -4,9 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../models/shopping_list.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/share_provider.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
-import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
-import '../../../theme/page_transitions.dart';
 import '../../../theme/tokens.dart';
 import 'create_list_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -213,19 +210,6 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
   }
 
   Future<void> _createList() async {
-    final isPremium = ref.read(premiumProvider).value ?? false;
-    final listsCount = ref.read(shoppingListsProvider).value?.length ?? 0;
-    if (!isPremium && listsCount >= 3) {
-      if (!mounted) {
-        return;
-      }
-      await Navigator.push(
-        context,
-        fadeSlideRoute<void>(const PaywallScreen()),
-      );
-      return;
-    }
-
     var created = false;
     await showDialog<void>(
       context: context,
@@ -331,19 +315,6 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
   }
 
   Future<void> _importSharedList() async {
-    final isPremium = ref.read(premiumProvider).value ?? false;
-    final listsCount = ref.read(shoppingListsProvider).value?.length ?? 0;
-    if (!isPremium && listsCount >= 3) {
-      if (!mounted) {
-        return;
-      }
-      await Navigator.push(
-        context,
-        fadeSlideRoute<void>(const PaywallScreen()),
-      );
-      return;
-    }
-
     final l10n = AppLocalizations.of(context)!;
     final codeController = TextEditingController();
     try {
