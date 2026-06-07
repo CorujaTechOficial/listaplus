@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/theme/tokens.dart';
-import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/core/widgets/premium_gate.dart';
 import 'package:shopping_list/app/settings/providers/backup_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
-import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 
 class BackupScreen extends ConsumerWidget {
   const BackupScreen({super.key});
@@ -22,16 +20,8 @@ class BackupScreen extends ConsumerWidget {
       return PremiumGate(
         title: l10n.backupTitle,
         description: l10n.backupPremiumDescription,
-        onUpgrade: () {
-          ref.read(analyticsServiceProvider).logUpgradeTapped('backup');
-          if (!context.mounted) {
-            return;
-          }
-          Navigator.push(
-            context,
-            fadeSlideRoute<void>(const PaywallScreen()),
-          );
-        },
+        onUpgrade: () =>
+            ref.read(analyticsServiceProvider).logUpgradeTapped('backup'),
       );
     }
 

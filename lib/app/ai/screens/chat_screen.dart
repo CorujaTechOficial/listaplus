@@ -8,8 +8,6 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import 'package:shopping_list/core/widgets/premium_gate.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
-import 'package:shopping_list/theme/page_transitions.dart';
-import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 
 class ChatScreen extends ConsumerWidget {
   const ChatScreen({super.key, this.listId, this.listName});
@@ -33,10 +31,6 @@ class ChatScreen extends ConsumerWidget {
           return PremiumGate(
             title: l10n.aiAssistant,
             description: l10n.aiAssistantDescription,
-            onUpgrade: () => Navigator.push(
-              context,
-              fadeSlideRoute<void>(const PaywallScreen()),
-            ),
           );
         }
 
