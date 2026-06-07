@@ -36,6 +36,8 @@ import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_list/app/settings/screens/settings_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
+import 'package:shopping_list/app/catalog/models/catalog_category.dart';
+import 'package:shopping_list/app/catalog/screens/catalog_home_screen.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
@@ -639,7 +641,13 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                 ],
               ),
             )
-          : QuickAddBar(listId: widget.listId),
+          : Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _CatalogEntryButton(listId: widget.listId),
+                QuickAddBar(listId: widget.listId),
+              ],
+            ),
     );
   }
 
@@ -803,6 +811,41 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
       }
     }
+  }
+}
+
+class _CatalogEntryButton extends ConsumerWidget {
+  const _CatalogEntryButton({required this.listId});
+  final String listId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final locale = Localizations.localeOf(context);
+    final offCountryTag = localeCountryToOffTag(locale.countryCode);
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
+      child: OutlinedButton.icon(
+        onPressed: () => Navigator.push<void>(
+          context,
+          MaterialPageRoute(
+            builder: (_) => CatalogHomeScreen(
+              listId: listId,
+              offCountryTag: offCountryTag,
+            ),
+          ),
+        ),
+        icon: const Icon(Icons.grid_view_rounded, size: 18),
+        label: Text(l10n.catalogBrowse),
+        style: OutlinedButton.styleFrom(
+          minimumSize: const Size.fromHeight(40),
+          shape: const StadiumBorder(),
+          foregroundColor: theme.colorScheme.primary,
+        ),
+      ),
+    );
   }
 }
 
