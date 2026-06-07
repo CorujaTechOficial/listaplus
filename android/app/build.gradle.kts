@@ -58,11 +58,7 @@ android {
             isShrinkResources = true
             isDebuggable = false
             ndk {
-                // "NONE" desabilita upload de símbolos para Crashlytics,
-                // mas NÃO desabilita o strip do Gradle.
-                // Com NDK 28 + AGP 8.11 no macOS ARM64, o llvm-strip
-                // via Rosetta pode falhar — desabilitamos aqui também.
-                debugSymbolLevel = "NONE"
+                debugSymbolLevel = "SYMBOL_TABLE"
             }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

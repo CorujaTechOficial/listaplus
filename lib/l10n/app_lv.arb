@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -195,6 +209,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -205,10 +226,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -310,6 +345,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -317,10 +369,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -385,11 +468,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Par",
   "achievements": "Sasniegumi",
+  "achievementsTitle": "Mani sasniegumi",
   "activeListening": "Aktīvā klausīšanās",
   "add": "Pievienot",
   "addAllToList": "Pievienot visu sarakstam",
+  "addCategoryColor": "Krāsa:",
+  "addCategoryIcon": "Ikona:",
   "addDirectToList": "Pievienojiet tieši sarakstam",
   "addIngredient": "Pievienot sastāvdaļu",
   "addItem": "Pievienot vienumu",
@@ -401,23 +501,52 @@
   "advancedFeatures": "Papildu funkcijas",
   "aiAssistant": "AI palīgs",
   "aiAssistantDescription": "Saņemiet gudrus ieteikumus, receptes un personalizētus padomus ar mūsu AI palīgu.",
+  "aiAssistantGeneral": "Ģenerālsasistents",
+  "aiAssistantHistory": "Asistenta vēsture",
+  "aiConversationHistory": "Sarunu vēsture",
   "aiCreditsRemaining": "Atlikuši {remaining} kredīti",
+  "aiDeleteConversationConfirm": "Dzēst",
+  "aiDeleteConversationTitle": "Vai dzēst sarunu?",
+  "aiDeletedList": "Dzēsts saraksts",
   "aiEnergy": "AI enerģija",
   "aiError": "Atvainojiet, radās kļūda, apstrādājot jūsu pieprasījumu. Pārbaudiet savienojumu vai mēģiniet vēlreiz vēlāk.",
+  "aiFirstOpenHint": "Es esmu Kipi, jūsu iepirkšanās asistente. Jautājiet man kaut ko par savu sarakstu!",
+  "aiHello": "Sveiki! Es esmu Kipi",
+  "aiHowCanIHelp": "Kā es varu jums palīdzēt šodien?",
   "aiLimitAlmostReached": "Gandrīz beigušies AI ziņojumi",
+  "aiNewConversation": "Jauna saruna",
+  "aiNewSession": "Jauna sesija",
+  "aiNoConversationFound": "Netika atrasta neviena saruna",
+  "aiNoMessagesFound": "Nav atrasts neviens ziņojums",
+  "aiPremiumUpsell": "Dodieties uz Premium",
+  "aiRecentConversations": "Pēdējās sarunas",
+  "aiSearchMessages": "Meklēt ziņas...",
+  "aiStartNewConversation": "Sāciet jaunu sarunu",
+  "aiSuggestCreateList": "Izveidojiet manu pirmo sarakstu",
+  "aiSuggestSaveMore": "Kā ietaupīt vairāk?",
   "aiTeaserFallback": "Abonējiet Premium, lai atvērtu pilnu atbildi un saņemtu neierobežotus AI padomus par iepirkšanos...",
+  "aiUnlockWithAd": "Atbloķēt ar reklāmu",
   "aiVoiceCommandTooltip": "AI balss komanda (Premium)",
+  "aiWelcomeTitle": "Sveiki! 👋 Es esmu **Kipi**, jūsu gudrā iepirkšanās asistente.",
   "allTags": "Visas",
   "alreadyPurchased": "Jau iegādāts",
   "appTitle": "Iepirkumu saraksts",
   "appearance": "Izskats",
   "archiveList": "Arhivēt sarakstu",
+  "artifactReplaceBody": "Izvēlieties produkta alternatīvu, lai optimizētu izmaksas.",
+  "artifactReplaceTitle": "Aizstāt {name}",
+  "artifactSuggestedItems": "Ieteiktās preces",
+  "artifactSwapButton": "Apmainīt",
+  "artifactSwappedLabel": "Samainīts",
   "backToChat": "Atpakaļ uz tērzēšanu",
+  "backToToday": "Atpakaļ uz šodienu",
   "backupExported": "Rezerves kopija eksportēta!",
   "backupNav": "Rezerves kopija",
   "backupPremiumDescription": "Rezerves kopēšana un eksportēšana ir premium funkcija",
   "backupSubtitle": "Eksportējiet vai importējiet savus datus",
   "backupTitle": "Rezerves kopija",
+  "barcodeScannerHint": "Pavērsiet kameru pret svītrkodu",
+  "barcodeScannerTitle": "Skenējiet svītrkodu",
   "becomePremium": "Kļūt par Premium",
   "budgetAmountLabel": "Budžeta summa",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -440,9 +569,11 @@
   "catalogAddItems": "Pievienot {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Pārlūkot katalogu",
   "catalogFilterNational": "Nacionāļi",
+  "catalogItemAdded": "{name} pievienots",
   "catalogMyFrequents": "Mani Frekvences",
   "catalogProductNotFound": "Produkts nav atrasts, ierakstiet nosaukumu",
   "catalogRareSection": "retāk jūsu valstī",
+  "catalogRetry": "Mēģiniet vēlreiz",
   "catalogSearchGlobal": "Meklēt jebkuru produktu...",
   "catalogSearchInCategory": "Meklēt {category}...",
   "catalogSortAZ": "A–Z",
@@ -474,6 +605,10 @@
   "confirmDeleteItems": "Noņemt {count} vienumu(s)?",
   "confirmDeleteTitle": "Apstiprināt",
   "confirmRemovePantry": "Noņemt \"{name}\" no pieliekamā?",
+  "consentAccept": "Pieņemt",
+  "consentBody": "KipiList izmanto Firebase Analytics, lai uzlabotu jūsu pieredzi. Jūsu dati tiek apstrādāti saskaņā ar mūsu Privātuma politiku.",
+  "consentDecline": "Nē, paldies",
+  "consentTitle": "Privātums un analīze",
   "consumed": "Patērēts",
   "continueAsGuest": "Turpināt kā viesis",
   "copiedToClipboard": "Nokopēts starpliktuvē",
@@ -511,8 +646,16 @@
   "editRecipe": "Rediģēt",
   "editRecipeTitle": "Rediģēt recepti",
   "emptyListAddItems": "Jūsu saraksts ir tukšs! Vispirms pievienojiet vienumus. ℹ️",
+  "emptyListAiAction": "Jautājiet AI palīgam",
+  "emptyListAiExample": "Mēģiniet lūgt AI ieteikt vienumus",
   "emptyListSubtitle": "Pievienojiet vienumus, lai sāktu",
   "emptyListTitle": "Jūsu saraksts ir tukšs",
+  "emptyMealSlotHint": "Pieskarieties, lai plānotu maltīti",
+  "emptyPantryScan": "Skenējiet produktu",
+  "emptyPantrySubtitle": "Pievienojiet produktus, lai sekotu līdzi tam, kas jums ir mājās",
+  "emptyPantryTitle": "Tukšs pieliekamais",
+  "emptyRecipesSubtitle": "Izveidojiet savu pirmo recepti vai lūdziet AI ģenerēt to",
+  "emptyRecipesTitle": "Nav saglabāta neviena recepte",
   "enterCodeHint": "Ievadiet kodu",
   "enterUrl": "Ievadīt URL",
   "error": "Kļūda: {message}",
@@ -526,6 +669,7 @@
   "estimatedPrice": "Aptuvenā cena",
   "exit": "Iziet",
   "exitShoppingMode": "Izejiet no iepirkšanās režīma",
+  "expirationDate": "Derīguma termiņš",
   "exportData": "Eksportēt datus",
   "exportDataSubtitle": "Saglabāt visus sarakstus kā JSON",
   "exportExcel": "Eksportēt kā Excel",
@@ -597,12 +741,20 @@
   "listAdded": "{listName} pievienots!",
   "listArchived": "Saraksts veiksmīgi arhivēts!",
   "listAssistant": "Saraksta palīgs",
+  "listBudgetIndicator": "Budžets: {value}",
   "listBudgetTitle": "Saraksta budžets",
   "listCreated": "Saraksts \"{name}\" izveidots ar {count} vienumiem",
+  "listDelete": "Dzēst",
+  "listErrorGeneric": "Radās kļūda. Lūdzu, mēģiniet vēlreiz.",
   "listHelp": "Kā es varu palīdzēt ar jūsu sarakstu?",
   "listHistory": "Sarakstu vēsture",
   "listNameLabel": "Saraksta nosaukums",
   "listOrganizedMagic": "Saraksts maģiski sakārtots kategorijās! ✨",
+  "listProfile": "Profils",
+  "listSelectAll": "Atlasiet visu",
+  "listShoppingComplete": "Viss darīts!",
+  "listShoppingCompleteSubtitle": "Jūs esat pabeidzis savu sarakstu.",
+  "listTotalLabel": "Kopā: {value}",
   "listening": "Klausos...",
   "lists": "Saraksti",
   "loading": "Ielādē...",
@@ -610,10 +762,14 @@
   "loginError": "Pierakstīšanās kļūda: {error}",
   "loginPrompt": "Pierakstieties, lai atbloķētu\npremium funkcijas",
   "longHistoryWarning": "Ilga vēsture: palīgs koncentrējas uz jaunākajiem ziņojumiem, lai nodrošinātu labāku veiktspēju.",
+  "manageCategoriesEmpty": "Vēl nav kategoriju",
+  "manageCategoriesTitle": "Pārvaldīt kategorijas",
   "manageSubscription": "Pārvaldīt abonementu",
   "markAsPurchased": "Atzīmēt kā iegādātu",
   "markItemsToSeeAnalysis": "Atzīmējiet vienumus kā iegādātus, lai redzētu analīzi.",
   "marketMode": "Tirgus režīms",
+  "mealDragHint": "Turiet, lai vilktu un pārvietotu",
+  "mealNoRecipeFound": "Recepte nav atrasta",
   "mealPlannerAddMeal": "Pievienot maltīti",
   "mealPlannerDateLabel": "Datums",
   "mealPlannerDeleteMeal": "Noņemt maltīti",
@@ -635,6 +791,8 @@
   "mealPlannerNoRecipesFound": "Receptes nav atrastas",
   "mealPlannerNoRecipesHint": "Vispirms izveidojiet receptes cilnē Receptes",
   "mealPlannerNoteLabel": "Piezīme (pēc izvēles)",
+  "mealPlannerPantryAllAvailable": "Noliktavā",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} trūkst vienuma} other{{count} trūkst preces}}",
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Pievienot plānam",
   "mealPlannerSearchRecipes": "Meklēt receptes...",
@@ -647,13 +805,15 @@
   "mealPlannerWeekEmpty": "Šai nedēļai nekas nav plānots",
   "mealPlannerWeekEmptyHint": "Pieskarieties jebkurai dienai, lai sāktu plānot maltītes!",
   "mealPlannerWeekProgress": "Saplanotas {count} no {total} maltītēm",
+  "mealSearchRecipes": "Meklēt receptes...",
+  "mealTypeLabel": "Maltītes veids",
   "monthlyBudgetAppBar": "Mēneša budžets",
   "monthlyBudgetNav": "Mēneša budžets",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Mēneša budžets",
   "myLists": "Mani saraksti",
   "myRecipes": "Manas receptes",
-  "navChat": "Chat",
+  "navChat": "Tērzēšana",
   "navLists": "Saraksti",
   "navMealPlanner": "Izvēlne",
   "navRecipes": "Receptes",
@@ -677,6 +837,10 @@
   "noRecipesSaved": "Nav saglabātu recepšu",
   "noRecipesSavedHint": "Izveidojiet savu pirmo pielāgoto recepti, pieskaroties zemāk esošajai pogai.",
   "noTracking": "Bez izsekošanas",
+  "notInformed": "Nav informēts",
+  "offlineBanner": "Jūs esat bezsaistē",
+  "onboardingAIShowSubtitle": "Kipi tev visu gatavo...",
+  "onboardingAIShowTitle": "Skatiet izlūkdatus darbībā!",
   "onboardingAnnualBadge": "Labākā vērtība",
   "onboardingAnnualLabel": "Gada",
   "onboardingCancelAnytime": "Atcelt jebkurā laikā. Bez apņemšanās.",
@@ -710,11 +874,35 @@
   "organizeByAisles": "Sakārtot pa ejām",
   "organizingAi": "ORGANIZĒ AR AI...",
   "pantry": "Pieliekamais",
+  "pantryAdvancedMode": "Papildu",
   "pantryAppBar": "Pieliekamais",
+  "pantryCompactView": "Kompakts skats",
+  "pantryDeficit": "Trūkst {amount}{unit}",
+  "pantryDeleteItemsContent": "Vai vēlaties dzēst {count} atlasītos vienumus?",
+  "pantryDeleteItemsTitle": "Dzēst vienumus",
+  "pantryDeleteSelected": "Dzēst atlasīto",
+  "pantryDetailedView": "Detalizēts skats",
   "pantryEditTitle": "Rediģēt {name}",
   "pantryEmpty": "Tukšs pieliekamais",
   "pantryEmptySubtitle": "Pievienojiet produktus, kurus vēlaties turēt mājās",
+  "pantryExpired": "Beidzies derīguma termiņš",
+  "pantryExpiresIn": "Beidzas pēc {days} dienām",
+  "pantryExpiringSoon": "Drīz beigsies derīguma termiņš",
+  "pantryExpiryDate": "Derīguma termiņš",
+  "pantryExpiryNotSet": "Nav iestatīts",
+  "pantryFilterAll": "Visi",
+  "pantryFilterExpiring": "Beidzas",
+  "pantryFilterOutStock": "Nav noliktavā",
+  "pantryFirstOpenHint": "Sekojiet līdzi tam, kas jums ir mājās. Pievienojiet vienumus vai skenējiet svītrkodus.",
   "pantryItemRemoved": "Vienums noņemts",
+  "pantryMoreDetails": "Sīkāka informācija",
+  "pantryNoItemsFound": "Vaicājumam \"{query}\" nav atrasts neviens vienums",
+  "pantryRestockSelected": "Atlasīts krājumu atjaunošana",
+  "pantryScanProduct": "Skenējiet produktu",
+  "pantryScanner": "Skenēt produktu",
+  "pantrySearchHint": "Meklēt pieliekamajā...",
+  "pantrySelectedCount": "{count} atlasīts",
+  "pantrySimpleMode": "Pamata",
   "paywallAfterItem1": "Graudi",
   "paywallAfterItem2": "Tīrīšana",
   "paywallAfterItem3": "Gaļa",
@@ -762,8 +950,11 @@
   "paywallTestimonial2Text": "Es nekad vairs neaizmirsu nevienu saraksta vienumu. AI tērzēšana ir sensacionāla!",
   "paywallTestimonialsTitle": "Ko saka mūsu lietotāji:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Sāciet bezmaksas izmēģinājuma versiju",
   "paywallTrialDays": "{days} DIENAS BEZMAKSAS",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH BEZMAKSAS} other{{count} MĒNEŠI BEZMAKSAS}}",
+  "paywallTrialSubtitle": "Atcelt jebkurā laikā. Šodien bez maksas.",
+  "paywallTrialTitle": "Izmēģiniet KipiList Pro bez maksas 7 dienas",
   "paywallTrialWeeks": "{count,plural, one{{count} BEZMAKSAS NEDĒĻA} other{{count} BEZMAKSAS NEDĒĻAS}}",
   "prefAIAssistant": "Personīgais AI palīgs",
   "prefCustomThemes": "Pielāgotas tēmas",
@@ -786,6 +977,8 @@
   "quickRecipe": "Ātrā recepte",
   "quickRecipePrompt": "Iesakiet receptes ar maniem saraksta vienumiem.",
   "quickReplies": "Ātrās atbildes:",
+  "recipeAddToList": "Pievienot iepirkumu sarakstam",
+  "recipeAddedConfirmation": "{count} sastāvdaļas pievienotas {listName}",
   "recipeCreated": "Recepte izveidota!",
   "recipeDeleted": "Recepte dzēsta",
   "recipeImage": "Receptes attēls",
@@ -822,10 +1015,33 @@
   "setBudgetButton": "Iestatīt budžetu",
   "setBudgetTitle": "Mēneša budžets",
   "settingsAppBar": "Iestatījumi",
+  "settingsAssistantHistory": "Asistenta vēsture",
+  "settingsAssistantHistorySubtitle": "Skatiet un meklējiet iepriekšējās sarunas",
+  "settingsAssistantName": "Asistenta vārds",
+  "settingsCancel": "Atcelt",
+  "settingsCategories": "Kategorijas",
+  "settingsCategoriesSubtitle": "Pārvaldīt preču kategorijas",
+  "settingsChooseIcon": "Izvēlieties ikonu:",
+  "settingsCustomizeAI": "Pielāgojiet AI palīgu",
+  "settingsCustomizeDialog": "Pielāgot palīgu",
   "settingsDefaultScreen": "Noklusējuma sākuma ekrāns",
   "settingsDefaultScreenSubtitle": "Izvēlieties starp iepirkumu sarakstu vai AI tērzēšanu",
+  "settingsErrorSubscription": "Ielādējot abonementu, radās kļūda",
+  "settingsLegal": "Juridisks",
+  "settingsLoadingSubscription": "Notiek abonementa ielāde...",
+  "settingsMyProfile": "Mans profils",
+  "settingsPrivacyPolicy": "Privātuma politika",
+  "settingsProActive": "KipiList Pro ir aktīvs",
+  "settingsProCta": "Atbloķējiet neierobežotus sarakstus, AI un daudz ko citu",
+  "settingsProfileSubtitle": "AI palīga personīgās preferences",
+  "settingsSave": "Saglabāt",
   "settingsScreenChat": "AI tērzēšana",
   "settingsScreenList": "Iepirkumu saraksts",
+  "settingsSectionAccount": "Konts",
+  "settingsSectionApp": "App",
+  "settingsSectionAssistant": "AI palīgs",
+  "settingsSubscription": "Abonements",
+  "settingsTermsOfService": "Pakalpojuma noteikumi",
   "share": "Dalīties",
   "shareApp": "Kopīgojiet lietotni",
   "shareAppDescription": "Uzaiciniet draugus izmantot KipiList",
@@ -846,6 +1062,7 @@
   "signInApple": "Pierakstīties ar Apple",
   "signInGoogle": "Pierakstīties ar Google",
   "smartOrganization": "Viedā organizācija",
+  "sortAZ": "A–Z",
   "sortCategory": "Kategorija",
   "sortDate": "Datums",
   "sortManual": "Manuāli",
@@ -868,6 +1085,7 @@
   "themePink": "Rozā",
   "themePurple": "Violets",
   "themeRed": "Sarkans",
+  "themeSelectionTitle": "Izvēlieties motīva krāsu",
   "themeTeal": "Tirkīzzils",
   "totalEstimated": "Aptuvenā kopsumma: {amount}",
   "totalSpending": "Kopējie izdevumi",
@@ -881,6 +1099,20 @@
   "unlockFullResponse": "Atbloķējiet pilnu atbildi",
   "unmark": "Noņemt atzīmi",
   "upgrade": "Jaunināt",
+  "userProfileAvoidedStores": "Izvairītie veikali",
+  "userProfileAvoidedStoresHint": "piem. Veikals X, veikals Y",
+  "userProfileDescription": "Pievienojiet savas personīgās preferences, lai AI palīgs varētu ieteikt personalizētus priekšmetus un receptes.",
+  "userProfileDietaryRestrictions": "Uztura ierobežojumi",
+  "userProfileDietaryRestrictionsHint": "piem. vegāns, veģetārs, bez lipekļa",
+  "userProfileErrorLoading": "Kļūda: {error}",
+  "userProfileErrorSaving": "Saglabājot, radās kļūda: {error}",
+  "userProfileNotes": "Piezīmes",
+  "userProfileNotesHint": "Citas asistenta preferences",
+  "userProfilePreferredStore": "Vēlamais veikals",
+  "userProfilePreferredStoreHint": "piem. Veikala nosaukums",
+  "userProfileSaveButton": "Saglabāt profilu",
+  "userProfileSaved": "Profils veiksmīgi saglabāts!",
+  "userProfileTitle": "Mans profils",
   "validForLimitedTime": "Derīgs ierobežotu laiku",
   "version": "Versija",
   "viewActive": "Skatīt aktīvos",
@@ -895,6 +1127,13 @@
   "voiceCommandTitle": "AI balss komanda",
   "voiceProFeature": "Papildu balss komandas ir Pro. Notiek pamata diktēšanas iespējošana...",
   "voiceTranscriptionTooltip": "Balss ievade (Bezmaksas)",
+  "weekdayFriday": "piektdiena",
+  "weekdayMonday": "pirmdiena",
+  "weekdaySaturday": "sestdiena",
+  "weekdaySunday": "svētdiena",
+  "weekdayThursday": "ceturtdiena",
+  "weekdayTuesday": "otrdiena",
+  "weekdayWednesday": "trešdiena",
   "welcomeAiAssistant": "Laipni lūdzam AI palīgā",
   "whatToDoWithItem": "Ko jūs vēlētos darīt ar šo vienumu?",
   "yes": "Jā",
