@@ -971,6 +971,14 @@ class AppLocalizationsIs extends AppLocalizations {
       'Hætta við hvenær sem er. Engin skuldbinding.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Persónuverndarstefna';
 
   @override

@@ -960,6 +960,14 @@ class AppLocalizationsLo extends AppLocalizations {
   String get paywallCancelAnytime => 'ຍົກເລີກໄດ້ທຸກເວລາ. ບໍ່ມີຄໍາຫມັ້ນສັນຍາ.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ';
 
   @override

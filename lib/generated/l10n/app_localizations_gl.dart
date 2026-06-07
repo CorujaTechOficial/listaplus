@@ -971,6 +971,14 @@ class AppLocalizationsGl extends AppLocalizations {
       'Cancela en calquera momento. Sen compromiso.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Política de privacidade';
 
   @override

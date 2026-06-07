@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -195,6 +209,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -205,10 +226,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -303,6 +338,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -310,10 +362,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -378,11 +461,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "အကြောင်း",
   "achievements": "အောင်မြင်မှုများ",
+  "achievementsTitle": "ကျွန်ုပ်၏အောင်မြင်မှုများ",
   "activeListening": "Active Listening",
   "add": "ထည့်",
   "addAllToList": "အားလုံးကိုစာရင်းထဲထည့်",
+  "addCategoryColor": "အရောင်-",
+  "addCategoryIcon": "သင်္ကေတ-",
   "addDirectToList": "စာရင်းထဲသို့ တိုက်ရိုက်ထည့်ပါ။",
   "addIngredient": "ပါဝင်ပစ္စည်းထည့်ရန်",
   "addItem": "ပစ္စည်းထည့်",
@@ -394,23 +494,52 @@
   "advancedFeatures": "အဆင့်မြင့်အင်္ဂါရပ်များ",
   "aiAssistant": "AI အကူ",
   "aiAssistantDescription": "ကျွန်ုပ်တို့၏ AI အကူဖြင့်အသိဉာဏ်ရှိသောအကြံပြုချက်များ၊ ချက်ပြုတ်နည်းများနှင့်ကိုယ်ပိုင်အကြံပေးချက်များရယူပါ။",
+  "aiAssistantGeneral": "အထွေထွေလက်ထောက်",
+  "aiAssistantHistory": "လက်ထောက်မှတ်တမ်း",
+  "aiConversationHistory": "စကားဝိုင်းမှတ်တမ်း",
   "aiCreditsRemaining": "{remaining} ခရက်ဒစ်ကျန်ပါသည်",
+  "aiDeleteConversationConfirm": "ဖျက်ပါ။",
+  "aiDeleteConversationTitle": "စကားဝိုင်းကို ဖျက်မလား။",
+  "aiDeletedList": "ဖျက်ထားသောစာရင်း",
   "aiEnergy": "AI စွမ်းအင်",
   "aiError": "ဝမ်းနည်းပါတယ်၊ သင့်တောင်းဆိုချက်ကိုလုပ်ဆောင်ရာတွင်အမှားဖြစ်သွားသည်။ သင့်ချိတ်ဆက်မှုကိုစစ်ဆေးပါသို့မဟုတ်နောက်မှထပ်ကြိုးစားပါ။",
+  "aiFirstOpenHint": "ငါက မင်းရဲ့စျေးဝယ်လက်ထောက် Kipi ပါ။ မင်းရဲ့စာရင်းနဲ့ပတ်သက်တဲ့ တစ်ခုခုမေးပါ။",
+  "aiHello": "မင်္ဂလာပါ! ငါက Kipi ပါ။",
+  "aiHowCanIHelp": "ဒီနေ့ မင်းကို ငါဘယ်လိုကူညီနိုင်မလဲ။",
   "aiLimitAlmostReached": "AI မက်ဆေ့ဂျ်များနီးပါး",
+  "aiNewConversation": "စကားဝိုင်းအသစ်",
+  "aiNewSession": "အပိုင်းအသစ်",
+  "aiNoConversationFound": "စကားဝိုင်းမတွေ့ပါ။",
+  "aiNoMessagesFound": "စာများမတွေ့ပါ။",
+  "aiPremiumUpsell": "Premium ကိုသွားပါ။",
+  "aiRecentConversations": "လတ်တလော စကားဝိုင်းများ",
+  "aiSearchMessages": "မက်ဆေ့ချ်များကို ရှာဖွေပါ...",
+  "aiStartNewConversation": "စကားဝိုင်းအသစ်ကို စတင်ပါ။",
+  "aiSuggestCreateList": "ကျွန်ုပ်၏ပထမဆုံးစာရင်းကိုဖန်တီးပါ။",
+  "aiSuggestSaveMore": "နောက်ထပ် ဘယ်လို သိမ်းမလဲ။",
   "aiTeaserFallback": "အပြည့်အဝတုံ့ပြန်မှုနှင့် သင့်စျေးဝယ်မှုအတွက် အကန့်အသတ်မရှိ AI အကြံပြုချက်များကို ရယူရန် Premium သို့ စာရင်းသွင်းပါ...",
+  "aiUnlockWithAd": "ကြော်ငြာဖြင့်သော့ဖွင့်ပါ။",
   "aiVoiceCommandTooltip": "AI အသံအမိန့် (Premium)",
+  "aiWelcomeTitle": "မင်္ဂလာပါ! 👋 ငါက **Kipi**၊ မင်းရဲ့ စမတ်ကျတဲ့ ဈေးဝယ်လက်ထောက်ပါ။",
   "allTags": "အားလုံး",
   "alreadyPurchased": "ဝယ်ပြီးသား",
   "appTitle": "စျေးဝယ်စာရင်း",
   "appearance": "အသွင်အပြင်",
   "archiveList": "စာရင်းသိမ်းဆည်း",
+  "artifactReplaceBody": "ကုန်ကျစရိတ်ကို အကောင်းဆုံးဖြစ်အောင် ထုတ်ကုန်အစားထိုးရွေးချယ်ပါ။",
+  "artifactReplaceTitle": "{name} အစားထိုးရန်",
+  "artifactSuggestedItems": "အကြံပြုထားသည့်အရာများ",
+  "artifactSwapButton": "လဲလှယ်ပါ။",
+  "artifactSwappedLabel": "လဲလှယ်ခဲ့သည်။",
   "backToChat": "Chat သို့ ပြန်သွားရန်",
+  "backToToday": "ယနေ့ သို့ ပြန်သွားရန်",
   "backupExported": "အရန်သိမ်းမှုတင်ပို့ပြီးပြီ!",
   "backupNav": "အရန်သိမ်း",
   "backupPremiumDescription": "အရန်သိမ်းခြင်းနှင့်တင်ပို့ခြင်းသည် Premium အင်္ဂါရပ်ဖြစ်သည်",
   "backupSubtitle": "သင့်ဒေတာကိုတင်ပို့သို့မဟုတ်တင်သွင်းပါ",
   "backupTitle": "အရန်သိမ်း",
+  "barcodeScannerHint": "ကင်မရာကို ဘားကုဒ်ကို ညွှန်ပါ။",
+  "barcodeScannerTitle": "ဘားကုဒ်ကို စကင်န်ဖတ်ပါ။",
   "becomePremium": "Premium ဖြစ်ပါ",
   "budgetAmountLabel": "ဘတ်ဂျက်ပမာဏ",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -433,9 +562,11 @@
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} → ထည့်ပါ။",
   "catalogBrowse": "Catalogue ကို ကြည့်ပါ။",
   "catalogFilterNational": "တိုင်းရင်းသားများ",
+  "catalogItemAdded": "{name} ထည့်ထားသည်။",
   "catalogMyFrequents": "ကျွန်ုပ်၏ အကြိမ်ရေများ",
   "catalogProductNotFound": "ကုန်ပစ္စည်းမတွေ့ပါက အမည်ကို ရိုက်ထည့်ပါ။",
   "catalogRareSection": "သင့်နိုင်ငံမှာ အဖြစ်နည်းပါတယ်။",
+  "catalogRetry": "ထပ်ကြိုးစားပါ။",
   "catalogSearchGlobal": "မည်သည့်ထုတ်ကုန်ကိုမဆို ရှာဖွေပါ...",
   "catalogSearchInCategory": "{category} တွင် ရှာပါ...",
   "catalogSortAZ": "A–Z",
@@ -467,6 +598,10 @@
   "confirmDeleteItems": "{count} ခုကိုဖယ်ရှားမည်?",
   "confirmDeleteTitle": "အတည်ပြု",
   "confirmRemovePantry": "\"{name}\" ကိုစားသိုက်ခန်းမှဖယ်ရှားမည်?",
+  "consentAccept": "လက်ခံပါတယ်။",
+  "consentBody": "KipiList သည် သင့်အတွေ့အကြုံကို မြှင့်တင်ရန် Firebase Analytics ကို အသုံးပြုသည်။ သင်၏ဒေတာကို ကျွန်ုပ်တို့၏ ကိုယ်ရေးကိုယ်တာမူဝါဒအရ လုပ်ဆောင်ပါသည်။",
+  "consentDecline": "ရပါတယ်ကျေးဇူးပါ",
+  "consentTitle": "ကိုယ်ရေးကိုယ်တာနှင့် ပိုင်းခြားစိတ်ဖြာချက်",
   "consumed": "စားသုံးပြီး",
   "continueAsGuest": "ဧည့်သည်အဖြစ်ဆက်လက်",
   "copiedToClipboard": "ကလစ်ဘုတ်သို့ ကူးယူပြီး",
@@ -504,8 +639,16 @@
   "editRecipe": "ပြင်ဆင်ရန်",
   "editRecipeTitle": "ဟင်းချက်နည်းပြင်ဆင်ရန်",
   "emptyListAddItems": "သင့်စာရင်းဗလာဖြစ်နေသည်! ပစ္စည်းများအရင်ထည့်ပါ။ ℹ️",
+  "emptyListAiAction": "AI Assistant ကိုမေးပါ။",
+  "emptyListAiExample": "အကြောင်းအရာများကို အကြံပြုရန် AI ကို တောင်းဆိုကြည့်ပါ။",
   "emptyListSubtitle": "စတင်ရန်ပစ္စည်းများထည့်ပါ",
   "emptyListTitle": "သင့်စာရင်းဗလာဖြစ်နေသည်",
+  "emptyMealSlotHint": "အစာစီစဉ်ရန် တို့ပါ။",
+  "emptyPantryScan": "ထုတ်ကုန်ကို စကင်ဖတ်ပါ။",
+  "emptyPantrySubtitle": "သင့်အိမ်တွင်ရှိသောအရာများကို ခြေရာခံရန် ထုတ်ကုန်များထည့်ပါ။",
+  "emptyPantryTitle": "ဗလာကျင်း",
+  "emptyRecipesSubtitle": "သင်၏ ပထမဆုံး ဟင်းချက်နည်းကို ဖန်တီးပါ သို့မဟုတ် တစ်မျိုးထုတ်လုပ်ရန် AI ကို တောင်းဆိုပါ။",
+  "emptyRecipesTitle": "ချက်ပြုတ်နည်းများကို သိမ်းဆည်းထားခြင်းမရှိပါ။",
   "enterCodeHint": "ကုဒ်ကိုထည့်ပါ",
   "enterUrl": "URL ထည့်ပါ",
   "error": "အမှား: {message}",
@@ -519,6 +662,7 @@
   "estimatedPrice": "ခန့်မှန်းစျေးနှုန်း",
   "exit": "ထွက်ပေါက်",
   "exitShoppingMode": "စျေးဝယ်မုဒ်မှ ထွက်ပါ။",
+  "expirationDate": "သက်တမ်းကုန်ဆုံးရက်",
   "exportData": "ဒေတာတင်ပို့",
   "exportDataSubtitle": "စာရင်းအားလုံးကို JSON အဖြစ်သိမ်းဆည်း",
   "exportExcel": "Excel အဖြစ်တင်ပို့",
@@ -590,12 +734,20 @@
   "listAdded": "{listName} ထည့်ပြီးပြီ!",
   "listArchived": "စာရင်းကိုအောင်မြင်စွာသိမ်းပြီးပြီ!",
   "listAssistant": "စာရင်းအကူ",
+  "listBudgetIndicator": "ဘတ်ဂျက်- {value}",
   "listBudgetTitle": "စာရင်းဘတ်ဂျက်",
   "listCreated": "\"{name}\" စာရင်းကို {count} ခုဖြင့်ဖန်တီးပြီးပြီ",
+  "listDelete": "ဖျက်ပါ။",
+  "listErrorGeneric": "အမှားအယွင်းတစ်ခု ဖြစ်ပွားခဲ့သည်။ ထပ်စမ်းကြည့်ပါ။",
   "listHelp": "သင့်စာရင်းအတွက်ဘယ်လိုကူညီပေးရမလဲ?",
   "listHistory": "စာရင်းမှတ်တမ်း",
   "listNameLabel": "စာရင်းအမည်",
   "listOrganizedMagic": "စာရင်းကိုအမျိုးအစားများဖြင့်မှော်ဆန်စွာစုစည်းပြီးပြီ! ✨",
+  "listProfile": "ကိုယ်ရေးအကျဉ်း",
+  "listSelectAll": "အားလုံးကို ရွေးပါ။",
+  "listShoppingComplete": "အားလုံးပြီးပြီ။",
+  "listShoppingCompleteSubtitle": "မင်းရဲ့စာရင်းကို ပြီးသွားပြီ။",
+  "listTotalLabel": "စုစုပေါင်း- {value}",
   "listening": "နားထောင်နေသည်...",
   "lists": "စာရင်းများ",
   "loading": "ဖွင့်နေသည်...",
@@ -603,10 +755,14 @@
   "loginError": "အကောင့်ဝင်ရာတွင်အမှား: {error}",
   "loginPrompt": "Premium အင်္ဂါရပ်များကို\nဖွင့်ရန်အကောင့်ဝင်ပါ",
   "longHistoryWarning": "ရှည်လျားသောသမိုင်း- လက်ထောက်သည် ပိုမိုကောင်းမွန်သောစွမ်းဆောင်ရည်အတွက် နောက်ဆုံးပေါ်မက်ဆေ့ဂျ်များကို အာရုံစိုက်သည်။",
+  "manageCategoriesEmpty": "အမျိုးအစားများ မရှိသေးပါ။",
+  "manageCategoriesTitle": "အမျိုးအစားများကို စီမံပါ။",
   "manageSubscription": "စာရင်းသွင်းမှုကိုစီမံ",
   "markAsPurchased": "ဝယ်ပြီးအဖြစ်မှတ်",
   "markItemsToSeeAnalysis": "ခွဲခြမ်းစိတ်ဖြာမှုကြည့်ရန်ပစ္စည်းများကိုဝယ်ပြီးအဖြစ်မှတ်ပါ။",
   "marketMode": "စျေးကွက်မုဒ်",
+  "mealDragHint": "ဆွဲယူရွှေ့ရန် ဖိထားပါ။",
+  "mealNoRecipeFound": "စာရွက်မတွေ့ပါ။",
   "mealPlannerAddMeal": "အစားအစာထည့်ရန်",
   "mealPlannerDateLabel": "ရက်စွဲ",
   "mealPlannerDeleteMeal": "အစားအစာဖယ်ရှားရန်",
@@ -628,6 +784,8 @@
   "mealPlannerNoRecipesFound": "ဟင်းချက်နည်း မတွေ့ပါ",
   "mealPlannerNoRecipesHint": "အရင်ဆုံး Recipes tab တွင် ဟင်းချက်နည်းများ ဖန်တီးပါ",
   "mealPlannerNoteLabel": "မှတ်စု (ရွေးချယ်နိုင်သည်)",
+  "mealPlannerPantryAllAvailable": "ကုန်ပစ္စည်းလက်ဝယ်ရှိ",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} ပျောက်ဆုံးနေသော အရာ} other{{count} ပျောက်ဆုံးနေသော အရာများ}}",
   "mealPlannerPrepTime": "{minutes} မိနစ်",
   "mealPlannerSave": "အစီအစဉ်သို့ ထည့်ရန်",
   "mealPlannerSearchRecipes": "ဟင်းချက်နည်းများ ရှာဖွေရန်...",
@@ -640,13 +798,15 @@
   "mealPlannerWeekEmpty": "ယခုတစ်ပတ်အတွက် စီစဉ်ထားသည်များ မရှိပါ",
   "mealPlannerWeekEmptyHint": "အစားအစာများ စတင်စီစဉ်ရန် မည်သည့်ရက်ကိုမဆို နှိပ်ပါ!",
   "mealPlannerWeekProgress": "အစားအစာ {total} ခုတွင် {count} ခု စီစဉ်ပြီး",
+  "mealSearchRecipes": "ဟင်းချက်နည်းများကို ရှာဖွေပါ...",
+  "mealTypeLabel": "အစားအစာအမျိုးအစား",
   "monthlyBudgetAppBar": "လစဉ်ဘတ်ဂျက်",
   "monthlyBudgetNav": "လစဉ်ဘတ်ဂျက်",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "လစဉ်ဘတ်ဂျက်",
   "myLists": "ကျွန်ုပ်၏စာရင်းများ",
   "myRecipes": "ကျွန်ုပ်၏ ဟင်းချက်နည်းများ",
-  "navChat": "Chat",
+  "navChat": "စကားစမြည်",
   "navLists": "စာရင်းများ",
   "navMealPlanner": "မီနူး",
   "navRecipes": "ချက်ပြုတ်နည်းများ",
@@ -670,6 +830,10 @@
   "noRecipesSaved": "သိမ်းဆည်းထားသော ဟင်းချက်နည်းမရှိပါ",
   "noRecipesSavedHint": "အောက်ပါခလုတ်ကို နှိပ်ပြီး သင်၏ ပထမဆုံး ကိုယ်ပိုင်ဟင်းချက်နည်းကို ဖန်တီးပါ။",
   "noTracking": "ခြေရာခံမထားပါ",
+  "notInformed": "အသိမပေး",
+  "offlineBanner": "သင်သည် အော့ဖ်လိုင်းဖြစ်နေသည်။",
+  "onboardingAIShowSubtitle": "Kipi သည် သင့်အတွက် အရာအားလုံးကို ပြင်ဆင်နေပါသည်...",
+  "onboardingAIShowTitle": "လုပ်ဆောင်ချက်တွင် ထောက်လှမ်းရေးကို ကြည့်ပါ။",
   "onboardingAnnualBadge": "အကောင်းဆုံးတန်ဖိုး",
   "onboardingAnnualLabel": "နှစ်စဉ်",
   "onboardingCancelAnytime": "အချိန်မရွေး ပယ်ဖျက်ပါ။ ကတိကဝတ်မရှိ။",
@@ -703,11 +867,35 @@
   "organizeByAisles": "စင်များအလိုက်စုစည်း",
   "organizingAi": "AI ဖြင့်စုစည်းနေသည်...",
   "pantry": "စားသိုက်ခန်း",
+  "pantryAdvancedMode": "အဆင့်မြင့်သည်။",
   "pantryAppBar": "စားသိုက်ခန်း",
+  "pantryCompactView": "ကျစ်လစ်သောမြင်ကွင်း",
+  "pantryDeficit": "ပျောက်နေသည် {amount}{unit}",
+  "pantryDeleteItemsContent": "ရွေးချယ်ထားသော အရာများ {count} ကို ဖျက်လိုပါသလား။",
+  "pantryDeleteItemsTitle": "ပစ္စည်းများကို ဖျက်ပါ။",
+  "pantryDeleteSelected": "ရွေးထားသည်ကို ဖျက်ပါ။",
+  "pantryDetailedView": "အသေးစိတ်ကြည့်ရှုပါ။",
   "pantryEditTitle": "{name} ကိုတည်းဖြတ်",
   "pantryEmpty": "စားသိုက်ခန်းဗလာ",
   "pantryEmptySubtitle": "အိမ်မှာထားချင်တဲ့ပစ္စည်းတွေထည့်ပါ",
+  "pantryExpired": "သက်တမ်းကုန်သွားပြီ",
+  "pantryExpiresIn": "{days} ရက်အတွင်း သက်တမ်းကုန်မည်။",
+  "pantryExpiringSoon": "မကြာမီ သက်တမ်းကုန်မည်။",
+  "pantryExpiryDate": "သက်တမ်းကုန်ဆုံးရက်",
+  "pantryExpiryNotSet": "မသတ်မှတ်ထားဘူး။",
+  "pantryFilterAll": "အားလုံး",
+  "pantryFilterExpiring": "သက်တမ်းကုန်",
+  "pantryFilterOutStock": "ပစ္စည်းပြတ်တောက်နေသည်",
+  "pantryFirstOpenHint": "အိမ်မှာရှိတဲ့အရာတွေကို ခြေရာခံပါ။ အရာများထည့်ပါ သို့မဟုတ် ဘားကုဒ်များကို စကင်န်ဖတ်ပါ။",
   "pantryItemRemoved": "ပစ္စည်းဖယ်ရှားပြီး",
+  "pantryMoreDetails": "အသေးစိတ်အချက်အလက်များ",
+  "pantryNoItemsFound": "\"{query}\" အတွက် မည်သည့်အရာမှ ရှာမတွေ့ပါ",
+  "pantryRestockSelected": "ရွေးပြီး ပြန်စတော့တယ်။",
+  "pantryScanProduct": "ထုတ်ကုန်ကို စကင်ဖတ်ပါ။",
+  "pantryScanner": "ကုန်ပစ္စည်းကို စကင်ဖတ်ပါ။",
+  "pantrySearchHint": "စားစရာရှာရန်...",
+  "pantrySelectedCount": "{count} ရွေးထားသည်။",
+  "pantrySimpleMode": "အခြေခံ",
   "paywallAfterItem1": "အစေ့အဆန်များ",
   "paywallAfterItem2": "သန့်ရှင်းရေး",
   "paywallAfterItem3": "အသားများ",
@@ -755,8 +943,11 @@
   "paywallTestimonial2Text": "စာရင်းထဲက အကြောင်းအရာတစ်ခုကို ဘယ်တော့မှ မမေ့တော့ဘူး။ AI chat သည် စိတ်လှုပ်ရှားဖွယ်ကောင်းသည်။",
   "paywallTestimonialsTitle": "ကျွန်ုပ်တို့၏အသုံးပြုသူများပြောသောအရာ-",
   "paywallTitle": "KipiList ပရီမီယံ",
+  "paywallTrialCta": "အခမဲ့ အစမ်းစတင်ပါ။",
   "paywallTrialDays": "{days} ရက်အခမဲ့",
   "paywallTrialMonths": "{count,plural, one{{count} တစ်လ အခမဲ့} other{{count} လ အခမဲ့}}",
+  "paywallTrialSubtitle": "အချိန်မရွေး ပယ်ဖျက်ပါ။ ယနေ့အခကြေးငွေမယူပါ။",
+  "paywallTrialTitle": "KipiList Pro ကို 7 ရက် အခမဲ့ စမ်းသုံးကြည့်ပါ။",
   "paywallTrialWeeks": "{count,plural, one{{count} အပတ်အခမဲ့} other{{count} အပတ်အခမဲ့}}",
   "prefAIAssistant": "ကိုယ်ပိုင် AI အကူ",
   "prefCustomThemes": "စိတ်ကြိုက်အပြင်အဆင်များ",
@@ -779,6 +970,8 @@
   "quickRecipe": "အမြန်ချက်ပြုတ်နည်း",
   "quickRecipePrompt": "ကျွန်ုပ်စာရင်းပါပစ္စည်းများဖြင့်ချက်ပြုတ်နည်းများအကြံပြုပါ။",
   "quickReplies": "အမြန်ပြန်ကြားချက်များ-",
+  "recipeAddToList": "စျေးဝယ်စာရင်းသို့ထည့်ပါ။",
+  "recipeAddedConfirmation": "{count} ပါဝင်ပစ္စည်းများ {listName} သို့ ထည့်သည်",
   "recipeCreated": "ဟင်းချက်နည်း ဖန်တီးပြီးပါပြီ!",
   "recipeDeleted": "ဟင်းချက်နည်း ဖျက်ပြီးပါပြီ",
   "recipeImage": "ဟင်းချက်နည်းပုံ",
@@ -815,10 +1008,33 @@
   "setBudgetButton": "ဘတ်ဂျက်သတ်မှတ်",
   "setBudgetTitle": "လစဉ်ဘတ်ဂျက်",
   "settingsAppBar": "ဆက်တင်များ",
+  "settingsAssistantHistory": "လက်ထောက်မှတ်တမ်း",
+  "settingsAssistantHistorySubtitle": "ယခင်စကားဝိုင်းများကို ကြည့်ရှုပြီး ရှာဖွေပါ။",
+  "settingsAssistantName": "လက်ထောက်အမည်",
+  "settingsCancel": "မလုပ်တော့",
+  "settingsCategories": "အမျိုးအစားများ",
+  "settingsCategoriesSubtitle": "ပစ္စည်းအမျိုးအစားများကို စီမံခန့်ခွဲပါ။",
+  "settingsChooseIcon": "အိုင်ကွန်ကို ရွေးပါ-",
+  "settingsCustomizeAI": "AI Assistant ကို စိတ်ကြိုက်လုပ်ပါ။",
+  "settingsCustomizeDialog": "Assistant ကို စိတ်ကြိုက်လုပ်ပါ။",
   "settingsDefaultScreen": "မူရင်း ပင်မ မျက်နှာပြင်",
   "settingsDefaultScreenSubtitle": "စျေးဝယ်စာရင်း သို့မဟုတ် AI ချတ်ကြားကို ရွေးပါ။",
+  "settingsErrorSubscription": "စာရင်းသွင်းမှုကို တင်ရာတွင် အမှားအယွင်းရှိနေသည်။",
+  "settingsLegal": "ဥပဒေရေးရာ",
+  "settingsLoadingSubscription": "စာရင်းသွင်းမှုကို ဖွင့်နေသည်...",
+  "settingsMyProfile": "ကျွန်ုပ်၏ Profile",
+  "settingsPrivacyPolicy": "ကိုယ်ရေးအချက်အလက်မူဝါဒ",
+  "settingsProActive": "KipiList Pro တက်ကြွနေပါသည်။",
+  "settingsProCta": "အကန့်အသတ်မဲ့စာရင်းများ၊ AI နှင့် အခြားအရာများကို လော့ခ်ဖွင့်ပါ။",
+  "settingsProfileSubtitle": "AI လက်ထောက်အတွက် ကိုယ်ရေးကိုယ်တာဦးစားပေးများ",
+  "settingsSave": "သိမ်းဆည်းပါ။",
   "settingsScreenChat": "AI Chat",
   "settingsScreenList": "စျေးဝယ်စာရင်း",
+  "settingsSectionAccount": "အကောင့်",
+  "settingsSectionApp": "အက်ပ်",
+  "settingsSectionAssistant": "AI လက်ထောက်",
+  "settingsSubscription": "စာရင်းသွင်းပါ။",
+  "settingsTermsOfService": "ဝန်ဆောင်မှုစည်းမျဉ်းများ",
   "share": "မျှဝေ",
   "shareApp": "အက်ပ်ကို မျှဝေပါ။",
   "shareAppDescription": "KipiList အသုံးပြုရန် သူငယ်ချင်းများကို ဖိတ်ကြားပါ။",
@@ -839,6 +1055,7 @@
   "signInApple": "Apple ဖြင့်အကောင့်ဝင်",
   "signInGoogle": "Google ဖြင့်အကောင့်ဝင်",
   "smartOrganization": "စမတ်ကျသောစုစည်းမှု",
+  "sortAZ": "A–Z",
   "sortCategory": "အမျိုးအစား",
   "sortDate": "ရက်စွဲ",
   "sortManual": "ကိုယ်တိုင်",
@@ -861,6 +1078,7 @@
   "themePink": "ပန်းရောင်",
   "themePurple": "ခရမ်း",
   "themeRed": "အနီ",
+  "themeSelectionTitle": "Theme Color ကို ရွေးပါ။",
   "themeTeal": "ဘဲဥဖြူ",
   "totalEstimated": "စုစုပေါင်းခန့်မှန်း: {amount}",
   "totalSpending": "စုစုပေါင်းအသုံးစရိတ်",
@@ -874,6 +1092,20 @@
   "unlockFullResponse": "တုံ့ပြန်မှုအပြည့်အဝကိုသော့ဖွင့်ပါ။",
   "unmark": "အမှတ်ဖြုတ်",
   "upgrade": "အဆင့်မြှင့်",
+  "userProfileAvoidedStores": "ရှောင်ရန်ဆိုင်များ",
+  "userProfileAvoidedStoresHint": "ဥပမာ စတိုး X၊ စတိုး Y",
+  "userProfileDescription": "AI assistant သည် စိတ်ကြိုက်ပြုလုပ်ထားသော ပစ္စည်းများနှင့် ချက်ပြုတ်နည်းများကို အကြံပြုနိုင်စေရန် သင်၏ကိုယ်ရေးကိုယ်တာဦးစားပေးမှုများကို ထည့်ပါ။",
+  "userProfileDietaryRestrictions": "အစားအသောက်ကန့်သတ်ချက်များ",
+  "userProfileDietaryRestrictionsHint": "ဥပမာ vegan၊ သတ်သတ်လွတ်၊ gluten-free",
+  "userProfileErrorLoading": "အမှား- {error}",
+  "userProfileErrorSaving": "သိမ်းဆည်းမှု အမှားအယွင်း- {error}",
+  "userProfileNotes": "မှတ်စုများ",
+  "userProfileNotesHint": "လက်ထောက်အတွက် အခြားဦးစားပေးများ",
+  "userProfilePreferredStore": "နှစ်သက်ရာစတိုး",
+  "userProfilePreferredStoreHint": "ဥပမာ ဆိုင်အမည်",
+  "userProfileSaveButton": "Profile ကို သိမ်းဆည်းပါ။",
+  "userProfileSaved": "ပရိုဖိုင်ကို အောင်မြင်စွာ သိမ်းဆည်းပြီးပါပြီ။",
+  "userProfileTitle": "ကျွန်ုပ်၏ Profile",
   "validForLimitedTime": "အချိန်ကန့်သတ်ထားသည်",
   "version": "ဗားရှင်း",
   "viewActive": "လှုပ်ရှားနေသောစာရင်းများကြည့်",
@@ -888,6 +1120,13 @@
   "voiceCommandTitle": "AI အသံအမိန့်",
   "voiceProFeature": "အဆင့်မြင့် အသံအမိန့်ပေးမှုများသည် Pro ဖြစ်သည်။ အခြေခံသတ်ပုံဖွင့်ခြင်း...",
   "voiceTranscriptionTooltip": "အသံရိုက်ခြင်း (အခမဲ့)",
+  "weekdayFriday": "သောကြာ",
+  "weekdayMonday": "တနင်္လာနေ့",
+  "weekdaySaturday": "စနေနေ့",
+  "weekdaySunday": "တနင်္ဂနွေ",
+  "weekdayThursday": "ကြာသပတေးနေ့",
+  "weekdayTuesday": "အင်္ဂါ",
+  "weekdayWednesday": "ဗုဒ္ဓဟူးနေ့",
   "welcomeAiAssistant": "AI Assistant မှကြိုဆိုပါသည်။",
   "whatToDoWithItem": "ဤအရာနှင့် သင်ဘာလုပ်လိုသနည်း။",
   "yes": "ဟုတ်",

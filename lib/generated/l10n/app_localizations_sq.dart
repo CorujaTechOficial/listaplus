@@ -972,6 +972,14 @@ class AppLocalizationsSq extends AppLocalizations {
   String get paywallCancelAnytime => 'Anulo në çdo kohë. Asnjë angazhim.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Politika e privatësisë';
 
   @override

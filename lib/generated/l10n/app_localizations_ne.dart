@@ -18,7 +18,7 @@ class AppLocalizationsNe extends AppLocalizations {
   String get pantry => 'भण्डार';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'च्याट';
 
   @override
   String get navRecipes => 'रेसिपीहरू';
@@ -843,26 +843,22 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'KipiList Pro 7 दिनको लागि निःशुल्क प्रयास गर्नुहोस्';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'जुनसुकै बेला रद्द गर्नुहोस्। आज कुनै शुल्क छैन।';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'नि: शुल्क परीक्षण सुरु गर्नुहोस्';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'किनमेल सूचीमा थप्नुहोस्';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count अवयवहरू $listName मा थपियो';
   }
 
   @override
@@ -973,6 +969,14 @@ class AppLocalizationsNe extends AppLocalizations {
   @override
   String get paywallCancelAnytime =>
       'जुनसुकै बेला रद्द गर्नुहोस्। कुनै प्रतिबद्धता छैन।';
+
+  @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
 
   @override
   String get paywallPolicy => 'गोपनीयता नीति';
@@ -1776,40 +1780,40 @@ class AppLocalizationsNe extends AppLocalizations {
   String get catalogBrowse => 'क्याटलग ब्राउज गर्नुहोस्';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'तपाईं अफलाइन हुनुहुन्छ';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'गोपनीयता र विश्लेषण';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList ले तपाईँको अनुभव सुधार गर्न Firebase एनालिटिक्स प्रयोग गर्दछ। तपाईंको डाटा हाम्रो गोपनीयता नीति अनुसार प्रशोधन गरिन्छ।';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'स्वीकार गर्नुहोस्';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'होइन, धन्यवाद';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'स्टकमा';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count हराएको वस्तु',
+      one: '$count छुटेको वस्तु',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'म्याद सकिने मिति';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'जानकारी गराएको छैन';
 }
 
 /// The translations for Nepali, as used in Nepal (`ne_NP`).
@@ -1826,7 +1830,7 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String get pantry => 'भण्डार';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'च्याट';
 
   @override
   String get navRecipes => 'रेसिपीहरू';
@@ -2612,6 +2616,25 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
       one: '$count महिना निःशुल्क',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro 7 दिनको लागि निःशुल्क प्रयास गर्नुहोस्';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'जुनसुकै बेला रद्द गर्नुहोस्। आज कुनै शुल्क छैन।';
+
+  @override
+  String get paywallTrialCta => 'नि: शुल्क परीक्षण सुरु गर्नुहोस्';
+
+  @override
+  String get recipeAddToList => 'किनमेल सूचीमा थप्नुहोस्';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count अवयवहरू $listName मा थपियो';
   }
 
   @override
@@ -3514,4 +3537,40 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get catalogBrowse => 'क्याटलग ब्राउज गर्नुहोस्';
+
+  @override
+  String get offlineBanner => 'तपाईं अफलाइन हुनुहुन्छ';
+
+  @override
+  String get consentTitle => 'गोपनीयता र विश्लेषण';
+
+  @override
+  String get consentBody =>
+      'KipiList ले तपाईँको अनुभव सुधार गर्न Firebase एनालिटिक्स प्रयोग गर्दछ। तपाईंको डाटा हाम्रो गोपनीयता नीति अनुसार प्रशोधन गरिन्छ।';
+
+  @override
+  String get consentAccept => 'स्वीकार गर्नुहोस्';
+
+  @override
+  String get consentDecline => 'होइन, धन्यवाद';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'स्टकमा';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count हराएको वस्तु',
+      one: '$count छुटेको वस्तु',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'म्याद सकिने मिति';
+
+  @override
+  String get notInformed => 'जानकारी गराएको छैन';
 }

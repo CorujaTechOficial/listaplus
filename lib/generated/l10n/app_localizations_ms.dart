@@ -18,7 +18,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get pantry => 'Pantri';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Sembang';
 
   @override
   String get navRecipes => 'resepi';
@@ -837,26 +837,22 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'Cuba KipiList Pro secara percuma selama 7 hari';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Batalkan bila-bila masa. Tiada caj hari ini.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Mulakan Percubaan Percuma';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Tambahkan ke senarai beli-belah';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count bahan ditambahkan pada $listName';
   }
 
   @override
@@ -966,6 +962,14 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get paywallCancelAnytime => 'Batalkan bila-bila masa. Tiada komitmen.';
+
+  @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
 
   @override
   String get paywallPolicy => 'Dasar Privasi';
@@ -1763,40 +1767,40 @@ class AppLocalizationsMs extends AppLocalizations {
   String get catalogBrowse => 'Layari Katalog';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Anda berada di luar talian';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privasi & Analitis';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList menggunakan Analitis Firebase untuk meningkatkan pengalaman anda. Data anda diproses mengikut Dasar Privasi kami.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Terima';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Tidak, terima kasih';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Dalam stok';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count item tiada',
+      one: '$count item tiada',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'tarikh luput';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Tidak dimaklumkan';
 }
 
 /// The translations for Malay, as used in Malaysia (`ms_MY`).
@@ -1813,7 +1817,7 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get pantry => 'Pantri';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Sembang';
 
   @override
   String get navRecipes => 'resepi';
@@ -2606,6 +2610,25 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
       one: '$count BULAN PERCUMA',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'Cuba KipiList Pro secara percuma selama 7 hari';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Batalkan bila-bila masa. Tiada caj hari ini.';
+
+  @override
+  String get paywallTrialCta => 'Mulakan Percubaan Percuma';
+
+  @override
+  String get recipeAddToList => 'Tambahkan ke senarai beli-belah';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count bahan ditambahkan pada $listName';
   }
 
   @override
@@ -3513,4 +3536,40 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get catalogBrowse => 'Layari Katalog';
+
+  @override
+  String get offlineBanner => 'Anda berada di luar talian';
+
+  @override
+  String get consentTitle => 'Privasi & Analitis';
+
+  @override
+  String get consentBody =>
+      'KipiList menggunakan Analitis Firebase untuk meningkatkan pengalaman anda. Data anda diproses mengikut Dasar Privasi kami.';
+
+  @override
+  String get consentAccept => 'Terima';
+
+  @override
+  String get consentDecline => 'Tidak, terima kasih';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Dalam stok';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count item tiada',
+      one: '$count item tiada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'tarikh luput';
+
+  @override
+  String get notInformed => 'Tidak dimaklumkan';
 }

@@ -18,7 +18,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get pantry => 'စားသိုက်ခန်း';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'စကားစမြည်';
 
   @override
   String get navRecipes => 'ချက်ပြုတ်နည်းများ';
@@ -840,26 +840,22 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'KipiList Pro ကို 7 ရက် အခမဲ့ စမ်းသုံးကြည့်ပါ။';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'အချိန်မရွေး ပယ်ဖျက်ပါ။ ယနေ့အခကြေးငွေမယူပါ။';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'အခမဲ့ အစမ်းစတင်ပါ။';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'စျေးဝယ်စာရင်းသို့ထည့်ပါ။';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ပါဝင်ပစ္စည်းများ $listName သို့ ထည့်သည်';
   }
 
   @override
@@ -970,6 +966,14 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get paywallCancelAnytime => 'အချိန်မရွေး ပယ်ဖျက်ပါ။ ကတိကဝတ်မရှိ။';
+
+  @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
 
   @override
   String get paywallPolicy => 'ကိုယ်ရေးအချက်အလက်မူဝါဒ';
@@ -1764,38 +1768,38 @@ class AppLocalizationsMy extends AppLocalizations {
   String get catalogBrowse => 'Catalogue ကို ကြည့်ပါ။';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'သင်သည် အော့ဖ်လိုင်းဖြစ်နေသည်။';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'ကိုယ်ရေးကိုယ်တာနှင့် ပိုင်းခြားစိတ်ဖြာချက်';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList သည် သင့်အတွေ့အကြုံကို မြှင့်တင်ရန် Firebase Analytics ကို အသုံးပြုသည်။ သင်၏ဒေတာကို ကျွန်ုပ်တို့၏ ကိုယ်ရေးကိုယ်တာမူဝါဒအရ လုပ်ဆောင်ပါသည်။';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'လက်ခံပါတယ်။';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'ရပါတယ်ကျေးဇူးပါ';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'ကုန်ပစ္စည်းလက်ဝယ်ရှိ';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count ပျောက်ဆုံးနေသော အရာများ',
+      one: '$count ပျောက်ဆုံးနေသော အရာ',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'သက်တမ်းကုန်ဆုံးရက်';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'အသိမပေး';
 }

@@ -976,6 +976,14 @@ class AppLocalizationsMk extends AppLocalizations {
       'Откажете во секое време. Без посветеност.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Политика за приватност';
 
   @override

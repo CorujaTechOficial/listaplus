@@ -18,7 +18,7 @@ class AppLocalizationsMr extends AppLocalizations {
   String get pantry => 'पॅन्ट्री';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'गप्पा';
 
   @override
   String get navRecipes => 'पाककृती';
@@ -842,26 +842,20 @@ class AppLocalizationsMr extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => '7 दिवसांसाठी KipiList Pro मोफत वापरून पहा';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'कधीही रद्द करा. आज कोणतेही शुल्क नाही.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'विनामूल्य चाचणी सुरू करा';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'खरेदी सूचीमध्ये जोडा';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$listName मध्ये $count घटक जोडले';
   }
 
   @override
@@ -971,6 +965,14 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get paywallCancelAnytime => 'कधीही रद्द करा. बांधिलकी नाही.';
+
+  @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
 
   @override
   String get paywallPolicy => 'गोपनीयता धोरण';
@@ -1769,40 +1771,40 @@ class AppLocalizationsMr extends AppLocalizations {
   String get catalogBrowse => 'कॅटलॉग ब्राउझ करा';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'तुम्ही ऑफलाइन आहात';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'गोपनीयता आणि विश्लेषण';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList तुमचा अनुभव सुधारण्यासाठी Firebase Analytics वापरते. तुमच्या डेटावर आमच्या गोपनीयता धोरणानुसार प्रक्रिया केली जाते.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'स्वीकारा';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'नाही, धन्यवाद';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'स्टॉक मध्ये';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count गहाळ आयटम',
+      one: '$count गहाळ आयटम',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'कालबाह्यता तारीख';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'माहिती दिली नाही';
 }
 
 /// The translations for Marathi, as used in India (`mr_IN`).
@@ -1819,7 +1821,7 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get pantry => 'पॅन्ट्री';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'गप्पा';
 
   @override
   String get navRecipes => 'पाककृती';
@@ -2610,6 +2612,23 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
       one: '$count महिना मोफत',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => '7 दिवसांसाठी KipiList Pro मोफत वापरून पहा';
+
+  @override
+  String get paywallTrialSubtitle => 'कधीही रद्द करा. आज कोणतेही शुल्क नाही.';
+
+  @override
+  String get paywallTrialCta => 'विनामूल्य चाचणी सुरू करा';
+
+  @override
+  String get recipeAddToList => 'खरेदी सूचीमध्ये जोडा';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$listName मध्ये $count घटक जोडले';
   }
 
   @override
@@ -3512,4 +3531,40 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get catalogBrowse => 'कॅटलॉग ब्राउझ करा';
+
+  @override
+  String get offlineBanner => 'तुम्ही ऑफलाइन आहात';
+
+  @override
+  String get consentTitle => 'गोपनीयता आणि विश्लेषण';
+
+  @override
+  String get consentBody =>
+      'KipiList तुमचा अनुभव सुधारण्यासाठी Firebase Analytics वापरते. तुमच्या डेटावर आमच्या गोपनीयता धोरणानुसार प्रक्रिया केली जाते.';
+
+  @override
+  String get consentAccept => 'स्वीकारा';
+
+  @override
+  String get consentDecline => 'नाही, धन्यवाद';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'स्टॉक मध्ये';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count गहाळ आयटम',
+      one: '$count गहाळ आयटम',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'कालबाह्यता तारीख';
+
+  @override
+  String get notInformed => 'माहिती दिली नाही';
 }

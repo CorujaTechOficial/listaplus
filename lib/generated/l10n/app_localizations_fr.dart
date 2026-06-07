@@ -978,6 +978,14 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywallCancelAnytime => 'Annulez à tout moment. Aucun engagement.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'politique de confidentialité';
 
   @override

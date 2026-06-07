@@ -973,6 +973,14 @@ class AppLocalizationsSk extends AppLocalizations {
   String get paywallCancelAnytime => 'Zrušiť kedykoľvek. Žiadny záväzok.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Zásady ochrany osobných údajov';
 
   @override

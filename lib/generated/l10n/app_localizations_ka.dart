@@ -971,6 +971,14 @@ class AppLocalizationsKa extends AppLocalizations {
       'გააუქმეთ ნებისმიერ დროს. არანაირი ვალდებულება.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'კონფიდენციალურობის პოლიტიკა';
 
   @override

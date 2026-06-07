@@ -970,6 +970,14 @@ class AppLocalizationsHy extends AppLocalizations {
       'Չեղարկել ցանկացած ժամանակ: Ոչ մի պարտավորություն:';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Գաղտնիության քաղաքականություն';
 
   @override

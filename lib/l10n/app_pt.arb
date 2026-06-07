@@ -617,6 +617,13 @@
   "paywallBenefit3Desc": "Acompanhamento de despesas e listas familiares",
   "paywallBestValue": "MELHOR VALOR",
   "paywallCancelAnytime": "Cancele quando quiser. Sem compromisso.",
+  "paywallTrialInCard": "Primeiros {days} dias GRÁTIS",
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+  "paywallSecuredByStore": "Pagamento seguro · Cancele quando quiser",
   "paywallCtaTrialDays": "Comece gratuitamente – {days} dias",
   "paywallCtaUnlock": "Desbloquear PRO",
   "paywallFeatureExpenseControl": "Controle de Gastos",

@@ -970,6 +970,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywallCancelAnytime => 'Cancele quando quiser. Sem compromisso.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'Primeiros $days dias GRÁTIS';
+  }
+
+  @override
+  String get paywallSecuredByStore =>
+      'Pagamento seguro · Cancele quando quiser';
+
+  @override
   String get paywallPolicy => 'Política de Privacidade';
 
   @override

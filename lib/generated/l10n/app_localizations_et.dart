@@ -968,6 +968,14 @@ class AppLocalizationsEt extends AppLocalizations {
       'Tühistage igal ajal. Ei mingit kohustust.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Privaatsuspoliitika';
 
   @override

@@ -970,6 +970,14 @@ class AppLocalizationsBe extends AppLocalizations {
       'Скасаваць у любы час. Без абавязацельстваў.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Палітыка прыватнасці';
 
   @override

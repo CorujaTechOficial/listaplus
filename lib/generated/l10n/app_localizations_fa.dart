@@ -967,6 +967,14 @@ class AppLocalizationsFa extends AppLocalizations {
   String get paywallCancelAnytime => 'هر زمان خواستید لغو کنید. بدون تعهد';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'سیاست حفظ حریم خصوصی';
 
   @override

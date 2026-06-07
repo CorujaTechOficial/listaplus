@@ -1998,6 +1998,18 @@ abstract class AppLocalizations {
   /// **'Cancel anytime. No commitment.'**
   String get paywallCancelAnytime;
 
+  /// No description provided for @paywallTrialInCard.
+  ///
+  /// In en, this message translates to:
+  /// **'First {days} days FREE'**
+  String paywallTrialInCard(int days);
+
+  /// No description provided for @paywallSecuredByStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Secured by Google Play · Cancel anytime'**
+  String get paywallSecuredByStore;
+
   /// No description provided for @paywallPolicy.
   ///
   /// In en, this message translates to:

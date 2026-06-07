@@ -985,6 +985,14 @@ class AppLocalizationsTa extends AppLocalizations {
       'எப்போது வேண்டுமானாலும் ரத்து செய்யலாம். உறுதி இல்லை.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'தனியுரிமைக் கொள்கை';
 
   @override

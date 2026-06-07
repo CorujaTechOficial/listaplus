@@ -18,7 +18,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get pantry => 'Агуулах';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Чатлах';
 
   @override
   String get navRecipes => 'Хоолны жор';
@@ -843,26 +843,21 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'KipiList Pro-г 7 хоног үнэгүй туршаад үзээрэй';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'Хэзээ ч цуцлах. Өнөөдөр төлбөргүй.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Үнэгүй туршилтыг эхлүүлэх';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Худалдан авалтын жагсаалтад нэмнэ үү';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count найрлагыг $listName-д нэмсэн';
   }
 
   @override
@@ -972,6 +967,14 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get paywallCancelAnytime => 'Хэзээ ч цуцлах. Амлалт байхгүй.';
+
+  @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
 
   @override
   String get paywallPolicy => 'Нууцлалын бодлого';
@@ -1774,40 +1777,40 @@ class AppLocalizationsMn extends AppLocalizations {
   String get catalogBrowse => 'Каталог үзэх';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Та офлайн байна';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Нууцлал ба Аналитик';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList нь таны туршлагыг сайжруулахын тулд Firebase Analytics ашигладаг. Таны мэдээллийг манай Нууцлалын бодлогын дагуу боловсруулдаг.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Зөвшөөрөх';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Үгүй ээ, баярлалаа';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Нөөцөд байгаа';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count дутуу зүйл',
+      one: '$count дутуу зүйл',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Хугацаа дуусах хугацаа';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Мэдээгүй';
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).
@@ -1824,7 +1827,7 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get pantry => 'Агуулах';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Чатлах';
 
   @override
   String get navRecipes => 'Хоолны жор';
@@ -2610,6 +2613,24 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
       one: '$count САР ҮНЭГҮЙ',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro-г 7 хоног үнэгүй туршаад үзээрэй';
+
+  @override
+  String get paywallTrialSubtitle => 'Хэзээ ч цуцлах. Өнөөдөр төлбөргүй.';
+
+  @override
+  String get paywallTrialCta => 'Үнэгүй туршилтыг эхлүүлэх';
+
+  @override
+  String get recipeAddToList => 'Худалдан авалтын жагсаалтад нэмнэ үү';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count найрлагыг $listName-д нэмсэн';
   }
 
   @override
@@ -3510,4 +3531,40 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get catalogBrowse => 'Каталог үзэх';
+
+  @override
+  String get offlineBanner => 'Та офлайн байна';
+
+  @override
+  String get consentTitle => 'Нууцлал ба Аналитик';
+
+  @override
+  String get consentBody =>
+      'KipiList нь таны туршлагыг сайжруулахын тулд Firebase Analytics ашигладаг. Таны мэдээллийг манай Нууцлалын бодлогын дагуу боловсруулдаг.';
+
+  @override
+  String get consentAccept => 'Зөвшөөрөх';
+
+  @override
+  String get consentDecline => 'Үгүй ээ, баярлалаа';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Нөөцөд байгаа';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count дутуу зүйл',
+      one: '$count дутуу зүйл',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Хугацаа дуусах хугацаа';
+
+  @override
+  String get notInformed => 'Мэдээгүй';
 }

@@ -970,6 +970,14 @@ class AppLocalizationsBn extends AppLocalizations {
       'যেকোনো সময় বাতিল করুন। কোনো অঙ্গীকার নেই।';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'গোপনীয়তা নীতি';
 
   @override

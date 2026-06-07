@@ -969,6 +969,14 @@ class AppLocalizationsVi extends AppLocalizations {
   String get paywallCancelAnytime => 'Hủy bỏ bất cứ lúc nào. Không có cam kết.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Chính sách bảo mật';
 
   @override

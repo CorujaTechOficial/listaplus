@@ -940,6 +940,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get paywallCancelAnytime => '언제든지 취소하세요. 헌신이 없습니다.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => '개인 정보 보호 정책';
 
   @override

@@ -958,6 +958,14 @@ class AppLocalizationsKm extends AppLocalizations {
       'បោះបង់នៅពេលណាក៏បាន។ គ្មានការប្តេជ្ញាចិត្ត។';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'គោលការណ៍ឯកជនភាព';
 
   @override

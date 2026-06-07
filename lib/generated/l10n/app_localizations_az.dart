@@ -971,6 +971,14 @@ class AppLocalizationsAz extends AppLocalizations {
       'İstənilən vaxt ləğv edin. Öhdəlik yoxdur.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Məxfilik Siyasəti';
 
   @override

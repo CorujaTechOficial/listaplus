@@ -973,6 +973,14 @@ class AppLocalizationsKy extends AppLocalizations {
       'Каалаган убакта жокко чыгарыңыз. Милдеттенме жок.';
 
   @override
+  String paywallTrialInCard(int days) {
+    return 'First $days days FREE';
+  }
+
+  @override
+  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+
+  @override
   String get paywallPolicy => 'Купуялык саясаты';
 
   @override
