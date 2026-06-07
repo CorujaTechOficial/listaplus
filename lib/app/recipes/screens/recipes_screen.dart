@@ -16,6 +16,7 @@ import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
+import 'package:shopping_list/app/shared/widgets/kipi_fab.dart';
 
 class RecipesScreen extends StatefulWidget {
   const RecipesScreen({super.key});
@@ -322,16 +323,23 @@ class _RecipesScreenState extends State<RecipesScreen> {
         floatingActionButton: recipesAsync.maybeWhen(
           data: (recipes) => recipes.isEmpty 
             ? null 
-            : FloatingActionButton.extended(
-                heroTag: 'recipe_fab',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    fadeSlideRoute<void>(const AddRecipeDialog()),
-                  );
-                },
-                label: Text(l10n.newRecipe),
-                icon: const Icon(Icons.add),
+            : Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const KipiFab(kipiContext: KipiContext.recipes),
+                  const SizedBox(height: 8),
+                  FloatingActionButton.extended(
+                    heroTag: 'recipe_fab',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        fadeSlideRoute<void>(const AddRecipeDialog()),
+                      );
+                    },
+                    label: Text(l10n.newRecipe),
+                    icon: const Icon(Icons.add),
+                  ),
+                ],
               ),
           orElse: () => null,
         ),

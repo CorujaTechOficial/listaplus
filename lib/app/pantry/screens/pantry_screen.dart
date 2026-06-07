@@ -17,6 +17,7 @@ import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
 import 'package:shopping_list/app/pantry/widgets/pantry_item_skeleton.dart';
 import 'package:collection/collection.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
+import 'package:shopping_list/app/shared/widgets/kipi_fab.dart';
 
 class PantryScreen extends ConsumerWidget {
   const PantryScreen({super.key});
@@ -215,21 +216,28 @@ class PantryScreen extends ConsumerWidget {
           error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        heroTag: 'pantry_fab',
-        onPressed: () => showDialog<void>(
-          context: context,
-          builder: (_) => const AddPantryItemDialog(),
-        ),
-        child: const Icon(Icons.add),
-      ).animate().fadeIn(
-        duration: DurationTokens.slow,
-        delay: DurationTokens.normal,
-      ).scale(
-        begin: const Offset(0, 0),
-        end: const Offset(1, 1),
-        duration: DurationTokens.normal,
-        curve: Curves.easeOutBack,
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const KipiFab(kipiContext: KipiContext.pantry),
+          const SizedBox(height: 8),
+          FloatingActionButton(
+            heroTag: 'pantry_fab',
+            onPressed: () => showDialog<void>(
+              context: context,
+              builder: (_) => const AddPantryItemDialog(),
+            ),
+            child: const Icon(Icons.add),
+          ).animate().fadeIn(
+            duration: DurationTokens.slow,
+            delay: DurationTokens.normal,
+          ).scale(
+            begin: const Offset(0, 0),
+            end: const Offset(1, 1),
+            duration: DurationTokens.normal,
+            curve: Curves.easeOutBack,
+          ),
+        ],
       ),
     );
   }

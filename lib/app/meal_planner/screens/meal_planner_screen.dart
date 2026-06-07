@@ -10,6 +10,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
+import 'package:shopping_list/app/shared/widgets/kipi_fab.dart';
 
 class MealPlannerScreen extends ConsumerStatefulWidget {
   const MealPlannerScreen({super.key});
@@ -293,18 +294,26 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
         ],
       ),
       ),
-      floatingActionButton: _isWeekly
-          ? FloatingActionButton.extended(
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const KipiFab(kipiContext: KipiContext.mealPlanner),
+          const SizedBox(height: 8),
+          if (_isWeekly)
+            FloatingActionButton.extended(
               heroTag: null,
               onPressed: () => _openAddSheet(DateTime.now()),
               icon: const Icon(Icons.add_rounded),
               label: Text(l10n.mealPlannerAddMeal),
             )
-          : FloatingActionButton(
+          else
+            FloatingActionButton(
               heroTag: null,
               onPressed: () => _openAddSheet(DateTime.now()),
               child: const Icon(Icons.add_rounded),
             ),
+        ],
+      ),
     );
   }
 }
