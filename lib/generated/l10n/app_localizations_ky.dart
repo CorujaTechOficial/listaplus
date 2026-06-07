@@ -18,7 +18,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get pantry => 'Кампа';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Чат';
 
   @override
   String get navRecipes => 'Рецепттер';
@@ -845,26 +845,22 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'KipiList Pro\'ну 7 күн бекер колдонуп көрүңүз';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Каалаган убакта жокко чыгарыңыз. Бүгүн төлөм жок.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Акысыз сыноону баштаңыз';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Соода тизмесине кошуу';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ингредиенттер $listName кошулду';
   }
 
   @override
@@ -1776,40 +1772,40 @@ class AppLocalizationsKy extends AppLocalizations {
   String get catalogBrowse => 'Каталогду карап чыгуу';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Сиз оффлайндасыз';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Купуялык жана Аналитика';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList тажрыйбаңызды жакшыртуу үчүн Firebase Analytics колдонот. Сиздин маалыматтар Купуялык саясатыбызга ылайык иштетилет.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Кабыл алуу';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Жок, рахмат';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Запаста';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count жетишпеген нерсе',
+      one: '$count жок нерсе',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Жарамдык датасы';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Маалымат эмес';
 }
 
 /// The translations for Kirghiz Kyrgyz, as used in Kyrgyzstan (`ky_KG`).
@@ -1826,7 +1822,7 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   String get pantry => 'Кампа';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Чат';
 
   @override
   String get navRecipes => 'Рецепттер';
@@ -2615,6 +2611,25 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
       one: '$count АЙ АКЫСЫЗ',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro\'ну 7 күн бекер колдонуп көрүңүз';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Каалаган убакта жокко чыгарыңыз. Бүгүн төлөм жок.';
+
+  @override
+  String get paywallTrialCta => 'Акысыз сыноону баштаңыз';
+
+  @override
+  String get recipeAddToList => 'Соода тизмесине кошуу';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ингредиенттер $listName кошулду';
   }
 
   @override
@@ -3516,4 +3531,40 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get catalogBrowse => 'Каталогду карап чыгуу';
+
+  @override
+  String get offlineBanner => 'Сиз оффлайндасыз';
+
+  @override
+  String get consentTitle => 'Купуялык жана Аналитика';
+
+  @override
+  String get consentBody =>
+      'KipiList тажрыйбаңызды жакшыртуу үчүн Firebase Analytics колдонот. Сиздин маалыматтар Купуялык саясатыбызга ылайык иштетилет.';
+
+  @override
+  String get consentAccept => 'Кабыл алуу';
+
+  @override
+  String get consentDecline => 'Жок, рахмат';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Запаста';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count жетишпеген нерсе',
+      one: '$count жок нерсе',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Жарамдык датасы';
+
+  @override
+  String get notInformed => 'Маалымат эмес';
 }

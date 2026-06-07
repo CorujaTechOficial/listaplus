@@ -18,7 +18,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get pantry => 'Sandėliukas';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Pokalbis';
 
   @override
   String get navRecipes => 'Receptai';
@@ -845,26 +845,21 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Išbandykite KipiList Pro nemokamai 7 dienas';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Atšaukti bet kada. Šiandien jokio mokesčio.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Pradėkite nemokamą bandomąją versiją';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Pridėti į pirkinių sąrašą';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ingredientai pridėti prie $listName';
   }
 
   @override
@@ -1781,38 +1776,38 @@ class AppLocalizationsLt extends AppLocalizations {
   String get catalogBrowse => 'Naršyti katalogą';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Esate neprisijungęs';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privatumas ir analizė';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      '„KipiList“ naudoja „Firebase Analytics“, kad pagerintų jūsų patirtį. Jūsų duomenys tvarkomi pagal mūsų Privatumo politiką.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Priimti';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Ne, ačiū';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Sandėlyje';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count trūksta elementų',
+      one: '$count trūksta elemento',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Galiojimo laikas';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Neinformuotas';
 }

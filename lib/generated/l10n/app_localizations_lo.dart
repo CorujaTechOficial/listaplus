@@ -18,7 +18,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get pantry => 'ຕູ້ເຄື່ອງໃຊ້';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'ສົນທະນາ';
 
   @override
   String get navRecipes => 'ສູດ';
@@ -834,26 +834,21 @@ class AppLocalizationsLo extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'ລອງໃຊ້ KipiList Pro ຟຣີເປັນເວລາ 7 ມື້';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'ຍົກເລີກໄດ້ທຸກເວລາ. ບໍ່ມີຄ່າໃຊ້ຈ່າຍໃນມື້ນີ້.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'ເລີ່ມການທົດລອງໃຊ້ຟຣີ';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'ເພີ່ມໃສ່ລາຍການຊື້ເຄື່ອງ';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ສ່ວນປະກອບເພີ່ມໃສ່ $listName';
   }
 
   @override
@@ -1751,40 +1746,40 @@ class AppLocalizationsLo extends AppLocalizations {
   String get catalogBrowse => 'ຊອກຫາລາຍການ';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'ທ່ານອອບລາຍຢູ່';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'ຄວາມເປັນສ່ວນຕົວ & ການວິເຄາະ';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList ໃຊ້ Firebase Analytics ເພື່ອປັບປຸງປະສົບການຂອງທ່ານ. ຂໍ້ມູນຂອງທ່ານຖືກປະມວນຜົນຕາມນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງພວກເຮົາ.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'ຍອມຮັບ';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'ບໍ່, ຂອບໃຈ';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'ໃນຫຼັກຊັບ';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count ລາຍການທີ່ຂາດຫາຍໄປ',
+      one: '$count ລາຍການທີ່ຂາດຫາຍໄປ',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'ວັນໝົດອາຍຸ';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'ບໍ່ໄດ້ແຈ້ງໃຫ້ຊາບ';
 }
 
 /// The translations for Lao, as used in the Lao People's Democratic Republic (`lo_LA`).
@@ -1801,7 +1796,7 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String get pantry => 'ຕູ້ເກັບອາຫານ';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'ສົນທະນາ';
 
   @override
   String get navRecipes => 'ສູດ';
@@ -2590,6 +2585,24 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
       one: '$count ເດືອນຟຣີ',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'ລອງໃຊ້ KipiList Pro ຟຣີເປັນເວລາ 7 ມື້';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'ຍົກເລີກໄດ້ທຸກເວລາ. ບໍ່ມີຄ່າໃຊ້ຈ່າຍໃນມື້ນີ້.';
+
+  @override
+  String get paywallTrialCta => 'ເລີ່ມການທົດລອງໃຊ້ຟຣີ';
+
+  @override
+  String get recipeAddToList => 'ເພີ່ມໃສ່ລາຍການຊື້ເຄື່ອງ';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ສ່ວນປະກອບເພີ່ມໃສ່ $listName';
   }
 
   @override
@@ -3488,4 +3501,40 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get catalogBrowse => 'ຊອກຫາລາຍການ';
+
+  @override
+  String get offlineBanner => 'ທ່ານອອບລາຍຢູ່';
+
+  @override
+  String get consentTitle => 'ຄວາມເປັນສ່ວນຕົວ & ການວິເຄາະ';
+
+  @override
+  String get consentBody =>
+      'KipiList ໃຊ້ Firebase Analytics ເພື່ອປັບປຸງປະສົບການຂອງທ່ານ. ຂໍ້ມູນຂອງທ່ານຖືກປະມວນຜົນຕາມນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງພວກເຮົາ.';
+
+  @override
+  String get consentAccept => 'ຍອມຮັບ';
+
+  @override
+  String get consentDecline => 'ບໍ່, ຂອບໃຈ';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'ໃນຫຼັກຊັບ';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ລາຍການທີ່ຂາດຫາຍໄປ',
+      one: '$count ລາຍການທີ່ຂາດຫາຍໄປ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'ວັນໝົດອາຍຸ';
+
+  @override
+  String get notInformed => 'ບໍ່ໄດ້ແຈ້ງໃຫ້ຊາບ';
 }

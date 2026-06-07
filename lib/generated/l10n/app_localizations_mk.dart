@@ -18,7 +18,7 @@ class AppLocalizationsMk extends AppLocalizations {
   String get pantry => 'Шпајз';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Разговор';
 
   @override
   String get navRecipes => 'Рецепти';
@@ -849,26 +849,21 @@ class AppLocalizationsMk extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Пробајте го KipiList Pro бесплатно 7 дена';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Откажете во секое време. Без наплата денес.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Започнете бесплатен пробен период';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Додај во списокот за купување';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count состојки додадени во $listName';
   }
 
   @override
@@ -1782,40 +1777,40 @@ class AppLocalizationsMk extends AppLocalizations {
   String get catalogBrowse => 'Прелистајте го каталогот';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Вие сте офлајн';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Приватност и аналитика';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList користи Firebase Analytics за да го подобри вашето искуство. Вашите податоци се обработуваат според нашата Политика за приватност.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Прифати';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Не, благодарам';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'На залиха';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count недостигаат ставки',
+      one: '$count недостасува ставка',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Датум на истекување';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Не е информиран';
 }
 
 /// The translations for Macedonian, as used in North Macedonia (`mk_MK`).
@@ -1832,7 +1827,7 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
   String get pantry => 'Остава';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Разговор';
 
   @override
   String get navRecipes => 'Рецепти';
@@ -2630,6 +2625,24 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Пробајте го KipiList Pro бесплатно 7 дена';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Откажете во секое време. Без наплата денес.';
+
+  @override
+  String get paywallTrialCta => 'Започнете бесплатен пробен период';
+
+  @override
+  String get recipeAddToList => 'Додај во списокот за купување';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count состојки додадени во $listName';
   }
 
   @override
@@ -3540,4 +3553,40 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
 
   @override
   String get catalogBrowse => 'Прелистајте го каталогот';
+
+  @override
+  String get offlineBanner => 'Вие сте офлајн';
+
+  @override
+  String get consentTitle => 'Приватност и аналитика';
+
+  @override
+  String get consentBody =>
+      'KipiList користи Firebase Analytics за да го подобри вашето искуство. Вашите податоци се обработуваат според нашата Политика за приватност.';
+
+  @override
+  String get consentAccept => 'Прифати';
+
+  @override
+  String get consentDecline => 'Не, благодарам';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'На залиха';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count недостигаат ставки',
+      one: '$count недостасува ставка',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Датум на истекување';
+
+  @override
+  String get notInformed => 'Не е информиран';
 }
