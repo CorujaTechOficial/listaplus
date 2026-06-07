@@ -357,7 +357,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   ((yearlyCostMonthly - pkg.price) / yearlyCostMonthly * 100)
                       .round();
               badgeText =
-                  '${l10n.paywallBestValue} · ${l10n.paywallSavePercent(savings)}';
+                  '${l10n.paywallMostPopular} · ${l10n.paywallSavePercent(savings)}';
             }
 
             return Padding(
@@ -405,7 +405,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                                   ),
                                   if (isAnnual &&
                                       monthlyPkg != null &&
-                                      monthlyPkg.identifier != pkg.identifier)
+                                      monthlyPkg.identifier != pkg.identifier) ...[
                                     Text(
                                       l10n.paywallPricePerMonth(
                                         formatCurrency(
@@ -421,8 +421,17 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                                             ? FontWeight.w600
                                             : null,
                                       ),
-                                    )
-                                  else if (isMonthly)
+                                    ),
+                                    if (pkg.hasFreeTrial && pkg.trialPeriodDays != null)
+                                      Text(
+                                        l10n.paywallTrialInCard(pkg.trialPeriodDays!),
+                                        style: theme.textTheme.labelSmall?.copyWith(
+                                          color: AppColors.premiumAmber,
+                                          fontWeight: FontWeight.w800,
+                                          fontSize: 10,
+                                        ),
+                                      ),
+                                  ] else if (isMonthly)
                                     Text(
                                       l10n.paywallPackageMonthlyDesc,
                                       style: theme.textTheme.bodySmall?.copyWith(
