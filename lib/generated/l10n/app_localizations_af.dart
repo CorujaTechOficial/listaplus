@@ -647,6 +647,15 @@ class AppLocalizationsAf extends AppLocalizations {
       'Teken in op Premium om die volle reaksie te ontsluit en kry onbeperkte KI-wenke vir jou inkopies...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiLys';
 
   @override

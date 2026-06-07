@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -195,6 +209,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -205,10 +226,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -303,6 +338,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -310,10 +362,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -378,11 +461,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "درباره",
   "achievements": "دستاوردها",
+  "achievementsTitle": "دستاوردهای من",
   "activeListening": "گوش دادن فعال",
   "add": "افزودن",
   "addAllToList": "افزودن همه به لیست",
+  "addCategoryColor": "رنگ:",
+  "addCategoryIcon": "نماد:",
   "addDirectToList": "مستقیما به لیست اضافه کنید",
   "addIngredient": "افزودن مواد اولیه",
   "addItem": "افزودن آیتم",
@@ -394,23 +494,52 @@
   "advancedFeatures": "ویژگی‌های پیشرفته",
   "aiAssistant": "دستیار هوش مصنوعی",
   "aiAssistantDescription": "با دستیار هوش مصنوعی ما پیشنهادات هوشمند، دستور پخت و نکات شخصی دریافت کنید.",
+  "aiAssistantGeneral": "دستیار عمومی",
+  "aiAssistantHistory": "تاریخچه دستیار",
+  "aiConversationHistory": "تاریخچه مکالمه",
   "aiCreditsRemaining": "{remaining} اعتبار باقی‌مانده",
+  "aiDeleteConversationConfirm": "حذف کنید",
+  "aiDeleteConversationTitle": "مکالمه حذف شود؟",
+  "aiDeletedList": "لیست حذف شده",
   "aiEnergy": "انرژی هوش مصنوعی",
   "aiError": "متأسفانه، خطایی در پردازش درخواست شما رخ داد. اتصال خود را بررسی کنید یا بعداً دوباره تلاش کنید.",
+  "aiFirstOpenHint": "من کیپی هستم، دستیار خرید شما. از من چیزی در مورد لیست خود بپرسید!",
+  "aiHello": "سلام! من کیپی هستم",
+  "aiHowCanIHelp": "امروز چگونه می توانم به شما کمک کنم؟",
   "aiLimitAlmostReached": "پیام های هوش مصنوعی تقریبا تمام شده است",
+  "aiNewConversation": "مکالمه جدید",
+  "aiNewSession": "جلسه جدید",
+  "aiNoConversationFound": "مکالمه ای پیدا نشد",
+  "aiNoMessagesFound": "هیچ پیامی یافت نشد",
+  "aiPremiumUpsell": "برو پریمیوم",
+  "aiRecentConversations": "مکالمات اخیر",
+  "aiSearchMessages": "جستجوی پیام ها...",
+  "aiStartNewConversation": "شروع مکالمه جدید",
+  "aiSuggestCreateList": "اولین لیست من را ایجاد کنید",
+  "aiSuggestSaveMore": "چگونه بیشتر پس انداز کنیم؟",
   "aiTeaserFallback": "برای باز کردن پاسخ کامل و دریافت نکات نامحدود هوش مصنوعی برای خرید خود در Premium مشترک شوید...",
+  "aiUnlockWithAd": "باز کردن قفل با آگهی",
   "aiVoiceCommandTooltip": "فرمان صوتی هوش مصنوعی (پریمیوم)",
+  "aiWelcomeTitle": "سلام! 👋 من **کیپی** هستم، دستیار خرید هوشمند شما.",
   "allTags": "همه",
   "alreadyPurchased": "قبلاً خریداری شده",
   "appTitle": "لیست خرید",
   "appearance": "ظاهر",
   "archiveList": "بایگانی لیست",
+  "artifactReplaceBody": "یک محصول جایگزین برای بهینه سازی هزینه انتخاب کنید.",
+  "artifactReplaceTitle": "جایگزین {name}",
+  "artifactSuggestedItems": "موارد پیشنهادی",
+  "artifactSwapButton": "تعویض کنید",
+  "artifactSwappedLabel": "تعویض شد",
   "backToChat": "بازگشت به چت",
+  "backToToday": "بازگشت به امروز",
   "backupExported": "پشتیبان صادر شد!",
   "backupNav": "پشتیبان‌گیری",
   "backupPremiumDescription": "پشتیبان‌گیری و صادر کردن یک ویژگی پریمیوم است",
   "backupSubtitle": "داده‌های خود را صادر یا وارد کنید",
   "backupTitle": "پشتیبان‌گیری",
+  "barcodeScannerHint": "دوربین را به سمت بارکد بگیرید",
+  "barcodeScannerTitle": "اسکن بارکد",
   "becomePremium": "پریمیوم شوید",
   "budgetAmountLabel": "مبلغ بودجه",
   "budgetAmountSpent": "{spent} از {budget}",
@@ -433,9 +562,11 @@
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} را اضافه کنید →",
   "catalogBrowse": "کاتالوگ را مرور کنید",
   "catalogFilterNational": "ملی پوشان",
+  "catalogItemAdded": "{name} اضافه شد",
   "catalogMyFrequents": "فرکانس های من",
   "catalogProductNotFound": "محصول یافت نشد، نام را تایپ کنید",
   "catalogRareSection": "در کشور شما کمتر رایج است",
+  "catalogRetry": "دوباره امتحان کنید",
   "catalogSearchGlobal": "جستجو در هر محصول ...",
   "catalogSearchInCategory": "جستجو در {category}...",
   "catalogSortAZ": "A–Z",
@@ -467,6 +598,10 @@
   "confirmDeleteItems": "{count} آیتم حذف شود؟",
   "confirmDeleteTitle": "تأیید",
   "confirmRemovePantry": "\"{name}\" از انباری حذف شود؟",
+  "consentAccept": "قبول کنید",
+  "consentBody": "KipiList از Firebase Analytics برای بهبود تجربه شما استفاده می کند. داده های شما طبق خط مشی رازداری ما پردازش می شود.",
+  "consentDecline": "نه، ممنون",
+  "consentTitle": "حریم خصوصی و تجزیه و تحلیل",
   "consumed": "مصرف شده",
   "continueAsGuest": "ادامه به عنوان مهمان",
   "copiedToClipboard": "در کلیپ‌بورد کپی شد",
@@ -504,8 +639,16 @@
   "editRecipe": "ویرایش",
   "editRecipeTitle": "ویرایش دستور پخت",
   "emptyListAddItems": "لیست شما خالی است! ابتدا آیتم اضافه کنید. ℹ️",
+  "emptyListAiAction": "از دستیار هوش مصنوعی بپرسید",
+  "emptyListAiExample": "سعی کنید از هوش مصنوعی بخواهید مواردی را پیشنهاد کند",
   "emptyListSubtitle": "برای شروع، آیتم اضافه کنید",
   "emptyListTitle": "لیست شما خالی است",
+  "emptyMealSlotHint": "برای برنامه ریزی یک وعده غذایی ضربه بزنید",
+  "emptyPantryScan": "محصول را اسکن کنید",
+  "emptyPantrySubtitle": "برای پیگیری آنچه در خانه دارید، محصولاتی اضافه کنید",
+  "emptyPantryTitle": "انباری خالی",
+  "emptyRecipesSubtitle": "اولین دستور العمل خود را ایجاد کنید یا از هوش مصنوعی بخواهید که یکی را تولید کند",
+  "emptyRecipesTitle": "هیچ دستور العملی ذخیره نشده است",
   "enterCodeHint": "کد را وارد کنید",
   "enterUrl": "ورود نشانی اینترنتی",
   "error": "خطا: {message}",
@@ -519,6 +662,7 @@
   "estimatedPrice": "قیمت تخمینی",
   "exit": "خارج شوید",
   "exitShoppingMode": "از حالت خرید خارج شوید",
+  "expirationDate": "تاریخ انقضا",
   "exportData": "صادر کردن داده‌ها",
   "exportDataSubtitle": "ذخیره همه لیست‌ها به صورت JSON",
   "exportExcel": "صادر کردن به صورت Excel",
@@ -590,12 +734,20 @@
   "listAdded": "{listName} اضافه شد!",
   "listArchived": "لیست با موفقیت بایگانی شد!",
   "listAssistant": "دستیار لیست",
+  "listBudgetIndicator": "بودجه: {value}",
   "listBudgetTitle": "بودجه لیست",
   "listCreated": "لیست \"{name}\" با {count} آیتم ایجاد شد",
+  "listDelete": "حذف کنید",
+  "listErrorGeneric": "خطایی رخ داد. لطفا دوباره امتحان کنید.",
   "listHelp": "چگونه می‌توانم با لیست شما کمک کنم؟",
   "listHistory": "تاریخچه لیست",
   "listNameLabel": "نام لیست",
   "listOrganizedMagic": "لیست به صورت جادویی بر اساس دسته‌بندی سازماندهی شد! ✨",
+  "listProfile": "نمایه",
+  "listSelectAll": "همه را انتخاب کنید",
+  "listShoppingComplete": "همه چیز تمام شد!",
+  "listShoppingCompleteSubtitle": "شما لیست خود را تکمیل کرده اید.",
+  "listTotalLabel": "مجموع: {value}",
   "listening": "گوش دادن...",
   "lists": "لیست‌ها",
   "loading": "در حال بارگذاری...",
@@ -603,10 +755,14 @@
   "loginError": "خطای ورود: {error}",
   "loginPrompt": "برای دسترسی به ویژگی‌های\nپریمیوم وارد شوید",
   "longHistoryWarning": "سابقه طولانی: دستیار برای عملکرد بهتر بر آخرین پیام ها تمرکز می کند.",
+  "manageCategoriesEmpty": "هنوز هیچ دسته ای وجود ندارد",
+  "manageCategoriesTitle": "مدیریت دسته ها",
   "manageSubscription": "مدیریت اشتراک",
   "markAsPurchased": "علامت‌گذاری به عنوان خریداری شده",
   "markItemsToSeeAnalysis": "آیتم‌ها را به عنوان خریداری شده علامت‌گذاری کنید تا تحلیل را ببینید.",
   "marketMode": "حالت بازار",
+  "mealDragHint": "برای کشیدن و حرکت نگه دارید",
+  "mealNoRecipeFound": "هیچ دستوری یافت نشد",
   "mealPlannerAddMeal": "افزودن وعده غذایی",
   "mealPlannerDateLabel": "تاریخ",
   "mealPlannerDeleteMeal": "حذف وعده غذایی",
@@ -628,6 +784,8 @@
   "mealPlannerNoRecipesFound": "دستور پختی پیدا نشد",
   "mealPlannerNoRecipesHint": "ابتدا دستورهای پخت را در برگه دستور پخت ایجاد کنید",
   "mealPlannerNoteLabel": "یادداشت (اختیاری)",
+  "mealPlannerPantryAllAvailable": "موجود است",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} مورد موجود نیست} other{{count} مورد موجود نیست}}",
   "mealPlannerPrepTime": "{minutes} دقیقه",
   "mealPlannerSave": "افزودن به برنامه",
   "mealPlannerSearchRecipes": "جستجوی دستورهای پخت...",
@@ -640,13 +798,15 @@
   "mealPlannerWeekEmpty": "چیزی برای این هفته برنامه‌ریزی نشده است",
   "mealPlannerWeekEmptyHint": "برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!",
   "mealPlannerWeekProgress": "{count} از {total} وعده برنامه‌ریزی شده",
+  "mealSearchRecipes": "جستجوی دستور غذاها...",
+  "mealTypeLabel": "نوع غذا",
   "monthlyBudgetAppBar": "بودجه ماهانه",
   "monthlyBudgetNav": "بودجه ماهانه",
   "monthlyBudgetSpent": "{spent} از {budget}",
   "monthlyBudgetTitle": "بودجه ماهانه",
   "myLists": "لیست‌های من",
   "myRecipes": "دستورهای پخت من",
-  "navChat": "Chat",
+  "navChat": "چت کنید",
   "navLists": "لیست‌ها",
   "navMealPlanner": "منو",
   "navRecipes": "دستور العمل ها",
@@ -670,6 +830,10 @@
   "noRecipesSaved": "هیچ دستور پختی ذخیره نشده است",
   "noRecipesSavedHint": "اولین دستور پخت سفارشی خود را با زدن دکمه زیر ایجاد کنید.",
   "noTracking": "بدون پیگیری",
+  "notInformed": "مطلع نیست",
+  "offlineBanner": "شما آفلاین هستید",
+  "onboardingAIShowSubtitle": "کیپی همه چیز را برای شما آماده می کند...",
+  "onboardingAIShowTitle": "هوش را در عمل ببینید!",
   "onboardingAnnualBadge": "بهترین ارزش",
   "onboardingAnnualLabel": "سالانه",
   "onboardingCancelAnytime": "هر زمان خواستید لغو کنید. بدون تعهد",
@@ -703,11 +867,35 @@
   "organizeByAisles": "سازماندهی بر اساس راهرو",
   "organizingAi": "در حال سازماندهی با هوش مصنوعی...",
   "pantry": "انباری",
+  "pantryAdvancedMode": "پیشرفته",
   "pantryAppBar": "انباری",
+  "pantryCompactView": "نمای فشرده",
+  "pantryDeficit": "وجود ندارد {amount}{unit}",
+  "pantryDeleteItemsContent": "آیا می خواهید {count} موارد انتخابی را حذف کنید؟",
+  "pantryDeleteItemsTitle": "موارد را حذف کنید",
+  "pantryDeleteSelected": "حذف انتخاب شده",
+  "pantryDetailedView": "نمای تفصیلی",
   "pantryEditTitle": "ویرایش {name}",
   "pantryEmpty": "انباری خالی است",
   "pantryEmptySubtitle": "محصولاتی را که می‌خواهید در خانه داشته باشید اضافه کنید",
+  "pantryExpired": "منقضی شده است",
+  "pantryExpiresIn": "{days} روز دیگر منقضی می شود",
+  "pantryExpiringSoon": "به زودی منقضی می شود",
+  "pantryExpiryDate": "تاریخ انقضا",
+  "pantryExpiryNotSet": "تنظیم نشده است",
+  "pantryFilterAll": "همه",
+  "pantryFilterExpiring": "در حال انقضا",
+  "pantryFilterOutStock": "موجود نیست",
+  "pantryFirstOpenHint": "آنچه در خانه دارید را پیگیری کنید. موارد را اضافه کنید یا بارکدها را اسکن کنید.",
   "pantryItemRemoved": "آیتم حذف شد",
+  "pantryMoreDetails": "جزئیات بیشتر",
+  "pantryNoItemsFound": "هیچ موردی برای \"{query}\" یافت نشد",
+  "pantryRestockSelected": "ذخیره مجدد انتخاب شد",
+  "pantryScanProduct": "محصول را اسکن کنید",
+  "pantryScanner": "اسکن محصول",
+  "pantrySearchHint": "جستجو در انبار ...",
+  "pantrySelectedCount": "{count} انتخاب شد",
+  "pantrySimpleMode": "اساسی",
   "paywallAfterItem1": "غلات",
   "paywallAfterItem2": "تمیز کردن",
   "paywallAfterItem3": "گوشت ها",
@@ -755,8 +943,11 @@
   "paywallTestimonial2Text": "من هرگز یک آیتم لیست را فراموش نکردم. چت هوش مصنوعی هیجان انگیز است!",
   "paywallTestimonialsTitle": "آنچه کاربران ما می گویند:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "آزمایش رایگان را شروع کنید",
   "paywallTrialDays": "{days} روز رایگان",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialSubtitle": "هر زمان خواستید لغو کنید. امروز بدون شارژ",
+  "paywallTrialTitle": "KipiList Pro را به مدت 7 روز رایگان امتحان کنید",
   "paywallTrialWeeks": "{count,plural, one{{count} WEEK FREE} other{{count} WEEKS FREE}}",
   "prefAIAssistant": "دستیار هوش مصنوعی شخصی",
   "prefCustomThemes": "تم‌های سفارشی",
@@ -779,6 +970,8 @@
   "quickRecipe": "دستور پخت سریع",
   "quickRecipePrompt": "دستور پخت با آیتم‌های لیست من پیشنهاد کن.",
   "quickReplies": "پاسخ های سریع:",
+  "recipeAddToList": "به لیست خرید اضافه کنید",
+  "recipeAddedConfirmation": "{count} مواد به {listName} اضافه شد",
   "recipeCreated": "دستور پخت ایجاد شد!",
   "recipeDeleted": "دستور پخت حذف شد",
   "recipeImage": "تصویر دستور پخت",
@@ -815,10 +1008,33 @@
   "setBudgetButton": "تنظیم بودجه",
   "setBudgetTitle": "بودجه ماهانه",
   "settingsAppBar": "تنظیمات",
+  "settingsAssistantHistory": "تاریخچه دستیار",
+  "settingsAssistantHistorySubtitle": "مکالمات گذشته را مشاهده و جستجو کنید",
+  "settingsAssistantName": "نام دستیار",
+  "settingsCancel": "لغو کنید",
+  "settingsCategories": "دسته بندی ها",
+  "settingsCategoriesSubtitle": "دسته بندی آیتم ها را مدیریت کنید",
+  "settingsChooseIcon": "یک نماد را انتخاب کنید:",
+  "settingsCustomizeAI": "دستیار هوش مصنوعی را سفارشی کنید",
+  "settingsCustomizeDialog": "سفارشی کردن دستیار",
   "settingsDefaultScreen": "صفحه اصلی پیش فرض",
   "settingsDefaultScreenSubtitle": "بین لیست خرید یا چت هوش مصنوعی یکی را انتخاب کنید",
+  "settingsErrorSubscription": "خطا در بارگیری اشتراک",
+  "settingsLegal": "قانونی",
+  "settingsLoadingSubscription": "در حال بارگیری اشتراک...",
+  "settingsMyProfile": "نمایه من",
+  "settingsPrivacyPolicy": "سیاست حفظ حریم خصوصی",
+  "settingsProActive": "KipiList Pro فعال است",
+  "settingsProCta": "قفل لیست های نامحدود، هوش مصنوعی و موارد دیگر را باز کنید",
+  "settingsProfileSubtitle": "ترجیحات شخصی برای دستیار هوش مصنوعی",
+  "settingsSave": "ذخیره کنید",
   "settingsScreenChat": "چت هوش مصنوعی",
   "settingsScreenList": "لیست خرید",
+  "settingsSectionAccount": "حساب",
+  "settingsSectionApp": "برنامه",
+  "settingsSectionAssistant": "دستیار هوش مصنوعی",
+  "settingsSubscription": "اشتراک",
+  "settingsTermsOfService": "شرایط خدمات",
   "share": "اشتراک‌گذاری",
   "shareApp": "برنامه را به اشتراک بگذارید",
   "shareAppDescription": "دوستان را به استفاده از KipiList دعوت کنید",
@@ -839,6 +1055,7 @@
   "signInApple": "ورود با اپل",
   "signInGoogle": "ورود با گوگل",
   "smartOrganization": "سازماندهی هوشمند",
+  "sortAZ": "A–Z",
   "sortCategory": "دسته‌بندی",
   "sortDate": "تاریخ",
   "sortManual": "دستی",
@@ -861,6 +1078,7 @@
   "themePink": "صورتی",
   "themePurple": "بنفش",
   "themeRed": "قرمز",
+  "themeSelectionTitle": "رنگ تم را انتخاب کنید",
   "themeTeal": "فیروزه‌ای",
   "totalEstimated": "مجموع تخمینی: {amount}",
   "totalSpending": "مجموع هزینه",
@@ -874,6 +1092,20 @@
   "unlockFullResponse": "پاسخ کامل را باز کنید",
   "unmark": "لغو علامت",
   "upgrade": "ارتقا",
+  "userProfileAvoidedStores": "فروشگاه های اجتناب شده",
+  "userProfileAvoidedStoresHint": "به عنوان مثال فروشگاه X، فروشگاه Y",
+  "userProfileDescription": "تنظیمات برگزیده شخصی خود را اضافه کنید تا دستیار هوش مصنوعی بتواند موارد و دستور العمل های شخصی شده را پیشنهاد دهد.",
+  "userProfileDietaryRestrictions": "محدودیت های غذایی",
+  "userProfileDietaryRestrictionsHint": "به عنوان مثال وگان، گیاهخوار، بدون گلوتن",
+  "userProfileErrorLoading": "خطا: {error}",
+  "userProfileErrorSaving": "خطا در ذخیره: {error}",
+  "userProfileNotes": "یادداشت ها",
+  "userProfileNotesHint": "سایر تنظیمات برای دستیار",
+  "userProfilePreferredStore": "فروشگاه ترجیحی",
+  "userProfilePreferredStoreHint": "به عنوان مثال نام فروشگاه",
+  "userProfileSaveButton": "ذخیره نمایه",
+  "userProfileSaved": "نمایه با موفقیت ذخیره شد!",
+  "userProfileTitle": "نمایه من",
   "validForLimitedTime": "معتبر برای مدت محدود",
   "version": "نسخه",
   "viewActive": "مشاهده فعال‌ها",
@@ -888,6 +1120,13 @@
   "voiceCommandTitle": "فرمان صوتی هوش مصنوعی",
   "voiceProFeature": "دستورات صوتی پیشرفته Pro هستند. فعال کردن دیکته اولیه...",
   "voiceTranscriptionTooltip": "تایپ صوتی (رایگان)",
+  "weekdayFriday": "جمعه",
+  "weekdayMonday": "دوشنبه",
+  "weekdaySaturday": "شنبه",
+  "weekdaySunday": "یکشنبه",
+  "weekdayThursday": "پنج شنبه",
+  "weekdayTuesday": "سه شنبه",
+  "weekdayWednesday": "چهارشنبه",
   "welcomeAiAssistant": "به دستیار هوش مصنوعی خوش آمدید",
   "whatToDoWithItem": "دوست دارید با این آیتم چه کار کنید؟",
   "yes": "بله",

@@ -222,6 +222,19 @@
   "aiError": "Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.",
   "aiLimitAlmostReached": "Quase sem mensagens de IA",
   "aiTeaserFallback": "Assine o Premium para desbloquear a resposta completa e obter dicas ilimitadas de IA para suas compras...",
+  "aiUsageWarning": "{remaining} ações de IA restantes este mês — assine para ilimitado",
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "aiUsageExhausted": "Limite mensal de IA atingido. Assine o Pro para ilimitado →",
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
   "aiVoiceCommandTooltip": "Comando de voz com IA (Premium)",
   "allTags": "Todas",
   "alreadyPurchased": "Já comprado",
@@ -540,8 +553,8 @@
   "paywallBeforeItem2": "Perder o controle do gasto",
   "paywallBeforeItem3": "Lista desorganizada",
   "paywallBeforeItem4": "Digitação manual lenta",
-  "paywallBenefit1Desc": "Adiciona, organiza e sugere itens 24h",
-  "paywallBenefit2Desc": "Sem o limite de 3 listas",
+  "paywallBenefit1Desc": "Sem limite de ações. Kipi sempre disponível para agir.",
+  "paywallBenefit2Desc": "Listas compartilhadas com quem você ama",
   "paywallBenefit3Desc": "Controle de gastos e listas em família",
   "paywallBestValue": "MELHOR VALOR",
   "paywallCancelAnytime": "Cancele quando quiser. Sem compromisso.",
@@ -549,11 +562,11 @@
   "paywallCtaUnlock": "Desbloquear PRO",
   "paywallFeatureExpenseControl": "Controle de Gastos",
   "paywallFeatureSharing": "Compartilhamento",
-  "paywallFeatureSmartAI": "IA Inteligente",
-  "paywallFeatureUnlimitedLists": "Listas Ilimitadas",
+  "paywallFeatureSmartAI": "IA ilimitada",
+  "paywallFeatureUnlimitedLists": "Família conectada",
   "paywallFeaturesTitle": "Tudo o que você precisa:",
-  "paywallHeroHeadline": "Kipi IA sempre do seu lado",
-  "paywallHeroSubtitle": "Adicione itens, organize listas e economize tempo com IA no bolso",
+  "paywallHeroHeadline": "Kipi sem limites",
+  "paywallHeroSubtitle": "IA ilimitada, planejamento completo e listas em família — tudo em um só app",
   "paywallLabelCommon": "Plano Grátis",
   "paywallLabelPro": "KipiList PRO",
   "paywallLoadingError": "Erro ao carregar ofertas. Tente novamente.",

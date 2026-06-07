@@ -650,6 +650,15 @@ class AppLocalizationsMl extends AppLocalizations {
       'മുഴുവൻ പ്രതികരണവും അൺലോക്ക് ചെയ്യാനും നിങ്ങളുടെ ഷോപ്പിംഗിനായി പരിധിയില്ലാത്ത AI നുറുങ്ങുകൾ നേടാനും Premium സബ്‌സ്‌ക്രൈബുചെയ്യുക...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'കിപ്പിലിസ്റ്റ്';
 
   @override

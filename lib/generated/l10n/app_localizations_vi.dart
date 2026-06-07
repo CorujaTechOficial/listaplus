@@ -642,6 +642,15 @@ class AppLocalizationsVi extends AppLocalizations {
       'Đăng ký Premium để nhận được phản hồi đầy đủ và nhận các mẹo AI không giới hạn cho hoạt động mua sắm của bạn...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiDanh sách';
 
   @override

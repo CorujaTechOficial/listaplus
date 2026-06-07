@@ -640,6 +640,15 @@ class AppLocalizationsEt extends AppLocalizations {
       'Tellige Premium, et avada täielik vastus ja saada piiramatul hulgal tehisintellekti näpunäiteid oma ostude tegemiseks...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

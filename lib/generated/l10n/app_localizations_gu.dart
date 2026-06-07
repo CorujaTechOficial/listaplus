@@ -645,6 +645,15 @@ class AppLocalizationsGu extends AppLocalizations {
       'સંપૂર્ણ પ્રતિસાદને અનલૉક કરવા માટે પ્રીમિયમ પર સબ્સ્ક્રાઇબ કરો અને તમારી ખરીદી માટે અમર્યાદિત AI ટિપ્સ મેળવો...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

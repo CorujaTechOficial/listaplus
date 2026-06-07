@@ -647,6 +647,15 @@ class AppLocalizationsNe extends AppLocalizations {
       'पूर्ण प्रतिक्रिया अनलक गर्न र आफ्नो किनमेलको लागि असीमित एआई सुझावहरू प्राप्त गर्न प्रिमियमको सदस्यता लिनुहोस्...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

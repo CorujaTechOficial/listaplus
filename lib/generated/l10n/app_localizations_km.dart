@@ -637,6 +637,15 @@ class AppLocalizationsKm extends AppLocalizations {
       'ជាវ Premium ដើម្បីដោះសោការឆ្លើយតបពេញលេញ និងទទួលបានគន្លឹះ AI គ្មានដែនកំណត់សម្រាប់ការទិញទំនិញរបស់អ្នក...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'បញ្ជី Kipi';
 
   @override

@@ -649,6 +649,15 @@ class AppLocalizationsMn extends AppLocalizations {
       'Бүрэн хариултыг нээхийн тулд Premium-д бүртгүүлж, дэлгүүр хэсэхдээ хязгааргүй хиймэл оюун ухааны зөвлөгөө аваарай...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

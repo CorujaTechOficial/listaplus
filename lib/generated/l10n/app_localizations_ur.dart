@@ -647,6 +647,15 @@ class AppLocalizationsUr extends AppLocalizations {
       'مکمل جواب کو غیر مقفل کرنے کے لیے پریمیم کو سبسکرائب کریں اور اپنی خریداری کے لیے لامحدود AI ٹپس حاصل کریں...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'کیپی لسٹ';
 
   @override

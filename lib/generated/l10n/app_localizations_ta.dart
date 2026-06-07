@@ -654,6 +654,15 @@ class AppLocalizationsTa extends AppLocalizations {
       'முழுமையான பதிலைத் திறக்க, உங்கள் ஷாப்பிங்கிற்கான வரம்பற்ற AI உதவிக்குறிப்புகளைப் பெற Premium க்கு குழுசேரவும்...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'கிபிலிஸ்ட்';
 
   @override

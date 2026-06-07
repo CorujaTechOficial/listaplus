@@ -650,6 +650,15 @@ class AppLocalizationsFil extends AppLocalizations {
       'Mag-subscribe sa Premium upang i-unlock ang buong tugon at makakuha ng walang limitasyong mga tip sa AI para sa iyong pamimili...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -839,26 +848,22 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'Subukan ang KipiList Pro nang libre sa loob ng 7 araw';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Kanselahin anumang oras. Walang bayad ngayong araw.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Simulan ang Libreng Pagsubok';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Idagdag sa listahan ng pamimili';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count na sangkap ang idinagdag sa $listName';
   }
 
   @override
@@ -1777,38 +1782,38 @@ class AppLocalizationsFil extends AppLocalizations {
   String get catalogBrowse => 'Mag-browse ng Catalog';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Offline ka';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privacy at Analytics';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'Gumagamit ang KipiList ng Firebase Analytics para pahusayin ang iyong karanasan. Pinoproseso ang iyong data ayon sa aming Patakaran sa Privacy.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Tanggapin';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Hindi, salamat';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Sa stock';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count nawawalang item',
+      one: '$count nawawalang item',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Petsa ng pag-expire';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Hindi alam';
 }

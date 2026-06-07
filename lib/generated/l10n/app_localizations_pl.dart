@@ -648,6 +648,15 @@ class AppLocalizationsPl extends AppLocalizations {
       'Subskrybuj Premium, aby odblokować pełną odpowiedź i uzyskać nieograniczone wskazówki AI dotyczące zakupów...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'Lista Kipi';
 
   @override

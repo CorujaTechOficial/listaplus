@@ -648,6 +648,15 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಸಂಪೂರ್ಣ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಪ್ರೀಮಿಯಂಗೆ ಚಂದಾದಾರರಾಗಿ ಮತ್ತು ನಿಮ್ಮ ಶಾಪಿಂಗ್‌ಗಾಗಿ ಅನಿಯಮಿತ AI ಸಲಹೆಗಳನ್ನು ಪಡೆಯಿರಿ...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'ಕಿಪಿಲಿಸ್ಟ್';
 
   @override

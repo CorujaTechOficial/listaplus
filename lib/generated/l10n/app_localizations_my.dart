@@ -644,6 +644,15 @@ class AppLocalizationsMy extends AppLocalizations {
       'အပြည့်အဝတုံ့ပြန်မှုနှင့် သင့်စျေးဝယ်မှုအတွက် အကန့်အသတ်မရှိ AI အကြံပြုချက်များကို ရယူရန် Premium သို့ စာရင်းသွင်းပါ...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

@@ -647,6 +647,15 @@ class AppLocalizationsIs extends AppLocalizations {
       'Gerast áskrifandi að Premium til að opna allt svarið og fá ótakmarkaða gervigreindarráð til að versla...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

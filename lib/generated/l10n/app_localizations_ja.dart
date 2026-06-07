@@ -633,6 +633,15 @@ class AppLocalizationsJa extends AppLocalizations {
       'プレミアムに登録すると、完全な回答が得られ、ショッピングに関する AI ヒントを無制限に入手できます...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'キピリスト';
 
   @override

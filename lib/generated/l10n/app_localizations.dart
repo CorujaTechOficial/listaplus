@@ -1452,6 +1452,18 @@ abstract class AppLocalizations {
   /// **'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...'**
   String get aiTeaserFallback;
 
+  /// Banner warning when user is near AI usage limit
+  ///
+  /// In en, this message translates to:
+  /// **'{remaining} AI actions left this month — upgrade for unlimited'**
+  String aiUsageWarning(int remaining);
+
+  /// Banner when AI usage limit is hit
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly AI limit reached. Upgrade to Pro for unlimited →'**
+  String get aiUsageExhausted;
+
   /// No description provided for @kipiListTitle.
   ///
   /// In en, this message translates to:
@@ -2007,25 +2019,25 @@ abstract class AppLocalizations {
   /// No description provided for @paywallHeroHeadline.
   ///
   /// In en, this message translates to:
-  /// **'Kipi AI always by your side'**
+  /// **'Kipi without limits'**
   String get paywallHeroHeadline;
 
   /// No description provided for @paywallHeroSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Add items, organize lists and save time with AI in your pocket'**
+  /// **'Unlimited AI, full planning and family lists — all in one app'**
   String get paywallHeroSubtitle;
 
   /// No description provided for @paywallBenefit1Desc.
   ///
   /// In en, this message translates to:
-  /// **'Adds, organizes and suggests items 24/7'**
+  /// **'No action limits. Kipi always available to act.'**
   String get paywallBenefit1Desc;
 
   /// No description provided for @paywallBenefit2Desc.
   ///
   /// In en, this message translates to:
-  /// **'No 3-list limit'**
+  /// **'Shared lists with the people you love'**
   String get paywallBenefit2Desc;
 
   /// No description provided for @paywallBenefit3Desc.

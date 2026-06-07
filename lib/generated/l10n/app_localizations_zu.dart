@@ -647,6 +647,15 @@ class AppLocalizationsZu extends AppLocalizations {
       'Bhalisela i-Premium ukuze uvule impendulo egcwele futhi uthole amathiphu e-AI angenamkhawulo okuthenga kwakho...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'I-KipiList';
 
   @override

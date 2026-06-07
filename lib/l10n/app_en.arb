@@ -244,6 +244,19 @@
   "aiLimitAlmostReached": "Almost out of AI messages",
   "unlockAi": "Unlock unlimited AI",
   "aiTeaserFallback": "Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...",
+  "aiUsageWarning": "{remaining} AI actions left this month — upgrade for unlimited",
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "aiUsageExhausted": "Monthly AI limit reached. Upgrade to Pro for unlimited →",
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
 
   "@_Auth": "description: Auth Screen",
   "kipiListTitle": "KipiList",
@@ -386,10 +399,10 @@
   "paywallPolicy": "Privacy Policy",
   "paywallTerms": "Terms of Use",
   "paywallRestore": "Restore",
-  "paywallHeroHeadline": "Kipi AI always by your side",
-  "paywallHeroSubtitle": "Add items, organize lists and save time with AI in your pocket",
-  "paywallBenefit1Desc": "Adds, organizes and suggests items 24/7",
-  "paywallBenefit2Desc": "No 3-list limit",
+  "paywallHeroHeadline": "Kipi without limits",
+  "paywallHeroSubtitle": "Unlimited AI, full planning and family lists — all in one app",
+  "paywallBenefit1Desc": "No action limits. Kipi always available to act.",
+  "paywallBenefit2Desc": "Shared lists with the people you love",
   "paywallBenefit3Desc": "Expense tracking and family lists",
   "paywallPackageMonthlyDesc": "Full flexibility",
   "paywallCtaTrialDays": "Start free — {days} days",

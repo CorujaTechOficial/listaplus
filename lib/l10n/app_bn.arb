@@ -759,7 +759,7 @@
   "mealPlannerNoRecipesHint": "প্রথমে রেসিপি ট্যাবে রেসিপি তৈরি করুন",
   "mealPlannerNoteLabel": "নোট (ঐচ্ছিক)",
   "mealPlannerPantryAllAvailable": "স্টক",
-  "mealPlannerPantryMissing": "{count,plural, one{{count} অনুপস্থিত আইটেম} অন্যান্য{{count} অনুপস্থিত আইটেম}}",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} অনুপস্থিত আইটেম} other{{count} অনুপস্থিত আইটেম}}",
   "mealPlannerPrepTime": "{minutes} মিনিট",
   "mealPlannerSave": "পরিকল্পনায় যোগ করুন",
   "mealPlannerSearchRecipes": "রেসিপি খুঁজুন...",

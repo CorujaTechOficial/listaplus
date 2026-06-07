@@ -649,6 +649,15 @@ class AppLocalizationsRo extends AppLocalizations {
       'Abonați-vă la Premium pentru a debloca răspunsul complet și pentru a primi sfaturi AI nelimitate pentru cumpărături...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

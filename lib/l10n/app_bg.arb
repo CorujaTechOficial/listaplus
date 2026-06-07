@@ -759,7 +759,7 @@
   "mealPlannerNoRecipesHint": "Първо създай рецепти в раздела \"Рецепти\"",
   "mealPlannerNoteLabel": "Бележка (по желание)",
   "mealPlannerPantryAllAvailable": "В наличност",
-  "mealPlannerPantryMissing": "{count,plural, one{{count} липсващ елемент} други{{count} липсващи елементи}}",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} липсващ елемент} other{{count} липсващи елементи}}",
   "mealPlannerPrepTime": "{minutes} мин",
   "mealPlannerSave": "Добави към плана",
   "mealPlannerSearchRecipes": "Търси рецепти...",

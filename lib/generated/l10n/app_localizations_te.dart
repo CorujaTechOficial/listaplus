@@ -650,6 +650,15 @@ class AppLocalizationsTe extends AppLocalizations {
       'పూర్తి ప్రతిస్పందనను అన్‌లాక్ చేయడానికి మరియు మీ షాపింగ్ కోసం అపరిమిత AI చిట్కాలను పొందడానికి ప్రీమియంకు సభ్యత్వాన్ని పొందండి...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'కిపిలిస్ట్';
 
   @override

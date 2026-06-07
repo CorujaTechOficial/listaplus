@@ -647,6 +647,15 @@ class AppLocalizationsCs extends AppLocalizations {
       'Přihlaste se k odběru Premium a odemkněte plnou odpověď a získejte neomezené množství tipů AI pro své nakupování...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

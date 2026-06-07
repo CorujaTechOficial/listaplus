@@ -632,6 +632,15 @@ class AppLocalizationsKo extends AppLocalizations {
       '프리미엄을 구독하면 전체 응답을 받고 쇼핑에 대한 무제한 AI 팁을 얻을 수 있습니다...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override

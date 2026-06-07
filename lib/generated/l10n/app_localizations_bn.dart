@@ -18,7 +18,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get pantry => 'প্যান্ট্রি';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'চ্যাট';
 
   @override
   String get navRecipes => 'রেসিপি';
@@ -645,6 +645,15 @@ class AppLocalizationsBn extends AppLocalizations {
       'সম্পূর্ণ প্রতিক্রিয়া আনলক করতে প্রিমিয়ামে সদস্যতা নিন এবং আপনার কেনাকাটার জন্য সীমাহীন এআই টিপস পান...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'কিপিলিস্ট';
 
   @override
@@ -833,26 +842,22 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      '7 দিনের জন্য বিনামূল্যে KipiList Pro ব্যবহার করে দেখুন';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'যেকোনো সময় বাতিল করুন। আজ কোন চার্জ নেই।';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'বিনামূল্যে ট্রায়াল শুরু করুন';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'কেনাকাটার তালিকায় যোগ করুন';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count উপাদান $listName এ যোগ করা হয়েছে';
   }
 
   @override
@@ -1764,40 +1769,40 @@ class AppLocalizationsBn extends AppLocalizations {
   String get catalogBrowse => 'ক্যাটালগ ব্রাউজ করুন';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'আপনি অফলাইনে আছেন';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'গোপনীয়তা এবং বিশ্লেষণ';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList আপনার অভিজ্ঞতা উন্নত করতে Firebase Analytics ব্যবহার করে। আপনার তথ্য আমাদের গোপনীয়তা নীতি অনুযায়ী প্রক্রিয়া করা হয়.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'গ্রহণ করুন';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'না, ধন্যবাদ';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'স্টক';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count অনুপস্থিত আইটেম',
+      one: '$count অনুপস্থিত আইটেম',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'মেয়াদ শেষ হওয়ার তারিখ';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'জানানো হয়নি';
 }
 
 /// The translations for Bengali Bangla, as used in Bangladesh (`bn_BD`).

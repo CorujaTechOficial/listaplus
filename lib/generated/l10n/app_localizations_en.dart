@@ -645,6 +645,15 @@ class AppLocalizationsEn extends AppLocalizations {
       'Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -968,17 +977,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallRestore => 'Restore';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI always by your side';
+  String get paywallHeroHeadline => 'Kipi without limits';
 
   @override
   String get paywallHeroSubtitle =>
-      'Add items, organize lists and save time with AI in your pocket';
+      'Unlimited AI, full planning and family lists — all in one app';
 
   @override
-  String get paywallBenefit1Desc => 'Adds, organizes and suggests items 24/7';
+  String get paywallBenefit1Desc =>
+      'No action limits. Kipi always available to act.';
 
   @override
-  String get paywallBenefit2Desc => 'No 3-list limit';
+  String get paywallBenefit2Desc => 'Shared lists with the people you love';
 
   @override
   String get paywallBenefit3Desc => 'Expense tracking and family lists';

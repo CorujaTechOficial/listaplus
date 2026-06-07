@@ -647,6 +647,15 @@ class AppLocalizationsPt extends AppLocalizations {
       'Assine o Premium para desbloquear a resposta completa e obter dicas ilimitadas de IA para suas compras...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining ações de IA restantes este mês — assine para ilimitado';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Limite mensal de IA atingido. Assine o Pro para ilimitado →';
+
+  @override
   String get kipiListTitle => 'Lista Kipi';
 
   @override
@@ -859,10 +868,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywallFeaturesTitle => 'Tudo que você precisa:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Listas Ilimitadas';
+  String get paywallFeatureUnlimitedLists => 'Família conectada';
 
   @override
-  String get paywallFeatureSmartAI => 'IA Inteligente';
+  String get paywallFeatureSmartAI => 'IA ilimitada';
 
   @override
   String get paywallFeatureExpenseControl => 'Controle de Gastos';
@@ -970,18 +979,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywallRestore => 'Restaurar';
 
   @override
-  String get paywallHeroHeadline => 'Kipi AI sempre ao seu lado';
+  String get paywallHeroHeadline => 'Kipi sem limites';
 
   @override
   String get paywallHeroSubtitle =>
-      'Adicione itens, organize listas e economize tempo com a IA no seu bolso';
+      'IA ilimitada, planejamento completo e listas em família — tudo em um só app';
 
   @override
   String get paywallBenefit1Desc =>
-      'Adiciona, organiza e sugere itens 24 horas por dia, 7 dias por semana';
+      'Sem limite de ações. Kipi sempre disponível para agir.';
 
   @override
-  String get paywallBenefit2Desc => 'Sem limite de 3 listas';
+  String get paywallBenefit2Desc => 'Listas compartilhadas com quem você ama';
 
   @override
   String get paywallBenefit3Desc =>
@@ -2440,6 +2449,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Assine o Premium para desbloquear a resposta completa e obter dicas ilimitadas de IA para suas compras...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining ações de IA restantes este mês — assine para ilimitado';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Limite mensal de IA atingido. Assine o Pro para ilimitado →';
+
+  @override
   String get kipiListTitle => 'Lista Kipi';
 
   @override
@@ -2610,10 +2628,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get paywallFeaturesTitle => 'Tudo o que você precisa:';
 
   @override
-  String get paywallFeatureUnlimitedLists => 'Listas Ilimitadas';
+  String get paywallFeatureUnlimitedLists => 'Família conectada';
 
   @override
-  String get paywallFeatureSmartAI => 'IA Inteligente';
+  String get paywallFeatureSmartAI => 'IA ilimitada';
 
   @override
   String get paywallFeatureExpenseControl => 'Controle de Gastos';
@@ -2721,17 +2739,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get paywallRestore => 'Restaurar';
 
   @override
-  String get paywallHeroHeadline => 'Kipi IA sempre do seu lado';
+  String get paywallHeroHeadline => 'Kipi sem limites';
 
   @override
   String get paywallHeroSubtitle =>
-      'Adicione itens, organize listas e economize tempo com IA no bolso';
+      'IA ilimitada, planejamento completo e listas em família — tudo em um só app';
 
   @override
-  String get paywallBenefit1Desc => 'Adiciona, organiza e sugere itens 24h';
+  String get paywallBenefit1Desc =>
+      'Sem limite de ações. Kipi sempre disponível para agir.';
 
   @override
-  String get paywallBenefit2Desc => 'Sem o limite de 3 listas';
+  String get paywallBenefit2Desc => 'Listas compartilhadas com quem você ama';
 
   @override
   String get paywallBenefit3Desc => 'Controle de gastos e listas em família';

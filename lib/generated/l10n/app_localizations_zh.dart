@@ -631,6 +631,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiTeaserFallback => '订阅高级版即可解锁完整回复并获得无限的人工智能购物提示...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => '基皮列表';
 
   @override

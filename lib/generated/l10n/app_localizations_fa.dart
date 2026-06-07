@@ -18,7 +18,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get pantry => 'انباری';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'چت کنید';
 
   @override
   String get navRecipes => 'دستور العمل ها';
@@ -646,6 +646,15 @@ class AppLocalizationsFa extends AppLocalizations {
       'برای باز کردن پاسخ کامل و دریافت نکات هوش مصنوعی نامحدود برای خرید خود در Premium مشترک شوید...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -831,26 +840,22 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'KipiList Pro را به مدت 7 روز رایگان امتحان کنید';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'هر زمان خواستید لغو کنید. امروز بدون شارژ';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'آزمایش رایگان را شروع کنید';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'به لیست خرید اضافه کنید';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count مواد به $listName اضافه شد';
   }
 
   @override
@@ -1763,40 +1768,40 @@ class AppLocalizationsFa extends AppLocalizations {
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'شما آفلاین هستید';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'حریم خصوصی و تجزیه و تحلیل';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList از Firebase Analytics برای بهبود تجربه شما استفاده می کند. داده های شما طبق خط مشی رازداری ما پردازش می شود.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'قبول کنید';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'نه، ممنون';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'موجود است';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count مورد موجود نیست',
+      one: '$count مورد موجود نیست',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'تاریخ انقضا';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'مطلع نیست';
 }
 
 /// The translations for Persian, as used in the United Arab Emirates (`fa_AE`).
@@ -1813,7 +1818,7 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get pantry => 'انباری';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'چت کنید';
 
   @override
   String get navRecipes => 'دستور العمل ها';
@@ -2602,6 +2607,25 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro را به مدت 7 روز رایگان امتحان کنید';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'هر زمان خواستید لغو کنید. امروز بدون شارژ';
+
+  @override
+  String get paywallTrialCta => 'آزمایش رایگان را شروع کنید';
+
+  @override
+  String get recipeAddToList => 'به لیست خرید اضافه کنید';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count مواد به $listName اضافه شد';
   }
 
   @override
@@ -3509,6 +3533,42 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
+
+  @override
+  String get offlineBanner => 'شما آفلاین هستید';
+
+  @override
+  String get consentTitle => 'حریم خصوصی و تجزیه و تحلیل';
+
+  @override
+  String get consentBody =>
+      'KipiList از Firebase Analytics برای بهبود تجربه شما استفاده می کند. داده های شما طبق خط مشی رازداری ما پردازش می شود.';
+
+  @override
+  String get consentAccept => 'قبول کنید';
+
+  @override
+  String get consentDecline => 'نه، ممنون';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'موجود است';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مورد موجود نیست',
+      one: '$count مورد موجود نیست',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'تاریخ انقضا';
+
+  @override
+  String get notInformed => 'مطلع نیست';
 }
 
 /// The translations for Persian, as used in Afghanistan (`fa_AF`).
@@ -3525,7 +3585,7 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get pantry => 'انباری';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'چت کنید';
 
   @override
   String get navRecipes => 'دستور العمل ها';
@@ -4314,6 +4374,25 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro را به مدت 7 روز رایگان امتحان کنید';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'هر زمان خواستید لغو کنید. امروز بدون شارژ';
+
+  @override
+  String get paywallTrialCta => 'آزمایش رایگان را شروع کنید';
+
+  @override
+  String get recipeAddToList => 'به لیست خرید اضافه کنید';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count مواد به $listName اضافه شد';
   }
 
   @override
@@ -5221,6 +5300,42 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
+
+  @override
+  String get offlineBanner => 'شما آفلاین هستید';
+
+  @override
+  String get consentTitle => 'حریم خصوصی و تجزیه و تحلیل';
+
+  @override
+  String get consentBody =>
+      'KipiList از Firebase Analytics برای بهبود تجربه شما استفاده می کند. داده های شما طبق خط مشی رازداری ما پردازش می شود.';
+
+  @override
+  String get consentAccept => 'قبول کنید';
+
+  @override
+  String get consentDecline => 'نه، ممنون';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'موجود است';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مورد موجود نیست',
+      one: '$count مورد موجود نیست',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'تاریخ انقضا';
+
+  @override
+  String get notInformed => 'مطلع نیست';
 }
 
 /// The translations for Persian, as used in Islamic Republic of Iran (`fa_IR`).
@@ -5237,7 +5352,7 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get pantry => 'انباری';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'چت کنید';
 
   @override
   String get navRecipes => 'دستور العمل ها';
@@ -6026,6 +6141,25 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro را به مدت 7 روز رایگان امتحان کنید';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'هر زمان خواستید لغو کنید. امروز بدون شارژ';
+
+  @override
+  String get paywallTrialCta => 'آزمایش رایگان را شروع کنید';
+
+  @override
+  String get recipeAddToList => 'به لیست خرید اضافه کنید';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count مواد به $listName اضافه شد';
   }
 
   @override
@@ -6933,4 +7067,40 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
+
+  @override
+  String get offlineBanner => 'شما آفلاین هستید';
+
+  @override
+  String get consentTitle => 'حریم خصوصی و تجزیه و تحلیل';
+
+  @override
+  String get consentBody =>
+      'KipiList از Firebase Analytics برای بهبود تجربه شما استفاده می کند. داده های شما طبق خط مشی رازداری ما پردازش می شود.';
+
+  @override
+  String get consentAccept => 'قبول کنید';
+
+  @override
+  String get consentDecline => 'نه، ممنون';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'موجود است';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مورد موجود نیست',
+      one: '$count مورد موجود نیست',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'تاریخ انقضا';
+
+  @override
+  String get notInformed => 'مطلع نیست';
 }

@@ -18,7 +18,7 @@ class AppLocalizationsBg extends AppLocalizations {
   String get pantry => 'Килер';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Чат';
 
   @override
   String get navRecipes => 'Рецепти';
@@ -650,6 +650,15 @@ class AppLocalizationsBg extends AppLocalizations {
       'Абонирайте се за Premium, за да отключите пълния отговор и да получите неограничени AI съвети за вашето пазаруване...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return '$remaining AI actions left this month — upgrade for unlimited';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -835,26 +844,20 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Изпробвайте KipiList Pro безплатно за 7 дни';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'Отказ по всяко време. Без такса днес.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Започнете безплатен пробен период';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Добавете към списъка за пазаруване';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count съставки, добавени към $listName';
   }
 
   @override
@@ -1764,38 +1767,38 @@ class AppLocalizationsBg extends AppLocalizations {
   String get catalogBrowse => 'Разгледайте каталога';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Вие сте офлайн';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Поверителност и анализ';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList използва Firebase Analytics, за да подобри вашето изживяване. Вашите данни се обработват съгласно нашата Политика за поверителност.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Приеми';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'не благодаря';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'В наличност';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count липсващи елементи',
+      one: '$count липсващ елемент',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Срок на годност';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Не е информиран';
 }

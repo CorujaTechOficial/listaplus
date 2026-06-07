@@ -785,7 +785,7 @@
   "mealPlannerNoRecipesHint": "Спачатку стварыце рэцэпты ва ўкладцы \"Рэцэпты\"",
   "mealPlannerNoteLabel": "Нататка (неабавязкова)",
   "mealPlannerPantryAllAvailable": "У наяўнасці",
-  "mealPlannerPantryMissing": "{count,plural, one{{count} адсутнічае элемент} іншы{{count} адсутнічае элемент}}",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} адсутнічае элемент} other{{count} адсутнічае элемент}}",
   "mealPlannerPrepTime": "{minutes} хв",
   "mealPlannerSave": "Дадаць у план",
   "mealPlannerSearchRecipes": "Пошук рэцэптаў...",
