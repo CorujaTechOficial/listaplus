@@ -49,6 +49,25 @@ Three custom lints enforce architecture:
 - `prefer_abstract_service_type` — providers must use abstract types
 - `prefer_correct_popup_menu_icon` — `PopupMenuButton` must use `icon: const Icon(Icons.more_vert)`
 
+## Agent Delegation Rules
+
+**Claude never writes code directly — always delegate to agents.**
+
+| Priority | Agent | When |
+|---|---|---|
+| 1st | **Gemini CLI** | All implementation tasks |
+| 2nd | **Opencode** | Fallback if Gemini returns 429 / rate limit |
+
+```bash
+# Gemini (primary)
+gemini -p "PROMPT" --yolo --skip-trust
+
+# Opencode (fallback on 429)
+opencode run -m opencode/deepseek-v4-flash-free "PROMPT"
+```
+
+Claude subagents (Agent tool) are for **read-only review only** — spec compliance and code quality. Never for writing or editing code.
+
 ## Key Constraints
 
 - Build always needs `--no-tree-shake-icons` (dynamic `IconData` in `category_data.dart`)
