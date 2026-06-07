@@ -11,6 +11,7 @@ import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/domain/entities/premium_feature.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PaywallScreen extends ConsumerStatefulWidget {
@@ -254,73 +255,68 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
   }
 
   Widget _buildBenefits(ThemeData theme, AppLocalizations l10n) {
-    final benefits = [
-      (Icons.auto_awesome, l10n.paywallFeatureSmartAI, l10n.paywallBenefit1Desc),
-      (Icons.all_inclusive, l10n.paywallFeatureUnlimitedLists, l10n.paywallBenefit2Desc),
-      (Icons.bar_chart, l10n.paywallFeatureExpenseControl, l10n.paywallBenefit3Desc),
-    ];
-
     return ColoredBox(
       color: theme.colorScheme.surface,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: Spacing.lg, vertical: Spacing.xs),
+        padding: const EdgeInsets.symmetric(horizontal: Spacing.lg, vertical: Spacing.sm),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            for (int i = 0; i < benefits.length; i++) ...[
-              _buildBenefitRow(theme, benefits[i].$1, benefits[i].$2, benefits[i].$3),
-              if (i < benefits.length - 1)
-                Divider(
-                  color: theme.colorScheme.outlineVariant.withAlpha(80),
-                  height: 1,
-                ),
-            ],
+            Text(
+              l10n.paywallFeaturesTitle,
+              style: theme.textTheme.labelSmall?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: theme.colorScheme.onSurfaceVariant,
+                letterSpacing: 0.8,
+              ),
+            ),
+            const SizedBox(height: Spacing.sm),
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              mainAxisSpacing: Spacing.xs,
+              crossAxisSpacing: Spacing.xs,
+              childAspectRatio: 3.8,
+              children: PremiumFeature.values
+                  .map((feature) => _buildBenefitCell(theme, feature, l10n))
+                  .toList(),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildBenefitRow(
+  Widget _buildBenefitCell(
     ThemeData theme,
-    IconData icon,
-    String title,
-    String subtitle,
+    PremiumFeature feature,
+    AppLocalizations l10n,
   ) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
-      child: Row(
-        children: [
-          Container(
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-              color: theme.colorScheme.primaryContainer,
-              borderRadius: BorderRadius.circular(9),
-            ),
-            child: Icon(icon, color: theme.colorScheme.primary, size: 18),
+    return Row(
+      children: [
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            color: theme.colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(8),
           ),
-          const SizedBox(width: Spacing.sm),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Text(
-                  subtitle,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
+          child: Icon(feature.icon, color: theme.colorScheme.primary, size: 15),
+        ),
+        const SizedBox(width: Spacing.xs),
+        Expanded(
+          child: Text(
+            feature.localizedLabel(l10n),
+            style: theme.textTheme.labelSmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.onSurface,
             ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
