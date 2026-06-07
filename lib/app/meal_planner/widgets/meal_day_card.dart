@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_type_chip.dart';
 import 'package:shopping_list/app/meal_planner/widgets/pantry_status_badge.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
@@ -8,7 +10,7 @@ import 'package:shopping_list/theme/tokens.dart';
 
 /// Card representing a single day in the weekly meal planner view.
 /// Organizes meals by type (breakfast, lunch, dinner, snack).
-class MealDayCard extends StatelessWidget {
+class MealDayCard extends ConsumerWidget {
   const MealDayCard({
     super.key,
     required this.date,
@@ -25,142 +27,168 @@ class MealDayCard extends StatelessWidget {
   final void Function(MealPlan plan) onDeleteMeal;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
 
-    return TactileContainer(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: DurationTokens.fast,
-        margin: const EdgeInsets.only(bottom: Spacing.sm),
-        decoration: BoxDecoration(
-          color: isToday
-              ? theme.colorScheme.primaryContainer.withAlpha(50)
-              : theme.colorScheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(RadiusTokens.lg),
-          border: isToday
-              ? Border.all(
-                  color: theme.colorScheme.primary,
-                  width: 2,
-                )
-              : Border.all(
-                  color: theme.colorScheme.outlineVariant.withAlpha(100),
+    return DragTarget<MealPlan>(
+      onWillAcceptWithDetails: (details) => _isDifferentDay(details.data.date, date),
+      onAcceptWithDetails: (details) {
+        final plan = details.data;
+        // Find current range from mealPlansProvider if possible or just use a generic update
+        // The moveMealPlan method in notifier handles the update
+        // We use the first provider instance found or invalidation
+        ref.read(mealPlansProvider().notifier).moveMealPlan(
+              plan.id,
+              date,
+              plan.mealType,
+            );
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+
+        return TactileContainer(
+          onTap: onTap,
+          child: AnimatedContainer(
+            duration: DurationTokens.fast,
+            margin: const EdgeInsets.only(bottom: Spacing.sm),
+            decoration: BoxDecoration(
+              color: isHovering
+                  ? theme.colorScheme.primaryContainer.withAlpha(80)
+                  : (isToday
+                      ? theme.colorScheme.primaryContainer.withAlpha(50)
+                      : theme.colorScheme.surfaceContainerLow),
+              borderRadius: BorderRadius.circular(RadiusTokens.lg),
+              border: isHovering
+                  ? Border.all(color: theme.colorScheme.primary, width: 2)
+                  : (isToday
+                      ? Border.all(color: theme.colorScheme.primary, width: 2)
+                      : Border.all(
+                          color: theme.colorScheme.outlineVariant.withAlpha(100),
+                        )),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha(isToday || isHovering ? 20 : 10),
+                  blurRadius: isToday || isHovering ? 12 : 4,
+                  offset: const Offset(0, 2),
                 ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withAlpha(isToday ? 20 : 10),
-              blurRadius: isToday ? 12 : 4,
-              offset: const Offset(0, 2),
+              ],
             ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Day header
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Spacing.md,
-                vertical: Spacing.sm,
-              ),
-              child: Row(
-                children: [
-                  // Day number circle
-                  Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: isToday
-                          ? theme.colorScheme.primary
-                          : theme.colorScheme.surfaceContainerHigh,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(
-                      child: Text(
-                        '${date.day}',
-                        style: theme.textTheme.titleSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: isToday
-                              ? theme.colorScheme.onPrimary
-                              : theme.colorScheme.onSurface,
-                        ),
-                      ),
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Day header
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.md,
+                    vertical: Spacing.sm,
                   ),
-                  const SizedBox(width: Spacing.sm),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
                     children: [
-                      Text(
-                        _getWeekdayName(date.weekday),
-                        style: theme.textTheme.titleSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
+                      // Day number circle
+                      Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
                           color: isToday
                               ? theme.colorScheme.primary
-                              : theme.colorScheme.onSurface,
+                              : theme.colorScheme.surfaceContainerHigh,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Text(
+                            '${date.day}',
+                            style: theme.textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: isToday
+                                  ? theme.colorScheme.onPrimary
+                                  : theme.colorScheme.onSurface,
+                            ),
+                          ),
                         ),
                       ),
-                      Text(
-                        '${date.month.toString().padLeft(2, '0')}/${date.year}',
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
+                      const SizedBox(width: Spacing.sm),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            _getWeekdayName(date.weekday),
+                            style: theme.textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: isToday
+                                  ? theme.colorScheme.primary
+                                  : theme.colorScheme.onSurface,
+                            ),
+                          ),
+                          Text(
+                            '${date.month.toString().padLeft(2, '0')}/${date.year}',
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      // Meal count badge
+                      if (plans.isNotEmpty)
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spacing.xs,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: theme.colorScheme.primary.withAlpha(30),
+                            borderRadius: BorderRadius.circular(RadiusTokens.full),
+                          ),
+                          child: Text(
+                            '${plans.length}',
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: theme.colorScheme.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
+                      const SizedBox(width: Spacing.xs),
+                      Icon(
+                        Icons.add_circle_rounded,
+                        color: theme.colorScheme.primary,
+                        size: 22,
                       ),
                     ],
                   ),
-                  const Spacer(),
-                  // Meal count badge
-                  if (plans.isNotEmpty)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: Spacing.xs,
-                        vertical: 2,
-                      ),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.primary.withAlpha(30),
-                        borderRadius: BorderRadius.circular(RadiusTokens.full),
-                      ),
-                      child: Text(
-                        '${plans.length}',
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: theme.colorScheme.primary,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  const SizedBox(width: Spacing.xs),
-                  Icon(
-                    Icons.add_circle_rounded,
-                    color: theme.colorScheme.primary,
-                    size: 22,
+                ),
+
+                // Divider
+                Divider(
+                  height: 1,
+                  color: theme.colorScheme.outlineVariant.withAlpha(80),
+                  indent: Spacing.md,
+                  endIndent: Spacing.md,
+                ),
+
+                // Meal slots by type
+                if (plans.isEmpty)
+                  _EmptyDaySlot(l10n: l10n, theme: theme)
+                else
+                  _MealsByTypeList(
+                    plans: plans,
+                    theme: theme,
+                    l10n: l10n,
+                    onDeleteMeal: onDeleteMeal,
                   ),
-                ],
-              ),
+              ],
             ),
-
-            // Divider
-            Divider(
-              height: 1,
-              color: theme.colorScheme.outlineVariant.withAlpha(80),
-              indent: Spacing.md,
-              endIndent: Spacing.md,
-            ),
-
-            // Meal slots by type
-            if (plans.isEmpty)
-              _EmptyDaySlot(l10n: l10n, theme: theme)
-            else
-              _MealsByTypeList(
-                plans: plans,
-                theme: theme,
-                l10n: l10n,
-                onDeleteMeal: onDeleteMeal,
-              ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
+  }
+
+  bool _isDifferentDay(DateTime? a, DateTime b) {
+    if (a == null) {
+      return false;
+    }
+    return a.year != b.year || a.month != b.month || a.day != b.day;
   }
 
   String _getWeekdayName(int weekday) {
@@ -267,100 +295,131 @@ class _MealEntryTile extends StatelessWidget {
     final icon = mealTypeIcon(plan.mealType);
     final typeLabel = mealTypeLabel(plan.mealType, l10n);
 
-    return Dismissible(
-      key: Key('meal_${plan.id}'),
-      direction: DismissDirection.endToStart,
-      background: Container(
-        alignment: Alignment.centerRight,
-        padding: const EdgeInsets.only(right: Spacing.md),
-        decoration: BoxDecoration(
-          color: theme.colorScheme.error.withAlpha(30),
-          borderRadius: BorderRadius.circular(RadiusTokens.sm),
-        ),
-        child: Icon(
-          Icons.delete_rounded,
-          color: theme.colorScheme.error,
+    return LongPressDraggable<MealPlan>(
+      data: plan,
+      axis: null,
+      delay: const Duration(milliseconds: 300),
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.8,
+            child: _buildTile(context, color, icon, typeLabel),
+          ),
         ),
       ),
-      onDismissed: (_) => onDelete(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Spacing.sm,
-          vertical: 2,
-        ),
-        child: Container(
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: _buildTile(context, color, icon, typeLabel),
+      ),
+      child: Dismissible(
+        key: Key('meal_${plan.id}'),
+        direction: DismissDirection.endToStart,
+        background: Container(
+          alignment: Alignment.centerRight,
+          padding: const EdgeInsets.only(right: Spacing.md),
           decoration: BoxDecoration(
-            color: color.withAlpha(15),
+            color: theme.colorScheme.error.withAlpha(30),
             borderRadius: BorderRadius.circular(RadiusTokens.sm),
           ),
-          child: ListTile(
-            dense: true,
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: Spacing.sm,
-              vertical: 0,
+          child: Icon(
+            Icons.delete_rounded,
+            color: theme.colorScheme.error,
+          ),
+        ),
+        onDismissed: (_) => onDelete(),
+        child: _buildTile(context, color, icon, typeLabel),
+      ),
+    );
+  }
+
+  Widget _buildTile(
+    BuildContext context,
+    Color color,
+    IconData icon,
+    String typeLabel,
+  ) {
+    final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.sm,
+        vertical: 2,
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: color.withAlpha(15),
+          borderRadius: BorderRadius.circular(RadiusTokens.sm),
+        ),
+        child: ListTile(
+          dense: true,
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: Spacing.sm,
+            vertical: 0,
+          ),
+          leading: Container(
+            width: 32,
+            height: 32,
+            decoration: BoxDecoration(
+              color: color.withAlpha(30),
+              shape: BoxShape.circle,
             ),
-            leading: Container(
-              width: 32,
-              height: 32,
-              decoration: BoxDecoration(
-                color: color.withAlpha(30),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, size: 16, color: color),
+            child: Icon(icon, size: 16, color: color),
+          ),
+          title: Text(
+            plan.recipeName,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.w500,
             ),
-            title: Text(
-              plan.recipeName,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w500,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    typeLabel,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      color: color,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  if (plan.servings > 1) ...[
                     Text(
-                      typeLabel,
+                      ' · ',
                       style: theme.textTheme.labelSmall?.copyWith(
-                        color: color,
-                        fontWeight: FontWeight.w600,
+                        color: theme.colorScheme.onSurfaceVariant,
                       ),
                     ),
-                    if (plan.servings > 1) ...[
-                      Text(
-                        ' · ',
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
+                    Text(
+                      l10n.mealPlannerServings(plan.servings),
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
                       ),
-                      Text(
-                        l10n.mealPlannerServings(plan.servings),
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
+                    ),
                   ],
-                ),
-                const SizedBox(height: 4),
-                PantryStatusBadge(
-                  recipeId: plan.recipeId,
-                  servings: plan.servings,
-                ),
-              ],
-            ),
-            trailing: IconButton(
-              icon: Icon(
-                Icons.delete_outline_rounded,
-                size: 18,
-                color: theme.colorScheme.onSurfaceVariant.withAlpha(180),
+                ],
               ),
-              onPressed: onDelete,
-              tooltip: l10n.mealPlannerDeleteMeal,
-              visualDensity: VisualDensity.compact,
+              const SizedBox(height: 4),
+              PantryStatusBadge(
+                recipeId: plan.recipeId,
+                servings: plan.servings,
+              ),
+            ],
+          ),
+          trailing: IconButton(
+            icon: Icon(
+              Icons.delete_outline_rounded,
+              size: 18,
+              color: theme.colorScheme.onSurfaceVariant.withAlpha(180),
             ),
+            onPressed: onDelete,
+            tooltip: l10n.mealPlannerDeleteMeal,
+            visualDensity: VisualDensity.compact,
           ),
         ),
       ),

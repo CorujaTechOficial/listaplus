@@ -369,6 +369,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                               isSelected: isSelected,
                               theme: theme,
                               l10n: l10n,
+                              servings: _servings,
                               onTap: () => setState(
                                   () => _selectedRecipe = recipe),
                             );
@@ -496,6 +497,7 @@ class _RecipeListItem extends StatelessWidget {
     required this.theme,
     required this.l10n,
     required this.onTap,
+    required this.servings,
   });
 
   final Recipe recipe;
@@ -503,6 +505,7 @@ class _RecipeListItem extends StatelessWidget {
   final ThemeData theme;
   final AppLocalizations l10n;
   final VoidCallback onTap;
+  final int servings;
 
   @override
   Widget build(BuildContext context) {
@@ -581,7 +584,7 @@ class _RecipeListItem extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     PantryStatusBadge(
-                      recipeId: recipe.id!,
+                      recipeId: recipe.id,
                       servings: servings,
                     ),
                   ],

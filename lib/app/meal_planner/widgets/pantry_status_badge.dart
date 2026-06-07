@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/models/recipe.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/utils/string_extensions.dart';
 
@@ -27,7 +26,9 @@ class PantryStatusBadge extends ConsumerWidget {
     return recipesAsync.when(
       data: (recipes) {
         final recipe = recipes.where((r) => r.id == recipeId).firstOrNull;
-        if (recipe == null) return const SizedBox.shrink();
+        if (recipe == null) {
+          return const SizedBox.shrink();
+        }
 
         return pantryAsync.when(
           data: (pantryItems) {
@@ -85,11 +86,11 @@ class PantryStatusBadge extends ConsumerWidget {
             height: 12, 
             child: CircularProgressIndicator(strokeWidth: 1),
           ),
-          error: (_, __) => const SizedBox.shrink(),
+          error: (_, _) => const SizedBox.shrink(),
         );
       },
       loading: () => const SizedBox.shrink(),
-      error: (_, __) => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
     );
   }
 }
