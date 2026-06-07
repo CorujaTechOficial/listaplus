@@ -944,6 +944,9 @@ class AppLocalizationsKk extends AppLocalizations {
   String get paywallMostPopular => 'ЕҢ ТАНЫМАЛ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Қауіпсіз төлем';
 
   @override

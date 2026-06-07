@@ -942,6 +942,9 @@ class AppLocalizationsIs extends AppLocalizations {
   String get paywallMostPopular => 'VINSÆLASTA';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Örugg greiðsla';
 
   @override

@@ -946,6 +946,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get paywallMostPopular => 'سب سے زیادہ مقبول';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'محفوظ ادائیگی';
 
   @override

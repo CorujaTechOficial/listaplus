@@ -1950,6 +1950,12 @@ abstract class AppLocalizations {
   /// **'MOST POPULAR'**
   String get paywallMostPopular;
 
+  /// No description provided for @paywallProLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'PRO'**
+  String get paywallProLabel;
+
   /// No description provided for @paywallSafeCheckout.
   ///
   /// In en, this message translates to:

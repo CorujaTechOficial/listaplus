@@ -845,26 +845,21 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Wypróbuj KipiList Pro za darmo przez 7 dni';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Anuluj w dowolnym momencie. Dzisiaj bez opłat.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Rozpocznij bezpłatny okres próbny';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Dodaj do listy zakupów';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count składniki dodane do $listName';
   }
 
   @override
@@ -946,6 +941,9 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get paywallMostPopular => 'NAJPOPULARNIEJSZE';
+
+  @override
+  String get paywallProLabel => 'PRO';
 
   @override
   String get paywallSafeCheckout => 'Bezpieczna płatność';
@@ -1787,40 +1785,40 @@ class AppLocalizationsPl extends AppLocalizations {
   String get catalogBrowse => 'Przeglądaj katalog';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Jesteś offline';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Prywatność i analityka';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList korzysta z Firebase Analytics, aby poprawić Twoje doświadczenia. Twoje dane są przetwarzane zgodnie z naszą Polityką Prywatności.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Przyjąć';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Nie, dzięki';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'W magazynie';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count brakujące elementy',
+      one: '$count brakujący element',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Data ważności';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Nie poinformowany';
 }
 
 /// The translations for Polish, as used in Poland (`pl_PL`).
@@ -2631,6 +2629,24 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
       one: '$count MIESIĄC BEZPŁATNY',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Wypróbuj KipiList Pro za darmo przez 7 dni';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Anuluj w dowolnym momencie. Dzisiaj bez opłat.';
+
+  @override
+  String get paywallTrialCta => 'Rozpocznij bezpłatny okres próbny';
+
+  @override
+  String get recipeAddToList => 'Dodaj do listy zakupów';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count składniki dodane do $listName';
   }
 
   @override
@@ -3540,4 +3556,40 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get catalogBrowse => 'Przeglądaj katalog';
+
+  @override
+  String get offlineBanner => 'Jesteś offline';
+
+  @override
+  String get consentTitle => 'Prywatność i analityka';
+
+  @override
+  String get consentBody =>
+      'KipiList korzysta z Firebase Analytics, aby poprawić Twoje doświadczenia. Twoje dane są przetwarzane zgodnie z naszą Polityką Prywatności.';
+
+  @override
+  String get consentAccept => 'Przyjąć';
+
+  @override
+  String get consentDecline => 'Nie, dzięki';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'W magazynie';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count brakujące elementy',
+      one: '$count brakujący element',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Data ważności';
+
+  @override
+  String get notInformed => 'Nie poinformowany';
 }

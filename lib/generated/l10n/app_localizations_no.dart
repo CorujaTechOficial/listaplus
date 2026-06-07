@@ -838,26 +838,21 @@ class AppLocalizationsNo extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Prøv KipiList Pro gratis i 7 dager';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Avbryt når som helst. Ingen kostnad i dag.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Start gratis prøveversjon';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Legg til handleliste';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ingredienser lagt til $listName';
   }
 
   @override
@@ -939,6 +934,9 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get paywallMostPopular => 'MEST POPULÆR';
+
+  @override
+  String get paywallProLabel => 'PRO';
 
   @override
   String get paywallSafeCheckout => 'Sikker betaling';
@@ -1778,40 +1776,40 @@ class AppLocalizationsNo extends AppLocalizations {
   String get catalogBrowse => 'Bla gjennom katalogen';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Du er frakoblet';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Personvern og analyse';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList bruker Firebase Analytics for å forbedre opplevelsen din. Dine data behandles i henhold til våre retningslinjer for personvern.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Akseptere';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Nei takk';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'På lager';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count mangler elementer',
+      one: '$count mangler element',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Utløpsdato';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Ikke informert';
 }
 
 /// The translations for Norwegian, as used in Norway (`no_NO`).
@@ -2615,6 +2613,24 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Prøv KipiList Pro gratis i 7 dager';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Avbryt når som helst. Ingen kostnad i dag.';
+
+  @override
+  String get paywallTrialCta => 'Start gratis prøveversjon';
+
+  @override
+  String get recipeAddToList => 'Legg til handleliste';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingredienser lagt til $listName';
   }
 
   @override
@@ -3522,4 +3538,40 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get catalogBrowse => 'Bla gjennom katalogen';
+
+  @override
+  String get offlineBanner => 'Du er frakoblet';
+
+  @override
+  String get consentTitle => 'Personvern og analyse';
+
+  @override
+  String get consentBody =>
+      'KipiList bruker Firebase Analytics for å forbedre opplevelsen din. Dine data behandles i henhold til våre retningslinjer for personvern.';
+
+  @override
+  String get consentAccept => 'Akseptere';
+
+  @override
+  String get consentDecline => 'Nei takk';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'På lager';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count mangler elementer',
+      one: '$count mangler element',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Utløpsdato';
+
+  @override
+  String get notInformed => 'Ikke informert';
 }

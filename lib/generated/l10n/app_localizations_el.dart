@@ -951,6 +951,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get paywallMostPopular => 'ΠΙΟ ΔΗΜΟΦΗΤΙΚΟ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Ασφαλής πληρωμή';
 
   @override

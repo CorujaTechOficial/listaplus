@@ -388,6 +388,7 @@
   "paywallCtaUnlock": "Unlock PRO",
   "paywallBestValue": "BEST VALUE",
   "paywallMostPopular": "MOST POPULAR",
+  "paywallProLabel": "PRO",
   "paywallSafeCheckout": "Secure payment",
   "paywallSelectPlan": "Choose your plan:",
   "paywallSavePercent": "SAVE {percent}%",

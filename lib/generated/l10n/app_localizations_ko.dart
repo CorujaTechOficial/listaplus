@@ -912,6 +912,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get paywallMostPopular => '가장 인기 있는';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => '안전한 결제';
 
   @override

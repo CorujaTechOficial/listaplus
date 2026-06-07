@@ -941,6 +941,9 @@ class AppLocalizationsHy extends AppLocalizations {
   String get paywallMostPopular => 'ԱՄԵՆԱՍԻՐՎԱԾԸ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Ապահով վճարում';
 
   @override

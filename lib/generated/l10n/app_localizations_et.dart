@@ -939,6 +939,9 @@ class AppLocalizationsEt extends AppLocalizations {
   String get paywallMostPopular => 'KÕIGE POPULAARSEM';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Turvaline makse';
 
   @override

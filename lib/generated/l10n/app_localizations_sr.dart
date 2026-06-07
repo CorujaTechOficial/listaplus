@@ -945,6 +945,9 @@ class AppLocalizationsSr extends AppLocalizations {
   String get paywallMostPopular => 'НАЈПОПУЛАРНИЈИ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Сигурно плаћање';
 
   @override

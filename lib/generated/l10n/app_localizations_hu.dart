@@ -943,6 +943,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get paywallMostPopular => 'LEGNÉPSZERŰBB';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Biztonságos fizetés';
 
   @override

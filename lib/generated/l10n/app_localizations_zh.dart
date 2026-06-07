@@ -914,6 +914,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get paywallMostPopular => '最受欢迎';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => '安全支付';
 
   @override

@@ -843,26 +843,21 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Probeer KipiList Pro 7 dagen gratis';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Annuleer op elk gewenst moment. Vandaag geen kosten.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Gratis proefperiode starten';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Toevoegen aan boodschappenlijstje';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count ingrediënten toegevoegd aan $listName';
   }
 
   @override
@@ -944,6 +939,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get paywallMostPopular => 'MEEST POPULAIR';
+
+  @override
+  String get paywallProLabel => 'PRO';
 
   @override
   String get paywallSafeCheckout => 'Veilige betaling';
@@ -1786,40 +1784,40 @@ class AppLocalizationsNl extends AppLocalizations {
   String get catalogBrowse => 'Catalogus doorbladeren';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Je bent offline';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privacy en analyse';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList gebruikt Firebase Analytics om uw ervaring te verbeteren. Uw gegevens worden verwerkt volgens ons privacybeleid.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Accepteren';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Nee, bedankt';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Op voorraad';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count ontbrekende items',
+      one: '$count ontbrekend item',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Vervaldatum';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Niet op de hoogte';
 }
 
 /// The translations for Dutch Flemish, as used in Netherlands (`nl_NL`).
@@ -2628,6 +2626,24 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
       one: '$count MAAND GRATIS',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Probeer KipiList Pro 7 dagen gratis';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Annuleer op elk gewenst moment. Vandaag geen kosten.';
+
+  @override
+  String get paywallTrialCta => 'Gratis proefperiode starten';
+
+  @override
+  String get recipeAddToList => 'Toevoegen aan boodschappenlijstje';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingrediënten toegevoegd aan $listName';
   }
 
   @override
@@ -3538,4 +3554,40 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get catalogBrowse => 'Catalogus doorbladeren';
+
+  @override
+  String get offlineBanner => 'Je bent offline';
+
+  @override
+  String get consentTitle => 'Privacy en analyse';
+
+  @override
+  String get consentBody =>
+      'KipiList gebruikt Firebase Analytics om uw ervaring te verbeteren. Uw gegevens worden verwerkt volgens ons privacybeleid.';
+
+  @override
+  String get consentAccept => 'Accepteren';
+
+  @override
+  String get consentDecline => 'Nee, bedankt';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Op voorraad';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ontbrekende items',
+      one: '$count ontbrekend item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Vervaldatum';
+
+  @override
+  String get notInformed => 'Niet op de hoogte';
 }

@@ -940,6 +940,9 @@ class AppLocalizationsMy extends AppLocalizations {
   String get paywallMostPopular => 'လူကြိုက်အများဆုံး';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'လုံခြုံသောငွေပေးချေမှု';
 
   @override

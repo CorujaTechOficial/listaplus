@@ -935,6 +935,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get paywallMostPopular => 'PALING POPULER';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Pembayaran aman';
 
   @override

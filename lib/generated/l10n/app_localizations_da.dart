@@ -941,6 +941,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get paywallMostPopular => 'MEST POPULÆR';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Sikker betaling';
 
   @override

@@ -927,6 +927,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get paywallMostPopular => 'በጣም ታዋቂ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'ደህንነቱ የተጠበቀ ክፍያ';
 
   @override

@@ -936,6 +936,9 @@ class AppLocalizationsGu extends AppLocalizations {
   String get paywallMostPopular => 'સૌથી વધુ લોકપ્રિય';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'સુરક્ષિત ચુકવણી';
 
   @override

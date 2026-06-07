@@ -950,6 +950,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get paywallMostPopular => 'MÉS POPULARS';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Pagament segur';
 
   @override

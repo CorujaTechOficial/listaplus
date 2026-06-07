@@ -74,7 +74,7 @@ class PremiumGate extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
-                      'PRO',
+                      l10n.paywallProLabel,
                       style: theme.textTheme.labelSmall?.copyWith(
                         fontWeight: FontWeight.w900,
                         color: Colors.black,

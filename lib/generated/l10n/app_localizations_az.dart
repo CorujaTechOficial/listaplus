@@ -942,6 +942,9 @@ class AppLocalizationsAz extends AppLocalizations {
   String get paywallMostPopular => 'ƏN POPULLAR';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Təhlükəsiz ödəniş';
 
   @override

@@ -929,6 +929,9 @@ class AppLocalizationsKm extends AppLocalizations {
   String get paywallMostPopular => 'ពេញនិយមបំផុត។';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'ការទូទាត់ប្រកបដោយសុវត្ថិភាព';
 
   @override

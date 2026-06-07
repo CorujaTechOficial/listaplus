@@ -947,6 +947,9 @@ class AppLocalizationsMk extends AppLocalizations {
   String get paywallMostPopular => 'НАЈПОПУЛАРНО';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Безбедно плаќање';
 
   @override

@@ -932,6 +932,9 @@ class AppLocalizationsLo extends AppLocalizations {
   String get paywallMostPopular => 'ນິຍົມທີ່ສຸດ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'ການຊໍາລະທີ່ປອດໄພ';
 
   @override

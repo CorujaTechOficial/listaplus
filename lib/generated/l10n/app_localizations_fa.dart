@@ -939,6 +939,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get paywallMostPopular => 'محبوب ترین';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'پرداخت مطمئن';
 
   @override

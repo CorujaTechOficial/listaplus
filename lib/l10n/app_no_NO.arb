@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -202,6 +216,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -209,6 +230,13 @@
       },
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
       }
     }
   },
@@ -220,6 +248,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -341,6 +376,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -348,10 +400,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -416,11 +499,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Om",
   "achievements": "Prestasjoner",
+  "achievementsTitle": "Mine prestasjoner",
   "activeListening": "Aktiv lytting",
   "add": "Legg til",
   "addAllToList": "Legg alle til listen",
+  "addCategoryColor": "Farge:",
+  "addCategoryIcon": "Ikon:",
   "addDirectToList": "Legg direkte til listen",
   "addIngredient": "Tilsett ingrediens",
   "addItem": "Legg til vare",
@@ -432,23 +532,52 @@
   "advancedFeatures": "Avanserte funksjoner",
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarte forslag, oppskrifter og personlige tips med vår AI-assistent.",
+  "aiAssistantGeneral": "Generalassistent",
+  "aiAssistantHistory": "Assistenthistorie",
+  "aiConversationHistory": "Samtalehistorie",
   "aiCreditsRemaining": "{remaining} kreditter igjen",
+  "aiDeleteConversationConfirm": "Slett",
+  "aiDeleteConversationTitle": "Vil du slette samtalen?",
+  "aiDeletedList": "Slettet liste",
   "aiEnergy": "AI energi",
   "aiError": "Beklager, det oppstod en feil under behandlingen. Sjekk tilkoblingen din eller prøv igjen senere.",
+  "aiFirstOpenHint": "Jeg er Kipi, handleassistenten din. Spør meg hva som helst om listen din!",
+  "aiHello": "Hallo! Jeg er Kipi",
+  "aiHowCanIHelp": "Hvordan kan jeg hjelpe deg i dag?",
   "aiLimitAlmostReached": "Nesten tom for AI-meldinger",
+  "aiNewConversation": "Ny samtale",
+  "aiNewSession": "Ny økt",
+  "aiNoConversationFound": "Fant ingen samtale",
+  "aiNoMessagesFound": "Ingen meldinger funnet",
+  "aiPremiumUpsell": "Gå Premium",
+  "aiRecentConversations": "Nylige samtaler",
+  "aiSearchMessages": "Søk etter meldinger...",
+  "aiStartNewConversation": "Start ny samtale",
+  "aiSuggestCreateList": "Lag min første liste",
+  "aiSuggestSaveMore": "Hvordan spare mer?",
   "aiTeaserFallback": "Abonner på Premium for å låse opp hele svaret og få ubegrensede AI-tips for shopping...",
+  "aiUnlockWithAd": "Lås opp med Ad",
   "aiVoiceCommandTooltip": "AI-stemmekommando (Premium)",
+  "aiWelcomeTitle": "Hallo! 👋 Jeg er **Kipi**, din smarte handleassistent.",
   "allTags": "Alle",
   "alreadyPurchased": "Allerede kjøpt",
   "appTitle": "Handleliste",
   "appearance": "Utseende",
   "archiveList": "Arkiver liste",
+  "artifactReplaceBody": "Velg et produktalternativ for å optimalisere kostnadene.",
+  "artifactReplaceTitle": "Erstatt {name}",
+  "artifactSuggestedItems": "Foreslåtte elementer",
+  "artifactSwapButton": "Bytt",
+  "artifactSwappedLabel": "Byttet",
   "backToChat": "Tilbake til Chat",
+  "backToToday": "Tilbake til i dag",
   "backupExported": "Sikkerhetskopi eksportert!",
   "backupNav": "Sikkerhetskopi",
   "backupPremiumDescription": "Sikkerhetskopi og eksport er en premiumfunksjon",
   "backupSubtitle": "Eksporter eller importer dine data",
   "backupTitle": "Sikkerhetskopi",
+  "barcodeScannerHint": "Pek kameraet mot strekkoden",
+  "barcodeScannerTitle": "Skann strekkode",
   "becomePremium": "Bli Premium",
   "budgetAmountLabel": "Budsjettbeløp",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -471,9 +600,11 @@
   "catalogAddItems": "Legg til {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Bla gjennom katalogen",
   "catalogFilterNational": "Nationals",
+  "catalogItemAdded": "{name} lagt til",
   "catalogMyFrequents": "Mine hyppige",
   "catalogProductNotFound": "Produktet ble ikke funnet, skriv inn navnet",
   "catalogRareSection": "mindre vanlig i ditt land",
+  "catalogRetry": "Prøv igjen",
   "catalogSearchGlobal": "Søk etter et hvilket som helst produkt...",
   "catalogSearchInCategory": "Søk i {category}...",
   "catalogSortAZ": "A–Å",
@@ -505,6 +636,10 @@
   "confirmDeleteItems": "Fjerne {count} vare(r)?",
   "confirmDeleteTitle": "Bekreft",
   "confirmRemovePantry": "Fjerne \"{name}\" fra spiskammeret?",
+  "consentAccept": "Akseptere",
+  "consentBody": "KipiList bruker Firebase Analytics for å forbedre opplevelsen din. Dine data behandles i henhold til våre retningslinjer for personvern.",
+  "consentDecline": "Nei takk",
+  "consentTitle": "Personvern og analyse",
   "consumed": "Forbrukt",
   "continueAsGuest": "Fortsett som gjest",
   "copiedToClipboard": "Kopiert til utklippstavle",
@@ -542,8 +677,16 @@
   "editRecipe": "Redigere",
   "editRecipeTitle": "Rediger oppskrift",
   "emptyListAddItems": "Listen din er tom! Legg til varer først. ℹ️",
+  "emptyListAiAction": "Spør AI Assistant",
+  "emptyListAiExample": "Prøv å be AI om å foreslå gjenstander",
   "emptyListSubtitle": "Legg til varer for å komme i gang",
   "emptyListTitle": "Listen din er tom",
+  "emptyMealSlotHint": "Trykk for å planlegge et måltid",
+  "emptyPantryScan": "Skann produktet",
+  "emptyPantrySubtitle": "Legg til produkter for å holde styr på hva du har hjemme",
+  "emptyPantryTitle": "Tomt spiskammer",
+  "emptyRecipesSubtitle": "Lag din første oppskrift eller be AI-en om å generere en",
+  "emptyRecipesTitle": "Ingen oppskrifter lagret",
   "enterCodeHint": "Skriv inn koden",
   "enterUrl": "Skriv inn URL",
   "error": "Feil: {message}",
@@ -557,6 +700,7 @@
   "estimatedPrice": "Estimert pris",
   "exit": "Gå",
   "exitShoppingMode": "Avslutt Shopping-modus",
+  "expirationDate": "Utløpsdato",
   "exportData": "Eksporter data",
   "exportDataSubtitle": "Lagre alle lister som JSON",
   "exportExcel": "Eksporter som Excel",
@@ -628,12 +772,20 @@
   "listAdded": "{listName} lagt til!",
   "listArchived": "Listen ble arkivert!",
   "listAssistant": "Listeassistent",
+  "listBudgetIndicator": "Budsjett: {value}",
   "listBudgetTitle": "Listebudsjett",
   "listCreated": "Listen \"{name}\" opprettet med {count} varer",
+  "listDelete": "Slett",
+  "listErrorGeneric": "Det oppstod en feil. Vennligst prøv igjen.",
   "listHelp": "Hvordan kan jeg hjelpe med listen din?",
   "listHistory": "Listehistorikk",
   "listNameLabel": "Listenavn",
   "listOrganizedMagic": "Listen magisk organisert etter kategorier! ✨",
+  "listProfile": "Profil",
+  "listSelectAll": "Velg alle",
+  "listShoppingComplete": "Alt ferdig!",
+  "listShoppingCompleteSubtitle": "Du har fullført listen.",
+  "listTotalLabel": "Totalt: {value}",
   "listening": "Lytter...",
   "lists": "Lister",
   "loading": "Laster...",
@@ -641,10 +793,14 @@
   "loginError": "Innloggingsfeil: {error}",
   "loginPrompt": "Logg inn for å låse opp\npremiumfunksjoner",
   "longHistoryWarning": "Lang historie: assistenten fokuserer på de siste meldingene for bedre ytelse.",
+  "manageCategoriesEmpty": "Ingen kategorier ennå",
+  "manageCategoriesTitle": "Administrer kategorier",
   "manageSubscription": "Administrer abonnement",
   "markAsPurchased": "Marker som kjøpt",
   "markItemsToSeeAnalysis": "Merk varer som kjøpt for å se analysen.",
   "marketMode": "Markedsmodus",
+  "mealDragHint": "Hold inne for å dra og flytte",
+  "mealNoRecipeFound": "Ingen oppskrift funnet",
   "mealPlannerAddMeal": "Legg til måltid",
   "mealPlannerDateLabel": "Dato",
   "mealPlannerDeleteMeal": "Fjern måltidet",
@@ -666,6 +822,8 @@
   "mealPlannerNoRecipesFound": "Ingen oppskrifter funnet",
   "mealPlannerNoRecipesHint": "Lag oppskrifter i Oppskrifter-fanen først",
   "mealPlannerNoteLabel": "Merknad (valgfritt)",
+  "mealPlannerPantryAllAvailable": "På lager",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} mangler element} other{{count} mangler elementer}}",
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Legg til i planen",
   "mealPlannerSearchRecipes": "Søk etter oppskrifter...",
@@ -678,6 +836,8 @@
   "mealPlannerWeekEmpty": "Ingenting planlagt denne uken",
   "mealPlannerWeekEmptyHint": "Trykk på hvilken som helst dag for å begynne å planlegge måltidene dine!",
   "mealPlannerWeekProgress": "{count} av {total} måltider planlagt",
+  "mealSearchRecipes": "Søk etter oppskrifter...",
+  "mealTypeLabel": "Måltidstype",
   "monthlyBudgetAppBar": "Månedlig budsjett",
   "monthlyBudgetNav": "Månedlig budsjett",
   "monthlyBudgetSpent": "{spent} / {budget}",
@@ -708,6 +868,10 @@
   "noRecipesSaved": "Ingen oppskrifter lagret",
   "noRecipesSavedHint": "Lag din første egendefinerte oppskrift ved å trykke på knappen nedenfor.",
   "noTracking": "Ingen sporing",
+  "notInformed": "Ikke informert",
+  "offlineBanner": "Du er frakoblet",
+  "onboardingAIShowSubtitle": "Kipi gjør alt klart for deg...",
+  "onboardingAIShowTitle": "Se intelligens i aksjon!",
   "onboardingAnnualBadge": "Best verdi",
   "onboardingAnnualLabel": "Årlig",
   "onboardingCancelAnytime": "Avbryt når som helst. Ingen forpliktelse.",
@@ -741,11 +905,35 @@
   "organizeByAisles": "Organiser etter ganger",
   "organizingAi": "ORGANISERER MED AI...",
   "pantry": "Spiskammer",
+  "pantryAdvancedMode": "Avansert",
   "pantryAppBar": "Spiskammer",
+  "pantryCompactView": "Kompakt visning",
+  "pantryDeficit": "Mangler {amount}{unit}",
+  "pantryDeleteItemsContent": "Vil du slette {count} valgte elementer?",
+  "pantryDeleteItemsTitle": "Slett elementer",
+  "pantryDeleteSelected": "Slett valgte",
+  "pantryDetailedView": "Detaljert visning",
   "pantryEditTitle": "Rediger {name}",
   "pantryEmpty": "Tomt spiskammer",
   "pantryEmptySubtitle": "Legg til produkter du ønsker å ha hjemme",
+  "pantryExpired": "Utløpt",
+  "pantryExpiresIn": "Utløper om {days} dager",
+  "pantryExpiringSoon": "Utløper snart",
+  "pantryExpiryDate": "Utløpsdato",
+  "pantryExpiryNotSet": "Ikke satt",
+  "pantryFilterAll": "Alle",
+  "pantryFilterExpiring": "Utløper",
+  "pantryFilterOutStock": "Ikke på lager",
+  "pantryFirstOpenHint": "Hold styr på hva du har hjemme. Legg til elementer eller skann strekkoder.",
   "pantryItemRemoved": "Vare fjernet",
+  "pantryMoreDetails": "Flere detaljer",
+  "pantryNoItemsFound": "Ingen elementer funnet for \"{query}\"",
+  "pantryRestockSelected": "Lagre på nytt valgt",
+  "pantryScanProduct": "Skann produktet",
+  "pantryScanner": "Skann produkt",
+  "pantrySearchHint": "Søk i pantry...",
+  "pantrySelectedCount": "{count} valgt",
+  "pantrySimpleMode": "Grunnleggende",
   "paywallAfterItem1": "Korn",
   "paywallAfterItem2": "Rengjøring",
   "paywallAfterItem3": "Kjøtt",
@@ -793,8 +981,11 @@
   "paywallTestimonial2Text": "Jeg glemte aldri et listeelement igjen. AI-chatten er oppsiktsvekkende!",
   "paywallTestimonialsTitle": "Hva brukerne våre sier:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Start gratis prøveversjon",
   "paywallTrialDays": "{days} DAGER GRATIS",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
+  "paywallTrialSubtitle": "Avbryt når som helst. Ingen kostnad i dag.",
+  "paywallTrialTitle": "Prøv KipiList Pro gratis i 7 dager",
   "paywallTrialWeeks": "{count,plural, one{{count} UKE GRATIS} other{{count} UKER GRATIS}}",
   "prefAIAssistant": "Personlig AI-assistent",
   "prefCustomThemes": "Egendefinerte temaer",
@@ -817,6 +1008,8 @@
   "quickRecipe": "Rask oppskrift",
   "quickRecipePrompt": "Foreslå oppskrifter med varer fra listen min.",
   "quickReplies": "Raske svar:",
+  "recipeAddToList": "Legg til handleliste",
+  "recipeAddedConfirmation": "{count} ingredienser lagt til {listName}",
   "recipeCreated": "Oppskrift laget!",
   "recipeDeleted": "Oppskriften er slettet",
   "recipeImage": "Oppskriftsbilde",
@@ -853,10 +1046,33 @@
   "setBudgetButton": "Sett budsjett",
   "setBudgetTitle": "Månedlig budsjett",
   "settingsAppBar": "Innstillinger",
+  "settingsAssistantHistory": "Assistenthistorie",
+  "settingsAssistantHistorySubtitle": "Se og søk i tidligere samtaler",
+  "settingsAssistantName": "Assistentnavn",
+  "settingsCancel": "Kansellere",
+  "settingsCategories": "Kategorier",
+  "settingsCategoriesSubtitle": "Administrer varekategorier",
+  "settingsChooseIcon": "Velg et ikon:",
+  "settingsCustomizeAI": "Tilpass AI Assistant",
+  "settingsCustomizeDialog": "Tilpass assistent",
   "settingsDefaultScreen": "Standard startskjerm",
   "settingsDefaultScreenSubtitle": "Velg mellom handleliste eller AI-chat",
+  "settingsErrorSubscription": "Feil ved innlasting av abonnement",
+  "settingsLegal": "Lovlig",
+  "settingsLoadingSubscription": "Laster inn abonnement...",
+  "settingsMyProfile": "Min profil",
+  "settingsPrivacyPolicy": "Personvernerklæring",
+  "settingsProActive": "KipiList Pro aktiv",
+  "settingsProCta": "Lås opp ubegrensede lister, AI og mer",
+  "settingsProfileSubtitle": "Personlige preferanser for AI-assistenten",
+  "settingsSave": "Spare",
   "settingsScreenChat": "AI Chat",
   "settingsScreenList": "Handleliste",
+  "settingsSectionAccount": "Konto",
+  "settingsSectionApp": "App",
+  "settingsSectionAssistant": "AI-assistent",
+  "settingsSubscription": "Abonnement",
+  "settingsTermsOfService": "Vilkår for bruk",
   "share": "Del",
   "shareApp": "Del app",
   "shareAppDescription": "Inviter venner til å bruke KipiList",
@@ -877,6 +1093,7 @@
   "signInApple": "Logg inn med Apple",
   "signInGoogle": "Logg inn med Google",
   "smartOrganization": "Smart organisering",
+  "sortAZ": "A–Å",
   "sortCategory": "Kategori",
   "sortDate": "Dato",
   "sortManual": "Manuell",
@@ -899,6 +1116,7 @@
   "themePink": "Rosa",
   "themePurple": "Lilla",
   "themeRed": "Rød",
+  "themeSelectionTitle": "Velg temafarge",
   "themeTeal": "Blågrønn",
   "totalEstimated": "Total estimert: {amount}",
   "totalSpending": "Totalt forbruk",
@@ -912,6 +1130,20 @@
   "unlockFullResponse": "Lås opp full respons",
   "unmark": "Fjern markering",
   "upgrade": "Oppgrader",
+  "userProfileAvoidedStores": "Unngået butikker",
+  "userProfileAvoidedStoresHint": "f.eks. Butikk X, Butikk Y",
+  "userProfileDescription": "Legg til dine personlige preferanser slik at AI-assistenten kan foreslå personlige ting og oppskrifter.",
+  "userProfileDietaryRestrictions": "Kostholdsbegrensninger",
+  "userProfileDietaryRestrictionsHint": "f.eks. vegansk, vegetarisk, glutenfri",
+  "userProfileErrorLoading": "Feil: {error}",
+  "userProfileErrorSaving": "Feil ved lagring: {error}",
+  "userProfileNotes": "Notater",
+  "userProfileNotesHint": "Andre preferanser for assistenten",
+  "userProfilePreferredStore": "Foretrukket butikk",
+  "userProfilePreferredStoreHint": "f.eks. Butikknavn",
+  "userProfileSaveButton": "Lagre profil",
+  "userProfileSaved": "Profilen er lagret!",
+  "userProfileTitle": "Min profil",
   "validForLimitedTime": "Gyldig i begrenset tid",
   "version": "Versjon",
   "viewActive": "Se aktive",
@@ -926,6 +1158,13 @@
   "voiceCommandTitle": "AI-stemmekommando",
   "voiceProFeature": "Avanserte talekommandoer er Pro. Aktiverer grunnleggende diktering ...",
   "voiceTranscriptionTooltip": "Stemmeskriving (Gratis)",
+  "weekdayFriday": "fredag",
+  "weekdayMonday": "mandag",
+  "weekdaySaturday": "lørdag",
+  "weekdaySunday": "søndag",
+  "weekdayThursday": "torsdag",
+  "weekdayTuesday": "tirsdag",
+  "weekdayWednesday": "onsdag",
   "welcomeAiAssistant": "Velkommen til AI Assistant",
   "whatToDoWithItem": "Hva vil du gjøre med denne varen?",
   "yes": "Ja",

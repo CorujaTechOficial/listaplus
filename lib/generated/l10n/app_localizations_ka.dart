@@ -942,6 +942,9 @@ class AppLocalizationsKa extends AppLocalizations {
   String get paywallMostPopular => 'ყველაზე პოპულარული';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'უსაფრთხო გადახდა';
 
   @override

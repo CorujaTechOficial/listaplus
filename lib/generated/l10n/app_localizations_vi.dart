@@ -941,6 +941,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get paywallMostPopular => 'PHỔ BIẾN NHẤT';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Thanh toán an toàn';
 
   @override

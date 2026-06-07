@@ -18,6 +18,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -32,6 +39,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -169,6 +183,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -179,10 +200,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -284,6 +319,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -291,10 +343,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -359,11 +442,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Over",
   "achievements": "Prestaties",
+  "achievementsTitle": "Mijn prestaties",
   "activeListening": "Actief luisteren",
   "add": "Toevoegen",
   "addAllToList": "Alles aan lijst toevoegen",
+  "addCategoryColor": "Kleur:",
+  "addCategoryIcon": "Icon:",
   "addDirectToList": "Voeg direct toe aan de lijst",
   "addIngredient": "Ingrediënt toevoegen",
   "addItem": "Item toevoegen",
@@ -375,23 +475,52 @@
   "advancedFeatures": "Geavanceerde functies",
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Krijg slimme suggesties, recepten en persoonlijke tips met onze AI-assistent.",
+  "aiAssistantGeneral": "Algemeen assistent",
+  "aiAssistantHistory": "Assistent Geschiedenis",
+  "aiConversationHistory": "Gespreksgeschiedenis",
   "aiCreditsRemaining": "{remaining} credits over",
+  "aiDeleteConversationConfirm": "Verwijderen",
+  "aiDeleteConversationTitle": "Gesprek verwijderen?",
+  "aiDeletedList": "Lijst verwijderd",
   "aiEnergy": "AI-energie",
   "aiError": "Sorry, er is een fout opgetreden bij het verwerken van je verzoek. Controleer je verbinding of probeer het later opnieuw.",
+  "aiFirstOpenHint": "Ik ben Kipi, je winkelassistent. Vraag me alles over je lijst!",
+  "aiHello": "Hallo! Ik ben Kipi",
+  "aiHowCanIHelp": "Hoe kan ik je vandaag helpen?",
   "aiLimitAlmostReached": "Bijna geen AI-berichten meer",
+  "aiNewConversation": "Nieuw gesprek",
+  "aiNewSession": "Nieuwe sessie",
+  "aiNoConversationFound": "Geen gesprek gevonden",
+  "aiNoMessagesFound": "Geen berichten gevonden",
+  "aiPremiumUpsell": "Ga voor Premium",
+  "aiRecentConversations": "Recente gesprekken",
+  "aiSearchMessages": "Berichten zoeken...",
+  "aiStartNewConversation": "Begin een nieuw gesprek",
+  "aiSuggestCreateList": "Maak mijn eerste lijst",
+  "aiSuggestSaveMore": "Hoe kunt u meer besparen?",
   "aiTeaserFallback": "Abonneer u op Premium om het volledige antwoord te ontgrendelen en onbeperkte AI-tips te krijgen voor uw boodschappen...",
+  "aiUnlockWithAd": "Ontgrendel met advertentie",
   "aiVoiceCommandTooltip": "AI-stemcommando (Premium)",
+  "aiWelcomeTitle": "Hallo! 👋 Ik ben **Kipi**, jouw slimme winkelassistent.",
   "allTags": "Alle",
   "alreadyPurchased": "Al gekocht",
   "appTitle": "Boodschappenlijst",
   "appearance": "Weergave",
   "archiveList": "Lijst archiveren",
+  "artifactReplaceBody": "Selecteer een productalternatief om de kosten te optimaliseren.",
+  "artifactReplaceTitle": "Vervang {name}",
+  "artifactSuggestedItems": "Voorgestelde items",
+  "artifactSwapButton": "Ruil",
+  "artifactSwappedLabel": "Verwisseld",
   "backToChat": "Terug naar Chatten",
+  "backToToday": "Terug naar vandaag",
   "backupExported": "Back-up geëxporteerd!",
   "backupNav": "Back-up",
   "backupPremiumDescription": "Back-up en export is een Premium-functie",
   "backupSubtitle": "Exporteer of importeer je gegevens",
   "backupTitle": "Back-up",
+  "barcodeScannerHint": "Richt de camera op de streepjescode",
+  "barcodeScannerTitle": "Streepjescode scannen",
   "becomePremium": "Word Premium",
   "budgetAmountLabel": "Budgetbedrag",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -414,9 +543,11 @@
   "catalogAddItems": "Voeg {count} {count, plural, one{item} other{items}} toe →",
   "catalogBrowse": "Catalogus doorbladeren",
   "catalogFilterNational": "Onderdanen",
+  "catalogItemAdded": "{name} toegevoegd",
   "catalogMyFrequents": "Mijn frequente bezoekers",
   "catalogProductNotFound": "Product niet gevonden, typ de naam",
   "catalogRareSection": "minder gebruikelijk in uw land",
+  "catalogRetry": "Probeer het opnieuw",
   "catalogSearchGlobal": "Zoek een product...",
   "catalogSearchInCategory": "Zoeken in {category}...",
   "catalogSortAZ": "A-Z",
@@ -448,6 +579,10 @@
   "confirmDeleteItems": "{count} item(s) verwijderen?",
   "confirmDeleteTitle": "Bevestigen",
   "confirmRemovePantry": "\"{name}\" verwijderen uit voorraadkast?",
+  "consentAccept": "Accepteren",
+  "consentBody": "KipiList gebruikt Firebase Analytics om uw ervaring te verbeteren. Uw gegevens worden verwerkt volgens ons privacybeleid.",
+  "consentDecline": "Nee, bedankt",
+  "consentTitle": "Privacy en analyse",
   "consumed": "Verbruikt",
   "continueAsGuest": "Doorgaan als gast",
   "copiedToClipboard": "Gekopieerd naar klembord",
@@ -485,8 +620,16 @@
   "editRecipe": "Bewerken",
   "editRecipeTitle": "Recept bewerken",
   "emptyListAddItems": "Je lijst is leeg! Voeg eerst items toe. ℹ️",
+  "emptyListAiAction": "Vraag het aan AI-assistent",
+  "emptyListAiExample": "Probeer de AI te vragen items voor te stellen",
   "emptyListSubtitle": "Voeg items toe om te beginnen",
   "emptyListTitle": "Je lijst is leeg",
+  "emptyMealSlotHint": "Tik om een ​​maaltijd te plannen",
+  "emptyPantryScan": "Scanproduct",
+  "emptyPantrySubtitle": "Voeg producten toe om bij te houden wat je in huis hebt",
+  "emptyPantryTitle": "Lege voorraadkast",
+  "emptyRecipesSubtitle": "Maak je eerste recept of vraag de AI om er een te genereren",
+  "emptyRecipesTitle": "Geen recepten opgeslagen",
   "enterCodeHint": "Voer de code in",
   "enterUrl": "Voer URL in",
   "error": "Fout: {message}",
@@ -500,6 +643,7 @@
   "estimatedPrice": "Geschatte prijs",
   "exit": "Uitgang",
   "exitShoppingMode": "Verlaat de winkelmodus",
+  "expirationDate": "Vervaldatum",
   "exportData": "Gegevens exporteren",
   "exportDataSubtitle": "Alle lijsten opslaan als JSON",
   "exportExcel": "Exporteren als Excel",
@@ -571,12 +715,20 @@
   "listAdded": "{listName} toegevoegd!",
   "listArchived": "Lijst succesvol gearchiveerd!",
   "listAssistant": "Lijstassistent",
+  "listBudgetIndicator": "Budget: {value}",
   "listBudgetTitle": "Lijstbudget",
   "listCreated": "Lijst \"{name}\" gemaakt met {count} items",
+  "listDelete": "Verwijderen",
+  "listErrorGeneric": "Er is een fout opgetreden. Probeer het opnieuw.",
   "listHelp": "Hoe kan ik helpen met je lijst?",
   "listHistory": "Lijstgeschiedenis",
   "listNameLabel": "Lijstnaam",
   "listOrganizedMagic": "Lijst als bij toverslag georganiseerd op categorie! ✨",
+  "listProfile": "Profiel",
+  "listSelectAll": "Selecteer alles",
+  "listShoppingComplete": "Alles klaar!",
+  "listShoppingCompleteSubtitle": "Je hebt je lijst voltooid.",
+  "listTotalLabel": "Totaal: {value}",
   "listening": "Luisteren...",
   "lists": "Lijsten",
   "loading": "Laden...",
@@ -584,10 +736,14 @@
   "loginError": "Inlogfout: {error}",
   "loginPrompt": "Log in om Premium-functies\nte ontgrendelen",
   "longHistoryWarning": "Lange geschiedenis: de assistent concentreert zich op de nieuwste berichten voor betere prestaties.",
+  "manageCategoriesEmpty": "Nog geen categorieën",
+  "manageCategoriesTitle": "Beheer categorieën",
   "manageSubscription": "Abonnement beheren",
   "markAsPurchased": "Markeren als gekocht",
   "markItemsToSeeAnalysis": "Markeer items als gekocht om de analyse te zien.",
   "marketMode": "Marktmodus",
+  "mealDragHint": "Houd ingedrukt om te slepen en te verplaatsen",
+  "mealNoRecipeFound": "Geen recept gevonden",
   "mealPlannerAddMeal": "Maaltijd toevoegen",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDeleteMeal": "Maaltijd verwijderen",
@@ -609,6 +765,8 @@
   "mealPlannerNoRecipesFound": "Geen recepten gevonden",
   "mealPlannerNoRecipesHint": "Maak eerst recepten aan in het tabblad Recepten",
   "mealPlannerNoteLabel": "Opmerking (optioneel)",
+  "mealPlannerPantryAllAvailable": "Op voorraad",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} ontbrekend item} other{{count} ontbrekende items}}",
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Toevoegen aan planning",
   "mealPlannerSearchRecipes": "Recepten zoeken...",
@@ -621,6 +779,8 @@
   "mealPlannerWeekEmpty": "Niets gepland voor deze week",
   "mealPlannerWeekEmptyHint": "Tik op een willekeurige dag om je maaltijden te plannen!",
   "mealPlannerWeekProgress": "{count} van {total} maaltijden gepland",
+  "mealSearchRecipes": "Recepten zoeken...",
+  "mealTypeLabel": "Maaltijd soort",
   "monthlyBudgetAppBar": "Maandelijks budget",
   "monthlyBudgetNav": "Maandelijks budget",
   "monthlyBudgetSpent": "{spent} / {budget}",
@@ -651,6 +811,10 @@
   "noRecipesSaved": "Geen recepten opgeslagen",
   "noRecipesSavedHint": "Maak je eerste aangepaste recept door op de onderstaande knop te tikken.",
   "noTracking": "Geen tracking",
+  "notInformed": "Niet op de hoogte",
+  "offlineBanner": "Je bent offline",
+  "onboardingAIShowSubtitle": "Kipi zet alles voor je klaar...",
+  "onboardingAIShowTitle": "Zie intelligentie in actie!",
   "onboardingAnnualBadge": "Beste waarde",
   "onboardingAnnualLabel": "Jaarlijks",
   "onboardingCancelAnytime": "Annuleer op elk gewenst moment. Geen verplichting.",
@@ -684,11 +848,35 @@
   "organizeByAisles": "Ordenen op gang",
   "organizingAi": "ORGANISEREN MET AI...",
   "pantry": "Voorraadkast",
+  "pantryAdvancedMode": "Geavanceerd",
   "pantryAppBar": "Voorraadkast",
+  "pantryCompactView": "Compacte weergave",
+  "pantryDeficit": "Ontbrekende {amount}{unit}",
+  "pantryDeleteItemsContent": "Wilt u {count} geselecteerde items verwijderen?",
+  "pantryDeleteItemsTitle": "Artikelen verwijderen",
+  "pantryDeleteSelected": "Geselecteerde verwijderen",
+  "pantryDetailedView": "Gedetailleerde weergave",
   "pantryEditTitle": "{name} bewerken",
   "pantryEmpty": "Lege voorraadkast",
   "pantryEmptySubtitle": "Voeg producten toe die je thuis wilt houden",
+  "pantryExpired": "Verlopen",
+  "pantryExpiresIn": "Verloopt over {days} dagen",
+  "pantryExpiringSoon": "Verloopt binnenkort",
+  "pantryExpiryDate": "Vervaldatum",
+  "pantryExpiryNotSet": "Niet ingesteld",
+  "pantryFilterAll": "Alle",
+  "pantryFilterExpiring": "Verloopt",
+  "pantryFilterOutStock": "Niet op voorraad",
+  "pantryFirstOpenHint": "Houd bij wat je in huis hebt. Voeg items toe of scan barcodes.",
   "pantryItemRemoved": "Item verwijderd",
+  "pantryMoreDetails": "Meer details",
+  "pantryNoItemsFound": "Geen items gevonden voor \"{query}\"",
+  "pantryRestockSelected": "Aanvulling geselecteerd",
+  "pantryScanProduct": "Scanproduct",
+  "pantryScanner": "Product scannen",
+  "pantrySearchHint": "Zoek voorraadkast...",
+  "pantrySelectedCount": "{count} geselecteerd",
+  "pantrySimpleMode": "Basis",
   "paywallAfterItem1": "Granen",
   "paywallAfterItem2": "Schoonmaak",
   "paywallAfterItem3": "Vlees",
@@ -736,8 +924,11 @@
   "paywallTestimonial2Text": "Ik ben nooit meer een lijstitem vergeten. De AI-chat is sensationeel!",
   "paywallTestimonialsTitle": "Wat onze gebruikers zeggen:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Gratis proefperiode starten",
   "paywallTrialDays": "{days} DAGEN GRATIS",
   "paywallTrialMonths": "{count,plural, one{{count} MAAND GRATIS} other{{count} MAANDEN GRATIS}}",
+  "paywallTrialSubtitle": "Annuleer op elk gewenst moment. Vandaag geen kosten.",
+  "paywallTrialTitle": "Probeer KipiList Pro 7 dagen gratis",
   "paywallTrialWeeks": "{count,plural, one{{count} WEEK GRATIS} other{{count} WEKEN GRATIS}}",
   "prefAIAssistant": "Persoonlijke AI-assistent",
   "prefCustomThemes": "Aangepaste thema's",
@@ -760,6 +951,8 @@
   "quickRecipe": "Snel recept",
   "quickRecipePrompt": "Stel recepten voor met items uit mijn lijst.",
   "quickReplies": "Snelle antwoorden:",
+  "recipeAddToList": "Toevoegen aan boodschappenlijstje",
+  "recipeAddedConfirmation": "{count} ingrediënten toegevoegd aan {listName}",
   "recipeCreated": "Recept aangemaakt!",
   "recipeDeleted": "Recept verwijderd",
   "recipeImage": "Afbeelding van recept",
@@ -796,10 +989,33 @@
   "setBudgetButton": "Budget instellen",
   "setBudgetTitle": "Maandelijks budget",
   "settingsAppBar": "Instellingen",
+  "settingsAssistantHistory": "Assistent Geschiedenis",
+  "settingsAssistantHistorySubtitle": "Bekijk en doorzoek eerdere gesprekken",
+  "settingsAssistantName": "Naam van de assistent",
+  "settingsCancel": "Annuleren",
+  "settingsCategories": "Categorieën",
+  "settingsCategoriesSubtitle": "Beheer artikelcategorieën",
+  "settingsChooseIcon": "Kies een pictogram:",
+  "settingsCustomizeAI": "Pas AI-assistent aan",
+  "settingsCustomizeDialog": "Assistent aanpassen",
   "settingsDefaultScreen": "Standaard startscherm",
   "settingsDefaultScreenSubtitle": "Kies tussen boodschappenlijstje of AI-chat",
+  "settingsErrorSubscription": "Fout bij laden abonnement",
+  "settingsLegal": "Legaal",
+  "settingsLoadingSubscription": "Abonnement laden...",
+  "settingsMyProfile": "Mijn profiel",
+  "settingsPrivacyPolicy": "Privacybeleid",
+  "settingsProActive": "KipiList Pro actief",
+  "settingsProCta": "Ontgrendel onbeperkte lijsten, AI en meer",
+  "settingsProfileSubtitle": "Persoonlijke voorkeuren voor de AI-assistent",
+  "settingsSave": "Redden",
   "settingsScreenChat": "AI-chat",
   "settingsScreenList": "Boodschappenlijstje",
+  "settingsSectionAccount": "Rekening",
+  "settingsSectionApp": "App",
+  "settingsSectionAssistant": "AI-assistent",
+  "settingsSubscription": "Abonnement",
+  "settingsTermsOfService": "Servicevoorwaarden",
   "share": "Delen",
   "shareApp": "Deel app",
   "shareAppDescription": "Nodig vrienden uit om KipiList te gebruiken",
@@ -820,6 +1036,7 @@
   "signInApple": "Inloggen met Apple",
   "signInGoogle": "Inloggen met Google",
   "smartOrganization": "Slimme organisatie",
+  "sortAZ": "A-Z",
   "sortCategory": "Categorie",
   "sortDate": "Datum",
   "sortManual": "Handmatig",
@@ -842,6 +1059,7 @@
   "themePink": "Roze",
   "themePurple": "Paars",
   "themeRed": "Rood",
+  "themeSelectionTitle": "Kies Themakleur",
   "themeTeal": "Groenblauw",
   "totalEstimated": "Totaal geschat: {amount}",
   "totalSpending": "Totaal uitgegeven",
@@ -855,6 +1073,20 @@
   "unlockFullResponse": "Ontgrendel volledige respons",
   "unmark": "Markering verwijderen",
   "upgrade": "Upgraden",
+  "userProfileAvoidedStores": "Vermeden winkels",
+  "userProfileAvoidedStoresHint": "bijv. Winkel X, winkel Y",
+  "userProfileDescription": "Voeg uw persoonlijke voorkeuren toe, zodat de AI-assistent gepersonaliseerde items en recepten kan voorstellen.",
+  "userProfileDietaryRestrictions": "Dieetbeperkingen",
+  "userProfileDietaryRestrictionsHint": "bijv. veganistisch, vegetarisch, glutenvrij",
+  "userProfileErrorLoading": "Fout: {error}",
+  "userProfileErrorSaving": "Fout bij opslaan: {error}",
+  "userProfileNotes": "Opmerkingen",
+  "userProfileNotesHint": "Andere voorkeuren voor de assistent",
+  "userProfilePreferredStore": "Voorkeurswinkel",
+  "userProfilePreferredStoreHint": "bijv. Winkelnaam",
+  "userProfileSaveButton": "Profiel opslaan",
+  "userProfileSaved": "Profiel succesvol opgeslagen!",
+  "userProfileTitle": "Mijn profiel",
   "validForLimitedTime": "Beperkt geldig",
   "version": "Versie",
   "viewActive": "Actieve bekijken",
@@ -869,6 +1101,13 @@
   "voiceCommandTitle": "AI-stemcommando",
   "voiceProFeature": "Geavanceerde spraakopdrachten zijn Pro. Basisdicteren inschakelen...",
   "voiceTranscriptionTooltip": "Spraaktypen (Gratis)",
+  "weekdayFriday": "Vrijdag",
+  "weekdayMonday": "Maandag",
+  "weekdaySaturday": "Zaterdag",
+  "weekdaySunday": "Zondag",
+  "weekdayThursday": "Donderdag",
+  "weekdayTuesday": "Dinsdag",
+  "weekdayWednesday": "Woensdag",
   "welcomeAiAssistant": "Welkom bij AI-assistent",
   "whatToDoWithItem": "Wat zou je met dit artikel willen doen?",
   "yes": "Ja",

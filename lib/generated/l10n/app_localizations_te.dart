@@ -949,6 +949,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get paywallMostPopular => 'అత్యంత ప్రజాదరణ పొందినది';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'సురక్షిత చెల్లింపు';
 
   @override

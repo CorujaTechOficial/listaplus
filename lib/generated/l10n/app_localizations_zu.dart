@@ -947,6 +947,9 @@ class AppLocalizationsZu extends AppLocalizations {
   String get paywallMostPopular => 'OKUDUMILE KAKHULU';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Inkokhelo evikelekile';
 
   @override

@@ -937,6 +937,9 @@ class AppLocalizationsHr extends AppLocalizations {
   String get paywallMostPopular => 'NAJPOPULARNIJI';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Sigurno plaćanje';
 
   @override

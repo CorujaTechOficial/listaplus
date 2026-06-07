@@ -950,6 +950,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywallMostPopular => 'LE PLUS POPULAIRE';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Paiement sécurisé';
 
   @override

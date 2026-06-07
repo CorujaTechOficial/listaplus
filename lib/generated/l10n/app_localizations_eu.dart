@@ -941,6 +941,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get paywallMostPopular => 'HERRIENA';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Ordainketa segurua';
 
   @override

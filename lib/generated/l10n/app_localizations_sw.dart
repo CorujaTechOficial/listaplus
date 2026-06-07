@@ -946,6 +946,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get paywallMostPopular => 'MAARUFU SANA';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Malipo salama';
 
   @override

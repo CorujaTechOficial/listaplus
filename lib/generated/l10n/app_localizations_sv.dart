@@ -940,6 +940,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get paywallMostPopular => 'MEST POPULÄRT';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Säker betalning';
 
   @override

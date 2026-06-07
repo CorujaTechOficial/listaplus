@@ -941,6 +941,9 @@ class AppLocalizationsMn extends AppLocalizations {
   String get paywallMostPopular => 'ХАМГИЙН АЛДАРТ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Аюулгүй төлбөр';
 
   @override

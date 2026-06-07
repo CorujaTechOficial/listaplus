@@ -941,6 +941,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get paywallMostPopular => 'সবচেয়ে জনপ্রিয়';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'নিরাপদ পেমেন্ট';
 
   @override

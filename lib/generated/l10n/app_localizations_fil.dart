@@ -948,6 +948,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get paywallMostPopular => 'PINAKA SIKAT';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Secure na pagbabayad';
 
   @override

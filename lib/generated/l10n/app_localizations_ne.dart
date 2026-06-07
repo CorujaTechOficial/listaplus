@@ -942,6 +942,9 @@ class AppLocalizationsNe extends AppLocalizations {
   String get paywallMostPopular => 'सबैभन्दा लोकप्रिय';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'सुरक्षित भुक्तानी';
 
   @override

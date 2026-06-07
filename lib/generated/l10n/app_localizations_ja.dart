@@ -912,6 +912,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get paywallMostPopular => '最も人気のある';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => '安全な支払い';
 
   @override

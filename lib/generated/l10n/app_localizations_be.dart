@@ -941,6 +941,9 @@ class AppLocalizationsBe extends AppLocalizations {
   String get paywallMostPopular => 'САМЫЯ ПАПУЛЯРНЫЯ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Бяспечная аплата';
 
   @override

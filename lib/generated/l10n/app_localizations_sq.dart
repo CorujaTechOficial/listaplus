@@ -944,6 +944,9 @@ class AppLocalizationsSq extends AppLocalizations {
   String get paywallMostPopular => 'MË E POPULLARA';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Pagesë e sigurt';
 
   @override
