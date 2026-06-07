@@ -4,7 +4,6 @@ import 'package:rxdart/rxdart.dart';
 import 'package:shopping_list/models/shopping_list.dart';
 import 'package:shopping_list/services/logger_service.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
 
 part 'list_providers.g.dart';
 
@@ -75,26 +74,6 @@ class ShoppingLists extends _$ShoppingLists {
     final currentLists = state.value ?? [];
     final activeListsCount = currentLists.where((l) => !l.isArchived).length;
 
-    bool isPremium = false;
-    if (activeListsCount >= 3) {
-      try {
-        isPremium = await ref.read(premiumProvider.future).timeout(
-          const Duration(seconds: 3),
-          onTimeout: () {
-            LoggerService.log('createList: timeout ao verificar premium — assumindo false', tag: 'ShoppingLists');
-            return false;
-          },
-        );
-      } on Exception catch (e) {
-        LoggerService.log('createList: erro ao verificar premium ($e) — assumindo false', tag: 'ShoppingLists');
-      }
-
-      if (!isPremium) {
-        LoggerService.info('createList bloqueado: limite gratuito atingido');
-        throw Exception('Limite de 3 listas ativas atingido. Arquive ou exclua uma lista antiga ou torne-se Premium!');
-      }
-    }
-
     final service = ref.read(firestoreServiceProvider);
     final newList = ShoppingList(name: name, budget: budget);
 
@@ -118,7 +97,6 @@ class ShoppingLists extends _$ShoppingLists {
         'listId': newList.id,
         'budget': budget?.toString(),
         'activeListsCount': activeListsCount.toString(),
-        'isPremium': isPremium.toString(),
       });
       throw Exception('Erro ao conectar com o servidor: $e');
     }
