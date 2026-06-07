@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -195,6 +209,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -205,10 +226,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -310,6 +345,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -317,10 +369,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -385,11 +468,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Apie",
   "achievements": "Pasiekimai",
+  "achievementsTitle": "Mano pasiekimai",
   "activeListening": "Aktyvus klausymas",
   "add": "Pridėti",
   "addAllToList": "Pridėti viską į sąrašą",
+  "addCategoryColor": "Spalva:",
+  "addCategoryIcon": "Piktograma:",
   "addDirectToList": "Pridėti tiesiai į sąrašą",
   "addIngredient": "Pridėti ingredientą",
   "addItem": "Pridėti prekę",
@@ -401,23 +501,52 @@
   "advancedFeatures": "Išplėstinės funkcijos",
   "aiAssistant": "AI asistentas",
   "aiAssistantDescription": "Gaukite protingų pasiūlymų, receptų ir asmeninių patarimų iš mūsų AI asistento.",
+  "aiAssistantGeneral": "Generalinis asistentas",
+  "aiAssistantHistory": "Asistento istorija",
+  "aiConversationHistory": "Pokalbių istorija",
   "aiCreditsRemaining": "Liko {remaining} kreditų",
+  "aiDeleteConversationConfirm": "Ištrinti",
+  "aiDeleteConversationTitle": "Ištrinti pokalbį?",
+  "aiDeletedList": "Ištrintas sąrašas",
   "aiEnergy": "AI energija",
   "aiError": "Atsiprašome, įvyko klaida apdorojant jūsų užklausą. Patikrinkite ryšį arba bandykite dar kartą vėliau.",
+  "aiFirstOpenHint": "Aš esu Kipi, jūsų apsipirkimo padėjėja. Paklausk manęs bet ko apie savo sąrašą!",
+  "aiHello": "Sveiki! Aš esu Kipi",
+  "aiHowCanIHelp": "Kaip aš galiu tau padėti šiandien?",
   "aiLimitAlmostReached": "Beveik baigėsi AI pranešimai",
+  "aiNewConversation": "Naujas pokalbis",
+  "aiNewSession": "Nauja sesija",
+  "aiNoConversationFound": "Pokalbis nerastas",
+  "aiNoMessagesFound": "Nerasta jokių pranešimų",
+  "aiPremiumUpsell": "Eikite į „Premium“.",
+  "aiRecentConversations": "Naujausi pokalbiai",
+  "aiSearchMessages": "Ieškoti žinučių...",
+  "aiStartNewConversation": "Pradėti naują pokalbį",
+  "aiSuggestCreateList": "Sukurti mano pirmąjį sąrašą",
+  "aiSuggestSaveMore": "Kaip sutaupyti daugiau?",
   "aiTeaserFallback": "Prenumeruokite „Premium“, kad atrakintumėte visą atsakymą ir gautumėte neribotus AI patarimus, kaip apsipirkti...",
+  "aiUnlockWithAd": "Atrakinkite naudodami skelbimą",
   "aiVoiceCommandTooltip": "AI balso komanda (Premium)",
+  "aiWelcomeTitle": "Sveiki! 👋 Aš esu **Kipi**, jūsų išmanioji apsipirkimo padėjėja.",
   "allTags": "Visi",
   "alreadyPurchased": "Jau nupirkta",
   "appTitle": "Pirkinių sąrašas",
   "appearance": "Išvaizda",
   "archiveList": "Archyvuoti sąrašą",
+  "artifactReplaceBody": "Pasirinkite produkto alternatyvą, kad optimizuotumėte išlaidas.",
+  "artifactReplaceTitle": "Pakeisti {name}",
+  "artifactSuggestedItems": "Siūlomi daiktai",
+  "artifactSwapButton": "Sukeisti",
+  "artifactSwappedLabel": "Sukeisti",
   "backToChat": "Grįžti į pokalbį",
+  "backToToday": "Grįžti į šiandieną",
   "backupExported": "Atsarginė kopija eksportuota!",
   "backupNav": "Atsarginė kopija",
   "backupPremiumDescription": "Atsarginė kopija ir eksportavimas yra premium funkcija",
   "backupSubtitle": "Eksportuokite arba importuokite savo duomenis",
   "backupTitle": "Atsarginė kopija",
+  "barcodeScannerHint": "Nukreipkite fotoaparatą į brūkšninį kodą",
+  "barcodeScannerTitle": "Nuskaityti brūkšninį kodą",
   "becomePremium": "Tapkite Premium",
   "budgetAmountLabel": "Biudžeto suma",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -440,9 +569,11 @@
   "catalogAddItems": "Pridėti {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Naršyti katalogą",
   "catalogFilterNational": "Nacionaliniai",
+  "catalogItemAdded": "{name} pridėta",
   "catalogMyFrequents": "Mano dažniai",
   "catalogProductNotFound": "Prekė nerasta, įveskite pavadinimą",
   "catalogRareSection": "mažiau paplitusi jūsų šalyje",
+  "catalogRetry": "Bandykite dar kartą",
   "catalogSearchGlobal": "Ieškokite bet kurio produkto...",
   "catalogSearchInCategory": "Ieškoti {category}...",
   "catalogSortAZ": "A–Z",
@@ -474,6 +605,10 @@
   "confirmDeleteItems": "Pašalinti {count} prekę(-es)?",
   "confirmDeleteTitle": "Patvirtinti",
   "confirmRemovePantry": "Pašalinti \"{name}\" iš sandėliuko?",
+  "consentAccept": "Priimti",
+  "consentBody": "„KipiList“ naudoja „Firebase Analytics“, kad pagerintų jūsų patirtį. Jūsų duomenys tvarkomi pagal mūsų Privatumo politiką.",
+  "consentDecline": "Ne, ačiū",
+  "consentTitle": "Privatumas ir analizė",
   "consumed": "Suvartota",
   "continueAsGuest": "Tęsti kaip svečias",
   "copiedToClipboard": "Nukopijuota į iškarpinę",
@@ -511,8 +646,16 @@
   "editRecipe": "Redaguoti",
   "editRecipeTitle": "Redaguoti receptą",
   "emptyListAddItems": "Jūsų sąrašas tuščias! Pirmiausia pridėkite prekių. ℹ️",
+  "emptyListAiAction": "Paklauskite AI asistento",
+  "emptyListAiExample": "Pabandykite paprašyti AI pasiūlyti elementus",
   "emptyListSubtitle": "Pridėkite prekių, kad pradėtumėte",
   "emptyListTitle": "Jūsų sąrašas tuščias",
+  "emptyMealSlotHint": "Bakstelėkite, kad planuotumėte valgį",
+  "emptyPantryScan": "Nuskaitykite gaminį",
+  "emptyPantrySubtitle": "Pridėkite produktų, kad galėtumėte stebėti, ką turite namuose",
+  "emptyPantryTitle": "Tuščias sandėliukas",
+  "emptyRecipesSubtitle": "Sukurkite savo pirmąjį receptą arba paprašykite dirbtinio intelekto jį sugeneruoti",
+  "emptyRecipesTitle": "Nėra išsaugotų receptų",
   "enterCodeHint": "Įveskite kodą",
   "enterUrl": "Įveskite URL",
   "error": "Klaida: {message}",
@@ -526,6 +669,7 @@
   "estimatedPrice": "Numatoma kaina",
   "exit": "Išeiti",
   "exitShoppingMode": "Išeikite iš apsipirkimo režimo",
+  "expirationDate": "Galiojimo laikas",
   "exportData": "Eksportuoti duomenis",
   "exportDataSubtitle": "Išsaugoti visus sąrašus kaip JSON",
   "exportExcel": "Eksportuoti kaip Excel",
@@ -597,12 +741,20 @@
   "listAdded": "{listName} pridėta!",
   "listArchived": "Sąrašas sėkmingai archyvuotas!",
   "listAssistant": "Sąrašo asistentas",
+  "listBudgetIndicator": "Biudžetas: {value}",
   "listBudgetTitle": "Sąrašo biudžetas",
   "listCreated": "Sąrašas \"{name}\" sukurtas su {count} prekėmis",
+  "listDelete": "Ištrinti",
+  "listErrorGeneric": "Įvyko klaida. Bandykite dar kartą.",
   "listHelp": "Kaip galiu padėti su jūsų sąrašu?",
   "listHistory": "Sąrašų istorija",
   "listNameLabel": "Sąrašo pavadinimas",
   "listOrganizedMagic": "Sąrašas stebuklingai suskirstytas į kategorijas! ✨",
+  "listProfile": "Profilis",
+  "listSelectAll": "Pasirinkite viską",
+  "listShoppingComplete": "Viskas padaryta!",
+  "listShoppingCompleteSubtitle": "Užpildėte sąrašą.",
+  "listTotalLabel": "Iš viso: {value}",
   "listening": "Klausau...",
   "lists": "Sąrašai",
   "loading": "Įkeliama...",
@@ -610,10 +762,14 @@
   "loginError": "Prisijungimo klaida: {error}",
   "loginPrompt": "Prisijunkite, kad atrakintumėte\npremium funkcijas",
   "longHistoryWarning": "Ilga istorija: padėjėjas sutelkia dėmesį į naujausius pranešimus, kad pagerintų našumą.",
+  "manageCategoriesEmpty": "Dar nėra kategorijų",
+  "manageCategoriesTitle": "Tvarkyti kategorijas",
   "manageSubscription": "Valdyti prenumeratą",
   "markAsPurchased": "Pažymėti kaip nupirkta",
   "markItemsToSeeAnalysis": "Pažymėkite prekes kaip nupirktas, kad pamatytumėte analizę.",
   "marketMode": "Rinkos režimas",
+  "mealDragHint": "Laikykite, kad vilktumėte ir perkeltumėte",
+  "mealNoRecipeFound": "Recepto nerasta",
   "mealPlannerAddMeal": "Pridėti valgį",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDeleteMeal": "Pašalinti valgį",
@@ -635,6 +791,8 @@
   "mealPlannerNoRecipesFound": "Receptų nerasta",
   "mealPlannerNoRecipesHint": "Pirmiausia sukurkite receptus receptų skirtuke",
   "mealPlannerNoteLabel": "Pastaba (neprivaloma)",
+  "mealPlannerPantryAllAvailable": "Sandėlyje",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} trūksta elemento} other{{count} trūksta elementų}}",
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Pridėti į planą",
   "mealPlannerSearchRecipes": "Ieškoti receptų...",
@@ -647,13 +805,15 @@
   "mealPlannerWeekEmpty": "Šiai savaitei nieko nesuplanuota",
   "mealPlannerWeekEmptyHint": "Bakstelėkite bet kurią dieną, kad pradėtumėte planuoti valgius!",
   "mealPlannerWeekProgress": "Suplanuota {count} iš {total} valgių",
+  "mealSearchRecipes": "Ieškoti receptų...",
+  "mealTypeLabel": "Maisto tipas",
   "monthlyBudgetAppBar": "Mėnesio biudžetas",
   "monthlyBudgetNav": "Mėnesio biudžetas",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Mėnesio biudžetas",
   "myLists": "Mano sąrašai",
   "myRecipes": "Mano receptai",
-  "navChat": "Chat",
+  "navChat": "Pokalbis",
   "navLists": "Sąrašai",
   "navMealPlanner": "Meniu",
   "navRecipes": "Receptai",
@@ -677,6 +837,10 @@
   "noRecipesSaved": "Nėra išsaugotų receptų",
   "noRecipesSavedHint": "Sukurkite savo pirmąjį individualų receptą bakstelėdami žemiau esantį mygtuką.",
   "noTracking": "Be sekimo",
+  "notInformed": "Neinformuotas",
+  "offlineBanner": "Esate neprisijungęs",
+  "onboardingAIShowSubtitle": "Kipi viską ruošia tau...",
+  "onboardingAIShowTitle": "Pamatykite, kaip veikia intelektas!",
   "onboardingAnnualBadge": "Geriausia vertė",
   "onboardingAnnualLabel": "Metinis",
   "onboardingCancelAnytime": "Atšaukti bet kada. Jokio įsipareigojimo.",
@@ -710,11 +874,35 @@
   "organizeByAisles": "Rūšiuoti pagal skyrius",
   "organizingAi": "ORGANIZUOJAMA SU AI...",
   "pantry": "Sandėliukas",
+  "pantryAdvancedMode": "Išplėstinė",
   "pantryAppBar": "Sandėliukas",
+  "pantryCompactView": "Kompaktiškas vaizdas",
+  "pantryDeficit": "Trūksta {amount}{unit}",
+  "pantryDeleteItemsContent": "Ar norite ištrinti {count} pasirinktus elementus?",
+  "pantryDeleteItemsTitle": "Ištrinti elementus",
+  "pantryDeleteSelected": "Ištrinti pasirinktus",
+  "pantryDetailedView": "Išsamus vaizdas",
   "pantryEditTitle": "Redaguoti {name}",
   "pantryEmpty": "Tuščias sandėliukas",
   "pantryEmptySubtitle": "Pridėkite produktų, kuriuos norite laikyti namuose",
+  "pantryExpired": "Baigėsi galiojimo laikas",
+  "pantryExpiresIn": "Galiojimas baigiasi po {days} dienų",
+  "pantryExpiringSoon": "Greitai baigs galioti",
+  "pantryExpiryDate": "Galiojimo laikas",
+  "pantryExpiryNotSet": "Nenustatyta",
+  "pantryFilterAll": "Visi",
+  "pantryFilterExpiring": "Baigia galioti",
+  "pantryFilterOutStock": "Išparduota",
+  "pantryFirstOpenHint": "Stebėkite, ką turite namuose. Pridėkite elementus arba nuskaitykite brūkšninius kodus.",
   "pantryItemRemoved": "Prekė pašalinta",
+  "pantryMoreDetails": "Daugiau informacijos",
+  "pantryNoItemsFound": "„{query}“ elementų nerasta",
+  "pantryRestockSelected": "Pasirinktas atsargų atnaujinimas",
+  "pantryScanProduct": "Nuskaitykite gaminį",
+  "pantryScanner": "Nuskaityti gaminį",
+  "pantrySearchHint": "Ieškokite sandėliuko...",
+  "pantrySelectedCount": "{count} pasirinkta",
+  "pantrySimpleMode": "Pagrindinis",
   "paywallAfterItem1": "Grūdai",
   "paywallAfterItem2": "Valymas",
   "paywallAfterItem3": "Mėsos",
@@ -762,8 +950,11 @@
   "paywallTestimonial2Text": "Niekada daugiau nepamiršau sąrašo elemento. AI pokalbis yra sensacingas!",
   "paywallTestimonialsTitle": "Ką sako mūsų vartotojai:",
   "paywallTitle": "„KipiList Premium“.",
+  "paywallTrialCta": "Pradėkite nemokamą bandomąją versiją",
   "paywallTrialDays": "{days} DIENOS NEMOKAMAI",
   "paywallTrialMonths": "{count,plural, one{{count} MĖNESIO NEMOKAMAI} other{{count} MĖNESIO NEMOKAMAI}}",
+  "paywallTrialSubtitle": "Atšaukti bet kada. Šiandien jokio mokesčio.",
+  "paywallTrialTitle": "Išbandykite KipiList Pro nemokamai 7 dienas",
   "paywallTrialWeeks": "{count,plural, one{{count} NEMOKAMA SAVAITĖ} other{{count} SAVAITĖS NEMOKAMA}}",
   "prefAIAssistant": "Asmeninis AI asistentas",
   "prefCustomThemes": "Individualios temos",
@@ -786,6 +977,8 @@
   "quickRecipe": "Greitas receptas",
   "quickRecipePrompt": "Pasiūlykite receptų su mano sąrašo prekėmis.",
   "quickReplies": "Greiti atsakymai:",
+  "recipeAddToList": "Pridėti į pirkinių sąrašą",
+  "recipeAddedConfirmation": "{count} ingredientai pridėti prie {listName}",
   "recipeCreated": "Receptas sukurtas!",
   "recipeDeleted": "Receptas ištrintas",
   "recipeImage": "Recepto nuotrauka",
@@ -822,10 +1015,33 @@
   "setBudgetButton": "Nustatyti biudžetą",
   "setBudgetTitle": "Mėnesio biudžetas",
   "settingsAppBar": "Nustatymai",
+  "settingsAssistantHistory": "Asistento istorija",
+  "settingsAssistantHistorySubtitle": "Peržiūrėkite ir ieškokite ankstesnių pokalbių",
+  "settingsAssistantName": "Padėjėjo vardas",
+  "settingsCancel": "Atšaukti",
+  "settingsCategories": "Kategorijos",
+  "settingsCategoriesSubtitle": "Tvarkyti prekių kategorijas",
+  "settingsChooseIcon": "Pasirinkite piktogramą:",
+  "settingsCustomizeAI": "Tinkinkite AI asistentą",
+  "settingsCustomizeDialog": "Tinkinti asistentą",
   "settingsDefaultScreen": "Numatytasis pradinis ekranas",
   "settingsDefaultScreenSubtitle": "Pasirinkite pirkinių sąrašą arba AI pokalbį",
+  "settingsErrorSubscription": "Įkeliant prenumeratą įvyko klaida",
+  "settingsLegal": "Teisinė",
+  "settingsLoadingSubscription": "Įkeliama prenumerata...",
+  "settingsMyProfile": "Mano profilis",
+  "settingsPrivacyPolicy": "Privatumo politika",
+  "settingsProActive": "KipiList Pro aktyvus",
+  "settingsProCta": "Atrakinkite neribotus sąrašus, AI ir dar daugiau",
+  "settingsProfileSubtitle": "Asmeninės AI asistento nuostatos",
+  "settingsSave": "Išsaugoti",
   "settingsScreenChat": "AI pokalbis",
   "settingsScreenList": "Pirkinių sąrašas",
+  "settingsSectionAccount": "sąskaita",
+  "settingsSectionApp": "Programėlė",
+  "settingsSectionAssistant": "AI asistentas",
+  "settingsSubscription": "Prenumerata",
+  "settingsTermsOfService": "Paslaugų teikimo sąlygos",
   "share": "Dalintis",
   "shareApp": "Bendrinkite programą",
   "shareAppDescription": "Pakvieskite draugus naudotis „KipiList“.",
@@ -846,6 +1062,7 @@
   "signInApple": "Prisijungti su Apple",
   "signInGoogle": "Prisijungti su Google",
   "smartOrganization": "Protingas organizavimas",
+  "sortAZ": "A–Z",
   "sortCategory": "Kategorija",
   "sortDate": "Data",
   "sortManual": "Rankinis",
@@ -868,6 +1085,7 @@
   "themePink": "Rožinė",
   "themePurple": "Violetinė",
   "themeRed": "Raudona",
+  "themeSelectionTitle": "Pasirinkite temos spalvą",
   "themeTeal": "Žalsvai mėlyna",
   "totalEstimated": "Numatoma suma: {amount}",
   "totalSpending": "Visos išlaidos",
@@ -881,6 +1099,20 @@
   "unlockFullResponse": "Atrakinkite visą atsakymą",
   "unmark": "Panaikinti žymėjimą",
   "upgrade": "Atnaujinti",
+  "userProfileAvoidedStores": "Vengtos parduotuvės",
+  "userProfileAvoidedStoresHint": "pvz. Parduotuvė X, parduotuvė Y",
+  "userProfileDescription": "Pridėkite savo asmenines nuostatas, kad AI padėjėjas galėtų pasiūlyti asmeninius daiktus ir receptus.",
+  "userProfileDietaryRestrictions": "Mitybos apribojimai",
+  "userProfileDietaryRestrictionsHint": "pvz. veganiškas, vegetariškas, be glitimo",
+  "userProfileErrorLoading": "Klaida: {error}",
+  "userProfileErrorSaving": "Išsaugant įvyko klaida: {error}",
+  "userProfileNotes": "Pastabos",
+  "userProfileNotesHint": "Kitos asistento nuostatos",
+  "userProfilePreferredStore": "Pageidaujama parduotuvė",
+  "userProfilePreferredStoreHint": "pvz. Parduotuvės pavadinimas",
+  "userProfileSaveButton": "Išsaugoti profilį",
+  "userProfileSaved": "Profilis sėkmingai išsaugotas!",
+  "userProfileTitle": "Mano profilis",
   "validForLimitedTime": "Galioja ribotą laiką",
   "version": "Versija",
   "viewActive": "Žiūrėti aktyvius",
@@ -895,6 +1127,13 @@
   "voiceCommandTitle": "AI balso komanda",
   "voiceProFeature": "Išplėstinės balso komandos yra Pro. Įgalinamas pagrindinis diktantas...",
   "voiceTranscriptionTooltip": "Balso įvedimas (Nemokamai)",
+  "weekdayFriday": "penktadienis",
+  "weekdayMonday": "Pirmadienis",
+  "weekdaySaturday": "šeštadienis",
+  "weekdaySunday": "sekmadienis",
+  "weekdayThursday": "ketvirtadienis",
+  "weekdayTuesday": "antradienis",
+  "weekdayWednesday": "trečiadienį",
   "welcomeAiAssistant": "Sveiki atvykę į AI asistentą",
   "whatToDoWithItem": "Ką norėtumėte daryti su šiuo elementu?",
   "yes": "Taip",
