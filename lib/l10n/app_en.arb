@@ -657,5 +657,19 @@
   "gestureHint": "Hold to select • Swipe to remove",
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
-  }
+  },
+  "@_Catalog": "description: Catalog feature strings",
+  "catalogTitle": "Catalog",
+  "catalogMyFrequents": "My Frequents",
+  "catalogSearchGlobal": "Search any product...",
+  "catalogSearchInCategory": "Search in {category}...",
+  "@catalogSearchInCategory": { "placeholders": { "category": { "type": "String" } } },
+  "catalogSortPopular": "Most popular",
+  "catalogSortAZ": "A–Z",
+  "catalogFilterNational": "Nationals",
+  "catalogRareSection": "less common in your country",
+  "catalogAddItems": "Add {count} {count, plural, one{item} other{items}} →",
+  "@catalogAddItems": { "placeholders": { "count": { "type": "int" } } },
+  "catalogProductNotFound": "Product not found, type the name",
+  "catalogBrowse": "Browse Catalog"
 }
