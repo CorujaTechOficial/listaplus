@@ -785,7 +785,7 @@
   "mealPlannerNoRecipesHint": "Алдымен \"Рецепттер\" қойындысында рецепттер жасаңыз",
   "mealPlannerNoteLabel": "Ескертпе (міндетті емес)",
   "mealPlannerPantryAllAvailable": "Қоймада",
-  "mealPlannerPantryMissing": "{count,plural, one{{count} жетіспейтін элемент} басқа{{count} жетіспейтін элемент}}",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} жетіспейтін элемент} other{{count} жетіспейтін элемент}}",
   "mealPlannerPrepTime": "{minutes} мин",
   "mealPlannerSave": "Жоспарға қосу",
   "mealPlannerSearchRecipes": "Рецепттерді іздеу...",
