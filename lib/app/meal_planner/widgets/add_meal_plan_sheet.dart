@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_type_chip.dart';
+import 'package:shopping_list/app/meal_planner/widgets/pantry_status_badge.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -577,6 +578,11 @@ class _RecipeListItem extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                    const SizedBox(height: 4),
+                    PantryStatusBadge(
+                      recipeId: recipe.id!,
+                      servings: servings,
                     ),
                   ],
                 ),

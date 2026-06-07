@@ -204,6 +204,13 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@settingsDefaultScreen": {
     "description": "Settings option label"
   },
@@ -476,6 +483,15 @@
   "mealPlannerMealTypeDinner": "Jantar",
   "mealPlannerMealTypeLunch": "Almoço",
   "mealPlannerMealTypeSnack": "Lanche",
+  "mealPlannerPantryAllAvailable": "Em estoque",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} item faltando} other{{count} itens faltando}}",
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "mealPlannerNoMeals": "Nenhuma refeição planeada",
   "mealPlannerNoMealsHint": "Toca num dia para adicionar",
   "mealPlannerNoRecipesFound": "Nenhuma receita encontrada",
@@ -555,12 +571,25 @@
   "organizeAislesPrompt": "Organize por corredores de mercado.",
   "organizeByAisles": "Organizar por corredores",
   "organizingAi": "ORGANIZANDO COM IA...",
+  "expirationDate": "Data de validade",
+  "notInformed": "Não informada",
   "pantry": "Dispensa",
   "pantryAppBar": "Dispensa",
+  "pantryCompactView": "Visualização Compacta",
+  "pantryDetailedView": "Visualização Detalhada",
   "pantryEditTitle": "Editar {name}",
   "pantryEmpty": "Dispensa vazia",
   "pantryEmptySubtitle": "Adicione produtos que você quer manter em casa",
+  "pantryExpired": "Vencido",
+  "pantryExpiringSoon": "Vencendo em breve",
+  "pantryExpiresIn": "Vence em {days} dias",
+  "pantryFilterAll": "Todos",
+  "pantryFilterExpiring": "Vencendo",
+  "pantryFilterOutStock": "Faltando",
   "pantryItemRemoved": "Item removido",
+  "pantrySearchHint": "Pesquisar na dispensa...",
+  "pantrySortByExpiration": "Vencimento",
+  "pantryViewMode": "Modo de exibição",
   "paywallAfterItem1": "Grãos",
   "paywallAfterItem2": "Limpeza",
   "paywallAfterItem3": "Carnes",
