@@ -500,8 +500,8 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     if (pkg == null) {
       return l10n.paywallCtaUnlock;
     }
-    if (pkg.hasFreeTrial && pkg.trialPeriodDays != null) {
-      return l10n.paywallCtaTrialDays(pkg.trialPeriodDays!);
+    if (pkg.hasFreeTrial) {
+      return l10n.paywallTrialCta;
     }
     return l10n.paywallCtaUnlock;
   }
@@ -558,12 +558,12 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.lock_outline, size: 11, color: theme.colorScheme.outline),
+              Icon(Icons.lock_outline, size: 13, color: theme.colorScheme.outline),
               const SizedBox(width: 4),
               Text(
-                '${l10n.paywallSafeCheckout} · ${l10n.paywallCancelAnytime}',
+                l10n.paywallSecuredByStore,
                 style: theme.textTheme.labelSmall?.copyWith(
-                  fontSize: 10,
+                  fontSize: 12,
                   color: theme.colorScheme.onSurfaceVariant
                       .withAlpha((0.7 * 255).toInt()),
                 ),
