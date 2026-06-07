@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../../../theme/tokens.dart';
 import '../../../models/unit.dart';
+import 'package:shopping_list/app/catalog/providers/catalog_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
@@ -48,7 +49,7 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     );
 
     if (result != null && result.isNotEmpty) {
-      controller.text = 'Produto $result';
+      controller.text = result;
       unawaited(HapticFeedback.heavyImpact());
     }
   }
@@ -290,16 +291,17 @@ class _QuickActionButton extends StatelessWidget {
   }
 }
 
-class _BarcodeScannerSheet extends StatefulWidget {
+class _BarcodeScannerSheet extends ConsumerStatefulWidget {
   const _BarcodeScannerSheet();
 
   @override
-  State<_BarcodeScannerSheet> createState() => _BarcodeScannerSheetState();
+  ConsumerState<_BarcodeScannerSheet> createState() => _BarcodeScannerSheetState();
 }
 
-class _BarcodeScannerSheetState extends State<_BarcodeScannerSheet> {
+class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
   final MobileScannerController controller = MobileScannerController();
   bool _hasScanned = false;
+  bool _isLooking = false;
 
   @override
   void dispose() {
@@ -336,21 +338,48 @@ class _BarcodeScannerSheetState extends State<_BarcodeScannerSheet> {
           Expanded(
             child: MobileScanner(
               controller: controller,
-              onDetect: (capture) {
-                if (_hasScanned) {
+              onDetect: (capture) async {
+                if (_hasScanned || _isLooking) {
                   return;
                 }
-                final List<Barcode> barcodes = capture.barcodes;
+                final barcodes = capture.barcodes;
                 for (final barcode in barcodes) {
-                  if (barcode.rawValue != null) {
+                  final rawValue = barcode.rawValue;
+                  if (rawValue != null) {
                     _hasScanned = true;
-                    Navigator.pop(context, barcode.rawValue);
+                    setState(() => _isLooking = true);
+
+                    final product = await ref.read(barcodeProductProvider(rawValue).future);
+
+                    if (!mounted) {
+                      return;
+                    }
+                    // ignore: use_build_context_synchronously
+                    final nav = Navigator.of(context);
+                    // ignore: use_build_context_synchronously
+                    final messenger = ScaffoldMessenger.of(context);
+                    // ignore: use_build_context_synchronously
+                    final notFoundMsg = AppLocalizations.of(context)!.catalogProductNotFound;
+
+                    if (product != null) {
+                      nav.pop(product.displayName);
+                    } else {
+                      nav.pop(null);
+                      messenger.showSnackBar(
+                        SnackBar(content: Text(notFoundMsg)),
+                      );
+                    }
                     break;
                   }
                 }
               },
             ),
           ),
+          if (_isLooking)
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: CircularProgressIndicator(),
+            ),
           const Padding(
             padding: EdgeInsets.all(Spacing.lg),
             child: Text(
