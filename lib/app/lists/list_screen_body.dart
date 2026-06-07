@@ -26,7 +26,7 @@ import '../../theme/tokens.dart';
 import 'package:shopping_list/app/lists/widgets/budget_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/lists/widgets/filter_bar.dart';
-import 'package:shopping_list/app/lists/widgets/quick_add_bar.dart';
+import 'package:shopping_list/app/lists/widgets/kipi_quick_bar.dart';
 import 'package:shopping_list/app/lists/widgets/shopping_item_tile.dart';
 import '../../models/category_data.dart';
 import '../../models/shopping_item.dart';
@@ -645,7 +645,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
               mainAxisSize: MainAxisSize.min,
               children: [
                 _CatalogEntryButton(listId: widget.listId),
-                QuickAddBar(listId: widget.listId),
+                KipiQuickBar(listId: widget.listId),
               ],
             ),
     );
