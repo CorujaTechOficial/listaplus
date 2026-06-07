@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_type_chip.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
+import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/models/recipe.dart';
@@ -37,7 +38,22 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
   void initState() {
     super.initState();
     _selectedDate = widget.initialDate;
-    _selectedType = widget.existingPlan?.mealType ?? MealType.lunch;
+
+    if (widget.existingPlan != null) {
+      _selectedType = widget.existingPlan!.mealType;
+    } else {
+      final hour = DateTime.now().hour;
+      if (hour < 11) {
+        _selectedType = MealType.breakfast;
+      } else if (hour < 15) {
+        _selectedType = MealType.lunch;
+      } else if (hour < 19) {
+        _selectedType = MealType.snack;
+      } else {
+        _selectedType = MealType.dinner;
+      }
+    }
+
     _servings = widget.existingPlan?.servings ?? 1;
     _noteController.text = widget.existingPlan?.note ?? '';
   }
@@ -489,24 +505,23 @@ class _RecipeListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: DurationTokens.fast,
-      margin: const EdgeInsets.only(bottom: Spacing.xs),
-      decoration: BoxDecoration(
-        color: isSelected
-            ? theme.colorScheme.primaryContainer.withAlpha(120)
-            : theme.colorScheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(RadiusTokens.md),
-        border: Border.all(
+    return TactileContainer(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: DurationTokens.fast,
+        margin: const EdgeInsets.only(bottom: Spacing.xs),
+        decoration: BoxDecoration(
           color: isSelected
-              ? theme.colorScheme.primary
-              : Colors.transparent,
-          width: 2,
+              ? theme.colorScheme.primaryContainer.withAlpha(120)
+              : theme.colorScheme.surfaceContainerLow,
+          borderRadius: BorderRadius.circular(RadiusTokens.md),
+          border: Border.all(
+            color: isSelected
+                ? theme.colorScheme.primary
+                : Colors.transparent,
+            width: 2,
+          ),
         ),
-      ),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(RadiusTokens.md),
         child: Padding(
           padding: const EdgeInsets.all(Spacing.sm),
           child: Row(

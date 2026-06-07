@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_type_chip.dart';
+import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -27,41 +28,37 @@ class MealDayCard extends StatelessWidget {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
 
-    return AnimatedContainer(
-      duration: DurationTokens.fast,
-      margin: const EdgeInsets.only(bottom: Spacing.sm),
-      decoration: BoxDecoration(
-        color: isToday
-            ? theme.colorScheme.primaryContainer
-                .withAlpha(50)
-            : theme.colorScheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(RadiusTokens.lg),
-        border: isToday
-            ? Border.all(
-                color: theme.colorScheme.primary,
-                width: 2,
-              )
-            : Border.all(
-                color: theme.colorScheme.outlineVariant.withAlpha(100),
-              ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha(isToday ? 20 : 10),
-            blurRadius: isToday ? 12 : 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Day header
-          InkWell(
-            onTap: onTap,
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(RadiusTokens.lg),
+    return TactileContainer(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: DurationTokens.fast,
+        margin: const EdgeInsets.only(bottom: Spacing.sm),
+        decoration: BoxDecoration(
+          color: isToday
+              ? theme.colorScheme.primaryContainer.withAlpha(50)
+              : theme.colorScheme.surfaceContainerLow,
+          borderRadius: BorderRadius.circular(RadiusTokens.lg),
+          border: isToday
+              ? Border.all(
+                  color: theme.colorScheme.primary,
+                  width: 2,
+                )
+              : Border.all(
+                  color: theme.colorScheme.outlineVariant.withAlpha(100),
+                ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(isToday ? 20 : 10),
+              blurRadius: isToday ? 12 : 4,
+              offset: const Offset(0, 2),
             ),
-            child: Padding(
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Day header
+            Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: Spacing.md,
                 vertical: Spacing.sm,
@@ -121,8 +118,7 @@ class MealDayCard extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: theme.colorScheme.primary.withAlpha(30),
-                        borderRadius:
-                            BorderRadius.circular(RadiusTokens.full),
+                        borderRadius: BorderRadius.circular(RadiusTokens.full),
                       ),
                       child: Text(
                         '${plans.length}',
@@ -141,27 +137,27 @@ class MealDayCard extends StatelessWidget {
                 ],
               ),
             ),
-          ),
 
-          // Divider
-          Divider(
-            height: 1,
-            color: theme.colorScheme.outlineVariant.withAlpha(80),
-            indent: Spacing.md,
-            endIndent: Spacing.md,
-          ),
-
-          // Meal slots by type
-          if (plans.isEmpty)
-            _EmptyDaySlot(l10n: l10n, theme: theme, onTap: onTap)
-          else
-            _MealsByTypeList(
-              plans: plans,
-              theme: theme,
-              l10n: l10n,
-              onDeleteMeal: onDeleteMeal,
+            // Divider
+            Divider(
+              height: 1,
+              color: theme.colorScheme.outlineVariant.withAlpha(80),
+              indent: Spacing.md,
+              endIndent: Spacing.md,
             ),
-        ],
+
+            // Meal slots by type
+            if (plans.isEmpty)
+              _EmptyDaySlot(l10n: l10n, theme: theme)
+            else
+              _MealsByTypeList(
+                plans: plans,
+                theme: theme,
+                l10n: l10n,
+                onDeleteMeal: onDeleteMeal,
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -185,40 +181,35 @@ class _EmptyDaySlot extends StatelessWidget {
   const _EmptyDaySlot({
     required this.l10n,
     required this.theme,
-    required this.onTap,
   });
 
   final AppLocalizations l10n;
   final ThemeData theme;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Spacing.md,
-          vertical: Spacing.sm,
-        ),
-        child: Row(
-          children: [
-            Icon(
-              Icons.add_rounded,
-              size: 16,
-              color: theme.colorScheme.onSurfaceVariant.withAlpha(150),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.md,
+        vertical: Spacing.sm,
+      ),
+      child: Row(
+        children: [
+          Icon(
+            Icons.add_rounded,
+            size: 16,
+            color: theme.colorScheme.onSurfaceVariant.withAlpha(150),
+          ),
+          const SizedBox(width: Spacing.xs),
+          Text(
+            l10n.mealPlannerNoMealsHint,
+            style: theme.textTheme.bodySmall?.copyWith(
+              fontStyle: FontStyle.italic,
+              color:
+                  theme.colorScheme.onSurfaceVariant.withAlpha(150),
             ),
-            const SizedBox(width: Spacing.xs),
-            Text(
-              l10n.mealPlannerNoMealsHint,
-              style: theme.textTheme.bodySmall?.copyWith(
-                fontStyle: FontStyle.italic,
-                color:
-                    theme.colorScheme.onSurfaceVariant.withAlpha(150),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -206,28 +206,41 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
           Expanded(
             child: mealPlansAsync.when(
               data: (plans) {
-                if (_isWeekly) {
-                  return _WeeklyView(
-                    plans: plans,
-                    weekStart: _weekStart,
-                    isSameDay: _isSameDay,
-                    onAddMeal: _openAddSheet,
-                    onDeleteMeal: _deleteMealPlan,
-                  );
-                } else {
-                  return _MonthlyView(
-                    plans: plans,
-                    monthStart: _monthStart,
-                    monthEnd: _monthEnd,
-                    isSameDay: _isSameDay,
-                    onDayTap: (date) {
-                      setState(() {
-                        _focusedDay = date;
-                        _isWeekly = true;
-                      });
-                    },
-                  );
-                }
+                return AnimatedSwitcher(
+                  duration: DurationTokens.normal,
+                  transitionBuilder: (child, animation) => FadeTransition(
+                    opacity: animation,
+                    child: SlideTransition(
+                      position: Tween<Offset>(
+                        begin: const Offset(0.05, 0),
+                        end: Offset.zero,
+                      ).animate(animation),
+                      child: child,
+                    ),
+                  ),
+                  child: _isWeekly
+                      ? _WeeklyView(
+                          key: const ValueKey('weekly'),
+                          plans: plans,
+                          weekStart: _weekStart,
+                          isSameDay: _isSameDay,
+                          onAddMeal: _openAddSheet,
+                          onDeleteMeal: _deleteMealPlan,
+                        )
+                      : _MonthlyView(
+                          key: const ValueKey('monthly'),
+                          plans: plans,
+                          monthStart: _monthStart,
+                          monthEnd: _monthEnd,
+                          isSameDay: _isSameDay,
+                          onDayTap: (date) {
+                            setState(() {
+                              _focusedDay = date;
+                              _isWeekly = true;
+                            });
+                          },
+                        ),
+                );
               },
               loading: () => Center(
                 child: Column(
@@ -391,6 +404,7 @@ class _CalendarHeader extends StatelessWidget {
 
 class _WeeklyView extends StatelessWidget {
   const _WeeklyView({
+    super.key,
     required this.plans,
     required this.weekStart,
     required this.isSameDay,
@@ -523,6 +537,7 @@ class _WeekEmptyState extends StatelessWidget {
 
 class _MonthlyView extends StatelessWidget {
   const _MonthlyView({
+    super.key,
     required this.plans,
     required this.monthStart,
     required this.monthEnd,
