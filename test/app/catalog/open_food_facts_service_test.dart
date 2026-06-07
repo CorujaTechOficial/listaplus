@@ -1,11 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shopping_list/app/catalog/models/catalog_product.dart';
 import 'package:shopping_list/app/catalog/services/open_food_facts_service.dart';
 
 void main() {
   group('OpenFoodFactsService.parseSearchResponse', () {
     test('returns empty list for empty products array', () {
-      final result = OpenFoodFactsService.parseSearchResponse({'products': []});
+      final result = OpenFoodFactsService.parseSearchResponse({'products': <Map<String, dynamic>>[]});
       expect(result, isEmpty);
     });
 
