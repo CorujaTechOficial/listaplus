@@ -3,13 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/app/onboarding/providers/onboarding_data_provider.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_welcome_login.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_setup.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_personalization.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_ai_show.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_share.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_premium.dart';
+import 'package:shopping_list/app/onboarding/widgets/onboarding_slide_value_prop.dart';
 import 'package:shopping_list/app/onboarding/widgets/onboarding_dots.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
@@ -33,12 +27,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     super.dispose();
   }
 
-  bool get _isLastSlide => _currentSlide == 5;
-
-  /// Returns true if the user is allowed to advance from the current slide.
-  bool _canAdvance(String favoriteFood) {
-    return true;
-  }
+  bool get _isLastSlide => _currentSlide == 2;
 
   void _handlePageChanged(int index) {
     setState(() {
@@ -47,9 +36,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     });
 
     _exitTimer?.cancel();
-    if (index == 5) {
+    if (index == 2) {
       _exitTimer = Timer(const Duration(seconds: 3), () {
-        if (mounted && _currentSlide == 5) {
+        if (mounted && _currentSlide == 2) {
           setState(() => _showExitButton = true);
         }
       });
@@ -73,10 +62,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
 
-    // Reactively watch the food field so the Next button updates immediately.
-    final favoriteFood = ref.watch(onboardingDataProvider).favoriteFood;
-    final canAdvance = _canAdvance(favoriteFood);
-
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -88,18 +73,24 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 physics: const BouncingScrollPhysics(),
                 onPageChanged: _handlePageChanged,
                 children: [
-                  OnboardingSlideWelcomeLogin(
-                    onLoggedIn: () => _goToSlide(1),
-                    onSkipped: () => _goToSlide(1),
+                  OnboardingSlideValueProp(
+                    icon: Icons.checklist_rounded,
+                    title: l10n.onboardingSlide1Title,
+                    body: l10n.onboardingSlide1Body,
+                    iconColor: theme.colorScheme.primary,
                   ),
-                  const OnboardingSlideSetup(),
-                  // No onNext callback — the bottom Next button drives it.
-                  const OnboardingSlidePersonalization(),
-                  OnboardingSlideAiShow(
-                    onFinished: () => _goToSlide(4),
+                  OnboardingSlideValueProp(
+                    icon: Icons.auto_awesome_rounded,
+                    title: l10n.onboardingSlide2Title,
+                    body: l10n.onboardingSlide2Body,
+                    iconColor: theme.colorScheme.tertiary,
                   ),
-                  const OnboardingSlideShare(),
-                  const OnboardingSlidePremium(),
+                  OnboardingSlideValueProp(
+                    icon: Icons.kitchen_rounded,
+                    title: l10n.onboardingSlide3Title,
+                    body: l10n.onboardingSlide3Body,
+                    iconColor: theme.colorScheme.secondary,
+                  ),
                 ],
               ),
             ),
@@ -173,29 +164,23 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 
                   // Dots
                   OnboardingDots(
-                    count: 6,
+                    count: 3,
                     currentIndex: _currentSlide,
                     activeColor: theme.colorScheme.primary,
                   ),
 
-                  // Next button — disabled (greyed) when slide gate is locked
+                  // Next / Get Started button
                   Expanded(
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: !_isLastSlide
-                          ? AnimatedOpacity(
-                              opacity: canAdvance ? 1.0 : 0.35,
-                              duration: const Duration(milliseconds: 200),
-                              child: TextButton(
-                                onPressed: canAdvance
-                                    ? () => _goToSlide(_currentSlide + 1)
-                                    : null,
-                                child: Text(
-                                  l10n.next.toUpperCase(),
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.1,
-                                  ),
+                          ? TextButton(
+                              onPressed: () => _goToSlide(_currentSlide + 1),
+                              child: Text(
+                                l10n.next.toUpperCase(),
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.1,
                                 ),
                               ),
                             )

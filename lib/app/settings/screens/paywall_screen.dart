@@ -196,10 +196,10 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
               ),
               child: Text(
                 trialLabel,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: 12,
-                  color: Colors.black,
+                  fontSize: 10,
+                  color: theme.colorScheme.onTertiary,
                   letterSpacing: 0.5,
                 ),
               ),
@@ -516,7 +516,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
         color: theme.colorScheme.surface,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withAlpha((0.08 * 255).toInt()),
+            color: theme.colorScheme.shadow.withAlpha((0.08 * 255).toInt()),
             blurRadius: 10,
             offset: const Offset(0, -4),
           ),

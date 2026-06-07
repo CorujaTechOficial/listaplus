@@ -273,6 +273,50 @@ abstract class _$UseDynamicColor extends $AsyncNotifier<bool> {
   }
 }
 
+@ProviderFor(AnalyticsConsent)
+final analyticsConsentProvider = AnalyticsConsentProvider._();
+
+final class AnalyticsConsentProvider
+    extends $AsyncNotifierProvider<AnalyticsConsent, bool?> {
+  AnalyticsConsentProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'analyticsConsentProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$analyticsConsentHash();
+
+  @$internal
+  @override
+  AnalyticsConsent create() => AnalyticsConsent();
+}
+
+String _$analyticsConsentHash() => r'7f0ae890e1ea74fddb3fdca99a36b70e25b14dd4';
+
+abstract class _$AnalyticsConsent extends $AsyncNotifier<bool?> {
+  FutureOr<bool?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<bool?>, bool?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<bool?>, bool?>,
+              AsyncValue<bool?>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
+
 @ProviderFor(DefaultScreen)
 final defaultScreenProvider = DefaultScreenProvider._();
 

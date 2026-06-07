@@ -734,6 +734,27 @@ class AppLocalizationsTa extends AppLocalizations {
       'ஏற்கனவே சந்தா உள்ளதா? அதை மீட்டெடுக்க இங்கே தட்டவும்.';
 
   @override
+  String get onboardingSlide1Title => 'Smart Shopping Lists';
+
+  @override
+  String get onboardingSlide1Body =>
+      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+
+  @override
+  String get onboardingSlide2Title => 'Meet Kipi';
+
+  @override
+  String get onboardingSlide2Body =>
+      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+
+  @override
+  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+
+  @override
+  String get onboardingSlide3Body =>
+      'Track what you have, plan meals, and generate shopping lists automatically.';
+
+  @override
   String get onboardingExit => 'வெளியேறு';
 
   @override
@@ -820,6 +841,32 @@ class AppLocalizationsTa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get paywallTrialTitle => 'Try for free!';
+
+  @override
+  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+
+  @override
+  String get paywallTrialCta => 'Start Free Trial';
+
+  @override
+  String get recipeAddToList => 'Add to shopping list';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 added to $listName';
+  }
+
+  @override
+  String get noListSelected => 'No list selected. Open a list first.';
 
   @override
   String get paywallFeaturesTitle => 'உங்களுக்கு தேவையான அனைத்தும்:';
@@ -1736,6 +1783,42 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get catalogBrowse => 'Browse Catalog';
+
+  @override
+  String get offlineBanner => 'You are offline';
+
+  @override
+  String get consentTitle => 'Privacy & Analytics';
+
+  @override
+  String get consentBody =>
+      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+
+  @override
+  String get consentAccept => 'Accept';
+
+  @override
+  String get consentDecline => 'No, thanks';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 missing';
+  }
+
+  @override
+  String get expirationDate => 'Expiration date';
+
+  @override
+  String get notInformed => 'Not set';
 }
 
 /// The translations for Tamil, as used in India (`ta_IN`).

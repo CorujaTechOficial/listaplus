@@ -1596,6 +1596,42 @@ abstract class AppLocalizations {
   /// **'Already have a subscription? Tap here to restore it.'**
   String get onboardingRestoreDesc;
 
+  /// Onboarding slide 1: value prop title
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Shopping Lists'**
+  String get onboardingSlide1Title;
+
+  /// Onboarding slide 1: value prop body
+  ///
+  /// In en, this message translates to:
+  /// **'Create and share lists instantly. Kipi adds items automatically based on your habits.'**
+  String get onboardingSlide1Body;
+
+  /// Onboarding slide 2: value prop title
+  ///
+  /// In en, this message translates to:
+  /// **'Meet Kipi'**
+  String get onboardingSlide2Title;
+
+  /// Onboarding slide 2: value prop body
+  ///
+  /// In en, this message translates to:
+  /// **'Ask anything — create lists, find recipes, track your pantry, plan your week.'**
+  String get onboardingSlide2Body;
+
+  /// Onboarding slide 3: value prop title
+  ///
+  /// In en, this message translates to:
+  /// **'Pantry & Meal Planning'**
+  String get onboardingSlide3Title;
+
+  /// Onboarding slide 3: value prop body
+  ///
+  /// In en, this message translates to:
+  /// **'Track what you have, plan meals, and generate shopping lists automatically.'**
+  String get onboardingSlide3Body;
+
   /// Exit button text
   ///
   /// In en, this message translates to:
@@ -1715,6 +1751,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}'**
   String paywallTrialMonths(num count);
+
+  /// No description provided for @paywallTrialTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Try for free!'**
+  String get paywallTrialTitle;
+
+  /// No description provided for @paywallTrialSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime. No charge today.'**
+  String get paywallTrialSubtitle;
+
+  /// No description provided for @paywallTrialCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Free Trial'**
+  String get paywallTrialCta;
+
+  /// No description provided for @recipeAddToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to shopping list'**
+  String get recipeAddToList;
+
+  /// No description provided for @recipeAddedConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} {count, plural, one{ingredient} other{ingredients}} added to {listName}'**
+  String recipeAddedConfirmation(int count, String listName);
+
+  /// No description provided for @noListSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'No list selected. Open a list first.'**
+  String get noListSelected;
 
   /// No description provided for @paywallFeaturesTitle.
   ///
@@ -3371,6 +3443,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Browse Catalog'**
   String get catalogBrowse;
+
+  /// No description provided for @offlineBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'You are offline'**
+  String get offlineBanner;
+
+  /// No description provided for @consentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & Analytics'**
+  String get consentTitle;
+
+  /// No description provided for @consentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.'**
+  String get consentBody;
+
+  /// No description provided for @consentAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get consentAccept;
+
+  /// No description provided for @consentDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'No, thanks'**
+  String get consentDecline;
+
+  /// No description provided for @mealPlannerPantryAllAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'All ingredients available'**
+  String get mealPlannerPantryAllAvailable;
+
+  /// No description provided for @mealPlannerPantryMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} {count, plural, one{ingredient} other{ingredients}} missing'**
+  String mealPlannerPantryMissing(int count);
+
+  /// No description provided for @expirationDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiration date'**
+  String get expirationDate;
+
+  /// No description provided for @notInformed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get notInformed;
 }
 
 class _AppLocalizationsDelegate

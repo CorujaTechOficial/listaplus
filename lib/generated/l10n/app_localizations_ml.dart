@@ -730,6 +730,27 @@ class AppLocalizationsMl extends AppLocalizations {
       'ഇതിനകം ഒരു സബ്സ്ക്രിപ്ഷൻ ഉണ്ടോ? അത് പുനഃസ്ഥാപിക്കാൻ ഇവിടെ ടാപ്പ് ചെയ്യുക.';
 
   @override
+  String get onboardingSlide1Title => 'Smart Shopping Lists';
+
+  @override
+  String get onboardingSlide1Body =>
+      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+
+  @override
+  String get onboardingSlide2Title => 'Meet Kipi';
+
+  @override
+  String get onboardingSlide2Body =>
+      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+
+  @override
+  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+
+  @override
+  String get onboardingSlide3Body =>
+      'Track what you have, plan meals, and generate shopping lists automatically.';
+
+  @override
   String get onboardingExit => 'പുറത്ത്';
 
   @override
@@ -815,6 +836,32 @@ class AppLocalizationsMl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get paywallTrialTitle => 'Try for free!';
+
+  @override
+  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+
+  @override
+  String get paywallTrialCta => 'Start Free Trial';
+
+  @override
+  String get recipeAddToList => 'Add to shopping list';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 added to $listName';
+  }
+
+  @override
+  String get noListSelected => 'No list selected. Open a list first.';
 
   @override
   String get paywallFeaturesTitle => 'നിങ്ങൾക്ക് ആവശ്യമുള്ളതെല്ലാം:';
@@ -1731,6 +1778,42 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get catalogBrowse => 'കാറ്റലോഗ് ബ്രൗസ് ചെയ്യുക';
+
+  @override
+  String get offlineBanner => 'You are offline';
+
+  @override
+  String get consentTitle => 'Privacy & Analytics';
+
+  @override
+  String get consentBody =>
+      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+
+  @override
+  String get consentAccept => 'Accept';
+
+  @override
+  String get consentDecline => 'No, thanks';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 missing';
+  }
+
+  @override
+  String get expirationDate => 'Expiration date';
+
+  @override
+  String get notInformed => 'Not set';
 }
 
 /// The translations for Malayalam, as used in India (`ml_IN`).

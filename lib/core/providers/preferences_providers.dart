@@ -196,6 +196,26 @@ class UseDynamicColor extends _$UseDynamicColor {
 }
 
 @riverpod
+class AnalyticsConsent extends _$AnalyticsConsent {
+  static const _key = 'analytics_consent_given';
+
+  @override
+  Future<bool?> build() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (!prefs.containsKey(_key)) {
+      return null;
+    }
+    return prefs.getBool(_key);
+  }
+
+  Future<void> setConsent(bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_key, value);
+    state = AsyncValue.data(value);
+  }
+}
+
+@riverpod
 class DefaultScreen extends _$DefaultScreen {
   static const _key = 'defaultScreen';
 

@@ -8,6 +8,9 @@ import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/recipes/widgets/add_recipe_dialog.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/models/shopping_list.dart';
 
 class RecipeDetailScreen extends ConsumerStatefulWidget {
   const RecipeDetailScreen({super.key, required this.recipeId});
@@ -124,6 +127,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
               ),
             ],
           ),
+          bottomNavigationBar: _buildBottomBar(context, ref, recipe, l10n),
         );
       },
       loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
@@ -184,6 +188,94 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
             child: Text(l10n.deleteRecipe),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildBottomBar(
+    BuildContext context,
+    WidgetRef ref,
+    Recipe recipe,
+    AppLocalizations l10n,
+  ) {
+    final theme = Theme.of(context);
+    return Container(
+      padding: EdgeInsets.fromLTRB(
+        Spacing.lg,
+        Spacing.md,
+        Spacing.lg,
+        MediaQuery.of(context).padding.bottom + Spacing.md,
+      ),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        boxShadow: [
+          BoxShadow(
+            color: theme.colorScheme.shadow.withAlpha((0.05 * 255).toInt()),
+            blurRadius: 10,
+            offset: const Offset(0, -4),
+          ),
+        ],
+      ),
+      child: FilledButton.icon(
+        onPressed: () async {
+          final currentListId = await ref.read(currentListIdProvider.future);
+          if (currentListId == null) {
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.noListSelected)),
+              );
+            }
+            return;
+          }
+          final lists =
+              ref.read(shoppingListsProvider).asData?.value ?? <ShoppingList>[];
+          final listName =
+              lists
+                  .where((ShoppingList l) => l.id == currentListId)
+                  .firstOrNull
+                  ?.name ??
+              '';
+          final items =
+              recipe.ingredients
+                  .map(
+                    (ShoppingItem ing) => ShoppingItem(
+                      shoppingListId: currentListId,
+                      name: ing.name,
+                      quantity: ing.quantity,
+                      categoryId: ing.categoryId,
+                      unit: ing.unit,
+                    ),
+                  )
+                  .toList();
+          try {
+            await ref
+                .read(shoppingListItemsProvider(currentListId).notifier)
+                .addItems(items);
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    l10n.recipeAddedConfirmation(items.length, listName),
+                  ),
+                ),
+              );
+            }
+          } on Exception catch (e) {
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(e.toString())),
+              );
+            }
+          }
+        },
+        icon: const Icon(Icons.add_shopping_cart),
+        label: Text(l10n.recipeAddToList),
+        style: FilledButton.styleFrom(
+          minimumSize: const Size.fromHeight(54),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(RadiusTokens.md),
+          ),
+        ),
       ),
     );
   }

@@ -640,6 +640,18 @@
   "paywallTrialDays": "{days} DIAS GRÁTIS",
   "paywallTrialMonths": "{count,plural, one{{count} MÊS GRÁTIS} other{{count} MESES GRÁTIS}}",
   "paywallTrialWeeks": "{count,plural, one{{count} SEMANA GRÁTIS} other{{count} SEMANAS GRÁTIS}}",
+  "paywallTrialTitle": "Experimente grátis!",
+  "paywallTrialSubtitle": "Cancele a qualquer momento. Sem cobrança hoje.",
+  "paywallTrialCta": "Iniciar Teste Grátis",
+  "recipeAddToList": "Adicionar à lista de compras",
+  "recipeAddedConfirmation": "{count} ingredientes adicionados a {listName}",
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "listName": { "type": "String" }
+    }
+  },
+  "noListSelected": "Nenhuma lista de compras selecionada",
   "prefAIAssistant": "Assistente de IA Personalizado",
   "prefCustomThemes": "Temas personalizados",
   "prefExportData": "Exportar dados",

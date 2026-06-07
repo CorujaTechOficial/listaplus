@@ -718,6 +718,27 @@ class AppLocalizationsLo extends AppLocalizations {
       'ມີການສະໝັກໃຊ້ຢູ່ແລ້ວບໍ? ແຕະບ່ອນນີ້ເພື່ອກູ້ມັນຄືນມາ.';
 
   @override
+  String get onboardingSlide1Title => 'Smart Shopping Lists';
+
+  @override
+  String get onboardingSlide1Body =>
+      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+
+  @override
+  String get onboardingSlide2Title => 'Meet Kipi';
+
+  @override
+  String get onboardingSlide2Body =>
+      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+
+  @override
+  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+
+  @override
+  String get onboardingSlide3Body =>
+      'Track what you have, plan meals, and generate shopping lists automatically.';
+
+  @override
   String get onboardingExit => 'ອອກໄປ';
 
   @override
@@ -802,6 +823,32 @@ class AppLocalizationsLo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get paywallTrialTitle => 'Try for free!';
+
+  @override
+  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+
+  @override
+  String get paywallTrialCta => 'Start Free Trial';
+
+  @override
+  String get recipeAddToList => 'Add to shopping list';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 added to $listName';
+  }
+
+  @override
+  String get noListSelected => 'No list selected. Open a list first.';
 
   @override
   String get paywallFeaturesTitle => 'ທຸກ​ສິ່ງ​ທຸກ​ຢ່າງ​ທີ່​ທ່ານ​ຕ້ອງ​ການ​:';
@@ -1693,6 +1740,42 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get catalogBrowse => 'ຊອກຫາລາຍການ';
+
+  @override
+  String get offlineBanner => 'You are offline';
+
+  @override
+  String get consentTitle => 'Privacy & Analytics';
+
+  @override
+  String get consentBody =>
+      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+
+  @override
+  String get consentAccept => 'Accept';
+
+  @override
+  String get consentDecline => 'No, thanks';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 missing';
+  }
+
+  @override
+  String get expirationDate => 'Expiration date';
+
+  @override
+  String get notInformed => 'Not set';
 }
 
 /// The translations for Lao, as used in the Lao People's Democratic Republic (`lo_LA`).

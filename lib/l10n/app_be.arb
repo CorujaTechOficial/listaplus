@@ -44,6 +44,13 @@
   "@appTitle": {
     "description": "Main app title"
   },
+  "@artifactReplaceTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@budgetAmountSpent": {
     "placeholders": {
       "spent": {
@@ -58,6 +65,13 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@catalogItemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
       }
     }
   },
@@ -195,6 +209,13 @@
       }
     }
   },
+  "@listBudgetIndicator": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@listCreated": {
     "placeholders": {
       "name": {
@@ -205,10 +226,24 @@
       }
     }
   },
+  "@listTotalLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -303,6 +338,23 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryDeficit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantryDeleteItemsContent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -310,10 +362,41 @@
       }
     }
   },
+  "@pantryExpiresIn": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pantryNoItemsFound": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@pantrySelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
         "type": "int"
+      }
+    }
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
       }
     }
   },
@@ -378,11 +461,28 @@
       }
     }
   },
+  "@userProfileErrorLoading": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@userProfileErrorSaving": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "about": "Пра праграму",
   "achievements": "Дасягненні",
+  "achievementsTitle": "Мае дасягненні",
   "activeListening": "Актыўнае слуханне",
   "add": "Дадаць",
   "addAllToList": "Дадаць усё ў спіс",
+  "addCategoryColor": "колер:",
+  "addCategoryIcon": "Значок:",
   "addDirectToList": "Дадаць непасрэдна ў спіс",
   "addIngredient": "Дадаць інгрэдыент",
   "addItem": "Дадаць Элемент",
@@ -394,23 +494,52 @@
   "advancedFeatures": "Пашыраныя функцыі",
   "aiAssistant": "AI Памочнік",
   "aiAssistantDescription": "Атрымлівайце разумныя прапановы, рэцэпты і персанальныя парады з нашым AI-памочнікам.",
+  "aiAssistantGeneral": "Генеральны памочнік",
+  "aiAssistantHistory": "Памочнік гісторыі",
+  "aiConversationHistory": "Гісторыя размоў",
   "aiCreditsRemaining": "{remaining} крэдытаў засталося",
+  "aiDeleteConversationConfirm": "Выдаліць",
+  "aiDeleteConversationTitle": "Выдаліць размову?",
+  "aiDeletedList": "Выдалены спіс",
   "aiEnergy": "Энергія ІІ",
   "aiError": "Прабачце, адбылася памылка пры апрацоўцы вашага запыту. Праверце падключэнне або паспрабуйце пазней.",
+  "aiFirstOpenHint": "Я Кіпі, ваш гандлёвы памочнік. Спытайце мяне што-небудзь пра ваш спіс!",
+  "aiHello": "Прывітанне! Я Кіпі",
+  "aiHowCanIHelp": "Чым я магу дапамагчы вам сёння?",
   "aiLimitAlmostReached": "Амаль скончыліся паведамленні AI",
+  "aiNewConversation": "Новая размова",
+  "aiNewSession": "Новая сесія",
+  "aiNoConversationFound": "Размова не знойдзена",
+  "aiNoMessagesFound": "Паведамленні не знойдзены",
+  "aiPremiumUpsell": "Перайсці на прэміум",
+  "aiRecentConversations": "Апошнія размовы",
+  "aiSearchMessages": "Шукаць паведамленні...",
+  "aiStartNewConversation": "Пачаць новую размову",
+  "aiSuggestCreateList": "Стварыце мой першы спіс",
+  "aiSuggestSaveMore": "Як зэканоміць больш?",
   "aiTeaserFallback": "Падпішыцеся на Premium, каб разблакіраваць поўны адказ і атрымаць неабмежаваную колькасць падказак AI для вашых пакупак...",
+  "aiUnlockWithAd": "Разблакіроўка з дапамогай рэкламы",
   "aiVoiceCommandTooltip": "AI Галасавая Каманда (Premium)",
+  "aiWelcomeTitle": "Прывітанне! 👋 Я **Кіпі**, ваш разумны памочнік па крамах.",
   "allTags": "Усе",
   "alreadyPurchased": "Ужо набыта",
   "appTitle": "Спіс пакупак",
   "appearance": "Выгляд",
   "archiveList": "Архіваваць спіс",
+  "artifactReplaceBody": "Выберыце альтэрнатыўны прадукт, каб аптымізаваць кошт.",
+  "artifactReplaceTitle": "Замяніць {name}",
+  "artifactSuggestedItems": "Прапанаваныя элементы",
+  "artifactSwapButton": "Памяняць месцамі",
+  "artifactSwappedLabel": "Памяняліся месцамі",
   "backToChat": "Вярнуцца да чата",
+  "backToToday": "Вярнуцца да сённяшняга дня",
   "backupExported": "Рэзервовая копія экспартавана!",
   "backupNav": "Рэзервовае капіраванне",
   "backupPremiumDescription": "Рэзервовае капіраванне і экспарт - гэта прэміум-функцыя",
   "backupSubtitle": "Экспартуйце або імпартуйце свае дадзеныя",
   "backupTitle": "Рэзервовае капіраванне",
+  "barcodeScannerHint": "Навядзіце камеру на штрых-код",
+  "barcodeScannerTitle": "Сканаваць штрых-код",
   "becomePremium": "Станьце Premium",
   "budgetAmountLabel": "Сума бюджэту",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -433,9 +562,11 @@
   "catalogAddItems": "Дадаць {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Праглядзіце каталог",
   "catalogFilterNational": "Грамадзяне",
+  "catalogItemAdded": "{name} дададзены",
   "catalogMyFrequents": "Мае наведвальнікі",
   "catalogProductNotFound": "Тавар не знойдзены, увядзіце назву",
   "catalogRareSection": "радзей у вашай краіне",
+  "catalogRetry": "Паспрабуйце яшчэ раз",
   "catalogSearchGlobal": "Шукайце любы прадукт...",
   "catalogSearchInCategory": "Шукаць у {category}...",
   "catalogSortAZ": "А–Я",
@@ -467,6 +598,10 @@
   "confirmDeleteItems": "Выдаліць {count} элемент(ы)?",
   "confirmDeleteTitle": "Пацвердзіць",
   "confirmRemovePantry": "Выдаліць \"{name}\" з кладоўкі?",
+  "consentAccept": "Прыняць",
+  "consentBody": "KipiList выкарыстоўвае Firebase Analytics для паляпшэння вашага вопыту. Вашы даныя апрацоўваюцца ў адпаведнасці з нашай Палітыкай прыватнасці.",
+  "consentDecline": "Не, дзякуй",
+  "consentTitle": "Прыватнасць і аналітыка",
   "consumed": "Спажыта",
   "continueAsGuest": "Працягнуць як госць",
   "copiedToClipboard": "Скапіявана ў буфер абмену",
@@ -504,8 +639,16 @@
   "editRecipe": "Рэдагаваць",
   "editRecipeTitle": "Рэдагаваць рэцэпт",
   "emptyListAddItems": "Ваш спіс пусты! Спачатку дадайце элементы. ℹ️",
+  "emptyListAiAction": "Спытайце ў памочніка AI",
+  "emptyListAiExample": "Паспрабуйце папрасіць ІІ прапанаваць прадметы",
   "emptyListSubtitle": "Дадайце элементы, каб пачаць",
   "emptyListTitle": "Ваш спіс пусты",
+  "emptyMealSlotHint": "Націсніце, каб запланаваць ежу",
+  "emptyPantryScan": "Сканаваць прадукт",
+  "emptyPantrySubtitle": "Дадавайце прадукты, каб сачыць за тым, што ёсць у вас дома",
+  "emptyPantryTitle": "Пустая камора",
+  "emptyRecipesSubtitle": "Стварыце свой першы рэцэпт або папрасіце штучны інтэлект стварыць яго",
+  "emptyRecipesTitle": "Няма захаваных рэцэптаў",
   "enterCodeHint": "Увядзіце код",
   "enterUrl": "Увядзіце URL",
   "error": "Памылка: {message}",
@@ -519,6 +662,7 @@
   "estimatedPrice": "Прыблізны кошт",
   "exit": "Выхад",
   "exitShoppingMode": "Выйдзіце з рэжыму пакупак",
+  "expirationDate": "Тэрмін прыдатнасці",
   "exportData": "Экспартаваць дадзеныя",
   "exportDataSubtitle": "Захаваць усе спісы як JSON",
   "exportExcel": "Экспартаваць як Excel",
@@ -590,12 +734,20 @@
   "listAdded": "{listName} дададзены!",
   "listArchived": "Спіс паспяхова архіваваны!",
   "listAssistant": "Памочнік спісу",
+  "listBudgetIndicator": "Бюджэт: {value}",
   "listBudgetTitle": "Бюджэт Спісу",
   "listCreated": "Спіс \"{name}\" створаны з {count} элементамі",
+  "listDelete": "Выдаліць",
+  "listErrorGeneric": "Адбылася памылка. Калі ласка, паспрабуйце яшчэ раз.",
   "listHelp": "Чым я магу дапамагчы з вашым спісам?",
   "listHistory": "Гісторыя Спісаў",
   "listNameLabel": "Назва спісу",
   "listOrganizedMagic": "Спіс магічна арганізаваны па катэгорыях! ✨",
+  "listProfile": "Профіль",
+  "listSelectAll": "Выбраць усё",
+  "listShoppingComplete": "Гатова!",
+  "listShoppingCompleteSubtitle": "Вы завяршылі свой спіс.",
+  "listTotalLabel": "Усяго: {value}",
   "listening": "Слуханне...",
   "lists": "Спісы",
   "loading": "Загрузка...",
@@ -603,10 +755,14 @@
   "loginError": "Памылка ўваходу: {error}",
   "loginPrompt": "Увайдзіце, каб разблакаваць\nпрэміум-функцыі",
   "longHistoryWarning": "Доўгая гісторыя: памочнік факусуюць на апошніх паведамленнях для лепшай прадукцыйнасці.",
+  "manageCategoriesEmpty": "Катэгорый пакуль няма",
+  "manageCategoriesTitle": "Кіраванне катэгорыямі",
   "manageSubscription": "Кіраваць падпіскай",
   "markAsPurchased": "Пазначыць як набыта",
   "markItemsToSeeAnalysis": "Пазначце элементы як набытыя, каб убачыць аналіз.",
   "marketMode": "Рынкавы рэжым",
+  "mealDragHint": "Утрымлівайце, каб перацягнуць і перамясціць",
+  "mealNoRecipeFound": "Рэцэпт не знойдзены",
   "mealPlannerAddMeal": "Дадаць страву",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDeleteMeal": "Выдаліць страву",
@@ -628,6 +784,8 @@
   "mealPlannerNoRecipesFound": "Рэцэпты не знойдзены",
   "mealPlannerNoRecipesHint": "Спачатку стварыце рэцэпты ва ўкладцы \"Рэцэпты\"",
   "mealPlannerNoteLabel": "Нататка (неабавязкова)",
+  "mealPlannerPantryAllAvailable": "У наяўнасці",
+  "mealPlannerPantryMissing": "{count,plural, one{{count} адсутнічае элемент} іншы{{count} адсутнічае элемент}}",
   "mealPlannerPrepTime": "{minutes} хв",
   "mealPlannerSave": "Дадаць у план",
   "mealPlannerSearchRecipes": "Пошук рэцэптаў...",
@@ -640,13 +798,15 @@
   "mealPlannerWeekEmpty": "На гэты тыдзень нічога не запланавана",
   "mealPlannerWeekEmptyHint": "Націсніце на любы дзень, каб пачаць планаваць сваё харчаванне!",
   "mealPlannerWeekProgress": "Запланавана {count} з {total} страў",
+  "mealSearchRecipes": "Пошук рэцэптаў...",
+  "mealTypeLabel": "Тып ежы",
   "monthlyBudgetAppBar": "Месяцовы Бюджэт",
   "monthlyBudgetNav": "Месяцовы бюджэт",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Месяцовы Бюджэт",
   "myLists": "Мае Спісы",
   "myRecipes": "Мае рэцэпты",
-  "navChat": "Chat",
+  "navChat": "Чат",
   "navLists": "Спісы",
   "navMealPlanner": "Меню",
   "navRecipes": "Рэцэпты",
@@ -670,6 +830,10 @@
   "noRecipesSaved": "Няма захаваных рэцэптаў",
   "noRecipesSavedHint": "Стварыце свой першы ўласны рэцэпт, націснуўшы кнопку ніжэй.",
   "noTracking": "Без адсочвання",
+  "notInformed": "Не інфармаваны",
+  "offlineBanner": "Вы па-за сеткай",
+  "onboardingAIShowSubtitle": "Kipi рыхтуе ўсё для вас...",
+  "onboardingAIShowTitle": "Глядзіце Інтэлект у дзеянні!",
   "onboardingAnnualBadge": "Лепшае значэнне",
   "onboardingAnnualLabel": "Гадавы",
   "onboardingCancelAnytime": "Скасаваць у любы час. Без абавязацельстваў.",
@@ -703,11 +867,35 @@
   "organizeByAisles": "Арганізаваць па аддзелах",
   "organizingAi": "АРГАНІЗАЦЫЯ З AI...",
   "pantry": "Кладоўка",
+  "pantryAdvancedMode": "Пашыраны",
   "pantryAppBar": "Кладоўка",
+  "pantryCompactView": "Кампактны выгляд",
+  "pantryDeficit": "Адсутнічае {amount}{unit}",
+  "pantryDeleteItemsContent": "Вы хочаце выдаліць {count} выбраных элементаў?",
+  "pantryDeleteItemsTitle": "Выдаліць элементы",
+  "pantryDeleteSelected": "Выдаліць выбранае",
+  "pantryDetailedView": "Дэталёвы выгляд",
   "pantryEditTitle": "Рэдагаваць {name}",
   "pantryEmpty": "Пустая кладоўка",
   "pantryEmptySubtitle": "Дадавайце прадукты, якія хочаце мець дома",
+  "pantryExpired": "Пратэрмінаваны",
+  "pantryExpiresIn": "Тэрмін дзеяння заканчваецца праз {days} дзён",
+  "pantryExpiringSoon": "Хутка мінае",
+  "pantryExpiryDate": "Тэрмін прыдатнасці",
+  "pantryExpiryNotSet": "Не ўстаноўлена",
+  "pantryFilterAll": "Усе",
+  "pantryFilterExpiring": "Заканчваецца тэрмін дзеяння",
+  "pantryFilterOutStock": "Няма ў наяўнасці",
+  "pantryFirstOpenHint": "Сачыце за тым, што ёсць у вас дома. Дадавайце элементы або сканіруйце штрых-коды.",
   "pantryItemRemoved": "Элемент выдалены",
+  "pantryMoreDetails": "Больш падрабязна",
+  "pantryNoItemsFound": "Нічога не знойдзена для \"{query}\"",
+  "pantryRestockSelected": "Выбрана папаўненне запасаў",
+  "pantryScanProduct": "Сканаваць прадукт",
+  "pantryScanner": "Прадукт сканавання",
+  "pantrySearchHint": "Шукаць у каморы...",
+  "pantrySelectedCount": "{count} выбрана",
+  "pantrySimpleMode": "Базавы",
   "paywallAfterItem1": "Збожжа",
   "paywallAfterItem2": "Уборка",
   "paywallAfterItem3": "мяса",
@@ -755,8 +943,11 @@
   "paywallTestimonial2Text": "Я ніколі больш не забываў пункт спісу. Чат AI - гэта сенсацыя!",
   "paywallTestimonialsTitle": "Што кажуць нашы карыстальнікі:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Пачаць бясплатную пробную версію",
   "paywallTrialDays": "{days} ДЗЁН БЯСПЛАТНА",
   "paywallTrialMonths": "{count,plural, one{{count} МЕСЯЦАЎ БЯСПЛАТНА} other{{count} МЕСЯЦАЎ БЯСПЛАТНА}}",
+  "paywallTrialSubtitle": "Скасаваць у любы час. Без аплаты сёння.",
+  "paywallTrialTitle": "Паспрабуйце KipiList Pro бясплатна на працягу 7 дзён",
   "paywallTrialWeeks": "{count,plural, one{{count} ТЫДНЯ БЯСПЛАТНА} other{{count} ТЫДНЯ БЯСПЛАТНА}}",
   "prefAIAssistant": "Персанальны AI Памочнік",
   "prefCustomThemes": "Уласныя тэмы",
@@ -779,6 +970,8 @@
   "quickRecipe": "Хуткі рэцэпт",
   "quickRecipePrompt": "Прапануйце рэцэпты з элементамі майго спісу.",
   "quickReplies": "Хуткія адказы:",
+  "recipeAddToList": "Дадаць у спіс пакупак",
+  "recipeAddedConfirmation": "{count} інгрэдыенты дададзены ў {listName}",
   "recipeCreated": "Рэцэпт створаны!",
   "recipeDeleted": "Рэцэпт выдалены",
   "recipeImage": "Выява рэцэпту",
@@ -815,10 +1008,33 @@
   "setBudgetButton": "Усталяваць бюджэт",
   "setBudgetTitle": "Месяцовы Бюджэт",
   "settingsAppBar": "Налады",
+  "settingsAssistantHistory": "Памочнік гісторыі",
+  "settingsAssistantHistorySubtitle": "Прагляд і пошук мінулых размоў",
+  "settingsAssistantName": "Імя памочніка",
+  "settingsCancel": "Адмяніць",
+  "settingsCategories": "Катэгорыі",
+  "settingsCategoriesSubtitle": "Кіраванне катэгорыямі прадметаў",
+  "settingsChooseIcon": "Выберыце значок:",
+  "settingsCustomizeAI": "Наладзьце AI Assistant",
+  "settingsCustomizeDialog": "Наладзьце памочніка",
   "settingsDefaultScreen": "Галоўны экран па змаўчанні",
   "settingsDefaultScreenSubtitle": "Выбірайце спіс пакупак або чат AI",
+  "settingsErrorSubscription": "Памылка загрузкі падпіскі",
+  "settingsLegal": "Юрыдычны",
+  "settingsLoadingSubscription": "Загрузка падпіскі...",
+  "settingsMyProfile": "Мой профіль",
+  "settingsPrivacyPolicy": "Палітыка прыватнасці",
+  "settingsProActive": "KipiList Pro актыўны",
+  "settingsProCta": "Адкрыйце неабмежаваную колькасць спісаў, штучны інтэлект і многае іншае",
+  "settingsProfileSubtitle": "Асабістыя перавагі для памочніка AI",
+  "settingsSave": "Захаваць",
   "settingsScreenChat": "AI Чат",
   "settingsScreenList": "Спіс пакупак",
+  "settingsSectionAccount": "Рахунак",
+  "settingsSectionApp": "дадатак",
+  "settingsSectionAssistant": "Памочнік AI",
+  "settingsSubscription": "Падпіска",
+  "settingsTermsOfService": "Умовы абслугоўвання",
   "share": "Падзяліцца",
   "shareApp": "Падзяліцца праграмай",
   "shareAppDescription": "Запрасіце сяброў выкарыстоўваць KipiList",
@@ -839,6 +1055,7 @@
   "signInApple": "Увайсці з Apple",
   "signInGoogle": "Увайсці з Google",
   "smartOrganization": "Разумная Арганізацыя",
+  "sortAZ": "А–Я",
   "sortCategory": "Катэгорыя",
   "sortDate": "Дата",
   "sortManual": "Уручную",
@@ -861,6 +1078,7 @@
   "themePink": "Ружовы",
   "themePurple": "Фіялетавы",
   "themeRed": "Чырвоны",
+  "themeSelectionTitle": "Выберыце колер тэмы",
   "themeTeal": "Бірузовы",
   "totalEstimated": "Агулам прыблізна: {amount}",
   "totalSpending": "Агульныя Выдаткі",
@@ -874,6 +1092,20 @@
   "unlockFullResponse": "Разблакіраваць поўны адказ",
   "unmark": "Зняць пазнаку",
   "upgrade": "Абнавіць",
+  "userProfileAvoidedStores": "Крамы пазбягалі",
+  "userProfileAvoidedStoresHint": "напр. Крама X, крама Y",
+  "userProfileDescription": "Дадайце свае асабістыя перавагі, каб памочнік штучнага інтэлекту мог прапаноўваць персаналізаваныя прадукты і рэцэпты.",
+  "userProfileDietaryRestrictions": "Дыетычныя абмежаванні",
+  "userProfileDietaryRestrictionsHint": "напр. веганскі, вегетарыянскі, без глютена",
+  "userProfileErrorLoading": "Памылка: {error}",
+  "userProfileErrorSaving": "Памылка захавання: {error}",
+  "userProfileNotes": "Заўвагі",
+  "userProfileNotesHint": "Іншыя перавагі для памочніка",
+  "userProfilePreferredStore": "Пераважны магазін",
+  "userProfilePreferredStoreHint": "напр. Назва крамы",
+  "userProfileSaveButton": "Захаваць профіль",
+  "userProfileSaved": "Профіль паспяхова захаваны!",
+  "userProfileTitle": "Мой профіль",
   "validForLimitedTime": "Сапраўдны на абмежаваны час",
   "version": "Версія",
   "viewActive": "Паглядзець Актыўныя",
@@ -888,6 +1120,13 @@
   "voiceCommandTitle": "AI Галасавая Каманда",
   "voiceProFeature": "Пашыраныя галасавыя каманды - Pro. Уключэнне базавай дыктоўкі...",
   "voiceTranscriptionTooltip": "Галасавы набор (Бясплатна)",
+  "weekdayFriday": "Пятніца",
+  "weekdayMonday": "панядзелак",
+  "weekdaySaturday": "субота",
+  "weekdaySunday": "Нядзеля",
+  "weekdayThursday": "чацвер",
+  "weekdayTuesday": "аўторак",
+  "weekdayWednesday": "серада",
   "welcomeAiAssistant": "Вітаем у памочніку AI",
   "whatToDoWithItem": "Што б вы хацелі зрабіць з гэтым прадметам?",
   "yes": "Так",

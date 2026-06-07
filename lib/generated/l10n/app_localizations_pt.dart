@@ -726,6 +726,27 @@ class AppLocalizationsPt extends AppLocalizations {
       'Já tem uma assinatura? Toque aqui para restaurá-lo.';
 
   @override
+  String get onboardingSlide1Title => 'Smart Shopping Lists';
+
+  @override
+  String get onboardingSlide1Body =>
+      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+
+  @override
+  String get onboardingSlide2Title => 'Meet Kipi';
+
+  @override
+  String get onboardingSlide2Body =>
+      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+
+  @override
+  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+
+  @override
+  String get onboardingSlide3Body =>
+      'Track what you have, plan meals, and generate shopping lists automatically.';
+
+  @override
   String get onboardingExit => 'Saída';
 
   @override
@@ -812,6 +833,27 @@ class AppLocalizationsPt extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get paywallTrialTitle => 'Experimente grátis!';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Cancele a qualquer momento. Sem cobrança hoje.';
+
+  @override
+  String get paywallTrialCta => 'Iniciar Teste Grátis';
+
+  @override
+  String get recipeAddToList => 'Adicionar à lista de compras';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingredientes adicionados a $listName';
+  }
+
+  @override
+  String get noListSelected => 'Nenhuma lista de compras selecionada';
 
   @override
   String get paywallFeaturesTitle => 'Tudo que você precisa:';
@@ -1718,6 +1760,42 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get catalogBrowse => 'Navegar no catálogo';
+
+  @override
+  String get offlineBanner => 'You are offline';
+
+  @override
+  String get consentTitle => 'Privacy & Analytics';
+
+  @override
+  String get consentBody =>
+      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+
+  @override
+  String get consentAccept => 'Accept';
+
+  @override
+  String get consentDecline => 'No, thanks';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Em estoque';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count itens faltando',
+      one: '$count item faltando',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Data de validade';
+
+  @override
+  String get notInformed => 'Não informada';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).

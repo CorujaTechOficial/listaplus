@@ -18,7 +18,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pantry => 'المخزن';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'محادثة';
 
   @override
   String get navRecipes => 'وصفات';
@@ -725,6 +725,27 @@ class AppLocalizationsAr extends AppLocalizations {
       'هل لديك اشتراك بالفعل؟ انقر هنا لاستعادته.';
 
   @override
+  String get onboardingSlide1Title => 'Smart Shopping Lists';
+
+  @override
+  String get onboardingSlide1Body =>
+      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+
+  @override
+  String get onboardingSlide2Title => 'Meet Kipi';
+
+  @override
+  String get onboardingSlide2Body =>
+      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+
+  @override
+  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+
+  @override
+  String get onboardingSlide3Body =>
+      'Track what you have, plan meals, and generate shopping lists automatically.';
+
+  @override
   String get onboardingExit => 'مخرج';
 
   @override
@@ -807,6 +828,26 @@ class AppLocalizationsAr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get paywallTrialTitle => 'جرب KipiList Pro مجانًا لمدة 7 أيام';
+
+  @override
+  String get paywallTrialSubtitle => 'إلغاء في أي وقت. لا تهمة اليوم.';
+
+  @override
+  String get paywallTrialCta => 'ابدأ النسخة التجريبية المجانية';
+
+  @override
+  String get recipeAddToList => 'أضف إلى قائمة التسوق';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return 'تمت إضافة مكونات $count إلى $listName';
+  }
+
+  @override
+  String get noListSelected => 'No list selected. Open a list first.';
 
   @override
   String get paywallFeaturesTitle => 'كل ما تحتاجه:';
@@ -1709,4 +1750,40 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get catalogBrowse => 'تصفح الكتالوج';
+
+  @override
+  String get offlineBanner => 'أنت غير متصل';
+
+  @override
+  String get consentTitle => 'الخصوصية والتحليلات';
+
+  @override
+  String get consentBody =>
+      'يستخدم KipiList تحليلات Firebase لتحسين تجربتك. تتم معالجة بياناتك وفقًا لسياسة الخصوصية الخاصة بنا.';
+
+  @override
+  String get consentAccept => 'يقبل';
+
+  @override
+  String get consentDecline => 'ًلا شكرا';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'في الأوراق المالية';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count عناصر مفقودة',
+      one: '$count عنصر مفقود',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'تاريخ انتهاء الصلاحية';
+
+  @override
+  String get notInformed => 'غير مطلع';
 }
