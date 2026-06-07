@@ -31,12 +31,14 @@ import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import '../../../models/category_data.dart';
 import '../../../models/unit.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/app/ai/widgets/ai_usage_banner.dart';
 import '../../../models/shopping_item.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import '../../../models/ai_config.dart';
 import '../../../widgets/artifact_widgets/artifact_card_shell.dart';
 import '../../../widgets/artifact_widgets/artifact_content_renderer.dart';
 import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
+import 'package:shopping_list/app/ai/widgets/ai_usage_banner.dart';
 
 class AiChatPanel extends ConsumerStatefulWidget {
   const AiChatPanel({
@@ -385,6 +387,7 @@ class AiChatPanelState extends ConsumerState<AiChatPanel> with WidgetsBindingObs
 
     return Column(
       children: [
+        const AiUsageBanner(),
         Expanded(
           child: Stack(
             children: [
