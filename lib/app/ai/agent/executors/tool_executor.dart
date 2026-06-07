@@ -9,6 +9,7 @@ import 'share_executor.dart';
 import 'config_executor.dart';
 import 'system_executor.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/ai_usage_provider.dart';
 import 'package:shopping_list/services/logger_service.dart';
 
 class ToolExecutor {
@@ -26,6 +27,12 @@ class ToolExecutor {
   final ConfigExecutor _configExecutor = const ConfigExecutor();
   final SystemExecutor _systemExecutor = const SystemExecutor();
 
+  static const Set<String> _advancedToolNames = {
+    'create_recipe',
+    'schedule_meal',
+    'generate_artifact',
+  };
+
   Future<ToolResult> execute(AgentToolCall call, {bool bypassPremium = false}) async {
     if (!bypassPremium && AgentTools.premiumToolNames.contains(call.name)) {
       final isPremium = _container.read(premiumProvider).value ?? false;
@@ -36,6 +43,21 @@ class ToolExecutor {
           success: false,
           requiresUnlock: true,
         );
+      }
+    }
+
+    if (_advancedToolNames.contains(call.name)) {
+      final isPremium = _container.read(premiumProvider).value ?? false;
+      if (!isPremium) {
+        final count = await _container.read(aiUsageProvider.notifier).increment();
+        if (count > kFreeAiActionsPerMonth) {
+          return ToolResult(
+            toolCallId: call.id,
+            content: 'Limite mensal de ações de IA atingido. Assine o Pro para continuar.',
+            success: false,
+            requiresUnlock: true,
+          );
+        }
       }
     }
 
