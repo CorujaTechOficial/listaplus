@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:collection/collection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/models/meal_plan.dart';
@@ -63,6 +65,13 @@ class MealPlans extends _$MealPlans {
     await service.deleteMealPlan(id);
   }
 
+  Future<void> moveMealPlan(String id, DateTime newDate, MealType newType) async {
+    final plans = state.value ?? [];
+    final existing = plans.firstWhere((p) => p.id == id);
+    final updated = existing.copyWith(date: newDate, mealType: newType);
+    await saveMealPlan(updated);
+  }
+
   /// Generates a shopping list from all recipes planned this week.
   /// Returns the number of items added to the list.
   /// Throws [Exception] if no active list is found.
@@ -80,6 +89,9 @@ class MealPlans extends _$MealPlans {
 
     // Load all recipes to find ingredients
     final recipes = await ref.read(recipesProvider.future);
+
+    // Load pantry items to check availability
+    final pantryItems = await ref.read(pantryItemsProvider.future);
 
     // Build a deduplicated ingredient list
     final ingredientMap = <String, ShoppingItem>{};
@@ -120,8 +132,30 @@ class MealPlans extends _$MealPlans {
       }
     }
 
+    // Smart Logic: Subtract available quantities from pantry
+    final filteredIngredientMap = <String, ShoppingItem>{};
+    for (final entry in ingredientMap.entries) {
+      final item = entry.value;
+      
+      // Find matching item in pantry (same name and unit)
+      final inPantry = pantryItems.firstWhereOrNull(
+        (pi) => pi.name.toLowerCase().trim() == item.name.toLowerCase().trim() && 
+                pi.unit == item.unit
+      );
 
-    if (ingredientMap.isEmpty) {
+      if (inPantry != null) {
+        final availableQty = inPantry.currentQuantity;
+        final neededQty = (item.quantity - availableQty).clamp(0, 9999).toInt();
+        
+        if (neededQty > 0) {
+          filteredIngredientMap[entry.key] = item.copyWith(quantity: neededQty);
+        }
+      } else {
+        filteredIngredientMap[entry.key] = item;
+      }
+    }
+
+    if (filteredIngredientMap.isEmpty) {
       return 0;
     }
 
@@ -130,7 +164,7 @@ class MealPlans extends _$MealPlans {
       shoppingListItemsProvider(currentListId).notifier,
     );
 
-    for (final item in ingredientMap.values) {
+    for (final item in filteredIngredientMap.values) {
       await itemsNotifier.addItem(
         listId: currentListId,
         name: item.name,
@@ -141,6 +175,6 @@ class MealPlans extends _$MealPlans {
       );
     }
 
-    return ingredientMap.length;
+    return filteredIngredientMap.length;
   }
 }
