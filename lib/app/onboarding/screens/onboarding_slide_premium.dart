@@ -102,6 +102,11 @@ class _OnboardingSlidePremiumState
     setState(() => _isPurchasing = true);
     try {
       await ref.read(revenueCatServiceProvider).restorePurchases();
+      unawaited(
+        ref.read(analyticsServiceProvider).logPaywallRestoreCompleted(),
+      );
+      await ref.read(onboardingProvider.notifier).markAsSeen();
+      unawaited(ref.read(analyticsServiceProvider).logOnboardingCompleted());
       ref.invalidate(premiumProvider);
       if (mounted) {
         Navigator.of(context).pop(true);
