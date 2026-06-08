@@ -1,12 +1,12 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_ai_chat.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_hook.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_welcome_login.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_premium.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_personalization.dart';
-import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/core/providers/analytics_provider.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_ai_chat.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_commitments.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_plan_loading.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_premium.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
@@ -19,8 +19,7 @@ class OnboardingScreen extends ConsumerStatefulWidget {
 class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   final _pageController = PageController();
   int _currentSlide = 0;
-  bool _showAiChat = true;
-  bool _hasCompletedOnboarding = false;
+  static const int _slideCount = 7;
 
   @override
   void dispose() {
@@ -38,58 +37,34 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     }
   }
 
-  Future<void> _finishOnboarding() async {
-    if (_hasCompletedOnboarding) {
-      return;
-    }
-    _hasCompletedOnboarding = true;
-    try {
-      await ref.read(onboardingProvider.notifier).markAsSeen();
-    } on Exception {
-      // markAsSeen failure must not block navigation
-    }
-    unawaited(ref.read(analyticsServiceProvider).logOnboardingCompleted());
-    if (mounted) {
-      Navigator.of(context).pop();
-    }
-  }
-
   void _handlePageChanged(int index) {
     setState(() {
       _currentSlide = index;
     });
   }
 
-  int get _slideCount => 3; // Login → Personalization → Premium
-
   @override
   Widget build(BuildContext context) {
-    if (_showAiChat) {
-      return OnboardingAiChat(
-        onFinished: () {
-          setState(() => _showAiChat = false);
-        },
-        onSkipped: _finishOnboarding,
-      );
-    }
-
     return Scaffold(
-      body: SafeArea(
-        child: PageView(
-          controller: _pageController,
-          onPageChanged: _handlePageChanged,
-          physics: const NeverScrollableScrollPhysics(),
-          children: [
-            OnboardingSlideWelcomeLogin(
-              onLoggedIn: _goToNext,
-              onSkipped: _goToNext,
-            ),
-            OnboardingSlidePersonalization(
-              onNext: _goToNext,
-            ),
-            const OnboardingSlidePremium(),
-          ],
-        ),
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: _handlePageChanged,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          OnboardingSlideHook(onFinished: _goToNext),
+          OnboardingSlideWelcomeLogin(
+            onLoggedIn: _goToNext,
+            onSkipped: _goToNext,
+          ),
+          OnboardingSlidePersonalization(onNext: _goToNext),
+          OnboardingAiChat(
+            onFinished: _goToNext,
+            onSkipped: _goToNext,
+          ),
+          OnboardingSlideCommitments(onNext: _goToNext),
+          OnboardingSlidePlanLoading(onFinished: _goToNext),
+          const OnboardingSlidePremium(),
+        ],
       ),
     );
   }
