@@ -2,12 +2,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/app/onboarding/providers/onboarding_data_provider.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
-import 'package:shopping_list/domain/entities/premium_feature.dart';
+import 'package:shopping_list/models/premium_feature.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
 import 'package:shopping_list/theme/colors.dart';
@@ -144,6 +145,38 @@ class _OnboardingSlidePremiumState
     return l10n.paywallCtaUnlock;
   }
 
+  String _goalHeadline(AppLocalizations l10n) {
+    final data = ref.read(onboardingDataProvider);
+    final name = data.displayName.trim();
+    final goals = data.goals;
+    final firstGoal = goals.isNotEmpty ? goals.first : '';
+    final hasName = name.isNotEmpty;
+
+    return switch (firstGoal) {
+      'saveMoney' => hasName
+          ? l10n.paywallGoalHeadlineSaveMoney(name)
+          : l10n.paywallGoalHeadlineNoNameSaveMoney,
+      'neverForget' => hasName
+          ? l10n.paywallGoalHeadlineNeverForget(name)
+          : l10n.paywallGoalHeadlineNoNameNeverForget,
+      'faster' => hasName
+          ? l10n.paywallGoalHeadlineFaster(name)
+          : l10n.paywallGoalHeadlineNoNameFaster,
+      'family' => hasName
+          ? l10n.paywallGoalHeadlineFamily(name)
+          : l10n.paywallGoalHeadlineNoNameFamily,
+      'recipes' => hasName
+          ? l10n.paywallGoalHeadlineRecipes(name)
+          : l10n.paywallGoalHeadlineNoNameRecipes,
+      'pantry' => hasName
+          ? l10n.paywallGoalHeadlinePantry(name)
+          : l10n.paywallGoalHeadlineNoNamePantry,
+      _ => hasName
+          ? l10n.paywallHeroSubtitlePersonalized(name)
+          : l10n.paywallHeroSubtitle,
+    };
+  }
+
   Widget _buildHero(ThemeData theme, AppLocalizations l10n) {
     final trialLabel = _trialLabel(l10n);
     final displayName =
@@ -197,7 +230,7 @@ class _OnboardingSlidePremiumState
           ],
           const SizedBox(height: Spacing.sm),
           Text(
-            l10n.paywallHeroHeadline,
+            _goalHeadline(l10n),
             textAlign: TextAlign.center,
             style: theme.textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.w900,
@@ -308,6 +341,50 @@ class _OnboardingSlidePremiumState
           ),
         ),
       ],
+    )
+        .animate(delay: (PremiumFeature.values.indexOf(feature) * 50).ms)
+        .fadeIn(duration: 300.ms)
+        .slideX(begin: 0.1, end: 0);
+  }
+
+  Widget _buildTestimonial(ThemeData theme, AppLocalizations l10n) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.lg,
+        vertical: Spacing.sm,
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(Spacing.md),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: theme.colorScheme.outlineVariant,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('\u2b50\u2b50\u2b50\u2b50\u2b50', style: TextStyle(fontSize: 14)),
+            const SizedBox(height: Spacing.xs),
+            Text(
+              l10n.paywallTestimonial,
+              style: theme.textTheme.bodySmall?.copyWith(
+                fontStyle: FontStyle.italic,
+                color: theme.colorScheme.onSurface,
+              ),
+            ),
+            const SizedBox(height: Spacing.xs),
+            Text(
+              l10n.paywallTestimonialAuthor,
+              style: theme.textTheme.labelSmall?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -549,21 +626,14 @@ class _OnboardingSlidePremiumState
             ),
           ),
           const SizedBox(height: Spacing.xs),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.lock_outline,
-                  size: 13, color: theme.colorScheme.outline),
-              const SizedBox(width: 4),
-              Text(
-                l10n.paywallSecuredByStore,
-                style: theme.textTheme.labelSmall?.copyWith(
-                  fontSize: 12,
-                  color: theme.colorScheme.onSurfaceVariant
-                      .withAlpha((0.7 * 255).toInt()),
-                ),
-              ),
-            ],
+          Text(
+            l10n.paywallTrialDisclaimer(
+              _selectedPackage?.trialPeriodDays ?? 7,
+            ),
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(height: Spacing.xxs),
           Row(
@@ -651,7 +721,7 @@ class _OnboardingSlidePremiumState
           GestureDetector(
             onTap: _skipOnboarding,
             child: Text(
-              l10n.onboardingMaybeLater,
+              l10n.paywallSkipNow,
               style: theme.textTheme.labelSmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant
                     .withAlpha((0.4 * 255).toInt()),
@@ -684,6 +754,7 @@ class _OnboardingSlidePremiumState
             children: [
               _buildHero(theme, l10n),
               _buildBenefits(theme, l10n),
+              _buildTestimonial(theme, l10n),
               const SizedBox(height: Spacing.sm),
               if (_isLoading)
                 const Padding(
