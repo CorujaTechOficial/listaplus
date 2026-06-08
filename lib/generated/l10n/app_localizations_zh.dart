@@ -712,6 +712,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingRestoreDesc => '已经订阅了？点击此处将其恢复。';
 
   @override
+  String get onboardingMaybeLater => 'Maybe later';
+
+  @override
+  String paywallHeroSubtitlePersonalized(String name) {
+    return 'Hey $name, organize your shopping the right way.';
+  }
+
+  @override
   String get onboardingSlide1Title => 'Smart Shopping Lists';
 
   @override
@@ -1759,6 +1767,49 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notInformed => 'Not set';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get onboardingAiTitle => 'Chat with Kipi';
+
+  @override
+  String get onboardingAiGreeting =>
+      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+
+  @override
+  String get onboardingAiAskName => 'What\'s your name?';
+
+  @override
+  String get onboardingAiNameHint => 'Type your name...';
+
+  @override
+  String onboardingAiNiceToMeet(String name) {
+    return 'Nice to meet you, $name! 🎉';
+  }
+
+  @override
+  String get onboardingAiAskFood => 'What\'s your favorite food?';
+
+  @override
+  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+
+  @override
+  String onboardingAiIngredients(String ingredients) {
+    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+  }
+
+  @override
+  String get onboardingAiAskConfirm =>
+      'Does this look good? Try typing something else!';
+
+  @override
+  String get onboardingAiReady =>
+      'Great! You\'re ready to start. Let\'s set up your account!';
+
+  @override
+  String get onboardingAiContinue => 'Continue →';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -3465,6 +3516,15 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get addedFeedback => '已添加！';
 
   @override
+  String get profile => 'Profile';
+
+  @override
+  String get exitShoppingMode => 'Exit Shopping Mode';
+
+  @override
+  String get exit => 'Exit';
+
+  @override
   String selectedItems(int count) {
     return '已选 $count 项';
   }
@@ -4140,6 +4200,23 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
       one: '$count MONTH FREE',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle => 'Try KipiList Pro free for 7 days';
+
+  @override
+  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+
+  @override
+  String get paywallTrialCta => 'Start Free Trial';
+
+  @override
+  String get recipeAddToList => 'Add to shopping list';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingredients added to $listName';
   }
 
   @override
@@ -4983,6 +5060,88 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get shareReferralSubject => 'Get 7 days of KipiList Premium!';
+
+  @override
+  String get gestureHint => 'Hold to select • Swipe to remove';
+
+  @override
+  String get catalogTitle => 'Catalog';
+
+  @override
+  String get catalogMyFrequents => 'My Frequents';
+
+  @override
+  String get catalogSearchGlobal => 'Search any product...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return 'Search in $category...';
+  }
+
+  @override
+  String get catalogSortPopular => 'Most popular';
+
+  @override
+  String get catalogSortAZ => 'A–Z';
+
+  @override
+  String get catalogFilterNational => 'Nationals';
+
+  @override
+  String get catalogRareSection => 'less common in your country';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return 'Add $count $_temp0 →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Product not found, type the name';
+
+  @override
+  String get catalogBrowse => 'Browse Catalog';
+
+  @override
+  String get offlineBanner => 'You are offline';
+
+  @override
+  String get consentTitle => 'Privacy & Analytics';
+
+  @override
+  String get consentBody =>
+      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+
+  @override
+  String get consentAccept => 'Accept';
+
+  @override
+  String get consentDecline => 'No, thanks';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'In stock';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count missing items',
+      one: '$count missing item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Expiration date';
+
+  @override
+  String get notInformed => 'Not informed';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).

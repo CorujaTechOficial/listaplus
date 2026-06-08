@@ -18,7 +18,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get pantry => 'Phòng đựng thức ăn';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Trò chuyện';
 
   @override
   String get navRecipes => 'Công thức';
@@ -109,13 +109,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get addedFeedback => 'Đã thêm!';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'Hồ sơ';
 
   @override
-  String get exitShoppingMode => 'Exit Shopping Mode';
+  String get exitShoppingMode => 'Thoát chế độ mua sắm';
 
   @override
-  String get exit => 'Exit';
+  String get exit => 'Ra';
 
   @override
   String selectedItems(int count) {
@@ -730,6 +730,14 @@ class AppLocalizationsVi extends AppLocalizations {
       'Đã có đăng ký? Nhấn vào đây để khôi phục nó.';
 
   @override
+  String get onboardingMaybeLater => 'Maybe later';
+
+  @override
+  String paywallHeroSubtitlePersonalized(String name) {
+    return 'Hey $name, organize your shopping the right way.';
+  }
+
+  @override
   String get onboardingSlide1Title => 'Smart Shopping Lists';
 
   @override
@@ -838,26 +846,21 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Dùng thử KipiList Pro miễn phí trong 7 ngày';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'Hủy bỏ bất cứ lúc nào. Hôm nay không tính phí.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Bắt đầu dùng thử miễn phí';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Thêm vào danh sách mua sắm';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count thành phần được thêm vào $listName';
   }
 
   @override
@@ -1728,33 +1731,33 @@ class AppLocalizationsVi extends AppLocalizations {
   String get shareReferralSubject => 'Nhận 7 ngày sử dụng KipiList Premium!';
 
   @override
-  String get gestureHint => 'Hold to select • Swipe to remove';
+  String get gestureHint => 'Giữ để chọn • Vuốt để xóa';
 
   @override
-  String get catalogTitle => 'Catalog';
+  String get catalogTitle => 'Danh mục';
 
   @override
-  String get catalogMyFrequents => 'My Frequents';
+  String get catalogMyFrequents => 'Người thường xuyên của tôi';
 
   @override
-  String get catalogSearchGlobal => 'Search any product...';
+  String get catalogSearchGlobal => 'Tìm kiếm bất kỳ sản phẩm...';
 
   @override
   String catalogSearchInCategory(String category) {
-    return 'Search in $category...';
+    return 'Tìm kiếm trong $category...';
   }
 
   @override
-  String get catalogSortPopular => 'Most popular';
+  String get catalogSortPopular => 'Phổ biến nhất';
 
   @override
   String get catalogSortAZ => 'A–Z';
 
   @override
-  String get catalogFilterNational => 'Nationals';
+  String get catalogFilterNational => 'Quốc tịch';
 
   @override
-  String get catalogRareSection => 'less common in your country';
+  String get catalogRareSection => 'ít phổ biến hơn ở nước bạn';
 
   @override
   String catalogAddItems(int count) {
@@ -1764,48 +1767,91 @@ class AppLocalizationsVi extends AppLocalizations {
       other: 'items',
       one: 'item',
     );
-    return 'Add $count $_temp0 →';
+    return 'Thêm $count $_temp0 →';
   }
 
   @override
-  String get catalogProductNotFound => 'Product not found, type the name';
+  String get catalogProductNotFound => 'Không tìm thấy sản phẩm, gõ tên';
 
   @override
-  String get catalogBrowse => 'Browse Catalog';
+  String get catalogBrowse => 'Duyệt danh mục';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Bạn đang ngoại tuyến';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Quyền riêng tư & Phân tích';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList sử dụng Firebase Analytics để cải thiện trải nghiệm của bạn. Dữ liệu của bạn được xử lý theo Chính sách quyền riêng tư của chúng tôi.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Chấp nhận';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Không, cảm ơn';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Còn hàng';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count mục bị thiếu',
+      one: '$count mục bị thiếu',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Ngày hết hạn';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Không được thông báo';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get onboardingAiTitle => 'Chat with Kipi';
+
+  @override
+  String get onboardingAiGreeting =>
+      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+
+  @override
+  String get onboardingAiAskName => 'What\'s your name?';
+
+  @override
+  String get onboardingAiNameHint => 'Type your name...';
+
+  @override
+  String onboardingAiNiceToMeet(String name) {
+    return 'Nice to meet you, $name! 🎉';
+  }
+
+  @override
+  String get onboardingAiAskFood => 'What\'s your favorite food?';
+
+  @override
+  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+
+  @override
+  String onboardingAiIngredients(String ingredients) {
+    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+  }
+
+  @override
+  String get onboardingAiAskConfirm =>
+      'Does this look good? Try typing something else!';
+
+  @override
+  String get onboardingAiReady =>
+      'Great! You\'re ready to start. Let\'s set up your account!';
+
+  @override
+  String get onboardingAiContinue => 'Continue →';
 }

@@ -735,6 +735,14 @@ class AppLocalizationsPt extends AppLocalizations {
       'Já tem uma assinatura? Toque aqui para restaurá-lo.';
 
   @override
+  String get onboardingMaybeLater => 'Maybe later';
+
+  @override
+  String paywallHeroSubtitlePersonalized(String name) {
+    return 'Hey $name, organize your shopping the right way.';
+  }
+
+  @override
   String get onboardingSlide1Title => 'Smart Shopping Lists';
 
   @override
@@ -1783,20 +1791,20 @@ class AppLocalizationsPt extends AppLocalizations {
   String get catalogBrowse => 'Navegar no catálogo';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Você está off-line';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Privacidade e análise';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList usa Firebase Analytics para melhorar sua experiência. Os seus dados são processados ​​de acordo com a nossa Política de Privacidade.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Aceitar';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Não, obrigado';
 
   @override
   String get mealPlannerPantryAllAvailable => 'Em estoque';
@@ -1817,6 +1825,49 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get notInformed => 'Não informada';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get onboardingAiTitle => 'Chat with Kipi';
+
+  @override
+  String get onboardingAiGreeting =>
+      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+
+  @override
+  String get onboardingAiAskName => 'What\'s your name?';
+
+  @override
+  String get onboardingAiNameHint => 'Type your name...';
+
+  @override
+  String onboardingAiNiceToMeet(String name) {
+    return 'Nice to meet you, $name! 🎉';
+  }
+
+  @override
+  String get onboardingAiAskFood => 'What\'s your favorite food?';
+
+  @override
+  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+
+  @override
+  String onboardingAiIngredients(String ingredients) {
+    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+  }
+
+  @override
+  String get onboardingAiAskConfirm =>
+      'Does this look good? Try typing something else!';
+
+  @override
+  String get onboardingAiReady =>
+      'Great! You\'re ready to start. Let\'s set up your account!';
+
+  @override
+  String get onboardingAiContinue => 'Continue →';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -2634,6 +2685,25 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       one: '$count MÊS GRÁTIS',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'Experimente o KipiList Pro gratuitamente por 7 dias';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Cancele a qualquer momento. Sem cobrança hoje.';
+
+  @override
+  String get paywallTrialCta => 'Comece o teste gratuito';
+
+  @override
+  String get recipeAddToList => 'Adicionar à lista de compras';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingredientes adicionados a $listName';
   }
 
   @override
@@ -3540,6 +3610,42 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get catalogBrowse => 'Navegar no catálogo';
+
+  @override
+  String get offlineBanner => 'Você está off-line';
+
+  @override
+  String get consentTitle => 'Privacidade e análise';
+
+  @override
+  String get consentBody =>
+      'KipiList usa Firebase Analytics para melhorar sua experiência. Os seus dados são processados ​​de acordo com a nossa Política de Privacidade.';
+
+  @override
+  String get consentAccept => 'Aceitar';
+
+  @override
+  String get consentDecline => 'Não, obrigado';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Em estoque';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count itens faltando',
+      one: '$count item faltando',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Data de validade';
+
+  @override
+  String get notInformed => 'Não informado';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -4349,6 +4455,25 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
       one: '$count MÊS GRATUITO',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'Experimente o KipiList Pro gratuitamente por 7 dias';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'Cancele a qualquer momento. Sem cobrança hoje.';
+
+  @override
+  String get paywallTrialCta => 'Comece o teste gratuito';
+
+  @override
+  String get recipeAddToList => 'Adicionar à lista de compras';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count ingredientes adicionados a $listName';
   }
 
   @override
@@ -5256,4 +5381,40 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get catalogBrowse => 'Navegar no catálogo';
+
+  @override
+  String get offlineBanner => 'Você está off-line';
+
+  @override
+  String get consentTitle => 'Privacidade e análise';
+
+  @override
+  String get consentBody =>
+      'KipiList usa Firebase Analytics para melhorar sua experiência. Os seus dados são processados ​​de acordo com a nossa Política de Privacidade.';
+
+  @override
+  String get consentAccept => 'Aceitar';
+
+  @override
+  String get consentDecline => 'Não, obrigado';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Em estoque';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count itens faltando',
+      one: '$count item faltando',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Data de validade';
+
+  @override
+  String get notInformed => 'Não informado';
 }

@@ -18,7 +18,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get pantry => 'Kiler';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Sohbet';
 
   @override
   String get navRecipes => 'Tarifler';
@@ -111,13 +111,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get addedFeedback => 'Eklendi!';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'Profil';
 
   @override
-  String get exitShoppingMode => 'Exit Shopping Mode';
+  String get exitShoppingMode => 'Alışveriş Modundan Çık';
 
   @override
-  String get exit => 'Exit';
+  String get exit => 'Çıkış';
 
   @override
   String selectedItems(int count) {
@@ -653,7 +653,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Monthly AI limit reached. Upgrade to Pro for unlimited →';
 
   @override
-  String get kipiListTitle => 'KipiList';
+  String get kipiListTitle => 'Kipi Listesi';
 
   @override
   String get loginPrompt =>
@@ -731,6 +731,14 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get onboardingRestoreDesc =>
       'Zaten bir aboneliğiniz var mı? Geri yüklemek için buraya dokunun.';
+
+  @override
+  String get onboardingMaybeLater => 'Maybe later';
+
+  @override
+  String paywallHeroSubtitlePersonalized(String name) {
+    return 'Hey $name, organize your shopping the right way.';
+  }
 
   @override
   String get onboardingSlide1Title => 'Smart Shopping Lists';
@@ -842,26 +850,22 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle =>
+      'KipiList Pro\'yu 7 gün boyunca ücretsiz deneyin';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle =>
+      'İstediğiniz zaman iptal edin. Bugün ücret yok.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Ücretsiz Denemeyi Başlat';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Alışveriş listesine ekle';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '$count malzemeler $listName\'e eklendi';
   }
 
   @override
@@ -1731,33 +1735,34 @@ class AppLocalizationsTr extends AppLocalizations {
   String get shareReferralSubject => '7 günlük KipiList Premium\'u edinin!';
 
   @override
-  String get gestureHint => 'Hold to select • Swipe to remove';
+  String get gestureHint =>
+      'Seçmek için basılı tutun • Kaldırmak için kaydırın';
 
   @override
-  String get catalogTitle => 'Catalog';
+  String get catalogTitle => 'Katalog';
 
   @override
-  String get catalogMyFrequents => 'My Frequents';
+  String get catalogMyFrequents => 'Sık Kullanılanlarım';
 
   @override
-  String get catalogSearchGlobal => 'Search any product...';
+  String get catalogSearchGlobal => 'Herhangi bir ürünü arayın...';
 
   @override
   String catalogSearchInCategory(String category) {
-    return 'Search in $category...';
+    return '$category\'da ara...';
   }
 
   @override
-  String get catalogSortPopular => 'Most popular';
+  String get catalogSortPopular => 'En popüler';
 
   @override
-  String get catalogSortAZ => 'A–Z';
+  String get catalogSortAZ => 'A\'dan Z\'ye';
 
   @override
-  String get catalogFilterNational => 'Nationals';
+  String get catalogFilterNational => 'Vatandaşlar';
 
   @override
-  String get catalogRareSection => 'less common in your country';
+  String get catalogRareSection => 'ülkenizde daha az yaygın';
 
   @override
   String catalogAddItems(int count) {
@@ -1767,50 +1772,93 @@ class AppLocalizationsTr extends AppLocalizations {
       other: 'items',
       one: 'item',
     );
-    return 'Add $count $_temp0 →';
+    return '$count $_temp0 ekle →';
   }
 
   @override
-  String get catalogProductNotFound => 'Product not found, type the name';
+  String get catalogProductNotFound => 'Ürün bulunamadı, adını yazın';
 
   @override
-  String get catalogBrowse => 'Browse Catalog';
+  String get catalogBrowse => 'Kataloğa Göz Atın';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Çevrimdışısınız';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Gizlilik ve Analitik';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList deneyiminizi geliştirmek için Firebase Analytics\'i kullanıyor. Verileriniz Gizlilik Politikamıza uygun olarak işlenmektedir.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Kabul etmek';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Hayır, teşekkürler';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Stokta var';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: '$count eksik öğe',
+      one: '$count eksik öğe',
     );
-    return '$count $_temp0 missing';
+    return '$_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Son kullanma tarihi';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Bilgilendirilmedi';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get onboardingAiTitle => 'Chat with Kipi';
+
+  @override
+  String get onboardingAiGreeting =>
+      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+
+  @override
+  String get onboardingAiAskName => 'What\'s your name?';
+
+  @override
+  String get onboardingAiNameHint => 'Type your name...';
+
+  @override
+  String onboardingAiNiceToMeet(String name) {
+    return 'Nice to meet you, $name! 🎉';
+  }
+
+  @override
+  String get onboardingAiAskFood => 'What\'s your favorite food?';
+
+  @override
+  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+
+  @override
+  String onboardingAiIngredients(String ingredients) {
+    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+  }
+
+  @override
+  String get onboardingAiAskConfirm =>
+      'Does this look good? Try typing something else!';
+
+  @override
+  String get onboardingAiReady =>
+      'Great! You\'re ready to start. Let\'s set up your account!';
+
+  @override
+  String get onboardingAiContinue => 'Continue →';
 }
 
 /// The translations for Turkish, as used in Turkey (`tr_TR`).
@@ -1827,7 +1875,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get pantry => 'Kiler';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Sohbet';
 
   @override
   String get navRecipes => 'Tarifler';
@@ -1918,6 +1966,15 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get addedFeedback => 'Eklendi!';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get exitShoppingMode => 'Alışveriş Modundan Çık';
+
+  @override
+  String get exit => 'Çıkış';
 
   @override
   String selectedItems(int count) {
@@ -2609,6 +2666,25 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
       one: '$count AY ÜCRETSİZ',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get paywallTrialTitle =>
+      'KipiList Pro\'yu 7 gün boyunca ücretsiz deneyin';
+
+  @override
+  String get paywallTrialSubtitle =>
+      'İstediğiniz zaman iptal edin. Bugün ücret yok.';
+
+  @override
+  String get paywallTrialCta => 'Ücretsiz Denemeyi Başlat';
+
+  @override
+  String get recipeAddToList => 'Alışveriş listesine ekle';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    return '$count malzemeler $listName\'e eklendi';
   }
 
   @override
@@ -3462,4 +3538,87 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get shareReferralSubject => '7 günlük KipiList Premium\'u edinin!';
+
+  @override
+  String get gestureHint =>
+      'Seçmek için basılı tutun • Kaldırmak için kaydırın';
+
+  @override
+  String get catalogTitle => 'Katalog';
+
+  @override
+  String get catalogMyFrequents => 'Sık Kullanılanlarım';
+
+  @override
+  String get catalogSearchGlobal => 'Herhangi bir ürünü arayın...';
+
+  @override
+  String catalogSearchInCategory(String category) {
+    return '$category\'da ara...';
+  }
+
+  @override
+  String get catalogSortPopular => 'En popüler';
+
+  @override
+  String get catalogSortAZ => 'A\'dan Z\'ye';
+
+  @override
+  String get catalogFilterNational => 'Vatandaşlar';
+
+  @override
+  String get catalogRareSection => 'ülkenizde daha az yaygın';
+
+  @override
+  String catalogAddItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 ekle →';
+  }
+
+  @override
+  String get catalogProductNotFound => 'Ürün bulunamadı, adını yazın';
+
+  @override
+  String get catalogBrowse => 'Kataloğa Göz Atın';
+
+  @override
+  String get offlineBanner => 'Çevrimdışısınız';
+
+  @override
+  String get consentTitle => 'Gizlilik ve Analitik';
+
+  @override
+  String get consentBody =>
+      'KipiList deneyiminizi geliştirmek için Firebase Analytics\'i kullanıyor. Verileriniz Gizlilik Politikamıza uygun olarak işlenmektedir.';
+
+  @override
+  String get consentAccept => 'Kabul etmek';
+
+  @override
+  String get consentDecline => 'Hayır, teşekkürler';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Stokta var';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count eksik öğe',
+      one: '$count eksik öğe',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get expirationDate => 'Son kullanma tarihi';
+
+  @override
+  String get notInformed => 'Bilgilendirilmedi';
 }

@@ -18,7 +18,7 @@ class AppLocalizationsSr extends AppLocalizations {
   String get pantry => 'Остава';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Ћаскање';
 
   @override
   String get navRecipes => 'Рецепти';
@@ -109,13 +109,13 @@ class AppLocalizationsSr extends AppLocalizations {
   String get addedFeedback => 'Додато!';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'Профил';
 
   @override
-  String get exitShoppingMode => 'Exit Shopping Mode';
+  String get exitShoppingMode => 'Изађите из режима куповине';
 
   @override
-  String get exit => 'Exit';
+  String get exit => 'Изађи';
 
   @override
   String selectedItems(int count) {
@@ -734,6 +734,14 @@ class AppLocalizationsSr extends AppLocalizations {
       'Већ имате претплату? Додирните овде да бисте га вратили.';
 
   @override
+  String get onboardingMaybeLater => 'Maybe later';
+
+  @override
+  String paywallHeroSubtitlePersonalized(String name) {
+    return 'Hey $name, organize your shopping the right way.';
+  }
+
+  @override
   String get onboardingSlide1Title => 'Smart Shopping Lists';
 
   @override
@@ -842,26 +850,20 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Испробајте КипиЛист Про бесплатно 7 дана';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'Откажите било када. Без накнаде данас.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Започните бесплатну пробну верзију';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Додај на листу за куповину';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
-    );
-    return '$count $_temp0 added to $listName';
+    return '__ПХ0__ састојци додати у __ПХ1__';
   }
 
   @override
@@ -1739,84 +1741,127 @@ class AppLocalizationsSr extends AppLocalizations {
   String get shareReferralSubject => 'Добијте 7 дана KipiList Премиум!';
 
   @override
-  String get gestureHint => 'Hold to select • Swipe to remove';
+  String get gestureHint => 'Држите да изаберете • Превуците да бисте уклонили';
 
   @override
-  String get catalogTitle => 'Catalog';
+  String get catalogTitle => 'Каталог';
 
   @override
-  String get catalogMyFrequents => 'My Frequents';
+  String get catalogMyFrequents => 'Ми Фрекуентс';
 
   @override
-  String get catalogSearchGlobal => 'Search any product...';
+  String get catalogSearchGlobal => 'Претражите било који производ...';
 
   @override
   String catalogSearchInCategory(String category) {
-    return 'Search in $category...';
+    return 'Тражи у __ПХ0__...';
   }
 
   @override
-  String get catalogSortPopular => 'Most popular';
+  String get catalogSortPopular => 'Најпопуларнији';
 
   @override
-  String get catalogSortAZ => 'A–Z';
+  String get catalogSortAZ => 'А–З';
 
   @override
-  String get catalogFilterNational => 'Nationals';
+  String get catalogFilterNational => 'Држављани';
 
   @override
-  String get catalogRareSection => 'less common in your country';
+  String get catalogRareSection => 'мање уобичајено у вашој земљи';
 
   @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'items',
-      one: 'item',
+      other: 'ставке',
+      one: 'ставка',
     );
-    return 'Add $count $_temp0 →';
+    return 'Додај $count $_temp0 →';
   }
 
   @override
-  String get catalogProductNotFound => 'Product not found, type the name';
+  String get catalogProductNotFound => 'Производ није пронађен, унесите назив';
 
   @override
-  String get catalogBrowse => 'Browse Catalog';
+  String get catalogBrowse => 'Прегледајте каталог';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Ви сте ван мреже';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Приватност и аналитика';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'КипиЛист користи Фиребасе аналитику да побољша ваше искуство. Ваши подаци се обрађују у складу са нашом Политиком приватности.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Прихвати';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Не, хвала';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'На залихама';
 
   @override
   String mealPlannerPantryMissing(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ingredients',
-      one: 'ingredient',
+      other: 'недостају ставке',
+      one: 'недостаје ставка',
     );
-    return '$count $_temp0 missing';
+    return '$count $_temp0';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Датум истека';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Није обавештен';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get onboardingAiTitle => 'Chat with Kipi';
+
+  @override
+  String get onboardingAiGreeting =>
+      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+
+  @override
+  String get onboardingAiAskName => 'What\'s your name?';
+
+  @override
+  String get onboardingAiNameHint => 'Type your name...';
+
+  @override
+  String onboardingAiNiceToMeet(String name) {
+    return 'Nice to meet you, $name! 🎉';
+  }
+
+  @override
+  String get onboardingAiAskFood => 'What\'s your favorite food?';
+
+  @override
+  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+
+  @override
+  String onboardingAiIngredients(String ingredients) {
+    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+  }
+
+  @override
+  String get onboardingAiAskConfirm =>
+      'Does this look good? Try typing something else!';
+
+  @override
+  String get onboardingAiReady =>
+      'Great! You\'re ready to start. Let\'s set up your account!';
+
+  @override
+  String get onboardingAiContinue => 'Continue →';
 }

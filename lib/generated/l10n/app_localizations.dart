@@ -1608,6 +1608,18 @@ abstract class AppLocalizations {
   /// **'Already have a subscription? Tap here to restore it.'**
   String get onboardingRestoreDesc;
 
+  /// Discrete skip link at the bottom of the onboarding paywall
+  ///
+  /// In en, this message translates to:
+  /// **'Maybe later'**
+  String get onboardingMaybeLater;
+
+  /// Paywall hero subtitle with user's name from AI chat
+  ///
+  /// In en, this message translates to:
+  /// **'Hey {name}, organize your shopping the right way.'**
+  String paywallHeroSubtitlePersonalized(String name);
+
   /// Onboarding slide 1: value prop title
   ///
   /// In en, this message translates to:
@@ -3527,6 +3539,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not set'**
   String get notInformed;
+
+  /// Skip onboarding / action
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// AI Chat onboarding slide header
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with Kipi'**
+  String get onboardingAiTitle;
+
+  /// AI first greeting message
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! I\'m Kipi, your personal shopping assistant! 🛒'**
+  String get onboardingAiGreeting;
+
+  /// AI asks user name
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s your name?'**
+  String get onboardingAiAskName;
+
+  /// Hint for name input field
+  ///
+  /// In en, this message translates to:
+  /// **'Type your name...'**
+  String get onboardingAiNameHint;
+
+  /// AI responds after user tells their name
+  ///
+  /// In en, this message translates to:
+  /// **'Nice to meet you, {name}! 🎉'**
+  String onboardingAiNiceToMeet(String name);
+
+  /// AI asks user's favorite food
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s your favorite food?'**
+  String get onboardingAiAskFood;
+
+  /// Hint for food input field
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Pizza, Sushi...'**
+  String get onboardingAiFoodHint;
+
+  /// AI displays ingredients for the chosen food
+  ///
+  /// In en, this message translates to:
+  /// **'Great choices! Here\'s what I\'d add to your list:\n\n{ingredients}\n\n---'**
+  String onboardingAiIngredients(String ingredients);
+
+  /// AI asks for confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Does this look good? Try typing something else!'**
+  String get onboardingAiAskConfirm;
+
+  /// AI ready message
+  ///
+  /// In en, this message translates to:
+  /// **'Great! You\'re ready to start. Let\'s set up your account!'**
+  String get onboardingAiReady;
+
+  /// Continue button after AI chat
+  ///
+  /// In en, this message translates to:
+  /// **'Continue →'**
+  String get onboardingAiContinue;
 }
 
 class _AppLocalizationsDelegate

@@ -304,6 +304,15 @@
   "@onboardingRestore": { "description": "Restore purchases button" },
   "onboardingRestoreDesc": "Already have a subscription? Tap here to restore it.",
   "@onboardingRestoreDesc": { "description": "Explanation for restore button" },
+  "onboardingMaybeLater": "Maybe later",
+  "@onboardingMaybeLater": { "description": "Discrete skip link at the bottom of the onboarding paywall" },
+  "paywallHeroSubtitlePersonalized": "Hey {name}, organize your shopping the right way.",
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
   "onboardingSlide1Title": "Smart Shopping Lists",
   "@onboardingSlide1Title": { "description": "Onboarding slide 1: value prop title" },
   "onboardingSlide1Body": "Create and share lists instantly. Kipi adds items automatically based on your habits.",
@@ -734,5 +743,37 @@
   "mealPlannerPantryMissing": "{count} {count, plural, one{ingredient} other{ingredients}} missing",
   "@mealPlannerPantryMissing": { "placeholders": { "count": { "type": "int" } } },
   "expirationDate": "Expiration date",
-  "notInformed": "Not set"
+  "notInformed": "Not set",
+
+  "@_OnboardingAiChat": "description: Onboarding AI Chat flow",
+  "skip": "Skip",
+  "@skip": { "description": "Skip onboarding / action" },
+  "onboardingAiTitle": "Chat with Kipi",
+  "@onboardingAiTitle": { "description": "AI Chat onboarding slide header" },
+  "onboardingAiGreeting": "Hi! I'm Kipi, your personal shopping assistant! 🛒",
+  "@onboardingAiGreeting": { "description": "AI first greeting message" },
+  "onboardingAiAskName": "What's your name?",
+  "@onboardingAiAskName": { "description": "AI asks user name" },
+  "onboardingAiNameHint": "Type your name...",
+  "@onboardingAiNameHint": { "description": "Hint for name input field" },
+  "onboardingAiNiceToMeet": "Nice to meet you, {name}! 🎉",
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "onboardingAiAskFood": "What's your favorite food?",
+  "@onboardingAiAskFood": { "description": "AI asks user's favorite food" },
+  "onboardingAiFoodHint": "e.g. Pizza, Sushi...",
+  "@onboardingAiFoodHint": { "description": "Hint for food input field" },
+  "onboardingAiIngredients": "Great choices! Here's what I'd add to your list:\n\n{ingredients}\n\n---",
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": { "ingredients": { "type": "String" } }
+  },
+  "onboardingAiAskConfirm": "Does this look good? Try typing something else!",
+  "@onboardingAiAskConfirm": { "description": "AI asks for confirmation" },
+  "onboardingAiReady": "Great! You're ready to start. Let's set up your account!",
+  "@onboardingAiReady": { "description": "AI ready message" },
+  "onboardingAiContinue": "Continue →",
+  "@onboardingAiContinue": { "description": "Continue button after AI chat" }
 }
