@@ -1,10 +1,15 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:shopping_list/app/onboarding/providers/onboarding_data_provider.dart';
+import 'package:shopping_list/core/providers/analytics_provider.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/domain/entities/premium_feature.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/services/revenuecat_service.dart';
-import 'package:shopping_list/core/providers/monetization_providers.dart';
-import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,6 +32,7 @@ class _OnboardingSlidePremiumState
   @override
   void initState() {
     super.initState();
+    unawaited(ref.read(analyticsServiceProvider).logPaywallViewed());
     _loadPackages();
   }
 
@@ -38,21 +44,20 @@ class _OnboardingSlidePremiumState
         setState(() {
           _packages = pkgs;
           if (pkgs.isNotEmpty) {
-            _selectedPackage = pkgs.firstWhere(
-              (p) =>
-                  p.identifier.toLowerCase().contains('annual') ||
-                  p.identifier.toLowerCase().contains('ano'),
-              orElse: () => pkgs.first,
-            );
+            _selectedPackage = pkgs.cast<PaywallPackage?>().firstWhere(
+                  (p) => p?.rawPackage?.packageType == PackageType.annual,
+                  orElse: () => pkgs.cast<PaywallPackage?>().firstWhere(
+                        (p) => p?.rawPackage?.packageType == PackageType.monthly,
+                        orElse: () => pkgs.first,
+                      ),
+                );
           }
           _isLoading = false;
         });
       }
     } on Exception {
       if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
+        setState(() => _isLoading = false);
       }
     }
   }
@@ -62,14 +67,14 @@ class _OnboardingSlidePremiumState
     if (pkg == null) {
       return;
     }
-
     setState(() => _isPurchasing = true);
-
     try {
       await ref.read(revenueCatServiceProvider).purchasePackage(pkg);
       unawaited(
         ref.read(analyticsServiceProvider).logPaywallPurchaseCompleted(),
       );
+      await ref.read(onboardingProvider.notifier).markAsSeen();
+      unawaited(ref.read(analyticsServiceProvider).logOnboardingCompleted());
       ref.invalidate(premiumProvider);
       if (mounted) {
         Navigator.of(context).pop(true);
@@ -79,11 +84,17 @@ class _OnboardingSlidePremiumState
       if (mounted) {
         setState(() => _isPurchasing = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(AppLocalizations.of(context)!.purchaseError),
-          ),
+          SnackBar(content: Text(AppLocalizations.of(context)!.purchaseError)),
         );
       }
+    }
+  }
+
+  Future<void> _skipOnboarding() async {
+    await ref.read(onboardingProvider.notifier).markAsSeen();
+    unawaited(ref.read(analyticsServiceProvider).logOnboardingCompleted());
+    if (mounted) {
+      Navigator.of(context).pop();
     }
   }
 
@@ -99,12 +110,561 @@ class _OnboardingSlidePremiumState
       if (mounted) {
         setState(() => _isPurchasing = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(AppLocalizations.of(context)!.restoreError),
-          ),
+          SnackBar(content: Text(AppLocalizations.of(context)!.restoreError)),
         );
       }
     }
+  }
+
+  String _trialLabel(AppLocalizations l10n) {
+    final pkg = _selectedPackage;
+    if (pkg != null && pkg.hasFreeTrial) {
+      final days = pkg.trialPeriodDays!;
+      if (days >= 30) {
+        return l10n.paywallTrialMonths(days ~/ 30);
+      }
+      if (days >= 7) {
+        return l10n.paywallTrialWeeks(days ~/ 7);
+      }
+      return l10n.paywallTrialDays(days);
+    }
+    return '';
+  }
+
+  String _ctaText(AppLocalizations l10n) {
+    final pkg = _selectedPackage;
+    if (pkg != null && pkg.hasFreeTrial) {
+      return l10n.paywallTrialCta;
+    }
+    return l10n.paywallCtaUnlock;
+  }
+
+  Widget _buildHero(ThemeData theme, AppLocalizations l10n) {
+    final trialLabel = _trialLabel(l10n);
+    final displayName =
+        ref.watch(onboardingDataProvider).displayName.trim();
+    final subtitle = displayName.isNotEmpty
+        ? l10n.paywallHeroSubtitlePersonalized(displayName)
+        : l10n.paywallHeroSubtitle;
+
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            theme.colorScheme.primary.withAlpha((0.9 * 255).toInt()),
+            theme.colorScheme.tertiary.withAlpha((0.7 * 255).toInt()),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      padding: const EdgeInsets.fromLTRB(
+        Spacing.xl, Spacing.xl, Spacing.xl, Spacing.lg,
+      ),
+      child: Column(
+        children: [
+          Image.asset(
+            'assets/images/kipi/kipi_welcome.png',
+            height: 100,
+            filterQuality: FilterQuality.high,
+          ),
+          if (trialLabel.isNotEmpty) ...[
+            const SizedBox(height: Spacing.sm),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: Spacing.sm, vertical: Spacing.xxs,
+              ),
+              decoration: BoxDecoration(
+                color: AppColors.premiumAmber,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                trialLabel,
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 10,
+                  color: theme.colorScheme.onTertiary,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ],
+          const SizedBox(height: Spacing.sm),
+          Text(
+            l10n.paywallHeroHeadline,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+              height: 1.2,
+            ),
+          ),
+          const SizedBox(height: Spacing.xs),
+          Text(
+            subtitle,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: Colors.white.withAlpha((0.85 * 255).toInt()),
+              height: 1.45,
+            ),
+          ),
+          const SizedBox(height: Spacing.sm),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: Spacing.sm, vertical: Spacing.xxs,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white.withAlpha((0.15 * 255).toInt()),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('⭐⭐⭐⭐⭐', style: TextStyle(fontSize: 10)),
+                const SizedBox(width: 5),
+                Text(
+                  l10n.paywallSocialProof,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: Colors.white.withAlpha((0.9 * 255).toInt()),
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBenefits(ThemeData theme, AppLocalizations l10n) {
+    return ColoredBox(
+      color: theme.colorScheme.surface,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: Spacing.lg, vertical: Spacing.sm,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              l10n.paywallFeaturesTitle,
+              style: theme.textTheme.labelSmall?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: theme.colorScheme.onSurfaceVariant,
+                letterSpacing: 0.8,
+              ),
+            ),
+            const SizedBox(height: Spacing.sm),
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              mainAxisSpacing: Spacing.xs,
+              crossAxisSpacing: Spacing.xs,
+              childAspectRatio: 3.8,
+              children: PremiumFeature.values
+                  .map((f) => _buildBenefitCell(theme, f, l10n))
+                  .toList(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBenefitCell(
+    ThemeData theme,
+    PremiumFeature feature,
+    AppLocalizations l10n,
+  ) {
+    return Row(
+      children: [
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            color: theme.colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(feature.icon, color: theme.colorScheme.primary, size: 15),
+        ),
+        const SizedBox(width: Spacing.xs),
+        Expanded(
+          child: Text(
+            feature.localizedLabel(l10n),
+            style: theme.textTheme.labelSmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.onSurface,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPlans(ThemeData theme, AppLocalizations l10n) {
+    if (_packages.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
+    final monthlyPkg = _packages.cast<PaywallPackage?>().firstWhere(
+      (p) => p?.rawPackage?.packageType == PackageType.monthly,
+      orElse: () => null,
+    );
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: Spacing.lg),
+      child: Column(
+        children: [
+          Text(
+            l10n.paywallSelectPlan,
+            style: theme.textTheme.labelSmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.onSurfaceVariant,
+              letterSpacing: 0.8,
+            ),
+          ),
+          const SizedBox(height: Spacing.sm),
+          ..._packages.map((pkg) {
+            final isSelected = _selectedPackage?.identifier == pkg.identifier;
+            final isAnnual =
+                pkg.rawPackage?.packageType == PackageType.annual;
+            final isMonthly =
+                pkg.rawPackage?.packageType == PackageType.monthly;
+
+            String badgeText = '';
+            if (isAnnual &&
+                monthlyPkg != null &&
+                monthlyPkg.identifier != pkg.identifier) {
+              final yearlyCostMonthly = monthlyPkg.price * 12;
+              final savings =
+                  ((yearlyCostMonthly - pkg.price) / yearlyCostMonthly * 100)
+                      .round();
+              badgeText =
+                  '${l10n.paywallMostPopular} · ${l10n.paywallSavePercent(savings)}';
+            }
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: Spacing.sm),
+              child: InkWell(
+                onTap: () => setState(() => _selectedPackage = pkg),
+                borderRadius: BorderRadius.circular(16),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: isSelected
+                          ? theme.colorScheme.primary
+                          : theme.colorScheme.outlineVariant,
+                      width: isSelected ? 2.5 : 1.5,
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                    color: isAnnual
+                        ? (isSelected
+                            ? theme.colorScheme.primaryContainer
+                                .withAlpha(100)
+                            : theme.colorScheme.primaryContainer.withAlpha(30))
+                        : (isSelected
+                            ? theme.colorScheme.surfaceContainerHighest
+                            : theme.colorScheme.surface),
+                  ),
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(Spacing.sm),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _mapPackageName(pkg, l10n),
+                                    style:
+                                        theme.textTheme.titleSmall?.copyWith(
+                                      fontWeight: FontWeight.w800,
+                                      color: isSelected
+                                          ? theme.colorScheme.primary
+                                          : theme.colorScheme.onSurface,
+                                    ),
+                                  ),
+                                  if (isAnnual &&
+                                      monthlyPkg != null &&
+                                      monthlyPkg.identifier !=
+                                          pkg.identifier) ...[
+                                    Text(
+                                      l10n.paywallPricePerMonth(
+                                        formatCurrency(
+                                          pkg.price / 12,
+                                          pkg.currencyCode,
+                                        ),
+                                      ),
+                                      style: theme.textTheme.bodySmall
+                                          ?.copyWith(
+                                        color: isSelected
+                                            ? theme.colorScheme.primary
+                                            : theme
+                                                .colorScheme.onSurfaceVariant,
+                                        fontWeight: isSelected
+                                            ? FontWeight.w600
+                                            : null,
+                                      ),
+                                    ),
+                                    if (pkg.hasFreeTrial &&
+                                        pkg.trialPeriodDays != null)
+                                      Text(
+                                        l10n.paywallTrialInCard(
+                                          pkg.trialPeriodDays!,
+                                        ),
+                                        style: theme.textTheme.labelSmall
+                                            ?.copyWith(
+                                          color: AppColors.premiumAmber,
+                                          fontWeight: FontWeight.w800,
+                                          fontSize: 10,
+                                        ),
+                                      ),
+                                  ] else if (isMonthly)
+                                    Text(
+                                      l10n.paywallPackageMonthlyDesc,
+                                      style: theme.textTheme.bodySmall
+                                          ?.copyWith(
+                                        color: theme
+                                            .colorScheme.onSurfaceVariant,
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              pkg.priceString,
+                              style:
+                                  theme.textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.w900,
+                                color: isSelected
+                                    ? theme.colorScheme.primary
+                                    : theme.colorScheme.onSurface,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (badgeText.isNotEmpty)
+                        Positioned(
+                          top: -10,
+                          right: 16,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: Spacing.xs, vertical: 3,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.premiumAmber,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withAlpha(40),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              badgeText,
+                              style: const TextStyle(
+                                fontSize: 9,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black,
+                                letterSpacing: 0.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStickyCta(ThemeData theme, AppLocalizations l10n) {
+    if (_isLoading || _packages.isEmpty) {
+      return const SizedBox.shrink();
+    }
+    return Container(
+      padding: EdgeInsets.fromLTRB(
+        Spacing.lg,
+        Spacing.sm,
+        Spacing.lg,
+        MediaQuery.of(context).padding.bottom + Spacing.sm,
+      ),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        boxShadow: [
+          BoxShadow(
+            color: theme.colorScheme.shadow.withAlpha((0.08 * 255).toInt()),
+            blurRadius: 10,
+            offset: const Offset(0, -4),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: 54,
+            child: ElevatedButton(
+              onPressed: _selectedPackage != null ? _purchase : null,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: theme.colorScheme.primary,
+                foregroundColor: theme.colorScheme.onPrimary,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(27),
+                ),
+                elevation: 4,
+                shadowColor:
+                    theme.colorScheme.primary.withAlpha(100),
+              ),
+              child: Text(
+                _ctaText(l10n),
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 0.3,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: Spacing.xs),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.lock_outline,
+                  size: 13, color: theme.colorScheme.outline),
+              const SizedBox(width: 4),
+              Text(
+                l10n.paywallSecuredByStore,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  fontSize: 12,
+                  color: theme.colorScheme.onSurfaceVariant
+                      .withAlpha((0.7 * 255).toInt()),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: Spacing.xxs),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () => launchUrl(
+                  Uri.parse(
+                      'https://kipilist-6547b.web.app/privacidade.html'),
+                  mode: LaunchMode.externalApplication,
+                ),
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.xs, vertical: 2,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(
+                  l10n.paywallPolicy,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: theme.colorScheme.onSurfaceVariant
+                        .withAlpha((0.7 * 255).toInt()),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              Text(
+                '·',
+                style: TextStyle(
+                  fontSize: 10, color: theme.colorScheme.outline,
+                ),
+              ),
+              TextButton(
+                onPressed: () => launchUrl(
+                  Uri.parse('https://kipilist-6547b.web.app/termos.html'),
+                  mode: LaunchMode.externalApplication,
+                ),
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.xs, vertical: 2,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(
+                  l10n.paywallTerms,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: theme.colorScheme.onSurfaceVariant
+                        .withAlpha((0.7 * 255).toInt()),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              Text(
+                '·',
+                style: TextStyle(
+                  fontSize: 10, color: theme.colorScheme.outline,
+                ),
+              ),
+              TextButton(
+                onPressed: _restore,
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.xs, vertical: 2,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: Text(
+                  l10n.onboardingRestore,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: theme.colorScheme.onSurfaceVariant
+                        .withAlpha((0.7 * 255).toInt()),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: Spacing.xs),
+          GestureDetector(
+            onTap: _skipOnboarding,
+            child: Text(
+              l10n.onboardingMaybeLater,
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant
+                    .withAlpha((0.4 * 255).toInt()),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _mapPackageName(PaywallPackage pkg, AppLocalizations l10n) {
+    return switch (pkg.rawPackage?.packageType) {
+      PackageType.annual => l10n.paywallPackageAnnual,
+      PackageType.monthly => l10n.paywallPackageMonthly,
+      PackageType.lifetime => l10n.paywallPackageLifetime,
+      _ => pkg.title,
+    };
   }
 
   @override
@@ -112,231 +672,39 @@ class _OnboardingSlidePremiumState
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
 
-    if (_isLoading) {
-      return const Center(child: CircularProgressIndicator.adaptive());
-    }
-
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: const EdgeInsets.all(Spacing.lg),
           child: Column(
             children: [
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: Spacing.sm,
-              vertical: Spacing.xs,
-            ),
-            decoration: BoxDecoration(
-              color: AppColors.premiumAmber,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              l10n.onboardingAnnualBadge,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          const SizedBox(height: Spacing.md),
-          Container(
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.premiumAmber.withAlpha(50),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(Spacing.md),
-              child: Image.asset(
-                'assets/images/kipi/kipi_helper.png',
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-          const SizedBox(height: Spacing.sm),
-          Text(
-            l10n.onboardingPremiumTitle,
-            style: theme.textTheme.headlineMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: Spacing.xs),
-          Text(
-            l10n.onboardingPremiumSubtitle,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: Spacing.lg),
-          ..._buildPlanCards(theme, l10n),
-          const SizedBox(height: Spacing.lg),
-          SizedBox(
-            width: double.infinity,
-            height: 52,
-            child: ElevatedButton(
-              onPressed: _selectedPackage != null ? _purchase : null,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.colorScheme.primary,
-                foregroundColor: theme.colorScheme.onPrimary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              child: Text(
-                l10n.onboardingSubscribeCta,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: Spacing.xs),
-          Text(
-            l10n.onboardingCancelAnytime,
-            style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant
-                  .withAlpha((0.7 * 255).toInt()),
-            ),
-          ),
-          const SizedBox(height: Spacing.md),
-          Text(
-            l10n.onboardingRestoreDesc,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant.withAlpha(180),
-            ),
-          ),
-          TextButton(
-            onPressed: _restore,
-            child: Text(
-              l10n.onboardingRestore,
-              style: TextStyle(
-                fontSize: 12,
-                color: theme.colorScheme.onSurfaceVariant,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ),
-          const SizedBox(height: Spacing.sm),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () => launchUrl(
-                  Uri.parse(
-                    'https://kipilist-6547b.web.app/privacidade.html',
-                  ),
-                  mode: LaunchMode.externalApplication,
-                ),
-                child: Text(
-                  l10n.privacy,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: theme.colorScheme.onSurfaceVariant,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-              Text(
-                '\u2022',
-                style: TextStyle(color: theme.colorScheme.onSurfaceVariant),
-              ),
-              TextButton(
-                onPressed: () => launchUrl(
-                  Uri.parse('https://kipilist-6547b.web.app/termos.html'),
-                  mode: LaunchMode.externalApplication,
-                ),
-                child: Text(
-                  l10n.termsOfUse,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: theme.colorScheme.onSurfaceVariant,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
+              _buildHero(theme, l10n),
+              _buildBenefits(theme, l10n),
+              const SizedBox(height: Spacing.sm),
+              if (_isLoading)
+                const Padding(
+                  padding: EdgeInsets.all(Spacing.lg),
+                  child: CircularProgressIndicator.adaptive(),
+                )
+              else
+                _buildPlans(theme, l10n),
+              SizedBox(
+                height: MediaQuery.of(context).padding.bottom + 160,
               ),
             ],
           ),
-        ],
-      ),
-    ),
-          if (_isPurchasing)
-            Container(
-              color: Colors.black54,
-              child: const Center(
-                child: CircularProgressIndicator.adaptive(),
-              ),
-            ),
-        ],
-      );
-  }
-
-  List<Widget> _buildPlanCards(ThemeData theme, AppLocalizations l10n) {
-    return _packages.map((pkg) {
-      final isSelected = _selectedPackage?.identifier == pkg.identifier;
-      final isAnnual = pkg.identifier.toLowerCase().contains('annual') ||
-          pkg.identifier.toLowerCase().contains('ano');
-
-      return Padding(
-        padding: const EdgeInsets.only(bottom: Spacing.sm),
-        child: InkWell(
-          onTap: () => setState(() => _selectedPackage = pkg),
-          borderRadius: BorderRadius.circular(16),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: isSelected
-                    ? theme.colorScheme.primary
-                    : theme.colorScheme.outline.withAlpha((0.3 * 255).toInt()),
-                width: isSelected ? 2 : 1,
-              ),
-              borderRadius: BorderRadius.circular(16),
-              color: isSelected
-                  ? theme.colorScheme.primaryContainer
-                      .withAlpha((0.1 * 255).toInt())
-                  : null,
-            ),
-            padding: const EdgeInsets.all(Spacing.md),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        isAnnual
-                            ? l10n.onboardingAnnualLabel
-                            : l10n.onboardingMonthlyLabel,
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        pkg.description,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Text(
-                  pkg.priceString,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.primary,
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
-      );
-    }).toList();
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: _buildStickyCta(theme, l10n),
+        ),
+        if (_isPurchasing)
+          Container(
+            color: Colors.black54,
+            child: const Center(child: CircularProgressIndicator.adaptive()),
+          ),
+      ],
+    );
   }
 }
