@@ -17,4 +17,16 @@ class OnboardingData extends _$OnboardingData {
   void updateFavoriteFood(String food) {
     state = state.copyWith(favoriteFood: food);
   }
+
+  void updateShoppingCategory(String category) {
+    state = state.copyWith(shoppingCategory: category);
+  }
+
+  void updateHouseholdSize(String size) {
+    state = state.copyWith(householdSize: size);
+  }
+
+  void updateGoals(List<String> goals) {
+    state = state.copyWith(goals: goals);
+  }
 }
