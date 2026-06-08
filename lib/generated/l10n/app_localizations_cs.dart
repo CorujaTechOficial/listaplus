@@ -18,7 +18,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get pantry => 'Spižírna';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Povídání';
 
   @override
   String get navRecipes => 'Recepty';
@@ -648,12 +648,12 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String aiUsageWarning(int remaining) {
-    return '$remaining AI actions left this month — upgrade for unlimited';
+    return 'Tento měsíc zbývá $remaining akcí AI – neomezený upgrade';
   }
 
   @override
   String get aiUsageExhausted =>
-      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+      'Bylo dosaženo měsíčního limitu AI. Upgradujte na Pro neomezeně →';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -734,33 +734,33 @@ class AppLocalizationsCs extends AppLocalizations {
       'Už máte předplatné? Klepnutím sem jej obnovíte.';
 
   @override
-  String get onboardingMaybeLater => 'Maybe later';
+  String get onboardingMaybeLater => 'Možná později';
 
   @override
   String paywallHeroSubtitlePersonalized(String name) {
-    return 'Hey $name, organize your shopping the right way.';
+    return 'Ahoj $name, uspořádejte si nákupy správným způsobem.';
   }
 
   @override
-  String get onboardingSlide1Title => 'Smart Shopping Lists';
+  String get onboardingSlide1Title => 'Chytré nákupní seznamy';
 
   @override
   String get onboardingSlide1Body =>
-      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+      'Vytvářejte a sdílejte seznamy okamžitě. Kipi přidává položky automaticky na základě vašich zvyků.';
 
   @override
-  String get onboardingSlide2Title => 'Meet Kipi';
+  String get onboardingSlide2Title => 'Seznamte se s Kipi';
 
   @override
   String get onboardingSlide2Body =>
-      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+      'Zeptejte se na cokoli – vytvořte seznamy, najděte recepty, sledujte svou spíž, plánujte si týden.';
 
   @override
-  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+  String get onboardingSlide3Title => 'Spíž a plánování jídla';
 
   @override
   String get onboardingSlide3Body =>
-      'Track what you have, plan meals, and generate shopping lists automatically.';
+      'Sledujte, co máte, plánujte jídla a automaticky generujte nákupní seznamy.';
 
   @override
   String get onboardingExit => 'Výstup';
@@ -851,16 +851,16 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get paywallTrialTitle => 'Try for free!';
+  String get paywallTrialTitle => 'Vyzkoušejte zdarma!';
 
   @override
-  String get paywallTrialSubtitle => 'Cancel anytime. No charge today.';
+  String get paywallTrialSubtitle => 'Kdykoli zrušit. Dnes bez poplatku.';
 
   @override
-  String get paywallTrialCta => 'Start Free Trial';
+  String get paywallTrialCta => 'Spusťte bezplatnou zkušební verzi';
 
   @override
-  String get recipeAddToList => 'Add to shopping list';
+  String get recipeAddToList => 'Přidat do nákupního seznamu';
 
   @override
   String recipeAddedConfirmation(int count, String listName) {
@@ -870,11 +870,12 @@ class AppLocalizationsCs extends AppLocalizations {
       other: 'ingredients',
       one: 'ingredient',
     );
-    return '$count $_temp0 added to $listName';
+    return '$count $_temp0 přidáno do $listName';
   }
 
   @override
-  String get noListSelected => 'No list selected. Open a list first.';
+  String get noListSelected =>
+      'Není vybrán žádný seznam. Nejprve otevřete seznam.';
 
   @override
   String get paywallFeaturesTitle => 'Vše, co potřebujete:';
@@ -986,11 +987,12 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String paywallTrialInCard(int days) {
-    return 'First $days days FREE';
+    return 'Prvních $days dnů ZDARMA';
   }
 
   @override
-  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+  String get paywallSecuredByStore =>
+      'Zabezpečeno Google Play · Kdykoli zrušit';
 
   @override
   String get paywallPolicy => 'Zásady ochrany osobních údajů';
@@ -1793,23 +1795,23 @@ class AppLocalizationsCs extends AppLocalizations {
   String get catalogBrowse => 'Procházet katalog';
 
   @override
-  String get offlineBanner => 'You are offline';
+  String get offlineBanner => 'Jste offline';
 
   @override
-  String get consentTitle => 'Privacy & Analytics';
+  String get consentTitle => 'Ochrana osobních údajů a Analytics';
 
   @override
   String get consentBody =>
-      'KipiList uses Firebase Analytics to improve your experience. Your data is processed according to our Privacy Policy.';
+      'KipiList používá Firebase Analytics ke zlepšení vašeho prostředí. Vaše údaje jsou zpracovávány v souladu s našimi Zásadami ochrany osobních údajů.';
 
   @override
-  String get consentAccept => 'Accept';
+  String get consentAccept => 'Přijmout';
 
   @override
-  String get consentDecline => 'No, thanks';
+  String get consentDecline => 'Ne, díky';
 
   @override
-  String get mealPlannerPantryAllAvailable => 'All ingredients available';
+  String get mealPlannerPantryAllAvailable => 'Všechny dostupné ingredience';
 
   @override
   String mealPlannerPantryMissing(int count) {
@@ -1819,57 +1821,959 @@ class AppLocalizationsCs extends AppLocalizations {
       other: 'ingredients',
       one: 'ingredient',
     );
-    return '$count $_temp0 missing';
+    return '$count $_temp0 chybí';
   }
 
   @override
-  String get expirationDate => 'Expiration date';
+  String get expirationDate => 'Datum spotřeby';
 
   @override
-  String get notInformed => 'Not set';
+  String get notInformed => 'Nenastaveno';
 
   @override
-  String get skip => 'Skip';
+  String get skip => 'Přeskočit';
 
   @override
-  String get onboardingAiTitle => 'Chat with Kipi';
+  String get onboardingAiTitle => 'Chatujte s Kipi';
 
   @override
   String get onboardingAiGreeting =>
-      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+      'Ahoj! Jsem Kipi, váš osobní nákupní asistent! 🛒';
 
   @override
-  String get onboardingAiAskName => 'What\'s your name?';
+  String get onboardingAiAskName => 'jak se jmenuješ?';
 
   @override
-  String get onboardingAiNameHint => 'Type your name...';
+  String get onboardingAiNameHint => 'Zadejte své jméno...';
 
   @override
   String onboardingAiNiceToMeet(String name) {
-    return 'Nice to meet you, $name! 🎉';
+    return 'Rád vás poznávám, $name! 🎉';
   }
 
   @override
-  String get onboardingAiAskFood => 'What\'s your favorite food?';
+  String get onboardingAiAskFood => 'Jaké je tvé oblíbené jídlo?';
 
   @override
-  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+  String get onboardingAiFoodHint => 'např. Pizza, Sushi...';
 
   @override
   String onboardingAiIngredients(String ingredients) {
-    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+    return 'Skvělé volby! Zde je to, co bych přidal do vašeho seznamu:\n\n$ingredients\n\n---';
   }
 
   @override
   String get onboardingAiAskConfirm =>
-      'Does this look good? Try typing something else!';
+      'Vypadá to dobře? Zkuste napsat něco jiného!';
 
   @override
   String get onboardingAiReady =>
-      'Great! You\'re ready to start. Let\'s set up your account!';
+      'Velký! Jste připraveni začít. Pojďme nastavit váš účet!';
 
   @override
-  String get onboardingAiContinue => 'Continue →';
+  String get onboardingAiContinue => 'Pokračovat →';
+
+  @override
+  String get errorRenderScreen =>
+      'Jejda! Při vykreslování této obrazovky se něco pokazilo.';
+
+  @override
+  String get connectionError => 'Chyba připojení';
+
+  @override
+  String connectionErrorDesc(Object error) {
+    return 'Nelze se připojit k serveru. Zkontrolujte si internet.\n($error)';
+  }
+
+  @override
+  String get errorLoadingLists => 'Chyba při načítání seznamů';
+
+  @override
+  String get noListsFound => 'Nebyly nalezeny žádné seznamy';
+
+  @override
+  String get unlockPremiumTitle =>
+      'Odemkněte neomezené seznamy, umělou inteligenci a další';
+
+  @override
+  String get loadingSubscription => 'Načítání předplatného...';
+
+  @override
+  String get errorLoadingSubscription => 'Chyba při načítání předplatného';
+
+  @override
+  String get profileSection => 'Profil';
+
+  @override
+  String get myProfile => 'Můj profil';
+
+  @override
+  String get profileSubtitle => 'Osobní preference pro asistenta AI';
+
+  @override
+  String get manageCategories => 'Spravovat kategorie';
+
+  @override
+  String get manageCategoriesSubtitle => 'Správa kategorií položek';
+
+  @override
+  String get profileSaved => 'Profil byl úspěšně uložen!';
+
+  @override
+  String errorSavingProfile(Object error) {
+    return 'Chyba při ukládání: $error';
+  }
+
+  @override
+  String get userProfile => 'Uživatelský profil';
+
+  @override
+  String get saveProfile => 'Uložit profil';
+
+  @override
+  String get profileDescription =>
+      'Sdělte nám své osobní preference, aby vám asistent AI mohl navrhnout personalizované položky a recepty.';
+
+  @override
+  String get preferredMarket => 'Preferovaný trh';
+
+  @override
+  String get preferredMarketHint => 'Např.: Supermarket X';
+
+  @override
+  String get dietaryRestrictions => 'Dietní omezení';
+
+  @override
+  String get dietaryRestrictionsHint =>
+      'Např.: veganské, vegetariánské, bezlepkové';
+
+  @override
+  String get marketsToAvoid => 'Trhy, kterým je třeba se vyhnout';
+
+  @override
+  String get marketsToAvoidHint => 'Např.: Trh Y, Trh Z';
+
+  @override
+  String get observations => 'Poznámky';
+
+  @override
+  String get observationsHint => 'Další preference pro asistenta';
+
+  @override
+  String get manageCategoriesTitle => 'Spravovat kategorie';
+
+  @override
+  String get categoryLimitReached =>
+      'Limit 10 kategorií na bezplatné verzi. Upgradujte na Pro!';
+
+  @override
+  String get noCategories => 'Žádné kategorie.';
+
+  @override
+  String get deleteCategoryTitle => 'Smazat kategorii';
+
+  @override
+  String deleteCategoryConfirm(Object category) {
+    return 'Položky v kategorii „$category“ budou přesunuty do „Ostatní“.\nPokračovat?';
+  }
+
+  @override
+  String get deleteCategory => 'Vymazat';
+
+  @override
+  String get myAchievements => 'Moje úspěchy';
+
+  @override
+  String get itemsPurchased => 'Zakoupené položky';
+
+  @override
+  String get totalSavings => 'Celková úspora';
+
+  @override
+  String get currentStreak => 'Aktuální pruh';
+
+  @override
+  String streakDays(Object days) {
+    return '$days dnů';
+  }
+
+  @override
+  String get chooseThemeColor => 'Vyberte Barva motivu';
+
+  @override
+  String get errorLoadingHistory => 'Chyba při načítání historie';
+
+  @override
+  String get deleteConversationTitle => 'Smazat konverzaci?';
+
+  @override
+  String get deleteConversationConfirm => 'Tuto akci nelze vrátit zpět.';
+
+  @override
+  String get deleteConversation => 'Vymazat';
+
+  @override
+  String get unlockWithAd => 'Odemknout pomocí reklamy';
+
+  @override
+  String get aiPremiumDescription =>
+      'Toto interaktivní rozhraní využívá pokročilou umělou inteligenci a je exkluzivní pro členy Pro nebo prostřednictvím rychlé reklamy.';
+
+  @override
+  String get sortAZ => 'A-Z';
+
+  @override
+  String get categoryNameHint => 'Např.: Maso';
+
+  @override
+  String get color => 'Barva:';
+
+  @override
+  String get icon => 'Ikona:';
+
+  @override
+  String get scanBarcode => 'Naskenujte čárový kód';
+
+  @override
+  String get scanProduct => 'Naskenujte produkt';
+
+  @override
+  String get positionBarcodeCenter => 'Umístěte čárový kód doprostřed';
+
+  @override
+  String replaceItem(Object name) {
+    return 'Nahradit $name';
+  }
+
+  @override
+  String get selectCheaperAlternative =>
+      'Chcete-li optimalizovat náklady, vyberte levnější alternativu produktu.';
+
+  @override
+  String get swap => 'Vyměňte';
+
+  @override
+  String itemAdded(Object name) {
+    return '$name přidáno';
+  }
+
+  @override
+  String errorLoadingProducts(Object error) {
+    return 'Chyba při načítání produktů: $error';
+  }
+
+  @override
+  String get mealType => 'Typ jídla';
+
+  @override
+  String get requestTimeout => 'Omlouváme se, vypršel časový limit požadavku.';
+
+  @override
+  String get connectionError2 => 'Omlouváme se, došlo k chybě připojení.';
+
+  @override
+  String get addingItems => 'Přidávání položek do seznamu...';
+
+  @override
+  String get removingItems => 'Odebírání položek...';
+
+  @override
+  String get updatingItem => 'Aktualizace položky...';
+
+  @override
+  String get checkingItem => 'Kontrola položky...';
+
+  @override
+  String get uncheckingItem => 'Rušení zaškrtnutí položky...';
+
+  @override
+  String get clearingCheckedItems => 'Mazání zaškrtnutých položek...';
+
+  @override
+  String get reorganizingList => 'Reorganizace seznamu...';
+
+  @override
+  String get creatingNewList => 'Vytváření nového seznamu...';
+
+  @override
+  String get removingList => 'Odebírání seznamu...';
+
+  @override
+  String get renamingList => 'Přejmenování seznamu...';
+
+  @override
+  String get queryingYourLists => 'Dotazování na vaše seznamy...';
+
+  @override
+  String get settingBudget => 'Nastavování rozpočtu...';
+
+  @override
+  String get checkingPantry => 'Kontrola vaší spíže...';
+
+  @override
+  String get addingToPantry => 'Přidání do spíže...';
+
+  @override
+  String get removingFromPantry => 'Vyjmutí ze spíže...';
+
+  @override
+  String get updatingPantry => 'Aktualizace spíže...';
+
+  @override
+  String get savingRecipe => 'Ukládání receptu...';
+
+  @override
+  String get searchingRecipes => 'Hledání receptů...';
+
+  @override
+  String get removingRecipe => 'Odebírání receptu...';
+
+  @override
+  String get addingIngredientsToList => 'Přidávání přísad do seznamu...';
+
+  @override
+  String get organizingMenu => 'Organizace menu...';
+
+  @override
+  String get loadingMenu => 'Načítání nabídky...';
+
+  @override
+  String get updatingMenu => 'Aktualizace nabídky...';
+
+  @override
+  String get searchingCategories => 'Vyhledávání kategorií...';
+
+  @override
+  String get categorizingItems => 'Kategorizace položek...';
+
+  @override
+  String get generatingShareLink => 'Generování odkazu na sdílení...';
+
+  @override
+  String get searchingSharedList => 'Vyhledávání sdíleného seznamu...';
+
+  @override
+  String get loadingProfile => 'Načítání vašeho profilu...';
+
+  @override
+  String get savingPreferences => 'Ukládání předvoleb...';
+
+  @override
+  String get checkingSettings => 'Kontrola nastavení...';
+
+  @override
+  String get generatingContent => 'Generování personalizovaného obsahu...';
+
+  @override
+  String get searchingProducts => 'Vyhledávání produktů...';
+
+  @override
+  String get estimatingPrices => 'Odhad cen...';
+
+  @override
+  String get processing => 'Zpracovává se...';
+
+  @override
+  String get shoppingList => 'Nákupní seznam';
+
+  @override
+  String get purchasedSuffix => '[zakoupeno]';
+
+  @override
+  String get listUnarchived => 'Archivace seznamu byla úspěšně zrušena.';
+
+  @override
+  String get toolDeleteList => 'Smazat seznam';
+
+  @override
+  String get toolAddItems => 'Přidat položky';
+
+  @override
+  String get toolRemoveItems => 'Odstraňte položky';
+
+  @override
+  String get toolAddToPantry => 'Přidat do spíže';
+
+  @override
+  String get toolRemoveFromPantry => 'Vyjměte ze spíže';
+
+  @override
+  String get toolShareList => 'Sdílejte seznam';
+
+  @override
+  String get toolSaveRecipe => 'Uložit recept';
+
+  @override
+  String get toolDeleteRecipe => 'Smazat recept';
+
+  @override
+  String get toolRemoveMeal => 'Odstraňte jídlo';
+
+  @override
+  String get toolSavePreference => 'Uložit předvolbu';
+
+  @override
+  String get toolRemovePreference => 'Odebrat předvolbu';
+
+  @override
+  String currentTheme(Object mode) {
+    return 'Aktuální téma: $mode';
+  }
+
+  @override
+  String themeChanged(Object mode) {
+    return 'Motiv byl změněn na $mode.';
+  }
+
+  @override
+  String get addToList => 'Přidat do seznamu';
+
+  @override
+  String errorAddingItem(Object error) {
+    return 'Chyba při přidávání položky: $error';
+  }
+
+  @override
+  String errorAddingBatch(Object error) {
+    return 'Chyba při přidávání položek v dávce: $error';
+  }
+
+  @override
+  String errorTogglingItem(Object error) {
+    return 'Chyba při přepínání stavu položky: $error';
+  }
+
+  @override
+  String errorRemovingItem(Object error) {
+    return 'Chyba při odebírání položky: $error';
+  }
+
+  @override
+  String errorUpdatingItem(Object error) {
+    return 'Chyba při aktualizaci položky: $error';
+  }
+
+  @override
+  String errorUpdatingItems(Object error) {
+    return 'Chyba při aktualizaci položek: $error';
+  }
+
+  @override
+  String errorRestoringItem(Object error) {
+    return 'Chyba při obnovování položky: $error';
+  }
+
+  @override
+  String errorIncreasingQty(Object error) {
+    return 'Chyba při zvyšování množství: $error';
+  }
+
+  @override
+  String errorDecreasingQty(Object error) {
+    return 'Chyba při snižování množství: $error';
+  }
+
+  @override
+  String errorClearingList(Object error) {
+    return 'Chyba při mazání seznamu: $error';
+  }
+
+  @override
+  String errorClearingPurchased(Object error) {
+    return 'Chyba při mazání zakoupených položek: $error';
+  }
+
+  @override
+  String errorRemovingItems(Object error) {
+    return 'Chyba při odebírání položek: $error';
+  }
+
+  @override
+  String errorTogglingItems(Object error) {
+    return 'Chyba při přepínání položek: $error';
+  }
+
+  @override
+  String errorReordering(Object error) {
+    return 'Chyba při změně pořadí položky: $error';
+  }
+
+  @override
+  String get errorCreatingList => 'Chyba při vytváření seznamu';
+
+  @override
+  String errorServerConnection(Object error) {
+    return 'Chyba při připojování k serveru: $error';
+  }
+
+  @override
+  String errorUpdatingList(Object error) {
+    return 'Chyba při aktualizaci seznamu: $error';
+  }
+
+  @override
+  String errorDeletingList(Object error) {
+    return 'Chyba při mazání seznamu: $error';
+  }
+
+  @override
+  String errorRemovingSharedList(Object error) {
+    return 'Chyba při odebírání sdíleného seznamu: $error';
+  }
+
+  @override
+  String errorSettingCurrentList(Object error) {
+    return 'Chyba při nastavení aktuálního seznamu: $error';
+  }
+
+  @override
+  String errorArchivingList(Object error) {
+    return 'Chyba při archivaci seznamu: $error';
+  }
+
+  @override
+  String errorUnarchivingList(Object error) {
+    return 'Chyba při rušení archivu seznamu: $error';
+  }
+
+  @override
+  String get errorUserNotAuthenticated => 'Uživatel není ověřen.';
+
+  @override
+  String get errorGeneratingCode =>
+      'Chyba při generování jedinečného kódu. Zkuste to znovu.';
+
+  @override
+  String pantryLimitReached(Object count) {
+    return 'Limit $count položek ve spíži v bezplatném plánu. Upgradujte a přidejte další.';
+  }
+
+  @override
+  String errorImportingList(Object name, Object error) {
+    return 'Chyba při importu seznamu „$name“: $error';
+  }
+
+  @override
+  String errorExecutingTool(Object tool, Object error) {
+    return 'Chyba při provádění $tool: $error';
+  }
+
+  @override
+  String get errorProcessingRequest =>
+      'Omlouváme se, při zpracování vašeho požadavku došlo k chybě. Zkontrolujte připojení nebo to zkuste znovu později.';
+
+  @override
+  String get couldNotProcess => 'Nelze zpracovat po několika pokusech.';
+
+  @override
+  String get errorResumingProcessing => 'Chyba při obnovení zpracování.';
+
+  @override
+  String get errorResumingLoop => '[ResumeLoop] Chyba při obnovení smyčky';
+
+  @override
+  String get othersCategory => 'Ostatní';
+
+  @override
+  String get monthJanuary => 'leden';
+
+  @override
+  String get monthFebruary => 'únor';
+
+  @override
+  String get monthMarch => 'Pochod';
+
+  @override
+  String get monthApril => 'duben';
+
+  @override
+  String get monthMay => 'květen';
+
+  @override
+  String get monthJune => 'červen';
+
+  @override
+  String get monthJuly => 'červenec';
+
+  @override
+  String get monthAugust => 'srpen';
+
+  @override
+  String get monthSeptember => 'září';
+
+  @override
+  String get monthOctober => 'říjen';
+
+  @override
+  String get monthNovember => 'listopad';
+
+  @override
+  String get monthDecember => 'prosinec';
+
+  @override
+  String get dayMon => 'Po';
+
+  @override
+  String get dayTue => 'út';
+
+  @override
+  String get dayWed => 'St';
+
+  @override
+  String get dayThu => 'Čt';
+
+  @override
+  String get dayFri => 'pá';
+
+  @override
+  String get daySat => 'sobota';
+
+  @override
+  String get daySun => 'Slunce';
+
+  @override
+  String get subscription => 'Subscription';
+
+  @override
+  String get kipiListProActive => 'KipiList Pro active';
+
+  @override
+  String get customizeAiAssistant => 'Customize AI Assistant';
+
+  @override
+  String get assistantHistory => 'Assistant History';
+
+  @override
+  String get assistantHistorySubtitle => 'View and search past conversations';
+
+  @override
+  String get customizeAssistant => 'Customize Assistant';
+
+  @override
+  String get assistantName => 'Assistant Name';
+
+  @override
+  String get chooseIcon => 'Choose an Icon:';
+
+  @override
+  String get backToToday => 'Back to today';
+
+  @override
+  String get conversationHistoryTitle => 'Conversation History';
+
+  @override
+  String get noConversationsFound => 'No conversations found';
+
+  @override
+  String get newConversationDefaultTitle => 'New Conversation';
+
+  @override
+  String get unlockedBadges => 'Unlocked Badges';
+
+  @override
+  String get badgeBeginner => 'Beginner';
+
+  @override
+  String get badgeOrganized => 'Organized';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planner';
+
+  @override
+  String get aiEnergyLow => 'You\'re almost out of energy!';
+
+  @override
+  String get aiUnlockUnlimited => 'Unlock unlimited AI';
+
+  @override
+  String aiRemainingFreeToday(int remaining) {
+    return 'Only $remaining free messages left today. Subscribe to Premium and stop worrying about limits.';
+  }
+
+  @override
+  String get aiSubscribeUnlimited =>
+      'Subscribe to Premium and use the AI chat as much as you want. No counting, no limits.';
+
+  @override
+  String get suggestedItems => 'Suggested Items';
+
+  @override
+  String get swapped => 'Swapped';
+
+  @override
+  String get newCategoryDialog => 'New Category';
+
+  @override
+  String get editCategoryDialog => 'Edit Category';
+
+  @override
+  String get categoryName => 'Name';
+
+  @override
+  String get scanBarcodeTitle => 'Scan Barcode';
+
+  @override
+  String get scanProductTitle => 'Scan Product';
+
+  @override
+  String get categoryColorLabel => 'Color:';
+
+  @override
+  String get categoryIconLabel => 'Icon:';
+
+  @override
+  String get product => 'Product';
+
+  @override
+  String get everythingReady => 'Everything ready!';
+
+  @override
+  String get youCompletedList => 'You completed your list.';
+
+  @override
+  String get allSet => 'All set!';
+
+  @override
+  String itemsCount(int purchased, int total) {
+    return '$purchased of $total items';
+  }
+
+  @override
+  String budgetLabel(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String totalLabel(String amount) {
+    return 'Total: $amount';
+  }
+
+  @override
+  String get quickSuggestions => 'Quick suggestions';
+
+  @override
+  String get saved => 'Saved';
+
+  @override
+  String get aiAssistantTitle => 'AI Assistant';
+
+  @override
+  String get closeSheet => 'Close';
+
+  @override
+  String get editAssistantName => 'Edit Assistant Name';
+
+  @override
+  String get selectAssistantIcon => 'Select Assistant Icon';
+
+  @override
+  String itemAddedSnack(String name) {
+    return '$name added';
+  }
+
+  @override
+  String quantityWithUnit(String quantity, String unit) {
+    return '$quantity $unit';
+  }
+
+  @override
+  String quantityUnitWithPrice(String quantity, String unit, String price) {
+    return '$quantity $unit • $price';
+  }
+
+  @override
+  String get onboardingHookHeadline =>
+      'Your shopping list with artificial intelligence';
+
+  @override
+  String get onboardingLoginHeadline => 'Sign in in 1 second';
+
+  @override
+  String get onboardingLoginSubtitle =>
+      'Your lists are saved and synced automatically';
+
+  @override
+  String get onboardingPersonalizationNameLabel => 'What can I call you?';
+
+  @override
+  String get onboardingPersonalizationNameHint => 'Your name (optional)';
+
+  @override
+  String get onboardingPersonalizationCategoryTitle =>
+      'What do you organize most often?';
+
+  @override
+  String get onboardingPersonalizationGroupTitle =>
+      'Do you shop alone or with others?';
+
+  @override
+  String get onboardingCategoryGrocery => '🛒 Grocery';
+
+  @override
+  String get onboardingCategoryPharmacy => '💊 Pharmacy';
+
+  @override
+  String get onboardingCategoryRecipes => '🍽️ Recipes';
+
+  @override
+  String get onboardingCategoryHome => '🏠 Home';
+
+  @override
+  String get onboardingCategoryPet => '🐾 Pet';
+
+  @override
+  String get onboardingGroupSolo => '👤 Just me';
+
+  @override
+  String get onboardingGroupCouple => '👥 With someone';
+
+  @override
+  String get onboardingGroupFamily => '👨‍👩‍👧 Family';
+
+  @override
+  String onboardingAiDemoGreeting(String name, String category) {
+    return 'Hi $name! I see you organize $category 😊';
+  }
+
+  @override
+  String onboardingAiDemoGreetingNoName(String category) {
+    return 'Hi! I see you organize $category 😊';
+  }
+
+  @override
+  String get onboardingAiDemoOffer => 'Want me to build a list right now?';
+
+  @override
+  String get onboardingAiDemoYes => '✅ Yes, build it for me!';
+
+  @override
+  String get onboardingAiDemoChange => '🔄 Different category';
+
+  @override
+  String onboardingAiDemoReaction(int count) {
+    return 'Done! I created $count items for you 🎉';
+  }
+
+  @override
+  String get onboardingAiDemoContinue => 'Amazing! I want more →';
+
+  @override
+  String get onboardingCommitmentsTitle => 'What do you want to achieve?';
+
+  @override
+  String get onboardingCommitmentsSubtitle =>
+      'Choose everything that applies to you';
+
+  @override
+  String get onboardingGoalSaveMoney => '💰 Spend less at the store';
+
+  @override
+  String get onboardingGoalNeverForget => '✅ Never forget an item';
+
+  @override
+  String get onboardingGoalFaster => '⚡ Shop faster';
+
+  @override
+  String get onboardingGoalFamily => '👨‍👩‍👧 Organize with family';
+
+  @override
+  String get onboardingGoalRecipes => '🍽️ Plan weekly recipes';
+
+  @override
+  String get onboardingGoalPantry => '📦 Track pantry stock';
+
+  @override
+  String get onboardingLoadingTitle => 'Building your plan...';
+
+  @override
+  String get onboardingLoadingStep1 => 'Analyzing your preferences...';
+
+  @override
+  String get onboardingLoadingStep2 => 'Setting up your personalized list...';
+
+  @override
+  String get onboardingLoadingStep3 => 'Your plan is ready! 🎉';
+
+  @override
+  String get onboardingLoadingStat1Label => 'Average rating';
+
+  @override
+  String get onboardingLoadingStat2Label => 'Lists created this week';
+
+  @override
+  String get onboardingLoadingStat3Label => 'Recommend the app';
+
+  @override
+  String paywallGoalHeadlineSaveMoney(String name) {
+    return '$name, you\'re 7 days away from spending less on shopping';
+  }
+
+  @override
+  String paywallGoalHeadlineNeverForget(String name) {
+    return '$name, you\'re 7 days away from never forgetting an item again';
+  }
+
+  @override
+  String paywallGoalHeadlineFaster(String name) {
+    return '$name, you\'re 7 days away from shopping in half the time';
+  }
+
+  @override
+  String paywallGoalHeadlineFamily(String name) {
+    return '$name, you\'re 7 days away from organizing the whole family\'s shopping';
+  }
+
+  @override
+  String paywallGoalHeadlineRecipes(String name) {
+    return '$name, you\'re 7 days away from planning your recipes automatically';
+  }
+
+  @override
+  String paywallGoalHeadlinePantry(String name) {
+    return '$name, you\'re 7 days away from full control of your pantry';
+  }
+
+  @override
+  String get paywallGoalHeadlineNoNameSaveMoney =>
+      'You\'re 7 days away from spending less on shopping';
+
+  @override
+  String get paywallGoalHeadlineNoNameNeverForget =>
+      'You\'re 7 days away from never forgetting an item again';
+
+  @override
+  String get paywallGoalHeadlineNoNameFaster =>
+      'You\'re 7 days away from shopping in half the time';
+
+  @override
+  String get paywallGoalHeadlineNoNameFamily =>
+      'You\'re 7 days away from organizing the whole family\'s shopping';
+
+  @override
+  String get paywallGoalHeadlineNoNameRecipes =>
+      'You\'re 7 days away from planning your recipes automatically';
+
+  @override
+  String get paywallGoalHeadlineNoNamePantry =>
+      'You\'re 7 days away from full control of your pantry';
+
+  @override
+  String get paywallTestimonial =>
+      '\"I saved R\$180 in the first month by better organizing my shopping\"';
+
+  @override
+  String get paywallTestimonialAuthor => 'Ana R., São Paulo';
+
+  @override
+  String paywallTrialDisclaimer(int days) {
+    return 'Cancel anytime · Charged after $days days';
+  }
+
+  @override
+  String get paywallSkipNow => 'Not now';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -1886,7 +2790,7 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get pantry => 'Spižírna';
 
   @override
-  String get navChat => 'Chat';
+  String get navChat => 'Povídání';
 
   @override
   String get navRecipes => 'Recepty';
@@ -2515,6 +3419,15 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
       'Přihlaste se k odběru Premium a odemkněte plnou odpověď a získejte neomezené množství tipů AI pro své nakupování...';
 
   @override
+  String aiUsageWarning(int remaining) {
+    return 'Tento měsíc zbývá $remaining akcí AI – neomezený upgrade';
+  }
+
+  @override
+  String get aiUsageExhausted =>
+      'Bylo dosaženo měsíčního limitu AI. Upgradujte na Pro neomezeně →';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -2591,6 +3504,35 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   @override
   String get onboardingRestoreDesc =>
       'Už máte předplatné? Klepnutím sem jej obnovíte.';
+
+  @override
+  String get onboardingMaybeLater => 'Možná později';
+
+  @override
+  String paywallHeroSubtitlePersonalized(String name) {
+    return 'Ahoj $name, uspořádejte si nákupy správným způsobem.';
+  }
+
+  @override
+  String get onboardingSlide1Title => 'Chytré nákupní seznamy';
+
+  @override
+  String get onboardingSlide1Body =>
+      'Vytvářejte a sdílejte seznamy okamžitě. Kipi přidává položky automaticky na základě vašich zvyků.';
+
+  @override
+  String get onboardingSlide2Title => 'Seznamte se s Kipi';
+
+  @override
+  String get onboardingSlide2Body =>
+      'Zeptejte se na cokoli – vytvořte seznamy, najděte recepty, sledujte svou spíž, plánujte si týden.';
+
+  @override
+  String get onboardingSlide3Title => 'Spíž a plánování jídla';
+
+  @override
+  String get onboardingSlide3Body =>
+      'Sledujte, co máte, plánujte jídla a automaticky generujte nákupní seznamy.';
 
   @override
   String get onboardingExit => 'Výstup';
@@ -2681,6 +3623,33 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   }
 
   @override
+  String get paywallTrialTitle => 'Vyzkoušejte zdarma!';
+
+  @override
+  String get paywallTrialSubtitle => 'Kdykoli zrušit. Dnes bez poplatku.';
+
+  @override
+  String get paywallTrialCta => 'Spusťte bezplatnou zkušební verzi';
+
+  @override
+  String get recipeAddToList => 'Přidat do nákupního seznamu';
+
+  @override
+  String recipeAddedConfirmation(int count, String listName) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 přidáno do $listName';
+  }
+
+  @override
+  String get noListSelected =>
+      'Není vybrán žádný seznam. Nejprve otevřete seznam.';
+
+  @override
   String get paywallFeaturesTitle => 'Vše, co potřebujete:';
 
   @override
@@ -2758,6 +3727,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get paywallMostPopular => 'NEJOBLÍBENĚJŠÍ';
 
   @override
+  String get paywallProLabel => 'PRO';
+
+  @override
   String get paywallSafeCheckout => 'Bezpečná platba';
 
   @override
@@ -2784,6 +3756,15 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get paywallCancelAnytime => 'Kdykoli zrušit. Žádný závazek.';
+
+  @override
+  String paywallTrialInCard(int days) {
+    return 'Prvních $days dnů ZDARMA';
+  }
+
+  @override
+  String get paywallSecuredByStore =>
+      'Zabezpečeno Google Play · Kdykoli zrušit';
 
   @override
   String get paywallPolicy => 'Zásady ochrany osobních údajů';
@@ -3584,4 +4565,641 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get catalogBrowse => 'Procházet katalog';
+
+  @override
+  String get offlineBanner => 'Jste offline';
+
+  @override
+  String get consentTitle => 'Ochrana osobních údajů a Analytics';
+
+  @override
+  String get consentBody =>
+      'KipiList používá Firebase Analytics ke zlepšení vašeho prostředí. Vaše údaje jsou zpracovávány v souladu s našimi Zásadami ochrany osobních údajů.';
+
+  @override
+  String get consentAccept => 'Přijmout';
+
+  @override
+  String get consentDecline => 'Ne, díky';
+
+  @override
+  String get mealPlannerPantryAllAvailable => 'Všechny dostupné ingredience';
+
+  @override
+  String mealPlannerPantryMissing(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ingredients',
+      one: 'ingredient',
+    );
+    return '$count $_temp0 chybí';
+  }
+
+  @override
+  String get expirationDate => 'Datum spotřeby';
+
+  @override
+  String get notInformed => 'Nenastaveno';
+
+  @override
+  String get skip => 'Přeskočit';
+
+  @override
+  String get onboardingAiTitle => 'Chatujte s Kipi';
+
+  @override
+  String get onboardingAiGreeting =>
+      'Ahoj! Jsem Kipi, váš osobní nákupní asistent! 🛒';
+
+  @override
+  String get onboardingAiAskName => 'jak se jmenuješ?';
+
+  @override
+  String get onboardingAiNameHint => 'Zadejte své jméno...';
+
+  @override
+  String onboardingAiNiceToMeet(String name) {
+    return 'Rád vás poznávám, $name! 🎉';
+  }
+
+  @override
+  String get onboardingAiAskFood => 'Jaké je tvé oblíbené jídlo?';
+
+  @override
+  String get onboardingAiFoodHint => 'např. Pizza, Sushi...';
+
+  @override
+  String onboardingAiIngredients(String ingredients) {
+    return 'Skvělé volby! Zde je to, co bych přidal do vašeho seznamu:\n\n$ingredients\n\n---';
+  }
+
+  @override
+  String get onboardingAiAskConfirm =>
+      'Vypadá to dobře? Zkuste napsat něco jiného!';
+
+  @override
+  String get onboardingAiReady =>
+      'Velký! Jste připraveni začít. Pojďme nastavit váš účet!';
+
+  @override
+  String get onboardingAiContinue => 'Pokračovat →';
+
+  @override
+  String get errorRenderScreen =>
+      'Jejda! Při vykreslování této obrazovky se něco pokazilo.';
+
+  @override
+  String get connectionError => 'Chyba připojení';
+
+  @override
+  String connectionErrorDesc(Object error) {
+    return 'Nelze se připojit k serveru. Zkontrolujte si internet.\n($error)';
+  }
+
+  @override
+  String get errorLoadingLists => 'Chyba při načítání seznamů';
+
+  @override
+  String get noListsFound => 'Nebyly nalezeny žádné seznamy';
+
+  @override
+  String get unlockPremiumTitle =>
+      'Odemkněte neomezené seznamy, umělou inteligenci a další';
+
+  @override
+  String get loadingSubscription => 'Načítání předplatného...';
+
+  @override
+  String get errorLoadingSubscription => 'Chyba při načítání předplatného';
+
+  @override
+  String get profileSection => 'Profil';
+
+  @override
+  String get myProfile => 'Můj profil';
+
+  @override
+  String get profileSubtitle => 'Osobní preference pro asistenta AI';
+
+  @override
+  String get manageCategories => 'Spravovat kategorie';
+
+  @override
+  String get manageCategoriesSubtitle => 'Správa kategorií položek';
+
+  @override
+  String get profileSaved => 'Profil byl úspěšně uložen!';
+
+  @override
+  String errorSavingProfile(Object error) {
+    return 'Chyba při ukládání: $error';
+  }
+
+  @override
+  String get userProfile => 'Uživatelský profil';
+
+  @override
+  String get saveProfile => 'Uložit profil';
+
+  @override
+  String get profileDescription =>
+      'Sdělte nám své osobní preference, aby vám asistent AI mohl navrhnout personalizované položky a recepty.';
+
+  @override
+  String get preferredMarket => 'Preferovaný trh';
+
+  @override
+  String get preferredMarketHint => 'Např.: Supermarket X';
+
+  @override
+  String get dietaryRestrictions => 'Dietní omezení';
+
+  @override
+  String get dietaryRestrictionsHint =>
+      'Např.: veganské, vegetariánské, bezlepkové';
+
+  @override
+  String get marketsToAvoid => 'Trhy, kterým je třeba se vyhnout';
+
+  @override
+  String get marketsToAvoidHint => 'Např.: Trh Y, Trh Z';
+
+  @override
+  String get observations => 'Poznámky';
+
+  @override
+  String get observationsHint => 'Další preference pro asistenta';
+
+  @override
+  String get manageCategoriesTitle => 'Spravovat kategorie';
+
+  @override
+  String get categoryLimitReached =>
+      'Limit 10 kategorií na bezplatné verzi. Upgradujte na Pro!';
+
+  @override
+  String get noCategories => 'Žádné kategorie.';
+
+  @override
+  String get deleteCategoryTitle => 'Smazat kategorii';
+
+  @override
+  String deleteCategoryConfirm(Object category) {
+    return 'Položky v kategorii „$category“ budou přesunuty do „Ostatní“.\nPokračovat?';
+  }
+
+  @override
+  String get deleteCategory => 'Vymazat';
+
+  @override
+  String get myAchievements => 'Moje úspěchy';
+
+  @override
+  String get itemsPurchased => 'Zakoupené položky';
+
+  @override
+  String get totalSavings => 'Celková úspora';
+
+  @override
+  String get currentStreak => 'Aktuální pruh';
+
+  @override
+  String streakDays(Object days) {
+    return '$days dnů';
+  }
+
+  @override
+  String get chooseThemeColor => 'Vyberte Barva motivu';
+
+  @override
+  String get errorLoadingHistory => 'Chyba při načítání historie';
+
+  @override
+  String get deleteConversationTitle => 'Smazat konverzaci?';
+
+  @override
+  String get deleteConversationConfirm => 'Tuto akci nelze vrátit zpět.';
+
+  @override
+  String get deleteConversation => 'Vymazat';
+
+  @override
+  String get unlockWithAd => 'Odemknout pomocí reklamy';
+
+  @override
+  String get aiPremiumDescription =>
+      'Toto interaktivní rozhraní využívá pokročilou umělou inteligenci a je exkluzivní pro členy Pro nebo prostřednictvím rychlé reklamy.';
+
+  @override
+  String get sortAZ => 'A-Z';
+
+  @override
+  String get categoryNameHint => 'Např.: Maso';
+
+  @override
+  String get color => 'Barva:';
+
+  @override
+  String get icon => 'Ikona:';
+
+  @override
+  String get scanBarcode => 'Naskenujte čárový kód';
+
+  @override
+  String get scanProduct => 'Naskenujte produkt';
+
+  @override
+  String get positionBarcodeCenter => 'Umístěte čárový kód doprostřed';
+
+  @override
+  String replaceItem(Object name) {
+    return 'Nahradit $name';
+  }
+
+  @override
+  String get selectCheaperAlternative =>
+      'Chcete-li optimalizovat náklady, vyberte levnější alternativu produktu.';
+
+  @override
+  String get swap => 'Vyměňte';
+
+  @override
+  String itemAdded(Object name) {
+    return '$name přidáno';
+  }
+
+  @override
+  String errorLoadingProducts(Object error) {
+    return 'Chyba při načítání produktů: $error';
+  }
+
+  @override
+  String get mealType => 'Typ jídla';
+
+  @override
+  String get requestTimeout => 'Omlouváme se, vypršel časový limit požadavku.';
+
+  @override
+  String get connectionError2 => 'Omlouváme se, došlo k chybě připojení.';
+
+  @override
+  String get addingItems => 'Přidávání položek do seznamu...';
+
+  @override
+  String get removingItems => 'Odebírání položek...';
+
+  @override
+  String get updatingItem => 'Aktualizace položky...';
+
+  @override
+  String get checkingItem => 'Kontrola položky...';
+
+  @override
+  String get uncheckingItem => 'Rušení zaškrtnutí položky...';
+
+  @override
+  String get clearingCheckedItems => 'Mazání zaškrtnutých položek...';
+
+  @override
+  String get reorganizingList => 'Reorganizace seznamu...';
+
+  @override
+  String get creatingNewList => 'Vytváření nového seznamu...';
+
+  @override
+  String get removingList => 'Odebírání seznamu...';
+
+  @override
+  String get renamingList => 'Přejmenování seznamu...';
+
+  @override
+  String get queryingYourLists => 'Dotazování na vaše seznamy...';
+
+  @override
+  String get settingBudget => 'Nastavování rozpočtu...';
+
+  @override
+  String get checkingPantry => 'Kontrola vaší spíže...';
+
+  @override
+  String get addingToPantry => 'Přidání do spíže...';
+
+  @override
+  String get removingFromPantry => 'Vyjmutí ze spíže...';
+
+  @override
+  String get updatingPantry => 'Aktualizace spíže...';
+
+  @override
+  String get savingRecipe => 'Ukládání receptu...';
+
+  @override
+  String get searchingRecipes => 'Hledání receptů...';
+
+  @override
+  String get removingRecipe => 'Odebírání receptu...';
+
+  @override
+  String get addingIngredientsToList => 'Přidávání přísad do seznamu...';
+
+  @override
+  String get organizingMenu => 'Organizace menu...';
+
+  @override
+  String get loadingMenu => 'Načítání nabídky...';
+
+  @override
+  String get updatingMenu => 'Aktualizace nabídky...';
+
+  @override
+  String get searchingCategories => 'Vyhledávání kategorií...';
+
+  @override
+  String get categorizingItems => 'Kategorizace položek...';
+
+  @override
+  String get generatingShareLink => 'Generování odkazu na sdílení...';
+
+  @override
+  String get searchingSharedList => 'Vyhledávání sdíleného seznamu...';
+
+  @override
+  String get loadingProfile => 'Načítání vašeho profilu...';
+
+  @override
+  String get savingPreferences => 'Ukládání předvoleb...';
+
+  @override
+  String get checkingSettings => 'Kontrola nastavení...';
+
+  @override
+  String get generatingContent => 'Generování personalizovaného obsahu...';
+
+  @override
+  String get searchingProducts => 'Vyhledávání produktů...';
+
+  @override
+  String get estimatingPrices => 'Odhad cen...';
+
+  @override
+  String get processing => 'Zpracovává se...';
+
+  @override
+  String get shoppingList => 'Nákupní seznam';
+
+  @override
+  String get purchasedSuffix => '[zakoupeno]';
+
+  @override
+  String get listUnarchived => 'Archivace seznamu byla úspěšně zrušena.';
+
+  @override
+  String get toolDeleteList => 'Smazat seznam';
+
+  @override
+  String get toolAddItems => 'Přidat položky';
+
+  @override
+  String get toolRemoveItems => 'Odstraňte položky';
+
+  @override
+  String get toolAddToPantry => 'Přidat do spíže';
+
+  @override
+  String get toolRemoveFromPantry => 'Vyjměte ze spíže';
+
+  @override
+  String get toolShareList => 'Sdílejte seznam';
+
+  @override
+  String get toolSaveRecipe => 'Uložit recept';
+
+  @override
+  String get toolDeleteRecipe => 'Smazat recept';
+
+  @override
+  String get toolRemoveMeal => 'Odstraňte jídlo';
+
+  @override
+  String get toolSavePreference => 'Uložit předvolbu';
+
+  @override
+  String get toolRemovePreference => 'Odebrat předvolbu';
+
+  @override
+  String currentTheme(Object mode) {
+    return 'Aktuální téma: $mode';
+  }
+
+  @override
+  String themeChanged(Object mode) {
+    return 'Motiv byl změněn na $mode.';
+  }
+
+  @override
+  String get addToList => 'Přidat do seznamu';
+
+  @override
+  String errorAddingItem(Object error) {
+    return 'Chyba při přidávání položky: $error';
+  }
+
+  @override
+  String errorAddingBatch(Object error) {
+    return 'Chyba při přidávání položek v dávce: $error';
+  }
+
+  @override
+  String errorTogglingItem(Object error) {
+    return 'Chyba při přepínání stavu položky: $error';
+  }
+
+  @override
+  String errorRemovingItem(Object error) {
+    return 'Chyba při odebírání položky: $error';
+  }
+
+  @override
+  String errorUpdatingItem(Object error) {
+    return 'Chyba při aktualizaci položky: $error';
+  }
+
+  @override
+  String errorUpdatingItems(Object error) {
+    return 'Chyba při aktualizaci položek: $error';
+  }
+
+  @override
+  String errorRestoringItem(Object error) {
+    return 'Chyba při obnovování položky: $error';
+  }
+
+  @override
+  String errorIncreasingQty(Object error) {
+    return 'Chyba při zvyšování množství: $error';
+  }
+
+  @override
+  String errorDecreasingQty(Object error) {
+    return 'Chyba při snižování množství: $error';
+  }
+
+  @override
+  String errorClearingList(Object error) {
+    return 'Chyba při mazání seznamu: $error';
+  }
+
+  @override
+  String errorClearingPurchased(Object error) {
+    return 'Chyba při mazání zakoupených položek: $error';
+  }
+
+  @override
+  String errorRemovingItems(Object error) {
+    return 'Chyba při odebírání položek: $error';
+  }
+
+  @override
+  String errorTogglingItems(Object error) {
+    return 'Chyba při přepínání položek: $error';
+  }
+
+  @override
+  String errorReordering(Object error) {
+    return 'Chyba při změně pořadí položky: $error';
+  }
+
+  @override
+  String get errorCreatingList => 'Chyba při vytváření seznamu';
+
+  @override
+  String errorServerConnection(Object error) {
+    return 'Chyba při připojování k serveru: $error';
+  }
+
+  @override
+  String errorUpdatingList(Object error) {
+    return 'Chyba při aktualizaci seznamu: $error';
+  }
+
+  @override
+  String errorDeletingList(Object error) {
+    return 'Chyba při mazání seznamu: $error';
+  }
+
+  @override
+  String errorRemovingSharedList(Object error) {
+    return 'Chyba při odebírání sdíleného seznamu: $error';
+  }
+
+  @override
+  String errorSettingCurrentList(Object error) {
+    return 'Chyba při nastavení aktuálního seznamu: $error';
+  }
+
+  @override
+  String errorArchivingList(Object error) {
+    return 'Chyba při archivaci seznamu: $error';
+  }
+
+  @override
+  String errorUnarchivingList(Object error) {
+    return 'Chyba při rušení archivu seznamu: $error';
+  }
+
+  @override
+  String get errorUserNotAuthenticated => 'Uživatel není ověřen.';
+
+  @override
+  String get errorGeneratingCode =>
+      'Chyba při generování jedinečného kódu. Zkuste to znovu.';
+
+  @override
+  String pantryLimitReached(Object count) {
+    return 'Limit $count položek ve spíži v bezplatném plánu. Upgradujte a přidejte další.';
+  }
+
+  @override
+  String errorImportingList(Object name, Object error) {
+    return 'Chyba při importu seznamu „$name“: $error';
+  }
+
+  @override
+  String errorExecutingTool(Object tool, Object error) {
+    return 'Chyba při provádění $tool: $error';
+  }
+
+  @override
+  String get errorProcessingRequest =>
+      'Omlouváme se, při zpracování vašeho požadavku došlo k chybě. Zkontrolujte připojení nebo to zkuste znovu později.';
+
+  @override
+  String get couldNotProcess => 'Nelze zpracovat po několika pokusech.';
+
+  @override
+  String get errorResumingProcessing => 'Chyba při obnovení zpracování.';
+
+  @override
+  String get errorResumingLoop => '[ResumeLoop] Chyba při obnovení smyčky';
+
+  @override
+  String get othersCategory => 'Ostatní';
+
+  @override
+  String get monthJanuary => 'leden';
+
+  @override
+  String get monthFebruary => 'únor';
+
+  @override
+  String get monthMarch => 'Pochod';
+
+  @override
+  String get monthApril => 'duben';
+
+  @override
+  String get monthMay => 'květen';
+
+  @override
+  String get monthJune => 'červen';
+
+  @override
+  String get monthJuly => 'červenec';
+
+  @override
+  String get monthAugust => 'srpen';
+
+  @override
+  String get monthSeptember => 'září';
+
+  @override
+  String get monthOctober => 'říjen';
+
+  @override
+  String get monthNovember => 'listopad';
+
+  @override
+  String get monthDecember => 'prosinec';
+
+  @override
+  String get dayMon => 'Po';
+
+  @override
+  String get dayTue => 'út';
+
+  @override
+  String get dayWed => 'St';
+
+  @override
+  String get dayThu => 'Čt';
+
+  @override
+  String get dayFri => 'pá';
+
+  @override
+  String get daySat => 'sobota';
+
+  @override
+  String get daySun => 'Slunce';
 }

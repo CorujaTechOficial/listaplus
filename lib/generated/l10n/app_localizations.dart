@@ -3611,6 +3611,1566 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue →'**
   String get onboardingAiContinue;
+
+  /// No description provided for @errorRenderScreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Oops! Something went wrong rendering this screen.'**
+  String get errorRenderScreen;
+
+  /// No description provided for @connectionError.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection Error'**
+  String get connectionError;
+
+  /// Error message for connectionErrorDesc
+  ///
+  /// In en, this message translates to:
+  /// **'Could not connect to the server. Check your internet.\n({error})'**
+  String connectionErrorDesc(Object error);
+
+  /// No description provided for @errorLoadingLists.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading lists'**
+  String get errorLoadingLists;
+
+  /// No description provided for @noListsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No lists found'**
+  String get noListsFound;
+
+  /// No description provided for @unlockPremiumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock unlimited lists, AI and more'**
+  String get unlockPremiumTitle;
+
+  /// No description provided for @loadingSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading subscription...'**
+  String get loadingSubscription;
+
+  /// No description provided for @errorLoadingSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading subscription'**
+  String get errorLoadingSubscription;
+
+  /// No description provided for @profileSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileSection;
+
+  /// No description provided for @myProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'My Profile'**
+  String get myProfile;
+
+  /// No description provided for @profileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal preferences for the AI assistant'**
+  String get profileSubtitle;
+
+  /// No description provided for @manageCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Categories'**
+  String get manageCategories;
+
+  /// No description provided for @manageCategoriesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage item categories'**
+  String get manageCategoriesSubtitle;
+
+  /// No description provided for @profileSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile saved successfully!'**
+  String get profileSaved;
+
+  /// Error message for errorSavingProfile
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving: {error}'**
+  String errorSavingProfile(Object error);
+
+  /// No description provided for @userProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'User Profile'**
+  String get userProfile;
+
+  /// No description provided for @saveProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Profile'**
+  String get saveProfile;
+
+  /// No description provided for @profileDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us your personal preferences so the AI assistant can suggest personalized items and recipes.'**
+  String get profileDescription;
+
+  /// No description provided for @preferredMarket.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred Market'**
+  String get preferredMarket;
+
+  /// No description provided for @preferredMarketHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g.: Supermarket X'**
+  String get preferredMarketHint;
+
+  /// No description provided for @dietaryRestrictions.
+  ///
+  /// In en, this message translates to:
+  /// **'Dietary Restrictions'**
+  String get dietaryRestrictions;
+
+  /// No description provided for @dietaryRestrictionsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g.: vegan, vegetarian, gluten-free'**
+  String get dietaryRestrictionsHint;
+
+  /// No description provided for @marketsToAvoid.
+  ///
+  /// In en, this message translates to:
+  /// **'Markets to Avoid'**
+  String get marketsToAvoid;
+
+  /// No description provided for @marketsToAvoidHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g.: Market Y, Market Z'**
+  String get marketsToAvoidHint;
+
+  /// No description provided for @observations.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get observations;
+
+  /// No description provided for @observationsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Other preferences for the assistant'**
+  String get observationsHint;
+
+  /// No description provided for @manageCategoriesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Categories'**
+  String get manageCategoriesTitle;
+
+  /// No description provided for @categoryLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit of 10 categories on the free version. Upgrade to Pro!'**
+  String get categoryLimitReached;
+
+  /// No description provided for @noCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'No categories.'**
+  String get noCategories;
+
+  /// No description provided for @deleteCategoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Category'**
+  String get deleteCategoryTitle;
+
+  /// No description provided for @deleteCategoryConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Items in category \"{category}\" will be moved to \"Others\".\nContinue?'**
+  String deleteCategoryConfirm(Object category);
+
+  /// No description provided for @deleteCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteCategory;
+
+  /// No description provided for @myAchievements.
+  ///
+  /// In en, this message translates to:
+  /// **'My Achievements'**
+  String get myAchievements;
+
+  /// No description provided for @itemsPurchased.
+  ///
+  /// In en, this message translates to:
+  /// **'Items Purchased'**
+  String get itemsPurchased;
+
+  /// No description provided for @totalSavings.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Savings'**
+  String get totalSavings;
+
+  /// No description provided for @currentStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Streak'**
+  String get currentStreak;
+
+  /// No description provided for @streakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days'**
+  String streakDays(Object days);
+
+  /// No description provided for @chooseThemeColor.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Theme Color'**
+  String get chooseThemeColor;
+
+  /// No description provided for @errorLoadingHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading history'**
+  String get errorLoadingHistory;
+
+  /// No description provided for @deleteConversationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Conversation?'**
+  String get deleteConversationTitle;
+
+  /// No description provided for @deleteConversationConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This action cannot be undone.'**
+  String get deleteConversationConfirm;
+
+  /// No description provided for @deleteConversation.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteConversation;
+
+  /// No description provided for @unlockWithAd.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Ad'**
+  String get unlockWithAd;
+
+  /// No description provided for @aiPremiumDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This interactive interface uses advanced artificial intelligence and is exclusive to Pro members or via a quick ad.'**
+  String get aiPremiumDescription;
+
+  /// No description provided for @sortAZ.
+  ///
+  /// In en, this message translates to:
+  /// **'A-Z'**
+  String get sortAZ;
+
+  /// No description provided for @categoryNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'E.g.: Meats'**
+  String get categoryNameHint;
+
+  /// No description provided for @color.
+  ///
+  /// In en, this message translates to:
+  /// **'Color:'**
+  String get color;
+
+  /// No description provided for @icon.
+  ///
+  /// In en, this message translates to:
+  /// **'Icon:'**
+  String get icon;
+
+  /// No description provided for @scanBarcode.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan Barcode'**
+  String get scanBarcode;
+
+  /// No description provided for @scanProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan Product'**
+  String get scanProduct;
+
+  /// No description provided for @positionBarcodeCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Position the barcode in the center'**
+  String get positionBarcodeCenter;
+
+  /// No description provided for @replaceItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace {name}'**
+  String replaceItem(Object name);
+
+  /// No description provided for @selectCheaperAlternative.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a cheaper product alternative to optimize cost.'**
+  String get selectCheaperAlternative;
+
+  /// No description provided for @swap.
+  ///
+  /// In en, this message translates to:
+  /// **'Swap'**
+  String get swap;
+
+  /// No description provided for @itemAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} added'**
+  String itemAdded(Object name);
+
+  /// Error message for errorLoadingProducts
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading products: {error}'**
+  String errorLoadingProducts(Object error);
+
+  /// No description provided for @mealType.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal type'**
+  String get mealType;
+
+  /// No description provided for @requestTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, the request timed out.'**
+  String get requestTimeout;
+
+  /// No description provided for @connectionError2.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, a connection error occurred.'**
+  String get connectionError2;
+
+  /// No description provided for @addingItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Adding items to list...'**
+  String get addingItems;
+
+  /// No description provided for @removingItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Removing items...'**
+  String get removingItems;
+
+  /// No description provided for @updatingItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating item...'**
+  String get updatingItem;
+
+  /// No description provided for @checkingItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking item...'**
+  String get checkingItem;
+
+  /// No description provided for @uncheckingItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Unchecking item...'**
+  String get uncheckingItem;
+
+  /// No description provided for @clearingCheckedItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Clearing checked items...'**
+  String get clearingCheckedItems;
+
+  /// No description provided for @reorganizingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Reorganizing list...'**
+  String get reorganizingList;
+
+  /// No description provided for @creatingNewList.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating new list...'**
+  String get creatingNewList;
+
+  /// No description provided for @removingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Removing list...'**
+  String get removingList;
+
+  /// No description provided for @renamingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Renaming list...'**
+  String get renamingList;
+
+  /// No description provided for @queryingYourLists.
+  ///
+  /// In en, this message translates to:
+  /// **'Querying your lists...'**
+  String get queryingYourLists;
+
+  /// No description provided for @settingBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting budget...'**
+  String get settingBudget;
+
+  /// No description provided for @checkingPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your pantry...'**
+  String get checkingPantry;
+
+  /// No description provided for @addingToPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Adding to pantry...'**
+  String get addingToPantry;
+
+  /// No description provided for @removingFromPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Removing from pantry...'**
+  String get removingFromPantry;
+
+  /// No description provided for @updatingPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating pantry...'**
+  String get updatingPantry;
+
+  /// No description provided for @savingRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving recipe...'**
+  String get savingRecipe;
+
+  /// No description provided for @searchingRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Searching recipes...'**
+  String get searchingRecipes;
+
+  /// No description provided for @removingRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Removing recipe...'**
+  String get removingRecipe;
+
+  /// No description provided for @addingIngredientsToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Adding ingredients to list...'**
+  String get addingIngredientsToList;
+
+  /// No description provided for @organizingMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'Organizing your menu...'**
+  String get organizingMenu;
+
+  /// No description provided for @loadingMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading your menu...'**
+  String get loadingMenu;
+
+  /// No description provided for @updatingMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating menu...'**
+  String get updatingMenu;
+
+  /// No description provided for @searchingCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Searching categories...'**
+  String get searchingCategories;
+
+  /// No description provided for @categorizingItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Categorizing items...'**
+  String get categorizingItems;
+
+  /// No description provided for @generatingShareLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Generating share link...'**
+  String get generatingShareLink;
+
+  /// No description provided for @searchingSharedList.
+  ///
+  /// In en, this message translates to:
+  /// **'Searching shared list...'**
+  String get searchingSharedList;
+
+  /// No description provided for @loadingProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading your profile...'**
+  String get loadingProfile;
+
+  /// No description provided for @savingPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving your preferences...'**
+  String get savingPreferences;
+
+  /// No description provided for @checkingSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your settings...'**
+  String get checkingSettings;
+
+  /// No description provided for @generatingContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Generating personalized content...'**
+  String get generatingContent;
+
+  /// No description provided for @searchingProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Searching products...'**
+  String get searchingProducts;
+
+  /// No description provided for @estimatingPrices.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimating prices...'**
+  String get estimatingPrices;
+
+  /// No description provided for @processing.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing...'**
+  String get processing;
+
+  /// No description provided for @shoppingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping List'**
+  String get shoppingList;
+
+  /// No description provided for @purchasedSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **' [Purchased]'**
+  String get purchasedSuffix;
+
+  /// No description provided for @listUnarchived.
+  ///
+  /// In en, this message translates to:
+  /// **'List unarchived successfully.'**
+  String get listUnarchived;
+
+  /// No description provided for @toolDeleteList.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete list'**
+  String get toolDeleteList;
+
+  /// No description provided for @toolAddItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Add items'**
+  String get toolAddItems;
+
+  /// No description provided for @toolRemoveItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove items'**
+  String get toolRemoveItems;
+
+  /// No description provided for @toolAddToPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to pantry'**
+  String get toolAddToPantry;
+
+  /// No description provided for @toolRemoveFromPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from pantry'**
+  String get toolRemoveFromPantry;
+
+  /// No description provided for @toolShareList.
+  ///
+  /// In en, this message translates to:
+  /// **'Share list'**
+  String get toolShareList;
+
+  /// No description provided for @toolSaveRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Save recipe'**
+  String get toolSaveRecipe;
+
+  /// No description provided for @toolDeleteRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete recipe'**
+  String get toolDeleteRecipe;
+
+  /// No description provided for @toolRemoveMeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove meal'**
+  String get toolRemoveMeal;
+
+  /// No description provided for @toolSavePreference.
+  ///
+  /// In en, this message translates to:
+  /// **'Save preference'**
+  String get toolSavePreference;
+
+  /// No description provided for @toolRemovePreference.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove preference'**
+  String get toolRemovePreference;
+
+  /// No description provided for @currentTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Current theme: {mode}'**
+  String currentTheme(Object mode);
+
+  /// No description provided for @themeChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme changed to {mode}.'**
+  String themeChanged(Object mode);
+
+  /// No description provided for @addToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to List'**
+  String get addToList;
+
+  /// Error message for errorAddingItem
+  ///
+  /// In en, this message translates to:
+  /// **'Error adding item: {error}'**
+  String errorAddingItem(Object error);
+
+  /// Error message for errorAddingBatch
+  ///
+  /// In en, this message translates to:
+  /// **'Error adding items in batch: {error}'**
+  String errorAddingBatch(Object error);
+
+  /// Error message for errorTogglingItem
+  ///
+  /// In en, this message translates to:
+  /// **'Error toggling item status: {error}'**
+  String errorTogglingItem(Object error);
+
+  /// Error message for errorRemovingItem
+  ///
+  /// In en, this message translates to:
+  /// **'Error removing item: {error}'**
+  String errorRemovingItem(Object error);
+
+  /// Error message for errorUpdatingItem
+  ///
+  /// In en, this message translates to:
+  /// **'Error updating item: {error}'**
+  String errorUpdatingItem(Object error);
+
+  /// Error message for errorUpdatingItems
+  ///
+  /// In en, this message translates to:
+  /// **'Error updating items: {error}'**
+  String errorUpdatingItems(Object error);
+
+  /// Error message for errorRestoringItem
+  ///
+  /// In en, this message translates to:
+  /// **'Error restoring item: {error}'**
+  String errorRestoringItem(Object error);
+
+  /// Error message for errorIncreasingQty
+  ///
+  /// In en, this message translates to:
+  /// **'Error increasing quantity: {error}'**
+  String errorIncreasingQty(Object error);
+
+  /// Error message for errorDecreasingQty
+  ///
+  /// In en, this message translates to:
+  /// **'Error decreasing quantity: {error}'**
+  String errorDecreasingQty(Object error);
+
+  /// Error message for errorClearingList
+  ///
+  /// In en, this message translates to:
+  /// **'Error clearing list: {error}'**
+  String errorClearingList(Object error);
+
+  /// Error message for errorClearingPurchased
+  ///
+  /// In en, this message translates to:
+  /// **'Error clearing purchased items: {error}'**
+  String errorClearingPurchased(Object error);
+
+  /// Error message for errorRemovingItems
+  ///
+  /// In en, this message translates to:
+  /// **'Error removing items: {error}'**
+  String errorRemovingItems(Object error);
+
+  /// Error message for errorTogglingItems
+  ///
+  /// In en, this message translates to:
+  /// **'Error toggling items: {error}'**
+  String errorTogglingItems(Object error);
+
+  /// Error message for errorReordering
+  ///
+  /// In en, this message translates to:
+  /// **'Error reordering item: {error}'**
+  String errorReordering(Object error);
+
+  /// No description provided for @errorCreatingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Error creating list'**
+  String get errorCreatingList;
+
+  /// Error message for errorServerConnection
+  ///
+  /// In en, this message translates to:
+  /// **'Error connecting to server: {error}'**
+  String errorServerConnection(Object error);
+
+  /// Error message for errorUpdatingList
+  ///
+  /// In en, this message translates to:
+  /// **'Error updating list: {error}'**
+  String errorUpdatingList(Object error);
+
+  /// Error message for errorDeletingList
+  ///
+  /// In en, this message translates to:
+  /// **'Error deleting list: {error}'**
+  String errorDeletingList(Object error);
+
+  /// Error message for errorRemovingSharedList
+  ///
+  /// In en, this message translates to:
+  /// **'Error removing shared list: {error}'**
+  String errorRemovingSharedList(Object error);
+
+  /// Error message for errorSettingCurrentList
+  ///
+  /// In en, this message translates to:
+  /// **'Error setting current list: {error}'**
+  String errorSettingCurrentList(Object error);
+
+  /// Error message for errorArchivingList
+  ///
+  /// In en, this message translates to:
+  /// **'Error archiving list: {error}'**
+  String errorArchivingList(Object error);
+
+  /// Error message for errorUnarchivingList
+  ///
+  /// In en, this message translates to:
+  /// **'Error unarchiving list: {error}'**
+  String errorUnarchivingList(Object error);
+
+  /// No description provided for @errorUserNotAuthenticated.
+  ///
+  /// In en, this message translates to:
+  /// **'User not authenticated.'**
+  String get errorUserNotAuthenticated;
+
+  /// No description provided for @errorGeneratingCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Error generating unique code. Try again.'**
+  String get errorGeneratingCode;
+
+  /// No description provided for @pantryLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit of {count} items in pantry on the free plan. Upgrade to add more.'**
+  String pantryLimitReached(Object count);
+
+  /// Error message for errorImportingList
+  ///
+  /// In en, this message translates to:
+  /// **'Error importing list \"{name}\": {error}'**
+  String errorImportingList(Object name, Object error);
+
+  /// Error message for errorExecutingTool
+  ///
+  /// In en, this message translates to:
+  /// **'Error executing {tool}: {error}'**
+  String errorExecutingTool(Object tool, Object error);
+
+  /// No description provided for @errorProcessingRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, an error occurred while processing your request. Check your connection or try again later.'**
+  String get errorProcessingRequest;
+
+  /// No description provided for @couldNotProcess.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not process after multiple attempts.'**
+  String get couldNotProcess;
+
+  /// No description provided for @errorResumingProcessing.
+  ///
+  /// In en, this message translates to:
+  /// **'Error resuming processing.'**
+  String get errorResumingProcessing;
+
+  /// No description provided for @errorResumingLoop.
+  ///
+  /// In en, this message translates to:
+  /// **'[ResumeLoop] Error resuming loop'**
+  String get errorResumingLoop;
+
+  /// No description provided for @othersCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Others'**
+  String get othersCategory;
+
+  /// No description provided for @monthJanuary.
+  ///
+  /// In en, this message translates to:
+  /// **'January'**
+  String get monthJanuary;
+
+  /// No description provided for @monthFebruary.
+  ///
+  /// In en, this message translates to:
+  /// **'February'**
+  String get monthFebruary;
+
+  /// No description provided for @monthMarch.
+  ///
+  /// In en, this message translates to:
+  /// **'March'**
+  String get monthMarch;
+
+  /// No description provided for @monthApril.
+  ///
+  /// In en, this message translates to:
+  /// **'April'**
+  String get monthApril;
+
+  /// No description provided for @monthMay.
+  ///
+  /// In en, this message translates to:
+  /// **'May'**
+  String get monthMay;
+
+  /// No description provided for @monthJune.
+  ///
+  /// In en, this message translates to:
+  /// **'June'**
+  String get monthJune;
+
+  /// No description provided for @monthJuly.
+  ///
+  /// In en, this message translates to:
+  /// **'July'**
+  String get monthJuly;
+
+  /// No description provided for @monthAugust.
+  ///
+  /// In en, this message translates to:
+  /// **'August'**
+  String get monthAugust;
+
+  /// No description provided for @monthSeptember.
+  ///
+  /// In en, this message translates to:
+  /// **'September'**
+  String get monthSeptember;
+
+  /// No description provided for @monthOctober.
+  ///
+  /// In en, this message translates to:
+  /// **'October'**
+  String get monthOctober;
+
+  /// No description provided for @monthNovember.
+  ///
+  /// In en, this message translates to:
+  /// **'November'**
+  String get monthNovember;
+
+  /// No description provided for @monthDecember.
+  ///
+  /// In en, this message translates to:
+  /// **'December'**
+  String get monthDecember;
+
+  /// No description provided for @dayMon.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon'**
+  String get dayMon;
+
+  /// No description provided for @dayTue.
+  ///
+  /// In en, this message translates to:
+  /// **'Tue'**
+  String get dayTue;
+
+  /// No description provided for @dayWed.
+  ///
+  /// In en, this message translates to:
+  /// **'Wed'**
+  String get dayWed;
+
+  /// No description provided for @dayThu.
+  ///
+  /// In en, this message translates to:
+  /// **'Thu'**
+  String get dayThu;
+
+  /// No description provided for @dayFri.
+  ///
+  /// In en, this message translates to:
+  /// **'Fri'**
+  String get dayFri;
+
+  /// No description provided for @daySat.
+  ///
+  /// In en, this message translates to:
+  /// **'Sat'**
+  String get daySat;
+
+  /// No description provided for @daySun.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun'**
+  String get daySun;
+
+  /// No description provided for @subscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription'**
+  String get subscription;
+
+  /// No description provided for @kipiListProActive.
+  ///
+  /// In en, this message translates to:
+  /// **'KipiList Pro active'**
+  String get kipiListProActive;
+
+  /// No description provided for @customizeAiAssistant.
+  ///
+  /// In en, this message translates to:
+  /// **'Customize AI Assistant'**
+  String get customizeAiAssistant;
+
+  /// No description provided for @assistantHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant History'**
+  String get assistantHistory;
+
+  /// No description provided for @assistantHistorySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View and search past conversations'**
+  String get assistantHistorySubtitle;
+
+  /// No description provided for @customizeAssistant.
+  ///
+  /// In en, this message translates to:
+  /// **'Customize Assistant'**
+  String get customizeAssistant;
+
+  /// No description provided for @assistantName.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant Name'**
+  String get assistantName;
+
+  /// No description provided for @chooseIcon.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an Icon:'**
+  String get chooseIcon;
+
+  /// No description provided for @backToToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to today'**
+  String get backToToday;
+
+  /// No description provided for @conversationHistoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation History'**
+  String get conversationHistoryTitle;
+
+  /// No description provided for @noConversationsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No conversations found'**
+  String get noConversationsFound;
+
+  /// No description provided for @newConversationDefaultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New Conversation'**
+  String get newConversationDefaultTitle;
+
+  /// No description provided for @unlockedBadges.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked Badges'**
+  String get unlockedBadges;
+
+  /// No description provided for @badgeBeginner.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner'**
+  String get badgeBeginner;
+
+  /// No description provided for @badgeOrganized.
+  ///
+  /// In en, this message translates to:
+  /// **'Organized'**
+  String get badgeOrganized;
+
+  /// No description provided for @badgeSavingMaster.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving Master'**
+  String get badgeSavingMaster;
+
+  /// No description provided for @badgeSuperPlanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Super Planner'**
+  String get badgeSuperPlanner;
+
+  /// No description provided for @aiEnergyLow.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re almost out of energy!'**
+  String get aiEnergyLow;
+
+  /// No description provided for @aiUnlockUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock unlimited AI'**
+  String get aiUnlockUnlimited;
+
+  /// No description provided for @aiRemainingFreeToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {remaining} free messages left today. Subscribe to Premium and stop worrying about limits.'**
+  String aiRemainingFreeToday(int remaining);
+
+  /// No description provided for @aiSubscribeUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe to Premium and use the AI chat as much as you want. No counting, no limits.'**
+  String get aiSubscribeUnlimited;
+
+  /// No description provided for @suggestedItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested Items'**
+  String get suggestedItems;
+
+  /// No description provided for @swapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Swapped'**
+  String get swapped;
+
+  /// No description provided for @newCategoryDialog.
+  ///
+  /// In en, this message translates to:
+  /// **'New Category'**
+  String get newCategoryDialog;
+
+  /// No description provided for @editCategoryDialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Category'**
+  String get editCategoryDialog;
+
+  /// No description provided for @categoryName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get categoryName;
+
+  /// No description provided for @scanBarcodeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan Barcode'**
+  String get scanBarcodeTitle;
+
+  /// No description provided for @scanProductTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan Product'**
+  String get scanProductTitle;
+
+  /// No description provided for @categoryColorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Color:'**
+  String get categoryColorLabel;
+
+  /// No description provided for @categoryIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Icon:'**
+  String get categoryIconLabel;
+
+  /// No description provided for @product.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get product;
+
+  /// No description provided for @everythingReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything ready!'**
+  String get everythingReady;
+
+  /// No description provided for @youCompletedList.
+  ///
+  /// In en, this message translates to:
+  /// **'You completed your list.'**
+  String get youCompletedList;
+
+  /// No description provided for @allSet.
+  ///
+  /// In en, this message translates to:
+  /// **'All set!'**
+  String get allSet;
+
+  /// No description provided for @itemsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{purchased} of {total} items'**
+  String itemsCount(int purchased, int total);
+
+  /// No description provided for @budgetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget: {amount}'**
+  String budgetLabel(String amount);
+
+  /// No description provided for @totalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Total: {amount}'**
+  String totalLabel(String amount);
+
+  /// No description provided for @quickSuggestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick suggestions'**
+  String get quickSuggestions;
+
+  /// No description provided for @saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get saved;
+
+  /// No description provided for @aiAssistantTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Assistant'**
+  String get aiAssistantTitle;
+
+  /// No description provided for @closeSheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get closeSheet;
+
+  /// No description provided for @editAssistantName.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Assistant Name'**
+  String get editAssistantName;
+
+  /// No description provided for @selectAssistantIcon.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Assistant Icon'**
+  String get selectAssistantIcon;
+
+  /// No description provided for @itemAddedSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} added'**
+  String itemAddedSnack(String name);
+
+  /// No description provided for @quantityWithUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'{quantity} {unit}'**
+  String quantityWithUnit(String quantity, String unit);
+
+  /// No description provided for @quantityUnitWithPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{quantity} {unit} • {price}'**
+  String quantityUnitWithPrice(String quantity, String unit, String price);
+
+  /// No description provided for @onboardingHookHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your shopping list with artificial intelligence'**
+  String get onboardingHookHeadline;
+
+  /// No description provided for @onboardingLoginHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in in 1 second'**
+  String get onboardingLoginHeadline;
+
+  /// No description provided for @onboardingLoginSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your lists are saved and synced automatically'**
+  String get onboardingLoginSubtitle;
+
+  /// No description provided for @onboardingPersonalizationNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'What can I call you?'**
+  String get onboardingPersonalizationNameLabel;
+
+  /// No description provided for @onboardingPersonalizationNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your name (optional)'**
+  String get onboardingPersonalizationNameHint;
+
+  /// No description provided for @onboardingPersonalizationCategoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you organize most often?'**
+  String get onboardingPersonalizationCategoryTitle;
+
+  /// No description provided for @onboardingPersonalizationGroupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you shop alone or with others?'**
+  String get onboardingPersonalizationGroupTitle;
+
+  /// No description provided for @onboardingCategoryGrocery.
+  ///
+  /// In en, this message translates to:
+  /// **'🛒 Grocery'**
+  String get onboardingCategoryGrocery;
+
+  /// No description provided for @onboardingCategoryPharmacy.
+  ///
+  /// In en, this message translates to:
+  /// **'💊 Pharmacy'**
+  String get onboardingCategoryPharmacy;
+
+  /// No description provided for @onboardingCategoryRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'🍽️ Recipes'**
+  String get onboardingCategoryRecipes;
+
+  /// No description provided for @onboardingCategoryHome.
+  ///
+  /// In en, this message translates to:
+  /// **'🏠 Home'**
+  String get onboardingCategoryHome;
+
+  /// No description provided for @onboardingCategoryPet.
+  ///
+  /// In en, this message translates to:
+  /// **'🐾 Pet'**
+  String get onboardingCategoryPet;
+
+  /// No description provided for @onboardingGroupSolo.
+  ///
+  /// In en, this message translates to:
+  /// **'👤 Just me'**
+  String get onboardingGroupSolo;
+
+  /// No description provided for @onboardingGroupCouple.
+  ///
+  /// In en, this message translates to:
+  /// **'👥 With someone'**
+  String get onboardingGroupCouple;
+
+  /// No description provided for @onboardingGroupFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'👨‍👩‍👧 Family'**
+  String get onboardingGroupFamily;
+
+  /// No description provided for @onboardingAiDemoGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name}! I see you organize {category} 😊'**
+  String onboardingAiDemoGreeting(String name, String category);
+
+  /// No description provided for @onboardingAiDemoGreetingNoName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! I see you organize {category} 😊'**
+  String onboardingAiDemoGreetingNoName(String category);
+
+  /// No description provided for @onboardingAiDemoOffer.
+  ///
+  /// In en, this message translates to:
+  /// **'Want me to build a list right now?'**
+  String get onboardingAiDemoOffer;
+
+  /// No description provided for @onboardingAiDemoYes.
+  ///
+  /// In en, this message translates to:
+  /// **'✅ Yes, build it for me!'**
+  String get onboardingAiDemoYes;
+
+  /// No description provided for @onboardingAiDemoChange.
+  ///
+  /// In en, this message translates to:
+  /// **'🔄 Different category'**
+  String get onboardingAiDemoChange;
+
+  /// No description provided for @onboardingAiDemoReaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Done! I created {count} items for you 🎉'**
+  String onboardingAiDemoReaction(int count);
+
+  /// No description provided for @onboardingAiDemoContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Amazing! I want more →'**
+  String get onboardingAiDemoContinue;
+
+  /// No description provided for @onboardingCommitmentsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you want to achieve?'**
+  String get onboardingCommitmentsTitle;
+
+  /// No description provided for @onboardingCommitmentsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose everything that applies to you'**
+  String get onboardingCommitmentsSubtitle;
+
+  /// No description provided for @onboardingGoalSaveMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'💰 Spend less at the store'**
+  String get onboardingGoalSaveMoney;
+
+  /// No description provided for @onboardingGoalNeverForget.
+  ///
+  /// In en, this message translates to:
+  /// **'✅ Never forget an item'**
+  String get onboardingGoalNeverForget;
+
+  /// No description provided for @onboardingGoalFaster.
+  ///
+  /// In en, this message translates to:
+  /// **'⚡ Shop faster'**
+  String get onboardingGoalFaster;
+
+  /// No description provided for @onboardingGoalFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'👨‍👩‍👧 Organize with family'**
+  String get onboardingGoalFamily;
+
+  /// No description provided for @onboardingGoalRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'🍽️ Plan weekly recipes'**
+  String get onboardingGoalRecipes;
+
+  /// No description provided for @onboardingGoalPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'📦 Track pantry stock'**
+  String get onboardingGoalPantry;
+
+  /// No description provided for @onboardingLoadingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Building your plan...'**
+  String get onboardingLoadingTitle;
+
+  /// No description provided for @onboardingLoadingStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyzing your preferences...'**
+  String get onboardingLoadingStep1;
+
+  /// No description provided for @onboardingLoadingStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting up your personalized list...'**
+  String get onboardingLoadingStep2;
+
+  /// No description provided for @onboardingLoadingStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Your plan is ready! 🎉'**
+  String get onboardingLoadingStep3;
+
+  /// No description provided for @onboardingLoadingStat1Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Average rating'**
+  String get onboardingLoadingStat1Label;
+
+  /// No description provided for @onboardingLoadingStat2Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Lists created this week'**
+  String get onboardingLoadingStat2Label;
+
+  /// No description provided for @onboardingLoadingStat3Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommend the app'**
+  String get onboardingLoadingStat3Label;
+
+  /// No description provided for @paywallGoalHeadlineSaveMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, you\'re 7 days away from spending less on shopping'**
+  String paywallGoalHeadlineSaveMoney(String name);
+
+  /// No description provided for @paywallGoalHeadlineNeverForget.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, you\'re 7 days away from never forgetting an item again'**
+  String paywallGoalHeadlineNeverForget(String name);
+
+  /// No description provided for @paywallGoalHeadlineFaster.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, you\'re 7 days away from shopping in half the time'**
+  String paywallGoalHeadlineFaster(String name);
+
+  /// No description provided for @paywallGoalHeadlineFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, you\'re 7 days away from organizing the whole family\'s shopping'**
+  String paywallGoalHeadlineFamily(String name);
+
+  /// No description provided for @paywallGoalHeadlineRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, you\'re 7 days away from planning your recipes automatically'**
+  String paywallGoalHeadlineRecipes(String name);
+
+  /// No description provided for @paywallGoalHeadlinePantry.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, you\'re 7 days away from full control of your pantry'**
+  String paywallGoalHeadlinePantry(String name);
+
+  /// No description provided for @paywallGoalHeadlineNoNameSaveMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re 7 days away from spending less on shopping'**
+  String get paywallGoalHeadlineNoNameSaveMoney;
+
+  /// No description provided for @paywallGoalHeadlineNoNameNeverForget.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re 7 days away from never forgetting an item again'**
+  String get paywallGoalHeadlineNoNameNeverForget;
+
+  /// No description provided for @paywallGoalHeadlineNoNameFaster.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re 7 days away from shopping in half the time'**
+  String get paywallGoalHeadlineNoNameFaster;
+
+  /// No description provided for @paywallGoalHeadlineNoNameFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re 7 days away from organizing the whole family\'s shopping'**
+  String get paywallGoalHeadlineNoNameFamily;
+
+  /// No description provided for @paywallGoalHeadlineNoNameRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re 7 days away from planning your recipes automatically'**
+  String get paywallGoalHeadlineNoNameRecipes;
+
+  /// No description provided for @paywallGoalHeadlineNoNamePantry.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re 7 days away from full control of your pantry'**
+  String get paywallGoalHeadlineNoNamePantry;
+
+  /// No description provided for @paywallTestimonial.
+  ///
+  /// In en, this message translates to:
+  /// **'\"I saved R\$180 in the first month by better organizing my shopping\"'**
+  String get paywallTestimonial;
+
+  /// No description provided for @paywallTestimonialAuthor.
+  ///
+  /// In en, this message translates to:
+  /// **'Ana R., São Paulo'**
+  String get paywallTestimonialAuthor;
+
+  /// No description provided for @paywallTrialDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime · Charged after {days} days'**
+  String paywallTrialDisclaimer(int days);
+
+  /// No description provided for @paywallSkipNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get paywallSkipNow;
 }
 
 class _AppLocalizationsDelegate

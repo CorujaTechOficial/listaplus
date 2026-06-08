@@ -1864,6 +1864,905 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get onboardingAiContinue => 'Continue →';
+
+  @override
+  String get errorRenderScreen =>
+      'Oops! Something went wrong rendering this screen.';
+
+  @override
+  String get connectionError => 'Connection Error';
+
+  @override
+  String connectionErrorDesc(Object error) {
+    return 'Could not connect to the server. Check your internet.\n($error)';
+  }
+
+  @override
+  String get errorLoadingLists => 'Error loading lists';
+
+  @override
+  String get noListsFound => 'No lists found';
+
+  @override
+  String get unlockPremiumTitle => 'Unlock unlimited lists, AI and more';
+
+  @override
+  String get loadingSubscription => 'Loading subscription...';
+
+  @override
+  String get errorLoadingSubscription => 'Error loading subscription';
+
+  @override
+  String get profileSection => 'Profile';
+
+  @override
+  String get myProfile => 'My Profile';
+
+  @override
+  String get profileSubtitle => 'Personal preferences for the AI assistant';
+
+  @override
+  String get manageCategories => 'Manage Categories';
+
+  @override
+  String get manageCategoriesSubtitle => 'Manage item categories';
+
+  @override
+  String get profileSaved => 'Profile saved successfully!';
+
+  @override
+  String errorSavingProfile(Object error) {
+    return 'Error saving: $error';
+  }
+
+  @override
+  String get userProfile => 'User Profile';
+
+  @override
+  String get saveProfile => 'Save Profile';
+
+  @override
+  String get profileDescription =>
+      'Tell us your personal preferences so the AI assistant can suggest personalized items and recipes.';
+
+  @override
+  String get preferredMarket => 'Preferred Market';
+
+  @override
+  String get preferredMarketHint => 'E.g.: Supermarket X';
+
+  @override
+  String get dietaryRestrictions => 'Dietary Restrictions';
+
+  @override
+  String get dietaryRestrictionsHint => 'E.g.: vegan, vegetarian, gluten-free';
+
+  @override
+  String get marketsToAvoid => 'Markets to Avoid';
+
+  @override
+  String get marketsToAvoidHint => 'E.g.: Market Y, Market Z';
+
+  @override
+  String get observations => 'Notes';
+
+  @override
+  String get observationsHint => 'Other preferences for the assistant';
+
+  @override
+  String get manageCategoriesTitle => 'ವರ್ಗಗಳನ್ನು ನಿರ್ವಹಿಸಿ';
+
+  @override
+  String get categoryLimitReached =>
+      'Limit of 10 categories on the free version. Upgrade to Pro!';
+
+  @override
+  String get noCategories => 'No categories.';
+
+  @override
+  String get deleteCategoryTitle => 'Delete Category';
+
+  @override
+  String deleteCategoryConfirm(Object category) {
+    return 'Items in category \"$category\" will be moved to \"Others\".\nContinue?';
+  }
+
+  @override
+  String get deleteCategory => 'Delete';
+
+  @override
+  String get myAchievements => 'My Achievements';
+
+  @override
+  String get itemsPurchased => 'Items Purchased';
+
+  @override
+  String get totalSavings => 'Total Savings';
+
+  @override
+  String get currentStreak => 'Current Streak';
+
+  @override
+  String streakDays(Object days) {
+    return '$days days';
+  }
+
+  @override
+  String get chooseThemeColor => 'Choose Theme Color';
+
+  @override
+  String get errorLoadingHistory => 'Error loading history';
+
+  @override
+  String get deleteConversationTitle => 'Delete Conversation?';
+
+  @override
+  String get deleteConversationConfirm => 'This action cannot be undone.';
+
+  @override
+  String get deleteConversation => 'Delete';
+
+  @override
+  String get unlockWithAd => 'Unlock with Ad';
+
+  @override
+  String get aiPremiumDescription =>
+      'This interactive interface uses advanced artificial intelligence and is exclusive to Pro members or via a quick ad.';
+
+  @override
+  String get sortAZ => 'A–Z';
+
+  @override
+  String get categoryNameHint => 'E.g.: Meats';
+
+  @override
+  String get color => 'Color:';
+
+  @override
+  String get icon => 'Icon:';
+
+  @override
+  String get scanBarcode => 'Scan Barcode';
+
+  @override
+  String get scanProduct => 'Scan Product';
+
+  @override
+  String get positionBarcodeCenter => 'Position the barcode in the center';
+
+  @override
+  String replaceItem(Object name) {
+    return 'Replace $name';
+  }
+
+  @override
+  String get selectCheaperAlternative =>
+      'Select a cheaper product alternative to optimize cost.';
+
+  @override
+  String get swap => 'Swap';
+
+  @override
+  String itemAdded(Object name) {
+    return '$name added';
+  }
+
+  @override
+  String errorLoadingProducts(Object error) {
+    return 'Error loading products: $error';
+  }
+
+  @override
+  String get mealType => 'Meal type';
+
+  @override
+  String get requestTimeout => 'Sorry, the request timed out.';
+
+  @override
+  String get connectionError2 => 'Sorry, a connection error occurred.';
+
+  @override
+  String get addingItems => 'Adding items to list...';
+
+  @override
+  String get removingItems => 'Removing items...';
+
+  @override
+  String get updatingItem => 'Updating item...';
+
+  @override
+  String get checkingItem => 'Checking item...';
+
+  @override
+  String get uncheckingItem => 'Unchecking item...';
+
+  @override
+  String get clearingCheckedItems => 'Clearing checked items...';
+
+  @override
+  String get reorganizingList => 'Reorganizing list...';
+
+  @override
+  String get creatingNewList => 'Creating new list...';
+
+  @override
+  String get removingList => 'Removing list...';
+
+  @override
+  String get renamingList => 'Renaming list...';
+
+  @override
+  String get queryingYourLists => 'Querying your lists...';
+
+  @override
+  String get settingBudget => 'Setting budget...';
+
+  @override
+  String get checkingPantry => 'Checking your pantry...';
+
+  @override
+  String get addingToPantry => 'Adding to pantry...';
+
+  @override
+  String get removingFromPantry => 'Removing from pantry...';
+
+  @override
+  String get updatingPantry => 'Updating pantry...';
+
+  @override
+  String get savingRecipe => 'Saving recipe...';
+
+  @override
+  String get searchingRecipes => 'Searching recipes...';
+
+  @override
+  String get removingRecipe => 'Removing recipe...';
+
+  @override
+  String get addingIngredientsToList => 'Adding ingredients to list...';
+
+  @override
+  String get organizingMenu => 'Organizing your menu...';
+
+  @override
+  String get loadingMenu => 'Loading your menu...';
+
+  @override
+  String get updatingMenu => 'Updating menu...';
+
+  @override
+  String get searchingCategories => 'Searching categories...';
+
+  @override
+  String get categorizingItems => 'Categorizing items...';
+
+  @override
+  String get generatingShareLink => 'Generating share link...';
+
+  @override
+  String get searchingSharedList => 'Searching shared list...';
+
+  @override
+  String get loadingProfile => 'Loading your profile...';
+
+  @override
+  String get savingPreferences => 'Saving your preferences...';
+
+  @override
+  String get checkingSettings => 'Checking your settings...';
+
+  @override
+  String get generatingContent => 'Generating personalized content...';
+
+  @override
+  String get searchingProducts => 'Searching products...';
+
+  @override
+  String get estimatingPrices => 'Estimating prices...';
+
+  @override
+  String get processing => 'Processing...';
+
+  @override
+  String get shoppingList => 'Shopping List';
+
+  @override
+  String get purchasedSuffix => ' [Purchased]';
+
+  @override
+  String get listUnarchived => 'List unarchived successfully.';
+
+  @override
+  String get toolDeleteList => 'Delete list';
+
+  @override
+  String get toolAddItems => 'Add items';
+
+  @override
+  String get toolRemoveItems => 'Remove items';
+
+  @override
+  String get toolAddToPantry => 'Add to pantry';
+
+  @override
+  String get toolRemoveFromPantry => 'Remove from pantry';
+
+  @override
+  String get toolShareList => 'Share list';
+
+  @override
+  String get toolSaveRecipe => 'Save recipe';
+
+  @override
+  String get toolDeleteRecipe => 'Delete recipe';
+
+  @override
+  String get toolRemoveMeal => 'Remove meal';
+
+  @override
+  String get toolSavePreference => 'Save preference';
+
+  @override
+  String get toolRemovePreference => 'Remove preference';
+
+  @override
+  String currentTheme(Object mode) {
+    return 'Current theme: $mode';
+  }
+
+  @override
+  String themeChanged(Object mode) {
+    return 'Theme changed to $mode.';
+  }
+
+  @override
+  String get addToList => 'Add to List';
+
+  @override
+  String errorAddingItem(Object error) {
+    return 'Error adding item: $error';
+  }
+
+  @override
+  String errorAddingBatch(Object error) {
+    return 'Error adding items in batch: $error';
+  }
+
+  @override
+  String errorTogglingItem(Object error) {
+    return 'Error toggling item status: $error';
+  }
+
+  @override
+  String errorRemovingItem(Object error) {
+    return 'Error removing item: $error';
+  }
+
+  @override
+  String errorUpdatingItem(Object error) {
+    return 'Error updating item: $error';
+  }
+
+  @override
+  String errorUpdatingItems(Object error) {
+    return 'Error updating items: $error';
+  }
+
+  @override
+  String errorRestoringItem(Object error) {
+    return 'Error restoring item: $error';
+  }
+
+  @override
+  String errorIncreasingQty(Object error) {
+    return 'Error increasing quantity: $error';
+  }
+
+  @override
+  String errorDecreasingQty(Object error) {
+    return 'Error decreasing quantity: $error';
+  }
+
+  @override
+  String errorClearingList(Object error) {
+    return 'Error clearing list: $error';
+  }
+
+  @override
+  String errorClearingPurchased(Object error) {
+    return 'Error clearing purchased items: $error';
+  }
+
+  @override
+  String errorRemovingItems(Object error) {
+    return 'Error removing items: $error';
+  }
+
+  @override
+  String errorTogglingItems(Object error) {
+    return 'Error toggling items: $error';
+  }
+
+  @override
+  String errorReordering(Object error) {
+    return 'Error reordering item: $error';
+  }
+
+  @override
+  String get errorCreatingList => 'Error creating list';
+
+  @override
+  String errorServerConnection(Object error) {
+    return 'Error connecting to server: $error';
+  }
+
+  @override
+  String errorUpdatingList(Object error) {
+    return 'Error updating list: $error';
+  }
+
+  @override
+  String errorDeletingList(Object error) {
+    return 'Error deleting list: $error';
+  }
+
+  @override
+  String errorRemovingSharedList(Object error) {
+    return 'Error removing shared list: $error';
+  }
+
+  @override
+  String errorSettingCurrentList(Object error) {
+    return 'Error setting current list: $error';
+  }
+
+  @override
+  String errorArchivingList(Object error) {
+    return 'Error archiving list: $error';
+  }
+
+  @override
+  String errorUnarchivingList(Object error) {
+    return 'Error unarchiving list: $error';
+  }
+
+  @override
+  String get errorUserNotAuthenticated => 'User not authenticated.';
+
+  @override
+  String get errorGeneratingCode => 'Error generating unique code. Try again.';
+
+  @override
+  String pantryLimitReached(Object count) {
+    return 'Limit of $count items in pantry on the free plan. Upgrade to add more.';
+  }
+
+  @override
+  String errorImportingList(Object name, Object error) {
+    return 'Error importing list \"$name\": $error';
+  }
+
+  @override
+  String errorExecutingTool(Object tool, Object error) {
+    return 'Error executing $tool: $error';
+  }
+
+  @override
+  String get errorProcessingRequest =>
+      'Sorry, an error occurred while processing your request. Check your connection or try again later.';
+
+  @override
+  String get couldNotProcess => 'Could not process after multiple attempts.';
+
+  @override
+  String get errorResumingProcessing => 'Error resuming processing.';
+
+  @override
+  String get errorResumingLoop => '[ResumeLoop] Error resuming loop';
+
+  @override
+  String get othersCategory => 'Others';
+
+  @override
+  String get monthJanuary => 'January';
+
+  @override
+  String get monthFebruary => 'February';
+
+  @override
+  String get monthMarch => 'March';
+
+  @override
+  String get monthApril => 'April';
+
+  @override
+  String get monthMay => 'May';
+
+  @override
+  String get monthJune => 'June';
+
+  @override
+  String get monthJuly => 'July';
+
+  @override
+  String get monthAugust => 'August';
+
+  @override
+  String get monthSeptember => 'September';
+
+  @override
+  String get monthOctober => 'October';
+
+  @override
+  String get monthNovember => 'November';
+
+  @override
+  String get monthDecember => 'December';
+
+  @override
+  String get dayMon => 'Mon';
+
+  @override
+  String get dayTue => 'Tue';
+
+  @override
+  String get dayWed => 'Wed';
+
+  @override
+  String get dayThu => 'Thu';
+
+  @override
+  String get dayFri => 'Fri';
+
+  @override
+  String get daySat => 'Sat';
+
+  @override
+  String get daySun => 'Sun';
+
+  @override
+  String get subscription => 'Subscription';
+
+  @override
+  String get kipiListProActive => 'KipiList Pro active';
+
+  @override
+  String get customizeAiAssistant => 'Customize AI Assistant';
+
+  @override
+  String get assistantHistory => 'Assistant History';
+
+  @override
+  String get assistantHistorySubtitle => 'View and search past conversations';
+
+  @override
+  String get customizeAssistant => 'Customize Assistant';
+
+  @override
+  String get assistantName => 'Assistant Name';
+
+  @override
+  String get chooseIcon => 'Choose an Icon:';
+
+  @override
+  String get backToToday => 'ಇವತ್ತಿಗೆ ಹಿಂತಿರುಗಿ';
+
+  @override
+  String get conversationHistoryTitle => 'Conversation History';
+
+  @override
+  String get noConversationsFound => 'No conversations found';
+
+  @override
+  String get newConversationDefaultTitle => 'New Conversation';
+
+  @override
+  String get unlockedBadges => 'Unlocked Badges';
+
+  @override
+  String get badgeBeginner => 'Beginner';
+
+  @override
+  String get badgeOrganized => 'Organized';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planner';
+
+  @override
+  String get aiEnergyLow => 'You\'re almost out of energy!';
+
+  @override
+  String get aiUnlockUnlimited => 'Unlock unlimited AI';
+
+  @override
+  String aiRemainingFreeToday(int remaining) {
+    return 'Only $remaining free messages left today. Subscribe to Premium and stop worrying about limits.';
+  }
+
+  @override
+  String get aiSubscribeUnlimited =>
+      'Subscribe to Premium and use the AI chat as much as you want. No counting, no limits.';
+
+  @override
+  String get suggestedItems => 'Suggested Items';
+
+  @override
+  String get swapped => 'Swapped';
+
+  @override
+  String get newCategoryDialog => 'New Category';
+
+  @override
+  String get editCategoryDialog => 'Edit Category';
+
+  @override
+  String get categoryName => 'Name';
+
+  @override
+  String get scanBarcodeTitle => 'Scan Barcode';
+
+  @override
+  String get scanProductTitle => 'Scan Product';
+
+  @override
+  String get categoryColorLabel => 'Color:';
+
+  @override
+  String get categoryIconLabel => 'Icon:';
+
+  @override
+  String get product => 'Product';
+
+  @override
+  String get everythingReady => 'Everything ready!';
+
+  @override
+  String get youCompletedList => 'You completed your list.';
+
+  @override
+  String get allSet => 'All set!';
+
+  @override
+  String itemsCount(int purchased, int total) {
+    return '$purchased of $total items';
+  }
+
+  @override
+  String budgetLabel(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String totalLabel(String amount) {
+    return 'Total: $amount';
+  }
+
+  @override
+  String get quickSuggestions => 'Quick suggestions';
+
+  @override
+  String get saved => 'Saved';
+
+  @override
+  String get aiAssistantTitle => 'AI Assistant';
+
+  @override
+  String get closeSheet => 'Close';
+
+  @override
+  String get editAssistantName => 'Edit Assistant Name';
+
+  @override
+  String get selectAssistantIcon => 'Select Assistant Icon';
+
+  @override
+  String itemAddedSnack(String name) {
+    return '$name added';
+  }
+
+  @override
+  String quantityWithUnit(String quantity, String unit) {
+    return '$quantity $unit';
+  }
+
+  @override
+  String quantityUnitWithPrice(String quantity, String unit, String price) {
+    return '$quantity $unit • $price';
+  }
+
+  @override
+  String get onboardingHookHeadline =>
+      'Your shopping list with artificial intelligence';
+
+  @override
+  String get onboardingLoginHeadline => 'Sign in in 1 second';
+
+  @override
+  String get onboardingLoginSubtitle =>
+      'Your lists are saved and synced automatically';
+
+  @override
+  String get onboardingPersonalizationNameLabel => 'What can I call you?';
+
+  @override
+  String get onboardingPersonalizationNameHint => 'Your name (optional)';
+
+  @override
+  String get onboardingPersonalizationCategoryTitle =>
+      'What do you organize most often?';
+
+  @override
+  String get onboardingPersonalizationGroupTitle =>
+      'Do you shop alone or with others?';
+
+  @override
+  String get onboardingCategoryGrocery => '🛒 Grocery';
+
+  @override
+  String get onboardingCategoryPharmacy => '💊 Pharmacy';
+
+  @override
+  String get onboardingCategoryRecipes => '🍽️ Recipes';
+
+  @override
+  String get onboardingCategoryHome => '🏠 Home';
+
+  @override
+  String get onboardingCategoryPet => '🐾 Pet';
+
+  @override
+  String get onboardingGroupSolo => '👤 Just me';
+
+  @override
+  String get onboardingGroupCouple => '👥 With someone';
+
+  @override
+  String get onboardingGroupFamily => '👨‍👩‍👧 Family';
+
+  @override
+  String onboardingAiDemoGreeting(String name, String category) {
+    return 'Hi $name! I see you organize $category 😊';
+  }
+
+  @override
+  String onboardingAiDemoGreetingNoName(String category) {
+    return 'Hi! I see you organize $category 😊';
+  }
+
+  @override
+  String get onboardingAiDemoOffer => 'Want me to build a list right now?';
+
+  @override
+  String get onboardingAiDemoYes => '✅ Yes, build it for me!';
+
+  @override
+  String get onboardingAiDemoChange => '🔄 Different category';
+
+  @override
+  String onboardingAiDemoReaction(int count) {
+    return 'Done! I created $count items for you 🎉';
+  }
+
+  @override
+  String get onboardingAiDemoContinue => 'Amazing! I want more →';
+
+  @override
+  String get onboardingCommitmentsTitle => 'What do you want to achieve?';
+
+  @override
+  String get onboardingCommitmentsSubtitle =>
+      'Choose everything that applies to you';
+
+  @override
+  String get onboardingGoalSaveMoney => '💰 Spend less at the store';
+
+  @override
+  String get onboardingGoalNeverForget => '✅ Never forget an item';
+
+  @override
+  String get onboardingGoalFaster => '⚡ Shop faster';
+
+  @override
+  String get onboardingGoalFamily => '👨‍👩‍👧 Organize with family';
+
+  @override
+  String get onboardingGoalRecipes => '🍽️ Plan weekly recipes';
+
+  @override
+  String get onboardingGoalPantry => '📦 Track pantry stock';
+
+  @override
+  String get onboardingLoadingTitle => 'Building your plan...';
+
+  @override
+  String get onboardingLoadingStep1 => 'Analyzing your preferences...';
+
+  @override
+  String get onboardingLoadingStep2 => 'Setting up your personalized list...';
+
+  @override
+  String get onboardingLoadingStep3 => 'Your plan is ready! 🎉';
+
+  @override
+  String get onboardingLoadingStat1Label => 'Average rating';
+
+  @override
+  String get onboardingLoadingStat2Label => 'Lists created this week';
+
+  @override
+  String get onboardingLoadingStat3Label => 'Recommend the app';
+
+  @override
+  String paywallGoalHeadlineSaveMoney(String name) {
+    return '$name, you\'re 7 days away from spending less on shopping';
+  }
+
+  @override
+  String paywallGoalHeadlineNeverForget(String name) {
+    return '$name, you\'re 7 days away from never forgetting an item again';
+  }
+
+  @override
+  String paywallGoalHeadlineFaster(String name) {
+    return '$name, you\'re 7 days away from shopping in half the time';
+  }
+
+  @override
+  String paywallGoalHeadlineFamily(String name) {
+    return '$name, you\'re 7 days away from organizing the whole family\'s shopping';
+  }
+
+  @override
+  String paywallGoalHeadlineRecipes(String name) {
+    return '$name, you\'re 7 days away from planning your recipes automatically';
+  }
+
+  @override
+  String paywallGoalHeadlinePantry(String name) {
+    return '$name, you\'re 7 days away from full control of your pantry';
+  }
+
+  @override
+  String get paywallGoalHeadlineNoNameSaveMoney =>
+      'You\'re 7 days away from spending less on shopping';
+
+  @override
+  String get paywallGoalHeadlineNoNameNeverForget =>
+      'You\'re 7 days away from never forgetting an item again';
+
+  @override
+  String get paywallGoalHeadlineNoNameFaster =>
+      'You\'re 7 days away from shopping in half the time';
+
+  @override
+  String get paywallGoalHeadlineNoNameFamily =>
+      'You\'re 7 days away from organizing the whole family\'s shopping';
+
+  @override
+  String get paywallGoalHeadlineNoNameRecipes =>
+      'You\'re 7 days away from planning your recipes automatically';
+
+  @override
+  String get paywallGoalHeadlineNoNamePantry =>
+      'You\'re 7 days away from full control of your pantry';
+
+  @override
+  String get paywallTestimonial =>
+      '\"I saved R\$180 in the first month by better organizing my shopping\"';
+
+  @override
+  String get paywallTestimonialAuthor => 'Ana R., São Paulo';
+
+  @override
+  String paywallTrialDisclaimer(int days) {
+    return 'Cancel anytime · Charged after $days days';
+  }
+
+  @override
+  String get paywallSkipNow => 'Not now';
 }
 
 /// The translations for Kannada, as used in India (`kn_IN`).
@@ -3631,4 +4530,13 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get notInformed => 'ತಿಳಿಸಿಲ್ಲ';
+
+  @override
+  String get manageCategoriesTitle => 'ವರ್ಗಗಳನ್ನು ನಿರ್ವಹಿಸಿ';
+
+  @override
+  String get sortAZ => 'A–Z';
+
+  @override
+  String get backToToday => 'ಇವತ್ತಿಗೆ ಹಿಂತಿರುಗಿ';
 }
