@@ -37,12 +37,16 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     }
   }
 
-  void _finishOnboarding() async {
+  Future<void> _finishOnboarding() async {
     if (_hasCompletedOnboarding) {
       return;
     }
     _hasCompletedOnboarding = true;
-    await ref.read(onboardingProvider.notifier).markAsSeen();
+    try {
+      await ref.read(onboardingProvider.notifier).markAsSeen();
+    } on Exception {
+      // markAsSeen failure must not block navigation
+    }
     unawaited(ref.read(analyticsServiceProvider).logOnboardingCompleted());
     if (mounted) {
       Navigator.of(context).pop();
@@ -55,8 +59,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     });
   }
 
-  int get _slideCount =>
-      _showAiChat ? 3 : 2; // Login → Premium (after AI chat)
+  int get _slideCount => 2; // Login → Premium
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +77,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         child: PageView(
           controller: _pageController,
           onPageChanged: _handlePageChanged,
+          physics: const NeverScrollableScrollPhysics(),
           children: [
             OnboardingSlideWelcomeLogin(
               onLoggedIn: _goToNext,
