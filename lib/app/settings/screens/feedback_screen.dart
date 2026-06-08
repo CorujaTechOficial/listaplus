@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:shopping_list/domain/entities/feedback_item.dart';
+import 'package:shopping_list/models/feedback_item.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -230,7 +230,9 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
         deviceLocale: Platform.localeName,
       );
 
-      await ref.read(firestoreServiceProvider).saveFeedback(feedback.toJson());
+      final service = ref.read(firestoreServiceProvider);
+      if (service == null) throw Exception('Usuário não autenticado');
+      await service.saveFeedback(feedback.toJson());
 
       if (mounted) {
         await HapticFeedback.mediumImpact();

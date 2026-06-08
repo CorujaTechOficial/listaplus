@@ -13,6 +13,7 @@ class Recipes extends _$Recipes {
   @override
   Future<List<Recipe>> build() async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return [];
 
     unawaited(_subscription?.cancel());
 
@@ -51,21 +52,25 @@ class Recipes extends _$Recipes {
 
   Future<void> saveRecipe(Recipe recipe) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.saveRecipe(recipe.toJson());
   }
 
   Future<void> deleteRecipe(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.deleteRecipe(id);
   }
 
   Future<void> updateRecipe(Recipe recipe) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.saveRecipe(recipe.toJson());
   }
 
   Future<String?> uploadRecipeImage(String recipeId, String filePath) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return null;
     return service.uploadRecipeImage(recipeId, filePath);
   }
 }

@@ -1,5 +1,4 @@
 import 'dart:convert';
-// coverage:ignore-start
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/models/shopping_item.dart';
@@ -18,6 +17,7 @@ class BackupService {
 
   Future<String> exportToJson() async {
     final service = _ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final lists = await service.loadLists();
     final result = <String, dynamic>{};
     for (final list in lists) {
@@ -46,6 +46,7 @@ class BackupService {
 
   Future<String> importFromJson(String jsonString) async {
     final service = _ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     try {
       final data = jsonDecode(jsonString) as Map<String, dynamic>;
       if (data['version'] == null || data['lists'] == null) {
@@ -85,4 +86,3 @@ class BackupService {
     }
   }
 }
-// coverage:ignore-end

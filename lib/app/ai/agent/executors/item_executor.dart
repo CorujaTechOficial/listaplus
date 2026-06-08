@@ -89,6 +89,13 @@ class ItemExecutor {
       );
     }
     final service = container.read(firestoreServiceProvider);
+    if (service == null) {
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Usuário não autenticado.',
+        success: false,
+      );
+    }
     final lists = await AiUtils.awaitFuture(
       container.read(shoppingListsProvider.future),
       defaultValue: <ShoppingList>[],

@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shopping_list/models/shopping_list.dart';
@@ -12,11 +11,13 @@ class CurrentListId extends _$CurrentListId {
   @override
   Future<String?> build() {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return Future.value(null);
     return service.getCurrentListId();
   }
 
   Future<void> setCurrentList(String? listId) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
 
     final previous = state.value;
     state = AsyncValue.data(listId);
@@ -37,6 +38,7 @@ class ShoppingLists extends _$ShoppingLists {
   @override
   Stream<List<ShoppingList>> build() {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return const Stream.empty();
 
     final ownedStream = service.watchLists();
     final sharedRefsStream = service.watchSharedListRefs();
@@ -75,6 +77,7 @@ class ShoppingLists extends _$ShoppingLists {
     final activeListsCount = currentLists.where((l) => !l.isArchived).length;
 
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final newList = ShoppingList(name: name, budget: budget);
 
     LoggerService.log('createList: novoLista.id=${newList.id}', tag: 'ShoppingLists');
@@ -105,6 +108,7 @@ class ShoppingLists extends _$ShoppingLists {
   Future<void> updateList(ShoppingList list) async {
     LoggerService.log('updateList: id=${list.id}, name=${list.name}', tag: 'ShoppingLists');
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     try {
       await service.saveList(list);
       LoggerService.log('updateList: ok', tag: 'ShoppingLists');
@@ -120,6 +124,7 @@ class ShoppingLists extends _$ShoppingLists {
   Future<void> deleteList(String id) async {
     LoggerService.log('deleteList: id=$id', tag: 'ShoppingLists');
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final lists = state.value ?? [];
 
     try {
@@ -147,6 +152,7 @@ class ShoppingLists extends _$ShoppingLists {
 
   Future<void> removeSharedList(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     try {
       await service.removeSharedListRef(id);
     } on Exception catch (e) {
@@ -156,6 +162,7 @@ class ShoppingLists extends _$ShoppingLists {
 
   Future<void> setCurrentList(String listId) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     try {
       await service.setCurrentListId(listId);
       if (ref.mounted) {
@@ -169,6 +176,7 @@ class ShoppingLists extends _$ShoppingLists {
 
   Future<void> archiveList(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final lists = state.value ?? [];
     final list = lists.where((l) => l.id == id).firstOrNull;
     if (list == null) {
@@ -197,6 +205,7 @@ class ShoppingLists extends _$ShoppingLists {
 
   Future<void> unarchiveList(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final lists = state.value ?? [];
     final list = lists.where((l) => l.id == id).firstOrNull;
     if (list == null) {
@@ -211,4 +220,3 @@ class ShoppingLists extends _$ShoppingLists {
     }
   }
 }
-// coverage:ignore-end

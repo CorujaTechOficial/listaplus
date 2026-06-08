@@ -33,7 +33,7 @@ final class DarkModeProvider
   DarkMode create() => DarkMode();
 }
 
-String _$darkModeHash() => r'87d9d834b8cddb327ea0243164e5fac992340f0b';
+String _$darkModeHash() => r'261a8f0827b4c5341862c365f5395ddabeee1324';
 
 abstract class _$DarkMode extends $AsyncNotifier<ThemeMode> {
   FutureOr<ThemeMode> build();
@@ -77,7 +77,7 @@ final class LocaleSettingProvider
   LocaleSetting create() => LocaleSetting();
 }
 
-String _$localeSettingHash() => r'0740581a9b0abf542c7db4bd7984b30168509a61';
+String _$localeSettingHash() => r'5bcffbfeb81a2b9d934886cdf0e5acd476c60423';
 
 abstract class _$LocaleSetting extends $AsyncNotifier<String?> {
   FutureOr<String?> build();
@@ -121,7 +121,7 @@ final class CurrencySettingProvider
   CurrencySetting create() => CurrencySetting();
 }
 
-String _$currencySettingHash() => r'05c1a4eddd124b56ca5cce0a876896995e181d00';
+String _$currencySettingHash() => r'6e23b235884472962d7070fe76e5114811c93a9d';
 
 abstract class _$CurrencySetting extends $AsyncNotifier<String> {
   FutureOr<String> build();
@@ -165,7 +165,7 @@ final class ThemeColorProvider
   ThemeColor create() => ThemeColor();
 }
 
-String _$themeColorHash() => r'51098aa73683c52f89755db9db1868880a29d7f1';
+String _$themeColorHash() => r'2d69426c62dbd29402bd80c4f2a0f9295740f9e1';
 
 abstract class _$ThemeColor extends $AsyncNotifier<Color> {
   FutureOr<Color> build();
@@ -253,7 +253,7 @@ final class UseDynamicColorProvider
   UseDynamicColor create() => UseDynamicColor();
 }
 
-String _$useDynamicColorHash() => r'b4cded4ab5f1c76680f1eba2b76a1f683c88c304';
+String _$useDynamicColorHash() => r'ba834e84b529781296e216c750004ade6a78cbcd';
 
 abstract class _$UseDynamicColor extends $AsyncNotifier<bool> {
   FutureOr<bool> build();

@@ -19,6 +19,7 @@ class MealPlans extends _$MealPlans {
   @override
   Future<List<MealPlan>> build({DateTime? start, DateTime? end}) async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return [];
 
     unawaited(_subscription?.cancel());
 
@@ -57,11 +58,13 @@ class MealPlans extends _$MealPlans {
 
   Future<void> saveMealPlan(MealPlan mealPlan) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.saveMealPlan(mealPlan.toJson());
   }
 
   Future<void> deleteMealPlan(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.deleteMealPlan(id);
   }
 

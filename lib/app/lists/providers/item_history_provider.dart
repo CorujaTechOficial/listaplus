@@ -13,6 +13,7 @@ class ItemHistory extends _$ItemHistory {
 
   Future<void> _loadHistory() async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final data = await service.getUserData();
     if (data != null && data['itemHistory'] != null) {
       final history = data['itemHistory'] as Map<String, dynamic>;
@@ -34,6 +35,7 @@ class ItemHistory extends _$ItemHistory {
     if (ref.mounted) {
       state = current;
       final service = ref.read(firestoreServiceProvider);
+      if (service == null) return;
       await service.updateUserData({'itemHistory': state});
     }
   }

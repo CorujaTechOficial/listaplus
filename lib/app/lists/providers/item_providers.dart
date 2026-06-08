@@ -1,8 +1,7 @@
-// coverage:ignore-start
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/domain/entities/unit.dart';
+import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_history_provider.dart';
@@ -27,6 +26,7 @@ class PriceHistory extends _$PriceHistory {
 
   Future<void> _loadHistory() async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final data = await service.getUserData();
     if (data != null && data['priceHistory'] != null) {
       final history = data['priceHistory'] as Map<String, dynamic>;
@@ -48,6 +48,7 @@ class PriceHistory extends _$PriceHistory {
     if (ref.mounted) {
       state = current;
       final service = ref.read(firestoreServiceProvider);
+      if (service == null) return;
       await service.updateUserData({'priceHistory': state});
     }
   }
@@ -62,6 +63,7 @@ class ShoppingListItems extends _$ShoppingListItems {
   @override
   Stream<List<ShoppingItem>> build(String listId) {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return const Stream.empty();
     final ownerUid = ref.watch(listOwnerProvider(listId));
     if (ownerUid != null) {
       return service.watchItemsFromUser(ownerUid, listId);
@@ -89,6 +91,7 @@ class ShoppingListItems extends _$ShoppingListItems {
     String? id,
   }) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final newItem = ShoppingItem(
       id: id,
       shoppingListId: listId,
@@ -121,6 +124,7 @@ class ShoppingListItems extends _$ShoppingListItems {
       return;
     }
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -143,6 +147,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> togglePurchased(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     final item = items.where((i) => i.id == id).firstOrNull;
     if (item == null) {
@@ -175,6 +180,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> removeItem(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -189,6 +195,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> updateItem(ShoppingItem item) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -210,6 +217,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> updateItems(List<ShoppingItem> items) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -224,6 +232,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> restoreItem(ShoppingItem item) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -238,6 +247,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> incrementQuantity(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     final item = items.where((i) => i.id == id).firstOrNull;
     if (item == null) {
@@ -267,6 +277,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> decrementQuantity(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     final item = items.where((i) => i.id == id).firstOrNull;
     if (item == null || item.quantity <= 1) {
@@ -296,6 +307,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> clearAll() async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -310,6 +322,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> clearPurchased() async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     final removedIds = items.where((item) => item.isPurchased).map((i) => i.id).toSet();
     if (removedIds.isEmpty) {
@@ -334,6 +347,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> removeItems(List<String> ids) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -352,6 +366,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> togglePurchasedBatch(List<String> ids, bool isPurchased) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     int newlyPurchased = 0;
     final idsSet = ids.toSet();
@@ -389,6 +404,7 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<void> reorderItem(int oldIndex, int newIndex) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = <ShoppingItem>[...(state.value ?? [])];
     final item = items.removeAt(oldIndex);
     items.insert(newIndex > oldIndex ? newIndex - 1 : newIndex, item);
@@ -405,4 +421,3 @@ class ShoppingListItems extends _$ShoppingListItems {
     }
   }
 }
-// coverage:ignore-end

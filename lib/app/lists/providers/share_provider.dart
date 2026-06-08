@@ -31,6 +31,7 @@ class ShareService {
     }
 
     final service = _ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final lists = await service.loadLists();
     final list = lists.where((l) => l.id == listId).firstOrNull;
     if (list == null) {
@@ -67,6 +68,7 @@ class ShareService {
 
   Future<({String listId, String listName})> importSharedList(String code) async {
     final service = _ref.read(firestoreServiceProvider);
+    if (service == null) throw Exception('Usuário não autenticado');
     final data = await service.getSharedList(code);
     if (data == null) {
       throw Exception('Código inválido ou lista não encontrada.');

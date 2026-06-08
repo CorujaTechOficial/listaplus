@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/models/pantry_item.dart';
-import 'package:shopping_list/domain/entities/unit.dart';
+import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/utils/string_extensions.dart';
 import 'package:collection/collection.dart';
@@ -16,6 +16,7 @@ class PantryItems extends _$PantryItems {
   @override
   Future<List<PantryItem>> build() async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return [];
     return service.loadPantryItems();
   }
 
@@ -36,6 +37,7 @@ class PantryItems extends _$PantryItems {
     }
 
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final newItem = PantryItem(
       name: name,
       idealQuantity: idealQuantity,
@@ -58,6 +60,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> updateItem(PantryItem item) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     final updated = items.map((e) => e.id == item.id ? item : e).toList();
 
@@ -72,6 +75,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> removeItem(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     final updated = items.where((item) => item.id != id).toList();
 
@@ -86,6 +90,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> setCurrentQuantity(String id, int quantity) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -112,6 +117,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> incrementCurrent(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -138,6 +144,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> decrementCurrent(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -164,6 +171,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> consumeItem(String id) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -190,6 +198,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> consumeItemMultiple(String id, int quantity) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -219,6 +228,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> restockItem(String id, int amount) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -245,6 +255,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> setIdealQuantity(String id, int quantity) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
     final updated = items.map((item) {
@@ -271,6 +282,7 @@ class PantryItems extends _$PantryItems {
 
   Future<void> clearAll() async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final items = state.value ?? [];
     state = const AsyncValue.data([]);
     try {

@@ -11,6 +11,7 @@ final packageInfoProvider = FutureProvider<PackageInfo>((ref) async {
 
 final appReviewServiceProvider = Provider<AppReviewService>((ref) {
   final storage = ref.watch(firestoreServiceProvider);
+  if (storage == null) throw Exception('Not authenticated');
   final analytics = ref.watch(analyticsServiceProvider);
   return AppReviewService(storage: storage, analytics: analytics);
 });

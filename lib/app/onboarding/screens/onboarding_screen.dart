@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_ai_chat.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_welcome_login.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_premium.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_personalization.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -59,7 +60,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     });
   }
 
-  int get _slideCount => 2; // Login → Premium
+  int get _slideCount => 3; // Login → Personalization → Premium
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +83,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             OnboardingSlideWelcomeLogin(
               onLoggedIn: _goToNext,
               onSkipped: _goToNext,
+            ),
+            OnboardingSlidePersonalization(
+              onNext: _goToNext,
             ),
             const OnboardingSlidePremium(),
           ],

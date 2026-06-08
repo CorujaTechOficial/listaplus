@@ -14,6 +14,7 @@ class DarkMode extends _$DarkMode {
   Future<ThemeMode> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
+      if (service == null) return ThemeMode.system;
       final value = await service.getThemeMode();
       switch (value) {
         case 'dark':
@@ -30,6 +31,7 @@ class DarkMode extends _$DarkMode {
 
   Future<void> setMode(ThemeMode mode) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(mode);
     try {
@@ -47,6 +49,7 @@ class LocaleSetting extends _$LocaleSetting {
   Future<String?> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
+      if (service == null) return null;
       return service.getLocale();
     } on Exception {
       return null;
@@ -55,6 +58,7 @@ class LocaleSetting extends _$LocaleSetting {
 
   Future<void> setLocale(String? locale) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(locale);
     try {
@@ -72,6 +76,7 @@ class CurrencySetting extends _$CurrencySetting {
   Future<String> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
+      if (service == null) return _defaultCurrency;
       final data = await service.getUserData();
       final saved = data?['currencyCode'] as String?;
       if (saved != null) {
@@ -86,6 +91,7 @@ class CurrencySetting extends _$CurrencySetting {
 
   Future<void> setCurrency(String code) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(code);
     try {
@@ -134,6 +140,7 @@ class ThemeColor extends _$ThemeColor {
   @override
   Future<Color> build() async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return const Color(0xFF4CAF50);
     final data = await service.getUserData();
     final colorValue = data?[_key] as int?;
     return colorValue != null ? Color(colorValue) : const Color(0xFF4CAF50);
@@ -141,6 +148,7 @@ class ThemeColor extends _$ThemeColor {
 
   Future<void> setColor(Color color) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(color);
     try {
@@ -175,6 +183,9 @@ class UseDynamicColor extends _$UseDynamicColor {
   Future<bool> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
+      if (service == null) {
+        return false;
+      }
       final data = await service.getUserData();
       return data?[_key] as bool? ?? false;
     } on Exception {
@@ -184,6 +195,9 @@ class UseDynamicColor extends _$UseDynamicColor {
 
   Future<void> setUseDynamicColor(bool value) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) {
+      return;
+    }
     final previous = state.value;
     state = AsyncValue.data(value);
     try {

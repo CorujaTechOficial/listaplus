@@ -71,13 +71,21 @@ class ConfigExecutor {
   Future<ToolResult> saveUserPreference(ProviderContainer container, Map<String, dynamic> args) async {
     final key = args['key'] as String;
     final value = args['value'] as String;
-    await container.read(firestoreServiceProvider).updatePreference(key, value);
+    final service = container.read(firestoreServiceProvider);
+    if (service == null) {
+      return const ToolResult(toolCallId: '', content: 'Usuário não autenticado.', success: false);
+    }
+    await service.updatePreference(key, value);
     return ToolResult(toolCallId: '', content: 'Preferência "$key" salva como "$value".');
   }
 
   Future<ToolResult> deleteUserPreference(ProviderContainer container, Map<String, dynamic> args) async {
     final key = args['key'] as String;
-    await container.read(firestoreServiceProvider).deletePreference(key);
+    final service = container.read(firestoreServiceProvider);
+    if (service == null) {
+      return const ToolResult(toolCallId: '', content: 'Usuário não autenticado.', success: false);
+    }
+    await service.deletePreference(key);
     return ToolResult(toolCallId: '', content: 'Preferência "$key" removida.');
   }
 

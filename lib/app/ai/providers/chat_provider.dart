@@ -1,6 +1,6 @@
 import 'dart:async' show unawaited;
 import 'dart:convert' show jsonDecode, jsonEncode;
-import 'package:shopping_list/domain/entities/suggested_reply.dart';
+import 'package:shopping_list/models/suggested_reply.dart';
 import 'package:characters/characters.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/foundation.dart' show debugPrint;
@@ -91,6 +91,7 @@ class ChatSessions extends _$ChatSessions {
   @override
   Future<List<ChatSessionModel>> build(String? listId) async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return [];
     final sessions = await service.loadChatSessions(listId);
     if (sessions.isNotEmpty) {
       final activeId = ref.read(activeChatSessionIdProvider(listId));
@@ -112,6 +113,7 @@ class ChatSessions extends _$ChatSessions {
   Future<String> startNewSession() async {
     final newSession = ChatSessionModel(title: 'Nova Conversa', listId: listId);
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return newSession.id;
     unawaited(
       service.saveChatSession(listId, newSession).catchError((Object e) {
         debugPrint('[ChatSessions] Error saving session to firestore (proceeding anyway): $e');
@@ -128,6 +130,7 @@ class ChatSessions extends _$ChatSessions {
 
   Future<void> deleteSession(String sessionId) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.deleteChatSession(listId, sessionId);
     if (!ref.mounted) {
       return;
@@ -170,6 +173,7 @@ class ChatSession extends _$ChatSession {
       _currentTask = null;
     });
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return [];
     return service.loadChatMessages(listId, sessionId: sessionId);
   }
 
@@ -288,13 +292,15 @@ class ChatSession extends _$ChatSession {
       state = AsyncValue.data(updatedMessages);
 
       final sessionId = ref.read(activeChatSessionIdProvider(listId));
-      unawaited(
-        firestoreService.saveChatMessage(
-          listId,
-          finalMessage,
-          sessionId: sessionId,
-        ).catchError((_) => null),
-      );
+      if (firestoreService != null) {
+        unawaited(
+          firestoreService.saveChatMessage(
+            listId,
+            finalMessage,
+            sessionId: sessionId,
+          ).catchError((_) => null),
+        );
+      }
     }
   }
 
@@ -498,7 +504,7 @@ class ChatSession extends _$ChatSession {
       // Fallback em caso de erro na retomada
       agentResult = _AgentResult(
         messages: pending.messages,
-        fallbackText: 'Erro ao retomar processamento.',
+        fallbackText: 'Error resuming processing.',
       );
     } finally {
       if (!_isCancelled) {
@@ -803,22 +809,24 @@ class ChatSession extends _$ChatSession {
       newList[index] = updatedMessage;
       state = AsyncValue.data(newList);
 
-      await ref
-          .read(firestoreServiceProvider)
-          .saveChatMessage(listId, updatedMessage, sessionId: sessionId)
-          .catchError((Object e, StackTrace st) {
-        LoggerService.error(
-          e,
-          stackTrace: st,
-          message: '[Undo] Failed to save updated chat message',
-          extra: {
-            'operation': 'undo_save_message',
-            'listId': listId,
-            'messageId': updatedMessage.id,
-          },
-        );
-        return null;
-      });
+      final firestoreService = ref.read(firestoreServiceProvider);
+      if (firestoreService != null) {
+        await firestoreService
+            .saveChatMessage(listId, updatedMessage, sessionId: sessionId)
+            .catchError((Object e, StackTrace st) {
+          LoggerService.error(
+            e,
+            stackTrace: st,
+            message: '[Undo] Failed to save updated chat message',
+            extra: {
+              'operation': 'undo_save_message',
+              'listId': listId,
+              'messageId': updatedMessage.id,
+            },
+          );
+          return null;
+        });
+      }
     } finally {
       keepAliveLink.close();
     }
@@ -830,6 +838,7 @@ class ChatSession extends _$ChatSession {
     }
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
+    if (firestoreService == null) return;
 
     if (sessionId == null) {
       return;
@@ -943,7 +952,7 @@ class ChatSession extends _$ChatSession {
       ref.read(chatThinkingProvider(listId).notifier).setState(false);
       ref.read(chatActivityProvider(listId).notifier).setState(null);
       const errorMsg =
-          'Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.';
+          'Sorry, an error occurred while processing your request. Please check your connection or try again later.';
       _updateAssistantMessage(content: errorMsg, isError: true);
       final lastMsg = state.value?.lastOrNull;
       if (lastMsg != null) {
@@ -1062,7 +1071,7 @@ class ChatSession extends _$ChatSession {
         return;
       }
 
-      ref.read(chatActivityProvider(listId).notifier).setState('Adicionando itens à lista...');
+      ref.read(chatActivityProvider(listId).notifier).setState('Adding items to list...');
       await Future<void>.delayed(const Duration(milliseconds: 1000));
       if (_isCancelled) {
         return;
@@ -1137,6 +1146,7 @@ class ChatSession extends _$ChatSession {
         : await AiUtils.awaitFuture<List<ShoppingList>>(
             ref.read(shoppingListsProvider.future),
             defaultValue: const <ShoppingList>[],
+            timeout: const Duration(seconds: 1),
             label: 'shoppingListsProvider',
           );
 
@@ -1146,6 +1156,7 @@ class ChatSession extends _$ChatSession {
             : await AiUtils.awaitFuture<List<ShoppingItem>>(
                 ref.read(shoppingListItemsProvider(currentListId).future),
                 defaultValue: const <ShoppingItem>[],
+                timeout: const Duration(seconds: 1),
                 label: 'shoppingListItemsProvider',
               )
         : const <ShoppingItem>[];
@@ -1155,6 +1166,7 @@ class ChatSession extends _$ChatSession {
         : await AiUtils.awaitFuture<UserProfile?>(
             ref.read(userProfileProvider.future),
             defaultValue: null,
+            timeout: const Duration(seconds: 1),
             label: 'userProfileProvider',
           );
 
@@ -1168,25 +1180,15 @@ class ChatSession extends _$ChatSession {
       totalItemsCount = primaryItems.length;
       prompt = _buildListSystemPrompt(list, primaryItems, locale: currentLocale);
     } else {
-      // Modo global: busca itens de TODAS as listas em paralelo
+      // Modo global: busca todos os itens em uma única query
       final allItems = <String, List<ShoppingItem>>{};
       if (lists.isNotEmpty) {
-        final itemFutures = lists.map((l) {
-          final itemsState = ref.read(shoppingListItemsProvider(l.id));
-          if (itemsState.hasValue) {
-            return Future.value(itemsState.value ?? const <ShoppingItem>[]);
-          }
-          return AiUtils.awaitFuture<List<ShoppingItem>>(
-            ref.read(shoppingListItemsProvider(l.id).future),
-            defaultValue: const <ShoppingItem>[],
-            timeout: const Duration(seconds: 5),
-            label: 'shoppingListItemsProvider (${l.name})',
-          );
-        });
-        final allResults = await Future.wait(itemFutures);
-        for (var i = 0; i < lists.length; i++) {
-          allItems[lists[i].name] = allResults[i];
-          totalItemsCount += allResults[i].length;
+        final firestoreService = ref.read(firestoreServiceProvider)!;
+        final itemsByListId = await firestoreService.loadAllItemsForUser();
+        for (final list in lists) {
+          final items = itemsByListId[list.id] ?? const <ShoppingItem>[];
+          allItems[list.name] = items;
+          totalItemsCount += items.length;
         }
       }
       prompt = _buildGlobalSystemPrompt(allItems, locale: currentLocale);
@@ -1328,9 +1330,10 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
             newMessages.last.role == 'assistant' &&
                 newMessages.last.content.isEmpty)) {
       final removed = newMessages.removeLast();
-      await ref
-          .read(firestoreServiceProvider)
-          .deleteChatMessage(listId, removed.id, sessionId: sessionId);
+      final firestoreService = ref.read(firestoreServiceProvider);
+      if (firestoreService != null) {
+        await firestoreService.deleteChatMessage(listId, removed.id, sessionId: sessionId);
+      }
       if (_isCancelled) {
         return;
       }
@@ -1350,9 +1353,14 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
       if (content.isNotEmpty) {
         newMessages.removeAt(lastUserMessageIndex);
-        await ref
-            .read(firestoreServiceProvider)
-            .deleteChatMessage(listId, lastUserMessage.id, sessionId: sessionId);
+        final firestoreService = ref.read(firestoreServiceProvider);
+        if (firestoreService != null) {
+          await firestoreService.deleteChatMessage(
+            listId,
+            lastUserMessage.id,
+            sessionId: sessionId,
+          );
+        }
         if (_isCancelled) {
           return;
         }
@@ -1687,7 +1695,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
     final fallbackText =
         fallbackResponse.content ??
-        'Não foi possível processar após várias tentativas.';
+        'Could not process after multiple attempts.';
     debugPrint(
       '[AgentLoop] Fallback concluído. content.length=${fallbackText.length}',
     );
@@ -1696,49 +1704,49 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
   void _updateActivityForTool(String toolName) {
     final activity = switch (toolName) {
-      // Itens de lista
-      'add_shopping_item' || 'add_shopping_items' => 'Adicionando itens à lista...',
-      'remove_shopping_item' => 'Removendo itens...',
-      'update_shopping_item' => 'Atualizando item...',
-      'check_shopping_item' => 'Marcando item...',
-      'uncheck_shopping_item' => 'Desmarcando item...',
-      'clear_checked_items' => 'Limpando itens marcados...',
-      'organize_shopping_list' => 'Reorganizando lista...',
-      // Listas
-      'create_shopping_list' => 'Criando nova lista...',
-      'delete_shopping_list' => 'Removendo lista...',
-      'rename_shopping_list' => 'Renomeando lista...',
-      'get_shopping_list_items' || 'get_all_shopping_lists' => 'Consultando suas listas...',
-      'set_budget' => 'Configurando orçamento...',
-      // Despensa
-      'get_pantry_items' => 'Verificando sua despensa...',
-      'add_pantry_item' => 'Adicionando à despensa...',
-      'remove_pantry_item' => 'Removendo da despensa...',
-      'update_pantry_item' => 'Atualizando despensa...',
-      // Receitas
-      'create_recipe' => 'Salvando receita...',
-      'get_recipes' => 'Buscando receitas...',
-      'delete_recipe' => 'Removendo receita...',
-      'add_recipe_to_list' => 'Adicionando ingredientes à lista...',
-      // Cardápio / Plano de refeições
-      'schedule_meal' => 'Organizando seu cardápio...',
-      'get_meal_plan' => 'Carregando seu cardápio...',
-      'delete_meal_plan_entry' => 'Atualizando cardápio...',
-      // Categorias
-      'get_categories' => 'Buscando categorias...',
-      'set_item_category' => 'Categorizando itens...',
-      // Compartilhamento
-      'share_shopping_list' => 'Gerando link de compartilhamento...',
-      'get_shared_list_info' => 'Buscando lista compartilhada...',
-      // Perfil / Configurações
-      'get_user_profile' => 'Carregando seu perfil...',
-      'update_user_profile' => 'Salvando suas preferências...',
-      'get_preferences' => 'Verificando suas configurações...',
-      // Artefatos / Geração
-      'generate_artifact' => 'Gerando conteúdo personalizado...',
-      'search_products' => 'Buscando produtos...',
-      'get_price_estimates' => 'Estimando preços...',
-      _ => 'Processando...',
+      // List items
+      'add_shopping_item' || 'add_shopping_items' => 'Adding items to list...',
+      'remove_shopping_item' => 'Removing items...',
+      'update_shopping_item' => 'Updating item...',
+      'check_shopping_item' => 'Checking item...',
+      'uncheck_shopping_item' => 'Unchecking item...',
+      'clear_checked_items' => 'Clearing checked items...',
+      'organize_shopping_list' => 'Reorganizing list...',
+      // Lists
+      'create_shopping_list' => 'Creating new list...',
+      'delete_shopping_list' => 'Removing list...',
+      'rename_shopping_list' => 'Renaming list...',
+      'get_shopping_list_items' || 'get_all_shopping_lists' => 'Querying your lists...',
+      'set_budget' => 'Setting budget...',
+      // Pantry
+      'get_pantry_items' => 'Checking your pantry...',
+      'add_pantry_item' => 'Adding to pantry...',
+      'remove_pantry_item' => 'Removing from pantry...',
+      'update_pantry_item' => 'Updating pantry...',
+      // Recipes
+      'create_recipe' => 'Saving recipe...',
+      'get_recipes' => 'Searching recipes...',
+      'delete_recipe' => 'Removing recipe...',
+      'add_recipe_to_list' => 'Adding ingredients to list...',
+      // Meal plan
+      'schedule_meal' => 'Organizing your menu...',
+      'get_meal_plan' => 'Loading your menu...',
+      'delete_meal_plan_entry' => 'Updating menu...',
+      // Categories
+      'get_categories' => 'Searching categories...',
+      'set_item_category' => 'Categorizing items...',
+      // Sharing
+      'share_shopping_list' => 'Generating share link...',
+      'get_shared_list_info' => 'Searching shared list...',
+      // Profile / Settings
+      'get_user_profile' => 'Loading your profile...',
+      'update_user_profile' => 'Saving your preferences...',
+      'get_preferences' => 'Checking your settings...',
+      // Artifacts / Generation
+      'generate_artifact' => 'Generating personalized content...',
+      'search_products' => 'Searching products...',
+      'get_price_estimates' => 'Estimating prices...',
+      _ => 'Processing...',
     };
     ref.read(chatActivityProvider(listId).notifier).setState(activity);
   }
@@ -1909,6 +1917,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       }
 
       final service = ref.read(firestoreServiceProvider);
+      if (service == null) return;
       final sessions = await service.loadChatSessions(listId);
 
       if (_isCancelled || !ref.mounted) {
@@ -1933,6 +1942,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       return;
     }
     final firestoreService = ref.read(firestoreServiceProvider);
+    if (firestoreService == null) return;
     await firestoreService.clearChatHistory(listId, sessionId: sessionId);
     state = const AsyncValue.data([]);
   }
@@ -1945,9 +1955,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     try {
       final previousMessages = state.value ?? [];
       state = AsyncValue.data([...previousMessages, message]);
-
-      await ref
-          .read(firestoreServiceProvider)
+      final firestoreService = ref.read(firestoreServiceProvider);
+      if (firestoreService == null) return;
+      await firestoreService
           .saveChatMessage(listId, message, sessionId: sessionId)
           .catchError((Object e, StackTrace st) {
         LoggerService.error(
@@ -1985,9 +1995,10 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     updatedMessages[index] = updatedMessage;
     state = AsyncValue.data(updatedMessages);
 
+    final firestoreService = ref.read(firestoreServiceProvider);
+    if (firestoreService == null) return;
     unawaited(
-      ref
-          .read(firestoreServiceProvider)
+      firestoreService
           .saveChatMessage(listId, updatedMessage, sessionId: sessionId)
           .catchError((Object e, StackTrace st) {
         LoggerService.error(
@@ -2057,6 +2068,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     state = AsyncValue.data(newMessages);
 
     final firestore = ref.read(firestoreServiceProvider);
+    if (firestore == null) {
+      return;
+    }
     for (int i = index; i < messages.length; i++) {
       unawaited(firestore.deleteChatMessage(listId, messages[i].id, sessionId: sessionId));
     }
@@ -2072,6 +2086,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     }
     final aiService = ref.read(aiServiceProvider);
     final firestoreService = ref.read(firestoreServiceProvider);
+    if (firestoreService == null) {
+      return;
+    }
     final previousHistory = state.value ?? [];
 
     final apiMessages = <Map<String, dynamic>>[];
@@ -2131,7 +2148,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       ref.read(chatThinkingProvider(listId).notifier).setState(false);
       ref.read(chatActivityProvider(listId).notifier).setState(null);
       const errorMsg =
-          'Desculpe, ocorreu um erro ao processar sua solicitação.';
+          'Sorry, an error occurred while processing your request.';
       _updateAssistantMessage(content: errorMsg, isError: true);
       return;
     } finally {
@@ -2206,13 +2223,15 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       final updatedMessages = <ChatMessage>[...state.value ?? []];
       updatedMessages[updatedMessages.length - 1] = finalMessage;
       state = AsyncValue.data(updatedMessages);
-      unawaited(
-        firestoreService.saveChatMessage(
-          listId,
-          finalMessage,
-          sessionId: sessionId,
-        ),
-      );
+      if (firestoreService != null) {
+        unawaited(
+          firestoreService.saveChatMessage(
+            listId,
+            finalMessage,
+            sessionId: sessionId,
+          ),
+        );
+      }
     }
   }
 
@@ -2357,8 +2376,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     return replies.take(3).toList();
   }
 
-  // coverage:ignore-start
-  String _languageInstruction(String locale) {
+    String _languageInstruction(String locale) {
     final lang = locale.split('_').first.toLowerCase();
     switch (lang) {
       case 'pt':
@@ -2393,13 +2411,13 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     List<ShoppingItem> items, {
     String locale = 'pt_BR',
   }) {
-    final listName = list?.name ?? 'Lista de Compras';
+    final listName = list?.name ?? 'Shopping List';
     const maxItems = 30;
     final displayItems = items.take(maxItems);
     final itemsStr = displayItems
         .map(
           (i) =>
-              '- ${i.name} (${i.quantity} ${i.unit.label})${i.isPurchased ? ' [Comprado]' : ''}',
+              '- ${i.name} (${i.quantity} ${i.unit.label})${i.isPurchased ? ' [Purchased]' : ''}',
         )
         .join('\n');
     final overflow =
@@ -2518,5 +2536,4 @@ ${_languageInstruction(locale)}''';
     return context;
   }
 
-  // coverage:ignore-end
-}
+  }

@@ -14,6 +14,7 @@ class CategoriesNotifier extends AsyncNotifier<List<CategoryData>> {
   @override
   Future<List<CategoryData>> build() async {
     final backend = ref.read(firestoreServiceProvider);
+    if (backend == null) return CategoryData.defaults;
     final existing = await backend.loadCategories();
     if (existing.isEmpty) {
       await backend.saveCategories(CategoryData.defaults);
@@ -34,21 +35,25 @@ class CategoriesNotifier extends AsyncNotifier<List<CategoryData>> {
 
   Future<void> addCategory(CategoryData cat) async {
     final backend = ref.read(firestoreServiceProvider);
+    if (backend == null) return;
     await backend.saveCategory(cat);
   }
 
   Future<void> updateCategory(CategoryData cat) async {
     final backend = ref.read(firestoreServiceProvider);
+    if (backend == null) return;
     await backend.saveCategory(cat);
   }
 
   Future<void> deleteCategory(String id) async {
     final backend = ref.read(firestoreServiceProvider);
+    if (backend == null) return;
     await backend.deleteCategory(id);
   }
 
   Future<void> reorderCategories(List<CategoryData> reordered) async {
     final backend = ref.read(firestoreServiceProvider);
+    if (backend == null) return;
     final updated = reordered
         .map((cat) => cat.copyWith(sortOrder: reordered.indexOf(cat)))
         .toList();

@@ -18,7 +18,9 @@ const List<({String label, String emoji})> _kFoodSuggestions = [
 ];
 
 class OnboardingSlidePersonalization extends ConsumerStatefulWidget {
-  const OnboardingSlidePersonalization({super.key});
+  const OnboardingSlidePersonalization({super.key, this.onNext});
+
+  final VoidCallback? onNext;
 
   @override
   ConsumerState<OnboardingSlidePersonalization> createState() =>

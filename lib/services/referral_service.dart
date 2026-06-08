@@ -33,6 +33,9 @@ class ReferralService {
     }
 
     final db = _ref.read(firestoreServiceProvider);
+    if (db == null) {
+      return;
+    }
     
     // Check if this user already processed a referral to prevent abuse
     final userData = await db.getUserData();

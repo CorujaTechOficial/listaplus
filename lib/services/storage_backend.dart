@@ -77,5 +77,7 @@ abstract class StorageBackend {
   Future<void> saveMealPlan(Map<String, dynamic> mealPlan);
   Future<void> deleteMealPlan(String id);
 
+  Future<Map<String, List<ShoppingItem>>> loadAllItemsForUser();
+
   Future<void> saveFeedback(Map<String, dynamic> feedbackData);
 }

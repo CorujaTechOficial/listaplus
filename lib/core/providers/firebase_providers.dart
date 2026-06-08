@@ -7,7 +7,7 @@ import 'auth_provider.dart';
 
 final firebaseStorageProvider = Provider<FirebaseStorage>((ref) => FirebaseStorage.instance);
 
-final firestoreServiceProvider = Provider<StorageBackend>((ref) {
+final firestoreServiceProvider = Provider<StorageBackend?>((ref) {
   final authAsync = ref.watch(authProvider);
   final user = authAsync.asData?.value;
 
@@ -20,9 +20,5 @@ final firestoreServiceProvider = Provider<StorageBackend>((ref) {
     return FirestoreService(uid: current.uid);
   }
 
-  if (authAsync.isLoading) {
-    throw Exception('Autenticação ainda não carregada');
-  }
-
-  throw Exception('Usuário não autenticado');
+  return null;
 });

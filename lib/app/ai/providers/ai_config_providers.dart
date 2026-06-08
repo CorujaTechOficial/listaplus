@@ -2,8 +2,8 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
-import 'package:shopping_list/domain/entities/ai_config.dart';
-import 'package:shopping_list/domain/entities/ai_usage.dart';
+import 'package:shopping_list/models/ai_config.dart';
+import 'package:shopping_list/models/ai_usage.dart';
 import 'package:shopping_list/services/ai_service.dart';
 import 'package:shopping_list/services/open_code_go_service.dart';
 
@@ -15,6 +15,7 @@ class AiConfigState extends _$AiConfigState {
   Future<AiConfig> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
+      if (service == null) return const AiConfig(name: 'IA', iconKey: 'smart_toy');
       final data = await service.getUserData();
       if (data == null) {
         return const AiConfig(name: 'IA', iconKey: 'smart_toy');
@@ -29,6 +30,7 @@ class AiConfigState extends _$AiConfigState {
 
   Future<void> updateConfig({required String name, required String iconKey}) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(AiConfig(name: name, iconKey: iconKey));
     try {
@@ -50,6 +52,7 @@ class AiUsageState extends _$AiUsageState {
   @override
   Future<AiUsage> build() async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
     final data = await service.getAiUsage();
     if (data == null) {
       return AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
@@ -62,6 +65,7 @@ class AiUsageState extends _$AiUsageState {
     final updated = current.recordMessage();
     state = AsyncValue.data(updated);
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.saveAiUsage(updated.toJson());
   }
 
@@ -79,11 +83,11 @@ class AiUsageState extends _$AiUsageState {
     final updated = current.copyWith(dailyCount: 0);
     state = AsyncValue.data(updated);
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.saveAiUsage(updated.toJson());
   }
 }
 
-// coverage:ignore-start
 final runtimeApiKeyProvider = FutureProvider<String>((ref) async {
   try {
     final remoteConfig = FirebaseRemoteConfig.instance;
@@ -110,4 +114,3 @@ final aiServiceProvider = Provider<AiService>((ref) {
     getApiKey: () => ref.read(runtimeApiKeyProvider.future),
   );
 });
-// coverage:ignore-end

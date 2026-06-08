@@ -8,6 +8,7 @@ part 'settings_providers.g.dart';
 
 final userProfileProvider = FutureProvider.autoDispose<UserProfile>((ref) async {
   final backend = ref.watch(firestoreServiceProvider);
+  if (backend == null) return UserProfile.fromUserDoc(null);
   final userData = await backend.getUserData();
   return UserProfile.fromUserDoc(userData);
 });
@@ -23,6 +24,7 @@ class UserProfileService {
 
   Future<void> updateProfile(UserProfile profile) async {
     final backend = _ref.read(firestoreServiceProvider);
+    if (backend == null) return;
     final prefs = profile.toPreferencesMap();
     for (final entry in prefs.entries) {
       await backend.updatePreference(entry.key, entry.value);
@@ -32,6 +34,7 @@ class UserProfileService {
 
   Future<void> removeField(String key) async {
     final backend = _ref.read(firestoreServiceProvider);
+    if (backend == null) return;
     await backend.deletePreference(key);
     _ref.invalidate(userProfileProvider);
   }
@@ -42,12 +45,14 @@ class MonthlyBudget extends _$MonthlyBudget {
   @override
   Future<double?> build() async {
     final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return null;
     final data = await service.getUserData();
     return (data?['monthlyBudget'] as num?)?.toDouble();
   }
 
   Future<void> setBudget(double? budget) async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(budget);
     try {
@@ -113,6 +118,7 @@ class UserStatsNotifier extends _$UserStatsNotifier {
 
   Future<void> _loadStats() async {
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     final data = await service.getUserData();
     if (data != null && data['userStats'] != null) {
       state = UserStats.fromJson(data['userStats'] as Map<String, dynamic>);
@@ -147,6 +153,7 @@ class UserStatsNotifier extends _$UserStatsNotifier {
     );
 
     final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
     await service.updateUserData({'userStats': state.toJson()});
   }
 }
