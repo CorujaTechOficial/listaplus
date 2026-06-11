@@ -14,6 +14,8 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/theme/app_theme.dart';
 import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 
+const double _kQuantityControlsBreakpoint = 380;
+
 class ShoppingItemTile extends ConsumerWidget {
   const ShoppingItemTile({
     super.key,
@@ -178,7 +180,7 @@ class ShoppingItemTile extends ConsumerWidget {
                     Builder(
                       builder: (context) {
                         final screenWidth = MediaQuery.sizeOf(context).width;
-                        final isSmallScreen = screenWidth < 380;
+                        final isSmallScreen = screenWidth < _kQuantityControlsBreakpoint;
                         return Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
