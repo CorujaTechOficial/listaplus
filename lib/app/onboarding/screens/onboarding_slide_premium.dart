@@ -1014,11 +1014,9 @@ class _OnboardingSlidePremiumState
             SizedBox(
               width: double.infinity,
               height: 56,
-              child: ElevatedButton(
+              child: FilledButton(
                 onPressed: _selectedPackage != null ? _purchase : null,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: theme.colorScheme.primary,
-                  foregroundColor: theme.colorScheme.onPrimary,
+                style: FilledButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(28),
                   ),
