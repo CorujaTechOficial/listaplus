@@ -37,7 +37,7 @@ class ProgressInfoHeader extends StatelessWidget implements PreferredSizeWidget 
   final VoidCallback onSortPressed;
 
   @override
-  Size get preferredSize => const Size.fromHeight(135);
+  Size get preferredSize => Size.fromHeight(budget > 0 ? 145 : 111);
 
   @override
   Widget build(BuildContext context) {
@@ -100,35 +100,32 @@ class ProgressInfoHeader extends StatelessWidget implements PreferredSizeWidget 
                   ],
                 ),
                 const SizedBox(height: 8),
-                Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(RadiusTokens.full),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 8,
-                        backgroundColor: theme.colorScheme.surfaceContainerHighest,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(RadiusTokens.full),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 6,
+                    backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                    valueColor:
+                        AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+                  ),
+                ),
+                if (budget > 0) ...[
+                  const SizedBox(height: 4),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(RadiusTokens.full),
+                    child: LinearProgressIndicator(
+                      value: budgetProgress > 1.0 ? 1.0 : budgetProgress,
+                      minHeight: 6,
+                      backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        overBudget
+                            ? theme.colorScheme.error
+                            : Colors.orange,
                       ),
                     ),
-                    if (budget > 0)
-                      Positioned.fill(
-                        child: FractionallySizedBox(
-                          alignment: Alignment.centerLeft,
-                          widthFactor: budgetProgress > 1.0 ? 1.0 : budgetProgress,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.circular(RadiusTokens.full),
-                              color: (overBudget ? Colors.red : Colors.orange)
-                                  .withAlpha(100),
-                            ),
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
+                  ),
+                ],
               ],
             ),
           ),
@@ -174,8 +171,6 @@ class ProgressInfoHeader extends StatelessWidget implements PreferredSizeWidget 
                   avatar: const Icon(Icons.sort, size: 16),
                   label: Text(sortLabel),
                   onPressed: onSortPressed,
-                  side: BorderSide.none,
-                  backgroundColor: theme.colorScheme.surfaceContainerLow,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(RadiusTokens.full),
                   ),
