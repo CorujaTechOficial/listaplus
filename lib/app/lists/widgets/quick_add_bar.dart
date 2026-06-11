@@ -61,6 +61,9 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     final result = await showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(RadiusTokens.xxxl)),
+      ),
       builder: (context) => const _BarcodeScannerSheet(),
     );
 
@@ -158,13 +161,6 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
             width: 1,
           ),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha((0.05 * 255).toInt()),
-            blurRadius: 10,
-            offset: const Offset(0, -2),
-          ),
-        ],
       ),
       child: SafeArea(
         top: false,
@@ -197,7 +193,9 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                     decoration: InputDecoration(
                       hintText: l10n.addItem,
                       filled: true,
-                      fillColor: isDark ? const Color(0xFF232730) : Colors.grey.withAlpha((0.1 * 255).toInt()),
+                      fillColor: isDark
+                          ? theme.colorScheme.surfaceContainerHigh
+                          : theme.colorScheme.surfaceContainerHighest.withAlpha(77),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(24),
                         borderSide: BorderSide.none,
@@ -262,17 +260,18 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                   ),
                 ),
                 const SizedBox(width: 8),
-                GestureDetector(
-                  onTap: _isAdding ? null : () => _submit(textEditingController),
-                  child: CircleAvatar(
+                IconButton.filled(
+                  onPressed: _isAdding ? null : () => _submit(textEditingController),
+                  icon: _isAdding
+                      ? const SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(strokeWidth: 2.5, color: Colors.white),
+                        )
+                      : const Icon(Icons.arrow_upward, size: 22, color: Colors.white),
+                  style: IconButton.styleFrom(
                     backgroundColor: _isAdding ? theme.colorScheme.surfaceContainerHighest : theme.colorScheme.primary,
-                    child: _isAdding
-                        ? const SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2.5, color: Colors.white),
-                          )
-                        : const Icon(Icons.arrow_upward, size: 22, color: Colors.white),
+                    foregroundColor: Colors.white,
                   ),
                 ),
               ],
@@ -349,7 +348,7 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
         color: Colors.black,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(RadiusTokens.xxxl)),
       ),
       child: Column(
         children: [
