@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/core/theme/app_theme.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import '../providers/onboarding_data_provider.dart';
@@ -42,13 +43,14 @@ class _OnboardingSlidePainPointState
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
+    final semanticColors = AppSemanticColors.of(context);
 
     final pains = [
       (
         key: 'forget',
         emoji: '😤',
         label: l10n.onboardingPainForget,
-        color: Colors.orange,
+        color: semanticColors.warning,
       ),
       (
         key: 'family',
@@ -135,7 +137,7 @@ class _OnboardingSlidePainPointState
               child: SizedBox(
                 width: double.infinity,
                 height: 52,
-                child: ElevatedButton(
+                child: FilledButton(
                   onPressed: _selected.isNotEmpty ? widget.onNext : null,
                   child: Text(l10n.onboardingPainCta),
                 ),
