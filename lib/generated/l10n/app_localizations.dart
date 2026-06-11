@@ -4571,6 +4571,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'One trip is never enough'**
   String get onboardingPainRepeat;
+
+  /// Welcome message content shown to first-time AI users
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! 👋 I\'m **Kipi**, your personal shopping and recipe assistant!\n\nI\'m here to help you:\n🛒 **Organize** your shopping by categories automatically\n💰 **Track** your budget and give you money-saving tips\n🍲 **Suggest** delicious recipes with what you already have\n\nHow can I help you today? You can start by creating your first list!'**
+  String get aiWelcomeContent;
+
+  /// Quick reply button label to create first shopping list
+  ///
+  /// In en, this message translates to:
+  /// **'Create my first list'**
+  String get aiWelcomeSuggestCreateList;
+
+  /// AI prompt sent when user taps create first list quick reply
+  ///
+  /// In en, this message translates to:
+  /// **'Kipi, help me create my first shopping list'**
+  String get aiWelcomeSuggestCreateListPrompt;
+
+  /// Quick reply button label to ask about saving money
+  ///
+  /// In en, this message translates to:
+  /// **'How to save money?'**
+  String get aiWelcomeSuggestSave;
+
+  /// AI prompt sent when user taps save money quick reply
+  ///
+  /// In en, this message translates to:
+  /// **'Kipi, how can you help me save money on groceries?'**
+  String get aiWelcomeSuggestSavePrompt;
 }
 
 class _AppLocalizationsDelegate

@@ -1122,5 +1122,15 @@
   "onboardingPainOverspend": "I always go over budget",
   "@onboardingPainOverspend": { "description": "Pain: overspend" },
   "onboardingPainRepeat": "One trip is never enough",
-  "@onboardingPainRepeat": { "description": "Pain: multiple trips" }
+  "@onboardingPainRepeat": { "description": "Pain: multiple trips" },
+  "aiWelcomeContent": "Hello! 👋 I'm **Kipi**, your personal shopping and recipe assistant!\n\nI'm here to help you:\n🛒 **Organize** your shopping by categories automatically\n💰 **Track** your budget and give you money-saving tips\n🍲 **Suggest** delicious recipes with what you already have\n\nHow can I help you today? You can start by creating your first list!",
+  "@aiWelcomeContent": { "description": "Welcome message content shown to first-time AI users" },
+  "aiWelcomeSuggestCreateList": "Create my first list",
+  "@aiWelcomeSuggestCreateList": { "description": "Quick reply button label to create first shopping list" },
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, help me create my first shopping list",
+  "@aiWelcomeSuggestCreateListPrompt": { "description": "AI prompt sent when user taps create first list quick reply" },
+  "aiWelcomeSuggestSave": "How to save money?",
+  "@aiWelcomeSuggestSave": { "description": "Quick reply button label to ask about saving money" },
+  "aiWelcomeSuggestSavePrompt": "Kipi, how can you help me save money on groceries?",
+  "@aiWelcomeSuggestSavePrompt": { "description": "AI prompt sent when user taps save money quick reply" }
 }

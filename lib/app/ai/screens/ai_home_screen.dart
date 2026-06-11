@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/chat_message.dart';
-import 'package:shopping_list/domain/entities/suggested_reply.dart';
+import 'package:shopping_list/models/suggested_reply.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
@@ -77,24 +77,28 @@ class _AiHomeScreenState extends ConsumerState<AiHomeScreen> {
       return;
     }
 
+    final l10n = AppLocalizations.of(context)!;
     final sessionId = await ref.read(chatSessionsProvider(listId).notifier).startNewSession();
+
+    if (!mounted) {
+      return;
+    }
 
     final welcomeMsg = ChatMessage(
       role: 'assistant',
-      content: 'Olá! 👋 Eu sou o **Kipi**, seu assistente pessoal de compras e receitas!\n\n'
-          'Estou aqui para ajudar você a:\n'
-          '🛒 **Organizar** suas compras por categorias automaticamente\n'
-          '💰 **Controlar** seu orçamento e dar dicas de economia\n'
-          '🍲 **Sugerir** receitas deliciosas com o que você já tem\n\n'
-          'Como posso ajudar hoje? Você pode começar criando sua primeira lista!',
+      content: l10n.aiWelcomeContent,
       suggestedReplies: [
-        SuggestedReply(label: 'Criar minha primeira lista', prompt: 'Kipi, me ajude a criar minha primeira lista de compras', icon: 'add_shopping_cart'),
-        SuggestedReply(label: 'Como economizar?', prompt: 'Kipi, como você pode me ajudar a economizar nas compras?', icon: 'savings'),
+        SuggestedReply(label: l10n.aiWelcomeSuggestCreateList, prompt: l10n.aiWelcomeSuggestCreateListPrompt, icon: 'add_shopping_cart'),
+        SuggestedReply(label: l10n.aiWelcomeSuggestSave, prompt: l10n.aiWelcomeSuggestSavePrompt, icon: 'savings'),
       ],
     );
 
     try {
-      await ref.read(firestoreServiceProvider).saveChatMessage(listId, welcomeMsg, sessionId: sessionId);
+      final service = ref.read(firestoreServiceProvider);
+      if (service == null) {
+        throw Exception('Usuário não autenticado');
+      }
+      await service.saveChatMessage(listId, welcomeMsg, sessionId: sessionId);
       // Invalida para carregar a mensagem na UI
       ref.invalidate(chatSessionProvider(listId, sessionId));
     } on Exception catch (e) {

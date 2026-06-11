@@ -2398,6 +2398,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'One trip is never enough';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hello! 👋 I\'m **Kipi**, your personal shopping and recipe assistant!\n\nI\'m here to help you:\n🛒 **Organize** your shopping by categories automatically\n💰 **Track** your budget and give you money-saving tips\n🍲 **Suggest** delicious recipes with what you already have\n\nHow can I help you today? You can start by creating your first list!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Create my first list';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, help me create my first shopping list';
+
+  @override
+  String get aiWelcomeSuggestSave => 'How to save money?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, how can you help me save money on groceries?';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
