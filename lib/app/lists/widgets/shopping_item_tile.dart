@@ -136,7 +136,7 @@ class ShoppingItemTile extends ConsumerWidget {
                             height: 1.1,
                           ),
                         ),
-                        if (item.estimatedPrice != null || cat != null) ...[
+                        if (item.estimatedPrice != null || cat != null || (!isShoppingMode && !selectionMode)) ...[
                           const SizedBox(height: 4),
                           Row(
                             children: [
@@ -161,7 +161,9 @@ class ShoppingItemTile extends ConsumerWidget {
                                 ),
                                 const SizedBox(width: 6),
                               ],
-                              if (item.estimatedPrice != null)
+                              if (!isShoppingMode && !selectionMode)
+                                _InlinePriceField(item: item, listId: listId)
+                              else if (item.estimatedPrice != null)
                                 Text(
                                   formatCurrency(item.estimatedPrice! * item.quantity, currencyCode),
                                   style: theme.textTheme.labelSmall?.copyWith(
@@ -366,6 +368,125 @@ class _SmallIconButton extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _InlinePriceField extends ConsumerStatefulWidget {
+  const _InlinePriceField({required this.item, required this.listId});
+
+  final ShoppingItem item;
+  final String listId;
+
+  @override
+  ConsumerState<_InlinePriceField> createState() => _InlinePriceFieldState();
+}
+
+class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
+  bool _editing = false;
+  late TextEditingController _ctrl;
+  final _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    final price = widget.item.estimatedPrice;
+    _ctrl = TextEditingController(
+      text: price != null ? price.toStringAsFixed(2) : '',
+    );
+    _focusNode.addListener(() {
+      if (!_focusNode.hasFocus && _editing) {
+        _save();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save() async {
+    final text = _ctrl.text.trim().replaceAll(',', '.');
+    final newPrice = double.tryParse(text);
+    setState(() => _editing = false);
+    if (newPrice == widget.item.estimatedPrice) {
+      return;
+    }
+    final updated = widget.item.copyWith(
+      estimatedPrice: (newPrice != null && newPrice > 0) ? newPrice : null,
+      updatedAt: DateTime.now(),
+    );
+    try {
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .updateItem(updated);
+    } on Exception catch (e) {
+      _ctrl.text = widget.item.estimatedPrice?.toStringAsFixed(2) ?? '';
+      if (mounted) {
+        showUniqueSnackBar(
+          context,
+          content: Text(
+            AppLocalizations.of(context)!.errorGeneric(e.toString()),
+          ),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+
+    if (_editing) {
+      return SizedBox(
+        width: 72,
+        height: 24,
+        child: TextField(
+          controller: _ctrl,
+          focusNode: _focusNode,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          textInputAction: TextInputAction.done,
+          onSubmitted: (_) => _save(),
+          style: theme.textTheme.labelSmall?.copyWith(
+            color: theme.colorScheme.primary,
+            fontWeight: FontWeight.w800,
+          ),
+          decoration: const InputDecoration(
+            isDense: true,
+            contentPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+            border: OutlineInputBorder(),
+          ),
+        ),
+      );
+    }
+
+    final price = widget.item.estimatedPrice;
+    return GestureDetector(
+      onTap: () {
+        setState(() => _editing = true);
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) => _focusNode.requestFocus(),
+        );
+      },
+      child: price != null
+          ? Text(
+              formatCurrency(price * widget.item.quantity, currencyCode),
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: widget.item.isPurchased
+                    ? theme.colorScheme.outline
+                    : theme.colorScheme.primary,
+                fontWeight: FontWeight.w800,
+              ),
+            )
+          : Icon(
+              Icons.add_circle_outline,
+              size: 14,
+              color: theme.colorScheme.outlineVariant,
+            ),
     );
   }
 }
