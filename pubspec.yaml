@@ -47,7 +47,7 @@ dependencies:
   url_launcher: ^6.3.2
   connectivity_plus: ^6.1.4
   firebase_core: ^4.9.0
-  firebase_remote_config: ^6.5.1
+  firebase_remote_config: ^6.5.2
   firebase_analytics: ^12.4.1
   firebase_crashlytics: ^5.2.2
   cloud_firestore: ^6.4.1
