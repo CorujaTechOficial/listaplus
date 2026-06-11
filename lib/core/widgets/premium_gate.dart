@@ -4,6 +4,7 @@ import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:shopping_list/core/utils/kipi_sheets.dart';
 
 class PremiumGate extends StatelessWidget {
   const PremiumGate({
@@ -21,10 +22,8 @@ class PremiumGate extends StatelessWidget {
     if (onUpgrade != null) {
       onUpgrade!();
     }
-    showModalBottomSheet<void>(
+    KipiSheets.show<void>(
       context: context,
-      isScrollControlled: true,
-      useSafeArea: true,
       builder: (_) => const PaywallScreen(asSheet: true),
     );
   }
@@ -71,7 +70,7 @@ class PremiumGate extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: AppColors.premiumAmber,
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(RadiusTokens.full),
                     ),
                     child: Text(
                       l10n.paywallProLabel,
@@ -118,13 +117,11 @@ class PremiumGate extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     height: 50,
-                    child: ElevatedButton(
+                    child: FilledButton(
                       onPressed: () => _openPaywall(context),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: theme.colorScheme.primary,
-                        foregroundColor: theme.colorScheme.onPrimary,
+                      style: FilledButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(RadiusTokens.full),
                         ),
                         elevation: 3,
                       ),

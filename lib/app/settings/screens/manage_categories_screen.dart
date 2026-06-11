@@ -77,6 +77,7 @@ class _CategoriesList extends ConsumerWidget {
       },
       itemBuilder: (context, index) {
         final cat = categories[index];
+        final theme = Theme.of(context);
         final color = Color(cat.color);
         return ListTile(
           key: ValueKey(cat.id),
@@ -92,7 +93,7 @@ class _CategoriesList extends ConsumerWidget {
             children: [
               if (cat.id != 'others')
                 IconButton(
-                  icon: const Icon(Icons.delete_outline, color: Colors.red),
+                  icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
                   onPressed: () => _deleteCategory(context, ref, cat),
                 ),
               IconButton(
@@ -117,6 +118,7 @@ class _CategoriesList extends ConsumerWidget {
   }
 
   Future<void> _deleteCategory(BuildContext context, WidgetRef ref, CategoryData cat) async {
+    final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
@@ -125,9 +127,12 @@ class _CategoriesList extends ConsumerWidget {
         content: Text(l10n.deleteCategoryConfirm(cat.name)),
         actions: [
           TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(l10n.cancel)),
-          ElevatedButton(
+          FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            style: FilledButton.styleFrom(
+              backgroundColor: theme.colorScheme.error,
+              foregroundColor: theme.colorScheme.onError,
+            ),
             child: Text(l10n.deleteCategory),
           ),
         ],
