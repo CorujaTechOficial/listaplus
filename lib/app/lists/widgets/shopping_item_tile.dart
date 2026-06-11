@@ -194,20 +194,7 @@ class ShoppingItemTile extends ConsumerWidget {
                                   ref.read(shoppingListItemsProvider(listId).notifier).decrementQuantity(item.id);
                                 },
                               ),
-                            SizedBox(
-                              width: isSmallScreen ? null : 32,
-                              child: Center(
-                                child: Text(
-                                  '${item.quantity}',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w800,
-                                    fontFeatures: isSmallScreen
-                                        ? null
-                                        : [const FontFeature.tabularFigures()],
-                                  ),
-                                ),
-                              ),
-                            ),
+                            _InlineQtyField(item: item, listId: listId),
                             if (!isSmallScreen)
                               _SmallIconButton(
                                 icon: Icons.add,
@@ -487,6 +474,120 @@ class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
               size: 14,
               color: theme.colorScheme.outlineVariant,
             ),
+    );
+  }
+}
+
+class _InlineQtyField extends ConsumerStatefulWidget {
+  const _InlineQtyField({required this.item, required this.listId});
+
+  final ShoppingItem item;
+  final String listId;
+
+  @override
+  ConsumerState<_InlineQtyField> createState() => _InlineQtyFieldState();
+}
+
+class _InlineQtyFieldState extends ConsumerState<_InlineQtyField> {
+  bool _editing = false;
+  late TextEditingController _ctrl;
+  final _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = TextEditingController(text: '${widget.item.quantity}');
+    _focusNode.addListener(() {
+      if (!_focusNode.hasFocus && _editing) {
+        _save();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save() async {
+    final newQty = int.tryParse(_ctrl.text.trim());
+    setState(() => _editing = false);
+    if (newQty == null || newQty < 1 || newQty == widget.item.quantity) {
+      _ctrl.text = '${widget.item.quantity}';
+      return;
+    }
+    final updated = widget.item.copyWith(
+      quantity: newQty,
+      updatedAt: DateTime.now(),
+    );
+    try {
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .updateItem(updated);
+    } on Exception catch (e) {
+      _ctrl.text = '${widget.item.quantity}';
+      if (mounted) {
+        showUniqueSnackBar(
+          context,
+          content: Text(
+            AppLocalizations.of(context)!.errorGeneric(e.toString()),
+          ),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final isSmallScreen = screenWidth < _kQuantityControlsBreakpoint;
+
+    if (_editing) {
+      return SizedBox(
+        width: isSmallScreen ? 36 : 32,
+        height: 24,
+        child: TextField(
+          controller: _ctrl,
+          focusNode: _focusNode,
+          keyboardType: TextInputType.number,
+          textAlign: TextAlign.center,
+          textInputAction: TextInputAction.done,
+          onSubmitted: (_) => _save(),
+          style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w800),
+          decoration: const InputDecoration(
+            isDense: true,
+            contentPadding: EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            border: OutlineInputBorder(),
+          ),
+        ),
+      );
+    }
+
+    return GestureDetector(
+      onTap: () {
+        _ctrl.text = '${widget.item.quantity}';
+        setState(() => _editing = true);
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) => _focusNode.requestFocus(),
+        );
+      },
+      child: SizedBox(
+        width: isSmallScreen ? null : 32,
+        child: Center(
+          child: Text(
+            '${widget.item.quantity}',
+            style: theme.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.w800,
+              fontFeatures: isSmallScreen
+                  ? null
+                  : [const FontFeature.tabularFigures()],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
