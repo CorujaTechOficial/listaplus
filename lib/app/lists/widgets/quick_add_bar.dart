@@ -13,6 +13,12 @@ import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/app/lists/providers/categories_provider.dart';
+import 'package:shopping_list/app/lists/providers/item_memory_provider.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/models/category_data.dart';
+import 'package:shopping_list/models/item_memory.dart';
 
 class QuickAddBar extends ConsumerStatefulWidget {
   const QuickAddBar({super.key, required this.listId});
@@ -28,6 +34,16 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
   bool _isAdding = false;
   late stt.SpeechToText _speech;
   bool _isListening = false;
+  ItemMemory? _prefilledMeta;
+
+  void _onSuggestionSelected(String name) {
+    final memory = ref.read(recentItemMemoryProvider).value ?? {};
+    final key = name.trim().toLowerCase();
+    final meta = memory[key];
+    if (meta != null) {
+      setState(() => _prefilledMeta = meta);
+    }
+  }
 
   @override
   void initState() {
@@ -104,15 +120,18 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     setState(() => _isAdding = true);
     unawaited(HapticFeedback.lightImpact());
 
+    final meta = _prefilledMeta;
     try {
       await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItem(
             listId: widget.listId,
             name: name,
-            quantity: 1,
-            categoryId: 'others',
-            unit: Unit.un,
+            quantity: meta?.quantity ?? 1,
+            categoryId: meta?.categoryId ?? 'others',
+            unit: meta?.unit ?? Unit.un,
+            estimatedPrice: meta?.estimatedPrice,
           );
       controller.clear();
+      setState(() => _prefilledMeta = null);
       _focusNode.requestFocus();
     } finally {
       if (mounted) {
@@ -126,6 +145,8 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+
+    ref.watch(recentItemMemoryProvider);
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
@@ -147,8 +168,18 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
       ),
       child: SafeArea(
         top: false,
-        child: StyledAutocomplete(
-          optionsBuilder: (textEditingValue) {
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (_prefilledMeta != null)
+              _MetaChipRow(
+                meta: _prefilledMeta!,
+                onClear: () => setState(() => _prefilledMeta = null),
+              ),
+            StyledAutocomplete(
+              onSelected: _onSuggestionSelected,
+              optionsBuilder: (textEditingValue) {
             if (textEditingValue.text.isEmpty) {
               return const Iterable<String>.empty();
             }
@@ -247,6 +278,8 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
               ],
             );
           },
+            ),
+          ],
         ),
       ),
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
@@ -311,6 +344,7 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
@@ -324,9 +358,9 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Escanear Código de Barras',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                Text(
+                  l10n.scanBarcodeTitle,
+                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 IconButton(
                   icon: const Icon(Icons.close, color: Colors.white),
@@ -385,6 +419,65 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
             child: Text(
               'Aponte a câmera para o código de barras',
               style: TextStyle(color: Colors.white70),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MetaChipRow extends ConsumerWidget {
+  const _MetaChipRow({required this.meta, required this.onClear});
+
+  final ItemMemory meta;
+  final VoidCallback onClear;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
+    final cat = categories.where((c) => c.id == meta.categoryId).firstOrNull;
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, right: 12, bottom: 4),
+      child: Row(
+        children: [
+          if (cat != null) ...[
+            Icon(Icons.label_outline, size: 13, color: theme.colorScheme.primary),
+            const SizedBox(width: 4),
+            Text(
+              cat.name,
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: theme.colorScheme.primary,
+              ),
+            ),
+            const SizedBox(width: 8),
+          ],
+          if (meta.estimatedPrice != null) ...[
+            Text(
+              formatCurrency(meta.estimatedPrice!, currencyCode),
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: theme.colorScheme.secondary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(width: 8),
+          ],
+          Text(
+            '${meta.quantity} ${meta.unit.label}',
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const Spacer(),
+          GestureDetector(
+            onTap: onClear,
+            child: Icon(
+              Icons.close,
+              size: 16,
+              color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
         ],
