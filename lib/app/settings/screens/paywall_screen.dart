@@ -724,10 +724,10 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                     children: [
                       Text(
                         _errorMessage!,
-                        style: const TextStyle(color: Colors.red),
+                        style: TextStyle(color: theme.colorScheme.error),
                       ),
                       const SizedBox(height: Spacing.sm),
-                      ElevatedButton(
+                      OutlinedButton(
                         onPressed: _loadPackages,
                         child: Text(l10n.retry),
                       ),

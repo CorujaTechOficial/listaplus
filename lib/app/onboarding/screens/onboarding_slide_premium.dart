@@ -202,6 +202,17 @@ class _OnboardingSlidePremiumState
     };
   }
 
+  String _categoryLabel(String key, AppLocalizations l10n) {
+    return switch (key) {
+      'grocery' => l10n.onboardingCategoryGrocery,
+      'pharmacy' => l10n.onboardingCategoryPharmacy,
+      'recipes' => l10n.onboardingCategoryRecipes,
+      'home' => l10n.onboardingCategoryHome,
+      'pet' => l10n.onboardingCategoryPet,
+      _ => 'shopping',
+    };
+  }
+
   Widget _buildHero(ThemeData theme, AppLocalizations l10n) {
     final trialLabel = _trialLabel(l10n);
     final displayName = ref.watch(onboardingDataProvider).displayName.trim();
@@ -299,6 +310,39 @@ class _OnboardingSlidePremiumState
             style: theme.textTheme.bodySmall?.copyWith(
               color: Colors.white.withAlpha((0.85 * 255).toInt()),
               height: 1.45,
+            ),
+          ),
+          const SizedBox(height: Spacing.sm),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: Spacing.md,
+              vertical: Spacing.xs,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white.withAlpha(30),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: Colors.white.withAlpha(60),
+                width: 0.5,
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('📦', style: TextStyle(fontSize: 14)),
+                const SizedBox(width: 8),
+                Flexible(
+                  child: Text(
+                    l10n.onboardingPaywallSavedListNotice(
+                      _categoryLabel(ref.watch(onboardingDataProvider).shoppingCategory, l10n),
+                    ),
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: Spacing.sm),
@@ -990,6 +1034,12 @@ class _OnboardingSlidePremiumState
                   ),
                 ),
               ),
+            )
+            .animate(onPlay: (controller) => controller.repeat(reverse: true))
+            .scale(
+              end: const Offset(1.025, 1.025), // ignore: prefer_int_literals
+              duration: 1200.ms,
+              curve: Curves.easeInOut,
             ),
             const SizedBox(height: Spacing.xs),
             Text(
@@ -1044,7 +1094,7 @@ class _OnboardingSlidePremiumState
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: Spacing.sm),
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: _loadPackages,
                     child: Text(l10n.retry),
                   ),
@@ -1111,7 +1161,7 @@ class _OnboardingSlidePremiumState
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: Spacing.sm),
-                      ElevatedButton(
+                      OutlinedButton(
                         onPressed: _loadPackages,
                         child: Text(l10n.retry),
                       ),
