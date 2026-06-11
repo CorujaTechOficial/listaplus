@@ -135,6 +135,7 @@ class _AchievementBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Column(
       children: [
         Container(
@@ -143,17 +144,17 @@ class _AchievementBadge extends StatelessWidget {
           decoration: BoxDecoration(
             color: unlocked
                 ? color.withAlpha((0.2 * 255).toInt())
-                : Theme.of(context).colorScheme.surfaceContainerHighest,
+                : colorScheme.surfaceContainerHighest,
             shape: BoxShape.circle,
             border: Border.all(
-              color: unlocked ? color : Theme.of(context).colorScheme.outline.withAlpha(77),
+              color: unlocked ? color : colorScheme.outline,
               width: 2,
             ),
           ),
           child: Icon(
             icon,
             size: 40,
-            color: unlocked ? color : Theme.of(context).colorScheme.outline,
+            color: unlocked ? color : colorScheme.outline,
           ),
         ),
         const SizedBox(height: 8),
@@ -162,7 +163,7 @@ class _AchievementBadge extends StatelessWidget {
           style: TextStyle(
             fontSize: 12,
             fontWeight: unlocked ? FontWeight.bold : FontWeight.normal,
-            color: unlocked ? null : Theme.of(context).colorScheme.outline,
+            color: unlocked ? null : colorScheme.outline,
           ),
         ),
       ],
