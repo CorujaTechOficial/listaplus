@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
-import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/theme/app_theme.dart';
+import 'package:shopping_list/core/theme/colors.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class AchievementsScreen extends ConsumerWidget {
@@ -14,6 +16,7 @@ class AchievementsScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final stats = ref.watch(userStatsProvider);
     final theme = Theme.of(context);
+    final semanticColors = AppSemanticColors.of(context);
     final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
@@ -27,7 +30,7 @@ class AchievementsScreen extends ConsumerWidget {
             l10n.itemsPurchased,
             stats.totalItemsBought.toString(),
             Icons.shopping_bag,
-            Colors.blue,
+            semanticColors.info,
           ),
           const SizedBox(height: Spacing.md),
           _buildStatCard(
@@ -35,7 +38,7 @@ class AchievementsScreen extends ConsumerWidget {
             l10n.totalSavings,
             formatCurrency(stats.totalSavings, currencyCode),
             Icons.savings,
-            Colors.green,
+            semanticColors.success,
           ),
           const SizedBox(height: Spacing.md),
           _buildStatCard(
@@ -43,7 +46,7 @@ class AchievementsScreen extends ConsumerWidget {
             l10n.currentStreak,
             l10n.streakDays(stats.currentStreak),
             Icons.local_fire_department,
-            Colors.orange,
+            semanticColors.warning,
           ),
           const SizedBox(height: Spacing.xl),
           Text(
@@ -59,25 +62,25 @@ class AchievementsScreen extends ConsumerWidget {
                 label: l10n.badgeBeginner,
                 icon: Icons.star_border,
                 unlocked: stats.totalItemsBought >= 10,
-                color: Colors.brown,
+                color: Theme.of(context).colorScheme.tertiary,
               ),
               _AchievementBadge(
                 label: l10n.badgeOrganized,
                 icon: Icons.check_circle_outline,
                 unlocked: stats.totalItemsBought >= 50,
-                color: Colors.grey,
+                color: Theme.of(context).colorScheme.outline,
               ),
               _AchievementBadge(
                 label: l10n.badgeSavingMaster,
                 icon: Icons.workspace_premium,
                 unlocked: stats.totalSavings >= 100,
-                color: Colors.amber,
+                color: AppColors.premiumAmber,
               ),
               _AchievementBadge(
                 label: l10n.badgeSuperPlanner,
                 icon: Icons.auto_awesome,
                 unlocked: stats.currentStreak >= 7,
-                color: Colors.purple,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ],
           ),
@@ -138,17 +141,19 @@ class _AchievementBadge extends StatelessWidget {
           width: 80,
           height: 80,
           decoration: BoxDecoration(
-            color: unlocked ? color.withAlpha((0.2 * 255).toInt()) : Colors.grey.withAlpha((0.1 * 255).toInt()),
+            color: unlocked
+                ? color.withAlpha((0.2 * 255).toInt())
+                : Theme.of(context).colorScheme.surfaceContainerHighest,
             shape: BoxShape.circle,
             border: Border.all(
-              color: unlocked ? color : Colors.grey.withAlpha((0.3 * 255).toInt()),
+              color: unlocked ? color : Theme.of(context).colorScheme.outline.withAlpha(77),
               width: 2,
             ),
           ),
           child: Icon(
             icon,
             size: 40,
-            color: unlocked ? color : Colors.grey.withAlpha((0.5 * 255).toInt()),
+            color: unlocked ? color : Theme.of(context).colorScheme.outline,
           ),
         ),
         const SizedBox(height: 8),
@@ -157,7 +162,7 @@ class _AchievementBadge extends StatelessWidget {
           style: TextStyle(
             fontSize: 12,
             fontWeight: unlocked ? FontWeight.bold : FontWeight.normal,
-            color: unlocked ? null : Colors.grey,
+            color: unlocked ? null : Theme.of(context).colorScheme.outline,
           ),
         ),
       ],
