@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'dart:async';
 import 'dart:io';
 import 'package:confetti/confetti.dart';
@@ -16,13 +15,10 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
-import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
-import 'package:shopping_list/core/theme/colors.dart';
 import '../../theme/page_transitions.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
-import '../../theme/tokens.dart';
 import 'package:shopping_list/app/lists/widgets/budget_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/lists/widgets/filter_bar.dart';
@@ -38,6 +34,13 @@ import 'package:shopping_list/app/settings/screens/settings_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
 import 'package:shopping_list/app/catalog/models/catalog_category.dart';
 import 'package:shopping_list/app/catalog/screens/catalog_home_screen.dart';
+import 'package:shopping_list/app/lists/widgets/progress_info_header.dart';
+import 'package:shopping_list/app/lists/widgets/shopping_completion_view.dart';
+import 'package:shopping_list/app/lists/widgets/gesture_hint_banner.dart';
+import 'package:shopping_list/app/lists/widgets/selection_bottom_bar.dart';
+import 'package:shopping_list/app/lists/widgets/sort_options_sheet.dart';
+import 'package:shopping_list/app/lists/widgets/share_list_sheet.dart';
+import 'package:shopping_list/app/lists/widgets/export_options_sheet.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
@@ -86,66 +89,19 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     super.dispose();
   }
 
-  void _showSortOptions() {
-    final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (context) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.sort_by_alpha),
-              title: Text(l10n.sortName),
-              selected: _sort == SortType.name,
-              onTap: () {
-                setState(() => _sort = SortType.name);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.category_outlined),
-              title: Text(l10n.sortCategory),
-              selected: _sort == SortType.category,
-              onTap: () {
-                setState(() => _sort = SortType.category);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.calendar_today_outlined),
-              title: Text(l10n.sortDate),
-              selected: _sort == SortType.date,
-              onTap: () {
-                setState(() => _sort = SortType.date);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.drag_indicator),
-              title: Text(l10n.sortManual),
-              selected: _sort == SortType.manual,
-              onTap: () {
-                setState(() => _sort = SortType.manual);
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
-  String _getSortLabel() {
+
+  String _getSortLabel(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     switch (_sort) {
       case SortType.name:
-        return 'A-Z';
+        return l10n.sortName;
       case SortType.category:
-        return 'Categoria';
+        return l10n.sortCategory;
       case SortType.date:
-        return 'Data';
+        return l10n.sortDate;
       case SortType.manual:
-        return 'Manual';
+        return l10n.sortManual;
     }
   }
 
@@ -330,13 +286,22 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                           _clearPurchased();
                         }
                         if (val == 'share') {
-                          _showShareBottomSheet(items, currentList?.name);
+                          ShareListSheet.show(
+                            context,
+                            listId: widget.listId,
+                            items: items,
+                            listName: currentList?.name,
+                          );
                         }
                         if (val == 'budget' && currentList != null) {
                           _showBudgetDialog(context, currentList);
                         }
                         if (val == 'export') {
-                          _showExportOptions(items);
+                          showExportOptionsSheet(
+                            context,
+                            onExportPdf: () => _exportPdf(items),
+                            onExportExcel: () => _exportExcel(items),
+                          );
                         }
                         if (val == 'settings') {
                           Navigator.push(context, fadeSlideRoute<void>(const SettingsScreen()));
@@ -363,160 +328,38 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                         PopupMenuItem(value: 'clear', child: Text(l10n.clearPurchased)),
                         PopupMenuItem(value: 'export', child: Text(l10n.exportPdfExcel)),
                         const PopupMenuDivider(),
-                        const PopupMenuItem(value: 'profile', child: Text('Perfil')),
+                        PopupMenuItem(value: 'profile', child: Text(l10n.profile)),
                         PopupMenuItem(value: 'settings', child: Text(l10n.settingsAppBar)),
                       ],
                     ),
                   ],
                   bottom: items.isEmpty
                       ? null
-                      : PreferredSize(
-                          preferredSize: const Size.fromHeight(135),
-                          child: Container(
-                            color: theme.colorScheme.surface,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                '${purchased.length} de ${items.length} itens',
-                                                style: theme.textTheme.labelMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                                              ),
-                                              if (budget > 0)
-                                                Text(
-                                                  'Orçamento: ${formatCurrency(budget, currencyCode)}',
-                                                  style: theme.textTheme.labelSmall?.copyWith(
-                                                    color: overBudget ? theme.colorScheme.error : theme.colorScheme.outline,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                            ],
-                                          ),
-                                          Column(
-                                            crossAxisAlignment: CrossAxisAlignment.end,
-                                            children: [
-                                              Text(
-                                                formatCurrency(totalPurchased, currencyCode),
-                                                style: theme.textTheme.titleMedium?.copyWith(
-                                                  color: overBudget ? theme.colorScheme.error : theme.colorScheme.primary,
-                                                  fontWeight: FontWeight.w900,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Total: ${formatCurrency(totalEstimated, currencyCode)}',
-                                                style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.outline),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(height: 8),
-                                      Stack(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius: BorderRadius.circular(RadiusTokens.full),
-                                            child: LinearProgressIndicator(
-                                              value: progress,
-                                              minHeight: 8,
-                                              backgroundColor: theme.colorScheme.surfaceContainerHighest,
-                                              valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
-                                            ),
-                                          ),
-                                          if (budget > 0)
-                                            Positioned.fill(
-                                              child: FractionallySizedBox(
-                                                alignment: Alignment.centerLeft,
-                                                widthFactor: budgetProgress > 1.0 ? 1.0 : budgetProgress,
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(RadiusTokens.full),
-                                                    color: (overBudget ? Colors.red : Colors.orange).withAlpha(100),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                  child: Row(
-                                    children: [
-                                      FilterChip(
-                                        label: Text(l10n.filterAll),
-                                        selected: _filter == FilterType.all,
-                                        onSelected: (s) => setState(() => _filter = FilterType.all),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
-                                      ),
-                                      const SizedBox(width: 8),
-                                      FilterChip(
-                                        label: Text(l10n.filterPending),
-                                        selected: _filter == FilterType.pending,
-                                        onSelected: (s) => setState(() => _filter = FilterType.pending),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
-                                      ),
-                                      const SizedBox(width: 8),
-                                      FilterChip(
-                                        label: Text(l10n.filterPurchased),
-                                        selected: _filter == FilterType.purchased,
-                                        onSelected: (s) => setState(() => _filter = FilterType.purchased),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
-                                      ),
-                                      const SizedBox(width: 12),
-                                      Container(width: 1, height: 24, color: theme.colorScheme.outlineVariant),
-                                      const SizedBox(width: 12),
-                                      ActionChip(
-                                        avatar: const Icon(Icons.sort, size: 16),
-                                        label: Text(_getSortLabel()),
-                                        onPressed: _showSortOptions,
-                                        side: BorderSide.none,
-                                        backgroundColor: theme.colorScheme.surfaceContainerLow,
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.full)),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                      : ProgressInfoHeader(
+                          purchasedCount: purchased.length,
+                          totalItems: items.length,
+                          totalEstimated: totalEstimated,
+                          totalPurchased: totalPurchased,
+                          progress: progress,
+                          budget: budget,
+                          overBudget: overBudget,
+                          budgetProgress: budgetProgress,
+                          filter: _filter,
+                          sortLabel: _getSortLabel(context),
+                          currencyCode: currencyCode,
+                          onFilterChanged: (f) => setState(() => _filter = f),
+                          onSortPressed: () => showSortOptionsSheet(
+                            context,
+                            currentSort: _sort,
+                            onSortChanged: (s) => setState(() => _sort = s),
                           ),
                         ),
                 ),
               if (_shoppingMode && pending.isEmpty && items.isNotEmpty)
                 SliverFillRemaining(
                   hasScrollBody: false,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.check_circle_outline, size: 80, color: Colors.green),
-                        const SizedBox(height: 16),
-                        Text(
-                          'Tudo pronto!',
-                          style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Você completou sua lista.',
-                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                        ),
-                        const SizedBox(height: 24),
-                        FilledButton(
-                          onPressed: () => setState(() => _shoppingMode = false),
-                          child: Text(l10n.exitShoppingMode),
-                        ),
-                      ],
-                    ),
+                  child: ShoppingCompletionView(
+                    onExitShoppingMode: () => setState(() => _shoppingMode = false),
                   ),
                 ),
               if (items.isEmpty)
@@ -524,34 +367,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
               else ...[
                 if (_showGestureHint && items.isNotEmpty)
                   SliverToBoxAdapter(
-                    child: GestureDetector(
-                      onTap: _dismissGestureHint,
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.info_outline,
-                              size: 14,
-                              color: Theme.of(context).colorScheme.onSurfaceVariant,
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              l10n.gestureHint,
-                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    child: GestureHintBanner(onDismiss: _dismissGestureHint),
                   ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
                   SliverList(
@@ -628,18 +444,9 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
             )
           : null,
       bottomNavigationBar: _selectionMode
-          ? BottomAppBar(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TextButton.icon(icon: const Icon(Icons.close), label: Text(l10n.cancel), onPressed: _exitSelectionMode),
-                  TextButton.icon(
-                    icon: const Icon(Icons.delete_outline, color: Colors.red),
-                    label: const Text('Excluir', style: TextStyle(color: Colors.red)),
-                    onPressed: _deleteSelected,
-                  ),
-                ],
-              ),
+          ? SelectionBottomBar(
+              onCancel: _exitSelectionMode,
+              onDelete: _deleteSelected,
             )
           : Column(
               mainAxisSize: MainAxisSize.min,
@@ -655,21 +462,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     showDialog<void>(context: context, builder: (_) => BudgetDialog(list: list));
   }
 
-  void _showExportOptions(List<ShoppingItem> items) {
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (context) {
-        final l10n = AppLocalizations.of(context)!;
-        return SafeArea(
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            ListTile(leading: const Icon(Icons.picture_as_pdf, color: Colors.red), title: Text(l10n.exportPdf), onTap: () { Navigator.pop(context); _exportPdf(items); }),
-            ListTile(leading: const Icon(Icons.table_chart, color: Colors.green), title: Text(l10n.exportExcel), onTap: () { Navigator.pop(context); _exportExcel(items); }),
-          ]),
-        );
-      },
-    );
-  }
-
   Future<void> _exportPdf(List<ShoppingItem> items) async {
     final l10n = AppLocalizations.of(context)!;
     final pdf = pw.Document();
@@ -678,7 +470,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
       pw.Divider(),
       pw.SizedBox(height: 20),
       ...items.map((item) => pw.Row(mainAxisAlignment: pw.MainAxisAlignment.spaceBetween, children: [
-        pw.Text('${item.isPurchased ? "[X] " : "[ ] "} ${item.name} (${item.quantity} ${item.unit.name})'),
+        pw.Text('${item.isPurchased ? "☑ " : "☐ "}${item.name} (${item.quantity} ${item.unit.name})'),
         if (item.estimatedPrice != null) pw.Text(formatCurrency(item.estimatedPrice! * item.quantity, ref.read(currencySettingProvider).value ?? 'BRL')),
       ])),
     ])));
@@ -702,25 +494,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     }
   }
 
-  void _showShareBottomSheet(List<ShoppingItem> items, String? listName) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (context) => SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(l10n.shareListTitle, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
-            const SizedBox(height: 16),
-            ListTile(leading: const Icon(Icons.text_fields), title: Text(l10n.share), subtitle: Text(l10n.shareAsText), onTap: () { Navigator.pop(context); _shareList(items, listName); }),
-            ListTile(leading: const Icon(Icons.cloud_sync, color: AppColors.premiumAmber), title: Text(l10n.shareViaCode), subtitle: Text(l10n.shareRealtime), onTap: () async { Navigator.pop(context); await _shareViaCode(); }),
-          ]),
-        ),
-      ),
-    );
-  }
-
   void _showInviteSheet(String listId) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -741,7 +514,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                 subtitle: Text(l10n.shareRealtime),
                 onTap: () {
                   Navigator.pop(context);
-                  _shareViaCode();
+                  unawaited(shareViaCode(context, ref, widget.listId));
                 },
               ),
               ListTile(
@@ -750,7 +523,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                 subtitle: Text(l10n.shareAppDescription),
                 onTap: () {
                   Navigator.pop(context);
-                  _shareReferral();
+                  shareReferral(context);
                 },
               ),
             ],
@@ -760,58 +533,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     );
   }
 
-  void _shareReferral() {
-    final l10n = AppLocalizations.of(context)!;
-    SharePlus.instance.share(ShareParams(
-      text: l10n.shareReferralText('https://kipilist.com/invite'),
-      subject: l10n.shareReferralSubject,
-    ));
-  }
-
-  Future<void> _shareList(List<ShoppingItem> items, String? listName) async {
-    final l10n = AppLocalizations.of(context)!;
-    if (items.isEmpty) {
-      return;
-    }
-    final text = items.asMap().entries.map((e) {
-      final i = e.value;
-      return '${e.key + 1}. ${i.name} — ${i.quantity}${i.unit.label}';
-    }).join('\n');
-    await SharePlus.instance.share(ShareParams(text: text, subject: listName ?? l10n.shareSubject));
-  }
-
-  Future<void> _shareViaCode() async {
-    final isPremium = await ref.read(premiumProvider.future);
-    if (!isPremium) {
-      if (!mounted) {
-        return;
-      }
-      await Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
-      return;
-    }
-    try {
-      final code = await ref.read(shareServiceProvider).createShareCode(widget.listId);
-      if (!mounted) {
-        return;
-      }
-      await showDialog<void>(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Text(AppLocalizations.of(context)!.shareListTitle),
-          content: Column(mainAxisSize: MainAxisSize.min, children: [
-            Text(AppLocalizations.of(context)!.shareThisCode),
-            const SizedBox(height: 16),
-            SelectableText(code, style: Theme.of(context).textTheme.headlineLarge?.copyWith(letterSpacing: 4, fontWeight: FontWeight.w800)),
-          ]),
-          actions: [TextButton(onPressed: () => Navigator.pop(context), child: Text(AppLocalizations.of(context)!.close))],
-        ),
-      );
-    } on Object catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
-      }
-    }
-  }
 }
 
 class _CatalogEntryButton extends ConsumerWidget {
@@ -872,4 +593,3 @@ class ShoppingSearchDelegate extends SearchDelegate<String> {
     return ListView.builder(itemCount: results.length, itemBuilder: (context, index) => ShoppingItemTile(listId: listId, item: results[index]));
   }
 }
-// coverage:ignore-end

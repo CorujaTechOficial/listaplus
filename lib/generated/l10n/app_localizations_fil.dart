@@ -299,6 +299,15 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
+  String get scanProductTitle => 'Scan Product';
+
+  @override
+  String get positionBarcodeCenter => 'Position the barcode in the center';
+
+  @override
+  String get product => 'Product';
+
+  @override
   String get settingsAppBar => 'Mga Setting';
 
   @override
@@ -385,6 +394,44 @@ class AppLocalizationsFil extends AppLocalizations {
   String get termsOfUse => 'Mga tuntunin ng paggamit';
 
   @override
+  String get myAchievements => 'My Achievements';
+
+  @override
+  String get itemsPurchased => 'Items Purchased';
+
+  @override
+  String get totalSavings => 'Total Savings';
+
+  @override
+  String get currentStreak => 'Current Streak';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '$count day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Unlocked Badges';
+
+  @override
+  String get badgeBeginner => 'Beginner';
+
+  @override
+  String get badgeOrganized => 'Organized';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planner';
+
+  @override
   String get backupTitle => 'Backup';
 
   @override
@@ -467,6 +514,21 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get sortManual => 'Manwal';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased of $total items';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Total: $amount';
+  }
 
   @override
   String get addItem => 'Magdagdag ng Item';
@@ -626,6 +688,15 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
+  String get aiAssistantTitle => 'AI Assistant';
+
+  @override
+  String get closeSheet => 'Close';
+
+  @override
+  String get scanBarcodeTitle => 'Scan Barcode';
+
+  @override
   String get listHelp => 'Paano ako makakatulong sa iyong listahan?';
 
   @override
@@ -651,12 +722,12 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String aiUsageWarning(int remaining) {
-    return '$remaining AI actions left this month — upgrade for unlimited';
+    return '$remaining AI actions left this month — upgrade para sa unlimited';
   }
 
   @override
   String get aiUsageExhausted =>
-      'Monthly AI limit reached. Upgrade to Pro for unlimited →';
+      'Naabot na ang buwanang limitasyon ng AI. Mag-upgrade sa Pro para sa walang limitasyong →';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -739,33 +810,33 @@ class AppLocalizationsFil extends AppLocalizations {
       'Mayroon ka nang subscription? Mag-tap dito para i-restore ito.';
 
   @override
-  String get onboardingMaybeLater => 'Maybe later';
+  String get onboardingMaybeLater => 'Baka mamaya';
 
   @override
   String paywallHeroSubtitlePersonalized(String name) {
-    return 'Hey $name, organize your shopping the right way.';
+    return 'Uy $name, ayusin ang iyong pamimili sa tamang paraan.';
   }
 
   @override
-  String get onboardingSlide1Title => 'Smart Shopping Lists';
+  String get onboardingSlide1Title => 'Mga Smart Shopping List';
 
   @override
   String get onboardingSlide1Body =>
-      'Create and share lists instantly. Kipi adds items automatically based on your habits.';
+      'Lumikha at magbahagi ng mga listahan kaagad. Ang Kipi ay awtomatikong nagdaragdag ng mga item batay sa iyong mga gawi.';
 
   @override
-  String get onboardingSlide2Title => 'Meet Kipi';
+  String get onboardingSlide2Title => 'Kilalanin si Kipi';
 
   @override
   String get onboardingSlide2Body =>
-      'Ask anything — create lists, find recipes, track your pantry, plan your week.';
+      'Magtanong ng kahit ano — gumawa ng mga listahan, maghanap ng mga recipe, subaybayan ang iyong pantry, planuhin ang iyong linggo.';
 
   @override
-  String get onboardingSlide3Title => 'Pantry & Meal Planning';
+  String get onboardingSlide3Title => 'Pantry at Pagpaplano ng Pagkain';
 
   @override
   String get onboardingSlide3Body =>
-      'Track what you have, plan meals, and generate shopping lists automatically.';
+      'Subaybayan kung ano ang mayroon ka, magplano ng mga pagkain, at awtomatikong bumuo ng mga listahan ng pamimili.';
 
   @override
   String get onboardingExit => 'Lumabas';
@@ -875,10 +946,29 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
-  String get noListSelected => 'No list selected. Open a list first.';
+  String get noListSelected =>
+      'Walang napiling listahan. Magbukas muna ng listahan.';
 
   @override
   String get paywallFeaturesTitle => 'Lahat ng kailangan mo:';
+
+  @override
+  String get paywallFeatureDescAssistant =>
+      'Awtomatikong inaayos ng AI ang iyong listahan';
+
+  @override
+  String get paywallFeatureDescUnlimitedLists =>
+      'Gumawa ng maraming listahan hangga\'t kailangan mo';
+
+  @override
+  String get paywallFeatureDescSharing => 'Mamili nang magkasama sa real time';
+
+  @override
+  String get paywallFeatureDescPantry =>
+      'Subaybayan kung ano ang mayroon ka sa bahay';
+
+  @override
+  String get paywallFeatureDescBudget => 'Manatili sa badyet bawat buwan';
 
   @override
   String get paywallFeatureUnlimitedLists => 'Walang limitasyong mga Listahan';
@@ -989,11 +1079,12 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String paywallTrialInCard(int days) {
-    return 'First $days days FREE';
+    return 'Unang $days araw na LIBRE';
   }
 
   @override
-  String get paywallSecuredByStore => 'Secured by Google Play · Cancel anytime';
+  String get paywallSecuredByStore =>
+      'Na-secure ng Google Play · Kanselahin anumang oras';
 
   @override
   String get paywallPolicy => 'Patakaran sa Privacy';
@@ -1746,7 +1837,7 @@ class AppLocalizationsFil extends AppLocalizations {
       'Anyayahan ang mga kaibigan na gumamit ng KipiList';
 
   @override
-  String shareReferralText(Object url) {
+  String shareReferralText(String url) {
     return 'Gumagamit ako ng KipiList para ayusin ang aking pamimili! I-download sa pamamagitan ng aking link at pareho tayong makakakuha ng 7 araw ng Premium na libre: $url';
   }
 
@@ -1837,944 +1928,513 @@ class AppLocalizationsFil extends AppLocalizations {
   String get notInformed => 'Hindi alam';
 
   @override
-  String get skip => 'Skip';
+  String get skip => 'Laktawan';
 
   @override
-  String get onboardingAiTitle => 'Chat with Kipi';
+  String get onboardingAiTitle => 'Makipag-chat kay Kipi';
 
   @override
   String get onboardingAiGreeting =>
-      'Hi! I\'m Kipi, your personal shopping assistant! 🛒';
+      'Hi! Ako si Kipi, ang iyong personal na shopping assistant! 🛒';
 
   @override
-  String get onboardingAiAskName => 'What\'s your name?';
+  String get onboardingAiAskName => 'ano pangalan mo';
 
   @override
-  String get onboardingAiNameHint => 'Type your name...';
+  String get onboardingAiNameHint => 'I-type ang iyong pangalan...';
 
   @override
   String onboardingAiNiceToMeet(String name) {
-    return 'Nice to meet you, $name! 🎉';
+    return 'Ikinagagalak kitang makilala, $name! 🎉';
   }
 
   @override
-  String get onboardingAiAskFood => 'What\'s your favorite food?';
+  String get onboardingAiAskFood => 'Ano ang paborito mong pagkain?';
 
   @override
-  String get onboardingAiFoodHint => 'e.g. Pizza, Sushi...';
+  String get onboardingAiFoodHint => 'hal. Pizza, Sushi...';
 
   @override
   String onboardingAiIngredients(String ingredients) {
-    return 'Great choices! Here\'s what I\'d add to your list:\n\n$ingredients\n\n---';
+    return 'Mahusay na pagpipilian! Narito ang idaragdag ko sa iyong listahan:\n\n$ingredients\n\n---';
   }
 
   @override
   String get onboardingAiAskConfirm =>
-      'Does this look good? Try typing something else!';
+      'Mukhang maganda ba ito? Subukang mag-type ng iba pa!';
 
   @override
   String get onboardingAiReady =>
-      'Great! You\'re ready to start. Let\'s set up your account!';
+      'Mahusay! Handa ka nang magsimula. I-set up natin ang iyong account!';
 
   @override
-  String get onboardingAiContinue => 'Continue →';
+  String get onboardingAiContinue => 'Magpatuloy →';
 
   @override
-  String get errorRenderScreen =>
-      'Oops! Something went wrong rendering this screen.';
+  String get connectionError => 'Error sa koneksyon';
 
   @override
-  String get connectionError => 'Connection Error';
-
-  @override
-  String connectionErrorDesc(Object error) {
-    return 'Could not connect to the server. Check your internet.\n($error)';
+  String connectionErrorDesc(String error) {
+    return 'Error: $error';
   }
 
   @override
-  String get errorLoadingLists => 'Error loading lists';
+  String get errorLoadingLists => 'Error sa paglo-load ng mga listahan';
 
   @override
-  String get noListsFound => 'No lists found';
-
-  @override
-  String get unlockPremiumTitle => 'Unlock unlimited lists, AI and more';
-
-  @override
-  String get loadingSubscription => 'Loading subscription...';
-
-  @override
-  String get errorLoadingSubscription => 'Error loading subscription';
-
-  @override
-  String get profileSection => 'Profile';
-
-  @override
-  String get myProfile => 'My Profile';
-
-  @override
-  String get profileSubtitle => 'Personal preferences for the AI assistant';
-
-  @override
-  String get manageCategories => 'Manage Categories';
-
-  @override
-  String get manageCategoriesSubtitle => 'Manage item categories';
-
-  @override
-  String get profileSaved => 'Profile saved successfully!';
-
-  @override
-  String errorSavingProfile(Object error) {
-    return 'Error saving: $error';
-  }
-
-  @override
-  String get userProfile => 'User Profile';
-
-  @override
-  String get saveProfile => 'Save Profile';
-
-  @override
-  String get profileDescription =>
-      'Tell us your personal preferences so the AI assistant can suggest personalized items and recipes.';
-
-  @override
-  String get preferredMarket => 'Preferred Market';
-
-  @override
-  String get preferredMarketHint => 'E.g.: Supermarket X';
-
-  @override
-  String get dietaryRestrictions => 'Dietary Restrictions';
-
-  @override
-  String get dietaryRestrictionsHint => 'E.g.: vegan, vegetarian, gluten-free';
-
-  @override
-  String get marketsToAvoid => 'Markets to Avoid';
-
-  @override
-  String get marketsToAvoidHint => 'E.g.: Market Y, Market Z';
-
-  @override
-  String get observations => 'Notes';
-
-  @override
-  String get observationsHint => 'Other preferences for the assistant';
-
-  @override
-  String get manageCategoriesTitle => 'Pamahalaan ang Mga Kategorya';
-
-  @override
-  String get categoryLimitReached =>
-      'Limit of 10 categories on the free version. Upgrade to Pro!';
-
-  @override
-  String get noCategories => 'No categories.';
-
-  @override
-  String get deleteCategoryTitle => 'Delete Category';
-
-  @override
-  String deleteCategoryConfirm(Object category) {
-    return 'Items in category \"$category\" will be moved to \"Others\".\nContinue?';
-  }
-
-  @override
-  String get deleteCategory => 'Delete';
-
-  @override
-  String get myAchievements => 'My Achievements';
-
-  @override
-  String get itemsPurchased => 'Items Purchased';
-
-  @override
-  String get totalSavings => 'Total Savings';
-
-  @override
-  String get currentStreak => 'Current Streak';
-
-  @override
-  String streakDays(Object days) {
-    return '$days days';
-  }
-
-  @override
-  String get chooseThemeColor => 'Choose Theme Color';
-
-  @override
-  String get errorLoadingHistory => 'Error loading history';
-
-  @override
-  String get deleteConversationTitle => 'Delete Conversation?';
-
-  @override
-  String get deleteConversationConfirm => 'This action cannot be undone.';
-
-  @override
-  String get deleteConversation => 'Delete';
-
-  @override
-  String get unlockWithAd => 'Unlock with Ad';
-
-  @override
-  String get aiPremiumDescription =>
-      'This interactive interface uses advanced artificial intelligence and is exclusive to Pro members or via a quick ad.';
-
-  @override
-  String get sortAZ => 'A–Z';
-
-  @override
-  String get categoryNameHint => 'E.g.: Meats';
-
-  @override
-  String get color => 'Color:';
-
-  @override
-  String get icon => 'Icon:';
-
-  @override
-  String get scanBarcode => 'Scan Barcode';
-
-  @override
-  String get scanProduct => 'Scan Product';
-
-  @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
-
-  @override
-  String replaceItem(Object name) {
-    return 'Replace $name';
-  }
-
-  @override
-  String get selectCheaperAlternative =>
-      'Select a cheaper product alternative to optimize cost.';
-
-  @override
-  String get swap => 'Swap';
-
-  @override
-  String itemAdded(Object name) {
-    return '$name added';
-  }
-
-  @override
-  String errorLoadingProducts(Object error) {
-    return 'Error loading products: $error';
-  }
-
-  @override
-  String get mealType => 'Meal type';
-
-  @override
-  String get requestTimeout => 'Sorry, the request timed out.';
-
-  @override
-  String get connectionError2 => 'Sorry, a connection error occurred.';
-
-  @override
-  String get addingItems => 'Adding items to list...';
-
-  @override
-  String get removingItems => 'Removing items...';
-
-  @override
-  String get updatingItem => 'Updating item...';
-
-  @override
-  String get checkingItem => 'Checking item...';
-
-  @override
-  String get uncheckingItem => 'Unchecking item...';
-
-  @override
-  String get clearingCheckedItems => 'Clearing checked items...';
-
-  @override
-  String get reorganizingList => 'Reorganizing list...';
-
-  @override
-  String get creatingNewList => 'Creating new list...';
-
-  @override
-  String get removingList => 'Removing list...';
-
-  @override
-  String get renamingList => 'Renaming list...';
-
-  @override
-  String get queryingYourLists => 'Querying your lists...';
-
-  @override
-  String get settingBudget => 'Setting budget...';
-
-  @override
-  String get checkingPantry => 'Checking your pantry...';
-
-  @override
-  String get addingToPantry => 'Adding to pantry...';
-
-  @override
-  String get removingFromPantry => 'Removing from pantry...';
-
-  @override
-  String get updatingPantry => 'Updating pantry...';
-
-  @override
-  String get savingRecipe => 'Saving recipe...';
-
-  @override
-  String get searchingRecipes => 'Searching recipes...';
-
-  @override
-  String get removingRecipe => 'Removing recipe...';
-
-  @override
-  String get addingIngredientsToList => 'Adding ingredients to list...';
-
-  @override
-  String get organizingMenu => 'Organizing your menu...';
-
-  @override
-  String get loadingMenu => 'Loading your menu...';
-
-  @override
-  String get updatingMenu => 'Updating menu...';
-
-  @override
-  String get searchingCategories => 'Searching categories...';
-
-  @override
-  String get categorizingItems => 'Categorizing items...';
-
-  @override
-  String get generatingShareLink => 'Generating share link...';
-
-  @override
-  String get searchingSharedList => 'Searching shared list...';
-
-  @override
-  String get loadingProfile => 'Loading your profile...';
-
-  @override
-  String get savingPreferences => 'Saving your preferences...';
-
-  @override
-  String get checkingSettings => 'Checking your settings...';
-
-  @override
-  String get generatingContent => 'Generating personalized content...';
-
-  @override
-  String get searchingProducts => 'Searching products...';
-
-  @override
-  String get estimatingPrices => 'Estimating prices...';
-
-  @override
-  String get processing => 'Processing...';
-
-  @override
-  String get shoppingList => 'Shopping List';
-
-  @override
-  String get purchasedSuffix => ' [Purchased]';
-
-  @override
-  String get listUnarchived => 'List unarchived successfully.';
-
-  @override
-  String get toolDeleteList => 'Delete list';
-
-  @override
-  String get toolAddItems => 'Add items';
-
-  @override
-  String get toolRemoveItems => 'Remove items';
-
-  @override
-  String get toolAddToPantry => 'Add to pantry';
-
-  @override
-  String get toolRemoveFromPantry => 'Remove from pantry';
-
-  @override
-  String get toolShareList => 'Share list';
-
-  @override
-  String get toolSaveRecipe => 'Save recipe';
-
-  @override
-  String get toolDeleteRecipe => 'Delete recipe';
-
-  @override
-  String get toolRemoveMeal => 'Remove meal';
-
-  @override
-  String get toolSavePreference => 'Save preference';
-
-  @override
-  String get toolRemovePreference => 'Remove preference';
-
-  @override
-  String currentTheme(Object mode) {
-    return 'Current theme: $mode';
-  }
-
-  @override
-  String themeChanged(Object mode) {
-    return 'Theme changed to $mode.';
-  }
-
-  @override
-  String get addToList => 'Add to List';
-
-  @override
-  String errorAddingItem(Object error) {
-    return 'Error adding item: $error';
-  }
-
-  @override
-  String errorAddingBatch(Object error) {
-    return 'Error adding items in batch: $error';
-  }
-
-  @override
-  String errorTogglingItem(Object error) {
-    return 'Error toggling item status: $error';
-  }
-
-  @override
-  String errorRemovingItem(Object error) {
-    return 'Error removing item: $error';
-  }
-
-  @override
-  String errorUpdatingItem(Object error) {
-    return 'Error updating item: $error';
-  }
-
-  @override
-  String errorUpdatingItems(Object error) {
-    return 'Error updating items: $error';
-  }
-
-  @override
-  String errorRestoringItem(Object error) {
-    return 'Error restoring item: $error';
-  }
-
-  @override
-  String errorIncreasingQty(Object error) {
-    return 'Error increasing quantity: $error';
-  }
-
-  @override
-  String errorDecreasingQty(Object error) {
-    return 'Error decreasing quantity: $error';
-  }
-
-  @override
-  String errorClearingList(Object error) {
-    return 'Error clearing list: $error';
-  }
-
-  @override
-  String errorClearingPurchased(Object error) {
-    return 'Error clearing purchased items: $error';
-  }
-
-  @override
-  String errorRemovingItems(Object error) {
-    return 'Error removing items: $error';
-  }
-
-  @override
-  String errorTogglingItems(Object error) {
-    return 'Error toggling items: $error';
-  }
-
-  @override
-  String errorReordering(Object error) {
-    return 'Error reordering item: $error';
-  }
-
-  @override
-  String get errorCreatingList => 'Error creating list';
-
-  @override
-  String errorServerConnection(Object error) {
-    return 'Error connecting to server: $error';
-  }
-
-  @override
-  String errorUpdatingList(Object error) {
-    return 'Error updating list: $error';
-  }
-
-  @override
-  String errorDeletingList(Object error) {
-    return 'Error deleting list: $error';
-  }
-
-  @override
-  String errorRemovingSharedList(Object error) {
-    return 'Error removing shared list: $error';
-  }
-
-  @override
-  String errorSettingCurrentList(Object error) {
-    return 'Error setting current list: $error';
-  }
-
-  @override
-  String errorArchivingList(Object error) {
-    return 'Error archiving list: $error';
-  }
-
-  @override
-  String errorUnarchivingList(Object error) {
-    return 'Error unarchiving list: $error';
-  }
-
-  @override
-  String get errorUserNotAuthenticated => 'User not authenticated.';
-
-  @override
-  String get errorGeneratingCode => 'Error generating unique code. Try again.';
-
-  @override
-  String pantryLimitReached(Object count) {
-    return 'Limit of $count items in pantry on the free plan. Upgrade to add more.';
-  }
-
-  @override
-  String errorImportingList(Object name, Object error) {
-    return 'Error importing list \"$name\": $error';
-  }
-
-  @override
-  String errorExecutingTool(Object tool, Object error) {
-    return 'Error executing $tool: $error';
-  }
-
-  @override
-  String get errorProcessingRequest =>
-      'Sorry, an error occurred while processing your request. Check your connection or try again later.';
-
-  @override
-  String get couldNotProcess => 'Could not process after multiple attempts.';
-
-  @override
-  String get errorResumingProcessing => 'Error resuming processing.';
-
-  @override
-  String get errorResumingLoop => '[ResumeLoop] Error resuming loop';
-
-  @override
-  String get othersCategory => 'Others';
-
-  @override
-  String get monthJanuary => 'January';
-
-  @override
-  String get monthFebruary => 'February';
-
-  @override
-  String get monthMarch => 'March';
-
-  @override
-  String get monthApril => 'April';
-
-  @override
-  String get monthMay => 'May';
-
-  @override
-  String get monthJune => 'June';
-
-  @override
-  String get monthJuly => 'July';
-
-  @override
-  String get monthAugust => 'August';
-
-  @override
-  String get monthSeptember => 'September';
-
-  @override
-  String get monthOctober => 'October';
-
-  @override
-  String get monthNovember => 'November';
-
-  @override
-  String get monthDecember => 'December';
-
-  @override
-  String get dayMon => 'Mon';
-
-  @override
-  String get dayTue => 'Tue';
-
-  @override
-  String get dayWed => 'Wed';
-
-  @override
-  String get dayThu => 'Thu';
-
-  @override
-  String get dayFri => 'Fri';
-
-  @override
-  String get daySat => 'Sat';
-
-  @override
-  String get daySun => 'Sun';
-
-  @override
-  String get subscription => 'Subscription';
-
-  @override
-  String get kipiListProActive => 'KipiList Pro active';
-
-  @override
-  String get customizeAiAssistant => 'Customize AI Assistant';
-
-  @override
-  String get assistantHistory => 'Assistant History';
-
-  @override
-  String get assistantHistorySubtitle => 'View and search past conversations';
-
-  @override
-  String get customizeAssistant => 'Customize Assistant';
-
-  @override
-  String get assistantName => 'Assistant Name';
-
-  @override
-  String get chooseIcon => 'Choose an Icon:';
+  String get noListsFound => 'Walang nakitang listahan';
 
   @override
   String get backToToday => 'Bumalik sa ngayon';
 
   @override
-  String get conversationHistoryTitle => 'Conversation History';
+  String get quickSuggestions => 'Mabilis na mga mungkahi';
 
   @override
-  String get noConversationsFound => 'No conversations found';
+  String get aiEnergyLow => 'Mababang enerhiya ng AI';
 
   @override
-  String get newConversationDefaultTitle => 'New Conversation';
-
-  @override
-  String get unlockedBadges => 'Unlocked Badges';
-
-  @override
-  String get badgeBeginner => 'Beginner';
-
-  @override
-  String get badgeOrganized => 'Organized';
-
-  @override
-  String get badgeSavingMaster => 'Saving Master';
-
-  @override
-  String get badgeSuperPlanner => 'Super Planner';
-
-  @override
-  String get aiEnergyLow => 'You\'re almost out of energy!';
-
-  @override
-  String get aiUnlockUnlimited => 'Unlock unlimited AI';
+  String get aiUnlockUnlimited => 'I-unlock ang walang limitasyong AI';
 
   @override
   String aiRemainingFreeToday(int remaining) {
-    return 'Only $remaining free messages left today. Subscribe to Premium and stop worrying about limits.';
+    String _temp0 = intl.Intl.pluralLogic(
+      remaining,
+      locale: localeName,
+      other: 'free messages',
+      one: 'free message',
+    );
+    return '$remaining $_temp0 ngayon';
   }
 
   @override
   String get aiSubscribeUnlimited =>
-      'Subscribe to Premium and use the AI chat as much as you want. No counting, no limits.';
+      'Mag-subscribe para sa walang limitasyong AI';
 
   @override
-  String get suggestedItems => 'Suggested Items';
+  String get unlockWithAd => 'I-unlock gamit ang ad';
 
   @override
-  String get swapped => 'Swapped';
+  String get conversationHistoryTitle => 'Kasaysayan ng pag-uusap';
 
   @override
-  String get newCategoryDialog => 'New Category';
+  String get noConversationsFound => 'Walang nakitang pag-uusap';
 
   @override
-  String get editCategoryDialog => 'Edit Category';
+  String get errorLoadingHistory => 'Error sa paglo-load ng history';
 
   @override
-  String get categoryName => 'Name';
+  String get deleteConversationTitle => 'Tanggalin ang pag-uusap';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get deleteConversationConfirm =>
+      'Ang pagkilos na ito ay hindi maaaring i-undo.';
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get deleteConversation => 'Tanggalin';
 
   @override
-  String get categoryColorLabel => 'Color:';
+  String get subscription => 'Subscription';
 
   @override
-  String get categoryIconLabel => 'Icon:';
+  String get kipiListProActive => 'Aktibo ang KipiList Pro';
 
   @override
-  String get product => 'Product';
+  String get unlockPremiumTitle => 'I-unlock ang Premium';
 
   @override
-  String get everythingReady => 'Everything ready!';
+  String get loadingSubscription => 'Nilo-load ang subscription...';
 
   @override
-  String get youCompletedList => 'You completed your list.';
+  String get errorLoadingSubscription => 'Error sa paglo-load ng subscription';
 
   @override
-  String get allSet => 'All set!';
+  String get profileSection => 'Profile';
 
   @override
-  String itemsCount(int purchased, int total) {
-    return '$purchased of $total items';
+  String get myProfile => 'Aking profile';
+
+  @override
+  String get profileSubtitle => 'Ang iyong impormasyon sa profile';
+
+  @override
+  String get customizeAiAssistant => 'I-customize ang AI assistant';
+
+  @override
+  String get assistantHistory => 'Kasaysayan ng assistant';
+
+  @override
+  String get assistantHistorySubtitle =>
+      'Tingnan ang iyong kasaysayan ng pag-uusap';
+
+  @override
+  String get manageCategories => 'Pamahalaan ang mga kategorya';
+
+  @override
+  String get manageCategoriesSubtitle =>
+      'Magdagdag, mag-edit o mag-alis ng mga kategorya';
+
+  @override
+  String get customizeAssistant => 'I-customize';
+
+  @override
+  String get assistantName => 'Pangalan ng Assistant';
+
+  @override
+  String get chooseIcon => 'Pumili ng icon';
+
+  @override
+  String get profileSaved => 'Na-save ang profile';
+
+  @override
+  String get errorSavingProfile => 'Error sa pag-save ng profile';
+
+  @override
+  String get userProfile => 'Profile ng gumagamit';
+
+  @override
+  String get profileDescription => 'Paglalarawan ng profile';
+
+  @override
+  String get preferredMarket => 'Ginustong merkado';
+
+  @override
+  String get preferredMarketHint => 'Saan ka kadalasang namimili?';
+
+  @override
+  String get dietaryRestrictions => 'Mga paghihigpit sa pagkain';
+
+  @override
+  String get dietaryRestrictionsHint => 'Anumang mga paghihigpit sa pagkain?';
+
+  @override
+  String get marketsToAvoid => 'Mga pamilihan na dapat iwasan';
+
+  @override
+  String get marketsToAvoidHint =>
+      'Mga palengke na mas gusto mong hindi mamili';
+
+  @override
+  String get observations => 'Mga obserbasyon';
+
+  @override
+  String get observationsHint => 'Anumang karagdagang mga tala?';
+
+  @override
+  String get saveProfile => 'I-save ang profile';
+
+  @override
+  String get everythingReady => 'Handa na ang lahat!';
+
+  @override
+  String get youCompletedList => 'Nakumpleto mo ang listahan!';
+
+  @override
+  String get selectCheaperAlternative => 'Pumili ng mas murang alternatibo';
+
+  @override
+  String get suggestedItems => 'Mga iminungkahing item';
+
+  @override
+  String get swapped => 'Pinagpalit';
+
+  @override
+  String get swap => 'Magpalit';
+
+  @override
+  String get chooseThemeColor => 'Pumili ng kulay ng tema';
+
+  @override
+  String get manageCategoriesTitle => 'Pamahalaan ang Mga Kategorya';
+
+  @override
+  String get categoryLimitReached => 'Naabot na ang limitasyon ng kategorya';
+
+  @override
+  String get deleteCategoryTitle => 'Tanggalin ang kategorya';
+
+  @override
+  String deleteCategoryConfirm(String category) {
+    return 'Ang mga item sa \"$category\" ay ililipat sa \"Iba pa\".\nMagpatuloy?';
   }
 
   @override
-  String budgetLabel(String amount) {
-    return 'Budget: $amount';
-  }
+  String get deleteCategory => 'Tanggalin';
 
   @override
-  String totalLabel(String amount) {
-    return 'Total: $amount';
-  }
+  String get newCategoryDialog => 'Bagong kategorya';
 
   @override
-  String get quickSuggestions => 'Quick suggestions';
+  String get editCategoryDialog => 'I-edit ang kategorya';
 
   @override
-  String get saved => 'Saved';
+  String get categoryName => 'Pangalan ng kategorya';
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get categoryNameHint => 'Ipasok ang pangalan ng kategorya';
 
   @override
-  String get closeSheet => 'Close';
+  String get categoryColorLabel => 'Kulay';
 
   @override
-  String get editAssistantName => 'Edit Assistant Name';
-
-  @override
-  String get selectAssistantIcon => 'Select Assistant Icon';
+  String get categoryIconLabel => 'Icon';
 
   @override
   String itemAddedSnack(String name) {
-    return '$name added';
+    return '$name idinagdag';
   }
 
   @override
-  String quantityWithUnit(String quantity, String unit) {
-    return '$quantity $unit';
+  String get kipiQuickBarHint => 'Ano ang kailangan mong bilhin?';
+
+  @override
+  String replaceItem(String item) {
+    return 'Palitan ang $item';
   }
 
   @override
-  String quantityUnitWithPrice(String quantity, String unit, String price) {
-    return '$quantity $unit • $price';
+  String quantityWithUnit(String qty, String unit) {
+    return '$qty $unit';
+  }
+
+  @override
+  String quantityUnitWithPrice(String qty, String unit, String price) {
+    return '$qty $unit — $price';
   }
 
   @override
   String get onboardingHookHeadline =>
-      'Your shopping list with artificial intelligence';
+      'Huwag kailanman kalimutan muli ang isang grocery item';
 
   @override
-  String get onboardingLoginHeadline => 'Sign in in 1 second';
+  String get onboardingGoalSaveMoney => 'Magtipid ng pera';
 
   @override
-  String get onboardingLoginSubtitle =>
-      'Your lists are saved and synced automatically';
+  String get onboardingGoalNeverForget => 'Huwag kalimutan ang mga item';
 
   @override
-  String get onboardingPersonalizationNameLabel => 'What can I call you?';
+  String get onboardingGoalFaster => 'Mamili nang mas mabilis';
 
   @override
-  String get onboardingPersonalizationNameHint => 'Your name (optional)';
+  String get onboardingGoalFamily => 'Ayusin ang pamimili ng pamilya';
 
   @override
-  String get onboardingPersonalizationCategoryTitle =>
-      'What do you organize most often?';
+  String get onboardingGoalRecipes => 'Tumuklas ng mga recipe';
 
   @override
-  String get onboardingPersonalizationGroupTitle =>
-      'Do you shop alone or with others?';
+  String get onboardingGoalPantry => 'Subaybayan ang pantry';
 
   @override
-  String get onboardingCategoryGrocery => '🛒 Grocery';
-
-  @override
-  String get onboardingCategoryPharmacy => '💊 Pharmacy';
-
-  @override
-  String get onboardingCategoryRecipes => '🍽️ Recipes';
-
-  @override
-  String get onboardingCategoryHome => '🏠 Home';
-
-  @override
-  String get onboardingCategoryPet => '🐾 Pet';
-
-  @override
-  String get onboardingGroupSolo => '👤 Just me';
-
-  @override
-  String get onboardingGroupCouple => '👥 With someone';
-
-  @override
-  String get onboardingGroupFamily => '👨‍👩‍👧 Family';
-
-  @override
-  String onboardingAiDemoGreeting(String name, String category) {
-    return 'Hi $name! I see you organize $category 😊';
-  }
-
-  @override
-  String onboardingAiDemoGreetingNoName(String category) {
-    return 'Hi! I see you organize $category 😊';
-  }
-
-  @override
-  String get onboardingAiDemoOffer => 'Want me to build a list right now?';
-
-  @override
-  String get onboardingAiDemoYes => '✅ Yes, build it for me!';
-
-  @override
-  String get onboardingAiDemoChange => '🔄 Different category';
-
-  @override
-  String onboardingAiDemoReaction(int count) {
-    return 'Done! I created $count items for you 🎉';
-  }
-
-  @override
-  String get onboardingAiDemoContinue => 'Amazing! I want more →';
-
-  @override
-  String get onboardingCommitmentsTitle => 'What do you want to achieve?';
+  String get onboardingCommitmentsTitle => 'Ano ang mahalaga sa iyo?';
 
   @override
   String get onboardingCommitmentsSubtitle =>
-      'Choose everything that applies to you';
+      'Piliin ang iyong mga layunin upang i-personalize ang KipiList';
 
   @override
-  String get onboardingGoalSaveMoney => '💰 Spend less at the store';
+  String get onboardingCommitmentsCta => 'Tara na!';
 
   @override
-  String get onboardingGoalNeverForget => '✅ Never forget an item';
+  String get onboardingPersonalizationNameLabel => 'pangalan mo';
 
   @override
-  String get onboardingGoalFaster => '⚡ Shop faster';
+  String get onboardingPersonalizationNameHint => 'Ilagay ang iyong pangalan';
 
   @override
-  String get onboardingGoalFamily => '👨‍👩‍👧 Organize with family';
+  String get onboardingPersonalizationCategoryTitle => 'Ano ang binibili mo?';
 
   @override
-  String get onboardingGoalRecipes => '🍽️ Plan weekly recipes';
+  String get onboardingPersonalizationGroupTitle => 'Kanino ka namimili?';
 
   @override
-  String get onboardingGoalPantry => '📦 Track pantry stock';
+  String get onboardingCategoryGrocery => 'Mga groceries';
 
   @override
-  String get onboardingLoadingTitle => 'Building your plan...';
+  String get onboardingCategoryPharmacy => 'Botika';
 
   @override
-  String get onboardingLoadingStep1 => 'Analyzing your preferences...';
+  String get onboardingCategoryRecipes => 'Mga recipe';
 
   @override
-  String get onboardingLoadingStep2 => 'Setting up your personalized list...';
+  String get onboardingCategoryHome => 'Bahay';
 
   @override
-  String get onboardingLoadingStep3 => 'Your plan is ready! 🎉';
+  String get onboardingCategoryPet => 'Alagang hayop';
 
   @override
-  String get onboardingLoadingStat1Label => 'Average rating';
+  String get onboardingGroupSolo => 'Ako lang';
 
   @override
-  String get onboardingLoadingStat2Label => 'Lists created this week';
+  String get onboardingGroupCouple => 'Mag-asawa';
 
   @override
-  String get onboardingLoadingStat3Label => 'Recommend the app';
+  String get onboardingGroupFamily => 'Pamilya';
+
+  @override
+  String get onboardingLoadingTitle => 'Inihahanda ang iyong karanasan...';
+
+  @override
+  String get onboardingLoadingStep1 => 'Sinusuri ang iyong mga kagustuhan...';
+
+  @override
+  String get onboardingLoadingStep2 => 'Pagse-set up ng AI assistant...';
+
+  @override
+  String get onboardingLoadingStep3 => 'Halos handa na...';
+
+  @override
+  String get onboardingLoadingStat1Label => 'Naka-catalog ang mga item';
+
+  @override
+  String get onboardingLoadingStat2Label => 'Nakatulong ang mga user';
+
+  @override
+  String get onboardingLoadingStat3Label => 'Nai-save ang mga minuto';
 
   @override
   String paywallGoalHeadlineSaveMoney(String name) {
-    return '$name, you\'re 7 days away from spending less on shopping';
+    return '$name, makatipid sa bawat biyahe!';
   }
 
   @override
   String paywallGoalHeadlineNeverForget(String name) {
-    return '$name, you\'re 7 days away from never forgetting an item again';
+    return '$name, huwag kalimutan ang isang item!';
   }
 
   @override
   String paywallGoalHeadlineFaster(String name) {
-    return '$name, you\'re 7 days away from shopping in half the time';
+    return '$name, mamili sa kalahating oras!';
   }
 
   @override
   String paywallGoalHeadlineFamily(String name) {
-    return '$name, you\'re 7 days away from organizing the whole family\'s shopping';
+    return '$name, ayusin ang pamimili ng pamilya!';
   }
 
   @override
   String paywallGoalHeadlineRecipes(String name) {
-    return '$name, you\'re 7 days away from planning your recipes automatically';
+    return '$name, tumuklas ng mga bagong recipe!';
   }
 
   @override
   String paywallGoalHeadlinePantry(String name) {
-    return '$name, you\'re 7 days away from full control of your pantry';
+    return '$name, subaybayan ang iyong pantry nang perpekto!';
   }
 
   @override
-  String get paywallGoalHeadlineNoNameSaveMoney =>
-      'You\'re 7 days away from spending less on shopping';
+  String get paywallGoalHeadlineNoNameSaveMoney => 'Makatipid sa bawat biyahe!';
 
   @override
   String get paywallGoalHeadlineNoNameNeverForget =>
-      'You\'re 7 days away from never forgetting an item again';
+      'Huwag kalimutan ang isang item!';
 
   @override
-  String get paywallGoalHeadlineNoNameFaster =>
-      'You\'re 7 days away from shopping in half the time';
+  String get paywallGoalHeadlineNoNameFaster => 'Mamili sa kalahating oras!';
 
   @override
   String get paywallGoalHeadlineNoNameFamily =>
-      'You\'re 7 days away from organizing the whole family\'s shopping';
+      'Ayusin ang pamimili ng pamilya!';
 
   @override
   String get paywallGoalHeadlineNoNameRecipes =>
-      'You\'re 7 days away from planning your recipes automatically';
+      'Tumuklas ng mga bagong recipe!';
 
   @override
   String get paywallGoalHeadlineNoNamePantry =>
-      'You\'re 7 days away from full control of your pantry';
+      'Subaybayan ang iyong pantry nang perpekto!';
 
   @override
-  String get paywallTestimonial =>
-      '\"I saved R\$180 in the first month by better organizing my shopping\"';
-
-  @override
-  String get paywallTestimonialAuthor => 'Ana R., São Paulo';
-
-  @override
-  String paywallTrialDisclaimer(int days) {
-    return 'Cancel anytime · Charged after $days days';
+  String paywallPricePerDay(String price) {
+    return 'Tanging $price/araw — mas mababa sa isang kape';
   }
 
   @override
-  String get paywallSkipNow => 'Not now';
+  String paywallStrikethroughPrice(String price) {
+    return '$price';
+  }
+
+  @override
+  String get paywallSkipNow => 'Laktawan sa ngayon';
+
+  @override
+  String get paywallTestimonial =>
+      'Inaayos ng AI ang aking pamimili sa ilang segundo. Nagtitipid ako ng 20 min bawat biyahe.';
+
+  @override
+  String get paywallTestimonialAuthor => 'Ann S.';
+
+  @override
+  String get paywallTrialDisclaimer =>
+      'Kanselahin anumang oras · Walang bayad hanggang sa matapos ang iyong pagsubok';
+
+  @override
+  String onboardingAiDemoGreeting(String name, String category) {
+    return 'Hoy $name! Anong $category ang kailangan mo?';
+  }
+
+  @override
+  String onboardingAiDemoGreetingNoName(String category) {
+    return 'Anong $category ang kailangan mo?';
+  }
+
+  @override
+  String get onboardingAiDemoYes => 'Oo!';
+
+  @override
+  String get onboardingAiDemoReaction => 'Ang ganda!';
+
+  @override
+  String get onboardingAiDemoChange => 'Baguhin ang item';
+
+  @override
+  String get onboardingAiDemoOffer => 'Subukang mag-type ng iba pa!';
+
+  @override
+  String get onboardingAiDemoContinue => 'Magpatuloy';
+
+  @override
+  String get onboardingAiDemoSlideHeadline =>
+      'Ang iyong listahan ng pamimili, ngayon ay may AI';
+
+  @override
+  String get onboardingAiDemoSlideSubtitle =>
+      'Tingnan kung paano binubuo ng Kipi ang iyong buong listahan sa loob ng ilang segundo';
+
+  @override
+  String get onboardingAiDemoSlideCta => 'Gusto ko ito! →';
+
+  @override
+  String get onboardingAiDemoSlideUserMsg => 'Nagho-host ako ng barbecue 🔥';
+
+  @override
+  String get onboardingAiDemoSlideReady =>
+      'handa na! Narito ang lahat ng kailangan mo:';
+
+  @override
+  String get onboardingAiDemoSlideDone =>
+      'Kumpletuhin ang listahan sa ilang segundo ✨';
+
+  @override
+  String get onboardingPainTitle => 'Ano ang pinaka nakakadismaya sa iyo?';
+
+  @override
+  String get onboardingPainSubtitle =>
+      'Maging tapat — aayusin natin ang bawat isa';
+
+  @override
+  String get onboardingPainCta => 'Oo, ayusin mo ito para sa akin →';
+
+  @override
+  String get onboardingPainForget => 'Nakalimutan ko ang mga gamit sa tindahan';
+
+  @override
+  String get onboardingPainFamily =>
+      'Hindi nakikita ng pamilya ko ang listahan';
+
+  @override
+  String get onboardingPainOverspend => 'Lagi akong lumalampas sa budget';
+
+  @override
+  String get onboardingPainRepeat =>
+      'Ang isang paglalakbay ay hindi kailanman sapat';
 }
