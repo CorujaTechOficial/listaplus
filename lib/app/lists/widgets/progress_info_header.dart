@@ -37,7 +37,7 @@ class ProgressInfoHeader extends StatelessWidget implements PreferredSizeWidget 
   final VoidCallback onSortPressed;
 
   @override
-  Size get preferredSize => Size.fromHeight(budget > 0 ? 145 : 111);
+  Size get preferredSize => Size.fromHeight(budget > 0 ? 160 : 120);
 
   @override
   Widget build(BuildContext context) {

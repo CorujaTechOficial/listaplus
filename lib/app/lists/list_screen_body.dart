@@ -245,7 +245,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
           
           final budget = currentList?.budget ?? 0.0;
           final overBudget = budget > 0 && totalPurchased > budget;
-          final budgetProgress = budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.1) : 0.0;
+          final budgetProgress = budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.0) : 0.0;
 
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
