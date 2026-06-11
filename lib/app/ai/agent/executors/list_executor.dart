@@ -13,25 +13,32 @@ class ListExecutor {
     final currentId = await AiUtils.awaitFuture(
       container.read(currentListIdProvider.future),
       defaultValue: null,
+      timeout: const Duration(seconds: 5),
       label: 'currentListIdProvider',
     );
     if (currentId != null) {
       return currentId;
     }
-    final lists = await AiUtils.awaitFuture(
-      container.read(shoppingListsProvider.future),
-      defaultValue: <ShoppingList>[],
-      label: 'shoppingListsProvider',
-    );
+    final lists = container.read(shoppingListsProvider).hasValue 
+        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
+        : await AiUtils.awaitFuture(
+            container.read(shoppingListsProvider.future),
+            defaultValue: <ShoppingList>[],
+            timeout: const Duration(seconds: 5),
+            label: 'shoppingListsProvider',
+          );
     return lists.isNotEmpty ? lists.first.id : null;
   }
 
   Future<ToolResult> getLists(ProviderContainer container) async {
-    final lists = await AiUtils.awaitFuture(
-      container.read(shoppingListsProvider.future),
-      defaultValue: <ShoppingList>[],
-      label: 'shoppingListsProvider',
-    );
+    final lists = container.read(shoppingListsProvider).hasValue 
+        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
+        : await AiUtils.awaitFuture(
+            container.read(shoppingListsProvider.future),
+            defaultValue: <ShoppingList>[],
+            timeout: const Duration(seconds: 5),
+            label: 'shoppingListsProvider',
+          );
     if (lists.isEmpty) {
       return const ToolResult(
         toolCallId: '',
@@ -57,11 +64,14 @@ class ListExecutor {
         content: 'Nenhuma lista selecionada. Crie ou selecione uma lista primeiro.',
       );
     }
-    final lists = await AiUtils.awaitFuture(
-      container.read(shoppingListsProvider.future),
-      defaultValue: <ShoppingList>[],
-      label: 'shoppingListsProvider',
-    );
+    final lists = container.read(shoppingListsProvider).hasValue 
+        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
+        : await AiUtils.awaitFuture(
+            container.read(shoppingListsProvider.future),
+            defaultValue: <ShoppingList>[],
+            timeout: const Duration(seconds: 5),
+            label: 'shoppingListsProvider',
+          );
     final list = lists.where((l) => l.id == currentId).firstOrNull;
     if (list == null) {
       return const ToolResult(toolCallId: '', content: 'Lista atual não encontrada.');
@@ -92,11 +102,14 @@ class ListExecutor {
   Future<ToolResult> renameList(ProviderContainer container, Map<String, dynamic> args) async {
     final listId = args['listId'] as String;
     final name = args['name'] as String;
-    final lists = await AiUtils.awaitFuture(
-      container.read(shoppingListsProvider.future),
-      defaultValue: <ShoppingList>[],
-      label: 'shoppingListsProvider',
-    );
+    final lists = container.read(shoppingListsProvider).hasValue 
+        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
+        : await AiUtils.awaitFuture(
+            container.read(shoppingListsProvider.future),
+            defaultValue: <ShoppingList>[],
+            timeout: const Duration(seconds: 5),
+            label: 'shoppingListsProvider',
+          );
     final list = lists.where((l) => l.id == listId).firstOrNull;
     if (list == null) {
       return const ToolResult(

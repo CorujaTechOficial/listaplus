@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
@@ -10,19 +11,20 @@ class AchievementsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final stats = ref.watch(userStatsProvider);
     final theme = Theme.of(context);
     final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Minhas Conquistas')),
+      appBar: AppBar(title: Text(l10n.myAchievements)),
       body: SafeArea(
         child: ListView(
         padding: const EdgeInsets.all(Spacing.md),
         children: [
           _buildStatCard(
             context,
-            'Itens Comprados',
+            l10n.itemsPurchased,
             stats.totalItemsBought.toString(),
             Icons.shopping_bag,
             Colors.blue,
@@ -30,7 +32,7 @@ class AchievementsScreen extends ConsumerWidget {
           const SizedBox(height: Spacing.md),
           _buildStatCard(
             context,
-            'Economia Total',
+            l10n.totalSavings,
             formatCurrency(stats.totalSavings, currencyCode),
             Icons.savings,
             Colors.green,
@@ -38,14 +40,14 @@ class AchievementsScreen extends ConsumerWidget {
           const SizedBox(height: Spacing.md),
           _buildStatCard(
             context,
-            'Sequência Atual',
-            '${stats.currentStreak} dias',
+            l10n.currentStreak,
+            l10n.streakDays(stats.currentStreak),
             Icons.local_fire_department,
             Colors.orange,
           ),
           const SizedBox(height: Spacing.xl),
           Text(
-            'Medalhas Desbloqueadas',
+            l10n.unlockedBadges,
             style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: Spacing.md),
@@ -54,25 +56,25 @@ class AchievementsScreen extends ConsumerWidget {
             runSpacing: Spacing.md,
             children: [
               _AchievementBadge(
-                label: 'Iniciante',
+                label: l10n.badgeBeginner,
                 icon: Icons.star_border,
                 unlocked: stats.totalItemsBought >= 10,
                 color: Colors.brown,
               ),
               _AchievementBadge(
-                label: 'Organizado',
+                label: l10n.badgeOrganized,
                 icon: Icons.check_circle_outline,
                 unlocked: stats.totalItemsBought >= 50,
                 color: Colors.grey,
               ),
               _AchievementBadge(
-                label: 'Mestre da Economia',
+                label: l10n.badgeSavingMaster,
                 icon: Icons.workspace_premium,
                 unlocked: stats.totalSavings >= 100,
                 color: Colors.amber,
               ),
               _AchievementBadge(
-                label: 'Super Planejador',
+                label: l10n.badgeSuperPlanner,
                 icon: Icons.auto_awesome,
                 unlocked: stats.currentStreak >= 7,
                 color: Colors.purple,

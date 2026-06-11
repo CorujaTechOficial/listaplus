@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// coverage:ignore-start
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../theme/tokens.dart';
@@ -192,4 +191,3 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
     );
   }
 }
-// coverage:ignore-end

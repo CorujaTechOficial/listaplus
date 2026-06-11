@@ -299,13 +299,13 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Zeskanuj produkt';
 
   @override
   String get positionBarcodeCenter => 'Umieść kod kreskowy na środku';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Ustawienia';
@@ -410,19 +410,19 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Odblokowane odznaki';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Początkujący';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Zorganizowany';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Mistrz oszczędzania';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super Planista';
 
   @override
   String get backupTitle => 'Kopia zapasowa';
@@ -510,17 +510,17 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased z $total elementów';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Budżet: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Razem: $amount';
   }
 
   @override
@@ -680,13 +680,13 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Asystent AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Zamknąć';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Zeskanuj kod kreskowy';
 
   @override
   String get listHelp => 'Jak mogę pomóc z twoją listą?';
@@ -2418,6 +2418,42 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Jedna podróż nigdy nie wystarczy';
+
+  @override
+  String get aiWelcomeContent =>
+      'Cześć! 👋 Jestem **Kipi**, Twój osobisty asystent zakupów i przepisów!\n\nJestem tu, żeby Ci pomóc:\n🛒 **Organizuj** swoje zakupy automatycznie według kategorii\n💰 **Śledź** swój budżet i udzielaj wskazówek dotyczących oszczędzania pieniędzy\n🍲 **Zaproponuj** pyszne przepisy wykorzystujące to, co już masz\n\nJak mogę Ci dzisiaj pomóc? Możesz zacząć od stworzenia swojej pierwszej listy!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Utwórz moją pierwszą listę';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, pomóż mi stworzyć moją pierwszą listę zakupów';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Jak zaoszczędzić pieniądze?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, jak możesz mi pomóc zaoszczędzić pieniądze na zakupach spożywczych?';
+
+  @override
+  String get suggestionMilk => 'Mleko';
+
+  @override
+  String get suggestionBread => 'Chleb';
+
+  @override
+  String get suggestionEggs => 'Jajka';
+
+  @override
+  String get suggestionCoffee => 'Kawa';
+
+  @override
+  String get suggestionRice => 'Ryż';
+
+  @override
+  String get suggestionFruits => 'Owoce';
 }
 
 /// The translations for Polish, as used in Poland (`pl_PL`).
@@ -2715,7 +2751,13 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   }
 
   @override
+  String get scanProductTitle => 'Zeskanuj produkt';
+
+  @override
   String get positionBarcodeCenter => 'Umieść kod kreskowy na środku';
+
+  @override
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Ustawienia';
@@ -2820,6 +2862,21 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   }
 
   @override
+  String get unlockedBadges => 'Odblokowane odznaki';
+
+  @override
+  String get badgeBeginner => 'Początkujący';
+
+  @override
+  String get badgeOrganized => 'Zorganizowany';
+
+  @override
+  String get badgeSavingMaster => 'Mistrz oszczędzania';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planista';
+
+  @override
   String get backupTitle => 'Kopia zapasowa';
 
   @override
@@ -2902,6 +2959,21 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get sortManual => 'Ręcznie';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased z $total elementów';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budżet: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Razem: $amount';
+  }
 
   @override
   String get addItem => 'Dodaj przedmiot';
@@ -3058,6 +3130,15 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String chatError(String error) {
     return 'Błąd ładowania czatu: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Asystent AI';
+
+  @override
+  String get closeSheet => 'Zamknąć';
+
+  @override
+  String get scanBarcodeTitle => 'Zeskanuj kod kreskowy';
 
   @override
   String get listHelp => 'Jak mogę pomóc z twoją listą?';
@@ -4789,4 +4870,40 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get onboardingPainRepeat => 'Jedna podróż nigdy nie wystarczy';
+
+  @override
+  String get aiWelcomeContent =>
+      'Cześć! 👋 Jestem **Kipi**, Twój osobisty asystent zakupów i przepisów!\n\nJestem tu, żeby Ci pomóc:\n🛒 **Organizuj** swoje zakupy automatycznie według kategorii\n💰 **Śledź** swój budżet i udzielaj wskazówek dotyczących oszczędzania pieniędzy\n🍲 **Zaproponuj** pyszne przepisy wykorzystujące to, co już masz\n\nJak mogę Ci dzisiaj pomóc? Możesz zacząć od stworzenia swojej pierwszej listy!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Utwórz moją pierwszą listę';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, pomóż mi stworzyć moją pierwszą listę zakupów';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Jak zaoszczędzić pieniądze?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, jak możesz mi pomóc zaoszczędzić pieniądze na zakupach spożywczych?';
+
+  @override
+  String get suggestionMilk => 'Mleko';
+
+  @override
+  String get suggestionBread => 'Chleb';
+
+  @override
+  String get suggestionEggs => 'Jajka';
+
+  @override
+  String get suggestionCoffee => 'Kawa';
+
+  @override
+  String get suggestionRice => 'Ryż';
+
+  @override
+  String get suggestionFruits => 'Owoce';
 }

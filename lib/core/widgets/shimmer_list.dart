@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// coverage:ignore-start
 import 'package:shimmer/shimmer.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
@@ -66,4 +65,3 @@ class ShimmerList extends StatelessWidget {
     );
   }
 }
-// coverage:ignore-end

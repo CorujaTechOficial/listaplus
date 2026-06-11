@@ -82,12 +82,12 @@ class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
 
   String _categoryLabel(String key, AppLocalizations l10n) {
     return switch (key) {
-      'grocery' => 'mercado',
-      'pharmacy' => 'farmácia',
-      'recipes' => 'receitas',
-      'home' => 'casa',
-      'pet' => 'pet',
-      _ => 'compras',
+      'grocery' => l10n.onboardingCategoryGrocery,
+      'pharmacy' => l10n.onboardingCategoryPharmacy,
+      'recipes' => l10n.onboardingCategoryRecipes,
+      'home' => l10n.onboardingCategoryHome,
+      'pet' => l10n.onboardingCategoryPet,
+      _ => 'shopping',
     };
   }
 
@@ -120,7 +120,7 @@ class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
     final l10n = AppLocalizations.of(context)!;
     setState(() {
       _step = _ChatStep.generating;
-      _messages.add(const _ChatMessage(isUser: true, text: '✅ Sim, monta pra mim!'));
+      _messages.add(_ChatMessage(isUser: true, text: l10n.onboardingAiDemoYes));
     });
     _scrollToBottom();
 
@@ -151,15 +151,16 @@ class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
     if (!mounted) {
       return;
     }
-    await _addAiMessage(l10n.onboardingAiDemoReaction(items.length));
+    await _addAiMessage(l10n.onboardingAiDemoReaction);
     if (mounted) {
       setState(() => _step = _ChatStep.done);
     }
   }
 
   void _onChangeCategory() {
+    final l10n = AppLocalizations.of(context)!;
     setState(() {
-      _messages.add(const _ChatMessage(isUser: true, text: '🔄 Outra categoria'));
+      _messages.add(_ChatMessage(isUser: true, text: l10n.onboardingAiDemoChange));
       _showCategoryPicker = true;
       _step = _ChatStep.greeting;
     });

@@ -7,7 +7,6 @@ import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 import '../models/chat_message.dart';
 import 'ai_service.dart';
 
-// coverage:ignore-start
 class OpenCodeGoService implements AiService {
   OpenCodeGoService({
     required Future<String> Function() getApiKey,
@@ -122,13 +121,18 @@ class OpenCodeGoService implements AiService {
         'stream': true,
       });
 
+    final stopwatch = Stopwatch()..start();
+
     // Uses persistent client — do NOT close it on cancel, just let the
     // cancel token flag exit the stream loop early.
     http.StreamedResponse response;
 
     try {
       response = await _persistentClient.send(request).timeout(const Duration(seconds: 30));
+      stopwatch.stop();
+      LoggerService.log('[OpenCodeGo] [Performance] Stream TTFB: ${stopwatch.elapsedMilliseconds}ms', tag: 'AI_PERF');
     } on TimeoutException {
+      stopwatch.stop();
       LoggerService.error(TimeoutException('Request timed out'), message: '[OpenCodeGo] Stream timeout', extra: {
         'operation': 'stream_timeout',
         'model': requestModel,
@@ -227,13 +231,18 @@ class OpenCodeGoService implements AiService {
       ..headers.addAll(await _headers())
       ..body = jsonEncode(body);
 
+    final stopwatch = Stopwatch()..start();
+
     // Uses persistent client — do NOT close it on cancel, just let the
     // cancel token flag exit the stream loop early.
     http.StreamedResponse response;
 
     try {
       response = await _persistentClient.send(request).timeout(const Duration(seconds: 30));
+      stopwatch.stop();
+      LoggerService.log('[OpenCodeGo] [Performance] StreamWithTools TTFB (Time To First Byte): ${stopwatch.elapsedMilliseconds}ms', tag: 'AI_PERF');
     } on TimeoutException {
+      stopwatch.stop();
       LoggerService.error(TimeoutException('Request timed out'), message: '[OpenCodeGo] StreamWithTools timeout', extra: {
         'operation': 'stream_with_tools_timeout',
         'model': requestModel,
@@ -327,6 +336,8 @@ class OpenCodeGoService implements AiService {
       body['tools'] = tools;
     }
 
+    final stopwatch = Stopwatch()..start();
+
     // Uses persistent client — do NOT close it on cancel, just let the
     // cancel token flag exit the stream loop early.
     final response = await _persistentClient.post(
@@ -334,6 +345,9 @@ class OpenCodeGoService implements AiService {
       headers: await _headers(),
       body: jsonEncode(body),
     ).timeout(const Duration(seconds: 30));
+
+    stopwatch.stop();
+    LoggerService.log('[OpenCodeGo] [Performance] getChatCompletionWithTools completado em: ${stopwatch.elapsedMilliseconds}ms', tag: 'AI_PERF');
 
     if (response.statusCode != 200) {
       LoggerService.error(Exception('HTTP ${response.statusCode}'), message: '[OpenCodeGo] getChatCompletionWithTools API error', extra: {
@@ -377,4 +391,3 @@ class OpenCodeGoService implements AiService {
     return AiResponse(content: responseText);
   }
 }
-// coverage:ignore-end

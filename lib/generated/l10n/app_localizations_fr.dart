@@ -300,13 +300,13 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Scanner le produit';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Positionnez le code barre au centre';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produit';
 
   @override
   String get settingsAppBar => 'Paramètres';
@@ -395,42 +395,42 @@ class AppLocalizationsFr extends AppLocalizations {
   String get termsOfUse => 'Conditions d\'utilisation';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Mes réalisations';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Articles achetés';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Économies totales';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Série actuelle';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count jours',
+      one: '$count jour',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Insignes débloqués';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Débutant';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organisé';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Sauveur du Maître';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super Planificateur';
 
   @override
   String get backupTitle => 'Sauvegarde';
@@ -519,17 +519,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased sur $total articles';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Budget : $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Total : $amount';
   }
 
   @override
@@ -690,13 +690,13 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Assistant IA';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Fermer';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Scanner le code-barres';
 
   @override
   String get listHelp => 'Comment puis-je vous aider avec votre liste ?';
@@ -2440,6 +2440,42 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Un voyage ne suffit jamais';
+
+  @override
+  String get aiWelcomeContent =>
+      'Bonjour! 👋 Je m\'appelle **Kipi**, votre assistante personnelle de courses et de recettes !\n\nJe suis là pour vous aider :\n🛒 **Organisez** vos achats par catégories automatiquement\n💰 **Suivez** votre budget et donnez-vous des conseils pour économiser de l\'argent\n🍲 **Suggérez** de délicieuses recettes avec ce que vous avez déjà\n\nComment puis-je vous aider aujourd\'hui ? Vous pouvez commencer par créer votre première liste !';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Créer ma première liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, aide-moi à créer ma première liste de courses';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Comment économiser de l\'argent ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, comment peux-tu m\'aider à économiser de l\'argent sur les courses ?';
+
+  @override
+  String get suggestionMilk => 'Lait';
+
+  @override
+  String get suggestionBread => 'Pain';
+
+  @override
+  String get suggestionEggs => 'Œufs';
+
+  @override
+  String get suggestionCoffee => 'Café';
+
+  @override
+  String get suggestionRice => 'Riz';
+
+  @override
+  String get suggestionFruits => 'Fruits';
 }
 
 /// The translations for French, as used in Canada (`fr_CA`).
@@ -2738,6 +2774,15 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   }
 
   @override
+  String get scanProductTitle => 'Scanner le produit';
+
+  @override
+  String get positionBarcodeCenter => 'Positionnez le code barre au centre';
+
+  @override
+  String get product => 'Produit';
+
+  @override
   String get settingsAppBar => 'Paramètres';
 
   @override
@@ -2824,6 +2869,44 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   String get termsOfUse => 'Conditions d\'utilisation';
 
   @override
+  String get myAchievements => 'Mes réalisations';
+
+  @override
+  String get itemsPurchased => 'Articles achetés';
+
+  @override
+  String get totalSavings => 'Économies totales';
+
+  @override
+  String get currentStreak => 'Série actuelle';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: '$count jour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Insignes débloqués';
+
+  @override
+  String get badgeBeginner => 'Débutant';
+
+  @override
+  String get badgeOrganized => 'Organisé';
+
+  @override
+  String get badgeSavingMaster => 'Sauveur du Maître';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planificateur';
+
+  @override
   String get backupTitle => 'Sauvegarde';
 
   @override
@@ -2907,6 +2990,21 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get sortManual => 'Manuel';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased sur $total articles';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget : $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Total : $amount';
+  }
 
   @override
   String get addItem => 'Ajouter un article';
@@ -3064,6 +3162,15 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   String chatError(String error) {
     return 'Erreur lors du chargement du chat : $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Assistant IA';
+
+  @override
+  String get closeSheet => 'Fermer';
+
+  @override
+  String get scanBarcodeTitle => 'Scanner le code-barres';
 
   @override
   String get listHelp => 'Comment puis-je vous aider avec votre liste ?';
@@ -4807,6 +4914,42 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get onboardingPainRepeat => 'Un voyage ne suffit jamais';
+
+  @override
+  String get aiWelcomeContent =>
+      'Bonjour! 👋 Je m\'appelle **Kipi**, votre assistante personnelle de courses et de recettes !\n\nJe suis là pour vous aider :\n🛒 **Organisez** vos achats par catégories automatiquement\n💰 **Suivez** votre budget et donnez-vous des conseils pour économiser de l\'argent\n🍲 **Suggérez** de délicieuses recettes avec ce que vous avez déjà\n\nComment puis-je vous aider aujourd\'hui ? Vous pouvez commencer par créer votre première liste !';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Créer ma première liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, aide-moi à créer ma première liste de courses';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Comment économiser de l\'argent ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, comment peux-tu m\'aider à économiser de l\'argent sur les courses ?';
+
+  @override
+  String get suggestionMilk => 'Lait';
+
+  @override
+  String get suggestionBread => 'Pain';
+
+  @override
+  String get suggestionEggs => 'Œufs';
+
+  @override
+  String get suggestionCoffee => 'Café';
+
+  @override
+  String get suggestionRice => 'Riz';
+
+  @override
+  String get suggestionFruits => 'Fruits';
 }
 
 /// The translations for French, as used in France (`fr_FR`).
@@ -5105,6 +5248,15 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   }
 
   @override
+  String get scanProductTitle => 'Scanner le produit';
+
+  @override
+  String get positionBarcodeCenter => 'Positionnez le code barre au centre';
+
+  @override
+  String get product => 'Produit';
+
+  @override
   String get settingsAppBar => 'Paramètres';
 
   @override
@@ -5191,6 +5343,44 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get termsOfUse => 'Conditions d\'utilisation';
 
   @override
+  String get myAchievements => 'Mes réalisations';
+
+  @override
+  String get itemsPurchased => 'Articles achetés';
+
+  @override
+  String get totalSavings => 'Économies totales';
+
+  @override
+  String get currentStreak => 'Série actuelle';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: '$count jour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Insignes débloqués';
+
+  @override
+  String get badgeBeginner => 'Débutant';
+
+  @override
+  String get badgeOrganized => 'Organisé';
+
+  @override
+  String get badgeSavingMaster => 'Sauveur du Maître';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planificateur';
+
+  @override
   String get backupTitle => 'Sauvegarde';
 
   @override
@@ -5274,6 +5464,21 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get sortManual => 'Manuel';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased sur $total articles';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget : $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Total : $amount';
+  }
 
   @override
   String get addItem => 'Ajouter un article';
@@ -5431,6 +5636,15 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String chatError(String error) {
     return 'Erreur lors du chargement du chat : $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Assistant IA';
+
+  @override
+  String get closeSheet => 'Fermer';
+
+  @override
+  String get scanBarcodeTitle => 'Scanner le code-barres';
 
   @override
   String get listHelp => 'Comment puis-je vous aider avec votre liste ?';
@@ -7174,4 +7388,40 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get onboardingPainRepeat => 'Un voyage ne suffit jamais';
+
+  @override
+  String get aiWelcomeContent =>
+      'Bonjour! 👋 Je m\'appelle **Kipi**, votre assistante personnelle de courses et de recettes !\n\nJe suis là pour vous aider :\n🛒 **Organisez** vos achats par catégories automatiquement\n💰 **Suivez** votre budget et donnez-vous des conseils pour économiser de l\'argent\n🍲 **Suggérez** de délicieuses recettes avec ce que vous avez déjà\n\nComment puis-je vous aider aujourd\'hui ? Vous pouvez commencer par créer votre première liste !';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Créer ma première liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, aide-moi à créer ma première liste de courses';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Comment économiser de l\'argent ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, comment peux-tu m\'aider à économiser de l\'argent sur les courses ?';
+
+  @override
+  String get suggestionMilk => 'Lait';
+
+  @override
+  String get suggestionBread => 'Pain';
+
+  @override
+  String get suggestionEggs => 'Œufs';
+
+  @override
+  String get suggestionCoffee => 'Café';
+
+  @override
+  String get suggestionRice => 'Riz';
+
+  @override
+  String get suggestionFruits => 'Fruits';
 }

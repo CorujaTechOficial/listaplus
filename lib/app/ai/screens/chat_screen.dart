@@ -43,7 +43,7 @@ class ChatScreen extends ConsumerWidget {
             actions: [
               IconButton(
                 icon: const Icon(Icons.add_comment),
-                tooltip: 'Nova Sessão',
+                tooltip: l10n.newChat,
                 onPressed: () {
                   ref.read(chatSessionsProvider(activeListId).notifier).createNewSession();
                 },
@@ -88,6 +88,7 @@ class _ChatHistoryDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final sessionsAsync = ref.watch(chatSessionsProvider(listId));
     final activeSessionId = ref.watch(activeChatSessionIdProvider(listId));
 
@@ -100,7 +101,7 @@ class _ChatHistoryDrawer extends ConsumerWidget {
             ),
             child: Center(
               child: Text(
-                'Histórico de Conversas',
+                l10n.conversationHistoryTitle,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
@@ -109,7 +110,7 @@ class _ChatHistoryDrawer extends ConsumerWidget {
             child: sessionsAsync.when(
               data: (sessions) {
                 if (sessions.isEmpty) {
-                  return const Center(child: Text('Nenhuma conversa encontrada'));
+                  return Center(child: Text(l10n.noConversationsFound));
                 }
                 return ListView.builder(
                   itemCount: sessions.length,
@@ -118,7 +119,7 @@ class _ChatHistoryDrawer extends ConsumerWidget {
                     final isActive = session.id == activeSessionId;
                     return ListTile(
                       title: Text(
-                        session.title ?? 'Nova Conversa',
+                        session.title ?? l10n.newChat,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -139,7 +140,7 @@ class _ChatHistoryDrawer extends ConsumerWidget {
                 );
               },
               loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => const Center(child: Text('Erro ao carregar histórico')),
+              error: (e, _) => Center(child: Text(l10n.errorLoadingHistory)),
             ),
           ),
         ],
@@ -148,22 +149,23 @@ class _ChatHistoryDrawer extends ConsumerWidget {
   }
 
   void _showDeleteConfirm(BuildContext context, WidgetRef ref, String sessionId) {
+    final l10n = AppLocalizations.of(context)!;
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Excluir Conversa?'),
-        content: const Text('Esta ação não pode ser desfeita.'),
+        title: Text(l10n.deleteConversationTitle),
+        content: Text(l10n.deleteConversationConfirm),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancelar'),
+            child: Text(l10n.cancel),
           ),
           TextButton(
             onPressed: () {
               ref.read(chatSessionsProvider(listId).notifier).deleteSession(sessionId);
               Navigator.pop(context);
             },
-            child: const Text('Excluir', style: TextStyle(color: Colors.red)),
+            child: Text(l10n.deleteConversation, style: const TextStyle(color: Colors.red)),
           ),
         ],
       ),

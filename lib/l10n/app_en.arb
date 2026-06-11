@@ -1132,5 +1132,11 @@
   "aiWelcomeSuggestSave": "How to save money?",
   "@aiWelcomeSuggestSave": { "description": "Quick reply button label to ask about saving money" },
   "aiWelcomeSuggestSavePrompt": "Kipi, how can you help me save money on groceries?",
-  "@aiWelcomeSuggestSavePrompt": { "description": "AI prompt sent when user taps save money quick reply" }
+  "@aiWelcomeSuggestSavePrompt": { "description": "AI prompt sent when user taps save money quick reply" },
+  "suggestionMilk": "Milk",
+  "suggestionBread": "Bread",
+  "suggestionEggs": "Eggs",
+  "suggestionCoffee": "Coffee",
+  "suggestionRice": "Rice",
+  "suggestionFruits": "Fruits"
 }

@@ -1,5 +1,5 @@
 import 'package:uuid/uuid.dart';
-// coverage:ignore-start
+import 'package:shopping_list/core/utils/formatters.dart';
 
 class ShoppingList {
   ShoppingList({
@@ -25,20 +25,9 @@ class ShoppingList {
       archivedAt: json['archivedAt'] != null
           ? DateTime.tryParse(json['archivedAt'] as String)
           : null,
-      createdAt: _parseDate(json['createdAt']),
-      updatedAt: _parseDate(json['updatedAt']),
+      createdAt: safeParseDate(json['createdAt']),
+      updatedAt: safeParseDate(json['updatedAt']),
     );
-  }
-
-  static DateTime _parseDate(dynamic value) {
-    if (value == null) {
-      return DateTime.now();
-    }
-    if (value is DateTime) {
-      return value;
-    }
-    final parsed = DateTime.tryParse(value.toString());
-    return parsed ?? DateTime.now();
   }
 
   final String id;
@@ -90,4 +79,3 @@ class ShoppingList {
     };
   }
 }
-// coverage:ignore-end

@@ -300,13 +300,13 @@ class AppLocalizationsTe extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'ఉత్పత్తిని స్కాన్ చేయండి';
 
   @override
   String get positionBarcodeCenter => 'బార్‌కోడ్‌ను మధ్యలో ఉంచండి';
 
   @override
-  String get product => 'Product';
+  String get product => 'ఉత్పత్తి';
 
   @override
   String get settingsAppBar => 'సెట్టింగ్‌లు';
@@ -412,19 +412,19 @@ class AppLocalizationsTe extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'అన్‌లాక్ చేయబడిన బ్యాడ్జ్‌లు';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'అనుభవశూన్యుడు';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'నిర్వహించారు';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'సేవ్ మాస్టర్';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'సూపర్ ప్లానర్';
 
   @override
   String get backupTitle => 'బ్యాకప్';
@@ -511,17 +511,17 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$total అంశాలలో $purchased';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'బడ్జెట్: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'మొత్తం: $amount';
   }
 
   @override
@@ -682,13 +682,13 @@ class AppLocalizationsTe extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI అసిస్టెంట్';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'మూసివేయి';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'బార్‌కోడ్‌ని స్కాన్ చేయండి';
 
   @override
   String get listHelp => 'మీ జాబితాతో ఎలా సహాయపడగలను?';
@@ -2429,6 +2429,42 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ఒక ప్రయాణం ఎప్పుడూ సరిపోదు';
+
+  @override
+  String get aiWelcomeContent =>
+      'హలో! 👋 నేను **కిపి**, మీ వ్యక్తిగత షాపింగ్ మరియు రెసిపీ అసిస్టెంట్!\n\nమీకు సహాయం చేయడానికి నేను ఇక్కడ ఉన్నాను:\n🛒 **మీ షాపింగ్‌ను వర్గాల వారీగా స్వయంచాలకంగా నిర్వహించండి**\n💰 **ట్రాక్** మీ బడ్జెట్‌ను మరియు మీకు డబ్బు ఆదా చేసే చిట్కాలను అందించండి\n🍲 **సూచించండి** మీరు ఇప్పటికే కలిగి ఉన్న వాటితో రుచికరమైన వంటకాలు\n\nఈరోజు నేను మీకు ఎలా సహాయం చేయగలను? మీరు మీ మొదటి జాబితాను సృష్టించడం ద్వారా ప్రారంభించవచ్చు!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'నా మొదటి జాబితాను సృష్టించండి';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'కిపి, నా మొదటి షాపింగ్ జాబితాను రూపొందించడంలో నాకు సహాయపడండి';
+
+  @override
+  String get aiWelcomeSuggestSave => 'డబ్బు ఆదా చేయడం ఎలా?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'కిపి, కిరాణా సామాగ్రిపై డబ్బు ఆదా చేయడంలో మీరు నాకు ఎలా సహాయపడగలరు?';
+
+  @override
+  String get suggestionMilk => 'పాలు';
+
+  @override
+  String get suggestionBread => 'బ్రెడ్';
+
+  @override
+  String get suggestionEggs => 'గుడ్లు';
+
+  @override
+  String get suggestionCoffee => 'కాఫీ';
+
+  @override
+  String get suggestionRice => 'అన్నం';
+
+  @override
+  String get suggestionFruits => 'పండ్లు';
 }
 
 /// The translations for Telugu, as used in India (`te_IN`).
@@ -2727,7 +2763,13 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   }
 
   @override
+  String get scanProductTitle => 'ఉత్పత్తిని స్కాన్ చేయండి';
+
+  @override
   String get positionBarcodeCenter => 'బార్‌కోడ్‌ను మధ్యలో ఉంచండి';
+
+  @override
+  String get product => 'ఉత్పత్తి';
 
   @override
   String get settingsAppBar => 'సెట్టింగ్‌లు';
@@ -2833,6 +2875,21 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   }
 
   @override
+  String get unlockedBadges => 'అన్‌లాక్ చేయబడిన బ్యాడ్జ్‌లు';
+
+  @override
+  String get badgeBeginner => 'అనుభవశూన్యుడు';
+
+  @override
+  String get badgeOrganized => 'నిర్వహించారు';
+
+  @override
+  String get badgeSavingMaster => 'సేవ్ మాస్టర్';
+
+  @override
+  String get badgeSuperPlanner => 'సూపర్ ప్లానర్';
+
+  @override
   String get backupTitle => 'బ్యాకప్';
 
   @override
@@ -2914,6 +2971,21 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get sortManual => 'మాన్యువల్';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$total అంశాలలో $purchased';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'బడ్జెట్: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'మొత్తం: $amount';
+  }
 
   @override
   String get addItem => 'అంశాన్ని జోడించు';
@@ -3071,6 +3143,15 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   String chatError(String error) {
     return 'చాట్ లోడ్ చేయడంలో లోపం: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI అసిస్టెంట్';
+
+  @override
+  String get closeSheet => 'మూసివేయి';
+
+  @override
+  String get scanBarcodeTitle => 'బార్‌కోడ్‌ని స్కాన్ చేయండి';
 
   @override
   String get listHelp => 'మీ జాబితాతో ఎలా సహాయపడగలను?';
@@ -4811,4 +4892,40 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get onboardingPainRepeat => 'ఒక ప్రయాణం ఎప్పుడూ సరిపోదు';
+
+  @override
+  String get aiWelcomeContent =>
+      'హలో! 👋 నేను **కిపి**, మీ వ్యక్తిగత షాపింగ్ మరియు రెసిపీ అసిస్టెంట్!\n\nమీకు సహాయం చేయడానికి నేను ఇక్కడ ఉన్నాను:\n🛒 **మీ షాపింగ్‌ను వర్గాల వారీగా స్వయంచాలకంగా నిర్వహించండి**\n💰 **ట్రాక్** మీ బడ్జెట్‌ను మరియు మీకు డబ్బు ఆదా చేసే చిట్కాలను అందించండి\n🍲 **సూచించండి** మీరు ఇప్పటికే కలిగి ఉన్న వాటితో రుచికరమైన వంటకాలు\n\nఈరోజు నేను మీకు ఎలా సహాయం చేయగలను? మీరు మీ మొదటి జాబితాను సృష్టించడం ద్వారా ప్రారంభించవచ్చు!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'నా మొదటి జాబితాను సృష్టించండి';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'కిపి, నా మొదటి షాపింగ్ జాబితాను రూపొందించడంలో నాకు సహాయపడండి';
+
+  @override
+  String get aiWelcomeSuggestSave => 'డబ్బు ఆదా చేయడం ఎలా?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'కిపి, కిరాణా సామాగ్రిపై డబ్బు ఆదా చేయడంలో మీరు నాకు ఎలా సహాయపడగలరు?';
+
+  @override
+  String get suggestionMilk => 'పాలు';
+
+  @override
+  String get suggestionBread => 'బ్రెడ్';
+
+  @override
+  String get suggestionEggs => 'గుడ్లు';
+
+  @override
+  String get suggestionCoffee => 'కాఫీ';
+
+  @override
+  String get suggestionRice => 'అన్నం';
+
+  @override
+  String get suggestionFruits => 'పండ్లు';
 }

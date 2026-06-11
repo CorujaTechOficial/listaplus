@@ -292,13 +292,13 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Skannaa tuote';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Aseta viivakoodi keskelle';
 
   @override
-  String get product => 'Product';
+  String get product => 'Tuote';
 
   @override
   String get settingsAppBar => 'Asetukset';
@@ -386,42 +386,42 @@ class AppLocalizationsFi extends AppLocalizations {
   String get termsOfUse => 'Käyttöehdot';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Saavutukseni';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Ostetut tuotteet';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Säästöt yhteensä';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Nykyinen putki';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count päivää',
+      one: '$count päivä',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Avatut merkit';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Aloittelija';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Järjestetty';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Pelastus mestari';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super suunnittelija';
 
   @override
   String get backupTitle => 'Varmuuskopio';
@@ -508,17 +508,17 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased / $total kohdetta';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Budjetti: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Yhteensä: $amount';
   }
 
   @override
@@ -682,10 +682,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get aiAssistantTitle => 'AI Assistant';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Lähellä';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Skannaa viivakoodi';
 
   @override
   String get listHelp => 'Miten voin auttaa listasi kanssa?';
@@ -2396,6 +2396,42 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Yksi matka ei koskaan riitä';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hei! 👋 Olen **Kipi**, henkilökohtainen osto- ja reseptiavustajasi!\n\nOlen täällä auttaakseni sinua:\n🛒 **Järjestä** ostoksesi automaattisesti luokkien mukaan\n💰 **Seuraa** budjettiasi ja anna rahaa säästäviä vinkkejä\n🍲 **Ehdota** herkullisia reseptejä sen kanssa, mitä sinulla jo on\n\nKuinka voin auttaa sinua tänään? Voit aloittaa luomalla ensimmäisen luettelosi!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Luo ensimmäinen luetteloni';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, auta minua luomaan ensimmäinen ostoslistani';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Kuinka säästää rahaa?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, kuinka voit auttaa minua säästämään rahaa ruokaostoksissa?';
+
+  @override
+  String get suggestionMilk => 'Maito';
+
+  @override
+  String get suggestionBread => 'leipää';
+
+  @override
+  String get suggestionEggs => 'Munat';
+
+  @override
+  String get suggestionCoffee => 'Kahvi';
+
+  @override
+  String get suggestionRice => 'Riisi';
+
+  @override
+  String get suggestionFruits => 'Hedelmät';
 }
 
 /// The translations for Finnish, as used in Finland (`fi_FI`).
@@ -2686,6 +2722,15 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   }
 
   @override
+  String get scanProductTitle => 'Skannaa tuote';
+
+  @override
+  String get positionBarcodeCenter => 'Aseta viivakoodi keskelle';
+
+  @override
+  String get product => 'Tuote';
+
+  @override
   String get settingsAppBar => 'Asetukset';
 
   @override
@@ -2771,6 +2816,44 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get termsOfUse => 'Käyttöehdot';
 
   @override
+  String get myAchievements => 'Saavutukseni';
+
+  @override
+  String get itemsPurchased => 'Ostetut tuotteet';
+
+  @override
+  String get totalSavings => 'Säästöt yhteensä';
+
+  @override
+  String get currentStreak => 'Nykyinen putki';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count päivää',
+      one: '$count päivä',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Avatut merkit';
+
+  @override
+  String get badgeBeginner => 'Aloittelija';
+
+  @override
+  String get badgeOrganized => 'Järjestetty';
+
+  @override
+  String get badgeSavingMaster => 'Pelastus mestari';
+
+  @override
+  String get badgeSuperPlanner => 'Super suunnittelija';
+
+  @override
   String get backupTitle => 'Varmuuskopio';
 
   @override
@@ -2852,6 +2935,21 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get sortManual => 'Manuaalinen';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased / $total kohdetta';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budjetti: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Yhteensä: $amount';
+  }
 
   @override
   String get addItem => 'Lisää kohde';
@@ -3009,6 +3107,15 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String chatError(String error) {
     return 'Virhe ladattaessa chattia: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI Assistant';
+
+  @override
+  String get closeSheet => 'Lähellä';
+
+  @override
+  String get scanBarcodeTitle => 'Skannaa viivakoodi';
 
   @override
   String get listHelp => 'Miten voin auttaa listasi kanssa?';
@@ -4718,4 +4825,40 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get onboardingPainRepeat => 'Yksi matka ei koskaan riitä';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hei! 👋 Olen **Kipi**, henkilökohtainen osto- ja reseptiavustajasi!\n\nOlen täällä auttaakseni sinua:\n🛒 **Järjestä** ostoksesi automaattisesti luokkien mukaan\n💰 **Seuraa** budjettiasi ja anna rahaa säästäviä vinkkejä\n🍲 **Ehdota** herkullisia reseptejä sen kanssa, mitä sinulla jo on\n\nKuinka voin auttaa sinua tänään? Voit aloittaa luomalla ensimmäisen luettelosi!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Luo ensimmäinen luetteloni';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, auta minua luomaan ensimmäinen ostoslistani';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Kuinka säästää rahaa?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, kuinka voit auttaa minua säästämään rahaa ruokaostoksissa?';
+
+  @override
+  String get suggestionMilk => 'Maito';
+
+  @override
+  String get suggestionBread => 'leipää';
+
+  @override
+  String get suggestionEggs => 'Munat';
+
+  @override
+  String get suggestionCoffee => 'Kahvi';
+
+  @override
+  String get suggestionRice => 'Riisi';
+
+  @override
+  String get suggestionFruits => 'Hedelmät';
 }

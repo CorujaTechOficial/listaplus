@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import '../../models/interactive_artifact.dart';
 import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
@@ -62,6 +63,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
     ArtifactItem item,
     int itemIndex,
   ) {
+    final l10n = AppLocalizations.of(context)!;
     final currencyCode = ref.read(currencySettingProvider).value ?? 'BRL';
     showModalBottomSheet<void>(
       context: context,
@@ -77,14 +79,14 @@ class ArtifactContentRenderer extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Substituir ${item.name}',
+                  l10n.replaceItem(item.name),
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: Spacing.xs),
                 Text(
-                  'Selecione uma alternativa de produto para otimizar o custo.',
+                  l10n.selectCheaperAlternative,
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
@@ -95,7 +97,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                     leading: const Icon(Icons.swap_horiz),
                     title: Text(alt.name),
                     subtitle: Text(
-                      'Qtd: ${alt.quantity.toStringAsFixed(alt.quantity % 1 == 0 ? 0 : 1)} ${alt.unit}',
+                      l10n.quantityWithUnit(alt.quantity.toStringAsFixed(alt.quantity % 1 == 0 ? 0 : 1), alt.unit),
                     ),
                     trailing: alt.estimatedPrice != null
                         ? Text(
@@ -364,6 +366,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
       );
     }
 
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
     final controls = state.artifact.controls;
@@ -398,7 +401,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
 
         // Items Section
         Text(
-          'Itens Sugeridos',
+          l10n.suggestedItems,
           style: theme.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -443,7 +446,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                                     borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                                   ),
                                   child: Text(
-                                    'Trocado',
+                                    l10n.swapped,
                                     style: theme.textTheme.labelSmall?.copyWith(
                                       fontSize: 9,
                                       color: theme.colorScheme.onSecondaryContainer,
@@ -466,7 +469,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                             ],
                           ),
                           Text(
-                            '${qty.toStringAsFixed(qty % 1 == 0 ? 0 : 1)} ${item.unit} • $priceText',
+                            l10n.quantityUnitWithPrice(qty.toStringAsFixed(qty % 1 == 0 ? 0 : 1), item.unit, priceText),
                             style: theme.textTheme.labelSmall?.copyWith(
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
@@ -494,9 +497,9 @@ class ArtifactContentRenderer extends ConsumerWidget {
                           );
                         },
                         icon: const Icon(Icons.swap_horiz, size: 14),
-                        label: const Text(
-                          'Trocar',
-                          style: TextStyle(fontSize: 11),
+                        label: Text(
+                          l10n.swap,
+                          style: const TextStyle(fontSize: 11),
                         ),
                       ),
                   ],

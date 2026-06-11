@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-// coverage:ignore-start
 
 import 'package:flutter/material.dart';
 import 'tokens.dart';
@@ -295,4 +294,3 @@ class AppTheme {
     );
   }
 }
-// coverage:ignore-end

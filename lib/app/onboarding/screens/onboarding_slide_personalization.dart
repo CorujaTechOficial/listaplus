@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -16,7 +17,6 @@ class OnboardingSlidePersonalization extends ConsumerStatefulWidget {
 
 class _OnboardingSlidePersonalizationState
     extends ConsumerState<OnboardingSlidePersonalization> {
-  late final TextEditingController _nameController;
   String _selectedCategory = '';
   String _selectedGroup = '';
 
@@ -24,22 +24,8 @@ class _OnboardingSlidePersonalizationState
   void initState() {
     super.initState();
     final data = ref.read(onboardingDataProvider);
-    _nameController = TextEditingController(text: data.displayName);
     _selectedCategory = data.shoppingCategory;
     _selectedGroup = data.householdSize;
-    _nameController.addListener(_onNameChanged);
-  }
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    super.dispose();
-  }
-
-  void _onNameChanged() {
-    ref
-        .read(onboardingDataProvider.notifier)
-        .updateDisplayName(_nameController.text.trim());
   }
 
   void _selectCategory(String category) {
@@ -58,17 +44,17 @@ class _OnboardingSlidePersonalizationState
     final l10n = AppLocalizations.of(context)!;
 
     final categories = [
-      (key: 'grocery', label: l10n.onboardingCategoryGrocery),
-      (key: 'pharmacy', label: l10n.onboardingCategoryPharmacy),
-      (key: 'recipes', label: l10n.onboardingCategoryRecipes),
-      (key: 'home', label: l10n.onboardingCategoryHome),
-      (key: 'pet', label: l10n.onboardingCategoryPet),
+      (key: 'grocery', label: '🛒 ${l10n.onboardingCategoryGrocery}'),
+      (key: 'pharmacy', label: '💊 ${l10n.onboardingCategoryPharmacy}'),
+      (key: 'recipes', label: '🍳 ${l10n.onboardingCategoryRecipes}'),
+      (key: 'home', label: '🏠 ${l10n.onboardingCategoryHome}'),
+      (key: 'pet', label: '🐾 ${l10n.onboardingCategoryPet}'),
     ];
 
     final groups = [
-      (key: 'solo', label: l10n.onboardingGroupSolo),
-      (key: 'couple', label: l10n.onboardingGroupCouple),
-      (key: 'family', label: l10n.onboardingGroupFamily),
+      (key: 'solo', label: '🧍 ${l10n.onboardingGroupSolo}'),
+      (key: 'couple', label: '👫 ${l10n.onboardingGroupCouple}'),
+      (key: 'family', label: '👨‍👩‍👧 ${l10n.onboardingGroupFamily}'),
     ];
 
     return Scaffold(
@@ -83,44 +69,60 @@ class _OnboardingSlidePersonalizationState
                   children: [
                     const SizedBox(height: Spacing.lg),
                     Text(
-                      l10n.onboardingPersonalizationNameLabel,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w700,
+                      l10n.onboardingPersonalizationCategoryTitle,
+                      style: theme.textTheme.headlineSmall?.copyWith(
+                        fontWeight: FontWeight.w900,
                       ),
-                    ),
-                    const SizedBox(height: Spacing.sm),
-                    TextField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        hintText: l10n.onboardingPersonalizationNameHint,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
+                    )
+                        .animate()
+                        .fadeIn(duration: 400.ms)
+                        .slideY(begin: 0.2, end: 0),
+                    const SizedBox(height: Spacing.xs),
+                    Text(
+                      l10n.onboardingPersonalizationDesc,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
                       ),
-                      textCapitalization: TextCapitalization.words,
-                      textInputAction: TextInputAction.done,
-                    ),
+                    ).animate().fadeIn(delay: 100.ms, duration: 300.ms),
                     const SizedBox(height: Spacing.xl),
                     Text(
                       l10n.onboardingPersonalizationCategoryTitle,
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w700,
                       ),
-                    ),
+                    ).animate(delay: 180.ms).fadeIn(duration: 300.ms),
                     const SizedBox(height: Spacing.sm),
                     Wrap(
                       spacing: Spacing.sm,
                       runSpacing: Spacing.sm,
-                      children: categories.map((cat) {
+                      children: categories.asMap().entries.map((entry) {
+                        final int index = entry.key;
+                        final cat = entry.value;
                         final isSelected = _selectedCategory == cat.key;
                         return FilterChip(
-                          label: Text(cat.label),
+                          label: Text(
+                            cat.label,
+                            style: TextStyle(
+                              fontWeight: isSelected
+                                  ? FontWeight.w700
+                                  : FontWeight.normal,
+                            ),
+                          ),
                           selected: isSelected,
                           onSelected: (_) => _selectCategory(cat.key),
-                          selectedColor:
-                              theme.colorScheme.primaryContainer,
+                          selectedColor: theme.colorScheme.primaryContainer,
                           checkmarkColor: theme.colorScheme.primary,
-                        );
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spacing.sm,
+                            vertical: Spacing.xs,
+                          ),
+                        )
+                            .animate(delay: (240 + index * 60).ms)
+                            .fadeIn(duration: 300.ms)
+                            .scale(
+                              begin: const Offset(0.9, 0.9), // ignore: prefer_int_literals
+                              end: const Offset(1, 1),
+                            );
                       }).toList(),
                     ),
                     const SizedBox(height: Spacing.xl),
@@ -129,21 +131,39 @@ class _OnboardingSlidePersonalizationState
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w700,
                       ),
-                    ),
+                    ).animate(delay: 540.ms).fadeIn(duration: 300.ms),
                     const SizedBox(height: Spacing.sm),
                     Wrap(
                       spacing: Spacing.sm,
                       runSpacing: Spacing.sm,
-                      children: groups.map((g) {
+                      children: groups.asMap().entries.map((entry) {
+                        final int index = entry.key;
+                        final g = entry.value;
                         final isSelected = _selectedGroup == g.key;
                         return FilterChip(
-                          label: Text(g.label),
+                          label: Text(
+                            g.label,
+                            style: TextStyle(
+                              fontWeight: isSelected
+                                  ? FontWeight.w700
+                                  : FontWeight.normal,
+                            ),
+                          ),
                           selected: isSelected,
                           onSelected: (_) => _selectGroup(g.key),
-                          selectedColor:
-                              theme.colorScheme.primaryContainer,
+                          selectedColor: theme.colorScheme.primaryContainer,
                           checkmarkColor: theme.colorScheme.primary,
-                        );
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spacing.sm,
+                            vertical: Spacing.xs,
+                          ),
+                        )
+                            .animate(delay: (600 + index * 60).ms)
+                            .fadeIn(duration: 300.ms)
+                            .scale(
+                              begin: const Offset(0.9, 0.9), // ignore: prefer_int_literals
+                              end: const Offset(1, 1),
+                            );
                       }).toList(),
                     ),
                   ],
@@ -157,7 +177,7 @@ class _OnboardingSlidePersonalizationState
                 height: 52,
                 child: ElevatedButton(
                   onPressed: widget.onNext,
-                  child: const Text('Continuar'),
+                  child: Text(l10n.onboardingPersonalizationCta),
                 ),
               ),
             ),

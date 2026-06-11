@@ -25,3 +25,7 @@ tests.output
 
 # Firebase
 .firebase/
+
+# Environment files
+.env
+

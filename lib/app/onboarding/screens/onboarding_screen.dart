@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_hook.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_welcome_login.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_ai_demo.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_pain_point.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_personalization.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_ai_chat.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_commitments.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_plan_loading.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_premium.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
+// Flow: WOW → SENTE → PERSONALIZA → IA DEMO → INVESTE → CONVERTE
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -19,7 +19,7 @@ class OnboardingScreen extends ConsumerStatefulWidget {
 class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   final _pageController = PageController();
   int _currentSlide = 0;
-  static const int _slideCount = 7;
+  static const int _slideCount = 6;
 
   @override
   void dispose() {
@@ -51,18 +51,20 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         onPageChanged: _handlePageChanged,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          OnboardingSlideHook(onFinished: _goToNext),
-          OnboardingSlideWelcomeLogin(
-            onLoggedIn: _goToNext,
-            onSkipped: _goToNext,
-          ),
+          // 1. WOW: AI demo animado — diferencia o produto imediatamente
+          OnboardingSlideAiDemo(onFinished: _goToNext),
+          // 2. SENTE: pain points emocionais — cria identificação pessoal
+          OnboardingSlidePainPoint(onNext: _goToNext),
+          // 3. PERSONALIZA: chips rápidos, sem teclado — baixa fricção
           OnboardingSlidePersonalization(onNext: _goToNext),
+          // 4. IA DEMO: lista personalizada gerada ao vivo
           OnboardingAiChat(
             onFinished: _goToNext,
             onSkipped: _goToNext,
           ),
-          OnboardingSlideCommitments(onNext: _goToNext),
+          // 5. INVESTE: loading + social proof — cria investimento
           OnboardingSlidePlanLoading(onFinished: _goToNext),
+          // 6. CONVERTE: paywall com headline personalizada pelo pain point
           const OnboardingSlidePremium(),
         ],
       ),

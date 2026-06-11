@@ -301,13 +301,13 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'مسح المنتج';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'ضع الباركود في المركز';
 
   @override
-  String get product => 'Product';
+  String get product => 'منتج';
 
   @override
   String get settingsAppBar => 'الإعدادات';
@@ -395,42 +395,42 @@ class AppLocalizationsAr extends AppLocalizations {
   String get termsOfUse => 'شروط الاستخدام';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'إنجازاتي';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'العناصر التي تم شراؤها';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'إجمالي المدخرات';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'الخط الحالي';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count أيام',
+      one: '$count يوم',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'شارات مقفلة';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'مبتدئ';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'منظمة';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'إنقاذ ماستر';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'مخطط سوبر';
 
   @override
   String get backupTitle => 'النسخ الاحتياطي';
@@ -517,17 +517,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased من $total العناصر';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'الميزانية: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'الإجمالي: $amount';
   }
 
   @override
@@ -687,13 +687,13 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'مساعد الذكاء الاصطناعي';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'يغلق';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'مسح الباركود';
 
   @override
   String get listHelp => 'كيف يمكنني المساعدة في قائمتك؟';
@@ -2398,4 +2398,40 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'رحلة واحدة لا تكفي أبدا';
+
+  @override
+  String get aiWelcomeContent =>
+      'مرحبًا! 👋 أنا **Kipi**، مساعدك الشخصي في التسوق ووصفات الطعام!\n\nأنا هنا لمساعدتك:\n🛒 **تنظيم** تسوقك حسب الفئات تلقائيًا\n💰 **تتبع** ميزانيتك وقدم لك نصائح لتوفير المال\n🍲 **اقتراح** وصفات لذيذة بما لديك بالفعل\n\nكيف يمكنني مساعدتك اليوم؟ يمكنك البدء بإنشاء قائمتك الأولى!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'إنشاء قائمتي الأولى';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'كيبي، ساعدني في إنشاء قائمة التسوق الأولى الخاصة بي';
+
+  @override
+  String get aiWelcomeSuggestSave => 'كيفية توفير المال؟';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'كيبي، كيف يمكنك مساعدتي في توفير المال لشراء البقالة؟';
+
+  @override
+  String get suggestionMilk => 'لبن';
+
+  @override
+  String get suggestionBread => 'خبز';
+
+  @override
+  String get suggestionEggs => 'بيض';
+
+  @override
+  String get suggestionCoffee => 'قهوة';
+
+  @override
+  String get suggestionRice => 'أرز';
+
+  @override
+  String get suggestionFruits => 'الفواكه';
 }

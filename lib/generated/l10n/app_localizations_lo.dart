@@ -291,13 +291,13 @@ class AppLocalizationsLo extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'ສະແກນຜະລິດຕະພັນ';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'ວາງ barcode ຢູ່ໃຈກາງ';
 
   @override
-  String get product => 'Product';
+  String get product => 'ຜະລິດຕະພັນ';
 
   @override
   String get settingsAppBar => 'ການຕັ້ງຄ່າ';
@@ -385,39 +385,39 @@ class AppLocalizationsLo extends AppLocalizations {
   String get termsOfUse => 'ເງື່ອນໄຂການໃຊ້ງານ';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'ຜົນສໍາເລັດຂອງຂ້ອຍ';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'ລາຍການທີ່ຊື້';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'ເງິນຝາກປະຢັດທັງໝົດ';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'ກະແສປັດຈຸບັນ';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count ມື້',
+      one: '$count ມື້',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'ປ້າຍປົດລັອກ';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'ຜູ້ເລີ່ມຕົ້ນ';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'ຈັດຕັ້ງ';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'ອາຈານປະຢັດ';
 
   @override
   String get badgeSuperPlanner => 'Super Planner';
@@ -507,17 +507,17 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased ຈາກທັງໝົດ $total ລາຍການ';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'ງົບປະມານ: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'ທັງໝົດ: $amount';
   }
 
   @override
@@ -677,13 +677,13 @@ class AppLocalizationsLo extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'ຜູ້ຊ່ວຍ AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'ປິດ';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'ສະແກນບາໂຄດ';
 
   @override
   String get listHelp => 'ຂ້ອຍສາມາດຊ່ວຍທ່ານກ່ຽວກັບລາຍການຂອງທ່ານແນວໃດ?';
@@ -2385,6 +2385,42 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ການເດີນທາງຄັ້ງດຽວບໍ່ເຄີຍພຽງພໍ';
+
+  @override
+  String get aiWelcomeContent =>
+      'ສະບາຍດີ! 👋 ຂ້ອຍແມ່ນ **Kipi**, ຜູ້ຊ່ວຍຊື້ເຄື່ອງ ແລະ ສູດອາຫານສ່ວນຕົວຂອງເຈົ້າ!\n\nຂ້ອຍຢູ່ທີ່ນີ້ເພື່ອຊ່ວຍເຈົ້າ:\n🛒 **ຈັດລະບຽບ** ການຊື້ເຄື່ອງຂອງເຈົ້າຕາມໝວດໝູ່ໂດຍອັດຕະໂນມັດ\n💰 ** ຕິດຕາມ ** ງົບປະມານຂອງທ່ານແລະໃຫ້ຄໍາແນະນໍາການປະຫຍັດເງິນ\n🍲 **ແນະນຳ** ສູດແຊບໆ ກັບສິ່ງທີ່ເຈົ້າມີຢູ່ແລ້ວ\n\nຂ້ອຍສາມາດຊ່ວຍເຈົ້າໄດ້ແນວໃດໃນມື້ນີ້? ທ່ານສາມາດເລີ່ມຕົ້ນໂດຍການສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງທ່ານ!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'ສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງຂ້ອຍ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, ຊ່ວຍຂ້ອຍສ້າງລາຍການຊື້ເຄື່ອງທໍາອິດຂອງຂ້ອຍ';
+
+  @override
+  String get aiWelcomeSuggestSave => 'ວິທີການປະຫຍັດເງິນ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, ເຈົ້າສາມາດຊ່ວຍຂ້ອຍປະຫຍັດເງິນໃນຮ້ານຂາຍເຄື່ອງແຫ້ງໄດ້ແນວໃດ?';
+
+  @override
+  String get suggestionMilk => 'ນົມ';
+
+  @override
+  String get suggestionBread => 'ເຂົ້າຈີ່';
+
+  @override
+  String get suggestionEggs => 'ໄຂ່';
+
+  @override
+  String get suggestionCoffee => 'ກາເຟ';
+
+  @override
+  String get suggestionRice => 'ເຂົ້າ';
+
+  @override
+  String get suggestionFruits => 'ໝາກໄມ້';
 }
 
 /// The translations for Lao, as used in the Lao People's Democratic Republic (`lo_LA`).
@@ -2680,6 +2716,15 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   }
 
   @override
+  String get scanProductTitle => 'ສະແກນຜະລິດຕະພັນ';
+
+  @override
+  String get positionBarcodeCenter => 'ວາງ barcode ຢູ່ໃຈກາງ';
+
+  @override
+  String get product => 'ຜະລິດຕະພັນ';
+
+  @override
   String get settingsAppBar => 'ການຕັ້ງຄ່າ';
 
   @override
@@ -2765,6 +2810,44 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String get termsOfUse => 'ເງື່ອນໄຂການໃຊ້ງານ';
 
   @override
+  String get myAchievements => 'ຜົນສໍາເລັດຂອງຂ້ອຍ';
+
+  @override
+  String get itemsPurchased => 'ລາຍການທີ່ຊື້';
+
+  @override
+  String get totalSavings => 'ເງິນຝາກປະຢັດທັງໝົດ';
+
+  @override
+  String get currentStreak => 'ກະແສປັດຈຸບັນ';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ມື້',
+      one: '$count ມື້',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'ປ້າຍປົດລັອກ';
+
+  @override
+  String get badgeBeginner => 'ຜູ້ເລີ່ມຕົ້ນ';
+
+  @override
+  String get badgeOrganized => 'ຈັດຕັ້ງ';
+
+  @override
+  String get badgeSavingMaster => 'ອາຈານປະຢັດ';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planner';
+
+  @override
   String get backupTitle => 'ສຳຮອງ';
 
   @override
@@ -2847,6 +2930,21 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get sortManual => 'ດ້ວຍມື';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased ຈາກທັງໝົດ $total ລາຍການ';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'ງົບປະມານ: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'ທັງໝົດ: $amount';
+  }
 
   @override
   String get addItem => 'ເພີ່ມລາຍການ';
@@ -3003,6 +3101,15 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String chatError(String error) {
     return 'ຂໍ້ຜິດພາດໃນການໂຫຼດສົນທະນາ: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'ຜູ້ຊ່ວຍ AI';
+
+  @override
+  String get closeSheet => 'ປິດ';
+
+  @override
+  String get scanBarcodeTitle => 'ສະແກນບາໂຄດ';
 
   @override
   String get listHelp => 'ຂ້ອຍຈະຊ່ວຍລາຍການຂອງທ່ານແນວໃດ?';
@@ -4709,4 +4816,40 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get onboardingPainRepeat => 'ການເດີນທາງຄັ້ງດຽວບໍ່ເຄີຍພຽງພໍ';
+
+  @override
+  String get aiWelcomeContent =>
+      'ສະບາຍດີ! 👋 ຂ້ອຍແມ່ນ **Kipi**, ຜູ້ຊ່ວຍຊື້ເຄື່ອງ ແລະ ສູດອາຫານສ່ວນຕົວຂອງເຈົ້າ!\n\nຂ້ອຍຢູ່ທີ່ນີ້ເພື່ອຊ່ວຍເຈົ້າ:\n🛒 **ຈັດລະບຽບ** ການຊື້ເຄື່ອງຂອງເຈົ້າຕາມໝວດໝູ່ໂດຍອັດຕະໂນມັດ\n💰 ** ຕິດຕາມ ** ງົບປະມານຂອງທ່ານແລະໃຫ້ຄໍາແນະນໍາການປະຫຍັດເງິນ\n🍲 **ແນະນຳ** ສູດແຊບໆ ກັບສິ່ງທີ່ເຈົ້າມີຢູ່ແລ້ວ\n\nຂ້ອຍສາມາດຊ່ວຍເຈົ້າໄດ້ແນວໃດໃນມື້ນີ້? ທ່ານສາມາດເລີ່ມຕົ້ນໂດຍການສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງທ່ານ!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'ສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງຂ້ອຍ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, ຊ່ວຍຂ້ອຍສ້າງລາຍການຊື້ເຄື່ອງທໍາອິດຂອງຂ້ອຍ';
+
+  @override
+  String get aiWelcomeSuggestSave => 'ວິທີການປະຫຍັດເງິນ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, ເຈົ້າສາມາດຊ່ວຍຂ້ອຍປະຫຍັດເງິນໃນຮ້ານຂາຍເຄື່ອງແຫ້ງໄດ້ແນວໃດ?';
+
+  @override
+  String get suggestionMilk => 'ນົມ';
+
+  @override
+  String get suggestionBread => 'ເຂົ້າຈີ່';
+
+  @override
+  String get suggestionEggs => 'ໄຂ່';
+
+  @override
+  String get suggestionCoffee => 'ກາເຟ';
+
+  @override
+  String get suggestionRice => 'ເຂົ້າ';
+
+  @override
+  String get suggestionFruits => 'ໝາກໄມ້';
 }

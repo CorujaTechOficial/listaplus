@@ -1,4 +1,5 @@
 import 'package:uuid/uuid.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import 'unit.dart';
 
 class PantryItem {
@@ -59,20 +60,9 @@ class PantryItem {
           : Unit.un,
       estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       trackStock: json['trackStock'] as bool? ?? true,
-      createdAt: _parseDate(json['createdAt']),
-      updatedAt: _parseDate(json['updatedAt']),
+      createdAt: safeParseDate(json['createdAt']),
+      updatedAt: safeParseDate(json['updatedAt']),
     );
-  }
-
-  static DateTime _parseDate(dynamic value) {
-    if (value == null) {
-      return DateTime.now();
-    }
-    if (value is DateTime) {
-      return value;
-    }
-    final parsed = DateTime.tryParse(value.toString());
-    return parsed ?? DateTime.now();
   }
 
   final String id;

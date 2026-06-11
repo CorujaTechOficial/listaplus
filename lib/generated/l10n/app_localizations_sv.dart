@@ -296,13 +296,13 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Skanna produkt';
 
   @override
   String get positionBarcodeCenter => 'Placera streckkoden i mitten';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Inställningar';
@@ -407,19 +407,19 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Olåsta märken';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Nybörjare';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organiserad';
 
   @override
   String get badgeSavingMaster => 'Saving Master';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Superplanerare';
 
   @override
   String get backupTitle => 'Säkerhetskopiering';
@@ -506,7 +506,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased av $total objekt';
   }
 
   @override
@@ -516,7 +516,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Totalt: $amount';
   }
 
   @override
@@ -676,13 +676,13 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI-assistent';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Nära';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Skanna streckkod';
 
   @override
   String get listHelp => 'Hur kan jag hjälpa dig med din lista?';
@@ -2364,45 +2364,80 @@ class AppLocalizationsSv extends AppLocalizations {
   String get onboardingAiDemoContinue => 'Fortsätta';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline => 'Din inköpslista, nu med AI';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'Se hur Kipi bygger din fullständiga lista på några sekunder';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'Jag vill ha det här! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'Jag är värd för en grillfest 🔥';
 
   @override
-  String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+  String get onboardingAiDemoSlideReady => 'Redo! Här är allt du behöver:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'Komplett lista på några sekunder ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'Vad frustrerar dig mest?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle => 'Var ärlig – vi fixar var och en';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'Ja, fixa det här åt mig →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'Jag glömmer saker i butiken';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily => 'Min familj ser aldrig listan';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'Jag går alltid över budget';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'En resa räcker aldrig';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hej! 👋 Jag är **Kipi**, din personliga shopping- och receptassistent!\n\nJag är här för att hjälpa dig:\n🛒 **Ordna** din shopping automatiskt efter kategorier\n💰 **Spåra** din budget och ge dig tips för att spara pengar\n🍲 **Föreslå** läckra recept med det du redan har\n\nHur kan jag hjälpa dig idag? Du kan börja med att skapa din första lista!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Skapa min första lista';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hjälp mig att skapa min första inköpslista';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hur sparar man pengar?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hur kan du hjälpa mig att spara pengar på matvaror?';
+
+  @override
+  String get suggestionMilk => 'Mjölk';
+
+  @override
+  String get suggestionBread => 'Bröd';
+
+  @override
+  String get suggestionEggs => 'Ägg';
+
+  @override
+  String get suggestionCoffee => 'Kaffe';
+
+  @override
+  String get suggestionRice => 'Ris';
+
+  @override
+  String get suggestionFruits => 'Frukter';
 }
 
 /// The translations for Swedish, as used in Sweden (`sv_SE`).
@@ -2697,7 +2732,13 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
+  String get scanProductTitle => 'Skanna produkt';
+
+  @override
   String get positionBarcodeCenter => 'Placera streckkoden i mitten';
+
+  @override
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Inställningar';
@@ -2802,6 +2843,21 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
+  String get unlockedBadges => 'Olåsta märken';
+
+  @override
+  String get badgeBeginner => 'Nybörjare';
+
+  @override
+  String get badgeOrganized => 'Organiserad';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Superplanerare';
+
+  @override
   String get backupTitle => 'Säkerhetskopiering';
 
   @override
@@ -2883,6 +2939,21 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get sortManual => 'Manuell';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased av $total objekt';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Totalt: $amount';
+  }
 
   @override
   String get addItem => 'Lägg till Vara';
@@ -3039,6 +3110,15 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String chatError(String error) {
     return 'Fel vid laddning av chatt: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI-assistent';
+
+  @override
+  String get closeSheet => 'Nära';
+
+  @override
+  String get scanBarcodeTitle => 'Skanna streckkod';
 
   @override
   String get listHelp => 'Hur kan jag hjälpa dig med din lista?';
@@ -4758,4 +4838,40 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get onboardingPainRepeat => 'En resa räcker aldrig';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hej! 👋 Jag är **Kipi**, din personliga shopping- och receptassistent!\n\nJag är här för att hjälpa dig:\n🛒 **Ordna** din shopping automatiskt efter kategorier\n💰 **Spåra** din budget och ge dig tips för att spara pengar\n🍲 **Föreslå** läckra recept med det du redan har\n\nHur kan jag hjälpa dig idag? Du kan börja med att skapa din första lista!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Skapa min första lista';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hjälp mig att skapa min första inköpslista';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hur sparar man pengar?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hur kan du hjälpa mig att spara pengar på matvaror?';
+
+  @override
+  String get suggestionMilk => 'Mjölk';
+
+  @override
+  String get suggestionBread => 'Bröd';
+
+  @override
+  String get suggestionEggs => 'Ägg';
+
+  @override
+  String get suggestionCoffee => 'Kaffe';
+
+  @override
+  String get suggestionRice => 'Ris';
+
+  @override
+  String get suggestionFruits => 'Frukter';
 }

@@ -299,13 +299,13 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'اسکین پروڈکٹ';
 
   @override
   String get positionBarcodeCenter => 'بارکوڈ کو مرکز میں رکھیں';
 
   @override
-  String get product => 'Product';
+  String get product => 'پروڈکٹ';
 
   @override
   String get settingsAppBar => 'ترتیبات';
@@ -411,19 +411,19 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'غیر مقفل بیجز';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'مبتدی';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'منظم';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'سیونگ ماسٹر';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'سپر پلانر';
 
   @override
   String get backupTitle => 'بیک اپ';
@@ -509,17 +509,17 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased از $total آئٹمز';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'بجٹ: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'کل: $amount';
   }
 
   @override
@@ -679,13 +679,13 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'اے آئی اسسٹنٹ';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'بند';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'بارکوڈ اسکین کریں۔';
 
   @override
   String get listHelp => 'آپ کی فہرست میں کیسے مدد کر سکتا ہوں؟';
@@ -2427,4 +2427,40 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ایک سفر کبھی کافی نہیں ہوتا';
+
+  @override
+  String get aiWelcomeContent =>
+      'ہیلو! 👋 میں **Kipi** ہوں، آپ کا ذاتی شاپنگ اور ریسیپی اسسٹنٹ!\n\nمیں آپ کی مدد کے لیے حاضر ہوں:\n🛒 زمرہ جات کے لحاظ سے اپنی خریداری کو **منظم کریں**\n💰 **اپنے بجٹ کو ٹریک کریں** اور آپ کو پیسہ بچانے کی تجاویز دیں۔\n🍲 **تجویز کریں** مزیدار ترکیبیں جو آپ کے پاس پہلے سے موجود ہیں۔\n\nآج میں آپ کی مدد کیسے کر سکتا ہوں؟ آپ اپنی پہلی فہرست بنا کر شروع کر سکتے ہیں!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'میری پہلی فہرست بنائیں';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi، میری پہلی خریداری کی فہرست بنانے میں میری مدد کریں۔';
+
+  @override
+  String get aiWelcomeSuggestSave => 'پیسہ کیسے بچایا جائے؟';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi، آپ گروسری پر پیسے بچانے میں میری مدد کیسے کر سکتے ہیں؟';
+
+  @override
+  String get suggestionMilk => 'دودھ';
+
+  @override
+  String get suggestionBread => 'روٹی';
+
+  @override
+  String get suggestionEggs => 'انڈے';
+
+  @override
+  String get suggestionCoffee => 'کافی';
+
+  @override
+  String get suggestionRice => 'چاول';
+
+  @override
+  String get suggestionFruits => 'پھل';
 }

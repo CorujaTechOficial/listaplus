@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
-import 'package:shopping_list/domain/entities/premium_feature.dart';
+import 'package:shopping_list/models/premium_feature.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
@@ -16,7 +16,7 @@ import 'package:shopping_list/app/settings/screens/manage_categories_screen.dart
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
-import 'package:shopping_list/domain/entities/ai_config.dart';
+import 'package:shopping_list/models/ai_config.dart';
 import 'package:shopping_list/app/ai/screens/chat_history_screen.dart';
 import 'package:shopping_list/app/settings/screens/feedback_screen.dart';
 import 'package:shopping_list/app/settings/screens/language_selection_screen.dart';
@@ -36,7 +36,6 @@ class SettingsScreen extends ConsumerWidget {
     final premiumAsync = ref.watch(premiumProvider);
     final localeAsync = ref.watch(localeSettingProvider);
     final currencyAsync = ref.watch(currencySettingProvider);
-    final isPt = Localizations.localeOf(context).languageCode == 'pt';
     final aiConfigAsync = ref.watch(aiConfigStateProvider);
     final aiConfig = aiConfigAsync.value ?? const AiConfig(name: 'IA', iconKey: 'smart_toy');
     final useDynamicColorAsync = ref.watch(useDynamicColorProvider);
@@ -47,12 +46,12 @@ class SettingsScreen extends ConsumerWidget {
       appBar: AppBar(title: Text(l10n.settingsAppBar)),
       body: SafeArea(child: ListView(
         children: [
-          _SectionHeader(title: isPt ? 'Assinatura' : 'Subscription'),
+          _SectionHeader(title: l10n.subscription),
           premiumAsync.when(
             data: (isPremium) => isPremium
                 ? ListTile(
                     leading: const Icon(Icons.workspace_premium, color: AppColors.premiumAmber),
-                    title: Text(isPt ? 'KipiList Pro ativo' : 'KipiList Pro active'),
+                    title: Text(l10n.kipiListProActive),
                     subtitle: Text(l10n.manageSubscription),
                     trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
                     onTap: () async {
@@ -71,7 +70,7 @@ class SettingsScreen extends ConsumerWidget {
                 : ListTile(
                     leading: Icon(Icons.workspace_premium_outlined, color: theme.colorScheme.primary),
                     title: Text(l10n.becomePremium),
-                    subtitle: Text(isPt ? 'Desbloqueie listas ilimitadas, IA e mais' : 'Unlock unlimited lists, AI and more'),
+                    subtitle: Text(l10n.unlockPremiumTitle),
                     trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
                     onTap: () async {
                       await ref.read(analyticsServiceProvider).logUpgradeTapped('settings');
@@ -83,22 +82,22 @@ class SettingsScreen extends ConsumerWidget {
                       }
                     },
                   ),
-            loading: () => const ListTile(
-              leading: CircularProgressIndicator.adaptive(),
-              title: Text('Carregando assinatura...'),
+            loading: () => ListTile(
+              leading: const CircularProgressIndicator.adaptive(),
+              title: Text(l10n.loadingSubscription),
             ),
             error: (e, _) => ListTile(
               leading: const Icon(Icons.error_outline, color: Colors.red),
-              title: const Text('Erro ao carregar assinatura'),
+              title: Text(l10n.errorLoadingSubscription),
               subtitle: Text(e.toString()),
             ),
           ),
           const Divider(),
-          _SectionHeader(title: isPt ? 'Perfil' : 'Profile'),
+          _SectionHeader(title: l10n.profileSection),
           ListTile(
             leading: Icon(Icons.person_outline, color: theme.colorScheme.primary),
-            title: const Text('Meu Perfil'),
-            subtitle: const Text('Preferências pessoais para o assistente IA'),
+            title: Text(l10n.myProfile),
+            subtitle: Text(l10n.profileSubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
             onTap: () {
               Navigator.push(
@@ -162,7 +161,7 @@ class SettingsScreen extends ConsumerWidget {
             },
           ),
           ListTile(
-            title: Text(isPt ? 'Personalizar Assistente IA' : 'Customize AI Assistant'),
+            title: Text(l10n.customizeAiAssistant),
             subtitle: Text(aiConfig.name),
             trailing: premiumAsync.value == true
                 ? Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant)
@@ -170,7 +169,7 @@ class SettingsScreen extends ConsumerWidget {
             onTap: () async {
               final isPremium = premiumAsync.value ?? false;
               if (isPremium) {
-                _showCustomizeAiDialog(context, ref, aiConfig, isPt);
+                _showCustomizeAiDialog(context, ref, aiConfig);
               } else {
                 await ref.read(analyticsServiceProvider).logPremiumFeatureAccessed(PremiumFeature.assistant.name);
                 if (context.mounted) {
@@ -184,8 +183,8 @@ class SettingsScreen extends ConsumerWidget {
           ),
           ListTile(
             leading: Icon(Icons.history, color: theme.colorScheme.primary),
-            title: Text(isPt ? 'Histórico do Assistente' : 'Assistant History'),
-            subtitle: Text(isPt ? 'Ver e pesquisar conversas anteriores' : 'View and search past conversations'),
+            title: Text(l10n.assistantHistory),
+            subtitle: Text(l10n.assistantHistorySubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
             onTap: () {
               Navigator.push(
@@ -310,8 +309,8 @@ class SettingsScreen extends ConsumerWidget {
           ),
           ListTile(
             leading: Icon(Icons.category_outlined, color: theme.colorScheme.primary),
-            title: const Text('Categorias'),
-            subtitle: const Text('Gerenciar categorias de itens'),
+            title: Text(l10n.manageCategories),
+            subtitle: Text(l10n.manageCategoriesSubtitle),
             trailing: Icon(Icons.chevron_right, color: theme.colorScheme.onSurfaceVariant),
             onTap: () {
               Navigator.push(
@@ -367,13 +366,14 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  void _showCustomizeAiDialog(BuildContext context, WidgetRef ref, AiConfig currentConfig, bool isPt) {
+  void _showCustomizeAiDialog(BuildContext context, WidgetRef ref, AiConfig currentConfig) {
     final nameController = TextEditingController(text: currentConfig.name);
     String selectedIconKey = currentConfig.iconKey;
 
     showDialog<void>(
       context: context,
       builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
         return StatefulBuilder(
           builder: (context, setState) {
             final theme = Theme.of(context);
@@ -385,7 +385,7 @@ class SettingsScreen extends ConsumerWidget {
             ];
 
             return AlertDialog(
-              title: Text(isPt ? 'Personalizar Assistente' : 'Customize Assistant'),
+              title: Text(l10n.customizeAssistant),
               content: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -394,14 +394,14 @@ class SettingsScreen extends ConsumerWidget {
                     TextField(
                       controller: nameController,
                       decoration: InputDecoration(
-                        labelText: isPt ? 'Nome do Assistente' : 'Assistant Name',
+                        labelText: l10n.assistantName,
                         border: const OutlineInputBorder(),
                       ),
                       maxLength: 20,
                     ),
                     const SizedBox(height: Spacing.md),
                     Text(
-                      isPt ? 'Escolha um Ícone:' : 'Choose an Icon:',
+                      l10n.chooseIcon,
                       style: theme.textTheme.titleSmall,
                     ),
                     const SizedBox(height: Spacing.xs),
@@ -448,7 +448,7 @@ class SettingsScreen extends ConsumerWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text(isPt ? 'Cancelar' : 'Cancel'),
+                  child: Text(l10n.cancel),
                 ),
                 FilledButton(
                   onPressed: () async {
@@ -471,7 +471,7 @@ class SettingsScreen extends ConsumerWidget {
                       }
                     }
                   },
-                  child: Text(isPt ? 'Salvar' : 'Save'),
+                  child: Text(l10n.save),
                 ),
               ],
             );

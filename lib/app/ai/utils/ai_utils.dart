@@ -10,10 +10,15 @@ class AiUtils {
     Duration timeout = const Duration(seconds: 30),
     String? label,
   }) async {
+    final stopwatch = Stopwatch()..start();
     try {
-      return await future.timeout(timeout);
+      final result = await future.timeout(timeout);
+      stopwatch.stop();
+      debugPrint('[AiUtils] [Performance] ${label ?? "future"} concluído em ${stopwatch.elapsedMilliseconds}ms');
+      return result;
     } on Object catch (e) {
-      debugPrint('[AiUtils] Erro/Timeout ao aguardar ${label ?? "future"}: $e');
+      stopwatch.stop();
+      debugPrint('[AiUtils] [Performance] ${label ?? "future"} falhou/timeout após ${stopwatch.elapsedMilliseconds}ms: $e');
       return defaultValue;
     }
   }

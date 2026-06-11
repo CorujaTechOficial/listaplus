@@ -41,8 +41,62 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
+  },
+  "@backToToday": {
+    "description": "Button to return to today's meal plan"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -68,12 +122,33 @@
       }
     }
   },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryLimitReached": {
+    "description": "Warning when max categories reached"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
+  "@categoryNameHint": {
+    "description": "Hint for category name"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
+  },
+  "@chooseThemeColor": {
+    "description": "Screen title for theme color"
   },
   "@completedOn": {
     "placeholders": {
@@ -103,12 +178,53 @@
       }
     }
   },
+  "@connectionError": {
+    "description": "Error message when connection fails"
+  },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
       }
     }
+  },
+  "@deleteCategory": {
+    "description": "Delete category action"
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteCategoryTitle": {
+    "description": "Title for delete category dialog"
+  },
+  "@deleteConversation": {
+    "description": "Delete action label"
+  },
+  "@deleteConversationConfirm": {
+    "description": "Confirm message for delete conversation"
+  },
+  "@deleteConversationTitle": {
+    "description": "Title for delete conversation dialog"
   },
   "@deleteListContent": {
     "placeholders": {
@@ -117,8 +233,17 @@
       }
     }
   },
+  "@dietaryRestrictions": {
+    "description": "Label for dietary restrictions field"
+  },
+  "@dietaryRestrictionsHint": {
+    "description": "Hint for dietary restrictions"
+  },
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
   },
   "@editPantryItem": {
     "placeholders": {
@@ -141,6 +266,21 @@
       }
     }
   },
+  "@errorLoadingHistory": {
+    "description": "Error loading conversation history"
+  },
+  "@errorLoadingLists": {
+    "description": "Error when lists fail to load"
+  },
+  "@errorLoadingSubscription": {
+    "description": "Error loading subscription info"
+  },
+  "@errorSavingProfile": {
+    "description": "Error when profile save fails"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
+  },
   "@feedbackError": {
     "placeholders": {
       "error": {
@@ -153,6 +293,13 @@
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -188,6 +335,12 @@
       }
     }
   },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
+  },
   "@listAdded": {
     "placeholders": {
       "listName": {
@@ -205,10 +358,35 @@
       }
     }
   },
+  "@loadingSubscription": {
+    "description": "Loading state for subscription"
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
+      }
+    }
+  },
+  "@manageCategories": {
+    "description": "Manage categories menu item"
+  },
+  "@manageCategoriesSubtitle": {
+    "description": "Subtitle for manage categories"
+  },
+  "@manageCategoriesTitle": {
+    "description": "Title for category management"
+  },
+  "@marketsToAvoid": {
+    "description": "Label for markets to avoid field"
+  },
+  "@marketsToAvoidHint": {
+    "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerPantryMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -222,6 +400,117 @@
       }
     }
   },
+  "@myProfile": {
+    "description": "My profile menu item"
+  },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@noListsFound": {
+    "description": "Empty state when user has no lists"
+  },
+  "@observations": {
+    "description": "Label for observations field"
+  },
+  "@observationsHint": {
+    "description": "Hint for observations field"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -231,11 +520,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -243,8 +607,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -260,6 +651,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -291,6 +691,24 @@
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
   },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
+  },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
   },
@@ -317,9 +735,195 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@preferredMarket": {
+    "description": "Label for preferred market field"
+  },
+  "@preferredMarketHint": {
+    "description": "Hint for preferred market"
+  },
+  "@profileDescription": {
+    "description": "Label for profile description field"
+  },
+  "@profileSaved": {
+    "description": "Snackbar when profile is saved"
+  },
+  "@profileSection": {
+    "description": "Profile section header"
+  },
+  "@profileSubtitle": {
+    "description": "Subtitle for profile section"
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@removeSharedListContent": {
     "placeholders": {
       "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@replaceItem": {
+    "placeholders": {
+      "item": {
         "type": "String"
       }
     }
@@ -336,6 +940,12 @@
         "type": "String"
       }
     }
+  },
+  "@saveProfile": {
+    "description": "Button to save profile"
+  },
+  "@selectCheaperAlternative": {
+    "description": "Button for cheaper alternative"
   },
   "@selectedItems": {
     "placeholders": {
@@ -368,8 +978,32 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
     }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swap": {
+    "description": "Button to swap item"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
   },
   "@totalEstimated": {
     "placeholders": {
@@ -377,6 +1011,18 @@
         "type": "String"
       }
     }
+  },
+  "@unlockPremiumTitle": {
+    "description": "Button to unlock premium"
+  },
+  "@unlockWithAd": {
+    "description": "Button to unlock via ad"
+  },
+  "@userProfile": {
+    "description": "User profile screen title"
+  },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
   },
   "about": "Über",
   "achievements": "Erfolge",
@@ -394,23 +1040,43 @@
   "advancedFeatures": "Erweiterte Funktionen",
   "aiAssistant": "KI-Assistent",
   "aiAssistantDescription": "Hole dir mit unserem KI-Assistenten intelligente Vorschläge, Rezepte und persönliche Tipps.",
+  "aiAssistantTitle": "KI-Assistent",
   "aiCreditsRemaining": "{remaining} Credits übrig",
   "aiEnergy": "KI-Energie",
+  "aiEnergyLow": "Niedrige KI-Energie",
   "aiError": "Entschuldigung, bei der Verarbeitung deiner Anfrage ist ein Fehler aufgetreten. Überprüfe deine Verbindung oder versuche es später erneut.",
   "aiLimitAlmostReached": "Fast keine KI-Nachrichten mehr",
+  "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} heute",
+  "aiSubscribeUnlimited": "Abonnieren Sie unbegrenzte KI",
   "aiTeaserFallback": "Abonnieren Sie Premium, um die vollständige Antwort freizuschalten und unbegrenzt KI-Tipps für Ihren Einkauf zu erhalten ...",
+  "aiUnlockUnlimited": "Schalte unbegrenzte KI frei",
+  "aiUsageExhausted": "Monatliches KI-Limit erreicht. Upgraden Sie unbegrenzt auf Pro →",
+  "aiUsageWarning": "{remaining} KI-Aktionen diesen Monat übrig – unbegrenzt upgraden",
   "aiVoiceCommandTooltip": "KI-Sprachbefehl (Premium)",
+  "aiWelcomeContent": "Hallo! 👋 Ich bin **Kipi**, dein persönlicher Einkaufs- und Rezeptassistent!\n\nIch bin hier, um Ihnen zu helfen:\n🛒 **Organisieren** Sie Ihren Einkauf automatisch nach Kategorien\n💰 **Verfolgen** Sie Ihr Budget und geben Sie Tipps zum Geldsparen\n🍲 **Schlagen Sie köstliche Rezepte vor** mit dem, was Sie bereits haben\n\nWie kann ich Ihnen heute helfen? Sie können mit der Erstellung Ihrer ersten Liste beginnen!",
+  "aiWelcomeSuggestCreateList": "Erstelle meine erste Liste",
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, hilf mir, meine erste Einkaufsliste zu erstellen",
+  "aiWelcomeSuggestSave": "Wie kann man Geld sparen?",
+  "aiWelcomeSuggestSavePrompt": "Kipi, wie kannst du mir helfen, beim Lebensmitteleinkauf Geld zu sparen?",
   "allTags": "Alle",
   "alreadyPurchased": "Bereits gekauft",
   "appTitle": "Einkaufsliste",
   "appearance": "Erscheinungsbild",
   "archiveList": "Liste archivieren",
+  "assistantHistory": "Geschichte des Assistenten",
+  "assistantHistorySubtitle": "Sehen Sie sich Ihren Gesprächsverlauf an",
+  "assistantName": "Name des Assistenten",
   "backToChat": "Zurück zum Chat",
+  "backToToday": "Zurück zum Heute",
   "backupExported": "Backup exportiert!",
   "backupNav": "Sicherung",
   "backupPremiumDescription": "Backup und Export sind eine Premium-Funktion",
   "backupSubtitle": "Exportiere oder importiere deine Daten",
   "backupTitle": "Sicherung",
+  "badgeBeginner": "Anfänger",
+  "badgeOrganized": "Organisiert",
+  "badgeSavingMaster": "Rettender Meister",
+  "badgeSuperPlanner": "Super Planer",
   "becomePremium": "Premium werden",
   "budgetAmountLabel": "Budgetbetrag",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -442,20 +1108,28 @@
   "catalogSortPopular": "Am beliebtesten",
   "catalogTitle": "Katalog",
   "category": "Kategorie",
+  "categoryColorLabel": "Farbe",
+  "categoryIconLabel": "Symbol",
+  "categoryLimitReached": "Kategorielimit erreicht",
+  "categoryName": "Kategoriename",
+  "categoryNameHint": "Geben Sie den Kategorienamen ein",
   "chatError": "Fehler beim Laden des Chats: {error}",
   "chatHint": "Gib deine Nachricht ein...",
   "chatHintBlocked": "Schalte KI frei, um zu chatten",
   "chatSubtitle": "Frage nach Artikelvorschlägen, Rezepten oder Spartipps.",
   "chatSubtitleShort": "Fragen Sie nach Preisen, Rezepten, Organisation...",
   "chooseCurrency": "Wählen Sie Währung aus",
+  "chooseIcon": "Symbol auswählen",
   "chooseImageSource": "Bildquelle wählen",
   "chooseLanguage": "Sprache wählen",
+  "chooseThemeColor": "Wählen Sie die Themenfarbe",
   "clear": "Leeren",
   "clearHistory": "Verlauf löschen",
   "clearHistoryConfirm": "Alle Nachrichten in dieser Sitzung löschen?",
   "clearList": "Liste leeren",
   "clearPurchased": "Gekauftes leeren",
   "close": "Schließen",
+  "closeSheet": "Schließen",
   "complete": "Abschließen",
   "completePurchase": "Kauf abschließen",
   "completedOn": "Abgeschlossen am {date}",
@@ -467,8 +1141,15 @@
   "confirmDeleteItems": "{count} Artikel entfernen?",
   "confirmDeleteTitle": "Bestätigen",
   "confirmRemovePantry": "\"{name}\" aus dem Vorrat entfernen?",
+  "connectionError": "Verbindungsfehler",
+  "connectionErrorDesc": "Fehler: {error}",
+  "consentAccept": "Akzeptieren",
+  "consentBody": "KipiList nutzt Firebase Analytics, um Ihr Erlebnis zu verbessern. Ihre Daten werden gemäß unserer Datenschutzerklärung verarbeitet.",
+  "consentDecline": "Nein danke",
+  "consentTitle": "Datenschutz und Analyse",
   "consumed": "Verbraucht",
   "continueAsGuest": "Als Gast fortfahren",
+  "conversationHistoryTitle": "Gesprächsgeschichte",
   "copiedToClipboard": "In die Zwischenablage kopiert",
   "copy": "Kopieren",
   "create": "Erstellen",
@@ -479,10 +1160,19 @@
   "currency": "Währung",
   "currentQty": "Aktuelle Menge",
   "currentQuantity": "Aktuelle Menge",
+  "currentStreak": "Aktueller Streak",
+  "customizeAiAssistant": "Passen Sie den KI-Assistenten an",
+  "customizeAssistant": "Anpassen",
   "dark": "Dunkel",
   "data": "Daten",
   "deficitItems": "{deficit,plural, one{{deficit} Artikel muss gekauft werden} other{{deficit} Artikel müssen gekauft werden}}",
   "delete": "Löschen",
+  "deleteCategory": "Löschen",
+  "deleteCategoryConfirm": "Elemente in „{category}“ werden nach „Andere“ verschoben.\nWeitermachen?",
+  "deleteCategoryTitle": "Kategorie löschen",
+  "deleteConversation": "Löschen",
+  "deleteConversationConfirm": "Diese Aktion kann nicht rückgängig gemacht werden.",
+  "deleteConversationTitle": "Konversation löschen",
   "deleteListConfirm": "Liste löschen",
   "deleteListContent": "Bist du sicher, dass du \"{name}\" löschen möchtest? Alle Artikel werden entfernt.",
   "deleteListTitle": "Liste löschen",
@@ -492,12 +1182,15 @@
   "deleteSession": "Chat löschen",
   "deleteSessionConfirm": "Sind Sie sicher, dass Sie diesen Chat löschen möchten? Die Nachrichten gehen dauerhaft verloren.",
   "deselectAll": "Alle abwählen",
+  "dietaryRestrictions": "Ernährungseinschränkungen",
+  "dietaryRestrictionsHint": "Irgendwelche diätetischen Einschränkungen?",
   "dynamicColors": "Dynamische Farben",
   "dynamicColorsEnabledWarning": "Deaktivieren Sie dynamische Farben, damit die Designfarbe wirksam wird",
   "dynamicColorsSubtitle": "Farben basierend auf Ihrem Hintergrundbild verwenden",
   "economyTips": "Spartipps",
   "economyTipsPrompt": "Wie kann ich bei diesem Einkauf Geld sparen?",
   "edit": "Bearbeiten",
+  "editCategoryDialog": "Kategorie bearbeiten",
   "editItem": "Artikel bearbeiten",
   "editItemPrice": "Geschätzter Preis",
   "editPantryItem": "{name} bearbeiten",
@@ -512,13 +1205,19 @@
   "errorGeneric": "Fehler: {message}",
   "errorLoadingChat": "Hoppla! Beim Laden des Chats ist ein Fehler aufgetreten.",
   "errorLoadingChatSubtitle": "Überprüfen Sie Ihre Verbindung oder versuchen Sie es später noch einmal.",
+  "errorLoadingHistory": "Fehler beim Laden des Verlaufs",
+  "errorLoadingLists": "Fehler beim Laden der Listen",
   "errorLoadingRecipes": "Fehler beim Laden der Rezepte",
+  "errorLoadingSubscription": "Fehler beim Laden des Abonnements",
   "errorOscillation": "Dies kann aufgrund von Netzwerkschwankungen oder vorübergehender Nichtverfügbarkeit auftreten. Bitte versuchen Sie es erneut.",
+  "errorSavingProfile": "Fehler beim Speichern des Profils",
   "estimated": "Geschätzt",
   "estimatedCost": "Geschätzt",
   "estimatedPrice": "Geschätzter Preis",
+  "everythingReady": "Alles bereit!",
   "exit": "Ausfahrt",
   "exitShoppingMode": "Verlassen Sie den Einkaufsmodus",
+  "expirationDate": "Verfallsdatum",
   "exportData": "Daten exportieren",
   "exportDataSubtitle": "Alle Listen als JSON speichern",
   "exportExcel": "Als Excel exportieren",
@@ -574,14 +1273,18 @@
   "instructions": "Anleitungen",
   "instructionsHint": "Geben Sie einen Schritt pro Zeile ein...",
   "inviteToList": "Zur Liste einladen",
+  "itemAddedSnack": "{name} hinzugefügt",
   "itemName": "Artikelname",
   "itemRemoved": "Artikel entfernt",
   "itemsAddedSuccess": "Artikel erfolgreich zur Liste hinzugefügt!",
   "itemsNeedPurchase": "{deficit} Artikel müssen gekauft werden",
+  "itemsPurchased": "Gekaufte Artikel",
   "itemsPurchasedCount": "{purchased} von {total} gekauft",
   "itemsPurchasedShort": "{purchased}/{total} gekauft",
   "itemsWillBeAdded": "{count} Artikel werden hinzugefügt",
+  "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
+  "kipiQuickBarHint": "Was müssen Sie kaufen?",
   "language": "Sprache",
   "languageEnglish": "Englisch",
   "languagePortuguese": "Português (Brasilien)",
@@ -600,13 +1303,19 @@
   "lists": "Listen",
   "loading": "Laden...",
   "loadingRecipes": "Ihre Rezepte werden geladen...",
+  "loadingSubscription": "Abonnement wird geladen...",
   "loginError": "Anmeldefehler: {error}",
   "loginPrompt": "Melde dich an, um\nPremium-Funktionen freizuschalten",
   "longHistoryWarning": "Lange Geschichte: Der Assistent konzentriert sich auf die neuesten Nachrichten für eine bessere Leistung.",
+  "manageCategories": "Kategorien verwalten",
+  "manageCategoriesSubtitle": "Kategorien hinzufügen, bearbeiten oder entfernen",
+  "manageCategoriesTitle": "Kategorien verwalten",
   "manageSubscription": "Abonnement verwalten",
   "markAsPurchased": "Als gekauft markieren",
   "markItemsToSeeAnalysis": "Markiere Artikel als gekauft, um die Analyse zu sehen.",
   "marketMode": "Marktmodus",
+  "marketsToAvoid": "Märkte, die Sie meiden sollten",
+  "marketsToAvoidHint": "Märkte, auf denen Sie lieber nicht einkaufen möchten",
   "mealPlannerAddMeal": "Mahlzeit hinzufügen",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDeleteMeal": "Mahlzeit entfernen",
@@ -628,6 +1337,8 @@
   "mealPlannerNoRecipesFound": "Keine Rezepte gefunden",
   "mealPlannerNoRecipesHint": "Erstellen Sie zuerst Rezepte im Reiter Rezepte",
   "mealPlannerNoteLabel": "Notiz (optional)",
+  "mealPlannerPantryAllAvailable": "Alle Zutaten vorhanden",
+  "mealPlannerPantryMissing": "{count} {count, plural, one{ingredient} other{ingredients}} fehlt",
   "mealPlannerPrepTime": "{minutes} Min.",
   "mealPlannerSave": "Zum Plan hinzufügen",
   "mealPlannerSearchRecipes": "Rezepte suchen...",
@@ -644,12 +1355,15 @@
   "monthlyBudgetNav": "Monatsbudget",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Monatsbudget",
+  "myAchievements": "Meine Erfolge",
   "myLists": "Meine Listen",
+  "myProfile": "Mein Profil",
   "myRecipes": "Meine Rezepte",
-  "navChat": "Chat",
+  "navChat": "Chatten",
   "navLists": "Listen",
   "navMealPlanner": "Speisekarte",
   "navRecipes": "Rezepte",
+  "newCategoryDialog": "Neue Kategorie",
   "newChat": "Neuer Chat",
   "newListTitle": "Neue Einkaufsliste",
   "newPantryList": "Vorratseinkauf",
@@ -659,6 +1373,7 @@
   "noActiveLists": "Keine aktiven Listen",
   "noArchivedLists": "Keine archivierten Listen",
   "noBudgetDefined": "Kein Budget festgelegt",
+  "noConversationsFound": "Keine Gespräche gefunden",
   "noHistory": "Kein Chatverlauf",
   "noItemsInList": "Keine Elemente in der Liste",
   "noItemsToAnalyze": "Keine Artikel in der Liste zum Analysieren.",
@@ -666,23 +1381,90 @@
   "noLabel": "Nein",
   "noListFoundSubtitle": "Erstelle deine erste Liste, um zu beginnen",
   "noListFoundTitle": "Keine Listen gefunden",
+  "noListSelected": "Keine Liste ausgewählt. Öffnen Sie zunächst eine Liste.",
+  "noListsFound": "Keine Listen gefunden",
   "noMessagesFound": "Keine Nachrichten gefunden",
   "noRecipesSaved": "Keine Rezepte gespeichert",
   "noRecipesSavedHint": "Erstellen Sie Ihr erstes eigenes Rezept, indem Sie auf die Schaltfläche unten tippen.",
   "noTracking": "Keine Verfolgung",
+  "notInformed": "Nicht festgelegt",
+  "observations": "Beobachtungen",
+  "observationsHint": "Irgendwelche zusätzlichen Hinweise?",
+  "offlineBanner": "Du bist offline",
+  "onboardingAiAskConfirm": "Sieht das gut aus? Versuchen Sie, etwas anderes einzugeben!",
+  "onboardingAiAskFood": "Was ist dein Lieblingsessen?",
+  "onboardingAiAskName": "Wie heißen Sie?",
+  "onboardingAiContinue": "Weiter →",
+  "onboardingAiDemoChange": "Artikel ändern",
+  "onboardingAiDemoContinue": "Weitermachen",
+  "onboardingAiDemoGreeting": "Hey {name}! Welchen {category} benötigen Sie?",
+  "onboardingAiDemoGreetingNoName": "Welchen {category} benötigen Sie?",
+  "onboardingAiDemoOffer": "Versuchen Sie, etwas anderes einzugeben!",
+  "onboardingAiDemoReaction": "Hübsch!",
+  "onboardingAiDemoSlideCta": "Ich will das! →",
+  "onboardingAiDemoSlideDone": "Vollständige Liste in Sekunden ✨",
+  "onboardingAiDemoSlideHeadline": "Ihre Einkaufsliste, jetzt mit KI",
+  "onboardingAiDemoSlideReady": "Bereit! Hier finden Sie alles, was Sie brauchen:",
+  "onboardingAiDemoSlideSubtitle": "Sehen Sie, wie Kipi in Sekundenschnelle Ihre vollständige Liste erstellt",
+  "onboardingAiDemoSlideUserMsg": "Ich veranstalte ein Barbecue 🔥",
+  "onboardingAiDemoYes": "Ja!",
+  "onboardingAiFoodHint": "z.B. Pizza, Sushi...",
+  "onboardingAiGreeting": "Hallo! Ich bin Kipi, Ihr persönlicher Einkaufsassistent! 🛒",
+  "onboardingAiIngredients": "Tolle Auswahl! Folgendes würde ich Ihrer Liste hinzufügen:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "Geben Sie Ihren Namen ein...",
+  "onboardingAiNiceToMeet": "Schön dich kennenzulernen, {name}! 🎉",
+  "onboardingAiReady": "Großartig! Sie können loslegen. Lassen Sie uns Ihr Konto einrichten!",
+  "onboardingAiTitle": "Chatten Sie mit Kipi",
   "onboardingAnnualBadge": "Bestes Preis-Leistungs-Verhältnis",
   "onboardingAnnualLabel": "Jährlich",
   "onboardingCancelAnytime": "Jederzeit kündbar. Keine Verpflichtung.",
+  "onboardingCategoryGrocery": "Lebensmittel",
+  "onboardingCategoryHome": "Heim",
+  "onboardingCategoryPet": "Haustier",
+  "onboardingCategoryPharmacy": "Apotheke",
+  "onboardingCategoryRecipes": "Rezepte",
+  "onboardingCommitmentsCta": "Lass uns gehen!",
+  "onboardingCommitmentsSubtitle": "Wählen Sie Ihre Ziele aus, um KipiList zu personalisieren",
+  "onboardingCommitmentsTitle": "Was ist Ihnen wichtig?",
   "onboardingContinueAsGuest": "Als Gast fortfahren",
   "onboardingExit": "Ausfahrt",
+  "onboardingGoalFamily": "Organisieren Sie Familieneinkäufe",
+  "onboardingGoalFaster": "Schneller einkaufen",
+  "onboardingGoalNeverForget": "Vergessen Sie niemals Gegenstände",
+  "onboardingGoalPantry": "Speisekammer verfolgen",
+  "onboardingGoalRecipes": "Entdecken Sie Rezepte",
+  "onboardingGoalSaveMoney": "Sparen Sie Geld",
+  "onboardingGroupCouple": "Paar",
+  "onboardingGroupFamily": "Familie",
+  "onboardingGroupSolo": "Nur ich",
+  "onboardingHookHeadline": "Vergessen Sie nie wieder ein Lebensmittel",
+  "onboardingLoadingStat1Label": "Katalogisierte Artikel",
+  "onboardingLoadingStat2Label": "Benutzer haben geholfen",
+  "onboardingLoadingStat3Label": "Minuten gespart",
+  "onboardingLoadingStep1": "Analysieren Sie Ihre Präferenzen...",
+  "onboardingLoadingStep2": "KI-Assistent einrichten...",
+  "onboardingLoadingStep3": "Fast fertig...",
+  "onboardingLoadingTitle": "Bereiten Sie Ihr Erlebnis vor...",
   "onboardingLoginDesc": "Ihre Daten werden auf allen Ihren Geräten synchronisiert",
   "onboardingLoginTitle": "Speichern Sie alles in der Cloud",
+  "onboardingMaybeLater": "Vielleicht später",
   "onboardingMonthlyLabel": "Monatlich",
+  "onboardingPainCta": "Ja, behebe das für mich →",
+  "onboardingPainFamily": "Meine Familie sieht die Liste nie",
+  "onboardingPainForget": "Ich vergesse Artikel im Laden",
+  "onboardingPainOverspend": "Ich überschreite immer das Budget",
+  "onboardingPainRepeat": "Eine Reise ist nie genug",
+  "onboardingPainSubtitle": "Seien Sie ehrlich – wir werden jedes Problem beheben",
+  "onboardingPainTitle": "Was frustriert Sie am meisten?",
+  "onboardingPersonalizationCategoryTitle": "Was kaufen Sie ein?",
   "onboardingPersonalizationCta": "Weitermachen",
   "onboardingPersonalizationDesc": "Wir nutzen dies, um Ihre Vorschläge zu personalisieren und das Einkaufen intelligenter zu gestalten.",
   "onboardingPersonalizationFoodHint": "z.B. Pizza, Sushi, Lasagne...",
   "onboardingPersonalizationFoodLabel": "Was ist dein Lieblingsessen?",
   "onboardingPersonalizationFoodRequired": "Sagen Sie uns Ihr Lieblingsessen, um fortzufahren",
+  "onboardingPersonalizationGroupTitle": "Für wen kaufen Sie ein?",
+  "onboardingPersonalizationNameHint": "Geben Sie Ihren Namen ein",
+  "onboardingPersonalizationNameLabel": "Ihr Name",
   "onboardingPersonalizationSkip": "Überspringen Sie es vorerst",
   "onboardingPersonalizationTitle": "Lass uns dich kennenlernen",
   "onboardingPremiumSubtitle": "Holen Sie das Beste aus Ihren Einkaufslisten heraus",
@@ -693,6 +1475,12 @@
   "onboardingSetupTitle": "Personalisieren Sie Ihr Erlebnis",
   "onboardingShareDesc": "Synchronisieren Sie Listen in Echtzeit mit Familie und Freunden",
   "onboardingShareTitle": "Teilen Sie es mit denen, die Sie lieben",
+  "onboardingSlide1Body": "Erstellen und teilen Sie sofort Listen. Kipi fügt Artikel automatisch basierend auf Ihren Gewohnheiten hinzu.",
+  "onboardingSlide1Title": "Intelligente Einkaufslisten",
+  "onboardingSlide2Body": "Fragen Sie alles – erstellen Sie Listen, finden Sie Rezepte, verfolgen Sie Ihre Speisekammer, planen Sie Ihre Woche.",
+  "onboardingSlide2Title": "Treffen Sie Kipi",
+  "onboardingSlide3Body": "Verfolgen Sie, was Sie haben, planen Sie Mahlzeiten und erstellen Sie automatisch Einkaufslisten.",
+  "onboardingSlide3Title": "Speisekammer und Essensplanung",
   "onboardingSubscribeCta": "Abonnieren",
   "onboardingViewAllPlans": "Alle Pläne anzeigen",
   "onboardingWelcomeDesc": "Der intelligenteste Weg, Ihren Einkauf zu organisieren und Geld zu sparen.",
@@ -724,13 +1512,31 @@
   "paywallCancelAnytime": "Jederzeit kündbar. Keine Verpflichtung.",
   "paywallCtaTrialDays": "Kostenlos starten – {days} Tage",
   "paywallCtaUnlock": "Schalte PRO frei",
+  "paywallFeatureDescAssistant": "KI organisiert Ihre Liste automatisch",
+  "paywallFeatureDescBudget": "Bleiben Sie jeden Monat im Budget",
+  "paywallFeatureDescPantry": "Verfolgen Sie, was Sie zu Hause haben",
+  "paywallFeatureDescSharing": "Gemeinsam in Echtzeit einkaufen",
+  "paywallFeatureDescUnlimitedLists": "Erstellen Sie so viele Listen, wie Sie benötigen",
   "paywallFeatureExpenseControl": "Kostenkontrolle",
   "paywallFeatureSharing": "Teilen",
   "paywallFeatureSmartAI": "Intelligente KI",
   "paywallFeatureUnlimitedLists": "Unbegrenzte Listen",
   "paywallFeaturesTitle": "Alles was Sie brauchen:",
+  "paywallGoalHeadlineFamily": "{name}, organisiere Familieneinkäufe!",
+  "paywallGoalHeadlineFaster": "{name}, shoppen Sie in der Hälfte der Zeit!",
+  "paywallGoalHeadlineNeverForget": "{name}, vergiss niemals einen Gegenstand!",
+  "paywallGoalHeadlineNoNameFamily": "Organisieren Sie Familieneinkäufe!",
+  "paywallGoalHeadlineNoNameFaster": "Shoppen Sie in der Hälfte der Zeit!",
+  "paywallGoalHeadlineNoNameNeverForget": "Vergessen Sie niemals einen Gegenstand!",
+  "paywallGoalHeadlineNoNamePantry": "Verfolgen Sie Ihre Speisekammer perfekt!",
+  "paywallGoalHeadlineNoNameRecipes": "Entdecken Sie neue Rezepte!",
+  "paywallGoalHeadlineNoNameSaveMoney": "Sparen Sie bei jeder Reise!",
+  "paywallGoalHeadlinePantry": "{name}, verfolge deine Speisekammer perfekt!",
+  "paywallGoalHeadlineRecipes": "{name}, entdecke neue Rezepte!",
+  "paywallGoalHeadlineSaveMoney": "{name}, sparen Sie bei jeder Reise!",
   "paywallHeroHeadline": "Kipi AI immer an Ihrer Seite",
   "paywallHeroSubtitle": "Fügen Sie Elemente hinzu, organisieren Sie Listen und sparen Sie Zeit mit KI in Ihrer Tasche",
+  "paywallHeroSubtitlePersonalized": "Hey {name}, organisiere deinen Einkauf richtig.",
   "paywallLabelCommon": "Gemeinsam",
   "paywallLabelPro": "KipiList PRO",
   "paywallLoadingError": "Fehler beim Laden der Angebote. Versuchen Sie es erneut.",
@@ -740,24 +1546,37 @@
   "paywallPackageMonthly": "Monatsplan",
   "paywallPackageMonthlyDesc": "Volle Flexibilität",
   "paywallPolicy": "Datenschutzrichtlinie",
+  "paywallPricePerDay": "Nur {price}/Tag – weniger als ein Kaffee",
   "paywallPricePerMonth": "Nur {price}/Monat",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "Der Kauf konnte nicht abgeschlossen werden. Versuchen Sie es erneut.",
   "paywallRestore": "Wiederherstellen",
   "paywallRestoreError": "Es wurde kein aktives Abonnement zum Wiederherstellen gefunden.",
   "paywallSafeCheckout": "Sichere Zahlung",
   "paywallSavePercent": "SPAREN Sie {percent}%",
+  "paywallSecuredByStore": "Gesichert durch Google Play · Jederzeit kündbar",
   "paywallSelectPlan": "Wählen Sie Ihren Plan:",
+  "paywallSkipNow": "Überspringen Sie es vorerst",
   "paywallSocialProof": "Über 2.400 Familien nutzen es",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "Nutzungsbedingungen",
+  "paywallTestimonial": "KI organisiert meinen Einkauf in Sekundenschnelle. Ich spare 20 Minuten pro Fahrt.",
   "paywallTestimonial1Name": "Ann S.",
   "paywallTestimonial1Text": "KI organisiert meinen Einkauf in Sekundenschnelle. Ich spare 20 Minuten pro Marktfahrt.",
   "paywallTestimonial2Name": "Charles M.",
   "paywallTestimonial2Text": "Ich habe nie wieder einen Listenpunkt vergessen. Der KI-Chat ist sensationell!",
+  "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Was unsere Benutzer sagen:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Kostenlose Testversion starten",
   "paywallTrialDays": "{days} TAGE KOSTENLOS",
+  "paywallTrialDisclaimer": "Jederzeit kündbar · Bis zum Ende Ihrer Testversion fallen keine Kosten an",
+  "paywallTrialInCard": "Die ersten {days} Tage KOSTENLOS",
   "paywallTrialMonths": "{count,plural, one{{count} MONAT KOSTENLOS} other{{count} MONATE KOSTENLOS}}",
+  "paywallTrialSubtitle": "Jederzeit kündbar. Heute keine Gebühr.",
+  "paywallTrialTitle": "Kostenlos testen!",
   "paywallTrialWeeks": "{count,plural, one{{count} WOCHE KOSTENLOS} other{{count} WOCHEN KOSTENLOS}}",
+  "positionBarcodeCenter": "Positionieren Sie den Barcode in der Mitte",
   "prefAIAssistant": "Persönlicher KI-Assistent",
   "prefCustomThemes": "Benutzerdefinierte Designs",
   "prefExportData": "Daten exportieren",
@@ -767,18 +1586,33 @@
   "prefSharing": "Listen teilen",
   "prefUnlimitedLists": "Unbegrenzte Listen",
   "prefUnlimitedPantry": "Unbegrenzter Vorrat",
+  "preferredMarket": "Bevorzugter Markt",
+  "preferredMarketHint": "Wo kaufen Sie normalerweise ein?",
   "premiumUpgrade": "Upgrade zum Freischalten",
   "prepTime": "Vorbereitungszeit",
   "prepTimeMinutes": "Vorbereitungszeit (Minuten)",
   "privacy": "Datenschutz",
+  "product": "Produkt",
   "productName": "Produktname",
   "profile": "Profil",
+  "profileDescription": "Profilbeschreibung",
+  "profileSaved": "Profil gespeichert",
+  "profileSection": "Profil",
+  "profileSubtitle": "Ihre Profilinformationen",
+  "progressBudget": "Budget: {amount}",
+  "progressItemsOf": "{purchased} von {total} Artikeln",
+  "progressTotal": "Gesamt: {amount}",
   "purchaseError": "Fehler bei der Kaufabwicklung. Bitte versuche es erneut.",
   "quantityFull": "Menge",
   "quantityShort": "Menge",
+  "quantityUnitWithPrice": "{qty} {unit} — {price}",
+  "quantityWithUnit": "{qty} {unit}",
   "quickRecipe": "Schnelles Rezept",
   "quickRecipePrompt": "Schlage Rezepte mit Artikeln aus meiner Liste vor.",
   "quickReplies": "Schnelle Antworten:",
+  "quickSuggestions": "Schnelle Vorschläge",
+  "recipeAddToList": "Auf die Merkliste",
+  "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Rezept erstellt!",
   "recipeDeleted": "Rezept gelöscht",
   "recipeImage": "Rezeptbild",
@@ -795,6 +1629,7 @@
   "removeSharedTooltip": "Entfernen",
   "rename": "Umbenennen",
   "renameListDialog": "Liste umbenennen",
+  "replaceItem": "Ersetzen Sie {item}",
   "requiredField": "Erforderlich",
   "restockLabel": "Auffüllen",
   "restocked": "{name} auf {quantity} {unit} aufgefüllt",
@@ -803,13 +1638,17 @@
   "retry": "Wiederholen",
   "save": "Speichern",
   "saveChanges": "Änderungen speichern",
+  "saveProfile": "Profil speichern",
   "saveRecipe": "Speichern",
   "savings": "Ersparnis",
+  "scanBarcodeTitle": "Barcode scannen",
+  "scanProductTitle": "Produkt scannen",
   "searchCurrency": "Währung suchen...",
   "searchInConversation": "Suche im Gespräch...",
   "searchLanguage": "Sprache suchen...",
   "searchRecipes": "Rezepte suchen...",
   "selectAll": "Alle auswählen",
+  "selectCheaperAlternative": "Wählen Sie eine günstigere Alternative",
   "selectListForDashboard": "Wähle eine Liste aus, um das Dashboard anzuzeigen.",
   "selectedItems": "{count,plural, one{{count} ausgewählt} other{{count} ausgewählt}}",
   "setBudgetButton": "Budget festlegen",
@@ -838,6 +1677,7 @@
   "shortDescription": "Kurzbeschreibung",
   "signInApple": "Mit Apple anmelden",
   "signInGoogle": "Mit Google anmelden",
+  "skip": "Überspringen",
   "smartOrganization": "Intelligente Organisation",
   "sortCategory": "Kategorie",
   "sortDate": "Datum",
@@ -845,8 +1685,19 @@
   "sortName": "Name",
   "spendingAnalysis": "Ausgabenanalyse",
   "spendingByCategory": "Ausgaben nach Kategorie",
+  "streakDays": "{count,plural, one{{count} Tag} other{{count} Tage}}",
+  "subscription": "Abonnement",
+  "suggestedItems": "Vorgeschlagene Artikel",
   "suggestedQuestions": "Vorgeschlagene Fragen:",
   "suggestedTags": "Vorgeschlagen",
+  "suggestionBread": "Brot",
+  "suggestionCoffee": "Kaffee",
+  "suggestionEggs": "Eier",
+  "suggestionFruits": "Früchte",
+  "suggestionMilk": "Milch",
+  "suggestionRice": "Reis",
+  "swap": "Tauschen",
+  "swapped": "Getauscht",
   "switchList": "Liste wechseln",
   "system": "System",
   "tags": "Schlagworte",
@@ -863,6 +1714,7 @@
   "themeRed": "Rot",
   "themeTeal": "Blaugrün",
   "totalEstimated": "Gesamt geschätzt: {amount}",
+  "totalSavings": "Gesamteinsparungen",
   "totalSpending": "Gesamtausgaben",
   "trackStock": "Lagerbestand verfolgen",
   "trackStockActive": "Erscheint in Einkaufsvorschlägen",
@@ -872,8 +1724,12 @@
   "unitPack": "Packung",
   "unlockAi": "Schalte unbegrenzte KI frei",
   "unlockFullResponse": "Schalten Sie die vollständige Antwort frei",
+  "unlockPremiumTitle": "Schalte Premium frei",
+  "unlockWithAd": "Mit Werbung freischalten",
+  "unlockedBadges": "Freigeschaltete Abzeichen",
   "unmark": "Markierung aufheben",
   "upgrade": "Upgrade",
+  "userProfile": "Benutzerprofil",
   "validForLimitedTime": "Begrenzt gültig",
   "version": "Version",
   "viewActive": "Aktive anzeigen",
@@ -891,5 +1747,6 @@
   "welcomeAiAssistant": "Willkommen bei AI Assistant",
   "whatToDoWithItem": "Was möchten Sie mit diesem Artikel machen?",
   "yes": "Ja",
-  "yesLabel": "Ja"
+  "yesLabel": "Ja",
+  "youCompletedList": "Du hast die Liste vervollständigt!"
 }

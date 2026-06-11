@@ -290,13 +290,13 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => '제품 스캔';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => '바코드를 중앙에 위치시키세요';
 
   @override
-  String get product => 'Product';
+  String get product => '제품';
 
   @override
   String get settingsAppBar => '설정';
@@ -383,42 +383,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get termsOfUse => '이용약관';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => '내 성과';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => '구매한 품목';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => '총 절감액';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => '현재 연속';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count일',
+      one: '$count일',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => '잠금 해제된 배지';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => '초보자';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => '정리됨';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => '마스터 저장';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => '슈퍼플래너';
 
   @override
   String get backupTitle => '백업';
@@ -504,17 +504,17 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$total 항목 중 $purchased개';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return '예산: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return '합계: $amount';
   }
 
   @override
@@ -672,13 +672,13 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI 어시스턴트';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => '닫다';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => '바코드 스캔';
 
   @override
   String get listHelp => '목록에 대해 무엇을 도와드릴까요?';
@@ -2343,6 +2343,40 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => '한 번의 여행으로는 충분하지 않습니다';
+
+  @override
+  String get aiWelcomeContent =>
+      '안녕하세요! 👋 저는 당신의 개인 쇼핑 및 레시피 도우미 **키피** 입니다!\n\n나는 당신을 돕기 위해 여기 있습니다:\n🛒 자동으로 카테고리별로 쇼핑을 **정리**하세요\n💰 예산을 **추적**하고 비용 절감 팁을 알려드립니다.\n🍲 이미 가지고 있는 음식으로 맛있는 요리법을 **제안**하세요.\n\n오늘은 무엇을 도와드릴까요? 첫 번째 목록을 만드는 것부터 시작할 수 있습니다!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '내 첫 번째 목록 만들기';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'Kipi, 내 첫 쇼핑 목록 작성을 도와주세요';
+
+  @override
+  String get aiWelcomeSuggestSave => '돈을 절약하는 방법?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => '키피야, 식료품비를 절약하는 데 어떻게 도와줄 수 있니?';
+
+  @override
+  String get suggestionMilk => '우유';
+
+  @override
+  String get suggestionBread => '빵';
+
+  @override
+  String get suggestionEggs => '계란';
+
+  @override
+  String get suggestionCoffee => '커피';
+
+  @override
+  String get suggestionRice => '쌀';
+
+  @override
+  String get suggestionFruits => '과일';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -2631,6 +2665,15 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   }
 
   @override
+  String get scanProductTitle => '제품 스캔';
+
+  @override
+  String get positionBarcodeCenter => '바코드를 중앙에 위치시키세요';
+
+  @override
+  String get product => '제품';
+
+  @override
   String get settingsAppBar => '설정';
 
   @override
@@ -2715,6 +2758,44 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get termsOfUse => '이용약관';
 
   @override
+  String get myAchievements => '내 성과';
+
+  @override
+  String get itemsPurchased => '구매한 품목';
+
+  @override
+  String get totalSavings => '총 절감액';
+
+  @override
+  String get currentStreak => '현재 연속';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count일',
+      one: '$count일',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => '잠금 해제된 배지';
+
+  @override
+  String get badgeBeginner => '초보자';
+
+  @override
+  String get badgeOrganized => '정리됨';
+
+  @override
+  String get badgeSavingMaster => '마스터 저장';
+
+  @override
+  String get badgeSuperPlanner => '슈퍼플래너';
+
+  @override
   String get backupTitle => '백업';
 
   @override
@@ -2795,6 +2876,21 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get sortManual => '수동';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$total 항목 중 $purchased개';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return '예산: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return '합계: $amount';
+  }
 
   @override
   String get addItem => '항목 추가';
@@ -2949,6 +3045,15 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String chatError(String error) {
     return '채팅 로딩 오류: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI 어시스턴트';
+
+  @override
+  String get closeSheet => '닫다';
+
+  @override
+  String get scanBarcodeTitle => '바코드 스캔';
 
   @override
   String get listHelp => '목록에 대해 무엇을 도와드릴까요?';
@@ -4613,4 +4718,38 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get onboardingPainRepeat => '한 번의 여행으로는 충분하지 않습니다';
+
+  @override
+  String get aiWelcomeContent =>
+      '안녕하세요! 👋 저는 당신의 개인 쇼핑 및 레시피 도우미 **키피** 입니다!\n\n나는 당신을 돕기 위해 여기 있습니다:\n🛒 자동으로 카테고리별로 쇼핑을 **정리**하세요\n💰 예산을 **추적**하고 비용 절감 팁을 알려드립니다.\n🍲 이미 가지고 있는 음식으로 맛있는 요리법을 **제안**하세요.\n\n오늘은 무엇을 도와드릴까요? 첫 번째 목록을 만드는 것부터 시작할 수 있습니다!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '내 첫 번째 목록 만들기';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'Kipi, 내 첫 쇼핑 목록 작성을 도와주세요';
+
+  @override
+  String get aiWelcomeSuggestSave => '돈을 절약하는 방법?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => '키피야, 식료품비를 절약하는 데 어떻게 도와줄 수 있니?';
+
+  @override
+  String get suggestionMilk => '우유';
+
+  @override
+  String get suggestionBread => '빵';
+
+  @override
+  String get suggestionEggs => '계란';
+
+  @override
+  String get suggestionCoffee => '커피';
+
+  @override
+  String get suggestionRice => '쌀';
+
+  @override
+  String get suggestionFruits => '과일';
 }

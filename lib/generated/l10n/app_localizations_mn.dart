@@ -300,13 +300,13 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Бүтээгдэхүүнийг сканнердах';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Зураасан кодыг төвд байрлуул';
 
   @override
-  String get product => 'Product';
+  String get product => 'Бүтээгдэхүүн';
 
   @override
   String get settingsAppBar => 'Тохиргоо';
@@ -395,42 +395,42 @@ class AppLocalizationsMn extends AppLocalizations {
   String get termsOfUse => 'Ашиглах нөхцөл';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Миний ололт амжилт';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Худалдан авсан зүйлс';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Нийт хадгаламж';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Одоогийн цуврал';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count өдөр',
+      one: '$count өдөр',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Түгжээгүй тэмдэг';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Эхлэгч';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Зохион байгуулалттай';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Мастерыг аварч байна';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Супер төлөвлөгч';
 
   @override
   String get backupTitle => 'Нөөцлөлт';
@@ -517,17 +517,17 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$total зүйлийн $purchased';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Төсөв: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Нийт: $amount';
   }
 
   @override
@@ -687,13 +687,13 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI туслах';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Хаах';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Бар кодыг сканнердах';
 
   @override
   String get listHelp => 'Жагсаалтад чинь хэрхэн туслах вэ?';
@@ -2379,45 +2379,86 @@ class AppLocalizationsMn extends AppLocalizations {
   String get onboardingAiDemoContinue => 'Үргэлжлүүлэх';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline =>
+      'Таны худалдан авалтын жагсаалт, одоо хиймэл оюун ухаантай';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'Kipi таны бүрэн жагсаалтыг хэдхэн секундын дотор хэрхэн бүрдүүлж байгааг хараарай';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'Би үүнийг хүсч байна! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'Би шарсан мах хийж байна 🔥';
 
   @override
   String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+      'Бэлэн! Энд танд хэрэгтэй бүх зүйл байна:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone =>
+      'Жагсаалтыг хэдхэн секундын дотор дуусгана уу ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'Таныг юу хамгийн ихээр бухимдуулдаг вэ?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle =>
+      'Шударга бай - бид тус бүрийг засах болно';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'Тийм ээ, үүнийг надад засаарай →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'Би дэлгүүрт бараагаа мартдаг';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily =>
+      'Манай гэр бүл жагсаалтыг хэзээ ч хардаггүй';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'Би үргэлж төсвөө хэтрүүлдэг';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat =>
+      'Нэг удаагийн аялал хэзээ ч хангалттай байдаггүй';
+
+  @override
+  String get aiWelcomeContent =>
+      'Сайн уу! 👋 Би бол **Kipi**, таны дэлгүүр хэсэх болон жорны туслах!\n\nБи танд туслахаар ирлээ:\n🛒 ** Худалдан авалтаа автоматаар ангиллаар нь зохион байгуул\n💰 **Төсвөө хянаж**, мөнгө хэмнэх зөвлөгөөг өгөөрэй\n🍲 **Санал болго** амттай жороо өөрт байгаа зүйлээрээ\n\nӨнөөдөр би чамд яаж туслах вэ? Та анхны жагсаалтаа үүсгэж эхэлж болно!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Миний анхны жагсаалтыг үүсгэ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Кипи, миний анхны худалдааны жагсаалтыг гаргахад тусална уу';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Хэрхэн мөнгө хэмнэх вэ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Кипи, та надад хүнсний мөнгөө хэмнэхэд хэрхэн тусалж чадах вэ?';
+
+  @override
+  String get suggestionMilk => 'Сүү';
+
+  @override
+  String get suggestionBread => 'Талх';
+
+  @override
+  String get suggestionEggs => 'Өндөг';
+
+  @override
+  String get suggestionCoffee => 'Кофе';
+
+  @override
+  String get suggestionRice => 'Цагаан будаа';
+
+  @override
+  String get suggestionFruits => 'Жимс';
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).
@@ -2710,6 +2751,15 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   }
 
   @override
+  String get scanProductTitle => 'Бүтээгдэхүүнийг сканнердах';
+
+  @override
+  String get positionBarcodeCenter => 'Зураасан кодыг төвд байрлуул';
+
+  @override
+  String get product => 'Бүтээгдэхүүн';
+
+  @override
   String get settingsAppBar => 'Тохиргоо';
 
   @override
@@ -2796,6 +2846,44 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get termsOfUse => 'Ашиглах нөхцөл';
 
   @override
+  String get myAchievements => 'Миний ололт амжилт';
+
+  @override
+  String get itemsPurchased => 'Худалдан авсан зүйлс';
+
+  @override
+  String get totalSavings => 'Нийт хадгаламж';
+
+  @override
+  String get currentStreak => 'Одоогийн цуврал';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count өдөр',
+      one: '$count өдөр',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Түгжээгүй тэмдэг';
+
+  @override
+  String get badgeBeginner => 'Эхлэгч';
+
+  @override
+  String get badgeOrganized => 'Зохион байгуулалттай';
+
+  @override
+  String get badgeSavingMaster => 'Мастерыг аварч байна';
+
+  @override
+  String get badgeSuperPlanner => 'Супер төлөвлөгч';
+
+  @override
   String get backupTitle => 'Нөөц хуулбар';
 
   @override
@@ -2877,6 +2965,21 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get sortManual => 'Гараар';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$total зүйлийн $purchased';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Төсөв: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Нийт: $amount';
+  }
 
   @override
   String get addItem => 'Зүйл нэмэх';
@@ -3033,6 +3136,15 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String chatError(String error) {
     return 'Чат ачааллахад алдаа: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI туслах';
+
+  @override
+  String get closeSheet => 'Хаах';
+
+  @override
+  String get scanBarcodeTitle => 'Бар кодыг сканнердах';
 
   @override
   String get listHelp => 'Жагсаалтанд хэрхэн туслах вэ?';
@@ -4756,4 +4868,40 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   @override
   String get onboardingPainRepeat =>
       'Нэг удаагийн аялал хэзээ ч хангалттай байдаггүй';
+
+  @override
+  String get aiWelcomeContent =>
+      'Сайн уу! 👋 Би бол **Kipi**, таны дэлгүүр хэсэх болон жорны туслах!\n\nБи танд туслахаар ирлээ:\n🛒 ** Худалдан авалтаа автоматаар ангиллаар нь зохион байгуул\n💰 **Төсвөө хянаж**, мөнгө хэмнэх зөвлөгөөг өгөөрэй\n🍲 **Санал болго** амттай жороо өөрт байгаа зүйлээрээ\n\nӨнөөдөр би чамд яаж туслах вэ? Та анхны жагсаалтаа үүсгэж эхэлж болно!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Миний анхны жагсаалтыг үүсгэ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Кипи, миний анхны худалдааны жагсаалтыг гаргахад тусална уу';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Хэрхэн мөнгө хэмнэх вэ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Кипи, та надад хүнсний мөнгөө хэмнэхэд хэрхэн тусалж чадах вэ?';
+
+  @override
+  String get suggestionMilk => 'Сүү';
+
+  @override
+  String get suggestionBread => 'Талх';
+
+  @override
+  String get suggestionEggs => 'Өндөг';
+
+  @override
+  String get suggestionCoffee => 'Кофе';
+
+  @override
+  String get suggestionRice => 'Цагаан будаа';
+
+  @override
+  String get suggestionFruits => 'Жимс';
 }

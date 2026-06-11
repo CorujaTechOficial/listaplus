@@ -41,8 +41,62 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
+  },
+  "@backToToday": {
+    "description": "Button to return to today's meal plan"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -54,12 +108,38 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
   },
   "@completedOn": {
     "placeholders": {
@@ -89,10 +169,41 @@
       }
     }
   },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for connectionErrorDesc"
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@currentTheme": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
+      }
+    }
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
       }
     }
   },
@@ -113,6 +224,9 @@
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
   },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
+  },
   "@editPantryItem": {
     "placeholders": {
       "name": {
@@ -127,12 +241,221 @@
       }
     }
   },
+  "@errorAddingBatch": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorAddingBatch"
+  },
+  "@errorAddingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorAddingItem"
+  },
+  "@errorArchivingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorArchivingList"
+  },
+  "@errorClearingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorClearingList"
+  },
+  "@errorClearingPurchased": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorClearingPurchased"
+  },
+  "@errorDecreasingQty": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorDecreasingQty"
+  },
+  "@errorDeletingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorDeletingList"
+  },
+  "@errorExecutingTool": {
+    "placeholders": {
+      "tool": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorExecutingTool"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorImportingList": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorImportingList"
+  },
+  "@errorIncreasingQty": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorIncreasingQty"
+  },
+  "@errorLoadingProducts": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorLoadingProducts"
+  },
+  "@errorRemovingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingItem"
+  },
+  "@errorRemovingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingItems"
+  },
+  "@errorRemovingSharedList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingSharedList"
+  },
+  "@errorReordering": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorReordering"
+  },
+  "@errorRestoringItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRestoringItem"
+  },
+  "@errorSavingProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorSavingProfile"
+  },
+  "@errorServerConnection": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorServerConnection"
+  },
+  "@errorSettingCurrentList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorSettingCurrentList"
+  },
+  "@errorTogglingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorTogglingItem"
+  },
+  "@errorTogglingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorTogglingItems"
+  },
+  "@errorUnarchivingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUpdatingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingItem"
+  },
+  "@errorUpdatingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingItems"
+  },
+  "@errorUpdatingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingList"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
   },
   "@feedbackError": {
     "placeholders": {
@@ -141,8 +464,25 @@
       }
     }
   },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -178,6 +518,12 @@
       }
     }
   },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
+  },
   "@listAdded": {
     "placeholders": {
       "listName": {
@@ -203,6 +549,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -243,6 +596,105 @@
       }
     }
   },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -252,11 +704,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -264,8 +791,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -281,6 +835,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -312,6 +875,24 @@
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
   },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
+  },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
   },
@@ -331,6 +912,13 @@
       }
     }
   },
+  "@pantryLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
@@ -338,7 +926,175 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@replaceItem": {
     "placeholders": {
       "name": {
         "type": "String"
@@ -389,7 +1145,35 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
+  },
+  "@themeChanged": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
     }
   },
   "@totalEstimated": {
@@ -398,6 +1182,9 @@
         "type": "String"
       }
     }
+  },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
   },
   "about": "Mayelana",
   "achievements": "Impumelelo",
@@ -409,29 +1196,54 @@
   "addItem": "Engeza Into",
   "addItemPrice": "Intengo elinganiselwe",
   "addPhoto": "Engeza isithombe",
+  "addToList": "Engeza ohlwini",
   "addToPantry": "Engeza ePhanta",
   "addToPantryPrompt": "Engeza \"{name}\" ePhanta lakho?",
   "addedFeedback": "Yengeziwe!",
+  "addingIngredientsToList": "Yengeza izithako ohlwini...",
+  "addingItems": "Yengeza izinto ohlwini...",
+  "addingToPantry": "Yengeza ku-pantry...",
   "advancedFeatures": "Izici ezithuthukile",
   "aiAssistant": "Umsizi we-AI",
   "aiAssistantDescription": "Thola iziphakamiso ezihlakaniphile, izindlela zokupheka namathiphu enzelwe wena ngomsizi wethu we-AI.",
+  "aiAssistantTitle": "Umsizi we-AI",
   "aiCreditsRemaining": "Kusele amakhredithi angu-{remaining}",
   "aiEnergy": "I-AI Amandla",
+  "aiEnergyLow": "Amandla e-AI aphansi",
   "aiError": "Uxolo, kube nephutha ekucubunguleni isicelo sakho. Bheka ukuxhumana kwakho noma uzame futhi kamuva.",
   "aiLimitAlmostReached": "Icishe iphele emilayezweni ye-AI",
+  "aiPremiumDescription": "Lesi sixhumi esibonakalayo sisebenzisa ubuhlakani bokwenziwa obusezingeni eliphezulu futhi sitholakala kuphela kumalungu e-Pro noma ngesikhangiso esisheshayo.",
+  "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} namuhla",
+  "aiSubscribeUnlimited": "Bhalisela i-AI engenamkhawulo",
   "aiTeaserFallback": "Bhalisela i-Premium ukuze uvule impendulo egcwele futhi uthole amathiphu e-AI angenamkhawulo okuthenga kwakho...",
+  "aiUnlockUnlimited": "Vula i-AI engenamkhawulo",
+  "aiUsageExhausted": "Umkhawulo wanyanga zonke we-AI ufinyelelwe. Thuthukela ku-Pro ngokungenamkhawulo →",
+  "aiUsageWarning": "{remaining} Izenzo ze-AI ezisele kule nyanga — thuthukisa ngokungenamkhawulo",
   "aiVoiceCommandTooltip": "Umyalo Wezwi we-AI (Premium)",
+  "aiWelcomeContent": "Sawubona! 👋 Ngingu-**Kipi**, umsizi wakho wokuthenga kanye neresiphi!\n\nNgilapha ukuze ngikusize:\n🛒 **Hlela ** ukuthenga kwakho ngezigaba ngokuzenzakalelayo\n💰 **Landela** ibhajethi yakho futhi ukunikeze amathiphu okonga imali\n🍲 **Phakamisa** izindlela zokupheka ezimnandi ngalokho osuvele unakho\n\nNgingakusiza ngani namuhla? Ungaqala ngokudala uhlu lwakho lokuqala!",
+  "aiWelcomeSuggestCreateList": "Dala uhlu lwami lokuqala",
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, ngisize ngidale uhlu lwami lokuqala lokuthenga",
+  "aiWelcomeSuggestSave": "Indlela yokulondoloza imali?",
+  "aiWelcomeSuggestSavePrompt": "Kipi, ungangisiza kanjani ukuthi ngilondoloze imali ngokuthenga?",
   "allTags": "Konke",
   "alreadyPurchased": "Sesithengiwe",
   "appTitle": "Uhlu Lwezinto Okumele Uzithenge",
   "appearance": "Ukubukeka",
   "archiveList": "Gcina uhlu",
+  "assistantHistory": "Umlando womsizi",
+  "assistantHistorySubtitle": "Buka umlando wakho wengxoxo",
+  "assistantName": "Igama lomsizi",
   "backToChat": "Buyela ku-Chat",
+  "backToToday": "Emuva namuhla",
   "backupExported": "Isipele sikhiphiwe!",
   "backupNav": "Isipele",
   "backupPremiumDescription": "Isipele nokukhipha idatha kuyisici se-premium",
   "backupSubtitle": "Khipha noma ngenisa idatha yakho",
   "backupTitle": "Isipele",
+  "badgeBeginner": "Osaqalayo",
+  "badgeOrganized": "Kuhleliwe",
+  "badgeSavingMaster": "Saving Master",
+  "badgeSuperPlanner": "I-Super Planner",
   "becomePremium": "Yiba yi-Premium",
   "budgetAmountLabel": "Inani lesabelomali",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -451,21 +1263,46 @@
   "catCleaning": "Ukuhlanza",
   "catFruits": "Izithelo",
   "catOthers": "Okunye",
+  "catalogAddItems": "Engeza {count} {count, plural, one{item} other{items}} →",
+  "catalogBrowse": "Phequlula Ikhathalogi",
+  "catalogFilterNational": "Abesizwe",
+  "catalogMyFrequents": "Izikhathi Zami",
+  "catalogProductNotFound": "Umkhiqizo awutholakali, thayipha igama",
+  "catalogRareSection": "okungajwayelekile ezweni lakini",
+  "catalogSearchGlobal": "Sesha noma yimuphi umkhiqizo...",
+  "catalogSearchInCategory": "Sesha kokuthi {category}...",
+  "catalogSortAZ": "A–Z",
+  "catalogSortPopular": "Okudume kakhulu",
+  "catalogTitle": "Ikhathalogi",
+  "categorizingItems": "Ihlukanisa izinto...",
   "category": "Isigaba",
+  "categoryColorLabel": "Umbala",
+  "categoryIconLabel": "Isithonjana",
+  "categoryLimitReached": "Umkhawulo wezigaba eziyi-10 kunguqulo yamahhala. Thuthukela ku-Pro!",
+  "categoryName": "Igama lesigaba",
+  "categoryNameHint": "Isib.: Inyama",
   "chatError": "Iphutha ekulayisheni ingxoxo: {error}",
   "chatHint": "Bhala umyalezo wakho...",
   "chatHintBlocked": "Vula i-AI ukuze uxoxe",
   "chatSubtitle": "Cela iziphakamiso zezinto, izindlela zokupheka noma amathiphu okonga.",
   "chatSubtitleShort": "Buza ngezintengo, zokupheka, inhlangano...",
+  "checkingItem": "Ihlola into...",
+  "checkingPantry": "Ihlola i-pantry yakho...",
+  "checkingSettings": "Ihlola izilungiselelo zakho...",
   "chooseCurrency": "Khetha Imali",
+  "chooseIcon": "Khetha isithonjana",
   "chooseImageSource": "Khetha umthombo wesithombe",
   "chooseLanguage": "Khetha Ulimi",
+  "chooseThemeColor": "Khetha Umbala Wetimu",
   "clear": "Sula",
   "clearHistory": "Sula Umlando",
   "clearHistoryConfirm": "Sula yonke imiyalezo kulesi seshini?",
   "clearList": "Sula uhlu",
   "clearPurchased": "Sula okuthengiwe",
+  "clearingCheckedItems": "Isula izinto ezithikhiwe...",
   "close": "Vala",
+  "closeSheet": "Vala",
+  "color": "Umbala:",
   "complete": "Qedela",
   "completePurchase": "Qedela ukuthenga",
   "completedOn": "Kuqedelwe {date}",
@@ -477,22 +1314,49 @@
   "confirmDeleteItems": "Susa izinto ezi-{count}?",
   "confirmDeleteTitle": "Qinisekisa",
   "confirmRemovePantry": "Susa \"{name}\" ephanta?",
+  "connectionError": "Iphutha Lokuxhuma",
+  "connectionError2": "Uxolo, kwenzeke iphutha lokuxhumana.",
+  "connectionErrorDesc": "Ayikwazanga ukuxhuma kuseva. Hlola i-inthanethi yakho.\n({error})",
+  "consentAccept": "Yamukela",
+  "consentBody": "I-KipiList isebenzisa i-Firebase Analytics ukuze ithuthukise ulwazi lwakho. Idatha yakho icutshungulwa ngokuya ngeNqubomgomo yethu Yobumfihlo.",
+  "consentDecline": "Cha ngiyabonga",
+  "consentTitle": "Ubumfihlo Nezibalo",
   "consumed": "Kusetshenzisiwe",
   "continueAsGuest": "Qhubeka njengesivakashi",
+  "conversationHistoryTitle": "Umlando wengxoxo",
   "copiedToClipboard": "Kukopishelwe kubuntu",
   "copy": "Kopisha",
+  "couldNotProcess": "Ayikwazanga ukucubungula ngemva kwemizamo eminingi.",
   "create": "Dala",
   "createFirstList": "Dala Uhlu Lokuqala",
   "createListDialog": "Dala Uhlu",
   "createListToStartAi": "Dala uhlu lokuthenga ukuze uqale ukusebenzisa ingxoxo ehlakaniphile.",
   "createNewList": "Dala uhlu olusha",
+  "creatingNewList": "Idala uhlu olusha...",
   "currency": "Imali",
   "currentQty": "Ubuningi bamanje",
   "currentQuantity": "Inani lamanje",
+  "currentStreak": "Ukulandelana kwamanje",
+  "currentTheme": "Itimu yamanje: {mode}",
+  "customizeAiAssistant": "Enza ngendlela oyifisayo umsizi we-AI",
+  "customizeAssistant": "Enza ngendlela oyifisayo",
   "dark": "Ubumnyama",
   "data": "Idatha",
+  "dayFri": "NgoLwesihlanu",
+  "dayMon": "Msombuluko",
+  "daySat": "NgoMgqibelo",
+  "daySun": "Ilanga",
+  "dayThu": "ULwesine",
+  "dayTue": "ULwesibili",
+  "dayWed": "NgoLwesithathu",
   "deficitItems": "{deficit,plural, one{Into eyi-{deficit} idinga ukuthengwa} other{Izinto ezi-{deficit} zidinga ukuthengwa}}",
   "delete": "Susa",
+  "deleteCategory": "Susa",
+  "deleteCategoryConfirm": "Izinto ezisesigabeni \"{category}\" zizothuthelwa kokuthi \"Ezinye\".\nQhubeka?",
+  "deleteCategoryTitle": "Susa Isigaba",
+  "deleteConversation": "Susa",
+  "deleteConversationConfirm": "Lesi senzo asikwazi ukuhlehliswa.",
+  "deleteConversationTitle": "Susa Ingxoxo?",
   "deleteListConfirm": "Susa uhlu",
   "deleteListContent": "Uqinisekile ukuthi ufuna ukususa \"{name}\"? Zonke izinto zizosuswa.",
   "deleteListTitle": "Susa uhlu",
@@ -502,12 +1366,15 @@
   "deleteSession": "Susa Ingxoxo",
   "deleteSessionConfirm": "Uqinisekile ukuthi ufuna ukususa le ngxoxo? Imilayezo izolahleka unomphela.",
   "deselectAll": "Susa ukukhetha konke",
+  "dietaryRestrictions": "Imikhawulo yokudla",
+  "dietaryRestrictionsHint": "Isib.: i-vegan, imifino, i-gluten-free",
   "dynamicColors": "Imibala enamandla",
   "dynamicColorsEnabledWarning": "Khubaza imibala eguqukayo ukuze umbala wetimu usebenze",
   "dynamicColorsSubtitle": "Sebenzisa imibala esuselwe kusithombe sangemuva sakho",
   "economyTips": "Amathiphu okonga",
   "economyTipsPrompt": "Ngingayonga kanjani imali kulokhu kuthenga?",
   "edit": "Hlela",
+  "editCategoryDialog": "Hlela isigaba",
   "editItem": "Hlela Into",
   "editItemPrice": "Intengo elinganiselwe",
   "editPantryItem": "Hlela {name}",
@@ -519,14 +1386,54 @@
   "enterCodeHint": "Faka ikhodi",
   "enterUrl": "Faka i-URL",
   "error": "Iphutha: {message}",
+  "errorAddingBatch": "Iphutha lokwengeza izinto kunqwaba: {error}",
+  "errorAddingItem": "Iphutha ekungezeni into: {error}",
+  "errorArchivingList": "Iphutha lokufaka uhlu kungobo yomlando: {error}",
+  "errorClearingList": "Iphutha ekusuleni uhlu: {error}",
+  "errorClearingPurchased": "Iphutha lokusula izinto ezithengiwe: {error}",
+  "errorCreatingList": "Iphutha ekudaleni uhlu",
+  "errorDecreasingQty": "Iphutha ekunciphiseni inani: {error}",
+  "errorDeletingList": "Iphutha ekususeni uhlu: {error}",
+  "errorExecutingTool": "Iphutha ekusebenziseni {tool}: {error}",
+  "errorGeneratingCode": "Iphutha ekukhiqizeni ikhodi eyingqayizivele. Zama futhi.",
   "errorGeneric": "Iphutha: {message}",
+  "errorImportingList": "Iphutha ekungeniseni uhlu \"{name}\": {error}",
+  "errorIncreasingQty": "Iphutha ekukhuphuleni inani: {error}",
   "errorLoadingChat": "Eshu! Kukhona okungahambanga kahle ekulayisheni ingxoxo.",
   "errorLoadingChatSubtitle": "Hlola ukuxhumeka kwakho noma uzame futhi emuva kwesikhathi.",
+  "errorLoadingHistory": "Iphutha ekulayisheni umlando",
+  "errorLoadingLists": "Iphutha ekulayisheni uhlu",
+  "errorLoadingProducts": "Iphutha ekulayisheni imikhiqizo: {error}",
   "errorLoadingRecipes": "Iphutha ekulayisheni amarisiphu",
+  "errorLoadingSubscription": "Iphutha ekulayisheni ukubhalisa",
   "errorOscillation": "Lokhu kungenzeka ngenxa yokuzulazula kwenethiwekhi noma ukungatholakali kwesikhashana. Sicela uzame futhi.",
+  "errorProcessingRequest": "Uxolo, kwenzeke iphutha ngesikhathi sicubungula isicelo sakho. Hlola ukuxhumeka kwakho noma uzame futhi emuva kwesikhathi.",
+  "errorRemovingItem": "Iphutha ekususeni into: {error}",
+  "errorRemovingItems": "Iphutha ekususeni izinto: {error}",
+  "errorRemovingSharedList": "Iphutha ekususeni uhlu olwabiwe: {error}",
+  "errorRenderScreen": "Eshu! Kukhona okungahambanga kahle ekunikezeni lesi sikrini.",
+  "errorReordering": "Iphutha ekuhleleni kabusha into: {error}",
+  "errorRestoringItem": "Iphutha ekubuyiseleni into: {error}",
+  "errorResumingLoop": "[ResumeLoop] Iphutha lokuqalisa kabusha iluphu",
+  "errorResumingProcessing": "Iphutha lokuqalisa kabusha ukucubungula.",
+  "errorSavingProfile": "Iphutha ekulondolozeni: {error}",
+  "errorServerConnection": "Iphutha ekuxhumekeni kuseva: {error}",
+  "errorSettingCurrentList": "Iphutha ekusetheni uhlu lwamanje: {error}",
+  "errorTogglingItem": "Iphutha ekuguquleni isimo sento: {error}",
+  "errorTogglingItems": "Iphutha ekuguquleni izinto: {error}",
+  "errorUnarchivingList": "Iphutha ekukhipheni uhlu: {error}",
+  "errorUpdatingItem": "Iphutha ekubuyekezeni into: {error}",
+  "errorUpdatingItems": "Iphutha ekubuyekezeni izinto: {error}",
+  "errorUpdatingList": "Iphutha ekubuyekezeni uhlu: {error}",
+  "errorUserNotAuthenticated": "Umsebenzisi akaqinisekisiwe.",
   "estimated": "Okulinganiselwe",
   "estimatedCost": "Kulinganiselwe",
   "estimatedPrice": "Intengo elinganiselwe",
+  "estimatingPrices": "Ilinganisela izintengo...",
+  "everythingReady": "Konke sekumi ngomumo!",
+  "exit": "Phuma",
+  "exitShoppingMode": "Phuma kumodi yokuthenga",
+  "expirationDate": "Usuku lokuphelelwa isikhathi",
   "exportData": "Khipha idatha",
   "exportDataSubtitle": "Londoloza zonke izinhlu njenge-JSON",
   "exportExcel": "Khipha njenge-Excel",
@@ -565,8 +1472,12 @@
   "generalAssistant": "Umsizi Ojwayelekile",
   "generalHelp": "Ngingakusiza kanjani ngokuthenga kwakho namuhla?",
   "generateShoppingList": "Dala uhlu lokuthenga",
+  "generatingContent": "Ikhiqiza okuqukethwe komuntu siqu...",
+  "generatingShareLink": "Ikhiqiza isixhumanisi sokwabelana...",
+  "gestureHint": "Bamba ukuze ukhethe • Swayipha ukuze ususe",
   "globalAssistant": "Umsizi jikelele",
   "howCanIHelp": "Ngingasiza kanjani?",
+  "icon": "Isithonjana:",
   "idealQty": "Ubuningi obufanele",
   "idealQuantity": "Inani elifanele",
   "imageUrlPlaceholder": "Noma namathisela i-URL yesithombe",
@@ -581,14 +1492,19 @@
   "instructions": "Iziyalezo",
   "instructionsHint": "Thayipha isinyathelo esisodwa ngomugqa ngamunye...",
   "inviteToList": "Mema ohlwini",
+  "itemAdded": "{name} yengeziwe",
+  "itemAddedSnack": "{name} yengeziwe",
   "itemName": "Igama lento",
   "itemRemoved": "Into isusiwe",
   "itemsAddedSuccess": "Izinto zingeziwe ohlwini ngempumelelo!",
   "itemsNeedPurchase": "Izinto ezi-{deficit} zidinga ukuthengwa",
+  "itemsPurchased": "Izinto Ezithengiwe",
   "itemsPurchasedCount": "{purchased} kokungu-{total} okuthengiwe",
   "itemsPurchasedShort": "{purchased}/{total} okuthengiwe",
   "itemsWillBeAdded": "Izinto ezi-{count} zizongezwa",
+  "kipiListProActive": "I-KipiList Pro Iyasebenza",
   "kipiListTitle": "I-KipiList",
+  "kipiQuickBarHint": "Yini okudingeka uyithenge?",
   "language": "Ulimi",
   "languageEnglish": "IsiNgisi",
   "languagePortuguese": "Isi-Portuguese (Brasil)",
@@ -603,17 +1519,26 @@
   "listHistory": "Umlando Wohlu",
   "listNameLabel": "Igama lohlu",
   "listOrganizedMagic": "Uhlu luhlelwe ngokuyisimanga ngezigaba! ✨",
+  "listUnarchived": "Uhlu lukhishwe kungobo yomlando ngempumelelo.",
   "listening": "Ilalele...",
   "lists": "Izinhlu",
   "loading": "Iyalayisha...",
+  "loadingMenu": "Ilayisha imenyu yakho...",
+  "loadingProfile": "Ilayisha iphrofayela yakho...",
   "loadingRecipes": "Ilayisha zokupheka zakho...",
+  "loadingSubscription": "Ilayisha ukubhalisa...",
   "loginError": "Iphutha lokungena: {error}",
   "loginPrompt": "Ngena ukuze uvule\nizici ze-premium",
   "longHistoryWarning": "Umlando omude: umsizi ugxile emilayezweni yakamuva ngokusebenza okungcono.",
+  "manageCategories": "Phatha Izigaba",
+  "manageCategoriesSubtitle": "Phatha izigaba zezinto",
+  "manageCategoriesTitle": "Phatha Izigaba",
   "manageSubscription": "Phatha ubulungu",
   "markAsPurchased": "Maka njengokuthengiwe",
   "markItemsToSeeAnalysis": "Maka izinto njengezithengiwe ukuze ubone ukuhlaziywa.",
   "marketMode": "Imodi yeMakethe",
+  "marketsToAvoid": "Izimakethe Okufanele Uzigweme",
+  "marketsToAvoidHint": "Isb.: Imakethe Y, Imakethe Z",
   "mealPlannerAddMeal": "Engeza Ukudla",
   "mealPlannerDateLabel": "Usuku",
   "mealPlannerDeleteMeal": "Susa ukudla",
@@ -635,6 +1560,8 @@
   "mealPlannerNoRecipesFound": "Awekho amaresiphi atholiwe",
   "mealPlannerNoRecipesHint": "Dala izindlela zokupheka kuthebhu yamaresiphi kuqala",
   "mealPlannerNoteLabel": "Inothi (uyazikhethela)",
+  "mealPlannerPantryAllAvailable": "Zonke izithako ezitholakalayo",
+  "mealPlannerPantryMissing": "{count} {count, plural, one{ingredient} other{ingredients}} ayikho",
   "mealPlannerPrepTime": "{minutes} iminithi",
   "mealPlannerSave": "Engeza ohlelweni",
   "mealPlannerSearchRecipes": "Sesha amaresiphi...",
@@ -647,12 +1574,32 @@
   "mealPlannerWeekEmpty": "Akukho okuhlelelwe kuleli sonto",
   "mealPlannerWeekEmptyHint": "Thepha noma yiluphi usuku ukuze uqale ukuhlela ukudla kwakho!",
   "mealPlannerWeekProgress": "{count} kokungu-{total} kokudla okuhleliwe",
+  "mealType": "Uhlobo lokudla",
+  "monthApril": "April",
+  "monthAugust": "Agasti",
+  "monthDecember": "Disemba",
+  "monthFebruary": "February",
+  "monthJanuary": "January",
+  "monthJuly": "July",
+  "monthJune": "Juni",
+  "monthMarch": "Mashi",
+  "monthMay": "Meyi",
+  "monthNovember": "Novemba",
+  "monthOctober": "Okthoba",
+  "monthSeptember": "September",
   "monthlyBudgetAppBar": "Isabelomali Senyanga",
   "monthlyBudgetNav": "Isabelomali senyanga",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Isabelomali Senyanga",
+  "myAchievements": "Izimpumelelo Zami",
   "myLists": "Izinhlu Zami",
+  "myProfile": "Iphrofayela Yami",
   "myRecipes": "Amaresiphi Ami",
+  "navChat": "Xoxa",
+  "navLists": "Izinhlu",
+  "navMealPlanner": "Imenyu",
+  "navRecipes": "Izindlela zokupheka",
+  "newCategoryDialog": "Isigaba esisha",
   "newChat": "Ingxoxo Entsha",
   "newListTitle": "Uhlu olusha lokuthenga",
   "newPantryList": "Ukuthenga kwephanta",
@@ -662,6 +1609,8 @@
   "noActiveLists": "Azikho izinhlu ezisebenzayo",
   "noArchivedLists": "Azikho izinhlu ezigciniwe",
   "noBudgetDefined": "Asikho isabelomali esimisiwe",
+  "noCategories": "Azikho izigaba.",
+  "noConversationsFound": "Azikho izingxoxo ezitholiwe",
   "noHistory": "Awukho umlando wengxoxo",
   "noItemsInList": "Azikho izinto ohlwini",
   "noItemsToAnalyze": "Azikho izinto ohlwini okumele zihlaziywe.",
@@ -669,23 +1618,90 @@
   "noLabel": "Cha",
   "noListFoundSubtitle": "Dala uhlu lwakho lokuqala ukuze uqale",
   "noListFoundTitle": "Azikho izinhlu ezitholakele",
+  "noListSelected": "Alukho uhlu olukhethiwe. Vula uhlu kuqala.",
+  "noListsFound": "Alukho uhlu olutholiwe",
   "noMessagesFound": "Ayikho imilayezo etholiwe",
   "noRecipesSaved": "Awekho amaresiphi alondoloziwe",
   "noRecipesSavedHint": "Dala iresiphi yakho yokuqala yangokwezifiso ngokuthepha inkinobho engezansi.",
   "noTracking": "Akukho ukulandelela",
+  "notInformed": "Akusethiwe",
+  "observations": "Amanothi",
+  "observationsHint": "Okunye okuncanyelwayo komsizi",
+  "offlineBanner": "Awuxhunyiwe ku-inthanethi",
+  "onboardingAiAskConfirm": "Ingabe lokhu kubukeka kukuhle? Zama ukuthayipha enye into!",
+  "onboardingAiAskFood": "Yikuphi ukudla okuthandayo?",
+  "onboardingAiAskName": "Ubani igama lakho?",
+  "onboardingAiContinue": "Qhubeka →",
+  "onboardingAiDemoChange": "Shintsha into",
+  "onboardingAiDemoContinue": "Qhubeka",
+  "onboardingAiDemoGreeting": "Sawubona {name}! Yini i-{category} oyidingayo?",
+  "onboardingAiDemoGreetingNoName": "Yini {category} oyidingayo?",
+  "onboardingAiDemoOffer": "Zama ukuthayipha enye into!",
+  "onboardingAiDemoReaction": "Kuhle!",
+  "onboardingAiDemoSlideCta": "Ngiyayifuna lento! →",
+  "onboardingAiDemoSlideDone": "Qedela uhlu ngemizuzwana ✨",
+  "onboardingAiDemoSlideHeadline": "Uhlu lwakho lokuthenga, manje nge-AI",
+  "onboardingAiDemoSlideReady": "Ilungile! Nakhu konke okudingayo:",
+  "onboardingAiDemoSlideSubtitle": "Bona ukuthi i-Kipi ilwakha kanjani uhlu lwakho olugcwele ngemizuzwana",
+  "onboardingAiDemoSlideUserMsg": "Ngiphathe izoso 🔥",
+  "onboardingAiDemoYes": "Yebo!",
+  "onboardingAiFoodHint": "isib. I-pizza, i-sushi...",
+  "onboardingAiGreeting": "Sawubona! NginguKipi, umsizi wakho womuntu siqu wokuthenga! 🛒",
+  "onboardingAiIngredients": "Izinqumo ezinhle! Nakhu engingakwengeza ohlwini lwakho:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "Thayipha igama lakho...",
+  "onboardingAiNiceToMeet": "Ngiyajabula ukukwazi, {name}! 🎉",
+  "onboardingAiReady": "Kuhle! Usukulungele ukuqala. Masimise i-akhawunti yakho!",
+  "onboardingAiTitle": "Xoxa noKipi",
   "onboardingAnnualBadge": "Inani Elihle Kakhulu",
   "onboardingAnnualLabel": "Ngonyaka",
   "onboardingCancelAnytime": "Khansela noma nini. Akukho ukuzibophezela.",
+  "onboardingCategoryGrocery": "Igrosa",
+  "onboardingCategoryHome": "Ikhaya",
+  "onboardingCategoryPet": "Isilwane esifuywayo",
+  "onboardingCategoryPharmacy": "Ikhemisi",
+  "onboardingCategoryRecipes": "Amaresiphi",
+  "onboardingCommitmentsCta": "Asambe!",
+  "onboardingCommitmentsSubtitle": "Khetha izinhloso zakho ukuze wenze i-KipiList ibe ngeyakho",
+  "onboardingCommitmentsTitle": "Yini ebalulekile kuwe?",
   "onboardingContinueAsGuest": "Qhubeka njengesivakashi",
   "onboardingExit": "Phuma",
+  "onboardingGoalFamily": "Hlela ukuthenga komndeni",
+  "onboardingGoalFaster": "Thenga ngokushesha",
+  "onboardingGoalNeverForget": "Ungalokothi ukhohlwe izinto",
+  "onboardingGoalPantry": "Landelela i-pantry",
+  "onboardingGoalRecipes": "Zitholele izindlela zokupheka",
+  "onboardingGoalSaveMoney": "Eqela ngaphezulu",
+  "onboardingGroupCouple": "Umbhangqwana",
+  "onboardingGroupFamily": "Umndeni",
+  "onboardingGroupSolo": "Mina nje",
+  "onboardingHookHeadline": "Ungalokothi ukhohlwe into yegrosa futhi",
+  "onboardingLoadingStat1Label": "Izinto ezifakwe kukhathalogi",
+  "onboardingLoadingStat2Label": "Abasebenzisi basizile",
+  "onboardingLoadingStat3Label": "Amaminithi alondoloziwe",
+  "onboardingLoadingStep1": "Ihlaziya okuncamelayo...",
+  "onboardingLoadingStep2": "Isetha umsizi we-AI...",
+  "onboardingLoadingStep3": "Cishe usulungile...",
+  "onboardingLoadingTitle": "Ilungiselela okwenzayo...",
   "onboardingLoginDesc": "Idatha yakho ivunyelaniswe kuwo wonke amadivayisi akho",
   "onboardingLoginTitle": "Londoloza yonke into emafini",
+  "onboardingMaybeLater": "Mhlawumbe ngukuhamba kwesikhathi",
   "onboardingMonthlyLabel": "Nyanga zonke",
+  "onboardingPainCta": "Yebo, ngilungisele lokhu →",
+  "onboardingPainFamily": "Umndeni wami awukaze ulubone uhlu",
+  "onboardingPainForget": "Ngikhohlwa izinto zasesitolo",
+  "onboardingPainOverspend": "Ngihlala ngibheka isabelomali",
+  "onboardingPainRepeat": "Uhambo olulodwa alwanele",
+  "onboardingPainSubtitle": "Thembeka — sizolungisa ngayinye",
+  "onboardingPainTitle": "Yini ekucasula kakhulu?",
+  "onboardingPersonalizationCategoryTitle": "Uthengelani?",
   "onboardingPersonalizationCta": "Qhubeka",
   "onboardingPersonalizationDesc": "Sizosebenzisa lokhu ukuze senze iziphakamiso zakho zibe ngokwakho futhi senze ukuthenga kuhlakaniphe.",
   "onboardingPersonalizationFoodHint": "isib. I-pizza, i-sushi, i-lasagna ...",
   "onboardingPersonalizationFoodLabel": "Yikuphi ukudla okuthandayo?",
   "onboardingPersonalizationFoodRequired": "Sitshele ukudla okuthandayo ukuze uqhubeke",
+  "onboardingPersonalizationGroupTitle": "Uthengela bani?",
+  "onboardingPersonalizationNameHint": "Faka igama lakho",
+  "onboardingPersonalizationNameLabel": "Igama lakho",
   "onboardingPersonalizationSkip": "Yeqa okwamanje",
   "onboardingPersonalizationTitle": "Asikwazi",
   "onboardingPremiumSubtitle": "Thola okuningi ohlwini lwakho lokuthenga",
@@ -696,6 +1712,12 @@
   "onboardingSetupTitle": "Yenza kube ngokwakho umuzwa wakho",
   "onboardingShareDesc": "Vumelanisa uhlu nomndeni nabangane ngesikhathi sangempela",
   "onboardingShareTitle": "Yabelana nalabo obathandayo",
+  "onboardingSlide1Body": "Dala futhi wabelane ngohlu ngokushesha. I-Kipi yengeza izinto ngokuzenzakalelayo ngokusekelwe emikhubeni yakho.",
+  "onboardingSlide1Title": "Uhlu Lokuthenga Okuhlakaniphile",
+  "onboardingSlide2Body": "Buza noma yini — dala uhlu, thola izindlela zokupheka, landelela ukudla kwakho, hlela isonto lakho.",
+  "onboardingSlide2Title": "Ahlangane noKipi",
+  "onboardingSlide3Body": "Landelela lokho onakho, hlela ukudla, futhi ukhiqize uhlu lokuthenga ngokuzenzakalelayo.",
+  "onboardingSlide3Title": "I-Pantry & Meal Planning",
   "onboardingSubscribeCta": "Bhalisa",
   "onboardingViewAllPlans": "Buka zonke izinhlelo",
   "onboardingWelcomeDesc": "Indlela ehlakaniphe kakhulu yokuhlela ukuthenga kwakho futhi wonge imali.",
@@ -705,12 +1727,15 @@
   "organizeAislesPrompt": "Hlela ngemihlandela yemakethe.",
   "organizeByAisles": "Hlela ngemihlandela",
   "organizingAi": "UKUHLELA NGE-AI...",
+  "organizingMenu": "Ihlela imenyu yakho...",
+  "othersCategory": "Abanye",
   "pantry": "Iphanta",
   "pantryAppBar": "Iphanta",
   "pantryEditTitle": "Hlela {name}",
   "pantryEmpty": "Iphanta engenalutho",
   "pantryEmptySubtitle": "Engeza imikhiqizo ofuna ukuba nayo ekhaya",
   "pantryItemRemoved": "Into isusiwe",
+  "pantryLimitReached": "Umkhawulo wezinto ezingu-{count} ku-pantry ohlelweni lwamahhala. Thuthukisa ukuze wengeze okwengeziwe.",
   "paywallAfterItem1": "Okusanhlamvu",
   "paywallAfterItem2": "Ukuhlanza",
   "paywallAfterItem3": "Inyama",
@@ -727,13 +1752,31 @@
   "paywallCancelAnytime": "Khansela noma nini. Akukho ukuzibophezela.",
   "paywallCtaTrialDays": "Qala mahhala — {days} izinsuku",
   "paywallCtaUnlock": "Vula i-PRO",
+  "paywallFeatureDescAssistant": "I-AI ihlela uhlu lwakho ngokuzenzakalelayo",
+  "paywallFeatureDescBudget": "Hlala kubhajethi nyanga zonke",
+  "paywallFeatureDescPantry": "Landelela lokho onakho ekhaya",
+  "paywallFeatureDescSharing": "Thenga ndawonye ngesikhathi sangempela",
+  "paywallFeatureDescUnlimitedLists": "Dala izinhlu eziningi ozidingayo",
   "paywallFeatureExpenseControl": "Ukulawula Izindleko",
   "paywallFeatureSharing": "Ukwabelana",
   "paywallFeatureSmartAI": "I-Smart AI",
   "paywallFeatureUnlimitedLists": "Uhlu Olungenamkhawulo",
   "paywallFeaturesTitle": "Konke okudingayo:",
+  "paywallGoalHeadlineFamily": "{name}, hlela ukuthenga komndeni!",
+  "paywallGoalHeadlineFaster": "{name}, thenga phakathi nesikhathi!",
+  "paywallGoalHeadlineNeverForget": "{name}, ungalokothi ukhohlwe into!",
+  "paywallGoalHeadlineNoNameFamily": "Hlela ukuthenga komndeni!",
+  "paywallGoalHeadlineNoNameFaster": "Thenga phakathi nesikhathi!",
+  "paywallGoalHeadlineNoNameNeverForget": "Ungalokothi ukhohlwe into!",
+  "paywallGoalHeadlineNoNamePantry": "Landelela i-pantry yakho kahle!",
+  "paywallGoalHeadlineNoNameRecipes": "Zitholele izindlela ezintsha zokupheka!",
+  "paywallGoalHeadlineNoNameSaveMoney": "Yonga kulo lonke uhambo!",
+  "paywallGoalHeadlinePantry": "{name}, landelela kahle i-pantry yakho!",
+  "paywallGoalHeadlineRecipes": "{name}, thola izindlela zokupheka ezintsha!",
+  "paywallGoalHeadlineSaveMoney": "{name}, yonga kulo lonke uhambo!",
   "paywallHeroHeadline": "I-Kipi AI njalo eceleni kwakho",
   "paywallHeroSubtitle": "Engeza izinto, hlela uhlu futhi wonge isikhathi nge-AI ephaketheni lakho",
+  "paywallHeroSubtitlePersonalized": "Sawubona {name}, hlela ukuthenga kwakho ngendlela efanele.",
   "paywallLabelCommon": "Okuvamile",
   "paywallLabelPro": "I-KipiList PRO",
   "paywallLoadingError": "Iphutha ekulayisheni okunikezwayo. Zama futhi.",
@@ -743,24 +1786,37 @@
   "paywallPackageMonthly": "Uhlelo Lwenyanga",
   "paywallPackageMonthlyDesc": "Ukuvumelana nezimo okugcwele",
   "paywallPolicy": "Inqubomgomo yobumfihlo",
+  "paywallPricePerDay": "Kuphela {price}/ngosuku — ngaphansi kwekhofi",
   "paywallPricePerMonth": "Kuphela {price}/ngenyanga",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "Ayikwazanga ukuqedela ukuthenga. Zama futhi.",
   "paywallRestore": "Buyisela",
   "paywallRestoreError": "Akukho ukubhalisa okusebenzayo okutholiwe ukuze kubuyiselwe.",
   "paywallSafeCheckout": "Inkokhelo evikelekile",
   "paywallSavePercent": "LONDOLOZA {percent}%",
+  "paywallSecuredByStore": "Ivikelwe i-Google Play · Khansela noma nini",
   "paywallSelectPlan": "Khetha uhlelo lwakho:",
+  "paywallSkipNow": "Yeqa okwamanje",
   "paywallSocialProof": "+2,400 imindeni eyisebenzisayo",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "Imigomo Yokusebenzisa",
+  "paywallTestimonial": "I-AI ihlela ukuthenga kwami ​​ngemizuzwana. Ngilondoloza amaminithi angu-20 ngohambo ngalunye.",
   "paywallTestimonial1Name": "U-Ann S.",
   "paywallTestimonial1Text": "I-AI ihlela ukuthenga kwami ​​ngemizuzwana. Ngonga amaminithi angu-20 ngohambo lwemakethe ngalunye.",
   "paywallTestimonial2Name": "UCharles M.",
   "paywallTestimonial2Text": "Angiphindanga ngakhohlwa into yohlu. Ingxoxo ye-AI iyamangalisa!",
+  "paywallTestimonialAuthor": "U-Ann S.",
   "paywallTestimonialsTitle": "Okushiwo abasebenzisi bethu:",
   "paywallTitle": "I-KipiList Premium",
+  "paywallTrialCta": "Qala Isivivinyo Samahhala",
   "paywallTrialDays": "{days} IZINSUKU MAHHALA",
+  "paywallTrialDisclaimer": "Khansela noma nini · Akukhokhiswa kuze kuphele isivivinyo sakho",
+  "paywallTrialInCard": "Izinsuku zokuqala ezingu-{days} MAHHALA",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH MAHHALA} other{{count} MONTHS MAHHALA}}",
+  "paywallTrialSubtitle": "Khansela noma nini. Akukhokhiswa namuhla.",
+  "paywallTrialTitle": "Zama mahhala!",
   "paywallTrialWeeks": "{count,plural, one{{count} WEEK FREE} other{{count} WEEKS MAHHALA}}",
+  "positionBarcodeCenter": "Misa ibhakhodi phakathi nendawo",
   "prefAIAssistant": "Umsizi we-AI wakho siqu",
   "prefCustomThemes": "Izitimu ezenziwe ngokwezifiso",
   "prefExportData": "Khipha idatha",
@@ -770,17 +1826,36 @@
   "prefSharing": "Yabelana ngezinhlu",
   "prefUnlimitedLists": "Izinhlu ezingenamkhawulo",
   "prefUnlimitedPantry": "Iphanta engenamkhawulo",
+  "preferredMarket": "Imakethe Ethandwayo",
+  "preferredMarketHint": "Isb.: Isuphamakethe X",
   "premiumUpgrade": "Thuthukisa ukuze uvule",
   "prepTime": "Isikhathi sokulungiselela",
   "prepTimeMinutes": "Isikhathi sokulungiselela (amaminithi)",
   "privacy": "Ubumfihlo",
+  "processing": "Iyacubungula...",
+  "product": "Umkhiqizo",
   "productName": "Igama lomkhiqizo",
+  "profile": "Iphrofayela",
+  "profileDescription": "Sitshele okuncamelayo komuntu siqu ukuze umsizi we-AI akwazi ukuphakamisa izinto eziqondene nawe nezindlela zokupheka.",
+  "profileSaved": "Iphrofayela ilondolozwe ngempumelelo!",
+  "profileSection": "Iphrofayela",
+  "profileSubtitle": "Izinketho zomuntu siqu zomsizi we-AI",
+  "progressBudget": "Isabelomali: {amount}",
+  "progressItemsOf": "{purchased} kwezingu-{total} izinto",
+  "progressTotal": "Inani: {amount}",
   "purchaseError": "Iphutha ekucubungulweni kokuthenga. Zama futhi.",
+  "purchasedSuffix": "[Kuthengiwe]",
   "quantityFull": "Ubuningi",
   "quantityShort": "Inani",
+  "quantityUnitWithPrice": "{qty} {unit} — {price}",
+  "quantityWithUnit": "{qty} {unit}",
+  "queryingYourLists": "Ibuza ngohlu lwakho...",
   "quickRecipe": "Iresiphi esheshayo",
   "quickRecipePrompt": "Phakamisa izindlela zokupheka ngezinto ezisohlwini lwami.",
   "quickReplies": "Izimpendulo ezisheshayo:",
+  "quickSuggestions": "Iziphakamiso ezisheshayo",
+  "recipeAddToList": "Engeza ohlwini lokuthenga",
+  "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Iresiphi idaliwe!",
   "recipeDeleted": "Iresiphi isusiwe",
   "recipeImage": "Isithombe seresiphi",
@@ -795,8 +1870,16 @@
   "removeSharedListContent": "Susa \"{name}\" ezinhlelweni zakho? Uhlu lwangempela ngeke luthintwe.",
   "removeSharedListTitle": "Susa uhlu okwabelwana ngalo",
   "removeSharedTooltip": "Susa",
+  "removingFromPantry": "Isusa ku-pantry...",
+  "removingItems": "Isusa izinto...",
+  "removingList": "Isusa uhlu...",
+  "removingRecipe": "Isusa iresiphi...",
   "rename": "Qamba kabusha",
   "renameListDialog": "Qamba Kabusha Uhlu",
+  "renamingList": "Iqamba kabusha uhlu...",
+  "reorganizingList": "Ihlela kabusha uhlu...",
+  "replaceItem": "Faka esikhundleni {item}",
+  "requestTimeout": "Uxolo, isicelo siphelelwe yisikhathi.",
   "requiredField": "Kudingeka",
   "restockLabel": "Gcwalisa kabusha",
   "restocked": "{name} igcwalise kabusha yaba ngu-{quantity} {unit}",
@@ -805,17 +1888,30 @@
   "retry": "Zama futhi",
   "save": "Londoloza",
   "saveChanges": "Londoloza izinguquko",
+  "saveProfile": "Londoloza Iphrofayela",
   "saveRecipe": "Londoloza",
+  "savingPreferences": "Ilondoloza okuncamelayo...",
+  "savingRecipe": "Ilondoloza iresiphi...",
   "savings": "Ukonga",
+  "scanBarcode": "Skena ibhakhodi",
+  "scanBarcodeTitle": "Skena ibhakhodi",
+  "scanProduct": "Skena umkhiqizo",
+  "scanProductTitle": "Skena Umkhiqizo",
   "searchCurrency": "Sesha uhlobo lwemali...",
   "searchInConversation": "Sesha engxoxweni...",
   "searchLanguage": "Sesha ulimi...",
   "searchRecipes": "Sesha amaresiphi...",
+  "searchingCategories": "Isesha izigaba...",
+  "searchingProducts": "Isesha imikhiqizo...",
+  "searchingRecipes": "Isesha amarisiphu...",
+  "searchingSharedList": "Isesha uhlu olwabiwe...",
   "selectAll": "Khetha konke",
+  "selectCheaperAlternative": "Khetha omunye umkhiqizo oshibhile ukuze ukwandise izindleko.",
   "selectListForDashboard": "Khetha uhlu ukuze ubuke ideshibhodi.",
   "selectedItems": "{count,plural, one{{count} ikhethiwe} other{{count} zikhethiwe}}",
   "setBudgetButton": "Setha isabelomali",
   "setBudgetTitle": "Isabelomali Senyanga",
+  "settingBudget": "Isetha ibhajethi...",
   "settingsAppBar": "Izilungiselelo",
   "settingsDefaultScreen": "Isikrini sasekhaya esizenzakalelayo",
   "settingsDefaultScreenSubtitle": "Khetha phakathi kohlu lokuthenga noma ingxoxo ye-AI",
@@ -835,20 +1931,34 @@
   "shareViaCode": "Yabelana ngekhodi",
   "sharedLabel": "Kwabelwana ngaso",
   "shoppingAssistant": "Umsizi wokuthenga",
+  "shoppingList": "Uhlu Lokuthenga",
   "shoppingMode": "Imodi Yokuthenga",
   "shoppingModeHeader": "IMODI YOKUTHENGA",
   "shortDescription": "Incazelo emfushane",
   "signInApple": "Ngena nge-Apple",
   "signInGoogle": "Ngena nge-Google",
+  "skip": "Yeqa",
   "smartOrganization": "Ukuhlela Okuhlakaniphile",
+  "sortAZ": "A-Z",
   "sortCategory": "Isigaba",
   "sortDate": "Usuku",
   "sortManual": "Okwenziwa ngesandla",
   "sortName": "Igama",
   "spendingAnalysis": "Ukuhlaziywa Kwemali Esetshenzisiwe",
   "spendingByCategory": "Imali Esetshenzisiwe Ngesigaba",
+  "streakDays": "{days} izinsuku",
+  "subscription": "Ukubhalisa",
+  "suggestedItems": "Izinto eziphakanyisiwe",
   "suggestedQuestions": "Imibuzo ephakanyisiwe:",
   "suggestedTags": "Kuphakanyisiwe",
+  "suggestionBread": "Isinkwa",
+  "suggestionCoffee": "Ikhofi",
+  "suggestionEggs": "Amaqanda",
+  "suggestionFruits": "Izithelo",
+  "suggestionMilk": "Ubisi",
+  "suggestionRice": "Ilayisi",
+  "swap": "Shintsha",
+  "swapped": "Kushintshiwe",
   "switchList": "Shintsha uhlu",
   "system": "Isistimu",
   "tags": "Omaka",
@@ -856,6 +1966,7 @@
   "themeAmber": "I-amber",
   "themeBlue": "Okuluhlaza okwesibhakabhaka",
   "themeBrown": "Okunsundu",
+  "themeChanged": "Itimu ishintshelwe ku-{mode}.",
   "themeColor": "Umbala wetimu",
   "themeGreen": "Okuluhlaza",
   "themeIndigo": "I-indigo",
@@ -864,18 +1975,38 @@
   "themePurple": "Okunsomi",
   "themeRed": "Okubomvu",
   "themeTeal": "I-teal",
+  "toolAddItems": "Engeza izinto",
+  "toolAddToPantry": "Engeza ku-pantry",
+  "toolDeleteList": "Susa uhlu",
+  "toolDeleteRecipe": "Susa iresiphi",
+  "toolRemoveFromPantry": "Susa ku-pantry",
+  "toolRemoveItems": "Susa izinto",
+  "toolRemoveMeal": "Susa ukudla",
+  "toolRemovePreference": "Susa okuncamelayo",
+  "toolSavePreference": "Londoloza okuncamelayo",
+  "toolSaveRecipe": "Londoloza iresiphi",
+  "toolShareList": "Yabelana ngohlu",
   "totalEstimated": "Isamba esilinganiselwe: {amount}",
+  "totalSavings": "Isamba Savings",
   "totalSpending": "Imali Esetshenzisiwe Isiyonke",
   "trackStock": "Landelela isitoko",
   "trackStockActive": "Ivela eziphakamisweni zokuthenga",
   "trackStockInactive": "Ayikhiqizi isiphakamiso sokuthenga",
+  "uncheckingItem": "Isusa ukumaka into...",
   "undo": "Hlehlisa",
   "unit": "Iyunithi",
   "unitPack": "iphakethe",
   "unlockAi": "Vula i-AI engenamkhawulo",
   "unlockFullResponse": "Vula Ukusabela Okugcwele",
+  "unlockPremiumTitle": "Vula uhlu olungenamkhawulo, i-AI nokuningi",
+  "unlockWithAd": "Vula ngesikhangiso",
+  "unlockedBadges": "Amabheji Avuliwe",
   "unmark": "Susa uphawu",
+  "updatingItem": "Ibuyekeza into...",
+  "updatingMenu": "Ibuyekeza imenyu...",
+  "updatingPantry": "Ibuyekeza i-pantry...",
   "upgrade": "Thuthukisa",
+  "userProfile": "Iphrofayela yomsebenzisi",
   "validForLimitedTime": "Isebenza isikhathi esilinganiselwe",
   "version": "Inguqulo",
   "viewActive": "Buka Okusebenzayo",
@@ -894,8 +2025,5 @@
   "whatToDoWithItem": "Ungathanda ukwenzani ngale nto?",
   "yes": "Yebo",
   "yesLabel": "Yebo",
-  "navChat": "Chat",
-  "navRecipes": "Izindlela zokupheka",
-  "navLists": "Izinhlu",
-  "navMealPlanner": "Imenyu"
+  "youCompletedList": "Uqedele uhlu!"
 }

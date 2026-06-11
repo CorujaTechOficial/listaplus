@@ -1,4 +1,5 @@
 import 'package:uuid/uuid.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 
 enum MealType {
   breakfast,
@@ -30,7 +31,7 @@ class MealPlan {
   factory MealPlan.fromJson(Map<String, dynamic> json) {
     return MealPlan(
       id: json['id'] as String?,
-      date: _parseDate(json['date']),
+      date: safeParseDate(json['date']),
       recipeId: json['recipeId'] as String? ?? '',
       recipeName: json['recipeName'] as String? ?? '',
       servings: json['servings'] as int? ?? 1,
@@ -46,17 +47,6 @@ class MealPlan {
   final int servings;
   final MealType mealType;
   final String? note;
-
-  static DateTime _parseDate(dynamic value) {
-    if (value == null) {
-      return DateTime.now();
-    }
-    if (value is DateTime) {
-      return value;
-    }
-    final parsed = DateTime.tryParse(value.toString());
-    return parsed ?? DateTime.now();
-  }
 
   Map<String, dynamic> toJson() {
     return {

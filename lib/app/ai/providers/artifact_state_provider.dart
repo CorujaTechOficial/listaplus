@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
-import 'package:shopping_list/domain/entities/interactive_artifact.dart';
-import 'package:shopping_list/domain/entities/unit.dart';
+import 'package:shopping_list/models/interactive_artifact.dart';
+import 'package:shopping_list/models/unit.dart';
 
 part 'artifact_state_provider.g.dart';
 

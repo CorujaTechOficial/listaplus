@@ -33,7 +33,6 @@ import 'services/revenuecat_service_impl.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
 
-// coverage:ignore-start
 /// Observer to catch and report Riverpod errors to Sentry and Crashlytics.
 base class AppProviderObserver extends ProviderObserver {
   @override
@@ -158,7 +157,7 @@ Future<void> _runApp() async {
       child: Padding(
         padding: EdgeInsets.all(24),
         child: Text(
-          'Ops! Algo deu errado ao renderizar esta tela.',
+          'Oops! Something went wrong rendering this screen.',
           textAlign: TextAlign.center,
         ),
       ),
@@ -175,7 +174,7 @@ Future<void> _runApp() async {
 
     final revenueCat = RevenueCatServiceImpl();
     await revenueCat.init(
-      const String.fromEnvironment('REVENUECAT_API_KEY', defaultValue: 'goog_lUoZUpDVyhVroFRzwgArMnFxIQv'),
+      const String.fromEnvironment('REVENUECAT_API_KEY'),
     ).timeout(const Duration(seconds: 5), onTimeout: () {
       debugPrint('Initialization: Timeout ao iniciar RevenueCat. Seguindo...');
     });
@@ -198,7 +197,6 @@ Future<void> _runApp() async {
     runApp(InitErrorScreen(e));
   }
 }
-// coverage:ignore-end
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
@@ -368,13 +366,13 @@ class _MyAppState extends ConsumerState<MyApp> {
                     children: [
                       const Icon(Icons.cloud_off_rounded, size: 64, color: Colors.red),
                       const SizedBox(height: 16),
-                      const Text(
-                        'Erro de Conexão',
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      Text(
+                        AppLocalizations.of(context)!.connectionError,
+                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Não foi possível conectar ao servidor. Verifique sua internet.\n($error)',
+                        AppLocalizations.of(context)!.connectionErrorDesc(error),
                         textAlign: TextAlign.center,
                         style: const TextStyle(color: Colors.grey),
                       ),
@@ -382,7 +380,7 @@ class _MyAppState extends ConsumerState<MyApp> {
                       FilledButton.icon(
                         onPressed: onRetry,
                         icon: const Icon(Icons.refresh_rounded),
-                        label: const Text('Tentar Novamente'),
+                        label: Text(AppLocalizations.of(context)!.retry),
                       ),
                     ],
                   ),
@@ -571,6 +569,7 @@ class ListLoader extends ConsumerWidget {
         debugPrint('[ListLoader] Error loading current list: $e');
         Sentry.captureException(e, stackTrace: stack);
         FirebaseCrashlytics.instance.recordError(e, stack, reason: 'ListLoader error');
+        final l10n = AppLocalizations.of(context)!;
         return Scaffold(
           body: SafeArea(
             child: Center(
@@ -582,7 +581,7 @@ class ListLoader extends ConsumerWidget {
                     const Icon(Icons.error_outline, color: Colors.red, size: 48),
                     const SizedBox(height: Spacing.md),
                     Text(
-                      'Erro ao carregar listas',
+                      l10n.errorLoadingLists,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: Spacing.xs),
@@ -594,7 +593,7 @@ class ListLoader extends ConsumerWidget {
                     FilledButton.icon(
                       onPressed: () => ref.invalidate(currentListIdProvider),
                       icon: const Icon(Icons.refresh),
-                      label: const Text('Tentar Novamente'),
+                      label: Text(l10n.retry),
                     ),
                   ],
                 ),
@@ -612,6 +611,7 @@ class NoListsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -620,10 +620,10 @@ class NoListsScreen extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const EmptyState(
+              EmptyState(
                 assetPath: 'assets/images/kipi/kipi_welcome.png',
-                title: 'Nenhuma lista encontrada',
-                subtitle: 'Crie sua primeira lista para começar',
+                title: l10n.noListsFound,
+                subtitle: l10n.noListFoundSubtitle,
               ),
               const SizedBox(height: Spacing.lg),
               FilledButton.tonalIcon(
@@ -639,7 +639,7 @@ class NoListsScreen extends ConsumerWidget {
                   );
                 },
                 icon: const Icon(Icons.add),
-                label: const Text('Criar Primeira Lista'),
+                label: Text(l10n.createFirstList),
               ),
             ],
           ),

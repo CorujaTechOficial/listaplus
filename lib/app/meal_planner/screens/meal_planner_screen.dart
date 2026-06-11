@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/add_meal_plan_sheet.dart';
@@ -339,8 +340,10 @@ class _CalendarHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final monthName = _getMonthName(focusedDay.month);
+    final locale = Localizations.localeOf(context).languageCode;
+    final monthName = DateFormat.MMMM(locale).format(focusedDay);
     final isCurrentMonth = focusedDay.year == DateTime.now().year &&
         focusedDay.month == DateTime.now().month;
 
@@ -369,7 +372,7 @@ class _CalendarHeader extends StatelessWidget {
                   ),
                   if (!isCurrentMonth)
                     Text(
-                      'Voltar para hoje',
+                      l10n.backToToday,
                       style: theme.textTheme.labelSmall?.copyWith(
                         color: theme.colorScheme.primary,
                       ),
@@ -387,24 +390,6 @@ class _CalendarHeader extends StatelessWidget {
     );
   }
 
-  String _getMonthName(int month) {
-    const names = [
-      '',
-      'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Maio',
-      'Junho',
-      'Julho',
-      'Agosto',
-      'Setembro',
-      'Outubro',
-      'Novembro',
-      'Dezembro'
-    ];
-    return names[month];
-  }
 }
 
 // ---------------------------------------------------------------------------
@@ -564,6 +549,8 @@ class _MonthlyView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final today = DateTime.now();
+    final locale = Localizations.localeOf(context).languageCode;
+    final dayNames = List.generate(7, (i) => DateFormat.E(locale).format(DateTime(2024, 1, i + 1)));
     final daysInMonth = monthEnd.day;
     final firstWeekday = monthStart.weekday; // 1=Mon ... 7=Sun
     final leadingBlanks = firstWeekday - 1;
@@ -576,7 +563,7 @@ class _MonthlyView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
               horizontal: Spacing.md, vertical: Spacing.xs),
           child: Row(
-            children: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom']
+            children: dayNames
                 .map(
                   (d) => Expanded(
                     child: Text(

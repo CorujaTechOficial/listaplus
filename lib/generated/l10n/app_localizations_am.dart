@@ -296,13 +296,13 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'ምርትን ይቃኙ';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'ባርኮዱን በመሃል ላይ ያስቀምጡ';
 
   @override
-  String get product => 'Product';
+  String get product => 'ምርት';
 
   @override
   String get settingsAppBar => 'ቅንብሮች';
@@ -390,42 +390,42 @@ class AppLocalizationsAm extends AppLocalizations {
   String get termsOfUse => 'የአጠቃቀም ውሎች';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'የእኔ ስኬቶች';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'የተገዙ ዕቃዎች';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'ጠቅላላ ቁጠባዎች';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'የአሁኑ ጅምር';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count ቀናት',
+      one: '$count ቀን',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'የተከፈቱ ባጆች';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'ጀማሪ';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'የተደራጀ';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'መምህርን በማስቀመጥ ላይ';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'ሱፐር እቅድ አውጪ';
 
   @override
   String get backupTitle => 'ምትኬ';
@@ -511,17 +511,17 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased ከ$total ንጥሎች';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'በጀት፡ $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'ጠቅላላ፡ $amount';
   }
 
   @override
@@ -681,13 +681,13 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI ረዳት';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'ገጠመ';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'ባርኮድ ይቃኙ';
 
   @override
   String get listHelp => 'በዝርዝርህ እንዴት ልረዳህ?';
@@ -2372,4 +2372,40 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'አንድ ጉዞ በጭራሽ አይበቃም።';
+
+  @override
+  String get aiWelcomeContent =>
+      'ሀሎ! 👋 እኔ ** ኪፒ** ነኝ፣ የእርስዎ የግል ግብይት እና የምግብ አሰራር ረዳት!\n\nእርስዎን ለመርዳት እዚህ ነኝ፡-\n🛒 **አደራጅ** ግብይትዎን በምድቦች በራስ ሰር ያደራጁ\n💰 ** በጀትዎን ይከታተሉ እና ገንዘብ ቆጣቢ ምክሮችን ይስጡ\n🍲 **አስተያየት** ጣፋጭ የምግብ አሰራር ካለህ ጋር\n\nዛሬ እንዴት ልረዳህ እችላለሁ? የመጀመሪያ ዝርዝርዎን በመፍጠር መጀመር ይችላሉ!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'የመጀመሪያ ዝርዝሬን ፍጠር';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'ኪፒ፣ የመጀመሪያውን የግዢ ዝርዝሬን እንድፈጥር እርዳኝ።';
+
+  @override
+  String get aiWelcomeSuggestSave => 'ገንዘብን እንዴት መቆጠብ ይቻላል?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'ኪፒ፣ በግሮሰሪ ላይ ገንዘብ እንድቆጥብ እንዴት ልትረዳኝ ትችላለህ?';
+
+  @override
+  String get suggestionMilk => 'ወተት';
+
+  @override
+  String get suggestionBread => 'ዳቦ';
+
+  @override
+  String get suggestionEggs => 'እንቁላል';
+
+  @override
+  String get suggestionCoffee => 'ቡና';
+
+  @override
+  String get suggestionRice => 'ሩዝ';
+
+  @override
+  String get suggestionFruits => 'ፍራፍሬዎች';
 }

@@ -292,13 +292,13 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'สแกนผลิตภัณฑ์';
 
   @override
   String get positionBarcodeCenter => 'วางบาร์โค้ดไว้ตรงกลาง';
 
   @override
-  String get product => 'Product';
+  String get product => 'ผลิตภัณฑ์';
 
   @override
   String get settingsAppBar => 'การตั้งค่า';
@@ -403,19 +403,19 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'ปลดล็อคป้ายแล้ว';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'ระดับเริ่มต้น';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'เป็นระเบียบ';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'ออมทรัพย์อาจารย์';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'ซุปเปอร์แพลนเนอร์';
 
   @override
   String get backupTitle => 'สำรองข้อมูล';
@@ -502,17 +502,17 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased จาก $total รายการ';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'งบประมาณ: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'รวมทั้งหมด: $amount';
   }
 
   @override
@@ -672,13 +672,13 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'ผู้ช่วยเอไอ';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'ปิด';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'สแกนบาร์โค้ด';
 
   @override
   String get listHelp => 'จะช่วยคุณเกี่ยวกับรายการของคุณได้อย่างไร?';
@@ -2352,43 +2352,78 @@ class AppLocalizationsTh extends AppLocalizations {
   String get onboardingAiDemoContinue => 'ดำเนินการต่อ';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline => 'รายการช้อปปิ้งของคุณตอนนี้มี AI';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'ดูว่า Kipi สร้างรายการทั้งหมดของคุณในไม่กี่วินาทีได้อย่างไร';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'ฉันต้องการสิ่งนี้! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'จะจัดบาร์บีคิว 🔥';
 
   @override
-  String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+  String get onboardingAiDemoSlideReady => 'พร้อม! นี่คือทุกสิ่งที่คุณต้องการ:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'ทำรายการให้เสร็จภายในไม่กี่วินาที ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'อะไรที่ทำให้คุณหงุดหงิดมากที่สุด?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle => 'ซื่อสัตย์ - เราจะแก้ไขแต่ละรายการ';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'ใช่ แก้ไขปัญหานี้ให้ฉัน →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'ฉันลืมของไว้ที่ร้าน';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily => 'ครอบครัวของฉันไม่เคยเห็นรายการ';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'ฉันใช้จ่ายเกินงบประมาณเสมอ';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'เที่ยวเดียวไม่เคยพอ';
+
+  @override
+  String get aiWelcomeContent =>
+      'สวัสดี! 😏 ฉันชื่อ **Kipi** ผู้ช่วยชอปปิ้งและสูตรอาหารส่วนตัวของคุณ!\n\nฉันมาที่นี่เพื่อช่วยคุณ:\n🛒 **จัดระเบียบ** การซื้อของคุณตามหมวดหมู่โดยอัตโนมัติ\n💰 **ติดตาม** งบประมาณของคุณและให้คำแนะนำในการประหยัดเงิน\n🍲 **แนะนำ** สูตรอร่อยจากที่มีอยู่แล้ว\n\nวันนี้ฉันจะช่วยคุณได้อย่างไร? คุณสามารถเริ่มต้นด้วยการสร้างรายการแรกของคุณ!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'สร้างรายการแรกของฉัน';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi ช่วยฉันสร้างรายการช็อปปิ้งรายการแรกของฉัน';
+
+  @override
+  String get aiWelcomeSuggestSave => 'จะประหยัดเงินได้อย่างไร?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi คุณจะช่วยฉันประหยัดเงินค่าของชำได้อย่างไร?';
+
+  @override
+  String get suggestionMilk => 'น้ำนม';
+
+  @override
+  String get suggestionBread => 'ขนมปัง';
+
+  @override
+  String get suggestionEggs => 'ไข่';
+
+  @override
+  String get suggestionCoffee => 'กาแฟ';
+
+  @override
+  String get suggestionRice => 'ข้าว';
+
+  @override
+  String get suggestionFruits => 'ผลไม้';
 }

@@ -298,13 +298,13 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Changanua Bidhaa';
 
   @override
   String get positionBarcodeCenter => 'Weka msimbo pau katikati';
 
   @override
-  String get product => 'Product';
+  String get product => 'Bidhaa';
 
   @override
   String get settingsAppBar => 'Mipangilio';
@@ -409,16 +409,16 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Beji Zilizofunguliwa';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Mwanzilishi';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Imeandaliwa';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Kuokoa Mwalimu';
 
   @override
   String get badgeSuperPlanner => 'Super Planner';
@@ -508,17 +508,17 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased kati ya vipengee $total';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Bajeti: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Jumla: $amount';
   }
 
   @override
@@ -678,13 +678,13 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Msaidizi wa AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Funga';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Changanua Msimbo Pau';
 
   @override
   String get listHelp => 'Naweza kusaidiaje na orodha yako?';
@@ -2375,43 +2375,80 @@ class AppLocalizationsSw extends AppLocalizations {
   String get onboardingAiDemoContinue => 'Endelea';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline =>
+      'Orodha yako ya ununuzi, sasa na AI';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'Tazama jinsi Kipi anavyounda orodha yako kamili kwa sekunde';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'Nataka hii! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'Ninaandaa nyama choma 🔥';
 
   @override
   String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+      'Tayari! Hapa kuna kila kitu unachohitaji:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'Kamilisha orodha kwa sekunde ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'Ni nini kinachokukatisha tamaa zaidi?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle => 'Kuwa mkweli - tutarekebisha kila moja';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'Ndio, nirekebishe hii →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'Ninasahau vitu kwenye duka';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily => 'Familia yangu haioni orodha hiyo kamwe';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'Mimi hupitia bajeti kila wakati';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'Safari moja haitoshi kamwe';
+
+  @override
+  String get aiWelcomeContent =>
+      'Habari! 👋 Mimi ni **Kipi**, msaidizi wako wa ununuzi na mapishi!\n\nNiko hapa kukusaidia:\n🛒 **Panga ** ununuzi wako kwa kategoria kiotomatiki\n💰 **Fuatilia** bajeti yako na kukupa vidokezo vya kuokoa pesa\n🍲 **Pendekeza** mapishi matamu na yale uliyonayo tayari\n\nNikusaidieje leo? Unaweza kuanza kwa kuunda orodha yako ya kwanza!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Unda orodha yangu ya kwanza';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, nisaidie kuunda orodha yangu ya kwanza ya ununuzi';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Jinsi ya kuokoa pesa?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, unaweza kunisaidiaje kuokoa pesa kwenye mboga?';
+
+  @override
+  String get suggestionMilk => 'Maziwa';
+
+  @override
+  String get suggestionBread => 'Mkate';
+
+  @override
+  String get suggestionEggs => 'Mayai';
+
+  @override
+  String get suggestionCoffee => 'Kahawa';
+
+  @override
+  String get suggestionRice => 'Mchele';
+
+  @override
+  String get suggestionFruits => 'Matunda';
 }

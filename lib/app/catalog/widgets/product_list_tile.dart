@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'package:flutter/material.dart';
 import 'package:shopping_list/app/catalog/models/catalog_product.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -135,4 +134,3 @@ class _CounterButton extends StatelessWidget {
     );
   }
 }
-// coverage:ignore-end

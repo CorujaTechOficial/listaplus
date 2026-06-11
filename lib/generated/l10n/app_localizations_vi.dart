@@ -291,13 +291,13 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Quét sản phẩm';
 
   @override
   String get positionBarcodeCenter => 'Đặt mã vạch ở giữa';
 
   @override
-  String get product => 'Product';
+  String get product => 'Sản phẩm';
 
   @override
   String get settingsAppBar => 'Cài đặt';
@@ -403,19 +403,19 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Huy hiệu đã được mở khóa';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Người mới bắt đầu';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Được tổ chức';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Cứu Thầy';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Siêu kế hoạch';
 
   @override
   String get backupTitle => 'Sao lưu';
@@ -503,17 +503,17 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased trong số $total mục';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Ngân sách: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Tổng cộng: $amount';
   }
 
   @override
@@ -673,13 +673,13 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Trợ lý AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Đóng';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Quét mã vạch';
 
   @override
   String get listHelp => 'Tôi có thể giúp gì với danh sách của bạn?';
@@ -2414,4 +2414,40 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Một chuyến đi không bao giờ là đủ';
+
+  @override
+  String get aiWelcomeContent =>
+      'Xin chào! 👋 Tôi là **Kipi**, trợ lý công thức nấu ăn và mua sắm cá nhân của bạn!\n\nTôi ở đây để giúp bạn:\n🛒 **Tổ chức** việc mua sắm của bạn theo danh mục một cách tự động\n💰 **Theo dõi** ngân sách của bạn và cung cấp cho bạn các mẹo tiết kiệm tiền\n🍲 **Gợi ý** công thức nấu ăn ngon với những gì bạn đã có\n\nHôm nay tôi có thể giúp gì cho bạn? Bạn có thể bắt đầu bằng cách tạo danh sách đầu tiên của mình!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Tạo danh sách đầu tiên của tôi';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, giúp tôi tạo danh sách mua sắm đầu tiên';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Làm thế nào để tiết kiệm tiền?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, bạn có thể giúp tôi tiết kiệm tiền mua hàng tạp hóa bằng cách nào?';
+
+  @override
+  String get suggestionMilk => 'Sữa';
+
+  @override
+  String get suggestionBread => 'Bánh mỳ';
+
+  @override
+  String get suggestionEggs => 'Trứng';
+
+  @override
+  String get suggestionCoffee => 'Cà phê';
+
+  @override
+  String get suggestionRice => 'Cơm';
+
+  @override
+  String get suggestionFruits => 'trái cây';
 }

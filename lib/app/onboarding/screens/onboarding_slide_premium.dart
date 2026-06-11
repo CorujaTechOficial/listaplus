@@ -27,6 +27,7 @@ class _OnboardingSlidePremiumState
     extends ConsumerState<OnboardingSlidePremium> {
   bool _isLoading = true;
   bool _isPurchasing = false;
+  String? _errorMessage;
   List<PaywallPackage> _packages = [];
   PaywallPackage? _selectedPackage;
 
@@ -38,27 +39,42 @@ class _OnboardingSlidePremiumState
   }
 
   Future<void> _loadPackages() async {
+    setState(() => _isLoading = true);
     try {
-      final pkgs =
-          await ref.read(revenueCatServiceProvider).getPaywallPackages();
+      final pkgs = await ref
+          .read(revenueCatServiceProvider)
+          .getPaywallPackages()
+          .timeout(const Duration(seconds: 15));
       if (mounted) {
         setState(() {
+          _errorMessage = null;
           _packages = pkgs;
           if (pkgs.isNotEmpty) {
             _selectedPackage = pkgs.cast<PaywallPackage?>().firstWhere(
-                  (p) => p?.rawPackage?.packageType == PackageType.annual,
-                  orElse: () => pkgs.cast<PaywallPackage?>().firstWhere(
-                        (p) => p?.rawPackage?.packageType == PackageType.monthly,
-                        orElse: () => pkgs.first,
-                      ),
-                );
+              (p) => p?.rawPackage?.packageType == PackageType.annual,
+              orElse:
+                  () => pkgs.cast<PaywallPackage?>().firstWhere(
+                    (p) => p?.rawPackage?.packageType == PackageType.monthly,
+                    orElse: () => pkgs.first,
+                  ),
+            );
           }
+          _isLoading = false;
+        });
+      }
+    } on TimeoutException {
+      if (mounted) {
+        setState(() {
+          _errorMessage = AppLocalizations.of(context)!.paywallLoadingError;
           _isLoading = false;
         });
       }
     } on Exception {
       if (mounted) {
-        setState(() => _isLoading = false);
+        setState(() {
+          _errorMessage = AppLocalizations.of(context)!.paywallLoadingError;
+          _isLoading = false;
+        });
       }
     }
   }
@@ -81,7 +97,9 @@ class _OnboardingSlidePremiumState
         Navigator.of(context).pop(true);
       }
     } on Exception catch (e) {
-      unawaited(ref.read(analyticsServiceProvider).logPaywallError(e.toString()));
+      unawaited(
+        ref.read(analyticsServiceProvider).logPaywallError(e.toString()),
+      );
       if (mounted) {
         setState(() => _isPurchasing = false);
         ScaffoldMessenger.of(context).showSnackBar(
@@ -153,37 +171,44 @@ class _OnboardingSlidePremiumState
     final hasName = name.isNotEmpty;
 
     return switch (firstGoal) {
-      'saveMoney' => hasName
-          ? l10n.paywallGoalHeadlineSaveMoney(name)
-          : l10n.paywallGoalHeadlineNoNameSaveMoney,
-      'neverForget' => hasName
-          ? l10n.paywallGoalHeadlineNeverForget(name)
-          : l10n.paywallGoalHeadlineNoNameNeverForget,
-      'faster' => hasName
-          ? l10n.paywallGoalHeadlineFaster(name)
-          : l10n.paywallGoalHeadlineNoNameFaster,
-      'family' => hasName
-          ? l10n.paywallGoalHeadlineFamily(name)
-          : l10n.paywallGoalHeadlineNoNameFamily,
-      'recipes' => hasName
-          ? l10n.paywallGoalHeadlineRecipes(name)
-          : l10n.paywallGoalHeadlineNoNameRecipes,
-      'pantry' => hasName
-          ? l10n.paywallGoalHeadlinePantry(name)
-          : l10n.paywallGoalHeadlineNoNamePantry,
-      _ => hasName
-          ? l10n.paywallHeroSubtitlePersonalized(name)
-          : l10n.paywallHeroSubtitle,
+      'saveMoney' =>
+        hasName
+            ? l10n.paywallGoalHeadlineSaveMoney(name)
+            : l10n.paywallGoalHeadlineNoNameSaveMoney,
+      'neverForget' =>
+        hasName
+            ? l10n.paywallGoalHeadlineNeverForget(name)
+            : l10n.paywallGoalHeadlineNoNameNeverForget,
+      'faster' =>
+        hasName
+            ? l10n.paywallGoalHeadlineFaster(name)
+            : l10n.paywallGoalHeadlineNoNameFaster,
+      'family' =>
+        hasName
+            ? l10n.paywallGoalHeadlineFamily(name)
+            : l10n.paywallGoalHeadlineNoNameFamily,
+      'recipes' =>
+        hasName
+            ? l10n.paywallGoalHeadlineRecipes(name)
+            : l10n.paywallGoalHeadlineNoNameRecipes,
+      'pantry' =>
+        hasName
+            ? l10n.paywallGoalHeadlinePantry(name)
+            : l10n.paywallGoalHeadlineNoNamePantry,
+      _ =>
+        hasName
+            ? l10n.paywallHeroSubtitlePersonalized(name)
+            : l10n.paywallHeroSubtitle,
     };
   }
 
   Widget _buildHero(ThemeData theme, AppLocalizations l10n) {
     final trialLabel = _trialLabel(l10n);
-    final displayName =
-        ref.watch(onboardingDataProvider).displayName.trim();
-    final subtitle = displayName.isNotEmpty
-        ? l10n.paywallHeroSubtitlePersonalized(displayName)
-        : l10n.paywallHeroSubtitle;
+    final displayName = ref.watch(onboardingDataProvider).displayName.trim();
+    final subtitle =
+        displayName.isNotEmpty
+            ? l10n.paywallHeroSubtitlePersonalized(displayName)
+            : l10n.paywallHeroSubtitle;
 
     return Container(
       width: double.infinity,
@@ -198,7 +223,10 @@ class _OnboardingSlidePremiumState
         ),
       ),
       padding: const EdgeInsets.fromLTRB(
-        Spacing.xl, Spacing.xl, Spacing.xl, Spacing.lg,
+        Spacing.xl,
+        Spacing.xl,
+        Spacing.xl,
+        Spacing.lg,
       ),
       child: Column(
         children: [
@@ -211,7 +239,8 @@ class _OnboardingSlidePremiumState
             const SizedBox(height: Spacing.sm),
             Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: Spacing.sm, vertical: Spacing.xxs,
+                horizontal: Spacing.sm,
+                vertical: Spacing.xxs,
               ),
               decoration: BoxDecoration(
                 color: AppColors.premiumAmber,
@@ -224,6 +253,31 @@ class _OnboardingSlidePremiumState
                   fontSize: 10,
                   color: theme.colorScheme.onTertiary,
                   letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ] else ...[
+            const SizedBox(height: Spacing.sm),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: Spacing.sm,
+                vertical: Spacing.xxs,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white.withAlpha(30),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: AppColors.premiumAmber.withAlpha(180),
+                  width: 1,
+                ),
+              ),
+              child: const Text(
+                '🎁 Oferta de boas-vindas',
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 10,
+                  color: AppColors.premiumAmber,
+                  letterSpacing: 0.4,
                 ),
               ),
             ),
@@ -250,7 +304,8 @@ class _OnboardingSlidePremiumState
           const SizedBox(height: Spacing.sm),
           Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: Spacing.sm, vertical: Spacing.xxs,
+              horizontal: Spacing.sm,
+              vertical: Spacing.xxs,
             ),
             decoration: BoxDecoration(
               color: Colors.white.withAlpha((0.15 * 255).toInt()),
@@ -276,12 +331,168 @@ class _OnboardingSlidePremiumState
     );
   }
 
+  Widget _buildBeforeAfter(ThemeData theme, AppLocalizations l10n) {
+    final beforeItems = [
+      l10n.paywallBeforeItem1,
+      l10n.paywallBeforeItem2,
+      l10n.paywallBeforeItem3,
+      l10n.paywallBeforeItem4,
+    ];
+    final afterItems = [
+      l10n.paywallAfterItem1,
+      l10n.paywallAfterItem2,
+      l10n.paywallAfterItem3,
+      l10n.paywallAfterItem4,
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.lg,
+        vertical: Spacing.sm,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.paywallBeforeAfterTitle,
+            style: theme.textTheme.labelSmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.onSurfaceVariant,
+              letterSpacing: 0.8,
+            ),
+          ),
+          const SizedBox(height: Spacing.sm),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(Spacing.sm),
+                      color: Colors.red.withAlpha(18),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n.paywallLabelCommon,
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.red.shade700,
+                            ),
+                          ),
+                          const SizedBox(height: Spacing.xs),
+                          ...beforeItems.map(
+                            (item) => Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    Icons.close,
+                                    color: Colors.red,
+                                    size: 14,
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Expanded(
+                                    child: Text(
+                                      item,
+                                      style: theme.textTheme.bodySmall
+                                          ?.copyWith(
+                                            color:
+                                                theme
+                                                    .colorScheme
+                                                    .onSurfaceVariant,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    color: theme.colorScheme.surfaceContainerHighest,
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: Center(
+                      child: Icon(
+                        Icons.arrow_forward_rounded,
+                        size: 18,
+                        color: theme.colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(Spacing.sm),
+                      color: Colors.green.withAlpha(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n.paywallLabelPro,
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green.shade700,
+                            ),
+                          ),
+                          const SizedBox(height: Spacing.xs),
+                          ...afterItems.map(
+                            (item) => Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    Icons.check,
+                                    color: Colors.green,
+                                    size: 14,
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Expanded(
+                                    child: Text(
+                                      item,
+                                      style: theme.textTheme.bodySmall
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.w600,
+                                            color: theme.colorScheme.onSurface,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildBenefits(ThemeData theme, AppLocalizations l10n) {
+    final features = [
+      PremiumFeature.assistant,
+      PremiumFeature.unlimitedLists,
+      PremiumFeature.sharing,
+      PremiumFeature.pantry,
+      PremiumFeature.monthlyBudget,
+    ];
+
     return ColoredBox(
       color: theme.colorScheme.surface,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: Spacing.lg, vertical: Spacing.sm,
+          horizontal: Spacing.lg,
+          vertical: Spacing.sm,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -295,16 +506,21 @@ class _OnboardingSlidePremiumState
               ),
             ),
             const SizedBox(height: Spacing.sm),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              mainAxisSpacing: Spacing.xs,
-              crossAxisSpacing: Spacing.xs,
-              childAspectRatio: 3.8,
-              children: PremiumFeature.values
-                  .map((f) => _buildBenefitCell(theme, f, l10n))
-                  .toList(),
+            Column(
+              children:
+                  features
+                      .map(
+                        (f) => Padding(
+                          padding: const EdgeInsets.only(bottom: Spacing.sm),
+                          child: _buildBenefitCell(
+                            theme,
+                            f,
+                            l10n,
+                            features.indexOf(f),
+                          ),
+                        ),
+                      )
+                      .toList(),
             ),
           ],
         ),
@@ -316,33 +532,71 @@ class _OnboardingSlidePremiumState
     ThemeData theme,
     PremiumFeature feature,
     AppLocalizations l10n,
+    int index,
   ) {
+    String description = '';
+    switch (feature) {
+      case PremiumFeature.assistant:
+        description = l10n.paywallFeatureDescAssistant;
+        break;
+      case PremiumFeature.unlimitedLists:
+        description = l10n.paywallFeatureDescUnlimitedLists;
+        break;
+      case PremiumFeature.sharing:
+        description = l10n.paywallFeatureDescSharing;
+        break;
+      case PremiumFeature.pantry:
+        description = l10n.paywallFeatureDescPantry;
+        break;
+      case PremiumFeature.monthlyBudget:
+        description = l10n.paywallFeatureDescBudget;
+        break;
+      default:
+        break;
+    }
+
     return Row(
-      children: [
-        Container(
-          width: 28,
-          height: 28,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.primaryContainer,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Icon(feature.icon, color: theme.colorScheme.primary, size: 15),
-        ),
-        const SizedBox(width: Spacing.xs),
-        Expanded(
-          child: Text(
-            feature.localizedLabel(l10n),
-            style: theme.textTheme.labelSmall?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: theme.colorScheme.onSurface,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 28,
+              height: 28,
+              margin: const EdgeInsets.only(top: 2),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.primaryContainer,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(
+                feature.icon,
+                color: theme.colorScheme.primary,
+                size: 15,
+              ),
             ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ),
-      ],
-    )
-        .animate(delay: (PremiumFeature.values.indexOf(feature) * 50).ms)
+            const SizedBox(width: Spacing.sm),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    feature.localizedLabel(l10n),
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: theme.colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    description,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )
+        .animate(delay: (index * 50).ms)
         .fadeIn(duration: 300.ms)
         .slideX(begin: 0.1, end: 0);
   }
@@ -353,37 +607,75 @@ class _OnboardingSlidePremiumState
         horizontal: Spacing.lg,
         vertical: Spacing.sm,
       ),
-      child: Container(
-        padding: const EdgeInsets.all(Spacing.md),
-        decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceContainerHighest,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: theme.colorScheme.outlineVariant,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(Spacing.sm),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: theme.colorScheme.outlineVariant),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('⭐⭐⭐⭐⭐', style: TextStyle(fontSize: 11)),
+                  const SizedBox(height: Spacing.xs),
+                  Text(
+                    l10n.paywallTestimonial1Text,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: theme.colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: Spacing.xs),
+                  Text(
+                    l10n.paywallTestimonial1Name,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('\u2b50\u2b50\u2b50\u2b50\u2b50', style: TextStyle(fontSize: 14)),
-            const SizedBox(height: Spacing.xs),
-            Text(
-              l10n.paywallTestimonial,
-              style: theme.textTheme.bodySmall?.copyWith(
-                fontStyle: FontStyle.italic,
-                color: theme.colorScheme.onSurface,
+          const SizedBox(width: Spacing.xs),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(Spacing.sm),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: theme.colorScheme.outlineVariant),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('⭐⭐⭐⭐⭐', style: TextStyle(fontSize: 11)),
+                  const SizedBox(height: Spacing.xs),
+                  Text(
+                    l10n.paywallTestimonial2Text,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: theme.colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: Spacing.xs),
+                  Text(
+                    l10n.paywallTestimonial2Name,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: Spacing.xs),
-            Text(
-              l10n.paywallTestimonialAuthor,
-              style: theme.textTheme.labelSmall?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -413,8 +705,7 @@ class _OnboardingSlidePremiumState
           const SizedBox(height: Spacing.sm),
           ..._packages.map((pkg) {
             final isSelected = _selectedPackage?.identifier == pkg.identifier;
-            final isAnnual =
-                pkg.rawPackage?.packageType == PackageType.annual;
+            final isAnnual = pkg.rawPackage?.packageType == PackageType.annual;
             final isMonthly =
                 pkg.rawPackage?.packageType == PackageType.monthly;
 
@@ -439,20 +730,25 @@ class _OnboardingSlidePremiumState
                   duration: const Duration(milliseconds: 200),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: isSelected
-                          ? theme.colorScheme.primary
-                          : theme.colorScheme.outlineVariant,
+                      color:
+                          isSelected
+                              ? theme.colorScheme.primary
+                              : theme.colorScheme.outlineVariant,
                       width: isSelected ? 2.5 : 1.5,
                     ),
                     borderRadius: BorderRadius.circular(16),
-                    color: isAnnual
-                        ? (isSelected
-                            ? theme.colorScheme.primaryContainer
-                                .withAlpha(100)
-                            : theme.colorScheme.primaryContainer.withAlpha(30))
-                        : (isSelected
-                            ? theme.colorScheme.surfaceContainerHighest
-                            : theme.colorScheme.surface),
+                    color:
+                        isAnnual
+                            ? (isSelected
+                                ? theme.colorScheme.primaryContainer.withAlpha(
+                                  100,
+                                )
+                                : theme.colorScheme.primaryContainer.withAlpha(
+                                  30,
+                                ))
+                            : (isSelected
+                                ? theme.colorScheme.surfaceContainerHighest
+                                : theme.colorScheme.surface),
                   ),
                   child: Stack(
                     clipBehavior: Clip.none,
@@ -467,12 +763,12 @@ class _OnboardingSlidePremiumState
                                 children: [
                                   Text(
                                     _mapPackageName(pkg, l10n),
-                                    style:
-                                        theme.textTheme.titleSmall?.copyWith(
+                                    style: theme.textTheme.titleSmall?.copyWith(
                                       fontWeight: FontWeight.w800,
-                                      color: isSelected
-                                          ? theme.colorScheme.primary
-                                          : theme.colorScheme.onSurface,
+                                      color:
+                                          isSelected
+                                              ? theme.colorScheme.primary
+                                              : theme.colorScheme.onSurface,
                                     ),
                                   ),
                                   if (isAnnual &&
@@ -488,14 +784,38 @@ class _OnboardingSlidePremiumState
                                       ),
                                       style: theme.textTheme.bodySmall
                                           ?.copyWith(
-                                        color: isSelected
-                                            ? theme.colorScheme.primary
-                                            : theme
-                                                .colorScheme.onSurfaceVariant,
-                                        fontWeight: isSelected
-                                            ? FontWeight.w600
-                                            : null,
+                                            color:
+                                                isSelected
+                                                    ? theme.colorScheme.primary
+                                                    : theme
+                                                        .colorScheme
+                                                        .onSurfaceVariant,
+                                            fontWeight:
+                                                isSelected
+                                                    ? FontWeight.w600
+                                                    : null,
+                                          ),
+                                    ),
+                                    Text(
+                                      l10n.paywallPricePerDay(
+                                        formatCurrency(
+                                          pkg.price / 365,
+                                          pkg.currencyCode,
+                                        ),
                                       ),
+                                      style: theme.textTheme.labelSmall
+                                          ?.copyWith(
+                                            color:
+                                                isSelected
+                                                    ? theme.colorScheme.primary
+                                                    : theme
+                                                        .colorScheme
+                                                        .onSurfaceVariant,
+                                            fontWeight:
+                                                isSelected
+                                                    ? FontWeight.w600
+                                                    : null,
+                                          ),
                                     ),
                                     if (pkg.hasFreeTrial &&
                                         pkg.trialPeriodDays != null)
@@ -505,32 +825,52 @@ class _OnboardingSlidePremiumState
                                         ),
                                         style: theme.textTheme.labelSmall
                                             ?.copyWith(
-                                          color: AppColors.premiumAmber,
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 10,
-                                        ),
+                                              color: AppColors.premiumAmber,
+                                              fontWeight: FontWeight.w800,
+                                              fontSize: 10,
+                                            ),
                                       ),
                                   ] else if (isMonthly)
                                     Text(
                                       l10n.paywallPackageMonthlyDesc,
                                       style: theme.textTheme.bodySmall
                                           ?.copyWith(
-                                        color: theme
-                                            .colorScheme.onSurfaceVariant,
-                                      ),
+                                            color:
+                                                theme
+                                                    .colorScheme
+                                                    .onSurfaceVariant,
+                                          ),
                                     ),
                                 ],
                               ),
                             ),
-                            Text(
-                              pkg.priceString,
-                              style:
-                                  theme.textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w900,
-                                color: isSelected
-                                    ? theme.colorScheme.primary
-                                    : theme.colorScheme.onSurface,
-                              ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                if (isAnnual &&
+                                    monthlyPkg != null &&
+                                    monthlyPkg.identifier != pkg.identifier)
+                                  Text(
+                                    l10n.paywallStrikethroughPrice(
+                                      monthlyPkg.priceString,
+                                    ),
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      decoration: TextDecoration.lineThrough,
+                                      color: theme.colorScheme.onSurfaceVariant
+                                          .withAlpha((0.5 * 255).toInt()),
+                                    ),
+                                  ),
+                                Text(
+                                  pkg.priceString,
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.w900,
+                                    color:
+                                        isSelected
+                                            ? theme.colorScheme.primary
+                                            : theme.colorScheme.onSurface,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -541,7 +881,8 @@ class _OnboardingSlidePremiumState
                           right: 16,
                           child: Container(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: Spacing.xs, vertical: 3,
+                              horizontal: Spacing.xs,
+                              vertical: 3,
                             ),
                             decoration: BoxDecoration(
                               color: AppColors.premiumAmber,
@@ -576,23 +917,48 @@ class _OnboardingSlidePremiumState
     );
   }
 
+  Widget _buildLegalDot(ThemeData theme) => Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 4),
+    child: Text(
+      '·',
+      style: TextStyle(
+        fontSize: 11,
+        color: theme.colorScheme.outlineVariant,
+      ),
+    ),
+  );
+
+  Widget _buildLegalLink(
+    String label,
+    VoidCallback onTap,
+    ThemeData theme,
+  ) => GestureDetector(
+    onTap: onTap,
+    child: Text(
+      label,
+      style: TextStyle(
+        fontSize: 11,
+        color: theme.colorScheme.onSurfaceVariant.withAlpha(140),
+        decoration: TextDecoration.underline,
+        decorationColor: theme.colorScheme.onSurfaceVariant.withAlpha(80),
+      ),
+    ),
+  );
+
   Widget _buildStickyCta(ThemeData theme, AppLocalizations l10n) {
-    if (_isLoading || _packages.isEmpty) {
-      return const SizedBox.shrink();
-    }
     return Container(
       padding: EdgeInsets.fromLTRB(
         Spacing.lg,
         Spacing.sm,
         Spacing.lg,
-        MediaQuery.of(context).padding.bottom + Spacing.sm,
+        MediaQuery.of(context).padding.bottom + Spacing.xs,
       ),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         boxShadow: [
           BoxShadow(
-            color: theme.colorScheme.shadow.withAlpha((0.08 * 255).toInt()),
-            blurRadius: 10,
+            color: theme.colorScheme.shadow.withAlpha((0.1 * 255).toInt()),
+            blurRadius: 16,
             offset: const Offset(0, -4),
           ),
         ],
@@ -600,131 +966,106 @@ class _OnboardingSlidePremiumState
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
-            width: double.infinity,
-            height: 54,
-            child: ElevatedButton(
-              onPressed: _selectedPackage != null ? _purchase : null,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.colorScheme.primary,
-                foregroundColor: theme.colorScheme.onPrimary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(27),
-                ),
-                elevation: 4,
-                shadowColor:
-                    theme.colorScheme.primary.withAlpha(100),
-              ),
-              child: Text(
-                _ctaText(l10n),
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 0.3,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: Spacing.xs),
-          Text(
-            l10n.paywallTrialDisclaimer(
-              _selectedPackage?.trialPeriodDays ?? 7,
-            ),
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: Spacing.xxs),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () => launchUrl(
-                  Uri.parse(
-                      'https://kipilist-6547b.web.app/privacidade.html'),
-                  mode: LaunchMode.externalApplication,
-                ),
-                style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: Spacing.xs, vertical: 2,
+          if (!_isLoading && _errorMessage == null && _packages.isNotEmpty) ...[
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: _selectedPackage != null ? _purchase : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: theme.colorScheme.primary,
+                  foregroundColor: theme.colorScheme.onPrimary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(28),
                   ),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  elevation: 6,
+                  shadowColor: theme.colorScheme.primary.withAlpha(120),
                 ),
                 child: Text(
+                  _ctaText(l10n),
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 0.3,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: Spacing.xs),
+            Text(
+              l10n.paywallTrialDisclaimer,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: Spacing.xs),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.lock_outline,
+                  size: 11,
+                  color: theme.colorScheme.onSurfaceVariant.withAlpha(130),
+                ),
+                const SizedBox(width: 4),
+                _buildLegalLink(
                   l10n.paywallPolicy,
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: theme.colorScheme.onSurfaceVariant
-                        .withAlpha((0.7 * 255).toInt()),
-                    decoration: TextDecoration.underline,
+                  () => launchUrl(
+                    Uri.parse(
+                      'https://kipilist-6547b.web.app/privacidade.html',
+                    ),
+                    mode: LaunchMode.externalApplication,
                   ),
+                  theme,
                 ),
-              ),
-              Text(
-                '·',
-                style: TextStyle(
-                  fontSize: 10, color: theme.colorScheme.outline,
-                ),
-              ),
-              TextButton(
-                onPressed: () => launchUrl(
-                  Uri.parse('https://kipilist-6547b.web.app/termos.html'),
-                  mode: LaunchMode.externalApplication,
-                ),
-                style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: Spacing.xs, vertical: 2,
-                  ),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Text(
+                _buildLegalDot(theme),
+                _buildLegalLink(
                   l10n.paywallTerms,
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: theme.colorScheme.onSurfaceVariant
-                        .withAlpha((0.7 * 255).toInt()),
-                    decoration: TextDecoration.underline,
+                  () => launchUrl(
+                    Uri.parse('https://kipilist-6547b.web.app/termos.html'),
+                    mode: LaunchMode.externalApplication,
                   ),
+                  theme,
                 ),
-              ),
-              Text(
-                '·',
-                style: TextStyle(
-                  fontSize: 10, color: theme.colorScheme.outline,
-                ),
-              ),
-              TextButton(
-                onPressed: _restore,
-                style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: Spacing.xs, vertical: 2,
+                _buildLegalDot(theme),
+                _buildLegalLink(l10n.onboardingRestore, _restore, theme),
+              ],
+            ),
+          ],
+          if (_errorMessage != null) ...[
+            Padding(
+              padding: const EdgeInsets.only(bottom: Spacing.sm),
+              child: Column(
+                children: [
+                  Text(
+                    _errorMessage!,
+                    style: const TextStyle(color: Colors.red),
+                    textAlign: TextAlign.center,
                   ),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Text(
-                  l10n.onboardingRestore,
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: theme.colorScheme.onSurfaceVariant
-                        .withAlpha((0.7 * 255).toInt()),
-                    decoration: TextDecoration.underline,
+                  const SizedBox(height: Spacing.sm),
+                  ElevatedButton(
+                    onPressed: _loadPackages,
+                    child: Text(l10n.retry),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
-          const SizedBox(height: Spacing.xs),
+            ),
+          ],
           GestureDetector(
             onTap: _skipOnboarding,
-            child: Text(
-              l10n.paywallSkipNow,
-              style: theme.textTheme.labelSmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant
-                    .withAlpha((0.4 * 255).toInt()),
+            behavior: HitTestBehavior.opaque,
+            child: SizedBox(
+              height: 40,
+              child: Center(
+                child: Text(
+                  l10n.paywallSkipNow,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant.withAlpha(
+                      (0.25 * 255).toInt(),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -753,19 +1094,35 @@ class _OnboardingSlidePremiumState
           child: Column(
             children: [
               _buildHero(theme, l10n),
-              _buildBenefits(theme, l10n),
-              _buildTestimonial(theme, l10n),
-              const SizedBox(height: Spacing.sm),
+              _buildBeforeAfter(theme, l10n),
               if (_isLoading)
                 const Padding(
                   padding: EdgeInsets.all(Spacing.lg),
                   child: CircularProgressIndicator.adaptive(),
                 )
+              else if (_errorMessage != null)
+                Padding(
+                  padding: const EdgeInsets.all(Spacing.lg),
+                  child: Column(
+                    children: [
+                      Text(
+                        _errorMessage!,
+                        style: const TextStyle(color: Colors.red),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: Spacing.sm),
+                      ElevatedButton(
+                        onPressed: _loadPackages,
+                        child: Text(l10n.retry),
+                      ),
+                    ],
+                  ),
+                )
               else
                 _buildPlans(theme, l10n),
-              SizedBox(
-                height: MediaQuery.of(context).padding.bottom + 160,
-              ),
+              _buildBenefits(theme, l10n),
+              _buildTestimonial(theme, l10n),
+              SizedBox(height: MediaQuery.of(context).padding.bottom + 160),
             ],
           ),
         ),

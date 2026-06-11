@@ -304,7 +304,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get positionBarcodeCenter => 'Črtno kodo postavite na sredino';
 
   @override
-  String get product => 'Product';
+  String get product => 'Izdelek';
 
   @override
   String get settingsAppBar => 'Nastavitve';
@@ -409,19 +409,19 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Odklenjene značke';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Začetnik';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organizirano';
 
   @override
   String get badgeSavingMaster => 'Saving Master';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super planer';
 
   @override
   String get backupTitle => 'Varnostna kopija';
@@ -508,17 +508,17 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased od $total elementov';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Proračun: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Skupaj: $amount';
   }
 
   @override
@@ -678,13 +678,13 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Pomočnik AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Zapri';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Skeniraj črtno kodo';
 
   @override
   String get listHelp => 'Kako lahko pomagam z vašim seznamom?';
@@ -2419,4 +2419,40 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Eno potovanje ni nikoli dovolj';
+
+  @override
+  String get aiWelcomeContent =>
+      'pozdravljena 👋 Sem **Kipi**, tvoj osebni pomočnik pri nakupovanju in receptih!\n\nTukaj sem, da vam pomagam:\n🛒 **Samodejno organizirajte** nakupovanje po kategorijah\n💰 **Spremljajte** svoj proračun in vam dajte nasvete za prihranek denarja\n🍲 **Predlagajte** okusne recepte s tem, kar že imate\n\nKako ti lahko danes pomagam? Začnete lahko tako, da ustvarite svoj prvi seznam!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Ustvari moj prvi seznam';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, pomagaj mi ustvariti moj prvi nakupovalni seznam';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Kako prihraniti denar?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, kako mi lahko pomagaš prihraniti pri nakupu živil?';
+
+  @override
+  String get suggestionMilk => 'Mleko';
+
+  @override
+  String get suggestionBread => 'Kruh';
+
+  @override
+  String get suggestionEggs => 'jajca';
+
+  @override
+  String get suggestionCoffee => 'kava';
+
+  @override
+  String get suggestionRice => 'riž';
+
+  @override
+  String get suggestionFruits => 'sadje';
 }

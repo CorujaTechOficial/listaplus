@@ -15,6 +15,48 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
   },
@@ -24,6 +66,15 @@
         "type": "String"
       }
     }
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -56,12 +107,33 @@
       }
     }
   },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryLimitReached": {
+    "description": "Warning when max categories reached"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
+  "@categoryNameHint": {
+    "description": "Hint for category name"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
+  },
+  "@chooseThemeColor": {
+    "description": "Screen title for theme color"
   },
   "@completedOn": {
     "placeholders": {
@@ -91,12 +163,53 @@
       }
     }
   },
+  "@connectionError": {
+    "description": "Error message when connection fails"
+  },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
       }
     }
+  },
+  "@deleteCategory": {
+    "description": "Delete category action"
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteCategoryTitle": {
+    "description": "Title for delete category dialog"
+  },
+  "@deleteConversation": {
+    "description": "Delete action label"
+  },
+  "@deleteConversationConfirm": {
+    "description": "Confirm message for delete conversation"
+  },
+  "@deleteConversationTitle": {
+    "description": "Title for delete conversation dialog"
   },
   "@deleteListContent": {
     "placeholders": {
@@ -105,8 +218,17 @@
       }
     }
   },
+  "@dietaryRestrictions": {
+    "description": "Label for dietary restrictions field"
+  },
+  "@dietaryRestrictionsHint": {
+    "description": "Hint for dietary restrictions"
+  },
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
   },
   "@editPantryItem": {
     "placeholders": {
@@ -129,6 +251,21 @@
       }
     }
   },
+  "@errorLoadingHistory": {
+    "description": "Error loading conversation history"
+  },
+  "@errorLoadingLists": {
+    "description": "Error when lists fail to load"
+  },
+  "@errorLoadingSubscription": {
+    "description": "Error loading subscription info"
+  },
+  "@errorSavingProfile": {
+    "description": "Error when profile save fails"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
+  },
   "@feedbackError": {
     "placeholders": {
       "error": {
@@ -141,6 +278,13 @@
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -176,6 +320,12 @@
       }
     }
   },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
+  },
   "@listAdded": {
     "placeholders": {
       "listName": {
@@ -207,12 +357,27 @@
       }
     }
   },
+  "@loadingSubscription": {
+    "description": "Loading state for subscription"
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@manageCategories": {
+    "description": "Manage categories menu item"
+  },
+  "@manageCategoriesSubtitle": {
+    "description": "Subtitle for manage categories"
+  },
+  "@marketsToAvoid": {
+    "description": "Label for markets to avoid field"
+  },
+  "@marketsToAvoidHint": {
+    "description": "Hint for markets to avoid"
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -238,6 +403,117 @@
       }
     }
   },
+  "@myProfile": {
+    "description": "My profile menu item"
+  },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@noListsFound": {
+    "description": "Empty state when user has no lists"
+  },
+  "@observations": {
+    "description": "Label for observations field"
+  },
+  "@observationsHint": {
+    "description": "Hint for observations field"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -247,11 +523,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -259,8 +610,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -276,6 +654,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -306,6 +693,24 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
   },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
@@ -371,6 +776,175 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@preferredMarket": {
+    "description": "Label for preferred market field"
+  },
+  "@preferredMarketHint": {
+    "description": "Hint for preferred market"
+  },
+  "@profileDescription": {
+    "description": "Label for profile description field"
+  },
+  "@profileSaved": {
+    "description": "Snackbar when profile is saved"
+  },
+  "@profileSection": {
+    "description": "Profile section header"
+  },
+  "@profileSubtitle": {
+    "description": "Subtitle for profile section"
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
   "@recipeAddedConfirmation": {
     "placeholders": {
       "count": {
@@ -388,6 +962,13 @@
       }
     }
   },
+  "@replaceItem": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -400,6 +981,12 @@
         "type": "String"
       }
     }
+  },
+  "@saveProfile": {
+    "description": "Button to save profile"
+  },
+  "@selectCheaperAlternative": {
+    "description": "Button for cheaper alternative"
   },
   "@selectedItems": {
     "placeholders": {
@@ -432,8 +1019,32 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
     }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swap": {
+    "description": "Button to swap item"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
   },
   "@totalEstimated": {
     "placeholders": {
@@ -441,6 +1052,15 @@
         "type": "String"
       }
     }
+  },
+  "@unlockPremiumTitle": {
+    "description": "Button to unlock premium"
+  },
+  "@unlockWithAd": {
+    "description": "Button to unlock via ad"
+  },
+  "@userProfile": {
+    "description": "User profile screen title"
   },
   "@userProfileErrorLoading": {
     "placeholders": {
@@ -455,6 +1075,9 @@
         "type": "String"
       }
     }
+  },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
   },
   "about": "O nama",
   "achievements": "Postignuća",
@@ -477,12 +1100,14 @@
   "aiAssistantDescription": "Dobij pametne prijedloge, recepte i personalizirane savjete s našim AI pomoćnikom.",
   "aiAssistantGeneral": "Generalni pomoćnik",
   "aiAssistantHistory": "Povijest pomoćnika",
+  "aiAssistantTitle": "AI pomoćnik",
   "aiConversationHistory": "Povijest razgovora",
   "aiCreditsRemaining": "Preostalo {remaining} kredita",
   "aiDeleteConversationConfirm": "Izbrisati",
   "aiDeleteConversationTitle": "Izbrisati razgovor?",
   "aiDeletedList": "Popis izbrisanih",
   "aiEnergy": "AI energija",
+  "aiEnergyLow": "Niska AI energija",
   "aiError": "Oprosti, došlo je do greške u obradi tvog zahtjeva. Provjeri svoju vezu ili pokušaj ponovno kasnije.",
   "aiFirstOpenHint": "Ja sam Kipi, tvoj pomoćnik u kupovini. Pitaj me bilo što o svom popisu!",
   "aiHello": "Zdravo! Ja sam Kipi",
@@ -494,13 +1119,23 @@
   "aiNoMessagesFound": "Nema pronađenih poruka",
   "aiPremiumUpsell": "Idi na Premium",
   "aiRecentConversations": "Nedavni razgovori",
+  "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} danas",
   "aiSearchMessages": "Traži poruke...",
   "aiStartNewConversation": "Započni novi razgovor",
+  "aiSubscribeUnlimited": "Pretplatite se za neograničeni AI",
   "aiSuggestCreateList": "Napravi moj prvi popis",
   "aiSuggestSaveMore": "Kako uštedjeti više?",
   "aiTeaserFallback": "Pretplatite se na Premium kako biste otključali puni odgovor i dobili neograničene AI savjete za svoju kupovinu...",
+  "aiUnlockUnlimited": "Otključajte neograničenu umjetnu inteligenciju",
   "aiUnlockWithAd": "Otključaj s oglasom",
+  "aiUsageExhausted": "Dosegnuto je mjesečno ograničenje AI-ja. Nadogradite na Pro za neograničeno →",
+  "aiUsageWarning": "{remaining} AI radnji preostalih ovaj mjesec — nadogradite za neograničeno",
   "aiVoiceCommandTooltip": "AI glasovna naredba (Premium)",
+  "aiWelcomeContent": "Zdravo! 👋 Ja sam **Kipi**, tvoj osobni asistent u kupovini i receptima!\n\nOvdje sam da vam pomognem:\n🛒 **Automatski organizirajte** svoju kupovinu po kategorijama\n💰 **Pratite** svoj proračun i dajte vam savjete za uštedu novca\n🍲 **Predloži** ukusne recepte s onim što već imaš\n\nKako vam mogu pomoći danas? Možete započeti stvaranjem svog prvog popisa!",
+  "aiWelcomeSuggestCreateList": "Napravi moj prvi popis",
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, pomozi mi da napravim moj prvi popis za kupovinu",
+  "aiWelcomeSuggestSave": "Kako uštedjeti?",
+  "aiWelcomeSuggestSavePrompt": "Kipi, kako mi možeš pomoći da uštedim novac na namirnicama?",
   "aiWelcomeTitle": "Zdravo! 👋 Ja sam **Kipi**, tvoj pametni pomoćnik u kupovini.",
   "allTags": "Sve",
   "alreadyPurchased": "Već kupljeno",
@@ -512,6 +1147,9 @@
   "artifactSuggestedItems": "Predložene stavke",
   "artifactSwapButton": "Zamjena",
   "artifactSwappedLabel": "Zamijenjeno",
+  "assistantHistory": "Povijest pomoćnika",
+  "assistantHistorySubtitle": "Pogledajte svoju povijest razgovora",
+  "assistantName": "Ime pomoćnika",
   "backToChat": "Natrag na Chat",
   "backToToday": "Povratak na danas",
   "backupExported": "Sigurnosna kopija izvezena!",
@@ -519,6 +1157,10 @@
   "backupPremiumDescription": "Sigurnosna kopija i izvoz su Premium značajka",
   "backupSubtitle": "Izvezi ili uvezi svoje podatke",
   "backupTitle": "Sigurnosna kopija",
+  "badgeBeginner": "Početnik",
+  "badgeOrganized": "Organizirano",
+  "badgeSavingMaster": "Spašavanje Učitelja",
+  "badgeSuperPlanner": "Super planer",
   "barcodeScannerHint": "Usmjerite kameru prema crtičnom kodu",
   "barcodeScannerTitle": "Skeniraj crtični kod",
   "becomePremium": "Postani Premium",
@@ -554,20 +1196,28 @@
   "catalogSortPopular": "Najpopularniji",
   "catalogTitle": "Katalog",
   "category": "Kategorija",
+  "categoryColorLabel": "Boja",
+  "categoryIconLabel": "Ikona",
+  "categoryLimitReached": "Dosegnuto je ograničenje kategorije",
+  "categoryName": "Naziv kategorije",
+  "categoryNameHint": "Unesite naziv kategorije",
   "chatError": "Greška u učitavanju chata: {error}",
   "chatHint": "Upiši svoju poruku...",
   "chatHintBlocked": "Otključajte AI za chat",
   "chatSubtitle": "Zatraži prijedloge stavki, recepte ili savjete za uštedu.",
   "chatSubtitleShort": "Pitajte za cijene, recepte, organizaciju...",
   "chooseCurrency": "Odaberite Valutu",
+  "chooseIcon": "Odaberite ikonu",
   "chooseImageSource": "Odaberi izvor slike",
   "chooseLanguage": "Odaberi jezik",
+  "chooseThemeColor": "Odaberite boju teme",
   "clear": "Očisti",
   "clearHistory": "Očisti povijest",
   "clearHistoryConfirm": "Izbrisati sve poruke u ovoj sesiji?",
   "clearList": "Očisti popis",
   "clearPurchased": "Očisti kupljeno",
   "close": "Zatvori",
+  "closeSheet": "Zatvoriti",
   "complete": "Dovrši",
   "completePurchase": "Dovrši kupnju",
   "completedOn": "Dovršeno {date}",
@@ -579,12 +1229,15 @@
   "confirmDeleteItems": "Ukloniti {count} stavku(i)?",
   "confirmDeleteTitle": "Potvrdi",
   "confirmRemovePantry": "Ukloniti \"{name}\" iz ostave?",
+  "connectionError": "Pogreška veze",
+  "connectionErrorDesc": "Greška: {error}",
   "consentAccept": "Prihvatiti",
   "consentBody": "KipiList koristi Firebase Analytics za poboljšanje vašeg iskustva. Vaši se podaci obrađuju u skladu s našom Politikom privatnosti.",
   "consentDecline": "Ne, hvala",
   "consentTitle": "Privatnost i analitika",
   "consumed": "Potrošeno",
   "continueAsGuest": "Nastavi kao gost",
+  "conversationHistoryTitle": "Povijest razgovora",
   "copiedToClipboard": "Kopirano u međuspremnik",
   "copy": "Kopiraj",
   "create": "Stvori",
@@ -595,10 +1248,19 @@
   "currency": "Valuta",
   "currentQty": "Trenutna kol",
   "currentQuantity": "Trenutna količina",
+  "currentStreak": "Trenutni niz",
+  "customizeAiAssistant": "Prilagodite AI pomoćnika",
+  "customizeAssistant": "Prilagodite",
   "dark": "Tamno",
   "data": "Podaci",
   "deficitItems": "{deficit,plural, one{{deficit} stavku treba kupiti} few{{deficit} stavke treba kupiti} other{{deficit} stavki treba kupiti}}",
   "delete": "Izbriši",
+  "deleteCategory": "Izbrisati",
+  "deleteCategoryConfirm": "Stavke u \"{category}\" bit će premještene u \"Ostalo\".\nNastaviti?",
+  "deleteCategoryTitle": "Izbriši kategoriju",
+  "deleteConversation": "Izbrisati",
+  "deleteConversationConfirm": "Ova se radnja ne može poništiti.",
+  "deleteConversationTitle": "Izbriši razgovor",
   "deleteListConfirm": "Izbriši popis",
   "deleteListContent": "Jesi li siguran da želiš izbrisati \"{name}\"? Sve stavke će biti uklonjene.",
   "deleteListTitle": "Izbriši popis",
@@ -608,12 +1270,15 @@
   "deleteSession": "Izbriši chat",
   "deleteSessionConfirm": "Jeste li sigurni da želite izbrisati ovaj chat? Poruke će biti trajno izgubljene.",
   "deselectAll": "Poništi odabir",
+  "dietaryRestrictions": "Ograničenja u prehrani",
+  "dietaryRestrictionsHint": "Ima li ograničenja u prehrani?",
   "dynamicColors": "Dinamične boje",
   "dynamicColorsEnabledWarning": "Onemogućite dinamičke boje da bi boja teme stupila na snagu",
   "dynamicColorsSubtitle": "Koristi boje na temelju pozadine",
   "economyTips": "Savjeti za uštedu",
   "economyTipsPrompt": "Kako mogu uštedjeti na ovoj kupnji?",
   "edit": "Uredi",
+  "editCategoryDialog": "Uredi kategoriju",
   "editItem": "Uredi stavku",
   "editItemPrice": "Procijenjena cijena",
   "editPantryItem": "Uredi {name}",
@@ -636,11 +1301,16 @@
   "errorGeneric": "Greška: {message}",
   "errorLoadingChat": "Ups! Nešto nije u redu prilikom učitavanja chata.",
   "errorLoadingChatSubtitle": "Provjerite vezu ili pokušajte ponovno kasnije.",
+  "errorLoadingHistory": "Pogreška pri učitavanju povijesti",
+  "errorLoadingLists": "Pogreška pri učitavanju popisa",
   "errorLoadingRecipes": "Greška pri učitavanju recepata",
+  "errorLoadingSubscription": "Pogreška pri učitavanju pretplate",
   "errorOscillation": "To se može dogoditi zbog oscilacija mreže ili privremene nedostupnosti. Molimo pokušajte ponovo.",
+  "errorSavingProfile": "Pogreška pri spremanju profila",
   "estimated": "Procijenjeno",
   "estimatedCost": "Procijenjeno",
   "estimatedPrice": "Procijenjena cijena",
+  "everythingReady": "Sve spremno!",
   "exit": "Izlaz",
   "exitShoppingMode": "Izađite iz načina za kupovinu",
   "expirationDate": "Rok trajanja",
@@ -699,14 +1369,18 @@
   "instructions": "Upute",
   "instructionsHint": "Upiši jedan korak po retku...",
   "inviteToList": "Pozovite na popis",
+  "itemAddedSnack": "{name} dodan",
   "itemName": "Naziv stavke",
   "itemRemoved": "Stavka uklonjena",
   "itemsAddedSuccess": "Stavke uspješno dodane na popis!",
   "itemsNeedPurchase": "{deficit} stavku(i) treba kupiti",
+  "itemsPurchased": "Kupljene stavke",
   "itemsPurchasedCount": "Kupljeno {purchased} od {total}",
   "itemsPurchasedShort": "{purchased}/{total} kupljeno",
   "itemsWillBeAdded": "{count} stavku(i) će biti dodano",
+  "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
+  "kipiQuickBarHint": "Što trebate kupiti?",
   "language": "Jezik",
   "languageEnglish": "engleski",
   "languagePortuguese": "português (Brazil)",
@@ -733,15 +1407,20 @@
   "lists": "Popisi",
   "loading": "Učitavanje...",
   "loadingRecipes": "Učitavanje vaših recepata...",
+  "loadingSubscription": "Učitavanje pretplate...",
   "loginError": "Greška pri prijavi: {error}",
   "loginPrompt": "Prijavi se za otključavanje\nPremium značajki",
   "longHistoryWarning": "Duga povijest: pomoćnik se fokusira na najnovije poruke za bolju izvedbu.",
+  "manageCategories": "Upravljanje kategorijama",
   "manageCategoriesEmpty": "Još nema kategorija",
+  "manageCategoriesSubtitle": "Dodajte, uredite ili uklonite kategorije",
   "manageCategoriesTitle": "Upravljanje kategorijama",
   "manageSubscription": "Upravljanje pretplatom",
   "markAsPurchased": "Označi kao kupljeno",
   "markItemsToSeeAnalysis": "Označi stavke kao kupljene za prikaz analize.",
   "marketMode": "Tržišni način rada",
+  "marketsToAvoid": "Tržišta koja treba izbjegavati",
+  "marketsToAvoidHint": "Tržnice na kojima radije ne kupujete",
   "mealDragHint": "Držite za povlačenje i pomicanje",
   "mealNoRecipeFound": "Recept nije pronađen",
   "mealPlannerAddMeal": "Dodaj obrok",
@@ -785,12 +1464,15 @@
   "monthlyBudgetNav": "Mjesečni proračun",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Mjesečni proračun",
+  "myAchievements": "Moja postignuća",
   "myLists": "Moji popisi",
+  "myProfile": "Moj profil",
   "myRecipes": "Moji recepti",
   "navChat": "Razgovor",
   "navLists": "Popisi",
   "navMealPlanner": "Jelovnik",
   "navRecipes": "Recepti",
+  "newCategoryDialog": "Nova kategorija",
   "newChat": "Novi razgovor",
   "newListTitle": "Novi popis za kupnju",
   "newPantryList": "Kupnja za ostavu",
@@ -800,6 +1482,7 @@
   "noActiveLists": "Nema aktivnih popisa",
   "noArchivedLists": "Nema arhiviranih popisa",
   "noBudgetDefined": "Nije postavljen proračun",
+  "noConversationsFound": "Nema pronađenih razgovora",
   "noHistory": "Nema povijesti razgovora",
   "noItemsInList": "Nema stavki na popisu",
   "noItemsToAnalyze": "Nema stavki u popisu za analizu.",
@@ -807,27 +1490,92 @@
   "noLabel": "Ne",
   "noListFoundSubtitle": "Stvori svoj prvi popis za početak",
   "noListFoundTitle": "Nema pronađenih popisa",
+  "noListSelected": "Nije odabran nijedan popis. Prvo otvorite popis.",
+  "noListsFound": "Nema pronađenih popisa",
   "noMessagesFound": "Nema pronađenih poruka",
   "noRecipesSaved": "Nema spremljenih recepata",
   "noRecipesSavedHint": "Stvorite svoj prvi prilagođeni recept dodirom na gumb ispod.",
   "noTracking": "Bez praćenja",
   "notInformed": "Nije informiran",
+  "observations": "Zapažanja",
+  "observationsHint": "Imate li dodatnih napomena?",
   "offlineBanner": "Vi ste izvan mreže",
   "onboardingAIShowSubtitle": "Kipi sprema sve za vas...",
   "onboardingAIShowTitle": "Pogledajte inteligenciju na djelu!",
+  "onboardingAiAskConfirm": "Izgleda li ovo dobro? Pokušajte upisati nešto drugo!",
+  "onboardingAiAskFood": "Koja ti je omiljena hrana?",
+  "onboardingAiAskName": "kako se zoves",
+  "onboardingAiContinue": "Nastavi →",
+  "onboardingAiDemoChange": "Promijeni stavku",
+  "onboardingAiDemoContinue": "Nastaviti",
+  "onboardingAiDemoGreeting": "Hej {name}! Što {category} trebate?",
+  "onboardingAiDemoGreetingNoName": "Što {category} trebate?",
+  "onboardingAiDemoOffer": "Pokušajte upisati nešto drugo!",
+  "onboardingAiDemoReaction": "Lijepo!",
+  "onboardingAiDemoSlideCta": "želim ovo! →",
+  "onboardingAiDemoSlideDone": "Kompletan popis za nekoliko sekundi ✨",
+  "onboardingAiDemoSlideHeadline": "Vaš popis za kupovinu, sada s AI",
+  "onboardingAiDemoSlideReady": "Spreman! Ovdje je sve što vam treba:",
+  "onboardingAiDemoSlideSubtitle": "Pogledajte kako Kipi sastavlja vaš cijeli popis u nekoliko sekundi",
+  "onboardingAiDemoSlideUserMsg": "Ja sam domaćin roštilja 🔥",
+  "onboardingAiDemoYes": "Da!",
+  "onboardingAiFoodHint": "npr. Pizza, Sushi...",
+  "onboardingAiGreeting": "Bok! Ja sam Kipi, vaš osobni shopping asistent! 🛒",
+  "onboardingAiIngredients": "Sjajni izbori! Evo što bih dodao vašem popisu:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "Upišite svoje ime...",
+  "onboardingAiNiceToMeet": "Drago mi je što smo se upoznali, {name}! 🎉",
+  "onboardingAiReady": "super! Spremni ste za početak. Postavimo vaš račun!",
+  "onboardingAiTitle": "Razgovaraj s Kipijem",
   "onboardingAnnualBadge": "Najbolja vrijednost",
   "onboardingAnnualLabel": "Godišnji",
   "onboardingCancelAnytime": "Otkaži bilo kada. Bez obveze.",
+  "onboardingCategoryGrocery": "Namirnice",
+  "onboardingCategoryHome": "Dom",
+  "onboardingCategoryPet": "Ljubimac",
+  "onboardingCategoryPharmacy": "Ljekarna",
+  "onboardingCategoryRecipes": "Recepti",
+  "onboardingCommitmentsCta": "Idemo!",
+  "onboardingCommitmentsSubtitle": "Odaberite svoje ciljeve kako biste personalizirali KipiList",
+  "onboardingCommitmentsTitle": "Što ti je bitno?",
   "onboardingContinueAsGuest": "Nastavite kao gost",
   "onboardingExit": "Izlaz",
+  "onboardingGoalFamily": "Organizirajte obiteljsku kupovinu",
+  "onboardingGoalFaster": "Kupujte brže",
+  "onboardingGoalNeverForget": "Nikad ne zaboravite predmete",
+  "onboardingGoalPantry": "Kolosiječna ostava",
+  "onboardingGoalRecipes": "Otkrijte recepte",
+  "onboardingGoalSaveMoney": "Uštedite novac",
+  "onboardingGroupCouple": "Par",
+  "onboardingGroupFamily": "Obitelj",
+  "onboardingGroupSolo": "Samo ja",
+  "onboardingHookHeadline": "Nikad više nemojte zaboraviti namirnicu",
+  "onboardingLoadingStat1Label": "Predmeti katalogizirani",
+  "onboardingLoadingStat2Label": "Korisnici su pomogli",
+  "onboardingLoadingStat3Label": "Ušteđene minute",
+  "onboardingLoadingStep1": "Analiziramo vaše preferencije...",
+  "onboardingLoadingStep2": "Postavljanje AI pomoćnika...",
+  "onboardingLoadingStep3": "Skoro spremno...",
+  "onboardingLoadingTitle": "Priprema vašeg iskustva...",
   "onboardingLoginDesc": "Vaši podaci sinkronizirani na svim vašim uređajima",
   "onboardingLoginTitle": "Sve spremite u oblak",
+  "onboardingMaybeLater": "Možda kasnije",
   "onboardingMonthlyLabel": "Mjesečno",
+  "onboardingPainCta": "Da, popravi mi ovo →",
+  "onboardingPainFamily": "Moja obitelj nikad ne vidi popis",
+  "onboardingPainForget": "Zaboravljam stvari u trgovini",
+  "onboardingPainOverspend": "Uvijek prekoračim budžet",
+  "onboardingPainRepeat": "Jedno putovanje nikad dosta",
+  "onboardingPainSubtitle": "Budite iskreni — mi ćemo popraviti svaki",
+  "onboardingPainTitle": "Što vas najviše frustrira?",
+  "onboardingPersonalizationCategoryTitle": "Što kupujete?",
   "onboardingPersonalizationCta": "Nastaviti",
   "onboardingPersonalizationDesc": "Koristit ćemo to da personaliziramo vaše prijedloge i kupnju učinimo pametnijom.",
   "onboardingPersonalizationFoodHint": "npr. Pizza, Sushi, Lazanje...",
   "onboardingPersonalizationFoodLabel": "Koja ti je omiljena hrana?",
   "onboardingPersonalizationFoodRequired": "Recite nam svoju omiljenu hranu za nastavak",
+  "onboardingPersonalizationGroupTitle": "Za koga kupujete?",
+  "onboardingPersonalizationNameHint": "Unesite svoje ime",
+  "onboardingPersonalizationNameLabel": "Vaše ime",
   "onboardingPersonalizationSkip": "Preskoči za sada",
   "onboardingPersonalizationTitle": "Hajde da te upoznamo",
   "onboardingPremiumSubtitle": "Izvucite maksimum iz svojih popisa za kupnju",
@@ -838,6 +1586,12 @@
   "onboardingSetupTitle": "Personalizirajte svoje iskustvo",
   "onboardingShareDesc": "Sinkronizirajte popise s obitelji i prijateljima u stvarnom vremenu",
   "onboardingShareTitle": "Podijelite s onima koje volite",
+  "onboardingSlide1Body": "Kreirajte i dijelite popise u trenu. Kipi automatski dodaje stavke na temelju vaših navika.",
+  "onboardingSlide1Title": "Pametni popisi za kupnju",
+  "onboardingSlide2Body": "Pitajte bilo što - izradite popise, pronađite recepte, pratite svoju smočnicu, planirajte svoj tjedan.",
+  "onboardingSlide2Title": "Upoznajte Kipija",
+  "onboardingSlide3Body": "Pratite što imate, planirajte obroke i automatski generirajte popise za kupnju.",
+  "onboardingSlide3Title": "Spremište i planiranje obroka",
   "onboardingSubscribeCta": "Pretplatite se",
   "onboardingViewAllPlans": "Pogledajte sve planove",
   "onboardingWelcomeDesc": "Najpametniji način da organizirate kupovinu i uštedite novac.",
@@ -893,13 +1647,31 @@
   "paywallCancelAnytime": "Otkaži bilo kada. Bez obveze.",
   "paywallCtaTrialDays": "Započnite besplatno — {days} dana",
   "paywallCtaUnlock": "Otključaj PRO",
+  "paywallFeatureDescAssistant": "AI automatski organizira vaš popis",
+  "paywallFeatureDescBudget": "Ostanite na proračunu svaki mjesec",
+  "paywallFeatureDescPantry": "Pratite što imate kod kuće",
+  "paywallFeatureDescSharing": "Kupujte zajedno u stvarnom vremenu",
+  "paywallFeatureDescUnlimitedLists": "Napravite onoliko popisa koliko vam je potrebno",
   "paywallFeatureExpenseControl": "Kontrola troškova",
   "paywallFeatureSharing": "Dijeljenje",
   "paywallFeatureSmartAI": "Pametna umjetna inteligencija",
   "paywallFeatureUnlimitedLists": "Neograničeni popisi",
   "paywallFeaturesTitle": "Sve što vam treba:",
+  "paywallGoalHeadlineFamily": "{name}, organiziraj obiteljsku kupovinu!",
+  "paywallGoalHeadlineFaster": "{name}, kupujte u pola vremena!",
+  "paywallGoalHeadlineNeverForget": "{name}, nikada ne zaboravite ništa!",
+  "paywallGoalHeadlineNoNameFamily": "Organizirajte obiteljsku kupovinu!",
+  "paywallGoalHeadlineNoNameFaster": "Kupujte u pola vremena!",
+  "paywallGoalHeadlineNoNameNeverForget": "Nikada ne zaboravite predmet!",
+  "paywallGoalHeadlineNoNamePantry": "Savršeno pratite svoju smočnicu!",
+  "paywallGoalHeadlineNoNameRecipes": "Otkrijte nove recepte!",
+  "paywallGoalHeadlineNoNameSaveMoney": "Uštedite na svakom putovanju!",
+  "paywallGoalHeadlinePantry": "{name}, savršeno prati svoju smočnicu!",
+  "paywallGoalHeadlineRecipes": "{name}, otkrij nove recepte!",
+  "paywallGoalHeadlineSaveMoney": "{name}, uštedite na svakom putovanju!",
   "paywallHeroHeadline": "Kipi AI uvijek uz tebe",
   "paywallHeroSubtitle": "Dodajte stavke, organizirajte popise i uštedite vrijeme uz AI u vašem džepu",
+  "paywallHeroSubtitlePersonalized": "Hej {name}, organiziraj kupovinu na pravi način.",
   "paywallLabelCommon": "Uobičajeno",
   "paywallLabelPro": "KipiList PRO",
   "paywallLoadingError": "Pogreška pri učitavanju ponuda. Pokušajte ponovno.",
@@ -909,27 +1681,37 @@
   "paywallPackageMonthly": "Mjesečni plan",
   "paywallPackageMonthlyDesc": "Potpuna fleksibilnost",
   "paywallPolicy": "Politika privatnosti",
+  "paywallPricePerDay": "Samo {price}/dan — manje od kave",
   "paywallPricePerMonth": "Samo {price} mjesečno",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "Nije moguće dovršiti kupnju. Pokušajte ponovno.",
   "paywallRestore": "Vratiti",
   "paywallRestoreError": "Nije pronađena aktivna pretplata za vraćanje.",
   "paywallSafeCheckout": "Sigurno plaćanje",
   "paywallSavePercent": "UŠTEDITE {percent}%",
+  "paywallSecuredByStore": "Osigurano Google Playom · Otkažite bilo kada",
   "paywallSelectPlan": "Odaberite svoj plan:",
+  "paywallSkipNow": "Preskoči za sada",
   "paywallSocialProof": "Koristi ga +2400 obitelji",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "Uvjeti korištenja",
+  "paywallTestimonial": "AI organizira moju kupovinu u sekundi. Uštedim 20 minuta po putovanju.",
   "paywallTestimonial1Name": "Ann S.",
   "paywallTestimonial1Text": "AI organizira moju kupovinu u sekundi. Uštedim 20 minuta po obilasku tržnice.",
   "paywallTestimonial2Name": "Charles M.",
   "paywallTestimonial2Text": "Nikad više nisam zaboravio stavku s popisa. AI chat je senzacionalan!",
+  "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Što kažu naši korisnici:",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Započni besplatnu probu",
   "paywallTrialDays": "{days} DANA BESPLATNO",
+  "paywallTrialDisclaimer": "Otkažite bilo kada · Bez naknade do završetka probnog razdoblja",
+  "paywallTrialInCard": "Prvih {days} dana BESPLATNO",
   "paywallTrialMonths": "{count,plural, one{{count} MJESECI BESPLATNO} other{{count} MJESECI BESPLATNO}}",
   "paywallTrialSubtitle": "Otkaži bilo kada. Danas se ne naplaćuje.",
   "paywallTrialTitle": "Isprobajte KipiList Pro besplatno 7 dana",
   "paywallTrialWeeks": "{count,plural, one{{count} TJEDAN BESPLATNO} other{{count} TJEDANA BESPLATNO}}",
+  "positionBarcodeCenter": "Postavite crtični kod u sredinu",
   "prefAIAssistant": "Osobni AI pomoćnik",
   "prefCustomThemes": "Prilagođene teme",
   "prefExportData": "Izvoz podataka",
@@ -939,18 +1721,31 @@
   "prefSharing": "Dijeljenje popisa",
   "prefUnlimitedLists": "Neograničeni popisi",
   "prefUnlimitedPantry": "Neograničena ostava",
+  "preferredMarket": "Preferirano tržište",
+  "preferredMarketHint": "Gdje obično kupujete?",
   "premiumUpgrade": "Nadogradi za otključavanje",
   "prepTime": "Vrijeme prip.",
   "prepTimeMinutes": "Vrijeme pripreme (minute)",
   "privacy": "Privatnost",
+  "product": "Proizvod",
   "productName": "Naziv proizvoda",
   "profile": "Profil",
+  "profileDescription": "Opis profila",
+  "profileSaved": "Profil je spremljen",
+  "profileSection": "Profil",
+  "profileSubtitle": "Vaši profilni podaci",
+  "progressBudget": "Proračun: {amount}",
+  "progressItemsOf": "{purchased} od {total} stavki",
+  "progressTotal": "Ukupno: {amount}",
   "purchaseError": "Greška u obradi kupnje. Pokušaj ponovno.",
   "quantityFull": "Količina",
   "quantityShort": "Kol",
+  "quantityUnitWithPrice": "{qty} {unit} — {price}",
+  "quantityWithUnit": "{qty} {unit}",
   "quickRecipe": "Brzi recept",
   "quickRecipePrompt": "Predloži recepte sa stavkama s mog popisa.",
   "quickReplies": "Brzi odgovori:",
+  "quickSuggestions": "Brzi prijedlozi",
   "recipeAddToList": "Dodaj na popis za kupovinu",
   "recipeAddedConfirmation": "{count} sastojaka dodanih u {listName}",
   "recipeCreated": "Recept stvoren!",
@@ -969,6 +1764,7 @@
   "removeSharedTooltip": "Ukloni",
   "rename": "Preimenuj",
   "renameListDialog": "Preimenuj popis",
+  "replaceItem": "Zamijeni {item}",
   "requiredField": "Obavezno",
   "restockLabel": "Nadopuni",
   "restocked": "{name} nadopunjeno na {quantity} {unit}",
@@ -977,15 +1773,19 @@
   "retry": "Pokušaj ponovno",
   "save": "Spremi",
   "saveChanges": "Spremi promjene",
+  "saveProfile": "Spremi profil",
   "saveRecipe": "Spremi",
   "savings": "Ušteda",
+  "scanBarcodeTitle": "Skeniraj crtični kod",
+  "scanProductTitle": "Skeniraj proizvod",
   "searchCurrency": "Traži valutu...",
   "searchInConversation": "Traži u razgovoru...",
   "searchLanguage": "Pretraži jezik...",
   "searchRecipes": "Pretraži recepte...",
   "selectAll": "Odaberi sve",
+  "selectCheaperAlternative": "Odaberite jeftiniju alternativu",
   "selectListForDashboard": "Odaberi popis za prikaz nadzorne ploče.",
-  "selectedItems": "{count,plural, one{Odabrano {count}} few{Odabrano {count}} other{Odabrano {count}}}",
+  "selectedItems": "{count, plural,  one{other {count}} few{Odabrano {count}} other{Odabrano {count}}}",
   "setBudgetButton": "Postavi proračun",
   "setBudgetTitle": "Mjesečni proračun",
   "settingsAppBar": "Postavke",
@@ -1035,6 +1835,7 @@
   "shortDescription": "Kratki opis",
   "signInApple": "Prijava s Appleom",
   "signInGoogle": "Prijava s Googleom",
+  "skip": "Preskočiti",
   "smartOrganization": "Pametna organizacija",
   "sortAZ": "A–Z",
   "sortCategory": "Kategorija",
@@ -1043,8 +1844,19 @@
   "sortName": "Naziv",
   "spendingAnalysis": "Analiza potrošnje",
   "spendingByCategory": "Potrošnja po kategoriji",
+  "streakDays": "{count,plural, one{{count} dana} other{{count} dana}}",
+  "subscription": "Pretplata",
+  "suggestedItems": "Predložene stavke",
   "suggestedQuestions": "Predložena pitanja:",
   "suggestedTags": "Predloženo",
+  "suggestionBread": "Kruh",
+  "suggestionCoffee": "Kava",
+  "suggestionEggs": "Jaja",
+  "suggestionFruits": "Voće",
+  "suggestionMilk": "Mlijeko",
+  "suggestionRice": "Riža",
+  "swap": "Zamjena",
+  "swapped": "Zamijenjeno",
   "switchList": "Promijeni popis",
   "system": "Sustav",
   "tags": "Oznake",
@@ -1062,6 +1874,7 @@
   "themeSelectionTitle": "Odaberite boju teme",
   "themeTeal": "Teal",
   "totalEstimated": "Ukupno procijenjeno: {amount}",
+  "totalSavings": "Ukupna ušteda",
   "totalSpending": "Ukupno potrošeno",
   "trackStock": "Prati zalihe",
   "trackStockActive": "Pojavljuje se u prijedlozima za kupnju",
@@ -1071,8 +1884,12 @@
   "unitPack": "paket",
   "unlockAi": "Otključajte neograničenu umjetnu inteligenciju",
   "unlockFullResponse": "Otključaj puni odgovor",
+  "unlockPremiumTitle": "Otključaj Premium",
+  "unlockWithAd": "Otključaj oglasom",
+  "unlockedBadges": "Otključane značke",
   "unmark": "Odznači",
   "upgrade": "Nadogradi",
+  "userProfile": "Korisnički profil",
   "userProfileAvoidedStores": "Izbjegnute trgovine",
   "userProfileAvoidedStoresHint": "npr. Pohranite X, pohranite Y",
   "userProfileDescription": "Dodajte svoje osobne postavke kako bi AI asistent mogao predložiti personalizirane artikle i recepte.",
@@ -1111,5 +1928,6 @@
   "welcomeAiAssistant": "Dobro došli u AI Assistant",
   "whatToDoWithItem": "Što želite učiniti s ovom stavkom?",
   "yes": "Da",
-  "yesLabel": "Da"
+  "yesLabel": "Da",
+  "youCompletedList": "Dovršili ste popis!"
 }

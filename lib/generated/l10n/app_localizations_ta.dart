@@ -301,13 +301,13 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'தயாரிப்பு ஸ்கேன்';
 
   @override
   String get positionBarcodeCenter => 'பார்கோடை மையத்தில் வைக்கவும்';
 
   @override
-  String get product => 'Product';
+  String get product => 'தயாரிப்பு';
 
   @override
   String get settingsAppBar => 'அமைப்புகள்';
@@ -414,19 +414,19 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'திறக்கப்பட்ட பேட்ஜ்கள்';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'ஆரம்பநிலை';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'ஏற்பாடு செய்யப்பட்டது';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'சேவிங் மாஸ்டர்';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'சூப்பர் பிளானர்';
 
   @override
   String get backupTitle => 'காப்புப்பிரதி';
@@ -515,17 +515,17 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$total உருப்படிகளில் $purchased';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'பட்ஜெட்: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'மொத்தம்: $amount';
   }
 
   @override
@@ -686,13 +686,13 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI உதவியாளர்';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'மூடு';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'பார்கோடு ஸ்கேன் செய்யவும்';
 
   @override
   String get listHelp => 'உங்கள் பட்டியலில் எப்படி உதவ முடியும்?';
@@ -2408,45 +2408,85 @@ class AppLocalizationsTa extends AppLocalizations {
   String get onboardingAiDemoContinue => 'தொடரவும்';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline =>
+      'உங்கள் ஷாப்பிங் பட்டியல், இப்போது AI உடன்';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'வினாடிகளில் உங்கள் முழுப் பட்டியலையும் Kipi எவ்வாறு உருவாக்குகிறது என்பதைப் பார்க்கவும்';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'எனக்கு இது வேண்டும்! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'நான் பார்பிக்யூ 🔥 நடத்துகிறேன்';
 
   @override
   String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+      'தயார்! உங்களுக்கு தேவையான அனைத்தும் இங்கே:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'வினாடிகளில் பட்டியலை முடிக்கவும் ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'உங்களை மிகவும் விரக்தியடையச் செய்வது எது?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle =>
+      'நேர்மையாக இருங்கள் - ஒவ்வொன்றையும் சரிசெய்வோம்';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'ஆம், எனக்காக இதை சரி செய் →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'நான் கடையில் பொருட்களை மறந்துவிட்டேன்';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily =>
+      'எனது குடும்பத்தினர் பட்டியலைப் பார்ப்பதில்லை';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend =>
+      'நான் எப்பொழுதும் வரவு செலவுத் திட்டத்தை மீறுவேன்';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'ஒரு பயணம் போதாது';
+
+  @override
+  String get aiWelcomeContent =>
+      'வணக்கம்! 👋 நான் **கிபி**, உங்கள் தனிப்பட்ட ஷாப்பிங் மற்றும் செய்முறை உதவியாளர்!\n\nஉங்களுக்கு உதவ நான் இங்கே இருக்கிறேன்:\n🛒 **உங்கள் ஷாப்பிங்கை வகைகளின்படி தானாகவே ஒழுங்கமைக்கவும்**\n💰 **உங்கள் பட்ஜெட்டைக் கண்காணித்து, பணத்தைச் சேமிக்கும் உதவிக்குறிப்புகளை வழங்குங்கள்\n🍲 **பரிந்துரை** உங்களிடம் ஏற்கனவே உள்ளதைக் கொண்டு சுவையான சமையல் குறிப்புகள்\n\nஇன்று நான் உங்களுக்கு எப்படி உதவ முடியும்? உங்கள் முதல் பட்டியலை உருவாக்குவதன் மூலம் நீங்கள் தொடங்கலாம்!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'எனது முதல் பட்டியலை உருவாக்கவும்';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'கிபி, எனது முதல் ஷாப்பிங் பட்டியலை உருவாக்க எனக்கு உதவுங்கள்';
+
+  @override
+  String get aiWelcomeSuggestSave => 'பணத்தை எவ்வாறு சேமிப்பது?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'கிபி, மளிகை சாமான்களில் பணத்தை சேமிக்க நீங்கள் எனக்கு எப்படி உதவலாம்?';
+
+  @override
+  String get suggestionMilk => 'பால்';
+
+  @override
+  String get suggestionBread => 'ரொட்டி';
+
+  @override
+  String get suggestionEggs => 'முட்டைகள்';
+
+  @override
+  String get suggestionCoffee => 'காபி';
+
+  @override
+  String get suggestionRice => 'அரிசி';
+
+  @override
+  String get suggestionFruits => 'பழங்கள்';
 }
 
 /// The translations for Tamil, as used in India (`ta_IN`).
@@ -2746,7 +2786,13 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
   }
 
   @override
+  String get scanProductTitle => 'தயாரிப்பு ஸ்கேன்';
+
+  @override
   String get positionBarcodeCenter => 'பார்கோடை மையத்தில் வைக்கவும்';
+
+  @override
+  String get product => 'தயாரிப்பு';
 
   @override
   String get settingsAppBar => 'அமைப்புகள்';
@@ -2853,6 +2899,21 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
   }
 
   @override
+  String get unlockedBadges => 'திறக்கப்பட்ட பேட்ஜ்கள்';
+
+  @override
+  String get badgeBeginner => 'ஆரம்பநிலை';
+
+  @override
+  String get badgeOrganized => 'ஏற்பாடு செய்யப்பட்டது';
+
+  @override
+  String get badgeSavingMaster => 'சேவிங் மாஸ்டர்';
+
+  @override
+  String get badgeSuperPlanner => 'சூப்பர் பிளானர்';
+
+  @override
   String get backupTitle => 'காப்புப்பிரதி';
 
   @override
@@ -2936,6 +2997,21 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get sortManual => 'கைமுறை';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$total உருப்படிகளில் $purchased';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'பட்ஜெட்: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'மொத்தம்: $amount';
+  }
 
   @override
   String get addItem => 'பொருளைச் சேர்';
@@ -3093,6 +3169,15 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
   String chatError(String error) {
     return 'அரட்டையை ஏற்றுவதில் பிழை: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI உதவியாளர்';
+
+  @override
+  String get closeSheet => 'மூடு';
+
+  @override
+  String get scanBarcodeTitle => 'பார்கோடு ஸ்கேன் செய்யவும்';
 
   @override
   String get listHelp => 'உங்கள் பட்டியலில் எப்படி உதவ முடியும்?';
@@ -4851,4 +4936,40 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get onboardingPainRepeat => 'ஒரு பயணம் போதாது';
+
+  @override
+  String get aiWelcomeContent =>
+      'வணக்கம்! 👋 நான் **கிபி**, உங்கள் தனிப்பட்ட ஷாப்பிங் மற்றும் செய்முறை உதவியாளர்!\n\nஉங்களுக்கு உதவ நான் இங்கே இருக்கிறேன்:\n🛒 **உங்கள் ஷாப்பிங்கை வகைகளின்படி தானாகவே ஒழுங்கமைக்கவும்**\n💰 **உங்கள் பட்ஜெட்டைக் கண்காணித்து, பணத்தைச் சேமிக்கும் உதவிக்குறிப்புகளை வழங்குங்கள்\n🍲 **பரிந்துரை** உங்களிடம் ஏற்கனவே உள்ளதைக் கொண்டு சுவையான சமையல் குறிப்புகள்\n\nஇன்று நான் உங்களுக்கு எப்படி உதவ முடியும்? உங்கள் முதல் பட்டியலை உருவாக்குவதன் மூலம் நீங்கள் தொடங்கலாம்!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'எனது முதல் பட்டியலை உருவாக்கவும்';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'கிபி, எனது முதல் ஷாப்பிங் பட்டியலை உருவாக்க எனக்கு உதவுங்கள்';
+
+  @override
+  String get aiWelcomeSuggestSave => 'பணத்தை எவ்வாறு சேமிப்பது?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'கிபி, மளிகை சாமான்களில் பணத்தை சேமிக்க நீங்கள் எனக்கு எப்படி உதவலாம்?';
+
+  @override
+  String get suggestionMilk => 'பால்';
+
+  @override
+  String get suggestionBread => 'ரொட்டி';
+
+  @override
+  String get suggestionEggs => 'முட்டைகள்';
+
+  @override
+  String get suggestionCoffee => 'காபி';
+
+  @override
+  String get suggestionRice => 'அரிசி';
+
+  @override
+  String get suggestionFruits => 'பழங்கள்';
 }

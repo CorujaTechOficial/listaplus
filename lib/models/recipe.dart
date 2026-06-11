@@ -1,4 +1,5 @@
 import 'package:uuid/uuid.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import 'shopping_item.dart';
 
 class Recipe {
@@ -27,7 +28,7 @@ class Recipe {
       instructions: (json['instructions'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [],
       prepTimeMinutes: json['prepTimeMinutes'] as int? ?? 30,
       imageUrl: json['imageUrl'] as String?,
-      createdAt: _parseDate(json['createdAt']),
+      createdAt: safeParseDate(json['createdAt']),
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [],
     );
   }
@@ -41,17 +42,6 @@ class Recipe {
   final String? imageUrl;
   final DateTime createdAt;
   final List<String> tags;
-
-  static DateTime _parseDate(dynamic value) {
-    if (value == null) {
-      return DateTime.now();
-    }
-    if (value is DateTime) {
-      return value;
-    }
-    final parsed = DateTime.tryParse(value.toString());
-    return parsed ?? DateTime.now();
-  }
 
   Map<String, dynamic> toJson() {
     return {

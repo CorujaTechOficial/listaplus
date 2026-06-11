@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'package:flutter/material.dart';
 import 'package:shopping_list/app/catalog/models/catalog_category.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -74,4 +73,3 @@ class CategoryGrid extends StatelessWidget {
     );
   }
 }
-// coverage:ignore-end

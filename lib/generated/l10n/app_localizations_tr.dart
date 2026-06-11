@@ -294,13 +294,13 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Ürünü Tara';
 
   @override
   String get positionBarcodeCenter => 'Barkodu ortaya yerleştirin';
 
   @override
-  String get product => 'Product';
+  String get product => 'Ürün';
 
   @override
   String get settingsAppBar => 'Ayarlar';
@@ -405,19 +405,19 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Kilidi Açılmış Rozetler';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Acemi';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organize';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Master kaydetme';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Süper Planlayıcı';
 
   @override
   String get backupTitle => 'Yedekleme';
@@ -504,17 +504,17 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased / $total öğe';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Bütçe: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Toplam: $amount';
   }
 
   @override
@@ -675,13 +675,13 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Yapay Zeka Asistanı';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Kapalı';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Barkodu Tara';
 
   @override
   String get listHelp => 'Listenizle ilgili nasıl yardımcı olabilirim?';
@@ -2411,6 +2411,42 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Bir yolculuk asla yeterli değildir';
+
+  @override
+  String get aiWelcomeContent =>
+      'Merhaba! 👋 Ben **Kipi**, kişisel alışveriş ve yemek tarifi asistanınım!\n\nSize yardım etmek için buradayım:\n🛒 Alışverişinizi otomatik olarak kategorilere göre **düzenleyin**\n💰 **Bütçenizi takip edin** ve paradan tasarruf etmenizi sağlayacak ipuçları verin\n🍲 **Elinizde olanlarla lezzetli tarifler önerin**\n\nBugün sana nasıl yardımcı olabilirim? İlk listenizi oluşturarak başlayabilirsiniz!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'İlk listemi oluştur';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, ilk alışveriş listemi oluşturmama yardım et';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Paradan nasıl tasarruf edilir?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, alışverişten tasarruf etmeme nasıl yardımcı olabilirsin?';
+
+  @override
+  String get suggestionMilk => 'Süt';
+
+  @override
+  String get suggestionBread => 'Ekmek';
+
+  @override
+  String get suggestionEggs => 'Yumurtalar';
+
+  @override
+  String get suggestionCoffee => 'Kahve';
+
+  @override
+  String get suggestionRice => 'Pirinç';
+
+  @override
+  String get suggestionFruits => 'Meyveler';
 }
 
 /// The translations for Turkish, as used in Turkey (`tr_TR`).
@@ -2703,7 +2739,13 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
+  String get scanProductTitle => 'Ürünü Tara';
+
+  @override
   String get positionBarcodeCenter => 'Barkodu ortaya yerleştirin';
+
+  @override
+  String get product => 'Ürün';
 
   @override
   String get settingsAppBar => 'Ayarlar';
@@ -2808,6 +2850,21 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
+  String get unlockedBadges => 'Kilidi Açılmış Rozetler';
+
+  @override
+  String get badgeBeginner => 'Acemi';
+
+  @override
+  String get badgeOrganized => 'Organize';
+
+  @override
+  String get badgeSavingMaster => 'Master kaydetme';
+
+  @override
+  String get badgeSuperPlanner => 'Süper Planlayıcı';
+
+  @override
   String get backupTitle => 'Yedekleme';
 
   @override
@@ -2889,6 +2946,21 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get sortManual => 'Manuel';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased / $total öğe';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Bütçe: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Toplam: $amount';
+  }
 
   @override
   String get addItem => 'Öğe Ekle';
@@ -3046,6 +3118,15 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String chatError(String error) {
     return 'Sohbet yüklenirken hata: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Yapay Zeka Asistanı';
+
+  @override
+  String get closeSheet => 'Kapalı';
+
+  @override
+  String get scanBarcodeTitle => 'Barkodu Tara';
 
   @override
   String get listHelp => 'Listenizle ilgili nasıl yardımcı olabilirim?';
@@ -4775,4 +4856,40 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get onboardingPainRepeat => 'Bir yolculuk asla yeterli değildir';
+
+  @override
+  String get aiWelcomeContent =>
+      'Merhaba! 👋 Ben **Kipi**, kişisel alışveriş ve yemek tarifi asistanınım!\n\nSize yardım etmek için buradayım:\n🛒 Alışverişinizi otomatik olarak kategorilere göre **düzenleyin**\n💰 **Bütçenizi takip edin** ve paradan tasarruf etmenizi sağlayacak ipuçları verin\n🍲 **Elinizde olanlarla lezzetli tarifler önerin**\n\nBugün sana nasıl yardımcı olabilirim? İlk listenizi oluşturarak başlayabilirsiniz!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'İlk listemi oluştur';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, ilk alışveriş listemi oluşturmama yardım et';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Paradan nasıl tasarruf edilir?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, alışverişten tasarruf etmeme nasıl yardımcı olabilirsin?';
+
+  @override
+  String get suggestionMilk => 'Süt';
+
+  @override
+  String get suggestionBread => 'Ekmek';
+
+  @override
+  String get suggestionEggs => 'Yumurtalar';
+
+  @override
+  String get suggestionCoffee => 'Kahve';
+
+  @override
+  String get suggestionRice => 'Pirinç';
+
+  @override
+  String get suggestionFruits => 'Meyveler';
 }

@@ -287,8 +287,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
       return cardWithBorder;
     }
 
-    // coverage:ignore-start
-    return cardWithBorder
+        return cardWithBorder
         .animate()
         .fadeIn(duration: DurationTokens.normal)
         .slideY(
@@ -297,6 +296,5 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
           duration: DurationTokens.normal,
           curve: Curves.easeOutQuad,
         );
-    // coverage:ignore-end
-  }
+      }
 }

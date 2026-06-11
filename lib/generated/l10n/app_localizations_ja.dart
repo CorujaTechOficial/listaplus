@@ -290,13 +290,13 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'スキャン製品';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'バーコードを中央に配置します';
 
   @override
-  String get product => 'Product';
+  String get product => '製品';
 
   @override
   String get settingsAppBar => '設定';
@@ -383,42 +383,42 @@ class AppLocalizationsJa extends AppLocalizations {
   String get termsOfUse => '利用規約';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => '私の業績';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => '購入したアイテム';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => '総節約額';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => '現在の連続数';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count 日',
+      one: '$count 日',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'ロック解除されたバッジ';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => '初心者';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => '整頓された';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => '保存マスター';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'スーパープランナー';
 
   @override
   String get backupTitle => 'バックアップ';
@@ -504,17 +504,17 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased/$total 個のアイテム';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return '予算: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return '合計: $amount';
   }
 
   @override
@@ -672,13 +672,13 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AIアシスタント';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => '近い';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'バーコードをスキャンする';
 
   @override
   String get listHelp => 'リストについてどう支援しましょうか？';
@@ -2341,6 +2341,40 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => '一度の旅では決して十分ではありません';
+
+  @override
+  String get aiWelcomeContent =>
+      'こんにちは！ 👋 私はあなたのパーソナルショッピングとレシピアシスタントの**Kipi**です！\n\n私はあなたを助けるためにここにいます：\n🛒 **ショッピングをカテゴリ別に自動的に整理**\n💰 **予算を追跡**し、節約のヒントを提供します\n🍲 すでにあるものを使ったおいしいレシピを **提案**\n\n今日はどのようにお手伝いできますか?最初のリストを作成することから始めることができます。';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '最初のリストを作成する';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'キピ、初めての買い物リストの作成を手伝って';
+
+  @override
+  String get aiWelcomeSuggestSave => 'お金を節約するにはどうすればいいですか？';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => 'キピ、食料品のお金を節約するにはどうすればいいですか?';
+
+  @override
+  String get suggestionMilk => '牛乳';
+
+  @override
+  String get suggestionBread => 'パン';
+
+  @override
+  String get suggestionEggs => '卵';
+
+  @override
+  String get suggestionCoffee => 'コーヒー';
+
+  @override
+  String get suggestionRice => '米';
+
+  @override
+  String get suggestionFruits => '果物';
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -2629,6 +2663,15 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   }
 
   @override
+  String get scanProductTitle => 'スキャン製品';
+
+  @override
+  String get positionBarcodeCenter => 'バーコードを中央に配置します';
+
+  @override
+  String get product => '製品';
+
+  @override
   String get settingsAppBar => '設定';
 
   @override
@@ -2713,6 +2756,44 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get termsOfUse => '利用規約';
 
   @override
+  String get myAchievements => '私の業績';
+
+  @override
+  String get itemsPurchased => '購入したアイテム';
+
+  @override
+  String get totalSavings => '総節約額';
+
+  @override
+  String get currentStreak => '現在の連続数';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 日',
+      one: '$count 日',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'ロック解除されたバッジ';
+
+  @override
+  String get badgeBeginner => '初心者';
+
+  @override
+  String get badgeOrganized => '整頓された';
+
+  @override
+  String get badgeSavingMaster => '保存マスター';
+
+  @override
+  String get badgeSuperPlanner => 'スーパープランナー';
+
+  @override
   String get backupTitle => 'バックアップ';
 
   @override
@@ -2793,6 +2874,21 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get sortManual => '手動';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased/$total 個のアイテム';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return '予算: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return '合計: $amount';
+  }
 
   @override
   String get addItem => 'アイテムを追加';
@@ -2947,6 +3043,15 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String chatError(String error) {
     return 'チャットの読み込みエラー: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AIアシスタント';
+
+  @override
+  String get closeSheet => '近い';
+
+  @override
+  String get scanBarcodeTitle => 'バーコードをスキャンする';
 
   @override
   String get listHelp => 'リストについてどう支援しましょうか？';
@@ -4609,4 +4714,38 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get onboardingPainRepeat => '一度の旅では決して十分ではありません';
+
+  @override
+  String get aiWelcomeContent =>
+      'こんにちは！ 👋 私はあなたのパーソナルショッピングとレシピアシスタントの**Kipi**です！\n\n私はあなたを助けるためにここにいます：\n🛒 **ショッピングをカテゴリ別に自動的に整理**\n💰 **予算を追跡**し、節約のヒントを提供します\n🍲 すでにあるものを使ったおいしいレシピを **提案**\n\n今日はどのようにお手伝いできますか?最初のリストを作成することから始めることができます。';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '最初のリストを作成する';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'キピ、初めての買い物リストの作成を手伝って';
+
+  @override
+  String get aiWelcomeSuggestSave => 'お金を節約するにはどうすればいいですか？';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => 'キピ、食料品のお金を節約するにはどうすればいいですか?';
+
+  @override
+  String get suggestionMilk => '牛乳';
+
+  @override
+  String get suggestionBread => 'パン';
+
+  @override
+  String get suggestionEggs => '卵';
+
+  @override
+  String get suggestionCoffee => 'コーヒー';
+
+  @override
+  String get suggestionRice => '米';
+
+  @override
+  String get suggestionFruits => '果物';
 }

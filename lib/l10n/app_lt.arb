@@ -41,6 +41,48 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
   },
@@ -50,6 +92,15 @@
         "type": "String"
       }
     }
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -82,12 +133,33 @@
       }
     }
   },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryLimitReached": {
+    "description": "Warning when max categories reached"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
+  "@categoryNameHint": {
+    "description": "Hint for category name"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
+  },
+  "@chooseThemeColor": {
+    "description": "Screen title for theme color"
   },
   "@completedOn": {
     "placeholders": {
@@ -117,12 +189,53 @@
       }
     }
   },
+  "@connectionError": {
+    "description": "Error message when connection fails"
+  },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
       }
     }
+  },
+  "@deleteCategory": {
+    "description": "Delete category action"
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteCategoryTitle": {
+    "description": "Title for delete category dialog"
+  },
+  "@deleteConversation": {
+    "description": "Delete action label"
+  },
+  "@deleteConversationConfirm": {
+    "description": "Confirm message for delete conversation"
+  },
+  "@deleteConversationTitle": {
+    "description": "Title for delete conversation dialog"
   },
   "@deleteListContent": {
     "placeholders": {
@@ -131,8 +244,17 @@
       }
     }
   },
+  "@dietaryRestrictions": {
+    "description": "Label for dietary restrictions field"
+  },
+  "@dietaryRestrictionsHint": {
+    "description": "Hint for dietary restrictions"
+  },
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
   },
   "@editPantryItem": {
     "placeholders": {
@@ -155,6 +277,21 @@
       }
     }
   },
+  "@errorLoadingHistory": {
+    "description": "Error loading conversation history"
+  },
+  "@errorLoadingLists": {
+    "description": "Error when lists fail to load"
+  },
+  "@errorLoadingSubscription": {
+    "description": "Error loading subscription info"
+  },
+  "@errorSavingProfile": {
+    "description": "Error when profile save fails"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
+  },
   "@feedbackError": {
     "placeholders": {
       "error": {
@@ -167,6 +304,13 @@
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -202,6 +346,12 @@
       }
     }
   },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
+  },
   "@listAdded": {
     "placeholders": {
       "listName": {
@@ -233,12 +383,27 @@
       }
     }
   },
+  "@loadingSubscription": {
+    "description": "Loading state for subscription"
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@manageCategories": {
+    "description": "Manage categories menu item"
+  },
+  "@manageCategoriesSubtitle": {
+    "description": "Subtitle for manage categories"
+  },
+  "@marketsToAvoid": {
+    "description": "Label for markets to avoid field"
+  },
+  "@marketsToAvoidHint": {
+    "description": "Hint for markets to avoid"
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -264,6 +429,117 @@
       }
     }
   },
+  "@myProfile": {
+    "description": "My profile menu item"
+  },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@noListsFound": {
+    "description": "Empty state when user has no lists"
+  },
+  "@observations": {
+    "description": "Label for observations field"
+  },
+  "@observationsHint": {
+    "description": "Hint for observations field"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -273,11 +549,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -285,8 +636,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -302,6 +680,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -332,6 +719,24 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
   },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
@@ -397,6 +802,175 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@preferredMarket": {
+    "description": "Label for preferred market field"
+  },
+  "@preferredMarketHint": {
+    "description": "Hint for preferred market"
+  },
+  "@profileDescription": {
+    "description": "Label for profile description field"
+  },
+  "@profileSaved": {
+    "description": "Snackbar when profile is saved"
+  },
+  "@profileSection": {
+    "description": "Profile section header"
+  },
+  "@profileSubtitle": {
+    "description": "Subtitle for profile section"
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
   "@recipeAddedConfirmation": {
     "placeholders": {
       "count": {
@@ -414,6 +988,13 @@
       }
     }
   },
+  "@replaceItem": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -426,6 +1007,12 @@
         "type": "String"
       }
     }
+  },
+  "@saveProfile": {
+    "description": "Button to save profile"
+  },
+  "@selectCheaperAlternative": {
+    "description": "Button for cheaper alternative"
   },
   "@selectedItems": {
     "placeholders": {
@@ -458,8 +1045,32 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
     }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swap": {
+    "description": "Button to swap item"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
   },
   "@totalEstimated": {
     "placeholders": {
@@ -467,6 +1078,15 @@
         "type": "String"
       }
     }
+  },
+  "@unlockPremiumTitle": {
+    "description": "Button to unlock premium"
+  },
+  "@unlockWithAd": {
+    "description": "Button to unlock via ad"
+  },
+  "@userProfile": {
+    "description": "User profile screen title"
   },
   "@userProfileErrorLoading": {
     "placeholders": {
@@ -481,6 +1101,9 @@
         "type": "String"
       }
     }
+  },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
   },
   "about": "Apie",
   "achievements": "Pasiekimai",
@@ -503,12 +1126,14 @@
   "aiAssistantDescription": "Gaukite protingų pasiūlymų, receptų ir asmeninių patarimų iš mūsų AI asistento.",
   "aiAssistantGeneral": "Generalinis asistentas",
   "aiAssistantHistory": "Asistento istorija",
+  "aiAssistantTitle": "AI asistentas",
   "aiConversationHistory": "Pokalbių istorija",
   "aiCreditsRemaining": "Liko {remaining} kreditų",
   "aiDeleteConversationConfirm": "Ištrinti",
   "aiDeleteConversationTitle": "Ištrinti pokalbį?",
   "aiDeletedList": "Ištrintas sąrašas",
   "aiEnergy": "AI energija",
+  "aiEnergyLow": "Maža AI energija",
   "aiError": "Atsiprašome, įvyko klaida apdorojant jūsų užklausą. Patikrinkite ryšį arba bandykite dar kartą vėliau.",
   "aiFirstOpenHint": "Aš esu Kipi, jūsų apsipirkimo padėjėja. Paklausk manęs bet ko apie savo sąrašą!",
   "aiHello": "Sveiki! Aš esu Kipi",
@@ -520,13 +1145,23 @@
   "aiNoMessagesFound": "Nerasta jokių pranešimų",
   "aiPremiumUpsell": "Eikite į „Premium“.",
   "aiRecentConversations": "Naujausi pokalbiai",
+  "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} šiandien",
   "aiSearchMessages": "Ieškoti žinučių...",
   "aiStartNewConversation": "Pradėti naują pokalbį",
+  "aiSubscribeUnlimited": "Prenumeruokite neribotą AI",
   "aiSuggestCreateList": "Sukurti mano pirmąjį sąrašą",
   "aiSuggestSaveMore": "Kaip sutaupyti daugiau?",
   "aiTeaserFallback": "Prenumeruokite „Premium“, kad atrakintumėte visą atsakymą ir gautumėte neribotus AI patarimus, kaip apsipirkti...",
+  "aiUnlockUnlimited": "Atrakinkite neribotą AI",
   "aiUnlockWithAd": "Atrakinkite naudodami skelbimą",
+  "aiUsageExhausted": "Pasiektas mėnesinis AI limitas. Naujovinkite į Pro, kad gautumėte neribotą skaičių →",
+  "aiUsageWarning": "{remaining} AI veiksmų liko šį mėnesį – neribotas atnaujinimas",
   "aiVoiceCommandTooltip": "AI balso komanda (Premium)",
+  "aiWelcomeContent": "Sveiki! 👋 Aš esu **Kipi**, jūsų asmeninė apsipirkimo ir receptų asistentė!\n\nEsu čia, kad padėčiau:\n🛒 **Automatiškai tvarkykite** apsipirkimą pagal kategorijas\n💰 **Sekite** savo biudžetą ir pateikite pinigų taupymo patarimų\n🍲 **Pasiūlykite** skanių receptų su tuo, ką jau turite\n\nKaip aš galiu tau padėti šiandien? Galite pradėti nuo pirmojo sąrašo sudarymo!",
+  "aiWelcomeSuggestCreateList": "Sukurti mano pirmąjį sąrašą",
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, padėk man sudaryti pirmąjį pirkinių sąrašą",
+  "aiWelcomeSuggestSave": "Kaip sutaupyti pinigų?",
+  "aiWelcomeSuggestSavePrompt": "Kipi, kaip galite padėti man sutaupyti pinigų bakalėjos prekėms?",
   "aiWelcomeTitle": "Sveiki! 👋 Aš esu **Kipi**, jūsų išmanioji apsipirkimo padėjėja.",
   "allTags": "Visi",
   "alreadyPurchased": "Jau nupirkta",
@@ -538,6 +1173,9 @@
   "artifactSuggestedItems": "Siūlomi daiktai",
   "artifactSwapButton": "Sukeisti",
   "artifactSwappedLabel": "Sukeisti",
+  "assistantHistory": "Asistento istorija",
+  "assistantHistorySubtitle": "Peržiūrėkite pokalbių istoriją",
+  "assistantName": "Padėjėjo vardas",
   "backToChat": "Grįžti į pokalbį",
   "backToToday": "Grįžti į šiandieną",
   "backupExported": "Atsarginė kopija eksportuota!",
@@ -545,6 +1183,10 @@
   "backupPremiumDescription": "Atsarginė kopija ir eksportavimas yra premium funkcija",
   "backupSubtitle": "Eksportuokite arba importuokite savo duomenis",
   "backupTitle": "Atsarginė kopija",
+  "badgeBeginner": "Pradedantysis",
+  "badgeOrganized": "Organizuota",
+  "badgeSavingMaster": "Gelbėjimo meistras",
+  "badgeSuperPlanner": "Super planuotojas",
   "barcodeScannerHint": "Nukreipkite fotoaparatą į brūkšninį kodą",
   "barcodeScannerTitle": "Nuskaityti brūkšninį kodą",
   "becomePremium": "Tapkite Premium",
@@ -580,20 +1222,28 @@
   "catalogSortPopular": "Populiariausias",
   "catalogTitle": "Katalogas",
   "category": "Kategorija",
+  "categoryColorLabel": "Spalva",
+  "categoryIconLabel": "Piktograma",
+  "categoryLimitReached": "Pasiektas kategorijų limitas",
+  "categoryName": "Kategorijos pavadinimas",
+  "categoryNameHint": "Įveskite kategorijos pavadinimą",
   "chatError": "Klaida įkeliant pokalbį: {error}",
   "chatHint": "Įrašykite savo žinutę...",
   "chatHintBlocked": "Atrakinkite AI, kad galėtumėte kalbėtis",
   "chatSubtitle": "Klauskite prekių pasiūlymų, receptų ar taupymo patarimų.",
   "chatSubtitleShort": "Dėl kainų, receptų, organizavimo teirautis...",
   "chooseCurrency": "Pasirinkite Valiuta",
+  "chooseIcon": "Pasirinkite piktogramą",
   "chooseImageSource": "Pasirinkite nuotraukos šaltinį",
   "chooseLanguage": "Pasirinkite kalbą",
+  "chooseThemeColor": "Pasirinkite temos spalvą",
   "clear": "Išvalyti",
   "clearHistory": "Išvalyti istoriją",
   "clearHistoryConfirm": "Išvalyti visus šios sesijos pranešimus?",
   "clearList": "Išvalyti sąrašą",
   "clearPurchased": "Išvalyti nupirktus",
   "close": "Uždaryti",
+  "closeSheet": "Uždaryti",
   "complete": "Užbaigti",
   "completePurchase": "Užbaigti pirkimą",
   "completedOn": "Užbaigta {date}",
@@ -605,12 +1255,15 @@
   "confirmDeleteItems": "Pašalinti {count} prekę(-es)?",
   "confirmDeleteTitle": "Patvirtinti",
   "confirmRemovePantry": "Pašalinti \"{name}\" iš sandėliuko?",
+  "connectionError": "Ryšio klaida",
+  "connectionErrorDesc": "Klaida: {error}",
   "consentAccept": "Priimti",
   "consentBody": "„KipiList“ naudoja „Firebase Analytics“, kad pagerintų jūsų patirtį. Jūsų duomenys tvarkomi pagal mūsų Privatumo politiką.",
   "consentDecline": "Ne, ačiū",
   "consentTitle": "Privatumas ir analizė",
   "consumed": "Suvartota",
   "continueAsGuest": "Tęsti kaip svečias",
+  "conversationHistoryTitle": "Pokalbių istorija",
   "copiedToClipboard": "Nukopijuota į iškarpinę",
   "copy": "Kopijuoti",
   "create": "Sukurti",
@@ -621,10 +1274,19 @@
   "currency": "Valiuta",
   "currentQty": "Dabartinis kiekis",
   "currentQuantity": "Dabartinis kiekis",
+  "currentStreak": "Dabartinė serija",
+  "customizeAiAssistant": "Tinkinkite AI asistentą",
+  "customizeAssistant": "Tinkinti",
   "dark": "Tamsi",
   "data": "Duomenys",
-  "deficitItems": "{deficit,plural, one{reikia nusipirkti {deficit} prekę} few{reikia nusipirkti {deficit} prekes} other{reikia nusipirkti {deficit} prekių}}",
+  "deficitItems": "{deficit, plural,  one{other{deficit} prekę} few{reikia nusipirkti {deficit} prekes} other{reikia nusipirkti {deficit} prekių}}",
   "delete": "Ištrinti",
+  "deleteCategory": "Ištrinti",
+  "deleteCategoryConfirm": "Elementai „{category}“ bus perkelti į „Kiti“.\nTęsti?",
+  "deleteCategoryTitle": "Ištrinti kategoriją",
+  "deleteConversation": "Ištrinti",
+  "deleteConversationConfirm": "Šio veiksmo anuliuoti negalima.",
+  "deleteConversationTitle": "Ištrinti pokalbį",
   "deleteListConfirm": "Ištrinti sąrašą",
   "deleteListContent": "Ar tikrai norite ištrinti \"{name}\"? Visos prekės bus pašalintos.",
   "deleteListTitle": "Ištrinti sąrašą",
@@ -634,12 +1296,15 @@
   "deleteSession": "Ištrinti pokalbį",
   "deleteSessionConfirm": "Ar tikrai norite ištrinti šį pokalbį? Pranešimai bus visam laikui prarasti.",
   "deselectAll": "Panaikinti visus pasirinkimus",
+  "dietaryRestrictions": "Dietos apribojimai",
+  "dietaryRestrictionsHint": "Bet kokie mitybos apribojimai?",
   "dynamicColors": "Dinaminės spalvos",
   "dynamicColorsEnabledWarning": "Išjunkite dinamines spalvas, kad temos spalva įsigaliotų",
   "dynamicColorsSubtitle": "Naudoti spalvas pagal jūsų ekrano foną",
   "economyTips": "Taupymo patarimai",
   "economyTipsPrompt": "Kaip galiu sutaupyti pinigų šiam pirkiniui?",
   "edit": "Redaguoti",
+  "editCategoryDialog": "Redaguoti kategoriją",
   "editItem": "Redaguoti prekę",
   "editItemPrice": "Numatoma kaina",
   "editPantryItem": "Redaguoti {name}",
@@ -662,11 +1327,16 @@
   "errorGeneric": "Klaida: {message}",
   "errorLoadingChat": "Oi! Įkeliant pokalbį įvyko klaida.",
   "errorLoadingChatSubtitle": "Patikrinkite ryšį arba bandykite dar kartą vėliau.",
+  "errorLoadingHistory": "Įkeliant istoriją įvyko klaida",
+  "errorLoadingLists": "Klaida įkeliant sąrašus",
   "errorLoadingRecipes": "Klaida įkeliant receptus",
+  "errorLoadingSubscription": "Įkeliant prenumeratą įvyko klaida",
   "errorOscillation": "Taip gali nutikti dėl tinklo svyravimų arba laikino nepasiekiamumo. Bandykite dar kartą.",
+  "errorSavingProfile": "Išsaugant profilį įvyko klaida",
   "estimated": "Numatoma",
   "estimatedCost": "Apskaičiuota",
   "estimatedPrice": "Numatoma kaina",
+  "everythingReady": "Viskas paruošta!",
   "exit": "Išeiti",
   "exitShoppingMode": "Išeikite iš apsipirkimo režimo",
   "expirationDate": "Galiojimo laikas",
@@ -725,14 +1395,18 @@
   "instructions": "Instrukcijos",
   "instructionsHint": "Įveskite po vieną žingsnį eilutėje...",
   "inviteToList": "Pakviesti į sąrašą",
+  "itemAddedSnack": "{name} pridėta",
   "itemName": "Prekės pavadinimas",
   "itemRemoved": "Prekė pašalinta",
   "itemsAddedSuccess": "Prekės sėkmingai pridėtos į sąrašą!",
   "itemsNeedPurchase": "{deficit} prekę(-es) reikia nusipirkti",
+  "itemsPurchased": "Nupirktos prekės",
   "itemsPurchasedCount": "Įsigyta {purchased} iš {total}",
   "itemsPurchasedShort": "{purchased}/{total} įsigytas",
   "itemsWillBeAdded": "{count} prekė(-ės) bus pridėta",
+  "kipiListProActive": "KipiList Pro aktyvus",
   "kipiListTitle": "KipiList",
+  "kipiQuickBarHint": "Ką reikia nusipirkti?",
   "language": "Kalba",
   "languageEnglish": "anglų kalba",
   "languagePortuguese": "portugalų k. (Brazilija)",
@@ -759,15 +1433,20 @@
   "lists": "Sąrašai",
   "loading": "Įkeliama...",
   "loadingRecipes": "Įkeliami jūsų receptai...",
+  "loadingSubscription": "Įkeliama prenumerata...",
   "loginError": "Prisijungimo klaida: {error}",
   "loginPrompt": "Prisijunkite, kad atrakintumėte\npremium funkcijas",
   "longHistoryWarning": "Ilga istorija: padėjėjas sutelkia dėmesį į naujausius pranešimus, kad pagerintų našumą.",
+  "manageCategories": "Tvarkyti kategorijas",
   "manageCategoriesEmpty": "Dar nėra kategorijų",
+  "manageCategoriesSubtitle": "Pridėti, redaguoti arba pašalinti kategorijas",
   "manageCategoriesTitle": "Tvarkyti kategorijas",
   "manageSubscription": "Valdyti prenumeratą",
   "markAsPurchased": "Pažymėti kaip nupirkta",
   "markItemsToSeeAnalysis": "Pažymėkite prekes kaip nupirktas, kad pamatytumėte analizę.",
   "marketMode": "Rinkos režimas",
+  "marketsToAvoid": "Rinkos, kurių reikia vengti",
+  "marketsToAvoidHint": "Rinkos, kuriose nenorite apsipirkti",
   "mealDragHint": "Laikykite, kad vilktumėte ir perkeltumėte",
   "mealNoRecipeFound": "Recepto nerasta",
   "mealPlannerAddMeal": "Pridėti valgį",
@@ -811,12 +1490,15 @@
   "monthlyBudgetNav": "Mėnesio biudžetas",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Mėnesio biudžetas",
+  "myAchievements": "Mano pasiekimai",
   "myLists": "Mano sąrašai",
+  "myProfile": "Mano profilis",
   "myRecipes": "Mano receptai",
   "navChat": "Pokalbis",
   "navLists": "Sąrašai",
   "navMealPlanner": "Meniu",
   "navRecipes": "Receptai",
+  "newCategoryDialog": "Nauja kategorija",
   "newChat": "Naujas pokalbis",
   "newListTitle": "Naujas pirkinių sąrašas",
   "newPantryList": "Sandėliuko pirkiniai",
@@ -826,6 +1508,7 @@
   "noActiveLists": "Nėra aktyvių sąrašų",
   "noArchivedLists": "Nėra archyvuotų sąrašų",
   "noBudgetDefined": "Nenustatytas biudžetas",
+  "noConversationsFound": "Pokalbių nerasta",
   "noHistory": "Nėra pokalbių istorijos",
   "noItemsInList": "Sąraše nėra elementų",
   "noItemsToAnalyze": "Sąraše nėra prekių, kurias būtų galima analizuoti.",
@@ -833,27 +1516,92 @@
   "noLabel": "Ne",
   "noListFoundSubtitle": "Sukurkite savo pirmąjį sąrašą, kad pradėtumėte",
   "noListFoundTitle": "Nerasta jokių sąrašų",
+  "noListSelected": "Nepasirinktas joks sąrašas. Pirmiausia atidarykite sąrašą.",
+  "noListsFound": "Sąrašų nerasta",
   "noMessagesFound": "Nerasta jokių pranešimų",
   "noRecipesSaved": "Nėra išsaugotų receptų",
   "noRecipesSavedHint": "Sukurkite savo pirmąjį individualų receptą bakstelėdami žemiau esantį mygtuką.",
   "noTracking": "Be sekimo",
   "notInformed": "Neinformuotas",
+  "observations": "Stebėjimai",
+  "observationsHint": "Ar yra papildomų pastabų?",
   "offlineBanner": "Esate neprisijungęs",
   "onboardingAIShowSubtitle": "Kipi viską ruošia tau...",
   "onboardingAIShowTitle": "Pamatykite, kaip veikia intelektas!",
+  "onboardingAiAskConfirm": "Ar tai gerai atrodo? Pabandykite įvesti ką nors kita!",
+  "onboardingAiAskFood": "Koks tavo mėgstamiausias maistas?",
+  "onboardingAiAskName": "Koks tavo vardas?",
+  "onboardingAiContinue": "Tęsti →",
+  "onboardingAiDemoChange": "Keisti elementą",
+  "onboardingAiDemoContinue": "Tęsti",
+  "onboardingAiDemoGreeting": "Sveiki, {name}! Kokio {category} jums reikia?",
+  "onboardingAiDemoGreetingNoName": "Kokio {category} jums reikia?",
+  "onboardingAiDemoOffer": "Pabandykite įvesti ką nors kita!",
+  "onboardingAiDemoReaction": "Puiku!",
+  "onboardingAiDemoSlideCta": "Aš noriu šito! →",
+  "onboardingAiDemoSlideDone": "Visas sąrašas per kelias sekundes ✨",
+  "onboardingAiDemoSlideHeadline": "Jūsų pirkinių sąrašas, dabar su AI",
+  "onboardingAiDemoSlideReady": "Pasiruošę! Čia yra viskas, ko jums reikia:",
+  "onboardingAiDemoSlideSubtitle": "Pažiūrėkite, kaip Kipi per kelias sekundes sukuria visą jūsų sąrašą",
+  "onboardingAiDemoSlideUserMsg": "Rengiu šašlykinę 🔥",
+  "onboardingAiDemoYes": "Taip!",
+  "onboardingAiFoodHint": "pvz. Pica, Suši...",
+  "onboardingAiGreeting": "Sveiki! Aš Kipi, jūsų asmeninis apsipirkimo padėjėjas! 🛒",
+  "onboardingAiIngredients": "Puikūs pasirinkimai! Štai ką norėčiau įtraukti į jūsų sąrašą:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "Įveskite savo vardą...",
+  "onboardingAiNiceToMeet": "Malonu susipažinti, {name}! 🎉",
+  "onboardingAiReady": "Puiku! Jūs pasiruošę pradėti. Sukurkime jūsų paskyrą!",
+  "onboardingAiTitle": "Kalbėkitės su Kipi",
   "onboardingAnnualBadge": "Geriausia vertė",
   "onboardingAnnualLabel": "Metinis",
   "onboardingCancelAnytime": "Atšaukti bet kada. Jokio įsipareigojimo.",
+  "onboardingCategoryGrocery": "Bakalėjos prekės",
+  "onboardingCategoryHome": "Pradžia",
+  "onboardingCategoryPet": "Pet",
+  "onboardingCategoryPharmacy": "Vaistinė",
+  "onboardingCategoryRecipes": "Receptai",
+  "onboardingCommitmentsCta": "einam!",
+  "onboardingCommitmentsSubtitle": "Pasirinkite savo tikslus, kad suasmenintumėte KipiList",
+  "onboardingCommitmentsTitle": "Kas tau svarbu?",
   "onboardingContinueAsGuest": "Tęsti kaip svečias",
   "onboardingExit": "Išeiti",
+  "onboardingGoalFamily": "Organizuokite šeimos apsipirkimą",
+  "onboardingGoalFaster": "Apsipirkite greičiau",
+  "onboardingGoalNeverForget": "Niekada nepamirškite daiktų",
+  "onboardingGoalPantry": "Bėgių sandėliukas",
+  "onboardingGoalRecipes": "Atraskite receptus",
+  "onboardingGoalSaveMoney": "Sutaupykite pinigų",
+  "onboardingGroupCouple": "Pora",
+  "onboardingGroupFamily": "Šeima",
+  "onboardingGroupSolo": "Tik aš",
+  "onboardingHookHeadline": "Niekada daugiau nepamirškite bakalėjos prekės",
+  "onboardingLoadingStat1Label": "Kataloguotos prekės",
+  "onboardingLoadingStat2Label": "Vartotojai padėjo",
+  "onboardingLoadingStat3Label": "Sutaupytos minutės",
+  "onboardingLoadingStep1": "Analizuojami jūsų pageidavimai...",
+  "onboardingLoadingStep2": "Nustatomas AI padėjėjas...",
+  "onboardingLoadingStep3": "Beveik paruošta...",
+  "onboardingLoadingTitle": "Ruošiame savo patirtį...",
   "onboardingLoginDesc": "Jūsų duomenys sinchronizuojami visuose įrenginiuose",
   "onboardingLoginTitle": "Išsaugokite viską debesyje",
+  "onboardingMaybeLater": "Gal vėliau",
   "onboardingMonthlyLabel": "Kas mėnesį",
+  "onboardingPainCta": "Taip, pataisykite tai už mane →",
+  "onboardingPainFamily": "Mano šeima niekada nemato sąrašo",
+  "onboardingPainForget": "Pamiršau prekes parduotuvėje",
+  "onboardingPainOverspend": "Aš visada viršiju biudžetą",
+  "onboardingPainRepeat": "Vienos kelionės niekada neužtenka",
+  "onboardingPainSubtitle": "Būkite sąžiningi – kiekvieną ištaisysime",
+  "onboardingPainTitle": "Kas tave labiausiai nervina?",
+  "onboardingPersonalizationCategoryTitle": "Ką perkate?",
   "onboardingPersonalizationCta": "Tęsti",
   "onboardingPersonalizationDesc": "Tai naudosime siekdami suasmeninti jūsų pasiūlymus ir padaryti apsipirkimą išmanesniu.",
   "onboardingPersonalizationFoodHint": "pvz. Pica, Sušiai, Lazanija...",
   "onboardingPersonalizationFoodLabel": "Koks tavo mėgstamiausias maistas?",
   "onboardingPersonalizationFoodRequired": "Jei norite tęsti, pasakykite mums savo mėgstamą maistą",
+  "onboardingPersonalizationGroupTitle": "Kam perkate?",
+  "onboardingPersonalizationNameHint": "Įveskite savo vardą",
+  "onboardingPersonalizationNameLabel": "Tavo vardas",
   "onboardingPersonalizationSkip": "Kol kas praleiskite",
   "onboardingPersonalizationTitle": "Susipažinkime",
   "onboardingPremiumSubtitle": "Išnaudokite visas savo pirkinių sąrašų galimybes",
@@ -864,6 +1612,12 @@
   "onboardingSetupTitle": "Suasmeninkite savo patirtį",
   "onboardingShareDesc": "Sinchronizuokite sąrašus su šeima ir draugais realiuoju laiku",
   "onboardingShareTitle": "Pasidalinkite su tais, kuriuos mylite",
+  "onboardingSlide1Body": "Nedelsdami kurkite ir bendrinkite sąrašus. Kipi automatiškai prideda elementus pagal jūsų įpročius.",
+  "onboardingSlide1Title": "Išmanieji pirkinių sąrašai",
+  "onboardingSlide2Body": "Klauskite bet ko – kurkite sąrašus, raskite receptų, stebėkite savo sandėliuką, planuokite savaitę.",
+  "onboardingSlide2Title": "Susipažinkite – Kipi",
+  "onboardingSlide3Body": "Stebėkite, ką turite, planuokite maistą ir automatiškai generuokite pirkinių sąrašus.",
+  "onboardingSlide3Title": "Sandėliavimo ir maitinimo planavimas",
   "onboardingSubscribeCta": "Prenumeruoti",
   "onboardingViewAllPlans": "Peržiūrėkite visus planus",
   "onboardingWelcomeDesc": "Protingiausias būdas organizuoti apsipirkimą ir sutaupyti pinigų.",
@@ -919,13 +1673,31 @@
   "paywallCancelAnytime": "Atšaukti bet kada. Jokio įsipareigojimo.",
   "paywallCtaTrialDays": "Pradėkite nemokamai – {days} dienų",
   "paywallCtaUnlock": "Atrakinkite PRO",
+  "paywallFeatureDescAssistant": "AI automatiškai tvarko jūsų sąrašą",
+  "paywallFeatureDescBudget": "Laikykitės biudžeto kiekvieną mėnesį",
+  "paywallFeatureDescPantry": "Stebėkite, ką turite namuose",
+  "paywallFeatureDescSharing": "Apsipirkite kartu realiu laiku",
+  "paywallFeatureDescUnlimitedLists": "Sukurkite tiek sąrašų, kiek jums reikia",
   "paywallFeatureExpenseControl": "Išlaidų kontrolė",
   "paywallFeatureSharing": "Dalijimasis",
   "paywallFeatureSmartAI": "Išmanusis AI",
   "paywallFeatureUnlimitedLists": "Neriboti sąrašai",
   "paywallFeaturesTitle": "Viskas ko reikia:",
+  "paywallGoalHeadlineFamily": "{name}, organizuokite šeimos apsipirkimą!",
+  "paywallGoalHeadlineFaster": "{name}, apsipirkite per pusę laiko!",
+  "paywallGoalHeadlineNeverForget": "{name}, niekada nepamirškite nė vieno elemento!",
+  "paywallGoalHeadlineNoNameFamily": "Organizuokite šeimos apsipirkimą!",
+  "paywallGoalHeadlineNoNameFaster": "Apsipirkite per pusę laiko!",
+  "paywallGoalHeadlineNoNameNeverForget": "Niekada nepamirškite daikto!",
+  "paywallGoalHeadlineNoNamePantry": "Puikiai stebėkite savo sandėliuką!",
+  "paywallGoalHeadlineNoNameRecipes": "Atraskite naujus receptus!",
+  "paywallGoalHeadlineNoNameSaveMoney": "Sutaupykite kiekvienoje kelionėje!",
+  "paywallGoalHeadlinePantry": "{name}, puikiai stebėkite savo sandėliuką!",
+  "paywallGoalHeadlineRecipes": "{name}, atraskite naujų receptų!",
+  "paywallGoalHeadlineSaveMoney": "{name}, sutaupykite kiekvienoje kelionėje!",
   "paywallHeroHeadline": "Kipi AI visada šalia jūsų",
   "paywallHeroSubtitle": "Pridėkite elementus, tvarkykite sąrašus ir sutaupykite laiko naudodami AI kišenėje",
+  "paywallHeroSubtitlePersonalized": "Sveiki, {name}, tinkamai sutvarkykite apsipirkimą.",
   "paywallLabelCommon": "Dažnas",
   "paywallLabelPro": "KipiList PRO",
   "paywallLoadingError": "Įkeliant pasiūlymus įvyko klaida. Bandykite dar kartą.",
@@ -935,27 +1707,37 @@
   "paywallPackageMonthly": "Mėnesio planas",
   "paywallPackageMonthlyDesc": "Visiškas lankstumas",
   "paywallPolicy": "Privatumo politika",
+  "paywallPricePerDay": "Tik {price} per dieną – mažiau nei kava",
   "paywallPricePerMonth": "Tik {price}/mėn",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "Nepavyko užbaigti pirkimo. Bandykite dar kartą.",
   "paywallRestore": "Atkurti",
   "paywallRestoreError": "Nerasta aktyvios prenumeratos, kurią būtų galima atkurti.",
   "paywallSafeCheckout": "Saugus mokėjimas",
   "paywallSavePercent": "SUTAUPYTI {percent}%",
+  "paywallSecuredByStore": "Apsaugota „Google Play“ · Atšaukti bet kada",
   "paywallSelectPlan": "Pasirinkite savo planą:",
+  "paywallSkipNow": "Kol kas praleiskite",
   "paywallSocialProof": "Ja naudojasi +2 400 šeimų",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "Naudojimo sąlygos",
+  "paywallTestimonial": "AI sutvarko mano apsipirkimą per kelias sekundes. Vienai kelionei sutaupau 20 min.",
   "paywallTestimonial1Name": "Ann S.",
   "paywallTestimonial1Text": "AI sutvarko mano apsipirkimą per kelias sekundes. Sutaupau 20 min vienai kelionei į turgų.",
   "paywallTestimonial2Name": "Charlesas M.",
   "paywallTestimonial2Text": "Niekada daugiau nepamiršau sąrašo elemento. AI pokalbis yra sensacingas!",
+  "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Ką sako mūsų vartotojai:",
   "paywallTitle": "„KipiList Premium“.",
   "paywallTrialCta": "Pradėkite nemokamą bandomąją versiją",
   "paywallTrialDays": "{days} DIENOS NEMOKAMAI",
+  "paywallTrialDisclaimer": "Atšaukti bet kada · Iki bandomojo laikotarpio pabaigos nieko nekainuoja",
+  "paywallTrialInCard": "Pirmos {days} dienos NEMOKAMAI",
   "paywallTrialMonths": "{count,plural, one{{count} MĖNESIO NEMOKAMAI} other{{count} MĖNESIO NEMOKAMAI}}",
   "paywallTrialSubtitle": "Atšaukti bet kada. Šiandien jokio mokesčio.",
   "paywallTrialTitle": "Išbandykite KipiList Pro nemokamai 7 dienas",
   "paywallTrialWeeks": "{count,plural, one{{count} NEMOKAMA SAVAITĖ} other{{count} SAVAITĖS NEMOKAMA}}",
+  "positionBarcodeCenter": "Įdėkite brūkšninį kodą centre",
   "prefAIAssistant": "Asmeninis AI asistentas",
   "prefCustomThemes": "Individualios temos",
   "prefExportData": "Eksportuoti duomenis",
@@ -965,18 +1747,31 @@
   "prefSharing": "Dalintis sąrašais",
   "prefUnlimitedLists": "Neriboti sąrašai",
   "prefUnlimitedPantry": "Neribotas sandėliukas",
+  "preferredMarket": "Pageidautina rinka",
+  "preferredMarketHint": "Kur dažniausiai apsiperkate?",
   "premiumUpgrade": "Atnaujinkite, kad atrakintumėte",
   "prepTime": "Gaminimo laikas",
   "prepTimeMinutes": "Gaminimo laikas (minutėmis)",
   "privacy": "Privatumas",
+  "product": "Produktas",
   "productName": "Produkto pavadinimas",
   "profile": "Profilis",
+  "profileDescription": "Profilio aprašymas",
+  "profileSaved": "Profilis išsaugotas",
+  "profileSection": "Profilis",
+  "profileSubtitle": "Jūsų profilio informacija",
+  "progressBudget": "Biudžetas: {amount}",
+  "progressItemsOf": "{purchased} iš {total} elementų",
+  "progressTotal": "Iš viso: {amount}",
   "purchaseError": "Klaida apdorojant pirkimą. Bandykite dar kartą.",
   "quantityFull": "Kiekis",
   "quantityShort": "Kiekis",
+  "quantityUnitWithPrice": "{qty} {unit} – {price}",
+  "quantityWithUnit": "{qty} {unit}",
   "quickRecipe": "Greitas receptas",
   "quickRecipePrompt": "Pasiūlykite receptų su mano sąrašo prekėmis.",
   "quickReplies": "Greiti atsakymai:",
+  "quickSuggestions": "Greiti pasiūlymai",
   "recipeAddToList": "Pridėti į pirkinių sąrašą",
   "recipeAddedConfirmation": "{count} ingredientai pridėti prie {listName}",
   "recipeCreated": "Receptas sukurtas!",
@@ -995,6 +1790,7 @@
   "removeSharedTooltip": "Pašalinti",
   "rename": "Pervadinti",
   "renameListDialog": "Pervadinti sąrašą",
+  "replaceItem": "Pakeisti {item}",
   "requiredField": "Privaloma",
   "restockLabel": "Papildyti",
   "restocked": "{name} papildytas iki {quantity} {unit}",
@@ -1003,13 +1799,17 @@
   "retry": "Bandyti dar kartą",
   "save": "Išsaugoti",
   "saveChanges": "Išsaugoti pakeitimus",
+  "saveProfile": "Išsaugoti profilį",
   "saveRecipe": "Išsaugoti",
   "savings": "Sutaupymas",
+  "scanBarcodeTitle": "Nuskaityti brūkšninį kodą",
+  "scanProductTitle": "Nuskaityti gaminį",
   "searchCurrency": "Ieškoti valiutos...",
   "searchInConversation": "Ieškoti pokalbyje...",
   "searchLanguage": "Ieškoti kalbos...",
   "searchRecipes": "Ieškoti receptų...",
   "selectAll": "Pasirinkti viską",
+  "selectCheaperAlternative": "Pasirinkite pigesnę alternatyvą",
   "selectListForDashboard": "Pasirinkite sąrašą, kad peržiūrėtumėte skydelį.",
   "selectedItems": "{count,plural, one{{count} pasirinktas} few{{count} pasirinkti} other{{count} pasirinkta}}",
   "setBudgetButton": "Nustatyti biudžetą",
@@ -1061,6 +1861,7 @@
   "shortDescription": "Trumpas aprašymas",
   "signInApple": "Prisijungti su Apple",
   "signInGoogle": "Prisijungti su Google",
+  "skip": "Praleisti",
   "smartOrganization": "Protingas organizavimas",
   "sortAZ": "A–Z",
   "sortCategory": "Kategorija",
@@ -1069,8 +1870,19 @@
   "sortName": "Pavadinimas",
   "spendingAnalysis": "Išlaidų analizė",
   "spendingByCategory": "Išlaidos pagal kategoriją",
+  "streakDays": "{count,plural, one{{count} diena} other{{count} dienos}}",
+  "subscription": "Prenumerata",
+  "suggestedItems": "Siūlomi daiktai",
   "suggestedQuestions": "Siūlomi klausimai:",
   "suggestedTags": "Siūloma",
+  "suggestionBread": "duona",
+  "suggestionCoffee": "Kava",
+  "suggestionEggs": "Kiaušiniai",
+  "suggestionFruits": "Vaisiai",
+  "suggestionMilk": "Pienas",
+  "suggestionRice": "Ryžiai",
+  "swap": "Sukeisti",
+  "swapped": "Sukeisti",
   "switchList": "Perjungti sąrašą",
   "system": "Sistema",
   "tags": "Žymos",
@@ -1088,6 +1900,7 @@
   "themeSelectionTitle": "Pasirinkite temos spalvą",
   "themeTeal": "Žalsvai mėlyna",
   "totalEstimated": "Numatoma suma: {amount}",
+  "totalSavings": "Iš viso sutaupyta",
   "totalSpending": "Visos išlaidos",
   "trackStock": "Sekti atsargas",
   "trackStockActive": "Rodoma pirkimo pasiūlymuose",
@@ -1097,8 +1910,12 @@
   "unitPack": "pakuotė",
   "unlockAi": "Atrakinkite neribotą AI",
   "unlockFullResponse": "Atrakinkite visą atsakymą",
+  "unlockPremiumTitle": "Atrakinkite „Premium“.",
+  "unlockWithAd": "Atrakinti su skelbimu",
+  "unlockedBadges": "Atrakinti ženkleliai",
   "unmark": "Panaikinti žymėjimą",
   "upgrade": "Atnaujinti",
+  "userProfile": "Vartotojo profilis",
   "userProfileAvoidedStores": "Vengtos parduotuvės",
   "userProfileAvoidedStoresHint": "pvz. Parduotuvė X, parduotuvė Y",
   "userProfileDescription": "Pridėkite savo asmenines nuostatas, kad AI padėjėjas galėtų pasiūlyti asmeninius daiktus ir receptus.",
@@ -1137,5 +1954,6 @@
   "welcomeAiAssistant": "Sveiki atvykę į AI asistentą",
   "whatToDoWithItem": "Ką norėtumėte daryti su šiuo elementu?",
   "yes": "Taip",
-  "yesLabel": "Taip"
+  "yesLabel": "Taip",
+  "youCompletedList": "Jūs užpildėte sąrašą!"
 }

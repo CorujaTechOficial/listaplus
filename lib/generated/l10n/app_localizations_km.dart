@@ -290,13 +290,13 @@ class AppLocalizationsKm extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'ស្កេនផលិតផល';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'ដាក់របារកូដនៅកណ្តាល';
 
   @override
-  String get product => 'Product';
+  String get product => 'ផលិតផល';
 
   @override
   String get settingsAppBar => 'ការកំណត់';
@@ -384,42 +384,42 @@ class AppLocalizationsKm extends AppLocalizations {
   String get termsOfUse => 'លក្ខខណ្ឌនៃការប្រើប្រាស់';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'សមិទ្ធិផលរបស់ខ្ញុំ';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'វត្ថុដែលបានទិញ';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'ការសន្សំសរុប';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'ចរន្តបច្ចុប្បន្ន';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count ថ្ងៃ',
+      one: '$count ថ្ងៃ',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'ផ្លាកសញ្ញាដោះសោ';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'អ្នកចាប់ផ្តើម';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'រៀបចំ';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'គ្រូសន្សំ';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'អ្នករៀបចំផែនការទំនើប';
 
   @override
   String get backupTitle => 'បម្រុងទុក';
@@ -506,17 +506,17 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased នៃ $total ធាតុ';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'ថវិកា៖ $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'សរុប៖ $amount';
   }
 
   @override
@@ -676,13 +676,13 @@ class AppLocalizationsKm extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'ជំនួយការ AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'បិទ';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'ស្កេនបាកូដ';
 
   @override
   String get listHelp => 'តើខ្ញុំអាចជួយអ្នកជាមួយបញ្ជីរបស់អ្នកដោយរបៀបណា?';
@@ -2386,6 +2386,42 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ការធ្វើដំណើរមួយគឺមិនគ្រប់គ្រាន់ទេ។';
+
+  @override
+  String get aiWelcomeContent =>
+      'សួស្តី! 👋 ខ្ញុំ​គឺ **Kipi** ជា​អ្នក​ជួយ​ទិញ​ទំនិញ និង​រូបមន្ត​ផ្ទាល់ខ្លួន​របស់​អ្នក!\n\nខ្ញុំនៅទីនេះដើម្បីជួយអ្នក៖\n🛒 ** រៀបចំ ** ការទិញទំនិញរបស់អ្នកតាមប្រភេទដោយស្វ័យប្រវត្តិ\n💰 ** តាមដាន ** ថវិការបស់អ្នក និងផ្តល់ឱ្យអ្នកនូវគន្លឹះសន្សំប្រាក់\n🍲 **សូមណែនាំ** រូបមន្តដ៏ឆ្ងាញ់ជាមួយនឹងអ្វីដែលអ្នកមានរួចហើយ\n\nតើខ្ញុំអាចជួយអ្នកនៅថ្ងៃនេះដោយរបៀបណា? អ្នកអាចចាប់ផ្តើមដោយបង្កើតបញ្ជីដំបូងរបស់អ្នក!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'បង្កើតបញ្ជីដំបូងរបស់ខ្ញុំ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi ជួយខ្ញុំបង្កើតបញ្ជីទិញទំនិញដំបូងរបស់ខ្ញុំ';
+
+  @override
+  String get aiWelcomeSuggestSave => 'តើធ្វើដូចម្តេចដើម្បីសន្សំប្រាក់?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi តើអ្នកអាចជួយខ្ញុំសន្សំលុយលើគ្រឿងទេសដោយរបៀបណា?';
+
+  @override
+  String get suggestionMilk => 'ទឹកដោះគោ';
+
+  @override
+  String get suggestionBread => 'នំបុ័ង';
+
+  @override
+  String get suggestionEggs => 'ស៊ុត';
+
+  @override
+  String get suggestionCoffee => 'កាហ្វេ';
+
+  @override
+  String get suggestionRice => 'អង្ករ';
+
+  @override
+  String get suggestionFruits => 'ផ្លែឈើ';
 }
 
 /// The translations for Khmer Central Khmer, as used in Cambodia (`km_KH`).
@@ -2681,6 +2717,15 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   }
 
   @override
+  String get scanProductTitle => 'ស្កេនផលិតផល';
+
+  @override
+  String get positionBarcodeCenter => 'ដាក់របារកូដនៅកណ្តាល';
+
+  @override
+  String get product => 'ផលិតផល';
+
+  @override
   String get settingsAppBar => 'ការកំណត់';
 
   @override
@@ -2766,6 +2811,44 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get termsOfUse => 'លក្ខខណ្ឌនៃការប្រើប្រាស់';
 
   @override
+  String get myAchievements => 'សមិទ្ធិផលរបស់ខ្ញុំ';
+
+  @override
+  String get itemsPurchased => 'វត្ថុដែលបានទិញ';
+
+  @override
+  String get totalSavings => 'ការសន្សំសរុប';
+
+  @override
+  String get currentStreak => 'ចរន្តបច្ចុប្បន្ន';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ថ្ងៃ',
+      one: '$count ថ្ងៃ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'ផ្លាកសញ្ញាដោះសោ';
+
+  @override
+  String get badgeBeginner => 'អ្នកចាប់ផ្តើម';
+
+  @override
+  String get badgeOrganized => 'រៀបចំ';
+
+  @override
+  String get badgeSavingMaster => 'គ្រូសន្សំ';
+
+  @override
+  String get badgeSuperPlanner => 'អ្នករៀបចំផែនការទំនើប';
+
+  @override
   String get backupTitle => 'បម្រុងទុក';
 
   @override
@@ -2846,6 +2929,21 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get sortManual => 'ដោយដៃ';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased នៃ $total ធាតុ';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'ថវិកា៖ $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'សរុប៖ $amount';
+  }
 
   @override
   String get addItem => 'បន្ថែមធាតុ';
@@ -3002,6 +3100,15 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String chatError(String error) {
     return 'កំហុសក្នុងការផ្ទុកជជែក: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'ជំនួយការ AI';
+
+  @override
+  String get closeSheet => 'បិទ';
+
+  @override
+  String get scanBarcodeTitle => 'ស្កេនបាកូដ';
 
   @override
   String get listHelp => 'តើខ្ញុំអាចជួយអ្វីជាមួយបញ្ជីរបស់អ្នក?';
@@ -4711,4 +4818,40 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get onboardingPainRepeat => 'ការធ្វើដំណើរមួយគឺមិនគ្រប់គ្រាន់ទេ។';
+
+  @override
+  String get aiWelcomeContent =>
+      'សួស្តី! 👋 ខ្ញុំ​គឺ **Kipi** ជា​អ្នក​ជួយ​ទិញ​ទំនិញ និង​រូបមន្ត​ផ្ទាល់ខ្លួន​របស់​អ្នក!\n\nខ្ញុំនៅទីនេះដើម្បីជួយអ្នក៖\n🛒 ** រៀបចំ ** ការទិញទំនិញរបស់អ្នកតាមប្រភេទដោយស្វ័យប្រវត្តិ\n💰 ** តាមដាន ** ថវិការបស់អ្នក និងផ្តល់ឱ្យអ្នកនូវគន្លឹះសន្សំប្រាក់\n🍲 **សូមណែនាំ** រូបមន្តដ៏ឆ្ងាញ់ជាមួយនឹងអ្វីដែលអ្នកមានរួចហើយ\n\nតើខ្ញុំអាចជួយអ្នកនៅថ្ងៃនេះដោយរបៀបណា? អ្នកអាចចាប់ផ្តើមដោយបង្កើតបញ្ជីដំបូងរបស់អ្នក!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'បង្កើតបញ្ជីដំបូងរបស់ខ្ញុំ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi ជួយខ្ញុំបង្កើតបញ្ជីទិញទំនិញដំបូងរបស់ខ្ញុំ';
+
+  @override
+  String get aiWelcomeSuggestSave => 'តើធ្វើដូចម្តេចដើម្បីសន្សំប្រាក់?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi តើអ្នកអាចជួយខ្ញុំសន្សំលុយលើគ្រឿងទេសដោយរបៀបណា?';
+
+  @override
+  String get suggestionMilk => 'ទឹកដោះគោ';
+
+  @override
+  String get suggestionBread => 'នំបុ័ង';
+
+  @override
+  String get suggestionEggs => 'ស៊ុត';
+
+  @override
+  String get suggestionCoffee => 'កាហ្វេ';
+
+  @override
+  String get suggestionRice => 'អង្ករ';
+
+  @override
+  String get suggestionFruits => 'ផ្លែឈើ';
 }

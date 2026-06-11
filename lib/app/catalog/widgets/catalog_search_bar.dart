@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
@@ -51,4 +50,3 @@ class CatalogSearchBar extends StatelessWidget {
     );
   }
 }
-// coverage:ignore-end

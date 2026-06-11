@@ -299,13 +299,13 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'නිෂ්පාදනය ස්කෑන් කරන්න';
 
   @override
   String get positionBarcodeCenter => 'තීරු කේතය මධ්යයේ ස්ථානගත කරන්න';
 
   @override
-  String get product => 'Product';
+  String get product => 'නිෂ්පාදනය';
 
   @override
   String get settingsAppBar => 'සැකසුම්';
@@ -410,19 +410,19 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'අගුළු හරින ලද ලාංඡන';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'ආරම්භකයා';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'සංවිධානය කර ඇත';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'සුරැකීමේ මාස්ටර්';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'සුපිරි සැලසුම්කරු';
 
   @override
   String get backupTitle => 'උපස්ථය';
@@ -508,17 +508,17 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return 'අයිතම $total න් $purchased';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'අයවැය: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'එකතුව: $amount';
   }
 
   @override
@@ -678,13 +678,13 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI සහකාර';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'වසන්න';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'තීරු කේතය පරිලෝකනය කරන්න';
 
   @override
   String get listHelp => 'මට ඔබේ ලැයිස්තුවට උදව් කළ හැක්කේ කෙසේද?';
@@ -2421,4 +2421,40 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'එක් සංචාරයක් කිසිසේත් ප්රමාණවත් නොවේ';
+
+  @override
+  String get aiWelcomeContent =>
+      'ආයුබෝවන්! 👋 මම **කිපි**, ඔබේ පුද්ගලික සාප්පු සවාරි සහ වට්ටෝරු සහායකයා!\n\nමම ඔබට උදව් කිරීමට මෙහි සිටිමි:\n🛒 **ඔබගේ සාප්පු සවාරි ස්වයංක්‍රීයව කාණ්ඩ අනුව සංවිධානය කරන්න\n💰 **ඔබේ අයවැය ලුහුබැඳ ගොස් ඔබට මුදල් ඉතුරුම් ඉඟි ලබා දෙන්න\n🍲 **යෝජනා කරන්න** ඔබට දැනටමත් ඇති දේ සමඟ රසවත් වට්ටෝරු\n\nඅද මම ඔබට උදව් කරන්නේ කෙසේද? ඔබේ පළමු ලැයිස්තුව නිර්මාණය කිරීමෙන් ඔබට ආරම්භ කළ හැක!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'මගේ පළමු ලැයිස්තුව සාදන්න';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'කිපි, මගේ පළමු සාප්පු ලැයිස්තුව සෑදීමට මට උදව් කරන්න';
+
+  @override
+  String get aiWelcomeSuggestSave => 'මුදල් ඉතිරි කරන්නේ කෙසේද?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'කිපි, සිල්ලර බඩු සඳහා මුදල් ඉතිරි කිරීමට ඔබ මට උදව් කරන්නේ කෙසේද?';
+
+  @override
+  String get suggestionMilk => 'කිරි';
+
+  @override
+  String get suggestionBread => 'පාන්';
+
+  @override
+  String get suggestionEggs => 'බිත්තර';
+
+  @override
+  String get suggestionCoffee => 'කෝපි';
+
+  @override
+  String get suggestionRice => 'සහල්';
+
+  @override
+  String get suggestionFruits => 'පළතුරු';
 }

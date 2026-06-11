@@ -111,7 +111,7 @@ class _OnboardingSlideCommitmentsState
                 height: 52,
                 child: ElevatedButton(
                   onPressed: _selected.isNotEmpty ? widget.onNext : null,
-                  child: const Text('Esses sao meus objetivos  '),
+                  child: Text(l10n.onboardingCommitmentsCta),
                 ),
               ),
             ],

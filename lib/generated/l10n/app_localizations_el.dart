@@ -298,13 +298,13 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Σάρωση προϊόντος';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Τοποθετήστε το barcode στο κέντρο';
 
   @override
-  String get product => 'Product';
+  String get product => 'Προϊόν';
 
   @override
   String get settingsAppBar => 'Ρυθμίσεις';
@@ -393,36 +393,36 @@ class AppLocalizationsEl extends AppLocalizations {
   String get termsOfUse => 'Όροι χρήσης';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Τα επιτεύγματά μου';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Αγορασμένα είδη';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Συνολική Εξοικονόμηση';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Τρέχον σερί';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count ημέρες',
+      one: '$count ημέρα',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Ξεκλειδωμένα σήματα';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Αρχάριος';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Οργανωμένος';
 
   @override
   String get badgeSavingMaster => 'Saving Master';
@@ -517,17 +517,17 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased από $total στοιχεία';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Προϋπολογισμός: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Σύνολο: $amount';
   }
 
   @override
@@ -688,13 +688,13 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Βοηθός AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Κοντά';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Σάρωση γραμμικού κώδικα';
 
   @override
   String get listHelp => 'Πώς μπορώ να βοηθήσω με τη λίστα σας;';
@@ -2438,6 +2438,42 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Ένα ταξίδι δεν είναι ποτέ αρκετό';
+
+  @override
+  String get aiWelcomeContent =>
+      'Γειά σου! 👋 Είμαι ο **Kipi**, ο προσωπικός σας βοηθός αγορών και συνταγών!\n\nΕίμαι εδώ για να σας βοηθήσω:\n🛒 **Οργανώστε** τις αγορές σας ανά κατηγορίες αυτόματα\n💰 **Παρακολουθήστε** τον προϋπολογισμό σας και δώστε συμβουλές εξοικονόμησης χρημάτων\n🍲 **Προτείνετε** νόστιμες συνταγές με αυτά που ήδη έχετε\n\nΠώς μπορώ να σας βοηθήσω σήμερα; Μπορείτε να ξεκινήσετε δημιουργώντας την πρώτη σας λίστα!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Δημιουργήστε την πρώτη μου λίστα';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Κήπη, βοήθησέ με να δημιουργήσω την πρώτη μου λίστα αγορών';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Πώς να εξοικονομήσετε χρήματα;';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Κήπη, πώς μπορείς να με βοηθήσεις να εξοικονομήσω χρήματα σε είδη παντοπωλείου;';
+
+  @override
+  String get suggestionMilk => 'Γάλα';
+
+  @override
+  String get suggestionBread => 'Ψωμί';
+
+  @override
+  String get suggestionEggs => 'Αυγά';
+
+  @override
+  String get suggestionCoffee => 'Καφές';
+
+  @override
+  String get suggestionRice => 'Ρύζι';
+
+  @override
+  String get suggestionFruits => 'Φρούτα';
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).
@@ -2734,6 +2770,15 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   }
 
   @override
+  String get scanProductTitle => 'Σάρωση προϊόντος';
+
+  @override
+  String get positionBarcodeCenter => 'Τοποθετήστε το barcode στο κέντρο';
+
+  @override
+  String get product => 'Προϊόν';
+
+  @override
   String get settingsAppBar => 'Ρυθμίσεις';
 
   @override
@@ -2820,6 +2865,44 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get termsOfUse => 'Όροι χρήσης';
 
   @override
+  String get myAchievements => 'Τα επιτεύγματά μου';
+
+  @override
+  String get itemsPurchased => 'Αγορασμένα είδη';
+
+  @override
+  String get totalSavings => 'Συνολική Εξοικονόμηση';
+
+  @override
+  String get currentStreak => 'Τρέχον σερί';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ημέρες',
+      one: '$count ημέρα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Ξεκλειδωμένα σήματα';
+
+  @override
+  String get badgeBeginner => 'Αρχάριος';
+
+  @override
+  String get badgeOrganized => 'Οργανωμένος';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planner';
+
+  @override
   String get backupTitle => 'Αντίγραφο ασφαλείας';
 
   @override
@@ -2903,6 +2986,21 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get sortManual => 'Χειροκίνητα';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased από $total στοιχεία';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Προϋπολογισμός: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Σύνολο: $amount';
+  }
 
   @override
   String get addItem => 'Προσθήκη στοιχείου';
@@ -3060,6 +3158,15 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String chatError(String error) {
     return 'Σφάλμα φόρτωσης συνομιλίας: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Βοηθός AI';
+
+  @override
+  String get closeSheet => 'Κοντά';
+
+  @override
+  String get scanBarcodeTitle => 'Σάρωση γραμμικού κώδικα';
 
   @override
   String get listHelp => 'Πώς μπορώ να βοηθήσω με τη λίστα σας;';
@@ -4803,4 +4910,40 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get onboardingPainRepeat => 'Ένα ταξίδι δεν είναι ποτέ αρκετό';
+
+  @override
+  String get aiWelcomeContent =>
+      'Γειά σου! 👋 Είμαι ο **Kipi**, ο προσωπικός σας βοηθός αγορών και συνταγών!\n\nΕίμαι εδώ για να σας βοηθήσω:\n🛒 **Οργανώστε** τις αγορές σας ανά κατηγορίες αυτόματα\n💰 **Παρακολουθήστε** τον προϋπολογισμό σας και δώστε συμβουλές εξοικονόμησης χρημάτων\n🍲 **Προτείνετε** νόστιμες συνταγές με αυτά που ήδη έχετε\n\nΠώς μπορώ να σας βοηθήσω σήμερα; Μπορείτε να ξεκινήσετε δημιουργώντας την πρώτη σας λίστα!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Δημιουργήστε την πρώτη μου λίστα';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Κήπη, βοήθησέ με να δημιουργήσω την πρώτη μου λίστα αγορών';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Πώς να εξοικονομήσετε χρήματα;';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Κήπη, πώς μπορείς να με βοηθήσεις να εξοικονομήσω χρήματα σε είδη παντοπωλείου;';
+
+  @override
+  String get suggestionMilk => 'Γάλα';
+
+  @override
+  String get suggestionBread => 'Ψωμί';
+
+  @override
+  String get suggestionEggs => 'Αυγά';
+
+  @override
+  String get suggestionCoffee => 'Καφές';
+
+  @override
+  String get suggestionRice => 'Ρύζι';
+
+  @override
+  String get suggestionFruits => 'Φρούτα';
 }

@@ -297,13 +297,13 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'اسکن محصول';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'بارکد را در مرکز قرار دهید';
 
   @override
-  String get product => 'Product';
+  String get product => 'محصول';
 
   @override
   String get settingsAppBar => 'تنظیمات';
@@ -392,42 +392,42 @@ class AppLocalizationsFa extends AppLocalizations {
   String get termsOfUse => 'شرایط استفاده';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'دستاوردهای من';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'اقلام خریداری شده';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'کل پس انداز';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'رگه فعلی';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count روز',
+      one: '$count روز',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'نشان‌های باز شده';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'مبتدی';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'سازماندهی شده است';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'استاد نجات';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'سوپر برنامه ریز';
 
   @override
   String get backupTitle => 'پشتیبان‌گیری';
@@ -514,17 +514,17 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased از $total مورد';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'بودجه: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'مجموع: $amount';
   }
 
   @override
@@ -684,13 +684,13 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'دستیار هوش مصنوعی';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'بستن';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'اسکن بارکد';
 
   @override
   String get listHelp => 'چگونه می‌توانم با لیست شما کمک کنم؟';
@@ -2415,6 +2415,42 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'یک سفر هرگز کافی نیست';
+
+  @override
+  String get aiWelcomeContent =>
+      'سلام! 👋 من **کیپی** هستم، دستیار خرید و دستور پخت شخصی شما!\n\nمن اینجا هستم تا به شما کمک کنم:\n🛒 **خرید خود را بر اساس دسته ها به صورت خودکار سازماندهی کنید\n💰 ** بودجه خود را پیگیری کنید و نکات صرفه جویی در هزینه را به شما ارائه دهید\n🍲 **پیشنهاد** دستور العمل های خوشمزه با آنچه قبلا دارید\n\nامروز چگونه می توانم به شما کمک کنم؟ شما می توانید با ایجاد اولین لیست خود شروع کنید!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'اولین لیست من را ایجاد کنید';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'کیپی، به من کمک کن اولین لیست خرید خود را ایجاد کنم';
+
+  @override
+  String get aiWelcomeSuggestSave => 'چگونه پول پس انداز کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'کیپی، چگونه می توانی به من کمک کنی در خرید مواد غذایی صرفه جویی کنم؟';
+
+  @override
+  String get suggestionMilk => 'شیر';
+
+  @override
+  String get suggestionBread => 'نان';
+
+  @override
+  String get suggestionEggs => 'تخم مرغ';
+
+  @override
+  String get suggestionCoffee => 'قهوه';
+
+  @override
+  String get suggestionRice => 'برنج';
+
+  @override
+  String get suggestionFruits => 'میوه ها';
 }
 
 /// The translations for Persian, as used in the United Arab Emirates (`fa_AE`).
@@ -2710,6 +2746,15 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   }
 
   @override
+  String get scanProductTitle => 'اسکن محصول';
+
+  @override
+  String get positionBarcodeCenter => 'بارکد را در مرکز قرار دهید';
+
+  @override
+  String get product => 'محصول';
+
+  @override
   String get settingsAppBar => 'تنظیمات';
 
   @override
@@ -2796,6 +2841,44 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get termsOfUse => 'شرایط استفاده';
 
   @override
+  String get myAchievements => 'دستاوردهای من';
+
+  @override
+  String get itemsPurchased => 'اقلام خریداری شده';
+
+  @override
+  String get totalSavings => 'کل پس انداز';
+
+  @override
+  String get currentStreak => 'رگه فعلی';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count روز',
+      one: '$count روز',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'نشان‌های باز شده';
+
+  @override
+  String get badgeBeginner => 'مبتدی';
+
+  @override
+  String get badgeOrganized => 'سازماندهی شده است';
+
+  @override
+  String get badgeSavingMaster => 'استاد نجات';
+
+  @override
+  String get badgeSuperPlanner => 'سوپر برنامه ریز';
+
+  @override
   String get backupTitle => 'پشتیبان‌گیری';
 
   @override
@@ -2877,6 +2960,21 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get sortManual => 'دستی';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased از $total مورد';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'بودجه: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'مجموع: $amount';
+  }
 
   @override
   String get addItem => 'افزودن آیتم';
@@ -3033,6 +3131,15 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String chatError(String error) {
     return 'خطا در بارگذاری چت: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'دستیار هوش مصنوعی';
+
+  @override
+  String get closeSheet => 'بستن';
+
+  @override
+  String get scanBarcodeTitle => 'اسکن بارکد';
 
   @override
   String get listHelp => 'چگونه می‌توانم با لیست شما کمک کنم؟';
@@ -4757,6 +4864,42 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get onboardingPainRepeat => 'یک سفر هرگز کافی نیست';
+
+  @override
+  String get aiWelcomeContent =>
+      'سلام! 👋 من **کیپی** هستم، دستیار خرید و دستور پخت شخصی شما!\n\nمن اینجا هستم تا به شما کمک کنم:\n🛒 **خرید خود را بر اساس دسته ها به صورت خودکار سازماندهی کنید\n💰 ** بودجه خود را پیگیری کنید و نکات صرفه جویی در هزینه را به شما ارائه دهید\n🍲 **پیشنهاد** دستور العمل های خوشمزه با آنچه قبلا دارید\n\nامروز چگونه می توانم به شما کمک کنم؟ شما می توانید با ایجاد اولین لیست خود شروع کنید!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'اولین لیست من را ایجاد کنید';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'کیپی، به من کمک کن اولین لیست خرید خود را ایجاد کنم';
+
+  @override
+  String get aiWelcomeSuggestSave => 'چگونه پول پس انداز کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'کیپی، چگونه می توانی به من کمک کنی در خرید مواد غذایی صرفه جویی کنم؟';
+
+  @override
+  String get suggestionMilk => 'شیر';
+
+  @override
+  String get suggestionBread => 'نان';
+
+  @override
+  String get suggestionEggs => 'تخم مرغ';
+
+  @override
+  String get suggestionCoffee => 'قهوه';
+
+  @override
+  String get suggestionRice => 'برنج';
+
+  @override
+  String get suggestionFruits => 'میوه ها';
 }
 
 /// The translations for Persian, as used in Afghanistan (`fa_AF`).
@@ -5052,6 +5195,15 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   }
 
   @override
+  String get scanProductTitle => 'اسکن محصول';
+
+  @override
+  String get positionBarcodeCenter => 'بارکد را در مرکز قرار دهید';
+
+  @override
+  String get product => 'محصول';
+
+  @override
   String get settingsAppBar => 'تنظیمات';
 
   @override
@@ -5138,6 +5290,44 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get termsOfUse => 'شرایط استفاده';
 
   @override
+  String get myAchievements => 'دستاوردهای من';
+
+  @override
+  String get itemsPurchased => 'اقلام خریداری شده';
+
+  @override
+  String get totalSavings => 'کل پس انداز';
+
+  @override
+  String get currentStreak => 'رگه فعلی';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count روز',
+      one: '$count روز',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'نشان‌های باز شده';
+
+  @override
+  String get badgeBeginner => 'مبتدی';
+
+  @override
+  String get badgeOrganized => 'سازماندهی شده است';
+
+  @override
+  String get badgeSavingMaster => 'استاد نجات';
+
+  @override
+  String get badgeSuperPlanner => 'سوپر برنامه ریز';
+
+  @override
   String get backupTitle => 'پشتیبان‌گیری';
 
   @override
@@ -5219,6 +5409,21 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get sortManual => 'دستی';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased از $total مورد';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'بودجه: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'مجموع: $amount';
+  }
 
   @override
   String get addItem => 'افزودن آیتم';
@@ -5375,6 +5580,15 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String chatError(String error) {
     return 'خطا در بارگذاری چت: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'دستیار هوش مصنوعی';
+
+  @override
+  String get closeSheet => 'بستن';
+
+  @override
+  String get scanBarcodeTitle => 'اسکن بارکد';
 
   @override
   String get listHelp => 'چگونه می‌توانم با لیست شما کمک کنم؟';
@@ -7099,6 +7313,42 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get onboardingPainRepeat => 'یک سفر هرگز کافی نیست';
+
+  @override
+  String get aiWelcomeContent =>
+      'سلام! 👋 من **کیپی** هستم، دستیار خرید و دستور پخت شخصی شما!\n\nمن اینجا هستم تا به شما کمک کنم:\n🛒 **خرید خود را بر اساس دسته ها به صورت خودکار سازماندهی کنید\n💰 ** بودجه خود را پیگیری کنید و نکات صرفه جویی در هزینه را به شما ارائه دهید\n🍲 **پیشنهاد** دستور العمل های خوشمزه با آنچه قبلا دارید\n\nامروز چگونه می توانم به شما کمک کنم؟ شما می توانید با ایجاد اولین لیست خود شروع کنید!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'اولین لیست من را ایجاد کنید';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'کیپی، به من کمک کن اولین لیست خرید خود را ایجاد کنم';
+
+  @override
+  String get aiWelcomeSuggestSave => 'چگونه پول پس انداز کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'کیپی، چگونه می توانی به من کمک کنی در خرید مواد غذایی صرفه جویی کنم؟';
+
+  @override
+  String get suggestionMilk => 'شیر';
+
+  @override
+  String get suggestionBread => 'نان';
+
+  @override
+  String get suggestionEggs => 'تخم مرغ';
+
+  @override
+  String get suggestionCoffee => 'قهوه';
+
+  @override
+  String get suggestionRice => 'برنج';
+
+  @override
+  String get suggestionFruits => 'میوه ها';
 }
 
 /// The translations for Persian, as used in Islamic Republic of Iran (`fa_IR`).
@@ -7394,6 +7644,15 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   }
 
   @override
+  String get scanProductTitle => 'اسکن محصول';
+
+  @override
+  String get positionBarcodeCenter => 'بارکد را در مرکز قرار دهید';
+
+  @override
+  String get product => 'محصول';
+
+  @override
   String get settingsAppBar => 'تنظیمات';
 
   @override
@@ -7480,6 +7739,44 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get termsOfUse => 'شرایط استفاده';
 
   @override
+  String get myAchievements => 'دستاوردهای من';
+
+  @override
+  String get itemsPurchased => 'اقلام خریداری شده';
+
+  @override
+  String get totalSavings => 'کل پس انداز';
+
+  @override
+  String get currentStreak => 'رگه فعلی';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count روز',
+      one: '$count روز',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'نشان‌های باز شده';
+
+  @override
+  String get badgeBeginner => 'مبتدی';
+
+  @override
+  String get badgeOrganized => 'سازماندهی شده است';
+
+  @override
+  String get badgeSavingMaster => 'استاد نجات';
+
+  @override
+  String get badgeSuperPlanner => 'سوپر برنامه ریز';
+
+  @override
   String get backupTitle => 'پشتیبان‌گیری';
 
   @override
@@ -7561,6 +7858,21 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get sortManual => 'دستی';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased از $total مورد';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'بودجه: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'مجموع: $amount';
+  }
 
   @override
   String get addItem => 'افزودن آیتم';
@@ -7717,6 +8029,15 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String chatError(String error) {
     return 'خطا در بارگذاری چت: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'دستیار هوش مصنوعی';
+
+  @override
+  String get closeSheet => 'بستن';
+
+  @override
+  String get scanBarcodeTitle => 'اسکن بارکد';
 
   @override
   String get listHelp => 'چگونه می‌توانم با لیست شما کمک کنم؟';
@@ -9441,4 +9762,40 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get onboardingPainRepeat => 'یک سفر هرگز کافی نیست';
+
+  @override
+  String get aiWelcomeContent =>
+      'سلام! 👋 من **کیپی** هستم، دستیار خرید و دستور پخت شخصی شما!\n\nمن اینجا هستم تا به شما کمک کنم:\n🛒 **خرید خود را بر اساس دسته ها به صورت خودکار سازماندهی کنید\n💰 ** بودجه خود را پیگیری کنید و نکات صرفه جویی در هزینه را به شما ارائه دهید\n🍲 **پیشنهاد** دستور العمل های خوشمزه با آنچه قبلا دارید\n\nامروز چگونه می توانم به شما کمک کنم؟ شما می توانید با ایجاد اولین لیست خود شروع کنید!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'اولین لیست من را ایجاد کنید';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'کیپی، به من کمک کن اولین لیست خرید خود را ایجاد کنم';
+
+  @override
+  String get aiWelcomeSuggestSave => 'چگونه پول پس انداز کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'کیپی، چگونه می توانی به من کمک کنی در خرید مواد غذایی صرفه جویی کنم؟';
+
+  @override
+  String get suggestionMilk => 'شیر';
+
+  @override
+  String get suggestionBread => 'نان';
+
+  @override
+  String get suggestionEggs => 'تخم مرغ';
+
+  @override
+  String get suggestionCoffee => 'قهوه';
+
+  @override
+  String get suggestionRice => 'برنج';
+
+  @override
+  String get suggestionFruits => 'میوه ها';
 }

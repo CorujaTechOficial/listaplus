@@ -7,6 +7,7 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class KipiQuickBar extends ConsumerStatefulWidget {
   const KipiQuickBar({super.key, required this.listId});
@@ -157,7 +158,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
                 controller: _controller,
                 focusNode: _focusNode,
                 decoration: InputDecoration(
-                  hintText: '✨ Fala com o Kipi...',
+                  hintText: AppLocalizations.of(context)!.kipiQuickBarHint,
                   hintStyle: TextStyle(
                     color: theme.colorScheme.primary.withAlpha(180),
                     fontSize: 14,

@@ -298,13 +298,13 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Imbas Produk';
 
   @override
   String get positionBarcodeCenter => 'Letakkan kod bar di tengah';
 
   @override
-  String get product => 'Product';
+  String get product => 'produk';
 
   @override
   String get settingsAppBar => 'Tetapan';
@@ -410,19 +410,19 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Lencana Tidak Berkunci';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'pemula';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Tersusun';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Guru Penyelamat';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Perancang Super';
 
   @override
   String get backupTitle => 'Sandaran';
@@ -509,17 +509,17 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased daripada $total item';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Belanjawan: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Jumlah: $amount';
   }
 
   @override
@@ -679,13 +679,13 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Penolong AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'tutup';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Imbas Kod Bar';
 
   @override
   String get listHelp => 'Bagaimana saya boleh bantu dengan senarai anda?';
@@ -2370,45 +2370,85 @@ class AppLocalizationsMs extends AppLocalizations {
   String get onboardingAiDemoContinue => 'teruskan';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline =>
+      'Senarai beli-belah anda, kini dengan AI';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'Lihat cara Kipi membina senarai penuh anda dalam beberapa saat';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'Saya mahu ini! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'Saya menganjurkan barbeku 🔥';
 
   @override
   String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+      'sedia! Inilah semua yang anda perlukan:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone =>
+      'Senarai lengkap dalam beberapa saat ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'Apa yang paling mengecewakan anda?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle =>
+      'Jujurlah — kami akan membetulkan setiap satu';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'Ya, betulkan ini untuk saya →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'Saya lupa barang di kedai';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily =>
+      'Keluarga saya tidak pernah melihat senarai itu';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'Saya selalu melampaui bajet';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'Satu perjalanan tidak pernah cukup';
+
+  @override
+  String get aiWelcomeContent =>
+      'helo! 👋 Saya **Kipi**, pembantu beli-belah dan resipi peribadi anda!\n\nSaya di sini untuk membantu anda:\n🛒 **Atur** belanja anda mengikut kategori secara automatik\n💰 **Jejaki** belanjawan anda dan berikan anda petua penjimatan wang\n🍲 **Cadangkan** resipi lazat dengan apa yang anda sudah ada\n\nBagaimana saya boleh membantu anda hari ini? Anda boleh mulakan dengan membuat senarai pertama anda!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Buat senarai pertama saya';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, bantu saya membuat senarai beli-belah pertama saya';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Bagaimana untuk menjimatkan wang?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, bagaimana anda boleh membantu saya menjimatkan wang untuk barangan runcit?';
+
+  @override
+  String get suggestionMilk => 'susu';
+
+  @override
+  String get suggestionBread => 'roti';
+
+  @override
+  String get suggestionEggs => 'Telur';
+
+  @override
+  String get suggestionCoffee => 'Kopi';
+
+  @override
+  String get suggestionRice => 'nasi';
+
+  @override
+  String get suggestionFruits => 'buah-buahan';
 }
 
 /// The translations for Malay, as used in Malaysia (`ms_MY`).
@@ -2705,7 +2745,13 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   }
 
   @override
+  String get scanProductTitle => 'Imbas Produk';
+
+  @override
   String get positionBarcodeCenter => 'Letakkan kod bar di tengah';
+
+  @override
+  String get product => 'produk';
 
   @override
   String get settingsAppBar => 'Tetapan';
@@ -2811,6 +2857,21 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   }
 
   @override
+  String get unlockedBadges => 'Lencana Tidak Berkunci';
+
+  @override
+  String get badgeBeginner => 'pemula';
+
+  @override
+  String get badgeOrganized => 'Tersusun';
+
+  @override
+  String get badgeSavingMaster => 'Guru Penyelamat';
+
+  @override
+  String get badgeSuperPlanner => 'Perancang Super';
+
+  @override
   String get backupTitle => 'Sandaran';
 
   @override
@@ -2892,6 +2953,21 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get sortManual => 'Manual';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased daripada $total item';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Belanjawan: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Jumlah: $amount';
+  }
 
   @override
   String get addItem => 'Tambah Item';
@@ -3048,6 +3124,15 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String chatError(String error) {
     return 'Ralat memuatkan sembang: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Penolong AI';
+
+  @override
+  String get closeSheet => 'tutup';
+
+  @override
+  String get scanBarcodeTitle => 'Imbas Kod Bar';
 
   @override
   String get listHelp => 'Bagaimana saya boleh bantu dengan senarai anda?';
@@ -4782,4 +4867,40 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get onboardingPainRepeat => 'Satu perjalanan tidak pernah cukup';
+
+  @override
+  String get aiWelcomeContent =>
+      'helo! 👋 Saya **Kipi**, pembantu beli-belah dan resipi peribadi anda!\n\nSaya di sini untuk membantu anda:\n🛒 **Atur** belanja anda mengikut kategori secara automatik\n💰 **Jejaki** belanjawan anda dan berikan anda petua penjimatan wang\n🍲 **Cadangkan** resipi lazat dengan apa yang anda sudah ada\n\nBagaimana saya boleh membantu anda hari ini? Anda boleh mulakan dengan membuat senarai pertama anda!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Buat senarai pertama saya';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, bantu saya membuat senarai beli-belah pertama saya';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Bagaimana untuk menjimatkan wang?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, bagaimana anda boleh membantu saya menjimatkan wang untuk barangan runcit?';
+
+  @override
+  String get suggestionMilk => 'susu';
+
+  @override
+  String get suggestionBread => 'roti';
+
+  @override
+  String get suggestionEggs => 'Telur';
+
+  @override
+  String get suggestionCoffee => 'Kopi';
+
+  @override
+  String get suggestionRice => 'nasi';
+
+  @override
+  String get suggestionFruits => 'buah-buahan';
 }

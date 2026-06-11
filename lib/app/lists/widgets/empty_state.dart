@@ -31,7 +31,12 @@ class EmptyState extends ConsumerWidget {
     final theme = Theme.of(context);
 
     final suggestions = [
-      'Leite', 'Pão', 'Ovos', 'Café', 'Arroz', 'Frutas'
+      l10n.suggestionMilk,
+      l10n.suggestionBread,
+      l10n.suggestionEggs,
+      l10n.suggestionCoffee,
+      l10n.suggestionRice,
+      l10n.suggestionFruits,
     ];
 
     return LayoutBuilder(
@@ -87,7 +92,7 @@ class EmptyState extends ConsumerWidget {
                 if (title == null && listId != null) ...[
                   const SizedBox(height: Spacing.xxl),
                   Text(
-                    'Sugestões rápidas',
+                    l10n.quickSuggestions,
                     style: theme.textTheme.labelMedium?.copyWith(
                       color: theme.colorScheme.primary,
                       fontWeight: FontWeight.w600,
@@ -146,4 +151,3 @@ class EmptyState extends ConsumerWidget {
     );
   }
 }
-// coverage:ignore-end

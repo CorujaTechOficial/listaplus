@@ -3,8 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:in_app_update/in_app_update.dart';
 
 class UpdateService {
-  // coverage:ignore-start
-  Future<void> checkForUpdates() async {
+    Future<void> checkForUpdates() async {
     if (kIsWeb || !Platform.isAndroid) {
       return;
     }
@@ -24,5 +23,4 @@ class UpdateService {
       }
     }
   }
-  // coverage:ignore-end
-}
+  }

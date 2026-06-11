@@ -1,5 +1,5 @@
 import 'dart:async' show unawaited;
-import 'dart:convert' show jsonDecode, jsonEncode;
+import 'dart:convert' show jsonEncode;
 import 'package:shopping_list/models/suggested_reply.dart';
 import 'package:characters/characters.dart';
 import 'package:intl/intl.dart';
@@ -16,131 +16,25 @@ import '../../../models/unit.dart';
 import '../../../models/shopping_item.dart';
 import '../../../models/shopping_list.dart';
 import '../../../models/interactive_artifact.dart';
-import '../../../models/chat_session_model.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
-import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
-import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/core/providers/auth_provider.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
 import '../utils/ai_utils.dart';
 import 'package:shopping_list/models/user_profile.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shopping_list/app/ai/providers/chat_small_providers.dart';
+export 'package:shopping_list/app/ai/providers/chat_small_providers.dart';
+import 'package:shopping_list/app/ai/providers/chat_helpers.dart';
+import 'package:shopping_list/app/ai/providers/chat_streaming.dart';
+import 'package:shopping_list/app/ai/providers/chat_tool_descriptions.dart';
 
 part 'chat_provider.g.dart';
-
-class PremiumUnlockException implements Exception {
-  PremiumUnlockException({
-    required this.toolCall,
-    required this.messages,
-    required this.tools,
-  });
-  final AgentToolCall toolCall;
-  final List<Map<String, dynamic>> messages;
-  final List<Map<String, dynamic>> tools;
-}
-
-const int _maxToolRounds = 5;
-const int _maxHistoryMessages = 20;
-
-// Cache estático dos schemas de tools — construído uma única vez em toda a vida
-// do app, pois o schema nunca muda em runtime.
-List<Map<String, dynamic>>? _cachedToolsSchema;
-
-@riverpod
-class ChatStreaming extends _$ChatStreaming {
-  @override
-  bool build(String? id) => false;
-  void setState(bool value) => state = value;
-}
-
-@riverpod
-class ChatThinking extends _$ChatThinking {
-  @override
-  bool build(String? id) => false;
-  void setState(bool value) => state = value;
-}
-
-@riverpod
-class ChatActivity extends _$ChatActivity {
-  @override
-  String? build(String? id) => null;
-  void setState(String? value) => state = value;
-}
-
-@riverpod
-class ChatStreamingText extends _$ChatStreamingText {
-  @override
-  String? build(String? id) => null;
-  void setState(String? value) => state = value;
-}
-
-@riverpod
-class ActiveChatSessionId extends _$ActiveChatSessionId {
-  @override
-  String? build(String? listId) => null;
-  void set(String? value) => state = value;
-}
-
-@riverpod
-class ChatSessions extends _$ChatSessions {
-  @override
-  Future<List<ChatSessionModel>> build(String? listId) async {
-    final service = ref.watch(firestoreServiceProvider);
-    if (service == null) return [];
-    final sessions = await service.loadChatSessions(listId);
-    if (sessions.isNotEmpty) {
-      final activeId = ref.read(activeChatSessionIdProvider(listId));
-      if (activeId == null) {
-        unawaited(Future.microtask(() {
-          if (ref.mounted) {
-            ref.read(activeChatSessionIdProvider(listId).notifier).set(sessions.first.id);
-          }
-        }));
-      }
-    }
-    return sessions;
-  }
-
-  void createNewSession() {
-    ref.read(activeChatSessionIdProvider(listId).notifier).set(null);
-  }
-
-  Future<String> startNewSession() async {
-    final newSession = ChatSessionModel(title: 'Nova Conversa', listId: listId);
-    final service = ref.read(firestoreServiceProvider);
-    if (service == null) return newSession.id;
-    unawaited(
-      service.saveChatSession(listId, newSession).catchError((Object e) {
-        debugPrint('[ChatSessions] Error saving session to firestore (proceeding anyway): $e');
-        return null;
-      }),
-    );
-    if (!ref.mounted) {
-      return newSession.id;
-    }
-    ref.invalidateSelf();
-    ref.read(activeChatSessionIdProvider(listId).notifier).set(newSession.id);
-    return newSession.id;
-  }
-
-  Future<void> deleteSession(String sessionId) async {
-    final service = ref.read(firestoreServiceProvider);
-    if (service == null) return;
-    await service.deleteChatSession(listId, sessionId);
-    if (!ref.mounted) {
-      return;
-    }
-    ref.invalidateSelf();
-    if (ref.read(activeChatSessionIdProvider(listId)) == sessionId) {
-      ref.read(activeChatSessionIdProvider(listId).notifier).set(null);
-    }
-  }
-}
 
 class _AgentResult {
   _AgentResult({required this.messages, required this.fallbackText});
@@ -217,7 +111,12 @@ class ChatSession extends _$ChatSession {
         // O agent loop já tem o texto final — fazemos streaming LOCAL da resposta
         // em vez de uma segunda chamada HTTP ao modelo. Economiza 1-3s de latência
         // e um round-trip de rede por mensagem.
-        finalText = await _localStreamText(agentResult.fallbackText);
+        finalText = await localStreamText(
+          agentResult.fallbackText,
+          isCancelled: _isCancelled,
+          ref: ref,
+          listId: listId,
+        );
       } else {
         // Fallback: streaming real via rede (edge case — texto vazio do loop)
         final systemPrompt =
@@ -225,11 +124,14 @@ class ChatSession extends _$ChatSession {
         if (_isCancelled) {
           return;
         }
-        finalText = await _streamResponse(
+        finalText = await streamResponse(
           aiService,
           agentResult.messages,
           systemPrompt,
           tools,
+          isCancelled: _isCancelled,
+          ref: ref,
+          listId: listId,
           cancelToken: _cancelToken,
         );
       }
@@ -274,12 +176,12 @@ class ChatSession extends _$ChatSession {
 
     final lastMsg = state.value?.lastOrNull;
     if (lastMsg != null) {
-      final extracted = _extractSuggestionsFromText(finalText);
+      final extracted = extractSuggestionsFromText(finalText);
       final displayText = extracted.text;
       final llmSuggestions = extracted.suggestions;
       final suggestions =
           llmSuggestions ??
-          _generateSuggestedReplies(displayText, listId)
+          generateSuggestedReplies(displayText, listId)
               ?.map((s) => SuggestedReply(label: s, prompt: s, icon: 'chat'))
               .toList();
       final finalMessage = lastMsg.copyWith(
@@ -380,8 +282,8 @@ class ChatSession extends _$ChatSession {
     final executor = ToolExecutor(ref);
     _cachedSystemPrompt = null;
     // Usa cache estático de tools para evitar recriar 45+ Maps a cada invocação
-    _cachedToolsSchema ??= AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
-    final tools = _cachedToolsSchema!;
+    cachedToolsSchema ??= AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
+    final tools = cachedToolsSchema!;
 
     _AgentResult agentResult;
     try {
@@ -546,115 +448,6 @@ class ChatSession extends _$ChatSession {
     final newList = List<ChatMessage>.from(currentList);
     newList[lastIndex] = updated;
     state = AsyncValue.data(newList);
-  }
-
-  String _friendlyToolDescription(AgentToolCall toolCall) {
-    final name = toolCall.name;
-    final args = toolCall.arguments;
-    switch (name) {
-      case 'get_lists':
-        return 'Buscando listas de compras';
-      case 'get_current_list':
-        return 'Identificando lista atual';
-      case 'set_current_list':
-        return 'Definindo lista atual';
-      case 'create_list':
-        return 'Criando lista "${args['name']}"';
-      case 'rename_list':
-        return 'Renomeando lista';
-      case 'delete_list':
-        return 'Excluindo lista';
-      case 'archive_list':
-        return 'Arquivando lista';
-      case 'unarchive_list':
-        return 'Desarquivando lista';
-      case 'get_items':
-        return 'Buscando itens da lista';
-      case 'add_item':
-        return 'Adicionando item "${args['name']}"';
-      case 'update_item':
-        return 'Atualizando item "${args['name'] ?? ''}"';
-      case 'remove_item':
-        return 'Removendo item';
-      case 'toggle_purchased':
-        return 'Alternando marcação de item';
-      case 'toggle_purchased_batch':
-        final idsStr = args['itemIds'] as String? ?? '';
-        final count =
-            idsStr.split(',').where((s) {
-              return s.trim().isNotEmpty;
-            }).length;
-        final action =
-            (args['isPurchased'] as bool? ?? false) ? 'Marcar' : 'Desmarcar';
-        return '$action $count itens como comprados';
-      case 'increment_quantity':
-        return 'Aumentando quantidade';
-      case 'decrement_quantity':
-        return 'Diminuindo quantidade';
-      case 'clear_purchased':
-        return 'Limpando itens comprados';
-      case 'clear_all_items':
-        return 'Limpando lista';
-      case 'reorder_items':
-        return 'Reordenando itens';
-      case 'get_pantry_items':
-        return 'Buscando itens da despensa';
-      case 'add_pantry_item':
-        return 'Adicionando item "${args['name']}" à despensa';
-      case 'update_pantry_item':
-        return 'Atualizando item da despensa';
-      case 'remove_pantry_item':
-        return 'Removendo item da despensa';
-      case 'consume_pantry_item':
-        return 'Consumindo item da despensa';
-      case 'restock_pantry_item':
-        return 'Reabastecendo despensa';
-      case 'clear_pantry':
-        return 'Limpando despensa';
-      case 'get_budget':
-        return 'Buscando orçamento';
-      case 'set_budget':
-        final budget =
-            args['budget'] != null ? (args['budget'] as num).toDouble() : 0.0;
-        final moeda = ref.read(currencySettingProvider).value ?? 'BRL';
-        return 'Definindo orçamento para ${formatCurrency(budget, moeda)}';
-      case 'create_share_code':
-        return 'Criando código de compartilhamento';
-      case 'import_shared_list':
-        return 'Importando lista compartilhada';
-      case 'get_theme':
-        return 'Consultando tema atual';
-      case 'set_theme':
-        return 'Alterando tema';
-      case 'export_backup':
-        return 'Exportando backup';
-      case 'import_backup':
-        return 'Importando backup';
-      case 'generate_artifact':
-        return 'Gerando interface interativa';
-      case 'get_recipes':
-        return 'Buscando suas receitas';
-      case 'create_recipe':
-        return 'Salvando nova receita';
-      case 'delete_recipe':
-        return 'Excluindo receita';
-      case 'get_meal_plan':
-        return 'Consultando seu cardápio';
-      case 'schedule_meal':
-        return 'Agendando refeição no cardápio';
-      case 'remove_meal_plan_entry':
-        return 'Removendo refeição do cardápio';
-      case 'open_paywall':
-        return 'Abrindo tela de assinatura';
-      case 'request_app_review':
-        return 'Solicitando sua avaliação';
-      case 'prompt_app_update':
-        return 'Verificando atualizações';
-      case 'generate_referral_link':
-        return 'Gerando seu link de indicação';
-      default:
-        return 'Executando ferramenta $name';
-    }
   }
 
   Future<void> undoMessageActions(String messageId) async {
@@ -884,9 +677,9 @@ class ChatSession extends _$ChatSession {
     final apiMessages = <Map<String, dynamic>>[];
     // Limita o histórico para não estourar limites de tokens e manter performance
     final historyToSync =
-        previousHistory.length > _maxHistoryMessages
+        previousHistory.length > maxHistoryMessages
             ? previousHistory.sublist(
-              previousHistory.length - _maxHistoryMessages,
+              previousHistory.length - maxHistoryMessages,
             )
             : previousHistory;
 
@@ -897,8 +690,8 @@ class ChatSession extends _$ChatSession {
     apiMessages.add({'role': 'user', 'content': content});
 
     // Usa cache estático de tools para evitar recriar 45+ Maps a cada mensagem
-    _cachedToolsSchema ??= AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
-    final tools = _cachedToolsSchema!;
+    cachedToolsSchema ??= AgentTools.all.map((t) => t.toOpenAIFunction()).toList();
+    final tools = cachedToolsSchema!;
     final executor = ToolExecutor(ref);
 
     final assistantMessage = ChatMessage(
@@ -1050,7 +843,12 @@ class ChatSession extends _$ChatSession {
           'Gostaria que eu adicione todos esses itens à sua lista de compras de uma vez?';
 
       ref.read(chatStreamingProvider(listId).notifier).setState(true);
-      final streamedText = await _localStreamText(mockResponse);
+      final streamedText = await localStreamText(
+        mockResponse,
+        isCancelled: _isCancelled,
+        ref: ref,
+        listId: listId,
+      );
       ref.read(chatStreamingProvider(listId).notifier).setState(false);
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
 
@@ -1099,7 +897,12 @@ class ChatSession extends _$ChatSession {
       const mockResponse = 'Prontinho! Todos os ingredientes necessários foram adicionados à sua lista de compras com sucesso. 🛒✨';
 
       ref.read(chatStreamingProvider(listId).notifier).setState(true);
-      final streamedText = await _localStreamText(mockResponse);
+      final streamedText = await localStreamText(
+        mockResponse,
+        isCancelled: _isCancelled,
+        ref: ref,
+        listId: listId,
+      );
       ref.read(chatStreamingProvider(listId).notifier).setState(false);
       ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
 
@@ -1178,7 +981,7 @@ class ChatSession extends _$ChatSession {
     if (currentListId != null) {
       final list = lists.where((l) => l.id == currentListId).firstOrNull;
       totalItemsCount = primaryItems.length;
-      prompt = _buildListSystemPrompt(list, primaryItems, locale: currentLocale);
+      prompt = buildListSystemPrompt(list, primaryItems, locale: currentLocale);
     } else {
       // Modo global: busca todos os itens em uma única query
       final allItems = <String, List<ShoppingItem>>{};
@@ -1191,7 +994,7 @@ class ChatSession extends _$ChatSession {
           totalItemsCount += items.length;
         }
       }
-      prompt = _buildGlobalSystemPrompt(allItems, locale: currentLocale);
+      prompt = buildGlobalSystemPrompt(allItems, locale: currentLocale);
     }
 
     final today = DateFormat(
@@ -1420,16 +1223,16 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     }
 
     debugPrint(
-      '[AgentLoop] Iniciando com $_maxToolRounds rounds máximos, ${tools.length} ferramentas',
+      '[AgentLoop] Iniciando com $maxToolRounds rounds máximos, ${tools.length} ferramentas',
     );
 
     // Gera o system prompt UMA ÚNICA VEZ para toda a duração do agent loop.
-    // Antes era recalculado a cada round (_maxToolRounds vezes), cada chamada
+    // Antes era recalculado a cada round (maxToolRounds vezes), cada chamada
     // fazendo 5-7 awaits desnecessários (premium, packageInfo, items, perfil...).
     _cachedSystemPrompt ??= await _getCurrentSystemPrompt();
     final systemPrompt = _cachedSystemPrompt!;
 
-    for (var round = 0; round < _maxToolRounds; round++) {
+    for (var round = 0; round < maxToolRounds; round++) {
       if (_isCancelled || (cancelToken?.isCancelled ?? false)) {
         break;
       }
@@ -1472,11 +1275,12 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
         currentMsg?.executionSteps ?? [],
       );
 
+      final currency = ref.read(currencySettingProvider).value ?? 'BRL';
       final newSteps =
           response.toolCalls.map((tc) {
             return AgentStep(
               id: tc.id,
-              description: _friendlyToolDescription(tc),
+              description: friendlyToolDescription(tc, currency: currency),
               status: AgentStepStatus.pending,
               toolName: tc.name,
             );
@@ -1495,7 +1299,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
         debugPrint(
           '[AgentLoop] Round $round — executando ferramenta: ${toolCall.name}(args: ${toolCall.arguments})',
         );
-        _updateActivityForTool(toolCall.name);
+        ref.read(chatActivityProvider(listId).notifier).setState(updateActivityForTool(toolCall.name));
         unawaited(HapticFeedback.selectionClick());
 
         final runningSteps =
@@ -1580,7 +1384,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
         // operações são independentes entre si — este é o comportamento esperado
         // pela spec (cada chamada tem seu próprio tool_call_id).
         // Usa o nome da primeira ferramenta como feedback visual principal
-        _updateActivityForTool(response.toolCalls.first.name);
+        ref.read(chatActivityProvider(listId).notifier).setState(updateActivityForTool(response.toolCalls.first.name));
         debugPrint(
           '[AgentLoop] Round $round — executando ${response.toolCalls.length} ferramentas em PARALELO',
         );
@@ -1689,7 +1493,7 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
     // Reusa o system prompt já em cache (não recalcula)
     debugPrint(
-      '[AgentLoop] Atingido limite de $_maxToolRounds rounds — tentando fallback...',
+      '[AgentLoop] Atingido limite de $maxToolRounds rounds — tentando fallback...',
     );
     final fallbackResponse = await callWithRetry(systemPrompt);
 
@@ -1700,194 +1504,6 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       '[AgentLoop] Fallback concluído. content.length=${fallbackText.length}',
     );
     return _AgentResult(messages: messages, fallbackText: fallbackText);
-  }
-
-  void _updateActivityForTool(String toolName) {
-    final activity = switch (toolName) {
-      // List items
-      'add_shopping_item' || 'add_shopping_items' => 'Adding items to list...',
-      'remove_shopping_item' => 'Removing items...',
-      'update_shopping_item' => 'Updating item...',
-      'check_shopping_item' => 'Checking item...',
-      'uncheck_shopping_item' => 'Unchecking item...',
-      'clear_checked_items' => 'Clearing checked items...',
-      'organize_shopping_list' => 'Reorganizing list...',
-      // Lists
-      'create_shopping_list' => 'Creating new list...',
-      'delete_shopping_list' => 'Removing list...',
-      'rename_shopping_list' => 'Renaming list...',
-      'get_shopping_list_items' || 'get_all_shopping_lists' => 'Querying your lists...',
-      'set_budget' => 'Setting budget...',
-      // Pantry
-      'get_pantry_items' => 'Checking your pantry...',
-      'add_pantry_item' => 'Adding to pantry...',
-      'remove_pantry_item' => 'Removing from pantry...',
-      'update_pantry_item' => 'Updating pantry...',
-      // Recipes
-      'create_recipe' => 'Saving recipe...',
-      'get_recipes' => 'Searching recipes...',
-      'delete_recipe' => 'Removing recipe...',
-      'add_recipe_to_list' => 'Adding ingredients to list...',
-      // Meal plan
-      'schedule_meal' => 'Organizing your menu...',
-      'get_meal_plan' => 'Loading your menu...',
-      'delete_meal_plan_entry' => 'Updating menu...',
-      // Categories
-      'get_categories' => 'Searching categories...',
-      'set_item_category' => 'Categorizing items...',
-      // Sharing
-      'share_shopping_list' => 'Generating share link...',
-      'get_shared_list_info' => 'Searching shared list...',
-      // Profile / Settings
-      'get_user_profile' => 'Loading your profile...',
-      'update_user_profile' => 'Saving your preferences...',
-      'get_preferences' => 'Checking your settings...',
-      // Artifacts / Generation
-      'generate_artifact' => 'Generating personalized content...',
-      'search_products' => 'Searching products...',
-      'get_price_estimates' => 'Estimating prices...',
-      _ => 'Processing...',
-    };
-    ref.read(chatActivityProvider(listId).notifier).setState(activity);
-  }
-
-  /// Simula o efeito de streaming exibindo o [text] localmente em chunks,
-  /// sem fazer nenhuma requisição HTTP adicional. Usado quando o agent loop
-  /// já retornou o texto final em [_AgentResult.fallbackText].
-  ///
-  /// Parâmetros de tuning:
-  ///   chunkSize = 12 chars → ~50 chars/s a 18ms de delay → resposta de 500 chars
-  ///   em ~0.9s de animação, muito mais rápido que uma chamada de rede real.
-  Future<String> _localStreamText(String text) async {
-    const chunkSize = 12;
-    const chunkDelay = Duration(milliseconds: 18);
-
-    final buffer = StringBuffer();
-    var i = 0;
-
-    while (i < text.length) {
-      if (_isCancelled) {
-        break;
-      }
-      final end = (i + chunkSize).clamp(0, text.length);
-      buffer.write(text.substring(i, end));
-      i = end;
-
-      ref
-          .read(chatStreamingTextProvider(listId).notifier)
-          .setState(buffer.toString());
-
-      if (i < text.length) {
-        await Future<void>.delayed(chunkDelay);
-      }
-    }
-
-    return buffer.toString();
-  }
-
-  Future<String> _streamResponse(
-    AiService aiService,
-    List<Map<String, dynamic>> messages,
-    String systemPrompt,
-    List<Map<String, dynamic>> tools, {
-    AiCancellationToken? cancelToken,
-  }) async {
-    final buffer = StringBuffer();
-    final tagBuffer = StringBuffer();
-    bool isSuppressing = false;
-    DateTime lastUpdate = DateTime.now();
-
-    try {
-      await for (final token in aiService.getChatCompletionStreamWithTools(
-        messages,
-        systemPrompt: systemPrompt,
-        tools: tools,
-        cancelToken: cancelToken,
-      )) {
-        if (isSuppressing) {
-          tagBuffer.write(token);
-          if (tagBuffer.toString().contains('</｜｜DSML｜｜tool_calls>')) {
-            isSuppressing = false;
-            tagBuffer.clear();
-          }
-          continue;
-        }
-
-        if (token.contains('<｜｜DSML｜｜')) {
-          isSuppressing = true;
-          tagBuffer.write(token);
-          if (tagBuffer.toString().contains('</｜｜DSML｜｜tool_calls>')) {
-            isSuppressing = false;
-            tagBuffer.clear();
-          }
-          continue;
-        }
-
-        if (token.startsWith('<') || tagBuffer.isNotEmpty) {
-          tagBuffer.write(token);
-          final currentTag = tagBuffer.toString();
-
-          if (currentTag.contains('<｜｜DSML｜｜')) {
-            isSuppressing = true;
-            if (currentTag.contains('</｜｜DSML｜｜tool_calls>')) {
-              isSuppressing = false;
-              tagBuffer.clear();
-            }
-            continue;
-          }
-
-          if (currentTag.length > 100) {
-            buffer.write(currentTag);
-            tagBuffer.clear();
-          } else if (currentTag.endsWith('>') || currentTag.endsWith('\n')) {
-            buffer.write(currentTag);
-            tagBuffer.clear();
-          }
-        } else {
-          buffer.write(token);
-        }
-
-        final now = DateTime.now();
-        // Throttle reduzido de 60ms → 30ms: texto aparece ~2x mais fluido
-        // sem sobrecarregar o UI thread (33fps vs 16fps de atualização)
-        if (tagBuffer.isEmpty &&
-            (now.difference(lastUpdate).inMilliseconds > 30)) {
-          lastUpdate = now;
-          ref
-              .read(chatStreamingTextProvider(listId).notifier)
-              .setState(buffer.toString());
-        }
-      }
-
-      ref
-          .read(chatStreamingTextProvider(listId).notifier)
-          .setState(buffer.toString());
-      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
-      final msgs = state.value ?? [];
-      if (msgs.isNotEmpty && msgs.last.role == 'assistant') {
-        state = AsyncValue.data([
-          ...msgs.sublist(0, msgs.length - 1),
-          msgs.last.copyWith(content: buffer.toString()),
-        ]);
-      }
-    } on Exception catch (e, st) {
-      LoggerService.error(
-        e,
-        stackTrace: st,
-        message: '[StreamResponse] Erro no streaming interno',
-        extra: {
-          'operation': 'stream_response_inner',
-          'listId': listId,
-          'bufferLength': buffer.length,
-          'bufferPreview': buffer.toString().characters.take(100).toString(),
-        },
-      );
-      ref.read(chatStreamingTextProvider(listId).notifier).setState(null);
-      if (buffer.isEmpty) {
-        rethrow;
-      }
-    }
-    return buffer.toString();
   }
 
   Future<void> _generateTitleInBackground(
@@ -2093,9 +1709,9 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
 
     final apiMessages = <Map<String, dynamic>>[];
     final historyToSync =
-        previousHistory.length > _maxHistoryMessages
+        previousHistory.length > maxHistoryMessages
             ? previousHistory.sublist(
-              previousHistory.length - _maxHistoryMessages,
+              previousHistory.length - maxHistoryMessages,
             )
             : previousHistory;
 
@@ -2170,11 +1786,14 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       if (_isCancelled) {
         return;
       }
-      finalText = await _streamResponse(
+      finalText = await streamResponse(
         aiService,
         agentResult.messages,
         systemPrompt,
         tools,
+        isCancelled: _isCancelled,
+        ref: ref,
+        listId: listId,
         cancelToken: _cancelToken,
       );
     } on Object catch (e, st) {
@@ -2207,12 +1826,12 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
     if (lastMsg != null) {
       final displayContent =
           finalText.isEmpty ? agentResult.fallbackText : finalText;
-      final extracted = _extractSuggestionsFromText(displayContent);
+      final extracted = extractSuggestionsFromText(displayContent);
       final displayText = extracted.text;
       final llmSuggestions = extracted.suggestions;
       final suggestions =
           llmSuggestions ??
-          _generateSuggestedReplies(displayText, listId)
+          generateSuggestedReplies(displayText, listId)
               ?.map((s) => SuggestedReply(label: s, prompt: s, icon: 'chat'))
               .toList();
       final finalMessage = lastMsg.copyWith(
@@ -2310,230 +1929,4 @@ Seja sutil e aja como um concierge. Ajude primeiro, venda depois.''';
       keepAliveLink.close();
     }
   }
-
-  ({String text, List<SuggestedReply>? suggestions})
-  _extractSuggestionsFromText(String content) {
-    if (content.isEmpty) {
-      return (text: content, suggestions: null);
-    }
-
-    const startTag = '[SUGGESTIONS]\n';
-    const endTag = '\n[/SUGGESTIONS]';
-
-    final startIdx = content.indexOf(startTag);
-    final endIdx = content.indexOf(endTag);
-
-    if (startIdx == -1 || endIdx == -1 || endIdx <= startIdx) {
-      return (text: content, suggestions: null);
-    }
-
-    final jsonStr =
-        content.substring(startIdx + startTag.length, endIdx).trim();
-    final cleanText =
-        content.replaceRange(startIdx, endIdx + endTag.length, '').trim();
-
-    try {
-      final parsed = jsonDecode(jsonStr) as List<dynamic>;
-      final suggestions =
-          parsed.map((e) {
-            return SuggestedReply.fromJson(Map<String, dynamic>.from(e as Map));
-          }).toList();
-      return (text: cleanText, suggestions: suggestions);
-    } on Object catch (_) {
-      return (text: content, suggestions: null);
-    }
-  }
-
-  List<String>? _generateSuggestedReplies(String content, String? listId) {
-    if (content.isEmpty) {
-      return null;
-    }
-
-    final replies = <String>[];
-    final lowerContent = content.toLowerCase();
-
-    if (listId != null) {
-      if (lowerContent.contains('receita') ||
-          lowerContent.contains('ingrediente')) {
-        replies.add('Adicione os itens à lista');
-        replies.add('Quais as quantidades?');
-      } else if (lowerContent.contains('organizar') ||
-          lowerContent.contains('corredor')) {
-        replies.add('Organizar agora');
-      } else {
-        replies.add('O que mais posso fazer?');
-        replies.add('Sugira uma receita');
-      }
-    } else {
-      replies.add('Dicas de economia');
-      replies.add('Criar nova lista');
-    }
-
-    if (replies.length < 2) {
-      replies.add('Obrigado!');
-    }
-
-    return replies.take(3).toList();
-  }
-
-    String _languageInstruction(String locale) {
-    final lang = locale.split('_').first.toLowerCase();
-    switch (lang) {
-      case 'pt':
-        return 'Explique o que você fez de forma concisa e amigável em português.';
-      case 'es':
-        return 'Explica lo que hiciste de forma concisa y amigable en español.';
-      case 'fr':
-        return 'Explique ce que vous avez fait de manière concise et amicale en français.';
-      case 'de':
-        return 'Erkläre kurz und freundlich auf Deutsch, was du getan hast.';
-      case 'it':
-        return 'Spiega in modo conciso e amichevole in italiano cosa hai fatto.';
-      case 'nl':
-        return 'Leg uit wat je hebt gedaan op een beknopte en vriendelijke manier in het Nederlands.';
-      case 'ja':
-        return 'あなたが行ったことを簡潔かつ親しみやすく日本語で説明してください。';
-      case 'ko':
-        return '당신이 수행한 작업을 간결하고 친근하게 한국어로 설명하세요.';
-      case 'ru':
-        return 'Объясните, что вы сделали, кратко и дружелюбно на русском языке.';
-      case 'zh':
-        return '请用中文简洁友好地解释你做了什么。';
-      case 'pl':
-        return 'Wyjaśnij krótko i przyjaźnie w języku polskim, co zrobiłeś.';
-      default:
-        return 'Explain what you did concisely and friendly in the current language.';
-    }
-  }
-
-  String _buildListSystemPrompt(
-    ShoppingList? list,
-    List<ShoppingItem> items, {
-    String locale = 'pt_BR',
-  }) {
-    final listName = list?.name ?? 'Shopping List';
-    const maxItems = 30;
-    final displayItems = items.take(maxItems);
-    final itemsStr = displayItems
-        .map(
-          (i) =>
-              '- ${i.name} (${i.quantity} ${i.unit.label})${i.isPurchased ? ' [Purchased]' : ''}',
-        )
-        .join('\n');
-    final overflow =
-        items.length > maxItems
-            ? '\n... e mais ${items.length - maxItems} itens (total: ${items.length})'
-            : '';
-
-    return '''Você é o Kipi, um esquilo assistente inteligente, ágil e muito organizado. Você tem CONTROLE TOTAL sobre o app de compras do usuário para ajudá-lo a organizar o "ninho"!
-Seu tom é amigável, prestativo e ligeiramente saltitante.
-
-Contexto atual: lista "$listName".
-
-Itens atuais na lista:
-$itemsStr$overflow
-
-GERAÇÃO DE INTERFACE INTERATIVA (GEN UI):
-Você possui a ferramenta avançada `generate_artifact` para instanciar interfaces reativas/interativas (Gen UI) diretamente no chat do usuário.
-Use essa ferramenta sempre que detectar intenções de:
-1. Planejamento de Evento/Churrasco: Calcule quantidades por número de pessoas (ex: churrasco, jantar, festa). Crie controles de sliders para adultos/crianças, etc.
-2. Otimização de Orçamento: Ofereça opções de substituição mais baratas (alternativas de swap) para o usuário decidir na hora (ex: "Trocar Picanha por Alcatra").
-3. Sugestão de Receitas da Despensa: Monte um artefato com itens que o usuário já tem na despensa (isAvailable: true) e itens faltantes (isAvailable: false).
-
-A IA tem criatividade total. Defina controles (sliders, steppers, toggles, selects) e condições de exibição de itens livremente usando os parâmetros de `generate_artifact`.
-NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferramenta `generate_artifact`. Após rodar a ferramenta, você pode descrever textualmente a sugestão abaixo.
-
-VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
-- Adicionar, remover, editar itens
-- Marcar/desmarcar comprados (ajudando o usuário a "armazenar nozes")
-- Gerenciar listas (criar, renomear, arquivar, excluir)
-- Gerenciar despensa
-- Gerenciar RECEITAS (criar, buscar, excluir)
-- Planejar CARDÁPIO/REFEIÇÕES (agendar, consultar)
-- Controlar orçamento e configurações
-
-Sempre que o usuário pedir uma ação, USE as ferramentas adequadas em vez de apenas sugerir.
-NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no corpo da mensagem. Use sempre a funcionalidade nativa de ferramentas do sistema.
-
-MEMÓRIA E PREFERÊNCIAS:
-Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
-
-⚠️ REGRAS ANTI-DUPLICAÇÃO (SIGA ESTRITAMENTE):
-- Antes de adicionar itens de uma receita à lista, SEMPRE use get_items primeiro para ver o que já existe na lista
-- Se um item já estiver na lista com o mesmo nome (ex: "Arroz" já existe), NÃO crie um novo — o sistema automaticamente incrementa a quantidade. Apenas confirme ao usuário.
-- Se uma receita com o mesmo nome já existir, NÃO crie outra. Informe o usuário e ofereça editar a existente ou usar outro nome.
-- NUNCA use clear_all_items a menos que o usuário peça EXPLICITAMENTE para limpar/esvaziar a lista. Não use para substituir itens ou reorganizar.
-
-${_languageInstruction(locale)}
-
-Se precisar de informações adicionais para executar uma ação, use as ferramentas de consulta primeiro.''';
-  }
-
-  String _buildGlobalSystemPrompt(
-    Map<String, List<ShoppingItem>> allItems, {
-    String locale = 'pt_BR',
-  }) {
-    var context =
-        'Você é o Kipi, um esquilo assistente inteligente, ágil e muito organizado. Você tem CONTROLE TOTAL sobre o app de compras do usuário para ajudá-lo a organizar o "ninho"!\n';
-    context += 'Seu tom é amigável e prestativo. O usuário possui as seguintes listas:\n\n';
-
-    const maxItems = 30;
-    int totalItems = 0;
-    for (final entry in allItems.entries) {
-      totalItems += entry.value.length;
-    }
-
-    if (totalItems <= maxItems) {
-      allItems.forEach((listName, items) {
-        context += 'Lista: $listName (${items.length} itens)\n';
-        context += items
-            .map((i) => '  - ${i.name} (${i.quantity} ${i.unit.label})')
-            .join('\n');
-        context += '\n\n';
-      });
-    } else {
-      allItems.forEach((listName, items) {
-        context += '- $listName (${items.length} itens)\n';
-      });
-      context +=
-          '\nUse a ferramenta get_items para consultar os itens de uma lista específica.\n\n';
-    }
-
-    context += '''
-GERAÇÃO DE INTERFACE INTERATIVA (GEN UI):
-Você possui a ferramenta avançada `generate_artifact` para instanciar interfaces reativas/interativas (Gen UI) diretamente no chat do usuário.
-Use essa ferramenta sempre que detectar intenções de:
-1. Planejamento de Evento/Churrasco: Calcule quantidades por número de pessoas (ex: churrasco, jantar, festa). Crie controles de sliders para adultos/crianças, etc.
-2. Otimização de Orçamento: Ofereça opções de substituição mais baratas (alternativas de swap) para o usuário decidir na hora (ex: "Trocar Picanha por Alcatra").
-3. Sugestão de Receitas da Despensa: Monte um artefato com itens que o usuário já tem na despensa (isAvailable: true) e itens faltantes (isAvailable: false).
-
-A IA tem criatividade total. Defina controles (sliders, steppers, toggles, selects) e condições de exibição de itens livremente usando os parâmetros de `generate_artifact`.
-NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferramenta `generate_artifact`. Após rodar a ferramenta, você pode descrever textualmente a sugestão abaixo.
-
-VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
-- Gerenciar listas (criar, renomear, arquivar, excluir)
-- Adicionar, remover, editar itens em qualquer lista
-- Gerenciar despensa
-- Gerenciar RECEITAS e CARDÁPIO (planner)
-- Controlar orçamento, tema e configurações
-- Compartilhar listas
-- Exportar/importar backup
-
-Sempre que o usuário pedir uma ação, USE as ferramentas adequadas.
-NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no corpo da mensagem. Use sempre a funcionalidade nativa de ferramentas do sistema.
-
-MEMÓRIA E PREFERÊNCIAS:
-Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
-
-⚠️ REGRAS ANTI-DUPLICAÇÃO (SIGA ESTRITAMENTE):
-- Antes de adicionar itens de uma receita à lista, SEMPRE use get_items primeiro para ver o que já existe na lista
-- Se um item já estiver na lista com o mesmo nome (ex: "Arroz" já existe), NÃO crie um novo — o sistema automaticamente incrementa a quantidade. Apenas confirme ao usuário.
-- Se uma receita com o mesmo nome já existir, NÃO crie outra. Informe o usuário e ofereça editar a existente ou usar outro nome.
-- NUNCA use clear_all_items a menos que o usuário peça EXPLICITAMENTE para limpar/esvaziar a lista. Não use para substituir itens ou reorganizar.
-
-${_languageInstruction(locale)}''';
-
-    return context;
-  }
-
-  }
+}

@@ -299,13 +299,13 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Naskenujte produkt';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Umístěte čárový kód doprostřed';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Nastavení';
@@ -393,42 +393,42 @@ class AppLocalizationsCs extends AppLocalizations {
   String get termsOfUse => 'Podmínky použití';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Moje úspěchy';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Zakoupené položky';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Celková úspora';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Aktuální pruh';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count dny',
+      one: '$count den',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Odemčené odznaky';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Začátečník';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organizovaný';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Záchrana Mistra';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super plánovač';
 
   @override
   String get backupTitle => 'Záloha';
@@ -515,17 +515,17 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased z $total položek';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Rozpočet: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Celkem: $amount';
   }
 
   @override
@@ -685,13 +685,13 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Asistent AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Blízko';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Naskenujte čárový kód';
 
   @override
   String get listHelp => 'Jak mohu pomoci s tvým seznamem?';
@@ -2417,6 +2417,42 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Jeden výlet nikdy nestačí';
+
+  @override
+  String get aiWelcomeContent =>
+      'Ahoj! 👋 Jsem **Kipi**, vaše osobní asistentka při nakupování a receptech!\n\nJsem tu, abych vám pomohl:\n🛒 **Uspořádejte** své nákupy automaticky podle kategorií\n💰 **Sledujte** svůj rozpočet a poskytněte tipy, jak ušetřit peníze\n🍲 **Navrhujte** chutné recepty s tím, co už máte\n\nHow can I help you today? You can start by creating your first list!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Vytvořte můj první seznam';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, pomoz mi vytvořit můj první nákupní seznam';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Jak ušetřit peníze?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, jak mi můžeš pomoci ušetřit peníze za potraviny?';
+
+  @override
+  String get suggestionMilk => 'Mléko';
+
+  @override
+  String get suggestionBread => 'Chléb';
+
+  @override
+  String get suggestionEggs => 'Vejce';
+
+  @override
+  String get suggestionCoffee => 'Káva';
+
+  @override
+  String get suggestionRice => 'Rýže';
+
+  @override
+  String get suggestionFruits => 'Ovoce';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -2714,6 +2750,15 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   }
 
   @override
+  String get scanProductTitle => 'Naskenujte produkt';
+
+  @override
+  String get positionBarcodeCenter => 'Umístěte čárový kód doprostřed';
+
+  @override
+  String get product => 'Produkt';
+
+  @override
   String get settingsAppBar => 'Nastavení';
 
   @override
@@ -2799,6 +2844,44 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get termsOfUse => 'Podmínky použití';
 
   @override
+  String get myAchievements => 'Moje úspěchy';
+
+  @override
+  String get itemsPurchased => 'Zakoupené položky';
+
+  @override
+  String get totalSavings => 'Celková úspora';
+
+  @override
+  String get currentStreak => 'Aktuální pruh';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dny',
+      one: '$count den',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Odemčené odznaky';
+
+  @override
+  String get badgeBeginner => 'Začátečník';
+
+  @override
+  String get badgeOrganized => 'Organizovaný';
+
+  @override
+  String get badgeSavingMaster => 'Záchrana Mistra';
+
+  @override
+  String get badgeSuperPlanner => 'Super plánovač';
+
+  @override
   String get backupTitle => 'Záloha';
 
   @override
@@ -2880,6 +2963,21 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get sortManual => 'Ručně';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased z $total položek';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Rozpočet: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Celkem: $amount';
+  }
 
   @override
   String get addItem => 'Přidat položku';
@@ -3036,6 +3134,15 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String chatError(String error) {
     return 'Chyba při načítání chatu: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'Asistent AI';
+
+  @override
+  String get closeSheet => 'Blízko';
+
+  @override
+  String get scanBarcodeTitle => 'Naskenujte čárový kód';
 
   @override
   String get listHelp => 'Jak mohu pomoci s tvým seznamem?';
@@ -4761,4 +4868,40 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get onboardingPainRepeat => 'Jeden výlet nikdy nestačí';
+
+  @override
+  String get aiWelcomeContent =>
+      'Ahoj! 👋 Jsem **Kipi**, vaše osobní asistentka při nakupování a receptech!\n\nJsem tu, abych vám pomohl:\n🛒 **Uspořádejte** své nákupy automaticky podle kategorií\n💰 **Sledujte** svůj rozpočet a poskytněte tipy, jak ušetřit peníze\n🍲 **Navrhujte** chutné recepty s tím, co už máte\n\nHow can I help you today? You can start by creating your first list!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Vytvořte můj první seznam';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, pomoz mi vytvořit můj první nákupní seznam';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Jak ušetřit peníze?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, jak mi můžeš pomoci ušetřit peníze za potraviny?';
+
+  @override
+  String get suggestionMilk => 'Mléko';
+
+  @override
+  String get suggestionBread => 'Chléb';
+
+  @override
+  String get suggestionEggs => 'Vejce';
+
+  @override
+  String get suggestionCoffee => 'Káva';
+
+  @override
+  String get suggestionRice => 'Rýže';
+
+  @override
+  String get suggestionFruits => 'Ovoce';
 }

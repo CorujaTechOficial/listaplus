@@ -26,9 +26,11 @@
 - `lib/app/*/screens/` — feature screens
 - `lib/app/*/providers/` — Riverpod providers
 - `lib/app/*/widgets/` — feature widgets
-- `lib/models/` — 14 model files (canonical source for all shared types)
-- `lib/domain/entities/` — 7 real entity files + 6 re-exports
-- `lib/services/` — `FirestoreService`, `AuthService`, `RevenueCatService`, `OpenCodeGoService`
+- `lib/models/` — 24 model files (canonical source for all shared types; `lib/domain/` was deleted and its entities moved here)
+- `lib/services/firestore/` — `FirestoreBase` (retry/stream/wrap helpers) + `FirestoreService` (combined from 10 domain mixins across 11 files)
+- `lib/app/lists/widgets/` — 7 widget files extracted from `list_screen_body.dart` (ProgressInfoHeader, ShoppingCompletionView, GestureHintBanner, SelectionBottomBar, SortOptionsSheet, ShareListSheet, ExportOptionsSheet)
+- `lib/app/ai/providers/` — 5 files: `chat_provider.dart` (main ~1931 lines) + `chat_helpers.dart`, `chat_streaming.dart`, `chat_tool_descriptions.dart`, `chat_small_providers.dart`
+- `lib/services/` — `AuthService`, `RevenueCatService`, `OpenCodeGoService` (FirestoreService lives in `firestore/`)
 - `lib/core/providers/` — cross-cutting providers (firebase, auth, monetization, analytics, preferences)
 - `lib/screens/home_screen.dart` — the one remaining original screen, **not** a re-export
 - `lib/widgets/` — only `artifact_widgets/` subdirectory remains
@@ -36,7 +38,7 @@
 
 ## Localization (l10n)
 
-`lib/l10n/` has 123 ARB files covering 86 locales. Template: `app_en.arb` (289 keys).
+`lib/l10n/` has 123 ARB files covering 86 locales. Template: `app_en.arb` (450+ keys).
 All locales have **genuine translations** (zero English placeholders). 6 English regional variants exist for spelling conventions.
 - Run after editing ARB: `flutter gen-l10n` (generates to `lib/generated/l10n/`)
 - Config: `l10n.yaml` (arb-dir, output-dir, etc.)
@@ -88,6 +90,8 @@ flutter analyze --fatal-infos        # CI uses Flutter 3.29.3 (local ~3.44, ~289
 dart run build_runner build --delete-conflicting-outputs   # after @riverpod edits
 dart run build_runner watch --delete-conflicting-outputs   # watch mode
 flutter gen-l10n                      # after editing ARB files in lib/l10n/
+flutter test                          # 106+ tests (models, providers, catalogs, meal planner)
+flutter test --coverage               # generates coverage/lcov.info
 flutter build appbundle --no-tree-shake-icons   # appbundle (category Icons are non-const in category_data.dart)
 ```
 

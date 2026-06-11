@@ -300,13 +300,14 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Produkt scannen';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter =>
+      'Positionieren Sie den Barcode in der Mitte';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Einstellungen';
@@ -395,42 +396,42 @@ class AppLocalizationsDe extends AppLocalizations {
   String get termsOfUse => 'Nutzungsbedingungen';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Meine Erfolge';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Gekaufte Artikel';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Gesamteinsparungen';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Aktueller Streak';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count Tage',
+      one: '$count Tag',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Freigeschaltete Abzeichen';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Anfänger';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organisiert';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Rettender Meister';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super Planer';
 
   @override
   String get backupTitle => 'Sicherung';
@@ -518,7 +519,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased von $total Artikeln';
   }
 
   @override
@@ -528,7 +529,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Gesamt: $amount';
   }
 
   @override
@@ -689,13 +690,13 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'KI-Assistent';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Schließen';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Barcode scannen';
 
   @override
   String get listHelp => 'Wie kann ich mit deiner Liste helfen?';
@@ -2443,6 +2444,42 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Eine Reise ist nie genug';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hallo! 👋 Ich bin **Kipi**, dein persönlicher Einkaufs- und Rezeptassistent!\n\nIch bin hier, um Ihnen zu helfen:\n🛒 **Organisieren** Sie Ihren Einkauf automatisch nach Kategorien\n💰 **Verfolgen** Sie Ihr Budget und geben Sie Tipps zum Geldsparen\n🍲 **Schlagen Sie köstliche Rezepte vor** mit dem, was Sie bereits haben\n\nWie kann ich Ihnen heute helfen? Sie können mit der Erstellung Ihrer ersten Liste beginnen!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Erstelle meine erste Liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hilf mir, meine erste Einkaufsliste zu erstellen';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Wie kann man Geld sparen?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, wie kannst du mir helfen, beim Lebensmitteleinkauf Geld zu sparen?';
+
+  @override
+  String get suggestionMilk => 'Milch';
+
+  @override
+  String get suggestionBread => 'Brot';
+
+  @override
+  String get suggestionEggs => 'Eier';
+
+  @override
+  String get suggestionCoffee => 'Kaffee';
+
+  @override
+  String get suggestionRice => 'Reis';
+
+  @override
+  String get suggestionFruits => 'Früchte';
 }
 
 /// The translations for German, as used in Germany (`de_DE`).
@@ -2741,6 +2778,16 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
   }
 
   @override
+  String get scanProductTitle => 'Produkt scannen';
+
+  @override
+  String get positionBarcodeCenter =>
+      'Positionieren Sie den Barcode in der Mitte';
+
+  @override
+  String get product => 'Produkt';
+
+  @override
   String get settingsAppBar => 'Einstellungen';
 
   @override
@@ -2827,6 +2874,44 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
   String get termsOfUse => 'Nutzungsbedingungen';
 
   @override
+  String get myAchievements => 'Meine Erfolge';
+
+  @override
+  String get itemsPurchased => 'Gekaufte Artikel';
+
+  @override
+  String get totalSavings => 'Gesamteinsparungen';
+
+  @override
+  String get currentStreak => 'Aktueller Streak';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Tage',
+      one: '$count Tag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Freigeschaltete Abzeichen';
+
+  @override
+  String get badgeBeginner => 'Anfänger';
+
+  @override
+  String get badgeOrganized => 'Organisiert';
+
+  @override
+  String get badgeSavingMaster => 'Rettender Meister';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planer';
+
+  @override
   String get backupTitle => 'Sicherung';
 
   @override
@@ -2909,6 +2994,21 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
 
   @override
   String get sortManual => 'Manuell';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased von $total Artikeln';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Gesamt: $amount';
+  }
 
   @override
   String get addItem => 'Artikel hinzufügen';
@@ -3066,6 +3166,15 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
   String chatError(String error) {
     return 'Fehler beim Laden des Chats: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'KI-Assistent';
+
+  @override
+  String get closeSheet => 'Schließen';
+
+  @override
+  String get scanBarcodeTitle => 'Barcode scannen';
 
   @override
   String get listHelp => 'Wie kann ich mit deiner Liste helfen?';
@@ -4813,4 +4922,40 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
 
   @override
   String get onboardingPainRepeat => 'Eine Reise ist nie genug';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hallo! 👋 Ich bin **Kipi**, dein persönlicher Einkaufs- und Rezeptassistent!\n\nIch bin hier, um Ihnen zu helfen:\n🛒 **Organisieren** Sie Ihren Einkauf automatisch nach Kategorien\n💰 **Verfolgen** Sie Ihr Budget und geben Sie Tipps zum Geldsparen\n🍲 **Schlagen Sie köstliche Rezepte vor** mit dem, was Sie bereits haben\n\nWie kann ich Ihnen heute helfen? Sie können mit der Erstellung Ihrer ersten Liste beginnen!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Erstelle meine erste Liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hilf mir, meine erste Einkaufsliste zu erstellen';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Wie kann man Geld sparen?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, wie kannst du mir helfen, beim Lebensmitteleinkauf Geld zu sparen?';
+
+  @override
+  String get suggestionMilk => 'Milch';
+
+  @override
+  String get suggestionBread => 'Brot';
+
+  @override
+  String get suggestionEggs => 'Eier';
+
+  @override
+  String get suggestionCoffee => 'Kaffee';
+
+  @override
+  String get suggestionRice => 'Reis';
+
+  @override
+  String get suggestionFruits => 'Früchte';
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
-import 'package:shopping_list/domain/entities/chat_message.dart';
+import 'package:shopping_list/models/chat_message.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/app/ai/screens/chat_screen.dart';
 import 'package:shopping_list/app/ai/providers/chat_provider.dart';
@@ -43,6 +43,14 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
   Future<void> _loadAllMessages() async {
     try {
       final firestoreService = ref.read(firestoreServiceProvider);
+      if (firestoreService == null) {
+        if (mounted) {
+          setState(() {
+            _isLoading = false;
+          });
+        }
+        return;
+      }
       final lists = ref.read(shoppingListsProvider).value ?? [];
 
       final Map<String, List<_SessionWithMessages>> tempMap = {};

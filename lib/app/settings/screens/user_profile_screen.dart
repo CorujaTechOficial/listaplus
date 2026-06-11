@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/user_profile.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/theme/tokens.dart';
@@ -34,6 +35,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
   }
 
   Future<void> _save() async {
+    final l10n = AppLocalizations.of(context)!;
     final profile = UserProfile(
       preferredStore: _preferredStoreController.text.trim(),
       dietaryRestrictions: _dietaryRestrictionsController.text.trim(),
@@ -46,7 +48,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
         return;
       }
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Perfil salvo com sucesso!')),
+        SnackBar(content: Text(l10n.profileSaved)),
       );
       Navigator.pop(context);
     } on Exception catch (e) {
@@ -54,23 +56,24 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
         return;
       }
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Erro ao salvar: $e')),
+        SnackBar(content: Text('${l10n.errorSavingProfile}: $e')),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final profileAsync = ref.watch(userProfileProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Perfil do Usuário'),
+        title: Text(l10n.userProfile),
         actions: [
           TextButton(
             onPressed: _save,
-            child: const Text('Salvar'),
+            child: Text(l10n.save),
           ),
         ],
       ),
@@ -81,19 +84,19 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
             return _buildForm(theme);
           },
           loading: () => const Center(child: CircularProgressIndicator.adaptive()),
-          error: (e, _) => Center(child: Text('Erro: $e')),
+          error: (e, _) => Center(child: Text(l10n.error('$e'))),
         ),
       ),
     );
   }
 
   Widget _buildForm(ThemeData theme) {
+    final profileFormL10n = AppLocalizations.of(context)!;
     return ListView(
       padding: const EdgeInsets.all(Spacing.md),
       children: [
         Text(
-          'Informe suas preferências pessoais para que o assistente IA '
-          'possa sugerir itens e receitas personalizados.',
+          profileFormL10n.profileDescription,
           style: theme.textTheme.bodyMedium?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),
@@ -101,41 +104,41 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
         const SizedBox(height: Spacing.lg),
         TextField(
           controller: _preferredStoreController,
-          decoration: const InputDecoration(
-            labelText: 'Mercado Preferido',
-            hintText: 'Ex: Supermercado X',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.store),
+          decoration: InputDecoration(
+            labelText: profileFormL10n.preferredMarket,
+            hintText: profileFormL10n.preferredMarketHint,
+            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.store),
           ),
         ),
         const SizedBox(height: Spacing.md),
         TextField(
           controller: _dietaryRestrictionsController,
-          decoration: const InputDecoration(
-            labelText: 'Restrições Alimentares',
-            hintText: 'Ex: vegano, vegetariano, sem glúten',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.restaurant),
+          decoration: InputDecoration(
+            labelText: profileFormL10n.dietaryRestrictions,
+            hintText: profileFormL10n.dietaryRestrictionsHint,
+            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.restaurant),
           ),
         ),
         const SizedBox(height: Spacing.md),
         TextField(
           controller: _avoidedStoresController,
-          decoration: const InputDecoration(
-            labelText: 'Mercados a Evitar',
-            hintText: 'Ex: Mercado Y, Mercado Z',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.block),
+          decoration: InputDecoration(
+            labelText: profileFormL10n.marketsToAvoid,
+            hintText: profileFormL10n.marketsToAvoidHint,
+            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.block),
           ),
         ),
         const SizedBox(height: Spacing.md),
         TextField(
           controller: _notesController,
-          decoration: const InputDecoration(
-            labelText: 'Observações',
-            hintText: 'Outras preferências para o assistente',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.note),
+          decoration: InputDecoration(
+            labelText: profileFormL10n.observations,
+            hintText: profileFormL10n.observationsHint,
+            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.note),
           ),
           maxLines: 3,
         ),
@@ -143,7 +146,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
         FilledButton.icon(
           onPressed: _save,
           icon: const Icon(Icons.save),
-          label: const Text('Salvar Perfil'),
+          label: Text(profileFormL10n.saveProfile),
         ),
       ],
     );

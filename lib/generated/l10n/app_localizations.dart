@@ -4601,6 +4601,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Kipi, how can you help me save money on groceries?'**
   String get aiWelcomeSuggestSavePrompt;
+
+  /// No description provided for @suggestionMilk.
+  ///
+  /// In en, this message translates to:
+  /// **'Milk'**
+  String get suggestionMilk;
+
+  /// No description provided for @suggestionBread.
+  ///
+  /// In en, this message translates to:
+  /// **'Bread'**
+  String get suggestionBread;
+
+  /// No description provided for @suggestionEggs.
+  ///
+  /// In en, this message translates to:
+  /// **'Eggs'**
+  String get suggestionEggs;
+
+  /// No description provided for @suggestionCoffee.
+  ///
+  /// In en, this message translates to:
+  /// **'Coffee'**
+  String get suggestionCoffee;
+
+  /// No description provided for @suggestionRice.
+  ///
+  /// In en, this message translates to:
+  /// **'Rice'**
+  String get suggestionRice;
+
+  /// No description provided for @suggestionFruits.
+  ///
+  /// In en, this message translates to:
+  /// **'Fruits'**
+  String get suggestionFruits;
 }
 
 class _AppLocalizationsDelegate

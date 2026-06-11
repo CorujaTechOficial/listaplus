@@ -299,13 +299,13 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Nuskaityti gaminį';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Įdėkite brūkšninį kodą centre';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produktas';
 
   @override
   String get settingsAppBar => 'Nustatymai';
@@ -393,42 +393,42 @@ class AppLocalizationsLt extends AppLocalizations {
   String get termsOfUse => 'Naudojimo sąlygos';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Mano pasiekimai';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Nupirktos prekės';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Iš viso sutaupyta';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Dabartinė serija';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count dienos',
+      one: '$count diena',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Atrakinti ženkleliai';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Pradedantysis';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organizuota';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Gelbėjimo meistras';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super planuotojas';
 
   @override
   String get backupTitle => 'Atsarginė kopija';
@@ -515,17 +515,17 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased iš $total elementų';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Biudžetas: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Iš viso: $amount';
   }
 
   @override
@@ -685,13 +685,13 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI asistentas';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Uždaryti';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Nuskaityti brūkšninį kodą';
 
   @override
   String get listHelp => 'Kaip galiu padėti su jūsų sąrašu?';
@@ -2382,43 +2382,81 @@ class AppLocalizationsLt extends AppLocalizations {
   String get onboardingAiDemoContinue => 'Tęsti';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline =>
+      'Jūsų pirkinių sąrašas, dabar su AI';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'Pažiūrėkite, kaip Kipi per kelias sekundes sukuria visą jūsų sąrašą';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'Aš noriu šito! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'Rengiu šašlykinę 🔥';
 
   @override
   String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+      'Pasiruošę! Čia yra viskas, ko jums reikia:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'Visas sąrašas per kelias sekundes ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'Kas tave labiausiai nervina?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle =>
+      'Būkite sąžiningi – kiekvieną ištaisysime';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'Taip, pataisykite tai už mane →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'Pamiršau prekes parduotuvėje';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily => 'Mano šeima niekada nemato sąrašo';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'Aš visada viršiju biudžetą';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'Vienos kelionės niekada neužtenka';
+
+  @override
+  String get aiWelcomeContent =>
+      'Sveiki! 👋 Aš esu **Kipi**, jūsų asmeninė apsipirkimo ir receptų asistentė!\n\nEsu čia, kad padėčiau:\n🛒 **Automatiškai tvarkykite** apsipirkimą pagal kategorijas\n💰 **Sekite** savo biudžetą ir pateikite pinigų taupymo patarimų\n🍲 **Pasiūlykite** skanių receptų su tuo, ką jau turite\n\nKaip aš galiu tau padėti šiandien? Galite pradėti nuo pirmojo sąrašo sudarymo!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Sukurti mano pirmąjį sąrašą';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, padėk man sudaryti pirmąjį pirkinių sąrašą';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Kaip sutaupyti pinigų?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, kaip galite padėti man sutaupyti pinigų bakalėjos prekėms?';
+
+  @override
+  String get suggestionMilk => 'Pienas';
+
+  @override
+  String get suggestionBread => 'duona';
+
+  @override
+  String get suggestionEggs => 'Kiaušiniai';
+
+  @override
+  String get suggestionCoffee => 'Kava';
+
+  @override
+  String get suggestionRice => 'Ryžiai';
+
+  @override
+  String get suggestionFruits => 'Vaisiai';
 }

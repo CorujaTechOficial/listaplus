@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
-import 'package:shopping_list/domain/entities/premium_feature.dart';
+import 'package:shopping_list/models/premium_feature.dart';
 import 'package:shopping_list/app/settings/utils/locale_names.dart';
 import 'package:shopping_list/core/utils/currency_data.dart';
 import 'package:shopping_list/theme/tokens.dart';

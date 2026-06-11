@@ -41,6 +41,48 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
   },
@@ -50,6 +92,15 @@
         "type": "String"
       }
     }
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -82,12 +133,33 @@
       }
     }
   },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryLimitReached": {
+    "description": "Warning when max categories reached"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
+  "@categoryNameHint": {
+    "description": "Hint for category name"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
+  },
+  "@chooseThemeColor": {
+    "description": "Screen title for theme color"
   },
   "@completedOn": {
     "placeholders": {
@@ -117,12 +189,53 @@
       }
     }
   },
+  "@connectionError": {
+    "description": "Error message when connection fails"
+  },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
       }
     }
+  },
+  "@deleteCategory": {
+    "description": "Delete category action"
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteCategoryTitle": {
+    "description": "Title for delete category dialog"
+  },
+  "@deleteConversation": {
+    "description": "Delete action label"
+  },
+  "@deleteConversationConfirm": {
+    "description": "Confirm message for delete conversation"
+  },
+  "@deleteConversationTitle": {
+    "description": "Title for delete conversation dialog"
   },
   "@deleteListContent": {
     "placeholders": {
@@ -131,8 +244,17 @@
       }
     }
   },
+  "@dietaryRestrictions": {
+    "description": "Label for dietary restrictions field"
+  },
+  "@dietaryRestrictionsHint": {
+    "description": "Hint for dietary restrictions"
+  },
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
   },
   "@editPantryItem": {
     "placeholders": {
@@ -155,6 +277,21 @@
       }
     }
   },
+  "@errorLoadingHistory": {
+    "description": "Error loading conversation history"
+  },
+  "@errorLoadingLists": {
+    "description": "Error when lists fail to load"
+  },
+  "@errorLoadingSubscription": {
+    "description": "Error loading subscription info"
+  },
+  "@errorSavingProfile": {
+    "description": "Error when profile save fails"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
+  },
   "@feedbackError": {
     "placeholders": {
       "error": {
@@ -167,6 +304,13 @@
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -202,6 +346,12 @@
       }
     }
   },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
+  },
   "@listAdded": {
     "placeholders": {
       "listName": {
@@ -233,12 +383,27 @@
       }
     }
   },
+  "@loadingSubscription": {
+    "description": "Loading state for subscription"
+  },
   "@loginError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@manageCategories": {
+    "description": "Manage categories menu item"
+  },
+  "@manageCategoriesSubtitle": {
+    "description": "Subtitle for manage categories"
+  },
+  "@marketsToAvoid": {
+    "description": "Label for markets to avoid field"
+  },
+  "@marketsToAvoidHint": {
+    "description": "Hint for markets to avoid"
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -257,6 +422,117 @@
       }
     }
   },
+  "@myProfile": {
+    "description": "My profile menu item"
+  },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@noListsFound": {
+    "description": "Empty state when user has no lists"
+  },
+  "@observations": {
+    "description": "Label for observations field"
+  },
+  "@observationsHint": {
+    "description": "Hint for observations field"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -266,11 +542,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -278,8 +629,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -295,6 +673,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -325,6 +712,24 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
   },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
@@ -390,6 +795,175 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@preferredMarket": {
+    "description": "Label for preferred market field"
+  },
+  "@preferredMarketHint": {
+    "description": "Hint for preferred market"
+  },
+  "@profileDescription": {
+    "description": "Label for profile description field"
+  },
+  "@profileSaved": {
+    "description": "Snackbar when profile is saved"
+  },
+  "@profileSection": {
+    "description": "Profile section header"
+  },
+  "@profileSubtitle": {
+    "description": "Subtitle for profile section"
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
   "@recipeAddedConfirmation": {
     "placeholders": {
       "count": {
@@ -407,6 +981,13 @@
       }
     }
   },
+  "@replaceItem": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
   "@restocked": {
     "placeholders": {
       "name": {
@@ -419,6 +1000,12 @@
         "type": "String"
       }
     }
+  },
+  "@saveProfile": {
+    "description": "Button to save profile"
+  },
+  "@selectCheaperAlternative": {
+    "description": "Button for cheaper alternative"
   },
   "@selectedItems": {
     "placeholders": {
@@ -451,8 +1038,32 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
     }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swap": {
+    "description": "Button to swap item"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
   },
   "@totalEstimated": {
     "placeholders": {
@@ -460,6 +1071,15 @@
         "type": "String"
       }
     }
+  },
+  "@unlockPremiumTitle": {
+    "description": "Button to unlock premium"
+  },
+  "@unlockWithAd": {
+    "description": "Button to unlock via ad"
+  },
+  "@userProfile": {
+    "description": "User profile screen title"
   },
   "@userProfileErrorLoading": {
     "placeholders": {
@@ -474,6 +1094,9 @@
         "type": "String"
       }
     }
+  },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
   },
   "about": "ಕುರಿತು",
   "achievements": "ಸಾಧನೆಗಳು",
@@ -496,12 +1119,14 @@
   "aiAssistantDescription": "ನಮ್ಮ AI ಸಹಾಯಕದೊಂದಿಗೆ ಸ್ಮಾರ್ಟ್ ಸಲಹೆಗಳು, ಪಾಕವಿಧಾನಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಸಲಹೆಗಳನ್ನು ಪಡೆಯಿರಿ.",
   "aiAssistantGeneral": "ಸಾಮಾನ್ಯ ಸಹಾಯಕ",
   "aiAssistantHistory": "ಸಹಾಯಕ ಇತಿಹಾಸ",
+  "aiAssistantTitle": "AI ಸಹಾಯಕ",
   "aiConversationHistory": "ಸಂಭಾಷಣೆ ಇತಿಹಾಸ",
   "aiCreditsRemaining": "{remaining} ಕ್ರೆಡಿಟ್ಗಳು ಉಳಿದಿವೆ",
   "aiDeleteConversationConfirm": "ಅಳಿಸಿ",
   "aiDeleteConversationTitle": "ಸಂಭಾಷಣೆಯನ್ನು ಅಳಿಸುವುದೇ?",
   "aiDeletedList": "ಅಳಿಸಲಾದ ಪಟ್ಟಿ",
   "aiEnergy": "AI ಶಕ್ತಿ",
+  "aiEnergyLow": "ಕಡಿಮೆ AI ಶಕ್ತಿ",
   "aiError": "ಕ್ಷಮಿಸಿ, ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುವಲ್ಲಿ ದೋಷ ಸಂಭವಿಸಿದೆ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಅಥವಾ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
   "aiFirstOpenHint": "ನಾನು ಕಿಪಿ, ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಸಹಾಯಕ. ನಿಮ್ಮ ಪಟ್ಟಿಯ ಬಗ್ಗೆ ಏನಾದರೂ ನನ್ನನ್ನು ಕೇಳಿ!",
   "aiHello": "ನಮಸ್ಕಾರ! ನಾನು ಕಿಪಿ",
@@ -513,13 +1138,23 @@
   "aiNoMessagesFound": "ಯಾವುದೇ ಸಂದೇಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
   "aiPremiumUpsell": "ಪ್ರೀಮಿಯಂಗೆ ಹೋಗಿ",
   "aiRecentConversations": "ಇತ್ತೀಚಿನ ಸಂಭಾಷಣೆಗಳು",
+  "aiRemainingFreeToday": "ಇಂದು {remaining} {remaining, plural, one{free message} other{free messages}}",
   "aiSearchMessages": "ಸಂದೇಶಗಳನ್ನು ಹುಡುಕಿ...",
   "aiStartNewConversation": "ಹೊಸ ಸಂಭಾಷಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "aiSubscribeUnlimited": "ಅನಿಯಮಿತ AI ಗೆ ಚಂದಾದಾರರಾಗಿ",
   "aiSuggestCreateList": "ನನ್ನ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ",
   "aiSuggestSaveMore": "ಹೆಚ್ಚು ಉಳಿಸುವುದು ಹೇಗೆ?",
   "aiTeaserFallback": "ಸಂಪೂರ್ಣ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಪ್ರೀಮಿಯಂಗೆ ಚಂದಾದಾರರಾಗಿ ಮತ್ತು ನಿಮ್ಮ ಶಾಪಿಂಗ್‌ಗಾಗಿ ಅನಿಯಮಿತ AI ಸಲಹೆಗಳನ್ನು ಪಡೆಯಿರಿ...",
+  "aiUnlockUnlimited": "ಅನಿಯಮಿತ AI ಅನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
   "aiUnlockWithAd": "ಜಾಹೀರಾತಿನೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "aiUsageExhausted": "ಮಾಸಿಕ AI ಮಿತಿಯನ್ನು ತಲುಪಿದೆ. ಅನಿಯಮಿತ → ಗಾಗಿ Pro ಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ",
+  "aiUsageWarning": "{remaining} AI ಕ್ರಿಯೆಗಳು ಈ ತಿಂಗಳು ಉಳಿದಿವೆ — ಅನಿಯಮಿತವಾಗಿ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ",
   "aiVoiceCommandTooltip": "AI ಧ್ವನಿ ಆಜ್ಞೆ (ಪ್ರೀಮಿಯಂ)",
+  "aiWelcomeContent": "ನಮಸ್ಕಾರ! 👋 ನಾನು **ಕಿಪಿ**, ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಶಾಪಿಂಗ್ ಮತ್ತು ಪಾಕವಿಧಾನ ಸಹಾಯಕ!\n\nನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ನಾನು ಇಲ್ಲಿದ್ದೇನೆ:\n🛒 **ಸಂಘಟಿಸಿ** ವಿಭಾಗಗಳ ಮೂಲಕ ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮಾಡಿ\n💰 **ಟ್ರ್ಯಾಕ್** ನಿಮ್ಮ ಬಜೆಟ್ ಮತ್ತು ನಿಮಗೆ ಹಣ ಉಳಿಸುವ ಸಲಹೆಗಳನ್ನು ನೀಡಿ\n🍲 **ಸಲಹೆ** ನೀವು ಈಗಾಗಲೇ ಹೊಂದಿರುವ ರುಚಿಕರವಾದ ಪಾಕವಿಧಾನಗಳನ್ನು\n\nಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು? ನಿಮ್ಮ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸುವ ಮೂಲಕ ನೀವು ಪ್ರಾರಂಭಿಸಬಹುದು!",
+  "aiWelcomeSuggestCreateList": "ನನ್ನ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ",
+  "aiWelcomeSuggestCreateListPrompt": "ಕಿಪಿ, ನನ್ನ ಮೊದಲ ಶಾಪಿಂಗ್ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು ನನಗೆ ಸಹಾಯ ಮಾಡಿ",
+  "aiWelcomeSuggestSave": "ಹಣವನ್ನು ಉಳಿಸುವುದು ಹೇಗೆ?",
+  "aiWelcomeSuggestSavePrompt": "ಕಿಪಿ, ದಿನಸಿಯಲ್ಲಿ ಹಣವನ್ನು ಉಳಿಸಲು ನೀವು ನನಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
   "aiWelcomeTitle": "ನಮಸ್ಕಾರ! 👋 ನಾನು **ಕಿಪಿ**, ನಿಮ್ಮ ಸ್ಮಾರ್ಟ್ ಶಾಪಿಂಗ್ ಸಹಾಯಕ.",
   "allTags": "ಎಲ್ಲಾ",
   "alreadyPurchased": "ಈಗಾಗಲೇ ಖರೀದಿಸಲಾಗಿದೆ",
@@ -531,6 +1166,9 @@
   "artifactSuggestedItems": "ಸೂಚಿಸಿದ ವಸ್ತುಗಳು",
   "artifactSwapButton": "ಸ್ವ್ಯಾಪ್ ಮಾಡಿ",
   "artifactSwappedLabel": "ಬದಲಾಯಿಸಿಕೊಂಡರು",
+  "assistantHistory": "ಸಹಾಯಕ ಇತಿಹಾಸ",
+  "assistantHistorySubtitle": "ನಿಮ್ಮ ಸಂಭಾಷಣೆಯ ಇತಿಹಾಸವನ್ನು ವೀಕ್ಷಿಸಿ",
+  "assistantName": "ಸಹಾಯಕ ಹೆಸರು",
   "backToChat": "Chat ಗೆ ಹಿಂತಿರುಗಿ",
   "backToToday": "ಇವತ್ತಿಗೆ ಹಿಂತಿರುಗಿ",
   "backupExported": "ಬ್ಯಾಕಪ್ ರಫ್ತು ಮಾಡಲಾಗಿದೆ!",
@@ -538,6 +1176,10 @@
   "backupPremiumDescription": "ಬ್ಯಾಕಪ್ ಮತ್ತು ರಫ್ತು ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯವಾಗಿದೆ",
   "backupSubtitle": "ನಿಮ್ಮ ಡೇಟಾವನ್ನು ರಫ್ತು ಅಥವಾ ಆಮದು ಮಾಡಿ",
   "backupTitle": "ಬ್ಯಾಕಪ್",
+  "badgeBeginner": "ಹರಿಕಾರ",
+  "badgeOrganized": "ಆಯೋಜಿಸಲಾಗಿದೆ",
+  "badgeSavingMaster": "ಉಳಿಸುವ ಮಾಸ್ಟರ್",
+  "badgeSuperPlanner": "ಸೂಪರ್ ಪ್ಲಾನರ್",
   "barcodeScannerHint": "ಬಾರ್‌ಕೋಡ್‌ನಲ್ಲಿ ಕ್ಯಾಮೆರಾವನ್ನು ಸೂಚಿಸಿ",
   "barcodeScannerTitle": "ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
   "becomePremium": "ಪ್ರೀಮಿಯಂ ಆಗಿ",
@@ -573,20 +1215,28 @@
   "catalogSortPopular": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ",
   "catalogTitle": "ಕ್ಯಾಟಲಾಗ್",
   "category": "ವರ್ಗ",
+  "categoryColorLabel": "ಬಣ್ಣ",
+  "categoryIconLabel": "ಐಕಾನ್",
+  "categoryLimitReached": "ವರ್ಗದ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ",
+  "categoryName": "ವರ್ಗದ ಹೆಸರು",
+  "categoryNameHint": "ವರ್ಗದ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
   "chatError": "ಚಾಟ್ ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ: {error}",
   "chatHint": "ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
   "chatHintBlocked": "ಚಾಟ್ ಮಾಡಲು AI ಅನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ",
   "chatSubtitle": "ಐಟಂ ಸಲಹೆಗಳು, ಪಾಕವಿಧಾನಗಳು ಅಥವಾ ಉಳಿತಾಯ ಸಲಹೆಗಳಿಗಾಗಿ ಕೇಳಿ.",
   "chatSubtitleShort": "ಬೆಲೆಗಳು, ಪಾಕವಿಧಾನಗಳು, ಸಂಸ್ಥೆಯ ಬಗ್ಗೆ ಕೇಳಿ...",
   "chooseCurrency": "ಕರೆನ್ಸಿ ಆಯ್ಕೆಮಾಡಿ",
+  "chooseIcon": "ಐಕಾನ್ ಆಯ್ಕೆಮಾಡಿ",
   "chooseImageSource": "ಚಿತ್ರದ ಮೂಲವನ್ನು ಆರಿಸಿ",
   "chooseLanguage": "ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "chooseThemeColor": "ಥೀಮ್ ಬಣ್ಣವನ್ನು ಆರಿಸಿ",
   "clear": "ತೆರವುಗೊಳಿಸಿ",
   "clearHistory": "ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಿ",
   "clearHistoryConfirm": "ಈ ಸೆಷನ್ನಲ್ಲಿರುವ ಎಲ್ಲಾ ಸಂದೇಶಗಳನ್ನು ತೆರವುಗೊಳಿಸಬೇಕೆ?",
   "clearList": "ಪಟ್ಟಿ ತೆರವುಗೊಳಿಸಿ",
   "clearPurchased": "ಖರೀದಿಸಿದವು ತೆರವುಗೊಳಿಸಿ",
   "close": "ಮುಚ್ಚಿ",
+  "closeSheet": "ಮುಚ್ಚಿ",
   "complete": "ಪೂರ್ಣಗೊಳಿಸಿ",
   "completePurchase": "ಖರೀದಿ ಪೂರ್ಣಗೊಳಿಸಿ",
   "completedOn": "{date} ರಂದು ಪೂರ್ಣಗೊಂಡಿದೆ",
@@ -598,12 +1248,15 @@
   "confirmDeleteItems": "{count} ಐಟಂ(ಗಳ)ನ್ನು ತೆಗೆದುಹಾಕಬೇಕೆ?",
   "confirmDeleteTitle": "ದೃಢಪಡಿಸಿ",
   "confirmRemovePantry": "ಪ್ಯಾಂಟ್ರಿಯಿಂದ \"{name}\" ತೆಗೆದುಹಾಕಬೇಕೆ?",
+  "connectionError": "ಸಂಪರ್ಕ ದೋಷ",
+  "connectionErrorDesc": "ದೋಷ: {error}",
   "consentAccept": "ಸ್ವೀಕರಿಸಿ",
   "consentBody": "ನಿಮ್ಮ ಅನುಭವವನ್ನು ಸುಧಾರಿಸಲು KipiList Firebase Analytics ಅನ್ನು ಬಳಸುತ್ತದೆ. ನಿಮ್ಮ ಡೇಟಾವನ್ನು ನಮ್ಮ ಗೌಪ್ಯತಾ ನೀತಿಯ ಪ್ರಕಾರ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗಿದೆ.",
   "consentDecline": "ಇಲ್ಲ, ಧನ್ಯವಾದಗಳು",
   "consentTitle": "ಗೌಪ್ಯತೆ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ",
   "consumed": "ಸೇವಿಸಲಾಗಿದೆ",
   "continueAsGuest": "ಅತಿಥಿಯಾಗಿ ಮುಂದುವರಿಸಿ",
+  "conversationHistoryTitle": "ಸಂಭಾಷಣೆಯ ಇತಿಹಾಸ",
   "copiedToClipboard": "ಕ್ಲಿಪ್ಬೋರ್ಡ್ಗೆ ನಕಲಿಸಲಾಗಿದೆ",
   "copy": "ನಕಲಿಸಿ",
   "create": "ರಚಿಸಿ",
@@ -614,10 +1267,19 @@
   "currency": "ಕರೆನ್ಸಿ",
   "currentQty": "ಪ್ರಸ್ತುತ ಪ್ರಮಾಣ",
   "currentQuantity": "ಪ್ರಸ್ತುತ ಪ್ರಮಾಣ",
+  "currentStreak": "ಪ್ರಸ್ತುತ ಸ್ಟ್ರೀಕ್",
+  "customizeAiAssistant": "AI ಸಹಾಯಕವನ್ನು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ",
+  "customizeAssistant": "ಕಸ್ಟಮೈಸ್ ಮಾಡಿ",
   "dark": "ಡಾರ್ಕ್",
   "data": "ಡೇಟಾ",
   "deficitItems": "{deficit,plural, one{{deficit} ಐಟಂ ಅನ್ನು ಖರೀದಿಸಬೇಕಾಗಿದೆ} other{{deficit} ಐಟಂಗಳನ್ನು ಖರೀದಿಸಬೇಕಾಗಿದೆ}}",
   "delete": "ಅಳಿಸಿ",
+  "deleteCategory": "ಅಳಿಸಿ",
+  "deleteCategoryConfirm": "\"{category}\" ನಲ್ಲಿರುವ ಐಟಂಗಳನ್ನು \"ಇತರರು\" ಗೆ ಸರಿಸಲಾಗುತ್ತದೆ.\nಮುಂದುವರಿಸುವುದೇ?",
+  "deleteCategoryTitle": "ವರ್ಗವನ್ನು ಅಳಿಸಿ",
+  "deleteConversation": "ಅಳಿಸಿ",
+  "deleteConversationConfirm": "ಈ ಕ್ರಿಯೆಯನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.",
+  "deleteConversationTitle": "ಸಂಭಾಷಣೆಯನ್ನು ಅಳಿಸಿ",
   "deleteListConfirm": "ಪಟ್ಟಿ ಅಳಿಸಿ",
   "deleteListContent": "ನೀವು ಖಚಿತವಾಗಿ \"{name}\" ಅಳಿಸಲು ಬಯಸುವಿರಾ? ಎಲ್ಲಾ ಐಟಂಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗುವುದು.",
   "deleteListTitle": "ಪಟ್ಟಿ ಅಳಿಸಿ",
@@ -627,12 +1289,15 @@
   "deleteSession": "ಚಾಟ್ ಅಳಿಸಿ",
   "deleteSessionConfirm": "ಈ ಚಾಟ್ ಅನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ? ಸಂದೇಶಗಳು ಶಾಶ್ವತವಾಗಿ ಕಳೆದುಹೋಗುತ್ತವೆ.",
   "deselectAll": "ಎಲ್ಲಾ ಆಯ್ಕೆ ತೆಗೆದುಹಾಕಿ",
+  "dietaryRestrictions": "ಆಹಾರದ ನಿರ್ಬಂಧಗಳು",
+  "dietaryRestrictionsHint": "ಯಾವುದೇ ಆಹಾರ ನಿರ್ಬಂಧಗಳು?",
   "dynamicColors": "ಡೈನಾಮಿಕ್ ಬಣ್ಣಗಳು",
   "dynamicColorsEnabledWarning": "ಥೀಮ್ ಬಣ್ಣವು ಪರಿಣಾಮ ಬೀರಲು ಡೈನಾಮಿಕ್ ಬಣ್ಣಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ",
   "dynamicColorsSubtitle": "ನಿಮ್ಮ ವಾಲ್‌ಪೇಪರ್ ಆಧಾರಿತ ಬಣ್ಣಗಳನ್ನು ಬಳಸಿ",
   "economyTips": "ಉಳಿತಾಯ ಸಲಹೆಗಳು",
   "economyTipsPrompt": "ಈ ಖರೀದಿಯಲ್ಲಿ ನಾನು ಹೇಗೆ ಹಣ ಉಳಿಸಬಹುದು?",
   "edit": "ಸಂಪಾದಿಸಿ",
+  "editCategoryDialog": "ವರ್ಗವನ್ನು ಸಂಪಾದಿಸಿ",
   "editItem": "ಐಟಂ ಸಂಪಾದಿಸಿ",
   "editItemPrice": "ಅಂದಾಜು ಬೆಲೆ",
   "editPantryItem": "{name} ಸಂಪಾದಿಸಿ",
@@ -655,11 +1320,16 @@
   "errorGeneric": "ದೋಷ: {message}",
   "errorLoadingChat": "ಓಹ್! ಚಾಟ್ ಲೋಡ್ ಮಾಡುವಾಗ ಏನೋ ತಪ್ಪಾಗಿದೆ.",
   "errorLoadingChatSubtitle": "ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಅಥವಾ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "errorLoadingHistory": "ಇತಿಹಾಸವನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ",
+  "errorLoadingLists": "ಪಟ್ಟಿಗಳನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ",
   "errorLoadingRecipes": "ಪಾಕವಿಧಾನಗಳನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ",
+  "errorLoadingSubscription": "ಚಂದಾದಾರಿಕೆಯನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ",
   "errorOscillation": "ನೆಟ್‌ವರ್ಕ್ ಆಂದೋಲನಗಳು ಅಥವಾ ತಾತ್ಕಾಲಿಕ ಅಲಭ್ಯತೆಯಿಂದಾಗಿ ಇದು ಸಂಭವಿಸಬಹುದು. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "errorSavingProfile": "ಪ್ರೊಫೈಲ್ ಉಳಿಸುವಲ್ಲಿ ದೋಷ",
   "estimated": "ಅಂದಾಜು",
   "estimatedCost": "ಅಂದಾಜಿಸಲಾಗಿದೆ",
   "estimatedPrice": "ಅಂದಾಜು ಬೆಲೆ",
+  "everythingReady": "ಎಲ್ಲವೂ ಸಿದ್ಧವಾಗಿದೆ!",
   "exit": "ನಿರ್ಗಮಿಸಿ",
   "exitShoppingMode": "ಶಾಪಿಂಗ್ ಮೋಡ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ",
   "expirationDate": "ಮುಕ್ತಾಯ ದಿನಾಂಕ",
@@ -718,14 +1388,18 @@
   "instructions": "ಸೂಚನೆಗಳು",
   "instructionsHint": "ಪ್ರತಿ ಸಾಲಿನಲ್ಲಿ ಒಂದು ಹಂತವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
   "inviteToList": "ಪಟ್ಟಿಗೆ ಆಹ್ವಾನಿಸಿ",
+  "itemAddedSnack": "{name} ಸೇರಿಸಲಾಗಿದೆ",
   "itemName": "ಐಟಂ ಹೆಸರು",
   "itemRemoved": "ಐಟಂ ತೆಗೆದುಹಾಕಲಾಗಿದೆ",
   "itemsAddedSuccess": "ಐಟಂಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಪಟ್ಟಿಗೆ ಸೇರಿಸಲಾಗಿದೆ!",
   "itemsNeedPurchase": "{deficit} ಐಟಂ(ಗಳ)ನ್ನು ಖರೀದಿಸಬೇಕಾಗಿದೆ",
+  "itemsPurchased": "ಖರೀದಿಸಿದ ವಸ್ತುಗಳು",
   "itemsPurchasedCount": "{total} ರಲ್ಲಿ {purchased} ಖರೀದಿಸಲಾಗಿದೆ",
   "itemsPurchasedShort": "{purchased}/{total} ಖರೀದಿಸಲಾಗಿದೆ",
   "itemsWillBeAdded": "{count} ಐಟಂ(ಗಳ)ನ್ನು ಸೇರಿಸಲಾಗುವುದು",
+  "kipiListProActive": "ಕಿಪಿಲಿಸ್ಟ್ ಪ್ರೊ ಆಕ್ಟಿವ್",
   "kipiListTitle": "ಕಿಪಿಲಿಸ್ಟ್",
+  "kipiQuickBarHint": "ನೀವು ಖರೀದಿಸಲು ಏನು ಬೇಕು?",
   "language": "ಭಾಷೆ",
   "languageEnglish": "ಇಂಗ್ಲೀಷ್",
   "languagePortuguese": "ಪೋರ್ಚುಗೀಸ್ (ಬ್ರೆಸಿಲ್)",
@@ -752,15 +1426,20 @@
   "lists": "ಪಟ್ಟಿಗಳು",
   "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
   "loadingRecipes": "ನಿಮ್ಮ ಪಾಕವಿಧಾನಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+  "loadingSubscription": "ಚಂದಾದಾರಿಕೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
   "loginError": "ಲಾಗಿನ್ ದೋಷ: {error}",
   "loginPrompt": "ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು\nಅನ್ಲಾಕ್ ಮಾಡಲು ಲಾಗಿನ್ ಮಾಡಿ",
   "longHistoryWarning": "ದೀರ್ಘ ಇತಿಹಾಸ: ಉತ್ತಮ ಕಾರ್ಯಕ್ಷಮತೆಗಾಗಿ ಸಹಾಯಕ ಇತ್ತೀಚಿನ ಸಂದೇಶಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸುತ್ತದೆ.",
+  "manageCategories": "ವರ್ಗಗಳನ್ನು ನಿರ್ವಹಿಸಿ",
   "manageCategoriesEmpty": "ಇನ್ನೂ ಯಾವುದೇ ವರ್ಗಗಳಿಲ್ಲ",
+  "manageCategoriesSubtitle": "ವರ್ಗಗಳನ್ನು ಸೇರಿಸಿ, ಸಂಪಾದಿಸಿ ಅಥವಾ ತೆಗೆದುಹಾಕಿ",
   "manageCategoriesTitle": "ವರ್ಗಗಳನ್ನು ನಿರ್ವಹಿಸಿ",
   "manageSubscription": "ಚಂದಾದಾರಿಕೆ ನಿರ್ವಹಿಸಿ",
   "markAsPurchased": "ಖರೀದಿಸಿದ ಎಂದು ಗುರುತಿಸಿ",
   "markItemsToSeeAnalysis": "ವಿಶ್ಲೇಷಣೆ ನೋಡಲು ಐಟಂಗಳನ್ನು ಖರೀದಿಸಿದ ಎಂದು ಗುರುತಿಸಿ.",
   "marketMode": "ಮಾರುಕಟ್ಟೆ ಮೋಡ್",
+  "marketsToAvoid": "ತಪ್ಪಿಸಲು ಮಾರುಕಟ್ಟೆಗಳು",
+  "marketsToAvoidHint": "ನೀವು ಶಾಪಿಂಗ್ ಮಾಡದಿರಲು ಇಷ್ಟಪಡುವ ಮಾರುಕಟ್ಟೆಗಳು",
   "mealDragHint": "ಎಳೆಯಲು ಮತ್ತು ಸರಿಸಲು ಹಿಡಿದುಕೊಳ್ಳಿ",
   "mealNoRecipeFound": "ಯಾವುದೇ ಪಾಕವಿಧಾನ ಕಂಡುಬಂದಿಲ್ಲ",
   "mealPlannerAddMeal": "ಊಟವನ್ನು ಸೇರಿಸಿ",
@@ -804,12 +1483,15 @@
   "monthlyBudgetNav": "ಮಾಸಿಕ ಬಜೆಟ್",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "ಮಾಸಿಕ ಬಜೆಟ್",
+  "myAchievements": "ನನ್ನ ಸಾಧನೆಗಳು",
   "myLists": "ನನ್ನ ಪಟ್ಟಿಗಳು",
+  "myProfile": "ನನ್ನ ಪ್ರೊಫೈಲ್",
   "myRecipes": "ನನ್ನ ಪಾಕವಿಧಾನಗಳು",
   "navChat": "ಚಾಟ್ ಮಾಡಿ",
   "navLists": "ಪಟ್ಟಿಗಳು",
   "navMealPlanner": "ಮೆನು",
   "navRecipes": "ಪಾಕವಿಧಾನಗಳು",
+  "newCategoryDialog": "ಹೊಸ ವರ್ಗ",
   "newChat": "ಹೊಸ ಚಾಟ್",
   "newListTitle": "ಹೊಸ ಶಾಪಿಂಗ್ ಪಟ್ಟಿ",
   "newPantryList": "ಪ್ಯಾಂಟ್ರಿ ಶಾಪಿಂಗ್",
@@ -819,6 +1501,7 @@
   "noActiveLists": "ಯಾವುದೇ ಸಕ್ರಿಯ ಪಟ್ಟಿಗಳಿಲ್ಲ",
   "noArchivedLists": "ಯಾವುದೇ ಆರ್ಕೈವ್ ಮಾಡಿದ ಪಟ್ಟಿಗಳಿಲ್ಲ",
   "noBudgetDefined": "ಯಾವುದೇ ಬಜೆಟ್ ಹೊಂದಿಸಿಲ್ಲ",
+  "noConversationsFound": "ಯಾವುದೇ ಸಂಭಾಷಣೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
   "noHistory": "ಯಾವುದೇ ಚಾಟ್ ಇತಿಹಾಸವಿಲ್ಲ",
   "noItemsInList": "ಪಟ್ಟಿಯಲ್ಲಿ ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ",
   "noItemsToAnalyze": "ವಿಶ್ಲೇಷಿಸಲು ಪಟ್ಟಿಯಲ್ಲಿ ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ.",
@@ -826,27 +1509,92 @@
   "noLabel": "ಇಲ್ಲ",
   "noListFoundSubtitle": "ಪ್ರಾರಂಭಿಸಲು ನಿಮ್ಮ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ",
   "noListFoundTitle": "ಯಾವುದೇ ಪಟ್ಟಿ ಕಂಡುಬಂದಿಲ್ಲ",
+  "noListSelected": "ಯಾವುದೇ ಪಟ್ಟಿಯನ್ನು ಆಯ್ಕೆಮಾಡಲಾಗಿಲ್ಲ. ಮೊದಲು ಪಟ್ಟಿಯನ್ನು ತೆರೆಯಿರಿ.",
+  "noListsFound": "ಯಾವುದೇ ಪಟ್ಟಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
   "noMessagesFound": "ಯಾವುದೇ ಸಂದೇಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
   "noRecipesSaved": "ಯಾವುದೇ ಪಾಕವಿಧಾನಗಳನ್ನು ಉಳಿಸಲಾಗಿಲ್ಲ",
   "noRecipesSavedHint": "ಕೆಳಗಿನ ಬಟನ್ ಟ್ಯಾಪ್ ಮಾಡುವ ಮೂಲಕ ನಿಮ್ಮ ಮೊದಲ ಕಸ್ಟಮ್ ಪಾಕವಿಧಾನವನ್ನು ರಚಿಸಿ.",
   "noTracking": "ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ",
   "notInformed": "ತಿಳಿಸಿಲ್ಲ",
+  "observations": "ಅವಲೋಕನಗಳು",
+  "observationsHint": "ಯಾವುದೇ ಹೆಚ್ಚುವರಿ ಟಿಪ್ಪಣಿಗಳು?",
   "offlineBanner": "ನೀವು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿರುವಿರಿ",
   "onboardingAIShowSubtitle": "ಕಿಪಿ ನಿಮಗಾಗಿ ಎಲ್ಲವನ್ನೂ ಸಿದ್ಧಪಡಿಸುತ್ತಿದೆ ...",
   "onboardingAIShowTitle": "ಗುಪ್ತಚರ ಕ್ರಿಯೆಯನ್ನು ನೋಡಿ!",
+  "onboardingAiAskConfirm": "ಇದು ಚೆನ್ನಾಗಿ ಕಾಣುತ್ತಿದೆಯೇ? ಬೇರೆ ಯಾವುದನ್ನಾದರೂ ಟೈಪ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ!",
+  "onboardingAiAskFood": "ನಿಮ್ಮ ಮೆಚ್ಚಿನ ಆಹಾರ ಯಾವುದು?",
+  "onboardingAiAskName": "ನಿಮ್ಮ ಹೆಸರೇನು?",
+  "onboardingAiContinue": "ಮುಂದುವರಿಸಿ →",
+  "onboardingAiDemoChange": "ಐಟಂ ಬದಲಾಯಿಸಿ",
+  "onboardingAiDemoContinue": "ಮುಂದುವರಿಸಿ",
+  "onboardingAiDemoGreeting": "ಹೇ {name}! ನಿಮಗೆ ಏನು {category} ಬೇಕು?",
+  "onboardingAiDemoGreetingNoName": "ನಿಮಗೆ ಏನು {category} ಬೇಕು?",
+  "onboardingAiDemoOffer": "ಬೇರೆ ಯಾವುದನ್ನಾದರೂ ಟೈಪ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ!",
+  "onboardingAiDemoReaction": "ಚೆನ್ನಾಗಿದೆ!",
+  "onboardingAiDemoSlideCta": "ನನಗೆ ಇದು ಬೇಕು! →",
+  "onboardingAiDemoSlideDone": "ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಪಟ್ಟಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ ✨",
+  "onboardingAiDemoSlideHeadline": "ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಪಟ್ಟಿ, ಈಗ AI ಜೊತೆಗೆ",
+  "onboardingAiDemoSlideReady": "ಸಿದ್ಧವಾಗಿದೆ! ನಿಮಗೆ ಬೇಕಾದ ಎಲ್ಲವೂ ಇಲ್ಲಿದೆ:",
+  "onboardingAiDemoSlideSubtitle": "ಕಿಪಿ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಪಟ್ಟಿಯನ್ನು ಹೇಗೆ ನಿರ್ಮಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ನೋಡಿ",
+  "onboardingAiDemoSlideUserMsg": "ನಾನು ಬಾರ್ಬೆಕ್ಯೂ 🔥 ಹೋಸ್ಟ್ ಮಾಡುತ್ತಿದ್ದೇನೆ",
+  "onboardingAiDemoYes": "ಹೌದು!",
+  "onboardingAiFoodHint": "ಉದಾ. ಪಿಜ್ಜಾ, ಸುಶಿ...",
+  "onboardingAiGreeting": "ನಮಸ್ತೆ! ನಾನು ಕಿಪಿ, ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಶಾಪಿಂಗ್ ಸಹಾಯಕ! 🛒",
+  "onboardingAiIngredients": "ಉತ್ತಮ ಆಯ್ಕೆಗಳು! ನಿಮ್ಮ ಪಟ್ಟಿಗೆ ನಾನು ಸೇರಿಸುವುದು ಇಲ್ಲಿದೆ:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "ನಿಮ್ಮ ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+  "onboardingAiNiceToMeet": "ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಲು ಸಂತೋಷವಾಗಿದೆ, {name}! 🎉",
+  "onboardingAiReady": "ಗ್ರೇಟ್! ನೀವು ಪ್ರಾರಂಭಿಸಲು ಸಿದ್ಧರಾಗಿರುವಿರಿ. ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಹೊಂದಿಸೋಣ!",
+  "onboardingAiTitle": "ಕಿಪಿ ಜೊತೆ ಚಾಟ್ ಮಾಡಿ",
   "onboardingAnnualBadge": "ಅತ್ಯುತ್ತಮ ಮೌಲ್ಯ",
   "onboardingAnnualLabel": "ವಾರ್ಷಿಕ",
   "onboardingCancelAnytime": "ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ. ಬದ್ಧತೆ ಇಲ್ಲ.",
+  "onboardingCategoryGrocery": "ದಿನಸಿ",
+  "onboardingCategoryHome": "ಮನೆ",
+  "onboardingCategoryPet": "ಸಾಕುಪ್ರಾಣಿ",
+  "onboardingCategoryPharmacy": "ಔಷಧಾಲಯ",
+  "onboardingCategoryRecipes": "ಪಾಕವಿಧಾನಗಳು",
+  "onboardingCommitmentsCta": "ಹೋಗೋಣ!",
+  "onboardingCommitmentsSubtitle": "ಕಿಪಿಲಿಸ್ಟ್ ಅನ್ನು ವೈಯಕ್ತೀಕರಿಸಲು ನಿಮ್ಮ ಗುರಿಗಳನ್ನು ಆರಿಸಿ",
+  "onboardingCommitmentsTitle": "ನಿಮಗೆ ಯಾವುದು ಮುಖ್ಯ?",
   "onboardingContinueAsGuest": "ಅತಿಥಿಯಾಗಿ ಮುಂದುವರಿಯಿರಿ",
   "onboardingExit": "ನಿರ್ಗಮಿಸಿ",
+  "onboardingGoalFamily": "ಕುಟುಂಬ ಶಾಪಿಂಗ್ ಅನ್ನು ಆಯೋಜಿಸಿ",
+  "onboardingGoalFaster": "ವೇಗವಾಗಿ ಶಾಪಿಂಗ್ ಮಾಡಿ",
+  "onboardingGoalNeverForget": "ವಸ್ತುಗಳನ್ನು ಎಂದಿಗೂ ಮರೆಯಬೇಡಿ",
+  "onboardingGoalPantry": "ಟ್ರ್ಯಾಕ್ ಪ್ಯಾಂಟ್ರಿ",
+  "onboardingGoalRecipes": "ಪಾಕವಿಧಾನಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
+  "onboardingGoalSaveMoney": "ಹಣವನ್ನು ಉಳಿಸಿ",
+  "onboardingGroupCouple": "ಜೋಡಿ",
+  "onboardingGroupFamily": "ಕುಟುಂಬ",
+  "onboardingGroupSolo": "ನಾನು ಮಾತ್ರ",
+  "onboardingHookHeadline": "ಕಿರಾಣಿ ವಸ್ತುವನ್ನು ಮತ್ತೆ ಎಂದಿಗೂ ಮರೆಯಬಾರದು",
+  "onboardingLoadingStat1Label": "ಐಟಂಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಲಾಗಿದೆ",
+  "onboardingLoadingStat2Label": "ಬಳಕೆದಾರರು ಸಹಾಯ ಮಾಡಿದರು",
+  "onboardingLoadingStat3Label": "ನಿಮಿಷಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ",
+  "onboardingLoadingStep1": "ನಿಮ್ಮ ಆದ್ಯತೆಗಳನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+  "onboardingLoadingStep2": "AI ಸಹಾಯಕವನ್ನು ಹೊಂದಿಸಲಾಗುತ್ತಿದೆ...",
+  "onboardingLoadingStep3": "ಬಹುತೇಕ ಸಿದ್ಧವಾಗಿದೆ...",
+  "onboardingLoadingTitle": "ನಿಮ್ಮ ಅನುಭವವನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ...",
   "onboardingLoginDesc": "ನಿಮ್ಮ ಎಲ್ಲಾ ಸಾಧನಗಳಾದ್ಯಂತ ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಸಿಂಕ್ ಮಾಡಲಾಗಿದೆ",
   "onboardingLoginTitle": "ಎಲ್ಲವನ್ನೂ ಕ್ಲೌಡ್‌ಗೆ ಉಳಿಸಿ",
+  "onboardingMaybeLater": "ಬಹುಶಃ ನಂತರ",
   "onboardingMonthlyLabel": "ಮಾಸಿಕ",
+  "onboardingPainCta": "ಹೌದು, ಇದನ್ನು ನನಗೆ ಸರಿಪಡಿಸಿ →",
+  "onboardingPainFamily": "ನನ್ನ ಕುಟುಂಬವು ಎಂದಿಗೂ ಪಟ್ಟಿಯನ್ನು ನೋಡುವುದಿಲ್ಲ",
+  "onboardingPainForget": "ನಾನು ಅಂಗಡಿಯಲ್ಲಿನ ವಸ್ತುಗಳನ್ನು ಮರೆತುಬಿಡುತ್ತೇನೆ",
+  "onboardingPainOverspend": "ನಾನು ಯಾವಾಗಲೂ ಬಜೆಟ್ ಅನ್ನು ಮೀರುತ್ತೇನೆ",
+  "onboardingPainRepeat": "ಒಂದು ಪ್ರವಾಸ ಎಂದಿಗೂ ಸಾಕಾಗುವುದಿಲ್ಲ",
+  "onboardingPainSubtitle": "ಪ್ರಾಮಾಣಿಕವಾಗಿರಿ - ನಾವು ಪ್ರತಿಯೊಂದನ್ನು ಸರಿಪಡಿಸುತ್ತೇವೆ",
+  "onboardingPainTitle": "ಯಾವುದು ನಿಮ್ಮನ್ನು ಹೆಚ್ಚು ನಿರಾಶೆಗೊಳಿಸುತ್ತದೆ?",
+  "onboardingPersonalizationCategoryTitle": "ನೀವು ಯಾವುದಕ್ಕಾಗಿ ಶಾಪಿಂಗ್ ಮಾಡುತ್ತೀರಿ?",
   "onboardingPersonalizationCta": "ಮುಂದುವರಿಸಿ",
   "onboardingPersonalizationDesc": "ನಿಮ್ಮ ಸಲಹೆಗಳನ್ನು ವೈಯಕ್ತೀಕರಿಸಲು ಮತ್ತು ಶಾಪಿಂಗ್ ಅನ್ನು ಚುರುಕುಗೊಳಿಸಲು ನಾವು ಇದನ್ನು ಬಳಸುತ್ತೇವೆ.",
   "onboardingPersonalizationFoodHint": "ಉದಾ. ಪಿಜ್ಜಾ, ಸುಶಿ, ಲಸಾಂಜ...",
   "onboardingPersonalizationFoodLabel": "ನಿಮ್ಮ ಮೆಚ್ಚಿನ ಆಹಾರ ಯಾವುದು?",
   "onboardingPersonalizationFoodRequired": "ಮುಂದುವರಿಯಲು ನಿಮ್ಮ ಮೆಚ್ಚಿನ ಆಹಾರವನ್ನು ನಮಗೆ ತಿಳಿಸಿ",
+  "onboardingPersonalizationGroupTitle": "ನೀವು ಯಾರಿಗಾಗಿ ಶಾಪಿಂಗ್ ಮಾಡುತ್ತೀರಿ?",
+  "onboardingPersonalizationNameHint": "ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+  "onboardingPersonalizationNameLabel": "ನಿಮ್ಮ ಹೆಸರು",
   "onboardingPersonalizationSkip": "ಸದ್ಯಕ್ಕೆ ಬಿಟ್ಟುಬಿಡಿ",
   "onboardingPersonalizationTitle": "ನಿಮ್ಮನ್ನು ತಿಳಿದುಕೊಳ್ಳೋಣ",
   "onboardingPremiumSubtitle": "ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗಳಿಂದ ಹೆಚ್ಚಿನದನ್ನು ಪಡೆಯಿರಿ",
@@ -857,6 +1605,12 @@
   "onboardingSetupTitle": "ನಿಮ್ಮ ಅನುಭವವನ್ನು ವೈಯಕ್ತೀಕರಿಸಿ",
   "onboardingShareDesc": "ನೈಜ ಸಮಯದಲ್ಲಿ ಕುಟುಂಬ ಮತ್ತು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಪಟ್ಟಿಗಳನ್ನು ಸಿಂಕ್ ಮಾಡಿ",
   "onboardingShareTitle": "ನೀವು ಇಷ್ಟಪಡುವವರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ",
+  "onboardingSlide1Body": "ಪಟ್ಟಿಗಳನ್ನು ತಕ್ಷಣವೇ ರಚಿಸಿ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳಿ. Kipi ನಿಮ್ಮ ಅಭ್ಯಾಸಗಳನ್ನು ಆಧರಿಸಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಐಟಂಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ.",
+  "onboardingSlide1Title": "ಸ್ಮಾರ್ಟ್ ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗಳು",
+  "onboardingSlide2Body": "ಯಾವುದನ್ನಾದರೂ ಕೇಳಿ - ಪಟ್ಟಿಗಳನ್ನು ರಚಿಸಿ, ಪಾಕವಿಧಾನಗಳನ್ನು ಹುಡುಕಿ, ನಿಮ್ಮ ಪ್ಯಾಂಟ್ರಿಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ, ನಿಮ್ಮ ವಾರವನ್ನು ಯೋಜಿಸಿ.",
+  "onboardingSlide2Title": "ಕಿಪಿಯನ್ನು ಭೇಟಿ ಮಾಡಿ",
+  "onboardingSlide3Body": "ನಿಮ್ಮಲ್ಲಿರುವದನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ, ಊಟವನ್ನು ಯೋಜಿಸಿ ಮತ್ತು ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ರಚಿಸಿ.",
+  "onboardingSlide3Title": "ಪ್ಯಾಂಟ್ರಿ ಮತ್ತು ಊಟ ಯೋಜನೆ",
   "onboardingSubscribeCta": "ಚಂದಾದಾರರಾಗಿ",
   "onboardingViewAllPlans": "ಎಲ್ಲಾ ಯೋಜನೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
   "onboardingWelcomeDesc": "ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಅನ್ನು ಸಂಘಟಿಸಲು ಮತ್ತು ಹಣವನ್ನು ಉಳಿಸಲು ಬುದ್ಧಿವಂತ ಮಾರ್ಗವಾಗಿದೆ.",
@@ -912,13 +1666,31 @@
   "paywallCancelAnytime": "ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ. ಬದ್ಧತೆ ಇಲ್ಲ.",
   "paywallCtaTrialDays": "ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ — {days} ದಿನಗಳು",
   "paywallCtaUnlock": "PRO ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "paywallFeatureDescAssistant": "AI ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಆಯೋಜಿಸುತ್ತದೆ",
+  "paywallFeatureDescBudget": "ಪ್ರತಿ ತಿಂಗಳು ಬಜೆಟ್‌ನಲ್ಲಿ ಉಳಿಯಿರಿ",
+  "paywallFeatureDescPantry": "ನಿಮ್ಮ ಮನೆಯಲ್ಲಿ ಏನಿದೆ ಎಂಬುದನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+  "paywallFeatureDescSharing": "ನೈಜ ಸಮಯದಲ್ಲಿ ಒಟ್ಟಿಗೆ ಶಾಪಿಂಗ್ ಮಾಡಿ",
+  "paywallFeatureDescUnlimitedLists": "ನಿಮಗೆ ಅಗತ್ಯವಿರುವಷ್ಟು ಪಟ್ಟಿಗಳನ್ನು ರಚಿಸಿ",
   "paywallFeatureExpenseControl": "ವೆಚ್ಚ ನಿಯಂತ್ರಣ",
   "paywallFeatureSharing": "ಹಂಚಿಕೆ",
   "paywallFeatureSmartAI": "ಸ್ಮಾರ್ಟ್ AI",
   "paywallFeatureUnlimitedLists": "ಅನಿಯಮಿತ ಪಟ್ಟಿಗಳು",
   "paywallFeaturesTitle": "ನಿಮಗೆ ಬೇಕಾಗಿರುವುದು:",
+  "paywallGoalHeadlineFamily": "{name}, ಕುಟುಂಬ ಶಾಪಿಂಗ್ ಆಯೋಜಿಸಿ!",
+  "paywallGoalHeadlineFaster": "{name}, ಅರ್ಧ ಸಮಯದಲ್ಲಿ ಶಾಪಿಂಗ್ ಮಾಡಿ!",
+  "paywallGoalHeadlineNeverForget": "{name}, ಐಟಂ ಅನ್ನು ಎಂದಿಗೂ ಮರೆಯಬೇಡಿ!",
+  "paywallGoalHeadlineNoNameFamily": "ಕುಟುಂಬ ಶಾಪಿಂಗ್ ಅನ್ನು ಆಯೋಜಿಸಿ!",
+  "paywallGoalHeadlineNoNameFaster": "ಅರ್ಧ ಸಮಯದಲ್ಲಿ ಶಾಪಿಂಗ್ ಮಾಡಿ!",
+  "paywallGoalHeadlineNoNameNeverForget": "ಐಟಂ ಅನ್ನು ಎಂದಿಗೂ ಮರೆಯಬೇಡಿ!",
+  "paywallGoalHeadlineNoNamePantry": "ನಿಮ್ಮ ಪ್ಯಾಂಟ್ರಿಯನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ!",
+  "paywallGoalHeadlineNoNameRecipes": "ಹೊಸ ಪಾಕವಿಧಾನಗಳನ್ನು ಅನ್ವೇಷಿಸಿ!",
+  "paywallGoalHeadlineNoNameSaveMoney": "ಪ್ರತಿ ಪ್ರವಾಸದಲ್ಲಿ ಉಳಿಸಿ!",
+  "paywallGoalHeadlinePantry": "{name}, ನಿಮ್ಮ ಪ್ಯಾಂಟ್ರಿಯನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ!",
+  "paywallGoalHeadlineRecipes": "{name}, ಹೊಸ ಪಾಕವಿಧಾನಗಳನ್ನು ಅನ್ವೇಷಿಸಿ!",
+  "paywallGoalHeadlineSaveMoney": "{name}, ಪ್ರತಿ ಪ್ರವಾಸದಲ್ಲಿ ಉಳಿಸಿ!",
   "paywallHeroHeadline": "Kipi AI ಯಾವಾಗಲೂ ನಿಮ್ಮ ಪಕ್ಕದಲ್ಲಿದೆ",
   "paywallHeroSubtitle": "ಐಟಂಗಳನ್ನು ಸೇರಿಸಿ, ಪಟ್ಟಿಗಳನ್ನು ಸಂಘಟಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಜೇಬಿನಲ್ಲಿ AI ಯೊಂದಿಗೆ ಸಮಯವನ್ನು ಉಳಿಸಿ",
+  "paywallHeroSubtitlePersonalized": "ಹೇ {name}, ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಅನ್ನು ಸರಿಯಾದ ರೀತಿಯಲ್ಲಿ ಆಯೋಜಿಸಿ.",
   "paywallLabelCommon": "ಸಾಮಾನ್ಯ",
   "paywallLabelPro": "ಕಿಪಿಲಿಸ್ಟ್ ಪ್ರೊ",
   "paywallLoadingError": "ಕೊಡುಗೆಗಳನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
@@ -928,27 +1700,37 @@
   "paywallPackageMonthly": "ಮಾಸಿಕ ಯೋಜನೆ",
   "paywallPackageMonthlyDesc": "ಪೂರ್ಣ ನಮ್ಯತೆ",
   "paywallPolicy": "ಗೌಪ್ಯತೆ ನೀತಿ",
+  "paywallPricePerDay": "ಕೇವಲ {price}/ದಿನ — ಕಾಫಿಗಿಂತ ಕಡಿಮೆ",
   "paywallPricePerMonth": "ಕೇವಲ {price}/ತಿಂಗಳು",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "ಖರೀದಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
   "paywallRestore": "ಮರುಸ್ಥಾಪಿಸಿ",
   "paywallRestoreError": "ಮರುಸ್ಥಾಪಿಸಲು ಯಾವುದೇ ಸಕ್ರಿಯ ಚಂದಾದಾರಿಕೆ ಕಂಡುಬಂದಿಲ್ಲ.",
   "paywallSafeCheckout": "ಸುರಕ್ಷಿತ ಪಾವತಿ",
   "paywallSavePercent": "{percent}% ಉಳಿಸಿ",
+  "paywallSecuredByStore": "Google Play ನಿಂದ ಸುರಕ್ಷಿತವಾಗಿದೆ · ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ರದ್ದುಮಾಡಿ",
   "paywallSelectPlan": "ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಆರಿಸಿ:",
+  "paywallSkipNow": "ಸದ್ಯಕ್ಕೆ ಬಿಟ್ಟುಬಿಡಿ",
   "paywallSocialProof": "+2,400 ಕುಟುಂಬಗಳು ಇದನ್ನು ಬಳಸುತ್ತವೆ",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "ಬಳಕೆಯ ನಿಯಮಗಳು",
+  "paywallTestimonial": "AI ನನ್ನ ಶಾಪಿಂಗ್ ಅನ್ನು ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಆಯೋಜಿಸುತ್ತದೆ. ನಾನು ಪ್ರತಿ ಪ್ರವಾಸಕ್ಕೆ 20 ನಿಮಿಷಗಳನ್ನು ಉಳಿಸುತ್ತೇನೆ.",
   "paywallTestimonial1Name": "ಆನ್ ಎಸ್.",
   "paywallTestimonial1Text": "AI ನನ್ನ ಶಾಪಿಂಗ್ ಅನ್ನು ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಆಯೋಜಿಸುತ್ತದೆ. ನಾನು ಪ್ರತಿ ಮಾರುಕಟ್ಟೆ ಪ್ರವಾಸಕ್ಕೆ 20 ನಿಮಿಷಗಳನ್ನು ಉಳಿಸುತ್ತೇನೆ.",
   "paywallTestimonial2Name": "ಚಾರ್ಲ್ಸ್ ಎಂ.",
   "paywallTestimonial2Text": "ನಾನು ಮತ್ತೆ ಪಟ್ಟಿ ಐಟಂ ಅನ್ನು ಮರೆಯಲಿಲ್ಲ. AI ಚಾಟ್ ಸಂವೇದನಾಶೀಲವಾಗಿದೆ!",
+  "paywallTestimonialAuthor": "ಆನ್ ಎಸ್.",
   "paywallTestimonialsTitle": "ನಮ್ಮ ಬಳಕೆದಾರರು ಏನು ಹೇಳುತ್ತಾರೆ:",
   "paywallTitle": "KipiList ಪ್ರೀಮಿಯಂ",
   "paywallTrialCta": "ಉಚಿತ ಪ್ರಯೋಗವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
   "paywallTrialDays": "{days} ದಿನಗಳು ಉಚಿತ",
+  "paywallTrialDisclaimer": "ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ · ನಿಮ್ಮ ಪ್ರಯೋಗ ಮುಗಿಯುವವರೆಗೆ ಯಾವುದೇ ಶುಲ್ಕವಿಲ್ಲ",
+  "paywallTrialInCard": "ಮೊದಲ {days} ದಿನಗಳು ಉಚಿತ",
   "paywallTrialMonths": "{count,plural, one{{count} ತಿಂಗಳು ಉಚಿತ} other{{count} ತಿಂಗಳುಗಳು ಉಚಿತ}}",
   "paywallTrialSubtitle": "ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ. ಇಂದು ಶುಲ್ಕವಿಲ್ಲ.",
   "paywallTrialTitle": "ಕಿಪಿಲಿಸ್ಟ್ ಪ್ರೊ ಅನ್ನು 7 ದಿನಗಳವರೆಗೆ ಉಚಿತವಾಗಿ ಪ್ರಯತ್ನಿಸಿ",
   "paywallTrialWeeks": "{count,plural, one{{count} ವಾರ ಉಚಿತ} other{{count} ವಾರಗಳು ಉಚಿತ}}",
+  "positionBarcodeCenter": "ಬಾರ್‌ಕೋಡ್ ಅನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಿ",
   "prefAIAssistant": "ವೈಯಕ್ತಿಕ AI ಸಹಾಯಕ",
   "prefCustomThemes": "ಕಸ್ಟಮ್ ಥೀಮ್ಗಳು",
   "prefExportData": "ಡೇಟಾ ರಫ್ತು ಮಾಡಿ",
@@ -958,18 +1740,31 @@
   "prefSharing": "ಪಟ್ಟಿಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ",
   "prefUnlimitedLists": "ಅನಿಯಮಿತ ಪಟ್ಟಿಗಳು",
   "prefUnlimitedPantry": "ಅನಿಯಮಿತ ಪ್ಯಾಂಟ್ರಿ",
+  "preferredMarket": "ಆದ್ಯತೆಯ ಮಾರುಕಟ್ಟೆ",
+  "preferredMarketHint": "ನೀವು ಸಾಮಾನ್ಯವಾಗಿ ಎಲ್ಲಿ ಶಾಪಿಂಗ್ ಮಾಡುತ್ತೀರಿ?",
   "premiumUpgrade": "ಅನ್ಲಾಕ್ ಮಾಡಲು ಅಪ್ಗ್ರೇಡ್ ಮಾಡಿ",
   "prepTime": "ತಯಾರಿ ಸಮಯ",
   "prepTimeMinutes": "ತಯಾರಿ ಸಮಯ (ನಿಮಿಷಗಳು)",
   "privacy": "ಗೌಪ್ಯತೆ",
+  "product": "ಉತ್ಪನ್ನ",
   "productName": "ಉತ್ಪನ್ನದ ಹೆಸರು",
   "profile": "ಪ್ರೊಫೈಲ್",
+  "profileDescription": "ಪ್ರೊಫೈಲ್ ವಿವರಣೆ",
+  "profileSaved": "ಪ್ರೊಫೈಲ್ ಉಳಿಸಲಾಗಿದೆ",
+  "profileSection": "ಪ್ರೊಫೈಲ್",
+  "profileSubtitle": "ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಮಾಹಿತಿ",
+  "progressBudget": "ಬಜೆಟ್: {amount}",
+  "progressItemsOf": "{purchased} ರಲ್ಲಿ {total} ಐಟಂಗಳು",
+  "progressTotal": "ಒಟ್ಟು: {amount}",
   "purchaseError": "ಖರೀದಿ ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿ ದೋಷ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
   "quantityFull": "ಪ್ರಮಾಣ",
   "quantityShort": "ಪ್ರಮಾಣ",
+  "quantityUnitWithPrice": "{qty} {unit} — {price}",
+  "quantityWithUnit": "{qty} {unit}",
   "quickRecipe": "ತ್ವರಿತ ಪಾಕವಿಧಾನ",
   "quickRecipePrompt": "ನನ್ನ ಪಟ್ಟಿಯ ಐಟಂಗಳೊಂದಿಗೆ ಪಾಕವಿಧಾನಗಳನ್ನು ಸೂಚಿಸಿ.",
   "quickReplies": "ತ್ವರಿತ ಪ್ರತ್ಯುತ್ತರಗಳು:",
+  "quickSuggestions": "ತ್ವರಿತ ಸಲಹೆಗಳು",
   "recipeAddToList": "ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗೆ ಸೇರಿಸಿ",
   "recipeAddedConfirmation": "{count} ಪದಾರ್ಥಗಳನ್ನು {listName} ಗೆ ಸೇರಿಸಲಾಗಿದೆ",
   "recipeCreated": "ಪಾಕವಿಧಾನವನ್ನು ರಚಿಸಲಾಗಿದೆ!",
@@ -988,6 +1783,7 @@
   "removeSharedTooltip": "ತೆಗೆದುಹಾಕಿ",
   "rename": "ಮರುಹೆಸರಿಸಿ",
   "renameListDialog": "ಪಟ್ಟಿ ಮರುಹೆಸರಿಸಿ",
+  "replaceItem": "{item} ಬದಲಾಯಿಸಿ",
   "requiredField": "ಅಗತ್ಯವಿದೆ",
   "restockLabel": "ಮರುಪೂರೈಸಿ",
   "restocked": "{name} ಅನ್ನು {quantity} {unit} ಗೆ ಮರುಪೂರೈಸಲಾಗಿದೆ",
@@ -996,13 +1792,17 @@
   "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
   "save": "ಉಳಿಸಿ",
   "saveChanges": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ",
+  "saveProfile": "ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ",
   "saveRecipe": "ಉಳಿಸಿ",
   "savings": "ಉಳಿತಾಯ",
+  "scanBarcodeTitle": "ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
+  "scanProductTitle": "ಉತ್ಪನ್ನವನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
   "searchCurrency": "ಕರೆನ್ಸಿ ಹುಡುಕಿ...",
   "searchInConversation": "ಸಂಭಾಷಣೆಯಲ್ಲಿ ಹುಡುಕಿ...",
   "searchLanguage": "ಭಾಷೆಯನ್ನು ಹುಡುಕಿ...",
   "searchRecipes": "ಪಾಕವಿಧಾನಗಳನ್ನು ಹುಡುಕಿ...",
   "selectAll": "ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡಿ",
+  "selectCheaperAlternative": "ಅಗ್ಗದ ಪರ್ಯಾಯವನ್ನು ಆರಿಸಿ",
   "selectListForDashboard": "ಡ್ಯಾಶ್ಬೋರ್ಡ್ ವೀಕ್ಷಿಸಲು ಪಟ್ಟಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
   "selectedItems": "{count,plural, one{{count} ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ} other{{count} ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ}}",
   "setBudgetButton": "ಬಜೆಟ್ ಹೊಂದಿಸಿ",
@@ -1054,6 +1854,7 @@
   "shortDescription": "ಸಣ್ಣ ವಿವರಣೆ",
   "signInApple": "Apple ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ",
   "signInGoogle": "Google ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ",
+  "skip": "ಬಿಟ್ಟುಬಿಡಿ",
   "smartOrganization": "ಸ್ಮಾರ್ಟ್ ಸಂಘಟನೆ",
   "sortAZ": "A–Z",
   "sortCategory": "ವರ್ಗ",
@@ -1062,8 +1863,19 @@
   "sortName": "ಹೆಸರು",
   "spendingAnalysis": "ಖರ್ಚು ವಿಶ್ಲೇಷಣೆ",
   "spendingByCategory": "ವರ್ಗದ ಪ್ರಕಾರ ಖರ್ಚು",
+  "streakDays": "{count,plural, one{{count} ದಿನ} other{{count} ದಿನಗಳು}}",
+  "subscription": "ಚಂದಾದಾರಿಕೆ",
+  "suggestedItems": "ಸೂಚಿಸಿದ ವಸ್ತುಗಳು",
   "suggestedQuestions": "ಸೂಚಿಸಿದ ಪ್ರಶ್ನೆಗಳು:",
   "suggestedTags": "ಸೂಚಿಸಿದ",
+  "suggestionBread": "ಬ್ರೆಡ್",
+  "suggestionCoffee": "ಕಾಫಿ",
+  "suggestionEggs": "ಮೊಟ್ಟೆಗಳು",
+  "suggestionFruits": "ಹಣ್ಣುಗಳು",
+  "suggestionMilk": "ಹಾಲು",
+  "suggestionRice": "ಅಕ್ಕಿ",
+  "swap": "ಸ್ವ್ಯಾಪ್ ಮಾಡಿ",
+  "swapped": "ಬದಲಾಯಿಸಿಕೊಂಡರು",
   "switchList": "ಪಟ್ಟಿಯನ್ನು ಬದಲಿಸಿ",
   "system": "ಸಿಸ್ಟಮ್",
   "tags": "ಟ್ಯಾಗ್‌ಗಳು",
@@ -1081,6 +1893,7 @@
   "themeSelectionTitle": "ಥೀಮ್ ಬಣ್ಣವನ್ನು ಆರಿಸಿ",
   "themeTeal": "ಟೀಲ್",
   "totalEstimated": "ಒಟ್ಟು ಅಂದಾಜು: {amount}",
+  "totalSavings": "ಒಟ್ಟು ಉಳಿತಾಯ",
   "totalSpending": "ಒಟ್ಟು ಖರ್ಚು",
   "trackStock": "ಸ್ಟಾಕ್ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
   "trackStockActive": "ಶಾಪಿಂಗ್ ಸಲಹೆಗಳಲ್ಲಿ ಕಾಣಿಸುತ್ತದೆ",
@@ -1090,8 +1903,12 @@
   "unitPack": "ಪ್ಯಾಕ್",
   "unlockAi": "ಅನಿಯಮಿತ AI ಅನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
   "unlockFullResponse": "ಪೂರ್ಣ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "unlockPremiumTitle": "ಪ್ರೀಮಿಯಂ ಅನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "unlockWithAd": "ಜಾಹೀರಾತಿನೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "unlockedBadges": "ಅನ್‌ಲಾಕ್ ಮಾಡಿದ ಬ್ಯಾಡ್ಜ್‌ಗಳು",
   "unmark": "ಗುರುತು ತೆಗೆದುಹಾಕಿ",
   "upgrade": "ಅಪ್ಗ್ರೇಡ್ ಮಾಡಿ",
+  "userProfile": "ಬಳಕೆದಾರರ ಪ್ರೊಫೈಲ್",
   "userProfileAvoidedStores": "ತಪ್ಪಿಸಿದ ಅಂಗಡಿಗಳು",
   "userProfileAvoidedStoresHint": "ಉದಾ. ಸ್ಟೋರ್ ಎಕ್ಸ್, ಸ್ಟೋರ್ ವೈ",
   "userProfileDescription": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಆದ್ಯತೆಗಳನ್ನು ಸೇರಿಸಿ ಇದರಿಂದ AI ಸಹಾಯಕ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಐಟಂಗಳು ಮತ್ತು ಪಾಕವಿಧಾನಗಳನ್ನು ಸೂಚಿಸಬಹುದು.",
@@ -1130,5 +1947,6 @@
   "welcomeAiAssistant": "AI ಸಹಾಯಕಕ್ಕೆ ಸುಸ್ವಾಗತ",
   "whatToDoWithItem": "ಈ ಐಟಂನೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?",
   "yes": "ಹೌದು",
-  "yesLabel": "ಹೌದು"
+  "yesLabel": "ಹೌದು",
+  "youCompletedList": "ನೀವು ಪಟ್ಟಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿದ್ದೀರಿ!"
 }

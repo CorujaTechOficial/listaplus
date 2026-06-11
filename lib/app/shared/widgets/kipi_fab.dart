@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/theme/colors.dart';
+import 'package:shopping_list/utils/test_utils.dart';
 
 enum KipiContext { pantry, mealPlanner, recipes }
 
@@ -30,7 +32,16 @@ class KipiFab extends StatelessWidget {
           ),
         ),
       ),
-      child: const Text('\u2728', style: TextStyle(fontSize: 18)),
+      child: const Icon(Icons.auto_awesome, size: 18)
+          .animate(
+            onPlay: (controller) => isTestMode ? null : controller.repeat(reverse: true),
+          )
+          .scale(
+            begin: const Offset(0.9, 0.9),
+            end: const Offset(1.1, 1.1),
+            duration: 1200.ms,
+            curve: Curves.easeInOut,
+          ),
     );
   }
 }

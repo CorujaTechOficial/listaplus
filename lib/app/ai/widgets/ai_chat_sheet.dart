@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class AiChatSheet extends ConsumerWidget {
   const AiChatSheet({
@@ -16,6 +17,7 @@ class AiChatSheet extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
 
     return DraggableScrollableSheet(
@@ -58,7 +60,7 @@ class AiChatSheet extends ConsumerWidget {
                   child: Row(
                     children: [
                       Text(
-                        'Assistente IA',
+                        l10n.aiAssistantTitle,
                         style: theme.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w700,
                         ),
@@ -67,7 +69,7 @@ class AiChatSheet extends ConsumerWidget {
                       TextButton.icon(
                         onPressed: () => Navigator.pop(context),
                         icon: const Icon(Icons.close, size: 18),
-                        label: const Text('Fechar'),
+                        label: Text(l10n.closeSheet),
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
                           minimumSize: Size.zero,

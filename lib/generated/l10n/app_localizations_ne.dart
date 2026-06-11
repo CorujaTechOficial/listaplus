@@ -298,13 +298,13 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'उत्पादन स्क्यान गर्नुहोस्';
 
   @override
   String get positionBarcodeCenter => 'केन्द्रमा बारकोड राख्नुहोस्';
 
   @override
-  String get product => 'Product';
+  String get product => 'उत्पादन';
 
   @override
   String get settingsAppBar => 'सेटिङहरू';
@@ -410,19 +410,19 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'अनलक ब्याजहरू';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'शुरुवातकर्ता';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'संगठित';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'बचत मास्टर';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'सुपर प्लानर';
 
   @override
   String get backupTitle => 'ब्याकअप';
@@ -509,17 +509,17 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased को $total वस्तुहरू';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'बजेट: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'कुल: $amount';
   }
 
   @override
@@ -679,13 +679,13 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'एआई सहायक';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'बन्द गर्नुहोस्';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'बारकोड स्क्यान गर्नुहोस्';
 
   @override
   String get listHelp => 'म तपाईंको सूचीमा कसरी मद्दत गर्न सक्छु?';
@@ -2379,45 +2379,82 @@ class AppLocalizationsNe extends AppLocalizations {
   String get onboardingAiDemoContinue => 'जारी राख्नुहोस्';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline => 'तपाईंको किनमेल सूची, अब AI संग';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'हेर्नुहोस् कसरी Kipi ले सेकेन्डमा तपाईंको पूर्ण सूची बनाउँछ';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'म यो चाहन्छु! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'म बार्बेक्यु होस्ट गर्दैछु 🔥';
 
   @override
   String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+      'तयार! तपाईलाई चाहिने सबै कुरा यहाँ छ:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'सेकेन्डमा पूरा सूची ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'कुन कुराले तपाईलाई धेरै निराश बनाउँछ?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle =>
+      'इमानदार हुनुहोस् - हामी प्रत्येकलाई ठीक गर्नेछौं';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'हो, यो मेरो लागि ठीक गर्नुहोस् →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'म पसलमा सामानहरू बिर्सन्छु';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily => 'मेरो परिवारले सूची कहिल्यै देख्दैन';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'म जहिले पनि बजेटमा जान्छु';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'एक यात्रा कहिल्यै पर्याप्त छैन';
+
+  @override
+  String get aiWelcomeContent =>
+      'नमस्ते! 👋 म **Kipi** हुँ, तपाईंको व्यक्तिगत किनमेल र रेसिपी सहायक!\n\nम तपाईंलाई मद्दत गर्न यहाँ छु:\n🛒 **व्यवस्थित ** आफ्नो किनमेल कोटिहरु द्वारा स्वचालित रूपमा\n💰 **तपाईँको बजेट ट्र्याक गर्नुहोस्** र तपाइँलाई पैसा बचत सुझावहरू दिनुहोस्\n🍲 **सुझाव** स्वादिष्ट व्यञ्जनहरु तपाईसँग पहिले नै छ\n\nआज म तपाईंलाई कसरी मद्दत गर्न सक्छु? तपाईं आफ्नो पहिलो सूची सिर्जना गरेर सुरु गर्न सक्नुहुन्छ!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'मेरो पहिलो सूची बनाउनुहोस्';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, मलाई मेरो पहिलो किनमेल सूची बनाउन मद्दत गर्नुहोस्';
+
+  @override
+  String get aiWelcomeSuggestSave => 'पैसा कसरी बचत गर्ने?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, तपाईं मलाई किराना सामानमा पैसा बचत गर्न कसरी मद्दत गर्न सक्नुहुन्छ?';
+
+  @override
+  String get suggestionMilk => 'दूध';
+
+  @override
+  String get suggestionBread => 'रोटी';
+
+  @override
+  String get suggestionEggs => 'अण्डा';
+
+  @override
+  String get suggestionCoffee => 'कफी';
+
+  @override
+  String get suggestionRice => 'चामल';
+
+  @override
+  String get suggestionFruits => 'फलहरू';
 }
 
 /// The translations for Nepali, as used in Nepal (`ne_NP`).
@@ -2708,7 +2745,13 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   }
 
   @override
+  String get scanProductTitle => 'उत्पादन स्क्यान गर्नुहोस्';
+
+  @override
   String get positionBarcodeCenter => 'केन्द्रमा बारकोड राख्नुहोस्';
+
+  @override
+  String get product => 'उत्पादन';
 
   @override
   String get settingsAppBar => 'सेटिङ्हरू';
@@ -2814,6 +2857,21 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   }
 
   @override
+  String get unlockedBadges => 'अनलक ब्याजहरू';
+
+  @override
+  String get badgeBeginner => 'शुरुवातकर्ता';
+
+  @override
+  String get badgeOrganized => 'संगठित';
+
+  @override
+  String get badgeSavingMaster => 'बचत मास्टर';
+
+  @override
+  String get badgeSuperPlanner => 'सुपर प्लानर';
+
+  @override
   String get backupTitle => 'ब्याकअप';
 
   @override
@@ -2895,6 +2953,21 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get sortManual => 'म्यानुअल';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased को $total वस्तुहरू';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'बजेट: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'कुल: $amount';
+  }
 
   @override
   String get addItem => 'वस्तु थप्नुहोस्';
@@ -3051,6 +3124,15 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String chatError(String error) {
     return 'च्याट लोड गर्दा त्रुटि: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'एआई सहायक';
+
+  @override
+  String get closeSheet => 'बन्द गर्नुहोस्';
+
+  @override
+  String get scanBarcodeTitle => 'बारकोड स्क्यान गर्नुहोस्';
 
   @override
   String get listHelp => 'तपाईंको सूचीमा कसरी मद्दत गर्न सक्छु?';
@@ -4778,4 +4860,40 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get onboardingPainRepeat => 'एक यात्रा कहिल्यै पर्याप्त छैन';
+
+  @override
+  String get aiWelcomeContent =>
+      'नमस्ते! 👋 म **Kipi** हुँ, तपाईंको व्यक्तिगत किनमेल र रेसिपी सहायक!\n\nम तपाईंलाई मद्दत गर्न यहाँ छु:\n🛒 **व्यवस्थित ** आफ्नो किनमेल कोटिहरु द्वारा स्वचालित रूपमा\n💰 **तपाईँको बजेट ट्र्याक गर्नुहोस्** र तपाइँलाई पैसा बचत सुझावहरू दिनुहोस्\n🍲 **सुझाव** स्वादिष्ट व्यञ्जनहरु तपाईसँग पहिले नै छ\n\nआज म तपाईंलाई कसरी मद्दत गर्न सक्छु? तपाईं आफ्नो पहिलो सूची सिर्जना गरेर सुरु गर्न सक्नुहुन्छ!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'मेरो पहिलो सूची बनाउनुहोस्';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, मलाई मेरो पहिलो किनमेल सूची बनाउन मद्दत गर्नुहोस्';
+
+  @override
+  String get aiWelcomeSuggestSave => 'पैसा कसरी बचत गर्ने?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, तपाईं मलाई किराना सामानमा पैसा बचत गर्न कसरी मद्दत गर्न सक्नुहुन्छ?';
+
+  @override
+  String get suggestionMilk => 'दूध';
+
+  @override
+  String get suggestionBread => 'रोटी';
+
+  @override
+  String get suggestionEggs => 'अण्डा';
+
+  @override
+  String get suggestionCoffee => 'कफी';
+
+  @override
+  String get suggestionRice => 'चामल';
+
+  @override
+  String get suggestionFruits => 'फलहरू';
 }

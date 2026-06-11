@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +10,7 @@ import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
-import 'package:shopping_list/domain/entities/premium_feature.dart';
+import 'package:shopping_list/models/premium_feature.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PaywallScreen extends ConsumerStatefulWidget {
@@ -580,12 +579,11 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   mode: LaunchMode.externalApplication,
                 ),
                 style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
+                  minimumSize: const Size(48, 44),
                   padding: const EdgeInsets.symmetric(
                     horizontal: Spacing.xs,
                     vertical: 2,
                   ),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
                 child: Text(
                   l10n.paywallPolicy,
@@ -610,12 +608,11 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                   mode: LaunchMode.externalApplication,
                 ),
                 style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
+                  minimumSize: const Size(48, 44),
                   padding: const EdgeInsets.symmetric(
                     horizontal: Spacing.xs,
                     vertical: 2,
                   ),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
                 child: Text(
                   l10n.paywallTerms,
@@ -763,4 +760,3 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
   }
 }
 
-// coverage:ignore-end

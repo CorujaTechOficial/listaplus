@@ -298,13 +298,13 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Ապրանքի սկանավորում';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Տեղադրեք շտրիխ կոդը կենտրոնում';
 
   @override
-  String get product => 'Product';
+  String get product => 'Արտադրանք';
 
   @override
   String get settingsAppBar => 'Կարգավորումներ';
@@ -392,39 +392,39 @@ class AppLocalizationsHy extends AppLocalizations {
   String get termsOfUse => 'Օգտագործման պայմաններ';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Իմ նվաճումները';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Գնված ապրանքներ';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Ընդհանուր խնայողություններ';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Ընթացիկ շարանը';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count օր',
+      one: '$count օր',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Ապակողպված կրծքանշաններ';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Սկսնակ';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Կազմակերպված';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Փրկիչ Վարպետ';
 
   @override
   String get badgeSuperPlanner => 'Super Planner';
@@ -514,17 +514,17 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased $total ապրանքներից';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Բյուջե՝ $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Ընդհանուր՝ $amount';
   }
 
   @override
@@ -685,13 +685,13 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI օգնական';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Փակել';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Սկանավորեք շտրիխ կոդը';
 
   @override
   String get listHelp => 'Ինչպե՞ս կարող եմ օգնել ձեր ցուցակին:';
@@ -2425,4 +2425,40 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Մեկ ճանապարհորդությունը երբեք բավարար չէ';
+
+  @override
+  String get aiWelcomeContent =>
+      'Ողջույն 👋 Ես **Kipi**-ն եմ՝ ձեր անձնական գնումների և բաղադրատոմսերի օգնականը:\n\nԵս այստեղ եմ ձեզ օգնելու համար.\n🛒 **Կազմակերպեք** Ձեր գնումներն ըստ կատեգորիաների ավտոմատ կերպով\n💰 **Հետևեք** ձեր բյուջեին և ձեզ գումար խնայելու խորհուրդներ տվեք\n🍲 **Առաջարկեք** համեղ բաղադրատոմսեր այն ամենով, ինչ արդեն ունեք\n\nԻնչպե՞ս կարող եմ օգնել ձեզ այսօր: Դուք կարող եք սկսել՝ ստեղծելով ձեր առաջին ցուցակը:';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Ստեղծեք իմ առաջին ցուցակը';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Կիպի, օգնիր ինձ ստեղծել իմ առաջին գնումների ցուցակը';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Ինչպե՞ս գումար խնայել:';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Կիպի, ինչպե՞ս կարող ես օգնել ինձ գումար խնայել մթերքների վրա:';
+
+  @override
+  String get suggestionMilk => 'Կաթ';
+
+  @override
+  String get suggestionBread => 'Հաց';
+
+  @override
+  String get suggestionEggs => 'Ձու';
+
+  @override
+  String get suggestionCoffee => 'Սուրճ';
+
+  @override
+  String get suggestionRice => 'Բրինձ';
+
+  @override
+  String get suggestionFruits => 'Մրգեր';
 }

@@ -5,7 +5,7 @@ import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
-import 'package:shopping_list/domain/entities/unit.dart';
+import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/models/recipe.dart';

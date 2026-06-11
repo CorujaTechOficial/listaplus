@@ -299,13 +299,13 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'ಉತ್ಪನ್ನವನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'ಬಾರ್‌ಕೋಡ್ ಅನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಿ';
 
   @override
-  String get product => 'Product';
+  String get product => 'ಉತ್ಪನ್ನ';
 
   @override
   String get settingsAppBar => 'ಸೆಟ್ಟಿಂಗ್ಗಳು';
@@ -393,42 +393,42 @@ class AppLocalizationsKn extends AppLocalizations {
   String get termsOfUse => 'ಬಳಕೆಯ ನಿಯಮಗಳು';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'ನನ್ನ ಸಾಧನೆಗಳು';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'ಖರೀದಿಸಿದ ವಸ್ತುಗಳು';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'ಒಟ್ಟು ಉಳಿತಾಯ';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'ಪ್ರಸ್ತುತ ಸ್ಟ್ರೀಕ್';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count ದಿನಗಳು',
+      one: '$count ದಿನ',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'ಅನ್‌ಲಾಕ್ ಮಾಡಿದ ಬ್ಯಾಡ್ಜ್‌ಗಳು';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'ಹರಿಕಾರ';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'ಆಯೋಜಿಸಲಾಗಿದೆ';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'ಉಳಿಸುವ ಮಾಸ್ಟರ್';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'ಸೂಪರ್ ಪ್ಲಾನರ್';
 
   @override
   String get backupTitle => 'ಬ್ಯಾಕಪ್';
@@ -515,17 +515,17 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased ರಲ್ಲಿ $total ಐಟಂಗಳು';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'ಬಜೆಟ್: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'ಒಟ್ಟು: $amount';
   }
 
   @override
@@ -686,13 +686,13 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI ಸಹಾಯಕ';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'ಮುಚ್ಚಿ';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ';
 
   @override
   String get listHelp => 'ನಿಮ್ಮ ಪಟ್ಟಿಯೊಂದಿಗೆ ನಾನು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಲ್ಲೆ?';
@@ -2428,6 +2428,42 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ಒಂದು ಪ್ರವಾಸ ಎಂದಿಗೂ ಸಾಕಾಗುವುದಿಲ್ಲ';
+
+  @override
+  String get aiWelcomeContent =>
+      'ನಮಸ್ಕಾರ! 👋 ನಾನು **ಕಿಪಿ**, ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಶಾಪಿಂಗ್ ಮತ್ತು ಪಾಕವಿಧಾನ ಸಹಾಯಕ!\n\nನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ನಾನು ಇಲ್ಲಿದ್ದೇನೆ:\n🛒 **ಸಂಘಟಿಸಿ** ವಿಭಾಗಗಳ ಮೂಲಕ ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮಾಡಿ\n💰 **ಟ್ರ್ಯಾಕ್** ನಿಮ್ಮ ಬಜೆಟ್ ಮತ್ತು ನಿಮಗೆ ಹಣ ಉಳಿಸುವ ಸಲಹೆಗಳನ್ನು ನೀಡಿ\n🍲 **ಸಲಹೆ** ನೀವು ಈಗಾಗಲೇ ಹೊಂದಿರುವ ರುಚಿಕರವಾದ ಪಾಕವಿಧಾನಗಳನ್ನು\n\nಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು? ನಿಮ್ಮ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸುವ ಮೂಲಕ ನೀವು ಪ್ರಾರಂಭಿಸಬಹುದು!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'ನನ್ನ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'ಕಿಪಿ, ನನ್ನ ಮೊದಲ ಶಾಪಿಂಗ್ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು ನನಗೆ ಸಹಾಯ ಮಾಡಿ';
+
+  @override
+  String get aiWelcomeSuggestSave => 'ಹಣವನ್ನು ಉಳಿಸುವುದು ಹೇಗೆ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'ಕಿಪಿ, ದಿನಸಿಯಲ್ಲಿ ಹಣವನ್ನು ಉಳಿಸಲು ನೀವು ನನಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?';
+
+  @override
+  String get suggestionMilk => 'ಹಾಲು';
+
+  @override
+  String get suggestionBread => 'ಬ್ರೆಡ್';
+
+  @override
+  String get suggestionEggs => 'ಮೊಟ್ಟೆಗಳು';
+
+  @override
+  String get suggestionCoffee => 'ಕಾಫಿ';
+
+  @override
+  String get suggestionRice => 'ಅಕ್ಕಿ';
+
+  @override
+  String get suggestionFruits => 'ಹಣ್ಣುಗಳು';
 }
 
 /// The translations for Kannada, as used in India (`kn_IN`).
@@ -2725,6 +2761,15 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   }
 
   @override
+  String get scanProductTitle => 'ಉತ್ಪನ್ನವನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ';
+
+  @override
+  String get positionBarcodeCenter => 'ಬಾರ್‌ಕೋಡ್ ಅನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಿ';
+
+  @override
+  String get product => 'ಉತ್ಪನ್ನ';
+
+  @override
   String get settingsAppBar => 'ಸೆಟ್ಟಿಂಗ್ಗಳು';
 
   @override
@@ -2810,6 +2855,44 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   String get termsOfUse => 'ಬಳಕೆಯ ನಿಯಮಗಳು';
 
   @override
+  String get myAchievements => 'ನನ್ನ ಸಾಧನೆಗಳು';
+
+  @override
+  String get itemsPurchased => 'ಖರೀದಿಸಿದ ವಸ್ತುಗಳು';
+
+  @override
+  String get totalSavings => 'ಒಟ್ಟು ಉಳಿತಾಯ';
+
+  @override
+  String get currentStreak => 'ಪ್ರಸ್ತುತ ಸ್ಟ್ರೀಕ್';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ದಿನಗಳು',
+      one: '$count ದಿನ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'ಅನ್‌ಲಾಕ್ ಮಾಡಿದ ಬ್ಯಾಡ್ಜ್‌ಗಳು';
+
+  @override
+  String get badgeBeginner => 'ಹರಿಕಾರ';
+
+  @override
+  String get badgeOrganized => 'ಆಯೋಜಿಸಲಾಗಿದೆ';
+
+  @override
+  String get badgeSavingMaster => 'ಉಳಿಸುವ ಮಾಸ್ಟರ್';
+
+  @override
+  String get badgeSuperPlanner => 'ಸೂಪರ್ ಪ್ಲಾನರ್';
+
+  @override
   String get backupTitle => 'ಬ್ಯಾಕಪ್';
 
   @override
@@ -2891,6 +2974,21 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get sortManual => 'ಹಸ್ತಚಾಲಿತ';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased ರಲ್ಲಿ $total ಐಟಂಗಳು';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'ಬಜೆಟ್: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'ಒಟ್ಟು: $amount';
+  }
 
   @override
   String get addItem => 'ಐಟಂ ಸೇರಿಸಿ';
@@ -3048,6 +3146,15 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   String chatError(String error) {
     return 'ಚಾಟ್ ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ದೋಷ: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI ಸಹಾಯಕ';
+
+  @override
+  String get closeSheet => 'ಮುಚ್ಚಿ';
+
+  @override
+  String get scanBarcodeTitle => 'ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ';
 
   @override
   String get listHelp => 'ನಿಮ್ಮ ಪಟ್ಟಿಯೊಂದಿಗೆ ನಾನು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಲ್ಲೆ?';
@@ -4783,4 +4890,40 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get onboardingPainRepeat => 'ಒಂದು ಪ್ರವಾಸ ಎಂದಿಗೂ ಸಾಕಾಗುವುದಿಲ್ಲ';
+
+  @override
+  String get aiWelcomeContent =>
+      'ನಮಸ್ಕಾರ! 👋 ನಾನು **ಕಿಪಿ**, ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಶಾಪಿಂಗ್ ಮತ್ತು ಪಾಕವಿಧಾನ ಸಹಾಯಕ!\n\nನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ನಾನು ಇಲ್ಲಿದ್ದೇನೆ:\n🛒 **ಸಂಘಟಿಸಿ** ವಿಭಾಗಗಳ ಮೂಲಕ ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮಾಡಿ\n💰 **ಟ್ರ್ಯಾಕ್** ನಿಮ್ಮ ಬಜೆಟ್ ಮತ್ತು ನಿಮಗೆ ಹಣ ಉಳಿಸುವ ಸಲಹೆಗಳನ್ನು ನೀಡಿ\n🍲 **ಸಲಹೆ** ನೀವು ಈಗಾಗಲೇ ಹೊಂದಿರುವ ರುಚಿಕರವಾದ ಪಾಕವಿಧಾನಗಳನ್ನು\n\nಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು? ನಿಮ್ಮ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸುವ ಮೂಲಕ ನೀವು ಪ್ರಾರಂಭಿಸಬಹುದು!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'ನನ್ನ ಮೊದಲ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'ಕಿಪಿ, ನನ್ನ ಮೊದಲ ಶಾಪಿಂಗ್ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು ನನಗೆ ಸಹಾಯ ಮಾಡಿ';
+
+  @override
+  String get aiWelcomeSuggestSave => 'ಹಣವನ್ನು ಉಳಿಸುವುದು ಹೇಗೆ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'ಕಿಪಿ, ದಿನಸಿಯಲ್ಲಿ ಹಣವನ್ನು ಉಳಿಸಲು ನೀವು ನನಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?';
+
+  @override
+  String get suggestionMilk => 'ಹಾಲು';
+
+  @override
+  String get suggestionBread => 'ಬ್ರೆಡ್';
+
+  @override
+  String get suggestionEggs => 'ಮೊಟ್ಟೆಗಳು';
+
+  @override
+  String get suggestionCoffee => 'ಕಾಫಿ';
+
+  @override
+  String get suggestionRice => 'ಅಕ್ಕಿ';
+
+  @override
+  String get suggestionFruits => 'ಹಣ್ಣುಗಳು';
 }

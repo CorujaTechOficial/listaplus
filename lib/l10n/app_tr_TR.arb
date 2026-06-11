@@ -41,8 +41,62 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
+  },
+  "@backToToday": {
+    "description": "Button to return to today's meal plan"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -54,12 +108,38 @@
       }
     }
   },
+  "@catalogAddItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@catalogSearchInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
   },
   "@completedOn": {
     "placeholders": {
@@ -89,10 +169,41 @@
       }
     }
   },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for connectionErrorDesc"
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@currentTheme": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
+      }
+    }
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
       }
     }
   },
@@ -113,6 +224,9 @@
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
   },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
+  },
   "@editPantryItem": {
     "placeholders": {
       "name": {
@@ -127,12 +241,221 @@
       }
     }
   },
+  "@errorAddingBatch": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorAddingBatch"
+  },
+  "@errorAddingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorAddingItem"
+  },
+  "@errorArchivingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorArchivingList"
+  },
+  "@errorClearingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorClearingList"
+  },
+  "@errorClearingPurchased": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorClearingPurchased"
+  },
+  "@errorDecreasingQty": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorDecreasingQty"
+  },
+  "@errorDeletingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorDeletingList"
+  },
+  "@errorExecutingTool": {
+    "placeholders": {
+      "tool": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorExecutingTool"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorImportingList": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorImportingList"
+  },
+  "@errorIncreasingQty": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorIncreasingQty"
+  },
+  "@errorLoadingProducts": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorLoadingProducts"
+  },
+  "@errorRemovingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingItem"
+  },
+  "@errorRemovingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingItems"
+  },
+  "@errorRemovingSharedList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingSharedList"
+  },
+  "@errorReordering": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorReordering"
+  },
+  "@errorRestoringItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRestoringItem"
+  },
+  "@errorSavingProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorSavingProfile"
+  },
+  "@errorServerConnection": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorServerConnection"
+  },
+  "@errorSettingCurrentList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorSettingCurrentList"
+  },
+  "@errorTogglingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorTogglingItem"
+  },
+  "@errorTogglingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorTogglingItems"
+  },
+  "@errorUnarchivingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUpdatingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingItem"
+  },
+  "@errorUpdatingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingItems"
+  },
+  "@errorUpdatingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingList"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
   },
   "@feedbackError": {
     "placeholders": {
@@ -141,8 +464,25 @@
       }
     }
   },
+  "@gestureHint": {
+    "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -178,6 +518,12 @@
       }
     }
   },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
+  },
   "@listAdded": {
     "placeholders": {
       "listName": {
@@ -203,6 +549,13 @@
     }
   },
   "@mealPlannerGenerateListSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -243,6 +596,105 @@
       }
     }
   },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -252,11 +704,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -264,8 +791,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -281,6 +835,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -312,6 +875,24 @@
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
   },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
+  },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
   },
@@ -331,6 +912,13 @@
       }
     }
   },
+  "@pantryLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallCtaTrialDays": {
     "placeholders": {
       "days": {
@@ -338,7 +926,175 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
+  "@recipeAddedConfirmation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "listName": {
+        "type": "String"
+      }
+    }
+  },
   "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@replaceItem": {
     "placeholders": {
       "name": {
         "type": "String"
@@ -389,7 +1145,35 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
+  },
+  "@themeChanged": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
     }
   },
   "@totalEstimated": {
@@ -398,6 +1182,9 @@
         "type": "String"
       }
     }
+  },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
   },
   "about": "Hakkında",
   "achievements": "Başarılar",
@@ -409,29 +1196,54 @@
   "addItem": "Öğe Ekle",
   "addItemPrice": "Tahmini fiyat",
   "addPhoto": "Fotoğraf ekle",
+  "addToList": "Listeye Ekle",
   "addToPantry": "Kiler'e Ekle",
   "addToPantryPrompt": "\"{name}\" kilerinize eklensin mi?",
   "addedFeedback": "Eklendi!",
+  "addingIngredientsToList": "Listeye malzemeler ekleniyor...",
+  "addingItems": "Listeye öğeler ekleniyor...",
+  "addingToPantry": "Kilere ekleniyor...",
   "advancedFeatures": "Gelişmiş özellikler",
   "aiAssistant": "AI Asistan",
   "aiAssistantDescription": "AI asistanımızla akıllı öneriler, tarifler ve kişiselleştirilmiş ipuçları alın.",
+  "aiAssistantTitle": "Yapay Zeka Asistanı",
   "aiCreditsRemaining": "{remaining} kredi kaldı",
   "aiEnergy": "Yapay Zeka Enerjisi",
+  "aiEnergyLow": "Düşük yapay zeka enerjisi",
   "aiError": "Üzgünüz, isteğiniz işlenirken bir hata oluştu. Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
   "aiLimitAlmostReached": "AI mesajları neredeyse tükendi",
+  "aiPremiumDescription": "Bu etkileşimli arayüz, gelişmiş yapay zekayı kullanır ve Pro üyelere özeldir veya hızlı bir reklam aracılığıyla sunulur.",
+  "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} bugün",
+  "aiSubscribeUnlimited": "Sınırsız yapay zeka için abone olun",
   "aiTeaserFallback": "Tam yanıtın kilidini açmak ve alışverişiniz için sınırsız AI ipuçları almak için Premium'a abone olun...",
+  "aiUnlockUnlimited": "Sınırsız yapay zekanın kilidini açın",
+  "aiUsageExhausted": "Aylık AI sınırına ulaşıldı. Sınırsız olarak Pro'ya yükseltin →",
+  "aiUsageWarning": "{remaining} Bu ay kalan AI işlemleri — sınırsız yükseltme",
   "aiVoiceCommandTooltip": "AI Ses Komutu (Premium)",
+  "aiWelcomeContent": "Merhaba! 👋 Ben **Kipi**, kişisel alışveriş ve yemek tarifi asistanınım!\n\nSize yardım etmek için buradayım:\n🛒 Alışverişinizi otomatik olarak kategorilere göre **düzenleyin**\n💰 **Bütçenizi takip edin** ve paradan tasarruf etmenizi sağlayacak ipuçları verin\n🍲 **Elinizde olanlarla lezzetli tarifler önerin**\n\nBugün sana nasıl yardımcı olabilirim? İlk listenizi oluşturarak başlayabilirsiniz!",
+  "aiWelcomeSuggestCreateList": "İlk listemi oluştur",
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, ilk alışveriş listemi oluşturmama yardım et",
+  "aiWelcomeSuggestSave": "Paradan nasıl tasarruf edilir?",
+  "aiWelcomeSuggestSavePrompt": "Kipi, alışverişten tasarruf etmeme nasıl yardımcı olabilirsin?",
   "allTags": "Tüm",
   "alreadyPurchased": "Zaten satın alındı",
   "appTitle": "Alışveriş Listesi",
   "appearance": "Görünüm",
   "archiveList": "Listeyi arşivle",
+  "assistantHistory": "Asistan geçmişi",
+  "assistantHistorySubtitle": "Konuşma geçmişinizi görüntüleyin",
+  "assistantName": "Asistan adı",
   "backToChat": "Sohbete Geri Dön",
+  "backToToday": "Bugüne dön",
   "backupExported": "Yedek dışa aktarıldı!",
   "backupNav": "Yedekle",
   "backupPremiumDescription": "Yedekleme ve dışa aktarma bir premium özelliğidir",
   "backupSubtitle": "Verilerinizi dışa veya içe aktarın",
   "backupTitle": "Yedekleme",
+  "badgeBeginner": "Acemi",
+  "badgeOrganized": "Organize",
+  "badgeSavingMaster": "Master kaydetme",
+  "badgeSuperPlanner": "Süper Planlayıcı",
   "becomePremium": "Premium Ol",
   "budgetAmountLabel": "Bütçe tutarı",
   "budgetAmountSpent": "{spent} / {budget}",
@@ -451,21 +1263,46 @@
   "catCleaning": "Temizlik",
   "catFruits": "Meyve",
   "catOthers": "Diğer",
+  "catalogAddItems": "{count} {count, plural, one{item} other{items}} ekle →",
+  "catalogBrowse": "Kataloğa Göz Atın",
+  "catalogFilterNational": "Vatandaşlar",
+  "catalogMyFrequents": "Sık Kullanılanlarım",
+  "catalogProductNotFound": "Ürün bulunamadı, adını yazın",
+  "catalogRareSection": "ülkenizde daha az yaygın",
+  "catalogSearchGlobal": "Herhangi bir ürünü arayın...",
+  "catalogSearchInCategory": "{category}'da ara...",
+  "catalogSortAZ": "A'dan Z'ye",
+  "catalogSortPopular": "En popüler",
+  "catalogTitle": "Katalog",
+  "categorizingItems": "Öğeler sınıflandırılıyor...",
   "category": "Kategori",
+  "categoryColorLabel": "Renk",
+  "categoryIconLabel": "Simge",
+  "categoryLimitReached": "Ücretsiz sürümde 10 kategori sınırı bulunmaktadır. Pro'ya yükseltin!",
+  "categoryName": "Kategori adı",
+  "categoryNameHint": "Örn: Etler",
   "chatError": "Sohbet yüklenirken hata: {error}",
   "chatHint": "Mesajınızı yazın...",
   "chatHintBlocked": "Sohbet etmek için AI'nın kilidini açın",
   "chatSubtitle": "Öğe önerileri, tarifler veya tasarruf ipuçları isteyin.",
   "chatSubtitleShort": "Fiyatlar, tarifler, organizasyon hakkında bilgi alın...",
+  "checkingItem": "Öğe kontrol ediliyor...",
+  "checkingPantry": "Kileriniz kontrol ediliyor...",
+  "checkingSettings": "Ayarlarınız kontrol ediliyor...",
   "chooseCurrency": "Para Birimi Seçin",
+  "chooseIcon": "Simge seç",
   "chooseImageSource": "Resim kaynağını seçin",
   "chooseLanguage": "Dil Seçiniz",
+  "chooseThemeColor": "Tema Rengini Seçin",
   "clear": "Temizle",
   "clearHistory": "Geçmişi Temizle",
   "clearHistoryConfirm": "Bu oturumdaki tüm mesajlar temizlensin mi?",
   "clearList": "Listeyi temizle",
   "clearPurchased": "Satın alınanları temizle",
+  "clearingCheckedItems": "İşaretlenen öğeler temizleniyor...",
   "close": "Kapat",
+  "closeSheet": "Kapalı",
+  "color": "Renk:",
   "complete": "Tamamla",
   "completePurchase": "Satın almayı tamamla",
   "completedOn": "{date} tarihinde tamamlandı",
@@ -477,22 +1314,49 @@
   "confirmDeleteItems": "{count} öğe kaldırılsın mı?",
   "confirmDeleteTitle": "Onayla",
   "confirmRemovePantry": "\"{name}\" kilerden kaldırılsın mı?",
+  "connectionError": "Bağlantı Hatası",
+  "connectionError2": "Üzgünüz, bir bağlantı hatası oluştu.",
+  "connectionErrorDesc": "Sunucuya bağlanılamadı. İnternetinizi kontrol edin.\n({error})",
+  "consentAccept": "Kabul etmek",
+  "consentBody": "KipiList deneyiminizi geliştirmek için Firebase Analytics'i kullanıyor. Verileriniz Gizlilik Politikamıza uygun olarak işlenmektedir.",
+  "consentDecline": "Hayır, teşekkürler",
+  "consentTitle": "Gizlilik ve Analitik",
   "consumed": "Tüketildi",
   "continueAsGuest": "Misafir olarak devam et",
+  "conversationHistoryTitle": "Konuşma geçmişi",
   "copiedToClipboard": "Panoya kopyalandı",
   "copy": "Kopyala",
+  "couldNotProcess": "Birden fazla denemeden sonra işlenemedi.",
   "create": "Oluştur",
   "createFirstList": "İlk Listeyi Oluştur",
   "createListDialog": "Liste Oluştur",
   "createListToStartAi": "Akıllı sohbeti kullanmaya başlamak için bir alışveriş listesi oluşturun.",
   "createNewList": "Yeni liste oluştur",
+  "creatingNewList": "Yeni liste oluşturuluyor...",
   "currency": "Para birimi",
   "currentQty": "Mevcut miktar",
   "currentQuantity": "Mevcut miktar",
+  "currentStreak": "Mevcut Seri",
+  "currentTheme": "Güncel tema: {mode}",
+  "customizeAiAssistant": "Yapay Zeka asistanını özelleştirin",
+  "customizeAssistant": "Özelleştirmek",
   "dark": "Karanlık",
   "data": "Veri",
+  "dayFri": "Cuma",
+  "dayMon": "Pazartesi",
+  "daySat": "Doygunluk",
+  "daySun": "Güneş",
+  "dayThu": "Per",
+  "dayTue": "Salı",
+  "dayWed": "Çar",
   "deficitItems": "{deficit} öğenin satın alınması gerekiyor",
   "delete": "Sil",
+  "deleteCategory": "Silmek",
+  "deleteCategoryConfirm": "\"{category}\" kategorisindeki öğeler \"Diğerleri\"ne taşınacaktır.\nDevam etmek?",
+  "deleteCategoryTitle": "Kategoriyi Sil",
+  "deleteConversation": "Silmek",
+  "deleteConversationConfirm": "Bu işlem geri alınamaz.",
+  "deleteConversationTitle": "Görüşme Silinsin mi?",
   "deleteListConfirm": "Listeyi sil",
   "deleteListContent": "\"{name}\" silmek istediğinize emin misiniz? Tüm öğeler kaldırılacak.",
   "deleteListTitle": "Listeyi sil",
@@ -502,12 +1366,15 @@
   "deleteSession": "Sohbeti Sil",
   "deleteSessionConfirm": "Bu sohbeti silmek istediğinizden emin misiniz? Mesajlar kalıcı olarak kaybolacak.",
   "deselectAll": "Tümünün seçimini kaldır",
+  "dietaryRestrictions": "Diyet Kısıtlamaları",
+  "dietaryRestrictionsHint": "Örn: vegan, vejetaryen, glutensiz",
   "dynamicColors": "Dinamik renkler",
   "dynamicColorsEnabledWarning": "Tema renginin etkili olması için dinamik renkleri devre dışı bırakın",
   "dynamicColorsSubtitle": "Duvar kağıdınıza göre renkler kullanın",
   "economyTips": "Tasarruf ipuçları",
   "economyTipsPrompt": "Bu alışverişte nasıl para biriktirebilirim?",
   "edit": "Düzenle",
+  "editCategoryDialog": "Kategoriyi düzenle",
   "editItem": "Öğeyi Düzenle",
   "editItemPrice": "Tahmini fiyat",
   "editPantryItem": "{name} düzenle",
@@ -519,14 +1386,54 @@
   "enterCodeHint": "Kodu girin",
   "enterUrl": "URL'yi girin",
   "error": "Hata: {message}",
+  "errorAddingBatch": "Öğeler toplu olarak eklenirken hata oluştu: {error}",
+  "errorAddingItem": "Öğe eklenirken hata oluştu: {error}",
+  "errorArchivingList": "Liste arşivlenirken hata oluştu: {error}",
+  "errorClearingList": "Liste temizlenirken hata oluştu: {error}",
+  "errorClearingPurchased": "Satın alınan öğeler temizlenirken hata oluştu: {error}",
+  "errorCreatingList": "Liste oluşturulurken hata oluştu",
+  "errorDecreasingQty": "Miktar azaltılırken hata oluştu: {error}",
+  "errorDeletingList": "Liste silinirken hata oluştu: {error}",
+  "errorExecutingTool": "{tool} yürütülürken hata oluştu: {error}",
+  "errorGeneratingCode": "Benzersiz kod oluşturulurken hata oluştu. Tekrar deneyin.",
   "errorGeneric": "Hata: {message}",
+  "errorImportingList": "\"{name}\" listesi içe aktarılırken hata oluştu: {error}",
+  "errorIncreasingQty": "Miktar artırılırken hata oluştu: {error}",
   "errorLoadingChat": "Hata! Sohbet yüklenirken bir şeyler ters gitti.",
   "errorLoadingChatSubtitle": "Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+  "errorLoadingHistory": "Geçmiş yüklenirken hata oluştu",
+  "errorLoadingLists": "Listeler yüklenirken hata oluştu",
+  "errorLoadingProducts": "Ürünler yüklenirken hata oluştu: {error}",
   "errorLoadingRecipes": "Tarifler yüklenirken hata oluştu",
+  "errorLoadingSubscription": "Abonelik yüklenirken hata oluştu",
   "errorOscillation": "Bu, ağ salınımları veya geçici olarak kullanılamama nedeniyle meydana gelebilir. Lütfen tekrar deneyin.",
+  "errorProcessingRequest": "Üzgünüz, isteğiniz işlenirken bir hata oluştu. Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+  "errorRemovingItem": "Öğe kaldırılırken hata oluştu: {error}",
+  "errorRemovingItems": "Öğeler kaldırılırken hata oluştu: {error}",
+  "errorRemovingSharedList": "Paylaşılan liste kaldırılırken hata oluştu: {error}",
+  "errorRenderScreen": "Hata! Bu ekran oluşturulurken bir şeyler ters gitti.",
+  "errorReordering": "Öğe yeniden sıralanırken hata oluştu: {error}",
+  "errorRestoringItem": "Öğe geri yüklenirken hata oluştu: {error}",
+  "errorResumingLoop": "[ResumeLoop] Döngüyü devam ettirirken hata oluştu",
+  "errorResumingProcessing": "İşleme devam ettirilirken hata oluştu.",
+  "errorSavingProfile": "Kaydederken hata oluştu: {error}",
+  "errorServerConnection": "Sunucuya bağlanırken hata oluştu: {error}",
+  "errorSettingCurrentList": "Mevcut liste ayarlanırken hata oluştu: {error}",
+  "errorTogglingItem": "Öğe durumu değiştirilirken hata oluştu: {error}",
+  "errorTogglingItems": "Öğeler değiştirilirken hata oluştu: {error}",
+  "errorUnarchivingList": "Liste arşivden çıkarılırken hata oluştu: {error}",
+  "errorUpdatingItem": "Öğe güncellenirken hata oluştu: {error}",
+  "errorUpdatingItems": "Öğeler güncellenirken hata oluştu: {error}",
+  "errorUpdatingList": "Liste güncellenirken hata oluştu: {error}",
+  "errorUserNotAuthenticated": "Kullanıcının kimliği doğrulanmadı.",
   "estimated": "Tahmini",
   "estimatedCost": "Tahmini",
   "estimatedPrice": "Tahmini fiyat",
+  "estimatingPrices": "Fiyatlar tahmin ediliyor...",
+  "everythingReady": "Her şey hazır!",
+  "exit": "Çıkış",
+  "exitShoppingMode": "Alışveriş Modundan Çık",
+  "expirationDate": "Son kullanma tarihi",
   "exportData": "Veriyi dışa aktar",
   "exportDataSubtitle": "Tüm listeleri JSON olarak kaydedin",
   "exportExcel": "Excel olarak dışa aktar",
@@ -565,8 +1472,12 @@
   "generalAssistant": "Genel Asistan",
   "generalHelp": "Bugün alışverişinizle ilgili nasıl yardımcı olabilirim?",
   "generateShoppingList": "Alışveriş listesi oluştur",
+  "generatingContent": "Kişiselleştirilmiş içerik üretmek...",
+  "generatingShareLink": "Paylaşım bağlantısı oluşturuluyor...",
+  "gestureHint": "Seçmek için basılı tutun • Kaldırmak için kaydırın",
   "globalAssistant": "Genel asistan",
   "howCanIHelp": "Nasıl yardımcı olabilirim?",
+  "icon": "Simge:",
   "idealQty": "İdeal miktar",
   "idealQuantity": "İdeal miktar",
   "imageUrlPlaceholder": "Veya bir resim URL'si yapıştırın",
@@ -581,14 +1492,19 @@
   "instructions": "Talimatlar",
   "instructionsHint": "Her satıra bir adım yazın...",
   "inviteToList": "Listeye davet et",
+  "itemAdded": "{name} eklendi",
+  "itemAddedSnack": "{name} eklendi",
   "itemName": "Öğe adı",
   "itemRemoved": "Öğe kaldırıldı",
   "itemsAddedSuccess": "Öğeler listeye başarıyla eklendi!",
   "itemsNeedPurchase": "{deficit} öğenin satın alınması gerekiyor",
+  "itemsPurchased": "Satın Alınan Öğeler",
   "itemsPurchasedCount": "{purchased} / {total} satın alındı",
   "itemsPurchasedShort": "{purchased}/{total} satın alındı",
   "itemsWillBeAdded": "{count} öğe eklenecek",
+  "kipiListProActive": "KipiList Pro Aktif",
   "kipiListTitle": "Kipi Listesi",
+  "kipiQuickBarHint": "Ne satın almanız gerekiyor?",
   "language": "Dil",
   "languageEnglish": "İngilizce",
   "languagePortuguese": "Portekizce (Brezilya)",
@@ -603,17 +1519,26 @@
   "listHistory": "Liste Geçmişi",
   "listNameLabel": "Liste adı",
   "listOrganizedMagic": "Liste kategorilere göre sihirli bir şekilde düzenlendi! ✨",
+  "listUnarchived": "Liste başarıyla arşivden çıkarıldı.",
   "listening": "Dinleme...",
   "lists": "Listeler",
   "loading": "Yükleniyor...",
+  "loadingMenu": "Menünüz yükleniyor...",
+  "loadingProfile": "Profiliniz yükleniyor...",
   "loadingRecipes": "Tarifleriniz yükleniyor...",
+  "loadingSubscription": "Abonelik yükleniyor...",
   "loginError": "Giriş hatası: {error}",
   "loginPrompt": "Premium özelliklerin\nkilidini açmak için giriş yapın",
   "longHistoryWarning": "Uzun geçmiş: Asistan, daha iyi performans için en son mesajlara odaklanır.",
+  "manageCategories": "Kategorileri Yönet",
+  "manageCategoriesSubtitle": "Öğe kategorilerini yönet",
+  "manageCategoriesTitle": "Kategorileri Yönet",
   "manageSubscription": "Aboneliği yönet",
   "markAsPurchased": "Satın alındı olarak işaretle",
   "markItemsToSeeAnalysis": "Analizi görmek için öğeleri satın alındı olarak işaretleyin.",
   "marketMode": "Piyasa Modu",
+  "marketsToAvoid": "Kaçınılması Gereken Piyasalar",
+  "marketsToAvoidHint": "Örn: Y Pazarı, Z Pazarı",
   "mealPlannerAddMeal": "Yemek Ekle",
   "mealPlannerDateLabel": "Tarih",
   "mealPlannerDeleteMeal": "Yemeği kaldır",
@@ -635,6 +1560,8 @@
   "mealPlannerNoRecipesFound": "Tarif bulunamadı",
   "mealPlannerNoRecipesHint": "Önce Tarifler sekmesinde tarifler oluşturun",
   "mealPlannerNoteLabel": "Not (isteğe bağlı)",
+  "mealPlannerPantryAllAvailable": "Tüm malzemeler mevcut",
+  "mealPlannerPantryMissing": "{count} {count, plural, one{ingredient} other{ingredients}} eksik",
   "mealPlannerPrepTime": "{minutes} dk.",
   "mealPlannerSave": "Plana ekle",
   "mealPlannerSearchRecipes": "Tarif ara...",
@@ -647,12 +1574,32 @@
   "mealPlannerWeekEmpty": "Bu hafta için planlanmış bir şey yok",
   "mealPlannerWeekEmptyHint": "Yemeklerinizi planlamaya başlamak için herhangi bir güne dokunun!",
   "mealPlannerWeekProgress": "{count} / {total} öğün planlandı",
+  "mealType": "Yemek türü",
+  "monthApril": "Nisan",
+  "monthAugust": "Ağustos",
+  "monthDecember": "Aralık",
+  "monthFebruary": "Şubat",
+  "monthJanuary": "Ocak",
+  "monthJuly": "Temmuz",
+  "monthJune": "Haziran",
+  "monthMarch": "Mart",
+  "monthMay": "Mayıs",
+  "monthNovember": "Kasım",
+  "monthOctober": "Ekim",
+  "monthSeptember": "Eylül",
   "monthlyBudgetAppBar": "Aylık Bütçe",
   "monthlyBudgetNav": "Aylık bütçe",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Aylık Bütçe",
+  "myAchievements": "Başarılarım",
   "myLists": "Listelerim",
+  "myProfile": "Profilim",
   "myRecipes": "Tariflerim",
+  "navChat": "Sohbet",
+  "navLists": "Listeler",
+  "navMealPlanner": "Menü",
+  "navRecipes": "Tarifler",
+  "newCategoryDialog": "Yeni kategori",
   "newChat": "Yeni Sohbet",
   "newListTitle": "Yeni Alışveriş Listesi",
   "newPantryList": "Kiler Alışverişi",
@@ -662,6 +1609,8 @@
   "noActiveLists": "Aktif liste yok",
   "noArchivedLists": "Arşivlenmiş liste yok",
   "noBudgetDefined": "Bütçe belirlenmedi",
+  "noCategories": "Kategori yok.",
+  "noConversationsFound": "Hiçbir görüşme bulunamadı",
   "noHistory": "Sohbet geçmişi yok",
   "noItemsInList": "Listede öğe yok",
   "noItemsToAnalyze": "Analiz edilecek listede öğe yok.",
@@ -669,23 +1618,90 @@
   "noLabel": "Hayır",
   "noListFoundSubtitle": "Başlamak için ilk listenizi oluşturun",
   "noListFoundTitle": "Liste bulunamadı",
+  "noListSelected": "Liste seçilmedi. Önce bir liste açın.",
+  "noListsFound": "Liste bulunamadı",
   "noMessagesFound": "Mesaj bulunamadı",
   "noRecipesSaved": "Hiç tarif kaydedilmedi",
   "noRecipesSavedHint": "Aşağıdaki düğmeye dokunarak ilk özel tarifinizi oluşturun.",
   "noTracking": "Takip yok",
+  "notInformed": "Ayarlanmadı",
+  "observations": "Notlar",
+  "observationsHint": "Asistan için diğer tercihler",
+  "offlineBanner": "Çevrimdışısınız",
+  "onboardingAiAskConfirm": "Bu iyi görünüyor mu? Başka bir şey yazmayı deneyin!",
+  "onboardingAiAskFood": "En sevdiğiniz yemek hangisi?",
+  "onboardingAiAskName": "Adınız ne?",
+  "onboardingAiContinue": "Devam →",
+  "onboardingAiDemoChange": "Öğeyi değiştir",
+  "onboardingAiDemoContinue": "Devam etmek",
+  "onboardingAiDemoGreeting": "Merhaba {name}! Hangi {category}'e ihtiyacınız var?",
+  "onboardingAiDemoGreetingNoName": "Hangi {category}'a ihtiyacınız var?",
+  "onboardingAiDemoOffer": "Başka bir şey yazmayı deneyin!",
+  "onboardingAiDemoReaction": "Güzel!",
+  "onboardingAiDemoSlideCta": "Bunu istiyorum! →",
+  "onboardingAiDemoSlideDone": "Listeyi saniyeler içinde tamamlayın ✨",
+  "onboardingAiDemoSlideHeadline": "Alışveriş listeniz artık AI ile",
+  "onboardingAiDemoSlideReady": "Hazır! İhtiyacınız olan her şey burada:",
+  "onboardingAiDemoSlideSubtitle": "Kipi'nin tam listenizi saniyeler içinde nasıl oluşturduğunu görün",
+  "onboardingAiDemoSlideUserMsg": "Barbekü düzenliyorum 🔥",
+  "onboardingAiDemoYes": "Evet!",
+  "onboardingAiFoodHint": "örneğin Pizza, Suşi...",
+  "onboardingAiGreeting": "MERHABA! Ben kişisel alışveriş asistanınız Kipi'yim! 🛒",
+  "onboardingAiIngredients": "Harika seçimler! İşte listenize ekleyeceğim şeyler:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "Adınızı yazın...",
+  "onboardingAiNiceToMeet": "Tanıştığımıza memnun oldum {name}! 🎉",
+  "onboardingAiReady": "Harika! Başlamaya hazırsınız. Hesabınızı kuralım!",
+  "onboardingAiTitle": "Kipi ile sohbet et",
   "onboardingAnnualBadge": "En İyi Değer",
   "onboardingAnnualLabel": "Yıllık",
   "onboardingCancelAnytime": "İstediğiniz zaman iptal edin. Taahhüt yok.",
+  "onboardingCategoryGrocery": "Bakkaliye",
+  "onboardingCategoryHome": "Ev",
+  "onboardingCategoryPet": "Evcil Hayvan",
+  "onboardingCategoryPharmacy": "Eczane",
+  "onboardingCategoryRecipes": "Tarifler",
+  "onboardingCommitmentsCta": "Hadi gidelim!",
+  "onboardingCommitmentsSubtitle": "KipiList'i kişiselleştirmek için hedeflerinizi seçin",
+  "onboardingCommitmentsTitle": "Senin için önemli olan ne?",
   "onboardingContinueAsGuest": "Konuk olarak devam et",
   "onboardingExit": "Çıkış",
+  "onboardingGoalFamily": "Aile alışverişini organize edin",
+  "onboardingGoalFaster": "Daha hızlı alışveriş yapın",
+  "onboardingGoalNeverForget": "Öğeleri asla unutma",
+  "onboardingGoalPantry": "Parça kileri",
+  "onboardingGoalRecipes": "Tarifleri keşfedin",
+  "onboardingGoalSaveMoney": "Paradan tasarruf edin",
+  "onboardingGroupCouple": "Çift",
+  "onboardingGroupFamily": "Aile",
+  "onboardingGroupSolo": "Benim",
+  "onboardingHookHeadline": "Bir bakkaliye ürününü bir daha asla unutma",
+  "onboardingLoadingStat1Label": "Kataloglanan ürünler",
+  "onboardingLoadingStat2Label": "Kullanıcılar yardımcı oldu",
+  "onboardingLoadingStat3Label": "Dakikalar kaydedildi",
+  "onboardingLoadingStep1": "Tercihleriniz analiz ediliyor...",
+  "onboardingLoadingStep2": "Yapay zeka asistanı kuruluyor...",
+  "onboardingLoadingStep3": "Neredeyse hazır...",
+  "onboardingLoadingTitle": "Deneyiminiz hazırlanıyor...",
   "onboardingLoginDesc": "Verileriniz tüm cihazlarınızda senkronize edildi",
   "onboardingLoginTitle": "Her şeyi buluta kaydedin",
+  "onboardingMaybeLater": "Belki daha sonra",
   "onboardingMonthlyLabel": "Aylık",
+  "onboardingPainCta": "Evet, bunu benim için düzelt →",
+  "onboardingPainFamily": "Ailem listeyi hiç görmüyor",
+  "onboardingPainForget": "Mağazadaki eşyaları unutuyorum",
+  "onboardingPainOverspend": "Her zaman bütçeyi aşarım",
+  "onboardingPainRepeat": "Bir yolculuk asla yeterli değildir",
+  "onboardingPainSubtitle": "Dürüst olun; her birini düzelteceğiz",
+  "onboardingPainTitle": "Seni en çok ne sinirlendirir?",
+  "onboardingPersonalizationCategoryTitle": "Ne için alışveriş yaparsınız?",
   "onboardingPersonalizationCta": "Devam etmek",
   "onboardingPersonalizationDesc": "Bunu önerilerinizi kişiselleştirmek ve alışverişi daha akıllı hale getirmek için kullanacağız.",
   "onboardingPersonalizationFoodHint": "örneğin Pizza, Suşi, Lazanya...",
   "onboardingPersonalizationFoodLabel": "En sevdiğiniz yemek hangisi?",
   "onboardingPersonalizationFoodRequired": "Devam etmek için bize en sevdiğiniz yemeği söyleyin",
+  "onboardingPersonalizationGroupTitle": "Kimin için alışveriş yapıyorsun?",
+  "onboardingPersonalizationNameHint": "Adınızı girin",
+  "onboardingPersonalizationNameLabel": "Adınız",
   "onboardingPersonalizationSkip": "Şimdilik atla",
   "onboardingPersonalizationTitle": "Hadi seni tanıyalım",
   "onboardingPremiumSubtitle": "Alışveriş listelerinizden en iyi şekilde yararlanın",
@@ -696,6 +1712,12 @@
   "onboardingSetupTitle": "Deneyiminizi kişiselleştirin",
   "onboardingShareDesc": "Listeleri aileniz ve arkadaşlarınızla gerçek zamanlı olarak senkronize edin",
   "onboardingShareTitle": "Sevdiklerinizle paylaşın",
+  "onboardingSlide1Body": "Anında listeler oluşturun ve paylaşın. Kipi, alışkanlıklarınıza göre öğeleri otomatik olarak ekler.",
+  "onboardingSlide1Title": "Akıllı Alışveriş Listeleri",
+  "onboardingSlide2Body": "İstediğiniz şeyi sorun; listeler oluşturun, tarifler bulun, kilerinizi takip edin, haftanızı planlayın.",
+  "onboardingSlide2Title": "Kipi'yle tanışın",
+  "onboardingSlide3Body": "Sahip olduklarınızı takip edin, yemekleri planlayın ve otomatik olarak alışveriş listeleri oluşturun.",
+  "onboardingSlide3Title": "Kiler ve Yemek Planlama",
   "onboardingSubscribeCta": "Abone",
   "onboardingViewAllPlans": "Tüm planları görüntüle",
   "onboardingWelcomeDesc": "Alışverişinizi organize etmenin ve paradan tasarruf etmenin en akıllı yolu.",
@@ -705,12 +1727,15 @@
   "organizeAislesPrompt": "Market reyonlarına göre düzenle.",
   "organizeByAisles": "Reyonlara göre düzenle",
   "organizingAi": "AI İLE DÜZENLENİYOR...",
+  "organizingMenu": "Menünüzü düzenliyoruz...",
+  "othersCategory": "Diğerleri",
   "pantry": "Kiler",
   "pantryAppBar": "Kiler",
   "pantryEditTitle": "{name} düzenle",
   "pantryEmpty": "Boş kiler",
   "pantryEmptySubtitle": "Evde bulundurmak istediğiniz ürünleri ekleyin",
   "pantryItemRemoved": "Öğe kaldırıldı",
+  "pantryLimitReached": "Ücretsiz planda kilerdeki {count} öğe sınırı. Daha fazlasını eklemek için yükseltin.",
   "paywallAfterItem1": "Tahıllar",
   "paywallAfterItem2": "Temizlik",
   "paywallAfterItem3": "Etler",
@@ -727,13 +1752,31 @@
   "paywallCancelAnytime": "İstediğiniz zaman iptal edin. Taahhüt yok.",
   "paywallCtaTrialDays": "Ücretsiz başlayın — {days} gün",
   "paywallCtaUnlock": "PRO'nun kilidini aç",
+  "paywallFeatureDescAssistant": "AI listenizi otomatik olarak düzenler",
+  "paywallFeatureDescBudget": "Her ay bütçenizi aşındırmayın",
+  "paywallFeatureDescPantry": "Evde ne varsa takip edin",
+  "paywallFeatureDescSharing": "Gerçek zamanlı olarak birlikte alışveriş yapın",
+  "paywallFeatureDescUnlimitedLists": "İhtiyacınız kadar liste oluşturun",
   "paywallFeatureExpenseControl": "Gider Kontrolü",
   "paywallFeatureSharing": "Paylaşma",
   "paywallFeatureSmartAI": "Akıllı Yapay Zeka",
   "paywallFeatureUnlimitedLists": "Sınırsız Liste",
   "paywallFeaturesTitle": "İhtiyacınız olan her şey:",
+  "paywallGoalHeadlineFamily": "{name}, aile alışverişini organize edin!",
+  "paywallGoalHeadlineFaster": "{name}, yarı zamanda alışveriş yapın!",
+  "paywallGoalHeadlineNeverForget": "{name}, hiçbir öğeyi asla unutma!",
+  "paywallGoalHeadlineNoNameFamily": "Aile alışverişini düzenleyin!",
+  "paywallGoalHeadlineNoNameFaster": "Yarı zamanda alışveriş yapın!",
+  "paywallGoalHeadlineNoNameNeverForget": "Bir öğeyi asla unutma!",
+  "paywallGoalHeadlineNoNamePantry": "Kilerinizi mükemmel bir şekilde takip edin!",
+  "paywallGoalHeadlineNoNameRecipes": "Yeni tarifler keşfedin!",
+  "paywallGoalHeadlineNoNameSaveMoney": "Her yolculukta tasarruf edin!",
+  "paywallGoalHeadlinePantry": "{name}, kilerinizi mükemmel bir şekilde takip edin!",
+  "paywallGoalHeadlineRecipes": "{name}, yeni tarifler keşfet!",
+  "paywallGoalHeadlineSaveMoney": "{name}, her yolculukta tasarruf edin!",
   "paywallHeroHeadline": "Kipi AI her zaman yanınızda",
   "paywallHeroSubtitle": "Cebinizdeki AI ile öğeler ekleyin, listeleri düzenleyin ve zamandan tasarruf edin",
+  "paywallHeroSubtitlePersonalized": "Hey {name}, alışverişinizi doğru şekilde düzenleyin.",
   "paywallLabelCommon": "Yaygın",
   "paywallLabelPro": "KipiList PRO",
   "paywallLoadingError": "Teklifler yüklenirken hata oluştu. Tekrar deneyin.",
@@ -743,24 +1786,37 @@
   "paywallPackageMonthly": "Aylık Plan",
   "paywallPackageMonthlyDesc": "Tam esneklik",
   "paywallPolicy": "Gizlilik Politikası",
+  "paywallPricePerDay": "Yalnızca {price}/gün — bir kahveden az",
   "paywallPricePerMonth": "Yalnızca {price}/ay",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "Satın alma işlemi tamamlanamadı. Tekrar deneyin.",
   "paywallRestore": "Eski haline getirmek",
   "paywallRestoreError": "Geri yüklenecek etkin abonelik bulunamadı.",
   "paywallSafeCheckout": "Güvenli ödeme",
   "paywallSavePercent": "%{percent} TASARRUF EDİN",
+  "paywallSecuredByStore": "Google Play tarafından güvence altına alınmıştır · İstediğiniz zaman iptal edin",
   "paywallSelectPlan": "Planınızı seçin:",
+  "paywallSkipNow": "Şimdilik atla",
   "paywallSocialProof": "+2.400 aile kullanıyor",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "Kullanım Koşulları",
+  "paywallTestimonial": "Yapay zeka alışverişimi saniyeler içinde organize ediyor. Yolculuk başına 20 dakika tasarruf ediyorum.",
   "paywallTestimonial1Name": "Anne S.",
   "paywallTestimonial1Text": "Yapay zeka alışverişimi saniyeler içinde organize ediyor. Pazar gezisi başına 20 dakika tasarruf ediyorum.",
   "paywallTestimonial2Name": "Charles M.",
   "paywallTestimonial2Text": "Bir liste öğesini bir daha asla unutmadım. AI sohbeti sansasyonel!",
+  "paywallTestimonialAuthor": "Anne S.",
   "paywallTestimonialsTitle": "Kullanıcılarımız ne diyor:",
   "paywallTitle": "KipiList Premium",
+  "paywallTrialCta": "Ücretsiz Denemeyi Başlat",
   "paywallTrialDays": "{days} GÜN ÜCRETSİZ",
+  "paywallTrialDisclaimer": "İstediğiniz zaman iptal edin · Deneme süreniz bitene kadar ücretsiz",
+  "paywallTrialInCard": "İlk {days} gün ÜCRETSİZ",
   "paywallTrialMonths": "{count,plural, one{{count} AY ÜCRETSİZ} other{{count} AY ÜCRETSİZ}}",
+  "paywallTrialSubtitle": "İstediğiniz zaman iptal edin. Bugün ücret yok.",
+  "paywallTrialTitle": "Ücretsiz deneyin!",
   "paywallTrialWeeks": "{count,plural, one{{count} HAFTA ÜCRETSİZ} other{{count} HAFTA ÜCRETSİZ}}",
+  "positionBarcodeCenter": "Barkodu ortaya yerleştirin",
   "prefAIAssistant": "Kişisel AI Asistan",
   "prefCustomThemes": "Özel temalar",
   "prefExportData": "Veriyi dışa aktar",
@@ -770,17 +1826,36 @@
   "prefSharing": "Listeleri paylaş",
   "prefUnlimitedLists": "Sınırsız liste",
   "prefUnlimitedPantry": "Sınırsız kiler",
+  "preferredMarket": "Tercih Edilen Pazar",
+  "preferredMarketHint": "Örn: Süpermarket X",
   "premiumUpgrade": "Kilidi açmak için yükseltin",
   "prepTime": "Hazırlık zamanı",
   "prepTimeMinutes": "Hazırlık süresi (dakika)",
   "privacy": "Gizlilik",
+  "processing": "İşleme...",
+  "product": "Ürün",
   "productName": "Ürün adı",
+  "profile": "Profil",
+  "profileDescription": "Yapay zeka asistanının kişiselleştirilmiş öğeler ve tarifler önerebilmesi için bize kişisel tercihlerinizi bildirin.",
+  "profileSaved": "Profil başarıyla kaydedildi!",
+  "profileSection": "Profil",
+  "profileSubtitle": "Yapay zeka asistanı için kişisel tercihler",
+  "progressBudget": "Bütçe: {amount}",
+  "progressItemsOf": "{purchased} / {total} öğe",
+  "progressTotal": "Toplam: {amount}",
   "purchaseError": "Satın alma işlenirken hata oluştu. Tekrar deneyin.",
+  "purchasedSuffix": "[Satın alındı]",
   "quantityFull": "Miktar",
   "quantityShort": "Adet",
+  "quantityUnitWithPrice": "{qty} {unit} — {price}",
+  "quantityWithUnit": "{qty} {unit}",
+  "queryingYourLists": "Listeleriniz sorgulanıyor...",
   "quickRecipe": "Hızlı tarif",
   "quickRecipePrompt": "Listemdeki öğelerle tarif öner.",
   "quickReplies": "Hızlı yanıtlar:",
+  "quickSuggestions": "Hızlı öneriler",
+  "recipeAddToList": "Alışveriş listesine ekle",
+  "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}}, {listName}'e eklendi",
   "recipeCreated": "Tarif oluşturuldu!",
   "recipeDeleted": "Tarif silindi",
   "recipeImage": "Tarif resmi",
@@ -795,8 +1870,16 @@
   "removeSharedListContent": "\"{name}\" listenizden kaldırılsın mı? Orijinal liste etkilenmeyecek.",
   "removeSharedListTitle": "Paylaşılan listeyi kaldır",
   "removeSharedTooltip": "Kaldır",
+  "removingFromPantry": "Kilerden kaldırılıyor...",
+  "removingItems": "Öğeler kaldırılıyor...",
+  "removingList": "Liste kaldırılıyor...",
+  "removingRecipe": "Tarif kaldırılıyor...",
   "rename": "Yeniden adlandır",
   "renameListDialog": "Listeyi Yeniden Adlandır",
+  "renamingList": "Liste yeniden adlandırılıyor...",
+  "reorganizingList": "Liste yeniden düzenleniyor...",
+  "replaceItem": "{item} öğesini değiştirin",
+  "requestTimeout": "Üzgünüz, istek zaman aşımına uğradı.",
   "requiredField": "Gerekli",
   "restockLabel": "Yenile",
   "restocked": "{name} {quantity} {unit} olarak yenilendi",
@@ -805,17 +1888,30 @@
   "retry": "Tekrar dene",
   "save": "Kaydet",
   "saveChanges": "Değişiklikleri kaydet",
+  "saveProfile": "Profili Kaydet",
   "saveRecipe": "Kaydetmek",
+  "savingPreferences": "Tercihleriniz kaydediliyor...",
+  "savingRecipe": "Tarif kaydediliyor...",
   "savings": "Tasarruf",
+  "scanBarcode": "Barkodu Tara",
+  "scanBarcodeTitle": "Barkodu Tara",
+  "scanProduct": "Ürünü Tara",
+  "scanProductTitle": "Ürünü Tara",
   "searchCurrency": "Para birimini ara...",
   "searchInConversation": "Görüşmede ara...",
   "searchLanguage": "Dil ara...",
   "searchRecipes": "Tarif ara...",
+  "searchingCategories": "Kategoriler aranıyor...",
+  "searchingProducts": "Ürünler aranıyor...",
+  "searchingRecipes": "Yemek tarifleri aranıyor...",
+  "searchingSharedList": "Paylaşılan liste aranıyor...",
   "selectAll": "Tümünü seç",
+  "selectCheaperAlternative": "Maliyeti optimize etmek için daha ucuz bir ürün alternatifi seçin.",
   "selectListForDashboard": "Kontrol panelini görüntülemek için bir liste seçin.",
   "selectedItems": "{count} seçili",
   "setBudgetButton": "Bütçe belirle",
   "setBudgetTitle": "Aylık Bütçe",
+  "settingBudget": "Bütçe ayarlanıyor...",
   "settingsAppBar": "Ayarlar",
   "settingsDefaultScreen": "Varsayılan ana ekran",
   "settingsDefaultScreenSubtitle": "Alışveriş listesi veya AI sohbeti arasında seçim yapın",
@@ -835,20 +1931,34 @@
   "shareViaCode": "Kodla paylaş",
   "sharedLabel": "Paylaşıldı",
   "shoppingAssistant": "Alışveriş asistanı",
+  "shoppingList": "Alışveriş listesi",
   "shoppingMode": "Alışveriş Modu",
   "shoppingModeHeader": "ALIŞVERİŞ MODU",
   "shortDescription": "Kısa açıklama",
   "signInApple": "Apple ile giriş yap",
   "signInGoogle": "Google ile giriş yap",
+  "skip": "Atlamak",
   "smartOrganization": "Akıllı Düzenleme",
+  "sortAZ": "A'dan Z'ye",
   "sortCategory": "Kategori",
   "sortDate": "Tarih",
   "sortManual": "Manuel",
   "sortName": "Ad",
   "spendingAnalysis": "Harcama Analizi",
   "spendingByCategory": "Kategoriye Göre Harcama",
+  "streakDays": "{days} gün",
+  "subscription": "Abonelik",
+  "suggestedItems": "Önerilen öğeler",
   "suggestedQuestions": "Önerilen sorular:",
   "suggestedTags": "Önerilen",
+  "suggestionBread": "Ekmek",
+  "suggestionCoffee": "Kahve",
+  "suggestionEggs": "Yumurtalar",
+  "suggestionFruits": "Meyveler",
+  "suggestionMilk": "Süt",
+  "suggestionRice": "Pirinç",
+  "swap": "Takas",
+  "swapped": "Değiştirildi",
   "switchList": "Listeyi değiştir",
   "system": "Sistem",
   "tags": "Etiketler",
@@ -856,6 +1966,7 @@
   "themeAmber": "Kehribar",
   "themeBlue": "Mavi",
   "themeBrown": "Kahverengi",
+  "themeChanged": "Tema {mode} olarak değiştirildi.",
   "themeColor": "Tema rengi",
   "themeGreen": "Yeşil",
   "themeIndigo": "Çivit",
@@ -864,18 +1975,38 @@
   "themePurple": "Mor",
   "themeRed": "Kırmızı",
   "themeTeal": "Deniz yeşili",
+  "toolAddItems": "Öğe ekle",
+  "toolAddToPantry": "Kilere ekle",
+  "toolDeleteList": "Listeyi sil",
+  "toolDeleteRecipe": "Tarifi sil",
+  "toolRemoveFromPantry": "Kilerden kaldır",
+  "toolRemoveItems": "Öğeleri kaldır",
+  "toolRemoveMeal": "Yemeği kaldır",
+  "toolRemovePreference": "Tercihi kaldır",
+  "toolSavePreference": "Tercihi kaydet",
+  "toolSaveRecipe": "Tarifi kaydet",
+  "toolShareList": "Listeyi paylaş",
   "totalEstimated": "Toplam tahmini: {amount}",
+  "totalSavings": "Toplam Tasarruf",
   "totalSpending": "Toplam Harcama",
   "trackStock": "Stok takibi",
   "trackStockActive": "Alışveriş önerilerinde görünür",
   "trackStockInactive": "Alışveriş önerisi oluşturmaz",
+  "uncheckingItem": "Öğenin işareti kaldırılıyor...",
   "undo": "Geri al",
   "unit": "Birim",
   "unitPack": "paket",
   "unlockAi": "Sınırsız yapay zekanın kilidini açın",
   "unlockFullResponse": "Tam Yanıtın Kilidini Aç",
+  "unlockPremiumTitle": "Sınırsız listelerin, yapay zekanın ve daha fazlasının kilidini açın",
+  "unlockWithAd": "Reklamla Kilidini Aç",
+  "unlockedBadges": "Kilidi Açılmış Rozetler",
   "unmark": "İşareti kaldır",
+  "updatingItem": "Öğe güncelleniyor...",
+  "updatingMenu": "Menü güncelleniyor...",
+  "updatingPantry": "Kiler güncelleniyor...",
   "upgrade": "Yükselt",
+  "userProfile": "Kullanıcı Profili",
   "validForLimitedTime": "Sınırlı süre için geçerlidir",
   "version": "Sürüm",
   "viewActive": "Aktif Olanları Gör",
@@ -894,8 +2025,5 @@
   "whatToDoWithItem": "Bu eşyayla ne yapmak istersiniz?",
   "yes": "Evet",
   "yesLabel": "Evet",
-  "navChat": "Chat",
-  "navRecipes": "Tarifler",
-  "navLists": "Listeler",
-  "navMealPlanner": "Menü"
+  "youCompletedList": "Listeyi tamamladınız!"
 }

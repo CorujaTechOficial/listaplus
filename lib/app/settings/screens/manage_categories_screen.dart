@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/domain/entities/category_data.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/app/lists/widgets/add_edit_category_dialog.dart';
@@ -10,17 +11,18 @@ class ManageCategoriesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final categoriesAsync = ref.watch(categoriesProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Gerenciar Categorias'),
+        title: Text(l10n.manageCategoriesTitle),
       ),
       body: SafeArea(
         child: categoriesAsync.when(
           data: (categories) => _CategoriesList(categories: categories),
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => Center(child: Text('Erro: $e')),
+          error: (e, _) => Center(child: Text(l10n.error('$e'))),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -32,6 +34,7 @@ class ManageCategoriesScreen extends ConsumerWidget {
   }
 
   Future<void> _addCategory(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context)!;
     final premiumAsync = ref.read(premiumProvider);
     final categories = ref.read(categoriesProvider).value ?? [];
     final isPremium = premiumAsync.value ?? false;
@@ -39,7 +42,7 @@ class ManageCategoriesScreen extends ConsumerWidget {
     if (!isPremium && categories.length >= 10) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Limite de 10 categorias na versão gratuita. Faça upgrade para o Pro!')),
+          SnackBar(content: Text(l10n.categoryLimitReached)),
         );
       }
       return;
@@ -114,17 +117,18 @@ class _CategoriesList extends ConsumerWidget {
   }
 
   Future<void> _deleteCategory(BuildContext context, WidgetRef ref, CategoryData cat) async {
+    final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Excluir Categoria'),
-        content: Text('Itens com a categoria "${cat.name}" serão movidos para "Outros".\nContinuar?'),
+        title: Text(l10n.deleteCategoryTitle),
+        content: Text(l10n.deleteCategoryConfirm(cat.name)),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancelar')),
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(l10n.cancel)),
           ElevatedButton(
             onPressed: () => Navigator.pop(ctx, true),
             style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-            child: const Text('Excluir'),
+            child: Text(l10n.deleteCategory),
           ),
         ],
       ),

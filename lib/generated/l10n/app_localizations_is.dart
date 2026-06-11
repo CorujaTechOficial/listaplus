@@ -297,13 +297,13 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Skanna vöru';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Settu strikamerkið í miðjuna';
 
   @override
-  String get product => 'Product';
+  String get product => 'Vara';
 
   @override
   String get settingsAppBar => 'Stillingar';
@@ -391,42 +391,42 @@ class AppLocalizationsIs extends AppLocalizations {
   String get termsOfUse => 'Notkunarskilmálar';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Afrek mín';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Hlutir keyptir';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Samtals sparnaður';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Núverandi Streak';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
+      other: '$count dagar',
       one: '$count day',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Ólæst merki';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Byrjandi';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Skipulagður';
 
   @override
   String get badgeSavingMaster => 'Saving Master';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Ofur skipuleggjandi';
 
   @override
   String get backupTitle => 'Öryggisafrit';
@@ -514,17 +514,17 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased af $total atriðum';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Kostnaðarhámark: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Samtals: $amount';
   }
 
   @override
@@ -685,13 +685,13 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI aðstoðarmaður';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Loka';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Skannaðu strikamerki';
 
   @override
   String get listHelp => 'Hvernig get ég aðstoðað þig með listann?';
@@ -2415,6 +2415,42 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Ein ferð er aldrei nóg';
+
+  @override
+  String get aiWelcomeContent =>
+      'Halló! 👋 Ég er **Kipi**, persónulega innkaupa- og uppskriftaaðstoðarmaðurinn þinn!\n\nÉg er hér til að hjálpa þér:\n🛒 **Skoðaðu** innkaupin þín sjálfkrafa eftir flokkum\n💰 **Fylgstu með** kostnaðarhámarkinu þínu og gefðu þér ráð til að spara peninga\n🍲 ** Stingdu upp á ljúffengum uppskriftum með því sem þú átt nú þegar\n\nHvernig get ég hjálpað þér í dag? Þú getur byrjað á því að búa til fyrsta listann þinn!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Búðu til fyrsta listann minn';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hjálpaðu mér að búa til fyrsta innkaupalistann minn';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hvernig á að spara peninga?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hvernig geturðu hjálpað mér að spara peninga í matvöru?';
+
+  @override
+  String get suggestionMilk => 'Mjólk';
+
+  @override
+  String get suggestionBread => 'Brauð';
+
+  @override
+  String get suggestionEggs => 'Egg';
+
+  @override
+  String get suggestionCoffee => 'Kaffi';
+
+  @override
+  String get suggestionRice => 'Hrísgrjón';
+
+  @override
+  String get suggestionFruits => 'Ávextir';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -2710,6 +2746,15 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   }
 
   @override
+  String get scanProductTitle => 'Skanna vöru';
+
+  @override
+  String get positionBarcodeCenter => 'Settu strikamerkið í miðjuna';
+
+  @override
+  String get product => 'Vara';
+
+  @override
   String get settingsAppBar => 'Stillingar';
 
   @override
@@ -2795,6 +2840,44 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get termsOfUse => 'Notkunarskilmálar';
 
   @override
+  String get myAchievements => 'Afrek mín';
+
+  @override
+  String get itemsPurchased => 'Hlutir keyptir';
+
+  @override
+  String get totalSavings => 'Samtals sparnaður';
+
+  @override
+  String get currentStreak => 'Núverandi Streak';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dagar',
+      one: '$count day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Ólæst merki';
+
+  @override
+  String get badgeBeginner => 'Byrjandi';
+
+  @override
+  String get badgeOrganized => 'Skipulagður';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Ofur skipuleggjandi';
+
+  @override
   String get backupTitle => 'Öryggisafrit';
 
   @override
@@ -2877,6 +2960,21 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get sortManual => 'Handvirkt';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased af $total atriðum';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Kostnaðarhámark: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Samtals: $amount';
+  }
 
   @override
   String get addItem => 'Bæta við hlut';
@@ -3034,6 +3132,15 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String chatError(String error) {
     return 'Villa við að hlaða spjalli: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI aðstoðarmaður';
+
+  @override
+  String get closeSheet => 'Loka';
+
+  @override
+  String get scanBarcodeTitle => 'Skannaðu strikamerki';
 
   @override
   String get listHelp => 'Hvernig get ég aðstoðað þig með listann?';
@@ -4757,4 +4864,40 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get onboardingPainRepeat => 'Ein ferð er aldrei nóg';
+
+  @override
+  String get aiWelcomeContent =>
+      'Halló! 👋 Ég er **Kipi**, persónulega innkaupa- og uppskriftaaðstoðarmaðurinn þinn!\n\nÉg er hér til að hjálpa þér:\n🛒 **Skoðaðu** innkaupin þín sjálfkrafa eftir flokkum\n💰 **Fylgstu með** kostnaðarhámarkinu þínu og gefðu þér ráð til að spara peninga\n🍲 ** Stingdu upp á ljúffengum uppskriftum með því sem þú átt nú þegar\n\nHvernig get ég hjálpað þér í dag? Þú getur byrjað á því að búa til fyrsta listann þinn!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Búðu til fyrsta listann minn';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hjálpaðu mér að búa til fyrsta innkaupalistann minn';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hvernig á að spara peninga?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hvernig geturðu hjálpað mér að spara peninga í matvöru?';
+
+  @override
+  String get suggestionMilk => 'Mjólk';
+
+  @override
+  String get suggestionBread => 'Brauð';
+
+  @override
+  String get suggestionEggs => 'Egg';
+
+  @override
+  String get suggestionCoffee => 'Kaffi';
+
+  @override
+  String get suggestionRice => 'Hrísgrjón';
+
+  @override
+  String get suggestionFruits => 'Ávextir';
 }

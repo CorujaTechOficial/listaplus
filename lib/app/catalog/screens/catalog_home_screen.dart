@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -72,8 +71,9 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
           categoryId: 'others',
         );
     if (mounted) {
+      final snackL10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('$name adicionado'), duration: const Duration(seconds: 1)),
+        SnackBar(content: Text(snackL10n.itemAddedSnack(name)), duration: const Duration(seconds: 1)),
       );
     }
   }
@@ -110,7 +110,7 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
                 padding: EdgeInsets.all(Spacing.lg),
                 child: CircularProgressIndicator(),
               )),
-              error: (e, _) => Text('Erro: $e'),
+              error: (e, _) => Text(l10n.error('$e')),
               data: (results) {
                 if (results.isEmpty) {
                   return Padding(
@@ -160,4 +160,3 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
     );
   }
 }
-// coverage:ignore-end

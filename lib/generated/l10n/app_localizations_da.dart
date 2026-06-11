@@ -296,13 +296,13 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Scan produkt';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Placer stregkoden i midten';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Indstillinger';
@@ -390,42 +390,42 @@ class AppLocalizationsDa extends AppLocalizations {
   String get termsOfUse => 'Brugsvilkår';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Mine præstationer';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Varer købt';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Samlet besparelse';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Nuværende streak';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count dage',
+      one: '$count dag',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Ulåste badges';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Nybegynder';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organiseret';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Redningsmester';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super planlægger';
 
   @override
   String get backupTitle => 'Backup';
@@ -512,7 +512,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased af $total elementer';
   }
 
   @override
@@ -522,7 +522,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'I alt: $amount';
   }
 
   @override
@@ -682,13 +682,13 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI assistent';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Tæt';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Scan stregkode';
 
   @override
   String get listHelp => 'Hvordan kan jeg hjælpe med din liste?';
@@ -2407,6 +2407,42 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'En tur er aldrig nok';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hej! 👋 Jeg er **Kipi**, din personlige indkøbs- og opskriftsassistent!\n\nJeg er her for at hjælpe dig:\n🛒 **Organiser** dine indkøb automatisk efter kategorier\n💰 **Spor** dit budget og giv dig pengebesparende tips\n🍲 **Foreslå** lækre opskrifter med det du allerede har\n\nHvordan kan jeg hjælpe dig i dag? Du kan starte med at oprette din første liste!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Opret min første liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hjælp mig med at lave min første indkøbsliste';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hvordan sparer man penge?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hvordan kan du hjælpe mig med at spare penge på dagligvarer?';
+
+  @override
+  String get suggestionMilk => 'Mælk';
+
+  @override
+  String get suggestionBread => 'Brød';
+
+  @override
+  String get suggestionEggs => 'Æg';
+
+  @override
+  String get suggestionCoffee => 'Kaffe';
+
+  @override
+  String get suggestionRice => 'Ris';
+
+  @override
+  String get suggestionFruits => 'Frugter';
 }
 
 /// The translations for Danish, as used in Denmark (`da_DK`).
@@ -2701,6 +2737,15 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   }
 
   @override
+  String get scanProductTitle => 'Scan produkt';
+
+  @override
+  String get positionBarcodeCenter => 'Placer stregkoden i midten';
+
+  @override
+  String get product => 'Produkt';
+
+  @override
   String get settingsAppBar => 'Indstillinger';
 
   @override
@@ -2786,6 +2831,44 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String get termsOfUse => 'Brugsvilkår';
 
   @override
+  String get myAchievements => 'Mine præstationer';
+
+  @override
+  String get itemsPurchased => 'Varer købt';
+
+  @override
+  String get totalSavings => 'Samlet besparelse';
+
+  @override
+  String get currentStreak => 'Nuværende streak';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dage',
+      one: '$count dag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Ulåste badges';
+
+  @override
+  String get badgeBeginner => 'Nybegynder';
+
+  @override
+  String get badgeOrganized => 'Organiseret';
+
+  @override
+  String get badgeSavingMaster => 'Redningsmester';
+
+  @override
+  String get badgeSuperPlanner => 'Super planlægger';
+
+  @override
   String get backupTitle => 'Backup';
 
   @override
@@ -2867,6 +2950,21 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get sortManual => 'Manuelt';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased af $total elementer';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'I alt: $amount';
+  }
 
   @override
   String get addItem => 'Tilføj vare';
@@ -3023,6 +3121,15 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String chatError(String error) {
     return 'Fejl ved indlæsning af chat: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI assistent';
+
+  @override
+  String get closeSheet => 'Tæt';
+
+  @override
+  String get scanBarcodeTitle => 'Scan stregkode';
 
   @override
   String get listHelp => 'Hvordan kan jeg hjælpe med din liste?';
@@ -4741,4 +4848,40 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get onboardingPainRepeat => 'En tur er aldrig nok';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hej! 👋 Jeg er **Kipi**, din personlige indkøbs- og opskriftsassistent!\n\nJeg er her for at hjælpe dig:\n🛒 **Organiser** dine indkøb automatisk efter kategorier\n💰 **Spor** dit budget og giv dig pengebesparende tips\n🍲 **Foreslå** lækre opskrifter med det du allerede har\n\nHvordan kan jeg hjælpe dig i dag? Du kan starte med at oprette din første liste!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Opret min første liste';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, hjælp mig med at lave min første indkøbsliste';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hvordan sparer man penge?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hvordan kan du hjælpe mig med at spare penge på dagligvarer?';
+
+  @override
+  String get suggestionMilk => 'Mælk';
+
+  @override
+  String get suggestionBread => 'Brød';
+
+  @override
+  String get suggestionEggs => 'Æg';
+
+  @override
+  String get suggestionCoffee => 'Kaffe';
+
+  @override
+  String get suggestionRice => 'Ris';
+
+  @override
+  String get suggestionFruits => 'Frugter';
 }

@@ -26,7 +26,6 @@ Future<CatalogProductsResult> catalogProducts(
 
   final products = await OpenFoodFactsService.fetchByCategory(
     offCategoryTag: offCategoryTag,
-    offCountryTag: offCountryTag,
   );
 
   return _applyRankingAndSplit(ref, products, offCountryTag);
@@ -43,7 +42,6 @@ Future<List<CatalogProduct>> catalogSearch(
   }
   return OpenFoodFactsService.searchByText(
     query: query.trim(),
-    offCountryTag: offCountryTag,
   );
 }
 

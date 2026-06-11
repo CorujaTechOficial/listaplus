@@ -299,13 +299,13 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'პროდუქტის სკანირება';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'მოათავსეთ შტრიხკოდი ცენტრში';
 
   @override
-  String get product => 'Product';
+  String get product => 'პროდუქტი';
 
   @override
   String get settingsAppBar => 'პარამეტრები';
@@ -393,42 +393,42 @@ class AppLocalizationsKa extends AppLocalizations {
   String get termsOfUse => 'მოხმარების პირობები';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'ჩემი მიღწევები';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'შეძენილი ნივთები';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'მთლიანი დანაზოგი';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'მიმდინარე სტრიქონი';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count დღე',
+      one: '$count დღე',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'განბლოკილი სამკერდე ნიშნები';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'დამწყები';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'ორგანიზებული';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'გადარჩენის ოსტატი';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'სუპერ დამგეგმავი';
 
   @override
   String get backupTitle => 'სარეზერვო ასლი';
@@ -515,17 +515,17 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased $total ელემენტიდან';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'ბიუჯეტი: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'სულ: $amount';
   }
 
   @override
@@ -685,13 +685,13 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI ასისტენტი';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'დახურვა';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'შტრიხკოდის სკანირება';
 
   @override
   String get listHelp => 'როგორ დაგეხმაროთ თქვენი სიით?';
@@ -2411,6 +2411,42 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ერთი მოგზაურობა არასდროს არის საკმარისი';
+
+  @override
+  String get aiWelcomeContent =>
+      'გამარჯობა! 👋 მე ვარ **კიპი**, თქვენი პირადი შოპინგისა და რეცეპტების ასისტენტი!\n\nმე აქ ვარ დაგეხმაროთ:\n🛒 **მოაწყე** შენი შოპინგი კატეგორიების მიხედვით ავტომატურად\n💰 ** თვალყური ადევნეთ** თქვენს ბიუჯეტს და მოგცემთ ფულის დაზოგვის რჩევებს\n🍲 **შეთავაზეთ** გემრიელი რეცეპტები, რაც უკვე გაქვთ\n\nროგორ შემიძლია დაგეხმაროთ დღეს? შეგიძლიათ დაიწყოთ თქვენი პირველი სიის შექმნით!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'შექმენით ჩემი პირველი სია';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'კიპი, დამეხმარე ჩემი პირველი სავაჭრო სიის შექმნაში';
+
+  @override
+  String get aiWelcomeSuggestSave => 'როგორ დაზოგოთ ფული?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'კიპი, როგორ დამეხმარები სასურსათო პროდუქტებზე ფულის დაზოგვაში?';
+
+  @override
+  String get suggestionMilk => 'რძე';
+
+  @override
+  String get suggestionBread => 'პური';
+
+  @override
+  String get suggestionEggs => 'კვერცხები';
+
+  @override
+  String get suggestionCoffee => 'ყავა';
+
+  @override
+  String get suggestionRice => 'ბრინჯი';
+
+  @override
+  String get suggestionFruits => 'ხილი';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -2706,6 +2742,15 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   }
 
   @override
+  String get scanProductTitle => 'პროდუქტის სკანირება';
+
+  @override
+  String get positionBarcodeCenter => 'მოათავსეთ შტრიხკოდი ცენტრში';
+
+  @override
+  String get product => 'პროდუქტი';
+
+  @override
   String get settingsAppBar => 'პარამეტრები';
 
   @override
@@ -2791,6 +2836,44 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get termsOfUse => 'გამოყენების პირობები';
 
   @override
+  String get myAchievements => 'ჩემი მიღწევები';
+
+  @override
+  String get itemsPurchased => 'შეძენილი ნივთები';
+
+  @override
+  String get totalSavings => 'მთლიანი დანაზოგი';
+
+  @override
+  String get currentStreak => 'მიმდინარე სტრიქონი';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count დღე',
+      one: '$count დღე',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'განბლოკილი სამკერდე ნიშნები';
+
+  @override
+  String get badgeBeginner => 'დამწყები';
+
+  @override
+  String get badgeOrganized => 'ორგანიზებული';
+
+  @override
+  String get badgeSavingMaster => 'გადარჩენის ოსტატი';
+
+  @override
+  String get badgeSuperPlanner => 'სუპერ დამგეგმავი';
+
+  @override
   String get backupTitle => 'სარეზერვო ასლი';
 
   @override
@@ -2872,6 +2955,21 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get sortManual => 'ხელით';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased $total ელემენტიდან';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'ბიუჯეტი: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'სულ: $amount';
+  }
 
   @override
   String get addItem => 'ნივთის დამატება';
@@ -3028,6 +3126,15 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String chatError(String error) {
     return 'შეცდომა ჩატის ჩატვირთვისას: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI ასისტენტი';
+
+  @override
+  String get closeSheet => 'დახურვა';
+
+  @override
+  String get scanBarcodeTitle => 'შტრიხკოდის სკანირება';
 
   @override
   String get listHelp => 'როგორ დაგეხმაროთ თქვენი სიით?';
@@ -4747,4 +4854,40 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get onboardingPainRepeat => 'ერთი მოგზაურობა არასდროს არის საკმარისი';
+
+  @override
+  String get aiWelcomeContent =>
+      'გამარჯობა! 👋 მე ვარ **კიპი**, თქვენი პირადი შოპინგისა და რეცეპტების ასისტენტი!\n\nმე აქ ვარ დაგეხმაროთ:\n🛒 **მოაწყე** შენი შოპინგი კატეგორიების მიხედვით ავტომატურად\n💰 ** თვალყური ადევნეთ** თქვენს ბიუჯეტს და მოგცემთ ფულის დაზოგვის რჩევებს\n🍲 **შეთავაზეთ** გემრიელი რეცეპტები, რაც უკვე გაქვთ\n\nროგორ შემიძლია დაგეხმაროთ დღეს? შეგიძლიათ დაიწყოთ თქვენი პირველი სიის შექმნით!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'შექმენით ჩემი პირველი სია';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'კიპი, დამეხმარე ჩემი პირველი სავაჭრო სიის შექმნაში';
+
+  @override
+  String get aiWelcomeSuggestSave => 'როგორ დაზოგოთ ფული?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'კიპი, როგორ დამეხმარები სასურსათო პროდუქტებზე ფულის დაზოგვაში?';
+
+  @override
+  String get suggestionMilk => 'რძე';
+
+  @override
+  String get suggestionBread => 'პური';
+
+  @override
+  String get suggestionEggs => 'კვერცხები';
+
+  @override
+  String get suggestionCoffee => 'ყავა';
+
+  @override
+  String get suggestionRice => 'ბრინჯი';
+
+  @override
+  String get suggestionFruits => 'ხილი';
 }

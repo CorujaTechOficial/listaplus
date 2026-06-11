@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/pantry/widgets/pantry_add_sheet.dart';
 
@@ -29,13 +30,14 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final sL10n = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: const BackButton(color: Colors.white),
-        title: const Text('Escanear Produto', style: TextStyle(color: Colors.white)),
+        title: Text(sL10n.scanProductTitle, style: const TextStyle(color: Colors.white)),
         actions: [
           IconButton(
             color: Colors.white,
@@ -101,6 +103,7 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
   }
 
   Widget _buildOverlay(BuildContext context) {
+    final sL10n = AppLocalizations.of(context)!;
     final size = MediaQuery.of(context).size;
     final scanAreaSize = size.width * 0.7;
 
@@ -149,9 +152,9 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
           top: (size.height / 2) + (scanAreaSize / 2) + 20,
           left: 0,
           right: 0,
-          child: const Text(
-            'Posicione o código de barras no centro',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          child: Text(
+            sL10n.positionBarcodeCenter,
+            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ),
@@ -163,8 +166,9 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
     if (!mounted) {
       return;
     }
+    final sL10n = AppLocalizations.of(context)!;
     Navigator.of(context).pop();
     
-    await PantryAddSheet.show(context, initialName: 'Produto $code');
+    await PantryAddSheet.show(context, initialName: '${sL10n.product} $code');
   }
 }

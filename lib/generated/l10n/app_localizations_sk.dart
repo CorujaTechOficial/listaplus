@@ -299,13 +299,13 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Skenovať produkt';
 
   @override
   String get positionBarcodeCenter => 'Umiestnite čiarový kód do stredu';
 
   @override
-  String get product => 'Product';
+  String get product => 'Produkt';
 
   @override
   String get settingsAppBar => 'Nastavenia';
@@ -410,19 +410,19 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Odomknuté odznaky';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Začiatočník';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Organizované';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Záchrana Majstra';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Super plánovač';
 
   @override
   String get backupTitle => 'Záloha';
@@ -508,17 +508,17 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased z $total položiek';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Rozpočet: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Celkom: $amount';
   }
 
   @override
@@ -678,13 +678,13 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'Asistent AI';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Zavrieť';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Naskenujte čiarový kód';
 
   @override
   String get listHelp => 'Ako vám môžem pomôcť s vaším zoznamom?';
@@ -2413,4 +2413,40 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Jeden výlet nikdy nestačí';
+
+  @override
+  String get aiWelcomeContent =>
+      'Dobrý deň! 👋 Som **Kipi**, váš osobný pomocník pri nakupovaní a receptoch!\n\nSom tu, aby som vám pomohol:\n🛒 **Usporiadajte** svoje nakupovanie podľa kategórií automaticky\n💰 **Sledujte** svoj rozpočet a dajte vám tipy na šetrenie peňazí\n🍲 **Navrhnite** chutné recepty s tým, čo už máte\n\nAko ti dnes môžem pomôcť? Môžete začať vytvorením svojho prvého zoznamu!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Vytvorte môj prvý zoznam';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, pomôž mi vytvoriť môj prvý nákupný zoznam';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Ako ušetriť peniaze?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, ako mi môžeš pomôcť ušetriť na potravinách?';
+
+  @override
+  String get suggestionMilk => 'Mlieko';
+
+  @override
+  String get suggestionBread => 'Chlieb';
+
+  @override
+  String get suggestionEggs => 'Vajcia';
+
+  @override
+  String get suggestionCoffee => 'Káva';
+
+  @override
+  String get suggestionRice => 'Ryža';
+
+  @override
+  String get suggestionFruits => 'Ovocie';
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// coverage:ignore-start
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../models/shopping_list.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
@@ -373,4 +372,3 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
     }
   }
 }
-// coverage:ignore-end

@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -189,7 +188,7 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
           Expanded(
             child: catalogAsync.when(
               loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Center(child: Text('Erro ao carregar produtos: $e')),
+              error: (e, _) => Center(child: Text(l10n.error('$e'))),
               data: (result) {
                 final commonFiltered = _applyLocalFilters(result.common);
                 final rareFiltered = _applyLocalFilters(result.rare);
@@ -282,4 +281,3 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
     );
   }
 }
-// coverage:ignore-end

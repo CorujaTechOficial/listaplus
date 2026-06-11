@@ -41,6 +41,48 @@
       }
     }
   },
+  "@aiEnergyLow": {
+    "description": "Message when AI energy is low"
+  },
+  "@aiRemainingFreeToday": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiSubscribeUnlimited": {
+    "description": "Subscribe button for unlimited AI"
+  },
+  "@aiUnlockUnlimited": {
+    "description": "Prompt to unlock unlimited AI"
+  },
+  "@aiUsageExhausted": {
+    "description": "Banner when AI usage limit is hit"
+  },
+  "@aiUsageWarning": {
+    "description": "Banner warning when user is near AI usage limit",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiWelcomeContent": {
+    "description": "Welcome message content shown to first-time AI users"
+  },
+  "@aiWelcomeSuggestCreateList": {
+    "description": "Quick reply button label to create first shopping list"
+  },
+  "@aiWelcomeSuggestCreateListPrompt": {
+    "description": "AI prompt sent when user taps create first list quick reply"
+  },
+  "@aiWelcomeSuggestSave": {
+    "description": "Quick reply button label to ask about saving money"
+  },
+  "@aiWelcomeSuggestSavePrompt": {
+    "description": "AI prompt sent when user taps save money quick reply"
+  },
   "@appTitle": {
     "description": "Main app title"
   },
@@ -50,6 +92,15 @@
         "type": "String"
       }
     }
+  },
+  "@assistantHistory": {
+    "description": "Assistant history menu item"
+  },
+  "@assistantHistorySubtitle": {
+    "description": "Subtitle for assistant history"
+  },
+  "@assistantName": {
+    "description": "Label for assistant name field"
   },
   "@budgetAmountSpent": {
     "placeholders": {
@@ -82,12 +133,24 @@
       }
     }
   },
+  "@categoryColorLabel": {
+    "description": "Label for category color picker"
+  },
+  "@categoryIconLabel": {
+    "description": "Label for category icon picker"
+  },
+  "@categoryName": {
+    "description": "Label for category name field"
+  },
   "@chatError": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
+  },
+  "@chooseIcon": {
+    "description": "Label for icon picker"
   },
   "@completedOn": {
     "placeholders": {
@@ -117,10 +180,41 @@
       }
     }
   },
+  "@connectionErrorDesc": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for connectionErrorDesc"
+  },
+  "@conversationHistoryTitle": {
+    "description": "Title for conversation history"
+  },
+  "@currentTheme": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@customizeAiAssistant": {
+    "description": "Customize AI assistant menu item"
+  },
+  "@customizeAssistant": {
+    "description": "Customize button label"
+  },
   "@deficitItems": {
     "placeholders": {
       "deficit": {
         "type": "int"
+      }
+    }
+  },
+  "@deleteCategoryConfirm": {
+    "placeholders": {
+      "category": {
+        "type": "String"
       }
     }
   },
@@ -133,6 +227,9 @@
   },
   "@dynamicColorsEnabledWarning": {
     "description": "SnackBar shown when user picks a color while Dynamic Colors is on"
+  },
+  "@editCategoryDialog": {
+    "description": "Title for edit category dialog"
   },
   "@editPantryItem": {
     "placeholders": {
@@ -148,12 +245,221 @@
       }
     }
   },
+  "@errorAddingBatch": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorAddingBatch"
+  },
+  "@errorAddingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorAddingItem"
+  },
+  "@errorArchivingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorArchivingList"
+  },
+  "@errorClearingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorClearingList"
+  },
+  "@errorClearingPurchased": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorClearingPurchased"
+  },
+  "@errorDecreasingQty": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorDecreasingQty"
+  },
+  "@errorDeletingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorDeletingList"
+  },
+  "@errorExecutingTool": {
+    "placeholders": {
+      "tool": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorExecutingTool"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorImportingList": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorImportingList"
+  },
+  "@errorIncreasingQty": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorIncreasingQty"
+  },
+  "@errorLoadingProducts": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorLoadingProducts"
+  },
+  "@errorRemovingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingItem"
+  },
+  "@errorRemovingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingItems"
+  },
+  "@errorRemovingSharedList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRemovingSharedList"
+  },
+  "@errorReordering": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorReordering"
+  },
+  "@errorRestoringItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorRestoringItem"
+  },
+  "@errorSavingProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorSavingProfile"
+  },
+  "@errorServerConnection": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorServerConnection"
+  },
+  "@errorSettingCurrentList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorSettingCurrentList"
+  },
+  "@errorTogglingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorTogglingItem"
+  },
+  "@errorTogglingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorTogglingItems"
+  },
+  "@errorUnarchivingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUpdatingItem": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingItem"
+  },
+  "@errorUpdatingItems": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingItems"
+  },
+  "@errorUpdatingList": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
+    "description": "Error message for errorUpdatingList"
+  },
+  "@everythingReady": {
+    "description": "Message when shopping is complete"
   },
   "@feedbackError": {
     "placeholders": {
@@ -167,6 +473,20 @@
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
+  },
+  "@itemAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@itemAddedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@itemsNeedPurchase": {
     "placeholders": {
@@ -201,6 +521,12 @@
         "type": "int"
       }
     }
+  },
+  "@kipiListProActive": {
+    "description": "Label when Pro subscription is active"
+  },
+  "@kipiQuickBarHint": {
+    "description": "Hint for quick add bar"
   },
   "@listAdded": {
     "placeholders": {
@@ -264,6 +590,105 @@
       }
     }
   },
+  "@newCategoryDialog": {
+    "description": "Title for new category dialog"
+  },
+  "@noConversationsFound": {
+    "description": "Empty state for conversation history"
+  },
+  "@onboardingAiAskConfirm": {
+    "description": "AI asks for confirmation"
+  },
+  "@onboardingAiAskFood": {
+    "description": "AI asks user's favorite food"
+  },
+  "@onboardingAiAskName": {
+    "description": "AI asks user name"
+  },
+  "@onboardingAiContinue": {
+    "description": "Continue button after AI chat"
+  },
+  "@onboardingAiDemoChange": {
+    "description": "AI demo change button"
+  },
+  "@onboardingAiDemoContinue": {
+    "description": "AI demo continue button"
+  },
+  "@onboardingAiDemoGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoGreetingNoName": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiDemoOffer": {
+    "description": "AI demo offer text"
+  },
+  "@onboardingAiDemoReaction": {
+    "description": "AI demo reaction text"
+  },
+  "@onboardingAiDemoSlideCta": {
+    "description": "AI demo hero slide CTA"
+  },
+  "@onboardingAiDemoSlideDone": {
+    "description": "AI demo completion badge"
+  },
+  "@onboardingAiDemoSlideHeadline": {
+    "description": "AI demo hero slide headline"
+  },
+  "@onboardingAiDemoSlideReady": {
+    "description": "AI response header in demo"
+  },
+  "@onboardingAiDemoSlideSubtitle": {
+    "description": "AI demo hero slide subtitle"
+  },
+  "@onboardingAiDemoSlideUserMsg": {
+    "description": "Demo user message shown in chat"
+  },
+  "@onboardingAiDemoYes": {
+    "description": "AI demo yes button"
+  },
+  "@onboardingAiFoodHint": {
+    "description": "Hint for food input field"
+  },
+  "@onboardingAiGreeting": {
+    "description": "AI first greeting message"
+  },
+  "@onboardingAiIngredients": {
+    "description": "AI displays ingredients for the chosen food",
+    "placeholders": {
+      "ingredients": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiNameHint": {
+    "description": "Hint for name input field"
+  },
+  "@onboardingAiNiceToMeet": {
+    "description": "AI responds after user tells their name",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@onboardingAiReady": {
+    "description": "AI ready message"
+  },
+  "@onboardingAiTitle": {
+    "description": "AI Chat onboarding slide header"
+  },
   "@onboardingAnnualBadge": {
     "description": "Annual plan badge"
   },
@@ -273,11 +698,86 @@
   "@onboardingCancelAnytime": {
     "description": "Cancellation disclaimer"
   },
+  "@onboardingCategoryGrocery": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryHome": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPet": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryPharmacy": {
+    "description": "Category option"
+  },
+  "@onboardingCategoryRecipes": {
+    "description": "Category option"
+  },
+  "@onboardingCommitmentsCta": {
+    "description": "Commitments CTA button"
+  },
+  "@onboardingCommitmentsSubtitle": {
+    "description": "Commitments subtitle"
+  },
+  "@onboardingCommitmentsTitle": {
+    "description": "Commitments slide title"
+  },
   "@onboardingContinueAsGuest": {
     "description": "Skip login link"
   },
   "@onboardingExit": {
     "description": "Exit button text"
+  },
+  "@onboardingGoalFamily": {
+    "description": "Goal: family shopping"
+  },
+  "@onboardingGoalFaster": {
+    "description": "Goal: shop faster"
+  },
+  "@onboardingGoalNeverForget": {
+    "description": "Goal: never forget"
+  },
+  "@onboardingGoalPantry": {
+    "description": "Goal: track pantry"
+  },
+  "@onboardingGoalRecipes": {
+    "description": "Goal: discover recipes"
+  },
+  "@onboardingGoalSaveMoney": {
+    "description": "Goal: save money"
+  },
+  "@onboardingGroupCouple": {
+    "description": "Group option"
+  },
+  "@onboardingGroupFamily": {
+    "description": "Group option"
+  },
+  "@onboardingGroupSolo": {
+    "description": "Group option"
+  },
+  "@onboardingHookHeadline": {
+    "description": "Hook slide headline"
+  },
+  "@onboardingLoadingStat1Label": {
+    "description": "Loading stat 1 label"
+  },
+  "@onboardingLoadingStat2Label": {
+    "description": "Loading stat 2 label"
+  },
+  "@onboardingLoadingStat3Label": {
+    "description": "Loading stat 3 label"
+  },
+  "@onboardingLoadingStep1": {
+    "description": "Loading step 1"
+  },
+  "@onboardingLoadingStep2": {
+    "description": "Loading step 2"
+  },
+  "@onboardingLoadingStep3": {
+    "description": "Loading step 3"
+  },
+  "@onboardingLoadingTitle": {
+    "description": "Loading screen title"
   },
   "@onboardingLoginDesc": {
     "description": "Slide 2 body"
@@ -285,8 +785,35 @@
   "@onboardingLoginTitle": {
     "description": "Slide 2 headline"
   },
+  "@onboardingMaybeLater": {
+    "description": "Discrete skip link at the bottom of the onboarding paywall"
+  },
   "@onboardingMonthlyLabel": {
     "description": "Monthly plan label"
+  },
+  "@onboardingPainCta": {
+    "description": "Pain point slide CTA"
+  },
+  "@onboardingPainFamily": {
+    "description": "Pain: family doesn't see list"
+  },
+  "@onboardingPainForget": {
+    "description": "Pain: forget items"
+  },
+  "@onboardingPainOverspend": {
+    "description": "Pain: overspend"
+  },
+  "@onboardingPainRepeat": {
+    "description": "Pain: multiple trips"
+  },
+  "@onboardingPainSubtitle": {
+    "description": "Pain point slide subtitle"
+  },
+  "@onboardingPainTitle": {
+    "description": "Pain point slide title"
+  },
+  "@onboardingPersonalizationCategoryTitle": {
+    "description": "Category selection title"
   },
   "@onboardingPersonalizationCta": {
     "description": "Personalization step continue button"
@@ -302,6 +829,15 @@
   },
   "@onboardingPersonalizationFoodRequired": {
     "description": "Validation message when food field is empty"
+  },
+  "@onboardingPersonalizationGroupTitle": {
+    "description": "Group selection title"
+  },
+  "@onboardingPersonalizationNameHint": {
+    "description": "Name field hint"
+  },
+  "@onboardingPersonalizationNameLabel": {
+    "description": "Name field label"
   },
   "@onboardingPersonalizationSkip": {
     "description": "Skip personalization link"
@@ -332,6 +868,24 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSlide1Body": {
+    "description": "Onboarding slide 1: value prop body"
+  },
+  "@onboardingSlide1Title": {
+    "description": "Onboarding slide 1: value prop title"
+  },
+  "@onboardingSlide2Body": {
+    "description": "Onboarding slide 2: value prop body"
+  },
+  "@onboardingSlide2Title": {
+    "description": "Onboarding slide 2: value prop title"
+  },
+  "@onboardingSlide3Body": {
+    "description": "Onboarding slide 3: value prop body"
+  },
+  "@onboardingSlide3Title": {
+    "description": "Onboarding slide 3: value prop title"
   },
   "@onboardingSubscribeCta": {
     "description": "Subscribe button text"
@@ -376,6 +930,13 @@
       }
     }
   },
+  "@pantryLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryNoItemsFound": {
     "placeholders": {
       "query": {
@@ -397,6 +958,157 @@
       }
     }
   },
+  "@paywallGoalHeadlineFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineFaster": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNeverForget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineNoNameFamily": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameFaster": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameNeverForget": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNamePantry": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameRecipes": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlineNoNameSaveMoney": {
+    "description": "Paywall headline without name"
+  },
+  "@paywallGoalHeadlinePantry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineRecipes": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallGoalHeadlineSaveMoney": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallHeroSubtitlePersonalized": {
+    "description": "Paywall hero subtitle with user's name from AI chat",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallPricePerDay": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSkipNow": {
+    "description": "Skip paywall button"
+  },
+  "@paywallStrikethroughPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTestimonial": {
+    "description": "Testimonial text"
+  },
+  "@paywallTestimonialAuthor": {
+    "description": "Testimonial author"
+  },
+  "@paywallTrialDisclaimer": {
+    "description": "Trial disclaimer text"
+  },
+  "@paywallTrialInCard": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@progressItemsOf": {
+    "placeholders": {
+      "purchased": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityUnitWithPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@quantityWithUnit": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@quickSuggestions": {
+    "description": "Quick suggestions section header"
+  },
   "@recipeAddedConfirmation": {
     "placeholders": {
       "count": {
@@ -408,6 +1120,13 @@
     }
   },
   "@removeSharedListContent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@replaceItem": {
     "placeholders": {
       "name": {
         "type": "String"
@@ -458,7 +1177,35 @@
   "@shareReferralText": {
     "description": "Referral text shared outside the app when inviting friends",
     "placeholders": {
-      "url": {}
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@skip": {
+    "description": "Skip onboarding / action"
+  },
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscription": {
+    "description": "Subscription section header"
+  },
+  "@suggestedItems": {
+    "description": "Section header for suggested items"
+  },
+  "@swapped": {
+    "description": "Label when item is swapped"
+  },
+  "@themeChanged": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
     }
   },
   "@totalEstimated": {
@@ -482,6 +1229,9 @@
       }
     }
   },
+  "@youCompletedList": {
+    "description": "Message when list is completed"
+  },
   "about": "Perihal",
   "achievements": "Pencapaian",
   "achievementsTitle": "Pencapaian Saya",
@@ -495,20 +1245,26 @@
   "addItem": "Tambah Item",
   "addItemPrice": "Harga anggaran",
   "addPhoto": "Tambah foto",
+  "addToList": "Tambahkan ke Senarai",
   "addToPantry": "Tambah ke Pantri",
   "addToPantryPrompt": "Tambah \"{name}\" ke Pantri anda?",
   "addedFeedback": "Ditambah!",
+  "addingIngredientsToList": "Menambah bahan ke senarai...",
+  "addingItems": "Menambah item pada senarai...",
+  "addingToPantry": "Menambah pada pantri...",
   "advancedFeatures": "Ciri lanjutan",
   "aiAssistant": "Pembantu AI",
   "aiAssistantDescription": "Dapatkan cadangan pintar, resipi dan tip peribadi dengan pembantu AI kami.",
   "aiAssistantGeneral": "Pembantu Am",
   "aiAssistantHistory": "Penolong Sejarah",
+  "aiAssistantTitle": "Penolong AI",
   "aiConversationHistory": "Sejarah Perbualan",
   "aiCreditsRemaining": "{remaining} kredit berbaki",
   "aiDeleteConversationConfirm": "Padam",
   "aiDeleteConversationTitle": "Padamkan Perbualan?",
   "aiDeletedList": "Senarai Dipadamkan",
   "aiEnergy": "Tenaga AI",
+  "aiEnergyLow": "Tenaga AI yang rendah",
   "aiError": "Maaf, ralat berlaku semasa memproses permintaan anda. Periksa sambungan anda atau cuba lagi kemudian.",
   "aiFirstOpenHint": "Saya Kipi, pembantu beli-belah awak. Tanya saya apa-apa tentang senarai anda!",
   "aiHello": "hello! Saya Kipi",
@@ -518,15 +1274,26 @@
   "aiNewSession": "Sesi Baharu",
   "aiNoConversationFound": "Tiada perbualan ditemui",
   "aiNoMessagesFound": "Tiada mesej ditemui",
+  "aiPremiumDescription": "Antara muka interaktif ini menggunakan kecerdasan buatan lanjutan and eksklusif untuk ahli Pro atau melalui iklan pantas.",
   "aiPremiumUpsell": "Pergi Premium",
   "aiRecentConversations": "Perbualan Terbaru",
+  "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} hari ini",
   "aiSearchMessages": "Cari mesej...",
   "aiStartNewConversation": "Mulakan perbualan baharu",
+  "aiSubscribeUnlimited": "Langgan untuk AI tanpa had",
   "aiSuggestCreateList": "Buat senarai pertama saya",
   "aiSuggestSaveMore": "Bagaimana untuk menjimatkan lebih banyak?",
   "aiTeaserFallback": "Langgan Premium untuk membuka kunci respons penuh dan dapatkan petua AI tanpa had untuk membeli-belah anda...",
+  "aiUnlockUnlimited": "Buka kunci AI tanpa had",
   "aiUnlockWithAd": "Buka kunci dengan Iklan",
+  "aiUsageExhausted": "Had AI bulanan dicapai. Naik taraf kepada Pro untuk tanpa had →",
+  "aiUsageWarning": "{remaining} Tindakan AI yang tinggal pada bulan ini — naik taraf tanpa had",
   "aiVoiceCommandTooltip": "Arahan Suara AI (Premium)",
+  "aiWelcomeContent": "helo! 👋 Saya **Kipi**, pembantu beli-belah dan resipi peribadi anda!\n\nSaya di sini untuk membantu anda:\n🛒 **Atur** belanja anda mengikut kategori secara automatik\n💰 **Jejaki** belanjawan anda dan berikan anda petua penjimatan wang\n🍲 **Cadangkan** resipi lazat dengan apa yang anda sudah ada\n\nBagaimana saya boleh membantu anda hari ini? Anda boleh mulakan dengan membuat senarai pertama anda!",
+  "aiWelcomeSuggestCreateList": "Buat senarai pertama saya",
+  "aiWelcomeSuggestCreateListPrompt": "Kipi, bantu saya membuat senarai beli-belah pertama saya",
+  "aiWelcomeSuggestSave": "Bagaimana untuk menjimatkan wang?",
+  "aiWelcomeSuggestSavePrompt": "Kipi, bagaimana anda boleh membantu saya menjimatkan wang untuk barangan runcit?",
   "aiWelcomeTitle": "hello! 👋 Saya **Kipi**, pembantu beli-belah pintar anda.",
   "allTags": "Semua",
   "alreadyPurchased": "Sudah dibeli",
@@ -538,13 +1305,20 @@
   "artifactSuggestedItems": "Item yang Dicadangkan",
   "artifactSwapButton": "Tukar",
   "artifactSwappedLabel": "Ditukar",
+  "assistantHistory": "Sejarah penolong",
+  "assistantHistorySubtitle": "Lihat sejarah perbualan anda",
+  "assistantName": "Nama pembantu",
   "backToChat": "Kembali ke Sembang",
   "backToToday": "Kembali ke hari ini",
   "backupExported": "Sandaran berjaya dieksport!",
   "backupNav": "Sandaran",
-  "backupPremiumDescription": "Sandaran dan eksport adalah ciri Premium",
+  "backupPremiumDescription": "Sandaran and eksport adalah ciri Premium",
   "backupSubtitle": "Eksport atau import data anda",
   "backupTitle": "Sandaran",
+  "badgeBeginner": "pemula",
+  "badgeOrganized": "Tersusun",
+  "badgeSavingMaster": "Guru Penyelamat",
+  "badgeSuperPlanner": "Perancang Super",
   "barcodeScannerHint": "Halakan kamera pada kod bar",
   "barcodeScannerTitle": "Imbas Kod Bar",
   "becomePremium": "Jadi Premium",
@@ -579,52 +1353,89 @@
   "catalogSortAZ": "A–Z",
   "catalogSortPopular": "Paling popular",
   "catalogTitle": "Katalog",
+  "categorizingItems": "Mengkategorikan item...",
   "category": "Kategori",
+  "categoryColorLabel": "warna",
+  "categoryIconLabel": "ikon",
+  "categoryLimitReached": "Had 10 kategori pada versi percuma. Naik taraf kepada Pro!",
+  "categoryName": "Nama kategori",
+  "categoryNameHint": "Cth.: Daging",
   "chatError": "Ralat memuatkan sembang: {error}",
   "chatHint": "Taip mesej anda...",
   "chatHintBlocked": "Buka kunci AI untuk bersembang",
   "chatSubtitle": "Minta cadangan item, resipi atau tip penjimatan.",
   "chatSubtitleShort": "Tanya tentang harga, resipi, organisasi...",
+  "checkingItem": "Menyemak item...",
+  "checkingPantry": "Memeriksa pantri anda...",
+  "checkingSettings": "Menyemak tetapan anda...",
   "chooseCurrency": "Pilih Mata Wang",
+  "chooseIcon": "Pilih ikon",
   "chooseImageSource": "Pilih sumber imej",
   "chooseLanguage": "Pilih Bahasa",
+  "chooseThemeColor": "Pilih Warna Tema",
   "clear": "Kosongkan",
   "clearHistory": "Kosongkan Sejarah",
   "clearHistoryConfirm": "Kosongkan semua mesej dalam sesi ini?",
   "clearList": "Kosongkan senarai",
   "clearPurchased": "Kosongkan yang dibeli",
+  "clearingCheckedItems": "Mengosongkan item yang ditandakan...",
   "close": "Tutup",
+  "closeSheet": "tutup",
+  "color": "warna:",
   "complete": "Selesai",
   "completePurchase": "Selesaikan pembelian",
   "completedOn": "Selesai pada {date}",
   "confirm": "Sahkan",
-  "confirmArchiveContent": "Selesaikan pembelian ini dan arkibkan senarai?",
+  "confirmArchiveContent": "Selesaikan pembelian ini and arkibkan senarai?",
   "confirmArchiveTitle": "Selesaikan Pembelian",
   "confirmClearList": "Alih keluar semua item?",
   "confirmContent": "Alih keluar {count} item?",
   "confirmDeleteItems": "Alih keluar {count} item?",
   "confirmDeleteTitle": "Sahkan",
   "confirmRemovePantry": "Alih keluar \"{name}\" dari pantri?",
+  "connectionError": "Ralat Sambungan",
+  "connectionError2": "Maaf, ralat sambungan telah berlaku.",
+  "connectionErrorDesc": "Tidak dapat menyambung ke pelayan. Semak internet anda.\n({error})",
   "consentAccept": "Terima",
   "consentBody": "KipiList menggunakan Analitis Firebase untuk meningkatkan pengalaman anda. Data anda diproses mengikut Dasar Privasi kami.",
   "consentDecline": "Tidak, terima kasih",
   "consentTitle": "Privasi & Analitis",
   "consumed": "Digunakan",
   "continueAsGuest": "Teruskan sebagai tetamu",
+  "conversationHistoryTitle": "Sejarah perbualan",
   "copiedToClipboard": "Disalin ke papan klip",
   "copy": "Salin",
+  "couldNotProcess": "Tidak dapat memproses selepas several percubaan.",
   "create": "Cipta",
   "createFirstList": "Cipta Senarai Pertama",
   "createListDialog": "Cipta Senarai",
   "createListToStartAi": "Buat senarai beli-belah untuk mula menggunakan sembang pintar.",
   "createNewList": "Cipta senarai baru",
+  "creatingNewList": "Mencipta senarai baharu...",
   "currency": "mata wang",
   "currentQty": "Kuantiti semasa",
   "currentQuantity": "Kuantiti semasa",
+  "currentStreak": "Streak Semasa",
+  "currentTheme": "Tema semasa: {mode}",
+  "customizeAiAssistant": "Sesuaikan pembantu AI",
+  "customizeAssistant": "Sesuaikan",
   "dark": "Gelap",
   "data": "Data",
+  "dayFri": "Jum",
+  "dayMon": "isn",
+  "daySat": "Sab",
+  "daySun": "Matahari",
+  "dayThu": "Kha",
+  "dayTue": "Tue",
+  "dayWed": "Rabu",
   "deficitItems": "{deficit} item perlu dibeli",
   "delete": "Padam",
+  "deleteCategory": "Padam",
+  "deleteCategoryConfirm": "Item dalam kategori \"{category}\" akan dialihkan ke \"Lain-lain\".\nteruskan?",
+  "deleteCategoryTitle": "Padamkan Kategori",
+  "deleteConversation": "Padam",
+  "deleteConversationConfirm": "Tindakan ini tidak boleh dibuat asal.",
+  "deleteConversationTitle": "Padamkan Perbualan?",
   "deleteListConfirm": "Padam senarai",
   "deleteListContent": "Adakah anda pasti mahu memadam \"{name}\"? Semua item akan dialih keluar.",
   "deleteListTitle": "Padam senarai",
@@ -634,12 +1445,15 @@
   "deleteSession": "Padam Sembang",
   "deleteSessionConfirm": "Adakah anda pasti mahu memadamkan sembang ini? Mesej akan hilang secara kekal.",
   "deselectAll": "Nyahpilih semua",
+  "dietaryRestrictions": "Sekatan Pemakanan",
+  "dietaryRestrictionsHint": "Cth: vegan, vegetarian, bebas gluten",
   "dynamicColors": "Warna dinamik",
   "dynamicColorsEnabledWarning": "Lumpuhkan warna dinamik untuk warna tema berkuat kuasa",
   "dynamicColorsSubtitle": "Gunakan warna berdasarkan kertas dinding anda",
   "economyTips": "Tip penjimatan",
   "economyTipsPrompt": "Bagaimana saya boleh menjimatkan wang pada pembelian ini?",
   "edit": "Sunting",
+  "editCategoryDialog": "Edit kategori",
   "editItem": "Sunting Item",
   "editItemPrice": "Harga anggaran",
   "editPantryItem": "Sunting {name}",
@@ -659,14 +1473,51 @@
   "enterCodeHint": "Masukkan kod",
   "enterUrl": "Masukkan URL",
   "error": "Ralat: {message}",
+  "errorAddingBatch": "Ralat menambah item dalam kelompok: {error}",
+  "errorAddingItem": "Ralat menambah item: {error}",
+  "errorArchivingList": "Ralat mengarkib senarai: {error}",
+  "errorClearingList": "Ralat mengosongkan senarai: {error}",
+  "errorClearingPurchased": "Ralat semasa mengosongkan item yang dibeli: {error}",
+  "errorCreatingList": "Ralat membuat senarai",
+  "errorDecreasingQty": "Ralat mengurangkan kuantiti: {error}",
+  "errorDeletingList": "Ralat semasa memadam senarai: {error}",
+  "errorExecutingTool": "Ralat semasa melaksanakan {tool}: {error}",
+  "errorGeneratingCode": "Ralat menjana kod unik. Cuba lagi.",
   "errorGeneric": "Ralat: {message}",
+  "errorImportingList": "Ralat mengimport senarai \"{name}\": {error}",
+  "errorIncreasingQty": "Ralat meningkatkan kuantiti: {error}",
   "errorLoadingChat": "Aduh! Kesilapan telah berlaku semasa memuatkan sembang.",
   "errorLoadingChatSubtitle": "Semak sambungan anda atau cuba lagi kemudian.",
+  "errorLoadingHistory": "Ralat memuatkan sejarah",
+  "errorLoadingLists": "Ralat memuatkan senarai",
+  "errorLoadingProducts": "Ralat memuatkan produk: {error}",
   "errorLoadingRecipes": "Ralat memuatkan resipi",
+  "errorLoadingSubscription": "Ralat memuatkan langganan",
   "errorOscillation": "Ini mungkin berlaku disebabkan oleh ayunan rangkaian atau ketiadaan sementara. Sila cuba lagi.",
+  "errorProcessingRequest": "Maaf, ralat berlaku semasa memproses permintaan anda. Semak sambungan anda atau cuba lagi kemudian.",
+  "errorRemovingItem": "Ralat semasa mengalih keluar item: {error}",
+  "errorRemovingItems": "Ralat semasa mengalih keluar item: {error}",
+  "errorRemovingSharedList": "Ralat semasa mengalih keluar senarai kongsi: {error}",
+  "errorRenderScreen": "Aduh! Kesilapan telah berlaku semasa memaparkan skrin ini.",
+  "errorReordering": "Ralat menyusun semula item: {error}",
+  "errorRestoringItem": "Ralat memulihkan item: {error}",
+  "errorResumingLoop": "[ResumeLoop] Ralat menyambung semula gelung",
+  "errorResumingProcessing": "Ralat menyambung semula pemprosesan.",
+  "errorSavingProfile": "Ralat menyimpan: {error}",
+  "errorServerConnection": "Ralat menyambung ke pelayan: {error}",
+  "errorSettingCurrentList": "Ralat menetapkan senarai semasa: {error}",
+  "errorTogglingItem": "Ralat menogol status item: {error}",
+  "errorTogglingItems": "Ralat menogol item: {error}",
+  "errorUnarchivingList": "Ralat menyahrkibkan senarai: {error}",
+  "errorUpdatingItem": "Ralat mengemas kini item: {error}",
+  "errorUpdatingItems": "Ralat mengemas kini item: {error}",
+  "errorUpdatingList": "Ralat mengemas kini senarai: {error}",
+  "errorUserNotAuthenticated": "Pengguna tidak disahkan.",
   "estimated": "Anggaran",
   "estimatedCost": "Dianggarkan",
   "estimatedPrice": "Harga anggaran",
+  "estimatingPrices": "Anggaran harga...",
+  "everythingReady": "Semua dah siap!",
   "exit": "Keluar",
   "exitShoppingMode": "Keluar daripada Mod Beli-belah",
   "expirationDate": "tarikh luput",
@@ -685,7 +1536,7 @@
   "feedbackSettingsSubtitle": "Laporkan pepijat, cadangkan penambahbaikan, atau baiki terjemahan",
   "feedbackSettingsTitle": "Hantar Maklum Balas",
   "feedbackThankYou": "Terima Kasih!",
-  "feedbackThankYouMessage": "Maklum balas anda telah diterima dan membantu kami menambah baik KipiList untuk semua orang.",
+  "feedbackThankYouMessage": "Maklum balas anda telah diterima and membantu kami menambah baik KipiList untuk semua orang.",
   "feedbackTitle": "Hantar Maklum Balas",
   "feedbackTypeBug": "Laporkan Pepijat",
   "feedbackTypeBugHint": "Sesuatu tidak berfungsi",
@@ -708,9 +1559,12 @@
   "generalAssistant": "Pembantu Umum",
   "generalHelp": "Bagaimana saya boleh bantu dengan beli-belah anda hari ini?",
   "generateShoppingList": "Hasilkan senarai beli-belah",
+  "generatingContent": "Menjana kandungan diperibadikan...",
+  "generatingShareLink": "Menjana pautan kongsi...",
   "gestureHint": "Tahan untuk memilih • Leret untuk mengalih keluar",
   "globalAssistant": "Pembantu global",
   "howCanIHelp": "Bagaimana saya boleh membantu?",
+  "icon": "ikon:",
   "idealQty": "Kuantiti ideal",
   "idealQuantity": "Kuantiti ideal",
   "imageUrlPlaceholder": "Atau tampal URL imej",
@@ -725,14 +1579,19 @@
   "instructions": "Arahan",
   "instructionsHint": "Taip satu langkah setiap baris...",
   "inviteToList": "Jemput ke senarai",
+  "itemAdded": "{name} ditambahkan",
+  "itemAddedSnack": "{name} ditambahkan",
   "itemName": "Nama item",
   "itemRemoved": "Item dialih keluar",
   "itemsAddedSuccess": "Item berjaya ditambah ke senarai!",
   "itemsNeedPurchase": "{deficit} item perlu dibeli",
+  "itemsPurchased": "Barangan yang Dibeli",
   "itemsPurchasedCount": "{purchased} daripada {total} dibeli",
   "itemsPurchasedShort": "{purchased}/{total} dibeli",
   "itemsWillBeAdded": "{count} item akan ditambah",
+  "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
+  "kipiQuickBarHint": "Apa yang anda perlu beli?",
   "language": "Bahasa",
   "languageEnglish": "Inggeris",
   "languagePortuguese": "Portugis (Brazil)",
@@ -755,20 +1614,28 @@
   "listShoppingComplete": "Semua selesai!",
   "listShoppingCompleteSubtitle": "Anda telah melengkapkan senarai anda.",
   "listTotalLabel": "Jumlah: {value}",
+  "listUnarchived": "Senarai dinyaharkibkan berjaya.",
   "listening": "Mendengar...",
   "lists": "Senarai",
   "loading": "Memuatkan...",
+  "loadingMenu": "Memuatkan menu anda...",
+  "loadingProfile": "Memuatkan profil anda...",
   "loadingRecipes": "Memuatkan resipi anda...",
+  "loadingSubscription": "Memuatkan langganan...",
   "loginError": "Ralat log masuk: {error}",
   "loginPrompt": "Log masuk untuk membuka kunci\nciri Premium",
   "longHistoryWarning": "Sejarah panjang: pembantu memfokuskan pada mesej terkini untuk prestasi yang lebih baik.",
+  "manageCategories": "Uruskan Kategori",
   "manageCategoriesEmpty": "Tiada kategori lagi",
+  "manageCategoriesSubtitle": "Uruskan kategori item",
   "manageCategoriesTitle": "Uruskan Kategori",
   "manageSubscription": "Urus langganan",
   "markAsPurchased": "Tandakan sebagai dibeli",
   "markItemsToSeeAnalysis": "Tandakan item sebagai dibeli untuk melihat analisis.",
   "marketMode": "Mod Pasaran",
-  "mealDragHint": "Tahan untuk menyeret dan bergerak",
+  "marketsToAvoid": "Pasaran yang Perlu Dielakkan",
+  "marketsToAvoidHint": "Cth.: Pasaran Y, Pasaran Z",
+  "mealDragHint": "Tahan untuk menyeret and bergerak",
   "mealNoRecipeFound": "Tiada resipi ditemui",
   "mealPlannerAddMeal": "Tambah Hidangan",
   "mealPlannerDateLabel": "Tarikh",
@@ -806,17 +1673,33 @@
   "mealPlannerWeekEmptyHint": "Ketik mana-mana hari untuk mula merancang hidangan anda!",
   "mealPlannerWeekProgress": "{count} daripada {total} hidangan dirancang",
   "mealSearchRecipes": "Cari resepi...",
+  "mealType": "Jenis hidangan",
   "mealTypeLabel": "Jenis hidangan",
+  "monthApril": "April",
+  "monthAugust": "Ogos",
+  "monthDecember": "Disember",
+  "monthFebruary": "Februari",
+  "monthJanuary": "Januari",
+  "monthJuly": "Julai",
+  "monthJune": "Jun",
+  "monthMarch": "Mac",
+  "monthMay": "Mei",
+  "monthNovember": "November",
+  "monthOctober": "Oktober",
+  "monthSeptember": "September",
   "monthlyBudgetAppBar": "Belanjawan Bulanan",
   "monthlyBudgetNav": "Belanjawan bulanan",
   "monthlyBudgetSpent": "{spent} / {budget}",
   "monthlyBudgetTitle": "Belanjawan Bulanan",
+  "myAchievements": "Pencapaian Saya",
   "myLists": "Senarai Saya",
+  "myProfile": "Profil Saya",
   "myRecipes": "Resipi Saya",
   "navChat": "Sembang",
   "navLists": "Senarai",
   "navMealPlanner": "Menu",
   "navRecipes": "resepi",
+  "newCategoryDialog": "Kategori baharu",
   "newChat": "Sembang Baharu",
   "newListTitle": "Senarai Beli-belah Baru",
   "newPantryList": "Beli-belah Pantri",
@@ -826,6 +1709,8 @@
   "noActiveLists": "Tiada senarai aktif",
   "noArchivedLists": "Tiada senarai diarkibkan",
   "noBudgetDefined": "Tiada belanjawan ditetapkan",
+  "noCategories": "Tiada kategori.",
+  "noConversationsFound": "Tiada perbualan ditemui",
   "noHistory": "Tiada sejarah sembang",
   "noItemsInList": "Tiada item dalam senarai",
   "noItemsToAnalyze": "Tiada item dalam senarai untuk dianalisis.",
@@ -833,46 +1718,119 @@
   "noLabel": "Tidak",
   "noListFoundSubtitle": "Cipta senarai pertama anda untuk memulakan",
   "noListFoundTitle": "Tiada senarai ditemui",
+  "noListSelected": "Tiada senarai dipilih. Buka senarai dahulu.",
+  "noListsFound": "Tiada senarai ditemui",
   "noMessagesFound": "Tiada mesej ditemui",
   "noRecipesSaved": "Tiada resipi disimpan",
   "noRecipesSavedHint": "Cipta resipi tersuai pertama anda dengan mengetik butang di bawah.",
   "noTracking": "Tiada penjejakan",
   "notInformed": "Tidak dimaklumkan",
+  "observations": "Nota",
+  "observationsHint": "Pilihan lain untuk pembantu",
   "offlineBanner": "Anda berada di luar talian",
   "onboardingAIShowSubtitle": "Kipi sedang menyediakan segalanya untuk anda...",
   "onboardingAIShowTitle": "Lihat Perisikan dalam tindakan!",
+  "onboardingAiAskConfirm": "Adakah ini kelihatan baik? Cuba taip sesuatu yang lain!",
+  "onboardingAiAskFood": "Apakah makanan kegemaran anda?",
+  "onboardingAiAskName": "siapa nama awak?",
+  "onboardingAiContinue": "Teruskan →",
+  "onboardingAiDemoChange": "Tukar item",
+  "onboardingAiDemoContinue": "teruskan",
+  "onboardingAiDemoGreeting": "Hei {name}! Apakah {category} yang anda perlukan?",
+  "onboardingAiDemoGreetingNoName": "Apakah {category} yang anda perlukan?",
+  "onboardingAiDemoOffer": "Cuba taip sesuatu yang lain!",
+  "onboardingAiDemoReaction": "bagus!",
+  "onboardingAiDemoSlideCta": "Saya mahu ini! →",
+  "onboardingAiDemoSlideDone": "Senarai lengkap dalam beberapa saat ✨",
+  "onboardingAiDemoSlideHeadline": "Senarai beli-belah anda, kini dengan AI",
+  "onboardingAiDemoSlideReady": "sedia! Inilah semua yang anda perlukan:",
+  "onboardingAiDemoSlideSubtitle": "Lihat cara Kipi membina senarai penuh anda dalam beberapa saat",
+  "onboardingAiDemoSlideUserMsg": "Saya menganjurkan barbeku 🔥",
+  "onboardingAiDemoYes": "Ya!",
+  "onboardingAiFoodHint": "cth. Pizza, Sushi...",
+  "onboardingAiGreeting": "Hai! Saya Kipi, pembantu beli-belah peribadi awak! 🛒",
+  "onboardingAiIngredients": "Pilihan yang hebat! Inilah yang saya akan tambahkan pada senarai anda:\n\n{ingredients}\n\n---",
+  "onboardingAiNameHint": "Taip nama anda...",
+  "onboardingAiNiceToMeet": "Gembira bertemu dengan anda, {name}! 🎉",
+  "onboardingAiReady": "Hebat! Anda sudah bersedia untuk bermula. Mari sediakan akaun anda!",
+  "onboardingAiTitle": "Berbual dengan Kipi",
   "onboardingAnnualBadge": "Nilai Terbaik",
   "onboardingAnnualLabel": "tahunan",
   "onboardingCancelAnytime": "Batalkan bila-bila masa. Tiada komitmen.",
+  "onboardingCategoryGrocery": "Barangan runcit",
+  "onboardingCategoryHome": "Rumah",
+  "onboardingCategoryPet": "Haiwan peliharaan",
+  "onboardingCategoryPharmacy": "farmasi",
+  "onboardingCategoryRecipes": "resepi",
+  "onboardingCommitmentsCta": "jom pergi!",
+  "onboardingCommitmentsSubtitle": "Pilih matlamat anda untuk memperibadikan KipiList",
+  "onboardingCommitmentsTitle": "Apa yang penting bagi anda?",
   "onboardingContinueAsGuest": "Teruskan sebagai tetamu",
   "onboardingExit": "Keluar",
+  "onboardingGoalFamily": "Atur belanja keluarga",
+  "onboardingGoalFaster": "Beli lebih cepat",
+  "onboardingGoalNeverForget": "Jangan sekali-kali melupakan item",
+  "onboardingGoalPantry": "Pantry trek",
+  "onboardingGoalRecipes": "Temui resipi",
+  "onboardingGoalSaveMoney": "Jimat duit",
+  "onboardingGroupCouple": "berpasangan",
+  "onboardingGroupFamily": "Keluarga",
+  "onboardingGroupSolo": "Hanya saya",
+  "onboardingHookHeadline": "Jangan sekali-kali melupakan barang runcit lagi",
+  "onboardingLoadingStat1Label": "Item dikatalogkan",
+  "onboardingLoadingStat2Label": "Pengguna membantu",
+  "onboardingLoadingStat3Label": "Minit disimpan",
+  "onboardingLoadingStep1": "Menganalisis pilihan anda...",
+  "onboardingLoadingStep2": "Menyediakan pembantu AI...",
+  "onboardingLoadingStep3": "hampir siap...",
+  "onboardingLoadingTitle": "Menyediakan pengalaman anda...",
   "onboardingLoginDesc": "Data anda disegerakkan merentas semua peranti anda",
   "onboardingLoginTitle": "Simpan semuanya ke awan",
+  "onboardingMaybeLater": "Mungkin nanti",
   "onboardingMonthlyLabel": "Bulanan",
+  "onboardingPainCta": "Ya, betulkan ini untuk saya →",
+  "onboardingPainFamily": "Keluarga saya tidak pernah melihat senarai itu",
+  "onboardingPainForget": "Saya lupa barang di kedai",
+  "onboardingPainOverspend": "Saya selalu melampaui bajet",
+  "onboardingPainRepeat": "Satu perjalanan tidak pernah cukup",
+  "onboardingPainSubtitle": "Jujurlah — kami akan membetulkan setiap satu",
+  "onboardingPainTitle": "Apa yang paling mengecewakan anda?",
+  "onboardingPersonalizationCategoryTitle": "Anda berbelanja untuk apa?",
   "onboardingPersonalizationCta": "teruskan",
-  "onboardingPersonalizationDesc": "Kami akan menggunakan ini untuk memperibadikan cadangan anda dan menjadikan beli-belah lebih bijak.",
+  "onboardingPersonalizationDesc": "Kami akan menggunakan ini untuk memperibadikan cadangan anda and menjadikan beli-belah lebih bijak.",
   "onboardingPersonalizationFoodHint": "cth. Pizza, Sushi, Lasagna...",
   "onboardingPersonalizationFoodLabel": "Apakah makanan kegemaran anda?",
   "onboardingPersonalizationFoodRequired": "Beritahu kami makanan kegemaran anda untuk meneruskan",
+  "onboardingPersonalizationGroupTitle": "Anda berbelanja untuk siapa?",
+  "onboardingPersonalizationNameHint": "Masukkan nama anda",
+  "onboardingPersonalizationNameLabel": "nama awak",
   "onboardingPersonalizationSkip": "Langkau buat masa ini",
   "onboardingPersonalizationTitle": "Jom kenali awak",
   "onboardingPremiumSubtitle": "Manfaatkan sepenuhnya senarai beli-belah anda",
   "onboardingPremiumTitle": "Buka kunci semua ciri",
   "onboardingRestore": "Pulihkan",
   "onboardingRestoreDesc": "Sudah mempunyai langganan? Ketik di sini untuk memulihkannya.",
-  "onboardingSetupDesc": "Pilih cara anda mahu KipiList kelihatan dan berfungsi untuk anda.",
+  "onboardingSetupDesc": "Pilih cara anda mahu KipiList kelihatan and berfungsi untuk anda.",
   "onboardingSetupTitle": "Peribadikan pengalaman anda",
-  "onboardingShareDesc": "Segerakkan senarai dengan keluarga dan rakan dalam masa nyata",
+  "onboardingShareDesc": "Segerakkan senarai dengan keluarga and rakan dalam masa nyata",
   "onboardingShareTitle": "Kongsi dengan orang yang anda sayangi",
+  "onboardingSlide1Body": "Buat and kongsi senarai serta-merta. Kipi menambah item secara automatik berdasarkan tabiat anda.",
+  "onboardingSlide1Title": "Senarai Beli-belah Pintar",
+  "onboardingSlide2Body": "Tanya apa sahaja — buat senarai, cari resipi, jejak pantri anda, rancang minggu anda.",
+  "onboardingSlide2Title": "Jumpa Kipi",
+  "onboardingSlide3Body": "Jejaki apa yang anda ada, rancang makanan and jana senarai beli-belah secara automatik.",
+  "onboardingSlide3Title": "Pantri & Perancangan Makanan",
   "onboardingSubscribeCta": "Langgan",
   "onboardingViewAllPlans": "Lihat semua rancangan",
-  "onboardingWelcomeDesc": "Cara paling bijak untuk mengatur belanja anda dan menjimatkan wang.",
+  "onboardingWelcomeDesc": "Cara paling bijak untuk mengatur belanja anda and menjimatkan wang.",
   "onboardingWelcomeTitle": "Selamat datang ke KipiList",
   "openMenu": "Buka menu",
   "organizeAisles": "Susun mengikut lorong",
   "organizeAislesPrompt": "Susun mengikut lorong pasar.",
   "organizeByAisles": "Susun mengikut lorong",
   "organizingAi": "MENGORGANISASI DENGAN AI...",
+  "organizingMenu": "Mengatur menu anda...",
+  "othersCategory": "Lain-lain",
   "pantry": "Pantri",
   "pantryAdvancedMode": "Maju",
   "pantryAppBar": "Pantri",
@@ -895,6 +1853,7 @@
   "pantryFilterOutStock": "kehabisan stok",
   "pantryFirstOpenHint": "Jejaki apa yang anda ada di rumah. Tambah item atau imbas kod bar.",
   "pantryItemRemoved": "Item dialih keluar",
+  "pantryLimitReached": "Had {count} item dalam pantri pada pelan percuma. Tingkatkan untuk menambah lagi.",
   "pantryMoreDetails": "Butiran lanjut",
   "pantryNoItemsFound": "Tiada item ditemui untuk \"{query}\"",
   "pantryRestockSelected": "Stok semula dipilih",
@@ -907,25 +1866,43 @@
   "paywallAfterItem2": "Pembersihan",
   "paywallAfterItem3": "Daging",
   "paywallAfterItem4": "Bakeri",
-  "paywallBeforeAfterTitle": "AI Sebelum dan Selepas:",
+  "paywallBeforeAfterTitle": "AI Sebelum and Selepas:",
   "paywallBeforeItem1": "nasi",
   "paywallBeforeItem2": "sabun",
   "paywallBeforeItem3": "daging",
   "paywallBeforeItem4": "roti",
-  "paywallBenefit1Desc": "Menambah, menyusun dan mencadangkan item 24/7",
+  "paywallBenefit1Desc": "Menambah, menyusun and mencadangkan item 24/7",
   "paywallBenefit2Desc": "Tiada had 3 senarai",
-  "paywallBenefit3Desc": "Penjejakan perbelanjaan dan senarai keluarga",
+  "paywallBenefit3Desc": "Penjejakan perbelanjaan and senarai keluarga",
   "paywallBestValue": "NILAI TERBAIK",
   "paywallCancelAnytime": "Batalkan bila-bila masa. Tiada komitmen.",
   "paywallCtaTrialDays": "Mula percuma — {days} hari",
   "paywallCtaUnlock": "Buka kunci PRO",
+  "paywallFeatureDescAssistant": "AI mengatur senarai anda secara automatik",
+  "paywallFeatureDescBudget": "Kekal pada bajet setiap bulan",
+  "paywallFeatureDescPantry": "Jejaki apa yang anda ada di rumah",
+  "paywallFeatureDescSharing": "Beli-belah bersama-sama dalam masa nyata",
+  "paywallFeatureDescUnlimitedLists": "Buat seberapa banyak senarai yang anda perlukan",
   "paywallFeatureExpenseControl": "Kawalan Perbelanjaan",
   "paywallFeatureSharing": "Berkongsi",
   "paywallFeatureSmartAI": "AI Pintar",
   "paywallFeatureUnlimitedLists": "Senarai tanpa had",
   "paywallFeaturesTitle": "Semua yang anda perlukan:",
+  "paywallGoalHeadlineFamily": "{name}, atur belanja keluarga!",
+  "paywallGoalHeadlineFaster": "{name}, belanja separuh masa!",
+  "paywallGoalHeadlineNeverForget": "{name}, jangan sekali-kali melupakan item!",
+  "paywallGoalHeadlineNoNameFamily": "Atur belanja keluarga!",
+  "paywallGoalHeadlineNoNameFaster": "Beli separuh masa!",
+  "paywallGoalHeadlineNoNameNeverForget": "Jangan sekali-kali melupakan item!",
+  "paywallGoalHeadlineNoNamePantry": "Jejaki pantri anda dengan sempurna!",
+  "paywallGoalHeadlineNoNameRecipes": "Temui resipi baharu!",
+  "paywallGoalHeadlineNoNameSaveMoney": "Jimat pada setiap perjalanan!",
+  "paywallGoalHeadlinePantry": "{name}, jejak pantri anda dengan sempurna!",
+  "paywallGoalHeadlineRecipes": "{name}, temui resipi baharu!",
+  "paywallGoalHeadlineSaveMoney": "{name}, jimat pada setiap perjalanan!",
   "paywallHeroHeadline": "Kipi AI sentiasa di sisi anda",
-  "paywallHeroSubtitle": "Tambah item, susun senarai dan jimat masa dengan AI dalam poket anda",
+  "paywallHeroSubtitle": "Tambah item, susun senarai and jimat masa with AI dalam poket anda",
+  "paywallHeroSubtitlePersonalized": "Hai {name}, atur belanja anda dengan cara yang betul.",
   "paywallLabelCommon": "Biasa",
   "paywallLabelPro": "KipiList PRO",
   "paywallLoadingError": "Ralat memuatkan tawaran. Cuba lagi.",
@@ -935,27 +1912,37 @@
   "paywallPackageMonthly": "Rancangan Bulanan",
   "paywallPackageMonthlyDesc": "Fleksibiliti penuh",
   "paywallPolicy": "Dasar Privasi",
+  "paywallPricePerDay": "Hanya {price}/hari — kurang daripada sebiji kopi",
   "paywallPricePerMonth": "Hanya {price}/bulan",
+  "paywallProLabel": "PRO",
   "paywallPurchaseError": "Tidak dapat menyelesaikan pembelian. Cuba lagi.",
   "paywallRestore": "Pulihkan",
   "paywallRestoreError": "Tiada langganan aktif ditemui untuk dipulihkan.",
   "paywallSafeCheckout": "Pembayaran selamat",
   "paywallSavePercent": "JIMAT {percent}%",
+  "paywallSecuredByStore": "Dijamin oleh Google Play · Batalkan pada bila-bila masa",
   "paywallSelectPlan": "Pilih rancangan anda:",
+  "paywallSkipNow": "Langkau buat masa ini",
   "paywallSocialProof": "+2,400 keluarga menggunakannya",
+  "paywallStrikethroughPrice": "{price}",
   "paywallTerms": "Syarat Penggunaan",
+  "paywallTestimonial": "AI mengatur belanja saya dalam beberapa saat. Saya menjimatkan 20 minit setiap perjalanan.",
   "paywallTestimonial1Name": "Ann S.",
   "paywallTestimonial1Text": "AI mengatur belanja saya dalam beberapa saat. Saya menjimatkan 20 minit setiap perjalanan pasaran.",
   "paywallTestimonial2Name": "Charles M.",
   "paywallTestimonial2Text": "Saya tidak pernah lupa item senarai lagi. Sembang AI adalah sensasi!",
+  "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Apa yang pengguna kami katakan:",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Mulakan Percubaan Percuma",
   "paywallTrialDays": "{days} HARI PERCUMA",
+  "paywallTrialDisclaimer": "Batalkan bila-bila masa · Tiada caj sehingga percubaan anda tamat",
+  "paywallTrialInCard": "{days} hari pertama PERCUMA",
   "paywallTrialMonths": "{count,plural, one{{count} BULAN PERCUMA} other{{count} BULAN PERCUMA}}",
   "paywallTrialSubtitle": "Batalkan bila-bila masa. Tiada caj hari ini.",
   "paywallTrialTitle": "Cuba KipiList Pro secara percuma selama 7 hari",
   "paywallTrialWeeks": "{count,plural, one{{count} MINGGU PERCUMA} other{{count} MINGGU PERCUMA}}",
+  "positionBarcodeCenter": "Letakkan kod bar di tengah",
   "prefAIAssistant": "Pembantu AI Peribadi",
   "prefCustomThemes": "Tema tersuai",
   "prefExportData": "Eksport data",
@@ -965,18 +1952,34 @@
   "prefSharing": "Kongsi senarai",
   "prefUnlimitedLists": "Senarai tanpa had",
   "prefUnlimitedPantry": "Pantri tanpa had",
+  "preferredMarket": "Pasaran Pilihan",
+  "preferredMarketHint": "Cth.: Pasaraya X",
   "premiumUpgrade": "Naik taraf untuk membuka kunci",
   "prepTime": "Masa penyediaan",
   "prepTimeMinutes": "Masa penyediaan (minit)",
   "privacy": "Privasi",
+  "processing": "Memproses...",
+  "product": "produk",
   "productName": "Nama produk",
   "profile": "Profil",
+  "profileDescription": "Beritahu kami pilihan peribadi anda supaya pembantu AI boleh mencadangkan item and resipi yang diperibadikan.",
+  "profileSaved": "Profil berjaya disimpan!",
+  "profileSection": "Profil",
+  "profileSubtitle": "Pilihan peribadi untuk pembantu AI",
+  "progressBudget": "Belanjawan: {amount}",
+  "progressItemsOf": "{purchased} daripada {total} item",
+  "progressTotal": "Jumlah: {amount}",
   "purchaseError": "Ralat semasa memproses pembelian. Cuba lagi.",
+  "purchasedSuffix": "[Dibeli]",
   "quantityFull": "Kuantiti",
   "quantityShort": "Kuantiti",
+  "quantityUnitWithPrice": "{qty} {unit} — {price}",
+  "quantityWithUnit": "{qty} {unit}",
+  "queryingYourLists": "Menanyakan senarai anda...",
   "quickRecipe": "Resipi cepat",
   "quickRecipePrompt": "Cadangkan resipi dengan item dari senarai saya.",
   "quickReplies": "Balasan pantas:",
+  "quickSuggestions": "Cadangan cepat",
   "recipeAddToList": "Tambahkan ke senarai beli-belah",
   "recipeAddedConfirmation": "{count} bahan ditambahkan pada {listName}",
   "recipeCreated": "Resipi dicipta!",
@@ -990,11 +1993,19 @@
   "remove": "Alih keluar",
   "removeBudget": "Alih keluar",
   "removeImage": "Buang imej",
-  "removeSharedListContent": "Alih keluar \"{name}\" dari senarai anda? Senarai asal tidak akan terjejas.",
+  "removeSharedListContent": "Alih keluar \"{name}\" from senarai anda? Senarai asal tidak akan terjejas.",
   "removeSharedListTitle": "Alih keluar senarai dikongsi",
   "removeSharedTooltip": "Alih keluar",
+  "removingFromPantry": "Mengeluarkan dari pantri...",
+  "removingItems": "Mengalih keluar item...",
+  "removingList": "Mengalih keluar senarai...",
+  "removingRecipe": "Mengalih keluar resipi...",
   "rename": "Tukar nama",
   "renameListDialog": "Tukar Nama Senarai",
+  "renamingList": "Menamakan semula senarai...",
+  "reorganizingList": "Menyusun semula senarai...",
+  "replaceItem": "Gantikan {item}",
+  "requestTimeout": "Maaf, permintaan telah tamat masa.",
   "requiredField": "Diperlukan",
   "restockLabel": "Stok semula",
   "restocked": "{name} distok semula kepada {quantity} {unit}",
@@ -1003,20 +2014,33 @@
   "retry": "Cuba semula",
   "save": "Simpan",
   "saveChanges": "Simpan perubahan",
+  "saveProfile": "Simpan Profil",
   "saveRecipe": "Simpan",
+  "savingPreferences": "Menyimpan pilihan anda...",
+  "savingRecipe": "Simpan resipi...",
   "savings": "Penjimatan",
+  "scanBarcode": "Imbas Kod Bar",
+  "scanBarcodeTitle": "Imbas Kod Bar",
+  "scanProduct": "Imbas Produk",
+  "scanProductTitle": "Imbas Produk",
   "searchCurrency": "Cari mata wang...",
   "searchInConversation": "Cari dalam perbualan...",
   "searchLanguage": "Cari bahasa...",
   "searchRecipes": "Cari resipi...",
+  "searchingCategories": "Mencari kategori...",
+  "searchingProducts": "Mencari produk...",
+  "searchingRecipes": "Mencari resipi...",
+  "searchingSharedList": "Mencari senarai kongsi...",
   "selectAll": "Pilih semua",
+  "selectCheaperAlternative": "Pilih alternatif produk yang lebih murah untuk mengoptimumkan kos.",
   "selectListForDashboard": "Pilih senarai untuk melihat papan pemuka.",
-  "selectedItems": "{count} dipilih",
+  "selectedItems": "{count,plural, one{{count} dipilih} other{{count} dipilih}}",
   "setBudgetButton": "Tetapkan belanjawan",
   "setBudgetTitle": "Belanjawan Bulanan",
+  "settingBudget": "Menetapkan belanjawan...",
   "settingsAppBar": "Tetapan",
   "settingsAssistantHistory": "Penolong Sejarah",
-  "settingsAssistantHistorySubtitle": "Lihat dan cari perbualan lepas",
+  "settingsAssistantHistorySubtitle": "Lihat and cari perbualan lepas",
   "settingsAssistantName": "Nama Pembantu",
   "settingsCancel": "Batal",
   "settingsCategories": "Kategori",
@@ -1032,7 +2056,7 @@
   "settingsMyProfile": "Profil Saya",
   "settingsPrivacyPolicy": "Dasar Privasi",
   "settingsProActive": "KipiList Pro aktif",
-  "settingsProCta": "Buka kunci senarai tanpa had, AI dan banyak lagi",
+  "settingsProCta": "Buka kunci senarai tanpa had, AI and banyak lagi",
   "settingsProfileSubtitle": "Pilihan peribadi untuk pembantu AI",
   "settingsSave": "Jimat",
   "settingsScreenChat": "Sembang AI",
@@ -1050,17 +2074,19 @@
   "shareListTitle": "Kongsi Senarai",
   "shareRealtime": "Segerak masa nyata dengan orang lain",
   "shareReferralSubject": "Dapatkan 7 hari KipiList Premium!",
-  "shareReferralText": "Saya menggunakan KipiList untuk mengatur pembelian saya! Muat turun melalui pautan saya dan kami berdua mendapat 7 hari Premium percuma: {url}",
+  "shareReferralText": "Saya menggunakan KipiList untuk mengatur pembelian saya! Muat turun melalui pautan saya and kami berdua mendapat 7 hari Premium percuma: {url}",
   "shareSubject": "Senarai Beli-belah",
   "shareThisCode": "Kongsi kod ini:",
   "shareViaCode": "Kongsi melalui kod",
   "sharedLabel": "Dikongsi",
   "shoppingAssistant": "Pembantu beli-belah",
+  "shoppingList": "Senarai Beli-belah",
   "shoppingMode": "Mod Beli-belah",
   "shoppingModeHeader": "MOD BELI-BELAH",
   "shortDescription": "Penerangan ringkas",
-  "signInApple": "Log masuk dengan Apple",
-  "signInGoogle": "Log masuk dengan Google",
+  "signInApple": "Daftar masuk dengan Apple",
+  "signInGoogle": "Daftar masuk dengan Google",
+  "skip": "Langkau",
   "smartOrganization": "Organisasi Pintar",
   "sortAZ": "A–Z",
   "sortCategory": "Kategori",
@@ -1069,8 +2095,19 @@
   "sortName": "Nama",
   "spendingAnalysis": "Analisis Perbelanjaan",
   "spendingByCategory": "Perbelanjaan mengikut Kategori",
+  "streakDays": "{days} hari",
+  "subscription": "Langganan",
+  "suggestedItems": "Item yang dicadangkan",
   "suggestedQuestions": "Soalan yang dicadangkan:",
   "suggestedTags": "Dicadangkan",
+  "suggestionBread": "roti",
+  "suggestionCoffee": "Kopi",
+  "suggestionEggs": "Telur",
+  "suggestionFruits": "buah-buahan",
+  "suggestionMilk": "susu",
+  "suggestionRice": "nasi",
+  "swap": "Tukar",
+  "swapped": "Ditukar",
   "switchList": "Tukar senarai",
   "system": "Sistem",
   "tags": "Tag",
@@ -1078,6 +2115,7 @@
   "themeAmber": "Ambar",
   "themeBlue": "Biru",
   "themeBrown": "Perang",
+  "themeChanged": "Tema ditukar kepada {mode}.",
   "themeColor": "Warna tema",
   "themeGreen": "Hijau",
   "themeIndigo": "Nila",
@@ -1087,21 +2125,41 @@
   "themeRed": "Merah",
   "themeSelectionTitle": "Pilih Warna Tema",
   "themeTeal": "Teal",
+  "toolAddItems": "Tambah item",
+  "toolAddToPantry": "Tambah ke pantri",
+  "toolDeleteList": "Padam senarai",
+  "toolDeleteRecipe": "Padam resipi",
+  "toolRemoveFromPantry": "Keluarkan dari pantri",
+  "toolRemoveItems": "Alih keluar item",
+  "toolRemoveMeal": "Keluarkan makanan",
+  "toolRemovePreference": "Alih keluar keutamaan",
+  "toolSavePreference": "Simpan keutamaan",
+  "toolSaveRecipe": "Simpan resipi",
+  "toolShareList": "Kongsi senarai",
   "totalEstimated": "Anggaran jumlah: {amount}",
+  "totalSavings": "Jumlah Simpanan",
   "totalSpending": "Jumlah Perbelanjaan",
   "trackStock": "Jejaki stok",
   "trackStockActive": "Muncul dalam cadangan beli-belah",
-  "trackStockInactive": "Tidak menjana cadangan beli-belah",
+  "trackStockInactive": "Tidak menghasilkan cadangan beli-belah",
+  "uncheckingItem": "Nyahtanda item...",
   "undo": "Buat asal",
   "unit": "Unit",
   "unitPack": "bungkus",
   "unlockAi": "Buka kunci AI tanpa had",
   "unlockFullResponse": "Buka kunci Respons Penuh",
+  "unlockPremiumTitle": "Buka kunci senarai tanpa had, AI and banyak lagi",
+  "unlockWithAd": "Buka kunci dengan Iklan",
+  "unlockedBadges": "Lencana Tidak Berkunci",
   "unmark": "Nyah tanda",
+  "updatingItem": "Mengemas kini item...",
+  "updatingMenu": "Mengemas kini menu...",
+  "updatingPantry": "Mengemas kini pantri...",
   "upgrade": "Naik taraf",
+  "userProfile": "Profil Pengguna",
   "userProfileAvoidedStores": "Kedai yang Dielakkan",
   "userProfileAvoidedStoresHint": "cth. Kedai X, Kedai Y",
-  "userProfileDescription": "Tambahkan pilihan peribadi anda supaya pembantu AI boleh mencadangkan item dan resipi yang diperibadikan.",
+  "userProfileDescription": "Tambahkan pilihan peribadi anda supaya pembantu AI boleh mencadangkan item and resipi yang diperibadikan.",
   "userProfileDietaryRestrictions": "Sekatan Pemakanan",
   "userProfileDietaryRestrictionsHint": "cth. vegan, vegetarian, bebas gluten",
   "userProfileErrorLoading": "Ralat: {error}",
@@ -1122,7 +2180,7 @@
   "viewList": "Lihat senarai",
   "viewPro": "Lihat Pro",
   "viewRecipe": "Lihat Resipi",
-  "voiceCommandContent": "Bercakap secara semula jadi untuk mengurus senarai anda!\n\nContoh:\n• 'Tambah roti, keju dan ham'\n• 'Alih keluar pencuci pakaian'\n• 'Tukar tema kepada biru'\n\nIni adalah ciri eksklusif KipiList Premium.",
+  "voiceCommandContent": "Bercakap secara semula jadi untuk mengurus senarai anda!\n\nContoh:\n• 'Tambah roti, keju and ham'\n• 'Alih keluar pencuci pakaian'\n• 'Tukar tema kepada biru'\n\nIni adalah ciri eksklusif KipiList Premium.",
   "voiceCommandPlanBtn": "Lihat Pelan",
   "voiceCommandTitle": "Arahan Suara AI",
   "voiceProFeature": "Perintah suara lanjutan adalah Pro. Mendayakan imlak asas...",
@@ -1137,5 +2195,6 @@
   "welcomeAiAssistant": "Selamat datang ke AI Assistant",
   "whatToDoWithItem": "Apakah yang anda ingin lakukan dengan item ini?",
   "yes": "Ya",
-  "yesLabel": "Ya"
+  "yesLabel": "Ya",
+  "youCompletedList": "Anda telah melengkapkan senarai!"
 }

@@ -7,7 +7,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/providers/auth_provider.dart';
 
-// coverage:ignore-start
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
 
@@ -147,4 +146,3 @@ class AuthScreen extends ConsumerWidget {
     }
   }
 }
-// coverage:ignore-end

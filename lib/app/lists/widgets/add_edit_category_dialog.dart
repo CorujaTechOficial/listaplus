@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopping_list/domain/entities/category_data.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 
 class AddEditCategoryDialog extends ConsumerStatefulWidget {
@@ -71,8 +72,9 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: Text(widget.existing == null ? 'Nova Categoria' : 'Editar Categoria'),
+      title: Text(widget.existing == null ? l10n.newCategoryDialog : l10n.editCategoryDialog),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -80,14 +82,14 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
           children: [
             TextField(
               controller: _nameCtrl,
-              decoration: const InputDecoration(
-                labelText: 'Nome',
-                hintText: 'Ex: Carnes',
+              decoration: InputDecoration(
+                labelText: l10n.categoryName,
+                hintText: l10n.categoryNameHint,
               ),
               inputFormatters: [LengthLimitingTextInputFormatter(30)],
             ),
             const SizedBox(height: 16),
-            const Text('Cor:', style: TextStyle(fontWeight: FontWeight.w500)),
+            Text(l10n.categoryColorLabel, style: const TextStyle(fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
@@ -117,7 +119,7 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
               }).toList(),
             ),
             const SizedBox(height: 16),
-            const Text('Ícone:', style: TextStyle(fontWeight: FontWeight.w500)),
+            Text(l10n.categoryIconLabel, style: const TextStyle(fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
@@ -145,13 +147,13 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
       actions: [
         TextButton(
           onPressed: _saving ? null : () => Navigator.pop(context),
-          child: const Text('Cancelar'),
+          child: Text(l10n.cancel),
         ),
         ElevatedButton(
           onPressed: _saving ? null : _save,
           child: _saving
               ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
-              : const Text('Salvar'),
+              : Text(l10n.save),
         ),
       ],
     );
@@ -169,7 +171,7 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
         id: widget.existing?.id ?? name.toLowerCase().replaceAll(RegExp(r'\s+'), '_'),
         name: name,
         color: _color.toARGB32(),
-        iconCodepoint: _icon.codePoint,
+        icon: _icon,
         sortOrder: widget.existing?.sortOrder ?? 999,
         createdAt: widget.existing?.createdAt ?? DateTime.now(),
       );

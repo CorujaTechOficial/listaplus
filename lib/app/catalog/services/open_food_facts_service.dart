@@ -8,7 +8,6 @@ class OpenFoodFactsService {
 
   static Future<List<CatalogProduct>> fetchByCategory({
     required String offCategoryTag,
-    required String offCountryTag,
     int pageSize = 50,
   }) async {
     final uri = Uri.parse('$_baseUrl/cgi/search.pl').replace(queryParameters: {
@@ -16,9 +15,6 @@ class OpenFoodFactsService {
       'tagtype_0': 'categories',
       'tag_contains_0': 'contains',
       'tag_0': offCategoryTag,
-      'tagtype_1': 'countries',
-      'tag_contains_1': 'contains',
-      'tag_1': offCountryTag,
       'sort_by': 'unique_scans_n',
       'json': '1',
       'page_size': '$pageSize',
@@ -34,14 +30,10 @@ class OpenFoodFactsService {
 
   static Future<List<CatalogProduct>> searchByText({
     required String query,
-    required String offCountryTag,
     int pageSize = 30,
   }) async {
     final uri = Uri.parse('$_baseUrl/cgi/search.pl').replace(queryParameters: {
       'search_terms': query,
-      'tagtype_0': 'countries',
-      'tag_contains_0': 'contains',
-      'tag_0': offCountryTag,
       'sort_by': 'unique_scans_n',
       'json': '1',
       'page_size': '$pageSize',

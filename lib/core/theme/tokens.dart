@@ -1,5 +1,4 @@
 
-// coverage:ignore-start
 class Spacing {
   Spacing._();
 
@@ -31,4 +30,3 @@ class DurationTokens {
   static const Duration normal = Duration(milliseconds: 350);
   static const Duration slow = Duration(milliseconds: 600);
 }
-// coverage:ignore-end

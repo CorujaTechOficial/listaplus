@@ -297,13 +297,13 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'পণ্য স্ক্যান করুন';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'কেন্দ্রে বারকোড রাখুন';
 
   @override
-  String get product => 'Product';
+  String get product => 'পণ্য';
 
   @override
   String get settingsAppBar => 'সেটিংস';
@@ -392,42 +392,42 @@ class AppLocalizationsBn extends AppLocalizations {
   String get termsOfUse => 'ব্যবহারের শর্তাবলী';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'আমার অর্জন';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'আইটেম ক্রয়';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'মোট সঞ্চয়';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'বর্তমান স্ট্রীক';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count দিন',
+      one: '$count দিন',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'আনলক করা ব্যাজ';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'শিক্ষানবিস';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'সংগঠিত';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'সেভিং মাস্টার';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'সুপার প্ল্যানার';
 
   @override
   String get backupTitle => 'ব্যাকআপ';
@@ -514,17 +514,17 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$total আইটেমের মধ্যে $purchased';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'বাজেট: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'মোট: $amount';
   }
 
   @override
@@ -684,13 +684,13 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'এআই সহকারী';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'বন্ধ';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'বারকোড স্ক্যান করুন';
 
   @override
   String get listHelp => 'আমি আপনার তালিকায় কিভাবে সাহায্য করতে পারি?';
@@ -2415,6 +2415,42 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'এক ভ্রমণ কখনই যথেষ্ট নয়';
+
+  @override
+  String get aiWelcomeContent =>
+      'নমস্কার! 👋 আমি **কিপি**, আপনার ব্যক্তিগত কেনাকাটা এবং রেসিপি সহকারী!\n\nআমি আপনাকে সাহায্য করতে এখানে আছি:\n🛒 স্বয়ংক্রিয়ভাবে বিভাগ অনুসারে আপনার কেনাকাটা **সংগঠিত করুন\n💰 **আপনার বাজেট ট্র্যাক করুন** এবং আপনাকে অর্থ সাশ্রয়ের টিপস দিন\n🍲 **সাজেস্ট করুন** সুস্বাদু রেসিপি যা আপনার কাছে আগে থেকেই আছে\n\nআমি আজ কিভাবে আপনাকে সাহায্য করতে পারি? আপনি আপনার প্রথম তালিকা তৈরি করে শুরু করতে পারেন!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'আমার প্রথম তালিকা তৈরি করুন';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'কিপি, আমার প্রথম কেনাকাটার তালিকা তৈরি করতে সাহায্য করুন';
+
+  @override
+  String get aiWelcomeSuggestSave => 'কিভাবে টাকা বাঁচাতে?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'কিপি, আপনি কিভাবে আমাকে মুদিখানার টাকা বাঁচাতে সাহায্য করতে পারেন?';
+
+  @override
+  String get suggestionMilk => 'দুধ';
+
+  @override
+  String get suggestionBread => 'রুটি';
+
+  @override
+  String get suggestionEggs => 'ডিম';
+
+  @override
+  String get suggestionCoffee => 'কফি';
+
+  @override
+  String get suggestionRice => 'ভাত';
+
+  @override
+  String get suggestionFruits => 'ফল';
 }
 
 /// The translations for Bengali Bangla, as used in Bangladesh (`bn_BD`).
@@ -2710,6 +2746,15 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   }
 
   @override
+  String get scanProductTitle => 'পণ্য স্ক্যান করুন';
+
+  @override
+  String get positionBarcodeCenter => 'কেন্দ্রে বারকোড রাখুন';
+
+  @override
+  String get product => 'পণ্য';
+
+  @override
   String get settingsAppBar => 'সেটিংস';
 
   @override
@@ -2796,6 +2841,44 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   String get termsOfUse => 'ব্যবহারের শর্তাবলী';
 
   @override
+  String get myAchievements => 'আমার অর্জন';
+
+  @override
+  String get itemsPurchased => 'আইটেম ক্রয়';
+
+  @override
+  String get totalSavings => 'মোট সঞ্চয়';
+
+  @override
+  String get currentStreak => 'বর্তমান স্ট্রীক';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count দিন',
+      one: '$count দিন',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'আনলক করা ব্যাজ';
+
+  @override
+  String get badgeBeginner => 'শিক্ষানবিস';
+
+  @override
+  String get badgeOrganized => 'সংগঠিত';
+
+  @override
+  String get badgeSavingMaster => 'সেভিং মাস্টার';
+
+  @override
+  String get badgeSuperPlanner => 'সুপার প্ল্যানার';
+
+  @override
   String get backupTitle => 'ব্যাকআপ';
 
   @override
@@ -2877,6 +2960,21 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get sortManual => 'ম্যানুয়াল';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$total আইটেমের মধ্যে $purchased';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'বাজেট: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'মোট: $amount';
+  }
 
   @override
   String get addItem => 'আইটেম যোগ করুন';
@@ -3033,6 +3131,15 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   String chatError(String error) {
     return 'চ্যাট লোড করতে ত্রুটি: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'এআই সহকারী';
+
+  @override
+  String get closeSheet => 'বন্ধ';
+
+  @override
+  String get scanBarcodeTitle => 'বারকোড স্ক্যান করুন';
 
   @override
   String get listHelp => 'আমি আপনার তালিকায় কিভাবে সাহায্য করতে পারি?';
@@ -4762,4 +4869,40 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get onboardingPainRepeat => 'এক ভ্রমণ কখনই যথেষ্ট নয়';
+
+  @override
+  String get aiWelcomeContent =>
+      'নমস্কার! 👋 আমি **কিপি**, আপনার ব্যক্তিগত কেনাকাটা এবং রেসিপি সহকারী!\n\nআমি আপনাকে সাহায্য করতে এখানে আছি:\n🛒 স্বয়ংক্রিয়ভাবে বিভাগ অনুসারে আপনার কেনাকাটা **সংগঠিত করুন\n💰 **আপনার বাজেট ট্র্যাক করুন** এবং আপনাকে অর্থ সাশ্রয়ের টিপস দিন\n🍲 **সাজেস্ট করুন** সুস্বাদু রেসিপি যা আপনার কাছে আগে থেকেই আছে\n\nআমি আজ কিভাবে আপনাকে সাহায্য করতে পারি? আপনি আপনার প্রথম তালিকা তৈরি করে শুরু করতে পারেন!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'আমার প্রথম তালিকা তৈরি করুন';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'কিপি, আমার প্রথম কেনাকাটার তালিকা তৈরি করতে সাহায্য করুন';
+
+  @override
+  String get aiWelcomeSuggestSave => 'কিভাবে টাকা বাঁচাতে?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'কিপি, আপনি কিভাবে আমাকে মুদিখানার টাকা বাঁচাতে সাহায্য করতে পারেন?';
+
+  @override
+  String get suggestionMilk => 'দুধ';
+
+  @override
+  String get suggestionBread => 'রুটি';
+
+  @override
+  String get suggestionEggs => 'ডিম';
+
+  @override
+  String get suggestionCoffee => 'কফি';
+
+  @override
+  String get suggestionRice => 'ভাত';
+
+  @override
+  String get suggestionFruits => 'ফল';
 }

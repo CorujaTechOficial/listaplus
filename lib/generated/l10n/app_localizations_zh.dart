@@ -290,13 +290,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => '扫描产品';
 
   @override
   String get positionBarcodeCenter => '将条形码置于中心';
 
   @override
-  String get product => 'Product';
+  String get product => '产品';
 
   @override
   String get settingsAppBar => '设置';
@@ -400,19 +400,19 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => '解锁徽章';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => '初学者';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => '有组织';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => '拯救大师';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => '超级策划师';
 
   @override
   String get backupTitle => '备份';
@@ -498,17 +498,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased 项（共 $total 项）';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return '预算：$amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return '总计：$amount';
   }
 
   @override
@@ -666,13 +666,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => '人工智能助手';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => '关闭';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => '扫描条码';
 
   @override
   String get listHelp => '如何帮助您处理清单？';
@@ -2331,6 +2331,40 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => '一次旅行永远不够';
+
+  @override
+  String get aiWelcomeContent =>
+      '你好！ 👋我是**Kipi**，您的私人购物和食谱助理！\n\n我是来帮助你的：\n🛒 **自动按类别组织**您的购物\n💰 **跟踪**您的预算并为您提供省钱秘诀\n🍲 **用你已有的东西推荐**美味食谱\n\n今天我能为您提供什么帮助？您可以从创建您的第一个列表开始！';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '创建我的第一个列表';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'Kipi，帮我创建我的第一个购物清单';
+
+  @override
+  String get aiWelcomeSuggestSave => '如何省钱？';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => 'Kipi，你怎样才能帮我在杂货上省钱呢？';
+
+  @override
+  String get suggestionMilk => '牛奶';
+
+  @override
+  String get suggestionBread => '面包';
+
+  @override
+  String get suggestionEggs => '鸡蛋';
+
+  @override
+  String get suggestionCoffee => '咖啡';
+
+  @override
+  String get suggestionRice => '米';
+
+  @override
+  String get suggestionFruits => '水果';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -2619,7 +2653,13 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   }
 
   @override
+  String get scanProductTitle => '扫描产品';
+
+  @override
   String get positionBarcodeCenter => '将条形码置于中心';
+
+  @override
+  String get product => '产品';
 
   @override
   String get settingsAppBar => '设置';
@@ -2723,6 +2763,21 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   }
 
   @override
+  String get unlockedBadges => '解锁徽章';
+
+  @override
+  String get badgeBeginner => '初学者';
+
+  @override
+  String get badgeOrganized => '有组织';
+
+  @override
+  String get badgeSavingMaster => '拯救大师';
+
+  @override
+  String get badgeSuperPlanner => '超级策划师';
+
+  @override
   String get backupTitle => '备份';
 
   @override
@@ -2803,6 +2858,21 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get sortManual => '手动';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased 项（共 $total 项）';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return '预算：$amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return '总计：$amount';
+  }
 
   @override
   String get addItem => '添加项目';
@@ -2957,6 +3027,15 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String chatError(String error) {
     return '加载聊天时出错：$error';
   }
+
+  @override
+  String get aiAssistantTitle => '人工智能助手';
+
+  @override
+  String get closeSheet => '关闭';
+
+  @override
+  String get scanBarcodeTitle => '扫描条码';
 
   @override
   String get listHelp => '如何帮助您处理清单？';
@@ -4615,6 +4694,40 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get onboardingPainRepeat => '一次旅行永远不够';
+
+  @override
+  String get aiWelcomeContent =>
+      '你好！ 👋我是**Kipi**，您的私人购物和食谱助理！\n\n我是来帮助你的：\n🛒 **自动按类别组织**您的购物\n💰 **跟踪**您的预算并为您提供省钱秘诀\n🍲 **用你已有的东西推荐**美味食谱\n\n今天我能为您提供什么帮助？您可以从创建您的第一个列表开始！';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '创建我的第一个列表';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'Kipi，帮我创建我的第一个购物清单';
+
+  @override
+  String get aiWelcomeSuggestSave => '如何省钱？';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => 'Kipi，你怎样才能帮我在杂货上省钱呢？';
+
+  @override
+  String get suggestionMilk => '牛奶';
+
+  @override
+  String get suggestionBread => '面包';
+
+  @override
+  String get suggestionEggs => '鸡蛋';
+
+  @override
+  String get suggestionCoffee => '咖啡';
+
+  @override
+  String get suggestionRice => '米';
+
+  @override
+  String get suggestionFruits => '水果';
 }
 
 /// The translations for Chinese, as used in Hong Kong (`zh_HK`).
@@ -4903,7 +5016,13 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   }
 
   @override
+  String get scanProductTitle => 'Scan Product';
+
+  @override
   String get positionBarcodeCenter => 'Position the barcode in the center';
+
+  @override
+  String get product => 'Product';
 
   @override
   String get settingsAppBar => '设置';
@@ -5008,6 +5127,21 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   }
 
   @override
+  String get unlockedBadges => 'Unlocked Badges';
+
+  @override
+  String get badgeBeginner => 'Beginner';
+
+  @override
+  String get badgeOrganized => 'Organized';
+
+  @override
+  String get badgeSavingMaster => 'Saving Master';
+
+  @override
+  String get badgeSuperPlanner => 'Super Planner';
+
+  @override
   String get backupTitle => '备份';
 
   @override
@@ -5088,6 +5222,21 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get sortManual => '手动';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased of $total items';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Budget: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Total: $amount';
+  }
 
   @override
   String get addItem => '添加项目';
@@ -5243,6 +5392,15 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String chatError(String error) {
     return '加载聊天时出错：$error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI Assistant';
+
+  @override
+  String get closeSheet => 'Close';
+
+  @override
+  String get scanBarcodeTitle => 'Scan Barcode';
 
   @override
   String get listHelp => '如何帮助您处理清单？';
@@ -6942,6 +7100,42 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get onboardingPainRepeat => 'One trip is never enough';
+
+  @override
+  String get aiWelcomeContent =>
+      'Hello! 👋 I\'m **Kipi**, your personal shopping and recipe assistant!\n\nI\'m here to help you:\n🛒 **Organize** your shopping by categories automatically\n💰 **Track** your budget and give you money-saving tips\n🍲 **Suggest** delicious recipes with what you already have\n\nHow can I help you today? You can start by creating your first list!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Create my first list';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, help me create my first shopping list';
+
+  @override
+  String get aiWelcomeSuggestSave => 'How to save money?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, how can you help me save money on groceries?';
+
+  @override
+  String get suggestionMilk => 'Milk';
+
+  @override
+  String get suggestionBread => 'Bread';
+
+  @override
+  String get suggestionEggs => 'Eggs';
+
+  @override
+  String get suggestionCoffee => 'Coffee';
+
+  @override
+  String get suggestionRice => 'Rice';
+
+  @override
+  String get suggestionFruits => 'Fruits';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -7230,7 +7424,13 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   }
 
   @override
+  String get scanProductTitle => '掃描產品';
+
+  @override
   String get positionBarcodeCenter => '將條碼置於中心';
+
+  @override
+  String get product => '產品';
 
   @override
   String get settingsAppBar => '设置';
@@ -7334,6 +7534,21 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   }
 
   @override
+  String get unlockedBadges => '解鎖徽章';
+
+  @override
+  String get badgeBeginner => '初學者';
+
+  @override
+  String get badgeOrganized => '有組織';
+
+  @override
+  String get badgeSavingMaster => '拯救大師';
+
+  @override
+  String get badgeSuperPlanner => '超級策劃師';
+
+  @override
   String get backupTitle => '备份';
 
   @override
@@ -7414,6 +7629,21 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get sortManual => '手动';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased 項（共 $total 項）';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return '預算：$amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return '總計：$amount';
+  }
 
   @override
   String get addItem => '添加项目';
@@ -7568,6 +7798,15 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String chatError(String error) {
     return '加载聊天时出错：$error';
   }
+
+  @override
+  String get aiAssistantTitle => '人工智慧助手';
+
+  @override
+  String get closeSheet => '關閉';
+
+  @override
+  String get scanBarcodeTitle => '掃描條碼';
 
   @override
   String get listHelp => '如何帮助您处理清单？';
@@ -9187,4 +9426,77 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get onboardingAiDemoContinue => '繼續';
+
+  @override
+  String get onboardingAiDemoSlideHeadline => '你的購物清單現在有了人工智慧';
+
+  @override
+  String get onboardingAiDemoSlideSubtitle => '了解 Kipi 如何在幾秒鐘內建立完整列表';
+
+  @override
+  String get onboardingAiDemoSlideCta => '我想要這個！ →';
+
+  @override
+  String get onboardingAiDemoSlideUserMsg => '我要舉辦燒烤會🔥';
+
+  @override
+  String get onboardingAiDemoSlideReady => '準備好！這是您需要的一切：';
+
+  @override
+  String get onboardingAiDemoSlideDone => '幾秒鐘內完成清單✨';
+
+  @override
+  String get onboardingPainTitle => '什麼最讓你沮喪？';
+
+  @override
+  String get onboardingPainSubtitle => '說實話——我們會解決每一個問題';
+
+  @override
+  String get onboardingPainCta => '是的，幫我解決這個問題 →';
+
+  @override
+  String get onboardingPainForget => '我忘了商店裡的物品';
+
+  @override
+  String get onboardingPainFamily => '我的家人從來沒有看過這份名單';
+
+  @override
+  String get onboardingPainOverspend => '我總是超出預算';
+
+  @override
+  String get onboardingPainRepeat => '一次旅行永遠不夠';
+
+  @override
+  String get aiWelcomeContent =>
+      '你好！ 👋我是**Kipi**，您的私人購物和食譜助理！\n\n我是來幫助你的：\n🛒 **自動按類別組織**您的購物\n💰 **追蹤**您的預算並為您提供省錢秘訣\n🍲 **用你已有的東西推薦**美味食譜\n\n今天我能為您提供什麼幫助？您可以從創建您的第一個清單開始！';
+
+  @override
+  String get aiWelcomeSuggestCreateList => '創建我的第一個列表';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt => 'Kipi，幫我建立我的第一個購物清單';
+
+  @override
+  String get aiWelcomeSuggestSave => '如何省錢？';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt => 'Kipi，你要怎麼幫我在雜貨上省錢呢？';
+
+  @override
+  String get suggestionMilk => '牛奶';
+
+  @override
+  String get suggestionBread => '麵包';
+
+  @override
+  String get suggestionEggs => '蛋';
+
+  @override
+  String get suggestionCoffee => '咖啡';
+
+  @override
+  String get suggestionRice => '白飯';
+
+  @override
+  String get suggestionFruits => '水果';
 }

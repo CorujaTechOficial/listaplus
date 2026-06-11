@@ -300,13 +300,13 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Termék beolvasása';
 
   @override
-  String get positionBarcodeCenter => 'Position the barcode in the center';
+  String get positionBarcodeCenter => 'Helyezze a vonalkódot középre';
 
   @override
-  String get product => 'Product';
+  String get product => 'Termék';
 
   @override
   String get settingsAppBar => 'Beállítások';
@@ -394,42 +394,42 @@ class AppLocalizationsHu extends AppLocalizations {
   String get termsOfUse => 'Felhasználási feltételek';
 
   @override
-  String get myAchievements => 'My Achievements';
+  String get myAchievements => 'Eredményeim';
 
   @override
-  String get itemsPurchased => 'Items Purchased';
+  String get itemsPurchased => 'Vásárolt tételek';
 
   @override
-  String get totalSavings => 'Total Savings';
+  String get totalSavings => 'Teljes megtakarítás';
 
   @override
-  String get currentStreak => 'Current Streak';
+  String get currentStreak => 'Aktuális sorozat';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '$count day',
+      other: '$count nap',
+      one: '$count nap',
     );
     return '$_temp0';
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Feloldott jelvények';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Kezdő';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Szervezett';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Mentés Mester';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Szuper tervező';
 
   @override
   String get backupTitle => 'Biztonsági mentés';
@@ -516,17 +516,17 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased / $total elem';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Költségkeret: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Összesen: $amount';
   }
 
   @override
@@ -687,13 +687,13 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI asszisztens';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Közeli';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Vonalkód beolvasása';
 
   @override
   String get listHelp => 'Miben segíthetek a listájával?';
@@ -2423,6 +2423,42 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'Egy utazás sosem elég';
+
+  @override
+  String get aiWelcomeContent =>
+      'Helló! 👋 **Kipi** vagyok, a személyes vásárlási és recepttársad!\n\nAzért vagyok itt, hogy segítsek:\n🛒 **Szervezd** automatikusan a vásárlást kategóriák szerint\n💰 **Kövesse nyomon** költségvetését, és adjon pénzmegtakarítási tippeket\n🍲 **Javasljon** finom recepteket azzal, amivel már rendelkezik\n\nHogyan segíthetek ma? Kezdheti az első lista létrehozásával!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Hozd létre az első listámat';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, segíts elkészíteni az első bevásárlólistámat';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hogyan lehet pénzt megtakarítani?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hogyan segíthetsz nekem pénzt spórolni az élelmiszerekre?';
+
+  @override
+  String get suggestionMilk => 'Tej';
+
+  @override
+  String get suggestionBread => 'Kenyér';
+
+  @override
+  String get suggestionEggs => 'Tojás';
+
+  @override
+  String get suggestionCoffee => 'Kávé';
+
+  @override
+  String get suggestionRice => 'Rizs';
+
+  @override
+  String get suggestionFruits => 'Gyümölcsök';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -2721,6 +2757,15 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   }
 
   @override
+  String get scanProductTitle => 'Termék beolvasása';
+
+  @override
+  String get positionBarcodeCenter => 'Helyezze a vonalkódot középre';
+
+  @override
+  String get product => 'Termék';
+
+  @override
   String get settingsAppBar => 'Beállítások';
 
   @override
@@ -2806,6 +2851,44 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get termsOfUse => 'Felhasználási feltételek';
 
   @override
+  String get myAchievements => 'Eredményeim';
+
+  @override
+  String get itemsPurchased => 'Vásárolt tételek';
+
+  @override
+  String get totalSavings => 'Teljes megtakarítás';
+
+  @override
+  String get currentStreak => 'Aktuális sorozat';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count nap',
+      one: '$count nap',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unlockedBadges => 'Feloldott jelvények';
+
+  @override
+  String get badgeBeginner => 'Kezdő';
+
+  @override
+  String get badgeOrganized => 'Szervezett';
+
+  @override
+  String get badgeSavingMaster => 'Mentés Mester';
+
+  @override
+  String get badgeSuperPlanner => 'Szuper tervező';
+
+  @override
   String get backupTitle => 'Biztonsági mentés';
 
   @override
@@ -2887,6 +2970,21 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get sortManual => 'Kézi';
+
+  @override
+  String progressItemsOf(int purchased, int total) {
+    return '$purchased / $total elem';
+  }
+
+  @override
+  String progressBudget(String amount) {
+    return 'Költségkeret: $amount';
+  }
+
+  @override
+  String progressTotal(String amount) {
+    return 'Összesen: $amount';
+  }
 
   @override
   String get addItem => 'Elem hozzáadása';
@@ -3044,6 +3142,15 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String chatError(String error) {
     return 'Hiba a chat betöltésekor: $error';
   }
+
+  @override
+  String get aiAssistantTitle => 'AI asszisztens';
+
+  @override
+  String get closeSheet => 'Közeli';
+
+  @override
+  String get scanBarcodeTitle => 'Vonalkód beolvasása';
 
   @override
   String get listHelp => 'Miben segíthetek a listájával?';
@@ -4773,4 +4880,40 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get onboardingPainRepeat => 'Egy utazás sosem elég';
+
+  @override
+  String get aiWelcomeContent =>
+      'Helló! 👋 **Kipi** vagyok, a személyes vásárlási és recepttársad!\n\nAzért vagyok itt, hogy segítsek:\n🛒 **Szervezd** automatikusan a vásárlást kategóriák szerint\n💰 **Kövesse nyomon** költségvetését, és adjon pénzmegtakarítási tippeket\n🍲 **Javasljon** finom recepteket azzal, amivel már rendelkezik\n\nHogyan segíthetek ma? Kezdheti az első lista létrehozásával!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Hozd létre az első listámat';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi, segíts elkészíteni az első bevásárlólistámat';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Hogyan lehet pénzt megtakarítani?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi, hogyan segíthetsz nekem pénzt spórolni az élelmiszerekre?';
+
+  @override
+  String get suggestionMilk => 'Tej';
+
+  @override
+  String get suggestionBread => 'Kenyér';
+
+  @override
+  String get suggestionEggs => 'Tojás';
+
+  @override
+  String get suggestionCoffee => 'Kávé';
+
+  @override
+  String get suggestionRice => 'Rizs';
+
+  @override
+  String get suggestionFruits => 'Gyümölcsök';
 }

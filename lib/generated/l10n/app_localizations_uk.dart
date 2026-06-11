@@ -300,13 +300,13 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'Сканувати продукт';
 
   @override
   String get positionBarcodeCenter => 'Розмістіть штрих-код у центрі';
 
   @override
-  String get product => 'Product';
+  String get product => 'Продукт';
 
   @override
   String get settingsAppBar => 'Налаштування';
@@ -411,19 +411,19 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'Розблоковані значки';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Початківець';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'Організовано';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'Спасибі Майстра';
 
   @override
-  String get badgeSuperPlanner => 'Super Planner';
+  String get badgeSuperPlanner => 'Супер планувальник';
 
   @override
   String get backupTitle => 'Резервне копіювання';
@@ -510,17 +510,17 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$purchased з $total елементів';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'Бюджет: $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'Усього: $amount';
   }
 
   @override
@@ -680,13 +680,13 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'ШІ помічник';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'Закрити';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'Сканувати штрих-код';
 
   @override
   String get listHelp => 'Чим я можу допомогти з вашим списком?';
@@ -2381,43 +2381,78 @@ class AppLocalizationsUk extends AppLocalizations {
   String get onboardingAiDemoContinue => 'Продовжити';
 
   @override
-  String get onboardingAiDemoSlideHeadline => 'Your shopping list, now with AI';
+  String get onboardingAiDemoSlideHeadline => 'Ваш список покупок тепер із ШІ';
 
   @override
   String get onboardingAiDemoSlideSubtitle =>
-      'See how Kipi builds your full list in seconds';
+      'Подивіться, як Kipi створює ваш повний список за лічені секунди';
 
   @override
-  String get onboardingAiDemoSlideCta => 'I want this! →';
+  String get onboardingAiDemoSlideCta => 'Я хочу це! →';
 
   @override
-  String get onboardingAiDemoSlideUserMsg => 'I\'m hosting a barbecue 🔥';
+  String get onboardingAiDemoSlideUserMsg => 'Я влаштовую шашлик🔥';
 
   @override
-  String get onboardingAiDemoSlideReady =>
-      'Ready! Here\'s everything you need:';
+  String get onboardingAiDemoSlideReady => 'Готовий! Ось все, що вам потрібно:';
 
   @override
-  String get onboardingAiDemoSlideDone => 'Complete list in seconds ✨';
+  String get onboardingAiDemoSlideDone => 'Повний список за секунди ✨';
 
   @override
-  String get onboardingPainTitle => 'What frustrates you most?';
+  String get onboardingPainTitle => 'Що вас найбільше засмучує?';
 
   @override
-  String get onboardingPainSubtitle => 'Be honest — we\'ll fix each one';
+  String get onboardingPainSubtitle => 'Будьте чесними — ми виправимо кожен';
 
   @override
-  String get onboardingPainCta => 'Yes, fix this for me →';
+  String get onboardingPainCta => 'Так, виправте це для мене →';
 
   @override
-  String get onboardingPainForget => 'I forget items at the store';
+  String get onboardingPainForget => 'Я забуваю речі в магазині';
 
   @override
-  String get onboardingPainFamily => 'My family never sees the list';
+  String get onboardingPainFamily => 'Моя родина ніколи не бачить цього списку';
 
   @override
-  String get onboardingPainOverspend => 'I always go over budget';
+  String get onboardingPainOverspend => 'Я завжди перевищую бюджет';
 
   @override
-  String get onboardingPainRepeat => 'One trip is never enough';
+  String get onboardingPainRepeat => 'Однієї поїздки ніколи не буває достатньо';
+
+  @override
+  String get aiWelcomeContent =>
+      'Привіт! 👋 Я **Кіпі**, ваш особистий помічник у покупках і рецептах!\n\nЯ тут, щоб допомогти вам:\n🛒 **Автоматично організуйте** ваші покупки за категоріями\n💰 **Відстежуйте** свій бюджет і давайте поради щодо економії грошей\n🍲 **Пропонуйте** смачні рецепти з того, що у вас уже є\n\nЧим я можу тобі допомогти сьогодні? Ви можете почати зі створення свого першого списку!';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'Створіть мій перший список';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Кіпі, допоможи мені створити мій перший список покупок';
+
+  @override
+  String get aiWelcomeSuggestSave => 'Як заощадити?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Кіпі, як ти можеш допомогти мені заощадити на продуктах?';
+
+  @override
+  String get suggestionMilk => 'молоко';
+
+  @override
+  String get suggestionBread => 'Хліб';
+
+  @override
+  String get suggestionEggs => 'Яйця';
+
+  @override
+  String get suggestionCoffee => 'кава';
+
+  @override
+  String get suggestionRice => 'Рис';
+
+  @override
+  String get suggestionFruits => 'Фрукти';
 }

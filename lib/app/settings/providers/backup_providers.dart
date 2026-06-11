@@ -47,6 +47,9 @@ class BackupService {
   Future<String> importFromJson(String jsonString) async {
     final service = _ref.read(firestoreServiceProvider);
     if (service == null) throw Exception('Usuário não autenticado');
+    if (jsonString.length > 10 * 1024 * 1024) {
+      throw Exception('Arquivo de backup muito grande. Máximo 10MB.');
+    }
     try {
       final data = jsonDecode(jsonString) as Map<String, dynamic>;
       if (data['version'] == null || data['lists'] == null) {

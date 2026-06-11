@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// coverage:ignore-start
 import 'package:flutter/services.dart';
 import '../../../theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -128,4 +127,3 @@ class _FilterBarState extends State<FilterBar> {
     );
   }
 }
-// coverage:ignore-end

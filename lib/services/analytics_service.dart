@@ -1,5 +1,4 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-// coverage:ignore-start
 
 class AnalyticsService {
   AnalyticsService({FirebaseAnalytics? analytics})
@@ -56,4 +55,3 @@ class AnalyticsService {
     await _analytics?.logEvent(name: name, parameters: parameters);
   }
 }
-// coverage:ignore-end

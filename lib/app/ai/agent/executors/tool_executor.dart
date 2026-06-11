@@ -39,7 +39,7 @@ class ToolExecutor {
       if (!isPremium) {
         return ToolResult(
           toolCallId: call.id,
-          content: 'Esta funcionalidade requer assinatura Premium.',
+          content: 'This feature requires a Premium subscription.',
           success: false,
           requiresUnlock: true,
         );
@@ -53,7 +53,7 @@ class ToolExecutor {
         if (count > kFreeAiActionsPerMonth) {
           return ToolResult(
             toolCallId: call.id,
-            content: 'Limite mensal de ações de IA atingido. Assine o Pro para continuar.',
+            content: 'Monthly AI action limit reached. Subscribe to Pro to continue.',
             success: false,
             requiresUnlock: true,
           );

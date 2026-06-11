@@ -1,4 +1,3 @@
-// coverage:ignore-start
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 import 'revenuecat_service.dart';
@@ -96,4 +95,3 @@ class RevenueCatServiceImpl implements RevenueCatService {
     return result.customerInfo;
   }
 }
-// coverage:ignore-end

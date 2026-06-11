@@ -293,13 +293,13 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get scanProductTitle => 'Scan Product';
+  String get scanProductTitle => 'ကုန်ပစ္စည်းကို စကင်ဖတ်ပါ။';
 
   @override
   String get positionBarcodeCenter => 'ဘားကုဒ်ကို အလယ်ဗဟိုတွင် နေရာချပါ။';
 
   @override
-  String get product => 'Product';
+  String get product => 'ထုတ်ကုန်';
 
   @override
   String get settingsAppBar => 'ဆက်တင်များ';
@@ -405,16 +405,16 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get unlockedBadges => 'Unlocked Badges';
+  String get unlockedBadges => 'လော့ခ်ဖွင့်ထားသော တံဆိပ်များ';
 
   @override
-  String get badgeBeginner => 'Beginner';
+  String get badgeBeginner => 'Beginner ပါ။';
 
   @override
-  String get badgeOrganized => 'Organized';
+  String get badgeOrganized => 'စည်းရုံးသည်။';
 
   @override
-  String get badgeSavingMaster => 'Saving Master';
+  String get badgeSavingMaster => 'ကယ်တင်ခြင်းဆရာကြီး';
 
   @override
   String get badgeSuperPlanner => 'Super Planner';
@@ -505,17 +505,17 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String progressItemsOf(int purchased, int total) {
-    return '$purchased of $total items';
+    return '$total အရာများထဲမှ $purchased';
   }
 
   @override
   String progressBudget(String amount) {
-    return 'Budget: $amount';
+    return 'ဘတ်ဂျက်- $amount';
   }
 
   @override
   String progressTotal(String amount) {
-    return 'Total: $amount';
+    return 'စုစုပေါင်း- $amount';
   }
 
   @override
@@ -676,13 +676,13 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get aiAssistantTitle => 'AI Assistant';
+  String get aiAssistantTitle => 'AI လက်ထောက်';
 
   @override
-  String get closeSheet => 'Close';
+  String get closeSheet => 'ပိတ်လိုက်';
 
   @override
-  String get scanBarcodeTitle => 'Scan Barcode';
+  String get scanBarcodeTitle => 'ဘားကုဒ်ကို စကင်န်ဖတ်ပါ။';
 
   @override
   String get listHelp => 'သင့်စာရင်းအတွက်ဘယ်လိုကူညီပေးရမလဲ?';
@@ -2413,4 +2413,40 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get onboardingPainRepeat => 'ခရီးစဉ်တစ်ခုက ဘယ်တော့မှ မလုံလောက်ပါဘူး။';
+
+  @override
+  String get aiWelcomeContent =>
+      'မင်္ဂလာပါ! 👋 ကျွန်ုပ်သည် **Kipi** ဖြစ်ပါသည်၊ သင်၏ တစ်ကိုယ်ရေ စျေးဝယ်နှင့် ဟင်းချက်နည်း လက်ထောက်ဖြစ်သည်။\n\nငါ မင်းကို ကူညီဖို့ ဒီမှာ ရှိတယ်\n🛒 **သင်၏စျေးဝယ်ခြင်း**ကို အမျိုးအစားအလိုက် အလိုအလျောက်စုစည်းပါ။\n💰 **သင်၏ဘတ်ဂျက်ကို ခြေရာခံပါ** နှင့် သင့်အား ငွေချွေတာသော အကြံဉာဏ်များ ပေးပါ။\n🍲 ** သင့်တွင်ရှိပြီးသားအရာများနှင့် အရသာရှိသော ဟင်းချက်နည်းများကို အကြံပြုပါ။\n\nဒီနေ့ မင်းကို ငါဘယ်လိုကူညီနိုင်မလဲ။ သင်၏ ပထမဆုံးစာရင်းကို ဖန်တီးခြင်းဖြင့် စတင်နိုင်သည်။';
+
+  @override
+  String get aiWelcomeSuggestCreateList => 'ကျွန်ုပ်၏ပထမဆုံးစာရင်းကိုဖန်တီးပါ။';
+
+  @override
+  String get aiWelcomeSuggestCreateListPrompt =>
+      'Kipi၊ ကျွန်ုပ်၏ပထမဆုံးစျေးဝယ်စာရင်းကိုဖန်တီးပါ။';
+
+  @override
+  String get aiWelcomeSuggestSave => 'ပိုက်ဆံဘယ်လိုစုမလဲ?';
+
+  @override
+  String get aiWelcomeSuggestSavePrompt =>
+      'Kipi၊ ကုန်စုံဆိုင်တွေမှာ ပိုက်ဆံစုဖို့ ဘယ်လိုကူညီနိုင်မလဲ။';
+
+  @override
+  String get suggestionMilk => 'နို့';
+
+  @override
+  String get suggestionBread => 'မုန့်';
+
+  @override
+  String get suggestionEggs => 'ကြက်ဥ';
+
+  @override
+  String get suggestionCoffee => 'ကော်ဖီ';
+
+  @override
+  String get suggestionRice => 'ထမင်း';
+
+  @override
+  String get suggestionFruits => 'သစ်သီးများ';
 }

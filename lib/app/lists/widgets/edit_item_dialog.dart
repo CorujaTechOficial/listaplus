@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
-import 'package:shopping_list/domain/entities/unit.dart';
-import 'package:shopping_list/domain/entities/shopping_item.dart';
+import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
@@ -69,14 +69,11 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                     return option.toLowerCase().contains(query);
                   });
                 },
-                // coverage:ignore-start
-                onSelected: (String selection) {
+                                onSelected: (String selection) {
                   _nameController.text = selection;
                 },
-                // coverage:ignore-end
-                fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
-                  // coverage:ignore-start
-                  textEditingController.addListener(() {
+                                fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
+                                    textEditingController.addListener(() {
                     if (_nameController.text != textEditingController.text) {
                       _nameController.text = textEditingController.text;
                     }
@@ -87,8 +84,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                       textEditingController.text = _nameController.text;
                     }
                   });
-                  // coverage:ignore-end
-
+                  
                   return TextFormField(
                     controller: textEditingController,
                     focusNode: focusNode,

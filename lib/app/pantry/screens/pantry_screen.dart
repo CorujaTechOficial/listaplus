@@ -10,7 +10,7 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/models/shopping_item.dart';
-import 'package:shopping_list/domain/entities/category_data.dart';
+import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
