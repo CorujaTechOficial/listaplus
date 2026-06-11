@@ -175,42 +175,52 @@ class ShoppingItemTile extends ConsumerWidget {
                   ),
                   const SizedBox(width: 8),
                   if (!selectionMode && !isShoppingMode)
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        _SmallIconButton(
-                          icon: Icons.remove,
-                          onPressed: () {
-                            HapticFeedback.selectionClick();
-                            ref.read(shoppingListItemsProvider(listId).notifier).decrementQuantity(item.id);
-                          },
-                        ),
-                        SizedBox(
-                          width: 32,
-                          child: Center(
-                            child: Text(
-                              '${item.quantity}',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                fontWeight: FontWeight.w800,
-                                fontFeatures: [const FontFeature.tabularFigures()],
+                    Builder(
+                      builder: (context) {
+                        final screenWidth = MediaQuery.sizeOf(context).width;
+                        final isSmallScreen = screenWidth < 380;
+                        return Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (!isSmallScreen)
+                              _SmallIconButton(
+                                icon: Icons.remove,
+                                onPressed: () {
+                                  HapticFeedback.selectionClick();
+                                  ref.read(shoppingListItemsProvider(listId).notifier).decrementQuantity(item.id);
+                                },
+                              ),
+                            SizedBox(
+                              width: isSmallScreen ? null : 32,
+                              child: Center(
+                                child: Text(
+                                  '${item.quantity}',
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    fontFeatures: isSmallScreen
+                                        ? null
+                                        : [const FontFeature.tabularFigures()],
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        _SmallIconButton(
-                          icon: Icons.add,
-                          onPressed: () {
-                            HapticFeedback.selectionClick();
-                            ref.read(shoppingListItemsProvider(listId).notifier).incrementQuantity(item.id);
-                          },
-                        ),
-                        const SizedBox(width: 4),
-                        IconButton(
-                          icon: const Icon(Icons.more_vert, size: 20),
-                          onPressed: () => _showEditDialog(context, ref),
-                          visualDensity: VisualDensity.compact,
-                        ),
-                      ],
+                            if (!isSmallScreen)
+                              _SmallIconButton(
+                                icon: Icons.add,
+                                onPressed: () {
+                                  HapticFeedback.selectionClick();
+                                  ref.read(shoppingListItemsProvider(listId).notifier).incrementQuantity(item.id);
+                                },
+                              ),
+                            const SizedBox(width: 4),
+                            IconButton(
+                              icon: const Icon(Icons.more_vert, size: 20),
+                              onPressed: () => _showEditDialog(context, ref),
+                              visualDensity: VisualDensity.compact,
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   if (!selectionMode && isShoppingMode)
                     Text(
@@ -238,7 +248,7 @@ class ShoppingItemTile extends ConsumerWidget {
               child: Icon(
                 Icons.delete_outline,
                 size: 18,
-                color: theme.colorScheme.error.withAlpha(25),
+                color: theme.colorScheme.error.withAlpha(80),
               ),
             ),
           ),
