@@ -8,15 +8,14 @@ import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/theme/colors.dart';
 import '../providers/onboarding_data_provider.dart';
 
-const _itemsByCategory = <String, List<String>>{
-  'grocery': ['🥩 Frango', '🥛 Leite integral', '🧀 Queijo mussarela', '🍅 Tomate', '🥦 Brócolis', '🍚 Arroz'],
-  'pharmacy': ['💊 Paracetamol', '🩹 Curativo', '🧴 Protetor solar', '💉 Vitamina C', '🌡️ Termômetro'],
-  'recipes': ['🫒 Azeite extravirgem', '🧄 Alho', '🧅 Cebola', '🌿 Ervas frescas', '🍋 Limão', '🥚 Ovos'],
-  'home': ['🧹 Vassoura', '🧽 Esponja', '🧴 Detergente', '🪣 Balde', '🧻 Papel toalha'],
-  'pet': ['🐾 Ração premium', '🦴 Petisco', '🛁 Shampoo pet', '💊 Vermífugo', '🪮 Escova'],
-};
-
-const _defaultItems = ['🥩 Proteína', '🥦 Legumes', '🍚 Arroz', '🥚 Ovos', '🧴 Produtos de limpeza'];
+import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
+import 'package:shopping_list/models/chat_message.dart';
+import 'package:shopping_list/services/ai_service.dart';
+import 'package:shopping_list/models/shopping_list.dart';
+import 'package:shopping_list/models/shopping_item.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/services/logger_service.dart';
 
 class _ChatMessage {
   const _ChatMessage({required this.isUser, required this.text});
@@ -43,19 +42,32 @@ class OnboardingAiChat extends ConsumerStatefulWidget {
 class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
   final _messages = <_ChatMessage>[];
   final _scrollController = ScrollController();
+  final _textController = TextEditingController();
   bool _isAiTyping = false;
+  bool _hasText = false;
   _ChatStep _step = _ChatStep.greeting;
   bool _showCategoryPicker = false;
+  AiCancellationToken? _cancelToken;
 
   @override
   void initState() {
     super.initState();
+    _textController.addListener(() {
+      final hasText = _textController.text.trim().isNotEmpty;
+      if (hasText != _hasText) {
+        setState(() {
+          _hasText = hasText;
+        });
+      }
+    });
     WidgetsBinding.instance.addPostFrameCallback((_) => _startChat());
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
+    _textController.dispose();
+    _cancelToken?.cancel();
     super.dispose();
   }
 
@@ -116,44 +128,144 @@ class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
     });
   }
 
-  Future<void> _onYes() async {
+  Future<void> _sendPrompt(String promptText) async {
+    if (promptText.trim().isEmpty) {
+      return;
+    }
+
     final l10n = AppLocalizations.of(context)!;
+    
     setState(() {
+      _messages.add(_ChatMessage(isUser: true, text: promptText));
       _step = _ChatStep.generating;
-      _messages.add(_ChatMessage(isUser: true, text: l10n.onboardingAiDemoYes));
+      _isAiTyping = true;
     });
     _scrollToBottom();
 
-    final category = ref.read(onboardingDataProvider).shoppingCategory;
-    final items = _itemsByCategory[category] ?? _defaultItems;
+    final userPrefs = ref.read(onboardingDataProvider);
+    final categoryName = _categoryLabel(userPrefs.shoppingCategory, l10n);
+    final householdSize = userPrefs.householdSize.isNotEmpty ? userPrefs.householdSize : 'solo';
+    
+    final systemPrompt = 'Você é o Kipi, o assistente inteligente de compras do aplicativo KipiList.\n'
+        'O usuário está configurando o aplicativo pela primeira vez no onboarding.\n'
+        'Sua tarefa é gerar uma lista de compras realista de 5 a 8 itens principais baseando-se no pedido do usuário e no perfil dele:\n'
+        'Categoria de compras favorita: $categoryName\n'
+        'Tamanho da família/grupo: $householdSize\n\n'
+        'IMPORTANTE:\n'
+        '1. Retorne a resposta em português brasileiro (ou no idioma da solicitação se for diferente).\n'
+        '2. Formate a resposta como uma lista direta de itens de compras, com um emoji no início de cada item (ex: \'🍎 Maçã (1 kg)\' ou \'🥛 Leite integral\').\n'
+        '3. Não escreva textos explicativos ou introduções longas. Vá direto ao ponto para que possamos salvar a lista para o usuário.\n'
+        '4. Coloque cada item em uma nova linha.';
 
-    setState(() => _isAiTyping = true);
-    await Future<void>.delayed(800.ms);
-    if (!mounted) {
-      return;
-    }
-    setState(() => _isAiTyping = false);
+    _cancelToken = AiCancellationToken();
 
-    final buffer = StringBuffer();
-    for (final item in items) {
-      buffer.writeln('• $item');
-      await Future<void>.delayed(200.ms);
-      if (!mounted) {
-        return;
-      }
+    final history = _messages.map((m) => ChatMessage(
+      role: m.isUser ? 'user' : 'assistant',
+      content: m.text,
+    )).toList();
+
+    try {
+      final aiService = ref.read(aiServiceProvider);
+      final stream = aiService.getChatCompletionStream(
+        history,
+        systemPrompt: systemPrompt,
+        cancelToken: _cancelToken,
+      );
+
       setState(() {
-        _messages.last = _ChatMessage(isUser: false, text: buffer.toString().trimRight());
+        _messages.add(const _ChatMessage(isUser: false, text: ''));
       });
-      _scrollToBottom();
-    }
 
-    await Future<void>.delayed(500.ms);
-    if (!mounted) {
+      final buffer = StringBuffer();
+      await for (final chunk in stream) {
+        if (!mounted || _cancelToken?.isCancelled == true) {
+          return;
+        }
+        buffer.write(chunk);
+        setState(() {
+          _isAiTyping = false;
+          _messages[_messages.length - 1] = _ChatMessage(
+            isUser: false,
+            text: buffer.toString(),
+          );
+        });
+        _scrollToBottom();
+      }
+
+      if (mounted && _cancelToken?.isCancelled != true) {
+        setState(() {
+          _step = _ChatStep.done;
+        });
+        
+        final parsed = _parseGeneratedList(buffer.toString());
+        if (parsed.isNotEmpty) {
+          final listName = '${_categoryLabel(userPrefs.shoppingCategory, l10n)} 🛒';
+          await _saveList(listName, parsed);
+        }
+      }
+    } on Exception catch (e, s) {
+      LoggerService.error(e, stackTrace: s, message: 'Erro ao gerar lista na IA no onboarding');
+      if (mounted) {
+        setState(() {
+          _isAiTyping = false;
+          _step = _ChatStep.done;
+        });
+      }
+    }
+  }
+
+  List<String> _parseGeneratedList(String text) {
+    final lines = text.split('\n');
+    final items = <String>[];
+    for (var line in lines) {
+      line = line.trim();
+      if (line.isEmpty) {
+        continue;
+      }
+      line = line.replaceFirst(RegExp(r'^[-*•\d\.\s#]+'), '').trim();
+      if (line.length > 50) {
+        continue;
+      }
+      if (line.isNotEmpty) {
+        items.add(line);
+      }
+    }
+    return items;
+  }
+
+  Future<void> _saveList(String name, List<String> parsedItems) async {
+    final service = ref.read(firestoreServiceProvider);
+    if (service == null) {
       return;
     }
-    await _addAiMessage(l10n.onboardingAiDemoReaction);
-    if (mounted) {
-      setState(() => _step = _ChatStep.done);
+    try {
+      final newList = ShoppingList(name: name);
+      await service.saveList(newList);
+
+      final items = parsedItems.map((itemName) {
+        return ShoppingItem(
+          shoppingListId: newList.id,
+          name: itemName,
+          quantity: 1,
+          categoryId: 'others',
+        );
+      }).toList();
+
+      await service.saveItems(items);
+      await ref.read(currentListIdProvider.notifier).setCurrentList(newList.id);
+      
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        setState(() {
+          _messages.add(_ChatMessage(
+            isUser: false,
+            text: '✅ ${l10n.onboardingAiChatSaved}',
+          ));
+        });
+        _scrollToBottom();
+      }
+    } on Exception catch (e, s) {
+      LoggerService.error(e, stackTrace: s, message: 'Failed to save onboarding list');
     }
   }
 
@@ -228,51 +340,91 @@ class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
           ),
           if (_showCategoryPicker)
             _CategoryPicker(onSelected: _onCategorySelected)
-          else
-            _buildActionArea(theme, l10n),
+          else ...[
+            if (_step == _ChatStep.offered) _buildSuggestionChips(l10n, theme),
+            _buildInputArea(theme, l10n),
+          ],
         ],
       ),
     );
   }
 
-  Widget _buildActionArea(ThemeData theme, AppLocalizations l10n) {
-    if (_step == _ChatStep.offered) {
-      return Padding(
-        padding: const EdgeInsets.all(Spacing.md),
-        child: Row(
-          children: [
-            Expanded(
-              child: OutlinedButton(
-                onPressed: _onChangeCategory,
-                child: Text(l10n.onboardingAiDemoChange),
-              ),
-            ),
-            const SizedBox(width: Spacing.sm),
-            Expanded(
-              flex: 2,
-              child: ElevatedButton(
-                onPressed: _onYes,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.premiumAmber,
-                  foregroundColor: Colors.black,
-                ),
-                child: Text(l10n.onboardingAiDemoYes),
-              ),
-            ),
-          ],
-        ),
-      );
+  Widget _buildSuggestionChips(AppLocalizations l10n, ThemeData theme) {
+    final category = ref.watch(onboardingDataProvider).shoppingCategory;
+    final suggestions = <String>[];
+    
+    switch (category) {
+      case 'grocery':
+        suggestions.add(l10n.onboardingAiChatSuggestGrocery);
+        suggestions.add(l10n.onboardingAiChatSuggestRecipes);
+        break;
+      case 'recipes':
+        suggestions.add(l10n.onboardingAiChatSuggestRecipes);
+        suggestions.add(l10n.onboardingAiChatSuggestGrocery);
+        break;
+      case 'pet':
+        suggestions.add(l10n.onboardingAiChatSuggestPet);
+        suggestions.add(l10n.onboardingAiChatSuggestGrocery);
+        break;
+      case 'pharmacy':
+        suggestions.add(l10n.onboardingAiChatSuggestPharmacy);
+        suggestions.add(l10n.onboardingAiChatSuggestGrocery);
+        break;
+      case 'home':
+        suggestions.add(l10n.onboardingAiChatSuggestHome);
+        suggestions.add(l10n.onboardingAiChatSuggestGrocery);
+        break;
+      default:
+        suggestions.add(l10n.onboardingAiChatSuggestGrocery);
+        suggestions.add(l10n.onboardingAiChatSuggestRecipes);
+        break;
     }
 
+    return Container(
+      height: 44,
+      margin: const EdgeInsets.only(bottom: Spacing.xs),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: Spacing.md),
+        itemCount: suggestions.length,
+        itemBuilder: (context, index) {
+          final suggestion = suggestions[index];
+          return Padding(
+            padding: const EdgeInsets.only(right: Spacing.xs),
+            child: ActionChip(
+              label: Text(
+                suggestion,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 13,
+                ),
+              ),
+              onPressed: () => _sendPrompt(suggestion),
+              backgroundColor: theme.colorScheme.surfaceContainerHighest.withAlpha(120),
+              side: BorderSide(
+                color: theme.colorScheme.outlineVariant.withAlpha(100),
+                width: 0.5,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildInputArea(ThemeData theme, AppLocalizations l10n) {
     if (_step == _ChatStep.done) {
       return Padding(
         padding: const EdgeInsets.all(Spacing.md),
         child: SizedBox(
           width: double.infinity,
           height: 50,
-          child: ElevatedButton(
+          child: FilledButton(
             onPressed: widget.onFinished,
-            style: ElevatedButton.styleFrom(
+            style: FilledButton.styleFrom(
               backgroundColor: AppColors.premiumAmber,
               foregroundColor: Colors.black,
               shape: RoundedRectangleBorder(
@@ -288,7 +440,98 @@ class _OnboardingAiChatState extends ConsumerState<OnboardingAiChat> {
       );
     }
 
-    return const SizedBox(height: Spacing.md);
+    final isGenerating = _step == _ChatStep.generating;
+
+    return Container(
+      padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.xs, Spacing.md, Spacing.md),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        border: Border(
+          top: BorderSide(
+            color: theme.colorScheme.outlineVariant.withAlpha(80),
+            width: 0.5,
+          ),
+        ),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Row(
+          children: [
+            if (_step == _ChatStep.offered) ...[
+              IconButton(
+                onPressed: isGenerating ? null : _onChangeCategory,
+                icon: const Icon(Icons.tune_rounded),
+                tooltip: l10n.onboardingAiDemoChange,
+              ),
+              const SizedBox(width: Spacing.xs),
+            ],
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.surfaceContainerHighest.withAlpha(150),
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: Spacing.sm),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _textController,
+                        enabled: !isGenerating,
+                        textInputAction: TextInputAction.send,
+                        onSubmitted: (val) {
+                          if (val.trim().isNotEmpty) {
+                            _sendPrompt(val);
+                            _textController.clear();
+                          }
+                        },
+                        decoration: InputDecoration(
+                          hintText: l10n.onboardingAiChatHint,
+                          hintStyle: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant.withAlpha(140),
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: Spacing.xs,
+                            vertical: 10,
+                          ),
+                        ),
+                      ),
+                    ),
+                    if (isGenerating)
+                      const SizedBox(
+                        width: 18,
+                        height: 18,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                        ),
+                      )
+                    else
+                      IconButton(
+                        onPressed: _hasText
+                            ? () {
+                                final text = _textController.text;
+                                _sendPrompt(text);
+                                _textController.clear();
+                              }
+                            : (_step == _ChatStep.offered
+                                ? () => _sendPrompt(l10n.onboardingAiDemoYes)
+                                : null),
+                        icon: Icon(
+                          _hasText ? Icons.send_rounded : Icons.play_arrow_rounded,
+                          color: _hasText || _step == _ChatStep.offered
+                              ? theme.colorScheme.primary
+                              : theme.colorScheme.onSurfaceVariant.withAlpha(100),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

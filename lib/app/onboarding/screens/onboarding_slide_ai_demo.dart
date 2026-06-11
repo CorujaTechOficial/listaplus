@@ -195,9 +195,9 @@ class _OnboardingSlideAiDemoState extends State<OnboardingSlideAiDemo> {
                   child: SizedBox(
                     width: double.infinity,
                     height: 54,
-                    child: ElevatedButton(
+                    child: FilledButton(
                       onPressed: _showCta ? widget.onFinished : null,
-                      style: ElevatedButton.styleFrom(
+                      style: FilledButton.styleFrom(
                         backgroundColor: Colors.white,
                         foregroundColor: theme.colorScheme.primary,
                         shape: RoundedRectangleBorder(
