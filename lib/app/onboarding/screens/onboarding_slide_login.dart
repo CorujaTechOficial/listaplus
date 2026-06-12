@@ -30,7 +30,7 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
     setState(() => _busy = true);
     try {
       final user = await method();
-      if (user != null) {
+      if (user != null && mounted) {
         unawaited(
           ref.read(analyticsServiceProvider).logEvent(
             name: 'onboarding_login_completed',
@@ -130,9 +130,9 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
                     onPressed:
                         _busy ? null : () => _signIn(auth.signInWithGoogle, 'google'),
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
                       backgroundColor: Colors.white,
-                      side: BorderSide(color: Colors.grey.shade300),
+                      side: BorderSide(color: theme.colorScheme.outlineVariant),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(RadiusTokens.md),
                       ),
@@ -174,7 +174,7 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
                       style: FilledButton.styleFrom(
                         backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(RadiusTokens.md),
                         ),
