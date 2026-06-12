@@ -236,7 +236,6 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
           ],
         ),
       ),
-    )
-.animate().fadeIn(duration: 300.ms).slideY(begin: 0.15, end: 0);
+    ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.15, end: 0);
   }
 }
