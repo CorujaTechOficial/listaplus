@@ -1,179 +1,135 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class OnboardingSlidePlanLoading extends StatefulWidget {
-  const OnboardingSlidePlanLoading({super.key, required this.onFinished});
+  const OnboardingSlidePlanLoading({
+    super.key,
+    required this.active,
+    required this.onFinished,
+  });
 
+  /// Só inicia a sequência quando a página fica visível.
+  final bool active;
   final VoidCallback onFinished;
 
   @override
-  State<OnboardingSlidePlanLoading> createState() =>
-      _OnboardingSlidePlanLoadingState();
+  State<OnboardingSlidePlanLoading> createState() => _OnboardingSlidePlanLoadingState();
 }
 
-class _OnboardingSlidePlanLoadingState
-    extends State<OnboardingSlidePlanLoading>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _progressController;
-  int _stepIndex = 0;
-  Timer? _stepTimer;
+class _OnboardingSlidePlanLoadingState extends State<OnboardingSlidePlanLoading> {
+  int _completedSteps = 0;
+  Timer? _timer;
+  static const _stepInterval = Duration(milliseconds: 900);
 
   @override
   void initState() {
     super.initState();
-    _progressController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 4000),
-    );
+    if (widget.active) {
+      _start();
+    }
+  }
 
-    _progressController.addStatusListener((status) {
-      if (status == AnimationStatus.completed && mounted) {
-        widget.onFinished();
-      }
-    });
+  @override
+  void didUpdateWidget(covariant OnboardingSlidePlanLoading oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.active && !oldWidget.active) {
+      _start();
+    }
+  }
 
-    _progressController.forward();
-
-    _stepTimer = Timer.periodic(const Duration(milliseconds: 1300), (t) {
+  void _start() {
+    _timer?.cancel();
+    setState(() => _completedSteps = 0);
+    _timer = Timer.periodic(_stepInterval, (timer) {
       if (!mounted) {
-        t.cancel();
+        timer.cancel();
         return;
       }
-      setState(() {
-        _stepIndex = (_stepIndex + 1).clamp(0, 2);
-      });
-      if (_stepIndex == 2) {
-        t.cancel();
+      setState(() => _completedSteps++);
+      if (_completedSteps >= 4) {
+        timer.cancel();
+        Future<void>.delayed(DurationTokens.normal, () {
+          if (mounted) {
+            widget.onFinished();
+          }
+        });
       }
     });
   }
 
   @override
   void dispose() {
-    _progressController.dispose();
-    _stepTimer?.cancel();
+    _timer?.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
-
+    final theme = Theme.of(context);
     final steps = [
-      l10n.onboardingLoadingStep1,
-      l10n.onboardingLoadingStep2,
-      l10n.onboardingLoadingStep3,
+      l10n.obLoadingStepProfile,
+      l10n.obLoadingStepHabits,
+      l10n.obLoadingStepSavings,
+      l10n.obLoadingStepLists,
     ];
-
-    final stats = [
-      (value: '\u2b50 4,8', label: l10n.onboardingLoadingStat1Label),
-      (value: '12.847', label: l10n.onboardingLoadingStat2Label),
-      (value: '94%', label: l10n.onboardingLoadingStat3Label),
-    ];
-
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(Spacing.xl),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/images/kipi/kipi_welcome.png',
-                height: 80,
-                filterQuality: FilterQuality.high,
-              ).animate().fadeIn(duration: 400.ms),
-              const SizedBox(height: Spacing.xl),
-              Text(
-                l10n.onboardingLoadingTitle,
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(Spacing.lg),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: SizedBox(
+                width: 72,
+                height: 72,
+                child: CircularProgressIndicator(
+                  strokeWidth: 6,
+                  value: widget.active ? null : 0,
                 ),
+              ),
+            ),
+            const SizedBox(height: Spacing.xl),
+            Center(
+              child: Text(
+                l10n.obLoadingTitle,
                 textAlign: TextAlign.center,
+                style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: Spacing.lg),
-              AnimatedSwitcher(
-                duration: const Duration(milliseconds: 400),
-                child: Text(
-                  steps[_stepIndex],
-                  key: ValueKey(_stepIndex),
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                  textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: Spacing.xl),
+            for (final (index, step) in steps.indexed)
+              Padding(
+                padding: const EdgeInsets.only(bottom: Spacing.sm),
+                child: Row(
+                  children: [
+                    AnimatedSwitcher(
+                      duration: DurationTokens.fast,
+                      child: index < _completedSteps
+                          ? Icon(
+                              Icons.check_circle_rounded,
+                              key: ValueKey('done_$index'),
+                              color: theme.colorScheme.primary,
+                            )
+                          : Icon(
+                              Icons.circle_outlined,
+                              key: ValueKey('pending_$index'),
+                              color: theme.colorScheme.outlineVariant,
+                            ),
+                    ),
+                    const SizedBox(width: Spacing.sm),
+                    Expanded(child: Text(step, style: theme.textTheme.bodyLarge)),
+                  ],
                 ),
-              ),
-              const SizedBox(height: Spacing.lg),
-              AnimatedBuilder(
-                animation: _progressController,
-                builder: (context, _) => ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: LinearProgressIndicator(
-                    value: _progressController.value,
-                    minHeight: 8,
-                    backgroundColor:
-                        theme.colorScheme.surfaceContainerHighest,
-                  ),
-                ),
-              ),
-              const SizedBox(height: Spacing.xl),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: stats.asMap().entries.map((entry) {
-                  return _StatCard(
-                    value: entry.value.value,
-                    label: entry.value.label,
-                    delay: (entry.key * 200).ms,
-                  );
-                }).toList(),
-              ),
-            ],
-          ),
+              ).animate(delay: Duration(milliseconds: 100 * index)).fadeIn(),
+          ],
         ),
       ),
     );
-  }
-}
-
-class _StatCard extends StatelessWidget {
-  const _StatCard({
-    required this.value,
-    required this.label,
-    required this.delay,
-  });
-
-  final String value;
-  final String label;
-  final Duration delay;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Column(
-      children: [
-        Text(
-          value,
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w900,
-            color: theme.colorScheme.primary,
-          ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: theme.textTheme.labelSmall?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    )
-        .animate()
-        .fadeIn(delay: delay + 500.ms, duration: 400.ms)
-        .slideY(begin: 0.3, end: 0, delay: delay + 500.ms, duration: 400.ms);
   }
 }
