@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_paywall.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
