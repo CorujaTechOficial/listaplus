@@ -54,6 +54,9 @@ class _OnboardingSlidePaywallState
           .read(revenueCatServiceProvider)
           .isEntitlementActive(kipiListProEntitlement);
       if (alreadyPro) {
+        if (!mounted) {
+          return;
+        }
         widget.onRestored();
         return;
       }
@@ -135,6 +138,17 @@ class _OnboardingSlidePaywallState
               .read(analyticsServiceProvider)
               .logEvent(name: 'onboarding_purchase_pending'),
         );
+        if (mounted) {
+          setState(() => _isPurchasing = false);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                AppLocalizations.of(context)!.paywallPurchasePending,
+              ),
+            ),
+          );
+        }
+        return;
       } else {
         unawaited(
           ref.read(analyticsServiceProvider).logPaywallError(e.toString()),
