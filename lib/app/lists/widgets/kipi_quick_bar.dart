@@ -5,9 +5,13 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:uuid/uuid.dart';
 import 'package:shopping_list/theme/tokens.dart';
-import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/models/shopping_item.dart';
+import 'package:shopping_list/models/unit.dart';
+import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
 
 class KipiQuickBar extends ConsumerStatefulWidget {
   const KipiQuickBar({super.key, required this.listId});
@@ -23,7 +27,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
   final _focusNode = FocusNode();
   late stt.SpeechToText _speech;
   bool _isListening = false;
-  bool _isSending = false;
+  bool _isAdding = false;
 
   @override
   void initState() {
@@ -96,34 +100,61 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
     }
     unawaited(HapticFeedback.lightImpact());
     setState(() {
-      _isSending = true;
+      _isAdding = true;
     });
-    final aiController = TextEditingController(text: text);
-    _controller.clear();
-    if (!mounted) {
-      return;
-    }
-    await showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      useSafeArea: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (_) => SizedBox(
-        height: MediaQuery.of(context).size.height * 0.85,
-        child: AiChatPanel(
-          listId: widget.listId,
-          externalController: aiController,
-        ),
-      ),
+    final newId = const Uuid().v4();
+    final newItem = ShoppingItem(
+      id: newId,
+      shoppingListId: widget.listId,
+      name: text,
+      quantity: 1,
+      categoryId: 'others',
+      unit: Unit.un,
     );
-    if (mounted) {
-      setState(() {
-        _isSending = false;
-      });
+    _controller.clear();
+    try {
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .addItem(
+            id: newId,
+            listId: widget.listId,
+            name: text,
+            quantity: 1,
+            categoryId: 'others',
+            unit: Unit.un,
+          );
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.itemAddedSnack(text)),
+            action: SnackBarAction(
+              label: l10n.edit,
+              onPressed: () {
+                showDialog<void>(
+                  context: context,
+                  builder: (_) => EditItemDialog(
+                    listId: widget.listId,
+                    item: newItem,
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+      }
+    } on Exception catch (e) {
+      debugPrint('Quick add failed: $e');
+      if (mounted) {
+        _controller.text = text;
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isAdding = false;
+        });
+      }
     }
-    aiController.dispose();
   }
 
   @override
@@ -141,13 +172,6 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
             width: 1,
           ),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha(13),
-            blurRadius: 10,
-            offset: const Offset(0, -2),
-          ),
-        ],
       ),
       child: SafeArea(
         top: false,
@@ -168,7 +192,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
                       ? theme.colorScheme.primaryContainer.withAlpha(40)
                       : theme.colorScheme.primaryContainer.withAlpha(60),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(RadiusTokens.full),
                     borderSide: BorderSide.none,
                   ),
                   contentPadding: const EdgeInsets.symmetric(
@@ -192,27 +216,27 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
               ),
             ),
             const SizedBox(width: Spacing.xs),
-            GestureDetector(
-              onTap: _isSending ? null : _send,
-              child: CircleAvatar(
-                backgroundColor: _isSending
-                    ? theme.colorScheme.surfaceContainerHighest
-                    : theme.colorScheme.primary,
-                child: _isSending
-                    ? const SizedBox(
-                        width: 18,
-                        height: 18,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2.5,
-                          color: Colors.white,
-                        ),
-                      )
-                    : const Icon(Icons.arrow_upward, size: 20, color: Colors.white),
-              ),
+            IconButton.filled(
+              onPressed: _isAdding ? null : _send,
+              icon: _isAdding
+                  ? SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2.5,
+                        color: theme.colorScheme.onPrimary,
+                      ),
+                    )
+                  : const Icon(
+                      Icons.arrow_upward,
+                      size: 20,
+                    ),
             ),
+
           ],
         ),
       ),
-    ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.15, end: 0);
+    )
+.animate().fadeIn(duration: 300.ms).slideY(begin: 0.15, end: 0);
   }
 }
