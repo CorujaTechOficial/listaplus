@@ -1500,6 +1500,18 @@ abstract class AppLocalizations {
   /// **'Unlock AI to chat'**
   String get chatHintBlocked;
 
+  /// No description provided for @chatEmptySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask for item suggestions, recipes or saving tips to get started.'**
+  String get chatEmptySubtitle;
+
+  /// No description provided for @chatEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your chat is empty'**
+  String get chatEmptyTitle;
+
   /// No description provided for @chatError.
   ///
   /// In en, this message translates to:
@@ -2225,6 +2237,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Full flexibility'**
   String get paywallPackageMonthlyDesc;
+
+  /// Badge shown on paywall when no trial is available
+  ///
+  /// In en, this message translates to:
+  /// **'🎁 Welcome offer'**
+  String get paywallWelcomeOfferBadge;
 
   /// No description provided for @paywallCtaTrialDays.
   ///
@@ -3630,6 +3648,12 @@ abstract class AppLocalizations {
   /// **'Browse Catalog'**
   String get catalogBrowse;
 
+  /// No description provided for @catalogCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get catalogCategories;
+
   /// No description provided for @offlineBanner.
   ///
   /// In en, this message translates to:
@@ -4637,6 +4661,498 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Fruits'**
   String get suggestionFruits;
+
+  /// No description provided for @recipeIngredientSingular.
+  ///
+  /// In en, this message translates to:
+  /// **'1 ingredient'**
+  String get recipeIngredientSingular;
+
+  /// No description provided for @recipeIngredientsPlural.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} ingredients'**
+  String recipeIngredientsPlural(int count);
+
+  /// No description provided for @pantryAvailabilityAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All set!'**
+  String get pantryAvailabilityAll;
+
+  /// No description provided for @pantryAvailabilityCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{availableCount}/{totalCount} in pantry'**
+  String pantryAvailabilityCount(int availableCount, int totalCount);
+
+  /// No description provided for @onboardingProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current} of {total}'**
+  String onboardingProgress(int current, int total);
+
+  /// No description provided for @onboardingDemoHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us what you\'re planning. Kipi builds the list.'**
+  String get onboardingDemoHeadline;
+
+  /// No description provided for @onboardingDemoSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Get organized items in seconds.'**
+  String get onboardingDemoSubtitle;
+
+  /// No description provided for @onboardingPersonalizationEffect.
+  ///
+  /// In en, this message translates to:
+  /// **'This helps Kipi suggest more relevant items and quantities.'**
+  String get onboardingPersonalizationEffect;
+
+  /// No description provided for @onboardingPersonalizeWithName.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalize with my name'**
+  String get onboardingPersonalizeWithName;
+
+  /// No description provided for @onboardingCreateFirstList.
+  ///
+  /// In en, this message translates to:
+  /// **'Create my first list'**
+  String get onboardingCreateFirstList;
+
+  /// No description provided for @onboardingPromptWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan my weekly essentials'**
+  String get onboardingPromptWeekly;
+
+  /// No description provided for @onboardingPromptEvent.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m preparing something special'**
+  String get onboardingPromptEvent;
+
+  /// No description provided for @onboardingPromptEssentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggest the essentials for me'**
+  String get onboardingPromptEssentials;
+
+  /// No description provided for @onboardingFallbackGrocery.
+  ///
+  /// In en, this message translates to:
+  /// **'🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit'**
+  String get onboardingFallbackGrocery;
+
+  /// No description provided for @onboardingFallbackPharmacy.
+  ///
+  /// In en, this message translates to:
+  /// **'🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer'**
+  String get onboardingFallbackPharmacy;
+
+  /// No description provided for @onboardingFallbackRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs'**
+  String get onboardingFallbackRecipes;
+
+  /// No description provided for @onboardingFallbackHome.
+  ///
+  /// In en, this message translates to:
+  /// **'🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths'**
+  String get onboardingFallbackHome;
+
+  /// No description provided for @onboardingFallbackPet.
+  ///
+  /// In en, this message translates to:
+  /// **'🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags'**
+  String get onboardingFallbackPet;
+
+  /// No description provided for @onboardingListSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.'**
+  String get onboardingListSaveFailed;
+
+  /// No description provided for @onboardingListCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Your list is ready: {count} items organized for you.'**
+  String onboardingListCreated(int count);
+
+  /// No description provided for @onboardingContinueToOffer.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get onboardingContinueToOffer;
+
+  /// No description provided for @onboardingPaywallListReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first list is ready · {count} items'**
+  String onboardingPaywallListReady(int count);
+
+  /// No description provided for @paywallContinueFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with the free version'**
+  String get paywallContinueFree;
+
+  /// No description provided for @paywallPurchasePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your payment is pending approval. Access will be released automatically after confirmation.'**
+  String get paywallPurchasePending;
+
+  /// No description provided for @paywallTrialDisclosureAnnual.
+  ///
+  /// In en, this message translates to:
+  /// **'Today: no charge. Then {price}/year after {days} days. Cancel anytime.'**
+  String paywallTrialDisclosureAnnual(int days, String price);
+
+  /// No description provided for @paywallTrialDisclosureMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Today: no charge. Then {price}/month after {days} days. Cancel anytime.'**
+  String paywallTrialDisclosureMonthly(int days, String price);
+
+  /// No description provided for @paywallBillingAnnual.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/year. Cancel anytime.'**
+  String paywallBillingAnnual(String price);
+
+  /// No description provided for @paywallBillingMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/month. Cancel anytime.'**
+  String paywallBillingMonthly(String price);
+
+  /// Quiz onboarding hook title
+  ///
+  /// In en, this message translates to:
+  /// **'Smarter shopping starts here'**
+  String get obHookTitle;
+
+  /// Quiz onboarding hook subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'AI-powered lists that save you time and money, every single trip.'**
+  String get obHookSubtitle;
+
+  /// Quiz onboarding hook social proof
+  ///
+  /// In en, this message translates to:
+  /// **'Trusted by thousands of shoppers worldwide'**
+  String get obHookSocial;
+
+  /// Quiz onboarding hook CTA button
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get obHookCta;
+
+  /// Quiz household question title
+  ///
+  /// In en, this message translates to:
+  /// **'Who do you shop for?'**
+  String get obQuizHouseholdTitle;
+
+  /// Quiz household option
+  ///
+  /// In en, this message translates to:
+  /// **'Just me'**
+  String get obQuizHouseholdSolo;
+
+  /// Quiz household option
+  ///
+  /// In en, this message translates to:
+  /// **'Me and my partner'**
+  String get obQuizHouseholdCouple;
+
+  /// Quiz household option
+  ///
+  /// In en, this message translates to:
+  /// **'Family of 3–4'**
+  String get obQuizHouseholdFamilySmall;
+
+  /// Quiz household option
+  ///
+  /// In en, this message translates to:
+  /// **'Family of 5+'**
+  String get obQuizHouseholdFamilyLarge;
+
+  /// Quiz frequency question title
+  ///
+  /// In en, this message translates to:
+  /// **'How often do you shop for groceries?'**
+  String get obQuizFrequencyTitle;
+
+  /// Quiz frequency option
+  ///
+  /// In en, this message translates to:
+  /// **'Almost every day'**
+  String get obQuizFrequencyDaily;
+
+  /// Quiz frequency option
+  ///
+  /// In en, this message translates to:
+  /// **'Once a week'**
+  String get obQuizFrequencyWeekly;
+
+  /// Quiz frequency option
+  ///
+  /// In en, this message translates to:
+  /// **'Every two weeks'**
+  String get obQuizFrequencyBiweekly;
+
+  /// Quiz frequency option
+  ///
+  /// In en, this message translates to:
+  /// **'Big monthly haul'**
+  String get obQuizFrequencyMonthly;
+
+  /// Quiz pain point question title
+  ///
+  /// In en, this message translates to:
+  /// **'What frustrates you most about shopping?'**
+  String get obQuizPainTitle;
+
+  /// Quiz pain point option
+  ///
+  /// In en, this message translates to:
+  /// **'I always forget items'**
+  String get obQuizPainForget;
+
+  /// Quiz pain point option
+  ///
+  /// In en, this message translates to:
+  /// **'I spend more than planned'**
+  String get obQuizPainOverspend;
+
+  /// Quiz pain point option
+  ///
+  /// In en, this message translates to:
+  /// **'Food goes to waste at home'**
+  String get obQuizPainWaste;
+
+  /// Quiz pain point option
+  ///
+  /// In en, this message translates to:
+  /// **'It takes too much time'**
+  String get obQuizPainTime;
+
+  /// Quiz savings goal question title
+  ///
+  /// In en, this message translates to:
+  /// **'How much would you like to save monthly?'**
+  String get obQuizSavingsTitle;
+
+  /// Quiz savings goal option
+  ///
+  /// In en, this message translates to:
+  /// **'A little — every bit counts'**
+  String get obQuizSavingsSmall;
+
+  /// Quiz savings goal option
+  ///
+  /// In en, this message translates to:
+  /// **'Around 10% of my grocery bill'**
+  String get obQuizSavingsMedium;
+
+  /// Quiz savings goal option
+  ///
+  /// In en, this message translates to:
+  /// **'As much as possible'**
+  String get obQuizSavingsLarge;
+
+  /// Quiz method question title
+  ///
+  /// In en, this message translates to:
+  /// **'How do you make shopping lists today?'**
+  String get obQuizMethodTitle;
+
+  /// Quiz method option
+  ///
+  /// In en, this message translates to:
+  /// **'Pen and paper'**
+  String get obQuizMethodPaper;
+
+  /// Quiz method option
+  ///
+  /// In en, this message translates to:
+  /// **'Notes app'**
+  String get obQuizMethodNotes;
+
+  /// Quiz method option
+  ///
+  /// In en, this message translates to:
+  /// **'I keep it in my head'**
+  String get obQuizMethodMemory;
+
+  /// Quiz method option
+  ///
+  /// In en, this message translates to:
+  /// **'I don\'t make lists'**
+  String get obQuizMethodNone;
+
+  /// Quiz social proof title
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re in good company'**
+  String get obSocialTitle;
+
+  /// Quiz social proof subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Shoppers like you are already saving with KipiList'**
+  String get obSocialSubtitle;
+
+  /// Quiz social proof quote 1
+  ///
+  /// In en, this message translates to:
+  /// **'I never forget anything anymore. The AI builds my list in seconds.'**
+  String get obSocialQuote1;
+
+  /// Quiz social proof quote 2
+  ///
+  /// In en, this message translates to:
+  /// **'We cut our grocery bill noticeably in the first month.'**
+  String get obSocialQuote2;
+
+  /// Quiz social proof quote 3
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing the list with my partner ended our shopping chaos.'**
+  String get obSocialQuote3;
+
+  /// Quiz loading title
+  ///
+  /// In en, this message translates to:
+  /// **'Building your personalized plan...'**
+  String get obLoadingTitle;
+
+  /// Quiz loading step 1
+  ///
+  /// In en, this message translates to:
+  /// **'Adjusting for your household'**
+  String get obLoadingStepProfile;
+
+  /// Quiz loading step 2
+  ///
+  /// In en, this message translates to:
+  /// **'Tuning to your shopping routine'**
+  String get obLoadingStepHabits;
+
+  /// Quiz loading step 3
+  ///
+  /// In en, this message translates to:
+  /// **'Optimizing your savings strategy'**
+  String get obLoadingStepSavings;
+
+  /// Quiz loading step 4
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing your smart lists'**
+  String get obLoadingStepLists;
+
+  /// Quiz reveal title
+  ///
+  /// In en, this message translates to:
+  /// **'Your plan is ready!'**
+  String get obRevealTitle;
+
+  /// Quiz reveal subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Here\'s how KipiList will work for you'**
+  String get obRevealSubtitle;
+
+  /// Quiz reveal savings caption
+  ///
+  /// In en, this message translates to:
+  /// **'Projected savings with KipiList'**
+  String get obRevealSavingsCaption;
+
+  /// No description provided for @obRevealMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Month {n}'**
+  String obRevealMonth(int n);
+
+  /// Quiz reveal feature 1
+  ///
+  /// In en, this message translates to:
+  /// **'AI builds and organizes your lists'**
+  String get obRevealFeatureAi;
+
+  /// Quiz reveal feature 2
+  ///
+  /// In en, this message translates to:
+  /// **'Spending tracked against your goal'**
+  String get obRevealFeatureBudget;
+
+  /// Quiz reveal feature 3
+  ///
+  /// In en, this message translates to:
+  /// **'Pantry tracking cuts food waste'**
+  String get obRevealFeaturePantry;
+
+  /// Quiz reveal feature 4
+  ///
+  /// In en, this message translates to:
+  /// **'Real-time sharing with your household'**
+  String get obRevealFeatureShare;
+
+  /// Quiz paywall title
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock your plan'**
+  String get obPaywallTitle;
+
+  /// Quiz paywall retry button
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get obPaywallRetry;
+
+  /// Quiz login title
+  ///
+  /// In en, this message translates to:
+  /// **'Save your plan'**
+  String get obLoginTitle;
+
+  /// Quiz login subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in so your lists sync across devices'**
+  String get obLoginSubtitle;
+
+  /// Quiz login Google button
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get obLoginGoogle;
+
+  /// Quiz login Apple button
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get obLoginApple;
+
+  /// Quiz login skip button
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get obLoginSkip;
+
+  /// Quiz login error message
+  ///
+  /// In en, this message translates to:
+  /// **'Sign-in failed. Try again or skip for now.'**
+  String get obLoginError;
 }
 
 class _AppLocalizationsDelegate

@@ -678,6 +678,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -1102,6 +1109,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1868,6 +1878,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get catalogBrowse => 'Browse Catalog';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'You are offline';
 
   @override
@@ -2434,6 +2447,286 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
+
+  @override
+  String get obHookTitle => 'Smarter shopping starts here';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-powered lists that save you time and money, every single trip.';
+
+  @override
+  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+
+  @override
+  String get obHookCta => 'Get Started';
+
+  @override
+  String get obQuizHouseholdTitle => 'Who do you shop for?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Just me';
+
+  @override
+  String get obQuizHouseholdCouple => 'Me and my partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Almost every day';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Once a week';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Every two weeks';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Big monthly haul';
+
+  @override
+  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+
+  @override
+  String get obQuizPainForget => 'I always forget items';
+
+  @override
+  String get obQuizPainOverspend => 'I spend more than planned';
+
+  @override
+  String get obQuizPainWaste => 'Food goes to waste at home';
+
+  @override
+  String get obQuizPainTime => 'It takes too much time';
+
+  @override
+  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+
+  @override
+  String get obQuizSavingsSmall => 'A little — every bit counts';
+
+  @override
+  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+
+  @override
+  String get obQuizSavingsLarge => 'As much as possible';
+
+  @override
+  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+
+  @override
+  String get obQuizMethodPaper => 'Pen and paper';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'I keep it in my head';
+
+  @override
+  String get obQuizMethodNone => 'I don\'t make lists';
+
+  @override
+  String get obSocialTitle => 'You\'re in good company';
+
+  @override
+  String get obSocialSubtitle =>
+      'Shoppers like you are already saving with KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'I never forget anything anymore. The AI builds my list in seconds.';
+
+  @override
+  String get obSocialQuote2 =>
+      'We cut our grocery bill noticeably in the first month.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Sharing the list with my partner ended our shopping chaos.';
+
+  @override
+  String get obLoadingTitle => 'Building your personalized plan...';
+
+  @override
+  String get obLoadingStepProfile => 'Adjusting for your household';
+
+  @override
+  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+
+  @override
+  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+
+  @override
+  String get obLoadingStepLists => 'Preparing your smart lists';
+
+  @override
+  String get obRevealTitle => 'Your plan is ready!';
+
+  @override
+  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+
+  @override
+  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Month $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+
+  @override
+  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+
+  @override
+  String get obRevealFeatureShare => 'Real-time sharing with your household';
+
+  @override
+  String get obPaywallTitle => 'Unlock your plan';
+
+  @override
+  String get obPaywallRetry => 'Try again';
+
+  @override
+  String get obLoginTitle => 'Save your plan';
+
+  @override
+  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+
+  @override
+  String get obLoginGoogle => 'Continue with Google';
+
+  @override
+  String get obLoginApple => 'Continue with Apple';
+
+  @override
+  String get obLoginSkip => 'Not now';
+
+  @override
+  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
@@ -3110,6 +3403,13 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -3533,6 +3833,9 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4865,6 +5168,117 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
 }
 
 /// The translations for English, as used in Canada (`en_CA`).
@@ -5541,6 +5955,13 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -5964,6 +6385,9 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -7296,6 +7720,117 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -7972,6 +8507,13 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -8395,6 +8937,9 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -9727,6 +10272,117 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
 }
 
 /// The translations for English, as used in India (`en_IN`).
@@ -10403,6 +11059,13 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -10826,6 +11489,9 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -12158,6 +12824,117 @@ class AppLocalizationsEnIn extends AppLocalizationsEn {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
 }
 
 /// The translations for English, as used in Singapore (`en_SG`).
@@ -12834,6 +13611,13 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -13257,6 +14041,9 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -14589,6 +15376,117 @@ class AppLocalizationsEnSg extends AppLocalizationsEn {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
 }
 
 /// The translations for English, as used in South Africa (`en_ZA`).
@@ -15265,6 +16163,13 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
   String get chatHintBlocked => 'Unlock AI to chat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ask for item suggestions, recipes or saving tips to get started.';
+
+  @override
+  String get chatEmptyTitle => 'Your chat is empty';
+
+  @override
   String chatError(String error) {
     return 'Error loading chat: $error';
   }
@@ -15688,6 +16593,9 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
 
   @override
   String get paywallPackageMonthlyDesc => 'Full flexibility';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -17020,4 +17928,115 @@ class AppLocalizationsEnZa extends AppLocalizationsEn {
 
   @override
   String get suggestionFruits => 'Fruits';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'All set!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in pantry';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Tell us what you\'re planning. Kipi builds the list.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Get organized items in seconds.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'This helps Kipi suggest more relevant items and quantities.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalize with my name';
+
+  @override
+  String get onboardingCreateFirstList => 'Create my first list';
+
+  @override
+  String get onboardingPromptWeekly => 'Plan my weekly essentials';
+
+  @override
+  String get onboardingPromptEvent => 'I\'m preparing something special';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggest the essentials for me';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rice|🫘 Beans|🥛 Milk|🥚 Eggs|🍞 Bread|🍎 Fruit';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Adhesive bandages|🌡️ Thermometer|🧴 Antiseptic|😷 Face masks|🧼 Hand sanitizer';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatoes|🧅 Onion|🧄 Garlic|🥚 Eggs|🧀 Cheese|🌿 Fresh herbs';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paper towels|🧽 Sponges|🧴 Detergent|🗑️ Trash bags|🧹 Cleaning cloths';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Pet food|🦴 Treats|🧼 Pet shampoo|🧸 Toy|🧻 Waste bags';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'I prepared the items, but couldn\'t save the list. Try again to keep it in the app.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Your list is ready: $count items organized for you.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continue';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Your first list is ready · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Your payment is pending approval. Access will be released automatically after confirmation.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Today: no charge. Then $price/year after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Today: no charge. Then $price/month after $days days. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/year. Cancel anytime.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/month. Cancel anytime.';
+  }
 }
