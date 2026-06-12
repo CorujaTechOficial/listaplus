@@ -64,23 +64,23 @@ class OnboardingData extends _$OnboardingData {
     _persist();
   }
 
-  void updateShoppingFrequency(String value) {
-    state = state.copyWith(shoppingFrequency: value);
+  void updateShoppingFrequency(String frequency) {
+    state = state.copyWith(shoppingFrequency: frequency);
     _persist();
   }
 
-  void updateMainPain(String value) {
-    state = state.copyWith(mainPain: value);
+  void updateMainPain(String pain) {
+    state = state.copyWith(mainPain: pain);
     _persist();
   }
 
-  void updateSavingsGoal(String value) {
-    state = state.copyWith(savingsGoal: value);
+  void updateSavingsGoal(String goal) {
+    state = state.copyWith(savingsGoal: goal);
     _persist();
   }
 
-  void updateListMethod(String value) {
-    state = state.copyWith(listMethod: value);
+  void updateListMethod(String method) {
+    state = state.copyWith(listMethod: method);
     _persist();
   }
 
