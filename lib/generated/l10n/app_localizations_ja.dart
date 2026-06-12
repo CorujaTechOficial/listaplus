@@ -667,6 +667,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get chatHintBlocked => 'AI のロックを解除してチャットできるようにする';
 
   @override
+  String get chatEmptySubtitle => 'まずは、アイテムの提案、レシピ、節約のヒントを尋ねてください。';
+
+  @override
+  String get chatEmptyTitle => 'あなたのチャットは空です';
+
+  @override
   String chatError(String error) {
     return 'チャットの読み込みエラー: $error';
   }
@@ -1067,6 +1073,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => '完全な柔軟性';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 ウェルカムオファー';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1818,6 +1827,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get catalogBrowse => 'カタログを閲覧する';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'あなたはオフラインです';
 
   @override
@@ -2375,6 +2387,278 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get suggestionFruits => '果物';
+
+  @override
+  String get recipeIngredientSingular => '材料1個';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$countの材料';
+  }
+
+  @override
+  String get pantryAvailabilityAll => '準備完了！';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return 'パントリーの$availableCount/$totalCount';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'ステップ $current/$total';
+  }
+
+  @override
+  String get onboardingDemoHeadline => '何を計画しているのか教えてください。 Kipi がリストを作成します。';
+
+  @override
+  String get onboardingDemoSubtitle => 'アイテムを数秒で整理できます。';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'これは、Kipi がより関連性の高いアイテムと数量を提案するのに役立ちます。';
+
+  @override
+  String get onboardingPersonalizeWithName => '自分の名前を使ってカスタマイズする';
+
+  @override
+  String get onboardingCreateFirstList => '最初のリストを作成する';
+
+  @override
+  String get onboardingPromptWeekly => '毎週の必需品を計画する';
+
+  @override
+  String get onboardingPromptEvent => '特別なものを準備中です';
+
+  @override
+  String get onboardingPromptEssentials => '私にとっての必需品を提案してください';
+
+  @override
+  String get onboardingFallbackGrocery => '🍚 米|🫘 豆|🥛 牛乳|🥚 卵|🍞 パン|🍎 果物';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹絆創膏|🌡️体温計|🧴消毒剤|😷フェイスマスク|🧼手指消毒剤';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅トマト|🧅玉ねぎ|🧄ニンニク|🥚卵|🧀チーズ|🌿フレッシュハーブ';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻ペーパータオル|🧽スポンジ|🧴洗剤|🗑️ゴミ袋|🧹クリーニングクロス';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 ペットフード|🦴 おやつ|🧼 ペットシャンプー|🧸 おもちゃ|🧻 ゴミ袋';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'アイテムを準備しましたが、リストを保存できませんでした。もう一度アプリ内に保存してみてください。';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'リストの準備が完了しました: $count アイテムがあなたのために整理されました。';
+  }
+
+  @override
+  String get onboardingContinueToOffer => '続く';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return '最初のリストの準備が完了しました · $count アイテム';
+  }
+
+  @override
+  String get paywallContinueFree => '無料版で続行する';
+
+  @override
+  String get paywallPurchasePending => 'お支払いは承認待ちです。確認後、アクセスは自動的に解除されます。';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return '今日：無料。その後、$days 日後には $price/年になります。いつでもキャンセルできます。';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return '今日：無料。その後、$days 日後には $price/月。いつでもキャンセルできます。';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/年。いつでもキャンセルできます。';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/月。いつでもキャンセルできます。';
+  }
+
+  @override
+  String get obHookTitle => '賢いショッピングはここから始まります';
+
+  @override
+  String get obHookSubtitle => 'AI を活用したリストにより、毎回の旅行で時間とお金を節約できます。';
+
+  @override
+  String get obHookSocial => '世界中の何千人もの買い物客から信頼されています';
+
+  @override
+  String get obHookCta => '始めましょう';
+
+  @override
+  String get obQuizHouseholdTitle => '誰のために買い物をしますか？';
+
+  @override
+  String get obQuizHouseholdSolo => '私だけ';
+
+  @override
+  String get obQuizHouseholdCouple => '私と私のパートナー';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3 ～ 4 人家族';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5人以上の家族';
+
+  @override
+  String get obQuizFrequencyTitle => 'どのくらいの頻度で食料品を買いますか?';
+
+  @override
+  String get obQuizFrequencyDaily => 'ほぼ毎日';
+
+  @override
+  String get obQuizFrequencyWeekly => '週に1回';
+
+  @override
+  String get obQuizFrequencyBiweekly => '2週間ごと';
+
+  @override
+  String get obQuizFrequencyMonthly => '毎月の大きな収穫量';
+
+  @override
+  String get obQuizPainTitle => '買い物に関して最もイライラすることは何ですか?';
+
+  @override
+  String get obQuizPainForget => 'いつも忘れ物をしてしまう';
+
+  @override
+  String get obQuizPainOverspend => '予定よりもお金を使ってしまう';
+
+  @override
+  String get obQuizPainWaste => '家庭で食べ物が無駄になる';
+
+  @override
+  String get obQuizPainTime => '時間がかかりすぎる';
+
+  @override
+  String get obQuizSavingsTitle => '毎月いくら節約したいですか?';
+
+  @override
+  String get obQuizSavingsSmall => '少し — すべてのビットが重要です';
+
+  @override
+  String get obQuizSavingsMedium => '食料品の請求額の約 10%';
+
+  @override
+  String get obQuizSavingsLarge => 'できるだけ';
+
+  @override
+  String get obQuizMethodTitle => '今日は買い物リストをどうやって作っていますか?';
+
+  @override
+  String get obQuizMethodPaper => 'ペンと紙';
+
+  @override
+  String get obQuizMethodNotes => 'メモアプリ';
+
+  @override
+  String get obQuizMethodMemory => '頭の中に置いておくよ';
+
+  @override
+  String get obQuizMethodNone => 'リストは作らない';
+
+  @override
+  String get obSocialTitle => 'あなたは良い仲間です';
+
+  @override
+  String get obSocialSubtitle => 'あなたのような買い物客はすでに KipiList で節約しています';
+
+  @override
+  String get obSocialQuote1 => 'もう何も忘れることはありません。 AI が私のリストを数秒で作成します。';
+
+  @override
+  String get obSocialQuote2 => '最初の 1 か月で食費を大幅に削減しました。';
+
+  @override
+  String get obSocialQuote3 => 'リストをパートナーと共有したことで、買い物での混乱が解消されました。';
+
+  @override
+  String get obLoadingTitle => 'パーソナライズされたプランを作成...';
+
+  @override
+  String get obLoadingStepProfile => 'ご家庭に合わせて調整する';
+
+  @override
+  String get obLoadingStepHabits => 'ショッピングのルーチンに合わせて調整する';
+
+  @override
+  String get obLoadingStepSavings => '貯蓄戦略を最適化する';
+
+  @override
+  String get obLoadingStepLists => 'スマートリストの準備';
+
+  @override
+  String get obRevealTitle => 'あなたの計画は準備完了です！';
+
+  @override
+  String get obRevealSubtitle => 'KipiList がどのように機能するかは次のとおりです';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList による予測される節約額';
+
+  @override
+  String obRevealMonth(int n) {
+    return '$n月';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI がリストを作成して整理します';
+
+  @override
+  String get obRevealFeatureBudget => '目標に対して支出を追跡';
+
+  @override
+  String get obRevealFeaturePantry => 'パントリーの追跡により食品廃棄物を削減';
+
+  @override
+  String get obRevealFeatureShare => '家族とリアルタイムで共有';
+
+  @override
+  String get obPaywallTitle => 'プランのロックを解除する';
+
+  @override
+  String get obPaywallRetry => 'もう一度やり直してください';
+
+  @override
+  String get obLoginTitle => '計画を保存する';
+
+  @override
+  String get obLoginSubtitle => 'サインインするとリストがデバイス間で同期されます';
+
+  @override
+  String get obLoginGoogle => 'Google を続ける';
+
+  @override
+  String get obLoginApple => 'アップルを使い続ける';
+
+  @override
+  String get obLoginSkip => '今じゃない';
+
+  @override
+  String get obLoginError => 'サインインに失敗しました。もう一度試すか、とりあえずスキップしてください。';
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -3040,6 +3324,12 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get chatHintBlocked => 'AI のロックを解除してチャットできるようにする';
 
   @override
+  String get chatEmptySubtitle => 'まずは、アイテムの提案、レシピ、節約のヒントを尋ねてください。';
+
+  @override
+  String get chatEmptyTitle => 'あなたのチャットは空です';
+
+  @override
   String chatError(String error) {
     return 'チャットの読み込みエラー: $error';
   }
@@ -3440,6 +3730,9 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get paywallPackageMonthlyDesc => '完全な柔軟性';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 ウェルカムオファー';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4748,4 +5041,276 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get suggestionFruits => '果物';
+
+  @override
+  String get recipeIngredientSingular => '材料1個';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$countの材料';
+  }
+
+  @override
+  String get pantryAvailabilityAll => '準備完了！';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return 'パントリーの$availableCount/$totalCount';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'ステップ $current/$total';
+  }
+
+  @override
+  String get onboardingDemoHeadline => '何を計画しているのか教えてください。 Kipi がリストを作成します。';
+
+  @override
+  String get onboardingDemoSubtitle => 'アイテムを数秒で整理できます。';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'これは、Kipi がより関連性の高いアイテムと数量を提案するのに役立ちます。';
+
+  @override
+  String get onboardingPersonalizeWithName => '自分の名前を使ってカスタマイズする';
+
+  @override
+  String get onboardingCreateFirstList => '最初のリストを作成する';
+
+  @override
+  String get onboardingPromptWeekly => '毎週の必需品を計画する';
+
+  @override
+  String get onboardingPromptEvent => '特別なものを準備中です';
+
+  @override
+  String get onboardingPromptEssentials => '私にとっての必需品を提案してください';
+
+  @override
+  String get onboardingFallbackGrocery => '🍚 米|🫘 豆|🥛 牛乳|🥚 卵|🍞 パン|🍎 果物';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹絆創膏|🌡️体温計|🧴消毒剤|😷フェイスマスク|🧼手指消毒剤';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅トマト|🧅玉ねぎ|🧄ニンニク|🥚卵|🧀チーズ|🌿フレッシュハーブ';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻ペーパータオル|🧽スポンジ|🧴洗剤|🗑️ゴミ袋|🧹クリーニングクロス';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 ペットフード|🦴 おやつ|🧼 ペットシャンプー|🧸 おもちゃ|🧻 ゴミ袋';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'アイテムを準備しましたが、リストを保存できませんでした。もう一度アプリ内に保存してみてください。';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'リストの準備が完了しました: $count アイテムがあなたのために整理されました。';
+  }
+
+  @override
+  String get onboardingContinueToOffer => '続く';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return '最初のリストの準備が完了しました · $count アイテム';
+  }
+
+  @override
+  String get paywallContinueFree => '無料版で続行する';
+
+  @override
+  String get paywallPurchasePending => 'お支払いは承認待ちです。確認後、アクセスは自動的に解除されます。';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return '今日：無料。その後、$days 日後には $price/年になります。いつでもキャンセルできます。';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return '今日：無料。その後、$days 日後には $price/月。いつでもキャンセルできます。';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/年。いつでもキャンセルできます。';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/月。いつでもキャンセルできます。';
+  }
+
+  @override
+  String get obHookTitle => '賢いショッピングはここから始まります';
+
+  @override
+  String get obHookSubtitle => 'AI を活用したリストにより、毎回の旅行で時間とお金を節約できます。';
+
+  @override
+  String get obHookSocial => '世界中の何千人もの買い物客から信頼されています';
+
+  @override
+  String get obHookCta => '始めましょう';
+
+  @override
+  String get obQuizHouseholdTitle => '誰のために買い物をしますか？';
+
+  @override
+  String get obQuizHouseholdSolo => '私だけ';
+
+  @override
+  String get obQuizHouseholdCouple => '私と私のパートナー';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3 ～ 4 人家族';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5人以上の家族';
+
+  @override
+  String get obQuizFrequencyTitle => 'どのくらいの頻度で食料品を買いますか?';
+
+  @override
+  String get obQuizFrequencyDaily => 'ほぼ毎日';
+
+  @override
+  String get obQuizFrequencyWeekly => '週に1回';
+
+  @override
+  String get obQuizFrequencyBiweekly => '2週間ごと';
+
+  @override
+  String get obQuizFrequencyMonthly => '毎月の大きな収穫量';
+
+  @override
+  String get obQuizPainTitle => '買い物に関して最もイライラすることは何ですか?';
+
+  @override
+  String get obQuizPainForget => 'いつも忘れ物をしてしまう';
+
+  @override
+  String get obQuizPainOverspend => '予定よりもお金を使ってしまう';
+
+  @override
+  String get obQuizPainWaste => '家庭で食べ物が無駄になる';
+
+  @override
+  String get obQuizPainTime => '時間がかかりすぎる';
+
+  @override
+  String get obQuizSavingsTitle => '毎月いくら節約したいですか?';
+
+  @override
+  String get obQuizSavingsSmall => '少し — すべてのビットが重要です';
+
+  @override
+  String get obQuizSavingsMedium => '食料品の請求額の約 10%';
+
+  @override
+  String get obQuizSavingsLarge => 'できるだけ';
+
+  @override
+  String get obQuizMethodTitle => '今日は買い物リストをどうやって作っていますか?';
+
+  @override
+  String get obQuizMethodPaper => 'ペンと紙';
+
+  @override
+  String get obQuizMethodNotes => 'メモアプリ';
+
+  @override
+  String get obQuizMethodMemory => '頭の中に置いておくよ';
+
+  @override
+  String get obQuizMethodNone => 'リストは作らない';
+
+  @override
+  String get obSocialTitle => 'あなたは良い仲間です';
+
+  @override
+  String get obSocialSubtitle => 'あなたのような買い物客はすでに KipiList で節約しています';
+
+  @override
+  String get obSocialQuote1 => 'もう何も忘れることはありません。 AI が私のリストを数秒で作成します。';
+
+  @override
+  String get obSocialQuote2 => '最初の 1 か月で食費を大幅に削減しました。';
+
+  @override
+  String get obSocialQuote3 => 'リストをパートナーと共有したことで、買い物での混乱が解消されました。';
+
+  @override
+  String get obLoadingTitle => 'パーソナライズされたプランを作成...';
+
+  @override
+  String get obLoadingStepProfile => 'ご家庭に合わせて調整する';
+
+  @override
+  String get obLoadingStepHabits => 'ショッピングのルーチンに合わせて調整する';
+
+  @override
+  String get obLoadingStepSavings => '貯蓄戦略を最適化する';
+
+  @override
+  String get obLoadingStepLists => 'スマートリストの準備';
+
+  @override
+  String get obRevealTitle => 'あなたの計画は準備完了です！';
+
+  @override
+  String get obRevealSubtitle => 'KipiList がどのように機能するかは次のとおりです';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList による予測される節約額';
+
+  @override
+  String obRevealMonth(int n) {
+    return '$n月';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI がリストを作成して整理します';
+
+  @override
+  String get obRevealFeatureBudget => '目標に対して支出を追跡';
+
+  @override
+  String get obRevealFeaturePantry => 'パントリーの追跡により食品廃棄物を削減';
+
+  @override
+  String get obRevealFeatureShare => '家族とリアルタイムで共有';
+
+  @override
+  String get obPaywallTitle => 'プランのロックを解除する';
+
+  @override
+  String get obPaywallRetry => 'もう一度やり直してください';
+
+  @override
+  String get obLoginTitle => '計画を保存する';
+
+  @override
+  String get obLoginSubtitle => 'サインインするとリストがデバイス間で同期されます';
+
+  @override
+  String get obLoginGoogle => 'Google を続ける';
+
+  @override
+  String get obLoginApple => 'アップルを使い続ける';
+
+  @override
+  String get obLoginSkip => '今じゃない';
+
+  @override
+  String get obLoginError => 'サインインに失敗しました。もう一度試すか、とりあえずスキップしてください。';
 }

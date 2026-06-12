@@ -674,6 +674,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get chatHintBlocked => 'Buka kunci AI untuk mengobrol';
 
   @override
+  String get chatEmptySubtitle =>
+      'Mintalah saran item, resep, atau tips menabung untuk memulai.';
+
+  @override
+  String get chatEmptyTitle => 'Obrolan Anda kosong';
+
+  @override
   String chatError(String error) {
     return 'Kesalahan memuat chat: $error';
   }
@@ -1099,6 +1106,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Fleksibilitas penuh';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Penawaran selamat datang';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1868,6 +1878,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get catalogBrowse => 'Telusuri Katalog';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Anda sedang luring';
 
   @override
@@ -2447,4 +2460,297 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Buah-buahan';
+
+  @override
+  String get recipeIngredientSingular => '1 bahan';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count bahan';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Sudah siap!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount di dapur';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Langkah $current dari $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Beritahu kami apa yang Anda rencanakan. Kipi membuat daftarnya.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Dapatkan item terorganisir dalam hitungan detik.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Ini membantu Kipi menyarankan item dan jumlah yang lebih relevan.';
+
+  @override
+  String get onboardingPersonalizeWithName =>
+      'Personalisasikan dengan nama saya';
+
+  @override
+  String get onboardingCreateFirstList => 'Buat daftar pertama saya';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Rencanakan hal-hal penting mingguan saya';
+
+  @override
+  String get onboardingPromptEvent =>
+      'Saya sedang mempersiapkan sesuatu yang istimewa';
+
+  @override
+  String get onboardingPromptEssentials => 'Sarankan hal-hal penting bagi saya';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Nasi|🫘 Kacang|🥛 Susu|🥚 Telur|🍞 Roti|🍎 Buah';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Perban berperekat|🌡️ Termometer|🧴 Antiseptik|😷 Masker wajah|🧼 Pembersih tangan';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomat|🧅 Bawang Merah|🧄 Bawang Putih|🥚 Telur|🧀 Keju|🌿 Herbal segar';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Handuk kertas|🧽 Spons|🧴 Deterjen|🗑️ Kantong sampah|🧹 Kain pembersih';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Makanan hewan|🦴 Camilan|🧼 Shampo hewan peliharaan|🧸 Mainan|🧻 Kantong sampah';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Saya menyiapkan itemnya, tetapi tidak dapat menyimpan daftarnya. Coba lagi untuk menyimpannya di aplikasi.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Daftar Anda sudah siap: $count item diatur untuk Anda.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Melanjutkan';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Daftar pertama Anda sudah siap · $count item';
+  }
+
+  @override
+  String get paywallContinueFree => 'Lanjutkan dengan versi gratis';
+
+  @override
+  String get paywallPurchasePending =>
+      'Pembayaran Anda sedang menunggu persetujuan. Akses akan dilepaskan secara otomatis setelah konfirmasi.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Hari ini: tanpa biaya. Kemudian $price/tahun setelah $days hari. Batalkan kapan saja.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Hari ini: tanpa biaya. Kemudian $price/bulan setelah $days hari. Batalkan kapan saja.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/tahun. Batalkan kapan saja.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/bulan. Batalkan kapan saja.';
+  }
+
+  @override
+  String get obHookTitle => 'Belanja yang lebih cerdas dimulai di sini';
+
+  @override
+  String get obHookSubtitle =>
+      'Daftar bertenaga AI yang menghemat waktu dan uang Anda, di setiap perjalanan.';
+
+  @override
+  String get obHookSocial => 'Dipercaya oleh ribuan pembeli di seluruh dunia';
+
+  @override
+  String get obHookCta => 'Memulai';
+
+  @override
+  String get obQuizHouseholdTitle => 'Untuk siapa Anda berbelanja?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Hanya aku';
+
+  @override
+  String get obQuizHouseholdCouple => 'Saya dan pasangan saya';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Keluarga beranggotakan 3–4 orang';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Keluarga 5+';
+
+  @override
+  String get obQuizFrequencyTitle =>
+      'Seberapa sering Anda berbelanja bahan makanan?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Hampir setiap hari';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Seminggu sekali';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Setiap dua minggu';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Hasil tangkapan bulanan yang besar';
+
+  @override
+  String get obQuizPainTitle =>
+      'Apa yang paling membuat Anda frustrasi saat berbelanja?';
+
+  @override
+  String get obQuizPainForget => 'Saya selalu lupa item';
+
+  @override
+  String get obQuizPainOverspend =>
+      'Saya menghabiskan lebih dari yang direncanakan';
+
+  @override
+  String get obQuizPainWaste => 'Makanan terbuang sia-sia di rumah';
+
+  @override
+  String get obQuizPainTime => 'Ini membutuhkan terlalu banyak waktu';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Berapa banyak yang ingin Anda hemat setiap bulannya?';
+
+  @override
+  String get obQuizSavingsSmall => 'Sedikit - setiap hal penting';
+
+  @override
+  String get obQuizSavingsMedium => 'Sekitar 10% dari tagihan belanjaan saya';
+
+  @override
+  String get obQuizSavingsLarge => 'Sebisa mungkin';
+
+  @override
+  String get obQuizMethodTitle =>
+      'Bagaimana cara membuat daftar belanjaan hari ini?';
+
+  @override
+  String get obQuizMethodPaper => 'Pena dan kertas';
+
+  @override
+  String get obQuizMethodNotes => 'Aplikasi catatan';
+
+  @override
+  String get obQuizMethodMemory => 'Saya menyimpannya di kepala saya';
+
+  @override
+  String get obQuizMethodNone => 'Saya tidak membuat daftar';
+
+  @override
+  String get obSocialTitle => 'Anda berada di perusahaan yang baik';
+
+  @override
+  String get obSocialSubtitle =>
+      'Pembeli seperti Anda sudah berhemat dengan KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Saya tidak pernah melupakan apa pun lagi. AI membuat daftar saya dalam hitungan detik.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Kami memotong tagihan belanjaan kami secara signifikan di bulan pertama.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Berbagi daftar dengan pasangan saya mengakhiri kekacauan belanja kami.';
+
+  @override
+  String get obLoadingTitle => 'Membangun rencana pribadi Anda...';
+
+  @override
+  String get obLoadingStepProfile => 'Menyesuaikan dengan rumah tangga Anda';
+
+  @override
+  String get obLoadingStepHabits =>
+      'Menyesuaikan dengan rutinitas belanja Anda';
+
+  @override
+  String get obLoadingStepSavings => 'Mengoptimalkan strategi tabungan Anda';
+
+  @override
+  String get obLoadingStepLists => 'Mempersiapkan daftar pintar Anda';
+
+  @override
+  String get obRevealTitle => 'Rencana Anda sudah siap!';
+
+  @override
+  String get obRevealSubtitle => 'Inilah cara KipiList bekerja untuk Anda';
+
+  @override
+  String get obRevealSavingsCaption => 'Proyeksi penghematan dengan KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Bulan $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI membuat dan mengatur daftar Anda';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Pengeluaran dilacak berdasarkan tujuan Anda';
+
+  @override
+  String get obRevealFeaturePantry => 'Pelacakan dapur mengurangi sisa makanan';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Berbagi secara real-time dengan rumah tangga Anda';
+
+  @override
+  String get obPaywallTitle => 'Buka kunci rencana Anda';
+
+  @override
+  String get obPaywallRetry => 'Coba lagi';
+
+  @override
+  String get obLoginTitle => 'Simpan rencana Anda';
+
+  @override
+  String get obLoginSubtitle =>
+      'Masuk agar daftar Anda tersinkronisasi di seluruh perangkat';
+
+  @override
+  String get obLoginGoogle => 'Lanjutkan dengan Google';
+
+  @override
+  String get obLoginApple => 'Lanjutkan dengan Apple';
+
+  @override
+  String get obLoginSkip => 'Tidak sekarang';
+
+  @override
+  String get obLoginError => 'Gagal masuk. Coba lagi atau lewati sekarang.';
 }

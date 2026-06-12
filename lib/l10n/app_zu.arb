@@ -602,6 +602,172 @@
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@onboardingAiAskConfirm": {
     "description": "AI asks for confirmation"
   },
@@ -764,6 +930,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -818,6 +991,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -856,6 +1036,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -905,6 +1095,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -915,6 +1115,20 @@
   "@pantryLimitReached": {
     "placeholders": {
       "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
         "type": "String"
       }
     }
@@ -1020,12 +1234,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@progressBudget": {
     "placeholders": {
@@ -1084,6 +1321,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1155,8 +1399,8 @@
   },
   "@streakDays": {
     "placeholders": {
-      "days": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1281,6 +1525,8 @@
   "categoryLimitReached": "Umkhawulo wezigaba eziyi-10 kunguqulo yamahhala. Thuthukela ku-Pro!",
   "categoryName": "Igama lesigaba",
   "categoryNameHint": "Isib.: Inyama",
+  "chatEmptySubtitle": "Cela iziphakamiso zezinto, izindlela zokupheka noma amathiphu okulondoloza ukuze uqalise.",
+  "chatEmptyTitle": "Ingxoxo yakho ayinalutho",
   "chatError": "Iphutha ekulayisheni ingxoxo: {error}",
   "chatHint": "Bhala umyalezo wakho...",
   "chatHintBlocked": "Vula i-AI ukuze uxoxe",
@@ -1625,6 +1871,60 @@
   "noRecipesSavedHint": "Dala iresiphi yakho yokuqala yangokwezifiso ngokuthepha inkinobho engezansi.",
   "noTracking": "Akukho ukulandelela",
   "notInformed": "Akusethiwe",
+  "obHookCta": "Get Started",
+  "obHookSocial": "Trusted by thousands of shoppers worldwide",
+  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
+  "obHookTitle": "Smarter shopping starts here",
+  "obLoadingStepHabits": "Tuning to your shopping routine",
+  "obLoadingStepLists": "Preparing your smart lists",
+  "obLoadingStepProfile": "Adjusting for your household",
+  "obLoadingStepSavings": "Optimizing your savings strategy",
+  "obLoadingTitle": "Building your personalized plan...",
+  "obLoginApple": "Continue with Apple",
+  "obLoginError": "Sign-in failed. Try again or skip for now.",
+  "obLoginGoogle": "Continue with Google",
+  "obLoginSkip": "Not now",
+  "obLoginSubtitle": "Sign in so your lists sync across devices",
+  "obLoginTitle": "Save your plan",
+  "obPaywallRetry": "Try again",
+  "obPaywallTitle": "Unlock your plan",
+  "obQuizFrequencyBiweekly": "Every two weeks",
+  "obQuizFrequencyDaily": "Almost every day",
+  "obQuizFrequencyMonthly": "Big monthly haul",
+  "obQuizFrequencyTitle": "How often do you shop for groceries?",
+  "obQuizFrequencyWeekly": "Once a week",
+  "obQuizHouseholdCouple": "Me and my partner",
+  "obQuizHouseholdFamilyLarge": "Family of 5+",
+  "obQuizHouseholdFamilySmall": "Family of 3–4",
+  "obQuizHouseholdSolo": "Just me",
+  "obQuizHouseholdTitle": "Who do you shop for?",
+  "obQuizMethodMemory": "I keep it in my head",
+  "obQuizMethodNone": "I don't make lists",
+  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodPaper": "Pen and paper",
+  "obQuizMethodTitle": "How do you make shopping lists today?",
+  "obQuizPainForget": "I always forget items",
+  "obQuizPainOverspend": "I spend more than planned",
+  "obQuizPainTime": "It takes too much time",
+  "obQuizPainTitle": "What frustrates you most about shopping?",
+  "obQuizPainWaste": "Food goes to waste at home",
+  "obQuizSavingsLarge": "As much as possible",
+  "obQuizSavingsMedium": "Around 10% of my grocery bill",
+  "obQuizSavingsSmall": "A little — every bit counts",
+  "obQuizSavingsTitle": "How much would you like to save monthly?",
+  "obRevealFeatureAi": "AI builds and organizes your lists",
+  "obRevealFeatureBudget": "Spending tracked against your goal",
+  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
+  "obRevealFeatureShare": "Real-time sharing with your household",
+  "obRevealMonth": "Month {n}",
+  "obRevealSavingsCaption": "Projected savings with KipiList",
+  "obRevealSubtitle": "Here's how KipiList will work for you",
+  "obRevealTitle": "Your plan is ready!",
+  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
+  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
+  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
+  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
+  "obSocialTitle": "You're in good company",
   "observations": "Amanothi",
   "observationsHint": "Okunye okuncanyelwayo komsizi",
   "offlineBanner": "Awuxhunyiwe ku-inthanethi",
@@ -1664,7 +1964,16 @@
   "onboardingCommitmentsSubtitle": "Khetha izinhloso zakho ukuze wenze i-KipiList ibe ngeyakho",
   "onboardingCommitmentsTitle": "Yini ebalulekile kuwe?",
   "onboardingContinueAsGuest": "Qhubeka njengesivakashi",
+  "onboardingContinueToOffer": "Qhubeka",
+  "onboardingCreateFirstList": "Dala uhlu lwami lokuqala",
+  "onboardingDemoHeadline": "Sitshele ukuthi uhlelani. U-Kipi wakha uhlu.",
+  "onboardingDemoSubtitle": "Thola izinto ezihleliwe ngemizuzwana.",
   "onboardingExit": "Phuma",
+  "onboardingFallbackGrocery": "🍚 Ilayisi|🫘 Ubhontshisi|🥛 Ubisi|🥚 Amaqanda|🍞 Isinkwa|🍎 Isithelo",
+  "onboardingFallbackHome": "🧻 Amathawula ephepha|🧽 Izipontshi|🧴 Okokuhlanza|🗑️ Izikhwama zikadoti|🧹 Izindwangu zokuhlanza",
+  "onboardingFallbackPet": "🥣 Ukudla kwesilwane esifuywayo|🦴 Izibiliboco|🧼 Ishampu yezilwane ezifuywayo|🧸 Ithoyizi|🧻 Izikhwama zikadoti",
+  "onboardingFallbackPharmacy": "🩹 Amabhandishi anamathelayo|🌡️ Thermometer|🧴 Antiseptic|😷 Amamaski obuso|🧼 Isicoci sesandla",
+  "onboardingFallbackRecipes": "🍅 Utamatisi|🧅 U-anyanisi|🧄 Ugaliki|🥚 Amaqanda|🧀 Ushizi|🌿 Amakhambi amasha",
   "onboardingGoalFamily": "Hlela ukuthenga komndeni",
   "onboardingGoalFaster": "Thenga ngokushesha",
   "onboardingGoalNeverForget": "Ungalokothi ukhohlwe izinto",
@@ -1675,6 +1984,8 @@
   "onboardingGroupFamily": "Umndeni",
   "onboardingGroupSolo": "Mina nje",
   "onboardingHookHeadline": "Ungalokothi ukhohlwe into yegrosa futhi",
+  "onboardingListCreated": "Uhlu lwakho selulungile: {count} izinto ezihlelelwe wena.",
+  "onboardingListSaveFailed": "Ngilungise izinto, kodwa angikwazanga ukulondoloza uhlu. Zama futhi ukuyigcina kuhlelo lokusebenza.",
   "onboardingLoadingStat1Label": "Izinto ezifakwe kukhathalogi",
   "onboardingLoadingStat2Label": "Abasebenzisi basizile",
   "onboardingLoadingStat3Label": "Amaminithi alondoloziwe",
@@ -1693,9 +2004,11 @@
   "onboardingPainRepeat": "Uhambo olulodwa alwanele",
   "onboardingPainSubtitle": "Thembeka — sizolungisa ngayinye",
   "onboardingPainTitle": "Yini ekucasula kakhulu?",
+  "onboardingPaywallListReady": "Uhlu lwakho lokuqala selulungile · {count} izinto",
   "onboardingPersonalizationCategoryTitle": "Uthengelani?",
   "onboardingPersonalizationCta": "Qhubeka",
   "onboardingPersonalizationDesc": "Sizosebenzisa lokhu ukuze senze iziphakamiso zakho zibe ngokwakho futhi senze ukuthenga kuhlakaniphe.",
+  "onboardingPersonalizationEffect": "Lokhu kusiza u-Kipi ukuphakamisa izinto ezihambisana kakhulu namanani.",
   "onboardingPersonalizationFoodHint": "isib. I-pizza, i-sushi, i-lasagna ...",
   "onboardingPersonalizationFoodLabel": "Yikuphi ukudla okuthandayo?",
   "onboardingPersonalizationFoodRequired": "Sitshele ukudla okuthandayo ukuze uqhubeke",
@@ -1704,8 +2017,13 @@
   "onboardingPersonalizationNameLabel": "Igama lakho",
   "onboardingPersonalizationSkip": "Yeqa okwamanje",
   "onboardingPersonalizationTitle": "Asikwazi",
+  "onboardingPersonalizeWithName": "Yenza kube ngokwakho ngegama lami",
   "onboardingPremiumSubtitle": "Thola okuningi ohlwini lwakho lokuthenga",
   "onboardingPremiumTitle": "Vula zonke izici",
+  "onboardingProgress": "Isinyathelo {current} kwezingu-{total}",
+  "onboardingPromptEssentials": "Ngiphakamisele okubalulekile",
+  "onboardingPromptEvent": "Ngilungiselela okuthile okukhethekile",
+  "onboardingPromptWeekly": "Hlela izinto zami ezibalulekile zamasonto onke",
   "onboardingRestore": "Buyisela Okuthengiwe",
   "onboardingRestoreDesc": "Usuvele unokubhalisile? Thepha lapha ukuze uyibuyisele.",
   "onboardingSetupDesc": "Khetha ukuthi ufuna i-KipiList ikubukeke kanjani futhi ikusebenzele.",
@@ -1731,6 +2049,8 @@
   "othersCategory": "Abanye",
   "pantry": "Iphanta",
   "pantryAppBar": "Iphanta",
+  "pantryAvailabilityAll": "Konke sekulungile!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} ku-pantry",
   "pantryEditTitle": "Hlela {name}",
   "pantryEmpty": "Iphanta engenalutho",
   "pantryEmptySubtitle": "Engeza imikhiqizo ofuna ukuba nayo ekhaya",
@@ -1749,7 +2069,10 @@
   "paywallBenefit2Desc": "Awukho umkhawulo wohlu olu-3",
   "paywallBenefit3Desc": "Ukulandelela izindleko kanye nezinhlu zemindeni",
   "paywallBestValue": "INANI ELIHLE KAHLE",
+  "paywallBillingAnnual": "{price}/ngonyaka. Khansela noma nini.",
+  "paywallBillingMonthly": "{price}/ngenyanga. Khansela noma nini.",
   "paywallCancelAnytime": "Khansela noma nini. Akukho ukuzibophezela.",
+  "paywallContinueFree": "Qhubeka nenguqulo yamahhala",
   "paywallCtaTrialDays": "Qala mahhala — {days} izinsuku",
   "paywallCtaUnlock": "Vula i-PRO",
   "paywallFeatureDescAssistant": "I-AI ihlela uhlu lwakho ngokuzenzakalelayo",
@@ -1790,6 +2113,7 @@
   "paywallPricePerMonth": "Kuphela {price}/ngenyanga",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Ayikwazanga ukuqedela ukuthenga. Zama futhi.",
+  "paywallPurchasePending": "Inkokhelo yakho isalinde ukugunyazwa. Ukufinyelela kuzokhishwa ngokuzenzakalelayo ngemva kokuqinisekisa.",
   "paywallRestore": "Buyisela",
   "paywallRestoreError": "Akukho ukubhalisa okusebenzayo okutholiwe ukuze kubuyiselwe.",
   "paywallSafeCheckout": "Inkokhelo evikelekile",
@@ -1811,11 +2135,14 @@
   "paywallTrialCta": "Qala Isivivinyo Samahhala",
   "paywallTrialDays": "{days} IZINSUKU MAHHALA",
   "paywallTrialDisclaimer": "Khansela noma nini · Akukhokhiswa kuze kuphele isivivinyo sakho",
+  "paywallTrialDisclosureAnnual": "Namuhla: akukho nkokhelo. Bese {price}/ngonyaka ngemva kwezinsuku ezingu-{days}. Khansela noma nini.",
+  "paywallTrialDisclosureMonthly": "Namuhla: akukho nkokhelo. Bese {price}/ngenyanga ngemva kwezinsuku ezingu-{days}. Khansela noma nini.",
   "paywallTrialInCard": "Izinsuku zokuqala ezingu-{days} MAHHALA",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH MAHHALA} other{{count} MONTHS MAHHALA}}",
   "paywallTrialSubtitle": "Khansela noma nini. Akukhokhiswa namuhla.",
   "paywallTrialTitle": "Zama mahhala!",
   "paywallTrialWeeks": "{count,plural, one{{count} WEEK FREE} other{{count} WEEKS MAHHALA}}",
+  "paywallWelcomeOfferBadge": "🎁 Ukunikezwa kokwamukela",
   "positionBarcodeCenter": "Misa ibhakhodi phakathi nendawo",
   "prefAIAssistant": "Umsizi we-AI wakho siqu",
   "prefCustomThemes": "Izitimu ezenziwe ngokwezifiso",
@@ -1859,6 +2186,8 @@
   "recipeCreated": "Iresiphi idaliwe!",
   "recipeDeleted": "Iresiphi isusiwe",
   "recipeImage": "Isithombe seresiphi",
+  "recipeIngredientSingular": "1 isithako",
+  "recipeIngredientsPlural": "{count} izithako",
   "recipeName": "Igama leresiphi",
   "recipeSaved": "Iresiphi ilondoloziwe!",
   "recipeSuggestion": "Isiphakamiso seresiphi",
@@ -1946,7 +2275,7 @@
   "sortName": "Igama",
   "spendingAnalysis": "Ukuhlaziywa Kwemali Esetshenzisiwe",
   "spendingByCategory": "Imali Esetshenzisiwe Ngesigaba",
-  "streakDays": "{days} izinsuku",
+  "streakDays": "{count,plural, one{{count} izinsuku} other{{count} izinsuku}}",
   "subscription": "Ukubhalisa",
   "suggestedItems": "Izinto eziphakanyisiwe",
   "suggestedQuestions": "Imibuzo ephakanyisiwe:",

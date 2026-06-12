@@ -676,6 +676,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get chatHintBlocked => 'ለመወያየት AIን ይክፈቱ';
 
   @override
+  String get chatEmptySubtitle =>
+      'ለመጀመር የንጥል ጥቆማዎችን፣ የምግብ አዘገጃጀት መመሪያዎችን ወይም የማስቀመጫ ምክሮችን ይጠይቁ።';
+
+  @override
+  String get chatEmptyTitle => 'ውይይትህ ባዶ ነው።';
+
+  @override
   String chatError(String error) {
     return 'ውይይቱን በመጫን ላይ ስህተት፦ $error';
   }
@@ -1085,6 +1092,9 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'ሙሉ ተለዋዋጭነት';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 እንኳን ደህና መጣህ';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1847,6 +1857,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get catalogBrowse => 'ካታሎግ አስስ';
 
   @override
+  String get catalogCategories => 'ምድቦች';
+
+  @override
   String get offlineBanner => 'ከመስመር ውጭ ነዎት';
 
   @override
@@ -2408,4 +2421,279 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'ፍራፍሬዎች';
+
+  @override
+  String get recipeIngredientSingular => '1 ንጥረ ነገር';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ንጥረ ነገሮች';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'ሁሉም ተዘጋጅቷል!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount በጓዳ ውስጥ';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'ደረጃ $current ከ$total';
+  }
+
+  @override
+  String get onboardingDemoHeadline => 'ያቀዱትን ይንገሩን። ኪፒ ዝርዝሩን ይገነባል.';
+
+  @override
+  String get onboardingDemoSubtitle => 'የተደራጁ ነገሮችን በሰከንዶች ውስጥ ያግኙ።';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'ይህ ኪፒ የበለጠ ተዛማጅ ዕቃዎችን እና መጠኖችን እንዲጠቁም ይረዳል።';
+
+  @override
+  String get onboardingPersonalizeWithName => 'በስሜ ግላዊ አድርግ';
+
+  @override
+  String get onboardingCreateFirstList => 'የመጀመሪያ ዝርዝሬን ፍጠር';
+
+  @override
+  String get onboardingPromptWeekly => 'የእኔን ሳምንታዊ አስፈላጊ ነገሮች ያቅዱ';
+
+  @override
+  String get onboardingPromptEvent => 'ልዩ ነገር እያዘጋጀሁ ነው።';
+
+  @override
+  String get onboardingPromptEssentials => 'ለእኔ አስፈላጊ የሆኑትን ነገሮች ጠቁም';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 ሩዝ|🫘 ባቄላ|🥛 ወተት|🥚 እንቁላል|🍞 ዳቦ|🍎 ፍራፍሬ';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 የሚጣበቁ ማሰሪያዎች|🌡️ ቴርሞሜትር|🧴 አንቲሴፕቲክ|😷 የፊት ጭንብል|🧼 የእጅ ማጽጃ';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 ቲማቲም|🧅 ሽንኩርት|🧄 ነጭ ሽንኩርት|🥚 እንቁላል|🧀 አይብ|🌿 ትኩስ እፅዋት';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 የወረቀት ፎጣዎች|🧽 ስፖንጅ|🧴 ሳሙና|🗑️ የቆሻሻ ከረጢቶች|';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 የቤት እንስሳት ምግብ|🦴 ህክምናዎች|🧼 የቤት እንስሳት ሻምፑ|🧸 አሻንጉሊት|🧻 የቆሻሻ ቦርሳ';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'እቃዎቹን አዘጋጀሁ፣ ነገር ግን ዝርዝሩን ማስቀመጥ አልቻልኩም። በመተግበሪያው ውስጥ ለማቆየት እንደገና ይሞክሩ።';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'ዝርዝርዎ ዝግጁ ነው፡ $count ንጥሎች ለእርስዎ የተደራጁ ናቸው።';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'ቀጥል';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'የመጀመሪያ ዝርዝርዎ ዝግጁ ነው · $count ንጥሎች';
+  }
+
+  @override
+  String get paywallContinueFree => 'በነጻው ስሪት ይቀጥሉ';
+
+  @override
+  String get paywallPurchasePending =>
+      'ክፍያዎ መጽደቅን በመጠባበቅ ላይ ነው። ከተረጋገጠ በኋላ መዳረሻ በራስ-ሰር ይለቀቃል።';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'ዛሬ: ምንም ክፍያ የለም. ከዚያም $price/ዓመት ከ$days ቀናት በኋላ። በማንኛውም ጊዜ ይሰርዙ።';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'ዛሬ: ምንም ክፍያ የለም. ከዚያ $price/በወር ከ$days ቀናት በኋላ። በማንኛውም ጊዜ ይሰርዙ።';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/ዓመት በማንኛውም ጊዜ ይሰርዙ።';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price በወር። በማንኛውም ጊዜ ይሰርዙ።';
+  }
+
+  @override
+  String get obHookTitle => 'የበለጠ ብልህ ግብይት እዚህ ይጀምራል';
+
+  @override
+  String get obHookSubtitle =>
+      'ጊዜዎን እና ገንዘብዎን የሚቆጥቡ በ AI የተጎላበቱ ዝርዝሮች ፣ እያንዳንዱ ጉዞ።';
+
+  @override
+  String get obHookSocial => 'በዓለም ዙሪያ በሺዎች በሚቆጠሩ ሸማቾች የታመነ';
+
+  @override
+  String get obHookCta => 'እንጀምር';
+
+  @override
+  String get obQuizHouseholdTitle => 'ለማን ነው የምትገዛው?';
+
+  @override
+  String get obQuizHouseholdSolo => 'እኔ ብቻ';
+
+  @override
+  String get obQuizHouseholdCouple => 'እኔ እና ባልደረባዬ';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'የ3–4 ቤተሰብ';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ ቤተሰብ';
+
+  @override
+  String get obQuizFrequencyTitle => 'ምን ያህል ጊዜ ለግሮሰሪዎች ይገዛሉ?';
+
+  @override
+  String get obQuizFrequencyDaily => 'በየቀኑ ማለት ይቻላል';
+
+  @override
+  String get obQuizFrequencyWeekly => 'በሳምንት አንድ ጊዜ';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'በየሁለት ሳምንቱ';
+
+  @override
+  String get obQuizFrequencyMonthly => 'ትልቅ ወርሃዊ ጭነት';
+
+  @override
+  String get obQuizPainTitle => 'ስለ ግብይት በጣም የሚያበሳጭህ ምንድን ነው?';
+
+  @override
+  String get obQuizPainForget => 'ሁልጊዜ እቃዎችን እረሳለሁ';
+
+  @override
+  String get obQuizPainOverspend => 'ከታቀደው በላይ አወጣለሁ።';
+
+  @override
+  String get obQuizPainWaste => 'ምግብ በቤት ውስጥ ይባክናል';
+
+  @override
+  String get obQuizPainTime => 'በጣም ብዙ ጊዜ ይወስዳል';
+
+  @override
+  String get obQuizSavingsTitle => 'በየወሩ ምን ያህል መቆጠብ ይፈልጋሉ?';
+
+  @override
+  String get obQuizSavingsSmall => 'ትንሽ - እያንዳንዱ ትንሽ ይቆጠራል';
+
+  @override
+  String get obQuizSavingsMedium => 'ከግሮሰሪዬ 10% ገደማ';
+
+  @override
+  String get obQuizSavingsLarge => 'በተቻለ መጠን';
+
+  @override
+  String get obQuizMethodTitle => 'ዛሬ የግዢ ዝርዝሮችን እንዴት ይሠራሉ?';
+
+  @override
+  String get obQuizMethodPaper => 'ብዕር እና ወረቀት';
+
+  @override
+  String get obQuizMethodNotes => 'ማስታወሻዎች መተግበሪያ';
+
+  @override
+  String get obQuizMethodMemory => 'በጭንቅላቴ ውስጥ አኖራለሁ';
+
+  @override
+  String get obQuizMethodNone => 'ዝርዝር አልሰራም።';
+
+  @override
+  String get obSocialTitle => 'በጥሩ ኩባንያ ውስጥ ነዎት';
+
+  @override
+  String get obSocialSubtitle => 'እንደ እርስዎ ያሉ ሸማቾች በኪፒሊስት እየቆጠቡ ነው።';
+
+  @override
+  String get obSocialQuote1 => 'ከእንግዲህ ምንም አልረሳውም። AI ዝርዝሬን በሰከንዶች ውስጥ ይገነባል።';
+
+  @override
+  String get obSocialQuote2 => 'በመጀመሪያው ወር የግሮሰሪ ሂሳባችንን በደንብ ቆርጠን ነበር።';
+
+  @override
+  String get obSocialQuote3 => 'ዝርዝሩን ለባልደረባዬ ማካፈላችን የግዢ ትርምስ አብቅቷል።';
+
+  @override
+  String get obLoadingTitle => 'ግላዊ እቅድዎን በመገንባት ላይ...';
+
+  @override
+  String get obLoadingStepProfile => 'ለቤተሰብዎ ማስተካከል';
+
+  @override
+  String get obLoadingStepHabits => 'የግዢ ልማዳችሁን በማስተካከል ላይ';
+
+  @override
+  String get obLoadingStepSavings => 'የእርስዎን የቁጠባ ስትራቴጂ ማመቻቸት';
+
+  @override
+  String get obLoadingStepLists => 'የእርስዎን ብልጥ ዝርዝሮች በማዘጋጀት ላይ';
+
+  @override
+  String get obRevealTitle => 'እቅድዎ ዝግጁ ነው!';
+
+  @override
+  String get obRevealSubtitle => 'KipiList እንዴት ለእርስዎ እንደሚሰራ እነሆ';
+
+  @override
+  String get obRevealSavingsCaption => 'በKipiList የታቀዱ ቁጠባዎች';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'ወር $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI ዝርዝሮችዎን ይገነባል እና ያደራጃል';
+
+  @override
+  String get obRevealFeatureBudget => 'ወጪ ከግብዎ አንጻር ክትትል የሚደረግበት ነው።';
+
+  @override
+  String get obRevealFeaturePantry => 'የፓንደር ክትትል የምግብ ብክነትን ይቀንሳል';
+
+  @override
+  String get obRevealFeatureShare => 'ከቤተሰብዎ ጋር በቅጽበት ማጋራት።';
+
+  @override
+  String get obPaywallTitle => 'እቅድዎን ይክፈቱ';
+
+  @override
+  String get obPaywallRetry => 'እንደገና ይሞክሩ';
+
+  @override
+  String get obLoginTitle => 'እቅድዎን ያስቀምጡ';
+
+  @override
+  String get obLoginSubtitle => 'ዝርዝሮችዎ በመሳሪያዎች ላይ እንዲመሳሰሉ በመለያ ይግቡ';
+
+  @override
+  String get obLoginGoogle => 'በGoogle ይቀጥሉ';
+
+  @override
+  String get obLoginApple => 'በአፕል ይቀጥሉ';
+
+  @override
+  String get obLoginSkip => 'አሁን አይደለም';
+
+  @override
+  String get obLoginError => 'መግባት አልተሳካም። እንደገና ይሞክሩ ወይም ለአሁኑ ይዝለሉ።';
 }

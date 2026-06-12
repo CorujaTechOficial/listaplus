@@ -680,6 +680,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get chatHintBlocked => 'Odemkněte AI, abyste mohli chatovat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Chcete-li začít, požádejte o návrhy položek, recepty nebo tipy na ukládání.';
+
+  @override
+  String get chatEmptyTitle => 'Váš chat je prázdný';
+
+  @override
   String chatError(String error) {
     return 'Chyba při načítání chatu: $error';
   }
@@ -1110,6 +1117,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Plná flexibilita';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Uvítací nabídka';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1883,6 +1893,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get catalogBrowse => 'Procházet katalog';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Jste offline';
 
   @override
@@ -2453,6 +2466,289 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Ovoce';
+
+  @override
+  String get recipeIngredientSingular => '1 přísada';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count přísad';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Vše nastaveno!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount ve spíži';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Krok $current z $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Řekněte nám, co plánujete. Kipi sestaví seznam.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Získejte uspořádané položky během několika sekund.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'To pomáhá Kipi navrhovat relevantnější položky a množství.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Přizpůsobte se mým jménem';
+
+  @override
+  String get onboardingCreateFirstList => 'Vytvořte můj první seznam';
+
+  @override
+  String get onboardingPromptWeekly => 'Naplánujte si mé týdenní náležitosti';
+
+  @override
+  String get onboardingPromptEvent => 'Připravuji něco speciálního';
+
+  @override
+  String get onboardingPromptEssentials => 'Doporučte mi to podstatné';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rýže|🫘 Fazole|🥛 Mléko|🥚 Vejce|🍞 Chléb|🍎 Ovoce';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Lepicí obvazy|🌡️ Teploměr|🧴 Antiseptikum|😷 Obličejové masky|🧼 Dezinfekce na ruce';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Rajčata|🧅 Cibule|🧄 Česnek|🥚 Vejce|🧀 Sýr|🌿 Čerstvé bylinky';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papírové utěrky|🧽 Houby|🧴 Čisticí prostředek|🗑️ Sáčky na odpadky|🧹 Čisticí utěrky';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Krmivo pro domácí mazlíčky|🦴 Pamlsky|🧼 Šampon pro domácí mazlíčky|🧸 Hračka|🧻 Sáčky na odpad';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Připravil jsem položky, ale nepodařilo se mi uložit seznam. Zkuste to znovu ponechat v aplikaci.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Váš seznam je připraven: $count položek uspořádaných pro vás.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Pokračovat';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Váš první seznam je připraven · $count položek';
+  }
+
+  @override
+  String get paywallContinueFree => 'Pokračujte v bezplatné verzi';
+
+  @override
+  String get paywallPurchasePending =>
+      'Vaše platba čeká na schválení. Přístup bude po potvrzení automaticky uvolněn.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Dnes: bez poplatku. Poté $price/rok po $days dnech. Kdykoli zrušit.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Dnes: bez poplatku. Poté $price/měsíc po $days dnech. Kdykoli zrušit.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/rok. Kdykoli zrušit.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/měsíc. Kdykoli zrušit.';
+  }
+
+  @override
+  String get obHookTitle => 'Chytřejší nakupování začíná zde';
+
+  @override
+  String get obHookSubtitle =>
+      'Seznamy s umělou inteligencí, které vám šetří čas a peníze při každé cestě.';
+
+  @override
+  String get obHookSocial => 'Důvěřují tisícům nakupujících po celém světě';
+
+  @override
+  String get obHookCta => 'Začněte';
+
+  @override
+  String get obQuizHouseholdTitle => 'Pro koho nakupujete?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Jen já';
+
+  @override
+  String get obQuizHouseholdCouple => 'Já a můj partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3–4členná rodina';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Rodina 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Jak často nakupujete potraviny?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Téměř každý den';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Jednou týdně';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Každé dva týdny';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Velký měsíční úlovek';
+
+  @override
+  String get obQuizPainTitle => 'Co tě na nakupování nejvíc frustruje?';
+
+  @override
+  String get obQuizPainForget => 'Vždy zapomenu předměty';
+
+  @override
+  String get obQuizPainOverspend => 'Utrácím víc, než jsem plánoval';
+
+  @override
+  String get obQuizPainWaste => 'Jídlo jde doma do odpadu';
+
+  @override
+  String get obQuizPainTime => 'Zabere to příliš mnoho času';
+
+  @override
+  String get obQuizSavingsTitle => 'Kolik byste chtěli měsíčně ušetřit?';
+
+  @override
+  String get obQuizSavingsSmall => 'Trochu – každý kousek se počítá';
+
+  @override
+  String get obQuizSavingsMedium => 'Asi 10 % mého účtu za potraviny';
+
+  @override
+  String get obQuizSavingsLarge => 'V rámci možností';
+
+  @override
+  String get obQuizMethodTitle => 'Jak dnes tvoříte nákupní seznamy?';
+
+  @override
+  String get obQuizMethodPaper => 'Tužka a papír';
+
+  @override
+  String get obQuizMethodNotes => 'Aplikace Poznámky';
+
+  @override
+  String get obQuizMethodMemory => 'Nechám si to v hlavě';
+
+  @override
+  String get obQuizMethodNone => 'Nedělám seznamy';
+
+  @override
+  String get obSocialTitle => 'Jste v dobré společnosti';
+
+  @override
+  String get obSocialSubtitle => 'Nakupující jako vy již šetří s KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Už nikdy na nic nezapomenu. AI vytvoří můj seznam během několika sekund.';
+
+  @override
+  String get obSocialQuote2 =>
+      'V prvním měsíci jsme výrazně snížili účet za potraviny.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Sdílení seznamu s mým partnerem ukončilo náš nákupní chaos.';
+
+  @override
+  String get obLoadingTitle => 'Vytváření vlastního plánu...';
+
+  @override
+  String get obLoadingStepProfile => 'Úprava pro vaši domácnost';
+
+  @override
+  String get obLoadingStepHabits => 'Nalaďte se na svou nákupní rutinu';
+
+  @override
+  String get obLoadingStepSavings => 'Optimalizace vaší strategie úspor';
+
+  @override
+  String get obLoadingStepLists => 'Příprava chytrých seznamů';
+
+  @override
+  String get obRevealTitle => 'Váš plán je připraven!';
+
+  @override
+  String get obRevealSubtitle => 'Zde je návod, jak vám KipiList bude fungovat';
+
+  @override
+  String get obRevealSavingsCaption => 'Předpokládané úspory s KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Měsíc $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI vytváří a organizuje vaše seznamy';
+
+  @override
+  String get obRevealFeatureBudget => 'Sledované výdaje na váš cíl';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Sledování spíže snižuje plýtvání potravinami';
+
+  @override
+  String get obRevealFeatureShare => 'Sdílení v reálném čase s vaší domácností';
+
+  @override
+  String get obPaywallTitle => 'Odemkněte svůj plán';
+
+  @override
+  String get obPaywallRetry => 'Zkuste to znovu';
+
+  @override
+  String get obLoginTitle => 'Uložte svůj plán';
+
+  @override
+  String get obLoginSubtitle =>
+      'Přihlaste se, aby se vaše seznamy synchronizovaly mezi zařízeními';
+
+  @override
+  String get obLoginGoogle => 'Pokračujte s Googlem';
+
+  @override
+  String get obLoginApple => 'Pokračujte s Apple';
+
+  @override
+  String get obLoginSkip => 'Teď ne';
+
+  @override
+  String get obLoginError =>
+      'Přihlášení se nezdařilo. Zkuste to znovu nebo prozatím přeskočte.';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -3131,6 +3427,13 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get chatHintBlocked => 'Odemkněte AI, abyste mohli chatovat';
 
   @override
+  String get chatEmptySubtitle =>
+      'Chcete-li začít, požádejte o návrhy položek, recepty nebo tipy na ukládání.';
+
+  @override
+  String get chatEmptyTitle => 'Váš chat je prázdný';
+
+  @override
   String chatError(String error) {
     return 'Chyba při načítání chatu: $error';
   }
@@ -3561,6 +3864,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get paywallPackageMonthlyDesc => 'Plná flexibilita';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Uvítací nabídka';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4904,4 +5210,287 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get suggestionFruits => 'Ovoce';
+
+  @override
+  String get recipeIngredientSingular => '1 přísada';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count přísad';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Vše nastaveno!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount ve spíži';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Krok $current z $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Řekněte nám, co plánujete. Kipi sestaví seznam.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Získejte uspořádané položky během několika sekund.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'To pomáhá Kipi navrhovat relevantnější položky a množství.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Přizpůsobte se mým jménem';
+
+  @override
+  String get onboardingCreateFirstList => 'Vytvořte můj první seznam';
+
+  @override
+  String get onboardingPromptWeekly => 'Naplánujte si mé týdenní náležitosti';
+
+  @override
+  String get onboardingPromptEvent => 'Připravuji něco speciálního';
+
+  @override
+  String get onboardingPromptEssentials => 'Doporučte mi to podstatné';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rýže|🫘 Fazole|🥛 Mléko|🥚 Vejce|🍞 Chléb|🍎 Ovoce';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Lepicí obvazy|🌡️ Teploměr|🧴 Antiseptikum|😷 Obličejové masky|🧼 Dezinfekce na ruce';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Rajčata|🧅 Cibule|🧄 Česnek|🥚 Vejce|🧀 Sýr|🌿 Čerstvé bylinky';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papírové utěrky|🧽 Houby|🧴 Čisticí prostředek|🗑️ Sáčky na odpadky|🧹 Čisticí utěrky';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Krmivo pro domácí mazlíčky|🦴 Pamlsky|🧼 Šampon pro domácí mazlíčky|🧸 Hračka|🧻 Sáčky na odpad';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Připravil jsem položky, ale nepodařilo se mi uložit seznam. Zkuste to znovu ponechat v aplikaci.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Váš seznam je připraven: $count položek uspořádaných pro vás.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Pokračovat';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Váš první seznam je připraven · $count položek';
+  }
+
+  @override
+  String get paywallContinueFree => 'Pokračujte v bezplatné verzi';
+
+  @override
+  String get paywallPurchasePending =>
+      'Vaše platba čeká na schválení. Přístup bude po potvrzení automaticky uvolněn.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Dnes: bez poplatku. Poté $price/rok po $days dnech. Kdykoli zrušit.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Dnes: bez poplatku. Poté $price/měsíc po $days dnech. Kdykoli zrušit.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/rok. Kdykoli zrušit.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/měsíc. Kdykoli zrušit.';
+  }
+
+  @override
+  String get obHookTitle => 'Chytřejší nakupování začíná zde';
+
+  @override
+  String get obHookSubtitle =>
+      'Seznamy s umělou inteligencí, které vám šetří čas a peníze při každé cestě.';
+
+  @override
+  String get obHookSocial => 'Důvěřují tisícům nakupujících po celém světě';
+
+  @override
+  String get obHookCta => 'Začněte';
+
+  @override
+  String get obQuizHouseholdTitle => 'Pro koho nakupujete?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Jen já';
+
+  @override
+  String get obQuizHouseholdCouple => 'Já a můj partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3–4členná rodina';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Rodina 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Jak často nakupujete potraviny?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Téměř každý den';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Jednou týdně';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Každé dva týdny';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Velký měsíční úlovek';
+
+  @override
+  String get obQuizPainTitle => 'Co tě na nakupování nejvíc frustruje?';
+
+  @override
+  String get obQuizPainForget => 'Vždy zapomenu předměty';
+
+  @override
+  String get obQuizPainOverspend => 'Utrácím víc, než jsem plánoval';
+
+  @override
+  String get obQuizPainWaste => 'Jídlo jde doma do odpadu';
+
+  @override
+  String get obQuizPainTime => 'Zabere to příliš mnoho času';
+
+  @override
+  String get obQuizSavingsTitle => 'Kolik byste chtěli měsíčně ušetřit?';
+
+  @override
+  String get obQuizSavingsSmall => 'Trochu – každý kousek se počítá';
+
+  @override
+  String get obQuizSavingsMedium => 'Asi 10 % mého účtu za potraviny';
+
+  @override
+  String get obQuizSavingsLarge => 'V rámci možností';
+
+  @override
+  String get obQuizMethodTitle => 'Jak dnes tvoříte nákupní seznamy?';
+
+  @override
+  String get obQuizMethodPaper => 'Tužka a papír';
+
+  @override
+  String get obQuizMethodNotes => 'Aplikace Poznámky';
+
+  @override
+  String get obQuizMethodMemory => 'Nechám si to v hlavě';
+
+  @override
+  String get obQuizMethodNone => 'Nedělám seznamy';
+
+  @override
+  String get obSocialTitle => 'Jste v dobré společnosti';
+
+  @override
+  String get obSocialSubtitle => 'Nakupující jako vy již šetří s KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Už nikdy na nic nezapomenu. AI vytvoří můj seznam během několika sekund.';
+
+  @override
+  String get obSocialQuote2 =>
+      'V prvním měsíci jsme výrazně snížili účet za potraviny.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Sdílení seznamu s mým partnerem ukončilo náš nákupní chaos.';
+
+  @override
+  String get obLoadingTitle => 'Vytváření vlastního plánu...';
+
+  @override
+  String get obLoadingStepProfile => 'Úprava pro vaši domácnost';
+
+  @override
+  String get obLoadingStepHabits => 'Nalaďte se na svou nákupní rutinu';
+
+  @override
+  String get obLoadingStepSavings => 'Optimalizace vaší strategie úspor';
+
+  @override
+  String get obLoadingStepLists => 'Příprava chytrých seznamů';
+
+  @override
+  String get obRevealTitle => 'Váš plán je připraven!';
+
+  @override
+  String get obRevealSubtitle => 'Zde je návod, jak vám KipiList bude fungovat';
+
+  @override
+  String get obRevealSavingsCaption => 'Předpokládané úspory s KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Měsíc $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI vytváří a organizuje vaše seznamy';
+
+  @override
+  String get obRevealFeatureBudget => 'Sledované výdaje na váš cíl';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Sledování spíže snižuje plýtvání potravinami';
+
+  @override
+  String get obRevealFeatureShare => 'Sdílení v reálném čase s vaší domácností';
+
+  @override
+  String get obPaywallTitle => 'Odemkněte svůj plán';
+
+  @override
+  String get obPaywallRetry => 'Zkuste to znovu';
+
+  @override
+  String get obLoginTitle => 'Uložte svůj plán';
+
+  @override
+  String get obLoginSubtitle =>
+      'Přihlaste se, aby se vaše seznamy synchronizovaly mezi zařízeními';
+
+  @override
+  String get obLoginGoogle => 'Pokračujte s Googlem';
+
+  @override
+  String get obLoginApple => 'Pokračujte s Apple';
+
+  @override
+  String get obLoginSkip => 'Teď ne';
+
+  @override
+  String get obLoginError =>
+      'Přihlášení se nezdařilo. Zkuste to znovu nebo prozatím přeskočte.';
 }

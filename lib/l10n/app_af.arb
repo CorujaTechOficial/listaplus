@@ -419,6 +419,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -587,6 +753,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -641,6 +814,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -679,6 +859,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -728,9 +918,33 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
         "type": "String"
       }
     }
@@ -836,12 +1050,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -918,6 +1155,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1349,7 @@
   "catOthers": "Ander",
   "catalogAddItems": "Voeg {count} {count, plural, one{item} other{items}} by →",
   "catalogBrowse": "Blaai deur Katalogus",
+  "catalogCategories": "Kategorieë",
   "catalogFilterNational": "Onderdane",
   "catalogMyFrequents": "My gereelde",
   "catalogProductNotFound": "Produk nie gevind nie, tik die naam in",
@@ -1120,6 +1365,8 @@
   "categoryLimitReached": "Kategorielimiet bereik",
   "categoryName": "Kategorie naam",
   "categoryNameHint": "Voer kategorienaam in",
+  "chatEmptySubtitle": "Vra vir itemvoorstelle, resepte of spaarwenke om te begin.",
+  "chatEmptyTitle": "Jou klets is leeg",
   "chatError": "Fout met laai van geselsie: {error}",
   "chatHint": "Tik jou boodskap...",
   "chatHintBlocked": "Ontsluit AI om te gesels",
@@ -1395,6 +1642,60 @@
   "noRecipesSavedHint": "Skep jou eerste pasgemaakte resep deur op die knoppie hieronder te tik.",
   "noTracking": "Geen dop",
   "notInformed": "Nie gestel nie",
+  "obHookCta": "Begin",
+  "obHookSocial": "Vertrou deur duisende kopers wêreldwyd",
+  "obHookSubtitle": "KI-aangedrewe lyste wat jou tyd en geld bespaar, elke enkele reis.",
+  "obHookTitle": "Slimmer inkopies begin hier",
+  "obLoadingStepHabits": "Stem in op jou inkopieroetine",
+  "obLoadingStepLists": "Berei jou slim lyste voor",
+  "obLoadingStepProfile": "Aanpassing vir jou huishouding",
+  "obLoadingStepSavings": "Optimaliseer jou spaarstrategie",
+  "obLoadingTitle": "Bou jou persoonlike plan...",
+  "obLoginApple": "Gaan voort met Apple",
+  "obLoginError": "Kon nie aanmeld nie. Probeer weer of slaan oor vir eers.",
+  "obLoginGoogle": "Gaan voort met Google",
+  "obLoginSkip": "Nie nou nie",
+  "obLoginSubtitle": "Meld aan sodat jou lyste oor toestelle sinkroniseer",
+  "obLoginTitle": "Stoor jou plan",
+  "obPaywallRetry": "Probeer weer",
+  "obPaywallTitle": "Ontsluit jou plan",
+  "obQuizFrequencyBiweekly": "Elke twee weke",
+  "obQuizFrequencyDaily": "Byna elke dag",
+  "obQuizFrequencyMonthly": "Groot maandelikse trek",
+  "obQuizFrequencyTitle": "Hoe gereeld koop jy kruideniersware?",
+  "obQuizFrequencyWeekly": "Een keer per week",
+  "obQuizHouseholdCouple": "Ek en my maat",
+  "obQuizHouseholdFamilyLarge": "Gesin van 5+",
+  "obQuizHouseholdFamilySmall": "Gesin van 3–4",
+  "obQuizHouseholdSolo": "Net ek",
+  "obQuizHouseholdTitle": "Vir wie doen jy inkopies?",
+  "obQuizMethodMemory": "Ek hou dit in my kop",
+  "obQuizMethodNone": "Ek maak nie lysies nie",
+  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodPaper": "Pen en papier",
+  "obQuizMethodTitle": "Hoe maak jy vandag inkopielysies?",
+  "obQuizPainForget": "Ek vergeet altyd items",
+  "obQuizPainOverspend": "Ek spandeer meer as wat beplan is",
+  "obQuizPainTime": "Dit neem te veel tyd",
+  "obQuizPainTitle": "Wat frustreer jou die meeste oor inkopies?",
+  "obQuizPainWaste": "Kos gaan by die huis tot niet",
+  "obQuizSavingsLarge": "Soveel as moontlik",
+  "obQuizSavingsMedium": "Ongeveer 10% van my kruideniersware rekening",
+  "obQuizSavingsSmall": "'n Bietjie - elke bietjie tel",
+  "obQuizSavingsTitle": "Hoeveel wil jy maandeliks spaar?",
+  "obRevealFeatureAi": "KI bou en organiseer jou lyste",
+  "obRevealFeatureBudget": "Besteding nagespoor teen jou doelwit",
+  "obRevealFeaturePantry": "Spensopsporing sny voedselafval",
+  "obRevealFeatureShare": "Intydse deel met jou huishouding",
+  "obRevealMonth": "Maand {n}",
+  "obRevealSavingsCaption": "Geprojekteerde besparings met KipiList",
+  "obRevealSubtitle": "Hier is hoe KipiList vir jou sal werk",
+  "obRevealTitle": "Jou plan is gereed!",
+  "obSocialQuote1": "Ek vergeet nooit meer iets nie. Die KI bou my lys in sekondes.",
+  "obSocialQuote2": "Ons het ons kruidenierswarerekening merkbaar in die eerste maand verminder.",
+  "obSocialQuote3": "Om die lys met my maat te deel, het ons inkopie-chaos beëindig.",
+  "obSocialSubtitle": "Kopers soos jy spaar reeds met KipiList",
+  "obSocialTitle": "Jy is in goeie geselskap",
   "observations": "Waarnemings",
   "observationsHint": "Enige bykomende notas?",
   "offlineBanner": "Jy is vanlyn",
@@ -1434,7 +1735,16 @@
   "onboardingCommitmentsSubtitle": "Kies jou doelwitte om KipiList te verpersoonlik",
   "onboardingCommitmentsTitle": "Wat maak vir jou saak?",
   "onboardingContinueAsGuest": "Gaan voort as gas",
+  "onboardingContinueToOffer": "Gaan voort",
+  "onboardingCreateFirstList": "Skep my eerste lys",
+  "onboardingDemoHeadline": "Vertel ons wat jy beplan. Kipi bou die lys.",
+  "onboardingDemoSubtitle": "Kry georganiseerde items binne sekondes.",
   "onboardingExit": "Verlaat",
+  "onboardingFallbackGrocery": "🍚 Rys|🫘 Bone|🥛 Melk|🥚 Eiers|🍞 Brood|🍎 Vrugte",
+  "onboardingFallbackHome": "🧻 Papierhanddoeke|🧽 Sponse|🧴 Skoonmaakmiddel|🗑️ Vullissakke|🧹 Skoonmaaklappies",
+  "onboardingFallbackPet": "🥣 Troeteldierkos|🦴 Bederfies|🧼 Troeteldier sjampoe|🧸 Speelgoed|🧻 Afvalsakke",
+  "onboardingFallbackPharmacy": "🩹 Kleefverbande|🌡️ Termometer|🧴 Antisepties|😷 Gesigmaskers|🧼 Handreiniger",
+  "onboardingFallbackRecipes": "🍅 Tamaties|🧅 Ui|🧄 Knoffel|🥚 Eiers|🧀 Kaas|🌿 Vars kruie",
   "onboardingGoalFamily": "Organiseer gesinsinkopies",
   "onboardingGoalFaster": "Koop vinniger",
   "onboardingGoalNeverForget": "Moet nooit items vergeet nie",
@@ -1445,6 +1755,8 @@
   "onboardingGroupFamily": "Familie",
   "onboardingGroupSolo": "Net ek",
   "onboardingHookHeadline": "Moet nooit weer 'n kruideniersware item vergeet nie",
+  "onboardingListCreated": "Jou lys is gereed: {count} items vir jou georganiseer.",
+  "onboardingListSaveFailed": "Ek het die items voorberei, maar kon nie die lys stoor nie. Probeer weer om dit in die toepassing te hou.",
   "onboardingLoadingStat1Label": "Items gekatalogiseer",
   "onboardingLoadingStat2Label": "Gebruikers het gehelp",
   "onboardingLoadingStat3Label": "Minute gestoor",
@@ -1463,9 +1775,11 @@
   "onboardingPainRepeat": "Een reis is nooit genoeg nie",
   "onboardingPainSubtitle": "Wees eerlik – ons sal elkeen regmaak",
   "onboardingPainTitle": "Wat frustreer jou die meeste?",
+  "onboardingPaywallListReady": "Jou eerste lys is gereed · {count} items",
   "onboardingPersonalizationCategoryTitle": "Waarvoor koop jy?",
   "onboardingPersonalizationCta": "Gaan voort",
   "onboardingPersonalizationDesc": "Ons sal dit gebruik om jou voorstelle te verpersoonlik en inkopies slimmer te maak.",
+  "onboardingPersonalizationEffect": "Dit help Kipi om meer relevante items en hoeveelhede voor te stel.",
   "onboardingPersonalizationFoodHint": "bv. Pizza, Sushi, Lasagne...",
   "onboardingPersonalizationFoodLabel": "Wat is jou gunsteling kos?",
   "onboardingPersonalizationFoodRequired": "Vertel ons jou gunsteling kos om voort te gaan",
@@ -1474,8 +1788,13 @@
   "onboardingPersonalizationNameLabel": "Jou naam",
   "onboardingPersonalizationSkip": "Slaan vir eers oor",
   "onboardingPersonalizationTitle": "Kom ons leer jou ken",
+  "onboardingPersonalizeWithName": "Verpersoonlik met my naam",
   "onboardingPremiumSubtitle": "Haal die meeste uit jou inkopielyste",
   "onboardingPremiumTitle": "Ontsluit alle kenmerke",
+  "onboardingProgress": "Stap {current} van {total}",
+  "onboardingPromptEssentials": "Stel die noodsaaklikhede vir my voor",
+  "onboardingPromptEvent": "Ek is besig om iets spesiaals voor te berei",
+  "onboardingPromptWeekly": "Beplan my weeklikse noodsaaklikhede",
   "onboardingRestore": "Herstel",
   "onboardingRestoreDesc": "Het jy reeds 'n intekening? Tik hier om dit te herstel.",
   "onboardingSetupDesc": "Kies hoe jy wil hê KipiList moet lyk en vir jou werk.",
@@ -1499,6 +1818,8 @@
   "organizingAi": "ORGANISEER MET KI...",
   "pantry": "Spens",
   "pantryAppBar": "Spens",
+  "pantryAvailabilityAll": "Alles gereed!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} in spens",
   "pantryEditTitle": "Wysig {name}",
   "pantryEmpty": "Spens is leeg",
   "pantryEmptySubtitle": "Voeg produkte by wat jy tuis wil hou",
@@ -1516,7 +1837,10 @@
   "paywallBenefit2Desc": "Geen 3-lys limiet nie",
   "paywallBenefit3Desc": "Uitgawe dop en familie lyste",
   "paywallBestValue": "BESTE WAARDE",
+  "paywallBillingAnnual": "{price}/jaar. Kanselleer enige tyd.",
+  "paywallBillingMonthly": "{price}/maand. Kanselleer enige tyd.",
   "paywallCancelAnytime": "Kanselleer enige tyd. Geen verbintenis nie.",
+  "paywallContinueFree": "Gaan voort met die gratis weergawe",
   "paywallCtaTrialDays": "Begin gratis - {days} dae",
   "paywallCtaUnlock": "Ontsluit PRO",
   "paywallFeatureDescAssistant": "KI organiseer jou lys outomaties",
@@ -1557,6 +1881,7 @@
   "paywallPricePerMonth": "Slegs {price}/maand",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Kon nie aankoop voltooi nie. Probeer weer.",
+  "paywallPurchasePending": "Jou betaling wag op goedkeuring. Toegang sal outomaties vrygestel word na bevestiging.",
   "paywallRestore": "Herstel",
   "paywallRestoreError": "Geen aktiewe intekening gevind om terug te stel nie.",
   "paywallSafeCheckout": "Veilige betaling",
@@ -1578,11 +1903,14 @@
   "paywallTrialCta": "Begin gratis proeflopie",
   "paywallTrialDays": "{days} DAE GRATIS",
   "paywallTrialDisclaimer": "Kanselleer enige tyd · Geen koste totdat jou proeftydperk eindig nie",
+  "paywallTrialDisclosureAnnual": "Vandag: geen koste. Dan {price}/jaar na {days} dae. Kanselleer enige tyd.",
+  "paywallTrialDisclosureMonthly": "Vandag: geen koste. Dan {price}/maand na {days} dae. Kanselleer enige tyd.",
   "paywallTrialInCard": "Eerste {days} dae GRATIS",
   "paywallTrialMonths": "{count,plural, one{{count} MAAND GRATIS} other{{count} MAANDE GRATIS}}",
   "paywallTrialSubtitle": "Kanselleer enige tyd. Geen koste vandag nie.",
   "paywallTrialTitle": "Probeer gratis!",
   "paywallTrialWeeks": "{count,plural, one{{count} WEEK GRATIS} other{{count} WEKE GRATIS}}",
+  "paywallWelcomeOfferBadge": "🎁 Welkom aanbod",
   "positionBarcodeCenter": "Plaas die strepieskode in die middel",
   "prefAIAssistant": "Persoonlike AI Assistent",
   "prefCustomThemes": "Pasgemaakte temas",
@@ -1623,6 +1951,8 @@
   "recipeCreated": "Resep geskep!",
   "recipeDeleted": "Resep verwyder",
   "recipeImage": "Resepbeeld",
+  "recipeIngredientSingular": "1 bestanddeel",
+  "recipeIngredientsPlural": "{count} bestanddele",
   "recipeName": "Resepnaam",
   "recipeSaved": "Resep gestoor!",
   "recipeSuggestion": "Resepvoorstel",

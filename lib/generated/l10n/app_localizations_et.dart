@@ -673,6 +673,13 @@ class AppLocalizationsEt extends AppLocalizations {
   String get chatHintBlocked => 'Avage vestluseks tehisintellekt';
 
   @override
+  String get chatEmptySubtitle =>
+      'Alustamiseks küsige esemete soovitusi, retsepte või salvestamisnõuandeid.';
+
+  @override
+  String get chatEmptyTitle => 'Teie vestlus on tühi';
+
+  @override
   String chatError(String error) {
     return 'Viga vestluse laadimisel: $error';
   }
@@ -1103,6 +1110,9 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Täielik paindlikkus';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Tere tulemast pakkumine';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1868,6 +1878,9 @@ class AppLocalizationsEt extends AppLocalizations {
   String get catalogBrowse => 'Sirvi kataloogi';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Olete võrguühenduseta';
 
   @override
@@ -2438,4 +2451,289 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Puuviljad';
+
+  @override
+  String get recipeIngredientSingular => '1 koostisosa';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count koostisained';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Kõik valmis!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount sahvris';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Samm $current/$total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Rääkige meile, mida te plaanite. Kipi koostab nimekirja.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Hankige organiseeritud üksused sekunditega.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'See aitab Kipil soovitada asjakohasemaid esemeid ja koguseid.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Isikupärastage minu nimega';
+
+  @override
+  String get onboardingCreateFirstList => 'Loo minu esimene nimekiri';
+
+  @override
+  String get onboardingPromptWeekly => 'Planeerige oma iganädalased asjad';
+
+  @override
+  String get onboardingPromptEvent => 'Valmistan ette midagi erilist';
+
+  @override
+  String get onboardingPromptEssentials => 'Soovitage mulle hädavajalikke asju';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Riis|🫘 Oad|🥛 Piim|🥚 Munad|🍞 Leib|🍎 Puuvili';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Kleepuvad sidemed|🌡️ Termomeeter|🧴 Antiseptik|😷 Näomaskid|🧼 Käte desinfitseerija';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomatid|🧅 Sibul|🧄 Küüslauk|🥚 Munad|🧀 Juust|🌿 Värsked ürdid';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paberrätikud|🧽 Käsnad|🧴 Pesuaine|🗑️ Prügikotid|🧹 Puhastuslapid';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Lemmikloomatoit|🦴 Maiused|🧼 Lemmikloomašampoon|🧸 Mänguasi|🧻 Prügikotid';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Valmistasin üksused ette, kuid ei saanud nimekirja salvestada. Proovige uuesti, et see rakenduses hoida.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Teie loend on valmis: teie jaoks on korraldatud $count üksust.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Jätka';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Teie esimene loend on valmis · $count üksust';
+  }
+
+  @override
+  String get paywallContinueFree => 'Jätkake tasuta versiooniga';
+
+  @override
+  String get paywallPurchasePending =>
+      'Teie makse on kinnitamise ootel. Juurdepääs vabastatakse automaatselt pärast kinnitamist.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Täna: tasuta. Seejärel $price aastas $days päeva pärast. Tühistage igal ajal.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Täna: tasuta. Seejärel $price kuus $days päeva pärast. Tühistage igal ajal.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price aastas. Tühistage igal ajal.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price kuus. Tühistage igal ajal.';
+  }
+
+  @override
+  String get obHookTitle => 'Targem ostlemine algab siit';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-toega loendid, mis säästavad teie aega ja raha igal reisil.';
+
+  @override
+  String get obHookSocial => 'Seda usaldavad tuhanded ostjad kogu maailmas';
+
+  @override
+  String get obHookCta => 'Alustage';
+
+  @override
+  String get obQuizHouseholdTitle => 'Kellele ostlete?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Ainult mina';
+
+  @override
+  String get obQuizHouseholdCouple => 'Mina ja mu partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4liikmeline pere';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Perekond 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Kui tihti te toidupoes käite?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Peaaegu iga päev';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Kord nädalas';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Iga kahe nädala tagant';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Suur igakuine saak';
+
+  @override
+  String get obQuizPainTitle => 'Mis sind ostlemise juures enim masendab?';
+
+  @override
+  String get obQuizPainForget => 'Ma unustan alati esemed';
+
+  @override
+  String get obQuizPainOverspend => 'Kulutan planeeritust rohkem';
+
+  @override
+  String get obQuizPainWaste => 'Toit läheb kodus raisku';
+
+  @override
+  String get obQuizPainTime => 'See võtab liiga palju aega';
+
+  @override
+  String get obQuizSavingsTitle => 'Kui palju soovite kuus säästa?';
+
+  @override
+  String get obQuizSavingsSmall => 'Natuke – iga natuke loeb';
+
+  @override
+  String get obQuizSavingsMedium => 'Umbes 10% minu toiduarvest';
+
+  @override
+  String get obQuizSavingsLarge => 'Nii palju kui võimalik';
+
+  @override
+  String get obQuizMethodTitle => 'Kuidas koostate täna ostunimekirju?';
+
+  @override
+  String get obQuizMethodPaper => 'Pliiats ja paber';
+
+  @override
+  String get obQuizMethodNotes => 'Märkmete rakendus';
+
+  @override
+  String get obQuizMethodMemory => 'Hoian seda oma peas';
+
+  @override
+  String get obQuizMethodNone => 'Ma ei koosta nimekirju';
+
+  @override
+  String get obSocialTitle => 'Oled heas seltskonnas';
+
+  @override
+  String get obSocialSubtitle =>
+      'Teiesugused ostjad säästavad juba KipiListiga';
+
+  @override
+  String get obSocialQuote1 =>
+      'Ma ei unusta enam kunagi midagi. AI koostab minu nimekirja sekunditega.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Esimesel kuul kärpisime toiduarvet märgatavalt.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Nimekirja jagamine oma elukaaslasega lõpetas meie ostukaose.';
+
+  @override
+  String get obLoadingTitle => 'Isikupärastatud plaani koostamine...';
+
+  @override
+  String get obLoadingStepProfile => 'Kohandamine teie majapidamise jaoks';
+
+  @override
+  String get obLoadingStepHabits => 'Häälestage oma osturutiini';
+
+  @override
+  String get obLoadingStepSavings => 'Säästustrateegia optimeerimine';
+
+  @override
+  String get obLoadingStepLists => 'Nutikate loendite koostamine';
+
+  @override
+  String get obRevealTitle => 'Teie plaan on valmis!';
+
+  @override
+  String get obRevealSubtitle =>
+      'Siit saate teada, kuidas KipiList teie jaoks töötab';
+
+  @override
+  String get obRevealSavingsCaption => 'Prognoositav kokkuhoid KipiListiga';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'kuu $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI koostab ja korraldab teie loendeid';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Kulutusi jälgitakse teie eesmärgi suhtes';
+
+  @override
+  String get obRevealFeaturePantry => 'Sahvri jälgimine vähendab toidujäätmeid';
+
+  @override
+  String get obRevealFeatureShare => 'Reaalajas jagamine oma leibkonnaga';
+
+  @override
+  String get obPaywallTitle => 'Avage oma plaan';
+
+  @override
+  String get obPaywallRetry => 'Proovi uuesti';
+
+  @override
+  String get obLoginTitle => 'Salvestage oma plaan';
+
+  @override
+  String get obLoginSubtitle =>
+      'Logige sisse, et teie loendid sünkroonitakse kõigis seadmetes';
+
+  @override
+  String get obLoginGoogle => 'Jätkake Google\'iga';
+
+  @override
+  String get obLoginApple => 'Jätkake Apple\'iga';
+
+  @override
+  String get obLoginSkip => 'Mitte praegu';
+
+  @override
+  String get obLoginError =>
+      'Sisselogimine ebaõnnestus. Proovige uuesti või jätke praegu vahele.';
 }

@@ -441,6 +441,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -609,6 +775,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -663,6 +836,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -701,6 +881,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -750,6 +940,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -792,6 +992,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -896,12 +1110,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -978,6 +1215,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1227,6 +1471,8 @@
   "categoryLimitReached": "Sasniegts kategoriju ierobežojums",
   "categoryName": "Kategorijas nosaukums",
   "categoryNameHint": "Ievadiet kategorijas nosaukumu",
+  "chatEmptySubtitle": "Lai sāktu, lūdziet priekšmetu ieteikumus, receptes vai saglabāšanas padomus.",
+  "chatEmptyTitle": "Jūsu tērzēšana ir tukša",
   "chatError": "Kļūda, ielādējot tērzēšanu: {error}",
   "chatHint": "Ierakstiet savu ziņojumu...",
   "chatHintBlocked": "Atbloķējiet AI, lai tērzētu",
@@ -1523,6 +1769,60 @@
   "noRecipesSavedHint": "Izveidojiet savu pirmo pielāgoto recepti, pieskaroties zemāk esošajai pogai.",
   "noTracking": "Bez izsekošanas",
   "notInformed": "Nav informēts",
+  "obHookCta": "Sāciet darbu",
+  "obHookSocial": "Uzticas tūkstošiem pircēju visā pasaulē",
+  "obHookSubtitle": "Ar AI darbināmi saraksti, kas ietaupa jūsu laiku un naudu katrā ceļojumā.",
+  "obHookTitle": "Šeit sākas gudrāka iepirkšanās",
+  "obLoadingStepHabits": "Pielāgošanās jūsu iepirkšanās rutīnai",
+  "obLoadingStepLists": "Jūsu viedo sarakstu sagatavošana",
+  "obLoadingStepProfile": "Pielāgošanās jūsu mājsaimniecībai",
+  "obLoadingStepSavings": "Jūsu uzkrājumu stratēģijas optimizēšana",
+  "obLoadingTitle": "Izveidojiet savu personalizēto plānu...",
+  "obLoginApple": "Turpiniet ar Apple",
+  "obLoginError": "Pierakstīšanās neizdevās. Mēģiniet vēlreiz vai pagaidām izlaidiet.",
+  "obLoginGoogle": "Turpiniet ar Google",
+  "obLoginSkip": "Ne tagad",
+  "obLoginSubtitle": "Pierakstieties, lai jūsu saraksti tiktu sinhronizēti dažādās ierīcēs",
+  "obLoginTitle": "Saglabājiet savu plānu",
+  "obPaywallRetry": "Mēģiniet vēlreiz",
+  "obPaywallTitle": "Atbloķējiet savu plānu",
+  "obQuizFrequencyBiweekly": "Ik pēc divām nedēļām",
+  "obQuizFrequencyDaily": "Gandrīz katru dienu",
+  "obQuizFrequencyMonthly": "Liels ikmēneša pārvadājums",
+  "obQuizFrequencyTitle": "Cik bieži jūs iepērkaties pārtikas preces?",
+  "obQuizFrequencyWeekly": "Reizi nedēļā",
+  "obQuizHouseholdCouple": "Es un mans partneris",
+  "obQuizHouseholdFamilyLarge": "Ģimene no 5+",
+  "obQuizHouseholdFamilySmall": "3-4 cilvēku ģimene",
+  "obQuizHouseholdSolo": "Tikai es",
+  "obQuizHouseholdTitle": "Kam jūs iepērkaties?",
+  "obQuizMethodMemory": "Es to paturu savā galvā",
+  "obQuizMethodNone": "Es neveidoju sarakstus",
+  "obQuizMethodNotes": "Piezīmju lietotne",
+  "obQuizMethodPaper": "Pildspalva un papīrs",
+  "obQuizMethodTitle": "Kā jūs šodien veidojat iepirkumu sarakstus?",
+  "obQuizPainForget": "Es vienmēr aizmirstu lietas",
+  "obQuizPainOverspend": "Iztērēju vairāk nekā plānots",
+  "obQuizPainTime": "Tas aizņem pārāk daudz laika",
+  "obQuizPainTitle": "Kas jūs visvairāk satrauc iepirkšanās laikā?",
+  "obQuizPainWaste": "Pārtika mājās nonāk atkritumos",
+  "obQuizSavingsLarge": "Cik vien iespējams",
+  "obQuizSavingsMedium": "Apmēram 10% no mana pārtikas preču rēķina",
+  "obQuizSavingsSmall": "Mazliet — katrs bits ir svarīgs",
+  "obQuizSavingsTitle": "Cik daudz jūs vēlētos ietaupīt mēnesī?",
+  "obRevealFeatureAi": "AI veido un kārto jūsu sarakstus",
+  "obRevealFeatureBudget": "Tēriņi tiek izsekoti atbilstoši jūsu mērķim",
+  "obRevealFeaturePantry": "Pieliekamais izsekošana samazina pārtikas atkritumus",
+  "obRevealFeatureShare": "Reāllaika kopīgošana ar jūsu mājsaimniecību",
+  "obRevealMonth": "Mēnesis {n}",
+  "obRevealSavingsCaption": "Plānotie ietaupījumi, izmantojot KipiList",
+  "obRevealSubtitle": "Lūk, kā KipiList darbosies jūsu labā",
+  "obRevealTitle": "Jūsu plāns ir gatavs!",
+  "obSocialQuote1": "Es vairs nekad neko neaizmirstu. AI izveido manu sarakstu dažu sekunžu laikā.",
+  "obSocialQuote2": "Pirmajā mēnesī mēs ievērojami samazinājām pārtikas preču rēķinu.",
+  "obSocialQuote3": "Saraksta kopīgošana ar savu partneri izbeidza mūsu iepirkšanās haosu.",
+  "obSocialSubtitle": "Tādi pircēji kā jūs jau ietaupa, izmantojot KipiList",
+  "obSocialTitle": "Tu esi labā kompānijā",
   "observations": "Novērojumi",
   "observationsHint": "Vai ir kādas papildu piezīmes?",
   "offlineBanner": "Jūs esat bezsaistē",
@@ -1564,7 +1864,16 @@
   "onboardingCommitmentsSubtitle": "Izvēlieties savus mērķus, lai personalizētu KipiList",
   "onboardingCommitmentsTitle": "Kas jums ir svarīgi?",
   "onboardingContinueAsGuest": "Turpināt kā viesis",
+  "onboardingContinueToOffer": "Turpināt",
+  "onboardingCreateFirstList": "Izveidojiet manu pirmo sarakstu",
+  "onboardingDemoHeadline": "Pastāstiet mums, ko plānojat. Kipi veido sarakstu.",
+  "onboardingDemoSubtitle": "Saņemiet sakārtotus vienumus dažu sekunžu laikā.",
   "onboardingExit": "Iziet",
+  "onboardingFallbackGrocery": "🍚 Rīsi|🫘 Pupiņas|🥛 Piens|🥚 Olas|🍞 Maize|🍎 Augļi",
+  "onboardingFallbackHome": "🧻 Papīra dvieļi|🧽 Sūkļi|🧴 Mazgāšanas līdzeklis|🗑️ Atkritumu maisi|🧹 Tīrīšanas lupatiņas",
+  "onboardingFallbackPet": "🥣 Mājdzīvnieku barība|🦴 Kārumi|🧼 Mājdzīvnieku šampūns|🧸 Rotaļlieta|🧻 Atkritumu maisi",
+  "onboardingFallbackPharmacy": "🩹 Līmējošie pārsēji|🌡️ Termometrs|🧴 Antiseptisks|😷 Sejas maskas|🧼 Roku dezinfekcijas līdzeklis",
+  "onboardingFallbackRecipes": "🍅 Tomāti|🧅 Sīpols|🧄 Ķiploki|🥚 Olas|🧀 Siers|🌿 Svaigi garšaugi",
   "onboardingGoalFamily": "Organizējiet ģimenes iepirkšanos",
   "onboardingGoalFaster": "Iepērcieties ātrāk",
   "onboardingGoalNeverForget": "Nekad neaizmirstiet priekšmetus",
@@ -1575,6 +1884,8 @@
   "onboardingGroupFamily": "Ģimene",
   "onboardingGroupSolo": "Tikai es",
   "onboardingHookHeadline": "Nekad vairs neaizmirstiet kādu pārtikas preču preci",
+  "onboardingListCreated": "Jūsu saraksts ir gatavs: jums ir sakārtoti {count} vienumi.",
+  "onboardingListSaveFailed": "Es sagatavoju preces, bet nevarēju saglabāt sarakstu. Mēģiniet vēlreiz, lai saglabātu to lietotnē.",
   "onboardingLoadingStat1Label": "Katalogizētas preces",
   "onboardingLoadingStat2Label": "Lietotāji palīdzēja",
   "onboardingLoadingStat3Label": "Saglabātas minūtes",
@@ -1593,9 +1904,11 @@
   "onboardingPainRepeat": "Ar vienu braucienu nekad nepietiek",
   "onboardingPainSubtitle": "Esiet godīgi — mēs katru labosim",
   "onboardingPainTitle": "Kas tevi visvairāk satrauc?",
+  "onboardingPaywallListReady": "Jūsu pirmais saraksts ir gatavs · {count} vienumi",
   "onboardingPersonalizationCategoryTitle": "Ko jūs iepērkaties?",
   "onboardingPersonalizationCta": "Turpināt",
   "onboardingPersonalizationDesc": "Mēs to izmantosim, lai personalizētu jūsu ieteikumus un padarītu iepirkšanos gudrāku.",
+  "onboardingPersonalizationEffect": "Tas palīdz Kipi ieteikt atbilstošākus priekšmetus un daudzumus.",
   "onboardingPersonalizationFoodHint": "piem. Pica, Suši, Lazanja...",
   "onboardingPersonalizationFoodLabel": "Kāds ir tavs mīļākais ēdiens?",
   "onboardingPersonalizationFoodRequired": "Pastāstiet mums savu iecienītāko ēdienu, lai turpinātu",
@@ -1604,8 +1917,13 @@
   "onboardingPersonalizationNameLabel": "Jūsu vārds",
   "onboardingPersonalizationSkip": "Pagaidām izlaist",
   "onboardingPersonalizationTitle": "Iepazīsimies",
+  "onboardingPersonalizeWithName": "Personalizējiet ar manu vārdu",
   "onboardingPremiumSubtitle": "Iegūstiet maksimālu labumu no saviem iepirkumu sarakstiem",
   "onboardingPremiumTitle": "Atbloķējiet visas funkcijas",
+  "onboardingProgress": "{current}. darbība no {total}",
+  "onboardingPromptEssentials": "Iesakiet man svarīgāko",
+  "onboardingPromptEvent": "Es gatavoju kaut ko īpašu",
+  "onboardingPromptWeekly": "Plānojiet manas nedēļas svarīgākās lietas",
   "onboardingRestore": "Atjaunot",
   "onboardingRestoreDesc": "Vai jums jau ir abonements? Pieskarieties šeit, lai to atjaunotu.",
   "onboardingSetupDesc": "Izvēlieties, kā vēlaties, lai KipiList izskatītos un darbotos jūsu labā.",
@@ -1630,6 +1948,8 @@
   "pantry": "Pieliekamais",
   "pantryAdvancedMode": "Papildu",
   "pantryAppBar": "Pieliekamais",
+  "pantryAvailabilityAll": "Viss gatavs!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} pieliekamajā",
   "pantryCompactView": "Kompakts skats",
   "pantryDeficit": "Trūkst {amount}{unit}",
   "pantryDeleteItemsContent": "Vai vēlaties dzēst {count} atlasītos vienumus?",
@@ -1670,7 +1990,10 @@
   "paywallBenefit2Desc": "Nav 3 sarakstu ierobežojuma",
   "paywallBenefit3Desc": "Izdevumu uzskaite un ģimenes saraksti",
   "paywallBestValue": "LABĀKĀ VĒRTĪBA",
+  "paywallBillingAnnual": "{price} gadā. Atcelt jebkurā laikā.",
+  "paywallBillingMonthly": "{price} mēnesī. Atcelt jebkurā laikā.",
   "paywallCancelAnytime": "Atcelt jebkurā laikā. Bez apņemšanās.",
+  "paywallContinueFree": "Turpiniet ar bezmaksas versiju",
   "paywallCtaTrialDays": "Sāciet bez maksas — {days} dienas",
   "paywallCtaUnlock": "Atbloķējiet PRO",
   "paywallFeatureDescAssistant": "AI automātiski sakārto jūsu sarakstu",
@@ -1711,6 +2034,7 @@
   "paywallPricePerMonth": "Tikai {price} mēnesī",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Nevarēja pabeigt pirkumu. Mēģiniet vēlreiz.",
+  "paywallPurchasePending": "Jūsu maksājums gaida apstiprinājumu. Pēc apstiprināšanas piekļuve tiks atbrīvota automātiski.",
   "paywallRestore": "Atjaunot",
   "paywallRestoreError": "Nav atrasts neviens aktīvs abonements, ko atjaunot.",
   "paywallSafeCheckout": "Drošs maksājums",
@@ -1732,11 +2056,14 @@
   "paywallTrialCta": "Sāciet bezmaksas izmēģinājuma versiju",
   "paywallTrialDays": "{days} DIENAS BEZMAKSAS",
   "paywallTrialDisclaimer": "Atcelt jebkurā laikā · Bez maksas līdz izmēģinājuma perioda beigām",
+  "paywallTrialDisclosureAnnual": "Šodien: bez maksas. Pēc tam {price} gadā pēc {days} dienām. Atcelt jebkurā laikā.",
+  "paywallTrialDisclosureMonthly": "Šodien: bez maksas. Pēc tam {price}/mēnesī pēc {days} dienām. Atcelt jebkurā laikā.",
   "paywallTrialInCard": "Pirmās {days} dienas BEZ MAKSAS",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH BEZMAKSAS} other{{count} MĒNEŠI BEZMAKSAS}}",
   "paywallTrialSubtitle": "Atcelt jebkurā laikā. Šodien bez maksas.",
   "paywallTrialTitle": "Izmēģiniet KipiList Pro bez maksas 7 dienas",
   "paywallTrialWeeks": "{count,plural, one{{count} BEZMAKSAS NEDĒĻA} other{{count} BEZMAKSAS NEDĒĻAS}}",
+  "paywallWelcomeOfferBadge": "🎁 Laipni lūdzam",
   "positionBarcodeCenter": "Novietojiet svītrkodu centrā",
   "prefAIAssistant": "Personīgais AI palīgs",
   "prefCustomThemes": "Pielāgotas tēmas",
@@ -1777,6 +2104,8 @@
   "recipeCreated": "Recepte izveidota!",
   "recipeDeleted": "Recepte dzēsta",
   "recipeImage": "Receptes attēls",
+  "recipeIngredientSingular": "1 sastāvdaļa",
+  "recipeIngredientsPlural": "{count} sastāvdaļas",
   "recipeName": "Receptes nosaukums",
   "recipeSaved": "Recepte saglabāta!",
   "recipeSuggestion": "Receptes ieteikums",

@@ -679,6 +679,13 @@ class AppLocalizationsGl extends AppLocalizations {
   String get chatHintBlocked => 'Desbloquea a IA para chatear';
 
   @override
+  String get chatEmptySubtitle =>
+      'Solicita suxestións de artigos, receitas ou consellos para gardar para comezar.';
+
+  @override
+  String get chatEmptyTitle => 'O teu chat está baleiro';
+
+  @override
   String chatError(String error) {
     return 'Erro ao cargar o chat: $error';
   }
@@ -1107,6 +1114,9 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Flexibilidade total';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Oferta de benvida';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1882,6 +1892,9 @@ class AppLocalizationsGl extends AppLocalizations {
   String get catalogBrowse => 'Explorar catálogo';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Estás sen conexión';
 
   @override
@@ -2457,6 +2470,293 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Froitas';
+
+  @override
+  String get recipeIngredientSingular => '1 ingrediente';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredientes';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Todo listo!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount na despensa';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Paso $current de $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Cóntanos o que estás planeando. Kipi constrúe a lista.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Obtén elementos organizados en segundos.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Isto axuda a Kipi a suxerir artigos e cantidades máis relevantes.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personaliza co meu nome';
+
+  @override
+  String get onboardingCreateFirstList => 'Crea a miña primeira lista';
+
+  @override
+  String get onboardingPromptWeekly => 'Planifica o meu esencial semanal';
+
+  @override
+  String get onboardingPromptEvent => 'Estou preparando algo especial';
+
+  @override
+  String get onboardingPromptEssentials => 'Suxire o esencial para min';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Arroz|🫘 Xudías|🥛 Leite|🥚 Ovos|🍞 Pan|🍎 Froita';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Vendas adhesivas|🌡️ Termómetro|🧴 Antiséptico|😷 Máscaras faciais|🧼 Desinfectante de mans';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomates|🧅 Cebola|🧄 Allo|🥚 Ovos|🧀 Queixo|🌿 Herbas frescas';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Toallas de papel|🧽 Esponxas|🧴 Deterxente|🗑️ Bolsas de lixo|🧹 Panos de limpeza';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Comida para mascotas|🦴 Golosinas|🧼 Xampú para mascotas|🧸 Xoguete|🧻 Bolsas de residuos';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Preparei os elementos, pero non puiden gardar a lista. Téntao de novo para mantelo na aplicación.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'A túa lista está lista: $count elementos organizados para ti.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continuar';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'A túa primeira lista está lista · $count elementos';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continúa coa versión gratuíta';
+
+  @override
+  String get paywallPurchasePending =>
+      'O teu pago está pendente de aprobación. O acceso liberarase automaticamente despois da confirmación.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Hoxe: sen cargo. Despois $price/ano despois de $days días. Cancela en calquera momento.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Hoxe: sen cargo. Despois $price/mes despois de $days días. Cancela en calquera momento.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/ano. Cancela en calquera momento.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/mes. Cancela en calquera momento.';
+  }
+
+  @override
+  String get obHookTitle => 'As compras máis intelixentes comezan aquí';
+
+  @override
+  String get obHookSubtitle =>
+      'Listas con IA que che aforran tempo e diñeiro en cada viaxe.';
+
+  @override
+  String get obHookSocial =>
+      'Confiado por miles de compradores en todo o mundo';
+
+  @override
+  String get obHookCta => 'Comeza';
+
+  @override
+  String get obQuizHouseholdTitle => 'Para quen compras?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Só eu';
+
+  @override
+  String get obQuizHouseholdCouple => 'Eu e a miña parella';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Familia de 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Familia de 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Cantas veces compras alimentos?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Case todos os días';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Unha vez á semana';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Cada dúas semanas';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Gran carga mensual';
+
+  @override
+  String get obQuizPainTitle => 'Que é o que máis che frustra da compra?';
+
+  @override
+  String get obQuizPainForget => 'Sempre esquezo elementos';
+
+  @override
+  String get obQuizPainOverspend => 'Gasto máis do previsto';
+
+  @override
+  String get obQuizPainWaste => 'A comida desperdicia na casa';
+
+  @override
+  String get obQuizPainTime => 'Leva demasiado tempo';
+
+  @override
+  String get obQuizSavingsTitle => 'Canto che gustaría aforrar mensualmente?';
+
+  @override
+  String get obQuizSavingsSmall => 'Un pouco, cada pouco conta';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Ao redor do 10% da miña factura do supermercado';
+
+  @override
+  String get obQuizSavingsLarge => 'Na medida do posible';
+
+  @override
+  String get obQuizMethodTitle => 'Como fas as listas da compra hoxe?';
+
+  @override
+  String get obQuizMethodPaper => 'Pluma e papel';
+
+  @override
+  String get obQuizMethodNotes => 'Aplicación de notas';
+
+  @override
+  String get obQuizMethodMemory => 'Téñoo na cabeza';
+
+  @override
+  String get obQuizMethodNone => 'Non fago listas';
+
+  @override
+  String get obSocialTitle => 'Estás en boa compañía';
+
+  @override
+  String get obSocialSubtitle =>
+      'Os compradores como ti xa están aforrar con KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Xa non esquezo nada. A IA crea a miña lista en segundos.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Reducimos a factura do supermercado notablemente no primeiro mes.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Compartir a lista co meu compañeiro acabou co noso caos de compras.';
+
+  @override
+  String get obLoadingTitle => 'Creando o seu plan personalizado...';
+
+  @override
+  String get obLoadingStepProfile => 'Axuste para o teu fogar';
+
+  @override
+  String get obLoadingStepHabits => 'Sintonizando a túa rutina de compras';
+
+  @override
+  String get obLoadingStepSavings => 'Optimizando a súa estratexia de aforro';
+
+  @override
+  String get obLoadingStepLists => 'Preparando as túas listas intelixentes';
+
+  @override
+  String get obRevealTitle => 'O teu plan está listo!';
+
+  @override
+  String get obRevealSubtitle => 'Así é como KipiList funcionará para ti';
+
+  @override
+  String get obRevealSavingsCaption => 'Aforro previsto con KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Mes $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'A IA crea e organiza as túas listas';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Gastos controlados contra o teu obxectivo';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'O seguimento da despensa reduce o desperdicio de alimentos';
+
+  @override
+  String get obRevealFeatureShare => 'Compartir en tempo real coa túa familia';
+
+  @override
+  String get obPaywallTitle => 'Desbloquea o teu plan';
+
+  @override
+  String get obPaywallRetry => 'Téntao de novo';
+
+  @override
+  String get obLoginTitle => 'Garda o teu plan';
+
+  @override
+  String get obLoginSubtitle =>
+      'Inicia sesión para que as túas listas se sincronicen entre todos os dispositivos';
+
+  @override
+  String get obLoginGoogle => 'Continúa con Google';
+
+  @override
+  String get obLoginApple => 'Continúa con Apple';
+
+  @override
+  String get obLoginSkip => 'Agora non';
+
+  @override
+  String get obLoginError =>
+      'Fallou o inicio de sesión. Téntao de novo ou salta por agora.';
 }
 
 /// The translations for Galician, as used in Spain (`gl_ES`).
@@ -3134,6 +3434,13 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
   String get chatHintBlocked => 'Desbloquea a IA para chatear';
 
   @override
+  String get chatEmptySubtitle =>
+      'Solicita suxestións de artigos, receitas ou consellos para gardar para comezar.';
+
+  @override
+  String get chatEmptyTitle => 'O teu chat está baleiro';
+
+  @override
   String chatError(String error) {
     return 'Erro ao cargar o chat: $error';
   }
@@ -3561,6 +3868,9 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
 
   @override
   String get paywallPackageMonthlyDesc => 'Flexibilidade total';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Oferta de benvida';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4909,4 +5219,291 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
 
   @override
   String get suggestionFruits => 'Froitas';
+
+  @override
+  String get recipeIngredientSingular => '1 ingrediente';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredientes';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Todo listo!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount na despensa';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Paso $current de $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Cóntanos o que estás planeando. Kipi constrúe a lista.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Obtén elementos organizados en segundos.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Isto axuda a Kipi a suxerir artigos e cantidades máis relevantes.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personaliza co meu nome';
+
+  @override
+  String get onboardingCreateFirstList => 'Crea a miña primeira lista';
+
+  @override
+  String get onboardingPromptWeekly => 'Planifica o meu esencial semanal';
+
+  @override
+  String get onboardingPromptEvent => 'Estou preparando algo especial';
+
+  @override
+  String get onboardingPromptEssentials => 'Suxire o esencial para min';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Arroz|🫘 Xudías|🥛 Leite|🥚 Ovos|🍞 Pan|🍎 Froita';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Vendas adhesivas|🌡️ Termómetro|🧴 Antiséptico|😷 Máscaras faciais|🧼 Desinfectante de mans';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomates|🧅 Cebola|🧄 Allo|🥚 Ovos|🧀 Queixo|🌿 Herbas frescas';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Toallas de papel|🧽 Esponxas|🧴 Deterxente|🗑️ Bolsas de lixo|🧹 Panos de limpeza';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Comida para mascotas|🦴 Golosinas|🧼 Xampú para mascotas|🧸 Xoguete|🧻 Bolsas de residuos';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Preparei os elementos, pero non puiden gardar a lista. Téntao de novo para mantelo na aplicación.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'A túa lista está lista: $count elementos organizados para ti.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continuar';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'A túa primeira lista está lista · $count elementos';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continúa coa versión gratuíta';
+
+  @override
+  String get paywallPurchasePending =>
+      'O teu pago está pendente de aprobación. O acceso liberarase automaticamente despois da confirmación.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Hoxe: sen cargo. Despois $price/ano despois de $days días. Cancela en calquera momento.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Hoxe: sen cargo. Despois $price/mes despois de $days días. Cancela en calquera momento.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/ano. Cancela en calquera momento.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/mes. Cancela en calquera momento.';
+  }
+
+  @override
+  String get obHookTitle => 'As compras máis intelixentes comezan aquí';
+
+  @override
+  String get obHookSubtitle =>
+      'Listas con IA que che aforran tempo e diñeiro en cada viaxe.';
+
+  @override
+  String get obHookSocial =>
+      'Confiado por miles de compradores en todo o mundo';
+
+  @override
+  String get obHookCta => 'Comeza';
+
+  @override
+  String get obQuizHouseholdTitle => 'Para quen compras?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Só eu';
+
+  @override
+  String get obQuizHouseholdCouple => 'Eu e a miña parella';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Familia de 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Familia de 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Cantas veces compras alimentos?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Case todos os días';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Unha vez á semana';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Cada dúas semanas';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Gran carga mensual';
+
+  @override
+  String get obQuizPainTitle => 'Que é o que máis che frustra da compra?';
+
+  @override
+  String get obQuizPainForget => 'Sempre esquezo elementos';
+
+  @override
+  String get obQuizPainOverspend => 'Gasto máis do previsto';
+
+  @override
+  String get obQuizPainWaste => 'A comida desperdicia na casa';
+
+  @override
+  String get obQuizPainTime => 'Leva demasiado tempo';
+
+  @override
+  String get obQuizSavingsTitle => 'Canto che gustaría aforrar mensualmente?';
+
+  @override
+  String get obQuizSavingsSmall => 'Un pouco, cada pouco conta';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Ao redor do 10% da miña factura do supermercado';
+
+  @override
+  String get obQuizSavingsLarge => 'Na medida do posible';
+
+  @override
+  String get obQuizMethodTitle => 'Como fas as listas da compra hoxe?';
+
+  @override
+  String get obQuizMethodPaper => 'Pluma e papel';
+
+  @override
+  String get obQuizMethodNotes => 'Aplicación de notas';
+
+  @override
+  String get obQuizMethodMemory => 'Téñoo na cabeza';
+
+  @override
+  String get obQuizMethodNone => 'Non fago listas';
+
+  @override
+  String get obSocialTitle => 'Estás en boa compañía';
+
+  @override
+  String get obSocialSubtitle =>
+      'Os compradores como ti xa están aforrar con KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Xa non esquezo nada. A IA crea a miña lista en segundos.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Reducimos a factura do supermercado notablemente no primeiro mes.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Compartir a lista co meu compañeiro acabou co noso caos de compras.';
+
+  @override
+  String get obLoadingTitle => 'Creando o seu plan personalizado...';
+
+  @override
+  String get obLoadingStepProfile => 'Axuste para o teu fogar';
+
+  @override
+  String get obLoadingStepHabits => 'Sintonizando a túa rutina de compras';
+
+  @override
+  String get obLoadingStepSavings => 'Optimizando a súa estratexia de aforro';
+
+  @override
+  String get obLoadingStepLists => 'Preparando as túas listas intelixentes';
+
+  @override
+  String get obRevealTitle => 'O teu plan está listo!';
+
+  @override
+  String get obRevealSubtitle => 'Así é como KipiList funcionará para ti';
+
+  @override
+  String get obRevealSavingsCaption => 'Aforro previsto con KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Mes $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'A IA crea e organiza as túas listas';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Gastos controlados contra o teu obxectivo';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'O seguimento da despensa reduce o desperdicio de alimentos';
+
+  @override
+  String get obRevealFeatureShare => 'Compartir en tempo real coa túa familia';
+
+  @override
+  String get obPaywallTitle => 'Desbloquea o teu plan';
+
+  @override
+  String get obPaywallRetry => 'Téntao de novo';
+
+  @override
+  String get obLoginTitle => 'Garda o teu plan';
+
+  @override
+  String get obLoginSubtitle =>
+      'Inicia sesión para que as túas listas se sincronicen entre todos os dispositivos';
+
+  @override
+  String get obLoginGoogle => 'Continúa con Google';
+
+  @override
+  String get obLoginApple => 'Continúa con Apple';
+
+  @override
+  String get obLoginSkip => 'Agora non';
+
+  @override
+  String get obLoginError =>
+      'Fallou o inicio de sesión. Téntao de novo ou salta por agora.';
 }

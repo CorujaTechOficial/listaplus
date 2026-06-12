@@ -434,6 +434,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -602,6 +768,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -656,6 +829,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -694,6 +874,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -743,6 +933,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -785,6 +985,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -889,12 +1103,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -971,6 +1208,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1220,6 +1464,8 @@
   "categoryLimitReached": "Категориянын чегине жетти",
   "categoryName": "Категориянын аталышы",
   "categoryNameHint": "Категориянын атын киргизиңиз",
+  "chatEmptySubtitle": "Баштоо үчүн сунуштарды, рецепттерди же сактоо боюнча кеңештерди сураңыз.",
+  "chatEmptyTitle": "Сиздин маегиңиз бош",
   "chatError": "Чатты жүктөөдө ката: {error}",
   "chatHint": "Билдирүүңүздү жазыңыз...",
   "chatHintBlocked": "Маектешүү үчүн AI кулпусун ачыңыз",
@@ -1516,6 +1762,60 @@
   "noRecipesSavedHint": "Төмөнкү баскычты таптап, биринчи рецептиңизди түзүңүз.",
   "noTracking": "Көзөмөл жок",
   "notInformed": "Маалымат эмес",
+  "obHookCta": "Баштоо",
+  "obHookSocial": "Дүйнө жүзү боюнча миңдеген сатып алуучулар ишенет",
+  "obHookSubtitle": "Убакытты жана акчаңызды үнөмдөөчү AI менен иштеген тизмелер, ар бир сапар.",
+  "obHookTitle": "Акылдуу соода ушул жерден башталат",
+  "obLoadingStepHabits": "Соода тартибин тууралоо",
+  "obLoadingStepLists": "Акылдуу тизмелериңизди даярдоо",
+  "obLoadingStepProfile": "Сиздин үй-бүлө үчүн тууралоо",
+  "obLoadingStepSavings": "Сактоо стратегияңызды оптималдаштыруу",
+  "obLoadingTitle": "Жекелештирилген планыңыз түзүлүүдө...",
+  "obLoginApple": "Apple менен улантыңыз",
+  "obLoginError": "Кирүү ишке ашкан жок. Кайталап көрүңүз же азыр өткөрүп жибериңиз.",
+  "obLoginGoogle": "Google менен улантыңыз",
+  "obLoginSkip": "Азыр эмес",
+  "obLoginSubtitle": "Тизмелериңиз бардык түзмөктөрдө шайкештеши үчүн аккаунтуңузга кириңиз",
+  "obLoginTitle": "Планыңызды сактаңыз",
+  "obPaywallRetry": "Кайра аракет кыл",
+  "obPaywallTitle": "Планыңыздын кулпусун ачыңыз",
+  "obQuizFrequencyBiweekly": "Ар эки жумада",
+  "obQuizFrequencyDaily": "Дээрлик күн сайын",
+  "obQuizFrequencyMonthly": "Ай сайын чоң жүк",
+  "obQuizFrequencyTitle": "Сиз канча жолу азык-түлүк сатып аласыз?",
+  "obQuizFrequencyWeekly": "Аптасына бир жолу",
+  "obQuizHouseholdCouple": "Мен жана менин өнөктөшүм",
+  "obQuizHouseholdFamilyLarge": "5+ үй-бүлө",
+  "obQuizHouseholdFamilySmall": "3–4 адамдан турган үй-бүлө",
+  "obQuizHouseholdSolo": "Мен эле",
+  "obQuizHouseholdTitle": "Сиз кимге дүкөн кыласыз?",
+  "obQuizMethodMemory": "Мен аны башымда сактайм",
+  "obQuizMethodNone": "Мен тизме түзбөйм",
+  "obQuizMethodNotes": "Notes колдонмосу",
+  "obQuizMethodPaper": "Калем жана кагаз",
+  "obQuizMethodTitle": "Бүгүн соода тизмелерин кантип түзөсүз?",
+  "obQuizPainForget": "Мен буюмдарды дайыма унутуп калам",
+  "obQuizPainOverspend": "Пландан ашык чыгымдаймын",
+  "obQuizPainTime": "Бул өтө көп убакытты талап кылат",
+  "obQuizPainTitle": "Сатып алууда сизди эмне капалантат?",
+  "obQuizPainWaste": "Тамак-аш үйдө текке кетет",
+  "obQuizSavingsLarge": "Мүмкүн болушунча",
+  "obQuizSavingsMedium": "Менин азык-түлүк эсебимдин болжол менен 10%",
+  "obQuizSavingsSmall": "Бир аз - ар бир бит эсептелет",
+  "obQuizSavingsTitle": "Ай сайын канча үнөмдөп калгыңыз келет?",
+  "obRevealFeatureAi": "AI тизмелериңизди түзөт жана уюштурат",
+  "obRevealFeatureBudget": "Сиздин максатыңызга каршы чыгашаңыз байкалды",
+  "obRevealFeaturePantry": "Ашканага көз салуу тамак-аш калдыктарын азайтат",
+  "obRevealFeatureShare": "Үй-бүлөңүз менен реалдуу убакытта бөлүшүү",
+  "obRevealMonth": "Ай {n}",
+  "obRevealSavingsCaption": "KipiList менен болжолдонгон үнөмдөө",
+  "obRevealSubtitle": "Бул жерде KipiList сиз үчүн кандай иштейт",
+  "obRevealTitle": "Планыңыз даяр!",
+  "obSocialQuote1": "Мен мындан ары эч нерсени унутпайм. AI менин тизмемди секунданын ичинде түзөт.",
+  "obSocialQuote2": "Биз биринчи айда эле азык-түлүк эсебин азайттык.",
+  "obSocialQuote3": "Тизмени өнөктөшүм менен бөлүшүү биздин соода башаламандыгын токтотту.",
+  "obSocialSubtitle": "Сизге окшогон сатып алуучулар KipiList менен үнөмдөп жатышат",
+  "obSocialTitle": "Сиз жакшы мамиледесиз",
   "observations": "Байкоолор",
   "observationsHint": "Кошумча эскертүүлөр барбы?",
   "offlineBanner": "Сиз оффлайндасыз",
@@ -1557,7 +1857,16 @@
   "onboardingCommitmentsSubtitle": "KipiListти жекелештирүү үчүн максаттарыңызды тандаңыз",
   "onboardingCommitmentsTitle": "Сиз үчүн эмне маанилүү?",
   "onboardingContinueAsGuest": "Конок катары улантыңыз",
+  "onboardingContinueToOffer": "Улантуу",
+  "onboardingCreateFirstList": "Менин биринчи тизмемди түзүңүз",
+  "onboardingDemoHeadline": "Эмнени пландаштырып жатканыңызды айтыңыз. Kipi тизмени тузет.",
+  "onboardingDemoSubtitle": "Бир нече секунданын ичинде иреттелген нерселерди алыңыз.",
   "onboardingExit": "Чыгыңыз",
+  "onboardingFallbackGrocery": "🍚 Күрүч|🫘 Фасоль|🥛 Сүт|🥚 Жумуртка|🍞 Нан|🍎 Жемиштер",
+  "onboardingFallbackHome": "🧻 Кагаз сүлгү|🧽 Губкалар|🧴 Жуучу каражат|🗑️ Таштанды баштыктары|🧹 Тазалоочу кездемелер",
+  "onboardingFallbackPet": "🥣 Үй жаныбарларына арналган тамактар|🦴 Дарылар|🧼 Үй жаныбарлары үчүн шампунь|🧸 Оюнчуктар|🧻 Таштанды баштыктары",
+  "onboardingFallbackPharmacy": "🩹 Желим бинттер|🌡️ Термометр|🧴 Антисептик|😷 Бет маскалары|🧼 Колду тазалоочу каражат",
+  "onboardingFallbackRecipes": "🍅 Помидор|🧅 Пияз|🧄 Сарымсак|🥚 Жумуртка|🧀 Сыр|🌿 Жаңы чөптөр",
   "onboardingGoalFamily": "Үй-бүлөлүк сооданы уюштуруу",
   "onboardingGoalFaster": "Тезирээк сатып алыңыз",
   "onboardingGoalNeverForget": "буюмдарды эч качан унутпа",
@@ -1568,6 +1877,8 @@
   "onboardingGroupFamily": "Үй-бүлө",
   "onboardingGroupSolo": "Мен эле",
   "onboardingHookHeadline": "Азык-түлүктү дагы эч качан унутпаңыз",
+  "onboardingListCreated": "Тизмеңиз даяр: {count} нерселер сиз үчүн уюштурулган.",
+  "onboardingListSaveFailed": "Мен нерселерди даярдадым, бирок тизмени сактай албадым. Аны колдонмодо сактоо үчүн кайра аракет кылыңыз.",
   "onboardingLoadingStat1Label": "Каталогдогон буюмдар",
   "onboardingLoadingStat2Label": "Колдонуучулар жардам беришти",
   "onboardingLoadingStat3Label": "Мүнөттөр сакталды",
@@ -1586,9 +1897,11 @@
   "onboardingPainRepeat": "Бир сапар эч качан жетишсиз",
   "onboardingPainSubtitle": "Чынчыл болуңуз – биз ар бирин оңдойбуз",
   "onboardingPainTitle": "Сизди эң ​​көп эмне капа кылат?",
+  "onboardingPaywallListReady": "Биринчи тизмеңиз даяр · {count} нерсе",
   "onboardingPersonalizationCategoryTitle": "Сиз эмне үчүн дүкөн кыласыз?",
   "onboardingPersonalizationCta": "Улантуу",
   "onboardingPersonalizationDesc": "Муну сунуштарыңызды жекелештирүү жана соода кылууну акылдуу кылуу үчүн колдонобуз.",
+  "onboardingPersonalizationEffect": "Бул Kipi көбүрөөк тиешелүү элементтерди жана өлчөмдөрдү сунуш кылууга жардам берет.",
   "onboardingPersonalizationFoodHint": "мис. Пицца, суши, лазанья...",
   "onboardingPersonalizationFoodLabel": "Сүйүктүү тамакыңыз кайсы?",
   "onboardingPersonalizationFoodRequired": "Улантуу үчүн сүйүктүү тамакыңызды айтыңыз",
@@ -1597,8 +1910,13 @@
   "onboardingPersonalizationNameLabel": "Сиздин атыңыз",
   "onboardingPersonalizationSkip": "Азырынча өткөрүп жибериңиз",
   "onboardingPersonalizationTitle": "Келгиле таанышалы",
+  "onboardingPersonalizeWithName": "Менин атым менен жекелештирүү",
   "onboardingPremiumSubtitle": "Соода тизмелериңизден максималдуу пайда алыңыз",
   "onboardingPremiumTitle": "Бардык функциялардын кулпусун ачыңыз",
+  "onboardingProgress": "{total} ичинен {current} кадам",
+  "onboardingPromptEssentials": "Мага керектүү нерселерди сунуштаңыз",
+  "onboardingPromptEvent": "Мен өзгөчө бир нерсе даярдап жатам",
+  "onboardingPromptWeekly": "Апталык керектүү нерселерди пландаштырыңыз",
   "onboardingRestore": "Калыбына келтирүү",
   "onboardingRestoreDesc": "Жазылууңуз барбы? Аны калыбына келтирүү үчүн бул жерди таптаңыз.",
   "onboardingSetupDesc": "KipiList кандай болушун жана сиз үчүн иштешин кааласаңыз, тандаңыз.",
@@ -1623,6 +1941,8 @@
   "pantry": "Кампа",
   "pantryAdvancedMode": "Өркүндөтүлгөн",
   "pantryAppBar": "Кампа",
+  "pantryAvailabilityAll": "Баары даяр!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} кампада",
   "pantryCompactView": "Compact View",
   "pantryDeficit": "Жок {amount}{unit}",
   "pantryDeleteItemsContent": "Тандалган {count} элементтерди жок кылгыңыз келеби?",
@@ -1663,7 +1983,10 @@
   "paywallBenefit2Desc": "3 тизмеге чек жок",
   "paywallBenefit3Desc": "Чыгымдарга көз салуу жана үй-бүлө тизмелери",
   "paywallBestValue": "МЫКТЫ БААЛУУ",
+  "paywallBillingAnnual": "{price}/жыл. Каалаган убакта жокко чыгарыңыз.",
+  "paywallBillingMonthly": "{price}/ай. Каалаган убакта жокко чыгарыңыз.",
   "paywallCancelAnytime": "Каалаган убакта жокко чыгарыңыз. Милдеттенме жок.",
+  "paywallContinueFree": "Акысыз версия менен улантыңыз",
   "paywallCtaTrialDays": "Бекер баштоо — {days} күн",
   "paywallCtaUnlock": "PRO кулпусун ачуу",
   "paywallFeatureDescAssistant": "AI тизмеңизди автоматтык түрдө уюштурат",
@@ -1704,6 +2027,7 @@
   "paywallPricePerMonth": "Болгону {price}/ай",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Сатып алуу аягына чыккан жок. Кайра аракет кыл.",
+  "paywallPurchasePending": "Төлөмүңүз бекитилишин күтүүдө. Кирүү уруксаты ырасталгандан кийин автоматтык түрдө чыгарылат.",
   "paywallRestore": "Калыбына келтирүү",
   "paywallRestoreError": "Калыбына келтире турган активдүү жазылуу табылган жок.",
   "paywallSafeCheckout": "Коопсуз төлөм",
@@ -1725,11 +2049,14 @@
   "paywallTrialCta": "Акысыз сыноону баштаңыз",
   "paywallTrialDays": "{days} КҮН АКЫСЫЗ",
   "paywallTrialDisclaimer": "Каалаган убакта жокко чыгарыңыз · Сыноо мөөнөтү аяктаганга чейин эч кандай акы алынбайт",
+  "paywallTrialDisclosureAnnual": "Бүгүн: төлөм жок. Андан кийин {price}/жыл {days} күндөн кийин. Каалаган убакта жокко чыгарыңыз.",
+  "paywallTrialDisclosureMonthly": "Бүгүн: төлөм жок. Андан кийин {price}/айына {days} күндөн кийин. Каалаган убакта жокко чыгарыңыз.",
   "paywallTrialInCard": "Биринчи {days} күн АКЫСЫЗ",
   "paywallTrialMonths": "{count,plural, one{{count} АЙ АКЫСЫЗ} other{{count} АЙЛАР АКЫСЫЗ}}",
   "paywallTrialSubtitle": "Каалаган убакта жокко чыгарыңыз. Бүгүн төлөм жок.",
   "paywallTrialTitle": "KipiList Pro'ну 7 күн бекер колдонуп көрүңүз",
   "paywallTrialWeeks": "{count,plural, one{{count} ЖУМА АКЫСЫЗ} other{{count} ЖУМА АКЫСЫЗ}}",
+  "paywallWelcomeOfferBadge": "🎁 Саламдашуу сунушу",
   "positionBarcodeCenter": "Штрихкодду ортого коюңуз",
   "prefAIAssistant": "Жеке AI жардамчы",
   "prefCustomThemes": "Ыңгайлаштырылган темалар",
@@ -1770,6 +2097,8 @@
   "recipeCreated": "Рецепт түзүлдү!",
   "recipeDeleted": "Рецепт өчүрүлдү",
   "recipeImage": "Рецепттин сүрөтү",
+  "recipeIngredientSingular": "1 ингредиент",
+  "recipeIngredientsPlural": "{count} ингредиенттер",
   "recipeName": "Рецепттин аты",
   "recipeSaved": "Рецепт сакталды!",
   "recipeSuggestion": "Рецепт сунушу",

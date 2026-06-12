@@ -680,6 +680,13 @@ class AppLocalizationsKa extends AppLocalizations {
   String get chatHintBlocked => 'განბლოკეთ AI ჩატში';
 
   @override
+  String get chatEmptySubtitle =>
+      'დასაწყებად ითხოვეთ ნივთების შემოთავაზებები, რეცეპტები ან რჩევები შენახვისთვის.';
+
+  @override
+  String get chatEmptyTitle => 'თქვენი ჩატი ცარიელია';
+
+  @override
   String chatError(String error) {
     return 'შეცდომა ჩატის ჩატვირთვისას: $error';
   }
@@ -1106,6 +1113,9 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'სრული მოქნილობა';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 მისასალმებელი შემოთავაზება';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1877,6 +1887,9 @@ class AppLocalizationsKa extends AppLocalizations {
   String get catalogBrowse => 'კატალოგის დათვალიერება';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'თქვენ ხაზგარეშე ხართ';
 
   @override
@@ -2447,6 +2460,293 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'ხილი';
+
+  @override
+  String get recipeIngredientSingular => '1 ინგრედიენტი';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ინგრედიენტები';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'ყველაფერი მზადაა!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount საკუჭნაოში';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'ნაბიჯი $current $total-დან';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'გვითხარით რას გეგმავთ. სიას კიპი აყალიბებს.';
+
+  @override
+  String get onboardingDemoSubtitle => 'მიიღეთ ორგანიზებული ნივთები წამებში.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'ეს ეხმარება კიპს შემოგთავაზოთ უფრო შესაბამისი ნივთები და რაოდენობა.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'პერსონალიზაცია ჩემი სახელით';
+
+  @override
+  String get onboardingCreateFirstList => 'შექმენით ჩემი პირველი სია';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'დაგეგმე ჩემი ყოველკვირეული აუცილებელი ნივთები';
+
+  @override
+  String get onboardingPromptEvent => 'რაღაც განსაკუთრებულს ვამზადებ';
+
+  @override
+  String get onboardingPromptEssentials => 'შემომთავაზეთ ჩემთვის აუცილებელი';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 ბრინჯი|🫘 ლობიო|🥛 რძე|🥚 კვერცხი|🍞 პური|🍎 ხილი';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 წებოვანი სახვევები|🌡️ თერმომეტრი|🧴 ანტისეპტიკური|😷 სახის ნიღბები|';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 პომიდორი|🧅 ხახვი|🧄 ნიორი|🥚 კვერცხი|🧀 ყველი|🌿 ახალი მწვანილი';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 ქაღალდის პირსახოცები|🧽 ღრუბლები|🧴 სარეცხი საშუალება|🗑️ ნაგვის ტომრები|';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 შინაური ცხოველების საკვები|🦴 კერძები|🧼 შინაური ცხოველების შამპუნი|🧸 სათამაშო|';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'მოვამზადე ნივთები, მაგრამ სიის შენახვა ვერ მოვახერხე. სცადეთ ხელახლა შეინახოთ ის აპში.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'თქვენი სია მზად არის: $count ელემენტი ორგანიზებულია თქვენთვის.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'განაგრძეთ';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'თქვენი პირველი სია მზად არის · $count ელემენტი';
+  }
+
+  @override
+  String get paywallContinueFree => 'განაგრძეთ უფასო ვერსია';
+
+  @override
+  String get paywallPurchasePending =>
+      'თქვენი გადახდა ელოდება დამტკიცებას. წვდომა ავტომატურად გათავისუფლდება დადასტურების შემდეგ.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'დღეს: გადასახადის გარეშე. შემდეგ $price/წელი $days დღის შემდეგ. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'დღეს: გადასახადის გარეშე. შემდეგ $price/თვეში $days დღის შემდეგ. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/წელი. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/თვეში. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String get obHookTitle => 'უფრო ჭკვიანი შოპინგი აქ იწყება';
+
+  @override
+  String get obHookSubtitle =>
+      'ხელოვნური ინტელექტის მქონე სიები, რომლებიც დაზოგავთ თქვენს დროსა და ფულს, ყოველი მოგზაურობა.';
+
+  @override
+  String get obHookSocial => 'მას ენდობა ათასობით მყიდველი მთელს მსოფლიოში';
+
+  @override
+  String get obHookCta => 'დაიწყეთ';
+
+  @override
+  String get obQuizHouseholdTitle => 'ვისთვის ყიდულობთ?';
+
+  @override
+  String get obQuizHouseholdSolo => 'მხოლოდ მე';
+
+  @override
+  String get obQuizHouseholdCouple => 'მე და ჩემი პარტნიორი';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'ოჯახი 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'ოჯახი 5+';
+
+  @override
+  String get obQuizFrequencyTitle =>
+      'რამდენად ხშირად ყიდულობთ სასურსათო პროდუქტებს?';
+
+  @override
+  String get obQuizFrequencyDaily => 'თითქმის ყოველდღე';
+
+  @override
+  String get obQuizFrequencyWeekly => 'კვირაში ერთხელ';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'ყოველ ორ კვირაში';
+
+  @override
+  String get obQuizFrequencyMonthly => 'დიდი ყოველთვიური გადაზიდვა';
+
+  @override
+  String get obQuizPainTitle => 'რა გაწუხებთ ყველაზე მეტად საყიდლებზე?';
+
+  @override
+  String get obQuizPainForget => 'ყოველთვის მავიწყდება ნივთები';
+
+  @override
+  String get obQuizPainOverspend => 'დაგეგმილზე მეტს ვხარჯავ';
+
+  @override
+  String get obQuizPainWaste => 'საკვები იკარგება სახლში';
+
+  @override
+  String get obQuizPainTime => 'ძალიან დიდი დრო სჭირდება';
+
+  @override
+  String get obQuizSavingsTitle => 'რამდენის დაზოგვას ისურვებდით ყოველთვიურად?';
+
+  @override
+  String get obQuizSavingsSmall => 'ცოტა - ყოველი ცოტა მნიშვნელობა აქვს';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'ჩემი სასურსათო გადასახადის დაახლოებით 10%.';
+
+  @override
+  String get obQuizSavingsLarge => 'რაც შეიძლება მეტი';
+
+  @override
+  String get obQuizMethodTitle => 'როგორ ადგენთ დღეს სავაჭრო სიებს?';
+
+  @override
+  String get obQuizMethodPaper => 'კალამი და ქაღალდი';
+
+  @override
+  String get obQuizMethodNotes => 'შენიშვნების აპლიკაცია';
+
+  @override
+  String get obQuizMethodMemory => 'ჩემს თავში ვინახავ';
+
+  @override
+  String get obQuizMethodNone => 'სიებს არ ვაკეთებ';
+
+  @override
+  String get obSocialTitle => 'კარგ კომპანიაში ხარ';
+
+  @override
+  String get obSocialSubtitle =>
+      'თქვენნაირი მყიდველები უკვე ზოგავენ KipiList-ით';
+
+  @override
+  String get obSocialQuote1 =>
+      'აღარაფერი აღარ მავიწყდება. AI აყალიბებს ჩემს სიას წამებში.';
+
+  @override
+  String get obSocialQuote2 =>
+      'ჩვენ შესამჩნევად შევამცირეთ ჩვენი სასურსათო გადასახადი პირველ თვეში.';
+
+  @override
+  String get obSocialQuote3 =>
+      'ჩემს პარტნიორთან სიის გაზიარებამ დაასრულა ჩვენი სავაჭრო ქაოსი.';
+
+  @override
+  String get obLoadingTitle => 'თქვენი პერსონალური გეგმის შედგენა...';
+
+  @override
+  String get obLoadingStepProfile => 'კორექტირება თქვენი სახლისთვის';
+
+  @override
+  String get obLoadingStepHabits => 'თქვენი სავაჭრო რუტინის მორგება';
+
+  @override
+  String get obLoadingStepSavings => 'თქვენი დაზოგვის სტრატეგიის ოპტიმიზაცია';
+
+  @override
+  String get obLoadingStepLists => 'თქვენი ჭკვიანი სიების მომზადება';
+
+  @override
+  String get obRevealTitle => 'თქვენი გეგმა მზად არის!';
+
+  @override
+  String get obRevealSubtitle => 'აი, როგორ იმუშავებს KipiList თქვენთვის';
+
+  @override
+  String get obRevealSavingsCaption => 'დაგეგმილი დანაზოგი KipiList-ით';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'თვე $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI აშენებს და აწყობს თქვენს სიებს';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'ხარჯები თვალყურს ადევნებს თქვენს მიზნებს';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'საკუჭნაოების თვალყურის დევნება ამცირებს საკვების ნარჩენებს';
+
+  @override
+  String get obRevealFeatureShare => 'რეალურ დროში გაზიარება თქვენს ოჯახთან';
+
+  @override
+  String get obPaywallTitle => 'განბლოკეთ თქვენი გეგმა';
+
+  @override
+  String get obPaywallRetry => 'სცადეთ ხელახლა';
+
+  @override
+  String get obLoginTitle => 'შეინახეთ თქვენი გეგმა';
+
+  @override
+  String get obLoginSubtitle =>
+      'შედით სისტემაში, რათა თქვენი სიები მოწყობილობებში სინქრონიზდეს';
+
+  @override
+  String get obLoginGoogle => 'განაგრძეთ Google-თან';
+
+  @override
+  String get obLoginApple => 'განაგრძეთ Apple-თან ერთად';
+
+  @override
+  String get obLoginSkip => 'ახლა არა';
+
+  @override
+  String get obLoginError =>
+      'შესვლა ვერ მოხერხდა. სცადეთ ხელახლა ან გამოტოვეთ ახლა.';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -3123,6 +3423,13 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get chatHintBlocked => 'განბლოკეთ AI ჩატში';
 
   @override
+  String get chatEmptySubtitle =>
+      'დასაწყებად ითხოვეთ ნივთების შემოთავაზებები, რეცეპტები ან რჩევები შენახვისთვის.';
+
+  @override
+  String get chatEmptyTitle => 'თქვენი ჩატი ცარიელია';
+
+  @override
   String chatError(String error) {
     return 'შეცდომა ჩატის ჩატვირთვისას: $error';
   }
@@ -3549,6 +3856,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get paywallPackageMonthlyDesc => 'სრული მოქნილობა';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 მისასალმებელი შემოთავაზება';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4890,4 +5200,291 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get suggestionFruits => 'ხილი';
+
+  @override
+  String get recipeIngredientSingular => '1 ინგრედიენტი';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ინგრედიენტები';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'ყველაფერი მზადაა!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount საკუჭნაოში';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'ნაბიჯი $current $total-დან';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'გვითხარით რას გეგმავთ. სიას კიპი აყალიბებს.';
+
+  @override
+  String get onboardingDemoSubtitle => 'მიიღეთ ორგანიზებული ნივთები წამებში.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'ეს ეხმარება კიპს შემოგთავაზოთ უფრო შესაბამისი ნივთები და რაოდენობა.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'პერსონალიზაცია ჩემი სახელით';
+
+  @override
+  String get onboardingCreateFirstList => 'შექმენით ჩემი პირველი სია';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'დაგეგმე ჩემი ყოველკვირეული აუცილებელი ნივთები';
+
+  @override
+  String get onboardingPromptEvent => 'რაღაც განსაკუთრებულს ვამზადებ';
+
+  @override
+  String get onboardingPromptEssentials => 'შემომთავაზეთ ჩემთვის აუცილებელი';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 ბრინჯი|🫘 ლობიო|🥛 რძე|🥚 კვერცხი|🍞 პური|🍎 ხილი';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 წებოვანი სახვევები|🌡️ თერმომეტრი|🧴 ანტისეპტიკური|😷 სახის ნიღბები|';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 პომიდორი|🧅 ხახვი|🧄 ნიორი|🥚 კვერცხი|🧀 ყველი|🌿 ახალი მწვანილი';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 ქაღალდის პირსახოცები|🧽 ღრუბლები|🧴 სარეცხი საშუალება|🗑️ ნაგვის ტომრები|';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 შინაური ცხოველების საკვები|🦴 კერძები|🧼 შინაური ცხოველების შამპუნი|🧸 სათამაშო|';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'მოვამზადე ნივთები, მაგრამ სიის შენახვა ვერ მოვახერხე. სცადეთ ხელახლა შეინახოთ ის აპში.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'თქვენი სია მზად არის: $count ელემენტი ორგანიზებულია თქვენთვის.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'განაგრძეთ';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'თქვენი პირველი სია მზად არის · $count ელემენტი';
+  }
+
+  @override
+  String get paywallContinueFree => 'განაგრძეთ უფასო ვერსია';
+
+  @override
+  String get paywallPurchasePending =>
+      'თქვენი გადახდა ელოდება დამტკიცებას. წვდომა ავტომატურად გათავისუფლდება დადასტურების შემდეგ.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'დღეს: გადასახადის გარეშე. შემდეგ $price/წელი $days დღის შემდეგ. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'დღეს: გადასახადის გარეშე. შემდეგ $price/თვეში $days დღის შემდეგ. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/წელი. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/თვეში. გააუქმეთ ნებისმიერ დროს.';
+  }
+
+  @override
+  String get obHookTitle => 'უფრო ჭკვიანი შოპინგი აქ იწყება';
+
+  @override
+  String get obHookSubtitle =>
+      'ხელოვნური ინტელექტის მქონე სიები, რომლებიც დაზოგავთ თქვენს დროსა და ფულს, ყოველი მოგზაურობა.';
+
+  @override
+  String get obHookSocial => 'მას ენდობა ათასობით მყიდველი მთელს მსოფლიოში';
+
+  @override
+  String get obHookCta => 'დაიწყეთ';
+
+  @override
+  String get obQuizHouseholdTitle => 'ვისთვის ყიდულობთ?';
+
+  @override
+  String get obQuizHouseholdSolo => 'მხოლოდ მე';
+
+  @override
+  String get obQuizHouseholdCouple => 'მე და ჩემი პარტნიორი';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'ოჯახი 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'ოჯახი 5+';
+
+  @override
+  String get obQuizFrequencyTitle =>
+      'რამდენად ხშირად ყიდულობთ სასურსათო პროდუქტებს?';
+
+  @override
+  String get obQuizFrequencyDaily => 'თითქმის ყოველდღე';
+
+  @override
+  String get obQuizFrequencyWeekly => 'კვირაში ერთხელ';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'ყოველ ორ კვირაში';
+
+  @override
+  String get obQuizFrequencyMonthly => 'დიდი ყოველთვიური გადაზიდვა';
+
+  @override
+  String get obQuizPainTitle => 'რა გაწუხებთ ყველაზე მეტად საყიდლებზე?';
+
+  @override
+  String get obQuizPainForget => 'ყოველთვის მავიწყდება ნივთები';
+
+  @override
+  String get obQuizPainOverspend => 'დაგეგმილზე მეტს ვხარჯავ';
+
+  @override
+  String get obQuizPainWaste => 'საკვები იკარგება სახლში';
+
+  @override
+  String get obQuizPainTime => 'ძალიან დიდი დრო სჭირდება';
+
+  @override
+  String get obQuizSavingsTitle => 'რამდენის დაზოგვას ისურვებდით ყოველთვიურად?';
+
+  @override
+  String get obQuizSavingsSmall => 'ცოტა - ყოველი ცოტა მნიშვნელობა აქვს';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'ჩემი სასურსათო გადასახადის დაახლოებით 10%.';
+
+  @override
+  String get obQuizSavingsLarge => 'რაც შეიძლება მეტი';
+
+  @override
+  String get obQuizMethodTitle => 'როგორ ადგენთ დღეს სავაჭრო სიებს?';
+
+  @override
+  String get obQuizMethodPaper => 'კალამი და ქაღალდი';
+
+  @override
+  String get obQuizMethodNotes => 'შენიშვნების აპლიკაცია';
+
+  @override
+  String get obQuizMethodMemory => 'ჩემს თავში ვინახავ';
+
+  @override
+  String get obQuizMethodNone => 'სიებს არ ვაკეთებ';
+
+  @override
+  String get obSocialTitle => 'კარგ კომპანიაში ხარ';
+
+  @override
+  String get obSocialSubtitle =>
+      'თქვენნაირი მყიდველები უკვე ზოგავენ KipiList-ით';
+
+  @override
+  String get obSocialQuote1 =>
+      'აღარაფერი აღარ მავიწყდება. AI აყალიბებს ჩემს სიას წამებში.';
+
+  @override
+  String get obSocialQuote2 =>
+      'ჩვენ შესამჩნევად შევამცირეთ ჩვენი სასურსათო გადასახადი პირველ თვეში.';
+
+  @override
+  String get obSocialQuote3 =>
+      'ჩემს პარტნიორთან სიის გაზიარებამ დაასრულა ჩვენი სავაჭრო ქაოსი.';
+
+  @override
+  String get obLoadingTitle => 'თქვენი პერსონალური გეგმის შედგენა...';
+
+  @override
+  String get obLoadingStepProfile => 'კორექტირება თქვენი სახლისთვის';
+
+  @override
+  String get obLoadingStepHabits => 'თქვენი სავაჭრო რუტინის მორგება';
+
+  @override
+  String get obLoadingStepSavings => 'თქვენი დაზოგვის სტრატეგიის ოპტიმიზაცია';
+
+  @override
+  String get obLoadingStepLists => 'თქვენი ჭკვიანი სიების მომზადება';
+
+  @override
+  String get obRevealTitle => 'თქვენი გეგმა მზად არის!';
+
+  @override
+  String get obRevealSubtitle => 'აი, როგორ იმუშავებს KipiList თქვენთვის';
+
+  @override
+  String get obRevealSavingsCaption => 'დაგეგმილი დანაზოგი KipiList-ით';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'თვე $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI აშენებს და აწყობს თქვენს სიებს';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'ხარჯები თვალყურს ადევნებს თქვენს მიზნებს';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'საკუჭნაოების თვალყურის დევნება ამცირებს საკვების ნარჩენებს';
+
+  @override
+  String get obRevealFeatureShare => 'რეალურ დროში გაზიარება თქვენს ოჯახთან';
+
+  @override
+  String get obPaywallTitle => 'განბლოკეთ თქვენი გეგმა';
+
+  @override
+  String get obPaywallRetry => 'სცადეთ ხელახლა';
+
+  @override
+  String get obLoginTitle => 'შეინახეთ თქვენი გეგმა';
+
+  @override
+  String get obLoginSubtitle =>
+      'შედით სისტემაში, რათა თქვენი სიები მოწყობილობებში სინქრონიზდეს';
+
+  @override
+  String get obLoginGoogle => 'განაგრძეთ Google-თან';
+
+  @override
+  String get obLoginApple => 'განაგრძეთ Apple-თან ერთად';
+
+  @override
+  String get obLoginSkip => 'ახლა არა';
+
+  @override
+  String get obLoginError =>
+      'შესვლა ვერ მოხერხდა. სცადეთ ხელახლა ან გამოტოვეთ ახლა.';
 }

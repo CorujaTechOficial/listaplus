@@ -677,6 +677,13 @@ class AppLocalizationsDa extends AppLocalizations {
   String get chatHintBlocked => 'Lås AI op for at chatte';
 
   @override
+  String get chatEmptySubtitle =>
+      'Bed om forslag til ting, opskrifter eller sparetips for at komme i gang.';
+
+  @override
+  String get chatEmptyTitle => 'Din chat er tom';
+
+  @override
   String chatError(String error) {
     return 'Fejl ved indlæsning af chat: $error';
   }
@@ -1106,6 +1113,9 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Fuld fleksibilitet';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Velkomsttilbud';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1877,6 +1887,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get catalogBrowse => 'Gennemse kataloget';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Du er offline';
 
   @override
@@ -2443,6 +2456,289 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Frugter';
+
+  @override
+  String get recipeIngredientSingular => '1 ingrediens';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredienser';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Alt klar!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount i spisekammer';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Trin $current af $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Fortæl os, hvad du planlægger. Kipi bygger listen.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Få organiserede genstande på få sekunder.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Dette hjælper Kipi med at foreslå mere relevante varer og mængder.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Tilpas med mit navn';
+
+  @override
+  String get onboardingCreateFirstList => 'Opret min første liste';
+
+  @override
+  String get onboardingPromptWeekly => 'Planlæg mine ugentlige nødvendigheder';
+
+  @override
+  String get onboardingPromptEvent => 'Jeg er ved at forberede noget særligt';
+
+  @override
+  String get onboardingPromptEssentials => 'Foreslå det væsentlige til mig';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Ris|🫘 Bønner|🥛 Mælk|🥚 Æg|🍞 Brød|🍎 Frugt';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Klæbende bandager|🌡️ Termometer|🧴 Antiseptisk|😷 Ansigtsmasker|🧼 Hånddesinfektion';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomater|🧅 Løg|🧄 Hvidløg|🥚 Æg|🧀 Ost|🌿 Friske krydderurter';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papirhåndklæder|🧽 Svampe|🧴 Vaskemiddel|🗑️ Affaldssække|🧹 Renseklude';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Foder til kæledyr|🦴 Godbidder|🧼 Shampoo til kæledyr|🧸 Legetøj|🧻 Affaldsposer';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Jeg forberedte emnerne, men kunne ikke gemme listen. Prøv igen at beholde den i appen.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Din liste er klar: $count elementer organiseret for dig.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Fortsætte';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Din første liste er klar · $count elementer';
+  }
+
+  @override
+  String get paywallContinueFree => 'Fortsæt med den gratis version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Din betaling afventer godkendelse. Adgang frigives automatisk efter bekræftelse.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'I dag: gratis. Derefter $price/år efter $days dage. Annuller når som helst.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'I dag: gratis. Derefter $price/måned efter $days dage. Annuller når som helst.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/år. Annuller når som helst.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/måned. Annuller når som helst.';
+  }
+
+  @override
+  String get obHookTitle => 'Smartere shopping starter her';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-drevne lister, der sparer dig tid og penge, hver eneste tur.';
+
+  @override
+  String get obHookSocial => 'Betroet af tusindvis af shoppere verden over';
+
+  @override
+  String get obHookCta => 'Kom i gang';
+
+  @override
+  String get obQuizHouseholdTitle => 'Hvem handler du for?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Bare mig';
+
+  @override
+  String get obQuizHouseholdCouple => 'Mig og min partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Familie på 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Familie på 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Hvor ofte handler du dagligvarer?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Næsten hver dag';
+
+  @override
+  String get obQuizFrequencyWeekly => 'En gang om ugen';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Hver anden uge';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Stort månedligt træk';
+
+  @override
+  String get obQuizPainTitle => 'Hvad frustrerer dig mest ved shopping?';
+
+  @override
+  String get obQuizPainForget => 'Jeg glemmer altid ting';
+
+  @override
+  String get obQuizPainOverspend => 'Jeg bruger mere end planlagt';
+
+  @override
+  String get obQuizPainWaste => 'Maden går til spilde derhjemme';
+
+  @override
+  String get obQuizPainTime => 'Det tager for meget tid';
+
+  @override
+  String get obQuizSavingsTitle => 'Hvor meget vil du gerne spare månedligt?';
+
+  @override
+  String get obQuizSavingsSmall => 'Lidt - hver bit tæller';
+
+  @override
+  String get obQuizSavingsMedium => 'Omkring 10% af min dagligvareregning';
+
+  @override
+  String get obQuizSavingsLarge => 'Så meget som muligt';
+
+  @override
+  String get obQuizMethodTitle => 'Hvordan laver du indkøbslister i dag?';
+
+  @override
+  String get obQuizMethodPaper => 'Pen og papir';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'Jeg holder det i hovedet';
+
+  @override
+  String get obQuizMethodNone => 'Jeg laver ikke lister';
+
+  @override
+  String get obSocialTitle => 'Du er i godt selskab';
+
+  @override
+  String get obSocialSubtitle =>
+      'Shoppere som dig sparer allerede med KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Jeg glemmer aldrig noget længere. AI\'en bygger min liste på få sekunder.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Vi reducerede vores dagligvareregning mærkbart i den første måned.';
+
+  @override
+  String get obSocialQuote3 =>
+      'At dele listen med min partner afsluttede vores indkøbskaos.';
+
+  @override
+  String get obLoadingTitle => 'Lav din personlige plan...';
+
+  @override
+  String get obLoadingStepProfile => 'Tilpasning til din husstand';
+
+  @override
+  String get obLoadingStepHabits => 'Indstil din indkøbsrutine';
+
+  @override
+  String get obLoadingStepSavings => 'Optimering af din opsparingsstrategi';
+
+  @override
+  String get obLoadingStepLists => 'Forberedelse af dine smarte lister';
+
+  @override
+  String get obRevealTitle => 'Din plan er klar!';
+
+  @override
+  String get obRevealSubtitle => 'Her er, hvordan KipiList vil fungere for dig';
+
+  @override
+  String get obRevealSavingsCaption => 'Forventede besparelser med KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Måned $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI bygger og organiserer dine lister';
+
+  @override
+  String get obRevealFeatureBudget => 'Udgifter spores i forhold til dit mål';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry-sporing reducerer madspild';
+
+  @override
+  String get obRevealFeatureShare => 'Realtidsdeling med din husstand';
+
+  @override
+  String get obPaywallTitle => 'Lås op for din plan';
+
+  @override
+  String get obPaywallRetry => 'Prøv igen';
+
+  @override
+  String get obLoginTitle => 'Gem din plan';
+
+  @override
+  String get obLoginSubtitle =>
+      'Log ind, så dine lister synkroniseres på tværs af enheder';
+
+  @override
+  String get obLoginGoogle => 'Fortsæt med Google';
+
+  @override
+  String get obLoginApple => 'Fortsæt med Apple';
+
+  @override
+  String get obLoginSkip => 'Ikke nu';
+
+  @override
+  String get obLoginError =>
+      'Login mislykkedes. Prøv igen eller spring over indtil videre.';
 }
 
 /// The translations for Danish, as used in Denmark (`da_DK`).
@@ -3118,6 +3414,13 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String get chatHintBlocked => 'Lås AI op for at chatte';
 
   @override
+  String get chatEmptySubtitle =>
+      'Bed om forslag til ting, opskrifter eller sparetips for at komme i gang.';
+
+  @override
+  String get chatEmptyTitle => 'Din chat er tom';
+
+  @override
   String chatError(String error) {
     return 'Fejl ved indlæsning af chat: $error';
   }
@@ -3547,6 +3850,9 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get paywallPackageMonthlyDesc => 'Fuld fleksibilitet';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Velkomsttilbud';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4884,4 +5190,287 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get suggestionFruits => 'Frugter';
+
+  @override
+  String get recipeIngredientSingular => '1 ingrediens';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredienser';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Alt klar!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount i spisekammer';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Trin $current af $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Fortæl os, hvad du planlægger. Kipi bygger listen.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Få organiserede genstande på få sekunder.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Dette hjælper Kipi med at foreslå mere relevante varer og mængder.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Tilpas med mit navn';
+
+  @override
+  String get onboardingCreateFirstList => 'Opret min første liste';
+
+  @override
+  String get onboardingPromptWeekly => 'Planlæg mine ugentlige nødvendigheder';
+
+  @override
+  String get onboardingPromptEvent => 'Jeg er ved at forberede noget særligt';
+
+  @override
+  String get onboardingPromptEssentials => 'Foreslå det væsentlige til mig';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Ris|🫘 Bønner|🥛 Mælk|🥚 Æg|🍞 Brød|🍎 Frugt';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Klæbende bandager|🌡️ Termometer|🧴 Antiseptisk|😷 Ansigtsmasker|🧼 Hånddesinfektion';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomater|🧅 Løg|🧄 Hvidløg|🥚 Æg|🧀 Ost|🌿 Friske krydderurter';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papirhåndklæder|🧽 Svampe|🧴 Vaskemiddel|🗑️ Affaldssække|🧹 Renseklude';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Foder til kæledyr|🦴 Godbidder|🧼 Shampoo til kæledyr|🧸 Legetøj|🧻 Affaldsposer';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Jeg forberedte emnerne, men kunne ikke gemme listen. Prøv igen at beholde den i appen.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Din liste er klar: $count elementer organiseret for dig.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Fortsætte';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Din første liste er klar · $count elementer';
+  }
+
+  @override
+  String get paywallContinueFree => 'Fortsæt med den gratis version';
+
+  @override
+  String get paywallPurchasePending =>
+      'Din betaling afventer godkendelse. Adgang frigives automatisk efter bekræftelse.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'I dag: gratis. Derefter $price/år efter $days dage. Annuller når som helst.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'I dag: gratis. Derefter $price/måned efter $days dage. Annuller når som helst.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/år. Annuller når som helst.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/måned. Annuller når som helst.';
+  }
+
+  @override
+  String get obHookTitle => 'Smartere shopping starter her';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-drevne lister, der sparer dig tid og penge, hver eneste tur.';
+
+  @override
+  String get obHookSocial => 'Betroet af tusindvis af shoppere verden over';
+
+  @override
+  String get obHookCta => 'Kom i gang';
+
+  @override
+  String get obQuizHouseholdTitle => 'Hvem handler du for?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Bare mig';
+
+  @override
+  String get obQuizHouseholdCouple => 'Mig og min partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Familie på 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Familie på 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Hvor ofte handler du dagligvarer?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Næsten hver dag';
+
+  @override
+  String get obQuizFrequencyWeekly => 'En gang om ugen';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Hver anden uge';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Stort månedligt træk';
+
+  @override
+  String get obQuizPainTitle => 'Hvad frustrerer dig mest ved shopping?';
+
+  @override
+  String get obQuizPainForget => 'Jeg glemmer altid ting';
+
+  @override
+  String get obQuizPainOverspend => 'Jeg bruger mere end planlagt';
+
+  @override
+  String get obQuizPainWaste => 'Maden går til spilde derhjemme';
+
+  @override
+  String get obQuizPainTime => 'Det tager for meget tid';
+
+  @override
+  String get obQuizSavingsTitle => 'Hvor meget vil du gerne spare månedligt?';
+
+  @override
+  String get obQuizSavingsSmall => 'Lidt - hver bit tæller';
+
+  @override
+  String get obQuizSavingsMedium => 'Omkring 10% af min dagligvareregning';
+
+  @override
+  String get obQuizSavingsLarge => 'Så meget som muligt';
+
+  @override
+  String get obQuizMethodTitle => 'Hvordan laver du indkøbslister i dag?';
+
+  @override
+  String get obQuizMethodPaper => 'Pen og papir';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'Jeg holder det i hovedet';
+
+  @override
+  String get obQuizMethodNone => 'Jeg laver ikke lister';
+
+  @override
+  String get obSocialTitle => 'Du er i godt selskab';
+
+  @override
+  String get obSocialSubtitle =>
+      'Shoppere som dig sparer allerede med KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Jeg glemmer aldrig noget længere. AI\'en bygger min liste på få sekunder.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Vi reducerede vores dagligvareregning mærkbart i den første måned.';
+
+  @override
+  String get obSocialQuote3 =>
+      'At dele listen med min partner afsluttede vores indkøbskaos.';
+
+  @override
+  String get obLoadingTitle => 'Lav din personlige plan...';
+
+  @override
+  String get obLoadingStepProfile => 'Tilpasning til din husstand';
+
+  @override
+  String get obLoadingStepHabits => 'Indstil din indkøbsrutine';
+
+  @override
+  String get obLoadingStepSavings => 'Optimering af din opsparingsstrategi';
+
+  @override
+  String get obLoadingStepLists => 'Forberedelse af dine smarte lister';
+
+  @override
+  String get obRevealTitle => 'Din plan er klar!';
+
+  @override
+  String get obRevealSubtitle => 'Her er, hvordan KipiList vil fungere for dig';
+
+  @override
+  String get obRevealSavingsCaption => 'Forventede besparelser med KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Måned $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI bygger og organiserer dine lister';
+
+  @override
+  String get obRevealFeatureBudget => 'Udgifter spores i forhold til dit mål';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry-sporing reducerer madspild';
+
+  @override
+  String get obRevealFeatureShare => 'Realtidsdeling med din husstand';
+
+  @override
+  String get obPaywallTitle => 'Lås op for din plan';
+
+  @override
+  String get obPaywallRetry => 'Prøv igen';
+
+  @override
+  String get obLoginTitle => 'Gem din plan';
+
+  @override
+  String get obLoginSubtitle =>
+      'Log ind, så dine lister synkroniseres på tværs af enheder';
+
+  @override
+  String get obLoginGoogle => 'Fortsæt med Google';
+
+  @override
+  String get obLoginApple => 'Fortsæt med Apple';
+
+  @override
+  String get obLoginSkip => 'Ikke nu';
+
+  @override
+  String get obLoginError =>
+      'Login mislykkedes. Prøv igen eller spring over indtil videre.';
 }

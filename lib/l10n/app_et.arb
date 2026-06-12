@@ -393,6 +393,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -561,6 +727,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -615,6 +788,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -653,6 +833,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -702,9 +892,33 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
         "type": "String"
       }
     }
@@ -810,12 +1024,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -892,6 +1129,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1094,6 +1338,8 @@
   "categoryLimitReached": "Kategoorialimiit on täis",
   "categoryName": "Kategooria nimi",
   "categoryNameHint": "Sisestage kategooria nimi",
+  "chatEmptySubtitle": "Alustamiseks küsige esemete soovitusi, retsepte või salvestamisnõuandeid.",
+  "chatEmptyTitle": "Teie vestlus on tühi",
   "chatError": "Viga vestluse laadimisel: {error}",
   "chatHint": "Kirjuta oma sõnum...",
   "chatHintBlocked": "Avage vestluseks tehisintellekt",
@@ -1369,6 +1615,60 @@
   "noRecipesSavedHint": "Loo oma esimene kohandatud retsept, puudutades allolevat nuppu.",
   "noTracking": "Jälgimiseta",
   "notInformed": "Pole määratud",
+  "obHookCta": "Alustage",
+  "obHookSocial": "Seda usaldavad tuhanded ostjad kogu maailmas",
+  "obHookSubtitle": "AI-toega loendid, mis säästavad teie aega ja raha igal reisil.",
+  "obHookTitle": "Targem ostlemine algab siit",
+  "obLoadingStepHabits": "Häälestage oma osturutiini",
+  "obLoadingStepLists": "Nutikate loendite koostamine",
+  "obLoadingStepProfile": "Kohandamine teie majapidamise jaoks",
+  "obLoadingStepSavings": "Säästustrateegia optimeerimine",
+  "obLoadingTitle": "Isikupärastatud plaani koostamine...",
+  "obLoginApple": "Jätkake Apple'iga",
+  "obLoginError": "Sisselogimine ebaõnnestus. Proovige uuesti või jätke praegu vahele.",
+  "obLoginGoogle": "Jätkake Google'iga",
+  "obLoginSkip": "Mitte praegu",
+  "obLoginSubtitle": "Logige sisse, et teie loendid sünkroonitakse kõigis seadmetes",
+  "obLoginTitle": "Salvestage oma plaan",
+  "obPaywallRetry": "Proovi uuesti",
+  "obPaywallTitle": "Avage oma plaan",
+  "obQuizFrequencyBiweekly": "Iga kahe nädala tagant",
+  "obQuizFrequencyDaily": "Peaaegu iga päev",
+  "obQuizFrequencyMonthly": "Suur igakuine saak",
+  "obQuizFrequencyTitle": "Kui tihti te toidupoes käite?",
+  "obQuizFrequencyWeekly": "Kord nädalas",
+  "obQuizHouseholdCouple": "Mina ja mu partner",
+  "obQuizHouseholdFamilyLarge": "Perekond 5+",
+  "obQuizHouseholdFamilySmall": "3-4liikmeline pere",
+  "obQuizHouseholdSolo": "Ainult mina",
+  "obQuizHouseholdTitle": "Kellele ostlete?",
+  "obQuizMethodMemory": "Hoian seda oma peas",
+  "obQuizMethodNone": "Ma ei koosta nimekirju",
+  "obQuizMethodNotes": "Märkmete rakendus",
+  "obQuizMethodPaper": "Pliiats ja paber",
+  "obQuizMethodTitle": "Kuidas koostate täna ostunimekirju?",
+  "obQuizPainForget": "Ma unustan alati esemed",
+  "obQuizPainOverspend": "Kulutan planeeritust rohkem",
+  "obQuizPainTime": "See võtab liiga palju aega",
+  "obQuizPainTitle": "Mis sind ostlemise juures enim masendab?",
+  "obQuizPainWaste": "Toit läheb kodus raisku",
+  "obQuizSavingsLarge": "Nii palju kui võimalik",
+  "obQuizSavingsMedium": "Umbes 10% minu toiduarvest",
+  "obQuizSavingsSmall": "Natuke – iga natuke loeb",
+  "obQuizSavingsTitle": "Kui palju soovite kuus säästa?",
+  "obRevealFeatureAi": "AI koostab ja korraldab teie loendeid",
+  "obRevealFeatureBudget": "Kulutusi jälgitakse teie eesmärgi suhtes",
+  "obRevealFeaturePantry": "Sahvri jälgimine vähendab toidujäätmeid",
+  "obRevealFeatureShare": "Reaalajas jagamine oma leibkonnaga",
+  "obRevealMonth": "kuu {n}",
+  "obRevealSavingsCaption": "Prognoositav kokkuhoid KipiListiga",
+  "obRevealSubtitle": "Siit saate teada, kuidas KipiList teie jaoks töötab",
+  "obRevealTitle": "Teie plaan on valmis!",
+  "obSocialQuote1": "Ma ei unusta enam kunagi midagi. AI koostab minu nimekirja sekunditega.",
+  "obSocialQuote2": "Esimesel kuul kärpisime toiduarvet märgatavalt.",
+  "obSocialQuote3": "Nimekirja jagamine oma elukaaslasega lõpetas meie ostukaose.",
+  "obSocialSubtitle": "Teiesugused ostjad säästavad juba KipiListiga",
+  "obSocialTitle": "Oled heas seltskonnas",
   "observations": "Tähelepanekud",
   "observationsHint": "Kas on lisamärkusi?",
   "offlineBanner": "Olete võrguühenduseta",
@@ -1408,7 +1708,16 @@
   "onboardingCommitmentsSubtitle": "Valige KipiListi isikupärastamiseks eesmärgid",
   "onboardingCommitmentsTitle": "Mis on teie jaoks oluline?",
   "onboardingContinueAsGuest": "Jätka külalisena",
+  "onboardingContinueToOffer": "Jätka",
+  "onboardingCreateFirstList": "Loo minu esimene nimekiri",
+  "onboardingDemoHeadline": "Rääkige meile, mida te plaanite. Kipi koostab nimekirja.",
+  "onboardingDemoSubtitle": "Hankige organiseeritud üksused sekunditega.",
   "onboardingExit": "Välju",
+  "onboardingFallbackGrocery": "🍚 Riis|🫘 Oad|🥛 Piim|🥚 Munad|🍞 Leib|🍎 Puuvili",
+  "onboardingFallbackHome": "🧻 Paberrätikud|🧽 Käsnad|🧴 Pesuaine|🗑️ Prügikotid|🧹 Puhastuslapid",
+  "onboardingFallbackPet": "🥣 Lemmikloomatoit|🦴 Maiused|🧼 Lemmikloomašampoon|🧸 Mänguasi|🧻 Prügikotid",
+  "onboardingFallbackPharmacy": "🩹 Kleepuvad sidemed|🌡️ Termomeeter|🧴 Antiseptik|😷 Näomaskid|🧼 Käte desinfitseerija",
+  "onboardingFallbackRecipes": "🍅 Tomatid|🧅 Sibul|🧄 Küüslauk|🥚 Munad|🧀 Juust|🌿 Värsked ürdid",
   "onboardingGoalFamily": "Korraldage pere ostlemine",
   "onboardingGoalFaster": "Ostke kiiremini",
   "onboardingGoalNeverForget": "Ärge kunagi unustage esemeid",
@@ -1419,6 +1728,8 @@
   "onboardingGroupFamily": "Perekond",
   "onboardingGroupSolo": "Ainult mina",
   "onboardingHookHeadline": "Ärge kunagi unustage enam ühtegi toidukaupa",
+  "onboardingListCreated": "Teie loend on valmis: teie jaoks on korraldatud {count} üksust.",
+  "onboardingListSaveFailed": "Valmistasin üksused ette, kuid ei saanud nimekirja salvestada. Proovige uuesti, et see rakenduses hoida.",
   "onboardingLoadingStat1Label": "Kataloogis olevad kaubad",
   "onboardingLoadingStat2Label": "Kasutajad aitasid",
   "onboardingLoadingStat3Label": "Minutid salvestatud",
@@ -1437,9 +1748,11 @@
   "onboardingPainRepeat": "Ühest reisist ei piisa kunagi",
   "onboardingPainSubtitle": "Olge ausad – me teeme kõik korda",
   "onboardingPainTitle": "Mis sind kõige rohkem frustreerib?",
+  "onboardingPaywallListReady": "Teie esimene loend on valmis · {count} üksust",
   "onboardingPersonalizationCategoryTitle": "Mida ostlete?",
   "onboardingPersonalizationCta": "Jätka",
   "onboardingPersonalizationDesc": "Kasutame seda teie soovituste isikupärastamiseks ja ostlemise nutikamaks muutmiseks.",
+  "onboardingPersonalizationEffect": "See aitab Kipil soovitada asjakohasemaid esemeid ja koguseid.",
   "onboardingPersonalizationFoodHint": "nt. Pitsa, sushi, lasanje...",
   "onboardingPersonalizationFoodLabel": "Mis on sinu lemmiktoit?",
   "onboardingPersonalizationFoodRequired": "Jätkamiseks öelge meile oma lemmiktoit",
@@ -1448,8 +1761,13 @@
   "onboardingPersonalizationNameLabel": "Sinu nimi",
   "onboardingPersonalizationSkip": "Jäta praegu vahele",
   "onboardingPersonalizationTitle": "Saame sinuga tuttavaks",
+  "onboardingPersonalizeWithName": "Isikupärastage minu nimega",
   "onboardingPremiumSubtitle": "Võtke oma ostunimekirjadest maksimum",
   "onboardingPremiumTitle": "Avage kõik funktsioonid",
+  "onboardingProgress": "Samm {current}/{total}",
+  "onboardingPromptEssentials": "Soovitage mulle hädavajalikke asju",
+  "onboardingPromptEvent": "Valmistan ette midagi erilist",
+  "onboardingPromptWeekly": "Planeerige oma iganädalased asjad",
   "onboardingRestore": "Taasta",
   "onboardingRestoreDesc": "Kas teil on juba tellimus? Selle taastamiseks puudutage siin.",
   "onboardingSetupDesc": "Valige, kuidas soovite, et KipiList näeks välja ja teie heaks töötaks.",
@@ -1473,6 +1791,8 @@
   "organizingAi": "KORRALDAN AI-ga...",
   "pantry": "Sahver",
   "pantryAppBar": "Sahver",
+  "pantryAvailabilityAll": "Kõik valmis!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} sahvris",
   "pantryEditTitle": "Muuda {name}",
   "pantryEmpty": "Tühi sahver",
   "pantryEmptySubtitle": "Lisa tooted, mida soovid kodus hoida",
@@ -1490,7 +1810,10 @@
   "paywallBenefit2Desc": "Kolme loendi piirang puudub",
   "paywallBenefit3Desc": "Kulude jälgimine ja perenimekirjad",
   "paywallBestValue": "PARIM VÄÄRTUS",
+  "paywallBillingAnnual": "{price} aastas. Tühistage igal ajal.",
+  "paywallBillingMonthly": "{price} kuus. Tühistage igal ajal.",
   "paywallCancelAnytime": "Tühistage igal ajal. Ei mingit kohustust.",
+  "paywallContinueFree": "Jätkake tasuta versiooniga",
   "paywallCtaTrialDays": "Alustage tasuta – {days} päeva",
   "paywallCtaUnlock": "Avage PRO",
   "paywallFeatureDescAssistant": "AI korraldab teie loendi automaatselt",
@@ -1531,6 +1854,7 @@
   "paywallPricePerMonth": "Ainult {price} kuus",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Ostmist ei saanud lõpule viia. Proovi uuesti.",
+  "paywallPurchasePending": "Teie makse on kinnitamise ootel. Juurdepääs vabastatakse automaatselt pärast kinnitamist.",
   "paywallRestore": "Taasta",
   "paywallRestoreError": "Taastatavat aktiivset tellimust ei leitud.",
   "paywallSafeCheckout": "Turvaline makse",
@@ -1552,11 +1876,14 @@
   "paywallTrialCta": "Alustage tasuta prooviperioodi",
   "paywallTrialDays": "{days} PÄEVA TASUTA",
   "paywallTrialDisclaimer": "Tühistage igal ajal · Kuni prooviperioodi lõpuni pole tasu",
+  "paywallTrialDisclosureAnnual": "Täna: tasuta. Seejärel {price} aastas {days} päeva pärast. Tühistage igal ajal.",
+  "paywallTrialDisclosureMonthly": "Täna: tasuta. Seejärel {price} kuus {days} päeva pärast. Tühistage igal ajal.",
   "paywallTrialInCard": "Esimesed {days} päeva TASUTA",
   "paywallTrialMonths": "{count,plural, one{{count} KUUD TASUTA} other{{count} KUUD TASUTA}}",
   "paywallTrialSubtitle": "Tühistage igal ajal. Täna ei tasu.",
   "paywallTrialTitle": "Proovige tasuta!",
   "paywallTrialWeeks": "{count,plural, one{{count} NÄDAL TASUTA} other{{count} NÄDALAT TASUTA}}",
+  "paywallWelcomeOfferBadge": "🎁 Tere tulemast pakkumine",
   "positionBarcodeCenter": "Asetage vöötkood keskele",
   "prefAIAssistant": "Isiklik AI abiline",
   "prefCustomThemes": "Kohandatud teemad",
@@ -1597,6 +1924,8 @@
   "recipeCreated": "Retsept loodud!",
   "recipeDeleted": "Retsept kustutatud",
   "recipeImage": "Retsepti pilt",
+  "recipeIngredientSingular": "1 koostisosa",
+  "recipeIngredientsPlural": "{count} koostisained",
   "recipeName": "Retsepti nimi",
   "recipeSaved": "Retsept salvestatud!",
   "recipeSuggestion": "Retsepti soovitus",

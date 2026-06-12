@@ -683,6 +683,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get chatHintBlocked => 'Desbloqueja la IA per xatejar';
 
   @override
+  String get chatEmptySubtitle =>
+      'Demaneu suggeriments d\'articles, receptes o consells per desar per començar.';
+
+  @override
+  String get chatEmptyTitle => 'El teu xat està buit';
+
+  @override
   String chatError(String error) {
     return 'Error en carregar el xat: $error';
   }
@@ -1117,6 +1124,9 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Flexibilitat total';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Oferta de benvinguda';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1895,6 +1905,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get catalogBrowse => 'Navega pel catàleg';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Estàs fora de línia';
 
   @override
@@ -2476,4 +2489,294 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Fruites';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredients';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Tot a punt!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount al rebost';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Pas $current de $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Explica\'ns què estàs planejant. Kipi construeix la llista.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Obteniu articles organitzats en segons.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Això ajuda a Kipi a suggerir articles i quantitats més rellevants.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalitza amb el meu nom';
+
+  @override
+  String get onboardingCreateFirstList => 'Crea la meva primera llista';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Planifica els meus elements bàsics setmanals';
+
+  @override
+  String get onboardingPromptEvent => 'Estic preparant alguna cosa especial';
+
+  @override
+  String get onboardingPromptEssentials => 'Suggereix-me l\'essencial';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Arròs|🫘 Mongetes|🥛 Llet|🥚 Ous|🍞 Pa|🍎 Fruita';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Embenats adhesius|🌡️ Termòmetre|🧴 Antisèptic|😷 Mascaretes facials|🧼 Desinfectant de mans';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomàquets|🧅 Ceba|🧄 All|🥚 Ous|🧀 Formatge|🌿 Herbes fresques';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Tovalloles de paper|🧽 Esponges|🧴 Detergent|🗑️ Bosses d\'escombraries|🧹 Draps de neteja';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Menjar per a mascotes|🦴 Delícies|🧼 Xampú per a mascotes|🧸 Joguina|🧻 Bosses de residus';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Vaig preparar els elements, però no vaig poder desar la llista. Torna-ho a provar per mantenir-lo a l\'aplicació.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'La teva llista està preparada: $count elements organitzats per a tu.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continua';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'La teva primera llista està preparada · $count elements';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continueu amb la versió gratuïta';
+
+  @override
+  String get paywallPurchasePending =>
+      'El vostre pagament està pendent d\'aprovació. L\'accés s\'alliberarà automàticament després de la confirmació.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Avui: sense càrrec. Aleshores $price/any després de $days dies. Cancel·la en qualsevol moment.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Avui: sense càrrec. Aleshores $price/mes després de $days dies. Cancel·la en qualsevol moment.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/any. Cancel·la en qualsevol moment.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/mes. Cancel·la en qualsevol moment.';
+  }
+
+  @override
+  String get obHookTitle => 'Les compres més intel·ligents comencen aquí';
+
+  @override
+  String get obHookSubtitle =>
+      'Llistes impulsades per IA que us estalvien temps i diners en cada viatge.';
+
+  @override
+  String get obHookSocial =>
+      'Milers de compradors d\'arreu del món en la confiança';
+
+  @override
+  String get obHookCta => 'Comença';
+
+  @override
+  String get obQuizHouseholdTitle => 'Per a qui compres?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Només jo';
+
+  @override
+  String get obQuizHouseholdCouple => 'Jo i la meva parella';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Família de 3-4 persones';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Família de 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Amb quina freqüència compres queviures?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Gairebé cada dia';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Un cop a la setmana';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Cada dues setmanes';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Gran transport mensual';
+
+  @override
+  String get obQuizPainTitle => 'Què és el que més et frustra de comprar?';
+
+  @override
+  String get obQuizPainForget => 'Sempre m\'oblido dels articles';
+
+  @override
+  String get obQuizPainOverspend => 'Gasto més del previst';
+
+  @override
+  String get obQuizPainWaste => 'El menjar es malbarata a casa';
+
+  @override
+  String get obQuizPainTime => 'Es necessita massa temps';
+
+  @override
+  String get obQuizSavingsTitle => 'Quant t\'agradaria estalviar mensualment?';
+
+  @override
+  String get obQuizSavingsSmall => 'Una mica, cada bit compta';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Al voltant del 10% de la meva factura de queviures';
+
+  @override
+  String get obQuizSavingsLarge => 'Tant com sigui possible';
+
+  @override
+  String get obQuizMethodTitle => 'Com feu les llistes de la compra avui?';
+
+  @override
+  String get obQuizMethodPaper => 'Bolígraf i paper';
+
+  @override
+  String get obQuizMethodNotes => 'Aplicació de notes';
+
+  @override
+  String get obQuizMethodMemory => 'Ho tinc al cap';
+
+  @override
+  String get obQuizMethodNone => 'No faig llistes';
+
+  @override
+  String get obSocialTitle => 'Estàs en bona companyia';
+
+  @override
+  String get obSocialSubtitle =>
+      'Els compradors com tu ja estan estalviant amb KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Mai més oblido res. L\'IA construeix la meva llista en segons.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Reduïm notablement la nostra factura de queviures durant el primer mes.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Compartir la llista amb la meva parella va acabar amb el nostre caos de compres.';
+
+  @override
+  String get obLoadingTitle => 'Creant el teu pla personalitzat...';
+
+  @override
+  String get obLoadingStepProfile => 'Adaptació a la teva llar';
+
+  @override
+  String get obLoadingStepHabits => 'Sintonitzant la teva rutina de compres';
+
+  @override
+  String get obLoadingStepSavings => 'Optimitza la teva estratègia d\'estalvi';
+
+  @override
+  String get obLoadingStepLists => 'Preparant les teves llistes intel·ligents';
+
+  @override
+  String get obRevealTitle => 'El teu pla està preparat!';
+
+  @override
+  String get obRevealSubtitle =>
+      'A continuació us detallem com us funcionarà KipiList';
+
+  @override
+  String get obRevealSavingsCaption => 'Estalvi previst amb KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Mes $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'La IA crea i organitza les teves llistes';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'La despesa es fa un seguiment del vostre objectiu';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'El seguiment del rebost redueix el malbaratament d\'aliments';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Compartiu en temps real amb la vostra llar';
+
+  @override
+  String get obPaywallTitle => 'Desbloqueja el teu pla';
+
+  @override
+  String get obPaywallRetry => 'Torna-ho a provar';
+
+  @override
+  String get obLoginTitle => 'Guarda el teu pla';
+
+  @override
+  String get obLoginSubtitle =>
+      'Inicieu la sessió perquè les vostres llistes se sincronitzin entre els dispositius';
+
+  @override
+  String get obLoginGoogle => 'Continueu amb Google';
+
+  @override
+  String get obLoginApple => 'Continueu amb Apple';
+
+  @override
+  String get obLoginSkip => 'Ara no';
+
+  @override
+  String get obLoginError =>
+      'No s\'ha pogut iniciar la sessió. Torna-ho a provar o passa per ara.';
 }

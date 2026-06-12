@@ -448,6 +448,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -616,6 +782,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -670,6 +843,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -708,6 +888,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -757,6 +947,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -799,6 +999,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -903,12 +1117,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -985,6 +1222,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1234,6 +1478,8 @@
   "categoryLimitReached": "Naabot na ang limitasyon ng kategorya",
   "categoryName": "Pangalan ng kategorya",
   "categoryNameHint": "Ipasok ang pangalan ng kategorya",
+  "chatEmptySubtitle": "Humingi ng mga mungkahi sa item, mga recipe o mga tip sa pag-save upang makapagsimula.",
+  "chatEmptyTitle": "Walang laman ang iyong chat",
   "chatError": "Error sa pag-load ng chat: {error}",
   "chatHint": "I-type ang iyong mensahe...",
   "chatHintBlocked": "I-unlock ang AI para makipag-chat",
@@ -1530,6 +1776,60 @@
   "noRecipesSavedHint": "Gumawa ng iyong unang custom na recipe sa pamamagitan ng pag-tap sa button sa ibaba.",
   "noTracking": "Walang pagsubaybay",
   "notInformed": "Hindi alam",
+  "obHookCta": "Magsimula",
+  "obHookSocial": "Pinagkakatiwalaan ng libu-libong mamimili sa buong mundo",
+  "obHookSubtitle": "Mga listahang pinapagana ng AI na nakakatipid sa iyo ng oras at pera, bawat biyahe.",
+  "obHookTitle": "Dito nagsisimula ang mas matalinong pamimili",
+  "obLoadingStepHabits": "Pag-tune sa iyong shopping routine",
+  "obLoadingStepLists": "Inihahanda ang iyong mga matalinong listahan",
+  "obLoadingStepProfile": "Pagsasaayos para sa iyong sambahayan",
+  "obLoadingStepSavings": "Pag-optimize ng iyong diskarte sa pagtitipid",
+  "obLoadingTitle": "Bumuo ng iyong personalized na plano...",
+  "obLoginApple": "Magpatuloy sa Apple",
+  "obLoginError": "Nabigo ang pag-sign in. Subukang muli o laktawan sa ngayon.",
+  "obLoginGoogle": "Magpatuloy sa Google",
+  "obLoginSkip": "Hindi ngayon",
+  "obLoginSubtitle": "Mag-sign in para mag-sync ang iyong mga listahan sa mga device",
+  "obLoginTitle": "I-save ang iyong plano",
+  "obPaywallRetry": "Subukan muli",
+  "obPaywallTitle": "I-unlock ang iyong plano",
+  "obQuizFrequencyBiweekly": "Bawat dalawang linggo",
+  "obQuizFrequencyDaily": "Halos araw-araw",
+  "obQuizFrequencyMonthly": "Malaking buwanang paghakot",
+  "obQuizFrequencyTitle": "Gaano ka kadalas namimili ng mga pamilihan?",
+  "obQuizFrequencyWeekly": "Minsan sa isang linggo",
+  "obQuizHouseholdCouple": "Ako at ang aking partner",
+  "obQuizHouseholdFamilyLarge": "Pamilya ng 5+",
+  "obQuizHouseholdFamilySmall": "Pamilya ng 3–4",
+  "obQuizHouseholdSolo": "Ako lang",
+  "obQuizHouseholdTitle": "Kanino ka namimili?",
+  "obQuizMethodMemory": "Iniingatan ko ito sa aking ulo",
+  "obQuizMethodNone": "Hindi ako gumagawa ng mga listahan",
+  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodPaper": "Panulat at papel",
+  "obQuizMethodTitle": "Paano ka gumagawa ng mga listahan ng pamimili ngayon?",
+  "obQuizPainForget": "Lagi kong nakakalimutan ang mga item",
+  "obQuizPainOverspend": "Gumastos ako ng higit sa pinlano",
+  "obQuizPainTime": "Ito ay tumatagal ng masyadong maraming oras",
+  "obQuizPainTitle": "Ano ang pinakanakakadismaya sa iyo tungkol sa pamimili?",
+  "obQuizPainWaste": "Nauubos ang pagkain sa bahay",
+  "obQuizSavingsLarge": "Hangga't maaari",
+  "obQuizSavingsMedium": "Around 10% ng grocery bill ko",
+  "obQuizSavingsSmall": "Kaunti — bawat bit ay mahalaga",
+  "obQuizSavingsTitle": "Magkano ang gusto mong i-save buwan-buwan?",
+  "obRevealFeatureAi": "Binubuo at inaayos ng AI ang iyong mga listahan",
+  "obRevealFeatureBudget": "Sinusubaybayan ang paggastos laban sa iyong layunin",
+  "obRevealFeaturePantry": "Pinutol ng pantry tracking ang basura ng pagkain",
+  "obRevealFeatureShare": "Real-time na pagbabahagi sa iyong sambahayan",
+  "obRevealMonth": "Buwan {n}",
+  "obRevealSavingsCaption": "Mga inaasahang matitipid sa KipiList",
+  "obRevealSubtitle": "Narito kung paano gagana ang KipiList para sa iyo",
+  "obRevealTitle": "Handa na ang iyong plano!",
+  "obSocialQuote1": "Wala na akong nakakalimutan. Binubuo ng AI ang aking listahan sa ilang segundo.",
+  "obSocialQuote2": "Kapansin-pansing pinutol namin ang aming grocery bill sa unang buwan.",
+  "obSocialQuote3": "Ang pagbabahagi ng listahan sa aking kasosyo ay natapos ang aming kaguluhan sa pamimili.",
+  "obSocialSubtitle": "Ang mga mamimiling tulad mo ay nagtitipid na sa KipiList",
+  "obSocialTitle": "Ikaw ay nasa mabuting kumpanya",
   "observations": "Mga obserbasyon",
   "observationsHint": "Anumang karagdagang mga tala?",
   "offlineBanner": "Offline ka",
@@ -1571,7 +1871,16 @@
   "onboardingCommitmentsSubtitle": "Piliin ang iyong mga layunin upang i-personalize ang KipiList",
   "onboardingCommitmentsTitle": "Ano ang mahalaga sa iyo?",
   "onboardingContinueAsGuest": "Magpatuloy bilang panauhin",
+  "onboardingContinueToOffer": "Magpatuloy",
+  "onboardingCreateFirstList": "Lumikha ng aking unang listahan",
+  "onboardingDemoHeadline": "Sabihin sa amin kung ano ang iyong pinaplano. Binuo ni Kipi ang listahan.",
+  "onboardingDemoSubtitle": "Kumuha ng mga organisadong item sa ilang segundo.",
   "onboardingExit": "Lumabas",
+  "onboardingFallbackGrocery": "🍚 Bigas|🫘 Beans|🥛 Gatas|🥚 Itlog|🍞 Tinapay|🍎 Prutas",
+  "onboardingFallbackHome": "🧻 Paper towel|🧽 Sponge|🧴 Detergent|🗑️ Trash bag|🧹 Panlinis na tela",
+  "onboardingFallbackPet": "🥣 Pagkain ng alagang hayop|🦴 Treat|🧼 Pet shampoo|🧸 Laruan|🧻 Mga basurang bag",
+  "onboardingFallbackPharmacy": "🩹 Malagkit na benda|🌡️ Thermometer|🧴 Antiseptic|😷 Mga mask sa mukha|🧼 Hand sanitizer",
+  "onboardingFallbackRecipes": "🍅 Mga kamatis|🧅 Sibuyas|🧄 Bawang|🥚 Itlog|🧀 Keso|🌿 Mga sariwang damo",
   "onboardingGoalFamily": "Ayusin ang pamimili ng pamilya",
   "onboardingGoalFaster": "Mamili nang mas mabilis",
   "onboardingGoalNeverForget": "Huwag kalimutan ang mga item",
@@ -1582,6 +1891,8 @@
   "onboardingGroupFamily": "Pamilya",
   "onboardingGroupSolo": "Ako lang",
   "onboardingHookHeadline": "Huwag kailanman kalimutan muli ang isang grocery item",
+  "onboardingListCreated": "Handa na ang iyong listahan: {count} item na nakaayos para sa iyo.",
+  "onboardingListSaveFailed": "Inihanda ko ang mga item, ngunit hindi ko mai-save ang listahan. Subukang muli upang panatilihin ito sa app.",
   "onboardingLoadingStat1Label": "Naka-catalog ang mga item",
   "onboardingLoadingStat2Label": "Nakatulong ang mga user",
   "onboardingLoadingStat3Label": "Nai-save ang mga minuto",
@@ -1600,9 +1911,11 @@
   "onboardingPainRepeat": "Ang isang paglalakbay ay hindi kailanman sapat",
   "onboardingPainSubtitle": "Maging tapat — aayusin natin ang bawat isa",
   "onboardingPainTitle": "Ano ang pinaka nakakadismaya sa iyo?",
+  "onboardingPaywallListReady": "Handa na ang iyong unang listahan · {count} item",
   "onboardingPersonalizationCategoryTitle": "Ano ang binibili mo?",
   "onboardingPersonalizationCta": "Magpatuloy",
   "onboardingPersonalizationDesc": "Gagamitin namin ito para i-personalize ang iyong mga mungkahi at gawing mas matalino ang pamimili.",
+  "onboardingPersonalizationEffect": "Nakakatulong ito sa Kipi na magmungkahi ng higit pang nauugnay na mga item at dami.",
   "onboardingPersonalizationFoodHint": "hal. Pizza, Sushi, Lasagna...",
   "onboardingPersonalizationFoodLabel": "Ano ang paborito mong pagkain?",
   "onboardingPersonalizationFoodRequired": "Sabihin sa amin ang iyong paboritong pagkain upang magpatuloy",
@@ -1611,8 +1924,13 @@
   "onboardingPersonalizationNameLabel": "pangalan mo",
   "onboardingPersonalizationSkip": "Laktawan sa ngayon",
   "onboardingPersonalizationTitle": "Kilalanin kita",
+  "onboardingPersonalizeWithName": "Isapersonal gamit ang aking pangalan",
   "onboardingPremiumSubtitle": "Sulitin ang iyong mga listahan ng pamimili",
   "onboardingPremiumTitle": "I-unlock ang lahat ng mga tampok",
+  "onboardingProgress": "Hakbang {current} ng {total}",
+  "onboardingPromptEssentials": "Imungkahi ang mga mahahalaga para sa akin",
+  "onboardingPromptEvent": "May inihahanda akong espesyal",
+  "onboardingPromptWeekly": "Planuhin ang aking lingguhang pangangailangan",
   "onboardingRestore": "Ibalik",
   "onboardingRestoreDesc": "Mayroon ka nang subscription? Mag-tap dito para i-restore ito.",
   "onboardingSetupDesc": "Piliin kung paano mo gustong tingnan at gumana ang KipiList para sa iyo.",
@@ -1637,6 +1955,8 @@
   "pantry": "Dispatch",
   "pantryAdvancedMode": "Advanced",
   "pantryAppBar": "Dispatch",
+  "pantryAvailabilityAll": "All set na!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} sa pantry",
   "pantryCompactView": "Compact View",
   "pantryDeficit": "Nawawala ang {amount}{unit}",
   "pantryDeleteItemsContent": "Gusto mo bang tanggalin ang {count} napiling mga item?",
@@ -1677,7 +1997,10 @@
   "paywallBenefit2Desc": "Walang 3-listang limitasyon",
   "paywallBenefit3Desc": "Pagsubaybay sa gastos at mga listahan ng pamilya",
   "paywallBestValue": "PINAKAMAHALAGA",
+  "paywallBillingAnnual": "{price}/taon. Kanselahin anumang oras.",
+  "paywallBillingMonthly": "{price}/buwan. Kanselahin anumang oras.",
   "paywallCancelAnytime": "Kanselahin anumang oras. Walang commitment.",
+  "paywallContinueFree": "Magpatuloy sa libreng bersyon",
   "paywallCtaTrialDays": "Magsimula nang libre — {days} araw",
   "paywallCtaUnlock": "I-unlock ang PRO",
   "paywallFeatureDescAssistant": "Awtomatikong inaayos ng AI ang iyong listahan",
@@ -1718,6 +2041,7 @@
   "paywallPricePerMonth": "{price}/buwan lang",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Hindi makumpleto ang pagbili. Subukan muli.",
+  "paywallPurchasePending": "Ang iyong pagbabayad ay nakabinbin ang pag-apruba. Awtomatikong ilalabas ang access pagkatapos ng kumpirmasyon.",
   "paywallRestore": "Ibalik",
   "paywallRestoreError": "Walang nakitang aktibong subscription para i-restore.",
   "paywallSafeCheckout": "Secure na pagbabayad",
@@ -1739,11 +2063,14 @@
   "paywallTrialCta": "Simulan ang Libreng Pagsubok",
   "paywallTrialDays": "{days} ARAW NA LIBRE",
   "paywallTrialDisclaimer": "Kanselahin anumang oras · Walang bayad hanggang sa matapos ang iyong pagsubok",
+  "paywallTrialDisclosureAnnual": "Ngayon: walang bayad. Pagkatapos ay {price}/taon pagkatapos ng {days} araw. Kanselahin anumang oras.",
+  "paywallTrialDisclosureMonthly": "Ngayon: walang bayad. Pagkatapos ay {price}/buwan pagkatapos ng {days} araw. Kanselahin anumang oras.",
   "paywallTrialInCard": "Unang {days} araw na LIBRE",
   "paywallTrialMonths": "{count,plural, one{{count} BUWAN LIBRE} other{{count} BUWAN LIBRE}}",
   "paywallTrialSubtitle": "Kanselahin anumang oras. Walang bayad ngayong araw.",
   "paywallTrialTitle": "Subukan ang KipiList Pro nang libre sa loob ng 7 araw",
   "paywallTrialWeeks": "{count,plural, one{{count} LIBRENG LINGGO} other{{count} LIBRENG LINGGO}}",
+  "paywallWelcomeOfferBadge": "🎁 Maligayang pagdating alok",
   "positionBarcodeCenter": "Ilagay ang barcode sa gitna",
   "prefAIAssistant": "Personal na AI Assistant",
   "prefCustomThemes": "Mga custom na tema",
@@ -1784,6 +2111,8 @@
   "recipeCreated": "Recipe na gawa na!",
   "recipeDeleted": "Recipe na burado na",
   "recipeImage": "Larawan ng recipe",
+  "recipeIngredientSingular": "1 sangkap",
+  "recipeIngredientsPlural": "{count} sangkap",
   "recipeName": "Pangalan ng recipe",
   "recipeSaved": "Recipe na-save na!",
   "recipeSuggestion": "Mungkahing recipe",

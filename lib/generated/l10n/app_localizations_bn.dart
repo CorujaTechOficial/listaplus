@@ -679,6 +679,13 @@ class AppLocalizationsBn extends AppLocalizations {
   String get chatHintBlocked => 'চ্যাট করতে AI আনলক করুন';
 
   @override
+  String get chatEmptySubtitle =>
+      'শুরু করতে আইটেম পরামর্শ, রেসিপি বা সংরক্ষণ টিপস জন্য জিজ্ঞাসা করুন.';
+
+  @override
+  String get chatEmptyTitle => 'আপনার চ্যাট খালি';
+
+  @override
   String chatError(String error) {
     return 'চ্যাট লোড করতে ত্রুটি: $error';
   }
@@ -1106,6 +1113,9 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'সম্পূর্ণ নমনীয়তা';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 স্বাগতম অফার';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1878,6 +1888,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get catalogBrowse => 'ক্যাটালগ ব্রাউজ করুন';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'আপনি অফলাইনে আছেন';
 
   @override
@@ -2451,6 +2464,292 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'ফল';
+
+  @override
+  String get recipeIngredientSingular => '1টি উপাদান';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count উপাদান';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'সব সেট!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount প্যান্ট্রিতে';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$total এর $current ধাপ';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'আপনি কি পরিকল্পনা করছেন আমাদের বলুন. কিপি তালিকা তৈরি করে।';
+
+  @override
+  String get onboardingDemoSubtitle => 'সেকেন্ডের মধ্যে সংগঠিত আইটেম পান.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'এটি কিপিকে আরও প্রাসঙ্গিক আইটেম এবং পরিমাণের পরামর্শ দিতে সাহায্য করে।';
+
+  @override
+  String get onboardingPersonalizeWithName => 'আমার নামের সাথে ব্যক্তিগত করুন';
+
+  @override
+  String get onboardingCreateFirstList => 'আমার প্রথম তালিকা তৈরি করুন';
+
+  @override
+  String get onboardingPromptWeekly => 'আমার সাপ্তাহিক অপরিহার্য পরিকল্পনা';
+
+  @override
+  String get onboardingPromptEvent => 'আমি বিশেষ কিছু প্রস্তুত করছি';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'আমার জন্য প্রয়োজনীয় জিনিসগুলি সাজেস্ট করুন';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 ভাত|🫘 মটরশুটি|🥛 দুধ|🥚 ডিম|🍞 রুটি';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 আঠালো ব্যান্ডেজ|🌡️ থার্মোমিটার|🧴 অ্যান্টিসেপটিক|😷 ফেস মাস্ক';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 টমেটো|🧅 পেঁয়াজ|🧄 রসুন|🥚 ডিম|🧀 পনির';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 কাগজের তোয়ালে|🧽 স্পঞ্জ|🧴 ডিটারজেন্ট|🗑️ ট্র্যাশ ব্যাগ';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 পোষা প্রাণীর খাবার|🦴 ট্রিটস|🧼 পোষা শ্যাম্পু|🧸 খেলনা';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'আমি আইটেম প্রস্তুত, কিন্তু তালিকা সংরক্ষণ করতে পারে না. এটি অ্যাপে রাখার জন্য আবার চেষ্টা করুন।';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'আপনার তালিকা প্রস্তুত: $count আইটেম আপনার জন্য সংগঠিত।';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'চালিয়ে যান';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'আপনার প্রথম তালিকা প্রস্তুত · $count আইটেম';
+  }
+
+  @override
+  String get paywallContinueFree => 'বিনামূল্যে সংস্করণ সঙ্গে চালিয়ে যান';
+
+  @override
+  String get paywallPurchasePending =>
+      'আপনার পেমেন্ট অনুমোদন মুলতুবি আছে. নিশ্চিতকরণের পরে অ্যাক্সেস স্বয়ংক্রিয়ভাবে প্রকাশিত হবে।';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'আজ: কোন চার্জ নেই। তারপর $price/বছর পর $days দিন। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'আজ: কোন চার্জ নেই। তারপর $days দিন পর $price/মাস। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/বছর। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/মাস। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String get obHookTitle => 'স্মার্ট শপিং এখানে শুরু হয়';
+
+  @override
+  String get obHookSubtitle =>
+      'এআই-চালিত তালিকা যা আপনার সময় এবং অর্থ বাঁচায়, প্রতিটি একক ট্রিপে।';
+
+  @override
+  String get obHookSocial =>
+      'বিশ্বব্যাপী হাজার হাজার ক্রেতাদের দ্বারা বিশ্বস্ত';
+
+  @override
+  String get obHookCta => 'শুরু করুন';
+
+  @override
+  String get obQuizHouseholdTitle => 'আপনি কার জন্য কেনাকাটা করবেন?';
+
+  @override
+  String get obQuizHouseholdSolo => 'শুধু আমি';
+
+  @override
+  String get obQuizHouseholdCouple => 'আমি এবং আমার সঙ্গী';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 জনের পরিবার';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ এর পরিবার';
+
+  @override
+  String get obQuizFrequencyTitle => 'আপনি কত ঘন ঘন মুদির জন্য কেনাকাটা করবেন?';
+
+  @override
+  String get obQuizFrequencyDaily => 'প্রায় প্রতিদিনই';
+
+  @override
+  String get obQuizFrequencyWeekly => 'সপ্তাহে একবার';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'প্রতি দুই সপ্তাহে';
+
+  @override
+  String get obQuizFrequencyMonthly => 'বড় মাসিক যাত্রা';
+
+  @override
+  String get obQuizPainTitle => 'কি কেনাকাটা সম্পর্কে আপনি সবচেয়ে হতাশ?';
+
+  @override
+  String get obQuizPainForget => 'আমি সবসময় আইটেম ভুলে যাই';
+
+  @override
+  String get obQuizPainOverspend => 'আমি পরিকল্পনার চেয়ে বেশি ব্যয় করি';
+
+  @override
+  String get obQuizPainWaste => 'বাড়িতে খাবার নষ্ট হয়ে যায়';
+
+  @override
+  String get obQuizPainTime => 'এটা খুব বেশী সময় লাগে';
+
+  @override
+  String get obQuizSavingsTitle => 'আপনি মাসিক কত সঞ্চয় করতে চান?';
+
+  @override
+  String get obQuizSavingsSmall => 'সামান্য - প্রতিটি বিট গণনা';
+
+  @override
+  String get obQuizSavingsMedium => 'আমার মুদির বিলের প্রায় 10%';
+
+  @override
+  String get obQuizSavingsLarge => 'যতটা সম্ভব';
+
+  @override
+  String get obQuizMethodTitle => 'আপনি আজ কেনাকাটার তালিকা কিভাবে করবেন?';
+
+  @override
+  String get obQuizMethodPaper => 'কলম এবং কাগজ';
+
+  @override
+  String get obQuizMethodNotes => 'নোট অ্যাপ';
+
+  @override
+  String get obQuizMethodMemory => 'আমি মাথায় রাখি';
+
+  @override
+  String get obQuizMethodNone => 'আমি তালিকা তৈরি করি না';
+
+  @override
+  String get obSocialTitle => 'আপনি ভাল কোম্পানির মধ্যে আছেন';
+
+  @override
+  String get obSocialSubtitle =>
+      'আপনার মত ক্রেতারা ইতিমধ্যে কিপিলিস্টের সাথে সঞ্চয় করছেন';
+
+  @override
+  String get obSocialQuote1 =>
+      'আমি আর কিছু ভুলি না। AI সেকেন্ডের মধ্যে আমার তালিকা তৈরি করে।';
+
+  @override
+  String get obSocialQuote2 =>
+      'আমরা প্রথম মাসে আমাদের মুদির বিল উল্লেখযোগ্যভাবে কেটে ফেলেছি।';
+
+  @override
+  String get obSocialQuote3 =>
+      'আমার সঙ্গীর সাথে তালিকা ভাগ করে নেওয়া আমাদের কেনাকাটার বিশৃঙ্খলার অবসান ঘটিয়েছে।';
+
+  @override
+  String get obLoadingTitle => 'আপনার ব্যক্তিগতকৃত পরিকল্পনা তৈরি করা হচ্ছে...';
+
+  @override
+  String get obLoadingStepProfile => 'আপনার পরিবারের জন্য সামঞ্জস্য করা';
+
+  @override
+  String get obLoadingStepHabits => 'আপনার কেনাকাটা রুটিন টিউনিং';
+
+  @override
+  String get obLoadingStepSavings => 'আপনার সঞ্চয় কৌশল অপ্টিমাইজ করা';
+
+  @override
+  String get obLoadingStepLists => 'আপনার স্মার্ট তালিকা প্রস্তুত করা হচ্ছে';
+
+  @override
+  String get obRevealTitle => 'আপনার পরিকল্পনা প্রস্তুত!';
+
+  @override
+  String get obRevealSubtitle =>
+      'কিপিলিস্ট আপনার জন্য কীভাবে কাজ করবে তা এখানে';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList এর সাথে প্রজেক্টেড সেভিংস';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'মাস $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI আপনার তালিকা তৈরি করে এবং সংগঠিত করে';
+
+  @override
+  String get obRevealFeatureBudget => 'আপনার লক্ষ্যের বিপরীতে ট্র্যাক করা খরচ';
+
+  @override
+  String get obRevealFeaturePantry => 'প্যান্ট্রি ট্র্যাকিং খাদ্য বর্জ্য কাটা';
+
+  @override
+  String get obRevealFeatureShare =>
+      'আপনার পরিবারের সাথে রিয়েল-টাইম শেয়ার করা';
+
+  @override
+  String get obPaywallTitle => 'আপনার পরিকল্পনা আনলক করুন';
+
+  @override
+  String get obPaywallRetry => 'আবার চেষ্টা করুন';
+
+  @override
+  String get obLoginTitle => 'আপনার পরিকল্পনা সংরক্ষণ করুন';
+
+  @override
+  String get obLoginSubtitle =>
+      'সাইন ইন করুন যাতে আপনার তালিকাগুলি সমস্ত ডিভাইস জুড়ে সিঙ্ক হয়৷';
+
+  @override
+  String get obLoginGoogle => 'Google এর সাথে চালিয়ে যান';
+
+  @override
+  String get obLoginApple => 'অ্যাপলের সাথে চালিয়ে যান';
+
+  @override
+  String get obLoginSkip => 'এখন না';
+
+  @override
+  String get obLoginError =>
+      'সাইন-ইন ব্যর্থ হয়েছে৷ আবার চেষ্টা করুন বা আপাতত এড়িয়ে যান।';
 }
 
 /// The translations for Bengali Bangla, as used in Bangladesh (`bn_BD`).
@@ -3128,6 +3427,13 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   String get chatHintBlocked => 'চ্যাট করতে AI আনলক করুন';
 
   @override
+  String get chatEmptySubtitle =>
+      'শুরু করতে আইটেম পরামর্শ, রেসিপি বা সংরক্ষণ টিপস জন্য জিজ্ঞাসা করুন.';
+
+  @override
+  String get chatEmptyTitle => 'আপনার চ্যাট খালি';
+
+  @override
   String chatError(String error) {
     return 'চ্যাট লোড করতে ত্রুটি: $error';
   }
@@ -3560,6 +3866,9 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get paywallPackageMonthlyDesc => 'সম্পূর্ণ নমনীয়তা';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 স্বাগতম অফার';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4905,4 +5214,290 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get suggestionFruits => 'ফল';
+
+  @override
+  String get recipeIngredientSingular => '1টি উপাদান';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count উপাদান';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'সব সেট!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount প্যান্ট্রিতে';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$total এর $current ধাপ';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'আপনি কি পরিকল্পনা করছেন আমাদের বলুন. কিপি তালিকা তৈরি করে।';
+
+  @override
+  String get onboardingDemoSubtitle => 'সেকেন্ডের মধ্যে সংগঠিত আইটেম পান.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'এটি কিপিকে আরও প্রাসঙ্গিক আইটেম এবং পরিমাণের পরামর্শ দিতে সাহায্য করে।';
+
+  @override
+  String get onboardingPersonalizeWithName => 'আমার নামের সাথে ব্যক্তিগত করুন';
+
+  @override
+  String get onboardingCreateFirstList => 'আমার প্রথম তালিকা তৈরি করুন';
+
+  @override
+  String get onboardingPromptWeekly => 'আমার সাপ্তাহিক অপরিহার্য পরিকল্পনা';
+
+  @override
+  String get onboardingPromptEvent => 'আমি বিশেষ কিছু প্রস্তুত করছি';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'আমার জন্য প্রয়োজনীয় জিনিসগুলি সাজেস্ট করুন';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 ভাত|🫘 মটরশুটি|🥛 দুধ|🥚 ডিম|🍞 রুটি';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 আঠালো ব্যান্ডেজ|🌡️ থার্মোমিটার|🧴 অ্যান্টিসেপটিক|😷 ফেস মাস্ক';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 টমেটো|🧅 পেঁয়াজ|🧄 রসুন|🥚 ডিম|🧀 পনির';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 কাগজের তোয়ালে|🧽 স্পঞ্জ|🧴 ডিটারজেন্ট|🗑️ ট্র্যাশ ব্যাগ';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 পোষা প্রাণীর খাবার|🦴 ট্রিটস|🧼 পোষা শ্যাম্পু|🧸 খেলনা';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'আমি আইটেম প্রস্তুত, কিন্তু তালিকা সংরক্ষণ করতে পারে না. এটি অ্যাপে রাখার জন্য আবার চেষ্টা করুন।';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'আপনার তালিকা প্রস্তুত: $count আইটেম আপনার জন্য সংগঠিত।';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'চালিয়ে যান';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'আপনার প্রথম তালিকা প্রস্তুত · $count আইটেম';
+  }
+
+  @override
+  String get paywallContinueFree => 'বিনামূল্যে সংস্করণ সঙ্গে চালিয়ে যান';
+
+  @override
+  String get paywallPurchasePending =>
+      'আপনার পেমেন্ট অনুমোদন মুলতুবি আছে. নিশ্চিতকরণের পরে অ্যাক্সেস স্বয়ংক্রিয়ভাবে প্রকাশিত হবে।';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'আজ: কোন চার্জ নেই। তারপর $price/বছর পর $days দিন। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'আজ: কোন চার্জ নেই। তারপর $days দিন পর $price/মাস। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/বছর। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/মাস। যেকোনো সময় বাতিল করুন।';
+  }
+
+  @override
+  String get obHookTitle => 'স্মার্ট শপিং এখানে শুরু হয়';
+
+  @override
+  String get obHookSubtitle =>
+      'এআই-চালিত তালিকা যা আপনার সময় এবং অর্থ বাঁচায়, প্রতিটি একক ট্রিপে।';
+
+  @override
+  String get obHookSocial =>
+      'বিশ্বব্যাপী হাজার হাজার ক্রেতাদের দ্বারা বিশ্বস্ত';
+
+  @override
+  String get obHookCta => 'শুরু করুন';
+
+  @override
+  String get obQuizHouseholdTitle => 'আপনি কার জন্য কেনাকাটা করবেন?';
+
+  @override
+  String get obQuizHouseholdSolo => 'শুধু আমি';
+
+  @override
+  String get obQuizHouseholdCouple => 'আমি এবং আমার সঙ্গী';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 জনের পরিবার';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ এর পরিবার';
+
+  @override
+  String get obQuizFrequencyTitle => 'আপনি কত ঘন ঘন মুদির জন্য কেনাকাটা করবেন?';
+
+  @override
+  String get obQuizFrequencyDaily => 'প্রায় প্রতিদিনই';
+
+  @override
+  String get obQuizFrequencyWeekly => 'সপ্তাহে একবার';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'প্রতি দুই সপ্তাহে';
+
+  @override
+  String get obQuizFrequencyMonthly => 'বড় মাসিক যাত্রা';
+
+  @override
+  String get obQuizPainTitle => 'কি কেনাকাটা সম্পর্কে আপনি সবচেয়ে হতাশ?';
+
+  @override
+  String get obQuizPainForget => 'আমি সবসময় আইটেম ভুলে যাই';
+
+  @override
+  String get obQuizPainOverspend => 'আমি পরিকল্পনার চেয়ে বেশি ব্যয় করি';
+
+  @override
+  String get obQuizPainWaste => 'বাড়িতে খাবার নষ্ট হয়ে যায়';
+
+  @override
+  String get obQuizPainTime => 'এটা খুব বেশী সময় লাগে';
+
+  @override
+  String get obQuizSavingsTitle => 'আপনি মাসিক কত সঞ্চয় করতে চান?';
+
+  @override
+  String get obQuizSavingsSmall => 'সামান্য - প্রতিটি বিট গণনা';
+
+  @override
+  String get obQuizSavingsMedium => 'আমার মুদির বিলের প্রায় 10%';
+
+  @override
+  String get obQuizSavingsLarge => 'যতটা সম্ভব';
+
+  @override
+  String get obQuizMethodTitle => 'আপনি আজ কেনাকাটার তালিকা কিভাবে করবেন?';
+
+  @override
+  String get obQuizMethodPaper => 'কলম এবং কাগজ';
+
+  @override
+  String get obQuizMethodNotes => 'নোট অ্যাপ';
+
+  @override
+  String get obQuizMethodMemory => 'আমি মাথায় রাখি';
+
+  @override
+  String get obQuizMethodNone => 'আমি তালিকা তৈরি করি না';
+
+  @override
+  String get obSocialTitle => 'আপনি ভাল কোম্পানির মধ্যে আছেন';
+
+  @override
+  String get obSocialSubtitle =>
+      'আপনার মত ক্রেতারা ইতিমধ্যে কিপিলিস্টের সাথে সঞ্চয় করছেন';
+
+  @override
+  String get obSocialQuote1 =>
+      'আমি আর কিছু ভুলি না। AI সেকেন্ডের মধ্যে আমার তালিকা তৈরি করে।';
+
+  @override
+  String get obSocialQuote2 =>
+      'আমরা প্রথম মাসে আমাদের মুদির বিল উল্লেখযোগ্যভাবে কেটে ফেলেছি।';
+
+  @override
+  String get obSocialQuote3 =>
+      'আমার সঙ্গীর সাথে তালিকা ভাগ করে নেওয়া আমাদের কেনাকাটার বিশৃঙ্খলার অবসান ঘটিয়েছে।';
+
+  @override
+  String get obLoadingTitle => 'আপনার ব্যক্তিগতকৃত পরিকল্পনা তৈরি করা হচ্ছে...';
+
+  @override
+  String get obLoadingStepProfile => 'আপনার পরিবারের জন্য সামঞ্জস্য করা';
+
+  @override
+  String get obLoadingStepHabits => 'আপনার কেনাকাটা রুটিন টিউনিং';
+
+  @override
+  String get obLoadingStepSavings => 'আপনার সঞ্চয় কৌশল অপ্টিমাইজ করা';
+
+  @override
+  String get obLoadingStepLists => 'আপনার স্মার্ট তালিকা প্রস্তুত করা হচ্ছে';
+
+  @override
+  String get obRevealTitle => 'আপনার পরিকল্পনা প্রস্তুত!';
+
+  @override
+  String get obRevealSubtitle =>
+      'কিপিলিস্ট আপনার জন্য কীভাবে কাজ করবে তা এখানে';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList এর সাথে প্রজেক্টেড সেভিংস';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'মাস $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI আপনার তালিকা তৈরি করে এবং সংগঠিত করে';
+
+  @override
+  String get obRevealFeatureBudget => 'আপনার লক্ষ্যের বিপরীতে ট্র্যাক করা খরচ';
+
+  @override
+  String get obRevealFeaturePantry => 'প্যান্ট্রি ট্র্যাকিং খাদ্য বর্জ্য কাটা';
+
+  @override
+  String get obRevealFeatureShare =>
+      'আপনার পরিবারের সাথে রিয়েল-টাইম শেয়ার করা';
+
+  @override
+  String get obPaywallTitle => 'আপনার পরিকল্পনা আনলক করুন';
+
+  @override
+  String get obPaywallRetry => 'আবার চেষ্টা করুন';
+
+  @override
+  String get obLoginTitle => 'আপনার পরিকল্পনা সংরক্ষণ করুন';
+
+  @override
+  String get obLoginSubtitle =>
+      'সাইন ইন করুন যাতে আপনার তালিকাগুলি সমস্ত ডিভাইস জুড়ে সিঙ্ক হয়৷';
+
+  @override
+  String get obLoginGoogle => 'Google এর সাথে চালিয়ে যান';
+
+  @override
+  String get obLoginApple => 'অ্যাপলের সাথে চালিয়ে যান';
+
+  @override
+  String get obLoginSkip => 'এখন না';
+
+  @override
+  String get obLoginError =>
+      'সাইন-ইন ব্যর্থ হয়েছে৷ আবার চেষ্টা করুন বা আপাতত এড়িয়ে যান।';
 }

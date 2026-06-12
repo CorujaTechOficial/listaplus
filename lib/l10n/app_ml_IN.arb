@@ -472,6 +472,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -640,6 +806,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -694,6 +867,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -732,6 +912,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -781,6 +971,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -823,6 +1023,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -927,12 +1141,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -1009,6 +1246,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1258,6 +1502,8 @@
   "categoryLimitReached": "വിഭാഗ പരിധി എത്തി",
   "categoryName": "വിഭാഗത്തിൻ്റെ പേര്",
   "categoryNameHint": "വിഭാഗത്തിൻ്റെ പേര് നൽകുക",
+  "chatEmptySubtitle": "ആരംഭിക്കുന്നതിന് ഇന നിർദ്ദേശങ്ങൾ, പാചകക്കുറിപ്പുകൾ അല്ലെങ്കിൽ സംരക്ഷിക്കൽ നുറുങ്ങുകൾ എന്നിവ ആവശ്യപ്പെടുക.",
+  "chatEmptyTitle": "നിങ്ങളുടെ ചാറ്റ് ശൂന്യമാണ്",
   "chatError": "ചാറ്റ് ലോഡ് ചെയ്യുന്നതിൽ പിശക്: {error}",
   "chatHint": "നിങ്ങളുടെ സന്ദേശം ടൈപ്പ് ചെയ്യുക...",
   "chatHintBlocked": "ചാറ്റ് ചെയ്യാൻ AI അൺലോക്ക് ചെയ്യുക",
@@ -1554,6 +1800,60 @@
   "noRecipesSavedHint": "താഴെയുള്ള ബട്ടൺ അമർത്തി നിങ്ങളുടെ ആദ്യത്തെ റെസിപ്പി നിർമ്മിക്കുക.",
   "noTracking": "ട്രാക്കിംഗ് ഇല്ല",
   "notInformed": "അറിയിച്ചിട്ടില്ല",
+  "obHookCta": "ആരംഭിക്കുക",
+  "obHookSocial": "ലോകമെമ്പാടുമുള്ള ആയിരക്കണക്കിന് ഷോപ്പർമാർ വിശ്വസിക്കുന്നു",
+  "obHookSubtitle": "ഓരോ യാത്രയിലും നിങ്ങളുടെ സമയവും പണവും ലാഭിക്കുന്ന AI- പവർ ലിസ്‌റ്റുകൾ.",
+  "obHookTitle": "മികച്ച ഷോപ്പിംഗ് ഇവിടെ ആരംഭിക്കുന്നു",
+  "obLoadingStepHabits": "നിങ്ങളുടെ ഷോപ്പിംഗ് ദിനചര്യയിലേക്ക് ട്യൂൺ ചെയ്യുന്നു",
+  "obLoadingStepLists": "നിങ്ങളുടെ സ്‌മാർട്ട് ലിസ്റ്റുകൾ തയ്യാറാക്കുന്നു",
+  "obLoadingStepProfile": "നിങ്ങളുടെ വീട്ടിലേക്ക് ക്രമീകരിക്കുന്നു",
+  "obLoadingStepSavings": "നിങ്ങളുടെ സമ്പാദ്യ തന്ത്രം ഒപ്റ്റിമൈസ് ചെയ്യുക",
+  "obLoadingTitle": "നിങ്ങളുടെ വ്യക്തിഗതമാക്കിയ പ്ലാൻ നിർമ്മിക്കുന്നു...",
+  "obLoginApple": "ആപ്പിളിനൊപ്പം തുടരുക",
+  "obLoginError": "സൈൻ ഇൻ പരാജയപ്പെട്ടു. വീണ്ടും ശ്രമിക്കുക അല്ലെങ്കിൽ ഇപ്പോൾ ഒഴിവാക്കുക.",
+  "obLoginGoogle": "Google-ൽ തുടരുക",
+  "obLoginSkip": "ഇപ്പോൾ വേണ്ട",
+  "obLoginSubtitle": "നിങ്ങളുടെ ലിസ്റ്റുകൾ ഉപകരണങ്ങളിലുടനീളം സമന്വയിപ്പിക്കുന്നതിന് സൈൻ ഇൻ ചെയ്യുക",
+  "obLoginTitle": "നിങ്ങളുടെ പ്ലാൻ സംരക്ഷിക്കുക",
+  "obPaywallRetry": "വീണ്ടും ശ്രമിക്കുക",
+  "obPaywallTitle": "നിങ്ങളുടെ പ്ലാൻ അൺലോക്ക് ചെയ്യുക",
+  "obQuizFrequencyBiweekly": "ഓരോ രണ്ടാഴ്ച കൂടുമ്പോഴും",
+  "obQuizFrequencyDaily": "മിക്കവാറും എല്ലാ ദിവസവും",
+  "obQuizFrequencyMonthly": "വലിയ പ്രതിമാസ വേട്ട",
+  "obQuizFrequencyTitle": "നിങ്ങൾ എത്ര തവണ പലചരക്ക് സാധനങ്ങൾ വാങ്ങുന്നു?",
+  "obQuizFrequencyWeekly": "ആഴ്ചയിൽ ഒരിക്കൽ",
+  "obQuizHouseholdCouple": "ഞാനും എൻ്റെ പങ്കാളിയും",
+  "obQuizHouseholdFamilyLarge": "5+ പേരുള്ള കുടുംബം",
+  "obQuizHouseholdFamilySmall": "3-4 പേരടങ്ങുന്ന കുടുംബം",
+  "obQuizHouseholdSolo": "ഞാൻ മാത്രം",
+  "obQuizHouseholdTitle": "നിങ്ങൾ ആർക്കുവേണ്ടിയാണ് ഷോപ്പിംഗ് നടത്തുന്നത്?",
+  "obQuizMethodMemory": "ഞാൻ അത് എൻ്റെ തലയിൽ സൂക്ഷിക്കുന്നു",
+  "obQuizMethodNone": "ഞാൻ ലിസ്റ്റുകൾ ഉണ്ടാക്കാറില്ല",
+  "obQuizMethodNotes": "കുറിപ്പുകൾ ആപ്പ്",
+  "obQuizMethodPaper": "പേനയും പേപ്പറും",
+  "obQuizMethodTitle": "ഇന്ന് നിങ്ങൾ എങ്ങനെ ഷോപ്പിംഗ് ലിസ്റ്റുകൾ ഉണ്ടാക്കും?",
+  "obQuizPainForget": "ഞാൻ എപ്പോഴും ഇനങ്ങൾ മറക്കുന്നു",
+  "obQuizPainOverspend": "ഞാൻ ആസൂത്രണം ചെയ്തതിലും കൂടുതൽ ചെലവഴിക്കുന്നു",
+  "obQuizPainTime": "ഇത് വളരെയധികം സമയമെടുക്കുന്നു",
+  "obQuizPainTitle": "ഷോപ്പിംഗിനെക്കുറിച്ച് നിങ്ങളെ ഏറ്റവും നിരാശപ്പെടുത്തുന്നതെന്താണ്?",
+  "obQuizPainWaste": "വീട്ടിൽ ഭക്ഷണം പാഴായി പോകുന്നു",
+  "obQuizSavingsLarge": "കഴിയുന്നത്ര",
+  "obQuizSavingsMedium": "എൻ്റെ പലചരക്ക് ബില്ലിൻ്റെ ഏകദേശം 10%",
+  "obQuizSavingsSmall": "അൽപ്പം - ഓരോ ബിറ്റും കണക്കിലെടുക്കുന്നു",
+  "obQuizSavingsTitle": "പ്രതിമാസം എത്ര തുക ലാഭിക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നു?",
+  "obRevealFeatureAi": "AI നിങ്ങളുടെ ലിസ്റ്റുകൾ നിർമ്മിക്കുകയും ക്രമീകരിക്കുകയും ചെയ്യുന്നു",
+  "obRevealFeatureBudget": "നിങ്ങളുടെ ലക്ഷ്യത്തിനെതിരായ ചെലവുകൾ ട്രാക്ക് ചെയ്തു",
+  "obRevealFeaturePantry": "പാൻട്രി ട്രാക്കിംഗ് ഭക്ഷണ മാലിന്യങ്ങൾ കുറയ്ക്കുന്നു",
+  "obRevealFeatureShare": "നിങ്ങളുടെ വീട്ടുകാരുമായി തത്സമയ പങ്കിടൽ",
+  "obRevealMonth": "മാസം {n}",
+  "obRevealSavingsCaption": "കിപിലിസ്‌റ്റ് ഉപയോഗിച്ച് പ്രൊജക്‌റ്റ് ചെയ്‌ത സമ്പാദ്യം",
+  "obRevealSubtitle": "കിപ്പിലിസ്റ്റ് നിങ്ങൾക്കായി എങ്ങനെ പ്രവർത്തിക്കുമെന്ന് ഇതാ",
+  "obRevealTitle": "നിങ്ങളുടെ പ്ലാൻ തയ്യാറാണ്!",
+  "obSocialQuote1": "ഞാൻ ഇനി ഒന്നും മറക്കില്ല. AI എൻ്റെ ലിസ്റ്റ് നിമിഷങ്ങൾക്കുള്ളിൽ നിർമ്മിക്കുന്നു.",
+  "obSocialQuote2": "ആദ്യ മാസത്തിൽ തന്നെ ഞങ്ങളുടെ പലചരക്ക് ബിൽ ഞങ്ങൾ വെട്ടിക്കുറച്ചു.",
+  "obSocialQuote3": "എൻ്റെ പങ്കാളിയുമായി ലിസ്റ്റ് പങ്കിടുന്നത് ഞങ്ങളുടെ ഷോപ്പിംഗ് കുഴപ്പങ്ങൾ അവസാനിപ്പിച്ചു.",
+  "obSocialSubtitle": "നിങ്ങളെപ്പോലുള്ള ഷോപ്പർമാർ കിപ്പിലിസ്‌റ്റിൽ ഇതിനകം തന്നെ സേവ് ചെയ്യുന്നു",
+  "obSocialTitle": "നിങ്ങൾ നല്ല കമ്പനിയിലാണ്",
   "observations": "നിരീക്ഷണങ്ങൾ",
   "observationsHint": "എന്തെങ്കിലും അധിക കുറിപ്പുകളുണ്ടോ?",
   "offlineBanner": "നിങ്ങൾ ഓഫ്‌ലൈനാണ്",
@@ -1595,7 +1895,16 @@
   "onboardingCommitmentsSubtitle": "KipiList വ്യക്തിപരമാക്കാൻ നിങ്ങളുടെ ലക്ഷ്യങ്ങൾ തിരഞ്ഞെടുക്കുക",
   "onboardingCommitmentsTitle": "നിങ്ങൾക്ക് എന്താണ് പ്രധാനം?",
   "onboardingContinueAsGuest": "അതിഥിയായി തുടരുക",
+  "onboardingContinueToOffer": "തുടരുക",
+  "onboardingCreateFirstList": "എൻ്റെ ആദ്യ ലിസ്റ്റ് സൃഷ്ടിക്കുക",
+  "onboardingDemoHeadline": "നിങ്ങൾ എന്താണ് പ്ലാൻ ചെയ്യുന്നതെന്ന് ഞങ്ങളോട് പറയുക. കിപി പട്ടിക നിർമ്മിക്കുന്നു.",
+  "onboardingDemoSubtitle": "നിമിഷങ്ങൾക്കുള്ളിൽ ക്രമീകരിച്ച ഇനങ്ങൾ നേടുക.",
   "onboardingExit": "പുറത്ത്",
+  "onboardingFallbackGrocery": "🍚 അരി|🫘 ബീൻസ്|🥛 പാൽ|🥚 മുട്ട|🍞 ബ്രെഡ്|🍎 പഴം",
+  "onboardingFallbackHome": "🧻 പേപ്പർ ടവലുകൾ|🧽 സ്പോഞ്ചുകൾ|🧴 ഡിറ്റർജൻ്റ്|🗑️ ട്രാഷ് ബാഗുകൾ|🧹 തുണികൾ വൃത്തിയാക്കൽ",
+  "onboardingFallbackPet": "🥣 വളർത്തുമൃഗങ്ങളുടെ ഭക്ഷണം|🦴 ട്രീറ്റുകൾ|🧼 വളർത്തുമൃഗങ്ങളുടെ ഷാംപൂ|🧸 കളിപ്പാട്ടം|🧻 വേസ്റ്റ് ബാഗുകൾ",
+  "onboardingFallbackPharmacy": "🩹 ഒട്ടിക്കുന്ന ബാൻഡേജുകൾ|🌡️ തെർമോമീറ്റർ|🧴 ആൻ്റിസെപ്റ്റിക്|😷 മുഖംമൂടികൾ|🧼 ഹാൻഡ് സാനിറ്റൈസർ",
+  "onboardingFallbackRecipes": "🍅 തക്കാളി|🧅 ഉള്ളി|🧄 വെളുത്തുള്ളി|🥚 മുട്ട|🧀 ചീസ്|🌿 പുതിയ പച്ചമരുന്നുകൾ",
   "onboardingGoalFamily": "കുടുംബ ഷോപ്പിംഗ് സംഘടിപ്പിക്കുക",
   "onboardingGoalFaster": "വേഗത്തിൽ ഷോപ്പുചെയ്യുക",
   "onboardingGoalNeverForget": "ഇനങ്ങൾ ഒരിക്കലും മറക്കരുത്",
@@ -1606,6 +1915,8 @@
   "onboardingGroupFamily": "കുടുംബം",
   "onboardingGroupSolo": "ഞാൻ മാത്രം",
   "onboardingHookHeadline": "ഒരു പലചരക്ക് സാധനം ഇനി ഒരിക്കലും മറക്കരുത്",
+  "onboardingListCreated": "നിങ്ങളുടെ ലിസ്റ്റ് തയ്യാറാണ്: {count} ഇനങ്ങൾ നിങ്ങൾക്കായി സംഘടിപ്പിച്ചു.",
+  "onboardingListSaveFailed": "ഞാൻ ഇനങ്ങൾ തയ്യാറാക്കി, പക്ഷേ ലിസ്റ്റ് സംരക്ഷിക്കാൻ കഴിഞ്ഞില്ല. ഇത് ആപ്പിൽ സൂക്ഷിക്കാൻ വീണ്ടും ശ്രമിക്കുക.",
   "onboardingLoadingStat1Label": "ഇനങ്ങൾ കാറ്റലോഗ് ചെയ്തു",
   "onboardingLoadingStat2Label": "ഉപയോക്താക്കൾ സഹായിച്ചു",
   "onboardingLoadingStat3Label": "മിനിറ്റുകൾ ലാഭിച്ചു",
@@ -1624,9 +1935,11 @@
   "onboardingPainRepeat": "ഒരു യാത്ര ഒരിക്കലും മതിയാകില്ല",
   "onboardingPainSubtitle": "സത്യസന്ധത പുലർത്തുക - ഞങ്ങൾ ഓരോന്നും ശരിയാക്കും",
   "onboardingPainTitle": "നിങ്ങളെ ഏറ്റവും നിരാശപ്പെടുത്തുന്നത് എന്താണ്?",
+  "onboardingPaywallListReady": "നിങ്ങളുടെ ആദ്യ ലിസ്റ്റ് തയ്യാറാണ് · {count} ഇനങ്ങൾ",
   "onboardingPersonalizationCategoryTitle": "നിങ്ങൾ എന്തിനാണ് ഷോപ്പിംഗ് നടത്തുന്നത്?",
   "onboardingPersonalizationCta": "തുടരുക",
   "onboardingPersonalizationDesc": "നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ വ്യക്തിപരമാക്കാനും ഷോപ്പിംഗ് മികച്ചതാക്കാനും ഞങ്ങൾ ഇത് ഉപയോഗിക്കും.",
+  "onboardingPersonalizationEffect": "കൂടുതൽ പ്രസക്തമായ ഇനങ്ങളും അളവുകളും നിർദ്ദേശിക്കാൻ ഇത് കിപിയെ സഹായിക്കുന്നു.",
   "onboardingPersonalizationFoodHint": "ഉദാ. പിസ്സ, സുഷി, ലസാഗ്ന...",
   "onboardingPersonalizationFoodLabel": "നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം ഏതാണ്?",
   "onboardingPersonalizationFoodRequired": "തുടരാൻ നിങ്ങളുടെ പ്രിയപ്പെട്ട ഭക്ഷണം ഞങ്ങളോട് പറയുക",
@@ -1635,8 +1948,13 @@
   "onboardingPersonalizationNameLabel": "നിങ്ങളുടെ പേര്",
   "onboardingPersonalizationSkip": "തൽക്കാലം ഒഴിവാക്കുക",
   "onboardingPersonalizationTitle": "നമുക്ക് നിങ്ങളെ പരിചയപ്പെടാം",
+  "onboardingPersonalizeWithName": "എൻ്റെ പേര് വ്യക്തിഗതമാക്കുക",
   "onboardingPremiumSubtitle": "നിങ്ങളുടെ ഷോപ്പിംഗ് ലിസ്റ്റുകൾ പരമാവധി പ്രയോജനപ്പെടുത്തുക",
   "onboardingPremiumTitle": "എല്ലാ സവിശേഷതകളും അൺലോക്ക് ചെയ്യുക",
+  "onboardingProgress": "ഘട്ടം {current} / {total}",
+  "onboardingPromptEssentials": "എനിക്ക് ആവശ്യമായ കാര്യങ്ങൾ നിർദ്ദേശിക്കുക",
+  "onboardingPromptEvent": "ഞാൻ എന്തെങ്കിലും പ്രത്യേകം തയ്യാറാക്കുകയാണ്",
+  "onboardingPromptWeekly": "എൻ്റെ പ്രതിവാര അവശ്യ കാര്യങ്ങൾ ആസൂത്രണം ചെയ്യുക",
   "onboardingRestore": "പുനഃസ്ഥാപിക്കുക",
   "onboardingRestoreDesc": "ഇതിനകം ഒരു സബ്സ്ക്രിപ്ഷൻ ഉണ്ടോ? അത് പുനഃസ്ഥാപിക്കാൻ ഇവിടെ ടാപ്പ് ചെയ്യുക.",
   "onboardingSetupDesc": "KipiList എങ്ങനെ കാണണമെന്നും നിങ്ങൾക്കായി പ്രവർത്തിക്കണമെന്നും നിങ്ങൾ ആഗ്രഹിക്കുന്നുവെന്ന് തിരഞ്ഞെടുക്കുക.",
@@ -1661,6 +1979,8 @@
   "pantry": "പാന്ട്രി",
   "pantryAdvancedMode": "വിപുലമായ",
   "pantryAppBar": "പാന്ട്രി",
+  "pantryAvailabilityAll": "എല്ലാം തയ്യാറായി!",
+  "pantryAvailabilityCount": "കലവറയിൽ {availableCount}/{totalCount}",
   "pantryCompactView": "ഒതുക്കമുള്ള കാഴ്ച",
   "pantryDeficit": "{amount}{unit} കാണുന്നില്ല",
   "pantryDeleteItemsContent": "നിങ്ങൾക്ക് {count} തിരഞ്ഞെടുത്ത ഇനങ്ങൾ ഇല്ലാതാക്കണോ?",
@@ -1701,7 +2021,10 @@
   "paywallBenefit2Desc": "3-ലിസ്റ്റ് പരിധി ഇല്ല",
   "paywallBenefit3Desc": "ചെലവ് ട്രാക്കിംഗും കുടുംബ ലിസ്റ്റുകളും",
   "paywallBestValue": "മികച്ച മൂല്യം",
+  "paywallBillingAnnual": "{price}/വർഷം. എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക.",
+  "paywallBillingMonthly": "{price}/മാസം. എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക.",
   "paywallCancelAnytime": "എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക. പ്രതിബദ്ധതയില്ല.",
+  "paywallContinueFree": "സൗജന്യ പതിപ്പിൽ തുടരുക",
   "paywallCtaTrialDays": "സൗജന്യമായി ആരംഭിക്കുക — {days} ദിവസം",
   "paywallCtaUnlock": "PRO അൺലോക്ക് ചെയ്യുക",
   "paywallFeatureDescAssistant": "AI നിങ്ങളുടെ ലിസ്റ്റ് സ്വയമേവ ക്രമീകരിക്കുന്നു",
@@ -1742,6 +2065,7 @@
   "paywallPricePerMonth": "{price}/മാസം മാത്രം",
   "paywallProLabel": "പി.ആർ.ഒ",
   "paywallPurchaseError": "വാങ്ങൽ പൂർത്തിയാക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക.",
+  "paywallPurchasePending": "നിങ്ങളുടെ പേയ്‌മെൻ്റ് അംഗീകാരം തീർച്ചപ്പെടുത്തിയിട്ടില്ല. സ്ഥിരീകരണത്തിന് ശേഷം ആക്സസ് സ്വയമേവ റിലീസ് ചെയ്യും.",
   "paywallRestore": "പുനഃസ്ഥാപിക്കുക",
   "paywallRestoreError": "പുനഃസ്ഥാപിക്കാൻ സജീവമായ സബ്‌സ്‌ക്രിപ്‌ഷനൊന്നും കണ്ടെത്തിയില്ല.",
   "paywallSafeCheckout": "സുരക്ഷിത പേയ്മെൻ്റ്",
@@ -1763,11 +2087,14 @@
   "paywallTrialCta": "സൗജന്യ ട്രയൽ ആരംഭിക്കുക",
   "paywallTrialDays": "{days} ദിവസങ്ങൾ സൗജന്യം",
   "paywallTrialDisclaimer": "എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക · നിങ്ങളുടെ ട്രയൽ അവസാനിക്കുന്നത് വരെ നിരക്ക് ഈടാക്കില്ല",
+  "paywallTrialDisclosureAnnual": "ഇന്ന്: ചാർജ് ഇല്ല. തുടർന്ന് {price}/വർഷം {days} ദിവസങ്ങൾക്ക് ശേഷം. എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക.",
+  "paywallTrialDisclosureMonthly": "ഇന്ന്: ചാർജ് ഇല്ല. തുടർന്ന് {days} ദിവസങ്ങൾക്ക് ശേഷം {price}/മാസം. എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക.",
   "paywallTrialInCard": "ആദ്യ {days} ദിവസം സൗജന്യം",
   "paywallTrialMonths": "{count,plural, one{{count} മാസം സൗജന്യം} other{{count} മാസം സൗജന്യം}}",
   "paywallTrialSubtitle": "എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കുക. ഇന്ന് നിരക്കില്ല.",
   "paywallTrialTitle": "കിപ്പിലിസ്റ്റ് പ്രോ 7 ദിവസത്തേക്ക് സൗജന്യമായി പരീക്ഷിക്കുക",
   "paywallTrialWeeks": "{count,plural, one{{count} ആഴ്ച സൗജന്യം} other{{count} ആഴ്ചകൾ സൗജന്യം}}",
+  "paywallWelcomeOfferBadge": "🎁 സ്വാഗത ഓഫർ",
   "positionBarcodeCenter": "ബാർകോഡ് മധ്യത്തിൽ സ്ഥാപിക്കുക",
   "prefAIAssistant": "വ്യക്തിഗത AI അസിസ്റ്റന്റ്",
   "prefCustomThemes": "ഇഷ്ടാനുസൃത തീമുകൾ",
@@ -1808,6 +2135,8 @@
   "recipeCreated": "റെസിപ്പി തയ്യാറാക്കി!",
   "recipeDeleted": "റെസിപ്പി ഡിലീറ്റ് ചെയ്തു",
   "recipeImage": "റെസിപ്പിയുടെ ചിത്രം",
+  "recipeIngredientSingular": "1 ചേരുവ",
+  "recipeIngredientsPlural": "{count} ചേരുവകൾ",
   "recipeName": "റെസിപ്പിയുടെ പേര്",
   "recipeSaved": "റെസിപ്പി സേവ് ചെയ്തു!",
   "recipeSuggestion": "പാചകക്കുറിപ്പ് നിർദ്ദേശം",

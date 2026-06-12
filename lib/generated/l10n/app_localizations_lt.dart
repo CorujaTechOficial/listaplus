@@ -680,6 +680,13 @@ class AppLocalizationsLt extends AppLocalizations {
   String get chatHintBlocked => 'Atrakinkite AI, kad galėtumėte kalbėtis';
 
   @override
+  String get chatEmptySubtitle =>
+      'Norėdami pradėti, paprašykite elementų pasiūlymų, receptų ar taupymo patarimų.';
+
+  @override
+  String get chatEmptyTitle => 'Jūsų pokalbis tuščias';
+
+  @override
   String chatError(String error) {
     return 'Klaida įkeliant pokalbį: $error';
   }
@@ -1107,6 +1114,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Visiškas lankstumas';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Sveikas pasiūlymas';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1885,6 +1895,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get catalogBrowse => 'Naršyti katalogą';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Esate neprisijungęs';
 
   @override
@@ -2459,4 +2472,293 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Vaisiai';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredientas';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingredientai';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Viskas paruošta!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount sandėliuke';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$current veiksmas iš $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Pasakykite mums, ką planuojate. Kipi sudaro sąrašą.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Gaukite sutvarkytus elementus per kelias sekundes.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Tai padeda Kipi pasiūlyti tinkamesnius daiktus ir kiekius.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Suasmeninkite su mano vardu';
+
+  @override
+  String get onboardingCreateFirstList => 'Sukurti mano pirmąjį sąrašą';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Suplanuokite mano būtiniausius savaitės dalykus';
+
+  @override
+  String get onboardingPromptEvent => 'Aš ruošiu kažką ypatingo';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'Pasiūlykite man būtiniausius dalykus';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Ryžiai|🫘 Pupelės|🥛 Pienas|🥚 Kiaušiniai|🍞 Duona|🍎 Vaisiai';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Lipnūs tvarsčiai|🌡️ Termometras|🧴 Antiseptikas|😷 Veido kaukės|🧼 Rankų dezinfekavimo priemonė';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Pomidorai|🧅 Svogūnai|🧄 Česnakai|🥚 Kiaušiniai|🧀 Sūris|🌿 Šviežios žolelės';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Popieriniai rankšluosčiai|🧽 Kempinės|🧴 Ploviklis|🗑️ Šiukšlių maišeliai|🧹 Valymo šluostės';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Gyvūnų maistas|🦴 Gardumynai|🧼 Gyvūnų šampūnas|🧸 Žaislas|🧻 Atliekų maišeliai';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Paruošiau prekes, bet negalėjau išsaugoti sąrašo. Bandykite dar kartą, kad jis liktų programoje.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Jūsų sąrašas paruoštas: $count elementai sutvarkyti jums.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Tęsti';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Jūsų pirmasis sąrašas paruoštas · $count elementų';
+  }
+
+  @override
+  String get paywallContinueFree => 'Tęskite su nemokama versija';
+
+  @override
+  String get paywallPurchasePending =>
+      'Jūsų mokėjimas laukia patvirtinimo. Prieiga bus paleista automatiškai po patvirtinimo.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Šiandien: nemokama. Tada $price per metus po $days dienų. Atšaukti bet kada.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Šiandien: nemokama. Tada $price per mėnesį po $days dienų. Atšaukti bet kada.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price per metus. Atšaukti bet kada.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price per mėnesį. Atšaukti bet kada.';
+  }
+
+  @override
+  String get obHookTitle => 'Išmanesnis apsipirkimas prasideda čia';
+
+  @override
+  String get obHookSubtitle =>
+      'Dirbtinio intelekto varomi sąrašai, taupantys jūsų laiką ir pinigus kiekvienoje kelionėje.';
+
+  @override
+  String get obHookSocial => 'Tūkstančiai pirkėjų visame pasaulyje pasitiki';
+
+  @override
+  String get obHookCta => 'Pradėkite';
+
+  @override
+  String get obQuizHouseholdTitle => 'Kam perkate?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Tik aš';
+
+  @override
+  String get obQuizHouseholdCouple => 'Aš ir mano partneris';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 asmenų šeima';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Šeima 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Kaip dažnai perkate bakalėjos prekes?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Beveik kiekvieną dieną';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Kartą per savaitę';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Kas dvi savaites';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Didelis mėnesinis vežimas';
+
+  @override
+  String get obQuizPainTitle => 'Kas jus labiausiai vargina apsipirkinėjant?';
+
+  @override
+  String get obQuizPainForget => 'Aš visada pamirštu daiktus';
+
+  @override
+  String get obQuizPainOverspend => 'Išleidžiu daugiau nei planavau';
+
+  @override
+  String get obQuizPainWaste => 'Namuose maistas nueina į švaistymą';
+
+  @override
+  String get obQuizPainTime => 'Tai užima per daug laiko';
+
+  @override
+  String get obQuizSavingsTitle => 'Kiek norėtumėte sutaupyti per mėnesį?';
+
+  @override
+  String get obQuizSavingsSmall => 'Šiek tiek – kiekviena smulkmena yra svarbi';
+
+  @override
+  String get obQuizSavingsMedium => 'Maždaug 10% mano maisto prekių sąskaitos';
+
+  @override
+  String get obQuizSavingsLarge => 'Kiek įmanoma';
+
+  @override
+  String get obQuizMethodTitle => 'Kaip šiandien sudarote pirkinių sąrašus?';
+
+  @override
+  String get obQuizMethodPaper => 'Rašiklis ir popierius';
+
+  @override
+  String get obQuizMethodNotes => 'Užrašų programa';
+
+  @override
+  String get obQuizMethodMemory => 'Aš laikau tai savo galvoje';
+
+  @override
+  String get obQuizMethodNone => 'Aš nedarau sąrašų';
+
+  @override
+  String get obSocialTitle => 'Jūs esate geroje kompanijoje';
+
+  @override
+  String get obSocialSubtitle =>
+      'Tokie pirkėjai kaip jūs jau taupo naudodami KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Niekada nieko nebepamirštu. AI sudaro mano sąrašą per kelias sekundes.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Pirmą mėnesį pastebimai sumažinome savo maisto prekių sąskaitą.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Pasidalijimas sąrašu su savo partneriu užbaigė mūsų apsipirkimo chaosą.';
+
+  @override
+  String get obLoadingTitle => 'Kurkite savo asmeninį planą...';
+
+  @override
+  String get obLoadingStepProfile => 'Pritaikymas jūsų namų ūkiui';
+
+  @override
+  String get obLoadingStepHabits =>
+      'Prisitaikykite prie savo apsipirkimo rutinos';
+
+  @override
+  String get obLoadingStepSavings => 'Taupymo strategijos optimizavimas';
+
+  @override
+  String get obLoadingStepLists => 'Išmaniųjų sąrašų ruošimas';
+
+  @override
+  String get obRevealTitle => 'Jūsų planas paruoštas!';
+
+  @override
+  String get obRevealSubtitle => 'Štai kaip „KipiList“ veiks jums';
+
+  @override
+  String get obRevealSavingsCaption =>
+      'Numatomas sutaupymas naudojant KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Mėnuo $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI sudaro ir tvarko jūsų sąrašus';
+
+  @override
+  String get obRevealFeatureBudget => 'Išlaidos stebimos pagal jūsų tikslą';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Sandėliavimo stebėjimas sumažina maisto švaistymą';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Dalijimasis realiuoju laiku su savo namų ūkiu';
+
+  @override
+  String get obPaywallTitle => 'Atrakinkite savo planą';
+
+  @override
+  String get obPaywallRetry => 'Bandykite dar kartą';
+
+  @override
+  String get obLoginTitle => 'Išsaugokite savo planą';
+
+  @override
+  String get obLoginSubtitle =>
+      'Prisijunkite, kad sąrašai būtų sinchronizuojami visuose įrenginiuose';
+
+  @override
+  String get obLoginGoogle => 'Tęskite su Google';
+
+  @override
+  String get obLoginApple => 'Tęskite su Apple';
+
+  @override
+  String get obLoginSkip => 'Ne dabar';
+
+  @override
+  String get obLoginError =>
+      'Nepavyko prisijungti. Bandykite dar kartą arba kol kas praleiskite.';
 }

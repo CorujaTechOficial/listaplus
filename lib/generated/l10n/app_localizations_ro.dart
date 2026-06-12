@@ -408,7 +408,13 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String streakDays(int count) {
-    return '$days zile';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count zile',
+      one: '$count zile',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -674,6 +680,13 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get chatHintBlocked => 'Deblochează AI pentru a conversa';
+
+  @override
+  String get chatEmptySubtitle =>
+      'Solicitați sugestii de articole, rețete sau sfaturi de salvare pentru a începe.';
+
+  @override
+  String get chatEmptyTitle => 'Chatul tău este gol';
 
   @override
   String chatError(String error) {
@@ -1107,6 +1120,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Flexibilitate deplină';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Oferta de bun venit';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1886,6 +1902,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get catalogBrowse => 'Răsfoiți catalogul';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Ești offline';
 
   @override
@@ -2466,4 +2485,294 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Fructe';
+
+  @override
+  String get recipeIngredientSingular => '1 ingredient';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ingrediente';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Tot gata!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount în cămară';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Pasul $current din $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Spune-ne ce plănuiești. Kipi construiește lista.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Obțineți articole organizate în câteva secunde.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Acest lucru îl ajută pe Kipi să sugereze articole și cantități mai relevante.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Personalizează cu numele meu';
+
+  @override
+  String get onboardingCreateFirstList => 'Creează prima mea listă';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Planifică-mi lucrurile esențiale săptămânale';
+
+  @override
+  String get onboardingPromptEvent => 'Pregătesc ceva special';
+
+  @override
+  String get onboardingPromptEssentials => 'Sugerați-mi elementele esențiale';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Orez|🫘 Fasole|🥛 Lapte|🥚 Ouă|🍞 Pâine|🍎 Fructe';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Bandaje adezive|🌡️ Termometru|🧴 Antiseptic|😷 Măști de față|🧼 Dezinfectant pentru mâini';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Roșii|🧅 Ceapă|🧄 Usturoi|🥚 Ouă|🧀 Brânză|🌿 Ierburi proaspete';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Prosoape de hârtie|🧽 Bureți|🧴 Detergent|🗑️ Saci de gunoi|🧹 Lavețe de curățat';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Hrana pentru animale de companie|🦴 Dulciuri|🧼 Sampon pentru animale de companie|🧸 Jucărie|🧻 Saci de deșeuri';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Am pregătit articolele, dar nu am putut salva lista. Încercați din nou să îl păstrați în aplicație.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Lista dvs. este gata: $count articole organizate pentru dvs.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Continua';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Prima ta listă este gata · $count articole';
+  }
+
+  @override
+  String get paywallContinueFree => 'Continuați cu versiunea gratuită';
+
+  @override
+  String get paywallPurchasePending =>
+      'Plata dvs. este în așteptarea aprobării. Accesul va fi eliberat automat după confirmare.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Astăzi: fără taxă. Apoi $price/an după $days zile. Anulați oricând.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Astăzi: fără taxă. Apoi $price/lună după $days zile. Anulați oricând.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/an. Anulați oricând.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/lună. Anulați oricând.';
+  }
+
+  @override
+  String get obHookTitle => 'Cumpărăturile mai inteligente încep aici';
+
+  @override
+  String get obHookSubtitle =>
+      'Liste bazate pe IA care te ajută să economisești timp și bani la fiecare cursă.';
+
+  @override
+  String get obHookSocial =>
+      'În care au încredere mii de cumpărători din întreaga lume';
+
+  @override
+  String get obHookCta => 'Începe';
+
+  @override
+  String get obQuizHouseholdTitle => 'Pentru cine faci cumpărături?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Doar eu';
+
+  @override
+  String get obQuizHouseholdCouple => 'Eu și partenerul meu';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Familie de 3–4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Familie de 5+';
+
+  @override
+  String get obQuizFrequencyTitle =>
+      'Cât de des faci cumpărături pentru produse alimentare?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Aproape în fiecare zi';
+
+  @override
+  String get obQuizFrequencyWeekly => 'O dată pe săptămână';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'La fiecare două săptămâni';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Transport lunar mare';
+
+  @override
+  String get obQuizPainTitle => 'Ce te frustrează cel mai mult la cumpărături?';
+
+  @override
+  String get obQuizPainForget => 'Uit întotdeauna articole';
+
+  @override
+  String get obQuizPainOverspend => 'Cheltuiesc mai mult decât am planificat';
+
+  @override
+  String get obQuizPainWaste => 'Mâncarea ajunge la gunoi acasă';
+
+  @override
+  String get obQuizPainTime => 'Durează prea mult timp';
+
+  @override
+  String get obQuizSavingsTitle => 'Cât ai dori să economisești lunar?';
+
+  @override
+  String get obQuizSavingsSmall => 'Puțin — fiecare bit contează';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Aproximativ 10% din factura mea de produse alimentare';
+
+  @override
+  String get obQuizSavingsLarge => 'Pe cât posibil';
+
+  @override
+  String get obQuizMethodTitle => 'Cum faci liste de cumpărături astăzi?';
+
+  @override
+  String get obQuizMethodPaper => 'Stilou și hârtie';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'O păstrez în minte';
+
+  @override
+  String get obQuizMethodNone => 'Nu fac liste';
+
+  @override
+  String get obSocialTitle => 'Ești într-o companie bună';
+
+  @override
+  String get obSocialSubtitle =>
+      'Cumpărătorii ca tine economisesc deja cu KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Nu mai uit niciodată nimic. AI îmi construiește lista în câteva secunde.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Am redus considerabil factura de la băcănie în prima lună.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Împărtășirea listei cu partenerul meu a pus capăt haosului nostru de cumpărături.';
+
+  @override
+  String get obLoadingTitle => 'Construirea planului personalizat...';
+
+  @override
+  String get obLoadingStepProfile => 'Ajustarea pentru gospodăria dvs.';
+
+  @override
+  String get obLoadingStepHabits => 'Adaptarea la rutina dvs. de cumpărături';
+
+  @override
+  String get obLoadingStepSavings => 'Optimizarea strategiei de economisire';
+
+  @override
+  String get obLoadingStepLists => 'Pregătirea listelor inteligente';
+
+  @override
+  String get obRevealTitle => 'Planul tău este gata!';
+
+  @override
+  String get obRevealSubtitle => 'Iată cum va funcționa KipiList pentru dvs.';
+
+  @override
+  String get obRevealSavingsCaption => 'Economii preconizate cu KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Luna $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI construiește și organizează listele tale';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Cheltuielile urmărite în raport cu obiectivul dvs.';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Urmărirea cămării reduce deșeurile alimentare';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Partajarea în timp real cu gospodăria dvs.';
+
+  @override
+  String get obPaywallTitle => 'Deblochează-ți planul';
+
+  @override
+  String get obPaywallRetry => 'Încearcă din nou';
+
+  @override
+  String get obLoginTitle => 'Salvează-ți planul';
+
+  @override
+  String get obLoginSubtitle =>
+      'Conectează-te, astfel încât listele tale să se sincronizeze pe toate dispozitivele';
+
+  @override
+  String get obLoginGoogle => 'Continuă cu Google';
+
+  @override
+  String get obLoginApple => 'Continuă cu Apple';
+
+  @override
+  String get obLoginSkip => 'Nu acum';
+
+  @override
+  String get obLoginError =>
+      'Conectarea a eșuat. Încearcă din nou sau ignoră deocamdată.';
 }

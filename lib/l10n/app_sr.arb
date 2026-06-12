@@ -602,6 +602,172 @@
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@onboardingAiAskConfirm": {
     "description": "AI asks for confirmation"
   },
@@ -764,6 +930,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -818,6 +991,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -856,6 +1036,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -905,6 +1095,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -915,6 +1115,20 @@
   "@pantryLimitReached": {
     "placeholders": {
       "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
         "type": "String"
       }
     }
@@ -1020,12 +1234,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@progressBudget": {
     "placeholders": {
@@ -1084,6 +1321,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1155,8 +1399,8 @@
   },
   "@streakDays": {
     "placeholders": {
-      "days": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1281,6 +1525,8 @@
   "categoryLimitReached": "Ограничење од 10 категорија у бесплатној верзији. Надоградите на Про!",
   "categoryName": "Назив категорије",
   "categoryNameHint": "На пример: Месо",
+  "chatEmptySubtitle": "Тражите предлоге за ставке, рецепте или савете за чување да бисте започели.",
+  "chatEmptyTitle": "Ваше ћаскање је празно",
   "chatError": "Грешка при учитавању ћаскања: {error}",
   "chatHint": "Откуцајте вашу поруку...",
   "chatHintBlocked": "Откључајте АИ за ћаскање",
@@ -1625,6 +1871,60 @@
   "noRecipesSavedHint": "Креирајте свој први прилагођени рецепт додиром на дугме испод.",
   "noTracking": "Без праћења",
   "notInformed": "Није постављено",
+  "obHookCta": "Get Started",
+  "obHookSocial": "Trusted by thousands of shoppers worldwide",
+  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
+  "obHookTitle": "Smarter shopping starts here",
+  "obLoadingStepHabits": "Tuning to your shopping routine",
+  "obLoadingStepLists": "Preparing your smart lists",
+  "obLoadingStepProfile": "Adjusting for your household",
+  "obLoadingStepSavings": "Optimizing your savings strategy",
+  "obLoadingTitle": "Building your personalized plan...",
+  "obLoginApple": "Continue with Apple",
+  "obLoginError": "Sign-in failed. Try again or skip for now.",
+  "obLoginGoogle": "Continue with Google",
+  "obLoginSkip": "Not now",
+  "obLoginSubtitle": "Sign in so your lists sync across devices",
+  "obLoginTitle": "Save your plan",
+  "obPaywallRetry": "Try again",
+  "obPaywallTitle": "Unlock your plan",
+  "obQuizFrequencyBiweekly": "Every two weeks",
+  "obQuizFrequencyDaily": "Almost every day",
+  "obQuizFrequencyMonthly": "Big monthly haul",
+  "obQuizFrequencyTitle": "How often do you shop for groceries?",
+  "obQuizFrequencyWeekly": "Once a week",
+  "obQuizHouseholdCouple": "Me and my partner",
+  "obQuizHouseholdFamilyLarge": "Family of 5+",
+  "obQuizHouseholdFamilySmall": "Family of 3–4",
+  "obQuizHouseholdSolo": "Just me",
+  "obQuizHouseholdTitle": "Who do you shop for?",
+  "obQuizMethodMemory": "I keep it in my head",
+  "obQuizMethodNone": "I don't make lists",
+  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodPaper": "Pen and paper",
+  "obQuizMethodTitle": "How do you make shopping lists today?",
+  "obQuizPainForget": "I always forget items",
+  "obQuizPainOverspend": "I spend more than planned",
+  "obQuizPainTime": "It takes too much time",
+  "obQuizPainTitle": "What frustrates you most about shopping?",
+  "obQuizPainWaste": "Food goes to waste at home",
+  "obQuizSavingsLarge": "As much as possible",
+  "obQuizSavingsMedium": "Around 10% of my grocery bill",
+  "obQuizSavingsSmall": "A little — every bit counts",
+  "obQuizSavingsTitle": "How much would you like to save monthly?",
+  "obRevealFeatureAi": "AI builds and organizes your lists",
+  "obRevealFeatureBudget": "Spending tracked against your goal",
+  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
+  "obRevealFeatureShare": "Real-time sharing with your household",
+  "obRevealMonth": "Month {n}",
+  "obRevealSavingsCaption": "Projected savings with KipiList",
+  "obRevealSubtitle": "Here's how KipiList will work for you",
+  "obRevealTitle": "Your plan is ready!",
+  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
+  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
+  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
+  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
+  "obSocialTitle": "You're in good company",
   "observations": "Напомене",
   "observationsHint": "Остале преференције за помоћника",
   "offlineBanner": "Ви сте ван мреже",
@@ -1664,7 +1964,16 @@
   "onboardingCommitmentsSubtitle": "Изаберите своје циљеве да бисте персонализовали КипиЛист",
   "onboardingCommitmentsTitle": "Шта је вама битно?",
   "onboardingContinueAsGuest": "Наставите као гост",
+  "onboardingContinueToOffer": "Настави",
+  "onboardingCreateFirstList": "Направите моју прву листу",
+  "onboardingDemoHeadline": "Реците нам шта планирате. Кипи прави листу.",
+  "onboardingDemoSubtitle": "Организујте ставке за неколико секунди.",
   "onboardingExit": "Изађи",
+  "onboardingFallbackGrocery": "🍚 Пиринач|🫘 Пасуљ|🥛 Млеко|🥚 Јаја|🍞 Хлеб|🍎 Воће",
+  "onboardingFallbackHome": "🧻 Папирни пешкири|🧽 Сунђери|🧴 Детерџент|🗑 Кесе за смеће|🧹 Крпе за чишћење",
+  "onboardingFallbackPet": "🥣 Храна за кућне љубимце|🦴 Посластице|🧼 Шампон за кућне љубимце|🧸 Играчка|🧻 Кесе за отпатке",
+  "onboardingFallbackPharmacy": "🩹 Лепљиви завоји|🌡 Термометар|🧴 Антисептик|😷 Маске за лице|🧼 Средство за дезинфекцију руку",
+  "onboardingFallbackRecipes": "🍅 Парадајз|🧅 Лук|🧄 Бели лук|🥚 Јаја|🧀 Сир|🌿 Свеже зачинско биље",
   "onboardingGoalFamily": "Организујте породичну куповину",
   "onboardingGoalFaster": "Купујте брже",
   "onboardingGoalNeverForget": "Никада не заборавите предмете",
@@ -1675,6 +1984,8 @@
   "onboardingGroupFamily": "Породица",
   "onboardingGroupSolo": "Само ја",
   "onboardingHookHeadline": "Никада више не заборавите намирницу",
+  "onboardingListCreated": "Ваша листа је спремна: {count} ставки организованих за вас.",
+  "onboardingListSaveFailed": "Припремио сам ставке, али нисам могао да сачувам листу. Покушајте поново да га задржите у апликацији.",
   "onboardingLoadingStat1Label": "Ставке каталогизоване",
   "onboardingLoadingStat2Label": "Корисници су помогли",
   "onboardingLoadingStat3Label": "Минути сачувани",
@@ -1693,9 +2004,11 @@
   "onboardingPainRepeat": "Једно путовање никада није довољно",
   "onboardingPainSubtitle": "Будите искрени - поправићемо сваки",
   "onboardingPainTitle": "Шта вас највише фрустрира?",
+  "onboardingPaywallListReady": "Ваша прва листа је спремна · {count} ставки",
   "onboardingPersonalizationCategoryTitle": "Шта купујете?",
   "onboardingPersonalizationCta": "Настави",
   "onboardingPersonalizationDesc": "Користићемо ово да персонализујемо ваше предлоге и учинимо куповину паметнијом.",
+  "onboardingPersonalizationEffect": "Ово помаже Кипи да предложи релевантније ставке и количине.",
   "onboardingPersonalizationFoodHint": "нпр. Пица, суши, лазање...",
   "onboardingPersonalizationFoodLabel": "Која је твоја омиљена храна?",
   "onboardingPersonalizationFoodRequired": "Реците нам своју омиљену храну да наставимо",
@@ -1704,8 +2017,13 @@
   "onboardingPersonalizationNameLabel": "Твоје име",
   "onboardingPersonalizationSkip": "Прескочи за сада",
   "onboardingPersonalizationTitle": "хајде да те упознамо",
+  "onboardingPersonalizeWithName": "Персонализујте са мојим именом",
   "onboardingPremiumSubtitle": "Извуците максимум из својих листа за куповину",
   "onboardingPremiumTitle": "Откључајте све функције",
+  "onboardingProgress": "Корак {current} од {total}",
+  "onboardingPromptEssentials": "Предложите ми основне ствари",
+  "onboardingPromptEvent": "Спремам нешто посебно",
+  "onboardingPromptWeekly": "Планирајте моје недељне ствари",
   "onboardingRestore": "Ресторе Пурцхасес",
   "onboardingRestoreDesc": "Већ имате претплату? Додирните овде да бисте га вратили.",
   "onboardingSetupDesc": "Одаберите како желите да KipiList изгледа и ради за вас.",
@@ -1731,6 +2049,8 @@
   "othersCategory": "Други",
   "pantry": "Остава",
   "pantryAppBar": "Остава",
+  "pantryAvailabilityAll": "Све је спремно!",
+  "pantryAvailabilityCount": "__ПХ0__/__ПХ1__ у остави",
   "pantryEditTitle": "Уреди {name}",
   "pantryEmpty": "Празна остава",
   "pantryEmptySubtitle": "Додајте производе које желите да држите код куће",
@@ -1749,7 +2069,10 @@
   "paywallBenefit2Desc": "Нема ограничења од 3 листе",
   "paywallBenefit3Desc": "Праћење трошкова и породичне листе",
   "paywallBestValue": "НАЈБОЉА ВРЕДНОСТ",
+  "paywallBillingAnnual": "{price}/год. Откажите било када.",
+  "paywallBillingMonthly": "{price}/месечно. Откажите било када.",
   "paywallCancelAnytime": "Откажите било када. Без обавеза.",
+  "paywallContinueFree": "Наставите са бесплатном верзијом",
   "paywallCtaTrialDays": "Почните бесплатно — __ПХ0__ дана",
   "paywallCtaUnlock": "Откључај ПРО",
   "paywallFeatureDescAssistant": "АИ аутоматски организује вашу листу",
@@ -1790,6 +2113,7 @@
   "paywallPricePerMonth": "Само __ПХ0__/месечно",
   "paywallProLabel": "ПРО",
   "paywallPurchaseError": "Није могуће завршити куповину. Покушајте поново.",
+  "paywallPurchasePending": "Ваша уплата чека на одобрење. Приступ ће бити аутоматски ослобођен након потврде.",
   "paywallRestore": "Ресторе",
   "paywallRestoreError": "Није пронађена активна претплата за враћање.",
   "paywallSafeCheckout": "Сигурно плаћање",
@@ -1811,11 +2135,14 @@
   "paywallTrialCta": "Започните бесплатну пробну верзију",
   "paywallTrialDays": "__ПХ0__ ДАНА БЕСПЛАТНО",
   "paywallTrialDisclaimer": "Откажите било када · Бесплатно до истека пробног периода",
+  "paywallTrialDisclosureAnnual": "Данас: без накнаде. Затим {price}/годишње након {days} дана. Откажите било када.",
+  "paywallTrialDisclosureMonthly": "Данас: без накнаде. Затим {price}/месечно после {days} дана. Откажите било када.",
   "paywallTrialInCard": "Првих __ПХ0__ дана БЕСПЛАТНО",
   "paywallTrialMonths": "{count,plural, one{{count} БЕСПЛАТНИ МЕСЕЦ} other{{count} БЕСПЛАТНИ МЕСЕЦИ}}",
   "paywallTrialSubtitle": "Откажите било када. Без накнаде данас.",
   "paywallTrialTitle": "Пробајте бесплатно!",
   "paywallTrialWeeks": "{count,plural, one{{count} НЕДЕЉА БЕСПЛАТНО} other{{count} НЕДЕЉА БЕСПЛАТНО}}",
+  "paywallWelcomeOfferBadge": "🎁 Понуда добродошлице",
   "positionBarcodeCenter": "Поставите бар код у центар",
   "prefAIAssistant": "Лични AI асистент",
   "prefCustomThemes": "Прилагођене теме",
@@ -1859,6 +2186,8 @@
   "recipeCreated": "Рецепт креиран!",
   "recipeDeleted": "Рецепт је избрисан",
   "recipeImage": "Слика рецепта",
+  "recipeIngredientSingular": "1 састојак",
+  "recipeIngredientsPlural": "__ПХ0__ састојака",
   "recipeName": "Назив рецепта",
   "recipeSaved": "Рецепт је сачуван!",
   "recipeSuggestion": "Предлог рецепта",
@@ -1946,7 +2275,7 @@
   "sortName": "Назив",
   "spendingAnalysis": "Анализа потрошње",
   "spendingByCategory": "Потрошња по категорији",
-  "streakDays": "__ПХ0__ дана",
+  "streakDays": "{count,plural, one{{count} day} other{{count} days}}",
   "subscription": "Претплата",
   "suggestedItems": "Предложене ставке",
   "suggestedQuestions": "Предложена питања:",

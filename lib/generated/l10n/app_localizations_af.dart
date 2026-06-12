@@ -680,6 +680,13 @@ class AppLocalizationsAf extends AppLocalizations {
   String get chatHintBlocked => 'Ontsluit AI om te gesels';
 
   @override
+  String get chatEmptySubtitle =>
+      'Vra vir itemvoorstelle, resepte of spaarwenke om te begin.';
+
+  @override
+  String get chatEmptyTitle => 'Jou klets is leeg';
+
+  @override
   String chatError(String error) {
     return 'Fout met laai van geselsie: $error';
   }
@@ -1110,6 +1117,9 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Volle buigsaamheid';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Welkom aanbod';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1881,6 +1891,9 @@ class AppLocalizationsAf extends AppLocalizations {
   String get catalogBrowse => 'Blaai deur Katalogus';
 
   @override
+  String get catalogCategories => 'Kategorieë';
+
+  @override
   String get offlineBanner => 'Jy is vanlyn';
 
   @override
@@ -2452,4 +2465,289 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Vrugte';
+
+  @override
+  String get recipeIngredientSingular => '1 bestanddeel';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count bestanddele';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Alles gereed!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount in spens';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Stap $current van $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Vertel ons wat jy beplan. Kipi bou die lys.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Kry georganiseerde items binne sekondes.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Dit help Kipi om meer relevante items en hoeveelhede voor te stel.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Verpersoonlik met my naam';
+
+  @override
+  String get onboardingCreateFirstList => 'Skep my eerste lys';
+
+  @override
+  String get onboardingPromptWeekly => 'Beplan my weeklikse noodsaaklikhede';
+
+  @override
+  String get onboardingPromptEvent =>
+      'Ek is besig om iets spesiaals voor te berei';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'Stel die noodsaaklikhede vir my voor';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rys|🫘 Bone|🥛 Melk|🥚 Eiers|🍞 Brood|🍎 Vrugte';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Kleefverbande|🌡️ Termometer|🧴 Antisepties|😷 Gesigmaskers|🧼 Handreiniger';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tamaties|🧅 Ui|🧄 Knoffel|🥚 Eiers|🧀 Kaas|🌿 Vars kruie';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papierhanddoeke|🧽 Sponse|🧴 Skoonmaakmiddel|🗑️ Vullissakke|🧹 Skoonmaaklappies';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Troeteldierkos|🦴 Bederfies|🧼 Troeteldier sjampoe|🧸 Speelgoed|🧻 Afvalsakke';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Ek het die items voorberei, maar kon nie die lys stoor nie. Probeer weer om dit in die toepassing te hou.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Jou lys is gereed: $count items vir jou georganiseer.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Gaan voort';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Jou eerste lys is gereed · $count items';
+  }
+
+  @override
+  String get paywallContinueFree => 'Gaan voort met die gratis weergawe';
+
+  @override
+  String get paywallPurchasePending =>
+      'Jou betaling wag op goedkeuring. Toegang sal outomaties vrygestel word na bevestiging.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Vandag: geen koste. Dan $price/jaar na $days dae. Kanselleer enige tyd.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Vandag: geen koste. Dan $price/maand na $days dae. Kanselleer enige tyd.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/jaar. Kanselleer enige tyd.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/maand. Kanselleer enige tyd.';
+  }
+
+  @override
+  String get obHookTitle => 'Slimmer inkopies begin hier';
+
+  @override
+  String get obHookSubtitle =>
+      'KI-aangedrewe lyste wat jou tyd en geld bespaar, elke enkele reis.';
+
+  @override
+  String get obHookSocial => 'Vertrou deur duisende kopers wêreldwyd';
+
+  @override
+  String get obHookCta => 'Begin';
+
+  @override
+  String get obQuizHouseholdTitle => 'Vir wie doen jy inkopies?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Net ek';
+
+  @override
+  String get obQuizHouseholdCouple => 'Ek en my maat';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Gesin van 3–4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Gesin van 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Hoe gereeld koop jy kruideniersware?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Byna elke dag';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Een keer per week';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Elke twee weke';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Groot maandelikse trek';
+
+  @override
+  String get obQuizPainTitle => 'Wat frustreer jou die meeste oor inkopies?';
+
+  @override
+  String get obQuizPainForget => 'Ek vergeet altyd items';
+
+  @override
+  String get obQuizPainOverspend => 'Ek spandeer meer as wat beplan is';
+
+  @override
+  String get obQuizPainWaste => 'Kos gaan by die huis tot niet';
+
+  @override
+  String get obQuizPainTime => 'Dit neem te veel tyd';
+
+  @override
+  String get obQuizSavingsTitle => 'Hoeveel wil jy maandeliks spaar?';
+
+  @override
+  String get obQuizSavingsSmall => '\'n Bietjie - elke bietjie tel';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Ongeveer 10% van my kruideniersware rekening';
+
+  @override
+  String get obQuizSavingsLarge => 'Soveel as moontlik';
+
+  @override
+  String get obQuizMethodTitle => 'Hoe maak jy vandag inkopielysies?';
+
+  @override
+  String get obQuizMethodPaper => 'Pen en papier';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'Ek hou dit in my kop';
+
+  @override
+  String get obQuizMethodNone => 'Ek maak nie lysies nie';
+
+  @override
+  String get obSocialTitle => 'Jy is in goeie geselskap';
+
+  @override
+  String get obSocialSubtitle => 'Kopers soos jy spaar reeds met KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Ek vergeet nooit meer iets nie. Die KI bou my lys in sekondes.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Ons het ons kruidenierswarerekening merkbaar in die eerste maand verminder.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Om die lys met my maat te deel, het ons inkopie-chaos beëindig.';
+
+  @override
+  String get obLoadingTitle => 'Bou jou persoonlike plan...';
+
+  @override
+  String get obLoadingStepProfile => 'Aanpassing vir jou huishouding';
+
+  @override
+  String get obLoadingStepHabits => 'Stem in op jou inkopieroetine';
+
+  @override
+  String get obLoadingStepSavings => 'Optimaliseer jou spaarstrategie';
+
+  @override
+  String get obLoadingStepLists => 'Berei jou slim lyste voor';
+
+  @override
+  String get obRevealTitle => 'Jou plan is gereed!';
+
+  @override
+  String get obRevealSubtitle => 'Hier is hoe KipiList vir jou sal werk';
+
+  @override
+  String get obRevealSavingsCaption => 'Geprojekteerde besparings met KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Maand $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'KI bou en organiseer jou lyste';
+
+  @override
+  String get obRevealFeatureBudget => 'Besteding nagespoor teen jou doelwit';
+
+  @override
+  String get obRevealFeaturePantry => 'Spensopsporing sny voedselafval';
+
+  @override
+  String get obRevealFeatureShare => 'Intydse deel met jou huishouding';
+
+  @override
+  String get obPaywallTitle => 'Ontsluit jou plan';
+
+  @override
+  String get obPaywallRetry => 'Probeer weer';
+
+  @override
+  String get obLoginTitle => 'Stoor jou plan';
+
+  @override
+  String get obLoginSubtitle =>
+      'Meld aan sodat jou lyste oor toestelle sinkroniseer';
+
+  @override
+  String get obLoginGoogle => 'Gaan voort met Google';
+
+  @override
+  String get obLoginApple => 'Gaan voort met Apple';
+
+  @override
+  String get obLoginSkip => 'Nie nou nie';
+
+  @override
+  String get obLoginError =>
+      'Kon nie aanmeld nie. Probeer weer of slaan oor vir eers.';
 }

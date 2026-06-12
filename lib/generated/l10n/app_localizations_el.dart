@@ -683,6 +683,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get chatHintBlocked => 'Ξεκλειδώστε το AI για συνομιλία';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ζητήστε προτάσεις προϊόντων, συνταγές ή συμβουλές αποθήκευσης για να ξεκινήσετε.';
+
+  @override
+  String get chatEmptyTitle => 'Η συνομιλία σας είναι άδεια';
+
+  @override
   String chatError(String error) {
     return 'Σφάλμα φόρτωσης συνομιλίας: $error';
   }
@@ -1117,6 +1124,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Πλήρης ευελιξία';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Προσφορά καλωσορίσματος';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1897,6 +1907,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get catalogBrowse => 'Περιήγηση στον Κατάλογο';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Είστε εκτός σύνδεσης';
 
   @override
@@ -2474,6 +2487,301 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Φρούτα';
+
+  @override
+  String get recipeIngredientSingular => '1 συστατικό';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count συστατικά';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Όλα έτοιμα!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount σε ντουλάπι';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Βήμα $current από $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Πες μας τι σχεδιάζεις. Ο Kipi φτιάχνει τη λίστα.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Αποκτήστε οργανωμένα αντικείμενα σε δευτερόλεπτα.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Αυτό βοηθά την Kipi να προτείνει πιο σχετικά είδη και ποσότητες.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Εξατομίκευση με το όνομά μου';
+
+  @override
+  String get onboardingCreateFirstList => 'Δημιουργήστε την πρώτη μου λίστα';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Προγραμματίστε τα απαραίτητα για την εβδομάδα';
+
+  @override
+  String get onboardingPromptEvent => 'Ετοιμάζω κάτι ιδιαίτερο';
+
+  @override
+  String get onboardingPromptEssentials => 'Πρότεινε τα απαραίτητα για μένα';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Ρύζι|🫘 Φασόλια|🥛 Γάλα|🥚 Αυγά|🍞 Ψωμί|🍎 Φρούτα';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Αυτοκόλλητοι επίδεσμοι|🌡️ Θερμόμετρο|🧴 Αντισηπτικό|😷 Μάσκες προσώπου|🧼 Απολυμαντικό χεριών';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Ντομάτες|🧅 Κρεμμύδι|🧄 Σκόρδο|🥚 Αυγά|🧀 Τυρί|🌿 Φρέσκα μυρωδικά';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Χαρτοπετσέτες|🧽 Σφουγγάρια|🧴 Απορρυπαντικό|🗑️ Σακούλες σκουπιδιών|';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Τροφές για κατοικίδια|🦴 Λιχουδιές|🧼 Σαμπουάν για κατοικίδια|🧸 Παιχνίδι|🧻 Σακούλες απορριμμάτων';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Ετοίμασα τα αντικείμενα, αλλά δεν μπόρεσα να αποθηκεύσω τη λίστα. Προσπαθήστε ξανά να το διατηρήσετε στην εφαρμογή.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Η λίστα σας είναι έτοιμη: $count αντικείμενα οργανωμένα για εσάς.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Συνεχίζω';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Η πρώτη σας λίστα είναι έτοιμη · $count στοιχεία';
+  }
+
+  @override
+  String get paywallContinueFree => 'Συνεχίστε με τη δωρεάν έκδοση';
+
+  @override
+  String get paywallPurchasePending =>
+      'Η πληρωμή σας εκκρεμεί έγκριση. Η πρόσβαση θα απελευθερωθεί αυτόματα μετά την επιβεβαίωση.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Σήμερα: χωρίς χρέωση. Στη συνέχεια $price/έτος μετά από $days ημέρες. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Σήμερα: χωρίς χρέωση. Στη συνέχεια $price/μήνα μετά από $days ημέρες. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/έτος. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/μήνα. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String get obHookTitle => 'Οι πιο έξυπνες αγορές ξεκινούν εδώ';
+
+  @override
+  String get obHookSubtitle =>
+      'Λίστες με τεχνητή νοημοσύνη που σας εξοικονομούν χρόνο και χρήμα, σε κάθε ταξίδι.';
+
+  @override
+  String get obHookSocial =>
+      'Εμπιστεύονται χιλιάδες αγοραστές σε όλο τον κόσμο';
+
+  @override
+  String get obHookCta => 'Ξεκινήστε';
+
+  @override
+  String get obQuizHouseholdTitle => 'Για ποιον ψωνίζετε;';
+
+  @override
+  String get obQuizHouseholdSolo => 'Μόνο εγώ';
+
+  @override
+  String get obQuizHouseholdCouple => 'Εγώ και ο σύντροφός μου';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Οικογένεια 3–4 ατόμων';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Οικογένεια 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Πόσο συχνά ψωνίζετε για παντοπωλεία;';
+
+  @override
+  String get obQuizFrequencyDaily => 'Σχεδόν κάθε μέρα';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Μια φορά την εβδομάδα';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Κάθε δύο εβδομάδες';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Μεγάλες μηνιαίες αποστολές';
+
+  @override
+  String get obQuizPainTitle => 'Τι σας απογοητεύει περισσότερο στις αγορές;';
+
+  @override
+  String get obQuizPainForget => 'Ξεχνώ πάντα αντικείμενα';
+
+  @override
+  String get obQuizPainOverspend =>
+      'Ξοδεύω περισσότερα από τα προγραμματισμένα';
+
+  @override
+  String get obQuizPainWaste => 'Το φαγητό πάει χαμένο στο σπίτι';
+
+  @override
+  String get obQuizPainTime => 'Παίρνει πάρα πολύ χρόνο';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Πόσα χρήματα θα θέλατε να εξοικονομείτε μηνιαία;';
+
+  @override
+  String get obQuizSavingsSmall => 'Λίγο - κάθε κομμάτι μετράει';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Περίπου το 10% του λογαριασμού μου για τα παντοπωλεία';
+
+  @override
+  String get obQuizSavingsLarge => 'Όσο το δυνατόν περισσότερο';
+
+  @override
+  String get obQuizMethodTitle => 'Πώς φτιάχνετε λίστες για ψώνια σήμερα;';
+
+  @override
+  String get obQuizMethodPaper => 'Στυλό και χαρτί';
+
+  @override
+  String get obQuizMethodNotes => 'Εφαρμογή σημειώσεων';
+
+  @override
+  String get obQuizMethodMemory => 'Το κρατάω στο κεφάλι μου';
+
+  @override
+  String get obQuizMethodNone => 'Δεν κάνω λίστες';
+
+  @override
+  String get obSocialTitle => 'Είσαι σε καλή παρέα';
+
+  @override
+  String get obSocialSubtitle =>
+      'Αγοραστές σαν εσάς κάνουν ήδη οικονομία με το KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Δεν ξεχνώ ποτέ τίποτα πια. Το AI δημιουργεί τη λίστα μου σε δευτερόλεπτα.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Κόψαμε αισθητά τον λογαριασμό του παντοπωλείου μας τον πρώτο μήνα.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Η κοινή χρήση της λίστας με τον σύντροφό μου έληξε το χάος των αγορών μας.';
+
+  @override
+  String get obLoadingTitle => 'Χτίζοντας το εξατομικευμένο σας σχέδιο...';
+
+  @override
+  String get obLoadingStepProfile => 'Προσαρμογή για το νοικοκυριό σας';
+
+  @override
+  String get obLoadingStepHabits => 'Συντονιστείτε στη ρουτίνα αγορών σας';
+
+  @override
+  String get obLoadingStepSavings =>
+      'Βελτιστοποίηση της στρατηγικής αποταμίευσης';
+
+  @override
+  String get obLoadingStepLists => 'Ετοιμάζοντας τις έξυπνες λίστες σας';
+
+  @override
+  String get obRevealTitle => 'Το σχέδιό σας είναι έτοιμο!';
+
+  @override
+  String get obRevealSubtitle =>
+      'Δείτε πώς θα λειτουργήσει το KipiList για εσάς';
+
+  @override
+  String get obRevealSavingsCaption =>
+      'Προβλεπόμενη εξοικονόμηση με το KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Μήνας $n';
+  }
+
+  @override
+  String get obRevealFeatureAi =>
+      'Το AI δημιουργεί και οργανώνει τις λίστες σας';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Οι δαπάνες παρακολουθούνται σε σχέση με τον στόχο σας';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Η παρακολούθηση αποθηκών μειώνει τη σπατάλη τροφίμων';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Κοινή χρήση σε πραγματικό χρόνο με το νοικοκυριό σας';
+
+  @override
+  String get obPaywallTitle => 'Ξεκλειδώστε το σχέδιό σας';
+
+  @override
+  String get obPaywallRetry => 'Προσπαθήστε ξανά';
+
+  @override
+  String get obLoginTitle => 'Αποθηκεύστε το σχέδιό σας';
+
+  @override
+  String get obLoginSubtitle =>
+      'Συνδεθείτε ώστε οι λίστες σας να συγχρονίζονται μεταξύ των συσκευών';
+
+  @override
+  String get obLoginGoogle => 'Συνεχίστε με την Google';
+
+  @override
+  String get obLoginApple => 'Συνεχίστε με την Apple';
+
+  @override
+  String get obLoginSkip => 'Όχι τώρα';
+
+  @override
+  String get obLoginError =>
+      'Η σύνδεση απέτυχε. Δοκιμάστε ξανά ή παραλείψτε προς το παρόν.';
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).
@@ -3155,6 +3463,13 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get chatHintBlocked => 'Ξεκλειδώστε το AI για συνομιλία';
 
   @override
+  String get chatEmptySubtitle =>
+      'Ζητήστε προτάσεις προϊόντων, συνταγές ή συμβουλές αποθήκευσης για να ξεκινήσετε.';
+
+  @override
+  String get chatEmptyTitle => 'Η συνομιλία σας είναι άδεια';
+
+  @override
   String chatError(String error) {
     return 'Σφάλμα φόρτωσης συνομιλίας: $error';
   }
@@ -3589,6 +3904,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get paywallPackageMonthlyDesc => 'Πλήρης ευελιξία';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Προσφορά καλωσορίσματος';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4946,4 +5264,299 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get suggestionFruits => 'Φρούτα';
+
+  @override
+  String get recipeIngredientSingular => '1 συστατικό';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count συστατικά';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Όλα έτοιμα!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount σε ντουλάπι';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Βήμα $current από $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Πες μας τι σχεδιάζεις. Ο Kipi φτιάχνει τη λίστα.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Αποκτήστε οργανωμένα αντικείμενα σε δευτερόλεπτα.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Αυτό βοηθά την Kipi να προτείνει πιο σχετικά είδη και ποσότητες.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Εξατομίκευση με το όνομά μου';
+
+  @override
+  String get onboardingCreateFirstList => 'Δημιουργήστε την πρώτη μου λίστα';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Προγραμματίστε τα απαραίτητα για την εβδομάδα';
+
+  @override
+  String get onboardingPromptEvent => 'Ετοιμάζω κάτι ιδιαίτερο';
+
+  @override
+  String get onboardingPromptEssentials => 'Πρότεινε τα απαραίτητα για μένα';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Ρύζι|🫘 Φασόλια|🥛 Γάλα|🥚 Αυγά|🍞 Ψωμί|🍎 Φρούτα';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Αυτοκόλλητοι επίδεσμοι|🌡️ Θερμόμετρο|🧴 Αντισηπτικό|😷 Μάσκες προσώπου|🧼 Απολυμαντικό χεριών';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Ντομάτες|🧅 Κρεμμύδι|🧄 Σκόρδο|🥚 Αυγά|🧀 Τυρί|🌿 Φρέσκα μυρωδικά';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Χαρτοπετσέτες|🧽 Σφουγγάρια|🧴 Απορρυπαντικό|🗑️ Σακούλες σκουπιδιών|';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Τροφές για κατοικίδια|🦴 Λιχουδιές|🧼 Σαμπουάν για κατοικίδια|🧸 Παιχνίδι|🧻 Σακούλες απορριμμάτων';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Ετοίμασα τα αντικείμενα, αλλά δεν μπόρεσα να αποθηκεύσω τη λίστα. Προσπαθήστε ξανά να το διατηρήσετε στην εφαρμογή.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Η λίστα σας είναι έτοιμη: $count αντικείμενα οργανωμένα για εσάς.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Συνεχίζω';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Η πρώτη σας λίστα είναι έτοιμη · $count στοιχεία';
+  }
+
+  @override
+  String get paywallContinueFree => 'Συνεχίστε με τη δωρεάν έκδοση';
+
+  @override
+  String get paywallPurchasePending =>
+      'Η πληρωμή σας εκκρεμεί έγκριση. Η πρόσβαση θα απελευθερωθεί αυτόματα μετά την επιβεβαίωση.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Σήμερα: χωρίς χρέωση. Στη συνέχεια $price/έτος μετά από $days ημέρες. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Σήμερα: χωρίς χρέωση. Στη συνέχεια $price/μήνα μετά από $days ημέρες. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/έτος. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/μήνα. Ακύρωση ανά πάσα στιγμή.';
+  }
+
+  @override
+  String get obHookTitle => 'Οι πιο έξυπνες αγορές ξεκινούν εδώ';
+
+  @override
+  String get obHookSubtitle =>
+      'Λίστες με τεχνητή νοημοσύνη που σας εξοικονομούν χρόνο και χρήμα, σε κάθε ταξίδι.';
+
+  @override
+  String get obHookSocial =>
+      'Εμπιστεύονται χιλιάδες αγοραστές σε όλο τον κόσμο';
+
+  @override
+  String get obHookCta => 'Ξεκινήστε';
+
+  @override
+  String get obQuizHouseholdTitle => 'Για ποιον ψωνίζετε;';
+
+  @override
+  String get obQuizHouseholdSolo => 'Μόνο εγώ';
+
+  @override
+  String get obQuizHouseholdCouple => 'Εγώ και ο σύντροφός μου';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Οικογένεια 3–4 ατόμων';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Οικογένεια 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Πόσο συχνά ψωνίζετε για παντοπωλεία;';
+
+  @override
+  String get obQuizFrequencyDaily => 'Σχεδόν κάθε μέρα';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Μια φορά την εβδομάδα';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Κάθε δύο εβδομάδες';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Μεγάλες μηνιαίες αποστολές';
+
+  @override
+  String get obQuizPainTitle => 'Τι σας απογοητεύει περισσότερο στις αγορές;';
+
+  @override
+  String get obQuizPainForget => 'Ξεχνώ πάντα αντικείμενα';
+
+  @override
+  String get obQuizPainOverspend =>
+      'Ξοδεύω περισσότερα από τα προγραμματισμένα';
+
+  @override
+  String get obQuizPainWaste => 'Το φαγητό πάει χαμένο στο σπίτι';
+
+  @override
+  String get obQuizPainTime => 'Παίρνει πάρα πολύ χρόνο';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Πόσα χρήματα θα θέλατε να εξοικονομείτε μηνιαία;';
+
+  @override
+  String get obQuizSavingsSmall => 'Λίγο - κάθε κομμάτι μετράει';
+
+  @override
+  String get obQuizSavingsMedium =>
+      'Περίπου το 10% του λογαριασμού μου για τα παντοπωλεία';
+
+  @override
+  String get obQuizSavingsLarge => 'Όσο το δυνατόν περισσότερο';
+
+  @override
+  String get obQuizMethodTitle => 'Πώς φτιάχνετε λίστες για ψώνια σήμερα;';
+
+  @override
+  String get obQuizMethodPaper => 'Στυλό και χαρτί';
+
+  @override
+  String get obQuizMethodNotes => 'Εφαρμογή σημειώσεων';
+
+  @override
+  String get obQuizMethodMemory => 'Το κρατάω στο κεφάλι μου';
+
+  @override
+  String get obQuizMethodNone => 'Δεν κάνω λίστες';
+
+  @override
+  String get obSocialTitle => 'Είσαι σε καλή παρέα';
+
+  @override
+  String get obSocialSubtitle =>
+      'Αγοραστές σαν εσάς κάνουν ήδη οικονομία με το KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Δεν ξεχνώ ποτέ τίποτα πια. Το AI δημιουργεί τη λίστα μου σε δευτερόλεπτα.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Κόψαμε αισθητά τον λογαριασμό του παντοπωλείου μας τον πρώτο μήνα.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Η κοινή χρήση της λίστας με τον σύντροφό μου έληξε το χάος των αγορών μας.';
+
+  @override
+  String get obLoadingTitle => 'Χτίζοντας το εξατομικευμένο σας σχέδιο...';
+
+  @override
+  String get obLoadingStepProfile => 'Προσαρμογή για το νοικοκυριό σας';
+
+  @override
+  String get obLoadingStepHabits => 'Συντονιστείτε στη ρουτίνα αγορών σας';
+
+  @override
+  String get obLoadingStepSavings =>
+      'Βελτιστοποίηση της στρατηγικής αποταμίευσης';
+
+  @override
+  String get obLoadingStepLists => 'Ετοιμάζοντας τις έξυπνες λίστες σας';
+
+  @override
+  String get obRevealTitle => 'Το σχέδιό σας είναι έτοιμο!';
+
+  @override
+  String get obRevealSubtitle =>
+      'Δείτε πώς θα λειτουργήσει το KipiList για εσάς';
+
+  @override
+  String get obRevealSavingsCaption =>
+      'Προβλεπόμενη εξοικονόμηση με το KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Μήνας $n';
+  }
+
+  @override
+  String get obRevealFeatureAi =>
+      'Το AI δημιουργεί και οργανώνει τις λίστες σας';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Οι δαπάνες παρακολουθούνται σε σχέση με τον στόχο σας';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Η παρακολούθηση αποθηκών μειώνει τη σπατάλη τροφίμων';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Κοινή χρήση σε πραγματικό χρόνο με το νοικοκυριό σας';
+
+  @override
+  String get obPaywallTitle => 'Ξεκλειδώστε το σχέδιό σας';
+
+  @override
+  String get obPaywallRetry => 'Προσπαθήστε ξανά';
+
+  @override
+  String get obLoginTitle => 'Αποθηκεύστε το σχέδιό σας';
+
+  @override
+  String get obLoginSubtitle =>
+      'Συνδεθείτε ώστε οι λίστες σας να συγχρονίζονται μεταξύ των συσκευών';
+
+  @override
+  String get obLoginGoogle => 'Συνεχίστε με την Google';
+
+  @override
+  String get obLoginApple => 'Συνεχίστε με την Apple';
+
+  @override
+  String get obLoginSkip => 'Όχι τώρα';
+
+  @override
+  String get obLoginError =>
+      'Η σύνδεση απέτυχε. Δοκιμάστε ξανά ή παραλείψτε προς το παρόν.';
 }

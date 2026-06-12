@@ -472,6 +472,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -640,6 +806,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -694,6 +867,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -732,6 +912,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -781,6 +971,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -823,6 +1023,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -927,12 +1141,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -1009,6 +1246,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1258,6 +1502,8 @@
   "categoryLimitReached": "Կատեգորիայի սահմանաչափը հասել է",
   "categoryName": "Կատեգորիայի անվանումը",
   "categoryNameHint": "Մուտքագրեք կատեգորիայի անունը",
+  "chatEmptySubtitle": "Սկսելու համար խնդրեք ապրանքների առաջարկներ, բաղադրատոմսեր կամ խնայողության խորհուրդներ:",
+  "chatEmptyTitle": "Ձեր զրույցը դատարկ է",
   "chatError": "Զրույցի բեռնման սխալ՝ {error}",
   "chatHint": "Գրեք ձեր հաղորդագրությունը...",
   "chatHintBlocked": "Բացեք AI-ն զրուցելու համար",
@@ -1554,6 +1800,60 @@
   "noRecipesSavedHint": "Ստեղծեք ձեր առաջին բաղադրատոմսը՝ սեղմելով ներքևի կոճակը:",
   "noTracking": "Առանց հետևելու",
   "notInformed": "Տեղեկացված չէ",
+  "obHookCta": "Սկսեք",
+  "obHookSocial": "Վստահված է հազարավոր գնորդների կողմից ամբողջ աշխարհում",
+  "obHookSubtitle": "AI-ով աշխատող ցուցակներ, որոնք խնայում են ձեզ ժամանակ և գումար, յուրաքանչյուր ուղևորություն:",
+  "obHookTitle": "Այստեղից են սկսվում ավելի խելացի գնումները",
+  "obLoadingStepHabits": "Համապատասխանեցում ձեր գնումների առօրյային",
+  "obLoadingStepLists": "Ձեր խելացի ցուցակների պատրաստում",
+  "obLoadingStepProfile": "Հարմարեցում ձեր տան համար",
+  "obLoadingStepSavings": "Ձեր խնայողությունների ռազմավարության օպտիմիզացում",
+  "obLoadingTitle": "Կառուցեք ձեր անհատական ​​պլանը...",
+  "obLoginApple": "Շարունակեք Apple-ի հետ",
+  "obLoginError": "Մուտքը ձախողվեց: Կրկին փորձեք կամ բաց թողեք առայժմ:",
+  "obLoginGoogle": "Շարունակեք Google-ի հետ",
+  "obLoginSkip": "Ոչ հիմա",
+  "obLoginSubtitle": "Մուտք գործեք, որպեսզի ձեր ցուցակները համաժամեցվեն սարքերում",
+  "obLoginTitle": "Պահպանեք ձեր պլանը",
+  "obPaywallRetry": "Նորից փորձեք",
+  "obPaywallTitle": "Բացեք ձեր պլանը",
+  "obQuizFrequencyBiweekly": "Երկու շաբաթը մեկ",
+  "obQuizFrequencyDaily": "Գրեթե ամեն օր",
+  "obQuizFrequencyMonthly": "Ամսական մեծ բեռնափոխադրումներ",
+  "obQuizFrequencyTitle": "Որքա՞ն հաճախ եք գնումներ կատարում մթերքների համար:",
+  "obQuizFrequencyWeekly": "Շաբաթը մեկ անգամ",
+  "obQuizHouseholdCouple": "Ես և իմ գործընկերը",
+  "obQuizHouseholdFamilyLarge": "5+ հոգուց բաղկացած ընտանիք",
+  "obQuizHouseholdFamilySmall": "3-4 հոգանոց ընտանիք",
+  "obQuizHouseholdSolo": "Միայն ես",
+  "obQuizHouseholdTitle": "Ո՞ւմ համար եք գնումներ կատարում:",
+  "obQuizMethodMemory": "Ես դա պահում եմ իմ գլխում",
+  "obQuizMethodNone": "Ես ցուցակներ չեմ կազմում",
+  "obQuizMethodNotes": "Նշումներ հավելված",
+  "obQuizMethodPaper": "Գրիչ և թուղթ",
+  "obQuizMethodTitle": "Ինչպե՞ս եք այսօր կազմում գնումների ցուցակները:",
+  "obQuizPainForget": "Ես միշտ մոռանում եմ իրերը",
+  "obQuizPainOverspend": "Նախատեսվածից ավելին եմ ծախսում",
+  "obQuizPainTime": "Դա չափազանց շատ ժամանակ է պահանջում",
+  "obQuizPainTitle": "Ի՞նչն է ձեզ ամենաշատը հիասթափեցնում գնումներ կատարելիս:",
+  "obQuizPainWaste": "Սնունդը վատնում է տանը",
+  "obQuizSavingsLarge": "Որքան հնարավոր է",
+  "obQuizSavingsMedium": "Իմ մթերային վճարի մոտ 10%-ը",
+  "obQuizSavingsSmall": "Մի փոքր - ամեն մի քիչ կարևոր է",
+  "obQuizSavingsTitle": "Որքա՞ն կցանկանայիք խնայել ամսական:",
+  "obRevealFeatureAi": "AI-ն կառուցում և կազմակերպում է ձեր ցուցակները",
+  "obRevealFeatureBudget": "Ծախսերը հետևում են ձեր նպատակին",
+  "obRevealFeaturePantry": "Մառանների հետագծումը կրճատում է սննդի թափոնները",
+  "obRevealFeatureShare": "Իրական ժամանակի փոխանակում ձեր ընտանիքի հետ",
+  "obRevealMonth": "Ամիս {n}",
+  "obRevealSavingsCaption": "Նախատեսված խնայողություններ KipiList-ի հետ",
+  "obRevealSubtitle": "Ահա թե ինչպես է KipiList-ը աշխատելու ձեզ համար",
+  "obRevealTitle": "Ձեր ծրագիրը պատրաստ է:",
+  "obSocialQuote1": "Ես այլևս ոչինչ չեմ մոռանում։ AI-ն իմ ցուցակը կառուցում է վայրկյանների ընթացքում:",
+  "obSocialQuote2": "Մենք առաջին ամսում նկատելիորեն կրճատեցինք մեր մթերային հաշիվը:",
+  "obSocialQuote3": "Ցուցակը գործընկերոջս հետ կիսվելը վերջ դրեց մեր գնումների քաոսին:",
+  "obSocialSubtitle": "Ձեր նման գնորդներն արդեն խնայում են KipiList-ով",
+  "obSocialTitle": "Դուք լավ ընկերությունում եք",
   "observations": "Դիտարկումներ",
   "observationsHint": "Լրացուցիչ նշումներ կա՞ն:",
   "offlineBanner": "Դուք անցանց եք",
@@ -1595,7 +1895,16 @@
   "onboardingCommitmentsSubtitle": "Ընտրեք ձեր նպատակները՝ KipiList-ը անհատականացնելու համար",
   "onboardingCommitmentsTitle": "Ի՞նչն է ձեզ համար կարևոր:",
   "onboardingContinueAsGuest": "Շարունակեք որպես հյուր",
+  "onboardingContinueToOffer": "Շարունակեք",
+  "onboardingCreateFirstList": "Ստեղծեք իմ առաջին ցուցակը",
+  "onboardingDemoHeadline": "Ասա մեզ, թե ինչ ես պլանավորում: Կիպին կառուցում է ցուցակը:",
+  "onboardingDemoSubtitle": "Ստացեք կազմակերպված իրեր վայրկյանների ընթացքում:",
   "onboardingExit": "Ելք",
+  "onboardingFallbackGrocery": "🍚 բրինձ|🫘 լոբի|🥛 կաթ|🥚 ձու|🍞 Հաց|",
+  "onboardingFallbackHome": "🧻 Թղթե անձեռոցիկներ|🧽 Սպունգեր|",
+  "onboardingFallbackPet": "🥣 Կենդանիների սնունդ|🦴 Հաճույքներ|🧼 Կենդանիների շամպուն|🧸 Խաղալիք|",
+  "onboardingFallbackPharmacy": "🩹 Կպչուն վիրակապ|🌡️ Ջերմաչափ|🧴 Հակասեպտիկ|😷 Դեմքի դիմակներ|🧼 Ձեռքերի ախտահանիչ",
+  "onboardingFallbackRecipes": "🍅 Լոլիկ|🧅 Սոխ|🧄 Սխտոր|🥚 Ձու|🧀 Պանիր|🌿 Թարմ խոտաբույսեր",
   "onboardingGoalFamily": "Կազմակերպեք ընտանեկան գնումներ",
   "onboardingGoalFaster": "Ավելի արագ գնումներ կատարեք",
   "onboardingGoalNeverForget": "Երբեք մի մոռացեք իրերը",
@@ -1606,6 +1915,8 @@
   "onboardingGroupFamily": "Ընտանիք",
   "onboardingGroupSolo": "Միայն ես",
   "onboardingHookHeadline": "Այլևս երբեք մի մոռացեք մթերային ապրանքը",
+  "onboardingListCreated": "Ձեր ցուցակը պատրաստ է՝ {count} տարր՝ կազմակերպված ձեզ համար:",
+  "onboardingListSaveFailed": "Ես պատրաստեցի իրերը, բայց չկարողացա պահպանել ցուցակը: Նորից փորձեք այն պահել հավելվածում:",
   "onboardingLoadingStat1Label": "Կատալոգացված իրեր",
   "onboardingLoadingStat2Label": "Օգտատերերն օգնեցին",
   "onboardingLoadingStat3Label": "Պահպանված րոպեները",
@@ -1624,9 +1935,11 @@
   "onboardingPainRepeat": "Մեկ ճանապարհորդությունը երբեք բավարար չէ",
   "onboardingPainSubtitle": "Եղեք ազնիվ, մենք կուղղենք յուրաքանչյուրին",
   "onboardingPainTitle": "Ի՞նչն է ձեզ ամենից շատ հիասթափեցնում:",
+  "onboardingPaywallListReady": "Ձեր առաջին ցուցակը պատրաստ է · {count} տարր",
   "onboardingPersonalizationCategoryTitle": "Ինչի՞ համար եք գնումներ կատարում:",
   "onboardingPersonalizationCta": "Շարունակեք",
   "onboardingPersonalizationDesc": "Մենք դա կօգտագործենք ձեր առաջարկներն անհատականացնելու և գնումներն ավելի խելացի դարձնելու համար:",
+  "onboardingPersonalizationEffect": "Սա օգնում է Kipi-ին առաջարկել ավելի համապատասխան ապրանքներ և քանակություններ:",
   "onboardingPersonalizationFoodHint": "օր. Պիցցա, սուշի, լազանյա...",
   "onboardingPersonalizationFoodLabel": "Ո՞րն է քո սիրելի ուտելիքը:",
   "onboardingPersonalizationFoodRequired": "Շարունակելու համար ասեք մեզ ձեր սիրելի ուտելիքը",
@@ -1635,8 +1948,13 @@
   "onboardingPersonalizationNameLabel": "Ձեր անունը",
   "onboardingPersonalizationSkip": "Առայժմ բաց թողեք",
   "onboardingPersonalizationTitle": "Եկեք ծանոթանանք ձեզ հետ",
+  "onboardingPersonalizeWithName": "Անհատականացրեք իմ անունով",
   "onboardingPremiumSubtitle": "Ստացեք առավելագույնը ձեր գնումների ցուցակներից",
   "onboardingPremiumTitle": "Բացեք բոլոր հնարավորությունները",
+  "onboardingProgress": "Քայլ {current} {total}-ից",
+  "onboardingPromptEssentials": "Առաջարկեք ինձ համար ամենակարևորը",
+  "onboardingPromptEvent": "Ես հատուկ բան եմ պատրաստում",
+  "onboardingPromptWeekly": "Պլանավորեք իմ շաբաթական ամենակարևոր բաները",
   "onboardingRestore": "Վերականգնել",
   "onboardingRestoreDesc": "Արդեն ունե՞ք բաժանորդագրություն: Հպեք այստեղ՝ այն վերականգնելու համար:",
   "onboardingSetupDesc": "Ընտրեք, թե ինչպես եք ցանկանում, որ KipiList-ը նայվի և աշխատի ձեզ համար:",
@@ -1661,6 +1979,8 @@
   "pantry": "Մառան",
   "pantryAdvancedMode": "Ընդլայնված",
   "pantryAppBar": "Մառան",
+  "pantryAvailabilityAll": "Ամբողջը պատրաստ է:",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} մառանում",
   "pantryCompactView": "Կոմպակտ տեսք",
   "pantryDeficit": "Բացակայում է {amount}{unit}",
   "pantryDeleteItemsContent": "Ցանկանու՞մ եք ջնջել {count} ընտրված տարրը:",
@@ -1701,7 +2021,10 @@
   "paywallBenefit2Desc": "3 ցուցակի սահմանափակում չկա",
   "paywallBenefit3Desc": "Ծախսերի հետևում և ընտանեկան ցուցակներ",
   "paywallBestValue": "ԼԱՎԱԳՈՒՅՆ ԱՐԺԵՔ",
+  "paywallBillingAnnual": "{price}/տարի. Չեղարկել ցանկացած ժամանակ:",
+  "paywallBillingMonthly": "{price}/ամիս: Չեղարկել ցանկացած ժամանակ:",
   "paywallCancelAnytime": "Չեղարկել ցանկացած ժամանակ: Ոչ մի պարտավորություն:",
+  "paywallContinueFree": "Շարունակեք անվճար տարբերակով",
   "paywallCtaTrialDays": "Սկսեք անվճար — {days} օր",
   "paywallCtaUnlock": "Բացել PRO",
   "paywallFeatureDescAssistant": "AI-ն ավտոմատ կերպով կազմակերպում է ձեր ցուցակը",
@@ -1742,6 +2065,7 @@
   "paywallPricePerMonth": "Միայն {price}/ամսական",
   "paywallProLabel": "ՊՐՈ",
   "paywallPurchaseError": "Չհաջողվեց ավարտել գնումը: Նորից փորձեք:",
+  "paywallPurchasePending": "Ձեր վճարումը սպասում է հաստատման: Հաստատումից հետո մուտքը ավտոմատ կերպով կթողարկվի:",
   "paywallRestore": "Վերականգնել",
   "paywallRestoreError": "Ակտիվ բաժանորդագրություն չի գտնվել վերականգնելու համար:",
   "paywallSafeCheckout": "Ապահով վճարում",
@@ -1763,11 +2087,14 @@
   "paywallTrialCta": "Սկսեք անվճար փորձաշրջան",
   "paywallTrialDays": "{days} ՕՐ ԱՆՎՃԱՐ",
   "paywallTrialDisclaimer": "Չեղարկել ցանկացած պահի · Առանց գանձման մինչև փորձաշրջանի ավարտը",
+  "paywallTrialDisclosureAnnual": "Այսօր՝ առանց վճարի։ Այնուհետև {price}/տարի {days} օր հետո: Չեղարկել ցանկացած ժամանակ:",
+  "paywallTrialDisclosureMonthly": "Այսօր՝ առանց վճարի։ Այնուհետև {price}/ամիսը {days} օր հետո: Չեղարկել ցանկացած ժամանակ:",
   "paywallTrialInCard": "Առաջին {days} օրը ԱՆՎՃԱՐ",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH ԱՆՎՃԱՐ} other{{count} MONTHS FREE}}",
   "paywallTrialSubtitle": "Չեղարկել ցանկացած ժամանակ: Այսօր ոչ մի գանձում:",
   "paywallTrialTitle": "Փորձեք KipiList Pro-ն անվճար 7 օր",
   "paywallTrialWeeks": "{count,plural, one{{count} ՇԱԲԱԹ ԱՆՎՃԱՐ} other{{count} ՇԱԲԱԹ ԱՆՎՃԱՐ}}",
+  "paywallWelcomeOfferBadge": "🎁 Ողջույնի առաջարկ",
   "positionBarcodeCenter": "Տեղադրեք շտրիխ կոդը կենտրոնում",
   "prefAIAssistant": "Անհատական AI Օգնական",
   "prefCustomThemes": "Անհատական թեմաներ",
@@ -1808,6 +2135,8 @@
   "recipeCreated": "Բաղադրատոմսը ստեղծված է",
   "recipeDeleted": "Բաղադրատոմսը ջնջված է",
   "recipeImage": "Բաղադրատոմսի պատկեր",
+  "recipeIngredientSingular": "1 բաղադրիչ",
+  "recipeIngredientsPlural": "{count} բաղադրիչներ",
   "recipeName": "Բաղադրատոմսի անվանում",
   "recipeSaved": "Բաղադրատոմսը պահպանված է",
   "recipeSuggestion": "Բաղադրատոմսի առաջարկ",

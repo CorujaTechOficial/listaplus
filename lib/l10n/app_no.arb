@@ -627,6 +627,172 @@
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@onboardingAiAskConfirm": {
     "description": "AI asks for confirmation"
   },
@@ -789,6 +955,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -843,6 +1016,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -881,6 +1061,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -929,6 +1119,16 @@
   },
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
+  },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
   },
   "@pantryDeficit": {
     "placeholders": {
@@ -979,6 +1179,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -1083,12 +1297,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@progressBudget": {
     "placeholders": {
@@ -1147,6 +1384,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1218,8 +1462,8 @@
   },
   "@streakDays": {
     "placeholders": {
-      "days": {
-        "type": "String"
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1391,6 +1635,8 @@
   "categoryLimitReached": "Begrensning på 10 kategorier på gratisversjonen. Oppgrader til Pro!",
   "categoryName": "Kategorinavn",
   "categoryNameHint": "For eksempel: Kjøtt",
+  "chatEmptySubtitle": "Be om forslag til ting, oppskrifter eller sparetips for å komme i gang.",
+  "chatEmptyTitle": "Chatten din er tom",
   "chatError": "Feil ved lasting av chat: {error}",
   "chatHint": "Skriv meldingen din...",
   "chatHintBlocked": "Lås opp AI for å chatte",
@@ -1756,6 +2002,60 @@
   "noRecipesSavedHint": "Lag din første egendefinerte oppskrift ved å trykke på knappen nedenfor.",
   "noTracking": "Ingen sporing",
   "notInformed": "Ikke informert",
+  "obHookCta": "Kom i gang",
+  "obHookSocial": "Stolt på av tusenvis av kunder over hele verden",
+  "obHookSubtitle": "AI-drevne lister som sparer deg for tid og penger, hver eneste tur.",
+  "obHookTitle": "Smartere shopping starter her",
+  "obLoadingStepHabits": "Still inn handlerutinen din",
+  "obLoadingStepLists": "Forbereder smartlistene dine",
+  "obLoadingStepProfile": "Justering for husholdningen din",
+  "obLoadingStepSavings": "Optimalisering av sparestrategien din",
+  "obLoadingTitle": "Bygg din personlige plan...",
+  "obLoginApple": "Fortsett med Apple",
+  "obLoginError": "Pålogging mislyktes. Prøv igjen eller hopp over for nå.",
+  "obLoginGoogle": "Fortsett med Google",
+  "obLoginSkip": "Ikke nå",
+  "obLoginSubtitle": "Logg på slik at listene dine synkroniseres på tvers av enheter",
+  "obLoginTitle": "Lagre planen din",
+  "obPaywallRetry": "Prøv igjen",
+  "obPaywallTitle": "Lås opp planen din",
+  "obQuizFrequencyBiweekly": "Annenhver uke",
+  "obQuizFrequencyDaily": "Nesten hver dag",
+  "obQuizFrequencyMonthly": "Stort månedlig trekk",
+  "obQuizFrequencyTitle": "Hvor ofte handler du dagligvarer?",
+  "obQuizFrequencyWeekly": "En gang i uken",
+  "obQuizHouseholdCouple": "Jeg og min partner",
+  "obQuizHouseholdFamilyLarge": "Familie på 5+",
+  "obQuizHouseholdFamilySmall": "Familie på 3–4",
+  "obQuizHouseholdSolo": "Bare meg",
+  "obQuizHouseholdTitle": "Hvem handler du for?",
+  "obQuizMethodMemory": "Jeg holder det i hodet",
+  "obQuizMethodNone": "Jeg lager ikke lister",
+  "obQuizMethodNotes": "Notes-appen",
+  "obQuizMethodPaper": "Penn og papir",
+  "obQuizMethodTitle": "Hvordan lager du handlelister i dag?",
+  "obQuizPainForget": "Jeg glemmer alltid ting",
+  "obQuizPainOverspend": "Jeg bruker mer enn planlagt",
+  "obQuizPainTime": "Det tar for mye tid",
+  "obQuizPainTitle": "Hva frustrerer deg mest med shopping?",
+  "obQuizPainWaste": "Mat går til spille hjemme",
+  "obQuizSavingsLarge": "Så mye som mulig",
+  "obQuizSavingsMedium": "Rundt 10 % av dagligvareregningen min",
+  "obQuizSavingsSmall": "Litt - hver bit teller",
+  "obQuizSavingsTitle": "Hvor mye vil du spare månedlig?",
+  "obRevealFeatureAi": "AI bygger og organiserer listene dine",
+  "obRevealFeatureBudget": "Utgifter spores mot målet ditt",
+  "obRevealFeaturePantry": "Pantry-sporing kutter matsvinn",
+  "obRevealFeatureShare": "Sanntidsdeling med husstanden din",
+  "obRevealMonth": "Måned {n}",
+  "obRevealSavingsCaption": "Anslått besparelse med KipiList",
+  "obRevealSubtitle": "Her er hvordan KipiList vil fungere for deg",
+  "obRevealTitle": "Planen din er klar!",
+  "obSocialQuote1": "Jeg glemmer aldri noe lenger. AI bygger listen min på sekunder.",
+  "obSocialQuote2": "Vi kuttet dagligvareregningen merkbart den første måneden.",
+  "obSocialQuote3": "Å dele listen med partneren min gjorde slutt på handlekaoset vårt.",
+  "obSocialSubtitle": "Shoppere som deg sparer allerede med KipiList",
+  "obSocialTitle": "Du er i godt selskap",
   "observations": "Notater",
   "observationsHint": "Andre preferanser for assistenten",
   "offlineBanner": "Du er frakoblet",
@@ -1797,7 +2097,16 @@
   "onboardingCommitmentsSubtitle": "Velg målene dine for å tilpasse KipiList",
   "onboardingCommitmentsTitle": "Hva betyr noe for deg?",
   "onboardingContinueAsGuest": "Fortsett som gjest",
+  "onboardingContinueToOffer": "Fortsette",
+  "onboardingCreateFirstList": "Lag min første liste",
+  "onboardingDemoHeadline": "Fortell oss hva du planlegger. Kipi bygger listen.",
+  "onboardingDemoSubtitle": "Få organiserte elementer på sekunder.",
   "onboardingExit": "Gå",
+  "onboardingFallbackGrocery": "🍚 Ris|🫘 Bønner|🥛 Melk|🥚 Egg|🍞 Brød|🍎 Frukt",
+  "onboardingFallbackHome": "🧻 Tørkepapir|🧽 Svamper|🧴 Vaskemiddel|🗑️ Søppelsekker|🧹 Renskekluter",
+  "onboardingFallbackPet": "🥣 Dyremat|🦴 Godbiter|🧼 Kjæledyrsjampo|🧸 Leketøy|🧻 Avfallsposer",
+  "onboardingFallbackPharmacy": "🩹 Selvklebende bandasjer|🌡️ Termometer|🧴 Antiseptisk|😷 Ansiktsmasker|🧼 Hånddesinfeksjon",
+  "onboardingFallbackRecipes": "🍅 Tomater|🧅 Løk|🧄 Hvitløk|🥚 Egg|🧀 Ost|🌿 Friske urter",
   "onboardingGoalFamily": "Organiser familie shopping",
   "onboardingGoalFaster": "Handle raskere",
   "onboardingGoalNeverForget": "Glem aldri varer",
@@ -1808,6 +2117,8 @@
   "onboardingGroupFamily": "Familie",
   "onboardingGroupSolo": "Bare meg",
   "onboardingHookHeadline": "Glem aldri en dagligvarevare igjen",
+  "onboardingListCreated": "Listen din er klar: {count} elementer organisert for deg.",
+  "onboardingListSaveFailed": "Jeg forberedte varene, men klarte ikke å lagre listen. Prøv igjen å beholde den i appen.",
   "onboardingLoadingStat1Label": "Artikler katalogisert",
   "onboardingLoadingStat2Label": "Brukere hjalp til",
   "onboardingLoadingStat3Label": "Minutter spart",
@@ -1826,9 +2137,11 @@
   "onboardingPainRepeat": "En tur er aldri nok",
   "onboardingPainSubtitle": "Vær ærlig - vi fikser hver enkelt",
   "onboardingPainTitle": "Hva frustrerer deg mest?",
+  "onboardingPaywallListReady": "Din første liste er klar · {count} elementer",
   "onboardingPersonalizationCategoryTitle": "Hva handler du for?",
   "onboardingPersonalizationCta": "Fortsette",
   "onboardingPersonalizationDesc": "Vi bruker dette til å tilpasse forslagene dine og gjøre shopping smartere.",
+  "onboardingPersonalizationEffect": "Dette hjelper Kipi med å foreslå mer relevante varer og kvanta.",
   "onboardingPersonalizationFoodHint": "f.eks. Pizza, sushi, lasagne...",
   "onboardingPersonalizationFoodLabel": "Hva er favorittmaten din?",
   "onboardingPersonalizationFoodRequired": "Fortell oss din favorittmat for å fortsette",
@@ -1837,8 +2150,13 @@
   "onboardingPersonalizationNameLabel": "Navnet ditt",
   "onboardingPersonalizationSkip": "Hopp over for nå",
   "onboardingPersonalizationTitle": "La oss bli kjent med deg",
+  "onboardingPersonalizeWithName": "Tilpass med navnet mitt",
   "onboardingPremiumSubtitle": "Få mest mulig ut av handlelistene dine",
   "onboardingPremiumTitle": "Lås opp alle funksjoner",
+  "onboardingProgress": "Trinn {current} av {total}",
+  "onboardingPromptEssentials": "Foreslå det viktigste for meg",
+  "onboardingPromptEvent": "Jeg forbereder noe spesielt",
+  "onboardingPromptWeekly": "Planlegg mine ukentlige nødvendigheter",
   "onboardingRestore": "Restaurere",
   "onboardingRestoreDesc": "Har du allerede et abonnement? Trykk her for å gjenopprette den.",
   "onboardingSetupDesc": "Velg hvordan du vil at KipiList skal se ut og fungere for deg.",
@@ -1865,6 +2183,8 @@
   "pantry": "Spiskammer",
   "pantryAdvancedMode": "Avansert",
   "pantryAppBar": "Spiskammer",
+  "pantryAvailabilityAll": "Alt klart!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} i pantry",
   "pantryCompactView": "Kompakt visning",
   "pantryDeficit": "Mangler {amount}{unit}",
   "pantryDeleteItemsContent": "Vil du slette {count} valgte elementer?",
@@ -1906,7 +2226,10 @@
   "paywallBenefit2Desc": "Ingen 3-listegrense",
   "paywallBenefit3Desc": "Utgiftssporing og familielister",
   "paywallBestValue": "BESTE VERDI",
+  "paywallBillingAnnual": "{price}/år. Avbryt når som helst.",
+  "paywallBillingMonthly": "{price}/måned. Avbryt når som helst.",
   "paywallCancelAnytime": "Avbryt når som helst. Ingen forpliktelse.",
+  "paywallContinueFree": "Fortsett med gratisversjonen",
   "paywallCtaTrialDays": "Start gratis – {days} dager",
   "paywallCtaUnlock": "Lås opp PRO",
   "paywallFeatureDescAssistant": "AI organiserer listen din automatisk",
@@ -1947,6 +2270,7 @@
   "paywallPricePerMonth": "Bare {price}/måned",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Kunne ikke fullføre kjøpet. Prøv igjen.",
+  "paywallPurchasePending": "Betalingen din venter på godkjenning. Tilgangen frigis automatisk etter bekreftelse.",
   "paywallRestore": "Restaurere",
   "paywallRestoreError": "Finner ikke noe aktivt abonnement å gjenopprette.",
   "paywallSafeCheckout": "Sikker betaling",
@@ -1968,11 +2292,14 @@
   "paywallTrialCta": "Start gratis prøveversjon",
   "paywallTrialDays": "{days} DAGER GRATIS",
   "paywallTrialDisclaimer": "Kanseller når som helst · Ingen kostnad før prøveperioden er over",
+  "paywallTrialDisclosureAnnual": "I dag: gratis. Deretter {price}/år etter {days} dager. Avbryt når som helst.",
+  "paywallTrialDisclosureMonthly": "I dag: gratis. Deretter {price}/måned etter {days} dager. Avbryt når som helst.",
   "paywallTrialInCard": "De første {days} dagene GRATIS",
   "paywallTrialMonths": "{count,plural, one{{count} MONTH FREE} other{{count} MONTHS FREE}}",
   "paywallTrialSubtitle": "Avbryt når som helst. Ingen kostnad i dag.",
   "paywallTrialTitle": "Prøv KipiList Pro gratis i 7 dager",
   "paywallTrialWeeks": "{count,plural, one{{count} UKE GRATIS} other{{count} UKER GRATIS}}",
+  "paywallWelcomeOfferBadge": "🎁 Velkomsttilbud",
   "positionBarcodeCenter": "Plasser strekkoden i midten",
   "prefAIAssistant": "Personlig AI-assistent",
   "prefCustomThemes": "Egendefinerte temaer",
@@ -2016,6 +2343,8 @@
   "recipeCreated": "Oppskrift laget!",
   "recipeDeleted": "Oppskriften er slettet",
   "recipeImage": "Oppskriftsbilde",
+  "recipeIngredientSingular": "1 ingrediens",
+  "recipeIngredientsPlural": "{count} ingredienser",
   "recipeName": "Navn på oppskriften",
   "recipeSaved": "Oppskriften er lagret!",
   "recipeSuggestion": "Oppskriftsforslag",
@@ -2126,7 +2455,7 @@
   "sortName": "Navn",
   "spendingAnalysis": "Forbruksanalyse",
   "spendingByCategory": "Forbruk etter kategori",
-  "streakDays": "{days} dager",
+  "streakDays": "{count,plural, one{{count} dager} other{{count} dager}}",
   "subscription": "Abonnement",
   "suggestedItems": "Foreslåtte elementer",
   "suggestedQuestions": "Foreslåtte spørsmål:",

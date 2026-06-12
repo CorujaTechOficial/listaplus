@@ -681,6 +681,13 @@ class AppLocalizationsKk extends AppLocalizations {
   String get chatHintBlocked => 'Сөйлесу үшін AI құлпын ашыңыз';
 
   @override
+  String get chatEmptySubtitle =>
+      'Бастау үшін элементтер туралы ұсыныстарды, рецепттерді немесе сақтау бойынша кеңестерді сұраңыз.';
+
+  @override
+  String get chatEmptyTitle => 'Сіздің чатыңыз бос';
+
+  @override
   String chatError(String error) {
     return 'Чатты жүктеу қатесі: $error';
   }
@@ -1108,6 +1115,9 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Толық икемділік';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Қош келдіңіз ұсынысы';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1882,6 +1892,9 @@ class AppLocalizationsKk extends AppLocalizations {
   String get catalogBrowse => 'Каталогты шолу';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Сіз желіден тыссыз';
 
   @override
@@ -2455,4 +2468,292 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Жемістер';
+
+  @override
+  String get recipeIngredientSingular => '1 ингредиент';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ингредиенттер';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Барлығы дайын!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount қоймада';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Қадам $current/$total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Бізге не жоспарлап жатқаныңызды айтыңыз. Кипи тізімді жасайды.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Бірнеше секунд ішінде реттелген элементтерді алыңыз.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Бұл Kipi-ге көбірек сәйкес заттар мен мөлшерлерді ұсынуға көмектеседі.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Менің атыммен жекелендіріңіз';
+
+  @override
+  String get onboardingCreateFirstList => 'Менің бірінші тізімімді жасаңыз';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'Апталық қажетті нәрселерімді жоспарлаңыз';
+
+  @override
+  String get onboardingPromptEvent => 'Мен ерекше нәрсе дайындап жатырмын';
+
+  @override
+  String get onboardingPromptEssentials => 'Маған қажетті нәрселерді ұсыныңыз';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Күріш|🫘 Бұршақ|🥛 Сүт|🥚 Жұмыртқа|🍞 Нан|🍎 Жемістер';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Жабысқақ таңғыштар|🌡️ Термометр|🧴 Антисептикалық|😷 Бет маскалары|🧼 Қолды тазартқыш';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Қызанақ|🧅 Пияз|🧄 Сарымсақ|🥚 Жұмыртқа|🧀 Ірімшік|🌿 Жаңа піскен шөптер';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Қағаз сүлгілер|🧽 Губкалар|🧴 Жуғыш зат|🗑️ Қоқыс қаптары|🧹 Тазалау шүберектері';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Үй жануарларына арналған тағам|🦴 Тәттілер|🧼 Үй жануарларына арналған сусабын|🧸 Ойыншық|🧻 Қоқыс қаптары';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Мен элементтерді дайындадым, бірақ тізімді сақтай алмадым. Оны қолданбада сақтау үшін әрекетті қайталаңыз.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Сіздің тізіміңіз дайын: $count элементтер сіз үшін ұйымдастырылған.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Жалғастыру';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Бірінші тізіміңіз дайын · $count элементтер';
+  }
+
+  @override
+  String get paywallContinueFree => 'Тегін нұсқамен жалғастырыңыз';
+
+  @override
+  String get paywallPurchasePending =>
+      'Төлеміңіз мақұлдауды күтуде. Растаудан кейін рұқсат автоматты түрде босатылады.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Бүгін: ақысыз. Содан кейін $days күннен кейін $price/жыл. Кез келген уақытта бас тарту.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Бүгін: ақысыз. Содан кейін $days күннен кейін $price/ай. Кез келген уақытта бас тарту.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/жыл. Кез келген уақытта бас тарту.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/ай. Кез келген уақытта бас тарту.';
+  }
+
+  @override
+  String get obHookTitle => 'Ақылды сатып алу осы жерден басталады';
+
+  @override
+  String get obHookSubtitle =>
+      'Уақыт пен ақшаны, әрбір сапарды үнемдейтін AI-мен жұмыс істейтін тізімдер.';
+
+  @override
+  String get obHookSocial =>
+      'Дүние жүзіндегі мыңдаған сатып алушылар сенім артады';
+
+  @override
+  String get obHookCta => 'Жұмысты бастау';
+
+  @override
+  String get obQuizHouseholdTitle => 'Сіз кімге дүкен жасайсыз?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Мен ғана';
+
+  @override
+  String get obQuizHouseholdCouple => 'Мен және менің серіктесім';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 адамнан тұратын отбасы';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ адамнан тұратын отбасы';
+
+  @override
+  String get obQuizFrequencyTitle =>
+      'Сіз қаншалықты жиі азық-түлік сатып аласыз?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Күн сайын дерлік';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Аптасына бір рет';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Екі апта сайын';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Ай сайынғы үлкен жүк';
+
+  @override
+  String get obQuizPainTitle => 'Сатып алу кезінде сізді не ренжітеді?';
+
+  @override
+  String get obQuizPainForget => 'Мен заттарды үнемі ұмытып кетемін';
+
+  @override
+  String get obQuizPainOverspend => 'Жоспардан артық жұмсаймын';
+
+  @override
+  String get obQuizPainWaste => 'Үйде тамақ босқа кетеді';
+
+  @override
+  String get obQuizPainTime => 'Бұл тым көп уақытты алады';
+
+  @override
+  String get obQuizSavingsTitle => 'Ай сайын қанша үнемдегіңіз келеді?';
+
+  @override
+  String get obQuizSavingsSmall => 'Біраз — әрбір бит маңызды';
+
+  @override
+  String get obQuizSavingsMedium => 'Менің азық-түлік шотымның шамамен 10%';
+
+  @override
+  String get obQuizSavingsLarge => 'Мүмкіндігінше';
+
+  @override
+  String get obQuizMethodTitle => 'Бүгін сатып алу тізімдерін қалай жасайсыз?';
+
+  @override
+  String get obQuizMethodPaper => 'Қалам мен қағаз';
+
+  @override
+  String get obQuizMethodNotes => 'Notes қолданбасы';
+
+  @override
+  String get obQuizMethodMemory => 'Мен оны өз басымда ұстаймын';
+
+  @override
+  String get obQuizMethodNone => 'Мен тізім жасамаймын';
+
+  @override
+  String get obSocialTitle => 'Сіз жақсы серіктессіз';
+
+  @override
+  String get obSocialSubtitle =>
+      'Сіз сияқты сатып алушылар KipiList арқылы үнемдеп жатыр';
+
+  @override
+  String get obSocialQuote1 =>
+      'Мен енді ешқашан ештеңені ұмытпаймын. AI менің тізімімді секундтарда жасайды.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Біз бірінші айда азық-түлік шотымызды айтарлықтай қысқарттық.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Тізімді серіктесіммен бөлісу біздің саудадағы хаосты аяқтады.';
+
+  @override
+  String get obLoadingTitle => 'Жекелендірілген жоспар құрылуда...';
+
+  @override
+  String get obLoadingStepProfile => 'Сіздің үй шаруашылығыңыз үшін реттеу';
+
+  @override
+  String get obLoadingStepHabits => 'Сатып алу тәртібін реттеу';
+
+  @override
+  String get obLoadingStepSavings => 'Жинақ стратегияңызды оңтайландыру';
+
+  @override
+  String get obLoadingStepLists => 'Смарт тізімдеріңізді дайындау';
+
+  @override
+  String get obRevealTitle => 'Сіздің жоспарыңыз дайын!';
+
+  @override
+  String get obRevealSubtitle => 'Міне, KipiList сіз үшін қалай жұмыс істейді';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList көмегімен болжанған үнемдеу';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Ай $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI тізімдеріңізді жасайды және реттейді';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Сіздің мақсатыңызға қарсы бақыланатын шығындар';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Қойманы қадағалау тағам қалдықтарын азайтады';
+
+  @override
+  String get obRevealFeatureShare => 'Үй шаруашылығымен нақты уақытта бөлісу';
+
+  @override
+  String get obPaywallTitle => 'Жоспарыңызды ашыңыз';
+
+  @override
+  String get obPaywallRetry => 'Қайтадан байқап көріңіз';
+
+  @override
+  String get obLoginTitle => 'Жоспарыңызды сақтаңыз';
+
+  @override
+  String get obLoginSubtitle =>
+      'Тізімдер құрылғылар арасында синхрондалу үшін жүйеге кіріңіз';
+
+  @override
+  String get obLoginGoogle => 'Google арқылы жалғастырыңыз';
+
+  @override
+  String get obLoginApple => 'Apple компаниясымен жалғастырыңыз';
+
+  @override
+  String get obLoginSkip => 'Қазір емес';
+
+  @override
+  String get obLoginError =>
+      'Жүйеге кіру сәтсіз аяқталды. Қайталап көріңіз немесе қазір өткізіп жіберіңіз.';
 }

@@ -415,6 +415,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -583,6 +749,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -637,6 +810,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -675,6 +855,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -724,6 +914,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -766,6 +966,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -870,12 +1084,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -952,6 +1189,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1201,6 +1445,8 @@
   "categoryLimitReached": "Luokkaraja saavutettu",
   "categoryName": "Luokan nimi",
   "categoryNameHint": "Anna luokan nimi",
+  "chatEmptySubtitle": "Pyydä tuoteehdotuksia, reseptejä tai tallennusvinkkejä aloittaaksesi.",
+  "chatEmptyTitle": "Chattisi on tyhjä",
   "chatError": "Virhe ladattaessa chattia: {error}",
   "chatHint": "Kirjoita viestisi...",
   "chatHintBlocked": "Avaa AI keskustellaksesi",
@@ -1497,6 +1743,60 @@
   "noRecipesSavedHint": "Luo ensimmäinen mukautettu reseptisi napauttamalla alla olevaa painiketta.",
   "noTracking": "Ei seurantaa",
   "notInformed": "Ei tiedotettu",
+  "obHookCta": "Aloita",
+  "obHookSocial": "Tuhannet ostajat ympäri maailmaa luottavat siihen",
+  "obHookSubtitle": "Tekoälykäyttöiset luettelot säästävät aikaa ja rahaa jokaisella matkalla.",
+  "obHookTitle": "Älykkäämpi ostos alkaa tästä",
+  "obLoadingStepHabits": "Viritä ostosrutiinisi",
+  "obLoadingStepLists": "Älykkäiden listojesi valmistelu",
+  "obLoadingStepProfile": "Säätö kotitaloudellesi",
+  "obLoadingStepSavings": "Säästöstrategiasi optimointi",
+  "obLoadingTitle": "Luo henkilökohtainen suunnitelmasi...",
+  "obLoginApple": "Jatka Applella",
+  "obLoginError": "Kirjautuminen epäonnistui. Yritä uudelleen tai ohita toistaiseksi.",
+  "obLoginGoogle": "Jatka Googlella",
+  "obLoginSkip": "Ei nyt",
+  "obLoginSubtitle": "Kirjaudu sisään, jotta luettelosi synkronoidaan eri laitteiden välillä",
+  "obLoginTitle": "Tallenna suunnitelmasi",
+  "obPaywallRetry": "Yritä uudelleen",
+  "obPaywallTitle": "Avaa suunnitelmasi",
+  "obQuizFrequencyBiweekly": "Kahden viikon välein",
+  "obQuizFrequencyDaily": "Melkein joka päivä",
+  "obQuizFrequencyMonthly": "Suuri kuukausittain",
+  "obQuizFrequencyTitle": "Kuinka usein ostat elintarvikkeita?",
+  "obQuizFrequencyWeekly": "Kerran viikossa",
+  "obQuizHouseholdCouple": "Minä ja kumppanini",
+  "obQuizHouseholdFamilyLarge": "5+ perhe",
+  "obQuizHouseholdFamilySmall": "3-4 hengen perhe",
+  "obQuizHouseholdSolo": "vain minä",
+  "obQuizHouseholdTitle": "Kenelle teet ostoksia?",
+  "obQuizMethodMemory": "Pidän sitä päässäni",
+  "obQuizMethodNone": "En tee listoja",
+  "obQuizMethodNotes": "Muistiinpanot-sovellus",
+  "obQuizMethodPaper": "Kynä ja paperi",
+  "obQuizMethodTitle": "Miten teet ostoslistoja tänään?",
+  "obQuizPainForget": "Unohdan aina tavarat",
+  "obQuizPainOverspend": "Kulutan enemmän kuin suunnittelin",
+  "obQuizPainTime": "Se vie liikaa aikaa",
+  "obQuizPainTitle": "Mikä turhauttaa sinua eniten ostoksissa?",
+  "obQuizPainWaste": "Ruoka menee kotona hukkaan",
+  "obQuizSavingsLarge": "Niin paljon kuin mahdollista",
+  "obQuizSavingsMedium": "Noin 10% ruokalaskustani",
+  "obQuizSavingsSmall": "Vähän – jokaisella on merkitystä",
+  "obQuizSavingsTitle": "Kuinka paljon haluaisit säästää kuukausittain?",
+  "obRevealFeatureAi": "AI rakentaa ja järjestää luettelosi",
+  "obRevealFeatureBudget": "Kulutusta seurataan tavoitteesi mukaisesti",
+  "obRevealFeaturePantry": "Pantry-seuranta vähentää ruokahävikkiä",
+  "obRevealFeatureShare": "Reaaliaikainen jakaminen kotitaloudesi kanssa",
+  "obRevealMonth": "Kuukausi {n}",
+  "obRevealSavingsCaption": "Ennustettu säästö KipiListin avulla",
+  "obRevealSubtitle": "Näin KipiList toimii sinulle",
+  "obRevealTitle": "Suunnitelmasi on valmis!",
+  "obSocialQuote1": "En koskaan unohda enää mitään. Tekoäly rakentaa luetteloni sekunneissa.",
+  "obSocialQuote2": "Leikkasimme ruokalaskuamme huomattavasti ensimmäisen kuukauden aikana.",
+  "obSocialQuote3": "Listan jakaminen kumppanini kanssa lopetti ostoskaaoksemme.",
+  "obSocialSubtitle": "Kaltaisesi ostajat säästävät jo KipiListin avulla",
+  "obSocialTitle": "Olet hyvässä seurassa",
   "observations": "Havainnot",
   "observationsHint": "Onko lisähuomautuksia?",
   "offlineBanner": "Olet offline-tilassa",
@@ -1538,7 +1838,16 @@
   "onboardingCommitmentsSubtitle": "Valitse tavoitteesi muokataksesi KipiListiä",
   "onboardingCommitmentsTitle": "Mikä on sinulle tärkeää?",
   "onboardingContinueAsGuest": "Jatka vieraana",
+  "onboardingContinueToOffer": "Jatkaa",
+  "onboardingCreateFirstList": "Luo ensimmäinen luetteloni",
+  "onboardingDemoHeadline": "Kerro meille mitä suunnittelet. Kipi rakentaa listan.",
+  "onboardingDemoSubtitle": "Hanki järjestetyt kohteet sekunneissa.",
   "onboardingExit": "Poistu",
+  "onboardingFallbackGrocery": "🍚 Riisi|🫘 Pavut|🥛 Maito|🥚 Munat|🍞 Leipä|🍎 Hedelmät",
+  "onboardingFallbackHome": "🧻 Paperipyyhkeet|🧽 Sienet|🧴 Pesuaine|🗑️ Roskapussit|🧹 Puhdistusliinat",
+  "onboardingFallbackPet": "🥣 Lemmikkieläinruoka|🦴 Herkut|🧼 Lemmikkieläinshampoo|🧸 Lelu|🧻 Jätepussit",
+  "onboardingFallbackPharmacy": "🩹 Liimasiteet|🌡️ Lämpömittari|🧴 Antiseptinen|😷 Kasvonaamiot|🧼 Käsien desinfiointiaine",
+  "onboardingFallbackRecipes": "🍅 Tomaatit|🧅 Sipuli|🧄 Valkosipuli|🥚 Munat|🧀 Juusto|🌿 Tuoreet yrtit",
   "onboardingGoalFamily": "Järjestä perheen ostokset",
   "onboardingGoalFaster": "Osta nopeammin",
   "onboardingGoalNeverForget": "Älä koskaan unohda esineitä",
@@ -1549,6 +1858,8 @@
   "onboardingGroupFamily": "Perhe",
   "onboardingGroupSolo": "vain minä",
   "onboardingHookHeadline": "Älä koskaan unohda päivittäistavaroita uudelleen",
+  "onboardingListCreated": "Listasi on valmis: {count} kohdetta järjestetty sinulle.",
+  "onboardingListSaveFailed": "Valmistelin tuotteet, mutta en voinut tallentaa luetteloa. Yritä uudelleen pitääksesi sen sovelluksessa.",
   "onboardingLoadingStat1Label": "Luetteloidut tuotteet",
   "onboardingLoadingStat2Label": "Käyttäjät auttoivat",
   "onboardingLoadingStat3Label": "Minuutit tallennettu",
@@ -1567,9 +1878,11 @@
   "onboardingPainRepeat": "Yksi matka ei koskaan riitä",
   "onboardingPainSubtitle": "Ole rehellinen – korjaamme jokaisen",
   "onboardingPainTitle": "Mikä turhauttaa sinua eniten?",
+  "onboardingPaywallListReady": "Ensimmäinen luettelosi on valmis · {count} kohdetta",
   "onboardingPersonalizationCategoryTitle": "Mitä ostat?",
   "onboardingPersonalizationCta": "Jatkaa",
   "onboardingPersonalizationDesc": "Käytämme tätä mukauttaaksemme ehdotuksiasi ja tehdäksemme ostoksista älykkäämpiä.",
+  "onboardingPersonalizationEffect": "Tämä auttaa Kipiä ehdottamaan osuvampia tuotteita ja määriä.",
   "onboardingPersonalizationFoodHint": "esim. Pizzaa, Sushia, Lasagnea...",
   "onboardingPersonalizationFoodLabel": "Mikä on lempiruokasi?",
   "onboardingPersonalizationFoodRequired": "Kerro meille suosikkiruokasi jatkaaksesi",
@@ -1578,8 +1891,13 @@
   "onboardingPersonalizationNameLabel": "Sinun nimesi",
   "onboardingPersonalizationSkip": "Ohita toistaiseksi",
   "onboardingPersonalizationTitle": "Tutustutaanpa sinuun",
+  "onboardingPersonalizeWithName": "Mukauta omalla nimelläni",
   "onboardingPremiumSubtitle": "Ota kaikki irti ostoslistoistasi",
   "onboardingPremiumTitle": "Avaa kaikki ominaisuudet",
+  "onboardingProgress": "Vaihe {current} / {total}",
+  "onboardingPromptEssentials": "Ehdota minulle välttämättömiä asioita",
+  "onboardingPromptEvent": "Valmistelen jotain erityistä",
+  "onboardingPromptWeekly": "Suunnittele viikoittaiset tarpeeni",
   "onboardingRestore": "Palauttaa",
   "onboardingRestoreDesc": "Onko sinulla jo tilaus? Palauta se napauttamalla tätä.",
   "onboardingSetupDesc": "Valitse, miltä haluat KipiListin näyttävän ja toimivan sinulle.",
@@ -1604,6 +1922,8 @@
   "pantry": "Ruokakomero",
   "pantryAdvancedMode": "Edistynyt",
   "pantryAppBar": "Ruokakomero",
+  "pantryAvailabilityAll": "Kaikki valmiina!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} ruokakomerossa",
   "pantryCompactView": "Kompakti näkymä",
   "pantryDeficit": "Puuttuu {amount}{unit}",
   "pantryDeleteItemsContent": "Haluatko poistaa {count} valittua kohdetta?",
@@ -1644,7 +1964,10 @@
   "paywallBenefit2Desc": "Ei kolmen listan rajaa",
   "paywallBenefit3Desc": "Kulujen seuranta ja perheluettelot",
   "paywallBestValue": "PARAS ARVO",
+  "paywallBillingAnnual": "{price}/vuosi. Peru milloin tahansa.",
+  "paywallBillingMonthly": "{price}/kk. Peru milloin tahansa.",
   "paywallCancelAnytime": "Peru milloin tahansa. Ei sitoutumista.",
+  "paywallContinueFree": "Jatka ilmaisella versiolla",
   "paywallCtaTrialDays": "Aloita ilmaiseksi – {days} päivää",
   "paywallCtaUnlock": "Avaa PRO",
   "paywallFeatureDescAssistant": "AI järjestää luettelosi automaattisesti",
@@ -1685,6 +2008,7 @@
   "paywallPricePerMonth": "Vain {price}/kk",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Ostoa ei voitu suorittaa loppuun. Yritä uudelleen.",
+  "paywallPurchasePending": "Maksusi odottaa hyväksyntää. Pääsy vapautetaan automaattisesti vahvistuksen jälkeen.",
   "paywallRestore": "Palauttaa",
   "paywallRestoreError": "Palautettavaa aktiivista tilausta ei löytynyt.",
   "paywallSafeCheckout": "Turvallinen maksu",
@@ -1706,11 +2030,14 @@
   "paywallTrialCta": "Aloita ilmainen kokeilu",
   "paywallTrialDays": "{days} PÄIVÄÄ ILMAISEKSI",
   "paywallTrialDisclaimer": "Peruuta milloin tahansa · Ei veloitusta ennen kokeilujakson päättymistä",
+  "paywallTrialDisclosureAnnual": "Tänään: ei maksua. Sitten {price}/vuosi {days} päivän kuluttua. Peru milloin tahansa.",
+  "paywallTrialDisclosureMonthly": "Tänään: ei maksua. Sitten {price}/kk {days} päivän kuluttua. Peru milloin tahansa.",
   "paywallTrialInCard": "Ensimmäiset {days} päivää ILMAISEKSI",
   "paywallTrialMonths": "{count,plural, one{{count} KUUKAUSI ILMAISEKSI} other{{count} KUUKAUTA ILMAISEKSI}}",
   "paywallTrialSubtitle": "Peru milloin tahansa. Ei maksua tänään.",
   "paywallTrialTitle": "Kokeile KipiList Prota ilmaiseksi 7 päivää",
   "paywallTrialWeeks": "{count,plural, one{{count} VIIKKO ILMAISEKSI} other{{count} VIIKKOA ILMAISEKSI}}",
+  "paywallWelcomeOfferBadge": "🎁 Tervetuloa tarjous",
   "positionBarcodeCenter": "Aseta viivakoodi keskelle",
   "prefAIAssistant": "Henkilökohtainen AI-assistentti",
   "prefCustomThemes": "Mukautetut teemat",
@@ -1751,6 +2078,8 @@
   "recipeCreated": "Resepti luotu!",
   "recipeDeleted": "Resepti poistettu",
   "recipeImage": "Reseptin kuva",
+  "recipeIngredientSingular": "1 ainesosa",
+  "recipeIngredientsPlural": "{count} ainesosia",
   "recipeName": "Reseptin nimi",
   "recipeSaved": "Resepti tallennettu!",
   "recipeSuggestion": "Reseptiehdotus",

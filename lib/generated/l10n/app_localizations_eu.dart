@@ -681,6 +681,13 @@ class AppLocalizationsEu extends AppLocalizations {
   String get chatHintBlocked => 'Desblokeatu AI txateatzeko';
 
   @override
+  String get chatEmptySubtitle =>
+      'Hasteko, eskatu elementuen iradokizunak, errezetak edo gordetzeko aholkuak.';
+
+  @override
+  String get chatEmptyTitle => 'Zure txata hutsik dago';
+
+  @override
   String chatError(String error) {
     return 'Errorea txata kargatzean: $error';
   }
@@ -1103,6 +1110,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Malgutasun osoa';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Ongi etorri eskaintza';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1877,6 +1887,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get catalogBrowse => 'Arakatu Katalogoa';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Lineaz kanpo zaude';
 
   @override
@@ -2451,4 +2464,293 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Frutak';
+
+  @override
+  String get recipeIngredientSingular => '1 osagai';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count osagaiak';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Dena prest!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount jakitegian';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$current urratsa $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Esaiguzu zer planifikatzen ari zaren. Kipik osatzen du zerrenda.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Lortu antolatu elementuak segundotan.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Horrek Kipiri elementu eta kantitate garrantzitsuagoak iradokitzen laguntzen dio.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Pertsonalizatu nire izenarekin';
+
+  @override
+  String get onboardingCreateFirstList => 'Sortu nire lehen zerrenda';
+
+  @override
+  String get onboardingPromptWeekly => 'Planifikatu nire asteko ezinbestekoak';
+
+  @override
+  String get onboardingPromptEvent => 'Zerbait berezia prestatzen ari naiz';
+
+  @override
+  String get onboardingPromptEssentials => 'Iradoki ezinbestekoak';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Arroza|🫘 Babarrunak|🥛 Esnea|🥚 Arrautzak|🍞 Ogia|🍎 Fruta';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Benda itsasgarriak|🌡️ Termometroa|🧴 Antiseptikoa|😷 Aurpegiko maskarak|🧼 Esku desinfektatzailea';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomateak|🧅 Tipula|🧄 Baratxuria|🥚 Arrautzak|🧀 Gazta|🌿 Belar freskoak';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paperezko eskuoihalak|🧽 Belakiak|🧴 Detergentea|🗑️ Zabor-poltsak|🧹 Garbiketa-oihalak';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Animalien janaria|🦴 gozokiak|🧼 Animalien xanpua|🧸 Jostailua|🧻 Hondakin-poltsak';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Elementuak prestatu ditut, baina ezin izan dut zerrenda gorde. Saiatu berriro aplikazioan mantentzen.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Zure zerrenda prest dago: zuretzat antolatutako $count elementu.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Jarraitu';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Zure lehen zerrenda prest dago · $count elementu';
+  }
+
+  @override
+  String get paywallContinueFree => 'Jarraitu doako bertsioarekin';
+
+  @override
+  String get paywallPurchasePending =>
+      'Zure ordainketa onarpenaren zain dago. Sarbidea automatikoki kaleratuko da berretsi ondoren.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Gaur: kargurik gabe. Ondoren $price/urteko $days egun igaro ondoren. Utzi edonoiz.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Gaur: kargurik gabe. Ondoren, $price/hileko $days egun igaro ondoren. Utzi edonoiz.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/urte. Utzi edonoiz.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/hilabete. Utzi edonoiz.';
+  }
+
+  @override
+  String get obHookTitle => 'Erosketa adimentsuak hemen hasten dira';
+
+  @override
+  String get obHookSubtitle =>
+      'Denbora eta dirua aurrezten dizuten AI bidezko zerrendak, bidaia bakoitzean.';
+
+  @override
+  String get obHookSocial => 'Mundu osoko milaka erosleren konfiantza dute';
+
+  @override
+  String get obHookCta => 'Hasi';
+
+  @override
+  String get obQuizHouseholdTitle => 'Norentzat egiten duzu erosketak?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Ni bakarrik';
+
+  @override
+  String get obQuizHouseholdCouple => 'Ni eta nire bikotea';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 laguneko familia';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5 urtetik gorako familia';
+
+  @override
+  String get obQuizFrequencyTitle => 'Zenbatero erosketak egiten dituzu?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Ia egunero';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Astean behin';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Bi astean behin';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Hileroko garraio handia';
+
+  @override
+  String get obQuizPainTitle =>
+      'Zerk frustratzen zaitu gehien erosketak egitean?';
+
+  @override
+  String get obQuizPainForget => 'Beti ahazten ditut elementuak';
+
+  @override
+  String get obQuizPainOverspend =>
+      'Aurreikusitakoa baino gehiago gastatzen dut';
+
+  @override
+  String get obQuizPainWaste => 'Janaria etxean alferrik galtzen da';
+
+  @override
+  String get obQuizPainTime => 'Denbora gehiegi behar da';
+
+  @override
+  String get obQuizSavingsTitle => 'Zenbat aurreztu nahiko zenuke hilero?';
+
+  @override
+  String get obQuizSavingsSmall => 'Pixka bat - pixka bakoitzak balio du';
+
+  @override
+  String get obQuizSavingsMedium => 'Nire janari fakturaren %10 inguru';
+
+  @override
+  String get obQuizSavingsLarge => 'Ahal den neurrian';
+
+  @override
+  String get obQuizMethodTitle => 'Nola egiten dituzu erosketa zerrendak gaur?';
+
+  @override
+  String get obQuizMethodPaper => 'Boligrafoa eta papera';
+
+  @override
+  String get obQuizMethodNotes => 'Oharrak aplikazioa';
+
+  @override
+  String get obQuizMethodMemory => 'Buruan gordetzen dut';
+
+  @override
+  String get obQuizMethodNone => 'Ez dut zerrendarik egiten';
+
+  @override
+  String get obSocialTitle => 'Konpainia onean zaude';
+
+  @override
+  String get obSocialSubtitle =>
+      'Zu bezalako erosleak KipiList-ekin aurrezten ari dira dagoeneko';
+
+  @override
+  String get obSocialQuote1 =>
+      'Ez dut ezer gehiago ahaztu. AIak segundotan eraikitzen du nire zerrenda.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Janari-faktura nabarmen moztu genuen lehen hilabetean.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Zerrenda nire bikotearekin partekatzeak gure erosketa kaosarekin amaitu zuen.';
+
+  @override
+  String get obLoadingTitle => 'Zure plan pertsonalizatua eraikitzen...';
+
+  @override
+  String get obLoadingStepProfile => 'Zure etxeko egokitzapena';
+
+  @override
+  String get obLoadingStepHabits => 'Zure erosketa errutina sintonizatzen';
+
+  @override
+  String get obLoadingStepSavings => 'Zure aurrezteko estrategia optimizatzea';
+
+  @override
+  String get obLoadingStepLists => 'Zure zerrenda adimendunak prestatzen';
+
+  @override
+  String get obRevealTitle => 'Zure plana prest dago!';
+
+  @override
+  String get obRevealSubtitle =>
+      'Hona hemen KipiList-ek nola funtzionatuko dizun';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList-ekin aurreikusitako aurrezkia';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Hilabetea $n';
+  }
+
+  @override
+  String get obRevealFeatureAi =>
+      'AIk zure zerrendak eraiki eta antolatzen ditu';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Zure helburuaren aurkako gastua kontrolatuta';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'Jakitegien jarraipenak elikagaien hondakina murrizten du';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Denbora errealean partekatzea zure etxekoekin';
+
+  @override
+  String get obPaywallTitle => 'Desblokeatu zure plana';
+
+  @override
+  String get obPaywallRetry => 'Saiatu berriro';
+
+  @override
+  String get obLoginTitle => 'Gorde zure plana';
+
+  @override
+  String get obLoginSubtitle =>
+      'Hasi saioa zure zerrendak gailu guztietan sinkronizatzeko';
+
+  @override
+  String get obLoginGoogle => 'Jarraitu Google-rekin';
+
+  @override
+  String get obLoginApple => 'Jarraitu Applerekin';
+
+  @override
+  String get obLoginSkip => 'Orain ez';
+
+  @override
+  String get obLoginError =>
+      'Ezin izan da saioa hasi. Saiatu berriro edo saltatu oraingoz.';
 }

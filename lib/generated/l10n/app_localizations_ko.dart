@@ -667,6 +667,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chatHintBlocked => '채팅을 위해 AI 잠금 해제';
 
   @override
+  String get chatEmptySubtitle => '시작하려면 항목 제안, 레시피 또는 저장 팁을 요청하세요.';
+
+  @override
+  String get chatEmptyTitle => '채팅 내용이 비어 있습니다.';
+
+  @override
   String chatError(String error) {
     return '채팅 로딩 오류: $error';
   }
@@ -1069,6 +1075,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => '완전한 유연성';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 환영 혜택';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1819,6 +1828,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get catalogBrowse => '카탈로그 찾아보기';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => '귀하는 오프라인 상태입니다';
 
   @override
@@ -2377,6 +2389,279 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get suggestionFruits => '과일';
+
+  @override
+  String get recipeIngredientSingular => '성분 1개';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count 재료';
+  }
+
+  @override
+  String get pantryAvailabilityAll => '모두 설정되었습니다!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount 식료품 저장실에 있음';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$total의 $current 단계';
+  }
+
+  @override
+  String get onboardingDemoHeadline => '무엇을 계획하고 있는지 알려주세요. Kipi가 목록을 작성합니다.';
+
+  @override
+  String get onboardingDemoSubtitle => '몇 초 만에 정리된 항목을 가져옵니다.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      '이는 Kipi가 보다 관련성 높은 품목과 수량을 제안하는 데 도움이 됩니다.';
+
+  @override
+  String get onboardingPersonalizeWithName => '내 이름으로 맞춤 설정';
+
+  @override
+  String get onboardingCreateFirstList => '내 첫 번째 목록 만들기';
+
+  @override
+  String get onboardingPromptWeekly => '나의 주간 필수품 계획하기';
+
+  @override
+  String get onboardingPromptEvent => '특별한 걸 준비하고 있어';
+
+  @override
+  String get onboardingPromptEssentials => '나에게 필요한 필수품을 제안해보세요';
+
+  @override
+  String get onboardingFallbackGrocery => '🍚 쌀|🫘 콩|🥛 우유|🥚 계란|🍞 빵|🍎 과일';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 접착 붕대|🌡️ 온도계|🧴 방부제|😷 안면 마스크|🧼 손 소독제';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 토마토|🧅 양파|🧄 마늘|🥚 계란|🧀 치즈|🌿 신선한 허브';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 종이 타월|🧽 스폰지|🧴 세제|🗑️ 쓰레기 봉투|🧹 청소용 천';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 애완동물 사료|🦴 간식|🧼 애완동물 샴푸|🧸 장난감|🧻 폐기물 봉투';
+
+  @override
+  String get onboardingListSaveFailed =>
+      '항목을 준비했는데 목록을 저장할 수 없습니다. 앱에 보관하려면 다시 시도해 보세요.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return '귀하의 목록이 준비되었습니다: $count 항목이 귀하를 위해 정리되었습니다.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => '계속하다';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return '첫 번째 목록이 준비되었습니다 · $count 항목';
+  }
+
+  @override
+  String get paywallContinueFree => '무료 버전으로 계속하기';
+
+  @override
+  String get paywallPurchasePending =>
+      '귀하의 결제가 승인 대기 중입니다. 확인 후 자동으로 접근권한이 해제됩니다.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return '오늘: 무료입니다. 그런 다음 $days일 후에 $price/년입니다. 언제든지 취소하세요.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return '오늘: 무료입니다. 그런 다음 $days일 후에 $price/월입니다. 언제든지 취소하세요.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/년. 언제든지 취소하세요.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/월. 언제든지 취소하세요.';
+  }
+
+  @override
+  String get obHookTitle => '스마트한 쇼핑은 여기서 시작됩니다';
+
+  @override
+  String get obHookSubtitle => '모든 여행에서 시간과 비용을 절약해주는 AI 기반 목록입니다.';
+
+  @override
+  String get obHookSocial => '전 세계 수천 명의 쇼핑객이 신뢰하는 제품';
+
+  @override
+  String get obHookCta => '시작하기';
+
+  @override
+  String get obQuizHouseholdTitle => '누구를 위해 쇼핑하시나요?';
+
+  @override
+  String get obQuizHouseholdSolo => '나만';
+
+  @override
+  String get obQuizHouseholdCouple => '나와 내 파트너';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3~4인 가족';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5인 이상 가족';
+
+  @override
+  String get obQuizFrequencyTitle => '얼마나 자주 식료품을 사시나요?';
+
+  @override
+  String get obQuizFrequencyDaily => '거의 매일';
+
+  @override
+  String get obQuizFrequencyWeekly => '일주일에 한 번';
+
+  @override
+  String get obQuizFrequencyBiweekly => '2주마다';
+
+  @override
+  String get obQuizFrequencyMonthly => '월별 큰 수확량';
+
+  @override
+  String get obQuizPainTitle => '쇼핑할 때 가장 불만스러운 점은 무엇입니까?';
+
+  @override
+  String get obQuizPainForget => '나는 항상 물건을 잊어버린다.';
+
+  @override
+  String get obQuizPainOverspend => '계획보다 돈을 더 많이 쓴다';
+
+  @override
+  String get obQuizPainWaste => '음식은 집에서 낭비됩니다';
+
+  @override
+  String get obQuizPainTime => '시간이 너무 많이 걸려요';
+
+  @override
+  String get obQuizSavingsTitle => '매달 얼마를 저축하시겠습니까?';
+
+  @override
+  String get obQuizSavingsSmall => '약간 - 모든 비트가 중요함';
+
+  @override
+  String get obQuizSavingsMedium => '내 식료품비의 약 10%';
+
+  @override
+  String get obQuizSavingsLarge => '가능한 한';
+
+  @override
+  String get obQuizMethodTitle => '오늘은 쇼핑 목록을 어떻게 작성하시나요?';
+
+  @override
+  String get obQuizMethodPaper => '펜과 종이';
+
+  @override
+  String get obQuizMethodNotes => '메모 앱';
+
+  @override
+  String get obQuizMethodMemory => '머리속에 간직하고 있어요';
+
+  @override
+  String get obQuizMethodNone => '나는 목록을 만들지 않는다';
+
+  @override
+  String get obSocialTitle => '당신은 좋은 회사에 있어요';
+
+  @override
+  String get obSocialSubtitle => '귀하와 같은 쇼핑객은 이미 KipiList를 통해 비용을 절감하고 있습니다.';
+
+  @override
+  String get obSocialQuote1 => '나는 더 이상 아무것도 잊지 않습니다. AI는 몇 초 안에 내 목록을 작성합니다.';
+
+  @override
+  String get obSocialQuote2 => '우리는 첫 달에 식료품 비용을 눈에 띄게 삭감했습니다.';
+
+  @override
+  String get obSocialQuote3 => '파트너와 목록을 공유함으로써 쇼핑 혼란이 끝났습니다.';
+
+  @override
+  String get obLoadingTitle => '나만의 계획을 세우세요...';
+
+  @override
+  String get obLoadingStepProfile => '귀하의 가구에 맞게 조정';
+
+  @override
+  String get obLoadingStepHabits => '쇼핑 루틴에 맞춰 조정하기';
+
+  @override
+  String get obLoadingStepSavings => '저축 전략 최적화';
+
+  @override
+  String get obLoadingStepLists => '스마트 목록 준비하기';
+
+  @override
+  String get obRevealTitle => '계획이 준비되었습니다!';
+
+  @override
+  String get obRevealSubtitle => 'KipiList가 작동하는 방식은 다음과 같습니다.';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList를 통한 예상 절감액';
+
+  @override
+  String obRevealMonth(int n) {
+    return '월 $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI가 목록을 작성하고 정리합니다.';
+
+  @override
+  String get obRevealFeatureBudget => '목표 대비 지출 추적';
+
+  @override
+  String get obRevealFeaturePantry => '식료품 저장실 추적으로 음식물 쓰레기가 줄어듭니다.';
+
+  @override
+  String get obRevealFeatureShare => '가족과 실시간 공유';
+
+  @override
+  String get obPaywallTitle => '계획을 잠금 해제하세요';
+
+  @override
+  String get obPaywallRetry => '다시 시도하세요';
+
+  @override
+  String get obLoginTitle => '계획을 저장하세요';
+
+  @override
+  String get obLoginSubtitle => '목록이 여러 기기에서 동기화되도록 로그인하세요.';
+
+  @override
+  String get obLoginGoogle => 'Google로 계속하기';
+
+  @override
+  String get obLoginApple => 'Apple과 함께 계속하세요';
+
+  @override
+  String get obLoginSkip => '지금은 아님';
+
+  @override
+  String get obLoginError => '로그인에 실패했습니다. 다시 시도하거나 지금은 건너뛰세요.';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -3042,6 +3327,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get chatHintBlocked => '채팅을 위해 AI 잠금 해제';
 
   @override
+  String get chatEmptySubtitle => '시작하려면 항목 제안, 레시피 또는 저장 팁을 요청하세요.';
+
+  @override
+  String get chatEmptyTitle => '채팅 내용이 비어 있습니다.';
+
+  @override
   String chatError(String error) {
     return '채팅 로딩 오류: $error';
   }
@@ -3444,6 +3735,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get paywallPackageMonthlyDesc => '완전한 유연성';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 환영 혜택';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4752,4 +5046,277 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get suggestionFruits => '과일';
+
+  @override
+  String get recipeIngredientSingular => '성분 1개';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count 재료';
+  }
+
+  @override
+  String get pantryAvailabilityAll => '모두 설정되었습니다!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount 식료품 저장실에 있음';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$total의 $current 단계';
+  }
+
+  @override
+  String get onboardingDemoHeadline => '무엇을 계획하고 있는지 알려주세요. Kipi가 목록을 작성합니다.';
+
+  @override
+  String get onboardingDemoSubtitle => '몇 초 만에 정리된 항목을 가져옵니다.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      '이는 Kipi가 보다 관련성 높은 품목과 수량을 제안하는 데 도움이 됩니다.';
+
+  @override
+  String get onboardingPersonalizeWithName => '내 이름으로 맞춤 설정';
+
+  @override
+  String get onboardingCreateFirstList => '내 첫 번째 목록 만들기';
+
+  @override
+  String get onboardingPromptWeekly => '나의 주간 필수품 계획하기';
+
+  @override
+  String get onboardingPromptEvent => '특별한 걸 준비하고 있어';
+
+  @override
+  String get onboardingPromptEssentials => '나에게 필요한 필수품을 제안해보세요';
+
+  @override
+  String get onboardingFallbackGrocery => '🍚 쌀|🫘 콩|🥛 우유|🥚 계란|🍞 빵|🍎 과일';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 접착 붕대|🌡️ 온도계|🧴 방부제|😷 안면 마스크|🧼 손 소독제';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 토마토|🧅 양파|🧄 마늘|🥚 계란|🧀 치즈|🌿 신선한 허브';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 종이 타월|🧽 스폰지|🧴 세제|🗑️ 쓰레기 봉투|🧹 청소용 천';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 애완동물 사료|🦴 간식|🧼 애완동물 샴푸|🧸 장난감|🧻 폐기물 봉투';
+
+  @override
+  String get onboardingListSaveFailed =>
+      '항목을 준비했는데 목록을 저장할 수 없습니다. 앱에 보관하려면 다시 시도해 보세요.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return '귀하의 목록이 준비되었습니다: $count 항목이 귀하를 위해 정리되었습니다.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => '계속하다';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return '첫 번째 목록이 준비되었습니다 · $count 항목';
+  }
+
+  @override
+  String get paywallContinueFree => '무료 버전으로 계속하기';
+
+  @override
+  String get paywallPurchasePending =>
+      '귀하의 결제가 승인 대기 중입니다. 확인 후 자동으로 접근권한이 해제됩니다.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return '오늘: 무료입니다. 그런 다음 $days일 후에 $price/년입니다. 언제든지 취소하세요.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return '오늘: 무료입니다. 그런 다음 $days일 후에 $price/월입니다. 언제든지 취소하세요.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/년. 언제든지 취소하세요.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/월. 언제든지 취소하세요.';
+  }
+
+  @override
+  String get obHookTitle => '스마트한 쇼핑은 여기서 시작됩니다';
+
+  @override
+  String get obHookSubtitle => '모든 여행에서 시간과 비용을 절약해주는 AI 기반 목록입니다.';
+
+  @override
+  String get obHookSocial => '전 세계 수천 명의 쇼핑객이 신뢰하는 제품';
+
+  @override
+  String get obHookCta => '시작하기';
+
+  @override
+  String get obQuizHouseholdTitle => '누구를 위해 쇼핑하시나요?';
+
+  @override
+  String get obQuizHouseholdSolo => '나만';
+
+  @override
+  String get obQuizHouseholdCouple => '나와 내 파트너';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3~4인 가족';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5인 이상 가족';
+
+  @override
+  String get obQuizFrequencyTitle => '얼마나 자주 식료품을 사시나요?';
+
+  @override
+  String get obQuizFrequencyDaily => '거의 매일';
+
+  @override
+  String get obQuizFrequencyWeekly => '일주일에 한 번';
+
+  @override
+  String get obQuizFrequencyBiweekly => '2주마다';
+
+  @override
+  String get obQuizFrequencyMonthly => '월별 큰 수확량';
+
+  @override
+  String get obQuizPainTitle => '쇼핑할 때 가장 불만스러운 점은 무엇입니까?';
+
+  @override
+  String get obQuizPainForget => '나는 항상 물건을 잊어버린다.';
+
+  @override
+  String get obQuizPainOverspend => '계획보다 돈을 더 많이 쓴다';
+
+  @override
+  String get obQuizPainWaste => '음식은 집에서 낭비됩니다';
+
+  @override
+  String get obQuizPainTime => '시간이 너무 많이 걸려요';
+
+  @override
+  String get obQuizSavingsTitle => '매달 얼마를 저축하시겠습니까?';
+
+  @override
+  String get obQuizSavingsSmall => '약간 - 모든 비트가 중요함';
+
+  @override
+  String get obQuizSavingsMedium => '내 식료품비의 약 10%';
+
+  @override
+  String get obQuizSavingsLarge => '가능한 한';
+
+  @override
+  String get obQuizMethodTitle => '오늘은 쇼핑 목록을 어떻게 작성하시나요?';
+
+  @override
+  String get obQuizMethodPaper => '펜과 종이';
+
+  @override
+  String get obQuizMethodNotes => '메모 앱';
+
+  @override
+  String get obQuizMethodMemory => '머리속에 간직하고 있어요';
+
+  @override
+  String get obQuizMethodNone => '나는 목록을 만들지 않는다';
+
+  @override
+  String get obSocialTitle => '당신은 좋은 회사에 있어요';
+
+  @override
+  String get obSocialSubtitle => '귀하와 같은 쇼핑객은 이미 KipiList를 통해 비용을 절감하고 있습니다.';
+
+  @override
+  String get obSocialQuote1 => '나는 더 이상 아무것도 잊지 않습니다. AI는 몇 초 안에 내 목록을 작성합니다.';
+
+  @override
+  String get obSocialQuote2 => '우리는 첫 달에 식료품 비용을 눈에 띄게 삭감했습니다.';
+
+  @override
+  String get obSocialQuote3 => '파트너와 목록을 공유함으로써 쇼핑 혼란이 끝났습니다.';
+
+  @override
+  String get obLoadingTitle => '나만의 계획을 세우세요...';
+
+  @override
+  String get obLoadingStepProfile => '귀하의 가구에 맞게 조정';
+
+  @override
+  String get obLoadingStepHabits => '쇼핑 루틴에 맞춰 조정하기';
+
+  @override
+  String get obLoadingStepSavings => '저축 전략 최적화';
+
+  @override
+  String get obLoadingStepLists => '스마트 목록 준비하기';
+
+  @override
+  String get obRevealTitle => '계획이 준비되었습니다!';
+
+  @override
+  String get obRevealSubtitle => 'KipiList가 작동하는 방식은 다음과 같습니다.';
+
+  @override
+  String get obRevealSavingsCaption => 'KipiList를 통한 예상 절감액';
+
+  @override
+  String obRevealMonth(int n) {
+    return '월 $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI가 목록을 작성하고 정리합니다.';
+
+  @override
+  String get obRevealFeatureBudget => '목표 대비 지출 추적';
+
+  @override
+  String get obRevealFeaturePantry => '식료품 저장실 추적으로 음식물 쓰레기가 줄어듭니다.';
+
+  @override
+  String get obRevealFeatureShare => '가족과 실시간 공유';
+
+  @override
+  String get obPaywallTitle => '계획을 잠금 해제하세요';
+
+  @override
+  String get obPaywallRetry => '다시 시도하세요';
+
+  @override
+  String get obLoginTitle => '계획을 저장하세요';
+
+  @override
+  String get obLoginSubtitle => '목록이 여러 기기에서 동기화되도록 로그인하세요.';
+
+  @override
+  String get obLoginGoogle => 'Google로 계속하기';
+
+  @override
+  String get obLoginApple => 'Apple과 함께 계속하세요';
+
+  @override
+  String get obLoginSkip => '지금은 아님';
+
+  @override
+  String get obLoginError => '로그인에 실패했습니다. 다시 시도하거나 지금은 건너뛰세요.';
 }

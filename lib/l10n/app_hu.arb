@@ -472,6 +472,172 @@
   "@noListsFound": {
     "description": "Empty state when user has no lists"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@observations": {
     "description": "Label for observations field"
   },
@@ -640,6 +806,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -694,6 +867,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -732,6 +912,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -781,6 +971,16 @@
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
   },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
   "@pantryDeficit": {
     "placeholders": {
       "amount": {
@@ -823,6 +1023,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -927,12 +1141,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@preferredMarket": {
     "description": "Label for preferred market field"
@@ -1009,6 +1246,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1258,6 +1502,8 @@
   "categoryLimitReached": "Elérte a kategóriakorlátot",
   "categoryName": "Kategória neve",
   "categoryNameHint": "Adja meg a kategória nevét",
+  "chatEmptySubtitle": "A kezdéshez kérjen tételjavaslatokat, recepteket vagy mentési tippeket.",
+  "chatEmptyTitle": "A chat üres",
   "chatError": "Hiba a chat betöltésekor: {error}",
   "chatHint": "Írja be az üzenetét...",
   "chatHintBlocked": "Oldja fel az AI-t a csevegéshez",
@@ -1554,6 +1800,60 @@
   "noRecipesSavedHint": "Hozza létre első egyedi receptjét az alábbi gombra koppintva.",
   "noTracking": "Nincs nyomonkövetés",
   "notInformed": "Nem tájékoztatták",
+  "obHookCta": "Kezdje el",
+  "obHookSocial": "Világszerte vásárlók ezrei bíznak meg benne",
+  "obHookSubtitle": "AI-alapú listák, amelyek időt és pénzt takarítanak meg Önnek minden egyes utazás során.",
+  "obHookTitle": "Az okosabb vásárlás itt kezdődik",
+  "obLoadingStepHabits": "Ráhangolódás a vásárlási rutinra",
+  "obLoadingStepLists": "Okos listák készítése",
+  "obLoadingStepProfile": "Beállítás az Ön háztartásához",
+  "obLoadingStepSavings": "A megtakarítási stratégia optimalizálása",
+  "obLoadingTitle": "Személyre szabott terv elkészítése...",
+  "obLoginApple": "Folytassa az Apple-lel",
+  "obLoginError": "Sikertelen bejelentkezés. Próbálja újra, vagy most hagyja ki.",
+  "obLoginGoogle": "Folytassa a Google-lal",
+  "obLoginSkip": "Most nem",
+  "obLoginSubtitle": "Jelentkezzen be, hogy listái szinkronizálódjanak az eszközök között",
+  "obLoginTitle": "Mentse el tervét",
+  "obPaywallRetry": "Próbáld újra",
+  "obPaywallTitle": "Oldja fel tervét",
+  "obQuizFrequencyBiweekly": "Kéthetente",
+  "obQuizFrequencyDaily": "Szinte minden nap",
+  "obQuizFrequencyMonthly": "Nagy havi szállítás",
+  "obQuizFrequencyTitle": "Milyen gyakran vásárol élelmiszert?",
+  "obQuizFrequencyWeekly": "Hetente egyszer",
+  "obQuizHouseholdCouple": "Én és a párom",
+  "obQuizHouseholdFamilyLarge": "5+ fős család",
+  "obQuizHouseholdFamilySmall": "3-4 tagú család",
+  "obQuizHouseholdSolo": "Csak én",
+  "obQuizHouseholdTitle": "Kinek vásárolsz?",
+  "obQuizMethodMemory": "a fejemben tartom",
+  "obQuizMethodNone": "Nem készítek listákat",
+  "obQuizMethodNotes": "Jegyzetek alkalmazás",
+  "obQuizMethodPaper": "Toll és papír",
+  "obQuizMethodTitle": "Hogyan készíts ma bevásárlólistákat?",
+  "obQuizPainForget": "Mindig elfelejtem a dolgokat",
+  "obQuizPainOverspend": "A tervezettnél többet költök",
+  "obQuizPainTime": "Túl sok időt vesz igénybe",
+  "obQuizPainTitle": "Mi az, ami leginkább elkeserít a vásárlás során?",
+  "obQuizPainWaste": "Az étel itthon veszendőbe megy",
+  "obQuizSavingsLarge": "Amennyire csak lehetséges",
+  "obQuizSavingsMedium": "A bolti számlám körülbelül 10%-a",
+  "obQuizSavingsSmall": "Egy kicsit – minden apróság számít",
+  "obQuizSavingsTitle": "Mennyit szeretne havonta megtakarítani?",
+  "obRevealFeatureAi": "Az AI összeállítja és rendszerezi a listákat",
+  "obRevealFeatureBudget": "A célhoz képest nyomon követhető kiadás",
+  "obRevealFeaturePantry": "A kamrakövetés csökkenti az élelmiszer-pazarlást",
+  "obRevealFeatureShare": "Valós idejű megosztás a háztartással",
+  "obRevealMonth": "{n} hónap",
+  "obRevealSavingsCaption": "Tervezett megtakarítás a KipiList segítségével",
+  "obRevealSubtitle": "Így fog működni a KipiList",
+  "obRevealTitle": "Elkészült a terved!",
+  "obSocialQuote1": "Soha többé nem felejtek el semmit. Az AI másodpercek alatt összeállítja a listámat.",
+  "obSocialQuote2": "Az első hónapban érezhetően csökkentettük élelmiszerszámlánkat.",
+  "obSocialQuote3": "A lista párommal való megosztása véget vetett a vásárlási káoszunknak.",
+  "obSocialSubtitle": "A hozzád hasonló vásárlók már spórolnak a KipiList segítségével",
+  "obSocialTitle": "Jó társaságban vagy",
   "observations": "Észrevételek",
   "observationsHint": "További megjegyzések?",
   "offlineBanner": "Ön offline állapotban van",
@@ -1595,7 +1895,16 @@
   "onboardingCommitmentsSubtitle": "Válassza ki céljait a KipiList személyre szabásához",
   "onboardingCommitmentsTitle": "Mi számít neked?",
   "onboardingContinueAsGuest": "Továbbra is vendégként",
+  "onboardingContinueToOffer": "Folytatás",
+  "onboardingCreateFirstList": "Hozd létre az első listámat",
+  "onboardingDemoHeadline": "Mondja el, mit tervez. Kipi összeállítja a listát.",
+  "onboardingDemoSubtitle": "Szerezze meg a rendszerezett elemeket másodpercek alatt.",
   "onboardingExit": "Kijárat",
+  "onboardingFallbackGrocery": "🍚 Rizs|🫘 Bab|🥛 Tej|🥚 Tojás|🍞 Kenyér|🍎 Gyümölcs",
+  "onboardingFallbackHome": "🧻 Papírtörülközők|🧽 Szivacsok|🧴 Mosószer|🗑️ Szemeteszsákok|🧹 Tisztítókendők",
+  "onboardingFallbackPet": "🥣 Állateledel|🦴 Csemegek|🧼 Kisállat sampon|🧸 Játék|🧻 Hulladékzsákok",
+  "onboardingFallbackPharmacy": "🩹 Öntapadó kötszerek|🌡️ Hőmérő|🧴 Fertőtlenítő|😷 Arcmaszkok|🧼 Kézfertőtlenítő",
+  "onboardingFallbackRecipes": "🍅 Paradicsom|🧅 Hagyma|🧄 Fokhagyma|🥚 Tojás|🧀 Sajt|🌿 Friss fűszernövények",
   "onboardingGoalFamily": "Szervezze meg a családi vásárlást",
   "onboardingGoalFaster": "Vásároljon gyorsabban",
   "onboardingGoalNeverForget": "Soha ne felejtsd el az elemeket",
@@ -1606,6 +1915,8 @@
   "onboardingGroupFamily": "Család",
   "onboardingGroupSolo": "Csak én",
   "onboardingHookHeadline": "Soha többé ne felejts el egy élelmiszert",
+  "onboardingListCreated": "A listája készen van: {count} elemet rendeztek Önnek.",
+  "onboardingListSaveFailed": "Előkészítettem a tételeket, de nem tudtam elmenteni a listát. Próbálja újra, hogy az alkalmazásban maradjon.",
   "onboardingLoadingStat1Label": "Katalógusba sorolt ​​tételek",
   "onboardingLoadingStat2Label": "A felhasználók segítettek",
   "onboardingLoadingStat3Label": "Megtakarított percek",
@@ -1624,9 +1935,11 @@
   "onboardingPainRepeat": "Egy utazás sosem elég",
   "onboardingPainSubtitle": "Légy őszinte – mindegyiket megjavítjuk",
   "onboardingPainTitle": "Mi frusztrál a legjobban?",
+  "onboardingPaywallListReady": "Elkészült az első listája · {count} elem",
   "onboardingPersonalizationCategoryTitle": "Mit vásárolsz?",
   "onboardingPersonalizationCta": "Folytatás",
   "onboardingPersonalizationDesc": "Ezt arra fogjuk használni, hogy személyre szabjuk javaslatait, és okosabbá tegyük a vásárlást.",
+  "onboardingPersonalizationEffect": "Ez segít Kipinek relevánsabb tételeket és mennyiségeket javasolni.",
   "onboardingPersonalizationFoodHint": "például Pizza, Sushi, Lasagna...",
   "onboardingPersonalizationFoodLabel": "Mi a kedvenc ételed?",
   "onboardingPersonalizationFoodRequired": "Mondja el kedvenc ételét a folytatáshoz",
@@ -1635,8 +1948,13 @@
   "onboardingPersonalizationNameLabel": "A te neved",
   "onboardingPersonalizationSkip": "Most hagyd ki",
   "onboardingPersonalizationTitle": "Ismerkedjünk meg",
+  "onboardingPersonalizeWithName": "Személyre a nevemmel",
   "onboardingPremiumSubtitle": "Hozza ki a legtöbbet bevásárlólistáiból",
   "onboardingPremiumTitle": "Oldja fel az összes funkciót",
+  "onboardingProgress": "{total}/{current}. lépés",
+  "onboardingPromptEssentials": "Ajánlja nekem a lényeges dolgokat",
+  "onboardingPromptEvent": "Valami különlegessel készülök",
+  "onboardingPromptWeekly": "Tervezd meg a heti szükségleteimet",
   "onboardingRestore": "Visszaállítás",
   "onboardingRestoreDesc": "Már van előfizetése? Koppintson ide a visszaállításhoz.",
   "onboardingSetupDesc": "Válassza ki, hogy a KipiList hogyan nézzen ki és működjön az Ön számára.",
@@ -1661,6 +1979,8 @@
   "pantry": "Kamra",
   "pantryAdvancedMode": "Fejlett",
   "pantryAppBar": "Kamra",
+  "pantryAvailabilityAll": "Minden kész!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} a kamrában",
   "pantryCompactView": "Kompakt nézet",
   "pantryDeficit": "Hiányzik {amount}{unit}",
   "pantryDeleteItemsContent": "Törölni szeretne {count} kiválasztott elemet?",
@@ -1701,7 +2021,10 @@
   "paywallBenefit2Desc": "Nincs 3 listás korlát",
   "paywallBenefit3Desc": "Költségkövetés és családlisták",
   "paywallBestValue": "LEGJOBB ÉRTÉK",
+  "paywallBillingAnnual": "{price}/év. Bármikor lemondhatja.",
+  "paywallBillingMonthly": "{price}/hónap. Bármikor lemondhatja.",
   "paywallCancelAnytime": "Bármikor lemondhatja. Nincs elkötelezettség.",
+  "paywallContinueFree": "Folytassa az ingyenes verzióval",
   "paywallCtaTrialDays": "Kezdje ingyen – {days} nap",
   "paywallCtaUnlock": "A PRO feloldása",
   "paywallFeatureDescAssistant": "Az AI automatikusan rendszerezi a listát",
@@ -1742,6 +2065,7 @@
   "paywallPricePerMonth": "Csak {price}/hó",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Nem sikerült befejezni a vásárlást. Próbáld újra.",
+  "paywallPurchasePending": "Befizetése jóváhagyásra vár. A hozzáférés a megerősítést követően automatikusan felszabadul.",
   "paywallRestore": "Visszaállítás",
   "paywallRestoreError": "Nem található visszaállítandó aktív előfizetés.",
   "paywallSafeCheckout": "Biztonságos fizetés",
@@ -1763,11 +2087,14 @@
   "paywallTrialCta": "Indítsa el az ingyenes próbaverziót",
   "paywallTrialDays": "{days} NAP INGYENES",
   "paywallTrialDisclaimer": "Bármikor lemondhatja · A próbaidőszak végéig nincs díj",
+  "paywallTrialDisclosureAnnual": "Ma: nincs díj. Majd {price}/év {days} nap után. Bármikor lemondhatja.",
+  "paywallTrialDisclosureMonthly": "Ma: nincs díj. Majd {price}/hó {days} nap után. Bármikor lemondhatja.",
   "paywallTrialInCard": "Az első {days} nap INGYENES",
   "paywallTrialMonths": "{count,plural, one{{count} HÓNAP INGYENES} other{{count} HÓNAP INGYENES}}",
   "paywallTrialSubtitle": "Bármikor lemondhatja. Ma nincs díj.",
   "paywallTrialTitle": "Próbálja ki a KipiList Pro-t 7 napig ingyenesen",
   "paywallTrialWeeks": "{count,plural, one{{count} INGYENES HÉT} other{{count} HÉT INGYENES}}",
+  "paywallWelcomeOfferBadge": "🎁 Üdvözlő ajánlat",
   "positionBarcodeCenter": "Helyezze a vonalkódot középre",
   "prefAIAssistant": "Személyes AI asszisztens",
   "prefCustomThemes": "Egyedi témák",
@@ -1808,6 +2135,8 @@
   "recipeCreated": "Recept létrehozva!",
   "recipeDeleted": "Recept törölve",
   "recipeImage": "Recept képe",
+  "recipeIngredientSingular": "1 összetevő",
+  "recipeIngredientsPlural": "{count} összetevők",
   "recipeName": "Recept neve",
   "recipeSaved": "Recept mentve!",
   "recipeSuggestion": "Receptjavaslat",

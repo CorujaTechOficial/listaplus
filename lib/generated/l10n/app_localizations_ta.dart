@@ -410,7 +410,13 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String streakDays(int count) {
-    return '$days நாட்கள்';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count நாட்கள்',
+      one: '$count நாட்கள்',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -679,6 +685,13 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get chatHintBlocked => 'அரட்டையடிக்க AI ஐ திறக்கவும்';
+
+  @override
+  String get chatEmptySubtitle =>
+      'தொடங்குவதற்கு உருப்படி பரிந்துரைகள், சமையல் குறிப்புகள் அல்லது சேமிப்பு உதவிக்குறிப்புகளைக் கேளுங்கள்.';
+
+  @override
+  String get chatEmptyTitle => 'உங்கள் அரட்டை காலியாக உள்ளது';
 
   @override
   String chatError(String error) {
@@ -1120,6 +1133,9 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'முழு நெகிழ்வுத்தன்மை';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 வரவேற்பு சலுகை';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1902,6 +1918,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get catalogBrowse => 'அட்டவணையை உலாவவும்';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'ஆஃப்லைனில் உள்ளீர்கள்';
 
   @override
@@ -2487,6 +2506,289 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'பழங்கள்';
+
+  @override
+  String get recipeIngredientSingular => '1 மூலப்பொருள்';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count பொருட்கள்';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'எல்லாம் தயார்!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return 'சரக்கறையில் $availableCount/$totalCount';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'படி $current / $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'நீங்கள் என்ன திட்டமிடுகிறீர்கள் என்று எங்களிடம் கூறுங்கள். கிபி பட்டியலை உருவாக்குகிறார்.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'நொடிகளில் ஒழுங்கமைக்கப்பட்ட பொருட்களைப் பெறுங்கள்.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'இது Kipiக்கு மிகவும் பொருத்தமான பொருட்களையும் அளவுகளையும் பரிந்துரைக்க உதவுகிறது.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'என் பெயருடன் தனிப்பயனாக்கு';
+
+  @override
+  String get onboardingCreateFirstList => 'எனது முதல் பட்டியலை உருவாக்கவும்';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'எனது வாராந்திர அத்தியாவசியங்களை திட்டமிடுங்கள்';
+
+  @override
+  String get onboardingPromptEvent => 'நான் ஏதாவது விசேஷமாக தயார் செய்கிறேன்';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'எனக்கு தேவையானவற்றை பரிந்துரைக்கவும்';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 அரிசி|🫘 பீன்ஸ்|🥛 பால்|🥚 முட்டை|🍞 ரொட்டி|🍎 பழம்';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 பிசின் கட்டுகள்|🌡️ தெர்மோமீட்டர்|🧴 கிருமி நாசினிகள்|😷 முகமூடிகள்|🧼 கை சுத்திகரிப்பு';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 தக்காளி|🧅 வெங்காயம்|🧄 பூண்டு|🥚 முட்டை|🧀 சீஸ்|🌿 புதிய மூலிகைகள்';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 காகித துண்டுகள்|🧽 கடற்பாசிகள்|🧴 சோப்பு|🗑️ குப்பை பைகள்|🧹 துணிகளை சுத்தம்';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 செல்லப்பிராணிகளுக்கான உணவு|🦴 உபசரிப்புகள்|🧼 பெட் ஷாம்பு|🧸 பொம்மை|🧻 கழிவுப் பைகள்';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'நான் பொருட்களை தயார் செய்தேன், ஆனால் பட்டியலை சேமிக்க முடியவில்லை. பயன்பாட்டில் வைத்திருக்க மீண்டும் முயற்சிக்கவும்.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'உங்கள் பட்டியல் தயாராக உள்ளது: $count உருப்படிகள் உங்களுக்காக ஒழுங்கமைக்கப்பட்டுள்ளன.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'தொடரவும்';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'உங்கள் முதல் பட்டியல் தயாராக உள்ளது · $count உருப்படிகள்';
+  }
+
+  @override
+  String get paywallContinueFree => 'இலவச பதிப்பில் தொடரவும்';
+
+  @override
+  String get paywallPurchasePending =>
+      'உங்கள் பேமெண்ட் அனுமதி நிலுவையில் உள்ளது. உறுதிப்படுத்திய பிறகு அணுகல் தானாகவே வெளியிடப்படும்.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'இன்று: கட்டணம் இல்லை. பின்னர் $price/வருடம் $days நாட்களுக்குப் பிறகு. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'இன்று: கட்டணம் இல்லை. பின்னர் $price/மாதம் $days நாட்களுக்குப் பிறகு. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/ஆண்டு. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/மாதம். எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String get obHookTitle => 'Smarter shopping starts here';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-powered lists that save you time and money, every single trip.';
+
+  @override
+  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+
+  @override
+  String get obHookCta => 'Get Started';
+
+  @override
+  String get obQuizHouseholdTitle => 'Who do you shop for?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Just me';
+
+  @override
+  String get obQuizHouseholdCouple => 'Me and my partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Almost every day';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Once a week';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Every two weeks';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Big monthly haul';
+
+  @override
+  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+
+  @override
+  String get obQuizPainForget => 'I always forget items';
+
+  @override
+  String get obQuizPainOverspend => 'I spend more than planned';
+
+  @override
+  String get obQuizPainWaste => 'Food goes to waste at home';
+
+  @override
+  String get obQuizPainTime => 'It takes too much time';
+
+  @override
+  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+
+  @override
+  String get obQuizSavingsSmall => 'A little — every bit counts';
+
+  @override
+  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+
+  @override
+  String get obQuizSavingsLarge => 'As much as possible';
+
+  @override
+  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+
+  @override
+  String get obQuizMethodPaper => 'Pen and paper';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'I keep it in my head';
+
+  @override
+  String get obQuizMethodNone => 'I don\'t make lists';
+
+  @override
+  String get obSocialTitle => 'You\'re in good company';
+
+  @override
+  String get obSocialSubtitle =>
+      'Shoppers like you are already saving with KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'I never forget anything anymore. The AI builds my list in seconds.';
+
+  @override
+  String get obSocialQuote2 =>
+      'We cut our grocery bill noticeably in the first month.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Sharing the list with my partner ended our shopping chaos.';
+
+  @override
+  String get obLoadingTitle => 'Building your personalized plan...';
+
+  @override
+  String get obLoadingStepProfile => 'Adjusting for your household';
+
+  @override
+  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+
+  @override
+  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+
+  @override
+  String get obLoadingStepLists => 'Preparing your smart lists';
+
+  @override
+  String get obRevealTitle => 'Your plan is ready!';
+
+  @override
+  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+
+  @override
+  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Month $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+
+  @override
+  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+
+  @override
+  String get obRevealFeatureShare => 'Real-time sharing with your household';
+
+  @override
+  String get obPaywallTitle => 'Unlock your plan';
+
+  @override
+  String get obPaywallRetry => 'Try again';
+
+  @override
+  String get obLoginTitle => 'Save your plan';
+
+  @override
+  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+
+  @override
+  String get obLoginGoogle => 'Continue with Google';
+
+  @override
+  String get obLoginApple => 'Continue with Apple';
+
+  @override
+  String get obLoginSkip => 'Not now';
+
+  @override
+  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
 }
 
 /// The translations for Tamil, as used in India (`ta_IN`).
@@ -2895,7 +3197,13 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String streakDays(int count) {
-    return '$days நாட்கள்';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count நாட்கள்',
+      one: '$count நாட்கள்',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -3164,6 +3472,13 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get chatHintBlocked => 'அரட்டையடிக்க AI ஐ திறக்கவும்';
+
+  @override
+  String get chatEmptySubtitle =>
+      'தொடங்குவதற்கு உருப்படி பரிந்துரைகள், சமையல் குறிப்புகள் அல்லது சேமிப்பு உதவிக்குறிப்புகளைக் கேளுங்கள்.';
+
+  @override
+  String get chatEmptyTitle => 'உங்கள் அரட்டை காலியாக உள்ளது';
 
   @override
   String chatError(String error) {
@@ -3605,6 +3920,9 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get paywallPackageMonthlyDesc => 'முழு நெகிழ்வுத்தன்மை';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 வரவேற்பு சலுகை';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4972,4 +5290,287 @@ class AppLocalizationsTaIn extends AppLocalizationsTa {
 
   @override
   String get suggestionFruits => 'பழங்கள்';
+
+  @override
+  String get recipeIngredientSingular => '1 மூலப்பொருள்';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count பொருட்கள்';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'எல்லாம் தயார்!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return 'சரக்கறையில் $availableCount/$totalCount';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'படி $current / $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'நீங்கள் என்ன திட்டமிடுகிறீர்கள் என்று எங்களிடம் கூறுங்கள். கிபி பட்டியலை உருவாக்குகிறார்.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'நொடிகளில் ஒழுங்கமைக்கப்பட்ட பொருட்களைப் பெறுங்கள்.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'இது Kipiக்கு மிகவும் பொருத்தமான பொருட்களையும் அளவுகளையும் பரிந்துரைக்க உதவுகிறது.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'என் பெயருடன் தனிப்பயனாக்கு';
+
+  @override
+  String get onboardingCreateFirstList => 'எனது முதல் பட்டியலை உருவாக்கவும்';
+
+  @override
+  String get onboardingPromptWeekly =>
+      'எனது வாராந்திர அத்தியாவசியங்களை திட்டமிடுங்கள்';
+
+  @override
+  String get onboardingPromptEvent => 'நான் ஏதாவது விசேஷமாக தயார் செய்கிறேன்';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'எனக்கு தேவையானவற்றை பரிந்துரைக்கவும்';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 அரிசி|🫘 பீன்ஸ்|🥛 பால்|🥚 முட்டை|🍞 ரொட்டி|🍎 பழம்';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 பிசின் கட்டுகள்|🌡️ தெர்மோமீட்டர்|🧴 கிருமி நாசினிகள்|😷 முகமூடிகள்|🧼 கை சுத்திகரிப்பு';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 தக்காளி|🧅 வெங்காயம்|🧄 பூண்டு|🥚 முட்டை|🧀 சீஸ்|🌿 புதிய மூலிகைகள்';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 காகித துண்டுகள்|🧽 கடற்பாசிகள்|🧴 சோப்பு|🗑️ குப்பை பைகள்|🧹 துணிகளை சுத்தம்';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 செல்லப்பிராணிகளுக்கான உணவு|🦴 உபசரிப்புகள்|🧼 பெட் ஷாம்பு|🧸 பொம்மை|🧻 கழிவுப் பைகள்';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'நான் பொருட்களை தயார் செய்தேன், ஆனால் பட்டியலை சேமிக்க முடியவில்லை. பயன்பாட்டில் வைத்திருக்க மீண்டும் முயற்சிக்கவும்.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'உங்கள் பட்டியல் தயாராக உள்ளது: $count உருப்படிகள் உங்களுக்காக ஒழுங்கமைக்கப்பட்டுள்ளன.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'தொடரவும்';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'உங்கள் முதல் பட்டியல் தயாராக உள்ளது · $count உருப்படிகள்';
+  }
+
+  @override
+  String get paywallContinueFree => 'இலவச பதிப்பில் தொடரவும்';
+
+  @override
+  String get paywallPurchasePending =>
+      'உங்கள் பேமெண்ட் அனுமதி நிலுவையில் உள்ளது. உறுதிப்படுத்திய பிறகு அணுகல் தானாகவே வெளியிடப்படும்.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'இன்று: கட்டணம் இல்லை. பின்னர் $price/வருடம் $days நாட்களுக்குப் பிறகு. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'இன்று: கட்டணம் இல்லை. பின்னர் $price/மாதம் $days நாட்களுக்குப் பிறகு. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/ஆண்டு. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/மாதம். எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.';
+  }
+
+  @override
+  String get obHookTitle => 'Smarter shopping starts here';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-powered lists that save you time and money, every single trip.';
+
+  @override
+  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+
+  @override
+  String get obHookCta => 'Get Started';
+
+  @override
+  String get obQuizHouseholdTitle => 'Who do you shop for?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Just me';
+
+  @override
+  String get obQuizHouseholdCouple => 'Me and my partner';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Almost every day';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Once a week';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Every two weeks';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Big monthly haul';
+
+  @override
+  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+
+  @override
+  String get obQuizPainForget => 'I always forget items';
+
+  @override
+  String get obQuizPainOverspend => 'I spend more than planned';
+
+  @override
+  String get obQuizPainWaste => 'Food goes to waste at home';
+
+  @override
+  String get obQuizPainTime => 'It takes too much time';
+
+  @override
+  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+
+  @override
+  String get obQuizSavingsSmall => 'A little — every bit counts';
+
+  @override
+  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+
+  @override
+  String get obQuizSavingsLarge => 'As much as possible';
+
+  @override
+  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+
+  @override
+  String get obQuizMethodPaper => 'Pen and paper';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'I keep it in my head';
+
+  @override
+  String get obQuizMethodNone => 'I don\'t make lists';
+
+  @override
+  String get obSocialTitle => 'You\'re in good company';
+
+  @override
+  String get obSocialSubtitle =>
+      'Shoppers like you are already saving with KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'I never forget anything anymore. The AI builds my list in seconds.';
+
+  @override
+  String get obSocialQuote2 =>
+      'We cut our grocery bill noticeably in the first month.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Sharing the list with my partner ended our shopping chaos.';
+
+  @override
+  String get obLoadingTitle => 'Building your personalized plan...';
+
+  @override
+  String get obLoadingStepProfile => 'Adjusting for your household';
+
+  @override
+  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+
+  @override
+  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+
+  @override
+  String get obLoadingStepLists => 'Preparing your smart lists';
+
+  @override
+  String get obRevealTitle => 'Your plan is ready!';
+
+  @override
+  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+
+  @override
+  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Month $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+
+  @override
+  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+
+  @override
+  String get obRevealFeatureShare => 'Real-time sharing with your household';
+
+  @override
+  String get obPaywallTitle => 'Unlock your plan';
+
+  @override
+  String get obPaywallRetry => 'Try again';
+
+  @override
+  String get obLoginTitle => 'Save your plan';
+
+  @override
+  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+
+  @override
+  String get obLoginGoogle => 'Continue with Google';
+
+  @override
+  String get obLoginApple => 'Continue with Apple';
+
+  @override
+  String get obLoginSkip => 'Not now';
+
+  @override
+  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
 }

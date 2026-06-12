@@ -596,6 +596,172 @@
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
   },
+  "@obHookCta": {
+    "description": "Quiz onboarding hook CTA button"
+  },
+  "@obHookSocial": {
+    "description": "Quiz onboarding hook social proof"
+  },
+  "@obHookSubtitle": {
+    "description": "Quiz onboarding hook subtitle"
+  },
+  "@obHookTitle": {
+    "description": "Quiz onboarding hook title"
+  },
+  "@obLoadingStepHabits": {
+    "description": "Quiz loading step 2"
+  },
+  "@obLoadingStepLists": {
+    "description": "Quiz loading step 4"
+  },
+  "@obLoadingStepProfile": {
+    "description": "Quiz loading step 1"
+  },
+  "@obLoadingStepSavings": {
+    "description": "Quiz loading step 3"
+  },
+  "@obLoadingTitle": {
+    "description": "Quiz loading title"
+  },
+  "@obLoginApple": {
+    "description": "Quiz login Apple button"
+  },
+  "@obLoginError": {
+    "description": "Quiz login error message"
+  },
+  "@obLoginGoogle": {
+    "description": "Quiz login Google button"
+  },
+  "@obLoginSkip": {
+    "description": "Quiz login skip button"
+  },
+  "@obLoginSubtitle": {
+    "description": "Quiz login subtitle"
+  },
+  "@obLoginTitle": {
+    "description": "Quiz login title"
+  },
+  "@obPaywallRetry": {
+    "description": "Quiz paywall retry button"
+  },
+  "@obPaywallTitle": {
+    "description": "Quiz paywall title"
+  },
+  "@obQuizFrequencyBiweekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyDaily": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyMonthly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizFrequencyTitle": {
+    "description": "Quiz frequency question title"
+  },
+  "@obQuizFrequencyWeekly": {
+    "description": "Quiz frequency option"
+  },
+  "@obQuizHouseholdCouple": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilyLarge": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdFamilySmall": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdSolo": {
+    "description": "Quiz household option"
+  },
+  "@obQuizHouseholdTitle": {
+    "description": "Quiz household question title"
+  },
+  "@obQuizMethodMemory": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNone": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodNotes": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodPaper": {
+    "description": "Quiz method option"
+  },
+  "@obQuizMethodTitle": {
+    "description": "Quiz method question title"
+  },
+  "@obQuizPainForget": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainOverspend": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTime": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizPainTitle": {
+    "description": "Quiz pain point question title"
+  },
+  "@obQuizPainWaste": {
+    "description": "Quiz pain point option"
+  },
+  "@obQuizSavingsLarge": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsMedium": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsSmall": {
+    "description": "Quiz savings goal option"
+  },
+  "@obQuizSavingsTitle": {
+    "description": "Quiz savings goal question title"
+  },
+  "@obRevealFeatureAi": {
+    "description": "Quiz reveal feature 1"
+  },
+  "@obRevealFeatureBudget": {
+    "description": "Quiz reveal feature 2"
+  },
+  "@obRevealFeaturePantry": {
+    "description": "Quiz reveal feature 3"
+  },
+  "@obRevealFeatureShare": {
+    "description": "Quiz reveal feature 4"
+  },
+  "@obRevealMonth": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@obRevealSavingsCaption": {
+    "description": "Quiz reveal savings caption"
+  },
+  "@obRevealSubtitle": {
+    "description": "Quiz reveal subtitle"
+  },
+  "@obRevealTitle": {
+    "description": "Quiz reveal title"
+  },
+  "@obSocialQuote1": {
+    "description": "Quiz social proof quote 1"
+  },
+  "@obSocialQuote2": {
+    "description": "Quiz social proof quote 2"
+  },
+  "@obSocialQuote3": {
+    "description": "Quiz social proof quote 3"
+  },
+  "@obSocialSubtitle": {
+    "description": "Quiz social proof subtitle"
+  },
+  "@obSocialTitle": {
+    "description": "Quiz social proof title"
+  },
   "@onboardingAiAskConfirm": {
     "description": "AI asks for confirmation"
   },
@@ -758,6 +924,13 @@
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
   },
+  "@onboardingListCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingLoadingStat1Label": {
     "description": "Loading stat 1 label"
   },
@@ -812,6 +985,13 @@
   "@onboardingPainTitle": {
     "description": "Pain point slide title"
   },
+  "@onboardingPaywallListReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@onboardingPersonalizationCategoryTitle": {
     "description": "Category selection title"
   },
@@ -850,6 +1030,16 @@
   },
   "@onboardingPremiumTitle": {
     "description": "Slide 4 headline"
+  },
+  "@onboardingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "@onboardingRestore": {
     "description": "Restore purchases button"
@@ -898,6 +1088,16 @@
   },
   "@onboardingWelcomeTitle": {
     "description": "Slide 1 headline"
+  },
+  "@pantryAvailabilityCount": {
+    "placeholders": {
+      "availableCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
   },
   "@pantryDeficit": {
     "placeholders": {
@@ -948,6 +1148,20 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "@paywallBillingAnnual": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallBillingMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
       }
     }
   },
@@ -1052,12 +1266,35 @@
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
+  "@paywallTrialDisclosureAnnual": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallTrialDisclosureMonthly": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "@paywallTrialInCard": {
     "placeholders": {
       "days": {
         "type": "int"
       }
     }
+  },
+  "@paywallWelcomeOfferBadge": {
+    "description": "Badge shown on paywall when no trial is available"
   },
   "@progressBudget": {
     "placeholders": {
@@ -1116,6 +1353,13 @@
       },
       "listName": {
         "type": "String"
+      }
+    }
+  },
+  "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1187,7 +1431,7 @@
   },
   "@streakDays": {
     "placeholders": {
-      "days": {
+      "count": {
         "type": "int"
       }
     }
@@ -1360,6 +1604,8 @@
   "categoryLimitReached": "Had 10 kategori pada versi percuma. Naik taraf kepada Pro!",
   "categoryName": "Nama kategori",
   "categoryNameHint": "Cth.: Daging",
+  "chatEmptySubtitle": "Minta cadangan item, resipi atau petua menyimpan untuk bermula.",
+  "chatEmptyTitle": "Sembang anda kosong",
   "chatError": "Ralat memuatkan sembang: {error}",
   "chatHint": "Taip mesej anda...",
   "chatHintBlocked": "Buka kunci AI untuk bersembang",
@@ -1725,6 +1971,60 @@
   "noRecipesSavedHint": "Cipta resipi tersuai pertama anda dengan mengetik butang di bawah.",
   "noTracking": "Tiada penjejakan",
   "notInformed": "Tidak dimaklumkan",
+  "obHookCta": "Mulakan",
+  "obHookSocial": "Dipercayai oleh beribu-ribu pembeli di seluruh dunia",
+  "obHookSubtitle": "Senarai dikuasakan AI yang menjimatkan masa dan wang anda, setiap perjalanan.",
+  "obHookTitle": "Membeli-belah yang lebih bijak bermula di sini",
+  "obLoadingStepHabits": "Menala rutin membeli-belah anda",
+  "obLoadingStepLists": "Menyediakan senarai pintar anda",
+  "obLoadingStepProfile": "Menyesuaikan diri untuk isi rumah anda",
+  "obLoadingStepSavings": "Mengoptimumkan strategi simpanan anda",
+  "obLoadingTitle": "Membina pelan peribadi anda...",
+  "obLoginApple": "Teruskan dengan Apple",
+  "obLoginError": "Log masuk gagal. Cuba lagi atau langkau buat masa ini.",
+  "obLoginGoogle": "Teruskan dengan Google",
+  "obLoginSkip": "bukan sekarang",
+  "obLoginSubtitle": "Log masuk supaya senarai anda disegerakkan merentas peranti",
+  "obLoginTitle": "Simpan rancangan anda",
+  "obPaywallRetry": "Cuba lagi",
+  "obPaywallTitle": "Buka kunci rancangan anda",
+  "obQuizFrequencyBiweekly": "Setiap dua minggu",
+  "obQuizFrequencyDaily": "Hampir setiap hari",
+  "obQuizFrequencyMonthly": "Haul bulanan yang besar",
+  "obQuizFrequencyTitle": "Berapa kerap anda membeli barang runcit?",
+  "obQuizFrequencyWeekly": "Seminggu sekali",
+  "obQuizHouseholdCouple": "Saya dan pasangan saya",
+  "obQuizHouseholdFamilyLarge": "Keluarga 5+",
+  "obQuizHouseholdFamilySmall": "Keluarga 3–4",
+  "obQuizHouseholdSolo": "Hanya saya",
+  "obQuizHouseholdTitle": "Anda berbelanja untuk siapa?",
+  "obQuizMethodMemory": "Saya simpan dalam kepala saya",
+  "obQuizMethodNone": "Saya tidak membuat senarai",
+  "obQuizMethodNotes": "Apl nota",
+  "obQuizMethodPaper": "Pen dan kertas",
+  "obQuizMethodTitle": "Bagaimanakah anda membuat senarai beli-belah hari ini?",
+  "obQuizPainForget": "Saya selalu lupa barang",
+  "obQuizPainOverspend": "Saya berbelanja lebih daripada yang dirancang",
+  "obQuizPainTime": "Ia mengambil masa yang terlalu lama",
+  "obQuizPainTitle": "Apa yang paling mengecewakan anda tentang membeli-belah?",
+  "obQuizPainWaste": "Makanan menjadi sia-sia di rumah",
+  "obQuizSavingsLarge": "Seboleh-bolehnya",
+  "obQuizSavingsMedium": "Sekitar 10% daripada bil runcit saya",
+  "obQuizSavingsSmall": "Sedikit - setiap bit penting",
+  "obQuizSavingsTitle": "Berapa banyak yang anda ingin simpan setiap bulan?",
+  "obRevealFeatureAi": "AI membina dan menyusun senarai anda",
+  "obRevealFeatureBudget": "Perbelanjaan dijejaki terhadap matlamat anda",
+  "obRevealFeaturePantry": "Penjejakan pantri memotong sisa makanan",
+  "obRevealFeatureShare": "Perkongsian masa nyata dengan isi rumah anda",
+  "obRevealMonth": "Bulan {n}",
+  "obRevealSavingsCaption": "Unjuran penjimatan dengan KipiList",
+  "obRevealSubtitle": "Begini cara KipiList akan berfungsi untuk anda",
+  "obRevealTitle": "Rancangan anda sudah sedia!",
+  "obSocialQuote1": "Saya tidak pernah melupakan apa-apa lagi. AI membina senarai saya dalam beberapa saat.",
+  "obSocialQuote2": "Kami memotong bil runcit kami dengan ketara pada bulan pertama.",
+  "obSocialQuote3": "Berkongsi senarai dengan pasangan saya menamatkan kekacauan membeli-belah kami.",
+  "obSocialSubtitle": "Pembeli seperti anda sudah pun berjimat dengan KipiList",
+  "obSocialTitle": "Anda berada dalam syarikat yang baik",
   "observations": "Nota",
   "observationsHint": "Pilihan lain untuk pembantu",
   "offlineBanner": "Anda berada di luar talian",
@@ -1766,7 +2066,16 @@
   "onboardingCommitmentsSubtitle": "Pilih matlamat anda untuk memperibadikan KipiList",
   "onboardingCommitmentsTitle": "Apa yang penting bagi anda?",
   "onboardingContinueAsGuest": "Teruskan sebagai tetamu",
+  "onboardingContinueToOffer": "teruskan",
+  "onboardingCreateFirstList": "Buat senarai pertama saya",
+  "onboardingDemoHeadline": "Beritahu kami apa yang anda rancangkan. Kipi membina senarai.",
+  "onboardingDemoSubtitle": "Dapatkan item tersusun dalam beberapa saat.",
   "onboardingExit": "Keluar",
+  "onboardingFallbackGrocery": "🍚 Nasi|🫘 Kacang|🥛 Susu|🥚 Telur|🍞 Roti|🍎 Buah",
+  "onboardingFallbackHome": "🧻 Tuala kertas|🧽 Span|🧴 Detergen|🗑️ Beg sampah|🧹 Kain pembersih",
+  "onboardingFallbackPet": "🥣 Makanan haiwan peliharaan|🦴 Rawatan|🧼 Syampu haiwan peliharaan|🧸 Mainan|🧻 Beg buangan",
+  "onboardingFallbackPharmacy": "🩹 Pembalut pelekat|🌡️ Termometer|🧴 Antiseptik|😷 Topeng muka|🧼 Hand sanitizer",
+  "onboardingFallbackRecipes": "🍅 Tomato|🧅 Bawang|🧄 Bawang Putih|🥚 Telur|🧀 Keju|🌿 Herba segar",
   "onboardingGoalFamily": "Atur belanja keluarga",
   "onboardingGoalFaster": "Beli lebih cepat",
   "onboardingGoalNeverForget": "Jangan sekali-kali melupakan item",
@@ -1777,6 +2086,8 @@
   "onboardingGroupFamily": "Keluarga",
   "onboardingGroupSolo": "Hanya saya",
   "onboardingHookHeadline": "Jangan sekali-kali melupakan barang runcit lagi",
+  "onboardingListCreated": "Senarai anda sudah sedia: {count} item disusun untuk anda.",
+  "onboardingListSaveFailed": "Saya menyediakan item, tetapi tidak dapat menyimpan senarai. Cuba lagi untuk menyimpannya dalam apl.",
   "onboardingLoadingStat1Label": "Item dikatalogkan",
   "onboardingLoadingStat2Label": "Pengguna membantu",
   "onboardingLoadingStat3Label": "Minit disimpan",
@@ -1795,9 +2106,11 @@
   "onboardingPainRepeat": "Satu perjalanan tidak pernah cukup",
   "onboardingPainSubtitle": "Jujurlah — kami akan membetulkan setiap satu",
   "onboardingPainTitle": "Apa yang paling mengecewakan anda?",
+  "onboardingPaywallListReady": "Senarai pertama anda sudah sedia · {count} item",
   "onboardingPersonalizationCategoryTitle": "Anda berbelanja untuk apa?",
   "onboardingPersonalizationCta": "teruskan",
   "onboardingPersonalizationDesc": "Kami akan menggunakan ini untuk memperibadikan cadangan anda and menjadikan beli-belah lebih bijak.",
+  "onboardingPersonalizationEffect": "Ini membantu Kipi mencadangkan item dan kuantiti yang lebih berkaitan.",
   "onboardingPersonalizationFoodHint": "cth. Pizza, Sushi, Lasagna...",
   "onboardingPersonalizationFoodLabel": "Apakah makanan kegemaran anda?",
   "onboardingPersonalizationFoodRequired": "Beritahu kami makanan kegemaran anda untuk meneruskan",
@@ -1806,8 +2119,13 @@
   "onboardingPersonalizationNameLabel": "nama awak",
   "onboardingPersonalizationSkip": "Langkau buat masa ini",
   "onboardingPersonalizationTitle": "Jom kenali awak",
+  "onboardingPersonalizeWithName": "Peribadikan dengan nama saya",
   "onboardingPremiumSubtitle": "Manfaatkan sepenuhnya senarai beli-belah anda",
   "onboardingPremiumTitle": "Buka kunci semua ciri",
+  "onboardingProgress": "Langkah {current} daripada {total}",
+  "onboardingPromptEssentials": "Cadangkan perkara penting untuk saya",
+  "onboardingPromptEvent": "Saya sedang menyediakan sesuatu yang istimewa",
+  "onboardingPromptWeekly": "Rancang keperluan mingguan saya",
   "onboardingRestore": "Pulihkan",
   "onboardingRestoreDesc": "Sudah mempunyai langganan? Ketik di sini untuk memulihkannya.",
   "onboardingSetupDesc": "Pilih cara anda mahu KipiList kelihatan and berfungsi untuk anda.",
@@ -1834,6 +2152,8 @@
   "pantry": "Pantri",
   "pantryAdvancedMode": "Maju",
   "pantryAppBar": "Pantri",
+  "pantryAvailabilityAll": "Semua siap!",
+  "pantryAvailabilityCount": "{availableCount}/{totalCount} dalam pantri",
   "pantryCompactView": "Pandangan Padat",
   "pantryDeficit": "Tiada {amount}{unit}",
   "pantryDeleteItemsContent": "Adakah anda mahu memadamkan {count} item yang dipilih?",
@@ -1875,7 +2195,10 @@
   "paywallBenefit2Desc": "Tiada had 3 senarai",
   "paywallBenefit3Desc": "Penjejakan perbelanjaan and senarai keluarga",
   "paywallBestValue": "NILAI TERBAIK",
+  "paywallBillingAnnual": "{price}/tahun. Batalkan bila-bila masa.",
+  "paywallBillingMonthly": "{price}/bulan. Batalkan bila-bila masa.",
   "paywallCancelAnytime": "Batalkan bila-bila masa. Tiada komitmen.",
+  "paywallContinueFree": "Teruskan dengan versi percuma",
   "paywallCtaTrialDays": "Mula percuma — {days} hari",
   "paywallCtaUnlock": "Buka kunci PRO",
   "paywallFeatureDescAssistant": "AI mengatur senarai anda secara automatik",
@@ -1916,6 +2239,7 @@
   "paywallPricePerMonth": "Hanya {price}/bulan",
   "paywallProLabel": "PRO",
   "paywallPurchaseError": "Tidak dapat menyelesaikan pembelian. Cuba lagi.",
+  "paywallPurchasePending": "Pembayaran anda menunggu kelulusan. Akses akan dikeluarkan secara automatik selepas pengesahan.",
   "paywallRestore": "Pulihkan",
   "paywallRestoreError": "Tiada langganan aktif ditemui untuk dipulihkan.",
   "paywallSafeCheckout": "Pembayaran selamat",
@@ -1937,11 +2261,14 @@
   "paywallTrialCta": "Mulakan Percubaan Percuma",
   "paywallTrialDays": "{days} HARI PERCUMA",
   "paywallTrialDisclaimer": "Batalkan bila-bila masa · Tiada caj sehingga percubaan anda tamat",
+  "paywallTrialDisclosureAnnual": "Hari ini: tiada bayaran. Kemudian {price}/tahun selepas {days} hari. Batalkan bila-bila masa.",
+  "paywallTrialDisclosureMonthly": "Hari ini: tiada bayaran. Kemudian {price}/bulan selepas {days} hari. Batalkan bila-bila masa.",
   "paywallTrialInCard": "{days} hari pertama PERCUMA",
   "paywallTrialMonths": "{count,plural, one{{count} BULAN PERCUMA} other{{count} BULAN PERCUMA}}",
   "paywallTrialSubtitle": "Batalkan bila-bila masa. Tiada caj hari ini.",
   "paywallTrialTitle": "Cuba KipiList Pro secara percuma selama 7 hari",
   "paywallTrialWeeks": "{count,plural, one{{count} MINGGU PERCUMA} other{{count} MINGGU PERCUMA}}",
+  "paywallWelcomeOfferBadge": "🎁 Tawaran alu-aluan",
   "positionBarcodeCenter": "Letakkan kod bar di tengah",
   "prefAIAssistant": "Pembantu AI Peribadi",
   "prefCustomThemes": "Tema tersuai",
@@ -1985,6 +2312,8 @@
   "recipeCreated": "Resipi dicipta!",
   "recipeDeleted": "Resipi dipadam",
   "recipeImage": "Imej resipi",
+  "recipeIngredientSingular": "1 bahan",
+  "recipeIngredientsPlural": "{count} bahan",
   "recipeName": "Nama resipi",
   "recipeSaved": "Resipi disimpan!",
   "recipeSuggestion": "Cadangan resipi",
@@ -2095,7 +2424,7 @@
   "sortName": "Nama",
   "spendingAnalysis": "Analisis Perbelanjaan",
   "spendingByCategory": "Perbelanjaan mengikut Kategori",
-  "streakDays": "{days} hari",
+  "streakDays": "{count,plural, one{{count} hari} other{{count} hari}}",
   "subscription": "Langganan",
   "suggestedItems": "Item yang dicadangkan",
   "suggestedQuestions": "Soalan yang dicadangkan:",

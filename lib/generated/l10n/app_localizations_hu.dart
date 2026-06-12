@@ -682,6 +682,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String get chatHintBlocked => 'Oldja fel az AI-t a csevegéshez';
 
   @override
+  String get chatEmptySubtitle =>
+      'A kezdéshez kérjen tételjavaslatokat, recepteket vagy mentési tippeket.';
+
+  @override
+  String get chatEmptyTitle => 'A chat üres';
+
+  @override
   String chatError(String error) {
     return 'Hiba a chat betöltésekor: $error';
   }
@@ -1109,6 +1116,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Teljes rugalmasság';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Üdvözlő ajánlat';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1886,6 +1896,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get catalogBrowse => 'Tallózás a katalógusban';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Ön offline állapotban van';
 
   @override
@@ -2459,6 +2472,293 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Gyümölcsök';
+
+  @override
+  String get recipeIngredientSingular => '1 összetevő';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count összetevők';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Minden kész!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount a kamrában';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$total/$current. lépés';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Mondja el, mit tervez. Kipi összeállítja a listát.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Szerezze meg a rendszerezett elemeket másodpercek alatt.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Ez segít Kipinek relevánsabb tételeket és mennyiségeket javasolni.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Személyre a nevemmel';
+
+  @override
+  String get onboardingCreateFirstList => 'Hozd létre az első listámat';
+
+  @override
+  String get onboardingPromptWeekly => 'Tervezd meg a heti szükségleteimet';
+
+  @override
+  String get onboardingPromptEvent => 'Valami különlegessel készülök';
+
+  @override
+  String get onboardingPromptEssentials => 'Ajánlja nekem a lényeges dolgokat';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rizs|🫘 Bab|🥛 Tej|🥚 Tojás|🍞 Kenyér|🍎 Gyümölcs';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Öntapadó kötszerek|🌡️ Hőmérő|🧴 Fertőtlenítő|😷 Arcmaszkok|🧼 Kézfertőtlenítő';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Paradicsom|🧅 Hagyma|🧄 Fokhagyma|🥚 Tojás|🧀 Sajt|🌿 Friss fűszernövények';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papírtörülközők|🧽 Szivacsok|🧴 Mosószer|🗑️ Szemeteszsákok|🧹 Tisztítókendők';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Állateledel|🦴 Csemegek|🧼 Kisállat sampon|🧸 Játék|🧻 Hulladékzsákok';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Előkészítettem a tételeket, de nem tudtam elmenteni a listát. Próbálja újra, hogy az alkalmazásban maradjon.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'A listája készen van: $count elemet rendeztek Önnek.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Folytatás';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Elkészült az első listája · $count elem';
+  }
+
+  @override
+  String get paywallContinueFree => 'Folytassa az ingyenes verzióval';
+
+  @override
+  String get paywallPurchasePending =>
+      'Befizetése jóváhagyásra vár. A hozzáférés a megerősítést követően automatikusan felszabadul.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Ma: nincs díj. Majd $price/év $days nap után. Bármikor lemondhatja.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Ma: nincs díj. Majd $price/hó $days nap után. Bármikor lemondhatja.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/év. Bármikor lemondhatja.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/hónap. Bármikor lemondhatja.';
+  }
+
+  @override
+  String get obHookTitle => 'Az okosabb vásárlás itt kezdődik';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-alapú listák, amelyek időt és pénzt takarítanak meg Önnek minden egyes utazás során.';
+
+  @override
+  String get obHookSocial => 'Világszerte vásárlók ezrei bíznak meg benne';
+
+  @override
+  String get obHookCta => 'Kezdje el';
+
+  @override
+  String get obQuizHouseholdTitle => 'Kinek vásárolsz?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Csak én';
+
+  @override
+  String get obQuizHouseholdCouple => 'Én és a párom';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 tagú család';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ fős család';
+
+  @override
+  String get obQuizFrequencyTitle => 'Milyen gyakran vásárol élelmiszert?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Szinte minden nap';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Hetente egyszer';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Kéthetente';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Nagy havi szállítás';
+
+  @override
+  String get obQuizPainTitle =>
+      'Mi az, ami leginkább elkeserít a vásárlás során?';
+
+  @override
+  String get obQuizPainForget => 'Mindig elfelejtem a dolgokat';
+
+  @override
+  String get obQuizPainOverspend => 'A tervezettnél többet költök';
+
+  @override
+  String get obQuizPainWaste => 'Az étel itthon veszendőbe megy';
+
+  @override
+  String get obQuizPainTime => 'Túl sok időt vesz igénybe';
+
+  @override
+  String get obQuizSavingsTitle => 'Mennyit szeretne havonta megtakarítani?';
+
+  @override
+  String get obQuizSavingsSmall => 'Egy kicsit – minden apróság számít';
+
+  @override
+  String get obQuizSavingsMedium => 'A bolti számlám körülbelül 10%-a';
+
+  @override
+  String get obQuizSavingsLarge => 'Amennyire csak lehetséges';
+
+  @override
+  String get obQuizMethodTitle => 'Hogyan készíts ma bevásárlólistákat?';
+
+  @override
+  String get obQuizMethodPaper => 'Toll és papír';
+
+  @override
+  String get obQuizMethodNotes => 'Jegyzetek alkalmazás';
+
+  @override
+  String get obQuizMethodMemory => 'a fejemben tartom';
+
+  @override
+  String get obQuizMethodNone => 'Nem készítek listákat';
+
+  @override
+  String get obSocialTitle => 'Jó társaságban vagy';
+
+  @override
+  String get obSocialSubtitle =>
+      'A hozzád hasonló vásárlók már spórolnak a KipiList segítségével';
+
+  @override
+  String get obSocialQuote1 =>
+      'Soha többé nem felejtek el semmit. Az AI másodpercek alatt összeállítja a listámat.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Az első hónapban érezhetően csökkentettük élelmiszerszámlánkat.';
+
+  @override
+  String get obSocialQuote3 =>
+      'A lista párommal való megosztása véget vetett a vásárlási káoszunknak.';
+
+  @override
+  String get obLoadingTitle => 'Személyre szabott terv elkészítése...';
+
+  @override
+  String get obLoadingStepProfile => 'Beállítás az Ön háztartásához';
+
+  @override
+  String get obLoadingStepHabits => 'Ráhangolódás a vásárlási rutinra';
+
+  @override
+  String get obLoadingStepSavings => 'A megtakarítási stratégia optimalizálása';
+
+  @override
+  String get obLoadingStepLists => 'Okos listák készítése';
+
+  @override
+  String get obRevealTitle => 'Elkészült a terved!';
+
+  @override
+  String get obRevealSubtitle => 'Így fog működni a KipiList';
+
+  @override
+  String get obRevealSavingsCaption =>
+      'Tervezett megtakarítás a KipiList segítségével';
+
+  @override
+  String obRevealMonth(int n) {
+    return '$n hónap';
+  }
+
+  @override
+  String get obRevealFeatureAi =>
+      'Az AI összeállítja és rendszerezi a listákat';
+
+  @override
+  String get obRevealFeatureBudget => 'A célhoz képest nyomon követhető kiadás';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'A kamrakövetés csökkenti az élelmiszer-pazarlást';
+
+  @override
+  String get obRevealFeatureShare => 'Valós idejű megosztás a háztartással';
+
+  @override
+  String get obPaywallTitle => 'Oldja fel tervét';
+
+  @override
+  String get obPaywallRetry => 'Próbáld újra';
+
+  @override
+  String get obLoginTitle => 'Mentse el tervét';
+
+  @override
+  String get obLoginSubtitle =>
+      'Jelentkezzen be, hogy listái szinkronizálódjanak az eszközök között';
+
+  @override
+  String get obLoginGoogle => 'Folytassa a Google-lal';
+
+  @override
+  String get obLoginApple => 'Folytassa az Apple-lel';
+
+  @override
+  String get obLoginSkip => 'Most nem';
+
+  @override
+  String get obLoginError =>
+      'Sikertelen bejelentkezés. Próbálja újra, vagy most hagyja ki.';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -3139,6 +3439,13 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get chatHintBlocked => 'Oldja fel az AI-t a csevegéshez';
 
   @override
+  String get chatEmptySubtitle =>
+      'A kezdéshez kérjen tételjavaslatokat, recepteket vagy mentési tippeket.';
+
+  @override
+  String get chatEmptyTitle => 'A chat üres';
+
+  @override
   String chatError(String error) {
     return 'Hiba a chat betöltésekor: $error';
   }
@@ -3566,6 +3873,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get paywallPackageMonthlyDesc => 'Teljes rugalmasság';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Üdvözlő ajánlat';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4916,4 +5226,291 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get suggestionFruits => 'Gyümölcsök';
+
+  @override
+  String get recipeIngredientSingular => '1 összetevő';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count összetevők';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Minden kész!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount a kamrában';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return '$total/$current. lépés';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Mondja el, mit tervez. Kipi összeállítja a listát.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Szerezze meg a rendszerezett elemeket másodpercek alatt.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Ez segít Kipinek relevánsabb tételeket és mennyiségeket javasolni.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Személyre a nevemmel';
+
+  @override
+  String get onboardingCreateFirstList => 'Hozd létre az első listámat';
+
+  @override
+  String get onboardingPromptWeekly => 'Tervezd meg a heti szükségleteimet';
+
+  @override
+  String get onboardingPromptEvent => 'Valami különlegessel készülök';
+
+  @override
+  String get onboardingPromptEssentials => 'Ajánlja nekem a lényeges dolgokat';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Rizs|🫘 Bab|🥛 Tej|🥚 Tojás|🍞 Kenyér|🍎 Gyümölcs';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Öntapadó kötszerek|🌡️ Hőmérő|🧴 Fertőtlenítő|😷 Arcmaszkok|🧼 Kézfertőtlenítő';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Paradicsom|🧅 Hagyma|🧄 Fokhagyma|🥚 Tojás|🧀 Sajt|🌿 Friss fűszernövények';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Papírtörülközők|🧽 Szivacsok|🧴 Mosószer|🗑️ Szemeteszsákok|🧹 Tisztítókendők';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Állateledel|🦴 Csemegek|🧼 Kisállat sampon|🧸 Játék|🧻 Hulladékzsákok';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Előkészítettem a tételeket, de nem tudtam elmenteni a listát. Próbálja újra, hogy az alkalmazásban maradjon.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'A listája készen van: $count elemet rendeztek Önnek.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Folytatás';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Elkészült az első listája · $count elem';
+  }
+
+  @override
+  String get paywallContinueFree => 'Folytassa az ingyenes verzióval';
+
+  @override
+  String get paywallPurchasePending =>
+      'Befizetése jóváhagyásra vár. A hozzáférés a megerősítést követően automatikusan felszabadul.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Ma: nincs díj. Majd $price/év $days nap után. Bármikor lemondhatja.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Ma: nincs díj. Majd $price/hó $days nap után. Bármikor lemondhatja.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/év. Bármikor lemondhatja.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/hónap. Bármikor lemondhatja.';
+  }
+
+  @override
+  String get obHookTitle => 'Az okosabb vásárlás itt kezdődik';
+
+  @override
+  String get obHookSubtitle =>
+      'AI-alapú listák, amelyek időt és pénzt takarítanak meg Önnek minden egyes utazás során.';
+
+  @override
+  String get obHookSocial => 'Világszerte vásárlók ezrei bíznak meg benne';
+
+  @override
+  String get obHookCta => 'Kezdje el';
+
+  @override
+  String get obQuizHouseholdTitle => 'Kinek vásárolsz?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Csak én';
+
+  @override
+  String get obQuizHouseholdCouple => 'Én és a párom';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 tagú család';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ fős család';
+
+  @override
+  String get obQuizFrequencyTitle => 'Milyen gyakran vásárol élelmiszert?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Szinte minden nap';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Hetente egyszer';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Kéthetente';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Nagy havi szállítás';
+
+  @override
+  String get obQuizPainTitle =>
+      'Mi az, ami leginkább elkeserít a vásárlás során?';
+
+  @override
+  String get obQuizPainForget => 'Mindig elfelejtem a dolgokat';
+
+  @override
+  String get obQuizPainOverspend => 'A tervezettnél többet költök';
+
+  @override
+  String get obQuizPainWaste => 'Az étel itthon veszendőbe megy';
+
+  @override
+  String get obQuizPainTime => 'Túl sok időt vesz igénybe';
+
+  @override
+  String get obQuizSavingsTitle => 'Mennyit szeretne havonta megtakarítani?';
+
+  @override
+  String get obQuizSavingsSmall => 'Egy kicsit – minden apróság számít';
+
+  @override
+  String get obQuizSavingsMedium => 'A bolti számlám körülbelül 10%-a';
+
+  @override
+  String get obQuizSavingsLarge => 'Amennyire csak lehetséges';
+
+  @override
+  String get obQuizMethodTitle => 'Hogyan készíts ma bevásárlólistákat?';
+
+  @override
+  String get obQuizMethodPaper => 'Toll és papír';
+
+  @override
+  String get obQuizMethodNotes => 'Jegyzetek alkalmazás';
+
+  @override
+  String get obQuizMethodMemory => 'a fejemben tartom';
+
+  @override
+  String get obQuizMethodNone => 'Nem készítek listákat';
+
+  @override
+  String get obSocialTitle => 'Jó társaságban vagy';
+
+  @override
+  String get obSocialSubtitle =>
+      'A hozzád hasonló vásárlók már spórolnak a KipiList segítségével';
+
+  @override
+  String get obSocialQuote1 =>
+      'Soha többé nem felejtek el semmit. Az AI másodpercek alatt összeállítja a listámat.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Az első hónapban érezhetően csökkentettük élelmiszerszámlánkat.';
+
+  @override
+  String get obSocialQuote3 =>
+      'A lista párommal való megosztása véget vetett a vásárlási káoszunknak.';
+
+  @override
+  String get obLoadingTitle => 'Személyre szabott terv elkészítése...';
+
+  @override
+  String get obLoadingStepProfile => 'Beállítás az Ön háztartásához';
+
+  @override
+  String get obLoadingStepHabits => 'Ráhangolódás a vásárlási rutinra';
+
+  @override
+  String get obLoadingStepSavings => 'A megtakarítási stratégia optimalizálása';
+
+  @override
+  String get obLoadingStepLists => 'Okos listák készítése';
+
+  @override
+  String get obRevealTitle => 'Elkészült a terved!';
+
+  @override
+  String get obRevealSubtitle => 'Így fog működni a KipiList';
+
+  @override
+  String get obRevealSavingsCaption =>
+      'Tervezett megtakarítás a KipiList segítségével';
+
+  @override
+  String obRevealMonth(int n) {
+    return '$n hónap';
+  }
+
+  @override
+  String get obRevealFeatureAi =>
+      'Az AI összeállítja és rendszerezi a listákat';
+
+  @override
+  String get obRevealFeatureBudget => 'A célhoz képest nyomon követhető kiadás';
+
+  @override
+  String get obRevealFeaturePantry =>
+      'A kamrakövetés csökkenti az élelmiszer-pazarlást';
+
+  @override
+  String get obRevealFeatureShare => 'Valós idejű megosztás a háztartással';
+
+  @override
+  String get obPaywallTitle => 'Oldja fel tervét';
+
+  @override
+  String get obPaywallRetry => 'Próbáld újra';
+
+  @override
+  String get obLoginTitle => 'Mentse el tervét';
+
+  @override
+  String get obLoginSubtitle =>
+      'Jelentkezzen be, hogy listái szinkronizálódjanak az eszközök között';
+
+  @override
+  String get obLoginGoogle => 'Folytassa a Google-lal';
+
+  @override
+  String get obLoginApple => 'Folytassa az Apple-lel';
+
+  @override
+  String get obLoginSkip => 'Most nem';
+
+  @override
+  String get obLoginError =>
+      'Sikertelen bejelentkezés. Próbálja újra, vagy most hagyja ki.';
 }

@@ -680,6 +680,13 @@ class AppLocalizationsIs extends AppLocalizations {
   String get chatHintBlocked => 'Opnaðu gervigreind til að spjalla';
 
   @override
+  String get chatEmptySubtitle =>
+      'Biðjið um tillögur um atriði, uppskriftir eða sparnaðarráð til að byrja.';
+
+  @override
+  String get chatEmptyTitle => 'Spjallið þitt er tómt';
+
+  @override
   String chatError(String error) {
     return 'Villa við að hlaða spjalli: $error';
   }
@@ -1107,6 +1114,9 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Fullur sveigjanleiki';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Velkomin tilboð';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1878,6 +1888,9 @@ class AppLocalizationsIs extends AppLocalizations {
   String get catalogBrowse => 'Skoðaðu vörulista';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Þú ert ótengdur';
 
   @override
@@ -2451,6 +2464,290 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Ávextir';
+
+  @override
+  String get recipeIngredientSingular => '1 hráefni';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count hráefni';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Allt klárt!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount í búri';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Skref $current af $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Segðu okkur hvað þú ert að skipuleggja. Kipi byggir listann.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Fáðu skipulagða hluti á nokkrum sekúndum.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Þetta hjálpar Kipi að stinga upp á viðeigandi hlutum og magni.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Sérsníða með nafni mínu';
+
+  @override
+  String get onboardingCreateFirstList => 'Búðu til fyrsta listann minn';
+
+  @override
+  String get onboardingPromptWeekly => 'Skipuleggðu vikulega nauðsynjar mínar';
+
+  @override
+  String get onboardingPromptEvent => 'Ég er að undirbúa eitthvað sérstakt';
+
+  @override
+  String get onboardingPromptEssentials => 'Komdu með helstu atriði fyrir mig';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Hrísgrjón|🫘 Baunir|🥛 Mjólk|🥚 Egg|🍞 Brauð|🍎 Ávextir';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Límumbúðir|🌡️ Hitamælir|🧴 Sótthreinsandi|😷 Andlitsgrímur|🧼 Handhreinsiefni';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tómatar|🧅 Laukur|🧄 Hvítlaukur|🥚 Egg|🧀 Ostur|🌿 Ferskar kryddjurtir';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Pappírshandklæði|🧽 Svampar|🧴 Þvottaefni|🗑️ ruslapokar|🧹 Hreinsiklútar';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Gæludýrafóður|🦴 Meðlæti|🧼 Gæludýrasjampó|🧸 Leikfang|🧻 Úrgangspokar';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Ég útbjó hlutina en gat ekki vistað listann. Reyndu aftur að halda því í appinu.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Listinn þinn er tilbúinn: $count atriði skipulögð fyrir þig.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Halda áfram';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Fyrsti listinn þinn er tilbúinn · $count atriði';
+  }
+
+  @override
+  String get paywallContinueFree => 'Haltu áfram með ókeypis útgáfuna';
+
+  @override
+  String get paywallPurchasePending =>
+      'Greiðslan þín bíður samþykkis. Aðgangur verður laus sjálfkrafa eftir staðfestingu.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Í dag: ekkert gjald. Síðan $price/ári eftir $days daga. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Í dag: ekkert gjald. Síðan $price/mánuði eftir $days daga. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price á ári. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/mánuði. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String get obHookTitle => 'Snjallari innkaup byrja hér';
+
+  @override
+  String get obHookSubtitle =>
+      'Listar með gervigreind sem spara þér tíma og peninga í hverri einustu ferð.';
+
+  @override
+  String get obHookSocial => 'Treyst af þúsundum kaupenda um allan heim';
+
+  @override
+  String get obHookCta => 'Byrjaðu';
+
+  @override
+  String get obQuizHouseholdTitle => 'Fyrir hvern verslar þú?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Bara ég';
+
+  @override
+  String get obQuizHouseholdCouple => 'Ég og félagi minn';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Fjölskylda 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Fjölskylda 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Hversu oft verslar þú matvörur?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Næstum á hverjum degi';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Einu sinni í viku';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Á tveggja vikna fresti';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Stór mánaðarlegur flutningur';
+
+  @override
+  String get obQuizPainTitle => 'Hvað pirrar þig mest við að versla?';
+
+  @override
+  String get obQuizPainForget => 'Ég gleymi alltaf hlutum';
+
+  @override
+  String get obQuizPainOverspend => 'Ég eyði meira en áætlað var';
+
+  @override
+  String get obQuizPainWaste => 'Matur fer til spillis heima';
+
+  @override
+  String get obQuizPainTime => 'Það tekur of mikinn tíma';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Hversu mikið myndir þú vilja spara mánaðarlega?';
+
+  @override
+  String get obQuizSavingsSmall => 'Smá - hver hluti skiptir máli';
+
+  @override
+  String get obQuizSavingsMedium => 'Um 10% af matvörureikningnum mínum';
+
+  @override
+  String get obQuizSavingsLarge => 'Eins mikið og hægt er';
+
+  @override
+  String get obQuizMethodTitle => 'Hvernig gerir þú innkaupalista í dag?';
+
+  @override
+  String get obQuizMethodPaper => 'Penni og pappír';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'Ég geymi það í hausnum á mér';
+
+  @override
+  String get obQuizMethodNone => 'Ég geri ekki lista';
+
+  @override
+  String get obSocialTitle => 'Þú ert í góðum félagsskap';
+
+  @override
+  String get obSocialSubtitle =>
+      'Kaupendur eins og þú eru nú þegar að spara með KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Ég gleymi aldrei neinu lengur. Gervigreindin byggir upp listann minn á nokkrum sekúndum.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Við lækkum matvörureikninginn okkar verulega á fyrsta mánuðinum.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Að deila listanum með maka mínum batt enda á verslunaróreiðu okkar.';
+
+  @override
+  String get obLoadingTitle => 'Búðu til persónulega áætlun þína...';
+
+  @override
+  String get obLoadingStepProfile => 'Aðlaga fyrir heimilinu þínu';
+
+  @override
+  String get obLoadingStepHabits => 'Að stilla innkauparegluna þína';
+
+  @override
+  String get obLoadingStepSavings => 'Fínstilla sparnaðarstefnu þína';
+
+  @override
+  String get obLoadingStepLists => 'Undirbúa snjalllistana þína';
+
+  @override
+  String get obRevealTitle => 'Áætlunin þín er tilbúin!';
+
+  @override
+  String get obRevealSubtitle => 'Svona mun KipiList virka fyrir þig';
+
+  @override
+  String get obRevealSavingsCaption => 'Áætlaður sparnaður með KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Mánuður $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI byggir og skipuleggur listana þína';
+
+  @override
+  String get obRevealFeatureBudget => 'Eyðsla rakin gegn markmiði þínu';
+
+  @override
+  String get obRevealFeaturePantry => 'Matarsóun minnkar matarsóun';
+
+  @override
+  String get obRevealFeatureShare => 'Samnýting í rauntíma með heimilinu þínu';
+
+  @override
+  String get obPaywallTitle => 'Opnaðu áætlunina þína';
+
+  @override
+  String get obPaywallRetry => 'Reyndu aftur';
+
+  @override
+  String get obLoginTitle => 'Vistaðu áætlunina þína';
+
+  @override
+  String get obLoginSubtitle =>
+      'Skráðu þig inn svo listarnir þínir samstillist milli tækja';
+
+  @override
+  String get obLoginGoogle => 'Haltu áfram með Google';
+
+  @override
+  String get obLoginApple => 'Haltu áfram með Apple';
+
+  @override
+  String get obLoginSkip => 'Ekki núna';
+
+  @override
+  String get obLoginError =>
+      'Innskráning mistókst. Reyndu aftur eða slepptu í bili.';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -3129,6 +3426,13 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get chatHintBlocked => 'Opnaðu gervigreind til að spjalla';
 
   @override
+  String get chatEmptySubtitle =>
+      'Biðjið um tillögur um atriði, uppskriftir eða sparnaðarráð til að byrja.';
+
+  @override
+  String get chatEmptyTitle => 'Spjallið þitt er tómt';
+
+  @override
   String chatError(String error) {
     return 'Villa við að hlaða spjalli: $error';
   }
@@ -3556,6 +3860,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get paywallPackageMonthlyDesc => 'Fullur sveigjanleiki';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Velkomin tilboð';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4900,4 +5207,288 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get suggestionFruits => 'Ávextir';
+
+  @override
+  String get recipeIngredientSingular => '1 hráefni';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count hráefni';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Allt klárt!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount í búri';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Skref $current af $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Segðu okkur hvað þú ert að skipuleggja. Kipi byggir listann.';
+
+  @override
+  String get onboardingDemoSubtitle =>
+      'Fáðu skipulagða hluti á nokkrum sekúndum.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Þetta hjálpar Kipi að stinga upp á viðeigandi hlutum og magni.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Sérsníða með nafni mínu';
+
+  @override
+  String get onboardingCreateFirstList => 'Búðu til fyrsta listann minn';
+
+  @override
+  String get onboardingPromptWeekly => 'Skipuleggðu vikulega nauðsynjar mínar';
+
+  @override
+  String get onboardingPromptEvent => 'Ég er að undirbúa eitthvað sérstakt';
+
+  @override
+  String get onboardingPromptEssentials => 'Komdu með helstu atriði fyrir mig';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Hrísgrjón|🫘 Baunir|🥛 Mjólk|🥚 Egg|🍞 Brauð|🍎 Ávextir';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Límumbúðir|🌡️ Hitamælir|🧴 Sótthreinsandi|😷 Andlitsgrímur|🧼 Handhreinsiefni';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tómatar|🧅 Laukur|🧄 Hvítlaukur|🥚 Egg|🧀 Ostur|🌿 Ferskar kryddjurtir';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Pappírshandklæði|🧽 Svampar|🧴 Þvottaefni|🗑️ ruslapokar|🧹 Hreinsiklútar';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Gæludýrafóður|🦴 Meðlæti|🧼 Gæludýrasjampó|🧸 Leikfang|🧻 Úrgangspokar';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Ég útbjó hlutina en gat ekki vistað listann. Reyndu aftur að halda því í appinu.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Listinn þinn er tilbúinn: $count atriði skipulögð fyrir þig.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Halda áfram';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Fyrsti listinn þinn er tilbúinn · $count atriði';
+  }
+
+  @override
+  String get paywallContinueFree => 'Haltu áfram með ókeypis útgáfuna';
+
+  @override
+  String get paywallPurchasePending =>
+      'Greiðslan þín bíður samþykkis. Aðgangur verður laus sjálfkrafa eftir staðfestingu.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Í dag: ekkert gjald. Síðan $price/ári eftir $days daga. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Í dag: ekkert gjald. Síðan $price/mánuði eftir $days daga. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price á ári. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/mánuði. Hætta við hvenær sem er.';
+  }
+
+  @override
+  String get obHookTitle => 'Snjallari innkaup byrja hér';
+
+  @override
+  String get obHookSubtitle =>
+      'Listar með gervigreind sem spara þér tíma og peninga í hverri einustu ferð.';
+
+  @override
+  String get obHookSocial => 'Treyst af þúsundum kaupenda um allan heim';
+
+  @override
+  String get obHookCta => 'Byrjaðu';
+
+  @override
+  String get obQuizHouseholdTitle => 'Fyrir hvern verslar þú?';
+
+  @override
+  String get obQuizHouseholdSolo => 'Bara ég';
+
+  @override
+  String get obQuizHouseholdCouple => 'Ég og félagi minn';
+
+  @override
+  String get obQuizHouseholdFamilySmall => 'Fjölskylda 3-4';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => 'Fjölskylda 5+';
+
+  @override
+  String get obQuizFrequencyTitle => 'Hversu oft verslar þú matvörur?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Næstum á hverjum degi';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Einu sinni í viku';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Á tveggja vikna fresti';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Stór mánaðarleg sókn';
+
+  @override
+  String get obQuizPainTitle => 'Hvað pirrar þig mest við að versla?';
+
+  @override
+  String get obQuizPainForget => 'Ég gleymi alltaf hlutum';
+
+  @override
+  String get obQuizPainOverspend => 'Ég eyði meira en áætlað var';
+
+  @override
+  String get obQuizPainWaste => 'Matur fer til spillis heima';
+
+  @override
+  String get obQuizPainTime => 'Það tekur of mikinn tíma';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Hversu mikið myndir þú vilja spara mánaðarlega?';
+
+  @override
+  String get obQuizSavingsSmall => 'Smá - hver hluti skiptir máli';
+
+  @override
+  String get obQuizSavingsMedium => 'Um 10% af matvörureikningnum mínum';
+
+  @override
+  String get obQuizSavingsLarge => 'Eins mikið og hægt er';
+
+  @override
+  String get obQuizMethodTitle => 'Hvernig gerir þú innkaupalista í dag?';
+
+  @override
+  String get obQuizMethodPaper => 'Penni og pappír';
+
+  @override
+  String get obQuizMethodNotes => 'Notes app';
+
+  @override
+  String get obQuizMethodMemory => 'Ég geymi það í hausnum á mér';
+
+  @override
+  String get obQuizMethodNone => 'Ég geri ekki lista';
+
+  @override
+  String get obSocialTitle => 'Þú ert í góðum félagsskap';
+
+  @override
+  String get obSocialSubtitle =>
+      'Kaupendur eins og þú eru nú þegar að spara með KipiList';
+
+  @override
+  String get obSocialQuote1 =>
+      'Ég gleymi aldrei neinu lengur. Gervigreindin byggir upp listann minn á nokkrum sekúndum.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Við lækkum matvörureikninginn okkar verulega á fyrsta mánuðinum.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Að deila listanum með maka mínum batt enda á verslunaróreiðu okkar.';
+
+  @override
+  String get obLoadingTitle => 'Búðu til persónulega áætlun þína...';
+
+  @override
+  String get obLoadingStepProfile => 'Aðlaga fyrir heimilinu þínu';
+
+  @override
+  String get obLoadingStepHabits => 'Að stilla innkauparegluna þína';
+
+  @override
+  String get obLoadingStepSavings => 'Fínstilla sparnaðarstefnu þína';
+
+  @override
+  String get obLoadingStepLists => 'Undirbúa snjalllistana þína';
+
+  @override
+  String get obRevealTitle => 'Áætlunin þín er tilbúin!';
+
+  @override
+  String get obRevealSubtitle => 'Svona mun KipiList virka fyrir þig';
+
+  @override
+  String get obRevealSavingsCaption => 'Áætlaður sparnaður með KipiList';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Mánuður $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI byggir og skipuleggur listana þína';
+
+  @override
+  String get obRevealFeatureBudget => 'Eyðsla rakin gegn markmiði þínu';
+
+  @override
+  String get obRevealFeaturePantry => 'Matarsóun minnkar matarsóun';
+
+  @override
+  String get obRevealFeatureShare => 'Samnýting í rauntíma með heimilinu þínu';
+
+  @override
+  String get obPaywallTitle => 'Opnaðu áætlunina þína';
+
+  @override
+  String get obPaywallRetry => 'Reyndu aftur';
+
+  @override
+  String get obLoginTitle => 'Vistaðu áætlunina þína';
+
+  @override
+  String get obLoginSubtitle =>
+      'Skráðu þig inn svo listarnir þínir samstillist milli tækja';
+
+  @override
+  String get obLoginGoogle => 'Haltu áfram með Google';
+
+  @override
+  String get obLoginApple => 'Haltu áfram með Apple';
+
+  @override
+  String get obLoginSkip => 'Ekki núna';
+
+  @override
+  String get obLoginError =>
+      'Innskráning mistókst. Reyndu aftur eða slepptu í bili.';
 }

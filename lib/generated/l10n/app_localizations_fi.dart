@@ -674,6 +674,13 @@ class AppLocalizationsFi extends AppLocalizations {
   String get chatHintBlocked => 'Avaa AI keskustellaksesi';
 
   @override
+  String get chatEmptySubtitle =>
+      'Pyydä tuoteehdotuksia, reseptejä tai tallennusvinkkejä aloittaaksesi.';
+
+  @override
+  String get chatEmptyTitle => 'Chattisi on tyhjä';
+
+  @override
   String chatError(String error) {
     return 'Virhe ladattaessa chattia: $error';
   }
@@ -1096,6 +1103,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get paywallPackageMonthlyDesc => 'Täysi joustavuus';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Tervetuloa tarjous';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1862,6 +1872,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get catalogBrowse => 'Selaa katalogia';
 
   @override
+  String get catalogCategories => 'Categories';
+
+  @override
   String get offlineBanner => 'Olet offline-tilassa';
 
   @override
@@ -2432,6 +2445,293 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get suggestionFruits => 'Hedelmät';
+
+  @override
+  String get recipeIngredientSingular => '1 ainesosa';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ainesosia';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Kaikki valmiina!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount ruokakomerossa';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Vaihe $current / $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Kerro meille mitä suunnittelet. Kipi rakentaa listan.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Hanki järjestetyt kohteet sekunneissa.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Tämä auttaa Kipiä ehdottamaan osuvampia tuotteita ja määriä.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Mukauta omalla nimelläni';
+
+  @override
+  String get onboardingCreateFirstList => 'Luo ensimmäinen luetteloni';
+
+  @override
+  String get onboardingPromptWeekly => 'Suunnittele viikoittaiset tarpeeni';
+
+  @override
+  String get onboardingPromptEvent => 'Valmistelen jotain erityistä';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'Ehdota minulle välttämättömiä asioita';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Riisi|🫘 Pavut|🥛 Maito|🥚 Munat|🍞 Leipä|🍎 Hedelmät';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Liimasiteet|🌡️ Lämpömittari|🧴 Antiseptinen|😷 Kasvonaamiot|🧼 Käsien desinfiointiaine';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomaatit|🧅 Sipuli|🧄 Valkosipuli|🥚 Munat|🧀 Juusto|🌿 Tuoreet yrtit';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paperipyyhkeet|🧽 Sienet|🧴 Pesuaine|🗑️ Roskapussit|🧹 Puhdistusliinat';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Lemmikkieläinruoka|🦴 Herkut|🧼 Lemmikkieläinshampoo|🧸 Lelu|🧻 Jätepussit';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Valmistelin tuotteet, mutta en voinut tallentaa luetteloa. Yritä uudelleen pitääksesi sen sovelluksessa.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Listasi on valmis: $count kohdetta järjestetty sinulle.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Jatkaa';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Ensimmäinen luettelosi on valmis · $count kohdetta';
+  }
+
+  @override
+  String get paywallContinueFree => 'Jatka ilmaisella versiolla';
+
+  @override
+  String get paywallPurchasePending =>
+      'Maksusi odottaa hyväksyntää. Pääsy vapautetaan automaattisesti vahvistuksen jälkeen.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Tänään: ei maksua. Sitten $price/vuosi $days päivän kuluttua. Peru milloin tahansa.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Tänään: ei maksua. Sitten $price/kk $days päivän kuluttua. Peru milloin tahansa.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/vuosi. Peru milloin tahansa.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/kk. Peru milloin tahansa.';
+  }
+
+  @override
+  String get obHookTitle => 'Älykkäämpi ostos alkaa tästä';
+
+  @override
+  String get obHookSubtitle =>
+      'Tekoälykäyttöiset luettelot säästävät aikaa ja rahaa jokaisella matkalla.';
+
+  @override
+  String get obHookSocial =>
+      'Tuhannet ostajat ympäri maailmaa luottavat siihen';
+
+  @override
+  String get obHookCta => 'Aloita';
+
+  @override
+  String get obQuizHouseholdTitle => 'Kenelle teet ostoksia?';
+
+  @override
+  String get obQuizHouseholdSolo => 'vain minä';
+
+  @override
+  String get obQuizHouseholdCouple => 'Minä ja kumppanini';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 hengen perhe';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ perhe';
+
+  @override
+  String get obQuizFrequencyTitle => 'Kuinka usein ostat elintarvikkeita?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Melkein joka päivä';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Kerran viikossa';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Kahden viikon välein';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Suuri kuukausittain';
+
+  @override
+  String get obQuizPainTitle => 'Mikä turhauttaa sinua eniten ostoksissa?';
+
+  @override
+  String get obQuizPainForget => 'Unohdan aina tavarat';
+
+  @override
+  String get obQuizPainOverspend => 'Kulutan enemmän kuin suunnittelin';
+
+  @override
+  String get obQuizPainWaste => 'Ruoka menee kotona hukkaan';
+
+  @override
+  String get obQuizPainTime => 'Se vie liikaa aikaa';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Kuinka paljon haluaisit säästää kuukausittain?';
+
+  @override
+  String get obQuizSavingsSmall => 'Vähän – jokaisella on merkitystä';
+
+  @override
+  String get obQuizSavingsMedium => 'Noin 10% ruokalaskustani';
+
+  @override
+  String get obQuizSavingsLarge => 'Niin paljon kuin mahdollista';
+
+  @override
+  String get obQuizMethodTitle => 'Miten teet ostoslistoja tänään?';
+
+  @override
+  String get obQuizMethodPaper => 'Kynä ja paperi';
+
+  @override
+  String get obQuizMethodNotes => 'Muistiinpanot-sovellus';
+
+  @override
+  String get obQuizMethodMemory => 'Pidän sitä päässäni';
+
+  @override
+  String get obQuizMethodNone => 'En tee listoja';
+
+  @override
+  String get obSocialTitle => 'Olet hyvässä seurassa';
+
+  @override
+  String get obSocialSubtitle =>
+      'Kaltaisesi ostajat säästävät jo KipiListin avulla';
+
+  @override
+  String get obSocialQuote1 =>
+      'En koskaan unohda enää mitään. Tekoäly rakentaa luetteloni sekunneissa.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Leikkasimme ruokalaskuamme huomattavasti ensimmäisen kuukauden aikana.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Listan jakaminen kumppanini kanssa lopetti ostoskaaoksemme.';
+
+  @override
+  String get obLoadingTitle => 'Luo henkilökohtainen suunnitelmasi...';
+
+  @override
+  String get obLoadingStepProfile => 'Säätö kotitaloudellesi';
+
+  @override
+  String get obLoadingStepHabits => 'Viritä ostosrutiinisi';
+
+  @override
+  String get obLoadingStepSavings => 'Säästöstrategiasi optimointi';
+
+  @override
+  String get obLoadingStepLists => 'Älykkäiden listojesi valmistelu';
+
+  @override
+  String get obRevealTitle => 'Suunnitelmasi on valmis!';
+
+  @override
+  String get obRevealSubtitle => 'Näin KipiList toimii sinulle';
+
+  @override
+  String get obRevealSavingsCaption => 'Ennustettu säästö KipiListin avulla';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Kuukausi $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI rakentaa ja järjestää luettelosi';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Kulutusta seurataan tavoitteesi mukaisesti';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry-seuranta vähentää ruokahävikkiä';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Reaaliaikainen jakaminen kotitaloudesi kanssa';
+
+  @override
+  String get obPaywallTitle => 'Avaa suunnitelmasi';
+
+  @override
+  String get obPaywallRetry => 'Yritä uudelleen';
+
+  @override
+  String get obLoginTitle => 'Tallenna suunnitelmasi';
+
+  @override
+  String get obLoginSubtitle =>
+      'Kirjaudu sisään, jotta luettelosi synkronoidaan eri laitteiden välillä';
+
+  @override
+  String get obLoginGoogle => 'Jatka Googlella';
+
+  @override
+  String get obLoginApple => 'Jatka Applella';
+
+  @override
+  String get obLoginSkip => 'Ei nyt';
+
+  @override
+  String get obLoginError =>
+      'Kirjautuminen epäonnistui. Yritä uudelleen tai ohita toistaiseksi.';
 }
 
 /// The translations for Finnish, as used in Finland (`fi_FI`).
@@ -3104,6 +3404,13 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get chatHintBlocked => 'Avaa AI keskustellaksesi';
 
   @override
+  String get chatEmptySubtitle =>
+      'Pyydä tuoteehdotuksia, reseptejä tai tallennusvinkkejä aloittaaksesi.';
+
+  @override
+  String get chatEmptyTitle => 'Chattisi on tyhjä';
+
+  @override
   String chatError(String error) {
     return 'Virhe ladattaessa chattia: $error';
   }
@@ -3526,6 +3833,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get paywallPackageMonthlyDesc => 'Täysi joustavuus';
+
+  @override
+  String get paywallWelcomeOfferBadge => '🎁 Tervetuloa tarjous';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4861,4 +5171,291 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get suggestionFruits => 'Hedelmät';
+
+  @override
+  String get recipeIngredientSingular => '1 ainesosa';
+
+  @override
+  String recipeIngredientsPlural(int count) {
+    return '$count ainesosia';
+  }
+
+  @override
+  String get pantryAvailabilityAll => 'Kaikki valmiina!';
+
+  @override
+  String pantryAvailabilityCount(int availableCount, int totalCount) {
+    return '$availableCount/$totalCount ruokakomerossa';
+  }
+
+  @override
+  String onboardingProgress(int current, int total) {
+    return 'Vaihe $current / $total';
+  }
+
+  @override
+  String get onboardingDemoHeadline =>
+      'Kerro meille mitä suunnittelet. Kipi rakentaa listan.';
+
+  @override
+  String get onboardingDemoSubtitle => 'Hanki järjestetyt kohteet sekunneissa.';
+
+  @override
+  String get onboardingPersonalizationEffect =>
+      'Tämä auttaa Kipiä ehdottamaan osuvampia tuotteita ja määriä.';
+
+  @override
+  String get onboardingPersonalizeWithName => 'Mukauta omalla nimelläni';
+
+  @override
+  String get onboardingCreateFirstList => 'Luo ensimmäinen luetteloni';
+
+  @override
+  String get onboardingPromptWeekly => 'Suunnittele viikoittaiset tarpeeni';
+
+  @override
+  String get onboardingPromptEvent => 'Valmistelen jotain erityistä';
+
+  @override
+  String get onboardingPromptEssentials =>
+      'Ehdota minulle välttämättömiä asioita';
+
+  @override
+  String get onboardingFallbackGrocery =>
+      '🍚 Riisi|🫘 Pavut|🥛 Maito|🥚 Munat|🍞 Leipä|🍎 Hedelmät';
+
+  @override
+  String get onboardingFallbackPharmacy =>
+      '🩹 Liimasiteet|🌡️ Lämpömittari|🧴 Antiseptinen|😷 Kasvonaamiot|🧼 Käsien desinfiointiaine';
+
+  @override
+  String get onboardingFallbackRecipes =>
+      '🍅 Tomaatit|🧅 Sipuli|🧄 Valkosipuli|🥚 Munat|🧀 Juusto|🌿 Tuoreet yrtit';
+
+  @override
+  String get onboardingFallbackHome =>
+      '🧻 Paperipyyhkeet|🧽 Sienet|🧴 Pesuaine|🗑️ Roskapussit|🧹 Puhdistusliinat';
+
+  @override
+  String get onboardingFallbackPet =>
+      '🥣 Lemmikkieläinruoka|🦴 Herkut|🧼 Lemmikkieläinshampoo|🧸 Lelu|🧻 Jätepussit';
+
+  @override
+  String get onboardingListSaveFailed =>
+      'Valmistelin tuotteet, mutta en voinut tallentaa luetteloa. Yritä uudelleen pitääksesi sen sovelluksessa.';
+
+  @override
+  String onboardingListCreated(int count) {
+    return 'Listasi on valmis: $count kohdetta järjestetty sinulle.';
+  }
+
+  @override
+  String get onboardingContinueToOffer => 'Jatkaa';
+
+  @override
+  String onboardingPaywallListReady(int count) {
+    return 'Ensimmäinen luettelosi on valmis · $count kohdetta';
+  }
+
+  @override
+  String get paywallContinueFree => 'Jatka ilmaisella versiolla';
+
+  @override
+  String get paywallPurchasePending =>
+      'Maksusi odottaa hyväksyntää. Pääsy vapautetaan automaattisesti vahvistuksen jälkeen.';
+
+  @override
+  String paywallTrialDisclosureAnnual(int days, String price) {
+    return 'Tänään: ei maksua. Sitten $price/vuosi $days päivän kuluttua. Peru milloin tahansa.';
+  }
+
+  @override
+  String paywallTrialDisclosureMonthly(int days, String price) {
+    return 'Tänään: ei maksua. Sitten $price/kk $days päivän kuluttua. Peru milloin tahansa.';
+  }
+
+  @override
+  String paywallBillingAnnual(String price) {
+    return '$price/vuosi. Peru milloin tahansa.';
+  }
+
+  @override
+  String paywallBillingMonthly(String price) {
+    return '$price/kk. Peru milloin tahansa.';
+  }
+
+  @override
+  String get obHookTitle => 'Älykkäämpi ostos alkaa tästä';
+
+  @override
+  String get obHookSubtitle =>
+      'Tekoälykäyttöiset luettelot säästävät aikaa ja rahaa jokaisella matkalla.';
+
+  @override
+  String get obHookSocial =>
+      'Tuhannet ostajat ympäri maailmaa luottavat siihen';
+
+  @override
+  String get obHookCta => 'Aloita';
+
+  @override
+  String get obQuizHouseholdTitle => 'Kenelle teet ostoksia?';
+
+  @override
+  String get obQuizHouseholdSolo => 'vain minä';
+
+  @override
+  String get obQuizHouseholdCouple => 'Minä ja kumppanini';
+
+  @override
+  String get obQuizHouseholdFamilySmall => '3-4 hengen perhe';
+
+  @override
+  String get obQuizHouseholdFamilyLarge => '5+ perhe';
+
+  @override
+  String get obQuizFrequencyTitle => 'Kuinka usein ostat elintarvikkeita?';
+
+  @override
+  String get obQuizFrequencyDaily => 'Melkein joka päivä';
+
+  @override
+  String get obQuizFrequencyWeekly => 'Kerran viikossa';
+
+  @override
+  String get obQuizFrequencyBiweekly => 'Kahden viikon välein';
+
+  @override
+  String get obQuizFrequencyMonthly => 'Suuri kuukausittain';
+
+  @override
+  String get obQuizPainTitle => 'Mikä turhauttaa sinua eniten ostoksissa?';
+
+  @override
+  String get obQuizPainForget => 'Unohdan aina tavarat';
+
+  @override
+  String get obQuizPainOverspend => 'Kulutan enemmän kuin suunnittelin';
+
+  @override
+  String get obQuizPainWaste => 'Ruoka menee kotona hukkaan';
+
+  @override
+  String get obQuizPainTime => 'Se vie liikaa aikaa';
+
+  @override
+  String get obQuizSavingsTitle =>
+      'Kuinka paljon haluaisit säästää kuukausittain?';
+
+  @override
+  String get obQuizSavingsSmall => 'Vähän – jokaisella on merkitystä';
+
+  @override
+  String get obQuizSavingsMedium => 'Noin 10% ruokalaskustani';
+
+  @override
+  String get obQuizSavingsLarge => 'Niin paljon kuin mahdollista';
+
+  @override
+  String get obQuizMethodTitle => 'Miten teet ostoslistoja tänään?';
+
+  @override
+  String get obQuizMethodPaper => 'Kynä ja paperi';
+
+  @override
+  String get obQuizMethodNotes => 'Muistiinpanot-sovellus';
+
+  @override
+  String get obQuizMethodMemory => 'Pidän sitä päässäni';
+
+  @override
+  String get obQuizMethodNone => 'En tee listoja';
+
+  @override
+  String get obSocialTitle => 'Olet hyvässä seurassa';
+
+  @override
+  String get obSocialSubtitle =>
+      'Kaltaisesi ostajat säästävät jo KipiListin avulla';
+
+  @override
+  String get obSocialQuote1 =>
+      'En koskaan unohda enää mitään. Tekoäly rakentaa luetteloni sekunneissa.';
+
+  @override
+  String get obSocialQuote2 =>
+      'Leikkasimme ruokalaskuamme huomattavasti ensimmäisen kuukauden aikana.';
+
+  @override
+  String get obSocialQuote3 =>
+      'Listan jakaminen kumppanini kanssa lopetti ostoskaaoksemme.';
+
+  @override
+  String get obLoadingTitle => 'Luo henkilökohtainen suunnitelmasi...';
+
+  @override
+  String get obLoadingStepProfile => 'Säätö kotitaloudellesi';
+
+  @override
+  String get obLoadingStepHabits => 'Viritä ostosrutiinisi';
+
+  @override
+  String get obLoadingStepSavings => 'Säästöstrategiasi optimointi';
+
+  @override
+  String get obLoadingStepLists => 'Älykkäiden listojesi valmistelu';
+
+  @override
+  String get obRevealTitle => 'Suunnitelmasi on valmis!';
+
+  @override
+  String get obRevealSubtitle => 'Näin KipiList toimii sinulle';
+
+  @override
+  String get obRevealSavingsCaption => 'Ennustettu säästö KipiListin avulla';
+
+  @override
+  String obRevealMonth(int n) {
+    return 'Kuukausi $n';
+  }
+
+  @override
+  String get obRevealFeatureAi => 'AI rakentaa ja järjestää luettelosi';
+
+  @override
+  String get obRevealFeatureBudget =>
+      'Kulutusta seurataan tavoitteesi mukaisesti';
+
+  @override
+  String get obRevealFeaturePantry => 'Pantry-seuranta vähentää ruokahävikkiä';
+
+  @override
+  String get obRevealFeatureShare =>
+      'Reaaliaikainen jakaminen kotitaloudesi kanssa';
+
+  @override
+  String get obPaywallTitle => 'Avaa suunnitelmasi';
+
+  @override
+  String get obPaywallRetry => 'Yritä uudelleen';
+
+  @override
+  String get obLoginTitle => 'Tallenna suunnitelmasi';
+
+  @override
+  String get obLoginSubtitle =>
+      'Kirjaudu sisään, jotta luettelosi synkronoidaan eri laitteiden välillä';
+
+  @override
+  String get obLoginGoogle => 'Jatka Googlella';
+
+  @override
+  String get obLoginApple => 'Jatka Applella';
+
+  @override
+  String get obLoginSkip => 'Ei nyt';
+
+  @override
+  String get obLoginError =>
+      'Kirjautuminen epäonnistui. Yritä uudelleen tai ohita toistaiseksi.';
 }
