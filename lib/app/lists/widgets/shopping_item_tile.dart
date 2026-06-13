@@ -16,7 +16,7 @@ import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 
 const double _kQuantityControlsBreakpoint = 380;
 
-class ShoppingItemTile extends ConsumerWidget {
+class ShoppingItemTile extends ConsumerStatefulWidget {
   const ShoppingItemTile({
     super.key,
     required this.listId,
@@ -37,15 +37,68 @@ class ShoppingItemTile extends ConsumerWidget {
   final int? dragHandleIndex;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ShoppingItemTile> createState() => _ShoppingItemTileState();
+}
+
+class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _exitController;
+  late Animation<double> _sizeAnim;
+  late Animation<double> _opacityAnim;
+  bool _exiting = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _exitController = AnimationController(
+      duration: const Duration(milliseconds: 250),
+      vsync: this,
+    );
+    _sizeAnim = Tween<double>(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(parent: _exitController, curve: Curves.easeIn),
+    );
+    _opacityAnim = Tween<double>(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(parent: _exitController, curve: Curves.easeIn),
+    );
+  }
+
+  @override
+  void dispose() {
+    _exitController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleToggle() async {
+    if (widget.item.isPurchased) {
+      unawaited(HapticFeedback.lightImpact());
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .togglePurchased(widget.item.id);
+    } else {
+      if (_exiting) return;
+      setState(() => _exiting = true);
+      unawaited(HapticFeedback.mediumImpact());
+      await _exitController.forward();
+      if (!mounted) return;
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .togglePurchased(widget.item.id);
+      if (widget.isShoppingMode && mounted) {
+        _askToAddToPantry();
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final isPurchased = item.isPurchased;
+    final isPurchased = widget.item.isPurchased;
 
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
     final categoryMap = <String, CategoryData>{for (final c in categories) c.id: c};
-    final cat = categoryMap[item.categoryId];
+    final cat = categoryMap[widget.item.categoryId];
     final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     final tileContent = Stack(
@@ -53,58 +106,38 @@ class ShoppingItemTile extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
           child: Material(
-            elevation: isSelected ? 2 : 0,
+            elevation: widget.isSelected ? 2 : 0,
             surfaceTintColor: theme.colorScheme.surfaceTint,
-            color: isSelected
+            color: widget.isSelected
                 ? theme.colorScheme.primaryContainer.withAlpha(isDark ? 80 : 180)
                 : (isDark ? theme.colorScheme.surfaceContainerLow : theme.colorScheme.surface),
             borderRadius: BorderRadius.circular(RadiusTokens.lg),
             clipBehavior: Clip.antiAlias,
             child: InkWell(
-              onTap: selectionMode
-                  ? () => onSelectionChanged?.call(!isSelected)
-                  : () async {
-                      if (isPurchased) {
-                        unawaited(HapticFeedback.lightImpact());
-                      } else {
-                        unawaited(HapticFeedback.mediumImpact());
-                      }
-                      await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
-                      if (isShoppingMode && !isPurchased && context.mounted) {
-                        _askToAddToPantry(context, ref);
-                      }
-                    },
-              onLongPress: selectionMode
+              onTap: widget.selectionMode
+                  ? () => widget.onSelectionChanged?.call(!widget.isSelected)
+                  : _handleToggle,
+              onLongPress: widget.selectionMode
                   ? null
                   : () {
                       HapticFeedback.mediumImpact();
-                      onSelectionChanged?.call(true);
+                      widget.onSelectionChanged?.call(true);
                     },
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: Spacing.sm,
-                  vertical: isShoppingMode ? Spacing.md : Spacing.sm,
+                  vertical: widget.isShoppingMode ? Spacing.md : Spacing.sm,
                 ),
                 child: Row(
                   children: [
                     Checkbox(
-                      value: isSelected || (!selectionMode && isPurchased),
-                      onChanged: selectionMode
+                      value: widget.isSelected || (!widget.selectionMode && isPurchased),
+                      onChanged: widget.selectionMode
                           ? (v) {
                               HapticFeedback.selectionClick();
-                              onSelectionChanged?.call(v ?? false);
+                              widget.onSelectionChanged?.call(v ?? false);
                             }
-                          : (v) async {
-                              if (isPurchased) {
-                                unawaited(HapticFeedback.lightImpact());
-                              } else {
-                                unawaited(HapticFeedback.mediumImpact());
-                              }
-                              await ref.read(shoppingListItemsProvider(listId).notifier).togglePurchased(item.id);
-                              if (isShoppingMode && !isPurchased && context.mounted) {
-                                _askToAddToPantry(context, ref);
-                              }
-                            },
+                          : (_) => _handleToggle(),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.xxs)),
                     ),
                     const SizedBox(width: Spacing.xs),
@@ -114,17 +147,17 @@ class ShoppingItemTile extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            item.name,
-                            style: (isShoppingMode ? theme.textTheme.titleLarge : theme.textTheme.titleMedium)?.copyWith(
-                              decoration: !selectionMode && isPurchased ? TextDecoration.lineThrough : null,
-                              color: !selectionMode && isPurchased
+                            widget.item.name,
+                            style: (widget.isShoppingMode ? theme.textTheme.titleLarge : theme.textTheme.titleMedium)?.copyWith(
+                              decoration: !widget.selectionMode && isPurchased ? TextDecoration.lineThrough : null,
+                              color: !widget.selectionMode && isPurchased
                                   ? theme.colorScheme.onSurface.withAlpha((0.38 * 255).toInt())
                                   : theme.colorScheme.onSurface,
                               fontWeight: isPurchased ? FontWeight.w500 : FontWeight.w700,
                               height: 1.1,
                             ),
                           ),
-                          if (item.estimatedPrice != null || cat != null || (!isShoppingMode && !selectionMode)) ...[
+                          if (widget.item.estimatedPrice != null || cat != null || (!widget.isShoppingMode && !widget.selectionMode)) ...[
                             const SizedBox(height: Spacing.xxs),
                             Row(
                               children: [
@@ -149,11 +182,11 @@ class ShoppingItemTile extends ConsumerWidget {
                                   ),
                                   const SizedBox(width: 6), // 6px — unique value
                                 ],
-                                if (!isShoppingMode && !selectionMode)
-                                  _InlinePriceField(item: item, listId: listId)
-                                else if (item.estimatedPrice != null)
+                                if (!widget.isShoppingMode && !widget.selectionMode)
+                                  _InlinePriceField(item: widget.item, listId: widget.listId)
+                                else if (widget.item.estimatedPrice != null)
                                   Text(
-                                    formatCurrency(item.estimatedPrice! * item.quantity, currencyCode),
+                                    formatCurrency(widget.item.estimatedPrice! * widget.item.quantity, currencyCode),
                                     style: theme.textTheme.labelSmall?.copyWith(
                                       color: isPurchased ? theme.colorScheme.outline : theme.colorScheme.primary,
                                       fontWeight: FontWeight.w800,
@@ -166,7 +199,7 @@ class ShoppingItemTile extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: Spacing.xs),
-                    if (!selectionMode && !isShoppingMode)
+                    if (!widget.selectionMode && !widget.isShoppingMode)
                       Builder(
                         builder: (context) {
                           final screenWidth = MediaQuery.sizeOf(context).width;
@@ -179,27 +212,27 @@ class ShoppingItemTile extends ConsumerWidget {
                                   icon: Icons.remove,
                                   onPressed: () {
                                     HapticFeedback.selectionClick();
-                                    ref.read(shoppingListItemsProvider(listId).notifier).decrementQuantity(item.id);
+                                    ref.read(shoppingListItemsProvider(widget.listId).notifier).decrementQuantity(widget.item.id);
                                   },
                                 ),
-                              _InlineQtyField(item: item, listId: listId),
+                              _InlineQtyField(item: widget.item, listId: widget.listId),
                               if (!isSmallScreen)
                                 _SmallIconButton(
                                   icon: Icons.add,
                                   onPressed: () {
                                     HapticFeedback.selectionClick();
-                                    ref.read(shoppingListItemsProvider(listId).notifier).incrementQuantity(item.id);
+                                    ref.read(shoppingListItemsProvider(widget.listId).notifier).incrementQuantity(widget.item.id);
                                   },
                                 ),
                               const SizedBox(width: Spacing.xxs),
                               IconButton(
                                 icon: const Icon(Icons.more_vert, size: 20),
-                                onPressed: () => _showEditDialog(context, ref),
+                                onPressed: () => _showEditDialog(context),
                                 visualDensity: VisualDensity.compact,
                               ),
-                              if (dragHandleIndex != null)
+                              if (widget.dragHandleIndex != null)
                                 ReorderableDragStartListener(
-                                  index: dragHandleIndex!,
+                                  index: widget.dragHandleIndex!,
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 4),
                                     child: Icon(
@@ -213,9 +246,9 @@ class ShoppingItemTile extends ConsumerWidget {
                           );
                         },
                       ),
-                    if (!selectionMode && isShoppingMode)
+                    if (!widget.selectionMode && widget.isShoppingMode)
                       Text(
-                        '${item.quantity}${item.unit.label}',
+                        '${widget.item.quantity}${widget.item.unit.label}',
                         style: theme.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w700,
                           color: isPurchased ? theme.colorScheme.outline : theme.colorScheme.onSurface,
@@ -227,7 +260,7 @@ class ShoppingItemTile extends ConsumerWidget {
             ),
           ),
         ),
-        if (!selectionMode)
+        if (!widget.selectionMode)
           Positioned(
             right: Spacing.md,
             top: 0,
@@ -244,63 +277,73 @@ class ShoppingItemTile extends ConsumerWidget {
       ],
     );
 
-    if (selectionMode) {
-      return tileContent;
+    Widget child;
+    if (widget.selectionMode) {
+      child = tileContent;
+    } else {
+      child = Dismissible(
+        key: ValueKey('dismiss_${widget.item.id}'),
+        direction: DismissDirection.endToStart,
+        background: Container(
+          margin: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.errorContainer,
+            borderRadius: BorderRadius.circular(RadiusTokens.lg),
+          ),
+          alignment: Alignment.centerRight,
+          padding: const EdgeInsets.only(right: Spacing.lg),
+          child: Icon(Icons.delete_outline, color: theme.colorScheme.onErrorContainer),
+        ),
+        onDismissed: (direction) {
+          HapticFeedback.mediumImpact();
+          final removedItem = widget.item;
+          final notifier = ref.read(shoppingListItemsProvider(widget.listId).notifier);
+          notifier.removeItem(widget.item.id);
+          showUniqueSnackBar(
+            context,
+            content: Text(l10n.itemRemoved),
+            action: SnackBarAction(
+              label: l10n.undo,
+              onPressed: () => notifier.restoreItem(removedItem),
+            ),
+          );
+        },
+        child: tileContent,
+      );
     }
 
-    return Dismissible(
-      key: ValueKey('dismiss_${item.id}'),
-      direction: DismissDirection.endToStart,
-      background: Container(
-        margin: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
-        decoration: BoxDecoration(
-          color: theme.colorScheme.errorContainer,
-          borderRadius: BorderRadius.circular(RadiusTokens.lg),
-        ),
-        alignment: Alignment.centerRight,
-        padding: const EdgeInsets.only(right: Spacing.lg),
-        child: Icon(Icons.delete_outline, color: theme.colorScheme.onErrorContainer),
+    return SizeTransition(
+      sizeFactor: _sizeAnim,
+      alignment: Alignment.topCenter,
+      child: FadeTransition(
+        opacity: _opacityAnim,
+        child: child,
       ),
-      onDismissed: (direction) {
-        HapticFeedback.mediumImpact();
-        final removedItem = item;
-        final notifier = ref.read(shoppingListItemsProvider(listId).notifier);
-        notifier.removeItem(item.id);
-        showUniqueSnackBar(
-          context,
-          content: Text(l10n.itemRemoved),
-          action: SnackBarAction(
-            label: l10n.undo,
-            onPressed: () => notifier.restoreItem(removedItem),
-          ),
-        );
-      },
-      child: tileContent,
     );
   }
 
-  void _showEditDialog(BuildContext context, WidgetRef ref) {
+  void _showEditDialog(BuildContext context) {
     showDialog<void>(
       context: context,
-      builder: (_) => EditItemDialog(listId: listId, item: item),
+      builder: (_) => EditItemDialog(listId: widget.listId, item: widget.item),
     );
   }
 
-  void _askToAddToPantry(BuildContext context, WidgetRef ref) {
+  void _askToAddToPantry() {
     final l10n = AppLocalizations.of(context)!;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(l10n.addToPantryPrompt(item.name)),
+        content: Text(l10n.addToPantryPrompt(widget.item.name)),
         action: SnackBarAction(
           label: l10n.yes,
           onPressed: () {
             ref.read(pantryItemsProvider.notifier).addItem(
-              name: item.name,
-              idealQuantity: item.quantity,
-              currentQuantity: item.quantity,
-              categoryId: item.categoryId,
-              unit: item.unit,
-              estimatedPrice: item.estimatedPrice,
+              name: widget.item.name,
+              idealQuantity: widget.item.quantity,
+              currentQuantity: widget.item.quantity,
+              categoryId: widget.item.categoryId,
+              unit: widget.item.unit,
+              estimatedPrice: widget.item.estimatedPrice,
             );
           },
         ),
