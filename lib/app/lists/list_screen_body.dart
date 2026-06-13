@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:confetti/confetti.dart';
 import 'package:excel/excel.dart' as ex;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:pdf/pdf.dart';
 import 'package:printing/printing.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -41,6 +43,7 @@ import 'package:shopping_list/app/lists/widgets/selection_bottom_bar.dart';
 import 'package:shopping_list/app/lists/widgets/sort_options_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/share_list_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/export_options_sheet.dart';
+import 'package:shopping_list/core/providers/misc_providers.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
@@ -49,19 +52,23 @@ class ListScreenBody extends ConsumerStatefulWidget {
   ConsumerState<ListScreenBody> createState() => _ListScreenBodyState();
 }
 
-class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProviderStateMixin {
+class _ListScreenBodyState extends ConsumerState<ListScreenBody>
+    with TickerProviderStateMixin {
   late ConfettiController _confettiController;
   FilterType _filter = FilterType.all;
   SortType _sort = SortType.manual;
   bool _selectionMode = false;
   bool _shoppingMode = false;
+  bool _completionRegistered = false;
   bool _showGestureHint = false;
   final Set<String> _selectedIds = {};
 
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 2),
+    );
     _checkGestureHint();
   }
 
@@ -88,8 +95,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     _confettiController.dispose();
     super.dispose();
   }
-
-
 
   String _getSortLabel(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -130,36 +135,48 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     final l10n = AppLocalizations.of(context)!;
     final confirm = await showDialog<bool>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: Text(l10n.confirm),
-        content: Text(l10n.confirmDeleteItems(_selectedIds.length)),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text(l10n.cancel),
+      builder:
+          (_) => AlertDialog(
+            title: Text(l10n.confirm),
+            content: Text(l10n.confirmDeleteItems(_selectedIds.length)),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(l10n.cancel),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, true),
+                child: Text(l10n.remove),
+              ),
+            ],
           ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(l10n.remove),
-          ),
-        ],
-      ),
     );
     if (confirm == true && mounted) {
-      await ref.read(shoppingListItemsProvider(widget.listId).notifier).removeItems(_selectedIds.toList());
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .removeItems(_selectedIds.toList());
       _exitSelectionMode();
     }
   }
 
   Future<void> _markSelected(bool isPurchased) async {
     final idsToToggle = _selectedIds.toList();
-    await ref.read(shoppingListItemsProvider(widget.listId).notifier).togglePurchasedBatch(idsToToggle, isPurchased);
+    await ref
+        .read(shoppingListItemsProvider(widget.listId).notifier)
+        .togglePurchasedBatch(idsToToggle, isPurchased);
     if (isPurchased) {
       ref.invalidate(shoppingListItemsProvider(widget.listId));
-      final updatedItems = await ref.read(shoppingListItemsProvider(widget.listId).future);
-      final pendingCount = updatedItems.where((i) => !i.isPurchased && !_selectedIds.contains(i.id)).length;
+      final updatedItems = await ref.read(
+        shoppingListItemsProvider(widget.listId).future,
+      );
+      final pendingCount =
+          updatedItems
+              .where((i) => !i.isPurchased && !_selectedIds.contains(i.id))
+              .length;
       if (pendingCount == 0) {
-        if (!WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding')) {
+        if (!WidgetsBinding.instance.runtimeType.toString().contains(
+          'TestWidgetsFlutterBinding',
+        )) {
           _confettiController.play();
         }
       }
@@ -168,7 +185,21 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
   }
 
   Future<void> _clearPurchased() async {
-    await ref.read(shoppingListItemsProvider(widget.listId).notifier).clearPurchased();
+    await ref
+        .read(shoppingListItemsProvider(widget.listId).notifier)
+        .clearPurchased();
+  }
+
+  void _registerCompletionReview(int itemCount) {
+    if (_completionRegistered) {
+      return;
+    }
+    _completionRegistered = true;
+    unawaited(
+      ref
+          .read(appReviewServiceProvider)
+          .registerCompletionAndRequestReview(itemCount: itemCount),
+    );
   }
 
   @override
@@ -185,37 +216,56 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
 
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: _selectionMode || _shoppingMode
-          ? AppBar(
-              backgroundColor: _shoppingMode ? theme.colorScheme.primary : theme.colorScheme.surface,
-              foregroundColor: _shoppingMode ? theme.colorScheme.onPrimary : theme.colorScheme.onSurface,
-              leading: IconButton(
-                icon: const Icon(Icons.close),
-                onPressed: () {
-                  if (_selectionMode) {
-                    _exitSelectionMode();
-                  }
-                  if (_shoppingMode) {
-                    setState(() => _shoppingMode = false);
-                  }
-                },
-              ),
-              title: Text(_shoppingMode ? l10n.shoppingMode : l10n.selectedItems(_selectedIds.length)),
-              actions: [
-                if (_selectionMode)
-                  IconButton(icon: const Icon(Icons.delete_outline), onPressed: _deleteSelected),
-                if (_shoppingMode)
-                  IconButton(
-                    icon: const Icon(Icons.celebration_outlined),
-                    onPressed: () => _confettiController.play(),
-                  ),
-              ],
-            )
-          : null,
+      appBar:
+          _selectionMode || _shoppingMode
+              ? AppBar(
+                backgroundColor:
+                    _shoppingMode
+                        ? theme.colorScheme.primary
+                        : theme.colorScheme.surface,
+                foregroundColor:
+                    _shoppingMode
+                        ? theme.colorScheme.onPrimary
+                        : theme.colorScheme.onSurface,
+                leading: IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () {
+                    if (_selectionMode) {
+                      _exitSelectionMode();
+                    }
+                    if (_shoppingMode) {
+                      setState(() => _shoppingMode = false);
+                    }
+                  },
+                ),
+                title: Text(
+                  _shoppingMode
+                      ? l10n.shoppingMode
+                      : l10n.selectedItems(_selectedIds.length),
+                ),
+                actions: [
+                  if (_selectionMode)
+                    IconButton(
+                      icon: const Icon(Icons.delete_outline),
+                      onPressed: _deleteSelected,
+                    ),
+                  if (_shoppingMode)
+                    IconButton(
+                      icon: const Icon(Icons.celebration_outlined),
+                      onPressed: () => _confettiController.play(),
+                    ),
+                ],
+              )
+              : null,
       body: itemsAsync.when(
         data: (items) {
           final pending = items.where((i) => !i.isPurchased).toList();
           final purchased = items.where((i) => i.isPurchased).toList();
+          if (_shoppingMode && pending.isEmpty && items.isNotEmpty) {
+            _registerCompletionReview(items.length);
+          } else if (pending.isNotEmpty) {
+            _completionRegistered = false;
+          }
 
           void applySort(List<ShoppingItem> list) {
             switch (_sort) {
@@ -236,16 +286,22 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
           applySort(pending);
           applySort(purchased);
 
-          // ignore: prefer_int_literals
-          final totalEstimated = items.fold(0.0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+          final totalEstimated = items.fold<double>(
+            0,
+            (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity,
+          );
           final purchasedItemsList = items.where((i) => i.isPurchased).toList();
-          // ignore: prefer_int_literals
-          final totalPurchased = purchasedItemsList.fold(0.0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
-          final progress = items.isEmpty ? 0.0 : purchased.length / items.length;
-          
+          final totalPurchased = purchasedItemsList.fold<double>(
+            0,
+            (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity,
+          );
+          final progress =
+              items.isEmpty ? 0.0 : purchased.length / items.length;
+
           final budget = currentList?.budget ?? 0.0;
           final overBudget = budget > 0 && totalPurchased > budget;
-          final budgetProgress = budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.0) : 0.0;
+          final budgetProgress =
+              budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.0) : 0.0;
 
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
@@ -253,7 +309,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
               if (!_selectionMode && !_shoppingMode)
                 SliverAppBar(
                   backgroundColor: theme.colorScheme.surface,
-                  surfaceTintColor: Colors.transparent,
+                  surfaceTintColor: theme.colorScheme.surfaceTint,
                   pinned: true,
                   floating: true,
                   leading: IconButton(
@@ -263,8 +319,13 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                   title: AppBarListSelector(currentListId: widget.listId),
                   actions: [
                     IconButton(
-                      icon: Icon(_shoppingMode ? Icons.shopping_basket : Icons.shopping_basket_outlined),
-                      onPressed: () => setState(() => _shoppingMode = !_shoppingMode),
+                      icon: Icon(
+                        _shoppingMode
+                            ? Icons.shopping_basket
+                            : Icons.shopping_basket_outlined,
+                      ),
+                      onPressed:
+                          () => setState(() => _shoppingMode = !_shoppingMode),
                       tooltip: l10n.shoppingMode,
                     ),
                     IconButton(
@@ -274,10 +335,15 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                     ),
                     IconButton(
                       icon: const Icon(Icons.search),
-                      onPressed: () => showSearch(
-                        context: context,
-                        delegate: ShoppingSearchDelegate(widget.listId, items, categoriesMap),
-                      ),
+                      onPressed:
+                          () => showSearch(
+                            context: context,
+                            delegate: ShoppingSearchDelegate(
+                              widget.listId,
+                              items,
+                              categoriesMap,
+                            ),
+                          ),
                     ),
                     PopupMenuButton<String>(
                       icon: const Icon(Icons.more_vert),
@@ -299,90 +365,174 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                         if (val == 'export') {
                           showExportOptionsSheet(
                             context,
-                            onExportPdf: () => _exportPdf(items),
+                            onExportPdf: () => _exportPdf(items, currentList, categories),
                             onExportExcel: () => _exportExcel(items),
+                            onShareText:
+                                () =>
+                                    _shareItemsAsText(items, currentList?.name),
+                            onCopyText:
+                                () =>
+                                    _copyItemsAsText(items, currentList?.name),
                           );
                         }
                         if (val == 'settings') {
-                          Navigator.push(context, fadeSlideRoute<void>(const SettingsScreen()));
+                          Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const SettingsScreen()),
+                          );
                         }
                         if (val == 'profile') {
-                          Navigator.push(context, fadeSlideRoute<void>(const UserProfileScreen()));
+                          Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const UserProfileScreen()),
+                          );
                         }
                         if (val == 'ai') {
                           if (isPremium) {
-                            Navigator.push(context, fadeSlideRoute<void>(ChatScreen(listId: widget.listId, listName: currentList?.name)));
+                            Navigator.push(
+                              context,
+                              fadeSlideRoute<void>(
+                                ChatScreen(
+                                  listId: widget.listId,
+                                  listName: currentList?.name,
+                                ),
+                              ),
+                            );
                           } else {
-                            Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
+                            Navigator.push(
+                              context,
+                              fadeSlideRoute<void>(const PaywallScreen()),
+                            );
                           }
                         }
                       },
-                      itemBuilder: (context) => [
-                        PopupMenuItem(
-                          value: 'ai',
-                          child: Text(l10n.aiAssistant),
-                        ),
-                        const PopupMenuDivider(),
-                        PopupMenuItem(value: 'share', child: Text(l10n.share)),
-                        PopupMenuItem(value: 'budget', child: Text(l10n.listBudgetTitle)),
-                        PopupMenuItem(value: 'clear', child: Text(l10n.clearPurchased)),
-                        PopupMenuItem(value: 'export', child: Text(l10n.exportPdfExcel)),
-                        const PopupMenuDivider(),
-                        PopupMenuItem(value: 'profile', child: Text(l10n.profile)),
-                        PopupMenuItem(value: 'settings', child: Text(l10n.settingsAppBar)),
-                      ],
+                      itemBuilder:
+                          (context) => [
+                            PopupMenuItem(
+                              value: 'ai',
+                              child: Text(l10n.aiAssistant),
+                            ),
+                            const PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 'share',
+                              child: Text(l10n.share),
+                            ),
+                            PopupMenuItem(
+                              value: 'budget',
+                              child: Text(l10n.listBudgetTitle),
+                            ),
+                            PopupMenuItem(
+                              value: 'clear',
+                              child: Text(l10n.clearPurchased),
+                            ),
+                            PopupMenuItem(
+                              value: 'export',
+                              child: Text(l10n.exportPdfExcel),
+                            ),
+                            const PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 'profile',
+                              child: Text(l10n.profile),
+                            ),
+                            PopupMenuItem(
+                              value: 'settings',
+                              child: Text(l10n.settingsAppBar),
+                            ),
+                          ],
                     ),
                   ],
-                  bottom: items.isEmpty
-                      ? null
-                      : ProgressInfoHeader(
-                          purchasedCount: purchased.length,
-                          totalItems: items.length,
-                          totalEstimated: totalEstimated,
-                          totalPurchased: totalPurchased,
-                          progress: progress,
-                          budget: budget,
-                          overBudget: overBudget,
-                          budgetProgress: budgetProgress,
-                          filter: _filter,
-                          sortLabel: _getSortLabel(context),
-                          currencyCode: currencyCode,
-                          onFilterChanged: (f) => setState(() => _filter = f),
-                          onSortPressed: () => showSortOptionsSheet(
-                            context,
-                            currentSort: _sort,
-                            onSortChanged: (s) => setState(() => _sort = s),
+                  bottom:
+                      items.isEmpty
+                          ? null
+                          : ProgressInfoHeader(
+                            purchasedCount: purchased.length,
+                            totalItems: items.length,
+                            totalEstimated: totalEstimated,
+                            totalPurchased: totalPurchased,
+                            progress: progress,
+                            budget: budget,
+                            overBudget: overBudget,
+                            budgetProgress: budgetProgress,
+                            filter: _filter,
+                            sortLabel: _getSortLabel(context),
+                            currencyCode: currencyCode,
+                            onFilterChanged: (f) => setState(() => _filter = f),
+                            onSortPressed:
+                                () => showSortOptionsSheet(
+                                  context,
+                                  currentSort: _sort,
+                                  onSortChanged:
+                                      (s) => setState(() => _sort = s),
+                                ),
                           ),
-                        ),
                 ),
               if (_shoppingMode && pending.isEmpty && items.isNotEmpty)
                 SliverFillRemaining(
                   hasScrollBody: false,
                   child: ShoppingCompletionView(
-                    onExitShoppingMode: () => setState(() => _shoppingMode = false),
+                    onExitShoppingMode:
+                        () => setState(() => _shoppingMode = false),
+                    itemCount: items.length,
+                    isPremium: isPremium,
+                    onUpgrade:
+                        () => Navigator.push(
+                          context,
+                          fadeSlideRoute<void>(const PaywallScreen()),
+                        ),
                   ),
                 ),
               if (items.isEmpty)
-                SliverFillRemaining(hasScrollBody: true, child: EmptyState(listId: widget.listId))
+                SliverFillRemaining(
+                  hasScrollBody: true,
+                  child: EmptyState(listId: widget.listId),
+                )
               else ...[
                 if (_showGestureHint && items.isNotEmpty)
                   SliverToBoxAdapter(
                     child: GestureHintBanner(onDismiss: _dismissGestureHint),
                   ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => ShoppingItemTile(
-                        listId: widget.listId,
-                        item: pending[index],
-                        selectionMode: _selectionMode,
-                        isShoppingMode: _shoppingMode,
-                        isSelected: _selectedIds.contains(pending[index].id),
-                        onSelectionChanged: (selected) => _handleSelection(pending[index].id, selected),
+                  if (_sort == SortType.manual)
+                    SliverReorderableList(
+                      itemCount: pending.length,
+                      itemBuilder: (context, index) {
+                        final item = pending[index];
+                        return ShoppingItemTile(
+                          key: ValueKey(item.id),
+                          listId: widget.listId,
+                          item: item,
+                          selectionMode: _selectionMode,
+                          isShoppingMode: _shoppingMode,
+                          isSelected: _selectedIds.contains(item.id),
+                          onSelectionChanged: (selected) => _handleSelection(item.id, selected),
+                          dragHandleIndex: index,
+                        );
+                      },
+                      onReorderItem: (oldIndex, newIndex) {
+                        final reordered = List<ShoppingItem>.from(pending);
+                        final moved = reordered.removeAt(oldIndex);
+                        reordered.insert(newIndex, moved);
+                        ref
+                            .read(shoppingListItemsProvider(widget.listId).notifier)
+                            .updateItems([...reordered, ...purchased]);
+                      },
+                    )
+                  else
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) => ShoppingItemTile(
+                          listId: widget.listId,
+                          item: pending[index],
+                          selectionMode: _selectionMode,
+                          isShoppingMode: _shoppingMode,
+                          isSelected: _selectedIds.contains(pending[index].id),
+                          onSelectionChanged:
+                              (selected) =>
+                                  _handleSelection(pending[index].id, selected),
+                        ),
+                        childCount: pending.length,
                       ),
-                      childCount: pending.length,
                     ),
-                  ),
                 if (_filter == FilterType.all && purchased.isNotEmpty)
                   SliverToBoxAdapter(
                     child: Padding(
@@ -398,7 +548,12 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                             ),
                           ),
                           const SizedBox(width: 12),
-                          Expanded(child: Divider(color: theme.colorScheme.outlineVariant, thickness: 0.5)),
+                          Expanded(
+                            child: Divider(
+                              color: theme.colorScheme.outlineVariant,
+                              thickness: 0.5,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -412,7 +567,9 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
                         selectionMode: _selectionMode,
                         isShoppingMode: _shoppingMode,
                         isSelected: _selectedIds.contains(purchased[index].id),
-                        onSelectionChanged: (selected) => _handleSelection(purchased[index].id, selected),
+                        onSelectionChanged:
+                            (selected) =>
+                                _handleSelection(purchased[index].id, selected),
                       ),
                       childCount: purchased.length,
                     ),
@@ -422,58 +579,326 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
             ],
           );
         },
-        loading: () => SafeArea(
-          child: ListView.builder(
-            itemCount: 6,
-            itemBuilder: (_, _) => const ShoppingItemTileSkeleton(),
-          ),
-        ),
+        loading:
+            () => SafeArea(
+              child: ListView.builder(
+                itemCount: 6,
+                itemBuilder: (_, _) => const ShoppingItemTileSkeleton(),
+              ),
+            ),
         error: (e, s) {
           debugPrint('Error: $e');
           return SafeArea(child: Center(child: Text(e.toString())));
         },
       ),
-      floatingActionButton: _selectionMode || _shoppingMode
-          ? FloatingActionButton.extended(
-              heroTag: null,
-              onPressed: _selectionMode ? () => _markSelected(true) : () => setState(() => _shoppingMode = false),
-              icon: Icon(_selectionMode ? Icons.check : Icons.close),
-              label: Text(_selectionMode ? l10n.buy : l10n.exit),
-              backgroundColor: _shoppingMode ? theme.colorScheme.secondary : theme.colorScheme.primary,
-              foregroundColor: _shoppingMode ? theme.colorScheme.onSecondary : theme.colorScheme.onPrimary,
-            )
-          : null,
-      bottomNavigationBar: _selectionMode
-          ? SelectionBottomBar(
-              onCancel: _exitSelectionMode,
-              onDelete: _deleteSelected,
-            )
-          : Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _CatalogEntryButton(listId: widget.listId),
-                KipiQuickBar(listId: widget.listId),
-              ],
-            ),
+      floatingActionButton:
+          _selectionMode || _shoppingMode
+              ? FloatingActionButton.extended(
+                heroTag: null,
+                onPressed:
+                    _selectionMode
+                        ? () => _markSelected(true)
+                        : () => setState(() => _shoppingMode = false),
+                icon: Icon(_selectionMode ? Icons.check : Icons.close),
+                label: Text(_selectionMode ? l10n.buy : l10n.exit),
+                backgroundColor:
+                    _shoppingMode
+                        ? theme.colorScheme.secondary
+                        : theme.colorScheme.primary,
+                foregroundColor:
+                    _shoppingMode
+                        ? theme.colorScheme.onSecondary
+                        : theme.colorScheme.onPrimary,
+              )
+              : null,
+      bottomNavigationBar:
+          _selectionMode
+              ? SelectionBottomBar(
+                onCancel: _exitSelectionMode,
+                onDelete: _deleteSelected,
+              )
+              : Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _CatalogEntryButton(listId: widget.listId),
+                  KipiQuickBar(listId: widget.listId),
+                ],
+              ),
     );
   }
 
   void _showBudgetDialog(BuildContext context, ShoppingList list) {
-    showDialog<void>(context: context, builder: (_) => BudgetDialog(list: list));
+    showDialog<void>(
+      context: context,
+      builder: (_) => BudgetDialog(list: list),
+    );
   }
 
-  Future<void> _exportPdf(List<ShoppingItem> items) async {
+  Future<void> _exportPdf(
+    List<ShoppingItem> items,
+    ShoppingList? currentList,
+    List<CategoryData> categories,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
+    final currencyCode = ref.read(currencySettingProvider).value ?? 'BRL';
+    final listName = (currentList?.name.trim().isNotEmpty ?? false)
+        ? currentList!.name.trim()
+        : l10n.shareListText;
+    final budget = currentList?.budget ?? 0.0;
+    final categoriesMap = {for (final c in categories) c.id: c.name};
+
+    final pending = items.where((i) => !i.isPurchased).toList();
+    final purchased = items.where((i) => i.isPurchased).toList();
+
+    final totalEstimated = items.fold<double>(
+        0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+    final totalPurchased = purchased.fold<double>(
+        0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+
+    final primaryColor = PdfColor.fromHex('#388E3C');
+    final headerBg = PdfColor.fromHex('#F5F5F5');
+    final zebraColor = PdfColor.fromHex('#FAFAFA');
+    final categoryBg = PdfColor.fromHex('#E8F5E9');
+    final mutedText = PdfColor.fromHex('#9E9E9E');
+    final dividerColor = PdfColor.fromHex('#E0E0E0');
+    final darkText = PdfColor.fromHex('#424242');
+
+    pw.Widget buildTableHeader() => pw.Container(
+          color: headerBg,
+          padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          child: pw.Row(
+            children: [
+              pw.SizedBox(width: 16),
+              pw.Expanded(
+                flex: 4,
+                child: pw.Text('ITEM',
+                    style: pw.TextStyle(
+                        fontSize: 9,
+                        fontWeight: pw.FontWeight.bold,
+                        color: darkText)),
+              ),
+              pw.SizedBox(
+                width: 60,
+                child: pw.Text('QTD',
+                    textAlign: pw.TextAlign.center,
+                    style: pw.TextStyle(
+                        fontSize: 9,
+                        fontWeight: pw.FontWeight.bold,
+                        color: darkText)),
+              ),
+              pw.SizedBox(
+                width: 70,
+                child: pw.Text('PREÇO EST.',
+                    textAlign: pw.TextAlign.right,
+                    style: pw.TextStyle(
+                        fontSize: 9,
+                        fontWeight: pw.FontWeight.bold,
+                        color: darkText)),
+              ),
+            ],
+          ),
+        );
+
+    List<pw.Widget> buildItemRows(List<ShoppingItem> list, bool muted) {
+      final grouped = <String, List<ShoppingItem>>{};
+      for (final item in list) {
+        (grouped[item.categoryId] ??= []).add(item);
+      }
+      final rows = <pw.Widget>[];
+      var rowIndex = 0;
+      for (final entry in grouped.entries) {
+        final catName = categoriesMap[entry.key] ?? entry.key;
+        rows.add(pw.Container(
+          color: categoryBg,
+          padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          child: pw.Text(
+            catName.toUpperCase(),
+            style: pw.TextStyle(
+                fontSize: 8,
+                fontWeight: pw.FontWeight.bold,
+                color: primaryColor),
+          ),
+        ));
+        for (final item in entry.value) {
+          final bg = rowIndex.isEven ? zebraColor : PdfColors.white;
+          rowIndex++;
+          rows.add(pw.Container(
+            color: bg,
+            padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+            child: pw.Row(
+              children: [
+                pw.SizedBox(
+                  width: 16,
+                  child: pw.Text(
+                    item.isPurchased ? '☑' : '☐',
+                    style: pw.TextStyle(
+                        color: muted ? mutedText : PdfColors.black),
+                  ),
+                ),
+                pw.Expanded(
+                  flex: 4,
+                  child: pw.Text(
+                    item.name,
+                    style: pw.TextStyle(
+                      fontSize: 10,
+                      color: muted ? mutedText : PdfColors.black,
+                      decoration:
+                          muted ? pw.TextDecoration.lineThrough : null,
+                    ),
+                  ),
+                ),
+                pw.SizedBox(
+                  width: 60,
+                  child: pw.Text(
+                    '${item.quantity} ${item.unit.label}',
+                    textAlign: pw.TextAlign.center,
+                    style: pw.TextStyle(
+                        fontSize: 10,
+                        color: muted ? mutedText : PdfColors.black),
+                  ),
+                ),
+                pw.SizedBox(
+                  width: 70,
+                  child: pw.Text(
+                    item.estimatedPrice != null
+                        ? formatCurrency(
+                            item.estimatedPrice! * item.quantity,
+                            currencyCode)
+                        : '—',
+                    textAlign: pw.TextAlign.right,
+                    style: pw.TextStyle(
+                        fontSize: 10,
+                        color: muted ? mutedText : PdfColors.black),
+                  ),
+                ),
+              ],
+            ),
+          ));
+        }
+      }
+      return rows;
+    }
+
+    final now = DateTime.now();
+    final exportDate =
+        '${now.day.toString().padLeft(2, '0')}/${now.month.toString().padLeft(2, '0')}/${now.year} '
+        '${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}';
+
     final pdf = pw.Document();
-    pdf.addPage(pw.Page(build: (context) => pw.Column(crossAxisAlignment: pw.CrossAxisAlignment.start, children: [
-      pw.Text(l10n.shareListText, style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold)),
-      pw.Divider(),
-      pw.SizedBox(height: 20),
-      ...items.map((item) => pw.Row(mainAxisAlignment: pw.MainAxisAlignment.spaceBetween, children: [
-        pw.Text('${item.isPurchased ? "☑ " : "☐ "}${item.name} (${item.quantity} ${item.unit.name})'),
-        if (item.estimatedPrice != null) pw.Text(formatCurrency(item.estimatedPrice! * item.quantity, ref.read(currencySettingProvider).value ?? 'BRL')),
-      ])),
-    ])));
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4,
+        margin: const pw.EdgeInsets.all(32),
+        build: (context) => [
+          pw.Container(
+            decoration: pw.BoxDecoration(
+              color: primaryColor,
+              borderRadius: pw.BorderRadius.circular(8),
+            ),
+            padding: const pw.EdgeInsets.all(20),
+            child: pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                pw.Text(
+                  listName,
+                  style: pw.TextStyle(
+                      fontSize: 22,
+                      fontWeight: pw.FontWeight.bold,
+                      color: PdfColors.white),
+                ),
+                pw.SizedBox(height: 4),
+                pw.Text(
+                  '$exportDate  ·  ${items.length} itens  ·  ${purchased.length} comprados',
+                  style: const pw.TextStyle(fontSize: 10, color: PdfColors.white),
+                ),
+              ],
+            ),
+          ),
+          pw.SizedBox(height: 12),
+          if (budget > 0) ...[
+            pw.Container(
+              decoration: pw.BoxDecoration(
+                border: pw.Border.all(color: dividerColor),
+                borderRadius: pw.BorderRadius.circular(6),
+              ),
+              padding:
+                  const pw.EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              child: pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text(
+                      'Orçamento: ${formatCurrency(budget, currencyCode)}',
+                      style: const pw.TextStyle(fontSize: 10)),
+                  pw.Text(
+                    'Gasto: ${formatCurrency(totalPurchased, currencyCode)}',
+                    style: pw.TextStyle(
+                      fontSize: 10,
+                      fontWeight: pw.FontWeight.bold,
+                      color: totalPurchased > budget
+                          ? PdfColors.red
+                          : primaryColor,
+                    ),
+                  ),
+                  pw.Text(
+                      'Saldo: ${formatCurrency(budget - totalPurchased, currencyCode)}',
+                      style: const pw.TextStyle(fontSize: 10)),
+                ],
+              ),
+            ),
+            pw.SizedBox(height: 12),
+          ],
+          if (pending.isNotEmpty) ...[
+            pw.Text(
+              'PENDENTES (${pending.length})',
+              style:
+                  pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold),
+            ),
+            pw.SizedBox(height: 6),
+            buildTableHeader(),
+            ...buildItemRows(pending, false),
+            pw.SizedBox(height: 16),
+          ],
+          if (purchased.isNotEmpty) ...[
+            pw.Text(
+              'COMPRADOS (${purchased.length})',
+              style: pw.TextStyle(
+                  fontSize: 11,
+                  fontWeight: pw.FontWeight.bold,
+                  color: mutedText),
+            ),
+            pw.SizedBox(height: 6),
+            buildTableHeader(),
+            ...buildItemRows(purchased, true),
+            pw.SizedBox(height: 16),
+          ],
+          pw.Divider(),
+          pw.SizedBox(height: 4),
+          pw.Row(
+            mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+            children: [
+              pw.Text(
+                'Total estimado: ${formatCurrency(totalEstimated, currencyCode)}',
+                style: pw.TextStyle(
+                    fontSize: 10, fontWeight: pw.FontWeight.bold),
+              ),
+              pw.Text(
+                'Total comprado: ${formatCurrency(totalPurchased, currencyCode)}',
+                style: pw.TextStyle(
+                    fontSize: 10, fontWeight: pw.FontWeight.bold),
+              ),
+            ],
+          ),
+          pw.SizedBox(height: 6),
+          pw.Center(
+            child: pw.Text(
+              'Gerado por Kipi List',
+              style: pw.TextStyle(fontSize: 8, color: mutedText),
+            ),
+          ),
+        ],
+      ),
+    );
+
     await Printing.layoutPdf(onLayout: (format) => pdf.save());
   }
 
@@ -481,16 +906,73 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     final l10n = AppLocalizations.of(context)!;
     final excel = ex.Excel.createExcel();
     final sheet = excel['Shopping List'];
-    sheet.appendRow([ex.TextCellValue('Item'), ex.TextCellValue('Qtd'), ex.TextCellValue('Unidade'), ex.TextCellValue('Preço Est.'), ex.TextCellValue('Comprado')]);
+    sheet.appendRow([
+      ex.TextCellValue('Item'),
+      ex.TextCellValue('Qtd'),
+      ex.TextCellValue('Unidade'),
+      ex.TextCellValue('Preço Est.'),
+      ex.TextCellValue('Comprado'),
+    ]);
     for (final item in items) {
-      sheet.appendRow([ex.TextCellValue(item.name), ex.IntCellValue(item.quantity), ex.TextCellValue(item.unit.name), ex.DoubleCellValue(item.estimatedPrice ?? 0), ex.TextCellValue(item.isPurchased ? l10n.yesLabel : l10n.noLabel)]);
+      sheet.appendRow([
+        ex.TextCellValue(item.name),
+        ex.IntCellValue(item.quantity),
+        ex.TextCellValue(item.unit.name),
+        ex.DoubleCellValue(item.estimatedPrice ?? 0),
+        ex.TextCellValue(item.isPurchased ? l10n.yesLabel : l10n.noLabel),
+      ]);
     }
     final bytes = excel.encode();
     if (bytes != null) {
       final tempDir = await getTemporaryDirectory();
       final file = File('${tempDir.path}/lista_compras.xlsx');
       await file.writeAsBytes(bytes);
-      await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], text: l10n.shareListText));
+      await SharePlus.instance.share(
+        ShareParams(files: [XFile(file.path)], text: l10n.shareListText),
+      );
+    }
+  }
+
+  String _formatItemsAsText(List<ShoppingItem> items, String? listName) {
+    final l10n = AppLocalizations.of(context)!;
+    final title =
+        listName?.trim().isNotEmpty == true
+            ? listName!.trim()
+            : l10n.shareListText;
+    final lines = items
+        .map((item) {
+          final checkbox = item.isPurchased ? '☑' : '☐';
+          return '$checkbox ${item.name} - ${item.quantity}${item.unit.label}';
+        })
+        .join('\n');
+    return '$title\n\n$lines\n\n${l10n.shareReferralText('https://kipilist-6547b.web.app')}';
+  }
+
+  Future<void> _shareItemsAsText(
+    List<ShoppingItem> items,
+    String? listName,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    await SharePlus.instance.share(
+      ShareParams(
+        text: _formatItemsAsText(items, listName),
+        subject: listName ?? l10n.shareSubject,
+      ),
+    );
+  }
+
+  Future<void> _copyItemsAsText(
+    List<ShoppingItem> items,
+    String? listName,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    await Clipboard.setData(
+      ClipboardData(text: _formatItemsAsText(items, listName)),
+    );
+    if (mounted) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.copiedToClipboard)));
     }
   }
 
@@ -499,40 +981,45 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody> with TickerProv
     final theme = Theme.of(context);
     showModalBottomSheet<void>(
       context: context,
-      builder: (context) => SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(l10n.shareListTitle, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
-              const SizedBox(height: 16),
-              ListTile(
-                leading: const Icon(Icons.group_add),
-                title: Text(l10n.inviteToList),
-                subtitle: Text(l10n.shareRealtime),
-                onTap: () {
-                  Navigator.pop(context);
-                  unawaited(shareViaCode(context, ref, widget.listId));
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.share),
-                title: Text(l10n.shareApp),
-                subtitle: Text(l10n.shareAppDescription),
-                onTap: () {
-                  Navigator.pop(context);
-                  shareReferral(context);
-                },
-              ),
-            ],
+      useSafeArea: true,
+      isScrollControlled: true,
+      builder:
+          (context) => Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.shareListTitle,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                ListTile(
+                  leading: const Icon(Icons.group_add),
+                  title: Text(l10n.inviteToList),
+                  subtitle: Text(l10n.shareRealtime),
+                  onTap: () {
+                    Navigator.pop(context);
+                    unawaited(shareViaCode(context, ref, widget.listId));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.share),
+                  title: Text(l10n.shareApp),
+                  subtitle: Text(l10n.shareAppDescription),
+                  onTap: () {
+                    Navigator.pop(context);
+                    shareReferral(context);
+                  },
+                ),
+              ],
+            ),
           ),
-        ),
-      ),
     );
   }
-
 }
 
 class _CatalogEntryButton extends ConsumerWidget {
@@ -549,20 +1036,21 @@ class _CatalogEntryButton extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
       child: OutlinedButton.icon(
-        onPressed: () => Navigator.push<void>(
-          context,
-          MaterialPageRoute(
-            builder: (_) => CatalogHomeScreen(
-              listId: listId,
-              offCountryTag: offCountryTag,
+        onPressed:
+            () => Navigator.push<void>(
+              context,
+              MaterialPageRoute(
+                builder:
+                    (_) => CatalogHomeScreen(
+                      listId: listId,
+                      offCountryTag: offCountryTag,
+                    ),
+              ),
             ),
-          ),
-        ),
         icon: const Icon(Icons.grid_view_rounded, size: 18),
         label: Text(l10n.catalogBrowse),
         style: OutlinedButton.styleFrom(
           minimumSize: const Size.fromHeight(40),
-          shape: const StadiumBorder(),
           foregroundColor: theme.colorScheme.primary,
         ),
       ),
@@ -577,19 +1065,38 @@ class ShoppingSearchDelegate extends SearchDelegate<String> {
   final Map<String, CategoryData> categoriesMap;
 
   @override
-  List<Widget> buildActions(BuildContext context) => [IconButton(icon: const Icon(Icons.clear), onPressed: () => query = '')];
+  List<Widget> buildActions(BuildContext context) => [
+    IconButton(icon: const Icon(Icons.clear), onPressed: () => query = ''),
+  ];
   @override
-  Widget buildLeading(BuildContext context) => IconButton(icon: const Icon(Icons.arrow_back), onPressed: () => close(context, ''));
+  Widget buildLeading(BuildContext context) => IconButton(
+    icon: const Icon(Icons.arrow_back),
+    onPressed: () => close(context, ''),
+  );
   @override
   Widget buildResults(BuildContext context) => _buildResults(context);
   @override
   Widget buildSuggestions(BuildContext context) => _buildResults(context);
 
   Widget _buildResults(BuildContext context) {
-    final results = allItems.where((i) => i.name.toLowerCase().contains(query.toLowerCase())).toList();
+    final results =
+        allItems
+            .where((i) => i.name.toLowerCase().contains(query.toLowerCase()))
+            .toList();
     if (results.isEmpty) {
-      return const Center(child: Icon(Icons.search_off, size: 48, color: Colors.grey));
+      return Center(
+        child: Icon(
+          Icons.search_off,
+          size: 48,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+      );
     }
-    return ListView.builder(itemCount: results.length, itemBuilder: (context, index) => ShoppingItemTile(listId: listId, item: results[index]));
+    return ListView.builder(
+      itemCount: results.length,
+      itemBuilder:
+          (context, index) =>
+              ShoppingItemTile(listId: listId, item: results[index]),
+    );
   }
 }
