@@ -80,11 +80,18 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
       unawaited(HapticFeedback.mediumImpact());
       await _exitController.forward();
       if (!mounted) return;
-      await ref
-          .read(shoppingListItemsProvider(widget.listId).notifier)
-          .togglePurchased(widget.item.id);
-      if (widget.isShoppingMode && mounted) {
-        _askToAddToPantry();
+      try {
+        await ref
+            .read(shoppingListItemsProvider(widget.listId).notifier)
+            .togglePurchased(widget.item.id);
+        if (widget.isShoppingMode && mounted) {
+          _askToAddToPantry();
+        }
+      } on Exception {
+        if (mounted) {
+          _exitController.reset();
+          setState(() => _exiting = false);
+        }
       }
     }
   }
