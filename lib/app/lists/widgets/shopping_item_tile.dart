@@ -609,6 +609,7 @@ class _AnimatedEntryWrapperState extends State<AnimatedEntryWrapper>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
+      key: const ValueKey('_animated_entry_fade'),
       opacity: _fade,
       child: SlideTransition(
         position: _slide,

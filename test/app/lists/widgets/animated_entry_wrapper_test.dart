@@ -14,17 +14,16 @@ void main() {
     );
 
     // Immediately after mount: animation at t=0, opacity = 0
-    // Note: MaterialApp adds its own FadeTransitions; ours is the last/deepest one.
-    final fade = tester.widgetList<FadeTransition>(
-      find.byType(FadeTransition),
-    ).last;
+    final fade = tester.widget<FadeTransition>(
+      find.byKey(const ValueKey('_animated_entry_fade')),
+    );
     expect(fade.opacity.value, 0.0);
 
     // After animation completes: opacity = 1
     await tester.pumpAndSettle();
-    final fadeAfter = tester.widgetList<FadeTransition>(
-      find.byType(FadeTransition),
-    ).last;
+    final fadeAfter = tester.widget<FadeTransition>(
+      find.byKey(const ValueKey('_animated_entry_fade')),
+    );
     expect(fadeAfter.opacity.value, 1.0);
   });
 
