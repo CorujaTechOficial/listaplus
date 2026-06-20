@@ -93,7 +93,7 @@ void main() {
 
     expect(find.byType(SegmentedButton<FilterType>), findsOneWidget);
     expect(find.byType(OutlinedButton), findsOneWidget);
-    expect(find.byType(IconButton), findsOneWidget);
+    expect(find.byType(IconButton), findsNothing);
   });
 
   testWidgets('hides budget details when budget is zero', (tester) async {

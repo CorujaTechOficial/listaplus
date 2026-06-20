@@ -70,3 +70,38 @@ No issues found! (ran in 0.6s)
 ## Residual concern
 
 The expandable height inside `AppBar.bottom` required an internal preferred-size update plus forcing the ancestor `AppBar` element to rebuild on toggle. This is pragmatic and contained to the owned file, but it is more implementation-sensitive than a parent-managed expansion state would be.
+
+## Task 2 review-fix pass
+
+### Review item 1: remove `preferredSize` / `Expando` desynchronization risk
+
+- Removed the mutable `Expando<double>` preferred-height cache and the manual ancestor `AppBar` rebuild trigger from `ProgressInfoHeader`.
+- Kept the public constructor unchanged.
+- Switched the expanded controls to an anchored overlay rendered below the compact header, so `preferredSize` stays a stable collapsed height and the expanded content no longer depends on `AppBar.bottom` height synchronization.
+- Cached the header anchor metrics after layout and reused them for the overlay so parent rebuilds do not clip or jump the expanded controls.
+
+### Review item 2: make expanded `FilterBar` resilient on narrow/localized layouts
+
+- Wrapped the `SegmentedButton` in a horizontal `SingleChildScrollView` so longer localized labels and larger text scales can scroll instead of overflowing.
+- Kept the sort affordance on its own expanding row and added label ellipsis protection.
+- Preserved existing localized copy and token-based spacing.
+
+### Review item 3: remove dead grouping affordance from summary usage
+
+- Added an optional `showGroupingToggle` flag to `FilterBar`.
+- Disabled the grouping toggle from the summary-header expanded usage because there is no owned state path in this task scope that can make that control truthful there.
+- Left the general `FilterBar` API intact for other call sites that do own grouping behavior.
+
+### Verification rerun after review fixes
+
+Executed the same focused commands again after the review fixes:
+
+```bash
+flutter test test/app/lists/widgets/list_summary_header_test.dart
+flutter analyze lib/app/lists/widgets/progress_info_header.dart lib/app/lists/widgets/filter_bar.dart
+```
+
+Results:
+
+- `flutter test test/app/lists/widgets/list_summary_header_test.dart`: PASS (`3` tests passed)
+- `flutter analyze lib/app/lists/widgets/progress_info_header.dart lib/app/lists/widgets/filter_bar.dart`: PASS (`No issues found!`)

@@ -38,52 +38,146 @@ class ProgressInfoHeader extends StatefulWidget implements PreferredSizeWidget {
   final VoidCallback onSortPressed;
 
   static const double _collapsedHeight = 72;
-  static const double _expandedHeight = 172;
-  static final Expando<double> _preferredHeights = Expando<double>();
 
   @override
   State<ProgressInfoHeader> createState() => _ProgressInfoHeaderState();
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(_preferredHeights[this] ?? _collapsedHeight);
+  Size get preferredSize => const Size.fromHeight(_collapsedHeight);
 }
 
 class _ProgressInfoHeaderState extends State<ProgressInfoHeader> {
   bool _expanded = false;
+  final LayerLink _layerLink = LayerLink();
+  final GlobalKey _headerKey = GlobalKey();
+  OverlayEntry? _overlayEntry;
+  double _headerHeight = ProgressInfoHeader._collapsedHeight;
+  double? _headerWidth;
 
   void _toggleExpanded() {
-    setState(() {
-      _expanded = !_expanded;
-      ProgressInfoHeader._preferredHeights[widget] =
-          _expanded
-              ? ProgressInfoHeader._expandedHeight
-              : ProgressInfoHeader._collapsedHeight;
-    });
-    _markAncestorNeedsBuild();
+    setState(() => _expanded = !_expanded);
+    if (_expanded) {
+      _showExpandedOverlay();
+      return;
+    }
+    _removeExpandedOverlay();
   }
 
-  void _markAncestorNeedsBuild() {
-    context.visitAncestorElements((element) {
-      if (element.widget is AppBar) {
-        element.markNeedsBuild();
-        return false;
-      }
-      return true;
-    });
+  void _showExpandedOverlay() {
+    _updateHeaderMetrics();
+    _overlayEntry ??= OverlayEntry(builder: _buildOverlay);
+    _overlayEntry!.markNeedsBuild();
+    final overlay = Overlay.maybeOf(context);
+    if (overlay != null && !_overlayEntry!.mounted) {
+      overlay.insert(_overlayEntry!);
+    }
+  }
+
+  void _removeExpandedOverlay() {
+    _overlayEntry?.remove();
+    _overlayEntry = null;
+  }
+
+  void _updateHeaderMetrics() {
+    final box = _headerKey.currentContext?.findRenderObject() as RenderBox?;
+    final nextSize = box?.size;
+    if (nextSize == null) {
+      return;
+    }
+    if (nextSize.height != _headerHeight || nextSize.width != _headerWidth) {
+      _headerHeight = nextSize.height;
+      _headerWidth = nextSize.width;
+      _overlayEntry?.markNeedsBuild();
+    }
+  }
+
+  Widget _buildOverlay(BuildContext overlayContext) {
+    final theme = Theme.of(context);
+
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: _toggleExpanded,
+            child: const SizedBox.expand(),
+          ),
+        ),
+        CompositedTransformFollower(
+          link: _layerLink,
+          showWhenUnlinked: false,
+          offset: Offset(0, _headerHeight),
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              width: _headerWidth,
+              padding: const EdgeInsets.fromLTRB(
+                Spacing.md,
+                0,
+                Spacing.md,
+                Spacing.sm,
+              ),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surface,
+                border: Border(
+                  top: BorderSide(
+                    color: theme.colorScheme.outlineVariant,
+                  ),
+                  bottom: BorderSide(
+                    color: theme.colorScheme.outlineVariant,
+                  ),
+                ),
+              ),
+              child: _ExpandedDetails(
+                filter: widget.filter,
+                sortLabel: widget.sortLabel,
+                onFilterChanged: widget.onFilterChanged,
+                onSortPressed: widget.onSortPressed,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  void didUpdateWidget(covariant ProgressInfoHeader oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (_expanded) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) {
+          return;
+        }
+        _updateHeaderMetrics();
+        _overlayEntry?.markNeedsBuild();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _removeExpandedOverlay();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) {
+        return;
+      }
+      _updateHeaderMetrics();
+    });
 
-    return Material(
-      color: theme.colorScheme.surface,
-      child: InkWell(
-        onTap: _toggleExpanded,
-        child: AnimatedSize(
-          duration: DurationTokens.normal,
-          curve: Curves.easeOutCubic,
+    return CompositedTransformTarget(
+      link: _layerLink,
+      child: Material(
+        key: _headerKey,
+        color: theme.colorScheme.surface,
+        child: InkWell(
+          onTap: _toggleExpanded,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(
               Spacing.md,
@@ -91,31 +185,17 @@ class _ProgressInfoHeaderState extends State<ProgressInfoHeader> {
               Spacing.md,
               Spacing.sm,
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _SummaryRow(
-                  purchasedCount: widget.purchasedCount,
-                  totalItems: widget.totalItems,
-                  totalEstimated: widget.totalEstimated,
-                  totalPurchased: widget.totalPurchased,
-                  progress: widget.progress,
-                  budget: widget.budget,
-                  overBudget: widget.overBudget,
-                  budgetProgress: widget.budgetProgress,
-                  currencyCode: widget.currencyCode,
-                  expanded: _expanded,
-                ),
-                if (_expanded) ...[
-                  const SizedBox(height: Spacing.sm),
-                  _ExpandedDetails(
-                    filter: widget.filter,
-                    sortLabel: widget.sortLabel,
-                    onFilterChanged: widget.onFilterChanged,
-                    onSortPressed: widget.onSortPressed,
-                  ),
-                ],
-              ],
+            child: _SummaryRow(
+              purchasedCount: widget.purchasedCount,
+              totalItems: widget.totalItems,
+              totalEstimated: widget.totalEstimated,
+              totalPurchased: widget.totalPurchased,
+              progress: widget.progress,
+              budget: widget.budget,
+              overBudget: widget.overBudget,
+              budgetProgress: widget.budgetProgress,
+              currencyCode: widget.currencyCode,
+              expanded: _expanded,
             ),
           ),
         ),
@@ -331,6 +411,7 @@ class _ExpandedDetails extends StatelessWidget {
       sort: SortType.manual,
       sortLabelOverride: sortLabel,
       isGrouped: false,
+      showGroupingToggle: false,
       onFilterChanged: onFilterChanged,
       onSortChanged: (_) => onSortPressed(),
       onGroupedChanged: (_) {},

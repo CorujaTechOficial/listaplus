@@ -17,6 +17,7 @@ class FilterBar extends StatefulWidget {
     required this.onSortChanged,
     required this.onGroupedChanged,
     this.sortLabelOverride,
+    this.showGroupingToggle = true,
   });
 
   final FilterType filter;
@@ -26,6 +27,7 @@ class FilterBar extends StatefulWidget {
   final ValueChanged<SortType> onSortChanged;
   final ValueChanged<bool> onGroupedChanged;
   final String? sortLabelOverride;
+  final bool showGroupingToggle;
 
   @override
   State<FilterBar> createState() => _FilterBarState();
@@ -38,38 +40,43 @@ class _FilterBarState extends State<FilterBar> {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SegmentedButton<FilterType>(
-          segments: [
-            ButtonSegment(
-              value: FilterType.all,
-              label: Text(AppLocalizations.of(context)!.filterAll),
-              icon: const Icon(Icons.list, size: 16),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SegmentedButton<FilterType>(
+            segments: [
+              ButtonSegment(
+                value: FilterType.all,
+                label: Text(AppLocalizations.of(context)!.filterAll),
+                icon: const Icon(Icons.list, size: 16),
+              ),
+              ButtonSegment(
+                value: FilterType.pending,
+                label: Text(AppLocalizations.of(context)!.filterPending),
+                icon: const Icon(Icons.pending, size: 16),
+              ),
+              ButtonSegment(
+                value: FilterType.purchased,
+                label: Text(AppLocalizations.of(context)!.filterPurchased),
+                icon: const Icon(Icons.check_circle, size: 16),
+              ),
+            ],
+            selected: {widget.filter},
+            onSelectionChanged: (Set<FilterType> selected) {
+              HapticFeedback.selectionClick();
+              widget.onFilterChanged(selected.first);
+            },
+            showSelectedIcon: false,
+            style: const ButtonStyle(
+              visualDensity: VisualDensity.compact,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
-            ButtonSegment(
-              value: FilterType.pending,
-              label: Text(AppLocalizations.of(context)!.filterPending),
-              icon: const Icon(Icons.pending, size: 16),
-            ),
-            ButtonSegment(
-              value: FilterType.purchased,
-              label: Text(AppLocalizations.of(context)!.filterPurchased),
-              icon: const Icon(Icons.check_circle, size: 16),
-            ),
-          ],
-          selected: {widget.filter},
-          onSelectionChanged: (Set<FilterType> selected) {
-            HapticFeedback.selectionClick();
-            widget.onFilterChanged(selected.first);
-          },
-          showSelectedIcon: false,
-          style: const ButtonStyle(
-            visualDensity: VisualDensity.compact,
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
         ),
         const SizedBox(height: Spacing.xs),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: OutlinedButton.icon(
@@ -80,6 +87,7 @@ class _FilterBarState extends State<FilterBar> {
                 icon: const Icon(Icons.sort, size: 18),
                 label: Text(
                   widget.sortLabelOverride ?? _sortLabel(context, widget.sort),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 style: OutlinedButton.styleFrom(
                   foregroundColor: theme.colorScheme.onSurface,
@@ -90,16 +98,20 @@ class _FilterBarState extends State<FilterBar> {
                 ),
               ),
             ),
-            const SizedBox(width: Spacing.xs),
-            IconButton.filledTonal(
-              onPressed: () {
-                HapticFeedback.selectionClick();
-                widget.onGroupedChanged(!widget.isGrouped);
-              },
-              icon: Icon(
-                widget.isGrouped ? Icons.grid_view : Icons.view_agenda_outlined,
+            if (widget.showGroupingToggle) ...[
+              const SizedBox(width: Spacing.xs),
+              IconButton.filledTonal(
+                onPressed: () {
+                  HapticFeedback.selectionClick();
+                  widget.onGroupedChanged(!widget.isGrouped);
+                },
+                icon: Icon(
+                  widget.isGrouped
+                      ? Icons.grid_view
+                      : Icons.view_agenda_outlined,
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ],
