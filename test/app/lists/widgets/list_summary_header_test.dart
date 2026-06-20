@@ -13,30 +13,35 @@ void main() {
   const totalPurchased = 56.0;
   const progress = 0.375;
   const currencyCode = 'BRL';
-  const sortLabel = 'Manual';
 
   Widget buildSubject({required double budget}) {
     return MaterialApp(
       theme: AppTheme.fromColorScheme(
         ColorScheme.fromSeed(seedColor: const Color(0xFF2E7D32)),
       ),
+      locale: const Locale('pt', 'BR'),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(
-        body: ProgressInfoHeader(
-          purchasedCount: purchasedCount,
-          totalItems: totalItems,
-          totalEstimated: totalEstimated,
-          totalPurchased: totalPurchased,
-          progress: progress,
-          budget: budget,
-          overBudget: false,
-          budgetProgress: 0.46,
-          filter: FilterType.all,
-          sortLabel: sortLabel,
-          currencyCode: currencyCode,
-          onFilterChanged: (_) {},
-          onSortPressed: () {},
+        body: Builder(
+          builder: (context) {
+            final l10n = AppLocalizations.of(context)!;
+            return ProgressInfoHeader(
+              purchasedCount: purchasedCount,
+              totalItems: totalItems,
+              totalEstimated: totalEstimated,
+              totalPurchased: totalPurchased,
+              progress: progress,
+              budget: budget,
+              overBudget: false,
+              budgetProgress: 0.46,
+              filter: FilterType.all,
+              sortLabel: l10n.sortManual,
+              currencyCode: currencyCode,
+              onFilterChanged: (_) {},
+              onSortPressed: () {},
+            );
+          },
         ),
       ),
     );

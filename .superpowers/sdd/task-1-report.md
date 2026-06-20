@@ -23,9 +23,8 @@
 - The current widget also required the app semantic color theme extension in tests; that was handled in the test scaffold only.
 
 ## Review Fix Pass
-- Tightened the collapsed-state assertions in `test/app/lists/widgets/list_summary_header_test.dart` to use exact localized summary strings and exact currency text instead of broad substring matches.
-- Changed the expansion test to tap the visible summary text rather than the outer `ProgressInfoHeader` type, which keeps the interaction tied to user-facing content instead of the container widget implementation.
-- Added an explicit zero-budget assertion that the budget label is absent, so the test now checks hidden budget details directly instead of inferring them from progress bars.
+- Removed the hardcoded visible sort label from the harness and now derive it from `AppLocalizations.sortManual`.
+- Pinned the widget tree to `Locale('pt', 'BR')` so the summary path exercises the intended Brazilian Portuguese localization and `BRL` formatting behavior.
 
 ## Verification
 - Ran: `flutter test test/app/lists/widgets/list_summary_header_test.dart`
