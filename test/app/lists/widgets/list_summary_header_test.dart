@@ -92,7 +92,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(FilterChip), findsNWidgets(3));
-    expect(find.byType(ActionChip), findsOneWidget);
+    expect(find.byIcon(Icons.sort), findsOneWidget);
   });
 
   testWidgets('hides budget details when budget is zero', (tester) async {
