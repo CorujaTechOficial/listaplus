@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/meal_planner/providers/meal_plan_cost_models.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
@@ -18,7 +19,6 @@ class MockStorageBackend extends Mock implements StorageBackend {}
 void main() {
   setUpAll(() {
     registerFallbackValue(Unit.un);
-    registerFallbackValue(MealType.lunch);
     registerFallbackValue(<String, dynamic>{});
     registerFallbackValue(ShoppingItem(name: '', quantity: 0, shoppingListId: '', categoryId: ''));
   });
@@ -73,7 +73,7 @@ void main() {
         date: date,
         recipeId: 'r1',
         recipeName: 'Recipe 1',
-        mealType: MealType.lunch,
+        mealType: 'lunch',
       );
 
       when(() => mockStorage.watchMealPlans(
@@ -88,7 +88,7 @@ void main() {
       await container.read(mealPlansProvider().notifier).moveMealPlan(
             '1',
             newDate,
-            MealType.dinner,
+            'dinner',
           );
 
       // Verify saveMealPlan was called with updated values
@@ -168,5 +168,239 @@ void main() {
             })),
           ));
     }, timeout: const Timeout(Duration(seconds: 10)));
+  });
+
+  group('Meal planner cost providers', () {
+    test(
+      'recipeCostDetailsProvider returns calculated details for a matching recipe',
+      () async {
+        final recipe = Recipe(
+          id: 'r1',
+          name: 'Lunch',
+          description: 'Desc',
+          ingredients: <ShoppingItem>[
+            ShoppingItem(
+              name: 'Rice',
+              quantity: 1,
+              estimatedPrice: 8,
+              shoppingListId: 'list1',
+              categoryId: 'cat1',
+            ),
+            ShoppingItem(
+              name: 'Beans',
+              quantity: 1,
+              shoppingListId: 'list1',
+              categoryId: 'cat1',
+            ),
+          ],
+          instructions: const <String>['Cook'],
+          yieldServings: 4,
+          manualTotalCost: 20,
+        );
+
+        when(() => mockStorage.watchRecipes()).thenAnswer(
+          (_) => Stream.value([recipe.toJson()]),
+        );
+
+        final details = await container.read(
+          recipeCostDetailsProvider('r1').future,
+        );
+
+        expect(details, isNotNull);
+        expect(details!.effectiveTotalCost, 20);
+        expect(details.costPerServing, 5);
+        expect(details.hasPartialPricing, isTrue);
+      },
+    );
+
+    test('mealPlannerDayCostMapProvider aggregates meal cost per day', () async {
+      final start = DateTime(2026, 6, 15);
+      final end = DateTime(2026, 6, 21);
+      final plans = <MealPlan>[
+        MealPlan(
+          date: DateTime(2026, 6, 20, 9),
+          recipeId: 'r1',
+          recipeName: 'Lunch',
+          servings: 2,
+        ),
+        MealPlan(
+          date: DateTime(2026, 6, 20, 19),
+          recipeId: 'r2',
+          recipeName: 'Dinner',
+          servings: 1,
+        ),
+        MealPlan(
+          date: DateTime(2026, 6, 21, 12),
+          recipeId: 'missing',
+          recipeName: 'Missing',
+          servings: 3,
+        ),
+      ];
+
+      final recipes = <Recipe>[
+        Recipe(
+          id: 'r1',
+          name: 'Lunch',
+          description: 'Desc',
+          ingredients: <ShoppingItem>[],
+          instructions: const <String>['Cook'],
+          yieldServings: 4,
+          manualTotalCost: 40,
+        ),
+        Recipe(
+          id: 'r2',
+          name: 'Dinner',
+          description: 'Desc',
+          ingredients: <ShoppingItem>[
+            ShoppingItem(
+              name: 'Tomato',
+              quantity: 1,
+              estimatedPrice: 12,
+              shoppingListId: 'list1',
+              categoryId: 'cat1',
+            ),
+            ShoppingItem(
+              name: 'Onion',
+              quantity: 1,
+              shoppingListId: 'list1',
+              categoryId: 'cat1',
+            ),
+          ],
+          instructions: const <String>['Cook'],
+          yieldServings: 2,
+        ),
+      ];
+
+      when(
+        () => mockStorage.watchMealPlans(
+          start: any(named: 'start'),
+          end: any(named: 'end'),
+        ),
+      ).thenAnswer((_) => Stream.value(plans.map((p) => p.toJson()).toList()));
+      when(() => mockStorage.watchRecipes()).thenAnswer(
+        (_) => Stream.value(recipes.map((recipe) => recipe.toJson()).toList()),
+      );
+
+      final dayMap = await container.read(
+        mealPlannerDayCostMapProvider(start: start, end: end).future,
+      );
+
+      expect(dayMap.keys, {
+        DateTime(2026, 6, 20),
+        DateTime(2026, 6, 21),
+      });
+
+      expect(
+        dayMap[DateTime(2026, 6, 20)],
+        isA<DayMealCostData>()
+            .having((data) => data.totalCost, 'totalCost', 26)
+            .having((data) => data.mealCount, 'mealCount', 2)
+            .having(
+              (data) => data.hasPartialPricing,
+              'hasPartialPricing',
+              isTrue,
+            ),
+      );
+
+      expect(
+        dayMap[DateTime(2026, 6, 21)],
+        isA<DayMealCostData>()
+            .having((data) => data.totalCost, 'totalCost', 0)
+            .having((data) => data.mealCount, 'mealCount', 1)
+            .having(
+              (data) => data.hasPartialPricing,
+              'hasPartialPricing',
+              isFalse,
+            ),
+      );
+    });
+
+    test(
+      'mealPlannerSummaryProvider returns week, planned month, and projected month totals',
+      () async {
+        final weekStart = DateTime(2026, 6, 15);
+        final weekEnd = DateTime(2026, 6, 21);
+        final monthStart = DateTime(2026, 6, 1);
+        final monthEnd = DateTime(2026, 6, 30);
+
+        final plans = <MealPlan>[
+          MealPlan(
+            date: DateTime(2026, 6, 20),
+            recipeId: 'r1',
+            recipeName: 'Lunch',
+            servings: 2,
+          ),
+          MealPlan(
+            date: DateTime(2026, 6, 21),
+            recipeId: 'r2',
+            recipeName: 'Dinner',
+            servings: 1,
+          ),
+        ];
+
+        final recipes = <Recipe>[
+          Recipe(
+            id: 'r1',
+            name: 'Lunch',
+            description: 'Desc',
+            ingredients: <ShoppingItem>[],
+            instructions: const <String>['Cook'],
+            yieldServings: 4,
+            manualTotalCost: 40,
+          ),
+          Recipe(
+            id: 'r2',
+            name: 'Dinner',
+            description: 'Desc',
+            ingredients: <ShoppingItem>[
+              ShoppingItem(
+                name: 'Tomato',
+                quantity: 1,
+                estimatedPrice: 12,
+                shoppingListId: 'list1',
+                categoryId: 'cat1',
+              ),
+              ShoppingItem(
+                name: 'Onion',
+                quantity: 1,
+                shoppingListId: 'list1',
+                categoryId: 'cat1',
+              ),
+            ],
+            instructions: const <String>['Cook'],
+            yieldServings: 2,
+          ),
+        ];
+
+        when(
+          () => mockStorage.watchMealPlans(
+            start: any(named: 'start'),
+            end: any(named: 'end'),
+          ),
+        ).thenAnswer((_) => Stream.value(plans.map((p) => p.toJson()).toList()));
+        when(() => mockStorage.watchRecipes()).thenAnswer(
+          (_) => Stream.value(
+            recipes.map((recipe) => recipe.toJson()).toList(),
+          ),
+        );
+
+        final summary = await container.read(
+          mealPlannerSummaryProvider(
+            weekStart: weekStart,
+            weekEnd: weekEnd,
+            monthStart: monthStart,
+            monthEnd: monthEnd,
+            focusedDay: DateTime(2026, 6, 20),
+          ).future,
+        );
+
+        expect(summary.todayCost, 20);
+        expect(summary.weekCost, 26);
+        expect(summary.plannedMonthCost, 26);
+        expect(summary.projectedMonthCost, closeTo(111.43, 0.01));
+        expect(summary.weekHasPartialPricing, isTrue);
+        expect(summary.monthHasPartialPricing, isTrue);
+      },
+    );
   });
 }
