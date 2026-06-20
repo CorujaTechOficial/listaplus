@@ -177,6 +177,42 @@ void main() {
     expect(find.text(strings.buy), findsOneWidget);
   });
 
+  testWidgets('selection bar keeps actions accessible on narrow widths', (
+    tester,
+  ) async {
+    final fakeLists = _FakeShoppingLists(const []);
+    final fakeItems = _FakeShoppingListItems(const []);
+
+    await tester.binding.setSurfaceSize(const Size(320, 640));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    await tester.pumpWidget(
+      buildApp(
+        child: Scaffold(
+          bottomNavigationBar: SelectionBottomBar(
+            onCancel: () {},
+            onDelete: () {},
+            onBuy: () {},
+          ),
+        ),
+        lists: fakeLists,
+        items: fakeItems,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final strings = l10n(tester);
+
+    expect(
+      find.byKey(const ValueKey('list_bottom_action_shell')),
+      findsOneWidget,
+    );
+    expect(find.byType(SingleChildScrollView), findsWidgets);
+    expect(find.text(strings.cancel), findsOneWidget);
+    expect(find.text(strings.delete), findsOneWidget);
+    expect(find.text(strings.buy), findsOneWidget);
+  });
+
   testWidgets(
     'quick bar restores the localized success snackbar and edit action',
     (tester) async {

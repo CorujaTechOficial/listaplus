@@ -69,16 +69,17 @@ class SelectionBottomBar extends StatelessWidget {
         child: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < 380) {
-              return Wrap(
-                spacing: Spacing.xs,
-                runSpacing: Spacing.xs,
-                alignment: WrapAlignment.spaceBetween,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: [
-                  cancelAction,
-                  deleteAction,
-                  buyAction,
-                ],
+              return SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    cancelAction,
+                    const SizedBox(width: Spacing.xs),
+                    deleteAction,
+                    const SizedBox(width: Spacing.xs),
+                    buyAction,
+                  ],
+                ),
               );
             }
 
