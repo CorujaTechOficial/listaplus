@@ -89,9 +89,7 @@ void main() {
     expect(find.byType(FilterChip), findsNothing);
     expect(find.byType(ActionChip), findsNothing);
 
-    await tester.tap(
-      find.text(l10n.progressItemsOf(purchasedCount, totalItems)),
-    );
+    await tester.tap(find.byType(ProgressInfoHeader));
     await tester.pumpAndSettle();
 
     expect(find.byType(FilterChip), findsNWidgets(3));
@@ -106,6 +104,16 @@ void main() {
     expect(
       find.text(l10n.progressBudget(formatCurrency(0, currencyCode))),
       findsNothing,
+    );
+    expect(
+      find.text(formatCurrency(totalPurchased, currencyCode)),
+      findsOneWidget,
+    );
+    expect(
+      find.text(
+        l10n.progressTotal(formatCurrency(totalEstimated, currencyCode)),
+      ),
+      findsOneWidget,
     );
     expect(find.byType(LinearProgressIndicator), findsOneWidget);
     expect(find.byType(FilterChip), findsNothing);

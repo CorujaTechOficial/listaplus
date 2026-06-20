@@ -30,3 +30,7 @@
 - Ran: `flutter test test/app/lists/widgets/list_summary_header_test.dart`
 - Result: still fails against current production behavior, as intended for this scaffold.
 - Current failure point: the widget renders the three `FilterChip`s immediately, so the collapsed and expansion tests fail on the hidden-filter expectation.
+
+## Final Fix Pass
+- Changed the expansion tap target back to `find.byType(ProgressInfoHeader)` to match the summary-container contract from the brief.
+- Strengthened the zero-budget test so it still asserts budget details are absent while confirming the standard monetary summary remains visible.
