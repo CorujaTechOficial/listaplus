@@ -85,14 +85,15 @@ void main() {
     await tester.pumpWidget(buildSubject(budget: 100));
     await tester.pumpAndSettle();
 
-    expect(find.byType(FilterChip), findsNothing);
-    expect(find.byType(ActionChip), findsNothing);
+    expect(find.byType(SegmentedButton<FilterType>), findsNothing);
+    expect(find.byType(OutlinedButton), findsNothing);
 
     await tester.tap(find.byType(ProgressInfoHeader));
     await tester.pumpAndSettle();
 
-    expect(find.byType(FilterChip), findsNWidgets(3));
-    expect(find.byIcon(Icons.sort), findsOneWidget);
+    expect(find.byType(SegmentedButton<FilterType>), findsOneWidget);
+    expect(find.byType(OutlinedButton), findsOneWidget);
+    expect(find.byType(IconButton), findsOneWidget);
   });
 
   testWidgets('hides budget details when budget is zero', (tester) async {
