@@ -130,3 +130,12 @@ Observed results:
 ### Commit
 
 - Pending in workspace at report time; committed immediately after this append.
+
+## Final fix appended
+
+Restored manual reorder behavior for pending items in `list_screen_body.dart` by switching the pending sliver back to `SliverReorderableList` when `_sort == SortType.manual`. Kept the non-manual fallback on `SliverList` and left the Task 2 summary/header deviation untouched.
+
+### Verification
+
+- `flutter analyze lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart`
+- `flutter test test/app/lists/widgets/list_bottom_action_region_test.dart`

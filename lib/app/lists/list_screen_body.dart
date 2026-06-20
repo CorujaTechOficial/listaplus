@@ -488,21 +488,49 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     child: GestureHintBanner(onDismiss: _dismissGestureHint),
                   ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => ShoppingItemTile(
-                        listId: widget.listId,
-                        item: pending[index],
-                        selectionMode: _selectionMode,
-                        isShoppingMode: _shoppingMode,
-                        isSelected: _selectedIds.contains(pending[index].id),
-                        onSelectionChanged:
-                            (selected) =>
-                                _handleSelection(pending[index].id, selected),
+                  if (_sort == SortType.manual)
+                    SliverReorderableList(
+                      itemCount: pending.length,
+                      itemBuilder: (context, index) {
+                        final item = pending[index];
+                        return KeyedSubtree(
+                          key: ValueKey(item.id),
+                          child: ShoppingItemTile(
+                            listId: widget.listId,
+                            item: item,
+                            selectionMode: _selectionMode,
+                            isShoppingMode: _shoppingMode,
+                            isSelected: _selectedIds.contains(item.id),
+                            onSelectionChanged:
+                                (selected) =>
+                                    _handleSelection(item.id, selected),
+                          ),
+                        );
+                      },
+                      onReorderItem: (oldIndex, newIndex) {
+                        ref
+                            .read(
+                              shoppingListItemsProvider(widget.listId).notifier,
+                            )
+                            .reorderItem(oldIndex, newIndex);
+                      },
+                    )
+                  else
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) => ShoppingItemTile(
+                          listId: widget.listId,
+                          item: pending[index],
+                          selectionMode: _selectionMode,
+                          isShoppingMode: _shoppingMode,
+                          isSelected: _selectedIds.contains(pending[index].id),
+                          onSelectionChanged:
+                              (selected) =>
+                                  _handleSelection(pending[index].id, selected),
+                        ),
+                        childCount: pending.length,
                       ),
-                      childCount: pending.length,
                     ),
-                  ),
                 if (_filter == FilterType.all && purchased.isNotEmpty)
                   SliverToBoxAdapter(
                     child: Padding(
