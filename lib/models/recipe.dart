@@ -13,23 +13,37 @@ class Recipe {
     this.imageUrl,
     DateTime? createdAt,
     this.tags = const [],
-  })  : id = id ?? const Uuid().v4(),
-        createdAt = createdAt ?? DateTime.now();
+    this.yieldServings = 1,
+    this.manualTotalCost,
+  }) : id = id ?? const Uuid().v4(),
+       createdAt = createdAt ?? DateTime.now();
 
   factory Recipe.fromJson(Map<String, dynamic> json) {
     return Recipe(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
-      ingredients: (json['ingredients'] as List<dynamic>?)
-              ?.map((e) => ShoppingItem.fromJson(Map<String, dynamic>.from(e as Map)))
+      ingredients:
+          (json['ingredients'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    ShoppingItem.fromJson(Map<String, dynamic>.from(e as Map)),
+              )
               .toList() ??
           [],
-      instructions: (json['instructions'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [],
+      instructions:
+          (json['instructions'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          [],
       prepTimeMinutes: json['prepTimeMinutes'] as int? ?? 30,
       imageUrl: json['imageUrl'] as String?,
       createdAt: safeParseDate(json['createdAt']),
-      tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [],
+      tags:
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+          [],
+      yieldServings: (json['yieldServings'] as num?)?.toInt() ?? 1,
+      manualTotalCost: (json['manualTotalCost'] as num?)?.toDouble(),
     );
   }
 
@@ -42,6 +56,10 @@ class Recipe {
   final String? imageUrl;
   final DateTime createdAt;
   final List<String> tags;
+  final int yieldServings;
+  final double? manualTotalCost;
+
+  static const _sentinel = Object();
 
   Map<String, dynamic> toJson() {
     return {
@@ -54,6 +72,8 @@ class Recipe {
       if (imageUrl != null) 'imageUrl': imageUrl,
       'createdAt': createdAt.toIso8601String(),
       'tags': tags,
+      'yieldServings': yieldServings,
+      'manualTotalCost': manualTotalCost,
     };
   }
 
@@ -67,6 +87,8 @@ class Recipe {
     String? imageUrl,
     DateTime? createdAt,
     List<String>? tags,
+    int? yieldServings,
+    Object? manualTotalCost = _sentinel,
   }) {
     return Recipe(
       id: id ?? this.id,
@@ -78,6 +100,11 @@ class Recipe {
       imageUrl: imageUrl ?? this.imageUrl,
       createdAt: createdAt ?? this.createdAt,
       tags: tags ?? this.tags,
+      yieldServings: yieldServings ?? this.yieldServings,
+      manualTotalCost:
+          identical(manualTotalCost, _sentinel)
+              ? this.manualTotalCost
+              : manualTotalCost as double?,
     );
   }
 }
