@@ -316,6 +316,94 @@ void main() {
     });
 
     test(
+      'mealPlannerSummaryProvider returns exact totals for a fully resolved recipe data set',
+      () async {
+        final weekStart = DateTime(2026, 6, 15);
+        final weekEnd = DateTime(2026, 6, 21);
+        final monthStart = DateTime(2026, 6, 1);
+        final monthEnd = DateTime(2026, 6, 30);
+
+        final plans = <MealPlan>[
+          MealPlan(
+            date: DateTime(2026, 6, 20),
+            recipeId: 'r1',
+            recipeName: 'Lunch',
+            servings: 2,
+          ),
+          MealPlan(
+            date: DateTime(2026, 6, 21),
+            recipeId: 'r2',
+            recipeName: 'Dinner',
+            servings: 1,
+          ),
+        ];
+
+        final recipes = <Recipe>[
+          Recipe(
+            id: 'r1',
+            name: 'Lunch',
+            description: 'Desc',
+            ingredients: <ShoppingItem>[],
+            instructions: const <String>['Cook'],
+            yieldServings: 4,
+            manualTotalCost: 40,
+          ),
+          Recipe(
+            id: 'r2',
+            name: 'Dinner',
+            description: 'Desc',
+            ingredients: <ShoppingItem>[
+              ShoppingItem(
+                name: 'Tomato',
+                quantity: 1,
+                estimatedPrice: 12,
+                shoppingListId: 'list1',
+                categoryId: 'cat1',
+              ),
+              ShoppingItem(
+                name: 'Onion',
+                quantity: 1,
+                shoppingListId: 'list1',
+                categoryId: 'cat1',
+              ),
+            ],
+            instructions: const <String>['Cook'],
+            yieldServings: 2,
+          ),
+        ];
+
+        when(
+          () => mockStorage.watchMealPlans(
+            start: any(named: 'start'),
+            end: any(named: 'end'),
+          ),
+        ).thenAnswer((_) => Stream.value(plans.map((p) => p.toJson()).toList()));
+        when(() => mockStorage.watchRecipes()).thenAnswer(
+          (_) => Stream.value(
+            recipes.map((recipe) => recipe.toJson()).toList(),
+          ),
+        );
+
+        final summary = await container.read(
+          mealPlannerSummaryProvider(
+            weekStart: weekStart,
+            weekEnd: weekEnd,
+            monthStart: monthStart,
+            monthEnd: monthEnd,
+            focusedDay: DateTime(2026, 6, 20),
+          ).future,
+        );
+
+        expect(summary.todayCost, 20);
+        expect(summary.weekCost, 26);
+        expect(summary.plannedMonthCost, 26);
+        expect(summary.projectedMonthCost, closeTo(111.43, 0.01));
+        expect(summary.weekHasPartialPricing, isTrue);
+        expect(summary.monthHasPartialPricing, isTrue);
+      },
+    );
+
+    test(
       'mealPlannerSummaryProvider marks missing recipe data as a partial estimate',
       () async {
         final weekStart = DateTime(2026, 6, 15);

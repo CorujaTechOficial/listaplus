@@ -116,3 +116,33 @@ Full suite:
 - `lib/app/meal_planner/providers/meal_planner_providers.dart`
 - `test/app/meal_planner/providers/meal_planner_providers_test.dart`
 - `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
+
+## Coverage Restoration Follow-up
+
+### Fix Applied
+
+- Restored explicit `mealPlannerSummaryProvider` coverage for a fully resolved recipe data set
+- Added assertions for:
+  - `todayCost`
+  - `weekCost`
+  - `plannedMonthCost`
+  - `projectedMonthCost`
+
+### Command Run
+
+```sh
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
+```
+
+### Relevant Passing Output
+
+```text
+00:00 +4: Meal planner cost providers mealPlannerSummaryProvider returns exact totals for a fully resolved recipe data set
+00:00 +6: All tests passed!
+```
+
+### Files Changed
+
+- `test/app/meal_planner/providers/meal_planner_providers_test.dart`
+- `lib/app/meal_planner/providers/meal_planner_providers.dart` unchanged
+- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
