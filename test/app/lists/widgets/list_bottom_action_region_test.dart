@@ -4,7 +4,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shopping_list/app/lists/list_screen_body.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/app/lists/widgets/empty_state.dart';
+import 'package:shopping_list/app/lists/widgets/filter_bar.dart';
 import 'package:shopping_list/app/lists/widgets/kipi_quick_bar.dart';
+import 'package:shopping_list/app/lists/widgets/progress_info_header.dart';
 import 'package:shopping_list/app/lists/widgets/selection_bottom_bar.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
@@ -66,13 +69,22 @@ class _FakePremium extends Premium {
   Future<bool> build() async => false;
 }
 
+class _ErrorShoppingListItems extends ShoppingListItems {
+  _ErrorShoppingListItems(this.error);
+
+  final Object error;
+
+  @override
+  Stream<List<ShoppingItem>> build(String listId) => Stream.error(error);
+}
+
 void main() {
   const listId = 'list-1';
 
   Widget buildApp({
     required Widget child,
     required _FakeShoppingLists lists,
-    required _FakeShoppingListItems items,
+    required ShoppingListItems items,
   }) {
     return ProviderScope(
       overrides: [
@@ -302,4 +314,83 @@ void main() {
       expect(fakeItems.lastReorderNewIndex, 3);
     },
   );
+
+  testWidgets('summary renders inline and share lives in overflow', (
+    tester,
+  ) async {
+    final fakeLists = _FakeShoppingLists([
+      ShoppingList(id: listId, name: 'Mercado'),
+    ]);
+    final fakeItems = _FakeShoppingListItems([
+      ShoppingItem(
+        id: 'item-1',
+        shoppingListId: listId,
+        name: 'Banana',
+        quantity: 1,
+      ),
+    ]);
+
+    await tester.pumpWidget(
+      buildApp(
+        child: const ListScreenBody(listId: listId),
+        lists: fakeLists,
+        items: fakeItems,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final strings = l10n(tester);
+
+    expect(find.byTooltip(strings.inviteToList), findsNothing);
+    expect(find.byType(PopupMenuButton<String>), findsOneWidget);
+    expect(find.byType(ProgressInfoHeader), findsOneWidget);
+    expect(
+      find.ancestor(
+        of: find.byType(ProgressInfoHeader),
+        matching: find.byType(SliverAppBar),
+      ),
+      findsNothing,
+    );
+    expect(find.byType(SegmentedButton<FilterType>), findsNothing);
+
+    await tester.tap(find.byType(ProgressInfoHeader));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(SegmentedButton<FilterType>), findsOneWidget);
+
+    await tester.tap(find.byTooltip(strings.shoppingMode));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(ProgressInfoHeader), findsOneWidget);
+    expect(find.byType(SegmentedButton<FilterType>), findsNothing);
+
+    await tester.tap(find.byType(PopupMenuButton<String>));
+    await tester.pumpAndSettle();
+
+    expect(find.text(strings.share), findsOneWidget);
+  });
+
+  testWidgets('error state uses structured empty state messaging', (
+    tester,
+  ) async {
+    final fakeLists = _FakeShoppingLists([
+      ShoppingList(id: listId, name: 'Mercado'),
+    ]);
+    final errorItems = _ErrorShoppingListItems(Exception('boom'));
+
+    await tester.pumpWidget(
+      buildApp(
+        child: const ListScreenBody(listId: listId),
+        lists: fakeLists,
+        items: errorItems,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final strings = l10n(tester);
+
+    expect(find.byType(EmptyState), findsOneWidget);
+    expect(find.text(strings.errorLoadingLists), findsOneWidget);
+    expect(find.text('Exception: boom'), findsOneWidget);
+  });
 }

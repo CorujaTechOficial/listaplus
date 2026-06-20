@@ -361,6 +361,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           final overBudget = budget > 0 && totalPurchased > budget;
           final budgetProgress =
               budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.0) : 0.0;
+          final shouldShowSummary = !_selectionMode && items.isNotEmpty;
 
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
@@ -386,11 +387,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                       onPressed:
                           () => setState(() => _shoppingMode = !_shoppingMode),
                       tooltip: l10n.shoppingMode,
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.share),
-                      onPressed: () => _showInviteSheet(widget.listId),
-                      tooltip: l10n.inviteToList,
                     ),
                     IconButton(
                       icon: const Icon(Icons.search),
@@ -502,30 +498,30 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                           ],
                     ),
                   ],
-                  bottom:
-                      items.isEmpty
-                          ? null
-                          : ProgressInfoHeader(
-                            purchasedCount: purchased.length,
-                            totalItems: items.length,
-                            totalEstimated: totalEstimated,
-                            totalPurchased: totalPurchased,
-                            progress: progress,
-                            budget: budget,
-                            overBudget: overBudget,
-                            budgetProgress: budgetProgress,
-                            filter: _filter,
-                            sortLabel: _getSortLabel(context),
-                            currencyCode: currencyCode,
-                            onFilterChanged: (f) => setState(() => _filter = f),
-                            onSortPressed:
-                                () => showSortOptionsSheet(
-                                  context,
-                                  currentSort: _sort,
-                                  onSortChanged:
-                                      (s) => setState(() => _sort = s),
-                                ),
-                          ),
+                ),
+              if (shouldShowSummary)
+                SliverToBoxAdapter(
+                  child: ProgressInfoHeader(
+                    key: ValueKey('list_summary_${_shoppingMode ? 'shopping' : 'default'}'),
+                    purchasedCount: purchased.length,
+                    totalItems: items.length,
+                    totalEstimated: totalEstimated,
+                    totalPurchased: totalPurchased,
+                    progress: progress,
+                    budget: budget,
+                    overBudget: overBudget,
+                    budgetProgress: budgetProgress,
+                    filter: _filter,
+                    sortLabel: _getSortLabel(context),
+                    currencyCode: currencyCode,
+                    onFilterChanged: (f) => setState(() => _filter = f),
+                    onSortPressed:
+                        () => showSortOptionsSheet(
+                          context,
+                          currentSort: _sort,
+                          onSortChanged: (s) => setState(() => _sort = s),
+                        ),
+                  ),
                 ),
               if (_shoppingMode && pending.isEmpty && items.isNotEmpty)
                 SliverFillRemaining(
@@ -621,18 +617,17 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                       child: Row(
                         children: [
                           Text(
-                            l10n.filterPurchased.toUpperCase(),
-                            style: theme.textTheme.labelSmall?.copyWith(
+                            l10n.filterPurchased,
+                            style: theme.textTheme.titleSmall?.copyWith(
                               color: theme.colorScheme.onSurfaceVariant,
                               fontWeight: FontWeight.w700,
-                              letterSpacing: 1.2,
                             ),
                           ),
-                          const SizedBox(width: Spacing.sm),
-                          Expanded(
-                            child: Divider(
-                              color: theme.colorScheme.outlineVariant,
-                              thickness: 0.5,
+                          const SizedBox(width: Spacing.xs),
+                          Text(
+                            '${purchased.length}',
+                            style: theme.textTheme.labelMedium?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
                             ),
                           ),
                         ],
@@ -685,7 +680,13 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
             ),
         error: (e, s) {
           debugPrint('Error: $e');
-          return SafeArea(child: Center(child: Text(e.toString())));
+          return SafeArea(
+            child: EmptyState(
+              icon: Icons.error_outline,
+              title: l10n.errorLoadingLists,
+              subtitle: e.toString(),
+            ),
+          );
         },
       ),
       bottomNavigationBar:
