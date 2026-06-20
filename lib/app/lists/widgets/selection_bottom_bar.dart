@@ -19,6 +19,34 @@ class SelectionBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final cancelAction = TactileContainer(
+      passThrough: true,
+      child: TextButton.icon(
+        icon: const Icon(Icons.close),
+        label: Text(l10n.cancel, overflow: TextOverflow.ellipsis),
+        onPressed: onCancel,
+      ),
+    );
+    final deleteAction = TactileContainer(
+      passThrough: true,
+      child: TextButton.icon(
+        icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
+        label: Text(
+          l10n.delete,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(color: theme.colorScheme.error),
+        ),
+        onPressed: onDelete,
+      ),
+    );
+    final buyAction = TactileContainer(
+      passThrough: true,
+      child: FilledButton.icon(
+        icon: const Icon(Icons.check),
+        label: Text(l10n.buy, overflow: TextOverflow.ellipsis),
+        onPressed: onBuy,
+      ),
+    );
 
     return SafeArea(
       top: false,
@@ -38,41 +66,32 @@ class SelectionBottomBar extends StatelessWidget {
             ),
           ),
         ),
-        child: Row(
-          children: [
-            TactileContainer(
-              passThrough: true,
-              child: TextButton.icon(
-                icon: const Icon(Icons.close),
-                label: Text(l10n.cancel),
-                onPressed: onCancel,
-              ),
-            ),
-            const SizedBox(width: Spacing.xs),
-            TactileContainer(
-              passThrough: true,
-              child: TextButton.icon(
-                icon: Icon(
-                  Icons.delete_outline,
-                  color: theme.colorScheme.error,
-                ),
-                label: Text(
-                  l10n.delete,
-                  style: TextStyle(color: theme.colorScheme.error),
-                ),
-                onPressed: onDelete,
-              ),
-            ),
-            const Spacer(),
-            TactileContainer(
-              passThrough: true,
-              child: FilledButton.icon(
-                icon: const Icon(Icons.check),
-                label: Text(l10n.buy),
-                onPressed: onBuy,
-              ),
-            ),
-          ],
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth < 380) {
+              return Wrap(
+                spacing: Spacing.xs,
+                runSpacing: Spacing.xs,
+                alignment: WrapAlignment.spaceBetween,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  cancelAction,
+                  deleteAction,
+                  buyAction,
+                ],
+              );
+            }
+
+            return Row(
+              children: [
+                Flexible(flex: 2, child: cancelAction),
+                const SizedBox(width: Spacing.xs),
+                Flexible(flex: 2, child: deleteAction),
+                const Spacer(),
+                Flexible(child: buyAction),
+              ],
+            );
+          },
         ),
       ),
     );
