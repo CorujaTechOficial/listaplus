@@ -192,6 +192,71 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
         .clearPurchased();
   }
 
+  ({int oldIndex, int newIndex})? _mapPendingReorderToFullIndices({
+    required List<ShoppingItem> items,
+    required List<ShoppingItem> pendingItems,
+    required int oldIndex,
+    required int newIndex,
+  }) {
+    if (oldIndex < 0 || oldIndex >= pendingItems.length) {
+      return null;
+    }
+    if (newIndex < 0 || newIndex > pendingItems.length) {
+      return null;
+    }
+
+    final movedItem = pendingItems[oldIndex];
+    final oldFullIndex = items.indexWhere((item) => item.id == movedItem.id);
+    if (oldFullIndex == -1) {
+      return null;
+    }
+
+    if (newIndex == oldIndex) {
+      return (oldIndex: oldFullIndex, newIndex: oldFullIndex);
+    }
+    if (newIndex == oldIndex + 1) {
+      return (oldIndex: oldFullIndex, newIndex: oldFullIndex + 1);
+    }
+
+    final remainingPendingItems = [...pendingItems]..removeAt(oldIndex);
+    final itemsWithoutMoved = [...items]..removeAt(oldFullIndex);
+    final targetPendingIndex = newIndex > oldIndex ? newIndex - 1 : newIndex;
+
+    if (remainingPendingItems.isEmpty) {
+      return (oldIndex: oldFullIndex, newIndex: oldFullIndex + 1);
+    }
+
+    final insertionIndexAfterRemoval =
+        targetPendingIndex >= remainingPendingItems.length
+            ? itemsWithoutMoved.indexWhere(
+                  (item) => item.id == remainingPendingItems.last.id,
+                ) +
+                1
+            : itemsWithoutMoved.indexWhere(
+              (item) => item.id == remainingPendingItems[targetPendingIndex].id,
+            );
+
+    if (insertionIndexAfterRemoval < 0) {
+      return null;
+    }
+
+    if (targetPendingIndex < remainingPendingItems.length &&
+        insertionIndexAfterRemoval >= itemsWithoutMoved.length + 1) {
+      return null;
+    }
+
+    final mappedNewIndex =
+        oldFullIndex < insertionIndexAfterRemoval
+            ? insertionIndexAfterRemoval + 1
+            : insertionIndexAfterRemoval;
+
+    if (mappedNewIndex < 0 || mappedNewIndex > items.length) {
+      return null;
+    }
+
+    return (oldIndex: oldFullIndex, newIndex: mappedNewIndex);
+  }
+
   void _registerCompletionReview(int itemCount) {
     if (_completionRegistered) {
       return;
@@ -360,7 +425,8 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                           showExportOptionsSheet(
                             context,
                             onExportPdf:
-                                () => _exportPdf(items, currentList, categories),
+                                () =>
+                                    _exportPdf(items, currentList, categories),
                             onExportExcel: () => _exportExcel(items),
                             onShareText:
                                 () =>
@@ -451,8 +517,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                             filter: _filter,
                             sortLabel: _getSortLabel(context),
                             currencyCode: currencyCode,
-                            onFilterChanged:
-                                (f) => setState(() => _filter = f),
+                            onFilterChanged: (f) => setState(() => _filter = f),
                             onSortPressed:
                                 () => showSortOptionsSheet(
                                   context,
@@ -501,6 +566,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                             selectionMode: _selectionMode,
                             isShoppingMode: _shoppingMode,
                             isSelected: _selectedIds.contains(item.id),
+                            dragHandleIndex: index,
                             onSelectionChanged:
                                 (selected) =>
                                     _handleSelection(item.id, selected),
@@ -508,11 +574,23 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                         );
                       },
                       onReorderItem: (oldIndex, newIndex) {
+                        final mappedIndices = _mapPendingReorderToFullIndices(
+                          items: items,
+                          pendingItems: pending,
+                          oldIndex: oldIndex,
+                          newIndex: newIndex,
+                        );
+                        if (mappedIndices == null) {
+                          return;
+                        }
                         ref
                             .read(
                               shoppingListItemsProvider(widget.listId).notifier,
                             )
-                            .reorderItem(oldIndex, newIndex);
+                            .reorderItem(
+                              mappedIndices.oldIndex,
+                              mappedIndices.newIndex,
+                            );
                       },
                     )
                   else
@@ -1099,12 +1177,7 @@ class _ShoppingExitBar extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(
-        Spacing.sm,
-        Spacing.sm,
-        Spacing.sm,
-        0,
-      ),
+      padding: const EdgeInsets.fromLTRB(Spacing.sm, Spacing.sm, Spacing.sm, 0),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         border: Border(
@@ -1140,12 +1213,7 @@ class _CatalogEntryButton extends ConsumerWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(
-        Spacing.sm,
-        Spacing.sm,
-        Spacing.sm,
-        0,
-      ),
+      padding: const EdgeInsets.fromLTRB(Spacing.sm, Spacing.sm, Spacing.sm, 0),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         border: Border(

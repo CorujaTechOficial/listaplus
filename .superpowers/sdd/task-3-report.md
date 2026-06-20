@@ -139,3 +139,19 @@ Restored manual reorder behavior for pending items in `list_screen_body.dart` by
 
 - `flutter analyze lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart`
 - `flutter test test/app/lists/widgets/list_bottom_action_region_test.dart`
+
+### Final blocker fix (manual reorder)
+
+- Restored `dragHandleIndex` on the `ShoppingItemTile` instances built through the `SliverReorderableList` path so pending items expose `ReorderableDragStartListener` again in manual sort mode.
+- Replaced the raw pending-slice reorder passthrough with a scoped index mapper in `list_screen_body.dart`:
+  - the reorder callback now translates pending-subset indices into the full-list indices expected by `ShoppingListItems.reorderItem(...)`
+  - no-op drops still map to no-op full-list moves
+  - pending-item order now updates correctly even when purchased items are interleaved in the backing list
+- Added a focused regression guard in `test/app/lists/widgets/list_bottom_action_region_test.dart` that:
+  - verifies drag handles are present for pending manual-sort tiles
+  - invokes the reorder callback directly and asserts the mapped full-list indices for a pending/purchased/pending case
+
+### Final verification
+
+- `flutter analyze lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart` → `No issues found!`
+- `flutter test test/app/lists/widgets/list_bottom_action_region_test.dart` → `4 tests passed`

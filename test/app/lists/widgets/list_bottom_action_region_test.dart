@@ -27,6 +27,8 @@ class _FakeShoppingListItems extends ShoppingListItems {
 
   final List<ShoppingItem> items;
   ShoppingItem? lastAddedItem;
+  int? lastReorderOldIndex;
+  int? lastReorderNewIndex;
 
   @override
   Stream<List<ShoppingItem>> build(String listId) => Stream.value(items);
@@ -50,6 +52,12 @@ class _FakeShoppingListItems extends ShoppingListItems {
       unit: unit,
       estimatedPrice: estimatedPrice,
     );
+  }
+
+  @override
+  Future<void> reorderItem(int oldIndex, int newIndex) async {
+    lastReorderOldIndex = oldIndex;
+    lastReorderNewIndex = newIndex;
   }
 }
 
@@ -85,56 +93,57 @@ void main() {
     return AppLocalizations.of(tester.element(find.byType(Scaffold).first))!;
   }
 
-  testWidgets('list screen keeps the bottom action region stable across modes', (
-    tester,
-  ) async {
-    final fakeLists = _FakeShoppingLists([
-      ShoppingList(id: listId, name: 'Mercado'),
-    ]);
-    final fakeItems = _FakeShoppingListItems([
-      ShoppingItem(
-        id: 'item-1',
-        shoppingListId: listId,
-        name: 'Leite',
-        quantity: 1,
-      ),
-    ]);
+  testWidgets(
+    'list screen keeps the bottom action region stable across modes',
+    (tester) async {
+      final fakeLists = _FakeShoppingLists([
+        ShoppingList(id: listId, name: 'Mercado'),
+      ]);
+      final fakeItems = _FakeShoppingListItems([
+        ShoppingItem(
+          id: 'item-1',
+          shoppingListId: listId,
+          name: 'Leite',
+          quantity: 1,
+        ),
+      ]);
 
-    await tester.pumpWidget(
-      buildApp(
-        child: const ListScreenBody(listId: listId),
-        lists: fakeLists,
-        items: fakeItems,
-      ),
-    );
-    await tester.pumpAndSettle();
+      await tester.pumpWidget(
+        buildApp(
+          child: const ListScreenBody(listId: listId),
+          lists: fakeLists,
+          items: fakeItems,
+        ),
+      );
+      await tester.pumpAndSettle();
 
-    final strings = l10n(tester);
+      final strings = l10n(tester);
 
-    expect(
-      find.byKey(const ValueKey('list_bottom_action_shell')),
-      findsOneWidget,
-    );
-    expect(find.text(strings.catalogBrowse), findsOneWidget);
-    expect(find.text(strings.exit), findsNothing);
+      expect(
+        find.byKey(const ValueKey('list_bottom_action_shell')),
+        findsOneWidget,
+      );
+      expect(find.text(strings.catalogBrowse), findsOneWidget);
+      expect(find.text(strings.exit), findsNothing);
 
-    await tester.tap(find.byTooltip(strings.shoppingMode));
-    await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip(strings.shoppingMode));
+      await tester.pumpAndSettle();
 
-    expect(
-      find.byKey(const ValueKey('list_bottom_action_shell')),
-      findsOneWidget,
-    );
-    expect(find.text(strings.catalogBrowse), findsNothing);
-    expect(find.text(strings.exit), findsOneWidget);
-    expect(find.text(strings.buy), findsNothing);
+      expect(
+        find.byKey(const ValueKey('list_bottom_action_shell')),
+        findsOneWidget,
+      );
+      expect(find.text(strings.catalogBrowse), findsNothing);
+      expect(find.text(strings.exit), findsOneWidget);
+      expect(find.text(strings.buy), findsNothing);
 
-    await tester.tap(find.text(strings.exit));
-    await tester.pumpAndSettle();
+      await tester.tap(find.text(strings.exit));
+      await tester.pumpAndSettle();
 
-    expect(find.text(strings.catalogBrowse), findsOneWidget);
-    expect(find.text(strings.exit), findsNothing);
-  });
+      expect(find.text(strings.catalogBrowse), findsOneWidget);
+      expect(find.text(strings.exit), findsNothing);
+    },
+  );
 
   testWidgets('selection bar keeps the shared bottom action shell', (
     tester,
@@ -168,39 +177,93 @@ void main() {
     expect(find.text(strings.buy), findsOneWidget);
   });
 
-  testWidgets('quick bar restores the localized success snackbar and edit action', (
-    tester,
-  ) async {
-    final fakeLists = _FakeShoppingLists([
-      ShoppingList(id: listId, name: 'Mercado'),
-    ]);
-    final fakeItems = _FakeShoppingListItems(const []);
+  testWidgets(
+    'quick bar restores the localized success snackbar and edit action',
+    (tester) async {
+      final fakeLists = _FakeShoppingLists([
+        ShoppingList(id: listId, name: 'Mercado'),
+      ]);
+      final fakeItems = _FakeShoppingListItems(const []);
 
-    await tester.pumpWidget(
-      buildApp(
-        child: const Scaffold(
-          bottomNavigationBar: KipiQuickBar(listId: listId),
+      await tester.pumpWidget(
+        buildApp(
+          child: const Scaffold(
+            bottomNavigationBar: KipiQuickBar(listId: listId),
+          ),
+          lists: fakeLists,
+          items: fakeItems,
         ),
-        lists: fakeLists,
-        items: fakeItems,
-      ),
-    );
-    await tester.pumpAndSettle();
+      );
+      await tester.pumpAndSettle();
 
-    final strings = l10n(tester);
+      final strings = l10n(tester);
 
-    await tester.enterText(find.byType(TextField), 'Banana');
-    await tester.tap(find.byType(IconButton).last);
-    await tester.pump();
-    await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextField), 'Banana');
+      await tester.tap(find.byType(IconButton).last);
+      await tester.pump();
+      await tester.pumpAndSettle();
 
-    expect(find.text(strings.itemAddedSnack('Banana')), findsOneWidget);
-    expect(find.text(strings.edit), findsOneWidget);
-    expect(fakeItems.lastAddedItem?.name, 'Banana');
+      expect(find.text(strings.itemAddedSnack('Banana')), findsOneWidget);
+      expect(find.text(strings.edit), findsOneWidget);
+      expect(fakeItems.lastAddedItem?.name, 'Banana');
 
-    await tester.tap(find.text(strings.edit));
-    await tester.pumpAndSettle();
+      await tester.tap(find.text(strings.edit));
+      await tester.pumpAndSettle();
 
-    expect(find.text(strings.editItem), findsOneWidget);
-  });
+      expect(find.text(strings.editItem), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'manual reorder restores drag handles and maps pending indices across purchased items',
+    (tester) async {
+      final fakeLists = _FakeShoppingLists([
+        ShoppingList(id: listId, name: 'Mercado'),
+      ]);
+      final fakeItems = _FakeShoppingListItems([
+        ShoppingItem(
+          id: 'item-1',
+          shoppingListId: listId,
+          name: 'Banana',
+          quantity: 1,
+        ),
+        ShoppingItem(
+          id: 'item-2',
+          shoppingListId: listId,
+          name: 'Cafe',
+          quantity: 1,
+          isPurchased: true,
+        ),
+        ShoppingItem(
+          id: 'item-3',
+          shoppingListId: listId,
+          name: 'Leite',
+          quantity: 1,
+        ),
+      ]);
+
+      await tester.pumpWidget(
+        buildApp(
+          child: const ListScreenBody(listId: listId),
+          lists: fakeLists,
+          items: fakeItems,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.byType(SliverReorderableList), findsOneWidget);
+      expect(find.byType(ReorderableDragStartListener), findsNWidgets(2));
+
+      final reorderable = tester.widget<SliverReorderableList>(
+        find.byType(SliverReorderableList),
+      );
+
+      expect(reorderable.onReorderItem, isNotNull);
+      reorderable.onReorderItem!.call(0, 2);
+      await tester.pump();
+
+      expect(fakeItems.lastReorderOldIndex, 0);
+      expect(fakeItems.lastReorderNewIndex, 3);
+    },
+  );
 }
