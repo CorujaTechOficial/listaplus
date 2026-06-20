@@ -83,3 +83,50 @@ Observed results:
 ## Concerns
 
 - `list_screen_body.dart` already contains substantial in-flight changes outside Task 3. I adjusted only the bottom-region composition within that file and did not revert surrounding work.
+
+---
+
+## Task 3 Review Fixes (2026-06-20)
+
+### Scope
+
+Kept the write set limited to:
+
+- `lib/app/lists/widgets/kipi_quick_bar.dart`
+- `lib/app/lists/widgets/selection_bottom_bar.dart`
+- `lib/app/lists/list_screen_body.dart`
+- `test/app/lists/widgets/list_bottom_action_region_test.dart`
+
+### Fixes applied
+
+- Restored the pre-Task-3 quick-add success affordance in `KipiQuickBar` without removing the new `leading` / `trailing` slot API:
+  - localized success snackbar
+  - localized `Edit` action
+  - `EditItemDialog` launch using the newly created item payload
+- Reduced `ListScreenBody` back to bottom-region scope by neutralizing Task 3 screen/body relayout changes that were not required for bottom-region stabilization:
+  - removed Task 3 category-grouping/body composition changes
+  - restored the pre-Task-3 app-bar/body structure outside the bottom region
+  - kept the shared bottom-region composition and shopping/selection bottom actions intact
+- Reworked `list_bottom_action_region_test.dart` so it proves screen-level composition decisions directly:
+  - `ListScreenBody` normal mode shows the catalog entry + quick shell
+  - `ListScreenBody` shopping mode swaps the catalog entry for the exit strip while preserving the quick shell
+  - `SelectionBottomBar` still verifies the shared shell contract
+  - `KipiQuickBar` regression test verifies the snackbar + edit affordance
+
+### Verification
+
+Ran fresh focused verification after the fixes:
+
+```bash
+flutter analyze lib/app/lists/widgets/kipi_quick_bar.dart lib/app/lists/widgets/selection_bottom_bar.dart lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart
+flutter test test/app/lists/widgets/list_bottom_action_region_test.dart
+```
+
+Observed results:
+
+- `flutter analyze`: `No issues found!`
+- `flutter test`: `3 tests passed`
+
+### Commit
+
+- Pending in workspace at report time; committed immediately after this append.

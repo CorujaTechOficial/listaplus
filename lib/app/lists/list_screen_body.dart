@@ -46,8 +46,6 @@ import 'package:shopping_list/app/lists/widgets/share_list_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/export_options_sheet.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
-import 'package:shopping_list/app/lists/utils/category_item_grouping.dart';
-import 'package:shopping_list/app/lists/widgets/category_section_header.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
@@ -216,14 +214,43 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
     final categoriesMap = {for (final cat in categories) cat.id: cat};
     final isPremium = ref.watch(premiumProvider).value ?? false;
-    final currencyCode = resolveCurrencyCode(
-      ref.watch(currencySettingProvider),
-      Localizations.localeOf(context),
-    );
+    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
 
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: null,
+      appBar:
+          _selectionMode || _shoppingMode
+              ? AppBar(
+                leading: IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () {
+                    if (_selectionMode) {
+                      _exitSelectionMode();
+                    }
+                    if (_shoppingMode) {
+                      setState(() => _shoppingMode = false);
+                    }
+                  },
+                ),
+                title: Text(
+                  _shoppingMode
+                      ? l10n.shoppingMode
+                      : l10n.selectedItems(_selectedIds.length),
+                ),
+                actions: [
+                  if (_selectionMode)
+                    IconButton(
+                      icon: const Icon(Icons.delete_outline),
+                      onPressed: _deleteSelected,
+                    ),
+                  if (_shoppingMode)
+                    IconButton(
+                      icon: const Icon(Icons.celebration_outlined),
+                      onPressed: () => _confettiController.play(),
+                    ),
+                ],
+              )
+              : null,
       body: itemsAsync.when(
         data: (items) {
           final pending = items.where((i) => !i.isPurchased).toList();
@@ -240,19 +267,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                 list.sort((a, b) => a.name.compareTo(b.name));
                 break;
               case SortType.category:
-                final categoryOrder = {
-                  for (final category in categories)
-                    category.id: category.sortOrder,
-                };
-                list.sort((a, b) {
-                  final orderComparison = (categoryOrder[a.categoryId] ??
-                          1 << 30)
-                      .compareTo(categoryOrder[b.categoryId] ?? 1 << 30);
-                  if (orderComparison != 0) {
-                    return orderComparison;
-                  }
-                  return a.name.toLowerCase().compareTo(b.name.toLowerCase());
-                });
+                list.sort((a, b) => a.categoryId.compareTo(b.categoryId));
                 break;
               case SortType.date:
                 list.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
@@ -281,280 +296,172 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           final overBudget = budget > 0 && totalPurchased > budget;
           final budgetProgress =
               budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.0) : 0.0;
-          final groupByCategory = _shoppingMode || _sort == SortType.category;
-
-          List<Widget> buildGroupedTiles(
-            List<ShoppingItem> groupedList, {
-            bool animateEntries = false,
-          }) {
-            return [
-              for (final group in groupItemsByCategory(
-                groupedList,
-                categories,
-              )) ...[
-                CategorySectionHeader(
-                  key: ValueKey('category_header_${group.categoryId}'),
-                  categoryId: group.categoryId,
-                  category: group.category,
-                  itemCount: group.items.length,
-                ),
-                for (final item in group.items)
-                  if (animateEntries)
-                    AnimatedEntryWrapper(
-                      key: ValueKey('entry_${item.id}'),
-                      child: ShoppingItemTile(
-                        listId: widget.listId,
-                        item: item,
-                        selectionMode: _selectionMode,
-                        isShoppingMode: _shoppingMode,
-                        isSelected: _selectedIds.contains(item.id),
-                        onSelectionChanged:
-                            (selected) => _handleSelection(item.id, selected),
-                      ),
-                    )
-                  else
-                    ShoppingItemTile(
-                      key: ValueKey(item.id),
-                      listId: widget.listId,
-                      item: item,
-                      selectionMode: _selectionMode,
-                      isShoppingMode: _shoppingMode,
-                      isSelected: _selectedIds.contains(item.id),
-                      onSelectionChanged:
-                          (selected) => _handleSelection(item.id, selected),
-                    ),
-              ],
-            ];
-          }
 
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
-              SliverAppBar(
-                foregroundColor:
-                    _shoppingMode
-                        ? theme.colorScheme.onPrimary
-                        : theme.colorScheme.onSurface,
-                surfaceTintColor: theme.colorScheme.surfaceTint,
-                pinned: true,
-                floating: true,
-                leading: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 200),
-                  transitionBuilder:
-                      (child, animation) =>
-                          FadeTransition(opacity: animation, child: child),
-                  child:
-                      (_selectionMode || _shoppingMode)
-                          ? IconButton(
-                            key: const ValueKey('close_btn'),
-                            icon: const Icon(Icons.close),
-                            onPressed: () {
-                              if (_selectionMode) {
-                                _exitSelectionMode();
-                              }
-                              if (_shoppingMode) {
-                                setState(() => _shoppingMode = false);
-                              }
-                            },
-                          )
-                          : IconButton(
-                            key: const ValueKey('person_btn'),
-                            icon: const Icon(Icons.person_outline),
-                            onPressed: () => AccountMenuSheet.show(context),
-                          ),
-                ),
-                title: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 200),
-                  transitionBuilder:
-                      (child, animation) =>
-                          FadeTransition(opacity: animation, child: child),
-                  child:
-                      _shoppingMode
-                          ? Text(
-                            key: const ValueKey('shopping_title'),
-                            l10n.shoppingMode,
-                          )
-                          : _selectionMode
-                          ? Text(
-                            key: ValueKey('sel_title_${_selectedIds.length}'),
-                            l10n.selectedItems(_selectedIds.length),
-                          )
-                          : AppBarListSelector(
-                            key: const ValueKey('list_selector'),
-                            currentListId: widget.listId,
-                          ),
-                ),
-                actions:
-                    _selectionMode || _shoppingMode
-                        ? [
-                          if (_selectionMode)
-                            IconButton(
-                              icon: const Icon(Icons.delete_outline),
-                              onPressed: _deleteSelected,
+              if (!_selectionMode && !_shoppingMode)
+                SliverAppBar(
+                  backgroundColor: theme.colorScheme.surface,
+                  surfaceTintColor: Colors.transparent,
+                  pinned: true,
+                  floating: true,
+                  leading: IconButton(
+                    icon: const Icon(Icons.person_outline),
+                    onPressed: () => AccountMenuSheet.show(context),
+                  ),
+                  title: AppBarListSelector(currentListId: widget.listId),
+                  actions: [
+                    IconButton(
+                      icon: Icon(
+                        _shoppingMode
+                            ? Icons.shopping_basket
+                            : Icons.shopping_basket_outlined,
+                      ),
+                      onPressed:
+                          () => setState(() => _shoppingMode = !_shoppingMode),
+                      tooltip: l10n.shoppingMode,
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.share),
+                      onPressed: () => _showInviteSheet(widget.listId),
+                      tooltip: l10n.inviteToList,
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.search),
+                      onPressed:
+                          () => showSearch(
+                            context: context,
+                            delegate: ShoppingSearchDelegate(
+                              widget.listId,
+                              items,
+                              categoriesMap,
                             ),
-                          if (_shoppingMode)
-                            IconButton(
-                              icon: const Icon(Icons.celebration_outlined),
-                              onPressed: () => _confettiController.play(),
-                            ),
-                        ]
-                        : [
-                          IconButton(
-                            icon: const Icon(Icons.shopping_basket_outlined),
-                            onPressed:
-                                () => setState(
-                                  () => _shoppingMode = !_shoppingMode,
-                                ),
-                            tooltip: l10n.shoppingMode,
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.share),
-                            onPressed: () => _showInviteSheet(widget.listId),
-                            tooltip: l10n.inviteToList,
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.search),
-                            onPressed:
-                                () => showSearch(
-                                  context: context,
-                                  delegate: ShoppingSearchDelegate(
-                                    widget.listId,
-                                    items,
-                                    categoriesMap,
-                                  ),
-                                ),
-                          ),
-                          PopupMenuButton<String>(
-                            icon: const Icon(Icons.more_vert),
-                            onSelected: (val) {
-                              if (val == 'clear') {
-                                _clearPurchased();
-                              }
-                              if (val == 'share') {
-                                ShareListSheet.show(
-                                  context,
+                    ),
+                    PopupMenuButton<String>(
+                      icon: const Icon(Icons.more_vert),
+                      onSelected: (val) {
+                        if (val == 'clear') {
+                          _clearPurchased();
+                        }
+                        if (val == 'share') {
+                          ShareListSheet.show(
+                            context,
+                            listId: widget.listId,
+                            items: items,
+                            listName: currentList?.name,
+                          );
+                        }
+                        if (val == 'budget' && currentList != null) {
+                          _showBudgetDialog(context, currentList);
+                        }
+                        if (val == 'export') {
+                          showExportOptionsSheet(
+                            context,
+                            onExportPdf:
+                                () => _exportPdf(items, currentList, categories),
+                            onExportExcel: () => _exportExcel(items),
+                            onShareText:
+                                () =>
+                                    _shareItemsAsText(items, currentList?.name),
+                            onCopyText:
+                                () =>
+                                    _copyItemsAsText(items, currentList?.name),
+                          );
+                        }
+                        if (val == 'settings') {
+                          Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const SettingsScreen()),
+                          );
+                        }
+                        if (val == 'profile') {
+                          Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const UserProfileScreen()),
+                          );
+                        }
+                        if (val == 'ai') {
+                          if (isPremium) {
+                            Navigator.push(
+                              context,
+                              fadeSlideRoute<void>(
+                                ChatScreen(
                                   listId: widget.listId,
-                                  items: items,
                                   listName: currentList?.name,
-                                );
-                              }
-                              if (val == 'budget' && currentList != null) {
-                                _showBudgetDialog(context, currentList);
-                              }
-                              if (val == 'export') {
-                                showExportOptionsSheet(
-                                  context,
-                                  onExportPdf:
-                                      () => _exportPdf(
-                                        items,
-                                        currentList,
-                                        categories,
-                                      ),
-                                  onExportExcel: () => _exportExcel(items),
-                                  onShareText:
-                                      () => _shareItemsAsText(
-                                        items,
-                                        currentList?.name,
-                                      ),
-                                  onCopyText:
-                                      () => _copyItemsAsText(
-                                        items,
-                                        currentList?.name,
-                                      ),
-                                );
-                              }
-                              if (val == 'settings') {
-                                Navigator.push(
-                                  context,
-                                  fadeSlideRoute<void>(const SettingsScreen()),
-                                );
-                              }
-                              if (val == 'profile') {
-                                Navigator.push(
-                                  context,
-                                  fadeSlideRoute<void>(
-                                    const UserProfileScreen(),
-                                  ),
-                                );
-                              }
-                              if (val == 'ai') {
-                                if (isPremium) {
-                                  Navigator.push(
-                                    context,
-                                    fadeSlideRoute<void>(
-                                      ChatScreen(
-                                        listId: widget.listId,
-                                        listName: currentList?.name,
-                                      ),
-                                    ),
-                                  );
-                                } else {
-                                  Navigator.push(
-                                    context,
-                                    fadeSlideRoute<void>(const PaywallScreen()),
-                                  );
-                                }
-                              }
-                            },
-                            itemBuilder:
-                                (context) => [
-                                  PopupMenuItem(
-                                    value: 'ai',
-                                    child: Text(l10n.aiAssistant),
-                                  ),
-                                  const PopupMenuDivider(),
-                                  PopupMenuItem(
-                                    value: 'share',
-                                    child: Text(l10n.share),
-                                  ),
-                                  PopupMenuItem(
-                                    value: 'budget',
-                                    child: Text(l10n.listBudgetTitle),
-                                  ),
-                                  PopupMenuItem(
-                                    value: 'clear',
-                                    child: Text(l10n.clearPurchased),
-                                  ),
-                                  PopupMenuItem(
-                                    value: 'export',
-                                    child: Text(l10n.exportPdfExcel),
-                                  ),
-                                  const PopupMenuDivider(),
-                                  PopupMenuItem(
-                                    value: 'profile',
-                                    child: Text(l10n.profile),
-                                  ),
-                                  PopupMenuItem(
-                                    value: 'settings',
-                                    child: Text(l10n.settingsAppBar),
-                                  ),
-                                ],
-                          ),
-                        ],
-                bottom:
-                    (!_selectionMode && !_shoppingMode) && items.isNotEmpty
-                        ? ProgressInfoHeader(
-                          purchasedCount: purchased.length,
-                          totalItems: items.length,
-                          totalEstimated: totalEstimated,
-                          totalPurchased: totalPurchased,
-                          progress: progress,
-                          budget: budget,
-                          overBudget: overBudget,
-                          budgetProgress: budgetProgress,
-                          filter: _filter,
-                          sortLabel: _getSortLabel(context),
-                          currencyCode: currencyCode,
-                          onFilterChanged: (f) => setState(() => _filter = f),
-                          onSortPressed:
-                              () => showSortOptionsSheet(
-                                context,
-                                currentSort: _sort,
-                                onSortChanged: (s) => setState(() => _sort = s),
+                                ),
                               ),
-                        )
-                        : null,
-              ),
+                            );
+                          } else {
+                            Navigator.push(
+                              context,
+                              fadeSlideRoute<void>(const PaywallScreen()),
+                            );
+                          }
+                        }
+                      },
+                      itemBuilder:
+                          (context) => [
+                            PopupMenuItem(
+                              value: 'ai',
+                              child: Text(l10n.aiAssistant),
+                            ),
+                            const PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 'share',
+                              child: Text(l10n.share),
+                            ),
+                            PopupMenuItem(
+                              value: 'budget',
+                              child: Text(l10n.listBudgetTitle),
+                            ),
+                            PopupMenuItem(
+                              value: 'clear',
+                              child: Text(l10n.clearPurchased),
+                            ),
+                            PopupMenuItem(
+                              value: 'export',
+                              child: Text(l10n.exportPdfExcel),
+                            ),
+                            const PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 'profile',
+                              child: Text(l10n.profile),
+                            ),
+                            PopupMenuItem(
+                              value: 'settings',
+                              child: Text(l10n.settingsAppBar),
+                            ),
+                          ],
+                    ),
+                  ],
+                  bottom:
+                      items.isEmpty
+                          ? null
+                          : ProgressInfoHeader(
+                            purchasedCount: purchased.length,
+                            totalItems: items.length,
+                            totalEstimated: totalEstimated,
+                            totalPurchased: totalPurchased,
+                            progress: progress,
+                            budget: budget,
+                            overBudget: overBudget,
+                            budgetProgress: budgetProgress,
+                            filter: _filter,
+                            sortLabel: _getSortLabel(context),
+                            currencyCode: currencyCode,
+                            onFilterChanged:
+                                (f) => setState(() => _filter = f),
+                            onSortPressed:
+                                () => showSortOptionsSheet(
+                                  context,
+                                  currentSort: _sort,
+                                  onSortChanged:
+                                      (s) => setState(() => _sort = s),
+                                ),
+                          ),
+                ),
               if (_shoppingMode && pending.isEmpty && items.isNotEmpty)
                 SliverFillRemaining(
                   hasScrollBody: false,
@@ -581,52 +488,21 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     child: GestureHintBanner(onDismiss: _dismissGestureHint),
                   ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
-                  if (_sort == SortType.manual && !groupByCategory)
-                    SliverReorderableList(
-                      itemCount: pending.length,
-                      itemBuilder: (context, index) {
-                        final item = pending[index];
-                        return ShoppingItemTile(
-                          key: ValueKey(item.id),
-                          listId: widget.listId,
-                          item: item,
-                          selectionMode: _selectionMode,
-                          isShoppingMode: _shoppingMode,
-                          isSelected: _selectedIds.contains(item.id),
-                          onSelectionChanged:
-                              (selected) => _handleSelection(item.id, selected),
-                          dragHandleIndex: index,
-                        );
-                      },
-                      onReorderItem: (oldIndex, newIndex) {
-                        final reordered = List<ShoppingItem>.from(pending);
-                        final moved = reordered.removeAt(oldIndex);
-                        reordered.insert(newIndex, moved);
-                        ref
-                            .read(
-                              shoppingListItemsProvider(widget.listId).notifier,
-                            )
-                            .updateItems([...reordered, ...purchased]);
-                      },
-                    )
-                  else if (groupByCategory)
-                    SliverList.list(children: buildGroupedTiles(pending))
-                  else
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) => ShoppingItemTile(
-                          listId: widget.listId,
-                          item: pending[index],
-                          selectionMode: _selectionMode,
-                          isShoppingMode: _shoppingMode,
-                          isSelected: _selectedIds.contains(pending[index].id),
-                          onSelectionChanged:
-                              (selected) =>
-                                  _handleSelection(pending[index].id, selected),
-                        ),
-                        childCount: pending.length,
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) => ShoppingItemTile(
+                        listId: widget.listId,
+                        item: pending[index],
+                        selectionMode: _selectionMode,
+                        isShoppingMode: _shoppingMode,
+                        isSelected: _selectedIds.contains(pending[index].id),
+                        onSelectionChanged:
+                            (selected) =>
+                                _handleSelection(pending[index].id, selected),
                       ),
+                      childCount: pending.length,
                     ),
+                  ),
                 if (_filter == FilterType.all && purchased.isNotEmpty)
                   SliverToBoxAdapter(
                     child: Padding(
@@ -658,36 +534,21 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     ),
                   ),
                 if (_filter != FilterType.pending && purchased.isNotEmpty)
-                  if (groupByCategory)
-                    SliverList.list(
-                      children: buildGroupedTiles(
-                        purchased,
-                        animateEntries: true,
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) => ShoppingItemTile(
+                        listId: widget.listId,
+                        item: purchased[index],
+                        selectionMode: _selectionMode,
+                        isShoppingMode: _shoppingMode,
+                        isSelected: _selectedIds.contains(purchased[index].id),
+                        onSelectionChanged:
+                            (selected) =>
+                                _handleSelection(purchased[index].id, selected),
                       ),
-                    )
-                  else
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) => AnimatedEntryWrapper(
-                          key: ValueKey('entry_${purchased[index].id}'),
-                          child: ShoppingItemTile(
-                            listId: widget.listId,
-                            item: purchased[index],
-                            selectionMode: _selectionMode,
-                            isShoppingMode: _shoppingMode,
-                            isSelected: _selectedIds.contains(
-                              purchased[index].id,
-                            ),
-                            onSelectionChanged:
-                                (selected) => _handleSelection(
-                                  purchased[index].id,
-                                  selected,
-                                ),
-                          ),
-                        ),
-                        childCount: purchased.length,
-                      ),
+                      childCount: purchased.length,
                     ),
+                  ),
                 const SliverPadding(padding: EdgeInsets.only(bottom: 140)),
               ],
             ],

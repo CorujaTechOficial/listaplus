@@ -8,8 +8,10 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:uuid/uuid.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
+import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
 
 class KipiQuickBar extends ConsumerStatefulWidget {
   const KipiQuickBar({
@@ -108,6 +110,14 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
       _isAdding = true;
     });
     final newId = const Uuid().v4();
+    final newItem = ShoppingItem(
+      id: newId,
+      shoppingListId: widget.listId,
+      name: text,
+      quantity: 1,
+      categoryId: 'others',
+      unit: Unit.un,
+    );
     _controller.clear();
     try {
       await ref
@@ -120,6 +130,27 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
             categoryId: 'others',
             unit: Unit.un,
           );
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.itemAddedSnack(text)),
+            action: SnackBarAction(
+              label: l10n.edit,
+              onPressed: () {
+                showDialog<void>(
+                  context: context,
+                  builder:
+                      (_) => EditItemDialog(
+                        listId: widget.listId,
+                        item: newItem,
+                      ),
+                );
+              },
+            ),
+          ),
+        );
+      }
     } on Exception catch (e) {
       debugPrint('Quick add failed: $e');
       if (mounted) {
