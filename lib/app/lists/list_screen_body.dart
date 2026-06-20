@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:shopping_list/theme/tokens.dart';
 import 'dart:io';
 import 'package:confetti/confetti.dart';
 import 'package:excel/excel.dart' as ex;
@@ -18,7 +19,7 @@ import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
-import '../../theme/page_transitions.dart';
+import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import 'package:shopping_list/app/lists/widgets/budget_dialog.dart';
@@ -44,6 +45,9 @@ import 'package:shopping_list/app/lists/widgets/sort_options_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/share_list_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/export_options_sheet.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
+import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
+import 'package:shopping_list/app/lists/utils/category_item_grouping.dart';
+import 'package:shopping_list/app/lists/widgets/category_section_header.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
@@ -212,7 +216,10 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
     final categoriesMap = {for (final cat in categories) cat.id: cat};
     final isPremium = ref.watch(premiumProvider).value ?? false;
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
 
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
@@ -233,7 +240,19 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                 list.sort((a, b) => a.name.compareTo(b.name));
                 break;
               case SortType.category:
-                list.sort((a, b) => a.categoryId.compareTo(b.categoryId));
+                final categoryOrder = {
+                  for (final category in categories)
+                    category.id: category.sortOrder,
+                };
+                list.sort((a, b) {
+                  final orderComparison = (categoryOrder[a.categoryId] ??
+                          1 << 30)
+                      .compareTo(categoryOrder[b.categoryId] ?? 1 << 30);
+                  if (orderComparison != 0) {
+                    return orderComparison;
+                  }
+                  return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+                });
                 break;
               case SortType.date:
                 list.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
@@ -262,216 +281,279 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           final overBudget = budget > 0 && totalPurchased > budget;
           final budgetProgress =
               budget > 0 ? (totalPurchased / budget).clamp(0.0, 1.0) : 0.0;
+          final groupByCategory = _shoppingMode || _sort == SortType.category;
+
+          List<Widget> buildGroupedTiles(
+            List<ShoppingItem> groupedList, {
+            bool animateEntries = false,
+          }) {
+            return [
+              for (final group in groupItemsByCategory(
+                groupedList,
+                categories,
+              )) ...[
+                CategorySectionHeader(
+                  key: ValueKey('category_header_${group.categoryId}'),
+                  categoryId: group.categoryId,
+                  category: group.category,
+                  itemCount: group.items.length,
+                ),
+                for (final item in group.items)
+                  if (animateEntries)
+                    AnimatedEntryWrapper(
+                      key: ValueKey('entry_${item.id}'),
+                      child: ShoppingItemTile(
+                        listId: widget.listId,
+                        item: item,
+                        selectionMode: _selectionMode,
+                        isShoppingMode: _shoppingMode,
+                        isSelected: _selectedIds.contains(item.id),
+                        onSelectionChanged:
+                            (selected) => _handleSelection(item.id, selected),
+                      ),
+                    )
+                  else
+                    ShoppingItemTile(
+                      key: ValueKey(item.id),
+                      listId: widget.listId,
+                      item: item,
+                      selectionMode: _selectionMode,
+                      isShoppingMode: _shoppingMode,
+                      isSelected: _selectedIds.contains(item.id),
+                      onSelectionChanged:
+                          (selected) => _handleSelection(item.id, selected),
+                    ),
+              ],
+            ];
+          }
 
           return CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
               SliverAppBar(
-                backgroundColor: _shoppingMode
-                    ? theme.colorScheme.primary
-                    : theme.colorScheme.surface,
-                foregroundColor: _shoppingMode
-                    ? theme.colorScheme.onPrimary
-                    : theme.colorScheme.onSurface,
+                foregroundColor:
+                    _shoppingMode
+                        ? theme.colorScheme.onPrimary
+                        : theme.colorScheme.onSurface,
                 surfaceTintColor: theme.colorScheme.surfaceTint,
                 pinned: true,
                 floating: true,
                 leading: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 200),
-                  transitionBuilder: (child, animation) =>
-                      FadeTransition(opacity: animation, child: child),
-                  child: (_selectionMode || _shoppingMode)
-                      ? IconButton(
-                          key: const ValueKey('close_btn'),
-                          icon: const Icon(Icons.close),
-                          onPressed: () {
-                            if (_selectionMode) {
-                              _exitSelectionMode();
-                            }
-                            if (_shoppingMode) {
-                              setState(() => _shoppingMode = false);
-                            }
-                          },
-                        )
-                      : IconButton(
-                          key: const ValueKey('person_btn'),
-                          icon: const Icon(Icons.person_outline),
-                          onPressed: () => AccountMenuSheet.show(context),
-                        ),
+                  transitionBuilder:
+                      (child, animation) =>
+                          FadeTransition(opacity: animation, child: child),
+                  child:
+                      (_selectionMode || _shoppingMode)
+                          ? IconButton(
+                            key: const ValueKey('close_btn'),
+                            icon: const Icon(Icons.close),
+                            onPressed: () {
+                              if (_selectionMode) {
+                                _exitSelectionMode();
+                              }
+                              if (_shoppingMode) {
+                                setState(() => _shoppingMode = false);
+                              }
+                            },
+                          )
+                          : IconButton(
+                            key: const ValueKey('person_btn'),
+                            icon: const Icon(Icons.person_outline),
+                            onPressed: () => AccountMenuSheet.show(context),
+                          ),
                 ),
                 title: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 200),
-                  transitionBuilder: (child, animation) =>
-                      FadeTransition(opacity: animation, child: child),
-                  child: _shoppingMode
-                      ? Text(
-                          key: const ValueKey('shopping_title'),
-                          l10n.shoppingMode,
-                        )
-                      : _selectionMode
+                  transitionBuilder:
+                      (child, animation) =>
+                          FadeTransition(opacity: animation, child: child),
+                  child:
+                      _shoppingMode
                           ? Text(
-                              key: ValueKey('sel_title_${_selectedIds.length}'),
-                              l10n.selectedItems(_selectedIds.length),
-                            )
+                            key: const ValueKey('shopping_title'),
+                            l10n.shoppingMode,
+                          )
+                          : _selectionMode
+                          ? Text(
+                            key: ValueKey('sel_title_${_selectedIds.length}'),
+                            l10n.selectedItems(_selectedIds.length),
+                          )
                           : AppBarListSelector(
-                              key: const ValueKey('list_selector'),
-                              currentListId: widget.listId,
-                            ),
+                            key: const ValueKey('list_selector'),
+                            currentListId: widget.listId,
+                          ),
                 ),
-                actions: _selectionMode || _shoppingMode
-                    ? [
-                        if (_selectionMode)
+                actions:
+                    _selectionMode || _shoppingMode
+                        ? [
+                          if (_selectionMode)
+                            IconButton(
+                              icon: const Icon(Icons.delete_outline),
+                              onPressed: _deleteSelected,
+                            ),
+                          if (_shoppingMode)
+                            IconButton(
+                              icon: const Icon(Icons.celebration_outlined),
+                              onPressed: () => _confettiController.play(),
+                            ),
+                        ]
+                        : [
                           IconButton(
-                            icon: const Icon(Icons.delete_outline),
-                            onPressed: _deleteSelected,
+                            icon: const Icon(Icons.shopping_basket_outlined),
+                            onPressed:
+                                () => setState(
+                                  () => _shoppingMode = !_shoppingMode,
+                                ),
+                            tooltip: l10n.shoppingMode,
                           ),
-                        if (_shoppingMode)
                           IconButton(
-                            icon: const Icon(Icons.celebration_outlined),
-                            onPressed: () => _confettiController.play(),
+                            icon: const Icon(Icons.share),
+                            onPressed: () => _showInviteSheet(widget.listId),
+                            tooltip: l10n.inviteToList,
                           ),
-                      ]
-                    : [
-                        IconButton(
-                          icon: const Icon(Icons.shopping_basket_outlined),
-                          onPressed:
-                              () => setState(() => _shoppingMode = !_shoppingMode),
-                          tooltip: l10n.shoppingMode,
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.share),
-                          onPressed: () => _showInviteSheet(widget.listId),
-                          tooltip: l10n.inviteToList,
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.search),
-                          onPressed:
-                              () => showSearch(
-                                context: context,
-                                delegate: ShoppingSearchDelegate(
-                                  widget.listId,
-                                  items,
-                                  categoriesMap,
+                          IconButton(
+                            icon: const Icon(Icons.search),
+                            onPressed:
+                                () => showSearch(
+                                  context: context,
+                                  delegate: ShoppingSearchDelegate(
+                                    widget.listId,
+                                    items,
+                                    categoriesMap,
+                                  ),
                                 ),
-                              ),
-                        ),
-                        PopupMenuButton<String>(
-                          icon: const Icon(Icons.more_vert),
-                          onSelected: (val) {
-                            if (val == 'clear') {
-                              _clearPurchased();
-                            }
-                            if (val == 'share') {
-                              ShareListSheet.show(
-                                context,
-                                listId: widget.listId,
-                                items: items,
-                                listName: currentList?.name,
-                              );
-                            }
-                            if (val == 'budget' && currentList != null) {
-                              _showBudgetDialog(context, currentList);
-                            }
-                            if (val == 'export') {
-                              showExportOptionsSheet(
-                                context,
-                                onExportPdf: () =>
-                                    _exportPdf(items, currentList, categories),
-                                onExportExcel: () => _exportExcel(items),
-                                onShareText: () =>
-                                    _shareItemsAsText(items, currentList?.name),
-                                onCopyText: () =>
-                                    _copyItemsAsText(items, currentList?.name),
-                              );
-                            }
-                            if (val == 'settings') {
-                              Navigator.push(
-                                context,
-                                fadeSlideRoute<void>(const SettingsScreen()),
-                              );
-                            }
-                            if (val == 'profile') {
-                              Navigator.push(
-                                context,
-                                fadeSlideRoute<void>(
-                                  const UserProfileScreen(),
-                                ),
-                              );
-                            }
-                            if (val == 'ai') {
-                              if (isPremium) {
+                          ),
+                          PopupMenuButton<String>(
+                            icon: const Icon(Icons.more_vert),
+                            onSelected: (val) {
+                              if (val == 'clear') {
+                                _clearPurchased();
+                              }
+                              if (val == 'share') {
+                                ShareListSheet.show(
+                                  context,
+                                  listId: widget.listId,
+                                  items: items,
+                                  listName: currentList?.name,
+                                );
+                              }
+                              if (val == 'budget' && currentList != null) {
+                                _showBudgetDialog(context, currentList);
+                              }
+                              if (val == 'export') {
+                                showExportOptionsSheet(
+                                  context,
+                                  onExportPdf:
+                                      () => _exportPdf(
+                                        items,
+                                        currentList,
+                                        categories,
+                                      ),
+                                  onExportExcel: () => _exportExcel(items),
+                                  onShareText:
+                                      () => _shareItemsAsText(
+                                        items,
+                                        currentList?.name,
+                                      ),
+                                  onCopyText:
+                                      () => _copyItemsAsText(
+                                        items,
+                                        currentList?.name,
+                                      ),
+                                );
+                              }
+                              if (val == 'settings') {
+                                Navigator.push(
+                                  context,
+                                  fadeSlideRoute<void>(const SettingsScreen()),
+                                );
+                              }
+                              if (val == 'profile') {
                                 Navigator.push(
                                   context,
                                   fadeSlideRoute<void>(
-                                    ChatScreen(
-                                      listId: widget.listId,
-                                      listName: currentList?.name,
-                                    ),
+                                    const UserProfileScreen(),
                                   ),
                                 );
-                              } else {
-                                Navigator.push(
-                                  context,
-                                  fadeSlideRoute<void>(const PaywallScreen()),
-                                );
                               }
-                            }
-                          },
-                          itemBuilder: (context) => [
-                            PopupMenuItem(
-                              value: 'ai',
-                              child: Text(l10n.aiAssistant),
-                            ),
-                            const PopupMenuDivider(),
-                            PopupMenuItem(
-                              value: 'share',
-                              child: Text(l10n.share),
-                            ),
-                            PopupMenuItem(
-                              value: 'budget',
-                              child: Text(l10n.listBudgetTitle),
-                            ),
-                            PopupMenuItem(
-                              value: 'clear',
-                              child: Text(l10n.clearPurchased),
-                            ),
-                            PopupMenuItem(
-                              value: 'export',
-                              child: Text(l10n.exportPdfExcel),
-                            ),
-                            const PopupMenuDivider(),
-                            PopupMenuItem(
-                              value: 'profile',
-                              child: Text(l10n.profile),
-                            ),
-                            PopupMenuItem(
-                              value: 'settings',
-                              child: Text(l10n.settingsAppBar),
-                            ),
-                          ],
-                        ),
-                      ],
-                bottom: (!_selectionMode && !_shoppingMode) && items.isNotEmpty
-                    ? ProgressInfoHeader(
-                        purchasedCount: purchased.length,
-                        totalItems: items.length,
-                        totalEstimated: totalEstimated,
-                        totalPurchased: totalPurchased,
-                        progress: progress,
-                        budget: budget,
-                        overBudget: overBudget,
-                        budgetProgress: budgetProgress,
-                        filter: _filter,
-                        sortLabel: _getSortLabel(context),
-                        currencyCode: currencyCode,
-                        onFilterChanged: (f) => setState(() => _filter = f),
-                        onSortPressed: () => showSortOptionsSheet(
-                          context,
-                          currentSort: _sort,
-                          onSortChanged: (s) => setState(() => _sort = s),
-                        ),
-                      )
-                    : null,
+                              if (val == 'ai') {
+                                if (isPremium) {
+                                  Navigator.push(
+                                    context,
+                                    fadeSlideRoute<void>(
+                                      ChatScreen(
+                                        listId: widget.listId,
+                                        listName: currentList?.name,
+                                      ),
+                                    ),
+                                  );
+                                } else {
+                                  Navigator.push(
+                                    context,
+                                    fadeSlideRoute<void>(const PaywallScreen()),
+                                  );
+                                }
+                              }
+                            },
+                            itemBuilder:
+                                (context) => [
+                                  PopupMenuItem(
+                                    value: 'ai',
+                                    child: Text(l10n.aiAssistant),
+                                  ),
+                                  const PopupMenuDivider(),
+                                  PopupMenuItem(
+                                    value: 'share',
+                                    child: Text(l10n.share),
+                                  ),
+                                  PopupMenuItem(
+                                    value: 'budget',
+                                    child: Text(l10n.listBudgetTitle),
+                                  ),
+                                  PopupMenuItem(
+                                    value: 'clear',
+                                    child: Text(l10n.clearPurchased),
+                                  ),
+                                  PopupMenuItem(
+                                    value: 'export',
+                                    child: Text(l10n.exportPdfExcel),
+                                  ),
+                                  const PopupMenuDivider(),
+                                  PopupMenuItem(
+                                    value: 'profile',
+                                    child: Text(l10n.profile),
+                                  ),
+                                  PopupMenuItem(
+                                    value: 'settings',
+                                    child: Text(l10n.settingsAppBar),
+                                  ),
+                                ],
+                          ),
+                        ],
+                bottom:
+                    (!_selectionMode && !_shoppingMode) && items.isNotEmpty
+                        ? ProgressInfoHeader(
+                          purchasedCount: purchased.length,
+                          totalItems: items.length,
+                          totalEstimated: totalEstimated,
+                          totalPurchased: totalPurchased,
+                          progress: progress,
+                          budget: budget,
+                          overBudget: overBudget,
+                          budgetProgress: budgetProgress,
+                          filter: _filter,
+                          sortLabel: _getSortLabel(context),
+                          currencyCode: currencyCode,
+                          onFilterChanged: (f) => setState(() => _filter = f),
+                          onSortPressed:
+                              () => showSortOptionsSheet(
+                                context,
+                                currentSort: _sort,
+                                onSortChanged: (s) => setState(() => _sort = s),
+                              ),
+                        )
+                        : null,
               ),
               if (_shoppingMode && pending.isEmpty && items.isNotEmpty)
                 SliverFillRemaining(
@@ -499,7 +581,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     child: GestureHintBanner(onDismiss: _dismissGestureHint),
                   ),
                 if (_filter != FilterType.purchased && pending.isNotEmpty)
-                  if (_sort == SortType.manual)
+                  if (_sort == SortType.manual && !groupByCategory)
                     SliverReorderableList(
                       itemCount: pending.length,
                       itemBuilder: (context, index) {
@@ -511,7 +593,8 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                           selectionMode: _selectionMode,
                           isShoppingMode: _shoppingMode,
                           isSelected: _selectedIds.contains(item.id),
-                          onSelectionChanged: (selected) => _handleSelection(item.id, selected),
+                          onSelectionChanged:
+                              (selected) => _handleSelection(item.id, selected),
                           dragHandleIndex: index,
                         );
                       },
@@ -520,10 +603,14 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                         final moved = reordered.removeAt(oldIndex);
                         reordered.insert(newIndex, moved);
                         ref
-                            .read(shoppingListItemsProvider(widget.listId).notifier)
+                            .read(
+                              shoppingListItemsProvider(widget.listId).notifier,
+                            )
                             .updateItems([...reordered, ...purchased]);
                       },
                     )
+                  else if (groupByCategory)
+                    SliverList.list(children: buildGroupedTiles(pending))
                   else
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
@@ -543,7 +630,12 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                 if (_filter == FilterType.all && purchased.isNotEmpty)
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                      padding: const EdgeInsets.fromLTRB(
+                        Spacing.md,
+                        Spacing.lg,
+                        Spacing.md,
+                        Spacing.xs,
+                      ),
                       child: Row(
                         children: [
                           Text(
@@ -554,7 +646,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                               letterSpacing: 1.2,
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          const SizedBox(width: Spacing.sm),
                           Expanded(
                             child: Divider(
                               color: theme.colorScheme.outlineVariant,
@@ -566,24 +658,36 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     ),
                   ),
                 if (_filter != FilterType.pending && purchased.isNotEmpty)
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => AnimatedEntryWrapper(
-                        key: ValueKey('entry_${purchased[index].id}'),
-                        child: ShoppingItemTile(
-                          listId: widget.listId,
-                          item: purchased[index],
-                          selectionMode: _selectionMode,
-                          isShoppingMode: _shoppingMode,
-                          isSelected: _selectedIds.contains(purchased[index].id),
-                          onSelectionChanged:
-                              (selected) =>
-                                  _handleSelection(purchased[index].id, selected),
-                        ),
+                  if (groupByCategory)
+                    SliverList.list(
+                      children: buildGroupedTiles(
+                        purchased,
+                        animateEntries: true,
                       ),
-                      childCount: purchased.length,
+                    )
+                  else
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) => AnimatedEntryWrapper(
+                          key: ValueKey('entry_${purchased[index].id}'),
+                          child: ShoppingItemTile(
+                            listId: widget.listId,
+                            item: purchased[index],
+                            selectionMode: _selectionMode,
+                            isShoppingMode: _shoppingMode,
+                            isSelected: _selectedIds.contains(
+                              purchased[index].id,
+                            ),
+                            onSelectionChanged:
+                                (selected) => _handleSelection(
+                                  purchased[index].id,
+                                  selected,
+                                ),
+                          ),
+                        ),
+                        childCount: purchased.length,
+                      ),
                     ),
-                  ),
                 const SliverPadding(padding: EdgeInsets.only(bottom: 140)),
               ],
             ],
@@ -594,7 +698,6 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
               physics: const AlwaysScrollableScrollPhysics(),
               slivers: [
                 SliverAppBar(
-                  backgroundColor: theme.colorScheme.surface,
                   foregroundColor: theme.colorScheme.onSurface,
                   surfaceTintColor: theme.colorScheme.surfaceTint,
                   pinned: true,
@@ -607,7 +710,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
-                    (_, __) => const ShoppingItemTileSkeleton(),
+                    (_, _) => const ShoppingItemTileSkeleton(),
                     childCount: 6,
                   ),
                 ),
@@ -618,37 +721,31 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           return SafeArea(child: Center(child: Text(e.toString())));
         },
       ),
-      floatingActionButton:
-          _selectionMode || _shoppingMode
-              ? FloatingActionButton.extended(
-                heroTag: null,
-                onPressed:
-                    _selectionMode
-                        ? () => _markSelected(true)
-                        : () => setState(() => _shoppingMode = false),
-                icon: Icon(_selectionMode ? Icons.check : Icons.close),
-                label: Text(_selectionMode ? l10n.buy : l10n.exit),
-                backgroundColor:
-                    _shoppingMode
-                        ? theme.colorScheme.secondary
-                        : theme.colorScheme.primary,
-                foregroundColor:
-                    _shoppingMode
-                        ? theme.colorScheme.onSecondary
-                        : theme.colorScheme.onPrimary,
-              )
-              : null,
       bottomNavigationBar:
           _selectionMode
               ? SelectionBottomBar(
                 onCancel: _exitSelectionMode,
                 onDelete: _deleteSelected,
+                onBuy: () => _markSelected(true),
               )
               : Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  _CatalogEntryButton(listId: widget.listId),
-                  KipiQuickBar(listId: widget.listId),
+                  SafeArea(
+                    top: false,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (_shoppingMode)
+                          _ShoppingExitBar(
+                            onExit: () => setState(() => _shoppingMode = false),
+                          )
+                        else
+                          _CatalogEntryButton(listId: widget.listId),
+                        KipiQuickBar(listId: widget.listId),
+                      ],
+                    ),
+                  ),
                 ],
               ),
     );
@@ -667,20 +764,30 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     List<CategoryData> categories,
   ) async {
     final l10n = AppLocalizations.of(context)!;
-    final currencyCode = ref.read(currencySettingProvider).value ?? 'BRL';
-    final listName = (currentList?.name.trim().isNotEmpty ?? false)
-        ? currentList!.name.trim()
-        : l10n.shareListText;
+    final currencyCode = resolveCurrencyCode(
+      ref.read(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
+    final listName =
+        (currentList?.name.trim().isNotEmpty ?? false)
+            ? currentList!.name.trim()
+            : l10n.shareListText;
     final budget = currentList?.budget ?? 0.0;
-    final categoriesMap = {for (final c in categories) c.id: c.name};
+    final categoriesMap = {
+      for (final c in categories) c.id: c.localizedName(l10n),
+    };
 
     final pending = items.where((i) => !i.isPurchased).toList();
     final purchased = items.where((i) => i.isPurchased).toList();
 
     final totalEstimated = items.fold<double>(
-        0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+      0,
+      (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity,
+    );
     final totalPurchased = purchased.fold<double>(
-        0, (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity);
+      0,
+      (sum, i) => sum + (i.estimatedPrice ?? 0) * i.quantity,
+    );
 
     final primaryColor = PdfColor.fromHex('#388E3C');
     final headerBg = PdfColor.fromHex('#F5F5F5');
@@ -691,40 +798,52 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     final darkText = PdfColor.fromHex('#424242');
 
     pw.Widget buildTableHeader() => pw.Container(
-          color: headerBg,
-          padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-          child: pw.Row(
-            children: [
-              pw.SizedBox(width: 16),
-              pw.Expanded(
-                flex: 4,
-                child: pw.Text('ITEM',
-                    style: pw.TextStyle(
-                        fontSize: 9,
-                        fontWeight: pw.FontWeight.bold,
-                        color: darkText)),
+      color: headerBg,
+      padding: const pw.EdgeInsets.symmetric(
+        horizontal: Spacing.xs,
+        vertical: 6,
+      ),
+      child: pw.Row(
+        children: [
+          pw.SizedBox(width: Spacing.md),
+          pw.Expanded(
+            flex: 4,
+            child: pw.Text(
+              'ITEM',
+              style: pw.TextStyle(
+                fontSize: 9,
+                fontWeight: pw.FontWeight.bold,
+                color: darkText,
               ),
-              pw.SizedBox(
-                width: 60,
-                child: pw.Text('QTD',
-                    textAlign: pw.TextAlign.center,
-                    style: pw.TextStyle(
-                        fontSize: 9,
-                        fontWeight: pw.FontWeight.bold,
-                        color: darkText)),
-              ),
-              pw.SizedBox(
-                width: 70,
-                child: pw.Text('PREÇO EST.',
-                    textAlign: pw.TextAlign.right,
-                    style: pw.TextStyle(
-                        fontSize: 9,
-                        fontWeight: pw.FontWeight.bold,
-                        color: darkText)),
-              ),
-            ],
+            ),
           ),
-        );
+          pw.SizedBox(
+            width: 60,
+            child: pw.Text(
+              'QTD',
+              textAlign: pw.TextAlign.center,
+              style: pw.TextStyle(
+                fontSize: 9,
+                fontWeight: pw.FontWeight.bold,
+                color: darkText,
+              ),
+            ),
+          ),
+          pw.SizedBox(
+            width: 70,
+            child: pw.Text(
+              'PREÇO EST.',
+              textAlign: pw.TextAlign.right,
+              style: pw.TextStyle(
+                fontSize: 9,
+                fontWeight: pw.FontWeight.bold,
+                color: darkText,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
 
     List<pw.Widget> buildItemRows(List<ShoppingItem> list, bool muted) {
       final grouped = <String, List<ShoppingItem>>{};
@@ -735,72 +854,87 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
       var rowIndex = 0;
       for (final entry in grouped.entries) {
         final catName = categoriesMap[entry.key] ?? entry.key;
-        rows.add(pw.Container(
-          color: categoryBg,
-          padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          child: pw.Text(
-            catName.toUpperCase(),
-            style: pw.TextStyle(
+        rows.add(
+          pw.Container(
+            color: categoryBg,
+            padding: const pw.EdgeInsets.symmetric(
+              horizontal: Spacing.xs,
+              vertical: Spacing.xxs,
+            ),
+            child: pw.Text(
+              catName.toUpperCase(),
+              style: pw.TextStyle(
                 fontSize: 8,
                 fontWeight: pw.FontWeight.bold,
-                color: primaryColor),
+                color: primaryColor,
+              ),
+            ),
           ),
-        ));
+        );
         for (final item in entry.value) {
           final bg = rowIndex.isEven ? zebraColor : PdfColors.white;
           rowIndex++;
-          rows.add(pw.Container(
-            color: bg,
-            padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-            child: pw.Row(
-              children: [
-                pw.SizedBox(
-                  width: 16,
-                  child: pw.Text(
-                    item.isPurchased ? '☑' : '☐',
-                    style: pw.TextStyle(
-                        color: muted ? mutedText : PdfColors.black),
-                  ),
-                ),
-                pw.Expanded(
-                  flex: 4,
-                  child: pw.Text(
-                    item.name,
-                    style: pw.TextStyle(
-                      fontSize: 10,
-                      color: muted ? mutedText : PdfColors.black,
-                      decoration:
-                          muted ? pw.TextDecoration.lineThrough : null,
+          rows.add(
+            pw.Container(
+              color: bg,
+              padding: const pw.EdgeInsets.symmetric(
+                horizontal: Spacing.xs,
+                vertical: 5,
+              ),
+              child: pw.Row(
+                children: [
+                  pw.SizedBox(
+                    width: 16,
+                    child: pw.Text(
+                      item.isPurchased ? '☑' : '☐',
+                      style: pw.TextStyle(
+                        color: muted ? mutedText : PdfColors.black,
+                      ),
                     ),
                   ),
-                ),
-                pw.SizedBox(
-                  width: 60,
-                  child: pw.Text(
-                    '${item.quantity} ${item.unit.label}',
-                    textAlign: pw.TextAlign.center,
-                    style: pw.TextStyle(
+                  pw.Expanded(
+                    flex: 4,
+                    child: pw.Text(
+                      item.name,
+                      style: pw.TextStyle(
                         fontSize: 10,
-                        color: muted ? mutedText : PdfColors.black),
+                        color: muted ? mutedText : PdfColors.black,
+                        decoration:
+                            muted ? pw.TextDecoration.lineThrough : null,
+                      ),
+                    ),
                   ),
-                ),
-                pw.SizedBox(
-                  width: 70,
-                  child: pw.Text(
-                    item.estimatedPrice != null
-                        ? formatCurrency(
+                  pw.SizedBox(
+                    width: 60,
+                    child: pw.Text(
+                      '${item.quantity} ${item.unit.label}',
+                      textAlign: pw.TextAlign.center,
+                      style: pw.TextStyle(
+                        fontSize: 10,
+                        color: muted ? mutedText : PdfColors.black,
+                      ),
+                    ),
+                  ),
+                  pw.SizedBox(
+                    width: 70,
+                    child: pw.Text(
+                      item.estimatedPrice != null
+                          ? formatCurrency(
                             item.estimatedPrice! * item.quantity,
-                            currencyCode)
-                        : '—',
-                    textAlign: pw.TextAlign.right,
-                    style: pw.TextStyle(
+                            currencyCode,
+                          )
+                          : '—',
+                      textAlign: pw.TextAlign.right,
+                      style: pw.TextStyle(
                         fontSize: 10,
-                        color: muted ? mutedText : PdfColors.black),
+                        color: muted ? mutedText : PdfColors.black,
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ));
+          );
         }
       }
       return rows;
@@ -815,114 +949,131 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     pdf.addPage(
       pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
-        margin: const pw.EdgeInsets.all(32),
-        build: (context) => [
-          pw.Container(
-            decoration: pw.BoxDecoration(
-              color: primaryColor,
-              borderRadius: pw.BorderRadius.circular(8),
-            ),
-            padding: const pw.EdgeInsets.all(20),
-            child: pw.Column(
-              crossAxisAlignment: pw.CrossAxisAlignment.start,
-              children: [
-                pw.Text(
-                  listName,
-                  style: pw.TextStyle(
-                      fontSize: 22,
-                      fontWeight: pw.FontWeight.bold,
-                      color: PdfColors.white),
+        margin: const pw.EdgeInsets.all(Spacing.xl),
+        build:
+            (context) => [
+              pw.Container(
+                decoration: pw.BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: pw.BorderRadius.circular(RadiusTokens.sm),
                 ),
-                pw.SizedBox(height: 4),
-                pw.Text(
-                  '$exportDate  ·  ${items.length} itens  ·  ${purchased.length} comprados',
-                  style: const pw.TextStyle(fontSize: 10, color: PdfColors.white),
+                padding: const pw.EdgeInsets.all(20),
+                child: pw.Column(
+                  crossAxisAlignment: pw.CrossAxisAlignment.start,
+                  children: [
+                    pw.Text(
+                      listName,
+                      style: pw.TextStyle(
+                        fontSize: 22,
+                        fontWeight: pw.FontWeight.bold,
+                        color: PdfColors.white,
+                      ),
+                    ),
+                    pw.SizedBox(height: Spacing.xxs),
+                    pw.Text(
+                      '$exportDate  ·  ${items.length} itens  ·  ${purchased.length} comprados',
+                      style: const pw.TextStyle(
+                        fontSize: 10,
+                        color: PdfColors.white,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          pw.SizedBox(height: 12),
-          if (budget > 0) ...[
-            pw.Container(
-              decoration: pw.BoxDecoration(
-                border: pw.Border.all(color: dividerColor),
-                borderRadius: pw.BorderRadius.circular(6),
               ),
-              padding:
-                  const pw.EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              child: pw.Row(
+              pw.SizedBox(height: Spacing.sm),
+              if (budget > 0) ...[
+                pw.Container(
+                  decoration: pw.BoxDecoration(
+                    border: pw.Border.all(color: dividerColor),
+                    borderRadius: pw.BorderRadius.circular(RadiusTokens.xs),
+                  ),
+                  padding: const pw.EdgeInsets.symmetric(
+                    horizontal: Spacing.md,
+                    vertical: 10,
+                  ),
+                  child: pw.Row(
+                    mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                    children: [
+                      pw.Text(
+                        'Orçamento: ${formatCurrency(budget, currencyCode)}',
+                        style: const pw.TextStyle(fontSize: 10),
+                      ),
+                      pw.Text(
+                        'Gasto: ${formatCurrency(totalPurchased, currencyCode)}',
+                        style: pw.TextStyle(
+                          fontSize: 10,
+                          fontWeight: pw.FontWeight.bold,
+                          color:
+                              totalPurchased > budget
+                                  ? PdfColors.red
+                                  : primaryColor,
+                        ),
+                      ),
+                      pw.Text(
+                        'Saldo: ${formatCurrency(budget - totalPurchased, currencyCode)}',
+                        style: const pw.TextStyle(fontSize: 10),
+                      ),
+                    ],
+                  ),
+                ),
+                pw.SizedBox(height: Spacing.sm),
+              ],
+              if (pending.isNotEmpty) ...[
+                pw.Text(
+                  'PENDENTES (${pending.length})',
+                  style: pw.TextStyle(
+                    fontSize: 11,
+                    fontWeight: pw.FontWeight.bold,
+                  ),
+                ),
+                pw.SizedBox(height: 6),
+                buildTableHeader(),
+                ...buildItemRows(pending, false),
+                pw.SizedBox(height: Spacing.md),
+              ],
+              if (purchased.isNotEmpty) ...[
+                pw.Text(
+                  'COMPRADOS (${purchased.length})',
+                  style: pw.TextStyle(
+                    fontSize: 11,
+                    fontWeight: pw.FontWeight.bold,
+                    color: mutedText,
+                  ),
+                ),
+                pw.SizedBox(height: 6),
+                buildTableHeader(),
+                ...buildItemRows(purchased, true),
+                pw.SizedBox(height: Spacing.md),
+              ],
+              pw.Divider(),
+              pw.SizedBox(height: Spacing.xxs),
+              pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
                   pw.Text(
-                      'Orçamento: ${formatCurrency(budget, currencyCode)}',
-                      style: const pw.TextStyle(fontSize: 10)),
-                  pw.Text(
-                    'Gasto: ${formatCurrency(totalPurchased, currencyCode)}',
+                    'Total estimado: ${formatCurrency(totalEstimated, currencyCode)}',
                     style: pw.TextStyle(
                       fontSize: 10,
                       fontWeight: pw.FontWeight.bold,
-                      color: totalPurchased > budget
-                          ? PdfColors.red
-                          : primaryColor,
                     ),
                   ),
                   pw.Text(
-                      'Saldo: ${formatCurrency(budget - totalPurchased, currencyCode)}',
-                      style: const pw.TextStyle(fontSize: 10)),
+                    'Total comprado: ${formatCurrency(totalPurchased, currencyCode)}',
+                    style: pw.TextStyle(
+                      fontSize: 10,
+                      fontWeight: pw.FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
-            ),
-            pw.SizedBox(height: 12),
-          ],
-          if (pending.isNotEmpty) ...[
-            pw.Text(
-              'PENDENTES (${pending.length})',
-              style:
-                  pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold),
-            ),
-            pw.SizedBox(height: 6),
-            buildTableHeader(),
-            ...buildItemRows(pending, false),
-            pw.SizedBox(height: 16),
-          ],
-          if (purchased.isNotEmpty) ...[
-            pw.Text(
-              'COMPRADOS (${purchased.length})',
-              style: pw.TextStyle(
-                  fontSize: 11,
-                  fontWeight: pw.FontWeight.bold,
-                  color: mutedText),
-            ),
-            pw.SizedBox(height: 6),
-            buildTableHeader(),
-            ...buildItemRows(purchased, true),
-            pw.SizedBox(height: 16),
-          ],
-          pw.Divider(),
-          pw.SizedBox(height: 4),
-          pw.Row(
-            mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-            children: [
-              pw.Text(
-                'Total estimado: ${formatCurrency(totalEstimated, currencyCode)}',
-                style: pw.TextStyle(
-                    fontSize: 10, fontWeight: pw.FontWeight.bold),
-              ),
-              pw.Text(
-                'Total comprado: ${formatCurrency(totalPurchased, currencyCode)}',
-                style: pw.TextStyle(
-                    fontSize: 10, fontWeight: pw.FontWeight.bold),
+              pw.SizedBox(height: 6),
+              pw.Center(
+                child: pw.Text(
+                  'Gerado por Kipi List',
+                  style: pw.TextStyle(fontSize: 8, color: mutedText),
+                ),
               ),
             ],
-          ),
-          pw.SizedBox(height: 6),
-          pw.Center(
-            child: pw.Text(
-              'Gerado por Kipi List',
-              style: pw.TextStyle(fontSize: 8, color: mutedText),
-            ),
-          ),
-        ],
       ),
     );
 
@@ -1012,7 +1163,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
       isScrollControlled: true,
       builder:
           (context) => Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(Spacing.md),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1023,7 +1174,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: Spacing.md),
                 ListTile(
                   leading: const Icon(Icons.group_add),
                   title: Text(l10n.inviteToList),
@@ -1049,6 +1200,44 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
   }
 }
 
+class _ShoppingExitBar extends StatelessWidget {
+  const _ShoppingExitBar({required this.onExit});
+  final VoidCallback onExit;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(
+        Spacing.sm,
+        Spacing.sm,
+        Spacing.sm,
+        0,
+      ),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        border: Border(
+          top: BorderSide(
+            color: theme.colorScheme.outlineVariant.withAlpha(90),
+          ),
+        ),
+      ),
+      child: OutlinedButton.icon(
+        onPressed: onExit,
+        icon: const Icon(Icons.close, size: 18),
+        label: Text(l10n.exit),
+        style: OutlinedButton.styleFrom(
+          minimumSize: const Size.fromHeight(40),
+          foregroundColor: theme.colorScheme.secondary,
+          side: BorderSide(color: theme.colorScheme.secondary.withAlpha(100)),
+        ),
+      ),
+    );
+  }
+}
+
 class _CatalogEntryButton extends ConsumerWidget {
   const _CatalogEntryButton({required this.listId});
   final String listId;
@@ -1060,25 +1249,42 @@ class _CatalogEntryButton extends ConsumerWidget {
     final locale = Localizations.localeOf(context);
     final offCountryTag = localeCountryToOffTag(locale.countryCode);
 
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
-      child: OutlinedButton.icon(
-        onPressed:
-            () => Navigator.push<void>(
-              context,
-              MaterialPageRoute(
-                builder:
-                    (_) => CatalogHomeScreen(
-                      listId: listId,
-                      offCountryTag: offCountryTag,
-                    ),
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(
+        Spacing.sm,
+        Spacing.sm,
+        Spacing.sm,
+        0,
+      ),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        border: Border(
+          top: BorderSide(
+            color: theme.colorScheme.outlineVariant.withAlpha(90),
+          ),
+        ),
+      ),
+      child: TactileContainer(
+        passThrough: true,
+        child: OutlinedButton.icon(
+          onPressed:
+              () => Navigator.push<void>(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (_) => CatalogHomeScreen(
+                        listId: listId,
+                        offCountryTag: offCountryTag,
+                      ),
+                ),
               ),
-            ),
-        icon: const Icon(Icons.grid_view_rounded, size: 18),
-        label: Text(l10n.catalogBrowse),
-        style: OutlinedButton.styleFrom(
-          minimumSize: const Size.fromHeight(40),
-          foregroundColor: theme.colorScheme.primary,
+          icon: const Icon(Icons.grid_view_rounded, size: 18),
+          label: Text(l10n.catalogBrowse),
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size.fromHeight(40),
+            foregroundColor: theme.colorScheme.primary,
+          ),
         ),
       ),
     );

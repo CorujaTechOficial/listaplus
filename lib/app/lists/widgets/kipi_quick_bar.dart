@@ -8,15 +8,20 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:uuid/uuid.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
-import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
 
 class KipiQuickBar extends ConsumerStatefulWidget {
-  const KipiQuickBar({super.key, required this.listId});
+  const KipiQuickBar({
+    super.key,
+    required this.listId,
+    this.leading,
+    this.trailing,
+  });
 
   final String listId;
+  final Widget? leading;
+  final Widget? trailing;
 
   @override
   ConsumerState<KipiQuickBar> createState() => _KipiQuickBarState();
@@ -103,14 +108,6 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
       _isAdding = true;
     });
     final newId = const Uuid().v4();
-    final newItem = ShoppingItem(
-      id: newId,
-      shoppingListId: widget.listId,
-      name: text,
-      quantity: 1,
-      categoryId: 'others',
-      unit: Unit.un,
-    );
     _controller.clear();
     try {
       await ref
@@ -123,26 +120,6 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
             categoryId: 'others',
             unit: Unit.un,
           );
-      if (mounted) {
-        final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.itemAddedSnack(text)),
-            action: SnackBarAction(
-              label: l10n.edit,
-              onPressed: () {
-                showDialog<void>(
-                  context: context,
-                  builder: (_) => EditItemDialog(
-                    listId: widget.listId,
-                    item: newItem,
-                  ),
-                );
-              },
-            ),
-          ),
-        );
-      }
     } on Exception catch (e) {
       debugPrint('Quick add failed: $e');
       if (mounted) {
@@ -163,7 +140,11 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
     final isDark = theme.brightness == Brightness.dark;
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.sm),
+      key: const ValueKey('list_bottom_action_shell'),
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.sm,
+        vertical: Spacing.sm,
+      ),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         border: Border(
@@ -173,53 +154,62 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
           ),
         ),
       ),
-      child: SafeArea(
-        top: false,
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                controller: _controller,
-                focusNode: _focusNode,
-                decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.kipiQuickBarHint,
-                  hintStyle: TextStyle(
-                    color: theme.colorScheme.primary.withAlpha(180),
-                    fontSize: 14,
-                  ),
-                  filled: true,
-                  fillColor: isDark
-                      ? theme.colorScheme.primaryContainer.withAlpha(40)
-                      : theme.colorScheme.primaryContainer.withAlpha(60),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(RadiusTokens.full),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: Spacing.md,
-                    vertical: Spacing.xs,
-                  ),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _isListening ? Icons.mic : Icons.mic_none,
-                      color: _isListening
-                          ? theme.colorScheme.error
-                          : theme.colorScheme.primary,
-                      size: 20,
-                    ),
-                    onPressed: _listen,
-                    visualDensity: VisualDensity.compact,
-                  ),
-                ),
-                textInputAction: TextInputAction.send,
-                onSubmitted: (_) => _send(),
-              ),
-            ),
+      child: Row(
+        children: [
+          if (widget.leading != null) ...[
+            widget.leading!,
             const SizedBox(width: Spacing.xs),
-            IconButton.filled(
-              onPressed: _isAdding ? null : _send,
-              icon: _isAdding
-                  ? SizedBox(
+          ],
+          Expanded(
+            child: TextField(
+              controller: _controller,
+              focusNode: _focusNode,
+              decoration: InputDecoration(
+                hintText: AppLocalizations.of(context)!.kipiQuickBarHint,
+                hintStyle: TextStyle(
+                  color: theme.colorScheme.primary.withAlpha(180),
+                  fontSize: 14,
+                ),
+                filled: true,
+                fillColor:
+                    isDark
+                        ? theme.colorScheme.primaryContainer.withAlpha(40)
+                        : theme.colorScheme.primaryContainer.withAlpha(60),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(RadiusTokens.full),
+                  borderSide: BorderSide.none,
+                ),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: Spacing.md,
+                  vertical: Spacing.xs,
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    _isListening ? Icons.mic : Icons.mic_none,
+                    color:
+                        _isListening
+                            ? theme.colorScheme.error
+                            : theme.colorScheme.primary,
+                    size: 20,
+                  ),
+                  onPressed: _listen,
+                  visualDensity: VisualDensity.compact,
+                ),
+              ),
+              textInputAction: TextInputAction.send,
+              onSubmitted: (_) => _send(),
+            ),
+          ),
+          const SizedBox(width: Spacing.xs),
+          if (widget.trailing != null) ...[
+            widget.trailing!,
+            const SizedBox(width: Spacing.xs),
+          ],
+          IconButton.filled(
+            onPressed: _isAdding ? null : _send,
+            icon:
+                _isAdding
+                    ? SizedBox(
                       width: 18,
                       height: 18,
                       child: CircularProgressIndicator(
@@ -227,14 +217,9 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
                         color: theme.colorScheme.onPrimary,
                       ),
                     )
-                  : const Icon(
-                      Icons.arrow_upward,
-                      size: 20,
-                    ),
-            ),
-
-          ],
-        ),
+                    : const Icon(Icons.arrow_upward, size: 20),
+          ),
+        ],
       ),
     ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.15, end: 0);
   }
