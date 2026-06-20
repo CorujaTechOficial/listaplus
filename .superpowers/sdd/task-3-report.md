@@ -1,157 +1,118 @@
-# Task 3 Report: Stable Bottom Action Region
+# Task 3 Report: Expose Planner Summary Data Through Providers
 
 ## Scope
 
-Implemented only the requested surface:
+- Updated `lib/app/meal_planner/providers/meal_planner_providers.dart`
+- Updated `test/app/meal_planner/providers/meal_planner_providers_test.dart`
+- Regenerated `lib/app/meal_planner/providers/meal_planner_providers.g.dart` and verified it already matched the current generated output, so no additional diff remained
 
-- `lib/app/lists/widgets/kipi_quick_bar.dart`
-- `lib/app/lists/widgets/selection_bottom_bar.dart`
-- `lib/app/lists/list_screen_body.dart`
-- `test/app/lists/widgets/list_bottom_action_region_test.dart`
+## What Changed
 
-I did not modify provider/backend contracts or start the Task 4 summary/body relayout.
+- Added `recipeCostDetailsProvider(String recipeId)` to expose `RecipeCostDetails?` derived from `recipesProvider`
+- Added `mealPlannerDayCostMapProvider({required DateTime start, required DateTime end})` to bucket meal plans by normalized day and aggregate:
+  - `totalCost`
+  - `mealCount`
+  - `hasPartialPricing`
+- Added `mealPlannerSummaryProvider(...)` to expose:
+  - `todayCost`
+  - `weekCost`
+  - `plannedMonthCost`
+  - `projectedMonthCost`
+  - `weekHasPartialPricing`
+  - `monthHasPartialPricing`
+- Reused Task 2 helpers:
+  - `calculateRecipeCostDetails`
+  - `calculatePlannedMealCost`
 
-## What changed
+## TDD Record
 
-### 1. Shared bottom-region shell in the quick bar
+1. Added failing provider tests first for:
+   - recipe cost lookup
+   - day cost aggregation
+   - planner summary aggregation
+2. Ran:
 
-In [lib/app/lists/widgets/kipi_quick_bar.dart](/Users/absondutragalvao/corujatech%20projetos/shopping_list/lib/app/lists/widgets/kipi_quick_bar.dart:14):
+```sh
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
+```
 
-- Added optional `leading` and `trailing` slots to `KipiQuickBar`.
-- Added a shared shell key: `ValueKey('list_bottom_action_shell')`.
-- Kept the existing quick-add field and submit button behavior intact.
-- Removed the widget-level `SafeArea` so the screen-level bottom region can own inset handling consistently.
-
-Result: normal and shopping states can now compose auxiliary controls into the same visual family as quick add instead of building disconnected bars.
-
-### 2. Selection mode moved off `BottomAppBar`
-
-In [lib/app/lists/widgets/selection_bottom_bar.dart](/Users/absondutragalvao/corujatech%20projetos/shopping_list/lib/app/lists/widgets/selection_bottom_bar.dart:6):
-
-- Replaced the independent `BottomAppBar` root with a `SafeArea` + tonal `Container`.
-- Matched the quick bar’s surface and top-border treatment.
-- Preserved localized actions and upgraded the layout to:
-  - cancel
-  - delete
-  - buy
-
-Result: selection mode now reads as the same bottom action system rather than a different component family.
-
-### 3. Stable bottom-region composition in the list screen
-
-In [lib/app/lists/list_screen_body.dart](/Users/absondutragalvao/corujatech%20projetos/shopping_list/lib/app/lists/list_screen_body.dart:724):
-
-- Collapsed the normal/shopping bottom branching into one `SafeArea`-owned region.
-- Kept the state split limited to the upper auxiliary strip:
-  - normal: `_CatalogEntryButton`
-  - shopping: `_ShoppingExitBar`
-  - both followed by `KipiQuickBar`
-- Restyled `_CatalogEntryButton` and `_ShoppingExitBar` to use the same surface tone and top-border treatment as the quick bar.
-
-Result: the bottom region is structurally stable across normal and shopping states, with selection mode visually aligned to that same family.
-
-## Tests
-
-Created [test/app/lists/widgets/list_bottom_action_region_test.dart](/Users/absondutragalvao/corujatech%20projetos/shopping_list/test/app/lists/widgets/list_bottom_action_region_test.dart:1) with localization-safe assertions:
-
-- `selection bar uses the shared bottom action shell`
-- `quick bar exposes leading and trailing shell slots`
-
-These tests assert structure and composition rather than English copy.
+3. Confirmed RED state with missing provider symbols:
+   - `recipeCostDetailsProvider`
+   - `mealPlannerDayCostMapProvider`
+   - `mealPlannerSummaryProvider`
+4. Implemented the providers
+5. Ran build runner and reran the focused suite to GREEN
 
 ## Verification
 
-Ran fresh verification after implementation:
+Focused provider suite:
 
-```bash
-flutter analyze lib/app/lists/widgets/kipi_quick_bar.dart lib/app/lists/widgets/selection_bottom_bar.dart lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart
-flutter test test/app/lists/widgets/list_bottom_action_region_test.dart
+```sh
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
 ```
 
-Observed results:
+Result: passed (`5` tests)
 
-- `flutter analyze`: `No issues found!`
-- `flutter test`: `2 tests passed`
+Full suite:
 
-## Self-review
+```sh
+flutter test
+```
 
-- Verified the new test failed first because `KipiQuickBar` lacked the slot API.
-- Caught and fixed a bad token reference (`Spacing.none`) during fresh verification.
-- Kept visible strings on existing localization paths only.
-- Kept scope away from header/body Task 4 work.
+Result: passed (`181` tests)
+
+Build runner:
+
+```sh
+dart run build_runner build --delete-conflicting-outputs
+```
+
+Result: exit `0` with a warning that `--delete-conflicting-outputs` was ignored by this installed toolchain
+
+## Self-Review
+
+- Provider responsibilities stayed focused on orchestration and aggregation
+- Cost math was not duplicated; all pricing calculations go through Task 2 helpers
+- Day bucketing normalizes timestamps to calendar dates before aggregation
+- Missing recipes are ignored for cost accumulation while preserving the planned meal count for that day
+- No changes were made outside the task-owned files
 
 ## Concerns
 
-- `list_screen_body.dart` already contains substantial in-flight changes outside Task 3. I adjusted only the bottom-region composition within that file and did not revert surrounding work.
+- `meal_planner_providers.dart` and the test file already had unrelated worktree changes before this task. I did not revert them.
+- `meal_planner_providers.g.dart` was regenerated successfully, but the generated content already matched the worktree, so there was no new diff to stage for that file.
 
----
+## Review Fix Follow-up
 
-## Task 3 Review Fixes (2026-06-20)
+### Fix Applied
 
-### Scope
+- Updated `mealPlannerDayCostMap` so an unresolved `recipeId` marks that day as `hasPartialPricing: true`
+- Updated focused provider tests to require partial-estimate behavior for missing recipe data
+- Verified summary providers now propagate the partial state through `weekHasPartialPricing` and `monthHasPartialPricing`
 
-Kept the write set limited to:
+### Commands Run
 
-- `lib/app/lists/widgets/kipi_quick_bar.dart`
-- `lib/app/lists/widgets/selection_bottom_bar.dart`
-- `lib/app/lists/list_screen_body.dart`
-- `test/app/lists/widgets/list_bottom_action_region_test.dart`
-
-### Fixes applied
-
-- Restored the pre-Task-3 quick-add success affordance in `KipiQuickBar` without removing the new `leading` / `trailing` slot API:
-  - localized success snackbar
-  - localized `Edit` action
-  - `EditItemDialog` launch using the newly created item payload
-- Reduced `ListScreenBody` back to bottom-region scope by neutralizing Task 3 screen/body relayout changes that were not required for bottom-region stabilization:
-  - removed Task 3 category-grouping/body composition changes
-  - restored the pre-Task-3 app-bar/body structure outside the bottom region
-  - kept the shared bottom-region composition and shopping/selection bottom actions intact
-- Reworked `list_bottom_action_region_test.dart` so it proves screen-level composition decisions directly:
-  - `ListScreenBody` normal mode shows the catalog entry + quick shell
-  - `ListScreenBody` shopping mode swaps the catalog entry for the exit strip while preserving the quick shell
-  - `SelectionBottomBar` still verifies the shared shell contract
-  - `KipiQuickBar` regression test verifies the snackbar + edit affordance
-
-### Verification
-
-Ran fresh focused verification after the fixes:
-
-```bash
-flutter analyze lib/app/lists/widgets/kipi_quick_bar.dart lib/app/lists/widgets/selection_bottom_bar.dart lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart
-flutter test test/app/lists/widgets/list_bottom_action_region_test.dart
+```sh
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
+flutter test
 ```
 
-Observed results:
+### Relevant Passing Output
 
-- `flutter analyze`: `No issues found!`
-- `flutter test`: `3 tests passed`
+Focused provider suite:
 
-### Commit
+```text
+00:00 +5: All tests passed!
+```
 
-- Pending in workspace at report time; committed immediately after this append.
+Full suite:
 
-## Final fix appended
+```text
+00:14 +181: All tests passed!
+```
 
-Restored manual reorder behavior for pending items in `list_screen_body.dart` by switching the pending sliver back to `SliverReorderableList` when `_sort == SortType.manual`. Kept the non-manual fallback on `SliverList` and left the Task 2 summary/header deviation untouched.
+### Files Changed
 
-### Verification
-
-- `flutter analyze lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart`
-- `flutter test test/app/lists/widgets/list_bottom_action_region_test.dart`
-
-### Final blocker fix (manual reorder)
-
-- Restored `dragHandleIndex` on the `ShoppingItemTile` instances built through the `SliverReorderableList` path so pending items expose `ReorderableDragStartListener` again in manual sort mode.
-- Replaced the raw pending-slice reorder passthrough with a scoped index mapper in `list_screen_body.dart`:
-  - the reorder callback now translates pending-subset indices into the full-list indices expected by `ShoppingListItems.reorderItem(...)`
-  - no-op drops still map to no-op full-list moves
-  - pending-item order now updates correctly even when purchased items are interleaved in the backing list
-- Added a focused regression guard in `test/app/lists/widgets/list_bottom_action_region_test.dart` that:
-  - verifies drag handles are present for pending manual-sort tiles
-  - invokes the reorder callback directly and asserts the mapped full-list indices for a pending/purchased/pending case
-
-### Final verification
-
-- `flutter analyze lib/app/lists/list_screen_body.dart test/app/lists/widgets/list_bottom_action_region_test.dart` → `No issues found!`
-- `flutter test test/app/lists/widgets/list_bottom_action_region_test.dart` → `4 tests passed`
+- `lib/app/meal_planner/providers/meal_planner_providers.dart`
+- `test/app/meal_planner/providers/meal_planner_providers_test.dart`
+- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged

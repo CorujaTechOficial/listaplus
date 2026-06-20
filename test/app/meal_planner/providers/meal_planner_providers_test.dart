@@ -310,13 +310,13 @@ void main() {
             .having(
               (data) => data.hasPartialPricing,
               'hasPartialPricing',
-              isFalse,
+              isTrue,
             ),
       );
     });
 
     test(
-      'mealPlannerSummaryProvider returns week, planned month, and projected month totals',
+      'mealPlannerSummaryProvider marks missing recipe data as a partial estimate',
       () async {
         final weekStart = DateTime(2026, 6, 15);
         final weekEnd = DateTime(2026, 6, 21);
@@ -332,9 +332,9 @@ void main() {
           ),
           MealPlan(
             date: DateTime(2026, 6, 21),
-            recipeId: 'r2',
-            recipeName: 'Dinner',
-            servings: 1,
+            recipeId: 'missing',
+            recipeName: 'Missing',
+            servings: 3,
           ),
         ];
 
@@ -347,28 +347,6 @@ void main() {
             instructions: const <String>['Cook'],
             yieldServings: 4,
             manualTotalCost: 40,
-          ),
-          Recipe(
-            id: 'r2',
-            name: 'Dinner',
-            description: 'Desc',
-            ingredients: <ShoppingItem>[
-              ShoppingItem(
-                name: 'Tomato',
-                quantity: 1,
-                estimatedPrice: 12,
-                shoppingListId: 'list1',
-                categoryId: 'cat1',
-              ),
-              ShoppingItem(
-                name: 'Onion',
-                quantity: 1,
-                shoppingListId: 'list1',
-                categoryId: 'cat1',
-              ),
-            ],
-            instructions: const <String>['Cook'],
-            yieldServings: 2,
           ),
         ];
 
@@ -395,11 +373,11 @@ void main() {
         );
 
         expect(summary.todayCost, 20);
-        expect(summary.weekCost, 26);
-        expect(summary.plannedMonthCost, 26);
-        expect(summary.projectedMonthCost, closeTo(111.43, 0.01));
+        expect(summary.weekCost, 20);
+        expect(summary.plannedMonthCost, 20);
         expect(summary.weekHasPartialPricing, isTrue);
         expect(summary.monthHasPartialPricing, isTrue);
+        expect(summary.projectedMonthCost, closeTo(85.71, 0.01));
       },
     );
   });

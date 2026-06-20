@@ -325,6 +325,7 @@ Future<Map<DateTime, DayMealCostData>> mealPlannerDayCostMap(
     for (final plan in dayPlans) {
       final recipe = recipeById[plan.recipeId];
       if (recipe == null) {
+        hasPartialPricing = true;
         continue;
       }
 
