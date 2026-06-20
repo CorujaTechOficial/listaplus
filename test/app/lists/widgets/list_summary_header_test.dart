@@ -84,7 +84,6 @@ void main() {
   testWidgets('expands to reveal filters and sort controls', (tester) async {
     await tester.pumpWidget(buildSubject(budget: 100));
     await tester.pumpAndSettle();
-    final l10n = l10nFor(tester);
 
     expect(find.byType(FilterChip), findsNothing);
     expect(find.byType(ActionChip), findsNothing);
@@ -93,7 +92,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(FilterChip), findsNWidgets(3));
-    expect(find.byIcon(Icons.sort), findsOneWidget);
+    expect(find.byType(ActionChip), findsOneWidget);
   });
 
   testWidgets('hides budget details when budget is zero', (tester) async {
