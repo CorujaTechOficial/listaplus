@@ -185,3 +185,34 @@ Full suite:
 - `lib/app/meal_planner/providers/meal_planner_providers.dart`
 - `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged after regeneration
 - `test/app/meal_planner/providers/meal_planner_providers_test.dart` unchanged
+
+## Packaging Fix Follow-up
+
+### Fix Applied
+
+- Added `lib/app/meal_planner/providers/meal_planner_providers.g.dart` to git tracking so the Task 3 package includes the generated Riverpod provider symbols in the reviewed commit range
+
+### Commands Run
+
+```sh
+dart run build_runner build --delete-conflicting-outputs
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
+```
+
+### Relevant Successful Output
+
+Build runner:
+
+```text
+Built with build_runner/aot in 1s; wrote 0 outputs.
+```
+
+Focused provider suite:
+
+```text
+00:00 +6: All tests passed!
+```
+
+### Files Changed
+
+- `lib/app/meal_planner/providers/meal_planner_providers.g.dart`
