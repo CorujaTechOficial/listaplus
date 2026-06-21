@@ -120,7 +120,6 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
       categoryId: 'others',
       unit: Unit.un,
     );
-    _controller.clear();
     try {
       await ref
           .read(shoppingListItemsProvider(widget.listId).notifier)
@@ -132,6 +131,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
             categoryId: 'others',
             unit: Unit.un,
           );
+      _controller.clear();
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
         showKipiSnackBar(
@@ -155,9 +155,6 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
       }
     } on Exception catch (e) {
       debugPrint('Quick add failed: $e');
-      if (mounted) {
-        _controller.text = text;
-      }
     } finally {
       if (mounted) {
         setState(() {
@@ -218,7 +215,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
                 ),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _isListening ? PhosphorIconsRegular.microphone : PhosphorIconsRegular.microphone,
+                    _isListening ? PhosphorIconsRegular.stop : PhosphorIconsRegular.microphone,
                     color:
                         _isListening
                             ? theme.colorScheme.error
