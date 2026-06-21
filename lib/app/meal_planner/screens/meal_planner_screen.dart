@@ -6,12 +6,15 @@ import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.
 import 'package:shopping_list/app/meal_planner/widgets/add_meal_plan_sheet.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_day_card.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_type_chip.dart';
+import 'package:shopping_list/app/meal_planner/widgets/budget_summary_card.dart';
 import 'package:shopping_list/app/meal_planner/widgets/weekly_summary_bar.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
-import 'package:shopping_list/app/shared/widgets/kipi_fab.dart';
+import 'meal_types_screen.dart';
 
 class MealPlannerScreen extends ConsumerStatefulWidget {
   const MealPlannerScreen({super.key});
@@ -26,13 +29,16 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
 
   // ----- Helpers -------------------------------------------------------
 
-  DateTime get _weekStart =>
-      _focusedDay.subtract(Duration(days: _focusedDay.weekday - 1));
+  DateTime get _weekStart {
+    final startDay = MaterialLocalizations.of(context).firstDayOfWeekIndex;
+    final dayInSundayIndexSystem = _focusedDay.weekday % 7;
+    final diff = (dayInSundayIndexSystem - startDay + 7) % 7;
+    return _focusedDay.subtract(Duration(days: diff));
+  }
 
   DateTime get _weekEnd => _weekStart.add(const Duration(days: 6));
 
-  DateTime get _monthStart =>
-      DateTime(_focusedDay.year, _focusedDay.month, 1);
+  DateTime get _monthStart => DateTime(_focusedDay.year, _focusedDay.month, 1);
 
   DateTime get _monthEnd =>
       DateTime(_focusedDay.year, _focusedDay.month + 1, 0);
@@ -81,21 +87,22 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
     // Confirmation dialog
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (ctx) => AlertDialog(
-        icon: const Icon(Icons.shopping_cart_rounded),
-        title: Text(l10n.mealPlannerGenerateList),
-        content: Text(l10n.mealPlannerGenerateListConfirm),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(false),
-            child: Text(l10n.cancel),
+      builder:
+          (ctx) => AlertDialog(
+            icon: const Icon(Icons.shopping_cart_rounded),
+            title: Text(l10n.mealPlannerGenerateList),
+            content: Text(l10n.mealPlannerGenerateListConfirm),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(ctx).pop(false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.of(ctx).pop(true),
+                child: Text(l10n.add),
+              ),
+            ],
           ),
-          FilledButton(
-            onPressed: () => Navigator.of(ctx).pop(true),
-            child: Text(l10n.add),
-          ),
-        ],
-      ),
     );
 
     if (confirmed != true || !mounted) {
@@ -103,9 +110,10 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
     }
 
     try {
-      final count = await ref
-          .read(mealPlansProvider(start: _start, end: _end).notifier)
-          .generateShoppingListFromWeek();
+      final count =
+          await ref
+              .read(mealPlansProvider(start: _start, end: _end).notifier)
+              .generateShoppingListFromWeek();
 
       if (!mounted) {
         return;
@@ -127,21 +135,24 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
       if (!mounted) {
         return;
       }
-      final message = e.toString().contains('no_list')
-          ? l10n.mealPlannerGenerateListNoList
-          : l10n.mealPlannerError;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(message)),
-      );
+      final message =
+          e.toString().contains('no_list')
+              ? l10n.mealPlannerGenerateListNoList
+              : l10n.mealPlannerError;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
     }
   }
 
   void _shareApp() {
     final l10n = AppLocalizations.of(context)!;
-    SharePlus.instance.share(ShareParams(
-      text: l10n.shareReferralText('https://kipilist.com/invite'),
-      subject: l10n.shareReferralSubject,
-    ));
+    SharePlus.instance.share(
+      ShareParams(
+        text: l10n.shareReferralText('https://kipilist.com/invite'),
+        subject: l10n.shareReferralSubject,
+      ),
+    );
   }
 
   // ----- Build ---------------------------------------------------------
@@ -150,8 +161,9 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
-    final mealPlansAsync =
-        ref.watch(mealPlansProvider(start: _start, end: _end));
+    final mealPlansAsync = ref.watch(
+      mealPlansProvider(start: _start, end: _end),
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -161,6 +173,11 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
         ),
         title: Text(l10n.mealPlannerTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings_suggest_outlined),
+            onPressed: () => MealTypesScreen.show(context),
+            tooltip: l10n.mealPlannerManageTypes,
+          ),
           IconButton(
             icon: const Icon(Icons.share),
             onPressed: _shareApp,
@@ -181,9 +198,10 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
                   : Icons.calendar_view_week_rounded,
             ),
             onPressed: () => setState(() => _isWeekly = !_isWeekly),
-            tooltip: _isWeekly
-                ? l10n.mealPlannerViewMonthly
-                : l10n.mealPlannerViewWeekly,
+            tooltip:
+                _isWeekly
+                    ? l10n.mealPlannerViewMonthly
+                    : l10n.mealPlannerViewWeekly,
           ),
         ],
       ),
@@ -191,130 +209,144 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
         child: Column(
           children: [
             _CalendarHeader(
-            focusedDay: _focusedDay,
-            isWeekly: _isWeekly,
-            onPrev: () => setState(() {
-              _focusedDay = _isWeekly
-                  ? _focusedDay.subtract(const Duration(days: 7))
-                  : DateTime(_focusedDay.year, _focusedDay.month - 1, 1);
-            }),
-            onNext: () => setState(() {
-              _focusedDay = _isWeekly
-                  ? _focusedDay.add(const Duration(days: 7))
-                  : DateTime(_focusedDay.year, _focusedDay.month + 1, 1);
-            }),
-            onToday: () => setState(() => _focusedDay = DateTime.now()),
-          ),
-          Expanded(
-            child: mealPlansAsync.when(
-              data: (plans) {
-                return AnimatedSwitcher(
-                  duration: DurationTokens.normal,
-                  transitionBuilder: (child, animation) => FadeTransition(
-                    opacity: animation,
-                    child: SlideTransition(
-                      position: Tween<Offset>(
-                        begin: const Offset(0.05, 0),
-                        end: Offset.zero,
-                      ).animate(animation),
-                      child: child,
+              focusedDay: _focusedDay,
+              isWeekly: _isWeekly,
+              onPrev:
+                  () => setState(() {
+                    _focusedDay =
+                        _isWeekly
+                            ? _focusedDay.subtract(const Duration(days: 7))
+                            : DateTime(
+                              _focusedDay.year,
+                              _focusedDay.month - 1,
+                              1,
+                            );
+                  }),
+              onNext:
+                  () => setState(() {
+                    _focusedDay =
+                        _isWeekly
+                            ? _focusedDay.add(const Duration(days: 7))
+                            : DateTime(
+                              _focusedDay.year,
+                              _focusedDay.month + 1,
+                              1,
+                            );
+                  }),
+              onToday: () => setState(() => _focusedDay = DateTime.now()),
+            ),
+            Expanded(
+              child: mealPlansAsync.when(
+                data: (plans) {
+                  return AnimatedSwitcher(
+                    duration: DurationTokens.normal,
+                    transitionBuilder:
+                        (child, animation) => FadeTransition(
+                          opacity: animation,
+                          child: SlideTransition(
+                            position: Tween<Offset>(
+                              begin: const Offset(0.05, 0),
+                              end: Offset.zero,
+                            ).animate(animation),
+                            child: child,
+                          ),
+                        ),
+                    child:
+                        _isWeekly
+                            ? _WeeklyView(
+                              key: const ValueKey('weekly'),
+                              plans: plans,
+                              weekStart: _weekStart,
+                              weekEnd: _weekEnd,
+                              monthStart: _monthStart,
+                              monthEnd: _monthEnd,
+                              focusedDay: _focusedDay,
+                              isSameDay: _isSameDay,
+                              onAddMeal: _openAddSheet,
+                              onDeleteMeal: _deleteMealPlan,
+                            )
+                            : _MonthlyView(
+                              key: const ValueKey('monthly'),
+                              plans: plans,
+                              monthStart: _monthStart,
+                              monthEnd: _monthEnd,
+                              isSameDay: _isSameDay,
+                              onDayTap: (date) {
+                                setState(() {
+                                  _focusedDay = date;
+                                  _isWeekly = true;
+                                });
+                              },
+                            ),
+                  );
+                },
+                loading:
+                    () => Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const CircularProgressIndicator(),
+                          const SizedBox(height: Spacing.md),
+                          Text(l10n.mealPlannerLoading),
+                        ],
+                      ),
                     ),
-                  ),
-                  child: _isWeekly
-                      ? _WeeklyView(
-                          key: const ValueKey('weekly'),
-                          plans: plans,
-                          weekStart: _weekStart,
-                          isSameDay: _isSameDay,
-                          onAddMeal: _openAddSheet,
-                          onDeleteMeal: _deleteMealPlan,
-                        )
-                      : _MonthlyView(
-                          key: const ValueKey('monthly'),
-                          plans: plans,
-                          monthStart: _monthStart,
-                          monthEnd: _monthEnd,
-                          isSameDay: _isSameDay,
-                          onDayTap: (date) {
-                            setState(() {
-                              _focusedDay = date;
-                              _isWeekly = true;
-                            });
-                          },
-                        ),
-                );
-              },
-              loading: () => Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const CircularProgressIndicator(),
-                    const SizedBox(height: Spacing.md),
-                    Text(l10n.mealPlannerLoading),
-                  ],
-                ),
-              ),
-              error: (err, stack) => Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(Spacing.xl),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.cloud_off_rounded,
-                        size: 56,
-                        color: theme.colorScheme.error.withAlpha(180),
-                      ),
-                      const SizedBox(height: Spacing.md),
-                      Text(
-                        l10n.mealPlannerError,
-                        style: theme.textTheme.titleLarge,
-                      ),
-                      const SizedBox(height: Spacing.xs),
-                      Text(
-                        err.toString().replaceFirst('Exception: ', ''),
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
+                error:
+                    (err, stack) => Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(Spacing.xl),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.cloud_off_rounded,
+                              size: 56,
+                              color: theme.colorScheme.error.withAlpha(180),
+                            ),
+                            const SizedBox(height: Spacing.md),
+                            Text(
+                              l10n.mealPlannerError,
+                              style: theme.textTheme.titleLarge,
+                            ),
+                            const SizedBox(height: Spacing.xs),
+                            Text(
+                              err.toString().replaceFirst('Exception: ', ''),
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: theme.colorScheme.onSurfaceVariant,
+                              ),
+                            ),
+                            const SizedBox(height: Spacing.lg),
+                            FilledButton.icon(
+                              onPressed:
+                                  () => ref.invalidate(
+                                    mealPlansProvider(start: _start, end: _end),
+                                  ),
+                              icon: const Icon(Icons.refresh_rounded),
+                              label: Text(l10n.retry),
+                            ),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: Spacing.lg),
-                      FilledButton.icon(
-                        onPressed: () => ref.invalidate(
-                          mealPlansProvider(start: _start, end: _end),
-                        ),
-                        icon: const Icon(Icons.refresh_rounded),
-                        label: Text(l10n.retry),
-                      ),
-                    ],
-                  ),
-                ),
+                    ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-      ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const KipiFab(kipiContext: KipiContext.mealPlanner),
-          const SizedBox(height: 8),
-          if (_isWeekly)
-            FloatingActionButton.extended(
-              heroTag: null,
-              onPressed: () => _openAddSheet(DateTime.now()),
-              icon: const Icon(Icons.add_rounded),
-              label: Text(l10n.mealPlannerAddMeal),
-            )
-          else
-            FloatingActionButton(
-              heroTag: null,
-              onPressed: () => _openAddSheet(DateTime.now()),
-              child: const Icon(Icons.add_rounded),
-            ),
-        ],
-      ),
+      floatingActionButton:
+          _isWeekly
+              ? FloatingActionButton.extended(
+                heroTag: null,
+                onPressed: () => _openAddSheet(DateTime.now()),
+                icon: const Icon(Icons.add_rounded),
+                label: Text(l10n.mealPlannerAddMeal),
+              )
+              : FloatingActionButton(
+                heroTag: null,
+                onPressed: () => _openAddSheet(DateTime.now()),
+                child: const Icon(Icons.add_rounded),
+              ),
     );
   }
 }
@@ -344,7 +376,8 @@ class _CalendarHeader extends StatelessWidget {
     final theme = Theme.of(context);
     final locale = Localizations.localeOf(context).languageCode;
     final monthName = DateFormat.MMMM(locale).format(focusedDay);
-    final isCurrentMonth = focusedDay.year == DateTime.now().year &&
+    final isCurrentMonth =
+        focusedDay.year == DateTime.now().year &&
         focusedDay.month == DateTime.now().month;
 
     return Padding(
@@ -389,7 +422,6 @@ class _CalendarHeader extends StatelessWidget {
       ),
     );
   }
-
 }
 
 // ---------------------------------------------------------------------------
@@ -401,6 +433,10 @@ class _WeeklyView extends StatelessWidget {
     super.key,
     required this.plans,
     required this.weekStart,
+    required this.weekEnd,
+    required this.monthStart,
+    required this.monthEnd,
+    required this.focusedDay,
     required this.isSameDay,
     required this.onAddMeal,
     required this.onDeleteMeal,
@@ -408,6 +444,10 @@ class _WeeklyView extends StatelessWidget {
 
   final List<MealPlan> plans;
   final DateTime weekStart;
+  final DateTime weekEnd;
+  final DateTime monthStart;
+  final DateTime monthEnd;
+  final DateTime focusedDay;
   final bool Function(DateTime, DateTime) isSameDay;
   final Future<void> Function(DateTime) onAddMeal;
   final Future<void> Function(MealPlan) onDeleteMeal;
@@ -425,23 +465,30 @@ class _WeeklyView extends StatelessWidget {
       children: [
         // Weekly progress bar
         WeeklySummaryBar(plans: plans),
+        BudgetSummaryCard(
+          weekStart: weekStart,
+          weekEnd: weekEnd,
+          monthStart: monthStart,
+          monthEnd: monthEnd,
+          focusedDay: focusedDay,
+        ),
 
         if (isWeekEmpty)
-          Expanded(
-            child: _WeekEmptyState(l10n: l10n, theme: theme),
-          )
+          Expanded(child: _WeekEmptyState(l10n: l10n, theme: theme))
         else
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.fromLTRB(
-                Spacing.md, Spacing.xs, Spacing.md, 80,
+                Spacing.md,
+                Spacing.xs,
+                Spacing.md,
+                Spacing.xxl + Spacing.xl,
               ),
               itemCount: 7,
               itemBuilder: (context, index) {
                 final date = weekStart.add(Duration(days: index));
-                final dayPlans = plans
-                    .where((p) => isSameDay(p.date, date))
-                    .toList();
+                final dayPlans =
+                    plans.where((p) => isSameDay(p.date, date)).toList();
                 final isToday = isSameDay(date, today);
 
                 return MealDayCard(
@@ -459,14 +506,16 @@ class _WeeklyView extends StatelessWidget {
   }
 }
 
-class _WeekEmptyState extends StatelessWidget {
+class _WeekEmptyState extends ConsumerWidget {
   const _WeekEmptyState({required this.l10n, required this.theme});
 
   final AppLocalizations l10n;
   final ThemeData theme;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final activeTypes = ref.watch(activeMealTypesProvider);
+
     return Padding(
       padding: const EdgeInsets.all(Spacing.xl),
       child: Column(
@@ -477,10 +526,7 @@ class _WeekEmptyState extends StatelessWidget {
             duration: DurationTokens.slow,
             curve: Curves.elasticOut,
             builder: (context, value, child) {
-              return Transform.scale(
-                scale: value,
-                child: child,
-              );
+              return Transform.scale(scale: value, child: child);
             },
             child: Icon(
               Icons.restaurant_menu_rounded,
@@ -511,13 +557,14 @@ class _WeekEmptyState extends StatelessWidget {
             spacing: Spacing.xs,
             runSpacing: Spacing.xs,
             alignment: WrapAlignment.center,
-            children: MealType.values.map((type) {
-              return MealTypeChip(
-                type: type,
-                isSelected: false,
-                onTap: () {},
-              );
-            }).toList(),
+            children:
+                activeTypes.map((type) {
+                  return MealTypeChip(
+                    mealType: type,
+                    isSelected: false,
+                    onTap: () {},
+                  );
+                }).toList(),
           ),
         ],
       ),
@@ -529,7 +576,7 @@ class _WeekEmptyState extends StatelessWidget {
 // Monthly view
 // ---------------------------------------------------------------------------
 
-class _MonthlyView extends StatelessWidget {
+class _MonthlyView extends ConsumerWidget {
   const _MonthlyView({
     super.key,
     required this.plans,
@@ -546,37 +593,60 @@ class _MonthlyView extends StatelessWidget {
   final void Function(DateTime) onDayTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final today = DateTime.now();
     final locale = Localizations.localeOf(context).languageCode;
-    final dayNames = List.generate(7, (i) => DateFormat.E(locale).format(DateTime(2024, 1, i + 1)));
+    final startDay = MaterialLocalizations.of(context).firstDayOfWeekIndex; // 0=Sun, 1=Mon
+    // Jan 7, 2024 was Sunday.
+    final baseDate = DateTime(2024, 1, 7 + startDay);
+    final dayNames = List.generate(
+      7,
+      (i) => DateFormat.E(locale).format(baseDate.add(Duration(days: i))),
+    );
     final daysInMonth = monthEnd.day;
-    final firstWeekday = monthStart.weekday; // 1=Mon ... 7=Sun
-    final leadingBlanks = firstWeekday - 1;
+    final firstWeekdayInSundayIndex = monthStart.weekday % 7;
+    final leadingBlanks = (firstWeekdayInSundayIndex - startDay + 7) % 7;
     final totalCells = leadingBlanks + daysInMonth;
+    final activeTypes = ref.watch(activeMealTypesProvider);
+    final costMapAsync = ref.watch(
+      mealPlannerDayCostMapProvider(start: monthStart, end: monthEnd),
+    );
+    final costMap = costMapAsync.value ?? {};
+    final maxDayCost = costMap.values.isEmpty
+        ? 0.0
+        : costMap.values
+            .map((d) => d.totalCost)
+            .reduce((a, b) => a > b ? a : b);
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
 
     return Column(
       children: [
         // Day-of-week header
         Padding(
           padding: const EdgeInsets.symmetric(
-              horizontal: Spacing.md, vertical: Spacing.xs),
+            horizontal: Spacing.md,
+            vertical: Spacing.xs,
+          ),
           child: Row(
-            children: dayNames
-                .map(
-                  (d) => Expanded(
-                    child: Text(
-                      d,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.labelSmall?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: theme.colorScheme.onSurfaceVariant,
+            children:
+                dayNames
+                    .map(
+                      (d) => Expanded(
+                        child: Text(
+                          d,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.labelSmall?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                )
-                .toList(),
+                    )
+                    .toList(),
           ),
         ),
         const Divider(height: 1),
@@ -586,8 +656,8 @@ class _MonthlyView extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 7,
               childAspectRatio: 0.85,
-              crossAxisSpacing: 3,
-              mainAxisSpacing: 3,
+              crossAxisSpacing: Spacing.xxs,
+              mainAxisSpacing: Spacing.xxs,
             ),
             itemCount: totalCells,
             itemBuilder: (context, index) {
@@ -606,6 +676,12 @@ class _MonthlyView extends StatelessWidget {
                 isToday: isToday,
                 theme: theme,
                 onTap: () => onDayTap(date),
+                activeTypes: activeTypes,
+                dayCost: costMap[DateTime(date.year, date.month, date.day)]
+                        ?.totalCost ??
+                    0.0,
+                maxDayCost: maxDayCost,
+                currencyCode: currencyCode,
               );
             },
           ),
@@ -622,6 +698,10 @@ class _MonthDayCell extends StatelessWidget {
     required this.isToday,
     required this.theme,
     required this.onTap,
+    required this.activeTypes,
+    this.dayCost = 0.0,
+    this.maxDayCost = 0.0,
+    this.currencyCode = 'BRL',
   });
 
   final DateTime date;
@@ -629,56 +709,84 @@ class _MonthDayCell extends StatelessWidget {
   final bool isToday;
   final ThemeData theme;
   final VoidCallback onTap;
+  final List<MealType> activeTypes;
+  final double dayCost;
+  final double maxDayCost;
+  final String currencyCode;
 
   @override
   Widget build(BuildContext context) {
-    final mealTypes = plans.map((p) => p.mealType).toSet().toList()
-      ..sort((a, b) => a.index.compareTo(b.index));
+    final mealTypeIds = plans.map((p) => p.mealType).toSet().toList();
+    mealTypeIds.sort((a, b) {
+      final idxA = activeTypes.indexWhere((t) => t.id == a);
+      final idxB = activeTypes.indexWhere((t) => t.id == b);
+      final valA = idxA == -1 ? 999 : idxA;
+      final valB = idxB == -1 ? 999 : idxB;
+      return valA.compareTo(valB);
+    });
 
-    return Material(
-      color: isToday
-          ? theme.colorScheme.primaryContainer
-          : theme.colorScheme.surfaceContainerLow,
-      borderRadius: BorderRadius.circular(RadiusTokens.sm),
-      child: InkWell(
-        onTap: onTap,
+    final intensity = (maxDayCost > 0 && dayCost > 0)
+        ? (dayCost / maxDayCost).clamp(0.0, 1.0)
+        : 0.0;
+
+    final baseColor = isToday
+        ? theme.colorScheme.primaryContainer
+        : theme.colorScheme.surfaceContainerLow;
+
+    final cellColor = (!isToday && intensity > 0)
+        ? Color.alphaBlend(
+            theme.colorScheme.tertiary.withAlpha((intensity * 80).toInt()),
+            baseColor,
+          )
+        : baseColor;
+
+    return Tooltip(
+      message: dayCost > 0 ? formatCurrency(dayCost, currencyCode) : '',
+      triggerMode: TooltipTriggerMode.longPress,
+      child: Material(
+        color: cellColor,
         borderRadius: BorderRadius.circular(RadiusTokens.sm),
-        child: Padding(
-          padding: const EdgeInsets.all(3),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                '${date.day}',
-                style: theme.textTheme.labelMedium?.copyWith(
-                  fontWeight: isToday ? FontWeight.bold : FontWeight.w500,
-                  color: isToday
-                      ? theme.colorScheme.primary
-                      : theme.colorScheme.onSurface,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(RadiusTokens.sm),
+          child: Padding(
+            padding: const EdgeInsets.all(Spacing.xxs),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  '${date.day}',
+                  style: theme.textTheme.labelMedium?.copyWith(
+                    fontWeight: isToday ? FontWeight.bold : FontWeight.w500,
+                    color:
+                        isToday
+                            ? theme.colorScheme.primary
+                            : theme.colorScheme.onSurface,
+                  ),
                 ),
-              ),
-              if (mealTypes.isNotEmpty) ...[
-                const SizedBox(height: 2),
-                Wrap(
-                  spacing: 2,
-                  runSpacing: 2,
-                  alignment: WrapAlignment.center,
-                  children: mealTypes.take(3).map((type) {
-                    final color =
-                        mealTypeColor(type, theme.colorScheme);
-                    return Container(
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: color,
-                        shape: BoxShape.circle,
-                      ),
-                    );
-                  }).toList(),
-                ),
+                if (mealTypeIds.isNotEmpty) ...[
+                  const SizedBox(height: RadiusTokens.bar),
+                  Wrap(
+                    spacing: RadiusTokens.bar,
+                    runSpacing: RadiusTokens.bar,
+                    alignment: WrapAlignment.center,
+                    children:
+                        mealTypeIds.take(3).map((typeId) {
+                          final color = getMealTypeColor(typeId, activeTypes, theme.colorScheme);
+                          return Container(
+                            width: Spacing.xs,
+                            height: Spacing.xs,
+                            decoration: BoxDecoration(
+                              color: color,
+                              shape: BoxShape.circle,
+                            ),
+                          );
+                        }).toList(),
+                  ),
+                ],
               ],
-            ],
+            ),
           ),
         ),
       ),

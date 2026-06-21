@@ -1,59 +1,62 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/models/meal_plan.dart';
+import 'package:shopping_list/models/meal_type.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
-/// Returns the color associated with a [MealType].
-Color mealTypeColor(MealType type, ColorScheme scheme) {
-  switch (type) {
-    case MealType.breakfast:
-      return const Color(0xFFFB8C00); // Amber/Orange
-    case MealType.lunch:
-      return scheme.primary; // App green
-    case MealType.dinner:
-      return const Color(0xFF5C6BC0); // Indigo
-    case MealType.snack:
-      return const Color(0xFF8D6E63); // Brown
+Color getMealTypeColor(String typeId, List<MealType> activeTypes, ColorScheme scheme) {
+  final type = activeTypes.firstWhere((t) => t.id == typeId, orElse: () {
+    final def = MealType.defaults.firstWhere((d) => d.id == typeId, orElse: () => MealType(
+      id: typeId,
+      name: typeId,
+      color: 0xFF9E9E9E,
+      iconCodepoint: Icons.restaurant.codePoint,
+      sortOrder: 99,
+    ));
+    return def;
+  });
+  if (type.isBuiltIn && type.id == 'lunch') {
+    return scheme.primary;
   }
+  return type.colorValue;
 }
 
-/// Returns the icon associated with a [MealType].
-IconData mealTypeIcon(MealType type) {
-  switch (type) {
-    case MealType.breakfast:
-      return Icons.wb_twilight_rounded;
-    case MealType.lunch:
-      return Icons.wb_sunny_rounded;
-    case MealType.dinner:
-      return Icons.nightlight_round;
-    case MealType.snack:
-      return Icons.coffee_rounded;
-  }
+IconData getMealTypeIcon(String typeId, List<MealType> activeTypes) {
+  final type = activeTypes.firstWhere((t) => t.id == typeId, orElse: () {
+    final def = MealType.defaults.firstWhere((d) => d.id == typeId, orElse: () => MealType(
+      id: typeId,
+      name: typeId,
+      color: 0xFF9E9E9E,
+      iconCodepoint: Icons.restaurant.codePoint,
+      sortOrder: 99,
+    ));
+    return def;
+  });
+  return type.iconData;
 }
 
-/// Returns the localized label for a [MealType].
-String mealTypeLabel(MealType type, AppLocalizations l10n) {
-  switch (type) {
-    case MealType.breakfast:
-      return l10n.mealPlannerMealTypeBreakfast;
-    case MealType.lunch:
-      return l10n.mealPlannerMealTypeLunch;
-    case MealType.dinner:
-      return l10n.mealPlannerMealTypeDinner;
-    case MealType.snack:
-      return l10n.mealPlannerMealTypeSnack;
-  }
+String getMealTypeLabel(String typeId, List<MealType> activeTypes, AppLocalizations l10n) {
+  final type = activeTypes.firstWhere((t) => t.id == typeId, orElse: () {
+    final def = MealType.defaults.firstWhere((d) => d.id == typeId, orElse: () => MealType(
+      id: typeId,
+      name: typeId,
+      color: 0xFF9E9E9E,
+      iconCodepoint: Icons.restaurant.codePoint,
+      sortOrder: 99,
+    ));
+    return def;
+  });
+  return type.localizedLabel(l10n);
 }
 
 class MealTypeChip extends StatelessWidget {
   const MealTypeChip({
     super.key,
-    required this.type,
+    required this.mealType,
     required this.isSelected,
     required this.onTap,
   });
 
-  final MealType type;
+  final MealType mealType;
   final bool isSelected;
   final VoidCallback onTap;
 
@@ -61,9 +64,11 @@ class MealTypeChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
-    final color = mealTypeColor(type, theme.colorScheme);
-    final icon = mealTypeIcon(type);
-    final label = mealTypeLabel(type, l10n);
+    final color = (mealType.isBuiltIn && mealType.id == 'lunch') 
+        ? theme.colorScheme.primary 
+        : mealType.colorValue;
+    final icon = mealType.iconData;
+    final label = mealType.localizedLabel(l10n);
 
     return AnimatedContainer(
       duration: DurationTokens.fast,
@@ -88,11 +93,7 @@ class MealTypeChip extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                icon,
-                size: 16,
-                color: isSelected ? Colors.white : color,
-              ),
+              Icon(icon, size: 16, color: isSelected ? Colors.white : color),
               const SizedBox(width: Spacing.xxs),
               Text(
                 label,
@@ -109,17 +110,21 @@ class MealTypeChip extends StatelessWidget {
   }
 }
 
-/// A compact icon badge for meal type, used inside day cards.
 class MealTypeBadge extends StatelessWidget {
-  const MealTypeBadge({super.key, required this.type});
+  const MealTypeBadge({
+    super.key,
+    required this.mealType,
+  });
 
-  final MealType type;
+  final MealType mealType;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final color = mealTypeColor(type, theme.colorScheme);
-    final icon = mealTypeIcon(type);
+    final color = (mealType.isBuiltIn && mealType.id == 'lunch') 
+        ? theme.colorScheme.primary 
+        : mealType.colorValue;
+    final icon = mealType.iconData;
 
     return Container(
       width: 24,

@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
-/// A summary bar showing how many of the 21 weekly meals (7 days × 3) are planned.
-class WeeklySummaryBar extends StatelessWidget {
-  const WeeklySummaryBar({
-    super.key,
-    required this.plans,
-  });
+/// A summary bar showing how many of the weekly meals are planned.
+class WeeklySummaryBar extends ConsumerWidget {
+  const WeeklySummaryBar({super.key, required this.plans});
 
   final List<MealPlan> plans;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final activeTypes = ref.watch(activeMealTypesProvider);
 
-    const totalMealSlots = 21; // 7 days × 3 main meals
+    final totalMealSlots = activeTypes.isEmpty ? 21 : 7 * activeTypes.length;
     final count = plans.length.clamp(0, totalMealSlots);
-    final progress = count / totalMealSlots;
+    final progress = totalMealSlots == 0 ? 0.0 : count / totalMealSlots;
     final progressColor = _progressColor(progress, theme.colorScheme);
 
     return Container(
@@ -43,11 +43,7 @@ class WeeklySummaryBar extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.event_note_rounded,
-                size: 16,
-                color: progressColor,
-              ),
+              Icon(Icons.event_note_rounded, size: 16, color: progressColor),
               const SizedBox(width: Spacing.xs),
               Expanded(
                 child: Text(
@@ -77,8 +73,7 @@ class WeeklySummaryBar extends StatelessWidget {
               builder: (context, value, _) {
                 return LinearProgressIndicator(
                   value: value,
-                  backgroundColor:
-                      theme.colorScheme.surfaceContainerHigh,
+                  backgroundColor: theme.colorScheme.surfaceContainerHigh,
                   valueColor: AlwaysStoppedAnimation<Color>(progressColor),
                   minHeight: 6,
                 );

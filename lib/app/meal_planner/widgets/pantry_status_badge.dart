@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
+import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/utils/string_extensions.dart';
@@ -35,9 +36,14 @@ class PantryStatusBadge extends ConsumerWidget {
             int missingCount = 0;
             for (final ingredient in recipe.ingredients) {
               final normalizedName = ingredient.name.normalize();
-              final pantryItem = pantryItems.where(
-                (p) => p.name.normalize() == normalizedName && p.unit == ingredient.unit,
-              ).firstOrNull;
+              final pantryItem =
+                  pantryItems
+                      .where(
+                        (p) =>
+                            p.name.normalize() == normalizedName &&
+                            p.unit == ingredient.unit,
+                      )
+                      .firstOrNull;
 
               // Basic check: if item not in pantry or quantity insufficient
               // scaledQty logic matches generateShoppingListFromWeek
@@ -46,13 +52,16 @@ class PantryStatusBadge extends ConsumerWidget {
                       : servings)
                   .clamp(1, 9999);
 
-              if (pantryItem == null || pantryItem.currentQuantity < scaledQty) {
+              if (pantryItem == null ||
+                  pantryItem.currentQuantity < scaledQty) {
                 missingCount++;
               }
             }
 
             final bool allAvailable = missingCount == 0;
-            final color = allAvailable ? Colors.green : Colors.orange;
+            final semanticColors = AppSemanticColors.of(context);
+            final color =
+                allAvailable ? semanticColors.success : semanticColors.warning;
 
             return Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
@@ -65,13 +74,17 @@ class PantryStatusBadge extends ConsumerWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    allAvailable ? Icons.check_circle_outline_rounded : Icons.info_outline_rounded,
+                    allAvailable
+                        ? Icons.check_circle_outline_rounded
+                        : Icons.info_outline_rounded,
                     size: 12,
                     color: color,
                   ),
-                  const SizedBox(width: 4),
+                  const SizedBox(width: Spacing.xxs),
                   Text(
-                    allAvailable ? l10n.mealPlannerPantryAllAvailable : l10n.mealPlannerPantryMissing(missingCount),
+                    allAvailable
+                        ? l10n.mealPlannerPantryAllAvailable
+                        : l10n.mealPlannerPantryMissing(missingCount),
                     style: theme.textTheme.labelSmall?.copyWith(
                       color: color,
                       fontWeight: FontWeight.bold,
@@ -81,11 +94,12 @@ class PantryStatusBadge extends ConsumerWidget {
               ),
             );
           },
-          loading: () => const SizedBox(
-            width: 12, 
-            height: 12, 
-            child: CircularProgressIndicator(strokeWidth: 1),
-          ),
+          loading:
+              () => const SizedBox(
+                width: 12,
+                height: 12,
+                child: CircularProgressIndicator(strokeWidth: 1),
+              ),
           error: (_, _) => const SizedBox.shrink(),
         );
       },

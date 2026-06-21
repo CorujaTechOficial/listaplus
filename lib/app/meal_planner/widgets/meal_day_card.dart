@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/meal_type_chip.dart';
 import 'package:shopping_list/app/meal_planner/widgets/pantry_status_badge.dart';
+import 'package:shopping_list/app/recipes/screens/recipe_detail_screen.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
+import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 /// Card representing a single day in the weekly meal planner view.
@@ -30,19 +33,19 @@ class MealDayCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
+    final activeTypes = ref.watch(activeMealTypesProvider);
 
     return DragTarget<MealPlan>(
-      onWillAcceptWithDetails: (details) => _isDifferentDay(details.data.date, date),
+      onWillAcceptWithDetails:
+          (details) => _isDifferentDay(details.data.date, date),
       onAcceptWithDetails: (details) {
         final plan = details.data;
         // Find current range from mealPlansProvider if possible or just use a generic update
         // The moveMealPlan method in notifier handles the update
         // We use the first provider instance found or invalidation
-        ref.read(mealPlansProvider().notifier).moveMealPlan(
-              plan.id,
-              date,
-              plan.mealType,
-            );
+        ref
+            .read(mealPlansProvider().notifier)
+            .moveMealPlan(plan.id, date, plan.mealType);
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
@@ -53,24 +56,33 @@ class MealDayCard extends ConsumerWidget {
             duration: DurationTokens.fast,
             margin: const EdgeInsets.only(bottom: Spacing.sm),
             decoration: BoxDecoration(
-              color: isHovering
-                  ? theme.colorScheme.primaryContainer.withAlpha(80)
-                  : (isToday
-                      ? theme.colorScheme.primaryContainer.withAlpha(50)
-                      : theme.colorScheme.surfaceContainerLow),
+              color:
+                  isHovering
+                      ? theme.colorScheme.primaryContainer.withAlpha(80)
+                      : (isToday
+                          ? theme.colorScheme.primaryContainer.withAlpha(50)
+                          : theme.colorScheme.surfaceContainerLow),
               borderRadius: BorderRadius.circular(RadiusTokens.lg),
-              border: isHovering
-                  ? Border.all(color: theme.colorScheme.primary, width: 2)
-                  : (isToday
-                      ? Border.all(color: theme.colorScheme.primary, width: 2)
-                      : Border.all(
-                          color: theme.colorScheme.outlineVariant.withAlpha(100),
-                        )),
+              border:
+                  isHovering
+                      ? Border.all(color: theme.colorScheme.primary, width: RadiusTokens.bar)
+                      : (isToday
+                          ? Border.all(
+                            color: theme.colorScheme.primary,
+                            width: RadiusTokens.bar,
+                          )
+                          : Border.all(
+                            color: theme.colorScheme.outlineVariant.withAlpha(
+                              100,
+                            ),
+                          )),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withAlpha(isToday || isHovering ? 20 : 10),
-                  blurRadius: isToday || isHovering ? 12 : 4,
-                  offset: const Offset(0, 2),
+                  color: Colors.black.withAlpha(
+                    isToday || isHovering ? 20 : 10,
+                  ),
+                  blurRadius: isToday || isHovering ? Spacing.sm : Spacing.xxs,
+                  offset: const Offset(0, RadiusTokens.bar),
                 ),
               ],
             ),
@@ -87,12 +99,13 @@ class MealDayCard extends ConsumerWidget {
                     children: [
                       // Day number circle
                       Container(
-                        width: 36,
-                        height: 36,
+                        width: Spacing.xl + Spacing.xxs,
+                        height: Spacing.xl + Spacing.xxs,
                         decoration: BoxDecoration(
-                          color: isToday
-                              ? theme.colorScheme.primary
-                              : theme.colorScheme.surfaceContainerHigh,
+                          color:
+                              isToday
+                                  ? theme.colorScheme.primary
+                                  : theme.colorScheme.surfaceContainerHigh,
                           shape: BoxShape.circle,
                         ),
                         child: Center(
@@ -100,9 +113,10 @@ class MealDayCard extends ConsumerWidget {
                             '${date.day}',
                             style: theme.textTheme.titleSmall?.copyWith(
                               fontWeight: FontWeight.bold,
-                              color: isToday
-                                  ? theme.colorScheme.onPrimary
-                                  : theme.colorScheme.onSurface,
+                              color:
+                                  isToday
+                                      ? theme.colorScheme.onPrimary
+                                      : theme.colorScheme.onSurface,
                             ),
                           ),
                         ),
@@ -112,12 +126,13 @@ class MealDayCard extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _getWeekdayName(date.weekday),
+                            _getWeekdayName(date, Localizations.localeOf(context).toString()),
                             style: theme.textTheme.titleSmall?.copyWith(
                               fontWeight: FontWeight.bold,
-                              color: isToday
-                                  ? theme.colorScheme.primary
-                                  : theme.colorScheme.onSurface,
+                              color:
+                                  isToday
+                                      ? theme.colorScheme.primary
+                                      : theme.colorScheme.onSurface,
                             ),
                           ),
                           Text(
@@ -134,11 +149,13 @@ class MealDayCard extends ConsumerWidget {
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: Spacing.xs,
-                            vertical: 2,
+                            vertical: RadiusTokens.bar,
                           ),
                           decoration: BoxDecoration(
                             color: theme.colorScheme.primary.withAlpha(30),
-                            borderRadius: BorderRadius.circular(RadiusTokens.full),
+                            borderRadius: BorderRadius.circular(
+                              RadiusTokens.full,
+                            ),
                           ),
                           child: Text(
                             '${plans.length}',
@@ -152,7 +169,7 @@ class MealDayCard extends ConsumerWidget {
                       Icon(
                         Icons.add_circle_rounded,
                         color: theme.colorScheme.primary,
-                        size: 22,
+                        size: Spacing.lg - RadiusTokens.bar,
                       ),
                     ],
                   ),
@@ -175,6 +192,7 @@ class MealDayCard extends ConsumerWidget {
                     theme: theme,
                     l10n: l10n,
                     onDeleteMeal: onDeleteMeal,
+                    activeTypes: activeTypes,
                   ),
               ],
             ),
@@ -191,26 +209,17 @@ class MealDayCard extends ConsumerWidget {
     return a.year != b.year || a.month != b.month || a.day != b.day;
   }
 
-  String _getWeekdayName(int weekday) {
-    const names = [
-      '',
-      'Segunda-feira',
-      'Terça-feira',
-      'Quarta-feira',
-      'Quinta-feira',
-      'Sexta-feira',
-      'Sábado',
-      'Domingo'
-    ];
-    return names[weekday];
+  String _getWeekdayName(DateTime date, String locale) {
+    final name = DateFormat.EEEE(locale).format(date);
+    if (name.isEmpty) {
+      return name;
+    }
+    return name[0].toUpperCase() + name.substring(1);
   }
 }
 
 class _EmptyDaySlot extends StatelessWidget {
-  const _EmptyDaySlot({
-    required this.l10n,
-    required this.theme,
-  });
+  const _EmptyDaySlot({required this.l10n, required this.theme});
 
   final AppLocalizations l10n;
   final ThemeData theme;
@@ -234,8 +243,7 @@ class _EmptyDaySlot extends StatelessWidget {
             l10n.mealPlannerNoMealsHint,
             style: theme.textTheme.bodySmall?.copyWith(
               fontStyle: FontStyle.italic,
-              color:
-                  theme.colorScheme.onSurfaceVariant.withAlpha(150),
+              color: theme.colorScheme.onSurfaceVariant.withAlpha(150),
             ),
           ),
         ],
@@ -250,28 +258,38 @@ class _MealsByTypeList extends StatelessWidget {
     required this.theme,
     required this.l10n,
     required this.onDeleteMeal,
+    required this.activeTypes,
   });
 
   final List<MealPlan> plans;
   final ThemeData theme;
   final AppLocalizations l10n;
   final void Function(MealPlan) onDeleteMeal;
+  final List<MealType> activeTypes;
 
   @override
   Widget build(BuildContext context) {
-    // Sort by meal type order: breakfast → lunch → dinner → snack
-    final sorted = [...plans]..sort(
-        (a, b) => a.mealType.index.compareTo(b.mealType.index));
+    // Sort by active meal types list order
+    final sorted = [...plans]
+      ..sort((a, b) {
+        final idxA = activeTypes.indexWhere((t) => t.id == a.mealType);
+        final idxB = activeTypes.indexWhere((t) => t.id == b.mealType);
+        final valA = idxA == -1 ? 999 : idxA;
+        final valB = idxB == -1 ? 999 : idxB;
+        return valA.compareTo(valB);
+      });
 
     return Column(
-      children: sorted.map((plan) {
-        return _MealEntryTile(
-          plan: plan,
-          theme: theme,
-          l10n: l10n,
-          onDelete: () => onDeleteMeal(plan),
-        );
-      }).toList(),
+      children:
+          sorted.map((plan) {
+            return _MealEntryTile(
+              plan: plan,
+              theme: theme,
+              l10n: l10n,
+              onDelete: () => onDeleteMeal(plan),
+              activeTypes: activeTypes,
+            );
+          }).toList(),
     );
   }
 }
@@ -282,18 +300,20 @@ class _MealEntryTile extends StatelessWidget {
     required this.theme,
     required this.l10n,
     required this.onDelete,
+    required this.activeTypes,
   });
 
   final MealPlan plan;
   final ThemeData theme;
   final AppLocalizations l10n;
   final VoidCallback onDelete;
+  final List<MealType> activeTypes;
 
   @override
   Widget build(BuildContext context) {
-    final color = mealTypeColor(plan.mealType, theme.colorScheme);
-    final icon = mealTypeIcon(plan.mealType);
-    final typeLabel = mealTypeLabel(plan.mealType, l10n);
+    final color = getMealTypeColor(plan.mealType, activeTypes, theme.colorScheme);
+    final icon = getMealTypeIcon(plan.mealType, activeTypes);
+    final typeLabel = getMealTypeLabel(plan.mealType, activeTypes, l10n);
 
     return LongPressDraggable<MealPlan>(
       data: plan,
@@ -323,10 +343,7 @@ class _MealEntryTile extends StatelessWidget {
             color: theme.colorScheme.error.withAlpha(30),
             borderRadius: BorderRadius.circular(RadiusTokens.sm),
           ),
-          child: Icon(
-            Icons.delete_rounded,
-            color: theme.colorScheme.error,
-          ),
+          child: Icon(Icons.delete_rounded, color: theme.colorScheme.error),
         ),
         onDismissed: (_) => onDelete(),
         child: _buildTile(context, color, icon, typeLabel),
@@ -344,29 +361,29 @@ class _MealEntryTile extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: Spacing.sm,
-        vertical: 2,
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          color: color.withAlpha(15),
-          borderRadius: BorderRadius.circular(RadiusTokens.sm),
-        ),
+      padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: 2),
+      child: Material(
+        color: color.withAlpha(15),
+        borderRadius: BorderRadius.circular(RadiusTokens.sm),
         child: ListTile(
           dense: true,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: Spacing.sm,
             vertical: 0,
           ),
+          onTap: () {
+            Navigator.of(context).push(
+              fadeSlideRoute<void>(RecipeDetailScreen(recipeId: plan.recipeId)),
+            );
+          },
           leading: Container(
-            width: 32,
-            height: 32,
+            width: Spacing.xl,
+            height: Spacing.xl,
             decoration: BoxDecoration(
               color: color.withAlpha(30),
               shape: BoxShape.circle,
             ),
-            child: Icon(icon, size: 16, color: color),
+            child: Icon(icon, size: Spacing.md, color: color),
           ),
           title: Text(
             plan.recipeName,
@@ -404,7 +421,7 @@ class _MealEntryTile extends StatelessWidget {
                   ],
                 ],
               ),
-              const SizedBox(height: 4),
+              const SizedBox(height: Spacing.xxs),
               PantryStatusBadge(
                 recipeId: plan.recipeId,
                 servings: plan.servings,
@@ -414,7 +431,7 @@ class _MealEntryTile extends StatelessWidget {
           trailing: IconButton(
             icon: Icon(
               Icons.delete_outline_rounded,
-              size: 18,
+              size: Spacing.sm + RadiusTokens.xs,
               color: theme.colorScheme.onSurfaceVariant.withAlpha(180),
             ),
             onPressed: onDelete,

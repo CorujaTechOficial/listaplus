@@ -9,6 +9,7 @@ import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/models/meal_plan.dart';
+import 'package:shopping_list/models/meal_type.dart';
 import 'package:shopping_list/models/recipe.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/services/logger_service.dart';
@@ -199,6 +200,65 @@ class MealPlans extends _$MealPlans {
 
     return filteredIngredientMap.length;
   }
+}
+
+@riverpod
+class MealTypes extends _$MealTypes {
+  StreamSubscription<List<MealType>>? _subscription;
+
+  @override
+  Future<List<MealType>> build() async {
+    final service = ref.watch(firestoreServiceProvider);
+    if (service == null) return MealType.defaults;
+
+    unawaited(_subscription?.cancel());
+    final completer = Completer<List<MealType>>();
+
+    _subscription = service.watchMealTypes().listen(
+      (data) {
+        if (!completer.isCompleted) {
+          completer.complete(data);
+        } else {
+          state = AsyncValue.data(data);
+        }
+      },
+      onError: (Object e, StackTrace s) {
+        if (!completer.isCompleted) {
+          completer.completeError(e, s);
+        } else {
+          state = AsyncValue.error(e, s);
+        }
+      },
+    );
+
+    ref.onDispose(() => _subscription?.cancel());
+    return completer.future;
+  }
+
+  Future<void> saveMealType(MealType type) async {
+    final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
+    await service.saveMealType(type);
+  }
+
+  Future<void> deleteMealType(String id) async {
+    final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
+    await service.deleteMealType(id);
+  }
+
+  Future<void> saveMealTypes(List<MealType> types) async {
+    final service = ref.read(firestoreServiceProvider);
+    if (service == null) return;
+    await service.saveMealTypes(types);
+  }
+}
+
+@riverpod
+List<MealType> activeMealTypes(Ref ref) {
+  final all = ref.watch(mealTypesProvider).value ?? MealType.defaults;
+  return all.where((t) => !t.isDeleted).toList()
+    ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
 }
 
 @riverpod

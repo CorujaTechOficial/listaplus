@@ -102,6 +102,91 @@ abstract class _$MealPlans extends $AsyncNotifier<List<MealPlan>> {
   }
 }
 
+@ProviderFor(MealTypes)
+final mealTypesProvider = MealTypesProvider._();
+
+final class MealTypesProvider
+    extends $AsyncNotifierProvider<MealTypes, List<MealType>> {
+  MealTypesProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'mealTypesProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$mealTypesHash();
+
+  @$internal
+  @override
+  MealTypes create() => MealTypes();
+}
+
+String _$mealTypesHash() => r'5bcbc9a4621d0dc80cb8ece83dd064e321b6a16c';
+
+abstract class _$MealTypes extends $AsyncNotifier<List<MealType>> {
+  FutureOr<List<MealType>> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<List<MealType>>, List<MealType>>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<List<MealType>>, List<MealType>>,
+              AsyncValue<List<MealType>>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
+
+@ProviderFor(activeMealTypes)
+final activeMealTypesProvider = ActiveMealTypesProvider._();
+
+final class ActiveMealTypesProvider
+    extends $FunctionalProvider<List<MealType>, List<MealType>, List<MealType>>
+    with $Provider<List<MealType>> {
+  ActiveMealTypesProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'activeMealTypesProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$activeMealTypesHash();
+
+  @$internal
+  @override
+  $ProviderElement<List<MealType>> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  List<MealType> create(Ref ref) {
+    return activeMealTypes(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(List<MealType> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<List<MealType>>(value),
+    );
+  }
+}
+
+String _$activeMealTypesHash() => r'3affd76a3ae25438c063fbbe8bb6656c5379c539';
+
 @ProviderFor(recipeCostDetails)
 final recipeCostDetailsProvider = RecipeCostDetailsFamily._();
 
