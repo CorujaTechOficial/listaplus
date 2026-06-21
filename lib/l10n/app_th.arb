@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "ผู้ช่วย AI",
   "aiAssistantDescription": "รับคำแนะนำอัจฉริยะ สูตรอาหาร และเคล็ดลับส่วนตัวกับผู้ช่วย AI ของเรา",
   "aiAssistantTitle": "ผู้ช่วยเอไอ",
+  "aiAssistantTooltip": "เปิดผู้ช่วย AI",
   "aiCapabilitiesBudget": "งบประมาณและราคา",
   "aiCapabilitiesLists": "รายการช้อปปิ้ง",
   "aiCapabilitiesOrganize": "องค์กร",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "งบประมาณรายเดือน",
   "budgetDashboardTitle": "แดชบอร์ด",
   "budgetEditTitle": "งบประมาณรายเดือน",
+  "budgetGoalInvalidAmount": "ป้อนค่าที่มากกว่าศูนย์",
+  "budgetGoalRemoved": "ลบเป้าหมายงบประมาณแล้ว",
+  "budgetGoalSaved": "บันทึกเป้าหมายงบประมาณแล้ว",
   "budgetLists": "รายการ",
+  "budgetPartialEstimateHint": "~ รวมประมาณการราคาบางส่วน",
   "budgetPremiumLocked": "งบประมาณรายเดือนโดยรวมเป็นฟีเจอร์พรีเมียม",
   "budgetSubtitle": "ติดตามค่าใช้จ่ายรายเดือนของคุณ",
   "budgetUpgradePrompt": "อัปเกรดเพื่อปลดล็อก",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "คุณออฟไลน์อยู่",
   "chatSubtitle": "สอบถามคำแนะนำรายการ สูตรอาหาร หรือเคล็ดลับประหยัดเงิน",
   "chatSubtitleShort": "สอบถามราคา สูตร การจัดเรียง...",
+  "checkItemTooltip": "ตรวจสอบรายการ",
   "checkingItem": "กำลังตรวจสอบรายการ...",
   "checkingPantry": "กำลังตรวจสอบตู้กับข้าวของคุณ...",
   "checkingSettings": "กำลังตรวจสอบการตั้งค่าของคุณ...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "ล้างข้อความทั้งหมดในเซสชันนี้?",
   "clearList": "ล้างรายการ",
   "clearPurchased": "ล้างที่ซื้อแล้ว",
+  "clearPurchasedConfirmMessage": "ลบสินค้าที่ซื้อทั้งหมดออกจากรายการนี้หรือไม่ การดำเนินการนี้ไม่สามารถยกเลิกได้",
+  "clearPurchasedTitle": "ล้างรายการที่ซื้อ",
   "clearingCheckedItems": "กำลังล้างรายการที่เลือก...",
   "close": "ปิด",
   "closeSheet": "ปิด",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "เกิดข้อผิดพลาดในการเก็บถาวรรายการ: {error}",
   "errorClearingList": "เกิดข้อผิดพลาดในการล้างรายการ: {error}",
   "errorClearingPurchased": "เกิดข้อผิดพลาดในการล้างรายการที่ซื้อ: {error}",
+  "errorCreateList": "ไม่สามารถสร้างรายการได้ ตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง",
   "errorCreatingList": "เกิดข้อผิดพลาดในการสร้างรายการ",
   "errorDecreasingQty": "เกิดข้อผิดพลาดในการลดปริมาณ: {error}",
   "errorDeletingList": "เกิดข้อผิดพลาดในการลบรายการ: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "ข้อผิดพลาด: {message}",
   "errorImportingList": "เกิดข้อผิดพลาดในการนำเข้ารายการ \"{name}\": {error}",
   "errorIncreasingQty": "เกิดข้อผิดพลาดในการเพิ่มปริมาณ: {error}",
+  "errorLoadList": "ไม่สามารถโหลดรายการของคุณได้ โปรดสร้างรายการใหม่เพื่อเริ่มต้น",
   "errorLoadingChat": "อ๊ะ! เกิดข้อผิดพลาดในการโหลดแชท",
   "errorLoadingChatSubtitle": "ตรวจสอบการเชื่อมต่อของคุณหรือลองอีกครั้งในภายหลัง",
   "errorLoadingHistory": "เกิดข้อผิดพลาดในการโหลดประวัติ",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "เกิดข้อผิดพลาดในการโหลดการสมัครสมาชิก",
   "errorOscillation": "สิ่งนี้อาจเกิดขึ้นเนื่องจากการสั่นของเครือข่ายหรือความไม่พร้อมใช้งานชั่วคราว โปรดลองอีกครั้ง",
   "errorProcessingRequest": "ขออภัย เกิดข้อผิดพลาดขณะประมวลผลคำขอของคุณ ตรวจสอบการเชื่อมต่อของคุณหรือลองอีกครั้งในภายหลัง",
+  "errorQuickAdd": "ไม่สามารถเพิ่มรายการได้ ตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง",
   "errorRemovingItem": "เกิดข้อผิดพลาดในการลบรายการ: {error}",
   "errorRemovingItems": "เกิดข้อผิดพลาดในการลบรายการ: {error}",
   "errorRemovingSharedList": "เกิดข้อผิดพลาดในการลบรายการที่แชร์: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "เกิดข้อผิดพลาดในการบันทึก: {error}",
   "errorServerConnection": "เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์: {error}",
   "errorSettingCurrentList": "เกิดข้อผิดพลาดในการตั้งค่ารายการปัจจุบัน: {error}",
+  "errorShareCode": "เกิดข้อผิดพลาดในการสร้างรหัสแชร์ ตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง",
   "errorTogglingItem": "เกิดข้อผิดพลาดในการสลับสถานะรายการ: {error}",
   "errorTogglingItems": "เกิดข้อผิดพลาดในการสลับรายการ: {error}",
   "errorUnarchivingList": "เกิดข้อผิดพลาดในการยกเลิกการเก็บถาวรรายการ: {error}",
+  "errorUnexpected": "มีบางอย่างที่ไม่คาดคิดเกิดขึ้น โปรดลองอีกครั้ง",
   "errorUpdatingItem": "เกิดข้อผิดพลาดในการอัปเดตรายการ: {error}",
   "errorUpdatingItems": "เกิดข้อผิดพลาดในการอัปเดตรายการ: {error}",
   "errorUpdatingList": "เกิดข้อผิดพลาดในการอัปเดตรายการ: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "ซื้อแล้ว",
   "finance": "การเงิน",
   "finishShopping": "ช้อปปิ้งให้เสร็จ",
+  "firstItemAddedSnackbar": "เพิ่มรายการแรกแล้ว! เริ่มต้นได้ดี 🛒",
   "gallery": "แกลเลอรี่",
   "generalAssistant": "ผู้ช่วยทั่วไป",
   "generalHelp": "วันนี้จะช่วยคุณเกี่ยวกับการช้อปปิ้งได้อย่างไร?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "กดค้างเพื่อเลือก • ปัดเพื่อลบ",
   "globalAssistant": "ผู้ช่วยทั่วไป",
   "goodResponse": "กระแสตอบรับดี",
+  "help": "ช่วย",
+  "helpListAddItems": "เพิ่มรายการด้วยปุ่ม + ที่ด้านล่าง หรือใช้การค้นหาเพื่อเรียกดูผลิตภัณฑ์",
+  "helpListAi": "ขอให้ผู้ช่วย AI สร้าง จัดระเบียบ หรือทำรายการของคุณให้เสร็จ เพียงแตะไอคอนประกายไฟ",
+  "helpListOrganize": "ลากรายการเพื่อเรียงลำดับใหม่ ปัดเพื่อทำเครื่องหมายว่าซื้อแล้ว หรือใช้ตัวกรองและการเรียงลำดับ",
+  "helpListShare": "แบ่งปันรายการของคุณกับครอบครัวหรือส่งออกเป็น PDF, Excel หรือข้อความธรรมดา",
+  "helpListShoppingMode": "โหมดช็อปปิ้งจะซ่อนสินค้าที่ซื้อเพื่อให้คุณสามารถมุ่งเน้นไปที่สิ่งที่เหลืออยู่",
+  "helpListTitle": "การใช้รายการของคุณ",
   "howCanIHelp": "ฉันจะช่วยได้อย่างไร?",
   "icon": "ไอคอน:",
   "idealQty": "ปริมาณที่เหมาะสม",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "ลบเป้าหมาย",
   "mealPlannerBudgetTodayCost": "วันนี้: {amount}",
   "mealPlannerBudgetWeekCost": "สัปดาห์: {amount}",
+  "mealPlannerCurrentDayLabel": "วันปัจจุบัน",
   "mealPlannerCustomTypeLabel": "ประเภทที่กำหนดเอง",
   "mealPlannerDateLabel": "วันที่",
   "mealPlannerDefaultTypeLabel": "ประเภทเริ่มต้น",
   "mealPlannerDeleteMeal": "ลบมื้ออาหาร",
+  "mealPlannerDuplicate": "มื้ออาหารที่ซ้ำกัน",
+  "mealPlannerDuplicateSuccess": "ทำซ้ำมื้ออาหารสำเร็จ!",
   "mealPlannerEditMeal": "แก้ไขมื้ออาหาร",
   "mealPlannerEditType": "แก้ไขประเภทมื้ออาหาร",
   "mealPlannerError": "เกิดข้อผิดพลาดในการโหลดแผนอาหาร",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} นาที",
   "mealPlannerSave": "เพิ่มลงในแผน",
   "mealPlannerSearchRecipes": "ค้นหาสูตรอาหาร...",
+  "mealPlannerSelectDestinationDay": "ทำซ้ำไปที่...",
   "mealPlannerSelectRecipe": "เลือกสูตร",
   "mealPlannerServings": "{count,plural, one{{count} เสิร์ฟ} other{{count} เสิร์ฟ}}",
   "mealPlannerServingsLabel": "เสิร์ฟ",
@@ -2061,6 +2155,8 @@
   "navRecipes": "สูตรอาหาร",
   "newCategoryDialog": "หมวดหมู่ใหม่",
   "newChat": "แชทใหม่",
+  "newChatConfirmMessage": "เริ่มการสนทนาใหม่? การสนทนาปัจจุบันของคุณจะหายไป",
+  "newChatConfirmTitle": "บทสนทนาใหม่",
   "newChatStarted": "แชทใหม่เริ่มต้นขึ้น",
   "newListTitle": "รายการช้อปปิ้งใหม่",
   "newPantryList": "ช้อปปิ้งในตู้กับข้าว",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "คู่",
   "onboardingGroupFamily": "ตระกูล",
   "onboardingGroupSolo": "แค่ฉัน",
+  "onboardingHookContinue": "เริ่มต้นเลย",
   "onboardingHookHeadline": "อย่าลืมรายการขายของชำอีกต่อไป",
+  "onboardingHookItem1": "ไก่ย่าง",
+  "onboardingHookItem2": "มอสซาเรลล่าชีส",
+  "onboardingHookItem3": "มะเขือเทศเชอร์รี่",
   "onboardingListCreated": "รายการของคุณพร้อมแล้ว: {count} รายการที่จัดไว้สำหรับคุณ",
   "onboardingListSaveFailed": "ฉันเตรียมรายการแล้วแต่ไม่สามารถบันทึกรายการได้ ลองอีกครั้งเพื่อเก็บไว้ในแอป",
   "onboardingLoadingStat1Label": "รายการแคตตาล็อก",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "ปรับแต่งประสบการณ์ของคุณ",
   "onboardingShareDesc": "ซิงค์รายการกับครอบครัวและเพื่อน ๆ แบบเรียลไทม์",
   "onboardingShareTitle": "แบ่งปันกับคนที่คุณรัก",
+  "onboardingSkip": "ข้ามไปก่อน",
   "onboardingSlide1Body": "สร้างและแชร์รายการได้ทันที Kipi เพิ่มรายการโดยอัตโนมัติตามนิสัยของคุณ",
   "onboardingSlide1Title": "รายการช้อปปิ้งอัจฉริยะ",
   "onboardingSlide2Body": "ถามอะไรก็ได้ — สร้างรายการ ค้นหาสูตรอาหาร ติดตามตู้กับข้าวของคุณ วางแผนสัปดาห์ของคุณ",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "เอไออัจฉริยะ",
   "paywallFeatureUnlimitedLists": "รายการไม่จำกัด",
   "paywallFeaturesTitle": "ทุกสิ่งที่คุณต้องการ:",
+  "paywallFreeTier": "ฟรี: 3 รายการ",
   "paywallGoalHeadlineFamily": "{name} จัดการช็อปปิ้งแบบครอบครัว!",
   "paywallGoalHeadlineFaster": "{name} ช้อปให้คุ้มครึ่งเวลา!",
   "paywallGoalHeadlineNeverForget": "{name} อย่าลืมไอเท็ม!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "เพียง {price}/วัน — น้อยกว่ากาแฟหนึ่งแก้ว",
   "paywallPricePerMonth": "เพียง {price}/เดือน",
   "paywallProLabel": "โปร",
+  "paywallProTier": "มือโปร: ไม่จำกัด",
   "paywallPurchaseError": "ไม่สามารถดำเนินการซื้อให้เสร็จสิ้นได้ ลองอีกครั้ง",
   "paywallPurchasePending": "การชำระเงินของคุณอยู่ระหว่างรอการอนุมัติ การเข้าถึงจะถูกปล่อยโดยอัตโนมัติหลังจากการยืนยัน",
   "paywallRestore": "คืนค่า",
@@ -2474,6 +2577,7 @@
   "searchConversations": "ค้นหาการสนทนา",
   "searchCurrency": "ค้นหาสกุลเงิน...",
   "searchInConversation": "ค้นหาในการสนทนา...",
+  "searchItems": "ค้นหารายการ",
   "searchLanguage": "ค้นหาภาษา...",
   "searchMessages": "ค้นหาข้อความ...",
   "searchRecipes": "ค้นหาสูตรอาหาร...",

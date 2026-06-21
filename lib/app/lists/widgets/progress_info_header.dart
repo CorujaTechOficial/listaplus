@@ -4,6 +4,7 @@ import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ProgressInfoHeader extends StatefulWidget implements PreferredSizeWidget {
   const ProgressInfoHeader({
@@ -333,7 +334,7 @@ class _SummaryRow extends StatelessWidget {
         ),
         const SizedBox(width: Spacing.xs),
         Icon(
-          expanded ? Icons.expand_less : Icons.expand_more,
+          expanded ? PhosphorIconsRegular.caretUp : PhosphorIconsRegular.caretDown,
           color: theme.colorScheme.onSurfaceVariant,
         ),
       ],

@@ -21,6 +21,8 @@ import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/utils/test_utils.dart';
 import 'agent_action_steps.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ChatBubble extends ConsumerStatefulWidget {
   const ChatBubble({
@@ -82,12 +84,10 @@ class _ChatBubbleState extends ConsumerState<ChatBubble> {
   void _copyToClipboard(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     Clipboard.setData(ClipboardData(text: widget.message.content));
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.copiedToClipboard),
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 2),
-      ),
+    showKipiSnackBar(
+      context,
+      message: l10n.copiedToClipboard,
+      type: SnackBarType.info,
     );
   }
 
@@ -459,12 +459,10 @@ class _ChatBubbleState extends ConsumerState<ChatBubble> {
       onLongPress: () {
         unawaited(HapticFeedback.mediumImpact());
         unawaited(Clipboard.setData(ClipboardData(text: widget.message.content)));
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(AppLocalizations.of(context)!.copiedToClipboard),
-            behavior: SnackBarBehavior.floating,
-            duration: const Duration(seconds: 2),
-          ),
+        showKipiSnackBar(
+          context,
+          message: AppLocalizations.of(context)!.copiedToClipboard,
+          type: SnackBarType.info,
         );
       },
       child: AnimatedSize(
@@ -540,7 +538,7 @@ class _MessageActions extends StatelessWidget {
             icon: AnimatedSwitcher(
               duration: DurationTokens.fast,
               child: Icon(
-                isLiked ? Icons.thumb_up_rounded : Icons.thumb_up_outlined,
+                isLiked ? PhosphorIconsFill.thumbsUp : PhosphorIconsRegular.thumbsUp,
                 key: ValueKey(isLiked),
                 size: 18,
                 color:
@@ -560,8 +558,8 @@ class _MessageActions extends StatelessWidget {
               duration: DurationTokens.fast,
               child: Icon(
                 isDisliked
-                    ? Icons.thumb_down_rounded
-                    : Icons.thumb_down_outlined,
+                    ? PhosphorIconsFill.thumbsDown
+                    : PhosphorIconsRegular.thumbsDown,
                 key: ValueKey(isDisliked),
                 size: 18,
                 color:
@@ -578,7 +576,7 @@ class _MessageActions extends StatelessWidget {
             visualDensity: VisualDensity.compact,
             constraints: const BoxConstraints.tightFor(width: 44, height: 44),
             icon: Icon(
-              Icons.refresh_rounded,
+              PhosphorIconsRegular.arrowCounterClockwise,
               size: 18,
               color: theme.colorScheme.onSurfaceVariant,
             ),
@@ -590,7 +588,7 @@ class _MessageActions extends StatelessWidget {
             visualDensity: VisualDensity.compact,
             constraints: const BoxConstraints.tightFor(width: 44, height: 44),
             icon: Icon(
-              Icons.copy_rounded,
+              PhosphorIconsRegular.copy,
               size: 18,
               color: theme.colorScheme.onSurfaceVariant,
             ),
@@ -689,7 +687,7 @@ class _TeaserBubble extends StatelessWidget {
                   builder: (_) => const PaywallScreen(asSheet: true),
                 );
               },
-              icon: const Icon(Icons.workspace_premium, size: 14),
+              icon: const Icon(PhosphorIconsRegular.crown, size: 14),
               label: Text(
                 l10n.unlockFullResponse,
                 style: theme.textTheme.labelSmall?.copyWith(
@@ -814,7 +812,7 @@ class ItemLinkBuilder extends MarkdownElementBuilder {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(
-                Icons.shopping_cart_outlined,
+                PhosphorIconsRegular.shoppingCart,
                 size: 13,
                 color: theme.colorScheme.primary,
               ),
@@ -947,7 +945,7 @@ class _CodeCopyButtonState extends State<_CodeCopyButton> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
-              _copied ? Icons.check : Icons.copy_rounded,
+              _copied ? PhosphorIconsRegular.check : PhosphorIconsRegular.copy,
               size: 14,
               color:
                   _copied

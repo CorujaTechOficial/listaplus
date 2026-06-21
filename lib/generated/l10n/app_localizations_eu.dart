@@ -72,6 +72,32 @@ class AppLocalizationsEu extends AppLocalizations {
   String get close => 'Itxi';
 
   @override
+  String get help => 'Laguntza';
+
+  @override
+  String get helpListTitle => 'Zure zerrenda erabiliz';
+
+  @override
+  String get helpListAddItems =>
+      'Gehitu elementuak + botoiarekin behealdean, edo erabili bilaketa produktuak arakatzeko';
+
+  @override
+  String get helpListAi =>
+      'Eskatu AI laguntzaileari zure zerrenda sortzeko, antolatzeko edo osatzeko; besterik gabe, sakatu distira ikonoa';
+
+  @override
+  String get helpListShoppingMode =>
+      'Erosketa moduak erositako elementuak ezkutatzen ditu, geratzen denari arreta jarri ahal izateko';
+
+  @override
+  String get helpListOrganize =>
+      'Arrastatu elementuak berrantolatzeko, pasatu hatza erositako gisa markatzeko edo erabili iragazkiak eta ordenatzeko';
+
+  @override
+  String get helpListShare =>
+      'Partekatu zure zerrenda familiarekin edo esportatu PDF, Excel edo testu arrunt gisa';
+
+  @override
   String get import => 'Inportatu';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get clear => 'Garbitu';
+
+  @override
+  String get clearPurchasedTitle => 'Garbitu erositako elementuak';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Erositako elementu guztiak zerrenda honetatik kendu nahi dituzu? Hau ezin da desegin.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get purchaseError => 'Errorea erosketa prozesatzean. Saiatu berriro.';
+
+  @override
+  String get errorCreateList =>
+      'Ezin izan da sortu zerrenda. Egiaztatu konexioa eta saiatu berriro.';
+
+  @override
+  String get errorShareCode =>
+      'Errore bat gertatu da partekatze-kodea sortzean. Egiaztatu konexioa eta saiatu berriro.';
+
+  @override
+  String get errorQuickAdd =>
+      'Ezin izan da elementua gehitu. Egiaztatu konexioa eta saiatu berriro.';
+
+  @override
+  String get errorLoadList =>
+      'Ezin izan dira zure zerrendak kargatu. Mesedez, sortu zerrenda berri bat hasteko.';
 
   @override
   String get restoreError =>
@@ -489,6 +538,19 @@ class AppLocalizationsEu extends AppLocalizations {
   String get noBudgetDefined => 'Aurrekonturik ezarri gabe';
 
   @override
+  String get budgetGoalInvalidAmount => 'Sartu zero baino balio handiagoa';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Prezioen estimazio partzialak barne hartzen ditu';
+
+  @override
+  String get budgetGoalSaved => 'Aurrekontuaren helburua gorde da';
+
+  @override
+  String get budgetGoalRemoved => 'Aurrekontuaren helburua kendu da';
+
+  @override
   String totalEstimated(String amount) {
     return 'Guztira estimatua: $amount';
   }
@@ -681,6 +743,13 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get newChat => 'Txat berria';
+
+  @override
+  String get newChatConfirmTitle => 'Elkarrizketa berria';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Elkarrizketa berri bat hasi? Zure uneko elkarrizketa galduko da.';
 
   @override
   String get noHistory => 'Ez dago txat-historiarik';
@@ -1238,6 +1307,16 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Ongi etorri eskaintza';
+
+  @override
+  String get paywallFreeTier => 'Doan: 3 zerrenda';
+
+  @override
+  String get paywallProTier => 'Pro: mugagabea';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Lehenengo elementua gehitu da! Hasiera bikaina 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2138,6 +2217,18 @@ class AppLocalizationsEu extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Mota lehenetsia';
 
   @override
+  String get mealPlannerDuplicate => 'Bazkari bikoiztua';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Bikoiztu...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Egungo eguna';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Otordua ondo bikoiztu da!';
+
+  @override
   String get expirationDate => 'Iraungitze data';
 
   @override
@@ -2145,6 +2236,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get skip => 'Saltatu';
+
+  @override
+  String get onboardingSkip => 'Saltatu oraingoz';
 
   @override
   String get onboardingAiTitle => 'Txateatu Kipi-rekin';
@@ -3184,4 +3278,29 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Erantzuna sortzen…';
+
+  @override
+  String get errorUnexpected =>
+      'Ustekabeko zerbait gertatu zen. Mesedez, saiatu berriro.';
+
+  @override
+  String get aiAssistantTooltip => 'Ireki AI laguntzailea';
+
+  @override
+  String get searchItems => 'Bilatu elementuak';
+
+  @override
+  String get onboardingHookContinue => 'Hasi';
+
+  @override
+  String get onboardingHookItem1 => 'Oilaskoa plantxan';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella gazta';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry tomateak';
+
+  @override
+  String get checkItemTooltip => 'Egiaztatu elementua';
 }

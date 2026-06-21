@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CategorySectionHeader extends StatelessWidget {
   const CategorySectionHeader({
@@ -42,7 +43,7 @@ class CategorySectionHeader extends StatelessWidget {
                 borderRadius: BorderRadius.circular(RadiusTokens.sm),
               ),
               child: Icon(
-                category?.icon ?? Icons.category_outlined,
+                category?.icon ?? PhosphorIconsRegular.squaresFour,
                 size: 18,
                 color: categoryColor,
               ),

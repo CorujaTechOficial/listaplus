@@ -12,6 +12,8 @@ import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/unit.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class KipiQuickBar extends ConsumerStatefulWidget {
   const KipiQuickBar({
@@ -132,22 +134,22 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
           );
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.itemAddedSnack(text)),
-            action: SnackBarAction(
-              label: l10n.edit,
-              onPressed: () {
-                showDialog<void>(
-                  context: context,
-                  builder:
-                      (_) => EditItemDialog(
-                        listId: widget.listId,
-                        item: newItem,
-                      ),
-                );
-              },
-            ),
+        showKipiSnackBar(
+          context,
+          message: l10n.itemAddedSnack(text),
+          type: SnackBarType.success,
+          action: SnackBarAction(
+            label: l10n.edit,
+            onPressed: () {
+              showDialog<void>(
+                context: context,
+                builder:
+                    (_) => EditItemDialog(
+                      listId: widget.listId,
+                      item: newItem,
+                    ),
+              );
+            },
           ),
         );
       }
@@ -216,7 +218,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
                 ),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _isListening ? Icons.mic : Icons.mic_none,
+                    _isListening ? PhosphorIconsRegular.microphone : PhosphorIconsRegular.microphone,
                     color:
                         _isListening
                             ? theme.colorScheme.error
@@ -248,7 +250,7 @@ class _KipiQuickBarState extends ConsumerState<KipiQuickBar> {
                         color: theme.colorScheme.onPrimary,
                       ),
                     )
-                    : const Icon(Icons.arrow_upward, size: 20),
+                    : const Icon(PhosphorIconsRegular.arrowUp, size: 20),
           ),
         ],
       ),

@@ -6,6 +6,7 @@ import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/utils/string_extensions.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class PantryStatusBadge extends ConsumerWidget {
   const PantryStatusBadge({
@@ -64,7 +65,10 @@ class PantryStatusBadge extends ConsumerWidget {
                 allAvailable ? semanticColors.success : semanticColors.warning;
 
             return Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              padding: const EdgeInsets.symmetric(
+                horizontal: Spacing.xs,
+                vertical: Spacing.xxs,
+              ),
               decoration: BoxDecoration(
                 color: color.withAlpha(30),
                 borderRadius: BorderRadius.circular(RadiusTokens.sm),
@@ -75,9 +79,9 @@ class PantryStatusBadge extends ConsumerWidget {
                 children: [
                   Icon(
                     allAvailable
-                        ? Icons.check_circle_outline_rounded
-                        : Icons.info_outline_rounded,
-                    size: 12,
+                        ? PhosphorIconsRegular.checkCircle
+                        : PhosphorIconsRegular.info,
+                    size: Spacing.sm,
                     color: color,
                   ),
                   const SizedBox(width: Spacing.xxs),
@@ -96,9 +100,11 @@ class PantryStatusBadge extends ConsumerWidget {
           },
           loading:
               () => const SizedBox(
-                width: 12,
-                height: 12,
-                child: CircularProgressIndicator(strokeWidth: 1),
+                width: Spacing.sm,
+                height: Spacing.sm,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                ),
               ),
           error: (_, _) => const SizedBox.shrink(),
         );

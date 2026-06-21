@@ -12,6 +12,8 @@ import '../../utils/test_utils.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ArtifactCardShell extends ConsumerStatefulWidget {
   const ArtifactCardShell({
@@ -136,7 +138,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        Icons.check,
+                        PhosphorIconsRegular.check,
                         size: 12,
                         color: theme.colorScheme.onPrimaryContainer,
                       ),
@@ -239,17 +241,15 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                               if (context.mounted) {
                                 final localizations =
                                     AppLocalizations.of(context)!;
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      localizations.itemsAddedSuccess,
-                                    ),
-                                    action: SnackBarAction(
-                                      label: localizations.viewList,
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
+                                showKipiSnackBar(
+                                  context,
+                                  message: localizations.itemsAddedSuccess,
+                                  type: SnackBarType.success,
+                                  action: SnackBarAction(
+                                    label: localizations.viewList,
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
                                   ),
                                 );
                               }
@@ -273,7 +273,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                               ),
                             ),
                           )
-                          : const Icon(Icons.sync),
+                          : const Icon(PhosphorIconsRegular.arrowsClockwise),
                   label: Text(widget.artifact.commitLabel),
                 ),
             ],

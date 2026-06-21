@@ -72,6 +72,32 @@ class AppLocalizationsSk extends AppLocalizations {
   String get close => 'Zavrieť';
 
   @override
+  String get help => 'Pomoc';
+
+  @override
+  String get helpListTitle => 'Pomocou svojho zoznamu';
+
+  @override
+  String get helpListAddItems =>
+      'Pridajte položky pomocou tlačidla + v dolnej časti alebo použite vyhľadávanie na prehliadanie produktov';
+
+  @override
+  String get helpListAi =>
+      'Požiadajte asistenta AI, aby vytvoril, usporiadal alebo doplnil váš zoznam – stačí klepnúť na ikonu trblietania';
+
+  @override
+  String get helpListShoppingMode =>
+      'Nákupný režim skryje zakúpené položky, aby ste sa mohli sústrediť na to, čo zostalo';
+
+  @override
+  String get helpListOrganize =>
+      'Presunutím položiek zmeníte poradie, potiahnutím označíte ako zakúpené alebo použite filtre a triedenie';
+
+  @override
+  String get helpListShare =>
+      'Zdieľajte svoj zoznam s rodinou alebo exportujte ako PDF, Excel alebo obyčajný text';
+
+  @override
   String get import => 'Importovať';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get clear => 'Vyčistiť';
+
+  @override
+  String get clearPurchasedTitle => 'Vymazať zakúpené položky';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Odstrániť všetky zakúpené položky z tohto zoznamu? Toto sa nedá vrátiť späť.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get purchaseError => 'Chyba pri spracovaní nákupu. Skúste znova.';
+
+  @override
+  String get errorCreateList =>
+      'Zoznam sa nepodarilo vytvoriť. Skontrolujte pripojenie a skúste to znova.';
+
+  @override
+  String get errorShareCode =>
+      'Chyba pri generovaní kódu zdieľania. Skontrolujte pripojenie a skúste to znova.';
+
+  @override
+  String get errorQuickAdd =>
+      'Položku sa nepodarilo pridať. Skontrolujte pripojenie a skúste to znova.';
+
+  @override
+  String get errorLoadList =>
+      'Nepodarilo sa načítať vaše zoznamy. Ak chcete začať, vytvorte nový zoznam.';
 
   @override
   String get restoreError => 'Chyba pri obnovení nákupov. Skúste znova.';
@@ -487,6 +536,18 @@ class AppLocalizationsSk extends AppLocalizations {
   String get noBudgetDefined => 'Rozpočet nie je nastavený';
 
   @override
+  String get budgetGoalInvalidAmount => 'Zadajte hodnotu väčšiu ako nula';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Zahŕňa čiastočné odhady cien';
+
+  @override
+  String get budgetGoalSaved => 'Cieľ rozpočtu bol uložený';
+
+  @override
+  String get budgetGoalRemoved => 'Cieľ rozpočtu bol odstránený';
+
+  @override
   String totalEstimated(String amount) {
     return 'Celkový odhad: $amount';
   }
@@ -681,6 +742,13 @@ class AppLocalizationsSk extends AppLocalizations {
   String get newChat => 'Nový rozhovor';
 
   @override
+  String get newChatConfirmTitle => 'Nový rozhovor';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Chcete začať novú konverzáciu? Vaša aktuálna konverzácia sa stratí.';
+
+  @override
   String get noHistory => 'Žiadna história rozhovorov';
 
   @override
@@ -790,28 +858,28 @@ class AppLocalizationsSk extends AppLocalizations {
   String get undo => 'Vrátiť';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Začal sa nový čet';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Pridať do zoznamu';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Čo môžem urobiť?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Nákupné zoznamy';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Rozpočet a ceny';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Recepty a menu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organizácia';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Začiarknite položky počas nakupovania';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1243,6 +1311,16 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Uvítacia ponuka';
+
+  @override
+  String get paywallFreeTier => 'Zadarmo: 3 zoznamy';
+
+  @override
+  String get paywallProTier => 'Pro: Neobmedzene';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Prvá položka pridaná! Skvelý začiatok 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1980,28 +2058,28 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mesiac: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Týždeň: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Dnes: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Odstrániť cieľ';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Rozpočet plánovača jedla';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Mesačný cieľ výdavkov na plánovanie jedla';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2143,6 +2221,18 @@ class AppLocalizationsSk extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Predvolený typ';
 
   @override
+  String get mealPlannerDuplicate => 'Duplicitné jedlo';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplikovať do...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuálny deň';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Jedlo bolo úspešne duplikované!';
+
+  @override
   String get expirationDate => 'Dátum vypršania platnosti';
 
   @override
@@ -2150,6 +2240,9 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get skip => 'Preskočiť';
+
+  @override
+  String get onboardingSkip => 'Zatiaľ preskočiť';
 
   @override
   String get onboardingAiTitle => 'Chatujte s Kipi';
@@ -3181,4 +3274,28 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Generuje sa odpoveď…';
+
+  @override
+  String get errorUnexpected => 'Stalo sa niečo neočakávané. Skúste to znova.';
+
+  @override
+  String get aiAssistantTooltip => 'Otvorte asistenta AI';
+
+  @override
+  String get searchItems => 'Hľadať položky';
+
+  @override
+  String get onboardingHookContinue => 'Začíname';
+
+  @override
+  String get onboardingHookItem1 => 'Grilované kura';
+
+  @override
+  String get onboardingHookItem2 => 'syr mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry paradajky';
+
+  @override
+  String get checkItemTooltip => 'Skontrolujte položku';
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CreateListDialog extends ConsumerStatefulWidget {
   const CreateListDialog({super.key, this.initialName, this.onCreate});
@@ -35,7 +37,7 @@ class _CreateListDialogState extends ConsumerState<CreateListDialog> {
     final isRename = widget.initialName != null;
     return AlertDialog(
       icon: Icon(
-        isRename ? Icons.edit_note : Icons.playlist_add,
+        isRename ? PhosphorIconsRegular.notepad : PhosphorIconsRegular.plus,
         color: theme.colorScheme.secondary,
       ),
       title: Text(isRename ? l10n.renameListDialog : l10n.createListDialog),
@@ -87,13 +89,16 @@ class _CreateListDialogState extends ConsumerState<CreateListDialog> {
       if (mounted) {
         Navigator.pop(context);
       }
-    } on Exception catch (e) {
-      if (mounted) {
-        setState(() => _isCreating = false);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.toString().replaceFirst('Exception: ', ''))),
-        );
+    } on Exception catch (_) {
+      if (!mounted) {
+        return;
       }
+      setState(() => _isCreating = false);
+      showKipiSnackBar(
+        context,
+        message: AppLocalizations.of(context)!.errorUnexpected,
+        type: SnackBarType.error,
+      );
     }
   }
 }

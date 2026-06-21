@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// Bottom sheet that surfaces Kipi's capabilities in a scannable,
 /// tappable format — so users discover features beyond the empty-state prompts.
@@ -78,7 +79,7 @@ class CapabilitiesHelpSheet extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
-                        Icons.auto_awesome_rounded,
+                        PhosphorIconsRegular.sparkle,
                         size: 20,
                         color: theme.colorScheme.primary,
                       ),
@@ -94,7 +95,7 @@ class CapabilitiesHelpSheet extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.close),
+                      icon: const Icon(PhosphorIconsRegular.x),
                       onPressed: () => Navigator.pop(context),
                       tooltip: l10n.close,
                       color: theme.colorScheme.onSurfaceVariant,
@@ -136,7 +137,7 @@ class CapabilitiesHelpSheet extends StatelessWidget {
   List<_CapabilityCategory> _buildCategories(AppLocalizations l10n) {
     return [
       _CapabilityCategory(
-        icon: Icons.shopping_cart_outlined,
+        icon: PhosphorIconsRegular.shoppingCart,
         title: l10n.aiCapabilitiesLists,
         examples: [
           _Example(
@@ -154,7 +155,7 @@ class CapabilitiesHelpSheet extends StatelessWidget {
         ],
       ),
       _CapabilityCategory(
-        icon: Icons.savings_outlined,
+        icon: PhosphorIconsRegular.piggyBank,
         title: l10n.aiCapabilitiesBudget,
         examples: [
           _Example(
@@ -172,7 +173,7 @@ class CapabilitiesHelpSheet extends StatelessWidget {
         ],
       ),
       _CapabilityCategory(
-        icon: Icons.restaurant_menu_rounded,
+        icon: PhosphorIconsRegular.forkKnife,
         title: l10n.aiCapabilitiesRecipes,
         examples: [
           _Example(
@@ -190,7 +191,7 @@ class CapabilitiesHelpSheet extends StatelessWidget {
         ],
       ),
       _CapabilityCategory(
-        icon: Icons.auto_fix_high_outlined,
+        icon: PhosphorIconsRegular.sparkle,
         title: l10n.aiCapabilitiesOrganize,
         examples: [
           _Example(

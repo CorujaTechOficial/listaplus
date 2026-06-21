@@ -5,6 +5,7 @@ import '../../../models/shopping_list.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class BudgetDialog extends ConsumerStatefulWidget {
   const BudgetDialog({super.key, required this.list});
@@ -42,7 +43,7 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
     );
     return AlertDialog(
       icon: Icon(
-        Icons.account_balance_wallet_outlined,
+        PhosphorIconsRegular.wallet,
         color: theme.colorScheme.secondary,
       ),
       title: Text(l10n.listBudgetTitle),

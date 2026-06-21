@@ -72,6 +72,32 @@ class AppLocalizationsFr extends AppLocalizations {
   String get close => 'Fermer';
 
   @override
+  String get help => 'Aide';
+
+  @override
+  String get helpListTitle => 'Utiliser votre liste';
+
+  @override
+  String get helpListAddItems =>
+      'Ajoutez des articles avec le bouton + en bas ou utilisez la recherche pour parcourir les produits';
+
+  @override
+  String get helpListAi =>
+      'Demandez à l\'assistant IA de créer, d\'organiser ou de compléter votre liste - appuyez simplement sur l\'icône scintillante';
+
+  @override
+  String get helpListShoppingMode =>
+      'Le mode Shopping masque les articles achetés afin que vous puissiez vous concentrer sur ce qui reste';
+
+  @override
+  String get helpListOrganize =>
+      'Faites glisser les articles pour les réorganiser, faites-les glisser pour les marquer comme achetés ou utilisez les filtres et le tri.';
+
+  @override
+  String get helpListShare =>
+      'Partagez votre liste avec votre famille ou exportez-la au format PDF, Excel ou texte brut';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get clear => 'Vider';
+
+  @override
+  String get clearPurchasedTitle => 'Effacer les articles achetés';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Supprimer tous les articles achetés de cette liste ? Cela ne peut pas être annulé.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get purchaseError =>
       'Erreur lors du traitement de l\'achat. Réessayez.';
+
+  @override
+  String get errorCreateList =>
+      'Impossible de créer la liste. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorShareCode =>
+      'Erreur lors de la génération du code de partage. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorQuickAdd =>
+      'Impossible d\'ajouter l\'élément. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorLoadList =>
+      'Impossible de charger vos listes. Veuillez créer une nouvelle liste pour commencer.';
 
   @override
   String get restoreError =>
@@ -492,6 +541,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noBudgetDefined => 'Aucun budget défini';
 
   @override
+  String get budgetGoalInvalidAmount => 'Entrez une valeur supérieure à zéro';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Comprend des estimations de prix partielles';
+
+  @override
+  String get budgetGoalSaved => 'Objectif budgétaire enregistré';
+
+  @override
+  String get budgetGoalRemoved => 'Objectif budgétaire supprimé';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimé : $amount';
   }
@@ -684,6 +746,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get newChat => 'Nouvelle discussion';
+
+  @override
+  String get newChatConfirmTitle => 'Nouvelle conversation';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Démarrer une nouvelle conversation ? Votre conversation en cours sera perdue.';
 
   @override
   String get noHistory => 'Pas d\'historique de discussion';
@@ -1250,6 +1319,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Offre de bienvenue';
+
+  @override
+  String get paywallFreeTier => 'Gratuit : 3 listes';
+
+  @override
+  String get paywallProTier => 'Avantages : Illimité';
+
+  @override
+  String get firstItemAddedSnackbar => 'Premier élément ajouté ! Bon début 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2155,6 +2233,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Type par défaut';
 
   @override
+  String get mealPlannerDuplicate => 'Repas en double';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliquer vers...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Jour actuel';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Repas dupliqué avec succès !';
+
+  @override
   String get expirationDate => 'Date d\'expiration';
 
   @override
@@ -2162,6 +2252,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get skip => 'Sauter';
+
+  @override
+  String get onboardingSkip => 'Passer pour l\'instant';
 
   @override
   String get onboardingAiTitle => 'Discutez avec Kipi';
@@ -3214,6 +3307,31 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Générer une réponse…';
+
+  @override
+  String get errorUnexpected =>
+      'Quelque chose d’inattendu s’est produit. Veuillez réessayer.';
+
+  @override
+  String get aiAssistantTooltip => 'Assistant IA ouvert';
+
+  @override
+  String get searchItems => 'Rechercher des éléments';
+
+  @override
+  String get onboardingHookContinue => 'Commencer';
+
+  @override
+  String get onboardingHookItem1 => 'Poulet grillé';
+
+  @override
+  String get onboardingHookItem2 => 'Fromage mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomates cerises';
+
+  @override
+  String get checkItemTooltip => 'Vérifier l\'article';
 }
 
 /// The translations for French, as used in Canada (`fr_CA`).
@@ -3284,6 +3402,32 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   String get close => 'Fermer';
 
   @override
+  String get help => 'Aide';
+
+  @override
+  String get helpListTitle => 'Utiliser votre liste';
+
+  @override
+  String get helpListAddItems =>
+      'Ajoutez des articles avec le bouton + en bas ou utilisez la recherche pour parcourir les produits';
+
+  @override
+  String get helpListAi =>
+      'Demandez à l\'assistant IA de créer, d\'organiser ou de compléter votre liste - appuyez simplement sur l\'icône scintillante';
+
+  @override
+  String get helpListShoppingMode =>
+      'Le mode Shopping masque les articles achetés afin que vous puissiez vous concentrer sur ce qui reste';
+
+  @override
+  String get helpListOrganize =>
+      'Faites glisser les articles pour les réorganiser, faites-les glisser pour les marquer comme achetés ou utilisez les filtres et le tri.';
+
+  @override
+  String get helpListShare =>
+      'Partagez votre liste avec votre famille ou exportez-la au format PDF, Excel ou texte brut';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -3294,6 +3438,13 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get clear => 'Vider';
+
+  @override
+  String get clearPurchasedTitle => 'Effacer les articles achetés';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Supprimer tous les articles achetés de cette liste ? Cela ne peut pas être annulé.';
 
   @override
   String error(String message) {
@@ -3308,6 +3459,22 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   @override
   String get purchaseError =>
       'Erreur lors du traitement de l\'achat. Réessayez.';
+
+  @override
+  String get errorCreateList =>
+      'Impossible de créer la liste. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorShareCode =>
+      'Erreur lors de la génération du code de partage. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorQuickAdd =>
+      'Impossible d\'ajouter l\'élément. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorLoadList =>
+      'Impossible de charger vos listes. Veuillez créer une nouvelle liste pour commencer.';
 
   @override
   String get restoreError =>
@@ -3704,6 +3871,19 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   String get noBudgetDefined => 'Aucun budget défini';
 
   @override
+  String get budgetGoalInvalidAmount => 'Entrez une valeur supérieure à zéro';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Comprend des estimations de prix partielles';
+
+  @override
+  String get budgetGoalSaved => 'Objectif budgétaire enregistré';
+
+  @override
+  String get budgetGoalRemoved => 'Objectif budgétaire supprimé';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimé : $amount';
   }
@@ -3896,6 +4076,13 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get newChat => 'Nouvelle discussion';
+
+  @override
+  String get newChatConfirmTitle => 'Nouvelle conversation';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Démarrer une nouvelle conversation ? Votre conversation en cours sera perdue.';
 
   @override
   String get noHistory => 'Pas d\'historique de discussion';
@@ -4462,6 +4649,15 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Offre de bienvenue';
+
+  @override
+  String get paywallFreeTier => 'Gratuit : 3 listes';
+
+  @override
+  String get paywallProTier => 'Avantages : Illimité';
+
+  @override
+  String get firstItemAddedSnackbar => 'Premier élément ajouté ! Bon début 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5367,6 +5563,18 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   String get mealPlannerDefaultTypeLabel => 'Type par défaut';
 
   @override
+  String get mealPlannerDuplicate => 'Repas en double';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliquer vers...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Jour actuel';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Repas dupliqué avec succès !';
+
+  @override
   String get expirationDate => 'Date d\'expiration';
 
   @override
@@ -5374,6 +5582,9 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get skip => 'Sauter';
+
+  @override
+  String get onboardingSkip => 'Passer pour l\'instant';
 
   @override
   String get onboardingAiTitle => 'Discutez avec Kipi';
@@ -6426,6 +6637,31 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
 
   @override
   String get aiGeneratingResponse => 'Générer une réponse…';
+
+  @override
+  String get errorUnexpected =>
+      'Quelque chose d’inattendu s’est produit. Veuillez réessayer.';
+
+  @override
+  String get aiAssistantTooltip => 'Assistant IA ouvert';
+
+  @override
+  String get searchItems => 'Rechercher des éléments';
+
+  @override
+  String get onboardingHookContinue => 'Commencer';
+
+  @override
+  String get onboardingHookItem1 => 'Poulet grillé';
+
+  @override
+  String get onboardingHookItem2 => 'Fromage mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomates cerises';
+
+  @override
+  String get checkItemTooltip => 'Vérifier l\'article';
 }
 
 /// The translations for French, as used in France (`fr_FR`).
@@ -6496,6 +6732,32 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get close => 'Fermer';
 
   @override
+  String get help => 'Aide';
+
+  @override
+  String get helpListTitle => 'Utiliser votre liste';
+
+  @override
+  String get helpListAddItems =>
+      'Ajoutez des articles avec le bouton + en bas ou utilisez la recherche pour parcourir les produits';
+
+  @override
+  String get helpListAi =>
+      'Demandez à l\'assistant IA de créer, d\'organiser ou de compléter votre liste - appuyez simplement sur l\'icône scintillante';
+
+  @override
+  String get helpListShoppingMode =>
+      'Le mode Shopping masque les articles achetés afin que vous puissiez vous concentrer sur ce qui reste';
+
+  @override
+  String get helpListOrganize =>
+      'Faites glisser les articles pour les réorganiser, faites-les glisser pour les marquer comme achetés ou utilisez les filtres et le tri.';
+
+  @override
+  String get helpListShare =>
+      'Partagez votre liste avec votre famille ou exportez-la au format PDF, Excel ou texte brut';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -6506,6 +6768,13 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get clear => 'Vider';
+
+  @override
+  String get clearPurchasedTitle => 'Effacer les articles achetés';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Supprimer tous les articles achetés de cette liste ? Cela ne peut pas être annulé.';
 
   @override
   String error(String message) {
@@ -6520,6 +6789,22 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   @override
   String get purchaseError =>
       'Erreur lors du traitement de l\'achat. Réessayez.';
+
+  @override
+  String get errorCreateList =>
+      'Impossible de créer la liste. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorShareCode =>
+      'Erreur lors de la génération du code de partage. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorQuickAdd =>
+      'Impossible d\'ajouter l\'élément. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get errorLoadList =>
+      'Impossible de charger vos listes. Veuillez créer une nouvelle liste pour commencer.';
 
   @override
   String get restoreError =>
@@ -6916,6 +7201,19 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get noBudgetDefined => 'Aucun budget défini';
 
   @override
+  String get budgetGoalInvalidAmount => 'Entrez une valeur supérieure à zéro';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Comprend des estimations de prix partielles';
+
+  @override
+  String get budgetGoalSaved => 'Objectif budgétaire enregistré';
+
+  @override
+  String get budgetGoalRemoved => 'Objectif budgétaire supprimé';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimé : $amount';
   }
@@ -7108,6 +7406,13 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get newChat => 'Nouvelle discussion';
+
+  @override
+  String get newChatConfirmTitle => 'Nouvelle conversation';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Démarrer une nouvelle conversation ? Votre conversation en cours sera perdue.';
 
   @override
   String get noHistory => 'Pas d\'historique de discussion';
@@ -7674,6 +7979,15 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Offre de bienvenue';
+
+  @override
+  String get paywallFreeTier => 'Gratuit : 3 listes';
+
+  @override
+  String get paywallProTier => 'Avantages : Illimité';
+
+  @override
+  String get firstItemAddedSnackbar => 'Premier élément ajouté ! Bon début 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -8579,6 +8893,18 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get mealPlannerDefaultTypeLabel => 'Type par défaut';
 
   @override
+  String get mealPlannerDuplicate => 'Repas en double';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliquer vers...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Jour actuel';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Repas dupliqué avec succès !';
+
+  @override
   String get expirationDate => 'Date d\'expiration';
 
   @override
@@ -8586,6 +8912,9 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get skip => 'Sauter';
+
+  @override
+  String get onboardingSkip => 'Passer pour l\'instant';
 
   @override
   String get onboardingAiTitle => 'Discutez avec Kipi';
@@ -9638,4 +9967,29 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
 
   @override
   String get aiGeneratingResponse => 'Générer une réponse…';
+
+  @override
+  String get errorUnexpected =>
+      'Quelque chose d’inattendu s’est produit. Veuillez réessayer.';
+
+  @override
+  String get aiAssistantTooltip => 'Assistant IA ouvert';
+
+  @override
+  String get searchItems => 'Rechercher des éléments';
+
+  @override
+  String get onboardingHookContinue => 'Commencer';
+
+  @override
+  String get onboardingHookItem1 => 'Poulet grillé';
+
+  @override
+  String get onboardingHookItem2 => 'Fromage mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomates cerises';
+
+  @override
+  String get checkItemTooltip => 'Vérifier l\'article';
 }

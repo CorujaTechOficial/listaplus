@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ChatInputBar extends ConsumerWidget {
   const ChatInputBar({
@@ -121,7 +122,7 @@ class ChatInputBar extends ConsumerWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
-                                    Icons.playlist_add_rounded,
+                                    PhosphorIconsRegular.plus,
                                     size: 22,
                                     color:
                                         hasText && !inputBlocked
@@ -196,7 +197,7 @@ class ChatInputBar extends ConsumerWidget {
                           enabledBorder: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 14,
+                            horizontal: Spacing.sm,
                             vertical: Spacing.sm,
                           ),
                           counterText: charCount > 300 ? '$charCount/1000' : '',
@@ -218,7 +219,7 @@ class ChatInputBar extends ConsumerWidget {
                             isSending
                                 ? _ChatInputIconButton(
                                   key: const ValueKey('chat_stop_button'),
-                                  icon: Icons.stop_rounded,
+                                  icon: PhosphorIconsRegular.stop,
                                   // Stop is "interrupt generation", not a
                                   // destructive action — a calm neutral fill
                                   // reads as stop without the alarm of error red.
@@ -231,7 +232,7 @@ class ChatInputBar extends ConsumerWidget {
                                 : hasText
                                 ? _ChatInputIconButton(
                                   key: const ValueKey('chat_send_button'),
-                                  icon: Icons.arrow_upward_rounded,
+                                  icon: PhosphorIconsRegular.arrowUp,
                                   color: theme.colorScheme.onPrimary,
                                   background: theme.colorScheme.primary,
                                   onPressed: inputBlocked ? null : onSend,
@@ -241,8 +242,8 @@ class ChatInputBar extends ConsumerWidget {
                                   key: const ValueKey('chat_mic_button'),
                                   icon:
                                       isListening
-                                          ? Icons.mic
-                                          : Icons.mic_none_rounded,
+                                          ? PhosphorIconsRegular.microphone
+                                          : PhosphorIconsRegular.microphone,
                                   color:
                                       isListening
                                           ? theme.colorScheme.primary

@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/user_profile.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class UserProfileScreen extends ConsumerStatefulWidget {
   const UserProfileScreen({super.key});
@@ -47,17 +49,21 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
       if (!mounted) {
         return;
       }
-      ScaffoldMessenger.of(
+      showKipiSnackBar(
         context,
-      ).showSnackBar(SnackBar(content: Text(l10n.profileSaved)));
+        message: l10n.profileSaved,
+        type: SnackBarType.success,
+      );
       Navigator.pop(context);
     } on Exception catch (e) {
       if (!mounted) {
         return;
       }
-      ScaffoldMessenger.of(
+      showKipiSnackBar(
         context,
-      ).showSnackBar(SnackBar(content: Text('${l10n.errorSavingProfile}: $e')));
+        message: '${l10n.errorSavingProfile}: $e',
+        type: SnackBarType.error,
+      );
     }
   }
 
@@ -104,7 +110,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
             labelText: profileFormL10n.preferredMarket,
             hintText: profileFormL10n.preferredMarketHint,
             border: const OutlineInputBorder(),
-            prefixIcon: const Icon(Icons.store),
+            prefixIcon: const Icon(PhosphorIconsRegular.storefront),
           ),
         ),
         const SizedBox(height: Spacing.md),
@@ -114,7 +120,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
             labelText: profileFormL10n.dietaryRestrictions,
             hintText: profileFormL10n.dietaryRestrictionsHint,
             border: const OutlineInputBorder(),
-            prefixIcon: const Icon(Icons.restaurant),
+            prefixIcon: const Icon(PhosphorIconsRegular.forkKnife),
           ),
         ),
         const SizedBox(height: Spacing.md),
@@ -124,7 +130,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
             labelText: profileFormL10n.marketsToAvoid,
             hintText: profileFormL10n.marketsToAvoidHint,
             border: const OutlineInputBorder(),
-            prefixIcon: const Icon(Icons.block),
+            prefixIcon: const Icon(PhosphorIconsRegular.prohibit),
           ),
         ),
         const SizedBox(height: Spacing.md),
@@ -134,14 +140,14 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
             labelText: profileFormL10n.observations,
             hintText: profileFormL10n.observationsHint,
             border: const OutlineInputBorder(),
-            prefixIcon: const Icon(Icons.note),
+            prefixIcon: const Icon(PhosphorIconsRegular.notepad),
           ),
           maxLines: 3,
         ),
         const SizedBox(height: Spacing.lg),
         FilledButton.icon(
           onPressed: _save,
-          icon: const Icon(Icons.save),
+          icon: const Icon(PhosphorIconsRegular.floppyDisk),
           label: Text(profileFormL10n.saveProfile),
         ),
       ],

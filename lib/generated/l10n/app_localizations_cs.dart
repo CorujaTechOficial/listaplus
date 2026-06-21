@@ -72,6 +72,32 @@ class AppLocalizationsCs extends AppLocalizations {
   String get close => 'Zavřít';
 
   @override
+  String get help => 'Pomoc';
+
+  @override
+  String get helpListTitle => 'Pomocí svého seznamu';
+
+  @override
+  String get helpListAddItems =>
+      'Přidejte položky pomocí tlačítka + v dolní části nebo použijte vyhledávání k procházení produktů';
+
+  @override
+  String get helpListAi =>
+      'Požádejte asistenta AI, aby vytvořil, uspořádal nebo doplnil váš seznam – stačí klepnout na ikonu jiskry';
+
+  @override
+  String get helpListShoppingMode =>
+      'Nákupní režim skryje zakoupené položky, takže se můžete soustředit na to, co zbylo';
+
+  @override
+  String get helpListOrganize =>
+      'Přetažením položky změňte pořadí, přejetím označte jako zakoupené nebo použijte filtry a řazení';
+
+  @override
+  String get helpListShare =>
+      'Sdílejte svůj seznam s rodinou nebo exportujte jako PDF, Excel nebo prostý text';
+
+  @override
   String get import => 'Importovat';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get clear => 'Vyčistit';
+
+  @override
+  String get clearPurchasedTitle => 'Vymazat zakoupené položky';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Odebrat všechny zakoupené položky z tohoto seznamu? Toto nelze vrátit zpět.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get purchaseError => 'Chyba při zpracování nákupu. Zkus to znovu.';
+
+  @override
+  String get errorCreateList =>
+      'Seznam se nepodařilo vytvořit. Zkontrolujte připojení a zkuste to znovu.';
+
+  @override
+  String get errorShareCode =>
+      'Chyba při generování kódu sdílení. Zkontrolujte připojení a zkuste to znovu.';
+
+  @override
+  String get errorQuickAdd =>
+      'Položku se nepodařilo přidat. Zkontrolujte připojení a zkuste to znovu.';
+
+  @override
+  String get errorLoadList =>
+      'Vaše seznamy se nepodařilo načíst. Začněte vytvořením nového seznamu.';
 
   @override
   String get restoreError => 'Chyba při obnově nákupů. Zkus to znovu.';
@@ -488,6 +537,18 @@ class AppLocalizationsCs extends AppLocalizations {
   String get noBudgetDefined => 'Není nastaven rozpočet';
 
   @override
+  String get budgetGoalInvalidAmount => 'Zadejte hodnotu větší než nula';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Zahrnuje částečné odhady cen';
+
+  @override
+  String get budgetGoalSaved => 'Cíl rozpočtu byl uložen';
+
+  @override
+  String get budgetGoalRemoved => 'Cíl rozpočtu byl odstraněn';
+
+  @override
   String totalEstimated(String amount) {
     return 'Celkem odhadováno: $amount';
   }
@@ -680,6 +741,13 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get newChat => 'Nový chat';
+
+  @override
+  String get newChatConfirmTitle => 'Nový rozhovor';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Začít novou konverzaci? Vaše aktuální konverzace bude ztracena.';
 
   @override
   String get noHistory => 'Žádná historie chatu';
@@ -1244,6 +1312,16 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Uvítací nabídka';
+
+  @override
+  String get paywallFreeTier => 'Zdarma: 3 seznamy';
+
+  @override
+  String get paywallProTier => 'Pro: Neomezené';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'První položka přidána! Skvělý začátek 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2143,6 +2221,18 @@ class AppLocalizationsCs extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Výchozí typ';
 
   @override
+  String get mealPlannerDuplicate => 'Duplicitní jídlo';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplikovat do...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuální den';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Jídlo bylo úspěšně duplikováno!';
+
+  @override
   String get expirationDate => 'Datum spotřeby';
 
   @override
@@ -2150,6 +2240,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get skip => 'Přeskočit';
+
+  @override
+  String get onboardingSkip => 'Zatím přeskočte';
 
   @override
   String get onboardingAiTitle => 'Chatujte s Kipi';
@@ -3177,6 +3270,31 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Generování odpovědi…';
+
+  @override
+  String get errorUnexpected =>
+      'Stalo se něco neočekávaného. Zkuste to prosím znovu.';
+
+  @override
+  String get aiAssistantTooltip => 'Otevřete asistenta AI';
+
+  @override
+  String get searchItems => 'Hledat položky';
+
+  @override
+  String get onboardingHookContinue => 'Začněte';
+
+  @override
+  String get onboardingHookItem1 => 'Grilované kuře';
+
+  @override
+  String get onboardingHookItem2 => 'Sýr mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry rajčata';
+
+  @override
+  String get checkItemTooltip => 'Zkontrolujte položku';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -3247,6 +3365,32 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get close => 'Zavřít';
 
   @override
+  String get help => 'Pomoc';
+
+  @override
+  String get helpListTitle => 'Pomocí svého seznamu';
+
+  @override
+  String get helpListAddItems =>
+      'Přidejte položky pomocí tlačítka + v dolní části nebo použijte vyhledávání k procházení produktů';
+
+  @override
+  String get helpListAi =>
+      'Požádejte asistenta AI, aby vytvořil, uspořádal nebo doplnil váš seznam – stačí klepnout na ikonu jiskry';
+
+  @override
+  String get helpListShoppingMode =>
+      'Nákupní režim skryje zakoupené položky, takže se můžete soustředit na to, co zbylo';
+
+  @override
+  String get helpListOrganize =>
+      'Přetažením položky změňte pořadí, přejetím označte jako zakoupené nebo použijte filtry a řazení';
+
+  @override
+  String get helpListShare =>
+      'Sdílejte svůj seznam s rodinou nebo exportujte jako PDF, Excel nebo prostý text';
+
+  @override
   String get import => 'Importovat';
 
   @override
@@ -3257,6 +3401,13 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get clear => 'Vyčistit';
+
+  @override
+  String get clearPurchasedTitle => 'Vymazat zakoupené položky';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Odebrat všechny zakoupené položky z tohoto seznamu? Toto nelze vrátit zpět.';
 
   @override
   String error(String message) {
@@ -3270,6 +3421,22 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get purchaseError => 'Chyba při zpracování nákupu. Zkus to znovu.';
+
+  @override
+  String get errorCreateList =>
+      'Seznam se nepodařilo vytvořit. Zkontrolujte připojení a zkuste to znovu.';
+
+  @override
+  String get errorShareCode =>
+      'Chyba při generování kódu sdílení. Zkontrolujte připojení a zkuste to znovu.';
+
+  @override
+  String get errorQuickAdd =>
+      'Položku se nepodařilo přidat. Zkontrolujte připojení a zkuste to znovu.';
+
+  @override
+  String get errorLoadList =>
+      'Vaše seznamy se nepodařilo načíst. Začněte vytvořením nového seznamu.';
 
   @override
   String get restoreError => 'Chyba při obnově nákupů. Zkus to znovu.';
@@ -3663,6 +3830,18 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get noBudgetDefined => 'Není nastaven rozpočet';
 
   @override
+  String get budgetGoalInvalidAmount => 'Zadejte hodnotu větší než nula';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Zahrnuje částečné odhady cen';
+
+  @override
+  String get budgetGoalSaved => 'Cíl rozpočtu byl uložen';
+
+  @override
+  String get budgetGoalRemoved => 'Cíl rozpočtu byl odstraněn';
+
+  @override
   String totalEstimated(String amount) {
     return 'Celkem odhadováno: $amount';
   }
@@ -3855,6 +4034,13 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get newChat => 'Nový chat';
+
+  @override
+  String get newChatConfirmTitle => 'Nový rozhovor';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Začít novou konverzaci? Vaše aktuální konverzace bude ztracena.';
 
   @override
   String get noHistory => 'Žádná historie chatu';
@@ -4419,6 +4605,16 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Uvítací nabídka';
+
+  @override
+  String get paywallFreeTier => 'Zdarma: 3 seznamy';
+
+  @override
+  String get paywallProTier => 'Pro: Neomezené';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'První položka přidána! Skvělý začátek 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5318,6 +5514,18 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get mealPlannerDefaultTypeLabel => 'Výchozí typ';
 
   @override
+  String get mealPlannerDuplicate => 'Duplicitní jídlo';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplikovat do...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuální den';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Jídlo bylo úspěšně duplikováno!';
+
+  @override
   String get expirationDate => 'Datum spotřeby';
 
   @override
@@ -5325,6 +5533,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get skip => 'Přeskočit';
+
+  @override
+  String get onboardingSkip => 'Zatím přeskočte';
 
   @override
   String get onboardingAiTitle => 'Chatujte s Kipi';
@@ -6352,4 +6563,29 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get aiGeneratingResponse => 'Generování odpovědi…';
+
+  @override
+  String get errorUnexpected =>
+      'Stalo se něco neočekávaného. Zkuste to prosím znovu.';
+
+  @override
+  String get aiAssistantTooltip => 'Otevřete asistenta AI';
+
+  @override
+  String get searchItems => 'Hledat položky';
+
+  @override
+  String get onboardingHookContinue => 'Začněte';
+
+  @override
+  String get onboardingHookItem1 => 'Grilované kuře';
+
+  @override
+  String get onboardingHookItem2 => 'Sýr mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry rajčata';
+
+  @override
+  String get checkItemTooltip => 'Zkontrolujte položku';
 }

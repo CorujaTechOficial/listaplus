@@ -72,6 +72,32 @@ class AppLocalizationsEl extends AppLocalizations {
   String get close => 'Κλείσιμο';
 
   @override
+  String get help => 'Βοήθεια';
+
+  @override
+  String get helpListTitle => 'Χρησιμοποιώντας τη λίστα σας';
+
+  @override
+  String get helpListAddItems =>
+      'Προσθέστε στοιχεία με το κουμπί + στο κάτω μέρος ή χρησιμοποιήστε την αναζήτηση για να περιηγηθείτε σε προϊόντα';
+
+  @override
+  String get helpListAi =>
+      'Ζητήστε από τον βοηθό τεχνητής νοημοσύνης να δημιουργήσει, να οργανώσει ή να ολοκληρώσει τη λίστα σας — απλώς πατήστε το εικονίδιο λάμψης';
+
+  @override
+  String get helpListShoppingMode =>
+      'Η λειτουργία αγορών κρύβει τα αγορασμένα αντικείμενα, ώστε να μπορείτε να εστιάσετε σε ό,τι απομένει';
+
+  @override
+  String get helpListOrganize =>
+      'Σύρετε στοιχεία για αναδιάταξη, σύρετε για να επισημάνετε ως αγορασμένα ή χρησιμοποιήστε φίλτρα και ταξινόμηση';
+
+  @override
+  String get helpListShare =>
+      'Μοιραστείτε τη λίστα σας με την οικογένεια ή εξάγετε ως PDF, Excel ή απλό κείμενο';
+
+  @override
   String get import => 'Εισαγωγή';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get clear => 'Εκκαθάριση';
+
+  @override
+  String get clearPurchasedTitle => 'Εκκαθάριση αγορασμένων αντικειμένων';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Κατάργηση όλων των αγορασμένων προϊόντων από αυτήν τη λίστα; Αυτό δεν μπορεί να αναιρεθεί.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get purchaseError => 'Σφάλμα επεξεργασίας αγοράς. Δοκιμάστε ξανά.';
+
+  @override
+  String get errorCreateList =>
+      'Δεν ήταν δυνατή η δημιουργία λίστας. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get errorShareCode =>
+      'Σφάλμα κατά τη δημιουργία κωδικού κοινής χρήσης. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get errorQuickAdd =>
+      'Δεν ήταν δυνατή η προσθήκη του στοιχείου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get errorLoadList =>
+      'Δεν ήταν δυνατή η φόρτωση των λιστών σας. Δημιουργήστε μια νέα λίστα για να ξεκινήσετε.';
 
   @override
   String get restoreError => 'Σφάλμα επαναφοράς αγορών. Δοκιμάστε ξανά.';
@@ -490,6 +539,20 @@ class AppLocalizationsEl extends AppLocalizations {
   String get noBudgetDefined => 'Δεν έχει οριστεί προϋπολογισμός';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Εισαγάγετε μια τιμή μεγαλύτερη από το μηδέν';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Περιλαμβάνει μερικές εκτιμήσεις τιμολόγησης';
+
+  @override
+  String get budgetGoalSaved => 'Ο στόχος προϋπολογισμού αποθηκεύτηκε';
+
+  @override
+  String get budgetGoalRemoved => 'Ο στόχος προϋπολογισμού καταργήθηκε';
+
+  @override
   String totalEstimated(String amount) {
     return 'Σύνολο εκτιμώμενο: $amount';
   }
@@ -682,6 +745,13 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get newChat => 'Νέα συνομιλία';
+
+  @override
+  String get newChatConfirmTitle => 'Νέα συνομιλία';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Έναρξη νέας συνομιλίας; Η τρέχουσα συνομιλία σας θα χαθεί.';
 
   @override
   String get noHistory => 'Δεν υπάρχει ιστορικό συνομιλιών';
@@ -1252,6 +1322,16 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Προσφορά καλωσορίσματος';
+
+  @override
+  String get paywallFreeTier => 'Δωρεάν: 3 λίστες';
+
+  @override
+  String get paywallProTier => 'Pro: Απεριόριστο';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Το πρώτο στοιχείο προστέθηκε! Καλή αρχή 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2160,6 +2240,19 @@ class AppLocalizationsEl extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Προεπιλεγμένος τύπος';
 
   @override
+  String get mealPlannerDuplicate => 'Διπλότυπο γεύμα';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Διπλότυπο σε...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Τρέχουσα ημέρα';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'Το γεύμα επαναλήφθηκε με επιτυχία!';
+
+  @override
   String get expirationDate => 'Ημερομηνία λήξης';
 
   @override
@@ -2167,6 +2260,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get skip => 'Παραλείπω';
+
+  @override
+  String get onboardingSkip => 'Παράλειψη προς το παρόν';
 
   @override
   String get onboardingAiTitle => 'Συνομιλία με τον Kipi';
@@ -3215,6 +3311,30 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Δημιουργία απόκρισης…';
+
+  @override
+  String get errorUnexpected => 'Συνέβη κάτι απροσδόκητο. Δοκιμάστε ξανά.';
+
+  @override
+  String get aiAssistantTooltip => 'Ανοίξτε τον βοηθό AI';
+
+  @override
+  String get searchItems => 'Αναζήτηση στοιχείων';
+
+  @override
+  String get onboardingHookContinue => 'Ξεκινήστε';
+
+  @override
+  String get onboardingHookItem1 => 'Κοτόπουλο ψητό';
+
+  @override
+  String get onboardingHookItem2 => 'Τυρί μοτσαρέλα';
+
+  @override
+  String get onboardingHookItem3 => 'ντοματίνια';
+
+  @override
+  String get checkItemTooltip => 'Ελέγξτε το στοιχείο';
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).
@@ -3285,6 +3405,32 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get close => 'Κλείσιμο';
 
   @override
+  String get help => 'Βοήθεια';
+
+  @override
+  String get helpListTitle => 'Χρησιμοποιώντας τη λίστα σας';
+
+  @override
+  String get helpListAddItems =>
+      'Προσθέστε στοιχεία με το κουμπί + στο κάτω μέρος ή χρησιμοποιήστε την αναζήτηση για να περιηγηθείτε σε προϊόντα';
+
+  @override
+  String get helpListAi =>
+      'Ζητήστε από τον βοηθό τεχνητής νοημοσύνης να δημιουργήσει, να οργανώσει ή να ολοκληρώσει τη λίστα σας — απλώς πατήστε το εικονίδιο λάμψης';
+
+  @override
+  String get helpListShoppingMode =>
+      'Η λειτουργία αγορών κρύβει τα αγορασμένα αντικείμενα, ώστε να μπορείτε να εστιάσετε σε ό,τι απομένει';
+
+  @override
+  String get helpListOrganize =>
+      'Σύρετε στοιχεία για αναδιάταξη, σύρετε για να επισημάνετε ως αγορασμένα ή χρησιμοποιήστε φίλτρα και ταξινόμηση';
+
+  @override
+  String get helpListShare =>
+      'Μοιραστείτε τη λίστα σας με την οικογένεια ή εξάγετε ως PDF, Excel ή απλό κείμενο';
+
+  @override
   String get import => 'Εισαγωγή';
 
   @override
@@ -3295,6 +3441,13 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get clear => 'Εκκαθάριση';
+
+  @override
+  String get clearPurchasedTitle => 'Εκκαθάριση αγορασμένων αντικειμένων';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Κατάργηση όλων των αγορασμένων προϊόντων από αυτήν τη λίστα; Αυτό δεν μπορεί να αναιρεθεί.';
 
   @override
   String error(String message) {
@@ -3308,6 +3461,22 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get purchaseError => 'Σφάλμα επεξεργασίας αγοράς. Δοκιμάστε ξανά.';
+
+  @override
+  String get errorCreateList =>
+      'Δεν ήταν δυνατή η δημιουργία λίστας. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get errorShareCode =>
+      'Σφάλμα κατά τη δημιουργία κωδικού κοινής χρήσης. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get errorQuickAdd =>
+      'Δεν ήταν δυνατή η προσθήκη του στοιχείου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get errorLoadList =>
+      'Δεν ήταν δυνατή η φόρτωση των λιστών σας. Δημιουργήστε μια νέα λίστα για να ξεκινήσετε.';
 
   @override
   String get restoreError => 'Σφάλμα επαναφοράς αγορών. Δοκιμάστε ξανά.';
@@ -3703,6 +3872,20 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get noBudgetDefined => 'Δεν έχει οριστεί προϋπολογισμός';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Εισαγάγετε μια τιμή μεγαλύτερη από το μηδέν';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Περιλαμβάνει μερικές εκτιμήσεις τιμολόγησης';
+
+  @override
+  String get budgetGoalSaved => 'Ο στόχος προϋπολογισμού αποθηκεύτηκε';
+
+  @override
+  String get budgetGoalRemoved => 'Ο στόχος προϋπολογισμού καταργήθηκε';
+
+  @override
   String totalEstimated(String amount) {
     return 'Σύνολο εκτιμώμενο: $amount';
   }
@@ -3895,6 +4078,13 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get newChat => 'Νέα συνομιλία';
+
+  @override
+  String get newChatConfirmTitle => 'Νέα συνομιλία';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Έναρξη νέας συνομιλίας; Η τρέχουσα συνομιλία σας θα χαθεί.';
 
   @override
   String get noHistory => 'Δεν υπάρχει ιστορικό συνομιλιών';
@@ -4465,6 +4655,16 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Προσφορά καλωσορίσματος';
+
+  @override
+  String get paywallFreeTier => 'Δωρεάν: 3 λίστες';
+
+  @override
+  String get paywallProTier => 'Pro: Απεριόριστο';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Το πρώτο στοιχείο προστέθηκε! Καλή αρχή 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5373,6 +5573,19 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get mealPlannerDefaultTypeLabel => 'Προεπιλεγμένος τύπος';
 
   @override
+  String get mealPlannerDuplicate => 'Διπλότυπο γεύμα';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Διπλότυπο σε...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Τρέχουσα ημέρα';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'Το γεύμα επαναλήφθηκε με επιτυχία!';
+
+  @override
   String get expirationDate => 'Ημερομηνία λήξης';
 
   @override
@@ -5380,6 +5593,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get skip => 'Παραλείπω';
+
+  @override
+  String get onboardingSkip => 'Παράλειψη προς το παρόν';
 
   @override
   String get onboardingAiTitle => 'Συνομιλία με τον Kipi';
@@ -6428,4 +6644,28 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get aiGeneratingResponse => 'Δημιουργία απόκρισης…';
+
+  @override
+  String get errorUnexpected => 'Συνέβη κάτι απροσδόκητο. Δοκιμάστε ξανά.';
+
+  @override
+  String get aiAssistantTooltip => 'Ανοίξτε τον βοηθό AI';
+
+  @override
+  String get searchItems => 'Αναζήτηση στοιχείων';
+
+  @override
+  String get onboardingHookContinue => 'Ξεκινήστε';
+
+  @override
+  String get onboardingHookItem1 => 'Κοτόπουλο ψητό';
+
+  @override
+  String get onboardingHookItem2 => 'Τυρί μοτσαρέλα';
+
+  @override
+  String get onboardingHookItem3 => 'ντοματίνια';
+
+  @override
+  String get checkItemTooltip => 'Ελέγξτε το στοιχείο';
 }

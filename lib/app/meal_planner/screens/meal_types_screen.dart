@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_type.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class MealTypesScreen extends ConsumerStatefulWidget {
@@ -97,13 +98,13 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
                           onTap: () => setStateDialog(() => selectedColor = colorVal),
                           borderRadius: BorderRadius.circular(RadiusTokens.full),
                           child: Container(
-                            width: 32,
-                            height: 32,
+                            width: Spacing.xl,
+                            height: Spacing.xl,
                             decoration: BoxDecoration(
                               color: Color(colorVal),
                               shape: BoxShape.circle,
                               border: isSelected
-                                  ? Border.all(color: theme.colorScheme.onSurface, width: 2.5)
+                                  ? Border.all(color: theme.colorScheme.onSurface, width: 2)
                                   : null,
                             ),
                           ),
@@ -127,8 +128,8 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
                           onTap: () => setStateDialog(() => selectedIconCodepoint = iconData.codePoint),
                           borderRadius: BorderRadius.circular(RadiusTokens.md),
                           child: Container(
-                            width: 36,
-                            height: 36,
+                            width: Spacing.xl + Spacing.xxs,
+                            height: Spacing.xl + Spacing.xxs,
                             decoration: BoxDecoration(
                               color: isSelected
                                   ? theme.colorScheme.primaryContainer
@@ -140,7 +141,7 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
                             ),
                             child: Icon(
                               iconData,
-                              size: 20,
+                              size: Spacing.md + Spacing.xxs,
                               color: isSelected
                                   ? theme.colorScheme.onPrimaryContainer
                                   : theme.colorScheme.onSurface,
@@ -160,8 +161,10 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
                 FilledButton(
                   onPressed: () {
                     if (nameController.text.trim().isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(l10n.mealPlannerTypeNameEmpty)),
+                      showKipiSnackBar(
+                        context,
+                        message: l10n.mealPlannerTypeNameEmpty,
+                        type: SnackBarType.warning,
                       );
                       return;
                     }
@@ -197,8 +200,10 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
 
     // Keep at least one meal type
     if (activeTypes.length <= 1) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.mealPlannerTypeDeleteError)),
+      showKipiSnackBar(
+        context,
+        message: l10n.mealPlannerTypeDeleteError,
+        type: SnackBarType.warning,
       );
       return;
     }
@@ -260,7 +265,7 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
         child: activeTypes.isEmpty
             ? const Center(child: CircularProgressIndicator())
             : ReorderableListView.builder(
-                padding: const EdgeInsets.only(bottom: 80),
+                padding: const EdgeInsets.only(bottom: Spacing.xxl + Spacing.xl),
                 itemCount: activeTypes.length,
                 onReorder: _onReorder,
                 itemBuilder: (context, index) {
@@ -293,13 +298,13 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
                           const Icon(Icons.drag_indicator_rounded),
                           const SizedBox(width: Spacing.xs),
                           Container(
-                            width: 36,
-                            height: 36,
+                            width: Spacing.xl + Spacing.xxs,
+                            height: Spacing.xl + Spacing.xxs,
                             decoration: BoxDecoration(
                               color: color.withAlpha(30),
                               shape: BoxShape.circle,
                             ),
-                            child: Icon(type.iconData, size: 18, color: color),
+                            child: Icon(type.iconData, size: Spacing.md + Spacing.xxs / 2, color: color),
                           ),
                         ],
                       ),
@@ -321,11 +326,11 @@ class _MealTypesScreenState extends ConsumerState<MealTypesScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: const Icon(Icons.edit_outlined, size: 20),
+                            icon: const Icon(Icons.edit_outlined, size: Spacing.md + Spacing.xxs),
                             onPressed: () => _openAddEditDialog(type),
                           ),
                           IconButton(
-                            icon: const Icon(Icons.delete_outline_rounded, size: 20),
+                            icon: const Icon(Icons.delete_outline_rounded, size: Spacing.md + Spacing.xxs),
                             onPressed: () => _deleteType(type),
                           ),
                         ],

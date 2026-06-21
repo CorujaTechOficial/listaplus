@@ -5,6 +5,7 @@ import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/core/utils/kipi_sheets.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class PremiumGate extends StatelessWidget {
   const PremiumGate({
@@ -52,7 +53,7 @@ class PremiumGate extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
-                      Icons.workspace_premium,
+                      PhosphorIconsRegular.crown,
                       size: 36,
                       color: AppColors.premiumAmber,
                     ),
@@ -60,7 +61,7 @@ class PremiumGate extends StatelessWidget {
                     begin: const Offset(0.7, 0.7),
                     end: const Offset(1, 1),
                     duration: DurationTokens.fast,
-                    curve: Curves.easeOutBack,
+                    curve: Curves.easeOutCubic,
                   ),
                   const SizedBox(height: Spacing.md),
                   Container(
@@ -149,7 +150,7 @@ class PremiumGate extends StatelessWidget {
                         end: const Offset(1, 1),
                         duration: DurationTokens.fast,
                         delay: const Duration(milliseconds: 400),
-                        curve: Curves.easeOutBack,
+                        curve: Curves.easeOutCubic,
                       ),
                 ],
               ),

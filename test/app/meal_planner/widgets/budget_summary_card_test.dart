@@ -67,18 +67,25 @@ void main() {
     )!;
     // Zero costs show
     expect(find.textContaining('R\$'), findsWidgets);
-    // No progress bar visible (no goal)
-    expect(find.byType(LinearProgressIndicator), findsNothing);
+    // Only the meal progress bar visible (no budget goal set)
+    expect(find.byType(LinearProgressIndicator), findsOneWidget);
     // Set budget CTA visible
     expect(find.text(l10n.setBudgetButton), findsOneWidget);
   });
 
   testWidgets('shows progress bar when goal is set', (tester) async {
-    SharedPreferences.setMockInitialValues({'monthly_budget_goal': 500.0});
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble('monthly_budget_goal', 500.0);
+
     await tester.pumpWidget(buildSubject());
     await tester.pumpAndSettle();
 
-    expect(find.byType(LinearProgressIndicator), findsOneWidget);
+    // Tap to expand the card to reveal the progress bars
+    await tester.tap(find.byType(InkWell));
+    await tester.pumpAndSettle();
+
+    // Both budget and meal progress bars visible
+    expect(find.byType(LinearProgressIndicator), findsNWidgets(2));
     expect(find.text(l10n(tester).setBudgetButton), findsNothing);
   });
 

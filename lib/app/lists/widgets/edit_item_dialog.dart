@@ -8,6 +8,7 @@ import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class EditItemDialog extends ConsumerStatefulWidget {
   const EditItemDialog({super.key, required this.listId, required this.item});
@@ -54,7 +55,7 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return AlertDialog(
-      icon: Icon(Icons.edit_outlined, color: theme.colorScheme.secondary),
+      icon: Icon(PhosphorIconsRegular.pencilSimple, color: theme.colorScheme.secondary),
       title: Text(l10n.editItem),
       content: Form(
         key: _formKey,

@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarta förslag, recept och personliga tips med vår AI-assistent.",
   "aiAssistantTitle": "AI-assistent",
+  "aiAssistantTooltip": "Öppna AI-assistent",
   "aiCapabilitiesBudget": "Budget & priser",
   "aiCapabilitiesLists": "Inköpslistor",
   "aiCapabilitiesOrganize": "Organisation",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Månadsbudget",
   "budgetDashboardTitle": "Instrumentbräda",
   "budgetEditTitle": "Månadsbudget",
+  "budgetGoalInvalidAmount": "Ange ett värde som är större än noll",
+  "budgetGoalRemoved": "Budgetmålet har tagits bort",
+  "budgetGoalSaved": "Budgetmålet sparat",
   "budgetLists": "Listor",
+  "budgetPartialEstimateHint": "~ Inkluderar partiella prisuppskattningar",
   "budgetPremiumLocked": "Global månadsbudget är premium",
   "budgetSubtitle": "Följ dina månatliga utgifter",
   "budgetUpgradePrompt": "Uppgradera för att låsa upp",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Du är offline",
   "chatSubtitle": "Be om varuförslag, recept eller spartips.",
   "chatSubtitleShort": "Fråga om priser, recept, organisation...",
+  "checkItemTooltip": "Kontrollera objekt",
   "checkingItem": "Kontrollerar objekt...",
   "checkingPantry": "Kollar ditt skafferi...",
   "checkingSettings": "Kontrollerar dina inställningar...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Rensa alla meddelanden i denna session?",
   "clearList": "Rensa lista",
   "clearPurchased": "Rensa köpta",
+  "clearPurchasedConfirmMessage": "Vill du ta bort alla köpta varor från den här listan? Detta kan inte ångras.",
+  "clearPurchasedTitle": "Rensa köpta varor",
   "clearingCheckedItems": "Rensar markerade objekt...",
   "close": "Stäng",
   "closeSheet": "Nära",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Fel vid arkiveringslista: {error}",
   "errorClearingList": "Fel vid rensa listan: {error}",
   "errorClearingPurchased": "Det gick inte att rensa köpta varor: {error}",
+  "errorCreateList": "Det gick inte att skapa listan. Kontrollera din anslutning och försök igen.",
   "errorCreatingList": "Det gick inte att skapa listan",
   "errorDecreasingQty": "Fel vid minskande kvantitet: {error}",
   "errorDeletingList": "Fel vid radering av lista: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Fel: {message}",
   "errorImportingList": "Fel vid import av listan \"{name}\": {error}",
   "errorIncreasingQty": "Fel vid ökning av kvantitet: {error}",
+  "errorLoadList": "Det gick inte att ladda dina listor. Skapa en ny lista för att komma igång.",
   "errorLoadingChat": "hoppsan! Något gick fel när chatten laddades.",
   "errorLoadingChatSubtitle": "Kontrollera din anslutning eller försök igen senare.",
   "errorLoadingHistory": "Det gick inte att ladda historiken",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Det gick inte att läsa in prenumerationen",
   "errorOscillation": "Detta kan uppstå på grund av nätverksvängningar eller tillfällig otillgänglighet. Försök igen.",
   "errorProcessingRequest": "Tyvärr uppstod ett fel när din begäran bearbetades. Kontrollera din anslutning eller försök igen senare.",
+  "errorQuickAdd": "Det gick inte att lägga till objektet. Kontrollera din anslutning och försök igen.",
   "errorRemovingItem": "Fel vid borttagning av objekt: {error}",
   "errorRemovingItems": "Fel vid borttagning av objekt: {error}",
   "errorRemovingSharedList": "Fel vid borttagning av delad lista: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Fel när jag skulle spara: {error}",
   "errorServerConnection": "Fel vid anslutning till server: {error}",
   "errorSettingCurrentList": "Fel vid inställning av aktuell lista: {error}",
+  "errorShareCode": "Fel vid generering av delningskod. Kontrollera din anslutning och försök igen.",
   "errorTogglingItem": "Fel vid växling av objektstatus: {error}",
   "errorTogglingItems": "Fel vid växling av objekt: {error}",
   "errorUnarchivingList": "Fel vid arkivering av lista: {error}",
+  "errorUnexpected": "Något oväntat hände. Försök igen.",
   "errorUpdatingItem": "Fel vid uppdatering av objekt: {error}",
   "errorUpdatingItems": "Fel vid uppdatering av objekt: {error}",
   "errorUpdatingList": "Fel vid uppdatering av listan: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Köpta",
   "finance": "Ekonomi",
   "finishShopping": "Avsluta shopping",
+  "firstItemAddedSnackbar": "Första artikeln tillagd! Bra start 🛒",
   "gallery": "Galleri",
   "generalAssistant": "Allmän assistent",
   "generalHelp": "Hur kan jag hjälpa dig med din shopping idag?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Håll ned för att välja • Svep för att ta bort",
   "globalAssistant": "Global assistent",
   "goodResponse": "Bra respons",
+  "help": "Hjälp",
+  "helpListAddItems": "Lägg till objekt med +-knappen längst ner, eller använd sökfunktionen för att bläddra bland produkter",
+  "helpListAi": "Be AI-assistenten att skapa, organisera eller komplettera din lista – tryck bara på gnistikonen",
+  "helpListOrganize": "Dra objekt för att ändra ordning, svep för att markera som köpta eller använd filter och sortering",
+  "helpListShare": "Dela din lista med familjen eller exportera som PDF, Excel eller vanlig text",
+  "helpListShoppingMode": "Shoppingläget döljer köpta varor så att du kan fokusera på det som finns kvar",
+  "helpListTitle": "Använder din lista",
   "howCanIHelp": "Hur kan jag hjälpa till?",
   "icon": "Ikon:",
   "idealQty": "Idealisk mängd",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Ta bort målet",
   "mealPlannerBudgetTodayCost": "Idag: {amount}",
   "mealPlannerBudgetWeekCost": "Vecka: {amount}",
+  "mealPlannerCurrentDayLabel": "Aktuell dag",
   "mealPlannerCustomTypeLabel": "Anpassad typ",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Standardtyp",
   "mealPlannerDeleteMeal": "Ta bort måltid",
+  "mealPlannerDuplicate": "Dubblett måltid",
+  "mealPlannerDuplicateSuccess": "Måltiden har duplicerats framgångsrikt!",
   "mealPlannerEditMeal": "Redigera måltid",
   "mealPlannerEditType": "Redigera måltidstyp",
   "mealPlannerError": "Det gick inte att läsa in måltidsplanen",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Lägg till i planen",
   "mealPlannerSearchRecipes": "Sök recept...",
+  "mealPlannerSelectDestinationDay": "Duplicera till...",
   "mealPlannerSelectRecipe": "Välj ett recept",
   "mealPlannerServings": "{count,plural, one{{count} portion} other{{count} portioner}}",
   "mealPlannerServingsLabel": "Serveringar",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Recept",
   "newCategoryDialog": "Ny kategori",
   "newChat": "Ny chatt",
+  "newChatConfirmMessage": "Starta en ny konversation? Din nuvarande konversation kommer att gå förlorad.",
+  "newChatConfirmTitle": "Ny konversation",
   "newChatStarted": "Ny chatt har startat",
   "newListTitle": "Ny Inköpslista",
   "newPantryList": "Skafferihandling",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Par",
   "onboardingGroupFamily": "Familj",
   "onboardingGroupSolo": "Bara jag",
+  "onboardingHookContinue": "Kom igång",
   "onboardingHookHeadline": "Glöm aldrig en matvara igen",
+  "onboardingHookItem1": "Grillad kyckling",
+  "onboardingHookItem2": "Mozzarellaost",
+  "onboardingHookItem3": "Körsbärstomater",
   "onboardingListCreated": "Din lista är klar: {count} objekt organiserade åt dig.",
   "onboardingListSaveFailed": "Jag förberedde föremålen, men kunde inte spara listan. Försök igen för att behålla den i appen.",
   "onboardingLoadingStat1Label": "Artiklar katalogiserade",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Anpassa din upplevelse",
   "onboardingShareDesc": "Synkronisera listor med familj och vänner i realtid",
   "onboardingShareTitle": "Dela med dem du älskar",
+  "onboardingSkip": "Hoppa över nu",
   "onboardingSlide1Body": "Skapa och dela listor direkt. Kipi lägger till objekt automatiskt baserat på dina vanor.",
   "onboardingSlide1Title": "Smarta inköpslistor",
   "onboardingSlide2Body": "Fråga vad som helst – skapa listor, hitta recept, spåra ditt skafferi, planera din vecka.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "Smart AI",
   "paywallFeatureUnlimitedLists": "Obegränsade listor",
   "paywallFeaturesTitle": "Allt du behöver:",
+  "paywallFreeTier": "Gratis: 3 listor",
   "paywallGoalHeadlineFamily": "{name}, organisera familjeshopping!",
   "paywallGoalHeadlineFaster": "{name}, handla på halva tiden!",
   "paywallGoalHeadlineNeverForget": "{name}, glöm aldrig ett föremål!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Endast {price}/dag — mindre än en kaffe",
   "paywallPricePerMonth": "Endast {price}/månad",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Obegränsat",
   "paywallPurchaseError": "Kunde inte slutföra köpet. Försök igen.",
   "paywallPurchasePending": "Din betalning väntar på godkännande. Åtkomsten släpps automatiskt efter bekräftelse.",
   "paywallRestore": "Återställa",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Sök konversationer",
   "searchCurrency": "Sök valuta...",
   "searchInConversation": "Sök i konversation...",
+  "searchItems": "Sök föremål",
   "searchLanguage": "Sök språk...",
   "searchMessages": "Sök meddelanden...",
   "searchRecipes": "Sök recept...",

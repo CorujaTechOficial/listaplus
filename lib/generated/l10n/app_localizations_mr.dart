@@ -72,6 +72,32 @@ class AppLocalizationsMr extends AppLocalizations {
   String get close => 'बंद करा';
 
   @override
+  String get help => 'मदत करा';
+
+  @override
+  String get helpListTitle => 'तुमची यादी वापरणे';
+
+  @override
+  String get helpListAddItems =>
+      'तळाशी + बटणासह आयटम जोडा किंवा उत्पादने ब्राउझ करण्यासाठी शोध वापरा';
+
+  @override
+  String get helpListAi =>
+      'एआय असिस्टंटला तुमची सूची तयार करण्यास, व्यवस्थापित करण्यास किंवा पूर्ण करण्यास सांगा — फक्त स्पार्कल आयकॉनवर टॅप करा';
+
+  @override
+  String get helpListShoppingMode =>
+      'खरेदी मोड खरेदी केलेले आयटम लपवतो जेणेकरून तुम्ही जे शिल्लक आहे त्यावर लक्ष केंद्रित करू शकता';
+
+  @override
+  String get helpListOrganize =>
+      'पुनर्क्रमित करण्यासाठी आयटम ड्रॅग करा, खरेदी केले म्हणून चिन्हांकित करण्यासाठी स्वाइप करा किंवा फिल्टर आणि क्रमवारी वापरा';
+
+  @override
+  String get helpListShare =>
+      'तुमची यादी कुटुंबासह शेअर करा किंवा PDF, Excel किंवा साधा मजकूर म्हणून निर्यात करा';
+
+  @override
   String get import => 'आयात करा';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get clear => 'साफ करा';
+
+  @override
+  String get clearPurchasedTitle => 'खरेदी केलेल्या वस्तू साफ करा';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'या सूचीमधून सर्व खरेदी केलेले आयटम काढायचे? हे पूर्ववत केले जाऊ शकत नाही.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get purchaseError => 'खरेदी प्रक्रियेत त्रुटी. पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorCreateList =>
+      'सूची तयार करू शकलो नाही. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorShareCode =>
+      'शेअर कोड व्युत्पन्न करताना त्रुटी. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorQuickAdd =>
+      'आयटम जोडू शकलो नाही. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorLoadList =>
+      'तुमच्या याद्या लोड करू शकलो नाही. कृपया प्रारंभ करण्यासाठी एक नवीन सूची तयार करा.';
 
   @override
   String get restoreError =>
@@ -488,6 +537,18 @@ class AppLocalizationsMr extends AppLocalizations {
   String get noBudgetDefined => 'बजेट सेट केले नाही';
 
   @override
+  String get budgetGoalInvalidAmount => 'शून्यापेक्षा मोठे मूल्य एंटर करा';
+
+  @override
+  String get budgetPartialEstimateHint => '~ आंशिक किंमत अंदाज समाविष्ट करते';
+
+  @override
+  String get budgetGoalSaved => 'बजेटचे उद्दिष्ट जतन केले';
+
+  @override
+  String get budgetGoalRemoved => 'बजेटचे उद्दिष्ट काढले';
+
+  @override
   String totalEstimated(String amount) {
     return 'एकूण अंदाजे: $amount';
   }
@@ -679,6 +740,13 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get newChat => 'नवीन गप्पा';
+
+  @override
+  String get newChatConfirmTitle => 'नवीन संभाषण';
+
+  @override
+  String get newChatConfirmMessage =>
+      'नवीन संभाषण सुरू करायचे? तुमचे वर्तमान संभाषण गमावले जाईल.';
 
   @override
   String get noHistory => 'चॅट इतिहास नाही';
@@ -1235,6 +1303,15 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 स्वागत ऑफर';
+
+  @override
+  String get paywallFreeTier => 'विनामूल्य: 3 याद्या';
+
+  @override
+  String get paywallProTier => 'प्रो: अमर्यादित';
+
+  @override
+  String get firstItemAddedSnackbar => 'पहिला आयटम जोडला! मस्त सुरुवात 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2129,6 +2206,18 @@ class AppLocalizationsMr extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'डीफॉल्ट प्रकार';
 
   @override
+  String get mealPlannerDuplicate => 'डुप्लिकेट जेवण';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'याची डुप्लिकेट...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'सध्याचा दिवस';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'जेवण यशस्वीरित्या डुप्लिकेट केले!';
+
+  @override
   String get expirationDate => 'कालबाह्यता तारीख';
 
   @override
@@ -2136,6 +2225,9 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get skip => 'वगळा';
+
+  @override
+  String get onboardingSkip => 'आतासाठी वगळा';
 
   @override
   String get onboardingAiTitle => 'किपीशी गप्पा मारा';
@@ -3171,6 +3263,31 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'प्रतिसाद निर्माण करत आहे...';
+
+  @override
+  String get errorUnexpected =>
+      'काहीतरी अनपेक्षित घडले. कृपया पुन्हा प्रयत्न करा.';
+
+  @override
+  String get aiAssistantTooltip => 'AI सहाय्यक उघडा';
+
+  @override
+  String get searchItems => 'आयटम शोधा';
+
+  @override
+  String get onboardingHookContinue => 'प्रारंभ करा';
+
+  @override
+  String get onboardingHookItem1 => 'ग्रील्ड चिकन';
+
+  @override
+  String get onboardingHookItem2 => 'मोझारेला चीज';
+
+  @override
+  String get onboardingHookItem3 => 'चेरी टोमॅटो';
+
+  @override
+  String get checkItemTooltip => 'आयटम तपासा';
 }
 
 /// The translations for Marathi, as used in India (`mr_IN`).
@@ -3241,6 +3358,32 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get close => 'बंद करा';
 
   @override
+  String get help => 'मदत करा';
+
+  @override
+  String get helpListTitle => 'तुमची यादी वापरणे';
+
+  @override
+  String get helpListAddItems =>
+      'तळाशी + बटणासह आयटम जोडा किंवा उत्पादने ब्राउझ करण्यासाठी शोध वापरा';
+
+  @override
+  String get helpListAi =>
+      'एआय असिस्टंटला तुमची सूची तयार करण्यास, व्यवस्थापित करण्यास किंवा पूर्ण करण्यास सांगा — फक्त स्पार्कल आयकॉनवर टॅप करा';
+
+  @override
+  String get helpListShoppingMode =>
+      'खरेदी मोड खरेदी केलेले आयटम लपवतो जेणेकरून तुम्ही जे शिल्लक आहे त्यावर लक्ष केंद्रित करू शकता';
+
+  @override
+  String get helpListOrganize =>
+      'पुनर्क्रमित करण्यासाठी आयटम ड्रॅग करा, खरेदी केले म्हणून चिन्हांकित करण्यासाठी स्वाइप करा किंवा फिल्टर आणि क्रमवारी वापरा';
+
+  @override
+  String get helpListShare =>
+      'तुमची यादी कुटुंबासह शेअर करा किंवा PDF, Excel किंवा साधा मजकूर म्हणून निर्यात करा';
+
+  @override
   String get import => 'आयात करा';
 
   @override
@@ -3251,6 +3394,13 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get clear => 'साफ करा';
+
+  @override
+  String get clearPurchasedTitle => 'खरेदी केलेल्या वस्तू साफ करा';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'या सूचीमधून सर्व खरेदी केलेले आयटम काढायचे? हे पूर्ववत केले जाऊ शकत नाही.';
 
   @override
   String error(String message) {
@@ -3264,6 +3414,22 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get purchaseError => 'खरेदी प्रक्रियेत त्रुटी. पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorCreateList =>
+      'सूची तयार करू शकलो नाही. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorShareCode =>
+      'शेअर कोड व्युत्पन्न करताना त्रुटी. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorQuickAdd =>
+      'आयटम जोडू शकलो नाही. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+
+  @override
+  String get errorLoadList =>
+      'तुमच्या याद्या लोड करू शकलो नाही. कृपया प्रारंभ करण्यासाठी एक नवीन सूची तयार करा.';
 
   @override
   String get restoreError =>
@@ -3657,6 +3823,18 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get noBudgetDefined => 'बजेट सेट केले नाही';
 
   @override
+  String get budgetGoalInvalidAmount => 'शून्यापेक्षा मोठे मूल्य एंटर करा';
+
+  @override
+  String get budgetPartialEstimateHint => '~ आंशिक किंमत अंदाज समाविष्ट करते';
+
+  @override
+  String get budgetGoalSaved => 'बजेटचे उद्दिष्ट जतन केले';
+
+  @override
+  String get budgetGoalRemoved => 'बजेटचे उद्दिष्ट काढले';
+
+  @override
   String totalEstimated(String amount) {
     return 'एकूण अंदाजे: $amount';
   }
@@ -3848,6 +4026,13 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get newChat => 'नवीन गप्पा';
+
+  @override
+  String get newChatConfirmTitle => 'नवीन संभाषण';
+
+  @override
+  String get newChatConfirmMessage =>
+      'नवीन संभाषण सुरू करायचे? तुमचे वर्तमान संभाषण गमावले जाईल.';
 
   @override
   String get noHistory => 'चॅट इतिहास नाही';
@@ -4404,6 +4589,15 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 स्वागत ऑफर';
+
+  @override
+  String get paywallFreeTier => 'विनामूल्य: 3 याद्या';
+
+  @override
+  String get paywallProTier => 'प्रो: अमर्यादित';
+
+  @override
+  String get firstItemAddedSnackbar => 'पहिला आयटम जोडला! मस्त सुरुवात 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5298,6 +5492,18 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
   String get mealPlannerDefaultTypeLabel => 'डीफॉल्ट प्रकार';
 
   @override
+  String get mealPlannerDuplicate => 'डुप्लिकेट जेवण';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'याची डुप्लिकेट...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'सध्याचा दिवस';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'जेवण यशस्वीरित्या डुप्लिकेट केले!';
+
+  @override
   String get expirationDate => 'कालबाह्यता तारीख';
 
   @override
@@ -5305,6 +5511,9 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get skip => 'वगळा';
+
+  @override
+  String get onboardingSkip => 'आतासाठी वगळा';
 
   @override
   String get onboardingAiTitle => 'किपीशी गप्पा मारा';
@@ -6340,4 +6549,29 @@ class AppLocalizationsMrIn extends AppLocalizationsMr {
 
   @override
   String get aiGeneratingResponse => 'प्रतिसाद निर्माण करत आहे...';
+
+  @override
+  String get errorUnexpected =>
+      'काहीतरी अनपेक्षित घडले. कृपया पुन्हा प्रयत्न करा.';
+
+  @override
+  String get aiAssistantTooltip => 'AI सहाय्यक उघडा';
+
+  @override
+  String get searchItems => 'आयटम शोधा';
+
+  @override
+  String get onboardingHookContinue => 'प्रारंभ करा';
+
+  @override
+  String get onboardingHookItem1 => 'ग्रील्ड चिकन';
+
+  @override
+  String get onboardingHookItem2 => 'मोझारेला चीज';
+
+  @override
+  String get onboardingHookItem3 => 'चेरी टोमॅटो';
+
+  @override
+  String get checkItemTooltip => 'आयटम तपासा';
 }

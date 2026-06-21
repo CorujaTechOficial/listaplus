@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shopping_list/theme/tokens.dart';
 
 /// A wrapper widget that provides a subtle scale animation on tap.
 /// Used to standardize tactile feedback across the application.
@@ -13,7 +14,7 @@ class TactileContainer extends StatefulWidget {
     required this.child,
     this.onTap,
     this.scale = 0.98,
-    this.duration = const Duration(milliseconds: 100),
+    this.duration = DurationTokens.fastest,
     this.passThrough = false,
     this.enableHaptics = true,
   });

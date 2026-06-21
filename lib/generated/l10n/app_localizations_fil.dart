@@ -72,6 +72,32 @@ class AppLocalizationsFil extends AppLocalizations {
   String get close => 'Isara';
 
   @override
+  String get help => 'Tulong';
+
+  @override
+  String get helpListTitle => 'Gamit ang iyong listahan';
+
+  @override
+  String get helpListAddItems =>
+      'Magdagdag ng mga item gamit ang + button sa ibaba, o gamitin ang paghahanap upang mag-browse ng mga produkto';
+
+  @override
+  String get helpListAi =>
+      'Hilingin sa AI assistant na gumawa, ayusin, o kumpletuhin ang iyong listahan — i-tap lang ang sparkle icon';
+
+  @override
+  String get helpListShoppingMode =>
+      'Itinatago ng Shopping mode ang mga biniling item para makapag-focus ka sa kung ano ang natitira';
+
+  @override
+  String get helpListOrganize =>
+      'I-drag ang mga item upang muling ayusin, mag-swipe upang markahan bilang binili, o gumamit ng mga filter at pag-uuri';
+
+  @override
+  String get helpListShare =>
+      'Ibahagi ang iyong listahan sa pamilya o i-export bilang PDF, Excel, o plain text';
+
+  @override
   String get import => 'I-import';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get clear => 'Linisin';
+
+  @override
+  String get clearPurchasedTitle => 'I-clear ang mga biniling item';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Alisin ang lahat ng biniling item sa listahang ito? Hindi na ito maa-undo.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get purchaseError => 'Error sa pagproseso ng pagbili. Subukan muli.';
+
+  @override
+  String get errorCreateList =>
+      'Hindi makagawa ng listahan. Suriin ang iyong koneksyon at subukang muli.';
+
+  @override
+  String get errorShareCode =>
+      'Error sa pagbuo ng share code. Suriin ang iyong koneksyon at subukang muli.';
+
+  @override
+  String get errorQuickAdd =>
+      'Hindi maidagdag ang item. Suriin ang iyong koneksyon at subukang muli.';
+
+  @override
+  String get errorLoadList =>
+      'Hindi ma-load ang iyong mga listahan. Mangyaring lumikha ng bagong listahan upang makapagsimula.';
 
   @override
   String get restoreError =>
@@ -490,6 +539,20 @@ class AppLocalizationsFil extends AppLocalizations {
   String get noBudgetDefined => 'Walang nakatakdang badyet';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Maglagay ng value na mas malaki sa zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Kasama ang mga bahagyang pagtatantya sa pagpepresyo';
+
+  @override
+  String get budgetGoalSaved => 'Na-save ang layunin sa badyet';
+
+  @override
+  String get budgetGoalRemoved => 'Inalis ang layunin sa badyet';
+
+  @override
   String totalEstimated(String amount) {
     return 'Kabuuang tantiya: $amount';
   }
@@ -682,6 +745,13 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get newChat => 'Bagong Chat';
+
+  @override
+  String get newChatConfirmTitle => 'Bagong usapan';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Magsimula ng bagong pag-uusap? Mawawala ang iyong kasalukuyang pag-uusap.';
 
   @override
   String get noHistory => 'Walang history ng chat';
@@ -1250,6 +1320,16 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Maligayang pagdating alok';
+
+  @override
+  String get paywallFreeTier => 'Libre: 3 listahan';
+
+  @override
+  String get paywallProTier => 'Pro: Walang limitasyon';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Idinagdag ang unang item! Magandang simula 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2155,6 +2235,19 @@ class AppLocalizationsFil extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Default na uri';
 
   @override
+  String get mealPlannerDuplicate => 'Duplicate na pagkain';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'I-duplicate sa...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Kasalukuyang araw';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'Matagumpay na nadoble ang pagkain!';
+
+  @override
   String get expirationDate => 'Petsa ng pag-expire';
 
   @override
@@ -2162,6 +2255,9 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get skip => 'Laktawan';
+
+  @override
+  String get onboardingSkip => 'Laktawan sa ngayon';
 
   @override
   String get onboardingAiTitle => 'Makipag-chat kay Kipi';
@@ -3217,4 +3313,29 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Bumubuo ng tugon...';
+
+  @override
+  String get errorUnexpected =>
+      'May nangyaring hindi inaasahan. Pakisubukang muli.';
+
+  @override
+  String get aiAssistantTooltip => 'Buksan ang AI assistant';
+
+  @override
+  String get searchItems => 'Maghanap ng mga item';
+
+  @override
+  String get onboardingHookContinue => 'Magsimula';
+
+  @override
+  String get onboardingHookItem1 => 'Inihaw na manok';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella cheese';
+
+  @override
+  String get onboardingHookItem3 => 'Mga kamatis na cherry';
+
+  @override
+  String get checkItemTooltip => 'Suriin ang item';
 }

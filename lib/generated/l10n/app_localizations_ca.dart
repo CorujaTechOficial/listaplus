@@ -72,6 +72,32 @@ class AppLocalizationsCa extends AppLocalizations {
   String get close => 'Tancar';
 
   @override
+  String get help => 'Ajuda';
+
+  @override
+  String get helpListTitle => 'Utilitzant la teva llista';
+
+  @override
+  String get helpListAddItems =>
+      'Afegiu articles amb el botó + a la part inferior o utilitzeu la cerca per buscar productes';
+
+  @override
+  String get helpListAi =>
+      'Demaneu a l\'assistent d\'IA que creï, organitzi o completi la vostra llista; només cal que toqueu la icona brillant';
+
+  @override
+  String get helpListShoppingMode =>
+      'El mode de compres amaga els articles comprats perquè pugueu centrar-vos en el que queda';
+
+  @override
+  String get helpListOrganize =>
+      'Arrossegueu els elements per tornar a ordenar, llisqueu per marcar-los com a comprats o utilitzeu filtres i classificació';
+
+  @override
+  String get helpListShare =>
+      'Comparteix la teva llista amb la família o exporta com a PDF, Excel o text sense format';
+
+  @override
   String get import => 'Importar';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get clear => 'Netejar';
+
+  @override
+  String get clearPurchasedTitle => 'Esborra els articles comprats';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vols suprimir tots els articles comprats d\'aquesta llista? Això no es pot desfer.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get purchaseError =>
       'Error en processar la compra. Torna-ho a provar.';
+
+  @override
+  String get errorCreateList =>
+      'No s\'ha pogut crear la llista. Comprova la teva connexió i torna-ho a provar.';
+
+  @override
+  String get errorShareCode =>
+      'Error en generar el codi compartit. Comprova la teva connexió i torna-ho a provar.';
+
+  @override
+  String get errorQuickAdd =>
+      'No s\'ha pogut afegir l\'element. Comprova la teva connexió i torna-ho a provar.';
+
+  @override
+  String get errorLoadList =>
+      'No s\'han pogut carregar les vostres llistes. Creeu una llista nova per començar.';
 
   @override
   String get restoreError =>
@@ -490,6 +539,19 @@ class AppLocalizationsCa extends AppLocalizations {
   String get noBudgetDefined => 'Cap pressupost definit';
 
   @override
+  String get budgetGoalInvalidAmount => 'Introduïu un valor superior a zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inclou estimacions parcials de preus';
+
+  @override
+  String get budgetGoalSaved => 'Objectiu pressupostari desat';
+
+  @override
+  String get budgetGoalRemoved => 'S\'ha eliminat l\'objectiu del pressupost';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimat: $amount';
   }
@@ -682,6 +744,13 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get newChat => 'Xat nou';
+
+  @override
+  String get newChatConfirmTitle => 'Nova conversa';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Començar una conversa nova? La teva conversa actual es perdrà.';
 
   @override
   String get noHistory => 'No hi ha historial de xat';
@@ -1253,6 +1322,15 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Oferta de benvinguda';
+
+  @override
+  String get paywallFreeTier => 'Gratuït: 3 llistes';
+
+  @override
+  String get paywallProTier => 'Pro: il·limitat';
+
+  @override
+  String get firstItemAddedSnackbar => 'Primer article afegit! Gran inici 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2159,6 +2237,19 @@ class AppLocalizationsCa extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Tipus per defecte';
 
   @override
+  String get mealPlannerDuplicate => 'Menjar duplicat';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicar a...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Dia actual';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'El menjar s\'ha duplicat correctament!';
+
+  @override
   String get expirationDate => 'Data de caducitat';
 
   @override
@@ -2166,6 +2257,9 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get skip => 'Saltar';
+
+  @override
+  String get onboardingSkip => 'Saltar per ara';
 
   @override
   String get onboardingAiTitle => 'Xateja amb Kipi';
@@ -3214,4 +3308,29 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'S\'està generant resposta...';
+
+  @override
+  String get errorUnexpected =>
+      'Va passar una cosa inesperada. Si us plau, torna-ho a provar.';
+
+  @override
+  String get aiAssistantTooltip => 'Obre l\'assistent d\'IA';
+
+  @override
+  String get searchItems => 'Cerca elements';
+
+  @override
+  String get onboardingHookContinue => 'Comença';
+
+  @override
+  String get onboardingHookItem1 => 'Pollastre a la brasa';
+
+  @override
+  String get onboardingHookItem2 => 'Formatge mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomàquets cherry';
+
+  @override
+  String get checkItemTooltip => 'Comprova l\'element';
 }

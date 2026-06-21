@@ -72,6 +72,32 @@ class AppLocalizationsFa extends AppLocalizations {
   String get close => 'بستن';
 
   @override
+  String get help => 'کمک کنید';
+
+  @override
+  String get helpListTitle => 'با استفاده از لیست شما';
+
+  @override
+  String get helpListAddItems =>
+      'موارد را با دکمه + در پایین اضافه کنید یا از جستجو برای مرور محصولات استفاده کنید';
+
+  @override
+  String get helpListAi =>
+      'از دستیار هوش مصنوعی بخواهید فهرست شما را ایجاد، سازماندهی یا تکمیل کند — فقط روی نماد درخشش ضربه بزنید';
+
+  @override
+  String get helpListShoppingMode =>
+      'حالت خرید اقلام خریداری شده را پنهان می کند تا بتوانید روی آنچه باقی مانده تمرکز کنید';
+
+  @override
+  String get helpListOrganize =>
+      'موارد را برای مرتب کردن مجدد بکشید، برای علامت گذاری به عنوان خریداری شده انگشت خود را بکشید، یا از فیلترها و مرتب سازی استفاده کنید';
+
+  @override
+  String get helpListShare =>
+      'لیست خود را با خانواده به اشتراک بگذارید یا به صورت PDF، Excel یا متن ساده صادر کنید';
+
+  @override
   String get import => 'وارد کردن';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get clear => 'پاک کردن';
+
+  @override
+  String get clearPurchasedTitle => 'موارد خریداری شده را پاک کنید';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'همه موارد خریداری شده از این لیست حذف شود؟ این قابل واگرد نیست.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get purchaseError => 'خطا در پردازش خرید. دوباره تلاش کنید.';
+
+  @override
+  String get errorCreateList =>
+      'لیست ایجاد نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorShareCode =>
+      'خطا در ایجاد کد اشتراک. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorQuickAdd =>
+      'مورد اضافه نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorLoadList =>
+      'لیست های شما بارگیری نشد. لطفا برای شروع یک لیست جدید ایجاد کنید.';
 
   @override
   String get restoreError => 'خطا در بازیابی خریدها. دوباره تلاش کنید.';
@@ -487,6 +536,18 @@ class AppLocalizationsFa extends AppLocalizations {
   String get noBudgetDefined => 'بودجه‌ای تنظیم نشده';
 
   @override
+  String get budgetGoalInvalidAmount => 'مقداری بزرگتر از صفر وارد کنید';
+
+  @override
+  String get budgetPartialEstimateHint => '~ شامل برآوردهای قیمت جزئی است';
+
+  @override
+  String get budgetGoalSaved => 'هدف بودجه ذخیره شد';
+
+  @override
+  String get budgetGoalRemoved => 'هدف بودجه حذف شد';
+
+  @override
   String totalEstimated(String amount) {
     return 'مجموع تخمینی: $amount';
   }
@@ -679,6 +740,13 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get newChat => 'چت جدید';
+
+  @override
+  String get newChatConfirmTitle => 'گفتگوی جدید';
+
+  @override
+  String get newChatConfirmMessage =>
+      'مکالمه جدیدی را شروع کنید؟ مکالمه فعلی شما از بین خواهد رفت.';
 
   @override
   String get noHistory => 'سابقه چت وجود ندارد';
@@ -1237,6 +1305,15 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁پیشنهاد خوش آمدگویی';
+
+  @override
+  String get paywallFreeTier => 'رایگان: 3 لیست';
+
+  @override
+  String get paywallProTier => 'حرفه ای: نامحدود';
+
+  @override
+  String get firstItemAddedSnackbar => 'اولین مورد اضافه شد! شروع عالی 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2136,6 +2213,18 @@ class AppLocalizationsFa extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
+  String get mealPlannerDuplicate => 'وعده غذایی تکراری';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'کپی به ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'روز جاری';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'وعده غذایی با موفقیت تکرار شد!';
+
+  @override
   String get expirationDate => 'تاریخ انقضا';
 
   @override
@@ -2143,6 +2232,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get skip => 'پرش کنید';
+
+  @override
+  String get onboardingSkip => 'فعلا رد شوید';
 
   @override
   String get onboardingAiTitle => 'با کیپی چت کنید';
@@ -3177,6 +3269,31 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
+
+  @override
+  String get errorUnexpected =>
+      'اتفاق غیرمنتظره ای افتاد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiAssistantTooltip => 'دستیار هوش مصنوعی را باز کنید';
+
+  @override
+  String get searchItems => 'موارد را جستجو کنید';
+
+  @override
+  String get onboardingHookContinue => 'شروع کنید';
+
+  @override
+  String get onboardingHookItem1 => 'مرغ کبابی';
+
+  @override
+  String get onboardingHookItem2 => 'پنیر موزارلا';
+
+  @override
+  String get onboardingHookItem3 => 'گوجه گیلاسی';
+
+  @override
+  String get checkItemTooltip => 'مورد را بررسی کنید';
 }
 
 /// The translations for Persian, as used in the United Arab Emirates (`fa_AE`).
@@ -3247,6 +3364,32 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get close => 'بستن';
 
   @override
+  String get help => 'کمک کنید';
+
+  @override
+  String get helpListTitle => 'با استفاده از لیست شما';
+
+  @override
+  String get helpListAddItems =>
+      'موارد را با دکمه + در پایین اضافه کنید یا از جستجو برای مرور محصولات استفاده کنید';
+
+  @override
+  String get helpListAi =>
+      'از دستیار هوش مصنوعی بخواهید فهرست شما را ایجاد، سازماندهی یا تکمیل کند — فقط روی نماد درخشش ضربه بزنید';
+
+  @override
+  String get helpListShoppingMode =>
+      'حالت خرید اقلام خریداری شده را پنهان می کند تا بتوانید روی آنچه باقی مانده تمرکز کنید';
+
+  @override
+  String get helpListOrganize =>
+      'موارد را برای مرتب کردن مجدد بکشید، برای علامت گذاری به عنوان خریداری شده انگشت خود را بکشید، یا از فیلترها و مرتب سازی استفاده کنید';
+
+  @override
+  String get helpListShare =>
+      'لیست خود را با خانواده به اشتراک بگذارید یا به صورت PDF، Excel یا متن ساده صادر کنید';
+
+  @override
   String get import => 'وارد کردن';
 
   @override
@@ -3257,6 +3400,13 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get clear => 'پاک کردن';
+
+  @override
+  String get clearPurchasedTitle => 'موارد خریداری شده را پاک کنید';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'همه موارد خریداری شده از این لیست حذف شود؟ این قابل واگرد نیست.';
 
   @override
   String error(String message) {
@@ -3270,6 +3420,22 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get purchaseError => 'خطا در پردازش خرید. دوباره تلاش کنید.';
+
+  @override
+  String get errorCreateList =>
+      'لیست ایجاد نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorShareCode =>
+      'خطا در ایجاد کد اشتراک. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorQuickAdd =>
+      'مورد اضافه نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorLoadList =>
+      'لیست های شما بارگیری نشد. لطفا برای شروع یک لیست جدید ایجاد کنید.';
 
   @override
   String get restoreError => 'خطا در بازیابی خریدها. دوباره تلاش کنید.';
@@ -3662,6 +3828,18 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get noBudgetDefined => 'بودجه‌ای تنظیم نشده';
 
   @override
+  String get budgetGoalInvalidAmount => 'مقداری بزرگتر از صفر وارد کنید';
+
+  @override
+  String get budgetPartialEstimateHint => '~ شامل برآوردهای قیمت جزئی است';
+
+  @override
+  String get budgetGoalSaved => 'هدف بودجه ذخیره شد';
+
+  @override
+  String get budgetGoalRemoved => 'هدف بودجه حذف شد';
+
+  @override
   String totalEstimated(String amount) {
     return 'مجموع تخمینی: $amount';
   }
@@ -3854,6 +4032,13 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get newChat => 'چت جدید';
+
+  @override
+  String get newChatConfirmTitle => 'گفتگوی جدید';
+
+  @override
+  String get newChatConfirmMessage =>
+      'مکالمه جدیدی را شروع کنید؟ مکالمه فعلی شما از بین خواهد رفت.';
 
   @override
   String get noHistory => 'سابقه چت وجود ندارد';
@@ -4412,6 +4597,15 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁پیشنهاد خوش آمدگویی';
+
+  @override
+  String get paywallFreeTier => 'رایگان: 3 لیست';
+
+  @override
+  String get paywallProTier => 'حرفه ای: نامحدود';
+
+  @override
+  String get firstItemAddedSnackbar => 'اولین مورد اضافه شد! شروع عالی 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5311,6 +5505,18 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
+  String get mealPlannerDuplicate => 'وعده غذایی تکراری';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'کپی به ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'روز جاری';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'وعده غذایی با موفقیت تکرار شد!';
+
+  @override
   String get expirationDate => 'تاریخ انقضا';
 
   @override
@@ -5318,6 +5524,9 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get skip => 'پرش کنید';
+
+  @override
+  String get onboardingSkip => 'فعلا رد شوید';
 
   @override
   String get onboardingAiTitle => 'با کیپی چت کنید';
@@ -6352,6 +6561,31 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
+
+  @override
+  String get errorUnexpected =>
+      'اتفاق غیرمنتظره ای افتاد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiAssistantTooltip => 'دستیار هوش مصنوعی را باز کنید';
+
+  @override
+  String get searchItems => 'موارد را جستجو کنید';
+
+  @override
+  String get onboardingHookContinue => 'شروع کنید';
+
+  @override
+  String get onboardingHookItem1 => 'مرغ کبابی';
+
+  @override
+  String get onboardingHookItem2 => 'پنیر موزارلا';
+
+  @override
+  String get onboardingHookItem3 => 'گوجه گیلاسی';
+
+  @override
+  String get checkItemTooltip => 'مورد را بررسی کنید';
 }
 
 /// The translations for Persian, as used in Afghanistan (`fa_AF`).
@@ -6422,6 +6656,32 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get close => 'بستن';
 
   @override
+  String get help => 'کمک کنید';
+
+  @override
+  String get helpListTitle => 'با استفاده از لیست شما';
+
+  @override
+  String get helpListAddItems =>
+      'موارد را با دکمه + در پایین اضافه کنید یا از جستجو برای مرور محصولات استفاده کنید';
+
+  @override
+  String get helpListAi =>
+      'از دستیار هوش مصنوعی بخواهید فهرست شما را ایجاد، سازماندهی یا تکمیل کند — فقط روی نماد درخشش ضربه بزنید';
+
+  @override
+  String get helpListShoppingMode =>
+      'حالت خرید اقلام خریداری شده را پنهان می کند تا بتوانید روی آنچه باقی مانده تمرکز کنید';
+
+  @override
+  String get helpListOrganize =>
+      'موارد را برای مرتب کردن مجدد بکشید، برای علامت گذاری به عنوان خریداری شده انگشت خود را بکشید، یا از فیلترها و مرتب سازی استفاده کنید';
+
+  @override
+  String get helpListShare =>
+      'لیست خود را با خانواده به اشتراک بگذارید یا به صورت PDF، Excel یا متن ساده صادر کنید';
+
+  @override
   String get import => 'وارد کردن';
 
   @override
@@ -6432,6 +6692,13 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get clear => 'پاک کردن';
+
+  @override
+  String get clearPurchasedTitle => 'موارد خریداری شده را پاک کنید';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'همه موارد خریداری شده از این لیست حذف شود؟ این قابل واگرد نیست.';
 
   @override
   String error(String message) {
@@ -6445,6 +6712,22 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get purchaseError => 'خطا در پردازش خرید. دوباره تلاش کنید.';
+
+  @override
+  String get errorCreateList =>
+      'لیست ایجاد نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorShareCode =>
+      'خطا در ایجاد کد اشتراک. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorQuickAdd =>
+      'مورد اضافه نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorLoadList =>
+      'لیست های شما بارگیری نشد. لطفا برای شروع یک لیست جدید ایجاد کنید.';
 
   @override
   String get restoreError => 'خطا در بازیابی خریدها. دوباره تلاش کنید.';
@@ -6837,6 +7120,18 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get noBudgetDefined => 'بودجه‌ای تنظیم نشده';
 
   @override
+  String get budgetGoalInvalidAmount => 'مقداری بزرگتر از صفر وارد کنید';
+
+  @override
+  String get budgetPartialEstimateHint => '~ شامل برآوردهای قیمت جزئی است';
+
+  @override
+  String get budgetGoalSaved => 'هدف بودجه ذخیره شد';
+
+  @override
+  String get budgetGoalRemoved => 'هدف بودجه حذف شد';
+
+  @override
   String totalEstimated(String amount) {
     return 'مجموع تخمینی: $amount';
   }
@@ -7029,6 +7324,13 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get newChat => 'چت جدید';
+
+  @override
+  String get newChatConfirmTitle => 'گفتگوی جدید';
+
+  @override
+  String get newChatConfirmMessage =>
+      'مکالمه جدیدی را شروع کنید؟ مکالمه فعلی شما از بین خواهد رفت.';
 
   @override
   String get noHistory => 'سابقه چت وجود ندارد';
@@ -7587,6 +7889,15 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁پیشنهاد خوش آمدگویی';
+
+  @override
+  String get paywallFreeTier => 'رایگان: 3 لیست';
+
+  @override
+  String get paywallProTier => 'حرفه ای: نامحدود';
+
+  @override
+  String get firstItemAddedSnackbar => 'اولین مورد اضافه شد! شروع عالی 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -8486,6 +8797,18 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
+  String get mealPlannerDuplicate => 'وعده غذایی تکراری';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'کپی به ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'روز جاری';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'وعده غذایی با موفقیت تکرار شد!';
+
+  @override
   String get expirationDate => 'تاریخ انقضا';
 
   @override
@@ -8493,6 +8816,9 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get skip => 'پرش کنید';
+
+  @override
+  String get onboardingSkip => 'فعلا رد شوید';
 
   @override
   String get onboardingAiTitle => 'با کیپی چت کنید';
@@ -9527,6 +9853,31 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
+
+  @override
+  String get errorUnexpected =>
+      'اتفاق غیرمنتظره ای افتاد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiAssistantTooltip => 'دستیار هوش مصنوعی را باز کنید';
+
+  @override
+  String get searchItems => 'موارد را جستجو کنید';
+
+  @override
+  String get onboardingHookContinue => 'شروع کنید';
+
+  @override
+  String get onboardingHookItem1 => 'مرغ کبابی';
+
+  @override
+  String get onboardingHookItem2 => 'پنیر موزارلا';
+
+  @override
+  String get onboardingHookItem3 => 'گوجه گیلاسی';
+
+  @override
+  String get checkItemTooltip => 'مورد را بررسی کنید';
 }
 
 /// The translations for Persian, as used in Islamic Republic of Iran (`fa_IR`).
@@ -9597,6 +9948,32 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get close => 'بستن';
 
   @override
+  String get help => 'کمک کنید';
+
+  @override
+  String get helpListTitle => 'با استفاده از لیست شما';
+
+  @override
+  String get helpListAddItems =>
+      'موارد را با دکمه + در پایین اضافه کنید یا از جستجو برای مرور محصولات استفاده کنید';
+
+  @override
+  String get helpListAi =>
+      'از دستیار هوش مصنوعی بخواهید فهرست شما را ایجاد، سازماندهی یا تکمیل کند — فقط روی نماد درخشش ضربه بزنید';
+
+  @override
+  String get helpListShoppingMode =>
+      'حالت خرید اقلام خریداری شده را پنهان می کند تا بتوانید روی آنچه باقی مانده تمرکز کنید';
+
+  @override
+  String get helpListOrganize =>
+      'موارد را برای مرتب کردن مجدد بکشید، برای علامت گذاری به عنوان خریداری شده انگشت خود را بکشید، یا از فیلترها و مرتب سازی استفاده کنید';
+
+  @override
+  String get helpListShare =>
+      'لیست خود را با خانواده به اشتراک بگذارید یا به صورت PDF، Excel یا متن ساده صادر کنید';
+
+  @override
   String get import => 'وارد کردن';
 
   @override
@@ -9607,6 +9984,13 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get clear => 'پاک کردن';
+
+  @override
+  String get clearPurchasedTitle => 'موارد خریداری شده را پاک کنید';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'همه موارد خریداری شده از این لیست حذف شود؟ این قابل واگرد نیست.';
 
   @override
   String error(String message) {
@@ -9620,6 +10004,22 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get purchaseError => 'خطا در پردازش خرید. دوباره تلاش کنید.';
+
+  @override
+  String get errorCreateList =>
+      'لیست ایجاد نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorShareCode =>
+      'خطا در ایجاد کد اشتراک. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorQuickAdd =>
+      'مورد اضافه نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get errorLoadList =>
+      'لیست های شما بارگیری نشد. لطفا برای شروع یک لیست جدید ایجاد کنید.';
 
   @override
   String get restoreError => 'خطا در بازیابی خریدها. دوباره تلاش کنید.';
@@ -10012,6 +10412,18 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get noBudgetDefined => 'بودجه‌ای تنظیم نشده';
 
   @override
+  String get budgetGoalInvalidAmount => 'مقداری بزرگتر از صفر وارد کنید';
+
+  @override
+  String get budgetPartialEstimateHint => '~ شامل برآوردهای قیمت جزئی است';
+
+  @override
+  String get budgetGoalSaved => 'هدف بودجه ذخیره شد';
+
+  @override
+  String get budgetGoalRemoved => 'هدف بودجه حذف شد';
+
+  @override
   String totalEstimated(String amount) {
     return 'مجموع تخمینی: $amount';
   }
@@ -10204,6 +10616,13 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get newChat => 'چت جدید';
+
+  @override
+  String get newChatConfirmTitle => 'گفتگوی جدید';
+
+  @override
+  String get newChatConfirmMessage =>
+      'مکالمه جدیدی را شروع کنید؟ مکالمه فعلی شما از بین خواهد رفت.';
 
   @override
   String get noHistory => 'سابقه چت وجود ندارد';
@@ -10762,6 +11181,15 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁پیشنهاد خوش آمدگویی';
+
+  @override
+  String get paywallFreeTier => 'رایگان: 3 لیست';
+
+  @override
+  String get paywallProTier => 'حرفه ای: نامحدود';
+
+  @override
+  String get firstItemAddedSnackbar => 'اولین مورد اضافه شد! شروع عالی 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -11661,6 +12089,18 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
+  String get mealPlannerDuplicate => 'وعده غذایی تکراری';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'کپی به ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'روز جاری';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'وعده غذایی با موفقیت تکرار شد!';
+
+  @override
   String get expirationDate => 'تاریخ انقضا';
 
   @override
@@ -11668,6 +12108,9 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get skip => 'پرش کنید';
+
+  @override
+  String get onboardingSkip => 'فعلا رد شوید';
 
   @override
   String get onboardingAiTitle => 'با کیپی چت کنید';
@@ -12702,4 +13145,29 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
+
+  @override
+  String get errorUnexpected =>
+      'اتفاق غیرمنتظره ای افتاد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiAssistantTooltip => 'دستیار هوش مصنوعی را باز کنید';
+
+  @override
+  String get searchItems => 'موارد را جستجو کنید';
+
+  @override
+  String get onboardingHookContinue => 'شروع کنید';
+
+  @override
+  String get onboardingHookItem1 => 'مرغ کبابی';
+
+  @override
+  String get onboardingHookItem2 => 'پنیر موزارلا';
+
+  @override
+  String get onboardingHookItem3 => 'گوجه گیلاسی';
+
+  @override
+  String get checkItemTooltip => 'مورد را بررسی کنید';
 }

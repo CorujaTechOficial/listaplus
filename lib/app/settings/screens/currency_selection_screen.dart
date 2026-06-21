@@ -5,6 +5,7 @@ import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/currency_data.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CurrencySelectionScreen extends ConsumerStatefulWidget {
   const CurrencySelectionScreen({super.key});
@@ -44,11 +45,11 @@ class _CurrencySelectionScreenState
               child: TextField(
                 controller: _searchController,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.search),
+                  prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass),
                   suffixIcon:
                       _searchQuery.isNotEmpty
                           ? IconButton(
-                            icon: const Icon(Icons.clear),
+                            icon: const Icon(PhosphorIconsRegular.x),
                             onPressed: () {
                               _searchController.clear();
                               setState(() => _searchQuery = '');
@@ -154,7 +155,7 @@ class _CurrencySelectionScreenState
                         trailing:
                             isSelected
                                 ? Icon(
-                                  Icons.check,
+                                  PhosphorIconsRegular.check,
                                   color: theme.colorScheme.primary,
                                 )
                                 : null,
@@ -174,7 +175,7 @@ class _CurrencySelectionScreenState
                     () => const Center(
                       child: CircularProgressIndicator.adaptive(),
                     ),
-                error: (e, _) => Center(child: Text(e.toString())),
+                error: (_, _) => Center(child: Text(l10n.errorUnexpected)),
               ),
             ),
           ],

@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "AI помічник",
   "aiAssistantDescription": "Отримуйте розумні пропозиції, рецепти та персоналізовані поради з нашим AI помічником.",
   "aiAssistantTitle": "ШІ помічник",
+  "aiAssistantTooltip": "Відкрийте помічник AI",
   "aiCapabilitiesBudget": "Бюджет і ціни",
   "aiCapabilitiesLists": "Списки покупок",
   "aiCapabilitiesOrganize": "організація",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Місячний бюджет",
   "budgetDashboardTitle": "Панель керування",
   "budgetEditTitle": "Місячний бюджет",
+  "budgetGoalInvalidAmount": "Введіть значення більше нуля",
+  "budgetGoalRemoved": "Ціль бюджету видалено",
+  "budgetGoalSaved": "Цільовий бюджет збережено",
   "budgetLists": "Списки",
+  "budgetPartialEstimateHint": "~ Включає часткові оцінки цін",
   "budgetPremiumLocked": "Глобальний місячний бюджет — це Premium",
   "budgetSubtitle": "Відстежуйте свої щомісячні витрати",
   "budgetUpgradePrompt": "Оновіть, щоб розблокувати",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Ви офлайн",
   "chatSubtitle": "Попросіть пропозиції щодо товарів, рецепти або поради щодо економії.",
   "chatSubtitleShort": "Запитайте про ціни, рецепти, організацію...",
+  "checkItemTooltip": "Перевірте пункт",
   "checkingItem": "Перевірка товару...",
   "checkingPantry": "Перевірка вашої комори...",
   "checkingSettings": "Перевірка налаштувань...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Очистити всі повідомлення в цьому сеансі?",
   "clearList": "Очистити список",
   "clearPurchased": "Очистити куплене",
+  "clearPurchasedConfirmMessage": "Видалити всі придбані товари з цього списку? Цю дію не можна скасувати.",
+  "clearPurchasedTitle": "Очистити придбані товари",
   "clearingCheckedItems": "Очищення позначених елементів...",
   "close": "Закрити",
   "closeSheet": "Закрити",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Помилка архівування списку: {error}",
   "errorClearingList": "Помилка очищення списку: {error}",
   "errorClearingPurchased": "Помилка очищення придбаних товарів: {error}",
+  "errorCreateList": "Не вдалося створити список. Перевірте підключення та повторіть спробу.",
   "errorCreatingList": "Помилка створення списку",
   "errorDecreasingQty": "Помилка зменшення кількості: {error}",
   "errorDeletingList": "Помилка видалення списку: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Помилка: {message}",
   "errorImportingList": "Помилка імпорту списку \"{name}\": {error}",
   "errorIncreasingQty": "Помилка збільшення кількості: {error}",
+  "errorLoadList": "Не вдалося завантажити ваші списки. Щоб почати, створіть новий список.",
   "errorLoadingChat": "Ой! Під час завантаження чату сталася помилка.",
   "errorLoadingChatSubtitle": "Перевірте підключення або повторіть спробу пізніше.",
   "errorLoadingHistory": "Помилка завантаження історії",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Помилка завантаження підписки",
   "errorOscillation": "Це може статися через коливання мережі або тимчасову недоступність. Спробуйте ще раз.",
   "errorProcessingRequest": "На жаль, під час обробки вашого запиту сталася помилка. Перевірте підключення або повторіть спробу пізніше.",
+  "errorQuickAdd": "Не вдалося додати товар. Перевірте підключення та повторіть спробу.",
   "errorRemovingItem": "Помилка видалення елемента: {error}",
   "errorRemovingItems": "Помилка видалення елементів: {error}",
   "errorRemovingSharedList": "Помилка видалення спільного списку: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Помилка збереження: {error}",
   "errorServerConnection": "Помилка підключення до сервера: {error}",
   "errorSettingCurrentList": "Помилка встановлення поточного списку: {error}",
+  "errorShareCode": "Помилка створення спільного коду. Перевірте підключення та повторіть спробу.",
   "errorTogglingItem": "Помилка перемикання статусу елемента: {error}",
   "errorTogglingItems": "Помилка перемикання елементів: {error}",
   "errorUnarchivingList": "Помилка розархівування списку: {error}",
+  "errorUnexpected": "Сталося щось несподіване. Спробуйте ще раз.",
   "errorUpdatingItem": "Помилка оновлення елемента: {error}",
   "errorUpdatingItems": "Помилка оновлення елементів: {error}",
   "errorUpdatingList": "Помилка оновлення списку: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Куплені",
   "finance": "Фінанси",
   "finishShopping": "Завершіть покупки",
+  "firstItemAddedSnackbar": "Перший доданий товар! Чудовий початок 🛒",
   "gallery": "Галерея",
   "generalAssistant": "Загальний помічник",
   "generalHelp": "Чим я можу допомогти з вашими покупками сьогодні?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Утримуйте, щоб вибрати • Проведіть, щоб видалити",
   "globalAssistant": "Глобальний помічник",
   "goodResponse": "Хороша відповідь",
+  "help": "Довідка",
+  "helpListAddItems": "Додайте елементи за допомогою кнопки + внизу або скористайтеся пошуком, щоб переглянути продукти",
+  "helpListAi": "Попросіть помічника зі штучним інтелектом створити, упорядкувати або завершити ваш список — просто торкніться піктограми блиску",
+  "helpListOrganize": "Перетягніть елементи, щоб змінити порядок, проведіть пальцем, щоб позначити їх як придбані, або скористайтеся фільтрами та сортуванням",
+  "helpListShare": "Поділіться своїм списком із родиною або експортуйте його як PDF, Excel або звичайний текст",
+  "helpListShoppingMode": "Режим покупок приховує придбані товари, щоб ви могли зосередитися на тому, що залишилося",
+  "helpListTitle": "Використовуючи свій список",
   "howCanIHelp": "Чим я можу допомогти?",
   "icon": "Значок:",
   "idealQty": "Ідеальна к-сть",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Видалити гол",
   "mealPlannerBudgetTodayCost": "Сьогодні: {amount}",
   "mealPlannerBudgetWeekCost": "Тиждень: {amount}",
+  "mealPlannerCurrentDayLabel": "Поточний день",
   "mealPlannerCustomTypeLabel": "Спеціальний тип",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Тип за замовчуванням",
   "mealPlannerDeleteMeal": "Видалити їжу",
+  "mealPlannerDuplicate": "Повторна їжа",
+  "mealPlannerDuplicateSuccess": "Харчування успішно дубльоване!",
   "mealPlannerEditMeal": "Редагувати їжу",
   "mealPlannerEditType": "Змінити тип їжі",
   "mealPlannerError": "Помилка завантаження плану харчування",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} хв",
   "mealPlannerSave": "Додати до плану",
   "mealPlannerSearchRecipes": "Пошук рецептів...",
+  "mealPlannerSelectDestinationDay": "Дублювати в...",
   "mealPlannerSelectRecipe": "Виберіть рецепт",
   "mealPlannerServings": "{count,plural, one{{count} порцій} other{{count} порцій}}",
   "mealPlannerServingsLabel": "Порції",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Рецепти",
   "newCategoryDialog": "Нова категорія",
   "newChat": "Новий чат",
+  "newChatConfirmMessage": "Почати нову розмову? Ваша поточна розмова буде втрачена.",
+  "newChatConfirmTitle": "Нова розмова",
   "newChatStarted": "Розпочато новий чат",
   "newListTitle": "Новий список покупок",
   "newPantryList": "Покупки з комори",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Пара",
   "onboardingGroupFamily": "Сім'я",
   "onboardingGroupSolo": "просто я",
+  "onboardingHookContinue": "Почніть роботу",
   "onboardingHookHeadline": "Ніколи більше не забувайте про продуктовий товар",
+  "onboardingHookItem1": "Курка гриль",
+  "onboardingHookItem2": "Сир моцарелла",
+  "onboardingHookItem3": "Помідори черрі",
   "onboardingListCreated": "Ваш список готовий: {count} елементів, організованих для вас.",
   "onboardingListSaveFailed": "Я підготував елементи, але не зміг зберегти список. Спробуйте залишити його в додатку ще раз.",
   "onboardingLoadingStat1Label": "Предмети каталогізовані",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Персоналізуйте свій досвід",
   "onboardingShareDesc": "Синхронізуйте списки з родиною та друзями в реальному часі",
   "onboardingShareTitle": "Поділіться з тими, кого любите",
+  "onboardingSkip": "Пропустити поки що",
   "onboardingSlide1Body": "Миттєво створюйте списки та діліться ними. Kipi автоматично додає предмети залежно від ваших звичок.",
   "onboardingSlide1Title": "Розумні списки покупок",
   "onboardingSlide2Body": "Запитуйте будь-що — створюйте списки, знаходьте рецепти, відстежуйте свою комору, плануйте свій тиждень.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "Розумний ШІ",
   "paywallFeatureUnlimitedLists": "Необмежені списки",
   "paywallFeaturesTitle": "Все, що вам потрібно:",
+  "paywallFreeTier": "Безкоштовно: 3 списки",
   "paywallGoalHeadlineFamily": "{name}, організовуйте сімейний шопінг!",
   "paywallGoalHeadlineFaster": "{name}, купуйте вдвічі швидше!",
   "paywallGoalHeadlineNeverForget": "{name}, ніколи нічого не забувай!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Лише {price}/день — менше кави",
   "paywallPricePerMonth": "Лише {price}/місяць",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Необмежений",
   "paywallPurchaseError": "Не вдалося завершити покупку. Спробуйте знову.",
   "paywallPurchasePending": "Ваш платіж очікує на підтвердження. Доступ буде звільнено автоматично після підтвердження.",
   "paywallRestore": "Відновити",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Пошук розмов",
   "searchCurrency": "Пошук валюти...",
   "searchInConversation": "Пошук у розмові...",
+  "searchItems": "Пошук елементів",
   "searchLanguage": "Мова пошуку...",
   "searchMessages": "Пошук повідомлень...",
   "searchRecipes": "Пошук рецептів...",

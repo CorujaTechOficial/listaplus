@@ -5,11 +5,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/colors.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ShareListSheet extends ConsumerWidget {
   const ShareListSheet({
@@ -59,7 +61,7 @@ class ShareListSheet extends ConsumerWidget {
             ),
             const SizedBox(height: Spacing.md),
             ListTile(
-              leading: const Icon(Icons.text_fields),
+              leading: const Icon(PhosphorIconsRegular.textT),
               title: Text(l10n.share),
               subtitle: Text(l10n.shareAsText),
               onTap: () {
@@ -69,7 +71,7 @@ class ShareListSheet extends ConsumerWidget {
             ),
             ListTile(
               leading: const Icon(
-                Icons.cloud_sync,
+                PhosphorIconsRegular.cloudArrowUp,
                 color: AppColors.premiumAmber,
               ),
               title: Text(l10n.shareViaCode),
@@ -154,11 +156,13 @@ Future<void> shareViaCode(
             ],
           ),
     );
-  } on Object catch (e) {
+  } on Object catch (_) {
     if (context.mounted) {
-      ScaffoldMessenger.of(
+      showKipiSnackBar(
         context,
-      ).showSnackBar(SnackBar(content: Text(e.toString())));
+        message: AppLocalizations.of(context)!.errorUnexpected,
+        type: SnackBarType.error,
+      );
     }
   }
 }

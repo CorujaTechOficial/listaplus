@@ -72,6 +72,32 @@ class AppLocalizationsSv extends AppLocalizations {
   String get close => 'Stäng';
 
   @override
+  String get help => 'Hjälp';
+
+  @override
+  String get helpListTitle => 'Använder din lista';
+
+  @override
+  String get helpListAddItems =>
+      'Lägg till objekt med +-knappen längst ner, eller använd sökfunktionen för att bläddra bland produkter';
+
+  @override
+  String get helpListAi =>
+      'Be AI-assistenten att skapa, organisera eller komplettera din lista – tryck bara på gnistikonen';
+
+  @override
+  String get helpListShoppingMode =>
+      'Shoppingläget döljer köpta varor så att du kan fokusera på det som finns kvar';
+
+  @override
+  String get helpListOrganize =>
+      'Dra objekt för att ändra ordning, svep för att markera som köpta eller använd filter och sortering';
+
+  @override
+  String get helpListShare =>
+      'Dela din lista med familjen eller exportera som PDF, Excel eller vanlig text';
+
+  @override
   String get import => 'Importera';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get clear => 'Rensa';
+
+  @override
+  String get clearPurchasedTitle => 'Rensa köpta varor';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vill du ta bort alla köpta varor från den här listan? Detta kan inte ångras.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get purchaseError => 'Fel vid behandling av köp. Försök igen.';
+
+  @override
+  String get errorCreateList =>
+      'Det gick inte att skapa listan. Kontrollera din anslutning och försök igen.';
+
+  @override
+  String get errorShareCode =>
+      'Fel vid generering av delningskod. Kontrollera din anslutning och försök igen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Det gick inte att lägga till objektet. Kontrollera din anslutning och försök igen.';
+
+  @override
+  String get errorLoadList =>
+      'Det gick inte att ladda dina listor. Skapa en ny lista för att komma igång.';
 
   @override
   String get restoreError => 'Fel vid återställning av köp. Försök igen.';
@@ -485,6 +534,19 @@ class AppLocalizationsSv extends AppLocalizations {
   String get noBudgetDefined => 'Ingen budget angiven';
 
   @override
+  String get budgetGoalInvalidAmount => 'Ange ett värde som är större än noll';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inkluderar partiella prisuppskattningar';
+
+  @override
+  String get budgetGoalSaved => 'Budgetmålet sparat';
+
+  @override
+  String get budgetGoalRemoved => 'Budgetmålet har tagits bort';
+
+  @override
   String totalEstimated(String amount) {
     return 'Totalt beräknat: $amount';
   }
@@ -679,6 +741,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get newChat => 'Ny chatt';
 
   @override
+  String get newChatConfirmTitle => 'Ny konversation';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Starta en ny konversation? Din nuvarande konversation kommer att gå förlorad.';
+
+  @override
   String get noHistory => 'Ingen chatthistorik';
 
   @override
@@ -787,28 +856,28 @@ class AppLocalizationsSv extends AppLocalizations {
   String get undo => 'Ångra';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Ny chatt har startat';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Lägg till i listan';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Vad kan jag göra?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Inköpslistor';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Budget & priser';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Recept & Menyer';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisation';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Bocka av varor när du handlar';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1237,6 +1306,15 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Välkomsterbjudande';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 listor';
+
+  @override
+  String get paywallProTier => 'Pro: Obegränsat';
+
+  @override
+  String get firstItemAddedSnackbar => 'Första artikeln tillagd! Bra start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1972,28 +2050,28 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Månad: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Vecka: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Idag: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Ta bort målet';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Budget för måltidsplanerare';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Månatligt utgiftsmål för måltidsplanering';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2136,6 +2214,19 @@ class AppLocalizationsSv extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Standardtyp';
 
   @override
+  String get mealPlannerDuplicate => 'Dubblett måltid';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicera till...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuell dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'Måltiden har duplicerats framgångsrikt!';
+
+  @override
   String get expirationDate => 'Utgångsdatum';
 
   @override
@@ -2143,6 +2234,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get skip => 'Hoppa';
+
+  @override
+  String get onboardingSkip => 'Hoppa över nu';
 
   @override
   String get onboardingAiTitle => 'Chatta med Kipi';
@@ -3170,6 +3264,30 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Genererar svar...';
+
+  @override
+  String get errorUnexpected => 'Något oväntat hände. Försök igen.';
+
+  @override
+  String get aiAssistantTooltip => 'Öppna AI-assistent';
+
+  @override
+  String get searchItems => 'Sök föremål';
+
+  @override
+  String get onboardingHookContinue => 'Kom igång';
+
+  @override
+  String get onboardingHookItem1 => 'Grillad kyckling';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarellaost';
+
+  @override
+  String get onboardingHookItem3 => 'Körsbärstomater';
+
+  @override
+  String get checkItemTooltip => 'Kontrollera objekt';
 }
 
 /// The translations for Swedish, as used in Sweden (`sv_SE`).
@@ -3240,6 +3358,32 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get close => 'Stäng';
 
   @override
+  String get help => 'Hjälp';
+
+  @override
+  String get helpListTitle => 'Använder din lista';
+
+  @override
+  String get helpListAddItems =>
+      'Lägg till objekt med +-knappen längst ner, eller använd sökfunktionen för att bläddra bland produkter';
+
+  @override
+  String get helpListAi =>
+      'Be AI-assistenten att skapa, organisera eller komplettera din lista – tryck bara på gnistikonen';
+
+  @override
+  String get helpListShoppingMode =>
+      'Shoppingläget döljer köpta varor så att du kan fokusera på det som finns kvar';
+
+  @override
+  String get helpListOrganize =>
+      'Dra objekt för att ändra ordning, svep för att markera som köpta eller använd filter och sortering';
+
+  @override
+  String get helpListShare =>
+      'Dela din lista med familjen eller exportera som PDF, Excel eller vanlig text';
+
+  @override
   String get import => 'Importera';
 
   @override
@@ -3250,6 +3394,13 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get clear => 'Rensa';
+
+  @override
+  String get clearPurchasedTitle => 'Rensa köpta varor';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vill du ta bort alla köpta varor från den här listan? Detta kan inte ångras.';
 
   @override
   String error(String message) {
@@ -3263,6 +3414,22 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get purchaseError => 'Fel vid behandling av köp. Försök igen.';
+
+  @override
+  String get errorCreateList =>
+      'Det gick inte att skapa listan. Kontrollera din anslutning och försök igen.';
+
+  @override
+  String get errorShareCode =>
+      'Fel vid generering av delningskod. Kontrollera din anslutning och försök igen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Det gick inte att lägga till objektet. Kontrollera din anslutning och försök igen.';
+
+  @override
+  String get errorLoadList =>
+      'Det gick inte att ladda dina listor. Skapa en ny lista för att komma igång.';
 
   @override
   String get restoreError => 'Fel vid återställning av köp. Försök igen.';
@@ -3653,6 +3820,19 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get noBudgetDefined => 'Ingen budget angiven';
 
   @override
+  String get budgetGoalInvalidAmount => 'Ange ett värde som är större än noll';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inkluderar partiella prisuppskattningar';
+
+  @override
+  String get budgetGoalSaved => 'Budgetmålet sparat';
+
+  @override
+  String get budgetGoalRemoved => 'Budgetmålet har tagits bort';
+
+  @override
   String totalEstimated(String amount) {
     return 'Totalt beräknat: $amount';
   }
@@ -3847,6 +4027,13 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get newChat => 'Ny chatt';
 
   @override
+  String get newChatConfirmTitle => 'Ny konversation';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Starta en ny konversation? Din nuvarande konversation kommer att gå förlorad.';
+
+  @override
   String get noHistory => 'Ingen chatthistorik';
 
   @override
@@ -3953,6 +4140,30 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get undo => 'Ångra';
+
+  @override
+  String get newChatStarted => 'Ny chatt har startat';
+
+  @override
+  String get quickAddToList => 'Lägg till i listan';
+
+  @override
+  String get aiCapabilitiesTitle => 'Vad kan jag göra?';
+
+  @override
+  String get aiCapabilitiesLists => 'Inköpslistor';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & priser';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recept & Menyer';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisation';
+
+  @override
+  String get marketModeDescription => 'Bocka av varor när du handlar';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -4381,6 +4592,15 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Välkomsterbjudande';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 listor';
+
+  @override
+  String get paywallProTier => 'Pro: Obegränsat';
+
+  @override
+  String get firstItemAddedSnackbar => 'Första artikeln tillagd! Bra start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5115,6 +5335,31 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
       'Tryck på vilken dag som helst för att börja planera dina måltider!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Månad: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Vecka: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Idag: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Ta bort målet';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Budget för måltidsplanerare';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Månatligt utgiftsmål för måltidsplanering';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
@@ -5255,6 +5500,19 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get mealPlannerDefaultTypeLabel => 'Standardtyp';
 
   @override
+  String get mealPlannerDuplicate => 'Dubblett måltid';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicera till...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuell dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'Måltiden har duplicerats framgångsrikt!';
+
+  @override
   String get expirationDate => 'Utgångsdatum';
 
   @override
@@ -5262,6 +5520,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get skip => 'Hoppa';
+
+  @override
+  String get onboardingSkip => 'Hoppa över nu';
 
   @override
   String get onboardingAiTitle => 'Chatta med Kipi';
@@ -6289,4 +6550,28 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get aiGeneratingResponse => 'Genererar svar...';
+
+  @override
+  String get errorUnexpected => 'Något oväntat hände. Försök igen.';
+
+  @override
+  String get aiAssistantTooltip => 'Öppna AI-assistent';
+
+  @override
+  String get searchItems => 'Sök föremål';
+
+  @override
+  String get onboardingHookContinue => 'Kom igång';
+
+  @override
+  String get onboardingHookItem1 => 'Grillad kyckling';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarellaost';
+
+  @override
+  String get onboardingHookItem3 => 'Körsbärstomater';
+
+  @override
+  String get checkItemTooltip => 'Kontrollera objekt';
 }

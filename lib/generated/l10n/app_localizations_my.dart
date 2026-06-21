@@ -72,6 +72,32 @@ class AppLocalizationsMy extends AppLocalizations {
   String get close => 'ပိတ်';
 
   @override
+  String get help => 'ကူညီကြပါ';
+
+  @override
+  String get helpListTitle => 'သင်၏စာရင်းကိုအသုံးပြုခြင်း။';
+
+  @override
+  String get helpListAddItems =>
+      'အောက်ခြေရှိ + ခလုတ်ဖြင့် ဖိုင်များကို ထည့်ပါ သို့မဟုတ် ထုတ်ကုန်များကို ရှာဖွေကြည့်ရှုရန် ရှာဖွေမှုကို အသုံးပြုပါ။';
+
+  @override
+  String get helpListAi =>
+      'သင့်စာရင်းကို ဖန်တီးရန်၊ စုစည်းရန် သို့မဟုတ် အပြီးသတ်ရန် AI လက်ထောက်အား တောင်းဆိုပါ — တောက်ပသောအိုင်ကွန်ကို နှိပ်ရုံသာဖြစ်သည်။';
+
+  @override
+  String get helpListShoppingMode =>
+      'စျေးဝယ်မုဒ်တွင် ဝယ်ထားသည့်အရာများကို ဝှက်ထားသောကြောင့် ကျန်သောအရာများကို သင်အာရုံစိုက်နိုင်သည်။';
+
+  @override
+  String get helpListOrganize =>
+      'ပစ္စည်းများကို ပြန်စီရန် ဆွဲယူပါ၊ ဝယ်ယူထားသည့်အဖြစ် အမှတ်အသားပြုရန် ပွတ်ဆွဲပါ သို့မဟုတ် စစ်ထုတ်ခြင်းနှင့် စီခြင်းတို့ကို အသုံးပြုပါ။';
+
+  @override
+  String get helpListShare =>
+      'သင့်စာရင်းကို မိသားစုနှင့် မျှဝေပါ သို့မဟုတ် PDF၊ Excel၊ သို့မဟုတ် ရိုးရှင်းသောစာသားအဖြစ် ထုတ်ယူပါ။';
+
+  @override
   String get import => 'တင်သွင်း';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get clear => 'ရှင်းလင်း';
+
+  @override
+  String get clearPurchasedTitle => 'ဝယ်ယူထားသောပစ္စည်းများကို ရှင်းလင်းပါ။';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ဝယ်ယူထားသော ပစ္စည်းများအားလုံးကို ဤစာရင်းမှ ဖယ်ရှားမလား။ ဒါကို ပြန်ပြင်လို့ မရပါဘူး။';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsMy extends AppLocalizations {
   @override
   String get purchaseError =>
       'ဝယ်ယူမှုကို လုပ်ဆောင်ရာတွင် အမှားရှိနေသည်။ ထပ်ကြိုးစားပါ။';
+
+  @override
+  String get errorCreateList =>
+      'စာရင်းဖန်တီး၍မရပါ။ သင့်ချိတ်ဆက်မှုကို စစ်ဆေးပြီး ထပ်စမ်းကြည့်ပါ။';
+
+  @override
+  String get errorShareCode =>
+      'မျှဝေကုဒ်ကို ထုတ်လုပ်ရာတွင် အမှားအယွင်းရှိသည်။ သင့်ချိတ်ဆက်မှုကို စစ်ဆေးပြီး ထပ်စမ်းကြည့်ပါ။';
+
+  @override
+  String get errorQuickAdd =>
+      'အကြောင်းအရာကို ထည့်၍မရပါ။ သင့်ချိတ်ဆက်မှုကို စစ်ဆေးပြီး ထပ်စမ်းကြည့်ပါ။';
+
+  @override
+  String get errorLoadList =>
+      'သင့်စာရင်းများကို မတင်နိုင်ခဲ့ပါ။ စတင်ရန် စာရင်းအသစ်တစ်ခုကို ဖန်တီးပါ။';
 
   @override
   String get restoreError =>
@@ -484,6 +533,19 @@ class AppLocalizationsMy extends AppLocalizations {
   String get noBudgetDefined => 'ဘတ်ဂျက်သတ်မှတ်မထားပါ';
 
   @override
+  String get budgetGoalInvalidAmount => 'သုညထက်ကြီးသောတန်ဖိုးကိုထည့်ပါ။';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ တစ်စိတ်တစ်ပိုင်း စျေးနှုန်း ခန့်မှန်းချက်များ ပါဝင်သည်။';
+
+  @override
+  String get budgetGoalSaved => 'ဘတ်ဂျက်ပန်းတိုင်ကို သိမ်းဆည်းပြီးပါပြီ။';
+
+  @override
+  String get budgetGoalRemoved => 'ဘတ်ဂျက်ပန်းတိုင်ကို ဖယ်ရှားခဲ့သည်။';
+
+  @override
   String totalEstimated(String amount) {
     return 'စုစုပေါင်းခန့်မှန်း: $amount';
   }
@@ -678,6 +740,13 @@ class AppLocalizationsMy extends AppLocalizations {
   String get newChat => 'Chat အသစ်';
 
   @override
+  String get newChatConfirmTitle => 'စကားဝိုင်းအသစ်';
+
+  @override
+  String get newChatConfirmMessage =>
+      'စကားဝိုင်းအသစ်တစ်ခု စတင်မလား။ သင်၏ လက်ရှိပြောဆိုမှု ပျောက်ဆုံးသွားပါမည်။';
+
+  @override
   String get noHistory => 'ချတ်မှတ်တမ်းမရှိပါ။';
 
   @override
@@ -788,28 +857,28 @@ class AppLocalizationsMy extends AppLocalizations {
   String get undo => 'ပြန်ဖျက်';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'ချတ်အသစ် စတင်ပါပြီ။';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'စာရင်းသို့ထည့်ပါ။';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'ကျွန်တော်ဘာလုပ်ပေးရမလဲ?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'စျေးဝယ်စာရင်းများ';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'ဘတ်ဂျက်နှင့် ဈေးနှုန်းများ';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'ချက်ပြုတ်နည်းများနှင့် မီနူးများ';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'အဖွဲ';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'သင်စျေးဝယ်နေစဉ်ပစ္စည်းများကိုစစ်ဆေးပါ။';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1240,6 +1309,16 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ကမ်းလှမ်းမှုကို ကြိုဆိုပါတယ်။';
+
+  @override
+  String get paywallFreeTier => 'အခမဲ့- စာရင်း 3 ခု';
+
+  @override
+  String get paywallProTier => 'Pro- အကန့်အသတ်မရှိ';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'ပထမဆုံး ပစ္စည်းကို ထည့်လိုက်သည် ။ ကောင်းမွန်သောစတင်ခြင်း 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2130,6 +2209,19 @@ class AppLocalizationsMy extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ပုံသေအမျိုးအစား';
 
   @override
+  String get mealPlannerDuplicate => 'ဆွမ်းပွား';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ပွားရန်...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'လက်ရှိနေ့';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'အစားအစာကို အောင်မြင်စွာ ပွားပြီးပါပြီ။';
+
+  @override
   String get expirationDate => 'သက်တမ်းကုန်ဆုံးရက်';
 
   @override
@@ -2137,6 +2229,9 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get skip => 'ကျော်သွားပါ။';
+
+  @override
+  String get onboardingSkip => 'လောလောဆယ် ကျော်သွားပါ။';
 
   @override
   String get onboardingAiTitle => 'Kipi နှင့် စကားပြောပါ။';
@@ -3195,4 +3290,29 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'တုံ့ပြန်မှုကို ဖန်တီးနေသည်...';
+
+  @override
+  String get errorUnexpected =>
+      'မထင်မှတ်ဘဲ တစ်ခုခုဖြစ်သွားတယ်။ ထပ်စမ်းကြည့်ပါ။';
+
+  @override
+  String get aiAssistantTooltip => 'AI လက်ထောက်ကိုဖွင့်ပါ။';
+
+  @override
+  String get searchItems => 'ပစ္စည်းများကို ရှာဖွေပါ။';
+
+  @override
+  String get onboardingHookContinue => 'စတင်လိုက်ပါ။';
+
+  @override
+  String get onboardingHookItem1 => 'ကြက်ကင်';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ဒိန်ခဲ';
+
+  @override
+  String get onboardingHookItem3 => 'ချယ်ရီခရမ်းချဉ်သီး';
+
+  @override
+  String get checkItemTooltip => 'ပစ္စည်းကို စစ်ဆေးပါ။';
 }

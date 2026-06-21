@@ -72,6 +72,32 @@ class AppLocalizationsMk extends AppLocalizations {
   String get close => 'Затвори';
 
   @override
+  String get help => 'Помош';
+
+  @override
+  String get helpListTitle => 'Користење на вашата листа';
+
+  @override
+  String get helpListAddItems =>
+      'Додајте ставки со копчето + на дното или користете го пребарувањето за да пребарувате производи';
+
+  @override
+  String get helpListAi =>
+      'Побарајте од помошникот за вештачка интелигенција да ја креира, организира или комплетира вашата листа - само допрете ја иконата со искра';
+
+  @override
+  String get helpListShoppingMode =>
+      'Режимот за купување ги крие купените артикли за да можете да се фокусирате на она што преостанува';
+
+  @override
+  String get helpListOrganize =>
+      'Влечете ги ставките за повторно да ги нарачате, повлечете за да означите како купени или користете филтри и сортирање';
+
+  @override
+  String get helpListShare =>
+      'Споделете ја вашата листа со семејството или извезете како PDF, Excel или обичен текст';
+
+  @override
   String get import => 'Увези';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get clear => 'Исчисти';
+
+  @override
+  String get clearPurchasedTitle => 'Исчистете ги купените ставки';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Да се ​​отстранат сите купени ставки од оваа листа? Ова не може да се врати.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsMk extends AppLocalizations {
   @override
   String get purchaseError =>
       'Грешка при обработка на купувањето. Обидете се повторно.';
+
+  @override
+  String get errorCreateList =>
+      'Не може да се создаде список. Проверете ја врската и обидете се повторно.';
+
+  @override
+  String get errorShareCode =>
+      'Грешка при генерирање на код за споделување. Проверете ја врската и обидете се повторно.';
+
+  @override
+  String get errorQuickAdd =>
+      'Не може да се додаде ставка. Проверете ја врската и обидете се повторно.';
+
+  @override
+  String get errorLoadList =>
+      'Не може да се вчитаат вашите списоци. Ве молиме креирајте нова листа за да започнете.';
 
   @override
   String get restoreError =>
@@ -490,6 +539,18 @@ class AppLocalizationsMk extends AppLocalizations {
   String get noBudgetDefined => 'Нема поставен буџет';
 
   @override
+  String get budgetGoalInvalidAmount => 'Внесете вредност поголема од нула';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Вклучува делумни ценовни проценки';
+
+  @override
+  String get budgetGoalSaved => 'Целта на буџетот е зачувана';
+
+  @override
+  String get budgetGoalRemoved => 'Целта на буџетот е отстранета';
+
+  @override
   String totalEstimated(String amount) {
     return 'Вкупно проценето: $amount';
   }
@@ -682,6 +743,13 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get newChat => 'Нов разговор';
+
+  @override
+  String get newChatConfirmTitle => 'Нов разговор';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Да започнете нов разговор? Вашиот тековен разговор ќе биде изгубен.';
 
   @override
   String get noHistory => 'Нема историја на разговор';
@@ -1246,6 +1314,16 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Понуда за добредојде';
+
+  @override
+  String get paywallFreeTier => 'Бесплатно: 3 списоци';
+
+  @override
+  String get paywallProTier => 'Про: неограничено';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Првата ставка е додадена! Одличен почеток 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2148,6 +2226,18 @@ class AppLocalizationsMk extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Стандарден тип';
 
   @override
+  String get mealPlannerDuplicate => 'Дупликат оброк';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Дупликат на...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Тековен ден';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Оброкот е успешно дуплиран!';
+
+  @override
   String get expirationDate => 'Датум на истекување';
 
   @override
@@ -2155,6 +2245,9 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get skip => 'Прескокни';
+
+  @override
+  String get onboardingSkip => 'Засега прескокнете';
 
   @override
   String get onboardingAiTitle => 'Разговарајте со Кипи';
@@ -3196,6 +3289,32 @@ class AppLocalizationsMk extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Се генерира одговор…';
+
+  @override
+  String get errorUnexpected =>
+      'Се случи нешто неочекувано. Ве молиме обидете се повторно.';
+
+  @override
+  String get aiAssistantTooltip =>
+      'Отворете го помошникот за вештачка интелигенција';
+
+  @override
+  String get searchItems => 'Пребарајте ставки';
+
+  @override
+  String get onboardingHookContinue => 'Започнете';
+
+  @override
+  String get onboardingHookItem1 => 'Пилешко на скара';
+
+  @override
+  String get onboardingHookItem2 => 'Моцарела сирење';
+
+  @override
+  String get onboardingHookItem3 => 'Цреша домати';
+
+  @override
+  String get checkItemTooltip => 'Проверете ја ставката';
 }
 
 /// The translations for Macedonian, as used in North Macedonia (`mk_MK`).
@@ -3266,6 +3385,32 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
   String get close => 'Затвори';
 
   @override
+  String get help => 'Помош';
+
+  @override
+  String get helpListTitle => 'Користење на вашата листа';
+
+  @override
+  String get helpListAddItems =>
+      'Додајте ставки со копчето + на дното или користете го пребарувањето за да пребарувате производи';
+
+  @override
+  String get helpListAi =>
+      'Побарајте од помошникот за вештачка интелигенција да ја креира, организира или комплетира вашата листа - само допрете ја иконата со искра';
+
+  @override
+  String get helpListShoppingMode =>
+      'Режимот за купување ги крие купените артикли за да можете да се фокусирате на она што преостанува';
+
+  @override
+  String get helpListOrganize =>
+      'Влечете ги ставките за повторно да ги нарачате, повлечете за да означите како купени или користете филтри и сортирање';
+
+  @override
+  String get helpListShare =>
+      'Споделете ја вашата листа со семејството или извезете како PDF, Excel или обичен текст';
+
+  @override
   String get import => 'Увези';
 
   @override
@@ -3276,6 +3421,13 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
 
   @override
   String get clear => 'Исчисти';
+
+  @override
+  String get clearPurchasedTitle => 'Исчистете ги купените ставки';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Да се ​​отстранат сите купени ставки од оваа листа? Ова не може да се врати.';
 
   @override
   String error(String message) {
@@ -3290,6 +3442,22 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
   @override
   String get purchaseError =>
       'Грешка при обработка на купувањето. Обидете се повторно.';
+
+  @override
+  String get errorCreateList =>
+      'Не може да се создаде список. Проверете ја врската и обидете се повторно.';
+
+  @override
+  String get errorShareCode =>
+      'Грешка при генерирање на код за споделување. Проверете ја врската и обидете се повторно.';
+
+  @override
+  String get errorQuickAdd =>
+      'Не може да се додаде ставка. Проверете ја врската и обидете се повторно.';
+
+  @override
+  String get errorLoadList =>
+      'Не може да се вчитаат вашите списоци. Ве молиме креирајте нова листа за да започнете.';
 
   @override
   String get restoreError =>
@@ -3684,6 +3852,18 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
   String get noBudgetDefined => 'Нема поставено буџет';
 
   @override
+  String get budgetGoalInvalidAmount => 'Внесете вредност поголема од нула';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Вклучува делумни ценовни проценки';
+
+  @override
+  String get budgetGoalSaved => 'Целта на буџетот е зачувана';
+
+  @override
+  String get budgetGoalRemoved => 'Целта на буџетот е отстранета';
+
+  @override
   String totalEstimated(String amount) {
     return 'Вкупно проценето: $amount';
   }
@@ -3876,6 +4056,13 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
 
   @override
   String get newChat => 'Нов разговор';
+
+  @override
+  String get newChatConfirmTitle => 'Нов разговор';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Да започнете нов разговор? Вашиот тековен разговор ќе биде изгубен.';
 
   @override
   String get noHistory => 'Нема историја на разговор';
@@ -4440,6 +4627,16 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Понуда за добредојде';
+
+  @override
+  String get paywallFreeTier => 'Бесплатно: 3 списоци';
+
+  @override
+  String get paywallProTier => 'Про: неограничено';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Првата ставка е додадена! Одличен почеток 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5344,6 +5541,18 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
   String get mealPlannerDefaultTypeLabel => 'Стандарден тип';
 
   @override
+  String get mealPlannerDuplicate => 'Дупликат оброк';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Дупликат на...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Тековен ден';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Оброкот е успешно дуплиран!';
+
+  @override
   String get expirationDate => 'Датум на истекување';
 
   @override
@@ -5351,6 +5560,9 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
 
   @override
   String get skip => 'Прескокни';
+
+  @override
+  String get onboardingSkip => 'Засега прескокнете';
 
   @override
   String get onboardingAiTitle => 'Разговарајте со Кипи';
@@ -6392,4 +6604,30 @@ class AppLocalizationsMkMk extends AppLocalizationsMk {
 
   @override
   String get aiGeneratingResponse => 'Се генерира одговор…';
+
+  @override
+  String get errorUnexpected =>
+      'Се случи нешто неочекувано. Ве молиме обидете се повторно.';
+
+  @override
+  String get aiAssistantTooltip =>
+      'Отворете го помошникот за вештачка интелигенција';
+
+  @override
+  String get searchItems => 'Пребарајте ставки';
+
+  @override
+  String get onboardingHookContinue => 'Започнете';
+
+  @override
+  String get onboardingHookItem1 => 'Пилешко на скара';
+
+  @override
+  String get onboardingHookItem2 => 'Моцарела сирење';
+
+  @override
+  String get onboardingHookItem3 => 'Цреша домати';
+
+  @override
+  String get checkItemTooltip => 'Проверете ја ставката';
 }

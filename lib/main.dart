@@ -14,8 +14,8 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:quick_actions/quick_actions.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:animations/animations.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
@@ -36,6 +36,7 @@ import 'services/revenuecat_service_noop.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
 import 'package:shopping_list/core/widgets/offline_banner.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 Future<void>? _revenueCatInitialization;
 
@@ -342,7 +343,7 @@ class _MyAppState extends ConsumerState<MyApp> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.cloud_off_rounded,
+                                PhosphorIconsRegular.cloudSlash,
                                 size: 64,
                                 color: theme.colorScheme.error,
                               ),
@@ -367,7 +368,7 @@ class _MyAppState extends ConsumerState<MyApp> {
                               FilledButton.icon(
                                 onPressed:
                                     () => ref.invalidate(onboardingProvider),
-                                icon: const Icon(Icons.refresh_rounded),
+                                icon: const Icon(PhosphorIconsRegular.arrowCounterClockwise),
                                 label: Text(
                                   AppLocalizations.of(context)!.retry,
                                 ),
@@ -442,9 +443,9 @@ class _MainShellState extends ConsumerState<MainShell> {
     super.initState();
     _quickActions.initialize((shortcutType) {
       if (shortcutType == 'action_pantry') {
-        setState(() => _currentTab = 3); // Despensa is now index 3
+        setState(() => _currentTab = 2); // Despensa is now index 2
       } else if (shortcutType == 'action_ai') {
-        setState(() => _currentTab = 0);
+        setState(() => _currentTab = 4); // AI Chat is now index 4
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -489,45 +490,39 @@ class _MainShellState extends ConsumerState<MainShell> {
         onDestinationSelected: (index) => setState(() => _currentTab = index),
         destinations: [
           NavigationDestination(
-            icon: const Icon(Icons.smart_toy_outlined),
-            selectedIcon: const Icon(Icons.smart_toy),
-            label: l10n.navChat,
-          ),
-          NavigationDestination(
-            icon: const Icon(Icons.restaurant_menu_outlined),
-            selectedIcon: const Icon(Icons.restaurant_menu),
-            label: l10n.navRecipes,
-          ),
-          NavigationDestination(
-            icon: const Icon(Icons.list_alt_outlined),
-            selectedIcon: const Icon(Icons.list_alt),
+            icon: const Icon(PhosphorIconsRegular.listChecks),
+            selectedIcon: const Icon(PhosphorIconsFill.listChecks),
             label: l10n.navLists,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.inventory_2_outlined),
-            selectedIcon: const Icon(Icons.inventory_2),
+            icon: const Icon(PhosphorIconsRegular.forkKnife),
+            selectedIcon: const Icon(PhosphorIconsFill.forkKnife),
+            label: l10n.navRecipes,
+          ),
+          NavigationDestination(
+            icon: const Icon(PhosphorIconsRegular.package),
+            selectedIcon: const Icon(PhosphorIconsFill.package),
             label: l10n.pantry,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.calendar_month_outlined),
-            selectedIcon: const Icon(Icons.calendar_month),
+            icon: const Icon(PhosphorIconsRegular.calendarBlank),
+            selectedIcon: const Icon(PhosphorIconsFill.calendarBlank),
             label: l10n.navMealPlanner,
           ),
+          NavigationDestination(
+            icon: const Icon(PhosphorIconsRegular.robot),
+            selectedIcon: const Icon(PhosphorIconsFill.robot),
+            label: l10n.navChat,
+          ),
         ],
-      ).animate().slideY(
-        begin: 1,
-        end: 0,
-        duration: 600.ms,
-        curve: Curves.easeOutCubic,
       ),
 
       body: PageTransitionSwitcher(
-        duration: const Duration(milliseconds: 300),
+        duration: DurationTokens.fast,
         transitionBuilder: (child, animation, secondaryAnimation) {
-          return SharedAxisTransition(
+          return FadeThroughTransition(
             animation: animation,
             secondaryAnimation: secondaryAnimation,
-            transitionType: SharedAxisTransitionType.horizontal,
             child: child,
           );
         },
@@ -535,11 +530,11 @@ class _MainShellState extends ConsumerState<MainShell> {
           key: ValueKey<int>(_currentTab),
           child:
               [
-                const AiHomeScreen(),
-                const RecipesScreen(),
                 const ListLoader(),
+                const RecipesScreen(),
                 const PantryScreen(),
                 const MealPlannerScreen(),
+                const AiHomeScreen(),
               ][_currentTab],
         ),
       ),
@@ -561,10 +556,7 @@ class ListLoader extends ConsumerWidget {
         }
         return HomeScreen(listId: listId);
       },
-      loading:
-          () => const Scaffold(
-            body: SafeArea(child: Center(child: CircularProgressIndicator())),
-          ),
+      loading: () => const _ListLoaderSkeleton(),
       error: (e, stack) {
         debugPrint('[ListLoader] Error loading current list: $e');
         Sentry.captureException(e, stackTrace: stack);
@@ -583,7 +575,7 @@ class ListLoader extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.error_outline,
+                      PhosphorIconsRegular.warningCircle,
                       color: Theme.of(context).colorScheme.error,
                       size: 48,
                     ),
@@ -603,7 +595,7 @@ class ListLoader extends ConsumerWidget {
                     const SizedBox(height: Spacing.lg),
                     FilledButton.icon(
                       onPressed: () => ref.invalidate(currentListIdProvider),
-                      icon: const Icon(Icons.refresh),
+                      icon: const Icon(PhosphorIconsRegular.arrowCounterClockwise),
                       label: Text(l10n.retry),
                     ),
                   ],
@@ -613,6 +605,47 @@ class ListLoader extends ConsumerWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class _ListLoaderSkeleton extends StatelessWidget {
+  const _ListLoaderSkeleton();
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Scaffold(
+      backgroundColor: theme.colorScheme.surface,
+      appBar: AppBar(
+        title: const Text('Carregando...'),
+        leading: const IconButton(
+          icon: Icon(PhosphorIconsRegular.user),
+          onPressed: null,
+        ),
+      ),
+      body: Skeletonizer(
+        enabled: true,
+        child: ListView.builder(
+          itemCount: 8,
+          padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Container(
+                width: 24,
+                height: 24,
+                decoration: BoxDecoration(
+                  border: Border.all(color: theme.colorScheme.outlineVariant),
+                  borderRadius: BorderRadius.circular(RadiusTokens.xs),
+                ),
+              ),
+              title: const Text('Carregando item de compras'),
+              subtitle: const Text('2 unidades • R\$ 10,00'),
+              trailing: const Icon(PhosphorIconsRegular.dotsSixVertical),
+            );
+          },
+        ),
+      ),
     );
   }
 }
@@ -651,7 +684,7 @@ class NoListsScreen extends ConsumerWidget {
                         ),
                   );
                 },
-                icon: const Icon(Icons.add),
+                icon: const Icon(PhosphorIconsRegular.plus),
                 label: Text(l10n.createFirstList),
               ),
             ],

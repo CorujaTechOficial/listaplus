@@ -6,7 +6,9 @@ import 'package:shopping_list/models/premium_feature.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ThemeSelectionScreen extends ConsumerWidget {
   const ThemeSelectionScreen({super.key});
@@ -50,8 +52,10 @@ class ThemeSelectionScreen extends ConsumerWidget {
                     return;
                   }
                   if (useDynamicColor) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text(l10n.dynamicColorsEnabledWarning)),
+                    showKipiSnackBar(
+                      context,
+                      message: l10n.dynamicColorsEnabledWarning,
+                      type: SnackBarType.warning,
                     );
                   }
                   ref.read(themeColorProvider.notifier).setColor(color);
@@ -82,7 +86,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
                         child:
                             isSelected
                                 ? Icon(
-                                  Icons.check,
+                                  PhosphorIconsRegular.check,
                                   color:
                                       color.computeLuminance() > 0.5
                                           ? Colors.black
@@ -96,7 +100,7 @@ class ThemeSelectionScreen extends ConsumerWidget {
                         top: 4,
                         right: 4,
                         child: Icon(
-                          Icons.lock,
+                          PhosphorIconsRegular.lock,
                           size: 14,
                           color:
                               color.computeLuminance() > 0.5

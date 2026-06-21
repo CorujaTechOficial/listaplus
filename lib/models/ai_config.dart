@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AiConfig {
   const AiConfig({required this.name, required this.iconKey});
@@ -9,15 +10,15 @@ class AiConfig {
   IconData get iconData {
     switch (iconKey) {
       case 'smart_toy':
-        return Icons.smart_toy;
+        return PhosphorIconsRegular.robot;
       case 'psychology':
-        return Icons.psychology;
+        return PhosphorIconsRegular.brain;
       case 'support_agent':
-        return Icons.support_agent;
+        return PhosphorIconsRegular.headset;
       case 'face':
-        return Icons.face;
+        return PhosphorIconsRegular.user;
       default:
-        return Icons.smart_toy;
+        return PhosphorIconsRegular.robot;
     }
   }
 

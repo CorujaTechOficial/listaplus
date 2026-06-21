@@ -18,7 +18,7 @@ Future<T?> showAnimatedDialog<T>({
         opacity: CurvedAnimation(parent: animation, curve: Curves.easeOut),
         child: ScaleTransition(
           scale: Tween<double>(begin: 0.9, end: 1).animate(
-            CurvedAnimation(parent: animation, curve: Curves.easeOutBack),
+            CurvedAnimation(parent: animation, curve: Curves.easeOutCubic),
           ),
           child: child,
         ),

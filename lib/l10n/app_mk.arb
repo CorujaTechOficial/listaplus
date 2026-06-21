@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -313,12 +325,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -332,8 +350,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -347,6 +374,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -535,6 +580,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -876,8 +927,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1013,6 +1076,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1416,6 +1482,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1537,6 +1606,7 @@
   "aiAssistantGeneral": "Генерален асистент",
   "aiAssistantHistory": "Историја на асистент",
   "aiAssistantTitle": "Асистент со вештачка интелигенција",
+  "aiAssistantTooltip": "Отворете го помошникот за вештачка интелигенција",
   "aiCapabilitiesBudget": "Буџет и цени",
   "aiCapabilitiesLists": "Списоци за купување",
   "aiCapabilitiesOrganize": "Организација",
@@ -1623,7 +1693,11 @@
   "budgetAppBar": "Месечен буџет",
   "budgetDashboardTitle": "Табла",
   "budgetEditTitle": "Месечен буџет",
+  "budgetGoalInvalidAmount": "Внесете вредност поголема од нула",
+  "budgetGoalRemoved": "Целта на буџетот е отстранета",
+  "budgetGoalSaved": "Целта на буџетот е зачувана",
   "budgetLists": "Листи",
+  "budgetPartialEstimateHint": "~ Вклучува делумни ценовни проценки",
   "budgetPremiumLocked": "Глобалниот месечен буџет е Premium",
   "budgetSubtitle": "Следете ја вашата месечна потрошувачка",
   "budgetUpgradePrompt": "Надгради за да отклучиш",
@@ -1691,6 +1765,7 @@
   "chatHistoryOfflineTitle": "Офлајн сте",
   "chatSubtitle": "Прашајте за предлози за ставки, рецепти или совети за заштеда.",
   "chatSubtitleShort": "Прашајте за цени, рецепти, организација...",
+  "checkItemTooltip": "Проверете ја ставката",
   "chooseCurrency": "Изберете валута",
   "chooseIcon": "Изберете икона",
   "chooseImageSource": "Изберете извор на слика",
@@ -1702,6 +1777,8 @@
   "clearHistoryConfirm": "Да се исчистат сите пораки во оваа сесија?",
   "clearList": "Исчисти листа",
   "clearPurchased": "Исчисти купено",
+  "clearPurchasedConfirmMessage": "Да се ​​отстранат сите купени ставки од оваа листа? Ова не може да се врати.",
+  "clearPurchasedTitle": "Исчистете ги купените ставки",
   "close": "Затвори",
   "closeSheet": "Затвори",
   "complete": "Заврши",
@@ -1790,7 +1867,9 @@
   "enterCodeHint": "Внесете го кодот",
   "enterUrl": "Внесете URL",
   "error": "Грешка: {message}",
+  "errorCreateList": "Не може да се создаде список. Проверете ја врската и обидете се повторно.",
   "errorGeneric": "Грешка: {message}",
+  "errorLoadList": "Не може да се вчитаат вашите списоци. Ве молиме креирајте нова листа за да започнете.",
   "errorLoadingChat": "Упс! Нешто тргна наопаку при вчитувањето на разговорот.",
   "errorLoadingChatSubtitle": "Проверете ја врската или обидете се повторно подоцна.",
   "errorLoadingHistory": "Грешка при вчитување на историјата",
@@ -1799,7 +1878,10 @@
   "errorLoadingRecipes": "Грешка при вчитување на рецептите",
   "errorLoadingSubscription": "Грешка при вчитување на претплатата",
   "errorOscillation": "Ова може да се случи поради осцилации на мрежата или привремена недостапност. Ве молиме обидете се повторно.",
+  "errorQuickAdd": "Не може да се додаде ставка. Проверете ја врската и обидете се повторно.",
   "errorSavingProfile": "Грешка при зачувување на профилот",
+  "errorShareCode": "Грешка при генерирање на код за споделување. Проверете ја врската и обидете се повторно.",
+  "errorUnexpected": "Се случи нешто неочекувано. Ве молиме обидете се повторно.",
   "estimated": "Проценето",
   "estimatedCost": "Проценето",
   "estimatedPrice": "Проценета цена",
@@ -1841,6 +1923,7 @@
   "filterPurchased": "Купено",
   "finance": "Финансии",
   "finishShopping": "Заврши шопинг",
+  "firstItemAddedSnackbar": "Првата ставка е додадена! Одличен почеток 🛒",
   "gallery": "Галерија",
   "generalAssistant": "Општ асистент",
   "generalHelp": "Како можам да ви помогнам со вашето шопинг денес?",
@@ -1848,6 +1931,13 @@
   "gestureHint": "Држете за да изберете • Повлечете за да отстраните",
   "globalAssistant": "Глобален асистент",
   "goodResponse": "Добар одговор",
+  "help": "Помош",
+  "helpListAddItems": "Додајте ставки со копчето + на дното или користете го пребарувањето за да пребарувате производи",
+  "helpListAi": "Побарајте од помошникот за вештачка интелигенција да ја креира, организира или комплетира вашата листа - само допрете ја иконата со искра",
+  "helpListOrganize": "Влечете ги ставките за повторно да ги нарачате, повлечете за да означите како купени или користете филтри и сортирање",
+  "helpListShare": "Споделете ја вашата листа со семејството или извезете како PDF, Excel или обичен текст",
+  "helpListShoppingMode": "Режимот за купување ги крие купените артикли за да можете да се фокусирате на она што преостанува",
+  "helpListTitle": "Користење на вашата листа",
   "howCanIHelp": "Како можам да помогнам?",
   "idealQty": "Идеална количина",
   "idealQuantity": "Идеална количина",
@@ -1930,10 +2020,13 @@
   "mealPlannerBudgetRemoveGoal": "Отстранете ја целта",
   "mealPlannerBudgetTodayCost": "Денес: {amount}",
   "mealPlannerBudgetWeekCost": "Недела: {amount}",
+  "mealPlannerCurrentDayLabel": "Тековен ден",
   "mealPlannerCustomTypeLabel": "Прилагоден тип",
   "mealPlannerDateLabel": "Датум",
   "mealPlannerDefaultTypeLabel": "Стандарден тип",
   "mealPlannerDeleteMeal": "Отстрани оброк",
+  "mealPlannerDuplicate": "Дупликат оброк",
+  "mealPlannerDuplicateSuccess": "Оброкот е успешно дуплиран!",
   "mealPlannerEditMeal": "Уреди оброк",
   "mealPlannerEditType": "Уредете го типот на оброк",
   "mealPlannerError": "Грешка при вчитување на планот за оброци",
@@ -1960,6 +2053,7 @@
   "mealPlannerPrepTime": "{minutes} мин",
   "mealPlannerSave": "Додај во план",
   "mealPlannerSearchRecipes": "Пребарај рецепти...",
+  "mealPlannerSelectDestinationDay": "Дупликат на...",
   "mealPlannerSelectRecipe": "Изберете рецепт",
   "mealPlannerServings": "{count,plural, one{{count} порција} other{{count} порции}}",
   "mealPlannerServingsLabel": "Порции",
@@ -1991,6 +2085,8 @@
   "navRecipes": "Рецепти",
   "newCategoryDialog": "Нова категорија",
   "newChat": "Нов разговор",
+  "newChatConfirmMessage": "Да започнете нов разговор? Вашиот тековен разговор ќе биде изгубен.",
+  "newChatConfirmTitle": "Нов разговор",
   "newChatStarted": "Започна нов разговор",
   "newListTitle": "Нова листа за шопинг",
   "newPantryList": "Шопинг од шпајз",
@@ -2129,7 +2225,11 @@
   "onboardingGroupCouple": "Двојка",
   "onboardingGroupFamily": "Семејство",
   "onboardingGroupSolo": "Само јас",
+  "onboardingHookContinue": "Започнете",
   "onboardingHookHeadline": "Никогаш повеќе не заборавајте на намирници",
+  "onboardingHookItem1": "Пилешко на скара",
+  "onboardingHookItem2": "Моцарела сирење",
+  "onboardingHookItem3": "Цреша домати",
   "onboardingListCreated": "Вашата листа е подготвена: {count} ставки организирани за вас.",
   "onboardingListSaveFailed": "Ги подготвив предметите, но не можев да го зачувам списокот. Обидете се повторно да го задржите во апликацијата.",
   "onboardingLoadingStat1Label": "Каталогизирани артикли",
@@ -2176,6 +2276,7 @@
   "onboardingSetupTitle": "Персонализирајте го вашето искуство",
   "onboardingShareDesc": "Синхронизирајте ги списоците со семејството и пријателите во реално време",
   "onboardingShareTitle": "Споделете со оние што ги сакате",
+  "onboardingSkip": "Засега прескокнете",
   "onboardingSlide1Body": "Креирајте и споделувајте списоци веднаш. Kipi додава ставки автоматски врз основа на вашите навики.",
   "onboardingSlide1Title": "Паметни шопинг листи",
   "onboardingSlide2Body": "Прашајте што било - креирајте списоци, најдете рецепти, следете ја вашата оставата, чајната кујна, планирајте ја вашата недела.",
@@ -2256,6 +2357,7 @@
   "paywallFeatureSmartAI": "Паметна вештачка интелигенција",
   "paywallFeatureUnlimitedLists": "Неограничени списоци",
   "paywallFeaturesTitle": "Сè што ви треба:",
+  "paywallFreeTier": "Бесплатно: 3 списоци",
   "paywallGoalHeadlineFamily": "{name}, организирајте семеен шопинг!",
   "paywallGoalHeadlineFaster": "{name}, купувајте за половина од времето!",
   "paywallGoalHeadlineNeverForget": "{name}, никогаш не заборавајте ставка!",
@@ -2285,6 +2387,7 @@
   "paywallPricePerDay": "Само {price}/ден - помалку од кафе",
   "paywallPricePerMonth": "Само {price}/месечно",
   "paywallProLabel": "УЈП",
+  "paywallProTier": "Про: неограничено",
   "paywallPurchaseError": "Не може да се заврши купувањето. Обидете се повторно.",
   "paywallPurchasePending": "Вашето плаќање чека одобрување. Пристапот ќе се ослободи автоматски по потврдата.",
   "paywallRestore": "Врати",
@@ -2412,6 +2515,7 @@
   "searchConversations": "Пребарувајте разговори",
   "searchCurrency": "Пребарајте валута...",
   "searchInConversation": "Барај во разговор...",
+  "searchItems": "Пребарајте ставки",
   "searchLanguage": "Пребарај јазик...",
   "searchMessages": "Барај пораки...",
   "searchRecipes": "Пребарај рецепти...",

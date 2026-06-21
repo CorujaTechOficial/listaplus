@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -313,12 +325,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -332,8 +350,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -347,6 +374,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -535,6 +580,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -876,8 +927,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1013,6 +1076,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1416,6 +1482,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1537,6 +1606,7 @@
   "aiAssistantGeneral": "Általános asszisztens",
   "aiAssistantHistory": "Asszisztens Történelem",
   "aiAssistantTitle": "AI asszisztens",
+  "aiAssistantTooltip": "Nyissa meg az AI-asszisztenst",
   "aiCapabilitiesBudget": "Költségvetés és árak",
   "aiCapabilitiesLists": "Bevásárlólisták",
   "aiCapabilitiesOrganize": "Szervezet",
@@ -1623,7 +1693,11 @@
   "budgetAppBar": "Havi költségvetés",
   "budgetDashboardTitle": "Irányítópult",
   "budgetEditTitle": "Havi költségvetés",
+  "budgetGoalInvalidAmount": "Adjon meg egy nullánál nagyobb értéket",
+  "budgetGoalRemoved": "Költségkeret-cél eltávolítva",
+  "budgetGoalSaved": "Költségvetési cél mentve",
   "budgetLists": "Listák",
+  "budgetPartialEstimateHint": "~ Részleges árazási becsléseket tartalmaz",
   "budgetPremiumLocked": "A globális havi költségvetés prémium",
   "budgetSubtitle": "Kövesse nyomon havi kiadásait",
   "budgetUpgradePrompt": "Frissítsen a feloldáshoz",
@@ -1691,6 +1765,7 @@
   "chatHistoryOfflineTitle": "Ön offline állapotban van",
   "chatSubtitle": "Kérdezzen termékajánlatokat, recepteket vagy megtakarítási tippeket.",
   "chatSubtitleShort": "Érdeklődjön árakról, receptekről, szervezésről...",
+  "checkItemTooltip": "Ellenőrizze az elemet",
   "chooseCurrency": "Válassza a Pénznem lehetőséget",
   "chooseIcon": "Válassza ki az ikont",
   "chooseImageSource": "Képforrás kiválasztása",
@@ -1702,6 +1777,8 @@
   "clearHistoryConfirm": "Minden üzenet törlése ebben a munkamenetben?",
   "clearList": "Lista törlése",
   "clearPurchased": "Megvásároltak törlése",
+  "clearPurchasedConfirmMessage": "Eltávolítja az összes megvásárolt terméket a listáról? Ezt nem lehet visszavonni.",
+  "clearPurchasedTitle": "Törölje a vásárolt tételeket",
   "close": "Bezárás",
   "closeSheet": "Közeli",
   "complete": "Befejezés",
@@ -1790,7 +1867,9 @@
   "enterCodeHint": "Írja be a kódot",
   "enterUrl": "URL megadása",
   "error": "Hiba: {message}",
+  "errorCreateList": "Nem sikerült listát létrehozni. Ellenőrizze a kapcsolatot, és próbálja újra.",
   "errorGeneric": "Hiba: {message}",
+  "errorLoadList": "Nem sikerült betölteni a listákat. A kezdéshez hozzon létre egy új listát.",
   "errorLoadingChat": "Hoppá! Hiba történt a csevegés betöltésekor.",
   "errorLoadingChatSubtitle": "Ellenőrizze a kapcsolatot, vagy próbálja újra később.",
   "errorLoadingHistory": "Hiba az előzmények betöltésekor",
@@ -1799,7 +1878,10 @@
   "errorLoadingRecipes": "Hiba a receptek betöltésekor",
   "errorLoadingSubscription": "Hiba az előfizetés betöltésekor",
   "errorOscillation": "Ez a hálózat rezgései vagy ideiglenes elérhetetlenség miatt fordulhat elő. Kérjük, próbálja újra.",
+  "errorQuickAdd": "Nem sikerült hozzáadni az elemet. Ellenőrizze a kapcsolatot, és próbálja újra.",
   "errorSavingProfile": "Hiba a profil mentésekor",
+  "errorShareCode": "Hiba a megosztási kód generálásakor. Ellenőrizze a kapcsolatot, és próbálja újra.",
+  "errorUnexpected": "Valami váratlan történt. Kérjük, próbálja újra.",
   "estimated": "Becsült",
   "estimatedCost": "Becsült",
   "estimatedPrice": "Becsült ár",
@@ -1841,6 +1923,7 @@
   "filterPurchased": "Megvásárolva",
   "finance": "Pénzügyek",
   "finishShopping": "Fejezd be a vásárlást",
+  "firstItemAddedSnackbar": "Az első elem hozzáadva! Remek kezdés 🛒",
   "gallery": "Galéria",
   "generalAssistant": "Általános asszisztens",
   "generalHelp": "Miben segíthetek a mai bevásárlásban?",
@@ -1848,6 +1931,13 @@
   "gestureHint": "Tartsa lenyomva a kiválasztáshoz • Csúsztassa az ujját az eltávolításhoz",
   "globalAssistant": "Globális asszisztens",
   "goodResponse": "Jó válasz",
+  "help": "Segítség",
+  "helpListAddItems": "Adjon hozzá termékeket az alján található + gombbal, vagy használja a keresést a termékek böngészéséhez",
+  "helpListAi": "Kérje meg az AI-asszisztenst, hogy hozza létre, rendezze vagy egészítse ki a listát – csak érintse meg a csillogó ikont",
+  "helpListOrganize": "Húzza át az elemeket az átrendezéshez, csúsztassa az ujját a megvásároltként való megjelöléshez, vagy használjon szűrőket és rendezést",
+  "helpListShare": "Ossza meg listáját a családdal, vagy exportálja PDF, Excel vagy egyszerű szövegként",
+  "helpListShoppingMode": "A vásárlási mód elrejti a megvásárolt tételeket, így Ön arra koncentrálhat, ami még megmaradt",
+  "helpListTitle": "A listája segítségével",
   "howCanIHelp": "Hogyan segíthetek?",
   "idealQty": "Ideális menny.",
   "idealQuantity": "Ideális mennyiség",
@@ -1930,10 +2020,13 @@
   "mealPlannerBudgetRemoveGoal": "Cél eltávolítása",
   "mealPlannerBudgetTodayCost": "Ma: {amount}",
   "mealPlannerBudgetWeekCost": "Hét: {amount}",
+  "mealPlannerCurrentDayLabel": "Aktuális nap",
   "mealPlannerCustomTypeLabel": "Egyedi típus",
   "mealPlannerDateLabel": "Dátum",
   "mealPlannerDefaultTypeLabel": "Alapértelmezett típus",
   "mealPlannerDeleteMeal": "Étkezés eltávolítása",
+  "mealPlannerDuplicate": "Megkettőzött étkezés",
+  "mealPlannerDuplicateSuccess": "Az étkezés sikeresen megkettőzve!",
   "mealPlannerEditMeal": "Étkezés szerkesztése",
   "mealPlannerEditType": "Étkezés típusának szerkesztése",
   "mealPlannerError": "Hiba az étrend betöltésekor",
@@ -1960,6 +2053,7 @@
   "mealPlannerPrepTime": "{minutes} perc",
   "mealPlannerSave": "Hozzáadás a tervhez",
   "mealPlannerSearchRecipes": "Receptek keresése...",
+  "mealPlannerSelectDestinationDay": "Másolás ide...",
   "mealPlannerSelectRecipe": "Válasszon receptet",
   "mealPlannerServings": "{count,plural, one{{count} adag} other{{count} adag}}",
   "mealPlannerServingsLabel": "Adagok",
@@ -1991,6 +2085,8 @@
   "navRecipes": "Receptek",
   "newCategoryDialog": "Új kategória",
   "newChat": "Új csevegés",
+  "newChatConfirmMessage": "Új beszélgetést indítani? A jelenlegi beszélgetésed elveszik.",
+  "newChatConfirmTitle": "Új beszélgetés",
   "newChatStarted": "Új csevegés kezdődött",
   "newListTitle": "Új bevásárlólista",
   "newPantryList": "Kamra bevásárlás",
@@ -2129,7 +2225,11 @@
   "onboardingGroupCouple": "Párosít",
   "onboardingGroupFamily": "Család",
   "onboardingGroupSolo": "Csak én",
+  "onboardingHookContinue": "Kezdje el",
   "onboardingHookHeadline": "Soha többé ne felejts el egy élelmiszert",
+  "onboardingHookItem1": "Grillezett csirke",
+  "onboardingHookItem2": "Mozzarella sajt",
+  "onboardingHookItem3": "Cseresznye paradicsom",
   "onboardingListCreated": "A listája készen van: {count} elemet rendeztek Önnek.",
   "onboardingListSaveFailed": "Előkészítettem a tételeket, de nem tudtam elmenteni a listát. Próbálja újra, hogy az alkalmazásban maradjon.",
   "onboardingLoadingStat1Label": "Katalógusba sorolt ​​tételek",
@@ -2176,6 +2276,7 @@
   "onboardingSetupTitle": "Tegye személyre élményeit",
   "onboardingShareDesc": "Szinkronizálja a listákat családjával és barátaival valós időben",
   "onboardingShareTitle": "Oszd meg azokkal, akiket szeretsz",
+  "onboardingSkip": "Most hagyd ki",
   "onboardingSlide1Body": "Létrehozhat és megoszthat listákat azonnal. Kipi automatikusan hozzáadja az elemeket az Ön szokásai alapján.",
   "onboardingSlide1Title": "Intelligens bevásárlólisták",
   "onboardingSlide2Body": "Kérdezz bármit – hozzon létre listákat, keressen recepteket, kövesse nyomon a spájzját, tervezze meg hetét.",
@@ -2256,6 +2357,7 @@
   "paywallFeatureSmartAI": "Intelligens AI",
   "paywallFeatureUnlimitedLists": "Korlátlan listák",
   "paywallFeaturesTitle": "Minden, amire szüksége van:",
+  "paywallFreeTier": "Ingyenes: 3 lista",
   "paywallGoalHeadlineFamily": "{name}, szervezzen családi vásárlást!",
   "paywallGoalHeadlineFaster": "{name}, vásároljon feleannyi idő alatt!",
   "paywallGoalHeadlineNeverForget": "{name}, soha ne felejts el egyetlen elemet sem!",
@@ -2285,6 +2387,7 @@
   "paywallPricePerDay": "Csak {price}/nap – kevesebb, mint egy kávé",
   "paywallPricePerMonth": "Csak {price}/hó",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Korlátlan",
   "paywallPurchaseError": "Nem sikerült befejezni a vásárlást. Próbáld újra.",
   "paywallPurchasePending": "Befizetése jóváhagyásra vár. A hozzáférés a megerősítést követően automatikusan felszabadul.",
   "paywallRestore": "Visszaállítás",
@@ -2412,6 +2515,7 @@
   "searchConversations": "Beszélgetések keresése",
   "searchCurrency": "Pénznem keresése...",
   "searchInConversation": "Keresés a beszélgetésben...",
+  "searchItems": "Elemek keresése",
   "searchLanguage": "Nyelv keresése...",
   "searchMessages": "Üzenetek keresése...",
   "searchRecipes": "Receptek keresése...",

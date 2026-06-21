@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class OnboardingSlideCreateList extends StatefulWidget {
-  const OnboardingSlideCreateList({super.key, required this.onCreate});
+  const OnboardingSlideCreateList({
+    super.key,
+    required this.onCreate,
+    this.onSkip,
+  });
 
   final Future<void> Function(String name) onCreate;
+  final VoidCallback? onSkip;
 
   @override
   State<OnboardingSlideCreateList> createState() =>
@@ -48,10 +55,10 @@ class _OnboardingSlideCreateListState extends State<OnboardingSlideCreateList> {
         return;
       }
       setState(() => _isCreating = false);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(AppLocalizations.of(context)!.somethingWentWrong),
-        ),
+      showKipiSnackBar(
+        context,
+        message: AppLocalizations.of(context)!.errorCreateList,
+        type: SnackBarType.error,
       );
     }
   }
@@ -65,62 +72,77 @@ class _OnboardingSlideCreateListState extends State<OnboardingSlideCreateList> {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: Spacing.xl),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                color: theme.colorScheme.primaryContainer,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.playlist_add_rounded,
-                size: 56,
-                color: theme.colorScheme.onPrimaryContainer,
-              ),
-            ),
-            const SizedBox(height: Spacing.xl),
-            Text(
-              l10n.createListDialog,
-              style: theme.textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: Spacing.lg),
-            TextField(
-              controller: _controller,
-              autofocus: true,
-              enabled: !_isCreating,
-              textCapitalization: TextCapitalization.sentences,
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(
-                labelText: l10n.listNameLabel,
-                prefixIcon: const Icon(Icons.shopping_cart_outlined),
-              ),
-              onSubmitted: (_) => _submit(),
-            ),
-            const SizedBox(height: Spacing.lg),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                onPressed: canCreate ? _submit : null,
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: Spacing.md),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.primaryContainer,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    PhosphorIconsRegular.plus,
+                    size: 56,
+                    color: theme.colorScheme.onPrimaryContainer,
+                  ),
                 ),
-                child:
-                    _isCreating
-                        ? const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: Colors.white,
-                          ),
-                        )
-                        : Text(l10n.create),
+                const SizedBox(height: Spacing.xl),
+                Text(
+                  l10n.createListDialog,
+                  style: theme.textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: Spacing.lg),
+                TextField(
+                  controller: _controller,
+                  autofocus: true,
+                  enabled: !_isCreating,
+                  textCapitalization: TextCapitalization.sentences,
+                  textInputAction: TextInputAction.done,
+                  decoration: InputDecoration(
+                    labelText: l10n.listNameLabel,
+                    prefixIcon: const Icon(PhosphorIconsRegular.shoppingCart),
+                  ),
+                  onSubmitted: (_) => _submit(),
+                ),
+                const SizedBox(height: Spacing.lg),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    onPressed: canCreate ? _submit : null,
+                    style: FilledButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: Spacing.md),
+                    ),
+                    child:
+                        _isCreating
+                            ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            )
+                            : Text(l10n.create),
+                  ),
+                ),
+              ],
+            ),
+            Positioned(
+              top: 0,
+              right: 0,
+              child: TextButton(
+                onPressed: widget.onSkip,
+                style: TextButton.styleFrom(
+                  foregroundColor: theme.colorScheme.onSurfaceVariant,
+                ),
+                child: Text(l10n.onboardingSkip),
               ),
             ),
           ],

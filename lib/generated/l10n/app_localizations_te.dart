@@ -72,6 +72,32 @@ class AppLocalizationsTe extends AppLocalizations {
   String get close => 'మూసివేయి';
 
   @override
+  String get help => 'సహాయం';
+
+  @override
+  String get helpListTitle => 'మీ జాబితాను ఉపయోగించడం';
+
+  @override
+  String get helpListAddItems =>
+      'దిగువన ఉన్న + బటన్‌తో అంశాలను జోడించండి లేదా ఉత్పత్తులను బ్రౌజ్ చేయడానికి శోధనను ఉపయోగించండి';
+
+  @override
+  String get helpListAi =>
+      'మీ జాబితాను రూపొందించడానికి, నిర్వహించడానికి లేదా పూర్తి చేయడానికి AI అసిస్టెంట్‌ని అడగండి — కేవలం మెరుపు చిహ్నాన్ని నొక్కండి';
+
+  @override
+  String get helpListShoppingMode =>
+      'షాపింగ్ మోడ్ కొనుగోలు చేసిన వస్తువులను దాచిపెడుతుంది కాబట్టి మీరు మిగిలి ఉన్న వాటిపై దృష్టి పెట్టవచ్చు';
+
+  @override
+  String get helpListOrganize =>
+      'క్రమాన్ని మార్చడానికి అంశాలను లాగండి, కొనుగోలు చేసినట్లుగా గుర్తించడానికి స్వైప్ చేయండి లేదా ఫిల్టర్‌లను ఉపయోగించండి మరియు క్రమబద్ధీకరించండి';
+
+  @override
+  String get helpListShare =>
+      'మీ జాబితాను కుటుంబంతో పంచుకోండి లేదా PDF, Excel లేదా సాదా వచనంగా ఎగుమతి చేయండి';
+
+  @override
   String get import => 'దిగుమతి';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get clear => 'క్లియర్ చేయి';
+
+  @override
+  String get clearPurchasedTitle => 'కొనుగోలు చేసిన వస్తువులను క్లియర్ చేయండి';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ఈ జాబితా నుండి కొనుగోలు చేసిన అన్ని వస్తువులను తీసివేయాలా? దీన్ని రద్దు చేయడం సాధ్యం కాదు.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsTe extends AppLocalizations {
   @override
   String get purchaseError =>
       'కొనుగోలును ప్రాసెస్ చేయడంలో లోపం. మళ్ళీ ప్రయత్నించండి.';
+
+  @override
+  String get errorCreateList =>
+      'జాబితాను సృష్టించడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get errorShareCode =>
+      'షేర్ కోడ్‌ను రూపొందించడంలో లోపం. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get errorQuickAdd =>
+      'అంశాన్ని జోడించడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get errorLoadList =>
+      'మీ జాబితాలను లోడ్ చేయడం సాధ్యపడలేదు. ప్రారంభించడానికి దయచేసి కొత్త జాబితాను సృష్టించండి.';
 
   @override
   String get restoreError =>
@@ -490,6 +539,19 @@ class AppLocalizationsTe extends AppLocalizations {
   String get noBudgetDefined => 'బడ్జెట్ సెట్ చేయబడలేదు';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'సున్నా కంటే ఎక్కువ విలువను నమోదు చేయండి';
+
+  @override
+  String get budgetPartialEstimateHint => '~ పాక్షిక ధర అంచనాలను కలిగి ఉంటుంది';
+
+  @override
+  String get budgetGoalSaved => 'బడ్జెట్ లక్ష్యం సేవ్ చేయబడింది';
+
+  @override
+  String get budgetGoalRemoved => 'బడ్జెట్ లక్ష్యం తీసివేయబడింది';
+
+  @override
   String totalEstimated(String amount) {
     return 'మొత్తం అంచనా: $amount';
   }
@@ -684,6 +746,13 @@ class AppLocalizationsTe extends AppLocalizations {
   String get newChat => 'కొత్త చాట్';
 
   @override
+  String get newChatConfirmTitle => 'కొత్త సంభాషణ';
+
+  @override
+  String get newChatConfirmMessage =>
+      'కొత్త సంభాషణను ప్రారంభించాలా? మీ ప్రస్తుత సంభాషణ పోతుంది.';
+
+  @override
   String get noHistory => 'చాట్ చరిత్ర లేదు';
 
   @override
@@ -794,28 +863,29 @@ class AppLocalizationsTe extends AppLocalizations {
   String get undo => 'రద్దు చేయి';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'కొత్త చాట్ ప్రారంభమైంది';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'జాబితాకు జోడించండి';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'నేను ఏమి చేయగలను?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'షాపింగ్ జాబితాలు';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'బడ్జెట్ & ధరలు';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'వంటకాలు & మెనూలు';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'సంస్థ';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription =>
+      'మీరు షాపింగ్ చేస్తున్నప్పుడు వస్తువులను తనిఖీ చేయండి';
 
   @override
   String get kipiListTitle => 'కిపిలిస్ట్';
@@ -1249,6 +1319,16 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 స్వాగతం ఆఫర్';
+
+  @override
+  String get paywallFreeTier => 'ఉచితం: 3 జాబితాలు';
+
+  @override
+  String get paywallProTier => 'ప్రో: అపరిమిత';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'మొదటి అంశం జోడించబడింది! గొప్ప ప్రారంభం 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1986,28 +2066,28 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'నెల: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'వారం: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'ఈరోజు: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'లక్ష్యాన్ని తీసివేయండి';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'మీల్ ప్లానర్ బడ్జెట్';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'భోజన ప్రణాళిక కోసం నెలవారీ ఖర్చు లక్ష్యం';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2152,6 +2232,18 @@ class AppLocalizationsTe extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'డిఫాల్ట్ రకం';
 
   @override
+  String get mealPlannerDuplicate => 'నకిలీ భోజనం';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'దీనికి నకిలీ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ప్రస్తుత రోజు';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'భోజనం విజయవంతంగా నకిలీ చేయబడింది!';
+
+  @override
   String get expirationDate => 'గడువు తేదీ';
 
   @override
@@ -2159,6 +2251,9 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get skip => 'దాటవేయి';
+
+  @override
+  String get onboardingSkip => 'ప్రస్తుతానికి దాటవేయి';
 
   @override
   String get onboardingAiTitle => 'కిపితో చాట్ చేయండి';
@@ -3208,6 +3303,31 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'ప్రతిస్పందనను రూపొందిస్తోంది...';
+
+  @override
+  String get errorUnexpected =>
+      'అనుకోనిది జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get aiAssistantTooltip => 'AI అసిస్టెంట్‌ని తెరవండి';
+
+  @override
+  String get searchItems => 'అంశాలను శోధించండి';
+
+  @override
+  String get onboardingHookContinue => 'ప్రారంభించండి';
+
+  @override
+  String get onboardingHookItem1 => 'కాల్చిన చికెన్';
+
+  @override
+  String get onboardingHookItem2 => 'మోజారెల్లా జున్ను';
+
+  @override
+  String get onboardingHookItem3 => 'చెర్రీ టమోటాలు';
+
+  @override
+  String get checkItemTooltip => 'అంశాన్ని తనిఖీ చేయండి';
 }
 
 /// The translations for Telugu, as used in India (`te_IN`).
@@ -3278,6 +3398,32 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   String get close => 'మూసివేయి';
 
   @override
+  String get help => 'సహాయం';
+
+  @override
+  String get helpListTitle => 'మీ జాబితాను ఉపయోగించడం';
+
+  @override
+  String get helpListAddItems =>
+      'దిగువన ఉన్న + బటన్‌తో అంశాలను జోడించండి లేదా ఉత్పత్తులను బ్రౌజ్ చేయడానికి శోధనను ఉపయోగించండి';
+
+  @override
+  String get helpListAi =>
+      'మీ జాబితాను రూపొందించడానికి, నిర్వహించడానికి లేదా పూర్తి చేయడానికి AI అసిస్టెంట్‌ని అడగండి — కేవలం మెరుపు చిహ్నాన్ని నొక్కండి';
+
+  @override
+  String get helpListShoppingMode =>
+      'షాపింగ్ మోడ్ కొనుగోలు చేసిన వస్తువులను దాచిపెడుతుంది కాబట్టి మీరు మిగిలి ఉన్న వాటిపై దృష్టి పెట్టవచ్చు';
+
+  @override
+  String get helpListOrganize =>
+      'క్రమాన్ని మార్చడానికి అంశాలను లాగండి, కొనుగోలు చేసినట్లుగా గుర్తించడానికి స్వైప్ చేయండి లేదా ఫిల్టర్‌లను ఉపయోగించండి మరియు క్రమబద్ధీకరించండి';
+
+  @override
+  String get helpListShare =>
+      'మీ జాబితాను కుటుంబంతో పంచుకోండి లేదా PDF, Excel లేదా సాదా వచనంగా ఎగుమతి చేయండి';
+
+  @override
   String get import => 'దిగుమతి';
 
   @override
@@ -3288,6 +3434,13 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get clear => 'క్లియర్ చేయి';
+
+  @override
+  String get clearPurchasedTitle => 'కొనుగోలు చేసిన వస్తువులను క్లియర్ చేయండి';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ఈ జాబితా నుండి కొనుగోలు చేసిన అన్ని వస్తువులను తీసివేయాలా? దీన్ని రద్దు చేయడం సాధ్యం కాదు.';
 
   @override
   String error(String message) {
@@ -3302,6 +3455,22 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   @override
   String get purchaseError =>
       'కొనుగోలును ప్రాసెస్ చేయడంలో లోపం. మళ్ళీ ప్రయత్నించండి.';
+
+  @override
+  String get errorCreateList =>
+      'జాబితాను సృష్టించడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get errorShareCode =>
+      'షేర్ కోడ్‌ను రూపొందించడంలో లోపం. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get errorQuickAdd =>
+      'అంశాన్ని జోడించడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get errorLoadList =>
+      'మీ జాబితాలను లోడ్ చేయడం సాధ్యపడలేదు. ప్రారంభించడానికి దయచేసి కొత్త జాబితాను సృష్టించండి.';
 
   @override
   String get restoreError =>
@@ -3696,6 +3865,19 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   String get noBudgetDefined => 'బడ్జెట్ సెట్ చేయబడలేదు';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'సున్నా కంటే ఎక్కువ విలువను నమోదు చేయండి';
+
+  @override
+  String get budgetPartialEstimateHint => '~ పాక్షిక ధర అంచనాలను కలిగి ఉంటుంది';
+
+  @override
+  String get budgetGoalSaved => 'బడ్జెట్ లక్ష్యం సేవ్ చేయబడింది';
+
+  @override
+  String get budgetGoalRemoved => 'బడ్జెట్ లక్ష్యం తీసివేయబడింది';
+
+  @override
   String totalEstimated(String amount) {
     return 'మొత్తం అంచనా: $amount';
   }
@@ -3890,6 +4072,13 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   String get newChat => 'కొత్త చాట్';
 
   @override
+  String get newChatConfirmTitle => 'కొత్త సంభాషణ';
+
+  @override
+  String get newChatConfirmMessage =>
+      'కొత్త సంభాషణను ప్రారంభించాలా? మీ ప్రస్తుత సంభాషణ పోతుంది.';
+
+  @override
   String get noHistory => 'చాట్ చరిత్ర లేదు';
 
   @override
@@ -3998,6 +4187,31 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get undo => 'రద్దు చేయి';
+
+  @override
+  String get newChatStarted => 'కొత్త చాట్ ప్రారంభమైంది';
+
+  @override
+  String get quickAddToList => 'జాబితాకు జోడించండి';
+
+  @override
+  String get aiCapabilitiesTitle => 'నేను ఏమి చేయగలను?';
+
+  @override
+  String get aiCapabilitiesLists => 'షాపింగ్ జాబితాలు';
+
+  @override
+  String get aiCapabilitiesBudget => 'బడ్జెట్ & ధరలు';
+
+  @override
+  String get aiCapabilitiesRecipes => 'వంటకాలు & మెనూలు';
+
+  @override
+  String get aiCapabilitiesOrganize => 'సంస్థ';
+
+  @override
+  String get marketModeDescription =>
+      'మీరు షాపింగ్ చేస్తున్నప్పుడు వస్తువులను తనిఖీ చేయండి';
 
   @override
   String get kipiListTitle => 'కిపిలిస్ట్';
@@ -4431,6 +4645,16 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 స్వాగతం ఆఫర్';
+
+  @override
+  String get paywallFreeTier => 'ఉచితం: 3 జాబితాలు';
+
+  @override
+  String get paywallProTier => 'ప్రో: అపరిమిత';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'మొదటి అంశం జోడించబడింది! గొప్ప ప్రారంభం 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5167,6 +5391,31 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
       'మీ భోజనాన్ని ప్లాన్ చేయడం ప్రారంభించడానికి ఏ రోజునైనా నొక్కండి!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'నెల: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'వారం: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'ఈరోజు: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'లక్ష్యాన్ని తీసివేయండి';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'మీల్ ప్లానర్ బడ్జెట్';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'భోజన ప్రణాళిక కోసం నెలవారీ ఖర్చు లక్ష్యం';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes నిమి';
   }
@@ -5309,6 +5558,18 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
   String get mealPlannerDefaultTypeLabel => 'డిఫాల్ట్ రకం';
 
   @override
+  String get mealPlannerDuplicate => 'నకిలీ భోజనం';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'దీనికి నకిలీ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ప్రస్తుత రోజు';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'భోజనం విజయవంతంగా నకిలీ చేయబడింది!';
+
+  @override
   String get expirationDate => 'గడువు తేదీ';
 
   @override
@@ -5316,6 +5577,9 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get skip => 'దాటవేయి';
+
+  @override
+  String get onboardingSkip => 'ప్రస్తుతానికి దాటవేయి';
 
   @override
   String get onboardingAiTitle => 'కిపితో చాట్ చేయండి';
@@ -6365,4 +6629,29 @@ class AppLocalizationsTeIn extends AppLocalizationsTe {
 
   @override
   String get aiGeneratingResponse => 'ప్రతిస్పందనను రూపొందిస్తోంది...';
+
+  @override
+  String get errorUnexpected =>
+      'అనుకోనిది జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి.';
+
+  @override
+  String get aiAssistantTooltip => 'AI అసిస్టెంట్‌ని తెరవండి';
+
+  @override
+  String get searchItems => 'అంశాలను శోధించండి';
+
+  @override
+  String get onboardingHookContinue => 'ప్రారంభించండి';
+
+  @override
+  String get onboardingHookItem1 => 'కాల్చిన చికెన్';
+
+  @override
+  String get onboardingHookItem2 => 'మోజారెల్లా జున్ను';
+
+  @override
+  String get onboardingHookItem3 => 'చెర్రీ టమోటాలు';
+
+  @override
+  String get checkItemTooltip => 'అంశాన్ని తనిఖీ చేయండి';
 }

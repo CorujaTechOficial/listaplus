@@ -14,6 +14,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 const double _kQuantityControlsBreakpoint = 380;
 
@@ -116,260 +117,245 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
       Localizations.localeOf(context),
     );
 
-    final tileContent = Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: Spacing.sm,
-            vertical: Spacing.xxs,
-          ),
-          child: Material(
-            elevation: widget.isSelected ? 2 : 0,
-            surfaceTintColor: theme.colorScheme.surfaceTint,
-            color:
-                widget.isSelected
-                    ? theme.colorScheme.primaryContainer.withAlpha(
-                      isDark ? 80 : 180,
-                    )
-                    : (isDark
-                        ? theme.colorScheme.surfaceContainerLow
-                        : theme.colorScheme.surface),
-            borderRadius: BorderRadius.circular(RadiusTokens.lg),
-            clipBehavior: Clip.antiAlias,
-            child: InkWell(
-              onTap:
-                  widget.selectionMode
-                      ? () =>
-                          widget.onSelectionChanged?.call(!widget.isSelected)
-                      : _handleToggle,
-              onLongPress:
-                  widget.selectionMode
-                      ? null
-                      : () {
-                        HapticFeedback.mediumImpact();
-                        widget.onSelectionChanged?.call(true);
-                      },
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Spacing.sm,
-                  vertical: widget.isShoppingMode ? Spacing.md : Spacing.sm,
+    final tileContent = Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.sm,
+        vertical: Spacing.xxs,
+      ),
+      child: Material(
+        elevation: widget.isSelected ? 2 : 0,
+        surfaceTintColor: theme.colorScheme.surfaceTint,
+        color:
+            widget.isSelected
+                ? theme.colorScheme.primaryContainer.withAlpha(
+                  isDark ? 80 : 180,
+                )
+                : (isDark
+                    ? theme.colorScheme.surfaceContainerLow
+                    : theme.colorScheme.surface),
+        borderRadius: BorderRadius.circular(RadiusTokens.lg),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap:
+              widget.selectionMode
+                  ? () =>
+                      widget.onSelectionChanged?.call(!widget.isSelected)
+                  : _handleToggle,
+          onLongPress:
+              widget.selectionMode
+                  ? null
+                  : () {
+                    HapticFeedback.mediumImpact();
+                    widget.onSelectionChanged?.call(true);
+                  },
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Spacing.sm,
+              vertical: widget.isShoppingMode ? Spacing.md : Spacing.sm,
+            ),
+            child: Row(
+              children: [
+                Checkbox(
+                  value:
+                      widget.isSelected ||
+                      (!widget.selectionMode && isPurchased),
+                  onChanged:
+                      widget.selectionMode
+                          ? (v) {
+                            HapticFeedback.selectionClick();
+                            widget.onSelectionChanged?.call(v ?? false);
+                          }
+                          : (_) => _handleToggle(),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(RadiusTokens.xxs),
+                  ),
                 ),
-                child: Row(
-                  children: [
-                    Checkbox(
-                      value:
-                          widget.isSelected ||
-                          (!widget.selectionMode && isPurchased),
-                      onChanged:
-                          widget.selectionMode
-                              ? (v) {
-                                HapticFeedback.selectionClick();
-                                widget.onSelectionChanged?.call(v ?? false);
-                              }
-                              : (_) => _handleToggle(),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(RadiusTokens.xxs),
-                      ),
-                    ),
-                    const SizedBox(width: Spacing.xs),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            widget.item.name,
-                            style: (widget.isShoppingMode
-                                    ? theme.textTheme.titleLarge
-                                    : theme.textTheme.titleMedium)
-                                ?.copyWith(
-                                  decoration:
-                                      !widget.selectionMode && isPurchased
-                                          ? TextDecoration.lineThrough
-                                          : null,
-                                  color:
-                                      !widget.selectionMode && isPurchased
-                                          ? theme.colorScheme.onSurface
-                                              .withAlpha((0.38 * 255).toInt())
-                                          : theme.colorScheme.onSurface,
-                                  fontWeight:
-                                      isPurchased
-                                          ? FontWeight.w500
-                                          : FontWeight.w700,
-                                  height: 1.1,
-                                ),
-                          ),
-                          if (widget.item.estimatedPrice != null ||
-                              cat != null ||
-                              (!widget.isShoppingMode &&
-                                  !widget.selectionMode)) ...[
-                            const SizedBox(height: Spacing.xxs),
-                            Row(
-                              children: [
-                                if (cat != null) ...[
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 6,
-                                      vertical: 2,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: (isPurchased
-                                              ? theme.colorScheme.outlineVariant
-                                              : theme
-                                                  .colorScheme
-                                                  .secondaryContainer)
-                                          .withAlpha(isDark ? 100 : 150),
-                                      borderRadius: BorderRadius.circular(
-                                        RadiusTokens.xs,
-                                      ),
-                                    ),
-                                    child: Text(
-                                      cat.localizedName(l10n),
-                                      style: theme.textTheme.labelSmall
-                                          ?.copyWith(
-                                            color:
-                                                isPurchased
-                                                    ? theme
-                                                        .colorScheme
-                                                        .onSurfaceVariant
-                                                    : theme
-                                                        .colorScheme
-                                                        .onSecondaryContainer,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 10,
-                                          ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 6,
-                                  ), // 6px — unique value
-                                ],
-                                if (!widget.isShoppingMode &&
-                                    !widget.selectionMode)
-                                  _InlinePriceField(
-                                    item: widget.item,
-                                    listId: widget.listId,
-                                  )
-                                else if (widget.item.estimatedPrice != null)
-                                  Text(
-                                    formatCurrency(
-                                      widget.item.estimatedPrice! *
-                                          widget.item.quantity,
-                                      currencyCode,
-                                    ),
-                                    style: theme.textTheme.labelSmall?.copyWith(
-                                      color:
-                                          isPurchased
-                                              ? theme.colorScheme.outline
-                                              : theme.colorScheme.primary,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
-                              ],
+                const SizedBox(width: Spacing.xs),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        widget.item.name,
+                        style: (widget.isShoppingMode
+                                ? theme.textTheme.titleLarge
+                                : theme.textTheme.titleMedium)
+                            ?.copyWith(
+                              decoration:
+                                  !widget.selectionMode && isPurchased
+                                      ? TextDecoration.lineThrough
+                                      : null,
+                              color:
+                                  !widget.selectionMode && isPurchased
+                                      ? theme.colorScheme.onSurface
+                                          .withAlpha((0.38 * 255).toInt())
+                                      : theme.colorScheme.onSurface,
+                              fontWeight:
+                                  isPurchased
+                                      ? FontWeight.w500
+                                      : FontWeight.w700,
+                              height: 1.1,
                             ),
-                          ],
-                        ],
                       ),
-                    ),
-                    const SizedBox(width: Spacing.xs),
-                    if (!widget.selectionMode && !widget.isShoppingMode)
-                      Builder(
-                        builder: (context) {
-                          final screenWidth = MediaQuery.sizeOf(context).width;
-                          final isSmallScreen =
-                              screenWidth < _kQuantityControlsBreakpoint;
-                          return Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              if (!isSmallScreen)
-                                _SmallIconButton(
-                                  icon: Icons.remove,
-                                  onPressed: () {
-                                    HapticFeedback.selectionClick();
-                                    ref
-                                        .read(
-                                          shoppingListItemsProvider(
-                                            widget.listId,
-                                          ).notifier,
-                                        )
-                                        .decrementQuantity(widget.item.id);
-                                  },
+                      if (widget.item.estimatedPrice != null ||
+                          cat != null ||
+                          (!widget.isShoppingMode &&
+                              !widget.selectionMode)) ...[
+                        const SizedBox(height: Spacing.xxs),
+                        Row(
+                          children: [
+                            if (cat != null) ...[
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 6,
+                                  vertical: 2,
                                 ),
-                              _InlineQtyField(
+                                decoration: BoxDecoration(
+                                  color: (isPurchased
+                                          ? theme.colorScheme.outlineVariant
+                                          : theme
+                                              .colorScheme
+                                              .secondaryContainer)
+                                      .withAlpha(isPurchased ? (isDark ? 140 : 210) : (isDark ? 100 : 150)),
+                                  borderRadius: BorderRadius.circular(
+                                    RadiusTokens.xs,
+                                  ),
+                                ),
+                                child: Text(
+                                  cat.localizedName(l10n),
+                                  style: theme.textTheme.labelSmall
+                                      ?.copyWith(
+                                        color:
+                                            isPurchased
+                                                ? theme
+                                                    .colorScheme
+                                                    .onSurfaceVariant
+                                                : theme
+                                                    .colorScheme
+                                                    .onSecondaryContainer,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 10,
+                                      ),
+                                ),
+                              ),
+                              const SizedBox(width: Spacing.xxs),
+                            ],
+                            if (!widget.isShoppingMode &&
+                                !widget.selectionMode)
+                              _InlinePriceField(
                                 item: widget.item,
                                 listId: widget.listId,
-                              ),
-                              if (!isSmallScreen)
-                                _SmallIconButton(
-                                  icon: Icons.add,
-                                  onPressed: () {
-                                    HapticFeedback.selectionClick();
-                                    ref
-                                        .read(
-                                          shoppingListItemsProvider(
-                                            widget.listId,
-                                          ).notifier,
-                                        )
-                                        .incrementQuantity(widget.item.id);
-                                  },
+                              )
+                            else if (widget.item.estimatedPrice != null)
+                              Text(
+                                formatCurrency(
+                                  widget.item.estimatedPrice! *
+                                      widget.item.quantity,
+                                  currencyCode,
                                 ),
-                              const SizedBox(width: Spacing.xxs),
-                              IconButton(
-                                icon: const Icon(Icons.more_vert, size: 20),
-                                onPressed: () => _showEditDialog(context),
-                                visualDensity: VisualDensity.compact,
-                              ),
-                              if (widget.dragHandleIndex != null)
-                                ReorderableDragStartListener(
-                                  index: widget.dragHandleIndex!,
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: Spacing.xxs,
-                                    ),
-                                    child: Icon(
-                                      Icons.drag_handle,
-                                      size: 20,
-                                      color: theme.colorScheme.onSurfaceVariant
-                                          .withAlpha(160),
-                                    ),
-                                  ),
+                                style: theme.textTheme.labelSmall?.copyWith(
+                                  color:
+                                      isPurchased
+                                          ? theme.colorScheme.outline
+                                          : theme.colorScheme.primary,
+                                  fontWeight: FontWeight.w800,
                                 ),
-                            ],
-                          );
-                        },
-                      ),
-                    if (!widget.selectionMode && widget.isShoppingMode)
-                      Text(
-                        '${widget.item.quantity}${widget.item.unit.label}',
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color:
-                              isPurchased
-                                  ? theme.colorScheme.outline
-                                  : theme.colorScheme.onSurface,
+                              ),
+                          ],
                         ),
-                      ),
-                  ],
+                      ],
+                    ],
+                  ),
                 ),
-              ),
+                const SizedBox(width: Spacing.xs),
+                if (!widget.selectionMode && !widget.isShoppingMode)
+                  Builder(
+                    builder: (context) {
+                      final screenWidth = MediaQuery.sizeOf(context).width;
+                      final isSmallScreen =
+                          screenWidth < _kQuantityControlsBreakpoint;
+                      return Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (!isSmallScreen)
+                            _SmallIconButton(
+                              icon: PhosphorIconsRegular.minus,
+                              onPressed: () {
+                                HapticFeedback.selectionClick();
+                                ref
+                                    .read(
+                                      shoppingListItemsProvider(
+                                        widget.listId,
+                                      ).notifier,
+                                    )
+                                    .decrementQuantity(widget.item.id);
+                              },
+                            ),
+                          _InlineQtyField(
+                            item: widget.item,
+                            listId: widget.listId,
+                          ),
+                          if (!isSmallScreen)
+                            _SmallIconButton(
+                              icon: PhosphorIconsRegular.plus,
+                              onPressed: () {
+                                HapticFeedback.selectionClick();
+                                ref
+                                    .read(
+                                      shoppingListItemsProvider(
+                                        widget.listId,
+                                      ).notifier,
+                                    )
+                                    .incrementQuantity(widget.item.id);
+                              },
+                            ),
+                          const SizedBox(width: Spacing.xxs),
+                          IconButton(
+                            icon: const Icon(PhosphorIconsRegular.dotsThreeVertical, size: 20),
+                            onPressed: () => _showEditDialog(context),
+                            visualDensity: VisualDensity.compact,
+                          ),
+                          if (widget.dragHandleIndex != null)
+                            ReorderableDragStartListener(
+                              index: widget.dragHandleIndex!,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: Spacing.xxs,
+                                ),
+                                child: Icon(
+                                  PhosphorIconsRegular.dotsSixVertical,
+                                  size: 20,
+                                  color: theme.colorScheme.onSurfaceVariant
+                                      .withAlpha(160),
+                                ),
+                              ),
+                            ),
+                        ],
+                      );
+                    },
+                  ),
+                if (!widget.selectionMode && widget.isShoppingMode)
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 80),
+                    child: Text(
+                      '${widget.item.quantity}${widget.item.unit.label}',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color:
+                            isPurchased
+                                ? theme.colorScheme.outline
+                                : theme.colorScheme.onSurface,
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ),
         ),
-        if (!widget.selectionMode)
-          Positioned(
-            right: Spacing.md,
-            top: 0,
-            bottom: 0,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Icon(
-                Icons.delete_outline,
-                size: 18,
-                color: theme.colorScheme.error.withAlpha(80),
-              ),
-            ),
-          ),
-      ],
+      ),
     );
 
     final tactileTile = TactileContainer(passThrough: true, child: tileContent);
@@ -393,7 +379,7 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
           alignment: Alignment.centerRight,
           padding: const EdgeInsets.only(right: Spacing.lg),
           child: Icon(
-            Icons.delete_outline,
+            PhosphorIconsRegular.trash,
             color: theme.colorScheme.onErrorContainer,
           ),
         ),
@@ -404,9 +390,10 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
             shoppingListItemsProvider(widget.listId).notifier,
           );
           notifier.removeItem(widget.item.id);
-          showUniqueSnackBar(
+          showKipiSnackBar(
             context,
-            content: Text(l10n.itemRemoved),
+            message: l10n.itemRemoved,
+            type: SnackBarType.info,
             action: SnackBarAction(
               label: l10n.undo,
               onPressed: () => notifier.restoreItem(removedItem),
@@ -433,24 +420,24 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
 
   void _askToAddToPantry() {
     final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.addToPantryPrompt(widget.item.name)),
-        action: SnackBarAction(
-          label: l10n.yes,
-          onPressed: () {
-            ref
-                .read(pantryItemsProvider.notifier)
-                .addItem(
-                  name: widget.item.name,
-                  idealQuantity: widget.item.quantity,
-                  currentQuantity: widget.item.quantity,
-                  categoryId: widget.item.categoryId,
-                  unit: widget.item.unit,
-                  estimatedPrice: widget.item.estimatedPrice,
-                );
-          },
-        ),
+    showKipiSnackBar(
+      context,
+      message: l10n.addToPantryPrompt(widget.item.name),
+      type: SnackBarType.info,
+      action: SnackBarAction(
+        label: l10n.yes,
+        onPressed: () {
+          ref
+              .read(pantryItemsProvider.notifier)
+              .addItem(
+                name: widget.item.name,
+                idealQuantity: widget.item.quantity,
+                currentQuantity: widget.item.quantity,
+                categoryId: widget.item.categoryId,
+                unit: widget.item.unit,
+                estimatedPrice: widget.item.estimatedPrice,
+              );
+        },
       ),
     );
   }
@@ -543,11 +530,10 @@ class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
     } on Exception catch (e) {
       _ctrl.text = widget.item.estimatedPrice?.toStringAsFixed(2) ?? '';
       if (mounted) {
-        showUniqueSnackBar(
+        showKipiSnackBar(
           context,
-          content: Text(
-            AppLocalizations.of(context)!.errorGeneric(e.toString()),
-          ),
+          message: AppLocalizations.of(context)!.errorGeneric(e.toString()),
+          type: SnackBarType.error,
         );
       }
     }
@@ -608,7 +594,7 @@ class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
                 ),
               )
               : Icon(
-                Icons.add_circle_outline,
+                PhosphorIconsRegular.plusCircle,
                 size: 14,
                 color: theme.colorScheme.outlineVariant,
               ),
@@ -667,11 +653,10 @@ class _InlineQtyFieldState extends ConsumerState<_InlineQtyField> {
     } on Exception catch (e) {
       _ctrl.text = '${widget.item.quantity}';
       if (mounted) {
-        showUniqueSnackBar(
+        showKipiSnackBar(
           context,
-          content: Text(
-            AppLocalizations.of(context)!.errorGeneric(e.toString()),
-          ),
+          message: AppLocalizations.of(context)!.errorGeneric(e.toString()),
+          type: SnackBarType.error,
         );
       }
     }

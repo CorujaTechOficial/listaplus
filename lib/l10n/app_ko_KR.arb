@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -497,6 +542,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -838,8 +889,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -975,6 +1038,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1378,6 +1444,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1499,6 +1568,7 @@
   "aiAssistantGeneral": "일반 보조원",
   "aiAssistantHistory": "어시스턴트 이력",
   "aiAssistantTitle": "AI 어시스턴트",
+  "aiAssistantTooltip": "AI 도우미 열기",
   "aiCapabilitiesBudget": "예산 및 가격",
   "aiCapabilitiesLists": "쇼핑 목록",
   "aiCapabilitiesOrganize": "조직",
@@ -1585,7 +1655,11 @@
   "budgetAppBar": "월 예산",
   "budgetDashboardTitle": "대시보드",
   "budgetEditTitle": "월 예산",
+  "budgetGoalInvalidAmount": "0보다 큰 값을 입력하세요.",
+  "budgetGoalRemoved": "예산 목표가 삭제됨",
+  "budgetGoalSaved": "예산 목표가 저장되었습니다.",
   "budgetLists": "목록",
+  "budgetPartialEstimateHint": "~ 부분적인 예상 가격이 포함되어 있습니다.",
   "budgetPremiumLocked": "글로벌 월 예산은 프리미엄 기능입니다",
   "budgetSubtitle": "월별 지출 추적",
   "budgetUpgradePrompt": "업그레이드하여 잠금 해제",
@@ -1653,6 +1727,7 @@
   "chatHistoryOfflineTitle": "오프라인 상태입니다",
   "chatSubtitle": "항목 제안, 레시피 또는 절약 팁을 물어보세요.",
   "chatSubtitleShort": "가격, 레시피, 구성 등에 대해 물어보세요...",
+  "checkItemTooltip": "체크항목",
   "chooseCurrency": "통화 선택",
   "chooseIcon": "아이콘 선택",
   "chooseImageSource": "이미지 소스 선택",
@@ -1664,6 +1739,8 @@
   "clearHistoryConfirm": "이 세션의 모든 메시지를 지우시겠습니까?",
   "clearList": "목록 지우기",
   "clearPurchased": "구매 항목 지우기",
+  "clearPurchasedConfirmMessage": "이 목록에서 구매한 항목을 모두 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+  "clearPurchasedTitle": "구매한 항목 지우기",
   "close": "닫기",
   "closeSheet": "닫다",
   "complete": "완료",
@@ -1752,7 +1829,9 @@
   "enterCodeHint": "코드 입력",
   "enterUrl": "URL 입력",
   "error": "오류: {message}",
+  "errorCreateList": "목록을 만들 수 없습니다. 연결을 확인하고 다시 시도하세요.",
   "errorGeneric": "오류: {message}",
+  "errorLoadList": "목록을 로드할 수 없습니다. 시작하려면 새 목록을 만드세요.",
   "errorLoadingChat": "이런! 채팅을 로드하는 중에 문제가 발생했습니다.",
   "errorLoadingChatSubtitle": "연결을 확인하거나 나중에 다시 시도하세요.",
   "errorLoadingHistory": "기록을 로드하는 중에 오류가 발생했습니다.",
@@ -1761,7 +1840,10 @@
   "errorLoadingRecipes": "레시피 로드 오류",
   "errorLoadingSubscription": "구독을 로드하는 중에 오류가 발생했습니다.",
   "errorOscillation": "이는 네트워크 변동 또는 일시적인 사용 불가로 인해 발생할 수 있습니다. 다시 시도해 주세요.",
+  "errorQuickAdd": "항목을 추가할 수 없습니다. 연결을 확인하고 다시 시도하세요.",
   "errorSavingProfile": "프로필을 저장하는 중에 오류가 발생했습니다.",
+  "errorShareCode": "공유 코드 생성 중 오류가 발생했습니다. 연결을 확인하고 다시 시도하세요.",
+  "errorUnexpected": "예상치 못한 일이 일어났습니다. 다시 시도해 주세요.",
   "estimated": "예상",
   "estimatedCost": "추정된",
   "estimatedPrice": "예상 가격",
@@ -1803,6 +1885,7 @@
   "filterPurchased": "구매 완료",
   "finance": "재정",
   "finishShopping": "쇼핑 마무리",
+  "firstItemAddedSnackbar": "첫 번째 항목이 추가되었습니다! 좋은 시작 🛒",
   "gallery": "갤러리",
   "generalAssistant": "일반 어시스턴트",
   "generalHelp": "오늘 쇼핑에 대해 무엇을 도와드릴까요?",
@@ -1810,6 +1893,13 @@
   "gestureHint": "길게 눌러 선택 • 스와이프하여 삭제",
   "globalAssistant": "글로벌 어시스턴트",
   "goodResponse": "좋은 반응",
+  "help": "돕다",
+  "helpListAddItems": "하단의 + 버튼으로 상품을 추가하거나, 검색을 통해 상품을 찾아보세요.",
+  "helpListAi": "AI 도우미에게 목록을 생성, 구성, 완성하도록 요청하세요. 반짝이는 아이콘을 탭하기만 하면 됩니다.",
+  "helpListOrganize": "항목을 드래그하여 재정렬하거나, 스와이프하여 구매로 표시하거나, 필터 및 정렬을 사용하세요.",
+  "helpListShare": "목록을 가족과 공유하거나 PDF, Excel 또는 일반 텍스트로 내보냅니다.",
+  "helpListShoppingMode": "쇼핑 모드에서는 구매한 품목을 숨겨 남은 품목에 집중할 수 있습니다.",
+  "helpListTitle": "목록 사용",
   "howCanIHelp": "어떻게 도와드릴까요?",
   "idealQty": "이상 수량",
   "idealQuantity": "이상 수량",
@@ -1892,10 +1982,13 @@
   "mealPlannerBudgetRemoveGoal": "목표 삭제",
   "mealPlannerBudgetTodayCost": "오늘: {amount}",
   "mealPlannerBudgetWeekCost": "주: {amount}",
+  "mealPlannerCurrentDayLabel": "현재 날짜",
   "mealPlannerCustomTypeLabel": "맞춤 유형",
   "mealPlannerDateLabel": "날짜",
   "mealPlannerDefaultTypeLabel": "기본 유형",
   "mealPlannerDeleteMeal": "식사 제거",
+  "mealPlannerDuplicate": "식사 중복",
+  "mealPlannerDuplicateSuccess": "식사 복제에 성공했습니다!",
   "mealPlannerEditMeal": "식사 편집",
   "mealPlannerEditType": "식사 유형 수정",
   "mealPlannerError": "식사 계획 로드 오류",
@@ -1922,6 +2015,7 @@
   "mealPlannerPrepTime": "{minutes}분",
   "mealPlannerSave": "계획에 추가",
   "mealPlannerSearchRecipes": "레시피 검색...",
+  "mealPlannerSelectDestinationDay": "다음으로 복제...",
   "mealPlannerSelectRecipe": "레시피 선택",
   "mealPlannerServings": "{count,plural, one{{count}인분} other{{count}인분}}",
   "mealPlannerServingsLabel": "인분",
@@ -1953,6 +2047,8 @@
   "navRecipes": "조리법",
   "newCategoryDialog": "새로운 카테고리",
   "newChat": "새 채팅",
+  "newChatConfirmMessage": "새로운 대화를 시작하시겠습니까? 현재 대화가 손실됩니다.",
+  "newChatConfirmTitle": "새로운 대화",
   "newChatStarted": "새 채팅이 시작되었습니다.",
   "newListTitle": "새 쇼핑 목록",
   "newPantryList": "저장실 쇼핑",
@@ -2091,7 +2187,11 @@
   "onboardingGroupCouple": "커플",
   "onboardingGroupFamily": "가족",
   "onboardingGroupSolo": "나만",
+  "onboardingHookContinue": "시작하기",
   "onboardingHookHeadline": "다시는 식료품을 잊지 마세요",
+  "onboardingHookItem1": "구운 닭고기",
+  "onboardingHookItem2": "모짜렐라 치즈",
+  "onboardingHookItem3": "방울토마토",
   "onboardingListCreated": "귀하의 목록이 준비되었습니다: {count} 항목이 귀하를 위해 정리되었습니다.",
   "onboardingListSaveFailed": "항목을 준비했는데 목록을 저장할 수 없습니다. 앱에 보관하려면 다시 시도해 보세요.",
   "onboardingLoadingStat1Label": "카탈로그에 등록된 항목",
@@ -2138,6 +2238,7 @@
   "onboardingSetupTitle": "경험을 개인화하세요",
   "onboardingShareDesc": "가족, 친구와 목록을 실시간으로 동기화하세요",
   "onboardingShareTitle": "사랑하는 사람들과 공유하세요",
+  "onboardingSkip": "지금은 건너뛰기",
   "onboardingSlide1Body": "즉시 목록을 만들고 공유하세요. Kipi는 습관에 따라 자동으로 항목을 추가합니다.",
   "onboardingSlide1Title": "스마트 쇼핑 목록",
   "onboardingSlide2Body": "무엇이든 물어보세요. 목록 만들기, 레시피 찾기, 식품 저장실 추적, 일주일 계획 세우기 등이 가능합니다.",
@@ -2218,6 +2319,7 @@
   "paywallFeatureSmartAI": "스마트 AI",
   "paywallFeatureUnlimitedLists": "무제한 목록",
   "paywallFeaturesTitle": "필요한 모든 것:",
+  "paywallFreeTier": "무료: 목록 3개",
   "paywallGoalHeadlineFamily": "{name}, 가족 쇼핑을 준비하세요!",
   "paywallGoalHeadlineFaster": "{name}, 쇼핑 시간을 절반으로 단축하세요!",
   "paywallGoalHeadlineNeverForget": "{name}, 아이템을 절대 잊지 마세요!",
@@ -2247,6 +2349,7 @@
   "paywallPricePerDay": "{price}/일 — 커피 한 잔 미만",
   "paywallPricePerMonth": "단 {price}/월",
   "paywallProLabel": "찬성",
+  "paywallProTier": "장점: 무제한",
   "paywallPurchaseError": "구매를 완료할 수 없습니다. 다시 시도해 보세요.",
   "paywallPurchasePending": "귀하의 결제가 승인 대기 중입니다. 확인 후 자동으로 접근권한이 해제됩니다.",
   "paywallRestore": "복원하다",
@@ -2374,6 +2477,7 @@
   "searchConversations": "대화 검색",
   "searchCurrency": "통화 검색...",
   "searchInConversation": "대화에서 검색...",
+  "searchItems": "항목 검색",
   "searchLanguage": "언어 검색...",
   "searchMessages": "메시지 검색...",
   "searchRecipes": "레시피 검색...",

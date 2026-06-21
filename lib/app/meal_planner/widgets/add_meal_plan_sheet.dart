@@ -9,6 +9,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/models/recipe.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// Bottom sheet for adding or editing a [MealPlan].
 class AddMealPlanSheet extends ConsumerStatefulWidget {
@@ -16,10 +17,12 @@ class AddMealPlanSheet extends ConsumerStatefulWidget {
     super.key,
     required this.initialDate,
     this.existingPlan,
+    this.initialMealTypeId,
   });
 
   final DateTime initialDate;
   final MealPlan? existingPlan;
+  final String? initialMealTypeId;
 
   @override
   ConsumerState<AddMealPlanSheet> createState() => _AddMealPlanSheetState();
@@ -42,6 +45,8 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
 
     if (widget.existingPlan != null) {
       _selectedTypeId = widget.existingPlan!.mealType;
+    } else if (widget.initialMealTypeId != null) {
+      _selectedTypeId = widget.initialMealTypeId!;
     } else {
       final hour = DateTime.now().hour;
       if (hour < 11) {
@@ -171,7 +176,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.close),
+                      icon: const Icon(PhosphorIconsRegular.x),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
                   ],
@@ -250,8 +255,8 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.calendar_today_rounded,
-                              size: Spacing.sm + RadiusTokens.xs,
+                              PhosphorIconsRegular.calendarBlank,
+                              size: Spacing.md + Spacing.xxs / 2,
                               color: theme.colorScheme.primary,
                             ),
                             const SizedBox(width: Spacing.sm),
@@ -263,7 +268,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                             ),
                             const Spacer(),
                             Icon(
-                              Icons.edit_rounded,
+                              PhosphorIconsRegular.pencilSimple,
                               size: Spacing.md,
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
@@ -286,7 +291,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                     Row(
                       children: [
                         _StepperButton(
-                          icon: Icons.remove,
+                          icon: PhosphorIconsRegular.minus,
                           onPressed:
                               _servings > 1
                                   ? () => setState(() => _servings--)
@@ -306,7 +311,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                         ),
                         const SizedBox(width: Spacing.sm),
                         _StepperButton(
-                          icon: Icons.add,
+                          icon: PhosphorIconsRegular.plus,
                           onPressed:
                               _servings < 20
                                   ? () => setState(() => _servings++)
@@ -337,7 +342,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                       controller: _searchController,
                       decoration: InputDecoration(
                         hintText: l10n.mealPlannerSearchRecipes,
-                        prefixIcon: const Icon(Icons.search),
+                        prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(RadiusTokens.md),
                         ),
@@ -401,7 +406,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(RadiusTokens.md),
                         ),
-                        prefixIcon: const Icon(Icons.note_outlined),
+                        prefixIcon: const Icon(PhosphorIconsRegular.notepad),
                       ),
                       maxLines: 2,
                     ),
@@ -432,7 +437,7 @@ class _AddMealPlanSheetState extends ConsumerState<AddMealPlanSheet> {
                                   color: Colors.white,
                                 ),
                               )
-                            : const Icon(Icons.check_rounded),
+                            : const Icon(PhosphorIconsRegular.check),
                     label: Text(l10n.mealPlannerSave),
                     style: FilledButton.styleFrom(
                       minimumSize: const Size(double.infinity, 52),
@@ -487,7 +492,7 @@ class _StepperButton extends StatelessWidget {
           padding: const EdgeInsets.all(Spacing.xs),
           child: Icon(
             icon,
-            size: RadiusTokens.xl,
+            size: Spacing.md + Spacing.xxs,
             color:
                 onPressed != null
                     ? theme.colorScheme.onPrimaryContainer
@@ -569,11 +574,11 @@ class _RecipeListItem extends StatelessWidget {
                     Row(
                       children: [
                         Icon(
-                          Icons.timer_outlined,
+                          PhosphorIconsRegular.timer,
                           size: Spacing.sm,
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
-                        const SizedBox(width: RadiusTokens.bar),
+                        const SizedBox(width: Spacing.xxs / 2),
                         Text(
                           l10n.mealPlannerPrepTime(recipe.prepTimeMinutes),
                           style: theme.textTheme.labelSmall?.copyWith(
@@ -582,11 +587,11 @@ class _RecipeListItem extends StatelessWidget {
                         ),
                         const SizedBox(width: Spacing.xs),
                         Icon(
-                          Icons.shopping_basket_outlined,
+                          PhosphorIconsRegular.basket,
                           size: Spacing.sm,
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
-                        const SizedBox(width: RadiusTokens.bar),
+                        const SizedBox(width: Spacing.xxs / 2),
                         Text(
                           '${recipe.ingredients.length} ${l10n.ingredients}',
                           style: theme.textTheme.labelSmall?.copyWith(
@@ -602,9 +607,9 @@ class _RecipeListItem extends StatelessWidget {
               ),
               if (isSelected)
                 Icon(
-                  Icons.check_circle_rounded,
+                  PhosphorIconsFill.checkCircle,
                   color: theme.colorScheme.primary,
-                  size: Spacing.lg - RadiusTokens.bar,
+                  size: Spacing.md + Spacing.xxs,
                 ),
             ],
           ),
@@ -626,7 +631,7 @@ class _RecipeIconPlaceholder extends StatelessWidget {
       height: Spacing.xxl,
       color: theme.colorScheme.primaryContainer.withAlpha(80),
       child: Icon(
-        Icons.restaurant_menu_rounded,
+        PhosphorIconsRegular.forkKnife,
         color: theme.colorScheme.primary.withAlpha(150),
         size: Spacing.lg,
       ),
@@ -647,8 +652,8 @@ class _EmptyRecipesHint extends StatelessWidget {
       child: Column(
         children: [
           Icon(
-            Icons.restaurant_menu_rounded,
-            size: 48,
+            PhosphorIconsRegular.forkKnife,
+            size: Spacing.xxl,
             color: theme.colorScheme.primary.withAlpha(80),
           ),
           const SizedBox(height: Spacing.sm),

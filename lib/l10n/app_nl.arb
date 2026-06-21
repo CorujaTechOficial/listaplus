@@ -22,6 +22,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -159,8 +162,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -295,6 +307,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -348,6 +363,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -358,6 +376,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -423,6 +444,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -446,6 +470,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -483,6 +510,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -636,6 +681,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -968,8 +1019,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1105,6 +1168,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1494,6 +1560,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1611,6 +1680,7 @@
   "aiAssistantGeneral": "Algemeen assistent",
   "aiAssistantHistory": "Assistent Geschiedenis",
   "aiAssistantTitle": "AI-assistent",
+  "aiAssistantTooltip": "Open AI-assistent",
   "aiCapabilitiesBudget": "Budget & Prijzen",
   "aiCapabilitiesLists": "Boodschappenlijstjes",
   "aiCapabilitiesOrganize": "Organisatie",
@@ -1698,7 +1768,11 @@
   "budgetAppBar": "Maandelijks budget",
   "budgetDashboardTitle": "Dashboard",
   "budgetEditTitle": "Maandelijks budget",
+  "budgetGoalInvalidAmount": "Voer een waarde in die groter is dan nul",
+  "budgetGoalRemoved": "Budgetdoel verwijderd",
+  "budgetGoalSaved": "Budgetdoel opgeslagen",
   "budgetLists": "Lijsten",
+  "budgetPartialEstimateHint": "~ Inclusief gedeeltelijke prijsschattingen",
   "budgetPremiumLocked": "Globaal maandelijks budget is Premium",
   "budgetSubtitle": "Volg je maandelijkse uitgaven",
   "budgetUpgradePrompt": "Upgrade om te ontgrendelen",
@@ -1767,6 +1841,7 @@
   "chatHistoryOfflineTitle": "Je bent offline",
   "chatSubtitle": "Vraag om productsuggesties, recepten of bespaartips.",
   "chatSubtitleShort": "Vraag naar prijzen, recepten, organisatie...",
+  "checkItemTooltip": "Controleer artikel",
   "checkingItem": "Artikel controleren...",
   "checkingPantry": "Je voorraadkast controleren...",
   "checkingSettings": "Je instellingen controleren...",
@@ -1781,6 +1856,8 @@
   "clearHistoryConfirm": "Alle berichten in deze sessie wissen?",
   "clearList": "Lijst leegmaken",
   "clearPurchased": "Gekochte verwijderen",
+  "clearPurchasedConfirmMessage": "Alle gekochte artikelen uit deze lijst verwijderen? Dit kan niet ongedaan worden gemaakt.",
+  "clearPurchasedTitle": "Wis gekochte artikelen",
   "clearingCheckedItems": "Geselecteerde items wissen...",
   "close": "Sluiten",
   "closeSheet": "Dichtbij",
@@ -1887,6 +1964,7 @@
   "errorArchivingList": "Fout bij archiveren van lijst: {error}",
   "errorClearingList": "Lijst met fouten bij het wissen: {error}",
   "errorClearingPurchased": "Fout bij het wissen van gekochte artikelen: {error}",
+  "errorCreateList": "Kan lijst niet maken. Controleer uw verbinding en probeer het opnieuw.",
   "errorCreatingList": "Fout bij maken van lijst",
   "errorDecreasingQty": "Fout bij afnemende hoeveelheid: {error}",
   "errorDeletingList": "Fout bij verwijderen lijst: {error}",
@@ -1895,6 +1973,7 @@
   "errorGeneric": "Fout: {message}",
   "errorImportingList": "Fout bij importeren van lijst \"{name}\": {error}",
   "errorIncreasingQty": "Fout bij het verhogen van de hoeveelheid: {error}",
+  "errorLoadList": "Kan uw lijsten niet laden. Maak een nieuwe lijst om aan de slag te gaan.",
   "errorLoadingChat": "Oeps! Er is iets misgegaan bij het laden van de chat.",
   "errorLoadingChatSubtitle": "Controleer uw verbinding of probeer het later opnieuw.",
   "errorLoadingHistory": "Fout bij laden van geschiedenis",
@@ -1905,6 +1984,7 @@
   "errorLoadingSubscription": "Fout bij laden abonnement",
   "errorOscillation": "Dit kan gebeuren als gevolg van netwerkoscillaties of tijdelijke onbeschikbaarheid. Probeer het opnieuw.",
   "errorProcessingRequest": "Sorry, er is een fout opgetreden tijdens het verwerken van uw verzoek. Controleer uw verbinding of probeer het later opnieuw.",
+  "errorQuickAdd": "Kan item niet toevoegen. Controleer uw verbinding en probeer het opnieuw.",
   "errorRemovingItem": "Fout bij verwijderen van item: {error}",
   "errorRemovingItems": "Fout bij het verwijderen van items: {error}",
   "errorRemovingSharedList": "Fout bij verwijderen van gedeelde lijst: {error}",
@@ -1916,9 +1996,11 @@
   "errorSavingProfile": "Fout bij opslaan: {error}",
   "errorServerConnection": "Fout bij verbinding maken met server: {error}",
   "errorSettingCurrentList": "Fout bij instellen huidige lijst: {error}",
+  "errorShareCode": "Fout bij genereren deelcode. Controleer uw verbinding en probeer het opnieuw.",
   "errorTogglingItem": "Fout bij het omschakelen van de itemstatus: {error}",
   "errorTogglingItems": "Fout bij het schakelen tussen items: {error}",
   "errorUnarchivingList": "Fout bij uitpakken van lijst: {error}",
+  "errorUnexpected": "Er gebeurde iets onverwachts. Probeer het opnieuw.",
   "errorUpdatingItem": "Fout bij updaten van item: {error}",
   "errorUpdatingItems": "Fout bij updaten van items: {error}",
   "errorUpdatingList": "Fout bij bijwerken van lijst: {error}",
@@ -1965,6 +2047,7 @@
   "filterPurchased": "Gekocht",
   "finance": "Financiën",
   "finishShopping": "Voltooi het winkelen",
+  "firstItemAddedSnackbar": "Eerste artikel toegevoegd! Geweldig begin 🛒",
   "gallery": "Galerij",
   "generalAssistant": "Algemene assistent",
   "generalHelp": "Hoe kan ik vandaag helpen met je boodschappen?",
@@ -1974,6 +2057,13 @@
   "gestureHint": "Houd ingedrukt om te selecteren • Veeg om te verwijderen",
   "globalAssistant": "Globale assistent",
   "goodResponse": "Goede reactie",
+  "help": "Hulp",
+  "helpListAddItems": "Voeg artikelen toe met de + knop onderaan, of gebruik de zoekfunctie om door producten te bladeren",
+  "helpListAi": "Vraag de AI-assistent om uw lijst te maken, ordenen of aan te vullen. Tik gewoon op het sprankelende pictogram",
+  "helpListOrganize": "Sleep items om ze opnieuw te ordenen, veeg om ze als gekocht te markeren of gebruik filters en sorteerfuncties",
+  "helpListShare": "Deel uw lijst met familie of exporteer als PDF, Excel of platte tekst",
+  "helpListShoppingMode": "De winkelmodus verbergt gekochte artikelen, zodat u zich kunt concentreren op wat er nog over is",
+  "helpListTitle": "Je lijst gebruiken",
   "howCanIHelp": "Hoe kan ik helpen?",
   "icon": "Icon:",
   "idealQty": "Ideale aant",
@@ -2061,10 +2151,13 @@
   "mealPlannerBudgetRemoveGoal": "Doel verwijderen",
   "mealPlannerBudgetTodayCost": "Vandaag: {amount}",
   "mealPlannerBudgetWeekCost": "Week: {amount}",
+  "mealPlannerCurrentDayLabel": "Huidige dag",
   "mealPlannerCustomTypeLabel": "Aangepast type",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Standaardtype",
   "mealPlannerDeleteMeal": "Maaltijd verwijderen",
+  "mealPlannerDuplicate": "Dubbele maaltijd",
+  "mealPlannerDuplicateSuccess": "Maaltijd succesvol gedupliceerd!",
   "mealPlannerEditMeal": "Maaltijd bewerken",
   "mealPlannerEditType": "Maaltijdtype bewerken",
   "mealPlannerError": "Fout bij laden van maaltijdplanning",
@@ -2091,6 +2184,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Toevoegen aan planning",
   "mealPlannerSearchRecipes": "Recepten zoeken...",
+  "mealPlannerSelectDestinationDay": "Dupliceren naar...",
   "mealPlannerSelectRecipe": "Selecteer een recept",
   "mealPlannerServings": "{count,plural, one{{count} portie} other{{count} porties}}",
   "mealPlannerServingsLabel": "Porties",
@@ -2135,6 +2229,8 @@
   "navRecipes": "Recepten",
   "newCategoryDialog": "Nieuwe categorie",
   "newChat": "Nieuwe chat",
+  "newChatConfirmMessage": "Een nieuw gesprek beginnen? Uw huidige gesprek gaat verloren.",
+  "newChatConfirmTitle": "Nieuw gesprek",
   "newChatStarted": "Nieuwe chat gestart",
   "newListTitle": "Nieuwe boodschappenlijst",
   "newPantryList": "Voorraad boodschappen",
@@ -2274,7 +2370,11 @@
   "onboardingGroupCouple": "Stel",
   "onboardingGroupFamily": "Familie",
   "onboardingGroupSolo": "Alleen ik",
+  "onboardingHookContinue": "Aan de slag",
   "onboardingHookHeadline": "Vergeet nooit meer een boodschappenartikel",
+  "onboardingHookItem1": "Gegrilde kip",
+  "onboardingHookItem2": "Mozzarella kaas",
+  "onboardingHookItem3": "Kerstomaatjes",
   "onboardingListCreated": "Je lijst is klaar: {count} artikelen voor je georganiseerd.",
   "onboardingListSaveFailed": "Ik heb de items voorbereid, maar kan de lijst niet opslaan. Probeer het opnieuw in de app te bewaren.",
   "onboardingLoadingStat1Label": "Artikelen gecatalogiseerd",
@@ -2321,6 +2421,7 @@
   "onboardingSetupTitle": "Personaliseer uw ervaring",
   "onboardingShareDesc": "Synchroniseer lijsten met familie en vrienden in realtime",
   "onboardingShareTitle": "Deel met degenen van wie je houdt",
+  "onboardingSkip": "Overslaan voor nu",
   "onboardingSlide1Body": "Maak en deel direct lijsten. Kipi voegt automatisch items toe op basis van jouw gewoonten.",
   "onboardingSlide1Title": "Slimme boodschappenlijstjes",
   "onboardingSlide2Body": "Vraag alles: maak lijsten, vind recepten, houd uw voorraadkast bij, plan uw week.",
@@ -2404,6 +2505,7 @@
   "paywallFeatureSmartAI": "Slimme AI",
   "paywallFeatureUnlimitedLists": "Onbeperkte lijsten",
   "paywallFeaturesTitle": "Alles wat je nodig hebt:",
+  "paywallFreeTier": "Gratis: 3 lijsten",
   "paywallGoalHeadlineFamily": "{name}, organiseer gezinsinkopen!",
   "paywallGoalHeadlineFaster": "{name}, winkel in de helft van de tijd!",
   "paywallGoalHeadlineNeverForget": "{name}, vergeet nooit meer een item!",
@@ -2433,6 +2535,7 @@
   "paywallPricePerDay": "Slechts {price}/dag – minder dan een kopje koffie",
   "paywallPricePerMonth": "Slechts {price}/maand",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Voordeel: onbeperkt",
   "paywallPurchaseError": "Kan aankoop niet voltooien. Probeer het opnieuw.",
   "paywallPurchasePending": "Uw betaling wacht op goedkeuring. Na bevestiging wordt de toegang automatisch vrijgegeven.",
   "paywallRestore": "Herstellen",
@@ -2574,6 +2677,7 @@
   "searchConversations": "Zoek gesprekken",
   "searchCurrency": "Valuta zoeken...",
   "searchInConversation": "Zoeken in gesprek...",
+  "searchItems": "Zoek artikelen",
   "searchLanguage": "Taal zoeken...",
   "searchMessages": "Berichten zoeken...",
   "searchRecipes": "Recepten zoeken...",

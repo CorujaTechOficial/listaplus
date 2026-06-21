@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "AI asistent",
   "aiAssistantDescription": "Získajte inteligentné návrhy, recepty a personalizované tipy s naším AI asistentom.",
   "aiAssistantTitle": "Asistent AI",
+  "aiAssistantTooltip": "Otvorte asistenta AI",
   "aiCapabilitiesBudget": "Rozpočet a ceny",
   "aiCapabilitiesLists": "Nákupné zoznamy",
   "aiCapabilitiesOrganize": "Organizácia",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Mesačný rozpočet",
   "budgetDashboardTitle": "Panel",
   "budgetEditTitle": "Mesačný rozpočet",
+  "budgetGoalInvalidAmount": "Zadajte hodnotu väčšiu ako nula",
+  "budgetGoalRemoved": "Cieľ rozpočtu bol odstránený",
+  "budgetGoalSaved": "Cieľ rozpočtu bol uložený",
   "budgetLists": "Zoznamy",
+  "budgetPartialEstimateHint": "~ Zahŕňa čiastočné odhady cien",
   "budgetPremiumLocked": "Globálny mesačný rozpočet je prémiový",
   "budgetSubtitle": "Sledujte svoje mesačné výdavky",
   "budgetUpgradePrompt": "Inovujte pre odomknutie",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Ste offline",
   "chatSubtitle": "Pýtajte sa na návrhy položiek, recepty alebo tipy na šetrenie.",
   "chatSubtitleShort": "Pýtajte sa na ceny, recepty, organizáciu...",
+  "checkItemTooltip": "Skontrolujte položku",
   "checkingItem": "Kontroluje sa položka...",
   "checkingPantry": "Kontrola špajze...",
   "checkingSettings": "Kontrolujú sa nastavenia...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Vymazať všetky správy v tejto relácii?",
   "clearList": "Vyčistiť zoznam",
   "clearPurchased": "Odstrániť zakúpené",
+  "clearPurchasedConfirmMessage": "Odstrániť všetky zakúpené položky z tohto zoznamu? Toto sa nedá vrátiť späť.",
+  "clearPurchasedTitle": "Vymazať zakúpené položky",
   "clearingCheckedItems": "Odstraňujú sa začiarknuté položky...",
   "close": "Zavrieť",
   "closeSheet": "Zavrieť",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Chyba pri archivácii zoznamu: {error}",
   "errorClearingList": "Chyba pri odstraňovaní zoznamu: {error}",
   "errorClearingPurchased": "Chyba pri vymazávaní zakúpených položiek: {error}",
+  "errorCreateList": "Zoznam sa nepodarilo vytvoriť. Skontrolujte pripojenie a skúste to znova.",
   "errorCreatingList": "Chyba pri vytváraní zoznamu",
   "errorDecreasingQty": "Chyba pri znižovaní množstva: {error}",
   "errorDeletingList": "Chyba pri odstraňovaní zoznamu: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Chyba: {message}",
   "errorImportingList": "Chyba pri importovaní zoznamu „{name}“: {error}",
   "errorIncreasingQty": "Chyba pri zvyšovaní množstva: {error}",
+  "errorLoadList": "Nepodarilo sa načítať vaše zoznamy. Ak chcete začať, vytvorte nový zoznam.",
   "errorLoadingChat": "Ojoj! Pri načítavaní četu sa vyskytla chyba.",
   "errorLoadingChatSubtitle": "Skontrolujte pripojenie alebo to skúste znova neskôr.",
   "errorLoadingHistory": "Chyba pri načítavaní histórie",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Chyba pri načítavaní odberu",
   "errorOscillation": "Môže k tomu dôjsť v dôsledku oscilácií siete alebo dočasnej nedostupnosti. Skúste to znova.",
   "errorProcessingRequest": "Ľutujeme, pri spracovaní vašej požiadavky sa vyskytla chyba. Skontrolujte pripojenie alebo to skúste znova neskôr.",
+  "errorQuickAdd": "Položku sa nepodarilo pridať. Skontrolujte pripojenie a skúste to znova.",
   "errorRemovingItem": "Chyba pri odstraňovaní položky: {error}",
   "errorRemovingItems": "Chyba pri odstraňovaní položiek: {error}",
   "errorRemovingSharedList": "Chyba pri odstraňovaní zdieľaného zoznamu: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Chyba pri ukladaní: {error}",
   "errorServerConnection": "Chyba pri pripájaní k serveru: {error}",
   "errorSettingCurrentList": "Chyba pri nastavovaní aktuálneho zoznamu: {error}",
+  "errorShareCode": "Chyba pri generovaní kódu zdieľania. Skontrolujte pripojenie a skúste to znova.",
   "errorTogglingItem": "Chyba pri prepínaní stavu položky: {error}",
   "errorTogglingItems": "Chyba pri prepínaní položiek: {error}",
   "errorUnarchivingList": "Chyba pri obnovovaní zoznamu z archívu: {error}",
+  "errorUnexpected": "Stalo sa niečo neočakávané. Skúste to znova.",
   "errorUpdatingItem": "Chyba pri aktualizácii položky: {error}",
   "errorUpdatingItems": "Chyba pri aktualizácii položiek: {error}",
   "errorUpdatingList": "Chyba pri aktualizácii zoznamu: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Zakúpené",
   "finance": "Financie",
   "finishShopping": "Dokončite nakupovanie",
+  "firstItemAddedSnackbar": "Prvá položka pridaná! Skvelý začiatok 🛒",
   "gallery": "Galéria",
   "generalAssistant": "Všeobecný asistent",
   "generalHelp": "Ako vám dnes môžem pomôcť s nákupom?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Podržaním vyberte • Potiahnutím odstráňte",
   "globalAssistant": "Globálny asistent",
   "goodResponse": "Dobrá odozva",
+  "help": "Pomoc",
+  "helpListAddItems": "Pridajte položky pomocou tlačidla + v dolnej časti alebo použite vyhľadávanie na prehliadanie produktov",
+  "helpListAi": "Požiadajte asistenta AI, aby vytvoril, usporiadal alebo doplnil váš zoznam – stačí klepnúť na ikonu trblietania",
+  "helpListOrganize": "Presunutím položiek zmeníte poradie, potiahnutím označíte ako zakúpené alebo použite filtre a triedenie",
+  "helpListShare": "Zdieľajte svoj zoznam s rodinou alebo exportujte ako PDF, Excel alebo obyčajný text",
+  "helpListShoppingMode": "Nákupný režim skryje zakúpené položky, aby ste sa mohli sústrediť na to, čo zostalo",
+  "helpListTitle": "Pomocou svojho zoznamu",
   "howCanIHelp": "Ako môžem pomôcť?",
   "icon": "ikona:",
   "idealQty": "Ideálne množ.",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Odstrániť cieľ",
   "mealPlannerBudgetTodayCost": "Dnes: {amount}",
   "mealPlannerBudgetWeekCost": "Týždeň: {amount}",
+  "mealPlannerCurrentDayLabel": "Aktuálny deň",
   "mealPlannerCustomTypeLabel": "Vlastný typ",
   "mealPlannerDateLabel": "Dátum",
   "mealPlannerDefaultTypeLabel": "Predvolený typ",
   "mealPlannerDeleteMeal": "Odstráňte jedlo",
+  "mealPlannerDuplicate": "Duplicitné jedlo",
+  "mealPlannerDuplicateSuccess": "Jedlo bolo úspešne duplikované!",
   "mealPlannerEditMeal": "Upraviť jedlo",
   "mealPlannerEditType": "Upraviť typ jedla",
   "mealPlannerError": "Chyba pri načítavaní jedálneho lístka",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Pridať do plánu",
   "mealPlannerSearchRecipes": "Hľadať recepty...",
+  "mealPlannerSelectDestinationDay": "Duplikovať do...",
   "mealPlannerSelectRecipe": "Vyberte recept",
   "mealPlannerServings": "{count,plural, one{{count} porcia} few{{count} porcie} other{{count} porcií}}",
   "mealPlannerServingsLabel": "Porcie",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Recepty",
   "newCategoryDialog": "Nová kategória",
   "newChat": "Nový rozhovor",
+  "newChatConfirmMessage": "Chcete začať novú konverzáciu? Vaša aktuálna konverzácia sa stratí.",
+  "newChatConfirmTitle": "Nový rozhovor",
   "newChatStarted": "Začal sa nový čet",
   "newListTitle": "Nový nákupný zoznam",
   "newPantryList": "Nákup zo spiže",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Pár",
   "onboardingGroupFamily": "Rodina",
   "onboardingGroupSolo": "Len ja",
+  "onboardingHookContinue": "Začíname",
   "onboardingHookHeadline": "Už nikdy nezabudni na potravinu",
+  "onboardingHookItem1": "Grilované kura",
+  "onboardingHookItem2": "syr mozzarella",
+  "onboardingHookItem3": "Cherry paradajky",
   "onboardingListCreated": "Váš zoznam je pripravený: {count} položiek usporiadaných pre vás.",
   "onboardingListSaveFailed": "Pripravil som položky, ale nepodarilo sa uložiť zoznam. Skúste to znova ponechať v aplikácii.",
   "onboardingLoadingStat1Label": "Položky katalogizované",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Prispôsobte si svoj zážitok",
   "onboardingShareDesc": "Synchronizujte zoznamy s rodinou a priateľmi v reálnom čase",
   "onboardingShareTitle": "Zdieľajte s tými, ktorých máte radi",
+  "onboardingSkip": "Zatiaľ preskočiť",
   "onboardingSlide1Body": "Okamžite vytvárajte a zdieľajte zoznamy. Kipi pridáva položky automaticky na základe vašich zvykov.",
   "onboardingSlide1Title": "Inteligentné nákupné zoznamy",
   "onboardingSlide2Body": "Pýtajte sa na čokoľvek – vytvorte zoznamy, nájdite recepty, sledujte svoju špajzu, plánujte si týždeň.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "Inteligentná AI",
   "paywallFeatureUnlimitedLists": "Neobmedzené zoznamy",
   "paywallFeaturesTitle": "Všetko, čo potrebujete:",
+  "paywallFreeTier": "Zadarmo: 3 zoznamy",
   "paywallGoalHeadlineFamily": "{name}, organizujte rodinné nákupy!",
   "paywallGoalHeadlineFaster": "{name}, nakupujte za polovičný čas!",
   "paywallGoalHeadlineNeverForget": "{name}, nikdy nezabudnite na žiadnu položku!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Len {price}/deň – menej ako káva",
   "paywallPricePerMonth": "Len {price}/mesiac",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Neobmedzene",
   "paywallPurchaseError": "Nákup sa nepodarilo dokončiť. Skúste to znova.",
   "paywallPurchasePending": "Vaša platba čaká na schválenie. Prístup sa po potvrdení automaticky uvoľní.",
   "paywallRestore": "Obnoviť",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Vyhľadajte konverzácie",
   "searchCurrency": "Hľadať menu...",
   "searchInConversation": "Hľadať v konverzácii...",
+  "searchItems": "Hľadať položky",
   "searchLanguage": "Jazyk vyhľadávania...",
   "searchMessages": "Hľadať správy...",
   "searchRecipes": "Hľadať recepty...",

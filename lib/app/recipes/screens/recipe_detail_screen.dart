@@ -12,10 +12,12 @@ import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/recipes/widgets/add_recipe_dialog.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/models/shopping_list.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class RecipeDetailScreen extends ConsumerStatefulWidget {
   const RecipeDetailScreen({super.key, required this.recipeId});
@@ -80,7 +82,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                         Container(
                           color: theme.colorScheme.primaryContainer,
                           child: Icon(
-                            Icons.restaurant,
+                            PhosphorIconsRegular.forkKnife,
                             size: 80,
                             color: theme.colorScheme.onPrimaryContainer
                                 .withAlpha((0.2 * 255).toInt()),
@@ -105,7 +107,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                 ),
                 actions: [
                   IconButton(
-                    icon: const Icon(Icons.edit_outlined),
+                    icon: const Icon(PhosphorIconsRegular.pencilSimple),
                     tooltip: l10n.editRecipe,
                     onPressed: () {
                       Navigator.push(
@@ -115,7 +117,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                     },
                   ),
                   IconButton(
-                    icon: const Icon(Icons.delete_outline),
+                    icon: const Icon(PhosphorIconsRegular.trash),
                     tooltip: l10n.deleteRecipe,
                     onPressed: () => _confirmDelete(context, ref, recipe, l10n),
                   ),
@@ -156,7 +158,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.error_outline,
+                      PhosphorIconsRegular.warningCircle,
                       size: 48,
                       color: theme.colorScheme.error,
                     ),
@@ -165,7 +167,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                     const SizedBox(height: Spacing.md),
                     FilledButton.icon(
                       onPressed: () => ref.invalidate(recipesProvider),
-                      icon: const Icon(Icons.refresh),
+                      icon: const Icon(PhosphorIconsRegular.arrowCounterClockwise),
                       label: Text(l10n.retry),
                     ),
                   ],
@@ -198,15 +200,15 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                   ref.read(recipesProvider.notifier).deleteRecipe(recipe.id);
                   Navigator.pop(ctx);
                   Navigator.pop(context);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(l10n.recipeDeleted),
-                      action: SnackBarAction(
-                        label: l10n.undo,
-                        onPressed: () {
-                          ref.read(recipesProvider.notifier).saveRecipe(recipe);
-                        },
-                      ),
+                  showKipiSnackBar(
+                    context,
+                    message: l10n.recipeDeleted,
+                    type: SnackBarType.info,
+                    action: SnackBarAction(
+                      label: l10n.undo,
+                      onPressed: () {
+                        ref.read(recipesProvider.notifier).saveRecipe(recipe);
+                      },
                     ),
                   );
                 },
@@ -249,9 +251,11 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
           final currentListId = await ref.read(currentListIdProvider.future);
           if (currentListId == null) {
             if (context.mounted) {
-              ScaffoldMessenger.of(
+              showKipiSnackBar(
                 context,
-              ).showSnackBar(SnackBar(content: Text(l10n.noListSelected)));
+                message: l10n.noListSelected,
+                type: SnackBarType.warning,
+              );
             }
             return;
           }
@@ -280,23 +284,23 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                 .read(shoppingListItemsProvider(currentListId).notifier)
                 .addItems(items);
             if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    l10n.recipeAddedConfirmation(items.length, listName),
-                  ),
-                ),
+              showKipiSnackBar(
+                context,
+                message: l10n.recipeAddedConfirmation(items.length, listName),
+                type: SnackBarType.success,
               );
             }
           } on Exception catch (_) {
             if (context.mounted) {
-              ScaffoldMessenger.of(
+              showKipiSnackBar(
                 context,
-              ).showSnackBar(SnackBar(content: Text(l10n.recipeAddError)));
+                message: l10n.recipeAddError,
+                type: SnackBarType.error,
+              );
             }
           }
         },
-        icon: const Icon(Icons.add_shopping_cart),
+        icon: const Icon(PhosphorIconsRegular.shoppingCartSimple),
         label: Text(l10n.recipeAddToList),
         style: FilledButton.styleFrom(
           minimumSize: const Size.fromHeight(54),
@@ -346,12 +350,12 @@ class _RecipeDetailBody extends StatelessWidget {
           Row(
             children: [
               _InfoChip(
-                icon: Icons.timer_outlined,
+                icon: PhosphorIconsRegular.timer,
                 label: '${recipe.prepTimeMinutes} min',
               ),
               const SizedBox(width: Spacing.sm),
               _InfoChip(
-                icon: Icons.shopping_basket_outlined,
+                icon: PhosphorIconsRegular.basket,
                 label: '${recipe.ingredients.length} ${l10n.ingredients}',
               ),
             ],
@@ -576,7 +580,7 @@ class _IngredientTile extends ConsumerWidget {
         child: Row(
           children: [
             Icon(
-              isPrepared ? Icons.check_circle : Icons.circle_outlined,
+              isPrepared ? PhosphorIconsRegular.checkCircle : PhosphorIconsRegular.circle,
               size: 20,
               color:
                   isPrepared
@@ -607,7 +611,7 @@ class _IngredientTile extends ConsumerWidget {
                         ? l10n.recipeIngredientLowPantry
                         : l10n.recipeIngredientInPantry,
                 child: Icon(
-                  Icons.inventory_2,
+                  PhosphorIconsRegular.package,
                   size: 14,
                   color:
                       isLowStock
@@ -619,7 +623,7 @@ class _IngredientTile extends ConsumerWidget {
               Semantics(
                 label: l10n.recipeIngredientLowPantry,
                 child: Icon(
-                  Icons.inventory_2_outlined,
+                  PhosphorIconsRegular.package,
                   size: 14,
                   color: semanticColors.warning,
                 ),

@@ -12,6 +12,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CatalogCategoryScreen extends ConsumerStatefulWidget {
   const CatalogCategoryScreen({
@@ -186,7 +187,7 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
                   selected: _sort == CatalogSortMode.popular,
                   onSelected:
                       (_) => setState(() => _sort = CatalogSortMode.popular),
-                  avatar: const Icon(Icons.trending_up, size: 14),
+                  avatar: const Icon(PhosphorIconsRegular.trendUp, size: 14),
                   shape: const StadiumBorder(),
                 ),
                 const SizedBox(width: Spacing.xs),
@@ -255,7 +256,7 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(Icons.search_off, size: Spacing.xxl),
+                        const Icon(PhosphorIconsRegular.magnifyingGlassMinus, size: Spacing.xxl),
                         const SizedBox(height: Spacing.sm),
                         Text(l10n.catalogProductNotFound),
                       ],
@@ -346,7 +347,7 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
                   padding: const EdgeInsets.all(Spacing.md),
                   child: FilledButton.icon(
                     onPressed: _confirmAdd,
-                    icon: const Icon(Icons.check),
+                    icon: const Icon(PhosphorIconsRegular.check),
                     label: Text(l10n.catalogAddItems(total)),
                     style: FilledButton.styleFrom(
                       minimumSize: const Size.fromHeight(Spacing.xxl),

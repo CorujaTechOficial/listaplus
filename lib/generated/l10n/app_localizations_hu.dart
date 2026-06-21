@@ -72,6 +72,32 @@ class AppLocalizationsHu extends AppLocalizations {
   String get close => 'Bezárás';
 
   @override
+  String get help => 'Segítség';
+
+  @override
+  String get helpListTitle => 'A listája segítségével';
+
+  @override
+  String get helpListAddItems =>
+      'Adjon hozzá termékeket az alján található + gombbal, vagy használja a keresést a termékek böngészéséhez';
+
+  @override
+  String get helpListAi =>
+      'Kérje meg az AI-asszisztenst, hogy hozza létre, rendezze vagy egészítse ki a listát – csak érintse meg a csillogó ikont';
+
+  @override
+  String get helpListShoppingMode =>
+      'A vásárlási mód elrejti a megvásárolt tételeket, így Ön arra koncentrálhat, ami még megmaradt';
+
+  @override
+  String get helpListOrganize =>
+      'Húzza át az elemeket az átrendezéshez, csúsztassa az ujját a megvásároltként való megjelöléshez, vagy használjon szűrőket és rendezést';
+
+  @override
+  String get helpListShare =>
+      'Ossza meg listáját a családdal, vagy exportálja PDF, Excel vagy egyszerű szövegként';
+
+  @override
   String get import => 'Importálás';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get clear => 'Törlés';
+
+  @override
+  String get clearPurchasedTitle => 'Törölje a vásárolt tételeket';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Eltávolítja az összes megvásárolt terméket a listáról? Ezt nem lehet visszavonni.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get purchaseError =>
       'Hiba a vásárlás feldolgozása közben. Próbálja újra.';
+
+  @override
+  String get errorCreateList =>
+      'Nem sikerült listát létrehozni. Ellenőrizze a kapcsolatot, és próbálja újra.';
+
+  @override
+  String get errorShareCode =>
+      'Hiba a megosztási kód generálásakor. Ellenőrizze a kapcsolatot, és próbálja újra.';
+
+  @override
+  String get errorQuickAdd =>
+      'Nem sikerült hozzáadni az elemet. Ellenőrizze a kapcsolatot, és próbálja újra.';
+
+  @override
+  String get errorLoadList =>
+      'Nem sikerült betölteni a listákat. A kezdéshez hozzon létre egy új listát.';
 
   @override
   String get restoreError =>
@@ -489,6 +538,20 @@ class AppLocalizationsHu extends AppLocalizations {
   String get noBudgetDefined => 'Nincs költségvetés beállítva';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Adjon meg egy nullánál nagyobb értéket';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Részleges árazási becsléseket tartalmaz';
+
+  @override
+  String get budgetGoalSaved => 'Költségvetési cél mentve';
+
+  @override
+  String get budgetGoalRemoved => 'Költségkeret-cél eltávolítva';
+
+  @override
   String totalEstimated(String amount) {
     return 'Becsült összesen: $amount';
   }
@@ -681,6 +744,13 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get newChat => 'Új csevegés';
+
+  @override
+  String get newChatConfirmTitle => 'Új beszélgetés';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Új beszélgetést indítani? A jelenlegi beszélgetésed elveszik.';
 
   @override
   String get noHistory => 'Nincs csevegési előzmény';
@@ -1245,6 +1315,16 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Üdvözlő ajánlat';
+
+  @override
+  String get paywallFreeTier => 'Ingyenes: 3 lista';
+
+  @override
+  String get paywallProTier => 'Pro: Korlátlan';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Az első elem hozzáadva! Remek kezdés 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2148,6 +2228,18 @@ class AppLocalizationsHu extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Alapértelmezett típus';
 
   @override
+  String get mealPlannerDuplicate => 'Megkettőzött étkezés';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Másolás ide...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuális nap';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Az étkezés sikeresen megkettőzve!';
+
+  @override
   String get expirationDate => 'Lejárati idő';
 
   @override
@@ -2155,6 +2247,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get skip => 'Kihagyás';
+
+  @override
+  String get onboardingSkip => 'Most hagyd ki';
 
   @override
   String get onboardingAiTitle => 'Csevegés Kipivel';
@@ -3191,6 +3286,31 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Válasz generálása…';
+
+  @override
+  String get errorUnexpected =>
+      'Valami váratlan történt. Kérjük, próbálja újra.';
+
+  @override
+  String get aiAssistantTooltip => 'Nyissa meg az AI-asszisztenst';
+
+  @override
+  String get searchItems => 'Elemek keresése';
+
+  @override
+  String get onboardingHookContinue => 'Kezdje el';
+
+  @override
+  String get onboardingHookItem1 => 'Grillezett csirke';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella sajt';
+
+  @override
+  String get onboardingHookItem3 => 'Cseresznye paradicsom';
+
+  @override
+  String get checkItemTooltip => 'Ellenőrizze az elemet';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -3261,6 +3381,32 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get close => 'Bezárás';
 
   @override
+  String get help => 'Segítség';
+
+  @override
+  String get helpListTitle => 'A listája segítségével';
+
+  @override
+  String get helpListAddItems =>
+      'Adjon hozzá termékeket az alján található + gombbal, vagy használja a keresést a termékek böngészéséhez';
+
+  @override
+  String get helpListAi =>
+      'Kérje meg az AI-asszisztenst, hogy hozza létre, rendezze vagy egészítse ki a listát – csak érintse meg a csillogó ikont';
+
+  @override
+  String get helpListShoppingMode =>
+      'A vásárlási mód elrejti a megvásárolt tételeket, így Ön arra koncentrálhat, ami még megmaradt';
+
+  @override
+  String get helpListOrganize =>
+      'Húzza át az elemeket az átrendezéshez, csúsztassa az ujját a megvásároltként való megjelöléshez, vagy használjon szűrőket és rendezést';
+
+  @override
+  String get helpListShare =>
+      'Ossza meg listáját a családdal, vagy exportálja PDF, Excel vagy egyszerű szövegként';
+
+  @override
   String get import => 'Importálás';
 
   @override
@@ -3271,6 +3417,13 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get clear => 'Törlés';
+
+  @override
+  String get clearPurchasedTitle => 'Törölje a vásárolt tételeket';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Eltávolítja az összes megvásárolt terméket a listáról? Ezt nem lehet visszavonni.';
 
   @override
   String error(String message) {
@@ -3285,6 +3438,22 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   @override
   String get purchaseError =>
       'Hiba a vásárlás feldolgozása közben. Próbálja újra.';
+
+  @override
+  String get errorCreateList =>
+      'Nem sikerült listát létrehozni. Ellenőrizze a kapcsolatot, és próbálja újra.';
+
+  @override
+  String get errorShareCode =>
+      'Hiba a megosztási kód generálásakor. Ellenőrizze a kapcsolatot, és próbálja újra.';
+
+  @override
+  String get errorQuickAdd =>
+      'Nem sikerült hozzáadni az elemet. Ellenőrizze a kapcsolatot, és próbálja újra.';
+
+  @override
+  String get errorLoadList =>
+      'Nem sikerült betölteni a listákat. A kezdéshez hozzon létre egy új listát.';
 
   @override
   String get restoreError =>
@@ -3678,6 +3847,20 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get noBudgetDefined => 'Nincs költségvetés beállítva';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Adjon meg egy nullánál nagyobb értéket';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Részleges árazási becsléseket tartalmaz';
+
+  @override
+  String get budgetGoalSaved => 'Költségvetési cél mentve';
+
+  @override
+  String get budgetGoalRemoved => 'Költségkeret-cél eltávolítva';
+
+  @override
   String totalEstimated(String amount) {
     return 'Becsült összesen: $amount';
   }
@@ -3870,6 +4053,13 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get newChat => 'Új csevegés';
+
+  @override
+  String get newChatConfirmTitle => 'Új beszélgetés';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Új beszélgetést indítani? A jelenlegi beszélgetésed elveszik.';
 
   @override
   String get noHistory => 'Nincs csevegési előzmény';
@@ -4434,6 +4624,16 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Üdvözlő ajánlat';
+
+  @override
+  String get paywallFreeTier => 'Ingyenes: 3 lista';
+
+  @override
+  String get paywallProTier => 'Pro: Korlátlan';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Az első elem hozzáadva! Remek kezdés 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5337,6 +5537,18 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get mealPlannerDefaultTypeLabel => 'Alapértelmezett típus';
 
   @override
+  String get mealPlannerDuplicate => 'Megkettőzött étkezés';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Másolás ide...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Aktuális nap';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Az étkezés sikeresen megkettőzve!';
+
+  @override
   String get expirationDate => 'Lejárati idő';
 
   @override
@@ -5344,6 +5556,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get skip => 'Kihagyás';
+
+  @override
+  String get onboardingSkip => 'Most hagyd ki';
 
   @override
   String get onboardingAiTitle => 'Csevegés Kipivel';
@@ -6380,4 +6595,29 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get aiGeneratingResponse => 'Válasz generálása…';
+
+  @override
+  String get errorUnexpected =>
+      'Valami váratlan történt. Kérjük, próbálja újra.';
+
+  @override
+  String get aiAssistantTooltip => 'Nyissa meg az AI-asszisztenst';
+
+  @override
+  String get searchItems => 'Elemek keresése';
+
+  @override
+  String get onboardingHookContinue => 'Kezdje el';
+
+  @override
+  String get onboardingHookItem1 => 'Grillezett csirke';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella sajt';
+
+  @override
+  String get onboardingHookItem3 => 'Cseresznye paradicsom';
+
+  @override
+  String get checkItemTooltip => 'Ellenőrizze az elemet';
 }

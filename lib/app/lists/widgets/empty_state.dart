@@ -8,6 +8,7 @@ import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../models/unit.dart';
 import 'add_item_dialog.dart';
 import '../../../utils/test_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class EmptyState extends ConsumerWidget {
   const EmptyState({
@@ -50,7 +51,7 @@ class EmptyState extends ConsumerWidget {
             ),
             padding: const EdgeInsets.symmetric(
               horizontal: Spacing.xl,
-              vertical: Spacing.xxl,
+              vertical: Spacing.lg,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +74,7 @@ class EmptyState extends ConsumerWidget {
                       )
                 else
                   Icon(
-                    icon ?? Icons.shopping_cart_outlined,
+                    icon ?? PhosphorIconsRegular.shoppingCart,
                     size: 64,
                     color: theme.colorScheme.outlineVariant,
                   ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
@@ -96,7 +97,7 @@ class EmptyState extends ConsumerWidget {
                 ),
 
                 if (title == null && listId != null) ...[
-                  const SizedBox(height: Spacing.xxl),
+                  const SizedBox(height: Spacing.lg),
                   Text(
                     l10n.quickSuggestions,
                     style: theme.textTheme.labelMedium?.copyWith(
@@ -146,7 +147,7 @@ class EmptyState extends ConsumerWidget {
                               );
                         }).toList(),
                   ),
-                  const SizedBox(height: Spacing.xxl),
+                  const SizedBox(height: Spacing.md),
                   FilledButton.tonalIcon(
                         onPressed: () {
                           HapticFeedback.mediumImpact();
@@ -156,9 +157,10 @@ class EmptyState extends ConsumerWidget {
                                 (context) => AddItemDialog(listId: listId!),
                           );
                         },
-                        icon: const Icon(Icons.add),
+                        icon: const Icon(PhosphorIconsRegular.plus),
                         label: Text(l10n.addItem),
                         style: FilledButton.styleFrom(
+                          minimumSize: const Size(double.infinity, 48),
                           padding: const EdgeInsets.symmetric(
                             horizontal: Spacing.lg,
                             vertical: Spacing.sm,

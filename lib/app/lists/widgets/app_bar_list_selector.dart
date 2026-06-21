@@ -5,6 +5,7 @@ import 'package:shopping_list/app/lists/widgets/list_switcher_sheet.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/utils/kipi_sheets.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AppBarListSelector extends ConsumerWidget {
   const AppBarListSelector({super.key, required this.currentListId});
@@ -49,7 +50,7 @@ class AppBarListSelector extends ConsumerWidget {
               ),
             ),
             const SizedBox(width: Spacing.xxs),
-            Icon(Icons.unfold_more, size: 18, color: theme.colorScheme.primary),
+            Icon(PhosphorIconsRegular.arrowsVertical, size: 18, color: theme.colorScheme.primary),
           ],
         ),
       ),

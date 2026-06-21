@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "AI 助手",
   "aiAssistantDescription": "通过我们的 AI 助手获取智能建议、食谱和个性化提示。",
   "aiAssistantTitle": "人工智能助手",
+  "aiAssistantTooltip": "打开AI助手",
   "aiCapabilitiesBudget": "预算和价格",
   "aiCapabilitiesLists": "购物清单",
   "aiCapabilitiesOrganize": "组织",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "月度预算",
   "budgetDashboardTitle": "仪表板",
   "budgetEditTitle": "月度预算",
+  "budgetGoalInvalidAmount": "输入大于零的值",
+  "budgetGoalRemoved": "预算目标已删除",
+  "budgetGoalSaved": "已保存预算目标",
   "budgetLists": "清单",
+  "budgetPartialEstimateHint": "~ 包括部分定价估算",
   "budgetPremiumLocked": "全局月度预算为高级功能",
   "budgetSubtitle": "追踪您的月度支出",
   "budgetUpgradePrompt": "升级以解锁",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "你离线了",
   "chatSubtitle": "请求项目建议、食谱或省钱技巧。",
   "chatSubtitleShort": "询问价格、食谱、组织……",
+  "checkItemTooltip": "检查项目",
   "checkingItem": "检查项目...",
   "checkingPantry": "检查你的食品储藏室...",
   "checkingSettings": "正在检查您的设置...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "清除此会话中的所有消息？",
   "clearList": "清空清单",
   "clearPurchased": "清空已购",
+  "clearPurchasedConfirmMessage": "从此列表中删除所有已购买的商品吗？这无法撤消。",
+  "clearPurchasedTitle": "清除已购买的物品",
   "clearingCheckedItems": "清除选中的项目...",
   "close": "关闭",
   "closeSheet": "关闭",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "错误归档列表：{error}",
   "errorClearingList": "清除列表时出错：{error}",
   "errorClearingPurchased": "清除已购买物品时出错：{error}",
+  "errorCreateList": "无法创建列表。检查您的连接并重试。",
   "errorCreatingList": "创建列表时出错",
   "errorDecreasingQty": "错误减少数量：{error}",
   "errorDeletingList": "删除列表时出错：{error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "错误：{message}",
   "errorImportingList": "导入列表“{name}”时出错：{error}",
   "errorIncreasingQty": "增加数量时出错：{error}",
+  "errorLoadList": "无法加载您的列表。请创建一个新列表以开始。",
   "errorLoadingChat": "哎呀！加载聊天时出了点问题。",
   "errorLoadingChatSubtitle": "检查您的连接或稍后重试。",
   "errorLoadingHistory": "加载历史记录时出错",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "加载订阅时出错",
   "errorOscillation": "这可能是由于网络振荡或暂时不可用而导致的。请再试一次。",
   "errorProcessingRequest": "抱歉，处理您的请求时发生错误。检查您的连接或稍后重试。",
+  "errorQuickAdd": "无法添加项目。检查您的连接并重试。",
   "errorRemovingItem": "删除项目时出错：{error}",
   "errorRemovingItems": "删除项目时出错：{error}",
   "errorRemovingSharedList": "删除共享列表时出错：{error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "保存时出错：{error}",
   "errorServerConnection": "连接到服务器时出错：{error}",
   "errorSettingCurrentList": "设置当前列表时出错：{error}",
+  "errorShareCode": "生成共享代码时出错。检查您的连接并重试。",
   "errorTogglingItem": "切换项目状态时出错：{error}",
   "errorTogglingItems": "切换项目时出错：{error}",
   "errorUnarchivingList": "取消归档列表时出错：{error}",
+  "errorUnexpected": "意想不到的事情发生了。请再试一次。",
   "errorUpdatingItem": "更新项目时出错：{error}",
   "errorUpdatingItems": "更新项目时出错：{error}",
   "errorUpdatingList": "更新列表时出错：{error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "已购",
   "finance": "财务",
   "finishShopping": "完成购物",
+  "firstItemAddedSnackbar": "添加了第一个项目！伟大的开始🛒",
   "gallery": "画廊",
   "generalAssistant": "通用助手",
   "generalHelp": "今天如何帮助您购物？",
@@ -1913,6 +1996,13 @@
   "gestureHint": "按住选择 • 滑动删除",
   "globalAssistant": "全局助手",
   "goodResponse": "反响良好",
+  "help": "帮助",
+  "helpListAddItems": "使用底部的 + 按钮添加项目，或使用搜索浏览产品",
+  "helpListAi": "让 AI 助手创建、组织或完成您的列表 - 只需点击闪烁的图标",
+  "helpListOrganize": "拖动商品重新排序、滑动以标记为已购买，或使用过滤器和排序",
+  "helpListShare": "与家人分享您的列表或导出为 PDF、Excel 或纯文本",
+  "helpListShoppingMode": "购物模式会隐藏已购买的商品，以便您可以专注于剩下的商品",
+  "helpListTitle": "使用您的清单",
   "howCanIHelp": "我能提供什么帮助吗？",
   "icon": "图标：",
   "idealQty": "理想数量",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "删除目标",
   "mealPlannerBudgetTodayCost": "今天：{amount}",
   "mealPlannerBudgetWeekCost": "周：{amount}",
+  "mealPlannerCurrentDayLabel": "当前日期",
   "mealPlannerCustomTypeLabel": "定制型",
   "mealPlannerDateLabel": "日期",
   "mealPlannerDefaultTypeLabel": "默认类型",
   "mealPlannerDeleteMeal": "去除膳食",
+  "mealPlannerDuplicate": "重复用餐",
+  "mealPlannerDuplicateSuccess": "餐食复制成功！",
   "mealPlannerEditMeal": "编辑膳食",
   "mealPlannerEditType": "编辑膳食类型",
   "mealPlannerError": "加载膳食计划时出错",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} 分钟",
   "mealPlannerSave": "添加到计划",
   "mealPlannerSearchRecipes": "搜索食谱...",
+  "mealPlannerSelectDestinationDay": "复制到...",
   "mealPlannerSelectRecipe": "选择一个食谱",
   "mealPlannerServings": "{count,plural, one{{count} 份} other{{count} 份}}",
   "mealPlannerServingsLabel": "份量",
@@ -2061,6 +2155,8 @@
   "navRecipes": "食谱",
   "newCategoryDialog": "新类别",
   "newChat": "新聊天",
+  "newChatConfirmMessage": "开始新的对话？您当前的对话将会丢失。",
+  "newChatConfirmTitle": "新对话",
   "newChatStarted": "新的聊天开始了",
   "newListTitle": "新购物清单",
   "newPantryList": "储藏室购物",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "夫妻",
   "onboardingGroupFamily": "家庭",
   "onboardingGroupSolo": "只有我",
+  "onboardingHookContinue": "开始使用",
   "onboardingHookHeadline": "再也不会忘记杂货了",
+  "onboardingHookItem1": "烤鸡",
+  "onboardingHookItem2": "马苏里拉奶酪",
+  "onboardingHookItem3": "樱桃番茄",
   "onboardingListCreated": "您的清单已准备好：为您整理了 {count} 件物品。",
   "onboardingListSaveFailed": "我准备了物品，但无法保存清单。再次尝试将其保留在应用程序中。",
   "onboardingLoadingStat1Label": "编目项目",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "个性化您的体验",
   "onboardingShareDesc": "与家人和朋友实时同步列表",
   "onboardingShareTitle": "与你爱的人分享",
+  "onboardingSkip": "暂时跳过",
   "onboardingSlide1Body": "立即创建和共享列表。 Kipi 根据您的习惯自动添加项目。",
   "onboardingSlide1Title": "智能购物清单",
   "onboardingSlide2Body": "提出任何问题——创建清单、查找食谱、跟踪你的食品储藏室、计划你的一周。",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "智能人工智能",
   "paywallFeatureUnlimitedLists": "无限列表",
   "paywallFeaturesTitle": "您需要的一切：",
+  "paywallFreeTier": "免费：3 个列表",
   "paywallGoalHeadlineFamily": "{name}，组织家庭购物！",
   "paywallGoalHeadlineFaster": "{name}，购物时间减半！",
   "paywallGoalHeadlineNeverForget": "{name}，永远不要忘记一件物品！",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "每天仅需 {price} — 少于一杯咖啡",
   "paywallPricePerMonth": "仅 {price}/月",
   "paywallProLabel": "专业版",
+  "paywallProTier": "优点：无限制",
   "paywallPurchaseError": "无法完成购买。再试一次。",
   "paywallPurchasePending": "您的付款正在等待批准。确认后将自动释放访问权限。",
   "paywallRestore": "恢复",
@@ -2474,6 +2577,7 @@
   "searchConversations": "搜索对话",
   "searchCurrency": "搜索货币...",
   "searchInConversation": "在对话中搜索...",
+  "searchItems": "搜索项目",
   "searchLanguage": "搜索语言...",
   "searchMessages": "搜索消息...",
   "searchRecipes": "搜索食谱...",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class GestureHintBanner extends StatelessWidget {
   const GestureHintBanner({super.key, required this.onDismiss});
@@ -12,35 +13,46 @@ class GestureHintBanner extends StatelessWidget {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
 
-    return GestureDetector(
-      onTap: onDismiss,
-      child: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: Spacing.sm,
-          vertical: Spacing.xxs,
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        horizontal: Spacing.sm,
+        vertical: Spacing.xxs,
+      ),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.primaryContainer.withAlpha(120),
+        borderRadius: BorderRadius.circular(RadiusTokens.lg),
+        border: Border.all(
+          color: theme.colorScheme.primary.withAlpha(60),
         ),
+      ),
+      child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: Spacing.sm,
-          vertical: Spacing.xs,
-        ),
-        decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceContainer,
-          borderRadius: BorderRadius.circular(RadiusTokens.full),
-          border: Border.all(color: theme.colorScheme.outlineVariant),
+          vertical: Spacing.sm,
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
-              Icons.info_outline,
-              size: 14,
-              color: theme.colorScheme.onSurfaceVariant,
+              PhosphorIconsRegular.handPointing,
+              size: 18,
+              color: theme.colorScheme.onPrimaryContainer,
             ),
-            const SizedBox(width: Spacing.xs - 2),
-            Text(
-              l10n.gestureHint,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
+            const SizedBox(width: Spacing.xs),
+            Expanded(
+              child: Text(
+                l10n.gestureHint,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onPrimaryContainer,
+                ),
+              ),
+            ),
+            const SizedBox(width: Spacing.xs),
+            GestureDetector(
+              onTap: onDismiss,
+              child: Icon(
+                PhosphorIconsRegular.x,
+                size: 18,
+                color: theme.colorScheme.onPrimaryContainer.withAlpha(140),
               ),
             ),
           ],

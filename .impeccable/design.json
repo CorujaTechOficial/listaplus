@@ -90,6 +90,38 @@
         "Do not use generic AI hype or futuristic spectacle as the conversion strategy.",
         "Do not create noisy paywalls with too many competing highlights."
       ]
+    },
+    "icons": {
+      "library": "phosphor_flutter",
+      "version": "2.1.0",
+      "pubspec": "phosphor_flutter: ^2.1.0",
+      "import": "import 'package:phosphor_flutter/phosphor_flutter.dart';",
+      "weightConventions": {
+        "inactive": "PhosphorIconsRegular",
+        "active_selected": "PhosphorIconsFill",
+        "emphasis": "PhosphorIconsBold",
+        "rule": "Never use PhosphorIcons.name(style) syntax — disables tree shaking."
+      },
+      "stateConventions": {
+        "navigationBar": "Regular for icon:, Fill for selectedIcon: — same geometry, heavier weight signals selection.",
+        "toggles": "Regular when off, Fill when on.",
+        "completion": "Fill for check/done states (e.g. PhosphorIconsFill.checkCircle).",
+        "premiumBadges": "Fill for crown, star in monetization surfaces.",
+        "thumbs": "PhosphorIconsFill.thumbsUp/Down for voted state, Regular otherwise."
+      },
+      "frozenMaterialFiles": {
+        "reason": "These 4 files store icon codePoints directly in Firestore. Switching to Phosphor codePoints would silently corrupt existing user category and meal-type icons.",
+        "files": [
+          "lib/models/category_data.dart",
+          "lib/models/meal_type.dart",
+          "lib/app/lists/widgets/add_edit_category_dialog.dart",
+          "lib/app/meal_planner/screens/meal_types_screen.dart"
+        ],
+        "migrationPath": "Store font-family alongside codePoint in Firestore schema, add Phosphor entries to _iconMap in both model files, then update picker UIs. Requires a one-time data migration for existing users."
+      },
+      "migratedAt": "2026-06-21",
+      "filesMigrated": 88,
+      "filesSkipped": 4
     }
   }
 }

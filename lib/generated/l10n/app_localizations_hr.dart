@@ -72,6 +72,32 @@ class AppLocalizationsHr extends AppLocalizations {
   String get close => 'Zatvori';
 
   @override
+  String get help => 'Pomoć';
+
+  @override
+  String get helpListTitle => 'Korištenje vašeg popisa';
+
+  @override
+  String get helpListAddItems =>
+      'Dodajte stavke pomoću gumba + na dnu ili upotrijebite pretraživanje za pregledavanje proizvoda';
+
+  @override
+  String get helpListAi =>
+      'Zamolite AI pomoćnika da izradi, organizira ili dovrši vaš popis — samo dodirnite ikonu svjetlucanja';
+
+  @override
+  String get helpListShoppingMode =>
+      'Način rada za kupovinu skriva kupljene artikle kako biste se mogli usredotočiti na ono što je ostalo';
+
+  @override
+  String get helpListOrganize =>
+      'Povucite stavke za promjenu redoslijeda, prijeđite prstom da biste ih označili kao kupljene ili upotrijebite filtre i sortiranje';
+
+  @override
+  String get helpListShare =>
+      'Podijelite svoj popis s obitelji ili ga izvezite kao PDF, Excel ili običan tekst';
+
+  @override
   String get import => 'Uvezi';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get clear => 'Očisti';
+
+  @override
+  String get clearPurchasedTitle => 'Očistite kupljene artikle';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Ukloniti sve kupljene artikle s ovog popisa? Ovo se ne može poništiti.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get purchaseError => 'Greška u obradi kupnje. Pokušaj ponovno.';
+
+  @override
+  String get errorCreateList =>
+      'Nije moguće izraditi popis. Provjerite vezu i pokušajte ponovno.';
+
+  @override
+  String get errorShareCode =>
+      'Pogreška pri generiranju koda dijeljenja. Provjerite vezu i pokušajte ponovno.';
+
+  @override
+  String get errorQuickAdd =>
+      'Nije moguće dodati stavku. Provjerite vezu i pokušajte ponovno.';
+
+  @override
+  String get errorLoadList =>
+      'Nije moguće učitati vaše popise. Za početak izradite novi popis.';
 
   @override
   String get restoreError => 'Greška u obnavljanju kupnji. Pokušaj ponovno.';
@@ -486,6 +535,19 @@ class AppLocalizationsHr extends AppLocalizations {
   String get noBudgetDefined => 'Nije postavljen proračun';
 
   @override
+  String get budgetGoalInvalidAmount => 'Unesite vrijednost veću od nule';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Uključuje djelomične procjene cijena';
+
+  @override
+  String get budgetGoalSaved => 'Cilj proračuna spremljen';
+
+  @override
+  String get budgetGoalRemoved => 'Cilj proračuna uklonjen';
+
+  @override
   String totalEstimated(String amount) {
     return 'Ukupno procijenjeno: $amount';
   }
@@ -678,6 +740,13 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get newChat => 'Novi razgovor';
+
+  @override
+  String get newChatConfirmTitle => 'Novi razgovor';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Započeti novi razgovor? Vaš trenutni razgovor bit će izgubljen.';
 
   @override
   String get noHistory => 'Nema povijesti razgovora';
@@ -1234,6 +1303,15 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Ponuda dobrodošlice';
+
+  @override
+  String get paywallFreeTier => 'Besplatno: 3 liste';
+
+  @override
+  String get paywallProTier => 'Pro: Neograničeno';
+
+  @override
+  String get firstItemAddedSnackbar => 'Prva dodana stavka! Odličan početak 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2133,6 +2211,18 @@ class AppLocalizationsHr extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Zadana vrsta';
 
   @override
+  String get mealPlannerDuplicate => 'Dupli obrok';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicirati u...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Trenutni dan';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Obrok je uspješno dupliciran!';
+
+  @override
   String get expirationDate => 'Rok trajanja';
 
   @override
@@ -2140,6 +2230,9 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get skip => 'Preskočiti';
+
+  @override
+  String get onboardingSkip => 'Preskoči za sada';
 
   @override
   String get onboardingAiTitle => 'Razgovaraj s Kipijem';
@@ -3174,4 +3267,29 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Generiranje odgovora…';
+
+  @override
+  String get errorUnexpected =>
+      'Dogodilo se nešto neočekivano. Molimo pokušajte ponovo.';
+
+  @override
+  String get aiAssistantTooltip => 'Otvorite AI pomoćnika';
+
+  @override
+  String get searchItems => 'Pretraži stavke';
+
+  @override
+  String get onboardingHookContinue => 'Započnite';
+
+  @override
+  String get onboardingHookItem1 => 'Piletina na žaru';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella sir';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry rajčice';
+
+  @override
+  String get checkItemTooltip => 'Provjerite stavku';
 }

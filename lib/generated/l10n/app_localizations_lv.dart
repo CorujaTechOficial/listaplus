@@ -72,6 +72,32 @@ class AppLocalizationsLv extends AppLocalizations {
   String get close => 'Aizvērt';
 
   @override
+  String get help => 'Palīdzība';
+
+  @override
+  String get helpListTitle => 'Izmantojot savu sarakstu';
+
+  @override
+  String get helpListAddItems =>
+      'Pievienojiet preces, izmantojot pogu + apakšā, vai izmantojiet meklēšanu, lai pārlūkotu produktus';
+
+  @override
+  String get helpListAi =>
+      'Lūdziet AI palīgam izveidot, sakārtot vai pabeigt sarakstu — vienkārši pieskarieties mirdzošajai ikonai';
+
+  @override
+  String get helpListShoppingMode =>
+      'Iepirkšanās režīms paslēpj iegādātās preces, lai jūs varētu koncentrēties uz to, kas ir palicis pāri';
+
+  @override
+  String get helpListOrganize =>
+      'Velciet preces, lai pārkārtotu, velciet, lai atzīmētu tās kā iegādātas, vai izmantojiet filtrus un kārtošanu';
+
+  @override
+  String get helpListShare =>
+      'Kopīgojiet savu sarakstu ar ģimeni vai eksportējiet kā PDF, Excel vai vienkāršu tekstu';
+
+  @override
   String get import => 'Importēt';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get clear => 'Notīrīt';
+
+  @override
+  String get clearPurchasedTitle => 'Notīriet iegādātās preces';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vai noņemt visas iegādātās preces no šī saraksta? Šo darbību nevar atsaukt.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get purchaseError => 'Kļūda, apstrādājot pirkumu. Mēģiniet vēlreiz.';
+
+  @override
+  String get errorCreateList =>
+      'Nevarēja izveidot sarakstu. Pārbaudiet savienojumu un mēģiniet vēlreiz.';
+
+  @override
+  String get errorShareCode =>
+      'Ģenerējot kopīgošanas kodu, radās kļūda. Pārbaudiet savienojumu un mēģiniet vēlreiz.';
+
+  @override
+  String get errorQuickAdd =>
+      'Nevarēja pievienot vienumu. Pārbaudiet savienojumu un mēģiniet vēlreiz.';
+
+  @override
+  String get errorLoadList =>
+      'Nevarēja ielādēt jūsu sarakstus. Lai sāktu, lūdzu, izveidojiet jaunu sarakstu.';
 
   @override
   String get restoreError => 'Kļūda, atjaunojot pirkumus. Mēģiniet vēlreiz.';
@@ -488,6 +537,19 @@ class AppLocalizationsLv extends AppLocalizations {
   String get noBudgetDefined => 'Nav iestatīts budžets';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Ievadiet vērtību, kas ir lielāka par nulli';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Ietver daļēju cenu aprēķinu';
+
+  @override
+  String get budgetGoalSaved => 'Budžeta mērķis ir saglabāts';
+
+  @override
+  String get budgetGoalRemoved => 'Budžeta mērķis ir noņemts';
+
+  @override
   String totalEstimated(String amount) {
     return 'Aptuvenā kopsumma: $amount';
   }
@@ -680,6 +742,13 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get newChat => 'Jauna tērzēšana';
+
+  @override
+  String get newChatConfirmTitle => 'Jauna saruna';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Vai sākt jaunu sarunu? Jūsu pašreizējā saruna tiks zaudēta.';
 
   @override
   String get noHistory => 'Nav tērzēšanas vēstures';
@@ -1240,6 +1309,16 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Laipni lūdzam';
+
+  @override
+  String get paywallFreeTier => 'Bezmaksas: 3 saraksti';
+
+  @override
+  String get paywallProTier => 'Pro: neierobežots';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Pievienots pirmais vienums! Lielisks sākums 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2143,6 +2222,18 @@ class AppLocalizationsLv extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Noklusējuma veids';
 
   @override
+  String get mealPlannerDuplicate => 'Dublēta maltīte';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dublēt uz...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Pašreizējā diena';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Maltīte veiksmīgi dublēta!';
+
+  @override
   String get expirationDate => 'Derīguma termiņš';
 
   @override
@@ -2150,6 +2241,9 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get skip => 'Izlaist';
+
+  @override
+  String get onboardingSkip => 'Pagaidām izlaist';
 
   @override
   String get onboardingAiTitle => 'Tērzējiet ar Kipi';
@@ -3187,4 +3281,29 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Notiek atbildes ģenerēšana…';
+
+  @override
+  String get errorUnexpected =>
+      'Notika kaut kas negaidīts. Lūdzu, mēģiniet vēlreiz.';
+
+  @override
+  String get aiAssistantTooltip => 'Atveriet AI palīgu';
+
+  @override
+  String get searchItems => 'Meklēt vienumus';
+
+  @override
+  String get onboardingHookContinue => 'Sāciet darbu';
+
+  @override
+  String get onboardingHookItem1 => 'Grilēta vista';
+
+  @override
+  String get onboardingHookItem2 => 'Mocarellas siers';
+
+  @override
+  String get onboardingHookItem3 => 'Ķiršu tomāti';
+
+  @override
+  String get checkItemTooltip => 'Pārbaudiet vienumu';
 }

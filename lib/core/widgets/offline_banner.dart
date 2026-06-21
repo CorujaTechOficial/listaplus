@@ -3,6 +3,7 @@ import 'package:shopping_list/theme/tokens.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class OfflineBanner extends StatefulWidget {
   const OfflineBanner({super.key, required this.child});
@@ -78,7 +79,7 @@ class _OfflineBannerState extends State<OfflineBanner> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.cloud_off_outlined,
+            PhosphorIconsRegular.cloudSlash,
             size: 16,
             color: theme.colorScheme.onErrorContainer,
           ),

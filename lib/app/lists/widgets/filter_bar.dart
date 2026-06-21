@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 enum FilterType { all, pending, purchased }
 
@@ -49,17 +50,17 @@ class _FilterBarState extends State<FilterBar> {
               ButtonSegment(
                 value: FilterType.all,
                 label: Text(AppLocalizations.of(context)!.filterAll),
-                icon: const Icon(Icons.list, size: 16),
+                icon: const Icon(PhosphorIconsRegular.list, size: 16),
               ),
               ButtonSegment(
                 value: FilterType.pending,
                 label: Text(AppLocalizations.of(context)!.filterPending),
-                icon: const Icon(Icons.pending, size: 16),
+                icon: const Icon(PhosphorIconsRegular.clock, size: 16),
               ),
               ButtonSegment(
                 value: FilterType.purchased,
                 label: Text(AppLocalizations.of(context)!.filterPurchased),
-                icon: const Icon(Icons.check_circle, size: 16),
+                icon: const Icon(PhosphorIconsRegular.checkCircle, size: 16),
               ),
             ],
             selected: {widget.filter},
@@ -84,7 +85,7 @@ class _FilterBarState extends State<FilterBar> {
                   HapticFeedback.selectionClick();
                   widget.onSortChanged(widget.sort);
                 },
-                icon: const Icon(Icons.sort, size: 18),
+                icon: const Icon(PhosphorIconsRegular.sortAscending, size: 18),
                 label: Text(
                   widget.sortLabelOverride ?? _sortLabel(context, widget.sort),
                   overflow: TextOverflow.ellipsis,
@@ -107,8 +108,8 @@ class _FilterBarState extends State<FilterBar> {
                 },
                 icon: Icon(
                   widget.isGrouped
-                      ? Icons.grid_view
-                      : Icons.view_agenda_outlined,
+                      ? PhosphorIconsRegular.squaresFour
+                      : PhosphorIconsRegular.listDashes,
                 ),
               ),
             ],

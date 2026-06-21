@@ -72,6 +72,32 @@ class AppLocalizationsMl extends AppLocalizations {
   String get close => 'അടയ്ക്കുക';
 
   @override
+  String get help => 'സഹായം';
+
+  @override
+  String get helpListTitle => 'നിങ്ങളുടെ ലിസ്റ്റ് ഉപയോഗിക്കുന്നു';
+
+  @override
+  String get helpListAddItems =>
+      'ചുവടെയുള്ള + ബട്ടൺ ഉപയോഗിച്ച് ഇനങ്ങൾ ചേർക്കുക അല്ലെങ്കിൽ ഉൽപ്പന്നങ്ങൾ ബ്രൗസ് ചെയ്യാൻ തിരയൽ ഉപയോഗിക്കുക';
+
+  @override
+  String get helpListAi =>
+      'നിങ്ങളുടെ ലിസ്റ്റ് സൃഷ്‌ടിക്കാനോ ഓർഗനൈസുചെയ്യാനോ പൂർത്തിയാക്കാനോ AI അസിസ്റ്റൻ്റിനോട് ആവശ്യപ്പെടുക - സ്പാർക്ക്ൾ ഐക്കണിൽ ടാപ്പ് ചെയ്യുക';
+
+  @override
+  String get helpListShoppingMode =>
+      'ഷോപ്പിംഗ് മോഡ് വാങ്ങിയ ഇനങ്ങൾ മറയ്‌ക്കുന്നതിനാൽ നിങ്ങൾക്ക് ശേഷിക്കുന്നവയിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കാനാകും';
+
+  @override
+  String get helpListOrganize =>
+      'പുനഃക്രമീകരിക്കാൻ ഇനങ്ങൾ വലിച്ചിടുക, വാങ്ങിയതായി അടയാളപ്പെടുത്താൻ സ്വൈപ്പ് ചെയ്യുക, അല്ലെങ്കിൽ ഫിൽട്ടറുകളും സോർട്ടിംഗും ഉപയോഗിക്കുക';
+
+  @override
+  String get helpListShare =>
+      'നിങ്ങളുടെ ലിസ്റ്റ് കുടുംബവുമായി പങ്കിടുക അല്ലെങ്കിൽ PDF, Excel അല്ലെങ്കിൽ പ്ലെയിൻ ടെക്‌സ്‌റ്റ് ആയി കയറ്റുമതി ചെയ്യുക';
+
+  @override
   String get import => 'ഇറക്കുമതി ചെയ്യുക';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get clear => 'മായ്ക്കുക';
+
+  @override
+  String get clearPurchasedTitle => 'വാങ്ങിയ സാധനങ്ങൾ മായ്ക്കുക';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ഈ ലിസ്റ്റിൽ നിന്ന് വാങ്ങിയ എല്ലാ ഇനങ്ങളും നീക്കം ചെയ്യണോ? ഇത് പഴയപടിയാക്കാനാകില്ല.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsMl extends AppLocalizations {
   @override
   String get purchaseError =>
       'വാങ്ങൽ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorCreateList =>
+      'ലിസ്റ്റ് സൃഷ്ടിക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorShareCode =>
+      'ഷെയർ കോഡ് സൃഷ്ടിക്കുന്നതിൽ പിശക്. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorQuickAdd =>
+      'ഇനം ചേർക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorLoadList =>
+      'നിങ്ങളുടെ ലിസ്റ്റുകൾ ലോഡ് ചെയ്യാനായില്ല. ആരംഭിക്കുന്നതിന് ദയവായി ഒരു പുതിയ ലിസ്റ്റ് സൃഷ്‌ടിക്കുക.';
 
   @override
   String get restoreError =>
@@ -491,6 +540,19 @@ class AppLocalizationsMl extends AppLocalizations {
   String get noBudgetDefined => 'ബജറ്റ് സജ്ജീകരിച്ചിട്ടില്ല';
 
   @override
+  String get budgetGoalInvalidAmount => 'പൂജ്യത്തേക്കാൾ വലിയ മൂല്യം നൽകുക';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ ഭാഗികമായ വിലനിർണ്ണയ കണക്കുകൾ ഉൾപ്പെടുന്നു';
+
+  @override
+  String get budgetGoalSaved => 'ബജറ്റ് ഗോൾ രക്ഷപ്പെട്ടു';
+
+  @override
+  String get budgetGoalRemoved => 'ബജറ്റ് ലക്ഷ്യം നീക്കം ചെയ്തു';
+
+  @override
   String totalEstimated(String amount) {
     return 'ആകെ ഏകദേശം: $amount';
   }
@@ -683,6 +745,13 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get newChat => 'പുതിയ ചാറ്റ്';
+
+  @override
+  String get newChatConfirmTitle => 'പുതിയ സംഭാഷണം';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ഒരു പുതിയ സംഭാഷണം ആരംഭിക്കണോ? നിങ്ങളുടെ നിലവിലെ സംഭാഷണം നഷ്‌ടമാകും.';
 
   @override
   String get noHistory => 'ചാറ്റ് ചരിത്രമില്ല';
@@ -1248,6 +1317,15 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 സ്വാഗത ഓഫർ';
+
+  @override
+  String get paywallFreeTier => 'സൗജന്യം: 3 ലിസ്റ്റുകൾ';
+
+  @override
+  String get paywallProTier => 'പ്രോ: അൺലിമിറ്റഡ്';
+
+  @override
+  String get firstItemAddedSnackbar => 'ആദ്യ ഇനം ചേർത്തു! ഗംഭീര തുടക്കം 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2157,6 +2235,20 @@ class AppLocalizationsMl extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ഡിഫോൾട്ട് തരം';
 
   @override
+  String get mealPlannerDuplicate => 'ഡ്യൂപ്ലിക്കേറ്റ് ഭക്ഷണം';
+
+  @override
+  String get mealPlannerSelectDestinationDay =>
+      'ഇതിലേക്ക് ഡ്യൂപ്ലിക്കേറ്റ് ചെയ്യുക...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ഇപ്പോഴത്തെ ദിവസം';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'ഭക്ഷണം വിജയകരമായി ഡ്യൂപ്ലിക്കേറ്റ് ചെയ്തു!';
+
+  @override
   String get expirationDate => 'കാലഹരണപ്പെടുന്ന തീയതി';
 
   @override
@@ -2164,6 +2256,9 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get skip => 'ഒഴിവാക്കുക';
+
+  @override
+  String get onboardingSkip => 'തൽക്കാലം ഒഴിവാക്കുക';
 
   @override
   String get onboardingAiTitle => 'കിപിയുമായി ചാറ്റ് ചെയ്യുക';
@@ -3229,6 +3324,31 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'പ്രതികരണം സൃഷ്ടിക്കുന്നു...';
+
+  @override
+  String get errorUnexpected =>
+      'അപ്രതീക്ഷിതമായി എന്തോ സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get aiAssistantTooltip => 'AI അസിസ്റ്റൻ്റ് തുറക്കുക';
+
+  @override
+  String get searchItems => 'ഇനങ്ങൾ തിരയുക';
+
+  @override
+  String get onboardingHookContinue => 'ആരംഭിക്കുക';
+
+  @override
+  String get onboardingHookItem1 => 'ഗ്രിൽഡ് ചിക്കൻ';
+
+  @override
+  String get onboardingHookItem2 => 'മൊസറെല്ല ചീസ്';
+
+  @override
+  String get onboardingHookItem3 => 'ചെറി തക്കാളി';
+
+  @override
+  String get checkItemTooltip => 'ഇനം പരിശോധിക്കുക';
 }
 
 /// The translations for Malayalam, as used in India (`ml_IN`).
@@ -3299,6 +3419,32 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
   String get close => 'അടയ്ക്കുക';
 
   @override
+  String get help => 'സഹായം';
+
+  @override
+  String get helpListTitle => 'നിങ്ങളുടെ ലിസ്റ്റ് ഉപയോഗിക്കുന്നു';
+
+  @override
+  String get helpListAddItems =>
+      'ചുവടെയുള്ള + ബട്ടൺ ഉപയോഗിച്ച് ഇനങ്ങൾ ചേർക്കുക അല്ലെങ്കിൽ ഉൽപ്പന്നങ്ങൾ ബ്രൗസ് ചെയ്യാൻ തിരയൽ ഉപയോഗിക്കുക';
+
+  @override
+  String get helpListAi =>
+      'നിങ്ങളുടെ ലിസ്റ്റ് സൃഷ്‌ടിക്കാനോ ഓർഗനൈസുചെയ്യാനോ പൂർത്തിയാക്കാനോ AI അസിസ്റ്റൻ്റിനോട് ആവശ്യപ്പെടുക - സ്പാർക്ക്ൾ ഐക്കണിൽ ടാപ്പ് ചെയ്യുക';
+
+  @override
+  String get helpListShoppingMode =>
+      'ഷോപ്പിംഗ് മോഡ് വാങ്ങിയ ഇനങ്ങൾ മറയ്‌ക്കുന്നതിനാൽ നിങ്ങൾക്ക് ശേഷിക്കുന്നവയിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കാനാകും';
+
+  @override
+  String get helpListOrganize =>
+      'പുനഃക്രമീകരിക്കാൻ ഇനങ്ങൾ വലിച്ചിടുക, വാങ്ങിയതായി അടയാളപ്പെടുത്താൻ സ്വൈപ്പ് ചെയ്യുക, അല്ലെങ്കിൽ ഫിൽട്ടറുകളും സോർട്ടിംഗും ഉപയോഗിക്കുക';
+
+  @override
+  String get helpListShare =>
+      'നിങ്ങളുടെ ലിസ്റ്റ് കുടുംബവുമായി പങ്കിടുക അല്ലെങ്കിൽ PDF, Excel അല്ലെങ്കിൽ പ്ലെയിൻ ടെക്‌സ്‌റ്റ് ആയി കയറ്റുമതി ചെയ്യുക';
+
+  @override
   String get import => 'ഇറക്കുമതി ചെയ്യുക';
 
   @override
@@ -3309,6 +3455,13 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get clear => 'മായ്ക്കുക';
+
+  @override
+  String get clearPurchasedTitle => 'വാങ്ങിയ സാധനങ്ങൾ മായ്ക്കുക';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ഈ ലിസ്റ്റിൽ നിന്ന് വാങ്ങിയ എല്ലാ ഇനങ്ങളും നീക്കം ചെയ്യണോ? ഇത് പഴയപടിയാക്കാനാകില്ല.';
 
   @override
   String error(String message) {
@@ -3323,6 +3476,22 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
   @override
   String get purchaseError =>
       'വാങ്ങൽ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പിശക്. വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorCreateList =>
+      'ലിസ്റ്റ് സൃഷ്ടിക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorShareCode =>
+      'ഷെയർ കോഡ് സൃഷ്ടിക്കുന്നതിൽ പിശക്. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorQuickAdd =>
+      'ഇനം ചേർക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get errorLoadList =>
+      'നിങ്ങളുടെ ലിസ്റ്റുകൾ ലോഡ് ചെയ്യാനായില്ല. ആരംഭിക്കുന്നതിന് ദയവായി ഒരു പുതിയ ലിസ്റ്റ് സൃഷ്‌ടിക്കുക.';
 
   @override
   String get restoreError =>
@@ -3718,6 +3887,19 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
   String get noBudgetDefined => 'ബജറ്റ് സജ്ജീകരിച്ചിട്ടില്ല';
 
   @override
+  String get budgetGoalInvalidAmount => 'പൂജ്യത്തേക്കാൾ വലിയ മൂല്യം നൽകുക';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ ഭാഗികമായ വിലനിർണ്ണയ കണക്കുകൾ ഉൾപ്പെടുന്നു';
+
+  @override
+  String get budgetGoalSaved => 'ബജറ്റ് ഗോൾ രക്ഷപ്പെട്ടു';
+
+  @override
+  String get budgetGoalRemoved => 'ബജറ്റ് ലക്ഷ്യം നീക്കം ചെയ്തു';
+
+  @override
   String totalEstimated(String amount) {
     return 'ആകെ ഏകദേശം: $amount';
   }
@@ -3910,6 +4092,13 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get newChat => 'പുതിയ ചാറ്റ്';
+
+  @override
+  String get newChatConfirmTitle => 'പുതിയ സംഭാഷണം';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ഒരു പുതിയ സംഭാഷണം ആരംഭിക്കണോ? നിങ്ങളുടെ നിലവിലെ സംഭാഷണം നഷ്‌ടമാകും.';
 
   @override
   String get noHistory => 'ചാറ്റ് ചരിത്രമില്ല';
@@ -4475,6 +4664,15 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 സ്വാഗത ഓഫർ';
+
+  @override
+  String get paywallFreeTier => 'സൗജന്യം: 3 ലിസ്റ്റുകൾ';
+
+  @override
+  String get paywallProTier => 'പ്രോ: അൺലിമിറ്റഡ്';
+
+  @override
+  String get firstItemAddedSnackbar => 'ആദ്യ ഇനം ചേർത്തു! ഗംഭീര തുടക്കം 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5384,6 +5582,20 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
   String get mealPlannerDefaultTypeLabel => 'ഡിഫോൾട്ട് തരം';
 
   @override
+  String get mealPlannerDuplicate => 'ഡ്യൂപ്ലിക്കേറ്റ് ഭക്ഷണം';
+
+  @override
+  String get mealPlannerSelectDestinationDay =>
+      'ഇതിലേക്ക് ഡ്യൂപ്ലിക്കേറ്റ് ചെയ്യുക...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ഇപ്പോഴത്തെ ദിവസം';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'ഭക്ഷണം വിജയകരമായി ഡ്യൂപ്ലിക്കേറ്റ് ചെയ്തു!';
+
+  @override
   String get expirationDate => 'കാലഹരണപ്പെടുന്ന തീയതി';
 
   @override
@@ -5391,6 +5603,9 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get skip => 'ഒഴിവാക്കുക';
+
+  @override
+  String get onboardingSkip => 'തൽക്കാലം ഒഴിവാക്കുക';
 
   @override
   String get onboardingAiTitle => 'കിപിയുമായി ചാറ്റ് ചെയ്യുക';
@@ -6456,4 +6671,29 @@ class AppLocalizationsMlIn extends AppLocalizationsMl {
 
   @override
   String get aiGeneratingResponse => 'പ്രതികരണം സൃഷ്ടിക്കുന്നു...';
+
+  @override
+  String get errorUnexpected =>
+      'അപ്രതീക്ഷിതമായി എന്തോ സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.';
+
+  @override
+  String get aiAssistantTooltip => 'AI അസിസ്റ്റൻ്റ് തുറക്കുക';
+
+  @override
+  String get searchItems => 'ഇനങ്ങൾ തിരയുക';
+
+  @override
+  String get onboardingHookContinue => 'ആരംഭിക്കുക';
+
+  @override
+  String get onboardingHookItem1 => 'ഗ്രിൽഡ് ചിക്കൻ';
+
+  @override
+  String get onboardingHookItem2 => 'മൊസറെല്ല ചീസ്';
+
+  @override
+  String get onboardingHookItem3 => 'ചെറി തക്കാളി';
+
+  @override
+  String get checkItemTooltip => 'ഇനം പരിശോധിക്കുക';
 }

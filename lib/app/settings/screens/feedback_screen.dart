@@ -6,7 +6,9 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shopping_list/models/feedback_item.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class FeedbackScreen extends ConsumerStatefulWidget {
   const FeedbackScreen({super.key});
@@ -65,7 +67,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
         appBar: AppBar(
           title: Text(l10n.feedbackTitle),
           leading: IconButton(
-            icon: const Icon(Icons.close),
+            icon: const Icon(PhosphorIconsRegular.x),
             onPressed: () {
               if (!_sending) {
                 Navigator.pop(context);
@@ -84,31 +86,31 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
     final typeOptions = [
       (
         FeedbackType.bug,
-        Icons.bug_report,
+        PhosphorIconsRegular.bug,
         l10n.feedbackTypeBug,
         l10n.feedbackTypeBugHint,
       ),
       (
         FeedbackType.suggestion,
-        Icons.lightbulb_outline,
+        PhosphorIconsRegular.lightbulb,
         l10n.feedbackTypeSuggestion,
         l10n.feedbackTypeSuggestionHint,
       ),
       (
         FeedbackType.translationIssue,
-        Icons.translate,
+        PhosphorIconsRegular.translate,
         l10n.feedbackTypeTranslation,
         l10n.feedbackTypeTranslationHint,
       ),
       (
         FeedbackType.improvement,
-        Icons.star_outline,
+        PhosphorIconsRegular.star,
         l10n.feedbackTypeFeature,
         l10n.feedbackTypeFeatureHint,
       ),
       (
         FeedbackType.other,
-        Icons.more_horiz,
+        PhosphorIconsRegular.dotsThree,
         l10n.feedbackTypeOther,
         l10n.feedbackTypeOtherHint,
       ),
@@ -188,7 +190,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
                       ),
                       if (selected)
                         Icon(
-                          Icons.check_circle,
+                          PhosphorIconsRegular.checkCircle,
                           color: theme.colorScheme.primary,
                           size: 20,
                         ),
@@ -231,7 +233,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
                           color: Colors.white,
                         ),
                       )
-                      : const Icon(Icons.send_rounded),
+                      : const Icon(PhosphorIconsRegular.paperPlaneTilt),
               label: Text(_sending ? l10n.feedbackSending : l10n.feedbackSend),
             ),
           ),
@@ -248,7 +250,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.check_circle_outline,
+              PhosphorIconsRegular.checkCircle,
               size: 80,
               color: theme.colorScheme.primary,
             ),
@@ -310,13 +312,13 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
       if (mounted) {
         setState(() => _sending = false);
         final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.feedbackError(e.toString())),
-            action: SnackBarAction(
-              label: l10n.feedbackRetry,
-              onPressed: _sendFeedback,
-            ),
+        showKipiSnackBar(
+          context,
+          message: l10n.feedbackError(e.toString()),
+          type: SnackBarType.error,
+          action: SnackBarAction(
+            label: l10n.feedbackRetry,
+            onPressed: _sendFeedback,
           ),
         );
       }

@@ -72,6 +72,32 @@ class AppLocalizationsSq extends AppLocalizations {
   String get close => 'Mbyll';
 
   @override
+  String get help => 'Ndihmë';
+
+  @override
+  String get helpListTitle => 'Duke përdorur listën tuaj';
+
+  @override
+  String get helpListAddItems =>
+      'Shtoni artikuj me butonin + në fund ose përdorni kërkimin për të shfletuar produktet';
+
+  @override
+  String get helpListAi =>
+      'Kërkojini asistentit të AI të krijojë, organizojë ose plotësojë listën tuaj — thjesht trokitni lehtë mbi ikonën e shkëndijës';
+
+  @override
+  String get helpListShoppingMode =>
+      'Modaliteti i blerjeve fsheh artikujt e blerë, në mënyrë që të përqendroheni në atë që ka mbetur';
+
+  @override
+  String get helpListOrganize =>
+      'Zvarritni artikujt për t\'i renditur sërish, rrëshqitni për t\'i shënuar si të blerë ose përdorni filtra dhe renditje';
+
+  @override
+  String get helpListShare =>
+      'Ndani listën tuaj me familjen ose eksportojeni si PDF, Excel ose tekst i thjeshtë';
+
+  @override
   String get import => 'Importo';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get clear => 'Pastro';
+
+  @override
+  String get clearPurchasedTitle => 'Pastro artikujt e blerë';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Të hiqen të gjithë artikujt e blerë nga kjo listë? Kjo nuk mund të zhbëhet.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get purchaseError => 'Gabim në përpunimin e blerjes. Provo përsëri.';
+
+  @override
+  String get errorCreateList =>
+      'Lista nuk mund të krijohej. Kontrollo lidhjen tënde dhe provo sërish.';
+
+  @override
+  String get errorShareCode =>
+      'Gabim gjatë krijimit të kodit të ndarjes. Kontrollo lidhjen tënde dhe provo sërish.';
+
+  @override
+  String get errorQuickAdd =>
+      'Artikulli nuk mund të shtohej. Kontrollo lidhjen tënde dhe provo sërish.';
+
+  @override
+  String get errorLoadList =>
+      'Listat tuaja nuk mund të ngarkoheshin. Ju lutemi krijoni një listë të re për të filluar.';
 
   @override
   String get restoreError => 'Gabim në restaurimin e blerjeve. Provo përsëri.';
@@ -486,6 +535,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get noBudgetDefined => 'Asnjë buxhet i caktuar';
 
   @override
+  String get budgetGoalInvalidAmount => 'Fut një vlerë më të madhe se zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Përfshin vlerësime të pjesshme të çmimeve';
+
+  @override
+  String get budgetGoalSaved => 'Objektivi buxhetor u ruajt';
+
+  @override
+  String get budgetGoalRemoved => 'Objektivi buxhetor u hoq';
+
+  @override
   String totalEstimated(String amount) {
     return 'Totali i vlerësuar: $amount';
   }
@@ -680,6 +742,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get newChat => 'Bisedë e re';
 
   @override
+  String get newChatConfirmTitle => 'Bisedë e re';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Filloni një bisedë të re? Biseda juaj aktuale do të humbasë.';
+
+  @override
   String get noHistory => 'Nuk ka histori bisede';
 
   @override
@@ -789,28 +858,28 @@ class AppLocalizationsSq extends AppLocalizations {
   String get undo => 'Çbëj';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Filloi biseda e re';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Shto në listë';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Çfarë mund të bëj?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Listat e blerjeve';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Buxheti dhe Çmimet';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Receta & Menu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organizimi';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Kontrolloni artikujt ndërsa blini';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1243,6 +1312,16 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Ofertë e mirëseardhjes';
+
+  @override
+  String get paywallFreeTier => 'Falas: 3 lista';
+
+  @override
+  String get paywallProTier => 'Pro: e pakufizuar';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Artikulli i parë u shtua! Fillim i mbarë 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1980,28 +2059,28 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'muaji: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Java: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Sot: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Hiq objektivin';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Buxheti i planifikuesit të vakteve';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Synimi i shpenzimeve mujore për planifikimin e vakteve';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2143,6 +2222,18 @@ class AppLocalizationsSq extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Lloji i parazgjedhur';
 
   @override
+  String get mealPlannerDuplicate => 'Vakt i dyfishtë';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dubliko te...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Dita aktuale';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Vakti u dyfishua me sukses!';
+
+  @override
   String get expirationDate => 'Data e skadencës';
 
   @override
@@ -2150,6 +2241,9 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get skip => 'Kapërce';
+
+  @override
+  String get onboardingSkip => 'Kalo për momentin';
 
   @override
   String get onboardingAiTitle => 'Bisedoni me Kipin';
@@ -3192,4 +3286,29 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Po gjeneron përgjigje…';
+
+  @override
+  String get errorUnexpected =>
+      'Ndodhi diçka e papritur. Ju lutemi provoni përsëri.';
+
+  @override
+  String get aiAssistantTooltip => 'Hap asistentin e AI';
+
+  @override
+  String get searchItems => 'Kërko artikuj';
+
+  @override
+  String get onboardingHookContinue => 'Filloni';
+
+  @override
+  String get onboardingHookItem1 => 'Pulë e pjekur në skarë';
+
+  @override
+  String get onboardingHookItem2 => 'Djathë mocarela';
+
+  @override
+  String get onboardingHookItem3 => 'Domate qershi';
+
+  @override
+  String get checkItemTooltip => 'Kontrolloni artikullin';
 }

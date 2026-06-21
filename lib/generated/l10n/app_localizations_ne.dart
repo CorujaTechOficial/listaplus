@@ -72,6 +72,32 @@ class AppLocalizationsNe extends AppLocalizations {
   String get close => 'बन्द गर्नुहोस्';
 
   @override
+  String get help => 'मद्दत गर्नुहोस्';
+
+  @override
+  String get helpListTitle => 'तपाईंको सूची प्रयोग गर्दै';
+
+  @override
+  String get helpListAddItems =>
+      'तलको + बटनको साथ वस्तुहरू थप्नुहोस्, वा उत्पादनहरू ब्राउज गर्न खोजी प्रयोग गर्नुहोस्';
+
+  @override
+  String get helpListAi =>
+      'AI सहायकलाई तपाईंको सूची सिर्जना गर्न, व्यवस्थित गर्न वा पूरा गर्न सोध्नुहोस् — केवल स्पार्कल आइकनमा ट्याप गर्नुहोस्';
+
+  @override
+  String get helpListShoppingMode =>
+      'किनमेल मोडले खरिद गरिएका वस्तुहरू लुकाउँछ जसले गर्दा तपाईंले बाँकी रहेका कुराहरूमा ध्यान केन्द्रित गर्न सक्नुहुन्छ';
+
+  @override
+  String get helpListOrganize =>
+      'पुन: क्रमबद्ध गर्न वस्तुहरू तान्नुहोस्, खरिद गरिएको रूपमा चिन्ह लगाउन स्वाइप गर्नुहोस्, वा फिल्टरहरू प्रयोग गर्नुहोस् र क्रमबद्ध गर्नुहोस्';
+
+  @override
+  String get helpListShare =>
+      'आफ्नो सूचीलाई परिवारसँग साझेदारी गर्नुहोस् वा PDF, Excel, वा सादा पाठको रूपमा निर्यात गर्नुहोस्';
+
+  @override
   String get import => 'आयात गर्नुहोस्';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get clear => 'खाली गर्नुहोस्';
+
+  @override
+  String get clearPurchasedTitle => 'खरिद गरिएका वस्तुहरू खाली गर्नुहोस्';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'यो सूचीबाट सबै खरिद गरिएका वस्तुहरू हटाउने हो? यसलाई अन्डू गर्न सकिँदैन।';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get purchaseError => 'खरिद प्रक्रियामा त्रुटि। पुनः प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorCreateList =>
+      'सूची बनाउन सकिएन। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorShareCode =>
+      'साझा कोड उत्पन्न गर्दा त्रुटि। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorQuickAdd =>
+      'वस्तु थप्न सकिएन। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorLoadList =>
+      'तपाईंको सूचीहरू लोड गर्न सकिएन। कृपया सुरु गर्न नयाँ सूची सिर्जना गर्नुहोस्।';
 
   @override
   String get restoreError =>
@@ -488,6 +537,20 @@ class AppLocalizationsNe extends AppLocalizations {
   String get noBudgetDefined => 'कुनै बजेट सेट गरिएको छैन';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'शून्य भन्दा ठूलो मान प्रविष्ट गर्नुहोस्';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ आंशिक मूल्य निर्धारण अनुमानहरू समावेश गर्दछ';
+
+  @override
+  String get budgetGoalSaved => 'बजेट लक्ष्य बचत भयो';
+
+  @override
+  String get budgetGoalRemoved => 'बजेट लक्ष्य हटाइयो';
+
+  @override
   String totalEstimated(String amount) {
     return 'कुल अनुमानित: $amount';
   }
@@ -681,6 +744,13 @@ class AppLocalizationsNe extends AppLocalizations {
   String get newChat => 'नयाँ च्याट';
 
   @override
+  String get newChatConfirmTitle => 'नयाँ कुराकानी';
+
+  @override
+  String get newChatConfirmMessage =>
+      'नयाँ कुराकानी सुरु गर्ने हो? तपाईंको हालको कुराकानी हराउनेछ।';
+
+  @override
   String get noHistory => 'कुनै च्याट इतिहास छैन';
 
   @override
@@ -790,28 +860,29 @@ class AppLocalizationsNe extends AppLocalizations {
   String get undo => 'पूर्ववत गर्नुहोस्';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'नयाँ च्याट सुरु भयो';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'सूचीमा थप्नुहोस्';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'म के गर्न सक्छु?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'किनमेल सूची';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'बजेट र मूल्यहरू';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'रेसिपी र मेनु';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'संगठन';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription =>
+      'तपाईंले किनमेल गर्दा वस्तुहरू जाँच गर्नुहोस्';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1241,6 +1312,15 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 स्वागत प्रस्ताव';
+
+  @override
+  String get paywallFreeTier => 'नि: शुल्क: 3 सूची';
+
+  @override
+  String get paywallProTier => 'प्रो: असीमित';
+
+  @override
+  String get firstItemAddedSnackbar => 'पहिलो वस्तु थपियो! राम्रो सुरुवात 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2141,6 +2221,18 @@ class AppLocalizationsNe extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'पूर्वनिर्धारित प्रकार';
 
   @override
+  String get mealPlannerDuplicate => 'डुप्लिकेट खाना';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'यसमा डुप्लिकेट...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'हालको दिन';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'खाना सफलतापूर्वक नक्कल गरियो!';
+
+  @override
   String get expirationDate => 'म्याद सकिने मिति';
 
   @override
@@ -2148,6 +2240,9 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get skip => 'छोड्नुहोस्';
+
+  @override
+  String get onboardingSkip => 'अहिलेको लागि छोड्नुहोस्';
 
   @override
   String get onboardingAiTitle => 'Kipi सँग कुराकानी गर्नुहोस्';
@@ -3189,6 +3284,31 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'प्रतिक्रिया उत्पन्न गर्दै...';
+
+  @override
+  String get errorUnexpected =>
+      'अप्रत्याशित कुरा भयो। कृपया पुन: प्रयास गर्नुहोस्।';
+
+  @override
+  String get aiAssistantTooltip => 'AI सहायक खोल्नुहोस्';
+
+  @override
+  String get searchItems => 'वस्तुहरू खोज्नुहोस्';
+
+  @override
+  String get onboardingHookContinue => 'सुरु गर्नुहोस्';
+
+  @override
+  String get onboardingHookItem1 => 'ग्रील्ड चिकन';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella पनीर';
+
+  @override
+  String get onboardingHookItem3 => 'चेरी टमाटर';
+
+  @override
+  String get checkItemTooltip => 'वस्तु जाँच गर्नुहोस्';
 }
 
 /// The translations for Nepali, as used in Nepal (`ne_NP`).
@@ -3259,6 +3379,32 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String get close => 'बन्द गर्नुहोस्';
 
   @override
+  String get help => 'मद्दत गर्नुहोस्';
+
+  @override
+  String get helpListTitle => 'तपाईंको सूची प्रयोग गर्दै';
+
+  @override
+  String get helpListAddItems =>
+      'तलको + बटनको साथ वस्तुहरू थप्नुहोस्, वा उत्पादनहरू ब्राउज गर्न खोजी प्रयोग गर्नुहोस्';
+
+  @override
+  String get helpListAi =>
+      'AI सहायकलाई तपाईंको सूची सिर्जना गर्न, व्यवस्थित गर्न वा पूरा गर्न सोध्नुहोस् — केवल स्पार्कल आइकनमा ट्याप गर्नुहोस्';
+
+  @override
+  String get helpListShoppingMode =>
+      'किनमेल मोडले खरिद गरिएका वस्तुहरू लुकाउँछ जसले गर्दा तपाईंले बाँकी रहेका कुराहरूमा ध्यान केन्द्रित गर्न सक्नुहुन्छ';
+
+  @override
+  String get helpListOrganize =>
+      'पुन: क्रमबद्ध गर्न वस्तुहरू तान्नुहोस्, खरिद गरिएको रूपमा चिन्ह लगाउन स्वाइप गर्नुहोस्, वा फिल्टरहरू प्रयोग गर्नुहोस् र क्रमबद्ध गर्नुहोस्';
+
+  @override
+  String get helpListShare =>
+      'आफ्नो सूचीलाई परिवारसँग साझेदारी गर्नुहोस् वा PDF, Excel, वा सादा पाठको रूपमा निर्यात गर्नुहोस्';
+
+  @override
   String get import => 'आयात गर्नुहोस्';
 
   @override
@@ -3269,6 +3415,13 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get clear => 'सफा गर्नुहोस्';
+
+  @override
+  String get clearPurchasedTitle => 'खरिद गरिएका वस्तुहरू खाली गर्नुहोस्';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'यो सूचीबाट सबै खरिद गरिएका वस्तुहरू हटाउने हो? यसलाई अन्डू गर्न सकिँदैन।';
 
   @override
   String error(String message) {
@@ -3282,6 +3435,22 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get purchaseError => 'खरिद प्रक्रियामा त्रुटि। पुनः प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorCreateList =>
+      'सूची बनाउन सकिएन। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorShareCode =>
+      'साझा कोड उत्पन्न गर्दा त्रुटि। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorQuickAdd =>
+      'वस्तु थप्न सकिएन। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।';
+
+  @override
+  String get errorLoadList =>
+      'तपाईंको सूचीहरू लोड गर्न सकिएन। कृपया सुरु गर्न नयाँ सूची सिर्जना गर्नुहोस्।';
 
   @override
   String get restoreError =>
@@ -3669,6 +3838,20 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String get noBudgetDefined => 'बजेट सेट गरिएको छैन';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'शून्य भन्दा ठूलो मान प्रविष्ट गर्नुहोस्';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ आंशिक मूल्य निर्धारण अनुमानहरू समावेश गर्दछ';
+
+  @override
+  String get budgetGoalSaved => 'बजेट लक्ष्य बचत भयो';
+
+  @override
+  String get budgetGoalRemoved => 'बजेट लक्ष्य हटाइयो';
+
+  @override
   String totalEstimated(String amount) {
     return 'कुल अनुमानित: $amount';
   }
@@ -3862,6 +4045,13 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String get newChat => 'नयाँ च्याट';
 
   @override
+  String get newChatConfirmTitle => 'नयाँ कुराकानी';
+
+  @override
+  String get newChatConfirmMessage =>
+      'नयाँ कुराकानी सुरु गर्ने हो? तपाईंको हालको कुराकानी हराउनेछ।';
+
+  @override
   String get noHistory => 'कुनै च्याट इतिहास छैन';
 
   @override
@@ -3969,6 +4159,31 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get undo => 'पूर्वावस्थामा फर्काउनुहोस्';
+
+  @override
+  String get newChatStarted => 'नयाँ च्याट सुरु भयो';
+
+  @override
+  String get quickAddToList => 'सूचीमा थप्नुहोस्';
+
+  @override
+  String get aiCapabilitiesTitle => 'म के गर्न सक्छु?';
+
+  @override
+  String get aiCapabilitiesLists => 'किनमेल सूची';
+
+  @override
+  String get aiCapabilitiesBudget => 'बजेट र मूल्यहरू';
+
+  @override
+  String get aiCapabilitiesRecipes => 'रेसिपी र मेनु';
+
+  @override
+  String get aiCapabilitiesOrganize => 'संगठन';
+
+  @override
+  String get marketModeDescription =>
+      'तपाईंले किनमेल गर्दा वस्तुहरू जाँच गर्नुहोस्';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -4398,6 +4613,15 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 स्वागत प्रस्ताव';
+
+  @override
+  String get paywallFreeTier => 'नि: शुल्क: 3 सूची';
+
+  @override
+  String get paywallProTier => 'प्रो: असीमित';
+
+  @override
+  String get firstItemAddedSnackbar => 'पहिलो वस्तु थपियो! राम्रो सुरुवात 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5292,6 +5516,18 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
   String get mealPlannerDefaultTypeLabel => 'पूर्वनिर्धारित प्रकार';
 
   @override
+  String get mealPlannerDuplicate => 'डुप्लिकेट खाना';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'यसमा डुप्लिकेट...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'हालको दिन';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'खाना सफलतापूर्वक नक्कल गरियो!';
+
+  @override
   String get expirationDate => 'म्याद सकिने मिति';
 
   @override
@@ -5299,6 +5535,9 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get skip => 'छोड्नुहोस्';
+
+  @override
+  String get onboardingSkip => 'अहिलेको लागि छोड्नुहोस्';
 
   @override
   String get onboardingAiTitle => 'Kipi सँग कुराकानी गर्नुहोस्';
@@ -6340,4 +6579,29 @@ class AppLocalizationsNeNp extends AppLocalizationsNe {
 
   @override
   String get aiGeneratingResponse => 'प्रतिक्रिया उत्पन्न गर्दै...';
+
+  @override
+  String get errorUnexpected =>
+      'अप्रत्याशित कुरा भयो। कृपया पुन: प्रयास गर्नुहोस्।';
+
+  @override
+  String get aiAssistantTooltip => 'AI सहायक खोल्नुहोस्';
+
+  @override
+  String get searchItems => 'वस्तुहरू खोज्नुहोस्';
+
+  @override
+  String get onboardingHookContinue => 'सुरु गर्नुहोस्';
+
+  @override
+  String get onboardingHookItem1 => 'ग्रील्ड चिकन';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella पनीर';
+
+  @override
+  String get onboardingHookItem3 => 'चेरी टमाटर';
+
+  @override
+  String get checkItemTooltip => 'वस्तु जाँच गर्नुहोस्';
 }

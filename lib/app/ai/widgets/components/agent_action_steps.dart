@@ -16,6 +16,7 @@ import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AgentActionSteps extends ConsumerStatefulWidget {
   const AgentActionSteps({
@@ -67,7 +68,7 @@ class _AgentActionStepsState extends ConsumerState<AgentActionSteps> {
     } else if (hasError) {
       statusText = l10n.agentActionsFailed;
       statusIcon = Icon(
-        Icons.error_outline,
+        PhosphorIconsRegular.warningCircle,
         size: 14,
         color: theme.colorScheme.error,
       );
@@ -75,7 +76,7 @@ class _AgentActionStepsState extends ConsumerState<AgentActionSteps> {
     } else if (isLocked) {
       statusText = l10n.agentActionsPremium;
       statusIcon = Icon(
-        Icons.workspace_premium,
+        PhosphorIconsRegular.crown,
         size: 14,
         color: AppSemanticColors.of(context).premium,
       );
@@ -83,7 +84,7 @@ class _AgentActionStepsState extends ConsumerState<AgentActionSteps> {
     } else {
       statusText = l10n.agentActionsCompleted(steps.length);
       statusIcon = Icon(
-        Icons.check_circle_outline,
+        PhosphorIconsRegular.checkCircle,
         size: 14,
         color: theme.colorScheme.primary,
       );
@@ -200,7 +201,7 @@ class _AgentActionStepsState extends ConsumerState<AgentActionSteps> {
                   const SizedBox(width: Spacing.xs),
                 ],
                 Icon(
-                  _isExpanded ? Icons.expand_less : Icons.expand_more,
+                  _isExpanded ? PhosphorIconsRegular.caretUp : PhosphorIconsRegular.caretDown,
                   size: 16,
                   color: theme.colorScheme.onSurfaceVariant.withAlpha(
                     (0.6 * 255).toInt(),
@@ -277,7 +278,7 @@ class _AgentActionStepsState extends ConsumerState<AgentActionSteps> {
                                     )
                                     .undoMessageActions(widget.messageId);
                               },
-                              icon: const Icon(Icons.undo, size: 14),
+                              icon: const Icon(PhosphorIconsRegular.arrowCounterClockwise, size: 14),
                               label: Text(
                                 l10n.undoChanges,
                                 style: theme.textTheme.labelSmall?.copyWith(
@@ -336,8 +337,8 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
       case AgentStepStatus.pending:
         leading = Icon(
           isPremiumTool
-              ? Icons.workspace_premium
-              : Icons.radio_button_unchecked,
+              ? PhosphorIconsRegular.crown
+              : PhosphorIconsRegular.circle,
           size: 14,
           color:
               isPremiumTool
@@ -365,21 +366,21 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
         break;
       case AgentStepStatus.success:
         leading = Icon(
-          Icons.check_circle_outline,
+          PhosphorIconsRegular.checkCircle,
           size: 14,
           color: theme.colorScheme.primary,
         );
         break;
       case AgentStepStatus.error:
         leading = Icon(
-          Icons.error_outline,
+          PhosphorIconsRegular.warningCircle,
           size: 14,
           color: theme.colorScheme.error,
         );
         break;
       case AgentStepStatus.undone:
         leading = Icon(
-          Icons.remove_circle_outline,
+          PhosphorIconsRegular.minusCircle,
           size: 14,
           color: theme.colorScheme.onSurfaceVariant.withAlpha(
             (0.5 * 255).toInt(),
@@ -388,7 +389,7 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
         break;
       case AgentStepStatus.requiresUnlock:
         leading = const Icon(
-              Icons.workspace_premium,
+              PhosphorIconsRegular.crown,
               size: 14,
               color: AppColors.premiumAmber,
             )
@@ -468,8 +469,8 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
                             const SizedBox(width: Spacing.xs),
                             Icon(
                               _isExpanded
-                                  ? Icons.expand_less
-                                  : Icons.expand_more,
+                                  ? PhosphorIconsRegular.caretUp
+                                  : PhosphorIconsRegular.caretDown,
                               size: 16,
                               color: theme.colorScheme.onSurfaceVariant
                                   .withAlpha((0.6 * 255).toInt()),
@@ -526,7 +527,7 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
       details.add(
         Row(
           children: [
-            Icon(Icons.add, size: 12, color: theme.colorScheme.primary),
+            Icon(PhosphorIconsRegular.plus, size: 12, color: theme.colorScheme.primary),
             const SizedBox(width: Spacing.xxs),
             Text(
               l10n.itemAddedToList,
@@ -558,7 +559,7 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(
-                Icons.info_outline,
+                PhosphorIconsRegular.info,
                 size: 12,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
@@ -589,7 +590,7 @@ class _AgentActionBlockState extends ConsumerState<AgentActionBlock> {
           Row(
             children: [
               Icon(
-                Icons.checklist,
+                PhosphorIconsRegular.listChecks,
                 size: 12,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
@@ -643,7 +644,7 @@ class _PremiumUnlockCard extends ConsumerWidget {
       child: Row(
         children: [
           Icon(
-            Icons.lock_outline,
+            PhosphorIconsRegular.lock,
             size: 16,
             color: AppSemanticColors.of(context).premium,
           ),

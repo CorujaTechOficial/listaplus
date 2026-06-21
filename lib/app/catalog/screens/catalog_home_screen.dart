@@ -15,6 +15,8 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CatalogHomeScreen extends ConsumerStatefulWidget {
   const CatalogHomeScreen({
@@ -80,11 +82,12 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
         );
     if (mounted) {
       final snackL10n = AppLocalizations.of(context)!;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(snackL10n.itemAddedSnack(name)),
-          duration: const Duration(seconds: 1),
-        ),
+      showKipiSnackBar(
+        context,
+        message: snackL10n.itemAddedSnack(name),
+        type: SnackBarType.success,
+        icon: PhosphorIconsRegular.check,
+        duration: const Duration(seconds: 1),
       );
     }
   }
@@ -116,11 +119,11 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
         _quantities.clear();
       });
       final snackL10n = AppLocalizations.of(context)!;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(snackL10n.itemAddedSnack(items.map((i) => i.name).join(', '))),
-          duration: const Duration(seconds: 2),
-        ),
+      showKipiSnackBar(
+        context,
+        message: snackL10n.itemAddedSnack(items.map((i) => i.name).join(', ')),
+        type: SnackBarType.success,
+        icon: PhosphorIconsRegular.check,
       );
     }
   }
@@ -229,7 +232,7 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
                           (name) => ActionChip(
                             label: Text(name),
                             onPressed: () => _addFrequent(name),
-                            avatar: const Icon(Icons.add, size: Spacing.sm),
+                            avatar: const Icon(PhosphorIconsRegular.plus, size: Spacing.sm),
                             shape: const StadiumBorder(),
                           ),
                         )
@@ -257,7 +260,7 @@ class _CatalogHomeScreenState extends ConsumerState<CatalogHomeScreen> {
                 padding: const EdgeInsets.all(Spacing.md),
                 child: FilledButton.icon(
                   onPressed: _confirmAdd,
-                  icon: const Icon(Icons.check),
+                  icon: const Icon(PhosphorIconsRegular.check),
                   label: Text(l10n.catalogAddItems(total)),
                   style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(Spacing.xxl),

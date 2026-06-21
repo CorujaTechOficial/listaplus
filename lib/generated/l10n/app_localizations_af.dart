@@ -72,6 +72,32 @@ class AppLocalizationsAf extends AppLocalizations {
   String get close => 'Maak toe';
 
   @override
+  String get help => 'Help';
+
+  @override
+  String get helpListTitle => 'Gebruik jou lys';
+
+  @override
+  String get helpListAddItems =>
+      'Voeg items by met die +-knoppie onderaan, of gebruik die soektog om produkte te blaai';
+
+  @override
+  String get helpListAi =>
+      'Vra die KI-assistent om jou lys te skep, te organiseer of te voltooi – tik net op die skitterikoon';
+
+  @override
+  String get helpListShoppingMode =>
+      'Inkopiemodus versteek gekoopte items sodat jy kan fokus op wat oor is';
+
+  @override
+  String get helpListOrganize =>
+      'Sleep items om te herrangskik, swiep om te merk as gekoop, of gebruik filters en sortering';
+
+  @override
+  String get helpListShare =>
+      'Deel jou lys met familie of voer uit as PDF, Excel of gewone teks';
+
+  @override
   String get import => 'Voer in';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get clear => 'Maak skoon';
+
+  @override
+  String get clearPurchasedTitle => 'Vee gekoopte items uit';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Verwyder alle gekoopte items van hierdie lys? Dit kan nie ongedaan gemaak word nie.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get purchaseError => 'Fout met verwerking van aankoop. Probeer weer.';
+
+  @override
+  String get errorCreateList =>
+      'Kon nie lys skep nie. Gaan jou verbinding na en probeer weer.';
+
+  @override
+  String get errorShareCode =>
+      'Kon nie deelkode genereer nie. Gaan jou verbinding na en probeer weer.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kon nie item byvoeg nie. Gaan jou verbinding na en probeer weer.';
+
+  @override
+  String get errorLoadList =>
+      'Kon nie jou lyste laai nie. Skep asseblief \'n nuwe lys om te begin.';
 
   @override
   String get restoreError => 'Fout met herstel van aankope. Probeer weer.';
@@ -487,6 +536,19 @@ class AppLocalizationsAf extends AppLocalizations {
   String get noBudgetDefined => 'Geen begroting gestel';
 
   @override
+  String get budgetGoalInvalidAmount => 'Voer \'n waarde groter as nul in';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Sluit gedeeltelike prysberamings in';
+
+  @override
+  String get budgetGoalSaved => 'Begrotingdoelwit gestoor';
+
+  @override
+  String get budgetGoalRemoved => 'Begrotingdoelwit is verwyder';
+
+  @override
   String totalEstimated(String amount) {
     return 'Totaal geraam: $amount';
   }
@@ -679,6 +741,13 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get newChat => 'Nuwe Chat';
+
+  @override
+  String get newChatConfirmTitle => 'Nuwe gesprek';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Begin \'n nuwe gesprek? Jou huidige gesprek sal verlore gaan.';
 
   @override
   String get noHistory => 'Geen kletsgeskiedenis nie';
@@ -1244,6 +1313,15 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Welkom aanbod';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lyste';
+
+  @override
+  String get paywallProTier => 'Pro: Onbeperk';
+
+  @override
+  String get firstItemAddedSnackbar => 'Eerste item bygevoeg! Goeie begin 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2142,6 +2220,18 @@ class AppLocalizationsAf extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Verstek tipe';
 
   @override
+  String get mealPlannerDuplicate => 'Duplikaat ete';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliseer na...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Huidige dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Ete suksesvol gedupliseer!';
+
+  @override
   String get expirationDate => 'Vervaldatum';
 
   @override
@@ -2149,6 +2239,9 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get skip => 'Slaan oor';
+
+  @override
+  String get onboardingSkip => 'Slaan vir eers oor';
 
   @override
   String get onboardingAiTitle => 'Gesels met Kipi';
@@ -3181,4 +3274,29 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Genereer tans reaksie …';
+
+  @override
+  String get errorUnexpected =>
+      'Iets onverwags het gebeur. Probeer asseblief weer.';
+
+  @override
+  String get aiAssistantTooltip => 'Maak AI-assistent oop';
+
+  @override
+  String get searchItems => 'Soek items';
+
+  @override
+  String get onboardingHookContinue => 'Begin';
+
+  @override
+  String get onboardingHookItem1 => 'Geroosterde hoender';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella kaas';
+
+  @override
+  String get onboardingHookItem3 => 'Kersie tamaties';
+
+  @override
+  String get checkItemTooltip => 'Kontroleer item';
 }

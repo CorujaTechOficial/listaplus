@@ -72,6 +72,32 @@ class AppLocalizationsHe extends AppLocalizations {
   String get close => 'סגירה';
 
   @override
+  String get help => 'עֶזרָה';
+
+  @override
+  String get helpListTitle => 'משתמש ברשימה שלך';
+
+  @override
+  String get helpListAddItems =>
+      'הוסף פריטים עם כפתור + בתחתית, או השתמש בחיפוש כדי לעיין במוצרים';
+
+  @override
+  String get helpListAi =>
+      'בקש מעוזרת הבינה המלאכותית ליצור, לארגן או להשלים את הרשימה שלך - פשוט הקש על הסמל הנוצץ';
+
+  @override
+  String get helpListShoppingMode =>
+      'מצב קניות מסתיר פריטים שנרכשו כדי שתוכל להתמקד במה שנשאר';
+
+  @override
+  String get helpListOrganize =>
+      'גרור פריטים לסדר מחדש, החלק כדי לסמן כנקנו, או השתמש במסננים ובמיון';
+
+  @override
+  String get helpListShare =>
+      'שתף את הרשימה שלך עם המשפחה או ייצא כ-PDF, Excel או טקסט רגיל';
+
+  @override
   String get import => 'ייבוא';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get clear => 'ניקוי';
+
+  @override
+  String get clearPurchasedTitle => 'נקה פריטים שנרכשו';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'להסיר את כל הפריטים שנרכשו מרשימה זו? זה לא ניתן לביטול.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get purchaseError => 'שגיאה בעיבוד הרכישה. נסה שוב.';
+
+  @override
+  String get errorCreateList =>
+      'לא ניתן ליצור רשימה. בדוק את החיבור שלך ונסה שוב.';
+
+  @override
+  String get errorShareCode =>
+      'שגיאה ביצירת קוד שיתוף. בדוק את החיבור שלך ונסה שוב.';
+
+  @override
+  String get errorQuickAdd =>
+      'לא ניתן להוסיף פריט. בדוק את החיבור שלך ונסה שוב.';
+
+  @override
+  String get errorLoadList =>
+      'לא ניתן היה לטעון את הרשימות שלך. אנא צור רשימה חדשה כדי להתחיל.';
 
   @override
   String get restoreError => 'שגיאה בשחזור רכישות. נסה שוב.';
@@ -486,6 +535,18 @@ class AppLocalizationsHe extends AppLocalizations {
   String get noBudgetDefined => 'לא הוגדר תקציב';
 
   @override
+  String get budgetGoalInvalidAmount => 'הזן ערך גדול מאפס';
+
+  @override
+  String get budgetPartialEstimateHint => '~ כולל הערכות תמחור חלקיות';
+
+  @override
+  String get budgetGoalSaved => 'יעד התקציב נשמר';
+
+  @override
+  String get budgetGoalRemoved => 'יעד התקציב הוסר';
+
+  @override
   String totalEstimated(String amount) {
     return 'סה\"כ מוערך: $amount';
   }
@@ -678,6 +739,13 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get newChat => 'צ\'אט חדש';
+
+  @override
+  String get newChatConfirmTitle => 'שיחה חדשה';
+
+  @override
+  String get newChatConfirmMessage =>
+      'להתחיל שיחה חדשה? השיחה הנוכחית שלך תאבד.';
 
   @override
   String get noHistory => 'אין היסטוריית צ\'אט';
@@ -1220,6 +1288,15 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 הצעת קבלת פנים';
+
+  @override
+  String get paywallFreeTier => 'חינם: 3 רשימות';
+
+  @override
+  String get paywallProTier => 'יתרונות: ללא הגבלה';
+
+  @override
+  String get firstItemAddedSnackbar => 'פריט ראשון נוסף! התחלה מעולה 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2110,6 +2187,18 @@ class AppLocalizationsHe extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'סוג ברירת מחדל';
 
   @override
+  String get mealPlannerDuplicate => 'ארוחה כפולה';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'שכפל ל...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'יום נוכחי';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'הארוחה שוכפלה בהצלחה!';
+
+  @override
   String get expirationDate => 'תַאֲרִיך תְפוּגָה';
 
   @override
@@ -2117,6 +2206,9 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get skip => 'לְדַלֵג';
+
+  @override
+  String get onboardingSkip => 'דלג לעת עתה';
 
   @override
   String get onboardingAiTitle => 'צ\'אט עם Kipi';
@@ -3132,6 +3224,30 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'מייצר תגובה...';
+
+  @override
+  String get errorUnexpected => 'משהו לא צפוי קרה. אנא נסה שוב.';
+
+  @override
+  String get aiAssistantTooltip => 'פתח את עוזר AI';
+
+  @override
+  String get searchItems => 'חפש פריטים';
+
+  @override
+  String get onboardingHookContinue => 'התחל';
+
+  @override
+  String get onboardingHookItem1 => 'עוף בגריל';
+
+  @override
+  String get onboardingHookItem2 => 'גבינת מוצרלה';
+
+  @override
+  String get onboardingHookItem3 => 'עגבניות שרי';
+
+  @override
+  String get checkItemTooltip => 'בדוק פריט';
 }
 
 /// The translations for Hebrew, as used in Israel (`he_IL`).
@@ -3202,6 +3318,32 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
   String get close => 'סגירה';
 
   @override
+  String get help => 'עֶזרָה';
+
+  @override
+  String get helpListTitle => 'משתמש ברשימה שלך';
+
+  @override
+  String get helpListAddItems =>
+      'הוסף פריטים עם כפתור + בתחתית, או השתמש בחיפוש כדי לעיין במוצרים';
+
+  @override
+  String get helpListAi =>
+      'בקש מעוזרת הבינה המלאכותית ליצור, לארגן או להשלים את הרשימה שלך - פשוט הקש על הסמל הנוצץ';
+
+  @override
+  String get helpListShoppingMode =>
+      'מצב קניות מסתיר פריטים שנרכשו כדי שתוכל להתמקד במה שנשאר';
+
+  @override
+  String get helpListOrganize =>
+      'גרור פריטים לסדר מחדש, החלק כדי לסמן כנקנו, או השתמש במסננים ובמיון';
+
+  @override
+  String get helpListShare =>
+      'שתף את הרשימה שלך עם המשפחה או ייצא כ-PDF, Excel או טקסט רגיל';
+
+  @override
   String get import => 'ייבוא';
 
   @override
@@ -3212,6 +3354,13 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get clear => 'ניקוי';
+
+  @override
+  String get clearPurchasedTitle => 'נקה פריטים שנרכשו';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'להסיר את כל הפריטים שנרכשו מרשימה זו? זה לא ניתן לביטול.';
 
   @override
   String error(String message) {
@@ -3225,6 +3374,22 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get purchaseError => 'שגיאה בעיבוד הרכישה. נסה שוב.';
+
+  @override
+  String get errorCreateList =>
+      'לא ניתן ליצור רשימה. בדוק את החיבור שלך ונסה שוב.';
+
+  @override
+  String get errorShareCode =>
+      'שגיאה ביצירת קוד שיתוף. בדוק את החיבור שלך ונסה שוב.';
+
+  @override
+  String get errorQuickAdd =>
+      'לא ניתן להוסיף פריט. בדוק את החיבור שלך ונסה שוב.';
+
+  @override
+  String get errorLoadList =>
+      'לא ניתן היה לטעון את הרשימות שלך. אנא צור רשימה חדשה כדי להתחיל.';
 
   @override
   String get restoreError => 'שגיאה בשחזור רכישות. נסה שוב.';
@@ -3616,6 +3781,18 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
   String get noBudgetDefined => 'לא הוגדר תקציב';
 
   @override
+  String get budgetGoalInvalidAmount => 'הזן ערך גדול מאפס';
+
+  @override
+  String get budgetPartialEstimateHint => '~ כולל הערכות תמחור חלקיות';
+
+  @override
+  String get budgetGoalSaved => 'יעד התקציב נשמר';
+
+  @override
+  String get budgetGoalRemoved => 'יעד התקציב הוסר';
+
+  @override
   String totalEstimated(String amount) {
     return 'סה\"כ מוערך: $amount';
   }
@@ -3808,6 +3985,13 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get newChat => 'צ\'אט חדש';
+
+  @override
+  String get newChatConfirmTitle => 'שיחה חדשה';
+
+  @override
+  String get newChatConfirmMessage =>
+      'להתחיל שיחה חדשה? השיחה הנוכחית שלך תאבד.';
 
   @override
   String get noHistory => 'אין היסטוריית צ\'אט';
@@ -4350,6 +4534,15 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 הצעת קבלת פנים';
+
+  @override
+  String get paywallFreeTier => 'חינם: 3 רשימות';
+
+  @override
+  String get paywallProTier => 'יתרונות: ללא הגבלה';
+
+  @override
+  String get firstItemAddedSnackbar => 'פריט ראשון נוסף! התחלה מעולה 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5240,6 +5433,18 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
   String get mealPlannerDefaultTypeLabel => 'סוג ברירת מחדל';
 
   @override
+  String get mealPlannerDuplicate => 'ארוחה כפולה';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'שכפל ל...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'יום נוכחי';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'הארוחה שוכפלה בהצלחה!';
+
+  @override
   String get expirationDate => 'תַאֲרִיך תְפוּגָה';
 
   @override
@@ -5247,6 +5452,9 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get skip => 'לְדַלֵג';
+
+  @override
+  String get onboardingSkip => 'דלג לעת עתה';
 
   @override
   String get onboardingAiTitle => 'צ\'אט עם Kipi';
@@ -6262,4 +6470,28 @@ class AppLocalizationsHeIl extends AppLocalizationsHe {
 
   @override
   String get aiGeneratingResponse => 'מייצר תגובה...';
+
+  @override
+  String get errorUnexpected => 'משהו לא צפוי קרה. אנא נסה שוב.';
+
+  @override
+  String get aiAssistantTooltip => 'פתח את עוזר AI';
+
+  @override
+  String get searchItems => 'חפש פריטים';
+
+  @override
+  String get onboardingHookContinue => 'התחל';
+
+  @override
+  String get onboardingHookItem1 => 'עוף בגריל';
+
+  @override
+  String get onboardingHookItem2 => 'גבינת מוצרלה';
+
+  @override
+  String get onboardingHookItem3 => 'עגבניות שרי';
+
+  @override
+  String get checkItemTooltip => 'בדוק פריט';
 }

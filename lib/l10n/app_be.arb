@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -497,6 +542,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -838,8 +889,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -975,6 +1038,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1378,6 +1444,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1499,6 +1568,7 @@
   "aiAssistantGeneral": "Генеральны памочнік",
   "aiAssistantHistory": "Памочнік гісторыі",
   "aiAssistantTitle": "Памочнік AI",
+  "aiAssistantTooltip": "Адкрыйце памочнік AI",
   "aiCapabilitiesBudget": "Бюджэт і цэны",
   "aiCapabilitiesLists": "Спісы пакупак",
   "aiCapabilitiesOrganize": "Арганізацыя",
@@ -1585,7 +1655,11 @@
   "budgetAppBar": "Месяцовы Бюджэт",
   "budgetDashboardTitle": "Панэль кіравання",
   "budgetEditTitle": "Месяцовы Бюджэт",
+  "budgetGoalInvalidAmount": "Увядзіце значэнне, большае за нуль",
+  "budgetGoalRemoved": "Мэта бюджэту выдалена",
+  "budgetGoalSaved": "Мэта бюджэту захавана",
   "budgetLists": "Спісы",
+  "budgetPartialEstimateHint": "~ Уключае частковыя ацэнкі коштаў",
   "budgetPremiumLocked": "Глабальны месяцовы бюджэт - гэта прэміум",
   "budgetSubtitle": "Адсочвайце свае месяцовыя выдаткі",
   "budgetUpgradePrompt": "Абнавіце, каб разблакаваць",
@@ -1653,6 +1727,7 @@
   "chatHistoryOfflineTitle": "Вы па-за сеткай",
   "chatSubtitle": "Пытайцеся пра прапановы тавараў, рэцэпты або парады па эканоміі.",
   "chatSubtitleShort": "Пытайцеся пра цэны, рэцэпты, арганізацыю...",
+  "checkItemTooltip": "Праверыць пункт",
   "chooseCurrency": "Выберыце Валюта",
   "chooseIcon": "Выберыце значок",
   "chooseImageSource": "Выберыце крыніцу выявы",
@@ -1664,6 +1739,8 @@
   "clearHistoryConfirm": "Ачысціць усе паведамленні ў гэтай сесіі?",
   "clearList": "Ачысціць спіс",
   "clearPurchased": "Ачысціць набытае",
+  "clearPurchasedConfirmMessage": "Выдаліць усе набытыя тавары з гэтага спісу? Гэта нельга адрабіць.",
+  "clearPurchasedTitle": "Ачысціць набытыя рэчы",
   "close": "Закрыць",
   "closeSheet": "Блізка",
   "complete": "Завяршыць",
@@ -1752,7 +1829,9 @@
   "enterCodeHint": "Увядзіце код",
   "enterUrl": "Увядзіце URL",
   "error": "Памылка: {message}",
+  "errorCreateList": "Немагчыма стварыць спіс. Праверце падключэнне і паўтарыце спробу.",
   "errorGeneric": "Памылка: {message}",
+  "errorLoadList": "Не атрымалася загрузіць вашы спісы. Каб пачаць, стварыце новы спіс.",
   "errorLoadingChat": "Ой! Нешта пайшло не так пры загрузцы чата.",
   "errorLoadingChatSubtitle": "Праверце падключэнне або паўтарыце спробу пазней.",
   "errorLoadingHistory": "Памылка загрузкі гісторыі",
@@ -1761,7 +1840,10 @@
   "errorLoadingRecipes": "Памылка загрузкі рэцэптаў",
   "errorLoadingSubscription": "Памылка загрузкі падпіскі",
   "errorOscillation": "Гэта можа адбыцца з-за ваганняў сеткі або часовай недаступнасці. Калі ласка, паспрабуйце яшчэ раз.",
+  "errorQuickAdd": "Немагчыма дадаць элемент. Праверце падключэнне і паўтарыце спробу.",
   "errorSavingProfile": "Памылка захавання профілю",
+  "errorShareCode": "Памылка генерацыі кода абагульвання. Праверце падключэнне і паўтарыце спробу.",
+  "errorUnexpected": "Здарылася нечаканае. Калі ласка, паспрабуйце яшчэ раз.",
   "estimated": "Прыблізна",
   "estimatedCost": "Ацэначны",
   "estimatedPrice": "Прыблізны кошт",
@@ -1803,6 +1885,7 @@
   "filterPurchased": "Набыта",
   "finance": "Фінансы",
   "finishShopping": "Скончыць пакупкі",
+  "firstItemAddedSnackbar": "Дададзены першы элемент! Выдатны пачатак 🛒",
   "gallery": "Галерэя",
   "generalAssistant": "Агульны Памочнік",
   "generalHelp": "Чым я магу дапамагчы з вашымі пакупкамі сёння?",
@@ -1810,6 +1893,13 @@
   "gestureHint": "Утрымлівайце, каб выбраць • Правядзіце, каб выдаліць",
   "globalAssistant": "Глабальны памочнік",
   "goodResponse": "Добры адказ",
+  "help": "Дапамога",
+  "helpListAddItems": "Дадавайце тавары з дапамогай кнопкі + унізе або выкарыстоўвайце пошук для прагляду прадуктаў",
+  "helpListAi": "Папрасіце памочніка штучнага інтэлекту стварыць, упарадкаваць або завяршыць ваш спіс — проста дакраніцеся да бліскучага значка",
+  "helpListOrganize": "Перацягніце элементы, каб змяніць парадак, правядзіце пальцам, каб пазначыць іх як набытыя, або выкарыстоўвайце фільтры і сартаванне",
+  "helpListShare": "Падзяліцеся сваім спісам з сям'ёй або экспартуйце яго ў фармаце PDF, Excel або звычайным тэкстам",
+  "helpListShoppingMode": "Рэжым пакупак хавае набытыя рэчы, каб вы маглі засяродзіцца на тым, што засталося",
+  "helpListTitle": "Выкарыстоўваючы свой спіс",
   "howCanIHelp": "Чым я магу дапамагчы?",
   "idealQty": "Ідэальная кольк",
   "idealQuantity": "Ідэальная колькасць",
@@ -1892,10 +1982,13 @@
   "mealPlannerBudgetRemoveGoal": "Выдаліць гол",
   "mealPlannerBudgetTodayCost": "Сёння: {amount}",
   "mealPlannerBudgetWeekCost": "Тыдзень: {amount}",
+  "mealPlannerCurrentDayLabel": "Бягучы дзень",
   "mealPlannerCustomTypeLabel": "Нестандартны тып",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Тып па змаўчанні",
   "mealPlannerDeleteMeal": "Выдаліць страву",
+  "mealPlannerDuplicate": "Дублікат ежы",
+  "mealPlannerDuplicateSuccess": "Харчаванне паспяхова дублявана!",
   "mealPlannerEditMeal": "Рэдагаваць страву",
   "mealPlannerEditType": "Рэдагаваць тып ежы",
   "mealPlannerError": "Памылка загрузкі плана харчавання",
@@ -1922,6 +2015,7 @@
   "mealPlannerPrepTime": "{minutes} хв",
   "mealPlannerSave": "Дадаць у план",
   "mealPlannerSearchRecipes": "Пошук рэцэптаў...",
+  "mealPlannerSelectDestinationDay": "Дубляваць у...",
   "mealPlannerSelectRecipe": "Выберыце рэцэпт",
   "mealPlannerServings": "{count,plural, one{{count} порцыя} few{{count} порцыі} many{{count} порцый} other{{count} порцыі}}",
   "mealPlannerServingsLabel": "Порцыі",
@@ -1953,6 +2047,8 @@
   "navRecipes": "Рэцэпты",
   "newCategoryDialog": "Новая катэгорыя",
   "newChat": "Новы чат",
+  "newChatConfirmMessage": "Пачаць новую размову? Ваша бягучая размова будзе страчана.",
+  "newChatConfirmTitle": "Новая размова",
   "newChatStarted": "Пачаты новы чат",
   "newListTitle": "Новы Спіс Пакупак",
   "newPantryList": "Пакупка з Кладоўкі",
@@ -2091,7 +2187,11 @@
   "onboardingGroupCouple": "Пара",
   "onboardingGroupFamily": "Сям'я",
   "onboardingGroupSolo": "Толькі я",
+  "onboardingHookContinue": "Пачніце",
   "onboardingHookHeadline": "Ніколі больш не забывайце прадуктовы тавар",
+  "onboardingHookItem1": "Курыца-грыль",
+  "onboardingHookItem2": "Сыр моцарелла",
+  "onboardingHookItem3": "Памідоры черрі",
   "onboardingListCreated": "Ваш спіс гатовы: {count} пунктаў, арганізаваных для вас.",
   "onboardingListSaveFailed": "Я падрыхтаваў элементы, але не змог захаваць спіс. Паспрабуйце яшчэ раз, каб захаваць яго ў праграме.",
   "onboardingLoadingStat1Label": "Прадметы каталагізаваны",
@@ -2138,6 +2238,7 @@
   "onboardingSetupTitle": "Персаналізуйце свой вопыт",
   "onboardingShareDesc": "Сінхранізуйце спісы з сям'ёй і сябрамі ў рэжыме рэальнага часу",
   "onboardingShareTitle": "Падзяліцеся з тымі, каго любіце",
+  "onboardingSkip": "Прапусціць пакуль",
   "onboardingSlide1Body": "Імгненна стварайце і дзяліцеся спісамі. Kipi аўтаматычна дадае прадметы ў залежнасці ад вашых звычак.",
   "onboardingSlide1Title": "Разумныя спісы пакупак",
   "onboardingSlide2Body": "Спытайце што заўгодна - стварайце спісы, знаходзіце рэцэпты, адсочвайце сваю кладоўку, плануйце свой тыдзень.",
@@ -2218,6 +2319,7 @@
   "paywallFeatureSmartAI": "Разумны штучны інтэлект",
   "paywallFeatureUnlimitedLists": "Неабмежаваныя спісы",
   "paywallFeaturesTitle": "Усё неабходнае:",
+  "paywallFreeTier": "Бясплатна: 3 спісы",
   "paywallGoalHeadlineFamily": "{name}, арганізуйце сямейны шопінг!",
   "paywallGoalHeadlineFaster": "{name}, рабі пакупкі за палову часу!",
   "paywallGoalHeadlineNeverForget": "{name}, ніколі нічога не забывай!",
@@ -2247,6 +2349,7 @@
   "paywallPricePerDay": "Толькі {price}/дзень — менш за каву",
   "paywallPricePerMonth": "Толькі {price}/месяц",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Неабмежаваны",
   "paywallPurchaseError": "Не атрымалася завяршыць куплю. Паспрабуйце яшчэ раз.",
   "paywallPurchasePending": "Ваш плацеж чакае зацвярджэння. Доступ будзе вызвалены аўтаматычна пасля пацверджання.",
   "paywallRestore": "Аднавіць",
@@ -2374,6 +2477,7 @@
   "searchConversations": "Пошук размоў",
   "searchCurrency": "Пошук валюты...",
   "searchInConversation": "Пошук у размове...",
+  "searchItems": "Пошук прадметаў",
   "searchLanguage": "Пошук мовы...",
   "searchMessages": "Шукаць паведамленні...",
   "searchRecipes": "Пошук рэцэптаў...",

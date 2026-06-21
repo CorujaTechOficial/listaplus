@@ -72,6 +72,32 @@ class AppLocalizationsId extends AppLocalizations {
   String get close => 'Tutup';
 
   @override
+  String get help => 'Membantu';
+
+  @override
+  String get helpListTitle => 'Menggunakan daftar Anda';
+
+  @override
+  String get helpListAddItems =>
+      'Tambahkan item dengan tombol + di bagian bawah, atau gunakan pencarian untuk menelusuri produk';
+
+  @override
+  String get helpListAi =>
+      'Minta asisten AI untuk membuat, mengatur, atau melengkapi daftar Anda — cukup ketuk ikon berkilau';
+
+  @override
+  String get helpListShoppingMode =>
+      'Mode Belanja menyembunyikan item yang dibeli sehingga Anda dapat fokus pada item yang tersisa';
+
+  @override
+  String get helpListOrganize =>
+      'Seret item untuk menyusun ulang, geser untuk menandai sebagai dibeli, atau gunakan filter dan pengurutan';
+
+  @override
+  String get helpListShare =>
+      'Bagikan daftar Anda dengan keluarga atau ekspor sebagai PDF, Excel, atau teks biasa';
+
+  @override
   String get import => 'Impor';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get clear => 'Bersihkan';
+
+  @override
+  String get clearPurchasedTitle => 'Hapus item yang dibeli';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Hapus semua item yang dibeli dari daftar ini? Hal ini tidak dapat dibatalkan.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get purchaseError => 'Kesalahan memproses pembelian. Coba lagi.';
+
+  @override
+  String get errorCreateList =>
+      'Tidak dapat membuat daftar. Periksa koneksi Anda dan coba lagi.';
+
+  @override
+  String get errorShareCode =>
+      'Terjadi kesalahan saat membuat kode berbagi. Periksa koneksi Anda dan coba lagi.';
+
+  @override
+  String get errorQuickAdd =>
+      'Tidak dapat menambahkan item. Periksa koneksi Anda dan coba lagi.';
+
+  @override
+  String get errorLoadList =>
+      'Tidak dapat memuat daftar Anda. Silakan buat daftar baru untuk memulai.';
 
   @override
   String get restoreError => 'Kesalahan memulihkan pembelian. Coba lagi.';
@@ -482,6 +531,19 @@ class AppLocalizationsId extends AppLocalizations {
   String get noBudgetDefined => 'Belum ada anggaran';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Masukkan nilai yang lebih besar dari nol';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Termasuk perkiraan harga parsial';
+
+  @override
+  String get budgetGoalSaved => 'Sasaran anggaran disimpan';
+
+  @override
+  String get budgetGoalRemoved => 'Sasaran anggaran dihapus';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimasi: $amount';
   }
@@ -674,6 +736,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get newChat => 'Obrolan Baru';
+
+  @override
+  String get newChatConfirmTitle => 'Percakapan baru';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Mulai percakapan baru? Percakapan Anda saat ini akan hilang.';
 
   @override
   String get noHistory => 'Tidak ada riwayat obrolan';
@@ -1233,6 +1302,16 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Penawaran selamat datang';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 daftar';
+
+  @override
+  String get paywallProTier => 'Kelebihan: Tidak terbatas';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Item pertama ditambahkan! Awal yang bagus 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2129,6 +2208,18 @@ class AppLocalizationsId extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Tipe bawaan';
 
   @override
+  String get mealPlannerDuplicate => 'Makanan duplikat';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Gandakan ke...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Hari ini';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Makanan berhasil diduplikasi!';
+
+  @override
   String get expirationDate => 'Kedaluwarsa';
 
   @override
@@ -2136,6 +2227,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get skip => 'Melewati';
+
+  @override
+  String get onboardingSkip => 'Lewati untuk saat ini';
 
   @override
   String get onboardingAiTitle => 'Ngobrol dengan Kipi';
@@ -3183,4 +3277,29 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Menghasilkan respons…';
+
+  @override
+  String get errorUnexpected =>
+      'Sesuatu yang tidak terduga terjadi. Silakan coba lagi.';
+
+  @override
+  String get aiAssistantTooltip => 'Buka asisten AI';
+
+  @override
+  String get searchItems => 'Cari item';
+
+  @override
+  String get onboardingHookContinue => 'Memulai';
+
+  @override
+  String get onboardingHookItem1 => 'Ayam panggang';
+
+  @override
+  String get onboardingHookItem2 => 'Keju mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomat ceri';
+
+  @override
+  String get checkItemTooltip => 'Periksa barang';
 }

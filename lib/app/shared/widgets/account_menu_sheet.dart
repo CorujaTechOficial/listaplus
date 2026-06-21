@@ -7,6 +7,7 @@ import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/app/settings/screens/settings_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AccountMenuSheet extends ConsumerWidget {
   const AccountMenuSheet({super.key});
@@ -31,7 +32,7 @@ class AccountMenuSheet extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            leading: const Icon(Icons.person_outline),
+            leading: const Icon(PhosphorIconsRegular.user),
             title: Text(l10n.profile),
             onTap: () {
               Navigator.pop(context);
@@ -42,7 +43,7 @@ class AccountMenuSheet extends ConsumerWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.settings_outlined),
+            leading: const Icon(PhosphorIconsRegular.gearSix),
             title: Text(l10n.settingsAppBar),
             onTap: () {
               Navigator.pop(context);
@@ -55,8 +56,8 @@ class AccountMenuSheet extends ConsumerWidget {
           ListTile(
             leading: Icon(
               isPremium
-                  ? Icons.workspace_premium
-                  : Icons.workspace_premium_outlined,
+                  ? PhosphorIconsRegular.crown
+                  : PhosphorIconsRegular.crown,
               color: isPremium ? AppColors.premiumAmber : null,
             ),
             title: Text(

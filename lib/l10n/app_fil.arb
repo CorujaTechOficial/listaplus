@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -511,6 +556,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -852,8 +903,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -989,6 +1052,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1392,6 +1458,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1513,6 +1582,7 @@
   "aiAssistantGeneral": "General Assistant",
   "aiAssistantHistory": "Kasaysayan ng Katulong",
   "aiAssistantTitle": "AI Assistant",
+  "aiAssistantTooltip": "Buksan ang AI assistant",
   "aiCapabilitiesBudget": "Badyet at Presyo",
   "aiCapabilitiesLists": "Mga Listahan ng Pamimili",
   "aiCapabilitiesOrganize": "Organisasyon",
@@ -1599,7 +1669,11 @@
   "budgetAppBar": "Buwanang Badyet",
   "budgetDashboardTitle": "Dashboard",
   "budgetEditTitle": "Buwanang Badyet",
+  "budgetGoalInvalidAmount": "Maglagay ng value na mas malaki sa zero",
+  "budgetGoalRemoved": "Inalis ang layunin sa badyet",
+  "budgetGoalSaved": "Na-save ang layunin sa badyet",
   "budgetLists": "Mga Listahan",
+  "budgetPartialEstimateHint": "~ Kasama ang mga bahagyang pagtatantya sa pagpepresyo",
   "budgetPremiumLocked": "Ang pandaigdigang buwanang badyet ay premium",
   "budgetSubtitle": "Subaybayan ang iyong buwanang paggastos",
   "budgetUpgradePrompt": "Mag-upgrade para ma-unlock",
@@ -1667,6 +1741,7 @@
   "chatHistoryOfflineTitle": "Offline ka",
   "chatSubtitle": "Humiling ng mga mungkahi sa item, recipe o tip sa pagtitipid.",
   "chatSubtitleShort": "Magtanong tungkol sa mga presyo, recipe, organisasyon...",
+  "checkItemTooltip": "Suriin ang item",
   "chooseCurrency": "Piliin ang Pera",
   "chooseIcon": "Pumili ng icon",
   "chooseImageSource": "Pumili ng pagkukunan ng larawan",
@@ -1678,6 +1753,8 @@
   "clearHistoryConfirm": "Linisin lahat ng mensahe sa session na ito?",
   "clearList": "Linisin ang listahan",
   "clearPurchased": "Linisin ang mga nabili",
+  "clearPurchasedConfirmMessage": "Alisin ang lahat ng biniling item sa listahang ito? Hindi na ito maa-undo.",
+  "clearPurchasedTitle": "I-clear ang mga biniling item",
   "close": "Isara",
   "closeSheet": "Isara",
   "complete": "Kumpletuhin",
@@ -1766,7 +1843,9 @@
   "enterCodeHint": "Ilagay ang code",
   "enterUrl": "Ilagay ang URL",
   "error": "Error: {message}",
+  "errorCreateList": "Hindi makagawa ng listahan. Suriin ang iyong koneksyon at subukang muli.",
   "errorGeneric": "Error: {message}",
+  "errorLoadList": "Hindi ma-load ang iyong mga listahan. Mangyaring lumikha ng bagong listahan upang makapagsimula.",
   "errorLoadingChat": "Oops! Nagkaproblema sa paglo-load ng chat.",
   "errorLoadingChatSubtitle": "Suriin ang iyong koneksyon o subukang muli sa ibang pagkakataon.",
   "errorLoadingHistory": "Error sa paglo-load ng history",
@@ -1775,7 +1854,10 @@
   "errorLoadingRecipes": "Error sa paglo-load ng mga recipe",
   "errorLoadingSubscription": "Error sa paglo-load ng subscription",
   "errorOscillation": "Maaaring mangyari ito dahil sa mga oscillation ng network o pansamantalang hindi available. Pakisubukang muli.",
+  "errorQuickAdd": "Hindi maidagdag ang item. Suriin ang iyong koneksyon at subukang muli.",
   "errorSavingProfile": "Error sa pag-save ng profile",
+  "errorShareCode": "Error sa pagbuo ng share code. Suriin ang iyong koneksyon at subukang muli.",
+  "errorUnexpected": "May nangyaring hindi inaasahan. Pakisubukang muli.",
   "estimated": "Tantiya",
   "estimatedCost": "Tinatantya",
   "estimatedPrice": "Tantiya sa presyo",
@@ -1817,6 +1899,7 @@
   "filterPurchased": "Nabili na",
   "finance": "Pananalapi",
   "finishShopping": "Tapusin ang Shopping",
+  "firstItemAddedSnackbar": "Idinagdag ang unang item! Magandang simula 🛒",
   "gallery": "Galerya",
   "generalAssistant": "Pangkalahatang Assistant",
   "generalHelp": "Paano ako makakatulong sa iyong pamimili ngayon?",
@@ -1824,6 +1907,13 @@
   "gestureHint": "I-hold para piliin ang • Mag-swipe para alisin",
   "globalAssistant": "Pangkalahatang katulong",
   "goodResponse": "Magandang tugon",
+  "help": "Tulong",
+  "helpListAddItems": "Magdagdag ng mga item gamit ang + button sa ibaba, o gamitin ang paghahanap upang mag-browse ng mga produkto",
+  "helpListAi": "Hilingin sa AI assistant na gumawa, ayusin, o kumpletuhin ang iyong listahan — i-tap lang ang sparkle icon",
+  "helpListOrganize": "I-drag ang mga item upang muling ayusin, mag-swipe upang markahan bilang binili, o gumamit ng mga filter at pag-uuri",
+  "helpListShare": "Ibahagi ang iyong listahan sa pamilya o i-export bilang PDF, Excel, o plain text",
+  "helpListShoppingMode": "Itinatago ng Shopping mode ang mga biniling item para makapag-focus ka sa kung ano ang natitira",
+  "helpListTitle": "Gamit ang iyong listahan",
   "howCanIHelp": "Paano ako makakatulong?",
   "idealQty": "Tamang dami",
   "idealQuantity": "Tamang dami",
@@ -1906,10 +1996,13 @@
   "mealPlannerBudgetRemoveGoal": "Alisin ang layunin",
   "mealPlannerBudgetTodayCost": "Ngayon: {amount}",
   "mealPlannerBudgetWeekCost": "Linggo: {amount}",
+  "mealPlannerCurrentDayLabel": "Kasalukuyang araw",
   "mealPlannerCustomTypeLabel": "Pasadyang uri",
   "mealPlannerDateLabel": "Petsa",
   "mealPlannerDefaultTypeLabel": "Default na uri",
   "mealPlannerDeleteMeal": "Alisin ang pagkain",
+  "mealPlannerDuplicate": "Duplicate na pagkain",
+  "mealPlannerDuplicateSuccess": "Matagumpay na nadoble ang pagkain!",
   "mealPlannerEditMeal": "I-edit ang Pagkain",
   "mealPlannerEditType": "I-edit ang uri ng pagkain",
   "mealPlannerError": "Error sa paglo-load ng meal plan",
@@ -1936,6 +2029,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Idagdag sa plano",
   "mealPlannerSearchRecipes": "Maghanap ng mga recipe...",
+  "mealPlannerSelectDestinationDay": "I-duplicate sa...",
   "mealPlannerSelectRecipe": "Pumili ng recipe",
   "mealPlannerServings": "{count,plural, one{{count} serving} other{{count} serving}}",
   "mealPlannerServingsLabel": "Mga Serving",
@@ -1967,6 +2061,8 @@
   "navRecipes": "Mga recipe",
   "newCategoryDialog": "Bagong kategorya",
   "newChat": "Bagong Chat",
+  "newChatConfirmMessage": "Magsimula ng bagong pag-uusap? Mawawala ang iyong kasalukuyang pag-uusap.",
+  "newChatConfirmTitle": "Bagong usapan",
   "newChatStarted": "Nagsimula ang bagong chat",
   "newListTitle": "Bagong Listahan ng Pamimili",
   "newPantryList": "Pamili mula sa Dispatch",
@@ -2105,7 +2201,11 @@
   "onboardingGroupCouple": "Mag-asawa",
   "onboardingGroupFamily": "Pamilya",
   "onboardingGroupSolo": "Ako lang",
+  "onboardingHookContinue": "Magsimula",
   "onboardingHookHeadline": "Huwag kailanman kalimutan muli ang isang grocery item",
+  "onboardingHookItem1": "Inihaw na manok",
+  "onboardingHookItem2": "Mozzarella cheese",
+  "onboardingHookItem3": "Mga kamatis na cherry",
   "onboardingListCreated": "Handa na ang iyong listahan: {count} item na nakaayos para sa iyo.",
   "onboardingListSaveFailed": "Inihanda ko ang mga item, ngunit hindi ko mai-save ang listahan. Subukang muli upang panatilihin ito sa app.",
   "onboardingLoadingStat1Label": "Naka-catalog ang mga item",
@@ -2152,6 +2252,7 @@
   "onboardingSetupTitle": "I-personalize ang iyong karanasan",
   "onboardingShareDesc": "I-sync ang mga listahan sa pamilya at mga kaibigan sa real time",
   "onboardingShareTitle": "Ibahagi sa mga mahal mo",
+  "onboardingSkip": "Laktawan sa ngayon",
   "onboardingSlide1Body": "Lumikha at magbahagi ng mga listahan kaagad. Ang Kipi ay awtomatikong nagdaragdag ng mga item batay sa iyong mga gawi.",
   "onboardingSlide1Title": "Mga Smart Shopping List",
   "onboardingSlide2Body": "Magtanong ng kahit ano — gumawa ng mga listahan, maghanap ng mga recipe, subaybayan ang iyong pantry, planuhin ang iyong linggo.",
@@ -2232,6 +2333,7 @@
   "paywallFeatureSmartAI": "Matalinong AI",
   "paywallFeatureUnlimitedLists": "Walang limitasyong mga Listahan",
   "paywallFeaturesTitle": "Lahat ng kailangan mo:",
+  "paywallFreeTier": "Libre: 3 listahan",
   "paywallGoalHeadlineFamily": "{name}, ayusin ang pamimili ng pamilya!",
   "paywallGoalHeadlineFaster": "{name}, mamili sa kalahating oras!",
   "paywallGoalHeadlineNeverForget": "{name}, huwag kalimutan ang isang item!",
@@ -2261,6 +2363,7 @@
   "paywallPricePerDay": "Tanging {price}/araw — mas mababa sa isang kape",
   "paywallPricePerMonth": "{price}/buwan lang",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Walang limitasyon",
   "paywallPurchaseError": "Hindi makumpleto ang pagbili. Subukan muli.",
   "paywallPurchasePending": "Ang iyong pagbabayad ay nakabinbin ang pag-apruba. Awtomatikong ilalabas ang access pagkatapos ng kumpirmasyon.",
   "paywallRestore": "Ibalik",
@@ -2388,6 +2491,7 @@
   "searchConversations": "Maghanap ng mga pag-uusap",
   "searchCurrency": "Maghanap ng pera...",
   "searchInConversation": "Maghanap sa pag-uusap...",
+  "searchItems": "Maghanap ng mga item",
   "searchLanguage": "Maghanap ng wika...",
   "searchMessages": "Maghanap ng mga mensahe...",
   "searchRecipes": "Maghanap ng mga recipe...",

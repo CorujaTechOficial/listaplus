@@ -8,6 +8,7 @@ import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import '../../../constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AddItemDialog extends ConsumerStatefulWidget {
   const AddItemDialog({super.key, required this.listId});
@@ -40,7 +41,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
     final theme = Theme.of(context);
 
     return AlertDialog(
-      icon: Icon(Icons.add_shopping_cart, color: theme.colorScheme.secondary),
+      icon: Icon(PhosphorIconsRegular.shoppingCartSimple, color: theme.colorScheme.secondary),
       title: Text(l10n.addItem),
       content: Form(
         key: _formKey,
@@ -84,7 +85,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                     focusNode: focusNode,
                     decoration: InputDecoration(
                       labelText: l10n.itemName,
-                      prefixIcon: const Icon(Icons.shopping_bag_outlined),
+                      prefixIcon: const Icon(PhosphorIconsRegular.shoppingBag),
                     ),
                     autofocus: true,
                     onFieldSubmitted: (String value) => onFieldSubmitted(),
@@ -102,7 +103,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                       controller: _quantityController,
                       decoration: InputDecoration(
                         labelText: l10n.quantityShort,
-                        prefixIcon: const Icon(Icons.numbers),
+                        prefixIcon: const Icon(PhosphorIconsRegular.hash),
                       ),
                       keyboardType: TextInputType.number,
                       validator:
@@ -118,7 +119,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                       initialValue: _selectedUnit,
                       decoration: InputDecoration(
                         labelText: l10n.unit,
-                        prefixIcon: const Icon(Icons.straighten),
+                        prefixIcon: const Icon(PhosphorIconsRegular.ruler),
                       ),
                       items:
                           Unit.values.map((u) {
@@ -137,7 +138,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                 initialValue: _selectedCategoryId,
                 decoration: InputDecoration(
                   labelText: l10n.category,
-                  prefixIcon: const Icon(Icons.category_outlined),
+                  prefixIcon: const Icon(PhosphorIconsRegular.squaresFour),
                 ),
                 items:
                     (ref.watch(categoriesProvider).value ?? []).map((cat) {
@@ -153,7 +154,7 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                 controller: _priceController,
                 decoration: InputDecoration(
                   labelText: l10n.estimatedPrice,
-                  prefixIcon: const Icon(Icons.payments_outlined),
+                  prefixIcon: const Icon(PhosphorIconsRegular.creditCard),
                 ),
                 keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,

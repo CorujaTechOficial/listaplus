@@ -72,6 +72,32 @@ class AppLocalizationsUk extends AppLocalizations {
   String get close => 'Закрити';
 
   @override
+  String get help => 'Довідка';
+
+  @override
+  String get helpListTitle => 'Використовуючи свій список';
+
+  @override
+  String get helpListAddItems =>
+      'Додайте елементи за допомогою кнопки + внизу або скористайтеся пошуком, щоб переглянути продукти';
+
+  @override
+  String get helpListAi =>
+      'Попросіть помічника зі штучним інтелектом створити, упорядкувати або завершити ваш список — просто торкніться піктограми блиску';
+
+  @override
+  String get helpListShoppingMode =>
+      'Режим покупок приховує придбані товари, щоб ви могли зосередитися на тому, що залишилося';
+
+  @override
+  String get helpListOrganize =>
+      'Перетягніть елементи, щоб змінити порядок, проведіть пальцем, щоб позначити їх як придбані, або скористайтеся фільтрами та сортуванням';
+
+  @override
+  String get helpListShare =>
+      'Поділіться своїм списком із родиною або експортуйте його як PDF, Excel або звичайний текст';
+
+  @override
   String get import => 'Імпортувати';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get clear => 'Очистити';
+
+  @override
+  String get clearPurchasedTitle => 'Очистити придбані товари';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Видалити всі придбані товари з цього списку? Цю дію не можна скасувати.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get purchaseError => 'Помилка обробки покупки. Спробуйте ще раз.';
+
+  @override
+  String get errorCreateList =>
+      'Не вдалося створити список. Перевірте підключення та повторіть спробу.';
+
+  @override
+  String get errorShareCode =>
+      'Помилка створення спільного коду. Перевірте підключення та повторіть спробу.';
+
+  @override
+  String get errorQuickAdd =>
+      'Не вдалося додати товар. Перевірте підключення та повторіть спробу.';
+
+  @override
+  String get errorLoadList =>
+      'Не вдалося завантажити ваші списки. Щоб почати, створіть новий список.';
 
   @override
   String get restoreError => 'Помилка відновлення покупок. Спробуйте ще раз.';
@@ -489,6 +538,18 @@ class AppLocalizationsUk extends AppLocalizations {
   String get noBudgetDefined => 'Бюджет не встановлено';
 
   @override
+  String get budgetGoalInvalidAmount => 'Введіть значення більше нуля';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Включає часткові оцінки цін';
+
+  @override
+  String get budgetGoalSaved => 'Цільовий бюджет збережено';
+
+  @override
+  String get budgetGoalRemoved => 'Ціль бюджету видалено';
+
+  @override
   String totalEstimated(String amount) {
     return 'Загальна оцінка: $amount';
   }
@@ -683,6 +744,13 @@ class AppLocalizationsUk extends AppLocalizations {
   String get newChat => 'Новий чат';
 
   @override
+  String get newChatConfirmTitle => 'Нова розмова';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Почати нову розмову? Ваша поточна розмова буде втрачена.';
+
+  @override
   String get noHistory => 'Немає історії чату';
 
   @override
@@ -792,28 +860,28 @@ class AppLocalizationsUk extends AppLocalizations {
   String get undo => 'Скасувати';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Розпочато новий чат';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Додати до списку';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'що я можу зробити';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Списки покупок';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Бюджет і ціни';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Рецепти та меню';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'організація';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Відмічайте товари під час покупки';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1244,6 +1312,16 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Вітальна пропозиція';
+
+  @override
+  String get paywallFreeTier => 'Безкоштовно: 3 списки';
+
+  @override
+  String get paywallProTier => 'Pro: Необмежений';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Перший доданий товар! Чудовий початок 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1983,28 +2061,28 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Місяць: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Тиждень: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Сьогодні: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Видалити гол';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Бюджет планувальника їжі';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Цільові місячні витрати на планування харчування';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2145,6 +2223,18 @@ class AppLocalizationsUk extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Тип за замовчуванням';
 
   @override
+  String get mealPlannerDuplicate => 'Повторна їжа';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Дублювати в...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Поточний день';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Харчування успішно дубльоване!';
+
+  @override
   String get expirationDate => 'Термін придатності';
 
   @override
@@ -2152,6 +2242,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get skip => 'Пропустити';
+
+  @override
+  String get onboardingSkip => 'Пропустити поки що';
 
   @override
   String get onboardingAiTitle => 'Побалакати з Кіпі';
@@ -3191,4 +3284,28 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Створення відповіді…';
+
+  @override
+  String get errorUnexpected => 'Сталося щось несподіване. Спробуйте ще раз.';
+
+  @override
+  String get aiAssistantTooltip => 'Відкрийте помічник AI';
+
+  @override
+  String get searchItems => 'Пошук елементів';
+
+  @override
+  String get onboardingHookContinue => 'Почніть роботу';
+
+  @override
+  String get onboardingHookItem1 => 'Курка гриль';
+
+  @override
+  String get onboardingHookItem2 => 'Сир моцарелла';
+
+  @override
+  String get onboardingHookItem3 => 'Помідори черрі';
+
+  @override
+  String get checkItemTooltip => 'Перевірте пункт';
 }

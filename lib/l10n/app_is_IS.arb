@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -313,12 +325,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -332,8 +350,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -347,6 +374,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -535,6 +580,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -876,8 +927,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1013,6 +1076,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1416,6 +1482,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1537,6 +1606,7 @@
   "aiAssistantGeneral": "Almennur aðstoðarmaður",
   "aiAssistantHistory": "Saga aðstoðarmanns",
   "aiAssistantTitle": "AI aðstoðarmaður",
+  "aiAssistantTooltip": "Opnaðu AI aðstoðarmann",
   "aiCapabilitiesBudget": "Fjárhagsáætlun og verð",
   "aiCapabilitiesLists": "Innkaupalistar",
   "aiCapabilitiesOrganize": "Skipulag",
@@ -1623,7 +1693,11 @@
   "budgetAppBar": "Mánaðarleg fjárhagsáætlun",
   "budgetDashboardTitle": "Mælaborð",
   "budgetEditTitle": "Mánaðarleg fjárhagsáætlun",
+  "budgetGoalInvalidAmount": "Sláðu inn gildi sem er stærra en núll",
+  "budgetGoalRemoved": "Fjárhagsmarkmið fjarlægt",
+  "budgetGoalSaved": "Fjárhagsmarkmið vistað",
   "budgetLists": "Listar",
+  "budgetPartialEstimateHint": "~ Inniheldur verðáætlanir að hluta",
   "budgetPremiumLocked": "Alheims mánaðarleg fjárhagsáætlun er premium",
   "budgetSubtitle": "Fylgdu mánaðarlegum útgjöldum þínum",
   "budgetUpgradePrompt": "Uppfærðu til að opna",
@@ -1691,6 +1765,7 @@
   "chatHistoryOfflineTitle": "Þú ert ekki tengdur",
   "chatSubtitle": "Spurðu um vörutillögur, uppskriftir eða sparnaðarábendingar.",
   "chatSubtitleShort": "Spyrðu um verð, uppskriftir, skipulag...",
+  "checkItemTooltip": "Athugaðu atriði",
   "chooseCurrency": "Veldu Gjaldmiðill",
   "chooseIcon": "Veldu táknmynd",
   "chooseImageSource": "Veldu mynduppsprettu",
@@ -1702,6 +1777,8 @@
   "clearHistoryConfirm": "Hreinsa öll skilaboð í þessum samtalsglugga?",
   "clearList": "Hreinsa lista",
   "clearPurchased": "Hreinsa keypt",
+  "clearPurchasedConfirmMessage": "Fjarlægja allar keyptar vörur af þessum lista? Þetta er ekki hægt að afturkalla.",
+  "clearPurchasedTitle": "Hreinsaðu keypta hluti",
   "close": "Loka",
   "closeSheet": "Loka",
   "complete": "Ljúka",
@@ -1790,7 +1867,9 @@
   "enterCodeHint": "Sláðu inn kóðann",
   "enterUrl": "Sláðu inn vefslóð",
   "error": "Villa: {message}",
+  "errorCreateList": "Gat ekki búið til lista. Athugaðu tenginguna þína og reyndu aftur.",
   "errorGeneric": "Villa: {message}",
+  "errorLoadList": "Gat ekki hlaðið listana þína. Vinsamlegast búðu til nýjan lista til að byrja.",
   "errorLoadingChat": "Úps! Eitthvað fór úrskeiðis við að hlaða spjallinu.",
   "errorLoadingChatSubtitle": "Athugaðu tenginguna þína eða reyndu aftur síðar.",
   "errorLoadingHistory": "Villa við að hlaða feril",
@@ -1799,7 +1878,10 @@
   "errorLoadingRecipes": "Villa við að hlaða uppskriftum",
   "errorLoadingSubscription": "Villa við að hlaða áskrift",
   "errorOscillation": "Þetta getur komið fram vegna netsveiflna eða tímabundins óaðgengis. Vinsamlegast reyndu aftur.",
+  "errorQuickAdd": "Gat ekki bætt við atriði. Athugaðu tenginguna þína og reyndu aftur.",
   "errorSavingProfile": "Villa við að vista prófíl",
+  "errorShareCode": "Villa við að búa til deilingarkóða. Athugaðu tenginguna þína og reyndu aftur.",
+  "errorUnexpected": "Eitthvað óvænt gerðist. Vinsamlegast reyndu aftur.",
   "estimated": "Áætlað",
   "estimatedCost": "Áætlað",
   "estimatedPrice": "Áætlað verð",
@@ -1841,6 +1923,7 @@
   "filterPurchased": "Keypt",
   "finance": "Fjármál",
   "finishShopping": "Ljúktu við að versla",
+  "firstItemAddedSnackbar": "Fyrsta atriði bætt við! Frábær byrjun 🛒",
   "gallery": "Galéria",
   "generalAssistant": "Almenn aðstoð",
   "generalHelp": "Hvernig get ég aðstoðað þig við innkaupin í dag?",
@@ -1848,6 +1931,13 @@
   "gestureHint": "Haltu inni til að velja • Strjúktu til að fjarlægja",
   "globalAssistant": "Alheimsaðstoð",
   "goodResponse": "Góð viðbrögð",
+  "help": "Hjálp",
+  "helpListAddItems": "Bættu við hlutum með + takkanum neðst eða notaðu leitina til að skoða vörur",
+  "helpListAi": "Biddu AI aðstoðarmanninn um að búa til, skipuleggja eða klára listann þinn - ýttu bara á glittatáknið",
+  "helpListOrganize": "Dragðu hluti til að endurraða, strjúktu til að merkja sem keypt eða notaðu síur og flokkun",
+  "helpListShare": "Deildu listanum þínum með fjölskyldunni eða fluttu út sem PDF, Excel eða venjulegur texti",
+  "helpListShoppingMode": "Innkaupastilling felur keypta hluti svo þú getir einbeitt þér að því sem eftir er",
+  "helpListTitle": "Að nota listann þinn",
   "howCanIHelp": "Hvernig get ég hjálpað?",
   "idealQty": "Ákjósanlegt magn",
   "idealQuantity": "Ákjósanlegt magn",
@@ -1930,10 +2020,13 @@
   "mealPlannerBudgetRemoveGoal": "Fjarlægðu markið",
   "mealPlannerBudgetTodayCost": "Í dag: {amount}",
   "mealPlannerBudgetWeekCost": "Vika: {amount}",
+  "mealPlannerCurrentDayLabel": "Núverandi dagur",
   "mealPlannerCustomTypeLabel": "Sérsniðin gerð",
   "mealPlannerDateLabel": "Dagsetning",
   "mealPlannerDefaultTypeLabel": "Sjálfgefin gerð",
   "mealPlannerDeleteMeal": "Fjarlægja máltíð",
+  "mealPlannerDuplicate": "Tvítekið máltíð",
+  "mealPlannerDuplicateSuccess": "Máltíð afrituð með góðum árangri!",
   "mealPlannerEditMeal": "Breyta máltíð",
   "mealPlannerEditType": "Breyta tegund máltíðar",
   "mealPlannerError": "Villa við að hlaða matseðli",
@@ -1960,6 +2053,7 @@
   "mealPlannerPrepTime": "{minutes} mín",
   "mealPlannerSave": "Bæta við áætlun",
   "mealPlannerSearchRecipes": "Leita í uppskriftum...",
+  "mealPlannerSelectDestinationDay": "Afrit til...",
   "mealPlannerSelectRecipe": "Veldu uppskrift",
   "mealPlannerServings": "{count,plural, one{{count} skammtur} other{{count} skammtar}}",
   "mealPlannerServingsLabel": "Skammtar",
@@ -1991,6 +2085,8 @@
   "navRecipes": "Uppskriftir",
   "newCategoryDialog": "Nýr flokkur",
   "newChat": "Nýtt spjall",
+  "newChatConfirmMessage": "Byrjaðu nýtt samtal? Núverandi samtal þitt glatast.",
+  "newChatConfirmTitle": "Nýtt samtal",
   "newChatStarted": "Nýtt spjall byrjað",
   "newListTitle": "Nýr innkaupalisti",
   "newPantryList": "Búrkukaup",
@@ -2129,7 +2225,11 @@
   "onboardingGroupCouple": "Par",
   "onboardingGroupFamily": "Fjölskylda",
   "onboardingGroupSolo": "Bara ég",
+  "onboardingHookContinue": "Byrjaðu",
   "onboardingHookHeadline": "Gleymdu aldrei matvöru aftur",
+  "onboardingHookItem1": "Grillaður kjúklingur",
+  "onboardingHookItem2": "Mozzarella ostur",
+  "onboardingHookItem3": "Kirsuberjatómatar",
   "onboardingListCreated": "Listinn þinn er tilbúinn: {count} atriði skipulögð fyrir þig.",
   "onboardingListSaveFailed": "Ég útbjó hlutina en gat ekki vistað listann. Reyndu aftur að halda því í appinu.",
   "onboardingLoadingStat1Label": "Hlutir skráðir",
@@ -2176,6 +2276,7 @@
   "onboardingSetupTitle": "Sérsníddu upplifun þína",
   "onboardingShareDesc": "Samstilltu lista við fjölskyldu og vini í rauntíma",
   "onboardingShareTitle": "Deildu með þeim sem þú elskar",
+  "onboardingSkip": "Slepptu í bili",
   "onboardingSlide1Body": "Búðu til og deildu listum samstundis. Kipi bætir við hlutum sjálfkrafa út frá venjum þínum.",
   "onboardingSlide1Title": "Snjallir innkaupalistar",
   "onboardingSlide2Body": "Spyrðu hvað sem er — búðu til lista, finndu uppskriftir, fylgdu búrinu þínu, skipuleggðu vikuna þína.",
@@ -2256,6 +2357,7 @@
   "paywallFeatureSmartAI": "Snjall gervigreind",
   "paywallFeatureUnlimitedLists": "Ótakmarkaður listi",
   "paywallFeaturesTitle": "Allt sem þú þarft:",
+  "paywallFreeTier": "Ókeypis: 3 listar",
   "paywallGoalHeadlineFamily": "{name}, skipulagðu fjölskylduinnkaup!",
   "paywallGoalHeadlineFaster": "{name}, verslaðu á hálfum tíma!",
   "paywallGoalHeadlineNeverForget": "{name}, gleymdu aldrei hlut!",
@@ -2285,6 +2387,7 @@
   "paywallPricePerDay": "Aðeins {price}/dag — minna en kaffi",
   "paywallPricePerMonth": "Aðeins {price}/mánuði",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Ótakmarkað",
   "paywallPurchaseError": "Ekki tókst að ganga frá kaupum. Reyndu aftur.",
   "paywallPurchasePending": "Greiðslan þín bíður samþykkis. Aðgangur verður laus sjálfkrafa eftir staðfestingu.",
   "paywallRestore": "Endurheimta",
@@ -2412,6 +2515,7 @@
   "searchConversations": "Leitaðu að samtölum",
   "searchCurrency": "Leita að gjaldmiðli...",
   "searchInConversation": "Leita í samtali...",
+  "searchItems": "Leita að atriðum",
   "searchLanguage": "Leita að tungumáli...",
   "searchMessages": "Leita að skilaboðum...",
   "searchRecipes": "Leita í uppskriftum...",

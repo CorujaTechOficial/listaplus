@@ -72,6 +72,32 @@ class AppLocalizationsLo extends AppLocalizations {
   String get close => 'ປິດ';
 
   @override
+  String get help => 'ຊ່ວຍເຫຼືອ';
+
+  @override
+  String get helpListTitle => 'ການ​ນໍາ​ໃຊ້​ບັນ​ຊີ​ລາຍ​ການ​ຂອງ​ທ່ານ​';
+
+  @override
+  String get helpListAddItems =>
+      'ເພີ່ມລາຍການດ້ວຍປຸ່ມ + ຢູ່ລຸ່ມສຸດ, ຫຼືໃຊ້ການຄົ້ນຫາເພື່ອຄົ້ນຫາຜະລິດຕະພັນ';
+
+  @override
+  String get helpListAi =>
+      'ຂໍໃຫ້ຜູ້ຊ່ວຍ AI ສ້າງ, ຈັດລະບຽບ, ຫຼືເຮັດສໍາເລັດລາຍຊື່ຂອງເຈົ້າ - ພຽງແຕ່ແຕະທີ່ໄອຄອນ sparkle';
+
+  @override
+  String get helpListShoppingMode =>
+      'ຮູບແບບການຊື້ເຄື່ອງເຊື່ອງລາຍການທີ່ຊື້ໄວ້ເພື່ອໃຫ້ທ່ານສາມາດສຸມໃສ່ສິ່ງທີ່ຍັງເຫຼືອ';
+
+  @override
+  String get helpListOrganize =>
+      'ລາກລາຍການເພື່ອຈັດຮຽງໃໝ່, ປັດເພື່ອໝາຍວ່າຊື້ແລ້ວ, ຫຼືໃຊ້ຕົວກອງ ແລະຈັດຮຽງ';
+
+  @override
+  String get helpListShare =>
+      'ແບ່ງປັນລາຍຊື່ຂອງທ່ານກັບຄອບຄົວ ຫຼືສົ່ງອອກເປັນ PDF, Excel, ຫຼືຂໍ້ຄວາມທຳມະດາ';
+
+  @override
   String get import => 'ນຳເຂົ້າ';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get clear => 'ລ້າງ';
+
+  @override
+  String get clearPurchasedTitle => 'ລຶບລ້າງລາຍການທີ່ຊື້';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ເອົາລາຍການທີ່ຊື້ທັງໝົດອອກຈາກລາຍຊື່ນີ້ບໍ? ອັນນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get purchaseError => 'ຂໍ້ຜິດພາດໃນການຊຳລະເງິນ. ກະລຸນາລອງໃໝ່.';
+
+  @override
+  String get errorCreateList =>
+      'ບໍ່ສາມາດສ້າງລາຍຊື່ໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ.';
+
+  @override
+  String get errorShareCode =>
+      'ເກີດຄວາມຜິດພາດໃນການສ້າງລະຫັດການແບ່ງປັນ. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ.';
+
+  @override
+  String get errorQuickAdd =>
+      'ບໍ່ສາມາດເພີ່ມລາຍການໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ.';
+
+  @override
+  String get errorLoadList =>
+      'ບໍ່ສາມາດໂຫຼດລາຍຊື່ຂອງທ່ານໄດ້. ກະລຸນາສ້າງລາຍຊື່ໃໝ່ເພື່ອເລີ່ມຕົ້ນ.';
 
   @override
   String get restoreError => 'ຂໍ້ຜິດພາດໃນການກູ້ຄືນ. ກະລຸນາລອງໃໝ່.';
@@ -480,6 +529,18 @@ class AppLocalizationsLo extends AppLocalizations {
   String get noBudgetDefined => 'ບໍ່ໄດ້ຕັ້ງງົບປະມານ';
 
   @override
+  String get budgetGoalInvalidAmount => 'ໃສ່ຄ່າທີ່ໃຫຍ່ກວ່າສູນ';
+
+  @override
+  String get budgetPartialEstimateHint => '~ ລວມມີການປະເມີນລາຄາບາງສ່ວນ';
+
+  @override
+  String get budgetGoalSaved => 'ເປົ້າໝາຍງົບປະມານຖືກບັນທຶກແລ້ວ';
+
+  @override
+  String get budgetGoalRemoved => 'ລຶບເປົ້າໝາຍງົບປະມານອອກ';
+
+  @override
   String totalEstimated(String amount) {
     return 'ປະມານລວມ: $amount';
   }
@@ -671,6 +732,13 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get newChat => 'ສົນທະນາໃໝ່';
+
+  @override
+  String get newChatConfirmTitle => 'ການສົນທະນາໃຫມ່';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ເລີ່ມການສົນທະນາໃໝ່ບໍ? ການສົນທະນາປັດຈຸບັນຂອງທ່ານຈະສູນເສຍໄປ.';
 
   @override
   String get noHistory => 'ບໍ່ມີປະຫວັດການສົນທະນາ';
@@ -1227,6 +1295,16 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁ຂໍ້ສະເໜີຕ້ອນຮັບ';
+
+  @override
+  String get paywallFreeTier => 'ຟຣີ: 3 ບັນຊີລາຍຊື່';
+
+  @override
+  String get paywallProTier => 'Pro: ບໍ່ຈໍາກັດ';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'ເພີ່ມລາຍການທຳອິດແລ້ວ! ການເລີ່ມຕົ້ນທີ່ດີ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2113,6 +2191,18 @@ class AppLocalizationsLo extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ປະເພດເລີ່ມຕົ້ນ';
 
   @override
+  String get mealPlannerDuplicate => 'ຊ້ໍາກັນອາຫານ';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ຊ້ຳກັບ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ມື້ປະຈຸບັນ';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'ສຳເນົາອາຫານສຳເລັດແລ້ວ!';
+
+  @override
   String get expirationDate => 'ວັນໝົດອາຍຸ';
 
   @override
@@ -2120,6 +2210,9 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get skip => 'ຂ້າມ';
+
+  @override
+  String get onboardingSkip => 'ຂ້າມໄປດຽວນີ້';
 
   @override
   String get onboardingAiTitle => 'ສົນທະນາກັບ Kipi';
@@ -3146,6 +3239,31 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'ກຳລັງສ້າງຄຳຕອບ...';
+
+  @override
+  String get errorUnexpected =>
+      'ບາງສິ່ງບາງຢ່າງທີ່ບໍ່ຄາດຄິດເກີດຂຶ້ນ. ກະລຸນາລອງອີກຄັ້ງ.';
+
+  @override
+  String get aiAssistantTooltip => 'ເປີດຜູ້ຊ່ວຍ AI';
+
+  @override
+  String get searchItems => 'ຄົ້ນຫາລາຍການ';
+
+  @override
+  String get onboardingHookContinue => 'ເລີ່ມຕົ້ນ';
+
+  @override
+  String get onboardingHookItem1 => 'ປີ້ງໄກ່';
+
+  @override
+  String get onboardingHookItem2 => 'ເນີຍແຂງ Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'ໝາກເລັ່ນ Cherry';
+
+  @override
+  String get checkItemTooltip => 'ກວດເບິ່ງລາຍການ';
 }
 
 /// The translations for Lao, as used in the Lao People's Democratic Republic (`lo_LA`).
@@ -3216,6 +3334,32 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String get close => 'ປິດ';
 
   @override
+  String get help => 'ຊ່ວຍເຫຼືອ';
+
+  @override
+  String get helpListTitle => 'ການ​ນໍາ​ໃຊ້​ບັນ​ຊີ​ລາຍ​ການ​ຂອງ​ທ່ານ​';
+
+  @override
+  String get helpListAddItems =>
+      'ເພີ່ມລາຍການດ້ວຍປຸ່ມ + ຢູ່ລຸ່ມສຸດ, ຫຼືໃຊ້ການຄົ້ນຫາເພື່ອຄົ້ນຫາຜະລິດຕະພັນ';
+
+  @override
+  String get helpListAi =>
+      'ຂໍໃຫ້ຜູ້ຊ່ວຍ AI ສ້າງ, ຈັດລະບຽບ, ຫຼືເຮັດສໍາເລັດລາຍຊື່ຂອງເຈົ້າ - ພຽງແຕ່ແຕະທີ່ໄອຄອນ sparkle';
+
+  @override
+  String get helpListShoppingMode =>
+      'ຮູບແບບການຊື້ເຄື່ອງເຊື່ອງລາຍການທີ່ຊື້ໄວ້ເພື່ອໃຫ້ທ່ານສາມາດສຸມໃສ່ສິ່ງທີ່ຍັງເຫຼືອ';
+
+  @override
+  String get helpListOrganize =>
+      'ລາກລາຍການເພື່ອຈັດຮຽງໃໝ່, ປັດເພື່ອໝາຍວ່າຊື້ແລ້ວ, ຫຼືໃຊ້ຕົວກອງ ແລະຈັດຮຽງ';
+
+  @override
+  String get helpListShare =>
+      'ແບ່ງປັນລາຍຊື່ຂອງທ່ານກັບຄອບຄົວ ຫຼືສົ່ງອອກເປັນ PDF, Excel, ຫຼືຂໍ້ຄວາມທຳມະດາ';
+
+  @override
   String get import => 'ນຳເຂົ້າ';
 
   @override
@@ -3226,6 +3370,13 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get clear => 'ລ້າງ';
+
+  @override
+  String get clearPurchasedTitle => 'ລຶບລ້າງລາຍການທີ່ຊື້';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ເອົາລາຍການທີ່ຊື້ທັງໝົດອອກຈາກລາຍຊື່ນີ້ບໍ? ອັນນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.';
 
   @override
   String error(String message) {
@@ -3239,6 +3390,22 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get purchaseError => 'ມີຂໍ້ຜິດພາດໃນການດຳເນີນການຊື້. ກະລຸນາລອງໃໝ່.';
+
+  @override
+  String get errorCreateList =>
+      'ບໍ່ສາມາດສ້າງລາຍຊື່ໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ.';
+
+  @override
+  String get errorShareCode =>
+      'ເກີດຄວາມຜິດພາດໃນການສ້າງລະຫັດການແບ່ງປັນ. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ.';
+
+  @override
+  String get errorQuickAdd =>
+      'ບໍ່ສາມາດເພີ່ມລາຍການໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ.';
+
+  @override
+  String get errorLoadList =>
+      'ບໍ່ສາມາດໂຫຼດລາຍຊື່ຂອງທ່ານໄດ້. ກະລຸນາສ້າງລາຍຊື່ໃໝ່ເພື່ອເລີ່ມຕົ້ນ.';
 
   @override
   String get restoreError => 'ມີຂໍ້ຜິດພາດໃນການກູ້ຄືນການຊື້. ກະລຸນາລອງໃໝ່.';
@@ -3631,6 +3798,18 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String get noBudgetDefined => 'ຍັງບໍ່ໄດ້ຕັ້ງງົບປະມານ';
 
   @override
+  String get budgetGoalInvalidAmount => 'ໃສ່ຄ່າທີ່ໃຫຍ່ກວ່າສູນ';
+
+  @override
+  String get budgetPartialEstimateHint => '~ ລວມມີການປະເມີນລາຄາບາງສ່ວນ';
+
+  @override
+  String get budgetGoalSaved => 'ເປົ້າໝາຍງົບປະມານຖືກບັນທຶກແລ້ວ';
+
+  @override
+  String get budgetGoalRemoved => 'ລຶບເປົ້າໝາຍງົບປະມານອອກ';
+
+  @override
   String totalEstimated(String amount) {
     return 'ລວມປະມານ: $amount';
   }
@@ -3822,6 +4001,13 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get newChat => 'ສົນທະນາໃໝ່';
+
+  @override
+  String get newChatConfirmTitle => 'ການສົນທະນາໃຫມ່';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ເລີ່ມການສົນທະນາໃໝ່ບໍ? ການສົນທະນາປັດຈຸບັນຂອງທ່ານຈະສູນເສຍໄປ.';
 
   @override
   String get noHistory => 'ບໍ່ມີປະຫວັດການສົນທະນາ';
@@ -4377,6 +4563,16 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁ຂໍ້ສະເໜີຕ້ອນຮັບ';
+
+  @override
+  String get paywallFreeTier => 'ຟຣີ: 3 ບັນຊີລາຍຊື່';
+
+  @override
+  String get paywallProTier => 'Pro: ບໍ່ຈໍາກັດ';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'ເພີ່ມລາຍການທຳອິດແລ້ວ! ການເລີ່ມຕົ້ນທີ່ດີ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5269,6 +5465,18 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
   String get mealPlannerDefaultTypeLabel => 'ປະເພດເລີ່ມຕົ້ນ';
 
   @override
+  String get mealPlannerDuplicate => 'ຊ້ໍາກັນອາຫານ';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ຊ້ຳກັບ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ມື້ປະຈຸບັນ';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'ສຳເນົາອາຫານສຳເລັດແລ້ວ!';
+
+  @override
   String get expirationDate => 'ວັນໝົດອາຍຸ';
 
   @override
@@ -5276,6 +5484,9 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get skip => 'ຂ້າມ';
+
+  @override
+  String get onboardingSkip => 'ຂ້າມໄປດຽວນີ້';
 
   @override
   String get onboardingAiTitle => 'ສົນທະນາກັບ Kipi';
@@ -6302,4 +6513,29 @@ class AppLocalizationsLoLa extends AppLocalizationsLo {
 
   @override
   String get aiGeneratingResponse => 'ກຳລັງສ້າງຄຳຕອບ...';
+
+  @override
+  String get errorUnexpected =>
+      'ບາງສິ່ງບາງຢ່າງທີ່ບໍ່ຄາດຄິດເກີດຂຶ້ນ. ກະລຸນາລອງອີກຄັ້ງ.';
+
+  @override
+  String get aiAssistantTooltip => 'ເປີດຜູ້ຊ່ວຍ AI';
+
+  @override
+  String get searchItems => 'ຄົ້ນຫາລາຍການ';
+
+  @override
+  String get onboardingHookContinue => 'ເລີ່ມຕົ້ນ';
+
+  @override
+  String get onboardingHookItem1 => 'ປີ້ງໄກ່';
+
+  @override
+  String get onboardingHookItem2 => 'ເນີຍແຂງ Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'ໝາກເລັ່ນ Cherry';
+
+  @override
+  String get checkItemTooltip => 'ກວດເບິ່ງລາຍການ';
 }

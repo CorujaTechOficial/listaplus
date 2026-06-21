@@ -7,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/providers/auth_provider.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
@@ -15,116 +17,167 @@ class AuthScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.kipiListTitle)),
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(Spacing.xl),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                      padding: const EdgeInsets.all(Spacing.md),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.primaryContainer.withAlpha(
-                          (0.3 * 255).toInt(),
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.shopping_cart,
-                        size: 48,
-                        color: theme.colorScheme.primary,
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(duration: DurationTokens.normal)
-                    .scale(
-                      begin: const Offset(0, 0),
-                      end: const Offset(1, 1),
-                      duration: DurationTokens.normal,
-                      curve: Curves.easeOutBack,
-                    ),
-                const SizedBox(height: Spacing.lg),
-                Text(
-                      l10n.loginPrompt,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.titleLarge,
-                    )
-                    .animate()
-                    .fadeIn(
-                      duration: DurationTokens.fast,
-                      delay: const Duration(milliseconds: 200),
-                    )
-                    .slideY(
-                      begin: 0.2,
-                      end: 0,
-                      duration: DurationTokens.fast,
-                      delay: const Duration(milliseconds: 200),
-                      curve: Curves.easeOut,
-                    ),
-                const SizedBox(height: Spacing.xl),
-                SizedBox(
-                      width: double.infinity,
-                      child: FilledButton.icon(
-                        icon: SvgPicture.asset(
-                          'assets/images/google_logo.svg',
-                          width: 20,
-                          height: 20,
-                        ),
-                        label: Text(l10n.signInGoogle),
-                        onPressed: () => _signInWithGoogle(context, ref),
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(
-                      duration: DurationTokens.fast,
-                      delay: const Duration(milliseconds: 300),
-                    )
-                    .slideY(
-                      begin: 0.2,
-                      end: 0,
-                      duration: DurationTokens.fast,
-                      delay: const Duration(milliseconds: 300),
-                      curve: Curves.easeOut,
-                    ),
-                const SizedBox(height: Spacing.md),
-                if (!kIsWeb &&
-                    (defaultTargetPlatform == TargetPlatform.iOS ||
-                        defaultTargetPlatform == TargetPlatform.macOS))
-                  SizedBox(
-                        width: double.infinity,
-                        child: FilledButton.icon(
-                          icon: const Icon(Icons.apple),
-                          label: Text(l10n.signInApple),
-                          onPressed: () => _signInWithApple(context, ref),
-                        ),
-                      )
-                      .animate()
-                      .fadeIn(
-                        duration: DurationTokens.fast,
-                        delay: const Duration(milliseconds: 400),
-                      )
-                      .slideY(
-                        begin: 0.2,
-                        end: 0,
-                        duration: DurationTokens.fast,
-                        delay: const Duration(milliseconds: 400),
-                        curve: Curves.easeOut,
-                      ),
-                const SizedBox(height: Spacing.xl),
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(l10n.continueAsGuest),
-                ).animate().fadeIn(
-                  duration: DurationTokens.fast,
-                  delay: const Duration(milliseconds: 500),
+      body: Stack(
+        children: [
+          // Gradient: soft primaryContainer tint at the top, fades to surface
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: const [0.0, 0.45],
+                  colors: [
+                    colorScheme.primaryContainer.withAlpha(48),
+                    colorScheme.surface.withAlpha(0),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ),
+          SafeArea(
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Spacing.xl,
+                  vertical: Spacing.lg,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: Spacing.xxl),
+                    // Logo — larger with shadow for visual impact
+                    Container(
+                          width: 96,
+                          height: 96,
+                          decoration: BoxDecoration(
+                            color: colorScheme.primaryContainer,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: colorScheme.primary.withAlpha(38),
+                                blurRadius: 24,
+                                offset: const Offset(0, 8),
+                              ),
+                            ],
+                          ),
+                          child: Icon(
+                            PhosphorIconsRegular.shoppingCart,
+                            size: 44,
+                            color: colorScheme.onPrimaryContainer,
+                          ),
+                        )
+                        .animate()
+                        .fadeIn(duration: DurationTokens.normal)
+                        .scale(
+                          begin: const Offset(0.7, 0.7),
+                          end: const Offset(1, 1),
+                          duration: DurationTokens.normal,
+                          curve: Curves.easeOutCubic,
+                        ),
+                    const SizedBox(height: Spacing.lg),
+                    // App name
+                    Text(
+                          l10n.kipiListTitle,
+                          style: theme.textTheme.headlineMedium?.copyWith(
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: -0.5,
+                          ),
+                        )
+                        .animate()
+                        .fadeIn(
+                          duration: DurationTokens.fast,
+                          delay: const Duration(milliseconds: 150),
+                        )
+                        .slideY(
+                          begin: 0.15,
+                          end: 0,
+                          duration: DurationTokens.fast,
+                          delay: const Duration(milliseconds: 150),
+                          curve: Curves.easeOut,
+                        ),
+                    const SizedBox(height: Spacing.xs),
+                    // Warm welcome tagline
+                    Text(
+                          l10n.onboardingWelcomeDesc,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                            height: 1.5,
+                          ),
+                        )
+                        .animate()
+                        .fadeIn(
+                          duration: DurationTokens.fast,
+                          delay: const Duration(milliseconds: 220),
+                        ),
+                    const SizedBox(height: Spacing.xxl),
+                    SizedBox(
+                          width: double.infinity,
+                          child: FilledButton.icon(
+                            icon: SvgPicture.asset(
+                              'assets/images/google_logo.svg',
+                              width: 20,
+                              height: 20,
+                            ),
+                            label: Text(l10n.signInGoogle),
+                            onPressed: () => _signInWithGoogle(context, ref),
+                          ),
+                        )
+                        .animate()
+                        .fadeIn(
+                          duration: DurationTokens.fast,
+                          delay: const Duration(milliseconds: 300),
+                        )
+                        .slideY(
+                          begin: 0.2,
+                          end: 0,
+                          duration: DurationTokens.fast,
+                          delay: const Duration(milliseconds: 300),
+                          curve: Curves.easeOut,
+                        ),
+                    const SizedBox(height: Spacing.sm),
+                    if (!kIsWeb &&
+                        (defaultTargetPlatform == TargetPlatform.iOS ||
+                            defaultTargetPlatform == TargetPlatform.macOS))
+                      SizedBox(
+                            width: double.infinity,
+                            child: FilledButton.icon(
+                              icon: const Icon(PhosphorIconsRegular.appleLogo),
+                              label: Text(l10n.signInApple),
+                              onPressed: () => _signInWithApple(context, ref),
+                            ),
+                          )
+                          .animate()
+                          .fadeIn(
+                            duration: DurationTokens.fast,
+                            delay: const Duration(milliseconds: 380),
+                          )
+                          .slideY(
+                            begin: 0.2,
+                            end: 0,
+                            duration: DurationTokens.fast,
+                            delay: const Duration(milliseconds: 380),
+                            curve: Curves.easeOut,
+                          ),
+                    const SizedBox(height: Spacing.xl),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(l10n.continueAsGuest),
+                    ).animate().fadeIn(
+                      duration: DurationTokens.fast,
+                      delay: const Duration(milliseconds: 480),
+                    ),
+                    const SizedBox(height: Spacing.lg),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -139,9 +192,11 @@ class AuthScreen extends ConsumerWidget {
       }
     } on Exception catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(
+        showKipiSnackBar(
           context,
-        ).showSnackBar(SnackBar(content: Text(l10n.loginError(e.toString()))));
+          message: l10n.loginError(e.toString()),
+          type: SnackBarType.error,
+        );
       }
     }
   }
@@ -156,9 +211,11 @@ class AuthScreen extends ConsumerWidget {
       }
     } on Exception catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(
+        showKipiSnackBar(
           context,
-        ).showSnackBar(SnackBar(content: Text(l10n.loginError(e.toString()))));
+          message: l10n.loginError(e.toString()),
+          type: SnackBarType.error,
+        );
       }
     }
   }

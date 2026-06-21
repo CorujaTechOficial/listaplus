@@ -1,5 +1,6 @@
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
+import 'package:shopping_list/core/config/app_environment.dart';
 import 'revenuecat_service.dart';
 
 class RevenueCatServiceImpl implements RevenueCatService {
@@ -10,7 +11,11 @@ class RevenueCatServiceImpl implements RevenueCatService {
 
   @override
   Future<void> init(String apiKey) async {
-    await Purchases.setLogLevel(LogLevel.warn);
+    if (AppEnvironment.isProduction) {
+      await Purchases.setLogLevel(LogLevel.warn);
+    } else {
+      await Purchases.setLogLevel(LogLevel.debug);
+    }
     await Purchases.configure(PurchasesConfiguration(apiKey));
     Purchases.addCustomerInfoUpdateListener(_onCustomerInfoUpdate);
   }
@@ -58,7 +63,11 @@ class RevenueCatServiceImpl implements RevenueCatService {
   @override
   Future<List<PaywallPackage>> getPaywallPackages() async {
     final offerings = await Purchases.getOfferings();
-    final currentOffering = offerings.current;
+    var currentOffering = offerings.current;
+    currentOffering ??= offerings.all['default_play'];
+    if (currentOffering == null && offerings.all.isNotEmpty) {
+      currentOffering = offerings.all.values.first;
+    }
     if (currentOffering == null) {
       return [];
     }

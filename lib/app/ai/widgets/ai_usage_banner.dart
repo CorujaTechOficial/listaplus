@@ -6,6 +6,7 @@ import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AiUsageBanner extends ConsumerWidget {
   const AiUsageBanner({super.key});
@@ -57,7 +58,7 @@ class AiUsageBanner extends ConsumerWidget {
             child: Row(
               children: [
                 Icon(
-                  isExhausted ? Icons.lock_outline : Icons.bolt,
+                  isExhausted ? PhosphorIconsRegular.lock : PhosphorIconsRegular.lightning,
                   size: 16,
                   color: foreground,
                 ),

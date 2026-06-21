@@ -72,6 +72,32 @@ class AppLocalizationsSi extends AppLocalizations {
   String get close => 'වසන්න';
 
   @override
+  String get help => 'උදව්';
+
+  @override
+  String get helpListTitle => 'ඔබගේ ලැයිස්තුව භාවිතා කිරීම';
+
+  @override
+  String get helpListAddItems =>
+      'පහළින් ඇති + බොත්තම සමඟ අයිතම එක් කරන්න, නැතහොත් නිෂ්පාදන බ්‍රවුස් කිරීමට සෙවීම භාවිත කරන්න';
+
+  @override
+  String get helpListAi =>
+      'ඔබේ ලැයිස්තුව සෑදීමට, සංවිධානය කිරීමට හෝ සම්පූර්ණ කිරීමට AI සහායකගෙන් අසන්න - හුදෙක් දීප්තිමත් නිරූපකය තට්ටු කරන්න';
+
+  @override
+  String get helpListShoppingMode =>
+      'සාප්පු සවාරි මාදිලිය මිලදී ගත් අයිතම සඟවයි, එවිට ඔබට ඉතිරිව ඇති දේ කෙරෙහි අවධානය යොමු කළ හැකිය';
+
+  @override
+  String get helpListOrganize =>
+      'නැවත ඇණවුම් කිරීමට අයිතම අදින්න, මිලදී ගත් බව සලකුණු කිරීමට ස්වයිප් කරන්න, නැතහොත් පෙරහන් භාවිතා කර වර්ග කරන්න';
+
+  @override
+  String get helpListShare =>
+      'ඔබේ ලැයිස්තුව පවුලේ අය සමඟ බෙදා ගන්න හෝ PDF, Excel, හෝ සරල පෙළ ලෙස අපනයනය කරන්න';
+
+  @override
   String get import => 'ආයාත කරන්න';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get clear => 'හිස් කරන්න';
+
+  @override
+  String get clearPurchasedTitle => 'මිලදී ගත් අයිතම ඉවත් කරන්න';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'මෙම ලැයිස්තුවෙන් මිලදී ගත් සියලුම අයිතම ඉවත් කරන්නද? මෙය පසුගමනය කළ නොහැක.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get purchaseError => 'ගෙවීම සැකසීමේ දෝෂයකි. නැවත උත්සාහ කරන්න.';
+
+  @override
+  String get errorCreateList =>
+      'ලැයිස්තුව සෑදීමට නොහැකි විය. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කර නැවත උත්සාහ කරන්න.';
+
+  @override
+  String get errorShareCode =>
+      'කොටස් කේතය ජනනය කිරීමේ දෝෂයකි. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කර නැවත උත්සාහ කරන්න.';
+
+  @override
+  String get errorQuickAdd =>
+      'අයිතමය එක් කිරීමට නොහැකි විය. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කර නැවත උත්සාහ කරන්න.';
+
+  @override
+  String get errorLoadList =>
+      'ඔබගේ ලැයිස්තු පූරණය කළ නොහැකි විය. ආරම්භ කිරීමට කරුණාකර නව ලැයිස්තුවක් සාදන්න.';
 
   @override
   String get restoreError =>
@@ -487,6 +536,19 @@ class AppLocalizationsSi extends AppLocalizations {
   String get noBudgetDefined => 'අයවැයක් සකසා නැත';
 
   @override
+  String get budgetGoalInvalidAmount => 'බිංදුවට වඩා වැඩි අගයක් ඇතුළත් කරන්න';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ අර්ධ මිල ගණන් ඇස්තමේන්තු ඇතුළත් වේ';
+
+  @override
+  String get budgetGoalSaved => 'අයවැය ඉලක්කය සුරැකිණි';
+
+  @override
+  String get budgetGoalRemoved => 'අයවැය ඉලක්කය ඉවත් කර ඇත';
+
+  @override
   String totalEstimated(String amount) {
     return 'ඇස්තමේන්තුගත එකතුව: $amount';
   }
@@ -681,6 +743,13 @@ class AppLocalizationsSi extends AppLocalizations {
   String get newChat => 'නව කතාබස්';
 
   @override
+  String get newChatConfirmTitle => 'නව සංවාදය';
+
+  @override
+  String get newChatConfirmMessage =>
+      'නව සංවාදයක් ආරම්භ කරන්නද? ඔබගේ වත්මන් සංවාදය අහිමි වනු ඇත.';
+
+  @override
   String get noHistory => 'කතාබස් ඉතිහාසයක් නැත';
 
   @override
@@ -790,28 +859,28 @@ class AppLocalizationsSi extends AppLocalizations {
   String get undo => 'අහෝසි කරන්න';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'නව කතාබස් ආරම්භ විය';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'ලැයිස්තුවට එකතු කරන්න';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'මට කළ හැක්කේ කුමක් ද?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'සාප්පු සවාරි ලැයිස්තු';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'අයවැය සහ මිල ගණන්';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'වට්ටෝරු සහ මෙනු';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'සංවිධානය';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'ඔබ සාප්පු යන විට අයිතම පරීක්ෂා කරන්න';
 
   @override
   String get kipiListTitle => 'කිපිලිස්ට්';
@@ -1245,6 +1314,16 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 පිළිගැනීමේ දීමනාව';
+
+  @override
+  String get paywallFreeTier => 'නොමිලේ: ලැයිස්තු 3ක්';
+
+  @override
+  String get paywallProTier => 'Pro: අසීමිත';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'පළමු අයිතමය එකතු කරන ලදී! නියම ආරම්භයක් 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1982,28 +2061,28 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'මාසය: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'සතිය: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'අද: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'ඉලක්කය ඉවත් කරන්න';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'ආහාර සැලසුම්කරුගේ අයවැය';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'ආහාර සැලසුම් කිරීම සඳහා මාසික වියදම් ඉලක්කය';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2146,6 +2225,18 @@ class AppLocalizationsSi extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'පෙරනිමි වර්ගය';
 
   @override
+  String get mealPlannerDuplicate => 'අනුපිටපත් ආහාර වේලක්';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'අනුපිටපත් කරන්න...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'වත්මන් දිනය';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'ආහාරය සාර්ථකව අනුපිටපත් කර ඇත!';
+
+  @override
   String get expirationDate => 'කල්පිරෙන දිනය';
 
   @override
@@ -2153,6 +2244,9 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get skip => 'මඟ හරින්න';
+
+  @override
+  String get onboardingSkip => 'දැනට මග හරින්න';
 
   @override
   String get onboardingAiTitle => 'කිපි සමඟ කතාබස් කරන්න';
@@ -3194,4 +3288,29 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'ප්‍රතිචාරය උත්පාදනය කරමින්...';
+
+  @override
+  String get errorUnexpected =>
+      'නොසිතූ දෙයක් සිදු විය. කරුණාකර නැවත උත්සාහ කරන්න.';
+
+  @override
+  String get aiAssistantTooltip => 'AI සහායක විවෘත කරන්න';
+
+  @override
+  String get searchItems => 'අයිතම සොයන්න';
+
+  @override
+  String get onboardingHookContinue => 'ආරම්භ කරන්න';
+
+  @override
+  String get onboardingHookItem1 => 'ග්රිල් කළ කුකුල් මස්';
+
+  @override
+  String get onboardingHookItem2 => 'මොසරෙල්ලා චීස්';
+
+  @override
+  String get onboardingHookItem3 => 'චෙරි තක්කාලි';
+
+  @override
+  String get checkItemTooltip => 'අයිතමය පරීක්ෂා කරන්න';
 }

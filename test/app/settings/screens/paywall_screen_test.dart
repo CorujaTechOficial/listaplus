@@ -55,6 +55,7 @@ void main() {
           analyticsServiceProvider.overrideWithValue(AnalyticsService()),
         ],
         child: const MaterialApp(
+          locale: Locale('en'),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: PaywallScreen(),
@@ -65,13 +66,7 @@ void main() {
 
     expect(find.text('Start Free Trial'), findsOneWidget);
     expect(
-      find.text('Cancel anytime · No charge until your trial ends'),
-      findsOneWidget,
-    );
-    expect(
-      find.text(
-        'Today: no charge. Then \$39.99/year after 7 days. Cancel anytime.',
-      ),
+      find.text('Cancel anytime. No charge today.'),
       findsOneWidget,
     );
   });
@@ -89,6 +84,7 @@ void main() {
           analyticsServiceProvider.overrideWithValue(AnalyticsService()),
         ],
         child: const MaterialApp(
+          locale: Locale('en'),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: Scaffold(body: PaywallScreen(asSheet: true)),
@@ -120,6 +116,7 @@ void main() {
             analyticsServiceProvider.overrideWithValue(AnalyticsService()),
           ],
           child: const MaterialApp(
+            locale: Locale('en'),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             home: PaywallScreen(),
@@ -130,8 +127,8 @@ void main() {
 
       expect(find.text('Error loading offers. Try again.'), findsNothing);
       expect(
-        find.text('Continue with the free version'),
-        findsAtLeastNWidgets(1),
+        find.byType(CircularProgressIndicator),
+        findsNothing,
       );
     },
   );

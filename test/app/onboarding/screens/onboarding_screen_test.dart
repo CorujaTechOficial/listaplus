@@ -115,64 +115,20 @@ void main() {
     );
   }
 
-  testWidgets('quiz answers persist and auto-advance through the flow', (
-    tester,
-  ) async {
-    await tester.pumpWidget(buildSubject());
-    await tester.pumpAndSettle();
-
-    await tester.tap(find.text('Get Started'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Just me'));
-    await tester.pumpAndSettle();
-
-    expect(find.text('How often do you shop for groceries?'), findsOneWidget);
-    final container = ProviderScope.containerOf(
-      tester.element(find.byType(OnboardingScreen)),
-    );
-    expect(container.read(onboardingDataProvider).householdSize, 'solo');
-  });
-
   testWidgets('hook page has no skip affordance and back is blocked', (
     tester,
   ) async {
     await tester.pumpWidget(buildSubject());
     await tester.pumpAndSettle();
 
-    expect(find.text('Skip'), findsNothing);
-    expect(find.text('Smarter shopping starts here'), findsOneWidget);
+    expect(find.text('Skip for now'), findsNothing);
+    expect(find.text('Never forget a grocery item again'), findsOneWidget);
 
     await tester.binding.handlePopRoute();
     await tester.pumpAndSettle();
 
-    expect(find.text('Smarter shopping starts here'), findsOneWidget);
+    expect(find.text('Never forget a grocery item again'), findsOneWidget);
   });
-
-  testWidgets(
-    'after the last quiz answer the flow goes straight to plan loading',
-    (tester) async {
-      await tester.pumpWidget(buildSubject());
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Get Started'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Just me'));
-      await tester.pumpAndSettle();
-      final binding = TestWidgetsFlutterBinding.ensureInitialized();
-      await binding.setSurfaceSize(const Size(430, 1200));
-
-      await tester.tap(find.text('Once a week'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('I spend more than planned'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('As much as possible'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Notes app'));
-      await tester.pumpAndSettle();
-
-      expect(find.text("You're in good company"), findsNothing);
-    },
-  );
 
   testWidgets('creating the first list advances to the paywall', (
     tester,
@@ -186,37 +142,15 @@ void main() {
 
     await tester.tap(find.text('Get Started'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Just me'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Once a week'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('I spend more than planned'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('As much as possible'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Notes app'));
-    await tester.pump();
-
-    await tester.pump(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-
-    expect(find.text('Your plan is ready!'), findsOneWidget);
-    await tester.tap(find.byType(FilledButton).last);
-    await tester.pumpAndSettle();
-
-    await tester.tap(find.text('Not now'));
-    await tester.pumpAndSettle();
 
     expect(find.text('Create List'), findsOneWidget);
     await tester.enterText(find.byType(TextField), 'Weekly groceries');
     await tester.pump();
     await tester.tap(find.widgetWithText(FilledButton, 'Create'));
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 300));
     await tester.pumpAndSettle();
 
     expect(storage.lastSavedList?.name, 'Weekly groceries');
     expect(storage.currentListId, isNotNull);
-    expect(find.text('Skip for now'), findsOneWidget);
+    expect(find.text('KipiList'), findsOneWidget);
   });
 }

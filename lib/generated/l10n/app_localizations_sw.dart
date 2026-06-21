@@ -72,6 +72,32 @@ class AppLocalizationsSw extends AppLocalizations {
   String get close => 'Funga';
 
   @override
+  String get help => 'Msaada';
+
+  @override
+  String get helpListTitle => 'Kwa kutumia orodha yako';
+
+  @override
+  String get helpListAddItems =>
+      'Ongeza vipengee vilivyo na kitufe cha + kilicho chini, au tumia utafutaji ili kuvinjari bidhaa';
+
+  @override
+  String get helpListAi =>
+      'Uliza msaidizi wa AI kuunda, kupanga, au kukamilisha orodha yako - gusa tu aikoni ya kumeta';
+
+  @override
+  String get helpListShoppingMode =>
+      'Hali ya ununuzi huficha bidhaa zilizonunuliwa ili uweze kuzingatia kile kilichosalia';
+
+  @override
+  String get helpListOrganize =>
+      'Buruta vipengee ili kuvipanga upya, telezesha kidole ili utie alama kuwa vimenunuliwa, au tumia vichujio na kupanga';
+
+  @override
+  String get helpListShare =>
+      'Shiriki orodha yako na familia au usafirishaji kama PDF, Excel, au maandishi wazi';
+
+  @override
   String get import => 'Ingiza';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get clear => 'Futa';
+
+  @override
+  String get clearPurchasedTitle => 'Futa vitu vilivyonunuliwa';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Je, ungependa kuondoa bidhaa zote zilizonunuliwa kwenye orodha hii? Hili haliwezi kutenduliwa.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get purchaseError => 'Hitilafu katika kuchakata ununuzi. Jaribu tena.';
+
+  @override
+  String get errorCreateList =>
+      'Haikuweza kuunda orodha. Angalia muunganisho wako na ujaribu tena.';
+
+  @override
+  String get errorShareCode =>
+      'Hitilafu katika kuzalisha msimbo wa kushiriki. Angalia muunganisho wako na ujaribu tena.';
+
+  @override
+  String get errorQuickAdd =>
+      'Haikuweza kuongeza kipengee. Angalia muunganisho wako na ujaribu tena.';
+
+  @override
+  String get errorLoadList =>
+      'Haikuweza kupakia orodha zako. Tafadhali tengeneza orodha mpya ili kuanza.';
 
   @override
   String get restoreError => 'Hitilafu katika kurejesha ununuzi. Jaribu tena.';
@@ -487,6 +536,19 @@ class AppLocalizationsSw extends AppLocalizations {
   String get noBudgetDefined => 'Hakuna bajeti iliyowekwa';
 
   @override
+  String get budgetGoalInvalidAmount => 'Weka thamani kubwa kuliko sifuri';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inajumuisha makadirio ya bei ya sehemu';
+
+  @override
+  String get budgetGoalSaved => 'Lengo la bajeti limehifadhiwa';
+
+  @override
+  String get budgetGoalRemoved => 'Lengo la bajeti limeondolewa';
+
+  @override
   String totalEstimated(String amount) {
     return 'Jumla inakadiriwa: $amount';
   }
@@ -680,6 +742,13 @@ class AppLocalizationsSw extends AppLocalizations {
   String get newChat => 'Gumzo Mpya';
 
   @override
+  String get newChatConfirmTitle => 'Mazungumzo mapya';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Ungependa kuanza mazungumzo mapya? Mazungumzo yako ya sasa yatapotea.';
+
+  @override
   String get noHistory => 'Hakuna historia ya gumzo';
 
   @override
@@ -789,28 +858,28 @@ class AppLocalizationsSw extends AppLocalizations {
   String get undo => 'Tengua';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Gumzo jipya limeanza';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Ongeza kwenye orodha';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Naweza kufanya nini?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Orodha za Ununuzi';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Bajeti na Bei';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Mapishi & Menyu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Shirika';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Angalia bidhaa unaponunua';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1243,6 +1312,16 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Karibu ofa';
+
+  @override
+  String get paywallFreeTier => 'Bure: orodha 3';
+
+  @override
+  String get paywallProTier => 'Pro: Bila kikomo';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Kipengee cha kwanza kimeongezwa! Mwanzo mzuri 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1979,28 +2058,28 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mwezi: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Wiki: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Leo: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Ondoa lengo';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Bajeti ya mpangaji wa chakula';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Lengo la matumizi ya kila mwezi kwa ajili ya kupanga chakula';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2143,6 +2222,18 @@ class AppLocalizationsSw extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Aina chaguomsingi';
 
   @override
+  String get mealPlannerDuplicate => 'Chakula maradufu';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Rudufu kwa...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Siku ya sasa';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Mlo umerudiwa!';
+
+  @override
   String get expirationDate => 'Tarehe ya kumalizika muda wake';
 
   @override
@@ -2150,6 +2241,9 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get skip => 'Ruka';
+
+  @override
+  String get onboardingSkip => 'Ruka kwa sasa';
 
   @override
   String get onboardingAiTitle => 'Sogoa na Kipi';
@@ -3185,4 +3279,29 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Inazalisha majibu...';
+
+  @override
+  String get errorUnexpected =>
+      'Kitu kisichotarajiwa kilitokea. Tafadhali jaribu tena.';
+
+  @override
+  String get aiAssistantTooltip => 'Fungua msaidizi wa AI';
+
+  @override
+  String get searchItems => 'Tafuta vitu';
+
+  @override
+  String get onboardingHookContinue => 'Anza';
+
+  @override
+  String get onboardingHookItem1 => 'Kuku ya kukaanga';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella jibini';
+
+  @override
+  String get onboardingHookItem3 => 'Nyanya za Cherry';
+
+  @override
+  String get checkItemTooltip => 'Angalia kipengee';
 }

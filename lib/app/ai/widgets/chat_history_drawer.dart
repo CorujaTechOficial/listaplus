@@ -6,6 +6,7 @@ import 'package:shopping_list/app/ai/screens/chat_history_screen.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// The single conversation-history surface, shared by the assistant tab and the
 /// per-list chat. Both open it as an `endDrawer`, so "where is my history" is
@@ -97,7 +98,7 @@ class _ChatHistoryDrawerState extends ConsumerState<ChatHistoryDrawer> {
                         setState(() => _query = value.trim().toLowerCase()),
                 decoration: InputDecoration(
                   isDense: true,
-                  prefixIcon: const Icon(Icons.search, size: 20),
+                  prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass, size: 20),
                   hintText: l10n.searchConversations,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(RadiusTokens.xxl),
@@ -106,7 +107,7 @@ class _ChatHistoryDrawerState extends ConsumerState<ChatHistoryDrawer> {
                       _query.isEmpty
                           ? null
                           : IconButton(
-                            icon: const Icon(Icons.close, size: 18),
+                            icon: const Icon(PhosphorIconsRegular.x, size: 18),
                             onPressed: () {
                               _searchController.clear();
                               setState(() => _query = '');
@@ -181,7 +182,7 @@ class _ChatHistoryDrawerState extends ConsumerState<ChatHistoryDrawer> {
                             Navigator.pop(context);
                           },
                           trailing: IconButton(
-                            icon: const Icon(Icons.delete_outline),
+                            icon: const Icon(PhosphorIconsRegular.trash),
                             onPressed: () {
                               _showDeleteConfirm(context, ref, session.id);
                             },
@@ -199,7 +200,7 @@ class _ChatHistoryDrawerState extends ConsumerState<ChatHistoryDrawer> {
             const Divider(height: 1),
             ListTile(
               leading: Icon(
-                Icons.manage_search,
+                PhosphorIconsRegular.magnifyingGlass,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               title: Text(

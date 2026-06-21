@@ -10,6 +10,7 @@ import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AchievementsScreen extends ConsumerWidget {
   const AchievementsScreen({super.key});
@@ -36,7 +37,7 @@ class AchievementsScreen extends ConsumerWidget {
               context,
               l10n.itemsPurchased,
               stats.totalItemsBought.toString(),
-              Icons.shopping_bag,
+              PhosphorIconsRegular.shoppingBag,
               semanticColors.info,
             ),
             const SizedBox(height: Spacing.md),
@@ -44,7 +45,7 @@ class AchievementsScreen extends ConsumerWidget {
               context,
               l10n.totalSavings,
               formatCurrency(stats.totalSavings, currencyCode),
-              Icons.savings,
+              PhosphorIconsRegular.piggyBank,
               semanticColors.success,
             ),
             const SizedBox(height: Spacing.md),
@@ -52,7 +53,7 @@ class AchievementsScreen extends ConsumerWidget {
               context,
               l10n.currentStreak,
               l10n.streakDays(stats.currentStreak),
-              Icons.local_fire_department,
+              PhosphorIconsRegular.flame,
               semanticColors.warning,
             ),
             const SizedBox(height: Spacing.xl),
@@ -69,25 +70,25 @@ class AchievementsScreen extends ConsumerWidget {
               children: [
                 _AchievementBadge(
                   label: l10n.badgeBeginner,
-                  icon: Icons.star_border,
+                  icon: PhosphorIconsRegular.star,
                   unlocked: stats.totalItemsBought >= 10,
                   color: Theme.of(context).colorScheme.tertiary,
                 ),
                 _AchievementBadge(
                   label: l10n.badgeOrganized,
-                  icon: Icons.check_circle_outline,
+                  icon: PhosphorIconsRegular.checkCircle,
                   unlocked: stats.totalItemsBought >= 50,
                   color: Theme.of(context).colorScheme.outline,
                 ),
                 _AchievementBadge(
                   label: l10n.badgeSavingMaster,
-                  icon: Icons.workspace_premium,
+                  icon: PhosphorIconsRegular.crown,
                   unlocked: stats.totalSavings >= 100,
                   color: AppColors.premiumAmber,
                 ),
                 _AchievementBadge(
                   label: l10n.badgeSuperPlanner,
-                  icon: Icons.auto_awesome,
+                  icon: PhosphorIconsRegular.sparkle,
                   unlocked: stats.currentStreak >= 7,
                   color: Theme.of(context).colorScheme.secondary,
                 ),
@@ -108,7 +109,7 @@ class AchievementsScreen extends ConsumerWidget {
               children: [
                 _AchievementBadge(
                   label: l10n.badgeSavingMaster,
-                  icon: Icons.insights,
+                  icon: PhosphorIconsRegular.chartLine,
                   unlocked: isPremium,
                   color: AppColors.premiumAmber,
                   isPremium: true,
@@ -122,7 +123,7 @@ class AchievementsScreen extends ConsumerWidget {
                 ),
                 _AchievementBadge(
                   label: l10n.badgeSuperPlanner,
-                  icon: Icons.calendar_month,
+                  icon: PhosphorIconsRegular.calendarBlank,
                   unlocked: isPremium,
                   color: AppColors.premiumAmber,
                   isPremium: true,
@@ -136,7 +137,7 @@ class AchievementsScreen extends ConsumerWidget {
                 ),
                 _AchievementBadge(
                   label: l10n.badgeOrganized,
-                  icon: Icons.family_restroom,
+                  icon: PhosphorIconsRegular.users,
                   unlocked: isPremium,
                   color: AppColors.premiumAmber,
                   isPremium: true,
@@ -249,7 +250,7 @@ class _AchievementBadge extends StatelessWidget {
                 ),
                 if (isPremium && !unlocked)
                   const Icon(
-                    Icons.lock,
+                    PhosphorIconsRegular.lock,
                     size: 26,
                     color: AppColors.premiumAmber,
                   ),

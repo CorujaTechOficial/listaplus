@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class StyledAutocomplete<T extends String> extends StatelessWidget {
   const StyledAutocomplete({
@@ -107,7 +108,7 @@ class StyledAutocomplete<T extends String> extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(
-                                Icons.shopping_bag_outlined,
+                                PhosphorIconsRegular.shoppingBag,
                                 size: 18,
                                 color: theme.colorScheme.primary,
                               ),

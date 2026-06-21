@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "Trợ lý AI",
   "aiAssistantDescription": "Nhận đề xuất thông minh, công thức nấu ăn và mẹo cá nhân hóa với trợ lý AI của chúng tôi.",
   "aiAssistantTitle": "Trợ lý AI",
+  "aiAssistantTooltip": "Trợ lý AI mở",
   "aiCapabilitiesBudget": "Ngân sách & Giá cả",
   "aiCapabilitiesLists": "Danh sách mua sắm",
   "aiCapabilitiesOrganize": "Tổ chức",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Ngân sách hàng tháng",
   "budgetDashboardTitle": "Bảng điều khiển",
   "budgetEditTitle": "Ngân sách hàng tháng",
+  "budgetGoalInvalidAmount": "Nhập một giá trị lớn hơn 0",
+  "budgetGoalRemoved": "Đã xóa mục tiêu ngân sách",
+  "budgetGoalSaved": "Đã lưu mục tiêu ngân sách",
   "budgetLists": "Danh sách",
+  "budgetPartialEstimateHint": "~ Bao gồm ước tính giá một phần",
   "budgetPremiumLocked": "Ngân sách hàng tháng tổng thể là tính năng cao cấp",
   "budgetSubtitle": "Theo dõi chi tiêu hàng tháng của bạn",
   "budgetUpgradePrompt": "Nâng cấp để mở khóa",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Bạn đang ngoại tuyến",
   "chatSubtitle": "Yêu cầu đề xuất mục, công thức nấu ăn hoặc mẹo tiết kiệm.",
   "chatSubtitleShort": "Hỏi về giá cả, công thức nấu ăn, cách tổ chức...",
+  "checkItemTooltip": "Kiểm tra mục",
   "checkingItem": "Đang kiểm tra mục...",
   "checkingPantry": "Kiểm tra tủ đựng thức ăn của bạn...",
   "checkingSettings": "Đang kiểm tra cài đặt của bạn...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Xóa tất cả tin nhắn trong phiên này?",
   "clearList": "Xóa danh sách",
   "clearPurchased": "Xóa đã mua",
+  "clearPurchasedConfirmMessage": "Xóa tất cả các mặt hàng đã mua khỏi danh sách này? Không thể hoàn tác việc này.",
+  "clearPurchasedTitle": "Xóa các mặt hàng đã mua",
   "clearingCheckedItems": "Đang xóa các mục đã chọn...",
   "close": "Đóng",
   "closeSheet": "Đóng",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Lỗi lưu trữ danh sách: {error}",
   "errorClearingList": "Lỗi xóa danh sách: {error}",
   "errorClearingPurchased": "Lỗi xóa các mặt hàng đã mua: {error}",
+  "errorCreateList": "Không thể tạo danh sách. Hãy kiểm tra kết nối của bạn và thử lại.",
   "errorCreatingList": "Lỗi tạo danh sách",
   "errorDecreasingQty": "Lỗi giảm số lượng: {error}",
   "errorDeletingList": "Lỗi xóa danh sách: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Lỗi: {message}",
   "errorImportingList": "Lỗi nhập danh sách \"{name}\": {error}",
   "errorIncreasingQty": "Lỗi tăng số lượng: {error}",
+  "errorLoadList": "Không thể tải danh sách của bạn. Vui lòng tạo một danh sách mới để bắt đầu.",
   "errorLoadingChat": "Ối! Đã xảy ra lỗi khi tải cuộc trò chuyện.",
   "errorLoadingChatSubtitle": "Hãy kiểm tra kết nối của bạn hoặc thử lại sau.",
   "errorLoadingHistory": "Lỗi tải lịch sử",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Lỗi tải đăng ký",
   "errorOscillation": "Điều này có thể xảy ra do dao động mạng hoặc tạm thời không có sẵn. Vui lòng thử lại.",
   "errorProcessingRequest": "Rất tiếc, đã xảy ra lỗi khi xử lý yêu cầu của bạn. Hãy kiểm tra kết nối của bạn hoặc thử lại sau.",
+  "errorQuickAdd": "Không thể thêm mục. Hãy kiểm tra kết nối của bạn và thử lại.",
   "errorRemovingItem": "Lỗi xóa mục: {error}",
   "errorRemovingItems": "Lỗi xóa mục: {error}",
   "errorRemovingSharedList": "Lỗi xóa danh sách chia sẻ: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Lỗi lưu: {error}",
   "errorServerConnection": "Lỗi kết nối tới máy chủ: {error}",
   "errorSettingCurrentList": "Lỗi cài đặt danh sách hiện tại: {error}",
+  "errorShareCode": "Lỗi tạo mã chia sẻ. Hãy kiểm tra kết nối của bạn và thử lại.",
   "errorTogglingItem": "Lỗi chuyển đổi trạng thái mục: {error}",
   "errorTogglingItems": "Lỗi chuyển đổi mục: {error}",
   "errorUnarchivingList": "Lỗi hủy lưu trữ danh sách: {error}",
+  "errorUnexpected": "Một điều gì đó bất ngờ đã xảy ra. Vui lòng thử lại.",
   "errorUpdatingItem": "Lỗi cập nhật mục: {error}",
   "errorUpdatingItems": "Lỗi cập nhật mục: {error}",
   "errorUpdatingList": "Lỗi cập nhật danh sách: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Đã mua",
   "finance": "Tài chính",
   "finishShopping": "Kết thúc mua sắm",
+  "firstItemAddedSnackbar": "Mục đầu tiên được thêm vào! Khởi đầu tuyệt vời 🛒",
   "gallery": "Phòng trưng bày",
   "generalAssistant": "Trợ lý chung",
   "generalHelp": "Hôm nay tôi có thể giúp gì cho việc mua sắm của bạn?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Giữ để chọn • Vuốt để xóa",
   "globalAssistant": "Trợ lý chung",
   "goodResponse": "phản hồi tốt",
+  "help": "Giúp đỡ",
+  "helpListAddItems": "Thêm các mục bằng nút + ở dưới cùng hoặc sử dụng tìm kiếm để duyệt sản phẩm",
+  "helpListAi": "Yêu cầu trợ lý AI tạo, sắp xếp hoặc hoàn thành danh sách của bạn - chỉ cần nhấn vào biểu tượng lấp lánh",
+  "helpListOrganize": "Kéo các mục để sắp xếp lại, vuốt để đánh dấu là đã mua hoặc sử dụng bộ lọc và sắp xếp",
+  "helpListShare": "Chia sẻ danh sách của bạn với gia đình hoặc xuất dưới dạng PDF, Excel hoặc văn bản thuần túy",
+  "helpListShoppingMode": "Chế độ mua sắm ẩn các mặt hàng đã mua để bạn có thể tập trung vào những mặt hàng còn lại",
+  "helpListTitle": "Sử dụng danh sách của bạn",
   "howCanIHelp": "Tôi có thể giúp gì?",
   "icon": "Biểu tượng:",
   "idealQty": "SL lý tưởng",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Xóa mục tiêu",
   "mealPlannerBudgetTodayCost": "Hôm nay: {amount}",
   "mealPlannerBudgetWeekCost": "Tuần: {amount}",
+  "mealPlannerCurrentDayLabel": "Ngày hiện tại",
   "mealPlannerCustomTypeLabel": "Loại tùy chỉnh",
   "mealPlannerDateLabel": "Ngày",
   "mealPlannerDefaultTypeLabel": "Loại mặc định",
   "mealPlannerDeleteMeal": "Bỏ bữa ăn",
+  "mealPlannerDuplicate": "Bữa ăn trùng lặp",
+  "mealPlannerDuplicateSuccess": "Bữa ăn được nhân đôi thành công!",
   "mealPlannerEditMeal": "Chỉnh sửa bữa ăn",
   "mealPlannerEditType": "Chỉnh sửa loại bữa ăn",
   "mealPlannerError": "Lỗi tải kế hoạch bữa ăn",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} phút",
   "mealPlannerSave": "Thêm vào kế hoạch",
   "mealPlannerSearchRecipes": "Tìm kiếm công thức nấu ăn...",
+  "mealPlannerSelectDestinationDay": "Nhân đôi thành...",
   "mealPlannerSelectRecipe": "Chọn một công thức",
   "mealPlannerServings": "{count,plural, one{{count} khẩu phần} other{{count} khẩu phần}}",
   "mealPlannerServingsLabel": "Khẩu phần",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Công thức",
   "newCategoryDialog": "Danh mục mới",
   "newChat": "Trò chuyện mới",
+  "newChatConfirmMessage": "Bắt đầu một cuộc trò chuyện mới? Cuộc trò chuyện hiện tại của bạn sẽ bị mất.",
+  "newChatConfirmTitle": "Cuộc trò chuyện mới",
   "newChatStarted": "Cuộc trò chuyện mới đã bắt đầu",
   "newListTitle": "Danh sách mua sắm mới",
   "newPantryList": "Mua sắm từ phòng đựng thức ăn",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Cặp đôi",
   "onboardingGroupFamily": "Gia đình",
   "onboardingGroupSolo": "Chỉ có tôi",
+  "onboardingHookContinue": "Bắt đầu",
   "onboardingHookHeadline": "Không bao giờ quên một món hàng tạp hóa nữa",
+  "onboardingHookItem1": "Gà nướng",
+  "onboardingHookItem2": "Phô mai mozzarella",
+  "onboardingHookItem3": "Cà chua bi",
   "onboardingListCreated": "Danh sách của bạn đã sẵn sàng: {count} mục được sắp xếp cho bạn.",
   "onboardingListSaveFailed": "Mình đã chuẩn bị sẵn đồ nhưng không lưu được danh sách. Hãy thử lại để giữ nó trong ứng dụng.",
   "onboardingLoadingStat1Label": "Các mặt hàng được phân loại",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Cá nhân hóa trải nghiệm của bạn",
   "onboardingShareDesc": "Đồng bộ danh sách với gia đình và bạn bè trong thời gian thực",
   "onboardingShareTitle": "Chia sẻ với những người bạn yêu thương",
+  "onboardingSkip": "Bỏ qua bây giờ",
   "onboardingSlide1Body": "Tạo và chia sẻ danh sách ngay lập tức. Kipi tự động thêm vật phẩm dựa trên thói quen của bạn.",
   "onboardingSlide1Title": "Danh sách mua sắm thông minh",
   "onboardingSlide2Body": "Hỏi bất cứ điều gì - tạo danh sách, tìm công thức nấu ăn, theo dõi tủ đựng thức ăn của bạn, lên kế hoạch cho tuần của bạn.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "AI thông minh",
   "paywallFeatureUnlimitedLists": "Danh sách không giới hạn",
   "paywallFeaturesTitle": "Mọi thứ bạn cần:",
+  "paywallFreeTier": "Miễn phí: 3 danh sách",
   "paywallGoalHeadlineFamily": "{name}, tổ chức mua sắm cho gia đình nhé!",
   "paywallGoalHeadlineFaster": "{name}, mua sắm chỉ trong một nửa thời gian!",
   "paywallGoalHeadlineNeverForget": "{name}, đừng bao giờ quên một món đồ nào!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Chỉ {price}/ngày — ít hơn một ly cà phê",
   "paywallPricePerMonth": "Chỉ {price}/tháng",
   "paywallProLabel": "CHUYÊN NGHIỆP",
+  "paywallProTier": "Chuyên nghiệp: Không giới hạn",
   "paywallPurchaseError": "Không thể hoàn tất việc mua hàng. Hãy thử lại.",
   "paywallPurchasePending": "Thanh toán của bạn đang chờ phê duyệt. Quyền truy cập sẽ được giải phóng tự động sau khi xác nhận.",
   "paywallRestore": "Khôi phục",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Tìm kiếm cuộc trò chuyện",
   "searchCurrency": "Tìm kiếm tiền tệ...",
   "searchInConversation": "Tìm kiếm trong cuộc trò chuyện...",
+  "searchItems": "Tìm kiếm các mục",
   "searchLanguage": "Tìm kiếm ngôn ngữ...",
   "searchMessages": "Tìm kiếm tin nhắn...",
   "searchRecipes": "Tìm kiếm công thức nấu ăn...",

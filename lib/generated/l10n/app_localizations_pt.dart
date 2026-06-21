@@ -72,6 +72,32 @@ class AppLocalizationsPt extends AppLocalizations {
   String get close => 'Fechar';
 
   @override
+  String get help => 'Ajuda';
+
+  @override
+  String get helpListTitle => 'Usando sua lista';
+
+  @override
+  String get helpListAddItems =>
+      'Adicione itens com o botão + na parte inferior ou use a pesquisa para navegar pelos produtos';
+
+  @override
+  String get helpListAi =>
+      'Peça ao assistente de IA para criar, organizar ou completar sua lista – basta tocar no ícone de brilho';
+
+  @override
+  String get helpListShoppingMode =>
+      'O modo de compras oculta os itens comprados para que você possa se concentrar no que sobrou';
+
+  @override
+  String get helpListOrganize =>
+      'Arraste itens para reordenar, deslize para marcar como comprados ou use filtros e classificação';
+
+  @override
+  String get helpListShare =>
+      'Compartilhe sua lista com a família ou exporte como PDF, Excel ou texto simples';
+
+  @override
   String get import => 'Importar';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get clear => 'Limpar';
+
+  @override
+  String get clearPurchasedTitle => 'Limpar itens comprados';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Remover todos os itens comprados desta lista? Isso não pode ser desfeito.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get purchaseError => 'Erro ao processar compra. Tente novamente.';
+
+  @override
+  String get errorCreateList =>
+      'Não foi possível criar a lista. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorShareCode =>
+      'Erro ao gerar código de compartilhamento. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorQuickAdd =>
+      'Não foi possível adicionar o item. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorLoadList =>
+      'Não foi possível carregar suas listas. Crie uma nova lista para começar.';
 
   @override
   String get restoreError => 'Erro ao restaurar compras. Tente novamente.';
@@ -487,6 +536,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noBudgetDefined => 'Nenhum orçamento definido';
 
   @override
+  String get budgetGoalInvalidAmount => 'Insira um valor maior que zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inclui estimativas parciais de preços';
+
+  @override
+  String get budgetGoalSaved => 'Meta de orçamento salva';
+
+  @override
+  String get budgetGoalRemoved => 'Meta de orçamento removida';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimado: $amount';
   }
@@ -681,6 +743,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get newChat => 'Nova Conversa';
 
   @override
+  String get newChatConfirmTitle => 'Nova conversa';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Iniciar uma nova conversa? Sua conversa atual será perdida.';
+
+  @override
   String get noHistory => 'Sem histórico de conversas';
 
   @override
@@ -791,28 +860,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String get undo => 'Desfazer';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Novo bate-papo iniciado';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Adicionar à lista';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'O que posso fazer?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Listas de compras';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Orçamento e preços';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Receitas e Menus';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organização';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Marque os itens enquanto você compra';
 
   @override
   String get kipiListTitle => 'Lista Kipi';
@@ -1243,6 +1312,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Oferta de boas-vindas';
+
+  @override
+  String get paywallFreeTier => 'Grátis: 3 listas';
+
+  @override
+  String get paywallProTier => 'Pró: Ilimitado';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Primeiro item adicionado! Ótimo começo 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2143,6 +2222,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Tipo padrão';
 
   @override
+  String get mealPlannerDuplicate => 'Refeição duplicada';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicar para...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Dia atual';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Refeição duplicada com sucesso!';
+
+  @override
   String get expirationDate => 'Data de validade';
 
   @override
@@ -2150,6 +2241,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get skip => 'Pular';
+
+  @override
+  String get onboardingSkip => 'Pular por enquanto';
 
   @override
   String get onboardingAiTitle => 'Conversar com Kipi';
@@ -3191,6 +3285,31 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Gerando resposta…';
+
+  @override
+  String get errorUnexpected =>
+      'Algo inesperado aconteceu. Por favor, tente novamente.';
+
+  @override
+  String get aiAssistantTooltip => 'Assistente de IA aberto';
+
+  @override
+  String get searchItems => 'Pesquisar itens';
+
+  @override
+  String get onboardingHookContinue => 'Comece';
+
+  @override
+  String get onboardingHookItem1 => 'Frango grelhado';
+
+  @override
+  String get onboardingHookItem2 => 'Queijo mussarela';
+
+  @override
+  String get onboardingHookItem3 => 'Tomate cereja';
+
+  @override
+  String get checkItemTooltip => 'Verifique o item';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -3261,6 +3380,32 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get close => 'Fechar';
 
   @override
+  String get help => 'Ajuda';
+
+  @override
+  String get helpListTitle => 'Usando sua lista';
+
+  @override
+  String get helpListAddItems =>
+      'Adicione itens com o botão + na parte inferior ou use a pesquisa para navegar pelos produtos';
+
+  @override
+  String get helpListAi =>
+      'Peça ao assistente de IA para criar, organizar ou completar sua lista – basta tocar no ícone de brilho';
+
+  @override
+  String get helpListShoppingMode =>
+      'O modo de compras oculta os itens comprados para que você possa se concentrar no que sobrou';
+
+  @override
+  String get helpListOrganize =>
+      'Arraste itens para reordenar, deslize para marcar como comprados ou use filtros e classificação';
+
+  @override
+  String get helpListShare =>
+      'Compartilhe sua lista com a família ou exporte como PDF, Excel ou texto simples';
+
+  @override
   String get import => 'Importar';
 
   @override
@@ -3271,6 +3416,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get clear => 'Limpar';
+
+  @override
+  String get clearPurchasedTitle => 'Limpar itens comprados';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Remover todos os itens comprados desta lista? Isso não pode ser desfeito.';
 
   @override
   String error(String message) {
@@ -3284,6 +3436,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get purchaseError => 'Erro ao processar compra. Tente novamente.';
+
+  @override
+  String get errorCreateList =>
+      'Não foi possível criar a lista. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorShareCode =>
+      'Erro ao gerar código de compartilhamento. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorQuickAdd =>
+      'Não foi possível adicionar o item. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorLoadList =>
+      'Não foi possível carregar suas listas. Crie uma nova lista para começar.';
 
   @override
   String get restoreError => 'Erro ao restaurar compras. Tente novamente.';
@@ -3675,6 +3843,19 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get noBudgetDefined => 'Nenhum orçamento definido';
 
   @override
+  String get budgetGoalInvalidAmount => 'Insira um valor maior que zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inclui estimativas parciais de preços';
+
+  @override
+  String get budgetGoalSaved => 'Meta de orçamento salva';
+
+  @override
+  String get budgetGoalRemoved => 'Meta de orçamento removida';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimado: $amount';
   }
@@ -3869,6 +4050,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get newChat => 'Novo bate-papo';
 
   @override
+  String get newChatConfirmTitle => 'Nova conversa';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Iniciar uma nova conversa? Sua conversa atual será perdida.';
+
+  @override
   String get noHistory => 'Sem histórico de bate-papo';
 
   @override
@@ -3977,6 +4165,30 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get undo => 'Desfazer';
+
+  @override
+  String get newChatStarted => 'Novo bate-papo iniciado';
+
+  @override
+  String get quickAddToList => 'Adicionar à lista';
+
+  @override
+  String get aiCapabilitiesTitle => 'O que posso fazer?';
+
+  @override
+  String get aiCapabilitiesLists => 'Listas de compras';
+
+  @override
+  String get aiCapabilitiesBudget => 'Orçamento e preços';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Receitas e Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organização';
+
+  @override
+  String get marketModeDescription => 'Marque os itens enquanto você compra';
 
   @override
   String get kipiListTitle => 'Lista Kipi';
@@ -4413,6 +4625,16 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Oferta de boas-vindas';
+
+  @override
+  String get paywallFreeTier => 'Grátis: 3 listas';
+
+  @override
+  String get paywallProTier => 'Pró: Ilimitado';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Primeiro item adicionado! Ótimo começo 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5314,6 +5536,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get mealPlannerDefaultTypeLabel => 'Tipo padrão';
 
   @override
+  String get mealPlannerDuplicate => 'Refeição duplicada';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicar para...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Dia atual';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Refeição duplicada com sucesso!';
+
+  @override
   String get expirationDate => 'Data de validade';
 
   @override
@@ -5321,6 +5555,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get skip => 'Pular';
+
+  @override
+  String get onboardingSkip => 'Pular por enquanto';
 
   @override
   String get onboardingAiTitle => 'Conversar com Kipi';
@@ -6360,6 +6597,31 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get aiGeneratingResponse => 'Gerando resposta…';
+
+  @override
+  String get errorUnexpected =>
+      'Algo inesperado aconteceu. Por favor, tente novamente.';
+
+  @override
+  String get aiAssistantTooltip => 'Assistente de IA aberto';
+
+  @override
+  String get searchItems => 'Pesquisar itens';
+
+  @override
+  String get onboardingHookContinue => 'Comece';
+
+  @override
+  String get onboardingHookItem1 => 'Frango grelhado';
+
+  @override
+  String get onboardingHookItem2 => 'Queijo mussarela';
+
+  @override
+  String get onboardingHookItem3 => 'Tomate cereja';
+
+  @override
+  String get checkItemTooltip => 'Verifique o item';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -6430,6 +6692,32 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get close => 'Fechar';
 
   @override
+  String get help => 'Ajuda';
+
+  @override
+  String get helpListTitle => 'Usando sua lista';
+
+  @override
+  String get helpListAddItems =>
+      'Adicione itens com o botão + na parte inferior ou use a pesquisa para navegar pelos produtos';
+
+  @override
+  String get helpListAi =>
+      'Peça ao assistente de IA para criar, organizar ou completar sua lista – basta tocar no ícone de brilho';
+
+  @override
+  String get helpListShoppingMode =>
+      'O modo de compras oculta os itens comprados para que você possa se concentrar no que sobrou';
+
+  @override
+  String get helpListOrganize =>
+      'Arraste itens para reordenar, deslize para marcar como comprados ou use filtros e classificação';
+
+  @override
+  String get helpListShare =>
+      'Compartilhe sua lista com a família ou exporte como PDF, Excel ou texto simples';
+
+  @override
   String get import => 'Importar';
 
   @override
@@ -6440,6 +6728,13 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get clear => 'Limpar';
+
+  @override
+  String get clearPurchasedTitle => 'Limpar itens comprados';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Remover todos os itens comprados desta lista? Isso não pode ser desfeito.';
 
   @override
   String error(String message) {
@@ -6453,6 +6748,22 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get purchaseError => 'Erro ao processar compra. Tente novamente.';
+
+  @override
+  String get errorCreateList =>
+      'Não foi possível criar a lista. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorShareCode =>
+      'Erro ao gerar código de compartilhamento. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorQuickAdd =>
+      'Não foi possível adicionar o item. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get errorLoadList =>
+      'Não foi possível carregar suas listas. Crie uma nova lista para começar.';
 
   @override
   String get restoreError => 'Erro ao restaurar compras. Tente novamente.';
@@ -6845,6 +7156,19 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get noBudgetDefined => 'Nenhum orçamento definido';
 
   @override
+  String get budgetGoalInvalidAmount => 'Insira um valor maior que zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inclui estimativas parciais de preços';
+
+  @override
+  String get budgetGoalSaved => 'Meta de orçamento salva';
+
+  @override
+  String get budgetGoalRemoved => 'Meta de orçamento removida';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimado: $amount';
   }
@@ -7039,6 +7363,13 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get newChat => 'Novo bate-papo';
 
   @override
+  String get newChatConfirmTitle => 'Nova conversa';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Iniciar uma nova conversa? Sua conversa atual será perdida.';
+
+  @override
   String get noHistory => 'Sem histórico de bate-papo';
 
   @override
@@ -7147,6 +7478,30 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get undo => 'Desfazer';
+
+  @override
+  String get newChatStarted => 'Novo bate-papo iniciado';
+
+  @override
+  String get quickAddToList => 'Adicionar à lista';
+
+  @override
+  String get aiCapabilitiesTitle => 'O que posso fazer?';
+
+  @override
+  String get aiCapabilitiesLists => 'Listas de compras';
+
+  @override
+  String get aiCapabilitiesBudget => 'Orçamento e preços';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Receitas e Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organização';
+
+  @override
+  String get marketModeDescription => 'Marque os itens enquanto você compra';
 
   @override
   String get kipiListTitle => 'Lista Kipi';
@@ -7585,6 +7940,16 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Oferta de boas-vindas';
+
+  @override
+  String get paywallFreeTier => 'Grátis: 3 listas';
+
+  @override
+  String get paywallProTier => 'Pró: Ilimitado';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Primeiro item adicionado! Ótimo começo 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -8485,6 +8850,18 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get mealPlannerDefaultTypeLabel => 'Tipo padrão';
 
   @override
+  String get mealPlannerDuplicate => 'Refeição duplicada';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicar para...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Dia atual';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Refeição duplicada com sucesso!';
+
+  @override
   String get expirationDate => 'Data de validade';
 
   @override
@@ -8492,6 +8869,9 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get skip => 'Pular';
+
+  @override
+  String get onboardingSkip => 'Pular por enquanto';
 
   @override
   String get onboardingAiTitle => 'Conversar com Kipi';
@@ -9534,4 +9914,29 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get aiGeneratingResponse => 'Gerando resposta…';
+
+  @override
+  String get errorUnexpected =>
+      'Algo inesperado aconteceu. Por favor, tente novamente.';
+
+  @override
+  String get aiAssistantTooltip => 'Assistente de IA aberto';
+
+  @override
+  String get searchItems => 'Pesquisar itens';
+
+  @override
+  String get onboardingHookContinue => 'Comece';
+
+  @override
+  String get onboardingHookItem1 => 'Frango grelhado';
+
+  @override
+  String get onboardingHookItem2 => 'Queijo mussarela';
+
+  @override
+  String get onboardingHookItem3 => 'Tomate cereja';
+
+  @override
+  String get checkItemTooltip => 'Verifique o item';
 }

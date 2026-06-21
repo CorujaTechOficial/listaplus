@@ -17,6 +17,7 @@ import 'package:shopping_list/app/settings/screens/backup_screen.dart';
 import 'package:shopping_list/app/settings/screens/manage_categories_screen.dart';
 import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
 import 'package:shopping_list/app/settings/screens/user_profile_screen.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/app/ai/providers/ai_config_providers.dart';
 import 'package:shopping_list/models/ai_config.dart';
 import 'package:shopping_list/app/ai/screens/chat_history_screen.dart';
@@ -26,6 +27,7 @@ import 'package:shopping_list/app/settings/screens/currency_selection_screen.dar
 import 'package:shopping_list/app/settings/utils/locale_names.dart';
 import 'package:shopping_list/app/meal_planner/widgets/budget_goal_sheet.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -33,15 +35,15 @@ class SettingsScreen extends ConsumerWidget {
   IconData _getAiIcon(String iconKey) {
     switch (iconKey) {
       case 'smart_toy':
-        return Icons.smart_toy_outlined;
+        return PhosphorIconsRegular.robot;
       case 'psychology':
-        return Icons.psychology_outlined;
+        return PhosphorIconsRegular.brain;
       case 'support_agent':
-        return Icons.support_agent_outlined;
+        return PhosphorIconsRegular.headset;
       case 'face':
-        return Icons.face_outlined;
+        return PhosphorIconsRegular.user;
       default:
-        return Icons.smart_toy_outlined;
+        return PhosphorIconsRegular.robot;
     }
   }
 
@@ -76,13 +78,13 @@ class SettingsScreen extends ConsumerWidget {
                       isPremium
                           ? ListTile(
                             leading: const Icon(
-                              Icons.workspace_premium,
+                              PhosphorIconsRegular.crown,
                               color: AppColors.premiumAmber,
                             ),
                             title: Text(l10n.kipiListProActive),
                             subtitle: Text(l10n.manageSubscription),
                             trailing: Icon(
-                              Icons.chevron_right,
+                              PhosphorIconsRegular.caretRight,
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
                             onTap: () async {
@@ -93,12 +95,12 @@ class SettingsScreen extends ConsumerWidget {
                                 await ref
                                     .read(revenueCatServiceProvider)
                                     .presentCustomerCenter();
-                              } on Exception catch (e) {
+                              } on Exception catch (_) {
                                 if (context.mounted) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(l10n.error(e.toString())),
-                                    ),
+                                  showKipiSnackBar(
+                                    context,
+                                    message: l10n.errorUnexpected,
+                                    type: SnackBarType.error,
                                   );
                                 }
                               }
@@ -106,13 +108,13 @@ class SettingsScreen extends ConsumerWidget {
                           )
                           : ListTile(
                             leading: Icon(
-                              Icons.workspace_premium_outlined,
+                              PhosphorIconsRegular.crown,
                               color: theme.colorScheme.primary,
                             ),
                             title: Text(l10n.becomePremium),
                             subtitle: Text(l10n.unlockPremiumTitle),
                             trailing: Icon(
-                              Icons.chevron_right,
+                              PhosphorIconsRegular.caretRight,
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
                             onTap: () async {
@@ -131,31 +133,31 @@ class SettingsScreen extends ConsumerWidget {
                   () => Skeletonizer(
                     enabled: true,
                     child: ListTile(
-                      leading: const Icon(Icons.workspace_premium),
+                      leading: const Icon(PhosphorIconsRegular.crown),
                       title: Text(l10n.becomePremium),
                       subtitle: Text(l10n.unlockPremiumTitle),
-                      trailing: const Icon(Icons.chevron_right),
+                      trailing: const Icon(PhosphorIconsRegular.caretRight),
                     ),
                   ),
               error:
-                  (e, _) => ListTile(
+                  (_, _) => ListTile(
                     leading: Icon(
-                      Icons.error_outline,
+                      PhosphorIconsRegular.warningCircle,
                       color: theme.colorScheme.error,
                     ),
                     title: Text(l10n.errorLoadingSubscription),
-                    subtitle: Text(e.toString()),
+                    subtitle: Text(l10n.errorUnexpected),
                   ),
             ),
             ListTile(
               leading: Icon(
-                Icons.person_outline,
+                PhosphorIconsRegular.user,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.myProfile),
               subtitle: Text(l10n.profileSubtitle),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -170,7 +172,7 @@ class SettingsScreen extends ConsumerWidget {
             _SectionHeader(title: l10n.appearance),
             ListTile(
               leading: Icon(
-                Icons.light_mode_outlined,
+                PhosphorIconsRegular.sun,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.themeMode),
@@ -182,14 +184,14 @@ class SettingsScreen extends ConsumerWidget {
                         : l10n.system,
               ),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () => _showThemeModeDialog(context, ref, currentThemeMode),
             ),
             ListTile(
               leading: Icon(
-                Icons.palette_outlined,
+                PhosphorIconsRegular.palette,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.themeColor),
@@ -200,7 +202,7 @@ class SettingsScreen extends ConsumerWidget {
                 ).localizedName(l10n),
               ),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -212,7 +214,7 @@ class SettingsScreen extends ConsumerWidget {
             ),
             SwitchListTile.adaptive(
               secondary: Icon(
-                Icons.color_lens_outlined,
+                PhosphorIconsRegular.palette,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.dynamicColors),
@@ -233,11 +235,11 @@ class SettingsScreen extends ConsumerWidget {
               subtitle: Text(aiConfig.name),
               trailing: isPremium
                   ? Icon(
-                      Icons.chevron_right,
+                      PhosphorIconsRegular.caretRight,
                       color: theme.colorScheme.onSurfaceVariant,
                     )
                   : Icon(
-                      Icons.lock_outline,
+                      PhosphorIconsRegular.lock,
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
               onTap: () async {
@@ -257,11 +259,11 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.history, color: theme.colorScheme.primary),
+              leading: Icon(PhosphorIconsRegular.clockCounterClockwise, color: theme.colorScheme.primary),
               title: Text(l10n.assistantHistory),
               subtitle: Text(l10n.assistantHistorySubtitle),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -276,7 +278,7 @@ class SettingsScreen extends ConsumerWidget {
             _SectionHeader(title: l10n.preferencesSection),
             ListTile(
               leading: Icon(
-                Icons.home_outlined,
+                PhosphorIconsRegular.house,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.settingsDefaultScreen),
@@ -286,7 +288,7 @@ class SettingsScreen extends ConsumerWidget {
                     : l10n.settingsScreenList,
               ),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -296,11 +298,11 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.language, color: theme.colorScheme.primary),
+              leading: Icon(PhosphorIconsRegular.globe, color: theme.colorScheme.primary),
               title: Text(l10n.language),
               subtitle: Text(getLocaleDisplayName(localeAsync.value, l10n)),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -312,7 +314,7 @@ class SettingsScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.attach_money,
+                PhosphorIconsRegular.currencyDollar,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.currency),
@@ -323,7 +325,7 @@ class SettingsScreen extends ConsumerWidget {
                 ),
               ),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -335,13 +337,13 @@ class SettingsScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.category_outlined,
+                PhosphorIconsRegular.squaresFour,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.manageCategories),
               subtitle: Text(l10n.manageCategoriesSubtitle),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -356,13 +358,13 @@ class SettingsScreen extends ConsumerWidget {
             _SectionHeader(title: l10n.finance),
             ListTile(
               leading: Icon(
-                Icons.account_balance_wallet_outlined,
+                PhosphorIconsRegular.wallet,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.monthlyBudgetNav),
               subtitle: Text(l10n.budgetSubtitle),
               trailing: Icon(
-                isPremium ? Icons.chevron_right : Icons.lock_outline,
+                isPremium ? PhosphorIconsRegular.caretRight : PhosphorIconsRegular.lock,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () async {
@@ -401,26 +403,16 @@ class SettingsScreen extends ConsumerWidget {
                     : l10n.noBudgetDefined;
                 return ListTile(
                   leading: Icon(
-                    Icons.restaurant_menu_outlined,
+                    PhosphorIconsRegular.forkKnife,
                     color: theme.colorScheme.primary,
                   ),
                   title: Text(l10n.mealPlannerBudgetGoalNav),
                   subtitle: Text(l10n.mealPlannerBudgetGoalSubtitle),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        trailingText,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                      const SizedBox(width: Spacing.xs),
-                      Icon(
-                        Icons.chevron_right,
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ],
+                  trailing: Text(
+                    trailingText,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
                   ),
                   onTap: () => BudgetGoalSheet.show(context),
                 );
@@ -428,13 +420,13 @@ class SettingsScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.backup_outlined,
+                PhosphorIconsRegular.cloudArrowUp,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.backupNav),
               subtitle: Text(l10n.backupSubtitle),
               trailing: Icon(
-                isPremium ? Icons.chevron_right : Icons.lock_outline,
+                isPremium ? PhosphorIconsRegular.caretRight : PhosphorIconsRegular.lock,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () async {
@@ -461,7 +453,7 @@ class SettingsScreen extends ConsumerWidget {
             _SectionHeader(title: l10n.about),
             ListTile(
               leading: Icon(
-                Icons.info_outline,
+                PhosphorIconsRegular.info,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               title: Text(l10n.version),
@@ -475,13 +467,13 @@ class SettingsScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.feedback_outlined,
+                PhosphorIconsRegular.chatText,
                 color: theme.colorScheme.primary,
               ),
               title: Text(l10n.feedbackSettingsTitle),
               subtitle: Text(l10n.feedbackSettingsSubtitle),
               trailing: Icon(
-                Icons.chevron_right,
+                PhosphorIconsRegular.caretRight,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               onTap: () {
@@ -495,12 +487,12 @@ class SettingsScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.privacy_tip_outlined,
+                PhosphorIconsRegular.shieldCheck,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               title: Text(l10n.privacy),
               trailing: Icon(
-                Icons.open_in_new,
+                PhosphorIconsRegular.arrowSquareOut,
                 color: theme.colorScheme.onSurfaceVariant,
                 size: 18,
               ),
@@ -513,12 +505,12 @@ class SettingsScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.description_outlined,
+                PhosphorIconsRegular.file,
                 color: theme.colorScheme.onSurfaceVariant,
               ),
               title: Text(l10n.termsOfUse),
               trailing: Icon(
-                Icons.open_in_new,
+                PhosphorIconsRegular.arrowSquareOut,
                 color: theme.colorScheme.onSurfaceVariant,
                 size: 18,
               ),
@@ -554,10 +546,10 @@ class SettingsScreen extends ConsumerWidget {
             final l10n = AppLocalizations.of(context)!;
             final theme = Theme.of(context);
             final icons = [
-              (key: 'smart_toy', icon: Icons.smart_toy_outlined),
-              (key: 'psychology', icon: Icons.psychology_outlined),
-              (key: 'support_agent', icon: Icons.support_agent_outlined),
-              (key: 'face', icon: Icons.face_outlined),
+              (key: 'smart_toy', icon: PhosphorIconsRegular.robot),
+              (key: 'psychology', icon: PhosphorIconsRegular.brain),
+              (key: 'support_agent', icon: PhosphorIconsRegular.headset),
+              (key: 'face', icon: PhosphorIconsRegular.user),
             ];
 
             return AlertDialog(
@@ -667,14 +659,16 @@ class SettingsScreen extends ConsumerWidget {
                             if (context.mounted) {
                               Navigator.pop(context);
                             }
-                          } on Exception catch (e) {
+                          } on Exception catch (_) {
                             setState(() {
                               isLoading = false;
                             });
                             if (context.mounted) {
-                              ScaffoldMessenger.of(
+                              showKipiSnackBar(
                                 context,
-                              ).showSnackBar(SnackBar(content: Text(e.toString())));
+                                message: l10n.errorUnexpected,
+                                type: SnackBarType.error,
+                              );
                             }
                           }
                         },
@@ -721,10 +715,10 @@ class SettingsScreen extends ConsumerWidget {
                 ),
               ),
               ListTile(
-                leading: const Icon(Icons.light_mode_outlined),
+                leading: const Icon(PhosphorIconsRegular.sun),
                 title: Text(l10n.light),
                 trailing: currentMode == ThemeMode.light
-                    ? Icon(Icons.check, color: theme.colorScheme.primary)
+                    ? Icon(PhosphorIconsRegular.check, color: theme.colorScheme.primary)
                     : null,
                 onTap: () {
                   ref.read(darkModeProvider.notifier).setMode(ThemeMode.light);
@@ -732,10 +726,10 @@ class SettingsScreen extends ConsumerWidget {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.settings_brightness_outlined),
+                leading: const Icon(PhosphorIconsRegular.sunDim),
                 title: Text(l10n.system),
                 trailing: currentMode == ThemeMode.system
-                    ? Icon(Icons.check, color: theme.colorScheme.primary)
+                    ? Icon(PhosphorIconsRegular.check, color: theme.colorScheme.primary)
                     : null,
                 onTap: () {
                   ref.read(darkModeProvider.notifier).setMode(ThemeMode.system);
@@ -743,10 +737,10 @@ class SettingsScreen extends ConsumerWidget {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.dark_mode_outlined),
+                leading: const Icon(PhosphorIconsRegular.moon),
                 title: Text(l10n.dark),
                 trailing: currentMode == ThemeMode.dark
-                    ? Icon(Icons.check, color: theme.colorScheme.primary)
+                    ? Icon(PhosphorIconsRegular.check, color: theme.colorScheme.primary)
                     : null,
                 onTap: () {
                   ref.read(darkModeProvider.notifier).setMode(ThemeMode.dark);
@@ -782,11 +776,11 @@ class SettingsScreen extends ConsumerWidget {
                 ),
               ),
               ListTile(
-                leading: const Icon(Icons.list_alt_outlined),
+                leading: const Icon(PhosphorIconsRegular.listChecks),
                 title: Text(l10n.settingsScreenList),
                 subtitle: Text(l10n.settingsDefaultScreenSubtitle),
                 trailing: currentScreen == 'list'
-                    ? Icon(Icons.check, color: theme.colorScheme.primary)
+                    ? Icon(PhosphorIconsRegular.check, color: theme.colorScheme.primary)
                     : null,
                 onTap: () {
                   ref.read(defaultScreenProvider.notifier).setScreen('list');
@@ -794,11 +788,11 @@ class SettingsScreen extends ConsumerWidget {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.chat_outlined),
+                leading: const Icon(PhosphorIconsRegular.chat),
                 title: Text(l10n.settingsScreenChat),
                 subtitle: Text(l10n.settingsDefaultScreenSubtitle),
                 trailing: currentScreen == 'chat'
-                    ? Icon(Icons.check, color: theme.colorScheme.primary)
+                    ? Icon(PhosphorIconsRegular.check, color: theme.colorScheme.primary)
                     : null,
                 onTap: () {
                   ref.read(defaultScreenProvider.notifier).setScreen('chat');

@@ -6,6 +6,7 @@ import 'package:shopping_list/app/onboarding/providers/onboarding_data_provider.
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/utils/test_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// First-run surface for the assistant. Leads with Kipi's identity, a warm
 /// greeting, and three concrete capabilities the user can tap to start — the
@@ -32,17 +33,17 @@ class ChatEmptyState extends ConsumerWidget {
 
     final capabilities = <_Capability>[
       _Capability(
-        icon: Icons.add_shopping_cart_rounded,
+        icon: PhosphorIconsRegular.shoppingCartSimple,
         label: l10n.aiWelcomeSuggestCreateList,
         prompt: l10n.aiWelcomeSuggestCreateListPrompt,
       ),
       _Capability(
-        icon: Icons.outdoor_grill_rounded,
+        icon: PhosphorIconsRegular.flame,
         label: l10n.aiWelcomeSuggestBarbecue,
         prompt: l10n.aiWelcomeSuggestBarbecuePrompt,
       ),
       _Capability(
-        icon: Icons.savings_rounded,
+        icon: PhosphorIconsRegular.piggyBank,
         label: l10n.aiWelcomeSuggestSave,
         prompt: l10n.aiWelcomeSuggestSavePrompt,
       ),
@@ -188,7 +189,7 @@ class _CapabilityButton extends StatelessWidget {
                 ),
               ),
               Icon(
-                Icons.arrow_forward_rounded,
+                PhosphorIconsRegular.arrowRight,
                 size: 18,
                 color: theme.colorScheme.onSurfaceVariant,
               ),

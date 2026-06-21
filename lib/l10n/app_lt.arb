@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -504,6 +549,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -845,8 +896,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -982,6 +1045,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1385,6 +1451,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1506,6 +1575,7 @@
   "aiAssistantGeneral": "Generalinis asistentas",
   "aiAssistantHistory": "Asistento istorija",
   "aiAssistantTitle": "AI asistentas",
+  "aiAssistantTooltip": "Atidarykite AI asistentą",
   "aiCapabilitiesBudget": "Biudžetas ir kainos",
   "aiCapabilitiesLists": "Pirkinių sąrašai",
   "aiCapabilitiesOrganize": "Organizacija",
@@ -1592,7 +1662,11 @@
   "budgetAppBar": "Mėnesio biudžetas",
   "budgetDashboardTitle": "Prietaisų skydelis",
   "budgetEditTitle": "Mėnesio biudžetas",
+  "budgetGoalInvalidAmount": "Įveskite reikšmę, didesnę už nulį",
+  "budgetGoalRemoved": "Biudžeto tikslas pašalintas",
+  "budgetGoalSaved": "Biudžeto tikslas išsaugotas",
   "budgetLists": "Sąrašai",
+  "budgetPartialEstimateHint": "~ Apima dalines kainodaros sąmatas",
   "budgetPremiumLocked": "Globalus mėnesio biudžetas yra premium",
   "budgetSubtitle": "Stebėkite savo mėnesio išlaidas",
   "budgetUpgradePrompt": "Atnaujinkite, kad atrakintumėte",
@@ -1660,6 +1734,7 @@
   "chatHistoryOfflineTitle": "Esate neprisijungęs",
   "chatSubtitle": "Klauskite prekių pasiūlymų, receptų ar taupymo patarimų.",
   "chatSubtitleShort": "Dėl kainų, receptų, organizavimo teirautis...",
+  "checkItemTooltip": "Patikrinkite prekę",
   "chooseCurrency": "Pasirinkite Valiuta",
   "chooseIcon": "Pasirinkite piktogramą",
   "chooseImageSource": "Pasirinkite nuotraukos šaltinį",
@@ -1671,6 +1746,8 @@
   "clearHistoryConfirm": "Išvalyti visus šios sesijos pranešimus?",
   "clearList": "Išvalyti sąrašą",
   "clearPurchased": "Išvalyti nupirktus",
+  "clearPurchasedConfirmMessage": "Pašalinti visas įsigytas prekes iš šio sąrašo? To negalima anuliuoti.",
+  "clearPurchasedTitle": "Išvalykite įsigytas prekes",
   "close": "Uždaryti",
   "closeSheet": "Uždaryti",
   "complete": "Užbaigti",
@@ -1759,7 +1836,9 @@
   "enterCodeHint": "Įveskite kodą",
   "enterUrl": "Įveskite URL",
   "error": "Klaida: {message}",
+  "errorCreateList": "Nepavyko sukurti sąrašo. Patikrinkite ryšį ir bandykite dar kartą.",
   "errorGeneric": "Klaida: {message}",
+  "errorLoadList": "Nepavyko įkelti jūsų sąrašų. Norėdami pradėti, sukurkite naują sąrašą.",
   "errorLoadingChat": "Oi! Įkeliant pokalbį įvyko klaida.",
   "errorLoadingChatSubtitle": "Patikrinkite ryšį arba bandykite dar kartą vėliau.",
   "errorLoadingHistory": "Įkeliant istoriją įvyko klaida",
@@ -1768,7 +1847,10 @@
   "errorLoadingRecipes": "Klaida įkeliant receptus",
   "errorLoadingSubscription": "Įkeliant prenumeratą įvyko klaida",
   "errorOscillation": "Taip gali nutikti dėl tinklo svyravimų arba laikino nepasiekiamumo. Bandykite dar kartą.",
+  "errorQuickAdd": "Nepavyko pridėti elemento. Patikrinkite ryšį ir bandykite dar kartą.",
   "errorSavingProfile": "Išsaugant profilį įvyko klaida",
+  "errorShareCode": "Klaida generuojant bendrinimo kodą. Patikrinkite ryšį ir bandykite dar kartą.",
+  "errorUnexpected": "Atsitiko kažkas netikėto. Bandykite dar kartą.",
   "estimated": "Numatoma",
   "estimatedCost": "Apskaičiuota",
   "estimatedPrice": "Numatoma kaina",
@@ -1810,6 +1892,7 @@
   "filterPurchased": "Nupirkta",
   "finance": "Finansai",
   "finishShopping": "Baigti apsipirkti",
+  "firstItemAddedSnackbar": "Pridėta pirmoji prekė! Puiki pradžia 🛒",
   "gallery": "Galerija",
   "generalAssistant": "Bendrasis asistentas",
   "generalHelp": "Kaip galiu padėti jums apsipirkti šiandien?",
@@ -1817,6 +1900,13 @@
   "gestureHint": "Palaikykite, kad pasirinktumėte • Braukite, kad pašalintumėte",
   "globalAssistant": "Globalus asistentas",
   "goodResponse": "Geras atsakymas",
+  "help": "Pagalba",
+  "helpListAddItems": "Pridėkite elementus naudodami + mygtuką apačioje arba naudokite paiešką norėdami naršyti produktus",
+  "helpListAi": "Paprašykite AI asistento sukurti, tvarkyti arba užbaigti sąrašą – tiesiog palieskite spindesio piktogramą",
+  "helpListOrganize": "Vilkite elementus, kad pertvarkytumėte, perbraukite, kad pažymėtumėte kaip įsigytą, arba naudokite filtrus ir rūšiavimą",
+  "helpListShare": "Bendrinkite sąrašą su šeimos nariais arba eksportuokite kaip PDF, Excel arba paprastą tekstą",
+  "helpListShoppingMode": "Apsipirkimo režimas paslepia įsigytas prekes, todėl galite sutelkti dėmesį į tai, kas liko",
+  "helpListTitle": "Naudodami savo sąrašą",
   "howCanIHelp": "Kaip galiu padėti?",
   "idealQty": "Idealus kiekis",
   "idealQuantity": "Idealus kiekis",
@@ -1899,10 +1989,13 @@
   "mealPlannerBudgetRemoveGoal": "Pašalinti tikslą",
   "mealPlannerBudgetTodayCost": "Šiandien: {amount}",
   "mealPlannerBudgetWeekCost": "Savaitė: {amount}",
+  "mealPlannerCurrentDayLabel": "Dabartinė diena",
   "mealPlannerCustomTypeLabel": "Pasirinktinis tipas",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Numatytasis tipas",
   "mealPlannerDeleteMeal": "Pašalinti valgį",
+  "mealPlannerDuplicate": "Pasikartojantis valgis",
+  "mealPlannerDuplicateSuccess": "Maistas sėkmingai nukopijuotas!",
   "mealPlannerEditMeal": "Redaguoti valgį",
   "mealPlannerEditType": "Redaguoti valgio tipą",
   "mealPlannerError": "Klaida įkeliant valgio planą",
@@ -1929,6 +2022,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Pridėti į planą",
   "mealPlannerSearchRecipes": "Ieškoti receptų...",
+  "mealPlannerSelectDestinationDay": "Kopijuoti į...",
   "mealPlannerSelectRecipe": "Pasirinkite receptą",
   "mealPlannerServings": "{count,plural, one{{count} porcija} few{{count} porcijos} other{{count} porcijų}}",
   "mealPlannerServingsLabel": "Porcijos",
@@ -1960,6 +2054,8 @@
   "navRecipes": "Receptai",
   "newCategoryDialog": "Nauja kategorija",
   "newChat": "Naujas pokalbis",
+  "newChatConfirmMessage": "Pradėti naują pokalbį? Dabartinis pokalbis bus prarastas.",
+  "newChatConfirmTitle": "Naujas pokalbis",
   "newChatStarted": "Prasidėjo naujas pokalbis",
   "newListTitle": "Naujas pirkinių sąrašas",
   "newPantryList": "Sandėliuko pirkiniai",
@@ -2098,7 +2194,11 @@
   "onboardingGroupCouple": "Pora",
   "onboardingGroupFamily": "Šeima",
   "onboardingGroupSolo": "Tik aš",
+  "onboardingHookContinue": "Pradėkite",
   "onboardingHookHeadline": "Niekada daugiau nepamirškite bakalėjos prekės",
+  "onboardingHookItem1": "Ant grotelių kepta vištiena",
+  "onboardingHookItem2": "Mocarelos sūris",
+  "onboardingHookItem3": "Vyšniniai pomidorai",
   "onboardingListCreated": "Jūsų sąrašas paruoštas: {count} elementai sutvarkyti jums.",
   "onboardingListSaveFailed": "Paruošiau prekes, bet negalėjau išsaugoti sąrašo. Bandykite dar kartą, kad jis liktų programoje.",
   "onboardingLoadingStat1Label": "Kataloguotos prekės",
@@ -2145,6 +2245,7 @@
   "onboardingSetupTitle": "Suasmeninkite savo patirtį",
   "onboardingShareDesc": "Sinchronizuokite sąrašus su šeima ir draugais realiuoju laiku",
   "onboardingShareTitle": "Pasidalinkite su tais, kuriuos mylite",
+  "onboardingSkip": "Kol kas praleiskite",
   "onboardingSlide1Body": "Nedelsdami kurkite ir bendrinkite sąrašus. Kipi automatiškai prideda elementus pagal jūsų įpročius.",
   "onboardingSlide1Title": "Išmanieji pirkinių sąrašai",
   "onboardingSlide2Body": "Klauskite bet ko – kurkite sąrašus, raskite receptų, stebėkite savo sandėliuką, planuokite savaitę.",
@@ -2225,6 +2326,7 @@
   "paywallFeatureSmartAI": "Išmanusis AI",
   "paywallFeatureUnlimitedLists": "Neriboti sąrašai",
   "paywallFeaturesTitle": "Viskas ko reikia:",
+  "paywallFreeTier": "Nemokamai: 3 sąrašai",
   "paywallGoalHeadlineFamily": "{name}, organizuokite šeimos apsipirkimą!",
   "paywallGoalHeadlineFaster": "{name}, apsipirkite per pusę laiko!",
   "paywallGoalHeadlineNeverForget": "{name}, niekada nepamirškite nė vieno elemento!",
@@ -2254,6 +2356,7 @@
   "paywallPricePerDay": "Tik {price} per dieną – mažiau nei kava",
   "paywallPricePerMonth": "Tik {price}/mėn",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: neribotas",
   "paywallPurchaseError": "Nepavyko užbaigti pirkimo. Bandykite dar kartą.",
   "paywallPurchasePending": "Jūsų mokėjimas laukia patvirtinimo. Prieiga bus paleista automatiškai po patvirtinimo.",
   "paywallRestore": "Atkurti",
@@ -2381,6 +2484,7 @@
   "searchConversations": "Ieškoti pokalbių",
   "searchCurrency": "Ieškoti valiutos...",
   "searchInConversation": "Ieškoti pokalbyje...",
+  "searchItems": "Ieškokite elementų",
   "searchLanguage": "Ieškoti kalbos...",
   "searchMessages": "Ieškoti žinučių...",
   "searchRecipes": "Ieškoti receptų...",

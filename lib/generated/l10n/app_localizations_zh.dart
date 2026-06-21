@@ -72,6 +72,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get close => '关闭';
 
   @override
+  String get help => '帮助';
+
+  @override
+  String get helpListTitle => '使用您的清单';
+
+  @override
+  String get helpListAddItems => '使用底部的 + 按钮添加项目，或使用搜索浏览产品';
+
+  @override
+  String get helpListAi => '让 AI 助手创建、组织或完成您的列表 - 只需点击闪烁的图标';
+
+  @override
+  String get helpListShoppingMode => '购物模式会隐藏已购买的商品，以便您可以专注于剩下的商品';
+
+  @override
+  String get helpListOrganize => '拖动商品重新排序、滑动以标记为已购买，或使用过滤器和排序';
+
+  @override
+  String get helpListShare => '与家人分享您的列表或导出为 PDF、Excel 或纯文本';
+
+  @override
   String get import => '导入';
 
   @override
@@ -82,6 +103,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get clear => '清除';
+
+  @override
+  String get clearPurchasedTitle => '清除已购买的物品';
+
+  @override
+  String get clearPurchasedConfirmMessage => '从此列表中删除所有已购买的商品吗？这无法撤消。';
 
   @override
   String error(String message) {
@@ -95,6 +122,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get purchaseError => '处理购买时出错。请重试。';
+
+  @override
+  String get errorCreateList => '无法创建列表。检查您的连接并重试。';
+
+  @override
+  String get errorShareCode => '生成共享代码时出错。检查您的连接并重试。';
+
+  @override
+  String get errorQuickAdd => '无法添加项目。检查您的连接并重试。';
+
+  @override
+  String get errorLoadList => '无法加载您的列表。请创建一个新列表以开始。';
 
   @override
   String get restoreError => '恢复购买时出错。请重试。';
@@ -477,6 +516,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get noBudgetDefined => '未设置预算';
 
   @override
+  String get budgetGoalInvalidAmount => '输入大于零的值';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 包括部分定价估算';
+
+  @override
+  String get budgetGoalSaved => '已保存预算目标';
+
+  @override
+  String get budgetGoalRemoved => '预算目标已删除';
+
+  @override
   String totalEstimated(String amount) {
     return '预估总计：$amount';
   }
@@ -669,6 +720,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get newChat => '新聊天';
 
   @override
+  String get newChatConfirmTitle => '新对话';
+
+  @override
+  String get newChatConfirmMessage => '开始新的对话？您当前的对话将会丢失。';
+
+  @override
   String get noHistory => '没有聊天记录';
 
   @override
@@ -772,28 +829,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get undo => '撤销';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => '新的聊天开始了';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => '添加到列表';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => '我能做些什么？';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => '购物清单';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => '预算和价格';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => '食谱和菜单';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => '组织';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => '购物时核对商品';
 
   @override
   String get kipiListTitle => '基皮列表';
@@ -1195,6 +1252,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 欢迎优惠';
+
+  @override
+  String get paywallFreeTier => '免费：3 个列表';
+
+  @override
+  String get paywallProTier => '优点：无限制';
+
+  @override
+  String get firstItemAddedSnackbar => '添加了第一个项目！伟大的开始🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1903,28 +1969,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return '月份：$amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return '周：$amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return '今天：$amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => '删除目标';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => '膳食计划预算';
 
   @override
-  String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+  String get mealPlannerBudgetGoalSubtitle => '膳食计划的每月支出目标';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2064,6 +2129,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => '默认类型';
 
   @override
+  String get mealPlannerDuplicate => '重复用餐';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '复制到...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '当前日期';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '餐食复制成功！';
+
+  @override
   String get expirationDate => '截止日期';
 
   @override
@@ -2071,6 +2148,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get skip => '跳过';
+
+  @override
+  String get onboardingSkip => '暂时跳过';
 
   @override
   String get onboardingAiTitle => '与 Kipi 聊天';
@@ -3059,6 +3139,30 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => '正在生成响应...';
+
+  @override
+  String get errorUnexpected => '意想不到的事情发生了。请再试一次。';
+
+  @override
+  String get aiAssistantTooltip => '打开AI助手';
+
+  @override
+  String get searchItems => '搜索项目';
+
+  @override
+  String get onboardingHookContinue => '开始使用';
+
+  @override
+  String get onboardingHookItem1 => '烤鸡';
+
+  @override
+  String get onboardingHookItem2 => '马苏里拉奶酪';
+
+  @override
+  String get onboardingHookItem3 => '樱桃番茄';
+
+  @override
+  String get checkItemTooltip => '检查项目';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -3129,6 +3233,27 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get close => '关闭';
 
   @override
+  String get help => '帮助';
+
+  @override
+  String get helpListTitle => '使用您的清单';
+
+  @override
+  String get helpListAddItems => '使用底部的 + 按钮添加项目，或使用搜索浏览产品';
+
+  @override
+  String get helpListAi => '让 AI 助手创建、组织或完成您的列表 - 只需点击闪烁的图标';
+
+  @override
+  String get helpListShoppingMode => '购物模式会隐藏已购买的商品，以便您可以专注于剩下的商品';
+
+  @override
+  String get helpListOrganize => '拖动商品重新排序、滑动以标记为已购买，或使用过滤器和排序';
+
+  @override
+  String get helpListShare => '与家人分享您的列表或导出为 PDF、Excel 或纯文本';
+
+  @override
   String get import => '导入';
 
   @override
@@ -3139,6 +3264,12 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get clear => '清除';
+
+  @override
+  String get clearPurchasedTitle => '清除已购买的物品';
+
+  @override
+  String get clearPurchasedConfirmMessage => '从此列表中删除所有已购买的商品吗？这无法撤消。';
 
   @override
   String error(String message) {
@@ -3152,6 +3283,18 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get purchaseError => '处理购买时出错。请重试。';
+
+  @override
+  String get errorCreateList => '无法创建列表。检查您的连接并重试。';
+
+  @override
+  String get errorShareCode => '生成共享代码时出错。检查您的连接并重试。';
+
+  @override
+  String get errorQuickAdd => '无法添加项目。检查您的连接并重试。';
+
+  @override
+  String get errorLoadList => '无法加载您的列表。请创建一个新列表以开始。';
 
   @override
   String get restoreError => '恢复购买时出错。请重试。';
@@ -3534,6 +3677,18 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get noBudgetDefined => '未设置预算';
 
   @override
+  String get budgetGoalInvalidAmount => '输入大于零的值';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 包括部分定价估算';
+
+  @override
+  String get budgetGoalSaved => '已保存预算目标';
+
+  @override
+  String get budgetGoalRemoved => '预算目标已删除';
+
+  @override
   String totalEstimated(String amount) {
     return '预估总计：$amount';
   }
@@ -3726,6 +3881,12 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get newChat => '新聊天';
 
   @override
+  String get newChatConfirmTitle => '新对话';
+
+  @override
+  String get newChatConfirmMessage => '开始新的对话？您当前的对话将会丢失。';
+
+  @override
   String get noHistory => '没有聊天记录';
 
   @override
@@ -3827,6 +3988,30 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get undo => '撤销';
+
+  @override
+  String get newChatStarted => '新的聊天开始了';
+
+  @override
+  String get quickAddToList => '添加到列表';
+
+  @override
+  String get aiCapabilitiesTitle => '我能做些什么？';
+
+  @override
+  String get aiCapabilitiesLists => '购物清单';
+
+  @override
+  String get aiCapabilitiesBudget => '预算和价格';
+
+  @override
+  String get aiCapabilitiesRecipes => '食谱和菜单';
+
+  @override
+  String get aiCapabilitiesOrganize => '组织';
+
+  @override
+  String get marketModeDescription => '购物时核对商品';
 
   @override
   String get kipiListTitle => '基皮列表';
@@ -4228,6 +4413,15 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 欢迎优惠';
+
+  @override
+  String get paywallFreeTier => '免费：3 个列表';
+
+  @override
+  String get paywallProTier => '优点：无限制';
+
+  @override
+  String get firstItemAddedSnackbar => '添加了第一个项目！伟大的开始🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -4935,6 +5129,30 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get mealPlannerWeekEmptyHint => '点击任意一天即可开始计划您的膳食！';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return '月份：$amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return '周：$amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return '今天：$amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => '删除目标';
+
+  @override
+  String get mealPlannerBudgetGoalNav => '膳食计划预算';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle => '膳食计划的每月支出目标';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes 分钟';
   }
@@ -5072,6 +5290,18 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get mealPlannerDefaultTypeLabel => '默认类型';
 
   @override
+  String get mealPlannerDuplicate => '重复用餐';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '复制到...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '当前日期';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '餐食复制成功！';
+
+  @override
   String get expirationDate => '截止日期';
 
   @override
@@ -5079,6 +5309,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get skip => '跳过';
+
+  @override
+  String get onboardingSkip => '暂时跳过';
 
   @override
   String get onboardingAiTitle => '与 Kipi 聊天';
@@ -6067,6 +6300,30 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get aiGeneratingResponse => '正在生成响应...';
+
+  @override
+  String get errorUnexpected => '意想不到的事情发生了。请再试一次。';
+
+  @override
+  String get aiAssistantTooltip => '打开AI助手';
+
+  @override
+  String get searchItems => '搜索项目';
+
+  @override
+  String get onboardingHookContinue => '开始使用';
+
+  @override
+  String get onboardingHookItem1 => '烤鸡';
+
+  @override
+  String get onboardingHookItem2 => '马苏里拉奶酪';
+
+  @override
+  String get onboardingHookItem3 => '樱桃番茄';
+
+  @override
+  String get checkItemTooltip => '检查项目';
 }
 
 /// The translations for Chinese, as used in Hong Kong (`zh_HK`).
@@ -6137,6 +6394,32 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get close => '关闭';
 
   @override
+  String get help => 'Help';
+
+  @override
+  String get helpListTitle => 'Using your list';
+
+  @override
+  String get helpListAddItems =>
+      'Add items with the + button at the bottom, or use the search to browse products';
+
+  @override
+  String get helpListAi =>
+      'Ask the AI assistant to create, organize, or complete your list — just tap the sparkle icon';
+
+  @override
+  String get helpListShoppingMode =>
+      'Shopping mode hides purchased items so you can focus on what\'s left';
+
+  @override
+  String get helpListOrganize =>
+      'Drag items to reorder, swipe to mark as purchased, or use filters and sorting';
+
+  @override
+  String get helpListShare =>
+      'Share your list with family or export as PDF, Excel, or plain text';
+
+  @override
   String get import => '导入';
 
   @override
@@ -6147,6 +6430,13 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get clear => '清除';
+
+  @override
+  String get clearPurchasedTitle => 'Clear purchased items';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Remove all purchased items from this list? This can\'t be undone.';
 
   @override
   String error(String message) {
@@ -6160,6 +6450,22 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get purchaseError => '处理购买时出错。请重试。';
+
+  @override
+  String get errorCreateList =>
+      'Could not create list. Check your connection and try again.';
+
+  @override
+  String get errorShareCode =>
+      'Error generating share code. Check your connection and try again.';
+
+  @override
+  String get errorQuickAdd =>
+      'Could not add item. Check your connection and try again.';
+
+  @override
+  String get errorLoadList =>
+      'Could not load your lists. Please create a new list to get started.';
 
   @override
   String get restoreError => '恢复购买时出错。请重试。';
@@ -6543,6 +6849,19 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get noBudgetDefined => '未设置预算';
 
   @override
+  String get budgetGoalInvalidAmount => 'Enter a value greater than zero';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Includes partial pricing estimates';
+
+  @override
+  String get budgetGoalSaved => 'Budget goal saved';
+
+  @override
+  String get budgetGoalRemoved => 'Budget goal removed';
+
+  @override
   String totalEstimated(String amount) {
     return '预估总计：$amount';
   }
@@ -6735,6 +7054,13 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get newChat => 'New Chat';
 
   @override
+  String get newChatConfirmTitle => 'New conversation';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Start a new conversation? Your current conversation will be lost.';
+
+  @override
   String get noHistory => 'No chat history';
 
   @override
@@ -6840,6 +7166,30 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get undo => '撤销';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -7263,6 +7613,15 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Welcome offer';
+
+  @override
+  String get paywallFreeTier => 'Free: 3 lists';
+
+  @override
+  String get paywallProTier => 'Pro: Unlimited';
+
+  @override
+  String get firstItemAddedSnackbar => 'First item added! Great start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -7983,6 +8342,31 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
       'Tap any day to start planning your meals!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Month: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Week: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Today: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Monthly spending goal for meal planning';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }
@@ -8121,6 +8505,18 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get mealPlannerDefaultTypeLabel => 'Default type';
 
   @override
+  String get mealPlannerDuplicate => 'Duplicate meal';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicate to...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Current day';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Meal duplicated successfully!';
+
+  @override
   String get expirationDate => 'Expiration date';
 
   @override
@@ -8128,6 +8524,9 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get skip => 'Skip';
+
+  @override
+  String get onboardingSkip => 'Skip for now';
 
   @override
   String get onboardingAiTitle => 'Chat with Kipi';
@@ -9145,6 +9544,31 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get aiGeneratingResponse => 'Generating response…';
+
+  @override
+  String get errorUnexpected =>
+      'Something unexpected happened. Please try again.';
+
+  @override
+  String get aiAssistantTooltip => 'Open AI assistant';
+
+  @override
+  String get searchItems => 'Search items';
+
+  @override
+  String get onboardingHookContinue => 'Get Started';
+
+  @override
+  String get onboardingHookItem1 => 'Grilled chicken';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella cheese';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry tomatoes';
+
+  @override
+  String get checkItemTooltip => 'Check item';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -9215,6 +9639,27 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get close => '关闭';
 
   @override
+  String get help => '幫助';
+
+  @override
+  String get helpListTitle => '使用您的清單';
+
+  @override
+  String get helpListAddItems => '使用底部的 + 按鈕新增項目，或使用搜尋瀏覽產品';
+
+  @override
+  String get helpListAi => '讓 AI 助理建立、組織或完成您的清單 - 只需點擊閃爍的圖標';
+
+  @override
+  String get helpListShoppingMode => '購物模式會隱藏已購買的商品，以便您可以專注於剩餘的商品';
+
+  @override
+  String get helpListOrganize => '拖曳商品重新排序、滑動以標記為已購買，或使用過濾器和排序';
+
+  @override
+  String get helpListShare => '與家人分享您的清單或匯出為 PDF、Excel 或純文本';
+
+  @override
   String get import => '导入';
 
   @override
@@ -9225,6 +9670,12 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get clear => '清除';
+
+  @override
+  String get clearPurchasedTitle => '清除已購買的物品';
+
+  @override
+  String get clearPurchasedConfirmMessage => '從此清單中刪除所有已購買的商品嗎？這無法撤消。';
 
   @override
   String error(String message) {
@@ -9238,6 +9689,18 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get purchaseError => '处理购买时出错。请重试。';
+
+  @override
+  String get errorCreateList => '無法建立清單。檢查您的連線並重試。';
+
+  @override
+  String get errorShareCode => '生成共享代码时出错。檢查您的連線並重試。';
+
+  @override
+  String get errorQuickAdd => '無法新增項目。檢查您的連線並重試。';
+
+  @override
+  String get errorLoadList => '無法載入您的清單。請建立一個新清單以開始。';
 
   @override
   String get restoreError => '恢复购买时出错。请重试。';
@@ -9620,6 +10083,18 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get noBudgetDefined => '未设置预算';
 
   @override
+  String get budgetGoalInvalidAmount => '輸入大於零的值';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 包含部分定價估算';
+
+  @override
+  String get budgetGoalSaved => '已儲存預算目標';
+
+  @override
+  String get budgetGoalRemoved => '預算目標已刪除';
+
+  @override
   String totalEstimated(String amount) {
     return '预估总计：$amount';
   }
@@ -9812,6 +10287,12 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get newChat => '新聊天';
 
   @override
+  String get newChatConfirmTitle => '新對話';
+
+  @override
+  String get newChatConfirmMessage => '開始新的對話​​？您目前的對話將會遺失。';
+
+  @override
   String get noHistory => '沒有聊天記錄';
 
   @override
@@ -9913,6 +10394,30 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get undo => '撤销';
+
+  @override
+  String get newChatStarted => '新的聊天開始了';
+
+  @override
+  String get quickAddToList => '添加到列表';
+
+  @override
+  String get aiCapabilitiesTitle => '我能做些什麼？';
+
+  @override
+  String get aiCapabilitiesLists => '購物清單';
+
+  @override
+  String get aiCapabilitiesBudget => '預算和價格';
+
+  @override
+  String get aiCapabilitiesRecipes => '食譜和菜單';
+
+  @override
+  String get aiCapabilitiesOrganize => '組織';
+
+  @override
+  String get marketModeDescription => '購物時核對商品';
 
   @override
   String get kipiListTitle => '基皮列表';
@@ -10314,6 +10819,15 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 歡迎優惠';
+
+  @override
+  String get paywallFreeTier => '免費：3 個列表';
+
+  @override
+  String get paywallProTier => '優點：無限制';
+
+  @override
+  String get firstItemAddedSnackbar => '新增了第一個項目！偉大的開始🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -11021,6 +11535,30 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get mealPlannerWeekEmptyHint => '點擊任何一天即可開始規劃您的膳食！';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return '月份：$amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return '週：$amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return '今天：$amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => '刪除目標';
+
+  @override
+  String get mealPlannerBudgetGoalNav => '膳食計劃預算';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle => '膳食計劃的每月支出目標';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes 分鐘';
   }
@@ -11158,6 +11696,18 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get mealPlannerDefaultTypeLabel => '預設類型';
 
   @override
+  String get mealPlannerDuplicate => '重複用餐';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '複製到...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '目前日期';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '餐點複製成功！';
+
+  @override
   String get expirationDate => '截止日期';
 
   @override
@@ -11165,6 +11715,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get skip => '跳過';
+
+  @override
+  String get onboardingSkip => '暫時跳過';
 
   @override
   String get onboardingAiTitle => '與 Kipi 聊天';
@@ -12153,4 +12706,28 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiGeneratingResponse => '正在產生回應...';
+
+  @override
+  String get errorUnexpected => '意想不到的事情發生了。請再試一次。';
+
+  @override
+  String get aiAssistantTooltip => '打開AI助手';
+
+  @override
+  String get searchItems => '搜尋項目';
+
+  @override
+  String get onboardingHookContinue => '開始使用';
+
+  @override
+  String get onboardingHookItem1 => '烤雞';
+
+  @override
+  String get onboardingHookItem2 => '馬蘇里拉起司';
+
+  @override
+  String get onboardingHookItem3 => '櫻桃番茄';
+
+  @override
+  String get checkItemTooltip => '檢查項目';
 }

@@ -9,7 +9,9 @@ import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AddRecipeDialog extends ConsumerStatefulWidget {
   const AddRecipeDialog({super.key, this.recipe});
@@ -139,9 +141,11 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
       if (_isEditing) {
         await ref.read(recipesProvider.notifier).updateRecipe(recipe);
         if (mounted) {
-          ScaffoldMessenger.of(
+          showKipiSnackBar(
             context,
-          ).showSnackBar(SnackBar(content: Text(l10n.recipeSaved)));
+            message: l10n.recipeSaved,
+            type: SnackBarType.success,
+          );
         }
       } else {
         await ref.read(recipesProvider.notifier).saveRecipe(recipe);
@@ -151,12 +155,10 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
       }
     } on Exception catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              '${AppLocalizations.of(context)!.errorLoadingRecipes}: $e',
-            ),
-          ),
+        showKipiSnackBar(
+          context,
+          message: '${AppLocalizations.of(context)!.errorLoadingRecipes}: $e',
+          type: SnackBarType.error,
         );
       }
     } finally {
@@ -243,7 +245,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
               decoration: InputDecoration(
                 labelText: l10n.prepTimeMinutes,
                 border: const OutlineInputBorder(),
-                prefixIcon: const Icon(Icons.timer_outlined),
+                prefixIcon: const Icon(PhosphorIconsRegular.timer),
               ),
               keyboardType: TextInputType.number,
             ),
@@ -253,7 +255,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
               decoration: InputDecoration(
                 labelText: l10n.recipeYieldServings,
                 border: const OutlineInputBorder(),
-                prefixIcon: const Icon(Icons.room_service_outlined),
+                prefixIcon: const Icon(PhosphorIconsRegular.bellSimple),
               ),
               keyboardType: TextInputType.number,
             ),
@@ -264,7 +266,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                 labelText: l10n.recipeManualTotalCost,
                 helperText: l10n.recipeManualTotalCostHint,
                 border: const OutlineInputBorder(),
-                prefixIcon: const Icon(Icons.attach_money_rounded),
+                prefixIcon: const Icon(PhosphorIconsRegular.currencyDollar),
               ),
               keyboardType: const TextInputType.numberWithOptions(
                 decimal: true,
@@ -297,7 +299,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                     top: 4,
                     right: 4,
                     child: IconButton(
-                      icon: const Icon(Icons.close, color: Colors.white),
+                      icon: const Icon(PhosphorIconsRegular.x, color: Colors.white),
                       style: IconButton.styleFrom(
                         backgroundColor: Colors.black54,
                       ),
@@ -315,7 +317,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
               children: [
                 OutlinedButton.icon(
                   onPressed: _pickImage,
-                  icon: const Icon(Icons.image_outlined),
+                  icon: const Icon(PhosphorIconsRegular.image),
                   label: Text(l10n.addPhoto),
                 ),
                 const SizedBox(width: Spacing.sm),
@@ -341,7 +343,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                 ..._selectedTags.map(
                   (tag) => Chip(
                     label: Text(tag, style: const TextStyle(fontSize: 12)),
-                    deleteIcon: const Icon(Icons.close, size: 16),
+                    deleteIcon: const Icon(PhosphorIconsRegular.x, size: 16),
                     onDeleted: () => _removeTag(tag),
                   ),
                 ),
@@ -362,7 +364,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.add_circle_outline),
+                  icon: const Icon(PhosphorIconsRegular.plusCircle),
                   onPressed: () => _addTag(_tagController.text),
                 ),
               ],
@@ -415,7 +417,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.remove_circle_outline),
+                      icon: const Icon(PhosphorIconsRegular.minusCircle),
                       onPressed: () {
                         if (_ingredientControllers.length > 1) {
                           setState(() {
@@ -434,7 +436,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                   _ingredientControllers.add(TextEditingController());
                 });
               },
-              icon: const Icon(Icons.add),
+              icon: const Icon(PhosphorIconsRegular.plus),
               label: Text(l10n.addIngredient),
             ),
             const SizedBox(height: Spacing.lg),

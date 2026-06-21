@@ -72,6 +72,32 @@ class AppLocalizationsNo extends AppLocalizations {
   String get close => 'Lukk';
 
   @override
+  String get help => 'Hjelp';
+
+  @override
+  String get helpListTitle => 'Bruker listen din';
+
+  @override
+  String get helpListAddItems =>
+      'Legg til varer med +-knappen nederst, eller bruk søket for å bla gjennom produkter';
+
+  @override
+  String get helpListAi =>
+      'Be AI-assistenten om å lage, organisere eller fullføre listen din – bare trykk på gnistikonet';
+
+  @override
+  String get helpListShoppingMode =>
+      'Shopping-modus skjuler kjøpte varer slik at du kan fokusere på det som er igjen';
+
+  @override
+  String get helpListOrganize =>
+      'Dra elementer for å omorganisere, sveip for å merke som kjøpt, eller bruk filtre og sortering';
+
+  @override
+  String get helpListShare =>
+      'Del listen din med familien eller eksporter som PDF, Excel eller ren tekst';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get clear => 'Tøm';
+
+  @override
+  String get clearPurchasedTitle => 'Fjern kjøpte varer';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vil du fjerne alle kjøpte varer fra denne listen? Dette kan ikke angres.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get purchaseError => 'Feil ved behandling av kjøp. Prøv igjen.';
+
+  @override
+  String get errorCreateList =>
+      'Kunne ikke opprette listen. Sjekk tilkoblingen og prøv igjen.';
+
+  @override
+  String get errorShareCode =>
+      'Feil under generering av delingskode. Sjekk tilkoblingen og prøv igjen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kunne ikke legge til elementet. Sjekk tilkoblingen og prøv igjen.';
+
+  @override
+  String get errorLoadList =>
+      'Kunne ikke laste inn listene dine. Opprett en ny liste for å komme i gang.';
 
   @override
   String get restoreError => 'Feil ved gjenoppretting av kjøp. Prøv igjen.';
@@ -485,6 +534,18 @@ class AppLocalizationsNo extends AppLocalizations {
   String get noBudgetDefined => 'Ingen budsjett satt';
 
   @override
+  String get budgetGoalInvalidAmount => 'Angi en verdi større enn null';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Inkluderer delvise prisanslag';
+
+  @override
+  String get budgetGoalSaved => 'Budsjettmålet er lagret';
+
+  @override
+  String get budgetGoalRemoved => 'Budsjettmål fjernet';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimert: $amount';
   }
@@ -679,6 +740,13 @@ class AppLocalizationsNo extends AppLocalizations {
   String get newChat => 'Ny chat';
 
   @override
+  String get newChatConfirmTitle => 'Ny samtale';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Starte en ny samtale? Din nåværende samtale vil gå tapt.';
+
+  @override
   String get noHistory => 'Ingen chattehistorikk';
 
   @override
@@ -788,28 +856,28 @@ class AppLocalizationsNo extends AppLocalizations {
   String get undo => 'Angre';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Ny chat startet';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Legg til i listen';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Hva kan jeg gjøre?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Handlelister';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Budsjett og priser';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Oppskrifter og menyer';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisasjon';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Kryss av varer mens du handler';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1234,6 +1302,16 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Velkomsttilbud';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lister';
+
+  @override
+  String get paywallProTier => 'Pro: Ubegrenset';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Første element lagt til! Flott start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2134,6 +2212,18 @@ class AppLocalizationsNo extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Standardtype';
 
   @override
+  String get mealPlannerDuplicate => 'Duplikat måltid';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliser til...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Gjeldende dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Måltid duplisert vellykket!';
+
+  @override
   String get expirationDate => 'Utløpsdato';
 
   @override
@@ -2141,6 +2231,9 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get skip => 'Hopp over';
+
+  @override
+  String get onboardingSkip => 'Hopp over for nå';
 
   @override
   String get onboardingAiTitle => 'Chat med Kipi';
@@ -3167,6 +3260,30 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Genererer svar …';
+
+  @override
+  String get errorUnexpected => 'Noe uventet skjedde. Vennligst prøv igjen.';
+
+  @override
+  String get aiAssistantTooltip => 'Åpne AI-assistent';
+
+  @override
+  String get searchItems => 'Søk etter elementer';
+
+  @override
+  String get onboardingHookContinue => 'Kom i gang';
+
+  @override
+  String get onboardingHookItem1 => 'Grillet kylling';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ost';
+
+  @override
+  String get onboardingHookItem3 => 'Cherrytomater';
+
+  @override
+  String get checkItemTooltip => 'Sjekk varen';
 }
 
 /// The translations for Norwegian, as used in Norway (`no_NO`).
@@ -3237,6 +3354,32 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get close => 'Lukk';
 
   @override
+  String get help => 'Hjelp';
+
+  @override
+  String get helpListTitle => 'Bruker listen din';
+
+  @override
+  String get helpListAddItems =>
+      'Legg til varer med +-knappen nederst, eller bruk søket for å bla gjennom produkter';
+
+  @override
+  String get helpListAi =>
+      'Be AI-assistenten om å lage, organisere eller fullføre listen din – bare trykk på gnistikonet';
+
+  @override
+  String get helpListShoppingMode =>
+      'Shopping-modus skjuler kjøpte varer slik at du kan fokusere på det som er igjen';
+
+  @override
+  String get helpListOrganize =>
+      'Dra elementer for å omorganisere, sveip for å merke som kjøpt, eller bruk filtre og sortering';
+
+  @override
+  String get helpListShare =>
+      'Del listen din med familien eller eksporter som PDF, Excel eller ren tekst';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -3247,6 +3390,13 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get clear => 'Tøm';
+
+  @override
+  String get clearPurchasedTitle => 'Fjern kjøpte varer';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vil du fjerne alle kjøpte varer fra denne listen? Dette kan ikke angres.';
 
   @override
   String error(String message) {
@@ -3260,6 +3410,22 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get purchaseError => 'Feil ved behandling av kjøp. Prøv igjen.';
+
+  @override
+  String get errorCreateList =>
+      'Kunne ikke opprette listen. Sjekk tilkoblingen og prøv igjen.';
+
+  @override
+  String get errorShareCode =>
+      'Feil under generering av delingskode. Sjekk tilkoblingen og prøv igjen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kunne ikke legge til elementet. Sjekk tilkoblingen og prøv igjen.';
+
+  @override
+  String get errorLoadList =>
+      'Kunne ikke laste inn listene dine. Opprett en ny liste for å komme i gang.';
 
   @override
   String get restoreError => 'Feil ved gjenoppretting av kjøp. Prøv igjen.';
@@ -3650,6 +3816,18 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get noBudgetDefined => 'Ingen budsjett satt';
 
   @override
+  String get budgetGoalInvalidAmount => 'Angi en verdi større enn null';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Inkluderer delvise prisanslag';
+
+  @override
+  String get budgetGoalSaved => 'Budsjettmålet er lagret';
+
+  @override
+  String get budgetGoalRemoved => 'Budsjettmål fjernet';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimert: $amount';
   }
@@ -3844,6 +4022,13 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get newChat => 'Ny chat';
 
   @override
+  String get newChatConfirmTitle => 'Ny samtale';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Starte en ny samtale? Din nåværende samtale vil gå tapt.';
+
+  @override
   String get noHistory => 'Ingen chattehistorikk';
 
   @override
@@ -3951,6 +4136,30 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get undo => 'Angre';
+
+  @override
+  String get newChatStarted => 'Ny chat startet';
+
+  @override
+  String get quickAddToList => 'Legg til i listen';
+
+  @override
+  String get aiCapabilitiesTitle => 'Hva kan jeg gjøre?';
+
+  @override
+  String get aiCapabilitiesLists => 'Handlelister';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budsjett og priser';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Oppskrifter og menyer';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisasjon';
+
+  @override
+  String get marketModeDescription => 'Kryss av varer mens du handler';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -4375,6 +4584,16 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Velkomsttilbud';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lister';
+
+  @override
+  String get paywallProTier => 'Pro: Ubegrenset';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Første element lagt til! Flott start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5275,6 +5494,18 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get mealPlannerDefaultTypeLabel => 'Standardtype';
 
   @override
+  String get mealPlannerDuplicate => 'Duplikat måltid';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliser til...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Gjeldende dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Måltid duplisert vellykket!';
+
+  @override
   String get expirationDate => 'Utløpsdato';
 
   @override
@@ -5282,6 +5513,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get skip => 'Hopp over';
+
+  @override
+  String get onboardingSkip => 'Hopp over for nå';
 
   @override
   String get onboardingAiTitle => 'Chat med Kipi';
@@ -6308,4 +6542,28 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get aiGeneratingResponse => 'Genererer svar …';
+
+  @override
+  String get errorUnexpected => 'Noe uventet skjedde. Vennligst prøv igjen.';
+
+  @override
+  String get aiAssistantTooltip => 'Åpne AI-assistent';
+
+  @override
+  String get searchItems => 'Søk etter elementer';
+
+  @override
+  String get onboardingHookContinue => 'Kom i gang';
+
+  @override
+  String get onboardingHookItem1 => 'Grillet kylling';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ost';
+
+  @override
+  String get onboardingHookItem3 => 'Cherrytomater';
+
+  @override
+  String get checkItemTooltip => 'Sjekk varen';
 }

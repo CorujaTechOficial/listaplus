@@ -414,6 +414,48 @@ abstract class AppLocalizations {
   /// **'Close'**
   String get close;
 
+  /// No description provided for @help.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get help;
+
+  /// Title for the list screen help sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Using your list'**
+  String get helpListTitle;
+
+  /// Help text explaining how to add items
+  ///
+  /// In en, this message translates to:
+  /// **'Add items with the + button at the bottom, or use the search to browse products'**
+  String get helpListAddItems;
+
+  /// Help text explaining the AI assistant feature
+  ///
+  /// In en, this message translates to:
+  /// **'Ask the AI assistant to create, organize, or complete your list — just tap the sparkle icon'**
+  String get helpListAi;
+
+  /// Help text explaining shopping mode
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping mode hides purchased items so you can focus on what\'s left'**
+  String get helpListShoppingMode;
+
+  /// Help text explaining how to organize items
+  ///
+  /// In en, this message translates to:
+  /// **'Drag items to reorder, swipe to mark as purchased, or use filters and sorting'**
+  String get helpListOrganize;
+
+  /// Help text explaining sharing and export
+  ///
+  /// In en, this message translates to:
+  /// **'Share your list with family or export as PDF, Excel, or plain text'**
+  String get helpListShare;
+
   /// No description provided for @import.
   ///
   /// In en, this message translates to:
@@ -438,6 +480,18 @@ abstract class AppLocalizations {
   /// **'Clear'**
   String get clear;
 
+  /// Title for the clear purchased confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Clear purchased items'**
+  String get clearPurchasedTitle;
+
+  /// Confirmation message before clearing purchased items
+  ///
+  /// In en, this message translates to:
+  /// **'Remove all purchased items from this list? This can\'t be undone.'**
+  String get clearPurchasedConfirmMessage;
+
   /// No description provided for @error.
   ///
   /// In en, this message translates to:
@@ -455,6 +509,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error processing purchase. Try again.'**
   String get purchaseError;
+
+  /// Error message when creating a list fails
+  ///
+  /// In en, this message translates to:
+  /// **'Could not create list. Check your connection and try again.'**
+  String get errorCreateList;
+
+  /// Error message when generating a share code fails
+  ///
+  /// In en, this message translates to:
+  /// **'Error generating share code. Check your connection and try again.'**
+  String get errorShareCode;
+
+  /// Error message when quick add fails
+  ///
+  /// In en, this message translates to:
+  /// **'Could not add item. Check your connection and try again.'**
+  String get errorQuickAdd;
+
+  /// Error message when lists fail to load
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load your lists. Please create a new list to get started.'**
+  String get errorLoadList;
 
   /// No description provided for @restoreError.
   ///
@@ -1152,6 +1230,30 @@ abstract class AppLocalizations {
   /// **'No budget set'**
   String get noBudgetDefined;
 
+  /// No description provided for @budgetGoalInvalidAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a value greater than zero'**
+  String get budgetGoalInvalidAmount;
+
+  /// No description provided for @budgetPartialEstimateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'~ Includes partial pricing estimates'**
+  String get budgetPartialEstimateHint;
+
+  /// No description provided for @budgetGoalSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget goal saved'**
+  String get budgetGoalSaved;
+
+  /// No description provided for @budgetGoalRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget goal removed'**
+  String get budgetGoalRemoved;
+
   /// No description provided for @totalEstimated.
   ///
   /// In en, this message translates to:
@@ -1499,6 +1601,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'New Chat'**
   String get newChat;
+
+  /// Title for the new chat confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'New conversation'**
+  String get newChatConfirmTitle;
+
+  /// Confirmation message before starting a new chat
+  ///
+  /// In en, this message translates to:
+  /// **'Start a new conversation? Your current conversation will be lost.'**
+  String get newChatConfirmMessage;
 
   /// No description provided for @noHistory.
   ///
@@ -2471,6 +2585,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'🎁 Welcome offer'**
   String get paywallWelcomeOfferBadge;
+
+  /// No description provided for @paywallFreeTier.
+  ///
+  /// In en, this message translates to:
+  /// **'Free: 3 lists'**
+  String get paywallFreeTier;
+
+  /// No description provided for @paywallProTier.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro: Unlimited'**
+  String get paywallProTier;
+
+  /// No description provided for @firstItemAddedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'First item added! Great start 🛒'**
+  String get firstItemAddedSnackbar;
 
   /// No description provided for @paywallCtaTrialDays.
   ///
@@ -3849,7 +3981,7 @@ abstract class AppLocalizations {
   /// No description provided for @mealPlannerBudgetGoalSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Monthly spending goal for meal planning'**
+  /// **'Applied only to planned meals in the meal planner.'**
   String get mealPlannerBudgetGoalSubtitle;
 
   /// No description provided for @mealPlannerPrepTime.
@@ -4080,6 +4212,30 @@ abstract class AppLocalizations {
   /// **'Default type'**
   String get mealPlannerDefaultTypeLabel;
 
+  /// No description provided for @mealPlannerDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate meal'**
+  String get mealPlannerDuplicate;
+
+  /// No description provided for @mealPlannerSelectDestinationDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate to...'**
+  String get mealPlannerSelectDestinationDay;
+
+  /// No description provided for @mealPlannerCurrentDayLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Current day'**
+  String get mealPlannerCurrentDayLabel;
+
+  /// No description provided for @mealPlannerDuplicateSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal duplicated successfully!'**
+  String get mealPlannerDuplicateSuccess;
+
   /// No description provided for @expirationDate.
   ///
   /// In en, this message translates to:
@@ -4097,6 +4253,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Skip'**
   String get skip;
+
+  /// Skip creating list for now, go to paywall
+  ///
+  /// In en, this message translates to:
+  /// **'Skip for now'**
+  String get onboardingSkip;
 
   /// AI Chat onboarding slide header
   ///
@@ -5890,6 +6052,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Generating response…'**
   String get aiGeneratingResponse;
+
+  /// Generic unexpected error message
+  ///
+  /// In en, this message translates to:
+  /// **'Something unexpected happened. Please try again.'**
+  String get errorUnexpected;
+
+  /// Tooltip for the AI assistant icon button in the list screen app bar
+  ///
+  /// In en, this message translates to:
+  /// **'Open AI assistant'**
+  String get aiAssistantTooltip;
+
+  /// Tooltip for the search icon button in the list screen app bar
+  ///
+  /// In en, this message translates to:
+  /// **'Search items'**
+  String get searchItems;
+
+  /// Button to continue from the onboarding hook screen
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get onboardingHookContinue;
+
+  /// First demo item in onboarding hook screen
+  ///
+  /// In en, this message translates to:
+  /// **'Grilled chicken'**
+  String get onboardingHookItem1;
+
+  /// Second demo item in onboarding hook screen
+  ///
+  /// In en, this message translates to:
+  /// **'Mozzarella cheese'**
+  String get onboardingHookItem2;
+
+  /// Third demo item in onboarding hook screen
+  ///
+  /// In en, this message translates to:
+  /// **'Cherry tomatoes'**
+  String get onboardingHookItem3;
+
+  /// Tooltip/semantic label for the check icon of a list item
+  ///
+  /// In en, this message translates to:
+  /// **'Check item'**
+  String get checkItemTooltip;
 }
 
 class _AppLocalizationsDelegate

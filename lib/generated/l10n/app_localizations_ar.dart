@@ -72,6 +72,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get close => 'إغلاق';
 
   @override
+  String get help => 'يساعد';
+
+  @override
+  String get helpListTitle => 'باستخدام قائمتك';
+
+  @override
+  String get helpListAddItems =>
+      'أضف عناصر باستخدام الزر + في الأسفل، أو استخدم البحث لتصفح المنتجات';
+
+  @override
+  String get helpListAi =>
+      'اطلب من مساعد الذكاء الاصطناعي إنشاء قائمتك أو تنظيمها أو إكمالها — فقط اضغط على أيقونة التألق';
+
+  @override
+  String get helpListShoppingMode =>
+      'يخفي وضع التسوق العناصر التي تم شراؤها حتى تتمكن من التركيز على ما تبقى';
+
+  @override
+  String get helpListOrganize =>
+      'اسحب العناصر لإعادة ترتيبها، أو اسحب لوضع علامة عليها كمشتريات، أو استخدم عوامل التصفية والفرز';
+
+  @override
+  String get helpListShare =>
+      'شارك قائمتك مع العائلة أو قم بتصديرها بتنسيق PDF أو Excel أو نص عادي';
+
+  @override
   String get import => 'استيراد';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get clear => 'مسح';
+
+  @override
+  String get clearPurchasedTitle => 'مسح العناصر المشتراة';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'هل تريد إزالة جميع العناصر المشتراة من هذه القائمة؟ لا يمكن التراجع عن هذا.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get purchaseError => 'خطأ في معالجة الشراء. حاول مرة أخرى.';
+
+  @override
+  String get errorCreateList =>
+      'لا يمكن إنشاء القائمة. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get errorShareCode =>
+      'حدث خطأ أثناء إنشاء رمز المشاركة. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get errorQuickAdd =>
+      'لا يمكن إضافة العنصر. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get errorLoadList =>
+      'تعذر تحميل قوائمك. Please create a new list to get started.';
 
   @override
   String get restoreError => 'خطأ في استعادة المشتريات. حاول مرة أخرى.';
@@ -490,6 +539,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noBudgetDefined => 'لم يتم تعيين ميزانية';
 
   @override
+  String get budgetGoalInvalidAmount => 'أدخل قيمة أكبر من الصفر';
+
+  @override
+  String get budgetPartialEstimateHint => '~ يشمل تقديرات التسعير الجزئية';
+
+  @override
+  String get budgetGoalSaved => 'تم حفظ هدف الميزانية';
+
+  @override
+  String get budgetGoalRemoved => 'تمت إزالة هدف الميزانية';
+
+  @override
   String totalEstimated(String amount) {
     return 'الإجمالي التقديري: $amount';
   }
@@ -681,6 +742,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get newChat => 'دردشة جديدة';
+
+  @override
+  String get newChatConfirmTitle => 'محادثة جديدة';
+
+  @override
+  String get newChatConfirmMessage =>
+      'بدء محادثة جديدة؟ سيتم فقدان محادثتك الحالية.';
 
   @override
   String get noHistory => 'لا يوجد سجل للدردشة';
@@ -1229,6 +1297,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁عرض ترحيبي';
+
+  @override
+  String get paywallFreeTier => 'مجانًا: 3 قوائم';
+
+  @override
+  String get paywallProTier => 'برو: غير محدود';
+
+  @override
+  String get firstItemAddedSnackbar => 'تمت إضافة العنصر الأول! بداية رائعة 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2125,6 +2202,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'النوع الافتراضي';
 
   @override
+  String get mealPlannerDuplicate => 'وجبة مكررة';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'مكرر إلى...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'اليوم الحالي';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'تم تكرار الوجبة بنجاح!';
+
+  @override
   String get expirationDate => 'تاريخ انتهاء الصلاحية';
 
   @override
@@ -2132,6 +2221,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get skip => 'يتخطى';
+
+  @override
+  String get onboardingSkip => 'تخطي الآن';
 
   @override
   String get onboardingAiTitle => 'الدردشة مع كيبي';
@@ -3152,4 +3244,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'جارٍ إنشاء الاستجابة…';
+
+  @override
+  String get errorUnexpected => 'حدث شيء غير متوقع. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get aiAssistantTooltip => 'افتح مساعد الذكاء الاصطناعي';
+
+  @override
+  String get searchItems => 'عناصر البحث';
+
+  @override
+  String get onboardingHookContinue => 'ابدأ';
+
+  @override
+  String get onboardingHookItem1 => 'دجاج مشوي';
+
+  @override
+  String get onboardingHookItem2 => 'جبنة موزاريلا';
+
+  @override
+  String get onboardingHookItem3 => 'طماطم كرزية';
+
+  @override
+  String get checkItemTooltip => 'تحقق من البند';
 }

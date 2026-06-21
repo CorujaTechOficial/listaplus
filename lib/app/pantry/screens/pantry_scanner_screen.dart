@@ -8,6 +8,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/pantry/widgets/pantry_add_sheet.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class PantryScannerScreen extends StatefulWidget {
   const PantryScannerScreen({super.key});
@@ -54,12 +55,12 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
                 final torchState = state.torchState;
                 switch (torchState) {
                   case TorchState.on:
-                    return const Icon(Icons.flash_on, color: Colors.yellow);
+                    return const Icon(PhosphorIconsRegular.lightning, color: Colors.yellow);
                   case TorchState.auto:
-                    return const Icon(Icons.flash_auto, color: Colors.blue);
+                    return const Icon(PhosphorIconsRegular.lightning, color: Colors.blue);
                   case TorchState.off:
                   default:
-                    return const Icon(Icons.flash_off, color: Colors.grey);
+                    return const Icon(PhosphorIconsRegular.lightningSlash, color: Colors.grey);
                 }
               },
             ),
@@ -68,7 +69,7 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
           ),
           IconButton(
             color: Colors.white,
-            icon: const Icon(Icons.cameraswitch_outlined),
+            icon: const Icon(PhosphorIconsRegular.cameraRotate),
             iconSize: 32,
             onPressed: () => controller.switchCamera(),
           ),

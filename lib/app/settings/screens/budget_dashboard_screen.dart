@@ -8,6 +8,7 @@ import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class BudgetDashboardScreen extends ConsumerWidget {
   const BudgetDashboardScreen({super.key, this.listId});
@@ -133,7 +134,7 @@ class BudgetDashboardScreen extends ConsumerWidget {
                           categoriesMap[e.key]?.colorValue ??
                           theme.colorScheme.secondary,
                       child: Icon(
-                        categoriesMap[e.key]?.icon ?? Icons.category,
+                        categoriesMap[e.key]?.icon ?? PhosphorIconsRegular.squaresFour,
                         color: Colors.white,
                         size: 18,
                       ),

@@ -6,6 +6,8 @@ import 'package:shopping_list/app/lists/providers/share_provider.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'create_list_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ListSwitcherSheet extends ConsumerStatefulWidget {
   const ListSwitcherSheet({super.key, required this.currentListId});
@@ -46,13 +48,13 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                   ),
                   const Spacer(),
                   IconButton(
-                    icon: Icon(_showArchived ? Icons.list_alt : Icons.history),
+                    icon: Icon(_showArchived ? PhosphorIconsRegular.listChecks : PhosphorIconsRegular.clockCounterClockwise),
                     tooltip: _showArchived ? l10n.viewActive : l10n.viewHistory,
                     onPressed:
                         () => setState(() => _showArchived = !_showArchived),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close),
+                    icon: const Icon(PhosphorIconsRegular.x),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
@@ -93,12 +95,12 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                         return ListTile(
                           leading: Icon(
                             _showArchived
-                                ? Icons.archive_outlined
+                                ? PhosphorIconsRegular.archive
                                 : (list.isShared
-                                    ? Icons.group
+                                    ? PhosphorIconsRegular.users
                                     : (isCurrent
-                                        ? Icons.check_circle
-                                        : Icons.circle_outlined)),
+                                        ? PhosphorIconsRegular.checkCircle
+                                        : PhosphorIconsRegular.circle)),
                             color:
                                 _showArchived
                                     ? theme.colorScheme.onSurfaceVariant
@@ -147,7 +149,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                               if (_showArchived)
                                 IconButton(
                                   icon: const Icon(
-                                    Icons.unarchive_outlined,
+                                    PhosphorIconsRegular.archive,
                                     size: 20,
                                   ),
                                   tooltip: l10n.restore,
@@ -156,7 +158,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                               if (list.isShared)
                                 IconButton(
                                   icon: Icon(
-                                    Icons.remove_circle_outline,
+                                    PhosphorIconsRegular.minusCircle,
                                     size: 20,
                                     color: theme.colorScheme.error,
                                   ),
@@ -166,7 +168,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                               else ...[
                                 IconButton(
                                   icon: const Icon(
-                                    Icons.edit_outlined,
+                                    PhosphorIconsRegular.pencilSimple,
                                     size: 20,
                                   ),
                                   tooltip: l10n.rename,
@@ -174,7 +176,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                                 ),
                                 IconButton(
                                   icon: Icon(
-                                    Icons.delete_outline,
+                                    PhosphorIconsRegular.trash,
                                     size: 20,
                                     color: theme.colorScheme.error,
                                   ),
@@ -210,7 +212,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                   Expanded(
                     child: OutlinedButton.icon(
                       onPressed: _importSharedList,
-                      icon: const Icon(Icons.cloud_download_outlined),
+                      icon: const Icon(PhosphorIconsRegular.cloudArrowDown),
                       label: Text(l10n.importViaCode),
                     ),
                   ),
@@ -218,7 +220,7 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                   Expanded(
                     child: FilledButton.icon(
                       onPressed: _createList,
-                      icon: const Icon(Icons.add),
+                      icon: const Icon(PhosphorIconsRegular.plus),
                       label: Text(l10n.createNewList),
                     ),
                   ),
@@ -388,8 +390,10 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
         if (!mounted) {
           return;
         }
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.listAdded(result.listName))),
+        showKipiSnackBar(
+          context,
+          message: l10n.listAdded(result.listName),
+          type: SnackBarType.success,
         );
         Navigator.pop(context);
         ref.invalidate(shoppingListsProvider);
@@ -400,9 +404,11 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
         if (!mounted) {
           return;
         }
-        ScaffoldMessenger.of(
+        showKipiSnackBar(
           context,
-        ).showSnackBar(SnackBar(content: Text(l10n.error(e.toString()))));
+          message: l10n.error(e.toString()),
+          type: SnackBarType.error,
+        );
       }
     } finally {
       codeController.dispose();

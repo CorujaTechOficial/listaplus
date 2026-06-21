@@ -6,6 +6,7 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/widgets/app_bar_list_selector.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/app/ai/widgets/chat_history_drawer.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ChatScreen extends ConsumerWidget {
   const ChatScreen({super.key, this.listId, this.listName});
@@ -37,9 +38,33 @@ class ChatScreen extends ConsumerWidget {
                 : Text(activeListName ?? l10n.generalAssistant),
         actions: [
           IconButton(
-            icon: const Icon(Icons.add_comment),
+            icon: const Icon(PhosphorIconsRegular.plus),
             tooltip: l10n.newChat,
-            onPressed: () {
+            onPressed: () async {
+              final currentSessionId = ref.read(
+                activeChatSessionIdProvider(activeListId),
+              );
+              if (currentSessionId != null) {
+                final confirmed = await showDialog<bool>(
+                  context: context,
+                  builder:
+                      (_) => AlertDialog(
+                        title: Text(l10n.newChatConfirmTitle),
+                        content: Text(l10n.newChatConfirmMessage),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, false),
+                            child: Text(l10n.cancel),
+                          ),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, true),
+                            child: Text(l10n.newChat),
+                          ),
+                        ],
+                      ),
+                );
+                if (confirmed != true) return;
+              }
               ref
                   .read(chatSessionsProvider(activeListId).notifier)
                   .createNewSession();
@@ -48,7 +73,7 @@ class ChatScreen extends ConsumerWidget {
           Builder(
             builder:
                 (context) => IconButton(
-                  icon: const Icon(Icons.history),
+                  icon: const Icon(PhosphorIconsRegular.clockCounterClockwise),
                   tooltip: l10n.conversationHistoryTitle,
                   onPressed: () => Scaffold.of(context).openEndDrawer(),
                 ),

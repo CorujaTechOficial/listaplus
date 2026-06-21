@@ -25,10 +25,44 @@
   "copiedToClipboard": "Copied to clipboard",
   "confirm": "Confirm",
   "close": "Close",
+  "help": "Help",
+  "@_Help": "description: Help system and contextual guidance",
+  "helpListTitle": "Using your list",
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
+  },
+  "helpListAddItems": "Add items with the + button at the bottom, or use the search to browse products",
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "helpListAi": "Ask the AI assistant to create, organize, or complete your list — just tap the sparkle icon",
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "helpListShoppingMode": "Shopping mode hides purchased items so you can focus on what's left",
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "helpListOrganize": "Drag items to reorder, swipe to mark as purchased, or use filters and sorting",
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "helpListShare": "Share your list with family or export as PDF, Excel, or plain text",
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
   "import": "Import",
   "rename": "Rename",
   "upgrade": "Upgrade",
   "clear": "Clear",
+  "clearPurchasedTitle": "Clear purchased items",
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
+  },
+  "clearPurchasedConfirmMessage": "Remove all purchased items from this list? This can't be undone.",
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
   "error": "Error: {message}",
   "@error": {
     "placeholders": {
@@ -46,6 +80,22 @@
     }
   },
   "purchaseError": "Error processing purchase. Try again.",
+  "errorCreateList": "Could not create list. Check your connection and try again.",
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
+  "errorShareCode": "Error generating share code. Check your connection and try again.",
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "errorQuickAdd": "Could not add item. Check your connection and try again.",
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
+  "errorLoadList": "Could not load your lists. Please create a new list to get started.",
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "restoreError": "Error restoring purchases. Try again.",
   "loading": "Loading...",
   "fieldRequired": "Required field",
@@ -275,6 +325,10 @@
   "budgetPremiumLocked": "Global monthly budget is premium",
   "budgetUpgradePrompt": "Upgrade to unlock",
   "noBudgetDefined": "No budget set",
+  "budgetGoalInvalidAmount": "Enter a value greater than zero",
+  "budgetPartialEstimateHint": "~ Includes partial pricing estimates",
+  "budgetGoalSaved": "Budget goal saved",
+  "budgetGoalRemoved": "Budget goal removed",
   "totalEstimated": "Total estimated: {amount}",
   "@totalEstimated": {
     "placeholders": {
@@ -409,6 +463,14 @@
   "aiAssistantDescription": "Get smart suggestions, recipes and personalized tips with our AI assistant.",
   "generalAssistant": "General Assistant",
   "newChat": "New Chat",
+  "newChatConfirmTitle": "New conversation",
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
+  },
+  "newChatConfirmMessage": "Start a new conversation? Your current conversation will be lost.",
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
   "noHistory": "No chat history",
   "deleteSession": "Delete Chat",
   "deleteSessionConfirm": "Are you sure you want to delete this chat? The messages will be permanently lost.",
@@ -786,6 +848,9 @@
   "paywallBenefit3Desc": "Expense tracking and family lists",
   "paywallPackageMonthlyDesc": "Full flexibility",
   "paywallWelcomeOfferBadge": "🎁 Welcome offer",
+  "paywallFreeTier": "Free: 3 lists",
+  "paywallProTier": "Pro: Unlimited",
+  "firstItemAddedSnackbar": "First item added! Great start 🛒",
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
   },
@@ -1152,7 +1217,7 @@
   },
   "mealPlannerBudgetRemoveGoal": "Remove goal",
   "mealPlannerBudgetGoalNav": "Meal planner budget",
-  "mealPlannerBudgetGoalSubtitle": "Monthly spending goal for meal planning",
+  "mealPlannerBudgetGoalSubtitle": "Applied only to planned meals in the meal planner.",
   "mealPlannerPrepTime": "{minutes} min",
   "@mealPlannerPrepTime": {
     "placeholders": {
@@ -1243,12 +1308,20 @@
   "mealPlannerTypeDeleteError": "Cannot delete this meal type.",
   "mealPlannerCustomTypeLabel": "Custom type",
   "mealPlannerDefaultTypeLabel": "Default type",
+  "mealPlannerDuplicate": "Duplicate meal",
+  "mealPlannerSelectDestinationDay": "Duplicate to...",
+  "mealPlannerCurrentDayLabel": "Current day",
+  "mealPlannerDuplicateSuccess": "Meal duplicated successfully!",
   "expirationDate": "Expiration date",
   "notInformed": "Not set",
   "@_OnboardingAiChat": "description: Onboarding AI Chat flow",
   "skip": "Skip",
   "@skip": {
     "description": "Skip onboarding / action"
+  },
+  "onboardingSkip": "Skip for now",
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "onboardingAiTitle": "Chat with Kipi",
   "@onboardingAiTitle": {
@@ -2388,5 +2461,37 @@
   "chatHistoryErrorBody": "Something went wrong on our end. Tap retry to try again.",
   "chatHistoryOfflineTitle": "You're offline",
   "chatHistoryOfflineBody": "Check your internet connection and try again.",
-  "aiGeneratingResponse": "Generating response…"
+  "aiGeneratingResponse": "Generating response…",
+  "errorUnexpected": "Something unexpected happened. Please try again.",
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
+  },
+  "aiAssistantTooltip": "Open AI assistant",
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
+  "searchItems": "Search items",
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
+  "onboardingHookContinue": "Get Started",
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
+  "onboardingHookItem1": "Grilled chicken",
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "onboardingHookItem2": "Mozzarella cheese",
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "onboardingHookItem3": "Cherry tomatoes",
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
+  },
+  "checkItemTooltip": "Check item",
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  }
 }

@@ -9,6 +9,7 @@ library;
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// Small amber "PRO" marker used in the hero lockup instead of a loud icon
 /// badge. Amber is reserved for premium signaling.
@@ -49,7 +50,7 @@ class PaywallRatingLine extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     return Row(
       children: [
-        const Icon(Icons.star_rounded, size: 16, color: AppColors.premiumAmber),
+        const Icon(PhosphorIconsFill.star, size: 16, color: AppColors.premiumAmber),
         const SizedBox(width: Spacing.xxs),
         Flexible(
           child: Text(
@@ -140,7 +141,7 @@ class PaywallValueRow extends StatelessWidget {
                 : CrossAxisAlignment.center,
         children: [
           Icon(
-            icon ?? Icons.check_circle_rounded,
+            icon ?? PhosphorIconsFill.checkCircle,
             size: 20,
             color: scheme.primary,
           ),
@@ -253,8 +254,8 @@ class PaywallPlanTile extends StatelessWidget {
                     children: [
                       Icon(
                         selected
-                            ? Icons.radio_button_checked_rounded
-                            : Icons.radio_button_off_rounded,
+                            ? PhosphorIconsFill.radioButton
+                            : PhosphorIconsRegular.circle,
                         color:
                             selected
                                 ? scheme.primary
@@ -370,18 +371,18 @@ class PaywallTrialTimeline extends StatelessWidget {
 
     final List<_TimelineStep> steps = <_TimelineStep>[
       _TimelineStep(
-        icon: Icons.lock_open_rounded,
+        icon: PhosphorIconsRegular.lockOpen,
         label: todayLabel,
         desc: todayDesc,
         accent: true,
       ),
       _TimelineStep(
-        icon: Icons.notifications_active_rounded,
+        icon: PhosphorIconsRegular.bellRinging,
         label: reminderLabel,
         desc: reminderDesc,
       ),
       _TimelineStep(
-        icon: Icons.event_available_rounded,
+        icon: PhosphorIconsRegular.calendarCheck,
         label: chargeLabel,
         desc: chargeDesc,
       ),
@@ -548,7 +549,7 @@ class PaywallSecuredLine extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(Icons.lock_outline_rounded, size: 13, color: scheme.outline),
+        Icon(PhosphorIconsRegular.lock, size: 13, color: scheme.outline),
         const SizedBox(width: Spacing.xxs),
         Flexible(
           child: Text(

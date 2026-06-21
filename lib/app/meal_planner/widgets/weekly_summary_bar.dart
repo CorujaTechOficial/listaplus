@@ -4,6 +4,7 @@ import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// A summary bar showing how many of the weekly meals are planned.
 class WeeklySummaryBar extends ConsumerWidget {
@@ -43,7 +44,7 @@ class WeeklySummaryBar extends ConsumerWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.event_note_rounded, size: 16, color: progressColor),
+              Icon(PhosphorIconsRegular.notepad, size: 16, color: progressColor),
               const SizedBox(width: Spacing.xs),
               Expanded(
                 child: Text(

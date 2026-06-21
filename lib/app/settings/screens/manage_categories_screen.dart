@@ -4,7 +4,9 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/app/lists/widgets/add_edit_category_dialog.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ManageCategoriesScreen extends ConsumerWidget {
   const ManageCategoriesScreen({super.key});
@@ -26,7 +28,7 @@ class ManageCategoriesScreen extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         heroTag: null,
         onPressed: () => _addCategory(context, ref),
-        child: const Icon(Icons.add),
+        child: const Icon(PhosphorIconsRegular.plus),
       ),
     );
   }
@@ -39,9 +41,11 @@ class ManageCategoriesScreen extends ConsumerWidget {
 
     if (!isPremium && categories.length >= 10) {
       if (context.mounted) {
-        ScaffoldMessenger.of(
+        showKipiSnackBar(
           context,
-        ).showSnackBar(SnackBar(content: Text(l10n.categoryLimitReached)));
+          message: l10n.categoryLimitReached,
+          type: SnackBarType.warning,
+        );
       }
       return;
     }
@@ -93,16 +97,16 @@ class _CategoriesList extends ConsumerWidget {
               if (cat.id != 'others')
                 IconButton(
                   icon: Icon(
-                    Icons.delete_outline,
+                    PhosphorIconsRegular.trash,
                     color: theme.colorScheme.error,
                   ),
                   onPressed: () => _deleteCategory(context, ref, cat),
                 ),
               IconButton(
-                icon: const Icon(Icons.edit_outlined),
+                icon: const Icon(PhosphorIconsRegular.pencilSimple),
                 onPressed: () => _editCategory(context, ref, cat),
               ),
-              const Icon(Icons.drag_handle),
+              const Icon(PhosphorIconsRegular.dotsSixVertical),
             ],
           ),
         );

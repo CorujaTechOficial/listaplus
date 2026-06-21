@@ -72,6 +72,32 @@ class AppLocalizationsEt extends AppLocalizations {
   String get close => 'Sulge';
 
   @override
+  String get help => 'Abi';
+
+  @override
+  String get helpListTitle => 'Kasutades oma nimekirja';
+
+  @override
+  String get helpListAddItems =>
+      'Lisage üksusi allosas oleva nupuga + või kasutage toodete sirvimiseks otsingut';
+
+  @override
+  String get helpListAi =>
+      'Paluge tehisintellekti assistendil loend luua, korraldada või täiendada – puudutage lihtsalt sädelevat ikooni';
+
+  @override
+  String get helpListShoppingMode =>
+      'Osturežiim peidab ostetud kaubad, et saaksite keskenduda sellele, mis on alles';
+
+  @override
+  String get helpListOrganize =>
+      'Lohistage üksusi ümber järjestamiseks, pühkige, et märkida need ostetud või kasutage filtreid ja sortimist';
+
+  @override
+  String get helpListShare =>
+      'Jagage oma loendit perega või eksportige PDF-i, Exceli või lihttekstina';
+
+  @override
   String get import => 'Impordi';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get clear => 'Tühjenda';
+
+  @override
+  String get clearPurchasedTitle => 'Tühjendage ostetud kaubad';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Kas eemaldada kõik ostetud kaubad sellest loendist? Seda ei saa tagasi võtta.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get purchaseError => 'Viga ostu töötlemisel. Proovi uuesti.';
+
+  @override
+  String get errorCreateList =>
+      'Loendit ei saanud luua. Kontrollige ühendust ja proovige uuesti.';
+
+  @override
+  String get errorShareCode =>
+      'Viga jagamiskoodi genereerimisel. Kontrollige ühendust ja proovige uuesti.';
+
+  @override
+  String get errorQuickAdd =>
+      'Üksust ei saanud lisada. Kontrollige ühendust ja proovige uuesti.';
+
+  @override
+  String get errorLoadList =>
+      'Teie loendeid ei saanud laadida. Alustamiseks looge uus loend.';
 
   @override
   String get restoreError => 'Viga ostude taastamisel. Proovi uuesti.';
@@ -480,6 +529,19 @@ class AppLocalizationsEt extends AppLocalizations {
   String get noBudgetDefined => 'Eelarvet pole määratud';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Sisestage väärtus, mis on suurem kui null';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Sisaldab osalisi hinnaprognoose';
+
+  @override
+  String get budgetGoalSaved => 'Eelarveeesmärk salvestatud';
+
+  @override
+  String get budgetGoalRemoved => 'Eelarve eesmärk on eemaldatud';
+
+  @override
   String totalEstimated(String amount) {
     return 'Hinnanguline kogusumma: $amount';
   }
@@ -672,6 +734,13 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get newChat => 'Uus vestlus';
+
+  @override
+  String get newChatConfirmTitle => 'Uus vestlus';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Kas alustada uut vestlust? Teie praegune vestlus läheb kaotsi.';
 
   @override
   String get noHistory => 'Vestlusajalugu pole';
@@ -1237,6 +1306,16 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Tere tulemast pakkumine';
+
+  @override
+  String get paywallFreeTier => 'Tasuta: 3 nimekirja';
+
+  @override
+  String get paywallProTier => 'Pro: piiramatu';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Esimene toode lisatud! Suurepärane algus 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2128,6 +2207,18 @@ class AppLocalizationsEt extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Vaikimisi tüüp';
 
   @override
+  String get mealPlannerDuplicate => 'Kahekordne söögikord';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Kopeeri...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Praegune päev';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Eine dubleeritud edukalt!';
+
+  @override
   String get expirationDate => 'Aegumiskuupäev';
 
   @override
@@ -2135,6 +2226,9 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get skip => 'Jäta vahele';
+
+  @override
+  String get onboardingSkip => 'Jäta praegu vahele';
 
   @override
   String get onboardingAiTitle => 'Vestelge Kipiga';
@@ -3164,4 +3258,28 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Vastuse genereerimine…';
+
+  @override
+  String get errorUnexpected => 'Juhtus midagi ootamatut. Palun proovi uuesti.';
+
+  @override
+  String get aiAssistantTooltip => 'Avage AI assistent';
+
+  @override
+  String get searchItems => 'Otsige üksusi';
+
+  @override
+  String get onboardingHookContinue => 'Alustage';
+
+  @override
+  String get onboardingHookItem1 => 'Grillitud kana';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella juust';
+
+  @override
+  String get onboardingHookItem3 => 'Kirsstomatid';
+
+  @override
+  String get checkItemTooltip => 'Kontrollige üksust';
 }

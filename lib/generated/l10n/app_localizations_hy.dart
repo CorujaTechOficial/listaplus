@@ -72,6 +72,32 @@ class AppLocalizationsHy extends AppLocalizations {
   String get close => 'Փակել';
 
   @override
+  String get help => 'Օգնություն';
+
+  @override
+  String get helpListTitle => 'Օգտագործելով ձեր ցուցակը';
+
+  @override
+  String get helpListAddItems =>
+      'Ավելացրեք տարրեր ներքևում գտնվող + կոճակով կամ օգտագործեք որոնումը ապրանքները զննելու համար';
+
+  @override
+  String get helpListAi =>
+      'Խնդրեք AI օգնականին ստեղծել, կազմակերպել կամ լրացնել ձեր ցուցակը. պարզապես հպեք կայծի պատկերակին';
+
+  @override
+  String get helpListShoppingMode =>
+      'Գնումների ռեժիմը թաքցնում է գնված ապրանքները, որպեսզի կարողանաք կենտրոնանալ մնացածի վրա';
+
+  @override
+  String get helpListOrganize =>
+      'Քաշեք տարրերը՝ վերադասավորելու համար, սահեցրեք՝ որպես գնված նշելու համար, կամ օգտագործեք զտիչներ և տեսակավորում';
+
+  @override
+  String get helpListShare =>
+      'Կիսեք ձեր ցուցակը ընտանիքի հետ կամ արտահանեք PDF, Excel կամ պարզ տեքստի տեսքով';
+
+  @override
   String get import => 'Ներմուծել';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get clear => 'Մաքրել';
+
+  @override
+  String get clearPurchasedTitle => 'Մաքրել գնված իրերը';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Հեռացնե՞լ բոլոր գնված ապրանքներն այս ցանկից: Սա հնարավոր չէ հետարկել:';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get purchaseError => 'Գնման մշակման սխալ։ Կրկին փորձեք։';
+
+  @override
+  String get errorCreateList =>
+      'Չհաջողվեց ստեղծել ցուցակ: Ստուգեք ձեր կապը և նորից փորձեք:';
+
+  @override
+  String get errorShareCode =>
+      'Բաժնետիրական կոդը ստեղծելիս սխալ առաջացավ: Ստուգեք ձեր կապը և նորից փորձեք:';
+
+  @override
+  String get errorQuickAdd =>
+      'Չհաջողվեց ավելացնել տարրը: Ստուգեք ձեր կապը և նորից փորձեք:';
+
+  @override
+  String get errorLoadList =>
+      'Չհաջողվեց բեռնել ձեր ցուցակները: Սկսելու համար խնդրում ենք ստեղծել նոր ցուցակ:';
 
   @override
   String get restoreError => 'Գնումների վերականգնման սխալ։ Կրկին փորձեք։';
@@ -487,6 +536,19 @@ class AppLocalizationsHy extends AppLocalizations {
   String get noBudgetDefined => 'Բյուջե սահմանված չէ';
 
   @override
+  String get budgetGoalInvalidAmount => 'Մուտքագրեք զրոյից մեծ արժեք';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Ներառում է մասնակի գնային գնահատականներ';
+
+  @override
+  String get budgetGoalSaved => 'Բյուջեի նպատակը պահպանվել է';
+
+  @override
+  String get budgetGoalRemoved => 'Բյուջեի նպատակը հեռացվեց';
+
+  @override
   String totalEstimated(String amount) {
     return 'Ընդհանուր մոտավոր՝ $amount';
   }
@@ -679,6 +741,13 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get newChat => 'Նոր Զրուցարան';
+
+  @override
+  String get newChatConfirmTitle => 'Նոր խոսակցություն';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Սկսե՞լ նոր խոսակցություն: Ձեր ընթացիկ խոսակցությունը կկորչի:';
 
   @override
   String get noHistory => 'Զրույցի պատմություն չկա';
@@ -1240,6 +1309,16 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Ողջույնի առաջարկ';
+
+  @override
+  String get paywallFreeTier => 'Անվճար՝ 3 ցուցակ';
+
+  @override
+  String get paywallProTier => 'Pro: Անսահմանափակ';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Առաջին տարրն ավելացվեց: Հիանալի սկիզբ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2140,6 +2219,18 @@ class AppLocalizationsHy extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Կանխադրված տեսակը';
 
   @override
+  String get mealPlannerDuplicate => 'Կրկնօրինակ կերակուր';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Կրկնօրինակել...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Ընթացիկ օր';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Ճաշը հաջողությամբ կրկնօրինակվեց:';
+
+  @override
   String get expirationDate => 'Ժամկետի ժամկետը';
 
   @override
@@ -2147,6 +2238,9 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get skip => 'Բաց թողնել';
+
+  @override
+  String get onboardingSkip => 'Առայժմ բաց թողեք';
 
   @override
   String get onboardingAiTitle => 'Զրուցեք Kipi-ի հետ';
@@ -3198,4 +3292,29 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Արձագանքում է…';
+
+  @override
+  String get errorUnexpected =>
+      'Ինչ-որ անսպասելի բան տեղի ունեցավ. Խնդրում ենք կրկին փորձել:';
+
+  @override
+  String get aiAssistantTooltip => 'Բացեք AI օգնականը';
+
+  @override
+  String get searchItems => 'Որոնել իրեր';
+
+  @override
+  String get onboardingHookContinue => 'Սկսեք';
+
+  @override
+  String get onboardingHookItem1 => 'Խորոված հավ';
+
+  @override
+  String get onboardingHookItem2 => 'Մոցարելլա պանիր';
+
+  @override
+  String get onboardingHookItem3 => 'Չերի լոլիկ';
+
+  @override
+  String get checkItemTooltip => 'Ստուգեք տարրը';
 }

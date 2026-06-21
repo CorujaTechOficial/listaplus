@@ -72,6 +72,32 @@ class AppLocalizationsRu extends AppLocalizations {
   String get close => 'Закрыть';
 
   @override
+  String get help => 'Помощь';
+
+  @override
+  String get helpListTitle => 'Использование вашего списка';
+
+  @override
+  String get helpListAddItems =>
+      'Добавляйте товары с помощью кнопки + внизу или воспользуйтесь поиском для просмотра товаров.';
+
+  @override
+  String get helpListAi =>
+      'Попросите ИИ-помощника создать, систематизировать или дополнить ваш список — просто коснитесь значка с блестками.';
+
+  @override
+  String get helpListShoppingMode =>
+      'Режим покупок скрывает купленные товары, чтобы вы могли сосредоточиться на том, что осталось';
+
+  @override
+  String get helpListOrganize =>
+      'Перетаскивайте элементы, чтобы изменить их порядок, проведите пальцем, чтобы отметить их как купленные, или используйте фильтры и сортировку.';
+
+  @override
+  String get helpListShare =>
+      'Поделитесь своим списком с семьей или экспортируйте его в формате PDF, Excel или в виде обычного текста.';
+
+  @override
   String get import => 'Импортировать';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get clear => 'Очистить';
+
+  @override
+  String get clearPurchasedTitle => 'Очистить купленные товары';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Удалить все купленные товары из этого списка? Это невозможно отменить.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get purchaseError => 'Ошибка обработки покупки. Попробуйте снова.';
+
+  @override
+  String get errorCreateList =>
+      'Не удалось создать список. Проверьте подключение и повторите попытку.';
+
+  @override
+  String get errorShareCode =>
+      'Ошибка создания общего кода. Проверьте подключение и повторите попытку.';
+
+  @override
+  String get errorQuickAdd =>
+      'Не удалось добавить товар. Проверьте подключение и повторите попытку.';
+
+  @override
+  String get errorLoadList =>
+      'Не удалось загрузить ваши списки. Пожалуйста, создайте новый список, чтобы начать.';
 
   @override
   String get restoreError => 'Ошибка восстановления покупок. Попробуйте снова.';
@@ -489,6 +538,18 @@ class AppLocalizationsRu extends AppLocalizations {
   String get noBudgetDefined => 'Бюджет не установлен';
 
   @override
+  String get budgetGoalInvalidAmount => 'Введите значение больше нуля';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Включает частичную оценку цен';
+
+  @override
+  String get budgetGoalSaved => 'Цель бюджета сохранена.';
+
+  @override
+  String get budgetGoalRemoved => 'Цель бюджета удалена.';
+
+  @override
   String totalEstimated(String amount) {
     return 'Всего оценено: $amount';
   }
@@ -683,6 +744,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get newChat => 'Новый чат';
 
   @override
+  String get newChatConfirmTitle => 'Новый разговор';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Начать новый разговор? Ваш текущий разговор будет потерян.';
+
+  @override
   String get noHistory => 'Нет истории чата';
 
   @override
@@ -792,28 +860,28 @@ class AppLocalizationsRu extends AppLocalizations {
   String get undo => 'Отменить';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Начался новый чат';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Добавить в список';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Что я могу сделать?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Списки покупок';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Бюджет и цены';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Рецепты и меню';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Организация';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Отметьте товары во время покупок';
 
   @override
   String get kipiListTitle => 'КипиЛист';
@@ -1250,6 +1318,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Приветственное предложение';
+
+  @override
+  String get paywallFreeTier => 'Бесплатно: 3 списка';
+
+  @override
+  String get paywallProTier => 'Плюсы: без ограничений';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Добавлен первый товар! Отличное начало 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1988,28 +2066,28 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Месяц: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Неделя: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Сегодня: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Удалить цель';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Бюджет планировщика питания';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Ежемесячная цель расходов на планирование питания';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2152,6 +2230,18 @@ class AppLocalizationsRu extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Тип по умолчанию';
 
   @override
+  String get mealPlannerDuplicate => 'Дублировать еду';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Дублировать в...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Текущий день';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Еда успешно продублирована!';
+
+  @override
   String get expirationDate => 'Дата окончания срока';
 
   @override
@@ -2159,6 +2249,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get skip => 'Пропускать';
+
+  @override
+  String get onboardingSkip => 'Пропустить сейчас';
 
   @override
   String get onboardingAiTitle => 'Пообщаться с Кипи';
@@ -3201,6 +3294,31 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Создание ответа…';
+
+  @override
+  String get errorUnexpected =>
+      'Произошло нечто неожиданное. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get aiAssistantTooltip => 'Открыть AI-помощник';
+
+  @override
+  String get searchItems => 'Поиск предметов';
+
+  @override
+  String get onboardingHookContinue => 'Начать';
+
+  @override
+  String get onboardingHookItem1 => 'Жареная курица';
+
+  @override
+  String get onboardingHookItem2 => 'сыр моцарелла';
+
+  @override
+  String get onboardingHookItem3 => 'Помидоры черри';
+
+  @override
+  String get checkItemTooltip => 'Проверить элемент';
 }
 
 /// The translations for Russian, as used in Russian Federation (`ru_RU`).
@@ -3271,6 +3389,32 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get close => 'Закрыть';
 
   @override
+  String get help => 'Помощь';
+
+  @override
+  String get helpListTitle => 'Использование вашего списка';
+
+  @override
+  String get helpListAddItems =>
+      'Добавляйте товары с помощью кнопки + внизу или воспользуйтесь поиском для просмотра товаров.';
+
+  @override
+  String get helpListAi =>
+      'Попросите ИИ-помощника создать, систематизировать или дополнить ваш список — просто коснитесь значка с блестками.';
+
+  @override
+  String get helpListShoppingMode =>
+      'Режим покупок скрывает купленные товары, чтобы вы могли сосредоточиться на том, что осталось';
+
+  @override
+  String get helpListOrganize =>
+      'Перетаскивайте элементы, чтобы изменить их порядок, проведите пальцем, чтобы отметить их как купленные, или используйте фильтры и сортировку.';
+
+  @override
+  String get helpListShare =>
+      'Поделитесь своим списком с семьей или экспортируйте его в формате PDF, Excel или в виде обычного текста.';
+
+  @override
   String get import => 'Импортировать';
 
   @override
@@ -3281,6 +3425,13 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get clear => 'Очистить';
+
+  @override
+  String get clearPurchasedTitle => 'Очистить купленные товары';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Удалить все купленные товары из этого списка? Это невозможно отменить.';
 
   @override
   String error(String message) {
@@ -3294,6 +3445,22 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get purchaseError => 'Ошибка обработки покупки. Попробуйте снова.';
+
+  @override
+  String get errorCreateList =>
+      'Не удалось создать список. Проверьте подключение и повторите попытку.';
+
+  @override
+  String get errorShareCode =>
+      'Ошибка создания общего кода. Проверьте подключение и повторите попытку.';
+
+  @override
+  String get errorQuickAdd =>
+      'Не удалось добавить товар. Проверьте подключение и повторите попытку.';
+
+  @override
+  String get errorLoadList =>
+      'Не удалось загрузить ваши списки. Пожалуйста, создайте новый список, чтобы начать.';
 
   @override
   String get restoreError => 'Ошибка восстановления покупок. Попробуйте снова.';
@@ -3688,6 +3855,18 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get noBudgetDefined => 'Бюджет не установлен';
 
   @override
+  String get budgetGoalInvalidAmount => 'Введите значение больше нуля';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Включает частичную оценку цен';
+
+  @override
+  String get budgetGoalSaved => 'Цель бюджета сохранена.';
+
+  @override
+  String get budgetGoalRemoved => 'Цель бюджета удалена.';
+
+  @override
   String totalEstimated(String amount) {
     return 'Всего оценено: $amount';
   }
@@ -3882,6 +4061,13 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get newChat => 'Новый чат';
 
   @override
+  String get newChatConfirmTitle => 'Новый разговор';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Начать новый разговор? Ваш текущий разговор будет потерян.';
+
+  @override
   String get noHistory => 'Нет истории чата';
 
   @override
@@ -3989,6 +4175,30 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get undo => 'Отменить';
+
+  @override
+  String get newChatStarted => 'Начался новый чат';
+
+  @override
+  String get quickAddToList => 'Добавить в список';
+
+  @override
+  String get aiCapabilitiesTitle => 'Что я могу сделать?';
+
+  @override
+  String get aiCapabilitiesLists => 'Списки покупок';
+
+  @override
+  String get aiCapabilitiesBudget => 'Бюджет и цены';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Рецепты и меню';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Организация';
+
+  @override
+  String get marketModeDescription => 'Отметьте товары во время покупок';
 
   @override
   String get kipiListTitle => 'КипиЛист';
@@ -4425,6 +4635,16 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Приветственное предложение';
+
+  @override
+  String get paywallFreeTier => 'Бесплатно: 3 списка';
+
+  @override
+  String get paywallProTier => 'Плюсы: без ограничений';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Добавлен первый товар! Отличное начало 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5162,6 +5382,31 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
       'Нажмите на любой день, чтобы начать планировать питание!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Месяц: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Неделя: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Сегодня: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Удалить цель';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Бюджет планировщика питания';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Ежемесячная цель расходов на планирование питания';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes мин.';
   }
@@ -5302,6 +5547,18 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get mealPlannerDefaultTypeLabel => 'Тип по умолчанию';
 
   @override
+  String get mealPlannerDuplicate => 'Дублировать еду';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Дублировать в...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Текущий день';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Еда успешно продублирована!';
+
+  @override
   String get expirationDate => 'Дата окончания срока';
 
   @override
@@ -5309,6 +5566,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get skip => 'Пропускать';
+
+  @override
+  String get onboardingSkip => 'Пропустить сейчас';
 
   @override
   String get onboardingAiTitle => 'Пообщаться с Кипи';
@@ -6351,4 +6611,29 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get aiGeneratingResponse => 'Создание ответа…';
+
+  @override
+  String get errorUnexpected =>
+      'Произошло нечто неожиданное. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get aiAssistantTooltip => 'Открыть AI-помощник';
+
+  @override
+  String get searchItems => 'Поиск предметов';
+
+  @override
+  String get onboardingHookContinue => 'Начать';
+
+  @override
+  String get onboardingHookItem1 => 'Жареная курица';
+
+  @override
+  String get onboardingHookItem2 => 'сыр моцарелла';
+
+  @override
+  String get onboardingHookItem3 => 'Помидоры черри';
+
+  @override
+  String get checkItemTooltip => 'Проверить элемент';
 }

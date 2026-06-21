@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "AI مددگار",
   "aiAssistantDescription": "ہمارے AI مددگار کے ساتھ ہوشیار تجاویز، ترکیبیں اور ذاتی مشورے حاصل کریں۔",
   "aiAssistantTitle": "اے آئی اسسٹنٹ",
+  "aiAssistantTooltip": "AI اسسٹنٹ کھولیں۔",
   "aiCapabilitiesBudget": "بجٹ اور قیمتیں۔",
   "aiCapabilitiesLists": "خریداری کی فہرستیں۔",
   "aiCapabilitiesOrganize": "تنظیم",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "ماہانہ بجٹ",
   "budgetDashboardTitle": "ڈیش بورڈ",
   "budgetEditTitle": "ماہانہ بجٹ",
+  "budgetGoalInvalidAmount": "صفر سے بڑی قدر درج کریں۔",
+  "budgetGoalRemoved": "بجٹ کا ہدف ہٹا دیا گیا۔",
+  "budgetGoalSaved": "بجٹ کا ہدف محفوظ ہو گیا۔",
   "budgetLists": "فہرستیں",
+  "budgetPartialEstimateHint": "~ جزوی قیمتوں کا تخمینہ شامل ہے۔",
   "budgetPremiumLocked": "عالمی ماہانہ بجٹ پریمیئم ہے",
   "budgetSubtitle": "اپنے ماہانہ اخراجات کا پتہ لگائیں",
   "budgetUpgradePrompt": "کھولنے کے لیے اپ گریڈ کریں",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "آپ آف لائن ہیں۔",
   "chatSubtitle": "اشیاء کی تجاویز، ترکیبیں یا بچت کے مشورے طلب کریں۔",
   "chatSubtitleShort": "قیمتوں، ترکیبوں، تنظیم کے بارے میں پوچھیں...",
+  "checkItemTooltip": "آئٹم چیک کریں۔",
   "checkingItem": "آئٹم کی جانچ ہو رہی ہے...",
   "checkingPantry": "آپ کی پینٹری کی جانچ ہو رہی ہے...",
   "checkingSettings": "آپ کی ترتیبات چیک کی جا رہی ہیں...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "اس سیشن میں تمام پیغامات صاف کریں؟",
   "clearList": "فہرست صاف کریں",
   "clearPurchased": "خریدہ شدہ صاف کریں",
+  "clearPurchasedConfirmMessage": "اس فہرست سے تمام خریدی گئی اشیاء کو ہٹائیں؟ اسے کالعدم نہیں کیا جا سکتا۔",
+  "clearPurchasedTitle": "خریدی گئی اشیاء کو صاف کریں۔",
   "clearingCheckedItems": "چیک شدہ آئٹمز کو صاف کیا جا رہا ہے...",
   "close": "بند کریں",
   "closeSheet": "بند",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "فہرست آرکائیو کرنے میں خرابی: {error}",
   "errorClearingList": "فہرست کو صاف کرنے میں خرابی: {error}",
   "errorClearingPurchased": "خریدی گئی اشیاء کو صاف کرنے میں خرابی: {error}",
+  "errorCreateList": "فہرست نہیں بنائی جا سکی۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔",
   "errorCreatingList": "فہرست بنانے میں خرابی۔",
   "errorDecreasingQty": "مقدار کو کم کرنے میں خرابی: {error}",
   "errorDeletingList": "فہرست کو حذف کرنے میں خرابی: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "خرابی: {message}",
   "errorImportingList": "فہرست درآمد کرنے میں خرابی \"{name}\": {error}",
   "errorIncreasingQty": "مقدار بڑھانے میں خرابی: {error}",
+  "errorLoadList": "آپ کی فہرستیں لوڈ نہیں ہو سکیں۔ شروع کرنے کے لیے براہ کرم ایک نئی فہرست بنائیں۔",
   "errorLoadingChat": "افوہ! چیٹ لوڈ کرنے میں کچھ غلط ہو گیا۔",
   "errorLoadingChatSubtitle": "اپنا کنکشن چیک کریں یا بعد میں دوبارہ کوشش کریں۔",
   "errorLoadingHistory": "تاریخ لوڈ کرنے میں خرابی۔",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "سبسکرپشن لوڈ کرنے میں خرابی۔",
   "errorOscillation": "یہ نیٹ ورک کے دوغلے پن یا عارضی عدم دستیابی کی وجہ سے ہو سکتا ہے۔ براہ کرم دوبارہ کوشش کریں۔",
   "errorProcessingRequest": "معذرت، آپ کی درخواست پر کارروائی کرتے وقت ایک خرابی پیش آگئی۔ اپنا کنکشن چیک کریں یا بعد میں دوبارہ کوشش کریں۔",
+  "errorQuickAdd": "آئٹم شامل نہیں کیا جا سکا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔",
   "errorRemovingItem": "آئٹم کو ہٹانے میں خرابی: {error}",
   "errorRemovingItems": "آئٹمز کو ہٹانے میں خرابی: {error}",
   "errorRemovingSharedList": "مشترکہ فہرست کو ہٹانے میں خرابی: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "محفوظ کرنے میں خرابی: {error}",
   "errorServerConnection": "سرور سے منسلک ہونے میں خرابی: {error}",
   "errorSettingCurrentList": "موجودہ فہرست ترتیب دینے میں خرابی: {error}",
+  "errorShareCode": "شیئر کوڈ بنانے میں خرابی۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔",
   "errorTogglingItem": "آئٹم کی حیثیت ٹوگل کرنے میں خرابی: {error}",
   "errorTogglingItems": "آئٹمز ٹوگل کرنے میں خرابی: {error}",
   "errorUnarchivingList": "فہرست کو آرکائیو کرنے میں خرابی: {error}",
+  "errorUnexpected": "کچھ غیر متوقع ہوا۔ براہ کرم دوبارہ کوشش کریں۔",
   "errorUpdatingItem": "آئٹم کو اپ ڈیٹ کرنے میں خرابی: {error}",
   "errorUpdatingItems": "آئٹمز کو اپ ڈیٹ کرنے میں خرابی: {error}",
   "errorUpdatingList": "فہرست کو اپ ڈیٹ کرنے میں خرابی: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "خریدہ شدہ",
   "finance": "مالیات",
   "finishShopping": "خریداری ختم کریں۔",
+  "firstItemAddedSnackbar": "پہلا آئٹم شامل کیا گیا! زبردست آغاز 🛒",
   "gallery": "گیلری",
   "generalAssistant": "عام مددگار",
   "generalHelp": "آج آپ کی خریداری میں کیسے مدد کر سکتا ہوں؟",
@@ -1913,6 +1996,13 @@
   "gestureHint": "منتخب کرنے کے لیے دبائے رکھیں • ہٹانے کے لیے سوائپ کریں۔",
   "globalAssistant": "عالمی مددگار",
   "goodResponse": "اچھا ردعمل",
+  "help": "مدد",
+  "helpListAddItems": "نچلے حصے میں + بٹن کے ساتھ آئٹمز شامل کریں، یا مصنوعات کو براؤز کرنے کے لیے تلاش کا استعمال کریں۔",
+  "helpListAi": "AI اسسٹنٹ سے اپنی فہرست بنانے، ترتیب دینے یا مکمل کرنے کے لیے کہیں — صرف چمکدار آئیکن کو تھپتھپائیں۔",
+  "helpListOrganize": "آئٹمز کو دوبارہ ترتیب دینے کے لیے گھسیٹیں، خریدی گئی کے بطور نشان زد کرنے کے لیے سوائپ کریں، یا فلٹرز اور چھانٹی کا استعمال کریں",
+  "helpListShare": "اپنی فہرست کو فیملی کے ساتھ شیئر کریں یا پی ڈی ایف، ایکسل یا سادہ متن کے بطور ایکسپورٹ کریں۔",
+  "helpListShoppingMode": "شاپنگ موڈ خریدی ہوئی اشیاء کو چھپاتا ہے تاکہ آپ اس پر توجہ مرکوز کر سکیں جو بچا ہے۔",
+  "helpListTitle": "آپ کی فہرست کا استعمال کرتے ہوئے",
   "howCanIHelp": "میں کس طرح مدد کر سکتا ہوں؟",
   "icon": "آئیکن:",
   "idealQty": "موزوں مقدار",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "مقصد کو ہٹا دیں۔",
   "mealPlannerBudgetTodayCost": "آج: {amount}",
   "mealPlannerBudgetWeekCost": "ہفتہ: {amount}",
+  "mealPlannerCurrentDayLabel": "موجودہ دن",
   "mealPlannerCustomTypeLabel": "حسب ضرورت قسم",
   "mealPlannerDateLabel": "تاریخ",
   "mealPlannerDefaultTypeLabel": "پہلے سے طے شدہ قسم",
   "mealPlannerDeleteMeal": "کھانا ہٹا دیں۔",
+  "mealPlannerDuplicate": "ڈپلیکیٹ کھانا",
+  "mealPlannerDuplicateSuccess": "کھانا کامیابی کے ساتھ ڈپلیکیٹ ہو گیا!",
   "mealPlannerEditMeal": "کھانے میں ترمیم کریں۔",
   "mealPlannerEditType": "کھانے کی قسم میں ترمیم کریں۔",
   "mealPlannerError": "کھانے کا منصوبہ لوڈ کرنے میں خرابی۔",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} منٹ",
   "mealPlannerSave": "پلان میں شامل کریں۔",
   "mealPlannerSearchRecipes": "ترکیبیں تلاش کریں...",
+  "mealPlannerSelectDestinationDay": "اس میں ڈپلیکیٹ...",
   "mealPlannerSelectRecipe": "ایک نسخہ منتخب کریں۔",
   "mealPlannerServings": "{count,plural, one{{count} سرونگ} other{{count} سرونگ}}",
   "mealPlannerServingsLabel": "سرونگز",
@@ -2061,6 +2155,8 @@
   "navRecipes": "ترکیبیں",
   "newCategoryDialog": "نیا زمرہ",
   "newChat": "نئی چیٹ",
+  "newChatConfirmMessage": "ایک نئی گفتگو شروع کریں؟ آپ کی موجودہ گفتگو ختم ہو جائے گی۔",
+  "newChatConfirmTitle": "نئی گفتگو",
   "newChatStarted": "نئی گپ شپ شروع ہوئی۔",
   "newListTitle": "نئی خریداری کی فہرست",
   "newPantryList": "پینٹری خریداری",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "جوڑے",
   "onboardingGroupFamily": "خاندان",
   "onboardingGroupSolo": "بس مجھے",
+  "onboardingHookContinue": "شروع کریں",
   "onboardingHookHeadline": "ایک گروسری آئٹم کو دوبارہ کبھی نہ بھولیں۔",
+  "onboardingHookItem1": "گرلڈ چکن",
+  "onboardingHookItem2": "موزاریلا پنیر",
+  "onboardingHookItem3": "چیری ٹماٹر",
   "onboardingListCreated": "آپ کی فہرست تیار ہے: {count} اشیاء آپ کے لیے ترتیب دی گئی ہیں۔",
   "onboardingListSaveFailed": "میں نے اشیاء تیار کیں، لیکن فہرست محفوظ نہیں کر سکا۔ اسے ایپ میں رکھنے کے لیے دوبارہ کوشش کریں۔",
   "onboardingLoadingStat1Label": "کیٹلاگ کردہ اشیاء",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "اپنے تجربے کو ذاتی بنائیں",
   "onboardingShareDesc": "حقیقی وقت میں خاندان اور دوستوں کے ساتھ فہرستیں ہم آہنگ کریں۔",
   "onboardingShareTitle": "اپنے پیاروں کے ساتھ شئیر کریں۔",
+  "onboardingSkip": "ابھی کے لیے چھوڑ دیں۔",
   "onboardingSlide1Body": "فوری طور پر فہرستیں بنائیں اور ان کا اشتراک کریں۔ Kipi آپ کی عادات کی بنیاد پر خود بخود آئٹمز شامل کرتا ہے۔",
   "onboardingSlide1Title": "سمارٹ شاپنگ لسٹ",
   "onboardingSlide2Body": "کچھ بھی پوچھیں — فہرستیں بنائیں، ترکیبیں تلاش کریں، اپنی پینٹری کو ٹریک کریں، اپنے ہفتے کی منصوبہ بندی کریں۔",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "اسمارٹ AI",
   "paywallFeatureUnlimitedLists": "لامحدود فہرستیں۔",
   "paywallFeaturesTitle": "ہر چیز جو آپ کی ضرورت ہے:",
+  "paywallFreeTier": "مفت: 3 فہرستیں۔",
   "paywallGoalHeadlineFamily": "{name}، فیملی شاپنگ کا اہتمام کریں!",
   "paywallGoalHeadlineFaster": "{name}، آدھے وقت میں خریداری کریں!",
   "paywallGoalHeadlineNeverForget": "{name}، کسی چیز کو کبھی نہ بھولیں!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "صرف {price}/day — ایک کافی سے کم",
   "paywallPricePerMonth": "صرف {price}/مہینہ",
   "paywallProLabel": "پی آر او",
+  "paywallProTier": "پرو: لا محدود",
   "paywallPurchaseError": "خریداری مکمل نہیں ہو سکی۔ دوبارہ کوشش کریں۔",
   "paywallPurchasePending": "آپ کی ادائیگی کی منظوری زیر التواء ہے۔ تصدیق کے بعد رسائی خود بخود جاری ہو جائے گی۔",
   "paywallRestore": "بحال کریں۔",
@@ -2474,6 +2577,7 @@
   "searchConversations": "مکالمات تلاش کریں۔",
   "searchCurrency": "کرنسی تلاش کریں...",
   "searchInConversation": "گفتگو میں تلاش کریں...",
+  "searchItems": "اشیاء تلاش کریں۔",
   "searchLanguage": "زبان تلاش کریں...",
   "searchMessages": "پیغامات تلاش کریں...",
   "searchRecipes": "ترکیبیں تلاش کریں...",

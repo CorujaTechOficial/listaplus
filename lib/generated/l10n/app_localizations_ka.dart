@@ -72,6 +72,32 @@ class AppLocalizationsKa extends AppLocalizations {
   String get close => 'დახურვა';
 
   @override
+  String get help => 'დახმარება';
+
+  @override
+  String get helpListTitle => 'თქვენი სიის გამოყენებით';
+
+  @override
+  String get helpListAddItems =>
+      'დაამატეთ ერთეულები ბოლოში + ღილაკით, ან გამოიყენეთ ძებნა პროდუქტების დასათვალიერებლად';
+
+  @override
+  String get helpListAi =>
+      'სთხოვეთ ხელოვნური ინტელექტის ასისტენტს შექმნას, მოაწყოს ან დაასრულოს თქვენი სია — უბრალოდ შეეხეთ მუხტის ხატულას';
+
+  @override
+  String get helpListShoppingMode =>
+      'შოპინგის რეჟიმი მალავს შეძენილ ნივთებს, ასე რომ თქვენ შეგიძლიათ ფოკუსირება იმაზე, რაც დარჩა';
+
+  @override
+  String get helpListOrganize =>
+      'გადაიტანეთ ერთეულები ხელახლა შეკვეთისთვის, გადაფურცლეთ შეძენილად მოსანიშნად, ან გამოიყენეთ ფილტრები და დახარისხება';
+
+  @override
+  String get helpListShare =>
+      'გაუზიარეთ თქვენი სია ოჯახს ან ექსპორტირდება PDF, Excel ან უბრალო ტექსტის სახით';
+
+  @override
   String get import => 'იმპორტი';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get clear => 'გასუფთავება';
+
+  @override
+  String get clearPurchasedTitle => 'შეძენილი ნივთების გასუფთავება';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'წაშალოთ ყველა შეძენილი ელემენტი ამ სიიდან? ამის გაუქმება შეუძლებელია.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get purchaseError =>
       'შეცდომა შესყიდვის დამუშავებისას. სცადეთ ხელახლა.';
+
+  @override
+  String get errorCreateList =>
+      'სიის შექმნა ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get errorShareCode =>
+      'შეცდომა გაზიარების კოდის გენერირებისას. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get errorQuickAdd =>
+      'ელემენტის დამატება ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get errorLoadList =>
+      'თქვენი სიების ჩატვირთვა ვერ მოხერხდა. გთხოვთ შექმენით ახალი სია დასაწყებად.';
 
   @override
   String get restoreError => 'შეცდომა შესყიდვების აღდგენისას. სცადეთ ხელახლა.';
@@ -488,6 +537,19 @@ class AppLocalizationsKa extends AppLocalizations {
   String get noBudgetDefined => 'ბიუჯეტი არ არის დაყენებული';
 
   @override
+  String get budgetGoalInvalidAmount => 'შეიყვანეთ ნულზე მეტი მნიშვნელობა';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ მოიცავს ნაწილობრივი ფასების შეფასებებს';
+
+  @override
+  String get budgetGoalSaved => 'ბიუჯეტის მიზანი შენახულია';
+
+  @override
+  String get budgetGoalRemoved => 'ბიუჯეტის მიზანი ამოღებულია';
+
+  @override
   String totalEstimated(String amount) {
     return 'სავარაუდო ჯამი: $amount';
   }
@@ -680,6 +742,13 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get newChat => 'ახალი ჩატი';
+
+  @override
+  String get newChatConfirmTitle => 'ახალი საუბარი';
+
+  @override
+  String get newChatConfirmMessage =>
+      'დაიწყო ახალი საუბარი? თქვენი მიმდინარე საუბარი დაიკარგება.';
 
   @override
   String get noHistory => 'არ არის ჩატის ისტორია';
@@ -1240,6 +1309,16 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 მისასალმებელი შემოთავაზება';
+
+  @override
+  String get paywallFreeTier => 'უფასო: 3 სია';
+
+  @override
+  String get paywallProTier => 'პრო: შეუზღუდავი';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'დამატებულია პირველი ელემენტი! მშვენიერი დასაწყისი 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2137,6 +2216,18 @@ class AppLocalizationsKa extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ნაგულისხმევი ტიპი';
 
   @override
+  String get mealPlannerDuplicate => 'დუბლიკატი კვება';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'დუბლიკატი...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'მიმდინარე დღე';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'კვება წარმატებით გაორმაგდა!';
+
+  @override
   String get expirationDate => 'ვარგისიანობის ვადა';
 
   @override
@@ -2144,6 +2235,9 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get skip => 'გამოტოვება';
+
+  @override
+  String get onboardingSkip => 'ახლა გამოტოვეთ';
 
   @override
   String get onboardingAiTitle => 'ესაუბრეთ Kipi-ს';
@@ -3175,6 +3269,31 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'პასუხის გენერირება…';
+
+  @override
+  String get errorUnexpected =>
+      'რაღაც მოულოდნელი მოხდა. გთხოვთ, სცადოთ ხელახლა.';
+
+  @override
+  String get aiAssistantTooltip => 'გახსენით AI ასისტენტი';
+
+  @override
+  String get searchItems => 'მოძებნეთ ნივთები';
+
+  @override
+  String get onboardingHookContinue => 'დაიწყეთ';
+
+  @override
+  String get onboardingHookItem1 => 'შემწვარი ქათამი';
+
+  @override
+  String get onboardingHookItem2 => 'ყველი მოცარელა';
+
+  @override
+  String get onboardingHookItem3 => 'ჩერი პომიდორი';
+
+  @override
+  String get checkItemTooltip => 'შეამოწმეთ ელემენტი';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -3245,6 +3364,32 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get close => 'დახურვა';
 
   @override
+  String get help => 'დახმარება';
+
+  @override
+  String get helpListTitle => 'თქვენი სიის გამოყენებით';
+
+  @override
+  String get helpListAddItems =>
+      'დაამატეთ ერთეულები ბოლოში + ღილაკით, ან გამოიყენეთ ძებნა პროდუქტების დასათვალიერებლად';
+
+  @override
+  String get helpListAi =>
+      'სთხოვეთ ხელოვნური ინტელექტის ასისტენტს შექმნას, მოაწყოს ან დაასრულოს თქვენი სია — უბრალოდ შეეხეთ მუხტის ხატულას';
+
+  @override
+  String get helpListShoppingMode =>
+      'შოპინგის რეჟიმი მალავს შეძენილ ნივთებს, ასე რომ თქვენ შეგიძლიათ ფოკუსირება იმაზე, რაც დარჩა';
+
+  @override
+  String get helpListOrganize =>
+      'გადაიტანეთ ერთეულები ხელახლა შეკვეთისთვის, გადაფურცლეთ შეძენილად მოსანიშნად, ან გამოიყენეთ ფილტრები და დახარისხება';
+
+  @override
+  String get helpListShare =>
+      'გაუზიარეთ თქვენი სია ოჯახს ან ექსპორტირდება PDF, Excel ან უბრალო ტექსტის სახით';
+
+  @override
   String get import => 'იმპორტი';
 
   @override
@@ -3255,6 +3400,13 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get clear => 'გასუფთავება';
+
+  @override
+  String get clearPurchasedTitle => 'შეძენილი ნივთების გასუფთავება';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'წაშალოთ ყველა შეძენილი ელემენტი ამ სიიდან? ამის გაუქმება შეუძლებელია.';
 
   @override
   String error(String message) {
@@ -3268,6 +3420,22 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get purchaseError => 'შეცდომა შეძენის დამუშავებისას. სცადეთ თავიდან.';
+
+  @override
+  String get errorCreateList =>
+      'სიის შექმნა ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get errorShareCode =>
+      'შეცდომა გაზიარების კოდის გენერირებისას. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get errorQuickAdd =>
+      'ელემენტის დამატება ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get errorLoadList =>
+      'თქვენი სიების ჩატვირთვა ვერ მოხერხდა. გთხოვთ შექმენით ახალი სია დასაწყებად.';
 
   @override
   String get restoreError => 'შეცდომა შეძენების აღდგენისას. სცადეთ თავიდან.';
@@ -3659,6 +3827,19 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get noBudgetDefined => 'ბიუჯეტი არ არის დაყენებული';
 
   @override
+  String get budgetGoalInvalidAmount => 'შეიყვანეთ ნულზე მეტი მნიშვნელობა';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ მოიცავს ნაწილობრივი ფასების შეფასებებს';
+
+  @override
+  String get budgetGoalSaved => 'ბიუჯეტის მიზანი შენახულია';
+
+  @override
+  String get budgetGoalRemoved => 'ბიუჯეტის მიზანი ამოღებულია';
+
+  @override
   String totalEstimated(String amount) {
     return 'სავარაუდო სულ: $amount';
   }
@@ -3851,6 +4032,13 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get newChat => 'ახალი ჩატი';
+
+  @override
+  String get newChatConfirmTitle => 'ახალი საუბარი';
+
+  @override
+  String get newChatConfirmMessage =>
+      'დაიწყო ახალი საუბარი? თქვენი მიმდინარე საუბარი დაიკარგება.';
 
   @override
   String get noHistory => 'არ არის ჩატის ისტორია';
@@ -4411,6 +4599,16 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 მისასალმებელი შემოთავაზება';
+
+  @override
+  String get paywallFreeTier => 'უფასო: 3 სია';
+
+  @override
+  String get paywallProTier => 'პრო: შეუზღუდავი';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'დამატებულია პირველი ელემენტი! მშვენიერი დასაწყისი 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5308,6 +5506,18 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get mealPlannerDefaultTypeLabel => 'ნაგულისხმევი ტიპი';
 
   @override
+  String get mealPlannerDuplicate => 'დუბლიკატი კვება';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'დუბლიკატი...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'მიმდინარე დღე';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'კვება წარმატებით გაორმაგდა!';
+
+  @override
   String get expirationDate => 'ვარგისიანობის ვადა';
 
   @override
@@ -5315,6 +5525,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get skip => 'გამოტოვება';
+
+  @override
+  String get onboardingSkip => 'ახლა გამოტოვეთ';
 
   @override
   String get onboardingAiTitle => 'ესაუბრეთ Kipi-ს';
@@ -6346,4 +6559,29 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get aiGeneratingResponse => 'პასუხის გენერირება…';
+
+  @override
+  String get errorUnexpected =>
+      'რაღაც მოულოდნელი მოხდა. გთხოვთ, სცადოთ ხელახლა.';
+
+  @override
+  String get aiAssistantTooltip => 'გახსენით AI ასისტენტი';
+
+  @override
+  String get searchItems => 'მოძებნეთ ნივთები';
+
+  @override
+  String get onboardingHookContinue => 'დაიწყეთ';
+
+  @override
+  String get onboardingHookItem1 => 'შემწვარი ქათამი';
+
+  @override
+  String get onboardingHookItem2 => 'ყველი მოცარელა';
+
+  @override
+  String get onboardingHookItem3 => 'ჩერი პომიდორი';
+
+  @override
+  String get checkItemTooltip => 'შეამოწმეთ ელემენტი';
 }

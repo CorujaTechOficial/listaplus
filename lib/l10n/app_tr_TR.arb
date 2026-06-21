@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "AI Asistan",
   "aiAssistantDescription": "AI asistanımızla akıllı öneriler, tarifler ve kişiselleştirilmiş ipuçları alın.",
   "aiAssistantTitle": "Yapay Zeka Asistanı",
+  "aiAssistantTooltip": "AI asistanını aç",
   "aiCapabilitiesBudget": "Bütçe ve Fiyatlar",
   "aiCapabilitiesLists": "Alışveriş Listeleri",
   "aiCapabilitiesOrganize": "Organizasyon",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Aylık Bütçe",
   "budgetDashboardTitle": "Kontrol Paneli",
   "budgetEditTitle": "Aylık Bütçe",
+  "budgetGoalInvalidAmount": "Sıfırdan büyük bir değer girin",
+  "budgetGoalRemoved": "Bütçe hedefi kaldırıldı",
+  "budgetGoalSaved": "Bütçe hedefi kaydedildi",
   "budgetLists": "Listeler",
+  "budgetPartialEstimateHint": "~ Kısmi fiyatlandırma tahminlerini içerir",
   "budgetPremiumLocked": "Genel aylık bütçe premium özelliktir",
   "budgetSubtitle": "Aylık harcamalarınızı takip edin",
   "budgetUpgradePrompt": "Kilidi açmak için yükseltin",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Çevrimdışısınız",
   "chatSubtitle": "Öğe önerileri, tarifler veya tasarruf ipuçları isteyin.",
   "chatSubtitleShort": "Fiyatlar, tarifler, organizasyon hakkında bilgi alın...",
+  "checkItemTooltip": "Öğeyi kontrol et",
   "checkingItem": "Öğe kontrol ediliyor...",
   "checkingPantry": "Kileriniz kontrol ediliyor...",
   "checkingSettings": "Ayarlarınız kontrol ediliyor...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Bu oturumdaki tüm mesajlar temizlensin mi?",
   "clearList": "Listeyi temizle",
   "clearPurchased": "Satın alınanları temizle",
+  "clearPurchasedConfirmMessage": "Satın alınan tüm öğeler bu listeden kaldırılsın mı? Bu geri alınamaz.",
+  "clearPurchasedTitle": "Satın alınan öğeleri temizle",
   "clearingCheckedItems": "İşaretlenen öğeler temizleniyor...",
   "close": "Kapat",
   "closeSheet": "Kapalı",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Liste arşivlenirken hata oluştu: {error}",
   "errorClearingList": "Liste temizlenirken hata oluştu: {error}",
   "errorClearingPurchased": "Satın alınan öğeler temizlenirken hata oluştu: {error}",
+  "errorCreateList": "Liste oluşturulamadı. Bağlantınızı kontrol edip tekrar deneyin.",
   "errorCreatingList": "Liste oluşturulurken hata oluştu",
   "errorDecreasingQty": "Miktar azaltılırken hata oluştu: {error}",
   "errorDeletingList": "Liste silinirken hata oluştu: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Hata: {message}",
   "errorImportingList": "\"{name}\" listesi içe aktarılırken hata oluştu: {error}",
   "errorIncreasingQty": "Miktar artırılırken hata oluştu: {error}",
+  "errorLoadList": "Listeleriniz yüklenemedi. Başlamak için lütfen yeni bir liste oluşturun.",
   "errorLoadingChat": "Hata! Sohbet yüklenirken bir şeyler ters gitti.",
   "errorLoadingChatSubtitle": "Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
   "errorLoadingHistory": "Geçmiş yüklenirken hata oluştu",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Abonelik yüklenirken hata oluştu",
   "errorOscillation": "Bu, ağ salınımları veya geçici olarak kullanılamama nedeniyle meydana gelebilir. Lütfen tekrar deneyin.",
   "errorProcessingRequest": "Üzgünüz, isteğiniz işlenirken bir hata oluştu. Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+  "errorQuickAdd": "Öğe eklenemedi. Bağlantınızı kontrol edip tekrar deneyin.",
   "errorRemovingItem": "Öğe kaldırılırken hata oluştu: {error}",
   "errorRemovingItems": "Öğeler kaldırılırken hata oluştu: {error}",
   "errorRemovingSharedList": "Paylaşılan liste kaldırılırken hata oluştu: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Kaydederken hata oluştu: {error}",
   "errorServerConnection": "Sunucuya bağlanırken hata oluştu: {error}",
   "errorSettingCurrentList": "Mevcut liste ayarlanırken hata oluştu: {error}",
+  "errorShareCode": "Paylaşım kodu oluşturulurken hata oluştu. Bağlantınızı kontrol edip tekrar deneyin.",
   "errorTogglingItem": "Öğe durumu değiştirilirken hata oluştu: {error}",
   "errorTogglingItems": "Öğeler değiştirilirken hata oluştu: {error}",
   "errorUnarchivingList": "Liste arşivden çıkarılırken hata oluştu: {error}",
+  "errorUnexpected": "Beklenmedik bir şey oldu. Lütfen tekrar deneyin.",
   "errorUpdatingItem": "Öğe güncellenirken hata oluştu: {error}",
   "errorUpdatingItems": "Öğeler güncellenirken hata oluştu: {error}",
   "errorUpdatingList": "Liste güncellenirken hata oluştu: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Satın alınanlar",
   "finance": "Finans",
   "finishShopping": "Alışverişi Bitir",
+  "firstItemAddedSnackbar": "İlk öğe eklendi! Harika başlangıç ​​🛒",
   "gallery": "Galeri",
   "generalAssistant": "Genel Asistan",
   "generalHelp": "Bugün alışverişinizle ilgili nasıl yardımcı olabilirim?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Seçmek için basılı tutun • Kaldırmak için kaydırın",
   "globalAssistant": "Genel asistan",
   "goodResponse": "İyi yanıt",
+  "help": "Yardım",
+  "helpListAddItems": "Alt kısımdaki + düğmesiyle öğeler ekleyin veya ürünlere göz atmak için aramayı kullanın",
+  "helpListAi": "Yapay zeka asistanından listenizi oluşturmasını, organize etmesini veya tamamlamasını isteyin; yalnızca ışıltı simgesine dokunmanız yeterli",
+  "helpListOrganize": "Yeniden sıralamak için öğeleri sürükleyin, satın alındı ​​olarak işaretlemek için kaydırın veya filtreleri ve sıralamayı kullanın",
+  "helpListShare": "Listenizi ailenizle paylaşın veya PDF, Excel veya düz metin olarak dışa aktarın",
+  "helpListShoppingMode": "Alışveriş modu satın alınan öğeleri gizler, böylece geriye kalanlara odaklanabilirsiniz",
+  "helpListTitle": "Listenizi kullanma",
   "howCanIHelp": "Nasıl yardımcı olabilirim?",
   "icon": "Simge:",
   "idealQty": "İdeal miktar",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Hedefi kaldır",
   "mealPlannerBudgetTodayCost": "Bugün: {amount}",
   "mealPlannerBudgetWeekCost": "Hafta: {amount}",
+  "mealPlannerCurrentDayLabel": "Geçerli gün",
   "mealPlannerCustomTypeLabel": "Özel tür",
   "mealPlannerDateLabel": "Tarih",
   "mealPlannerDefaultTypeLabel": "Varsayılan tür",
   "mealPlannerDeleteMeal": "Yemeği kaldır",
+  "mealPlannerDuplicate": "Yinelenen yemek",
+  "mealPlannerDuplicateSuccess": "Yemek başarıyla kopyalandı!",
   "mealPlannerEditMeal": "Yemeği Düzenle",
   "mealPlannerEditType": "Yemek türünü düzenle",
   "mealPlannerError": "Yemek planı yüklenirken hata oluştu",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} dk.",
   "mealPlannerSave": "Plana ekle",
   "mealPlannerSearchRecipes": "Tarif ara...",
+  "mealPlannerSelectDestinationDay": "Şuraya kopyala:",
   "mealPlannerSelectRecipe": "Bir tarif seçin",
   "mealPlannerServings": "{count,plural, one{{count} porsiyon} other{{count} porsiyon}}",
   "mealPlannerServingsLabel": "Porsiyon",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Tarifler",
   "newCategoryDialog": "Yeni kategori",
   "newChat": "Yeni Sohbet",
+  "newChatConfirmMessage": "Yeni bir sohbet başlatılsın mı? Mevcut görüşmeniz kaybolacak.",
+  "newChatConfirmTitle": "Yeni görüşme",
   "newChatStarted": "Yeni sohbet başlatıldı",
   "newListTitle": "Yeni Alışveriş Listesi",
   "newPantryList": "Kiler Alışverişi",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Çift",
   "onboardingGroupFamily": "Aile",
   "onboardingGroupSolo": "Benim",
+  "onboardingHookContinue": "Başlayın",
   "onboardingHookHeadline": "Bir bakkaliye ürününü bir daha asla unutma",
+  "onboardingHookItem1": "Izgara tavuk",
+  "onboardingHookItem2": "Mozzarella peyniri",
+  "onboardingHookItem3": "Kiraz domates",
   "onboardingListCreated": "Listeniz hazır: {count} öğe sizin için düzenlendi.",
   "onboardingListSaveFailed": "Malzemeleri hazırladım ama listeyi kaydedemedim. Uygulamada tutmayı tekrar deneyin.",
   "onboardingLoadingStat1Label": "Kataloglanan ürünler",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Deneyiminizi kişiselleştirin",
   "onboardingShareDesc": "Listeleri aileniz ve arkadaşlarınızla gerçek zamanlı olarak senkronize edin",
   "onboardingShareTitle": "Sevdiklerinizle paylaşın",
+  "onboardingSkip": "Şimdilik atla",
   "onboardingSlide1Body": "Anında listeler oluşturun ve paylaşın. Kipi, alışkanlıklarınıza göre öğeleri otomatik olarak ekler.",
   "onboardingSlide1Title": "Akıllı Alışveriş Listeleri",
   "onboardingSlide2Body": "İstediğiniz şeyi sorun; listeler oluşturun, tarifler bulun, kilerinizi takip edin, haftanızı planlayın.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "Akıllı Yapay Zeka",
   "paywallFeatureUnlimitedLists": "Sınırsız Liste",
   "paywallFeaturesTitle": "İhtiyacınız olan her şey:",
+  "paywallFreeTier": "Ücretsiz: 3 liste",
   "paywallGoalHeadlineFamily": "{name}, aile alışverişini organize edin!",
   "paywallGoalHeadlineFaster": "{name}, yarı zamanda alışveriş yapın!",
   "paywallGoalHeadlineNeverForget": "{name}, hiçbir öğeyi asla unutma!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Yalnızca {price}/gün — bir kahveden az",
   "paywallPricePerMonth": "Yalnızca {price}/ay",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Profesyonel: Sınırsız",
   "paywallPurchaseError": "Satın alma işlemi tamamlanamadı. Tekrar deneyin.",
   "paywallPurchasePending": "Ödemeniz onay bekliyor. Onaylandıktan sonra erişim otomatik olarak serbest bırakılacaktır.",
   "paywallRestore": "Eski haline getirmek",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Konuşmaları arayın",
   "searchCurrency": "Para birimini ara...",
   "searchInConversation": "Görüşmede ara...",
+  "searchItems": "Öğeleri ara",
   "searchLanguage": "Dil ara...",
   "searchMessages": "Mesajları ara...",
   "searchRecipes": "Tarif ara...",

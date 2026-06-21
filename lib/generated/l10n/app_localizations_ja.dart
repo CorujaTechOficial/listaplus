@@ -72,6 +72,30 @@ class AppLocalizationsJa extends AppLocalizations {
   String get close => '閉じる';
 
   @override
+  String get help => 'ヘルプ';
+
+  @override
+  String get helpListTitle => 'リストの使用';
+
+  @override
+  String get helpListAddItems => '下部にある + ボタンを使用してアイテムを追加するか、検索を使用して製品を参照します';
+
+  @override
+  String get helpListAi => 'AI アシスタントにリストの作成、整理、完成を依頼できます。輝くアイコンをタップするだけです。';
+
+  @override
+  String get helpListShoppingMode =>
+      'ショッピング モードでは購入したアイテムが非表示になるため、残っているものに集中できます';
+
+  @override
+  String get helpListOrganize =>
+      'アイテムをドラッグして並べ替えたり、スワイプして購入済みとしてマークしたり、フィルターや並べ替えを使用したりできます';
+
+  @override
+  String get helpListShare =>
+      'リストを家族と共有したり、PDF、Excel、またはプレーンテキストとしてエクスポートしたりできます';
+
+  @override
   String get import => 'インポート';
 
   @override
@@ -82,6 +106,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get clear => 'クリア';
+
+  @override
+  String get clearPurchasedTitle => '購入したアイテムをクリアする';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      '購入したアイテムをすべてこのリストから削除しますか?これを元に戻すことはできません。';
 
   @override
   String error(String message) {
@@ -95,6 +126,18 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get purchaseError => '購入処理中にエラーが発生しました。もう一度お試しください。';
+
+  @override
+  String get errorCreateList => 'リストを作成できませんでした。接続を確認して、もう一度試してください。';
+
+  @override
+  String get errorShareCode => '共有コードの生成中にエラーが発生しました。接続を確認して、もう一度試してください。';
+
+  @override
+  String get errorQuickAdd => 'アイテムを追加できませんでした。接続を確認して、もう一度試してください。';
+
+  @override
+  String get errorLoadList => 'リストをロードできませんでした。始めるには、新しいリストを作成してください。';
 
   @override
   String get restoreError => '購入の復元中にエラーが発生しました。もう一度お試しください。';
@@ -477,6 +520,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noBudgetDefined => '予算が設定されていません';
 
   @override
+  String get budgetGoalInvalidAmount => 'ゼロより大きい値を入力してください';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 部分的な価格見積もりが含まれています';
+
+  @override
+  String get budgetGoalSaved => '予算目標が保存されました';
+
+  @override
+  String get budgetGoalRemoved => '予算目標が削除されました';
+
+  @override
   String totalEstimated(String amount) {
     return '推定合計: $amount';
   }
@@ -667,6 +722,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get newChat => '新しいチャット';
+
+  @override
+  String get newChatConfirmTitle => '新しい会話';
+
+  @override
+  String get newChatConfirmMessage => '新しい会話を始めますか?現在の会話は失われます。';
 
   @override
   String get noHistory => 'チャット履歴がありません';
@@ -1195,6 +1256,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ウェルカムオファー';
+
+  @override
+  String get paywallFreeTier => '無料：3リスト';
+
+  @override
+  String get paywallProTier => 'プロ: 無制限';
+
+  @override
+  String get firstItemAddedSnackbar => '最初のアイテムが追加されました！素晴らしいスタート🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2068,6 +2138,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'デフォルトのタイプ';
 
   @override
+  String get mealPlannerDuplicate => '重複した食事';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '複製先...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '当日';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '食事が正常に複製されました。';
+
+  @override
   String get expirationDate => '有効期限';
 
   @override
@@ -2075,6 +2157,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get skip => 'スキップ';
+
+  @override
+  String get onboardingSkip => '今のところスキップしてください';
 
   @override
   String get onboardingAiTitle => 'キピとチャット';
@@ -3071,6 +3156,30 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => '応答を生成しています…';
+
+  @override
+  String get errorUnexpected => '予期せぬことが起こりました。もう一度試してください。';
+
+  @override
+  String get aiAssistantTooltip => 'AIアシスタントを開く';
+
+  @override
+  String get searchItems => '検索項目';
+
+  @override
+  String get onboardingHookContinue => '始めましょう';
+
+  @override
+  String get onboardingHookItem1 => 'グリルチキン';
+
+  @override
+  String get onboardingHookItem2 => 'モッツァレラチーズ';
+
+  @override
+  String get onboardingHookItem3 => 'ミニトマト';
+
+  @override
+  String get checkItemTooltip => 'チェック項目';
 }
 
 /// The translations for Japanese, as used in Japan (`ja_JP`).
@@ -3141,6 +3250,30 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get close => '閉じる';
 
   @override
+  String get help => 'ヘルプ';
+
+  @override
+  String get helpListTitle => 'リストの使用';
+
+  @override
+  String get helpListAddItems => '下部にある + ボタンを使用してアイテムを追加するか、検索を使用して製品を参照します';
+
+  @override
+  String get helpListAi => 'AI アシスタントにリストの作成、整理、完成を依頼できます。輝くアイコンをタップするだけです。';
+
+  @override
+  String get helpListShoppingMode =>
+      'ショッピング モードでは購入したアイテムが非表示になるため、残っているものに集中できます';
+
+  @override
+  String get helpListOrganize =>
+      'アイテムをドラッグして並べ替えたり、スワイプして購入済みとしてマークしたり、フィルターや並べ替えを使用したりできます';
+
+  @override
+  String get helpListShare =>
+      'リストを家族と共有したり、PDF、Excel、またはプレーンテキストとしてエクスポートしたりできます';
+
+  @override
   String get import => 'インポート';
 
   @override
@@ -3151,6 +3284,13 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get clear => 'クリア';
+
+  @override
+  String get clearPurchasedTitle => '購入したアイテムをクリアする';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      '購入したアイテムをすべてこのリストから削除しますか?これを元に戻すことはできません。';
 
   @override
   String error(String message) {
@@ -3164,6 +3304,18 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get purchaseError => '購入処理中にエラーが発生しました。もう一度お試しください。';
+
+  @override
+  String get errorCreateList => 'リストを作成できませんでした。接続を確認して、もう一度試してください。';
+
+  @override
+  String get errorShareCode => '共有コードの生成中にエラーが発生しました。接続を確認して、もう一度試してください。';
+
+  @override
+  String get errorQuickAdd => 'アイテムを追加できませんでした。接続を確認して、もう一度試してください。';
+
+  @override
+  String get errorLoadList => 'リストをロードできませんでした。始めるには、新しいリストを作成してください。';
 
   @override
   String get restoreError => '購入の復元中にエラーが発生しました。もう一度お試しください。';
@@ -3546,6 +3698,18 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get noBudgetDefined => '予算が設定されていません';
 
   @override
+  String get budgetGoalInvalidAmount => 'ゼロより大きい値を入力してください';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 部分的な価格見積もりが含まれています';
+
+  @override
+  String get budgetGoalSaved => '予算目標が保存されました';
+
+  @override
+  String get budgetGoalRemoved => '予算目標が削除されました';
+
+  @override
   String totalEstimated(String amount) {
     return '推定合計: $amount';
   }
@@ -3736,6 +3900,12 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get newChat => '新しいチャット';
+
+  @override
+  String get newChatConfirmTitle => '新しい会話';
+
+  @override
+  String get newChatConfirmMessage => '新しい会話を始めますか?現在の会話は失われます。';
 
   @override
   String get noHistory => 'チャット履歴がありません';
@@ -4264,6 +4434,15 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ウェルカムオファー';
+
+  @override
+  String get paywallFreeTier => '無料：3リスト';
+
+  @override
+  String get paywallProTier => 'プロ: 無制限';
+
+  @override
+  String get firstItemAddedSnackbar => '最初のアイテムが追加されました！素晴らしいスタート🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5137,6 +5316,18 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get mealPlannerDefaultTypeLabel => 'デフォルトのタイプ';
 
   @override
+  String get mealPlannerDuplicate => '重複した食事';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '複製先...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '当日';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '食事が正常に複製されました。';
+
+  @override
   String get expirationDate => '有効期限';
 
   @override
@@ -5144,6 +5335,9 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get skip => 'スキップ';
+
+  @override
+  String get onboardingSkip => '今のところスキップしてください';
 
   @override
   String get onboardingAiTitle => 'キピとチャット';
@@ -6140,4 +6334,28 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get aiGeneratingResponse => '応答を生成しています…';
+
+  @override
+  String get errorUnexpected => '予期せぬことが起こりました。もう一度試してください。';
+
+  @override
+  String get aiAssistantTooltip => 'AIアシスタントを開く';
+
+  @override
+  String get searchItems => '検索項目';
+
+  @override
+  String get onboardingHookContinue => '始めましょう';
+
+  @override
+  String get onboardingHookItem1 => 'グリルチキン';
+
+  @override
+  String get onboardingHookItem2 => 'モッツァレラチーズ';
+
+  @override
+  String get onboardingHookItem3 => 'ミニトマト';
+
+  @override
+  String get checkItemTooltip => 'チェック項目';
 }

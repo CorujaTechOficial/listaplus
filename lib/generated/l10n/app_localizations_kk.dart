@@ -72,6 +72,32 @@ class AppLocalizationsKk extends AppLocalizations {
   String get close => 'Жабу';
 
   @override
+  String get help => 'Көмек';
+
+  @override
+  String get helpListTitle => 'Тізімді пайдалану';
+
+  @override
+  String get helpListAddItems =>
+      'Төменгі жағындағы + түймесі бар элементтерді қосыңыз немесе өнімдерді шолу үшін іздеуді пайдаланыңыз';
+
+  @override
+  String get helpListAi =>
+      'AI көмекшісінен тізіміңізді жасауды, реттеуді немесе аяқтауды сұраңыз — жай ғана жарқырау белгішесін түртіңіз';
+
+  @override
+  String get helpListShoppingMode =>
+      'Сатып алу режимі сатып алынған заттарды жасырады, осылайша сіз қалған нәрсеге назар аудара аласыз';
+
+  @override
+  String get helpListOrganize =>
+      'Қайта реттеу үшін элементтерді сүйреңіз, сатып алынған деп белгілеу үшін сырғытыңыз немесе сүзгілер мен сұрыптауды пайдаланыңыз';
+
+  @override
+  String get helpListShare =>
+      'Тізімді отбасымен бөлісіңіз немесе PDF, Excel немесе кәдімгі мәтін ретінде экспорттаңыз';
+
+  @override
   String get import => 'Импорттау';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get clear => 'Тазалау';
+
+  @override
+  String get clearPurchasedTitle => 'Сатып алынған заттарды тазалаңыз';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Барлық сатып алынған элементтерді осы тізімнен жою керек пе? Мұны қайтару мүмкін емес.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get purchaseError =>
       'Сатып алуды өңдеу кезінде қате. Қайталап көріңіз.';
+
+  @override
+  String get errorCreateList =>
+      'Тізім жасалмады. Байланысты тексеріп, әрекетті қайталаңыз.';
+
+  @override
+  String get errorShareCode =>
+      'Бөліс кодын жасау қатесі. Байланысты тексеріп, әрекетті қайталаңыз.';
+
+  @override
+  String get errorQuickAdd =>
+      'Элементті қосу мүмкін болмады. Байланысты тексеріп, әрекетті қайталаңыз.';
+
+  @override
+  String get errorLoadList =>
+      'Тізімдеріңіз жүктелмеді. Бастау үшін жаңа тізім жасаңыз.';
 
   @override
   String get restoreError =>
@@ -489,6 +538,18 @@ class AppLocalizationsKk extends AppLocalizations {
   String get noBudgetDefined => 'Бюджет белгіленбеген';
 
   @override
+  String get budgetGoalInvalidAmount => 'Нөлден үлкен мәнді енгізіңіз';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Ішінара бағалық бағалауды қамтиды';
+
+  @override
+  String get budgetGoalSaved => 'Бюджеттік мақсат сақталды';
+
+  @override
+  String get budgetGoalRemoved => 'Бюджеттік мақсат жойылды';
+
+  @override
   String totalEstimated(String amount) {
     return 'Болжалды жиынтық: $amount';
   }
@@ -681,6 +742,13 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get newChat => 'Жаңа чат';
+
+  @override
+  String get newChatConfirmTitle => 'Жаңа әңгіме';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Жаңа әңгіме бастау керек пе? Ағымдағы әңгіме жоғалады.';
 
   @override
   String get noHistory => 'Чат тарихы жоқ';
@@ -1242,6 +1310,16 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Қош келдіңіз ұсынысы';
+
+  @override
+  String get paywallFreeTier => 'Тегін: 3 тізім';
+
+  @override
+  String get paywallProTier => 'Pro: шексіз';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Бірінші элемент қосылды! Керемет бастама 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2142,6 +2220,18 @@ class AppLocalizationsKk extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Әдепкі түрі';
 
   @override
+  String get mealPlannerDuplicate => 'Қайталанатын тағам';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Көшірме жасау...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Ағымдағы күн';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Тамақ сәтті көшірілді!';
+
+  @override
   String get expirationDate => 'Мерзімнің өту күні';
 
   @override
@@ -2149,6 +2239,9 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get skip => 'Өткізіп жіберу';
+
+  @override
+  String get onboardingSkip => 'Әзірге өткізіп жіберіңіз';
 
   @override
   String get onboardingAiTitle => 'Kipi-мен сөйлесу';
@@ -3183,4 +3276,28 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Жауап жасалуда…';
+
+  @override
+  String get errorUnexpected => 'Күтпеген бірдеңе болды. Қайталап көріңіз.';
+
+  @override
+  String get aiAssistantTooltip => 'AI көмекшісін ашыңыз';
+
+  @override
+  String get searchItems => 'Элементтерді іздеу';
+
+  @override
+  String get onboardingHookContinue => 'Жұмысты бастау';
+
+  @override
+  String get onboardingHookItem1 => 'Грильде пісірілген тауық еті';
+
+  @override
+  String get onboardingHookItem2 => 'Моцарелла ірімшігі';
+
+  @override
+  String get onboardingHookItem3 => 'Шие қызанақтары';
+
+  @override
+  String get checkItemTooltip => 'Элементті тексеріңіз';
 }

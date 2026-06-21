@@ -10,7 +10,9 @@ import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/constants/common_products.dart';
 import 'package:shopping_list/core/widgets/styled_autocomplete.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class PantryAddSheet extends ConsumerStatefulWidget {
   const PantryAddSheet({super.key, this.initialName});
@@ -120,7 +122,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                   const Spacer(),
                   IconButton(
                     onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.close),
+                    icon: const Icon(PhosphorIconsRegular.x),
                   ),
                 ],
               ),
@@ -154,7 +156,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                     enabled: !_isSubmitting,
                     decoration: InputDecoration(
                       labelText: l10n.productName,
-                      prefixIcon: const Icon(Icons.shopping_bag_outlined),
+                      prefixIcon: const Icon(PhosphorIconsRegular.shoppingBag),
                       filled: true,
                       fillColor: theme.colorScheme.surfaceContainerLow,
                       border: OutlineInputBorder(
@@ -176,7 +178,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                 _buildQuantityField(
                   controller: _currentController,
                   label: l10n.currentQty,
-                  icon: Icons.home_outlined,
+                  icon: PhosphorIconsRegular.house,
                   theme: theme,
                   enabled: !_isSubmitting,
                 ),
@@ -184,7 +186,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                 _buildQuantityField(
                   controller: _idealController,
                   label: l10n.idealQty,
-                  icon: Icons.flag_outlined,
+                  icon: PhosphorIconsRegular.flag,
                   theme: theme,
                   enabled: !_isSubmitting,
                 ),
@@ -195,7 +197,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                       child: _buildQuantityField(
                         controller: _currentController,
                         label: l10n.currentQty,
-                        icon: Icons.home_outlined,
+                        icon: PhosphorIconsRegular.house,
                         theme: theme,
                         enabled: !_isSubmitting,
                       ),
@@ -205,7 +207,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                       child: _buildQuantityField(
                         controller: _idealController,
                         label: l10n.idealQty,
-                        icon: Icons.flag_outlined,
+                        icon: PhosphorIconsRegular.flag,
                         theme: theme,
                         enabled: !_isSubmitting,
                       ),
@@ -220,7 +222,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                   initialValue: _selectedUnit,
                   decoration: InputDecoration(
                     labelText: l10n.unit,
-                    prefixIcon: const Icon(Icons.straighten),
+                    prefixIcon: const Icon(PhosphorIconsRegular.ruler),
                     filled: true,
                     fillColor: theme.colorScheme.surfaceContainerLow,
                     border: OutlineInputBorder(
@@ -247,7 +249,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                   initialValue: _selectedCategoryId,
                   decoration: InputDecoration(
                     labelText: l10n.category,
-                    prefixIcon: const Icon(Icons.category_outlined),
+                    prefixIcon: const Icon(PhosphorIconsRegular.squaresFour),
                     filled: true,
                     fillColor: theme.colorScheme.surfaceContainerLow,
                     border: OutlineInputBorder(
@@ -275,7 +277,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                         initialValue: _selectedUnit,
                         decoration: InputDecoration(
                           labelText: l10n.unit,
-                          prefixIcon: const Icon(Icons.straighten),
+                          prefixIcon: const Icon(PhosphorIconsRegular.ruler),
                           filled: true,
                           fillColor: theme.colorScheme.surfaceContainerLow,
                           border: OutlineInputBorder(
@@ -304,7 +306,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                         initialValue: _selectedCategoryId,
                         decoration: InputDecoration(
                           labelText: l10n.category,
-                          prefixIcon: const Icon(Icons.category_outlined),
+                          prefixIcon: const Icon(PhosphorIconsRegular.squaresFour),
                           filled: true,
                           fillColor: theme.colorScheme.surfaceContainerLow,
                           border: OutlineInputBorder(
@@ -341,7 +343,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                   decoration: InputDecoration(
                     labelText: l10n.addItemPrice,
                     prefixText: '$currencyCode ',
-                    prefixIcon: const Icon(Icons.payments_outlined),
+                    prefixIcon: const Icon(PhosphorIconsRegular.creditCard),
                     filled: true,
                     fillColor: theme.colorScheme.surfaceContainerLow,
                     border: OutlineInputBorder(
@@ -365,7 +367,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                         decoration: InputDecoration(
                           labelText: l10n.addItemPrice,
                           prefixText: '$currencyCode ',
-                          prefixIcon: const Icon(Icons.payments_outlined),
+                          prefixIcon: const Icon(PhosphorIconsRegular.creditCard),
                           filled: true,
                           fillColor: theme.colorScheme.surfaceContainerLow,
                           border: OutlineInputBorder(
@@ -476,7 +478,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                       }
                     }
                     : null,
-            icon: const Icon(Icons.remove, size: _iconSizeSmall),
+            icon: const Icon(PhosphorIconsRegular.minus, size: _iconSizeSmall),
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(minWidth: Spacing.xl, minHeight: Spacing.xl),
           ),
@@ -505,7 +507,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
                       controller.text = (val + 1).toString();
                     }
                     : null,
-            icon: const Icon(Icons.add, size: _iconSizeSmall),
+            icon: const Icon(PhosphorIconsRegular.plus, size: _iconSizeSmall),
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(minWidth: Spacing.xl, minHeight: Spacing.xl),
           ),
@@ -521,7 +523,7 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
       child: InputDecorator(
         decoration: InputDecoration(
           labelText: l10n.expirationDate,
-          prefixIcon: const Icon(Icons.calendar_today_outlined),
+          prefixIcon: const Icon(PhosphorIconsRegular.calendarBlank),
           filled: true,
           fillColor: theme.colorScheme.surfaceContainerLow,
           border: OutlineInputBorder(
@@ -588,23 +590,23 @@ class _PantryAddSheetState extends ConsumerState<PantryAddSheet> {
             _formKey.currentState?.reset();
             
             final l10n = AppLocalizations.of(context)!;
-            ScaffoldMessenger.of(context).clearSnackBars();
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                behavior: SnackBarBehavior.floating,
-                content: Text(l10n.pantryItemAdded),
-              ),
+            showKipiSnackBar(
+              context,
+              message: l10n.pantryItemAdded,
+              type: SnackBarType.success,
             );
           } else {
             Navigator.pop(context);
           }
         }
-      } on Exception catch (e) {
+      } on Exception catch (_) {
         if (mounted) {
           setState(() => _isSubmitting = false);
-          ScaffoldMessenger.of(
+          showKipiSnackBar(
             context,
-          ).showSnackBar(SnackBar(content: Text(e.toString())));
+            message: AppLocalizations.of(context)!.errorUnexpected,
+            type: SnackBarType.error,
+          );
         }
       }
     }

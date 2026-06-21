@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "Asistent AI",
   "aiAssistantDescription": "Merr sugjerime të zgjuara, receta dhe këshilla të personalizuara me asistentin tonë AI.",
   "aiAssistantTitle": "Asistent i AI",
+  "aiAssistantTooltip": "Hap asistentin e AI",
   "aiCapabilitiesBudget": "Buxheti dhe Çmimet",
   "aiCapabilitiesLists": "Listat e blerjeve",
   "aiCapabilitiesOrganize": "Organizimi",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Buxheti Mujor",
   "budgetDashboardTitle": "Paneli",
   "budgetEditTitle": "Buxheti Mujor",
+  "budgetGoalInvalidAmount": "Fut një vlerë më të madhe se zero",
+  "budgetGoalRemoved": "Objektivi buxhetor u hoq",
+  "budgetGoalSaved": "Objektivi buxhetor u ruajt",
   "budgetLists": "Listat",
+  "budgetPartialEstimateHint": "~ Përfshin vlerësime të pjesshme të çmimeve",
   "budgetPremiumLocked": "Buxheti global mujor është premium",
   "budgetSubtitle": "Gjurmo shpenzimet e tua mujore",
   "budgetUpgradePrompt": "Përmirëso për të zhbllokuar",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Je jashtë linje",
   "chatSubtitle": "Kërko sugjerime për artikuj, receta ose këshilla kursimi.",
   "chatSubtitleShort": "Pyetni për çmimet, recetat, organizimin...",
+  "checkItemTooltip": "Kontrolloni artikullin",
   "checkingItem": "Po kontrollon artikullin...",
   "checkingPantry": "Po kontrollon qilarin tuaj...",
   "checkingSettings": "Po kontrollon cilësimet e tua...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Pastro të gjitha mesazhet në këtë sesion?",
   "clearList": "Pastro listën",
   "clearPurchased": "Pastro të blerat",
+  "clearPurchasedConfirmMessage": "Të hiqen të gjithë artikujt e blerë nga kjo listë? Kjo nuk mund të zhbëhet.",
+  "clearPurchasedTitle": "Pastro artikujt e blerë",
   "clearingCheckedItems": "Po pastron artikujt e kontrolluar...",
   "close": "Mbyll",
   "closeSheet": "Mbylle",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Gabim gjatë arkivimit të listës: {error}",
   "errorClearingList": "Gabim gjatë pastrimit të listës: {error}",
   "errorClearingPurchased": "Gabim gjatë pastrimit të artikujve të blerë: {error}",
+  "errorCreateList": "Lista nuk mund të krijohej. Kontrollo lidhjen tënde dhe provo sërish.",
   "errorCreatingList": "Gabim në krijimin e listës",
   "errorDecreasingQty": "Gabim në uljen e sasisë: {error}",
   "errorDeletingList": "Gabim gjatë fshirjes së listës: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Gabim: {message}",
   "errorImportingList": "Gabim gjatë importimit të listës \"{name}\": {error}",
   "errorIncreasingQty": "Gabim në rritjen e sasisë: {error}",
+  "errorLoadList": "Listat tuaja nuk mund të ngarkoheshin. Ju lutemi krijoni një listë të re për të filluar.",
   "errorLoadingChat": "Oops! Ndodhi një gabim gjatë ngarkimit të bisedës.",
   "errorLoadingChatSubtitle": "Kontrollo lidhjen tënde ose provo sërish më vonë.",
   "errorLoadingHistory": "Gabim gjatë ngarkimit të historikut",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Gabim gjatë ngarkimit të abonimit",
   "errorOscillation": "Kjo mund të ndodhë për shkak të lëkundjeve të rrjetit ose mosdisponueshmërisë së përkohshme. Ju lutemi provoni përsëri.",
   "errorProcessingRequest": "Na vjen keq, ka ndodhur një gabim gjatë përpunimit të kërkesës suaj. Kontrollo lidhjen tënde ose provo sërish më vonë.",
+  "errorQuickAdd": "Artikulli nuk mund të shtohej. Kontrollo lidhjen tënde dhe provo sërish.",
   "errorRemovingItem": "Gabim gjatë heqjes së artikullit: {error}",
   "errorRemovingItems": "Gabim gjatë heqjes së artikujve: {error}",
   "errorRemovingSharedList": "Gabim gjatë heqjes së listës së përbashkët: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Gabim gjatë ruajtjes: {error}",
   "errorServerConnection": "Gabim në lidhjen me serverin: {error}",
   "errorSettingCurrentList": "Gabim në vendosjen e listës aktuale: {error}",
+  "errorShareCode": "Gabim gjatë krijimit të kodit të ndarjes. Kontrollo lidhjen tënde dhe provo sërish.",
   "errorTogglingItem": "Gabim gjatë ndryshimit të statusit të artikullit: {error}",
   "errorTogglingItems": "Gabim gjatë ndërrimit të artikujve: {error}",
   "errorUnarchivingList": "Gabim në çarkivimin e listës: {error}",
+  "errorUnexpected": "Ndodhi diçka e papritur. Ju lutemi provoni përsëri.",
   "errorUpdatingItem": "Gabim gjatë përditësimit të artikullit: {error}",
   "errorUpdatingItems": "Gabim gjatë përditësimit të artikujve: {error}",
   "errorUpdatingList": "Gabim gjatë përditësimit të listës: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Të blera",
   "finance": "Financa",
   "finishShopping": "Përfundo blerjet",
+  "firstItemAddedSnackbar": "Artikulli i parë u shtua! Fillim i mbarë 🛒",
   "gallery": "Galeria",
   "generalAssistant": "Asistent i Përgjithshëm",
   "generalHelp": "Si mund të ndihmoj me blerjet e tua sot?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Mbajeni për të zgjedhur • Rrëshqitni për ta hequr",
   "globalAssistant": "Asistent global",
   "goodResponse": "Përgjigje e mirë",
+  "help": "Ndihmë",
+  "helpListAddItems": "Shtoni artikuj me butonin + në fund ose përdorni kërkimin për të shfletuar produktet",
+  "helpListAi": "Kërkojini asistentit të AI të krijojë, organizojë ose plotësojë listën tuaj — thjesht trokitni lehtë mbi ikonën e shkëndijës",
+  "helpListOrganize": "Zvarritni artikujt për t'i renditur sërish, rrëshqitni për t'i shënuar si të blerë ose përdorni filtra dhe renditje",
+  "helpListShare": "Ndani listën tuaj me familjen ose eksportojeni si PDF, Excel ose tekst i thjeshtë",
+  "helpListShoppingMode": "Modaliteti i blerjeve fsheh artikujt e blerë, në mënyrë që të përqendroheni në atë që ka mbetur",
+  "helpListTitle": "Duke përdorur listën tuaj",
   "howCanIHelp": "Si mund të ndihmoj?",
   "icon": "Ikona:",
   "idealQty": "Sasia ideale",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Hiq objektivin",
   "mealPlannerBudgetTodayCost": "Sot: {amount}",
   "mealPlannerBudgetWeekCost": "Java: {amount}",
+  "mealPlannerCurrentDayLabel": "Dita aktuale",
   "mealPlannerCustomTypeLabel": "Lloji i personalizuar",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Lloji i parazgjedhur",
   "mealPlannerDeleteMeal": "Hiqni vaktin",
+  "mealPlannerDuplicate": "Vakt i dyfishtë",
+  "mealPlannerDuplicateSuccess": "Vakti u dyfishua me sukses!",
   "mealPlannerEditMeal": "Redakto vaktin",
   "mealPlannerEditType": "Ndrysho llojin e vaktit",
   "mealPlannerError": "Gabim gjatë ngarkimit të planit të vaktit",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Shtoni në plan",
   "mealPlannerSearchRecipes": "Kërkoni receta...",
+  "mealPlannerSelectDestinationDay": "Dubliko te...",
   "mealPlannerSelectRecipe": "Zgjidhni një recetë",
   "mealPlannerServings": "{count,plural, one{{count} shërbim} other{{count} shërbime}}",
   "mealPlannerServingsLabel": "Shërbimet",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Receta",
   "newCategoryDialog": "Kategoria e re",
   "newChat": "Bisedë e re",
+  "newChatConfirmMessage": "Filloni një bisedë të re? Biseda juaj aktuale do të humbasë.",
+  "newChatConfirmTitle": "Bisedë e re",
   "newChatStarted": "Filloi biseda e re",
   "newListTitle": "Listë e Re Blerjesh",
   "newPantryList": "Blerje nga Qilar",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Çifti",
   "onboardingGroupFamily": "Familja",
   "onboardingGroupSolo": "Vetëm unë",
+  "onboardingHookContinue": "Filloni",
   "onboardingHookHeadline": "Mos harroni më kurrë një artikull ushqimor",
+  "onboardingHookItem1": "Pulë e pjekur në skarë",
+  "onboardingHookItem2": "Djathë mocarela",
+  "onboardingHookItem3": "Domate qershi",
   "onboardingListCreated": "Lista juaj është gati: {count} artikuj të organizuar për ju.",
   "onboardingListSaveFailed": "I përgatita artikujt, por listën nuk mund ta ruaja. Provo sërish për ta mbajtur në aplikacion.",
   "onboardingLoadingStat1Label": "Artikujt e kataloguar",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Personalizoni përvojën tuaj",
   "onboardingShareDesc": "Sinkronizoni listat me familjen dhe miqtë në kohë reale",
   "onboardingShareTitle": "Ndani me ata që doni",
+  "onboardingSkip": "Kalo për momentin",
   "onboardingSlide1Body": "Krijoni dhe ndani listat menjëherë. Kipi shton artikuj automatikisht bazuar në zakonet tuaja.",
   "onboardingSlide1Title": "Lista e zgjuar e blerjeve",
   "onboardingSlide2Body": "Pyetni çdo gjë - krijoni lista, gjeni receta, gjurmoni qilarin tuaj, planifikoni javën tuaj.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "Inteligjenca artificiale e zgjuar",
   "paywallFeatureUnlimitedLists": "Listat e pakufizuara",
   "paywallFeaturesTitle": "Gjithçka që ju nevojitet:",
+  "paywallFreeTier": "Falas: 3 lista",
   "paywallGoalHeadlineFamily": "{name}, organizoni blerje familjare!",
   "paywallGoalHeadlineFaster": "{name}, blini në gjysmën e kohës!",
   "paywallGoalHeadlineNeverForget": "{name}, mos harroni kurrë një artikull!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Vetëm {price}/ditë — më pak se një kafe",
   "paywallPricePerMonth": "Vetëm {price}/muaj",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: e pakufizuar",
   "paywallPurchaseError": "Blerja nuk mund të përfundohej. Provo sërish.",
   "paywallPurchasePending": "Pagesa juaj është në pritje të miratimit. Qasja do të lirohet automatikisht pas konfirmimit.",
   "paywallRestore": "Rivendos",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Kërko biseda",
   "searchCurrency": "Kërko monedhën...",
   "searchInConversation": "Kërko në bisedë...",
+  "searchItems": "Kërko artikuj",
   "searchLanguage": "Kërko gjuhën...",
   "searchMessages": "Kërko mesazhe...",
   "searchRecipes": "Kërkoni receta...",

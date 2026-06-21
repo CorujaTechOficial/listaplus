@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -185,8 +188,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -321,6 +333,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -374,6 +389,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -384,6 +402,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -449,6 +470,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -472,6 +496,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -509,6 +536,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -662,6 +707,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -994,8 +1045,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1131,6 +1194,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1520,6 +1586,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1637,6 +1706,7 @@
   "aiAssistantGeneral": "Pembantu Am",
   "aiAssistantHistory": "Penolong Sejarah",
   "aiAssistantTitle": "Penolong AI",
+  "aiAssistantTooltip": "Pembantu AI terbuka",
   "aiCapabilitiesBudget": "Bajet & Harga",
   "aiCapabilitiesLists": "Senarai Beli-belah",
   "aiCapabilitiesOrganize": "Organisasi",
@@ -1724,7 +1794,11 @@
   "budgetAppBar": "Belanjawan Bulanan",
   "budgetDashboardTitle": "Papan pemuka",
   "budgetEditTitle": "Belanjawan Bulanan",
+  "budgetGoalInvalidAmount": "Masukkan nilai yang lebih besar daripada sifar",
+  "budgetGoalRemoved": "Matlamat belanjawan dialih keluar",
+  "budgetGoalSaved": "Matlamat belanjawan disimpan",
   "budgetLists": "Senarai",
+  "budgetPartialEstimateHint": "~ Termasuk anggaran harga separa",
   "budgetPremiumLocked": "Belanjawan bulanan global adalah premium",
   "budgetSubtitle": "Jejak perbelanjaan bulanan anda",
   "budgetUpgradePrompt": "Naik taraf untuk membuka kunci",
@@ -1793,6 +1867,7 @@
   "chatHistoryOfflineTitle": "Anda di luar talian",
   "chatSubtitle": "Minta cadangan item, resipi atau petua penjimatan.",
   "chatSubtitleShort": "Tanya tentang harga, resipi, organisasi...",
+  "checkItemTooltip": "Periksa item",
   "checkingItem": "Menyemak item...",
   "checkingPantry": "Memeriksa pantri anda...",
   "checkingSettings": "Menyemak tetapan anda...",
@@ -1807,6 +1882,8 @@
   "clearHistoryConfirm": "Kosongkan semua mesej dalam sesi ini?",
   "clearList": "Kosongkan senarai",
   "clearPurchased": "Kosongkan pembelian",
+  "clearPurchasedConfirmMessage": "Alih keluar semua item yang dibeli daripada senarai ini? Ini tidak boleh dibuat asal.",
+  "clearPurchasedTitle": "Kosongkan barang yang dibeli",
   "clearingCheckedItems": "Mengosongkan item yang ditandakan...",
   "close": "Tutup",
   "closeSheet": "tutup",
@@ -1913,6 +1990,7 @@
   "errorArchivingList": "Ralat mengarkib senarai: {error}",
   "errorClearingList": "Ralat mengosongkan senarai: {error}",
   "errorClearingPurchased": "Ralat semasa mengosongkan item yang dibeli: {error}",
+  "errorCreateList": "Tidak dapat membuat senarai. Semak sambungan anda dan cuba lagi.",
   "errorCreatingList": "Ralat membuat senarai",
   "errorDecreasingQty": "Ralat mengurangkan kuantiti: {error}",
   "errorDeletingList": "Ralat semasa memadam senarai: {error}",
@@ -1921,6 +1999,7 @@
   "errorGeneric": "Ralat: {message}",
   "errorImportingList": "Ralat mengimport senarai \"{name}\": {error}",
   "errorIncreasingQty": "Ralat meningkatkan kuantiti: {error}",
+  "errorLoadList": "Tidak dapat memuatkan senarai anda. Sila buat senarai baharu untuk bermula.",
   "errorLoadingChat": "Aduh! Kesilapan telah berlaku semasa memuatkan sembang.",
   "errorLoadingChatSubtitle": "Semak sambungan anda atau cuba lagi kemudian.",
   "errorLoadingHistory": "Ralat memuatkan sejarah",
@@ -1931,6 +2010,7 @@
   "errorLoadingSubscription": "Ralat memuatkan langganan",
   "errorOscillation": "Ini mungkin berlaku disebabkan oleh ayunan rangkaian atau ketiadaan sementara. Sila cuba lagi.",
   "errorProcessingRequest": "Maaf, ralat berlaku semasa memproses permintaan anda. Semak sambungan anda atau cuba lagi kemudian.",
+  "errorQuickAdd": "Tidak dapat menambah item. Semak sambungan anda dan cuba lagi.",
   "errorRemovingItem": "Ralat semasa mengalih keluar item: {error}",
   "errorRemovingItems": "Ralat semasa mengalih keluar item: {error}",
   "errorRemovingSharedList": "Ralat semasa mengalih keluar senarai kongsi: {error}",
@@ -1942,9 +2022,11 @@
   "errorSavingProfile": "Ralat menyimpan: {error}",
   "errorServerConnection": "Ralat menyambung ke pelayan: {error}",
   "errorSettingCurrentList": "Ralat menetapkan senarai semasa: {error}",
+  "errorShareCode": "Ralat menjana kod kongsi. Semak sambungan anda dan cuba lagi.",
   "errorTogglingItem": "Ralat menogol status item: {error}",
   "errorTogglingItems": "Ralat menogol item: {error}",
   "errorUnarchivingList": "Ralat menyahrkibkan senarai: {error}",
+  "errorUnexpected": "Sesuatu yang tidak dijangka berlaku. Sila cuba lagi.",
   "errorUpdatingItem": "Ralat mengemas kini item: {error}",
   "errorUpdatingItems": "Ralat mengemas kini item: {error}",
   "errorUpdatingList": "Ralat mengemas kini senarai: {error}",
@@ -1991,6 +2073,7 @@
   "filterPurchased": "Dibeli",
   "finance": "Kewangan",
   "finishShopping": "Selesai Membeli-belah",
+  "firstItemAddedSnackbar": "Item pertama ditambah! Permulaan yang hebat 🛒",
   "gallery": "Galeri",
   "generalAssistant": "Pembantu Am",
   "generalHelp": "Bagaimana saya boleh bantu dengan beli-belah anda hari ini?",
@@ -2000,6 +2083,13 @@
   "gestureHint": "Tahan untuk memilih • Leret untuk mengalih keluar",
   "globalAssistant": "Pembantu global",
   "goodResponse": "Sambutan yang baik",
+  "help": "Tolong",
+  "helpListAddItems": "Tambahkan item dengan butang + di bahagian bawah atau gunakan carian untuk menyemak imbas produk",
+  "helpListAi": "Minta pembantu AI untuk membuat, menyusun atau melengkapkan senarai anda — hanya ketik ikon berkilau",
+  "helpListOrganize": "Seret item untuk menyusun semula, leret untuk menandakan sebagai dibeli atau gunakan penapis dan isihan",
+  "helpListShare": "Kongsi senarai anda dengan keluarga atau eksport sebagai PDF, Excel atau teks biasa",
+  "helpListShoppingMode": "Mod beli-belah menyembunyikan item yang dibeli supaya anda boleh fokus pada perkara yang tinggal",
+  "helpListTitle": "Menggunakan senarai anda",
   "howCanIHelp": "Bagaimana saya boleh membantu?",
   "icon": "ikon:",
   "idealQty": "Kuantiti ideal",
@@ -2087,10 +2177,13 @@
   "mealPlannerBudgetRemoveGoal": "Alih keluar matlamat",
   "mealPlannerBudgetTodayCost": "Hari ini: {amount}",
   "mealPlannerBudgetWeekCost": "Minggu: {amount}",
+  "mealPlannerCurrentDayLabel": "hari semasa",
   "mealPlannerCustomTypeLabel": "Jenis tersuai",
   "mealPlannerDateLabel": "Tarikh",
   "mealPlannerDefaultTypeLabel": "Jenis lalai",
   "mealPlannerDeleteMeal": "Buang hidangan",
+  "mealPlannerDuplicate": "Hidangan pendua",
+  "mealPlannerDuplicateSuccess": "Hidangan disalin dengan jayanya!",
   "mealPlannerEditMeal": "Edit Hidangan",
   "mealPlannerEditType": "Edit jenis hidangan",
   "mealPlannerError": "Ralat memuatkan rancangan hidangan",
@@ -2117,6 +2210,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Tambah ke rancangan",
   "mealPlannerSearchRecipes": "Cari resipi...",
+  "mealPlannerSelectDestinationDay": "Salin kepada...",
   "mealPlannerSelectRecipe": "Pilih resipi",
   "mealPlannerServings": "{count,plural, other{{count} hidangan}}",
   "mealPlannerServingsLabel": "Hidangan",
@@ -2161,6 +2255,8 @@
   "navRecipes": "resepi",
   "newCategoryDialog": "Kategori baharu",
   "newChat": "Sembang Baharu",
+  "newChatConfirmMessage": "Mulakan perbualan baharu? Perbualan semasa anda akan hilang.",
+  "newChatConfirmTitle": "Perbualan baru",
   "newChatStarted": "Sembang baharu bermula",
   "newListTitle": "Senarai Beli-belah Baharu",
   "newPantryList": "Beli-belah Pantri",
@@ -2300,7 +2396,11 @@
   "onboardingGroupCouple": "berpasangan",
   "onboardingGroupFamily": "Keluarga",
   "onboardingGroupSolo": "Hanya saya",
+  "onboardingHookContinue": "Mulakan",
   "onboardingHookHeadline": "Jangan sekali-kali melupakan barang runcit lagi",
+  "onboardingHookItem1": "Ayam bakar",
+  "onboardingHookItem2": "Keju Mozzarella",
+  "onboardingHookItem3": "Tomato ceri",
   "onboardingListCreated": "Senarai anda sudah sedia: {count} item disusun untuk anda.",
   "onboardingListSaveFailed": "Saya menyediakan item, tetapi tidak dapat menyimpan senarai. Cuba lagi untuk menyimpannya dalam apl.",
   "onboardingLoadingStat1Label": "Item dikatalogkan",
@@ -2347,6 +2447,7 @@
   "onboardingSetupTitle": "Peribadikan pengalaman anda",
   "onboardingShareDesc": "Segerakkan senarai dengan keluarga and rakan dalam masa nyata",
   "onboardingShareTitle": "Kongsi dengan orang yang anda sayangi",
+  "onboardingSkip": "Langkau buat masa ini",
   "onboardingSlide1Body": "Buat and kongsi senarai serta-merta. Kipi menambah item secara automatik berdasarkan tabiat anda.",
   "onboardingSlide1Title": "Senarai Beli-belah Pintar",
   "onboardingSlide2Body": "Tanya apa sahaja — buat senarai, cari resipi, jejak pantri anda, rancang minggu anda.",
@@ -2430,6 +2531,7 @@
   "paywallFeatureSmartAI": "AI Pintar",
   "paywallFeatureUnlimitedLists": "Senarai tanpa had",
   "paywallFeaturesTitle": "Semua yang anda perlukan:",
+  "paywallFreeTier": "Percuma: 3 senarai",
   "paywallGoalHeadlineFamily": "{name}, atur belanja keluarga!",
   "paywallGoalHeadlineFaster": "{name}, belanja separuh masa!",
   "paywallGoalHeadlineNeverForget": "{name}, jangan sekali-kali melupakan item!",
@@ -2459,6 +2561,7 @@
   "paywallPricePerDay": "Hanya {price}/hari — kurang daripada sebiji kopi",
   "paywallPricePerMonth": "Hanya {price}/bulan",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Tidak terhad",
   "paywallPurchaseError": "Tidak dapat menyelesaikan pembelian. Cuba lagi.",
   "paywallPurchasePending": "Pembayaran anda menunggu kelulusan. Akses akan dikeluarkan secara automatik selepas pengesahan.",
   "paywallRestore": "Pulihkan",
@@ -2600,6 +2703,7 @@
   "searchConversations": "Cari perbualan",
   "searchCurrency": "Cari mata wang...",
   "searchInConversation": "Cari dalam perbualan...",
+  "searchItems": "Cari item",
   "searchLanguage": "Cari bahasa...",
   "searchMessages": "Cari mesej...",
   "searchRecipes": "Cari resipi...",

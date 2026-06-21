@@ -72,6 +72,32 @@ class AppLocalizationsDa extends AppLocalizations {
   String get close => 'Luk';
 
   @override
+  String get help => 'Hjælp';
+
+  @override
+  String get helpListTitle => 'Bruger din liste';
+
+  @override
+  String get helpListAddItems =>
+      'Tilføj varer med knappen + nederst, eller brug søgningen til at gennemse produkter';
+
+  @override
+  String get helpListAi =>
+      'Bed AI-assistenten om at oprette, organisere eller færdiggøre din liste - tryk bare på gnistreikonet';
+
+  @override
+  String get helpListShoppingMode =>
+      'Indkøbstilstand skjuler købte varer, så du kan fokusere på det, der er tilbage';
+
+  @override
+  String get helpListOrganize =>
+      'Træk elementer for at omarrangere, stryg for at markere som købt, eller brug filtre og sortering';
+
+  @override
+  String get helpListShare =>
+      'Del din liste med familien eller eksporter som PDF, Excel eller almindelig tekst';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get clear => 'Ryd';
+
+  @override
+  String get clearPurchasedTitle => 'Ryd købte varer';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vil du fjerne alle købte varer fra denne liste? Dette kan ikke fortrydes.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get purchaseError => 'Fejl ved behandling af køb. Prøv igen.';
+
+  @override
+  String get errorCreateList =>
+      'Listen kunne ikke oprettes. Tjek din forbindelse, og prøv igen.';
+
+  @override
+  String get errorShareCode =>
+      'Fejl under generering af delekode. Tjek din forbindelse, og prøv igen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Varen kunne ikke tilføjes. Tjek din forbindelse, og prøv igen.';
+
+  @override
+  String get errorLoadList =>
+      'Kunne ikke indlæse dine lister. Opret en ny liste for at komme i gang.';
 
   @override
   String get restoreError => 'Fejl ved gendannelse af køb. Prøv igen.';
@@ -485,6 +534,18 @@ class AppLocalizationsDa extends AppLocalizations {
   String get noBudgetDefined => 'Intet budget sat';
 
   @override
+  String get budgetGoalInvalidAmount => 'Indtast en værdi større end nul';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Inkluderer delvise prisoverslag';
+
+  @override
+  String get budgetGoalSaved => 'Budgetmål gemt';
+
+  @override
+  String get budgetGoalRemoved => 'Budgetmål fjernet';
+
+  @override
   String totalEstimated(String amount) {
     return 'Anslået i alt: $amount';
   }
@@ -677,6 +738,13 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get newChat => 'Ny chat';
+
+  @override
+  String get newChatConfirmTitle => 'Ny samtale';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Vil du starte en ny samtale? Din nuværende samtale vil gå tabt.';
 
   @override
   String get noHistory => 'Ingen chathistorik';
@@ -1240,6 +1308,15 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Velkomsttilbud';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lister';
+
+  @override
+  String get paywallProTier => 'Fordel: Ubegrænset';
+
+  @override
+  String get firstItemAddedSnackbar => 'Første vare tilføjet! God start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2137,6 +2214,18 @@ class AppLocalizationsDa extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Standardtype';
 
   @override
+  String get mealPlannerDuplicate => 'Dobbelt måltid';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliker til...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Nuværende dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Måltid duplikeret med succes!';
+
+  @override
   String get expirationDate => 'Udløbsdato';
 
   @override
@@ -2144,6 +2233,9 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get skip => 'Springe';
+
+  @override
+  String get onboardingSkip => 'Spring over for nu';
 
   @override
   String get onboardingAiTitle => 'Chat med Kipi';
@@ -3168,6 +3260,30 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Genererer svar...';
+
+  @override
+  String get errorUnexpected => 'Der skete noget uventet. Prøv venligst igen.';
+
+  @override
+  String get aiAssistantTooltip => 'Åbn AI-assistent';
+
+  @override
+  String get searchItems => 'Søg emner';
+
+  @override
+  String get onboardingHookContinue => 'Kom i gang';
+
+  @override
+  String get onboardingHookItem1 => 'Grillet kylling';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ost';
+
+  @override
+  String get onboardingHookItem3 => 'Cherrytomater';
+
+  @override
+  String get checkItemTooltip => 'Tjek varen';
 }
 
 /// The translations for Danish, as used in Denmark (`da_DK`).
@@ -3238,6 +3354,32 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String get close => 'Luk';
 
   @override
+  String get help => 'Hjælp';
+
+  @override
+  String get helpListTitle => 'Bruger din liste';
+
+  @override
+  String get helpListAddItems =>
+      'Tilføj varer med knappen + nederst, eller brug søgningen til at gennemse produkter';
+
+  @override
+  String get helpListAi =>
+      'Bed AI-assistenten om at oprette, organisere eller færdiggøre din liste - tryk bare på gnistreikonet';
+
+  @override
+  String get helpListShoppingMode =>
+      'Indkøbstilstand skjuler købte varer, så du kan fokusere på det, der er tilbage';
+
+  @override
+  String get helpListOrganize =>
+      'Træk elementer for at omarrangere, stryg for at markere som købt, eller brug filtre og sortering';
+
+  @override
+  String get helpListShare =>
+      'Del din liste med familien eller eksporter som PDF, Excel eller almindelig tekst';
+
+  @override
   String get import => 'Importer';
 
   @override
@@ -3248,6 +3390,13 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get clear => 'Ryd';
+
+  @override
+  String get clearPurchasedTitle => 'Ryd købte varer';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Vil du fjerne alle købte varer fra denne liste? Dette kan ikke fortrydes.';
 
   @override
   String error(String message) {
@@ -3261,6 +3410,22 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get purchaseError => 'Fejl ved behandling af køb. Prøv igen.';
+
+  @override
+  String get errorCreateList =>
+      'Listen kunne ikke oprettes. Tjek din forbindelse, og prøv igen.';
+
+  @override
+  String get errorShareCode =>
+      'Fejl under generering af delekode. Tjek din forbindelse, og prøv igen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Varen kunne ikke tilføjes. Tjek din forbindelse, og prøv igen.';
+
+  @override
+  String get errorLoadList =>
+      'Kunne ikke indlæse dine lister. Opret en ny liste for at komme i gang.';
 
   @override
   String get restoreError => 'Fejl ved gendannelse af køb. Prøv igen.';
@@ -3651,6 +3816,18 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String get noBudgetDefined => 'Intet budget sat';
 
   @override
+  String get budgetGoalInvalidAmount => 'Indtast en værdi større end nul';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Inkluderer delvise prisoverslag';
+
+  @override
+  String get budgetGoalSaved => 'Budgetmål gemt';
+
+  @override
+  String get budgetGoalRemoved => 'Budgetmål fjernet';
+
+  @override
   String totalEstimated(String amount) {
     return 'Anslået i alt: $amount';
   }
@@ -3843,6 +4020,13 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get newChat => 'Ny chat';
+
+  @override
+  String get newChatConfirmTitle => 'Ny samtale';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Vil du starte en ny samtale? Din nuværende samtale vil gå tabt.';
 
   @override
   String get noHistory => 'Ingen chathistorik';
@@ -4406,6 +4590,15 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Velkomsttilbud';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lister';
+
+  @override
+  String get paywallProTier => 'Fordel: Ubegrænset';
+
+  @override
+  String get firstItemAddedSnackbar => 'Første vare tilføjet! God start 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5303,6 +5496,18 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
   String get mealPlannerDefaultTypeLabel => 'Standardtype';
 
   @override
+  String get mealPlannerDuplicate => 'Dobbelt måltid';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliker til...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Nuværende dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Måltid duplikeret med succes!';
+
+  @override
   String get expirationDate => 'Udløbsdato';
 
   @override
@@ -5310,6 +5515,9 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get skip => 'Springe';
+
+  @override
+  String get onboardingSkip => 'Spring over for nu';
 
   @override
   String get onboardingAiTitle => 'Chat med Kipi';
@@ -6334,4 +6542,28 @@ class AppLocalizationsDaDk extends AppLocalizationsDa {
 
   @override
   String get aiGeneratingResponse => 'Genererer svar...';
+
+  @override
+  String get errorUnexpected => 'Der skete noget uventet. Prøv venligst igen.';
+
+  @override
+  String get aiAssistantTooltip => 'Åbn AI-assistent';
+
+  @override
+  String get searchItems => 'Søg emner';
+
+  @override
+  String get onboardingHookContinue => 'Kom i gang';
+
+  @override
+  String get onboardingHookItem1 => 'Grillet kylling';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ost';
+
+  @override
+  String get onboardingHookItem3 => 'Cherrytomater';
+
+  @override
+  String get checkItemTooltip => 'Tjek varen';
 }

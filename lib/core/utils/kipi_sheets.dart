@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 /// Centralized bottom sheet helper — KipiList
 ///
@@ -151,7 +152,7 @@ class KipiSheetHeader extends StatelessWidget {
           if (trailing != null) trailing!,
           if (showCloseButton)
             IconButton(
-              icon: const Icon(Icons.close),
+              icon: const Icon(PhosphorIconsRegular.x),
               onPressed: onClose ?? () => Navigator.pop(context),
             ),
         ],

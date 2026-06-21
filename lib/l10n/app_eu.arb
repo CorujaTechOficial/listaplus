@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -504,6 +549,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -845,8 +896,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -982,6 +1045,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1385,6 +1451,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1506,6 +1575,7 @@
   "aiAssistantGeneral": "Laguntzaile Nagusia",
   "aiAssistantHistory": "Laguntzailea Historia",
   "aiAssistantTitle": "AI Laguntzailea",
+  "aiAssistantTooltip": "Ireki AI laguntzailea",
   "aiCapabilitiesBudget": "Aurrekontua eta prezioak",
   "aiCapabilitiesLists": "Erosketa Zerrendak",
   "aiCapabilitiesOrganize": "Antolaketa",
@@ -1592,7 +1662,11 @@
   "budgetAppBar": "Hileko Aurrekontua",
   "budgetDashboardTitle": "Panela",
   "budgetEditTitle": "Hileko Aurrekontua",
+  "budgetGoalInvalidAmount": "Sartu zero baino balio handiagoa",
+  "budgetGoalRemoved": "Aurrekontuaren helburua kendu da",
+  "budgetGoalSaved": "Aurrekontuaren helburua gorde da",
   "budgetLists": "Zerrendak",
+  "budgetPartialEstimateHint": "~ Prezioen estimazio partzialak barne hartzen ditu",
   "budgetPremiumLocked": "Hileko aurrekontu orokorra premium da",
   "budgetSubtitle": "Jarraitu zure hileko gastuak",
   "budgetUpgradePrompt": "Hobetu desblokeatzeko",
@@ -1660,6 +1734,7 @@
   "chatHistoryOfflineTitle": "Lineaz kanpo zaude",
   "chatSubtitle": "Eskatu elementu iradokizunak, errezetak edo aurrezteko aholkuak.",
   "chatSubtitleShort": "Galdetu prezioak, errezetak, antolaketa...",
+  "checkItemTooltip": "Egiaztatu elementua",
   "chooseCurrency": "Hautatu Moneta",
   "chooseIcon": "Aukeratu ikonoa",
   "chooseImageSource": "Hautatu irudiaren jatorria",
@@ -1671,6 +1746,8 @@
   "clearHistoryConfirm": "Saio honetako mezu guztiak garbitu?",
   "clearList": "Garbitu zerrenda",
   "clearPurchased": "Garbitu erositakoak",
+  "clearPurchasedConfirmMessage": "Erositako elementu guztiak zerrenda honetatik kendu nahi dituzu? Hau ezin da desegin.",
+  "clearPurchasedTitle": "Garbitu erositako elementuak",
   "close": "Itxi",
   "closeSheet": "Itxi",
   "complete": "Osatu",
@@ -1759,7 +1836,9 @@
   "enterCodeHint": "Sartu kodea",
   "enterUrl": "Sartu URLa",
   "error": "Errorea: {message}",
+  "errorCreateList": "Ezin izan da sortu zerrenda. Egiaztatu konexioa eta saiatu berriro.",
   "errorGeneric": "Errorea: {message}",
+  "errorLoadList": "Ezin izan dira zure zerrendak kargatu. Mesedez, sortu zerrenda berri bat hasteko.",
   "errorLoadingChat": "Aupa! Arazoren bat izan da txata kargatzean.",
   "errorLoadingChatSubtitle": "Egiaztatu konexioa edo saiatu berriro geroago.",
   "errorLoadingHistory": "Errore bat gertatu da historia kargatzean",
@@ -1768,7 +1847,10 @@
   "errorLoadingRecipes": "Errorea errezetak kargatzean",
   "errorLoadingSubscription": "Errore bat gertatu da harpidetza kargatzean",
   "errorOscillation": "Sareko oszilazioengatik edo aldi baterako erabilgarritasunik ezagatik gerta daiteke. Mesedez, saiatu berriro.",
+  "errorQuickAdd": "Ezin izan da elementua gehitu. Egiaztatu konexioa eta saiatu berriro.",
   "errorSavingProfile": "Errore bat gertatu da profila gordetzean",
+  "errorShareCode": "Errore bat gertatu da partekatze-kodea sortzean. Egiaztatu konexioa eta saiatu berriro.",
+  "errorUnexpected": "Ustekabeko zerbait gertatu zen. Mesedez, saiatu berriro.",
   "estimated": "Estimatuta",
   "estimatedCost": "Estimatua",
   "estimatedPrice": "Estimatutako prezioa",
@@ -1810,6 +1892,7 @@
   "filterPurchased": "Erosita",
   "finance": "Finantzak",
   "finishShopping": "Amaitu Erosketak",
+  "firstItemAddedSnackbar": "Lehenengo elementua gehitu da! Hasiera bikaina 🛒",
   "gallery": "Galeria",
   "generalAssistant": "Laguntzaile Orokorra",
   "generalHelp": "Nola lagundu dezaket zure erosketetan gaur?",
@@ -1817,6 +1900,13 @@
   "gestureHint": "Eduki sakatuta hautatzeko • Irristatu kentzeko",
   "globalAssistant": "Laguntzaile orokorra",
   "goodResponse": "Erantzun ona",
+  "help": "Laguntza",
+  "helpListAddItems": "Gehitu elementuak + botoiarekin behealdean, edo erabili bilaketa produktuak arakatzeko",
+  "helpListAi": "Eskatu AI laguntzaileari zure zerrenda sortzeko, antolatzeko edo osatzeko; besterik gabe, sakatu distira ikonoa",
+  "helpListOrganize": "Arrastatu elementuak berrantolatzeko, pasatu hatza erositako gisa markatzeko edo erabili iragazkiak eta ordenatzeko",
+  "helpListShare": "Partekatu zure zerrenda familiarekin edo esportatu PDF, Excel edo testu arrunt gisa",
+  "helpListShoppingMode": "Erosketa moduak erositako elementuak ezkutatzen ditu, geratzen denari arreta jarri ahal izateko",
+  "helpListTitle": "Zure zerrenda erabiliz",
   "howCanIHelp": "Nola lagundu dezaket?",
   "idealQty": "Kopuru ideala",
   "idealQuantity": "Kantitate ideala",
@@ -1899,10 +1989,13 @@
   "mealPlannerBudgetRemoveGoal": "Kendu helburua",
   "mealPlannerBudgetTodayCost": "Gaur: {amount}",
   "mealPlannerBudgetWeekCost": "Astea: {amount}",
+  "mealPlannerCurrentDayLabel": "Egungo eguna",
   "mealPlannerCustomTypeLabel": "Mota pertsonalizatua",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Mota lehenetsia",
   "mealPlannerDeleteMeal": "Kendu otordua",
+  "mealPlannerDuplicate": "Bazkari bikoiztua",
+  "mealPlannerDuplicateSuccess": "Otordua ondo bikoiztu da!",
   "mealPlannerEditMeal": "Editatu otordua",
   "mealPlannerEditType": "Editatu otordu mota",
   "mealPlannerError": "Errorea otorduen plana kargatzean",
@@ -1929,6 +2022,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Gehitu planera",
   "mealPlannerSearchRecipes": "Bilatu errezetak...",
+  "mealPlannerSelectDestinationDay": "Bikoiztu...",
   "mealPlannerSelectRecipe": "Hautatu errezeta bat",
   "mealPlannerServings": "{count,plural, one{{count} ano} other{{count} ano}}",
   "mealPlannerServingsLabel": "Anoak",
@@ -1960,6 +2054,8 @@
   "navRecipes": "Errezetak",
   "newCategoryDialog": "Kategoria berria",
   "newChat": "Txat berria",
+  "newChatConfirmMessage": "Elkarrizketa berri bat hasi? Zure uneko elkarrizketa galduko da.",
+  "newChatConfirmTitle": "Elkarrizketa berria",
   "newChatStarted": "Txat berria hasi da",
   "newListTitle": "Erosketa Zerrenda Berria",
   "newPantryList": "Jakitegiko Erosketa",
@@ -2098,7 +2194,11 @@
   "onboardingGroupCouple": "Bikote",
   "onboardingGroupFamily": "Familia",
   "onboardingGroupSolo": "Ni bakarrik",
+  "onboardingHookContinue": "Hasi",
   "onboardingHookHeadline": "Inoiz ez ahaztu janari produktu bat berriro",
+  "onboardingHookItem1": "Oilaskoa plantxan",
+  "onboardingHookItem2": "Mozzarella gazta",
+  "onboardingHookItem3": "Cherry tomateak",
   "onboardingListCreated": "Zure zerrenda prest dago: zuretzat antolatutako {count} elementu.",
   "onboardingListSaveFailed": "Elementuak prestatu ditut, baina ezin izan dut zerrenda gorde. Saiatu berriro aplikazioan mantentzen.",
   "onboardingLoadingStat1Label": "Katalogatutako elementuak",
@@ -2145,6 +2245,7 @@
   "onboardingSetupTitle": "Pertsonalizatu zure esperientzia",
   "onboardingShareDesc": "Sinkronizatu zerrendak familiarekin eta lagunekin denbora errealean",
   "onboardingShareTitle": "Partekatu maite dituzunekin",
+  "onboardingSkip": "Saltatu oraingoz",
   "onboardingSlide1Body": "Sortu eta partekatu zerrendak berehala. Kipi-k automatikoki gehitzen ditu zure ohituretan oinarritutako elementuak.",
   "onboardingSlide1Title": "Erosketa Zerrenda adimendunak",
   "onboardingSlide2Body": "Galdetu edozer gauza: sortu zerrendak, bilatu errezetak, jarraitu zure jakitegia, antolatu zure astea.",
@@ -2225,6 +2326,7 @@
   "paywallFeatureSmartAI": "AI adimenduna",
   "paywallFeatureUnlimitedLists": "Zerrenda mugagabeak",
   "paywallFeaturesTitle": "Behar duzun guztia:",
+  "paywallFreeTier": "Doan: 3 zerrenda",
   "paywallGoalHeadlineFamily": "{name}, antolatu familiako erosketak!",
   "paywallGoalHeadlineFaster": "{name}, erosketak denbora erdian!",
   "paywallGoalHeadlineNeverForget": "{name}, inoiz ez ahaztu elementurik!",
@@ -2254,6 +2356,7 @@
   "paywallPricePerDay": "{price}/eguneko bakarrik — kafe bat baino gutxiago",
   "paywallPricePerMonth": "{price}/hilabete baino ez",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: mugagabea",
   "paywallPurchaseError": "Ezin izan da erosketa osatu. Saiatu berriro.",
   "paywallPurchasePending": "Zure ordainketa onarpenaren zain dago. Sarbidea automatikoki kaleratuko da berretsi ondoren.",
   "paywallRestore": "Berreskuratu",
@@ -2381,6 +2484,7 @@
   "searchConversations": "Bilatu elkarrizketak",
   "searchCurrency": "Bilatu moneta...",
   "searchInConversation": "Bilatu elkarrizketan...",
+  "searchItems": "Bilatu elementuak",
   "searchLanguage": "Bilatu hizkuntza...",
   "searchMessages": "Bilatu mezuak...",
   "searchRecipes": "Bilatu errezetak...",

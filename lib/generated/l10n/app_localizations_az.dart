@@ -72,6 +72,32 @@ class AppLocalizationsAz extends AppLocalizations {
   String get close => 'Bağla';
 
   @override
+  String get help => 'Kömək edin';
+
+  @override
+  String get helpListTitle => 'Siyahınızdan istifadə etməklə';
+
+  @override
+  String get helpListAddItems =>
+      'Aşağıdakı + düyməsi ilə elementlər əlavə edin və ya məhsullara baxmaq üçün axtarışdan istifadə edin';
+
+  @override
+  String get helpListAi =>
+      'Süni intellekt köməkçisindən siyahınızı yaratmağı, təşkil etməyi və ya tamamlamasını xahiş edin – sadəcə parıldamaq ikonasına toxunun';
+
+  @override
+  String get helpListShoppingMode =>
+      'Alış-veriş rejimi alınmış əşyaları gizlədir ki, siz qalanlara diqqət edə biləsiniz';
+
+  @override
+  String get helpListOrganize =>
+      'Yenidən sıralamaq üçün elementləri dartın, alınmış kimi qeyd etmək üçün sürüşdürün və ya filtrlərdən və çeşidləmədən istifadə edin';
+
+  @override
+  String get helpListShare =>
+      'Siyahınızı ailə ilə paylaşın və ya PDF, Excel və ya düz mətn kimi ixrac edin';
+
+  @override
   String get import => 'İdxal et';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get clear => 'Təmizlə';
+
+  @override
+  String get clearPurchasedTitle => 'Satın alınan əşyaları təmizləyin';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Bütün satın alınan elementlər bu siyahıdan silinsin? Bu geri qaytarıla bilməz.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get purchaseError =>
       'Alış-verişi emal edərkən xəta. Yenidən cəhd edin.';
+
+  @override
+  String get errorCreateList =>
+      'Siyahı yaratmaq mümkün olmadı. Bağlantınızı yoxlayın və yenidən cəhd edin.';
+
+  @override
+  String get errorShareCode =>
+      'Paylaşım kodunu yaratarkən xəta baş verdi. Bağlantınızı yoxlayın və yenidən cəhd edin.';
+
+  @override
+  String get errorQuickAdd =>
+      'Element əlavə etmək mümkün olmadı. Bağlantınızı yoxlayın və yenidən cəhd edin.';
+
+  @override
+  String get errorLoadList =>
+      'Siyahılarınızı yükləmək mümkün olmadı. Başlamaq üçün yeni siyahı yaradın.';
 
   @override
   String get restoreError => 'Alışları bərpa edərkən xəta. Yenidən cəhd edin.';
@@ -489,6 +538,19 @@ class AppLocalizationsAz extends AppLocalizations {
   String get noBudgetDefined => 'Büdcə təyin edilməyib';
 
   @override
+  String get budgetGoalInvalidAmount => 'Sıfırdan böyük dəyər daxil edin';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Qismən qiymət təxminlərini ehtiva edir';
+
+  @override
+  String get budgetGoalSaved => 'Büdcə məqsədi saxlandı';
+
+  @override
+  String get budgetGoalRemoved => 'Büdcə məqsədi silindi';
+
+  @override
   String totalEstimated(String amount) {
     return 'Ümumi təxmini: $amount';
   }
@@ -681,6 +743,13 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get newChat => 'Yeni Söhbət';
+
+  @override
+  String get newChatConfirmTitle => 'Yeni söhbət';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Yeni söhbət başlasın? Cari söhbətiniz itiriləcək.';
 
   @override
   String get noHistory => 'Söhbət tarixçəsi yoxdur';
@@ -1240,6 +1309,16 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Xoş gəlmisiniz təklifi';
+
+  @override
+  String get paywallFreeTier => 'Pulsuz: 3 siyahı';
+
+  @override
+  String get paywallProTier => 'Pro: Limitsiz';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'İlk element əlavə edildi! Əla başlanğıc 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2140,6 +2219,19 @@ class AppLocalizationsAz extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Defolt növ';
 
   @override
+  String get mealPlannerDuplicate => 'Dublikat yemək';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dublikat...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Cari gün';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'Yemək müvəffəqiyyətlə təkrarlandı!';
+
+  @override
   String get expirationDate => 'İstifadə müddəti';
 
   @override
@@ -2147,6 +2239,9 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get skip => 'Keç';
+
+  @override
+  String get onboardingSkip => 'Hələlik keçin';
 
   @override
   String get onboardingAiTitle => 'Kipi ilə söhbət edin';
@@ -3183,4 +3278,29 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Cavab yaradılır...';
+
+  @override
+  String get errorUnexpected =>
+      'Gözlənilməz bir şey baş verdi. Yenidən cəhd edin.';
+
+  @override
+  String get aiAssistantTooltip => 'AI köməkçisini açın';
+
+  @override
+  String get searchItems => 'Elementləri axtarın';
+
+  @override
+  String get onboardingHookContinue => 'Başlayın';
+
+  @override
+  String get onboardingHookItem1 => 'Qızardılmış toyuq';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella pendiri';
+
+  @override
+  String get onboardingHookItem3 => 'Albalı pomidorları';
+
+  @override
+  String get checkItemTooltip => 'Elementi yoxlayın';
 }

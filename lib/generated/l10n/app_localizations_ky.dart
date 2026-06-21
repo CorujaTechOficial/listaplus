@@ -72,6 +72,32 @@ class AppLocalizationsKy extends AppLocalizations {
   String get close => 'Жабуу';
 
   @override
+  String get help => 'Жардам';
+
+  @override
+  String get helpListTitle => 'Сиздин тизмени колдонуу';
+
+  @override
+  String get helpListAddItems =>
+      'Төмөндөгү + баскычы менен нерселерди кошуңуз же өнүмдөрдү карап чыгуу үчүн издөөнү колдонуңуз';
+
+  @override
+  String get helpListAi =>
+      'AI жардамчысынан тизмеңизди түзүүнү, уюштурууну же бүтүрүүнү сураныңыз — жөн гана жаркыраган сөлөкөтүн таптаңыз';
+
+  @override
+  String get helpListShoppingMode =>
+      'Соода режими сатылып алынган нерселерди жашырат, андыктан калган нерсеге көңүл бура аласыз';
+
+  @override
+  String get helpListOrganize =>
+      'Кайра иреттөө үчүн нерселерди сүйрөңүз, сатылып алынган деп белгилөө үчүн серпип коюңуз же чыпкаларды жана сортторду колдонуңуз';
+
+  @override
+  String get helpListShare =>
+      'Тизмеңизди үй-бүлө менен бөлүшүңүз же PDF, Excel же жөнөкөй текст катары экспорттоо';
+
+  @override
   String get import => 'Импорттоо';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get clear => 'Тазалоо';
+
+  @override
+  String get clearPurchasedTitle => 'Сатып алынган нерселерди тазалоо';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Сатып алынган нерселердин баары бул тизмеден өчүрүлсүнбү? Муну артка кайтарууга болбойт.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsKy extends AppLocalizations {
   @override
   String get purchaseError =>
       'Сатып алууну иштетүүдө ката кетти. Кайра аракет кылыңыз.';
+
+  @override
+  String get errorCreateList =>
+      'Тизме түзүлгөн жок. Туташууңузду текшерип, кайра аракет кылыңыз.';
+
+  @override
+  String get errorShareCode =>
+      'Бөлүшүү кодун түзүү катасы. Туташууңузду текшерип, кайра аракет кылыңыз.';
+
+  @override
+  String get errorQuickAdd =>
+      'Элемент кошулган жок. Туташууңузду текшерип, кайра аракет кылыңыз.';
+
+  @override
+  String get errorLoadList =>
+      'Тизмелериңиз жүктөлгөн жок. Баштоо үчүн жаңы тизме түзүңүз.';
 
   @override
   String get restoreError =>
@@ -489,6 +538,19 @@ class AppLocalizationsKy extends AppLocalizations {
   String get noBudgetDefined => 'Бюджет белгиленген эмес';
 
   @override
+  String get budgetGoalInvalidAmount => 'Нөлдөн чоңураак маани киргизиңиз';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ жарым-жартылай баа болжолдоолорду камтыйт';
+
+  @override
+  String get budgetGoalSaved => 'Бюджеттик максат сакталды';
+
+  @override
+  String get budgetGoalRemoved => 'Бюджеттик максат өчүрүлдү';
+
+  @override
   String totalEstimated(String amount) {
     return 'Жалпы болжолдуу: $amount';
   }
@@ -681,6 +743,13 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get newChat => 'Жаңы чат';
+
+  @override
+  String get newChatConfirmTitle => 'Жаңы сүйлөшүү';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Жаңы маек башталсынбы? Учурдагы маегиңиз жоголот.';
 
   @override
   String get noHistory => 'Маектин таржымалы жок';
@@ -1243,6 +1312,16 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Саламдашуу сунушу';
+
+  @override
+  String get paywallFreeTier => 'Акысыз: 3 тизме';
+
+  @override
+  String get paywallProTier => 'Pro: Чексиз';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Биринчи нерсе кошулду! Мыкты башталыш 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2141,6 +2220,18 @@ class AppLocalizationsKy extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Демейки түрү';
 
   @override
+  String get mealPlannerDuplicate => 'Дубликат тамак';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Көчүрмө...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Учурдагы күн';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Тамак ийгиликтүү кайталанды!';
+
+  @override
   String get expirationDate => 'Жарамдык датасы';
 
   @override
@@ -2148,6 +2239,9 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get skip => 'Өткөрүп жибер';
+
+  @override
+  String get onboardingSkip => 'Азырынча өткөрүп жибериңиз';
 
   @override
   String get onboardingAiTitle => 'Kipi менен баарлашуу';
@@ -3185,6 +3279,31 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Жооп түзүлүүдө…';
+
+  @override
+  String get errorUnexpected =>
+      'Күтүлбөгөн бир нерсе болду. Сураныч, кайра аракет кылыңыз.';
+
+  @override
+  String get aiAssistantTooltip => 'AI жардамчысын ачыңыз';
+
+  @override
+  String get searchItems => 'Издөө элементтери';
+
+  @override
+  String get onboardingHookContinue => 'Баштоо';
+
+  @override
+  String get onboardingHookItem1 => 'Грилделенген тоок';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella сыр';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry помидор';
+
+  @override
+  String get checkItemTooltip => 'нерсени текшерүү';
 }
 
 /// The translations for Kirghiz Kyrgyz, as used in Kyrgyzstan (`ky_KG`).
@@ -3255,6 +3374,32 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   String get close => 'Жабуу';
 
   @override
+  String get help => 'Жардам';
+
+  @override
+  String get helpListTitle => 'Сиздин тизмени колдонуу';
+
+  @override
+  String get helpListAddItems =>
+      'Төмөндөгү + баскычы менен нерселерди кошуңуз же өнүмдөрдү карап чыгуу үчүн издөөнү колдонуңуз';
+
+  @override
+  String get helpListAi =>
+      'AI жардамчысынан тизмеңизди түзүүнү, уюштурууну же бүтүрүүнү сураныңыз — жөн гана жаркыраган сөлөкөтүн таптаңыз';
+
+  @override
+  String get helpListShoppingMode =>
+      'Соода режими сатылып алынган нерселерди жашырат, андыктан калган нерсеге көңүл бура аласыз';
+
+  @override
+  String get helpListOrganize =>
+      'Кайра иреттөө үчүн нерселерди сүйрөңүз, сатылып алынган деп белгилөө үчүн серпип коюңуз же чыпкаларды жана сортторду колдонуңуз';
+
+  @override
+  String get helpListShare =>
+      'Тизмеңизди үй-бүлө менен бөлүшүңүз же PDF, Excel же жөнөкөй текст катары экспорттоо';
+
+  @override
   String get import => 'Импорттоо';
 
   @override
@@ -3265,6 +3410,13 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get clear => 'Тазалоо';
+
+  @override
+  String get clearPurchasedTitle => 'Сатып алынган нерселерди тазалоо';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Сатып алынган нерселердин баары бул тизмеден өчүрүлсүнбү? Муну артка кайтарууга болбойт.';
 
   @override
   String error(String message) {
@@ -3279,6 +3431,22 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   @override
   String get purchaseError =>
       'Сатып алууну иштетүүдө ката кетти. Кайра аракет кылыңыз.';
+
+  @override
+  String get errorCreateList =>
+      'Тизме түзүлгөн жок. Туташууңузду текшерип, кайра аракет кылыңыз.';
+
+  @override
+  String get errorShareCode =>
+      'Бөлүшүү кодун түзүү катасы. Туташууңузду текшерип, кайра аракет кылыңыз.';
+
+  @override
+  String get errorQuickAdd =>
+      'Элемент кошулган жок. Туташууңузду текшерип, кайра аракет кылыңыз.';
+
+  @override
+  String get errorLoadList =>
+      'Тизмелериңиз жүктөлгөн жок. Баштоо үчүн жаңы тизме түзүңүз.';
 
   @override
   String get restoreError =>
@@ -3667,6 +3835,19 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   String get noBudgetDefined => 'Бюджет белгиленбеген';
 
   @override
+  String get budgetGoalInvalidAmount => 'Нөлдөн чоңураак маани киргизиңиз';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ жарым-жартылай баа болжолдоолорду камтыйт';
+
+  @override
+  String get budgetGoalSaved => 'Бюджеттик максат сакталды';
+
+  @override
+  String get budgetGoalRemoved => 'Бюджеттик максат өчүрүлдү';
+
+  @override
   String totalEstimated(String amount) {
     return 'Жалпы болжолдуу: $amount';
   }
@@ -3859,6 +4040,13 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get newChat => 'Жаңы чат';
+
+  @override
+  String get newChatConfirmTitle => 'Жаңы сүйлөшүү';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Жаңы маек башталсынбы? Учурдагы маегиңиз жоголот.';
 
   @override
   String get noHistory => 'Маектин таржымалы жок';
@@ -4421,6 +4609,16 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Саламдашуу сунушу';
+
+  @override
+  String get paywallFreeTier => 'Акысыз: 3 тизме';
+
+  @override
+  String get paywallProTier => 'Pro: Чексиз';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Биринчи нерсе кошулду! Мыкты башталыш 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5314,6 +5512,18 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   String get mealPlannerDefaultTypeLabel => 'Демейки түрү';
 
   @override
+  String get mealPlannerDuplicate => 'Дубликат тамак';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Көчүрмө...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Учурдагы күн';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Тамак ийгиликтүү кайталанды!';
+
+  @override
   String get expirationDate => 'Жарамдык датасы';
 
   @override
@@ -5321,6 +5531,9 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get skip => 'Өткөрүп жибер';
+
+  @override
+  String get onboardingSkip => 'Азырынча өткөрүп жибериңиз';
 
   @override
   String get onboardingAiTitle => 'Kipi менен баарлашуу';
@@ -6358,4 +6571,29 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
 
   @override
   String get aiGeneratingResponse => 'Жооп түзүлүүдө…';
+
+  @override
+  String get errorUnexpected =>
+      'Күтүлбөгөн бир нерсе болду. Сураныч, кайра аракет кылыңыз.';
+
+  @override
+  String get aiAssistantTooltip => 'AI жардамчысын ачыңыз';
+
+  @override
+  String get searchItems => 'Издөө элементтери';
+
+  @override
+  String get onboardingHookContinue => 'Баштоо';
+
+  @override
+  String get onboardingHookItem1 => 'Грилделенген тоок';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella сыр';
+
+  @override
+  String get onboardingHookItem3 => 'Cherry помидор';
+
+  @override
+  String get checkItemTooltip => 'нерсени текшерүү';
 }

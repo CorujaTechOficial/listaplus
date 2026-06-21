@@ -72,6 +72,32 @@ class AppLocalizationsTh extends AppLocalizations {
   String get close => 'ปิด';
 
   @override
+  String get help => 'ช่วย';
+
+  @override
+  String get helpListTitle => 'การใช้รายการของคุณ';
+
+  @override
+  String get helpListAddItems =>
+      'เพิ่มรายการด้วยปุ่ม + ที่ด้านล่าง หรือใช้การค้นหาเพื่อเรียกดูผลิตภัณฑ์';
+
+  @override
+  String get helpListAi =>
+      'ขอให้ผู้ช่วย AI สร้าง จัดระเบียบ หรือทำรายการของคุณให้เสร็จ เพียงแตะไอคอนประกายไฟ';
+
+  @override
+  String get helpListShoppingMode =>
+      'โหมดช็อปปิ้งจะซ่อนสินค้าที่ซื้อเพื่อให้คุณสามารถมุ่งเน้นไปที่สิ่งที่เหลืออยู่';
+
+  @override
+  String get helpListOrganize =>
+      'ลากรายการเพื่อเรียงลำดับใหม่ ปัดเพื่อทำเครื่องหมายว่าซื้อแล้ว หรือใช้ตัวกรองและการเรียงลำดับ';
+
+  @override
+  String get helpListShare =>
+      'แบ่งปันรายการของคุณกับครอบครัวหรือส่งออกเป็น PDF, Excel หรือข้อความธรรมดา';
+
+  @override
   String get import => 'นำเข้า';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get clear => 'ล้าง';
+
+  @override
+  String get clearPurchasedTitle => 'ล้างรายการที่ซื้อ';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ลบสินค้าที่ซื้อทั้งหมดออกจากรายการนี้หรือไม่ การดำเนินการนี้ไม่สามารถยกเลิกได้';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get purchaseError =>
       'เกิดข้อผิดพลาดในการดำเนินการซื้อ กรุณาลองอีกครั้ง';
+
+  @override
+  String get errorCreateList =>
+      'ไม่สามารถสร้างรายการได้ ตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง';
+
+  @override
+  String get errorShareCode =>
+      'เกิดข้อผิดพลาดในการสร้างรหัสแชร์ ตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง';
+
+  @override
+  String get errorQuickAdd =>
+      'ไม่สามารถเพิ่มรายการได้ ตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง';
+
+  @override
+  String get errorLoadList =>
+      'ไม่สามารถโหลดรายการของคุณได้ โปรดสร้างรายการใหม่เพื่อเริ่มต้น';
 
   @override
   String get restoreError =>
@@ -481,6 +530,18 @@ class AppLocalizationsTh extends AppLocalizations {
   String get noBudgetDefined => 'ไม่ได้ตั้งงบประมาณ';
 
   @override
+  String get budgetGoalInvalidAmount => 'ป้อนค่าที่มากกว่าศูนย์';
+
+  @override
+  String get budgetPartialEstimateHint => '~ รวมประมาณการราคาบางส่วน';
+
+  @override
+  String get budgetGoalSaved => 'บันทึกเป้าหมายงบประมาณแล้ว';
+
+  @override
+  String get budgetGoalRemoved => 'ลบเป้าหมายงบประมาณแล้ว';
+
+  @override
   String totalEstimated(String amount) {
     return 'ประมาณการรวม: $amount';
   }
@@ -674,6 +735,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get newChat => 'แชทใหม่';
 
   @override
+  String get newChatConfirmTitle => 'บทสนทนาใหม่';
+
+  @override
+  String get newChatConfirmMessage =>
+      'เริ่มการสนทนาใหม่? การสนทนาปัจจุบันของคุณจะหายไป';
+
+  @override
   String get noHistory => 'ไม่มีประวัติการแชท';
 
   @override
@@ -783,28 +851,28 @@ class AppLocalizationsTh extends AppLocalizations {
   String get undo => 'เลิกทำ';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'แชทใหม่เริ่มต้นขึ้น';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'เพิ่มลงในรายการ';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'ฉันจะทำอย่างไร?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'รายการช้อปปิ้ง';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'งบประมาณและราคา';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'สูตรอาหารและเมนู';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'องค์กร';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'ทำเครื่องหมายรายการเมื่อคุณซื้อสินค้า';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1231,6 +1299,15 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ข้อเสนอต้อนรับ';
+
+  @override
+  String get paywallFreeTier => 'ฟรี: 3 รายการ';
+
+  @override
+  String get paywallProTier => 'มือโปร: ไม่จำกัด';
+
+  @override
+  String get firstItemAddedSnackbar => 'เพิ่มรายการแรกแล้ว! เริ่มต้นได้ดี 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1957,28 +2034,28 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'เดือน: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'สัปดาห์: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'วันนี้: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'ลบเป้าหมาย';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'งบประมาณวางแผนมื้ออาหาร';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'เป้าหมายการใช้จ่ายรายเดือนเพื่อการวางแผนมื้ออาหาร';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2119,6 +2196,18 @@ class AppLocalizationsTh extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ประเภทเริ่มต้น';
 
   @override
+  String get mealPlannerDuplicate => 'มื้ออาหารที่ซ้ำกัน';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ทำซ้ำไปที่...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'วันปัจจุบัน';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'ทำซ้ำมื้ออาหารสำเร็จ!';
+
+  @override
   String get expirationDate => 'วันหมดอายุ';
 
   @override
@@ -2126,6 +2215,9 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get skip => 'ข้าม';
+
+  @override
+  String get onboardingSkip => 'ข้ามไปก่อน';
 
   @override
   String get onboardingAiTitle => 'คุยกับกีกี้';
@@ -3152,4 +3244,29 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'กำลังสร้างการตอบกลับ...';
+
+  @override
+  String get errorUnexpected =>
+      'มีบางอย่างที่ไม่คาดคิดเกิดขึ้น โปรดลองอีกครั้ง';
+
+  @override
+  String get aiAssistantTooltip => 'เปิดผู้ช่วย AI';
+
+  @override
+  String get searchItems => 'ค้นหารายการ';
+
+  @override
+  String get onboardingHookContinue => 'เริ่มต้นเลย';
+
+  @override
+  String get onboardingHookItem1 => 'ไก่ย่าง';
+
+  @override
+  String get onboardingHookItem2 => 'มอสซาเรลล่าชีส';
+
+  @override
+  String get onboardingHookItem3 => 'มะเขือเทศเชอร์รี่';
+
+  @override
+  String get checkItemTooltip => 'ตรวจสอบรายการ';
 }

@@ -17,8 +17,10 @@ import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/providers/item_memory_provider.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/models/item_memory.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class QuickAddBar extends ConsumerStatefulWidget {
   const QuickAddBar({super.key, required this.listId});
@@ -227,7 +229,7 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                                 vertical: 10,
                               ),
                               prefixIcon: Icon(
-                                Icons.add_shopping_cart,
+                                PhosphorIconsRegular.shoppingCartSimple,
                                 size: 20,
                                 color:
                                     focusNode.hasFocus
@@ -289,7 +291,7 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                                       ),
                                     ),
                                   _QuickActionButton(
-                                    icon: Icons.qr_code_scanner,
+                                    icon: PhosphorIconsRegular.qrCode,
                                     color: theme.colorScheme.primary,
                                     onPressed:
                                         () =>
@@ -298,8 +300,8 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                                   _QuickActionButton(
                                     icon:
                                         _isListening
-                                            ? Icons.mic
-                                            : Icons.mic_none,
+                                            ? PhosphorIconsRegular.microphone
+                                            : PhosphorIconsRegular.microphone,
                                     color:
                                         _isListening
                                             ? theme.colorScheme.error
@@ -333,7 +335,7 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
                                     ),
                                   )
                                   : const Icon(
-                                    Icons.arrow_upward,
+                                    PhosphorIconsRegular.arrowUp,
                                     size: 22,
                                     color: Colors.white,
                                   ),
@@ -456,7 +458,7 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.close, color: Colors.white),
+                  icon: const Icon(PhosphorIconsRegular.x, color: Colors.white),
                   onPressed: () => Navigator.pop(context),
                 ),
               ],
@@ -486,8 +488,6 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
                     // ignore: use_build_context_synchronously
                     final nav = Navigator.of(context);
                     // ignore: use_build_context_synchronously
-                    final messenger = ScaffoldMessenger.of(context);
-                    // ignore: use_build_context_synchronously
                     final notFoundMsg =
                         AppLocalizations.of(context)!.catalogProductNotFound;
 
@@ -495,8 +495,11 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
                       nav.pop(product.displayName);
                     } else {
                       nav.pop(null);
-                      messenger.showSnackBar(
-                        SnackBar(content: Text(notFoundMsg)),
+                      // ignore: use_build_context_synchronously
+                      showKipiSnackBar(
+                        context,
+                        message: notFoundMsg,
+                        type: SnackBarType.warning,
                       );
                     }
                     break;
@@ -549,7 +552,7 @@ class _MetaChipRow extends ConsumerWidget {
         children: [
           if (cat != null) ...[
             Icon(
-              Icons.label_outline,
+              PhosphorIconsRegular.tag,
               size: 13,
               color: theme.colorScheme.primary,
             ),
@@ -582,7 +585,7 @@ class _MetaChipRow extends ConsumerWidget {
           GestureDetector(
             onTap: onClear,
             child: Icon(
-              Icons.close,
+              PhosphorIconsRegular.x,
               size: 16,
               color: theme.colorScheme.onSurfaceVariant,
             ),

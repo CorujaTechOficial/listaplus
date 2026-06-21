@@ -22,6 +22,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -165,11 +168,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -280,12 +292,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -299,8 +317,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -314,6 +341,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -478,6 +523,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -819,8 +870,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -956,6 +1019,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1359,6 +1425,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1480,6 +1549,7 @@
   "aiAssistantGeneral": "Yleisassistentti",
   "aiAssistantHistory": "Assistentin historia",
   "aiAssistantTitle": "AI Assistant",
+  "aiAssistantTooltip": "Avaa AI-avustaja",
   "aiCapabilitiesBudget": "Budjetti ja hinnat",
   "aiCapabilitiesLists": "Ostoslistat",
   "aiCapabilitiesOrganize": "Organisaatio",
@@ -1566,7 +1636,11 @@
   "budgetAppBar": "Kuukausibudjetti",
   "budgetDashboardTitle": "Hallintapaneeli",
   "budgetEditTitle": "Kuukausibudjetti",
+  "budgetGoalInvalidAmount": "Syötä arvo, joka on suurempi kuin nolla",
+  "budgetGoalRemoved": "Budjettitavoite poistettu",
+  "budgetGoalSaved": "Budjettitavoite tallennettu",
   "budgetLists": "Listat",
+  "budgetPartialEstimateHint": "~ Sisältää osittaiset hinta-arviot",
   "budgetPremiumLocked": "Globaali kuukausibudjetti on Premium",
   "budgetSubtitle": "Seuraa kuukausittaisia kulujasi",
   "budgetUpgradePrompt": "Päivitä avataksesi",
@@ -1634,6 +1708,7 @@
   "chatHistoryOfflineTitle": "Olet offline-tilassa",
   "chatSubtitle": "Kysy kohde-ehdotuksia, reseptejä tai säästövinkkejä.",
   "chatSubtitleShort": "Kysy hinnoista, resepteistä, järjestämisestä...",
+  "checkItemTooltip": "Tarkista kohde",
   "chooseCurrency": "Valitse Valuutta",
   "chooseIcon": "Valitse kuvake",
   "chooseImageSource": "Valitse kuvan lähde",
@@ -1645,6 +1720,8 @@
   "clearHistoryConfirm": "Poistetaanko kaikki viestit tästä istunnosta?",
   "clearList": "Tyhjennä lista",
   "clearPurchased": "Tyhjennä ostetut",
+  "clearPurchasedConfirmMessage": "Poistetaanko kaikki ostetut tuotteet tästä luettelosta? Tätä ei voi kumota.",
+  "clearPurchasedTitle": "Tyhjennä ostetut tuotteet",
   "close": "Sulje",
   "closeSheet": "Lähellä",
   "complete": "Suorita",
@@ -1733,7 +1810,9 @@
   "enterCodeHint": "Syötä koodi",
   "enterUrl": "Anna URL-osoite",
   "error": "Virhe: {message}",
+  "errorCreateList": "Luetteloa ei voitu luoda. Tarkista yhteys ja yritä uudelleen.",
   "errorGeneric": "Virhe: {message}",
+  "errorLoadList": "Listojasi ei voitu ladata. Aloita luomalla uusi luettelo.",
   "errorLoadingChat": "Oho! Jotain meni pieleen chatin lataamisessa.",
   "errorLoadingChatSubtitle": "Tarkista yhteys tai yritä myöhemmin uudelleen.",
   "errorLoadingHistory": "Virhe historian lataamisessa",
@@ -1742,7 +1821,10 @@
   "errorLoadingRecipes": "Virhe ladattaessa reseptejä",
   "errorLoadingSubscription": "Virhe ladattaessa tilausta",
   "errorOscillation": "Tämä voi johtua verkon heilahteluista tai tilapäisestä epäkäytettävyydestä. Yritä uudelleen.",
+  "errorQuickAdd": "Kohdetta ei voitu lisätä. Tarkista yhteys ja yritä uudelleen.",
   "errorSavingProfile": "Virhe tallennettaessa profiilia",
+  "errorShareCode": "Virhe luotaessa jakokoodia. Tarkista yhteys ja yritä uudelleen.",
+  "errorUnexpected": "Jotain odottamatonta tapahtui. Yritä uudelleen.",
   "estimated": "Arvioitu",
   "estimatedCost": "Arvioitu",
   "estimatedPrice": "Arvioitu hinta",
@@ -1784,6 +1866,7 @@
   "filterPurchased": "Ostetut",
   "finance": "Talous",
   "finishShopping": "Viimeistele ostokset",
+  "firstItemAddedSnackbar": "Ensimmäinen kohde lisätty! Hieno aloitus 🛒",
   "gallery": "Galleria",
   "generalAssistant": "Yleinen assistentti",
   "generalHelp": "Miten voin auttaa ostoksissasi tänään?",
@@ -1791,6 +1874,13 @@
   "gestureHint": "Valitse pitämällä painettuna • Poista pyyhkäisemällä",
   "globalAssistant": "Yleinen assistentti",
   "goodResponse": "Hyvä vastaus",
+  "help": "Auttaa",
+  "helpListAddItems": "Lisää tuotteita alareunan +-painikkeella tai käytä hakua selataksesi tuotteita",
+  "helpListAi": "Pyydä tekoälyavustajaa luomaan, järjestämään tai täydentämään luettelosi – napauta vain kimalluskuvaketta",
+  "helpListOrganize": "Järjestä kohteita uudelleen vetämällä, merkitse ostetuiksi pyyhkäisemällä tai käytä suodattimia ja lajittelua",
+  "helpListShare": "Jaa luettelosi perheen kanssa tai vie PDF-, Excel- tai tekstimuodossa",
+  "helpListShoppingMode": "Ostostila piilottaa ostetut tuotteet, jotta voit keskittyä siihen, mitä on jäljellä",
+  "helpListTitle": "Listan käyttäminen",
   "howCanIHelp": "Miten voin auttaa?",
   "idealQty": "Ihannemäärä",
   "idealQuantity": "Ihannemäärä",
@@ -1873,10 +1963,13 @@
   "mealPlannerBudgetRemoveGoal": "Poista tavoite",
   "mealPlannerBudgetTodayCost": "Tänään: {amount}",
   "mealPlannerBudgetWeekCost": "Viikko: {amount}",
+  "mealPlannerCurrentDayLabel": "Nykyinen päivä",
   "mealPlannerCustomTypeLabel": "Mukautettu tyyppi",
   "mealPlannerDateLabel": "Päivämäärä",
   "mealPlannerDefaultTypeLabel": "Oletustyyppi",
   "mealPlannerDeleteMeal": "Poista ateria",
+  "mealPlannerDuplicate": "Kaksinkertainen ateria",
+  "mealPlannerDuplicateSuccess": "Ateria kopioitu onnistuneesti!",
   "mealPlannerEditMeal": "Muokkaa ateriaa",
   "mealPlannerEditType": "Muokkaa ateriatyyppiä",
   "mealPlannerError": "Virhe ladattaessa ateriasuunnitelmaa",
@@ -1903,6 +1996,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Lisää suunnitelmaan",
   "mealPlannerSearchRecipes": "Hae reseptejä...",
+  "mealPlannerSelectDestinationDay": "Kopioi kohteeseen...",
   "mealPlannerSelectRecipe": "Valitse resepti",
   "mealPlannerServings": "{count,plural, one{{count} annos} other{{count} annosta}}",
   "mealPlannerServingsLabel": "Annokset",
@@ -1934,6 +2028,8 @@
   "navRecipes": "Reseptit",
   "newCategoryDialog": "Uusi kategoria",
   "newChat": "Uusi Chat",
+  "newChatConfirmMessage": "Aloitetaanko uusi keskustelu? Nykyinen keskustelusi menetetään.",
+  "newChatConfirmTitle": "Uusi keskustelu",
   "newChatStarted": "Uusi chat alkoi",
   "newListTitle": "Uusi ostoslista",
   "newPantryList": "Ruokakomero-ostokset",
@@ -2072,7 +2168,11 @@
   "onboardingGroupCouple": "Pari",
   "onboardingGroupFamily": "Perhe",
   "onboardingGroupSolo": "vain minä",
+  "onboardingHookContinue": "Aloita",
   "onboardingHookHeadline": "Älä koskaan unohda päivittäistavaroita uudelleen",
+  "onboardingHookItem1": "Grillattua kanaa",
+  "onboardingHookItem2": "Mozzarella juusto",
+  "onboardingHookItem3": "Kirsikkatomaatteja",
   "onboardingListCreated": "Listasi on valmis: {count} kohdetta järjestetty sinulle.",
   "onboardingListSaveFailed": "Valmistelin tuotteet, mutta en voinut tallentaa luetteloa. Yritä uudelleen pitääksesi sen sovelluksessa.",
   "onboardingLoadingStat1Label": "Luetteloidut tuotteet",
@@ -2119,6 +2219,7 @@
   "onboardingSetupTitle": "Mukauta kokemustasi",
   "onboardingShareDesc": "Synkronoi luettelot perheen ja ystävien kanssa reaaliajassa",
   "onboardingShareTitle": "Jaa rakastamiesi kanssa",
+  "onboardingSkip": "Ohita toistaiseksi",
   "onboardingSlide1Body": "Luo ja jaa luetteloita välittömästi. Kipi lisää kohteita automaattisesti tottumusten perusteella.",
   "onboardingSlide1Title": "Älykkäät ostoslistat",
   "onboardingSlide2Body": "Kysy mitä tahansa – luo listoja, etsi reseptejä, seuraa ruokakomeroasi, suunnittele viikkosi.",
@@ -2199,6 +2300,7 @@
   "paywallFeatureSmartAI": "Älykäs AI",
   "paywallFeatureUnlimitedLists": "Rajoittamaton luettelo",
   "paywallFeaturesTitle": "Kaikki mitä tarvitset:",
+  "paywallFreeTier": "Ilmainen: 3 listaa",
   "paywallGoalHeadlineFamily": "{name}, järjestä perheen ostokset!",
   "paywallGoalHeadlineFaster": "{name}, osta puolet nopeammin!",
   "paywallGoalHeadlineNeverForget": "{name}, älä koskaan unohda yhtään tuotetta!",
@@ -2228,6 +2330,7 @@
   "paywallPricePerDay": "Vain {price}/päivä – vähemmän kuin kahvi",
   "paywallPricePerMonth": "Vain {price}/kk",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Rajoittamaton",
   "paywallPurchaseError": "Ostoa ei voitu suorittaa loppuun. Yritä uudelleen.",
   "paywallPurchasePending": "Maksusi odottaa hyväksyntää. Pääsy vapautetaan automaattisesti vahvistuksen jälkeen.",
   "paywallRestore": "Palauttaa",
@@ -2355,6 +2458,7 @@
   "searchConversations": "Hae keskusteluja",
   "searchCurrency": "Hae valuutta...",
   "searchInConversation": "Hae keskustelusta...",
+  "searchItems": "Etsi kohteita",
   "searchLanguage": "Hae kieltä...",
   "searchMessages": "Hae viestejä...",
   "searchRecipes": "Hae reseptejä...",

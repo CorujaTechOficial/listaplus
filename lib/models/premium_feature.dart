@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 enum PremiumFeature {
   unlimitedLists,
@@ -61,23 +62,23 @@ enum PremiumFeature {
   IconData get icon {
     switch (this) {
       case PremiumFeature.unlimitedLists:
-        return Icons.list;
+        return PhosphorIconsRegular.list;
       case PremiumFeature.sharing:
-        return Icons.share;
+        return PhosphorIconsRegular.shareNetwork;
       case PremiumFeature.history:
-        return Icons.history;
+        return PhosphorIconsRegular.clockCounterClockwise;
       case PremiumFeature.export:
-        return Icons.backup;
+        return PhosphorIconsRegular.cloudArrowUp;
       case PremiumFeature.themes:
-        return Icons.palette;
+        return PhosphorIconsRegular.palette;
       case PremiumFeature.monthlyBudget:
-        return Icons.account_balance_wallet;
+        return PhosphorIconsRegular.wallet;
       case PremiumFeature.assistant:
-        return Icons.smart_toy;
+        return PhosphorIconsRegular.robot;
       case PremiumFeature.pantry:
-        return Icons.inventory_2;
+        return PhosphorIconsRegular.package;
       case PremiumFeature.interactiveArtifacts:
-        return Icons.dashboard_customize;
+        return PhosphorIconsRegular.squaresFour;
     }
   }
 }

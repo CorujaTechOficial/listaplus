@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CatalogSearchBar extends StatelessWidget {
   const CatalogSearchBar({
@@ -17,8 +18,7 @@ class CatalogSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+    final scheme = Theme.of(context).colorScheme;
 
     return TextField(
       controller: controller,
@@ -26,14 +26,14 @@ class CatalogSearchBar extends StatelessWidget {
       onChanged: onChanged,
       decoration: InputDecoration(
         hintText: hintText,
-        prefixIcon: const Icon(Icons.search, size: 20),
+        prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass, size: 20),
         suffixIcon: ListenableBuilder(
           listenable: controller,
           builder:
               (_, _) =>
                   controller.text.isNotEmpty
                       ? IconButton(
-                        icon: const Icon(Icons.clear, size: 18),
+                        icon: const Icon(PhosphorIconsRegular.x, size: 18),
                         onPressed: () {
                           controller.clear();
                           onChanged?.call('');
@@ -42,7 +42,7 @@ class CatalogSearchBar extends StatelessWidget {
                       : const SizedBox.shrink(),
         ),
         filled: true,
-        fillColor: theme.colorScheme.surfaceContainerHighest,
+        fillColor: scheme.surfaceContainerHighest,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(RadiusTokens.full),
           borderSide: BorderSide.none,

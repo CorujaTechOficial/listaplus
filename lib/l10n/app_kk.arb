@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -497,6 +542,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -838,8 +889,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -975,6 +1038,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1378,6 +1444,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1499,6 +1568,7 @@
   "aiAssistantGeneral": "Бас ассистент",
   "aiAssistantHistory": "Assistant History",
   "aiAssistantTitle": "AI көмекшісі",
+  "aiAssistantTooltip": "AI көмекшісін ашыңыз",
   "aiCapabilitiesBudget": "Бюджет және бағалар",
   "aiCapabilitiesLists": "Сатып алу тізімдері",
   "aiCapabilitiesOrganize": "Ұйымдастыру",
@@ -1585,7 +1655,11 @@
   "budgetAppBar": "Айлық Бюджет",
   "budgetDashboardTitle": "Басқару панелі",
   "budgetEditTitle": "Айлық Бюджет",
+  "budgetGoalInvalidAmount": "Нөлден үлкен мәнді енгізіңіз",
+  "budgetGoalRemoved": "Бюджеттік мақсат жойылды",
+  "budgetGoalSaved": "Бюджеттік мақсат сақталды",
   "budgetLists": "Тізімдер",
+  "budgetPartialEstimateHint": "~ Ішінара бағалық бағалауды қамтиды",
   "budgetPremiumLocked": "Ғаламдық айлық бюджет премиум",
   "budgetSubtitle": "Айлық шығыстарыңызды бақылаңыз",
   "budgetUpgradePrompt": "Құлыптан шығару үшін жаңартыңыз",
@@ -1653,6 +1727,7 @@
   "chatHistoryOfflineTitle": "Сіз офлайнсыз",
   "chatSubtitle": "Элемент ұсыныстарын, рецептерді немесе үнемдеу кеңестерін сұраңыз.",
   "chatSubtitleShort": "Бағалар, рецепттер, ұйымдастыру туралы сұраңыз...",
+  "checkItemTooltip": "Элементті тексеріңіз",
   "chooseCurrency": "Валюта таңдаңыз",
   "chooseIcon": "Белгішені таңдаңыз",
   "chooseImageSource": "Сурет көзін таңдаңыз",
@@ -1664,6 +1739,8 @@
   "clearHistoryConfirm": "Осы сессиядағы барлық хабарларды тазалау?",
   "clearList": "Тізімді тазалау",
   "clearPurchased": "Сатып алынғандарды тазалау",
+  "clearPurchasedConfirmMessage": "Барлық сатып алынған элементтерді осы тізімнен жою керек пе? Мұны қайтару мүмкін емес.",
+  "clearPurchasedTitle": "Сатып алынған заттарды тазалаңыз",
   "close": "Жабу",
   "closeSheet": "Жабу",
   "complete": "Аяқтау",
@@ -1752,7 +1829,9 @@
   "enterCodeHint": "Кодты енгізіңіз",
   "enterUrl": "URL енгізіңіз",
   "error": "Қате: {message}",
+  "errorCreateList": "Тізім жасалмады. Байланысты тексеріп, әрекетті қайталаңыз.",
   "errorGeneric": "Қате: {message}",
+  "errorLoadList": "Тізімдеріңіз жүктелмеді. Бастау үшін жаңа тізім жасаңыз.",
   "errorLoadingChat": "Ой! Чатты жүктеу кезінде бірдеңе дұрыс болмады.",
   "errorLoadingChatSubtitle": "Байланысты тексеріңіз немесе кейінірек қайталап көріңіз.",
   "errorLoadingHistory": "Тарихты жүктеу қатесі",
@@ -1761,7 +1840,10 @@
   "errorLoadingRecipes": "Рецепттерді жүктеу қатесі",
   "errorLoadingSubscription": "Жазылымды жүктеу қатесі",
   "errorOscillation": "Бұл желінің тербелісіне немесе уақытша қолжетімсіздікке байланысты болуы мүмкін. Қайталап көріңіз.",
+  "errorQuickAdd": "Элементті қосу мүмкін болмады. Байланысты тексеріп, әрекетті қайталаңыз.",
   "errorSavingProfile": "Профильді сақтау қатесі",
+  "errorShareCode": "Бөліс кодын жасау қатесі. Байланысты тексеріп, әрекетті қайталаңыз.",
+  "errorUnexpected": "Күтпеген бірдеңе болды. Қайталап көріңіз.",
   "estimated": "Болжалды",
   "estimatedCost": "Болжалды",
   "estimatedPrice": "Болжалды баға",
@@ -1803,6 +1885,7 @@
   "filterPurchased": "Сатып алынған",
   "finance": "Қаржы",
   "finishShopping": "Шопингті аяқтау",
+  "firstItemAddedSnackbar": "Бірінші элемент қосылды! Керемет бастама 🛒",
   "gallery": "Галерея",
   "generalAssistant": "Жалпы Көмекші",
   "generalHelp": "Бүгін сатып алуыңызға қалай көмектесе аламын?",
@@ -1810,6 +1893,13 @@
   "gestureHint": "Таңдау үшін басып тұрыңыз • Жою үшін сырғытыңыз",
   "globalAssistant": "Жаһандық көмекші",
   "goodResponse": "Жақсы жауап",
+  "help": "Көмек",
+  "helpListAddItems": "Төменгі жағындағы + түймесі бар элементтерді қосыңыз немесе өнімдерді шолу үшін іздеуді пайдаланыңыз",
+  "helpListAi": "AI көмекшісінен тізіміңізді жасауды, реттеуді немесе аяқтауды сұраңыз — жай ғана жарқырау белгішесін түртіңіз",
+  "helpListOrganize": "Қайта реттеу үшін элементтерді сүйреңіз, сатып алынған деп белгілеу үшін сырғытыңыз немесе сүзгілер мен сұрыптауды пайдаланыңыз",
+  "helpListShare": "Тізімді отбасымен бөлісіңіз немесе PDF, Excel немесе кәдімгі мәтін ретінде экспорттаңыз",
+  "helpListShoppingMode": "Сатып алу режимі сатып алынған заттарды жасырады, осылайша сіз қалған нәрсеге назар аудара аласыз",
+  "helpListTitle": "Тізімді пайдалану",
   "howCanIHelp": "Қалай көмектесе аламын?",
   "idealQty": "Идеалды саны",
   "idealQuantity": "Идеалды мөлшер",
@@ -1892,10 +1982,13 @@
   "mealPlannerBudgetRemoveGoal": "Мақсатты жою",
   "mealPlannerBudgetTodayCost": "Бүгін: {amount}",
   "mealPlannerBudgetWeekCost": "Апта: {amount}",
+  "mealPlannerCurrentDayLabel": "Ағымдағы күн",
   "mealPlannerCustomTypeLabel": "Арнаулы түрі",
   "mealPlannerDateLabel": "Күні",
   "mealPlannerDefaultTypeLabel": "Әдепкі түрі",
   "mealPlannerDeleteMeal": "Тамақты алып тастау",
+  "mealPlannerDuplicate": "Қайталанатын тағам",
+  "mealPlannerDuplicateSuccess": "Тамақ сәтті көшірілді!",
   "mealPlannerEditMeal": "Тамақты өңдеу",
   "mealPlannerEditType": "Тамақ түрін өңдеу",
   "mealPlannerError": "Тамақтану жоспарын жүктеу қатесі",
@@ -1922,6 +2015,7 @@
   "mealPlannerPrepTime": "{minutes} мин",
   "mealPlannerSave": "Жоспарға қосу",
   "mealPlannerSearchRecipes": "Рецепттерді іздеу...",
+  "mealPlannerSelectDestinationDay": "Көшірме жасау...",
   "mealPlannerSelectRecipe": "Рецептті таңдаңыз",
   "mealPlannerServings": "{count,plural, one{{count} порция} other{{count} порция}}",
   "mealPlannerServingsLabel": "Порциялар",
@@ -1953,6 +2047,8 @@
   "navRecipes": "Рецепттер",
   "newCategoryDialog": "Жаңа санат",
   "newChat": "Жаңа чат",
+  "newChatConfirmMessage": "Жаңа әңгіме бастау керек пе? Ағымдағы әңгіме жоғалады.",
+  "newChatConfirmTitle": "Жаңа әңгіме",
   "newChatStarted": "Жаңа чат басталды",
   "newListTitle": "Жаңа Сатып Алу Тізімі",
   "newPantryList": "Қордан сатып алу",
@@ -2091,7 +2187,11 @@
   "onboardingGroupCouple": "Жұп",
   "onboardingGroupFamily": "Отбасы",
   "onboardingGroupSolo": "Мен ғана",
+  "onboardingHookContinue": "Жұмысты бастау",
   "onboardingHookHeadline": "Азық-түлікті ешқашан ұмытпа",
+  "onboardingHookItem1": "Грильде пісірілген тауық еті",
+  "onboardingHookItem2": "Моцарелла ірімшігі",
+  "onboardingHookItem3": "Шие қызанақтары",
   "onboardingListCreated": "Сіздің тізіміңіз дайын: {count} элементтер сіз үшін ұйымдастырылған.",
   "onboardingListSaveFailed": "Мен элементтерді дайындадым, бірақ тізімді сақтай алмадым. Оны қолданбада сақтау үшін әрекетті қайталаңыз.",
   "onboardingLoadingStat1Label": "Каталогталған заттар",
@@ -2138,6 +2238,7 @@
   "onboardingSetupTitle": "Тәжірибеңізді жекелендіріңіз",
   "onboardingShareDesc": "Нақты уақытта отбасымен және достарымен тізімдерді синхрондаңыз",
   "onboardingShareTitle": "Сүйікті адамдарыңызбен бөлісіңіз",
+  "onboardingSkip": "Әзірге өткізіп жіберіңіз",
   "onboardingSlide1Body": "Тізімдерді дереу жасаңыз және бөлісіңіз. Kipi әдеттеріңізге қарай элементтерді автоматты түрде қосады.",
   "onboardingSlide1Title": "Ақылды сатып алу тізімдері",
   "onboardingSlide2Body": "Кез келген нәрсені сұраңыз - тізімдер жасаңыз, рецепттер табыңыз, қоймаңызды бақылаңыз, аптаңызды жоспарлаңыз.",
@@ -2218,6 +2319,7 @@
   "paywallFeatureSmartAI": "Ақылды AI",
   "paywallFeatureUnlimitedLists": "Шексіз тізімдер",
   "paywallFeaturesTitle": "Сізге қажет нәрсенің бәрі:",
+  "paywallFreeTier": "Тегін: 3 тізім",
   "paywallGoalHeadlineFamily": "{name}, отбасылық шопинг ұйымдастырыңыз!",
   "paywallGoalHeadlineFaster": "{name}, жарты уақыт ішінде сатып алыңыз!",
   "paywallGoalHeadlineNeverForget": "{name}, элементті ешқашан ұмытпаңыз!",
@@ -2247,6 +2349,7 @@
   "paywallPricePerDay": "Тек {price}/тәулігіне — кофеден аз",
   "paywallPricePerMonth": "Тек {price}/ай",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: шексіз",
   "paywallPurchaseError": "Сатып алу аяқталмады. Қайтадан байқап көріңіз.",
   "paywallPurchasePending": "Төлеміңіз мақұлдауды күтуде. Растаудан кейін рұқсат автоматты түрде босатылады.",
   "paywallRestore": "Қалпына келтіру",
@@ -2374,6 +2477,7 @@
   "searchConversations": "Сөйлесулерді іздеу",
   "searchCurrency": "Валюта іздеу...",
   "searchInConversation": "Әңгімелесуден іздеу...",
+  "searchItems": "Элементтерді іздеу",
   "searchLanguage": "Тілді іздеу...",
   "searchMessages": "Хабарларды іздеу...",
   "searchRecipes": "Рецепттерді іздеу...",

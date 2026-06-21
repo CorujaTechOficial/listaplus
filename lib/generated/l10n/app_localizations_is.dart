@@ -72,6 +72,32 @@ class AppLocalizationsIs extends AppLocalizations {
   String get close => 'Loka';
 
   @override
+  String get help => 'Hjálp';
+
+  @override
+  String get helpListTitle => 'Að nota listann þinn';
+
+  @override
+  String get helpListAddItems =>
+      'Bættu við hlutum með + takkanum neðst eða notaðu leitina til að skoða vörur';
+
+  @override
+  String get helpListAi =>
+      'Biddu AI aðstoðarmanninn um að búa til, skipuleggja eða klára listann þinn - ýttu bara á glittatáknið';
+
+  @override
+  String get helpListShoppingMode =>
+      'Innkaupastilling felur keypta hluti svo þú getir einbeitt þér að því sem eftir er';
+
+  @override
+  String get helpListOrganize =>
+      'Dragðu hluti til að endurraða, strjúktu til að merkja sem keypt eða notaðu síur og flokkun';
+
+  @override
+  String get helpListShare =>
+      'Deildu listanum þínum með fjölskyldunni eða fluttu út sem PDF, Excel eða venjulegur texti';
+
+  @override
   String get import => 'Flytja inn';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get clear => 'Hreinsa';
+
+  @override
+  String get clearPurchasedTitle => 'Hreinsaðu keypta hluti';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Fjarlægja allar keyptar vörur af þessum lista? Þetta er ekki hægt að afturkalla.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get purchaseError => 'Villa við að vinna úr kaupum. Reyndu aftur.';
+
+  @override
+  String get errorCreateList =>
+      'Gat ekki búið til lista. Athugaðu tenginguna þína og reyndu aftur.';
+
+  @override
+  String get errorShareCode =>
+      'Villa við að búa til deilingarkóða. Athugaðu tenginguna þína og reyndu aftur.';
+
+  @override
+  String get errorQuickAdd =>
+      'Gat ekki bætt við atriði. Athugaðu tenginguna þína og reyndu aftur.';
+
+  @override
+  String get errorLoadList =>
+      'Gat ekki hlaðið listana þína. Vinsamlegast búðu til nýjan lista til að byrja.';
 
   @override
   String get restoreError => 'Villa við að endurheimta kaup. Reyndu aftur.';
@@ -487,6 +536,18 @@ class AppLocalizationsIs extends AppLocalizations {
   String get noBudgetDefined => 'Engin fjárhagsáætlun stillt';
 
   @override
+  String get budgetGoalInvalidAmount => 'Sláðu inn gildi sem er stærra en núll';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Inniheldur verðáætlanir að hluta';
+
+  @override
+  String get budgetGoalSaved => 'Fjárhagsmarkmið vistað';
+
+  @override
+  String get budgetGoalRemoved => 'Fjárhagsmarkmið fjarlægt';
+
+  @override
   String totalEstimated(String amount) {
     return 'Áætluð samtals: $amount';
   }
@@ -679,6 +740,13 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get newChat => 'Nýtt spjall';
+
+  @override
+  String get newChatConfirmTitle => 'Nýtt samtal';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Byrjaðu nýtt samtal? Núverandi samtal þitt glatast.';
 
   @override
   String get noHistory => 'Enginn spjallferill';
@@ -1241,6 +1309,16 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Velkomin tilboð';
+
+  @override
+  String get paywallFreeTier => 'Ókeypis: 3 listar';
+
+  @override
+  String get paywallProTier => 'Pro: Ótakmarkað';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Fyrsta atriði bætt við! Frábær byrjun 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2138,6 +2216,18 @@ class AppLocalizationsIs extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Sjálfgefin gerð';
 
   @override
+  String get mealPlannerDuplicate => 'Tvítekið máltíð';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Afrit til...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Núverandi dagur';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Máltíð afrituð með góðum árangri!';
+
+  @override
   String get expirationDate => 'Gildistími';
 
   @override
@@ -2145,6 +2235,9 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get skip => 'Sleppa';
+
+  @override
+  String get onboardingSkip => 'Slepptu í bili';
 
   @override
   String get onboardingAiTitle => 'Spjallaðu við Kipi';
@@ -3178,6 +3271,31 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Býr til svar...';
+
+  @override
+  String get errorUnexpected =>
+      'Eitthvað óvænt gerðist. Vinsamlegast reyndu aftur.';
+
+  @override
+  String get aiAssistantTooltip => 'Opnaðu AI aðstoðarmann';
+
+  @override
+  String get searchItems => 'Leita að atriðum';
+
+  @override
+  String get onboardingHookContinue => 'Byrjaðu';
+
+  @override
+  String get onboardingHookItem1 => 'Grillaður kjúklingur';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ostur';
+
+  @override
+  String get onboardingHookItem3 => 'Kirsuberjatómatar';
+
+  @override
+  String get checkItemTooltip => 'Athugaðu atriði';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -3248,6 +3366,32 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get close => 'Loka';
 
   @override
+  String get help => 'Hjálp';
+
+  @override
+  String get helpListTitle => 'Að nota listann þinn';
+
+  @override
+  String get helpListAddItems =>
+      'Bættu við hlutum með + takkanum neðst eða notaðu leitina til að skoða vörur';
+
+  @override
+  String get helpListAi =>
+      'Biddu AI aðstoðarmanninn um að búa til, skipuleggja eða klára listann þinn - ýttu bara á glittatáknið';
+
+  @override
+  String get helpListShoppingMode =>
+      'Innkaupastilling felur keypta hluti svo þú getir einbeitt þér að því sem eftir er';
+
+  @override
+  String get helpListOrganize =>
+      'Dragðu hluti til að endurraða, strjúktu til að merkja sem keypt eða notaðu síur og flokkun';
+
+  @override
+  String get helpListShare =>
+      'Deildu listanum þínum með fjölskyldunni eða fluttu út sem PDF, Excel eða venjulegur texti';
+
+  @override
   String get import => 'Flytja inn';
 
   @override
@@ -3258,6 +3402,13 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get clear => 'Hreinsa';
+
+  @override
+  String get clearPurchasedTitle => 'Hreinsaðu keypta hluti';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Fjarlægja allar keyptar vörur af þessum lista? Þetta er ekki hægt að afturkalla.';
 
   @override
   String error(String message) {
@@ -3271,6 +3422,22 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get purchaseError => 'Villa við að vinna úr kaupum. Reyndu aftur.';
+
+  @override
+  String get errorCreateList =>
+      'Gat ekki búið til lista. Athugaðu tenginguna þína og reyndu aftur.';
+
+  @override
+  String get errorShareCode =>
+      'Villa við að búa til deilingarkóða. Athugaðu tenginguna þína og reyndu aftur.';
+
+  @override
+  String get errorQuickAdd =>
+      'Gat ekki bætt við atriði. Athugaðu tenginguna þína og reyndu aftur.';
+
+  @override
+  String get errorLoadList =>
+      'Gat ekki hlaðið listana þína. Vinsamlegast búðu til nýjan lista til að byrja.';
 
   @override
   String get restoreError => 'Villa við að endurheimta kaup. Reyndu aftur.';
@@ -3663,6 +3830,18 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get noBudgetDefined => 'Engin fjárhagsáætlun stillt';
 
   @override
+  String get budgetGoalInvalidAmount => 'Sláðu inn gildi sem er stærra en núll';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Inniheldur verðáætlanir að hluta';
+
+  @override
+  String get budgetGoalSaved => 'Fjárhagsmarkmið vistað';
+
+  @override
+  String get budgetGoalRemoved => 'Fjárhagsmarkmið fjarlægt';
+
+  @override
   String totalEstimated(String amount) {
     return 'Áætluð samtals: $amount';
   }
@@ -3855,6 +4034,13 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get newChat => 'Nýtt spjall';
+
+  @override
+  String get newChatConfirmTitle => 'Nýtt samtal';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Byrjaðu nýtt samtal? Núverandi samtal þitt glatast.';
 
   @override
   String get noHistory => 'Enginn spjallferill';
@@ -4417,6 +4603,16 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Velkomin tilboð';
+
+  @override
+  String get paywallFreeTier => 'Ókeypis: 3 listar';
+
+  @override
+  String get paywallProTier => 'Pro: Ótakmarkað';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Fyrsta atriði bætt við! Frábær byrjun 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5314,6 +5510,18 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get mealPlannerDefaultTypeLabel => 'Sjálfgefin gerð';
 
   @override
+  String get mealPlannerDuplicate => 'Tvítekið máltíð';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Afrit til...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Núverandi dagur';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Máltíð afrituð með góðum árangri!';
+
+  @override
   String get expirationDate => 'Gildistími';
 
   @override
@@ -5321,6 +5529,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get skip => 'Sleppa';
+
+  @override
+  String get onboardingSkip => 'Slepptu í bili';
 
   @override
   String get onboardingAiTitle => 'Spjallaðu við Kipi';
@@ -6354,4 +6565,29 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get aiGeneratingResponse => 'Býr til svar...';
+
+  @override
+  String get errorUnexpected =>
+      'Eitthvað óvænt gerðist. Vinsamlegast reyndu aftur.';
+
+  @override
+  String get aiAssistantTooltip => 'Opnaðu AI aðstoðarmann';
+
+  @override
+  String get searchItems => 'Leita að atriðum';
+
+  @override
+  String get onboardingHookContinue => 'Byrjaðu';
+
+  @override
+  String get onboardingHookItem1 => 'Grillaður kjúklingur';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella ostur';
+
+  @override
+  String get onboardingHookItem3 => 'Kirsuberjatómatar';
+
+  @override
+  String get checkItemTooltip => 'Athugaðu atriði';
 }

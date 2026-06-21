@@ -72,6 +72,32 @@ class AppLocalizationsFi extends AppLocalizations {
   String get close => 'Sulje';
 
   @override
+  String get help => 'Auttaa';
+
+  @override
+  String get helpListTitle => 'Listan käyttäminen';
+
+  @override
+  String get helpListAddItems =>
+      'Lisää tuotteita alareunan +-painikkeella tai käytä hakua selataksesi tuotteita';
+
+  @override
+  String get helpListAi =>
+      'Pyydä tekoälyavustajaa luomaan, järjestämään tai täydentämään luettelosi – napauta vain kimalluskuvaketta';
+
+  @override
+  String get helpListShoppingMode =>
+      'Ostostila piilottaa ostetut tuotteet, jotta voit keskittyä siihen, mitä on jäljellä';
+
+  @override
+  String get helpListOrganize =>
+      'Järjestä kohteita uudelleen vetämällä, merkitse ostetuiksi pyyhkäisemällä tai käytä suodattimia ja lajittelua';
+
+  @override
+  String get helpListShare =>
+      'Jaa luettelosi perheen kanssa tai vie PDF-, Excel- tai tekstimuodossa';
+
+  @override
   String get import => 'Tuo';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get clear => 'Tyhjennä';
+
+  @override
+  String get clearPurchasedTitle => 'Tyhjennä ostetut tuotteet';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Poistetaanko kaikki ostetut tuotteet tästä luettelosta? Tätä ei voi kumota.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get purchaseError => 'Virhe ostoksen käsittelyssä. Yritä uudelleen.';
+
+  @override
+  String get errorCreateList =>
+      'Luetteloa ei voitu luoda. Tarkista yhteys ja yritä uudelleen.';
+
+  @override
+  String get errorShareCode =>
+      'Virhe luotaessa jakokoodia. Tarkista yhteys ja yritä uudelleen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kohdetta ei voitu lisätä. Tarkista yhteys ja yritä uudelleen.';
+
+  @override
+  String get errorLoadList =>
+      'Listojasi ei voitu ladata. Aloita luomalla uusi luettelo.';
 
   @override
   String get restoreError => 'Virhe ostosten palauttamisessa. Yritä uudelleen.';
@@ -481,6 +530,19 @@ class AppLocalizationsFi extends AppLocalizations {
   String get noBudgetDefined => 'Budjettia ei asetettu';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Syötä arvo, joka on suurempi kuin nolla';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Sisältää osittaiset hinta-arviot';
+
+  @override
+  String get budgetGoalSaved => 'Budjettitavoite tallennettu';
+
+  @override
+  String get budgetGoalRemoved => 'Budjettitavoite poistettu';
+
+  @override
   String totalEstimated(String amount) {
     return 'Arvioitu yhteensä: $amount';
   }
@@ -673,6 +735,13 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get newChat => 'Uusi Chat';
+
+  @override
+  String get newChatConfirmTitle => 'Uusi keskustelu';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Aloitetaanko uusi keskustelu? Nykyinen keskustelusi menetetään.';
 
   @override
   String get noHistory => 'Ei keskusteluhistoriaa';
@@ -1229,6 +1298,16 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Tervetuloa tarjous';
+
+  @override
+  String get paywallFreeTier => 'Ilmainen: 3 listaa';
+
+  @override
+  String get paywallProTier => 'Pro: Rajoittamaton';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Ensimmäinen kohde lisätty! Hieno aloitus 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2121,6 +2200,18 @@ class AppLocalizationsFi extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Oletustyyppi';
 
   @override
+  String get mealPlannerDuplicate => 'Kaksinkertainen ateria';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Kopioi kohteeseen...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Nykyinen päivä';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Ateria kopioitu onnistuneesti!';
+
+  @override
   String get expirationDate => 'Viimeinen voimassaolopäivä';
 
   @override
@@ -2128,6 +2219,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get skip => 'Ohita';
+
+  @override
+  String get onboardingSkip => 'Ohita toistaiseksi';
 
   @override
   String get onboardingAiTitle => 'Keskustele Kipin kanssa';
@@ -3160,6 +3254,31 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Luodaan vastausta…';
+
+  @override
+  String get errorUnexpected =>
+      'Jotain odottamatonta tapahtui. Yritä uudelleen.';
+
+  @override
+  String get aiAssistantTooltip => 'Avaa AI-avustaja';
+
+  @override
+  String get searchItems => 'Etsi kohteita';
+
+  @override
+  String get onboardingHookContinue => 'Aloita';
+
+  @override
+  String get onboardingHookItem1 => 'Grillattua kanaa';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella juusto';
+
+  @override
+  String get onboardingHookItem3 => 'Kirsikkatomaatteja';
+
+  @override
+  String get checkItemTooltip => 'Tarkista kohde';
 }
 
 /// The translations for Finnish, as used in Finland (`fi_FI`).
@@ -3230,6 +3349,32 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get close => 'Sulje';
 
   @override
+  String get help => 'Auttaa';
+
+  @override
+  String get helpListTitle => 'Listan käyttäminen';
+
+  @override
+  String get helpListAddItems =>
+      'Lisää tuotteita alareunan +-painikkeella tai käytä hakua selataksesi tuotteita';
+
+  @override
+  String get helpListAi =>
+      'Pyydä tekoälyavustajaa luomaan, järjestämään tai täydentämään luettelosi – napauta vain kimalluskuvaketta';
+
+  @override
+  String get helpListShoppingMode =>
+      'Ostostila piilottaa ostetut tuotteet, jotta voit keskittyä siihen, mitä on jäljellä';
+
+  @override
+  String get helpListOrganize =>
+      'Järjestä kohteita uudelleen vetämällä, merkitse ostetuiksi pyyhkäisemällä tai käytä suodattimia ja lajittelua';
+
+  @override
+  String get helpListShare =>
+      'Jaa luettelosi perheen kanssa tai vie PDF-, Excel- tai tekstimuodossa';
+
+  @override
   String get import => 'Tuo';
 
   @override
@@ -3240,6 +3385,13 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get clear => 'Tyhjennä';
+
+  @override
+  String get clearPurchasedTitle => 'Tyhjennä ostetut tuotteet';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Poistetaanko kaikki ostetut tuotteet tästä luettelosta? Tätä ei voi kumota.';
 
   @override
   String error(String message) {
@@ -3253,6 +3405,22 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get purchaseError => 'Virhe ostoksen käsittelyssä. Yritä uudelleen.';
+
+  @override
+  String get errorCreateList =>
+      'Luetteloa ei voitu luoda. Tarkista yhteys ja yritä uudelleen.';
+
+  @override
+  String get errorShareCode =>
+      'Virhe luotaessa jakokoodia. Tarkista yhteys ja yritä uudelleen.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kohdetta ei voitu lisätä. Tarkista yhteys ja yritä uudelleen.';
+
+  @override
+  String get errorLoadList =>
+      'Listojasi ei voitu ladata. Aloita luomalla uusi luettelo.';
 
   @override
   String get restoreError => 'Virhe ostosten palauttamisessa. Yritä uudelleen.';
@@ -3639,6 +3807,19 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get noBudgetDefined => 'Budjettia ei asetettu';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Syötä arvo, joka on suurempi kuin nolla';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Sisältää osittaiset hinta-arviot';
+
+  @override
+  String get budgetGoalSaved => 'Budjettitavoite tallennettu';
+
+  @override
+  String get budgetGoalRemoved => 'Budjettitavoite poistettu';
+
+  @override
   String totalEstimated(String amount) {
     return 'Arvioitu yhteensä: $amount';
   }
@@ -3831,6 +4012,13 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get newChat => 'Uusi Chat';
+
+  @override
+  String get newChatConfirmTitle => 'Uusi keskustelu';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Aloitetaanko uusi keskustelu? Nykyinen keskustelusi menetetään.';
 
   @override
   String get noHistory => 'Ei keskusteluhistoriaa';
@@ -4387,6 +4575,16 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Tervetuloa tarjous';
+
+  @override
+  String get paywallFreeTier => 'Ilmainen: 3 listaa';
+
+  @override
+  String get paywallProTier => 'Pro: Rajoittamaton';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Ensimmäinen kohde lisätty! Hieno aloitus 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5278,6 +5476,18 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get mealPlannerDefaultTypeLabel => 'Oletustyyppi';
 
   @override
+  String get mealPlannerDuplicate => 'Kaksinkertainen ateria';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Kopioi kohteeseen...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Nykyinen päivä';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Ateria kopioitu onnistuneesti!';
+
+  @override
   String get expirationDate => 'Viimeinen voimassaolopäivä';
 
   @override
@@ -5285,6 +5495,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get skip => 'Ohita';
+
+  @override
+  String get onboardingSkip => 'Ohita toistaiseksi';
 
   @override
   String get onboardingAiTitle => 'Keskustele Kipin kanssa';
@@ -6317,4 +6530,29 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get aiGeneratingResponse => 'Luodaan vastausta…';
+
+  @override
+  String get errorUnexpected =>
+      'Jotain odottamatonta tapahtui. Yritä uudelleen.';
+
+  @override
+  String get aiAssistantTooltip => 'Avaa AI-avustaja';
+
+  @override
+  String get searchItems => 'Etsi kohteita';
+
+  @override
+  String get onboardingHookContinue => 'Aloita';
+
+  @override
+  String get onboardingHookItem1 => 'Grillattua kanaa';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella juusto';
+
+  @override
+  String get onboardingHookItem3 => 'Kirsikkatomaatteja';
+
+  @override
+  String get checkItemTooltip => 'Tarkista kohde';
 }

@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "Asistent AI",
   "aiAssistantDescription": "Primește sugestii inteligente, rețete și sfaturi personalizate cu asistentul nostru AI.",
   "aiAssistantTitle": "Asistent AI",
+  "aiAssistantTooltip": "Deschideți asistentul AI",
   "aiCapabilitiesBudget": "Buget și prețuri",
   "aiCapabilitiesLists": "Liste de cumpărături",
   "aiCapabilitiesOrganize": "Organizare",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Buget lunar",
   "budgetDashboardTitle": "Tablou de bord",
   "budgetEditTitle": "Buget lunar",
+  "budgetGoalInvalidAmount": "Introduceți o valoare mai mare decât zero",
+  "budgetGoalRemoved": "Obiectivul bugetar a fost eliminat",
+  "budgetGoalSaved": "Obiectivul bugetar a fost salvat",
   "budgetLists": "Liste",
+  "budgetPartialEstimateHint": "~ Include estimări de preț parțiale",
   "budgetPremiumLocked": "Bugetul lunar global este premium",
   "budgetSubtitle": "Urmărește-ți cheltuielile lunare",
   "budgetUpgradePrompt": "Fă upgrade pentru a debloca",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Ești offline",
   "chatSubtitle": "Cere sugestii de articole, rețete sau sfaturi de economisire.",
   "chatSubtitleShort": "Întrebați despre prețuri, rețete, organizare...",
+  "checkItemTooltip": "Verificați elementul",
   "checkingItem": "Se verifică articolul...",
   "checkingPantry": "Îți verific cămara...",
   "checkingSettings": "Se verifică setările...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Șterg toate mesajele din această sesiune?",
   "clearList": "Curăță lista",
   "clearPurchased": "Elimină cumpăratele",
+  "clearPurchasedConfirmMessage": "Eliminați toate articolele achiziționate din această listă? Acest lucru nu poate fi anulat.",
+  "clearPurchasedTitle": "Ștergeți articolele achiziționate",
   "clearingCheckedItems": "Se șterg articolele bifate...",
   "close": "Închide",
   "closeSheet": "Aproape",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Eroare la arhivarea listei: {error}",
   "errorClearingList": "Eroare la ștergerea listei: {error}",
   "errorClearingPurchased": "Eroare la ștergerea articolelor achiziționate: {error}",
+  "errorCreateList": "Nu s-a putut crea lista. Verificați conexiunea și încercați din nou.",
   "errorCreatingList": "Eroare la crearea listei",
   "errorDecreasingQty": "Eroare la scăderea cantității: {error}",
   "errorDeletingList": "Eroare la ștergerea listei: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Eroare: {message}",
   "errorImportingList": "Eroare la importarea listei „{name}”: {error}",
   "errorIncreasingQty": "Eroare la creșterea cantității: {error}",
+  "errorLoadList": "Nu s-au putut încărca listele dvs. Creați o nouă listă pentru a începe.",
   "errorLoadingChat": "Hopa! A apărut o eroare la încărcarea chatului.",
   "errorLoadingChatSubtitle": "Verificați conexiunea sau încercați din nou mai târziu.",
   "errorLoadingHistory": "Eroare la încărcarea istoricului",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Eroare la încărcarea abonamentului",
   "errorOscillation": "Acest lucru poate apărea din cauza oscilațiilor rețelei sau a indisponibilității temporare. Vă rugăm să încercați din nou.",
   "errorProcessingRequest": "Ne pare rău, a apărut o eroare la procesarea solicitării dvs. Verificați conexiunea sau încercați din nou mai târziu.",
+  "errorQuickAdd": "Nu s-a putut adăuga elementul. Verificați conexiunea și încercați din nou.",
   "errorRemovingItem": "Eroare la eliminarea articolului: {error}",
   "errorRemovingItems": "Eroare la eliminarea articolelor: {error}",
   "errorRemovingSharedList": "Eroare la eliminarea listei partajate: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Eroare la salvare: {error}",
   "errorServerConnection": "Eroare la conectarea la server: {error}",
   "errorSettingCurrentList": "Eroare la setarea listei curente: {error}",
+  "errorShareCode": "Eroare la generarea codului de distribuire. Verificați conexiunea și încercați din nou.",
   "errorTogglingItem": "Eroare la comutarea stării articolului: {error}",
   "errorTogglingItems": "Eroare la comutarea articolelor: {error}",
   "errorUnarchivingList": "Eroare la dezarhivarea listei: {error}",
+  "errorUnexpected": "S-a întâmplat ceva neașteptat. Vă rugăm să încercați din nou.",
   "errorUpdatingItem": "Eroare la actualizarea articolului: {error}",
   "errorUpdatingItems": "Eroare la actualizarea articolelor: {error}",
   "errorUpdatingList": "Eroare la actualizarea listei: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Achiziționate",
   "finance": "Finanțe",
   "finishShopping": "Terminați cumpărăturile",
+  "firstItemAddedSnackbar": "Primul articol adăugat! Un început grozav 🛒",
   "gallery": "Galerie",
   "generalAssistant": "Asistent general",
   "generalHelp": "Cum te pot ajuta cu cumpărăturile tale astăzi?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Țineți apăsat pentru a selecta • Glisați pentru a elimina",
   "globalAssistant": "Asistent global",
   "goodResponse": "Bun răspuns",
+  "help": "Ajutor",
+  "helpListAddItems": "Adăugați articole cu butonul + din partea de jos sau utilizați căutarea pentru a căuta produse",
+  "helpListAi": "Cereți asistentului AI să vă creeze, să vă organizeze sau să vă completeze lista - trebuie doar să atingeți pictograma strălucitoare",
+  "helpListOrganize": "Trageți articole pentru a reordona, glisați pentru a marca ca achiziționate sau utilizați filtre și sortare",
+  "helpListShare": "Partajați-vă lista cu familia sau exportați-l ca PDF, Excel sau text simplu",
+  "helpListShoppingMode": "Modul Cumpărături ascunde articolele cumpărate, astfel încât să vă puteți concentra pe ceea ce a mai rămas",
+  "helpListTitle": "Folosind lista dvs",
   "howCanIHelp": "Cum pot ajuta?",
   "icon": "Pictogramă:",
   "idealQty": "Cant. ideală",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Eliminați obiectivul",
   "mealPlannerBudgetTodayCost": "Astăzi: {amount}",
   "mealPlannerBudgetWeekCost": "Săptămâna: {amount}",
+  "mealPlannerCurrentDayLabel": "Ziua curentă",
   "mealPlannerCustomTypeLabel": "Tip personalizat",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Tip implicit",
   "mealPlannerDeleteMeal": "Scoateți masa",
+  "mealPlannerDuplicate": "Mâncare dublată",
+  "mealPlannerDuplicateSuccess": "Masa duplicata cu succes!",
   "mealPlannerEditMeal": "Editați masa",
   "mealPlannerEditType": "Editați tipul de masă",
   "mealPlannerError": "Eroare la încărcarea planului de masă",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Adăugați la plan",
   "mealPlannerSearchRecipes": "Cauta retete...",
+  "mealPlannerSelectDestinationDay": "Duplicați în...",
   "mealPlannerSelectRecipe": "Selectați o rețetă",
   "mealPlannerServings": "{count,plural, one{{count} porții} other{{count} porții}}",
   "mealPlannerServingsLabel": "Porții",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Rețete",
   "newCategoryDialog": "Noua categorie",
   "newChat": "Chat nou",
+  "newChatConfirmMessage": "Începi o nouă conversație? Conversația dvs. curentă se va pierde.",
+  "newChatConfirmTitle": "Conversație nouă",
   "newChatStarted": "A început un nou chat",
   "newListTitle": "Listă nouă de cumpărături",
   "newPantryList": "Cumpărături din cămară",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Cuplu",
   "onboardingGroupFamily": "Familial",
   "onboardingGroupSolo": "Doar eu",
+  "onboardingHookContinue": "Începeți",
   "onboardingHookHeadline": "Nu uita niciodată un produs alimentar din nou",
+  "onboardingHookItem1": "Pui la gratar",
+  "onboardingHookItem2": "Brânză Mozzarella",
+  "onboardingHookItem3": "Roșii cherry",
   "onboardingListCreated": "Lista dvs. este gata: {count} articole organizate pentru dvs.",
   "onboardingListSaveFailed": "Am pregătit articolele, dar nu am putut salva lista. Încercați din nou să îl păstrați în aplicație.",
   "onboardingLoadingStat1Label": "Articole catalogate",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Personalizați-vă experiența",
   "onboardingShareDesc": "Sincronizați listele cu familia și prietenii în timp real",
   "onboardingShareTitle": "Împărtășește cu cei pe care îi iubești",
+  "onboardingSkip": "Sari peste moment",
   "onboardingSlide1Body": "Creați și partajați liste instantaneu. Kipi adaugă automat elemente în funcție de obiceiurile tale.",
   "onboardingSlide1Title": "Liste inteligente de cumpărături",
   "onboardingSlide2Body": "Întrebați orice - creați liste, găsiți rețete, urmăriți-vă cămară, planificați-vă săptămâna.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "AI inteligent",
   "paywallFeatureUnlimitedLists": "Liste nelimitate",
   "paywallFeaturesTitle": "Tot ce ai nevoie:",
+  "paywallFreeTier": "Gratuit: 3 liste",
   "paywallGoalHeadlineFamily": "{name}, organizează cumpărăturile în familie!",
   "paywallGoalHeadlineFaster": "{name}, cumpără în jumătate din timp!",
   "paywallGoalHeadlineNeverForget": "{name}, nu uita niciodată un articol!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "Doar {price}/zi — mai puțin de o cafea",
   "paywallPricePerMonth": "Doar {price}/lună",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Nelimitat",
   "paywallPurchaseError": "Nu s-a putut finaliza achiziția. Încearcă din nou.",
   "paywallPurchasePending": "Plata dvs. este în așteptarea aprobării. Accesul va fi eliberat automat după confirmare.",
   "paywallRestore": "Restabili",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Căutați conversații",
   "searchCurrency": "Caută moneda...",
   "searchInConversation": "Căutați în conversație...",
+  "searchItems": "Căutați articole",
   "searchLanguage": "Căutați limba...",
   "searchMessages": "Căutați mesaje...",
   "searchRecipes": "Cauta retete...",

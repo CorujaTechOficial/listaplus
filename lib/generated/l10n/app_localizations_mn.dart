@@ -72,6 +72,32 @@ class AppLocalizationsMn extends AppLocalizations {
   String get close => 'Хаах';
 
   @override
+  String get help => 'Туслаач';
+
+  @override
+  String get helpListTitle => 'Таны жагсаалтыг ашиглаж байна';
+
+  @override
+  String get helpListAddItems =>
+      'Доод талд байгаа + товчийг ашиглан бараа нэмэх эсвэл хайлтыг ашиглан бүтээгдэхүүнүүдийг үзэх боломжтой';
+
+  @override
+  String get helpListAi =>
+      'AI туслахаас жагсаалтаа үүсгэх, цэгцлэх, дуусгахыг хүсээрэй - гялалзсан дүрс дээр товшино уу';
+
+  @override
+  String get helpListShoppingMode =>
+      'Худалдан авалтын горим нь худалдан авсан зүйлсийг нуудаг тул үлдсэн зүйлд анхаарлаа төвлөрүүлэх боломжтой';
+
+  @override
+  String get helpListOrganize =>
+      'Зүйлүүдийг дахин эрэмбэлэхийн тулд чирж, худалдаж авсан гэж тэмдэглэхийн тулд шударна уу, эсвэл шүүлтүүр, эрэмбэ ашиглана уу';
+
+  @override
+  String get helpListShare =>
+      'Жагсаалтаа гэр бүлийнхэнтэйгээ хуваалцах эсвэл PDF, Excel эсвэл энгийн текст хэлбэрээр экспортлох';
+
+  @override
   String get import => 'Импортлох';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get clear => 'Цэвэрлэх';
+
+  @override
+  String get clearPurchasedTitle => 'Худалдан авсан зүйлсийг арилгах';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Энэ жагсаалтаас худалдаж авсан бүх зүйлийг устгах уу? Үүнийг буцаах боломжгүй.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsMn extends AppLocalizations {
   @override
   String get purchaseError =>
       'Худалдан авалтыг боловсруулахад алдаа гарлаа. Дахин оролдоно уу.';
+
+  @override
+  String get errorCreateList =>
+      'Жагсаалтыг үүсгэж чадсангүй. Холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get errorShareCode =>
+      'Хуваалцах код үүсгэхэд алдаа гарлаа. Холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get errorQuickAdd =>
+      'Зүйлийг нэмж чадсангүй. Холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get errorLoadList =>
+      'Таны жагсаалтыг ачаалж чадсангүй. Эхлэхийн тулд шинэ жагсаалт үүсгэнэ үү.';
 
   @override
   String get restoreError =>
@@ -490,6 +539,19 @@ class AppLocalizationsMn extends AppLocalizations {
   String get noBudgetDefined => 'Төсөв тогтоогоогүй';
 
   @override
+  String get budgetGoalInvalidAmount => 'Тэгээс их утгыг оруулна уу';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Хэсэгчилсэн үнийн тооцооллыг багтаасан болно';
+
+  @override
+  String get budgetGoalSaved => 'Төсвийн зорилго хэмнэгдсэн';
+
+  @override
+  String get budgetGoalRemoved => 'Төсвийн зорилтыг хассан';
+
+  @override
   String totalEstimated(String amount) {
     return 'Нийт тооцоолол: $amount';
   }
@@ -682,6 +744,13 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get newChat => 'Шинэ чат';
+
+  @override
+  String get newChatConfirmTitle => 'Шинэ яриа';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Шинэ харилцан яриа эхлүүлэх үү? Таны одоогийн харилцан яриа устах болно.';
 
   @override
   String get noHistory => 'Чатын түүх байхгүй';
@@ -1240,6 +1309,16 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Тавтай морилно уу';
+
+  @override
+  String get paywallFreeTier => 'Үнэгүй: 3 жагсаалт';
+
+  @override
+  String get paywallProTier => 'Давуу тал: Хязгааргүй';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Эхний зүйл нэмэгдсэн! Гайхалтай эхлэл 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2141,6 +2220,18 @@ class AppLocalizationsMn extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Өгөгдмөл төрөл';
 
   @override
+  String get mealPlannerDuplicate => 'Давхардсан хоол';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Хуулбарлах...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Одоогийн өдөр';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Хоолыг амжилттай хуулбарлав!';
+
+  @override
   String get expirationDate => 'Хугацаа дуусах хугацаа';
 
   @override
@@ -2148,6 +2239,9 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get skip => 'Алгасах';
+
+  @override
+  String get onboardingSkip => 'Одоохондоо алгасая';
 
   @override
   String get onboardingAiTitle => 'Kipi-тэй чатлах';
@@ -3193,6 +3287,30 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Хариулт үүсгэж байна...';
+
+  @override
+  String get errorUnexpected => 'Гэнэтийн зүйл тохиолдов. Дахин оролдоно уу.';
+
+  @override
+  String get aiAssistantTooltip => 'AI туслахыг нээх';
+
+  @override
+  String get searchItems => 'Зүйлс хайх';
+
+  @override
+  String get onboardingHookContinue => 'Эхлэх';
+
+  @override
+  String get onboardingHookItem1 => 'Шарсан тахиа';
+
+  @override
+  String get onboardingHookItem2 => 'Моцарелла бяслаг';
+
+  @override
+  String get onboardingHookItem3 => 'Интоорын улаан лооль';
+
+  @override
+  String get checkItemTooltip => 'Зүйлийг шалгана уу';
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).
@@ -3263,6 +3381,32 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get close => 'Хаах';
 
   @override
+  String get help => 'Туслаач';
+
+  @override
+  String get helpListTitle => 'Таны жагсаалтыг ашиглаж байна';
+
+  @override
+  String get helpListAddItems =>
+      'Доод талд байгаа + товчийг ашиглан бараа нэмэх эсвэл хайлтыг ашиглан бүтээгдэхүүнүүдийг үзэх боломжтой';
+
+  @override
+  String get helpListAi =>
+      'AI туслахаас жагсаалтаа үүсгэх, цэгцлэх, дуусгахыг хүсээрэй - гялалзсан дүрс дээр товшино уу';
+
+  @override
+  String get helpListShoppingMode =>
+      'Худалдан авалтын горим нь худалдан авсан зүйлсийг нуудаг тул үлдсэн зүйлд анхаарлаа төвлөрүүлэх боломжтой';
+
+  @override
+  String get helpListOrganize =>
+      'Зүйлүүдийг дахин эрэмбэлэхийн тулд чирж, худалдаж авсан гэж тэмдэглэхийн тулд шударна уу, эсвэл шүүлтүүр, эрэмбэ ашиглана уу';
+
+  @override
+  String get helpListShare =>
+      'Жагсаалтаа гэр бүлийнхэнтэйгээ хуваалцах эсвэл PDF, Excel эсвэл энгийн текст хэлбэрээр экспортлох';
+
+  @override
   String get import => 'Импортлох';
 
   @override
@@ -3273,6 +3417,13 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get clear => 'Цэвэрлэх';
+
+  @override
+  String get clearPurchasedTitle => 'Худалдан авсан зүйлсийг арилгах';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Энэ жагсаалтаас худалдаж авсан бүх зүйлийг устгах уу? Үүнийг буцаах боломжгүй.';
 
   @override
   String error(String message) {
@@ -3287,6 +3438,22 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   @override
   String get purchaseError =>
       'Худалдан авалтыг боловсруулахад алдаа гарлаа. Дахин оролдоно уу.';
+
+  @override
+  String get errorCreateList =>
+      'Жагсаалтыг үүсгэж чадсангүй. Холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get errorShareCode =>
+      'Хуваалцах код үүсгэхэд алдаа гарлаа. Холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get errorQuickAdd =>
+      'Зүйлийг нэмж чадсангүй. Холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get errorLoadList =>
+      'Таны жагсаалтыг ачаалж чадсангүй. Эхлэхийн тулд шинэ жагсаалт үүсгэнэ үү.';
 
   @override
   String get restoreError =>
@@ -3675,6 +3842,19 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get noBudgetDefined => 'Төсөв тогтоогдоогүй';
 
   @override
+  String get budgetGoalInvalidAmount => 'Тэгээс их утгыг оруулна уу';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Хэсэгчилсэн үнийн тооцооллыг багтаасан болно';
+
+  @override
+  String get budgetGoalSaved => 'Төсвийн зорилго хэмнэгдсэн';
+
+  @override
+  String get budgetGoalRemoved => 'Төсвийн зорилтыг хассан';
+
+  @override
   String totalEstimated(String amount) {
     return 'Нийт тооцоолсон: $amount';
   }
@@ -3867,6 +4047,13 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get newChat => 'Шинэ чат';
+
+  @override
+  String get newChatConfirmTitle => 'Шинэ яриа';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Шинэ харилцан яриа эхлүүлэх үү? Таны одоогийн харилцан яриа устах болно.';
 
   @override
   String get noHistory => 'Чатын түүх байхгүй';
@@ -4425,6 +4612,16 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Тавтай морилно уу';
+
+  @override
+  String get paywallFreeTier => 'Үнэгүй: 3 жагсаалт';
+
+  @override
+  String get paywallProTier => 'Давуу тал: Хязгааргүй';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Эхний зүйл нэмэгдсэн! Гайхалтай эхлэл 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5320,6 +5517,18 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get mealPlannerDefaultTypeLabel => 'Өгөгдмөл төрөл';
 
   @override
+  String get mealPlannerDuplicate => 'Давхардсан хоол';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Хуулбарлах...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Одоогийн өдөр';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Хоолыг амжилттай хуулбарлав!';
+
+  @override
   String get expirationDate => 'Хугацаа дуусах хугацаа';
 
   @override
@@ -5327,6 +5536,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get skip => 'Алгасах';
+
+  @override
+  String get onboardingSkip => 'Одоохондоо алгасая';
 
   @override
   String get onboardingAiTitle => 'Kipi-тэй чатлах';
@@ -6372,4 +6584,28 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get aiGeneratingResponse => 'Хариулт үүсгэж байна...';
+
+  @override
+  String get errorUnexpected => 'Гэнэтийн зүйл тохиолдов. Дахин оролдоно уу.';
+
+  @override
+  String get aiAssistantTooltip => 'AI туслахыг нээх';
+
+  @override
+  String get searchItems => 'Зүйлс хайх';
+
+  @override
+  String get onboardingHookContinue => 'Эхлэх';
+
+  @override
+  String get onboardingHookItem1 => 'Шарсан тахиа';
+
+  @override
+  String get onboardingHookItem2 => 'Моцарелла бяслаг';
+
+  @override
+  String get onboardingHookItem3 => 'Интоорын улаан лооль';
+
+  @override
+  String get checkItemTooltip => 'Зүйлийг шалгана уу';
 }

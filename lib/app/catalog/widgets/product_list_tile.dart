@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/app/catalog/models/catalog_product.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ProductListTile extends StatelessWidget {
   const ProductListTile({
@@ -74,7 +75,7 @@ class ProductListTile extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(
-                                  Icons.star_outline,
+                                  PhosphorIconsRegular.star,
                                   size: 10,
                                   color: theme.colorScheme.onSecondaryContainer,
                                 ),
@@ -116,7 +117,7 @@ class ProductListTile extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 _CounterButton(
-                  icon: Icons.remove,
+                  icon: PhosphorIconsRegular.minus,
                   onPressed: quantity > 0 ? onDecrement : null,
                   color: theme.colorScheme.onSurface,
                 ),
@@ -134,7 +135,7 @@ class ProductListTile extends StatelessWidget {
                   ),
                 ),
                 _CounterButton(
-                  icon: Icons.add,
+                  icon: PhosphorIconsRegular.plus,
                   onPressed: onIncrement,
                   color: theme.colorScheme.primary,
                   filled: true,

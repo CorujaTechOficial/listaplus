@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -497,6 +542,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -838,8 +889,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -975,6 +1038,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1378,6 +1444,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1499,6 +1568,7 @@
   "aiAssistantGeneral": "دستیار عمومی",
   "aiAssistantHistory": "تاریخچه دستیار",
   "aiAssistantTitle": "دستیار هوش مصنوعی",
+  "aiAssistantTooltip": "دستیار هوش مصنوعی را باز کنید",
   "aiCapabilitiesBudget": "بودجه و قیمت ها",
   "aiCapabilitiesLists": "لیست های خرید",
   "aiCapabilitiesOrganize": "سازمان",
@@ -1585,7 +1655,11 @@
   "budgetAppBar": "بودجه ماهانه",
   "budgetDashboardTitle": "داشبورد",
   "budgetEditTitle": "بودجه ماهانه",
+  "budgetGoalInvalidAmount": "مقداری بزرگتر از صفر وارد کنید",
+  "budgetGoalRemoved": "هدف بودجه حذف شد",
+  "budgetGoalSaved": "هدف بودجه ذخیره شد",
   "budgetLists": "لیست‌ها",
+  "budgetPartialEstimateHint": "~ شامل برآوردهای قیمت جزئی است",
   "budgetPremiumLocked": "بودجه ماهانه سراسری یک ویژگی پریمیوم است",
   "budgetSubtitle": "هزینه‌های ماهانه خود را پیگیری کنید",
   "budgetUpgradePrompt": "برای باز کردن قفل ارتقا دهید",
@@ -1653,6 +1727,7 @@
   "chatHistoryOfflineTitle": "شما آفلاین هستید",
   "chatSubtitle": "برای پیشنهاد آیتم، دستور پخت یا نکات صرفه‌جویی بپرسید.",
   "chatSubtitleShort": "در مورد قیمت ها، دستور العمل ها، سازماندهی بپرسید...",
+  "checkItemTooltip": "مورد را بررسی کنید",
   "chooseCurrency": "ارز را انتخاب کنید",
   "chooseIcon": "نماد را انتخاب کنید",
   "chooseImageSource": "انتخاب منبع تصویر",
@@ -1664,6 +1739,8 @@
   "clearHistoryConfirm": "همه پیام‌های این جلسه پاک شود؟",
   "clearList": "پاک کردن لیست",
   "clearPurchased": "پاک کردن خریداری‌شده‌ها",
+  "clearPurchasedConfirmMessage": "همه موارد خریداری شده از این لیست حذف شود؟ این قابل واگرد نیست.",
+  "clearPurchasedTitle": "موارد خریداری شده را پاک کنید",
   "close": "بستن",
   "closeSheet": "بستن",
   "complete": "تکمیل",
@@ -1752,7 +1829,9 @@
   "enterCodeHint": "کد را وارد کنید",
   "enterUrl": "ورود نشانی اینترنتی",
   "error": "خطا: {message}",
+  "errorCreateList": "لیست ایجاد نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.",
   "errorGeneric": "خطا: {message}",
+  "errorLoadList": "لیست های شما بارگیری نشد. لطفا برای شروع یک لیست جدید ایجاد کنید.",
   "errorLoadingChat": "اوه! هنگام بارگیری گپ مشکلی پیش آمد.",
   "errorLoadingChatSubtitle": "اتصال خود را بررسی کنید یا بعداً دوباره امتحان کنید.",
   "errorLoadingHistory": "خطا در بارگیری تاریخچه",
@@ -1761,7 +1840,10 @@
   "errorLoadingRecipes": "خطا در بارگذاری دستورهای پخت",
   "errorLoadingSubscription": "خطا در بارگیری اشتراک",
   "errorOscillation": "این ممکن است به دلیل نوسانات شبکه یا در دسترس نبودن موقت رخ دهد. لطفا دوباره امتحان کنید.",
+  "errorQuickAdd": "مورد اضافه نشد. اتصال خود را بررسی کنید و دوباره امتحان کنید.",
   "errorSavingProfile": "خطا در ذخیره نمایه",
+  "errorShareCode": "خطا در ایجاد کد اشتراک. اتصال خود را بررسی کنید و دوباره امتحان کنید.",
+  "errorUnexpected": "اتفاق غیرمنتظره ای افتاد. لطفا دوباره امتحان کنید.",
   "estimated": "تخمینی",
   "estimatedCost": "برآورد شده است",
   "estimatedPrice": "قیمت تخمینی",
@@ -1803,6 +1885,7 @@
   "filterPurchased": "خریداری شده",
   "finance": "مالی",
   "finishShopping": "خرید را تمام کنید",
+  "firstItemAddedSnackbar": "اولین مورد اضافه شد! شروع عالی 🛒",
   "gallery": "گالری",
   "generalAssistant": "دستیار عمومی",
   "generalHelp": "امروز چگونه می‌توانم در خرید شما کمک کنم؟",
@@ -1810,6 +1893,13 @@
   "gestureHint": "برای انتخاب نگه دارید • برای حذف، انگشت خود را تند بکشید",
   "globalAssistant": "دستیار عمومی",
   "goodResponse": "پاسخ خوب",
+  "help": "کمک کنید",
+  "helpListAddItems": "موارد را با دکمه + در پایین اضافه کنید یا از جستجو برای مرور محصولات استفاده کنید",
+  "helpListAi": "از دستیار هوش مصنوعی بخواهید فهرست شما را ایجاد، سازماندهی یا تکمیل کند — فقط روی نماد درخشش ضربه بزنید",
+  "helpListOrganize": "موارد را برای مرتب کردن مجدد بکشید، برای علامت گذاری به عنوان خریداری شده انگشت خود را بکشید، یا از فیلترها و مرتب سازی استفاده کنید",
+  "helpListShare": "لیست خود را با خانواده به اشتراک بگذارید یا به صورت PDF، Excel یا متن ساده صادر کنید",
+  "helpListShoppingMode": "حالت خرید اقلام خریداری شده را پنهان می کند تا بتوانید روی آنچه باقی مانده تمرکز کنید",
+  "helpListTitle": "با استفاده از لیست شما",
   "howCanIHelp": "چگونه می توانم کمک کنم؟",
   "idealQty": "مقدار ایده‌آل",
   "idealQuantity": "مقدار ایده‌آل",
@@ -1892,10 +1982,13 @@
   "mealPlannerBudgetRemoveGoal": "حذف هدف",
   "mealPlannerBudgetTodayCost": "امروز: {amount}",
   "mealPlannerBudgetWeekCost": "هفته: {amount}",
+  "mealPlannerCurrentDayLabel": "روز جاری",
   "mealPlannerCustomTypeLabel": "نوع سفارشی",
   "mealPlannerDateLabel": "تاریخ",
   "mealPlannerDefaultTypeLabel": "نوع پیش فرض",
   "mealPlannerDeleteMeal": "حذف وعده غذایی",
+  "mealPlannerDuplicate": "وعده غذایی تکراری",
+  "mealPlannerDuplicateSuccess": "وعده غذایی با موفقیت تکرار شد!",
   "mealPlannerEditMeal": "ویرایش وعده غذایی",
   "mealPlannerEditType": "نوع غذا را ویرایش کنید",
   "mealPlannerError": "خطا در بارگذاری برنامه غذایی",
@@ -1922,6 +2015,7 @@
   "mealPlannerPrepTime": "{minutes} دقیقه",
   "mealPlannerSave": "افزودن به برنامه",
   "mealPlannerSearchRecipes": "جستجوی دستورهای پخت...",
+  "mealPlannerSelectDestinationDay": "کپی به ...",
   "mealPlannerSelectRecipe": "یک دستور پخت انتخاب کنید",
   "mealPlannerServings": "{count,plural, one{{count} نفر} other{{count} نفر}}",
   "mealPlannerServingsLabel": "تعداد نفرات",
@@ -1953,6 +2047,8 @@
   "navRecipes": "دستور العمل ها",
   "newCategoryDialog": "دسته بندی جدید",
   "newChat": "چت جدید",
+  "newChatConfirmMessage": "مکالمه جدیدی را شروع کنید؟ مکالمه فعلی شما از بین خواهد رفت.",
+  "newChatConfirmTitle": "گفتگوی جدید",
   "newChatStarted": "چت جدید شروع شد",
   "newListTitle": "لیست خرید جدید",
   "newPantryList": "خرید از انباری",
@@ -2091,7 +2187,11 @@
   "onboardingGroupCouple": "زوج",
   "onboardingGroupFamily": "خانواده",
   "onboardingGroupSolo": "فقط من",
+  "onboardingHookContinue": "شروع کنید",
   "onboardingHookHeadline": "هرگز یک اقلام مواد غذایی را فراموش نکنید",
+  "onboardingHookItem1": "مرغ کبابی",
+  "onboardingHookItem2": "پنیر موزارلا",
+  "onboardingHookItem3": "گوجه گیلاسی",
   "onboardingListCreated": "فهرست شما آماده است: {count} مورد برای شما سازماندهی شده است.",
   "onboardingListSaveFailed": "من موارد را آماده کردم، اما نتوانستم لیست را ذخیره کنم. دوباره سعی کنید آن را در برنامه نگه دارید.",
   "onboardingLoadingStat1Label": "اقلام فهرست بندی شده",
@@ -2138,6 +2238,7 @@
   "onboardingSetupTitle": "تجربه خود را شخصی کنید",
   "onboardingShareDesc": "همگام سازی لیست ها با خانواده و دوستان در زمان واقعی",
   "onboardingShareTitle": "با کسانی که دوستشان دارید به اشتراک بگذارید",
+  "onboardingSkip": "فعلا رد شوید",
   "onboardingSlide1Body": "فورا لیست ها را ایجاد و به اشتراک بگذارید. Kipi موارد را به طور خودکار بر اساس عادات شما اضافه می کند.",
   "onboardingSlide1Title": "لیست های خرید هوشمند",
   "onboardingSlide2Body": "هر چیزی بپرسید - فهرست‌ها را ایجاد کنید، دستور العمل‌ها را بیابید، انبار خود را دنبال کنید، هفته خود را برنامه‌ریزی کنید.",
@@ -2218,6 +2319,7 @@
   "paywallFeatureSmartAI": "هوش مصنوعی هوشمند",
   "paywallFeatureUnlimitedLists": "لیست های نامحدود",
   "paywallFeaturesTitle": "هر چیزی که نیاز دارید:",
+  "paywallFreeTier": "رایگان: 3 لیست",
   "paywallGoalHeadlineFamily": "{name}، خرید خانوادگی را سازماندهی کنید!",
   "paywallGoalHeadlineFaster": "{name}، در نصف زمان خرید کنید!",
   "paywallGoalHeadlineNeverForget": "{name}، هرگز یک مورد را فراموش نکنید!",
@@ -2247,6 +2349,7 @@
   "paywallPricePerDay": "فقط {price} در روز - کمتر از یک قهوه",
   "paywallPricePerMonth": "فقط {price}/ماه",
   "paywallProLabel": "PRO",
+  "paywallProTier": "حرفه ای: نامحدود",
   "paywallPurchaseError": "خرید کامل نشد. دوباره امتحان کنید.",
   "paywallPurchasePending": "پرداخت شما در انتظار تایید است. دسترسی پس از تایید به صورت خودکار آزاد می شود.",
   "paywallRestore": "بازیابی کنید",
@@ -2374,6 +2477,7 @@
   "searchConversations": "جستجوی مکالمات",
   "searchCurrency": "جستجوی ارز...",
   "searchInConversation": "جستجو در گفتگو...",
+  "searchItems": "موارد را جستجو کنید",
   "searchLanguage": "جستجوی زبان...",
   "searchMessages": "جستجوی پیام ها...",
   "searchRecipes": "جستجوی دستورهای پخت...",

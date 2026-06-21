@@ -72,6 +72,32 @@ class AppLocalizationsKn extends AppLocalizations {
   String get close => 'ಮುಚ್ಚಿ';
 
   @override
+  String get help => 'ಸಹಾಯ';
+
+  @override
+  String get helpListTitle => 'ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ಬಳಸುವುದು';
+
+  @override
+  String get helpListAddItems =>
+      'ಕೆಳಭಾಗದಲ್ಲಿರುವ + ಬಟನ್‌ನೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಸೇರಿಸಿ ಅಥವಾ ಉತ್ಪನ್ನಗಳನ್ನು ಬ್ರೌಸ್ ಮಾಡಲು ಹುಡುಕಾಟವನ್ನು ಬಳಸಿ';
+
+  @override
+  String get helpListAi =>
+      'ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು, ಸಂಘಟಿಸಲು ಅಥವಾ ಪೂರ್ಣಗೊಳಿಸಲು AI ಸಹಾಯಕರನ್ನು ಕೇಳಿ - ಕೇವಲ ಸ್ಪಾರ್ಕ್ಲ್ ಐಕಾನ್ ಅನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ';
+
+  @override
+  String get helpListShoppingMode =>
+      'ಶಾಪಿಂಗ್ ಮೋಡ್ ಖರೀದಿಸಿದ ವಸ್ತುಗಳನ್ನು ಮರೆಮಾಚುತ್ತದೆ ಆದ್ದರಿಂದ ನೀವು ಉಳಿದಿರುವ ವಿಷಯಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಬಹುದು';
+
+  @override
+  String get helpListOrganize =>
+      'ಮರುಕ್ರಮಗೊಳಿಸಲು ಐಟಂಗಳನ್ನು ಎಳೆಯಿರಿ, ಖರೀದಿಸಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಲು ಸ್ವೈಪ್ ಮಾಡಿ ಅಥವಾ ಫಿಲ್ಟರ್‌ಗಳನ್ನು ಬಳಸಿ ಮತ್ತು ವಿಂಗಡಿಸಿ';
+
+  @override
+  String get helpListShare =>
+      'ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ಕುಟುಂಬದೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ ಅಥವಾ PDF, Excel ಅಥವಾ ಸರಳ ಪಠ್ಯದಂತೆ ರಫ್ತು ಮಾಡಿ';
+
+  @override
   String get import => 'ಆಮದು ಮಾಡಿ';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get clear => 'ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get clearPurchasedTitle => 'ಖರೀದಿಸಿದ ವಸ್ತುಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ಈ ಪಟ್ಟಿಯಿಂದ ಖರೀದಿಸಿದ ಎಲ್ಲಾ ವಸ್ತುಗಳನ್ನು ತೆಗೆದುಹಾಕುವುದೇ? ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get purchaseError => 'ಖರೀದಿ ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿ ದೋಷ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorCreateList =>
+      'ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorShareCode =>
+      'ಹಂಚಿಕೆ ಕೋಡ್ ರಚಿಸುವಲ್ಲಿ ದೋಷ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorQuickAdd =>
+      'ಐಟಂ ಸೇರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorLoadList =>
+      'ನಿಮ್ಮ ಪಟ್ಟಿಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಪ್ರಾರಂಭಿಸಲು ದಯವಿಟ್ಟು ಹೊಸ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ.';
 
   @override
   String get restoreError =>
@@ -488,6 +537,19 @@ class AppLocalizationsKn extends AppLocalizations {
   String get noBudgetDefined => 'ಯಾವುದೇ ಬಜೆಟ್ ಹೊಂದಿಸಿಲ್ಲ';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'ಶೂನ್ಯಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಮೌಲ್ಯವನ್ನು ನಮೂದಿಸಿ';
+
+  @override
+  String get budgetPartialEstimateHint => '~ ಭಾಗಶಃ ಬೆಲೆ ಅಂದಾಜುಗಳನ್ನು ಒಳಗೊಂಡಿದೆ';
+
+  @override
+  String get budgetGoalSaved => 'ಬಜೆಟ್ ಗುರಿಯನ್ನು ಉಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String get budgetGoalRemoved => 'ಬಜೆಟ್ ಗುರಿಯನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ';
+
+  @override
   String totalEstimated(String amount) {
     return 'ಒಟ್ಟು ಅಂದಾಜು: $amount';
   }
@@ -679,6 +741,13 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get newChat => 'ಹೊಸ ಚಾಟ್';
+
+  @override
+  String get newChatConfirmTitle => 'ಹೊಸ ಸಂಭಾಷಣೆ';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ಹೊಸ ಸಂಭಾಷಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸುವುದೇ? ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಸಂಭಾಷಣೆ ಕಳೆದುಹೋಗುತ್ತದೆ.';
 
   @override
   String get noHistory => 'ಯಾವುದೇ ಚಾಟ್ ಇತಿಹಾಸವಿಲ್ಲ';
@@ -1242,6 +1311,15 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ಸ್ವಾಗತ ಕೊಡುಗೆ';
+
+  @override
+  String get paywallFreeTier => 'ಉಚಿತ: 3 ಪಟ್ಟಿಗಳು';
+
+  @override
+  String get paywallProTier => 'ಪರ: ಅನಿಯಮಿತ';
+
+  @override
+  String get firstItemAddedSnackbar => 'ಮೊದಲ ಐಟಂ ಸೇರಿಸಲಾಗಿದೆ! ಉತ್ತಮ ಆರಂಭ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2138,6 +2216,19 @@ class AppLocalizationsKn extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ಡೀಫಾಲ್ಟ್ ಪ್ರಕಾರ';
 
   @override
+  String get mealPlannerDuplicate => 'ನಕಲಿ ಊಟ';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ಇದಕ್ಕೆ ನಕಲು...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ಪ್ರಸ್ತುತ ದಿನ';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'ಊಟವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನಕಲು ಮಾಡಲಾಗಿದೆ!';
+
+  @override
   String get expirationDate => 'ಮುಕ್ತಾಯ ದಿನಾಂಕ';
 
   @override
@@ -2145,6 +2236,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get skip => 'ಬಿಟ್ಟುಬಿಡಿ';
+
+  @override
+  String get onboardingSkip => 'ಸದ್ಯಕ್ಕೆ ಬಿಟ್ಟುಬಿಡಿ';
 
   @override
   String get onboardingAiTitle => 'ಕಿಪಿ ಜೊತೆ ಚಾಟ್ ಮಾಡಿ';
@@ -3201,6 +3295,31 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ...';
+
+  @override
+  String get errorUnexpected =>
+      'ಅನಿರೀಕ್ಷಿತವಾಗಿ ಏನೋ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get aiAssistantTooltip => 'AI ಸಹಾಯಕ ತೆರೆಯಿರಿ';
+
+  @override
+  String get searchItems => 'ಐಟಂಗಳನ್ನು ಹುಡುಕಿ';
+
+  @override
+  String get onboardingHookContinue => 'ಪ್ರಾರಂಭಿಸಿ';
+
+  @override
+  String get onboardingHookItem1 => 'ಸುಟ್ಟ ಕೋಳಿ';
+
+  @override
+  String get onboardingHookItem2 => 'ಮೊಝ್ಝಾರೆಲ್ಲಾ ಚೀಸ್';
+
+  @override
+  String get onboardingHookItem3 => 'ಚೆರ್ರಿ ಟೊಮ್ಯಾಟೊ';
+
+  @override
+  String get checkItemTooltip => 'ಐಟಂ ಪರಿಶೀಲಿಸಿ';
 }
 
 /// The translations for Kannada, as used in India (`kn_IN`).
@@ -3271,6 +3390,32 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   String get close => 'ಮುಚ್ಚಿ';
 
   @override
+  String get help => 'ಸಹಾಯ';
+
+  @override
+  String get helpListTitle => 'ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ಬಳಸುವುದು';
+
+  @override
+  String get helpListAddItems =>
+      'ಕೆಳಭಾಗದಲ್ಲಿರುವ + ಬಟನ್‌ನೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಸೇರಿಸಿ ಅಥವಾ ಉತ್ಪನ್ನಗಳನ್ನು ಬ್ರೌಸ್ ಮಾಡಲು ಹುಡುಕಾಟವನ್ನು ಬಳಸಿ';
+
+  @override
+  String get helpListAi =>
+      'ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು, ಸಂಘಟಿಸಲು ಅಥವಾ ಪೂರ್ಣಗೊಳಿಸಲು AI ಸಹಾಯಕರನ್ನು ಕೇಳಿ - ಕೇವಲ ಸ್ಪಾರ್ಕ್ಲ್ ಐಕಾನ್ ಅನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ';
+
+  @override
+  String get helpListShoppingMode =>
+      'ಶಾಪಿಂಗ್ ಮೋಡ್ ಖರೀದಿಸಿದ ವಸ್ತುಗಳನ್ನು ಮರೆಮಾಚುತ್ತದೆ ಆದ್ದರಿಂದ ನೀವು ಉಳಿದಿರುವ ವಿಷಯಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಬಹುದು';
+
+  @override
+  String get helpListOrganize =>
+      'ಮರುಕ್ರಮಗೊಳಿಸಲು ಐಟಂಗಳನ್ನು ಎಳೆಯಿರಿ, ಖರೀದಿಸಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಲು ಸ್ವೈಪ್ ಮಾಡಿ ಅಥವಾ ಫಿಲ್ಟರ್‌ಗಳನ್ನು ಬಳಸಿ ಮತ್ತು ವಿಂಗಡಿಸಿ';
+
+  @override
+  String get helpListShare =>
+      'ನಿಮ್ಮ ಪಟ್ಟಿಯನ್ನು ಕುಟುಂಬದೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ ಅಥವಾ PDF, Excel ಅಥವಾ ಸರಳ ಪಠ್ಯದಂತೆ ರಫ್ತು ಮಾಡಿ';
+
+  @override
   String get import => 'ಆಮದು ಮಾಡಿ';
 
   @override
@@ -3281,6 +3426,13 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get clear => 'ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get clearPurchasedTitle => 'ಖರೀದಿಸಿದ ವಸ್ತುಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ಈ ಪಟ್ಟಿಯಿಂದ ಖರೀದಿಸಿದ ಎಲ್ಲಾ ವಸ್ತುಗಳನ್ನು ತೆಗೆದುಹಾಕುವುದೇ? ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.';
 
   @override
   String error(String message) {
@@ -3294,6 +3446,22 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get purchaseError => 'ಖರೀದಿ ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿ ದೋಷ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorCreateList =>
+      'ಪಟ್ಟಿಯನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorShareCode =>
+      'ಹಂಚಿಕೆ ಕೋಡ್ ರಚಿಸುವಲ್ಲಿ ದೋಷ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorQuickAdd =>
+      'ಐಟಂ ಸೇರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get errorLoadList =>
+      'ನಿಮ್ಮ ಪಟ್ಟಿಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಪ್ರಾರಂಭಿಸಲು ದಯವಿಟ್ಟು ಹೊಸ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ.';
 
   @override
   String get restoreError =>
@@ -3687,6 +3855,19 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   String get noBudgetDefined => 'ಯಾವುದೇ ಬಜೆಟ್ ಹೊಂದಿಸಿಲ್ಲ';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'ಶೂನ್ಯಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಮೌಲ್ಯವನ್ನು ನಮೂದಿಸಿ';
+
+  @override
+  String get budgetPartialEstimateHint => '~ ಭಾಗಶಃ ಬೆಲೆ ಅಂದಾಜುಗಳನ್ನು ಒಳಗೊಂಡಿದೆ';
+
+  @override
+  String get budgetGoalSaved => 'ಬಜೆಟ್ ಗುರಿಯನ್ನು ಉಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String get budgetGoalRemoved => 'ಬಜೆಟ್ ಗುರಿಯನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ';
+
+  @override
   String totalEstimated(String amount) {
     return 'ಒಟ್ಟು ಅಂದಾಜು: $amount';
   }
@@ -3878,6 +4059,13 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get newChat => 'ಹೊಸ ಚಾಟ್';
+
+  @override
+  String get newChatConfirmTitle => 'ಹೊಸ ಸಂಭಾಷಣೆ';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ಹೊಸ ಸಂಭಾಷಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸುವುದೇ? ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಸಂಭಾಷಣೆ ಕಳೆದುಹೋಗುತ್ತದೆ.';
 
   @override
   String get noHistory => 'ಯಾವುದೇ ಚಾಟ್ ಇತಿಹಾಸವಿಲ್ಲ';
@@ -4441,6 +4629,15 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ಸ್ವಾಗತ ಕೊಡುಗೆ';
+
+  @override
+  String get paywallFreeTier => 'ಉಚಿತ: 3 ಪಟ್ಟಿಗಳು';
+
+  @override
+  String get paywallProTier => 'ಪರ: ಅನಿಯಮಿತ';
+
+  @override
+  String get firstItemAddedSnackbar => 'ಮೊದಲ ಐಟಂ ಸೇರಿಸಲಾಗಿದೆ! ಉತ್ತಮ ಆರಂಭ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5337,6 +5534,19 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   String get mealPlannerDefaultTypeLabel => 'ಡೀಫಾಲ್ಟ್ ಪ್ರಕಾರ';
 
   @override
+  String get mealPlannerDuplicate => 'ನಕಲಿ ಊಟ';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ಇದಕ್ಕೆ ನಕಲು...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ಪ್ರಸ್ತುತ ದಿನ';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'ಊಟವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನಕಲು ಮಾಡಲಾಗಿದೆ!';
+
+  @override
   String get expirationDate => 'ಮುಕ್ತಾಯ ದಿನಾಂಕ';
 
   @override
@@ -5344,6 +5554,9 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get skip => 'ಬಿಟ್ಟುಬಿಡಿ';
+
+  @override
+  String get onboardingSkip => 'ಸದ್ಯಕ್ಕೆ ಬಿಟ್ಟುಬಿಡಿ';
 
   @override
   String get onboardingAiTitle => 'ಕಿಪಿ ಜೊತೆ ಚಾಟ್ ಮಾಡಿ';
@@ -6400,4 +6613,29 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
 
   @override
   String get aiGeneratingResponse => 'ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ...';
+
+  @override
+  String get errorUnexpected =>
+      'ಅನಿರೀಕ್ಷಿತವಾಗಿ ಏನೋ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get aiAssistantTooltip => 'AI ಸಹಾಯಕ ತೆರೆಯಿರಿ';
+
+  @override
+  String get searchItems => 'ಐಟಂಗಳನ್ನು ಹುಡುಕಿ';
+
+  @override
+  String get onboardingHookContinue => 'ಪ್ರಾರಂಭಿಸಿ';
+
+  @override
+  String get onboardingHookItem1 => 'ಸುಟ್ಟ ಕೋಳಿ';
+
+  @override
+  String get onboardingHookItem2 => 'ಮೊಝ್ಝಾರೆಲ್ಲಾ ಚೀಸ್';
+
+  @override
+  String get onboardingHookItem3 => 'ಚೆರ್ರಿ ಟೊಮ್ಯಾಟೊ';
+
+  @override
+  String get checkItemTooltip => 'ಐಟಂ ಪರಿಶೀಲಿಸಿ';
 }

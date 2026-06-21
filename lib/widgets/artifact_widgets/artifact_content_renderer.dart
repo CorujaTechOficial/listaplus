@@ -8,6 +8,7 @@ import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ArtifactContentRenderer extends ConsumerWidget {
   const ArtifactContentRenderer({super.key, required this.artifactId});
@@ -107,7 +108,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                           borderRadius: BorderRadius.circular(RadiusTokens.md),
                         ),
                         child: Icon(
-                          Icons.auto_awesome,
+                          PhosphorIconsRegular.sparkle,
                           color: theme.colorScheme.onPrimaryContainer,
                         ),
                       ),
@@ -226,7 +227,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                                 .applyOptimizations(suggestions);
                             Navigator.pop(sheetContext);
                           },
-                          icon: const Icon(Icons.auto_awesome),
+                          icon: const Icon(PhosphorIconsRegular.sparkle),
                           label: Text(l10n.confirm),
                         ),
                       ),
@@ -282,7 +283,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                 const SizedBox(height: Spacing.md),
                 ...alternatives.map((alt) {
                   return ListTile(
-                    leading: const Icon(Icons.swap_horiz),
+                    leading: const Icon(PhosphorIconsRegular.arrowsLeftRight),
                     title: Text(alt.name),
                     subtitle: Text(
                       l10n.quantityWithUnit(
@@ -408,7 +409,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
               Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.remove_circle_outline),
+                    icon: const Icon(PhosphorIconsRegular.minusCircle),
                     onPressed:
                         (isCommitted || currentValue <= min)
                             ? null
@@ -436,7 +437,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.add_circle_outline),
+                    icon: const Icon(PhosphorIconsRegular.plusCircle),
                     onPressed:
                         (isCommitted || currentValue >= max)
                             ? null
@@ -674,7 +675,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                         optimizationSuggestions,
                       );
                     },
-                    icon: const Icon(Icons.auto_awesome, size: 16),
+                    icon: const Icon(PhosphorIconsRegular.sparkle, size: 16),
                     label: Text(
                       '-${formatCurrency(totalPotentialSavings, currencyCode)}',
                       style: const TextStyle(fontWeight: FontWeight.bold),
@@ -710,8 +711,8 @@ class ArtifactContentRenderer extends ConsumerWidget {
                       children: [
                         Icon(
                           item.isAvailable
-                              ? Icons.check_circle_outline
-                              : Icons.shopping_basket,
+                              ? PhosphorIconsRegular.checkCircle
+                              : PhosphorIconsRegular.basket,
                           size: 18,
                           color:
                               item.isAvailable
@@ -808,7 +809,7 @@ class ArtifactContentRenderer extends ConsumerWidget {
                                 originalIdx,
                               );
                             },
-                            icon: const Icon(Icons.swap_horiz, size: 14),
+                            icon: const Icon(PhosphorIconsRegular.arrowsLeftRight, size: 14),
                             label: Text(
                               l10n.swap,
                               style: const TextStyle(fontSize: 11),

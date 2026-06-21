@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -185,8 +188,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -328,6 +340,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -381,6 +396,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -391,6 +409,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -456,6 +477,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -479,6 +503,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -516,6 +543,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -693,6 +738,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1025,8 +1076,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1162,6 +1225,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1551,6 +1617,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1668,6 +1737,7 @@
   "aiAssistantGeneral": "Generalassistent",
   "aiAssistantHistory": "Assistenthistorie",
   "aiAssistantTitle": "AI-assistent",
+  "aiAssistantTooltip": "Åpne AI-assistent",
   "aiCapabilitiesBudget": "Budsjett og priser",
   "aiCapabilitiesLists": "Handlelister",
   "aiCapabilitiesOrganize": "Organisasjon",
@@ -1755,7 +1825,11 @@
   "budgetAppBar": "Månedlig budsjett",
   "budgetDashboardTitle": "Dashbord",
   "budgetEditTitle": "Månedlig budsjett",
+  "budgetGoalInvalidAmount": "Angi en verdi større enn null",
+  "budgetGoalRemoved": "Budsjettmål fjernet",
+  "budgetGoalSaved": "Budsjettmålet er lagret",
   "budgetLists": "Lister",
+  "budgetPartialEstimateHint": "~ Inkluderer delvise prisanslag",
   "budgetPremiumLocked": "Globalt månedlig budsjett er premium",
   "budgetSubtitle": "Spor dine månedlige utgifter",
   "budgetUpgradePrompt": "Oppgrader for å låse opp",
@@ -1824,6 +1898,7 @@
   "chatHistoryOfflineTitle": "Du er frakoblet",
   "chatSubtitle": "Spør etter vareforslag, oppskrifter eller sparingstips.",
   "chatSubtitleShort": "Spør om priser, oppskrifter, organisering...",
+  "checkItemTooltip": "Sjekk varen",
   "checkingItem": "Kontrollerer element...",
   "checkingPantry": "Sjekker pantryet ditt...",
   "checkingSettings": "Sjekker innstillingene dine ...",
@@ -1838,6 +1913,8 @@
   "clearHistoryConfirm": "Slette alle meldinger i denne økten?",
   "clearList": "Tøm liste",
   "clearPurchased": "Fjern kjøpte",
+  "clearPurchasedConfirmMessage": "Vil du fjerne alle kjøpte varer fra denne listen? Dette kan ikke angres.",
+  "clearPurchasedTitle": "Fjern kjøpte varer",
   "clearingCheckedItems": "Fjerner sjekkede elementer...",
   "close": "Lukk",
   "closeSheet": "Lukke",
@@ -1944,6 +2021,7 @@
   "errorArchivingList": "Feil ved arkiveringsliste: {error}",
   "errorClearingList": "Feil ved sletting av listen: {error}",
   "errorClearingPurchased": "Feil ved sletting av kjøpte varer: {error}",
+  "errorCreateList": "Kunne ikke opprette listen. Sjekk tilkoblingen og prøv igjen.",
   "errorCreatingList": "Feil ved opprettelse av liste",
   "errorDecreasingQty": "Feil ved å redusere antall: {error}",
   "errorDeletingList": "Feil ved sletting av liste: {error}",
@@ -1952,6 +2030,7 @@
   "errorGeneric": "Feil: {message}",
   "errorImportingList": "Feil ved import av listen \"{name}\": {error}",
   "errorIncreasingQty": "Feil økende mengde: {error}",
+  "errorLoadList": "Kunne ikke laste inn listene dine. Opprett en ny liste for å komme i gang.",
   "errorLoadingChat": "Oops! Noe gikk galt med å laste chatten.",
   "errorLoadingChatSubtitle": "Sjekk tilkoblingen eller prøv igjen senere.",
   "errorLoadingHistory": "Feil ved innlasting av historikk",
@@ -1962,6 +2041,7 @@
   "errorLoadingSubscription": "Feil ved innlasting av abonnement",
   "errorOscillation": "Dette kan oppstå på grunn av nettverkssvingninger eller midlertidig utilgjengelighet. Vennligst prøv igjen.",
   "errorProcessingRequest": "Beklager, det oppstod en feil under behandlingen av forespørselen din. Sjekk tilkoblingen eller prøv igjen senere.",
+  "errorQuickAdd": "Kunne ikke legge til elementet. Sjekk tilkoblingen og prøv igjen.",
   "errorRemovingItem": "Feil ved fjerning av element: {error}",
   "errorRemovingItems": "Feil ved fjerning av elementer: {error}",
   "errorRemovingSharedList": "Feil ved fjerning av delt liste: {error}",
@@ -1973,9 +2053,11 @@
   "errorSavingProfile": "Feil ved lagring: {error}",
   "errorServerConnection": "Feil ved tilkobling til server: {error}",
   "errorSettingCurrentList": "Feil ved innstilling av gjeldende liste: {error}",
+  "errorShareCode": "Feil under generering av delingskode. Sjekk tilkoblingen og prøv igjen.",
   "errorTogglingItem": "Feil ved bytte av elementstatus: {error}",
   "errorTogglingItems": "Feil under veksling av elementer: {error}",
   "errorUnarchivingList": "Feil ved avarkivering av liste: {error}",
+  "errorUnexpected": "Noe uventet skjedde. Vennligst prøv igjen.",
   "errorUpdatingItem": "Feil under oppdatering av element: {error}",
   "errorUpdatingItems": "Feil under oppdatering av elementer: {error}",
   "errorUpdatingList": "Feil ved oppdatering av liste: {error}",
@@ -2022,6 +2104,7 @@
   "filterPurchased": "Kjøpt",
   "finance": "Økonomi",
   "finishShopping": "Fullfør shopping",
+  "firstItemAddedSnackbar": "Første element lagt til! Flott start 🛒",
   "gallery": "Galleri",
   "generalAssistant": "Generell assistent",
   "generalHelp": "Hvordan kan jeg hjelpe deg med handlingen i dag?",
@@ -2031,6 +2114,13 @@
   "gestureHint": "Hold inne for å velge • Sveip for å fjerne",
   "globalAssistant": "Global assistent",
   "goodResponse": "God respons",
+  "help": "Hjelp",
+  "helpListAddItems": "Legg til varer med +-knappen nederst, eller bruk søket for å bla gjennom produkter",
+  "helpListAi": "Be AI-assistenten om å lage, organisere eller fullføre listen din – bare trykk på gnistikonet",
+  "helpListOrganize": "Dra elementer for å omorganisere, sveip for å merke som kjøpt, eller bruk filtre og sortering",
+  "helpListShare": "Del listen din med familien eller eksporter som PDF, Excel eller ren tekst",
+  "helpListShoppingMode": "Shopping-modus skjuler kjøpte varer slik at du kan fokusere på det som er igjen",
+  "helpListTitle": "Bruker listen din",
   "howCanIHelp": "Hvordan kan jeg hjelpe?",
   "icon": "Ikon:",
   "idealQty": "Ideell ant.",
@@ -2118,10 +2208,13 @@
   "mealPlannerBudgetRemoveGoal": "Fjern målet",
   "mealPlannerBudgetTodayCost": "I dag: {amount}",
   "mealPlannerBudgetWeekCost": "Uke: {amount}",
+  "mealPlannerCurrentDayLabel": "Gjeldende dag",
   "mealPlannerCustomTypeLabel": "Egendefinert type",
   "mealPlannerDateLabel": "Dato",
   "mealPlannerDefaultTypeLabel": "Standardtype",
   "mealPlannerDeleteMeal": "Fjern måltidet",
+  "mealPlannerDuplicate": "Duplikat måltid",
+  "mealPlannerDuplicateSuccess": "Måltid duplisert vellykket!",
   "mealPlannerEditMeal": "Rediger måltid",
   "mealPlannerEditType": "Rediger måltidstype",
   "mealPlannerError": "Feil ved innlasting av måltidsplan",
@@ -2148,6 +2241,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Legg til i planen",
   "mealPlannerSearchRecipes": "Søk etter oppskrifter...",
+  "mealPlannerSelectDestinationDay": "Dupliser til...",
   "mealPlannerSelectRecipe": "Velg en oppskrift",
   "mealPlannerServings": "{count,plural, one{{count} porsjoner} other{{count} porsjoner}}",
   "mealPlannerServingsLabel": "Porsjoner",
@@ -2192,6 +2286,8 @@
   "navRecipes": "Oppskrifter",
   "newCategoryDialog": "Ny kategori",
   "newChat": "Ny chat",
+  "newChatConfirmMessage": "Starte en ny samtale? Din nåværende samtale vil gå tapt.",
+  "newChatConfirmTitle": "Ny samtale",
   "newChatStarted": "Ny chat startet",
   "newListTitle": "Ny handleliste",
   "newPantryList": "Spiskammerhandling",
@@ -2331,7 +2427,11 @@
   "onboardingGroupCouple": "Par",
   "onboardingGroupFamily": "Familie",
   "onboardingGroupSolo": "Bare meg",
+  "onboardingHookContinue": "Kom i gang",
   "onboardingHookHeadline": "Glem aldri en dagligvarevare igjen",
+  "onboardingHookItem1": "Grillet kylling",
+  "onboardingHookItem2": "Mozzarella ost",
+  "onboardingHookItem3": "Cherrytomater",
   "onboardingListCreated": "Listen din er klar: {count} elementer organisert for deg.",
   "onboardingListSaveFailed": "Jeg forberedte varene, men klarte ikke å lagre listen. Prøv igjen å beholde den i appen.",
   "onboardingLoadingStat1Label": "Artikler katalogisert",
@@ -2378,6 +2478,7 @@
   "onboardingSetupTitle": "Tilpass opplevelsen din",
   "onboardingShareDesc": "Synkroniser lister med familie og venner i sanntid",
   "onboardingShareTitle": "Del med de du er glad i",
+  "onboardingSkip": "Hopp over for nå",
   "onboardingSlide1Body": "Lag og del lister umiddelbart. Kipi legger til elementer automatisk basert på vanene dine.",
   "onboardingSlide1Title": "Smarte handlelister",
   "onboardingSlide2Body": "Spør hva som helst – lag lister, finn oppskrifter, følg pantryet ditt, planlegg uken.",
@@ -2461,6 +2562,7 @@
   "paywallFeatureSmartAI": "Smart AI",
   "paywallFeatureUnlimitedLists": "Ubegrensede lister",
   "paywallFeaturesTitle": "Alt du trenger:",
+  "paywallFreeTier": "Gratis: 3 lister",
   "paywallGoalHeadlineFamily": "{name}, organiser familieshopping!",
   "paywallGoalHeadlineFaster": "{name}, handle på halvparten av tiden!",
   "paywallGoalHeadlineNeverForget": "{name}, glem aldri en vare!",
@@ -2490,6 +2592,7 @@
   "paywallPricePerDay": "Bare {price}/dag - mindre enn en kaffe",
   "paywallPricePerMonth": "Bare {price}/måned",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Ubegrenset",
   "paywallPurchaseError": "Kunne ikke fullføre kjøpet. Prøv igjen.",
   "paywallPurchasePending": "Betalingen din venter på godkjenning. Tilgangen frigis automatisk etter bekreftelse.",
   "paywallRestore": "Restaurere",
@@ -2631,6 +2734,7 @@
   "searchConversations": "Søk etter samtaler",
   "searchCurrency": "Søk etter valuta...",
   "searchInConversation": "Søk i samtale...",
+  "searchItems": "Søk etter elementer",
   "searchLanguage": "Søk etter språk...",
   "searchMessages": "Søk etter meldinger...",
   "searchRecipes": "Søk etter oppskrifter...",

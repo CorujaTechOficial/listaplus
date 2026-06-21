@@ -12,9 +12,13 @@ import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_plan.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
 import 'meal_types_screen.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
+
+enum _AppBarAction { share }
 
 class MealPlannerScreen extends ConsumerStatefulWidget {
   const MealPlannerScreen({super.key});
@@ -69,13 +73,13 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
     await notifier.deleteMealPlan(plan.id);
 
     if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(l10n.mealPlannerMealDeleted),
-          action: SnackBarAction(
-            label: l10n.undo,
-            onPressed: () => notifier.saveMealPlan(plan),
-          ),
+      showKipiSnackBar(
+        context,
+        message: l10n.mealPlannerMealDeleted,
+        type: SnackBarType.info,
+        action: SnackBarAction(
+          label: l10n.undo,
+          onPressed: () => notifier.saveMealPlan(plan),
         ),
       );
     }
@@ -89,7 +93,7 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
       context: context,
       builder:
           (ctx) => AlertDialog(
-            icon: const Icon(Icons.shopping_cart_rounded),
+            icon: const Icon(PhosphorIconsRegular.shoppingCart),
             title: Text(l10n.mealPlannerGenerateList),
             content: Text(l10n.mealPlannerGenerateListConfirm),
             actions: [
@@ -120,15 +124,16 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
       }
 
       if (count == 0) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.mealPlannerGenerateListEmpty)),
+        showKipiSnackBar(
+          context,
+          message: l10n.mealPlannerGenerateListEmpty,
+          type: SnackBarType.info,
         );
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.mealPlannerGenerateListSuccess(count)),
-            backgroundColor: Theme.of(context).colorScheme.primary,
-          ),
+        showKipiSnackBar(
+          context,
+          message: l10n.mealPlannerGenerateListSuccess(count),
+          type: SnackBarType.success,
         );
       }
     } on Exception catch (e) {
@@ -139,9 +144,11 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
           e.toString().contains('no_list')
               ? l10n.mealPlannerGenerateListNoList
               : l10n.mealPlannerError;
-      ScaffoldMessenger.of(
+      showKipiSnackBar(
         context,
-      ).showSnackBar(SnackBar(content: Text(message)));
+        message: message,
+        type: SnackBarType.error,
+      );
     }
   }
 
@@ -168,40 +175,49 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.person_outline),
+          icon: const Icon(PhosphorIconsRegular.user),
           onPressed: () => AccountMenuSheet.show(context),
         ),
         title: Text(l10n.mealPlannerTitle),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings_suggest_outlined),
+            icon: const Icon(PhosphorIconsRegular.gearSix),
             onPressed: () => MealTypesScreen.show(context),
             tooltip: l10n.mealPlannerManageTypes,
           ),
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: _shareApp,
-            tooltip: l10n.shareApp,
-          ),
-          // Generate shopping list button
-          if (_isWeekly)
-            IconButton(
-              icon: const Icon(Icons.shopping_cart_outlined),
-              onPressed: _generateShoppingList,
-              tooltip: l10n.mealPlannerGenerateList,
-            ),
-          // Toggle weekly/monthly
+          // Toggle weekly/monthly — primary navigation control
           IconButton(
             icon: Icon(
               _isWeekly
-                  ? Icons.calendar_view_month_rounded
-                  : Icons.calendar_view_week_rounded,
+                  ? PhosphorIconsRegular.calendarBlank
+                  : PhosphorIconsRegular.calendarBlank,
             ),
             onPressed: () => setState(() => _isWeekly = !_isWeekly),
             tooltip:
                 _isWeekly
                     ? l10n.mealPlannerViewMonthly
                     : l10n.mealPlannerViewWeekly,
+          ),
+          // Overflow menu — secondary actions
+          PopupMenuButton<_AppBarAction>(
+            icon: const Icon(PhosphorIconsRegular.dotsThreeVertical),
+            onSelected: (action) {
+              switch (action) {
+                case _AppBarAction.share:
+                  _shareApp();
+                  break;
+              }
+            },
+            itemBuilder: (ctx) => [
+              PopupMenuItem<_AppBarAction>(
+                value: _AppBarAction.share,
+                child: ListTile(
+                  leading: const Icon(PhosphorIconsRegular.shareNetwork),
+                  title: Text(l10n.shareApp),
+                  contentPadding: EdgeInsets.zero,
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -235,6 +251,13 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
                   }),
               onToday: () => setState(() => _focusedDay = DateTime.now()),
             ),
+            // "Gerar lista" CTA — visible only when weekly and has meals
+            if (_isWeekly && (mealPlansAsync.value?.isNotEmpty ?? false))
+              _GenerateListBar(
+                l10n: l10n,
+                theme: theme,
+                onPressed: _generateShoppingList,
+              ),
             Expanded(
               child: mealPlansAsync.when(
                 data: (plans) {
@@ -299,7 +322,7 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.cloud_off_rounded,
+                              PhosphorIconsRegular.cloudSlash,
                               size: 56,
                               color: theme.colorScheme.error.withAlpha(180),
                             ),
@@ -322,7 +345,7 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
                                   () => ref.invalidate(
                                     mealPlansProvider(start: _start, end: _end),
                                   ),
-                              icon: const Icon(Icons.refresh_rounded),
+                              icon: const Icon(PhosphorIconsRegular.arrowCounterClockwise),
                               label: Text(l10n.retry),
                             ),
                           ],
@@ -339,13 +362,13 @@ class _MealPlannerScreenState extends ConsumerState<MealPlannerScreen> {
               ? FloatingActionButton.extended(
                 heroTag: null,
                 onPressed: () => _openAddSheet(DateTime.now()),
-                icon: const Icon(Icons.add_rounded),
+                icon: const Icon(PhosphorIconsRegular.plus),
                 label: Text(l10n.mealPlannerAddMeal),
               )
               : FloatingActionButton(
                 heroTag: null,
                 onPressed: () => _openAddSheet(DateTime.now()),
-                child: const Icon(Icons.add_rounded),
+                child: const Icon(PhosphorIconsRegular.plus),
               ),
     );
   }
@@ -388,7 +411,7 @@ class _CalendarHeader extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(Icons.chevron_left_rounded),
+            icon: const Icon(PhosphorIconsRegular.caretLeft),
             onPressed: onPrev,
           ),
           Expanded(
@@ -415,7 +438,7 @@ class _CalendarHeader extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.chevron_right_rounded),
+            icon: const Icon(PhosphorIconsRegular.caretRight),
             onPressed: onNext,
           ),
         ],
@@ -529,7 +552,7 @@ class _WeekEmptyState extends ConsumerWidget {
               return Transform.scale(scale: value, child: child);
             },
             child: Icon(
-              Icons.restaurant_menu_rounded,
+              PhosphorIconsRegular.forkKnife,
               size: 80,
               color: theme.colorScheme.primary.withAlpha(60),
             ),
@@ -786,6 +809,51 @@ class _MonthDayCell extends StatelessWidget {
                   ),
                 ],
               ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Generate shopping list CTA bar
+// ---------------------------------------------------------------------------
+
+class _GenerateListBar extends StatelessWidget {
+  const _GenerateListBar({
+    required this.l10n,
+    required this.theme,
+    required this.onPressed,
+  });
+
+  final AppLocalizations l10n;
+  final ThemeData theme;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: theme.colorScheme.surface,
+      padding: const EdgeInsets.fromLTRB(
+        Spacing.md,
+        Spacing.xs,
+        Spacing.md,
+        Spacing.md,
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton.icon(
+          onPressed: onPressed,
+          icon: const Icon(PhosphorIconsRegular.shoppingCart),
+          label: Text(l10n.mealPlannerGenerateList),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: theme.colorScheme.primary,
+            foregroundColor: theme.colorScheme.onPrimary,
+            padding: const EdgeInsets.symmetric(vertical: Spacing.md),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(RadiusTokens.lg),
             ),
           ),
         ),

@@ -22,6 +22,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -154,11 +157,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -269,12 +281,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -288,8 +306,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -303,6 +330,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -456,6 +501,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -797,8 +848,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -934,6 +997,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1299,6 +1365,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1401,6 +1470,7 @@
   "aiAssistant": "AI abiline",
   "aiAssistantDescription": "Hangi nutikaid soovitusi, retsepte ja isikupärastatud näpunäiteid meie AI abilisega.",
   "aiAssistantTitle": "AI assistent",
+  "aiAssistantTooltip": "Avage AI assistent",
   "aiCapabilitiesBudget": "Eelarve ja hinnad",
   "aiCapabilitiesLists": "Ostunimekirjad",
   "aiCapabilitiesOrganize": "Organisatsioon",
@@ -1461,7 +1531,11 @@
   "budgetAppBar": "Kuueelarve",
   "budgetDashboardTitle": "Töölaud",
   "budgetEditTitle": "Kuueelarve",
+  "budgetGoalInvalidAmount": "Sisestage väärtus, mis on suurem kui null",
+  "budgetGoalRemoved": "Eelarve eesmärk on eemaldatud",
+  "budgetGoalSaved": "Eelarveeesmärk salvestatud",
   "budgetLists": "Nimekirjad",
+  "budgetPartialEstimateHint": "~ Sisaldab osalisi hinnaprognoose",
   "budgetPremiumLocked": "Globaalne kuueelarve on Premium",
   "budgetSubtitle": "Jälgi oma igakuiseid kulutusi",
   "budgetUpgradePrompt": "Täienda, et avada",
@@ -1527,6 +1601,7 @@
   "chatHistoryOfflineTitle": "Olete võrguühenduseta",
   "chatSubtitle": "Küsi üksuste soovitusi, retsepte või säästunõuandeid.",
   "chatSubtitleShort": "Küsi hindade, retseptide, korralduse kohta...",
+  "checkItemTooltip": "Kontrollige üksust",
   "chooseCurrency": "Valige Valuuta",
   "chooseIcon": "Valige ikoon",
   "chooseImageSource": "Vali pildi allikas",
@@ -1538,6 +1613,8 @@
   "clearHistoryConfirm": "Kas kustutada kõik sõnumid selles sessioonis?",
   "clearList": "Tühjenda nimekiri",
   "clearPurchased": "Eemalda ostetud",
+  "clearPurchasedConfirmMessage": "Kas eemaldada kõik ostetud kaubad sellest loendist? Seda ei saa tagasi võtta.",
+  "clearPurchasedTitle": "Tühjendage ostetud kaubad",
   "close": "Sulge",
   "closeSheet": "Sule",
   "complete": "Lõpeta",
@@ -1618,7 +1695,9 @@
   "enterCodeHint": "Sisesta kood",
   "enterUrl": "Sisesta URL",
   "error": "Viga: {message}",
+  "errorCreateList": "Loendit ei saanud luua. Kontrollige ühendust ja proovige uuesti.",
   "errorGeneric": "Viga: {message}",
+  "errorLoadList": "Teie loendeid ei saanud laadida. Alustamiseks looge uus loend.",
   "errorLoadingChat": "Oih! Midagi läks vestluse laadimisel valesti.",
   "errorLoadingChatSubtitle": "Kontrollige ühendust või proovige hiljem uuesti.",
   "errorLoadingHistory": "Viga ajaloo laadimisel",
@@ -1627,7 +1706,10 @@
   "errorLoadingRecipes": "Viga retseptide laadimisel",
   "errorLoadingSubscription": "Viga tellimuse laadimisel",
   "errorOscillation": "See võib juhtuda võrgu võnkumiste või ajutise kättesaamatuse tõttu. Palun proovi uuesti.",
+  "errorQuickAdd": "Üksust ei saanud lisada. Kontrollige ühendust ja proovige uuesti.",
   "errorSavingProfile": "Viga profiili salvestamisel",
+  "errorShareCode": "Viga jagamiskoodi genereerimisel. Kontrollige ühendust ja proovige uuesti.",
+  "errorUnexpected": "Juhtus midagi ootamatut. Palun proovi uuesti.",
   "estimated": "Hinnanguline",
   "estimatedCost": "Hinnanguline",
   "estimatedPrice": "Hinnanguline hind",
@@ -1669,6 +1751,7 @@
   "filterPurchased": "Ostetud",
   "finance": "Rahandus",
   "finishShopping": "Lõpeta ostlemine",
+  "firstItemAddedSnackbar": "Esimene toode lisatud! Suurepärane algus 🛒",
   "gallery": "Galerii",
   "generalAssistant": "Üldine abiline",
   "generalHelp": "Kuidas saan täna aidata sinu ostlemisel?",
@@ -1676,6 +1759,13 @@
   "gestureHint": "Valimiseks hoidke all • Eemaldamiseks pühkige",
   "globalAssistant": "Üldine abiline",
   "goodResponse": "Hea vastus",
+  "help": "Abi",
+  "helpListAddItems": "Lisage üksusi allosas oleva nupuga + või kasutage toodete sirvimiseks otsingut",
+  "helpListAi": "Paluge tehisintellekti assistendil loend luua, korraldada või täiendada – puudutage lihtsalt sädelevat ikooni",
+  "helpListOrganize": "Lohistage üksusi ümber järjestamiseks, pühkige, et märkida need ostetud või kasutage filtreid ja sortimist",
+  "helpListShare": "Jagage oma loendit perega või eksportige PDF-i, Exceli või lihttekstina",
+  "helpListShoppingMode": "Osturežiim peidab ostetud kaubad, et saaksite keskenduda sellele, mis on alles",
+  "helpListTitle": "Kasutades oma nimekirja",
   "howCanIHelp": "Kuidas ma saan aidata?",
   "idealQty": "Ideaalne kogus",
   "idealQuantity": "Ideaalne kogus",
@@ -1747,10 +1837,13 @@
   "mealPlannerBudgetRemoveGoal": "Eemalda eesmärk",
   "mealPlannerBudgetTodayCost": "Täna: {amount}",
   "mealPlannerBudgetWeekCost": "Nädal: {amount}",
+  "mealPlannerCurrentDayLabel": "Praegune päev",
   "mealPlannerCustomTypeLabel": "Kohandatud tüüp",
   "mealPlannerDateLabel": "Kuupäev",
   "mealPlannerDefaultTypeLabel": "Vaikimisi tüüp",
   "mealPlannerDeleteMeal": "Eemalda toidukord",
+  "mealPlannerDuplicate": "Kahekordne söögikord",
+  "mealPlannerDuplicateSuccess": "Eine dubleeritud edukalt!",
   "mealPlannerEditMeal": "Muuda toidukorda",
   "mealPlannerEditType": "Muuda söögi tüüpi",
   "mealPlannerError": "Viga toidukava laadimisel",
@@ -1777,6 +1870,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Lisa kavasse",
   "mealPlannerSearchRecipes": "Otsi retsepte...",
+  "mealPlannerSelectDestinationDay": "Kopeeri...",
   "mealPlannerSelectRecipe": "Vali retsept",
   "mealPlannerServings": "{count,plural, one{{count} portsjon} other{{count} portsjonit}}",
   "mealPlannerServingsLabel": "Portsjonid",
@@ -1806,6 +1900,8 @@
   "navRecipes": "Retseptid",
   "newCategoryDialog": "Uus kategooria",
   "newChat": "Uus vestlus",
+  "newChatConfirmMessage": "Kas alustada uut vestlust? Teie praegune vestlus läheb kaotsi.",
+  "newChatConfirmTitle": "Uus vestlus",
   "newChatStarted": "Uus vestlus algas",
   "newListTitle": "Uus ostunimekiri",
   "newPantryList": "Sahvrioste",
@@ -1942,7 +2038,11 @@
   "onboardingGroupCouple": "Paar",
   "onboardingGroupFamily": "Perekond",
   "onboardingGroupSolo": "Ainult mina",
+  "onboardingHookContinue": "Alustage",
   "onboardingHookHeadline": "Ärge kunagi unustage enam ühtegi toidukaupa",
+  "onboardingHookItem1": "Grillitud kana",
+  "onboardingHookItem2": "Mozzarella juust",
+  "onboardingHookItem3": "Kirsstomatid",
   "onboardingListCreated": "Teie loend on valmis: teie jaoks on korraldatud {count} üksust.",
   "onboardingListSaveFailed": "Valmistasin üksused ette, kuid ei saanud nimekirja salvestada. Proovige uuesti, et see rakenduses hoida.",
   "onboardingLoadingStat1Label": "Kataloogis olevad kaubad",
@@ -1989,6 +2089,7 @@
   "onboardingSetupTitle": "Isikupärastage oma kogemust",
   "onboardingShareDesc": "Sünkroonige loendid pere ja sõpradega reaalajas",
   "onboardingShareTitle": "Jagage nendega, keda armastate",
+  "onboardingSkip": "Jäta praegu vahele",
   "onboardingSlide1Body": "Looge ja jagage loendeid kohe. Kipi lisab üksused automaatselt teie harjumuste põhjal.",
   "onboardingSlide1Title": "Nutikad ostunimekirjad",
   "onboardingSlide2Body": "Küsige kõike – koostage loendeid, leidke retsepte, jälgige oma sahvrit, planeerige oma nädalat.",
@@ -2045,6 +2146,7 @@
   "paywallFeatureSmartAI": "Nutikas AI",
   "paywallFeatureUnlimitedLists": "Piiramatu arv loendeid",
   "paywallFeaturesTitle": "Kõik, mida vajate:",
+  "paywallFreeTier": "Tasuta: 3 nimekirja",
   "paywallGoalHeadlineFamily": "{name}, korraldage pere ostlemine!",
   "paywallGoalHeadlineFaster": "{name}, ostke poole ajaga!",
   "paywallGoalHeadlineNeverForget": "{name}, ärge kunagi unustage ühtki eset!",
@@ -2074,6 +2176,7 @@
   "paywallPricePerDay": "Ainult {price} päevas — vähem kui kohv",
   "paywallPricePerMonth": "Ainult {price} kuus",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: piiramatu",
   "paywallPurchaseError": "Ostmist ei saanud lõpule viia. Proovi uuesti.",
   "paywallPurchasePending": "Teie makse on kinnitamise ootel. Juurdepääs vabastatakse automaatselt pärast kinnitamist.",
   "paywallRestore": "Taasta",
@@ -2201,6 +2304,7 @@
   "searchConversations": "Otsige vestlusi",
   "searchCurrency": "Otsi valuutat...",
   "searchInConversation": "Otsi vestlusest...",
+  "searchItems": "Otsige üksusi",
   "searchLanguage": "Otsi keelt...",
   "searchMessages": "Otsi sõnumeid...",
   "searchRecipes": "Otsi retsepte...",

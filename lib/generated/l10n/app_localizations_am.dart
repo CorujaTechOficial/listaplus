@@ -72,6 +72,32 @@ class AppLocalizationsAm extends AppLocalizations {
   String get close => 'ዝጋ';
 
   @override
+  String get help => 'እገዛ';
+
+  @override
+  String get helpListTitle => 'የእርስዎን ዝርዝር በመጠቀም';
+
+  @override
+  String get helpListAddItems =>
+      'ከታች ባለው የ+ አዝራር ንጥሎችን ያክሉ፣ ወይም ምርቶችን ለማሰስ ፍለጋውን ይጠቀሙ';
+
+  @override
+  String get helpListAi =>
+      'ዝርዝርዎን እንዲፈጥር፣ እንዲያደራጅ ወይም እንዲያጠናቅቅ AI ረዳቱን ይጠይቁ - የብልጭታ አዶውን ብቻ ይንኩ።';
+
+  @override
+  String get helpListShoppingMode =>
+      'በተረፈ ነገር ላይ እንዲያተኩሩ የግዢ ሁነታ የተገዙ ዕቃዎችን ይደብቃል';
+
+  @override
+  String get helpListOrganize =>
+      'እንደገና ለመደርደር ንጥሎችን ይጎትቱ፣ እንደተገዙ ምልክት ለማድረግ ያንሸራትቱ፣ ወይም ማጣሪያዎችን እና መደርደርን ይጠቀሙ';
+
+  @override
+  String get helpListShare =>
+      'ዝርዝርዎን ለቤተሰብ ያጋሩ ወይም እንደ ፒዲኤፍ፣ ኤክሴል ወይም ግልጽ ጽሑፍ ይላኩ።';
+
+  @override
   String get import => 'አስመጣ';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get clear => 'አጽዳ';
+
+  @override
+  String get clearPurchasedTitle => 'የተገዙ ዕቃዎችን ያጽዱ';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'ሁሉም የተገዙ ዕቃዎች ከዚህ ዝርዝር ይወገዱ? ይህ ሊቀለበስ አይችልም።';
 
   @override
   String error(String message) {
@@ -95,6 +128,19 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get purchaseError => 'ግዢውን በማስኬድ ላይ ስህተት። እንደገና ሞክር።';
+
+  @override
+  String get errorCreateList => 'ዝርዝር መፍጠር አልተቻለም። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።';
+
+  @override
+  String get errorShareCode =>
+      'የማጋሪያ ኮድ በማመንጨት ላይ ስህተት። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።';
+
+  @override
+  String get errorQuickAdd => 'ንጥል ማከል አልተቻለም። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።';
+
+  @override
+  String get errorLoadList => 'ዝርዝሮችዎን መጫን አልተቻለም። ለመጀመር እባክዎ አዲስ ዝርዝር ይፍጠሩ።';
 
   @override
   String get restoreError => 'ግዢዎችን ወደነበሩበት በማስመለስ ስህተት። እንደገና ሞክር።';
@@ -484,6 +530,18 @@ class AppLocalizationsAm extends AppLocalizations {
   String get noBudgetDefined => 'ምንም በጀት አልተዘጋጀም';
 
   @override
+  String get budgetGoalInvalidAmount => 'ከዜሮ የሚበልጥ እሴት ያስገቡ';
+
+  @override
+  String get budgetPartialEstimateHint => '~ ከፊል የዋጋ ግምቶችን ያካትታል';
+
+  @override
+  String get budgetGoalSaved => 'የበጀት ግብ ተቀምጧል';
+
+  @override
+  String get budgetGoalRemoved => 'የበጀት ግብ ተወግዷል';
+
+  @override
   String totalEstimated(String amount) {
     return 'ጠቅላላ ግምት፦ $amount';
   }
@@ -675,6 +733,12 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get newChat => 'አዲስ ውይይት';
+
+  @override
+  String get newChatConfirmTitle => 'አዲስ ውይይት';
+
+  @override
+  String get newChatConfirmMessage => 'አዲስ ውይይት ይጀምሩ? የአሁኑ ውይይትዎ ይጠፋል።';
 
   @override
   String get noHistory => 'የውይይት ታሪክ የለም።';
@@ -1215,6 +1279,15 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 እንኳን ደህና መጣህ';
+
+  @override
+  String get paywallFreeTier => 'ነጻ: 3 ዝርዝሮች';
+
+  @override
+  String get paywallProTier => 'Pro: ያልተገደበ';
+
+  @override
+  String get firstItemAddedSnackbar => 'የመጀመሪያው ንጥል ታክሏል! ምርጥ ጅምር 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2100,6 +2173,18 @@ class AppLocalizationsAm extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ነባሪ ዓይነት';
 
   @override
+  String get mealPlannerDuplicate => 'የተባዛ ምግብ';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'የተባዛ ወደ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'የአሁኑ ቀን';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'ምግብ በተሳካ ሁኔታ ተባዝቷል!';
+
+  @override
   String get expirationDate => 'የሚያበቃበት ቀን';
 
   @override
@@ -2107,6 +2192,9 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get skip => 'ዝለል';
+
+  @override
+  String get onboardingSkip => 'ለአሁን ዝለል';
 
   @override
   String get onboardingAiTitle => 'ከኪፒ ጋር ይወያዩ';
@@ -3113,4 +3201,28 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'ምላሽ በማመንጨት ላይ…';
+
+  @override
+  String get errorUnexpected => 'ያልተጠበቀ ነገር ተፈጠረ። እባክህ እንደገና ሞክር።';
+
+  @override
+  String get aiAssistantTooltip => 'AI ረዳትን ይክፈቱ';
+
+  @override
+  String get searchItems => 'ንጥሎችን ፈልግ';
+
+  @override
+  String get onboardingHookContinue => 'እንጀምር';
+
+  @override
+  String get onboardingHookItem1 => 'የተጠበሰ ዶሮ';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella አይብ';
+
+  @override
+  String get onboardingHookItem3 => 'የቼሪ ቲማቲሞች';
+
+  @override
+  String get checkItemTooltip => 'ንጥሉን ያረጋግጡ';
 }

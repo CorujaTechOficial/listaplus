@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -313,12 +325,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -332,8 +350,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -347,6 +374,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -535,6 +580,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -876,8 +927,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1013,6 +1076,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1416,6 +1482,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1537,6 +1606,7 @@
   "aiAssistantGeneral": "Գլխավոր օգնական",
   "aiAssistantHistory": "Օգնականի պատմություն",
   "aiAssistantTitle": "AI օգնական",
+  "aiAssistantTooltip": "Բացեք AI օգնականը",
   "aiCapabilitiesBudget": "Բյուջե և գներ",
   "aiCapabilitiesLists": "Գնումների ցուցակներ",
   "aiCapabilitiesOrganize": "Կազմակերպություն",
@@ -1623,7 +1693,11 @@
   "budgetAppBar": "Ամսական Բյուջե",
   "budgetDashboardTitle": "Վահանակ",
   "budgetEditTitle": "Ամսական Բյուջե",
+  "budgetGoalInvalidAmount": "Մուտքագրեք զրոյից մեծ արժեք",
+  "budgetGoalRemoved": "Բյուջեի նպատակը հեռացվեց",
+  "budgetGoalSaved": "Բյուջեի նպատակը պահպանվել է",
   "budgetLists": "Ցուցակներ",
+  "budgetPartialEstimateHint": "~ Ներառում է մասնակի գնային գնահատականներ",
   "budgetPremiumLocked": "Համընդհանուր ամսական բյուջեն պրեմիում է",
   "budgetSubtitle": "Հետևեք ձեր ամսական ծախսերին",
   "budgetUpgradePrompt": "Թարմացրեք բացելու համար",
@@ -1691,6 +1765,7 @@
   "chatHistoryOfflineTitle": "Դուք անցանց եք",
   "chatSubtitle": "Հարցրեք կետերի առաջարկներ, բաղադրատոմսեր կամ խնայողության խորհուրդներ:",
   "chatSubtitleShort": "Հարցրեք գների, բաղադրատոմսերի, կազմակերպման մասին...",
+  "checkItemTooltip": "Ստուգեք տարրը",
   "chooseCurrency": "Ընտրեք արժույթ",
   "chooseIcon": "Ընտրեք պատկերակը",
   "chooseImageSource": "Ընտրել պատկերի աղբյուրը",
@@ -1702,6 +1777,8 @@
   "clearHistoryConfirm": "Մաքրել բոլոր հաղորդագրություններն այս նիստում:",
   "clearList": "Մաքրել ցուցակը",
   "clearPurchased": "Մաքրել գնվածները",
+  "clearPurchasedConfirmMessage": "Հեռացնե՞լ բոլոր գնված ապրանքներն այս ցանկից: Սա հնարավոր չէ հետարկել:",
+  "clearPurchasedTitle": "Մաքրել գնված իրերը",
   "close": "Փակել",
   "closeSheet": "Փակել",
   "complete": "Ավարտել",
@@ -1790,7 +1867,9 @@
   "enterCodeHint": "Մուտքագրեք կոդը",
   "enterUrl": "Մուտքագրել URL",
   "error": "Սխալ՝ {message}",
+  "errorCreateList": "Չհաջողվեց ստեղծել ցուցակ: Ստուգեք ձեր կապը և նորից փորձեք:",
   "errorGeneric": "Սխալ՝ {message}",
+  "errorLoadList": "Չհաջողվեց բեռնել ձեր ցուցակները: Սկսելու համար խնդրում ենք ստեղծել նոր ցուցակ:",
   "errorLoadingChat": "Վա՜յ Զրույցը բեռնելիս սխալ առաջացավ:",
   "errorLoadingChatSubtitle": "Ստուգեք ձեր կապը կամ փորձեք ավելի ուշ:",
   "errorLoadingHistory": "Սխալ՝ պատմությունը բեռնելիս",
@@ -1799,7 +1878,10 @@
   "errorLoadingRecipes": "Սխալ՝ բաղադրատոմսերը բեռնելիս",
   "errorLoadingSubscription": "Բաժանորդագրությունը բեռնելիս սխալ առաջացավ",
   "errorOscillation": "Դա կարող է առաջանալ ցանցի տատանումների կամ ժամանակավոր անհասանելիության պատճառով: Խնդրում ենք կրկին փորձել:",
+  "errorQuickAdd": "Չհաջողվեց ավելացնել տարրը: Ստուգեք ձեր կապը և նորից փորձեք:",
   "errorSavingProfile": "Սխալ՝ պրոֆիլը պահելիս",
+  "errorShareCode": "Բաժնետիրական կոդը ստեղծելիս սխալ առաջացավ: Ստուգեք ձեր կապը և նորից փորձեք:",
+  "errorUnexpected": "Ինչ-որ անսպասելի բան տեղի ունեցավ. Խնդրում ենք կրկին փորձել:",
   "estimated": "Մոտավոր",
   "estimatedCost": "գնահատված",
   "estimatedPrice": "Մոտավոր գին",
@@ -1841,6 +1923,7 @@
   "filterPurchased": "Գնված",
   "finance": "Ֆինանսներ",
   "finishShopping": "Ավարտեք գնումները",
+  "firstItemAddedSnackbar": "Առաջին տարրն ավելացվեց: Հիանալի սկիզբ 🛒",
   "gallery": "Պատկերասրահ",
   "generalAssistant": "Ընդհանուր Օգնական",
   "generalHelp": "Ինչպե՞ս կարող եմ օգնել ձեր գնումներին այսօր:",
@@ -1848,6 +1931,13 @@
   "gestureHint": "Պահեք՝ ընտրելու համար • Սահեցրեք՝ հեռացնելու համար",
   "globalAssistant": "Ընդհանուր օգնական",
   "goodResponse": "Լավ արձագանք",
+  "help": "Օգնություն",
+  "helpListAddItems": "Ավելացրեք տարրեր ներքևում գտնվող + կոճակով կամ օգտագործեք որոնումը ապրանքները զննելու համար",
+  "helpListAi": "Խնդրեք AI օգնականին ստեղծել, կազմակերպել կամ լրացնել ձեր ցուցակը. պարզապես հպեք կայծի պատկերակին",
+  "helpListOrganize": "Քաշեք տարրերը՝ վերադասավորելու համար, սահեցրեք՝ որպես գնված նշելու համար, կամ օգտագործեք զտիչներ և տեսակավորում",
+  "helpListShare": "Կիսեք ձեր ցուցակը ընտանիքի հետ կամ արտահանեք PDF, Excel կամ պարզ տեքստի տեսքով",
+  "helpListShoppingMode": "Գնումների ռեժիմը թաքցնում է գնված ապրանքները, որպեսզի կարողանաք կենտրոնանալ մնացածի վրա",
+  "helpListTitle": "Օգտագործելով ձեր ցուցակը",
   "howCanIHelp": "Ինչպե՞ս կարող եմ օգնել:",
   "idealQty": "Իդեալական քանակ",
   "idealQuantity": "Իդեալական քանակ",
@@ -1930,10 +2020,13 @@
   "mealPlannerBudgetRemoveGoal": "Հեռացնել նպատակը",
   "mealPlannerBudgetTodayCost": "Այսօր՝ {amount}",
   "mealPlannerBudgetWeekCost": "Շաբաթ՝ {amount}",
+  "mealPlannerCurrentDayLabel": "Ընթացիկ օր",
   "mealPlannerCustomTypeLabel": "Պատվերով տեսակ",
   "mealPlannerDateLabel": "Ամսաթիվ",
   "mealPlannerDefaultTypeLabel": "Կանխադրված տեսակը",
   "mealPlannerDeleteMeal": "Հեռացնել սնունդը",
+  "mealPlannerDuplicate": "Կրկնօրինակ կերակուր",
+  "mealPlannerDuplicateSuccess": "Ճաշը հաջողությամբ կրկնօրինակվեց:",
   "mealPlannerEditMeal": "Խմբագրել սնունդը",
   "mealPlannerEditType": "Խմբագրել ճաշի տեսակը",
   "mealPlannerError": "Սխալ՝ սննդի պլանը բեռնելիս",
@@ -1960,6 +2053,7 @@
   "mealPlannerPrepTime": "{minutes} րոպե",
   "mealPlannerSave": "Ավելացնել պլանին",
   "mealPlannerSearchRecipes": "Փնտրել բաղադրատոմսեր...",
+  "mealPlannerSelectDestinationDay": "Կրկնօրինակել...",
   "mealPlannerSelectRecipe": "Ընտրել բաղադրատոմս",
   "mealPlannerServings": "{count,plural, one{{count} բաժին} other{{count} բաժին}}",
   "mealPlannerServingsLabel": "Բաժիններ",
@@ -1991,6 +2085,8 @@
   "navRecipes": "Բաղադրատոմսեր",
   "newCategoryDialog": "Նոր կատեգորիա",
   "newChat": "Նոր Զրուցարան",
+  "newChatConfirmMessage": "Սկսե՞լ նոր խոսակցություն: Ձեր ընթացիկ խոսակցությունը կկորչի:",
+  "newChatConfirmTitle": "Նոր խոսակցություն",
   "newChatStarted": "Սկսվեց նոր զրույց",
   "newListTitle": "Նոր Գնումների Ցուցակ",
   "newPantryList": "Մառանից գնումներ",
@@ -2129,7 +2225,11 @@
   "onboardingGroupCouple": "Զույգ",
   "onboardingGroupFamily": "Ընտանիք",
   "onboardingGroupSolo": "Միայն ես",
+  "onboardingHookContinue": "Սկսեք",
   "onboardingHookHeadline": "Այլևս երբեք մի մոռացեք մթերային ապրանքը",
+  "onboardingHookItem1": "Խորոված հավ",
+  "onboardingHookItem2": "Մոցարելլա պանիր",
+  "onboardingHookItem3": "Չերի լոլիկ",
   "onboardingListCreated": "Ձեր ցուցակը պատրաստ է՝ {count} տարր՝ կազմակերպված ձեզ համար:",
   "onboardingListSaveFailed": "Ես պատրաստեցի իրերը, բայց չկարողացա պահպանել ցուցակը: Նորից փորձեք այն պահել հավելվածում:",
   "onboardingLoadingStat1Label": "Կատալոգացված իրեր",
@@ -2176,6 +2276,7 @@
   "onboardingSetupTitle": "Անհատականացրեք ձեր փորձը",
   "onboardingShareDesc": "Համաժամեցրեք ցուցակները ընտանիքի և ընկերների հետ իրական ժամանակում",
   "onboardingShareTitle": "Կիսվեք նրանց հետ, ում սիրում եք",
+  "onboardingSkip": "Առայժմ բաց թողեք",
   "onboardingSlide1Body": "Անմիջապես ստեղծեք և համօգտագործեք ցուցակները: Kipi-ն ավտոմատ կերպով ավելացնում է իրեր՝ հիմնվելով ձեր սովորությունների վրա:",
   "onboardingSlide1Title": "Խելացի գնումների ցուցակներ",
   "onboardingSlide2Body": "Հարցրեք որևէ բան՝ ստեղծեք ցուցակներ, գտեք բաղադրատոմսեր, հետևեք ձեր մառան, պլանավորեք ձեր շաբաթը:",
@@ -2256,6 +2357,7 @@
   "paywallFeatureSmartAI": "Խելացի AI",
   "paywallFeatureUnlimitedLists": "Անսահմանափակ ցուցակներ",
   "paywallFeaturesTitle": "Ձեզ անհրաժեշտ ամեն ինչ.",
+  "paywallFreeTier": "Անվճար՝ 3 ցուցակ",
   "paywallGoalHeadlineFamily": "{name}, կազմակերպեք ընտանեկան գնումներ:",
   "paywallGoalHeadlineFaster": "{name}, գնումներ կատարեք կես ժամանակով:",
   "paywallGoalHeadlineNeverForget": "{name}, երբեք մի մոռացեք որևէ իր:",
@@ -2285,6 +2387,7 @@
   "paywallPricePerDay": "Միայն {price}/օր — ավելի քիչ, քան մեկ սուրճ",
   "paywallPricePerMonth": "Միայն {price}/ամսական",
   "paywallProLabel": "ՊՐՈ",
+  "paywallProTier": "Pro: Անսահմանափակ",
   "paywallPurchaseError": "Չհաջողվեց ավարտել գնումը: Նորից փորձեք:",
   "paywallPurchasePending": "Ձեր վճարումը սպասում է հաստատման: Հաստատումից հետո մուտքը ավտոմատ կերպով կթողարկվի:",
   "paywallRestore": "Վերականգնել",
@@ -2412,6 +2515,7 @@
   "searchConversations": "Որոնել խոսակցությունները",
   "searchCurrency": "Որոնել արժույթը...",
   "searchInConversation": "Որոնել խոսակցության մեջ...",
+  "searchItems": "Որոնել իրեր",
   "searchLanguage": "Փնտրել լեզուն...",
   "searchMessages": "Որոնել հաղորդագրություններ...",
   "searchRecipes": "Փնտրել բաղադրատոմսեր...",

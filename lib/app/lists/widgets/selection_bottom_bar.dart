@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SelectionBottomBar extends StatelessWidget {
   const SelectionBottomBar({
@@ -22,7 +23,7 @@ class SelectionBottomBar extends StatelessWidget {
     final cancelAction = TactileContainer(
       passThrough: true,
       child: TextButton.icon(
-        icon: const Icon(Icons.close),
+        icon: const Icon(PhosphorIconsRegular.x),
         label: Text(l10n.cancel, overflow: TextOverflow.ellipsis),
         onPressed: onCancel,
       ),
@@ -30,7 +31,7 @@ class SelectionBottomBar extends StatelessWidget {
     final deleteAction = TactileContainer(
       passThrough: true,
       child: TextButton.icon(
-        icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
+        icon: Icon(PhosphorIconsRegular.trash, color: theme.colorScheme.error),
         label: Text(
           l10n.delete,
           overflow: TextOverflow.ellipsis,
@@ -42,7 +43,7 @@ class SelectionBottomBar extends StatelessWidget {
     final buyAction = TactileContainer(
       passThrough: true,
       child: FilledButton.icon(
-        icon: const Icon(Icons.check),
+        icon: const Icon(PhosphorIconsRegular.check),
         label: Text(l10n.buy, overflow: TextOverflow.ellipsis),
         onPressed: onBuy,
       ),

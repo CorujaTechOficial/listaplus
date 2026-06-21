@@ -72,6 +72,32 @@ class AppLocalizationsLt extends AppLocalizations {
   String get close => 'Uždaryti';
 
   @override
+  String get help => 'Pagalba';
+
+  @override
+  String get helpListTitle => 'Naudodami savo sąrašą';
+
+  @override
+  String get helpListAddItems =>
+      'Pridėkite elementus naudodami + mygtuką apačioje arba naudokite paiešką norėdami naršyti produktus';
+
+  @override
+  String get helpListAi =>
+      'Paprašykite AI asistento sukurti, tvarkyti arba užbaigti sąrašą – tiesiog palieskite spindesio piktogramą';
+
+  @override
+  String get helpListShoppingMode =>
+      'Apsipirkimo režimas paslepia įsigytas prekes, todėl galite sutelkti dėmesį į tai, kas liko';
+
+  @override
+  String get helpListOrganize =>
+      'Vilkite elementus, kad pertvarkytumėte, perbraukite, kad pažymėtumėte kaip įsigytą, arba naudokite filtrus ir rūšiavimą';
+
+  @override
+  String get helpListShare =>
+      'Bendrinkite sąrašą su šeimos nariais arba eksportuokite kaip PDF, Excel arba paprastą tekstą';
+
+  @override
   String get import => 'Importuoti';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get clear => 'Išvalyti';
+
+  @override
+  String get clearPurchasedTitle => 'Išvalykite įsigytas prekes';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Pašalinti visas įsigytas prekes iš šio sąrašo? To negalima anuliuoti.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get purchaseError => 'Klaida apdorojant pirkimą. Bandykite dar kartą.';
+
+  @override
+  String get errorCreateList =>
+      'Nepavyko sukurti sąrašo. Patikrinkite ryšį ir bandykite dar kartą.';
+
+  @override
+  String get errorShareCode =>
+      'Klaida generuojant bendrinimo kodą. Patikrinkite ryšį ir bandykite dar kartą.';
+
+  @override
+  String get errorQuickAdd =>
+      'Nepavyko pridėti elemento. Patikrinkite ryšį ir bandykite dar kartą.';
+
+  @override
+  String get errorLoadList =>
+      'Nepavyko įkelti jūsų sąrašų. Norėdami pradėti, sukurkite naują sąrašą.';
 
   @override
   String get restoreError => 'Klaida atkuriant pirkimus. Bandykite dar kartą.';
@@ -488,6 +537,18 @@ class AppLocalizationsLt extends AppLocalizations {
   String get noBudgetDefined => 'Nenustatytas biudžetas';
 
   @override
+  String get budgetGoalInvalidAmount => 'Įveskite reikšmę, didesnę už nulį';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Apima dalines kainodaros sąmatas';
+
+  @override
+  String get budgetGoalSaved => 'Biudžeto tikslas išsaugotas';
+
+  @override
+  String get budgetGoalRemoved => 'Biudžeto tikslas pašalintas';
+
+  @override
   String totalEstimated(String amount) {
     return 'Numatoma suma: $amount';
   }
@@ -680,6 +741,13 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get newChat => 'Naujas pokalbis';
+
+  @override
+  String get newChatConfirmTitle => 'Naujas pokalbis';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Pradėti naują pokalbį? Dabartinis pokalbis bus prarastas.';
 
   @override
   String get noHistory => 'Nėra pokalbių istorijos';
@@ -1241,6 +1309,16 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Sveikas pasiūlymas';
+
+  @override
+  String get paywallFreeTier => 'Nemokamai: 3 sąrašai';
+
+  @override
+  String get paywallProTier => 'Pro: neribotas';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Pridėta pirmoji prekė! Puiki pradžia 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2146,6 +2224,18 @@ class AppLocalizationsLt extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Numatytasis tipas';
 
   @override
+  String get mealPlannerDuplicate => 'Pasikartojantis valgis';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Kopijuoti į...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Dabartinė diena';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Maistas sėkmingai nukopijuotas!';
+
+  @override
   String get expirationDate => 'Galiojimo laikas';
 
   @override
@@ -2153,6 +2243,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get skip => 'Praleisti';
+
+  @override
+  String get onboardingSkip => 'Kol kas praleiskite';
 
   @override
   String get onboardingAiTitle => 'Kalbėkitės su Kipi';
@@ -3191,4 +3284,29 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Generuojamas atsakymas…';
+
+  @override
+  String get errorUnexpected =>
+      'Atsitiko kažkas netikėto. Bandykite dar kartą.';
+
+  @override
+  String get aiAssistantTooltip => 'Atidarykite AI asistentą';
+
+  @override
+  String get searchItems => 'Ieškokite elementų';
+
+  @override
+  String get onboardingHookContinue => 'Pradėkite';
+
+  @override
+  String get onboardingHookItem1 => 'Ant grotelių kepta vištiena';
+
+  @override
+  String get onboardingHookItem2 => 'Mocarelos sūris';
+
+  @override
+  String get onboardingHookItem3 => 'Vyšniniai pomidorai';
+
+  @override
+  String get checkItemTooltip => 'Patikrinkite prekę';
 }

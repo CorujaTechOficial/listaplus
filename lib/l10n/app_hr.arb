@@ -22,6 +22,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -165,11 +168,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -280,12 +292,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -299,8 +317,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -314,6 +341,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -478,6 +523,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -819,8 +870,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -956,6 +1019,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1359,6 +1425,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1480,6 +1549,7 @@
   "aiAssistantGeneral": "Generalni pomoćnik",
   "aiAssistantHistory": "Povijest pomoćnika",
   "aiAssistantTitle": "AI pomoćnik",
+  "aiAssistantTooltip": "Otvorite AI pomoćnika",
   "aiCapabilitiesBudget": "Proračun i cijene",
   "aiCapabilitiesLists": "Popisi za kupovinu",
   "aiCapabilitiesOrganize": "Organizacija",
@@ -1566,7 +1636,11 @@
   "budgetAppBar": "Mjesečni proračun",
   "budgetDashboardTitle": "Nadzorna ploča",
   "budgetEditTitle": "Mjesečni proračun",
+  "budgetGoalInvalidAmount": "Unesite vrijednost veću od nule",
+  "budgetGoalRemoved": "Cilj proračuna uklonjen",
+  "budgetGoalSaved": "Cilj proračuna spremljen",
   "budgetLists": "Popisi",
+  "budgetPartialEstimateHint": "~ Uključuje djelomične procjene cijena",
   "budgetPremiumLocked": "Globalni mjesečni proračun je Premium",
   "budgetSubtitle": "Prati svoju mjesečnu potrošnju",
   "budgetUpgradePrompt": "Nadogradi za otključavanje",
@@ -1634,6 +1708,7 @@
   "chatHistoryOfflineTitle": "Izvan mreže ste",
   "chatSubtitle": "Zatraži prijedloge stavki, recepte ili savjete za uštedu.",
   "chatSubtitleShort": "Pitajte za cijene, recepte, organizaciju...",
+  "checkItemTooltip": "Provjerite stavku",
   "chooseCurrency": "Odaberite Valutu",
   "chooseIcon": "Odaberite ikonu",
   "chooseImageSource": "Odaberi izvor slike",
@@ -1645,6 +1720,8 @@
   "clearHistoryConfirm": "Izbrisati sve poruke u ovoj sesiji?",
   "clearList": "Očisti popis",
   "clearPurchased": "Očisti kupljeno",
+  "clearPurchasedConfirmMessage": "Ukloniti sve kupljene artikle s ovog popisa? Ovo se ne može poništiti.",
+  "clearPurchasedTitle": "Očistite kupljene artikle",
   "close": "Zatvori",
   "closeSheet": "Zatvoriti",
   "complete": "Dovrši",
@@ -1733,7 +1810,9 @@
   "enterCodeHint": "Unesi kod",
   "enterUrl": "Unesi URL",
   "error": "Greška: {message}",
+  "errorCreateList": "Nije moguće izraditi popis. Provjerite vezu i pokušajte ponovno.",
   "errorGeneric": "Greška: {message}",
+  "errorLoadList": "Nije moguće učitati vaše popise. Za početak izradite novi popis.",
   "errorLoadingChat": "Ups! Nešto nije u redu prilikom učitavanja chata.",
   "errorLoadingChatSubtitle": "Provjerite vezu ili pokušajte ponovno kasnije.",
   "errorLoadingHistory": "Pogreška pri učitavanju povijesti",
@@ -1742,7 +1821,10 @@
   "errorLoadingRecipes": "Greška pri učitavanju recepata",
   "errorLoadingSubscription": "Pogreška pri učitavanju pretplate",
   "errorOscillation": "To se može dogoditi zbog oscilacija mreže ili privremene nedostupnosti. Molimo pokušajte ponovo.",
+  "errorQuickAdd": "Nije moguće dodati stavku. Provjerite vezu i pokušajte ponovno.",
   "errorSavingProfile": "Pogreška pri spremanju profila",
+  "errorShareCode": "Pogreška pri generiranju koda dijeljenja. Provjerite vezu i pokušajte ponovno.",
+  "errorUnexpected": "Dogodilo se nešto neočekivano. Molimo pokušajte ponovo.",
   "estimated": "Procijenjeno",
   "estimatedCost": "Procijenjeno",
   "estimatedPrice": "Procijenjena cijena",
@@ -1784,6 +1866,7 @@
   "filterPurchased": "Kupljeno",
   "finance": "Financije",
   "finishShopping": "Završite kupovinu",
+  "firstItemAddedSnackbar": "Prva dodana stavka! Odličan početak 🛒",
   "gallery": "Galerija",
   "generalAssistant": "Opći pomoćnik",
   "generalHelp": "Kako mogu pomoći s tvojom današnjom kupovinom?",
@@ -1791,6 +1874,13 @@
   "gestureHint": "Držite za odabir • Prijeđite prstom za uklanjanje",
   "globalAssistant": "Globalni pomoćnik",
   "goodResponse": "Dobar odgovor",
+  "help": "Pomoć",
+  "helpListAddItems": "Dodajte stavke pomoću gumba + na dnu ili upotrijebite pretraživanje za pregledavanje proizvoda",
+  "helpListAi": "Zamolite AI pomoćnika da izradi, organizira ili dovrši vaš popis — samo dodirnite ikonu svjetlucanja",
+  "helpListOrganize": "Povucite stavke za promjenu redoslijeda, prijeđite prstom da biste ih označili kao kupljene ili upotrijebite filtre i sortiranje",
+  "helpListShare": "Podijelite svoj popis s obitelji ili ga izvezite kao PDF, Excel ili običan tekst",
+  "helpListShoppingMode": "Način rada za kupovinu skriva kupljene artikle kako biste se mogli usredotočiti na ono što je ostalo",
+  "helpListTitle": "Korištenje vašeg popisa",
   "howCanIHelp": "Kako mogu pomoći?",
   "idealQty": "Idealna kol",
   "idealQuantity": "Idealna količina",
@@ -1873,10 +1963,13 @@
   "mealPlannerBudgetRemoveGoal": "Ukloni cilj",
   "mealPlannerBudgetTodayCost": "Danas: {amount}",
   "mealPlannerBudgetWeekCost": "Tjedan: {amount}",
+  "mealPlannerCurrentDayLabel": "Trenutni dan",
   "mealPlannerCustomTypeLabel": "Prilagođena vrsta",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Zadana vrsta",
   "mealPlannerDeleteMeal": "Ukloni obrok",
+  "mealPlannerDuplicate": "Dupli obrok",
+  "mealPlannerDuplicateSuccess": "Obrok je uspješno dupliciran!",
   "mealPlannerEditMeal": "Uredi obrok",
   "mealPlannerEditType": "Uredite vrstu obroka",
   "mealPlannerError": "Greška pri učitavanju plana obroka",
@@ -1903,6 +1996,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Dodaj u plan",
   "mealPlannerSearchRecipes": "Pretraži recepte...",
+  "mealPlannerSelectDestinationDay": "Duplicirati u...",
   "mealPlannerSelectRecipe": "Odaberi recept",
   "mealPlannerServings": "{count,plural, one{{count} porcija} few{{count} porcije} other{{count} porcija}}",
   "mealPlannerServingsLabel": "Porcije",
@@ -1934,6 +2028,8 @@
   "navRecipes": "Recepti",
   "newCategoryDialog": "Nova kategorija",
   "newChat": "Novi razgovor",
+  "newChatConfirmMessage": "Započeti novi razgovor? Vaš trenutni razgovor bit će izgubljen.",
+  "newChatConfirmTitle": "Novi razgovor",
   "newChatStarted": "Započeo je novi chat",
   "newListTitle": "Novi popis za kupnju",
   "newPantryList": "Kupnja za ostavu",
@@ -2072,7 +2168,11 @@
   "onboardingGroupCouple": "Par",
   "onboardingGroupFamily": "Obitelj",
   "onboardingGroupSolo": "Samo ja",
+  "onboardingHookContinue": "Započnite",
   "onboardingHookHeadline": "Nikad više nemojte zaboraviti namirnicu",
+  "onboardingHookItem1": "Piletina na žaru",
+  "onboardingHookItem2": "Mozzarella sir",
+  "onboardingHookItem3": "Cherry rajčice",
   "onboardingListCreated": "Vaš popis je spreman: {count} stavki organiziranih za vas.",
   "onboardingListSaveFailed": "Pripremio sam stavke, ali nisam mogao spremiti popis. Pokušajte ponovo zadržati ga u aplikaciji.",
   "onboardingLoadingStat1Label": "Predmeti katalogizirani",
@@ -2119,6 +2219,7 @@
   "onboardingSetupTitle": "Personalizirajte svoje iskustvo",
   "onboardingShareDesc": "Sinkronizirajte popise s obitelji i prijateljima u stvarnom vremenu",
   "onboardingShareTitle": "Podijelite s onima koje volite",
+  "onboardingSkip": "Preskoči za sada",
   "onboardingSlide1Body": "Kreirajte i dijelite popise u trenu. Kipi automatski dodaje stavke na temelju vaših navika.",
   "onboardingSlide1Title": "Pametni popisi za kupnju",
   "onboardingSlide2Body": "Pitajte bilo što - izradite popise, pronađite recepte, pratite svoju smočnicu, planirajte svoj tjedan.",
@@ -2199,6 +2300,7 @@
   "paywallFeatureSmartAI": "Pametna umjetna inteligencija",
   "paywallFeatureUnlimitedLists": "Neograničeni popisi",
   "paywallFeaturesTitle": "Sve što vam treba:",
+  "paywallFreeTier": "Besplatno: 3 liste",
   "paywallGoalHeadlineFamily": "{name}, organiziraj obiteljsku kupovinu!",
   "paywallGoalHeadlineFaster": "{name}, kupujte u pola vremena!",
   "paywallGoalHeadlineNeverForget": "{name}, nikada ne zaboravite ništa!",
@@ -2228,6 +2330,7 @@
   "paywallPricePerDay": "Samo {price}/dan — manje od kave",
   "paywallPricePerMonth": "Samo {price} mjesečno",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Neograničeno",
   "paywallPurchaseError": "Nije moguće dovršiti kupnju. Pokušajte ponovno.",
   "paywallPurchasePending": "Vaše plaćanje čeka odobrenje. Pristup će biti automatski oslobođen nakon potvrde.",
   "paywallRestore": "Vratiti",
@@ -2355,6 +2458,7 @@
   "searchConversations": "Pretražite razgovore",
   "searchCurrency": "Traži valutu...",
   "searchInConversation": "Traži u razgovoru...",
+  "searchItems": "Pretraži stavke",
   "searchLanguage": "Pretraži jezik...",
   "searchMessages": "Traži poruke...",
   "searchRecipes": "Pretraži recepte...",

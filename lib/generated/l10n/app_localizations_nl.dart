@@ -72,6 +72,32 @@ class AppLocalizationsNl extends AppLocalizations {
   String get close => 'Sluiten';
 
   @override
+  String get help => 'Hulp';
+
+  @override
+  String get helpListTitle => 'Je lijst gebruiken';
+
+  @override
+  String get helpListAddItems =>
+      'Voeg artikelen toe met de + knop onderaan, of gebruik de zoekfunctie om door producten te bladeren';
+
+  @override
+  String get helpListAi =>
+      'Vraag de AI-assistent om uw lijst te maken, ordenen of aan te vullen. Tik gewoon op het sprankelende pictogram';
+
+  @override
+  String get helpListShoppingMode =>
+      'De winkelmodus verbergt gekochte artikelen, zodat u zich kunt concentreren op wat er nog over is';
+
+  @override
+  String get helpListOrganize =>
+      'Sleep items om ze opnieuw te ordenen, veeg om ze als gekocht te markeren of gebruik filters en sorteerfuncties';
+
+  @override
+  String get helpListShare =>
+      'Deel uw lijst met familie of exporteer als PDF, Excel of platte tekst';
+
+  @override
   String get import => 'Importeren';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get clear => 'Leegmaken';
+
+  @override
+  String get clearPurchasedTitle => 'Wis gekochte artikelen';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Alle gekochte artikelen uit deze lijst verwijderen? Dit kan niet ongedaan worden gemaakt.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get purchaseError => 'Fout bij verwerken aankoop. Probeer opnieuw.';
+
+  @override
+  String get errorCreateList =>
+      'Kan lijst niet maken. Controleer uw verbinding en probeer het opnieuw.';
+
+  @override
+  String get errorShareCode =>
+      'Fout bij genereren deelcode. Controleer uw verbinding en probeer het opnieuw.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kan item niet toevoegen. Controleer uw verbinding en probeer het opnieuw.';
+
+  @override
+  String get errorLoadList =>
+      'Kan uw lijsten niet laden. Maak een nieuwe lijst om aan de slag te gaan.';
 
   @override
   String get restoreError => 'Fout bij herstellen aankopen. Probeer opnieuw.';
@@ -488,6 +537,20 @@ class AppLocalizationsNl extends AppLocalizations {
   String get noBudgetDefined => 'Geen budget ingesteld';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Voer een waarde in die groter is dan nul';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inclusief gedeeltelijke prijsschattingen';
+
+  @override
+  String get budgetGoalSaved => 'Budgetdoel opgeslagen';
+
+  @override
+  String get budgetGoalRemoved => 'Budgetdoel verwijderd';
+
+  @override
   String totalEstimated(String amount) {
     return 'Totaal geschat: $amount';
   }
@@ -682,6 +745,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get newChat => 'Nieuwe chat';
 
   @override
+  String get newChatConfirmTitle => 'Nieuw gesprek';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Een nieuw gesprek beginnen? Uw huidige gesprek gaat verloren.';
+
+  @override
   String get noHistory => 'Geen chatgeschiedenis';
 
   @override
@@ -791,28 +861,28 @@ class AppLocalizationsNl extends AppLocalizations {
   String get undo => 'Ongedaan maken';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Nieuwe chat gestart';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Toevoegen aan lijst';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Wat kan ik doen?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Boodschappenlijstjes';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Budget & Prijzen';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Recepten & Menu\'s';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisatie';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Vink artikelen af ​​terwijl u winkelt';
 
   @override
   String get kipiListTitle => 'KipiLijst';
@@ -1241,6 +1311,16 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Welkomstaanbieding';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lijsten';
+
+  @override
+  String get paywallProTier => 'Voordeel: onbeperkt';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Eerste artikel toegevoegd! Geweldig begin 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2144,6 +2224,18 @@ class AppLocalizationsNl extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Standaardtype';
 
   @override
+  String get mealPlannerDuplicate => 'Dubbele maaltijd';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliceren naar...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Huidige dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Maaltijd succesvol gedupliceerd!';
+
+  @override
   String get expirationDate => 'Vervaldatum';
 
   @override
@@ -2151,6 +2243,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get skip => 'Overslaan';
+
+  @override
+  String get onboardingSkip => 'Overslaan voor nu';
 
   @override
   String get onboardingAiTitle => 'Chat met Kipi';
@@ -3191,6 +3286,31 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Reactie genereren...';
+
+  @override
+  String get errorUnexpected =>
+      'Er gebeurde iets onverwachts. Probeer het opnieuw.';
+
+  @override
+  String get aiAssistantTooltip => 'Open AI-assistent';
+
+  @override
+  String get searchItems => 'Zoek artikelen';
+
+  @override
+  String get onboardingHookContinue => 'Aan de slag';
+
+  @override
+  String get onboardingHookItem1 => 'Gegrilde kip';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella kaas';
+
+  @override
+  String get onboardingHookItem3 => 'Kerstomaatjes';
+
+  @override
+  String get checkItemTooltip => 'Controleer artikel';
 }
 
 /// The translations for Dutch Flemish, as used in Netherlands (`nl_NL`).
@@ -3261,6 +3381,32 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get close => 'Sluiten';
 
   @override
+  String get help => 'Hulp';
+
+  @override
+  String get helpListTitle => 'Je lijst gebruiken';
+
+  @override
+  String get helpListAddItems =>
+      'Voeg artikelen toe met de + knop onderaan, of gebruik de zoekfunctie om door producten te bladeren';
+
+  @override
+  String get helpListAi =>
+      'Vraag de AI-assistent om uw lijst te maken, ordenen of aan te vullen. Tik gewoon op het sprankelende pictogram';
+
+  @override
+  String get helpListShoppingMode =>
+      'De winkelmodus verbergt gekochte artikelen, zodat u zich kunt concentreren op wat er nog over is';
+
+  @override
+  String get helpListOrganize =>
+      'Sleep items om ze opnieuw te ordenen, veeg om ze als gekocht te markeren of gebruik filters en sorteerfuncties';
+
+  @override
+  String get helpListShare =>
+      'Deel uw lijst met familie of exporteer als PDF, Excel of platte tekst';
+
+  @override
   String get import => 'Importeren';
 
   @override
@@ -3271,6 +3417,13 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get clear => 'Leegmaken';
+
+  @override
+  String get clearPurchasedTitle => 'Wis gekochte artikelen';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Alle gekochte artikelen uit deze lijst verwijderen? Dit kan niet ongedaan worden gemaakt.';
 
   @override
   String error(String message) {
@@ -3284,6 +3437,22 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get purchaseError => 'Fout bij verwerken aankoop. Probeer opnieuw.';
+
+  @override
+  String get errorCreateList =>
+      'Kan lijst niet maken. Controleer uw verbinding en probeer het opnieuw.';
+
+  @override
+  String get errorShareCode =>
+      'Fout bij genereren deelcode. Controleer uw verbinding en probeer het opnieuw.';
+
+  @override
+  String get errorQuickAdd =>
+      'Kan item niet toevoegen. Controleer uw verbinding en probeer het opnieuw.';
+
+  @override
+  String get errorLoadList =>
+      'Kan uw lijsten niet laden. Maak een nieuwe lijst om aan de slag te gaan.';
 
   @override
   String get restoreError => 'Fout bij herstellen aankopen. Probeer opnieuw.';
@@ -3677,6 +3846,20 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get noBudgetDefined => 'Geen budget ingesteld';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Voer een waarde in die groter is dan nul';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Inclusief gedeeltelijke prijsschattingen';
+
+  @override
+  String get budgetGoalSaved => 'Budgetdoel opgeslagen';
+
+  @override
+  String get budgetGoalRemoved => 'Budgetdoel verwijderd';
+
+  @override
   String totalEstimated(String amount) {
     return 'Totaal geschat: $amount';
   }
@@ -3871,6 +4054,13 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get newChat => 'Nieuwe chat';
 
   @override
+  String get newChatConfirmTitle => 'Nieuw gesprek';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Een nieuw gesprek beginnen? Uw huidige gesprek gaat verloren.';
+
+  @override
   String get noHistory => 'Geen chatgeschiedenis';
 
   @override
@@ -3978,6 +4168,30 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get undo => 'Ongedaan maken';
+
+  @override
+  String get newChatStarted => 'Nieuwe chat gestart';
+
+  @override
+  String get quickAddToList => 'Toevoegen aan lijst';
+
+  @override
+  String get aiCapabilitiesTitle => 'Wat kan ik doen?';
+
+  @override
+  String get aiCapabilitiesLists => 'Boodschappenlijstjes';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prijzen';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recepten & Menu\'s';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisatie';
+
+  @override
+  String get marketModeDescription => 'Vink artikelen af ​​terwijl u winkelt';
 
   @override
   String get kipiListTitle => 'KipiLijst';
@@ -4406,6 +4620,16 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Welkomstaanbieding';
+
+  @override
+  String get paywallFreeTier => 'Gratis: 3 lijsten';
+
+  @override
+  String get paywallProTier => 'Voordeel: onbeperkt';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Eerste artikel toegevoegd! Geweldig begin 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5309,6 +5533,18 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get mealPlannerDefaultTypeLabel => 'Standaardtype';
 
   @override
+  String get mealPlannerDuplicate => 'Dubbele maaltijd';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Dupliceren naar...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Huidige dag';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Maaltijd succesvol gedupliceerd!';
+
+  @override
   String get expirationDate => 'Vervaldatum';
 
   @override
@@ -5316,6 +5552,9 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get skip => 'Overslaan';
+
+  @override
+  String get onboardingSkip => 'Overslaan voor nu';
 
   @override
   String get onboardingAiTitle => 'Chat met Kipi';
@@ -6356,4 +6595,29 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get aiGeneratingResponse => 'Reactie genereren...';
+
+  @override
+  String get errorUnexpected =>
+      'Er gebeurde iets onverwachts. Probeer het opnieuw.';
+
+  @override
+  String get aiAssistantTooltip => 'Open AI-assistent';
+
+  @override
+  String get searchItems => 'Zoek artikelen';
+
+  @override
+  String get onboardingHookContinue => 'Aan de slag';
+
+  @override
+  String get onboardingHookItem1 => 'Gegrilde kip';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella kaas';
+
+  @override
+  String get onboardingHookItem3 => 'Kerstomaatjes';
+
+  @override
+  String get checkItemTooltip => 'Controleer artikel';
 }

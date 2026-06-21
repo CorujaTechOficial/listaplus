@@ -72,6 +72,32 @@ class AppLocalizationsRo extends AppLocalizations {
   String get close => 'Închide';
 
   @override
+  String get help => 'Ajutor';
+
+  @override
+  String get helpListTitle => 'Folosind lista dvs';
+
+  @override
+  String get helpListAddItems =>
+      'Adăugați articole cu butonul + din partea de jos sau utilizați căutarea pentru a căuta produse';
+
+  @override
+  String get helpListAi =>
+      'Cereți asistentului AI să vă creeze, să vă organizeze sau să vă completeze lista - trebuie doar să atingeți pictograma strălucitoare';
+
+  @override
+  String get helpListShoppingMode =>
+      'Modul Cumpărături ascunde articolele cumpărate, astfel încât să vă puteți concentra pe ceea ce a mai rămas';
+
+  @override
+  String get helpListOrganize =>
+      'Trageți articole pentru a reordona, glisați pentru a marca ca achiziționate sau utilizați filtre și sortare';
+
+  @override
+  String get helpListShare =>
+      'Partajați-vă lista cu familia sau exportați-l ca PDF, Excel sau text simplu';
+
+  @override
   String get import => 'Importă';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get clear => 'Curăță';
+
+  @override
+  String get clearPurchasedTitle => 'Ștergeți articolele achiziționate';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Eliminați toate articolele achiziționate din această listă? Acest lucru nu poate fi anulat.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsRo extends AppLocalizations {
   @override
   String get purchaseError =>
       'Eroare la procesarea achiziției. Încearcă din nou.';
+
+  @override
+  String get errorCreateList =>
+      'Nu s-a putut crea lista. Verificați conexiunea și încercați din nou.';
+
+  @override
+  String get errorShareCode =>
+      'Eroare la generarea codului de distribuire. Verificați conexiunea și încercați din nou.';
+
+  @override
+  String get errorQuickAdd =>
+      'Nu s-a putut adăuga elementul. Verificați conexiunea și încercați din nou.';
+
+  @override
+  String get errorLoadList =>
+      'Nu s-au putut încărca listele dvs. Creați o nouă listă pentru a începe.';
 
   @override
   String get restoreError =>
@@ -490,6 +539,19 @@ class AppLocalizationsRo extends AppLocalizations {
   String get noBudgetDefined => 'Niciun buget stabilit';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Introduceți o valoare mai mare decât zero';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Include estimări de preț parțiale';
+
+  @override
+  String get budgetGoalSaved => 'Obiectivul bugetar a fost salvat';
+
+  @override
+  String get budgetGoalRemoved => 'Obiectivul bugetar a fost eliminat';
+
+  @override
   String totalEstimated(String amount) {
     return 'Total estimat: $amount';
   }
@@ -684,6 +746,13 @@ class AppLocalizationsRo extends AppLocalizations {
   String get newChat => 'Chat nou';
 
   @override
+  String get newChatConfirmTitle => 'Conversație nouă';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Începi o nouă conversație? Conversația dvs. curentă se va pierde.';
+
+  @override
   String get noHistory => 'Fără istoric de chat';
 
   @override
@@ -793,28 +862,29 @@ class AppLocalizationsRo extends AppLocalizations {
   String get undo => 'Anulează';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'A început un nou chat';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Adăugați pe listă';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Ce pot face?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Liste de cumpărături';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Buget și prețuri';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Rețete și meniuri';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organizare';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription =>
+      'Bifați articolele în timp ce faceți cumpărături';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1248,6 +1318,16 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Oferta de bun venit';
+
+  @override
+  String get paywallFreeTier => 'Gratuit: 3 liste';
+
+  @override
+  String get paywallProTier => 'Pro: Nelimitat';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Primul articol adăugat! Un început grozav 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2154,6 +2234,18 @@ class AppLocalizationsRo extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Tip implicit';
 
   @override
+  String get mealPlannerDuplicate => 'Mâncare dublată';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Duplicați în...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Ziua curentă';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Masa duplicata cu succes!';
+
+  @override
   String get expirationDate => 'Data expirării';
 
   @override
@@ -2161,6 +2253,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get skip => 'Sari peste';
+
+  @override
+  String get onboardingSkip => 'Sari peste moment';
 
   @override
   String get onboardingAiTitle => 'Discutați cu Kipi';
@@ -3207,4 +3302,29 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Se generează răspuns...';
+
+  @override
+  String get errorUnexpected =>
+      'S-a întâmplat ceva neașteptat. Vă rugăm să încercați din nou.';
+
+  @override
+  String get aiAssistantTooltip => 'Deschideți asistentul AI';
+
+  @override
+  String get searchItems => 'Căutați articole';
+
+  @override
+  String get onboardingHookContinue => 'Începeți';
+
+  @override
+  String get onboardingHookItem1 => 'Pui la gratar';
+
+  @override
+  String get onboardingHookItem2 => 'Brânză Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Roșii cherry';
+
+  @override
+  String get checkItemTooltip => 'Verificați elementul';
 }

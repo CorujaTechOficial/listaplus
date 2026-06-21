@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/app/onboarding/models/quiz_config.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class QuizSlide extends StatelessWidget {
   const QuizSlide({super.key, required this.config});
@@ -92,7 +93,7 @@ class _OptionTile extends StatelessWidget {
                 ),
               ),
               if (selected)
-                Icon(Icons.check_circle_rounded, color: scheme.primary),
+                Icon(PhosphorIconsFill.checkCircle, color: scheme.primary),
             ],
           ),
         ),

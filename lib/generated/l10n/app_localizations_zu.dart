@@ -72,6 +72,32 @@ class AppLocalizationsZu extends AppLocalizations {
   String get close => 'Vala';
 
   @override
+  String get help => 'Usizo';
+
+  @override
+  String get helpListTitle => 'Ukusebenzisa uhlu lwakho';
+
+  @override
+  String get helpListAddItems =>
+      'Engeza izinto ngenkinobho ethi + ezansi, noma sebenzisa ukusesha ukuze uphequlule imikhiqizo';
+
+  @override
+  String get helpListAi =>
+      'Cela umsizi we-AI ukuthi adale, ahlele, noma aqedele uhlu lwakho — vele uthephe isithonjana se-sparkle';
+
+  @override
+  String get helpListShoppingMode =>
+      'Imodi yokuthenga ifihla izinto ezithengiwe ukuze ukwazi ukugxila kokusele';
+
+  @override
+  String get helpListOrganize =>
+      'Hudula izinto ukuze uzihlele kabusha, swayipha ukuze umake njengezithengiwe, noma usebenzise izihlungi nokuhlunga';
+
+  @override
+  String get helpListShare =>
+      'Yabelana ngohlu lwakho nomndeni noma uthumele njenge-PDF, i-Excel, noma umbhalo ongenalutho';
+
+  @override
   String get import => 'Ngenisa';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get clear => 'Sula';
+
+  @override
+  String get clearPurchasedTitle => 'Sula izinto ezithengiwe';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Susa zonke izinto ezithengiwe kulolu hlu? Lokhu akukwazi ukuhlehliswa.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get purchaseError => 'Iphutha ekucubungulweni kokuthenga. Zama futhi.';
+
+  @override
+  String get errorCreateList =>
+      'Ayikwazanga ukudala uhlu. Hlola uxhumo lwakho bese uyazama futhi.';
+
+  @override
+  String get errorShareCode =>
+      'Iphutha ekukhiqizeni ikhodi yokwabelana. Hlola uxhumo lwakho bese uyazama futhi.';
+
+  @override
+  String get errorQuickAdd =>
+      'Ayikwazanga ukwengeza into. Hlola uxhumo lwakho bese uyazama futhi.';
+
+  @override
+  String get errorLoadList =>
+      'Ayikwazanga ukulayisha uhlu lwakho. Sicela udale uhlu olusha ukuze uqalise.';
 
   @override
   String get restoreError =>
@@ -488,6 +537,19 @@ class AppLocalizationsZu extends AppLocalizations {
   String get noBudgetDefined => 'Asikho isabelomali esimisiwe';
 
   @override
+  String get budgetGoalInvalidAmount => 'Faka inani elikhulu kunoziro';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Ihlanganisa izilinganiso zentengo ingxenye';
+
+  @override
+  String get budgetGoalSaved => 'Umgomo webhajethi ulondoloziwe';
+
+  @override
+  String get budgetGoalRemoved => 'Umgomo wesabelomali ususiwe';
+
+  @override
   String totalEstimated(String amount) {
     return 'Isamba esilinganiselwe: $amount';
   }
@@ -682,6 +744,13 @@ class AppLocalizationsZu extends AppLocalizations {
   String get newChat => 'Ingxoxo Entsha';
 
   @override
+  String get newChatConfirmTitle => 'Ingxoxo entsha';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Qala ingxoxo entsha? Ingxoxo yakho yamanje izolahleka.';
+
+  @override
   String get noHistory => 'Awukho umlando wengxoxo';
 
   @override
@@ -791,28 +860,28 @@ class AppLocalizationsZu extends AppLocalizations {
   String get undo => 'Hlehlisa';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Ingxoxo entsha iqalile';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Engeza ohlwini';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Ngenzeni?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Uhlu Lokuthenga';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Isabelomali Namanani';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Amaresiphi namamenyu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Inhlangano';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Hlola izinto njengoba uthenga';
 
   @override
   String get kipiListTitle => 'I-KipiList';
@@ -1249,6 +1318,16 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Ukunikezwa kokwamukela';
+
+  @override
+  String get paywallFreeTier => 'Mahhala: 3 izinhlu';
+
+  @override
+  String get paywallProTier => 'Pro: Unlimited';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Into yokuqala yengeziwe! Isiqalo esihle 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1986,28 +2065,28 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Inyanga: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Iviki: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Namuhla: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Susa umgomo';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Isabelomali sokuhlela ukudla';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Umgomo wokusebenzisa imali wanyanga zonke wokuhlela ukudla';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2151,6 +2230,18 @@ class AppLocalizationsZu extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Uhlobo oluzenzakalelayo';
 
   @override
+  String get mealPlannerDuplicate => 'Ukudla okuyimpinda';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Phinda ku...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Usuku lwamanje';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Ukudla kuphindwe ngempumelelo!';
+
+  @override
   String get expirationDate => 'Usuku lokuphelelwa isikhathi';
 
   @override
@@ -2158,6 +2249,9 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get skip => 'Yeqa';
+
+  @override
+  String get onboardingSkip => 'Yeqa okwamanje';
 
   @override
   String get onboardingAiTitle => 'Xoxa noKipi';
@@ -3199,4 +3293,29 @@ class AppLocalizationsZu extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Ikhiqiza impendulo...';
+
+  @override
+  String get errorUnexpected =>
+      'Kwenzeke into ebebengayilindele. Sicela uzame futhi.';
+
+  @override
+  String get aiAssistantTooltip => 'Vula umsizi we-AI';
+
+  @override
+  String get searchItems => 'Sesha izinto';
+
+  @override
+  String get onboardingHookContinue => 'Qalisa';
+
+  @override
+  String get onboardingHookItem1 => 'Inkukhu eyosiwe';
+
+  @override
+  String get onboardingHookItem2 => 'I-Mozzarella ushizi';
+
+  @override
+  String get onboardingHookItem3 => 'Utamatisi we-Cherry';
+
+  @override
+  String get checkItemTooltip => 'Hlola into';
 }

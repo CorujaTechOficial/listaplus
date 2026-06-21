@@ -72,6 +72,32 @@ class AppLocalizationsUr extends AppLocalizations {
   String get close => 'بند کریں';
 
   @override
+  String get help => 'مدد';
+
+  @override
+  String get helpListTitle => 'آپ کی فہرست کا استعمال کرتے ہوئے';
+
+  @override
+  String get helpListAddItems =>
+      'نچلے حصے میں + بٹن کے ساتھ آئٹمز شامل کریں، یا مصنوعات کو براؤز کرنے کے لیے تلاش کا استعمال کریں۔';
+
+  @override
+  String get helpListAi =>
+      'AI اسسٹنٹ سے اپنی فہرست بنانے، ترتیب دینے یا مکمل کرنے کے لیے کہیں — صرف چمکدار آئیکن کو تھپتھپائیں۔';
+
+  @override
+  String get helpListShoppingMode =>
+      'شاپنگ موڈ خریدی ہوئی اشیاء کو چھپاتا ہے تاکہ آپ اس پر توجہ مرکوز کر سکیں جو بچا ہے۔';
+
+  @override
+  String get helpListOrganize =>
+      'آئٹمز کو دوبارہ ترتیب دینے کے لیے گھسیٹیں، خریدی گئی کے بطور نشان زد کرنے کے لیے سوائپ کریں، یا فلٹرز اور چھانٹی کا استعمال کریں';
+
+  @override
+  String get helpListShare =>
+      'اپنی فہرست کو فیملی کے ساتھ شیئر کریں یا پی ڈی ایف، ایکسل یا سادہ متن کے بطور ایکسپورٹ کریں۔';
+
+  @override
   String get import => 'درآمد کریں';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get clear => 'صاف کریں';
+
+  @override
+  String get clearPurchasedTitle => 'خریدی گئی اشیاء کو صاف کریں۔';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'اس فہرست سے تمام خریدی گئی اشیاء کو ہٹائیں؟ اسے کالعدم نہیں کیا جا سکتا۔';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsUr extends AppLocalizations {
   @override
   String get purchaseError =>
       'خریداری پر کارروائی میں خرابی۔ دوبارہ کوشش کریں۔';
+
+  @override
+  String get errorCreateList =>
+      'فہرست نہیں بنائی جا سکی۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔';
+
+  @override
+  String get errorShareCode =>
+      'شیئر کوڈ بنانے میں خرابی۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔';
+
+  @override
+  String get errorQuickAdd =>
+      'آئٹم شامل نہیں کیا جا سکا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔';
+
+  @override
+  String get errorLoadList =>
+      'آپ کی فہرستیں لوڈ نہیں ہو سکیں۔ شروع کرنے کے لیے براہ کرم ایک نئی فہرست بنائیں۔';
 
   @override
   String get restoreError => 'خریداریوں کی بحالی میں خرابی۔ دوبارہ کوشش کریں۔';
@@ -488,6 +537,18 @@ class AppLocalizationsUr extends AppLocalizations {
   String get noBudgetDefined => 'کوئی بجٹ مقرر نہیں';
 
   @override
+  String get budgetGoalInvalidAmount => 'صفر سے بڑی قدر درج کریں۔';
+
+  @override
+  String get budgetPartialEstimateHint => '~ جزوی قیمتوں کا تخمینہ شامل ہے۔';
+
+  @override
+  String get budgetGoalSaved => 'بجٹ کا ہدف محفوظ ہو گیا۔';
+
+  @override
+  String get budgetGoalRemoved => 'بجٹ کا ہدف ہٹا دیا گیا۔';
+
+  @override
   String totalEstimated(String amount) {
     return 'کل متوقع: $amount';
   }
@@ -682,6 +743,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get newChat => 'نئی چیٹ';
 
   @override
+  String get newChatConfirmTitle => 'نئی گفتگو';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ایک نئی گفتگو شروع کریں؟ آپ کی موجودہ گفتگو ختم ہو جائے گی۔';
+
+  @override
   String get noHistory => 'چیٹ کی کوئی سرگزشت نہیں۔';
 
   @override
@@ -791,28 +859,28 @@ class AppLocalizationsUr extends AppLocalizations {
   String get undo => 'واپس لیں';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'نئی گپ شپ شروع ہوئی۔';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'فہرست میں شامل کریں۔';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'میں کیا کر سکتا ہوں؟';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'خریداری کی فہرستیں۔';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'بجٹ اور قیمتیں۔';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'ترکیبیں اور مینو';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'تنظیم';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'خریداری کرتے وقت اشیاء کو چیک کریں۔';
 
   @override
   String get kipiListTitle => 'کیپی لسٹ';
@@ -1249,6 +1317,15 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 خوش آمدید پیشکش';
+
+  @override
+  String get paywallFreeTier => 'مفت: 3 فہرستیں۔';
+
+  @override
+  String get paywallProTier => 'پرو: لا محدود';
+
+  @override
+  String get firstItemAddedSnackbar => 'پہلا آئٹم شامل کیا گیا! زبردست آغاز 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1985,28 +2062,28 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'مہینہ: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'ہفتہ: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'آج: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'مقصد کو ہٹا دیں۔';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'کھانے کے منصوبہ ساز بجٹ';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'کھانے کی منصوبہ بندی کے لیے ماہانہ اخراجات کا ہدف';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2150,6 +2227,19 @@ class AppLocalizationsUr extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'پہلے سے طے شدہ قسم';
 
   @override
+  String get mealPlannerDuplicate => 'ڈپلیکیٹ کھانا';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'اس میں ڈپلیکیٹ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'موجودہ دن';
+
+  @override
+  String get mealPlannerDuplicateSuccess =>
+      'کھانا کامیابی کے ساتھ ڈپلیکیٹ ہو گیا!';
+
+  @override
   String get expirationDate => 'میعاد ختم ہونے کی تاریخ';
 
   @override
@@ -2157,6 +2247,9 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get skip => 'چھوڑیں۔';
+
+  @override
+  String get onboardingSkip => 'ابھی کے لیے چھوڑ دیں۔';
 
   @override
   String get onboardingAiTitle => 'کیپی کے ساتھ چیٹ کریں۔';
@@ -3199,4 +3292,28 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'جواب تیار کیا جا رہا ہے…';
+
+  @override
+  String get errorUnexpected => 'کچھ غیر متوقع ہوا۔ براہ کرم دوبارہ کوشش کریں۔';
+
+  @override
+  String get aiAssistantTooltip => 'AI اسسٹنٹ کھولیں۔';
+
+  @override
+  String get searchItems => 'اشیاء تلاش کریں۔';
+
+  @override
+  String get onboardingHookContinue => 'شروع کریں';
+
+  @override
+  String get onboardingHookItem1 => 'گرلڈ چکن';
+
+  @override
+  String get onboardingHookItem2 => 'موزاریلا پنیر';
+
+  @override
+  String get onboardingHookItem3 => 'چیری ٹماٹر';
+
+  @override
+  String get checkItemTooltip => 'آئٹم چیک کریں۔';
 }

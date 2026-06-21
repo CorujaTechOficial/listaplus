@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ConsentGate extends ConsumerWidget {
   const ConsentGate({required this.child, super.key});
@@ -27,7 +28,7 @@ class ConsentGate extends ConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      Icons.privacy_tip_outlined,
+                      PhosphorIconsRegular.shieldCheck,
                       size: 80,
                       color: theme.colorScheme.primary,
                     ),

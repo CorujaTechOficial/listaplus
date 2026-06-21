@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class AiChatSheet extends ConsumerWidget {
   const AiChatSheet({
@@ -80,7 +81,7 @@ class AiChatSheet extends ConsumerWidget {
                       const Spacer(),
                       TextButton.icon(
                         onPressed: () => Navigator.pop(context),
-                        icon: const Icon(Icons.close, size: 18),
+                        icon: const Icon(PhosphorIconsRegular.x, size: 18),
                         label: Text(l10n.closeSheet),
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.symmetric(

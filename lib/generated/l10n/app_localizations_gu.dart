@@ -72,6 +72,32 @@ class AppLocalizationsGu extends AppLocalizations {
   String get close => 'બંધ કરો';
 
   @override
+  String get help => 'મદદ';
+
+  @override
+  String get helpListTitle => 'તમારી સૂચિનો ઉપયોગ કરીને';
+
+  @override
+  String get helpListAddItems =>
+      'તળિયે + બટન વડે આઇટમ્સ ઉમેરો અથવા ઉત્પાદનો બ્રાઉઝ કરવા માટે શોધનો ઉપયોગ કરો';
+
+  @override
+  String get helpListAi =>
+      'AI સહાયકને તમારી સૂચિ બનાવવા, ગોઠવવા અથવા પૂર્ણ કરવા માટે કહો — ફક્ત સ્પાર્કલ આઇકનને ટેપ કરો';
+
+  @override
+  String get helpListShoppingMode =>
+      'શોપિંગ મોડ ખરીદેલી વસ્તુઓને છુપાવે છે જેથી તમે જે બાકી છે તેના પર ધ્યાન કેન્દ્રિત કરી શકો';
+
+  @override
+  String get helpListOrganize =>
+      'પુનઃક્રમાંકિત કરવા માટે વસ્તુઓને ખેંચો, ખરીદેલ તરીકે ચિહ્નિત કરવા માટે સ્વાઇપ કરો અથવા ફિલ્ટર્સ અને સૉર્ટિંગનો ઉપયોગ કરો';
+
+  @override
+  String get helpListShare =>
+      'તમારી સૂચિ કુટુંબ સાથે શેર કરો અથવા PDF, Excel અથવા સાદા ટેક્સ્ટ તરીકે નિકાસ કરો';
+
+  @override
   String get import => 'આયાત કરો';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get clear => 'સાફ કરો';
+
+  @override
+  String get clearPurchasedTitle => 'ખરીદેલી વસ્તુઓ સાફ કરો';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'આ સૂચિમાંથી બધી ખરીદેલી વસ્તુઓ દૂર કરીએ? આ પૂર્વવત્ કરી શકાતું નથી.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get purchaseError => 'ખરીદી પ્રક્રિયામાં ભૂલ. ફરી પ્રયાસ કરો.';
+
+  @override
+  String get errorCreateList =>
+      'સૂચિ બનાવી શકાઈ નથી. તમારું કનેક્શન તપાસો અને ફરી પ્રયાસ કરો.';
+
+  @override
+  String get errorShareCode =>
+      'શેર કોડ જનરેટ કરવામાં ભૂલ. તમારું કનેક્શન તપાસો અને ફરી પ્રયાસ કરો.';
+
+  @override
+  String get errorQuickAdd =>
+      'આઇટમ ઉમેરી શકાઈ નથી. તમારું કનેક્શન તપાસો અને ફરી પ્રયાસ કરો.';
+
+  @override
+  String get errorLoadList =>
+      'તમારી યાદીઓ લોડ કરી શકાઈ નથી. પ્રારંભ કરવા માટે કૃપા કરીને એક નવી સૂચિ બનાવો.';
 
   @override
   String get restoreError => 'ખરીદીઓ પુનઃસ્થાપિત કરવામાં ભૂલ. ફરી પ્રયાસ કરો.';
@@ -487,6 +536,18 @@ class AppLocalizationsGu extends AppLocalizations {
   String get noBudgetDefined => 'કોઈ બજેટ સેટ નથી';
 
   @override
+  String get budgetGoalInvalidAmount => 'શૂન્ય કરતાં મોટું મૂલ્ય દાખલ કરો';
+
+  @override
+  String get budgetPartialEstimateHint => '~ આંશિક કિંમતના અંદાજો શામેલ છે';
+
+  @override
+  String get budgetGoalSaved => 'બજેટ લક્ષ્ય સાચવ્યું';
+
+  @override
+  String get budgetGoalRemoved => 'બજેટ લક્ષ્ય દૂર કર્યું';
+
+  @override
   String totalEstimated(String amount) {
     return 'કુલ અંદાજિત: $amount';
   }
@@ -678,6 +739,13 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get newChat => 'નવી ચેટ';
+
+  @override
+  String get newChatConfirmTitle => 'નવી વાતચીત';
+
+  @override
+  String get newChatConfirmMessage =>
+      'નવી વાતચીત શરૂ કરીએ? તમારી વર્તમાન વાતચીત ખોવાઈ જશે.';
 
   @override
   String get noHistory => 'કોઈ ચેટ ઇતિહાસ નથી';
@@ -1232,6 +1300,15 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 સ્વાગત ઓફર';
+
+  @override
+  String get paywallFreeTier => 'મફત: 3 યાદીઓ';
+
+  @override
+  String get paywallProTier => 'પ્રો: અમર્યાદિત';
+
+  @override
+  String get firstItemAddedSnackbar => 'પ્રથમ આઇટમ ઉમેરી! શાનદાર શરૂઆત 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2124,6 +2201,18 @@ class AppLocalizationsGu extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ડિફૉલ્ટ પ્રકાર';
 
   @override
+  String get mealPlannerDuplicate => 'ડુપ્લિકેટ ભોજન';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'આના પર ડુપ્લિકેટ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'વર્તમાન દિવસ';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'ભોજન સફળતાપૂર્વક ડુપ્લિકેટ થયું!';
+
+  @override
   String get expirationDate => 'સમાપ્તિ તારીખ';
 
   @override
@@ -2131,6 +2220,9 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get skip => 'છોડો';
+
+  @override
+  String get onboardingSkip => 'હમણાં માટે અવગણો';
 
   @override
   String get onboardingAiTitle => 'કીપી સાથે ચેટ કરો';
@@ -3157,4 +3249,29 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'પ્રતિસાદ જનરેટ કરી રહ્યાં છીએ...';
+
+  @override
+  String get errorUnexpected =>
+      'કંઈક અણધાર્યું થયું. કૃપા કરીને ફરી પ્રયાસ કરો.';
+
+  @override
+  String get aiAssistantTooltip => 'AI સહાયક ખોલો';
+
+  @override
+  String get searchItems => 'વસ્તુઓ શોધો';
+
+  @override
+  String get onboardingHookContinue => 'પ્રારંભ કરો';
+
+  @override
+  String get onboardingHookItem1 => 'શેકેલા ચિકન';
+
+  @override
+  String get onboardingHookItem2 => 'મોઝેરેલા ચીઝ';
+
+  @override
+  String get onboardingHookItem3 => 'ચેરી ટમેટાં';
+
+  @override
+  String get checkItemTooltip => 'આઇટમ તપાસો';
 }

@@ -72,6 +72,32 @@ class AppLocalizationsVi extends AppLocalizations {
   String get close => 'Đóng';
 
   @override
+  String get help => 'Giúp đỡ';
+
+  @override
+  String get helpListTitle => 'Sử dụng danh sách của bạn';
+
+  @override
+  String get helpListAddItems =>
+      'Thêm các mục bằng nút + ở dưới cùng hoặc sử dụng tìm kiếm để duyệt sản phẩm';
+
+  @override
+  String get helpListAi =>
+      'Yêu cầu trợ lý AI tạo, sắp xếp hoặc hoàn thành danh sách của bạn - chỉ cần nhấn vào biểu tượng lấp lánh';
+
+  @override
+  String get helpListShoppingMode =>
+      'Chế độ mua sắm ẩn các mặt hàng đã mua để bạn có thể tập trung vào những mặt hàng còn lại';
+
+  @override
+  String get helpListOrganize =>
+      'Kéo các mục để sắp xếp lại, vuốt để đánh dấu là đã mua hoặc sử dụng bộ lọc và sắp xếp';
+
+  @override
+  String get helpListShare =>
+      'Chia sẻ danh sách của bạn với gia đình hoặc xuất dưới dạng PDF, Excel hoặc văn bản thuần túy';
+
+  @override
   String get import => 'Nhập';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get clear => 'Xóa';
+
+  @override
+  String get clearPurchasedTitle => 'Xóa các mặt hàng đã mua';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Xóa tất cả các mặt hàng đã mua khỏi danh sách này? Không thể hoàn tác việc này.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get purchaseError => 'Lỗi khi xử lý giao dịch. Vui lòng thử lại.';
+
+  @override
+  String get errorCreateList =>
+      'Không thể tạo danh sách. Hãy kiểm tra kết nối của bạn và thử lại.';
+
+  @override
+  String get errorShareCode =>
+      'Lỗi tạo mã chia sẻ. Hãy kiểm tra kết nối của bạn và thử lại.';
+
+  @override
+  String get errorQuickAdd =>
+      'Không thể thêm mục. Hãy kiểm tra kết nối của bạn và thử lại.';
+
+  @override
+  String get errorLoadList =>
+      'Không thể tải danh sách của bạn. Vui lòng tạo một danh sách mới để bắt đầu.';
 
   @override
   String get restoreError => 'Lỗi khi khôi phục giao dịch. Vui lòng thử lại.';
@@ -482,6 +531,18 @@ class AppLocalizationsVi extends AppLocalizations {
   String get noBudgetDefined => 'Chưa đặt ngân sách';
 
   @override
+  String get budgetGoalInvalidAmount => 'Nhập một giá trị lớn hơn 0';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Bao gồm ước tính giá một phần';
+
+  @override
+  String get budgetGoalSaved => 'Đã lưu mục tiêu ngân sách';
+
+  @override
+  String get budgetGoalRemoved => 'Đã xóa mục tiêu ngân sách';
+
+  @override
   String totalEstimated(String amount) {
     return 'Tổng ước tính: $amount';
   }
@@ -675,6 +736,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get newChat => 'Trò chuyện mới';
 
   @override
+  String get newChatConfirmTitle => 'Cuộc trò chuyện mới';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Bắt đầu một cuộc trò chuyện mới? Cuộc trò chuyện hiện tại của bạn sẽ bị mất.';
+
+  @override
   String get noHistory => 'Không có lịch sử trò chuyện';
 
   @override
@@ -785,28 +853,28 @@ class AppLocalizationsVi extends AppLocalizations {
   String get undo => 'Hoàn tác';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Cuộc trò chuyện mới đã bắt đầu';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Thêm vào danh sách';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Tôi có thể làm gì?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Danh sách mua sắm';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Ngân sách & Giá cả';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Công thức nấu ăn & Thực đơn';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Tổ chức';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Kiểm tra các mặt hàng khi bạn mua sắm';
 
   @override
   String get kipiListTitle => 'KipiDanh sách';
@@ -1240,6 +1308,16 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Ưu đãi chào mừng';
+
+  @override
+  String get paywallFreeTier => 'Miễn phí: 3 danh sách';
+
+  @override
+  String get paywallProTier => 'Chuyên nghiệp: Không giới hạn';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Mục đầu tiên được thêm vào! Khởi đầu tuyệt vời 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1972,28 +2050,28 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Tháng: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Tuần: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Hôm nay: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Xóa mục tiêu';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Ngân sách lập kế hoạch bữa ăn';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Mục tiêu chi tiêu hàng tháng cho việc lập kế hoạch bữa ăn';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2134,6 +2212,18 @@ class AppLocalizationsVi extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Loại mặc định';
 
   @override
+  String get mealPlannerDuplicate => 'Bữa ăn trùng lặp';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Nhân đôi thành...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Ngày hiện tại';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Bữa ăn được nhân đôi thành công!';
+
+  @override
   String get expirationDate => 'Ngày hết hạn';
 
   @override
@@ -2141,6 +2231,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get skip => 'Nhảy';
+
+  @override
+  String get onboardingSkip => 'Bỏ qua bây giờ';
 
   @override
   String get onboardingAiTitle => 'Trò chuyện với Kipi';
@@ -3188,4 +3281,29 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Đang tạo phản hồi…';
+
+  @override
+  String get errorUnexpected =>
+      'Một điều gì đó bất ngờ đã xảy ra. Vui lòng thử lại.';
+
+  @override
+  String get aiAssistantTooltip => 'Trợ lý AI mở';
+
+  @override
+  String get searchItems => 'Tìm kiếm các mục';
+
+  @override
+  String get onboardingHookContinue => 'Bắt đầu';
+
+  @override
+  String get onboardingHookItem1 => 'Gà nướng';
+
+  @override
+  String get onboardingHookItem2 => 'Phô mai mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Cà chua bi';
+
+  @override
+  String get checkItemTooltip => 'Kiểm tra mục';
 }

@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -174,8 +177,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -317,6 +329,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -370,6 +385,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -380,6 +398,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -445,6 +466,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -468,6 +492,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -505,6 +532,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -668,6 +713,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -1000,8 +1051,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -1137,6 +1200,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1488,6 +1554,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectedItems": {
     "placeholders": {
       "count": {
@@ -1586,6 +1655,7 @@
   "aiAssistant": "Msaidizi wa AI",
   "aiAssistantDescription": "Pata mapendekezo mahiri, mapishi na vidokezo vya kibinafsi kwa msaidizi wetu wa AI.",
   "aiAssistantTitle": "Msaidizi wa AI",
+  "aiAssistantTooltip": "Fungua msaidizi wa AI",
   "aiCapabilitiesBudget": "Bajeti na Bei",
   "aiCapabilitiesLists": "Orodha za Ununuzi",
   "aiCapabilitiesOrganize": "Shirika",
@@ -1647,7 +1717,11 @@
   "budgetAppBar": "Bajeti ya Kila Mwezi",
   "budgetDashboardTitle": "Dashibodi",
   "budgetEditTitle": "Bajeti ya Kila Mwezi",
+  "budgetGoalInvalidAmount": "Weka thamani kubwa kuliko sifuri",
+  "budgetGoalRemoved": "Lengo la bajeti limeondolewa",
+  "budgetGoalSaved": "Lengo la bajeti limehifadhiwa",
   "budgetLists": "Orodha",
+  "budgetPartialEstimateHint": "~ Inajumuisha makadirio ya bei ya sehemu",
   "budgetPremiumLocked": "Bajeti ya jumla ya kila mwezi ni premium",
   "budgetSubtitle": "Fuatilia matumizi yako ya kila mwezi",
   "budgetUpgradePrompt": "Boresha ili kufungua",
@@ -1714,6 +1788,7 @@
   "chatHistoryOfflineTitle": "Hauko mtandaoni",
   "chatSubtitle": "Uliza mapendekezo ya vitu, mapishi au vidokezo vya kuokoa.",
   "chatSubtitleShort": "Uliza kuhusu bei, mapishi, shirika...",
+  "checkItemTooltip": "Angalia kipengee",
   "checkingItem": "Inaangalia kipengee...",
   "checkingPantry": "Inakagua pantry yako...",
   "checkingSettings": "Inakagua mipangilio yako...",
@@ -1728,6 +1803,8 @@
   "clearHistoryConfirm": "Futa ujumbe wote katika kikao hiki?",
   "clearList": "Futa orodha",
   "clearPurchased": "Futa zilizonunuliwa",
+  "clearPurchasedConfirmMessage": "Je, ungependa kuondoa bidhaa zote zilizonunuliwa kwenye orodha hii? Hili haliwezi kutenduliwa.",
+  "clearPurchasedTitle": "Futa vitu vilivyonunuliwa",
   "clearingCheckedItems": "Inafuta vipengee vilivyoteuliwa...",
   "close": "Funga",
   "closeSheet": "Funga",
@@ -1826,6 +1903,7 @@
   "errorArchivingList": "Hitilafu katika kuhifadhi orodha: {error}",
   "errorClearingList": "Hitilafu katika kufuta orodha: {error}",
   "errorClearingPurchased": "Hitilafu katika kufuta bidhaa zilizonunuliwa: {error}",
+  "errorCreateList": "Haikuweza kuunda orodha. Angalia muunganisho wako na ujaribu tena.",
   "errorCreatingList": "Hitilafu katika kuunda orodha",
   "errorDecreasingQty": "Hitilafu katika kupunguza idadi: {error}",
   "errorDeletingList": "Hitilafu katika kufuta orodha: {error}",
@@ -1834,6 +1912,7 @@
   "errorGeneric": "Hitilafu: {message}",
   "errorImportingList": "Hitilafu katika kuleta orodha \"{name}\": {error}",
   "errorIncreasingQty": "Hitilafu katika kuongeza idadi: {error}",
+  "errorLoadList": "Haikuweza kupakia orodha zako. Tafadhali tengeneza orodha mpya ili kuanza.",
   "errorLoadingChat": "Lo! Hitilafu fulani imetokea wakati wa kupakia gumzo.",
   "errorLoadingChatSubtitle": "Angalia muunganisho wako au ujaribu tena baadaye.",
   "errorLoadingHistory": "Hitilafu katika kupakia historia",
@@ -1844,6 +1923,7 @@
   "errorLoadingSubscription": "Hitilafu katika kupakia usajili",
   "errorOscillation": "Hii inaweza kutokea kwa sababu ya kuzunguka kwa mtandao au kutopatikana kwa muda. Tafadhali jaribu tena.",
   "errorProcessingRequest": "Samahani, hitilafu ilitokea wakati wa kuchakata ombi lako. Angalia muunganisho wako au ujaribu tena baadaye.",
+  "errorQuickAdd": "Haikuweza kuongeza kipengee. Angalia muunganisho wako na ujaribu tena.",
   "errorRemovingItem": "Hitilafu katika kuondoa kipengee: {error}",
   "errorRemovingItems": "Hitilafu katika kuondoa vipengee: {error}",
   "errorRemovingSharedList": "Hitilafu katika kuondoa orodha iliyoshirikiwa: {error}",
@@ -1855,9 +1935,11 @@
   "errorSavingProfile": "Hitilafu katika kuhifadhi: {error}",
   "errorServerConnection": "Hitilafu katika kuunganisha kwenye seva: {error}",
   "errorSettingCurrentList": "Hitilafu katika kuweka orodha ya sasa: {error}",
+  "errorShareCode": "Hitilafu katika kuzalisha msimbo wa kushiriki. Angalia muunganisho wako na ujaribu tena.",
   "errorTogglingItem": "Hitilafu katika kugeuza hali ya kipengee: {error}",
   "errorTogglingItems": "Hitilafu katika kugeuza vipengee: {error}",
   "errorUnarchivingList": "Hitilafu katika kutoa orodha kwenye kumbukumbu: {error}",
+  "errorUnexpected": "Kitu kisichotarajiwa kilitokea. Tafadhali jaribu tena.",
   "errorUpdatingItem": "Hitilafu katika kusasisha kipengee: {error}",
   "errorUpdatingItems": "Hitilafu imetokea wakati wa kusasisha vipengee: {error}",
   "errorUpdatingList": "Hitilafu katika kusasisha orodha: {error}",
@@ -1904,6 +1986,7 @@
   "filterPurchased": "Zilizonunuliwa",
   "finance": "Fedha",
   "finishShopping": "Maliza Ununuzi",
+  "firstItemAddedSnackbar": "Kipengee cha kwanza kimeongezwa! Mwanzo mzuri 🛒",
   "gallery": "Matunzio",
   "generalAssistant": "Msaidizi Mkuu",
   "generalHelp": "Naweza kusaidiaje na ununuzi wako leo?",
@@ -1913,6 +1996,13 @@
   "gestureHint": "Shikilia ili kuchagua • Telezesha kidole ili kuondoa",
   "globalAssistant": "Msaidizi wa jumla",
   "goodResponse": "Jibu zuri",
+  "help": "Msaada",
+  "helpListAddItems": "Ongeza vipengee vilivyo na kitufe cha + kilicho chini, au tumia utafutaji ili kuvinjari bidhaa",
+  "helpListAi": "Uliza msaidizi wa AI kuunda, kupanga, au kukamilisha orodha yako - gusa tu aikoni ya kumeta",
+  "helpListOrganize": "Buruta vipengee ili kuvipanga upya, telezesha kidole ili utie alama kuwa vimenunuliwa, au tumia vichujio na kupanga",
+  "helpListShare": "Shiriki orodha yako na familia au usafirishaji kama PDF, Excel, au maandishi wazi",
+  "helpListShoppingMode": "Hali ya ununuzi huficha bidhaa zilizonunuliwa ili uweze kuzingatia kile kilichosalia",
+  "helpListTitle": "Kwa kutumia orodha yako",
   "howCanIHelp": "Ninawezaje kusaidia?",
   "icon": "Aikoni:",
   "idealQty": "Kiasi bora",
@@ -1989,10 +2079,13 @@
   "mealPlannerBudgetRemoveGoal": "Ondoa lengo",
   "mealPlannerBudgetTodayCost": "Leo: {amount}",
   "mealPlannerBudgetWeekCost": "Wiki: {amount}",
+  "mealPlannerCurrentDayLabel": "Siku ya sasa",
   "mealPlannerCustomTypeLabel": "Aina maalum",
   "mealPlannerDateLabel": "Tarehe",
   "mealPlannerDefaultTypeLabel": "Aina chaguomsingi",
   "mealPlannerDeleteMeal": "Ondoa chakula",
+  "mealPlannerDuplicate": "Chakula maradufu",
+  "mealPlannerDuplicateSuccess": "Mlo umerudiwa!",
   "mealPlannerEditMeal": "Hariri Mlo",
   "mealPlannerEditType": "Badilisha aina ya chakula",
   "mealPlannerError": "Hitilafu katika kupakia mpango wa chakula",
@@ -2019,6 +2112,7 @@
   "mealPlannerPrepTime": "Dakika {minutes}",
   "mealPlannerSave": "Ongeza kwenye mpango",
   "mealPlannerSearchRecipes": "Tafuta mapishi...",
+  "mealPlannerSelectDestinationDay": "Rudufu kwa...",
   "mealPlannerSelectRecipe": "Chagua kichocheo",
   "mealPlannerServings": "{count,plural, one{{count} inahudumia} other{{count} huduma zingine}}",
   "mealPlannerServingsLabel": "Huduma",
@@ -2061,6 +2155,8 @@
   "navRecipes": "Mapishi",
   "newCategoryDialog": "Kategoria mpya",
   "newChat": "Gumzo Mpya",
+  "newChatConfirmMessage": "Ungependa kuanza mazungumzo mapya? Mazungumzo yako ya sasa yatapotea.",
+  "newChatConfirmTitle": "Mazungumzo mapya",
   "newChatStarted": "Gumzo jipya limeanza",
   "newListTitle": "Orodha Mpya ya Ununuzi",
   "newPantryList": "Ununuzi wa Pantri",
@@ -2198,7 +2294,11 @@
   "onboardingGroupCouple": "Wanandoa",
   "onboardingGroupFamily": "Familia",
   "onboardingGroupSolo": "Mimi tu",
+  "onboardingHookContinue": "Anza",
   "onboardingHookHeadline": "Usiwahi kusahau bidhaa ya mboga tena",
+  "onboardingHookItem1": "Kuku ya kukaanga",
+  "onboardingHookItem2": "Mozzarella jibini",
+  "onboardingHookItem3": "Nyanya za Cherry",
   "onboardingListCreated": "Orodha yako iko tayari: Vipengee {count} vimeratibiwa kwa ajili yako.",
   "onboardingListSaveFailed": "Nilitayarisha vitu, lakini sikuweza kuhifadhi orodha. Jaribu tena kuiweka kwenye programu.",
   "onboardingLoadingStat1Label": "Vipengee vilivyoorodheshwa",
@@ -2245,6 +2345,7 @@
   "onboardingSetupTitle": "Binafsisha matumizi yako",
   "onboardingShareDesc": "Sawazisha orodha na familia na marafiki kwa wakati halisi",
   "onboardingShareTitle": "Shiriki na wale unaowapenda",
+  "onboardingSkip": "Ruka kwa sasa",
   "onboardingSlide1Body": "Unda na ushiriki orodha mara moja. Kipi huongeza bidhaa kiotomatiki kulingana na mazoea yako.",
   "onboardingSlide1Title": "Orodha za Ununuzi Mahiri",
   "onboardingSlide2Body": "Uliza chochote - tengeneza orodha, pata mapishi, fuatilia pantry yako, panga wiki yako.",
@@ -2304,6 +2405,7 @@
   "paywallFeatureSmartAI": "Smart AI",
   "paywallFeatureUnlimitedLists": "Orodha zisizo na kikomo",
   "paywallFeaturesTitle": "Kila kitu unachohitaji:",
+  "paywallFreeTier": "Bure: orodha 3",
   "paywallGoalHeadlineFamily": "{name}, panga ununuzi wa familia!",
   "paywallGoalHeadlineFaster": "{name}, nunua baada ya nusu ya muda!",
   "paywallGoalHeadlineNeverForget": "{name}, usisahau kamwe kipengee!",
@@ -2333,6 +2435,7 @@
   "paywallPricePerDay": "{price} pekee kwa siku - chini ya kahawa",
   "paywallPricePerMonth": "{price} pekee kwa mwezi",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Bila kikomo",
   "paywallPurchaseError": "Haikuweza kukamilisha ununuzi. Jaribu tena.",
   "paywallPurchasePending": "Malipo yako yanasubiri kuidhinishwa. Ufikiaji utatolewa kiotomatiki baada ya uthibitisho.",
   "paywallRestore": "Rejesha",
@@ -2474,6 +2577,7 @@
   "searchConversations": "Tafuta mazungumzo",
   "searchCurrency": "Tafuta sarafu...",
   "searchInConversation": "Tafuta kwenye mazungumzo...",
+  "searchItems": "Tafuta vitu",
   "searchLanguage": "Tafuta lugha...",
   "searchMessages": "Tafuta ujumbe...",
   "searchRecipes": "Tafuta mapishi...",

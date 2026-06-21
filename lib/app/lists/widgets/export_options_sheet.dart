@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 void showExportOptionsSheet(
   BuildContext context, {
@@ -20,7 +21,7 @@ void showExportOptionsSheet(
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            leading: Icon(Icons.picture_as_pdf, color: colorScheme.error),
+            leading: Icon(PhosphorIconsRegular.filePdf, color: colorScheme.error),
             title: Text(l10n.exportPdf),
             onTap: () {
               Navigator.pop(sheetContext);
@@ -28,7 +29,7 @@ void showExportOptionsSheet(
             },
           ),
           ListTile(
-            leading: Icon(Icons.table_chart, color: semanticColors.success),
+            leading: Icon(PhosphorIconsRegular.table, color: semanticColors.success),
             title: Text(l10n.exportExcel),
             onTap: () {
               Navigator.pop(sheetContext);
@@ -36,7 +37,7 @@ void showExportOptionsSheet(
             },
           ),
           ListTile(
-            leading: Icon(Icons.share_outlined, color: colorScheme.primary),
+            leading: Icon(PhosphorIconsRegular.shareNetwork, color: colorScheme.primary),
             title: Text(l10n.share),
             subtitle: Text(l10n.shareAsText),
             onTap: () {
@@ -45,7 +46,7 @@ void showExportOptionsSheet(
             },
           ),
           ListTile(
-            leading: Icon(Icons.copy_outlined, color: colorScheme.primary),
+            leading: Icon(PhosphorIconsRegular.copy, color: colorScheme.primary),
             title: Text(l10n.copy),
             onTap: () {
               Navigator.pop(sheetContext);

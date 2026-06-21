@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -497,6 +542,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -838,8 +889,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -975,6 +1038,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1378,6 +1444,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1499,6 +1568,7 @@
   "aiAssistantGeneral": "Baş köməkçi",
   "aiAssistantHistory": "Köməkçi Tarix",
   "aiAssistantTitle": "AI köməkçisi",
+  "aiAssistantTooltip": "AI köməkçisini açın",
   "aiCapabilitiesBudget": "Büdcə və Qiymətlər",
   "aiCapabilitiesLists": "Alış-veriş siyahıları",
   "aiCapabilitiesOrganize": "Təşkilat",
@@ -1585,7 +1655,11 @@
   "budgetAppBar": "Aylıq Büdcə",
   "budgetDashboardTitle": "Panel",
   "budgetEditTitle": "Aylıq Büdcə",
+  "budgetGoalInvalidAmount": "Sıfırdan böyük dəyər daxil edin",
+  "budgetGoalRemoved": "Büdcə məqsədi silindi",
+  "budgetGoalSaved": "Büdcə məqsədi saxlandı",
   "budgetLists": "Siyahılar",
+  "budgetPartialEstimateHint": "~ Qismən qiymət təxminlərini ehtiva edir",
   "budgetPremiumLocked": "Qlobal aylıq büdcə premiumdur",
   "budgetSubtitle": "Aylıq xərclərinizi izləyin",
   "budgetUpgradePrompt": "Açmaq üçün yüksəldin",
@@ -1653,6 +1727,7 @@
   "chatHistoryOfflineTitle": "Siz oflaynsınız",
   "chatSubtitle": "Maddə təklifləri, reseptlər və ya qənaət məsləhətləri üçün soruşun.",
   "chatSubtitleShort": "Qiymətlər, reseptlər, təşkilatçılıq haqqında soruşun...",
+  "checkItemTooltip": "Elementi yoxlayın",
   "chooseCurrency": "Valyuta seçin",
   "chooseIcon": "Simge seçin",
   "chooseImageSource": "Şəkil mənbəyini seçin",
@@ -1664,6 +1739,8 @@
   "clearHistoryConfirm": "Bu sessiyadakı bütün mesajları təmizlə?",
   "clearList": "Siyahını təmizlə",
   "clearPurchased": "Alınanları təmizlə",
+  "clearPurchasedConfirmMessage": "Bütün satın alınan elementlər bu siyahıdan silinsin? Bu geri qaytarıla bilməz.",
+  "clearPurchasedTitle": "Satın alınan əşyaları təmizləyin",
   "close": "Bağla",
   "closeSheet": "Bağlayın",
   "complete": "Tamamla",
@@ -1752,7 +1829,9 @@
   "enterCodeHint": "Kodu daxil edin",
   "enterUrl": "URL daxil edin",
   "error": "Xəta: {message}",
+  "errorCreateList": "Siyahı yaratmaq mümkün olmadı. Bağlantınızı yoxlayın və yenidən cəhd edin.",
   "errorGeneric": "Xəta: {message}",
+  "errorLoadList": "Siyahılarınızı yükləmək mümkün olmadı. Başlamaq üçün yeni siyahı yaradın.",
   "errorLoadingChat": "Vay! Söhbəti yükləyərkən xəta baş verdi.",
   "errorLoadingChatSubtitle": "Bağlantınızı yoxlayın və ya daha sonra yenidən cəhd edin.",
   "errorLoadingHistory": "Tarixçəni yükləmə xətası",
@@ -1761,7 +1840,10 @@
   "errorLoadingRecipes": "Reseptlərin yüklənməsində xəta baş verdi",
   "errorLoadingSubscription": "Abunəlik yüklənərkən xəta baş verdi",
   "errorOscillation": "Bu, şəbəkə rəqsləri və ya müvəqqəti əlçatan olmama səbəbindən baş verə bilər. Yenidən cəhd edin.",
+  "errorQuickAdd": "Element əlavə etmək mümkün olmadı. Bağlantınızı yoxlayın və yenidən cəhd edin.",
   "errorSavingProfile": "Profili yadda saxlama xətası",
+  "errorShareCode": "Paylaşım kodunu yaratarkən xəta baş verdi. Bağlantınızı yoxlayın və yenidən cəhd edin.",
+  "errorUnexpected": "Gözlənilməz bir şey baş verdi. Yenidən cəhd edin.",
   "estimated": "Təxmini",
   "estimatedCost": "Təxmini",
   "estimatedPrice": "Təxmini qiymət",
@@ -1803,6 +1885,7 @@
   "filterPurchased": "Alınmış",
   "finance": "Maliyyə",
   "finishShopping": "Alış-verişi bitirin",
+  "firstItemAddedSnackbar": "İlk element əlavə edildi! Əla başlanğıc 🛒",
   "gallery": "Qalereya",
   "generalAssistant": "Ümumi Köməkçi",
   "generalHelp": "Bu gün alış-verişinizə necə kömək edə bilərəm?",
@@ -1810,6 +1893,13 @@
   "gestureHint": "Seçmək üçün basıb saxlayın • Silmək üçün sürüşdürün",
   "globalAssistant": "Qlobal köməkçi",
   "goodResponse": "Yaxşı cavab",
+  "help": "Kömək edin",
+  "helpListAddItems": "Aşağıdakı + düyməsi ilə elementlər əlavə edin və ya məhsullara baxmaq üçün axtarışdan istifadə edin",
+  "helpListAi": "Süni intellekt köməkçisindən siyahınızı yaratmağı, təşkil etməyi və ya tamamlamasını xahiş edin – sadəcə parıldamaq ikonasına toxunun",
+  "helpListOrganize": "Yenidən sıralamaq üçün elementləri dartın, alınmış kimi qeyd etmək üçün sürüşdürün və ya filtrlərdən və çeşidləmədən istifadə edin",
+  "helpListShare": "Siyahınızı ailə ilə paylaşın və ya PDF, Excel və ya düz mətn kimi ixrac edin",
+  "helpListShoppingMode": "Alış-veriş rejimi alınmış əşyaları gizlədir ki, siz qalanlara diqqət edə biləsiniz",
+  "helpListTitle": "Siyahınızdan istifadə etməklə",
   "howCanIHelp": "Mən necə kömək edə bilərəm?",
   "idealQty": "İdeal say",
   "idealQuantity": "İdeal miqdar",
@@ -1892,10 +1982,13 @@
   "mealPlannerBudgetRemoveGoal": "Məqsədi silin",
   "mealPlannerBudgetTodayCost": "Bu gün: {amount}",
   "mealPlannerBudgetWeekCost": "Həftə: {amount}",
+  "mealPlannerCurrentDayLabel": "Cari gün",
   "mealPlannerCustomTypeLabel": "Fərdi növ",
   "mealPlannerDateLabel": "Tarix",
   "mealPlannerDefaultTypeLabel": "Defolt növ",
   "mealPlannerDeleteMeal": "Yeməyi sil",
+  "mealPlannerDuplicate": "Dublikat yemək",
+  "mealPlannerDuplicateSuccess": "Yemək müvəffəqiyyətlə təkrarlandı!",
   "mealPlannerEditMeal": "Yeməyi redaktə et",
   "mealPlannerEditType": "Yemək növünü redaktə edin",
   "mealPlannerError": "Yemək planının yüklənməsində xəta baş verdi",
@@ -1922,6 +2015,7 @@
   "mealPlannerPrepTime": "{minutes} dəq",
   "mealPlannerSave": "Plana əlavə et",
   "mealPlannerSearchRecipes": "Reseptləri axtar...",
+  "mealPlannerSelectDestinationDay": "Dublikat...",
   "mealPlannerSelectRecipe": "Resept seçin",
   "mealPlannerServings": "{count,plural, one{{count} porsiya} other{{count} porsiya}}",
   "mealPlannerServingsLabel": "Porsiya sayı",
@@ -1953,6 +2047,8 @@
   "navRecipes": "Reseptlər",
   "newCategoryDialog": "Yeni kateqoriya",
   "newChat": "Yeni Söhbət",
+  "newChatConfirmMessage": "Yeni söhbət başlasın? Cari söhbətiniz itiriləcək.",
+  "newChatConfirmTitle": "Yeni söhbət",
   "newChatStarted": "Yeni söhbət başladı",
   "newListTitle": "Yeni Alış-veriş Siyahısı",
   "newPantryList": "Kiler Alış-verişi",
@@ -2091,7 +2187,11 @@
   "onboardingGroupCouple": "Cütlük",
   "onboardingGroupFamily": "Ailə",
   "onboardingGroupSolo": "Sadəcə mən",
+  "onboardingHookContinue": "Başlayın",
   "onboardingHookHeadline": "Yenə bir ərzaq məhsulunu heç vaxt unutma",
+  "onboardingHookItem1": "Qızardılmış toyuq",
+  "onboardingHookItem2": "Mozzarella pendiri",
+  "onboardingHookItem3": "Albalı pomidorları",
   "onboardingListCreated": "Siyahınız hazırdır: {count} element sizin üçün təşkil edilmişdir.",
   "onboardingListSaveFailed": "Elementləri hazırladım, lakin siyahını saxlaya bilmədim. Onu tətbiqdə saxlamaq üçün yenidən cəhd edin.",
   "onboardingLoadingStat1Label": "Kataloqda olan əşyalar",
@@ -2138,6 +2238,7 @@
   "onboardingSetupTitle": "Təcrübənizi fərdiləşdirin",
   "onboardingShareDesc": "Real vaxtda ailə və dostlarla siyahıları sinxronlaşdırın",
   "onboardingShareTitle": "Sevdiklərinizlə paylaşın",
+  "onboardingSkip": "Hələlik keçin",
   "onboardingSlide1Body": "Siyahıları dərhal yaradın və paylaşın. Kipi vərdişlərinizə əsasən elementləri avtomatik əlavə edir.",
   "onboardingSlide1Title": "Ağıllı Alış-veriş Siyahıları",
   "onboardingSlide2Body": "İstənilən şeydən soruşun - siyahılar yaradın, reseptlər tapın, anbarınızı izləyin, həftənizi planlaşdırın.",
@@ -2218,6 +2319,7 @@
   "paywallFeatureSmartAI": "Ağıllı AI",
   "paywallFeatureUnlimitedLists": "Limitsiz Siyahılar",
   "paywallFeaturesTitle": "Sizə lazım olan hər şey:",
+  "paywallFreeTier": "Pulsuz: 3 siyahı",
   "paywallGoalHeadlineFamily": "{name}, ailə alış-verişi təşkil edin!",
   "paywallGoalHeadlineFaster": "{name}, vaxtın yarısında alış-veriş edin!",
   "paywallGoalHeadlineNeverForget": "{name}, heç vaxt bir elementi unutma!",
@@ -2247,6 +2349,7 @@
   "paywallPricePerDay": "Yalnız {price}/gün — qəhvədən azdır",
   "paywallPricePerMonth": "Yalnız {price}/ay",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Limitsiz",
   "paywallPurchaseError": "Satınalmanı tamamlamaq mümkün olmadı. Yenidən cəhd edin.",
   "paywallPurchasePending": "Ödənişiniz təsdiqini gözləyir. Təsdiq edildikdən sonra giriş avtomatik olaraq buraxılacaq.",
   "paywallRestore": "Bərpa et",
@@ -2374,6 +2477,7 @@
   "searchConversations": "Söhbətləri axtarın",
   "searchCurrency": "Valyuta axtar...",
   "searchInConversation": "Söhbətdə axtar...",
+  "searchItems": "Elementləri axtarın",
   "searchLanguage": "Dil axtar...",
   "searchMessages": "Mesajları axtarın...",
   "searchRecipes": "Reseptləri axtar...",

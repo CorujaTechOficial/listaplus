@@ -9,6 +9,7 @@ import 'package:shopping_list/app/ai/providers/chat_provider.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/chat_session_model.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ChatHistoryScreen extends ConsumerStatefulWidget {
   const ChatHistoryScreen({super.key});
@@ -150,11 +151,11 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
                 controller: _searchController,
                 decoration: InputDecoration(
                   hintText: l10n.searchMessages,
-                  prefixIcon: const Icon(Icons.search),
+                  prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass),
                   suffixIcon:
                       _searchQuery.isNotEmpty
                           ? IconButton(
-                            icon: const Icon(Icons.clear),
+                            icon: const Icon(PhosphorIconsRegular.x),
                             onPressed: () {
                               setState(() {
                                 _searchController.clear();
@@ -234,12 +235,12 @@ class _ChatHistoryScreenState extends ConsumerState<ChatHistoryScreen> {
                                         _formatDate(sWithM.session.updatedAt),
                                       ),
                                       leading: const Icon(
-                                        Icons.chat_bubble_outline,
+                                        PhosphorIconsRegular.chatCircle,
                                       ),
                                       children: [
                                         OutlinedButton.icon(
                                           icon: const Icon(
-                                            Icons.chat_bubble_outline,
+                                            PhosphorIconsRegular.chatCircle,
                                             size: 16,
                                           ),
                                           label: Text(l10n.openConversation),

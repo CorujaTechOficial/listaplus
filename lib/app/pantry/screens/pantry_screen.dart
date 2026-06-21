@@ -17,7 +17,9 @@ import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/app/pantry/widgets/pantry_add_sheet.dart';
 import 'package:shopping_list/app/pantry/widgets/pantry_item_skeleton.dart';
 import 'package:collection/collection.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class PantryScreen extends ConsumerWidget {
   const PantryScreen({super.key});
@@ -32,19 +34,19 @@ class PantryScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.person_outline),
+          icon: const Icon(PhosphorIconsRegular.user),
           onPressed: () => AccountMenuSheet.show(context),
         ),
         title: Text(l10n.pantryAppBar),
         actions: [
           IconButton(
-            icon: const Icon(Icons.share),
+            icon: const Icon(PhosphorIconsRegular.shareNetwork),
             onPressed: () => _shareApp(context),
             tooltip: l10n.shareApp,
           ),
           if (pantryAsync.value?.isNotEmpty == true)
             IconButton(
-              icon: const Icon(Icons.shopping_cart),
+              icon: const Icon(PhosphorIconsRegular.shoppingCart),
               tooltip: l10n.generateShoppingList,
               onPressed: () => _generateShoppingList(context, ref),
             ),
@@ -64,7 +66,7 @@ class PantryScreen extends ConsumerWidget {
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.6,
                     child: EmptyState(
-                      icon: Icons.inventory_2_outlined,
+                      icon: PhosphorIconsRegular.package,
                       title: l10n.pantryEmpty,
                       subtitle: l10n.pantryEmptySubtitle,
                     ),
@@ -143,7 +145,7 @@ class PantryScreen extends ConsumerWidget {
                                       shape: BoxShape.circle,
                                     ),
                                     child: Icon(
-                                      Icons.shopping_cart_outlined,
+                                      PhosphorIconsRegular.shoppingCart,
                                       size: 16,
                                       color: theme.colorScheme.onTertiary,
                                     ),
@@ -183,7 +185,7 @@ class PantryScreen extends ConsumerWidget {
                                     ),
                                   ),
                                   Icon(
-                                    Icons.chevron_right,
+                                    PhosphorIconsRegular.caretRight,
                                     color: theme.colorScheme.tertiary,
                                   ),
                                 ],
@@ -195,7 +197,7 @@ class PantryScreen extends ConsumerWidget {
                             begin: -0.2,
                             end: 0,
                             duration: DurationTokens.normal,
-                            curve: Curves.easeOutBack,
+                            curve: Curves.easeOutCubic,
                           )
                           .fadeIn(duration: DurationTokens.fast),
                     ),
@@ -213,7 +215,7 @@ class PantryScreen extends ConsumerWidget {
                           children: [
                             Icon(
                               categoriesMap[catId]?.icon ??
-                                  Icons.category_outlined,
+                                  PhosphorIconsRegular.squaresFour,
                               size: 16,
                               color:
                                   categoriesMap[catId]?.colorValue ??
@@ -270,13 +272,18 @@ class PantryScreen extends ConsumerWidget {
                 itemCount: 6,
                 itemBuilder: (_, _) => const PantryItemSkeleton(),
               ),
-          error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
+          error: (e, _) => Center(
+            child: Padding(
+              padding: const EdgeInsets.all(Spacing.lg),
+              child: Text(l10n.errorUnexpected),
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
             heroTag: 'pantry_fab',
             onPressed: () => PantryAddSheet.show(context),
-            child: const Icon(Icons.add),
+            child: const Icon(PhosphorIconsRegular.plus),
           )
           .animate()
           .fadeIn(duration: DurationTokens.slow, delay: DurationTokens.normal)
@@ -284,7 +291,7 @@ class PantryScreen extends ConsumerWidget {
             begin: const Offset(0, 0),
             end: const Offset(1, 1),
             duration: DurationTokens.normal,
-            curve: Curves.easeOutBack,
+            curve: Curves.easeOutCubic,
           ),
     );
   }
@@ -307,9 +314,11 @@ class PantryScreen extends ConsumerWidget {
     final suggestions = ref.read(pantrySuggestionsProvider);
     if (suggestions.isEmpty) {
       if (context.mounted) {
-        ScaffoldMessenger.of(
+        showKipiSnackBar(
           context,
-        ).showSnackBar(SnackBar(content: Text(l10n.noItemsToBuy)));
+          message: l10n.noItemsToBuy,
+          type: SnackBarType.warning,
+        );
       }
       return;
     }
@@ -388,27 +397,25 @@ class PantryScreen extends ConsumerWidget {
                                     .read(currentListIdProvider.notifier)
                                     .setCurrentList(newList.id);
                                 if (ctx.mounted) {
-                                  ScaffoldMessenger.of(ctx).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        l10n.listCreated(
-                                          newList.name,
-                                          suggestions.length,
-                                        ),
-                                      ),
+                                  showKipiSnackBar(
+                                    ctx,
+                                    message: l10n.listCreated(
+                                      newList.name,
+                                      suggestions.length,
                                     ),
+                                    type: SnackBarType.success,
                                   );
                                 }
                                 if (ctx.mounted) {
                                   Navigator.pop(ctx, name);
                                 }
-                              } on Exception catch (e) {
+                              } on Exception catch (_) {
                                 if (ctx.mounted) {
                                   setDialogState(() => isCreating = false);
-                                  ScaffoldMessenger.of(ctx).showSnackBar(
-                                    SnackBar(
-                                      content: Text(l10n.error(e.toString())),
-                                    ),
+                                  showKipiSnackBar(
+                                    ctx,
+                                    message: l10n.errorUnexpected,
+                                    type: SnackBarType.error,
                                   );
                                 }
                               }
@@ -584,7 +591,7 @@ class _PantryItemTile extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           _QuantityControl(
-                            icon: Icons.remove,
+                            icon: PhosphorIconsRegular.minus,
                             onPressed:
                                 item.currentQuantity <= 0
                                     ? null
@@ -597,7 +604,7 @@ class _PantryItemTile extends ConsumerWidget {
                           ),
                           const SizedBox(width: Spacing.sm),
                           _QuantityControl(
-                            icon: Icons.add,
+                            icon: PhosphorIconsRegular.plus,
                             isPrimary: true,
                             onPressed: () async {
                               await HapticFeedback.lightImpact();
@@ -635,7 +642,7 @@ class _ItemMenuButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     return PopupMenuButton<String>(
-      icon: const Icon(Icons.more_vert),
+      icon: const Icon(PhosphorIconsRegular.dotsThreeVertical),
       padding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(RadiusTokens.md),
@@ -646,7 +653,7 @@ class _ItemMenuButton extends ConsumerWidget {
               value: 'edit',
               child: Row(
                 children: [
-                  const Icon(Icons.edit_outlined),
+                  const Icon(PhosphorIconsRegular.pencilSimple),
                   const SizedBox(width: Spacing.sm),
                   Text(l10n.edit),
                 ],
@@ -657,7 +664,7 @@ class _ItemMenuButton extends ConsumerWidget {
                 value: 'restock',
                 child: Row(
                   children: [
-                    const Icon(Icons.inventory_outlined),
+                    const Icon(PhosphorIconsRegular.package),
                     const SizedBox(width: Spacing.sm),
                     Text(l10n.markAsPurchased),
                   ],
@@ -669,7 +676,7 @@ class _ItemMenuButton extends ConsumerWidget {
               child: Row(
                 children: [
                   Icon(
-                    Icons.delete_outline,
+                    PhosphorIconsRegular.trash,
                     color: Theme.of(context).colorScheme.error,
                   ),
                   const SizedBox(width: Spacing.sm),
@@ -717,25 +724,21 @@ class _ItemMenuButton extends ConsumerWidget {
               .read(pantryItemsProvider.notifier)
               .restockItem(item.id, restockAmount);
           if (context.mounted) {
-            ScaffoldMessenger.of(context).clearSnackBars();
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                behavior: SnackBarBehavior.floating,
-                content: Text(
-                  l10n.restocked(
-                    item.name,
-                    item.idealQuantity,
-                    item.unit.label,
-                  ),
-                ),
-                action: SnackBarAction(
-                  label: l10n.undo,
-                  onPressed: () async {
-                    await ref
-                        .read(pantryItemsProvider.notifier)
-                        .consumeItemMultiple(item.id, restockAmount);
-                  },
-                ),
+            showKipiSnackBar(
+              context,
+              message: l10n.restocked(
+                item.name,
+                item.idealQuantity,
+                item.unit.label,
+              ),
+              type: SnackBarType.success,
+              action: SnackBarAction(
+                label: l10n.undo,
+                onPressed: () async {
+                  await ref
+                      .read(pantryItemsProvider.notifier)
+                      .consumeItemMultiple(item.id, restockAmount);
+                },
               ),
             );
           }

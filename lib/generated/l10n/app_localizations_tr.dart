@@ -72,6 +72,32 @@ class AppLocalizationsTr extends AppLocalizations {
   String get close => 'Kapat';
 
   @override
+  String get help => 'Yardım';
+
+  @override
+  String get helpListTitle => 'Listenizi kullanma';
+
+  @override
+  String get helpListAddItems =>
+      'Alt kısımdaki + düğmesiyle öğeler ekleyin veya ürünlere göz atmak için aramayı kullanın';
+
+  @override
+  String get helpListAi =>
+      'Yapay zeka asistanından listenizi oluşturmasını, organize etmesini veya tamamlamasını isteyin; yalnızca ışıltı simgesine dokunmanız yeterli';
+
+  @override
+  String get helpListShoppingMode =>
+      'Alışveriş modu satın alınan öğeleri gizler, böylece geriye kalanlara odaklanabilirsiniz';
+
+  @override
+  String get helpListOrganize =>
+      'Yeniden sıralamak için öğeleri sürükleyin, satın alındı ​​olarak işaretlemek için kaydırın veya filtreleri ve sıralamayı kullanın';
+
+  @override
+  String get helpListShare =>
+      'Listenizi ailenizle paylaşın veya PDF, Excel veya düz metin olarak dışa aktarın';
+
+  @override
   String get import => 'İçe aktar';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get clear => 'Temizle';
+
+  @override
+  String get clearPurchasedTitle => 'Satın alınan öğeleri temizle';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Satın alınan tüm öğeler bu listeden kaldırılsın mı? Bu geri alınamaz.';
 
   @override
   String error(String message) {
@@ -96,6 +129,22 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get purchaseError =>
       'Satın alma işlenirken hata oluştu. Tekrar deneyin.';
+
+  @override
+  String get errorCreateList =>
+      'Liste oluşturulamadı. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get errorShareCode =>
+      'Paylaşım kodu oluşturulurken hata oluştu. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get errorQuickAdd =>
+      'Öğe eklenemedi. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get errorLoadList =>
+      'Listeleriniz yüklenemedi. Başlamak için lütfen yeni bir liste oluşturun.';
 
   @override
   String get restoreError =>
@@ -483,6 +532,19 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noBudgetDefined => 'Bütçe belirlenmedi';
 
   @override
+  String get budgetGoalInvalidAmount => 'Sıfırdan büyük bir değer girin';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Kısmi fiyatlandırma tahminlerini içerir';
+
+  @override
+  String get budgetGoalSaved => 'Bütçe hedefi kaydedildi';
+
+  @override
+  String get budgetGoalRemoved => 'Bütçe hedefi kaldırıldı';
+
+  @override
   String totalEstimated(String amount) {
     return 'Toplam tahmini: $amount';
   }
@@ -677,6 +739,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newChat => 'Yeni Sohbet';
 
   @override
+  String get newChatConfirmTitle => 'Yeni görüşme';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Yeni bir sohbet başlatılsın mı? Mevcut görüşmeniz kaybolacak.';
+
+  @override
   String get noHistory => 'Sohbet geçmişi yok';
 
   @override
@@ -788,28 +857,28 @@ class AppLocalizationsTr extends AppLocalizations {
   String get undo => 'Geri al';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Yeni sohbet başlatıldı';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Listeye ekle';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Ne yapabilirim?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Alışveriş Listeleri';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Bütçe ve Fiyatlar';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Tarifler ve Menüler';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organizasyon';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Alışveriş yaparken öğeleri kontrol edin';
 
   @override
   String get kipiListTitle => 'Kipi Listesi';
@@ -1243,6 +1312,15 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Hoş geldin teklifi';
+
+  @override
+  String get paywallFreeTier => 'Ücretsiz: 3 liste';
+
+  @override
+  String get paywallProTier => 'Profesyonel: Sınırsız';
+
+  @override
+  String get firstItemAddedSnackbar => 'İlk öğe eklendi! Harika başlangıç ​​🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -1971,28 +2049,28 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Ay: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Hafta: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Bugün: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Hedefi kaldır';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Yemek planlayıcı bütçesi';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Yemek planlaması için aylık harcama hedefi';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -2135,6 +2213,18 @@ class AppLocalizationsTr extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Varsayılan tür';
 
   @override
+  String get mealPlannerDuplicate => 'Yinelenen yemek';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Şuraya kopyala:';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Geçerli gün';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Yemek başarıyla kopyalandı!';
+
+  @override
   String get expirationDate => 'Son kullanma tarihi';
 
   @override
@@ -2142,6 +2232,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get skip => 'Atlamak';
+
+  @override
+  String get onboardingSkip => 'Şimdilik atla';
 
   @override
   String get onboardingAiTitle => 'Kipi ile sohbet et';
@@ -3179,6 +3272,31 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Yanıt oluşturuluyor…';
+
+  @override
+  String get errorUnexpected =>
+      'Beklenmedik bir şey oldu. Lütfen tekrar deneyin.';
+
+  @override
+  String get aiAssistantTooltip => 'AI asistanını aç';
+
+  @override
+  String get searchItems => 'Öğeleri ara';
+
+  @override
+  String get onboardingHookContinue => 'Başlayın';
+
+  @override
+  String get onboardingHookItem1 => 'Izgara tavuk';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella peyniri';
+
+  @override
+  String get onboardingHookItem3 => 'Kiraz domates';
+
+  @override
+  String get checkItemTooltip => 'Öğeyi kontrol et';
 }
 
 /// The translations for Turkish, as used in Turkey (`tr_TR`).
@@ -3249,6 +3367,32 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get close => 'Kapat';
 
   @override
+  String get help => 'Yardım';
+
+  @override
+  String get helpListTitle => 'Listenizi kullanma';
+
+  @override
+  String get helpListAddItems =>
+      'Alt kısımdaki + düğmesiyle öğeler ekleyin veya ürünlere göz atmak için aramayı kullanın';
+
+  @override
+  String get helpListAi =>
+      'Yapay zeka asistanından listenizi oluşturmasını, organize etmesini veya tamamlamasını isteyin; yalnızca ışıltı simgesine dokunmanız yeterli';
+
+  @override
+  String get helpListShoppingMode =>
+      'Alışveriş modu satın alınan öğeleri gizler, böylece geriye kalanlara odaklanabilirsiniz';
+
+  @override
+  String get helpListOrganize =>
+      'Yeniden sıralamak için öğeleri sürükleyin, satın alındı ​​olarak işaretlemek için kaydırın veya filtreleri ve sıralamayı kullanın';
+
+  @override
+  String get helpListShare =>
+      'Listenizi ailenizle paylaşın veya PDF, Excel veya düz metin olarak dışa aktarın';
+
+  @override
   String get import => 'İçe aktar';
 
   @override
@@ -3259,6 +3403,13 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get clear => 'Temizle';
+
+  @override
+  String get clearPurchasedTitle => 'Satın alınan öğeleri temizle';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Satın alınan tüm öğeler bu listeden kaldırılsın mı? Bu geri alınamaz.';
 
   @override
   String error(String message) {
@@ -3273,6 +3424,22 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   @override
   String get purchaseError =>
       'Satın alma işlenirken hata oluştu. Tekrar deneyin.';
+
+  @override
+  String get errorCreateList =>
+      'Liste oluşturulamadı. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get errorShareCode =>
+      'Paylaşım kodu oluşturulurken hata oluştu. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get errorQuickAdd =>
+      'Öğe eklenemedi. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get errorLoadList =>
+      'Listeleriniz yüklenemedi. Başlamak için lütfen yeni bir liste oluşturun.';
 
   @override
   String get restoreError =>
@@ -3660,6 +3827,19 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get noBudgetDefined => 'Bütçe belirlenmedi';
 
   @override
+  String get budgetGoalInvalidAmount => 'Sıfırdan büyük bir değer girin';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ Kısmi fiyatlandırma tahminlerini içerir';
+
+  @override
+  String get budgetGoalSaved => 'Bütçe hedefi kaydedildi';
+
+  @override
+  String get budgetGoalRemoved => 'Bütçe hedefi kaldırıldı';
+
+  @override
   String totalEstimated(String amount) {
     return 'Toplam tahmini: $amount';
   }
@@ -3854,6 +4034,13 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get newChat => 'Yeni Sohbet';
 
   @override
+  String get newChatConfirmTitle => 'Yeni görüşme';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Yeni bir sohbet başlatılsın mı? Mevcut görüşmeniz kaybolacak.';
+
+  @override
   String get noHistory => 'Sohbet geçmişi yok';
 
   @override
@@ -3963,6 +4150,30 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get undo => 'Geri al';
+
+  @override
+  String get newChatStarted => 'Yeni sohbet başlatıldı';
+
+  @override
+  String get quickAddToList => 'Listeye ekle';
+
+  @override
+  String get aiCapabilitiesTitle => 'Ne yapabilirim?';
+
+  @override
+  String get aiCapabilitiesLists => 'Alışveriş Listeleri';
+
+  @override
+  String get aiCapabilitiesBudget => 'Bütçe ve Fiyatlar';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Tarifler ve Menüler';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organizasyon';
+
+  @override
+  String get marketModeDescription => 'Alışveriş yaparken öğeleri kontrol edin';
 
   @override
   String get kipiListTitle => 'Kipi Listesi';
@@ -4396,6 +4607,15 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Hoş geldin teklifi';
+
+  @override
+  String get paywallFreeTier => 'Ücretsiz: 3 liste';
+
+  @override
+  String get paywallProTier => 'Profesyonel: Sınırsız';
+
+  @override
+  String get firstItemAddedSnackbar => 'İlk öğe eklendi! Harika başlangıç ​​🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5123,6 +5343,31 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
       'Yemeklerinizi planlamaya başlamak için herhangi bir güne dokunun!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Ay: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Hafta: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Bugün: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Hedefi kaldır';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Yemek planlayıcı bütçesi';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Yemek planlaması için aylık harcama hedefi';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes dk.';
   }
@@ -5263,6 +5508,18 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get mealPlannerDefaultTypeLabel => 'Varsayılan tür';
 
   @override
+  String get mealPlannerDuplicate => 'Yinelenen yemek';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Şuraya kopyala:';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Geçerli gün';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Yemek başarıyla kopyalandı!';
+
+  @override
   String get expirationDate => 'Son kullanma tarihi';
 
   @override
@@ -5270,6 +5527,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get skip => 'Atlamak';
+
+  @override
+  String get onboardingSkip => 'Şimdilik atla';
 
   @override
   String get onboardingAiTitle => 'Kipi ile sohbet et';
@@ -6307,4 +6567,29 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get aiGeneratingResponse => 'Yanıt oluşturuluyor…';
+
+  @override
+  String get errorUnexpected =>
+      'Beklenmedik bir şey oldu. Lütfen tekrar deneyin.';
+
+  @override
+  String get aiAssistantTooltip => 'AI asistanını aç';
+
+  @override
+  String get searchItems => 'Öğeleri ara';
+
+  @override
+  String get onboardingHookContinue => 'Başlayın';
+
+  @override
+  String get onboardingHookItem1 => 'Izgara tavuk';
+
+  @override
+  String get onboardingHookItem2 => 'Mozzarella peyniri';
+
+  @override
+  String get onboardingHookItem3 => 'Kiraz domates';
+
+  @override
+  String get checkItemTooltip => 'Öğeyi kontrol et';
 }

@@ -72,6 +72,32 @@ class AppLocalizationsKm extends AppLocalizations {
   String get close => 'បិទ';
 
   @override
+  String get help => 'ជំនួយ';
+
+  @override
+  String get helpListTitle => 'ដោយប្រើបញ្ជីរបស់អ្នក។';
+
+  @override
+  String get helpListAddItems =>
+      'បន្ថែមធាតុដោយប្រើប៊ូតុង + នៅខាងក្រោម ឬប្រើការស្វែងរកដើម្បីរកមើលផលិតផល';
+
+  @override
+  String get helpListAi =>
+      'សុំឱ្យជំនួយការ AI បង្កើត រៀបចំ ឬបំពេញបញ្ជីរបស់អ្នក — ដោយគ្រាន់តែចុចលើរូបតំណាងពន្លឺ';
+
+  @override
+  String get helpListShoppingMode =>
+      'របៀបទិញទំនិញលាក់ធាតុដែលបានទិញ ដូច្នេះអ្នកអាចផ្តោតលើអ្វីដែលនៅសេសសល់';
+
+  @override
+  String get helpListOrganize =>
+      'អូសធាតុដើម្បីតម្រៀបឡើងវិញ អូសដើម្បីសម្គាល់ថាបានទិញ ឬប្រើតម្រង និងតម្រៀប';
+
+  @override
+  String get helpListShare =>
+      'ចែករំលែកបញ្ជីរបស់អ្នកជាមួយគ្រួសារ ឬនាំចេញជា PDF, Excel ឬអត្ថបទធម្មតា។';
+
+  @override
   String get import => 'នាំចូល';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get clear => 'សម្អាត';
+
+  @override
+  String get clearPurchasedTitle => 'សម្អាតវត្ថុដែលបានទិញ';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'លុបធាតុដែលបានទិញទាំងអស់ចេញពីបញ្ជីនេះ? នេះមិនអាចត្រឡប់វិញបានទេ។';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get purchaseError => 'កំហុសក្នុងការទិញ។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorCreateList =>
+      'មិនអាចបង្កើតបញ្ជីបានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorShareCode =>
+      'កំហុសក្នុងការបង្កើតលេខកូដចែករំលែក។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorQuickAdd =>
+      'មិនអាចបន្ថែមធាតុបានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorLoadList =>
+      'មិនអាចផ្ទុកបញ្ជីរបស់អ្នកបានទេ។ សូមបង្កើតបញ្ជីថ្មីដើម្បីចាប់ផ្តើម។';
 
   @override
   String get restoreError => 'កំហុសក្នុងការស្តារឡើងវិញ។ សូមព្យាយាមម្តងទៀត។';
@@ -479,6 +528,19 @@ class AppLocalizationsKm extends AppLocalizations {
   String get noBudgetDefined => 'គ្មានថវិកាកំណត់ទេ';
 
   @override
+  String get budgetGoalInvalidAmount => 'បញ្ចូលតម្លៃធំជាងសូន្យ';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ រួមបញ្ចូលការប៉ាន់ស្មានតម្លៃដោយផ្នែក';
+
+  @override
+  String get budgetGoalSaved => 'បានរក្សាទុកគោលដៅថវិកា';
+
+  @override
+  String get budgetGoalRemoved => 'គោលដៅថវិកាត្រូវបានដកចេញ';
+
+  @override
   String totalEstimated(String amount) {
     return 'ប៉ាន់ស្មានសរុប៖ $amount';
   }
@@ -670,6 +732,13 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get newChat => 'ការជជែកថ្មី។';
+
+  @override
+  String get newChatConfirmTitle => 'ការសន្ទនាថ្មី។';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ចាប់ផ្តើមការសន្ទនាថ្មី? ការសន្ទនាបច្ចុប្បន្នរបស់អ្នកនឹងត្រូវបាត់បង់។';
 
   @override
   String get noHistory => 'មិនមានប្រវត្តិជជែក';
@@ -1223,6 +1292,16 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ការផ្តល់ជូនស្វាគមន៍';
+
+  @override
+  String get paywallFreeTier => 'ឥតគិតថ្លៃ៖ ៣ បញ្ជី';
+
+  @override
+  String get paywallProTier => 'គាំទ្រ៖ គ្មានដែនកំណត់';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'ធាតុដំបូងបានបន្ថែម! ការចាប់ផ្តើមដ៏អស្ចារ្យ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2111,6 +2190,18 @@ class AppLocalizationsKm extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ប្រភេទលំនាំដើម';
 
   @override
+  String get mealPlannerDuplicate => 'អាហារស្ទួន';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ស្ទួនទៅ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ថ្ងៃបច្ចុប្បន្ន';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'អាហារស្ទួនដោយជោគជ័យ!';
+
+  @override
   String get expirationDate => 'កាលបរិច្ឆេទផុតកំណត់';
 
   @override
@@ -2118,6 +2209,9 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get skip => 'រំលង';
+
+  @override
+  String get onboardingSkip => 'រំលងឥឡូវនេះ';
 
   @override
   String get onboardingAiTitle => 'ជជែកជាមួយគីភី';
@@ -3153,6 +3247,31 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'កំពុងបង្កើតការឆ្លើយតប...';
+
+  @override
+  String get errorUnexpected =>
+      'អ្វីមួយដែលមិននឹកស្មានដល់បានកើតឡើង។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get aiAssistantTooltip => 'បើកជំនួយការ AI';
+
+  @override
+  String get searchItems => 'ស្វែងរកធាតុ';
+
+  @override
+  String get onboardingHookContinue => 'ចាប់ផ្តើម';
+
+  @override
+  String get onboardingHookItem1 => 'សាច់មាន់ដុត';
+
+  @override
+  String get onboardingHookItem2 => 'ឈីស Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'ប៉េងប៉ោះ Cherry';
+
+  @override
+  String get checkItemTooltip => 'ពិនិត្យធាតុ';
 }
 
 /// The translations for Khmer Central Khmer, as used in Cambodia (`km_KH`).
@@ -3223,6 +3342,32 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get close => 'បិទ';
 
   @override
+  String get help => 'ជំនួយ';
+
+  @override
+  String get helpListTitle => 'ដោយប្រើបញ្ជីរបស់អ្នក។';
+
+  @override
+  String get helpListAddItems =>
+      'បន្ថែមធាតុដោយប្រើប៊ូតុង + នៅខាងក្រោម ឬប្រើការស្វែងរកដើម្បីរកមើលផលិតផល';
+
+  @override
+  String get helpListAi =>
+      'សុំឱ្យជំនួយការ AI បង្កើត រៀបចំ ឬបំពេញបញ្ជីរបស់អ្នក — ដោយគ្រាន់តែចុចលើរូបតំណាងពន្លឺ';
+
+  @override
+  String get helpListShoppingMode =>
+      'របៀបទិញទំនិញលាក់ធាតុដែលបានទិញ ដូច្នេះអ្នកអាចផ្តោតលើអ្វីដែលនៅសេសសល់';
+
+  @override
+  String get helpListOrganize =>
+      'អូសធាតុដើម្បីតម្រៀបឡើងវិញ អូសដើម្បីសម្គាល់ថាបានទិញ ឬប្រើតម្រង និងតម្រៀប';
+
+  @override
+  String get helpListShare =>
+      'ចែករំលែកបញ្ជីរបស់អ្នកជាមួយគ្រួសារ ឬនាំចេញជា PDF, Excel ឬអត្ថបទធម្មតា។';
+
+  @override
   String get import => 'នាំចូល';
 
   @override
@@ -3233,6 +3378,13 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get clear => 'សម្អាត';
+
+  @override
+  String get clearPurchasedTitle => 'សម្អាតវត្ថុដែលបានទិញ';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'លុបធាតុដែលបានទិញទាំងអស់ចេញពីបញ្ជីនេះ? នេះមិនអាចត្រឡប់វិញបានទេ។';
 
   @override
   String error(String message) {
@@ -3247,6 +3399,22 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   @override
   String get purchaseError =>
       'មានកំហុសក្នុងការដំណើរការការទិញ។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorCreateList =>
+      'មិនអាចបង្កើតបញ្ជីបានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorShareCode =>
+      'កំហុសក្នុងការបង្កើតលេខកូដចែករំលែក។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorQuickAdd =>
+      'មិនអាចបន្ថែមធាតុបានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get errorLoadList =>
+      'មិនអាចផ្ទុកបញ្ជីរបស់អ្នកបានទេ។ សូមបង្កើតបញ្ជីថ្មីដើម្បីចាប់ផ្តើម។';
 
   @override
   String get restoreError => 'មានកំហុសក្នុងការស្ដារការទិញ។ សូមព្យាយាមម្តងទៀត។';
@@ -3636,6 +3804,19 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get noBudgetDefined => 'មិនទាន់កំណត់ថវិកា';
 
   @override
+  String get budgetGoalInvalidAmount => 'បញ្ចូលតម្លៃធំជាងសូន្យ';
+
+  @override
+  String get budgetPartialEstimateHint =>
+      '~ រួមបញ្ចូលការប៉ាន់ស្មានតម្លៃដោយផ្នែក';
+
+  @override
+  String get budgetGoalSaved => 'បានរក្សាទុកគោលដៅថវិកា';
+
+  @override
+  String get budgetGoalRemoved => 'គោលដៅថវិកាត្រូវបានដកចេញ';
+
+  @override
   String totalEstimated(String amount) {
     return 'សរុបប៉ាន់ស្មាន: $amount';
   }
@@ -3827,6 +4008,13 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get newChat => 'ការជជែកថ្មី។';
+
+  @override
+  String get newChatConfirmTitle => 'ការសន្ទនាថ្មី។';
+
+  @override
+  String get newChatConfirmMessage =>
+      'ចាប់ផ្តើមការសន្ទនាថ្មី? ការសន្ទនាបច្ចុប្បន្នរបស់អ្នកនឹងត្រូវបាត់បង់។';
 
   @override
   String get noHistory => 'មិនមានប្រវត្តិជជែក';
@@ -4381,6 +4569,16 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 ការផ្តល់ជូនស្វាគមន៍';
+
+  @override
+  String get paywallFreeTier => 'ឥតគិតថ្លៃ៖ ៣ បញ្ជី';
+
+  @override
+  String get paywallProTier => 'គាំទ្រ៖ គ្មានដែនកំណត់';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'ធាតុដំបូងបានបន្ថែម! ការចាប់ផ្តើមដ៏អស្ចារ្យ 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5274,6 +5472,18 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get mealPlannerDefaultTypeLabel => 'ប្រភេទលំនាំដើម';
 
   @override
+  String get mealPlannerDuplicate => 'អាហារស្ទួន';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'ស្ទួនទៅ...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'ថ្ងៃបច្ចុប្បន្ន';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'អាហារស្ទួនដោយជោគជ័យ!';
+
+  @override
   String get expirationDate => 'កាលបរិច្ឆេទផុតកំណត់';
 
   @override
@@ -5281,6 +5491,9 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get skip => 'រំលង';
+
+  @override
+  String get onboardingSkip => 'រំលងឥឡូវនេះ';
 
   @override
   String get onboardingAiTitle => 'ជជែកជាមួយគីភី';
@@ -6316,4 +6529,29 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get aiGeneratingResponse => 'កំពុងបង្កើតការឆ្លើយតប...';
+
+  @override
+  String get errorUnexpected =>
+      'អ្វីមួយដែលមិននឹកស្មានដល់បានកើតឡើង។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get aiAssistantTooltip => 'បើកជំនួយការ AI';
+
+  @override
+  String get searchItems => 'ស្វែងរកធាតុ';
+
+  @override
+  String get onboardingHookContinue => 'ចាប់ផ្តើម';
+
+  @override
+  String get onboardingHookItem1 => 'សាច់មាន់ដុត';
+
+  @override
+  String get onboardingHookItem2 => 'ឈីស Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'ប៉េងប៉ោះ Cherry';
+
+  @override
+  String get checkItemTooltip => 'ពិនិត្យធាតុ';
 }

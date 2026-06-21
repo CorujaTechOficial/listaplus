@@ -390,6 +390,15 @@ class AppTheme {
           borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.md)),
         ),
         elevation: ElevationTokens.level3,
+        contentTextStyle: const TextStyle(
+          fontFamily: 'PlusJakartaSans',
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.2,
+        ),
+        actionTextColor: colorScheme.onPrimary,
+        closeIconColor: colorScheme.outline,
+        dismissDirection: DismissDirection.horizontal,
       ),
 
       // -----------------------------------------------------------------------

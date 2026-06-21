@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/meal_type.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 Color getMealTypeColor(String typeId, List<MealType> activeTypes, ColorScheme scheme) {
   final type = activeTypes.firstWhere((t) => t.id == typeId, orElse: () {
@@ -9,7 +10,7 @@ Color getMealTypeColor(String typeId, List<MealType> activeTypes, ColorScheme sc
       id: typeId,
       name: typeId,
       color: 0xFF9E9E9E,
-      iconCodepoint: Icons.restaurant.codePoint,
+      iconCodepoint: PhosphorIconsRegular.forkKnife.codePoint,
       sortOrder: 99,
     ));
     return def;
@@ -26,7 +27,7 @@ IconData getMealTypeIcon(String typeId, List<MealType> activeTypes) {
       id: typeId,
       name: typeId,
       color: 0xFF9E9E9E,
-      iconCodepoint: Icons.restaurant.codePoint,
+      iconCodepoint: PhosphorIconsRegular.forkKnife.codePoint,
       sortOrder: 99,
     ));
     return def;
@@ -40,7 +41,7 @@ String getMealTypeLabel(String typeId, List<MealType> activeTypes, AppLocalizati
       id: typeId,
       name: typeId,
       color: 0xFF9E9E9E,
-      iconCodepoint: Icons.restaurant.codePoint,
+      iconCodepoint: PhosphorIconsRegular.forkKnife.codePoint,
       sortOrder: 99,
     ));
     return def;
@@ -93,7 +94,7 @@ class MealTypeChip extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 16, color: isSelected ? Colors.white : color),
+              Icon(icon, size: Spacing.md, color: isSelected ? Colors.white : color),
               const SizedBox(width: Spacing.xxs),
               Text(
                 label,
@@ -127,13 +128,13 @@ class MealTypeBadge extends StatelessWidget {
     final icon = mealType.iconData;
 
     return Container(
-      width: 24,
-      height: 24,
+      width: Spacing.lg,
+      height: Spacing.lg,
       decoration: BoxDecoration(
         color: color.withAlpha(30),
         shape: BoxShape.circle,
       ),
-      child: Icon(icon, size: 13, color: color),
+      child: Icon(icon, size: Spacing.sm, color: color),
     );
   }
 }

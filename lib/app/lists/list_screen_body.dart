@@ -18,6 +18,7 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
@@ -46,6 +47,7 @@ import 'package:shopping_list/app/lists/widgets/share_list_sheet.dart';
 import 'package:shopping_list/app/lists/widgets/export_options_sheet.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
 import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ListScreenBody extends ConsumerStatefulWidget {
   const ListScreenBody({super.key, required this.listId});
@@ -63,6 +65,8 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
   bool _shoppingMode = false;
   bool _completionRegistered = false;
   bool _showGestureHint = false;
+  bool _firstItemCelebrationShown = false;
+  int _previousItemCount = 0;
   final Set<String> _selectedIds = {};
 
   @override
@@ -257,6 +261,28 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     return (oldIndex: oldFullIndex, newIndex: mappedNewIndex);
   }
 
+  void _checkFirstItemCelebration(int currentCount) {
+    if (_firstItemCelebrationShown) {
+      return;
+    }
+    if (_previousItemCount == 0 && currentCount == 1) {
+      _firstItemCelebrationShown = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) {
+          return;
+        }
+        final l10n = AppLocalizations.of(context)!;
+        showKipiSnackBar(
+          context,
+          message: l10n.firstItemAddedSnackbar,
+          type: SnackBarType.celebration,
+          icon: PhosphorIconsRegular.star,
+        );
+      });
+    }
+    _previousItemCount = currentCount;
+  }
+
   void _registerCompletionReview(int itemCount) {
     if (_completionRegistered) {
       return;
@@ -287,7 +313,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           _selectionMode || _shoppingMode
               ? AppBar(
                 leading: IconButton(
-                  icon: const Icon(Icons.close),
+                  icon: const Icon(PhosphorIconsRegular.x),
                   onPressed: () {
                     if (_selectionMode) {
                       _exitSelectionMode();
@@ -305,12 +331,12 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                 actions: [
                   if (_selectionMode)
                     IconButton(
-                      icon: const Icon(Icons.delete_outline),
+                      icon: const Icon(PhosphorIconsRegular.trash),
                       onPressed: _deleteSelected,
                     ),
                   if (_shoppingMode)
                     IconButton(
-                      icon: const Icon(Icons.celebration_outlined),
+                      icon: const Icon(PhosphorIconsRegular.confetti),
                       onPressed: () => _confettiController.play(),
                     ),
                 ],
@@ -320,6 +346,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
         data: (items) {
           final pending = items.where((i) => !i.isPurchased).toList();
           final purchased = items.where((i) => i.isPurchased).toList();
+          _checkFirstItemCelebration(items.length);
           if (_shoppingMode && pending.isEmpty && items.isNotEmpty) {
             _registerCompletionReview(items.length);
           } else if (pending.isNotEmpty) {
@@ -373,7 +400,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                   pinned: true,
                   floating: true,
                   leading: IconButton(
-                    icon: const Icon(Icons.person_outline),
+                    icon: const Icon(PhosphorIconsRegular.user),
                     onPressed: () => AccountMenuSheet.show(context),
                   ),
                   title: AppBarListSelector(currentListId: widget.listId),
@@ -381,15 +408,15 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                     IconButton(
                       icon: Icon(
                         _shoppingMode
-                            ? Icons.shopping_basket
-                            : Icons.shopping_basket_outlined,
+                            ? PhosphorIconsRegular.basket
+                            : PhosphorIconsRegular.basket,
                       ),
                       onPressed:
                           () => setState(() => _shoppingMode = !_shoppingMode),
                       tooltip: l10n.shoppingMode,
                     ),
                     IconButton(
-                      icon: const Icon(Icons.search),
+                      icon: const Icon(PhosphorIconsRegular.magnifyingGlass),
                       onPressed:
                           () => showSearch(
                             context: context,
@@ -400,8 +427,18 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                             ),
                           ),
                     ),
+                    SizedBox(
+                      height: 24,
+                      child: VerticalDivider(
+                        width: 16,
+                        thickness: 0.5,
+                        color: theme.colorScheme.outlineVariant,
+                        indent: 4,
+                        endIndent: 4,
+                      ),
+                    ),
                     PopupMenuButton<String>(
-                      icon: const Icon(Icons.more_vert),
+                      icon: const Icon(PhosphorIconsRegular.dotsThreeVertical),
                       onSelected: (val) {
                         if (val == 'clear') {
                           _clearPurchased();
@@ -462,34 +499,64 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                       itemBuilder:
                           (context) => [
                             PopupMenuItem(
-                              value: 'ai',
-                              child: Text(l10n.aiAssistant),
-                            ),
-                            const PopupMenuDivider(),
-                            PopupMenuItem(
                               value: 'share',
-                              child: Text(l10n.share),
+                              child: Row(
+                                children: [
+                                  Icon(PhosphorIconsRegular.shareNetwork, size: 20, color: theme.colorScheme.onSurface),
+                                  const SizedBox(width: Spacing.sm),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.share,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             PopupMenuItem(
                               value: 'budget',
-                              child: Text(l10n.listBudgetTitle),
+                              child: Row(
+                                children: [
+                                  Icon(PhosphorIconsRegular.wallet, size: 20, color: theme.colorScheme.onSurface),
+                                  const SizedBox(width: Spacing.sm),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.listBudgetTitle,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             PopupMenuItem(
                               value: 'clear',
-                              child: Text(l10n.clearPurchased),
+                              child: Row(
+                                children: [
+                                  Icon(PhosphorIconsRegular.trash, size: 20, color: theme.colorScheme.onSurface),
+                                  const SizedBox(width: Spacing.sm),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.clearPurchased,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             PopupMenuItem(
                               value: 'export',
-                              child: Text(l10n.exportPdfExcel),
-                            ),
-                            const PopupMenuDivider(),
-                            PopupMenuItem(
-                              value: 'profile',
-                              child: Text(l10n.profile),
-                            ),
-                            PopupMenuItem(
-                              value: 'settings',
-                              child: Text(l10n.settingsAppBar),
+                              child: Row(
+                                children: [
+                                  Icon(PhosphorIconsRegular.shareNetwork, size: 20, color: theme.colorScheme.onSurface),
+                                  const SizedBox(width: Spacing.sm),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.exportPdfExcel,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                     ),
@@ -656,12 +723,12 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
               physics: const AlwaysScrollableScrollPhysics(),
               slivers: [
                 SliverAppBar(
-                  foregroundColor: theme.colorScheme.onSurface,
-                  surfaceTintColor: theme.colorScheme.surfaceTint,
+                  backgroundColor: theme.colorScheme.surface,
+                  surfaceTintColor: Colors.transparent,
                   pinned: true,
                   floating: true,
                   leading: IconButton(
-                    icon: const Icon(Icons.person_outline),
+                    icon: const Icon(PhosphorIconsRegular.user),
                     onPressed: () => AccountMenuSheet.show(context),
                   ),
                   title: AppBarListSelector(currentListId: widget.listId),
@@ -678,7 +745,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           debugPrint('Error: $e');
           return SafeArea(
             child: EmptyState(
-              icon: Icons.error_outline,
+              icon: PhosphorIconsRegular.warningCircle,
               title: l10n.errorLoadingItems,
               subtitle: e.toString(),
             ),
@@ -1112,9 +1179,12 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
       ClipboardData(text: _formatItemsAsText(items, listName)),
     );
     if (mounted) {
-      ScaffoldMessenger.of(
+      showKipiSnackBar(
         context,
-      ).showSnackBar(SnackBar(content: Text(l10n.copiedToClipboard)));
+        message: l10n.copiedToClipboard,
+        type: SnackBarType.info,
+        icon: PhosphorIconsRegular.check,
+      );
     }
   }
 
@@ -1142,7 +1212,7 @@ class _ShoppingExitBar extends StatelessWidget {
       ),
       child: OutlinedButton.icon(
         onPressed: onExit,
-        icon: const Icon(Icons.close, size: 18),
+        icon: const Icon(PhosphorIconsRegular.x, size: 18),
         label: Text(l10n.exit),
         style: OutlinedButton.styleFrom(
           minimumSize: const Size.fromHeight(40),
@@ -1190,7 +1260,7 @@ class _CatalogEntryButton extends ConsumerWidget {
                       ),
                 ),
               ),
-          icon: const Icon(Icons.grid_view_rounded, size: 18),
+          icon: const Icon(PhosphorIconsRegular.squaresFour, size: 18),
           label: Text(l10n.catalogBrowse),
           style: OutlinedButton.styleFrom(
             minimumSize: const Size.fromHeight(40),
@@ -1210,11 +1280,11 @@ class ShoppingSearchDelegate extends SearchDelegate<String> {
 
   @override
   List<Widget> buildActions(BuildContext context) => [
-    IconButton(icon: const Icon(Icons.clear), onPressed: () => query = ''),
+    IconButton(icon: const Icon(PhosphorIconsRegular.x), onPressed: () => query = ''),
   ];
   @override
   Widget buildLeading(BuildContext context) => IconButton(
-    icon: const Icon(Icons.arrow_back),
+    icon: const Icon(PhosphorIconsRegular.arrowLeft),
     onPressed: () => close(context, ''),
   );
   @override
@@ -1230,7 +1300,7 @@ class ShoppingSearchDelegate extends SearchDelegate<String> {
     if (results.isEmpty) {
       return Center(
         child: Icon(
-          Icons.search_off,
+          PhosphorIconsRegular.magnifyingGlassMinus,
           size: 48,
           color: Theme.of(context).colorScheme.outlineVariant,
         ),

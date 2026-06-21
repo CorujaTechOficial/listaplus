@@ -22,6 +22,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -154,11 +157,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -269,12 +281,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -288,8 +306,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -303,6 +330,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -449,6 +494,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -790,8 +841,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -927,6 +990,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1292,6 +1358,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1394,6 +1463,7 @@
   "aiAssistant": "Βοηθός AI",
   "aiAssistantDescription": "Λάβετε έξυπνες προτάσεις, συνταγές και εξατομικευμένες συμβουλές με τον βοηθό AI μας.",
   "aiAssistantTitle": "Βοηθός AI",
+  "aiAssistantTooltip": "Ανοίξτε τον βοηθό AI",
   "aiCapabilitiesBudget": "Προϋπολογισμός & Τιμές",
   "aiCapabilitiesLists": "Λίστες αγορών",
   "aiCapabilitiesOrganize": "Οργάνωση",
@@ -1454,7 +1524,11 @@
   "budgetAppBar": "Μηνιαίος προϋπολογισμός",
   "budgetDashboardTitle": "Πίνακας ελέγχου",
   "budgetEditTitle": "Μηνιαίος προϋπολογισμός",
+  "budgetGoalInvalidAmount": "Εισαγάγετε μια τιμή μεγαλύτερη από το μηδέν",
+  "budgetGoalRemoved": "Ο στόχος προϋπολογισμού καταργήθηκε",
+  "budgetGoalSaved": "Ο στόχος προϋπολογισμού αποθηκεύτηκε",
   "budgetLists": "Λίστες",
+  "budgetPartialEstimateHint": "~ Περιλαμβάνει μερικές εκτιμήσεις τιμολόγησης",
   "budgetPremiumLocked": "Ο συνολικός μηνιαίος προϋπολογισμός είναι Premium",
   "budgetSubtitle": "Παρακολουθήστε τις μηνιαίες δαπάνες σας",
   "budgetUpgradePrompt": "Αναβαθμίστε για ξεκλείδωμα",
@@ -1520,6 +1594,7 @@
   "chatHistoryOfflineTitle": "Είστε εκτός σύνδεσης",
   "chatSubtitle": "Ζητήστε προτάσεις στοιχείων, συνταγές ή συμβουλές εξοικονόμησης.",
   "chatSubtitleShort": "Ρωτήστε για τιμές, συνταγές, οργάνωση...",
+  "checkItemTooltip": "Ελέγξτε το στοιχείο",
   "chooseCurrency": "Επιλέξτε Νόμισμα",
   "chooseIcon": "Επιλέξτε εικονίδιο",
   "chooseImageSource": "Επιλογή πηγής εικόνας",
@@ -1531,6 +1606,8 @@
   "clearHistoryConfirm": "Να διαγραφούν όλα τα μηνύματα αυτής της συνεδρίας;",
   "clearList": "Εκκαθάριση λίστας",
   "clearPurchased": "Εκκαθάριση αγορασμένων",
+  "clearPurchasedConfirmMessage": "Κατάργηση όλων των αγορασμένων προϊόντων από αυτήν τη λίστα; Αυτό δεν μπορεί να αναιρεθεί.",
+  "clearPurchasedTitle": "Εκκαθάριση αγορασμένων αντικειμένων",
   "close": "Κλείσιμο",
   "closeSheet": "Κοντά",
   "complete": "Ολοκλήρωση",
@@ -1611,7 +1688,9 @@
   "enterCodeHint": "Εισάγετε τον κωδικό",
   "enterUrl": "Εισαγωγή URL",
   "error": "Σφάλμα: {message}",
+  "errorCreateList": "Δεν ήταν δυνατή η δημιουργία λίστας. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
   "errorGeneric": "Σφάλμα: {message}",
+  "errorLoadList": "Δεν ήταν δυνατή η φόρτωση των λιστών σας. Δημιουργήστε μια νέα λίστα για να ξεκινήσετε.",
   "errorLoadingChat": "Ωχ! Κάτι πήγε στραβά κατά τη φόρτωση της συνομιλίας.",
   "errorLoadingChatSubtitle": "Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.",
   "errorLoadingHistory": "Σφάλμα κατά τη φόρτωση του ιστορικού",
@@ -1620,7 +1699,10 @@
   "errorLoadingRecipes": "Σφάλμα κατά τη φόρτωση των συνταγών",
   "errorLoadingSubscription": "Σφάλμα κατά τη φόρτωση της συνδρομής",
   "errorOscillation": "Αυτό μπορεί να συμβεί λόγω ταλαντώσεων δικτύου ή προσωρινής μη διαθεσιμότητας. Δοκιμάστε ξανά.",
+  "errorQuickAdd": "Δεν ήταν δυνατή η προσθήκη του στοιχείου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
   "errorSavingProfile": "Σφάλμα αποθήκευσης προφίλ",
+  "errorShareCode": "Σφάλμα κατά τη δημιουργία κωδικού κοινής χρήσης. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
+  "errorUnexpected": "Συνέβη κάτι απροσδόκητο. Δοκιμάστε ξανά.",
   "estimated": "Εκτιμώμενο",
   "estimatedCost": "Εκτιμώμενος",
   "estimatedPrice": "Εκτιμώμενη τιμή",
@@ -1662,6 +1744,7 @@
   "filterPurchased": "Αγορασμένα",
   "finance": "Οικονομικά",
   "finishShopping": "Τελειώστε τις αγορές",
+  "firstItemAddedSnackbar": "Το πρώτο στοιχείο προστέθηκε! Καλή αρχή 🛒",
   "gallery": "Συλλογή",
   "generalAssistant": "Γενικός βοηθός",
   "generalHelp": "Πώς μπορώ να βοηθήσω με τα ψώνια σας σήμερα;",
@@ -1669,6 +1752,13 @@
   "gestureHint": "Κρατήστε πατημένο για να επιλέξετε • Σύρετε για κατάργηση",
   "globalAssistant": "Γενικός βοηθός",
   "goodResponse": "Καλή ανταπόκριση",
+  "help": "Βοήθεια",
+  "helpListAddItems": "Προσθέστε στοιχεία με το κουμπί + στο κάτω μέρος ή χρησιμοποιήστε την αναζήτηση για να περιηγηθείτε σε προϊόντα",
+  "helpListAi": "Ζητήστε από τον βοηθό τεχνητής νοημοσύνης να δημιουργήσει, να οργανώσει ή να ολοκληρώσει τη λίστα σας — απλώς πατήστε το εικονίδιο λάμψης",
+  "helpListOrganize": "Σύρετε στοιχεία για αναδιάταξη, σύρετε για να επισημάνετε ως αγορασμένα ή χρησιμοποιήστε φίλτρα και ταξινόμηση",
+  "helpListShare": "Μοιραστείτε τη λίστα σας με την οικογένεια ή εξάγετε ως PDF, Excel ή απλό κείμενο",
+  "helpListShoppingMode": "Η λειτουργία αγορών κρύβει τα αγορασμένα αντικείμενα, ώστε να μπορείτε να εστιάσετε σε ό,τι απομένει",
+  "helpListTitle": "Χρησιμοποιώντας τη λίστα σας",
   "howCanIHelp": "Πώς μπορώ να βοηθήσω;",
   "idealQty": "Ιδανική ποσ",
   "idealQuantity": "Ιδανική ποσότητα",
@@ -1740,10 +1830,13 @@
   "mealPlannerBudgetRemoveGoal": "Κατάργηση στόχου",
   "mealPlannerBudgetTodayCost": "Σήμερα: {amount}",
   "mealPlannerBudgetWeekCost": "Εβδομάδα: {amount}",
+  "mealPlannerCurrentDayLabel": "Τρέχουσα ημέρα",
   "mealPlannerCustomTypeLabel": "Προσαρμοσμένος τύπος",
   "mealPlannerDateLabel": "Ημερομηνία",
   "mealPlannerDefaultTypeLabel": "Προεπιλεγμένος τύπος",
   "mealPlannerDeleteMeal": "Αφαίρεση γεύματος",
+  "mealPlannerDuplicate": "Διπλότυπο γεύμα",
+  "mealPlannerDuplicateSuccess": "Το γεύμα επαναλήφθηκε με επιτυχία!",
   "mealPlannerEditMeal": "Επεξεργασία γεύματος",
   "mealPlannerEditType": "Επεξεργασία τύπου γεύματος",
   "mealPlannerError": "Σφάλμα κατά τη φόρτωση του προγράμματος γευμάτων",
@@ -1770,6 +1863,7 @@
   "mealPlannerPrepTime": "{minutes} λεπτά",
   "mealPlannerSave": "Προσθήκη στο πρόγραμμα",
   "mealPlannerSearchRecipes": "Αναζήτηση συνταγών...",
+  "mealPlannerSelectDestinationDay": "Διπλότυπο σε...",
   "mealPlannerSelectRecipe": "Επιλέξτε μια συνταγή",
   "mealPlannerServings": "{count,plural, one{{count} μερίδα} other{{count} μερίδες}}",
   "mealPlannerServingsLabel": "Μερίδες",
@@ -1799,6 +1893,8 @@
   "navRecipes": "Συνταγές",
   "newCategoryDialog": "Νέα κατηγορία",
   "newChat": "Νέα συνομιλία",
+  "newChatConfirmMessage": "Έναρξη νέας συνομιλίας; Η τρέχουσα συνομιλία σας θα χαθεί.",
+  "newChatConfirmTitle": "Νέα συνομιλία",
   "newChatStarted": "Ξεκίνησε νέα συνομιλία",
   "newListTitle": "Νέα λίστα αγορών",
   "newPantryList": "Αγορές ντουλαπιού",
@@ -1935,7 +2031,11 @@
   "onboardingGroupCouple": "Ζευγάρι",
   "onboardingGroupFamily": "Οικογένεια",
   "onboardingGroupSolo": "Μόνο εγώ",
+  "onboardingHookContinue": "Ξεκινήστε",
   "onboardingHookHeadline": "Μην ξεχάσετε ποτέ ξανά ένα είδος παντοπωλείου",
+  "onboardingHookItem1": "Κοτόπουλο ψητό",
+  "onboardingHookItem2": "Τυρί μοτσαρέλα",
+  "onboardingHookItem3": "ντοματίνια",
   "onboardingListCreated": "Η λίστα σας είναι έτοιμη: {count} αντικείμενα οργανωμένα για εσάς.",
   "onboardingListSaveFailed": "Ετοίμασα τα αντικείμενα, αλλά δεν μπόρεσα να αποθηκεύσω τη λίστα. Προσπαθήστε ξανά να το διατηρήσετε στην εφαρμογή.",
   "onboardingLoadingStat1Label": "Αντικείμενα καταλογογραφημένα",
@@ -1982,6 +2082,7 @@
   "onboardingSetupTitle": "Εξατομικεύστε την εμπειρία σας",
   "onboardingShareDesc": "Συγχρονίστε λίστες με την οικογένεια και τους φίλους σας σε πραγματικό χρόνο",
   "onboardingShareTitle": "Μοιραστείτε με αυτούς που αγαπάτε",
+  "onboardingSkip": "Παράλειψη προς το παρόν",
   "onboardingSlide1Body": "Δημιουργήστε και μοιραστείτε λίστες αμέσως. Η Kipi προσθέτει αντικείμενα αυτόματα με βάση τις συνήθειές σας.",
   "onboardingSlide1Title": "Έξυπνες λίστες αγορών",
   "onboardingSlide2Body": "Ρωτήστε οτιδήποτε — δημιουργήστε λίστες, βρείτε συνταγές, παρακολουθήστε το ντουλάπι σας, προγραμματίστε την εβδομάδα σας.",
@@ -2038,6 +2139,7 @@
   "paywallFeatureSmartAI": "Έξυπνο AI",
   "paywallFeatureUnlimitedLists": "Απεριόριστες λίστες",
   "paywallFeaturesTitle": "Όλα όσα χρειάζεστε:",
+  "paywallFreeTier": "Δωρεάν: 3 λίστες",
   "paywallGoalHeadlineFamily": "{name}, οργανώστε οικογενειακές αγορές!",
   "paywallGoalHeadlineFaster": "{name}, ψωνίστε στο μισό χρόνο!",
   "paywallGoalHeadlineNeverForget": "{name}, μην ξεχνάτε ποτέ ένα αντικείμενο!",
@@ -2067,6 +2169,7 @@
   "paywallPricePerDay": "Μόνο {price}/ημέρα — λιγότερο από έναν καφέ",
   "paywallPricePerMonth": "Μόνο {price}/μήνα",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: Απεριόριστο",
   "paywallPurchaseError": "Δεν ήταν δυνατή η ολοκλήρωση της αγοράς. Προσπαθήστε ξανά.",
   "paywallPurchasePending": "Η πληρωμή σας εκκρεμεί έγκριση. Η πρόσβαση θα απελευθερωθεί αυτόματα μετά την επιβεβαίωση.",
   "paywallRestore": "Επαναφέρω",
@@ -2194,6 +2297,7 @@
   "searchConversations": "Αναζήτηση συνομιλιών",
   "searchCurrency": "Αναζήτηση νομίσματος...",
   "searchInConversation": "Αναζήτηση στη συνομιλία...",
+  "searchItems": "Αναζήτηση στοιχείων",
   "searchLanguage": "Αναζήτηση γλώσσας...",
   "searchMessages": "Αναζήτηση μηνυμάτων...",
   "searchRecipes": "Αναζήτηση συνταγών...",

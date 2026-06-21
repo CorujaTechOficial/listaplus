@@ -1,6 +1,9 @@
 {
   "@@locale": "pt",
   "@_Feedback": "description: Feedback Screen",
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -117,8 +120,17 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@connectionErrorDesc": {
     "placeholders": {
@@ -204,6 +216,9 @@
     },
     "description": "Error message for errorClearingPurchased"
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorDecreasingQty": {
     "placeholders": {
       "error": {
@@ -250,6 +265,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
+  },
   "@errorLoadingItems": {
     "description": "Error when items fail to load"
   },
@@ -260,6 +278,9 @@
       }
     },
     "description": "Error message for errorLoadingProducts"
+  },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
   },
   "@errorRemovingItem": {
     "placeholders": {
@@ -325,6 +346,9 @@
     },
     "description": "Error message for errorSettingCurrentList"
   },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
   "@errorTogglingItem": {
     "placeholders": {
       "error": {
@@ -348,6 +372,9 @@
       }
     },
     "description": "Error message for errorUnarchivingList"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@errorUpdatingItem": {
     "placeholders": {
@@ -385,6 +412,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -503,6 +548,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -817,8 +868,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -933,6 +996,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1248,6 +1314,9 @@
       }
     }
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@settingsDefaultScreen": {
     "description": "Settings option label"
   },
@@ -1332,6 +1401,7 @@
   "aiAssistant": "Assistente de IA",
   "aiAssistantDescription": "Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.",
   "aiAssistantTitle": "Assistente de IA",
+  "aiAssistantTooltip": "Assistente de IA aberto",
   "aiCapabilitiesBudget": "Orçamento e preços",
   "aiCapabilitiesLists": "Listas de compras",
   "aiCapabilitiesOrganize": "Organização",
@@ -1393,7 +1463,11 @@
   "budgetAppBar": "Orçamento Mensal",
   "budgetDashboardTitle": "Painel",
   "budgetEditTitle": "Orçamento Mensal",
+  "budgetGoalInvalidAmount": "Insira um valor maior que zero",
+  "budgetGoalRemoved": "Meta de orçamento removida",
+  "budgetGoalSaved": "Meta de orçamento salva",
   "budgetLists": "Listas",
+  "budgetPartialEstimateHint": "~ Inclui estimativas parciais de preços",
   "budgetPremiumLocked": "Orçamento mensal global é premium",
   "budgetSubtitle": "Acompanhe seus gastos do mês",
   "budgetUpgradePrompt": "Faça upgrade para desbloquear",
@@ -1460,6 +1534,7 @@
   "chatHistoryOfflineTitle": "Você está sem conexão",
   "chatSubtitle": "Peça sugestões de itens, receitas or dicas de economia.",
   "chatSubtitleShort": "Pergunte sobre preços, receitas, organização...",
+  "checkItemTooltip": "Verifique o item",
   "checkingItem": "Verificando item...",
   "checkingPantry": "Verificando sua despensa...",
   "checkingSettings": "Verificando suas configurações...",
@@ -1474,6 +1549,8 @@
   "clearHistoryConfirm": "Deseja apagar todas as mensagens desta sessão?",
   "clearList": "Limpar lista",
   "clearPurchased": "Limpar comprados",
+  "clearPurchasedConfirmMessage": "Remover todos os itens comprados desta lista? Isso não pode ser desfeito.",
+  "clearPurchasedTitle": "Limpar itens comprados",
   "clearingCheckedItems": "Limpando itens marcados...",
   "close": "Fechar",
   "closeSheet": "Fechar",
@@ -1572,6 +1649,7 @@
   "errorArchivingList": "Lista de arquivamento de erros: {error}",
   "errorClearingList": "Lista de limpeza de erros: {error}",
   "errorClearingPurchased": "Erro ao limpar itens comprados: {error}",
+  "errorCreateList": "Não foi possível criar a lista. Verifique sua conexão e tente novamente.",
   "errorCreatingList": "Erro ao criar lista",
   "errorDecreasingQty": "Erro ao diminuir a quantidade: {error}",
   "errorDeletingList": "Erro ao excluir lista: {error}",
@@ -1580,6 +1658,7 @@
   "errorGeneric": "Erro: {message}",
   "errorImportingList": "Erro ao importar lista \"{name}\": {error}",
   "errorIncreasingQty": "Erro ao aumentar a quantidade: {error}",
+  "errorLoadList": "Não foi possível carregar suas listas. Crie uma nova lista para começar.",
   "errorLoadingChat": "Ops! Algo deu errado ao carregar o chat.",
   "errorLoadingChatSubtitle": "Verifique sua conexão ou tente novamente mais tarde.",
   "errorLoadingHistory": "Erro ao carregar o histórico",
@@ -1590,6 +1669,7 @@
   "errorLoadingSubscription": "Erro ao carregar assinatura",
   "errorOscillation": "Isso pode ocorrer devido a oscilações de rede ou indisponibilidade temporária. Por favor, tente novamente.",
   "errorProcessingRequest": "Desculpe, ocorreu um erro ao processar sua solicitação. Verifique sua conexão ou tente novamente mais tarde.",
+  "errorQuickAdd": "Não foi possível adicionar o item. Verifique sua conexão e tente novamente.",
   "errorRemovingItem": "Erro ao remover item: {error}",
   "errorRemovingItems": "Erro ao remover itens: {error}",
   "errorRemovingSharedList": "Erro ao remover lista compartilhada: {error}",
@@ -1601,9 +1681,11 @@
   "errorSavingProfile": "Erro ao salvar: {error}",
   "errorServerConnection": "Erro ao conectar ao servidor: {error}",
   "errorSettingCurrentList": "Erro ao definir a lista atual: {error}",
+  "errorShareCode": "Erro ao gerar código de compartilhamento. Verifique sua conexão e tente novamente.",
   "errorTogglingItem": "Erro ao alternar o status do item: {error}",
   "errorTogglingItems": "Erro ao alternar itens: {error}",
   "errorUnarchivingList": "Erro ao desarquivar lista: {error}",
+  "errorUnexpected": "Algo inesperado aconteceu. Por favor, tente novamente.",
   "errorUpdatingItem": "Erro ao atualizar item: {error}",
   "errorUpdatingItems": "Erro ao atualizar itens: {error}",
   "errorUpdatingList": "Erro ao atualizar lista: {error}",
@@ -1650,6 +1732,7 @@
   "filterPurchased": "Comprados",
   "finance": "Financeiro",
   "finishShopping": "Concluir Compras",
+  "firstItemAddedSnackbar": "Primeiro item adicionado! Ótimo começo 🛒",
   "gallery": "Galeria",
   "generalAssistant": "Assistente Geral",
   "generalHelp": "Como posso ajudar com suas compras hoje?",
@@ -1659,6 +1742,13 @@
   "gestureHint": "Segure para selecionar • Deslize para remover",
   "globalAssistant": "Assistente geral",
   "goodResponse": "Boa resposta",
+  "help": "Ajuda",
+  "helpListAddItems": "Adicione itens com o botão + na parte inferior ou use a pesquisa para navegar pelos produtos",
+  "helpListAi": "Peça ao assistente de IA para criar, organizar ou completar sua lista – basta tocar no ícone de brilho",
+  "helpListOrganize": "Arraste itens para reordenar, deslize para marcar como comprados ou use filtros e classificação",
+  "helpListShare": "Compartilhe sua lista com a família ou exporte como PDF, Excel ou texto simples",
+  "helpListShoppingMode": "O modo de compras oculta os itens comprados para que você possa se concentrar no que sobrou",
+  "helpListTitle": "Usando sua lista",
   "howCanIHelp": "Como posso ajudar?",
   "icon": "Ícone:",
   "idealQty": "Qtd ideal",
@@ -1735,10 +1825,13 @@
   "mealPlannerBudgetRemoveGoal": "Remover meta",
   "mealPlannerBudgetTodayCost": "Hoje: {amount}",
   "mealPlannerBudgetWeekCost": "Semana: {amount}",
+  "mealPlannerCurrentDayLabel": "Dia atual",
   "mealPlannerCustomTypeLabel": "Tipo personalizado",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Tipo padrão",
   "mealPlannerDeleteMeal": "Remover refeição",
+  "mealPlannerDuplicate": "Refeição duplicada",
+  "mealPlannerDuplicateSuccess": "Refeição duplicada com sucesso!",
   "mealPlannerEditMeal": "Editar Refeição",
   "mealPlannerEditType": "Editar tipo de refeição",
   "mealPlannerError": "Erro ao carregar ementa",
@@ -1765,6 +1858,7 @@
   "mealPlannerPrepTime": "{minutes} minutos",
   "mealPlannerSave": "Adicionar ao plano",
   "mealPlannerSearchRecipes": "Procurar receitas...",
+  "mealPlannerSelectDestinationDay": "Duplicar para...",
   "mealPlannerSelectRecipe": "Seleciona uma receita",
   "mealPlannerServings": "{count,plural, one{{count} dose} other{{count} doses}}",
   "mealPlannerServingsLabel": "Doses",
@@ -1807,6 +1901,8 @@
   "navRecipes": "Receitas",
   "newCategoryDialog": "Nova categoria",
   "newChat": "Nova Conversa",
+  "newChatConfirmMessage": "Iniciar uma nova conversa? Sua conversa atual será perdida.",
+  "newChatConfirmTitle": "Nova conversa",
   "newChatStarted": "Novo bate-papo iniciado",
   "newListTitle": "Nova Lista de Compras",
   "newPantryList": "Compras da Dispensa",
@@ -1944,7 +2040,11 @@
   "onboardingGroupCouple": "Casal",
   "onboardingGroupFamily": "Família",
   "onboardingGroupSolo": "Apenas eu",
+  "onboardingHookContinue": "Comece",
   "onboardingHookHeadline": "Nunca mais se esqueça de um item de mercearia",
+  "onboardingHookItem1": "Frango grelhado",
+  "onboardingHookItem2": "Queijo mussarela",
+  "onboardingHookItem3": "Tomate cereja",
   "onboardingListCreated": "Sua lista está pronta: {count} itens organizados para você.",
   "onboardingListSaveFailed": "Preparei os itens, mas não consegui salvar a lista. Tente novamente para mantê-la no app.",
   "onboardingLoadingStat1Label": "Itens catalogados",
@@ -1991,6 +2091,7 @@
   "onboardingSetupTitle": "Personalize sua experiência",
   "onboardingShareDesc": "Sincronize listas com familiares e amigos em tempo real",
   "onboardingShareTitle": "Compartilhe com quem você ama",
+  "onboardingSkip": "Pular por enquanto",
   "onboardingSlide1Body": "Crie e compartilhe listas instantaneamente. O Kipi adiciona itens automaticamente com base nos seus hábitos.",
   "onboardingSlide1Title": "Listas de compras inteligentes",
   "onboardingSlide2Body": "Pergunte qualquer coisa: crie listas, encontre receitas, controle sua despensa, planeje sua semana.",
@@ -2061,6 +2162,7 @@
   "paywallFeatureSmartAI": "IA ilimitada",
   "paywallFeatureUnlimitedLists": "Família conectada",
   "paywallFeaturesTitle": "Tudo que você precisa:",
+  "paywallFreeTier": "Grátis: 3 listas",
   "paywallGoalHeadlineFamily": "{name}, organize as compras da família!",
   "paywallGoalHeadlineFaster": "{name}, compre na metade do tempo!",
   "paywallGoalHeadlineNeverForget": "{name}, nunca se esqueça de um item!",
@@ -2090,6 +2192,7 @@
   "paywallPricePerDay": "Apenas {price}/dia – menos que um café",
   "paywallPricePerMonth": "Apenas {price}/mês",
   "paywallProLabel": "PRÓ",
+  "paywallProTier": "Pró: Ilimitado",
   "paywallPurchaseError": "Não foi possível concluir a compra. Tente novamente.",
   "paywallPurchasePending": "Seu pagamento está aguardando aprovação. O acesso será liberado automaticamente após a confirmação.",
   "paywallRestore": "Restaurar",
@@ -2231,6 +2334,7 @@
   "searchConversations": "Pesquisar conversas",
   "searchCurrency": "Pesquisar moeda...",
   "searchInConversation": "Pesquisar na conversa...",
+  "searchItems": "Pesquisar itens",
   "searchLanguage": "Procurar idioma...",
   "searchMessages": "Pesquisar mensagens...",
   "searchRecipes": "Procurar receitas...",

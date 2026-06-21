@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ShoppingCompletionView extends StatelessWidget {
   const ShoppingCompletionView({
@@ -27,7 +28,7 @@ class ShoppingCompletionView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.check_circle_outline,
+            PhosphorIconsRegular.checkCircle,
             size: 80,
             color: AppSemanticColors.of(context).success,
           ),

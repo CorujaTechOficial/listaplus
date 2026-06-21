@@ -72,6 +72,32 @@ class AppLocalizationsMs extends AppLocalizations {
   String get close => 'Tutup';
 
   @override
+  String get help => 'Tolong';
+
+  @override
+  String get helpListTitle => 'Menggunakan senarai anda';
+
+  @override
+  String get helpListAddItems =>
+      'Tambahkan item dengan butang + di bahagian bawah atau gunakan carian untuk menyemak imbas produk';
+
+  @override
+  String get helpListAi =>
+      'Minta pembantu AI untuk membuat, menyusun atau melengkapkan senarai anda — hanya ketik ikon berkilau';
+
+  @override
+  String get helpListShoppingMode =>
+      'Mod beli-belah menyembunyikan item yang dibeli supaya anda boleh fokus pada perkara yang tinggal';
+
+  @override
+  String get helpListOrganize =>
+      'Seret item untuk menyusun semula, leret untuk menandakan sebagai dibeli atau gunakan penapis dan isihan';
+
+  @override
+  String get helpListShare =>
+      'Kongsi senarai anda dengan keluarga atau eksport sebagai PDF, Excel atau teks biasa';
+
+  @override
   String get import => 'Import';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get clear => 'Kosongkan';
+
+  @override
+  String get clearPurchasedTitle => 'Kosongkan barang yang dibeli';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Alih keluar semua item yang dibeli daripada senarai ini? Ini tidak boleh dibuat asal.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get purchaseError => 'Ralat semasa memproses pembelian. Cuba lagi.';
+
+  @override
+  String get errorCreateList =>
+      'Tidak dapat membuat senarai. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get errorShareCode =>
+      'Ralat menjana kod kongsi. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get errorQuickAdd =>
+      'Tidak dapat menambah item. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get errorLoadList =>
+      'Tidak dapat memuatkan senarai anda. Sila buat senarai baharu untuk bermula.';
 
   @override
   String get restoreError => 'Ralat semasa memulihkan pembelian. Cuba lagi.';
@@ -488,6 +537,19 @@ class AppLocalizationsMs extends AppLocalizations {
   String get noBudgetDefined => 'Tiada belanjawan ditetapkan';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Masukkan nilai yang lebih besar daripada sifar';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Termasuk anggaran harga separa';
+
+  @override
+  String get budgetGoalSaved => 'Matlamat belanjawan disimpan';
+
+  @override
+  String get budgetGoalRemoved => 'Matlamat belanjawan dialih keluar';
+
+  @override
   String totalEstimated(String amount) {
     return 'Anggaran jumlah: $amount';
   }
@@ -682,6 +744,13 @@ class AppLocalizationsMs extends AppLocalizations {
   String get newChat => 'Sembang Baharu';
 
   @override
+  String get newChatConfirmTitle => 'Perbualan baru';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Mulakan perbualan baharu? Perbualan semasa anda akan hilang.';
+
+  @override
   String get noHistory => 'Tiada sejarah sembang';
 
   @override
@@ -791,28 +860,28 @@ class AppLocalizationsMs extends AppLocalizations {
   String get undo => 'Buat asal';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Sembang baharu bermula';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Tambahkan ke senarai';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Apa yang boleh saya buat?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Senarai Beli-belah';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Bajet & Harga';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Resipi & Menu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisasi';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Tandakan item semasa anda membeli-belah';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1241,6 +1310,16 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Tawaran alu-aluan';
+
+  @override
+  String get paywallFreeTier => 'Percuma: 3 senarai';
+
+  @override
+  String get paywallProTier => 'Pro: Tidak terhad';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Item pertama ditambah! Permulaan yang hebat 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2135,6 +2214,18 @@ class AppLocalizationsMs extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Jenis lalai';
 
   @override
+  String get mealPlannerDuplicate => 'Hidangan pendua';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Salin kepada...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'hari semasa';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Hidangan disalin dengan jayanya!';
+
+  @override
   String get expirationDate => 'tarikh luput';
 
   @override
@@ -2142,6 +2233,9 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get skip => 'Langkau';
+
+  @override
+  String get onboardingSkip => 'Langkau buat masa ini';
 
   @override
   String get onboardingAiTitle => 'Berbual dengan Kipi';
@@ -3192,6 +3286,31 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Menjana respons…';
+
+  @override
+  String get errorUnexpected =>
+      'Sesuatu yang tidak dijangka berlaku. Sila cuba lagi.';
+
+  @override
+  String get aiAssistantTooltip => 'Pembantu AI terbuka';
+
+  @override
+  String get searchItems => 'Cari item';
+
+  @override
+  String get onboardingHookContinue => 'Mulakan';
+
+  @override
+  String get onboardingHookItem1 => 'Ayam bakar';
+
+  @override
+  String get onboardingHookItem2 => 'Keju Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomato ceri';
+
+  @override
+  String get checkItemTooltip => 'Periksa item';
 }
 
 /// The translations for Malay, as used in Malaysia (`ms_MY`).
@@ -3262,6 +3381,32 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get close => 'Tutup';
 
   @override
+  String get help => 'Tolong';
+
+  @override
+  String get helpListTitle => 'Menggunakan senarai anda';
+
+  @override
+  String get helpListAddItems =>
+      'Tambahkan item dengan butang + di bahagian bawah atau gunakan carian untuk menyemak imbas produk';
+
+  @override
+  String get helpListAi =>
+      'Minta pembantu AI untuk membuat, menyusun atau melengkapkan senarai anda — hanya ketik ikon berkilau';
+
+  @override
+  String get helpListShoppingMode =>
+      'Mod beli-belah menyembunyikan item yang dibeli supaya anda boleh fokus pada perkara yang tinggal';
+
+  @override
+  String get helpListOrganize =>
+      'Seret item untuk menyusun semula, leret untuk menandakan sebagai dibeli atau gunakan penapis dan isihan';
+
+  @override
+  String get helpListShare =>
+      'Kongsi senarai anda dengan keluarga atau eksport sebagai PDF, Excel atau teks biasa';
+
+  @override
   String get import => 'Import';
 
   @override
@@ -3272,6 +3417,13 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get clear => 'Kosongkan';
+
+  @override
+  String get clearPurchasedTitle => 'Kosongkan barang yang dibeli';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Alih keluar semua item yang dibeli daripada senarai ini? Ini tidak boleh dibuat asal.';
 
   @override
   String error(String message) {
@@ -3285,6 +3437,22 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get purchaseError => 'Ralat memproses pembelian. Cuba semula.';
+
+  @override
+  String get errorCreateList =>
+      'Tidak dapat membuat senarai. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get errorShareCode =>
+      'Ralat menjana kod kongsi. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get errorQuickAdd =>
+      'Tidak dapat menambah item. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get errorLoadList =>
+      'Tidak dapat memuatkan senarai anda. Sila buat senarai baharu untuk bermula.';
 
   @override
   String get restoreError => 'Ralat memulihkan pembelian. Cuba semula.';
@@ -3678,6 +3846,19 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get noBudgetDefined => 'Tiada belanjawan ditetapkan';
 
   @override
+  String get budgetGoalInvalidAmount =>
+      'Masukkan nilai yang lebih besar daripada sifar';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Termasuk anggaran harga separa';
+
+  @override
+  String get budgetGoalSaved => 'Matlamat belanjawan disimpan';
+
+  @override
+  String get budgetGoalRemoved => 'Matlamat belanjawan dialih keluar';
+
+  @override
   String totalEstimated(String amount) {
     return 'Jumlah anggaran: $amount';
   }
@@ -3872,6 +4053,13 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get newChat => 'Sembang Baharu';
 
   @override
+  String get newChatConfirmTitle => 'Perbualan baru';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Mulakan perbualan baharu? Perbualan semasa anda akan hilang.';
+
+  @override
   String get noHistory => 'Tiada sejarah sembang';
 
   @override
@@ -3980,6 +4168,30 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get undo => 'Buat asal';
+
+  @override
+  String get newChatStarted => 'Sembang baharu bermula';
+
+  @override
+  String get quickAddToList => 'Tambahkan ke senarai';
+
+  @override
+  String get aiCapabilitiesTitle => 'Apa yang boleh saya buat?';
+
+  @override
+  String get aiCapabilitiesLists => 'Senarai Beli-belah';
+
+  @override
+  String get aiCapabilitiesBudget => 'Bajet & Harga';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Resipi & Menu';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisasi';
+
+  @override
+  String get marketModeDescription => 'Tandakan item semasa anda membeli-belah';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -4408,6 +4620,16 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Tawaran alu-aluan';
+
+  @override
+  String get paywallFreeTier => 'Percuma: 3 senarai';
+
+  @override
+  String get paywallProTier => 'Pro: Tidak terhad';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Item pertama ditambah! Permulaan yang hebat 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5308,6 +5530,18 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
   String get mealPlannerDefaultTypeLabel => 'Jenis lalai';
 
   @override
+  String get mealPlannerDuplicate => 'Hidangan pendua';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Salin kepada...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'hari semasa';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Hidangan disalin dengan jayanya!';
+
+  @override
   String get expirationDate => 'tarikh luput';
 
   @override
@@ -5315,6 +5549,9 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get skip => 'Langkau';
+
+  @override
+  String get onboardingSkip => 'Langkau buat masa ini';
 
   @override
   String get onboardingAiTitle => 'Berbual dengan Kipi';
@@ -6365,4 +6602,29 @@ class AppLocalizationsMsMy extends AppLocalizationsMs {
 
   @override
   String get aiGeneratingResponse => 'Menjana respons…';
+
+  @override
+  String get errorUnexpected =>
+      'Sesuatu yang tidak dijangka berlaku. Sila cuba lagi.';
+
+  @override
+  String get aiAssistantTooltip => 'Pembantu AI terbuka';
+
+  @override
+  String get searchItems => 'Cari item';
+
+  @override
+  String get onboardingHookContinue => 'Mulakan';
+
+  @override
+  String get onboardingHookItem1 => 'Ayam bakar';
+
+  @override
+  String get onboardingHookItem2 => 'Keju Mozzarella';
+
+  @override
+  String get onboardingHookItem3 => 'Tomato ceri';
+
+  @override
+  String get checkItemTooltip => 'Periksa item';
 }

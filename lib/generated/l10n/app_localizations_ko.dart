@@ -72,6 +72,29 @@ class AppLocalizationsKo extends AppLocalizations {
   String get close => '닫기';
 
   @override
+  String get help => '돕다';
+
+  @override
+  String get helpListTitle => '목록 사용';
+
+  @override
+  String get helpListAddItems => '하단의 + 버튼으로 상품을 추가하거나, 검색을 통해 상품을 찾아보세요.';
+
+  @override
+  String get helpListAi =>
+      'AI 도우미에게 목록을 생성, 구성, 완성하도록 요청하세요. 반짝이는 아이콘을 탭하기만 하면 됩니다.';
+
+  @override
+  String get helpListShoppingMode => '쇼핑 모드에서는 구매한 품목을 숨겨 남은 품목에 집중할 수 있습니다.';
+
+  @override
+  String get helpListOrganize =>
+      '항목을 드래그하여 재정렬하거나, 스와이프하여 구매로 표시하거나, 필터 및 정렬을 사용하세요.';
+
+  @override
+  String get helpListShare => '목록을 가족과 공유하거나 PDF, Excel 또는 일반 텍스트로 내보냅니다.';
+
+  @override
   String get import => '가져오기';
 
   @override
@@ -82,6 +105,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get clear => '지우기';
+
+  @override
+  String get clearPurchasedTitle => '구매한 항목 지우기';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      '이 목록에서 구매한 항목을 모두 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.';
 
   @override
   String error(String message) {
@@ -95,6 +125,18 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get purchaseError => '구매 처리 중 오류가 발생했습니다. 다시 시도하세요.';
+
+  @override
+  String get errorCreateList => '목록을 만들 수 없습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get errorShareCode => '공유 코드 생성 중 오류가 발생했습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get errorQuickAdd => '항목을 추가할 수 없습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get errorLoadList => '목록을 로드할 수 없습니다. 시작하려면 새 목록을 만드세요.';
 
   @override
   String get restoreError => '구매 복원 중 오류가 발생했습니다. 다시 시도하세요.';
@@ -477,6 +519,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get noBudgetDefined => '설정된 예산 없음';
 
   @override
+  String get budgetGoalInvalidAmount => '0보다 큰 값을 입력하세요.';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 부분적인 예상 가격이 포함되어 있습니다.';
+
+  @override
+  String get budgetGoalSaved => '예산 목표가 저장되었습니다.';
+
+  @override
+  String get budgetGoalRemoved => '예산 목표가 삭제됨';
+
+  @override
   String totalEstimated(String amount) {
     return '총 예상: $amount';
   }
@@ -667,6 +721,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get newChat => '새 채팅';
+
+  @override
+  String get newChatConfirmTitle => '새로운 대화';
+
+  @override
+  String get newChatConfirmMessage => '새로운 대화를 시작하시겠습니까? 현재 대화가 손실됩니다.';
 
   @override
   String get noHistory => '채팅 기록 없음';
@@ -1197,6 +1257,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 환영 혜택';
+
+  @override
+  String get paywallFreeTier => '무료: 목록 3개';
+
+  @override
+  String get paywallProTier => '장점: 무제한';
+
+  @override
+  String get firstItemAddedSnackbar => '첫 번째 항목이 추가되었습니다! 좋은 시작 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2069,6 +2138,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => '기본 유형';
 
   @override
+  String get mealPlannerDuplicate => '식사 중복';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '다음으로 복제...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '현재 날짜';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '식사 복제에 성공했습니다!';
+
+  @override
   String get expirationDate => '만료일';
 
   @override
@@ -2076,6 +2157,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get skip => '건너뛰다';
+
+  @override
+  String get onboardingSkip => '지금은 건너뛰기';
 
   @override
   String get onboardingAiTitle => '키피와 채팅';
@@ -3075,6 +3159,30 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => '응답 생성 중…';
+
+  @override
+  String get errorUnexpected => '예상치 못한 일이 일어났습니다. 다시 시도해 주세요.';
+
+  @override
+  String get aiAssistantTooltip => 'AI 도우미 열기';
+
+  @override
+  String get searchItems => '항목 검색';
+
+  @override
+  String get onboardingHookContinue => '시작하기';
+
+  @override
+  String get onboardingHookItem1 => '구운 닭고기';
+
+  @override
+  String get onboardingHookItem2 => '모짜렐라 치즈';
+
+  @override
+  String get onboardingHookItem3 => '방울토마토';
+
+  @override
+  String get checkItemTooltip => '체크항목';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -3145,6 +3253,29 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get close => '닫기';
 
   @override
+  String get help => '돕다';
+
+  @override
+  String get helpListTitle => '목록 사용';
+
+  @override
+  String get helpListAddItems => '하단의 + 버튼으로 상품을 추가하거나, 검색을 통해 상품을 찾아보세요.';
+
+  @override
+  String get helpListAi =>
+      'AI 도우미에게 목록을 생성, 구성, 완성하도록 요청하세요. 반짝이는 아이콘을 탭하기만 하면 됩니다.';
+
+  @override
+  String get helpListShoppingMode => '쇼핑 모드에서는 구매한 품목을 숨겨 남은 품목에 집중할 수 있습니다.';
+
+  @override
+  String get helpListOrganize =>
+      '항목을 드래그하여 재정렬하거나, 스와이프하여 구매로 표시하거나, 필터 및 정렬을 사용하세요.';
+
+  @override
+  String get helpListShare => '목록을 가족과 공유하거나 PDF, Excel 또는 일반 텍스트로 내보냅니다.';
+
+  @override
   String get import => '가져오기';
 
   @override
@@ -3155,6 +3286,13 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get clear => '지우기';
+
+  @override
+  String get clearPurchasedTitle => '구매한 항목 지우기';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      '이 목록에서 구매한 항목을 모두 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.';
 
   @override
   String error(String message) {
@@ -3168,6 +3306,18 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get purchaseError => '구매 처리 중 오류가 발생했습니다. 다시 시도하세요.';
+
+  @override
+  String get errorCreateList => '목록을 만들 수 없습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get errorShareCode => '공유 코드 생성 중 오류가 발생했습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get errorQuickAdd => '항목을 추가할 수 없습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get errorLoadList => '목록을 로드할 수 없습니다. 시작하려면 새 목록을 만드세요.';
 
   @override
   String get restoreError => '구매 복원 중 오류가 발생했습니다. 다시 시도하세요.';
@@ -3550,6 +3700,18 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get noBudgetDefined => '설정된 예산 없음';
 
   @override
+  String get budgetGoalInvalidAmount => '0보다 큰 값을 입력하세요.';
+
+  @override
+  String get budgetPartialEstimateHint => '~ 부분적인 예상 가격이 포함되어 있습니다.';
+
+  @override
+  String get budgetGoalSaved => '예산 목표가 저장되었습니다.';
+
+  @override
+  String get budgetGoalRemoved => '예산 목표가 삭제됨';
+
+  @override
   String totalEstimated(String amount) {
     return '총 예상: $amount';
   }
@@ -3740,6 +3902,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get newChat => '새 채팅';
+
+  @override
+  String get newChatConfirmTitle => '새로운 대화';
+
+  @override
+  String get newChatConfirmMessage => '새로운 대화를 시작하시겠습니까? 현재 대화가 손실됩니다.';
 
   @override
   String get noHistory => '채팅 기록 없음';
@@ -4270,6 +4438,15 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 환영 혜택';
+
+  @override
+  String get paywallFreeTier => '무료: 목록 3개';
+
+  @override
+  String get paywallProTier => '장점: 무제한';
+
+  @override
+  String get firstItemAddedSnackbar => '첫 번째 항목이 추가되었습니다! 좋은 시작 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5142,6 +5319,18 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get mealPlannerDefaultTypeLabel => '기본 유형';
 
   @override
+  String get mealPlannerDuplicate => '식사 중복';
+
+  @override
+  String get mealPlannerSelectDestinationDay => '다음으로 복제...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => '현재 날짜';
+
+  @override
+  String get mealPlannerDuplicateSuccess => '식사 복제에 성공했습니다!';
+
+  @override
   String get expirationDate => '만료일';
 
   @override
@@ -5149,6 +5338,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get skip => '건너뛰다';
+
+  @override
+  String get onboardingSkip => '지금은 건너뛰기';
 
   @override
   String get onboardingAiTitle => '키피와 채팅';
@@ -6148,4 +6340,28 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get aiGeneratingResponse => '응답 생성 중…';
+
+  @override
+  String get errorUnexpected => '예상치 못한 일이 일어났습니다. 다시 시도해 주세요.';
+
+  @override
+  String get aiAssistantTooltip => 'AI 도우미 열기';
+
+  @override
+  String get searchItems => '항목 검색';
+
+  @override
+  String get onboardingHookContinue => '시작하기';
+
+  @override
+  String get onboardingHookItem1 => '구운 닭고기';
+
+  @override
+  String get onboardingHookItem2 => '모짜렐라 치즈';
+
+  @override
+  String get onboardingHookItem3 => '방울토마토';
+
+  @override
+  String get checkItemTooltip => '체크항목';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/utils/test_utils.dart';
 
 class AnimatedTypingDots extends StatelessWidget {
@@ -16,6 +17,7 @@ class AnimatedTypingDots extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: List.generate(3, (i) {
+          final delay = Duration(milliseconds: i * DurationTokens.fast.inMilliseconds);
           return Container(
                 width: 6,
                 height: 6,
@@ -29,15 +31,15 @@ class AnimatedTypingDots extends StatelessWidget {
               .scale(
                 begin: const Offset(0.8, 0.8),
                 end: const Offset(1.3, 1.3),
-                duration: 600.ms,
-                delay: (i * 200).ms,
+                duration: DurationTokens.slow,
+                delay: delay,
                 curve: Curves.easeInOut,
               )
               .then()
               .scale(
                 begin: const Offset(1.3, 1.3),
                 end: const Offset(0.8, 0.8),
-                duration: 600.ms,
+                duration: DurationTokens.slow,
               );
         }),
       ),

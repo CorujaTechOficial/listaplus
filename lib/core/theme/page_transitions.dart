@@ -1,7 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'tokens.dart';
 
 Route<T> fadeSlideRoute<T>(Widget page) {
+  if (defaultTargetPlatform == TargetPlatform.iOS) {
+    return CupertinoPageRoute<T>(
+      builder: (_) => page,
+      settings: RouteSettings(name: page.runtimeType.toString()),
+    );
+  }
   return PageRouteBuilder<T>(
     pageBuilder: (context, animation, secondaryAnimation) => page,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -14,5 +21,6 @@ Route<T> fadeSlideRoute<T>(Widget page) {
       );
     },
     transitionDuration: DurationTokens.normal,
+    settings: RouteSettings(name: page.runtimeType.toString()),
   );
 }

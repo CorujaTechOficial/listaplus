@@ -5,7 +5,9 @@ import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/widgets/premium_gate.dart';
 import 'package:shopping_list/app/settings/providers/backup_providers.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class BackupScreen extends ConsumerWidget {
   const BackupScreen({super.key});
@@ -34,11 +36,11 @@ class BackupScreen extends ConsumerWidget {
             children: [
               Card(
                 child: ListTile(
-                  leading: Icon(Icons.upload, color: theme.colorScheme.primary),
+                  leading: Icon(PhosphorIconsRegular.uploadSimple, color: theme.colorScheme.primary),
                   title: Text(l10n.exportData),
                   subtitle: Text(l10n.exportDataSubtitle),
                   trailing: Icon(
-                    Icons.chevron_right,
+                    PhosphorIconsRegular.caretRight,
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
                   onTap: () async {
@@ -46,14 +48,18 @@ class BackupScreen extends ConsumerWidget {
                     try {
                       await backup.shareBackup();
                       if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(l10n.backupExported)),
+                        showKipiSnackBar(
+                          context,
+                          message: l10n.backupExported,
+                          type: SnackBarType.success,
                         );
                       }
                     } on Exception catch (e) {
                       if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(l10n.error(e.toString()))),
+                        showKipiSnackBar(
+                          context,
+                          message: l10n.error(e.toString()),
+                          type: SnackBarType.error,
                         );
                       }
                     }
@@ -64,13 +70,13 @@ class BackupScreen extends ConsumerWidget {
               Card(
                 child: ListTile(
                   leading: Icon(
-                    Icons.download,
+                    PhosphorIconsRegular.downloadSimple,
                     color: theme.colorScheme.primary,
                   ),
                   title: Text(l10n.importData),
                   subtitle: Text(l10n.importDataSubtitle),
                   trailing: Icon(
-                    Icons.chevron_right,
+                    PhosphorIconsRegular.caretRight,
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
                   onTap: () async {
@@ -85,14 +91,18 @@ class BackupScreen extends ConsumerWidget {
                       try {
                         final msg = await backup.importFromJson(jsonString);
                         if (context.mounted) {
-                          ScaffoldMessenger.of(
+                          showKipiSnackBar(
                             context,
-                          ).showSnackBar(SnackBar(content: Text(msg)));
+                            message: msg,
+                            type: SnackBarType.success,
+                          );
                         }
                       } on Exception catch (e) {
                         if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text(l10n.error(e.toString()))),
+                          showKipiSnackBar(
+                            context,
+                            message: l10n.error(e.toString()),
+                            type: SnackBarType.error,
                           );
                         }
                       }

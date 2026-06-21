@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -504,6 +549,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -845,8 +896,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -982,6 +1045,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1385,6 +1451,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1506,6 +1575,7 @@
   "aiAssistantGeneral": "Ģenerālsasistents",
   "aiAssistantHistory": "Asistenta vēsture",
   "aiAssistantTitle": "AI palīgs",
+  "aiAssistantTooltip": "Atveriet AI palīgu",
   "aiCapabilitiesBudget": "Budžets un cenas",
   "aiCapabilitiesLists": "Iepirkumu saraksti",
   "aiCapabilitiesOrganize": "Organizācija",
@@ -1592,7 +1662,11 @@
   "budgetAppBar": "Mēneša budžets",
   "budgetDashboardTitle": "Panelis",
   "budgetEditTitle": "Mēneša budžets",
+  "budgetGoalInvalidAmount": "Ievadiet vērtību, kas ir lielāka par nulli",
+  "budgetGoalRemoved": "Budžeta mērķis ir noņemts",
+  "budgetGoalSaved": "Budžeta mērķis ir saglabāts",
   "budgetLists": "Saraksti",
+  "budgetPartialEstimateHint": "~ Ietver daļēju cenu aprēķinu",
   "budgetPremiumLocked": "Globālais mēneša budžets ir premium",
   "budgetSubtitle": "Sekojiet līdzi saviem ikmēneša izdevumiem",
   "budgetUpgradePrompt": "Jauniniet, lai atbloķētu",
@@ -1660,6 +1734,7 @@
   "chatHistoryOfflineTitle": "Jūs esat bezsaistē",
   "chatSubtitle": "Jautājiet par vienumu ieteikumiem, receptēm vai taupīšanas padomiem.",
   "chatSubtitleShort": "Jautājiet par cenām, receptēm, organizāciju...",
+  "checkItemTooltip": "Pārbaudiet vienumu",
   "chooseCurrency": "Atlasiet Valūta",
   "chooseIcon": "Izvēlieties ikonu",
   "chooseImageSource": "Izvēlēties attēla avotu",
@@ -1671,6 +1746,8 @@
   "clearHistoryConfirm": "Notīrīt visus ziņojumus šajā sesijā?",
   "clearList": "Notīrīt sarakstu",
   "clearPurchased": "Notīrīt iegādāto",
+  "clearPurchasedConfirmMessage": "Vai noņemt visas iegādātās preces no šī saraksta? Šo darbību nevar atsaukt.",
+  "clearPurchasedTitle": "Notīriet iegādātās preces",
   "close": "Aizvērt",
   "closeSheet": "Aizvērt",
   "complete": "Pabeigt",
@@ -1759,7 +1836,9 @@
   "enterCodeHint": "Ievadiet kodu",
   "enterUrl": "Ievadīt URL",
   "error": "Kļūda: {message}",
+  "errorCreateList": "Nevarēja izveidot sarakstu. Pārbaudiet savienojumu un mēģiniet vēlreiz.",
   "errorGeneric": "Kļūda: {message}",
+  "errorLoadList": "Nevarēja ielādēt jūsu sarakstus. Lai sāktu, lūdzu, izveidojiet jaunu sarakstu.",
   "errorLoadingChat": "Ak! Ielādējot tērzēšanu, radās kļūda.",
   "errorLoadingChatSubtitle": "Pārbaudiet savienojumu vai vēlāk mēģiniet vēlreiz.",
   "errorLoadingHistory": "Ielādējot vēsturi, radās kļūda",
@@ -1768,7 +1847,10 @@
   "errorLoadingRecipes": "Kļūda, ielādējot receptes",
   "errorLoadingSubscription": "Ielādējot abonementu, radās kļūda",
   "errorOscillation": "Tas var notikt tīkla svārstību vai īslaicīgas nepieejamības dēļ. Lūdzu, mēģiniet vēlreiz.",
+  "errorQuickAdd": "Nevarēja pievienot vienumu. Pārbaudiet savienojumu un mēģiniet vēlreiz.",
   "errorSavingProfile": "Saglabājot profilu, radās kļūda",
+  "errorShareCode": "Ģenerējot kopīgošanas kodu, radās kļūda. Pārbaudiet savienojumu un mēģiniet vēlreiz.",
+  "errorUnexpected": "Notika kaut kas negaidīts. Lūdzu, mēģiniet vēlreiz.",
   "estimated": "Aptuveni",
   "estimatedCost": "Aptuvenais",
   "estimatedPrice": "Aptuvenā cena",
@@ -1810,6 +1892,7 @@
   "filterPurchased": "Iegādāts",
   "finance": "Finanses",
   "finishShopping": "Pabeigt iepirkšanos",
+  "firstItemAddedSnackbar": "Pievienots pirmais vienums! Lielisks sākums 🛒",
   "gallery": "Galerija",
   "generalAssistant": "Vispārējais palīgs",
   "generalHelp": "Kā es varu palīdzēt ar jūsu iepirkšanos šodien?",
@@ -1817,6 +1900,13 @@
   "gestureHint": "Turiet, lai atlasītu • Velciet, lai noņemtu",
   "globalAssistant": "Globālais palīgs",
   "goodResponse": "Laba atbilde",
+  "help": "Palīdzība",
+  "helpListAddItems": "Pievienojiet preces, izmantojot pogu + apakšā, vai izmantojiet meklēšanu, lai pārlūkotu produktus",
+  "helpListAi": "Lūdziet AI palīgam izveidot, sakārtot vai pabeigt sarakstu — vienkārši pieskarieties mirdzošajai ikonai",
+  "helpListOrganize": "Velciet preces, lai pārkārtotu, velciet, lai atzīmētu tās kā iegādātas, vai izmantojiet filtrus un kārtošanu",
+  "helpListShare": "Kopīgojiet savu sarakstu ar ģimeni vai eksportējiet kā PDF, Excel vai vienkāršu tekstu",
+  "helpListShoppingMode": "Iepirkšanās režīms paslēpj iegādātās preces, lai jūs varētu koncentrēties uz to, kas ir palicis pāri",
+  "helpListTitle": "Izmantojot savu sarakstu",
   "howCanIHelp": "Kā es varu palīdzēt?",
   "idealQty": "Ideālais daudz.",
   "idealQuantity": "Ideālais daudzums",
@@ -1899,10 +1989,13 @@
   "mealPlannerBudgetRemoveGoal": "Noņemt mērķi",
   "mealPlannerBudgetTodayCost": "Šodien: {amount}",
   "mealPlannerBudgetWeekCost": "Nedēļa: {amount}",
+  "mealPlannerCurrentDayLabel": "Pašreizējā diena",
   "mealPlannerCustomTypeLabel": "Pielāgots veids",
   "mealPlannerDateLabel": "Datums",
   "mealPlannerDefaultTypeLabel": "Noklusējuma veids",
   "mealPlannerDeleteMeal": "Noņemt maltīti",
+  "mealPlannerDuplicate": "Dublēta maltīte",
+  "mealPlannerDuplicateSuccess": "Maltīte veiksmīgi dublēta!",
   "mealPlannerEditMeal": "Rediģēt maltīti",
   "mealPlannerEditType": "Rediģēt ēdienreizes veidu",
   "mealPlannerError": "Kļūda, ielādējot maltīšu plānu",
@@ -1929,6 +2022,7 @@
   "mealPlannerPrepTime": "{minutes} min",
   "mealPlannerSave": "Pievienot plānam",
   "mealPlannerSearchRecipes": "Meklēt receptes...",
+  "mealPlannerSelectDestinationDay": "Dublēt uz...",
   "mealPlannerSelectRecipe": "Izvēlieties recepti",
   "mealPlannerServings": "{count,plural, zero{{count} porcijas} one{{count} porcija} other{{count} porcijas}}",
   "mealPlannerServingsLabel": "Porcijas",
@@ -1960,6 +2054,8 @@
   "navRecipes": "Receptes",
   "newCategoryDialog": "Jauna kategorija",
   "newChat": "Jauna tērzēšana",
+  "newChatConfirmMessage": "Vai sākt jaunu sarunu? Jūsu pašreizējā saruna tiks zaudēta.",
+  "newChatConfirmTitle": "Jauna saruna",
   "newChatStarted": "Sākās jauna tērzēšana",
   "newListTitle": "Jauns iepirkumu saraksts",
   "newPantryList": "Pieliekamā iepirkums",
@@ -2098,7 +2194,11 @@
   "onboardingGroupCouple": "Pāris",
   "onboardingGroupFamily": "Ģimene",
   "onboardingGroupSolo": "Tikai es",
+  "onboardingHookContinue": "Sāciet darbu",
   "onboardingHookHeadline": "Nekad vairs neaizmirstiet kādu pārtikas preču preci",
+  "onboardingHookItem1": "Grilēta vista",
+  "onboardingHookItem2": "Mocarellas siers",
+  "onboardingHookItem3": "Ķiršu tomāti",
   "onboardingListCreated": "Jūsu saraksts ir gatavs: jums ir sakārtoti {count} vienumi.",
   "onboardingListSaveFailed": "Es sagatavoju preces, bet nevarēju saglabāt sarakstu. Mēģiniet vēlreiz, lai saglabātu to lietotnē.",
   "onboardingLoadingStat1Label": "Katalogizētas preces",
@@ -2145,6 +2245,7 @@
   "onboardingSetupTitle": "Personalizējiet savu pieredzi",
   "onboardingShareDesc": "Sinhronizējiet sarakstus ar ģimeni un draugiem reāllaikā",
   "onboardingShareTitle": "Dalieties ar tiem, kas jums patīk",
+  "onboardingSkip": "Pagaidām izlaist",
   "onboardingSlide1Body": "Nekavējoties izveidojiet un kopīgojiet sarakstus. Kipi pievieno vienumus automātiski, pamatojoties uz jūsu ieradumiem.",
   "onboardingSlide1Title": "Viedie iepirkumu saraksti",
   "onboardingSlide2Body": "Jautājiet jebko — izveidojiet sarakstus, atrodiet receptes, izsekojiet savam pieliekamajam, plānojiet savu nedēļu.",
@@ -2225,6 +2326,7 @@
   "paywallFeatureSmartAI": "Gudrais AI",
   "paywallFeatureUnlimitedLists": "Neierobežoti saraksti",
   "paywallFeaturesTitle": "Viss, kas jums nepieciešams:",
+  "paywallFreeTier": "Bezmaksas: 3 saraksti",
   "paywallGoalHeadlineFamily": "{name}, organizē ģimenes iepirkšanos!",
   "paywallGoalHeadlineFaster": "{name}, iepērcieties uz pusi mazāk laika!",
   "paywallGoalHeadlineNeverForget": "{name}, nekad neaizmirstiet nevienu preci!",
@@ -2254,6 +2356,7 @@
   "paywallPricePerDay": "Tikai {price} dienā — mazāk par kafiju",
   "paywallPricePerMonth": "Tikai {price} mēnesī",
   "paywallProLabel": "PRO",
+  "paywallProTier": "Pro: neierobežots",
   "paywallPurchaseError": "Nevarēja pabeigt pirkumu. Mēģiniet vēlreiz.",
   "paywallPurchasePending": "Jūsu maksājums gaida apstiprinājumu. Pēc apstiprināšanas piekļuve tiks atbrīvota automātiski.",
   "paywallRestore": "Atjaunot",
@@ -2381,6 +2484,7 @@
   "searchConversations": "Meklēt sarunas",
   "searchCurrency": "Meklēt valūtu...",
   "searchInConversation": "Meklēt sarunā...",
+  "searchItems": "Meklēt vienumus",
   "searchLanguage": "Meklēt valodu...",
   "searchMessages": "Meklēt ziņas...",
   "searchRecipes": "Meklēt receptes...",

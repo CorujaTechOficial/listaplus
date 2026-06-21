@@ -57,7 +57,7 @@ void main() {
     await scrollToTile(tester);
 
     expect(find.text('Meal planner budget'), findsOneWidget);
-    expect(find.text('Monthly spending goal for meal planning'), findsOneWidget);
+    expect(find.text('Applied only to planned meals in the meal planner.'), findsOneWidget);
   });
 
   testWidgets('budget goal tile subtitle visible', (tester) async {

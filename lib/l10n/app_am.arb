@@ -48,6 +48,9 @@
       }
     }
   },
+  "@aiAssistantTooltip": {
+    "description": "Tooltip for the AI assistant icon button in the list screen app bar"
+  },
   "@aiCapabilitiesBudget": {
     "description": "Category heading in capabilities sheet"
   },
@@ -191,11 +194,20 @@
       }
     }
   },
+  "@checkItemTooltip": {
+    "description": "Tooltip/semantic label for the check icon of a list item"
+  },
   "@chooseIcon": {
     "description": "Label for icon picker"
   },
   "@chooseThemeColor": {
     "description": "Screen title for theme color"
+  },
+  "@clearPurchasedConfirmMessage": {
+    "description": "Confirmation message before clearing purchased items"
+  },
+  "@clearPurchasedTitle": {
+    "description": "Title for the clear purchased confirmation dialog"
   },
   "@completedOn": {
     "placeholders": {
@@ -306,12 +318,18 @@
       }
     }
   },
+  "@errorCreateList": {
+    "description": "Error message when creating a list fails"
+  },
   "@errorGeneric": {
     "placeholders": {
       "message": {
         "type": "String"
       }
     }
+  },
+  "@errorLoadList": {
+    "description": "Error message when lists fail to load"
   },
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
@@ -325,8 +343,17 @@
   "@errorLoadingSubscription": {
     "description": "Error loading subscription info"
   },
+  "@errorQuickAdd": {
+    "description": "Error message when quick add fails"
+  },
   "@errorSavingProfile": {
     "description": "Error when profile save fails"
+  },
+  "@errorShareCode": {
+    "description": "Error message when generating a share code fails"
+  },
+  "@errorUnexpected": {
+    "description": "Generic unexpected error message"
   },
   "@everythingReady": {
     "description": "Message when shopping is complete"
@@ -340,6 +367,24 @@
   },
   "@gestureHint": {
     "description": "One-time hint banner teaching swipe-to-delete and long-press-to-select gestures"
+  },
+  "@helpListAddItems": {
+    "description": "Help text explaining how to add items"
+  },
+  "@helpListAi": {
+    "description": "Help text explaining the AI assistant feature"
+  },
+  "@helpListOrganize": {
+    "description": "Help text explaining how to organize items"
+  },
+  "@helpListShare": {
+    "description": "Help text explaining sharing and export"
+  },
+  "@helpListShoppingMode": {
+    "description": "Help text explaining shopping mode"
+  },
+  "@helpListTitle": {
+    "description": "Title for the list screen help sheet"
   },
   "@inviteToList": {
     "description": "Button to invite someone to a shopping list"
@@ -497,6 +542,12 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatConfirmMessage": {
+    "description": "Confirmation message before starting a new chat"
+  },
+  "@newChatConfirmTitle": {
+    "description": "Title for the new chat confirmation dialog"
   },
   "@newChatStarted": {
     "description": "Snackbar message shown when user starts a new chat session"
@@ -838,8 +889,20 @@
   "@onboardingGroupSolo": {
     "description": "Group option"
   },
+  "@onboardingHookContinue": {
+    "description": "Button to continue from the onboarding hook screen"
+  },
   "@onboardingHookHeadline": {
     "description": "Hook slide headline"
+  },
+  "@onboardingHookItem1": {
+    "description": "First demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem2": {
+    "description": "Second demo item in onboarding hook screen"
+  },
+  "@onboardingHookItem3": {
+    "description": "Third demo item in onboarding hook screen"
   },
   "@onboardingListCreated": {
     "placeholders": {
@@ -975,6 +1038,9 @@
   },
   "@onboardingShareTitle": {
     "description": "Slide 3 headline"
+  },
+  "@onboardingSkip": {
+    "description": "Skip creating list for now, go to paywall"
   },
   "@onboardingSlide1Body": {
     "description": "Onboarding slide 1: value prop body"
@@ -1378,6 +1444,9 @@
   "@saveProfile": {
     "description": "Button to save profile"
   },
+  "@searchItems": {
+    "description": "Tooltip for the search icon button in the list screen app bar"
+  },
   "@selectCheaperAlternative": {
     "description": "Button for cheaper alternative"
   },
@@ -1499,6 +1568,7 @@
   "aiAssistantGeneral": "አጠቃላይ ረዳት",
   "aiAssistantHistory": "የረዳት ታሪክ",
   "aiAssistantTitle": "AI ረዳት",
+  "aiAssistantTooltip": "AI ረዳትን ይክፈቱ",
   "aiCapabilitiesBudget": "በጀት እና ዋጋዎች",
   "aiCapabilitiesLists": "የግዢ ዝርዝሮች",
   "aiCapabilitiesOrganize": "ድርጅት",
@@ -1585,7 +1655,11 @@
   "budgetAppBar": "ወርሃዊ በጀት",
   "budgetDashboardTitle": "ዳሽቦርድ",
   "budgetEditTitle": "ወርሃዊ በጀት",
+  "budgetGoalInvalidAmount": "ከዜሮ የሚበልጥ እሴት ያስገቡ",
+  "budgetGoalRemoved": "የበጀት ግብ ተወግዷል",
+  "budgetGoalSaved": "የበጀት ግብ ተቀምጧል",
   "budgetLists": "ዝርዝሮች",
+  "budgetPartialEstimateHint": "~ ከፊል የዋጋ ግምቶችን ያካትታል",
   "budgetPremiumLocked": "አለምአቀፍ ወርሃዊ በጀት ፕሪሚየም ነው",
   "budgetSubtitle": "ወርሃዊ ወጪህን ተከታተል",
   "budgetUpgradePrompt": "ለመክፈት አሻሽል",
@@ -1653,6 +1727,7 @@
   "chatHistoryOfflineTitle": "ከመስመር ውጭ ነዎት",
   "chatSubtitle": "ለንጥሎች፣ የምግብ አዘገጃጀት ወይም የቁጠባ ምክሮች ጠይቅ።",
   "chatSubtitleShort": "ስለ ዋጋዎች፣ የምግብ አዘገጃጀት መመሪያዎች፣ ድርጅት... ይጠይቁ።",
+  "checkItemTooltip": "ንጥሉን ያረጋግጡ",
   "chooseCurrency": "ምንዛሪ ይምረጡ",
   "chooseIcon": "አዶ ይምረጡ",
   "chooseImageSource": "የምስል ምንጭ ምረጥ",
@@ -1664,6 +1739,8 @@
   "clearHistoryConfirm": "በዚህ ክፍለ ጊዜ ውስጥ ያሉትን ሁሉንም መልእክቶች ማጽዳት?",
   "clearList": "ዝርዝሩን አጽዳ",
   "clearPurchased": "የተገዙትን አጽዳ",
+  "clearPurchasedConfirmMessage": "ሁሉም የተገዙ ዕቃዎች ከዚህ ዝርዝር ይወገዱ? ይህ ሊቀለበስ አይችልም።",
+  "clearPurchasedTitle": "የተገዙ ዕቃዎችን ያጽዱ",
   "close": "ዝጋ",
   "closeSheet": "ገጠመ",
   "complete": "አጠናቅቅ",
@@ -1752,7 +1829,9 @@
   "enterCodeHint": "ኮዱን ያስገቡ",
   "enterUrl": "ዩአርኤል (URL) አስገባ",
   "error": "ስህተት፦ {message}",
+  "errorCreateList": "ዝርዝር መፍጠር አልተቻለም። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።",
   "errorGeneric": "ስህተት፦ {message}",
+  "errorLoadList": "ዝርዝሮችዎን መጫን አልተቻለም። ለመጀመር እባክዎ አዲስ ዝርዝር ይፍጠሩ።",
   "errorLoadingChat": "ውይ! ቻቱን በመጫን ላይ የሆነ ችግር ተፈጥሯል።",
   "errorLoadingChatSubtitle": "ግንኙነትዎን ይፈትሹ ወይም ቆይተው እንደገና ይሞክሩ።",
   "errorLoadingHistory": "ታሪክን መጫን ላይ ስህተት",
@@ -1761,7 +1840,10 @@
   "errorLoadingRecipes": "የምግብ አዘገጃጀቶችን በመጫን ላይ ስህተት ተከስቷል",
   "errorLoadingSubscription": "የደንበኝነት ምዝገባን መጫን ላይ ስህተት",
   "errorOscillation": "ይህ በኔትወርክ ንዝረት ወይም በጊዜያዊ አለመገኘት ምክንያት ሊከሰት ይችላል። እባክዎ እንደገና ይሞክሩ።",
+  "errorQuickAdd": "ንጥል ማከል አልተቻለም። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።",
   "errorSavingProfile": "መገለጫ ማስቀመጥ ላይ ስህተት",
+  "errorShareCode": "የማጋሪያ ኮድ በማመንጨት ላይ ስህተት። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።",
+  "errorUnexpected": "ያልተጠበቀ ነገር ተፈጠረ። እባክህ እንደገና ሞክር።",
   "estimated": "የተገመተ",
   "estimatedCost": "የሚገመተው",
   "estimatedPrice": "የተገመተ ዋጋ",
@@ -1803,6 +1885,7 @@
   "filterPurchased": "የተገዙ",
   "finance": "ፋይናንስ",
   "finishShopping": "ግዢን ጨርስ",
+  "firstItemAddedSnackbar": "የመጀመሪያው ንጥል ታክሏል! ምርጥ ጅምር 🛒",
   "gallery": "ማዕከለ-ስዕላት (Gallery)",
   "generalAssistant": "አጠቃላይ ረዳት",
   "generalHelp": "በግብዣህ ዛሬ እንዴት ልረዳህ?",
@@ -1810,6 +1893,13 @@
   "gestureHint": "ለመምረጥ ይያዙ • ለማስወገድ ያንሸራትቱ",
   "globalAssistant": "አለምአቀፍ ረዳት",
   "goodResponse": "ጥሩ ምላሽ",
+  "help": "እገዛ",
+  "helpListAddItems": "ከታች ባለው የ+ አዝራር ንጥሎችን ያክሉ፣ ወይም ምርቶችን ለማሰስ ፍለጋውን ይጠቀሙ",
+  "helpListAi": "ዝርዝርዎን እንዲፈጥር፣ እንዲያደራጅ ወይም እንዲያጠናቅቅ AI ረዳቱን ይጠይቁ - የብልጭታ አዶውን ብቻ ይንኩ።",
+  "helpListOrganize": "እንደገና ለመደርደር ንጥሎችን ይጎትቱ፣ እንደተገዙ ምልክት ለማድረግ ያንሸራትቱ፣ ወይም ማጣሪያዎችን እና መደርደርን ይጠቀሙ",
+  "helpListShare": "ዝርዝርዎን ለቤተሰብ ያጋሩ ወይም እንደ ፒዲኤፍ፣ ኤክሴል ወይም ግልጽ ጽሑፍ ይላኩ።",
+  "helpListShoppingMode": "በተረፈ ነገር ላይ እንዲያተኩሩ የግዢ ሁነታ የተገዙ ዕቃዎችን ይደብቃል",
+  "helpListTitle": "የእርስዎን ዝርዝር በመጠቀም",
   "howCanIHelp": "እንዴት መርዳት እችላለሁ?",
   "idealQty": "ተስማሚ ብዛት",
   "idealQuantity": "ተስማሚ ብዛት",
@@ -1892,10 +1982,13 @@
   "mealPlannerBudgetRemoveGoal": "ግብ አስወግድ",
   "mealPlannerBudgetTodayCost": "ዛሬ፡ {amount}",
   "mealPlannerBudgetWeekCost": "ሳምንት፡ {amount}",
+  "mealPlannerCurrentDayLabel": "የአሁኑ ቀን",
   "mealPlannerCustomTypeLabel": "ብጁ ዓይነት",
   "mealPlannerDateLabel": "ቀን",
   "mealPlannerDefaultTypeLabel": "ነባሪ ዓይነት",
   "mealPlannerDeleteMeal": "ምግብ አስወግድ",
+  "mealPlannerDuplicate": "የተባዛ ምግብ",
+  "mealPlannerDuplicateSuccess": "ምግብ በተሳካ ሁኔታ ተባዝቷል!",
   "mealPlannerEditMeal": "ምግብ አስተካክል",
   "mealPlannerEditType": "የምግብ አይነት አርትዕ",
   "mealPlannerError": "የምግብ እቅዱን በመጫን ላይ ስህተት ተከስቷል",
@@ -1922,6 +2015,7 @@
   "mealPlannerPrepTime": "{minutes} ደቂቃ",
   "mealPlannerSave": "ወደ እቅድ ጨምር",
   "mealPlannerSearchRecipes": "የምግብ አዘገጃጀት ፈልግ...",
+  "mealPlannerSelectDestinationDay": "የተባዛ ወደ...",
   "mealPlannerSelectRecipe": "የምግብ አዘገጃጀት ምረጥ",
   "mealPlannerServings": "{count,plural, one{{count} ሰው} other{{count} ሰዎች}}",
   "mealPlannerServingsLabel": "ተመጋቢዎች",
@@ -1953,6 +2047,8 @@
   "navRecipes": "የምግብ አዘገጃጀት",
   "newCategoryDialog": "አዲስ ምድብ",
   "newChat": "አዲስ ውይይት",
+  "newChatConfirmMessage": "አዲስ ውይይት ይጀምሩ? የአሁኑ ውይይትዎ ይጠፋል።",
+  "newChatConfirmTitle": "አዲስ ውይይት",
   "newChatStarted": "አዲስ ውይይት ተጀመረ",
   "newListTitle": "አዲስ የግብዣ ዝርዝር",
   "newPantryList": "ከምግብ ቤት ግብዣ",
@@ -2091,7 +2187,11 @@
   "onboardingGroupCouple": "ጥንዶች",
   "onboardingGroupFamily": "ቤተሰብ",
   "onboardingGroupSolo": "እኔ ብቻ",
+  "onboardingHookContinue": "እንጀምር",
   "onboardingHookHeadline": "የሸቀጣሸቀጥ እቃዎችን በጭራሽ አይርሱ",
+  "onboardingHookItem1": "የተጠበሰ ዶሮ",
+  "onboardingHookItem2": "Mozzarella አይብ",
+  "onboardingHookItem3": "የቼሪ ቲማቲሞች",
   "onboardingListCreated": "ዝርዝርዎ ዝግጁ ነው፡ {count} ንጥሎች ለእርስዎ የተደራጁ ናቸው።",
   "onboardingListSaveFailed": "እቃዎቹን አዘጋጀሁ፣ ነገር ግን ዝርዝሩን ማስቀመጥ አልቻልኩም። በመተግበሪያው ውስጥ ለማቆየት እንደገና ይሞክሩ።",
   "onboardingLoadingStat1Label": "ንጥሎች ካታሎግ",
@@ -2138,6 +2238,7 @@
   "onboardingSetupTitle": "ተሞክሮዎን ለግል ያብጁ",
   "onboardingShareDesc": "ዝርዝሮችን ከቤተሰብ እና ከጓደኞች ጋር በቅጽበት ያመሳስሉ።",
   "onboardingShareTitle": "ከምትወዷቸው ጋር አጋራ",
+  "onboardingSkip": "ለአሁን ዝለል",
   "onboardingSlide1Body": "በፍጥነት ዝርዝሮችን ይፍጠሩ እና ያጋሩ። ኪፒ በልማዶችዎ ላይ በመመስረት እቃዎችን በራስ-ሰር ያክላል።",
   "onboardingSlide1Title": "ዘመናዊ የግዢ ዝርዝሮች",
   "onboardingSlide2Body": "ማንኛውንም ነገር ይጠይቁ - ዝርዝሮችን ይፍጠሩ ፣ የምግብ አዘገጃጀት መመሪያዎችን ይፈልጉ ፣ ጓዳዎን ይከታተሉ ፣ ሳምንትዎን ያቅዱ።",
@@ -2218,6 +2319,7 @@
   "paywallFeatureSmartAI": "ብልጥ AI",
   "paywallFeatureUnlimitedLists": "ያልተገደበ ዝርዝሮች",
   "paywallFeaturesTitle": "የሚያስፈልግህ ነገር ሁሉ፡-",
+  "paywallFreeTier": "ነጻ: 3 ዝርዝሮች",
   "paywallGoalHeadlineFamily": "{name}፣ የቤተሰብ ግብይት አደራጅ!",
   "paywallGoalHeadlineFaster": "{name}፣ በግማሽ ሰዓት ውስጥ ይግዙ!",
   "paywallGoalHeadlineNeverForget": "{name}፣ አንድን ነገር ፈጽሞ አይርሱ!",
@@ -2247,6 +2349,7 @@
   "paywallPricePerDay": "በቀን {price} ብቻ - ከቡና ያነሰ",
   "paywallPricePerMonth": "በወር {price} ብቻ",
   "paywallProLabel": "ፕሮ",
+  "paywallProTier": "Pro: ያልተገደበ",
   "paywallPurchaseError": "ግዢን ማጠናቀቅ አልተቻለም። እንደገና ይሞክሩ።",
   "paywallPurchasePending": "ክፍያዎ መጽደቅን በመጠባበቅ ላይ ነው። ከተረጋገጠ በኋላ መዳረሻ በራስ-ሰር ይለቀቃል።",
   "paywallRestore": "እነበረበት መልስ",
@@ -2374,6 +2477,7 @@
   "searchConversations": "ውይይቶችን ፈልግ",
   "searchCurrency": "ምንዛሬ ፈልግ...",
   "searchInConversation": "በውይይት ውስጥ ፈልግ...",
+  "searchItems": "ንጥሎችን ፈልግ",
   "searchLanguage": "ቋንቋ ፈልግ...",
   "searchMessages": "መልዕክቶችን ፈልግ...",
   "searchRecipes": "የምግብ አዘገጃጀት ፈልግ...",

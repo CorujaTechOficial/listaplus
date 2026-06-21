@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/app/lists/widgets/filter_bar.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 void showSortOptionsSheet(
   BuildContext context, {
@@ -17,7 +18,7 @@ void showSortOptionsSheet(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-                leading: const Icon(Icons.sort_by_alpha),
+                leading: const Icon(PhosphorIconsRegular.sortAscending),
                 title: Text(l10n.sortName),
                 selected: currentSort == SortType.name,
                 onTap: () {
@@ -26,7 +27,7 @@ void showSortOptionsSheet(
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.category_outlined),
+                leading: const Icon(PhosphorIconsRegular.squaresFour),
                 title: Text(l10n.sortCategory),
                 selected: currentSort == SortType.category,
                 onTap: () {
@@ -35,7 +36,7 @@ void showSortOptionsSheet(
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.calendar_today_outlined),
+                leading: const Icon(PhosphorIconsRegular.calendarBlank),
                 title: Text(l10n.sortDate),
                 selected: currentSort == SortType.date,
                 onTap: () {
@@ -44,7 +45,7 @@ void showSortOptionsSheet(
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.drag_indicator),
+                leading: const Icon(PhosphorIconsRegular.dotsSix),
                 title: Text(l10n.sortManual),
                 selected: currentSort == SortType.manual,
                 onTap: () {

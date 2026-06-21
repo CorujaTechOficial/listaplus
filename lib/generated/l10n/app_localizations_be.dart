@@ -72,6 +72,32 @@ class AppLocalizationsBe extends AppLocalizations {
   String get close => 'Закрыць';
 
   @override
+  String get help => 'Дапамога';
+
+  @override
+  String get helpListTitle => 'Выкарыстоўваючы свой спіс';
+
+  @override
+  String get helpListAddItems =>
+      'Дадавайце тавары з дапамогай кнопкі + унізе або выкарыстоўвайце пошук для прагляду прадуктаў';
+
+  @override
+  String get helpListAi =>
+      'Папрасіце памочніка штучнага інтэлекту стварыць, упарадкаваць або завяршыць ваш спіс — проста дакраніцеся да бліскучага значка';
+
+  @override
+  String get helpListShoppingMode =>
+      'Рэжым пакупак хавае набытыя рэчы, каб вы маглі засяродзіцца на тым, што засталося';
+
+  @override
+  String get helpListOrganize =>
+      'Перацягніце элементы, каб змяніць парадак, правядзіце пальцам, каб пазначыць іх як набытыя, або выкарыстоўвайце фільтры і сартаванне';
+
+  @override
+  String get helpListShare =>
+      'Падзяліцеся сваім спісам з сям\'ёй або экспартуйце яго ў фармаце PDF, Excel або звычайным тэкстам';
+
+  @override
   String get import => 'Імпартаваць';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get clear => 'Ачысціць';
+
+  @override
+  String get clearPurchasedTitle => 'Ачысціць набытыя рэчы';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'Выдаліць усе набытыя тавары з гэтага спісу? Гэта нельга адрабіць.';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get purchaseError => 'Памылка апрацоўкі пакупкі. Паспрабуйце зноў.';
+
+  @override
+  String get errorCreateList =>
+      'Немагчыма стварыць спіс. Праверце падключэнне і паўтарыце спробу.';
+
+  @override
+  String get errorShareCode =>
+      'Памылка генерацыі кода абагульвання. Праверце падключэнне і паўтарыце спробу.';
+
+  @override
+  String get errorQuickAdd =>
+      'Немагчыма дадаць элемент. Праверце падключэнне і паўтарыце спробу.';
+
+  @override
+  String get errorLoadList =>
+      'Не атрымалася загрузіць вашы спісы. Каб пачаць, стварыце новы спіс.';
 
   @override
   String get restoreError => 'Памылка аднаўлення пакупак. Паспрабуйце зноў.';
@@ -489,6 +538,18 @@ class AppLocalizationsBe extends AppLocalizations {
   String get noBudgetDefined => 'Бюджэт не ўсталяваны';
 
   @override
+  String get budgetGoalInvalidAmount => 'Увядзіце значэнне, большае за нуль';
+
+  @override
+  String get budgetPartialEstimateHint => '~ Уключае частковыя ацэнкі коштаў';
+
+  @override
+  String get budgetGoalSaved => 'Мэта бюджэту захавана';
+
+  @override
+  String get budgetGoalRemoved => 'Мэта бюджэту выдалена';
+
+  @override
   String totalEstimated(String amount) {
     return 'Агулам прыблізна: $amount';
   }
@@ -681,6 +742,13 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get newChat => 'Новы чат';
+
+  @override
+  String get newChatConfirmTitle => 'Новая размова';
+
+  @override
+  String get newChatConfirmMessage =>
+      'Пачаць новую размову? Ваша бягучая размова будзе страчана.';
 
   @override
   String get noHistory => 'Няма гісторыі чатаў';
@@ -1239,6 +1307,16 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 Прывітальная прапанова';
+
+  @override
+  String get paywallFreeTier => 'Бясплатна: 3 спісы';
+
+  @override
+  String get paywallProTier => 'Pro: Неабмежаваны';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'Дададзены першы элемент! Выдатны пачатак 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2139,6 +2217,18 @@ class AppLocalizationsBe extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'Тып па змаўчанні';
 
   @override
+  String get mealPlannerDuplicate => 'Дублікат ежы';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'Дубляваць у...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'Бягучы дзень';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'Харчаванне паспяхова дублявана!';
+
+  @override
   String get expirationDate => 'Тэрмін прыдатнасці';
 
   @override
@@ -2146,6 +2236,9 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get skip => 'Прапусціць';
+
+  @override
+  String get onboardingSkip => 'Прапусціць пакуль';
 
   @override
   String get onboardingAiTitle => 'Чат з Кіпі';
@@ -3181,4 +3274,29 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'Стварэнне адказу…';
+
+  @override
+  String get errorUnexpected =>
+      'Здарылася нечаканае. Калі ласка, паспрабуйце яшчэ раз.';
+
+  @override
+  String get aiAssistantTooltip => 'Адкрыйце памочнік AI';
+
+  @override
+  String get searchItems => 'Пошук прадметаў';
+
+  @override
+  String get onboardingHookContinue => 'Пачніце';
+
+  @override
+  String get onboardingHookItem1 => 'Курыца-грыль';
+
+  @override
+  String get onboardingHookItem2 => 'Сыр моцарелла';
+
+  @override
+  String get onboardingHookItem3 => 'Памідоры черрі';
+
+  @override
+  String get checkItemTooltip => 'Праверыць пункт';
 }

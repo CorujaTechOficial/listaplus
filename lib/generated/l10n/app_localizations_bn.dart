@@ -72,6 +72,32 @@ class AppLocalizationsBn extends AppLocalizations {
   String get close => 'বন্ধ';
 
   @override
+  String get help => 'সাহায্য';
+
+  @override
+  String get helpListTitle => 'আপনার তালিকা ব্যবহার করে';
+
+  @override
+  String get helpListAddItems =>
+      'নীচে + বোতাম দিয়ে আইটেম যোগ করুন, বা পণ্য ব্রাউজ করতে অনুসন্ধান ব্যবহার করুন';
+
+  @override
+  String get helpListAi =>
+      'এআই সহকারীকে আপনার তালিকা তৈরি করতে, সংগঠিত করতে বা সম্পূর্ণ করতে বলুন — শুধু স্পার্কল আইকনে আলতো চাপুন';
+
+  @override
+  String get helpListShoppingMode =>
+      'কেনাকাটা মোড কেনা আইটেমগুলিকে লুকিয়ে রাখে যাতে আপনি যা বাকি আছে তার উপর ফোকাস করতে পারেন৷';
+
+  @override
+  String get helpListOrganize =>
+      'পুনরায় সাজাতে আইটেমগুলি টেনে আনুন, কেনা হিসাবে চিহ্নিত করতে সোয়াইপ করুন, বা ফিল্টার এবং বাছাই ব্যবহার করুন';
+
+  @override
+  String get helpListShare =>
+      'আপনার তালিকাটি পরিবারের সাথে ভাগ করুন বা PDF, Excel, বা প্লেইন টেক্সট হিসাবে রপ্তানি করুন';
+
+  @override
   String get import => 'ইম্পোর্ট';
 
   @override
@@ -82,6 +108,13 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get clear => 'পরিষ্কার';
+
+  @override
+  String get clearPurchasedTitle => 'ক্রয়কৃত আইটেমগুলি সাফ করুন';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'এই তালিকা থেকে সব কেনা আইটেম সরাবেন? এটি পূর্বাবস্থায় ফেরানো যাবে না।';
 
   @override
   String error(String message) {
@@ -95,6 +128,22 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get purchaseError => 'ক্রয় প্রক্রিয়াকরণে ত্রুটি। আবার চেষ্টা করুন।';
+
+  @override
+  String get errorCreateList =>
+      'তালিকা তৈরি করা যায়নি। আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.';
+
+  @override
+  String get errorShareCode =>
+      'শেয়ার কোড তৈরি করতে ত্রুটি৷ আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.';
+
+  @override
+  String get errorQuickAdd =>
+      'আইটেম যোগ করা যায়নি. আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.';
+
+  @override
+  String get errorLoadList =>
+      'আপনার তালিকা লোড করা যায়নি. শুরু করতে একটি নতুন তালিকা তৈরি করুন.';
 
   @override
   String get restoreError => 'ক্রয় পুনরুদ্ধারে ত্রুটি। আবার চেষ্টা করুন।';
@@ -487,6 +536,18 @@ class AppLocalizationsBn extends AppLocalizations {
   String get noBudgetDefined => 'কোনো বাজেট সেট নেই';
 
   @override
+  String get budgetGoalInvalidAmount => 'শূন্যের চেয়ে বড় একটি মান লিখুন';
+
+  @override
+  String get budgetPartialEstimateHint => '~ আংশিক মূল্য অনুমান অন্তর্ভুক্ত';
+
+  @override
+  String get budgetGoalSaved => 'বাজেট লক্ষ্য সংরক্ষিত';
+
+  @override
+  String get budgetGoalRemoved => 'বাজেট লক্ষ্য মুছে ফেলা হয়েছে';
+
+  @override
   String totalEstimated(String amount) {
     return 'মোট আনুমানিক: $amount';
   }
@@ -678,6 +739,13 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get newChat => 'নতুন চ্যাট';
+
+  @override
+  String get newChatConfirmTitle => 'নতুন কথোপকথন';
+
+  @override
+  String get newChatConfirmMessage =>
+      'একটি নতুন কথোপকথন শুরু? আপনার বর্তমান কথোপকথন হারিয়ে যাবে.';
 
   @override
   String get noHistory => 'কোন চ্যাট ইতিহাস নেই';
@@ -1240,6 +1308,16 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 স্বাগতম অফার';
+
+  @override
+  String get paywallFreeTier => 'বিনামূল্যে: 3 তালিকা';
+
+  @override
+  String get paywallProTier => 'প্রো: আনলিমিটেড';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'প্রথম আইটেম যোগ করা হয়েছে! দুর্দান্ত শুরু 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -2138,6 +2216,18 @@ class AppLocalizationsBn extends AppLocalizations {
   String get mealPlannerDefaultTypeLabel => 'ডিফল্ট প্রকার';
 
   @override
+  String get mealPlannerDuplicate => 'ডুপ্লিকেট খাবার';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'এতে নকল করুন...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'বর্তমান দিন';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'খাবার সফলভাবে নকল করা হয়েছে!';
+
+  @override
   String get expirationDate => 'মেয়াদ শেষ হওয়ার তারিখ';
 
   @override
@@ -2145,6 +2235,9 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get skip => 'এড়িয়ে যান';
+
+  @override
+  String get onboardingSkip => 'আপাতত এড়িয়ে যান';
 
   @override
   String get onboardingAiTitle => 'কিপির সাথে চ্যাট করুন';
@@ -3180,6 +3273,30 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get aiGeneratingResponse => 'প্রতিক্রিয়া তৈরি করা হচ্ছে...';
+
+  @override
+  String get errorUnexpected => 'অপ্রত্যাশিত কিছু ঘটেছে। আবার চেষ্টা করুন.';
+
+  @override
+  String get aiAssistantTooltip => 'এআই সহকারী খুলুন';
+
+  @override
+  String get searchItems => 'আইটেম অনুসন্ধান করুন';
+
+  @override
+  String get onboardingHookContinue => 'শুরু করুন';
+
+  @override
+  String get onboardingHookItem1 => 'গ্রিলড চিকেন';
+
+  @override
+  String get onboardingHookItem2 => 'মোজারেলা পনির';
+
+  @override
+  String get onboardingHookItem3 => 'চেরি টমেটো';
+
+  @override
+  String get checkItemTooltip => 'আইটেম চেক করুন';
 }
 
 /// The translations for Bengali Bangla, as used in Bangladesh (`bn_BD`).
@@ -3250,6 +3367,32 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   String get close => 'বন্ধ';
 
   @override
+  String get help => 'সাহায্য';
+
+  @override
+  String get helpListTitle => 'আপনার তালিকা ব্যবহার করে';
+
+  @override
+  String get helpListAddItems =>
+      'নীচে + বোতাম দিয়ে আইটেম যোগ করুন, বা পণ্য ব্রাউজ করতে অনুসন্ধান ব্যবহার করুন';
+
+  @override
+  String get helpListAi =>
+      'এআই সহকারীকে আপনার তালিকা তৈরি করতে, সংগঠিত করতে বা সম্পূর্ণ করতে বলুন — শুধু স্পার্কল আইকনে আলতো চাপুন';
+
+  @override
+  String get helpListShoppingMode =>
+      'কেনাকাটা মোড কেনা আইটেমগুলিকে লুকিয়ে রাখে যাতে আপনি যা বাকি আছে তার উপর ফোকাস করতে পারেন৷';
+
+  @override
+  String get helpListOrganize =>
+      'পুনরায় সাজাতে আইটেমগুলি টেনে আনুন, কেনা হিসাবে চিহ্নিত করতে সোয়াইপ করুন, বা ফিল্টার এবং বাছাই ব্যবহার করুন';
+
+  @override
+  String get helpListShare =>
+      'আপনার তালিকাটি পরিবারের সাথে ভাগ করুন বা PDF, Excel, বা প্লেইন টেক্সট হিসাবে রপ্তানি করুন';
+
+  @override
   String get import => 'ইম্পোর্ট';
 
   @override
@@ -3260,6 +3403,13 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get clear => 'পরিষ্কার';
+
+  @override
+  String get clearPurchasedTitle => 'ক্রয়কৃত আইটেমগুলি সাফ করুন';
+
+  @override
+  String get clearPurchasedConfirmMessage =>
+      'এই তালিকা থেকে সব কেনা আইটেম সরাবেন? এটি পূর্বাবস্থায় ফেরানো যাবে না।';
 
   @override
   String error(String message) {
@@ -3273,6 +3423,22 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get purchaseError => 'ক্রয় প্রক্রিয়াকরণে ত্রুটি। আবার চেষ্টা করুন।';
+
+  @override
+  String get errorCreateList =>
+      'তালিকা তৈরি করা যায়নি। আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.';
+
+  @override
+  String get errorShareCode =>
+      'শেয়ার কোড তৈরি করতে ত্রুটি৷ আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.';
+
+  @override
+  String get errorQuickAdd =>
+      'আইটেম যোগ করা যায়নি. আপনার সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন.';
+
+  @override
+  String get errorLoadList =>
+      'আপনার তালিকা লোড করা যায়নি. শুরু করতে একটি নতুন তালিকা তৈরি করুন.';
 
   @override
   String get restoreError => 'ক্রয় পুনরুদ্ধারে ত্রুটি। আবার চেষ্টা করুন।';
@@ -3665,6 +3831,18 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   String get noBudgetDefined => 'কোনো বাজেট সেট নেই';
 
   @override
+  String get budgetGoalInvalidAmount => 'শূন্যের চেয়ে বড় একটি মান লিখুন';
+
+  @override
+  String get budgetPartialEstimateHint => '~ আংশিক মূল্য অনুমান অন্তর্ভুক্ত';
+
+  @override
+  String get budgetGoalSaved => 'বাজেট লক্ষ্য সংরক্ষিত';
+
+  @override
+  String get budgetGoalRemoved => 'বাজেট লক্ষ্য মুছে ফেলা হয়েছে';
+
+  @override
   String totalEstimated(String amount) {
     return 'মোট আনুমানিক: $amount';
   }
@@ -3856,6 +4034,13 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get newChat => 'নতুন চ্যাট';
+
+  @override
+  String get newChatConfirmTitle => 'নতুন কথোপকথন';
+
+  @override
+  String get newChatConfirmMessage =>
+      'একটি নতুন কথোপকথন শুরু? আপনার বর্তমান কথোপকথন হারিয়ে যাবে.';
 
   @override
   String get noHistory => 'কোন চ্যাট ইতিহাস নেই';
@@ -4423,6 +4608,16 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get paywallWelcomeOfferBadge => '🎁 স্বাগতম অফার';
+
+  @override
+  String get paywallFreeTier => 'বিনামূল্যে: 3 তালিকা';
+
+  @override
+  String get paywallProTier => 'প্রো: আনলিমিটেড';
+
+  @override
+  String get firstItemAddedSnackbar =>
+      'প্রথম আইটেম যোগ করা হয়েছে! দুর্দান্ত শুরু 🛒';
 
   @override
   String paywallCtaTrialDays(int days) {
@@ -5321,6 +5516,18 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   String get mealPlannerDefaultTypeLabel => 'ডিফল্ট প্রকার';
 
   @override
+  String get mealPlannerDuplicate => 'ডুপ্লিকেট খাবার';
+
+  @override
+  String get mealPlannerSelectDestinationDay => 'এতে নকল করুন...';
+
+  @override
+  String get mealPlannerCurrentDayLabel => 'বর্তমান দিন';
+
+  @override
+  String get mealPlannerDuplicateSuccess => 'খাবার সফলভাবে নকল করা হয়েছে!';
+
+  @override
   String get expirationDate => 'মেয়াদ শেষ হওয়ার তারিখ';
 
   @override
@@ -5328,6 +5535,9 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get skip => 'এড়িয়ে যান';
+
+  @override
+  String get onboardingSkip => 'আপাতত এড়িয়ে যান';
 
   @override
   String get onboardingAiTitle => 'কিপির সাথে চ্যাট করুন';
@@ -6363,4 +6573,28 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
 
   @override
   String get aiGeneratingResponse => 'প্রতিক্রিয়া তৈরি করা হচ্ছে...';
+
+  @override
+  String get errorUnexpected => 'অপ্রত্যাশিত কিছু ঘটেছে। আবার চেষ্টা করুন.';
+
+  @override
+  String get aiAssistantTooltip => 'এআই সহকারী খুলুন';
+
+  @override
+  String get searchItems => 'আইটেম অনুসন্ধান করুন';
+
+  @override
+  String get onboardingHookContinue => 'শুরু করুন';
+
+  @override
+  String get onboardingHookItem1 => 'গ্রিলড চিকেন';
+
+  @override
+  String get onboardingHookItem2 => 'মোজারেলা পনির';
+
+  @override
+  String get onboardingHookItem3 => 'চেরি টমেটো';
+
+  @override
+  String get checkItemTooltip => 'আইটেম চেক করুন';
 }

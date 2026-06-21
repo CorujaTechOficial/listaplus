@@ -13,13 +13,15 @@ import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/app/recipes/widgets/add_recipe_dialog.dart';
 import 'package:shopping_list/app/recipes/widgets/recipe_card_skeleton.dart';
 import 'package:shopping_list/app/recipes/screens/recipe_detail_screen.dart';
+import 'package:shopping_list/core/utils/snack_bar_utils.dart';
 import 'package:shopping_list/theme/page_transitions.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+
 import 'package:shopping_list/utils/string_extensions.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/pantry_item.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class RecipesScreen extends StatefulWidget {
   const RecipesScreen({super.key});
@@ -91,15 +93,15 @@ class _RecipesScreenState extends State<RecipesScreen> {
     if (confirmed == true && context.mounted) {
       unawaited(ref.read(recipesProvider.notifier).deleteRecipe(recipe.id));
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.recipeDeleted),
-            action: SnackBarAction(
-              label: l10n.undo,
-              onPressed: () {
-                ref.read(recipesProvider.notifier).saveRecipe(recipe);
-              },
-            ),
+        showKipiSnackBar(
+          context,
+          message: l10n.recipeDeleted,
+          type: SnackBarType.info,
+          action: SnackBarAction(
+            label: l10n.undo,
+            onPressed: () {
+              ref.read(recipesProvider.notifier).saveRecipe(recipe);
+            },
           ),
         );
       }
@@ -128,13 +130,13 @@ class _RecipesScreenState extends State<RecipesScreen> {
         return Scaffold(
           appBar: AppBar(
             leading: IconButton(
-              icon: const Icon(Icons.person_outline),
+              icon: const Icon(PhosphorIconsRegular.user),
               onPressed: () => AccountMenuSheet.show(context),
             ),
             title: Text(l10n.myRecipes),
             actions: [
               IconButton(
-                icon: const Icon(Icons.card_giftcard),
+                icon: const Icon(PhosphorIconsRegular.gift),
                 onPressed: _shareApp,
                 tooltip: l10n.shareApp,
               ),
@@ -159,7 +161,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         controller: _searchController,
                         decoration: InputDecoration(
                           hintText: l10n.searchRecipes,
-                          prefixIcon: const Icon(Icons.search, size: 20),
+                          prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass, size: 20),
                           filled: true,
                           fillColor: theme.colorScheme.surfaceContainerHighest
                               .withAlpha(
@@ -235,7 +237,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.search_off,
+                                PhosphorIconsRegular.magnifyingGlassMinus,
                                 size: 48,
                                 color: theme.colorScheme.outline,
                               ),
@@ -259,7 +261,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.restaurant_menu,
+                                  PhosphorIconsRegular.forkKnife,
                                   size: 80,
                                   color: theme.colorScheme.primary.withAlpha(
                                     (0.2 * 255).toInt(),
@@ -293,7 +295,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                                       ),
                                     );
                                   },
-                                  icon: const Icon(Icons.add),
+                                  icon: const Icon(PhosphorIconsRegular.plus),
                                   label: Text(l10n.newRecipe),
                                 ),
                               ],
@@ -303,8 +305,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                       ),
                     if (filtered.isNotEmpty)
                       Expanded(
-                        child: AnimationLimiter(
-                          child: LayoutBuilder(
+                        child: LayoutBuilder(
                             builder: (context, constraints) {
                               final ratio =
                                   constraints.maxWidth < 380 ? 0.74 : 0.82;
@@ -320,31 +321,21 @@ class _RecipesScreenState extends State<RecipesScreen> {
                                 itemCount: filtered.length,
                                 itemBuilder: (context, index) {
                                   final recipe = filtered[index];
-                                  return AnimationConfiguration.staggeredGrid(
-                                    position: index,
-                                    duration: DurationTokens.normal,
-                                    columnCount: 2,
-                                    child: ScaleAnimation(
-                                      child: FadeInAnimation(
-                                        child: _RecipeGridCard(
-                                          recipe: recipe,
-                                          onDelete:
-                                              () => _confirmDelete(
-                                                context,
-                                                ref,
-                                                recipe,
-                                                l10n,
-                                              ),
+                                  return _RecipeGridCard(
+                                    recipe: recipe,
+                                    onDelete:
+                                        () => _confirmDelete(
+                                          context,
+                                          ref,
+                                          recipe,
+                                          l10n,
                                         ),
-                                      ),
-                                    ),
                                   );
                                 },
                               );
                             },
                           ),
                         ),
-                      ),
                   ],
                 );
               },
@@ -373,7 +364,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.cloud_off,
+                            PhosphorIconsRegular.cloudSlash,
                             size: 48,
                             color: theme.colorScheme.error,
                           ),
@@ -390,7 +381,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                           const SizedBox(height: Spacing.lg),
                           FilledButton.icon(
                             onPressed: () => ref.invalidate(recipesProvider),
-                            icon: const Icon(Icons.refresh),
+                            icon: const Icon(PhosphorIconsRegular.arrowCounterClockwise),
                             label: Text(l10n.retry),
                           ),
                         ],
@@ -413,7 +404,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                               );
                             },
                             label: Text(l10n.newRecipe),
-                            icon: const Icon(Icons.add),
+                            icon: const Icon(PhosphorIconsRegular.plus),
                           ),
             orElse: () => null,
           ),
@@ -522,7 +513,7 @@ class _RecipeCardMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return PopupMenuButton<String>(
-      icon: const Icon(Icons.more_vert, size: 18, color: Colors.white),
+      icon: const Icon(PhosphorIconsRegular.dotsThreeVertical, size: 18, color: Colors.white),
       padding: EdgeInsets.zero,
       constraints: const BoxConstraints(minWidth: 140),
       onSelected: (val) {
@@ -541,7 +532,7 @@ class _RecipeCardMenu extends StatelessWidget {
               value: 'edit',
               child: Row(
                 children: [
-                  const Icon(Icons.edit_outlined, size: 18),
+                  const Icon(PhosphorIconsRegular.pencilSimple, size: 18),
                   const SizedBox(width: Spacing.xs),
                   Text(l10n.edit),
                 ],
@@ -552,7 +543,7 @@ class _RecipeCardMenu extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(
-                    Icons.delete_outline,
+                    PhosphorIconsRegular.trash,
                     size: 18,
                     color: Theme.of(context).colorScheme.error,
                   ),
@@ -579,7 +570,7 @@ class _ImagePlaceholder extends StatelessWidget {
       color: theme.colorScheme.surfaceContainerHighest,
       child: Center(
         child: Icon(
-          Icons.restaurant_outlined,
+          PhosphorIconsRegular.forkKnife,
           size: 40,
           color: theme.colorScheme.onSurfaceVariant.withAlpha(
             (0.2 * 255).toInt(),
@@ -675,7 +666,7 @@ class _PantryAvailabilityBadge extends ConsumerWidget {
     return Row(
       children: [
         Icon(
-          allAvailable ? Icons.check_circle : Icons.inventory_2_outlined,
+          allAvailable ? PhosphorIconsRegular.checkCircle : PhosphorIconsRegular.package,
           size: 10,
           color: color,
         ),

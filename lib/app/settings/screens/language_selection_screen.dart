@@ -5,6 +5,7 @@ import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/app/settings/utils/locale_names.dart';
 import 'package:shopping_list/theme/tokens.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class LanguageSelectionScreen extends ConsumerStatefulWidget {
   const LanguageSelectionScreen({super.key});
@@ -89,11 +90,11 @@ class _LanguageSelectionScreenState
               child: TextField(
                 controller: _searchController,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.search),
+                  prefixIcon: const Icon(PhosphorIconsRegular.magnifyingGlass),
                   suffixIcon:
                       _searchQuery.isNotEmpty
                           ? IconButton(
-                            icon: const Icon(Icons.clear),
+                            icon: const Icon(PhosphorIconsRegular.x),
                             onPressed: () {
                               _searchController.clear();
                               setState(() {
@@ -162,7 +163,7 @@ class _LanguageSelectionScreenState
                                     child:
                                         opt.code == null
                                             ? Icon(
-                                              Icons.settings_outlined,
+                                              PhosphorIconsRegular.gearSix,
                                               color:
                                                   isSelected
                                                       ? theme
@@ -218,7 +219,7 @@ class _LanguageSelectionScreenState
                                 trailing:
                                     isSelected
                                         ? Icon(
-                                          Icons.check,
+                                          PhosphorIconsRegular.check,
                                           color: theme.colorScheme.primary,
                                         )
                                         : null,
