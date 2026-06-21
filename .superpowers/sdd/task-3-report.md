@@ -146,3 +146,42 @@ flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
 - `test/app/meal_planner/providers/meal_planner_providers_test.dart`
 - `lib/app/meal_planner/providers/meal_planner_providers.dart` unchanged
 - `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
+
+## Scope Cleanup Follow-up
+
+### Cleanup Applied
+
+- Removed the unrelated `MealTypes` and `activeMealTypes` additions from `meal_planner_providers.dart`
+- Kept the Task 3 cost-summary providers intact:
+  - `recipeCostDetailsProvider`
+  - `mealPlannerDayCostMapProvider`
+  - `mealPlannerSummaryProvider`
+- Regenerated Riverpod output; no additional `meal_planner_providers.g.dart` diff remained after regeneration
+
+### Commands Run
+
+```sh
+dart run build_runner build --delete-conflicting-outputs
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
+flutter test
+```
+
+### Relevant Passing Output
+
+Focused provider suite:
+
+```text
+00:00 +6: All tests passed!
+```
+
+Full suite:
+
+```text
+00:29 +182: All tests passed!
+```
+
+### Files Changed
+
+- `lib/app/meal_planner/providers/meal_planner_providers.dart`
+- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged after regeneration
+- `test/app/meal_planner/providers/meal_planner_providers_test.dart` unchanged
