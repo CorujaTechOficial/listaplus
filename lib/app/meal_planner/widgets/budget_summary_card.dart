@@ -5,6 +5,7 @@ import 'package:shopping_list/app/meal_planner/widgets/budget_goal_sheet.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class BudgetSummaryCard extends ConsumerWidget {
@@ -44,6 +45,7 @@ class BudgetSummaryCard extends ConsumerWidget {
 
     final summary = summaryAsync.value;
     final goal = goalAsync.value;
+    final semanticColors = Theme.of(context).extension<AppSemanticColors>()!;
 
     if (summary == null) {
       return const SizedBox.shrink();
@@ -54,6 +56,13 @@ class BudgetSummaryCard extends ConsumerWidget {
     final todayCost = summary.todayCost;
     final monthPartial = summary.monthHasPartialPricing ? '~' : '';
     final weekPartial = summary.weekHasPartialPricing ? '~' : '';
+    final hasValidGoal = goal != null && goal > 0;
+
+    Color progressColor(double ratio) {
+      if (ratio >= 1.0) return theme.colorScheme.error;
+      if (ratio >= 0.9) return semanticColors.warning;
+      return semanticColors.success;
+    }
 
     return Container(
       margin: const EdgeInsets.symmetric(
@@ -81,27 +90,26 @@ class BudgetSummaryCard extends ConsumerWidget {
               const SizedBox(width: Spacing.xs),
               Expanded(
                 child: Text(
-                  l10n.monthlyBudgetNav,
+                  l10n.mealPlannerBudgetGoalNav,
                   style: theme.textTheme.labelMedium?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-              if (goal != null)
-                GestureDetector(
-                  onTap: () => BudgetGoalSheet.show(context),
-                  child: Icon(
-                    Icons.edit_outlined,
-                    size: 16,
-                    color: theme.colorScheme.primary,
-                  ),
+              if (hasValidGoal)
+                IconButton(
+                  onPressed: () => BudgetGoalSheet.show(context),
+                  icon: const Icon(Icons.edit_outlined, size: 16),
+                  color: theme.colorScheme.primary,
+                  visualDensity: VisualDensity.compact,
+                  padding: EdgeInsets.zero,
                 ),
             ],
           ),
           const SizedBox(height: Spacing.xs),
 
-          if (goal != null) ...[
+          if (hasValidGoal) ...[
             Row(
               children: [
                 Expanded(
@@ -118,7 +126,7 @@ class BudgetSummaryCard extends ConsumerWidget {
                 Text(
                   '${((monthCost / goal) * 100).clamp(0, 999).round()}%',
                   style: theme.textTheme.labelMedium?.copyWith(
-                    color: _progressColor(monthCost / goal, theme.colorScheme),
+                    color: progressColor(monthCost / goal),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -138,7 +146,7 @@ class BudgetSummaryCard extends ConsumerWidget {
                   value: value,
                   backgroundColor: theme.colorScheme.surfaceContainerHigh,
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    _progressColor(monthCost / goal, theme.colorScheme),
+                    progressColor(monthCost / goal),
                   ),
                   minHeight: 6,
                 ),
@@ -170,7 +178,7 @@ class BudgetSummaryCard extends ConsumerWidget {
             ],
           ),
 
-          if (goal == null) ...[
+          if (!hasValidGoal) ...[
             const SizedBox(height: Spacing.xs),
             Row(
               children: [
@@ -204,13 +212,4 @@ class BudgetSummaryCard extends ConsumerWidget {
     );
   }
 
-  Color _progressColor(double ratio, ColorScheme scheme) {
-    if (ratio >= 1.0) {
-      return scheme.error;
-    }
-    if (ratio >= 0.9) {
-      return const Color(0xFFFB8C00);
-    }
-    return const Color(0xFF4CAF50);
-  }
 }

@@ -47,7 +47,11 @@ class _BudgetGoalSheetState extends ConsumerState<BudgetGoalSheet> {
       _initialized = true;
       final goal = goalAsync.value;
       if (goal != null) {
-        _controller.text = goal.toStringAsFixed(2);
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) {
+            _controller.text = goal.toStringAsFixed(2);
+          }
+        });
       }
     }
 
