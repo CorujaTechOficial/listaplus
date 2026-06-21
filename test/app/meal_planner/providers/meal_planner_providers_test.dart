@@ -363,6 +363,7 @@ void main() {
               ShoppingItem(
                 name: 'Onion',
                 quantity: 1,
+                estimatedPrice: 14,
                 shoppingListId: 'list1',
                 categoryId: 'cat1',
               ),
@@ -395,11 +396,11 @@ void main() {
         );
 
         expect(summary.todayCost, 20);
-        expect(summary.weekCost, 26);
-        expect(summary.plannedMonthCost, 26);
-        expect(summary.projectedMonthCost, closeTo(111.43, 0.01));
-        expect(summary.weekHasPartialPricing, isTrue);
-        expect(summary.monthHasPartialPricing, isTrue);
+        expect(summary.weekCost, 33);
+        expect(summary.plannedMonthCost, 33);
+        expect(summary.projectedMonthCost, closeTo(141.43, 0.01));
+        expect(summary.weekHasPartialPricing, isFalse);
+        expect(summary.monthHasPartialPricing, isFalse);
       },
     );
 

@@ -216,3 +216,30 @@ Focused provider suite:
 ### Files Changed
 
 - `lib/app/meal_planner/providers/meal_planner_providers.g.dart`
+
+## Fully Resolved Summary Test Fix
+
+### Fix Applied
+
+- Corrected the "fully resolved recipe data set" fixture so every ingredient used in that summary case is priced
+- Updated the expected summary totals and non-partial flags to match the truly fully priced fixture
+- Verified this did not require any provider or generated-code changes
+
+### Command Run
+
+```sh
+flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
+```
+
+### Relevant Passing Output
+
+```text
+00:00 +4: Meal planner cost providers mealPlannerSummaryProvider returns exact totals for a fully resolved recipe data set
+00:00 +6: All tests passed!
+```
+
+### Files Changed
+
+- `test/app/meal_planner/providers/meal_planner_providers_test.dart`
+- `lib/app/meal_planner/providers/meal_planner_providers.dart` unchanged
+- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
