@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui' show PlatformDispatcher;
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -76,16 +77,22 @@ class CurrencySetting extends _$CurrencySetting {
   Future<String> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
-      if (service == null) return _defaultCurrency;
+      if (service == null) {
+        return inferCurrencyFromLocale(PlatformDispatcher.instance.locale);
+      }
       final data = await service.getUserData();
       final saved = data?['currencyCode'] as String?;
       if (saved != null) {
         return saved;
       }
       final locale = ref.read(localeSettingProvider).value;
-      return _inferFromLocale(locale);
+      return inferCurrencyFromLocale(
+        locale == null
+            ? PlatformDispatcher.instance.locale
+            : _parseLocale(locale),
+      );
     } on Exception {
-      return _defaultCurrency;
+      return inferCurrencyFromLocale(PlatformDispatcher.instance.locale);
     }
   }
 
@@ -97,40 +104,106 @@ class CurrencySetting extends _$CurrencySetting {
     try {
       await service.updateUserData({'currencyCode': code});
     } on Exception {
-      state = AsyncValue.data(previous ?? _defaultCurrency);
+      state = AsyncValue.data(
+        previous ?? inferCurrencyFromLocale(PlatformDispatcher.instance.locale),
+      );
       rethrow;
     }
   }
+}
 
-  static const _localeCurrencyMap = <String, String>{
-    'pt_PT': 'EUR',
-    'pt': 'BRL',
-    'en_US': 'USD',
-    'en_GB': 'GBP',
-    'es_AR': 'ARS',
-    'es_CL': 'CLP',
-    'es_CO': 'COP',
-    'es_MX': 'MXN',
-    'ja': 'JPY',
-    'de': 'EUR',
-    'fr': 'EUR',
-    'it': 'EUR',
-    'es': 'EUR',
-  };
+Locale _parseLocale(String value) {
+  final parts = value.replaceAll('-', '_').split('_');
+  return parts.length > 1 ? Locale(parts[0], parts[1]) : Locale(parts[0]);
+}
 
-  static const _defaultCurrency = 'BRL';
-
-  String _inferFromLocale(String? locale) {
-    if (locale == null) {
-      return _defaultCurrency;
+String inferCurrencyFromLocale(Locale locale) {
+  final country = locale.countryCode?.toUpperCase();
+  if (country != null) {
+    const countryCurrencies = <String, String>{
+      'AR': 'ARS',
+      'AT': 'EUR',
+      'AU': 'AUD',
+      'BE': 'EUR',
+      'BR': 'BRL',
+      'CA': 'CAD',
+      'CH': 'CHF',
+      'CL': 'CLP',
+      'CN': 'CNY',
+      'CO': 'COP',
+      'CY': 'EUR',
+      'CZ': 'CZK',
+      'DE': 'EUR',
+      'DK': 'DKK',
+      'EE': 'EUR',
+      'ES': 'EUR',
+      'FI': 'EUR',
+      'FR': 'EUR',
+      'GB': 'GBP',
+      'GR': 'EUR',
+      'HK': 'HKD',
+      'HU': 'HUF',
+      'ID': 'IDR',
+      'IE': 'EUR',
+      'IN': 'INR',
+      'IT': 'EUR',
+      'JP': 'JPY',
+      'KR': 'KRW',
+      'LT': 'EUR',
+      'LU': 'EUR',
+      'LV': 'EUR',
+      'MT': 'EUR',
+      'MX': 'MXN',
+      'MY': 'MYR',
+      'NL': 'EUR',
+      'NO': 'NOK',
+      'NZ': 'NZD',
+      'PE': 'PEN',
+      'PH': 'PHP',
+      'PL': 'PLN',
+      'PT': 'EUR',
+      'RO': 'RON',
+      'SE': 'SEK',
+      'SG': 'SGD',
+      'SI': 'EUR',
+      'SK': 'EUR',
+      'TH': 'THB',
+      'TR': 'TRY',
+      'TW': 'TWD',
+      'US': 'USD',
+      'ZA': 'ZAR',
+    };
+    final currency = countryCurrencies[country];
+    if (currency != null) {
+      return currency;
     }
-    for (final entry in _localeCurrencyMap.entries) {
-      if (locale.startsWith(entry.key)) {
-        return entry.value;
-      }
-    }
-    return 'USD';
   }
+
+  return switch (locale.languageCode) {
+    'pt' => 'BRL',
+    'ja' => 'JPY',
+    'ko' => 'KRW',
+    'zh' => 'CNY',
+    'de' ||
+    'fr' ||
+    'it' ||
+    'es' ||
+    'nl' ||
+    'el' ||
+    'fi' ||
+    'ga' ||
+    'sk' ||
+    'sl' ||
+    'et' ||
+    'lv' ||
+    'lt' ||
+    'mt' => 'EUR',
+    _ => 'USD',
+  };
+}
+
+String resolveCurrencyCode(AsyncValue<String> setting, Locale locale) {
+  return setting.value ?? inferCurrencyFromLocale(locale);
 }
 
 @riverpod
@@ -246,3 +319,23 @@ class DefaultScreen extends _$DefaultScreen {
   }
 }
 
+@riverpod
+class MonthlyBudgetGoal extends _$MonthlyBudgetGoal {
+  static const _key = 'monthly_budget_goal';
+
+  @override
+  Future<double?> build() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getDouble(_key);
+  }
+
+  Future<void> setGoal(double? value) async {
+    final prefs = await SharedPreferences.getInstance();
+    if (value == null) {
+      await prefs.remove(_key);
+    } else {
+      await prefs.setDouble(_key, value);
+    }
+    state = AsyncValue.data(value);
+  }
+}

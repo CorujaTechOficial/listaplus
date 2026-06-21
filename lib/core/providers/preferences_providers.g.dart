@@ -121,7 +121,7 @@ final class CurrencySettingProvider
   CurrencySetting create() => CurrencySetting();
 }
 
-String _$currencySettingHash() => r'6e23b235884472962d7070fe76e5114811c93a9d';
+String _$currencySettingHash() => r'263f3a15a8b40f45cfb6d1e8a2cf54276d412d81';
 
 abstract class _$CurrencySetting extends $AsyncNotifier<String> {
   FutureOr<String> build();
@@ -354,6 +354,50 @@ abstract class _$DefaultScreen extends $AsyncNotifier<String> {
             as $ClassProviderElement<
               AnyNotifier<AsyncValue<String>, String>,
               AsyncValue<String>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}
+
+@ProviderFor(MonthlyBudgetGoal)
+final monthlyBudgetGoalProvider = MonthlyBudgetGoalProvider._();
+
+final class MonthlyBudgetGoalProvider
+    extends $AsyncNotifierProvider<MonthlyBudgetGoal, double?> {
+  MonthlyBudgetGoalProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'monthlyBudgetGoalProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$monthlyBudgetGoalHash();
+
+  @$internal
+  @override
+  MonthlyBudgetGoal create() => MonthlyBudgetGoal();
+}
+
+String _$monthlyBudgetGoalHash() => r'7dbef145bfa6771e49439970756e2e7fae1755a2';
+
+abstract class _$MonthlyBudgetGoal extends $AsyncNotifier<double?> {
+  FutureOr<double?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<double?>, double?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<double?>, double?>,
+              AsyncValue<double?>,
               Object?,
               Object?
             >;
