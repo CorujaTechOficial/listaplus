@@ -1132,6 +1132,27 @@
   "mealPlannerDateLabel": "Date",
   "mealPlannerWeekEmpty": "Nothing planned for this week",
   "mealPlannerWeekEmptyHint": "Tap any day to start planning your meals!",
+  "mealPlannerBudgetMonthCost": "Month: {amount}",
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "mealPlannerBudgetWeekCost": "Week: {amount}",
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "mealPlannerBudgetTodayCost": "Today: {amount}",
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "mealPlannerBudgetRemoveGoal": "Remove goal",
+  "mealPlannerBudgetGoalNav": "Meal planner budget",
+  "mealPlannerBudgetGoalSubtitle": "Monthly spending goal for meal planning",
   "mealPlannerPrepTime": "{minutes} min",
   "@mealPlannerPrepTime": {
     "placeholders": {

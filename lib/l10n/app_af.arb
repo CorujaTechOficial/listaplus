@@ -432,6 +432,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1746,6 +1767,12 @@
   "marketsToAvoidHint": "Markte by wie jy verkies om nie inkopies te doen nie",
   "mealPlannerAddMeal": "Voeg maaltyd by",
   "mealPlannerAddType": "Voeg maaltydtipe by",
+  "mealPlannerBudgetGoalNav": "Maaltydbeplanner begroting",
+  "mealPlannerBudgetGoalSubtitle": "Maandelikse bestedingsdoelwit vir maaltydbeplanning",
+  "mealPlannerBudgetMonthCost": "Maand: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Verwyder doelwit",
+  "mealPlannerBudgetTodayCost": "Vandag: {amount}",
+  "mealPlannerBudgetWeekCost": "Week: {amount}",
   "mealPlannerCustomTypeLabel": "Gepasmaakte tipe",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Verstek tipe",

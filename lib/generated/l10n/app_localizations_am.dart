@@ -1938,6 +1938,30 @@ class AppLocalizationsAm extends AppLocalizations {
   String get mealPlannerWeekEmptyHint => 'ምግብዎን ማቀድ ለመጀመር ማንኛውንም ቀን ይጫኑ!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'ወር፡ $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'ሳምንት፡ $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'ዛሬ፡ $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'ግብ አስወግድ';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'የምግብ እቅድ አውጪ በጀት';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle => 'ለምግብ እቅድ ወርሃዊ ወጪ ግብ';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes ደቂቃ';
   }

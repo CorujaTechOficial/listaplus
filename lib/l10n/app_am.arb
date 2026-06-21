@@ -454,6 +454,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1865,6 +1886,12 @@
   "mealNoRecipeFound": "ምንም የምግብ አሰራር አልተገኘም።",
   "mealPlannerAddMeal": "ምግብ ጨምር",
   "mealPlannerAddType": "የምግብ ዓይነት ይጨምሩ",
+  "mealPlannerBudgetGoalNav": "የምግብ እቅድ አውጪ በጀት",
+  "mealPlannerBudgetGoalSubtitle": "ለምግብ እቅድ ወርሃዊ ወጪ ግብ",
+  "mealPlannerBudgetMonthCost": "ወር፡ {amount}",
+  "mealPlannerBudgetRemoveGoal": "ግብ አስወግድ",
+  "mealPlannerBudgetTodayCost": "ዛሬ፡ {amount}",
+  "mealPlannerBudgetWeekCost": "ሳምንት፡ {amount}",
   "mealPlannerCustomTypeLabel": "ብጁ ዓይነት",
   "mealPlannerDateLabel": "ቀን",
   "mealPlannerDefaultTypeLabel": "ነባሪ ዓይነት",

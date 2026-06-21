@@ -1974,6 +1974,31 @@ class AppLocalizationsAz extends AppLocalizations {
       'Yeməklərinizi planlaşdırmağa başlamaq üçün hər hansı bir günə toxunun!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Ay: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Həftə: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Bu gün: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Məqsədi silin';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Yemək planlayıcısı büdcəsi';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Yemək planlaması üçün aylıq xərcləmə hədəfi';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes dəq';
   }

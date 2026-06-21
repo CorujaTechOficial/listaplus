@@ -1975,6 +1975,31 @@ class AppLocalizationsBe extends AppLocalizations {
       'Націсніце на любы дзень, каб пачаць планаваць сваё харчаванне!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Месяц: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Тыдзень: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Сёння: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Выдаліць гол';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Бюджэт планавальніка харчавання';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Мэта штомесячных выдаткаў на планаванне ежы';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes хв';
   }

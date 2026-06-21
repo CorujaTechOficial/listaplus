@@ -454,6 +454,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1865,6 +1886,12 @@
   "mealNoRecipeFound": "Рэцэпт не знойдзены",
   "mealPlannerAddMeal": "Дадаць страву",
   "mealPlannerAddType": "Дадаць тып ежы",
+  "mealPlannerBudgetGoalNav": "Бюджэт планавальніка харчавання",
+  "mealPlannerBudgetGoalSubtitle": "Мэта штомесячных выдаткаў на планаванне ежы",
+  "mealPlannerBudgetMonthCost": "Месяц: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Выдаліць гол",
+  "mealPlannerBudgetTodayCost": "Сёння: {amount}",
+  "mealPlannerBudgetWeekCost": "Тыдзень: {amount}",
   "mealPlannerCustomTypeLabel": "Нестандартны тып",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Тып па змаўчанні",

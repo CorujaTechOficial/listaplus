@@ -406,6 +406,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1713,6 +1734,12 @@
   "marketsToAvoidHint": "যে মার্কেটে আপনি কেনাকাটা করতে পছন্দ করেন না",
   "mealPlannerAddMeal": "খাবার যোগ করুন",
   "mealPlannerAddType": "খাবারের ধরন যোগ করুন",
+  "mealPlannerBudgetGoalNav": "খাবার পরিকল্পনাকারী বাজেট",
+  "mealPlannerBudgetGoalSubtitle": "খাবার পরিকল্পনার জন্য মাসিক খরচের লক্ষ্য",
+  "mealPlannerBudgetMonthCost": "মাস: {amount}",
+  "mealPlannerBudgetRemoveGoal": "লক্ষ্য সরান",
+  "mealPlannerBudgetTodayCost": "আজ: {amount}",
+  "mealPlannerBudgetWeekCost": "সপ্তাহ: {amount}",
   "mealPlannerCustomTypeLabel": "কাস্টম প্রকার",
   "mealPlannerDateLabel": "তারিখ",
   "mealPlannerDefaultTypeLabel": "ডিফল্ট প্রকার",

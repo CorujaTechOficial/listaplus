@@ -1974,6 +1974,31 @@ class AppLocalizationsBn extends AppLocalizations {
       'আপনার খাবারের পরিকল্পনা শুরু করতে যেকোনো দিনের ওপর ট্যাপ করুন!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'মাস: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'সপ্তাহ: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'আজ: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'লক্ষ্য সরান';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'খাবার পরিকল্পনাকারী বাজেট';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'খাবার পরিকল্পনার জন্য মাসিক খরচের লক্ষ্য';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes মিনিট';
   }
@@ -5130,6 +5155,31 @@ class AppLocalizationsBnBd extends AppLocalizationsBn {
   @override
   String get mealPlannerWeekEmptyHint =>
       'আপনার খাবারের পরিকল্পনা শুরু করতে যেকোনো দিনের ওপর ট্যাপ করুন!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'মাস: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'সপ্তাহ: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'আজ: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'লক্ষ্য সরান';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'খাবার পরিকল্পনাকারী বাজেট';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'খাবার পরিকল্পনার জন্য মাসিক খরচের লক্ষ্য';
 
   @override
   String mealPlannerPrepTime(int minutes) {

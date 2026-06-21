@@ -2002,6 +2002,31 @@ class AppLocalizationsTa extends AppLocalizations {
       'உங்கள் உணவைத் திட்டமிடத் தொடங்க எந்த நாளையும் தட்டவும்!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Month: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Week: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Today: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Monthly spending goal for meal planning';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes நிமிடம்';
   }

@@ -3816,6 +3816,42 @@ abstract class AppLocalizations {
   /// **'Tap any day to start planning your meals!'**
   String get mealPlannerWeekEmptyHint;
 
+  /// No description provided for @mealPlannerBudgetMonthCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Month: {amount}'**
+  String mealPlannerBudgetMonthCost(String amount);
+
+  /// No description provided for @mealPlannerBudgetWeekCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Week: {amount}'**
+  String mealPlannerBudgetWeekCost(String amount);
+
+  /// No description provided for @mealPlannerBudgetTodayCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Today: {amount}'**
+  String mealPlannerBudgetTodayCost(String amount);
+
+  /// No description provided for @mealPlannerBudgetRemoveGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove goal'**
+  String get mealPlannerBudgetRemoveGoal;
+
+  /// No description provided for @mealPlannerBudgetGoalNav.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal planner budget'**
+  String get mealPlannerBudgetGoalNav;
+
+  /// No description provided for @mealPlannerBudgetGoalSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly spending goal for meal planning'**
+  String get mealPlannerBudgetGoalSubtitle;
+
   /// No description provided for @mealPlannerPrepTime.
   ///
   /// In en, this message translates to:

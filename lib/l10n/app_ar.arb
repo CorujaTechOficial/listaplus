@@ -454,6 +454,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1865,6 +1886,12 @@
   "mealNoRecipeFound": "لم يتم العثور على وصفة",
   "mealPlannerAddMeal": "إضافة وجبة",
   "mealPlannerAddType": "إضافة نوع الوجبة",
+  "mealPlannerBudgetGoalNav": "ميزانية مخطط الوجبات",
+  "mealPlannerBudgetGoalSubtitle": "هدف الإنفاق الشهري لتخطيط الوجبات",
+  "mealPlannerBudgetMonthCost": "الشهر: {amount}",
+  "mealPlannerBudgetRemoveGoal": "إزالة الهدف",
+  "mealPlannerBudgetTodayCost": "اليوم: {amount}",
+  "mealPlannerBudgetWeekCost": "الأسبوع: {amount}",
   "mealPlannerCustomTypeLabel": "نوع مخصص",
   "mealPlannerDateLabel": "التاريخ",
   "mealPlannerDefaultTypeLabel": "النوع الافتراضي",

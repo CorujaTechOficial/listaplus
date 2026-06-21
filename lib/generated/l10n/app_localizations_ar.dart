@@ -1962,6 +1962,31 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mealPlannerWeekEmptyHint => 'اضغط على أي يوم لبدء تخطيط وجباتك!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'الشهر: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'الأسبوع: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'اليوم: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'إزالة الهدف';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'ميزانية مخطط الوجبات';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'هدف الإنفاق الشهري لتخطيط الوجبات';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes دقيقة';
   }

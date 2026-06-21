@@ -1978,6 +1978,31 @@ class AppLocalizationsAf extends AppLocalizations {
       'Tik op enige dag om jou maaltye te begin beplan!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Maand: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Week: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Vandag: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Verwyder doelwit';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Maaltydbeplanner begroting';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Maandelikse bestedingsdoelwit vir maaltydbeplanning';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes min';
   }

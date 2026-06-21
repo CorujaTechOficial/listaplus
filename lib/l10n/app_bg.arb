@@ -428,6 +428,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1839,6 +1860,12 @@
   "mealNoRecipeFound": "Няма намерена рецепта",
   "mealPlannerAddMeal": "Добави хранене",
   "mealPlannerAddType": "Добавете тип хранене",
+  "mealPlannerBudgetGoalNav": "Бюджет за планиране на хранене",
+  "mealPlannerBudgetGoalSubtitle": "Цел за месечни разходи за планиране на хранене",
+  "mealPlannerBudgetMonthCost": "Месец: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Премахване на целта",
+  "mealPlannerBudgetTodayCost": "Днес: {amount}",
+  "mealPlannerBudgetWeekCost": "Седмица: {amount}",
   "mealPlannerCustomTypeLabel": "Персонализиран тип",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Тип по подразбиране",

@@ -1902,6 +1902,31 @@ class AppLocalizationsZh extends AppLocalizations {
   String get mealPlannerWeekEmptyHint => '点击任意一天即可开始计划您的膳食！';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Month: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Week: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Today: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Monthly spending goal for meal planning';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes 分钟';
   }

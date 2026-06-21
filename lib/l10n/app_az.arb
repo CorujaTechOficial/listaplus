@@ -454,6 +454,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1865,6 +1886,12 @@
   "mealNoRecipeFound": "Heç bir resept tapılmadı",
   "mealPlannerAddMeal": "Yemək əlavə et",
   "mealPlannerAddType": "Yemək növünü əlavə edin",
+  "mealPlannerBudgetGoalNav": "Yemək planlayıcısı büdcəsi",
+  "mealPlannerBudgetGoalSubtitle": "Yemək planlaması üçün aylıq xərcləmə hədəfi",
+  "mealPlannerBudgetMonthCost": "Ay: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Məqsədi silin",
+  "mealPlannerBudgetTodayCost": "Bu gün: {amount}",
+  "mealPlannerBudgetWeekCost": "Həftə: {amount}",
   "mealPlannerCustomTypeLabel": "Fərdi növ",
   "mealPlannerDateLabel": "Tarix",
   "mealPlannerDefaultTypeLabel": "Defolt növ",

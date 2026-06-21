@@ -1948,6 +1948,31 @@ class AppLocalizationsKm extends AppLocalizations {
       'ប៉ះថ្ងៃណាមួយដើម្បីចាប់ផ្តើមរៀបចំគម្រោងអាហាររបស់អ្នក!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Month: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Week: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Today: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Monthly spending goal for meal planning';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes នាទី';
   }

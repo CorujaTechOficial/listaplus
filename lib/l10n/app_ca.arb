@@ -406,6 +406,27 @@
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -1720,6 +1741,12 @@
   "marketsToAvoidHint": "Mercats on prefereixes no comprar",
   "mealPlannerAddMeal": "Afegir àpat",
   "mealPlannerAddType": "Afegeix el tipus de menjar",
+  "mealPlannerBudgetGoalNav": "Pressupost del planificador d'àpats",
+  "mealPlannerBudgetGoalSubtitle": "Objectiu de despesa mensual per a la planificació dels àpats",
+  "mealPlannerBudgetMonthCost": "Mes: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Elimina l'objectiu",
+  "mealPlannerBudgetTodayCost": "Avui: {amount}",
+  "mealPlannerBudgetWeekCost": "Setmana: {amount}",
   "mealPlannerCustomTypeLabel": "Tipus personalitzat",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Tipus per defecte",
